@@ -153,21 +153,28 @@ jQuery(function($) {
 
     }, {
 	prompt: "~ ",
-        greetings: "\n" +
+        greetings: null,
+        onBlur: function() {
+            return false;
+        },
+        onInit: function(term) {
+            greetings(term);
+	    term.exec('help');
+        },
+	onClear: function(term) {
+	    greetings(term);
+	}
+    });
+    function greetings(term) {
+	term.echo("\n"+
 			"oooo         o8o                    o8o \n"+
 			"`888         `''                    `'' \n"+
 			" 888 .oo.   oooo  oooo oooo    ooo oooo \n"+
 			" 888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
 			" 888   888   888    `88..]88..8'    888 \n"+
 			" 888   888   888     `888'`888'     888 \n"+
-			"o888o o888o o888o     `8'  `8'     o888o\n",
-        onBlur: function() {
-            return false;
-        },
-        onInit: function(term) {
-            term.exec('help');
-        }
-    });
+			"o888o o888o o888o     `8'  `8'     o888o\n");
+    }
 });
 </script>
 <div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
