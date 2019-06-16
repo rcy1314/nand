@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hiwi</title>
+    <script src="jquery-1.7.1.min.js"></script>
+    <script src="jquery.mousewheel-min.js"></script>
+    <script src="jquery.terminal.min.js"></script>
+    <link href="jquery.terminal.min.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/js-polyfills/keyboard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+<body>
+<style>
+	a {
+
+		text-decoration: none;
+
+	}
+
+	a:link {
+
+		color: white;
+
+	}
+
+	a:visited {
+
+		color: white;
+
+	}
+
+	a:hover {
+
+		color: white;
+
+	}
+
+	a:active {
+
+		color: white;
+	}
+</style>
+<script>
+var feed;
+var i = 0;
+var proxyurl = "https://cors-anywhere.herokuapp.com/";
+var feedurl = {
+
+	arch:"https://bbs.archlinux.org/extern.php?type=rss",
+        cnet:"https://www.cnet.com/rss/news/",
+	espn:"https://www.espn.com/espn/rss/news",
+	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
+	msnbc:"http://www.msnbc.com/feeds/latest",
+	nbc:"http://feeds.nbcnews.com/nbcnews/public/news",
+        slashdot:"http://rss.slashdot.org/Slashdot/slashdot",
+	tmz:"https://www.tmz.com/rss.xml",
+	ufc:"https://www.ufc.com/rss/news",
+        wired:"https://www.wired.com/feed/rss"
+
+	};
+
+function isKey(typed) {
+
+	for (var key in feedurl) {
+
+		if (typed == key) {
+
+			return true;
+
+		}
+
+	}
+
+	return false;
+
+}
+
+jQuery(function($) {
+    var id = 1;
+    $('body').terminal(function(command, term) {
+        if (command == 'help') {
+
+		term.echo('available commands are');
+
+			for (var key in feedurl) {
+
+				term.echo("&ensp;&ensp;" + key, { raw : true });
+
+			}
+		
+
+	} else if (isKey(command)){
+
+		term.pause();
+
+	                for (var key in feedurl) {
+
+				if (command == key) {
+
+					feed = feedurl[key];
+
+				};
+
+			}
+
+		$.get(proxyurl + feed, function (data) {
+
+			$(data).find("item").each(function () {
+
+				var el = $(this);
+
+				i = i + 1;
+
+					if (i > 14) {
+
+						i = 0;
+
+						return false;
+
+					} else {
+
+						term.echo("<a target='_blank' href='" + el.find("link").text() + "'>" + el.find("title").text() + "</a>", { raw : true }).resume();
+
+					};
+   			});
+		});
+
+
+        };
+
+    }, {
+	prompt: "~ ",
+        greetings: "\n" +
+			" __    __   __  ____    __    ____  __ \n" + 
+			"|  |  |  | |  | \\   \\  /  \\  /   / |  |\n" +
+			"|  |__|  | |  |  \\   \\/    \\/   /  |  |\n" +
+			"|   __   | |  |   \\            /   |  |\n" +
+			"|  |  |  | |  |    \\    /\\    /    |  |\n" +
+			"|__|  |__| |__|     \\__/  \\__/     |__|\n" +                                        
+			"\nhiwi.365 - how i want it 365 - use help\n",
+        onBlur: function() {
+            // prevent loosing focus
+            return false;
+        }
+    });
+});
+</script>
+</body>
+</html>
