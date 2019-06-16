@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Hiwi</title>
+    <title>hiwi</title>
     <script src="jquery-1.7.1.min.js"></script>
     <script src="jquery.mousewheel-min.js"></script>
     <script src="jquery.terminal.min.js"></script>
@@ -48,6 +48,11 @@
 		bottom: 0px;
 		right: 20px;
 	}
+
+	.terminal {
+
+		--size: .95;
+	}
 </style>
 <script>
 var feed;
@@ -56,7 +61,7 @@ var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var feedurl = {
 
 	arch:"https://bbs.archlinux.org/extern.php?type=rss",
-        cnet:"https://www.cnet.com/rss/news/",
+        chan:"https://blog.4chan.org/rss#_=_",
 	espn:"https://www.espn.com/espn/rss/news",
 	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
 	msnbc:"http://www.msnbc.com/feeds/latest",
@@ -90,7 +95,7 @@ jQuery(function($) {
 
 	if (command == 'contact') {
 
-		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.rog:6697#blackcatz'>find me on irc</a>", { raw : true });
+		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
 
 	}
 
@@ -125,11 +130,11 @@ jQuery(function($) {
 
 			$(data).find("item").each(function () {
 
-				var el = $(this);
+				var rss = $(this);
 
 				i = i + 1;
 
-					if (i > 14) {
+					if (i > 11) {
 
 						i = 0;
 
@@ -137,7 +142,7 @@ jQuery(function($) {
 
 					} else {
 
-						term.echo("<a target='_blank' href='" + el.find("link").text() + "'>" + el.find("title").text() + "</a>", { raw : true }).resume();
+						term.echo("<a target='_blank' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
 
 					};
    			});
@@ -148,7 +153,14 @@ jQuery(function($) {
 
     }, {
 	prompt: "~ ",
-        greetings: "\nhiwi.365 - how i want it 365 - use help\n",
+        greetings: "\n" +
+			"   #         ######   ##########   ######  \n"+
+			"  ########     #               #     #     \n"+
+			" #       # ##########    #    #  ##########\n"+
+			"#      ##      #          # ##       #     \n"+
+			"     ##        #          ##         #     \n"+
+			"   ##          #        ##  #        #     \n"+
+			" ##             ####  ##     #        #### \n",
         onBlur: function() {
             // prevent loosing focus
             return false;
@@ -156,6 +168,6 @@ jQuery(function($) {
     });
 });
 </script>
-<div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+<div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><br><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
