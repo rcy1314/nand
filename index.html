@@ -70,6 +70,7 @@
 
 </style>
 <script>
+var a;
 var feed;
 var i = 0;
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -144,28 +145,7 @@ jQuery(function($) {
 
 			}
 
-		$.get(proxyurl + feed, function (data) {
-
-			$(data).find("item").each(function () {
-				term.echo("<br>", { raw : true });
-				var rss = $(this);
-
-				i = i + 1;
-
-					if (i > 11) {
-
-						i = 0;
-
-						return false;
-
-					} else {
-
-						term.echo("<a target='_blank' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
-
-					};
-   			});
-		});
-
+                getfeed(feed, term);
 
         };
 
@@ -193,6 +173,37 @@ jQuery(function($) {
 			"         888   888   888     `888'`888'     888 \n"+
 			"        o888o o888o o888o     `8'  `8'     o888o\n");
     }
+
+    function getfeed(feed, term) {
+
+	$.get(proxyurl + feed, function (data) {
+
+	        $(data).find("item").each(function () {
+							
+                        term.echo("<br>", { raw : true });
+
+                        var rss = $(this);
+
+				i = i + 1;
+
+					if (i > 11) {
+
+						i = 0;
+
+						return false;
+
+					} else {
+
+						term.echo("<a target='_blank' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+
+					};
+
+   		});
+
+	});
+
+    }
+
 var clock = document.getElementById('clock');
 setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1);
 function getCurrentTime() { var currentDate = new Date(); return currentDate; }
