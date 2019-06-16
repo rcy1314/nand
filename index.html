@@ -112,6 +112,12 @@ jQuery(function($) {
     var id = 1;
     $('body').terminal(function(command, term) {
 
+	if ( command == '' ) {
+
+		term.clear();
+
+	}
+
 	if (command == 'contact') {
 
 		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
