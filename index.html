@@ -56,7 +56,7 @@
 		position: absolute;
 		z-index: 365;
 		top: 1px;
-		right: 0px;
+		right: 20px;
 		font-size: 95%;
 		font-family: monospace;
 
@@ -116,7 +116,7 @@ jQuery(function($) {
 
 	}
 
-        if (command == 'help' || 'dir' || 'ls') {
+        if (command == 'help' || command == 'dir' || command == 'ls') {
 
 		term.echo('available commands are');
 
@@ -146,7 +146,7 @@ jQuery(function($) {
 		$.get(proxyurl + feed, function (data) {
 
 			$(data).find("item").each(function () {
-
+				term.echo("<br>", { raw : true });
 				var rss = $(this);
 
 				i = i + 1;
