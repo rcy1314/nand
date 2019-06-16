@@ -40,6 +40,14 @@
 
 		color: white;
 	}
+
+	#stats {
+
+		position: absolute;
+		z-index: 365;
+		bottom: 0px;
+		right: 20px;
+	}
 </style>
 <script>
 var feed;
@@ -79,6 +87,13 @@ function isKey(typed) {
 jQuery(function($) {
     var id = 1;
     $('body').terminal(function(command, term) {
+
+	if (command == 'contact') {
+
+		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:acktic@gmail.com'>email me</a>", { raw : true });
+
+	}
+
         if (command == 'help') {
 
 		term.echo('available commands are');
@@ -88,6 +103,8 @@ jQuery(function($) {
 				term.echo("&ensp;&ensp;" + key, { raw : true });
 
 			}
+
+			term.echo("&ensp;&ensp;contact");
 		
 
 	} else if (isKey(command)){
@@ -131,14 +148,7 @@ jQuery(function($) {
 
     }, {
 	prompt: "~ ",
-        greetings: "\n" +
-			" __    __   __  ____    __    ____  __ \n" + 
-			"|  |  |  | |  | \\   \\  /  \\  /   / |  |\n" +
-			"|  |__|  | |  |  \\   \\/    \\/   /  |  |\n" +
-			"|   __   | |  |   \\            /   |  |\n" +
-			"|  |  |  | |  |    \\    /\\    /    |  |\n" +
-			"|__|  |__| |__|     \\__/  \\__/     |__|\n" +                                        
-			"\nhiwi.365 - how i want it 365 - use help\n",
+        greetings: "\nhiwi.365 - how i want it 365 - use help\n",
         onBlur: function() {
             // prevent loosing focus
             return false;
@@ -146,5 +156,6 @@ jQuery(function($) {
     });
 });
 </script>
+<div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
