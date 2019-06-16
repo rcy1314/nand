@@ -61,15 +61,15 @@ var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var feedurl = {
 
 	arch:"https://bbs.archlinux.org/extern.php?type=rss",
-        chan:"https://blog.4chan.org/rss#_=_",
+        //chan:"https://blog.4chan.org/rss#_=_",
 	espn:"https://www.espn.com/espn/rss/news",
-	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
-	msnbc:"http://www.msnbc.com/feeds/latest",
-	nbc:"http://feeds.nbcnews.com/nbcnews/public/news",
+	//google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
+	//msnbc:"http://www.msnbc.com/feeds/latest",
+	//nbc:"http://feeds.nbcnews.com/nbcnews/public/news",
         slashdot:"http://rss.slashdot.org/Slashdot/slashdot",
 	tmz:"https://www.tmz.com/rss.xml",
 	ufc:"https://www.ufc.com/rss/news",
-        wired:"https://www.wired.com/feed/rss"
+        //wired:"https://www.wired.com/feed/rss"
 
 	};
 
@@ -154,20 +154,22 @@ jQuery(function($) {
     }, {
 	prompt: "~ ",
         greetings: "\n" +
-			"   #         ######   ##########   ######  \n"+
-			"  ########     #               #     #     \n"+
-			" #       # ##########    #    #  ##########\n"+
-			"#      ##      #          # ##       #     \n"+
-			"     ##        #          ##         #     \n"+
-			"   ##          #        ##  #        #     \n"+
-			" ##             ####  ##     #        #### \n",
+			"oooo         o8o                    o8o \n"+
+			"`888         `''                    `'' \n"+
+			" 888 .oo.   oooo  oooo oooo    ooo oooo \n"+
+			" 888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
+			" 888   888   888    `88..]88..8'    888 \n"+
+			" 888   888   888     `888'`888'     888 \n"+
+			"o888o o888o o888o     `8'  `8'     o888o\n",
         onBlur: function() {
-            // prevent loosing focus
             return false;
+        },
+        onInit: function(term) {
+            term.exec('help');
         }
     });
 });
 </script>
-<div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><br><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+<div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
