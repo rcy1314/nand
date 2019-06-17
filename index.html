@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>hiwi</title>
-    <script src="jquery-1.7.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="jquery.mousewheel-min.js"></script>
     <script src="jquery.terminal.min.js"></script>
     <link rel="icon" href="terminal.png">
-    <link href="jquery.terminal.min.css" rel="stylesheet"/>
+    <link href="jquery.terminal-2.6.3.css" rel="stylesheet"/>
     <script src="https://unpkg.com/js-polyfills/keyboard.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -27,7 +27,7 @@
 
 	a:visited {
 
-		color: white;
+		color: grey;
 
 	}
 
@@ -71,14 +71,11 @@
 
 </style>
 <script>
-var a;
-var feed;
-var i = 0;
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var feedurl = {
 
 	arch:"https://bbs.archlinux.org/extern.php?type=rss",
-        //chan:"https://blog.4chan.org/rss#_=_",
+        g:"http://boards.4channel.org/g/index.rss",
 	cnn:"http://rss.cnn.com/rss/cnn_topstories.rss",
 	espn:"https://www.espn.com/espn/rss/news",
 	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
@@ -90,53 +87,32 @@ var feedurl = {
 	time:"http://feeds.feedburner.com/time/topstories?format=xml",
 	tmz:"https://www.tmz.com/rss.xml",
 	ufc:"https://www.ufc.com/rss/news",
+	wg:"http://boards.4chan.org/wg/index.rss",
         wired:"https://www.wired.com/feed/rss"
 
 	};
 
-function isKey(typed) {
-
-	for (var key in feedurl) {
-
-		if (typed == key) {
-
-			return true;
-
-		}
-
-	}
-
-	return false;
-
-}
-
 jQuery(function($) {
-    var id = 1;
-    $('body').terminal(function(command, term) {
 
-	if ( command == '' ) {
+    $("body").terminal(function(command, term) {
 
-		term.exec("help");
-
-	}
-
-	if (command == 'contact') {
+	if (command == "contact") {
 
 		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
 
 	}
 
-        if (command == 'help' || command == 'dir' || command == 'ls') {
+        if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
-		term.echo('available commands are');
+		term.echo("[[g;#EEE;]available commands are]");
 
 			for (var key in feedurl) {
 
-				term.echo("&ensp;&ensp;" + key, { raw : true });
+				term.echo("&ensp;&ensp;[[g;#EEE;]" + key + "]");
 
 			}
 
-			term.echo("&ensp;&ensp;contact");
+			term.echo("&ensp;&ensp;[[g;#EEE;]contact");
 		
 
 	} else if (isKey(command)){
@@ -165,21 +141,38 @@ jQuery(function($) {
         },
         onInit: function(term) {
             greetings(term);
-	    term.exec('help');
+	    term.exec("help");
         },
 	onClear: function(term) {
 	    greetings(term);
 	}
     });
     function greetings(term) {
-	term.echo("\n"+
+	term.echo("\n[[g;#EEE;]"+
 			"        oooo         o8o                    o8o \n"+
 			"        `888         `''                    `'' \n"+
 			"         888 .oo.   oooo  oooo oooo    ooo oooo \n"+
 			"         888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
-			"         888   888   888    `88..]88..8'    888 \n"+
+			"         888   888   888    `88..888]..8'    888\n"+
 			"         888   888   888     `888'`888'     888 \n"+
 			"        o888o o888o o888o     `8'  `8'     o888o\n");
+    }
+
+
+    function isKey(typed) {
+
+	for (var key in feedurl) {
+
+		if (typed == key) {
+
+			return true;
+
+		}
+
+	}
+
+	return false;
+
     }
 
     function getfeed(feed, term) {
@@ -212,7 +205,7 @@ jQuery(function($) {
 
     }
 
-var clock = document.getElementById('clock');
+var clock = document.getElementById("clock");
 setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1);
 function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 });
