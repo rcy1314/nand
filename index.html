@@ -75,9 +75,13 @@ var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var feedurl = {
 
 	arch:"https://bbs.archlinux.org/extern.php?type=rss",
+	ars:"http://feeds.arstechnica.com/arstechnica/index?format=xml",
 	cnn:"http://rss.cnn.com/rss/cnn_topstories.rss",
+	engadget:"https://www.engadget.com/rss.xml",
 	espn:"https://www.espn.com/espn/rss/news",
 	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
+	hacker:"https://news.ycombinator.com/rss",
+	kotaku:"https://kotaku.com/rss",
 	mma:"https://mmajunkie.com/news/feed",
 	nbc:"http://feeds.nbcnews.com/nbcnews/public/news",
 	rt:"http://editorial.rottentomatoes.com/feed/",
@@ -173,6 +177,8 @@ jQuery(function($) {
     }
 
     function getfeed(feed, term) {
+
+	var i = 0;
 
 	$.get(proxyurl + feed, function (data) {
 
