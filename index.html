@@ -135,7 +135,17 @@ jQuery(function($) {
 
                 getfeed(feed, term);
 
-        };
+        } else if (!isKey(command) || command != "contact" || command != "help" || command != "dir" || command != "ls") {
+
+		term.pause();
+
+		sanitize = command.replace(/\s+/g, "+");		
+
+		bing = "https://www.bing.com/search?q=" + sanitize + "&format=rss"
+
+		getfeed(bing, term);		
+
+	}
 
     }, {
 	prompt: "~ ",
