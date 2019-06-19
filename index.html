@@ -98,16 +98,8 @@ var feedurl = {
 	};
 
 jQuery(function($) {
-
+var invert
     $("body").terminal(function(command, term) {
-
-	if (command == "invertp") {
-
-		$(".terminal").attr( "style", "--color : rgba(0, 128, 0, 0.99); --background : white;");
-		$("a:link").css("color","green");
-
-		return false;
-	}
 
 	if (command == "contact") {
 
@@ -125,7 +117,7 @@ jQuery(function($) {
 
 			}
 
-			term.echo("&ensp;&ensp;invert\n&ensp;&ensp;contact");
+			term.echo("&ensp;&ensp;contact");
 		
 
 	} else if (isKey(command)){
