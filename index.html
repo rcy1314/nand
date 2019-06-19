@@ -93,8 +93,7 @@ var feedurl = {
 	time:"http://feeds.feedburner.com/time/topstories?format=xml",
 	tmz:"https://www.tmz.com/rss.xml",
 	ufc:"https://www.ufc.com/rss/news",
-        wired:"https://www.wired.com/feed/rss",
-	ycv:"https://www.yourcentralvalley.com/feed/"
+        wired:"https://www.wired.com/feed/rss"
 
 	};
 
@@ -105,7 +104,6 @@ var invert
 	if (command == "contact") {
 
 		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
-		return false;
 
 	}
 
@@ -121,10 +119,10 @@ var invert
 
 			term.echo("&ensp;&ensp;contact");
 		
+			return false;
+
 
 	} else if (isKey(command)){
-
-		term.pause();
 
 	                for (var key in feedurl) {
 
@@ -138,9 +136,7 @@ var invert
 
                 getfeed(feed, term);
 
-        } else if (!isKey(command) || command != "contact" || command != "help" || command != "dir" || command != "ls") {
-
-		term.pause();
+        } else if (!isKey(command)) {
 
 		sanitize = command.replace(/\s+/g, "+");		
 
@@ -195,6 +191,8 @@ var invert
     function getfeed(feed, term) {
 
 	var i = 0;
+
+	term.pause();
 
 	$.get(proxyurl + feed, function (data) {
 
