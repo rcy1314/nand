@@ -105,44 +105,49 @@ var invert
 
 		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
 
+                return false;
+
 	}
 
         if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
 		term.echo("available commands are");
 
-			for (var key in feedurl) {
 
-				term.echo("&ensp;&ensp;" + key + "");
+		for (var key in feedurl) {
 
-			}
+			term.echo("&ensp;&ensp;" + key);
 
-			term.echo("&ensp;&ensp;contact");
-		
-			return false;
+		}
+
+		term.echo("&ensp;&ensp;contact");
+
+		return false;
 
 
 	} else if (isKey(command)){
 
-	                for (var key in feedurl) {
+                for (var key in feedurl) {
 
-				if (command == key) {
+			if (command == key) {
 
-					feed = feedurl[key];
+				feed = feedurl[key];
 
-				};
+			};
 
-			}
+		}
 
-                getfeed(feed, term);
+                getfeed(term, feed);
 
         } else if (!isKey(command)) {
 
-		sanitize = command.replace(/\s+/g, "+");		
+		sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");		
 
-		bing = "https://www.bing.com/search?q=" + sanitize + "&format=rss"
+		rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
 
-		getfeed(bing, term);		
+		term.echo("<br><a target='_blank' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+
+                getfeed(term, rss);		
 
 	}
 
@@ -171,7 +176,6 @@ var invert
 			"        o888o o888o o888o     `8'  `8'     o888o\n");
     }
 
-
     function isKey(typed) {
 
 	for (var key in feedurl) {
@@ -188,7 +192,7 @@ var invert
 
     }
 
-    function getfeed(feed, term) {
+    function getfeed(term, feed) {
 
 	var i = 0;
 
