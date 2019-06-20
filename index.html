@@ -128,14 +128,6 @@ jQuery(function($) {
 		}
 	}
 
-	if (command == "contact") {
-
-		term.echo("&ensp;&ensp;want the <a target='_blank' href='http://github.com/acktic/hiwi'>source</a> - suggestions, feeds, <a target='_blank' href='mailto:irc.blackcatz.org:6697#blackcatz'>find me on irc</a>.", { raw : true });
-
-                return false;
-
-	}
-
         if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
 		term.echo("available commands are");
@@ -147,7 +139,7 @@ jQuery(function($) {
 
 		}
 
-		term.echo("&ensp;&ensp;invert\n&ensp;&ensp;contact");
+		term.echo("&ensp;&ensp;invert");
 
 		return false;
 
