@@ -109,6 +109,8 @@ jQuery(function($) {
 
 			invert = "white";
 
+			$("a").css({"color" : "green"});
+
 			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
 
 			return false;
@@ -116,6 +118,8 @@ jQuery(function($) {
 		} else if (invert == "white") { 
 
 			invert = "black";
+
+			$("a").css({"color" : "white"});
 
 			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
