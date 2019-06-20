@@ -71,6 +71,7 @@
 
 </style>
 <script>
+var invert;
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var feedurl = {
 
@@ -99,9 +100,29 @@ var feedurl = {
 	ycv:"https://www.yourcentralvalley.com/feed/"
 
 	};
-
 jQuery(function($) {
     $("body").terminal(function(command, term) {
+
+	if (command == "invert") {
+
+		if (invert === undefined || invert == "black") {
+
+			invert = "white";
+
+			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
+
+			return false;
+
+		} else if (invert == "white") { 
+
+			invert = "black";
+
+			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
+
+			return false;
+
+		}
+	}
 
 	if (command == "contact") {
 
@@ -122,7 +143,7 @@ jQuery(function($) {
 
 		}
 
-		term.echo("&ensp;&ensp;contact");
+		term.echo("&ensp;&ensp;invert\n&ensp;&ensp;contact");
 
 		return false;
 
@@ -147,7 +168,15 @@ jQuery(function($) {
 
 		rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
 
-		term.echo("<br><a target='_blank' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+		if (invert === undefined || invert == "black") {
+
+			term.echo("<br><a target='_blank' style='color: white' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+
+		} else if (invert == "white") {
+
+			term.echo("<br><a target='_blank' style='color: green' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+
+		}
 
                 getfeed(term, rss);		
 
@@ -218,7 +247,15 @@ jQuery(function($) {
 
 					} else {
 
-						term.echo("<a target='_blank' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+						if (invert === undefined || invert == "black") {
+
+							term.echo("<a target='_blank' style='color: white' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+
+						} else if (invert == "white") {
+
+							term.echo("<a target='_blank' style='color: green' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+
+						}
 
 					};
 
