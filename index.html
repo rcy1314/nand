@@ -21,7 +21,7 @@
 
 	a:link {
 
-		color: white;
+		color: grey;
 
 	}
 
@@ -33,13 +33,13 @@
 
 	a:hover {
 
-		color: white;
+		color: grey;
 
 	}
 
 	a:active {
 
-		color: white;
+		color: grey;
 	}
 
 	#stats {
@@ -84,7 +84,7 @@ var feedurl = {
 	cnn:"http://rss.cnn.com/rss/cnn_topstories.rss",
 	engadget:"https://www.engadget.com/rss.xml",
 	espn:"https://www.espn.com/espn/rss/news",
-	google:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",
+	google:"https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
 	guardian:"https://www.theguardian.com/world/rss",
 	hacker:"https://news.ycombinator.com/rss",
 	kotaku:"https://kotaku.com/rss",
@@ -105,7 +105,44 @@ var feedurl = {
 
 	};
 jQuery(function($) {
+
     $("body").terminal(function(command, term) {
+
+        if (command == "" || command == "help" || command == "dir" || command == "ls") {
+
+		term.echo("<tag-name style='white-space:pre'>available commands are<br>" +
+			  "abc       &#9;&#9;ABC International<br>" +
+			  "arch      &#9;&#9;ArchLinux BBS<br>" +
+			  "ars       &#9;&#9;Ars Technica<br>" +
+			  "bbc       &#9;&#9;BBC Technology<br>" +
+			  "cbs       &#9;&#9;CBS World News<br>" +
+			  "cnbc      &#9;&#9;CNBC Technology<br>" +
+			  "cnn       &#9;&#9;CNN Top Stories<br>" +
+			  "engadget  &#9;&#9;Engadget Technology<br>" +
+			  "espn      &#9;&#9;ESPN Sports<br>" +
+			  "google    &#9;&#9;Google Top Stories<br>" +
+			  "guardian  &#9;&#9;Guardian World News<br>" +
+			  "hacker    &#9;&#9;Hacker News<br>" +
+			  "kotaku    &#9;&#9;Kotaku News<br>" +
+			  "mma       &#9;&#9;MMAJunkie News<br>" +
+			  "nbc       &#9;&#9;NBC News<br>" +
+			  "pbs       &#9;&#9;PBS World News<br>" +
+			  "people    &#9;&#9;People Celebrity News<br>" +
+			  "rt        &#9;&#9;Rotten Tomatoes<br>" +
+			  "si        &#9;&#9;Sports Illustrated<br>" +
+			  "slashdot  &#9;&#9;Slashdot Latest<br>" +
+			  "techcrunch&#9;&#9;TechCrunch News<br>" +
+			  "time      &#9;&#9;Time Magazine<br>" +
+			  "tmz       &#9;&#9;TMZ Headlines<br>" +
+			  "ufc       &#9;&#9;UFC Top Stories<br>" +
+			  "wired     &#9;&#9;Wired Magazine<br>" +
+			  "yahoo     &#9;&#9;Yahoo Technology<br>" +
+			  "ycv       &#9;&#9;Your Central Valley<br>" +
+			  "</tag-name>", { raw : true });
+
+		return false;
+
+	}
 
 	if (command == "invert") {
 
@@ -123,7 +160,7 @@ jQuery(function($) {
 
 			invert = "black";
 
-			$("a").css({"color" : "white"});
+			$("a").css({"color" : "grey"});
 
 			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
@@ -131,24 +168,8 @@ jQuery(function($) {
 
 		}
 	}
-
-        if (command == "" || command == "help" || command == "dir" || command == "ls") {
-
-		term.echo("available commands are");
-
-
-		for (var key in feedurl) {
-
-			term.echo("&ensp;&ensp;" + key);
-
-		}
-
-		term.echo("&ensp;&ensp;invert");
-
-		return false;
-
-
-	} else if (isKey(command)){
+	
+	if (isKey(command)){
 
                 for (var key in feedurl) {
 
