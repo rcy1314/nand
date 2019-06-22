@@ -55,7 +55,6 @@
 </style>
 <script>
 var url
-var zip
 var input
 var invert = "white"
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -110,34 +109,6 @@ jQuery(function($) {
 
 	});
 
-	var weather = command.match(/^\w+/g);
-
-	if (weather == "weather") {
-
-		if ((command.match(/\d{5}/g))) {
-
-		term.pause;
-
-		$.get(proxyurl + "http://rss.accuweather.com/rss/liveweather_rss.asp?metric=0&locCode=" + command.match(/\d{5}/g), function (data) {
-
-		        $(data).find("item").each(function () {
-
-				rss = $(this)
-
-				term.echo("<a target='_blank' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true });
-
-			})
-
-		});
-
-		} else { term.echo("please enter a 5 digit zip code"); }
-	
-		term.resume();
-
-		return false;
-
-	}
-
 	if (command == "" || command == "help") {
 
 		greetings(term);
@@ -160,14 +131,13 @@ jQuery(function($) {
 
 		if (invert == "black") {
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' style='color: grey'>weather [zip]     &#9;Accuweather Forecast</a><br></tag-name>" +
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: grey'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: grey'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
 
 		} else if (invert == "white") { 
 
-			term.echo("<tag-name style='white-space:pre'><a='#' style='color: green'>weather [zip]     &#9;Accuweather Forecast</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: green'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: green'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
 
