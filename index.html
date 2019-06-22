@@ -113,15 +113,7 @@ $("#weather").hide();
 
 	if (command == "weather") {
 
-		if ($("#weather").is(":hidden")) {
-
-			$("#weather").show();
-
-		} else if ($("#weather").is(":visible")) {
-
-			$("#weather").hide();
-
-		}
+		$("#weather").toggle();
 
 		return false;
 
