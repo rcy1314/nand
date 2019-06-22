@@ -139,9 +139,30 @@ jQuery(function($) {
 	
 	if (!isKey(command)){
 
-		if (url === undefined) { return false; }
- 		getfeed(term, url);
+		if (url === undefined) { 
+
+	                sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");
+
+	                rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
+
+        	        if (invert === undefined || invert == "black") {
+
+                	        term.echo("<br><a target='_blank' style='color: white' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+
+                	} else if (invert == "white") {
+
+                        	term.echo("<br><a target='_blank' style='color: green' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
+
+                	}
+
+                	getfeed(term, rss);
+
+		}
+ 
+		getfeed(term, url);
+
 		url = undefined;
+
         }
 
     }, {
