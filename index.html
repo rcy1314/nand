@@ -16,7 +16,7 @@
 	a {
 
 		text-decoration: none;
-		color: white;
+		color: grey;
 
 	}
 
@@ -99,7 +99,7 @@ jQuery(function($) {
 
 	});
 
-	if (command == "" || command == "help" || command == "dir" || command == "ls") {
+	if (command == "" || command == "help") {
 
 		greetings(term);
 
@@ -109,7 +109,7 @@ jQuery(function($) {
 
 			if (invert == "black") {
 
-				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: white' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: white' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
+				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: grey' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: grey' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
 
 			} else if (invert == "white") { 
 
@@ -121,11 +121,47 @@ jQuery(function($) {
 
 		if (invert == "black") {
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: white'>invert     &#9;&#9;Invert Terminal</a></tag-name>", { raw : true });
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: grey'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: grey'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
 
 		} else if (invert == "white") { 
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a></tag-name>", { raw : true });
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: green'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: green'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
+
+		}
+
+		return false;
+
+	}
+
+	if (command == "credit") {
+
+		if (invert == "black") {
+
+			term.echo("<tag-name style='white-space:pre'><li>Hiwi was made possible by<ul>JCubic</ul><ul>Bing</ul><ul>Mystic</ul><ul>Blackcatz</ul></tag-name>", { raw : true });
+
+		} else if (invert == "white") { 
+
+			term.echo("<tag-name style='white-space:pre'><li>Hiwi was made possible by<ul>JCubic</ul><ul>Bing</ul><ul>Mystic</ul><ul>Blackcatz</ul></tag-name>", { raw : true });
+
+		}
+
+		return false;
+
+	}
+
+	if (command == "about") {
+
+		if (invert == "black") {
+
+			term.echo("<tag-name style='white-space:pre'>&#9;&#9;&#9;I wrote a similar JQuery Terminal in 2015 with a PHP Backend scrapping the project in a few months.  In<br>&#9;&#9;&#9;2019 I decided to try again without a PHP backend.  I named it 'Hiwi' as an acroynm for 'How I Want It.'<br>&#9;&#9;&#9;Its a great introduction into the terminal from a picture, point and click experience.</tag-name>", { raw : true });
+
+		} else if (invert == "white") { 
+
+			term.echo("<tag-name style='white-space:pre'>&#9;&#9;&#9;I wrote a similar JQuery Terminal in 2015 with a PHP Backend scrapping the project in a few months.  In<br>&#9;&#9;&#9;2019 I decided to try again without a PHP Backend.  I named it 'Hiwi' as an acroynm for 'How I Want It.'<br>&#9;&#9;&#9;Its a great introduction into the terminal from a picture, point and click experience.</tag-name>", { raw : true });
 
 		}
 
@@ -149,7 +185,7 @@ jQuery(function($) {
 
 			invert = "black";
 
-			$("a").attr("style", "color: white");
+			$("a").attr("style", "color: grey;");
 
 			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
