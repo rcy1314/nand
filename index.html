@@ -19,29 +19,6 @@
 
 	}
 
-	a:link {
-
-		color: grey;
-
-	}
-
-	a:visited {
-
-		color: grey;
-
-	}
-
-	a:hover {
-
-		color: grey;
-
-	}
-
-	a:active {
-
-		color: grey;
-	}
-
 	#stats {
 
 		position: absolute;
@@ -233,11 +210,11 @@ jQuery(function($) {
 			"        o888o o888o o888o     `8'  `8'     o888o\n");
     }
 
-    function isKey(typed) {
+    function isKey(command) {
 
 	for (var key in feedurl) {
 
-		if (typed == key) {
+		if (command == key) {
 
 			return true;
 
