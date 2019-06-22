@@ -97,6 +97,8 @@ var menu = [
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
 jQuery(function($) {
+$("#weather").hide();
+
     $("body").terminal(function(command, term) {
 
 	$(document).one('ready', function() {
@@ -108,6 +110,22 @@ jQuery(function($) {
 		});
 
 	});
+
+	if (command == "weather") {
+
+		if ($("#weather").is(":hidden")) {
+
+			$("#weather").show();
+
+		} else if ($("#weather").is(":visible")) {
+
+			$("#weather").hide();
+
+		}
+
+		return false;
+
+	}
 
 	if (command == "" || command == "help") {
 
@@ -131,13 +149,15 @@ jQuery(function($) {
 
 		if (invert == "black") {
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: grey'>weather     &#9;&#9;Toggle Weather</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: grey'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: grey'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
 
 		} else if (invert == "white") { 
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: green'>weather     &#9;&#9;Toggle Weather</a><br></tag-name>" +
+				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: green'>about      &#9;&#9;About Hiwi</a><br></tag-name>" +
 				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: green'>credit      &#9;&#9;Credits</a></tag-name>", { raw : true });
 
@@ -359,7 +379,7 @@ setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1);
 function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 });
 </script>
-<div style="z-index: 365; width: 210px; position: absolute; right: 20px; transform:translateY(50%);"><iframe style="display: absolute;" src="https://cdnres.willyweather.com/widget/loadView.html?id=111440" width="210" height="228" frameborder="0" scrolling="no"></iframe><a style="text-indent: -9999em;margin: -20px 0 0 0;z-index: 1;position: relative;height: 20px;display: absolute" href="https://www.willyweather.com/ca/tulare-county/visalia.html" rel="nofollow"></a></div><div id="clock"></div>
+<div id="weather" style="z-index: 365; width: 210px; position: absolute; right: 20px; transform:translateY(50%);"><iframe style="display: absolute;" src="https://cdnres.willyweather.com/widget/loadView.html?id=111440" width="210" height="228" frameborder="0" scrolling="no"></iframe><a style="text-indent: -9999em;margin: -20px 0 0 0;z-index: 1;position: relative;height: 20px;display: absolute" href="https://www.willyweather.com/ca/tulare-county/visalia.html" rel="nofollow"></a></div><div id="clock"></div>
 <div id="stats"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
