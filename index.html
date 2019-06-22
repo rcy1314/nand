@@ -244,6 +244,8 @@ jQuery(function($) {
         },
         onInit: function(term) {
 	    term.exec("help");
+	    invertColor();
+
         },
 	onClear: function(term) {
 	    greetings(term);
@@ -259,6 +261,32 @@ jQuery(function($) {
 //			" 888   888   888     `888'`888'     888 \n"+
 //			"o888o o888o o888o     `8'  `8'     o888o\n"+
 			"________________________________________\n");
+    }
+
+    function invertColor() {
+
+		if (invert == "black") {
+
+			invert = "white";
+
+			$("a").attr("style", "color: green;");
+
+			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
+
+			return false;
+
+		} else if (invert == "white") { 
+
+			invert = "black";
+
+			$("a").attr("style", "color: grey;");
+
+			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
+
+			return false;
+
+		}
+
     }
 
     function isKey(input) {
