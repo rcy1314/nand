@@ -51,7 +51,7 @@
 <script>
 var url
 var input
-var invert
+var invert = "black"
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
@@ -72,7 +72,7 @@ var menu = [
 	{ cmd : "mma", title : "MMAJunkie Headlines", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkies.com" },
 	{ cmd : "nbc", title : "NBC News", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
 	{ cmd : "pbs", title : "PBS World News", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
-	{ cmd : "people", title : "People Celebrity Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
+	{ cmd : "people", title : "People Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ cmd : "recipes", title : "SimpleRecipes", feed : "http://feeds.feedburner.com/elise/simplyrecipes", homepage : "https://www.simplyrecipes.com" },
 	{ cmd : "rot", title : "RottenTomatoes", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
 	{ cmd : "spi", title : "Sports Illustrated", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
@@ -101,9 +101,13 @@ jQuery(function($) {
 
 	if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
+		greetings(term);
+
+		term.clear();
+
 		$.each(menu, function(key, feed) {
 
-			if (invert === undefined || invert == "black") {
+			if (invert == "black") {
 
 				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: white' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: white' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
 
@@ -115,7 +119,7 @@ jQuery(function($) {
 
 		});
 
-		if (invert === undefined || invert == "black") {
+		if (invert == "black") {
 
 			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: white'>invert     &#9;&#9;Invert Terminal</a></tag-name>", { raw : true });
 
@@ -131,11 +135,11 @@ jQuery(function($) {
 
 	if (command == "invert") {
 
-		if (invert === undefined || invert == "black") {
+		if (invert == "black") {
 
 			invert = "white";
 
-			$("a").css({"color" : "green"});
+			$("a").attr("style", "color: green;");
 
 			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
 
@@ -145,7 +149,7 @@ jQuery(function($) {
 
 			invert = "black";
 
-			$("a").css({"color" : "white"});
+			$("a").attr("style", "color: white");
 
 			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
@@ -189,7 +193,6 @@ jQuery(function($) {
             return false;
         },
         onInit: function(term) {
-            greetings(term);
 	    term.exec("help");
         },
 	onClear: function(term) {
@@ -198,13 +201,14 @@ jQuery(function($) {
     });
     function greetings(term) {
 	term.echo("\n"+
-			"        oooo         o8o                    o8o \n"+
-			"        `888         `''                    `'' \n"+
-			"         888 .oo.   oooo  oooo oooo    ooo oooo \n"+
-			"         888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
-			"         888   888   888    `88..888..8'    888 \n"+
-			"         888   888   888     `888'`888'     888 \n"+
-			"        o888o o888o o888o     `8'  `8'     o888o\n");
+			"oooo         o8o                    o8o \n"+
+			"`888         `''                    `'' \n"+
+			" 888 .oo.   oooo  oooo oooo    ooo oooo \n"+
+			" 888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
+			" 888   888   888    `88..888..8'    888 \n"+
+			" 888   888   888     `888'`888'     888 \n"+
+			"o888o o888o o888o     `8'  `8'     o888o\n"+
+			"________________________________________");
     }
 
     function isKey(input) {
