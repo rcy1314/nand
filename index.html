@@ -87,8 +87,17 @@ var menu = [
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
 jQuery(function($) {
-
     $("body").terminal(function(command, term) {
+
+	$(document).one('ready', function() {
+
+		$('.menu').live("click", function(event) {
+		
+			term.exec(event.target.id);
+		
+		});
+
+	});
 
 	if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
@@ -96,17 +105,25 @@ jQuery(function($) {
 
 			if (invert === undefined || invert == "black") {
 
-				term.echo("<tag-name style='white-space:pre'>" + feed.cmd + "     &#9;&#9;<a target='_blank' style='color: white' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
+				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: white' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: white' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
 
 			} else if (invert == "white") { 
 
-				term.echo("<tag-name style='white-space:pre'>" + feed.cmd + "     &#9;&#9;<a target='_blank' style='color: green' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
+				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: green' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: green' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
 
 			}
 
 		});
 
-		term.echo("<tag-name style='white-space:pre'>invert     &#9;&#9;Invert Terminal</tag-name>", { raw : true });
+		if (invert === undefined || invert == "black") {
+
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: white'>invert     &#9;&#9;Invert Terminal</a></tag-name>", { raw : true });
+
+		} else if (invert == "white") { 
+
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9;Invert Terminal</a></tag-name>", { raw : true });
+
+		}
 
 		return false;
 
