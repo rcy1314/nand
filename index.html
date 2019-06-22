@@ -16,6 +16,7 @@
 	a {
 
 		text-decoration: none;
+		color: white;
 
 	}
 
@@ -42,89 +43,70 @@
 
 	.terminal {
 
-		--size: .95;
+ 		--size: .95;
 
 	}
 
 </style>
 <script>
-var invert;
+var url
+var input
+var invert
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
-var feedurl = {
-
-	abc:"https://abcnews.go.com/abcnews/internationalheadlines",
-	arch:"https://bbs.archlinux.org/extern.php?type=rss",
-	ars:"http://feeds.arstechnica.com/arstechnica/index?format=xml",
-	bbc:"http://feeds.bbci.co.uk/news/technology/rss.xml",
-	cbs:"https://www.cbsnews.com/latest/rss/world",
-	cnbc:"https://www.cnbc.com/id/19854910/device/rss/rss.html",
-	cnn:"http://rss.cnn.com/rss/cnn_topstories.rss",
-	comingsoon:"https://www.comingsoon.net/feed",
-	engadget:"https://www.engadget.com/rss.xml",
-	espn:"https://www.espn.com/espn/rss/news",
-	google:"https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
-	guardian:"https://www.theguardian.com/world/rss",
-	hacker:"https://news.ycombinator.com/rss",
-	kotaku:"https://kotaku.com/rss",
-	mashable:"http://feeds.mashable.com/Mashable",
-	mma:"https://mmajunkie.com/news/feed",
-	nbc:"http://feeds.nbcnews.com/nbcnews/public/news",
-	pbs:"https://www.pbs.org/newshour/feeds/rss/headlines",
-	people:"https://people.com/tag/news/feed/",
-	recipes:"http://feeds.feedburner.com/elise/simplyrecipes",
-	rt:"http://editorial.rottentomatoes.com/feed/",
-	si:"https://www.si.com/rss/si_topstories.rss",
-        slashdot:"http://rss.slashdot.org/Slashdot/slashdot",
-	steam:"https://store.steampowered.com/feeds/news.xml",
-	techcrunch:"http://feeds.feedburner.com/TechCrunch/",
-	time:"http://feeds.feedburner.com/time/topstories?format=xml",
-	tmz:"https://www.tmz.com/rss.xml",
-	ufc:"https://www.ufc.com/rss/news",
-        wired:"https://www.wired.com/feed/rss",
-	yahoo:"https://www.yahoo.com/tech/rss",
-	ycv:"https://www.yourcentralvalley.com/feed/"
-
-	};
+var menu = [
+	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
+	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
+	{ cmd : "ars", title : "Ars Technica", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
+	{ cmd : "bbc", title : "BBC Technology", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
+	{ cmd : "cbs", title : "CBS World", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
+	{ cmd : "cnbc", title : "CNBC Technology", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
+	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
+	{ cmd : "comingsoon", title : "ComingSoon.net", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
+	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
+	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
+	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com/?hl=en-US&gl=US&ceid=US:en" },
+	{ cmd : "guardian", title : "Guardian World News", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
+	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com/" },
+	{ cmd : "kotaku", title : "Kotaku News", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
+	{ cmd : "mashable", title : "Mashable", feed : "http://feeds.mashable.com/Mashable", homepage : "https://mashable.com" },
+	{ cmd : "mma", title : "MMAJunkie Headlines", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkies.com" },
+	{ cmd : "nbc", title : "NBC News", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
+	{ cmd : "pbs", title : "PBS World News", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
+	{ cmd : "people", title : "People Celebrity Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
+	{ cmd : "recipes", title : "SimpleRecipes", feed : "http://feeds.feedburner.com/elise/simplyrecipes", homepage : "https://www.simplyrecipes.com" },
+	{ cmd : "rot", title : "RottenTomatoes", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
+	{ cmd : "spi", title : "Sports Illustrated", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
+	{ cmd : "slashdot", title : "Slashdot Latest", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
+	{ cmd : "steam", title : "Steam News", feed : "https://store.steampowered.com/feeds/news.xml", homepage : "https://steamcommunity.com" },
+	{ cmd : "techcrunch", title : "TechCrunch News", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
+	{ cmd : "time", title : "Time Magazine", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
+	{ cmd : "tmz", title : "TMZ Headlines", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
+	{ cmd : "ufc", title : "UFC Top Stories", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
+	{ cmd : "wired", title : "Wired Magazine", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
+	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
+	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
+]
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
 
-        if (command == "" || command == "help" || command == "dir" || command == "ls") {
+	if (command == "" || command == "help" || command == "dir" || command == "ls") {
 
-		term.echo("<tag-name style='white-space:pre'>available commands are<br>" +
-			  "abc       &#9;&#9;ABC International<br>" +
-			  "arch      &#9;&#9;ArchLinux BBS<br>" +
-			  "ars       &#9;&#9;Ars Technica<br>" +
-			  "bbc       &#9;&#9;BBC Technology<br>" +
-			  "cbs       &#9;&#9;CBS World News<br>" +
-			  "comingsoon&#9;&#9;ComingSoon.net<br>" +
-			  "cnbc      &#9;&#9;CNBC Technology<br>" +
-			  "cnn       &#9;&#9;CNN Top Stories<br>" +
-			  "engadget  &#9;&#9;Engadget Technology<br>" +
-			  "espn      &#9;&#9;ESPN Sports<br>" +
-			  "google    &#9;&#9;Google Top Stories<br>" +
-			  "guardian  &#9;&#9;Guardian World News<br>" +
-			  "hacker    &#9;&#9;Hacker News<br>" +
-			  "kotaku    &#9;&#9;Kotaku News<br>" +
-			  "mashable  &#9;&#9;Mashable<br>" +
-			  "mma       &#9;&#9;MMAJunkie News<br>" +
-			  "nbc       &#9;&#9;NBC News<br>" +
-			  "pbs       &#9;&#9;PBS World News<br>" +
-			  "people    &#9;&#9;People Celebrity News<br>" +
-			  "recipes   &#9;&#9;Simple Recipes<br>" +
-			  "rt        &#9;&#9;Rotten Tomatoes<br>" +
-			  "si        &#9;&#9;Sports Illustrated<br>" +
-			  "slashdot  &#9;&#9;Slashdot Latest<br>" +
-			  "steam     &#9;&#9;Steam News<br>" +
-			  "techcrunch&#9;&#9;TechCrunch News<br>" +
-			  "time      &#9;&#9;Time Magazine<br>" +
-			  "tmz       &#9;&#9;TMZ Headlines<br>" +
-			  "ufc       &#9;&#9;UFC Top Stories<br>" +
-			  "wired     &#9;&#9;Wired Magazine<br>" +
-			  "yahoo     &#9;&#9;Yahoo Technology<br>" +
-			  "ycv       &#9;&#9;Your Central Valley<br>" +
-			  "invert    &#9;&#9;Invert Terminal<br>" +
-			  "</tag-name>", { raw : true });
+		$.each(menu, function(key, feed) {
+
+			if (invert === undefined || invert == "black") {
+
+				term.echo("<tag-name style='white-space:pre'>" + feed.cmd + "     &#9;&#9;<a target='_blank' style='color: white' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
+
+			} else if (invert == "white") { 
+
+				term.echo("<tag-name style='white-space:pre'>" + feed.cmd + "     &#9;&#9;<a target='_blank' style='color: green' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
+
+			}
+
+		});
+
+		term.echo("<tag-name style='white-space:pre'>invert     &#9;&#9;Invert Terminal</tag-name>", { raw : true });
 
 		return false;
 
@@ -155,39 +137,12 @@ jQuery(function($) {
 		}
 	}
 	
-	if (isKey(command)){
+	if (!isKey(command)){
 
-                for (var key in feedurl) {
-
-			if (command == key) {
-
-				feed = feedurl[key];
-
-			};
-
-		}
-
-                getfeed(term, feed);
-
-        } else if (!isKey(command)) {
-
-		sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");		
-
-		rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
-
-		if (invert === undefined || invert == "black") {
-
-			term.echo("<br><a target='_blank' style='color: white' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
-
-		} else if (invert == "white") {
-
-			term.echo("<br><a target='_blank' style='color: green' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
-
-		}
-
-                getfeed(term, rss);		
-
-	}
+		if (url === undefined) { return false; }
+ 		getfeed(term, url);
+		url = undefined;
+        }
 
     }, {
 	prompt: "~ ",
@@ -214,19 +169,21 @@ jQuery(function($) {
 			"        o888o o888o o888o     `8'  `8'     o888o\n");
     }
 
-    function isKey(command) {
+    function isKey(input) {
 
-	for (var key in feedurl) {
+	$.each(menu, function(key, feed) {
 
-		if (command == key) {
-
-			return true;
+		if (input === feed.cmd) {
+			
+			url = feed.feed
+			
+			return url;
 
 		}
 
-	}
+	});
 
-	return false;
+	
 
     }
 
