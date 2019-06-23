@@ -59,11 +59,12 @@
 <script>
 var url
 var input
-var invert = "white"
+var invert = "black"
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
+	{ cmd : "archlinux", title : "/r/ArchLinux", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ cmd : "ars", title : "Ars Technica", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
 	{ cmd : "bbc", title : "BBC Technology", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
 	{ cmd : "cbs", title : "CBS World", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
@@ -120,6 +121,42 @@ $("#weather").hide();
 		});
 
 	});
+
+	if (command == "archlinux") {
+
+		$.get(proxyurl + "https://www.reddit.com/r/archlinux/.rss", function (data) {
+
+		        $(data).find("entry").each(function (index) {
+						
+					if (index < 1) {
+
+						return true;
+
+					} else if (index > 1 && index < 17) {
+
+						if (invert === undefined || invert == "black") {
+
+							term.echo("<br>", { raw : true });
+
+							term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").attr("href") + "'>" + $(this).find("title").text() + "</a><br>", { raw : true }).resume();
+
+						} else if (invert == "white") {
+
+							term.echo("<br>", { raw : true });
+
+							term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").attr("href") + "'>" + $(this).find("title").text() + "</a><br>", { raw : true }).resume();
+
+						}
+
+					};
+
+   			});
+
+		});
+
+		return false;
+
+	}
 
 	if (command == "weather") {
 
@@ -335,8 +372,6 @@ $("#weather").hide();
 
     function getfeed(term, feed) {
 
-	var i = 0;
-
 	term.pause();
 
 	$.get(proxyurl + feed, function (data) {
@@ -344,8 +379,6 @@ $("#weather").hide();
 	        $(data).find("item").each(function (index) {
 							
                         term.echo("<br>", { raw : true });
-
-                        var rss = $(this);
 
 					if (index >= 15) {
 
@@ -355,12 +388,12 @@ $("#weather").hide();
 
 						if (invert === undefined || invert == "black") {
 
-							term.echo("<a target='_blank' style='color: white' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+							term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
 
 						} else if (invert == "white") {
 
-							term.echo("<a target='_blank' style='color: green' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+							term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
 						}
 
