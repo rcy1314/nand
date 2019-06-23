@@ -24,14 +24,14 @@
 
 	#clock {
 
-		color: #aaa;
-		position: absolute;
-		z-index: 365;
-		top: 1px;
-		right: 20px;
 		font-family: monospace;
+		position: absolute;
 		cursor: pointer;
 		font-size: 11px;
+		z-index: 365;
+		color: #aaa;
+		right: 1px;
+		top: 1px;
 
 	}
 
@@ -49,9 +49,8 @@
 </style>
 <script>
 var url
-var input
 var invert = "black"
-var proxyurl = "https://cors-anywhere.herokuapp.com/";
+var proxy = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
@@ -96,36 +95,20 @@ var menu = [
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
+
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
 
 	$(document).one('ready', function() {
 
-		$("#clock").live("click", function() {
+		$("#clock").live("click", function() { window.open('http://time.is', '_blank'); });
 
-			window.open('http://time.is', '_blank');
+		$(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); });
 
-		});
+		$(".help").live("click", function() { term.exec("help"); });
 
-		$(".menu").live("click", function(event) {
-		
-			term.exec(event.target.id);
-			term.clear();
-		
-		});
-
-		$(".help").live("click", function() {
-
-			term.exec("help");
-
-		});
-
-		$(".invert").live("click", function() {
-
-			invertColor();
-
-		});
+		$(".invert").live("click", function() { invertColor(); });
 
 	});
 
@@ -133,7 +116,7 @@ jQuery(function($) {
 
 		term.pause();
 
-		$.get(proxyurl + "https://www.reddit.com/r/archlinux/.rss", function (data) {
+		$.get(proxy + "https://www.reddit.com/r/archlinux/.rss", function (data) {
 
 		        $(data).find("entry").each(function (index) {
 						
@@ -199,7 +182,7 @@ jQuery(function($) {
 
 		}
 
-		term.echo("_____________________________________________\n");
+		term.echo("<br>", { raw : true });
 		return false;
 
 	}
@@ -239,6 +222,8 @@ jQuery(function($) {
 
 		if (url === undefined) { 
 
+			homepage = "https://www.bing.com"
+
 	                sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");
 
 	                rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
@@ -273,13 +258,11 @@ jQuery(function($) {
 
         }
 
-    }, {
-	prompt: "~ ", greetings: null, onBlur: function() { return false; },
-        onInit: function(term) { term.exec("help"); invertColor(); },
-	onClear: function(term) { greetings(term); }
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); }
+
     });
 
-    function greetings(term) { term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>_____________________________________________<br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<br>Hiwi is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
 
     function invertColor() {
 
@@ -311,11 +294,11 @@ jQuery(function($) {
 
     }
 
-    function isKey(input) {
+    function isKey(command) {
 
 	$.each(menu, function(key, feed) {
 
-		if (input === feed.cmd) {
+		if (command === feed.cmd) {
 			
 			url = feed.feed
 			
@@ -331,32 +314,31 @@ jQuery(function($) {
 
 	term.pause();
 
-	$.get(proxyurl + feed, function (data) {
+	$.get(proxy + feed, function (data) {
 
 	        $(data).find("item").each(function (index) {
 							
                         term.echo("<br>", { raw : true });
 
-					if (index >= 15) {
+				if (index >= 15) {
 
-						term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+					term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
 
-						return false;
+					return false;
 
-					} else {
+				} else {
 
-						if (invert == "black") {
+					if (invert == "black") {
 
-							term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
+						term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
+					} else if (invert == "white") {
 
-						} else if (invert == "white") {
+						term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
-							term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
+					}
 
-						}
-
-					};
+				}
 
    		});
 
@@ -367,6 +349,7 @@ jQuery(function($) {
 var clock = document.getElementById("clock");
 setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1);
 function getCurrentTime() { var currentDate = new Date(); return currentDate; }
+
 });
 </script>
 <div id="clock"></div>
