@@ -93,6 +93,7 @@ var menu = [
 	{ cmd : "tmz", title : "TMZ Headlines", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
 	{ cmd : "ufc", title : "UFC Top Stories", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
 	{ cmd : "usa", title : "USA Today Technology", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
+	{ cmd : "/wg/", title : "Wallpapers General", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
 	{ cmd : "wired", title : "Wired Magazine", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
@@ -332,17 +333,13 @@ $("#weather").hide();
 
 	$.get(proxyurl + feed, function (data) {
 
-	        $(data).find("item").each(function () {
+	        $(data).find("item").each(function (index) {
 							
                         term.echo("<br>", { raw : true });
 
                         var rss = $(this);
 
-				i = i + 1;
-
-					if (i > 11) {
-
-						i = 0;
+					if (index >= 15) {
 
 						return false;
 
@@ -351,6 +348,7 @@ $("#weather").hide();
 						if (invert === undefined || invert == "black") {
 
 							term.echo("<a target='_blank' style='color: white' href='" + rss.find("link").text() + "'>" + rss.find("title").text() + "</a>", { raw : true }).resume();
+
 
 						} else if (invert == "white") {
 
