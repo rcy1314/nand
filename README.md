@@ -6,20 +6,19 @@
 
 ## HOWTO
 
-Simply add RSS XML feeds to the menu array (except reddit) and point and click commands, or type command and return for menu.
+Simply add rss xml feeds to the menu array (except reddit),
+point and click commands, or type command and return for menu.
 
 ## Credit
 
->This was made possible by
+>JCUBIC 
 
->>JCUBIC 
+>HEROKU 
 
->>HEROKU 
+>BING 
 
->>BING 
+>Mystic 
 
->>Mystic 
+>Blackcatz 
 
->>Blackcatz 
-
->>Malgroup
+>Malgroup
