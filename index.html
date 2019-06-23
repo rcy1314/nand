@@ -95,7 +95,6 @@ var menu = [
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
 jQuery(function($) {
-$("#weather").hide();
 
     $("body").terminal(function(command, term) {
 
@@ -163,14 +162,6 @@ $("#weather").hide();
 			term.echo("<br><a target='_blank' href='https://www.reddit.com/r/archlinux'>www.reddit.com/r/archlinux</a>", { raw : true });
 
 		});
-
-		return false;
-
-	}
-
-	if (command == "weather") {
-
-		$("#weather").slideToggle("slow");
 
 		return false;
 
@@ -264,15 +255,16 @@ $("#weather").hide();
 
 		}
 
- 	$.each(menu, function(key, feed) {
+	 	$.each(menu, function(key, feed) {
 
-		if (command === feed.cmd) {
+			if (command === feed.cmd) {
 			
-			homepage = feed.homepage
+				homepage = feed.homepage
 
-		}
+			}
 
-	});
+		});
+	
 		getfeed(term, url, homepage);
 
 		url = undefined;
@@ -280,23 +272,12 @@ $("#weather").hide();
         }
 
     }, {
-	prompt: "~ ",
-        greetings: null,
-        onBlur: function() {
-            return false;
-        },
-        onInit: function(term) {
-	    term.exec("help");
-	    invertColor();
-        },
-	onClear: function(term) {
-	    greetings(term);
-	}
+	prompt: "~ ", greetings: null, onBlur: function() { return false; },
+        onInit: function(term) { term.exec("help"); invertColor(); },
+	onClear: function(term) { greetings(term); }
     });
 
-    function greetings(term) {
-	    term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>_____________________________________________<br><br>", { raw : true });
-	}
+    function greetings(term) { term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>_____________________________________________<br><br>", { raw : true }); }
 
     function invertColor() {
 
@@ -342,11 +323,10 @@ $("#weather").hide();
 
 	});
 
-	
-
     }
 
     function getfeed(term, feed, homepage) {
+
 	term.pause();
 
 	$.get(proxyurl + feed, function (data) {
