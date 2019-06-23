@@ -52,6 +52,7 @@ var url
 var invert = "black"
 var proxy = "https://cors-anywhere.herokuapp.com/";
 var menu = [
+
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
 	{ cmd : "archlinux", title : "/r/ArchLinux", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
@@ -62,7 +63,7 @@ var menu = [
 	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
 	{ cmd : "comingsoon", title : "ComingSoon.net", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
 	{ cmd : "dailymail", title : "DailyMail Headlines", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
-	{ cmd : "dummy", title : "This is a dummy", feed : "http://asdklhjasdflk.com", homepage : "asdlkfjhasdfljh" },
+	{ cmd : "dummy", title : "This is a dummy", feed : "http://thisisadummy.com", homepage : "#" },
 	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
@@ -84,7 +85,7 @@ var menu = [
 	{ cmd : "rotten", title : "RottenTomatoes", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
 	{ cmd : "sky", title : "Sky Technology", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
 	{ cmd : "slashdot", title : "Slashdot Latest", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
-	{ cmd : "smiths", title : "Smithsonian Magazine", feed : "https://www.smithsonianmag.com/rss/articles", homepage : "https://www.smithsonianmag.com" },
+	{ cmd : "ssn", title : "Smithsonian Magazine", feed : "https://www.smithsonianmag.com/rss/articles", homepage : "https://www.smithsonianmag.com" },
 	{ cmd : "sports", title : "Sports Illustrated", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
 	{ cmd : "steam", title : "Steam News", feed : "https://store.steampowered.com/feeds/news.xml", homepage : "https://steamcommunity.com" },
 	{ cmd : "techcrunch", title : "TechCrunch News", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
@@ -97,6 +98,7 @@ var menu = [
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
+
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
@@ -252,7 +254,7 @@ jQuery(function($) {
 
 			404: function (){
 
-				term.echo("\nsomething went wrong (page not found) resuming...\n");
+				term.echo("\npage not found resuming...\n");
 
 				term.resume();
 
