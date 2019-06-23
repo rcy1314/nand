@@ -112,6 +112,8 @@ jQuery(function($) {
 
 	});
 
+	if (command == "invert") { invertColor(); return false; }
+	
 	if (command == "archlinux") {
 
 		term.pause();
@@ -187,42 +189,11 @@ jQuery(function($) {
 
 	}
 
-	if (command == "invert") {
-
-		if (invert == "black") {
-
-			invert = "white";
-
-			$("a").attr("style", "color: green;");
-
-			$("#clock").attr("style", "color: green;");
-
-			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
-
-			return false;
-
-		} else if (invert == "white") { 
-
-			invert = "black";
-
-			$("a").attr("style", "color: grey;");
-
-			$("#clock").attr("style", "color: grey;");
-
-			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
-
-			return false;
-
-		}
-
-		
-	}
-	
 	if (!isKey(command)){
 
 		if (url === undefined) { 
 
-			homepage = "https://www.bing.com"
+			homepage = "https://www.bing.com";
 
 	                sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");
 
@@ -262,35 +233,35 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<br>Hiwi is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<br><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a> is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
 
     function invertColor() {
 
-		if (invert == "black") {
+	if (invert == "black") {
 
-			invert = "white";
+		invert = "white";
 
-			$("a").attr("style", "color: green;");
+		$("a").attr("style", "color: green;");
 
-			$("#clock").attr("style", "color: green;");
+		$("#clock").attr("style", "color: green;");
 
-			$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
+		$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
 
-			return false;
+		return false;
 
-		} else if (invert == "white") { 
+	} else if (invert == "white") { 
 
-			invert = "black";
+		invert = "black";
 
-			$("a").attr("style", "color: grey;");
+		$("a").attr("style", "color: grey;");
 
-			$("#clock").attr("style", "color: grey;");
+		$("#clock").attr("style", "color: grey;");
 
-			$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
+		$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
-			return false;
+		return false;
 
-		}
+	}
 
     }
 
@@ -346,13 +317,10 @@ jQuery(function($) {
 
     }
 
-var clock = document.getElementById("clock");
-setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1);
-function getCurrentTime() { var currentDate = new Date(); return currentDate; }
+    var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 
 });
 </script>
-<div id="clock"></div>
-<div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+<div id="clock"></div><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>

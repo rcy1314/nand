@@ -10,4 +10,16 @@ Simply add RSS XML feeds to the menu array (except reddit) and point and click c
 
 ## Credit
 
-JCUBIC HEROKU BING Mystic Blackcatz Malgroup
+>This was made possible by
+
+>>JCUBIC 
+
+>>HEROKU 
+
+>>BING 
+
+>>Mystic 
+
+>>Blackcatz 
+
+>>Malgroup
