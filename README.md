@@ -1,4 +1,4 @@
-## JQuery Terminal RSS News
+### JQuery Terminal RSS News
 
 ## About
 
@@ -8,7 +8,7 @@
 
 Simply add RSS XML feeds to the menu array (except reddit) and point and click commands or type command and return for menu.
 
-##Credit
+## Credit
 
 JCUBIC
 
