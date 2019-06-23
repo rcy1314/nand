@@ -22,15 +22,6 @@
 
 	}
 
-	#stats {
-
-		position: absolute;
-		z-index: 365;
-		bottom: 0px;
-		right: 20px;
-
-	}
-
 	#clock {
 
 		color: #aaa;
@@ -38,7 +29,6 @@
 		z-index: 365;
 		top: 1px;
 		right: 20px;
-		font-size: 95%;
 		font-family: monospace;
 		cursor: pointer;
 		font-size: 11px;
@@ -60,7 +50,7 @@
 <script>
 var url
 var input
-var invert = "white"
+var invert = "black"
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
@@ -109,7 +99,7 @@ $("#weather").hide();
 
 	$(document).one('ready', function() {
 
-		$("#clock").live("click", function(event) {
+		$("#clock").live("click", function() {
 
 			window.open('http://time.is', '_blank');
 
@@ -122,15 +112,23 @@ $("#weather").hide();
 		
 		});
 
-		$(".help").live("click", function(event) {
+		$(".help").live("click", function() {
 
 			term.exec("help");
+
+		});
+
+		$(".invert").live("click", function() {
+
+			invertColor();
 
 		});
 
 	});
 
 	if (command == "archlinux") {
+
+		term.pause();
 
 		$.get(proxyurl + "https://www.reddit.com/r/archlinux/.rss", function (data) {
 
@@ -198,17 +196,15 @@ $("#weather").hide();
 
 		if (invert == "black") {
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: grey'>weather     &#9;&#9; Toggle Weather</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: grey'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
 
 		} else if (invert == "white") { 
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: green'>weather     &#9;&#9; Toggle Weather</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
+			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: green'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
 
 		}
 
-		term.echo("____________________________________________\n");
+		term.echo("_____________________________________________\n");
 		return false;
 
 	}
@@ -329,7 +325,7 @@ $("#weather").hide();
     });
 
     function greetings(term) {
-	    term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>____________________________________________<br>", { raw : true });
+	    term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>_____________________________________________<br><br>", { raw : true });
 	}
 
     function invertColor() {
@@ -422,7 +418,6 @@ function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 });
 </script>
 <div id="clock"></div>
-<div id="weather" style="height: 205px; z-index: 365; width: 221px; position: absolute; right: 20px; transform:translateY(50%);"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=111449" width="221" height="228" frameborder="0" scrolling="no"></iframe><a style="margin: -20px 0 0 0;z-index: 1;position: relative;display: block;text-indent: -9999em;height: 20px" href="https://www.willyweather.com/ca/tulare-county/visalia.html" rel="nofollow">https://www.willyweather.com/ca/tulare-county/visalia.html</a></div>
-<div id="stats" style="cursor: pointer;" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+<div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
