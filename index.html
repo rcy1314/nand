@@ -41,6 +41,7 @@
 		font-size: 95%;
 		font-family: monospace;
 		cursor: pointer;
+		font-size: 11px;
 
 	}
 
@@ -59,7 +60,7 @@
 <script>
 var url
 var input
-var invert = "black"
+var invert = "white"
 var proxyurl = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
@@ -74,9 +75,9 @@ var menu = [
 	{ cmd : "dailymail", title : "DailyMail Headlines", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
 	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
-	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com/?hl=en-US&gl=US&ceid=US:en" },
+	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ cmd : "guardian", title : "Guardian World News", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
-	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com/" },
+	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ cmd : "insider", title : "Business Insider", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
 	{ cmd : "kotaku", title : "Kotaku News", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
 	{ cmd : "mashable", title : "Mashable", feed : "http://feeds.mashable.com/Mashable", homepage : "https://mashable.com" },
@@ -117,7 +118,14 @@ $("#weather").hide();
 		$(".menu").live("click", function(event) {
 		
 			term.exec(event.target.id);
+			term.clear();
 		
+		});
+
+		$(".help").live("click", function(event) {
+
+			term.exec("help");
+
 		});
 
 	});
@@ -151,6 +159,8 @@ $("#weather").hide();
 					};
 
    			});
+
+			term.echo("<br><a target='_blank' href='https://www.reddit.com/r/archlinux'>www.reddit.com/r/archlinux</a>", { raw : true });
 
 		});
 
@@ -189,16 +199,12 @@ $("#weather").hide();
 		if (invert == "black") {
 
 			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: grey'>weather     &#9;&#9; Toggle Weather</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: grey'>about      &#9;&#9; About Hiwi</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: grey'>credit      &#9;&#9; Credits</a></tag-name>", { raw : true });
+				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: grey'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
 
 		} else if (invert == "white") { 
 
 			term.echo("<tag-name style='white-space:pre'><a href='#' id='weather' class='menu' style='color: green'>weather     &#9;&#9; Toggle Weather</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='about' class='menu' style='color: green'>about      &#9;&#9; About Hiwi</a><br></tag-name>" +
-				  "<tag-name style='white-space:pre'><a href='#' id='credit' class='menu' style='color: green'>credit      &#9;&#9; Credits</a></tag-name>", { raw : true });
+				  "<tag-name style='white-space:pre'><a href='#' id='invert' class='menu' style='color: green'>invert     &#9;&#9; Invert Terminal</a><br></tag-name>", { raw : true });
 
 		}
 
@@ -266,6 +272,8 @@ $("#weather").hide();
 			return false;
 
 		}
+
+		
 	}
 	
 	if (!isKey(command)){
@@ -276,7 +284,7 @@ $("#weather").hide();
 
 	                rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
 
-        	        if (invert === undefined || invert == "black") {
+        	        if (invert == "black") {
 
                 	        term.echo("<br><a target='_blank' style='color: white' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
 
@@ -289,8 +297,17 @@ $("#weather").hide();
                 	getfeed(term, rss);
 
 		}
- 
-		getfeed(term, url);
+
+ 	$.each(menu, function(key, feed) {
+
+		if (command === feed.cmd) {
+			
+			homepage = feed.homepage
+
+		}
+
+	});
+		getfeed(term, url, homepage);
 
 		url = undefined;
 
@@ -310,17 +327,10 @@ $("#weather").hide();
 	    greetings(term);
 	}
     });
+
     function greetings(term) {
-	term.echo("\nHiwi is now mouse friendly! return for menu.\n"+
-//			"oooo         o8o                    o8o \n"+
-//			"`888         `''                    `'' \n"+
-//			" 888 .oo.   oooo  oooo oooo    ooo oooo \n"+
-//			" 888P'Y88b  `888   `88. `88.  .8'  `888 \n"+
-//			" 888   888   888    `88..888..8'    888 \n"+
-//			" 888   888   888     `888'`888'     888 \n"+
-//			"o888o o888o o888o     `8'  `8'     o888o\n"+
-			"____________________________________________\n");
-    }
+	    term.echo("<br>Hiwi is now mouse friendly! return for [<a href='#' class='help'>menu</a>]<br>____________________________________________<br>", { raw : true });
+	}
 
     function invertColor() {
 
@@ -370,8 +380,7 @@ $("#weather").hide();
 
     }
 
-    function getfeed(term, feed) {
-
+    function getfeed(term, feed, homepage) {
 	term.pause();
 
 	$.get(proxyurl + feed, function (data) {
@@ -382,11 +391,13 @@ $("#weather").hide();
 
 					if (index >= 15) {
 
+						term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+
 						return false;
 
 					} else {
 
-						if (invert === undefined || invert == "black") {
+						if (invert == "black") {
 
 							term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
