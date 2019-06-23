@@ -62,6 +62,7 @@ var menu = [
 	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
 	{ cmd : "comingsoon", title : "ComingSoon.net", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
 	{ cmd : "dailymail", title : "DailyMail Headlines", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
+	{ cmd : "dummy", title : "This is a dummy", feed : "http://asdklhjasdflk.com", homepage : "asdlkfjhasdfljh" },
 	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
@@ -235,6 +236,36 @@ jQuery(function($) {
 
     function greetings(term) { term.echo("<br><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a> is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
 
+    function isUp(term, url) {
+
+	term.pause;
+
+	$.ajax({
+
+		type: "get",
+
+		url: proxy + url,
+
+		cache: false,
+
+		statusCode: { 
+
+			404: function (){
+
+				term.echo("\nsomething went wrong (page not found) resuming...\n");
+
+				term.resume();
+
+		}
+
+	}, async: true
+
+	});
+
+	return false;
+
+    }
+
     function invertColor() {
 
 	if (invert == "black") {
@@ -284,6 +315,8 @@ jQuery(function($) {
     function getfeed(term, feed, homepage) {
 
 	term.pause();
+
+	isUp(term, url);
 
 	$.get(proxy + feed, function (data) {
 
