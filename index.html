@@ -48,15 +48,18 @@
 </style>
 <script>
 var url
+
 var invert = "black"
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
+
 var menu = [
 
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ cmd : "archlinux", title : "/r/ArchLinux", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ cmd : "ars", title : "Ars Technica", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
 	{ cmd : "bbc", title : "BBC Technology", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
+	{ cmd : "beta", title : "BetaNews", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
 	{ cmd : "cbs", title : "CBS World", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
 	{ cmd : "cnbc", title : "CNBC Technology", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
 	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
@@ -69,10 +72,15 @@ var menu = [
 	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ cmd : "guardian", title : "Guardian World News", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
 	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
+	{ cmd : "huffington", title : "HuffingtonPost Tech", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
+	{ cmd : "infoworld", title : "InfoWorld News", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ cmd : "insider", title : "Business Insider", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
 	{ cmd : "kotaku", title : "Kotaku News", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
+	{ cmd : "latimes", title : "LA Times Technology", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
 	{ cmd : "mashable", title : "Mashable", feed : "http://feeds.mashable.com/Mashable", homepage : "https://mashable.com" },
 	{ cmd : "mechanics", title : "Popular Mechanics", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
+	{ cmd : "meme", title : "TechMeme Stories", feed : "https://www.techmeme.com/feed.xml", homepage : "https://www.techmeme.com" },
+	{ cmd : "mirror", title : "Mirror.co.uk Tech", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
 	{ cmd : "mlb", title : "MLB News", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://www.mlb.com" },
 	{ cmd : "mma", title : "MMA Headlines", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkie.com" },
 	{ cmd : "msn", title : "Microsoft Network", feed : "http://rss.msn.com", homepage : "https://www.msn.com" },
@@ -80,6 +88,7 @@ var menu = [
 	{ cmd : "npr", title : "NPR Technology", feed : "https://www.npr.org/rss/rss.php?id=1019", homepage : "https://www.npr.org" },
 	{ cmd : "packet", title : "PacketStorm News", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
 	{ cmd : "pbs", title : "PBS World News", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
+	{ cmd : "pcworld", title : "PCWorld Articles", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
 	{ cmd : "people", title : "People Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ cmd : "radar", title : "TechRadar Technology", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
 	{ cmd : "recipes", title : "SimpleRecipes", feed : "http://feeds.feedburner.com/elise/simplyrecipes", homepage : "https://www.simplyrecipes.com" },
@@ -90,6 +99,7 @@ var menu = [
 	{ cmd : "sports", title : "Sports Illustrated", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
 	{ cmd : "steam", title : "Steam News", feed : "https://store.steampowered.com/feeds/news.xml", homepage : "https://steamcommunity.com" },
 	{ cmd : "techcrunch", title : "TechCrunch News", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
+	{ cmd : "techspot", title : "TechSpot Articles", feed : "https://www.techspot.com/backend.xml", homepage : "https://www.techspot.com" },
 	{ cmd : "time", title : "Time Magazine", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
 	{ cmd : "tmz", title : "TMZ Headlines", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
 	{ cmd : "ufc", title : "UFC Top Stories", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
@@ -117,46 +127,6 @@ jQuery(function($) {
 
 	if (command == "invert") { invertColor(); return false; }
 	
-	if (command == "archlinux") {
-
-		term.pause();
-
-		$.get(proxy + "https://www.reddit.com/r/archlinux/.rss", function (data) {
-
-		        $(data).find("entry").each(function (index) {
-						
-					if (index < 1) {
-
-						return true;
-
-					} else if (index > 1 && index < 17) {
-
-						if (invert === undefined || invert == "black") {
-
-							term.echo("<br>", { raw : true });
-
-							term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").attr("href") + "'>" + $(this).find("title").text() + "</a><br>", { raw : true }).resume();
-
-						} else if (invert == "white") {
-
-							term.echo("<br>", { raw : true });
-
-							term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").attr("href") + "'>" + $(this).find("title").text() + "</a><br>", { raw : true }).resume();
-
-						}
-
-					};
-
-   			});
-
-			term.echo("<br><a target='_blank' href='https://www.reddit.com/r/archlinux'>www.reddit.com/r/archlinux</a>", { raw : true });
-
-		});
-
-		return false;
-
-	}
-
 	if (command == "" || command == "help") {
 
 		greetings(term);
