@@ -1,13 +1,10 @@
-### JQuery Terminal RSS News
-
 ## About
 
 'HIWI' an acroynm for 'How I Want It'.
 
 ## HOWTO
 
-Simply add rss xml feeds to the menu array (except reddit),
-point and click commands, or type command and return for menu.
+Add a feed to the menu array (except reddit), point and click command and menu, or type command and return for menu.
 
 ## Credit
 
@@ -16,9 +13,3 @@ point and click commands, or type command and return for menu.
 >HEROKU 
 
 >BING 
-
->Mystic 
-
->Blackcatz 
-
->Malgroup
