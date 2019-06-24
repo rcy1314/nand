@@ -54,8 +54,9 @@
 <script>
 var url
 var acolor
-var invert = "yotsuba"
 var proxy = "https://cors-anywhere.herokuapp.com/";
+var colors = [ 'white', 'green', 'yotsuba', 'yotsuba b' ]
+var colorsindex = colors.length;
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
@@ -115,7 +116,6 @@ var menu = [
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
-
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
@@ -142,7 +142,7 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
-		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9;Cycle Terminal Colors</a><br><br></tag-name>", { raw : true });
+		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9;Cycle Colors</a><br><br></tag-name>", { raw : true });
 
 		return false;
 
@@ -170,67 +170,37 @@ jQuery(function($) {
 
     function greetings(term) { term.echo("<br><tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;&#9;&#9;   [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
 
-    function invertColor() {
+    function invertColor() { colorsindex = colorsindex + 1; colorsindex = colorsindex % colors.length;
 
-	if (invert == "black") {
-
-		invert = "white";
+	if (colors[colorsindex] == "green") {
 
 		acolor = "green"
 
-		$("a").attr("style", "color: green;");
-
-		$("#clock").attr("style", "color: green;");
-
 		$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
 
-		return false;
-
-	} else if (invert == "white") { 
-
-		invert = "yotsuba"
+	} else if (colors[colorsindex] == "white") { 
 
 		acolor = "white"
 
-		$("a").attr("style", "color: white;");
-
-		$("#clock").attr("style", "color: white;");
-
 		$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
-		return false;
-
-	} else if (invert == "yotsuba") {
-
-		invert = "yotsuba b"
+	} else if (colors[colorsindex] == "yotsuba") {
 
 		acolor = "#81413B"
 
-		$("a").attr("style", "color: #81413B;");
-
-		$("a:visited").attr("style", "color: #81413B;");
-
-		$("#clock").attr("style", "color: #81413B;");
-
 		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #FDE5C9; background-image: linear-gradient(#EDD6BE, #FFFAE7)");
 
-		return false;
-
-	} else if (invert == "yotsuba b") {
-
-		invert = "black"
+	} else if (colors[colorsindex] == "yotsuba b") {
 
 		acolor = "#828593"
 
-		$("a").attr("style", "color: #828593;");
-
-		$("#clock").attr("style", "color: #828593;");
-
 		$(".terminal").attr("style", "--color: rgba(130, 133, 147, 0.99); --background: #E7E9F5; background-image: linear-gradient(#D0D5E1, #E7E9F5");
 
-		return false;
-
 	}
+
+		$("a").attr("style", "color:" + acolor);
+
+		return false;
 
     }
 
@@ -264,26 +234,17 @@ jQuery(function($) {
 							
                         term.echo("<br>", { raw : true });
 
-				if (index >= 20) {
+				if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
 
-					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
-
-					return false;
-
-				} else {
-
-					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true });
-
-				}
+				} else { term.echo("<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
 
    		});
 
 	});
 
     }
-var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 
 });
-</script><div id="clock"></div><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+</script><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
 </body>
 </html>
