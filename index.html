@@ -16,7 +16,6 @@
 	a {
 
 		text-decoration: none;
-		font-weight: bold;
 		color: grey;
 
 	}
@@ -48,13 +47,10 @@
 </style>
 <script>
 var url
-
 var invert = "black"
-
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var menu = [
-
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
 	{ cmd : "archlinux", title : "ArchLinux Subreddit", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
@@ -111,8 +107,8 @@ var menu = [
 	{ cmd : "wired", title : "Wired Magazine", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
-
 ]
+
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
@@ -206,10 +202,7 @@ jQuery(function($) {
 
         }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); },
-
-	onPause: function(term) { setTimeout(function(){ term.resume() },5000); } 
-
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); }, onPause: function(term) { setTimeout(function(){ term.resume() },5000); } 
 
     });
 
@@ -303,44 +296,33 @@ jQuery(function($) {
 
 		if ( entry.length > 0 ) {
 
-	        $(data).find("entry").each(function (index) {
-							
-                        term.echo("<br>", { raw : true });
+			var format = "entry"
 
-				if (index >= 15) {
+		} else {
 
-					term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
-
-					return false;
-
-				} else {
-
-					if (invert == "black") {
-
-						term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
-
-					} else if (invert == "white") {
-
-						term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
-
-					}
-
-				}
-
-   		});
-			
+			var format = "item"
 
 		}
 
-	        $(data).find("item").each(function (index) {
+	        $(data).find(format).each(function (index) {
 							
                         term.echo("<br>", { raw : true });
 
 				if (index >= 15) {
 
-					term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+					if (invert == "black") {
 
-					return false;
+						term.echo("<a target='_blank' style='color: white' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+
+						return false;
+
+					} else if (invert == "white") {
+
+						term.echo("<a target='_blank' style='color: green' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+
+						return false;
+
+					}
 
 				} else {
 
@@ -360,9 +342,7 @@ jQuery(function($) {
 
 	});
 
-    }
-
-    var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
+    } var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 
 });
 </script><div id="clock"></div><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
