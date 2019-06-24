@@ -57,6 +57,7 @@ var menu = [
 
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
+	{ cmd : "archlinux", title : "ArchLinux Subreddit", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ cmd : "ars", title : "Ars Technica", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
 	{ cmd : "bbc", title : "BBC Technology", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
 	{ cmd : "beta", title : "BetaNews", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
@@ -105,13 +106,13 @@ var menu = [
 	{ cmd : "tmz", title : "TMZ Headlines", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
 	{ cmd : "ufc", title : "UFC Top Stories", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
 	{ cmd : "usa", title : "USA Today Technology", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
+	{ cmd : "verge", title : "The Verge", feed : "https://www.theverge.com/rss/index.xml", homepage : "https://www.theverge.com" },
 	{ cmd : "wpg", title : "WallPapers General", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
 	{ cmd : "wired", title : "Wired Magazine", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
 	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 
 ]
-
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
@@ -205,7 +206,10 @@ jQuery(function($) {
 
         }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); }
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); },
+
+	onPause: function(term) { setTimeout(function(){ term.resume() },5000); } 
+
 
     });
 
@@ -294,6 +298,39 @@ jQuery(function($) {
 	isUp(term, url);
 
 	$.get(proxy + feed, function (data) {
+
+		var entry = $(data).find("entry")
+
+		if ( entry.length > 0 ) {
+
+	        $(data).find("entry").each(function (index) {
+							
+                        term.echo("<br>", { raw : true });
+
+				if (index >= 15) {
+
+					term.echo("<a target='_blank' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
+
+					return false;
+
+				} else {
+
+					if (invert == "black") {
+
+						term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
+
+					} else if (invert == "white") {
+
+						term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
+
+					}
+
+				}
+
+   		});
+			
+
+		}
 
 	        $(data).find("item").each(function (index) {
 							
