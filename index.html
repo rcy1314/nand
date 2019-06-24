@@ -35,7 +35,13 @@
 
 	}
 
-	.terminal, .cmd div {
+	.cmd, span {
+
+		visibility: hidden;
+
+	}
+
+	.terminal, .cmd {
 
  		--size: .9;
 
@@ -50,7 +56,7 @@
 <script>
 var url
 var acolor
-var invert = "black"
+var invert = "yotsuba"
 var proxy = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
@@ -226,9 +232,11 @@ jQuery(function($) {
 
 		$("a").attr("style", "color: #81413B;");
 
+		$("a:visited").attr("style", "color: #81413B;");
+
 		$("#clock").attr("style", "color: #81413B;");
 
-		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #FDF7E1; background-image: linear-gradient(#F0CFB9, #FDF7E1);");
+		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #FDE5C9; background-image: linear-gradient(#EDD6BE, #FFFAE7)");
 
 		return false;
 
