@@ -1,15 +1,13 @@
 ## About
 
-'HIWI' an acroynm for 'How I Want It.'
+'HIWI' is an acroynm for 'How I Want It.'
 
 ## HOWTO
 
-Add a feed to the menu array, point and click command and menu, or type command and return for menu.
+Add a feed to the menu array, point and click.
 
 ## Credit
 
->Jcubic 
+>Jcubic
 
->Heroku 
-
->Bing
+>Heroku

@@ -17,7 +17,7 @@
 
 		text-decoration: none;
 		font-weight: bold;
-		color: grey;
+		color: inherit;
 
 	}
 
@@ -156,22 +156,6 @@ jQuery(function($) {
 
 	if (!isKey(command)){
 
-		if (url === undefined) { 
-
-			term.clear();
-
-			homepage = "https://www.bing.com";
-
-	                sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");
-
-	                rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
-
-               	        term.echo("<br><a target='_blank' style='color: " + acolor + "' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
-
-                	getfeed(term, rss);
-
-		}
-
 	 	$.each(menu, function(key, feed) {
 
 			if (command === feed.cmd) {
@@ -184,11 +168,9 @@ jQuery(function($) {
 	
 		getfeed(term, url, homepage);
 
-		url = undefined;
-
         }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); }, onPause: function(term) { setTimeout(function(){ term.resume() },5000); } 
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); } 
 
     });
 
@@ -276,8 +258,6 @@ jQuery(function($) {
 
     function getfeed(term, feed, homepage) {
 
-	term.pause();
-
 	$.get(proxy + feed, function (data) {
 
 		var entry = $(data).find("entry")
@@ -314,7 +294,7 @@ jQuery(function($) {
 
 				} else {
 
-					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
+					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true });
 
 				}
 
