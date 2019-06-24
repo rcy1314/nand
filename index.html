@@ -48,10 +48,8 @@
 <script>
 var url
 var acolor
-var bcolor
 var invert = "black"
 var proxy = "https://cors-anywhere.herokuapp.com/";
-
 var menu = [
 	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
@@ -64,7 +62,6 @@ var menu = [
 	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
 	{ cmd : "comingsoon", title : "ComingSoon.net", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
 	{ cmd : "dailymail", title : "DailyMail Headlines", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
-	{ cmd : "dummy", title : "This is a dummy", feed : "http://thisisadummy.com", homepage : "#" },
 	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ cmd : "gizmodo", title : "Gizmodo News", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
@@ -89,6 +86,7 @@ var menu = [
 	{ cmd : "pbs", title : "PBS World News", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
 	{ cmd : "pcworld", title : "PCWorld Articles", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
 	{ cmd : "people", title : "People Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
+	{ cmd : "politico", title : "Politico Tech", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
 	{ cmd : "radar", title : "TechRadar Technology", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
 	{ cmd : "recipes", title : "SimpleRecipes", feed : "http://feeds.feedburner.com/elise/simplyrecipes", homepage : "https://www.simplyrecipes.com" },
 	{ cmd : "rotten", title : "RottenTomatoes", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
