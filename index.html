@@ -16,6 +16,7 @@
 	a {
 
 		text-decoration: none;
+		font-weight: bold;
 		color: grey;
 
 	}
@@ -126,7 +127,7 @@ jQuery(function($) {
 
 	});
 
-	if (command == "invert") { invertColor(); return false; }
+	if (command == "cycle") { invertColor(); return false; }
 	
 	if (command == "" || command == "help") {
 
@@ -140,7 +141,7 @@ jQuery(function($) {
 
 		});
 
-		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>invert     &#9;&#9;Invert Terminal</a><br><br></tag-name>", { raw : true });
+		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9; Cycle Terminal Colors</a><br><br></tag-name>", { raw : true });
 
 		return false;
 
@@ -184,7 +185,7 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<br><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a> is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<br><tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;&#9;&#9;   [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
 
     function invertColor() {
 
@@ -204,15 +205,43 @@ jQuery(function($) {
 
 	} else if (invert == "white") { 
 
-		invert = "black"
+		invert = "yotsuba"
 
 		acolor = "white"
 
-		$("a").attr("style", "color: grey;");
+		$("a").attr("style", "color: white;");
 
-		$("#clock").attr("style", "color: grey;");
+		$("#clock").attr("style", "color: white;");
 
 		$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
+
+		return false;
+
+	} else if (invert == "yotsuba") {
+
+		invert = "yotsuba b"
+
+		acolor = "#81413B"
+
+		$("a").attr("style", "color: #81413B;");
+
+		$("#clock").attr("style", "color: #81413B;");
+
+		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #EADACD;");
+
+		return false;
+
+	} else if (invert == "yotsuba b") {
+
+		invert = "black"
+
+		acolor = "#828593"
+
+		$("a").attr("style", "color: #828593;");
+
+		$("#clock").attr("style", "color: #828593;");
+
+		$(".terminal").attr("style", "--color: rgba(130, 133, 147, 0.99); --background: #D3D4E6;");
 
 		return false;
 
