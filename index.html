@@ -16,7 +16,6 @@
 	a {
 
 		text-decoration: none;
-		font-weight: bold;
 		color: inherit;
 
 	}
@@ -136,19 +135,15 @@ jQuery(function($) {
 
 	if (command == "cycle") { invertColor(); return false; }
 	
-	if (command == "" || command == "help") {
+	if (command == "help") {
 
 		greetings(term);
 
 		term.clear();
 
-		$.each(menu, function(key, feed) {
+		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
-
-		});
-
-		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9; Cycle Terminal Colors</a><br><br></tag-name>", { raw : true });
+		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9;Cycle Terminal Colors</a><br><br></tag-name>", { raw : true });
 
 		return false;
 
@@ -262,27 +257,11 @@ jQuery(function($) {
 
 		var entry = $(data).find("entry")
 
-		if ( entry.length > 0 ) {
-
-			var format = "entry"
-
-		} else {
-
-			var format = "item"
-
-		}
+		if ( entry.length > 0 ) { var format = "entry" } else { var format = "item" }
 
 	        $(data).find(format).each(function (index) {
 
-			if ( format == "entry" ) {
-
-				var link = $(this).find("link").attr("href")
-
-			} else if ( format == "item" ) {
-
-				var link = $(this).find("link").text();
-
-			}
+			if ( format == "entry" ) { var link = $(this).find("link").attr("href") } else { var link = $(this).find("link").text(); }
 							
                         term.echo("<br>", { raw : true });
 
@@ -302,7 +281,8 @@ jQuery(function($) {
 
 	});
 
-    } var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
+    }
+var clock = document.getElementById("clock"); setInterval(function(){ clock.innerHTML = getCurrentTime(); }, 1); function getCurrentTime() { var currentDate = new Date(); return currentDate; }
 
 });
 </script><div id="clock"></div><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
