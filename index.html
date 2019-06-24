@@ -47,6 +47,8 @@
 </style>
 <script>
 var url
+var acolor
+var bcolor
 var invert = "black"
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -135,29 +137,12 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) {
 
-			if (invert == "black") {
-
-				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: grey' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: grey' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
-
-			} else if (invert == "white") { 
-
-				term.echo("<tag-name style='white-space:pre'><a href='#' style='color: green' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: green' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
-
-			}
+			term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true });
 
 		});
 
-		if (invert == "black") {
+		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>invert     &#9;&#9;Invert Terminal</a><br><br></tag-name>", { raw : true });
 
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: grey'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>", { raw : true });
-
-		} else if (invert == "white") { 
-
-			term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: green'>invert     &#9;&#9;Invert Terminal</a><br></tag-name>", { raw : true });
-
-		}
-
-		term.echo("<br>", { raw : true });
 		return false;
 
 	}
@@ -166,21 +151,15 @@ jQuery(function($) {
 
 		if (url === undefined) { 
 
+			term.clear();
+
 			homepage = "https://www.bing.com";
 
 	                sanitize = "https://www.bing.com/search?q=" + command.replace(/\s+/g, "+");
 
 	                rss = "https://www.bing.com/search?q=" + sanitize + "&format=rss";
 
-        	        if (invert == "black") {
-
-                	        term.echo("<br><a target='_blank' style='color: white' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
-
-                	} else if (invert == "white") {
-
-                        	term.echo("<br><a target='_blank' style='color: green' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
-
-                	}
+               	        term.echo("<br><a target='_blank' style='color: " + acolor + "' href='" + sanitize + "'>" + sanitize + "</a>", { raw : true });
 
                 	getfeed(term, rss);
 
@@ -208,41 +187,13 @@ jQuery(function($) {
 
     function greetings(term) { term.echo("<br><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a> is mouse friendly! return for [<a href='#' class='help'>menu</a>]<br><br>", { raw : true }); }
 
-    function isUp(term, url) {
-
-	term.pause;
-
-	$.ajax({
-
-		type: "get",
-
-		url: proxy + url,
-
-		cache: false,
-
-		statusCode: { 
-
-			404: function (){
-
-				term.echo("\npage not found resuming...\n");
-
-				term.resume();
-
-		}
-
-	}, async: true
-
-	});
-
-	return false;
-
-    }
-
     function invertColor() {
 
 	if (invert == "black") {
 
 		invert = "white";
+
+		acolor = "green"
 
 		$("a").attr("style", "color: green;");
 
@@ -254,7 +205,9 @@ jQuery(function($) {
 
 	} else if (invert == "white") { 
 
-		invert = "black";
+		invert = "black"
+
+		acolor = "white"
 
 		$("a").attr("style", "color: grey;");
 
@@ -288,8 +241,6 @@ jQuery(function($) {
 
 	term.pause();
 
-	isUp(term, url);
-
 	$.get(proxy + feed, function (data) {
 
 		var entry = $(data).find("entry")
@@ -310,31 +261,13 @@ jQuery(function($) {
 
 				if (index >= 15) {
 
-					if (invert == "black") {
+					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
 
-						term.echo("<a target='_blank' style='color: white' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
-
-						return false;
-
-					} else if (invert == "white") {
-
-						term.echo("<a target='_blank' style='color: green' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true });
-
-						return false;
-
-					}
+					return false;
 
 				} else {
 
-					if (invert == "black") {
-
-						term.echo("<a target='_blank' style='color: white' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
-
-					} else if (invert == "white") {
-
-						term.echo("<a target='_blank' style='color: green' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
-
-					}
+					term.echo("<a target='_blank' style='color: " + acolor + "' href='" + $(this).find("link").text() + "'>" + $(this).find("title").text() + "</a>", { raw : true }).resume();
 
 				}
 
