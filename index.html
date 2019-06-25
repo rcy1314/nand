@@ -29,7 +29,7 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
 
-    $(".theme").val("yotsuba"); invertColor("yotsuba");
+    $(".theme").val("yotsuba"); themeColors("yotsuba");
 
     $("body").terminal(function(command, term) {
 
@@ -45,7 +45,7 @@ jQuery(function($) {
 
 	});
 
-	$(".theme").on("change", function() { invertColor($(this).val()); term.exec("help"); });
+	$(".theme").on("change", function() { themeColors($(this).val()); term.exec("help"); });
 
 	if (command == "help") { greetings(term); term.clear();
 
@@ -55,7 +55,7 @@ jQuery(function($) {
 
 	} else { $.each(menu, function(key, feed) { if (command === feed.cmd) { getfeed(term, feed.feed, feed.homepage); } }); }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); invertColor(); }, onClear: function(term) { greetings(term); } 
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
 
     });
 
@@ -73,13 +73,13 @@ jQuery(function($) {
 
 			if ( format == "entry" ) { var link = $(this).find("link").attr("href") } else { var link = $(this).find("link").text(); }
 							
-			if ( index % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
+			if ( index % 2 === 0 ) { menuBold = "bold"; } else { menuBold = "normal"; }
 			
                         term.echo("<br>", { raw : true });
 
-			if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
+			if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
 
-			} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
+			} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
 
    		});
 
@@ -89,7 +89,7 @@ jQuery(function($) {
 
 });
 
-    function invertColor(theme) { 
+    function themeColors(theme) { 
 
 	if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
 

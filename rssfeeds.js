@@ -54,7 +54,7 @@ var menu = [
 	{ cmd : "tmz", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
 	{ cmd : "ufc", title : "UFC is an American mixed martial arts promotion company based in Las Vegas, Nevada.", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
 	{ cmd : "usa", title : "USA Today is an internationally distributed American daily, middle-market newspaper.", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
-	{ cmd : "verge", title : "The Verge is an ambitious multimedia effort founded in 2011.", feed : "https://www.theverge.com/rss/index.xml", homepage : "https://www.theverge.com" },
+	//403:forbidden{ cmd : "verge", title : "The Verge is an ambitious multimedia effort founded in 2011.", feed : "https://www.theverge.com/rss/index.xml", homepage : "https://www.theverge.com" },
 	{ cmd : "vice", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://www.vice.com" },
 	{ cmd : "wpg", title : "WallPapers General is a 4Chan board that shares mobile and computer wallpapers.", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
 	{ cmd : "wired", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
