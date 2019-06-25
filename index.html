@@ -13,7 +13,7 @@
   </head>
 <body>
 <style>
-	a { text-decoration: none; color: inherit; }
+	a { text-decoration: none; color: grey }
 
 	.cmd, span { visibility: hidden; }
 
@@ -36,6 +36,20 @@ jQuery(function($) {
 		$(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); });
 
 		$(".help").live("click", function() { term.exec("help"); });
+
+		$(".bold").live("click", function() {
+
+			if ( $("a").css("font-weight") == "400" ) {
+
+				$("a").css("font-weight", "700");
+
+			} else { 
+
+				$("a").css("font-weight", "400")
+
+			}
+
+		});
 
 	});
 
@@ -66,7 +80,6 @@ jQuery(function($) {
 			}
 
 		});
-	
 
         }
 
@@ -74,7 +87,7 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;&#9;&#9;    [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;  <a href='#' id='bold' class='bold'>bold</a>&#9;&#9;    [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -106,7 +119,7 @@ jQuery(function($) {
 
 	if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
 
-	} else if (theme == "black") { acolor = "white"; bcolor = "--background: black;"; 
+	} else if (theme == "black hat") { acolor = "white"; bcolor = "--background: black;"; 
 
 	} else if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
 
