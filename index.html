@@ -14,52 +14,24 @@
   </head>
 <body>
 <style>
-	a {
+	a { text-decoration: none; color: inherit; }
 
-		text-decoration: none;
-		color: inherit;
+	.cmd, span { visibility: hidden; }
 
-	}
+	.terminal, .cmd { --size: .9; }
 
-	#clock {
-
-		font-family: monospace;
-		position: absolute;
-		cursor: pointer;
-		font-size: 11px;
-		z-index: 365;
-		color: #aaa;
-		right: 1px;
-		top: 1px;
-
-	}
-
-	.cmd, span {
-
-		visibility: hidden;
-
-	}
-
-	.terminal, .cmd {
-
- 		--size: .9;
-
-	}
-
-	::-webkit-scrollbar { 
-
-		display: none; 
-
-	}
+	::-webkit-scrollbar { display: none; }
 </style>
 <script>
 var url
 var acolor
-var colorsindex = 1;
+var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
-var colors = [ 'white', 'green', 'yotsuba', 'yotsuba b' ]
+var colors = [ 'white', 'green', 'yotsuba', 'yotsuba b', 'amazon' ]
 
 jQuery(function($) {
+
+    $("#theme").val("yotsuba"); invertColor("yotsuba");
 
     $("body").terminal(function(command, term) {
 
@@ -85,13 +57,9 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
-		term.echo("<tag-name style='white-space:pre'><a href='#' id='invert' class='invert' style='color: " + acolor + "'>cycle     &#9;&#9;Cycle Colors</a><br><br></tag-name>", { raw : true });
-
 		return false;
 
-	}
-
-	if (!isKey(command)){
+	} else {
 
 	 	$.each(menu, function(key, feed) {
 
@@ -99,11 +67,16 @@ jQuery(function($) {
 			
 				homepage = feed.homepage
 
+				url = feed.feed
+
+				getfeed(term, url, homepage);
+
+				return false;
+
 			}
 
 		});
 	
-		getfeed(term, url, homepage);
 
         }
 
@@ -111,49 +84,7 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<br><tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;&#9;&#9;   [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
-
-    function invertColor() { colorsindex = colorsindex + 1; colorsindex = colorsindex % colors.length;
-
-	if (colors[colorsindex] == "green") { acolor = "green"
-
-		$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
-
-	} else if (colors[colorsindex] == "white") { acolor = "white"
-
-		$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
-
-	} else if (colors[colorsindex] == "yotsuba") { acolor = "#81413B"
-
-		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #FDE5C9; background-image: linear-gradient(#EDD6BE, #FFFAE7)");
-
-	} else if (colors[colorsindex] == "yotsuba b") { acolor = "#828593"
-
-		$(".terminal").attr("style", "--color: rgba(130, 133, 147, 0.99); --background: #E7E9F5; background-image: linear-gradient(#D0D5E1, #E7E9F5");
-
-	}
-
-	$("a").attr("style", "color:" + acolor);
-
-	return false;
-
-    }
-
-    function isKey(command) {
-
-	$.each(menu, function(key, feed) {
-
-		if (command === feed.cmd) {
-			
-			url = feed.feed
-			
-			return url;
-
-		}
-
-	});
-
-    }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;&#9;&#9;    [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -180,6 +111,30 @@ jQuery(function($) {
     }
 
 });
-</script><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -15px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+
+    function invertColor(theme) { 
+
+	if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
+
+	} else if (theme == "black") { acolor = "white"; bcolor = "--background: black;"; 
+
+	} else if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
+
+	} else if (theme == "yotsuba b") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
+
+	} else if (theme == "amazon") { acolor = "#F5BD71"; bcolor = "background-image: linear-gradient(#303844, #7A7E8A)"; }
+
+	$("a").attr("style", "color:" + acolor);
+
+	$(".terminal").attr("style", bcolor);
+
+	return false;
+
+    }
+
+</script><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -31px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+<select id="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
+	<option>yotsuba</option><option>yotsuba b</option><option>amazon</option><option>white hat</option><option>black</option>
+</select>
 </body>
 </html>
