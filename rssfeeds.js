@@ -23,7 +23,7 @@ var menu = [
 	{ cmd : "kotaku", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
 	{ cmd : "latimes", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
 	{ cmd : "mashable", title : "Mashable is the go-to source for tech, digital culture and entertainment content.", feed : "http://feeds.mashable.com/Mashable", homepage : "https://mashable.com" },
-	{ cmd : "mechanics", title : "Popular Mechanics is a magazine of popular science and technology, ", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
+	{ cmd : "mechanics", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
 	{ cmd : "mirror", title : "All the latest news, sport and celebrity gossip at Mirror.co.uk.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
 	{ cmd : "mit", title : "MIT is a top university, in science and engineering, political science, cognitive science, philosophy and linguistics.", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
 	{ cmd : "mlb", title : "MLB.com, is the official site of Major League Baseball.", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://www.mlb.com" },
