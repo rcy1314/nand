@@ -35,7 +35,7 @@ jQuery(function($) {
 
 	$(document).one('ready', function() { $(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); }); $(".help").live("click", function() { term.exec("help"); }); $(".clear").live("click", function() { term.exec("clear"); }); });
 
-	$(".theme").on("change", function() { themeColors($(this).val()); term.exec("help"); });
+	$(".theme").on("change", function() { themeColors($(this).val()); });
 
 	if (command == "help") { greetings(term); term.clear();
 
