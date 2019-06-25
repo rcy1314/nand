@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>hiwi</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <script src="keyboard.js"></script>
     <script src="rssfeeds.js"></script>
     <script src="jquery-1.7.1.min.js"></script>
     <script src="jquery.mousewheel-min.js"></script>
@@ -23,12 +22,7 @@
 	::-webkit-scrollbar { display: none; }
 </style>
 <script>
-var url
-var acolor
-var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
-var colors = [ 'white', 'green', 'yotsuba', 'yotsuba b', 'amazon' ]
-
 jQuery(function($) {
 
     $("#theme").val("yotsuba"); invertColor("yotsuba");
@@ -42,8 +36,6 @@ jQuery(function($) {
 		$(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); });
 
 		$(".help").live("click", function() { term.exec("help"); });
-
-		$(".invert").live("click", function() { invertColor(); });
 
 	});
 
@@ -70,8 +62,6 @@ jQuery(function($) {
 				url = feed.feed
 
 				getfeed(term, url, homepage);
-
-				return false;
 
 			}
 
@@ -122,7 +112,7 @@ jQuery(function($) {
 
 	} else if (theme == "yotsuba b") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
-	} else if (theme == "amazon") { acolor = "#F5BD71"; bcolor = "background-image: linear-gradient(#303844, #7A7E8A)"; }
+	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440"; }
 
 	$("a").attr("style", "color:" + acolor);
 
@@ -132,9 +122,9 @@ jQuery(function($) {
 
     }
 
-</script><div id="stats" style="cursor: pointer; position: absolute; z-index: 365; right: -31px; bottom: -20px" onclick="window.open('https://free-hit-counters.net/stats/24ec', '_blank'); return false;"><script type="text/javascript" src="https://free-hit-counters.net/count/24ec"></script><a href='https://dissertation-writingservice.com/'><br>Diss.Writing Service</a> <script type='text/javascript' src='https://whomania.com/ctr?id=51368d731e89d6a4b20116917faa7716dfe8e8f2'></script></div>
+</script>
 <select id="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
-	<option>yotsuba</option><option>yotsuba b</option><option>amazon</option><option>white hat</option><option>black</option>
+	<option>yotsuba</option><option>yotsuba b</option><option>solarized</option><option>white hat</option><option>black hat</option>
 </select>
 </body>
 </html>
