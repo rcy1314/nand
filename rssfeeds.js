@@ -1,5 +1,5 @@
 var menu = [
-	{ cmd : "abc", title : "ABC is an American commercial broadcast television network that is a flagship property of Walt Disney Television", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
+	{ cmd : "abc", title : "ABC is an American commercial broadcast television network that is a flagship property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "Arch Linux is a Linux distribution for computers based on x86-64 architectures.", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
 	{ cmd : "archlinux", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ cmd : "ars", title : "Ars Technica has became a trusted source for technology news.", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
@@ -36,9 +36,9 @@ var menu = [
 	{ cmd : "pcworld", title : "PC World is one of the United Kingdom's largest retail chains of mass market computer megastores.", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
 	{ cmd : "people", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ cmd : "politico", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
-	{ cmd : "radar", title : "TechRadar is an online publication focused on technology", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
+	{ cmd : "radar", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
 	{ cmd : "reuters", title : "Reuters is an international news organization.", feed : "http://feeds.reuters.com/reuters/technologyNews", homepage: "https://www.reuters.com/news/technology" },
-	//{ cmd : "rotten", title : "Rotten Tomatoes is an American review-aggregation website for film and television.", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
+	{ cmd : "rotten", title : "Rotten Tomatoes is an American review-aggregation website for film and television.", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
 	{ cmd : "sky", title : "Sky News is a British news organisation, which operates a TV network.", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
 	{ cmd : "slashdot", title : "Slashdot is a social news website that originally billed itself as News for Nerds.", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
 	{ cmd : "ssn", title : "The Smithsonian Institution is the world’s largest museum, education, and research complex.", feed : "https://www.smithsonianmag.com/rss/articles", homepage : "https://www.smithsonianmag.com" },
