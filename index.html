@@ -15,9 +15,9 @@
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
-	a { text-decoration: none; }
+	a { text-decoration: none; letter-spacing: .5px; }
 
-	#clock { cursor: pointer; position: absolute; z-index: 365; right: 0px; font-size: 11px; font-family: 'Space Mono', monospace; }
+	#clock { cursor: pointer; position: absolute; z-index: 365; top: 10px; right: 0px; font-size: 10px; font-family: 'Space Mono', monospace; }
 
 	.cmd, span { visibility: hidden; }
 
@@ -44,8 +44,6 @@ jQuery(function($) {
 
 		$(".help").live("click", function() { term.exec("help"); });
 
-		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { bold = "bold"; $("a").css("font-weight", "700"); $("#clock").css("font-weight", "700"); } else { bold = "normal"; $("a").css("font-weight", "400"); $("#clock").css("font-weight", "400"); } });
-
 	});
 
 	if (command == "help") {
@@ -54,7 +52,11 @@ jQuery(function($) {
 
 		term.clear();
 
-		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
+		term.echo("<br>", { raw : true });
+
+		$.each(menu, function(key, feed) { if ( key % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
+
+		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
 		return false;
 
@@ -76,11 +78,11 @@ jQuery(function($) {
 
         }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); invertColor(); }, onClear: function(term) { greetings(term); } 
+    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); invertColor(); }, onClear: function(term) { greetings(term); } 
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;  <a href='#' class='bold' style='color:" + acolor +";font-weight:" + bold + "'>bold</a>&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a></tag-name><br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a></tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -94,6 +96,8 @@ jQuery(function($) {
 
 			if ( format == "entry" ) { var link = $(this).find("link").attr("href") } else { var link = $(this).find("link").text(); }
 							
+			if ( index % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
+			
                         term.echo("<br>", { raw : true });
 
 				if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
