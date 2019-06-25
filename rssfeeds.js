@@ -53,7 +53,7 @@ var menu = [
 	{ cmd : "usa", title : "USA Today is an internationally distributed American daily, middle-market newspaper.", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
 	{ cmd : "verge", title : "The Verge is an ambitious multimedia effort founded in 2011.", feed : "https://www.theverge.com/rss/index.xml", homepage : "https://www.theverge.com" },
 	{ cmd : "vice", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://www.vice.com" },
-	{ cmd : "wpg", title : "WallPapers General is a 4Chan board which shares mobile and computer wallpapers.", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
+	{ cmd : "wpg", title : "WallPapers General is a 4Chan board that shares mobile and computer wallpapers.", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
 	{ cmd : "wired", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
 	{ cmd : "yahoo", title : "Yahoo is an American web services provider headquartered in Sunnyvale, California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ cmd : "ycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
