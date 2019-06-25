@@ -12,7 +12,7 @@ var menu = [
 	{ cmd : "dailymail", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
 	{ cmd : "engadget", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
-	{ cmd : "gizmodo", title : "Gizmodo (/ɡɪzˈmoʊdoʊ/ giz-MOH-doh) is a design, technology, science and science fiction website.", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
+	{ cmd : "gizmodo", title : "Gizmodo is a design, technology, science and science fiction website.", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
 	{ cmd : "google", title : "Google LLC is an American multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ cmd : "gtech", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ cmd : "guardian", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
