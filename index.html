@@ -13,11 +13,21 @@
   </head>
 <body>
 <style>
+	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
 	a { text-decoration: none; }
 
+	#clock {
+		position: absolute;
+		z-index: 365;
+		top: 1px;
+		right: 0px;
+		font-size: 10px;
+		font-family: 'Space Mono', monospace;
+	}
 	.cmd, span { visibility: hidden; }
 
-	.terminal, .cmd { --size: .9; }
+	.terminal, .cmd { --size: .9; font-family: 'Space Mono', monospace }
 
 	::-webkit-scrollbar { display: none; }
 </style>
@@ -37,7 +47,7 @@ jQuery(function($) {
 
 		$(".help").live("click", function() { term.exec("help"); });
 
-		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { bold = "bold"; $("a").css("font-weight", "700"); } else { bold = "normal"; $("a").css("font-weight", "400"); } });
+		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { bold = "bold"; $("a").css("font-weight", "700"); $("#clock").css("font-weight", "700"); } else { bold = "normal"; $("a").css("font-weight", "400"); $("#clock").css("font-weight", "400"); } });
 
 	});
 
@@ -99,6 +109,8 @@ jQuery(function($) {
 
     }
 
+    setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1);
+
 });
 
     function invertColor(theme) { 
@@ -119,6 +131,8 @@ jQuery(function($) {
 
 	$("a").css("font-weight", bold);
 	
+	$("#clock").css("color", acolor);
+
 	$(".terminal").attr("style", bcolor);
 
 	return false;
@@ -126,6 +140,7 @@ jQuery(function($) {
     }
 
 </script>
+<div id="clock"></div>
 <select class="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
 	<option>yotsuba</option><option>yotsuba b</option><option>solarized</option><option>white hat</option><option>black hat</option>
 </select>
