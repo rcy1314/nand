@@ -9,25 +9,22 @@
     <script src="jquery.mousewheel-min.js"></script>
     <script src="jquery.terminal.min.js"></script>
     <link href="jquery.terminal.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 <body>
-<style>
-	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+<style> @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
 	a { text-decoration: none; letter-spacing: .1em; }
-
-	#clock { cursor: pointer; position: absolute; z-index: 365; top: 1em; right: 2em; font-size: .7em; font-family: 'Space Mono', monospace; }
 
 	.cmd, span { visibility: hidden; }
 
 	.terminal, .cmd { --size: .9; font-family: 'Space Mono', monospace; line-height:1.2em; }
 
 	::-webkit-scrollbar { display: none; }
+
+	#clock { cursor: pointer; position: absolute; z-index: 365; top: 1em; right: 2em; font-size: .7em; font-family: 'Space Mono', monospace; }
 </style>
 <script>
 var bold
-
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
@@ -44,6 +41,8 @@ jQuery(function($) {
 
 		$(".help").live("click", function() { term.exec("help"); });
 
+		$(".clear").live("click", function() { term.exec("clear"); });
+
 	});
 
 	$(".theme").on("change", function() { invertColor($(this).val()); term.exec("help"); });
@@ -54,25 +53,13 @@ jQuery(function($) {
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
-	} else {
-
-	 	$.each(menu, function(key, feed) {
-
-			if (command === feed.cmd) {
-			
-				getfeed(term, feed.feed, feed.homepage);
-
-			}
-
-		});
-
-        }
+	} else { $.each(menu, function(key, feed) { if (command === feed.cmd) { getfeed(term, feed.feed, feed.homepage); } }); }
 
     }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); invertColor(); }, onClear: function(term) { greetings(term); } 
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a></tag-name><br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a>&#9;&#9;&#9;&#9;&#9;<a class='clear' href='#' style='color:" + acolor + ";font-weight:" + bold + "'>clear</a></tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -90,9 +77,9 @@ jQuery(function($) {
 			
                         term.echo("<br>", { raw : true });
 
-				if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
+			if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
 
-				} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
+			} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
 
    		});
 
@@ -100,40 +87,25 @@ jQuery(function($) {
 
     }
 
-    setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1);
-
 });
 
     function invertColor(theme) { 
 
-	if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
-
-	} else if (theme == "black hat") { acolor = "white"; bcolor = "--background: black;"; 
-
-	} else if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
+	if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
 
 	} else if (theme == "yotsubab") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
 	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440";
 
-	}
+	} else if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
 
-	$("a").attr("style", "color:" + acolor);
+	} else if (theme == "black hat") { acolor = "white"; bcolor = "--background: black;"; 
 
-	$("a").css("font-weight", bold);
-	
-	$("#clock").css("color", acolor);
-
-	$(".terminal").attr("style", bcolor);
-
-	return false;
+	} $("a").attr("style", "color:" + acolor); $("a").css("font-weight", bold); $("#clock").css("color", acolor); $(".terminal").attr("style", bcolor);
 
     }
-
 </script>
-<div id="clock"></div>
-<select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
-	<option>yotsuba</option><option>yotsubab</option><option>solarized</option><option>white hat</option><option>black hat</option>
+<div id="clock"></div><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script><select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;"><option>yotsuba</option><option>yotsubab</option><option>solarized</option><option>white hat</option><option>black hat</option>
 </select>
 </body>
 </html>
