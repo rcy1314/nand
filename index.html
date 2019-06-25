@@ -13,7 +13,7 @@
   </head>
 <body>
 <style>
-	a { text-decoration: none; color: inherit }
+	a { text-decoration: none; }
 
 	.cmd, span { visibility: hidden; }
 
@@ -21,7 +21,8 @@
 
 	::-webkit-scrollbar { display: none; }
 </style>
-<script> var proxy = "https://cors-anywhere.herokuapp.com/";
+<script> var bold
+var proxy = "https://cors-anywhere.herokuapp.com/";
 jQuery(function($) {
 
     $(".theme").val("yotsuba"); invertColor("yotsuba");
@@ -36,7 +37,7 @@ jQuery(function($) {
 
 		$(".help").live("click", function() { term.exec("help"); });
 
-		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { $("a").css("font-weight", "700"); } else { $("a").css("font-weight", "400"); } });
+		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { bold = "bold"; $("a").css("font-weight", "700"); } else { bold = "normal"; $("a").css("font-weight", "400"); } });
 
 	});
 
@@ -46,7 +47,7 @@ jQuery(function($) {
 
 		term.clear();
 
-		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + "' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
+		$.each(menu, function(key, feed) { term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
 		return false;
 
@@ -72,7 +73,7 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + "' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;  <a href='#' class='bold' style='color:" + acolor +"'>bold</a>&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + "'>menu</a></tag-name><br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;  <a href='#' class='bold' style='color:" + acolor +";font-weight:" + bold + "'>bold</a>&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a></tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -88,9 +89,9 @@ jQuery(function($) {
 							
                         term.echo("<br>", { raw : true });
 
-				if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
+				if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
 
-				} else { term.echo("<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
+				} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
 
    		});
 
