@@ -45,7 +45,7 @@ jQuery(function($) {
 
 	} else { $.each(menu, function(key, feed) { if (command === feed.cmd) { getfeed(term, feed.feed, feed.homepage); } }); }
 
-    }, { keydown: function() { return false; }, prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
+    }, { history: false, keydown: function() { return false; }, prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
 
     });
 
