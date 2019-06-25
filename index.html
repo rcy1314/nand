@@ -111,10 +111,14 @@ jQuery(function($) {
 
 	} else if (theme == "yotsuba b") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
-	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440"; }
+	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440";
+
+	}
 
 	$("a").attr("style", "color:" + acolor);
 
+	$("a").css("font-weight", bold);
+	
 	$(".terminal").attr("style", bcolor);
 
 	return false;
