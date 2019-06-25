@@ -16,7 +16,7 @@ var menu = [
 	{ cmd : "google", title : "Google LLC is an American multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ cmd : "gtech", title : "G is a 4Chan board that discusses technology", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ cmd : "guardian", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
-	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
+	{ cmd : "hacker", title : "Hacker News is a reader run headline submission news aggregator.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ cmd : "huffington", title : "HuffingtonPost is an American liberal Web site that offers news and commentary.", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
 	{ cmd : "infoworld", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ cmd : "insider", title : "Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
