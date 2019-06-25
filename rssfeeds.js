@@ -39,6 +39,7 @@ var menu = [
 	{ cmd : "pol", title : "4Chan's Politically Incorrect board for political extremism.", feed : "https://boards.4chan.org/pol/index.rss", homepage : "https://boards.4chan.org/pol" },
 	{ cmd : "politico", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
 	{ cmd : "radar", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
+	{ cmd : "register", title : "The Register is a British technology news and opinion website co-founded in 1994.", feed : "https://www.theregister.co.uk/headlines.atom", homepage : "https://www.theregister.co.uk" },
 	{ cmd : "reuters", title : "Reuters is an international news organization.", feed : "http://feeds.reuters.com/reuters/technologyNews", homepage: "https://www.reuters.com/news/technology" },
 	{ cmd : "rotten", title : "Rotten Tomatoes is an American review-aggregation website for film and television.", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
 	{ cmd : "sky", title : "Sky News is a British news organisation, which operates a TV network.", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
