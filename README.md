@@ -4,7 +4,7 @@
 
 ## HOWTO
 
-Add a feed to the menu array, point and click.
+Add a feed to the menu array in rssfeeds.js then point and click.
 
 ## Credit
 
