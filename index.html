@@ -33,17 +33,7 @@ jQuery(function($) {
 
     $("body").terminal(function(command, term) {
 
-	$(document).one('ready', function() {
-
-		$("#clock").live("click", function() { window.open('http://time.is', '_blank'); });
-
-		$(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); });
-
-		$(".help").live("click", function() { term.exec("help"); });
-
-		$(".clear").live("click", function() { term.exec("clear"); });
-
-	});
+	$(document).one('ready', function() { $(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); }); $(".help").live("click", function() { term.exec("help"); }); $(".clear").live("click", function() { term.exec("clear"); }); });
 
 	$(".theme").on("change", function() { themeColors($(this).val()); term.exec("help"); });
 
@@ -55,7 +45,7 @@ jQuery(function($) {
 
 	} else { $.each(menu, function(key, feed) { if (command === feed.cmd) { getfeed(term, feed.feed, feed.homepage); } }); }
 
-    }, { prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
+    }, { keydown: function() { return false; }, prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
 
     });
 
@@ -69,14 +59,12 @@ jQuery(function($) {
 
 		if ( entry.length > 0 ) { var format = "entry" } else { var format = "item" }
 
-	        $(data).find(format).each(function (index) {
+	        $(data).find(format).each(function (index) { term.echo("<br>", { raw : true });
 
 			if ( format == "entry" ) { var link = $(this).find("link").attr("href") } else { var link = $(this).find("link").text(); }
 							
 			if ( index % 2 === 0 ) { menuBold = "bold"; } else { menuBold = "normal"; }
 			
-                        term.echo("<br>", { raw : true });
-
 			if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
 
 			} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
