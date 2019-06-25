@@ -5,6 +5,7 @@
     <title>hiwi</title>
     <link rel="shortcut icon" href="favicon.ico">
     <script src="keyboard.js"></script>
+    <script src="rssfeeds.js"></script>
     <script src="jquery-1.7.1.min.js"></script>
     <script src="jquery.mousewheel-min.js"></script>
     <script src="jquery.terminal.min.js"></script>
@@ -54,68 +55,10 @@
 <script>
 var url
 var acolor
+var colorsindex = 1;
 var proxy = "https://cors-anywhere.herokuapp.com/";
 var colors = [ 'white', 'green', 'yotsuba', 'yotsuba b' ]
-var colorsindex = colors.length;
-var menu = [
-	{ cmd : "abc", title : "ABC International", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
-	{ cmd : "arch", title : "ArchLinux BBS", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ cmd : "archlinux", title : "ArchLinux Subreddit", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
-	{ cmd : "ars", title : "Ars Technica", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
-	{ cmd : "bbc", title : "BBC Technology", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
-	{ cmd : "beta", title : "BetaNews", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
-	{ cmd : "cbs", title : "CBS World", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
-	{ cmd : "cnbc", title : "CNBC Technology", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
-	{ cmd : "cnn", title : "CNN Top Stories", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
-	{ cmd : "comingsoon", title : "ComingSoon.net", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
-	{ cmd : "dailymail", title : "DailyMail Headlines", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
-	{ cmd : "engadget", title : "Engadget Technology", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
-	{ cmd : "espn", title : "ESPN Sports", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
-	{ cmd : "gizmodo", title : "Gizmodo News", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
-	{ cmd : "google", title : "Google Top Stories", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
-	{ cmd : "guardian", title : "Guardian World News", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
-	{ cmd : "hacker", title : "Hacker News", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
-	{ cmd : "huffington", title : "HuffingtonPost Tech", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
-	{ cmd : "infoworld", title : "InfoWorld News", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
-	{ cmd : "insider", title : "Business Insider", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
-	{ cmd : "kotaku", title : "Kotaku News", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
-	{ cmd : "latimes", title : "LA Times Technology", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
-	{ cmd : "mashable", title : "Mashable", feed : "http://feeds.mashable.com/Mashable", homepage : "https://mashable.com" },
-	{ cmd : "mechanics", title : "Popular Mechanics", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
-	{ cmd : "mirror", title : "Mirror.co.uk Tech", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
-	{ cmd : "mit", title : "MIT News", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
-	{ cmd : "mlb", title : "MLB News", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://www.mlb.com" },
-	{ cmd : "mma", title : "MMA Headlines", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkie.com" },
-	{ cmd : "msn", title : "Microsoft Network", feed : "http://rss.msn.com", homepage : "https://www.msn.com" },
-	{ cmd : "nbc", title : "NBC News", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
-	{ cmd : "npr", title : "NPR Technology", feed : "https://www.npr.org/rss/rss.php?id=1019", homepage : "https://www.npr.org" },
-	{ cmd : "packet", title : "PacketStorm News", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
-	{ cmd : "pbs", title : "PBS World News", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
-	{ cmd : "pcworld", title : "PCWorld Articles", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
-	{ cmd : "people", title : "People Headlines", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
-	{ cmd : "politico", title : "Politico Tech", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
-	{ cmd : "radar", title : "TechRadar Technology", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
-	{ cmd : "recipes", title : "SimpleRecipes", feed : "http://feeds.feedburner.com/elise/simplyrecipes", homepage : "https://www.simplyrecipes.com" },
-	{ cmd : "rotten", title : "RottenTomatoes", feed : "http://editorial.rottentomatoes.com/feed", homepage : "https://www.rottentomatoes.com" },
-	{ cmd : "sky", title : "Sky Technology", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
-	{ cmd : "slashdot", title : "Slashdot Latest", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
-	{ cmd : "ssn", title : "Smithsonian Magazine", feed : "https://www.smithsonianmag.com/rss/articles", homepage : "https://www.smithsonianmag.com" },
-	{ cmd : "sports", title : "Sports Illustrated", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
-	{ cmd : "steam", title : "Steam News", feed : "https://store.steampowered.com/feeds/news.xml", homepage : "https://steamcommunity.com" },
-	{ cmd : "techcrunch", title : "TechCrunch News", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
-	{ cmd : "techmeme", title : "TechMeme Stories", feed : "https://www.techmeme.com/feed.xml", homepage : "https://www.techmeme.com" },
-	{ cmd : "techspot", title : "TechSpot Articles", feed : "https://www.techspot.com/backend.xml", homepage : "https://www.techspot.com" },
-	{ cmd : "time", title : "Time Magazine", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
-	{ cmd : "tmz", title : "TMZ Headlines", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
-	{ cmd : "ufc", title : "UFC Top Stories", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
-	{ cmd : "usa", title : "USA Today Technology", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
-	{ cmd : "verge", title : "The Verge", feed : "https://www.theverge.com/rss/index.xml", homepage : "https://www.theverge.com" },
-	{ cmd : "vice", title : "Vice News", feed : "https://www.vice.com/en_us/rss", homepage : "https://www.vice.com" },
-	{ cmd : "wpg", title : "WallPapers General", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
-	{ cmd : "wired", title : "Wired Magazine", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
-	{ cmd : "yahoo", title : "Yahoo Technology", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
-	{ cmd : "ycv", title : "Your Central Valley", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
-]
+
 jQuery(function($) {
 
     $("body").terminal(function(command, term) {
@@ -172,35 +115,27 @@ jQuery(function($) {
 
     function invertColor() { colorsindex = colorsindex + 1; colorsindex = colorsindex % colors.length;
 
-	if (colors[colorsindex] == "green") {
-
-		acolor = "green"
+	if (colors[colorsindex] == "green") { acolor = "green"
 
 		$(".terminal").attr("style", "--color: rgba(0, 128, 0, 0.99); --background: white;");
 
-	} else if (colors[colorsindex] == "white") { 
-
-		acolor = "white"
+	} else if (colors[colorsindex] == "white") { acolor = "white"
 
 		$(".terminal").attr("style", "--color: rgba(255, 255, 255, 0.99); --background: black;");
 
-	} else if (colors[colorsindex] == "yotsuba") {
-
-		acolor = "#81413B"
+	} else if (colors[colorsindex] == "yotsuba") { acolor = "#81413B"
 
 		$(".terminal").attr("style", "--color: rgba(129, 65, 59, 0.99); --background: #FDE5C9; background-image: linear-gradient(#EDD6BE, #FFFAE7)");
 
-	} else if (colors[colorsindex] == "yotsuba b") {
-
-		acolor = "#828593"
+	} else if (colors[colorsindex] == "yotsuba b") { acolor = "#828593"
 
 		$(".terminal").attr("style", "--color: rgba(130, 133, 147, 0.99); --background: #E7E9F5; background-image: linear-gradient(#D0D5E1, #E7E9F5");
 
 	}
 
-		$("a").attr("style", "color:" + acolor);
+	$("a").attr("style", "color:" + acolor);
 
-		return false;
+	return false;
 
     }
 
