@@ -13,7 +13,7 @@
   </head>
 <body>
 <style>
-	a { text-decoration: none; color: grey }
+	a { text-decoration: none; color: inherit }
 
 	.cmd, span { visibility: hidden; }
 
@@ -21,11 +21,10 @@
 
 	::-webkit-scrollbar { display: none; }
 </style>
-<script>
-var proxy = "https://cors-anywhere.herokuapp.com/";
+<script> var proxy = "https://cors-anywhere.herokuapp.com/";
 jQuery(function($) {
 
-    $("#theme").val("yotsuba"); invertColor("yotsuba");
+    $(".theme").val("yotsuba"); invertColor("yotsuba");
 
     $("body").terminal(function(command, term) {
 
@@ -37,19 +36,7 @@ jQuery(function($) {
 
 		$(".help").live("click", function() { term.exec("help"); });
 
-		$(".bold").live("click", function() {
-
-			if ( $("a").css("font-weight") == "400" ) {
-
-				$("a").css("font-weight", "700");
-
-			} else { 
-
-				$("a").css("font-weight", "400")
-
-			}
-
-		});
+		$(".bold").live("click", function() { if ( $("a").css("font-weight") == "400" ) { $("a").css("font-weight", "700"); } else { $("a").css("font-weight", "400"); } });
 
 	});
 
@@ -87,7 +74,7 @@ jQuery(function($) {
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;  <a href='#' id='bold' class='bold'>bold</a>&#9;&#9;    [<a href='#' class='help'>menu</a>]</tag-name><br><br>", { raw : true }); }
+    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + "' href='https://github.com/acktic/hiwi'>Hiwi</a>&#9;&#9;  <a href='#' class='bold' style='color:" + acolor +"'>bold</a>&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + "'>menu</a></tag-name><br><br>", { raw : true }); }
 
     function getfeed(term, feed, homepage) {
 
@@ -136,7 +123,7 @@ jQuery(function($) {
     }
 
 </script>
-<select id="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
+<select class="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
 	<option>yotsuba</option><option>yotsuba b</option><option>solarized</option><option>white hat</option><option>black hat</option>
 </select>
 </body>
