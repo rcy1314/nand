@@ -24,7 +24,6 @@
 	#clock { cursor: pointer; position: absolute; z-index: 365; top: .65em; right: 2em; font-size: .7em; font-family: 'Space Mono', monospace; }
 </style>
 <script>
-var bold
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
@@ -39,7 +38,7 @@ jQuery(function($) {
 
 	if (command == "help") { greetings(term); term.clear();
 
-		$.each(menu, function(key, feed) { if ( key % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
+		$.each(menu, function(key, feed) { if ( key % 2 === 0 ) { var bold = "bold"; } else { var bold = "normal"; }
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
 
