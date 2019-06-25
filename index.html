@@ -15,13 +15,13 @@
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
-	a { text-decoration: none; letter-spacing: .5px; }
+	a { text-decoration: none; letter-spacing: .1em; }
 
-	#clock { cursor: pointer; position: absolute; z-index: 365; top: 10px; right: 5px; font-size: 10px; font-family: 'Space Mono', monospace; }
+	#clock { cursor: pointer; position: absolute; z-index: 365; top: 1em; right: 2em; font-size: .7em; font-family: 'Space Mono', monospace; }
 
 	.cmd, span { visibility: hidden; }
 
-	.terminal, .cmd { --size: .9; font-family: 'Space Mono', monospace }
+	.terminal, .cmd { --size: .9; font-family: 'Space Mono', monospace; line-height:1.2em; }
 
 	::-webkit-scrollbar { display: none; }
 </style>
@@ -46,17 +46,13 @@ jQuery(function($) {
 
 	});
 
-	if (command == "help") {
+	$(".theme").on("change", function() { invertColor($(this).val()); term.exec("help"); });
 
-		greetings(term);
-
-		term.clear();
+	if (command == "help") { greetings(term); term.clear();
 
 		$.each(menu, function(key, feed) { if ( key % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
-
-		return false;
 
 	} else {
 
@@ -64,11 +60,7 @@ jQuery(function($) {
 
 			if (command === feed.cmd) {
 			
-				homepage = feed.homepage
-
-				url = feed.feed
-
-				getfeed(term, url, homepage);
+				getfeed(term, feed.feed, feed.homepage);
 
 			}
 
@@ -120,7 +112,7 @@ jQuery(function($) {
 
 	} else if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
 
-	} else if (theme == "yotsuba b") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
+	} else if (theme == "yotsubab") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
 	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440";
 
@@ -140,8 +132,8 @@ jQuery(function($) {
 
 </script>
 <div id="clock"></div>
-<select class="theme" style="position: absolute; z-index: 365; width: 100px; right: 2px; bottom: 2px;" onchange="invertColor($(this).val())">
-	<option>yotsuba</option><option>yotsuba b</option><option>solarized</option><option>white hat</option><option>black hat</option>
+<select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
+	<option>yotsuba</option><option>yotsubab</option><option>solarized</option><option>white hat</option><option>black hat</option>
 </select>
 </body>
 </html>
