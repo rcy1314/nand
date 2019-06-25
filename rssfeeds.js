@@ -35,6 +35,7 @@ var menu = [
 	{ cmd : "pbs", title : "The Public Broadcasting Service is an American public broadcaster and television program distributor.", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
 	{ cmd : "pcworld", title : "PC World is one of the United Kingdom's largest retail chains of mass market computer megastores.", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
 	{ cmd : "people", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
+	{ cmd : "pol", title : "4Chan Politics Board for political extremists", feed : "https://boards.4chan.org/pol/index.rss", homepage : "https://boards.4chan.org/pol" },
 	{ cmd : "politico", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
 	{ cmd : "radar", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
 	{ cmd : "reuters", title : "Reuters is an international news organization.", feed : "http://feeds.reuters.com/reuters/technologyNews", homepage: "https://www.reuters.com/news/technology" },
