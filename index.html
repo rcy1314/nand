@@ -11,7 +11,6 @@
   </head>
 <body>
 <style>
-
 	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
 	a {
@@ -21,7 +20,6 @@
 		letter-spacing: .1em;
 
 	}
-
 
 	.cmd, span {
 
@@ -167,6 +165,20 @@ jQuery(function($) {
 		$(".help").live("click", function() {
 
 			term.exec("help");
+
+		});
+
+		$(".underline").live("click", function () {
+
+			if($("a").css('text-decoration').indexOf("none") > -1){
+
+				$("a").css('text-decoration', 'underline');
+
+			} else {
+
+				$("a").css('text-decoration', 'none');
+
+			}
 
 		});
 
@@ -325,7 +337,7 @@ jQuery(function($) {
 
 </script>
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;<a href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;&#9;&#9;<a id='help' class='help' href='#'>menu</a>&#9;&#9;&#9;&#9;&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
+    <tag-name style='white-space:pre'>&#9;<a href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;<a id='help' class='help' href='#'>menu</a>&#9;&#9;&#9;<a class='underline' href='#'>underline</a>&#9;&#9;&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
 </div>
 <select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
