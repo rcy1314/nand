@@ -147,7 +147,8 @@ jQuery(function($) {
 
     }, {
 
-	history: false, keydown: function() { return false; },
+	history: false,
+        keydown: function() { return false; },
 	prompt: "~ ", greetings: null,
 	onBlur: function() { return false; },
 	onInit: function(term) { term.exec("help"); term.clear(); themeColors(); },
