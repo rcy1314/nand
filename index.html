@@ -152,7 +152,8 @@ jQuery(function($) {
 	prompt: "~ ", greetings: null,
 	onBlur: function() { return false; },
 	onInit: function(term) { term.exec("help"); term.clear(); themeColors(); },
-	onClear: function(term) { greetings(term); } 
+	onClear: function(term) { greetings(term); },
+	onResize: function() { themeColors($(".theme").val()); }
 
     });
 
