@@ -11,63 +11,221 @@
     <link href="jquery.terminal.min.css" rel="stylesheet"/>
   </head>
 <body>
-<style> @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+<style>
 
-	a { text-decoration: none; letter-spacing: .1em; }
+	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
-	.cmd, span { visibility: hidden; }
+	a {
 
-	.terminal, .cmd { --size: .9; font-family: 'Space Mono', monospace; line-height:1.2em; }
+		text-decoration: none;
 
-	::-webkit-scrollbar { display: none; }
+		letter-spacing: .1em;
 
-	#clock { cursor: pointer; position: absolute; z-index: 365; top: .65em; right: 2em; font-size: .7em; font-family: 'Space Mono', monospace; }
+	}
+
+	.cmd, span {
+
+		visibility: hidden;
+
+	}
+
+	.terminal, .cmd {
+
+		--size: .9;
+
+		font-family: 'Space Mono', monospace;
+
+		line-height: 1.2em;
+
+	}
+
+	::-webkit-scrollbar {
+
+		display: none;
+
+	}
+
+	#clock {
+
+		cursor: pointer;
+
+		position: absolute;
+
+		z-index: 365;
+
+		top: .65em;
+
+		right: 2em;
+
+		font-size: .7em;
+
+		font-family: 'Space Mono', monospace;
+
+	}
 </style>
 <script>
+
 var bold
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
 
-    $(".theme").val("yotsuba"); themeColors("yotsuba");
+    $(".theme").val("yotsuba");
 
-    $("body").terminal(function(command, term) {
+    themeColors("yotsuba");
 
-	$(document).one('ready', function() { $(".menu").live("click", function(event) { term.exec(event.target.id); term.clear(); }); $(".help").live("click", function() { term.exec("help"); }); $(".clear").live("click", function() { term.exec("clear"); }); });
+    $(".theme").on("change", function() {
 
-	$(".theme").on("change", function() { themeColors($(this).val()); });
-
-	if (command == "help") { greetings(term); term.clear();
-
-		$.each(menu, function(key, feed) { if ( key % 2 === 0 ) { bold = "bold"; } else { bold = "normal"; }
-
-		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd + "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" + feed.title + "</a><br></tag-name>", { raw : true }); });
-
-	} else { $.each(menu, function(key, feed) { if (command === feed.cmd) { getfeed(term, feed.feed, feed.homepage); } }); }
-
-    }, { history: false, keydown: function() { return false; }, prompt: "~ ", greetings: null, onBlur: function() { return false; }, onInit: function(term) { term.exec("help"); term.clear(); themeColors(); }, onClear: function(term) { greetings(term); } 
+	themeColors($(this).val());
 
     });
 
-    function greetings(term) { term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor + ";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a>&#9;&#9;&#9;&#9;&#9;<a class='clear' href='#' style='color:" + acolor + ";font-weight:" + bold + "'>clear</a></tag-name><br><br>", { raw : true }); }
+    $("body").terminal(function(command, term) {
+
+	$(document).one('ready', function() {
+
+		$(".menu").live("click", function(event) {
+
+			term.exec(event.target.id);
+
+			term.clear();
+
+		});
+
+		$(".help").live("click", function() {
+
+			term.exec("help");
+
+		});
+
+		$(".clear").live("click", function() {
+
+			term.exec("clear");
+
+		});
+	});
+
+	if (command == "help") {
+
+		greetings(term);
+
+		term.clear();
+
+		$.each(menu, function(key, feed) {
+
+			if (key % 2 === 0) {
+
+				bold = "bold";
+
+			} else {
+
+				bold = "normal";
+
+			}
+
+		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor +
+
+			  ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
+
+			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" +
+
+			  feed.title + "</a><br></tag-name>",
+
+		{ raw : true }); });
+
+	} else { $.each(menu, function(key, feed) {
+
+			if (command === feed.cmd) {
+
+				getfeed(term, feed.feed, feed.homepage);
+
+			}
+		 });
+
+	}
+
+    }, {
+
+	history: false, keydown: function() { return false; },
+	prompt: "~ ", greetings: null,
+	onBlur: function() { return false; },
+	onInit: function(term) { term.exec("help"); term.clear(); themeColors(); },
+	onClear: function(term) { greetings(term); } 
+
+    });
+
+    function greetings(term) {
+
+	term.echo("<tag-name style='white-space:pre'><a target='_blank' style='color:" + acolor +
+
+	";font-weight:" + bold + "' href='https://github.com/acktic/hiwi'>hiwi</a>" + 
+
+	"&#9;&#9;&#9;&#9;&#9;<a href='#' class='help' style='color:" + acolor + ";font-weight:" + bold + "'>menu</a>" + 
+
+	"&#9;&#9;&#9;&#9;&#9;<a class='clear' href='#' style='color:" + acolor + ";font-weight:" + bold + "'>clear</a></tag-name><br><br>",
+
+	{ raw : true });
+
+    }
 
     function getfeed(term, feed, homepage) {
 
 	$.get(proxy + feed, function (data) {
 
-		var entry = $(data).find("entry")
+		var entry = $(data).find("entry");
 
-		if ( entry.length > 0 ) { var format = "entry" } else { var format = "item" }
+		if ( entry.length > 0 ) {
 
-	        $(data).find(format).each(function (index) { term.echo("<br>", { raw : true });
+			var format = "entry"
 
-			if ( format == "entry" ) { var link = $(this).find("link").attr("href") } else { var link = $(this).find("link").text(); }
+		} else {
+
+			var format = "item"
+
+		}
+
+	        $(data).find(format).each(function (index) {
+
+			term.echo("<br>", { raw : true });
+
+			if ( format == "entry" ) {
+
+				var link = $(this).find("link").attr("href");
+
+			} else {
+
+				var link = $(this).find("link").text();
+
+			}
 							
-			if ( index % 2 === 0 ) { menuBold = "bold"; } else { menuBold = "normal"; }
-			
-			if (index >= 20) { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>", { raw : true }); return false;
+			if ( index % 2 === 0 ) {
 
-			} else { term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + "' href='" + link + "'>" + $(this).find("title").text() + "</a>", { raw : true }); }
+				menuBold = "bold";
+
+			} else {
+
+				menuBold = "normal";
+
+			}
+			
+			if (index >= 20) {
+
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
+
+				"' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
+
+				{ raw : true });
+
+			} else {
+
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
+
+				"' href='" + link + "'>" + $(this).find("title").text() + "</a>",
+
+				{ raw : true });
+
+			}
 
    		});
 
@@ -83,17 +241,27 @@ jQuery(function($) {
 
 	} else if (theme == "yotsubab") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
-	} else if (theme == "solarized") { acolor = "grey"; bcolor = "background-image: linear-gradient(#012A35, #043440";
-
 	} else if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
 
 	} else if (theme == "black hat") { acolor = "white"; bcolor = "--background: black;"; 
 
-	} $("a").css("color", acolor); $("#clock").css("color", acolor); $(".terminal").attr("style", bcolor);
+	}
+
+	$("a").css("color", acolor);
+
+	$("#clock").css("color", acolor);
+
+	$(".terminal").attr("style", bcolor);
 
     }
+
 </script>
-<div id="clock"></div><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script><select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;"><option>yotsuba</option><option>yotsubab</option><option>solarized</option><option>white hat</option><option>black hat</option>
+<div id="clock"></div><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script>
+<select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
+	<option>yotsuba</option>
+	<option>yotsubab</option>
+	<option>white hat</option>
+	<option>black hat</option>
 </select>
 </body>
 </html>
