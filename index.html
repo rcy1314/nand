@@ -31,7 +31,7 @@
 
 	}
 
-        body {
+        #terminal {
 
                 position: fixed;
 
@@ -39,9 +39,9 @@
 
                 left: 0em;
 
-                top: 1.7em;
+                top: 2em;
 
-                height: 95%;
+                bottom: 1.7em;
 
         }
 
@@ -85,15 +85,13 @@
 
 		height: 2em;
 
-		font-family: 'Space Mono', monospace;
-
 	}
 
 	#clock {
 
 		position: fixed;
 
-		right: 13em;
+		right: 1em;
 
 		font-size: .9em;
 
@@ -110,6 +108,7 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var font = [
 
+	{ name : "monospace", style : "monospace" },
 	{ name : "cutive", style : "Cutive Mono, monospace" },
 	{ name : "ibm plex", style : "IBM Plex Mono, monospace" },
 	{ name : "space mono", style : "Space Mono, monospace" },
@@ -210,7 +209,7 @@ jQuery(function($) {
 
     })
 
-    $("body").terminal(function(command, term) {
+    $("#terminal").terminal(function(command, term) {
 
 	$(document).one('ready', function() {
 
@@ -412,7 +411,8 @@ jQuery(function($) {
     }
 
 </script>
-<select class="font" style="position: fixed; z-index: 366; width: 9em; right: .2em; top: .2em;">
+<select class="font" style="position: fixed; z-index: 366; width: 9em; left: .2em; bottom: .2em;">
+    <option>monospace</option>
     <option>ibm plex</option>
     <option>cutive</option>
     <option>source code</option>
@@ -420,8 +420,9 @@ jQuery(function($) {
     <option>anonymous pro</option>
 </select>
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
+<div id="terminal"></div>
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
     <option>yotsubab</option>
