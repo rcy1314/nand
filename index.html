@@ -13,7 +13,11 @@
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
+	@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+
 	a {
+
+		font-family: Anonymous Pro, monospace;
 
 		text-decoration: none;
 
@@ -28,8 +32,6 @@
                 right: 0em;
 
                 left: 0em;
-
-                bottom: 0em;
 
                 top: 1.7em;
 
@@ -47,7 +49,7 @@
 
 		--size: .9;
 
-		line-height: 1.2em;
+		line-height: 1.1em;
 
                 background-color: transparent;
 
@@ -92,7 +94,7 @@
         }
 </style>
 <script>
-
+var font = "Anonymous Pro, monospace";
 var bold
 var acolor
 var bcolor
@@ -204,9 +206,27 @@ jQuery(function($) {
 
 		});
 
+		$(".bold").live("click", function() {
+
+			if ($("a").css("font-weight") == "700") {
+
+				bold = "normal";
+
+				$("a").css("font-weight", "400");
+
+			} else {
+
+				bold = "bold";
+
+				$("a").css("font-weight", "700");
+
+			}
+
+		});
+
 		$(".underline").live("click", function () {
 
-			if($("a").css('text-decoration').indexOf("none") > -1){
+			if ($("a").css('text-decoration').indexOf("none") > -1){
 
 				underline = "underline";
 
@@ -222,6 +242,23 @@ jQuery(function($) {
 
 		});
 
+		$(".anonymous").live("click", function () {
+
+			if ($("a").css("font-family").split(",")[0].indexOf("Space Mono") > -1) {
+
+				font = "Anonymous Pro, monospace";
+
+				$("a").css("font-family", "Anonymous Pro, monospace");
+
+			} else {
+
+				font = "Space Mono, monospace";
+
+				$("a").css("font-family", "Space Mono, monospace");
+
+			}
+		});
+
 		$(".clear").live("click", function() {
 
 			term.exec("clear");
@@ -235,21 +272,13 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) {
 
-			if (key % 2 === 0) {
-
-				bold = "bold";
-
-			} else {
-
-				bold = "normal";
-
-			}
-
-		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor +
+		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + font +
 
 			  ";font-weight:" + bold +";text-decoration:" + underline + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
 
-			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";text-decoration:" + underline + "' href='" + feed.homepage + "'>" +
+			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + font +
+
+			  ";text-decoration:" + underline + "' href='" + feed.homepage + "'>" +
 
 			  feed.title + "</a><br></tag-name>",
 
@@ -311,21 +340,11 @@ jQuery(function($) {
 
 			}
 							
-			if ( index % 2 === 0 ) {
-
-				menuBold = "bold";
-
-			} else {
-
-				menuBold = "normal";
-
-			}
-			
 			if (index >= 20) {
 
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + ";text-decoration:" + underline +
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" +
 
-				"' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
+				underline + "; font-family:" + font + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
 
 				{ raw : true });
 
@@ -333,9 +352,9 @@ jQuery(function($) {
 
 			} else {
 
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + ";text-decoration:" + underline +
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + underline +
 
-				"' href='" + link + "'>" + $(this).find("title").text() + "</a>",
+				";font-family:" + font + ";' href='" + link + "'>" + $(this).find("title").text() + "</a>",
 
 				{ raw : true });
 
@@ -373,7 +392,7 @@ jQuery(function($) {
 
 </script>
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;<a href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;<a id='help' class='help' href='#'>menu</a>&#9;&#9;&#9;<a class='underline' href='#'>underline</a>&#9;&#9;&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
+    <tag-name style='white-space:pre'>&#9;<a href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a class='anonymous' href='#'>anonymous</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
 </div>
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
