@@ -264,8 +264,6 @@ jQuery(function($) {
 
     function getfeed(term, feed, homepage) {
 
-	term.echo("<br><br>", { raw : true });
-
 	$.get(proxy + feed, function (data) {
 
 		var entry = $(data).find("entry");
@@ -281,6 +279,8 @@ jQuery(function($) {
 		}
 
 	        $(data).find(format).each(function (index) {
+
+			term.echo("<br>", { raw : true });
 
 			if ( format == "entry" ) {
 
@@ -304,7 +304,7 @@ jQuery(function($) {
 			
 			if (index >= 20) {
 
-				term.echo("<br><a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
 
 				"' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
 
