@@ -35,7 +35,6 @@
 
                 height: 100%;
 
-
         }
 
 	.cmd, span {
@@ -96,9 +95,26 @@
 
 var bold
 
+var acolor
+
+var bcolor
+
 var underline
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
+
+var theme = [
+
+	{ name : "yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#EDD6BE, #FFFAE7)" },
+	{ name : "yotsubab", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5)" },
+	{ name : "nederlands", acolor : "#FFFFFF", bcolor : "background: #FF5E00" },
+	{ name : "white hat", acolor : "green", bcolor : "background: white" },
+	{ name : "black hat", acolor : "#FFFFFF", bcolor : "background: #000000" },
+	{ name : "powershell", acolor : "white", bcolor : "background: #FF5E00" },
+	{ name : "wheatgrass", acolor : "#2F2F2D", bcolor : "background: url('https://ackti.files.wordpress.com/2018/10/1536969519535.jpg'); background-size: cover; height: 140%" },
+	{ name : "foothills", acolor : "#1A1815", bcolor : "background: url('https://ackti.files.wordpress.com/2019/06/1559344222735.jpg'); background-size: cover; height: 205%" }
+
+]
 
 var menu = [
 	{ cmd : "abc", title : "ABC is an American commercial broadcast television network that is a flagship property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
@@ -336,21 +352,19 @@ jQuery(function($) {
 
 });
 
-    function themeColors(theme) { 
+    function themeColors(style) { 
 
-	if (theme == "yotsuba") { acolor = "#81413B"; bcolor = "background-image: linear-gradient(#EDD6BE, #FFFAE7)"; 
+	$.each(theme, function(key, index) {
 
-	} else if (theme == "yotsubab") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
+		if (style == index.name) {
 
-	} else if (theme == "white hat") { acolor = "green"; bcolor = "background: white;";
+			acolor = index.acolor;
 
-	} else if (theme == "black hat") { acolor = "white"; bcolor = "background: black;"; 
+			bcolor = index.bcolor;
 
-	} else if (theme == "powershell") { acolor = "white"; bcolor = "background: #002556";
+		}
 
-	} else if (theme == "dutch") { acolor = "white"; bcolor = "background: #FF5E00";
-
-	}
+	});
 
 	$("a").css("color", acolor);
 
@@ -367,10 +381,12 @@ jQuery(function($) {
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
     <option>yotsubab</option>
-    <option>dutch</option>
+    <option>nederlands</option>
+    <option>foothills</option>
     <option>white hat</option>
     <option>black hat</option>
     <option>powershell</option>
+    <option>wheatgrass</option>
 </select>
 </body>
 </html>
