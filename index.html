@@ -21,6 +21,23 @@
 
 	}
 
+        body {
+
+                position: fixed;
+
+                right: 0em;
+
+                left: 0em;
+
+                bottom: 0em;
+
+                top: 1.7em;
+
+                height: 100%;
+
+
+        }
+
 	.cmd, span {
 
 		visibility: hidden;
@@ -31,9 +48,11 @@
 
 		--size: .9;
 
-		font-family: 'Space Mono', monospace;
-
 		line-height: 1.2em;
+
+                background-color: transparent;
+
+		font-family: 'Space Mono', monospace;
 
 	}
 
@@ -45,7 +64,7 @@
 
 	#top {
 
-		position: absolute;
+		position: fixed;
 
 		z-index: 365;
 
@@ -70,6 +89,8 @@
 		right: 0em;
 
 		font-size: .9em;
+
+        }
 </style>
 <script>
 
@@ -193,8 +214,6 @@ jQuery(function($) {
 
 		term.clear();
 
-		term.echo("<br><br>", { raw : true });
-
 		$.each(menu, function(key, feed) {
 
 			if (key % 2 === 0) {
@@ -263,8 +282,6 @@ jQuery(function($) {
 
 	        $(data).find(format).each(function (index) {
 
-			term.echo("<br>", { raw : true });
-
 			if ( format == "entry" ) {
 
 				var link = $(this).find("link").attr("href");
@@ -331,7 +348,7 @@ jQuery(function($) {
 
 	$("#menu").css("color", acolor);
 
-	$(".terminal").attr("style", bcolor);
+	$("html").attr("style", bcolor);
 
     }
 
@@ -339,7 +356,7 @@ jQuery(function($) {
 <div id="top">
     <tag-name style='white-space:pre'>&#9;<a href='https://github.com/acktic/hiwi'>hiwi</a>&#9;&#9;&#9;<a id='help' class='help' href='#'>menu</a>&#9;&#9;&#9;<a class='underline' href='#'>underline</a>&#9;&#9;&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
 </div>
-<select class="theme" style="position: absolute; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
+<select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
     <option>yotsubab</option>
     <option>white hat</option>
