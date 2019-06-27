@@ -142,6 +142,9 @@ var theme = [
 
 	{ name : "yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#EDD6BE, #FFFAE7)" },
 	{ name : "yotsubab", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5)" },
+	{ name : "ocean", acolor : "black", bcolor : "background: url('https://ackti.files.wordpress.com/2019/03/1552537581704.jpg'); background-size: cover;" },
+	{ name : "beach", acolor : "#444444", bcolor : "background: url('https://ackti.files.wordpress.com/2018/11/1541452779591.jpg'); background-size: cover; height: 113%" },
+	{ name : "linus", acolor : "green", bcolor : "background: url('https://ackti.files.wordpress.com/2019/06/1527422755773.jpg'); background-size: cover; background-postion: center;" },
 	{ name : "nederlands", acolor : "#FFFFFF", bcolor : "background: #FF5E00" },
 	{ name : "white hat", acolor : "green", bcolor : "background: white" },
 	{ name : "black hat", acolor : "#FFFFFF", bcolor : "background: #000000" },
@@ -428,7 +431,7 @@ jQuery(function($) {
 	$("#menu").css("color", acolor);
 
 	$("html").attr("style", bcolor);
-1
+
     }
 
 </script>
@@ -448,12 +451,16 @@ jQuery(function($) {
     <option>Nanum Gothic</option>
 </select>
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name>
+    <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 <div id="terminal"></div>
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
     <option>yotsubab</option>
+    <option>linus</option>
+    <option>ocean</option>
+    <option>beach</option>
     <option>nederlands</option>
     <option>foothills</option>
     <option>white hat</option>
