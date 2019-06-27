@@ -101,6 +101,32 @@
 
 	}
 
+	.theme {
+
+		position: fixed;
+
+		 z-index: 365;
+
+		width: 7.2em;
+
+		right: .2em;
+
+		bottom: .2em;
+	}
+
+	.font {
+
+		position: fixed;
+
+		z-index: 366;
+
+		width: 9em;
+
+		left: .2em;
+
+		bottom: .2em;
+	}
+
 	#clock {
 
 		position: fixed;
@@ -140,17 +166,17 @@ var font = [
 
 var theme = [
 
-	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#EDD6BE, #FFFAE7)" },
-	{ name : "Yotsubab", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5)" },
+	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#EDD6BE, #FFFAE7);" },
+	{ name : "Yotsubab", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5);" },
 	{ name : "Ocean", acolor : "#444444", bcolor : "background: url('https://ackti.files.wordpress.com/2019/03/1552537581704.jpg'); background-size: cover;" },
-	{ name : "Beach", acolor : "#444444", bcolor : "background: url('https://ackti.files.wordpress.com/2018/11/1541452779591.jpg'); background-size: cover; height: 113%" },
+	{ name : "Beach", acolor : "#444444", bcolor : "background: url('https://ackti.files.wordpress.com/2018/11/1541452779591.jpg'); background-size: cover; height: 113%;" },
 	{ name : "Linus", acolor : "green", bcolor : "background: url('https://ackti.files.wordpress.com/2019/06/1527422755773.jpg'); background-size: cover; background-postion: center;" },
-	{ name : "Nederlands", acolor : "#FFFFFF", bcolor : "background: #FF5E00" },
-	{ name : "White Hat", acolor : "green", bcolor : "background: white" },
-	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background: #000000" },
-	{ name : "Powershell", acolor : "white", bcolor : "background: #022358" },
-	{ name : "Wheatgrass", acolor : "#2F2F2D", bcolor : "background: url('https://ackti.files.wordpress.com/2018/10/1536969519535.jpg'); background-size: cover; height: 146%" },
-	{ name : "Foothills", acolor : "#1A1815", bcolor : "background: url('https://ackti.files.wordpress.com/2019/06/1559344222735.jpg'); background-size: cover; height: 205%" }
+	{ name : "Nederlands", acolor : "#FFFFFF", bcolor : "background: #FF5E00;" },
+	{ name : "White Hat", acolor : "green", bcolor : "background: white;" },
+	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background: #000000;" },
+	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;" },
+	{ name : "Wheatgrass", acolor : "#2F2F2D", bcolor : "background: url('https://ackti.files.wordpress.com/2018/10/1536969519535.jpg'); background-size: cover; height: 146%;" },
+	{ name : "Foothills", acolor : "#1A1815", bcolor : "background: url('https://ackti.files.wordpress.com/2019/06/1559344222735.jpg'); background-size: cover; height: 205%;" }
 
 ]
 
@@ -329,9 +355,9 @@ jQuery(function($) {
 
     }, {
 
+	prompt: "~",
 	history: false,
         keydown: function() { return false; },
-	prompt: "~",
 	onBlur: function() { return false; },
 	onInit: function(term) { term.exec("help"); term.clear(); },
 	onResize: function() { themeColors($(".theme").val()); }
@@ -344,7 +370,7 @@ jQuery(function($) {
 
 		var entry = $(data).find("entry");
 
-		if ( entry.length > 0 ) {
+		if (entry.length > 0) {
 
 			var format = "entry"
 
@@ -358,7 +384,7 @@ jQuery(function($) {
 
 			term.echo("<br>", { raw : true });
 
-			if ( format == "entry" ) {
+			if (format == "entry") {
 
 				var link = $(this).find("link").attr("href");
 
@@ -435,7 +461,8 @@ jQuery(function($) {
     }
 
 </script>
-<select class="font" style="position: fixed; z-index: 366; width: 9em; left: .2em; bottom: .2em;">
+
+<select class="font">
     <option>Monospace</option>
     <option>IBM Plex</option>
     <option>Fira Mono</option>
@@ -450,12 +477,13 @@ jQuery(function($) {
     <option>Anonymous Pro</option>
     <option>Nanum Gothic</option>
 </select>
+
 <div id="top">
     <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 <div id="terminal"></div>
-<select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
+<select class="theme">
     <option>Yotsuba</option>
     <option>Yotsubab</option>
     <option>Linus</option>
