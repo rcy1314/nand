@@ -96,6 +96,8 @@
 
 var bold
 
+var underline
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var menu = [
@@ -193,9 +195,13 @@ jQuery(function($) {
 
 			if($("a").css('text-decoration').indexOf("none") > -1){
 
+				underline = "underline";
+
 				$("a").css('text-decoration', 'underline');
 
 			} else {
+
+				underline = "none";
 
 				$("a").css('text-decoration', 'none');
 
@@ -228,9 +234,9 @@ jQuery(function($) {
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor +
 
-			  ";font-weight:" + bold +"' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
+			  ";font-weight:" + bold +";text-decoration:" + underline + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
 
-			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +"' href='" + feed.homepage + "'>" +
+			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";text-decoration:" + underline + "' href='" + feed.homepage + "'>" +
 
 			  feed.title + "</a><br></tag-name>",
 
@@ -304,7 +310,7 @@ jQuery(function($) {
 			
 			if (index >= 20) {
 
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + ";text-decoration:" + underline +
 
 				"' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
 
@@ -314,7 +320,7 @@ jQuery(function($) {
 
 			} else {
 
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold +
+				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + menuBold + ";text-decoration:" + underline +
 
 				"' href='" + link + "'>" + $(this).find("title").text() + "</a>",
 
@@ -336,11 +342,11 @@ jQuery(function($) {
 
 	} else if (theme == "yotsubab") { acolor = "#828593"; bcolor = "background-image: linear-gradient(#D0D5E1, #E7E9F5)"; 
 
-	} else if (theme == "white hat") { acolor = "green"; bcolor = "--background: white;";
+	} else if (theme == "white hat") { acolor = "green"; bcolor = "background: white;";
 
-	} else if (theme == "black hat") { acolor = "white"; bcolor = "--background: black;"; 
+	} else if (theme == "black hat") { acolor = "white"; bcolor = "background: black;"; 
 
-	} else if (theme == "powershell") { acolor = "white"; bcolor = "--background: #002556";
+	} else if (theme == "powershell") { acolor = "white"; bcolor = "background: #002556";
 
 	}
 
@@ -349,7 +355,7 @@ jQuery(function($) {
 	$("#menu").css("color", acolor);
 
 	$("html").attr("style", bcolor);
-
+1
     }
 
 </script>
