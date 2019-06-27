@@ -21,6 +21,20 @@
 
 	@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
 
+	@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Cousine&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
+
 	a {
 
 		font-family: Anonymous Pro, monospace;
@@ -39,9 +53,9 @@
 
                 left: 0em;
 
-                top: 2em;
+                top: 2.5em;
 
-                bottom: 1.7em;
+                bottom: 2.5em;
 
         }
 
@@ -108,12 +122,19 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var font = [
 
-	{ name : "monospace", style : "monospace" },
-	{ name : "cutive", style : "Cutive Mono, monospace" },
-	{ name : "ibm plex", style : "IBM Plex Mono, monospace" },
-	{ name : "space mono", style : "Space Mono, monospace" },
-	{ name : "anonymous pro", style : "Anonymous Pro, monospace" },
-	{ name : "source code", style : "Source Code Pro, monospace" }
+	{ name : "Monospace", style : "monospace" },
+	{ name : "Fira Mono", style : "Fira Mono, monospace" },
+	{ name : "Inconsolata", style : "Inconsolata, monospace" },
+	{ name : "PT Mono", style : "PT Mono, monospace" },
+	{ name : "Oxygen", style : "Oxygen Mono, monospace" },
+	{ name : "Roboto", style : "Roboto Mono, monospace" },
+	{ name : "Cousine", style : "Cousine, monospace" },
+	{ name : "Cutive", style : "Cutive Mono, monospace" },
+	{ name : "IBM Plex", style : "IBM Plex Mono, monospace" },
+	{ name : "Space Mono", style : "Space Mono, monospace" },
+	{ name : "Anonymous Pro", style : "Anonymous Pro, monospace" },
+	{ name : "Source Code", style : "Source Code Pro, monospace" },
+	{ name : "Nanum Gothic", style : "Nanum Gothic Coding, monospace" }
 
 ]
 
@@ -195,7 +216,7 @@ jQuery(function($) {
 
     $(".theme").val("yotsuba"); themeColors("yotsuba");
 
-    $(".font").val("anonymous pro"); fontChange("anonymous pro");
+    $(".font").val("Anonymous Pro"); fontChange("Anonymous Pro");
 
     $(".theme").on("change", function() {
 
@@ -412,12 +433,19 @@ jQuery(function($) {
 
 </script>
 <select class="font" style="position: fixed; z-index: 366; width: 9em; left: .2em; bottom: .2em;">
-    <option>monospace</option>
-    <option>ibm plex</option>
-    <option>cutive</option>
-    <option>source code</option>
-    <option>space mono</option>
-    <option>anonymous pro</option>
+    <option>Monospace</option>
+    <option>IBM Plex</option>
+    <option>Fira Mono</option>
+    <option>Inconsolata</option>
+    <option>PT Mono</option>
+    <option>Cousine</option>
+    <option>Oxygen</option>
+    <option>Roboto</option>
+    <option>Cutive</option>
+    <option>Source Code</option>
+    <option>Space Mono</option>
+    <option>Anonymous Pro</option>
+    <option>Nanum Gothic</option>
 </select>
 <div id="top">
     <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
