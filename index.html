@@ -15,7 +15,7 @@
 
 	a {
 
-		text-decoration: underline;
+		text-decoration: none;
 
 		letter-spacing: .1em;
 
@@ -348,6 +348,8 @@ jQuery(function($) {
 
 	} else if (theme == "powershell") { acolor = "white"; bcolor = "background: #002556";
 
+	} else if (theme == "dutch") { acolor = "white"; bcolor = "background-image: linear-gradient(#FE5E00, #FF6C17)";
+
 	}
 
 	$("a").css("color", acolor);
@@ -365,6 +367,7 @@ jQuery(function($) {
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
     <option>yotsubab</option>
+    <option>dutch</option>
     <option>white hat</option>
     <option>black hat</option>
     <option>powershell</option>
