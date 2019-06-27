@@ -15,6 +15,12 @@
 
 	@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
 
+	@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+	@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
+
 	a {
 
 		font-family: Anonymous Pro, monospace;
@@ -35,7 +41,7 @@
 
                 top: 1.7em;
 
-                height: 100%;
+                height: 95%;
 
         }
 
@@ -87,20 +93,30 @@
 
 		position: fixed;
 
-		right: 0em;
+		right: 13em;
 
 		font-size: .9em;
 
         }
 </style>
 <script>
-var font = "Anonymous Pro, monospace";
 var bold
+var afont
 var acolor
 var bcolor
 var underline
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
+
+var font = [
+
+	{ name : "cutive", style : "Cutive Mono, monospace" },
+	{ name : "ibm plex", style : "IBM Plex Mono, monospace" },
+	{ name : "space mono", style : "Space Mono, monospace" },
+	{ name : "anonymous pro", style : "Anonymous Pro, monospace" },
+	{ name : "source code", style : "Source Code Pro, monospace" }
+
+]
 
 var theme = [
 
@@ -118,16 +134,15 @@ var theme = [
 var menu = [
 	{ cmd : "abc", title : "ABC is an American commercial broadcast television network that is a flagship property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ cmd : "arch", title : "Arch Linux is a Linux distribution for computers based on x86-64 architectures.", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ cmd : "archlinux", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
-	{ cmd : "ars", title : "Ars Technica has became a trusted source for technology news.", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
+	{ cmd : "archsub", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ cmd : "bbc", title : "The BBC is the world’s leading public service broadcaster.", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
 	{ cmd : "beta", title : "BetaNews is a leading source of technology news and analysis.", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
-	{ cmd : "boxoffice", title : "New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
+	{ cmd : "box", title : "New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
 	{ cmd : "cbs", title : "CBS is a mass media company that creates and distributes industry-leading content.", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
 	{ cmd : "cnbc", title : "CNBC is an American pay television business news channel that is owned by NBCUniversal.", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
 	{ cmd : "cnn", title : "CNN.com is among the world's leaders in online news and information delivery.", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
 	{ cmd : "crunch", title : "TechCrunch reports on the business of technology, startups, venture capital funding, and Silicon Valley.", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
-	{ cmd : "dailymail", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
+	{ cmd : "daily", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
 	{ cmd : "engadget", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ cmd : "espn", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ cmd : "geekwire", title : "GeekWire is an American technology news website that covers startups and established technology companies.", feed : "https://www.geekwire.com/feed", homepage : "https://www.geekwire.com" },
@@ -137,11 +152,11 @@ var menu = [
 	{ cmd : "guardian", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
 	{ cmd : "hacker", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ cmd : "huff", title : "HuffingtonPost is an American liberal Web site that offers news and commentary.", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
-	{ cmd : "infoworld", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
+	{ cmd : "info", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ cmd : "insider", title : "Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
 	{ cmd : "kotaku", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
 	{ cmd : "latimes", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
-	{ cmd : "mechanics", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
+	{ cmd : "mechanic", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
 	{ cmd : "meme", title : "TechMeme is an automated news curation service focused on the leading edge of technology.", feed : "https://www.techmeme.com/feed.xml", homepage : "https://www.techmeme.com" },
 	{ cmd : "mirror", title : "All the latest news, sport and celebrity gossip at Mirror.co.uk.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
 	{ cmd : "mit", title : "MIT is a top university, in science and engineering, political science, cognitive science, philosophy and linguistics.", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
@@ -165,6 +180,7 @@ var menu = [
 	{ cmd : "sports", title : "Sports Illustrated is a weekly sports magazine that originated in 1954.", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
 	{ cmd : "spot", title : "TechSpot is a leading computer and technology publication established in 1998.", feed : "https://www.techspot.com/backend.xml", homepage : "https://www.techspot.com" },
 	{ cmd : "steam", title : "Steam is a video game digital distribution platform developed by Valve Corporation.", feed : "https://store.steampowered.com/feeds/news.xml", homepage : "https://steamcommunity.com" },
+	{ cmd : "technica", title : "Ars Technica has became a trusted source for technology news.", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
 	{ cmd : "time", title : "TIME Magazine is one of the most authoritative and informative guides to what is happening in the world.", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
 	{ cmd : "tmz", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
 	{ cmd : "ufc", title : "UFC is an American mixed martial arts promotion company based in Las Vegas, Nevada.", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
@@ -178,15 +194,21 @@ var menu = [
 
 jQuery(function($) {
 
-    $(".theme").val("yotsuba");
+    $(".theme").val("yotsuba"); themeColors("yotsuba");
 
-    themeColors("yotsuba");
+    $(".font").val("anonymous pro"); fontChange("anonymous pro");
 
     $(".theme").on("change", function() {
 
 	themeColors($(this).val());
 
     });
+
+    $(".font").on("change", function() {
+
+	fontChange($(this).val());
+
+    })
 
     $("body").terminal(function(command, term) {
 
@@ -242,23 +264,6 @@ jQuery(function($) {
 
 		});
 
-		$(".anonymous").live("click", function () {
-
-			if ($("a").css("font-family").split(",")[0].indexOf("Space Mono") > -1) {
-
-				font = "Anonymous Pro, monospace";
-
-				$("a").css("font-family", "Anonymous Pro, monospace");
-
-			} else {
-
-				font = "Space Mono, monospace";
-
-				$("a").css("font-family", "Space Mono, monospace");
-
-			}
-		});
-
 		$(".clear").live("click", function() {
 
 			term.exec("clear");
@@ -272,11 +277,11 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) {
 
-		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + font +
+		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
 
 			  ";font-weight:" + bold +";text-decoration:" + underline + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
 
-			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + font +
+			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
 			  ";text-decoration:" + underline + "' href='" + feed.homepage + "'>" +
 
@@ -344,7 +349,7 @@ jQuery(function($) {
 
 				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" +
 
-				underline + "; font-family:" + font + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
+				underline + "; font-family:" + afont + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
 
 				{ raw : true });
 
@@ -354,7 +359,7 @@ jQuery(function($) {
 
 				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + underline +
 
-				";font-family:" + font + ";' href='" + link + "'>" + $(this).find("title").text() + "</a>",
+				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a>",
 
 				{ raw : true });
 
@@ -367,6 +372,22 @@ jQuery(function($) {
     }
 
 });
+
+    function fontChange(selected) {
+
+	$.each(font, function(key, index) {
+
+		if (selected == index.name) {
+
+			$("a").css("font-family", index.style);
+
+			afont = index.style;
+
+		}
+
+	});
+
+    }
 
     function themeColors(style) { 
 
@@ -391,8 +412,15 @@ jQuery(function($) {
     }
 
 </script>
+<select class="font" style="position: fixed; z-index: 366; width: 9em; right: .2em; top: .2em;">
+    <option>ibm plex</option>
+    <option>cutive</option>
+    <option>source code</option>
+    <option>space mono</option>
+    <option>anonymous pro</option>
+</select>
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a class='anonymous' href='#'>anonymous</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ document.getElementById('clock').innerHTML = new Date; }, 1000);</script></a>
+    <tag-name style='white-space:pre'>&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name><a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 <select class="theme" style="position: fixed; z-index: 365; width: 7em; right: .2em; bottom: .2em;">
     <option>yotsuba</option>
