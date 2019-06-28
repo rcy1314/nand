@@ -11,6 +11,7 @@
   </head>
 <body>
 <style>
+
 	@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
 	@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
@@ -101,11 +102,43 @@
 
 	}
 
+	#bottom {
+
+		position: fixed;
+
+		z-index: 365;
+
+		bottom: 0em;
+
+		right: 0em;
+
+		width: 100%;
+
+		height: 1.2em;
+
+	}
+
+	#footer {
+
+		position: absolute;
+
+		font-size: 10px;
+
+		text-align: center;
+
+		z-index: 365;
+
+		width: 100%;
+
+		height: 1.7em;
+
+	}
+
 	.theme {
 
 		position: fixed;
 
-		 z-index: 365;
+		 z-index: 366;
 
 		width: 7.2em;
 
@@ -121,7 +154,7 @@
 
 		position: fixed;
 
-		z-index: 365;
+		z-index: 366;
 
 		width: 9em;
 
@@ -330,6 +363,8 @@ jQuery(function($) {
 
 		term.clear();
 
+		$("#footer").html("");
+
 		$.each(menu, function(key, feed) {
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
@@ -372,6 +407,8 @@ jQuery(function($) {
 
     function getfeed(term, feed, homepage) {
 
+	$("#footer").html("<a href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + underline + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+
 	$.get(proxy + feed, function (data) {
 
 		var entry = $(data).find("entry");
@@ -400,23 +437,17 @@ jQuery(function($) {
 
 			}
 							
-			if (index >= 20) {
-
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" +
-
-				underline + "; font-family:" + afont + "' href='" + homepage + "'>" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>",
-
-				{ raw : true });
-
-				return false;
-
-			} else {
+			if (index <= 20) {
 
 				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + underline +
 
 				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a>",
 
 				{ raw : true });
+
+			} else {
+
+				return false;
 
 			}
 
@@ -468,6 +499,15 @@ jQuery(function($) {
 
 </script>
 
+<div id="top">
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name>
+    <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
+</div>
+
+<div id="terminal"></div>
+
+<div id="bottom">
+
 <select class="font">
     <option>Monospace</option>
     <option>IBM Plex</option>
@@ -484,11 +524,8 @@ jQuery(function($) {
     <option>Nanum Gothic</option>
 </select>
 
-<div id="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='underline' href='#'>line</a>&#9;<a id='clear' class='menu' href='#'>clear</a></tag-name>
-    <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
-</div>
-<div id="terminal"></div>
+<div id="footer"></div>
+
 <select class="theme">
     <option>Yotsuba</option>
     <option>Yotsubab</option>
@@ -502,5 +539,7 @@ jQuery(function($) {
     <option>Powershell</option>
     <option>Wheatgrass</option>
 </select>
+
+</div>
 </body>
 </html>
