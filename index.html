@@ -80,31 +80,7 @@
 
 	::-webkit-scrollbar {
 
-		width: 10px;
-
-		height: 10px;
-
-	}
-
-	::-webkit-scrollbar-track {
-
-		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1); 
-
-		border-radius: 10px;
-
-	}
-
-	::-webkit-scrollbar-thumb {
-
-		border-radius: 10px;
-
-		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-
-	}
-
-	body {
-
-		overflow-x: hidden;
+		display: none;
 
 	}
 
@@ -197,6 +173,7 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var font = [
 
+	{ name : "Monospace", style : "monospace" },
 	{ name : "Fira Mono", style : "Fira Mono, monospace" },
 	{ name : "Inconsolata", style : "Inconsolata, monospace" },
 	{ name : "PT Mono", style : "PT Mono, monospace" },
@@ -378,11 +355,11 @@ jQuery(function($) {
 
 		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
 
-			  ";font-weight:" + bold +";text-decoration:" + underline + ";' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
+			  ";font-weight:" + bold +";text-decoration:" + underline + "' id='" + feed.cmd + "' class='menu'>" + feed.cmd +
 
 			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-			  ";text-decoration:" + underline + ";' href='" + feed.homepage + "'>" +
+			  ";text-decoration:" + underline + "' href='" + feed.homepage + "'>" +
 
 			  feed.title + "</a></tag-name>",
 
@@ -516,6 +493,7 @@ jQuery(function($) {
 <div id="terminal"></div>
 
 <select class="font">
+    <option>Monospace</option>
     <option>IBM Plex</option>
     <option>Fira Mono</option>
     <option>Inconsolata</option>
