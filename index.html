@@ -382,7 +382,6 @@ jQuery(function($) {
 
     }, {
 
-	prompt: "~",
 	history: false,
         keydown: function() { return false; },
 	onBlur: function() { return false; },
@@ -393,7 +392,7 @@ jQuery(function($) {
 
     function getfeed(term, feed, homepage) {
 
-	$("#bottom").html("<a href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + underline + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$("#bottom").html("<a target='_blank' href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + underline + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
