@@ -104,27 +104,13 @@
 
 	#bottom {
 
-		position: fixed;
-
-		z-index: 365;
-
-		bottom: 0em;
-
-		right: 0em;
-
-		width: 100%;
-
-		height: 1.2em;
-
-	}
-
-	#footer {
-
 		position: absolute;
 
 		font-size: 10px;
 
 		text-align: center;
+
+		bottom: 0em;
 
 		z-index: 365;
 
@@ -363,7 +349,7 @@ jQuery(function($) {
 
 		term.clear();
 
-		$("#footer").html("");
+		$("#bottom").html("");
 
 		$.each(menu, function(key, feed) {
 
@@ -407,7 +393,7 @@ jQuery(function($) {
 
     function getfeed(term, feed, homepage) {
 
-	$("#footer").html("<a href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + underline + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$("#bottom").html("<a href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + underline + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -506,8 +492,6 @@ jQuery(function($) {
 
 <div id="terminal"></div>
 
-<div id="bottom">
-
 <select class="font">
     <option>Monospace</option>
     <option>IBM Plex</option>
@@ -524,7 +508,7 @@ jQuery(function($) {
     <option>Nanum Gothic</option>
 </select>
 
-<div id="footer"></div>
+<div id="bottom"></div>
 
 <select class="theme">
     <option>Yotsuba</option>
@@ -540,6 +524,5 @@ jQuery(function($) {
     <option>Wheatgrass</option>
 </select>
 
-</div>
 </body>
 </html>
