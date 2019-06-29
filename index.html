@@ -276,9 +276,13 @@ var menu = [
 
 jQuery(function($) {
 
-    $(".theme").val("Yotsuba"); themeChange("Yotsuba");
+    randTheme = theme[Math.floor(Math.random()*theme.length)].name
 
-    $(".font").val("Anonymous Pro"); fontChange("Anonymous Pro");
+    $(".theme").val(randTheme); themeChange(randTheme);
+
+    randFont = font[Math.floor(Math.random()*font.length)].name
+
+    $(".font").val(randFont); fontChange(randFont);
 
     $(".theme").on("change", function () {
 
