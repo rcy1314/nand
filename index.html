@@ -365,16 +365,6 @@ jQuery(function($) {
 
 		});
 
-		$(".style").live("click", function () {
-
-			var randTheme = theme[Math.floor(Math.random()*theme.length)].name;
-
-			var randFont = font[Math.floor(Math.random()*font.length)].name;
-
-			setTheme(randTheme, randFont);
-
-		});
-
 		$(".clear").live("click", function () {
 
 			term.clear();
@@ -524,7 +514,7 @@ jQuery(function($) {
 </script>
 
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>rand</a>&#9;<a class="style" href="#">style</a>&#9; <a class='clear' href='#'>clear</a></tag-name>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>rand</a>&#9;<a class='clear' href='#'>clear</a></tag-name>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 
@@ -552,7 +542,7 @@ jQuery(function($) {
 
 <select class="theme">
     <option>Yotsuba</option>
-    <option>Yotsuba b</option>
+    <option>Yotsuba B</option>
     <option>White Hat</option>
     <option>Grey Hat</option>
     <option>Black Hat</option>
