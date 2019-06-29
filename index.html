@@ -268,17 +268,17 @@ var menu = [
 
 jQuery(function($) {
 
-    $(".theme").val("yotsuba"); themeColors("yotsuba");
+    $(".theme").val("Yotsuba"); themeChange("Yotsuba");
 
     $(".font").val("Anonymous Pro"); fontChange("Anonymous Pro");
 
-    $(".theme").on("change", function() {
+    $(".theme").on("change", function () {
 
-	themeColors($(this).val());
+	themeChange($(this).val());
 
     });
 
-    $(".font").on("change", function() {
+    $(".font").on("change", function () {
 
 	fontChange($(this).val());
 
@@ -286,7 +286,7 @@ jQuery(function($) {
 
     $("#terminal").terminal(function(command, term) {
 
-	$(document).one('ready', function() {
+	$(document).one('ready', function () {
 
 		$(".menu").live("click", function(event) {
 
@@ -302,7 +302,7 @@ jQuery(function($) {
 
 		});
 
-		$(".bold").live("click", function() {
+		$(".bold").live("click", function () {
 
 			if ($("a").css("font-weight") == "700") {
 
@@ -341,14 +341,11 @@ jQuery(function($) {
 		$(".random").live("click", function () {
 
 
-			var random = menu[Math.floor(Math.random()*menu.length)];
-
-                        term.exec(random.cmd);
-
+			term.exec(menu[Math.floor(Math.random()*menu.length)].cmd);
 
 		});
 
-		$(".clear").live("click", function() {
+		$(".clear").live("click", function () {
 
 			term.exec("clear");
 
@@ -396,7 +393,7 @@ jQuery(function($) {
         keydown: function() { return false; },
 	onBlur: function() { return false; },
 	onInit: function(term) { term.exec("help"); term.clear(); },
-	onResize: function() { themeColors($(".theme").val()); }
+	onResize: function() { themeChange($(".theme").val()); }
 
     });
 
@@ -470,7 +467,7 @@ jQuery(function($) {
 
     }
 
-    function themeColors(style) { 
+    function themeChange(style) { 
 
 	$.each(theme, function(key, index) {
 
