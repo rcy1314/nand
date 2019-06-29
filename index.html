@@ -176,8 +176,6 @@ var line
 var afont
 var acolor
 var bcolor
-var randFont
-var randTheme
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -280,23 +278,19 @@ var menu = [
 
 jQuery(function($) {
 
-    var setTheme = function () {
+    var setTheme = function (style, text) {
 
-	randTheme = theme[Math.floor(Math.random()*theme.length)].name
+	$(".theme").val(style);
 
-	$(".theme").val(randTheme);
+	themeChange(style);
 
-	themeChange(randTheme);
+	$(".font").val(text);
 
-	randFont = font[Math.floor(Math.random()*font.length)].name
-
-	$(".font").val(randFont);
-
-	fontChange(randFont);
+	fontChange(text);
 
     }
 
-    setTheme();
+    setTheme("Powershell", "Monospace");
 
     $(".theme").on("change", function () {
 
@@ -375,7 +369,11 @@ jQuery(function($) {
 
 		$(".style").live("click", function () {
 
-			setTheme();
+			var randTheme = theme[Math.floor(Math.random()*theme.length)].name;
+
+			var randFont = font[Math.floor(Math.random()*font.length)].name;
+
+			setTheme(randTheme, randFont);
 
 		});
 
@@ -429,6 +427,7 @@ jQuery(function($) {
         keydown: function() { return false; },
 	onBlur: function() { return false; },
 	onInit: function(term) { term.clear(); term.exec("help"); },
+	onResize: function() { themeChange($(".theme").val()); }
 
     });
 
@@ -527,7 +526,7 @@ jQuery(function($) {
 </script>
 
 <div id="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>rand</a>&#9;<a class="style" href="#">theme</a>&#9;<a class='clear' href='#'> clear</a></tag-name>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/hiwi'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>rand</a>&#9;<a class="style" href="#">style</a>&#9;<a class='clear' href='#'> clear</a></tag-name>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 
