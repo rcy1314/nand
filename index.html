@@ -5,9 +5,6 @@
     <title>hiwi</title>
     <link rel="shortcut icon" href="favicon.ico">
     <script src="jquery-1.7.1.min.js"></script>
-    <script src="jquery.mousewheel-min.js"></script>
-    <script src="jquery.terminal.min.js"></script>
-    <link href="jquery.terminal.min.css" rel="stylesheet"/>
   </head>
 <body>
 <style>
@@ -48,39 +45,33 @@
 
 	}
 
-        #terminal {
+	html, body {
 
-                position: fixed;
+		height: 100%;
 
-                right: 0em;
-
-                left: 0em;
-
-                top: 2.5em;
-
-                bottom: 2.5em;
-
-        }
-
-	.cmd, span {
-
-		visibility: hidden;
+		width: 100%;
 
 	}
 
-	.terminal {
+	.output {
 
-		--size: .9;
+		position: fixed;
 
-		line-height: 1.1em;
+		z-index: 365;
+
+		font-size: 80%;
+
+		line-height: .8em;
+
+		width: 100%;
+
+		left: 1em;
+
+		top: 3.2em;
+
+		bottom: 1.7em;
 
                 background-color: transparent;
-
-	}
-
-	::-webkit-scrollbar {
-
-		display: none;
 
 	}
 
@@ -90,7 +81,7 @@
 
 	}
 
-	#top {
+	.top {
 
 		position: fixed;
 
@@ -212,66 +203,66 @@ var theme = [
 
 var menu = [
 
-	{ name : "abc", title : "ABC is an American commercial broadcast television network that is a property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
+	{ name : "rabc", title : "ABC is an American commercial broadcast television network that is a property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ name : "arch", title : "Arch Linux is a Linux distribution for computers based on x86-64 architectures.", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ name : "archsub", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
-	{ name : "bbc", title : "The BBC is the world’s leading public service broadcaster.", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
+	{ name : "rsub", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
+	{ name : "rbbc", title : "The BBC is the world’s leading public service broadcaster.", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
 	{ name : "beta", title : "BetaNews is a leading source of technology news and analysis.", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
-	{ name : "box", title : "New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
-	{ name : "cbs", title : "CBS is a mass media company that creates and distributes industry-leading content.", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
+	{ name : "rbox", title : "New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
+	{ name : "rcbs", title : "CBS is a mass media company that creates and distributes industry-leading content.", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
 	{ name : "cnbc", title : "CNBC is an American pay television business news channel that is owned by NBCUniversal.", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
-	{ name : "cnn", title : "CNN.com is among the world's leaders in online news and information delivery.", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
-	{ name : "computer", title : "Computer Weekly stands out from the many technology news websites.", feed : "https://www.computerweekly.com/rss/RSS-Feed.xml", homepage : "https://www.computerweekly.com" },
-	{ name : "crunch", title : "TechCrunch reports on the business of technology, startups, venture capital funding, and Silicon Valley.", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
-	{ name : "daily", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
-	{ name : "engadget", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
+	{ name : "rcnn", title : "CNN.com is among the world's leaders in online news and information delivery.", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
+	{ name : "comp", title : "Computer Weekly stands out from the many technology news websites.", feed : "https://www.computerweekly.com/rss/RSS-Feed.xml", homepage : "https://www.computerweekly.com" },
+	{ name : "rcru", title : "TechCrunch reports on the business of technology, startups, venture capital funding, and Silicon Valley.", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
+	{ name : "rdly", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
+	{ name : "reng", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ name : "espn", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
-	{ name : "fox", title : "FOX Sports a wide array of multi-platform US-based sports assets.", feed : "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU", homepage : "https://www.foxsports.com/" },
-	{ name : "geekwire", title : "GeekWire is an American technology news website that covers startups and established technology companies.", feed : "https://www.geekwire.com/feed", homepage : "https://www.geekwire.com" },
-	{ name : "gizmodo", title : "Gizmodo is a design, technology, science and science fiction website.", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
-	{ name : "google", title : "Google LLC is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
-	{ name : "gtech", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
-	{ name : "guardian", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
-	{ name : "hacker", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
+	{ name : "rfox", title : "FOX Sports a wide array of multi-platform US-based sports assets.", feed : "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU", homepage : "https://www.foxsports.com/" },
+	{ name : "geek", title : "GeekWire is an American technology news website that covers startups and established technology companies.", feed : "https://www.geekwire.com/feed", homepage : "https://www.geekwire.com" },
+	{ name : "rgiz", title : "Gizmodo is a design, technology, science and science fiction website.", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
+	{ name : "goog", title : "Google LLC is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
+	{ name : "tech", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
+	{ name : "guar", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
+	{ name : "hack", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ name : "hive", title : "TechHive is 100 percent committed to smart home and home entertainment gear.", feed : "https://www.techhive.com/index.rss", homepage : "https://www.techhive.com" },
 	{ name : "huff", title : "HuffingtonPost is an American liberal Web site that offers news and commentary.", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
 	{ name : "info", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
-	{ name : "insider", title : "Business Insider is a growing business site with financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
-	{ name : "kotaku", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
-	{ name : "latimes", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
-	{ name : "linux", title : "The Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://www.reddit.com/r/linux" },
-	{ name : "mechanic", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
+	{ name : "insi", title : "Business Insider is a growing business site with financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
+	{ name : "kota", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
+	{ name : "rlat", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
+	{ name : "rlnx", title : "The Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://www.reddit.com/r/linux" },
+	{ name : "mech", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
 	{ name : "meme", title : "TechMeme is an automated news curation service focused on the leading edge of technology.", feed : "https://www.techmeme.com/feed.xml", homepage : "https://www.techmeme.com" },
-	{ name : "mirror", title : "All the latest news, sport and celebrity gossip at Mirror.co.uk.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
-	{ name : "mit", title : "MIT is a top university, in science and engineering, cognitive science, philosophy and linguistics.", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
-	{ name : "mlb", title : "MLB.com, is the official site of Major League Baseball.", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://www.mlb.com" },
-	{ name : "mmaj", title : "MMAjunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkie.com" },
-	{ name : "msn", title : "MSN is a web portal and related collection of Internet services and apps for Windows and mobile devices.", feed : "http://rss.msn.com", homepage : "https://www.msn.com" },
-	{ name : "nbc", title : "NBC News is the news division of the American broadcast television network NBC.", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
-	{ name : "nfl", title : "TheScore is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/nfl.rss", homepage : "https://www.thescore.com/nfl/news" },
-	{ name : "npr", title : "NPR is an independent, nonprofit media organization that was founded to create a more informed public.", feed : "https://www.npr.org/rss/rss.php?id=1019", homepage : "https://www.npr.org" },
-	{ name : "packet", title : "Packet Storm is a information security website offering current and historical computer security tools.", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
-	{ name : "pbs", title : "The Public Broadcasting Service is an American public broadcaster and television program distributor.", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
-	{ name : "pcworld", title : "PC World is one of the United Kingdom's largest retail chains of mass market computer megastores.", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
-	{ name : "people", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
-	{ name : "politico", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
-	{ name : "radar", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
-	{ name : "register", title : "The Register is a British technology news and opinion website co-founded in 1994.", feed : "https://www.theregister.co.uk/headlines.atom", homepage : "https://www.theregister.co.uk" },
-	{ name : "republic", title : "TechRepublic is an online trade publication and social community for IT professionals.", feed : "https://www.techrepublic.com/rssfeeds/articles", homepage : "https://www.techrepublic.com" },
-	{ name : "sfgate", title : "SFGATE is the Hearst-owned website sister-site of the San Francisco Chronicle.", feed : "https://www.sfgate.com/rss/feed/Business-and-Technology-News-448.php", homepage : "https://www.sfgate.com/technology" },
-	{ name : "skynews", title : "Sky News is a British news organisation, which operates a TV network.", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
-	{ name : "slashdot", title : "Slashdot is a social news website that originally billed itself as News for Nerds.", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
-	{ name : "sports", title : "Sports Illustrated is a weekly sports magazine that originated in 1954.", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
+	{ name : "rmir", title : "All the latest news, sport and celebrity gossip at Mirror.co.uk.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://www.mirror.co.uk/tech" },
+	{ name : "rmit", title : "MIT is a top university, in science and engineering, cognitive science, philosophy and linguistics.", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
+	{ name : "rmlb", title : "MLB.com, is the official site of Major League Baseball.", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://www.mlb.com" },
+	{ name : "rmma", title : "MMAjunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkie.com" },
+	{ name : "rmsn", title : "MSN is a web portal and related collection of Internet services and apps for Windows and mobile devices.", feed : "http://rss.msn.com", homepage : "https://www.msn.com" },
+	{ name : "rnbc", title : "NBC News is the news division of the American broadcast television network NBC.", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
+	{ name : "rnfl", title : "TheScore is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/nfl.rss", homepage : "https://www.thescore.com/nfl/news" },
+	{ name : "rnpr", title : "NPR is an independent, nonprofit media organization that was founded to create a more informed public.", feed : "https://www.npr.org/rss/rss.php?id=1019", homepage : "https://www.npr.org" },
+	{ name : "pack", title : "Packet Storm is a information security website offering current and historical computer security tools.", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
+	{ name : "rpbs", title : "The Public Broadcasting Service is an American public broadcaster and television program distributor.", feed : "https://www.pbs.org/newshour/feeds/rss/headlines", homepage : "https://www.pbs.org" },
+	{ name : "rpcw", title : "PC World is one of the United Kingdom's largest retail chains of mass market computer megastores.", feed : "https://www.pcworld.com/index.rss", homepage : "https://www.pcworld.com" },
+	{ name : "rppl", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
+	{ name : "tico", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
+	{ name : "rrad", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
+	{ name : "rreg", title : "The Register is a British technology news and opinion website co-founded in 1994.", feed : "https://www.theregister.co.uk/headlines.atom", homepage : "https://www.theregister.co.uk" },
+	{ name : "rrep", title : "TechRepublic is an online trade publication and social community for IT professionals.", feed : "https://www.techrepublic.com/rssfeeds/articles", homepage : "https://www.techrepublic.com" },
+	{ name : "gate", title : "SFGATE is the Hearst-owned website sister-site of the San Francisco Chronicle.", feed : "https://www.sfgate.com/rss/feed/Business-and-Technology-News-448.php", homepage : "https://www.sfgate.com/technology" },
+	{ name : "rsky", title : "Sky News is a British news organisation, which operates a TV network.", feed : "http://feeds.skynews.com/feeds/rss/technology.xml", homepage : "https://news.sky.com/technology" },
+	{ name : "rdot", title : "Slashdot is a social news website that originally billed itself as News for Nerds.", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
+	{ name : "rill", title : "Sports Illustrated is a weekly sports magazine that originated in 1954.", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://www.si.com" },
 	{ name : "spot", title : "TechSpot is a leading computer and technology publication established in 1998.", feed : "https://www.techspot.com/backend.xml", homepage : "https://www.techspot.com" },
-	{ name : "technica", title : "Ars Technica has became a trusted source for technology news.", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
+	{ name : "nica", title : "Ars Technica has became a trusted source for technology news.", feed : "http://feeds.arstechnica.com/arstechnica/index?format=xml", homepage : "https://arstechnica.com" },
 	{ name : "time", title : "TIME Magazine is one of the most authoritative and informative guides to what is happening in the world.", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
-	{ name : "tmz", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
-	{ name : "ufc", title : "UFC is an American mixed martial arts promotion company based in Las Vegas, Nevada.", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
-	{ name : "usa", title : "USA Today is an internationally distributed American daily, middle-market newspaper.", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
+	{ name : "rtmz", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://www.tmz.com" },
+	{ name : "rufc", title : "UFC is an American mixed martial arts promotion company based in Las Vegas, Nevada.", feed : "https://www.ufc.com/rss/news", homepage : "https://www.ufc.com" },
+	{ name : "rusa", title : "USA Today is an internationally distributed American daily, middle-market newspaper.", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
 	{ name : "vice", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://www.vice.com" },
-	{ name : "wired", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
-	{ name : "yahoo", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
-	{ name : "ycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
+	{ name : "wire", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
+	{ name : "rhoo", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
+	{ name : "rycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 ]
 
 jQuery(function($) {
@@ -304,7 +295,6 @@ jQuery(function($) {
 
     })
 
-    $("#terminal").terminal(function(command, term) {
 
 	$(document).one('ready', function () {
 
@@ -312,15 +302,37 @@ jQuery(function($) {
 
 		$(".menu").live("click", function(event) {
 
-			term.clear();
+		command = $(this).get(0).id;
 
-			term.exec(event.target.id);
+		$.each(menu, function(key, feed) {
+
+			if (command === feed.name) {
+
+				getfeed(feed.feed, feed.homepage);
+
+			}
+		});
 
 		});
 
 		$(".help").live("click", function() {
 
-			term.exec("help");
+		$(".output").html("");
+
+		$.each(menu, function(key, feed) {
+
+		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
+
+			  ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+
+			  "</a>      &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+
+			  ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
+
+			  feed.title + "</a><br></tag-name>")
+
+		});
+
 
 		});
 
@@ -362,68 +374,33 @@ jQuery(function($) {
 
 		$(".random").live("click", function () {
 
+			var command = menu[Math.floor(Math.random()*menu.length)];
 
-			term.exec(menu[Math.floor(Math.random()*menu.length)].name);
+			$.each(menu, function(key, feed) {
+
+				if (command.name == feed.name) {
+
+					getfeed(feed.feed, feed.homepage);
+
+				}
+			});
 
 		});
 
 		$(".clear").live("click", function () {
 
-			term.clear();
+			$(".output").html("");
 
 			$(".bottom").html("");
 
 		});
 	});
 
-	if (command == "help") {
-
-		term.clear();
-
-		$(".bottom").html("");
-
-		$.each(menu, function(key, feed) {
-
-		term.echo("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
-
-			  ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
-
-			  "</a>     &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
-
-			  ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
-
-			  feed.title + "</a></tag-name>",
-
-		{ raw : true }); });
-
-	} else { 
-
-		term.clear(); 
-
-		$.each(menu, function(key, feed) {
-
-			if (command === feed.name) {
-
-				getfeed(term, feed.feed, feed.homepage);
-
-			}
-		});
-
-	}
-
-    }, {
-
-	history: false,
-        keydown: function() { return false; },
-	onBlur: function() { return false; },
-	onInit: function(term) { term.clear(); term.exec("help"); },
-	onResize: function() { themeChange($(".theme").val()); }
-
-    });
-
-    function getfeed(term, feed, homepage) {
+    function getfeed(feed, homepage) {
 
 	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+
+	$(".output").html("");
 
 	$.get(proxy + feed, function (data) {
 
@@ -441,8 +418,6 @@ jQuery(function($) {
 
 	        $(data).find(format).each(function (index) {
 
-			term.echo("<br>", { raw : true });
-
 			if (format == "entry") {
 
 				var link = $(this).find("link").attr("href");
@@ -455,11 +430,9 @@ jQuery(function($) {
 							
 			if (index <= 20) {
 
-				term.echo("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
+				$(".output").append("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a>",
-
-				{ raw : true });
+				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a><br><br>");
 
 			} else {
 
@@ -515,12 +488,11 @@ jQuery(function($) {
 
 </script>
 
-<div id="top">
+<div class="top">
     <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>random</a>&#9;     <a class='clear' href='#'>clear</a></tag-name>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
-
-<div id="terminal"></div>
+<div class="output"></div>
 
 <select class="font">
     <option>Monospace</option>
