@@ -8,6 +8,4 @@ Add a feed to the menu array then point and click.
 
 ## Credit
 
->Jcubic
-
 >Heroku
