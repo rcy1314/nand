@@ -466,6 +466,12 @@ jQuery(function($) {
 
 	$(".output").attr('tabindex', -1).focus();
 
+	$('.output').focusout(function(){
+
+		$(".output").attr('tabindex', -1).focus();
+
+	});
+
 	$(".help").trigger("click");
 
     });
