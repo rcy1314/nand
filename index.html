@@ -43,32 +43,6 @@
 
 		width: 100%;
 
-	}
-
-	.output {
-
-		position: fixed;
-
-		z-index: 365;
-
-		font-size: 80%;
-
-		line-height: .8em;
-
-		width: 100%;
-
-		left: 1em;
-
-		top: 3.2em;
-
-		bottom: 1.7em;
-
-                background-color: transparent;
-
-	}
-
-	body {
-
 		overflow: hidden;
 
 	}
@@ -88,6 +62,28 @@
 		width: 100%;
 
 		height: 2em;
+
+	}
+
+	.output {
+
+		position: fixed;
+
+		z-index: 365;
+
+		font-size: 80%;
+
+		line-height: .9em;
+
+		width: 100%;
+
+		left: 1em;
+
+		top: 3.2em;
+
+		bottom: 1.7em;
+
+                background-color: transparent;
 
 	}
 
@@ -189,8 +185,7 @@ var theme = [
 	{ name : "White Hat", acolor : "green", bcolor : "background: white;" },
 	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);" },
 	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000;" },
-	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;" }
-
+	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;" },
 ]
 
 var menu = [
@@ -289,8 +284,6 @@ jQuery(function($) {
 
     $(document).one('ready', function () {
 
-	$(".style").trigger("click");
-
 	$(".menu").live("click", function(event) {
 
 	command = $(this).get(0).id;
@@ -364,7 +357,7 @@ jQuery(function($) {
 
     });
 
-    $(".random").live("click", function () {
+    $(".rand").live("click", function () {
 
 	var command = menu[Math.floor(Math.random()*menu.length)];
 
@@ -397,9 +390,9 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
-
 	$(".output").html("");
+
+	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -409,23 +402,16 @@ jQuery(function($) {
 
 			var format = "entry"
 
+			var link = $(this).find("link").attr("href");
+
 		} else {
 
 			var format = "item"
 
+			var link = $(this).find("link").text();
 		}
 
 	        $(data).find(format).each(function (index) {
-
-			if (format == "entry") {
-
-				var link = $(this).find("link").attr("href");
-
-			} else {
-
-				var link = $(this).find("link").text();
-
-			}
 							
 			if (index <= 20) {
 
@@ -488,7 +474,7 @@ jQuery(function($) {
 </script>
 
 <div class="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' class='hiwi' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>rand</a>&#9;<a class='clear' href='#'>clear</a></tag-name>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' class='hiwi' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='rand' href='#'>rand</a>&#9;<a class='clear' href='#'>clear</a></tag-name>
     <script>$(".top").css("font-weight", bold);</script>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
