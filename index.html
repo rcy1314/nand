@@ -305,21 +305,22 @@ jQuery(function($) {
 
     })
 
-
     $(document).one('ready', function () {
 
 	$(".menu").live("click", function(event) {
 
-	command = $(this).get(0).id;
+		command = $(this).get(0).id;
 
-	$.each(menu, function(key, feed) {
+		$.each(menu, function(key, feed) {
 
-		if (command === feed.name) {
+			if (command === feed.name) {
 
-			getfeed(feed.feed, feed.homepage);
+				getfeed(feed.feed, feed.homepage);
 
-		}
-	});
+			}
+		});
+
+	    });
 
     });
 
@@ -454,8 +455,6 @@ jQuery(function($) {
 	});
 
     }
-
-});
 
     function fontChange(selected) {
 
