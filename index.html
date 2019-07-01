@@ -59,17 +59,19 @@
 
 		position: fixed;
 
+		font-family: Arial;
+
 		font-size: .7em;
 
 		z-index: 365;
 
-		top: .45em;
+		top: .65em;
 
 		right: 2em;
 
 		width: 100%;
 
-		height: 2em;
+		height: 1.2em;
 
 	}
 
@@ -115,7 +117,9 @@
 
 		width: 100%;
 
-		height: 1.3em;
+		height: 1.5em;
+
+		font-family: Monospace;
 
 	}
 
@@ -159,7 +163,9 @@
 
 		bottom: .4em;
 
-		font-size: .9em;
+		font-family: Arial;
+
+		font-size: .7em;
 
         }
 
@@ -219,7 +225,8 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var font = [
 
-	{ name : "Monospace", style : "monospace" },
+	{ name : "Monospace", style : "Monospace" },
+	{ name : "Arial", style : "Arial" },
 	{ name : "Consolas", style : "Consolas, monospace" },
 	{ name : "Inconsolata", style : "Inconsolata, monospace" },
 	{ name : "PT Mono", style : "PT Mono, monospace" },
@@ -239,8 +246,8 @@ var font = [
 
 var theme = [
 
-	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#F8E2D4, #FFFFFB);", scolor : "#81413B", sbackc : "" },
-	{ name : "Yotsuba B", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #E7E9F5);", scolor : "#828593", sbackc : "#E7E9F5" },
+	{ name : "Yotsuba", acolor : "maroon", bcolor : "background-image: linear-gradient(#F8E2D4, #FFFFFB);", scolor : "maroon", sbackc : "" },
+	{ name : "Yotsuba B", acolor : "#34345c", bcolor : "background-image: linear-gradient(#D0D5E1, #E7E9F5);", scolor : "#34345c", sbackc : "#E7E9F5" },
 	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36;", scolor : "#93A1A1", sbackc : "#002B36" },
 	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF;", scolor : "#008000", sbackc : "" },
 	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);", scolor : "#C0C5CE", sbackc : "#65737E" },
@@ -278,7 +285,7 @@ var menu = [
 	{ name : "info", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ name : "insi", title : "Business Insider is a growing business site with financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
 	{ name : "kota", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
-	{ name : "rlat", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
+	{ name : "ltms", title : "The Los Angeles Times is a daily newspaper which has been published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://www.latimes.com/business/technology" },
 	{ name : "rlnx", title : "The Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://www.reddit.com/r/linux" },
 	{ name : "mech", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
 	{ name : "meme", title : "TechMeme is an automated news curation service focused on the leading edge of technology.", feed : "https://www.techmeme.com/feed.xml", homepage : "https://www.techmeme.com" },
@@ -313,23 +320,14 @@ var menu = [
 	{ name : "ryah", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "rycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 
+
 ]
 
 jQuery(function($) {
 
-    var setTheme = function (style, text) {
+    fontChange("Monospace");
 
-	$(".theme").val(style);
-
-	themeChange(style);
-
-	$(".font").val(text);
-
-	fontChange(text);
-
-    }
-
-    setTheme("Yotsuba", "Monospace");
+    themeChange("Yotsuba");
 
     $(".theme").on("change", function () {
 
@@ -515,7 +513,7 @@ jQuery(function($) {
 
 		if (selected == index.name) {
 
-			$("a").css("font-family", index.style);
+			$(".output a").css("font-family", index.style);
 
 			afont = index.style;
 
@@ -560,7 +558,7 @@ jQuery(function($) {
 </script>
 
 <div class="top">
-    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
+    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">help</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
     <script>$(".top").css("font-weight", bold);</script>
 </div>
 
@@ -577,6 +575,8 @@ jQuery(function($) {
 	<select class="font">
 
 		<option>Monospace</option>
+
+		<option>Arial</option>
 
 		<option>Consolas</option>
 
