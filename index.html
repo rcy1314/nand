@@ -192,6 +192,8 @@
 
 	.selectdiv select {
 
+		border: 0em;
+
 		-webkit-appearance: none;
 
 		-moz-appearance: none;
@@ -204,19 +206,17 @@
 
 		max-width: 10em;
 
-		height: 20px;
+		height: 2em;
 
 		float: right;
 
-		margin: 3px 0px;
+		margin: .5em 0em;
 
-		padding: 0px 12px;
+		padding: 0em 1em;
 
-		font-size: 12px;
+		font-size: .7em;
 
-		line-height: 1.75;
-
-		color: #AAAAAA;
+		line-height: 1em;
 
 		background-color: transparent;
 
@@ -224,7 +224,7 @@
 
 		word-break: normal;
 
-}
+	}
 
 </style>
 <script>
@@ -258,13 +258,13 @@ var font = [
 
 var theme = [
 
-	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#F8E2D4, #FFFFFB);", scolor : "#81413B" },
-	{ name : "Yotsuba B", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5);", scolor : "828593" },
-	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36;", scolor : "#93A1A1" },
-	{ name : "White Hat", acolor : "green", bcolor : "background: white;", scolor : "green" },
-	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);", scolor : "#AAAAAA" },
-	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000;", scolor : "#888888" },
-	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;", scolor : "#888888" }
+	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#F8E2D4, #FFFFFB);", scolor : "#81413B", sbackc : "" },
+	{ name : "Yotsuba B", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5);", scolor : "#828593", sbackc : "#D0D5E1" },
+	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36;", scolor : "#93A1A1", sbackc : "#002B36" },
+	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF;", scolor : "#008000", sbackc : "" },
+	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);", scolor : "#C0C5CE", sbackc : "#65737E" },
+	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000;", scolor : "#FFFFFF", sbackc : "black" },
+	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358;", scolor : "#FFFFFF", sbackc : "#022358" }
 
 ]
 
@@ -556,6 +556,8 @@ jQuery(function($) {
 
 			scolor = index.scolor;
 
+			sbackc = index.sbackc
+
 		}
 
 	});
@@ -567,6 +569,10 @@ jQuery(function($) {
 	$("html").attr("style", bcolor);
 
 	$(".selectdiv select").css("color", scolor);
+
+	$("option").css("color", scolor);
+
+	$("option").css("background-color", sbackc);
 
     }
 
