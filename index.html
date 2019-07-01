@@ -31,6 +31,8 @@
 
 	::-webkit-scrollbar {
 
+		height: 6px;
+
 		width: 6px;
 
 	}
@@ -100,7 +102,7 @@
 
 		bottom: 2em;
 
-		overflow-y: auto;
+		overflow: auto;
 
                 background-color: transparent;
 
@@ -201,17 +203,19 @@ var theme = [
 
 	{ name : "Yotsuba", acolor : "#81413B", bcolor : "background-image: linear-gradient(#F8E2D4, #FFFFFB);" },
 	{ name : "Yotsuba B", acolor : "#828593", bcolor : "background-image: linear-gradient(#D0D5E1, #e7E9F5);" },
+	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background-image: linear-gradient(#002B36, #657B83);" },
 	{ name : "White Hat", acolor : "green", bcolor : "background: white;" },
 	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);" },
 	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000;" },
-	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;" },
+	{ name : "Powershell", acolor : "white", bcolor : "background: #022358;" }
+
 ]
 
 var menu = [
 
 	{ name : "rabc", title : "ABC is an American commercial broadcast television network that is a property of Walt Disney Television.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ name : "arch", title : "Arch Linux is a Linux distribution for computers based on x86-64 architectures.", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ name : "rsub", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
+	{ name : "rarc", title : "ArchLinux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://www.reddit.com/r/archlinux" },
 	{ name : "rbbc", title : "The BBC is the world’s leading public service broadcaster.", feed : "http://feeds.bbci.co.uk/news/technology/rss.xml", homepage : "https://www.bbc.co.uk/news/technology" },
 	{ name : "beta", title : "BetaNews is a leading source of technology news and analysis.", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
 	{ name : "rbox", title : "New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
@@ -520,6 +524,7 @@ jQuery(function($) {
 <select class="theme">
     <option>Yotsuba</option>
     <option>Yotsuba B</option>
+    <option>Solarized</option>
     <option>White Hat</option>
     <option>Grey Hat</option>
     <option>Black Hat</option>
