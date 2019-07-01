@@ -272,7 +272,7 @@ var menu = [
 	{ name : "rusa", title : "USA Today is an internationally distributed American daily, middle-market newspaper.", feed : "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1", homepage : "https://www.usatoday.com/tech/" },
 	{ name : "vice", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://www.vice.com" },
 	{ name : "wire", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
-	{ name : "rhoo", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
+	{ name : "ryah", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "rycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 
 ]
@@ -291,7 +291,9 @@ jQuery(function($) {
 
     }
 
-    setTheme("Grey Hat", "Monospace");
+    var set = theme[Math.floor(Math.random()*theme.length)];
+
+    setTheme(set.name, "Monospace");
 
     $(".theme").on("change", function () {
 
