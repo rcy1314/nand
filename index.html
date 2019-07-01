@@ -136,7 +136,7 @@
 
 		right: .2em;
 
-		bottom: .2em;
+		bottom: 0em;
 
 		height: 1.4em;
 
@@ -150,9 +150,9 @@
 
 		width: 8.3em;
 
-		right: 8.5em;
+		right: 10.5em;
 
-		bottom: .2em;
+		bottom: 0em;
 
 		height: 1.4em;
 
@@ -170,6 +170,50 @@
 
         }
 
+	/* IE11 hide native button */
+
+	select::-ms-expand {
+
+		display: none;
+
+	}
+
+	.selectdiv select {
+
+		-webkit-appearance: none;
+
+		-moz-appearance: none;
+
+		appearance: none;
+
+		display: block;
+
+		width: 100%;
+
+		max-width: 10em;
+
+		height: 20px;
+
+		float: right;
+
+		margin: 3px 0px;
+
+		padding: 0px 12px;
+
+		font-size: 12px;
+
+		line-height: 1.75;
+
+		color: #888888;
+
+		background-color: transparent;
+
+		-ms-word-break: normal;
+
+		word-break: normal;
+
+}
+
 </style>
 <script>
 
@@ -184,7 +228,7 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 var font = [
 
 	{ name : "Monospace", style : "monospace" },
-	{ name : "Fira Mono", style : "Fira Mono, monospace" },
+	{ name : "Consolas", style : "Consolas, monospace" },
 	{ name : "Inconsolata", style : "Inconsolata, monospace" },
 	{ name : "PT Mono", style : "PT Mono, monospace" },
 	{ name : "Oxygen", style : "Oxygen Mono, monospace" },
@@ -512,9 +556,12 @@ jQuery(function($) {
 </div>
 
 <div class="output"></div>
-
+<div class="bottom"></div>
+<div class="selectdiv">
+<label>
 <select class="font">
     <option>Monospace</option>
+    <option>Consolas</option>
     <option>IBM Plex</option>
     <option>Inconsolata</option>
     <option>PT Mono</option>
@@ -526,9 +573,9 @@ jQuery(function($) {
     <option>Share Tech</option>
     <option>Nova Mono</option>
 </select>
-
-<div class="bottom"></div>
-
+</label>
+<div class="selectdiv">
+<label>
 <select class="theme">
     <option>Yotsuba</option>
     <option>Yotsuba B</option>
@@ -538,6 +585,7 @@ jQuery(function($) {
     <option>Black Hat</option>
     <option>Powershell</option>
 </select>
-
+</label>
+</div>
 </body>
 </html>
