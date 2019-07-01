@@ -4,14 +4,12 @@
     <meta charset="utf-8" />
     <title>hiwi</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <script src="jquery-1.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
 <body>
 <style>
 
 	@import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap");
 
 	@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
 
@@ -23,13 +21,7 @@
 
 	@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
-	@import url("https://fonts.googleapis.com/css?family=Fira+Mono&display=swap");
-
 	@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Cousine&display=swap");
 
 	@import url("https://fonts.googleapis.com/css?family=PT+Mono&display=swap");
 
@@ -123,11 +115,11 @@
 
 		 z-index: 366;
 
-		width: 7.2em;
+		width: 8.3em;
 
 		right: .2em;
 
-		bottom: .2em;
+		bottom: 1.6em;
 
 		height: 1.4em;
 
@@ -139,9 +131,9 @@
 
 		z-index: 366;
 
-		width: 9em;
+		width: 8.3em;
 
-		left: .2em;
+		right: .2em;
 
 		bottom: .2em;
 
@@ -162,7 +154,7 @@
 </style>
 <script>
 
-var bold
+var bold = 'bold'
 var line
 var afont
 var acolor
@@ -294,105 +286,105 @@ jQuery(function($) {
     })
 
 
-	$(document).one('ready', function () {
+    $(document).one('ready', function () {
 
-		$(".style").trigger("click");
+	$(".style").trigger("click");
 
-		$(".menu").live("click", function(event) {
+	$(".menu").live("click", function(event) {
 
-		command = $(this).get(0).id;
+	command = $(this).get(0).id;
 
-		$.each(menu, function(key, feed) {
+	$.each(menu, function(key, feed) {
 
-			if (command === feed.name) {
+		if (command === feed.name) {
 
-				getfeed(feed.feed, feed.homepage);
+			getfeed(feed.feed, feed.homepage);
 
-			}
-		});
+		}
+	});
 
-		});
+    });
 
-		$(".help").live("click", function() {
+    $(".help").live("click", function() {
 
-		$(".output").html("");
+	$(".output").html("");
 
-		$.each(menu, function(key, feed) {
+	$.each(menu, function(key, feed) {
 
 		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
 
-			  ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+				    ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
 
-			  "</a>      &#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-			  ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
+				    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
 
-			  feed.title + "</a><br></tag-name>")
+				    feed.title + "</a><br></tag-name>")
 
-		});
-
-
-		});
-
-		$(".bold").live("click", function () {
-
-			if ($("a").css("font-weight") == "700") {
-
-				bold = "normal";
-
-				$("a").css("font-weight", "400");
-
-			} else {
-
-				bold = "bold";
-
-				$("a").css("font-weight", "700");
-
-			}
-
-		});
-
-		$(".line").live("click", function () {
-
-			if ($("a").css('text-decoration').indexOf("none") > -1){
-
-				line = "underline";
-
-				$("a").css('text-decoration', 'underline');
-
-			} else {
-
-				line = "none";
-
-				$("a").css('text-decoration', 'none');
-
-			}
-
-		});
-
-		$(".random").live("click", function () {
-
-			var command = menu[Math.floor(Math.random()*menu.length)];
-
-			$.each(menu, function(key, feed) {
-
-				if (command.name == feed.name) {
-
-					getfeed(feed.feed, feed.homepage);
-
-				}
-			});
-
-		});
-
-		$(".clear").live("click", function () {
-
-			$(".output").html("");
-
-			$(".bottom").html("");
-
-		});
 	});
+
+    });
+
+    $(".bold").live("click", function () {
+
+	if ($("a").css("font-weight") == "700") {
+
+		bold = "normal";
+
+		$("a").css("font-weight", "400");
+
+	} else {
+
+		bold = "bold";
+
+		$("a").css("font-weight", "700");
+
+	}
+
+    });
+
+    $(".line").live("click", function () {
+
+	if ($("a").css('text-decoration').indexOf("none") > -1){
+
+		line = "underline";
+
+		$("a").css('text-decoration', 'underline');
+
+	} else {
+
+		line = "none";
+
+		$("a").css('text-decoration', 'none');
+
+	}
+
+    });
+
+    $(".random").live("click", function () {
+
+	var command = menu[Math.floor(Math.random()*menu.length)];
+
+	$.each(menu, function(key, feed) {
+
+		if (command.name == feed.name) {
+
+			getfeed(feed.feed, feed.homepage);
+
+		}
+	});
+
+    });
+
+    $(".clear").live("click", function () {
+
+	$(".output").html("");
+
+	$(".bottom").html("");
+
+    });
+
+});
 
     function getfeed(feed, homepage) {
 
@@ -487,7 +479,8 @@ jQuery(function($) {
 </script>
 
 <div class="top">
-    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>random</a>&#9;     <a class='clear' href='#'>clear</a></tag-name>
+    <tag-name style='white-space:pre'>&#9;&#9;<a target='_blank' class='hiwi' href='https://github.com/acktic/acktic.github.io'>hiwi</a>&#9;<a id='help' class='help' href='#'>menu</a>&#9;<a class='bold' href='#'>bold</a>&#9;<a class='line' href='#'>line</a>&#9;<a class='random' href='#'>random</a>&#9;     <a class='clear' href='#'>clear</a></tag-name>
+    <script>$(".top").css("font-weight", bold);</script>
     <a id="clock" target='_blank' href='https://time.is/'><script>setInterval(function(){ var time = new Date; document.getElementById('clock').innerHTML = time.toLocaleString("en-US"); }, 1000);</script></a>
 </div>
 <div class="output"></div>
@@ -495,16 +488,12 @@ jQuery(function($) {
 <select class="font">
     <option>Monospace</option>
     <option>IBM Plex</option>
-    <option>Fira Mono</option>
     <option>Inconsolata</option>
     <option>PT Mono</option>
-    <option>Cousine</option>
-    <option>Oxygen</option>
     <option>Roboto</option>
     <option>Cutive</option>
     <option>Source Code</option>
     <option>Space Mono</option>
-    <option>Anonymous Pro</option>
     <option>Nanum Gothic</option>
     <option>Share Tech</option>
     <option>Nova Mono</option>
