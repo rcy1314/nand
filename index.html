@@ -29,11 +29,20 @@
 
 	@import url("https://fonts.googleapis.com/css?family=Nova+Mono&display=swap");
 
-	a {
+	::-webkit-scrollbar {
 
-		text-decoration: none;
+		width: 6px;  /* for vertical scrollbars */
 
-		letter-spacing: .1em;
+	}
+
+	::-webkit-scrollbar-track {
+
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	::-webkit-scrollbar-thumb {
+
+		background: rgba(0, 0, 0, 0.5);
 
 	}
 
@@ -44,6 +53,14 @@
 		width: 100%;
 
 		overflow: hidden;
+
+	}
+
+	a {
+
+		text-decoration: none;
+
+		letter-spacing: .1em;
 
 	}
 
@@ -73,15 +90,17 @@
 
 		font-size: 80%;
 
-		line-height: .9em;
+		line-height: .8em;
 
-		width: 100%;
+		width: 98.5%;
 
 		left: 1em;
 
 		top: 3.2em;
 
-		bottom: 1.7em;
+		bottom: 2em;
+
+		overflow-y: auto;
 
                 background-color: transparent;
 
@@ -251,6 +270,7 @@ var menu = [
 	{ name : "wire", title : "WIRED is where tomorrow is realized. It is the essential source of information.", feed : "https://www.wired.com/feed/rss", homepage : "https://www.wired.com" },
 	{ name : "rhoo", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "rycv", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
+
 ]
 
 jQuery(function($) {
