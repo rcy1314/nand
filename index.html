@@ -99,7 +99,7 @@
 
 		z-index: 365;
 
-		font-size: 80%;
+		font-size: 11px;
 
 		line-height: 1em;
 
@@ -238,6 +238,7 @@
 
 var bold
 var line
+var size
 var afont
 var acolor
 var bcolor
@@ -353,7 +354,6 @@ var menu = [
 	{ name : "yaho", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "ycvc", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" }
 
-
 ]
 
 jQuery(function($) {
@@ -403,7 +403,7 @@ jQuery(function($) {
 
 		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
 
-				    ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+				    ";font-size:" + size + ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
 
 				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
@@ -447,6 +447,24 @@ jQuery(function($) {
 
 		$("a").css('text-decoration', 'none');
 
+	}
+
+    });
+
+    $(".size").live("click", function () {
+
+	if ($(".output").css("font-size") == "11px") {
+
+		size = "12px"
+
+		$(".output").css("font-size", "12px");
+
+	} else {
+
+		size = "11px"
+
+		$(".output").css("font-size", "11px");
+		
 	}
 
     });
@@ -496,7 +514,7 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a class='help' href='#' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a class='help' href='#' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -528,7 +546,7 @@ jQuery(function($) {
 
 				$(".output").append("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a><br><br>");
+				";font-size:" + size + ";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a><br><br>");
 
 			} else {
 
@@ -591,24 +609,16 @@ jQuery(function($) {
     }
 
 </script>
-
 <div class="top"><div class="rss"><a target="_blank" href="https://en.wikipedia.org/wiki/RSS">rss for the rest of us!</a></div>
-    <tag-name style="white-space:pre">&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
+    <tag-name style="white-space:pre">&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;<a class="size" href="#">size</a>&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
     <script>$(".top").css("font-weight", bold);</script>
 </div>
-
 <div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
-
 <div class="output"></div>
-
 <div class="bottom"></div>
-
 <div class="selectdiv">
-
     <label>
-
 	<select class="font">
-
 		<option>Monospace</option>
 
 		<option>Consolas</option>
@@ -633,15 +643,10 @@ jQuery(function($) {
 
 		<option>Nova Mono</option>
 	</select>
-
 </label>
-
 <div class="selectdiv">
-
     <label>
-
 	<select class="theme">
-
 		<option>Yotsuba</option>
 
 		<option>Yotsuba B</option>
@@ -655,11 +660,8 @@ jQuery(function($) {
 		<option>Black Hat</option>
 
 		<option>Powershell</option>
-
 	</select>
-
     </label>
-
 </div>
 </body>
 </html>
