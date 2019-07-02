@@ -75,6 +75,24 @@
 
 	}
 
+	.rss {
+
+		position: fixed;
+
+		font-family: Arial;
+
+		font-size: .8em;
+
+		z-index: 365;
+
+		top: .65em;
+
+		right: 1em;
+
+		height: 1.2em;
+
+	}
+
 	.output {
 
 		position: fixed;
@@ -109,9 +127,9 @@
 
 		text-align: center;
 
-		font-size: 1em;
+		font-size: .8em;
 
-		bottom: 0em;
+		bottom: .2em;
 
 		z-index: 365;
 
@@ -444,7 +462,7 @@ jQuery(function($) {
 
 	$(".output").html("");
 
-	$(".bottom").html("");
+	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
     });
 
@@ -470,7 +488,7 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a class='help' href='#' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + ";font-family:" + afont +"'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -566,7 +584,7 @@ jQuery(function($) {
 
 </script>
 
-<div class="top">
+<div class="top"><div class='rss'><a>rss for the rest of us!</a></div>
     <tag-name style="white-space:pre">&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
     <script>$(".top").css("font-weight", bold);</script>
 </div>
