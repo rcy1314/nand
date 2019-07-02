@@ -197,8 +197,6 @@
 
 		height: 1.2em;
 
-		float: right;
-
 		margin: .5em 0em;
 
 		padding: 0em 1em;
@@ -276,6 +274,7 @@ var menu = [
 	{ name : "comp", title : "Computer Weekly stands out from the many technology news websites.", feed : "https://www.computerweekly.com/rss/RSS-Feed.xml", homepage : "https://www.computerweekly.com" },
 	{ name : "crch", title : "TechCrunch reports on the business of technology, startups, venture capital funding, and Silicon Valley.", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
 	{ name : "daly", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
+	{ name : "deds", title : "Deadspin brings you the latest sports news, stories, videos, and more.", feed : "https://deadspin.com/rss", homepage : "https://deadspin.com" },
 	{ name : "engt", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ name : "espn", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ name : "forb", title : "Forbes is a global media company, focusing on business, investing, and 1technology.", feed : "https://www.forbes.com/most-popular/feed", homepage : "https://www.forbes.com" },
@@ -372,7 +371,7 @@ jQuery(function($) {
 
 	$(".output").html("");
 
-	$(".bottom").html("");
+	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
 	$.each(menu, function(key, feed) {
 
@@ -460,6 +459,8 @@ jQuery(function($) {
 	});
 
 	$(".help").trigger("click");
+
+	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
     });
 
