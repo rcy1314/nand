@@ -75,26 +75,6 @@
 
 	}
 
-	.category {
-
-		position: fixed;
-
-		font-family: monospace;
-
-		font-size: .6em;
-
-		width: 8.3em;
-
-		z-index: 365;
-
-		top: .2em;
-
-		right: .2em;
-
-		height: 1.2em;
-
-	}
-
 	.output {
 
 		position: fixed;
@@ -123,6 +103,14 @@
 
 	}
 
+	.background {
+
+		display: inline-block;
+
+		height: 3em;
+
+	}
+
 	.bottom {
 
 		position: absolute;
@@ -131,15 +119,33 @@
 
 		font-size: .8em;
 
-		bottom: .2em;
+		bottom: .15em;
 
 		z-index: 365;
 
 		width: 100%;
 
-		height: 1.5em;
+		height: 1.4em;
 
 		font-family: Monospace;
+
+	}
+
+	.category {
+
+		position: fixed;
+
+		font-size: .6em;
+
+		width: 8.3em;
+
+		z-index: 365;
+
+		top: .15em;
+
+		right: .2em;
+
+		height: 1.2em;
 
 	}
 
@@ -205,7 +211,7 @@
 
 		border: 0em;
 
-		font-family: Monospace;
+		font-family: Arial;
 
 		-webkit-appearance: none;
 
@@ -225,9 +231,9 @@
 
 		padding: 0em 1em;
 
-		font-size: .8em;
+		font-size: .7em;
 
-		line-height: 1em;
+		line-height: 1.4em;
 
 		background-color: transparent;
 
@@ -246,6 +252,7 @@ var size = '11px'
 var afont
 var acolor
 var bcolor
+var abackc
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var font = [
@@ -330,6 +337,7 @@ var menu = [
 	{ name : "nasa", category : "Technology", title : "NASA.gov brings you the latest images, videos and news from America's space agency.", feed : "https://www.nasa.gov/rss/dyn/breaking_news.rss", homepage : "https://www.nasa.gov" },
 	{ name : "nbcn", category : "Syndicated", title : "NBC News is the news division of the American broadcast television network NBC.", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://www.nbcnews.com" },
 	{ name : "nbcs", category : "Sports", title : "NBC Sports is responsible for the televising of many sports events on the network.", feed : "https://sports.nbcsports.com/feed", homepage : "https://www.nbcsports.com" },
+	{ name : "nypo", category : "Technology", title : "The New York Post, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.", feed : "https://nypost.com/tech/feed", homepage : "https://nypost.com/tech" },
 	{ name : "scor", category : "Sports", title : "TheScore is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/nfl.rss", homepage : "https://www.thescore.com/nfl/news" },
 	{ name : "nprn", category : "Syndicated", title : "NPR is an independent, nonprofit media organization that was founded to create a more informed public.", feed : "https://www.npr.org/rss/rss.php?id=1019", homepage : "https://www.npr.org" },
 	{ name : "pack", category : "Technology", title : "Packet Storm is a information security website offering current and historical computer security tools.", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
@@ -388,9 +396,9 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) {
 
-			$(".output").append("<div class='background'><br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+			$(".output").append("<div class='background'><br>&ensp;&ensp;<a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a></div><br>")
+					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
 
 		});
 
@@ -406,9 +414,9 @@ jQuery(function($) {
 
 			if(feed.category == $(".category").val()) {
 
-				$(".output").append("<div class='background'><br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+				$(".output").append("<div class='background'><br>&ensp;&ensp;<a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a></div><br>")
+						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a>&ensp;&ensp;</div><br>")
 
 			} else { 
 
@@ -622,7 +630,7 @@ jQuery(function($) {
 
 			scolor = index.scolor;
 
-			sbackc = index.sbackc
+			sbackc = index.sbackc;
 
 		}
 
