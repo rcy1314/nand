@@ -251,6 +251,7 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 var font = [
 
 	{ name : "Monospace", style : "Monospace" },
+	{ name : "Arial", style : "Arial" },
 	{ name : "Consolas", style : "Consolas, monospace" },
 	{ name : "Inconsolata", style : "Inconsolata, monospace" },
 	{ name : "PT Mono", style : "PT Mono, monospace" },
@@ -308,13 +309,13 @@ var menu = [
 	{ name : "foxs", category : "Sports", title : "FOX Sports a wide array of multi-platform US-based sports assets.", feed : "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU", homepage : "https://www.foxsports.com" },
 	{ name : "geek", category : "Technology", title : "GeekWire is an American technology news website that covers startups and established technology companies.", feed : "https://www.geekwire.com/feed", homepage : "https://www.geekwire.com" },
 	{ name : "gizm", category : "Technology", title : "Gizmodo is a design, technology, science and science fiction website.", feed : "https://gizmodo.com/rss", homepage : "https://gizmodo.com" },
-	{ name : "goog", category : "Syndicated", title : "Google LLC is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
+	{ name : "goog", category : "Syndicated", title : "Google is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ name : "tech", category : "Technology", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ name : "guar", category : "Syndicated", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
 	{ name : "hack", category : "Technology", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ name : "hive", category : "Technology", title : "TechHive is 100 percent committed to smart home and home entertainment gear.", feed : "https://www.techhive.com/index.rss", homepage : "https://www.techhive.com" },
 	{ name : "huff", category : "Syndicated", title : "HuffingtonPost is an American liberal Web site that offers news and commentary.", feed : "https://www.huffpost.com/section/technology/feed", homepage : "https://www.huffpost.com/section/technology" },
-	{ name : "indp", category : "Syndicated", title : "Latest Gadgets and Tech news from indepentdent.co.uk", feed : "http://www.independent.co.uk/life-style/gadgets-and-tech/rss", homepage : "https://www.independent.co.uk/life-style/gadgets-and-tech" },
+	{ name : "indp", category : "Syndicated", title : "Latest Gadgets and Tech news from independent.co.uk", feed : "http://www.independent.co.uk/life-style/gadgets-and-tech/rss", homepage : "https://www.independent.co.uk/life-style/gadgets-and-tech" },
 	{ name : "info", category : "Technology", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ name : "insi", category : "Technology", title : "Business Insider is a growing business site with financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
 	{ name : "kota", category : "Technology", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
@@ -382,49 +383,41 @@ jQuery(function($) {
 
 	if ($(this).val() == "All") {
 
-	$(".output").html("");
+		$(".output").html("");
 
-	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+		$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
-	$.each(menu, function(key, feed) {
+		$.each(menu, function(key, feed) {
 
-		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
+			$(".output").append("<br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-				    ";font-size:" + size + ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a><br>")
 
-				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+		});
 
-				    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
-
-				    feed.title + "</a><br><br></tag-name>")
-
-	});
-
-	return false;
+		return false;
 
  	} else {
 
-	$(".output").html("");
+		$(".output").html("");
 
-	$(".bottom").html("");
+		$(".bottom").html("");
 
-	$.each(menu, function(key, feed) {
+		$.each(menu, function(key, feed) {
 
-		if(feed.category == $(".category").val()) {
+			if(feed.category == $(".category").val()) {
 
-		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
+				$(".output").append("<br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-				    ";font-size:" + size + ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a><br>")
 
-				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+			} else { 
 
-				    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
+				return true;
 
-				    feed.title + "</a><br><br></tag-name>")
+			}
 
-		} else { return true; }
-
-	});
+		});
 
 	}
 
@@ -554,7 +547,7 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -674,6 +667,8 @@ jQuery(function($) {
     <label>
 	<select class="font">
 		<option>Monospace</option>
+
+		<option>Arial</option>
 
 		<option>Consolas</option>
 
