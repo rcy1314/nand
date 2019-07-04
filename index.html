@@ -407,7 +407,7 @@ jQuery(function($) {
 
 		$(".output").html("<br>");
 
-		$(".bottom").html("");
+		$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(this).val() + " Feed</a>");
 
 		$.each(menu, function(key, feed) {
 
@@ -510,17 +510,44 @@ jQuery(function($) {
 
     $(".rand").live("click", function () {
 
-	var command = menu[Math.floor(Math.random()*menu.length)];
+	if ($(".category").val() == "All") {
 
-	$.each(menu, function(key, feed) {
+		var command = menu[Math.floor(Math.random()*menu.length)];
 
-		if (command.name == feed.name) {
+		getfeed(command.feed, command.homepage)
 
-			getfeed(feed.feed, feed.homepage);
+		return false;
+
+	} else {
+
+		var result = [ ];
+
+		for(key in menu) { 
+
+			if (menu[key].category == $(".category").val()) {
+
+				result.push(menu[key].name);
+
+			}
 
 		}
-	});
 
+		var command = result[Math.floor(Math.random()*result.length)];
+
+		$.each(menu, function(key, index) {
+
+			if (command == index.name) {
+
+				getfeed(index.feed, index.homepage);
+
+				return false;
+
+			}
+
+		});
+
+	}
+		
     });
 
     $(".clear").live("click", function () {
