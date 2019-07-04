@@ -117,7 +117,7 @@
 
 		text-align: center;
 
-		font-size: .8em;
+		font-size: .7em;
 
 		bottom: .15em;
 
@@ -127,7 +127,7 @@
 
 		height: 1.4em;
 
-		font-family: Monospace;
+		font-family: Arial;
 
 	}
 
@@ -302,7 +302,7 @@ var menu = [
 	{ name : "cbss", category : "Sports", title : "CBS Sports is an American sports news website operated by the CBS Interactive.", feed : "https://rss.cbssports.com/rss/headlines", homepage : "https://www.cbssports.com" },
 	{ name : "cnbc", category : "Syndicated", title : "CNBC is an American pay television business news channel that is owned by NBCUniversal.", feed : "https://www.cnbc.com/id/19854910/device/rss/rss.html", homepage : "https://www.cnbc.com/technology" },
 	{ name : "cnni", category : "Syndicated", title : "CNN.com is among the world's leaders in online news and information delivery.", feed : "http://rss.cnn.com/rss/cnn_topstories.rss", homepage : "https://www.cnn.com" },
-	{ name : "cnns", category : "Sports", title : "CNN catalogues the latest sports news from around the world.", feed : "http://rss.cnn.com/rss/edition_sport.rss", homepage : "https://www.cnn.com/sport/index.html" },
+	{ name : "cnns", category : "Sports", title : "CNN catalogues the latest sports news from around the world.", feed : "http://rss.cnn.com/rss/edition_sport.rss", homepage : "https://www.cnn.com/sport" },
 	{ name : "comp", category : "Technology", title : "Computer Weekly stands out from the many technology news websites.", feed : "https://www.computerweekly.com/rss/RSS-Feed.xml", homepage : "https://www.computerweekly.com" },
 	{ name : "crch", category : "Technology", title : "TechCrunch reports on the business of technology, startups, venture capital funding, and Silicon Valley.", feed : "http://feeds.feedburner.com/TechCrunch", homepage : "https://techcrunch.com" },
 	{ name : "daly", category : "Syndicated", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
@@ -319,7 +319,6 @@ var menu = [
 	{ name : "tech", category : "Technology", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ name : "guar", category : "Syndicated", title : "The Guardian is the world's leading liberal voice.", feed : "https://www.theguardian.com/world/rss", homepage : "https://www.theguardian.com" },
 	{ name : "hack", category : "Technology", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
-	{ name : "hive", category : "Technology", title : "TechHive is 100 percent committed to smart home and home entertainment gear.", feed : "https://www.techhive.com/index.rss", homepage : "https://www.techhive.com" },
 	{ name : "indp", category : "Syndicated", title : "Latest Gadgets and Tech news from independent.co.uk", feed : "http://www.independent.co.uk/life-style/gadgets-and-tech/rss", homepage : "https://www.independent.co.uk/life-style/gadgets-and-tech" },
 	{ name : "info", category : "Technology", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://www.infoworld.com" }, 
 	{ name : "insi", category : "Technology", title : "Business Insider is a growing business site with financial, media, tech, and other industry verticals.", feed : "https://www.businessinsider.com/rss", homepage : "https://www.businessinsider.com" },
@@ -522,15 +521,15 @@ jQuery(function($) {
 
 		var result = [ ];
 
-		for(key in menu) { 
+		$.each(menu, function(key, index) { 
 
-			if (menu[key].category == $(".category").val()) {
+			if (index.category == $(".category").val()) {
 
 				result.push(menu[key].name);
 
 			}
 
-		}
+		});
 
 		var command = result[Math.floor(Math.random()*result.length)];
 
