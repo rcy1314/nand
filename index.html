@@ -381,7 +381,29 @@ jQuery(function($) {
 
     $(".category").on("change", function () {
 
-	if ($(this).val() == "All") { $(".help").trigger("click"); return false; }
+	if ($(this).val() == "All") {
+
+	$(".output").html("");
+
+	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+
+	$.each(menu, function(key, feed) {
+
+		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
+
+				    ";font-size:" + size + ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
+
+				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+
+				    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
+
+				    feed.title + "</a><br></tag-name>")
+
+	});
+
+	return false;
+
+ 	} else {
 
 	$(".output").html("");
 
@@ -405,7 +427,7 @@ jQuery(function($) {
 
 	});
 
-
+	}
 
     });
 
@@ -430,23 +452,7 @@ jQuery(function($) {
 
     $(".help").live("click", function() {
 
-	$(".output").html("");
-
-	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
-
-	$.each(menu, function(key, feed) {
-
-		$(".output").append("<tag-name style='white-space:pre'><a href='#' style='color: " + acolor + ";font-family:" + afont +
-
-				    ";font-size:" + size + ";font-weight:" + bold +";text-decoration:" + line + "' id='" + feed.name + "' class='menu'>" + feed.name +
-
-				    "</a>&#9;&#9;&#9;<a target='_blank' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
-
-				    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" +
-
-				    feed.title + "</a><br></tag-name>")
-
-	});
+	$(".category").trigger("change");
 
     });
 
