@@ -449,17 +449,17 @@ jQuery(function($) {
 
     $(".bold").live("click", function () {
 
-	if ($(".output a").css("font-weight") == "700") {
+	if ($("a").css("font-weight") == "700") {
 
 		bold = "normal";
 
-		$(".output a").css("font-weight", "400");
+		$("a").css("font-weight", "400");
 
 	} else {
 
 		bold = "bold";
 
-		$(".output a").css("font-weight", "700");
+		$("a").css("font-weight", "700");
 
 	}
 
@@ -546,7 +546,9 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a target='_blank' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a target='_blank' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "' href='" + homepage +
+
+			  "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
