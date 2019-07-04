@@ -362,9 +362,9 @@ var menu = [
 
 jQuery(function($) {
 
-    fontChange("Monospace");
+    fontChange("Arial"); $(".font").val("Arial");
 
-    themeChange("Yotsuba");
+    themeChange("Solarized"); $(".theme").val("Solarized");
 
     $(".theme").on("change", function () {
 
@@ -388,9 +388,9 @@ jQuery(function($) {
 
 		$.each(menu, function(key, feed) {
 
-			$(".output").append("<br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+			$(".output").append("<div class='background'><br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a><br>")
+					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a></div><br>")
 
 		});
 
@@ -406,9 +406,9 @@ jQuery(function($) {
 
 			if(feed.category == $(".category").val()) {
 
-				$(".output").append("<br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+				$(".output").append("<div class='background'><br><a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a><br>")
+						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a></div><br>")
 
 			} else { 
 
@@ -576,9 +576,9 @@ jQuery(function($) {
 
 			if (index <= 20) {
 
-				$(".output").append("<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
+				$(".output").append("<div class='background'><br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-size:" + size + ";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a><br><br>");
+				";font-size:" + size + ";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div><br>");
 
 			} else {
 
