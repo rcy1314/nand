@@ -399,7 +399,7 @@ jQuery(function($) {
 
 		$(".output").html("<br>");
 
-		$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+		$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
 		$.each(menu, function(key, feed) {
 
@@ -415,7 +415,7 @@ jQuery(function($) {
 
 		$(".output").html("<br>");
 
-		$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(this).val() + " Feed</a>");
+		$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(this).val() + " Feed</a>");
 
 		$.each(menu, function(key, feed) {
 
@@ -516,7 +516,7 @@ jQuery(function($) {
 
     });
 
-    $(".rand").live("click", function () {
+    $(".random").live("click", function () {
 
 	if ($(".category").val() == "All") {
 
@@ -570,7 +570,7 @@ jQuery(function($) {
 
 	$(".help").trigger("click");
 
-	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
     });
 
@@ -678,7 +678,7 @@ jQuery(function($) {
 
 </script>
 <div class="top">
-    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="size" href="#">size</a>&#9;<a class="rand" href="#">rand</a>
+    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="size" href="#">size</a>&#9;<a class="random" href="#">random</a>
 </tag-name>
 </div>
 <div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
