@@ -51,6 +51,12 @@
 
 	}
 
+	.top a:hover {
+
+		text-decoration: underline;
+
+	}
+
 	.top {
 
 		position: fixed;
@@ -406,7 +412,7 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + " Feed</a>");
 
 	$.each(menu, function(key, feed) {
 
@@ -513,19 +519,19 @@ jQuery(function($) {
 
 	} else {
 
-		var result = [ ];
+		var array = [ ];
 
 		$.each(menu, function(key, index) { 
 
 			if (index.category == $(".category").val()) {
 
-				result.push(menu[key].name);
+				array.push(menu[key].name);
 
 			}
 
 		});
 
-		var command = result[Math.floor(Math.random()*result.length)];
+		var command = array[Math.floor(Math.random()*array.length)];
 
 		$.each(menu, function(key, index) {
 
