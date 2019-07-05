@@ -133,7 +133,7 @@
 
 	.category {
 
-		position: fixed;
+		position: absolute;
 
 		font-size: .6em;
 
@@ -141,9 +141,9 @@
 
 		z-index: 365;
 
-		top: .15em;
+		top: .12em;
 
-		right: .2em;
+		right: 2em;
 
 		height: 1.2em;
 
@@ -193,6 +193,7 @@
 
 		left: .6em;
 
+
 		bottom: 0em;
 
 		height: 1.4em;
@@ -233,7 +234,7 @@
 
 		font-size: .7em;
 
-		line-height: 1.4em;
+		line-height: 1.2em;
 
 		background-color: transparent;
 
@@ -313,10 +314,8 @@ var menu = [
 	{ name : "daly", category : "Syndicated", title : "The Daily Mail is a British daily middle-market newspaper published in London.", feed : "https://www.dailymail.co.uk/articles.rss", homepage : "https://www.dailymail.co.uk" },
 	{ name : "deds", category : "Sports", title : "Deadspin brings you the latest sports news, stories, videos, and more.", feed : "https://deadspin.com/rss", homepage : "https://deadspin.com" },
 	{ name : "engt", category : "Technology", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
-	{ name : "entn", category : "Entertainment", title : "Entertainment Tonight (ET) is the authoritative source on entertainment and celebrity news.", feed : "http://feeds.feedburner.com/EtsBreakingNews", homepage : "https://www.etonline.com" },
 	{ name : "espn", category : "Sports", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
 	{ name : "forb", category : "Syndicated", title : "Forbes is a global media company, focusing on business, investing, and 1technology.", feed : "https://www.forbes.com/most-popular/feed", homepage : "https://www.forbes.com" },
-	{ name : "foxe", category : "Entertainment", title : "Fox News Entertainment", feed : "http://feeds.foxnews.com/foxnews/entertainment", homepage : "https://www.foxnews.com/entertainment" },
 	{ name : "foxn", category : "Syndicated", title : "Breaking News, Latest News and Current News from FOXNews.com.", feed : "http://feeds.foxnews.com/foxnews/latest", homepage : "https://www.foxnews.com" },
 	{ name : "foxs", category : "Sports", title : "FOX Sports a wide array of multi-platform US-based sports assets.", feed : "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU", homepage : "https://www.foxsports.com" },
 	{ name : "geek", category : "Technology", title : "GeekWire is an American technology news website that covers startups and established technology companies.", feed : "https://www.geekwire.com/feed", homepage : "https://www.geekwire.com" },
@@ -466,17 +465,17 @@ jQuery(function($) {
 
     $(".bold").live("click", function () {
 
-	if ($("a").css("font-weight") == "700") {
+	if ($(".output a").css("font-weight") == "700") {
 
 		bold = "normal";
 
-		$("a").css("font-weight", "400");
+		$(".output a").css("font-weight", "400");
 
 	} else {
 
 		bold = "bold";
 
-		$("a").css("font-weight", "700");
+		$(".output a").css("font-weight", "700");
 
 	}
 
@@ -558,14 +557,6 @@ jQuery(function($) {
 
 	}
 		
-    });
-
-    $(".clear").live("click", function () {
-
-	$(".output").html("");
-
-	$(".bottom").html("<a href='#' class='rand' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
-
     });
 
     $(window).load(function () {
@@ -688,8 +679,8 @@ jQuery(function($) {
 
 </script>
 <div class="top">
-    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="size" href="#">size</a>&#9;<a class="rand" href="#">rand</a>&#9;<a class="clear" href="#">clear</a></tag-name>
-    <script>$(".top").css("font-weight", bold);</script>
+    <tag-name style="white-space:pre">&#9;&#9;<a target="_blank" class="hiwi" href="https://github.com/acktic/acktic.github.io">hiwi</a>&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="size" href="#">size</a>&#9;<a class="rand" href="#">rand</a>
+</tag-name>
 </div>
 <div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
 <div class="output"></div>
@@ -707,7 +698,7 @@ jQuery(function($) {
 
 		<option>Syndicated</option>
 	</select>
-
+</div>
 <div class="selectdiv">
     <label>
 	<select class="font">
@@ -738,6 +729,7 @@ jQuery(function($) {
 		<option>Nova Mono</option>
 	</select>
 </label>
+</div>
 <div class="selectdiv">
     <label>
 	<select class="theme">
