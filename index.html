@@ -404,45 +404,21 @@ jQuery(function($) {
 
     $(".category").on("change", function () {
 
-	if ($(this).val() == "All") {
+	$(".output").html("<br>");
 
-		$(".output").html("<br>");
+	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
-		$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+	$.each(menu, function(key, feed) {
 
-		$.each(menu, function(key, feed) {
+		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
 
 			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
 					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
 
-		});
+		}
 
-		return false;
-
- 	} else {
-
-		$(".output").html("<br>");
-
-		$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(this).val() + " Feed</a>");
-
-		$.each(menu, function(key, feed) {
-
-			if(feed.category == $(".category").val()) {
-
-				$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
-
-						    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
-
-			} else { 
-
-				return true;
-
-			}
-
-		});
-
-	}
+	});
 
     });
 
@@ -511,9 +487,9 @@ jQuery(function($) {
 
 	if ($(".output").css("font-size") == "11px") {
 
-		size = "12px"
+		size = "14px"
 
-		$(".output").css("font-size", "12px");
+		$(".output").css("font-size", "14px");
 
 	} else {
 
