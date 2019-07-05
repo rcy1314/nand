@@ -473,17 +473,17 @@ jQuery(function($) {
 
     $(".line").live("click", function () {
 
-	if ($("a").css('text-decoration').indexOf("none") > -1){
+	if ($(".output a").css("text-decoration-line") == "none"){
 
 		line = "underline";
 
-		$("a").css('text-decoration', 'underline');
+		$(".output a").css('text-decoration', 'underline');
 
 	} else {
 
 		line = "none";
 
-		$("a").css('text-decoration', 'none');
+		$(".output a").css('text-decoration', 'none');
 
 	}
 
