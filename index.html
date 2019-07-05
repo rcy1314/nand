@@ -31,9 +31,7 @@
 
 	::-webkit-scrollbar {
 
-		width: 0em;
-
-		height: 0em;
+		display: none;
 
 	}
 
@@ -171,9 +169,9 @@
 
 		z-index: 366;
 
-		width: 8.3em;
+		width: 9em;
 
-		right: 10.5em;
+		right: 11em;
 
 		bottom: 0em;
 
@@ -224,7 +222,7 @@
 
 		width: 100%;
 
-		max-width: 10em;
+		max-width: 11em;
 
 		height: 1.2em;
 
@@ -272,7 +270,8 @@ var font = [
 	{ name : "Source Code", style : "Source Code Pro, monospace" },
 	{ name : "Nanum Gothic", style : "Nanum Gothic Coding, monospace" },
 	{ name : "Share Tech", style : "Share Tech Mono, monospace" },
-	{ name : "Nova Mono", style : "Nova Mono, monospace" }
+	{ name : "Nova Mono", style : "Nova Mono, monospace" },
+	{ name : "Times New Roman", style : "TimesNewRoman, \"Times New Roman\"" }
 
 ]
 
@@ -354,6 +353,7 @@ var menu = [
 	{ name : "pepl", category : "Entertainment", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ name : "tico", category : "Syndicated", title : "POLITICO strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://www.politico.com" },
 	{ name : "tecr", category : "Technology", title : "TechRadar is an online publication focused on technology.", feed : "https://www.techradar.com/rss", homepage : "https://www.techradar.com" },
+	{ name : "rdwr", category : "Technology", title : "ReadWrite was founded on April 20, 2003, by Richard MacManus, as ReadWriteWeb.", feed : "https://readwrite.com/feed", homepage : "https://readwrite.com" },
 	{ name : "regi", category : "Technology", title : "The Register is a British technology news and opinion website co-founded in 1994.", feed : "https://www.theregister.co.uk/headlines.atom", homepage : "https://www.theregister.co.uk" },
 	{ name : "repu", category : "Technology", title : "TechRepublic is an online trade publication and social community for IT professionals.", feed : "https://www.techrepublic.com/rssfeeds/articles", homepage : "https://www.techrepublic.com" },
 	{ name : "rcom", category : "Technology", title : "Computer subreddit with questions and opinions.", feed : "https://www.reddit.com/r/computers/.rss", homepage : "https://www.reddit.com/r/computers" },
@@ -711,6 +711,8 @@ jQuery(function($) {
 		<option>Share Tech</option>
 
 		<option>Nova Mono</option>
+
+		<option>Times New Roman</option>
 	</select>
 </label>
 </div>
