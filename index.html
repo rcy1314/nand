@@ -255,7 +255,6 @@
 
 var bold = 'normal'
 var line = 'none'
-var size = '11px'
 var afont
 var acolor
 var bcolor
@@ -502,15 +501,11 @@ jQuery(function($) {
 
 	if ($(".output").css("font-size") == "11px") {
 
-		size = "14px"
+		$(".output").attr("style", "font-size:14px");
 
-		$(".output").css("font-size", "14px");
+	} else if ($(".output").css("font-size") == "14px") {
 
-	} else {
-
-		size = "11px"
-
-		$(".output").css("font-size", "11px");
+		$(".output").attr("style", "font-size:11px");
 		
 	}
 
@@ -614,7 +609,7 @@ jQuery(function($) {
 
 				$(".output").append("<div class='background'><br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-size:" + size + ";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div><br>");
+				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div><br>");
 
 			} else {
 
