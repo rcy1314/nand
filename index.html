@@ -514,44 +514,32 @@ jQuery(function($) {
 
     $(".random").live("click", function () {
 
-	if ($(".category").val() == "All") {
+	var array = [ ];
 
-		var command = menu[Math.floor(Math.random()*menu.length)];
+	$.each(menu, function(key, index) { 
 
-		getfeed(command.feed, command.homepage)
+		if (index.category == $(".category").val() || $(".category").val() == "All") {
 
-		return false;
+			array.push(menu[key].name);
 
-	} else {
+		}
 
-		var array = [ ];
+	});
 
-		$.each(menu, function(key, index) { 
+	var command = array[Math.floor(Math.random()*array.length)];
 
-			if (index.category == $(".category").val()) {
+	$.each(menu, function(key, index) {
 
-				array.push(menu[key].name);
+		if (index.name == command) {
 
-			}
+			getfeed(index.feed, index.homepage)
 
-		});
+			return false;
 
-		var command = array[Math.floor(Math.random()*array.length)];
+		}
 
-		$.each(menu, function(key, index) {
+	});
 
-			if (command == index.name) {
-
-				getfeed(index.feed, index.homepage);
-
-				return false;
-
-			}
-
-		});
-
-	}
-		
     });
 
     $(window).load(function () {
