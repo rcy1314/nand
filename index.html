@@ -287,7 +287,6 @@ var theme = [
 	{ name : "Yotsuba B", acolor : "#34345c", bcolor : "background: url('https://ackti.files.wordpress.com/2019/07/fade-blue.png') top center repeat-x; background: #E7E9F5", scolor : "#34345c", sbackc : "#E7E9F5" },
 	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36", scolor : "#93A1A1", sbackc : "#002B36" },
 	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF", scolor : "#008000", sbackc : "#FFFFFF" },
-	{ name : "Grey Hat", acolor : "#C0C5CE", bcolor : "background-image: linear-gradient(#2B303B, #65737E);", scolor : "#C0C5CE", sbackc : "#65737E" },
 	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000", scolor : "#FFFFFF", sbackc : "black" },
 	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358", scolor : "#FFFFFF", sbackc : "#022358" }
 
@@ -421,7 +420,7 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + " Feed</a>");
+	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + "</a>");
 
 	$.each(menu, function(key, feed) {
 
@@ -723,8 +722,6 @@ jQuery(function($) {
 		<option>Solarized</option>
 
 		<option>White Hat</option>
-
-		<option>Grey Hat</option>
 
 		<option>Black Hat</option>
 
