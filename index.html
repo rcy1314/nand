@@ -117,14 +117,6 @@
 
 	}
 
-	.background {
-
-		display: inline-block;
-
-		height: 3em;
-
-	}
-
 	.bottom {
 
 		position: absolute;
@@ -206,7 +198,6 @@
 		z-index: 366;
 
 		left: .6em;
-
 
 		bottom: 0em;
 
@@ -575,7 +566,7 @@ jQuery(function($) {
 
 	$(".bottom").html("<a target='_blank' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "' href='" + homepage +
 
-			  "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+2			  "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
