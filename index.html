@@ -45,6 +45,12 @@
 
 	}
 
+	a {
+
+		cursor: pointer;
+
+	}
+
 	.top a {
 
 		text-decoration: none;
@@ -423,15 +429,15 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + "</a>");
+	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + "</a>");
 
 	$.each(menu, function(key, feed) {
 
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
 
-			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' href='#' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-					    ";text-decoration:" + line + "' href='" + feed.homepage + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
+					    ";text-decoration:" + line + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
 
 		}
 
@@ -556,7 +562,7 @@ jQuery(function($) {
 
 	$(".help").trigger("click");
 
-	$(".bottom").html("<a href='#' class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
     });
 
@@ -600,7 +606,7 @@ jQuery(function($) {
 
 				$(".output").append("<div class='background'><br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div><br>");
+				";font-family:" + afont + ";'>" + $(this).find("title").text() + "</a></div><br>");
 
 			} else {
 
@@ -666,7 +672,7 @@ jQuery(function($) {
 
 </script>
 <div class="top"><div class="counter"><script src="https://www.scriptsocket.com/cgi-bin/textcounter/quick.cgi?7428310.34659506"></script></div>
-    <tag-name style="white-space:pre">&#9;&#9;<a id="help" class="help" href="#">menu</a>&#9;<a class="bold" href="#">bold</a>&#9;&#9;<a class="line" href="#">line</a>&#9;&#9;<a class="size" href="#">size</a>&#9;&#9;<a class="random" href="#">random</a>
+    <tag-name style="white-space:pre">&#9;&#9;<a id="help" class="help">menu</a>&#9;<a class="bold">bold</a>&#9;&#9;<a class="line">line</a>&#9;&#9;<a class="size">size</a>&#9;&#9;<a class="random">random</a>
 </tag-name>
 </div>
 <div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
