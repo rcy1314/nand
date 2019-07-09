@@ -574,9 +574,11 @@ jQuery(function($) {
 
 			if (index <= 20) {
 
-				$(".output").append("<br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
+				$(".output").append("<br><div class='background' style='color:" + acolor +"'>" + index + ".&ensp;&ensp;" +
 
-				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a><br><br>");
+				"<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
+
+				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div><br><br>");
 
 			} else {
 
@@ -627,6 +629,8 @@ jQuery(function($) {
 	if (style == "Hacker News") { $(".top").css("background-color", "#FE6B03"); } else { $(".top").css("background-color", "transparent"); }
 
 	$("a").css("color", acolor);
+
+	$(".background").css("color", acolor);
 
 	$("html").attr("style", bcolor);
 
