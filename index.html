@@ -418,7 +418,7 @@ jQuery(function($) {
 
 			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
-					    ";text-decoration:" + line + "'>" + feed.title + "</a>&ensp;&ensp;</div><br><br>")
+					    ";text-decoration:" + line + "'>" + feed.title + "</a>&ensp;&ensp;<br><br>")
 
 		}
 
@@ -575,9 +575,9 @@ jQuery(function($) {
 
 			if (index <= 20) {
 
-				$(".output").append("<div class='background'><br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
+				$(".output").append("<br><a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
 
-				";font-family:" + afont + ";'>" + $(this).find("title").text() + "</a></div><br>");
+				";font-family:" + afont + ";'>" + $(this).find("title").text() + "</a><br>");
 
 			} else {
 
