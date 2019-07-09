@@ -73,8 +73,6 @@
 
 		font-size: .7em;
 
-		z-index: 365;
-
 		top: .65em;
 
 		right: 2em;
@@ -91,13 +89,12 @@
 
 		left: 2em;
 
+
 	}
 
 	.output {
 
 		position: fixed;
-
-		z-index: 365;
 
 		font-size: 11px;
 
@@ -133,8 +130,6 @@
 
 		bottom: .15em;
 
-		z-index: 365;
-
 		width: 100%;
 
 		height: 1.4em;
@@ -151,8 +146,6 @@
 
 		width: 8.3em;
 
-		z-index: 365;
-
 		top: .12em;
 
 		right: 2em;
@@ -164,8 +157,6 @@
 	.theme {
 
 		position: fixed;
-
-		z-index: 366;
 
 		width: 8.3em;
 
@@ -180,8 +171,6 @@
 	.font {
 
 		position: fixed;
-
-		z-index: 366;
 
 		width: 9em;
 
@@ -201,7 +190,7 @@
 
 		font-size: .7em;
 
-		z-index: 366;
+		z-index: 365;
 
 		left: .6em;
 
@@ -258,8 +247,8 @@
 </style>
 <script>
 
-var bold = 'normal'
-var line = 'none'
+var bold
+var line
 var afont
 var acolor
 var bcolor
@@ -312,6 +301,7 @@ var menu = [
 	{ name : "bbcs", category : "Sports", title : "BBC Sports news from around the world.", feed : "http://feeds.bbci.co.uk/sport/rss.xml", homepage : "https://www.bbc.com/sport" },
 	{ name : "beta", category : "Technology", title : "BetaNews is a leading source of technology news and analysis.", feed : "http://feeds.betanews.com/bn", homepage : "https://betanews.com" },
 	{ name : "bgrt", category : "Technology", title : "BGR is a online destination for news focused on consumer electronics markets.", feed : "https://bgr.com/tech/feed", homepage : "https://bgr.com/tech" },
+	{ name : "blrp", category : "Sports", title : "Bleacher Report is a website that focuses on sport and sports culture.", feed : "https://bleacherreport.com/articles/feed", homepage : "https://bleacherreport.com" },
 	{ name : "soon", category : "Entertainment", title : "ComingSoon.net has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!", feed : "https://www.comingsoon.net/feed", homepage : "https://www.comingsoon.net" },
 	{ name : "cbsn", category : "World", title : "CBS is a mass media company that creates and distributes industry-leading content.", feed : "https://www.cbsnews.com/latest/rss/world", homepage : "https://www.cbsnews.com" },
 	{ name : "cbst", category : "Technology", title : "CBS latest news on new technology, social media, artificial intelligence, computers and more.", feed : "https://www.cbsnews.com/latest/rss/technology", homepage : "https://www.cbsnews.com/technology" },
@@ -409,21 +399,11 @@ var menu = [
 
 jQuery(function($) {
 
-    fontChange("Arial"); $(".font").val("Arial");
+    fontChange("Arial"); $(".font").val("Arial"); $(".font").on("change", function () { fontChange($(this).val()); })
 
-    themeChange("Solarized"); $(".theme").val("Solarized");
+    themeChange("Solarized"); $(".theme").val("Solarized"); $(".theme").on("change", function () { themeChange($(this).val()); });
 
-    $(".theme").on("change", function () {
-
-	themeChange($(this).val());
-
-    });
-
-    $(".font").on("change", function () {
-
-	fontChange($(this).val());
-
-    })
+    $(".help").live("click", function() { $(".category").trigger("change"); });
 
     $(".category").on("change", function () {
 
@@ -461,12 +441,6 @@ jQuery(function($) {
 		});
 
 	    });
-
-    });
-
-    $(".help").live("click", function() {
-
-	$(".category").trigger("change");
 
     });
 
@@ -552,15 +526,11 @@ jQuery(function($) {
 
     $(window).load(function () {
 
+	$(".help").trigger("click");
+
 	$(".output").attr('tabindex', -1).focus();
 
-	$('.output').focusout(function(){
-
-		$(".output").attr('tabindex', -1).focus();
-
-	});
-
-	$(".help").trigger("click");
+	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
 	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
 
@@ -659,8 +629,6 @@ jQuery(function($) {
 	$("html").attr("style", bcolor);
 
 	$(".clock").css("color", acolor);
-
-	$(".counter").css("color", acolor);
 
 	$(".selectdiv select").css("color", scolor);
 
