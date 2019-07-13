@@ -322,6 +322,7 @@ var menu = [
 	{ name : "dlbs", category : "Entertainment", title : "The Daily Beast is a news and opinion website focusing on politics, power and pop culture.", feed : "https://feeds.thedailybeast.com/summary/rss/articles", homepage : "https://www.thedailybeast.com" },
 	{ name : "engt", category : "Technology", title : "Engadget is a multilingual technology blog network with daily coverage of gadgets and consumer electronics.", feed : "https://www.engadget.com/rss.xml", homepage : "https://www.engadget.com" },
 	{ name : "espn", category : "Sports", title : "ESPN is a cable network that plays live and taped sporting events.", feed : "https://www.espn.com/espn/rss/news", homepage : "https://www.espn.com" },
+	{ name : "esqf", category : "Entertainment", title : "Esquire is your destination for the latest Entertainment news headlines.", feed : "https://www.esquire.com/rss/entertainment.xml", homepage : "https://www.esquire.com" },
 	{ name : "forb", category : "Technology", title : "Forbes is a global media company, focusing on business, investing, and technology.", feed : "https://www.forbes.com/most-popular/feed", homepage : "https://www.forbes.com" },
 	{ name : "foxn", category : "World", title : "FOXNews.com Breaking News, Latest News and Current News.", feed : "http://feeds.foxnews.com/foxnews/latest", homepage : "https://www.foxnews.com" },
 	{ name : "foxt", category : "Technology", title : "FOX News Tech reporting on information technology, technology and business news.", feed : "http://feeds.foxnews.com/foxnews/tech", homepage : "https://www.foxnews.com/tech" },
@@ -426,7 +427,9 @@ jQuery(function($) {
 
 			array.push(menu[key].name);
 
-			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
+			$(".output").append("<br><div><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;" +
+
+					    "<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
 					    ";text-decoration:" + line + "'>" + feed.title + "</a>&ensp;&ensp;<br><br>")
 
