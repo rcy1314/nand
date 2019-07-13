@@ -417,17 +417,21 @@ jQuery(function($) {
 
 	$(".output").html("<br>");
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>Random " + $(".category").val() + "</a>");
+	var array = [ ];
 
 	$.each(menu, function(key, feed) {
 
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
+
+			array.push(menu[key].name);
 
 			$(".output").append("<br>&ensp;&ensp;<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold +";font-family:" + afont +
 
 					    ";text-decoration:" + line + "'>" + feed.title + "</a>&ensp;&ensp;<br><br>")
 
 		}
+
+	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + array.length + " Feeds</a>");		
 
 	});
 
