@@ -63,6 +63,12 @@
 
 	}
 
+	#All {
+
+		text-decoration: underline;
+
+	}
+
 	.top {
 
 		position: fixed;
@@ -426,7 +432,7 @@ jQuery(function($) {
 
     $(".category").on("change", function () {
 
-	$(".output").html("<br>");
+	$(".output").html("");
 
 	var array = [ ];
 
@@ -565,7 +571,7 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".output").html("<br>");
+	$(".output").html("");
 
 	$(".bottom").html("<a target='_blank' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "' href='" + homepage +
 
