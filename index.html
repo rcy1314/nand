@@ -140,6 +140,8 @@
 
 	.category {
 
+		visibility: hidden;
+
 		position: absolute;
 
 		font-size: .6em;
@@ -420,7 +422,7 @@ jQuery(function($) {
 
     $(".help").live("click", function() { $(".category").trigger("change"); });
 
-    $(".tag").live("click", function(event) { $(".category").val($(this).get(0).id); $(".category").trigger("change"); });
+    $(".tag").live("click", function(event) { $(".tag").attr("style", "text-decoration: none; color: " + acolor); $(this).attr("style", "text-decoration: underline; color: " + acolor); $(".category").val($(this).get(0).id); $(".category").trigger("change"); });
 
     $(".category").on("change", function () {
 
