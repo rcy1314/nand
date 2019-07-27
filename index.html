@@ -91,6 +91,28 @@
 
 	}
 
+	.mobile {
+
+		position: fixed;
+
+		text-align: center;
+
+		font-family: Arial;
+
+		font-size: 11px;
+
+		top: .65em;
+
+		left: 1.8em;
+
+		right: 1.8em;
+
+		height: 1.5em;
+
+		line-height: 1.5em;
+
+	}
+
 	.counter {
 
 		position: fixed;
@@ -422,6 +444,25 @@ var menu = [
 
 jQuery(function($) {
 
+	$(window).load(function() {
+
+		if (parseInt($(window).width()) < 320) {
+
+		$(".top").hide();
+
+		$(".mobile").show(); //Hide full navigation and search
+       
+		} else {
+
+		$(".top").show(); //Show full navigation and search
+
+		$(".mobile").hide();
+
+		}
+
+   });
+
+
     fontChange("Arial"); $(".font").val("Arial"); $(".font").on("change", function () { fontChange($(this).val()); })
 
     themeChange("Yotsuba"); $(".theme").val("Yotsuba"); $(".theme").on("change", function () { themeChange($(this).val()); });
@@ -689,6 +730,10 @@ jQuery(function($) {
 <div class="top">
     <div class="counter"><script src="https://www.scriptsocket.com/cgi-bin/textcounter/quick.cgi?7428310.34659506"></script></div>
     <tag-name style="white-space:pre"><a target="blank" href="https://github.com/acktic/acktic.github.io"><b>hiwi</b></a>&#9;&#9;<a id="help" class="help">menu</a>&#9;<a class="bold">bold</a>&#9;&#9;<a class="line">line</a>&#9;&#9;<a class="size">size</a>&#9;&#9;<a class="random">random</a>&#9;&#9;<a>-</a>&#9;&#9;<a id="All" class="tag">all/</a>&#9;&#9;<a id="Entertainment" class="tag">ent/</a>&#9;&#9;<a id="Social" class="tag">soc/</a>&#9;&#9<a id="Sports" class="tag">sp/</a>&#9;&#9;<a id="Technology" class="tag">tech/</a>&#9;<a id="World" class="tag">world/</a></tag-name>
+</div>
+<div class="mobile">
+    <div class="counter"><script src="https://www.scriptsocket.com/cgi-bin/textcounter/quick.cgi?7428310.34659506"></script></div>
+    <tag-name style="white-space:pre">&#9;&#9;<a id="All" class="tag">all/</a>&#9;&#9;<a id="Entertainment" class="tag">ent/</a>&#9;&#9;<a id="Social" class="tag">soc/</a>&#9;&#9<a id="Sports" class="tag">sp/</a>&#9;&#9;<a id="Technology" class="tag">tech/</a>&#9;<a id="World" class="tag">world/</a></tag-name>
 </div>
 <div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
 <div class="output"></div>
