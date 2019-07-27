@@ -432,7 +432,7 @@ jQuery(function($) {
 
 	$(".tag").attr("style", "text-decoration: none; color: " + acolor);
 
-	$(".tag#" + $(this).prop("id")).attr("style", "text-decoration: underline; color: " + acolor);
+	$(".tag#" + $(this).get(0).id).attr("style", "text-decoration: underline; color: " + acolor);
 
 	$(".category").val($(this).get(0).id);
 
