@@ -231,7 +231,7 @@ var theme = [
 	{ name : "Yotsuba B", acolor : "#34345C", bcolor : "background: #EEF2FF url('https://ackti.files.wordpress.com/2019/07/fade-blue.png') top center repeat-x;", scolor : "#34345c", sbackc : "#EEF2FF" },
 	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36", scolor : "#93A1A1", sbackc : "#002B36" },
 	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF", scolor : "#008000", sbackc : "#FFFFFF" },
-	{ name : "Hacker News", acolor : "#000000", bcolor : "background : #F6F5F0", scolor : "#000000", sbackc : "#F6F5F0" },
+	{ name : "Grey Hat", acolor : "#000000", bcolor : "background : #F6F5F0", scolor : "#000000", sbackc : "#F6F5F0" },
 	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000", scolor : "#FFFFFF", sbackc : "black" },
 	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358", scolor : "#FFFFFF", sbackc : "#022358" }
 
@@ -583,8 +583,6 @@ jQuery(function($) {
 
 	});
 
-	if (style == "Hacker News") { $(".top").css("background-color", "#FE6B03"); } else { $(".top").css("background-color", "transparent"); }
-
 	$("a").css("color", acolor);
 
 	$(".background").css("color", acolor);
@@ -634,7 +632,7 @@ jQuery(function($) {
 
 		<option>White Hat</option>
 
-		<option>Hacker News</option>
+		<option>Grey Hat</option>
 
 		<option>Black Hat</option>
 
