@@ -51,7 +51,7 @@
 
 	}
 
-	.top a {
+	.top a, .output a {
 
 		text-decoration: none;
 
@@ -73,8 +73,6 @@
 
 		position: fixed;
 
-		text-align: center;
-
 		font-family: Arial;
 
 		font-size: 11px;
@@ -91,20 +89,13 @@
 
 	}
 
-	.counter {
-
-		position: fixed;
-
-		left: 2em;
-
-
-	}
-
 	.output {
 
 		position: fixed;
 
 		font-size: 11px;
+
+		font-family: Arial;
 
 		line-height: 1.4em;
 
@@ -130,17 +121,19 @@
 
 	.bottom {
 
-		position: absolute;
+		position: fixed;
 
-		text-align: center;
-
-		font-size: .7em;
+		font-size: 11px;
 
 		bottom: .15em;
 
 		width: 100%;
 
-		height: 1.4em;
+		height: 1.5em;
+
+		left: 1.8em;
+
+		right: 1.8em;
 
 		font-family: Arial;
 
@@ -149,18 +142,6 @@
 	.category {
 
 		visibility: hidden;
-
-		position: absolute;
-
-		font-size: .6em;
-
-		width: 8.3em;
-
-		top: .12em;
-
-		right: 2em;
-
-		height: 1.2em;
 
 	}
 
@@ -185,24 +166,6 @@
 		width: 9em;
 
 		right: 11em;
-
-		bottom: 0em;
-
-		height: 1.4em;
-
-	}
-
-	.clock {
-
-		position: fixed;
-
-		font-family: Arial;
-
-		font-size: .7em;
-
-		z-index: 365;
-
-		left: .6em;
 
 		bottom: 0em;
 
@@ -257,33 +220,10 @@
 </style>
 <script>
 
-var bold = 'normal'
-var line = 'none'
 var afont
 var acolor
 var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
-
-var font = [
-
-	{ name : "Monospace", style : "Monospace" },
-	{ name : "Arial", style : "Arial" },
-	{ name : "Consolas", style : "Consolas, monospace" },
-	{ name : "Inconsolata", style : "Inconsolata, monospace" },
-	{ name : "PT Mono", style : "PT Mono, monospace" },
-	{ name : "Oxygen", style : "Oxygen Mono, monospace" },
-	{ name : "Roboto", style : "Roboto Mono, monospace" },
-	{ name : "Cousine", style : "Cousine, monospace" },
-	{ name : "Cutive", style : "Cutive Mono, monospace" },
-	{ name : "IBM Plex", style : "IBM Plex Mono, monospace" },
-	{ name : "Space Mono", style : "Space Mono, monospace" },
-	{ name : "Anonymous Pro", style : "Anonymous Pro, monospace" },
-	{ name : "Source Code", style : "Source Code Pro, monospace" },
-	{ name : "Nanum Gothic", style : "Nanum Gothic Coding, monospace" },
-	{ name : "Share Tech", style : "Share Tech Mono, monospace" },
-	{ name : "Nova Mono", style : "Nova Mono, monospace" },
-
-]
 
 var theme = [
 
@@ -422,11 +362,7 @@ var menu = [
 
 jQuery(function($) {
 
-    fontChange("Arial"); $(".font").val("Arial"); $(".font").on("change", function () { fontChange($(this).val()); })
-
     themeChange("Yotsuba"); $(".theme").val("Yotsuba"); $(".theme").on("change", function () { themeChange($(this).val()); });
-
-    $(".help").live("click", function() { $(".category").trigger("change"); });
 
     $(".tag").live("click", function(event) { 
 
@@ -454,13 +390,13 @@ jQuery(function($) {
 
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;" +
 
-					    "<a id='" + feed.category + "' class='tag' style='color: " + acolor + ";font-weight:" + bold + ";font-family:" + afont + ";text-decoration:" + line + "'><b>" + feed.category + "</b></a>&ensp;" +
+					    "<a id='" + feed.category + "' class='tag' style='color: " + acolor + "'><b>" + feed.category + "</b></a>&ensp;" +
 
-					    "<a id='" + feed.name + "' class='menu' style='color: " + acolor + ";font-weight:" + bold + ";font-family:" + afont + ";text-decoration:" + line + "'>" + feed.title + "</a><br>")
+					    "<a id='" + feed.name + "' class='menu' style='color: " + acolor + "'>" + feed.title + "</a><br>")
 
 		}
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + array.length + " Feeds</a>");		
+	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + array.length + " Feeds</a>");		
 
 	});
 
@@ -567,13 +503,13 @@ jQuery(function($) {
 
     $(window).load(function () {
 
-	$(".help").trigger("click");
+	$("#All").trigger("click");
 
 	$(".output").attr('tabindex', -1).focus();
 
 	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "'>" + menu.length + " Feeds</a>");
+	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + menu.length + " Feeds</a>");
 
     });
 
@@ -583,9 +519,7 @@ jQuery(function($) {
 
 	$(".output").html("");
 
-	$(".bottom").html("<a target='_blank' style='color:" + acolor + ";font-weight:" + bold + ";text-decoration:" + line + "' href='" + homepage +
-
-			  "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a target='_blank' style='color:" + acolor + "' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -617,9 +551,7 @@ jQuery(function($) {
 
 				$(".output").append("<br><div class='background' style='color:" + acolor +"'>&ensp;&ensp;" +
 
-				"<a target='_blank' style='color: " + acolor + ";font-weight:" + bold + ";text-decoration:" + line +
-
-				";font-family:" + afont + ";' href='" + link + "'>" + $(this).find("title").text() + "</a></div>");
+				"<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "</a></div>");
 
 			} else {
 
@@ -628,22 +560,6 @@ jQuery(function($) {
 			}
 
    		});
-
-	});
-
-    }
-
-    function fontChange(selected) {
-
-	$.each(font, function(key, index) {
-
-		if (selected == index.name) {
-
-			$(".output a").css("font-family", index.style);
-
-			afont = index.style;
-
-		}
 
 	});
 
@@ -687,10 +603,8 @@ jQuery(function($) {
 
 </script>
 <div class="top">
-    <div class="counter"><script src="https://www.scriptsocket.com/cgi-bin/textcounter/quick.cgi?7428310.34659506"></script></div>
-    <tag-name style="white-space:pre"><a target="blank" href="https://github.com/acktic/acktic.github.io"><b>hiwi</b></a>&#9;&#9;<a id="help" class="help">menu</a>&#9;<a class="bold">bold</a>&#9;&#9;<a class="line">line</a>&#9;&#9;<a class="size">size</a>&#9;&#9;<a class="random">random</a>&#9;&#9;<a>-</a>&#9;&#9;<a id="All" class="tag">all/</a>&#9;&#9;<a id="Entertainment" class="tag">ent/</a>&#9;&#9;<a id="Social" class="tag">soc/</a>&#9;&#9<a id="Sports" class="tag">sp/</a>&#9;&#9;<a id="Technology" class="tag">tech/</a>&#9;<a id="World" class="tag">world/</a></tag-name>
+    <tag-name style="white-space:pre"><a class="random">random/</a>&#9;&#9;<a id="All" class="tag">all/</a>&#9;&#9;<a id="Entertainment" class="tag">ent/</a>&#9;&#9;<a id="Social" class="tag">soc/</a>&#9;&#9<a id="Sports" class="tag">sp/</a>&#9;&#9;<a id="Technology" class="tag">tech/</a>&#9;<a id="World" class="tag">world/</a></tag-name>
 </div>
-<div class="clock" style="cursor:pointer" onclick="window.open('https://time.is', '_blank')"><script>setInterval(function(){ var time = new Date; document.getElementsByClassName('clock')[0].innerHTML = time.toLocaleString("en-US"); }, 1000);</script></div>
 <div class="output"></div>
 <div class="bottom"></div>
 <div class="selectdiv">
@@ -708,37 +622,6 @@ jQuery(function($) {
 
 		<option>World</option>
 	</select>
-</div>
-<div class="selectdiv">
-    <label>
-	<select class="font">
-		<option>Monospace</option>
-
-		<option>Arial</option>
-
-		<option>Consolas</option>
-
-		<option>IBM Plex</option>
-
-		<option>Inconsolata</option>
-
-		<option>PT Mono</option>
-
-		<option>Roboto</option>
-
-		<option>Cutive</option>
-
-		<option>Source Code</option>
-
-		<option>Space Mono</option>
-
-		<option>Nanum Gothic</option>
-
-		<option>Share Tech</option>
-
-		<option>Nova Mono</option>
-	</select>
-</label>
 </div>
 <div class="selectdiv">
     <label>
