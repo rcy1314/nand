@@ -429,6 +429,8 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
+	$(".bottom").html("<a target='_blank' style='color:" + acolor + "' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+
 	$(".output").html("");
 
 	$.get(proxy + feed, function (data) {
