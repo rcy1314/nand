@@ -9,26 +9,6 @@
 <body>
 <style>
 
-	@import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=PT+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
-
-	@import url("https://fonts.googleapis.com/css?family=Nova+Mono&display=swap");
-
 	::-webkit-scrollbar {
 
 		display: none;
@@ -152,20 +132,6 @@
 		width: 8.3em;
 
 		right: .2em;
-
-		bottom: 0em;
-
-		height: 1.4em;
-
-	}
-
-	.font {
-
-		position: fixed;
-
-		width: 9em;
-
-		right: 11em;
 
 		bottom: 0em;
 
@@ -362,7 +328,7 @@ var menu = [
 
 jQuery(function($) {
 
-    themeChange("Yotsuba"); $(".theme").val("Yotsuba"); $(".theme").on("change", function () { themeChange($(this).val()); });
+    themeChange("Grey Hat"); $(".theme").val("Grey Hat"); $(".theme").on("change", function () { themeChange($(this).val()); });
 
     $(".tag").live("click", function(event) { 
 
@@ -396,8 +362,6 @@ jQuery(function($) {
 
 		}
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + array.length + " Feeds</a>");		
-
 	});
 
     });
@@ -418,56 +382,6 @@ jQuery(function($) {
 		});
 
 	    });
-
-    });
-
-    $(".bold").live("click", function () {
-
-	if ($(".output a").css("font-weight") == "700") {
-
-		bold = "normal";
-
-		$(".output a").css("font-weight", "400");
-
-	} else {
-
-		bold = "bold";
-
-		$(".output a").css("font-weight", "700");
-
-	}
-
-    });
-
-    $(".line").live("click", function () {
-
-	if ($(".output a").css("text-decoration-line") == "none"){
-
-		line = "underline";
-
-		$(".output a").css('text-decoration', 'underline');
-
-	} else {
-
-		line = "none";
-
-		$(".output a").css('text-decoration', 'none');
-
-	}
-
-    });
-
-    $(".size").live("click", function () {
-
-	if ($(".output").css("font-size") == "11px") {
-
-		$(".output").attr("style", "font-size:14px");
-
-	} else if ($(".output").css("font-size") == "14px") {
-
-		$(".output").attr("style", "font-size:11px");
-		
-	}
 
     });
 
@@ -509,8 +423,6 @@ jQuery(function($) {
 
 	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + menu.length + " Feeds</a>");
-
     });
 
 });
@@ -518,8 +430,6 @@ jQuery(function($) {
     function getfeed(feed, homepage) {
 
 	$(".output").html("");
-
-	$(".bottom").html("<a target='_blank' style='color:" + acolor + "' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
