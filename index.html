@@ -60,7 +60,7 @@
 
 		font-family: Arial;
 
-		font-size: 11px;
+		font-size: 12px;
 
 		position: fixed;
 
@@ -310,6 +310,16 @@ jQuery(function($) {
 
     themeChange("Grey Hat"); $(".theme").val("Grey Hat"); $(".theme").on("change", function () { themeChange($(this).val()); });
 
+    $(window).load(function () {
+
+	$("#All").trigger("click");
+
+	$(".output").attr('tabindex', -1).focus();
+
+	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+
+    });
+
     $(".tag").live("click", function(event) { 
 
 	$(".tag").attr("style", "text-decoration: none; color: " + acolor);
@@ -394,16 +404,6 @@ jQuery(function($) {
 		}
 
 	});
-
-    });
-
-    $(window).load(function () {
-
-	$("#All").trigger("click");
-
-	$(".output").attr('tabindex', -1).focus();
-
-	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
     });
 
