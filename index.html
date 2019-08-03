@@ -26,33 +26,9 @@
 
 	a {
 
-		cursor: pointer;
-
-	}
-
-	.top a, .output a {
-
 		text-decoration: none;
 
-	}
-
-	.top a:hover {
-
-		text-decoration: underline !important;
-
-	}
-
-	#All {
-
-		text-decoration: underline;
-
-	}
-
-	.top {
-
-		font-family: Arial;
-
-		font-size: 14px;
+		cursor: pointer;
 
 	}
 
@@ -60,15 +36,11 @@
 
 		border: none;
 
-		color: white;
-
 		padding: 10px 15px;
 
 		text-align: center;
 
 		text-decoration: none;
-
-		display: inline-block;
 
 		font-size: 16px;
 
@@ -92,7 +64,7 @@
 
 		width: 98%;
 
-		top: 3em;
+		top: 4em;
 
 		bottom: 3em;
 
@@ -130,71 +102,30 @@
 
 		position: fixed;
 
-		width: 8.3em;
+		width: 7em;
 
 		right: .2em;
 
-		bottom: 0em;
-
-		height: 1.4em;
-
-	}
-
-	/* IE11 hide native button */
-
-	select::-ms-expand {
-
-		display: none;
-
-	}
-
-	.selectdiv select {
-
-		border: 0em;
-
-		font-family: Arial;
-
-		-webkit-appearance: none;
-
-		-moz-appearance: none;
-
-		appearance: none;
-
-		display: block;
-
-		width: 100%;
-
-		max-width: 7em;
-
-		padding: 0em 1em;
-
-		font-size: 14px;
-
-		background-color: transparent;
-
-		-ms-word-break: normal;
-
-		word-break: normal;
+		bottom: .2em;
 
 	}
 
 </style>
 <script>
 
-var afont
 var acolor
 var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var theme = [
 
-	{ name : "Yotsuba", acolor : "maroon", bcolor : "background: url('https://ackti.files.wordpress.com/2019/07/fade.png') top center repeat-x;", scolor : "maroon", sbackc : "" },
-	{ name : "Yotsuba B", acolor : "#34345C", bcolor : "background: #EEF2FF url('https://ackti.files.wordpress.com/2019/07/fade-blue.png') top center repeat-x;", scolor : "#34345c", sbackc : "#EEF2FF" },
-	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36", scolor : "#93A1A1", sbackc : "#002B36" },
-	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF", scolor : "#008000", sbackc : "#FFFFFF" },
-	{ name : "Grey Hat", acolor : "#000000", bcolor : "background : #F6F5F0", scolor : "#000000", sbackc : "#F6F5F0" },
-	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000", scolor : "#FFFFFF", sbackc : "black" },
-	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358", scolor : "#FFFFFF", sbackc : "#022358" }
+	{ name : "Yotsuba", acolor : "maroon", bcolor : "background: url('https://ackti.files.wordpress.com/2019/07/fade.png') top center repeat-x;" },
+	{ name : "Yotsuba B", acolor : "#34345C", bcolor : "background: #EEF2FF url('https://ackti.files.wordpress.com/2019/07/fade-blue.png') top center repeat-x;" },
+	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36" },
+	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF" },
+	{ name : "Grey Hat", acolor : "#000000", bcolor : "background : #F6F5F0" },
+	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000" },
+	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358" }
 
 ]
 
@@ -328,9 +259,22 @@ var menu = [
 
 jQuery(function($) {
 
-    themeChange("Grey Hat"); $(".theme").val("Grey Hat"); $(".theme").on("change", function () { themeChange($(this).val()); });
-
     $(window).load(function () {
+
+	$(".theme").val("Grey Hat");
+
+
+	$("button").live("click", function(event) {
+
+		themeChange($(".theme").val());
+
+	});
+
+	$(".theme").on("change", function () {
+
+		themeChange($(this).val());
+
+	});
 
 	$("#All").trigger("click");
 
@@ -341,10 +285,6 @@ jQuery(function($) {
     });
 
     $(".tag").live("click", function(event) { 
-
-	$(".tag").attr("style", "text-decoration: none; color: " + acolor);
-
-	$(".tag#" + $(this).get(0).id).attr("style", "text-decoration: underline; color: " + acolor);
 
 	$(".category").val($(this).get(0).id);
 
@@ -487,10 +427,6 @@ jQuery(function($) {
 
 			bcolor = index.bcolor;
 
-			scolor = index.scolor;
-
-			sbackc = index.sbackc;
-
 		}
 
 	});
@@ -499,13 +435,9 @@ jQuery(function($) {
 
 	$("html").attr("style", bcolor);
 
-	$(".selectdiv select").css("color", scolor);
+	$("button").attr("style", bcolor);
 
-	$("button").css("color", scolor);
-
-	$("option").css("color", scolor);
-
-	$("option").css("background-color", sbackc);
+	$("button").css("color", acolor);
 
     }
 
@@ -513,8 +445,6 @@ jQuery(function($) {
 <div class="top"><button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button></div>
 <div class="output"></div>
 <div class="bottom"></div>
-<div class="selectdiv">
-    <label>
 	<select class="category">
 		<option>All</option>
 
@@ -528,9 +458,6 @@ jQuery(function($) {
 
 		<option>World</option>
 	</select>
-</div>
-<div class="selectdiv">
-    <label>
 	<select class="theme">
 		<option>Yotsuba</option>
 
@@ -546,7 +473,6 @@ jQuery(function($) {
 
 		<option>Powershell</option>
 	</select>
-    </label>
 </div>
 </body>
 </html>
