@@ -56,6 +56,30 @@
 
 	}
 
+	button {
+
+		border: none;
+
+		color: white;
+
+		padding: 10px 15px;
+
+		text-align: center;
+
+		text-decoration: none;
+
+		display: inline-block;
+
+		font-size: 16px;
+
+		float: left;
+
+		position: relative;
+
+		width: 14.25%;
+
+	}
+
 	.output {
 
 		font-family: Arial;
@@ -477,6 +501,8 @@ jQuery(function($) {
 
 	$(".selectdiv select").css("color", scolor);
 
+	$("button").css("color", scolor);
+
 	$("option").css("color", scolor);
 
 	$("option").css("background-color", sbackc);
@@ -484,7 +510,7 @@ jQuery(function($) {
     }
 
 </script>
-<div class="top"><a class="random">rand/</a>&ensp;&ensp;<a id="All" class="tag">all/</a>&ensp;&ensp;<a id="Entertainment" class="tag">ent/</a>&ensp;&ensp;<a id="Social" class="tag">soc/</a>&ensp;&ensp;<a id="Sports" class="tag">sp/</a>&ensp;&ensp;<a id="Technology" class="tag">tech/</a>&ensp;&ensp;<a id="World" class="tag">world/</a></div>
+<div class="top"><button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button></div>
 <div class="output"></div>
 <div class="bottom"></div>
 <div class="selectdiv">
