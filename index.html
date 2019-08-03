@@ -264,10 +264,11 @@ jQuery(function($) {
 
 	$(".theme").val("Grey Hat");
 
-
 	$("button").live("click", function(event) {
 
 		themeChange($(".theme").val());
+
+		$(this).css("text-decoration", "underline");
 
 	});
 
