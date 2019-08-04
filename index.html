@@ -48,7 +48,7 @@
 
 		position: relative;
 
-		width: 14%;
+		width: 13%;
 
 	}
 
@@ -269,6 +269,8 @@ jQuery(function($) {
 		themeChange($(".theme").val());
 
 		$(this).css("text-decoration", "underline");
+
+		$('.output').animate({ scrollTop: $(".top").offset().top }, 500);
 
 	});
 
