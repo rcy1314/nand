@@ -112,7 +112,6 @@
 
 </style>
 <script>
-
 var acolor
 var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
@@ -200,6 +199,7 @@ var menu = [
 	{ name : "ncaa", category : "Sports", title : "NCAA FBS Headlines, rumors, and news.", feed : "https://www.ncaa.com/news/football/fbs/rss.xml", homepage : "https://www.ncaa.com/sports/football/fbs" },
 	{ name : "nypo", category : "Technology", title : "The New York Post, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.", feed : "https://nypost.com/tech/feed", homepage : "https://nypost.com/tech" },
 	{ name : "nytm", category : "Technology", title : "The New York Times is an American newspaper based in New York City with worldwide influence and readership.", feed : "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml", homepage : "https://www.nytimes.com/section/technology" },
+	{ name : "raws", category : "World", title : "Raw Story covers current national and international political and economic news.", feed : "https://www.rawstory.com/feed", homepage : "https://www.rawstory.com" },
 	{ name : "scor", category : "Sports", title : "TheScore NFL is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/nfl.rss", homepage : "https://www.thescore.com/nfl/news" },
 	{ name : "scrm", category : "Sports", title : "TheScore MLB is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/mlb.rss", homepage : "https://www.thescore.com/mlb/news" },
 	{ name : "scrb", category : "Sports", title : "TheScore MMA is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/mma.rss", homepage : "https://www.thescore.com/mma/news" },
@@ -296,8 +296,6 @@ jQuery(function($) {
 
     $(".category").on("change", function () {
 
-	$(".bottom").html("");
-
 	$(".output").html("");
 
 	var array = [ ];
@@ -317,6 +315,8 @@ jQuery(function($) {
 		}
 
 	});
+
+	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + array.length + " Feeds</a>");
 
     });
 
