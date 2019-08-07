@@ -22,6 +22,8 @@
 
 		overflow: hidden;
 
+		background-color: #F6F5F0;
+
 	}
 
 	a, button {
@@ -29,6 +31,10 @@
 		text-decoration: none;
 
 		cursor: pointer;
+
+		color: #000000;
+
+		background-color: #F6F5F0;
 
 	}
 
@@ -62,11 +68,11 @@
 
 		line-height: 1.4em;
 
-		width: 98%;
+		width: 95%;
 
 		top: 4em;
 
-		bottom: 3em;
+		bottom: 2em;
 
 		overflow: auto;
 
@@ -84,11 +90,15 @@
 
 		font-size: 14px;
 
-		bottom: .15em;
+		bottom: 0em;
 
 		height: 1.5em;
 
+		width: 100%;
+
 		font-family: Arial;
+
+		text-align: center;
 
 	}
 
@@ -98,35 +108,9 @@
 
 	}
 
-	.theme {
-
-		position: fixed;
-
-		width: 7em;
-
-		right: .2em;
-
-		bottom: .2em;
-
-	}
-
 </style>
 <script>
-var acolor
-var bcolor
 var proxy = "https://cors-anywhere.herokuapp.com/";
-
-var theme = [
-
-	{ name : "Yotsuba", acolor : "maroon", bcolor : "background: url('https://ackti.files.wordpress.com/2019/07/fade.png') top center repeat-x;" },
-	{ name : "Yotsuba B", acolor : "#34345C", bcolor : "background: #EEF2FF url('https://ackti.files.wordpress.com/2019/07/fade-blue.png') top center repeat-x;" },
-	{ name : "Solarized", acolor : "#93A1A1", bcolor : "background: #002B36" },
-	{ name : "White Hat", acolor : "#008000", bcolor : "background: #FFFFFF" },
-	{ name : "Grey Hat", acolor : "#000000", bcolor : "background : #F6F5F0" },
-	{ name : "Black Hat", acolor : "#FFFFFF", bcolor : "background : #000000" },
-	{ name : "Powershell", acolor : "#FFFFFF", bcolor : "background: #022358" }
-
-]
 
 var menu = [
 
@@ -262,19 +246,9 @@ jQuery(function($) {
 
     $(window).load(function () {
 
-	$(".theme").val("Grey Hat");
-
 	$("button").live("click", function(event) {
 
-		themeChange($(".theme").val());
-
 		$(this).css("text-decoration", "underline");
-
-	});
-
-	$(".theme").on("change", function () {
-
-		themeChange($(this).val());
 
 	});
 
@@ -308,15 +282,15 @@ jQuery(function($) {
 
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;" +
 
-					    "<a id='" + feed.category + "' class='tag' style='color: " + acolor + "'><b>" + feed.category + "</b></a>&ensp;" +
+					    "<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;" +
 
-					    "<a id='" + feed.name + "' class='menu' style='color: " + acolor + "'>" + feed.title + "</a><br>")
+					    "<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
 
 	});
 
-	$(".bottom").html("<a class='random' style='color:" + acolor + "'>" + array.length + " Feeds</a>");
+	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
 
@@ -373,7 +347,7 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<a target='_blank' style='color:" + acolor + "' href='" + homepage + "' style='font-family:monospace;color:" + acolor + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<a target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$(".output").html("");
 
@@ -405,7 +379,7 @@ jQuery(function($) {
 
 			if (index <= 20) {
 
-				$(".output").append("<br>&ensp;<a target='_blank' style='color: " + acolor + "' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
+				$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
 			} else {
 
@@ -416,30 +390,6 @@ jQuery(function($) {
    		});
 
 	});
-
-    }
-
-    function themeChange(style) { 
-
-	$.each(theme, function(key, index) {
-
-		if (style == index.name) {
-
-			acolor = index.acolor;
-
-			bcolor = index.bcolor;
-
-		}
-
-	});
-
-	$("a").css("color", acolor);
-
-	$("html").attr("style", bcolor);
-
-	$("button").attr("style", bcolor);
-
-	$("button").css("color", acolor);
 
     }
 
@@ -459,21 +409,6 @@ jQuery(function($) {
 		<option>Technology</option>
 
 		<option>World</option>
-	</select>
-	<select class="theme">
-		<option>Yotsuba</option>
-
-		<option>Yotsuba B</option>
-
-		<option>Solarized</option>
-
-		<option>White Hat</option>
-
-		<option>Grey Hat</option>
-
-		<option>Black Hat</option>
-
-		<option>Powershell</option>
 	</select>
 </div>
 </body>
