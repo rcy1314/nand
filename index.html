@@ -84,6 +84,20 @@
 
 	}
 
+	.back {
+
+		float: left;
+
+		padding: 0px 0px;
+
+	}
+
+	.homepage {
+
+		float: right;
+
+	}
+
 	.bottom {
 
 		position: fixed;
@@ -94,7 +108,7 @@
 
 		height: 1.5em;
 
-		width: 100%;
+		width: 95%;
 
 		font-family: Arial;
 
@@ -249,7 +263,7 @@ jQuery(function($) {
 
     $(window).load(function () {
 
-	$("button").live("click", function(event) {
+	$(".tag").live("click", function(event) {
 
 		$("button").attr("style", "text-decoration: none");
 
@@ -262,6 +276,12 @@ jQuery(function($) {
 	$(".output").attr('tabindex', -1).focus();
 
 	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+
+    });
+
+    $(".back").live("click", function(event) {
+
+	$(".category").trigger("change");
 
     });
 
@@ -352,7 +372,7 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<a target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<button class='back'>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$(".output").html("");
 
