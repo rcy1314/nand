@@ -8,20 +8,17 @@
 <body>
 <style>
 
-	::-webkit-scrollbar {
+	::-webkit-scrollbar { display: none; }
 
-		display: none;
+	.homepage { float: right; }
 
-	}
+	.category { visibility: hidden; }
 
 	html, body {
 
 		height: 100%;
-
 		width: 100%;
-
 		overflow: hidden;
-
 		background-color: #F6F5F0;
 
 	}
@@ -29,11 +26,8 @@
 	a, button {
 
 		text-decoration: none;
-
 		cursor: pointer;
-
 		color: #000000;
-
 		background-color: #F6F5F0;
 
 	}
@@ -41,19 +35,12 @@
 	button {
 
 		border: none;
-
 		padding: 10px 10px;
-
 		text-align: center;
-
 		text-decoration: none;
-
 		font-size: 16px;
-
 		float: left;
-
 		position: relative;
-
 		width: 13%;
 
 	}
@@ -61,71 +48,42 @@
 	.output {
 
 		font-family: Arial;
-
 		font-size: 12px;
-
 		position: fixed;
-
 		line-height: 1.4em;
-
 		width: 95%;
-
 		top: 4em;
-
 		bottom: 2em;
-
 		overflow: auto;
-
 		outline: none !important;
-
 		scrollbar-width: none;
-
                 background-color: transparent;
 
 	}
 
 	.back {
 
-		bottom: 2px;
-
 		float: left;
-
+		font-size: 14px;
 		padding: 0px 0px;
-
-	}
-
-	.homepage {
-
-		float: right;
 
 	}
 
 	.bottom {
 
 		position: fixed;
-
 		font-size: 14px;
-
 		bottom: 0em;
-
 		height: 1.5em;
-
 		width: 95%;
-
 		font-family: Arial;
-
 		text-align: center;
-
-	}
-
-	.category {
-
-		visibility: hidden;
 
 	}
 
 </style>
 <script>
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 var menu = [
@@ -268,59 +226,11 @@ jQuery(function($) {
 
     $(window).load(function () {
 
-	$(".tag").live("click", function(event) {
-
-		$("button").attr("style", "text-decoration: none");
-
-		$(this).css("text-decoration", "underline");
-
-	});
-
 	$("#All").trigger("click");
 
 	$(".output").attr('tabindex', -1).focus();
 
 	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
-
-    });
-
-    $(".back").live("click", function(event) {
-
-	$(".category").trigger("change");
-
-    });
-
-    $(".tag").live("click", function(event) { 
-
-	$(".category").val($(this).get(0).id);
-
-	$(".category").trigger("change");
-
-    });
-
-    $(".category").on("change", function () {
-
-	$(".output").html("");
-
-	var array = [ ];
-
-	$.each(menu, function(key, feed) {
-
-		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
-
-			array.push(menu[key].name);
-
-			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;" +
-
-					    "<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;" +
-
-					    "<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
-
-		}
-
-	});
-
-	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
 
@@ -339,7 +249,43 @@ jQuery(function($) {
 			}
 		});
 
-	    });
+	});
+
+    });
+
+    $(".back").live("click", function(event) { $(".category").trigger("change"); });
+
+    $(".tag").live("click", function(event) { 
+
+	$(".category").val($(this).get(0).id);
+
+	$(".category").trigger("change");
+
+	$("button").attr("style", "text-decoration: none");
+
+	$(this).css("text-decoration", "underline");
+
+    });
+
+    $(".category").on("change", function () {
+
+	var array = [ ];
+
+	$(".output").html("");
+
+	$.each(menu, function(key, feed) {
+
+		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
+
+			array.push(menu[key]);
+
+			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
+
+		}
+
+	});
+
+	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
 
@@ -377,9 +323,9 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<button class='back'>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
-
 	$(".output").html("");
+
+	$(".bottom").html("<button class='back'>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -407,15 +353,7 @@ jQuery(function($) {
 
 			}
 
-			if (index <= 20) {
-
-				$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
-
-			} else {
-
-				return false;
-
-			}
+			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
    		});
 
@@ -424,22 +362,16 @@ jQuery(function($) {
     }
 
 </script>
-<div class="top"><button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button></div>
+<button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
 <div class="bottom"></div>
-	<select class="category">
-		<option>All</option>
-
-		<option>Entertainment</option>
-
-		<option>Social</option>
-
-		<option>Sports</option>
-
-		<option>Technology</option>
-
-		<option>World</option>
-	</select>
-</div>
+<select class="category">
+    <option>All</option>
+    <option>Entertainment</option>
+    <option>Social</option>
+    <option>Sports</option>
+    <option>Technology</option>
+    <option>World</option>
+</select>
 </body>
 </html>
