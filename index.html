@@ -250,6 +250,8 @@ jQuery(function($) {
 
 		command = $(this).get(0).id;
 
+		$(".output").scrollTop();
+
 		$.each(menu, function(key, feed) {
 
 			if (command === feed.name) {
@@ -283,6 +285,8 @@ jQuery(function($) {
 
 	$(".output").html("");
 
+	$(".output").scrollTop();
+
 	$.each(menu, function(key, feed) {
 
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
@@ -302,6 +306,8 @@ jQuery(function($) {
     $(".random").live("click", function () {
 
 	var array = [ ];
+
+	$(".output").scrollTop();
 
 	$.each(menu, function(key, index) { 
 
