@@ -276,6 +276,8 @@ jQuery(function($) {
 
 	});
 
+	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
+
     });
 
     $(".back").live("click", function(event) { $(".category").trigger("change"); });
