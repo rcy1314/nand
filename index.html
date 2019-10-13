@@ -45,6 +45,13 @@
 
 	}
 
+	input {
+
+		width: 10em;
+		text-align: center;
+
+	}
+
 	.output {
 
 		font-family: Arial;
@@ -252,9 +259,25 @@ jQuery(function($) {
 
 	$("#All").trigger("click");
 
-	$(".output").attr('tabindex', -1).focus();
+	//$(".output").attr('tabindex', -1).focus();
 
-	$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+	//$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+
+    });
+
+    $(document).keypress(function(event){
+
+	$(".output").html("");
+
+	$.each(menu, function(key, index) {
+
+		if (index.category.toLowerCase().indexOf($(".filter").val()) > -1 || index.title.toLowerCase().indexOf($(".filter").val()) > -1 || index.feed.toLowerCase().indexOf($(".filter").val()) > -1) {
+
+			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+
+		}
+
+	});
 
     });
 
@@ -307,15 +330,15 @@ jQuery(function($) {
 
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
 
-			array.push(menu[key]);
-
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
 
 	});
 
-	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
+	$(".bottom").html("<input type='text' class='filter'>");
+
+	//$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
 
@@ -396,7 +419,7 @@ jQuery(function($) {
 </script>
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
-<div class="bottom"></div>
+<div class="bottom"><input type="text" class="filter"></div>
 <select class="category">
     <option>All</option>
     <option>Entertainment</option>
