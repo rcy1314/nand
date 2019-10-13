@@ -47,8 +47,16 @@
 
 	input {
 
-		width: 10em;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0em;
+		padding: 0px;
+		height: 1.5em;
+		width: 55%;
+		height: 1.5em;
 		text-align: center;
+		font-size: 13px;
 
 	}
 
@@ -298,13 +306,31 @@ jQuery(function($) {
 			}
 		});
 
+		$(".filter").attr("style", "visibility:hidden");	
+
 	});
 
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
     });
 
-    $(".back").live("click", function(event) { $(".category").trigger("change"); });
+    $(".back").live("click", function(event) { 
+
+	if ($(".filter").val != "") {
+
+		document.dispatchEvent(new KeyboardEvent('keypress',{'key':'enter'}));
+
+		$(".filter").attr("style", "visibility:visible");
+
+		$(".bottom").html("");
+
+	} else {
+
+		$(".category").trigger("change");
+
+	}
+
+    });
 
     $(".tag").live("click", function(event) { 
 
@@ -336,7 +362,7 @@ jQuery(function($) {
 
 	});
 
-	$(".bottom").html("<input type='text' class='filter'>");
+	$(".filter").attr("style", "visibility:visible");
 
 	//$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
@@ -419,7 +445,8 @@ jQuery(function($) {
 </script>
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
-<div class="bottom"><input type="text" class="filter"></div>
+<div class="bottom"></div>
+<input type="text" class="filter">
 <select class="category">
     <option>All</option>
     <option>Entertainment</option>
