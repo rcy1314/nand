@@ -45,21 +45,6 @@
 
 	}
 
-	input {
-
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		bottom: 0em;
-		padding: 0px;
-		height: 1.5em;
-		width: 55%;
-		height: 1.5em;
-		text-align: center;
-		font-size: 13px;
-
-	}
-
 	.output {
 
 		font-family: Arial;
@@ -285,49 +270,9 @@ jQuery(function($) {
 
 	$("#All").trigger("click");
 
-	$(".filter").attr('tabindex', -1).focus();
+	$(".output").attr('tabindex', -1).focus();
 
-	//$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
-
-    });
-
-    $(".filter").keyup(function(event){
-
-	if (event.keyCode == 13) { $(".output").attr("tabindex", -1).focus() };
-
-	$(".output").html("");
-
-	if ($(".filter").val().indexOf(" ") > -1) {
-
-		word = $(".filter").val().split(" ").reverse();
-
-		$.each(word, function(offset, filter) {
-
-			$.each(menu, function(key, index) {
-
-				if (index.category.toLowerCase().indexOf(word[offset]) > -1 || index.title.toLowerCase().indexOf(word[offset]) > -1 || index.feed.toLowerCase().indexOf(word[offset]) > -1) {
-
-					$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
-
-				}
-
-			});
-
-		});
-
-	} else {
-
-		$.each(menu, function(key, index) {
-
-			if (index.category.toLowerCase().indexOf($(".filter").val()) > -1 || index.title.toLowerCase().indexOf($(".filter").val()) > -1 || index.feed.toLowerCase().indexOf($(".filter").val()) > -1) {
-
-				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
-
-			}
-
-		});
-
-	}
+	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
     });
 
@@ -402,6 +347,8 @@ jQuery(function($) {
 
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
 
+			array.push(menu[key]);
+
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
@@ -410,7 +357,7 @@ jQuery(function($) {
 
 	$(".filter").attr("style", "visibility:visible");
 
-	//$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
+	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
 
@@ -492,7 +439,6 @@ jQuery(function($) {
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
 <div class="bottom"></div>
-<input type="text" class="filter">
 <select class="category">
     <option>All</option>
     <option>Entertainment</option>
