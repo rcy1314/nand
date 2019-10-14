@@ -334,6 +334,10 @@ jQuery(function($) {
 
     $(".tag").live("click", function(event) { 
 
+	$(".filter").val("");
+
+	$(".bottom").html("");
+
 	$(".category").val($(this).get(0).id);
 
 	$(".category").trigger("change");
