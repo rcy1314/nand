@@ -301,23 +301,7 @@ jQuery(function($) {
 
     });
 
-    $(".back").live("click", function(event) { 
-
-	if ($(".filter").val != "") {
-
-		document.dispatchEvent(new KeyboardEvent('keypress',{'key':'enter'}));
-
-		$(".filter").attr("style", "visibility:visible");
-
-		$(".bottom").html("");
-
-	} else {
-
-		$(".category").trigger("change");
-
-	}
-
-    });
+    $(".back").live("click", function(event) { $(".category").trigger("change"); });
 
     $(".tag").live("click", function(event) { 
 
