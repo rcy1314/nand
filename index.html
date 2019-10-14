@@ -267,25 +267,49 @@ jQuery(function($) {
 
 	$("#All").trigger("click");
 
-	//$(".output").attr('tabindex', -1).focus();
+	$(".filter").attr('tabindex', -1).focus();
 
-	//$('.output').focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+	//$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
     });
 
-    $(document).keypress(function(event){
+    $(".filter").keyup(function(event){
+
+	if (event.keyCode == 13) { $(".output").attr("tabindex", -1).focus() };
 
 	$(".output").html("");
 
-	$.each(menu, function(key, index) {
+	if ($(".filter").val().indexOf(" ") > -1) {
 
-		if (index.category.toLowerCase().indexOf($(".filter").val()) > -1 || index.title.toLowerCase().indexOf($(".filter").val()) > -1 || index.feed.toLowerCase().indexOf($(".filter").val()) > -1) {
+		word = $(".filter").val().split(" ").reverse();
 
-			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+		$.each(word, function(offset, filter) {
 
-		}
+			$.each(menu, function(key, index) {
 
-	});
+				if (index.category.toLowerCase().indexOf(word[offset]) > -1 || index.title.toLowerCase().indexOf(word[offset]) > -1 || index.feed.toLowerCase().indexOf(word[offset]) > -1) {
+
+					$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+
+				}
+
+			});
+
+		});
+
+	} else {
+
+		$.each(menu, function(key, index) {
+
+			if (index.category.toLowerCase().indexOf($(".filter").val()) > -1 || index.title.toLowerCase().indexOf($(".filter").val()) > -1 || index.feed.toLowerCase().indexOf($(".filter").val()) > -1) {
+
+				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='tag'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+
+			}
+
+		});
+
+	}
 
     });
 
