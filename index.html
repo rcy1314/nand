@@ -89,19 +89,27 @@ var proxy = "https://cors-anywhere.herokuapp.com/";
 var menu = [
 
 	{ name : "abcf", category : "World", title : "ABC KFSN-TV local Fresno news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
+	{ name : "ycvc", category : "World", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
 	{ name : "abcl", category : "World", title : "ABC7 covers Los Angeles news, weather, sports, traffic and live video.", feed : "https://abc7.com/feed", homepage : "https://abc7.com" },
+	{ name : "cbsl", category : "World", title : "CBS KCBS-TV 7 Los Angeles ews, Sports, Weather, Traffic and the Best of LA/OC.", feed : "https://losangeles.cbslocal.com/feed", homepage : "https://losangeles.cbslocal.com" },
 	{ name : "nbcl", category : "World", title : "NBC KNBC Los Angeles weather, traffic, politics, sports, and entertainment news.", feed : "https://www.nbclosangeles.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbclosangeles.com" },
 	{ name : "abcs", category : "World", title : "ABC7 News covers San Francisco local news and headlines.", feed : "https://abc7news.com/feed", homepage : "https://abc7news.com" },
+	{ name : "cbsf", category : "World", title : "CBS KPIX 5 San Francisco News, Sports, Weather, Traffic and the Best of SF.", feed : "https://sanfrancisco.cbslocal.com/feed", homepage : "https://sanfrancisco.cbslocal.com" },
 	{ name : "nbcf", category : "World", title : "NBC KNTV San Franscisco owned-and-operated television station in the Bay Area market.", feed : "https://www.nbcbayarea.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcbayarea.com" },
 	{ name : "abcm", category : "World", title : "ABC Local 10 Breaking news in Miami, Florida and headlines.", feed : "https://www.local10.com/feeds/rssFeed/feedServlet?obfType=GMG_RSS_TEASERS&siteId=800006&categoryId=80041&nbRows=10", homepage : "https://local10.com" },
+	{ name : "cbsm", category : "World", title : "CBS WFOR-TV Miami a full service television station in Miami and Fort Lauderdale, Florida.", feed : "https://miami.cbslocal.com/feed", homepage : "https://miami.cbslocal.com" },
 	{ name : "nbcm", category : "World", title : "NBC WTVJ South Florida local news, national news and breaking news stories.", feed : "https://www.nbcmiami.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcmiami.com" },
 	{ name : "abcc", category : "World", title : "ABC7 Chicago's source for breaking news covering News, Weather, Traffic and Sports.", feed : "https://abc7chicago.com/feed", homepage : "https://abc7chicago.com" },
+	{ name : "cbsc", category : "World", title : "CBS WBBM-TV Chicacgo CBS owned-and-operated television station licensed to Chicago, Illinois.", feed : "https://chicago.cbslocal.com/feed", homepage : "https://chicago.cbslocal.com" },
 	{ name : "nbcc", category : "World", title : "NBC WMAQ-TV Chicago latest weather, traffic, entertainment and political news", feed : "https://www.nbcchicago.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcchicago.com" },
-	{ name : "abcb", category : "World", title : "ABC affliate WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://www.wcvb.com" },
+	{ name : "abcb", category : "World", title : "ABC WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://www.wcvb.com" },
+	{ name : "cbsb", category : "World", title : "CBS WBZ-TV Boston Local Breaking News From Boston, Mass.", feed : "https://boston.cbslocal.com/feed", homepage : "https://boston.cbslocal.com/feed" },
 	{ name : "nbcb", category : "World", title : "NBC WBTS-CD Boston local news, national news and Boston breaking news stories.", feed : "https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcboston.com" },
 	{ name : "abcn", category : "World", title : "ABC7 New York covering New York City, New Jersey, and Long Island.", feed : "https://abc7ny.com/feed", homepage : "https://abc7ny.com" },
+	{ name : "cbsy", category : "World", title : "CBS WCBS-TV New York City 4/7 digital streaming news service. It's always on.", feed : "https://newyork.cbslocal.com/feed", homepage : "https://newyork.cbslocal.com" },
 	{ name : "nbcy", category : "World", title : "NBC WNBC New York weather, traffic, entertainment and health.", feed : "https://www.nbcnewyork.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcnewyork.com" },
 	{ name : "nbcw", category : "World", title : "NBC WRC-TV Washington D.C. news, weather, traffic, entertainment and health.", feed : "https://www.nbcwashington.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://www.nbcwashington.com" },
+	{ name : "cbsw", category : "World", title : "CBS WUSA 9 Washington station licensed to the capital city of Washington, District of Columbia.", feed : "http://rssfeeds.wusa9.com/wusa-news&x=1", homepage : "https://www.wusa9.com" },
 	{ name : "abcn", category : "World", title : "ABC is an American broadcast television network that is property of Walt Disney.", feed : "https://abcnews.go.com/abcnews/internationalheadlines", homepage : "https://www.abc.com" },
 	{ name : "abcs", category : "Sports", title : "ABC Sports the latest sports news and articles and more.", feed : "https://abcnews.go.com/abcnews/sportsheadlines", homepage : "https://abcnews.go.com/Sports" },
 	{ name : "abce", category : "Entertainment", title : "ABC Entertainment Latest Celebrity News, Videos & Photos.", feed : "https://abcnews.go.com/abcnews/entertainmentheadlines", homepage : "https://abcnews.go.com/entertainment" },
@@ -259,7 +267,6 @@ var menu = [
 	{ name : "yaho", category : "Technology", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "yahs", category : "Sports", title : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", feed : "https://sports.yahoo.com/rss", homepage : "https://sports.yahoo.com" },
 	{ name : "yahc", category : "Entertainment", title : "Yahoo Celebrity for the latest news and gossip on the world's celebrities.", feed : "https://www.yahoo.com/celebrity/rss", homepage : "https://www.yahoo.com/celebrity" },
-	{ name : "ycvc", category : "World", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://www.yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
 	{ name : "zdnt", category : "Technology", title : "ZDNet is a business technology news website published by CBS Interactive.", feed : "https://www.zdnet.com/news/rss.xml", homepage : "https://www.zdnet.com" }
 
 ]
