@@ -102,9 +102,9 @@ jQuery(function($) {
 
 	$(".menu").live("click", function(event) {
 
-		command = $(this).get(0).id;
-
 		$(".output").scrollTop();
+
+		command = $(this).get(0).id;
 
 		$.each(menu, function(key, feed) {
 
@@ -115,8 +115,6 @@ jQuery(function($) {
 			}
 		});
 
-		$(".filter").attr("style", "visibility:hidden");	
-
 	});
 
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
@@ -126,8 +124,6 @@ jQuery(function($) {
     $(".back").live("click", function(event) { $(".category").trigger("change"); });
 
     $(".tag").live("click", function(event) { 
-
-	$(".filter").val("");
 
 	$(".bottom").html("");
 
@@ -143,7 +139,7 @@ jQuery(function($) {
 
     $(".category").on("change", function () {
 
-	var array = [ ];
+	var array = [];
 
 	$(".output").html("");
 
@@ -169,7 +165,7 @@ jQuery(function($) {
 
     $(".random").live("click", function () {
 
-	var array = [ ];
+	var array = [];
 
 	$(".output").scrollTop();
 
@@ -183,11 +179,11 @@ jQuery(function($) {
 
 	});
 
-	var command = array[Math.floor(Math.random()*array.length)];
+	var feed = array[Math.floor(Math.random()*array.length)];
 
 	$.each(menu, function(key, index) {
 
-		if (index.name == command) {
+		if (index.name == feed) {
 
 			getfeed(index.feed, index.homepage)
 
@@ -211,27 +207,15 @@ jQuery(function($) {
 
 		var entry = $(data).find("entry");
 
-		if (entry.length > 0) {
+		if (entry.length > 0) { var format = "entry" }
 
-			var format = "entry"
-
-		} else {
-
-			var format = "item"
-
-		}
+		else { var format = "item" }
 
 	        $(data).find(format).each(function (index) {
 							
-			if (format == "entry") {
+			if (format == "entry") { var link = $(this).find("link").attr("href"); }
 
-				var link = $(this).find("link").attr("href");
-
-			} else {
-
-				var link = $(this).find("link").text();
-
-			}
+			else { var link = $(this).find("link").text(); }
 
 			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
@@ -240,7 +224,6 @@ jQuery(function($) {
 	});
 
     }
-
 </script>
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
