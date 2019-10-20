@@ -118,7 +118,7 @@ jQuery(function($) {
 
     $(".back").live("click", function(event) { $(".selected").trigger("click"); });
 
-    $(".tag").live("click", function(event) { 
+    $(".category").live("click", function(event) { 
 
 	var array = [];
 
@@ -126,7 +126,7 @@ jQuery(function($) {
 
 	$(".bottom").html("");
 
-	$(".tag").removeClass("selected");
+	$(".category").removeClass("selected");
 
 	$(this).addClass("selected");
 
@@ -144,7 +144,7 @@ jQuery(function($) {
 
 			array.push(menu[key]);
 
-			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
+			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='category'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
 
@@ -217,7 +217,7 @@ jQuery(function($) {
     }
 
 </script>
-<button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
+<button class="random">rand</button><button id="All" class="category">all</button><button id="Entertainment" class="category">ent</button><button id="Social" class="category">soc</button><button id="Sports" class="category">sp</button><button id="Technology" class="category">tech</button><button id="World" class="category">world</button>
 <div class="output"></div>
 <div class="bottom"></div>
 </body>
