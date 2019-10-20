@@ -77,111 +77,110 @@
 		text-align: center;
 
 	}
-//  End of CSS formatting.
 </style>
 <script>
-// Start of Javascript, use a proxy on feeds for CORS headers.
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
-// JQuery simplifies javascript and adds some simple features.
+
 jQuery(function($) {
-//  Load Functions before the Document is ready.
+
     $(window).load(function () {
-//	Populate .output with menu array of feeds.js.
+
 	$("#All").trigger("click");
-//	Set focus to .output div for scrolling.
+
 	$(".output").attr('tabindex', -1).focus();
-//	Keep focus on .output for scrolling.
+
 	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
 
     });
-//  DOM loaded, since multiple .menu feeds lets only execute one.
+
     $(document).one('ready', function () {
-//	Menu feeds class are .menu, this is the click function.
+
 	$(".menu").live("click", function(event) {
-//		Scroll to the top of .output.
+
 		$(".output").scrollTop();
-//		Lets get the .menu feed id which is 'name' in the menu array.
+
 		command = $(this).get(0).id;
-//		Loop through menu array to match the 'name'.
+
 		$.each(menu, function(key, feed) {
-//			Found the menu array name.
+
 			if (command === feed.name) {
-//				Javascript function passing feed url and homepage from array.
+
 				getfeed(feed.feed, feed.homepage);
 
 			}
 		});
 
 	});
-//	Shows the button has been clicked by changing background color.
+
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
     });
-//  Back button triggers a category select change to refresh menu array. 
+
     $(".back").live("click", function(event) { $(".category").trigger("change"); });
-//  The category buttons on top are .tag class.
+
     $(".tag").live("click", function(event) { 
-//	Clear the bottom div for array count of category feeds.
+
 	$(".bottom").html("");
-//	Category select option id is the category of the menu array feed.
+
 	$(".category").val($(this).get(0).id);
-//	Switch to the .tag clicked in the .category select option.
+
 	$(".category").trigger("change");
-//	Removes under line from all .tag category buttons.
+
 	$("button").attr("style", "text-decoration: none");
-//	Sets underline to .tag category button of menu array category.
+
 	$(this).css("text-decoration", "underline");
 
     });
-//  Select category option change to populate output with menu array category.
+
     $(".category").on("change", function () {
-//	This array is used to count the category feeds.
+
 	var array = [];
-//	Clear .output feeds to populate with category feeds.
+
 	$(".output").html("");
-//	Scroll to the top of the .output div.
+
 	$(".output").scrollTop();
-//	Loop through menu to populate .output with category of menu feeds.
+
 	$.each(menu, function(key, feed) {
-//		If .category select value is menu array category.
+
 		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
-//			Add feed of category to array to show count of category feeds.
+
 			array.push(menu[key]);
-//			Feeds are formatted and appended to .output.  Target blank for new tab, href for feed.feed url, Img src of rss icon, Category link of feed.category menu array, class tag same as buttons, Feed link is class menu and Title of menu array feed is shown.
+
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='tag'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
 
 	});
-//	Show the count of feeds in category in .bottom div.
+
 	$(".bottom").html("<a class='random'>" + array.length + " Feeds</a>");
 
     });
-//  Random feed from category select value.
+
     $(".random").live("click", function () {
-//	An array is needed of all feeds in the category to select a random.
+
 	var array = [];
-//	Scroll to top of output (category list can exceed div height).
+
 	$(".output").scrollTop();
-//	Loop throw menu array of feeds to create an array of category.
+
 	$.each(menu, function(key, index) { 
-//		Select option .category matches our menu array category or is All.
+
 		if (index.category == $(".category").val() || $(".category").val() == "All") {
-//			Add category match of select option and menu array feed to our array 'array' for random math.
+
 			array.push(menu[key].name);
 
 		}
 
 	});
-//	Javascript feed is random from array created of category select option.
+
 	var feed = array[Math.floor(Math.random()*array.length)];
-//	Loop through menu to get match random
+
 	$.each(menu, function(key, index) {
-//		Loop matched menu array feed name to math random generated.
+
 		if (index.name == feed) {
-//			Javascript function to get xml from feed url, pass homepage of random menu array feed matched.
+
 			getfeed(index.feed, index.homepage)
-//			Random is complete don't return.
+
 			return false;
 
 		}
@@ -189,30 +188,29 @@ jQuery(function($) {
 	});
 
     });
-//  This is the end of JQuery.
+
 });
 
-//  Javascript function used in matching menu array loops.
     function getfeed(feed, homepage) {
-//	Clear .output for the feed xml appended in .output
+
 	$(".output").html("");
-//	Create a .back class button float left, and homepage link stripping http/s from passed homepage.
+
 	$(".bottom").html("<button class='back'>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
-//	JQuery get API to fetch feed url xml to data.
+
 	$.get(proxy + feed, function (data) {
-//		This is used for subreddits xml.
+
 		var entry = $(data).find("entry");
-//		If subreddit is found the xml format is entry.
+
 		if (entry.length > 0) { var format = "entry" }
-//		If standard xml format item is used.
+
 		else { var format = "item" }
-//		Jquery get API data finds out format (subreddit or not).
+
 	        $(data).find(format).each(function (index) {
-//			Assign format of xml to link url of headline.
+
 			if (format == "entry") { var link = $(this).find("link").attr("href"); }
-//			Assign format as standard xml link url.
+
 			else { var link = $(this).find("link").text(); }
-//			Format headlines in .output with a link.
+
 			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
    		});
@@ -220,7 +218,7 @@ jQuery(function($) {
 	});
 
     }
-//  This is the end of Javascript
+
 </script>
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
