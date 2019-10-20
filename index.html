@@ -2,21 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-//  Scaling for mobile devices.
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
-//  Compatible JQuery CDN.
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-//  Feeds of menu array to be used.
     <script src="feeds.js"></script>
   </head>
 <body>
-//  This is the cascading stylesheet for formatting look.
 <style>
-//	Hide scrollbars, won't use them.
 	::-webkit-scrollbar { display: none; }
-//	Feed homepage in .bottom
 	.homepage { float: right; font-size: 16px; }
-//	Category select options match .tag buttons for menu array feeds.
 	.category { visibility: hidden; }
 
 	html, body {
@@ -229,14 +222,9 @@ jQuery(function($) {
     }
 //  This is the end of Javascript
 </script>
-
-//  Html begins here with .tag category buttons.
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
-//  Output div .output class where feeds and headlines are show.
 <div class="output"></div>
-//  Bottom div .bottom class for category array count, back button, and homepage link.
 <div class="bottom"></div>
-//  Hidden .category select for changed and placeholding selected category (matches .tag buttons).
 <select class="category">
     <option>All</option>
     <option>Entertainment</option>
