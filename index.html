@@ -48,7 +48,7 @@
 		position: fixed;
 		line-height: 1.4em;
 		width: 95%;
-		top: 4em;
+		top: 3em;
 		bottom: 2em;
 		overflow: auto;
 		outline: none !important;
@@ -97,6 +97,8 @@ jQuery(function($) {
 
 	$(".menu").live("click", function(event) {
 
+		$(".output").html("");
+
 		$(".output").scrollTop();
 
 		command = $(this).get(0).id;
@@ -124,8 +126,6 @@ jQuery(function($) {
 
 	var value = $(this).attr("id");
 
-	$(".bottom").html("");
-
 	$(".category").removeClass("selected");
 
 	$(this).addClass("selected");
@@ -140,7 +140,7 @@ jQuery(function($) {
 
 	$.each(menu, function(key, feed) {
 
-		if (feed.category == value || value == "All" ) {
+		if (value == feed.category || value == "All" ) {
 
 			array.push(menu[key]);
 
@@ -190,8 +190,6 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".output").html("");
-
 	$(".bottom").html("<button class='back'>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
 
 	$.get(proxy + feed, function (data) {
@@ -217,7 +215,7 @@ jQuery(function($) {
     }
 
 </script>
-<button class="random">rand</button><button id="All" class="category">all</button><button id="Entertainment" class="category">ent</button><button id="Social" class="category">soc</button><button id="Sports" class="category">sp</button><button id="Technology" class="category">tech</button><button id="World" class="category">world</button>
+<button id="Random" class="random">rand</button><button id="All" class="category">all</button><button id="Entertainment" class="category">ent</button><button id="Social" class="category">soc</button><button id="Sports" class="category">sp</button><button id="Technology" class="category">tech</button><button id="World" class="category">world</button>
 <div class="output"></div>
 <div class="bottom"></div>
 </body>
