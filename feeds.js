@@ -94,6 +94,8 @@ var menu = [
 	{ name : "lnux", category : "Social", title : "Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://reddit.com/r/linux" },
 	{ name : "rgms", category : "Social", title : "Games subreddit aims to provide a place for informative and interesting gaming content.", feed : "http://www.reddit.com/r/games/.rss", homepage : "https://reddit.com/r/games" },
 	{ name : "rnfl", category : "Sports", title : "NFL subreddit covers National Football League News & Discussion.", feed : "https://www.reddit.com/r/nfl/.rss", homepage : "https://reddit.com/r/nfl" },
+	{ name : "rbas", category : "Sports", title : "Baseball subreddit for the bat-and-ball sport played between two teams of nine players.", feed : "https://www.reddit.com/r/baseball/.rss", homepage : "https://reddit.com/r/baseball" },
+	{ name : "rfoo", category : "Sports", title : "Football subreddit discusses and headlines topic around football.", feed : "https://www.reddit.com/r/football/.rss", homepage : "https://reddit.com/r/football" },
 	{ name : "rmlb", category : "Sports", title : "MLB subreddit covers Major League Baseball headlines and news.", feed : "https://www.reddit.com/r/mlb/.rss", homepage : "https://reddit.com/r/mlb" },
 	{ name : "rcfb", category : "Sports", title : "CFB subreddit forum for all things college football focused on NCAA football.", feed : "https://www.reddit.com/r/cfb/.rss", homepage : "https://reddit.com/r/cfb" },
 	{ name : "mech", category : "Technology", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://www.popularmechanics.com" },
