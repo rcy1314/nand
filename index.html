@@ -10,12 +10,13 @@
     <script src="feeds.js"></script>
   </head>
 <body>
+//  This is the cascading stylesheet for formatting look.
 <style>
-
+//	Hide scrollbars, won't use them.
 	::-webkit-scrollbar { display: none; }
-
+//	Feed homepage in .bottom
 	.homepage { float: right; font-size: 16px; }
-
+//	Category select options match .tag buttons for menu array feeds.
 	.category { visibility: hidden; }
 
 	html, body {
@@ -83,10 +84,10 @@
 		text-align: center;
 
 	}
-
+//  End of CSS formatting.
 </style>
 <script>
-// Use a Proxy for CORS Headers.
+// Start of Javascript, use a proxy on feeds for CORS headers.
 var proxy = "https://cors-anywhere.herokuapp.com/";
 // JQuery simplifies javascript and ads some simple features.
 jQuery(function($) {
