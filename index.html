@@ -10,7 +10,6 @@
 <style>
 	::-webkit-scrollbar { display: none; }
 	.homepage { float: right; font-size: 16px; }
-	.category { visibility: hidden; }
 
 	html, body {
 
@@ -117,25 +116,23 @@ jQuery(function($) {
 
     });
 
-    $(".back").live("click", function(event) { $(".category").trigger("change"); });
+    $(".back").live("click", function(event) { $(".selected").trigger("click"); });
 
     $(".tag").live("click", function(event) { 
 
+	var array = [];
+
+	var value = $(this).attr("id");
+
 	$(".bottom").html("");
 
-	$(".category").val($(this).get(0).id);
+	$(".tag").removeClass("selected");
 
-	$(".category").trigger("change");
+	$(this).addClass("selected");
 
 	$("button").attr("style", "text-decoration: none");
 
 	$(this).css("text-decoration", "underline");
-
-    });
-
-    $(".category").on("change", function () {
-
-	var array = [];
 
 	$(".output").html("");
 
@@ -143,7 +140,7 @@ jQuery(function($) {
 
 	$.each(menu, function(key, feed) {
 
-		if (feed.category == $(".category").val() || $(".category").val() == "All" ) {
+		if (feed.category == value || value == "All" ) {
 
 			array.push(menu[key]);
 
@@ -165,7 +162,7 @@ jQuery(function($) {
 
 	$.each(menu, function(key, index) { 
 
-		if (index.category == $(".category").val() || $(".category").val() == "All") {
+		if (index.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") {
 
 			array.push(menu[key].name);
 
@@ -223,13 +220,5 @@ jQuery(function($) {
 <button class="random">rand</button><button id="All" class="tag">all</button><button id="Entertainment" class="tag">ent</button><button id="Social" class="tag">soc</button><button id="Sports" class="tag">sp</button><button id="Technology" class="tag">tech</button><button id="World" class="tag">world</button>
 <div class="output"></div>
 <div class="bottom"></div>
-<select class="category">
-    <option>All</option>
-    <option>Entertainment</option>
-    <option>Social</option>
-    <option>Sports</option>
-    <option>Technology</option>
-    <option>World</option>
-</select>
 </body>
 </html>
