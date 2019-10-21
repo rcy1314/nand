@@ -156,7 +156,7 @@ var menu = [
 	{ name : "rwlp", category : "Social", title : "Wallpaper subreddit computer desktops and background images.", feed : "https://www.reddit.com/r/wallpaper/.rss", homepage : "https://reddit.com/r/wallpaper" },
 	{ name : "rwps", category : "Social", title : "Wallpapers subreddit Work-safe wallpapers from all over!", feed : "https://www.reddit.com/r/wallpapers/.rss", homepage : "https://reddit.com/r/wallpapers" },
 	{ name : "rstm", category : "Social", title : "Steam subreddit for members of the Steam Community.", feed : "https://www.reddit.com/r/steam/.rss", homepage : "https://reddit.com/r/steam" },
-	{ name : "rcar", category : "Social", title : "Cars subreddit is the largest automotive enthusiast community on the Internet.", feed : "https://www.reddit.com/r/cars/.rss", homepage : "https://reddit.com/r/cars" },
+	{ name : "rcar", category : "Social", title : "Unbuntu subreddit or news, information and general discussion related to Ubuntu..", feed : "https://www.reddit.com/r/ubuntu/.rss", homepage : "https://reddit.com/r/ubuntu" },
 	{ name : "rspo", category : "Sports", title : "Sports subreddit for all the latest headlines and discussion in sports.", feed : "https://www.reddit.com/r/sports/.rss", homepage : "https://reddit.com/r/sports" },
 	{ name : "rwor", category : "World", title : "WorldNews subreddit with latest headlines from around the world.", feed : "https://www.reddit.com/r/worldnews/.rss", homepage : "https://reddit.com/r/worldnews" },
 	{ name : "rtwn", category : "World", title : "RT delivers latest news on current events from around the world.", feed : "https://www.rt.com/rss", homepage : "https://rt.com" },
