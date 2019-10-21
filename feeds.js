@@ -144,7 +144,7 @@ var menu = [
 	{ name : "rcom", category : "Social", title : "Computer subreddit with questions and opinions.", feed : "https://www.reddit.com/r/computers/.rss", homepage : "https://reddit.com/r/computers" },
 	{ name : "rcmd", category : "Social", title : "CommandLine subreddit with questions and answers.", feed : "https://www.reddit.com/r/commandline/.rss", homepage : "https://reddit.com/r/commandline" },
 	{ name : "rdeb", category : "Social", title : "Debian Linux subreddit covers topics revolving around Debian OS.", feed : "https://www.reddit.com/r/debian/.rss", homepage : "https://reddit.com/r/debian" },
-	{ name : "rent", category : "Social", title : "Entertainment subreddit has news and discussion of the entertainment industry.", feed : "https://www.reddit.com/r/entertainment/.rss", homepage : "https://reddit.com/r/entertainment" },
+	{ name : "rent", category : "Entertainment", title : "Entertainment subreddit has news and discussion of the entertainment industry.", feed : "https://www.reddit.com/r/entertainment/.rss", homepage : "https://reddit.com/r/entertainment" },
 	{ name : "rmma", category : "Sports", title : "MMA subreddit for all things Mixed Martial Arts.", feed : "https://www.reddit.com/r/MMA/.rss", homepage : "https://reddit.com/r/MMA" },
 	{ name : "rpro", category : "Social", title : "Programming subreddit shares user submitted articles on programming.", feed : "https://www.reddit.com/r/programming/.rss", homepage : "https://reddit.com/r/programming" },
 	{ name : "rpyt", category : "Social", title : "Python subreddit about the dynamic, interpreted, interactive, object-oriented, extensible language Python.", feed : "https://www.reddit.com/r/python/.rss", homepage : "https://reddit.com/r/python" },
