@@ -57,26 +57,6 @@
 
 	}
 
-	.back {
-
-		float: left;
-		font-size: 16px;
-
-	}
-
-	.homepage {
-
-		float: right;
-		font-size: 16px;
-
-	}
-
-	.random {
-
-		padding: 0px 0px;
-
-	}
-
 	.bottom {
 
 		position: fixed;
@@ -187,7 +167,7 @@ jQuery(function($) {
 
 		if (index.name == feed) {
 
-			getfeed(index.feed, index.homepage)
+			getfeed(index.feed, index.title, index.homepage)
 
 			return false;
 
@@ -199,9 +179,9 @@ jQuery(function($) {
 
 });
 
-    function getfeed(feed, homepage) {
+    function getfeed(feed, title, homepage) {
 
-	$(".bottom").html("<a class='back'>&ensp;<i class='fa fa-backward'></i></a><button class='random'>random</button><a class='homepage' target='_blank' href='" + homepage + "'><i class='fa fa-forward'>&ensp;</i></a>");
+	$(".bottom").html("<a class='back' style='float:left;'><i class='fa fa-backward'></i></a><a class='random'>random</a><a class='homepage' style='right:0emm' target='_blank' href='" + homepage + "'><i class='fa fa-forward'></i></a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -223,7 +203,7 @@ jQuery(function($) {
 
 	});
 
-	$(".output").append("<br><a target='blank' href='" + homepage + "'>&ensp;" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "<br></a>");
+	$(".output").append("<br><a target='blank' href='" + homepage + "'>&ensp;" + title + "<br></a>");
 
     }
 
