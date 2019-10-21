@@ -61,7 +61,6 @@
 
 		float: left;
 		font-size: 16px;
-		padding: 0px 0px;
 
 	}
 
@@ -160,7 +159,7 @@ jQuery(function($) {
 
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
-	$(".bottom").html("<a class='random'><i class='fa fa-asterisk'>&ensp;</i>random</a>");
+	$(".bottom").html("<a class='random'>random</a>");
 
     });
 
@@ -202,7 +201,7 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<button class='back'>&ensp;<i class='fa fa-backward'></i></button><button class='random'>&ensp;<i class='fa fa-asterisk'></i>&ensp;</button><a class='homepage' target='_blank' href='" + homepage + "'><i class='fa fa-forward'>&ensp;</i></a>");
+	$(".bottom").html("<a class='back'>&ensp;<i class='fa fa-backward'></i></a><button class='random'>random</button><a class='homepage' target='_blank' href='" + homepage + "'><i class='fa fa-forward'>&ensp;</i></a>");
 
 	$.get(proxy + feed, function (data) {
 
