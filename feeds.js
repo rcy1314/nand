@@ -152,6 +152,7 @@ var menu = [
 	{ name : "rten", category : "Sports", title : "Tennis subreddit discusses tennis, from tour professionals to recreational players.", feed : "https://www.reddit.com/r/tennis/.rss", homepage : "https://reddit.com/r/tennis" },
 	{ name : "rtch", category : "Social", title : "Tech subreddit the intelligent discussion of innovations and changes to technology.", feed : "https://www.reddit.com/r/tech/.rss", homepage : "https://www.reddit.com/r/tech" },
 	{ name : "rtec", category : "Social", title : "Technology subreddit users opinions and submitted articles.", feed : "https://www.reddit.com/r/technology/.rss", homepage : "https://reddit.com/r/technology" },
+	{ name : "4cwg", category : "Social", title : "4Chan Wallpapers General including Desktops, Builds, Mobile, Image mods, NO Requests.", feed : "http://boards.4chan.org/wg/index.rss", homepage : "http://boards.4chan.org/wg" },
 	{ name : "rwlp", category : "Social", title : "Wallpaper subreddit computer desktops and background images.", feed : "https://www.reddit.com/r/wallpaper/.rss", homepage : "https://reddit.com/r/wallpaper" },
 	{ name : "rwps", category : "Social", title : "Wallpapers subreddit Work-safe wallpapers from all over!", feed : "https://www.reddit.com/r/wallpapers/.rss", homepage : "https://reddit.com/r/wallpapers" },
 	{ name : "rstm", category : "Social", title : "Steam subreddit for members of the Steam Community.", feed : "https://www.reddit.com/r/steam/.rss", homepage : "https://reddit.com/r/steam" },
