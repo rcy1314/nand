@@ -37,7 +37,6 @@
 		text-align: center;
 		text-decoration: none;
 		font-size: 16px;
-		float: left;
 		width: 13%;
 
 	}
@@ -49,7 +48,7 @@
 		position: fixed;
 		line-height: 1.4em;
 		width: 95%;
-		top: 4em;
+		top: 4.5em;
 		bottom: 2em;
 		overflow: auto;
 		outline: none !important;
@@ -66,6 +65,19 @@
 
 	}
 
+	.homepage {
+
+		float: right;
+		font-size: 16px;
+
+	}
+
+	.random {
+
+		padding: 0px 0px;
+
+	}
+
 	.bottom {
 
 		position: fixed;
@@ -77,6 +89,7 @@
 		text-align: center;
 
 	}
+
 </style>
 <script>
 
@@ -121,8 +134,6 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
-	var array = [];
-
 	var value = $(this).attr("id");
 
 	$(".category").removeClass("selected");
@@ -141,8 +152,6 @@ jQuery(function($) {
 
 		if (value == feed.category || value == "All" ) {
 
-			array.push(menu[key]);
-
 			$(".output").append("<br><a target='_blank' href='" + feed.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + feed.category + "' class='category'><b>" + feed.category + "</b></a>&ensp;<a id='" + feed.name + "' class='menu'>" + feed.title + "</a><br>")
 
 		}
@@ -151,7 +160,7 @@ jQuery(function($) {
 
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
-	$(".bottom").html("<a class='random'>" + array.length + "&ensp;<i class='fa fa-bars'></i></a>");
+	$(".bottom").html("<a class='random'><i class='fa fa-asterisk'>&ensp;</i>random</a>");
 
     });
 
@@ -193,7 +202,7 @@ jQuery(function($) {
 
     function getfeed(feed, homepage) {
 
-	$(".bottom").html("<button class='back'><i class='fa fa-backward'>&ensp;</i>back</button><a class='homepage' target='_blank' href='" + homepage + "'>" +  homepage.replace(/^(?:https?:\/\/)?/g, "") + "</a>");
+	$(".bottom").html("<button class='back'>&ensp;<i class='fa fa-backward'></i></button><button class='random'>&ensp;<i class='fa fa-asterisk'></i>&ensp;</button><a class='homepage' target='_blank' href='" + homepage + "'><i class='fa fa-forward'>&ensp;</i></a>");
 
 	$.get(proxy + feed, function (data) {
 
@@ -215,10 +224,12 @@ jQuery(function($) {
 
 	});
 
+	$(".output").append("<br><a target='blank' href='" + homepage + "'>&ensp;" + homepage.replace(/^(?:https?:\/\/)?/g, "") + "<br></a>");
+
     }
 
 </script>
-<button id="Random" class="random"><i class="fa fa-asterisk">&ensp;</i>rand</button><button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>all</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>ent</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>soc</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>sp</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>world</button>
+<button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>all</button><button id="Local" class="category"><i class="fa fa-bookmark-o">&ensp;</i>loc</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>ent</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>soc</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>sp</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>world</button>
 <div class="output"></div>
 <div class="bottom"></div>
 </body>
