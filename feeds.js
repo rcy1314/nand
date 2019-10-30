@@ -111,6 +111,7 @@ var menu = [
 	{ name : "mirt", category : "Technology", title : "Mirror.co.uk Technology best stories, opinion, pictures and video.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://mirror.co.uk/tech" },
 	{ name : "umit", category : "Technology", title : "MIT is a top university, in science and engineering, cognitive science, philosophy and linguistics.", feed : "http://news.mit.edu/rss/feed", homepage : "http://news.mit.edu" },
 	{ name : "merc", category : "World", title : "Mercury News is passionate about serving readers in Silicon Valley and its global technology community.", feed : "https://www.mercurynews.com/feed", homepage : "https://mercurynews.com" },
+	{ name : "meta", category : "Entertainment", title : "Metacritic aggregates reviews of films, TV shows, music albums, and video games.", feed : "https://www.metacritic.com/rss/features", homepage : "https://www.metacritic.com" },
 	{ name : "mlbn", category : "Sports", title : "MLB.com is the official site of Major League Baseball.", feed : "https://www.mlb.com/feeds/news/rss.xml", homepage : "https://mlb.com" },
 	{ name : "movw", category : "Entertainment", title : "Movieweb is the fastest, most complete movie & tv coverage on the planet.", feed : "https://movieweb.com/rss/all-news", homepage : "https://movieweb.com" },
 	{ name : "mmaj", category : "Sports", title : "MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.", feed : "https://mmajunkie.com/news/feed", homepage : "https://mmajunkie.com" },
