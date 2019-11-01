@@ -94,7 +94,6 @@ var menu = [
 	{ name : "jsjd", category : "Entertainment", title : "Just Jared Jr. is the definitive site for celebrity news.", feed : "http://www.justjared.com/feed", homepage : "http://justjared.com" },
 	{ name : "kota", category : "Technology", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
 	{ name : "ltms", category : "Technology", title : "The Los Angeles Times is a daily newspaper that is published in Los Angeles, California, since 1881.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://latimes.com/business/technology" },
-	{ name : "lntd", category : "Technology", title : "Linux Today technical topics in Linux news.", feed : "https://www.linuxtoday.com/biglt.rss", homepage : "https://linuxtoday.com" },
 	{ name : "lxcm", category : "Technology", title : "Linux.com News For Open Source Professionals.", feed : "https://www.linux.com/feed", homepage : "https://linux.com" },
 	{ name : "rlnx", category : "Social", title : "Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://reddit.com/r/linux" },
 	{ name : "rcel", category : "Entertainment", title : "Celebrity Hub subreddit Pictures and GIFs of actresses, singers, models, athletes and celebs.", feed : "https://www.reddit.com/r/celebhub/.rss", homepage : "https://reddit.com/r/celebhub" },
