@@ -87,10 +87,6 @@ jQuery(function($) {
 
 	$(".menu").live("click", function(event) {
 
-		$(".output").html("");
-
-		$(".output").scrollTop();
-
 		command = $(this).get(0).id;
 
 		$.each(menu, function(key, index) {
@@ -103,6 +99,12 @@ jQuery(function($) {
 		});
 
 	});
+
+$('.output').bind('scroll', function(){
+   if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){
+	$(".selected").trigger("click");
+   }
+});
 
     });
 
@@ -132,9 +134,11 @@ jQuery(function($) {
 
 		}
 
+		if (key == (menu.length - 1)) { $(".output").append("<br><hr class='last'>"); }
+
 	});
 
-	$(".bottom").html("<a class='random'>&ensp;Random</a>");
+	$(".bottom").html("<a class='random'>Random</a>");
 
 	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
@@ -186,6 +190,8 @@ jQuery(function($) {
 
 		else { var format = "item" }
 
+		$(".output").append("<br><hr class='first'>");
+
 	        $(data).find(format).each(function (index) {
 
 			if (format == "entry") { var link = $(this).find("link").attr("href"); }
@@ -208,18 +214,23 @@ jQuery(function($) {
 
 			}
 
+			if (key == (menu.length - 1)) { 
+
+				$(".output").append("<br><hr>");
+
+				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+			}
+
 		});
 
 	});
 
 	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
 
-	$(".output").append("<br><hr>");
-
     }
 
 </script>
-<button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>Total</button><button id="Local" class="category"><i class="fa fa-bookmark-o">&ensp;</i>Local</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>Entert</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>Social</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>Sports</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>Tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>World</button>
+<button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>Total</button><button id="Local" class="category"><i class="fa fa-bookmark-o">&ensp;</i>Local</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>Ent</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>Social</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>Sports</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>Tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>World</button>
 <div class="output"></div>
 <div class="bottom"></div>
 </body>
