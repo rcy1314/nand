@@ -100,11 +100,7 @@ jQuery(function($) {
 
 	});
 
-$('.output').bind('scroll', function(){
-   if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){
-	$(".selected").trigger("click");
-   }
-});
+	$('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ $(".selected").trigger("click"); } });
 
     });
 
@@ -114,9 +110,7 @@ $('.output').bind('scroll', function(){
 
 	$(".output").append("<hr class='title'>");
 
-	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
-
-	$(".output").scrollTop();
+	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
 
 	$(".category").removeClass("selected");
 
@@ -134,13 +128,9 @@ $('.output').bind('scroll', function(){
 
 		}
 
-		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><br><br><br><br>"); }
+		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><br><br><br><br><br><br><br>"); }
 
 	});
-
-	$(".bottom").html("<a class='random'>Random</a>");
-
-	$("button").mousedown(function() { $(this).attr("style", "background-color:#FE9801;"); });
 
     });
 
@@ -176,8 +166,6 @@ $('.output').bind('scroll', function(){
 
     function getfeed(feed, title, homepage) {
 
-	$(".bottom").html("<a class='back' style='float:left;'><i class='fa fa-backward'></i>&ensp;Back</a><a class='random'>Random</a><a style='float:right;' target='_blank' href='" + homepage + "'>Link&ensp;<i class='fa fa-forward'></i></a>");
-
 	$.get("https://cors-anywhere.herokuapp.com/" + feed, function (data) {
 
 		var entry = $(data).find("entry");
@@ -206,13 +194,13 @@ $('.output').bind('scroll', function(){
 
 			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) {
 
-				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
 
 			}
 
 			if (key == (menu.length - 1)) { 
 
-				$(".output").append("<br><hr><br><br><br><br><br><br><br><br><br>");
+				$(".output").append("<br><hr><br><br><br><br><br><br><br><br><br><br><br><br>");
 
 				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 			}
@@ -228,6 +216,6 @@ $('.output').bind('scroll', function(){
 </script>
 <button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>Total</button><button id="Local" class="category"><i class="fa fa-bookmark-o">&ensp;</i>Local</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>Ent</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>Social</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>Sports</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>Tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>World</button>
 <div class="output"></div>
-<div class="bottom"></div>
+<div class="bottom"><a class='random'>Random</a></div>
 </body>
 </html>
