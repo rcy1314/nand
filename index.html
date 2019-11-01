@@ -148,10 +148,6 @@ $('.output').bind('scroll', function(){
 
 	var array = [];
 
-	$(".output").html("");
-
-	$(".output").scrollTop();
-
 	$.each(menu, function(key, index) { 
 
 		if (index.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") {
