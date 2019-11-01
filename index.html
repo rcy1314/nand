@@ -81,11 +81,11 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
-	var value = $(this).attr("id");
-
 	$(".output").html("");
 
 	$(".output").scrollTop();
+
+	var value = $(this).attr("id");
 
 	$(".category").removeClass("selected");
 
@@ -166,6 +166,16 @@ jQuery(function($) {
 			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
    		});
+
+		$.each(menu, function(key, index) {
+
+			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) {
+
+				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+
+			}
+
+		});
 
 	});
 
