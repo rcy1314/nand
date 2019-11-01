@@ -130,7 +130,7 @@ $('.output').bind('scroll', function(){
 
 		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) {
 
-			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
+			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
 
 		}
 
