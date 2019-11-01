@@ -201,6 +201,6 @@ var menu = [
 	{ name : "yahs", category : "Sports", title : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", feed : "https://sports.yahoo.com/rss", homepage : "https://sports.yahoo.com" },
 	{ name : "yahc", category : "Entertainment", title : "Yahoo Celebrity for the latest news and gossip on the world's celebrities.", feed : "https://www.yahoo.com/celebrity/rss", homepage : "https://yahoo.com/celebrity" },
 	{ name : "zdnt", category : "Technology", title : "ZDNet is a business technology news website published by CBS Interactive.", feed : "https://www.zdnet.com/news/rss.xml", homepage : "https://zdnet.com" },
-	{ name : "ackt", category : "Social", title : "My Wordpress site of Wallpapers.", feed : "https://ackti.wordpress.com/feed", homepage : "https://ackti.wordpress.com" }
+	{ name : "ackt", category : "All", title : "My Wordpress site of Wallpapers.", feed : "https://ackti.wordpress.com/feed", homepage : "https://ackti.wordpress.com" }
 
 ]
