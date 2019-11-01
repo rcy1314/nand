@@ -87,6 +87,10 @@ jQuery(function($) {
 
 	$(".menu").live("click", function(event) {
 
+		$(".output").html("");
+
+		$(".output").scrollTop();
+
 		command = $(this).get(0).id;
 
 		$.each(menu, function(key, index) {
@@ -99,12 +103,6 @@ jQuery(function($) {
 		});
 
 	});
-
-$('.output').bind('scroll', function(){
-   if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){
-	$(".selected").trigger("click");
-   }
-});
 
     });
 
@@ -133,8 +131,6 @@ $('.output').bind('scroll', function(){
 			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><img src='https://ackti.files.wordpress.com/2019/07/feed.png' height='12px' width='12px'></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
 
 		}
-
-		if (key == (menu.length - 1)) { $(".output").append("<br><hr class='last'>"); }
 
 	});
 
@@ -202,7 +198,7 @@ $('.output').bind('scroll', function(){
 
 		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
 
-		$(".output").append("<br><hr class='first'>");
+		$(".output").append("<br><hr>");
 
 		$.each(menu, function(key, index) {
 
@@ -212,19 +208,13 @@ $('.output').bind('scroll', function(){
 
 			}
 
-			if (key == (menu.length - 1)) { 
-
-				$(".output").append("<br><hr>");
-
-				$('.output').animate({ scrollTop: $(".last").offset().top }, 500);
-
-			}
-
 		});
 
 	});
 
 	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
+
+	$(".output").append("<br><hr>");
 
     }
 
