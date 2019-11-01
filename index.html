@@ -122,13 +122,9 @@ jQuery(function($) {
 
 	$.each(menu, function(key, index) {
 
-		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) {
+		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
 
-			$(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
-
-		}
-
-		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><br><br><br><br><br><br><br>"); }
+		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); }
 
 	});
 
@@ -192,15 +188,9 @@ jQuery(function($) {
 
 		$.each(menu, function(key, index) {
 
-			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) {
+			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
 
-				$(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>")
-
-			}
-
-			if (key == (menu.length - 1)) { 
-
-				$(".output").append("<br><hr><br><br><br><br><br><br><br><br><br><br><br><br>");
+			if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); 
 
 				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 			}
