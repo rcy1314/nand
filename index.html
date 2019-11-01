@@ -176,7 +176,7 @@ jQuery(function($) {
 
     function getfeed(feed, title, homepage) {
 
-	$(".bottom").html("<a class='back' style='float:left;'><i class='fa fa-backward'></i>&ensp;Back</a><a class='random'>Random</a><a style='float:right;' target='_blank' href='" + homepage + "'>Ext&ensp;<i class='fa fa-forward'></i></a>");
+	$(".bottom").html("<a class='back' style='float:left;'><i class='fa fa-backward'></i>&ensp;Back</a><a class='random'>Random</a><a style='float:right;' target='_blank' href='" + homepage + "'>Link&ensp;<i class='fa fa-forward'></i></a>");
 
 	$.get("https://cors-anywhere.herokuapp.com/" + feed, function (data) {
 
