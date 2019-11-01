@@ -112,11 +112,11 @@ $('.output').bind('scroll', function(){
 
     $(".category").live("click", function(event) { 
 
-	$(".output").html("");
+	$(".output").append("<hr class='title'>");
+
+	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 
 	$(".output").scrollTop();
-
-	$(".output").append("<hr>");
 
 	$(".category").removeClass("selected");
 
@@ -134,7 +134,7 @@ $('.output').bind('scroll', function(){
 
 		}
 
-		if (key == (menu.length - 1)) { $(".output").append("<br><hr class='last'>"); }
+		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><br><br><br><br>"); }
 
 	});
 
@@ -216,7 +216,7 @@ $('.output').bind('scroll', function(){
 
 			if (key == (menu.length - 1)) { 
 
-				$(".output").append("<br><hr>");
+				$(".output").append("<br><hr><br><br><br><br><br><br><br><br><br>");
 
 				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 			}
