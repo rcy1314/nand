@@ -344,17 +344,23 @@ jQuery(function($) {
 
 	$(".category").attr("style", "text-decoration: none;"); $(this).css("text-decoration", "underline");
 
-	$(".output").append("<hr class='title'>"); $(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
-
 	$(".category").removeClass("selected"); $(this).addClass("selected");
 
-	$.each(menu, function(index, key) {
+	if ( $(".output").hasClass("reader") ) { $(".random").trigger("click"); }
 
-		if ($(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
+	else {
 
-		if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>"); }
+		$(".output").append("<hr class='title'>"); $(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
 
-	});
+		$.each(menu, function(index, key) {
+
+			if ($(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
+
+			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>"); }
+
+		});
+
+	}
 
     });
 
