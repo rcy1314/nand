@@ -288,7 +288,9 @@ jQuery(function($) {
 
 		$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[index].name); } });
 
-		var name = array[Math.floor(Math.random()*array.length)]; $.each(menu, function(index, key) {
+		var name = array[Math.floor(Math.random()*array.length)];
+
+		$.each(menu, function(index, key) {
 
 			if (key.name == name) {
 
@@ -328,7 +330,15 @@ jQuery(function($) {
 
     $('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ if ( $(".output").hasClass("reader") ) { $(".random").trigger("click"); } else { $(".selected").trigger("click"); } } });
 
-    $(".reader").live("click", function(event) { if ( $(".output").hasClass("reader") ) { $(".output").removeClass("reader") } else { $(".output").addClass("reader") } });
+    $(".reader").live("click", function(event) { 
+
+	if ( $(".output").hasClass("reader") ) { $(".output").removeClass("reader"); $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Infinity Reader Mode Disabled."); }
+
+	else { $(".output").addClass("reader"); $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Infinity Reader Mode Enabled."); }
+
+	$(".output").animate({ scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+
+    });
 
     $(".category").live("click", function(event) { 
 
