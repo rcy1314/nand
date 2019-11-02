@@ -470,8 +470,6 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
-	$(".category").attr("style", "text-decoration: none;");
-	$(this).css("text-decoration", "underline");
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 
@@ -518,17 +516,17 @@ jQuery(function($) {
 
 		if ( $(".output").hasClass("light") ) {
 
-			$("html, body, a, button").css("background-color", "#F6F5F0");
-			$("a, button").css("color", "#000000");
-			$("a, button").css("text-decoration", "none");
+			$("html, body, a, button").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
+			$(".lights").css("float", "left");
+			$(".reader").css("float", "right");
 
 		}
 
 		else if ( $(".output").hasClass("dark") ) {
 
-			$("html, body, a, button").css("background-color", "#000000");
-			$("a, button").css("color", "#FFFFFF");
-			$("a, button").css("text-decoration", "none");
+			$("html, body, a, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
+			$(".lights").css("float", "left");
+			$(".reader").css("float", "right");
 	
 		}
 
@@ -611,21 +609,7 @@ jQuery(function($) {
 
 		});
 
-	if ( $(".output").hasClass("light") ) {
-
-		$("html, body, a, button").css("background-color", "#F6F5F0");
-		$("a, button").css("color", "#000000");
-		$("a, button").css("text-decoration", "none");
-
-	}
-
-	else if ( $(".output").hasClass("dark") ) {
-
-		$("html, body, a, button").css("background-color", "#000000");
-		$("a, button").css("color", "#FFFFFF");
-		$("a, button").css("text-decoration", "none");
-	
-	}
+		$(this).applyColors();
 
 	});
 
