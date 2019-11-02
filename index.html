@@ -344,6 +344,7 @@ jQuery(function($) {
 					}
 
 						$(".output").append("<br><hr class='first'>");
+						$(".output").append("<br><br><br><br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u><br><br><br><br></a>"); 
 
 			        		$(data).find(format).each( function () {
 
@@ -543,11 +544,8 @@ jQuery(function($) {
 
     $.fn.getfeed = function (feed, title, homepage) {
 
-	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>");
-
 	var jqxhr = $.get("https://cors-anywhere.herokuapp.com/" + feed, function(data) {
 
-		$(".output").append("<br><hr class='first'>");
 		var entry = $(data).find("entry");
 
 		if ( entry.length > 0 ) {
@@ -561,6 +559,9 @@ jQuery(function($) {
 			var format = "item"
 
 		}
+
+		$(".output").append("<br><hr class='first'>");
+		$(".output").append("<br><br><br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br><br><br><br></a>");
 
 	        $(data).find(format).each( function () {
 
