@@ -311,7 +311,15 @@ jQuery(function($) {
 
 		var array = [];
 
-		$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[index].name); } });
+		$.each(menu, function(index, key) {
+
+			if ( key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All" ) {
+
+				array.push(menu[index].name);
+
+			}
+
+		});
 
 		var name = array[Math.floor(Math.random()*array.length)];
 
@@ -365,7 +373,7 @@ jQuery(function($) {
 
 				.done(function() {
 
-					$(".output").append("<br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u><br><br></a>"); 
+					$(".output").append("<br><br><br><br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u><br><br><br><br></a>"); 
 
 					$(".output").animate({
 
@@ -439,7 +447,11 @@ jQuery(function($) {
 	else {
 
 		$(".output").append("<hr class='title'>");
-		$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
+		$(".output").animate({
+
+			scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+		}, "slow");
 
 		$.each(menu, function(index, key) {
 
@@ -512,7 +524,7 @@ jQuery(function($) {
 
 	.done( function () {
 
-		(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br><br></a>");
+		$(".output").append("<br><br><br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br><br><br><br></a>");
 		$(".output").append("<br><hr>");
 
 		$.each(menu, function (index, key) {
