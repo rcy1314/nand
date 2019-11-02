@@ -9,7 +9,11 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none; }
+	::-webkit-scrollbar {
+
+		display: none;
+
+	}
 
 	html, body {
 
@@ -276,11 +280,32 @@ var menu = [
 
 jQuery(function($) {
 
-    $(window).load(function () { $("#Social").trigger("click"); $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
+    $(window).load(function () {
+
+	$("#Social").trigger("click");
+	$(".output").attr('tabindex', -1).focus();
+	$(".output").focusout(function(){
+		$(".output").attr('tabindex', -1).focus();
+	});
+
+    });
 
     $(document).one("ready", function () {
 
-	$(".menu").live("click", function(event) { command = $(this).get(0).id; $.each(menu, function(index, key) { if (command === key.name) { $(this).getfeed(key.feed, key.title, key.homepage); } }); });
+	$(".menu").live("click", function(event) {
+
+		command = $(this).get(0).id;
+
+		$.each(menu, function(index, key) {
+
+			if (command === key.name) {
+
+				$(this).getfeed(key.feed, key.title, key.homepage);
+
+			}
+		});
+
+	});
 
 	$(".random").live("click", function () {
 
@@ -298,13 +323,33 @@ jQuery(function($) {
 
 					var entry = $(data).find("entry");
 
-					if (entry.length > 0) { var format = "entry" } else { var format = "item" }
+					if (entry.length > 0) {
+
+						var format = "entry"
+
+					}
+
+					else {
+
+						var format = "item"
+
+					}
 
 						$(".output").append("<br><hr class='first'>");
 
 			        		$(data).find(format).each( function () {
 
-							if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
+							if (format == "entry") {
+
+								var link = $(this).find("link").attr("href");
+
+							}
+
+							else {
+
+								var link = $(this).find("link").text();
+
+							}
 
 							$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
@@ -312,11 +357,21 @@ jQuery(function($) {
 
 				})
 
-				.fail(function() { $(".selected").trigger("click"); })
+				.fail(function() {
 
-				.done(function() { $(".output").append("<br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u><br></a>"); 
+					$(".selected").trigger("click");
 
-					$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+				})
+
+				.done(function() {
+
+					$(".output").append("<br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u><br><br></a>"); 
+
+					$(".output").animate({
+
+						scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+					});
 
 				});
 
@@ -328,13 +383,41 @@ jQuery(function($) {
 
     });
 
-    $('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ if ( $(".output").hasClass("reader") ) { $(".random").trigger("click"); } else { $(".selected").trigger("click"); } } });
+    $('.output').bind('scroll', function(){
+
+		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
+
+			if ( $(".output").hasClass("reader") ) {
+
+				$(".random").trigger("click");
+
+			}
+
+			else {
+
+				$(".selected").trigger("click");
+
+			}
+
+		}
+
+    });
 
     $(".reader").live("click", function(event) { 
 
-	if ( $(".output").hasClass("reader") ) { $(".output").removeClass("reader"); $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Infinity Reader Mode Disabled."); }
+	if ( $(".output").hasClass("reader") ) {
 
-	else { $(".output").addClass("reader"); $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Infinity Reader Mode Enabled."); }
+		$(".output").removeClass("reader");
+		 $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Reader Mode Disabled.");
+
+	}
+
+	else {
+
+		$(".output").addClass("reader");
+		$(".output").append("<br><hr class='infinity'>&ensp;&ensp;Reader Mode Enabled.");
+
+	}
 
 	$(".output").animate({ scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 
@@ -342,21 +425,37 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
-	$(".category").attr("style", "text-decoration: none;"); $(this).css("text-decoration", "underline");
+	$(".category").attr("style", "text-decoration: none;");
+	$(this).css("text-decoration", "underline");
+	$(".category").removeClass("selected");
+	$(this).addClass("selected");
 
-	$(".category").removeClass("selected"); $(this).addClass("selected");
+	if ( $(".output").hasClass("reader") ) {
 
-	if ( $(".output").hasClass("reader") ) { $(".random").trigger("click"); }
+		$(".random").trigger("click");
+
+	}
 
 	else {
 
-		$(".output").append("<hr class='title'>"); $(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
+		$(".output").append("<hr class='title'>");
+		$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
 
 		$.each(menu, function(index, key) {
 
-			if ($(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
+			if ( $(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) {
 
-			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>"); }
+				$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
+						    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
+
+			}
+
+			if ( index == (menu.length - 1) ) {
+
+				$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
+						    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+
+			}
 
 		});
 
@@ -370,15 +469,34 @@ jQuery(function($) {
 
 	var jqxhr = $.get("https://cors-anywhere.herokuapp.com/" + feed, function(data) {
 
+		$(".output").append("<br><hr class='first'>");
 		var entry = $(data).find("entry");
 
-		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
+		if ( entry.length > 0 ) {
 
-		$(".output").append("<br><hr class='first'>");
+			var format = "entry"
+
+		}
+
+		else {
+
+			var format = "item"
+
+		}
 
 	        $(data).find(format).each( function () {
 
-			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
+			if ( format == "entry" ) {
+
+				var link = $(this).find("link").attr("href");
+
+			}
+
+			else {
+
+				var link = $(this).find("link").text();
+
+			}
 
 			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
@@ -386,17 +504,37 @@ jQuery(function($) {
 
 	})
 
-	.fail(function() { $(".selected").trigger("click"); })
+	.fail( function () {
 
-	.done(function() {$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
+		$(".selected").trigger("click");
 
-		$.each(menu, function(index, key) {
+	})
 
-			if ($(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
+	.done( function () {
 
-			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
+		(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br><br></a>");
+		$(".output").append("<br><hr>");
+
+		$.each(menu, function (index, key) {
+
+			if ( $(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) {
+
+				$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>" +
+						    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
+						    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
+
+			}
+
+			if ( index == (menu.length - 1) ) {
+
+				$(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'>" +
+						    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
 			
-				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+				$(".output").animate({
+
+					scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+				});
 
 			}
 
@@ -408,7 +546,7 @@ jQuery(function($) {
 
 });
 </script>
-<button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button>
+<div class="top"><button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
 <div class="output"></div>
 <div class="bottom"><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-bars"></i></a></div>
 </body>
