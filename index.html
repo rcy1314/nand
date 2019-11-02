@@ -317,7 +317,7 @@ jQuery(function($) {
 
     $.fn.getfeed = function (feed, title, homepage) {
 
-	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
+	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>");
 
 	$.get("https://cors-anywhere.herokuapp.com/" + feed, function (data) {
 
@@ -339,7 +339,7 @@ jQuery(function($) {
 
    		});
 
-		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
+		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
 
 		$.each(menu, function(index, key) {
 
