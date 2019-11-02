@@ -35,10 +35,18 @@
 
 	button {
 
-		width: 13.5%;
+		width: 16.6%;
 		border: none;
-		font-size: 16px;
+		font-size: 12px;
 		padding: 8px;
+
+	}
+
+	.top {
+
+		position:absolute;
+		width:100%;
+		left:-1px;
 
 	}
 
@@ -62,7 +70,7 @@
 	.bottom {
 
 		position:fixed;
-		font-size:14px;
+		font-size:12px;
 		font-family:Arial;
 		bottom:.4em;
 		height:1.5em;
@@ -157,7 +165,7 @@ var menu = [
 	{ name : "goog", category : "World", title : "Google is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
 	{ name : "tech", category : "Social", title : "G is a 4Chan board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ name : "4chn", category : "Sports", title : "SP is a 4Chan board that discusses International Sports.", feed : "http://boards.4chan.org/sp/index.rss", homepage : "http://boards.4channel.org/sp/" },
-	{ name : "hack", category : "Social", title : "Hacker News is a reader run headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
+	{ name : "hack", category : "Social", title : "Hacker News is a reader ran headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ name : "haad", category : "Technology", title : "Hackaday serves up Fresh Hacks Every Day from around the Internet.", feed : "https://hackaday.com/feed", homepage : "https://hackaday.com" },
 	{ name : "rhoc", category : "Sports", title : "Hockey subreddit NHL, AHL, KHL, NWHL, IIHF and every other hockey league.", feed : "https://www.reddit.com/r/hockey/.rss", homepage : "https://reddit.com/r/hockey" },
 	{ name : "indp", category : "Technology", title : "Independent.co.uk for Latest Gadgets and Tech news.", feed : "http://www.independent.co.uk/life-style/gadgets-and-tech/rss", homepage : "https://independent.co.uk/life-style/gadgets-and-tech" },
@@ -313,7 +321,7 @@ jQuery(function($) {
 
 		$.each(menu, function(index, key) {
 
-			if ( key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All" ) {
+			if ( key.category == $(".selected").attr("id") ) {
 
 				array.push(menu[index].name);
 
@@ -492,7 +500,7 @@ jQuery(function($) {
 
 		$.each(menu, function(index, key) {
 
-			if ( $(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) {
+			if ( $(".selected").attr("id") == key.category ) {
 
 				$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
 						    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
@@ -618,7 +626,7 @@ jQuery(function($) {
 
 });
 </script>
-<div class="top"><button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
+<div class="top"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Entertain</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
 <div class="output light"></div>
 <div class="bottom"><a id="toggle" class="lights" style="float:left;"><i class="fa fa-th-large"></i></a><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-pied-piper"></i></a></div>
 </body>
