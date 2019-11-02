@@ -33,7 +33,7 @@
 		width: 13.5%;
 		border: none;
 		font-size: 16px;
-		padding: 8px 0px;
+		padding: 8px;
 
 	}
 
@@ -269,7 +269,6 @@ var menu = [
 	{ name : "yahs", category : "Sports", title : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", feed : "https://sports.yahoo.com/rss", homepage : "https://sports.yahoo.com" },
 	{ name : "yahc", category : "Entertainment", title : "Yahoo Celebrity for the latest news and gossip on the world's celebrities.", feed : "https://www.yahoo.com/celebrity/rss", homepage : "https://yahoo.com/celebrity" },
 	{ name : "zdnt", category : "Technology", title : "ZDNet is a business technology news website published by CBS Interactive.", feed : "https://www.zdnet.com/news/rss.xml", homepage : "https://zdnet.com" },
-	{ name : "ackt", category : "All", title : "My Wordpress site of Wallpapers.", feed : "https://ackti.wordpress.com/feed", homepage : "https://ackti.wordpress.com" }
 
 ]
 
@@ -310,17 +309,19 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
+	$(".category").removeClass("selected");
+
+	$(this).addClass("selected");
+
 	$(".output").append("<hr class='title'>");
 
 	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
-
-	$(".category").removeClass("selected"); $(this).addClass("selected");
 
 	$.each(menu, function(index, key) {
 
 		if ($(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br>&ensp;&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
 
-		if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + key.homepage + "'>&ensp;&ensp;" + key.title + "</a><br><br><br><br><br><br><br>"); }
+		if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://ackti.wordpress.com'>&ensp;&ensp;My Wordpress site of Wallpapers.</a><br><br><br><br><br><br><br>"); }
 
 	});
 
@@ -370,7 +371,7 @@ jQuery(function($) {
 
 			if ($(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) { $(".output").append("<br>&ensp;&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
 
-			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + key.homepage + "'>&ensp;&ensp;" + key.title + "</a><br><br><br><br><br><br><br>"); $(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://ackti.wordpress.com'>&ensp;&ensp;My Wordpress site of Wallpapers.</a><br><br><br><br><br><br><br>"); }
 
 		});
 
