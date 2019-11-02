@@ -305,13 +305,9 @@ jQuery(function($) {
 
     $(".random").live("click", function () {
 
-	var array = [];
+	var array = []; $.each(menu, function(index, key) { if (key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[index].name); } });
 
-	$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[index].name); } });
-
-	var name = array[Math.floor(Math.random()*array.length)];
-
-	$.each(menu, function(index, key) { if (key.name == name) { $(this).getfeed(key.feed, key.title, key.homepage) } });
+	var name = array[Math.floor(Math.random()*array.length)]; $.each(menu, function(index, key) { if (key.name == name) { $(this).getfeed(key.feed, key.title, key.homepage) } });
 
     });
 
@@ -319,33 +315,37 @@ jQuery(function($) {
 
 	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>");
 
-	$.get("https://cors-anywhere.herokuapp.com/" + feed, function (data) {
+	var jqxhr = $.get("https://cors-anywhere.herokuapp.com/" + feed, function(data) {
 
 		var entry = $(data).find("entry");
 
-		if (entry.length > 0) { var format = "entry" }
-
-		else { var format = "item" }
+		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
 
 		$(".output").append("<br><hr class='first'>");
 
 	        $(data).find(format).each( function () {
 
-			if (format == "entry") { var link = $(this).find("link").attr("href"); }
-
-			else { var link = $(this).find("link").text(); }
+			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
 
 			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
    		});
 
-		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
+	})
+
+	.fail(function() { $(".selected").trigger("click"); })
+
+	.done(function() {$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
 
 		$.each(menu, function(index, key) {
 
 			if ($(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
 
-			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>"); $(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
+			
+				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+
+			}
 
 		});
 
