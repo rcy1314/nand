@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="feeds.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
   </head>
@@ -35,7 +34,7 @@
 		width: 13.5%;
 		border: none;
 		font-size: 16px;
-		padding: 8px 0px;
+		padding: 8px;
 
 	}
 
@@ -270,59 +269,35 @@ var menu = [
 	{ name : "yaho", category : "Technology", title : "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.", feed : "https://www.yahoo.com/tech/rss", homepage : "https://finance.yahoo.com/tech" },
 	{ name : "yahs", category : "Sports", title : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", feed : "https://sports.yahoo.com/rss", homepage : "https://sports.yahoo.com" },
 	{ name : "yahc", category : "Entertainment", title : "Yahoo Celebrity for the latest news and gossip on the world's celebrities.", feed : "https://www.yahoo.com/celebrity/rss", homepage : "https://yahoo.com/celebrity" },
-	{ name : "zdnt", category : "Technology", title : "ZDNet is a business technology news website published by CBS Interactive.", feed : "https://www.zdnet.com/news/rss.xml", homepage : "https://zdnet.com" },
-	{ name : "ackt", category : "All", title : "My Wordpress site of Wallpapers.", feed : "https://ackti.wordpress.com/feed", homepage : "https://ackti.wordpress.com" }
+	{ name : "zdnt", category : "Technology", title : "ZDNet is a business technology news website published by CBS Interactive.", feed : "https://www.zdnet.com/news/rss.xml", homepage : "https://zdnet.com" }
 
 ]
 
 jQuery(function($) {
 
-    $(window).load(function () {
-
-	$("#Social").trigger("click");
-
-	$(".output").attr('tabindex', -1).focus();
-
-	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
-
-    });
+    $(window).load(function () { $("#Social").trigger("click"); $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
 
     $(document).one('ready', function () {
 
-	$(".menu").live("click", function(event) {
-
-		command = $(this).get(0).id;
-
-		$.each(menu, function(key, index) {
-
-			if (command === index.name) {
-
-				$(this).getfeed(index.feed, index.title, index.homepage);
-
-			}
-		});
-
-	});
+	$(".menu").live("click", function(event) { command = $(this).get(0).id; $.each(menu, function(index, key) { if (command === key.name) { $(this).getfeed(key.feed, key.title, key.homepage); } }); });
 
 	$('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ $(".selected").trigger("click"); } });
 
     });
 
-    $(".back").live("click", function(event) { $(".selected").trigger("click"); });
-
     $(".category").live("click", function(event) { 
 
-	$(".output").append("<hr class='title'>");
+	$(".output").attr("style", "text-decoration: none;"); $(this).css("text-decoration", "underline");
 
-	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
+	$(".output").append("<hr class='title'>"); $(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
 
 	$(".category").removeClass("selected"); $(this).addClass("selected");
 
-	$.each(menu, function(key, index) {
+	$.each(menu, function(index, key) {
 
-		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
+		if ($(".selected").attr("id") == key.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
 
-		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); }
+		if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://ackti.wordpress.com'>&ensp;&ensp;My Wordpress site of Wallpapers.</a><br><br><br><br><br><br><br>"); }
 
 	});
 
@@ -332,11 +307,11 @@ jQuery(function($) {
 
 	var array = [];
 
-	$.each(menu, function(key, index) { if (index.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[key].name); } });
+	$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[index].name); } });
 
-	var feed = array[Math.floor(Math.random()*array.length)];
+	var name = array[Math.floor(Math.random()*array.length)];
 
-	$.each(menu, function(key, index) { if (index.name == feed) { $(this).getfeed(index.feed, index.title, index.homepage) } });
+	$.each(menu, function(index, key) { if (key.name == name) { $(this).getfeed(key.feed, key.title, key.homepage) } });
 
     });
 
@@ -354,7 +329,7 @@ jQuery(function($) {
 
 		$(".output").append("<br><hr class='first'>");
 
-	        $(data).find(format).each(function (index) {
+	        $(data).find(format).each( function () {
 
 			if (format == "entry") { var link = $(this).find("link").attr("href"); }
 
@@ -364,15 +339,13 @@ jQuery(function($) {
 
    		});
 
-		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
+		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>"); $(".output").append("<br><hr>");
 
-		$(".output").append("<br><hr>");
+		$.each(menu, function(index, key) {
 
-		$.each(menu, function(key, index) {
+			if ($(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>"); }
 
-			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
-
-			if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); $(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+			if (index == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://ackti.wordpress.com'>&ensp;&ensp;My Wordpress site of Wallpapers.</a><br><br><br><br><br><br><br>"); $(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
 
 		});
 
@@ -381,7 +354,6 @@ jQuery(function($) {
     }
 
 });
-
 </script>
 <button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output"></div><a class='random'>Random</a>
 </body>
