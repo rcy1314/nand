@@ -47,7 +47,7 @@
 		position:fixed;
 		font-size:14px;
 		font-family:Arial;
-		bottom:3em;
+		bottom:2.5em;
 		left:.7em;
 		width:95%;
 		top:3.5em;
@@ -62,9 +62,9 @@
 	.bottom {
 
 		position:fixed;
-		font-size:16px;
+		font-size:14px;
 		font-family:Arial;
-		bottom:.2em;
+		bottom:.4em;
 		height:1.5em;
 		width:95%;
 		text-align: center;
@@ -464,6 +464,8 @@ jQuery(function($) {
 
 	}
 
+	$(this).applyColors();
+
 	$(".output").animate({ scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
 
     });
@@ -619,6 +621,6 @@ jQuery(function($) {
 </script>
 <div class="top"><button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
 <div class="output light"></div>
-<div class="bottom"><a id="toggle" class="lights" style="float:left;"><i class="fa fa-toggle-on"></i></a><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-leaf"></i></a></div>
+<div class="bottom"><a id="toggle" class="lights" style="float:left;"><i class="fa fa-th-large"></i></a><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-pied-piper"></i></a></div>
 </body>
 </html>
