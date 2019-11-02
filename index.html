@@ -382,21 +382,7 @@ jQuery(function($) {
 
 					});
 
-					if ( $(".output").hasClass("light") ) {
-
-						$("html, body, a, button").css("background-color", "#F6F5F0");
-						$("a, button").css("color", "#000000");
-						$("a, button").css("text-decoration", "none");
-
-					}
-
-					else if ( $(".output").hasClass("dark") ) {
-
-						$("html, body, a, button").css("background-color", "#000000");
-						$("a, button").css("color", "#FFFFFF");
-						$("a, button").css("text-decoration", "none");
-	
-					}
+					$(this).applyColors();
 
 				});
 
@@ -522,6 +508,14 @@ jQuery(function($) {
 
 		});
 
+		$(this).applyColors();
+
+	}
+
+    });
+
+    $.fn.applyColors = function () {
+
 		if ( $(".output").hasClass("light") ) {
 
 			$("html, body, a, button").css("background-color", "#F6F5F0");
@@ -538,9 +532,7 @@ jQuery(function($) {
 	
 		}
 
-	}
-
-    });
+    }
 
     $.fn.getfeed = function (feed, title, homepage) {
 
