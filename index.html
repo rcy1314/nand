@@ -311,6 +311,10 @@ jQuery(function($) {
 
 	$(this).addClass("selected");
 
+	$(".category").attr("style", "text-decoration:none;");
+
+	$(this).css("text-decoration", "underline");
+
 	$(".output").append("<hr class='title'>");
 
 	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
