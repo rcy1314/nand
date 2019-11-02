@@ -381,6 +381,22 @@ jQuery(function($) {
 
 					});
 
+					if ( $(".output").hasClass("light") ) {
+
+						$("html, body, a, button").css("background-color", "#F6F5F0");
+						$("a, button").css("color", "#000000");
+						$("a, button").css("text-decoration", "none");
+
+					}
+
+					else if ( $(".output").hasClass("dark") ) {
+
+						$("html, body, a, button").css("background-color", "#000000");
+						$("a, button").css("color", "#FFFFFF");
+						$("a, button").css("text-decoration", "none");
+	
+					}
+
 				});
 
 			}
@@ -411,19 +427,53 @@ jQuery(function($) {
 
     });
 
-    $(".reader").live("click", function(event) { 
+    $(".lights").live("click", function () {
+
+		if ( $(".output").hasClass("dark") ) {
+
+			$(".output").removeClass("dark");
+			$(".output").addClass("light");
+
+		}
+
+		else if ( $(".output").hasClass("light") ) {
+
+			$(".output").removeClass("light");
+			$(".output").addClass("dark");
+
+		}
+
+		if ( $(".output").hasClass("light") ) {
+
+			$("html, body, a, button").css("background-color", "#F6F5F0");
+			$("a, button").css("color", "#000000");
+			$("a, button").css("text-decoration", "none");
+
+		}
+
+		else if ( $(".output").hasClass("dark") ) {
+
+			$("html, body, a, button").css("background-color", "#000000");
+			$("a, button").css("color", "#FFFFFF");
+			$("a, button").css("text-decoration", "none");
+	
+		}
+
+    })
+
+    $(".reader").live("click", function () { 
 
 	if ( $(".output").hasClass("reader") ) {
 
 		$(".output").removeClass("reader");
-		 $(".output").append("<br><hr class='infinity'>&ensp;&ensp;Reader Mode Disabled.");
+		 $(".output").append("<br><hr class='infinity'>&ensp;&ensp;<a>Reader Mode Disabled.</a>");
 
 	}
 
 	else {
 
 		$(".output").addClass("reader");
-		$(".output").append("<br><hr class='infinity'>&ensp;&ensp;Reader Mode Enabled.");
+		$(".output").append("<br><hr class='infinity'>&ensp;&ensp;<a>Reader Mode Enabled.</a>");
 
 	}
 
@@ -470,6 +520,22 @@ jQuery(function($) {
 			}
 
 		});
+
+		if ( $(".output").hasClass("light") ) {
+
+			$("html, body, a, button").css("background-color", "#F6F5F0");
+			$("a, button").css("color", "#000000");
+			$("a, button").css("text-decoration", "none");
+
+		}
+
+		else if ( $(".output").hasClass("dark") ) {
+
+			$("html, body, a, button").css("background-color", "#000000");
+			$("a, button").css("color", "#FFFFFF");
+			$("a, button").css("text-decoration", "none");
+	
+		}
 
 	}
 
@@ -552,6 +618,26 @@ jQuery(function($) {
 
 		});
 
+	if ( $(".output").hasClass("light") ) {
+
+		$("html, body, a, button").css("background-color", "#F6F5F0");
+		$("a, button").css("color", "#000000");
+		$("a, button").css("text-decoration", "none");
+		$(".lights").css("float", "left");
+		$(".reader").css("float", "right");
+
+	}
+
+	else if ( $(".output").hasClass("dark") ) {
+
+		$("html, body, a, button").css("background-color", "#000000");
+		$("a, button").css("color", "#FFFFFF");
+		$("a, button").css("text-decoration", "none");
+		$(".lights").css("float", "left");
+		$(".reader").css("float", "right");
+	
+	}
+
 	});
 
     }
@@ -559,7 +645,7 @@ jQuery(function($) {
 });
 </script>
 <div class="top"><button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
-<div class="output"></div>
-<div class="bottom"><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-bars"></i></a></div>
+<div class="output light"></div>
+<div class="bottom"><a id="toggle" class="lights" style="float:left;"><i class="fa fa-toggle-on"></i></a><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-leaf"></i></a></div>
 </body>
 </html>
