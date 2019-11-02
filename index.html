@@ -35,8 +35,7 @@
 		width: 13.5%;
 		border: none;
 		font-size: 16px;
-		padding: 4px 4px;
-		text-align: center;
+		padding: 8px 0px;
 
 	}
 
@@ -46,8 +45,9 @@
 		font-size:14px;
 		font-family:Arial;
 		bottom:3em;
+		left:.7em;
 		width:95%;
-		top:4.5em;
+		top:3.5em;
 		overflow:auto;
 		line-height:1.4em;
 		outline:none !important;
@@ -56,18 +56,16 @@
 
 	}
 
-	.bottom {
+	.random {
 
 		position:fixed;
 		font-size:16px;
 		font-family:Arial;
 		bottom:.2em;
-		height:1.5em;
-		width:95%;
-		text-align:center;
+		right: 50%;
+		transform: translate(50%,-50%);
 
 	}
-
 </style>
 <script>
 
@@ -93,7 +91,7 @@ jQuery(function($) {
 
 			if (command === index.name) {
 
-				getfeed(index.feed, index.title, index.homepage);
+				$(this).getfeed(index.feed, index.title, index.homepage);
 
 			}
 		});
@@ -112,17 +110,11 @@ jQuery(function($) {
 
 	$(".output").animate({ scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow");
 
-	$(".category").removeClass("selected");
-
-	$(this).addClass("selected");
-
-	$("button").attr("style", "text-decoration: none");
-
-	$(this).css("text-decoration", "underline");
+	$(".category").removeClass("selected"); $(this).addClass("selected");
 
 	$.each(menu, function(key, index) {
 
-		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
+		if ($(".selected").attr("id") == index.category || $(".selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
 
 		if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); }
 
@@ -134,33 +126,17 @@ jQuery(function($) {
 
 	var array = [];
 
-	$.each(menu, function(key, index) { 
-
-		if (index.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") {
-
-			array.push(menu[key].name);
-
-		}
-
-	});
+	$.each(menu, function(key, index) { if (index.category == $(".selected").attr("id") || $(".selected").attr("id") == "All") { array.push(menu[key].name); } });
 
 	var feed = array[Math.floor(Math.random()*array.length)];
 
-	$.each(menu, function(key, index) {
-
-		if (index.name == feed) {
-
-			getfeed(index.feed, index.title, index.homepage)
-
-		}
-
-	});
+	$.each(menu, function(key, index) { if (index.name == feed) { $(this).getfeed(index.feed, index.title, index.homepage) } });
 
     });
 
-});
+    $.fn.getfeed = function (feed, title, homepage) {
 
-    function getfeed(feed, title, homepage) {
+	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
 
 	$.get("https://cors-anywhere.herokuapp.com/" + feed, function (data) {
 
@@ -190,22 +166,17 @@ jQuery(function($) {
 
 			if ($(".selected").attr("id") == index.category || $("selected").attr("id") == "All" ) { $(".output").append("<br><a target='_blank' href='" + index.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + index.category + "' class='category'><b>" + index.category + "</b></a>&ensp;<a id='" + index.name + "' class='menu'>" + index.title + "</a><br>"); }
 
-			if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); 
-
-				$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
-			}
+			if (key == (menu.length - 1)) { $(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='" + index.homepage + "'><i class='fa fa-external-link'>&ensp;</i>&ensp;" + index.title + "</a><br><br><br><br><br><br><br>"); $(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
 
 		});
 
 	});
 
-	$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;<u>" + title + "</u><br></a>");
-
     }
 
+});
+
 </script>
-<button id="All" class="category"><i class="fa fa-pie-chart">&ensp;</i>Total</button><button id="Local" class="category"><i class="fa fa-bookmark-o">&ensp;</i>Local</button><button id="Entertainment" class="category"><i class="fa fa-video-camera">&ensp;</i>Ent</button><button id="Social" class="category"><i class="fa fa-linux">&ensp;</i>Social</button><button id="Sports" class="category"><i class="fa fa-futbol-o">&ensp;</i>Sports</button><button id="Technology" class="category"><i class="fa fa-terminal">&ensp;</i>Tech</button><button id="World" class="category"><i class="fa fa-globe">&ensp;</i>World</button>
-<div class="output"></div>
-<div class="bottom"><a class='random'>Random</a></div>
+<button id="All" class="category">All</button><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Ent</button><button id="Social" class="category">Soc</button><button id="Sports" class="category">Sport</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output"></div><a class='random'>Random</a>
 </body>
 </html>
