@@ -15,7 +15,7 @@
 
 	}
 
-	html, body {
+	html, body, .container {
 
 		height: 100%;
 		width: 100%;
@@ -442,7 +442,7 @@ jQuery(function($) {
 
 		if ( $(".output").hasClass("light") ) {
 
-			$("html, body, a, button").css("background-color", "#F6F5F0");
+			$("html, body, .container, a, button").css("background-color", "#F6F5F0");
 			$("a, button").css("color", "#000000");
 			$("a, button").css("text-decoration", "none");
 
@@ -450,7 +450,7 @@ jQuery(function($) {
 
 		else if ( $(".output").hasClass("dark") ) {
 
-			$("html, body, a, button").css("background-color", "#000000");
+			$("html, body, .container, a, button").css("background-color", "#000000");
 			$("a, button").css("color", "#FFFFFF");
 			$("a, button").css("text-decoration", "none");
 	
@@ -628,8 +628,10 @@ jQuery(function($) {
 
 });
 </script>
+<div class="container">
 <div class="top"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Entertain</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
 <div class="output light"></div>
 <div class="bottom"><a id="toggle" class="lights" style="float:left;"><i class="fa fa-th-large"></i></a><a class="random">Random</a><a class="reader" style="float:right;"><i class="fa fa-pied-piper"></i></a></div>
+</div>
 </body>
 </html>
