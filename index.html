@@ -337,64 +337,7 @@ jQuery(function($) {
 
 			if (key.name == name) {
 
-				var jqxhr = $.get("https://cors-anywhere.herokuapp.com/" + key.feed, function(data) {
-
-					var entry = $(data).find("entry");
-
-					if (entry.length > 0) {
-
-						var format = "entry"
-
-					}
-
-					else {
-
-						var format = "item"
-
-					}
-
-						$(".output").append("<br><hr class='first'>");
-						$(".output").append("<br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u></a><br><br>"); 
-
-			        		$(data).find(format).each( function () {
-
-							if (format == "entry") {
-
-								var link = $(this).find("link").attr("href");
-
-							}
-
-							else {
-
-								var link = $(this).find("link").text();
-
-							}
-
-							$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
-
-   						});
-
-				})
-
-				.fail(function() {
-
-					$(".selected").trigger("click");
-
-				})
-
-				.done(function() {
-
-					$(".output").append("<br><a target='blank' href='" + key.homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + key.title + "</u></a><br><br>"); 
-
-					$(".output").animate({
-
-						scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-					});
-
-					$(this).applyColors();
-
-				});
+				$(this).getfeed(key.feed, key.title, key.homepage);
 
 			}
 
@@ -595,28 +538,32 @@ jQuery(function($) {
 		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u></a><br>");
 		$(".output").append("<br><hr>");
 
-		$.each(menu, function (index, key) {
+		if ( !$(".output").hasClass("reader") ) {
 
-			if ( $(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) {
+			$.each(menu, function (index, key) {
 
-				$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>" +
-						    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
-						    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
+				if ( $(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) {
 
-			}
+					$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>" +
+							    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
+							    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
 
-			if ( index == (menu.length - 1) ) {
+				}
 
-				$(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'>" +
-						    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
+				if ( index == (menu.length - 1) ) {
+
+					$(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'>" +
+							    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
 			
-				$(".output").animate({
+				}
 
-					scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+			});
 
-				});
+		}
 
-			}
+		$(".output").animate({
+
+			scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
 
 		});
 
