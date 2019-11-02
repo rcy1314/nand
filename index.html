@@ -326,21 +326,7 @@ jQuery(function($) {
 
     });
 
-	$('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ 
-
-		if ( $(".output").hasClass("reader") ) {
-
-				$(".random").trigger("click");
-
-		} else { 
-
-		$(".selected").trigger("click"); 
-
-		}
-
-	}
-
-	});
+    $('.output').bind('scroll', function(){ if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight){ if ( $(".output").hasClass("reader") ) { $(".random").trigger("click"); } else { $(".selected").trigger("click"); } } });
 
     $(".reader").live("click", function(event) { if ( $(".output").hasClass("reader") ) { $(".output").removeClass("reader") } else { $(".output").addClass("reader") } });
 
