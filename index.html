@@ -516,21 +516,20 @@ jQuery(function($) {
 
     $.fn.applyColors = function () {
 
-		if ( $(".output").hasClass("light") ) {
+	if ( $(".output").hasClass("light") ) {
 
-			$("html, body, a, button").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
-			$(".lights").css("float", "left");
-			$(".reader").css("float", "right");
+		$("html, body, a, button").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
 
-		}
+	}
 
-		else if ( $(".output").hasClass("dark") ) {
+	else if ( $(".output").hasClass("dark") ) {
 
-			$("html, body, a, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
-			$(".lights").css("float", "left");
-			$(".reader").css("float", "right");
+		$("html, body, a, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
 	
-		}
+	}
+
+	$(".lights").css("float", "left");
+	$(".reader").css("float", "right");
 
     }
 
