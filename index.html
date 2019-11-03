@@ -357,7 +357,7 @@ jQuery(function($) {
 
 			}
 
-			else {
+			else if ( !$(".output").hasClass("reader") ) {
 
 				$(".selected").trigger("click");
 
@@ -394,7 +394,7 @@ jQuery(function($) {
 
 	}
 
-	else {
+	else if ( !$(".output").hasClass("reader") ) {
 
 		$(".output").addClass("reader");
 		$(".output").append("<br><hr class='infinity'>&ensp;&ensp;<a>Reader Mode Enabled.</a>");
@@ -403,7 +403,11 @@ jQuery(function($) {
 
 	$(this).applyColors();
 
-	$(".output").animate({ scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+	$(".output").animate({ 
+
+		scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+	});
 
     });
 
@@ -418,9 +422,10 @@ jQuery(function($) {
 
 	}
 
-	else {
+	else if ( !$(".output").hasClass("reader") ) {
 
 		$(".output").append("<hr class='title'>");
+
 		$(".output").animate({
 
 			scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
