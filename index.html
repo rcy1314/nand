@@ -409,11 +409,7 @@ jQuery(function($) {
 
 	$(this).applyColors();
 
-	$(".output").animate({ 
-
-		scrollTop: $(".infinity:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-	}, "slow");
+	$(this).animateScroll(".infinity");
 
     });
 
@@ -432,11 +428,7 @@ jQuery(function($) {
 
 		$(".output").append("<hr class='title'>");
 
-		$(".output").animate({
-
-			scrollTop: $(".title:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-		}, "slow");
+		$(this).animateScroll(".title");
 
 		$.each(menu, function(index, key) {
 
@@ -449,7 +441,7 @@ jQuery(function($) {
 
 			if ( index == (menu.length - 1) ) {
 
-				$(this).clone();
+				$(this).cloneRepo();
 
 			}
 
@@ -460,6 +452,24 @@ jQuery(function($) {
 	}
 
     });
+
+    $.fn.cloneRepo = function () {
+
+	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
+			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+
+
+    }
+
+    $.fn.animateScroll = function (hr) {
+
+	$(".output").animate({
+
+		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+	}, "slow");
+
+    }
 
     $.fn.applyColors = function () {
 
@@ -477,14 +487,6 @@ jQuery(function($) {
 
 	$(".toggle").css("float", "left");
 	$(".reader").css("float", "right");
-
-    }
-
-    $.fn.clone = function () {
-
-	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
-			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
-
 
     }
 
@@ -508,6 +510,7 @@ jQuery(function($) {
 
 		$(".output").append("<br><hr class='first'>");
 		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u></a><br><br>");
+		$(this).animateScroll(".first");
 
 	        $(data).find(format).each( function () {
 
@@ -557,19 +560,13 @@ jQuery(function($) {
 
 				if ( index == (menu.length - 1) ) {
 
-					$(this).clone();
+					$(this).cloneRepo();
 			
 				}
 
 			});
 
 		}
-
-		$(".output").animate({
-
-			scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-		}, "slow");
 
 		$(this).applyColors();
 
