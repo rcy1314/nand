@@ -289,6 +289,8 @@ var menu = [
 
 ]
 
+var proxy = "https://cors-anywhere.herokuapp.com";
+
 jQuery(function($) {
 
     $(window).load(function () {
@@ -447,8 +449,7 @@ jQuery(function($) {
 
 			if ( index == (menu.length - 1) ) {
 
-				$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
-						    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+				$(this).clone();
 
 			}
 
@@ -479,9 +480,17 @@ jQuery(function($) {
 
     }
 
+    $.fn.clone = function () {
+
+	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
+			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+
+
+    }
+
     $.fn.getfeed = function (feed, title, homepage) {
 
-	var jqxhr = $.get("https://cors-anywhere.herokuapp.com/" + feed, function(data) {
+	var jqxhr = $.get(proxy + feed, function(data) {
 
 		var entry = $(data).find("entry");
 
@@ -522,6 +531,9 @@ jQuery(function($) {
 
 	.fail( function () {
 
+		$(".output").append("<br><hr><br><br><br><br><br>Oops!  Something went wrong.<br><br>You can verify the proxy<a target='blank' href='" + proxy + "'> " +
+				    "<u>here</u>.</a><br><br>Also the validity of the feed <a target='_blank' href='" + feed + "'><u>here</u>.</a><br><br><br><br><br><br>");
+
 		$(".selected").trigger("click");
 
 	})
@@ -545,8 +557,7 @@ jQuery(function($) {
 
 				if ( index == (menu.length - 1) ) {
 
-					$(".output").append("<br><hr><br><br><br><br><br><a target='blank' href='https://github.com/acktic/acktic.github.io'>" +
-							    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this repository!</a><br><br><br><br><br><br>");
+					$(this).clone();
 			
 				}
 
