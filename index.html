@@ -349,9 +349,7 @@ jQuery(function($) {
 
 	});
 
-    });
-
-    $('.output').bind('scroll', function(){
+   	$('.output').bind('scroll', function(){
 
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 
@@ -368,6 +366,8 @@ jQuery(function($) {
 			}
 
 		}
+
+	});
 
     });
 
@@ -543,7 +543,7 @@ jQuery(function($) {
 
 	.done( function () {
 
-		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u></a><br>");
+		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
 		$(".output").append("<br><hr>");
 
 		if ( !$(".output").hasClass("reader") ) {
@@ -552,7 +552,7 @@ jQuery(function($) {
 
 				if ( $(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) {
 
-					$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>" +
+					$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'> </i></a>" +
 							    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
 							    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
 
