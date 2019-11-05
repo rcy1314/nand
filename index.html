@@ -137,7 +137,7 @@ var menu = [
 	{ name : "yahc", category : "Entertainment", title : "Yahoo Celebrity for the latest news and gossip on the world's celebrities.", feed : "https://www.yahoo.com/celebrity/rss", homepage : "https://yahoo.com/celebrity" },
 	{ name : "rand", category : "Social", title : "Android subreddit news, reviews, tips, and discussions about rooting, tutorials, and apps.", feed : "https://www.reddit.com/r/android/.rss", homepage : "https://reddit.com/r/android" },
 	{ name : "arch", category : "Social", title : "Arch Linux (BBS) is a Linux distribution for computers based on x86-64 architectures.", feed : "https://bbs.archlinux.org/extern.php?type=rss", homepage : "http://bbs.archlinux.org" },
-	{ name : "rarc", category : "Social", title : "Arch Linux subreddit discusses topics revolving around Arch Linux.", feed : "https://reddit.com/r/archlinux/.rss", homepage : "https://reddit.com/r/archlinux" },
+	{ name : "rarc", category : "Social", title : "Arch Linux subreddit discusses topics revolving around Arch Linux.", feed : "https://www.reddit.com/r/archlinux/.rss", homepage : "https://reddit.com/r/archlinux" },
 	{ name : "rcmd", category : "Social", title : "CommandLine subreddit with questions and answers.", feed : "https://www.reddit.com/r/commandline/.rss", homepage : "https://reddit.com/r/commandline" },
 	{ name : "rcom", category : "Social", title : "Computer subreddit with questions and opinions.", feed : "https://www.reddit.com/r/computers/.rss", homepage : "https://reddit.com/r/computers" },
 	{ name : "rdeb", category : "Social", title : "Debian Linux subreddit covers topics revolving around Debian OS.", feed : "https://www.reddit.com/r/debian/.rss", homepage : "https://reddit.com/r/debian" },
@@ -289,7 +289,7 @@ var menu = [
 
 ]
 
-var proxy = "";
+var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
 
@@ -492,13 +492,7 @@ jQuery(function($) {
 
     $.fn.getfeed = function (feed, title, homepage) {
 
-	var jqxhr = $.get({
-
-		url: proxy + feed, 
-
-		headers: {"Access-Control-Allow-Origin" : "*"},
-
-		success: function(data) {
+	var jqxhr = $.get(proxy + feed, function(data) {
 
 		var entry = $(data).find("entry");
 
@@ -536,7 +530,7 @@ jQuery(function($) {
 
    		});
 
-	}})
+	})
 
 	.fail( function () {
 
