@@ -492,7 +492,13 @@ jQuery(function($) {
 
     $.fn.getfeed = function (feed, title, homepage) {
 
-	var jqxhr = $.get(proxy + feed, function(data) {
+	var jqxhr = $.ajax({
+
+		url : feed, 
+
+		headers : "Access-Control-Allow-Origin: https://acktic.github.io",
+
+		success : function(data) {
 
 		var entry = $(data).find("entry");
 
@@ -530,7 +536,7 @@ jQuery(function($) {
 
    		});
 
-	})
+	}})
 
 	.fail( function () {
 
