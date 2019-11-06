@@ -395,6 +395,39 @@ jQuery(function($) {
 
     })
 
+    $(".reader").live("click", function () { 
+
+	if ( $(".output").hasClass("select") ) {
+	
+		return false;
+
+	}
+
+	$(".output").addClass("select");
+
+	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readIterate") ) {
+
+		$(".output").append("<br class='readerOff'>Reader has been turned off.<br><br>")
+
+		$(".output").removeClass("readRandom readIterate select");
+
+		$(this).animateScroll(".readerOff");
+
+		$(".selected").trigger("click");
+
+	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readIterate") || !$(".output").hasClass("select") ) {
+
+	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'><b>" + $(".selected").text() + "</b> alphabetically.</a>" +
+			    "<br><br><br><br><a class='selectRandom'><b>" + $(".selected").text() + "</b> randomized.</a><br><br><br><br><hr>");
+
+	$(this).applyColors();
+
+	$(this).animateScroll(".option");
+
+	}
+
+    });
+
     $(".selectAlphabet").live("click", function () {
 
 	$(".output").removeClass("select");
@@ -431,44 +464,17 @@ jQuery(function($) {
 
     });
 
-    $(".reader").live("click", function () { 
-
-	if ( $(".output").hasClass("select") ) {
-	
-		return false;
-
-	}
-
-	$(".output").addClass("select");
-
-	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readIterate") ) {
-
-		$(".output").append("<br class='readerOff'>Reader has been turned off.<br><br>")
-
-		$(".output").removeClass("readRandom readIterate select");
-
-		$(this).animateScroll(".readerOff");
-
-		$(".selected").trigger("click");
-
-	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readIterate") || !$(".output").hasClass("select") ) {
-
-	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'><b>" + $(".selected").text() + "</b> continuously alphabetically.</a>" +
-			    "<br><br><br><br><a class='selectRandom'><b>" + $(".selected").text() + "</b> continuously randomized.</a><br><br><br><br><hr>");
-
-	$(this).applyColors();
-
-	$(this).animateScroll(".option");
-
-	}
-
-    });
-
     $(".category").live("click", function(event) { 
 
 	$(".output").removeClass("select");
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
+
+	if ( $(".output").hasClass("readIterate") ) {
+	
+		$(this).alphabetically(0);
+
+	}
 
 	if ( $(".output").hasClass("readRandom") ) {
 
@@ -558,7 +564,7 @@ jQuery(function($) {
 
 	if ( i == array.length ) {
 
-		i = 00;
+		i = 0;
 
 	}
 
