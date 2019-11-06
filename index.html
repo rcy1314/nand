@@ -160,9 +160,15 @@ jQuery(function($) {
 
 			}
 
-			else if ( !$(".output").hasClass("readRandom") || $(".output").hasClass("readAscending") ) {
+			else if ( $(".output").hasClass("select") ) { 
 
-				$(".selected").trigger("click");
+				return false;
+
+			}
+
+			else if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") && !$(".output").hasClass("select") ) {
+
+				$(this).showMenu();
 
 			}
 
@@ -196,13 +202,11 @@ jQuery(function($) {
 
 	if ( $(".output").hasClass("select") ) {
 	
-		$(".selected").trigger("click");
-
+		$(".output").removeClass("select");
+		$(this).showMenu();
 		return false;
 
 	}
-
-	$(".output").addClass("select");
 
 	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readAscending") ) {
 
@@ -212,12 +216,14 @@ jQuery(function($) {
 
 		$(this).animateScroll(".readerOff");
 
-		$(".selected").trigger("click");
+		$(this).showMenu();
 
 	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") || !$(".output").hasClass("select") ) {
 
 	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAscending'>Read <b>alphabetically</b>.</a>" +
 			    "<br><br><br><br><a class='selectRandom'>Read <b>randomized</b>.</a><br><br><br><br><hr>");
+
+	$(".output").addClass("select");
 
 	$(this).applyColors();
 
@@ -287,32 +293,38 @@ jQuery(function($) {
 
 	else if ( !$(".output").hasClass("reader") ) {
 
-		$(".output").append("<hr class='title'>");
-
-		$(this).animateScroll(".title");
-
-		$.each(menu, function(index, key) {
-
-			if ( $(".selected").attr("id") == key.category ) {
-
-				$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
-						    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
-
-			}
-
-			if ( index == (menu.length - 1) ) {
-
-				$(this).cloneRepo();
-
-			}
-
-		});
-
-		$(this).applyColors();
+		$(this).showMenu();
 
 	}
 
     });
+
+    $.fn.showMenu = function () {
+
+	$(".output").append("<hr class='title'>");
+
+	$(this).animateScroll(".title");
+
+	$.each(menu, function(index, key) {
+
+		if ( $(".selected").attr("id") == key.category ) {
+
+			$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
+					    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
+
+		}
+
+		if ( index == (menu.length - 1) ) {
+
+			$(this).cloneRepo();
+
+		}
+
+	});
+
+	$(this).applyColors();
+
+    }
 
     $.fn.animateScroll = function (hr) {
 
@@ -433,7 +445,7 @@ jQuery(function($) {
 		$(".output").append("<br><hr><br><br><br><br><br>Oops!  Something went wrong.<br><br>You can verify the proxy<a target='blank' href='" + proxy + "'> " +
 				    "<u>here</u>.</a><br><br>Also the validity of the feed <a target='_blank' href='" + feed + "'><u>here</u>.</a><br><br><br><br><br><br>");
 
-		$(".selected").trigger("click");
+		$(this).showMenu();
 
 	})
 
@@ -441,25 +453,9 @@ jQuery(function($) {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
 
-		if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") ) {
+		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") ) {
 
-			$.each(menu, function (index, key) {
-
-				if ( $(".selected").attr("id") == key.category ) {
-
-					$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'> </i></a>" +
-							    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
-							    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
-
-				}
-
-				if ( index == (menu.length - 1) ) {
-
-					$(this).cloneRepo();
-		
-				}
-
-			});
+			$(this).showMenu();
 
 		}
 
