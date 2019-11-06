@@ -397,6 +397,8 @@ jQuery(function($) {
 
 	if ( !$(".output").hasClass("alphabetReading") ) {
 
+		alphabeticOffset = 00;
+
 		$(".output").addClass("alphabetReading");
 
 		$(this).alphabetically(alphabeticOffset);
@@ -495,26 +497,31 @@ jQuery(function($) {
 
 	$.each(menu, function(index, key) {
 
-			if ( key.category == $(".selected").attr("id") ) {
+		if ( key.category == $(".selected").attr("id") ) {
 
-				array.push(menu[index].name);
+			array.push(menu[index].name);
 
-			}
+		}
 
-		});
+	});
 
+	if ( alphabeticOffset == array.length - 1 ) {
 
-		var name = array[parseInt(i)];
+		alphabeticOffset = 00;
 
-		$.each(menu, function(ind, obj) {
+	}
 
-			if ( obj.name == name ) {
+	var name = array[parseInt(alphabeticOffset)];
 
-				$(this).getfeed(obj.feed, obj.title, obj.homepage);
+	$.each(menu, function(ind, obj) {
 
-			}
+		if ( obj.name == name ) {
 
-		});
+			$(this).getfeed(obj.feed, obj.title, obj.homepage);
+
+		}
+
+	});
 
     }
 
