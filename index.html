@@ -325,6 +325,8 @@ jQuery(function($) {
 
 	$(".random").live("click", function () {
 
+		$(".output").removeClass("select");
+
 		var array = [];
 
 		$.each(menu, function(index, key) {
