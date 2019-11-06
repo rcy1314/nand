@@ -156,7 +156,7 @@ jQuery(function($) {
 
 			else if ( $(".output").hasClass("readAscending") ) {
 
-				$(".selectAlphabet").trigger("click");
+				$(".selectAscending").trigger("click");
 
 			}
 
@@ -208,7 +208,7 @@ jQuery(function($) {
 
 	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") || !$(".output").hasClass("select") ) {
 
-	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'>Read <b>alphabetically</b>.</a>" +
+	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAscending'>Read <b>alphabetically</b>.</a>" +
 			    "<br><br><br><br><a class='selectRandom'>Read <b>randomized</b>.</a><br><br><br><br><hr>");
 
 	$(this).applyColors();
@@ -219,7 +219,7 @@ jQuery(function($) {
 
     });
 
-    $(".selectAlphabet").live("click", function () {
+    $(".selectAscending").live("click", function () {
 
 	$(".output").removeClass("select");
 
