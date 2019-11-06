@@ -289,7 +289,7 @@ var menu = [
 
 ]
 
-var i = 00;
+var alphabeticOffset = 00;
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -399,15 +399,15 @@ jQuery(function($) {
 
 		$(".output").addClass("alphabetReading");
 
-		$(this).alphabetically(i);
+		$(this).alphabetically(alphabeticOffset);
 
 	}
 
 	else if ( $(".output").hasClass("alphabetReading") ) {
 
-		i = i + 1;
+		alphabeticOffset = alphabeticOffset + 1;
 
-		$(this).alphabetically(i);
+		$(this).alphabetically(alphabeticOffset);
 
 	}
 
@@ -436,8 +436,6 @@ jQuery(function($) {
 		$(this).animateScroll(".readerOff");
 
 		$(".selected").trigger("click");
-
-		return false;
 
 	} else {
 
@@ -611,7 +609,6 @@ jQuery(function($) {
 	.done( function () {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
-		$(".output").append("<br><hr>");
 
 		if ( !$(".output").hasClass("randomReading") && !$(".output").hasClass("alphabetReading") ) {
 
