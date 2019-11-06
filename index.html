@@ -109,7 +109,7 @@ jQuery(function($) {
 
 			if (name === key.name) {
 
-				$(this).getfeed(key.feed, key.title, key.homepage);
+				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 
 			}
 		});
@@ -138,7 +138,7 @@ jQuery(function($) {
 
 			if (key.name == name) {
 
-				$(this).getfeed(key.feed, key.title, key.homepage);
+				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 
 			}
 
@@ -367,11 +367,11 @@ jQuery(function($) {
 
 	var name = array[parseInt(i)];
 
-	$.each(menu, function(ind, obj) {
+	$.each(menu, function(index, key) {
 
-		if ( obj.name == name ) {
+		if ( key.name == name ) {
 
-			$(this).getfeed(obj.feed, obj.title, obj.homepage);
+			$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 
 		}
 
@@ -379,7 +379,7 @@ jQuery(function($) {
 
     }
 
-    $.fn.getfeed = function (feed, title, homepage) {
+    $.fn.getfeed = function (category, feed, title, homepage) {
 
 	var jqxhr = $.get(proxy + feed, function(data) {
 
@@ -398,7 +398,7 @@ jQuery(function($) {
 		}
 
 		$(".output").append("<br><hr class='first'>");
-		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<u>" + title + "</u></a><br><br>");
+		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br><br>");
 		$(this).animateScroll(".first");
 
 	        $(data).find(format).each( function () {
@@ -432,8 +432,7 @@ jQuery(function($) {
 
 	.done( function () {
 
-		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
-		$(".output").append("<br><hr>");
+		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
 
 		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readIterate") ) {
 
