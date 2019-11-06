@@ -160,6 +160,12 @@ jQuery(function($) {
 
 			}
 
+			else if ( !$(".output").hasClass("readRandom") || $(".output").hasClass("readAscending") ) {
+
+				$(".selected").trigger("click");
+
+			}
+
 		}
 
 	});
@@ -435,11 +441,11 @@ jQuery(function($) {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
 
-		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") ) {
+		if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") ) {
 
 			$.each(menu, function (index, key) {
 
-				if ( $(".selected").attr("id") == key.category || $("selected").attr("id") == "All" ) {
+				if ( $(".selected").attr("id") == key.category ) {
 
 					$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'> </i></a>" +
 							    "&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
@@ -450,7 +456,7 @@ jQuery(function($) {
 				if ( index == (menu.length - 1) ) {
 
 					$(this).cloneRepo();
-			
+		
 				}
 
 			});
