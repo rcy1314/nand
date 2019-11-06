@@ -79,6 +79,18 @@
 		text-align: center;
 
 	}
+
+	button.buttonOutput {
+
+		width: 100%;
+		height: 5em;
+		border: solid;
+		border-width: 1px;
+		border-color: #EBEBEB;
+		background-color: #F5f5f5;
+		text-align: left;
+
+	}
 </style>
 <script>
 
@@ -103,6 +115,8 @@ jQuery(function($) {
 
 	$(".menu").live("click", function(event) {
 
+		$(".output").addClass("feed");
+
 		var name = $(this).get(0).id;
 
 		$.each(menu, function(index, key) {
@@ -117,6 +131,8 @@ jQuery(function($) {
 	});
 
 	$(".random").live("click", function () {
+
+		$(".output").addClass("random");
 
 		$(".output").removeClass("select");
 
@@ -137,6 +153,8 @@ jQuery(function($) {
 			if (key.name == array[Math.floor(Math.random()*array.length)]) {
 
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
+
+				return false;
 
 			}
 
@@ -168,7 +186,20 @@ jQuery(function($) {
 
 			else if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") && !$(".output").hasClass("select") ) {
 
+				$(".output").removeClass("feed");
 				$(this).showMenu();
+
+			}
+
+			else if ( $(".output").hasClass("feed") ) {
+
+				return false;
+
+			}
+
+			else if ( $(".output").hasClass("random") ) {
+
+				return false;
 
 			}
 
@@ -177,6 +208,12 @@ jQuery(function($) {
 	});
 
     });
+
+    $(".github").live("click", function () {
+
+	window.open("https://github.com/acktic/acktic.github.io");
+
+    })
 
     $(".toggle").live("click", function () {
 
@@ -220,8 +257,8 @@ jQuery(function($) {
 
 	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") || !$(".output").hasClass("select") ) {
 
-	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAscending'>Read <b>alphabetically</b>.</a>" +
-			    "<br><br><br><br><a class='selectRandom'>Read <b>randomized</b>.</a><br><br><br><br><hr>");
+		$(".output").append("<br><hr class='option'><br><button class='selectAscending buttonOutput'>Read <b>alphabetically</b>.</button>" +
+				    "<br><br><button class='selectRandom buttonOutput'>Read <b>randomized</b>.</button><br><br><hr>");
 
 	$(".output").addClass("select");
 
@@ -309,8 +346,8 @@ jQuery(function($) {
 
 		if ( $(".selected").attr("id") == key.category ) {
 
-			$(".output").append("<br><a target='_blank' href='" + key.feed +"'><i class='fa fa-rss'>&ensp;</i></a>&ensp;<a id='" + key.category + "' class='category'><b>" + key.category + "</b></a>" +
-					    "&ensp;<a id='" + key.name + "' class='menu'>" + key.title + "</a><br>");
+			$(".output").append("<br><button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>" +
+					    "&ensp;" + key.title + "</button><br>");
 
 		}
 
@@ -338,8 +375,8 @@ jQuery(function($) {
 
     $.fn.cloneRepo = function () {
 
-	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
-			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+	$(".output").append("<br><hr><br><button class='github buttonOutput'>" +
+			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
 
 
     }
@@ -348,14 +385,16 @@ jQuery(function($) {
 
 	if ( $(".output").hasClass("light") ) {
 
-		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
+		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
 
 	}
 
 	else if ( $(".output").hasClass("dark") ) {
 
-		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
-	
+		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
+		$("button").css("background-color", "#000000");
+		$("button").css("color", "#FFFFFF");	
+
 	}
 
 	$(".selected").css("text-decoration", "underline");
@@ -453,7 +492,7 @@ jQuery(function($) {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
 
-		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") ) {
+		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") && !$(".output").hasClass("feed") && !$(".output").hasClass("random") ) {
 
 			$(this).showMenu();
 
