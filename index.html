@@ -451,7 +451,8 @@ jQuery(function($) {
 
 	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readIterate") || !$(".output").hasClass("select") ) {
 
-	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'>Read this category continuously alphabetically.</a><br><br><br><br><a class='selectRandom'>Read this category continuously randomized.</a><br><br><br><br><hr>");
+	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'><b>" + $(".selected").text() + "</b> continuously alphabetically.</a>" +
+			    "<br><br><br><br><a class='selectRandom'><b>" + $(".selected").text() + "</b> continuously randomized.</a><br><br><br><br><hr>");
 
 	$(this).applyColors();
 
@@ -463,6 +464,7 @@ jQuery(function($) {
 
     $(".category").live("click", function(event) { 
 
+	$(".output").removeClass("select");
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 
