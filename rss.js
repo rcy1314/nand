@@ -62,6 +62,7 @@ var menu = [
 	{ name : "rfed", category : "Social", title : "Fedora subreddit community for users, developers and people interested in Fedora.", feed : "https://www.reddit.com/r/fedora/.rss", homepage : "https://reddit.com/r/fedora" },
 	{ name : "rgms", category : "Social", title : "Games subreddit aims to provide a place for informative and interesting gaming content.", feed : "http://www.reddit.com/r/games/.rss", homepage : "https://reddit.com/r/games" },
 	{ name : "hack", category : "Social", title : "Hacker News is a reader ran headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
+	{ name : "rhck", category : "Social", title : "Hacking subreddit dedicated to hacking and hackers.", feed : "https://www.reddit.com/r/hacking/.rss", homepage : "https://reddit.com/r/hacking" },
 	{ name : "rlnx", category : "Social", title : "Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://reddit.com/r/linux" },
 	{ name : "rpro", category : "Social", title : "Programming subreddit shares user submitted articles on programming.", feed : "https://www.reddit.com/r/programming/.rss", homepage : "https://reddit.com/r/programming" },
 	{ name : "rpyt", category : "Social", title : "Python subreddit about the dynamic, interpreted, interactive, object-oriented, extensible language Python.", feed : "https://www.reddit.com/r/python/.rss", homepage : "https://reddit.com/r/python" },
