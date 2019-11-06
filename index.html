@@ -132,11 +132,9 @@ jQuery(function($) {
 
 		});
 
-		var name = array[Math.floor(Math.random()*array.length)];
-
 		$.each(menu, function(index, key) {
 
-			if (key.name == name) {
+			if (key.name == array[Math.floor(Math.random()*array.length)]) {
 
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 
