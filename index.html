@@ -289,6 +289,8 @@ var menu = [
 
 ]
 
+var i = 00;
+
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
 jQuery(function($) {
@@ -353,15 +355,15 @@ jQuery(function($) {
 
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 
-			if ( $(".output").hasClass("reader") ) {
+			if ( $(".output").hasClass("randomReading") ) {
 
 				$(".random").trigger("click");
 
 			}
 
-			else if ( !$(".output").hasClass("reader") ) {
+			else if ( $(".output").hasClass("alphabetReading") ) {
 
-				$(".selected").trigger("click");
+				$(".alphabetize").trigger("click");
 
 			}
 
@@ -391,25 +393,45 @@ jQuery(function($) {
 
     })
 
+    $(".alphabetize").live("click", function () {
+
+	if ( !$(".output").hasClass("alphabetReading") ) {
+
+		$(".output").addClass("alphabetReading");
+
+		$(this).alphabetically(i);
+
+	}
+
+	else if ( $(".output").hasClass("alphabetReading") ) {
+
+		i = i + 1;
+
+		$(this).alphabetically(i);
+
+	}
+
+    });
+
+    $(".randomize").live("click", function () {
+
+	if ( !$(".output").hasClass("randomReading") ) {
+
+		$(".output").addClass("randomReading");
+
+	}
+
+	$(".random").trigger("click");
+
+    });
+
     $(".reader").live("click", function () { 
 
-	if ( $(".output").hasClass("reader") ) {
-
-		$(".output").removeClass("reader");
-		 $(".output").append("<br><hr class='infinity'>&ensp;&ensp;<a>Reader Mode Disabled.</a>");
-
-	}
-
-	else if ( !$(".output").hasClass("reader") ) {
-
-		$(".output").addClass("reader");
-		$(".output").append("<br><hr class='infinity'>&ensp;&ensp;<a>Reader Mode Enabled.</a>");
-
-	}
+	$(".output").append("<br><hr class='option'><br><a class='alphabetize'>Continuous reading alphabetically.</a><br><br><a class='randomize'>Continuous reading randomized.</a><br><br><hr>");
 
 	$(this).applyColors();
 
-	$(this).animateScroll(".infinity");
+	$(this).animateScroll(".option");
 
     });
 
@@ -418,7 +440,7 @@ jQuery(function($) {
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 
-	if ( $(".output").hasClass("reader") ) {
+	if ( $(".output").hasClass("randomReading") ) {
 
 		$(".random").trigger("click");
 
@@ -452,6 +474,35 @@ jQuery(function($) {
 	}
 
     });
+
+    $.fn.alphabetically = function (i) {
+
+	var array = [];
+
+	$.each(menu, function(index, key) {
+
+			if ( key.category == $(".selected").attr("id") ) {
+
+				array.push(menu[index].name);
+
+			}
+
+		});
+
+
+		var name = array[parseInt(i)];
+
+		$.each(menu, function(ind, obj) {
+
+			if ( obj.name == name ) {
+
+				$(this).getfeed(obj.feed, obj.title, obj.homepage);
+
+			}
+
+		});
+
+    }
 
     $.fn.cloneRepo = function () {
 
@@ -546,7 +597,7 @@ jQuery(function($) {
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
 		$(".output").append("<br><hr>");
 
-		if ( !$(".output").hasClass("reader") ) {
+		if ( !$(".output").hasClass("randomReading") && !$(".output").hasClass("alphabetReading") ) {
 
 			$.each(menu, function (index, key) {
 
