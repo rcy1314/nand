@@ -289,7 +289,7 @@ var menu = [
 
 ]
 
-var i = 00;
+var alphabeticIndex = 00;
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -355,15 +355,15 @@ jQuery(function($) {
 
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 
-			if ( $(".output").hasClass("randomReading") ) {
+			if ( $(".output").hasClass("readRandom") ) {
 
 				$(".random").trigger("click");
 
 			}
 
-			else if ( $(".output").hasClass("alphabetReading") ) {
+			else if ( $(".output").hasClass("readIterate") ) {
 
-				$(".alphabetize").trigger("click");
+				$(".selectAlphabet").trigger("click");
 
 			}
 
@@ -393,31 +393,31 @@ jQuery(function($) {
 
     })
 
-    $(".alphabetize").live("click", function () {
+    $(".selectAlphabet").live("click", function () {
 
-	if ( !$(".output").hasClass("alphabetReading") ) {
+	if ( !$(".output").hasClass("readIterate") ) {
 
-		$(".output").addClass("alphabetReading");
+		$(".output").addClass("readIterate");
 
-		$(this).alphabetically(i);
+		$(this).alphabetically(alphabeticIndex);
 
 	}
 
-	else if ( $(".output").hasClass("alphabetReading") ) {
+	else if ( $(".output").hasClass("readIterate") ) {
 
-		i = i + 1;
+		alphabeticIndex = alphabeticIndex + 1;
 
-		$(this).alphabetically(i);
+		$(this).alphabetically(alphabeticIndex);
 
 	}
 
     });
 
-    $(".randomize").live("click", function () {
+    $(".selectRandom").live("click", function () {
 
-	if ( !$(".output").hasClass("randomReading") ) {
+	if ( !$(".output").hasClass("readRandom") ) {
 
-		$(".output").addClass("randomReading");
+		$(".output").addClass("readRandom");
 
 	}
 
@@ -427,21 +427,19 @@ jQuery(function($) {
 
     $(".reader").live("click", function () { 
 
-	if ( $(".output").hasClass("randomReading") || $(".output").hasClass("alphabetReading") ) {
+	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readIterate") ) {
 
 		$(".output").append("<br class='readerOff'>Reader has been turned off.<br><br>")
 
-		$(".output").removeClass("randomReading alphabetReading");
+		$(".output").removeClass("readRandom readIterate");
 
 		$(this).animateScroll(".readerOff");
 
 		$(".selected").trigger("click");
 
-		return false;
-
 	} else {
 
-	$(".output").append("<br><hr class='option'><br><br><br><a class='alphabetize'>Read this category continuously alphabetically.</a><br><br><br><br><a class='randomize'>Read this category continuously randomized.</a><br><br><br><br><hr>");
+	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'>Read this category continuously alphabetically.</a><br><br><br><br><a class='selectRandom'>Read this category continuously randomized.</a><br><br><br><br><hr>");
 
 	$(this).applyColors();
 
@@ -456,7 +454,7 @@ jQuery(function($) {
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 
-	if ( $(".output").hasClass("randomReading") ) {
+	if ( $(".output").hasClass("readRandom") ) {
 
 		$(".random").trigger("click");
 
@@ -491,6 +489,43 @@ jQuery(function($) {
 
     });
 
+    $.fn.animateScroll = function (hr) {
+
+	$(".output").animate({
+
+		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
+
+	}, "slow");
+
+    }
+
+    $.fn.cloneRepo = function () {
+
+	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
+			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
+
+
+    }
+
+    $.fn.applyColors = function () {
+
+	if ( $(".output").hasClass("light") ) {
+
+		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
+
+	}
+
+	else if ( $(".output").hasClass("dark") ) {
+
+		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
+	
+	}
+
+	$(".toggle").css("float", "left");
+	$(".reader").css("float", "right");
+
+    }
+
     $.fn.alphabetically = function (i) {
 
 	var array = [];
@@ -513,12 +548,6 @@ jQuery(function($) {
 
 	var name = array[parseInt(i)];
 
-	if ( i == menu.length - 1 ) {
-
-		i = 00;
-
-	}
-
 	$.each(menu, function(ind, obj) {
 
 		if ( obj.name == name ) {
@@ -528,43 +557,6 @@ jQuery(function($) {
 		}
 
 	});
-
-    }
-
-    $.fn.cloneRepo = function () {
-
-	$(".output").append("<br><hr><br><br><br><br><br><a target='_blank' href='https://github.com/acktic/acktic.github.io'>" +
-			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</a><br><br><br><br><br><br>");
-
-
-    }
-
-    $.fn.animateScroll = function (hr) {
-
-	$(".output").animate({
-
-		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-	}, "slow");
-
-    }
-
-    $.fn.applyColors = function () {
-
-	if ( $(".output").hasClass("light") ) {
-
-		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
-
-	}
-
-	else if ( $(".output").hasClass("dark") ) {
-
-		$("html, body, a, button, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
-	
-	}
-
-	$(".toggle").css("float", "left");
-	$(".reader").css("float", "right");
 
     }
 
@@ -624,7 +616,7 @@ jQuery(function($) {
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
 		$(".output").append("<br><hr>");
 
-		if ( !$(".output").hasClass("randomReading") && !$(".output").hasClass("alphabetReading") ) {
+		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readIterate") ) {
 
 			$.each(menu, function (index, key) {
 
@@ -656,7 +648,7 @@ jQuery(function($) {
 </script>
 <div class="container">
 <div class="top"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Entertain</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
-<div class="output dark"></div>
+<div class="output light"></div>
 <div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="random">Random</button><button class="reader" style="float:right;"><i class="fa fa-pied-piper"></i></button></div>
 </div>
 </body>
