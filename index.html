@@ -395,6 +395,8 @@ jQuery(function($) {
 
     $(".selectAlphabet").live("click", function () {
 
+	$(".output").removeClass("select");
+
 	if ( !$(".output").hasClass("readIterate") ) {
 
 		$(".output").addClass("readIterate");
@@ -415,6 +417,8 @@ jQuery(function($) {
 
     $(".selectRandom").live("click", function () {
 
+	$(".output").removeClass("select");
+
 	if ( !$(".output").hasClass("readRandom") ) {
 
 		$(".output").addClass("readRandom");
@@ -427,17 +431,25 @@ jQuery(function($) {
 
     $(".reader").live("click", function () { 
 
+	if ( $(".output").hasClass("select") ) {
+	
+		return false;
+
+	}
+
+	$(".output").addClass("select");
+
 	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readIterate") ) {
 
 		$(".output").append("<br class='readerOff'>Reader has been turned off.<br><br>")
 
-		$(".output").removeClass("readRandom readIterate");
+		$(".output").removeClass("readRandom readIterate select");
 
 		$(this).animateScroll(".readerOff");
 
 		$(".selected").trigger("click");
 
-	} else {
+	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readIterate") || !$(".output").hasClass("select") ) {
 
 	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'>Read this category continuously alphabetically.</a><br><br><br><br><a class='selectRandom'>Read this category continuously randomized.</a><br><br><br><br><hr>");
 
