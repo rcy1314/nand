@@ -289,7 +289,7 @@ var menu = [
 
 ]
 
-var alphabeticOffset = 00;
+var i = 00;
 
 var proxy = "https://cors-anywhere.herokuapp.com/";
 
@@ -397,19 +397,17 @@ jQuery(function($) {
 
 	if ( !$(".output").hasClass("alphabetReading") ) {
 
-		alphabeticOffset = 00;
-
 		$(".output").addClass("alphabetReading");
 
-		$(this).alphabetically(alphabeticOffset);
+		$(this).alphabetically(i);
 
 	}
 
 	else if ( $(".output").hasClass("alphabetReading") ) {
 
-		alphabeticOffset = alphabeticOffset + 1;
+		i = i + 1;
 
-		$(this).alphabetically(alphabeticOffset);
+		$(this).alphabetically(i);
 
 	}
 
@@ -439,9 +437,11 @@ jQuery(function($) {
 
 		$(".selected").trigger("click");
 
+		return false;
+
 	} else {
 
-	$(".output").append("<br><hr class='option'><br><br><br><a class='alphabetize'>Read this category continuously alphabetically.</a><br><br><br><br><a class='randomize'>Read this category continuously randomized.</a><br><br><br><br>");
+	$(".output").append("<br><hr class='option'><br><br><br><a class='alphabetize'>Read this category continuously alphabetically.</a><br><br><br><br><a class='randomize'>Read this category continuously randomized.</a><br><br><br><br><hr>");
 
 	$(this).applyColors();
 
@@ -505,13 +505,19 @@ jQuery(function($) {
 
 	});
 
-	if ( alphabeticOffset == array.length - 1 ) {
+	if ( i == array.length ) {
 
-		alphabeticOffset = 00;
+		i = 00;
 
 	}
 
-	var name = array[parseInt(alphabeticOffset)];
+	var name = array[parseInt(i)];
+
+	if ( i == menu.length - 1 ) {
+
+		i = 00;
+
+	}
 
 	$.each(menu, function(ind, obj) {
 
@@ -616,6 +622,7 @@ jQuery(function($) {
 	.done( function () {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>  <u>" + title + "</u></a><br>");
+		$(".output").append("<br><hr>");
 
 		if ( !$(".output").hasClass("randomReading") && !$(".output").hasClass("alphabetReading") ) {
 
