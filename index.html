@@ -154,7 +154,7 @@ jQuery(function($) {
 
 			}
 
-			else if ( $(".output").hasClass("readIterate") ) {
+			else if ( $(".output").hasClass("readAscending") ) {
 
 				$(".selectAlphabet").trigger("click");
 
@@ -196,17 +196,17 @@ jQuery(function($) {
 
 	$(".output").addClass("select");
 
-	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readIterate") ) {
+	if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readAscending") ) {
 
 		$(".output").append("<br class='readerOff'>Reader has been turned off.<br><br>")
 
-		$(".output").removeClass("readRandom readIterate select");
+		$(".output").removeClass("readRandom readAscending select");
 
 		$(this).animateScroll(".readerOff");
 
 		$(".selected").trigger("click");
 
-	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readIterate") || !$(".output").hasClass("select") ) {
+	} else if ( !$(".output").hasClass("readRandom") || !$(".output").hasClass("readAscending") || !$(".output").hasClass("select") ) {
 
 	$(".output").append("<br><hr class='option'><br><br><br><a class='selectAlphabet'>Read <b>alphabetically</b>.</a>" +
 			    "<br><br><br><br><a class='selectRandom'>Read <b>randomized</b>.</a><br><br><br><br><hr>");
@@ -223,15 +223,15 @@ jQuery(function($) {
 
 	$(".output").removeClass("select");
 
-	if ( !$(".output").hasClass("readIterate") ) {
+	if ( !$(".output").hasClass("readAscending") ) {
 
-		$(".output").addClass("readIterate");
+		$(".output").addClass("readAscending");
 
 		$(this).alphabetically(alphabeticIndex);
 
 	}
 
-	else if ( $(".output").hasClass("readIterate") ) {
+	else if ( $(".output").hasClass("readAscending") ) {
 
 		alphabeticIndex = alphabeticIndex + 1;
 
@@ -261,7 +261,7 @@ jQuery(function($) {
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 
-	if ( $(".output").hasClass("readIterate") ) {
+	if ( $(".output").hasClass("readAscending") ) {
 	
 		$(this).alphabetically(0);
 
@@ -431,7 +431,7 @@ jQuery(function($) {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
 
-		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readIterate") ) {
+		if ( !$(".output").hasClass("readRandom") && !$(".output").hasClass("readAscending") ) {
 
 			$.each(menu, function (index, key) {
 
@@ -450,6 +450,12 @@ jQuery(function($) {
 				}
 
 			});
+
+		}
+
+		if ( $(".output").hasClass("readRandom") || $(".output").hasClass("readAscending") ) {
+
+			$(this).cloneRepo();
 
 		}
 
