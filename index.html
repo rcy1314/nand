@@ -164,14 +164,13 @@ jQuery(function($) {
 
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 
-			if ( $(".output").hasClass("fetch") ) {
+			if ( !$(".output").hasClass("fetch") ) {
 
-				$(".output").removeClass("fetch");
-				return false ;
+				$(this).showMenu();
 
 			}
 
-			$(this).showMenu();
+			$(".output").removeClass("fetch");
 
 		}
 
@@ -291,6 +290,8 @@ jQuery(function($) {
 
 	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput'>Fetching that source.  Please be patient.</button><br>")
 
+	$(this).applyColors();
+
 	$(this).animateScroll(".fetch");
 
 	var jqxhr = $.get(proxy + feed)
@@ -333,14 +334,17 @@ jQuery(function($) {
 
    		});
 
+		$(this).applyColors();
+
 	})
 
 	.fail( function () {
 
-		$(".output").append("<br><hr><br><br><br><br><br>Oops!  Something went wrong.<br><br>You can verify the proxy<a target='blank' href='" + proxy + "'> " +
-				    "<u>here</u>.</a><br><br>Also the validity of the feed <a target='_blank' href='" + feed + "'><u>here</u>.</a><br><br><br><br><br><br>");
+		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
+				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
+				    "<button class='buttonOutput' onclick='window.open(&quot;" + feed  + "&quot;, target=&quot;_blank&quot;)'>Also the validity of the feed here.</button>");
 
-		$(this).showMenu();
+		$(this).applyColors();
 
 	})
 
