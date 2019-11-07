@@ -289,7 +289,7 @@ jQuery(function($) {
 
 	$(".output").addClass("fetch");
 
-	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput'>Fetching that source.</button><br>")
+	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput'>Fetching that source.  Please be patient.</button><br>")
 
 	$(this).animateScroll(".fetch");
 
@@ -312,7 +312,7 @@ jQuery(function($) {
 		}
 
 		$(".output").append("<br><hr class='first'>");
-		$(".output").append("<br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br><br>");
+		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br><br>");
 		$(this).animateScroll(".first");
 
 	        $(data).find(format).each( function () {
@@ -346,7 +346,7 @@ jQuery(function($) {
 
 	.done( function () {
 
-		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
+		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 
 		$(this).cloneRepo();
 
