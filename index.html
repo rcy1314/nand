@@ -21,7 +21,6 @@
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
-		background-color: #F6F5F0;
 
 	}
 
@@ -30,13 +29,11 @@
 		color: #000000;
 		cursor: pointer;
 		text-decoration: none;
-		background-color: #F6F5F0;
 
 	}
 
 	button {
 
-		background-color: #FFFFFF;
 		width: 16.6%;
 		border: none;
 		font-size: 12px;
@@ -90,9 +87,6 @@
 		border: none;
 		background-color: #FFFFFF;
 		text-align: left;
-		-moz-box-shadow:    1px 0px 1px 1px #ebebeb;
-		-webkit-box-shadow: 1px 0px 1px 1px #ebebeb;
-		box-shadow:         1px 0px 1px 1px #ebebeb;
 
 	}
 </style>
@@ -262,9 +256,9 @@ jQuery(function($) {
 
 	if ( $(".output").hasClass("light") ) {
 
-		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #F6F5F0; color: #000000; text-decoration: none;");
+		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button").css("color", "#000000");	
-		$("button").css("background-color", "#F6F5F0");
+		$("button").css("background-color", "#F5F5F5");
 		$("button.buttonOutput").css("background-color", "#F5F5F5");
 
 	}
