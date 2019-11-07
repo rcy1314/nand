@@ -36,6 +36,7 @@
 
 	button {
 
+		background-color: #FFFFFF;
 		width: 16.6%;
 		border: none;
 		font-size: 12px;
@@ -82,13 +83,16 @@
 
 	button.buttonOutput {
 
-		width: 100%;
+		position:relative;
+		width: 98%;
+		left: 5px;
 		height: 5em;
-		border: solid;
-		border-width: 1px;
-		border-color: #EBEBEB;
-		background-color: #F5f5f5;
+		border: none;
+		background-color: #FFFFFF;
 		text-align: left;
+		-moz-box-shadow:    1px 0px 1px 1px #ebebeb;
+		-webkit-box-shadow: 1px 0px 1px 1px #ebebeb;
+		box-shadow:         1px 0px 1px 1px #ebebeb;
 
 	}
 </style>
@@ -160,6 +164,13 @@ jQuery(function($) {
 
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 
+			if ( $(".output").hasClass("fetch") ) {
+
+				$(".output").removeClass("fetch");
+				return false ;
+
+			}
+
 			$(this).showMenu();
 
 		}
@@ -198,7 +209,7 @@ jQuery(function($) {
 
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
-
+	$(this).applyColors();
 	$(this).showMenu();
 
     });
@@ -213,8 +224,8 @@ jQuery(function($) {
 
 		if ( $(".selected").attr("id") == key.category ) {
 
-			$(".output").append("<br><button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>" +
-					    "&ensp;" + key.title + "</button><br>");
+			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>" +
+					    "&ensp;" + key.title + "</button>");
 
 		}
 
@@ -267,6 +278,7 @@ jQuery(function($) {
 
 	}
 
+	$(".category").css("text-decoration", "none");
 	$(".selected").css("text-decoration", "underline");
 	$(".toggle").css("float", "left");
 	$(".reader").css("float", "right");
@@ -275,7 +287,15 @@ jQuery(function($) {
 
     $.fn.getfeed = function (category, feed, title, homepage) {
 
-	var jqxhr = $.get(proxy + feed, function(data) {
+	$(".output").addClass("fetch");
+
+	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput'>Fetching that source.</button><br>")
+
+	$(this).animateScroll(".fetch");
+
+	var jqxhr = $.get(proxy + feed)
+
+	.success( function (data) {
 
 		var entry = $(data).find("entry");
 
@@ -327,6 +347,8 @@ jQuery(function($) {
 	.done( function () {
 
 		$(".output").append("<br><br><a target='blank' href='" + homepage + "'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</a><br>");
+
+		$(this).cloneRepo();
 
 		$(this).applyColors();
 
