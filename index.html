@@ -214,9 +214,21 @@ jQuery(function($) {
 
 	$.each(menu, function(index, key) {
 
+		if ( index % 2 == 0 ) {
+
+			var isEven = "even"
+
+		}
+
+		else {
+
+			var isEven = "odd"
+
+		}
+
 		if ( $(".selected").attr("id") == key.category ) {
 
-			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
+			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput " + isEven + "'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
 
 		}
 
@@ -254,10 +266,11 @@ jQuery(function($) {
 	if ( $(".output").hasClass("light") ) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
-		$(".top").css("background-image", "linear-gradient(#888888, #F5F5F5)");
+		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
+		$("button.category, .github, .bottom button").css("background-color", "transparent");
 		$("button").css("color", "#000000");	
-		$("button, button.buttonOutput").css("background-color", "transparent");
-
+		$(".even").css("background-color", "#E5E5E5");
+		$(".odd").css("background-color", "#F5F5F5");
 	}
 
 	else if ( $(".output").hasClass("dark") ) {
@@ -322,7 +335,7 @@ jQuery(function($) {
 
 			}
 
-			$(".output").append("<br>&ensp;<a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
+			$(".output").append("<br><a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
 
    		});
 
