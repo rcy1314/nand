@@ -84,15 +84,16 @@ jQuery(function($) {
 	$(".random").live("click", function () {
 		var array = [];
 		$.each(menu, function(index, key) {
-			if ( key.category == $(".selected").attr("id") ) {
+			if (key.category == $(".selected").attr("id")) {
 
 				array.push(menu[index].name);
 
 			}
 
 		});
+		var name = array[Math.floor(Math.random()*array.length)];
 		$.each(menu, function(index, key) {
-			if (key.name == array[Math.floor(Math.random()*array.length)]) {
+			if (name == key.name) {
 
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 				return false;
@@ -102,7 +103,7 @@ jQuery(function($) {
 	});
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if ( !$(".output").hasClass("fetch") ) {
+			if (!$(".output").hasClass("fetch")) {
 
 				$(this).showMenu();
 
@@ -113,14 +114,14 @@ jQuery(function($) {
 	});
     });
     $(".toggle").live("click", function () {
-	if ( $(".output").hasClass("dark") ) {
+	if ($(".output").hasClass("dark")) {
 
 		$(".output").removeClass("dark");
 		$(".output").addClass("light");
 
 	}
 
-	else if ( $(".output").hasClass("light") ) {
+	else if ($(".output").hasClass("light")) {
 
 		$(".output").removeClass("light");
 		$(".output").addClass("dark");
@@ -144,12 +145,12 @@ jQuery(function($) {
 	$(".output").append("<hr class='title'>");
 	$(this).animateScroll(".title");
 	$.each(menu, function(index, key) {
-		if ( $(".selected").attr("id") == key.category ) {
+		if ($(".selected").attr("id") == key.category) {
 
 			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
 
 		}
-		if ( index == (menu.length - 1) ) { $(this).cloneRepo(); }
+		if (index == (menu.length - 1)) { $(this).cloneRepo(); }
 
 	});
 	$(this).applyColors();
@@ -165,7 +166,7 @@ jQuery(function($) {
     }
 
     $.fn.applyColors = function () {
-	if ( $(".output").hasClass("light") ) {
+	if ($(".output").hasClass("light")) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button.category, button.buttonOutput, .bottom button, .github").css("background-color", "transparent");
@@ -174,7 +175,7 @@ jQuery(function($) {
 		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
 
 	}
-	else if ( $(".output").hasClass("dark") ) {
+	else if ($(".output").hasClass("dark")) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
 		$("button").css("background-color", "#000000");
@@ -197,11 +198,11 @@ jQuery(function($) {
 
 	var jqxhr = $.get(Proxy + feed)
 
-	.success( function (data) {
+	.success(function (data) {
 
 		var entry = $(data).find("entry");
 
-		if ( entry.length > 0 ) {
+		if (entry.length > 0) {
 
 			var format = "entry"
 
@@ -217,9 +218,9 @@ jQuery(function($) {
 				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br>");
 		$(this).animateScroll(".first");
 
-	        $(data).find(format).each( function (index, key) {
+	        $(data).find(format).each(function (index, key) {
 
-			if ( format == "entry" ) {
+			if (format == "entry") {
 
 				var link = $(this).find("link").attr("href");
 
@@ -238,7 +239,7 @@ jQuery(function($) {
 
 	})
 
-	.fail( function () {
+	.fail(function () {
 		$(".output").removeClass("fetch");
 		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
 				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
@@ -246,9 +247,10 @@ jQuery(function($) {
 
 		$(this).applyColors();
 	})
-	.done( function () {
+	.done(function () {
 		$(".output").removeClass("fetch");
-		$(".output").append("<br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		$(".output").append("<br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>" +
+				    "&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(this).cloneRepo();
 		$(this).applyColors();
 	});
