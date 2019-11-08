@@ -10,56 +10,22 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar {
-
-		display: none;
-
-	}
-
+	::-webkit-scrollbar { display: none; }
 	html, body, .container {
-
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
-
 	}
-
-	a, button {
-
-		color: #000000;
-		cursor: pointer;
-		text-decoration: none;
-
-	}
-
-	button {
-
-		border-radius: 10px;
-		border: none;
-		width: 16.6%;
-		border: none;
-		font-size: 12px;
-		padding: 10px;
-
-	}
-
-	.top {
-
-		background-image: linear-gradient(#888888, #F5F5F5);
+	.container {
 		position: absolute;
-		width: 100%;
-		left: -1px;
+		left: -.5px;
 		top: 0px;
-
 	}
-
 	.output {
-
 		position: fixed;
 		font-size: 13px;
 		font-family: Arial;
 		bottom: 2.5em;
-		left: -1px;
 		width: 99%;
 		top: 3em;
 		overflow: auto;
@@ -67,11 +33,8 @@
 		outline: none !important;
 		scrollbar-width: none;
 		background-color: transparent;
-
 	}
-
 	.bottom {
-
 		position: fixed;
 		font-size: 12px;
 		font-family: Arial;
@@ -79,61 +42,48 @@
 		height: 1.5em;
 		width: 95%;
 		text-align: center;
-
 	}
-
+	button {
+		cursor: pointer;
+		border-radius: 10px;
+		border: none;
+		width: 16.6%;
+		border: none;
+		font-size: 12px;
+		padding: 10px;
+	}
 	button.buttonOutput {
-
 		position: relative;
-		width: 99.5%;
-		left: 5px;
+		width: 100%;
+		left: 3px;
 		height: 5em;
 		border: none;
-		background-color: #FFFFFF;
 		text-align: left;
-
 	}
 </style>
 <script>
-
-var proxy = "https://cors-anywhere.herokuapp.com/";
-
+var Proxy = "https://cors-anywhere.herokuapp.com/";
 jQuery(function($) {
-
     $(window).load(function () {
-
 	$("#Social").trigger("click");
 	$(".output").attr('tabindex', -1).focus();
-
-	$(".output").focusout(function(){
-		$(".output").attr('tabindex', -1).focus();
-	});
-
+	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
     });
-
     $(document).one("ready", function () {
-
 	$(".menu").live("click", function(event) {
-
 		var name = $(this).get(0).id;
-
 		$.each(menu, function(index, key) {
-
 			if (name === key.name) {
 
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 
 			}
+
 		});
-
 	});
-
 	$(".random").live("click", function () {
-
 		var array = [];
-
 		$.each(menu, function(index, key) {
-
 			if ( key.category == $(".selected").attr("id") ) {
 
 				array.push(menu[index].name);
@@ -141,25 +91,17 @@ jQuery(function($) {
 			}
 
 		});
-
 		$.each(menu, function(index, key) {
-
 			if (key.name == array[Math.floor(Math.random()*array.length)]) {
 
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
-
 				return false;
 
 			}
-
 		});
-
 	});
-
    	$('.output').bind('scroll', function(){
-
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-
 			if ( !$(".output").hasClass("fetch") ) {
 
 				$(this).showMenu();
@@ -169,17 +111,8 @@ jQuery(function($) {
 		}
 
 	});
-
     });
-
-    $(".github").live("click", function () {
-
-	window.open("https://github.com/acktic/acktic.github.io");
-
-    })
-
     $(".toggle").live("click", function () {
-
 	if ( $(".output").hasClass("dark") ) {
 
 		$(".output").removeClass("dark");
@@ -196,109 +129,73 @@ jQuery(function($) {
 
 	$(this).applyColors();	
 
-    })
+    });
 
     $(".category").live("click", function(event) { 
-
 	$(".category").removeClass("selected");
 	$(this).addClass("selected");
 	$(this).showMenu();
-
     });
 
+    $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
+    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+
     $.fn.showMenu = function () {
-
 	$(".output").append("<hr class='title'>");
-
 	$(this).animateScroll(".title");
-
 	$.each(menu, function(index, key) {
-
-		if ( index % 2 == 0 ) {
-
-			var isEven = "even"
-
-		}
-
-		else {
-
-			var isEven = "odd"
-
-		}
-
 		if ( $(".selected").attr("id") == key.category ) {
 
-			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput " + isEven + "'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
+			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
 
 		}
-
-		if ( index == (menu.length - 1) ) {
-
-			$(this).cloneRepo();
-
-		}
+		if ( index == (menu.length - 1) ) { $(this).cloneRepo(); }
 
 	});
-
 	$(this).applyColors();
 
     }
 
-    $.fn.cloneRepo = function () {
-
-	$(".output").append("<br><hr><br><button class='github buttonOutput'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
-
-
-    }
-
     $.fn.animateScroll = function (hr) {
-
 	$(".output").animate({
 
 		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
 
 	}, "slow");
-
     }
 
     $.fn.applyColors = function () {
-
 	if ( $(".output").hasClass("light") ) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
-		$("button.category, .github, .bottom button, .homepage, .fetching").css("background-color", "transparent");
-		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
+		$("button.category, button.buttonOutput, .bottom button, .github").css("background-color", "transparent");
 		$("button").css("color", "#000000");	
-		$(".even").css("background-color", "#E5E5E5");
-		$(".odd").css("background-color", "#F5F5F5");
-	}
+		$(".github").css("background-color", "#FFFFFF");
+		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
 
+	}
 	else if ( $(".output").hasClass("dark") ) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
-		$(".top").css("background-image", "none");
 		$("button").css("background-color", "#000000");
 		$("button").css("color", "#FFFFFF");	
+		$(".github").css("background-color", "#222222");
+		$(".top").css("background-image", "none");
 
 	}
-
 	$(".selected").css("text-decoration", "underline");
 	$(".toggle").css("float", "left");
 	$(".reader").css("float", "right");
-
     }
 
     $.fn.getfeed = function (category, feed, title, homepage) {
 
 	$(".output").addClass("fetch");
-
-	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput fetching'>Fetching source.  Please be patient.</button><br>")
-
+	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput github'>Fetching source.  Please be patient.</button><br>")
+	$(this).animateScroll(".fetch");
 	$(this).applyColors();
 
-	$(this).animateScroll(".fetch");
-
-	var jqxhr = $.get(proxy + feed)
+	var jqxhr = $.get(Proxy + feed)
 
 	.success( function (data) {
 
@@ -316,9 +213,8 @@ jQuery(function($) {
 
 		}
 
-		$(".output").append("<br><hr class='first'><br><button class='buttonOutput homepage' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
-				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br><br>");
-
+		$(".output").append("<br><hr class='first'><br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
+				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br>");
 		$(this).animateScroll(".first");
 
 	        $(data).find(format).each( function (index, key) {
@@ -334,19 +230,7 @@ jQuery(function($) {
 				var link = $(this).find("link").text();
 
 			}
-
-		if ( index % 2 == 0 ) {
-
-			var isEven = "even"
-
-		}
-
-		else {
-
-			var isEven = "odd"
-
-		}
-			$(".output").append("<br><button class='buttonOutput " + isEven + "' target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></button>");
+		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 
    		});
 
@@ -355,27 +239,18 @@ jQuery(function($) {
 	})
 
 	.fail( function () {
-
 		$(".output").removeClass("fetch");
-
 		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
 				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
 				    "<button class='buttonOutput' onclick='window.open(&quot;" + feed  + "&quot;, target=&quot;_blank&quot;)'>Also the validity of the feed here.</button>");
 
 		$(this).applyColors();
-
 	})
-
 	.done( function () {
-
 		$(".output").removeClass("fetch");
-
-		$(".output").append("<br><button class='buttonOutput homepage' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-
+		$(".output").append("<br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(this).cloneRepo();
-
 		$(this).applyColors();
-
 	});
 
     }
