@@ -258,7 +258,7 @@ jQuery(function($) {
 
 	if ( $(".output").hasClass("light") ) {
 
-		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
+		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button").css("color", "#000000");	
 		$("button").css("background-color", "#F5F5F5");
 		$("button.buttonOutput").css("background-color", "#F5F5F5");
@@ -267,13 +267,12 @@ jQuery(function($) {
 
 	else if ( $(".output").hasClass("dark") ) {
 
-		$("html, body, a, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
+		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
 		$("button").css("background-color", "#000000");
 		$("button").css("color", "#FFFFFF");	
 
 	}
 
-	$(".category").css("text-decoration", "none");
 	$(".selected").css("text-decoration", "underline");
 	$(".toggle").css("float", "left");
 	$(".reader").css("float", "right");
