@@ -171,7 +171,7 @@ jQuery(function($) {
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button.category, button.buttonOutput, .bottom button, .github").css("background-color", "transparent");
 		$("button").css("color", "#000000");	
-		$(".github").css("background-color", "#FFFFFF");
+		$(".github").css("background-color", "#E5E5E5");
 		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
 
 	}
@@ -192,7 +192,7 @@ jQuery(function($) {
     $.fn.getfeed = function (category, feed, title, homepage) {
 
 	$(".output").addClass("fetch");
-	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput github'>Fetching source.  Please be patient.</button><br>")
+	$(".output").append("<hr class='fetch'><br><button class='buttonOutput github'>Fetching source.  Please be patient.</button><br>")
 	$(this).animateScroll(".fetch");
 	$(this).applyColors();
 
