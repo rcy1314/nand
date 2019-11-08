@@ -266,8 +266,8 @@ jQuery(function($) {
 	if ( $(".output").hasClass("light") ) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
+		$("button.category, .github, .bottom button, .homepage, .fetching").css("background-color", "transparent");
 		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
-		$("button.category, .github, .bottom button, .homepage").css("background-color", "transparent");
 		$("button").css("color", "#000000");	
 		$(".even").css("background-color", "#E5E5E5");
 		$(".odd").css("background-color", "#F5F5F5");
@@ -292,7 +292,7 @@ jQuery(function($) {
 
 	$(".output").addClass("fetch");
 
-	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput'>Fetching source.  Please be patient.</button><br>")
+	$(".output").append("<br><hr class='fetch'><br><button class='buttonOutput fetching'>Fetching source.  Please be patient.</button><br>")
 
 	$(this).applyColors();
 
