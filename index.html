@@ -162,8 +162,6 @@ jQuery(function($) {
 
 			}
 
-			$(".output").removeClass("fetch");
-
 		}
 
 	});
@@ -215,8 +213,7 @@ jQuery(function($) {
 
 		if ( $(".selected").attr("id") == key.category ) {
 
-			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>" +
-					    "&ensp;" + key.title + "</button>");
+			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
 
 		}
 
@@ -234,8 +231,7 @@ jQuery(function($) {
 
     $.fn.cloneRepo = function () {
 
-	$(".output").append("<br><hr><br><button class='github buttonOutput'>" +
-			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
+	$(".output").append("<br><hr><br><button class='github buttonOutput'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
 
 
     }
@@ -256,8 +252,7 @@ jQuery(function($) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button").css("color", "#000000");	
-		$("button").css("background-color", "#F5F5F5");
-		$("button.buttonOutput").css("background-color", "#F5F5F5");
+		$("button, button.buttonOutput").css("background-color", "#F5F5F5");
 
 	}
 
