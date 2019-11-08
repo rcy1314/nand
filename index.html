@@ -128,8 +128,6 @@ jQuery(function($) {
 
 	$(".random").live("click", function () {
 
-		$(".output").removeClass("fetch");
-
 		var array = [];
 
 		$.each(menu, function(index, key) {
@@ -236,6 +234,14 @@ jQuery(function($) {
 
     }
 
+    $.fn.cloneRepo = function () {
+
+	$(".output").append("<br><hr><br><button class='github buttonOutput'>" +
+			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
+
+
+    }
+
     $.fn.animateScroll = function (hr) {
 
 	$(".output").animate({
@@ -243,14 +249,6 @@ jQuery(function($) {
 		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
 
 	}, "slow");
-
-    }
-
-    $.fn.cloneRepo = function () {
-
-	$(".output").append("<br><hr><br><button class='github buttonOutput'>" +
-			    "<i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
-
 
     }
 
@@ -307,8 +305,8 @@ jQuery(function($) {
 
 		}
 
-		$(".output").append("<br><hr class='first'>");
-		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br><br>");
+		$(".output").append("<br><hr class='first'><br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
+				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br><br>");
 		$(this).animateScroll(".first");
 
 	        $(data).find(format).each( function () {
@@ -334,6 +332,8 @@ jQuery(function($) {
 	})
 
 	.fail( function () {
+
+		$(".output").removeClass("fetch");
 
 		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
 				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
