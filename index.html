@@ -53,7 +53,6 @@
 		padding: 10px;
 	}
 	button.buttonOutput {
-		position: relative;
 		width: 100%;
 		left: 3px;
 		height: 5em;
@@ -138,8 +137,8 @@ jQuery(function($) {
 	$(this).showMenu();
     });
 
-    $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
-    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+    $(".info").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
+    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput info'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
 
     $.fn.showMenu = function () {
 	$(".output").append("<hr class='title'>");
@@ -168,20 +167,16 @@ jQuery(function($) {
     $.fn.applyColors = function () {
 	if ($(".output").hasClass("light")) {
 
-		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
-		$("button.category, button.buttonOutput, .bottom button, .github").css("background-color", "transparent");
-		$("button").css("color", "#000000");	
-		$(".github").css("background-color", "#E5E5E5");
-		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
+		$("html, body, a, .category, .output, .container, button, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
+		$("button.category, button.buttonOutput, .bottom button, .info").css("background-color", "transparent");
+		$(".info").css("background-color", "#E5E5E5");
 
 	}
 	else if ($(".output").hasClass("dark")) {
 
-		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
-		$("button").css("background-color", "#000000");
+		$("html, body, a, .category, .output, .container, .bottom, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");
 		$("button").css("color", "#FFFFFF");	
-		$(".github").css("background-color", "#222222");
-		$(".top").css("background-image", "none");
+		$(".info").css("background-color", "#222222");
 
 	}
 	$(".selected").css("text-decoration", "underline");
@@ -192,77 +187,53 @@ jQuery(function($) {
     $.fn.getfeed = function (category, feed, title, homepage) {
 
 	$(".output").addClass("fetch");
-	$(".output").append("<hr class='fetch'><br><button class='buttonOutput github'>Fetching source.  Please be patient.</button><br>")
+	$(".output").append("<hr class='fetch'><br><button class='buttonOutput info'>Fetching source.  Please be patient.</button><br>")
 	$(this).animateScroll(".fetch");
 	$(this).applyColors();
 
 	var jqxhr = $.get(Proxy + feed)
-
 	.success(function (data) {
-
 		var entry = $(data).find("entry");
 
-		if (entry.length > 0) {
+		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
 
-			var format = "entry"
-
-		}
-
-		else {
-
-			var format = "item"
-
-		}
-
-		$(".output").append("<br><hr class='first'><br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
+		$(".output").append("<br><hr class='first'><br><button class='buttonOutput info' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
 				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br>");
+
 		$(this).animateScroll(".first");
 
 	        $(data).find(format).each(function (index, key) {
 
-			if (format == "entry") {
+			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
 
-				var link = $(this).find("link").attr("href");
-
-			}
-
-			else {
-
-				var link = $(this).find("link").text();
-
-			}
-		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+			$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 
    		});
-
 		$(this).applyColors();
-
 	})
 
 	.fail(function () {
 		$(".output").removeClass("fetch");
-		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
-				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
-				    "<button class='buttonOutput' onclick='window.open(&quot;" + feed  + "&quot;, target=&quot;_blank&quot;)'>Also the validity of the feed here.</button>");
-
+		$(".output").append("<br><hr><button class='buttonOutput info'>Oops!  Something went wrong.</button><br>" +
+				    "<button class='buttonOutput info' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
+				    "<button class='buttonOutput info' onclick='window.open(&quot;" + feed  + "&quot;, target=&quot;_blank&quot;)'>Also the validity of the feed here.</button>");
 		$(this).applyColors();
 	})
 	.done(function () {
 		$(".output").removeClass("fetch");
-		$(".output").append("<br><button class='buttonOutput github' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>" +
+		$(".output").append("<br><button class='buttonOutput info' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>" +
 				    "&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(this).cloneRepo();
 		$(this).applyColors();
 	});
 
     }
-
 });
 </script>
 <div class="container">
-<div class="top"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Entertain</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
+<div class="top"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button></div>
 <div class="output light"></div>
-<div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="random">Random</button><button style="float:right;"><i class="fa fa-pied-piper"></i></button></div>
+<div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="random">Random</button><button class="reader" style="float:right;"><i class="fa fa-pied-piper"></i></button></div>
 </div>
 </body>
 </html>
