@@ -346,6 +346,8 @@ jQuery(function($) {
 
 	.done( function () {
 
+		$(".output").removeClass("fetch");
+
 		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 
 		$(this).cloneRepo();
