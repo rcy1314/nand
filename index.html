@@ -268,7 +268,7 @@ jQuery(function($) {
 
 		$("html, body, a, .category, .output, .container, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$(".top").css("background-image", "linear-gradient(#CCCCCC, #F5F5F5)");
-		$("button.category, .github, .bottom button").css("background-color", "transparent");
+		$("button.category, .github, .bottom button, .homepage").css("background-color", "transparent");
 		$("button").css("color", "#000000");	
 		$(".even").css("background-color", "#E5E5E5");
 		$(".odd").css("background-color", "#F5F5F5");
@@ -317,12 +317,12 @@ jQuery(function($) {
 
 		}
 
-		$(".output").append("<br><hr class='first'><br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
+		$(".output").append("<br><hr class='first'><br><button class='buttonOutput homepage' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
 				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br><br>");
 
 		$(this).animateScroll(".first");
 
-	        $(data).find(format).each( function () {
+	        $(data).find(format).each( function (index, key) {
 
 			if ( format == "entry" ) {
 
@@ -336,7 +336,18 @@ jQuery(function($) {
 
 			}
 
-			$(".output").append("<br><a target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></a>");
+		if ( index % 2 == 0 ) {
+
+			var isEven = "even"
+
+		}
+
+		else {
+
+			var isEven = "odd"
+
+		}
+			$(".output").append("<br><button class='buttonOutput " + isEven + "' target='_blank' href='" + link + "'>" + $(this).find("title").text() + "<br></button>");
 
    		});
 
@@ -360,7 +371,7 @@ jQuery(function($) {
 
 		$(".output").removeClass("fetch");
 
-		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		$(".output").append("<br><button class='buttonOutput homepage' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 
 		$(this).cloneRepo();
 
