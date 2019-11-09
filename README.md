@@ -22,7 +22,7 @@ Include an Iframe in your html with the site.
 ### Styling
 
 Here is some css for our iframe...
-![alt text](https://github.com/acktic/acktic.github.io/3366071279769.png "Example iframe")
+![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
 
 ```sh
 .rss     {
