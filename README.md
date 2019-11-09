@@ -46,7 +46,9 @@ Personal Heroku CORS Proxy instance
 `https://salty-refuge-64158.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
+
 [heroku-cli](https://github.com/heroku/cli) makes it easy to create apps directly from the terminal.
+
 [npm](https://github.com/npm/cli) the package manager for JavaScript.
 
 ```sh
