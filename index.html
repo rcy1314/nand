@@ -82,7 +82,7 @@ jQuery(function($) {
 	$(".selected").css("text-decoration", "underline");
     }
     $.fn.getfeed = function (category, feed, title, homepage) {
-	$(".output").append("<hr class='first'><br><button class='buttonOutput'>Fetching source.  Please be patient.</button><br>")
+	$(".output").append("<hr class='fetch'><br><button class='buttonOutput'>Fetching source.  Please be patient.</button><br>")
 	$(".output").addClass("fetch"); $(this).animateScroll(".fetch"); $(this).applyColors();
 	var jqxhr = $.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 	.fail(function () { $(".output").removeClass("fetch"); })
