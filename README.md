@@ -36,6 +36,12 @@ Here is an example class for our iframe...
 
 ### CORS Proxy
 
+Heroku's CORS Proxy
+`http://cors-anywhere.herokuapp.com/`
+
+Personal Heroku CORS Proxy instance
+`https://salty-refuge-64158.herokuapp.com`
+
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
 [heroku-cli](https://github.com/heroku/cli) Heroku-CLI makes it easy to create apps directly from the terminal.
 [npm](https://github.com/npm/cli) the package manager for JavaScript.
@@ -51,8 +57,9 @@ git push heroku master
 ### Development
 
 Want to contribute? Great!
-- Pull this repo
 - Clone this repo
+- Pull this repo
+- File an issue
 
 License
 ----
