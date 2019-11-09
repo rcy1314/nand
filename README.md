@@ -47,9 +47,11 @@ Here the some css for our iframe...
 Cloning and applyColors
 
   - light mode uses transparent background and black foreground.
+  
 `$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");`
 
  - dark mode uses black background and white foreground.
+ 
 `$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
