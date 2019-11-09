@@ -3,20 +3,11 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script> 
-  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="palette-color-picker.css">
-  <script src="palette-color-picker.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
 <body>
 <style>
 	::-webkit-scrollbar { display: none; }
-	html { -moz-box-sizing: border-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-	*, *:before, *:after { border: none; -moz-box-sizing: border-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-	input[type="text"] {
-		font-family: 'Inconsolata', Courier, monospace;
-		visibility: hidden;
-	}
 	.container {
 		position: absolute;
 		height: 100%;
@@ -43,27 +34,16 @@
 		height: 5em;
 	}
 	.bottom {
-		font-size: 18px;
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
-		bottom: 0em;
+		bottom: .2em;
 		width: 100%;
 	}
 	button {
 		font-size: 12px;
 		border: none;
-		width: 13.7%;
-	}
-	.random {
-		transform: translate(50%,50%);
-		position: absolute;
-		bottom: 1em;
-		right: 50%;
-	}
-	.schema {
-		position: absolute;
-		right: 1em;
+		width: 16.6%;
 	}
 </style>
 <script>
@@ -75,17 +55,6 @@ jQuery(function($) {
 	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
     });
     $(document).one("ready", function () {
-  $('[name="unique-name-1"]').paletteColorPicker({ timeout: 3000,
-    onbeforeshow_callback: function ( color_picker_button ) {
-      console.log( 'onbeforeshow_callback!!!' );
-      console.log( $(color_picker_button) );
-      console.log( color_picker_button );
-    },
-    onchange_callback: function ( clicked_color ) {
-	$(".container button").css("color", clicked_color);
-      console.log( clicked_color );
-    }
-  });
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".output").hasClass("fetch")) {
@@ -145,9 +114,8 @@ jQuery(function($) {
 		$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 	}
 	$(".selected").css("text-decoration", "underline");
-	$(".row").css("float", "left");
-	$(".schema").css("float", "right");
-	$('[name="unique-name-1"]').data('paletteColorPickerPlugin').clear();
+	$(".toggle").css("float", "left");
+	$(".random").css("float", "right");
     }
     $.fn.animateScroll = function (hr) {
 	$(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
@@ -398,9 +366,6 @@ var menu = [
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 ]
 </script>
-<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div>
-<div class="bottom"><div class="row" id="sample-id-1"><input type="text" name="unique-name-1" data-palette='["#FFFFFF","#EDEDED","#DCDCDC" ,"#D3D3D3" ,"#C0C0C0" ,"#BBBBBB","#A9A9A9","#999999","#808080","#727272","#696969","#444444","#222222","#000000"]'></div><button class="random"><i class="fa fa-random"></i></button><div class="schema"><button class="toggle"><i class="fa fa-th-large"></i></button></div>
-</div>
-</div>
+<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div><div class="bottom"><button class="toggle"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random"><i class="fa fa-random"></i></button></div></div>
 </body>
 </html>
