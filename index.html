@@ -51,17 +51,17 @@
 <script>
 var obj = [];
 jQuery(function($) {
-    $(window).load(function () { $("#Social").trigger("click"); $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
+    $(window).load(function () { $(this).showMenu($(".selected").attr("id"));; $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
     $(document).one("ready", function () {
-   	$('.output').bind('scroll', function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) { if (!$(".output").hasClass("fetch")) { $(this).showMenu(); } } });
+   	$('.output').bind('scroll', function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) { if (!$(".output").hasClass("fetch")) { $(this).showMenu($(".selected").attr("id")); } } });
 	$(".menu").live("click", function(event) { var name = $(this).get(0).id; $.each(menu, function(i, k) { if (name === k.name) { $(this).getFeed(k.category, k.feed, k.title, k.homepage); } }); });
 	$(".random").live("click", function () { $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { obj.push(menu[i]); } }); var n = obj[Math.floor(Math.random()*obj.length)]; $(this).getFeed(n.category, n.feed, n.title, n.homepage); return false; });
     });
     $(".github").live("click", function () { $(this).link("https://github.com/acktic/acktic.github.io"); });
     $(".toggle").live("click", function () { $(".output").toggleClass("light"); $(".output").toggleClass("dark"); $(this).applyColors(); });
-    $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).toggleClass("selected"); $(this).showMenu(); });
+    $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).toggleClass("selected"); $(this).showMenu($(".selected").attr("id")); });
     $.fn.link = function (url) { window.open(url); };
-    $.fn.showMenu = function () { $(".output").append("<hr class='first'>"); $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { $(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } }); $(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first"); }
+    $.fn.showMenu = function (category) { $(".output").append("<hr class='first'>"); $.each(menu, function(i, k) { if (k.category == category) { $(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } }); $(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first"); }
     $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
     $.fn.applyColors = function () { if ($(".output").hasClass("light")) { $(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;"); } else if ($(".output").hasClass("dark")) { $(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;"); } $(".selected").css("text-decoration", "underline"); }
     $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
@@ -292,6 +292,6 @@ var menu = [
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 ]
 </script>
-<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div><div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random" style="float:right;"><i class="fa fa-random"></i></button></div></div>
+<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div><div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random" style="float:right;"><i class="fa fa-random"></i></button></div></div>
 </body>
 </html>
