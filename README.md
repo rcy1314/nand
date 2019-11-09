@@ -1,7 +1,7 @@
 # JQuery RSS Aggregator
 
-  - Easy to include.
   - Mobile Friendly.
+  - Easy to include.
   - Clone and Go.
   - Easy to use.
 
@@ -13,7 +13,7 @@ Here's what's used you won't need:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
-* Cors-anywhere - CORS Headers proxy.
+* CORS-anywhere - CORS Headers proxy.
 
 ### Menu Array
 
@@ -60,7 +60,7 @@ Cloning and applyColors
 - Heroku's CORS Proxy
 `http://cors-anywhere.herokuapp.com/`
 
-- Personal Heroku CORS Proxy instance
+- Personal Heroku CORS Proxy Instance
 `https://salty-refuge-64158.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
@@ -81,7 +81,7 @@ git push heroku master
 
 Want to contribute? Great!
 - Clone this Repo
-- Send a Feed
+- Submit a Feed
 - File an issue
 
 License
