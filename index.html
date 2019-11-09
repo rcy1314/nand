@@ -76,7 +76,7 @@ jQuery(function($) {
 				obj.push(menu[i]);
 			}
 		});
-		 var n = obj[Math.floor(Math.random()*obj.length)];
+		var n = obj[Math.floor(Math.random()*obj.length)];
 		$(this).getFeed(n.category, n.feed, n.title, n.homepage);
 		return false;
 	});
