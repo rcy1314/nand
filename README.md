@@ -59,8 +59,8 @@ git push heroku master
 ### Development
 
 Want to contribute? Great!
-- Clone this repo
-- Pull this repo
+- Clone this Repo
+- Send a Feed
 - File an issue
 
 License
