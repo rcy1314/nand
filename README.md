@@ -21,12 +21,8 @@ Include an Iframe in your html with the site.
 
 ### Styling
 
-Here is an css for our iframe...
+Here is some css for our iframe...
 ```sh
-body {
-        background-image: url(https://ackti.files.wordpress.com/2019/08/1566092117954.jpg);
-        background-repeat: no-repeat;
-}
 .rss     {
         transform: translate(50%,50%);
         position: absolute;
