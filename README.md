@@ -61,8 +61,8 @@ git push heroku master
 
 Want to contribute? Great!
 - Clone this Repo
-- File an issue
 - Send a Feed
+- File an issue
 
 License
 ----
