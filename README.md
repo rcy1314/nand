@@ -12,6 +12,7 @@ Here's what's used you won't need:
 
 * Github - Hosting the reader!
 * Heroku - Hosting the proxy!
+* Cors-anywhere - Headers proxy!
 
 ### Sourcing
 
@@ -60,8 +61,8 @@ git push heroku master
 
 Want to contribute? Great!
 - Clone this Repo
-- Send a Feed
 - File an issue
+- Send a Feed
 
 License
 ----
