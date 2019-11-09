@@ -17,11 +17,22 @@ Here's what's used you won't need:
 
 Include an Iframe in your html with the hosted site.
 
-`<iframe class="your.class" src="https://acktic.github.io/" </iframe>`
+`<iframe class="rss" src="https://acktic.github.io/" </iframe>`
 
 ### Styling
 
-More to come in the future.
+Here is an example class for our iframe...
+```sh
+.rss {
+        background-color: #EEEEEE;
+        position: absolute;
+        border: none;
+        height: 50%;
+        width: 50%;
+        right: 0em;
+        top: 10em;
+     }
+```
 
 ### CORS Proxy
 
