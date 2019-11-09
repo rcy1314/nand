@@ -29,7 +29,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 ### Styling
 
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
-![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/0218305377921.png "Example iframe")
+![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/7864746767418.png "Example iframe")
 
 Here the the css for our iframe...
 ```sh
