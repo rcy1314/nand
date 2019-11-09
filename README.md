@@ -87,4 +87,4 @@ Want to contribute? Great!
 License
 ----
 
-None
+MIT
