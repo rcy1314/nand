@@ -22,6 +22,8 @@ Include an Iframe in your html with the site.
 ### Styling
 
 Here is some css for our iframe...
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Example iframe")
+
 ```sh
 .rss     {
         transform: translate(50%,50%);
