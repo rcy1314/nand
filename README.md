@@ -10,8 +10,8 @@
 
 Here's what's used you won't need:
 
-* [ Github ] - Hosting the reader!
-* [ Heroku ] - Hosting the proxy!
+* Github - Hosting the reader!
+* Heroku - Hosting the proxy!
 
 ### Sourcing
 
