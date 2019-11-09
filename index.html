@@ -15,7 +15,7 @@
 		height: 100%;
 		width: 100%;
 		left: -.5px;
-		top: 0px;
+		top: .5em;
 	}
 	.output {
 		outline: none !important;
@@ -24,25 +24,24 @@
 		bottom: 2em;
 		width: 99%;
 		left: 2px;
-		top: 2.2em;
+		top: 1.7em;
 	}
 	.bottom {
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
-		bottom: .5em;
+		bottom: .3em;
 		width: 100%;
 	}
 	button {
 		font-size: 13px;
 		border: none;
 		width: 16.6%;
-		padding: 10px;
 	}
-	.buttonOutput {
+	.content {
+		text-align: left;
 		width: 100%;
 		height: 6em;
-		text-align: left;
 	}
 </style>
 <script>
@@ -54,44 +53,28 @@ jQuery(function($) {
 	$(".menu").live("click", function(event) { var name = $(this).get(0).id; $.each(menu, function(i, k) { if (name === k.name) { $(this).getfeed(k.category, k.feed, k.title, k.homepage); } }); });
 	$(".random").live("click", function () { $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { obj.push(menu[i]); } }); var n = obj[Math.floor(Math.random()*obj.length)]; $(this).getfeed(n.category, n.feed, n.title, n.homepage); return false; });
     });
-    $(".toggle").live("click", function () {
-	if ($(".output").hasClass("dark")) { $(".output").removeClass("dark"); $(".output").addClass("light"); }
-	else if ($(".output").hasClass("light")) { $(".output").removeClass("light"); $(".output").addClass("dark"); }
-	$(this).applyColors();	
-    });
+    $(".toggle").live("click", function () { if ($(".output").hasClass("dark")) { $(".output").removeClass("dark"); $(".output").addClass("light"); } else if ($(".output").hasClass("light")) { $(".output").removeClass("light"); $(".output").addClass("dark"); } $(this).applyColors(); });
     $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).showMenu(); });
     $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
-    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='content'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
     $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
-    $.fn.showMenu = function () {
-	$(".output").append("<hr class='first'>");
-	$.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { $(".output").append("<button id='" + k.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } });
-	$(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first");
-    }
-    $.fn.applyColors = function () {
-	if ($(".output").hasClass("light")) { $(".category, .container, button, .buttonOutput").attr("style", "background-color: transparent; color: #000000;"); }
-	else if ($(".output").hasClass("dark")) { $(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF;"); }
-	$(".selected").css("text-decoration", "underline");
-    }
+    $.fn.showMenu = function () { $(".output").append("<hr class='first'>"); $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { $(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } }); $(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first"); }
+    $.fn.applyColors = function () { if ($(".output").hasClass("light")) { $(".category, .container, button, .content").attr("style", "background-color: transparent; color: #000000;"); } else if ($(".output").hasClass("dark")) { $(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF;"); } $(".selected").css("text-decoration", "underline"); }
     $.fn.getfeed = function (category, feed, title, homepage) {
-	$(".output").append("<hr class='fetch'><br><button class='buttonOutput'>Fetching source.  Please be patient.</button><br>")
+	$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
 	$(".output").addClass("fetch"); $(this).animateScroll(".fetch"); $(this).applyColors();
 	var jqxhr = $.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 	.fail(function () { $(".output").removeClass("fetch"); })
-	.success(function (data) {
-		$(".output").removeClass("fetch");
+	.success(function (data) { $(".output").removeClass("fetch");
 		var entry = $(data).find("entry");
 		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
-		$(".output").append("<br><hr class='first'><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
-				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-	        $(data).find(format).each(function () {
+		$(".output").append("<br><hr class='first'><button class='content' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+	        $(data).find(format).each(function (i, k) {
 			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
-			$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+			$(".output").append("<br><button class='content' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
    		});
-		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-		$(this).cloneRepo();
-		$(this).applyColors();
-		$(this).animateScroll(".first");
+		$(".output").append("<br><button class='content' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		$(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first");
 	})
     }
 });
