@@ -45,10 +45,10 @@ Here is some css for our iframe...
 
 ### CORS Proxy
 
-Heroku's CORS Proxy
+- Heroku's CORS Proxy
 `http://cors-anywhere.herokuapp.com/`
 
-Personal Heroku CORS Proxy instance
+- Personal Heroku CORS Proxy instance
 `https://salty-refuge-64158.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
