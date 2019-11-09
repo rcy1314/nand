@@ -60,7 +60,7 @@ Cloning and applyColors
 - Heroku's CORS Proxy
 `http://cors-anywhere.herokuapp.com/`
 
-- Personal Heroku CORS Proxy Instance
+- Personal Heroku CORS-Anywhere Instance
 `https://salty-refuge-64158.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
