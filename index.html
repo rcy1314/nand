@@ -2,28 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
-    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="rss.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <script src="rss.js"></script>
   </head>
 <body>
 <style>
 	::-webkit-scrollbar { display: none; }
-	html, body, .container {
+	.container {
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
-	}
-	.container {
 		position: absolute;
 		left: -.5px;
 		top: 0px;
 	}
 	.output {
-		position: fixed;
-		bottom: 2.5em;
+		position: absolute;
+		bottom: 2em;
 		width: 99%;
 		left: 2px;
 		top: 3em;
@@ -34,7 +32,7 @@
 		background-color: transparent;
 	}
 	.bottom {
-		position: fixed;
+		position: absolute;
 		font-size: 12px;
 		font-family: Arial;
 		bottom: 1em;
@@ -61,154 +59,72 @@
 <script>
 var Proxy = "https://salty-refuge-64158.herokuapp.com/";
 jQuery(function($) {
-    $(window).load(function () {
-	$("#Social").trigger("click");
-	$(".output").attr('tabindex', -1).focus();
-	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
-    });
+    $(window).load(function () { $("#Social").trigger("click"); $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
     $(document).one("ready", function () {
 	$(".menu").live("click", function(event) {
 		var name = $(this).get(0).id;
-		$.each(menu, function(index, key) {
-			if (name === key.name) {
-
-				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
-
-			}
-
-		});
+		$.each(menu, function(index, key) { if (name === key.name) { $(this).getfeed(key.category, key.feed, key.title, key.homepage); } });
 	});
 	$(".random").live("click", function () {
 		var array = [];
-		$.each(menu, function(index, key) {
-			if (key.category == $(".selected").attr("id")) {
-
-				array.push(menu[index].name);
-
-			}
-
-		});
+		$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id")) { array.push(menu[index].name); } });
 		var name = array[Math.floor(Math.random()*array.length)];
 		$.each(menu, function(index, key) {
 			if (name == key.name) {
-
 				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
 				return false;
-
 			}
 		});
 	});
-   	$('.output').bind('scroll', function(){
-		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (!$(".output").hasClass("fetch")) {
-
-				$(this).showMenu();
-
-			}
-
-		}
-
-	});
+   	$('.output').bind('scroll', function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) { if (!$(".output").hasClass("fetch")) { $(this).showMenu(); } } });
     });
     $(".toggle").live("click", function () {
-	if ($(".output").hasClass("dark")) {
-
-		$(".output").removeClass("dark");
-		$(".output").addClass("light");
-
-	}
-
-	else if ($(".output").hasClass("light")) {
-
-		$(".output").removeClass("light");
-		$(".output").addClass("dark");
-
-	}
-
+	if ($(".output").hasClass("dark")) { $(".output").removeClass("dark"); $(".output").addClass("light"); }
+	else if ($(".output").hasClass("light")) { $(".output").removeClass("light"); $(".output").addClass("dark"); }
 	$(this).applyColors();	
-
     });
-
-    $(".category").live("click", function(event) { 
-	$(".category").removeClass("selected");
-	$(this).addClass("selected");
-	$(this).showMenu();
-    });
-
+    $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).showMenu(); });
     $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
     $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput info'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
-
+    $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
     $.fn.showMenu = function () {
 	$(".output").append("<hr class='title'>");
 	$(this).animateScroll(".title");
 	$.each(menu, function(index, key) {
-		if ($(".selected").attr("id") == key.category) {
-
-			$(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>");
-
-		}
+		if ($(".selected").attr("id") == key.category) { $(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>"); }
 		if (index == (menu.length - 1)) { $(this).cloneRepo(); }
-
 	});
 	$(this).applyColors();
-
     }
-
-    $.fn.animateScroll = function (hr) {
-	$(".output").animate({
-
-		scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop()
-
-	}, "slow");
-    }
-
     $.fn.applyColors = function () {
 	if ($(".output").hasClass("light")) {
-
 		$("html, body, a, .category, .output, .container, button, .bottom").attr("style", "background-color: #F5F5F5; color: #000000; text-decoration: none;");
 		$("button.category, button.buttonOutput, .bottom button, .info").css("background-color", "transparent");
 		$(".buttonOutput").live("click", function () { $(this).css("background-color", "#EEEEEE"); });
 		$(".info").css("background-color", "#EEEEEE");
-
 	}
 	else if ($(".output").hasClass("dark")) {
-
 		$("html, body, a, .category, .output, .container, .bottom, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");		
 		$(".buttonOutput").live("click", function () { $(this).css("background-color", "#222222"); });
 		$(".info").css("background-color", "#222222");
-
 	}
-	$(".selected").css("text-decoration", "underline");
-	$(".toggle").css("float", "left");
-	$(".random").css("float", "right");
+	$(".selected").css("text-decoration", "underline"); $(".toggle").css("float", "left"); $(".random").css("float", "right");
     }
-
     $.fn.getfeed = function (category, feed, title, homepage) {
-	$(".output").addClass("fetch");
 	$(".output").append("<hr class='fetch'><br><button class='buttonOutput info'>Fetching source.  Please be patient.</button><br>")
-	$(this).animateScroll(".fetch");
-	$(this).applyColors();
-
+	$(".output").addClass("fetch"); $(this).animateScroll(".fetch"); $(this).applyColors();
 	var jqxhr = $.get(Proxy + feed)
 	.success(function (data) {
 		var entry = $(data).find("entry");
-
 		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
-
-		$(".output").append("<br><hr class='first'><br><button class='buttonOutput info' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
+		$(".output").append("<br><hr class='first'><button class='buttonOutput info' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
 				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br>");
-
-		$(this).animateScroll(".first");
-
 	        $(data).find(format).each(function (index, key) {
-
 			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
-
 			$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
-
    		});
+		$(this).animateScroll(".first");
 	})
-
 	.fail(function () {
 		$(".output").removeClass("fetch");
 		$(".output").append("<br><hr><button class='buttonOutput info'>Oops!  Something went wrong.</button><br>" +
@@ -223,7 +139,6 @@ jQuery(function($) {
 		$(this).cloneRepo();
 		$(this).applyColors();
 	});
-
     }
 });
 </script>
