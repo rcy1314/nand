@@ -34,7 +34,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 Here is the css for our iframe...
 ```sh
-.rss     {
+.rss {
         transform: translate(50%,50%);
         position: absolute;
         border: none;
