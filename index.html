@@ -14,39 +14,34 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		overflow: hidden;
 		left: -.5px;
 		top: 0px;
 	}
 	.output {
+		outline: none !important;
 		position: absolute;
+		overflow: auto;
 		bottom: 2em;
 		width: 99%;
 		left: 2px;
 		top: 2.2em;
-		overflow: auto;
-		outline: none !important;
 	}
 	.bottom {
 		position: absolute;
-		font-size: 12px;
-		bottom: 1em;
-		height: 1.5em;
-		width: 100%;
 		text-align: center;
+		height: 1.5em;
+		bottom: .5em;
+		width: 100%;
 	}
 	button {
+		font-size: 13px;
 		border: none;
 		width: 16.6%;
-		border: none;
-		font-size: 12px;
 		padding: 10px;
 	}
-	button.buttonOutput {
-		font-size: 13px;
-		font-family: Arial;
+	.buttonOutput {
 		width: 100%;
-		height: 5em;
+		height: 6em;
 		text-align: left;
 	}
 </style>
@@ -57,12 +52,7 @@ jQuery(function($) {
     $(document).one("ready", function () {
    	$('.output').bind('scroll', function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) { if (!$(".output").hasClass("fetch")) { $(this).showMenu(); } } });
 	$(".menu").live("click", function(event) { var name = $(this).get(0).id; $.each(menu, function(i, k) { if (name === k.name) { $(this).getfeed(k.category, k.feed, k.title, k.homepage); } }); });
-	$(".random").live("click", function () {
-		$.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { obj.push(menu[i]); } });
-		var n = obj[Math.floor(Math.random()*obj.length)];
-		$(this).getfeed(n.category, n.feed, n.title, n.homepage);
-		return false;
-	});
+	$(".random").live("click", function () { $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { obj.push(menu[i]); } }); var n = obj[Math.floor(Math.random()*obj.length)]; $(this).getfeed(n.category, n.feed, n.title, n.homepage); return false; });
     });
     $(".toggle").live("click", function () {
 	if ($(".output").hasClass("dark")) { $(".output").removeClass("dark"); $(".output").addClass("light"); }
@@ -73,12 +63,13 @@ jQuery(function($) {
     $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
     $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='buttonOutput'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
     $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
-    $.fn.showMenu = function () { $(".output").append("<hr class='first'>");
+    $.fn.showMenu = function () {
+	$(".output").append("<hr class='first'>");
 	$.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { $(".output").append("<button id='" + k.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } });
 	$(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first");
     }
     $.fn.applyColors = function () {
-	if ($(".output").hasClass("light")) { $(".category, .container, button").attr("style", "background-color: transparent; color: #000000;"); }
+	if ($(".output").hasClass("light")) { $(".category, .container, button, .buttonOutput").attr("style", "background-color: transparent; color: #000000;"); }
 	else if ($(".output").hasClass("dark")) { $(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF;"); }
 	$(".selected").css("text-decoration", "underline");
     }
