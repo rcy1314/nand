@@ -40,6 +40,7 @@
 		text-align: center;
 	}
 	button {
+		background-color: #FFFFFF;
 		border: none;
 		width: 16.6%;
 		border: none;
@@ -97,15 +98,13 @@ jQuery(function($) {
     }
     $.fn.applyColors = function () {
 	if ($(".output").hasClass("light")) {
-		$(".category, .output, .container, button, .bottom").attr("style", "background-color: #FFFFFF; color: #000000; text-decoration: none;");
+		$(".category, .output, .container, button, .bottom, .info").attr("style", "background-color: #FFFFFF; color: #000000; text-decoration: none;");
 		$("button.category, button.buttonOutput, .bottom button, .info").css("background-color", "transparent");
 		$(".buttonOutput").live("click", function () { $(this).css("background-color", "#EEEEEE"); });
-		$(".info").css("background-color", "#EEEEEE");
 	}
 	else if ($(".output").hasClass("dark")) {
-		$(".category, .output, .container, button, .bottom").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");		
+		$(".category, .output, .container, button, .bottom, .info").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");		
 		$(".buttonOutput").live("click", function () { $(this).css("background-color", "#222222"); });
-		$(".info").css("background-color", "#222222");
 	}
 	$(".selected").css("text-decoration", "underline"); $(".toggle").css("float", "left"); $(".random").css("float", "right");
     }
