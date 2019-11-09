@@ -15,9 +15,9 @@ Here's what's used you won't need:
 
 ### Sourcing
 
-Include an Iframe in your html with the hosted site.
+Include an Iframe in your html with the site.
 
-`<iframe class="rss" src="https://acktic.github.io/" </iframe>`
+`<iframe class="rss" src="https://acktic.github.io/"></iframe>`
 
 ### Styling
 
