@@ -21,9 +21,13 @@ Include an Iframe in your html with the hosted site.
 
 ### Styling
 
-Here is an example class for our iframe...
+Here is an css for our iframe...
 ```sh
-.rss {
+body {
+        background-image: url(https://ackti.files.wordpress.com/2019/08/1566092117954.jpg);
+        background-repeat: no-repeat;
+}
+.rss     {
         transform: translate(50%,50%);
         position: absolute;
         border: none;
@@ -31,7 +35,7 @@ Here is an example class for our iframe...
         height: 80%;
         width: 50%;
         right: 50%;
-     }
+}
 ```
 
 ### CORS Proxy
