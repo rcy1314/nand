@@ -8,7 +8,7 @@
 
 ### Dependencies
 
-Here's what used you won't need:
+Here's what's used you won't need:
 
 * [ Github ] - Hosting the reader!
 * [ Heroku ] - Hosting the proxy!
@@ -47,6 +47,3 @@ License
 ----
 
 None
-
-
->This markup was created with dillinger.io
