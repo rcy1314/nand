@@ -24,13 +24,13 @@ Include an Iframe in your html with the hosted site.
 Here is an example class for our iframe...
 ```sh
 .rss {
-        background-color: #EEEEEE;
+        transform: translate(50%,50%);
         position: absolute;
         border: none;
-        height: 50%;
+        bottom: 50%;
+        height: 80%;
         width: 50%;
-        right: 0em;
-        top: 10em;
+        right: 50%;
      }
 ```
 
