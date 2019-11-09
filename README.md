@@ -1,10 +1,10 @@
 # JQuery RSS Aggregator
 
-  - Easy to include.
+  - Easy to include!
+  - Clone and Go!
   - Easy to use!
 
 > 
-
 
 ### Dependencies
 
@@ -13,6 +13,12 @@ Here's what's used you won't need:
 * Github - Hosting the reader!
 * Heroku - Hosting the proxy!
 * Cors-anywhere - Headers proxy!
+
+### Menu Array
+
+* Simple Array Structure
+
+`{ name : "(unique)", title : "About feed", feed : "xml url", homepage : "referring url" },
 
 ### Sourcing
 
