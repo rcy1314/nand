@@ -1,8 +1,9 @@
 # JQuery RSS Aggregator
 
-  - Easy to include!
-  - Clone and Go!
-  - Easy to use!
+  - Easy to include.
+  - Mobile Friendly.
+  - Clone and Go.
+  - Easy to use.
 
 > 
 
@@ -10,9 +11,9 @@
 
 Here's what's used you won't need:
 
-* Github - Hosting the reader!
-* Heroku - Hosting the proxy!
-* Cors-anywhere - Headers proxy!
+* Github - Hosting the reader.
+* Heroku - Hosting the proxy.
+* Cors-anywhere - CORS Headers proxy.
 
 ### Menu Array
 
