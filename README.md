@@ -21,9 +21,9 @@ Include an Iframe in your html with the site.
 
 ### Styling
 
-Here is some css for our iframe...
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
 
+Here is some css for our iframe...
 ```sh
 .rss     {
         transform: translate(50%,50%);
