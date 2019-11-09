@@ -32,7 +32,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/8295130659554.png "Example iframe")
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/0218305377921.png "Example iframe")
 
-Here is some css for our iframe...
+Here the some css for our iframe...
 ```sh
 .rss     {
         transform: translate(50%,50%);
@@ -44,6 +44,13 @@ Here is some css for our iframe...
         right: 50%;
 }
 ```
+Cloning and applyColors
+
+  - light mode uses transparent background and black foreground.
+`$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");` 
+ - dark mode uses black background and white foreground.
+`$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");`  
+ 
 
 ### CORS Proxy
 
