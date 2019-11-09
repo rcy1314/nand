@@ -9,12 +9,18 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none; }
+	::-webkit-scrollbar {
+		display: none;
+	}
 	.container {
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		left: -.5px;
+		top: 0em;
+	}
+	.category {
+		position: relative;
 		top: .5em;
 	}
 	.output {
@@ -24,13 +30,13 @@
 		bottom: 2em;
 		width: 99%;
 		left: 2px;
-		top: 1.7em;
+		top: 2em;
 	}
 	.bottom {
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
-		bottom: .3em;
+		bottom: 0em;
 		width: 100%;
 	}
 	button {
@@ -41,7 +47,7 @@
 	.content {
 		text-align: left;
 		width: 100%;
-		height: 6em;
+		height: 5em;
 	}
 </style>
 <script>
@@ -56,7 +62,7 @@ jQuery(function($) {
     $(".toggle").live("click", function () { if ($(".output").hasClass("dark")) { $(".output").removeClass("dark"); $(".output").addClass("light"); } else if ($(".output").hasClass("light")) { $(".output").removeClass("light"); $(".output").addClass("dark"); } $(this).applyColors(); });
     $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).showMenu(); });
     $(".github").live("click", function () { window.open("https://github.com/acktic/acktic.github.io"); });
-    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='content'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+    $.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
     $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
     $.fn.showMenu = function () { $(".output").append("<hr class='first'>"); $.each(menu, function(i, k) { if (k.category == $(".selected").attr("id")) { $(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>"); } }); $(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first"); }
     $.fn.applyColors = function () { if ($(".output").hasClass("light")) { $(".category, .container, button, .content").attr("style", "background-color: transparent; color: #000000;"); } else if ($(".output").hasClass("dark")) { $(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF;"); } $(".selected").css("text-decoration", "underline"); }
@@ -69,10 +75,7 @@ jQuery(function($) {
 		var entry = $(data).find("entry");
 		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
 		$(".output").append("<br><hr class='first'><button class='content' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-	        $(data).find(format).each(function (i, k) {
-			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
-			$(".output").append("<br><button class='content' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
-   		});
+		$(data).find(format).each(function () { if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); } $(".output").append("<br><button class='content' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>"); });
 		$(".output").append("<br><button class='content' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(this).cloneRepo(); $(this).applyColors(); $(this).animateScroll(".first");
 	})
@@ -289,8 +292,7 @@ var menu = [
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 ]
 </script>
-<div class="container">
-<button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button>
+<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button>
 <div class="output light"></div>
 <div class="bottom"><button class="toggle" style="float:left;"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random" style="float:right;"><i class="fa fa-random"></i></button></div>
 </div>
