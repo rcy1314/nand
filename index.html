@@ -51,29 +51,20 @@
 		font-family: Arial;
 		width: 100%;
 		height: 5em;
-		border: none;
 		text-align: left;
 	}
 </style>
 <script>
+var array = [];
 var Proxy = "https://salty-refuge-64158.herokuapp.com/";
 jQuery(function($) {
     $(window).load(function () { $("#Social").trigger("click"); $(".output").attr('tabindex', -1).focus(); $(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); }); });
     $(document).one("ready", function () {
-	$(".menu").live("click", function(event) {
-		var name = $(this).get(0).id;
-		$.each(menu, function(index, key) { if (name === key.name) { $(this).getfeed(key.category, key.feed, key.title, key.homepage); } });
-	});
+	$(".menu").live("click", function(event) { var name = $(this).get(0).id; $.each(menu, function(index, key) { if (name === key.name) { $(this).getfeed(key.category, key.feed, key.title, key.homepage); } }); });
 	$(".random").live("click", function () {
-		var array = [];
 		$.each(menu, function(index, key) { if (key.category == $(".selected").attr("id")) { array.push(menu[index].name); } });
 		var name = array[Math.floor(Math.random()*array.length)];
-		$.each(menu, function(index, key) {
-			if (name == key.name) {
-				$(this).getfeed(key.category, key.feed, key.title, key.homepage);
-				return false;
-			}
-		});
+		$.each(menu, function(index, key) { if (name == key.name) { $(this).getfeed(key.category, key.feed, key.title, key.homepage); return false; } });
 	});
    	$('.output').bind('scroll', function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) { if (!$(".output").hasClass("fetch")) { $(this).showMenu(); } } });
     });
@@ -88,20 +79,14 @@ jQuery(function($) {
     $.fn.animateScroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }, "slow"); }
     $.fn.showMenu = function () {
 	$(".output").append("<hr class='title'>");
-	$(this).animateScroll(".title");
-	$.each(menu, function(index, key) {
-		if ($(".selected").attr("id") == key.category) { $(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>"); }
-		if (index == (menu.length - 1)) { $(this).cloneRepo(); }
-	});
+	$.each(menu, function(index, key) { if ($(".selected").attr("id") == key.category) { $(".output").append("<button id='" + key.name + "' class='menu buttonOutput'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + key.category + "</b>&ensp;" + key.title + "</button>"); } });
+	$(this).cloneRepo();
 	$(this).applyColors();
+	$(this).animateScroll(".title");
     }
     $.fn.applyColors = function () {
-	if ($(".output").hasClass("light")) {
-		$(".category, .container, button").attr("style", "background-color: transparent; color: #000000; text-decoration: none;");
-	}
-	else if ($(".output").hasClass("dark")) {
-		$(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;");		
-	}
+	if ($(".output").hasClass("light")) { $(".category, .container, button").attr("style", "background-color: transparent; color: #000000; text-decoration: none;"); }
+	else if ($(".output").hasClass("dark")) { $(".category, .container, button").attr("style", "background-color: #000000; color: #FFFFFF; text-decoration: none;"); }
 	$(".selected").css("text-decoration", "underline"); $(".toggle").css("float", "left"); $(".random").css("float", "right");
     }
     $.fn.getfeed = function (category, feed, title, homepage) {
@@ -109,30 +94,21 @@ jQuery(function($) {
 	$(".output").addClass("fetch"); $(this).animateScroll(".fetch"); $(this).applyColors();
 	var jqxhr = $.get(Proxy + feed)
 	.success(function (data) {
+		$(".output").removeClass("fetch");
 		var entry = $(data).find("entry");
 		if (entry.length > 0) { var format = "entry" } else { var format = "item" }
 		$(".output").append("<br><hr class='first'><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'>" +
-				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><br>");
+				    "<i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 	        $(data).find(format).each(function (index, key) {
 			if (format == "entry") { var link = $(this).find("link").attr("href"); } else { var link = $(this).find("link").text(); }
 			$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + link + "&quot;, target=&quot_blank&quot;)'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
    		});
-		$(this).animateScroll(".first");
-	})
-	.fail(function () {
-		$(".output").removeClass("fetch");
-		$(".output").append("<br><hr><button class='buttonOutput'>Oops!  Something went wrong.</button><br>" +
-				    "<button class='buttonOutput' onclick='window.open(&quot;" + proxy + "&quot;, target=&quot;_blank&quot;)'>You can verify the proxy here.</button>" +
-				    "<button class='buttonOutput' onclick='window.open(&quot;" + feed  + "&quot;, target=&quot;_blank&quot;)'>Also the validity of the feed here.</button>");
-		$(this).applyColors();
-	})
-	.done(function () {
-		$(".output").removeClass("fetch");
-		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>" +
-				    "&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		$(".output").append("<br><button class='buttonOutput' onclick='window.open(&quot;" + homepage + "&quot;, target=&quot;_blank&quot;)'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(this).cloneRepo();
 		$(this).applyColors();
-	});
+		$(this).animateScroll(".first");
+	})
+	.fail(function () { $(".output").removeClass("fetch"); })
     }
 });
 var menu = [
