@@ -1,4 +1,4 @@
-# JQuery RSS Aggregator
+# RSS
 
   - Mobile Friendly.
   - Easy to include.
