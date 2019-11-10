@@ -111,11 +111,12 @@ jQuery(function($) {
 	}
 	$.fn.getFeed = function(category, feed, title, homepage) {
 		$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
-		$(".output").toggleClass("fetch"); $(this).scroll(".fetch");
+		$(".output").addClass("fetch");
+		$(this).scroll(".fetch");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () { $(".output").toggleClass("fetch"); })
+		.fail(function () { $(".output").removeClass("fetch"); })
 		.success(function (data) {
-			$(".output").toggleClass("fetch");
+			$(".output").removeClass("fetch");
 			var entry = $(data).find("entry");
 			if (entry.length > 0) {
 				var format = "entry"
