@@ -41,7 +41,7 @@
 		font-size: 12px;
 		padding: 12px;
 		border: none;
-		width: 16.4%;
+		width: 16%;
 	}
 </style>
 <script>
@@ -80,6 +80,7 @@ jQuery(function($) {
 		});
 	}
 	function pop(n) {
+		$(".menu, .first:first").remove();
 		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
@@ -361,8 +362,7 @@ var menu = [
 	<button id="Entertainment" class="tag">Entmt</button>
 	<button id="Social" class="tag">Social</button>
 	<button id="Sports" class="tag">Sports</button>
-	<button id="Technology" class="tag">Tech</button>
-	<button id="World" class="tag">World</button>
+	<button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
 	<div class="output light"></div>
 	<div class="bottom">
 		<button class="toggle" onclick="toggle()"><i class="fa fa-th-large"></i></button>
