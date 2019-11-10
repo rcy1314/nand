@@ -79,7 +79,6 @@ jQuery(function($) {
 		return false;
 	});
     });
-    $(".github").live("click", function () { $(this).link("https://github.com/acktic/acktic.github.io"); });
     $(".toggle").live("click", function () {
 	$(".output").toggleClass("dark");
 	$(".output").toggleClass("light");
@@ -102,7 +101,7 @@ jQuery(function($) {
 	$(this).animateScroll(".first");
     }
     $.fn.cloneRepo = function () {
-	$(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
+	$(".output").append("<br><hr><br><button class='content' onclick='$(this).link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
     }
     $.fn.applyColors = function () {
 	if ($(".output").hasClass("light")) {
@@ -371,7 +370,7 @@ var menu = [
 <div class="container">
 	<button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button>
 	<div class="output light"></div>
-	<div class="bottom"><button class="toggle"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random"><i class="fa fa-random"></i></button></div>
+	<div class="bottom"><button class="toggle"><i class="fa fa-th-large"></i></button><button onclick="$(this).link('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button><button class="random"><i class="fa fa-random"></i></button></div>
 </div>
 </body>
 </html>
