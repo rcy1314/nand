@@ -7,7 +7,16 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none; }
+	::-webkit-scrollbar {
+		display: none;
+	}
+	button {
+		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+		font-size: 12px;
+		padding: 12px;
+		border: none;
+		width: 16%;
+	}
 	.container {
 		position: absolute;
 		height: 100%;
@@ -36,13 +45,6 @@
 		bottom: .8em;
 		width: 100%;
 	}
-	button {
-		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-		font-size: 12px;
-		padding: 12px;
-		border: none;
-		width: 16%;
-	}
 </style>
 <script>
 var obj = [];
@@ -69,52 +71,52 @@ jQuery(function($) {
 		pop($(this).attr("id"));
     });
 });
-	function url(u) { window.open(u); };
-	function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
-	function scroll(h) { $(".output").animate({ scrollTop: $(h + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
-	function xhr(n) {
-		$.each(menu, function(i, k) {
-			if (n === k.name) {
-				getFeed(k.category, k.feed, k.title, k.homepage);
-			}
-		});
-	}
-	function pop(n) {
-		$(".menu, .first:first").remove();
-		$(".output").append("<hr class='first'>");
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
-			}
-		});
-		applyColors();
-		scroll(".first");
-	}
-	function applyColors() {
-		if ($(".output").hasClass("light")) {
-			$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
+    function url(u) { window.open(u); };
+    function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
+    function scroll(h) { $(".output").animate({ scrollTop: $(h + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+    function xhr(n) {
+	$.each(menu, function(i, k) {
+		if (n === k.name) {
+			getFeed(k.category, k.feed, k.title, k.homepage);
 		}
-		else if ($(".output").hasClass("dark")) {
-			$(".container, .tag, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+	});
+    }
+    function pop(n) {
+	$(".menu, .first:first").remove();
+	$(".output").append("<hr class='first'>");
+	$.each(menu, function(i, k) {
+		if (n == k.category) {
+			$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 		}
-		$(".toggle").css("float", "left");
-		$(".random").css("float", "right");
+	});
+	applyColors();
+	scroll(".first");
+    }
+    function random() {
+	$.each(menu, function(i, k) {
+		if (k.category == $(".selected").attr("id")) {
+			obj.push(menu[i]);
+		}
+	});
+	var n = obj[Math.floor(Math.random()*obj.length)];
+	getFeed(n.category, n.feed, n.title, n.homepage);
+	return false;
+    }
+    function applyColors() {
+	if ($(".output").hasClass("light")) {
+		$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
 	}
-	function random() {
-		$.each(menu, function(i, k) {
-			if (k.category == $(".selected").attr("id")) {
-				obj.push(menu[i]);
-			}
-		});
-		var n = obj[Math.floor(Math.random()*obj.length)];
-		getFeed(n.category, n.feed, n.title, n.homepage);
-		return false;
+	else if ($(".output").hasClass("dark")) {
+		$(".container, .tag, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 	}
-	function getFeed(category, feed, title, homepage) {
-		$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
-		$(".output").addClass("fetch");
-		scroll(".fetch");
-		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
+	$(".toggle").css("float", "left");
+	$(".random").css("float", "right");
+    }
+    function getFeed(category, feed, title, homepage) {
+	$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
+	$(".output").addClass("fetch");
+	scroll(".fetch");
+	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () { $(".output").removeClass("fetch"); })
 		.success(function (data) {
 			$(".output").removeClass("fetch");
@@ -140,7 +142,9 @@ jQuery(function($) {
 			scroll(".first");
 		})
 	}
+
 var menu = [
+
 	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
 	{ name : "ycvc", category : "Local", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
 	{ name : "abcb", category : "Local", title : "ABC WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://wcvb.com" },
@@ -190,7 +194,6 @@ var menu = [
 	{ name : "pzhl", category : "Entertainment", title : "PerezHilton is known for posts covering gossip items about celebrities.", feed : "https://perezhilton.com/feed", homepage : "https://perezhilton.com" },
 	{ name : "rost", category : "Entertainment", title : "RollingStone Magazine, the authority on music, entertainment, politics and pop culture.", feed : "https://www.rollingstone.com/feed", homepage : "https://rollingstone.com" },
 	{ name : "nyet", category : "Entertainment", title : "NYPost Entertainment latest and breaking news on celebrities, movies, and TV shows.", feed : "https://nypost.com/entertainment/feed", homepage : "https://nypost.com/entertainment/feed" }, 
-	{ name : "onin", category : "Entertainment", title : "The Onion brings you all of the latest news, stories, and more from America's finest news source.", feed : "https://www.theonion.com/rss", homepage : "https://theonion.com" },
 	{ name : "tmzn", category : "Entertainment", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://tmz.com" },
 	{ name : "uprx", category : "Entertainment", title : "Uproxx is an entertainment and popular culture news website.", feed : "http://feeds.feedburner.com/uproxx/features", homepage : "https://uproxx.com" },
 	{ name : "vanf", category : "Entertainment", title : "Vanity Fair is a magazine of popular culture, fashion, and current affairs.", feed : "https://www.vanityfair.com/feed/rss", homepage : "https://vanityfair.com" },
@@ -355,11 +358,12 @@ var menu = [
 	{ name : "upif", category : "World", title : "United Press International is a leading provider of news, photos and information.", feed : "https://rss.upi.com/news/news.rss", homepage : "https://upi.com" },
 	{ name : "vice", category : "World", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://vice.com" },
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
+
 ]
 </script>
     <div class="container">
 	<button id="Local" class="tag">Local</button>
-	<button id="Entertainment" class="tag">Entmt</button>
+	<button id="Entertainment" class="tag">Celeb</button>
 	<button id="Social" class="tag">Social</button>
 	<button id="Sports" class="tag">Sports</button>
 	<button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
