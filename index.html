@@ -58,15 +58,15 @@ jQuery(function($) {
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".output").hasClass("fetch")) {
-				showMenu($(".selected").attr("id"));
+				pop($(".selected").attr("id"));
 			}
 		}
 	});
-	$(".tag").live("click", function() {
-		$(".tag").toggleClass("selected");
+    });
+    $(".tag").live("click", function() {
+		$(".tag").removeClass("selected");
 		$(this).addClass("selected");
-		showMenu($(this).attr("id"));
-	});
+		pop($(this).attr("id"));
     });
 });
 	function url(u) { window.open(u); };
@@ -79,8 +79,7 @@ jQuery(function($) {
 			}
 		});
 	}
-	function showMenu(n) {
-		$(".menu, .first:first").remove();
+	function pop(n) {
 		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
