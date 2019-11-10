@@ -81,10 +81,9 @@ jQuery(function($) {
 	}
 	function pop(n) {
 		$(".menu, .first:first").remove();
-		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".output").append("<hr class='first'><button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
 		applyColors();
