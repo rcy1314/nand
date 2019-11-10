@@ -13,7 +13,7 @@
 	button {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
-		padding: 12px;
+		padding: 10px;
 		border: none;
 		width: 16%;
 	}
@@ -71,19 +71,19 @@ jQuery(function($) {
 		pop($(this).attr("id"));
     });
 });
-    function url(u) { window.open(u); };
+    function url(n) { window.open(n); };
     function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
-    function scroll(h) { $(".output").animate({ scrollTop: $(h + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+    function scroll(n) { $(".output").animate({ scrollTop: $(n + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
     function xhr(n) {
 	$.each(menu, function(i, k) {
 		if (n === k.name) {
-			getFeed(k.category, k.feed, k.title, k.homepage);
+			get(k.category, k.feed, k.title, k.homepage);
 		}
 	});
     }
     function pop(n) {
 	$(".menu, .first:first").remove();
-	$(".output").append("<hr class='first'>");
+	$(".output").append("<br class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
 			$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
@@ -99,8 +99,7 @@ jQuery(function($) {
 		}
 	});
 	var n = obj[Math.floor(Math.random()*obj.length)];
-	getFeed(n.category, n.feed, n.title, n.homepage);
-	return false;
+	get(n.category, n.feed, n.title, n.homepage);
     }
     function applyColors() {
 	if ($(".output").hasClass("light")) {
@@ -112,7 +111,7 @@ jQuery(function($) {
 	$(".toggle").css("float", "left");
 	$(".random").css("float", "right");
     }
-    function getFeed(category, feed, title, homepage) {
+    function get(category, feed, title, homepage) {
 	$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
 	$(".output").addClass("fetch");
 	scroll(".fetch");
@@ -127,7 +126,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".output").append("<br><hr class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".output").append("<br class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -209,7 +208,7 @@ var menu = [
 	{ name : "rcom", category : "Social", title : "Computer subreddit with questions and opinions.", feed : "https://www.reddit.com/r/computers/.rss", homepage : "https://reddit.com/r/computers" },
 	{ name : "rdeb", category : "Social", title : "Debian Linux subreddit covers topics revolving around Debian OS.", feed : "https://www.reddit.com/r/debian/.rss", homepage : "https://reddit.com/r/debian" },
 	{ name : "rdev", category : "Social", title : "Devops subreddit with 117k members created in 2010.", feed : "https://www.reddit.com/r/devops/.rss", homepage : "https://reddit.com/r/devops" },
-	{ name : "4diy", category : "Social", title : "Diy board discusses projects, ask questions, covers topics, exchanges ideas and techniques.", feed : "http://boards.4channel.org/diy/index.rss", homepage : "http://boards.4channel.org/diy" },
+	{ name : "4diy", category : "Social", title : "DIY board discusses projects, ask questions, covers topics, exchanges ideas and techniques.", feed : "http://boards.4channel.org/diy/index.rss", homepage : "http://boards.4channel.org/diy" },
 	{ name : "rfed", category : "Social", title : "Fedora subreddit community for users, developers and people interested in Fedora.", feed : "https://www.reddit.com/r/fedora/.rss", homepage : "https://reddit.com/r/fedora" },
 	{ name : "rgms", category : "Social", title : "Games subreddit aims to provide a place for informative and interesting gaming content.", feed : "http://www.reddit.com/r/games/.rss", homepage : "https://reddit.com/r/games" },
 	{ name : "hack", category : "Social", title : "Hacker News is a reader ran headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
