@@ -51,8 +51,8 @@
 	}
 </style>
 <script>
-var xhr
 var obj = []
+var xhr = -1
 jQuery(function($) {
     $(window).load(function () {
 	$(this).hook();
@@ -89,7 +89,6 @@ jQuery(function($) {
     $(".github").live("click", function () { $(this).link("https://github.com/acktic/acktic.github.io"); });
     $(".toggle").live("click", function () { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); xhr = 0; $(this).hook(); xhr = -1; });
     $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).hook(); });
-
     $.fn.link = function (url) { window.open(url); };
     $.fn.hook = function () {
 	if (xhr != 0) {
