@@ -50,7 +50,9 @@ jQuery(function($) {
     $(window).load(function() {
 	$(this).showMenu("Social");
 	$(".output").attr('tabindex', -1).focus();
-	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
+	$(".output").focusout(function(){
+		$(".output").attr('tabindex', -1).focus();
+    });
     });
     $(document).one("ready", function() {
    	$('.output').bind('scroll', function(){
@@ -61,7 +63,7 @@ jQuery(function($) {
 		}
 	});
 	$(".tag").live("click", function() {
-		$(".tag").removeClass("selected");
+		$(this).removeClass("selected");
 		$(this).toggleClass("selected");
 		$(this).showMenu($(this).attr("id"));
 	});
