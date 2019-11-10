@@ -7,7 +7,9 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none; }
+	::-webkit-scrollbar {
+		display: none;
+	}
 	.container {
 		position: absolute;
 		height: 100%;
@@ -17,6 +19,7 @@
 	}
 	.category {
 		position: relative;
+		font-size: 14px;
 		top: .5em;
 	}
 	.output {
@@ -34,6 +37,7 @@
 		height: 5em;
 	}
 	.bottom {
+		font-size: 16px;
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
@@ -41,6 +45,7 @@
 		width: 100%;
 	}
 	button {
+		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
 		border: none;
 		width: 16.6%;
@@ -50,16 +55,14 @@
 var obj = [];
 jQuery(function($) {
     $(window).load(function () {
-	$(this).showMenu($(".selected").attr("id"));
+	$(this).hook();
 	$(".output").attr('tabindex', -1).focus();
 	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
     });
     $(document).one("ready", function () {
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (!$(".output").hasClass("fetch")) {
-				$(this).showMenu($(".selected").attr("id"));
-			}
+				$(this).hook();
 		}
 	});
 	$(".menu").live("click", function(event) {
@@ -85,50 +88,46 @@ jQuery(function($) {
     $(".toggle").live("click", function () {
 	$(".output").toggleClass("dark");
 	$(".output").toggleClass("light");
-	$(this).applyColors(); });
+	$(".output").addClass("fetch");
+	$(this).hook();
+	$(".output").removeClass("fetch");
+    });
     $(".category").live("click", function(event) {
 	$(".category").removeClass("selected");
 	$(this).toggleClass("selected");
-	$(this).showMenu($(".selected").attr("id"));
+	$(this).hook();
     });
     $.fn.link = function (url) { window.open(url); };
-    $.fn.showMenu = function (category) {
+    $.fn.hook = function () {
+	if (!$(".output").hasClass("fetch")) {
 	$(".output").append("<hr class='first'>");
 	$.each(menu, function(i, k) {
-		if (k.category == category) {
+		if (k.category == $(".selected").attr("id")) {
 			$(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 		}
 	});
-	$(this).cloneRepo();
-	$(this).applyColors();
-	$(this).animateScroll(".first");
-    }
-    $.fn.cloneRepo = function () {
-	$(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>");
-    }
-    $.fn.applyColors = function () {
+	$(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br><br><br>");
+	}
 	if ($(".output").hasClass("light")) {
 		$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");
+		$(".category").mouseover( function () { $(this).css("color", "#333333"); }).mouseout(function () { $(this).css("color", "#000000"); });
 	}
 	else if ($(".output").hasClass("dark")) {
 		$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+		$(".category").mouseover( function () { $(this).css("color", "#DDDDDD"); }).mouseout(function () { $(this).css("color", "#FFFFFF"); });
 	}
-	$(".selected").css("text-decoration", "underline");
 	$(".toggle").css("float", "left");
-	$(".random").css("float", "right");
-    }
-    $.fn.animateScroll = function (hr) {
-	$(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
+	$(".github").css("float", "right");
+	$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
     }
     $.fn.getFeed = function (category, feed, title, homepage) {
-	$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
-	$(".output").toggleClass("fetch"); $(this).animateScroll(".fetch"); $(this).applyColors();
+	$(".output").append("<hr class='first'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
+	$(".output").addClass("fetch");
+	$(this).hook();
 	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-	.fail(function () {
-		$(".output").toggleClass("fetch");
-	})
+	.fail(function () { $(".output").removeClass("fetch"); })
 	.success(function (data) {
-		$(".output").toggleClass("fetch");
+		$(".output").addClass("fetch");
 		var entry = $(data).find("entry");
 		if (entry.length > 0) {
 			var format = "entry"
@@ -147,9 +146,8 @@ jQuery(function($) {
 			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 		});
 			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			$(this).cloneRepo();
-			$(this).applyColors();
-			$(this).animateScroll(".first");
+			$(this).hook(".first");
+			$(".output").removeClass("fetch");
 	})
     }
 });
