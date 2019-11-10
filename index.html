@@ -41,7 +41,7 @@
 		font-size: 12px;
 		padding: 12px;
 		border: none;
-		width: 13%;
+		width: 13.4%;
 	}
 </style>
 <script>
@@ -71,7 +71,6 @@ jQuery(function($) {
 	function link(url) { window.open(url); };
 	function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
 	function scroll(hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
-	function cloneRepo() { $(".output").append("<br><hr><br><button class='content' onclick='link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
 	function xhr(n) {
 		$.each(menu, function(i, k) {
 			if (n === k.name) {
@@ -80,13 +79,13 @@ jQuery(function($) {
 		});
 	}
 	function showMenu(n) {
+		$(".menu, .first:first").remove();
 		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".output").append("<button id='" + k.name + "' class='content' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
-		cloneRepo();
 		applyColors();
 		scroll(".first");
 	}
@@ -136,7 +135,6 @@ jQuery(function($) {
 				$(".output").append("<br><button class='content' onclick='link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
 			$(".output").append("<br><button class='content' onclick='link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			cloneRepo();
 			applyColors();
 			scroll(".first");
 		})
@@ -360,7 +358,7 @@ var menu = [
 </script>
     <div class="container">
 	<button id="Local" class="tag">Local</button>
-	<button id="Entertainment" class="tag">Ent</button>
+	<button id="Entertainment" class="tag">Entmt</button>
 	<button id="Social" class="tag">Social</button>
 	<button id="Sports" class="tag">Sports</button>
 	<button id="Technology" class="tag">Tech</button>
