@@ -47,12 +47,12 @@
 <script>
 var obj = [];
 jQuery(function($) {
-    $(window).load(function () {
-	$(this).showMenu($(".selected").attr("id"));
+    $(window).load(function() {
+	$(this).showMenu("Social");
 	$(".output").attr('tabindex', -1).focus();
 	$(".output").focusout(function(){ $(".output").attr('tabindex', -1).focus(); });
     });
-    $(document).one("ready", function () {
+    $(document).one("ready", function() {
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".output").hasClass("fetch")) {
@@ -60,28 +60,23 @@ jQuery(function($) {
 			}
 		}
 	});
-	$(".category").live("click", function(event) {
+	$(".category").live("click", function() {
 		$(".category").removeClass("selected");
 		$(this).toggleClass("selected");
-		$(this).showMenu($(".selected").attr("id"));
+		$(this).showMenu($(this).attr("id"));
 	});
-	$.fn.link = function (url) { window.open(url); };
-	$.fn.scroll = function (hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
-	$.fn.cloneRepo = function () { $(".output").append("<br><hr><br><button class='content' onclick='$(this).link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
-	$.fn.menu = function (n) {
+	$.fn.link = function(url) { window.open(url); };
+	$.fn.toggle = function() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); $(this).applyColors(); }
+	$.fn.scroll = function(hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+	$.fn.cloneRepo = function() { $(".output").append("<br><hr><br><button class='content' onclick='$(this).link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+	$.fn.menu = function(n) {
 		$.each(menu, function(i, k) {
 			if (n === k.name) {
 				$(this).getFeed(k.category, k.feed, k.title, k.homepage);
 			}
 		});
-
 	}
-	$.fn.toggle = function () {
-		$(".output").toggleClass("dark");
-		$(".output").toggleClass("light");
-		$(this).applyColors();
-	}
-	$.fn.random = function () {
+	$.fn.random = function() {
 		$.each(menu, function(i, k) {
 			if (k.category == $(".selected").attr("id")) {
 				obj.push(menu[i]);
@@ -91,7 +86,7 @@ jQuery(function($) {
 		$(this).getFeed(n.category, n.feed, n.title, n.homepage);
 		return false;
 	}
-	$.fn.showMenu = function (n) {
+	$.fn.showMenu = function(n) {
 		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
@@ -102,20 +97,19 @@ jQuery(function($) {
 		$(this).applyColors();
 		$(this).scroll(".first");
 	}
-	$.fn.applyColors = function () {
+	$.fn.applyColors = function() {
 		if ($(".output").hasClass("light")) {
 			$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");
 		}
 		else if ($(".output").hasClass("dark")) {
 			$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".selected").css("text-decoration", "underline");
 		$(".toggle").css("float", "left");
 		$(".random").css("float", "right");
 	}
-	$.fn.getFeed = function (category, feed, title, homepage) {
+	$.fn.getFeed = function(category, feed, title, homepage) {
 		$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
-		$(".output").toggleClass("fetch"); $(this).scroll(".fetch"); $(this).applyColors();
+		$(".output").toggleClass("fetch"); $(this).scroll(".fetch");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () { $(".output").toggleClass("fetch"); })
 		.success(function (data) {
