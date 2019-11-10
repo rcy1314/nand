@@ -51,8 +51,8 @@
 	}
 </style>
 <script>
-var obj = []
-var xhr = -1
+var obj = [];
+var xhr = -1;
 jQuery(function($) {
     $(window).load(function () {
 	$(this).hook();
@@ -87,7 +87,7 @@ jQuery(function($) {
 	});
     });
     $(".github").live("click", function () { $(this).link("https://github.com/acktic/acktic.github.io"); });
-    $(".toggle").live("click", function () { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); xhr = 0; $(this).hook(); xhr = -1; });
+    $(".toggle").live("click", function () { xhr = 0; $(".output").toggleClass("dark"); $(".output").toggleClass("light"); $(this).hook(); xhr = -1; });
     $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).hook(); });
     $.fn.link = function (url) { window.open(url); };
     $.fn.hook = function () {
@@ -112,6 +112,7 @@ jQuery(function($) {
 	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 	.fail(function () { xhr = -1; })
 	.success(function (data) {
+		$(".output").append("<br><hr class='first'><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		xhr = 0;
 		var entry = $(data).find("entry");
 		if (entry.length > 0) {
@@ -120,7 +121,6 @@ jQuery(function($) {
 		else {
 			var format = "item"
 		}
-		$(".output").append("<br><hr class='first'><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 		$(data).find(format).each(function () {
 			if (format == "entry") {
 				var link = $(this).find("link").attr("href");
@@ -131,7 +131,8 @@ jQuery(function($) {
 			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 		});
 			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			$(this).hook(); xhr = -1;
+			$(this).hook();
+			xhr = -1;
 	})
     }
 });
