@@ -41,7 +41,7 @@
 		font-size: 12px;
 		padding: 12px;
 		border: none;
-		width: 16.6%;
+		width: 13%;
 	}
 </style>
 <script>
@@ -52,53 +52,45 @@ jQuery(function($) {
 	$(".output").attr('tabindex', -1).focus();
 	$(".output").focusout(function(){
 		$(".output").attr('tabindex', -1).focus();
-    });
+	});
     });
     $(document).one("ready", function() {
    	$('.output').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".output").hasClass("fetch")) {
-				$(this).showMenu($(".selected").attr("id"));
+				showMenu($(".selected").attr("id"));
 			}
 		}
 	});
 	$(".tag").live("click", function() {
 		$(this).toggleClass("selected");
-		$(this).showMenu($(this).attr("id"));
+		showMenu($(this).attr("id"));
 	});
-	$.fn.link = function(url) { window.open(url); };
-	$.fn.toggle = function() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); $(this).applyColors(); }
-	$.fn.scroll = function(hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
-	$.fn.cloneRepo = function() { $(".output").append("<br><hr><br><button class='content' onclick='$(this).link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
-	$.fn.menu = function(n) {
+    });
+});
+	function link(url) { window.open(url); };
+	function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
+	function scroll(hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+	function cloneRepo() { $(".output").append("<br><hr><br><button class='content' onclick='link(\"https://github.com/acktic/acktic.github.io\");'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br>"); }
+	function xhr(n) {
 		$.each(menu, function(i, k) {
 			if (n === k.name) {
-				$(this).getFeed(k.category, k.feed, k.title, k.homepage);
+				getFeed(k.category, k.feed, k.title, k.homepage);
 			}
 		});
 	}
-	$.fn.random = function() {
-		$.each(menu, function(i, k) {
-			if (k.category == $(".selected").attr("id")) {
-				obj.push(menu[i]);
-			}
-		});
-		var n = obj[Math.floor(Math.random()*obj.length)];
-		$(this).getFeed(n.category, n.feed, n.title, n.homepage);
-		return false;
-	}
-	$.fn.showMenu = function(n) {
+	function showMenu(n) {
 		$(".output").append("<hr class='first'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".output").append("<button id='" + k.name + "' class='content' onclick='$(this).menu($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".output").append("<button id='" + k.name + "' class='content' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
-		$(this).cloneRepo();
-		$(this).applyColors();
-		$(this).scroll(".first");
+		cloneRepo();
+		applyColors();
+		scroll(".first");
 	}
-	$.fn.applyColors = function() {
+	function applyColors() {
 		if ($(".output").hasClass("light")) {
 			$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
 		}
@@ -108,10 +100,20 @@ jQuery(function($) {
 		$(".toggle").css("float", "left");
 		$(".random").css("float", "right");
 	}
-	$.fn.getFeed = function(category, feed, title, homepage) {
+	function random() {
+		$.each(menu, function(i, k) {
+			if (k.category == $(".selected").attr("id")) {
+				obj.push(menu[i]);
+			}
+		});
+		var n = obj[Math.floor(Math.random()*obj.length)];
+		getFeed(n.category, n.feed, n.title, n.homepage);
+		return false;
+	}
+	function getFeed(category, feed, title, homepage) {
 		$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
 		$(".output").addClass("fetch");
-		$(this).scroll(".fetch");
+		scroll(".fetch");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () { $(".output").removeClass("fetch"); })
 		.success(function (data) {
@@ -123,7 +125,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".output").append("<br><hr class='first'><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".output").append("<br><hr class='first'><button class='content' onclick='link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -131,16 +133,14 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+				$(".output").append("<br><button class='content' onclick='link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
-			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			$(this).cloneRepo();
-			$(this).applyColors();
-			$(this).scroll(".first");
+			$(".output").append("<br><button class='content' onclick='link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			cloneRepo();
+			applyColors();
+			scroll(".first");
 		})
 	}
-    });
-});
 var menu = [
 	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
 	{ name : "ycvc", category : "Local", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
@@ -358,10 +358,19 @@ var menu = [
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 ]
 </script>
-<div class="container">
-	<button id="Local" class="tag">Local</button><button id="Entertainment" class="tag">Entmt</button><button id="Social" class="tag">Social</button><button id="Sports" class="tag">Sports</button><button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
+    <div class="container">
+	<button id="Local" class="tag">Local</button>
+	<button id="Entertainment" class="tag">Ent</button>
+	<button id="Social" class="tag">Social</button>
+	<button id="Sports" class="tag">Sports</button>
+	<button id="Technology" class="tag">Tech</button>
+	<button id="World" class="tag">World</button>
+	<button onclick="link('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
 	<div class="output light"></div>
-	<div class="bottom"><button class="toggle" onclick="$(this).toggle()"><i class="fa fa-th-large"></i></button><button onclick="$(this).link('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button><button class="random" onclick="$(this).random()"><i class="fa fa-random"></i></button></div>
-</div>
+	<div class="bottom">
+		<button class="toggle" onclick="toggle()"><i class="fa fa-th-large"></i></button>
+		<button class="random" onclick="random()"><i class="fa fa-random"></i></button>
+	</div>
+    </div>
 </body>
 </html>
