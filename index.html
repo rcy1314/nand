@@ -48,7 +48,7 @@
 var obj = [];
 jQuery(function($) {
     $(window).load(function() {
-	$(this).showMenu("Social");
+	$("#Social").trigger("click");
 	$(".output").attr('tabindex', -1).focus();
 	$(".output").focusout(function(){
 		$(".output").attr('tabindex', -1).focus();
@@ -101,10 +101,10 @@ jQuery(function($) {
 	}
 	$.fn.applyColors = function() {
 		if ($(".output").hasClass("light")) {
-			$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");
+			$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
 		}
 		else if ($(".output").hasClass("dark")) {
-			$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+			$(".container, .tag, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
 		$(".toggle").css("float", "left");
 		$(".random").css("float", "right");
