@@ -117,16 +117,16 @@ jQuery(function($) {
 		.fail(function () { $(".output").removeClass("fetch"); })
 		.success(function (data) {
 			$(".output").removeClass("fetch");
-			var entry = $(data).find("entry");
-			if (entry.length > 0) {
-				var format = "entry"
+			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
+			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
+				var format = "entry"		/* Both use a standard <title> for the headline.		  */
 			}
 			else {
 				var format = "item"
 			}
 			$(".output").append("<br><hr class='first'><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
-				if (format == "entry") {
+				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
 				}
 				else {
