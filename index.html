@@ -68,9 +68,9 @@ jQuery(function($) {
 	});
     });
 });
-	function link(url) { window.open(url); };
+	function url(u) { window.open(u); };
 	function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
-	function scroll(hr) { $(".output").animate({ scrollTop: $(hr + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+	function scroll(h) { $(".output").animate({ scrollTop: $(h + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
 	function xhr(n) {
 		$.each(menu, function(i, k) {
 			if (n === k.name) {
@@ -124,7 +124,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".output").append("<br><hr class='first'><button class='content' onclick='link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".output").append("<br><hr class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -132,9 +132,9 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".output").append("<br><button class='content' onclick='link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+				$(".output").append("<br><button class='content' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
-			$(".output").append("<br><button class='content' onclick='link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".output").append("<br><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			applyColors();
 			scroll(".first");
 		})
@@ -363,7 +363,7 @@ var menu = [
 	<button id="Sports" class="tag">Sports</button>
 	<button id="Technology" class="tag">Tech</button>
 	<button id="World" class="tag">World</button>
-	<button onclick="link('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
+	<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
 	<div class="output light"></div>
 	<div class="bottom">
 		<button class="toggle" onclick="toggle()"><i class="fa fa-th-large"></i></button>
