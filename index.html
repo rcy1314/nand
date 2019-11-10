@@ -43,12 +43,25 @@
 		bottom: 0em;
 		width: 100%;
 	}
+	.random {
+	        transform: translate(50%,50%);
+	        position: absolute;
+	        border: none;
+	        bottom: 62%;
+	        right: 50%
+	}
+	.filter {
+		position:relative;
+		bottom: .1em;
+		right: 1.2em;
+	}
 	button {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
 		border: none;
 		width: 16.6%;
 	}
+
 </style>
 <script>
 var obj = [];
@@ -86,7 +99,21 @@ jQuery(function($) {
 		return false;
 	});
     });
-    $(".github").live("click", function () { $(this).link("https://github.com/acktic/acktic.github.io"); });
+    $('input[type="checkbox"]').live("click", function (){
+	if($(this).is(":checked")){
+		xhr = 0;
+		$(".output").append("<hr class='first'>");
+		$(".output").append("<br><br><button class='content'>&ensp;&ensp;Filtering Enabled.</button><br><br><br>");
+		xhr = -1;
+	}
+	else if($(this).is(":not(:checked)")){
+		xhr = 0;
+		$(".output").append("<hr class='first'>");
+		$(".output").append("<br><br><button class='content'>&ensp;&ensp;Filtering Disabled.</button><br><br><br>");
+		xhr = -1;
+	}
+	$(this).hook();
+    });
     $(".toggle").live("click", function () { xhr = 0; $(".output").toggleClass("dark"); $(".output").toggleClass("light"); $(this).hook(); xhr = -1; });
     $(".category").live("click", function(event) { $(".category").removeClass("selected"); $(this).addClass("selected"); $(this).hook(); });
     $.fn.link = function (url) { window.open(url); };
@@ -98,11 +125,11 @@ jQuery(function($) {
 				$(".output").append("<button id='" + k.name + "' class='menu content'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
-		$(".output").append("<br><hr><br><button class='content github'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br><br><br>");
+		$(".output").append("<br><hr><br><br><button class='content' onclick='$(this).link(&quot;https://github.com/acktic/acktic.github.io&quot;)'><i class='fa fa-git'>&ensp;</i>&ensp;Clone this Repository!</button><br><br><br><br>");
 	} 
 	if ($(".output").hasClass("light")) { $(".container, .category, .content, button").attr("style", "background-color: transparent; color: #000;"); }
 	else if ($(".output").hasClass("dark")) { $(".container, .category, .content, button").attr("style", "background-color: #000; color: #FFF;"); }
-	$(".toggle").css("float", "left"); $(".github").css("float", "right");
+	$(".toggle").css("float", "left"); $(".filter").css("float", "right");
 	$(".output").animate({ scrollTop: $(".first:last").offset().top - $(".output").offset().top + $(".output").scrollTop() });
     }
     $.fn.getFeed = function (category, feed, title, homepage) {
@@ -128,7 +155,13 @@ jQuery(function($) {
 			else {
 				var link = $(this).find("link").text();
 			}
-			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+			var title = $(this).find("title").text()
+			if($('input[type="checkbox"]').is(":checked") && !title.toLowerCase().match(/best|deal|buy|offer/g)){
+				$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + title + "</button>");
+			}
+			else if ($('input[type="checkbox"]').is(":not(:checked)")){
+				$(".output").append("<br><button class='content' onclick='$(this).link(\"" + link + "\")'>&ensp;&ensp;" + title + "</button>");
+			}
 		});
 			$(".output").append("<br><button class='content' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(this).hook();
@@ -349,6 +382,10 @@ var menu = [
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 ]
 </script>
-<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div><div class="bottom"><button class="toggle"><i class="fa fa-th-large"></i></button><button class="github"><i class="fa fa-git"></i></button><button class="random"><i class="fa fa-random"></i></button></div></div>
+<div class="container"><button id="Local" class="category">Local</button><button id="Entertainment" class="category">Celeb</button><button id="Social" class="category selected">Social</button><button id="Sports" class="category">Sports</button><button id="Technology" class="category">Tech</button><button id="World" class="category">World</button><div class="output light"></div><div class="bottom"><button class="toggle"><i class="fa fa-th-large"></i></button>
+<button class="random"><i class="fa fa-random"></i></button>
+<label class="filter"><input type="checkbox" name="filter" checked></label>
+</div>
+</div>
 </body>
 </html>
