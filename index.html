@@ -63,7 +63,8 @@ jQuery(function($) {
 		}
 	});
 	$(".tag").live("click", function() {
-		$(this).toggleClass("selected");
+		$(".tag").toggleClass("selected");
+		$(this).addClass("selected");
 		showMenu($(this).attr("id"));
 	});
     });
