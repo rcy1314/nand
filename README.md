@@ -48,7 +48,7 @@ Here is the css for our iframe...
 | Element | Use |
 | ------ | ------ |
 | .con | Container |
-| .tag | Category |
+| .cat | Category |
 | .out | Output |
 | .xml | Buttons |
 | .bot | Bottom |
@@ -60,7 +60,7 @@ Here is the css for our iframe...
 |------|------|
 | load | Category and set focus |
 | ready | Scroll top and pop() .out !=.fetch |
-| .tag | Click +.selected pop() |
+| .cat | Click +.selected pop() |
 | url | window.open |
 | tog | Toggle Dark mode |
 | scr | Scroll <element>:last |
@@ -75,11 +75,11 @@ Here is the css for our iframe...
 
   - default mode uses transparent background and black foreground.
   
-`$(".tag, .con, .xml, button").attr("style", "background-color: transparent; color: #000000;");`
+`$(".cat, .con, .xml, button").attr("style", "background-color: transparent; color: #000000;");`
 
  - dark mode uses black background and white foreground.
  
-`$(".tag, .con, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
+`$(".cat, .con, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
 ### CORS Proxy
