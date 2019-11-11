@@ -13,7 +13,7 @@ Here's what's used you won't need:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
-* CORS-anywhere - CORS Headers proxy.
+* CORS-Anywhere - CORS Headers proxy.
 
 ### Menu Array
 
@@ -44,15 +44,43 @@ Here is the css for our iframe...
         right: 50%;
 }
 ```
-Cloning and applyColors
+### Classes
+| Element | Use |
+| ------ | ------ |
+| .con | Container |
+| .cat | Category |
+| .out | Output |
+| .rss | Fetching |
+| .xml | Buttons |
+| .bot | Bottom |
+| .menu | Titles |
+| .dark | Dark mode |
 
-  - light mode uses transparent background and black foreground.
+### Functions
+| Name | Use |
+|------|------|
+| load | Category and set focus |
+| ready | Scroll top and pop() .out !=.fetch |
+| .cat | Click +.selected pop() |
+| url | window.open() |
+| tog | Toggle Dark mode |
+| scr | Scroll <element>:last |
+| xhr | .menu click |
+| pop | .tag .selected populate |
+| ran | random |
+| app | Previously applyColors() |
+| get | Fetch parse xml |
   
-`$(".category, .container, .content, button").attr("style", "background-color: transparent; color: #000000;");`
+
+### Cloning and app()
+
+  - default mode uses transparent background and black foreground.
+  
+`$(".cat, .con, .xml, button").attr("style", "background-color: transparent; color: #000000;");`
 
  - dark mode uses black background and white foreground.
  
-`$(".category, .container, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
+`$(".cat, .con, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
 ### CORS Proxy
