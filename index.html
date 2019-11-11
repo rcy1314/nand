@@ -73,14 +73,14 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				pop($(".selected").attr("id"));
+				pop($(".sel").attr("id"));
 			}
 		}
 	});
     });
     $(".cat").live("click", function() {
-	$(".cat").removeClass("selected");
-	$(this).addClass("selected");
+	$(".cat").removeClass("sel");
+	$(this).addClass("sel");
 	pop($(this).attr("id"));
     });
 });
@@ -106,7 +106,7 @@ function pop(n) {
 }
 function ran() {
     $.each(menu, function(i, k) {
-	if (k.category == $(".selected").attr("id")) {
+	if (k.category == $(".sel").attr("id")) {
 		obj.push(menu[i]);
 	}
     });
