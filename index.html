@@ -94,6 +94,7 @@ jQuery(function($) {
 	});
     }
     function pop(n) {
+	$(".first:first, .menu, .rss").remove();
 	$(".out").append("<hr class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
@@ -123,7 +124,7 @@ jQuery(function($) {
 	$(".random").css("float", "right");
     }
     function get(category, feed, title, homepage) {
-	$(".out").append("<hr class='rss'><br><button class='xml'>Fetching source.  Please be patient.</button><br>")
+	$(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;Fetching source.  Please be patient.</button><br>")
 	$(".out").addClass("rss");
 	scr(".rss");
 	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
