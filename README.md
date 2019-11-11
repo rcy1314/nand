@@ -50,11 +50,11 @@ Here is the css for our iframe...
 | .con | Container |
 | .cat | Category |
 | .out | Output |
+| .rss | Fetching |
 | .xml | Buttons |
 | .bot | Bottom |
 | .menu | Titles |
 | .dark | Dark mode |
-| .fetch | Fetching |
 
 ### Functions
 | Name | Use |
