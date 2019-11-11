@@ -52,7 +52,7 @@ Here is the css for our iframe...
 | .out | Output |
 | .xml | Buttons |
 | .bot | Bottom |
-| .menu | Headlines |
+| .menu | Titles |
 | .dark | Dark mode |
 
 ### Functions
