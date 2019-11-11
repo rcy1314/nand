@@ -84,78 +84,78 @@ jQuery(function($) {
 	pop($(this).attr("id"));
     });
 });
-    function url(n) { window.open(n); };
-    function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
-    function xhr(n) {
-	$.each(menu, function(i, k) {
-		if (n === k.name) {
-			get(k.category, k.feed, k.title, k.homepage);
-		}
-	});
-    }
-    function pop(n) {
-	$(".bar:first, .bar:last, .menu, .rss").remove();
-	$(".out").append("<hr class='bar'>");
-	$.each(menu, function(i, k) {
-		if (n == k.category) {
-			$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
-		}
-	});
-	app();
-	scr(".bar");
-    }
-    function ran() {
-	$.each(menu, function(i, k) {
-		if (k.category == $(".selected").attr("id")) {
-			obj.push(menu[i]);
-		}
-	});
-	var n = obj[Math.floor(Math.random()*obj.length)];
-	get(n.category, n.feed, n.title, n.homepage);
-    }
-    function app() {
-	if (!$(".out").hasClass("dark")) {
-		$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
+function url(n) { window.open(n); };
+function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
+function xhr(n) {
+    $.each(menu, function(i, k) {
+	if (n === k.name) {
+		get(k.category, k.feed, k.title, k.homepage);
 	}
-	else if ($(".out").hasClass("dark")) {
-		$(".con, .cat, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+    });
+}
+function pop(n) {
+    $(".bar:first, .bar:last, .menu, .rss").remove();
+    $(".out").append("<hr class='bar'>");
+    $.each(menu, function(i, k) {
+	if (n == k.category) {
+		$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 	}
-	$(".toggle").css("float", "left");
-	$(".random").css("float", "right");
+    });
+    app();
+    scr(".bar");
+}
+function ran() {
+    $.each(menu, function(i, k) {
+	if (k.category == $(".selected").attr("id")) {
+		obj.push(menu[i]);
+	}
+    });
+    var n = obj[Math.floor(Math.random()*obj.length)];
+    get(n.category, n.feed, n.title, n.homepage);
+}
+function app() {
+    if (!$(".out").hasClass("dark")) {
+	$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
     }
-    function get(category, feed, title, homepage) {
-	$(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;Fetching source.  Please be patient.</button><br>")
-	$(".out").addClass("rss");
-	scr(".rss");
-	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () {
-			$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
-			$(".out").removeClass("rss");
-		})
-		.success(function (data) {
-			$(".out").removeClass("rss");
-			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
-			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
-				var format = "entry"		/* Both use a standard <title> for the headline.		  */
+    else if ($(".out").hasClass("dark")) {
+	$(".con, .cat, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+    }
+    $(".toggle").css("float", "left");
+    $(".random").css("float", "right");
+}
+function get(category, feed, title, homepage) {
+    $(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;Fetching source.  Please be patient.</button><br>")
+    $(".out").addClass("rss");
+    scr(".rss");
+    $.get("https://salty-refuge-64158.herokuapp.com/" + feed)
+	.fail(function () {
+		$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
+		$(".out").removeClass("rss");
+	})
+	.success(function (data) {
+		$(".out").removeClass("rss");
+		var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
+		if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
+			var format = "entry"		/* Both use a standard <title> for the headline.		  */
+		}
+		else {
+			var format = "item"
+		}
+		$(".out").append("<br class='bar'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		$(data).find(format).each(function () {
+			if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
+				var link = $(this).find("link").attr("href");
 			}
 			else {
-				var format = "item"
+				var link = $(this).find("link").text();
 			}
-			$(".out").append("<br class='bar'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			$(data).find(format).each(function () {
-				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
-					var link = $(this).find("link").attr("href");
-				}
-				else {
-					var link = $(this).find("link").text();
-				}
-				$(".out").append("<br><button class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
-			});
-			$(".out").append("<br><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			app();
-			scr(".bar");
-		})
-	}
+			$(".out").append("<br><button class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+		});
+		$(".out").append("<br><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+		app();
+		scr(".bar");
+	})
+}
 
 var menu = [
 
