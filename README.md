@@ -44,7 +44,33 @@ Here is the css for our iframe...
         right: 50%;
 }
 ```
-Cloning and applyColors
+### Classes
+| Element | Use |
+| ------ | ------ |
+| .con | Container |
+| .tag | Category |
+| .out | Output |
+| .bot | Bottom |
+| .menu | Headlines |
+| .dark | Dark mode |
+
+### Functions
+| Name | Use |
+|------|------|
+| load | Category and set focus |
+| ready | Scroll top and pop() .out !=.fetch |
+| .tag | Click +.selected pop() |
+| url | window.open |
+| tog | Toggle Dark mode |
+| scr | Scroll <element>:last |
+| xhr | .menu click |
+| pop | .tag .selected populate |
+| ran | random |
+| app | Previously applyColors() |
+| get | Fetching parse xml |
+  
+
+### Cloning and app()
 
   - light mode uses transparent background and black foreground.
   
