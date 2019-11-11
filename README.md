@@ -66,7 +66,8 @@ Here is the css for our iframe...
 | url | window.open() |
 | scr | Scroll <element>:last |
 | xhr | .menu click |
-| pop | .tag .selected populate |
+| arr | .selected array |
+| pop | .selected append |
 | ran | random |
 | app | Previously applyColors() |
 | get | Fetch parse xml |
