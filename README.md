@@ -49,6 +49,7 @@ Here is the css for our iframe...
 | ------ | ------ |
 | .con | Container |
 | .cat | Category |
+| .sel | Selected |
 | .out | Output |
 | .rss | Fetching |
 | .xml | Buttons |
@@ -62,11 +63,10 @@ Here is the css for our iframe...
 |------|------|
 | load | Category and set focus |
 | ready | Scroll top and pop() .out !=.fetch |
-| .cat | Click +.selected pop() |
+| .cat | Click pop() |
 | url | window.open() |
 | scr | Scroll <element>:last |
 | xhr | .menu click |
-| arr | .selected array |
 | pop | .selected append |
 | ran | random |
 | app | Previously applyColors() |
