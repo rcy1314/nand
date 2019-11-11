@@ -53,6 +53,7 @@ Here is the css for our iframe...
 | .rss | Fetching |
 | .xml | Buttons |
 | .bot | Bottom |
+| .bar | Seperator |
 | .menu | Titles |
 | .dark | Dark mode |
 
