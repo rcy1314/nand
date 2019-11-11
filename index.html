@@ -17,14 +17,14 @@
 		border: none;
 		width: 16%;
 	}
-	.container {
+	.con {
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		left: -.5px;
 		top: 0em;
 	}    
-	.output {
+	.out {
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
@@ -38,7 +38,7 @@
 		width: 100%;
 		height: 7em;
 	}
-	.bottom {
+	.bot {
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
@@ -51,15 +51,15 @@ var obj = [];
 jQuery(function($) {
     $(window).load(function() {
 	$("#Social").trigger("click");
-	$(".output").attr('tabindex', -1).focus();
-	$(".output").focusout(function(){
-		$(".output").attr('tabindex', -1).focus();
+	$(".out").attr('tabindex', -1).focus();
+	$(".out").focusout(function(){
+		$(".out").attr('tabindex', -1).focus();
 	});
     });
     $(document).one("ready", function() {
-   	$('.output').bind('scroll', function(){
+   	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (!$(".output").hasClass("fetch")) {
+			if (!$(".out").hasClass("fetch")) {
 				pop($(".selected").attr("id"));
 			}
 		}
@@ -72,8 +72,8 @@ jQuery(function($) {
     });
 });
     function url(n) { window.open(n); };
-    function toggle() { $(".output").toggleClass("dark"); $(".output").toggleClass("light"); applyColors(); }
-    function scroll(n) { $(".output").animate({ scrollTop: $(n + ":last").offset().top - $(".output").offset().top + $(".output").scrollTop() }); }
+    function tog(n) { $(".out").toggleClass("dark"); app(); }
+    function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
     function xhr(n) {
 	$.each(menu, function(i, k) {
 		if (n === k.name) {
@@ -82,16 +82,16 @@ jQuery(function($) {
 	});
     }
     function pop(n) {
-	$(".output").append("<hr class='first'>");
+	$(".out").append("<hr class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
-			$(".output").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+			$(".out").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 		}
 	});
-	applyColors();
-	scroll(".first");
+	app();
+	scr(".first");
     }
-    function random() {
+    function ran() {
 	$.each(menu, function(i, k) {
 		if (k.category == $(".selected").attr("id")) {
 			obj.push(menu[i]);
@@ -100,24 +100,24 @@ jQuery(function($) {
 	var n = obj[Math.floor(Math.random()*obj.length)];
 	get(n.category, n.feed, n.title, n.homepage);
     }
-    function applyColors() {
-	if ($(".output").hasClass("light")) {
+    function app() {
+	if (!$(".out").hasClass("dark")) {
 		$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
 	}
-	else if ($(".output").hasClass("dark")) {
+	else if ($(".out").hasClass("dark")) {
 		$(".container, .tag, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 	}
 	$(".toggle").css("float", "left");
 	$(".random").css("float", "right");
     }
     function get(category, feed, title, homepage) {
-	$(".output").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
-	$(".output").addClass("fetch");
-	scroll(".fetch");
+	$(".out").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
+	$(".out").addClass("fetch");
+	scr(".fetch");
 	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () { $(".output").removeClass("fetch"); })
+		.fail(function () { $(".out").removeClass("fetch"); })
 		.success(function (data) {
-			$(".output").removeClass("fetch");
+			$(".out").removeClass("fetch");
 			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
 			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
 				var format = "entry"		/* Both use a standard <title> for the headline.		  */
@@ -125,7 +125,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".output").append("<br class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -133,11 +133,11 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".output").append("<br><button class='content' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+				$(".out").append("<br><button class='content' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
-			$(".output").append("<br><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-			applyColors();
-			scroll(".first");
+			$(".out").append("<br><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			app();
+			scr(".first");
 		})
 	}
 
@@ -360,17 +360,17 @@ var menu = [
 
 ]
 </script>
-    <div class="container">
+    <div class="con">
 	<button id="Local" class="tag">Local</button>
 	<button id="Entertainment" class="tag">Celeb</button>
 	<button id="Social" class="tag">Social</button>
 	<button id="Sports" class="tag">Sports</button>
 	<button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
-	<div class="output light"></div>
-	<div class="bottom">
-		<button class="toggle" onclick="toggle()"><i class="fa fa-th-large"></i></button>
+	<div class="out light"></div>
+	<div class="bot">
+		<button class="toggle" onclick="tog()"><i class="fa fa-th-large"></i></button>
 		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
-		<button class="random" onclick="random()"><i class="fa fa-random"></i></button>
+		<button class="random" onclick="ran()"><i class="fa fa-random"></i></button>
 	</div>
     </div>
 </body>
