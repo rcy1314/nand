@@ -54,6 +54,7 @@ Here is the css for our iframe...
 | .bot | Bottom |
 | .menu | Titles |
 | .dark | Dark mode |
+| .fetch | Fetching |
 
 ### Functions
 | Name | Use |
