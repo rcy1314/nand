@@ -33,7 +33,7 @@
 		left: 2px;
 		top: 2.5em;
 	}
-	.content {
+	.xml {
 		text-align: left;
 		width: 100%;
 		height: 7em;
@@ -46,6 +46,19 @@
 		width: 100%;
 	}
 </style>
+    <div class="con">
+	<button id="Local" class="tag">Local</button>
+	<button id="Entertainment" class="tag">Celeb</button>
+	<button id="Social" class="tag">Social</button>
+	<button id="Sports" class="tag">Sports</button>
+	<button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
+	<div class="out light"></div>
+	<div class="bot">
+		<button class="toggle" onclick="tog()"><i class="fa fa-th-large"></i></button>
+		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
+		<button class="random" onclick="ran()"><i class="fa fa-random"></i></button>
+	</div>
+    </div>
 <script>
 var obj = [];
 jQuery(function($) {
@@ -85,7 +98,7 @@ jQuery(function($) {
 	$(".out").append("<hr class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
-			$(".out").append("<button id='" + k.name + "' class='content menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+			$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 		}
 	});
 	app();
@@ -102,16 +115,16 @@ jQuery(function($) {
     }
     function app() {
 	if (!$(".out").hasClass("dark")) {
-		$(".container, .tag, .content, button").attr("style", "background-color: transparent; color: #000000;");
+		$(".container, .tag, .xml, button").attr("style", "background-color: transparent; color: #000000;");
 	}
 	else if ($(".out").hasClass("dark")) {
-		$(".container, .tag, .content, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+		$(".container, .tag, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 	}
 	$(".toggle").css("float", "left");
 	$(".random").css("float", "right");
     }
     function get(category, feed, title, homepage) {
-	$(".out").append("<hr class='fetch'><br><button class='content'>Fetching source.  Please be patient.</button><br>")
+	$(".out").append("<hr class='fetch'><br><button class='xml'>Fetching source.  Please be patient.</button><br>")
 	$(".out").addClass("fetch");
 	scr(".fetch");
 	$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -125,7 +138,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br class='first'><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br class='first'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -133,9 +146,9 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".out").append("<br><button class='content' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+				$(".out").append("<br><button class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
-			$(".out").append("<br><button class='content' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			app();
 			scr(".first");
 		})
@@ -360,18 +373,5 @@ var menu = [
 
 ]
 </script>
-    <div class="con">
-	<button id="Local" class="tag">Local</button>
-	<button id="Entertainment" class="tag">Celeb</button>
-	<button id="Social" class="tag">Social</button>
-	<button id="Sports" class="tag">Sports</button>
-	<button id="Technology" class="tag">Tech</button><button id="World" class="tag">World</button>
-	<div class="out light"></div>
-	<div class="bot">
-		<button class="toggle" onclick="tog()"><i class="fa fa-th-large"></i></button>
-		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
-		<button class="random" onclick="ran()"><i class="fa fa-random"></i></button>
-	</div>
-    </div>
 </body>
 </html>
