@@ -50,6 +50,7 @@ Here is the css for our iframe...
 | .con | Container |
 | .tag | Category |
 | .out | Output |
+| .xml | Buttons |
 | .bot | Bottom |
 | .menu | Headlines |
 | .dark | Dark mode |
@@ -67,7 +68,7 @@ Here is the css for our iframe...
 | pop | .tag .selected populate |
 | ran | random |
 | app | Previously applyColors() |
-| get | Fetching parse xml |
+| get | Fetch parse xml |
   
 
 ### Cloning and app()
