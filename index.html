@@ -94,15 +94,15 @@ jQuery(function($) {
 	});
     }
     function pop(n) {
-	$(".first:first, .first:last, .menu, .rss").remove();
-	$(".out").append("<hr class='first'>");
+	$(".bar:first, .bar:last, .menu, .rss").remove();
+	$(".out").append("<hr class='bar'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
 			$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 		}
 	});
 	app();
-	scr(".first");
+	scr(".bar");
     }
     function ran() {
 	$.each(menu, function(i, k) {
@@ -141,7 +141,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br class='first'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br class='bar'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -153,7 +153,7 @@ jQuery(function($) {
 			});
 			$(".out").append("<br><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			app();
-			scr(".first");
+			scr(".bar");
 		})
 	}
 
@@ -172,7 +172,7 @@ var menu = [
 	{ name : "abch", category : "Local", title : "ABC KTRK-TV Houston for breaking news from Houston and the surrounding neighborhoods.", feed : "https://abc13.com/feed", homepage : "https://abc13.com" },
 	{ name : "ksat", category : "Local", title : "KSAT San Antonio latest in news, weather and sports.", feed : "https://www.ksat.com/arcio/rss/category/news/national/?size=10", homepage : "https://www.ksat.com" },
 	{ name : "abcl", category : "Local", title : "ABC7 covers Los Angeles news, weather, sports, traffic and live video.", feed : "https://abc7.com/feed", homepage : "https://abc7.com" },
-	{ name : "cbsl", category : "Local", title : "CBS KCBS-TV 7 Los Angeles ews, Sports, Weather, Traffic and the Best of LA/OC.", feed : "https://losangeles.cbslocal.com/feed", homepage : "https://losangeles.cbslocal.com" },
+	{ name : "cbsl", category : "Local", title : "CBS KCBS-TV 7 Los Angeles news, Sports, Weather, Traffic and the Best of LA/OC.", feed : "https://losangeles.cbslocal.com/feed", homepage : "https://losangeles.cbslocal.com" },
 	{ name : "nbcl", category : "Local", title : "NBC KNBC Los Angeles weather, traffic, politics, sports, and entertainment news.", feed : "https://www.nbclosangeles.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbclosangeles.com" },
 	{ name : "abcm", category : "Local", title : "ABC Local 10 Miami, Florida breaking news and headlines.", feed : "https://www.local10.com/feeds/rssFeed/feedServlet?obfType=GMG_RSS_TEASERS&siteId=800006&categoryId=80041&nbRows=10", homepage : "https://local10.com" },
 	{ name : "cbsm", category : "Local", title : "CBS WFOR-TV Miami a full service television station in Miami and Fort Lauderdale, Florida.", feed : "https://miami.cbslocal.com/feed", homepage : "https://miami.cbslocal.com" },
