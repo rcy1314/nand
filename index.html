@@ -106,7 +106,11 @@ function pop(n) {
 }
 function xhr(n) {
     var sel = arr();
-    k = menu.map((x, i) => { if ( x.name == n ) { return i } });
+    k = menu.map((x, i) => {
+	if ( x.name == n ) {
+		return i
+	}
+    });
     var o = (String(k).replace(/[^0-9]/g, ''));
     get(menu[o].category, menu[o].feed, menu[o].title, menu[o].homepage);
 }
