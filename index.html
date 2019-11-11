@@ -60,7 +60,7 @@
 	</div>
     </div>
 <script>
-var obj = [];
+var sel = [];
 jQuery(function($) {
     $(window).load(function() {
 	$("#Social").trigger("click");
@@ -81,37 +81,39 @@ jQuery(function($) {
     $(".cat").live("click", function() {
 	$(".cat").removeClass("selected");
 	$(this).addClass("selected");
-	pop($(this).attr("id"));
+	pop();
     });
 });
 function url(n) { window.open(n); };
 function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
-function xhr(n) {
+function arr(n) {
     $.each(menu, function(i, k) {
-	if (n === k.name) {
-		get(k.category, k.feed, k.title, k.homepage);
+	if (k.category == $(".selected").attr("id")) {
+		sel.push(menu[i]);
 	}
     });
+    return sel
 }
 function pop(n) {
+    var sel = arr();
     $(".bar:first, .bar:last, .menu, .rss").remove();
     $(".out").append("<hr class='bar'>");
-    $.each(menu, function(i, k) {
-	if (n == k.category) {
+    $.each(sel, function(i, k) {
 		$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
-	}
     });
     app();
     scr(".bar");
 }
+function xhr(n) {
+    var sel = arr();
+    k = menu.map((x, i) => { if ( x.name == n ) { return i } });
+    var o = (String(k).replace(/[^0-9]/g, ''));
+    get(menu[o].category, menu[o].feed, menu[o].title, menu[o].homepage);
+}
 function ran() {
-    $.each(menu, function(i, k) {
-	if (k.category == $(".selected").attr("id")) {
-		obj.push(menu[i]);
-	}
-    });
-    var n = obj[Math.floor(Math.random()*obj.length)];
-    get(n.category, n.feed, n.title, n.homepage);
+    var sel = arr();
+    var k = sel[Math.floor(Math.random()*sel.length)];
+    get(k.category, k.feed, k.title, k.homepage);
 }
 function app() {
     if (!$(".out").hasClass("dark")) {
