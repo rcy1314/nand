@@ -10,6 +10,7 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
+@media only screen and (max-width : 480px) {
 	button {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
@@ -23,6 +24,45 @@
 		width: 100%;
 		left: -.5px;
 		top: 0em;
+	}    
+	.output {
+		outline: none !important;
+		position: absolute;
+		overflow: auto;
+		bottom: 2.5em;
+		width: 99%;
+		left: 2px;
+		top: 2.5em;
+	}
+	.content {
+		text-align: left;
+		width: 100%;
+		height: 7em;
+	}
+	.bottom {
+		position: absolute;
+		text-align: center;
+		height: 1.5em;
+		bottom: .8em;
+		width: 100%;
+	}
+}
+@media (min-width:1281px) {
+	button {
+		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+		font-size: 12px;
+		padding: 10px;
+		border: none;
+		width: 16%;
+	}
+	.container {
+		transform: translate(50%,50%);
+		position: absolute;
+		bottom: 50%;
+		height: 80%;
+		width: 50%;
+		right: 50%;
+		left: -.5px;
 	}
 	.output {
 		outline: none !important;
@@ -45,6 +85,7 @@
 		bottom: .8em;
 		width: 100%;
 	}
+}
 </style>
 <script>
 var obj = [];
@@ -66,9 +107,9 @@ jQuery(function($) {
 	});
     });
     $(".tag").live("click", function() {
-		$(".tag").removeClass("selected");
-		$(this).addClass("selected");
-		pop($(this).attr("id"));
+	$(".tag").removeClass("selected");
+	$(this).addClass("selected");
+	pop($(this).attr("id"));
     });
 });
     function url(n) { window.open(n); };
