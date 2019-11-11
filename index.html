@@ -94,7 +94,7 @@ jQuery(function($) {
 	});
     }
     function pop(n) {
-	$(".first:first, .menu, .rss").remove();
+	$(".first:first, .first:last, .menu, .rss").remove();
 	$(".out").append("<hr class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
