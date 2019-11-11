@@ -82,7 +82,6 @@ jQuery(function($) {
 	});
     }
     function pop(n) {
-	$(".menu, .first:first").remove();
 	$(".output").append("<br class='first'>");
 	$.each(menu, function(i, k) {
 		if (n == k.category) {
@@ -144,8 +143,8 @@ jQuery(function($) {
 
 var menu = [
 
-	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
-	{ name : "ycvc", category : "Local", title : "YourCentralValley.com is the news site for KSEE24 and CBS47 in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
+	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno and national news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
+	{ name : "ycvc", category : "Local", title : "KSEE24 CBS47 your central valley in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
 	{ name : "abcb", category : "Local", title : "ABC WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://wcvb.com" },
 	{ name : "cbsb", category : "Local", title : "CBS WBZ-TV Boston Local Breaking News From Boston, Mass.", feed : "https://boston.cbslocal.com/feed", homepage : "https://boston.cbslocal.com/feed" },
 	{ name : "nbcb", category : "Local", title : "NBC WBTS-CD Boston local news, national news and Boston breaking news stories.", feed : "https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcboston.com" },
@@ -169,7 +168,6 @@ var menu = [
 	{ name : "abcn", category : "Local", title : "ABC7 New York covering New York City, New Jersey, and Long Island.", feed : "https://abc7ny.com/feed", homepage : "https://abc7ny.com" },
 	{ name : "cbsy", category : "Local", title : "CBS WCBS-TV New York City 24/7 digital streaming news service. It's always on.", feed : "https://newyork.cbslocal.com/feed", homepage : "https://newyork.cbslocal.com" },
 	{ name : "nbcy", category : "Local", title : "NBC WNBC New York weather, traffic, entertainment and health.", feed : "https://www.nbcnewyork.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcnewyork.com" },
-	{ name : "nydn", category : "Local", title : "NY Daily news coverage, sports, entertainment news, celebrity gossip, autos, videos and photos.", feed : "https://www.nydailynews.com/cmlink/NYDN.News.National.rss", homepage : "https://www.nydailynews.com" },
 	{ name : "nbcw", category : "Local", title : "NBC WRC-TV Washington D.C. news, weather, traffic, entertainment and health.", feed : "https://www.nbcwashington.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcwashington.com" },
 	{ name : "cbsw", category : "Local", title : "CBS WUSA 9 Washington station licensed to the capital city of Washington, District of Columbia.", feed : "http://rssfeeds.wusa9.com/wusa-news&x=1", homepage : "https://wusa9.com" },
 	{ name : "abce", category : "Entertainment", title : "ABC Entertainment Latest Celebrity News, Videos & Photos.", feed : "https://abcnews.go.com/abcnews/entertainmentheadlines", homepage : "https://abcnews.go.com/entertainment" },
