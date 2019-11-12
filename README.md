@@ -23,7 +23,7 @@ Here's what's used you won't need:
 
 ### Sourcing
 
-Include an Iframe in your html with the [site](https://acktic.github.io) and a [[example]](https://acktic.github.io/rss.html).
+Include an Iframe in your html with the [site](https://acktic.github.io) and an [[example]](https://acktic.github.io/rss.html).
 
 `<iframe class="rss" src="https://acktic.github.io/"></iframe>`
 
