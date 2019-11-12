@@ -50,20 +50,21 @@ Here is the css for our iframe...
 | ------ | ------ |
 | .con | Container |
 | .cat | Category |
-| .sel | Selected |
+| .sel | .cat Selected |
 | .out | Output |
-| .rss | Fetching |
-| .xml | Buttons |
+| .rss | .out Fetching |
+| .xml | .out Buttons |
 | .bot | Bottom |
 | .bar | Seperator |
-| .menu | Titles |
+| .menu | pop() Titles |
 | .dark | Dark mode |
 
 ### Functions
 | Name | Use |
 |------|------|
 | load | Category and set focus |
-| ready | Scroll top and pop() .out !=.fetch |
+| bind | Scroll top and pop() .out != .rss |
+| live | pop() .cat |
 | url | window.open() |
 | scr | Scroll <element>:last |
 | xhr | .menu click |
