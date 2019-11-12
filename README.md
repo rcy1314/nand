@@ -56,7 +56,8 @@ Here is the css for our iframe...
 | .xml | .out Buttons |
 | .bot | Bottom |
 | .bar | Seperator |
-| .ran | Scroll Buffer|
+| .ran | Scroll Buffer |
+| .url | Headlines |
 | .api | pop() Titles |
 | .dark | Dark mode |
 
