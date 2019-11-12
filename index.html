@@ -148,7 +148,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='bar'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><div class='url'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -160,7 +160,7 @@ jQuery(function($) {
 			});
 			$(".out").append("</div><br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><hr>");
 			$(this).app();
-			$(this).scr(".bar");
+			$(this).scr(".rss");
 		})
 	}
     });
