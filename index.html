@@ -96,7 +96,7 @@ jQuery(function($) {
 			}
 		});
 		$(this).scr(".bar");
-		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br></div>");
+		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br><br><br></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -131,7 +131,7 @@ jQuery(function($) {
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
-		$(".out").append("<div class='api'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br></div>")
+		$(".out").append("<div class='get'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".api");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -147,7 +147,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='url'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><div class='get'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -158,9 +158,9 @@ jQuery(function($) {
 				$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
 			$(".out").append("</div><br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><hr>");
-			$('.out').append("<br><div class='bar'><br><br><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br></div>");
+			$('.out').append("<br><div class='bar'><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br><br><br></div>");
 			$(this).app();
-			$(this).scr(".url");
+			$(this).scr(".get");
 		})
 	}
     });
