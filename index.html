@@ -10,20 +10,27 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
-	button {
+	div, .ran, .xml, button {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
-		padding: 10px;
 		border: none;
-		width: 15.8%;
 	}
 	.con {
 		position: absolute;
 		height: 100%;
-		width: 100%;
-		left: -.5px;
+		width: 99%;
+		left: 1px;
 		top: 0em;
-	}    
+	}
+	.tag {
+		padding-left: 1em;
+	}
+	.cat {
+		display: inline-block;
+		font-size: 12px;
+		padding: 10px;
+		width: 11%;
+	}
 	.out {
 		outline: none !important;
 		position: absolute;
@@ -34,9 +41,10 @@
 		top: 2.5em;
 	}
 	.xml {
-		text-align: left;
-		width: 100%;
-		height: 7em;
+		padding-bottom: 3em;
+		padding-left: 2px;
+		padding-top: 3em;
+		width: 98%;
 	}
 	.ran {
 		text-align: center;
@@ -47,17 +55,18 @@
 		position: absolute;
 		text-align: center;
 		height: 1.5em;
-		bottom: .8em;
+		bottom: .4em;
 		width: 100%;
 	}
 </style>
     <div class="con">
-	<button id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</button>
-	<button id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Celeb</button>
-	<button id="Social" class="cat sel" onclick="$(this).pop($(this).attr('id'))">Social</button>
-	<button id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</button>
-	<button id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</button>
-	<button id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</button>
+	<div class="tag">
+		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div><div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Celeb</div>
+		<div id="Social" class="cat sel" onclick="$(this).pop($(this).attr('id'))">Social</div>
+		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</div>
+		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
+		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div>
+	</div>
 	<div class="out"></div>
 	<div class="bot">
 		<button class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></button>
@@ -92,11 +101,11 @@ jQuery(function($) {
 		$(".out").append("<div class='bar'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".out").append("<button id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
 		$(this).scr(".bar");
-		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br><br><br></div>");
+		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><div class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -155,10 +164,10 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+				$(".out").append("<br><div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
-			$(".out").append("</div><br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><hr>");
-			$('.out').append("<br><div class='bar'><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br><br><br></div>");
+			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
+			$('.out').append("<br><div class='bar'><br><br><br><br><br><div class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div>");
 			$(this).app();
 			$(this).scr(".get");
 		})
