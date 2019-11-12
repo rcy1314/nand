@@ -46,7 +46,7 @@ Here is the css for our iframe...
 }
 ```
 ### Classes
-| Element | Use |
+| Name | Use |
 | ------ | ------ |
 | .con | Container |
 | .cat | Category |
@@ -57,22 +57,22 @@ Here is the css for our iframe...
 | .bot | Bottom |
 | .bar | Scroll Buffer |
 | .ran | Random Buffer |
-| .url | Headlines |
+| .get | XML Output |
 | .api | pop() Titles |
 | .dark | Dark mode |
 
 ### Functions
 | Name | Use |
 |------|------|
-| load | Category and set focus |
-| bind | Scroll top and pop() .out != .rss |
+| load | Category and Set Focus |
+| bind | Scroll Top and pop() .out != .rss |
 | url | window.open() |
-| scr | Scroll <element>:last |
-| pop | .sel append |
-| xhr | .api click |
-| ran | random |
+| scr | Scroll element:last |
+| pop | .sel Append |
+| xhr | .api Click |
+| ran | Random |
 | app | Previously applyColors() |
-| get | Fetch parse xml |
+| get | Fetch XML |
   
 
 ### Cloning and app()
