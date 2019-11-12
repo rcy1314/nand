@@ -2,7 +2,6 @@
 
   - Mobile Friendly.
   - Easy to include.
-  - Clone and Go.
   - Easy to use.
 
 > 
