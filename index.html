@@ -133,7 +133,7 @@ jQuery(function($) {
 		$(".bar:first, .bar:last").remove();
 		$(".out").append("<div class='get'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br></div>")
 		$(".out").addClass("rss");
-		$(this).scr(".api");
+		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
 			$(".out").append("<div class='api'><br><button class='xml'>Oops! Something went wrong!</button><br></div>")
