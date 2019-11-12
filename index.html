@@ -47,16 +47,16 @@
 	}
 </style>
     <div class="con">
-	<button id="Local" class="cat" onclick="pop($(this).attr('id'))">Local</button>
-	<button id="Entertainment" class="cat" onclick="pop($(this).attr('id'))">Celeb</button>
-	<button id="Social" class="cat" onclick="pop($(this).attr('id'))">Social</button>
-	<button id="Sports" class="cat" onclick="pop($(this).attr('id'))">Sports</button>
-	<button id="Technology" class="cat" onclick="pop($(this).attr('id'))">Tech</button><button id="World" class="tag">World</button>
+	<button id="Local" class="cat">Local</button>
+	<button id="Entertainment" class="cat">Celeb</button>
+	<button id="Social" class="cat">Social</button>
+	<button id="Sports" class="cat">Sports</button>
+	<button id="Technology" class="cat">Tech</button><button id="World" class="tag">World</button>
 	<div class="out"></div>
 	<div class="bot">
-		<button class="toggle" onclick="$('.out').toggleClass('dark'); app()"><i class="fa fa-th-large"></i></button>
+		<button class="toggle" onclick="app('toggle')"><i class="fa fa-th-large"></i></button>
 		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
-		<button class="random" onclick="ran()"><i class="fa fa-random"></i></button>
+		<button class="random" onclick="ran($('.sel').attr('id'))"><i class="fa fa-random"></i></button>
 	</div>
     </div>
 <script>
@@ -77,6 +77,11 @@ jQuery(function($) {
 			}
 		}
 	});
+    });
+    $(".cat").live("click", function() {
+	$(".cat").removeClass("sel");
+	$(this).addClass("sel");
+	pop($(this).attr("id"));
     });
 });
 function url(n) { window.open(n); };
@@ -99,16 +104,18 @@ function pop(n) {
     app();
     scr(".bar");
 }
-function ran() {
+function ran(n) {
     $.each(menu, function(i, k) {
-	if (k.category == $(".sel").attr("id")) {
+	if (n == k.category) {
 		obj.push(menu[i]);
+
 	}
     });
     var n = obj[Math.floor(Math.random()*obj.length)];
     get(n.category, n.feed, n.title, n.homepage);
 }
-function app() {
+function app(n) {
+    if (n == "toggle") { $(".out").toggleClass("dark"); }
     if (!$(".out").hasClass("dark")) {
 	$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
     }
