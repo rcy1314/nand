@@ -32,14 +32,14 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 12px;
-		padding: 10px;
-		width: 30%;
+		padding: 1.5em;
+		width: 20%;
 	}
 	.out {
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
-		bottom: 2.5em;
+		bottom: 3em;
 		width: 99%;
 		left: 2px;
 		top: 3em;
@@ -133,8 +133,8 @@ jQuery(function($) {
 		else {
 			$("html, body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:.5em");
-		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:.5em");
+		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:1em;padding-right:2em");
+		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
