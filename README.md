@@ -80,11 +80,11 @@ Here is the css for our iframe...
 
   - default mode uses transparent background and black foreground.
   
-`$(".cat, .con, .xml, button").attr("style", "background-color: transparent; color: #000000;");`
+`$(".cat, .con, .xml").attr("style", "background-color: transparent; color: #000000;");`
 
  - dark mode uses black background and white foreground.
  
-`$(".cat, .con, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");`
+`$(".cat, .con, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
 ### CORS Proxy
