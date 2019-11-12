@@ -65,11 +65,10 @@ Here is the css for our iframe...
 |------|------|
 | load | Category and set focus |
 | bind | Scroll top and pop() .out != .rss |
-| live | pop() .cat |
 | url | window.open() |
 | scr | Scroll <element>:last |
-| xhr | .menu click |
 | pop | .sel append |
+| xhr | .api click |
 | ran | random |
 | app | Previously applyColors() |
 | get | Fetch parse xml |
