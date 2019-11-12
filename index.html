@@ -159,6 +159,7 @@ jQuery(function($) {
 				$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
 			$(".out").append("</div><br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button><hr>");
+			$('.out').append("<br><div class='bar'><br><br><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br></div>");
 			$(this).app();
 			$(this).scr(".url");
 		})
