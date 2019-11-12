@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
 <body>
@@ -23,7 +24,7 @@
 		top: 0em;
 	}
 	.tag {
-		padding-left: 1em;
+		padding-left: 1.4em;
 	}
 	.cat {
 		display: inline-block;
@@ -140,12 +141,13 @@ jQuery(function($) {
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
-		$(".out").append("<div class='get'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br></div>")
+		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div><br></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<div class='api'><br><button class='xml'>Oops! Something went wrong!</button><br></div>")
+			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div><br></div>")
+			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
 			$(".out").removeClass("rss");
@@ -156,7 +158,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='get'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
