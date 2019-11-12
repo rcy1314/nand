@@ -81,16 +81,18 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
 	$.fn.pop = function(n) {
+		$(".bar:first, .bar:last, .api, .rss").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
-		$(".out").append("<hr class='bar'>");
+		$(".out").append("<div class='bar'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				$(".out").append("<button id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
-		$(this).app();
 		$(this).scr(".bar");
+		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><br><br><button class='xml' onclick'$(this).url(\"https://github.com/acktic.github.io/\")'>&ensp;&ensp;Clone this Repository!</button><br><br><br><br><br><br><br><br></div>");
+		$(this).app();
 	}
 	$.fn.xhr = function(n) {
 		$.each(menu, function(i, k) {
@@ -128,7 +130,7 @@ jQuery(function($) {
 		$(this).scr(".rss");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
+			$(".out").append("<div class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br></div>")
 			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
@@ -140,7 +142,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><hr class='bar'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><div class='bar'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -150,7 +152,7 @@ jQuery(function($) {
 				}
 				$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
 			});
-			$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button></div><hr>");
 			$(this).app();
 			$(this).scr(".bar");
 		})
