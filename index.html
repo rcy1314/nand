@@ -96,7 +96,7 @@ jQuery(function($) {
 		$(".bar:first, .bar:last, .api").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
-		$(".out").append("<div class='bar'>");
+		$(".out").append("<div class='bar'><br><br>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
