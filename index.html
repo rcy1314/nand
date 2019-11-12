@@ -96,7 +96,7 @@ jQuery(function($) {
 			}
 		});
 		$(this).scr(".bar");
-		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br></div>");
+		$('.out').append("</div><br><div class='bar'><br><br><br><br><br><br><br><button class='ran' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></button><br><br><br><br><br><br><br><br><br></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -130,6 +130,7 @@ jQuery(function($) {
 		$(".random").css("float", "right");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
+		$(".bar:first, .bar:last").remove();
 		$(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br>")
 		$(".out").addClass("rss");
 		$(this).scr(".rss");
