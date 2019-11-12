@@ -109,7 +109,7 @@ jQuery(function($) {
 			}
 		});
 		$(this).app();
-		$(this)scr(".bar");
+		$(this).scr(".bar");
 	}
 	$.fn.app = function(n) {
 		if (n == "tog") {
@@ -127,7 +127,7 @@ jQuery(function($) {
 	$.fn.getFeed = function(category, feed, title, homepage) {
 		$(".out").append("<hr class='rss'><br><button class='xml'>Fetching source.  Please be patient.</button><br>")
 		$(".out").addClass("rss");
-		$(this)scr(".rss");
+		$(this).scr(".rss");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
 			$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
@@ -154,7 +154,7 @@ jQuery(function($) {
 			});
 			$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
 			$(this).app();
-			$(this)scr(".bar");
+			$(this).scr(".bar");
 		})
 	}
     });
