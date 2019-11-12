@@ -32,6 +32,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/7864746767418.png "Example iframe")
 ![alt-text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/5083752373589.png "Example iframe")
+![alt-text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/6235673653326.png "Example iframe")
 
 Here is the css for our iframe...
 ```sh
@@ -56,7 +57,7 @@ Here is the css for our iframe...
 | .xml | .out Buttons |
 | .bot | Bottom |
 | .bar | Seperator |
-| .menu | pop() Titles |
+| .api | pop() Titles |
 | .dark | Dark mode |
 
 ### Functions
@@ -64,11 +65,10 @@ Here is the css for our iframe...
 |------|------|
 | load | Category and set focus |
 | bind | Scroll top and pop() .out != .rss |
-| live | pop() .cat |
 | url | window.open() |
 | scr | Scroll <element>:last |
-| xhr | .menu click |
 | pop | .sel append |
+| xhr | .api click |
 | ran | random |
 | app | Previously applyColors() |
 | get | Fetch parse xml |
