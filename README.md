@@ -63,7 +63,6 @@ Here is the css for our iframe...
 |------|------|
 | load | Category and set focus |
 | ready | Scroll top and pop() .out !=.fetch |
-| .cat | Click pop() |
 | url | window.open() |
 | scr | Scroll <element>:last |
 | xhr | .menu click |
