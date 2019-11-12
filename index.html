@@ -55,7 +55,7 @@
 	<div class="out"></div>
 	<div class="bot">
 		<button class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></button>
-		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
+		<button onclick="$(this).url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
 		<button class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></button>
 	</div>
     </div>
@@ -81,9 +81,9 @@ jQuery(function($) {
 		$(this).toggleClass("selected");
 		$(this).pop($(this).attr("id"));
 	});
-	$.fn.url = function(url) { window.open(url); };
-	$.fn.scroll = function(hr) { $(".out").animate({ scrollTop: $(hr + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
-	$.fn.menu = function(n) {
+	$.fn.url = function(n) { window.open(n); };
+	$.fn.scroll = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
+	$.fn.xhr = function(n) {
 		$.each(menu, function(i, k) {
 			if (n == k.name) {
 				$(this).getFeed(k.category, k.feed, k.title, k.homepage);
@@ -105,7 +105,7 @@ jQuery(function($) {
 		$(".out").append("<hr class='bar'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).menu($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
 		$(this).app();
