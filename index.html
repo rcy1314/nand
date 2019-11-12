@@ -73,12 +73,12 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				$(this).pop($(".selected").attr("id"));
+				$(this).pop($(".sel").attr("id"));
 			}
 		}
 	});
 	$(".cat").live("click", function() {
-		$(this).toggleClass("selected");
+		$(this).toggleClass("sel");
 		$(this).pop($(this).attr("id"));
 	});
 	$.fn.url = function(n) { window.open(n); };
@@ -92,7 +92,7 @@ jQuery(function($) {
 	}
 	$.fn.ran = function() {
 		$.each(menu, function(i, k) {
-			if (k.category == $(".selected").attr("id")) {
+			if (k.category == $(".sel").attr("id")) {
 				obj.push(menu[i]);
 			}
 		});
