@@ -86,7 +86,7 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
 	$.fn.pop = function(n) {
-		$(".bar:first, .bar:last, .api, .rss").remove();
+		$(".bar:first, .bar:last, .api").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='bar'>");
@@ -131,13 +131,12 @@ jQuery(function($) {
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
-		$(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br>")
+		$(".out").append("<div class='api'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".rss");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<div class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br></div>")
-			$(".out").removeClass("rss");
+			$(".out").append("<div class='api'><br><button class='xml'>Oops! Something went wrong!</button><br></div>")
 		 })
 		.success(function (data) {
 			$(".out").removeClass("rss");
