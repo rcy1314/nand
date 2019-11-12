@@ -47,11 +47,11 @@
 	}
 </style>
     <div class="con">
-	<button id="Local" class="cat">Local</button>
-	<button id="Entertainment" class="cat">Entmt</button>
-	<button id="Social" class="cat">Social</button>
-	<button id="Sports" class="cat">Sports</button>
-	<button id="Technology" class="cat">Tech</button><button id="World" class="cat">World</button>
+	<button id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</button>
+	<button id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Entmt</button>
+	<button id="Social" class="cat sel" onclick="$(this).pop($(this).attr('id'))">Social</button>
+	<button id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</button>
+	<button id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</button><button id="World" onclick="$(this).pop($(this).attr('id'))">World</button>
 	<div class="out"></div>
 	<div class="bot">
 		<button class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></button>
@@ -63,11 +63,11 @@
 var obj = [];
 jQuery(function($) {
     $(window).load(function() {
-	$("#Social").trigger("click");
+	$(".sel").trigger("click");
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
-    });
+	});
     });
     $(document).one("ready", function() {
    	$('.out').bind('scroll', function(){
@@ -76,10 +76,6 @@ jQuery(function($) {
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
-	});
-	$(".cat").live("click", function() {
-		$(this).toggleClass("sel");
-		$(this).pop($(this).attr("id"));
 	});
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
@@ -101,6 +97,8 @@ jQuery(function($) {
 		return false;
 	}
 	$.fn.pop = function(n) {
+		$(".cat").removeClass("sel");
+		$("#" + n).addClass("sel")
 		$(".bar:first, .bar:last, .menu, .rss").remove();
 		$(".out").append("<hr class='bar'>");
 		$.each(menu, function(i, k) {
