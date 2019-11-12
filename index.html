@@ -74,12 +74,25 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
+				$(".bar:first, .bar:last, .menu, .rss").remove();
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
 	});
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
+	$.fn.pop = function(n) {
+		$(".cat").removeClass("sel");
+		$("#" + n).addClass("sel")
+		$(".out").append("<hr class='bar'>");
+		$.each(menu, function(i, k) {
+			if (n == k.category) {
+				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+			}
+		});
+		$(this).app();
+		$(this).scr(".bar");
+	}
 	$.fn.xhr = function(n) {
 		$.each(menu, function(i, k) {
 			if (n == k.name) {
@@ -97,28 +110,15 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 		return false;
 	}
-	$.fn.pop = function(n) {
-		$(".cat").removeClass("sel");
-		$("#" + n).addClass("sel")
-		$(".bar:first, .bar:last, .menu, .rss").remove();
-		$(".out").append("<hr class='bar'>");
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
-			}
-		});
-		$(this).app();
-		$(this).scr(".bar");
-	}
 	$.fn.app = function(n) {
 		if (n == "tog") {
 			$(".out").toggleClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
-			$(".con, .tag, .xml, button").attr("style", "background-color: transparent; color: #000000;");
+			$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
 		}
 		else {
-			$(".con, .tag, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+			$(".con, .cat, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
 		$(".toggle").css("float", "left");
 		$(".random").css("float", "right");
