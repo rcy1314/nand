@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
 <body>
@@ -65,8 +65,9 @@
 </style>
     <div class="con">
 	<div class="tag">
-		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div><div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Celeb</div>
-		<div id="Social" class="cat sel" onclick="$(this).pop($(this).attr('id'))">Social</div>
+		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div>
+		<div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Celeb</div>
+		<div id="Social" class="cat" onclick="$(this).pop($(this).attr('id'))">Social</div>
 		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</div>
 		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
 		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div></div>
@@ -81,7 +82,7 @@
 var obj = [];
 jQuery(function($) {
     $(window).load(function() {
-	$(".sel").trigger("click");
+	$("#Social").trigger("click");
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
