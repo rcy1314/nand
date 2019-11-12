@@ -11,7 +11,7 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
-	div, .ran, .xml, button {
+	div, .ran, .xml {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
 		border: none;
@@ -24,13 +24,15 @@
 		top: 0em;
 	}
 	.tag {
-		padding-left: 1.4em;
+		justify-content: center;
+		display: flex;
 	}
 	.cat {
 		display: inline-block;
+		text-align: center;
 		font-size: 12px;
 		padding: 10px;
-		width: 11%;
+		width: 30%;
 	}
 	.out {
 		outline: none !important;
@@ -39,7 +41,7 @@
 		bottom: 2.5em;
 		width: 99%;
 		left: 2px;
-		top: 2.5em;
+		top: 3em;
 	}
 	.xml {
 		padding-bottom: 3em;
@@ -66,13 +68,12 @@
 		<div id="Social" class="cat sel" onclick="$(this).pop($(this).attr('id'))">Social</div>
 		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</div>
 		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
-		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div>
-	</div>
+		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div></div>
 	<div class="out"></div>
 	<div class="bot">
-		<button class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></button>
-		<button onclick="$(this).url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
-		<button class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></button>
+		<div class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></div>
+		<div class="git" onclick="$(this).url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></div>
+		<div class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></div>
 	</div>
     </div>
 <script>
@@ -131,13 +132,13 @@ jQuery(function($) {
 			$(".out").toggleClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
-			$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
+			$(".con, .cat, .xml, .toggle, .git, .random").attr("style", "background-color: transparent; color: #000000;");
 		}
 		else {
-			$(".con, .cat, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+			$(".con, .cat, .xml, .toggle, .git, .random").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".toggle").css("float", "left");
-		$(".random").css("float", "right");
+		$(".toggle").attr("style", "position:absolute;left:1em;bottom:.4em;");
+		$(".random").attr("style", "position:absolute;right:1em;bottom:.4em;");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
