@@ -92,18 +92,18 @@ jQuery(function($) {
 		}
 	});
 	$.fn.url = function(n) { window.open(n); };
-	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
+	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 850); }
 	$.fn.pop = function(n) {
 		$(".bar:first, .bar:last, .api").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='bar'><br><br>");
+		$(this).scr(".bar");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$(this).scr(".bar");
 		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><br><br><br><br><br><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div><br><br><br><br>");
 		$(this).app();
 	}
