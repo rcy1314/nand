@@ -132,13 +132,13 @@ jQuery(function($) {
 			$(".out").toggleClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
-			$(".con, .cat, .xml, .toggle, .git, .random").attr("style", "background-color: transparent; color: #000000;");
+			$(".con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
 		}
 		else {
-			$(".con, .cat, .xml, .toggle, .git, .random").attr("style", "background-color: #000000; color: #FFFFFF;");
+			$(".con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".toggle").attr("style", "position:absolute;left:1em;bottom:.4em;");
-		$(".random").attr("style", "position:absolute;right:1em;bottom:.4em;");
+		$(".toggle").attr("style", "position:absolute;left:1em;bottom:.1em;");
+		$(".random").attr("style", "position:absolute;right:1em;bottom:.1em;");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar:first, .bar:last").remove();
