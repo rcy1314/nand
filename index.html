@@ -74,7 +74,7 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				$(".bar:first, .bar:last, .menu, .rss").remove();
+				$(".bar:first, .bar:last, .api, .rss").remove();
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
@@ -87,7 +87,7 @@ jQuery(function($) {
 		$(".out").append("<hr class='bar'>");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+				$(".out").append("<button id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
 			}
 		});
 		$(this).app();
