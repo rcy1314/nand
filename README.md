@@ -57,7 +57,6 @@ Here is the css for our iframe...
 | .xml | .out Elements |
 | .bot | Bottom |
 | .bar | Scroll Buffer |
-| .ran | Random Buffer |
 | .get | XML Output |
 | .api | pop() Titles |
 | .dark | Dark mode |
