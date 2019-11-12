@@ -124,7 +124,7 @@ jQuery(function($) {
 		$(".random").css("float", "right");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
-		$(".out").append("<hr class='rss'><br><button class='xml'>Fetching source.  Please be patient.</button><br>")
+		$(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</button><br>")
 		$(".out").addClass("rss");
 		$(this).scr(".rss");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
