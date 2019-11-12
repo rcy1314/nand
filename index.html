@@ -48,15 +48,15 @@
 </style>
     <div class="con">
 	<button id="Local" class="cat">Local</button>
-	<button id="Entertainment" class="cat">Celeb</button>
+	<button id="Entertainment" class="cat">Entmt</button>
 	<button id="Social" class="cat">Social</button>
 	<button id="Sports" class="cat">Sports</button>
 	<button id="Technology" class="cat">Tech</button><button id="World" class="cat">World</button>
 	<div class="out"></div>
 	<div class="bot">
-		<button class="toggle" onclick="app('toggle')"><i class="fa fa-th-large"></i></button>
+		<button class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></button>
 		<button onclick="url('https://github.com/acktic/acktic.github.io');"><i class="fa fa-git"></i></button>
-		<button class="random" onclick="ran($('.sel').attr('id'))"><i class="fa fa-random"></i></button>
+		<button class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></button>
 	</div>
     </div>
 <script>
@@ -67,98 +67,98 @@ jQuery(function($) {
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
-	});
+    });
     });
     $(document).one("ready", function() {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				pop($(".sel").attr("id"));
+				$(this).pop($(".selected").attr("id"));
 			}
 		}
 	});
-    });
-    $(".cat").live("click", function() {
-	$(".cat").removeClass("sel");
-	$(this).addClass("sel");
-	pop($(this).attr("id"));
-    });
-});
-function url(n) { window.open(n); };
-function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
-function xhr(n) {
-    $.each(menu, function(i, k) {
-	if (n === k.name) {
-		get(k.category, k.feed, k.title, k.homepage);
+	$(".cat").live("click", function() {
+		$(this).toggleClass("selected");
+		$(this).pop($(this).attr("id"));
+	});
+	$.fn.url = function(url) { window.open(url); };
+	$.fn.scroll = function(hr) { $(".out").animate({ scrollTop: $(hr + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }); }
+	$.fn.menu = function(n) {
+		$.each(menu, function(i, k) {
+			if (n == k.name) {
+				$(this).getFeed(k.category, k.feed, k.title, k.homepage);
+			}
+		});
 	}
-    });
-}
-function pop(n) {
-    $(".bar:first, .bar:last, .menu, .rss").remove();
-    $(".out").append("<hr class='bar'>");
-    $.each(menu, function(i, k) {
-	if (n == k.category) {
-		$(".out").append("<button id='" + k.name + "' class='xml menu' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+	$.fn.ran = function() {
+		$.each(menu, function(i, k) {
+			if (k.category == $(".selected").attr("id")) {
+				obj.push(menu[i]);
+			}
+		});
+		var n = obj[Math.floor(Math.random()*obj.length)];
+		$(this).getFeed(n.category, n.feed, n.title, n.homepage);
+		return false;
 	}
-    });
-    app();
-    scr(".bar");
-}
-function ran(n) {
-    $.each(menu, function(i, k) {
-	if (n == k.category) {
-		obj.push(menu[i]);
-
+	$.fn.pop = function(n) {
+		$(".bar:first, .bar:last, .menu, .rss").remove();
+		$(".out").append("<hr class='bar'>");
+		$.each(menu, function(i, k) {
+			if (n == k.category) {
+				$(".out").append("<button id='" + k.name + "' class='menu xml' onclick='$(this).menu($(this).attr(\"id\"))'><i class='fa fa-rss'>&ensp;</i>&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</button>");
+			}
+		});
+		$(this).app();
+		$(this).scroll(".bar");
 	}
-    });
-    var n = obj[Math.floor(Math.random()*obj.length)];
-    get(n.category, n.feed, n.title, n.homepage);
-}
-function app(n) {
-    if (n == "toggle") { $(".out").toggleClass("dark"); }
-    if (!$(".out").hasClass("dark")) {
-	$(".con, .cat, .xml, button").attr("style", "background-color: transparent; color: #000000;");
-    }
-    else if ($(".out").hasClass("dark")) {
-	$(".con, .cat, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
-    }
-    $(".toggle").css("float", "left");
-    $(".random").css("float", "right");
-}
-function get(category, feed, title, homepage) {
-    $(".out").append("<hr class='rss'><br><button class='xml'>&ensp;&ensp;Fetching source.  Please be patient.</button><br>")
-    $(".out").addClass("rss");
-    scr(".rss");
-    $.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-	.fail(function () {
-		$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
-		$(".out").removeClass("rss");
-	})
-	.success(function (data) {
-		$(".out").removeClass("rss");
-		var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
-		if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
-			var format = "entry"		/* Both use a standard <title> for the headline.		  */
+	$.fn.app = function(n) {
+		if (n == "tog") {
+			$(".out").toggleClass("dark");
 		}
-		else {
-			var format = "item"
+		if (!$(".out").hasClass("dark")) {
+			$(".con, .tag, .xml, button").attr("style", "background-color: transparent; color: #000000;");
 		}
-		$(".out").append("<br class='bar'><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-		$(data).find(format).each(function () {
-			if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
-				var link = $(this).find("link").attr("href");
+		else if ($(".out").hasClass("dark")) {
+			$(".con, .tag, .xml, button").attr("style", "background-color: #000000; color: #FFFFFF;");
+		}
+		$(".toggle").css("float", "left");
+		$(".random").css("float", "right");
+	}
+	$.fn.getFeed = function(category, feed, title, homepage) {
+		$(".out").append("<hr class='rss'><br><button class='xml'>Fetching source.  Please be patient.</button><br>")
+		$(".out").addClass("rss");
+		$(this).scroll(".rss");
+		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
+		.fail(function () {
+			$(".out").append("<hr class='rss'><br><button class='xml'>Oops! Something went wrong!</button><br>")
+			$(".out").removeClass("rss");
+		 })
+		.success(function (data) {
+			$(".out").removeClass("rss");
+			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
+			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
+				var format = "entry"		/* Both use a standard <title> for the headline.		  */
 			}
 			else {
-				var link = $(this).find("link").text();
+				var format = "item"
 			}
-			$(".out").append("<br><button class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
-		});
-		$(".out").append("<br><button class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
-		app();
-		scr(".bar");
-	})
-}
-
+			$(".out").append("<br><hr class='bar'><button class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(data).find(format).each(function () {
+				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
+					var link = $(this).find("link").attr("href");
+				}
+				else {
+					var link = $(this).find("link").text();
+				}
+				$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</button>");
+			});
+			$(".out").append("<br><button class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</button>");
+			$(this).app();
+			$(this).scroll(".bar");
+		})
+	}
+    });
+});
 var menu = [
 
 	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno and national news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
@@ -198,7 +198,7 @@ var menu = [
 	{ name : "cnne", category : "Entertainment", title : "CNN Entertainment News Celebrities, Movies, TV, and Music.", feed : "http://rss.cnn.com/rss/cnn_showbiz.rss", homepage : "https://cnn.com/entertainment" },
 	{ name : "dead", category : "Entertainment", title : "Deadline is the first to break up-to-the-minute entertainment, Hollywood and media news", feed : "https://deadline.com/feed", homepage : "https://deadline.com" },
 	{ name : "dgtm", category : "Entertainment", title : "Digital Trends Movie reviews, TV Show recaps, previews, and news.", feed : "https://www.digitaltrends.com/movies/feed/", homepage : "https://digitaltrends.com/movies" },
-	{ name : "dlbs", category : "Entertainment", title : "Daily Beast is a news and opinion website focusing on politics, power and pop culture.", feed : "https://feeds.thedailybeast.com/summary/rss/articles", homepage : "https://www.thedailybeast.com" },
+	{ name : "dlbs", category : "Entertainment", title : "Daily Beast is a news and opinion website focusing on politics, power and Entertainment culture.", feed : "https://feeds.thedailybeast.com/summary/rss/articles", homepage : "https://www.thedailybeast.com" },
 	{ name : "rent", category : "Entertainment", title : "Entertainment subreddit has news and discussion of the entertainment industry.", feed : "https://www.reddit.com/r/entertainment/.rss", homepage : "https://reddit.com/r/entertainment" },
 	{ name : "esqf", category : "Entertainment", title : "Esquire is your destination for the latest Entertainment news headlines.", feed : "https://www.esquire.com/rss/entertainment.xml", homepage : "https://esquire.com" },
 	{ name : "indw", category : "Entertainment", title : "IndieWire has grown over decades as a preeminent source for film and television news.", feed : "https://www.indiewire.com/feed", homepage : "https://www.indiewire.com" },
@@ -208,11 +208,11 @@ var menu = [
 	{ name : "movw", category : "Entertainment", title : "Movieweb is the fastest, most complete movie & tv coverage on the planet.", feed : "https://movieweb.com/rss/all-news", homepage : "https://movieweb.com" },
 	{ name : "pepl", category : "Entertainment", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ name : "pzhl", category : "Entertainment", title : "PerezHilton is known for posts covering gossip items about celebrities.", feed : "https://perezhilton.com/feed", homepage : "https://perezhilton.com" },
-	{ name : "rost", category : "Entertainment", title : "RollingStone Magazine, the authority on music, entertainment, politics and pop culture.", feed : "https://www.rollingstone.com/feed", homepage : "https://rollingstone.com" },
+	{ name : "rost", category : "Entertainment", title : "RollingStone Magazine, the authority on music, entertainment, politics and Entertainment culture.", feed : "https://www.rollingstone.com/feed", homepage : "https://rollingstone.com" },
 	{ name : "nyet", category : "Entertainment", title : "NYPost Entertainment latest and breaking news on celebrities, movies, and TV shows.", feed : "https://nypost.com/entertainment/feed", homepage : "https://nypost.com/entertainment/feed" }, 
 	{ name : "tmzn", category : "Entertainment", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://tmz.com" },
-	{ name : "uprx", category : "Entertainment", title : "Uproxx is an entertainment and popular culture news website.", feed : "http://feeds.feedburner.com/uproxx/features", homepage : "https://uproxx.com" },
-	{ name : "vanf", category : "Entertainment", title : "Vanity Fair is a magazine of popular culture, fashion, and current affairs.", feed : "https://www.vanityfair.com/feed/rss", homepage : "https://vanityfair.com" },
+	{ name : "uprx", category : "Entertainment", title : "Uproxx is an entertainment and Entertainmentular culture news website.", feed : "http://feeds.feedburner.com/uproxx/features", homepage : "https://uproxx.com" },
+	{ name : "vanf", category : "Entertainment", title : "Vanity Fair is a magazine of Entertainmentular culture, fashion, and current affairs.", feed : "https://www.vanityfair.com/feed/rss", homepage : "https://vanityfair.com" },
 	{ name : "rvid", category : "Entertainment", title : "Video subreddit The best place for video content of all kinds.", feed : "https://www.reddit.com/r/videos/.rss", homepage : "https://reddit.com/r/videos" },
 	{ name : "wase", category : "Entertainment", title : "Washington Times Showbiz News and Entertainment News.", feed : "https://www.washingtontimes.com/rss/headlines/culture/entertainment", homepage : "https://washingtontimes.com/culture/entertainment" },
 	{ name : "yahe", category : "Entertainment", title : "Yahoo Entertainment News, Celebrity, Movie, TV.", feed : "https://www.yahoo.com/entertainment/rss", homepage : "https://yahoo.com/entertainment" },
