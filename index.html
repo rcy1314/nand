@@ -74,7 +74,6 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				$(".bar:first, .bar:last, .api, .rss").remove();
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
