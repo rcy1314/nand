@@ -156,7 +156,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='get'><br><br><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;&ensp;" + title + "</div>");
+			$(".out").append("<br><div class='get'><br><br><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -328,6 +328,7 @@ var menu = [
 	{ name : "indp", category : "Technology", title : "Independent.co.uk for Latest Gadgets and Tech news.", feed : "http://www.independent.co.uk/life-style/gadgets-and-tech/rss", homepage : "https://independent.co.uk/life-style/gadgets-and-tech" },
 	{ name : "info", category : "Technology", title : "InfoWorld is an information technology media business.", feed : "https://www.infoworld.com/index.rss", homepage : "https://infoworld.com" }, 
 	{ name : "kota", category : "Technology", title : "Kotaku is a news and opinion site about games and things serious gamers care about.", feed : "https://kotaku.com/rss", homepage : "https://kotaku.com" },
+	{ name : "kreb", category : "Technology", title : "Krebs on Security covering computer security and cybercrime.", feed : "http://feeds.feedburner.com/KrebsOnSecurity", homepage : "https://krebsonsecurity.com" },
 	{ name : "ltms", category : "Technology", title : "Los Angeles Times techis a daily newspaper that is published in Los Angeles, California.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://latimes.com/business/technology" },
 	{ name : "lifh", category : "Technology", title : "Lifehacker is the ultimate authority on optimizing every aspect of your life. Do everything better.", feed : "https://lifehacker.com/rss", homepage : "https://lifehacker.com" },
 	{ name : "lxcm", category : "Technology", title : "Linux.com News For Open Source Professionals.", feed : "https://www.linux.com/feed", homepage : "https://linux.com" },
@@ -374,7 +375,7 @@ var menu = [
 	{ name : "drdg", category : "World", title : "Drudge Report consists mainly of news stories from other outlets.", feed : "http://feeds.feedburner.com/DrudgeReportFeed", homepage : "https://drudgereport.com" },
 	{ name : "foxn", category : "World", title : "Fox News Breaking News, Latest News and Current News.", feed : "http://feeds.foxnews.com/foxnews/latest", homepage : "https://foxnews.com" },
 	{ name : "goog", category : "World", title : "Google is a multinational technology company that specializes in Internet-related services and products.", feed : "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en", homepage : "https://news.google.com" },
-	{ name : "mirr", category : "World", title : "Mirror headlines, pictures, analysis, opinion and video.", feed : "https://www.mirror.co.uk/news/us-news/?service=rss", homepage : "https://mirror.co.uk/news/us-news" },
+	{ name : "mirr", category : "World", title : "Mirror.co.uk World headlines, pictures, analysis, opinion and video.", feed : "https://www.mirror.co.uk/news/us-news/?service=rss", homepage : "https://mirror.co.uk/news/us-news" },
 	{ name : "merc", category : "World", title : "Mercury News is passionate about serving readers in Silicon Valley and its global technology community.", feed : "https://www.mercurynews.com/feed", homepage : "https://mercurynews.com" },
 	{ name : "msnb", category : "World", title : "MSN is a web portal of Internet services and apps for Windows and mobile devices.", feed : "http://rss.msn.com", homepage : "https://msn.com" },
 	{ name : "nbcn", category : "World", title : "NBC News is the news division of the American broadcast television network NBC.", feed : "http://feeds.nbcnews.com/nbcnews/public/news", homepage : "https://nbcnews.com" },
