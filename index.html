@@ -88,8 +88,8 @@ var obj = [];
 jQuery(function($) {
     $(window).load(function() {
 	if (window.location.href.match('\\?dark=1')) { $(".out").addClass("dark") }
-	var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
-	if (n != "Local" && n != "Entertainment" && n != "Social" && n != "Sports" && n != "Technology" && n != "World" ) { $("#Social").trigger("click") } else { $("#" + n).trigger("click") };
+	if (window.location.href.match('\\&cat=')) { var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]; }
+	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) { $("#Social").trigger("click") } else { $("#" + n).trigger("click") };
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
