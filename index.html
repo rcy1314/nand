@@ -30,9 +30,10 @@
 	}
 	.cat {
 		display: inline-block;
+		padding-bottom: 1.5em;
+		padding-top: 1.5em;
 		text-align: center;
 		font-size: 12px;
-		padding-top: 1.5em;
 		padding-left: 1;
 		width: 16.3%;
 	}
@@ -62,7 +63,7 @@
     <div class="con">
 	<div class="tag">
 		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div>
-		<div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Celeb</div>
+		<div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Ent</div>
 		<div id="Social" class="cat" onclick="$(this).pop($(this).attr('id'))">Social</div>
 		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))" >Sports</div>
 		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
@@ -167,7 +168,7 @@ jQuery(function($) {
 				$(".out").append("<br><div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
 			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
-			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><br><br><br><br><br><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div><br><br><br><br>");
+			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><br><br><br><br><br><br><br><br><br><br><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div><br><br><br><br>");
 			$(this).app();
 			$(this).scr(".get");
 		})
