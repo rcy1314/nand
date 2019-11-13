@@ -1,6 +1,6 @@
 # RSS
 
-  - Cross Device & Platform.
+  - Cross Device + Platform.
   - Easy to include.
   - Easy to use.
 
