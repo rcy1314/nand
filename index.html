@@ -87,105 +87,129 @@
 var obj = [];
 jQuery(function($) {
     $(window).load(function() {
-	if (window.location.href.match('\\?dark=1')) { $(".out").addClass("dark") }
-	if (window.location.href.match('\\&cat=')) { var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]; }
-	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) { $("#Social").trigger("click") } else { $("#" + n).trigger("click") };
-	$(".out").attr('tabindex', -1).focus();
-	$(".out").focusout(function(){
-		$(".out").attr('tabindex', -1).focus();
+	if (window.location.href.match('\\?dark=1')) {								/* These are the url handlers for matching */
+		$(".out").addClass("dark")									/* attributes, for dark mode and for	   */
+	}													/* selecting categorys.			   */
+	if (window.location.href.match('\\&cat=')) {
+		var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];					/* If the attributes match then we apply   */
+	}													/* apply the class for dark mode or click  */
+	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) {	/* the Category.			   */
+		$("#Social").trigger("click")
+	}
+	else {
+		$("#" + n).trigger("click")
+	}
+	$(".out").attr('tabindex', -1).focus();									/* This will set focus to out and keep it. */
+	$(".out").focusout(function(){										/* With a focusout function to set focus   */
+		$(".out").attr('tabindex', -1).focus();								/* and keep it.				   */
 	});
     });
     $(document).one("ready", function() {
-   	$('.out').bind('scroll', function(){
-		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (!$(".out").hasClass("rss")) {
+   	$('.out').bind('scroll', function(){									/* This is the end of div scrolling. Where */
+		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {			/* if the end is reached and not currently */
+			if (!$(".out").hasClass("rss")) {							/* in the get function we pop the sel cat. */
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
 	});
-	$(".cat").live("click", function() {
-		$(this).toggleClass("sel");
+	$(".cat").live("click", function() {									/* Live Handler for cat to pop this id.    */
 		$(this).pop($(this).attr("id"));
 	});
-	$.fn.url = function(n) { window.open(n); };
-	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
+	$.fn.url = function(n) { window.open(n); };								/* Opens tab, escaping the url is fun.     */
+	$.fn.scr = function(n) { 
+		$(".out").animate({scrollTop: $(n + ":last").offset().top - $(".out").offset().top +		/* Scrolls to the last element just the    */
+		$(".out").scrollTop() }, 1000); }								/* same as out bind scroll.		   */
 	$.fn.pop = function(n) {
-		$(".pop, .api, .bar").remove();
-		$(".cat").removeClass("sel");
-		$("#" + n).addClass("sel")
-		$(".out").append("<div class='pop'>");
+		$(".pop, .api, .bar").remove();									/* Beginning with removing the previous    */
+		$(".cat").removeClass("sel");									/* pop and randoms we set the sel to cat(n)*/
+		$("#" + n).addClass("sel")									/* then start a new pop menu and scroll    */
+		$(".out").append("<div class='pop'>");								/* to it.				   */
 		$(this).scr(".pop");
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
+		$.each(menu, function(i, k) {									/* Loop to match n sel cat to menu.category*/
+			if (n == k.category) {									/* appending each match with trial and     */
+				$(".out").append("<div id='" + k.name + "' class='api xml'" +			/* error formatting.			   */
+				"onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;"  +
+				"<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category     +
+				"</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
-		$(this).app();
+			$('.out').append("</div><br><div class='bar'" +						/* After the headlines in pop there is a   */
+			"onclick='$(this).ran($(\".sel\").attr(\"id\"))'>" +					/* buffer (bar) for ran sel.		   */
+			"<div style='text-align:center;width:100%'>" +
+			"&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
+		$(this).app();											/* Apply Colors				   */
 	}
-	$.fn.xhr = function(n) {
+	$.fn.xhr = function(n) {										/* User input of api is xhr function to get*/
 		$.each(menu, function(i, k) {
-			if (n == k.name) {
+			if (n == k.name) {									/* Another loop to match n to menu.name    */
 				$(this).get(k.category, k.feed, k.title, k.homepage);
 			}
 		});
 	}
-	$.fn.ran = function(n) {
-		$.each(menu, function(i, k) {
+	$.fn.ran = function(n) {										/* Random function where an array (obj) is */
+		$.each(menu, function(i, k) {									/* created.				   */
 			if (n == k.category) {
 				obj.push(menu[i]);
 			}
 		});
-		var n = obj[Math.floor(Math.random()*obj.length)];
+		var n = obj[Math.floor(Math.random()*obj.length)];						/* Javascript random call and then get.    */
 		$(this).get(n.category, n.feed, n.title, n.homepage);
-		return false;
 	}
-	$.fn.app = function(n) {
-		if (n == "tog") {
+	$.fn.app = function(n) {										/* Apply Colors				   */
+		if (n == "tog") {										/* Pass n for toggling dark		   */
 			$(".out").toggleClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
-			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
+			$("body, .con, .cat, .xml").attr("style", "background-color:transparent;color:#000000;");
 		}
 		else {
 			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:1em;padding-right:2em");
-		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
+		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:1em;padding-right:2em");/* These need to be set   */
+		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");/* as well.		   */
 	}
 	$.fn.get = function(category, feed, title, homepage) {
-		$(".bar, .pop").remove();
-		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
-		$(".out").addClass("rss");
+		$(".pop, .bar").remove();									/* A few things start get, first notify    */
+			$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;" +			/* then scroll and add class rss for bind  */
+			"It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(this).scr(".get");
+		$(".out").addClass("rss");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () {
-			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
-			$(".out").removeClass("rss");
+		.fail(function () {										/* Some reason fail was failing so this is */
+				$(".out").append("<div class='api'><br><div class='xml'>" +			/* probably not properly formatted.	   */
+				"Oops! Something went wrong!</div></div>")
+			$(".out").removeClass("rss");								/* Remove rss for bind scroll pop.	   */
 		 })
 		.success(function (data) {
-			$(".out").removeClass("rss");
-			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
-			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
-				var format = "entry"		/* Both use a standard <title> for the headline.		  */
+			$(".out").removeClass("rss");								/* Remove rss for bind scroll pop.	   */
+			var entry = $(data).find("entry");							/* Subreddit xml uses <a href> for headline links inside <entry>. */
+			if (entry.length > 0) {									/* Standard xml uses <link> inside <item> for headline links.     */
+				var format = "entry"								/* Both use a standard <title> for the headline.		  */
 			}
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
+				$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" +
+				homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" +		/* Formatted External Link beginning xml   */
+				category + "</b>&ensp;" + title + "</div>");					/* Scroll her at the end of get            */
 			$(data).find(format).each(function () {
-				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
+				if (format == "entry") {							/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
 				}
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
+				$(".out").append("<div class='xml' onclick='$(this).url(\"" +			/* The actual xml headlines.		    */
+				link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
-			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
-			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
-			$(this).app();
-			$(this).scr(".get");
+				$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" +		/* External Link ending the headlines	    */
+				homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" +
+				category + "</b>&ensp;" + title + "</div><hr>");
+			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'>" + /* Finally the random category bar for a */
+			<div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + /* buffer when scrolling.		    */
+			"</b></div></div>");
+			$(this).app();										/* Apply colors				    */
+			$(this).scr(".get");									/* Scroll to first external link	    */
 		})
 	}
     });
