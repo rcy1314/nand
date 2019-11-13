@@ -38,7 +38,7 @@ To change the initial category from Social append
 `&cat=Technology`
 `&cat=World`
 
-An example dark with Sports category would like
+An example dark mode iframe with Sports category would look like
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Sports`
 
