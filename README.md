@@ -99,7 +99,7 @@ Here is the css for our iframe...
 | bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
-| pop | .sel Append |
+| pop | sel Append |
 | xhr | .api Click |
 | ran | Random |
 | app | Previously applyColors() |
