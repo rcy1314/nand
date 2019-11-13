@@ -33,14 +33,22 @@ If you want to include a dark mode iframe use
 To change the initial category from Social append
 
 `&cat=Local`
+
 `&cat=Entertainment`
+
 `&cat=Sports`
+
 `&cat=Technology`
+
 `&cat=World`
 
 An example dark mode iframe with Sports category would look like
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Sports`
+
+An example light mode iframe with Technology category would like this
+
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Technology`
 
 ### Styling
 
