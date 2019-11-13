@@ -46,9 +46,6 @@
 		left: 2px;
 		top: 3em;
 	}
-	.pop {
-		margin-top: 10em;
-	}
 	.xml {
 		padding-bottom: 3em;
 		padding-left: 2px;
@@ -56,8 +53,9 @@
 		width: 98%;
 	}
 	.bar {
-		padding-bottom: 20em;
-		padding-top: 15em;
+		margin-bottom: 20em;
+		margin-top: 5em;
+		padding: 6em;
 	}
 	.bot {
 		position: absolute;
@@ -100,9 +98,9 @@ jQuery(function($) {
 		}
 	});
 	$.fn.url = function(n) { window.open(n); };
-	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 800); }
+	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		$(".pop, .api, .bar:first, .bar:last").remove();
+		$(".pop, .api, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='pop'>");
@@ -146,13 +144,13 @@ jQuery(function($) {
 		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
-		$(".bar:first, .bar:last").remove();
-		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div><br></div>")
+		$(".bar, .pop").remove();
+		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div><br></div>")
+			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
 			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
@@ -164,7 +162,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='get'><br><br><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
+			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
 					var link = $(this).find("link").attr("href");
@@ -172,10 +170,10 @@ jQuery(function($) {
 				else {
 					var link = $(this).find("link").text();
 				}
-				$(".out").append("<br><div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
+				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
 			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
-			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div><br><br><br><br>");
+			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 			$(this).app();
 			$(this).scr(".get");
 		})
