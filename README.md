@@ -86,6 +86,7 @@ Here is the css for our iframe...
 | .sel | .cat Selected |
 | .out | Output |
 | .pop | .sel Populate |
+| .ext | External Link |
 | .xml | .out Elements |
 | .bar | Scroll Buffer |
 | .bot | Bottom |
