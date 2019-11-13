@@ -82,6 +82,7 @@
 	</div>
     </div>
 <script>
+var rss = false;
 jQuery(function($) {
     $(window).load(function() {
 	if (window.location.href.match('\\?dark=1')) {
@@ -107,7 +108,7 @@ jQuery(function($) {
     $(document).one("ready", function() {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (!$(".out").hasClass("rss")) {
+			if (rss = false) {
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
@@ -164,17 +165,17 @@ jQuery(function($) {
 		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
+		var rss = true;
 		$(".bar, .pop").remove();
 		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
-		$(".out").addClass("rss");
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
 			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
-			$(".out").removeClass("rss");
+			var rss = false;
 		 })
 		.success(function (data) {
-			$(".out").removeClass("rss");
+			var rss = false;
 			var entry = $(data).find("entry");
 			if (entry.length > 0) {
 				var format = "entry"
