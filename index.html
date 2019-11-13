@@ -84,7 +84,6 @@
 	</div>
     </div>
 <script>
-var obj = [];
 jQuery(function($) {
     $(window).load(function() {
 	if (window.location.href.match('\\?dark=1')) {
@@ -137,6 +136,7 @@ jQuery(function($) {
 		});
 	}
 	$.fn.ran = function(n) {
+		var obj = [];
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				obj.push(menu[i]);
