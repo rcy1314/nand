@@ -87,7 +87,10 @@ jQuery(function($) {
 	if (window.location.href.match('\\?dark=1')) {
 		$(".out").addClass("dark")
 	}
-	if (window.location.href.match('\\&cat=')) {
+	if ( !window.location.href.match('\\&cat=Local') && !window.location.href.match('\\&cat=Entertainment') && !window.location.href.match('\\&cat=Social') && !window.location.href.match('\\&cat=Sports') && !window.location.href.match('\\&cat=Technology') && !window.location.href.match('\\World') ) {
+		var n = "Social" 
+	}
+	else {
 		var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
 	}
 	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) {
