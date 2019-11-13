@@ -70,6 +70,13 @@ Here is the css for our iframe...
         right: 50%;
 }
 ```
+### Variables
+| Name | Use |
+| ------ | ------ |
+| rss | .get() Scrolling-pop() |
+| dark | Dark mode(true) |
+| sel | .cat selected |
+
 ### Classes
 | Name | Use |
 | ------ | ------ |
@@ -78,20 +85,18 @@ Here is the css for our iframe...
 | .cat | Category |
 | .sel | .cat Selected |
 | .out | Output |
-| .rss | .out Fetching |
 | .pop | .sel Populate |
 | .xml | .out Elements |
-| .bot | Bottom |
 | .bar | Scroll Buffer |
+| .bot | Bottom |
 | .get | XML Output |
-| .api | pop() Titles |
-| .dark | Dark mode |
+| .api | Titles + Notifications |
 
 ### Functions
 | Name | Use |
 |------|------|
 | load | Category and Set Focus |
-| bind | Scroll Top and pop() .out != .rss |
+| bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
 | pop | .sel Append |
