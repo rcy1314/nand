@@ -103,11 +103,13 @@ Here is the css for our iframe...
 
 ### Cloning and app()
 
-  - default mode uses transparent background and black foreground.
+ - Replace https://acktic.github.io/rss.js script src with the local file for menu editing. 
+
+ - Default app mode uses transparent background and black foreground.
   
 `$("html, body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
 
- - dark mode uses black background and white foreground.
+ - Dark mode uses black background and white foreground.
  
 `$("html, body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
