@@ -108,7 +108,7 @@ jQuery(function($) {
     $(document).one("ready", function() {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (rss = false) {
+			if (rss != true) {
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
