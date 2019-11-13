@@ -84,6 +84,8 @@
 	</div>
     </div>
 <script>
+if (!window.location.href.match('\\?search=')) { window.location.href = 'http://acktic.github.io/index.html?dark=0'; }
+if(window.location.href.match(/(?<=dark=)(.*?)[^&]+/)[0] = 1) { $(".out").addClass("dark") }
 var obj = [];
 jQuery(function($) {
     $(window).load(function() {
@@ -94,7 +96,6 @@ jQuery(function($) {
 	});
     });
     $(document).one("ready", function() {
-	if(window.location.href.match(/(?<=dark=)(.*?)[^&]+/)[0] == 1) { $(".out").addClass("dark") }
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
