@@ -18,7 +18,7 @@ var menu = [
 	{ name : "abcm", category : "Local", title : "ABC Local 10 Miami, Florida breaking news and headlines.", feed : "https://www.local10.com/feeds/rssFeed/feedServlet?obfType=GMG_RSS_TEASERS&siteId=800006&categoryId=80041&nbRows=10", homepage : "https://local10.com" },
 	{ name : "cbsm", category : "Local", title : "CBS WFOR-TV Miami a full service television station in Miami and Fort Lauderdale, Florida.", feed : "https://miami.cbslocal.com/feed", homepage : "https://miami.cbslocal.com" },
 	{ name : "nbcm", category : "Local", title : "NBC WTVJ Florida local news, national news and breaking news stories.", feed : "https://www.nbcmiami.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcmiami.com" },
-	{ name : "abcs", category : "Local", title : "ABC 7 San Francisco local news and headlines.", feed : "https://abc7news.com/feed", homepage : "https://abc7news.com" },
+	{ name : "abc7", category : "Local", title : "ABC 7 San Francisco local news and headlines.", feed : "https://abc7news.com/feed", homepage : "https://abc7news.com" },
 	{ name : "cbsf", category : "Local", title : "CBS KPIX 5 San Francisco News, Sports, Weather, Traffic and the Best of SF.", feed : "https://sanfrancisco.cbslocal.com/feed", homepage : "https://sanfrancisco.cbslocal.com" },
 	{ name : "nbcf", category : "Local", title : "NBC KNTV San Franscisco owned-and-operated television station in the Bay Area market.", feed : "https://www.nbcbayarea.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcbayarea.com" },
 	{ name : "abcn", category : "Local", title : "ABC7 New York covering New York City, New Jersey, and Long Island.", feed : "https://abc7ny.com/feed", homepage : "https://abc7ny.com" },
