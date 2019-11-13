@@ -52,6 +52,10 @@
 		padding-top: 3em;
 		width: 98%;
 	}
+	.bar {
+		padding-bottom: 20em;
+		padding-top: 15em;
+	}
 	.bot {
 		position: absolute;
 		text-align: center;
@@ -98,14 +102,14 @@ jQuery(function($) {
 		$(".bar:first, .bar:last, .api").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
-		$(".out").append("<div class='bar'><br><br>");
-		$(this).scr(".bar");
+		$(".out").append("<div class='pop'>");
+		$(this).scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
+				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title);
 			}
 		});
-		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><br><br><br><br><br><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div><br><br><br><br>");
+		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -168,7 +172,7 @@ jQuery(function($) {
 				$(".out").append("<br><div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
 			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
-			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><br><br><br><br><br><br><br><br><br><br><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div><br><br><br><br><br><br><br><br><br><br><br></div><br><br><br><br>");
+			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div><br><br><br><br>");
 			$(this).app();
 			$(this).scr(".get");
 		})
