@@ -28,7 +28,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 If you want to include a dark mode iframe use
 
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1"></iframe>
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1"></iframe>`
 
 ### Styling
 
