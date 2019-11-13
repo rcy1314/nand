@@ -1,6 +1,6 @@
 # RSS
 
-  - Mobile Friendly.
+  - Cross Device & Platform.
   - Easy to include.
   - Easy to use.
 
