@@ -103,7 +103,7 @@ Here is the css for our iframe...
 
 ### Cloning and app()
 
- - Replace https://acktic.github.io/rss.js <script src> with the local file for menu editing. 
+ - Replace https://acktic.github.io/rss.js in `<script src=>` with the local file for menu editing. 
 
  - Default app mode uses transparent background and black foreground.
   
