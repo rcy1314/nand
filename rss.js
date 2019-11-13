@@ -72,7 +72,7 @@ var menu = [
 	{ name : "rios", category : "Social", title : "iOS subreddit for everything Apple iOS.", feed : "https://www.reddit.com/r/ios/.rss", homepage : "https://www.reddit.com/r/ios" },
 	{ name : "rjsc", category : "Social", title : "Javascript subreddit All about the JavaScript programming language!", feed : "https://www.reddit.com/r/javascript/.rss", homepage : "https://www.reddit.com/r/javascript" },
 	{ name : "rlnx", category : "Social", title : "Linux subreddit discusses topics evolving around Linux.", feed : "https://www.reddit.com/r/linux/.rss", homepage : "https://reddit.com/r/linux" },
-	{ name : "rnod", category : "Social", title : "Node subreddit all about NodeJs created 2009 with 141,000 members.", feed : "https://www.reddit.com/r/node/.rss", homepage : "https://www.reddit.com/r/node" },
+	{ name : "rnod", category : "Social", title : "Node subreddit all about NodeJs, created in 2009 with 141,000 members.", feed : "https://www.reddit.com/r/node/.rss", homepage : "https://www.reddit.com/r/node" },
 	{ name : "rpro", category : "Social", title : "Programming subreddit shares user submitted articles on programming.", feed : "https://www.reddit.com/r/programming/.rss", homepage : "https://reddit.com/r/programming" },
 	{ name : "rpyt", category : "Social", title : "Python subreddit about the dynamic, interpreted, interactive, object-oriented, extensible language Python.", feed : "https://www.reddit.com/r/python/.rss", homepage : "https://reddit.com/r/python" },
 	{ name : "rred", category : "Social", title : "Redhat subreddit discussion for Red Hat and Red Hat technologies!", feed : "https://reddit.com/r/redhat/.rss", homepage : "https://reddit.com/r/redhat" },
