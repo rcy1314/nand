@@ -112,9 +112,7 @@ jQuery(function($) {
 			}
 		}
 	});
-	$(".cat").live("click", function() {
-		$(this).pop($(this).attr("id"));
-	});
+	$(".cat").live("click", function() { $(this).pop($(this).attr("id")); });
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
@@ -173,16 +171,16 @@ jQuery(function($) {
 		 })
 		.success(function (data) {
 			$(".out").removeClass("rss");
-			var entry = $(data).find("entry");	/* Subreddit xml uses <a href> for headline links inside <entry>. */
-			if (entry.length > 0) {			/* Standard xml uses <link> inside <item> for headline links.     */
-				var format = "entry"		/* Both use a standard <title> for the headline.		  */
+			var entry = $(data).find("entry");
+			if (entry.length > 0) {
+				var format = "entry"
 			}
 			else {
 				var format = "item"
 			}
 			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$(data).find(format).each(function () {
-				if (format == "entry") {	/* Catching either <a href> or <link> from the parent element.	  */
+				if (format == "entry") {
 					var link = $(this).find("link").attr("href");
 				}
 				else {
