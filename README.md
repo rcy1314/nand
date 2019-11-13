@@ -46,7 +46,7 @@ An example dark mode iframe with Sports category would look like
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Sports"></iframe>`
 
-An example light mode iframe with Technology category would like this
+An example default mode iframe with Technology category would like this
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Technology"></iframe>`
 
@@ -103,7 +103,7 @@ Here is the css for our iframe...
 
 ### Cloning and app()
 
- - Replace https://acktic.github.io/rss.js script src with the local file for menu editing. 
+ - Replace https://acktic.github.io/rss.js <script src> with the local file for menu editing. 
 
  - Default app mode uses transparent background and black foreground.
   
