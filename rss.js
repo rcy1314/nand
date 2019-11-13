@@ -165,6 +165,7 @@ var menu = [
 	{ name : "kreb", category : "Technology", title : "Krebs on Security covering computer security and cybercrime.", feed : "http://feeds.feedburner.com/KrebsOnSecurity", homepage : "https://krebsonsecurity.com" },
 	{ name : "ltms", category : "Technology", title : "Los Angeles Times techis a daily newspaper that is published in Los Angeles, California.", feed : "https://www.latimes.com/business/technology/rss2.0.xml", homepage : "https://latimes.com/business/technology" },
 	{ name : "lifh", category : "Technology", title : "Lifehacker is the ultimate authority on optimizing every aspect of your life. Do everything better.", feed : "https://lifehacker.com/rss", homepage : "https://lifehacker.com" },
+	{ name : "llup", cateogry : "Technology", title : "Leak-Lookup latest database leaks and records counting.", feed : "https://leak-lookup.com/rss", homepage : "https://leak-lookup.com" },
 	{ name : "lxcm", category : "Technology", title : "Linux.com News For Open Source Professionals.", feed : "https://www.linux.com/feed", homepage : "https://linux.com" },
 	{ name : "betp", category : "Technology", title : "Medium's advice for programmers covering tutorials, leadership, management, and productivity.", feed : "https://medium.com/feed/better-programming", homepage : "https://medium.com/better-programming" },
 	{ name : "mirt", category : "Technology", title : "Mirror.co.uk Technology best stories, opinion, pictures and video.", feed : "https://www.mirror.co.uk/tech/?service=rss", homepage : "https://mirror.co.uk/tech" },
