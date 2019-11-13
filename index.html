@@ -83,10 +83,11 @@
     </div>
 <script>
 var rss = false;
+var dark = false;
 jQuery(function($) {
     $(window).load(function() {
 	if (window.location.href.match('\\?dark=1')) {
-		$(".out").addClass("dark")
+		dark = dark != true;
 	}
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
@@ -152,13 +153,13 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.app = function(n) {
-		if (n == "tog") {
-			$(".out").toggleClass("dark");
+		if (n == "tog" ) {
+			dark = dark != true;
 		}
-		if (!$(".out").hasClass("dark")) {
+		if (dark == false) {
 			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
 		}
-		else {
+		else if (dark == true) {
 			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
 		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:1em;padding-right:2em");
