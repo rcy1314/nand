@@ -28,6 +28,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 ### Styling
 
+![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/6482967896674.png "Example iframe")
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
 ![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/7864746767418.png "Example iframe")
 ![alt-text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/5083752373589.png "Example iframe")
