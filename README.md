@@ -54,6 +54,7 @@ Here is the css for our iframe...
 | .sel | .cat Selected |
 | .out | Output |
 | .rss | .out Fetching |
+| .pop | .sel Populate |
 | .xml | .out Elements |
 | .bot | Bottom |
 | .bar | Scroll Buffer |
