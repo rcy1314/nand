@@ -68,6 +68,7 @@ Here is the css for our iframe...
 | Name | Use |
 | ------ | ------ |
 | .dark | Dark mode(true) |
+| .get | XML Output |
 | .rss | .get() -pop() |
 | .sel | .cat selected |
 | .con | Container |
@@ -79,7 +80,8 @@ Here is the css for our iframe...
 | .xml | .out Elements |
 | .bar | Scroll Buffer |
 | .bot | Bottom |
-| .get | XML Output |
+| .random | .bot Icon |
+| .toggle | .bot Icon |
 
 ### Functions
 | Name | Use |
