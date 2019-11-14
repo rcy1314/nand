@@ -85,20 +85,7 @@ var dark = false;
 var sel = "Social";
 jQuery(function($) {
     $(window).load(function() {
-	if (window.location.href.match('\\?dark=1')) {
-		dark = dark != true;
-	}
-	if (    !window.location.href.match('\\&cat=Local') &&
-		!window.location.href.match('\\&cat=Entertainment') &&
-		!window.location.href.match('\\&cat=Sports') &&
-		!window.location.href.match('\\&cat=Technology') &&
-		!window.location.href.match('\\World') ) {
-		sel = "Social" 
-	}
-	else {
-		sel = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
-	}
-	$(this).pop(sel);
+	$("#" + sel).trigger("click");
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
