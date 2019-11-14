@@ -54,7 +54,7 @@
 		width: 98%;
 	}
 	.bar {
-		margin-bottom: 12em;
+		margin-bottom: 8em;
 		margin-top: 6em;
 		padding: 6em;
 	}
@@ -83,8 +83,8 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
+	//$(this).app("toggle");  	//Dark Mode
 	$("#Social").trigger("click");	//Initial Category
-	//$(this).app("toggle");  	Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -101,7 +101,7 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		$(".pop, .api, .bar").remove();
+		$(".pop, .api, .xml, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
@@ -149,7 +149,7 @@ jQuery(function($) {
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".get");
-		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
+		$.get("https://salty-refuge-64158.herokuapp.com" + feed)
 		.fail(function () {
 			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
 			$(".out").removeClass("rss");
