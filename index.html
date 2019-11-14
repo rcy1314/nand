@@ -135,7 +135,7 @@ if ( navigator.userAgent.search("Safari") >= 0 ) {
 	 $("#Social").trigger("click"); return false;
 }
  else {
-	if (!window.location.href.match('\\?dark=1')) {
+	if (!window.location.href.match('\\?dark=1')) { return true;
 	} 
 	else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
