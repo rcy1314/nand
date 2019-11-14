@@ -158,7 +158,6 @@ jQuery(function($) {
 			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
-			$(".out").removeClass("rss");
 			var entry = $(data).find("entry");
 			if (entry.length > 0) {
 				var format = "entry"
@@ -176,6 +175,7 @@ jQuery(function($) {
 				}
 				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
+			$(".out").removeClass("rss");
 			$(".out").append("<div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
 			$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 			$(this).app();
