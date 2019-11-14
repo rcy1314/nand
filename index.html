@@ -135,9 +135,10 @@ var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                navigator.userAgent &&
                navigator.userAgent.indexOf('CriOS') == -1 &&
                navigator.userAgent.indexOf('FxiOS') == -1;
-if ( isSafari = true ) { $("#Social").trigger("click"); return false; }	
-else {	if (!window.location.href.match('\\?dark=1')) {
-	} else { $(this).app("toggle"); }
+if ( !isSafari ) { 
+if (!window.location.href.match('\\?dark=1')) {
+	} 
+	else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
 		!window.location.href.match('\\&cat=Social') &&
@@ -150,7 +151,7 @@ else {	if (!window.location.href.match('\\?dark=1')) {
 		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
 	}
 	return false;
-	}
+} else { $("#Social").trigger("click"); return false; }
 }
 	$.fn.app = function(n) {
 		if (n == "toggle") {
