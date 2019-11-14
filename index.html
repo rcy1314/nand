@@ -88,13 +88,12 @@ jQuery(function($) {
 	$(this).app("toggle");
 	} 
 
-	if ( location.href.match('\\&cat=Local') || location.href.match('\\&cat=Entertainment') || location.href.match('\\&cat=Sports') || location.href.match('\\&cat=Technology') || location.href.match('\\&cat=World') ) {
-		var n = location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]
-		$(this).pop(n);
-	}
-	else {
-		$(this).pop("Social"); 
-	}
+	if ( location.href.match('\\&cat=Local') ) $(this).pop("Local");
+ 	if ( location.href.match('\\&cat=Entertainment') ) $(this).pop("Entertainment");
+	if ( location.href.match('\\&cat=Social') ) $(this).pop("Social");
+	if ( location.href.match('\\&cat=Sports') ) $(this).pop("Sports");
+	if ( location.href.match('\\&cat=Technology') ) $(this).pop("Technology")
+	if ( location.href.match('\\&cat=World') ) $(this).pop("World")
 
 	//$(this).app("toggle");  	//Dark Mode
 	$(".out").attr('tabindex', -1).focus();
