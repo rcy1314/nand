@@ -83,8 +83,8 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
-	$("#Social").trigger("click");//Initial Category
-      //$(this).app("toggle");  	Dark Mode
+	$("#Social").trigger("click");	//Initial Category
+	//$(this).app("toggle");  	Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -101,6 +101,7 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
+		if(n == $(".sel").attr("id")) { return false; }
 		$(".pop, .api, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
