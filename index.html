@@ -86,18 +86,7 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
-	if (window.location.href.match('\\?dark=1')) {
-		$(".out").addClass("dark")
-	}
-	if (window.location.href.match('\\&cat=')) {
-		var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
-	}
-	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) {
-		$("#Social").trigger("click")
-	}
-	else {
-		$("#" + n).trigger("click")
-	}
+	$("#Social").trigger("click")
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -125,7 +114,7 @@ jQuery(function($) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
+		$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
