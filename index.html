@@ -132,7 +132,10 @@ jQuery(function($) {
 	}
 	$.fn.run = function(n) {
 var isSafari = window.safari !== undefined;
-if ( !isSafari ) { 
+if ( isSafari ) { 
+	 $("#Social").trigger("click"); return false;
+}
+ else {
 	if (!window.location.href.match('\\?dark=1')) {
 	} 
 	else { $(this).app("toggle"); }
@@ -148,7 +151,7 @@ if ( !isSafari ) {
 		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
 	}
 	return false;
-} else { $("#Social").trigger("click"); return false; }
+	 }
 }
 	$.fn.app = function(n) {
 		if (n == "toggle") {
