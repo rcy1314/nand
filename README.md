@@ -26,30 +26,6 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 `<iframe class="rss" src="https://acktic.github.io/"></iframe>`
 
-If you want to include a dark mode iframe use
-
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1"></iframe>`
-
-To change the initial category from Social append
-
-`&cat=Local`
-
-`&cat=Entertainment`
-
-`&cat=Sports`
-
-`&cat=Technology`
-
-`&cat=World`
-
-An example dark mode iframe with Sports category would look like
-
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Sports"></iframe>`
-
-An example default mode iframe with Technology category would like this
-
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Technology"></iframe>`
-
 ### Styling
 
 ![alt text](https://ackti.files.wordpress.com/2019/11/5083752373589.png "Example iframe")
