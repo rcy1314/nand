@@ -98,7 +98,7 @@ jQuery(function($) {
 	else {
 		sel = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
 	}
-	$(this).pop("initial");
+	$(this).pop(sel);
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -116,17 +116,11 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		if(n == "initial") {
-			sel = sel
-		}
-		else {
 			$(".bar").fadeTo(4000, 0.01, function(){ 
 				$(this).slideUp(150, function() {
 					$(".bar").remove(); 
 				});
 			});
-			sel = n
-		}
 		$(".out").append("<div class='pop' style='margin-top:1px'>");
 		$.each(menu, function(i, k) {
 			if (sel == k.category) {
