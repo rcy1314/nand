@@ -84,7 +84,6 @@
 jQuery(function($) {
     $(window).load(function() {
 	//$(this).app("toggle");  	//Dark Mode
-	$("#Social").trigger("click");	//Initial Category
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -185,13 +184,14 @@ jQuery(function($) {
 	}
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
+		!window.location.href.match('\\&cat=Social') &&
 		!window.location.href.match('\\&cat=Sports') &&
 		!window.location.href.match('\\&cat=Technology') &&
-		!window.location.href.match('\\World') ) {
+		!window.location.href.match('\\&cat=World') ) {
 		$(this).pop("Social"); 
 	}
 	else {
-		 $(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
+		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
 	}
     });
 });
