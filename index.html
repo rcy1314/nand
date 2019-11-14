@@ -91,6 +91,19 @@ jQuery(function($) {
 	});
     });
     $(document).one("ready", function() {
+	if (window.location.href.match('\\?dark=1')) {
+		dark = dark != true;
+	}
+	if (    !window.location.href.match('\\&cat=Local') &&
+		!window.location.href.match('\\&cat=Entertainment') &&
+		!window.location.href.match('\\&cat=Sports') &&
+		!window.location.href.match('\\&cat=Technology') &&
+		!window.location.href.match('\\World') ) {
+		sel = "Social" 
+	}
+	else {
+		sel = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
+	}
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
