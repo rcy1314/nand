@@ -30,10 +30,6 @@ Also accepts variables such as initially Dark with category Technology
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
 
-This would be for default white with category Local
-
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Local"></iframe>
-
 Specify an Initial category
 
 * Local
@@ -43,7 +39,10 @@ Specify an Initial category
 * Technology
 * World
 
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
+
+This would be for default white with category Local
+
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Local"></iframe>`
 
 ### Styling
 
