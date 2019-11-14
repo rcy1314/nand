@@ -151,7 +151,7 @@ jQuery(function($) {
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
+			$(".out").append("<div class='api'><div class='xml'>Oops! Something went wrong!</div></div>")
 			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
@@ -162,7 +162,7 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
+			$(".out").append("<div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$(data).find(format).each(function () {
 				if (format == "entry") {
 					var link = $(this).find("link").attr("href");
@@ -173,7 +173,7 @@ jQuery(function($) {
 				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
 			$(".out").removeClass("rss");
-			$(".out").append("<div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
+			$(".out").append("<div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 			$(this).app();
 			$(this).scr(".get");
