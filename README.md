@@ -26,6 +26,21 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 `<iframe class="rss" src="https://acktic.github.io/"></iframe>`
 
+Also accepts variables such as
+
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
+
+Specify an Initial category
+
+* Local
+* Entertainment
+* Social
+* Sports
+* Technology
+* World
+
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=
+
 ### Styling
 
 ![alt text](https://ackti.files.wordpress.com/2019/11/5083752373589.png "Example iframe")
