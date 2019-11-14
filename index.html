@@ -79,6 +79,7 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
+	$(this).pop("Social")									//Initial Category
 	if ( location.href.match('\\?dark=1') ) $(this).app("toggle");
 	if ( location.href.match('\\&cat=Local') ) $(this).pop("Local");
  	if ( location.href.match('\\&cat=Entertainment') ) $(this).pop("Entertainment");
@@ -86,7 +87,6 @@ jQuery(function($) {
 	if ( location.href.match('\\&cat=Sports') ) $(this).pop("Sports");
 	if ( location.href.match('\\&cat=Technology') ) $(this).pop("Technology")
 	if ( location.href.match('\\&cat=World') ) $(this).pop("World")
-	if ( location.href.match('\\&cat=') >= -1 ) $(this).pop("Social") 			//Initial Category
 	//$(this).app("toggle")									//Initial Dark
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
