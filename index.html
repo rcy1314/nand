@@ -171,6 +171,7 @@ jQuery(function($) {
 					var link = $(this).find("link").text();
 				}
 				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
+				if(i >= 24) { return false; }
 			});
 			$(".out").removeClass("rss");
 			$(".out").append("<div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
