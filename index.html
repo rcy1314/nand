@@ -43,12 +43,9 @@
 		position: absolute;
 		overflow: auto;
 		bottom: 3em;
-		width: 99%;
-		left: 2px;
+		width: 98%;
+		left: 4px;
 		top: 4em;
-	}
-	.pop {
-		margin-top: 10em;
 	}
 	.xml {
 		padding-bottom: 3em;
@@ -57,8 +54,8 @@
 		width: 98%;
 	}
 	.bar {
-		margin-bottom: 20em;
-		margin-top: 10em;
+		margin-bottom: 12em;
+		margin-top: 6em;
 		padding: 6em;
 	}
 	.bot {
@@ -107,7 +104,7 @@ jQuery(function($) {
 		$(".pop, .api, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
-		$(".out").append("<div class='pop'>");
+		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
 		$(this).scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
@@ -148,7 +145,7 @@ jQuery(function($) {
 		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
-		$(".bar, .pop").remove();
+		$(".pop, .bar").remove();
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".get");
