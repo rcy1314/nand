@@ -86,9 +86,20 @@ jQuery(function($) {
 
 	if (location.href.match('\\?dark=1')) {
 	$(this).app("toggle");
-
 	} 
-	$("#Social").trigger("click");
+
+	if (    location.href.match('\\&cat=Local') ||
+		location.href.match('\\&cat=Entertainment') ||
+		location.href.match('\\&cat=Social') ||
+		location.href.match('\\&cat=Sports') ||
+		location.href.match('\\&cat=Technology') ||
+		location.href.match('\\&cat=World') ) {
+		$(this).pop(location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
+	}
+	else {
+		$(this).pop("Social"); 
+	}
+
 	//$(this).app("toggle");  	//Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
