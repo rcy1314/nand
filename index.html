@@ -83,13 +83,15 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
-if ( navigator.userAgent.search("Safari") >= 0 ) { 
+
+if ( /.*Version.*Safari.*/.test(navigator.userAgent) ) { 
 	 $("#Social").trigger("click"); return false;
 }
  else {
-	if (!window.location.href.match('\\?dark=1')) { return true;
+	if (window.location.href.match('\\?dark=1')) {
+	$(this).app("toggle");
+
 	} 
-	else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
 		!window.location.href.match('\\&cat=Social') &&
@@ -101,8 +103,9 @@ if ( navigator.userAgent.search("Safari") >= 0 ) {
 	else {
 		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
 	}
-	return false;
 	 }
+
+
 	//$(this).app("toggle");  	//Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
