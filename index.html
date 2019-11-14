@@ -86,7 +86,8 @@
 <script>
 jQuery(function($) {
     $(window).load(function() {
-	$("#Social").trigger("click")
+	$("#Social").trigger("click");//Initial Category
+      //$(this).app("toggle");  	Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -134,7 +135,7 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.app = function(n) {
-		if (n == "tog") {
+		if (n == "toggle") {
 			$(".out").toggleClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
