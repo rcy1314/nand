@@ -84,27 +84,21 @@
 jQuery(function($) {
     $(window).load(function() {
 
-if ( /.*Version.*Safari.*/.test(navigator.userAgent) == true ) { 
-	 $("#Social").trigger("click"); return false;
-}
- else {	alert('false');
-	if (document.location.href.match('\\?dark=1')) {
+	if (location.href.match('\\?dark=1')) {
 	$(this).app("toggle");
 
 	} 
-	if (    !window.location.href.match('\\&cat=Local') &&
-		!window.location.href.match('\\&cat=Entertainment') &&
-		!window.location.href.match('\\&cat=Social') &&
-		!window.location.href.match('\\&cat=Sports') &&
-		!window.location.href.match('\\&cat=Technology') &&
-		!window.location.href.match('\\&cat=World') ) {
+	if (    !location.href.match('\\&cat=Local') &&
+		!location.href.match('\\&cat=Entertainment') &&
+		!location.href.match('\\&cat=Social') &&
+		!location.href.match('\\&cat=Sports') &&
+		!location.href.match('\\&cat=Technology') &&
+		!location.href.match('\\&cat=World') ) {
 		$(this).pop("Social"); 
 	}
 	else {
-		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
+		$(this).pop(location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
 	}
-	 }
-
 
 	//$(this).app("toggle");  	//Dark Mode
 	$(".out").attr('tabindex', -1).focus();
