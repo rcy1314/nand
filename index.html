@@ -131,10 +131,11 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-if ( navigator.vendor ==  "Apple Computer, Inc." ) { 
+var isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent); alert(isSafari);
+if ( isSafari == true ) { 
 	 $("#Social").trigger("click"); return false;
 }
- else if ( navigator.vendor !=  "Apple Computer, Inc." ){
+ else if ( isSafari == false ){
 	if (!window.location.href.match('\\?dark=1')) {
 	} 
 	else { $(this).app("toggle"); }
