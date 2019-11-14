@@ -104,14 +104,14 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		$(".pop, .api, .xml, .bar").remove();
+		$(".pop, .xml, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
 		$(this).scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
-				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
+				$(".out").append("<div id='" + k.name + "' class='xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
 		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
@@ -154,7 +154,7 @@ jQuery(function($) {
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			$(".out").append("<div class='api'><div class='xml'>Oops! Something went wrong!</div></div>")
+			$(".out").append("<div class='get'><div class='xml'><div class='xml'>Oops! Something went wrong!</div></div>")
 			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
