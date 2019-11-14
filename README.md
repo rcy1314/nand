@@ -52,11 +52,11 @@ An example default mode iframe with Technology category would like this
 
 ### Styling
 
-![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/6482967896674.png "Example iframe")
-![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/3366071279769.png "Example iframe")
-![alt text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/7864746767418.png "Example iframe")
-![alt-text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/5083752373589.png "Example iframe")
-![alt-text](https://raw.githubusercontent.com/acktic/acktic.github.io/master/6235673653326.png "Example iframe")
+![alt text](https://ackti.files.wordpress.com/2019/11/5083752373589.png "Example iframe")
+![alt text](https://ackti.files.wordpress.com/2019/11/6235673653326.png "Example iframe")
+![alt text](https://ackti.files.wordpress.com/2019/11/6482967896674.png "Example iframe")
+![alt-text](https://ackti.files.wordpress.com/2019/11/7864746767418.png "Example iframe")
+![alt-text](https://ackti.files.wordpress.com/2019/11/3366071279769.png "Example iframe")
 
 Here is the css for our iframe...
 ```sh
@@ -113,11 +113,11 @@ Here is the css for our iframe...
 
  - Default app mode uses transparent background and black foreground.
   
-`$("html, body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
+`$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
 
  - Dark mode uses black background and white foreground.
  
-`$("html, body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");`
+`$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
 ### CORS Proxy
