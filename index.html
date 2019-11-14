@@ -68,67 +68,22 @@
 </style>
     <div class="con">
 	<div class="tag">
-		<div id="Local" class="cat" onclick="pop($(this).attr('id'))">Local</div>
-		<div id="Entertainment" class="cat" onclick="pop($(this).attr('id'))">Ent</div>
-		<div id="Social" class="cat" onclick="pop($(this).attr('id'))">Social</div>
-		<div id="Sports" class="cat" onclick="pop($(this).attr('id'))">Sports</div>
-		<div id="Technology" class="cat" onclick="pop($(this).attr('id'))">Tech</div>
-		<div id="World" class="cat" onclick="pop($(this).attr('id'))">World</div></div>
+		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div>
+		<div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Ent</div>
+		<div id="Social" class="cat" onclick="$(this).pop($(this).attr('id'))">Social</div>
+		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))">Sports</div>
+		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
+		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div></div>
 	<div class="out"></div>
 	<div class="bot">
-		<div class="toggle" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
+		<div class="toggle" onclick="$(this).app('toggle')"><i class="fa fa-th-large"></i></div>
 		<div class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></div>
 	</div>
     </div>
 <script>
-	function app(n) {
-		if (n == "toggle") {
-			$(".out").toggleClass("dark");
-		}
-		if (!$(".out").hasClass("dark")) {
-			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
-		}
-		else {
-			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
-		}
-		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:-.5em;padding:1em;padding-right:2em");
-		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:-.5em;padding:1em;padding-left:2em");
-	}
-
-function pop(n) {
-		$(".pop, .api, .xml, .bar").remove();
-		$(".cat").removeClass("sel");
-		$("#" + n).addClass("sel")
-		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
-		scr(".pop");
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
-			}
-		});
-		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
-		app();
-	}
-function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
-function run(n) {
-	if (!window.location.href.match('\\?dark=1')) {
-	} else { app("toggle"); }
-	if (    !window.location.href.match('\\&cat=Local') &&
-		!window.location.href.match('\\&cat=Entertainment') &&
-		!window.location.href.match('\\&cat=Social') &&
-		!window.location.href.match('\\&cat=Sports') &&
-		!window.location.href.match('\\&cat=Technology') &&
-		!window.location.href.match('\\&cat=World') ) {
-		pop("Social"); 
-	}
-	else {
-		pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
-	}
-	}
-run();
 jQuery(function($) {
     $(window).load(function() {
-	//$app("toggle");  	//Dark Mode
+	//$(this).app("toggle");  	//Dark Mode
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -138,11 +93,26 @@ jQuery(function($) {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 			if (!$(".out").hasClass("rss")) {
-				pop($(".sel").attr("id"));
+				$(this).pop($(".sel").attr("id"));
 			}
 		}
 	});
 	$.fn.url = function(n) { window.open(n); };
+	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
+	$.fn.pop = function(n) {
+		$(".pop, .api, .xml, .bar").remove();
+		$(".cat").removeClass("sel");
+		$("#" + n).addClass("sel")
+		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
+		$(this).scr(".pop");
+		$.each(menu, function(i, k) {
+			if (n == k.category) {
+				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
+			}
+		});
+		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
+		$(this).app();
+	}
 	$.fn.xhr = function(n) {
 		$.each(menu, function(i, k) {
 			if (n == k.name) {
@@ -160,11 +130,42 @@ jQuery(function($) {
 		var n = obj[Math.floor(Math.random()*obj.length)];
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
+	$.fn.run = function(n) {
+if ( /^((?!chrome|android).)*safari/i.test(navigator.userAgent)) { return false;}	
+	if (!window.location.href.match('\\?dark=1')) {
+	} else { $(this).app("toggle"); }
+	if (    !window.location.href.match('\\&cat=Local') &&
+		!window.location.href.match('\\&cat=Entertainment') &&
+		!window.location.href.match('\\&cat=Social') &&
+		!window.location.href.match('\\&cat=Sports') &&
+		!window.location.href.match('\\&cat=Technology') &&
+		!window.location.href.match('\\&cat=World') ) {
+		$(this).pop("Social"); 
+	}
+	else {
+		$(this).pop(window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]);
+	}
+	return false;
+	}
+
+	$.fn.app = function(n) {
+		if (n == "toggle") {
+			$(".out").toggleClass("dark");
+		}
+		if (!$(".out").hasClass("dark")) {
+			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
+		}
+		else {
+			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
+		}
+		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:-.5em;padding:1em;padding-right:2em");
+		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:-.5em;padding:1em;padding-left:2em");
+	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".pop, .bar").remove();
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(".out").addClass("rss");
-		scr(".get");
+		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
 			$(".out").append("<div class='api'><div class='xml'>Oops! Something went wrong!</div></div>")
@@ -192,10 +193,11 @@ jQuery(function($) {
 			$(".out").removeClass("rss");
 			$(".out").append("<div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
 			$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
-			app();
-			scr(".get");
+			$(this).app();
+			$(this).scr(".get");
 		})
 	}
+	$(this).run();
     });
 });
 </script>
