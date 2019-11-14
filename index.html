@@ -101,7 +101,6 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		if(n == $(".sel").attr("id")) { return false; }
 		$(".pop, .api, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
