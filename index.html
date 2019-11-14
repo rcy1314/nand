@@ -88,7 +88,7 @@ if ( /.*Version.*Safari.*/.test(navigator.userAgent) == true ) {
 	 $("#Social").trigger("click"); return false;
 }
  else {	alert('false');
-	if (window.location.href.match('\\?dark=1')) {
+	if (document.location.href.match('\\?dark=1')) {
 	$(this).app("toggle");
 
 	} 
