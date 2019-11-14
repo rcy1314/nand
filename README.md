@@ -79,7 +79,6 @@ Here is the css for our iframe...
 | .ext | External Link |
 | .xml | .out Elements |
 | .bar | Scroll Buffer |
-| .bot | Bottom |
 | .random | .bot Icon |
 | .toggle | .bot Icon |
 
