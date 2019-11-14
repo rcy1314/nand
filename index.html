@@ -163,7 +163,7 @@ jQuery(function($) {
 				var format = "item"
 			}
 			$(".out").append("<div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
-			$(data).find(format).each(function () {
+			$(data).find(format).each(function (i, k) {
 				if (format == "entry") {
 					var link = $(this).find("link").attr("href");
 				}
