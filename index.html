@@ -45,7 +45,7 @@
 		bottom: 3em;
 		width: 99%;
 		left: 2px;
-		top: 3em;
+		top: 4em;
 	}
 	.pop {
 		margin-top: 10em;
@@ -103,7 +103,7 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
-		$(".pop, .api, .bar").remove();
+		$(".pop, .api").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='pop'>");
@@ -113,7 +113,7 @@ jQuery(function($) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
+		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -148,7 +148,7 @@ jQuery(function($) {
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".bar, .pop").remove();
-		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
+		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		$(".out").addClass("rss");
 		$(this).scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -176,7 +176,7 @@ jQuery(function($) {
 				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
 			});
 			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
-			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
+			$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 			$(this).app();
 			$(this).scr(".get");
 		})
