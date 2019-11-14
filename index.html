@@ -54,8 +54,8 @@
 		width: 98%;
 	}
 	.bar {
-		padding-top: 2em;
-		padding-bottom: 6em;
+		padding-top: 10em;
+		padding-bottom: 12em;
 	}
 	.bot {
 		position: absolute;
@@ -120,21 +120,21 @@ jQuery(function($) {
 			sel = sel
 		}
 		else {
-			$(".bar").fadeTo(1000, 0.01, function(){ 
+			$(".bar").fadeTo(4000, 0.01, function(){ 
 				$(this).slideUp(150, function() {
-					$(".bar, .api").remove(); 
+					$(".bar").remove(); 
 				});
 			});
-				sel = n
+			sel = n
 		}
-		$(".out").append("<div class='pop' style='margin-top:1em'>");
-		$(this).scr(".pop");
+		$(".out").append("<div class='pop' style='margin-top:1px'>");
 		$.each(menu, function(i, k) {
 			if (sel == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
 		$('.out').append("<div class='bar' onclick='$(this).ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
+		$(this).scr(".pop");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
