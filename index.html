@@ -84,10 +84,10 @@
 jQuery(function($) {
     $(window).load(function() {
 
-if ( /.*Version.*Safari.*/.test(navigator.userAgent) ) { 
+if ( /.*Version.*Safari.*/.test(navigator.userAgent) == true ) { 
 	 $("#Social").trigger("click"); return false;
 }
- else {
+ else {	alert('false');
 	if (window.location.href.match('\\?dark=1')) {
 	$(this).app("toggle");
 
