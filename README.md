@@ -26,7 +26,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 `<iframe class="rss" src="https://acktic.github.io/"></iframe>`
 
-Also accepts variables such as initialy Dark with category Technology
+Also accepts variables such as initially Dark with category Technology
 
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
 
