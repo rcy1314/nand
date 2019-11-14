@@ -178,6 +178,7 @@ var menu = [
 	{ name : "pack", category : "Technology", title : "Packet Storm is a information security website offering current and historical computer security tools.", feed : "https://rss.packetstormsecurity.com/news/tags/usa", homepage : "https://packetstormsecurity.com" },
 	{ name : "pcwd", category : "Technology", title : "PC World is one of the United Kingdom's largest retail chains of mass market computer megastores.", feed : "https://www.pcworld.com/index.rss", homepage : "https://pcworld.com" },
 	{ name : "phor", category : "Technology", title : "Phoronix Linux Hardware Reviews & News.", feed : "https://www.phoronix.com/rss.php", homepage : "https://phoronix.com" },
+	{ name : "phys", category : "Technology", title : "Phys.org has latest news on science in Physics, Space Science, Earth Science, Health and Medicine." feed : "https://phys.org/rss-feed", homepage : "https://phys.org" },
 	{ name : "tico", category : "Technology", title : "Politico Tech strives to be the dominant source for politics and policy.", feed : "https://www.politico.com/rss/morningtech.xml", homepage : "https://politico.com" },
 	{ name : "mech", category : "Technology", title : "Popular Mechanics is a magazine of popular science and technology.", feed : "https://www.popularmechanics.com/rss/all.xml", homepage : "https://popularmechanics.com" },
 	{ name : "rdwr", category : "Technology", title : "ReadWrite was founded on April 20, 2003, by Richard MacManus, as ReadWriteWeb.", feed : "https://readwrite.com/feed", homepage : "https://readwrite.com" },
