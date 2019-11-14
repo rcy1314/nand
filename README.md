@@ -1,6 +1,6 @@
 # RSS
 
-  - Cross Device + Platform.
+  - Cross Device Browser.
   - Easy to include.
   - Easy to use.
 
