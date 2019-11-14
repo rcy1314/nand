@@ -85,7 +85,6 @@ Here is the css for our iframe...
 | .bar | Scroll Buffer |
 | .bot | Bottom |
 | .get | XML Output |
-| .api | Titles + Notifications |
 
 ### Functions
 | Name | Use |
