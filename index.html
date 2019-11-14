@@ -134,7 +134,7 @@ jQuery(function($) {
 if ( navigator.vendor ==  "Apple Computer, Inc." ) { 
 	 $("#Social").trigger("click"); return false;
 }
- else {
+ else if ( navigator.vendor !=  "Apple Computer, Inc." ){
 	if (!window.location.href.match('\\?dark=1')) {
 	} 
 	else { $(this).app("toggle"); }
