@@ -67,7 +67,7 @@ Here is the css for our iframe...
 ### Variables
 | Name | Use |
 | ------ | ------ |
-| rss | .get() Scrolling-pop() |
+| rss | .get() Scrolling -pop() |
 | dark | Dark mode(true) |
 | sel | .cat selected |
 
