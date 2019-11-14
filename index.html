@@ -44,7 +44,7 @@
 		bottom: 3em;
 		width: 99%;
 		left: 2px;
-		top: 4em;
+		top: 4.5em;
 	}
 	.pop {
 		margin-top: 10em;
@@ -70,12 +70,12 @@
 </style>
     <div class="con">
 	<div class="tag">
-		<div id="Local" class="cat">Local</div>
-		<div id="Entertainment" class="cat">Ent</div>
-		<div id="Social" class="cat">Social</div>
-		<div id="Sports" class="cat">Sports</div>
-		<div id="Technology" class="cat">Tech</div>
-		<div id="World" class="cat">World</div></div>
+		<div id="Local" class="cat" onclick="$(this).pop($(this).attr('id'))">Local</div>
+		<div id="Entertainment" class="cat" onclick="$(this).pop($(this).attr('id'))">Ent</div>
+		<div id="Social" class="cat" onclick="$(this).pop($(this).attr('id'))">Social</div>
+		<div id="Sports" class="cat" onclick="$(this).pop($(this).attr('id'))">Sports</div>
+		<div id="Technology" class="cat" onclick="$(this).pop($(this).attr('id'))">Tech</div>
+		<div id="World" class="cat" onclick="$(this).pop($(this).attr('id'))">World</div></div>
 	<div class="out"></div>
 	<div class="bot">
 		<div class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></div>
@@ -99,7 +99,6 @@ jQuery(function($) {
 			}
 		}
 	});
-	$(".cat").live("click", function() { $(this).pop($(this).attr("id")); });
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
