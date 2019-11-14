@@ -64,16 +64,12 @@ Here is the css for our iframe...
         right: 50%;
 }
 ```
-### Variables
-| Name | Use |
-| ------ | ------ |
-| rss | .get() Scrolling -pop() |
-| dark | Dark mode(true) |
-| sel | .cat selected |
-
 ### Classes
 | Name | Use |
 | ------ | ------ |
+| .dark | Dark mode(true) |
+| .rss | .get() -pop() |
+| .sel | .cat selected |
 | .con | Container |
 | .tag | .cat Parent |
 | .cat | Category |
@@ -92,8 +88,8 @@ Here is the css for our iframe...
 | bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
-| pop | sel Append |
-| xhr | .api Click |
+| pop | .sel Append |
+| xhr | .xml Click |
 | ran | Random |
 | app | Previously applyColors() |
 | get | Fetch XML |
