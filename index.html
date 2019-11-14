@@ -80,14 +80,14 @@
 jQuery(function($) {
     $(window).load(function() {
 	$(this).pop("Social")									//Initial Category
-	if ( location.href.match('\\?dark=1') ) $(this).app("toggle");
+	//$(this).app("dark")									//Initial Dark
+	if ( location.href.match('\\?dark=1') ) $(this).app("dark");
 	if ( location.href.match('\\&cat=Local') ) $(this).pop("Local");
  	if ( location.href.match('\\&cat=Entertainment') ) $(this).pop("Entertainment");
 	if ( location.href.match('\\&cat=Social') ) $(this).pop("Social");
 	if ( location.href.match('\\&cat=Sports') ) $(this).pop("Sports");
 	if ( location.href.match('\\&cat=Technology') ) $(this).pop("Technology")
 	if ( location.href.match('\\&cat=World') ) $(this).pop("World")
-	//$(this).app("toggle")									//Initial Dark
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -135,8 +135,8 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.app = function(n) {
-		if (n == "toggle") {
-			$(".out").toggleClass("dark");
+		if (n == "dark") {
+			$(".out").addClass("dark");
 		}
 		if (!$(".out").hasClass("dark")) {
 			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
