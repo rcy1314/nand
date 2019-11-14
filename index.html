@@ -90,7 +90,8 @@ jQuery(function($) {
 	if ( location.href.match('\\&cat=Sports') ) $(this).pop("Sports");
 	if ( location.href.match('\\&cat=Technology') ) $(this).pop("Technology")
 	if ( location.href.match('\\&cat=World') ) $(this).pop("World")
-	if ( location.href.match('\\&cat=') >= -1 ) $(this).pop("Social")
+	if ( location.href.match('\\&cat=') >= -1 ) $(this).pop("Social") 			//Initial Category
+	//$(this).app("toggle")									//Initial Dark
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
