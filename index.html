@@ -131,7 +131,12 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-if ( navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)  ) { $("#Social").trigger("click"); return false }	
+var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
+
+if ( isSafari  ) { $("#Social").trigger("click"); return false }	
 else {	if (!window.location.href.match('\\?dark=1')) {
 	} else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
