@@ -131,11 +131,10 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-var isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent); alert(isSafari);
-if ( isSafari ) { 
+if ( navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0 ) { 
 	 $("#Social").trigger("click"); return false;
 }
- else if ( !isSafari ){
+ else {
 	if (!window.location.href.match('\\?dark=1')) {
 	} 
 	else { $(this).app("toggle"); }
