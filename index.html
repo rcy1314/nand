@@ -131,12 +131,9 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-               navigator.userAgent &&
-               navigator.userAgent.indexOf('CriOS') == -1 &&
-               navigator.userAgent.indexOf('FxiOS') == -1;
+var isSafari = window.safari !== undefined;
 if ( !isSafari ) { 
-if (!window.location.href.match('\\?dark=1')) {
+	if (!window.location.href.match('\\?dark=1')) {
 	} 
 	else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
