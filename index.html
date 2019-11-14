@@ -92,7 +92,7 @@ jQuery(function($) {
     });
     $(document).one("ready", function() {
 	if (window.location.href.match('\\?dark=1')) {
-		dark = dark != true;
+		$(this).app("toggle");
 	}
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
