@@ -39,7 +39,7 @@ Specify an Initial category
 * Technology
 * World
 
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=
+`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
 
 ### Styling
 
