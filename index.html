@@ -93,10 +93,10 @@ jQuery(function($) {
 		!window.location.href.match('\\&cat=Sports') &&
 		!window.location.href.match('\\&cat=Technology') &&
 		!window.location.href.match('\\World') ) {
-		var sel = "Social" 
+		sel = "Social" 
 	}
 	else {
-		var sel = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
+		sel = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
 	}
 	$(this).pop("initial");
 	$(".out").attr('tabindex', -1).focus();
