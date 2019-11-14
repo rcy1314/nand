@@ -131,7 +131,7 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-if ( navigator.userAgent.indexOf('Safari') != -1 ) { $("#Social").trigger("click"); return false }	
+if ( navigator.userAgent.indexOf('Safari') == -1 ) { $("#Social").trigger("click"); return false }	
 	if (!window.location.href.match('\\?dark=1')) {
 	} else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
