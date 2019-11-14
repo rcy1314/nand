@@ -131,9 +131,8 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.run = function(n) {
-	if (window.location.href.match('\\?dark=1')) {
-		$(this).app("toggle");
-	}
+	if (!window.location.href.match('\\?dark=1')) {
+	} else { $(this).app("toggle"); }
 	if (    !window.location.href.match('\\&cat=Local') &&
 		!window.location.href.match('\\&cat=Entertainment') &&
 		!window.location.href.match('\\&cat=Social') &&
