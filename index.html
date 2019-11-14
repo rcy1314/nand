@@ -89,7 +89,7 @@ jQuery(function($) {
 	} 
 
 	if ( location.href.match('\\&cat=Local') || location.href.match('\\&cat=Entertainment') || location.href.match('\\&cat=Sports') || location.href.match('\\&cat=Technology') || location.href.match('\\&cat=World') ) {
-		var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]
+		var n = location.href.match(/(?<=cat=)(.*?)[^&]+/)[0]
 		$(this).pop(n);
 	}
 	else {
