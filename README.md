@@ -79,7 +79,6 @@ Here is the css for our iframe...
 | .cat | Category |
 | .out | Output |
 | .pop | .sel Populate |
-| .api | .sel xhr |
 | .ext | External Link |
 | .xml | .out Elements |
 | .bar | Scroll Buffer |
