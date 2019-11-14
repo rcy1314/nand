@@ -35,7 +35,6 @@
 		padding-top: 1.5em;
 		text-align: center;
 		font-size: 12px;
-		padding-left: 1em;
 		width: 16%;
 	}
 	.out {
@@ -99,7 +98,7 @@ jQuery(function($) {
 			}
 		}
 	});
-	$(".cat").live("click", function() { sel = $(this).attr("id"); $(this).pop(sel); });
+	$(".cat").live("click", function() { $(this).pop($(this).attr("id")); });
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
@@ -108,9 +107,10 @@ jQuery(function($) {
 					$(".bar").remove(); 
 				});
 			});
+			sel = n;
 		$(".out").append("<div class='pop' style='margin-top:1px'>");
 		$.each(menu, function(i, k) {
-			if (sel == k.category) {
+			if (n == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
