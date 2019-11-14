@@ -35,26 +35,31 @@
 		padding-top: 1.5em;
 		text-align: center;
 		font-size: 12px;
-		width: 16%;
+		padding-left: 1;
+		width: 16.3%;
 	}
 	.out {
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
-		bottom: 3.5em;
+		bottom: 3em;
 		width: 99%;
 		left: 2px;
-		top: 4em;
+		top: 3em;
+	}
+	.pop {
+		margin-top: 10em;
 	}
 	.xml {
 		padding-bottom: 3em;
 		padding-left: 2px;
-		padding-top: 1em;
+		padding-top: 3em;
 		width: 98%;
 	}
 	.bar {
-		padding-top: 10em;
-		padding-bottom: 12em;
+		margin-bottom: 20em;
+		margin-top: 10em;
+		padding: 6em;
 	}
 	.bot {
 		position: absolute;
@@ -74,16 +79,25 @@
 		<div id="World" class="cat">World</div></div>
 	<div class="out"></div>
 	<div class="bot">
-		<div class="toggle" onclick="$(this).app('to')"><i class="fa fa-th-large"></i></div>
-		<div class="random" onclick="$(this).ran(sel)"><i class="fa fa-random"></i></div>
+		<div class="toggle" onclick="$(this).app('tog')"><i class="fa fa-th-large"></i></div>
+		<div class="random" onclick="$(this).ran($('.sel').attr('id'))"><i class="fa fa-random"></i></div>
 	</div>
     </div>
 <script>
-var rss = false;
-var dark = false;
 jQuery(function($) {
     $(window).load(function() {
-	$("#Social").trigger("click");
+	if (window.location.href.match('\\?dark=1')) {
+		$(".out").addClass("dark")
+	}
+	if (window.location.href.match('\\&cat=')) {
+		var n = window.location.href.match(/(?<=cat=)(.*?)[^&]+/)[0];
+	}
+	if (n != "Local" && n != "Entertainment" && n != "Sports" && n != "Technology" && n != "World" ) {
+		$("#Social").trigger("click")
+	}
+	else {
+		$("#" + n).trigger("click")
+	}
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){
 		$(".out").attr('tabindex', -1).focus();
@@ -92,7 +106,7 @@ jQuery(function($) {
     $(document).one("ready", function() {
    	$('.out').bind('scroll', function(){
 		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (rss == false) {
+			if (!$(".out").hasClass("rss")) {
 				$(this).pop($(".sel").attr("id"));
 			}
 		}
@@ -101,21 +115,17 @@ jQuery(function($) {
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	$.fn.pop = function(n) {
+		$(".pop, .api, .bar").remove();
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
-		$(".bar").fadeTo(400, 0.01, function(){ 
-			$(this).slideUp(150, function() {
-				$(".bar").remove(); 
-			});
-		});
-		$(".out").append("<div class='pop' style='margin-top:1px'>");
+		$(".out").append("<div class='pop'>");
+		$(this).scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='api xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
-		$(this).scr(".pop");
+		$('.out').append("</div><br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 		$(this).app();
 	}
 	$.fn.xhr = function(n) {
@@ -136,30 +146,30 @@ jQuery(function($) {
 		$(this).get(n.category, n.feed, n.title, n.homepage);
 	}
 	$.fn.app = function(n) {
-		if (n == "to" ) {
-			dark = dark != true;
+		if (n == "tog") {
+			$(".out").toggleClass("dark");
 		}
-		if (dark == false) {
+		if (!$(".out").hasClass("dark")) {
 			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
 		}
-		else if (dark == true) {
+		else {
 			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
 		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:0em;padding:1em;padding-right:2em");
 		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:0em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
-		rss = true;
-		$(".out").append("<div class='get'><div class='api' style='margin-top:1em'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
+		$(".bar, .pop").remove();
+		$(".out").append("<div class='get'><br><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
+		$(".out").addClass("rss");
 		$(this).scr(".get");
-		$(".bar").remove();
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
 			$(".out").append("<div class='api'><br><div class='xml'>Oops! Something went wrong!</div></div>")
-			rss = false;
+			$(".out").removeClass("rss");
 		 })
 		.success(function (data) {
-			rss = false;
+			$(".out").removeClass("rss");
 			var entry = $(data).find("entry");
 			if (entry.length > 0) {
 				var format = "entry"
@@ -167,8 +177,8 @@ jQuery(function($) {
 			else {
 				var format = "item"
 			}
-			$(".out").append("<br><div class='ext' style='margin-top:3em'><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
-			$(data).find(format).each(function (i, k) {
+			$(".out").append("<br><div class='get'><div class='xml' onclick='$(this).link(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
+			$(data).find(format).each(function () {
 				if (format == "entry") {
 					var link = $(this).find("link").attr("href");
 				}
@@ -176,14 +186,11 @@ jQuery(function($) {
 					var link = $(this).find("link").text();
 				}
 				$(".out").append("<div class='xml' onclick='$(this).url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
-				if (i >= 24) {
-					return false;
-				}
 			});
 			$(".out").append("</div><br><div class='xml' onclick='$(this).url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><hr>");
 			$('.out').append("<br><div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 			$(this).app();
-			$(this).scr(".ext");
+			$(this).scr(".get");
 		})
 	}
     });
