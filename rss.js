@@ -112,6 +112,7 @@ var menu = [
 	{ name : "rfoo", category : "Sports", title : "Football subreddit discusses and headlines topic around football.", feed : "https://www.reddit.com/r/football/.rss", homepage : "https://reddit.com/r/football" },
 	{ name : "foxs", category : "Sports", title : "Fox Sports is a wide array of multi-platform US-based sports assets.", feed : "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU", homepage : "https://foxsports.com" },
 	{ name : "goal", category : "Sports", title : "Goal.com latest soccer news, live scores, results, rumours, and transfers.", feed : "https://www.goal.com/feeds/en/news", homepage : "https://goal.com" },
+	{ name : "gspo", category : "Sports", title : "Google Sports NBA, MLB, MMA, NFL, NHL, NCAA.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=sports+nba+nfl+ncaa+nhl+mlb+mma+cfb&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
 	{ name : "rhoc", category : "Sports", title : "Hockey subreddit NHL, AHL, KHL, NWHL, IIHF and every other hockey league.", feed : "https://www.reddit.com/r/hockey/.rss", homepage : "https://reddit.com/r/hockey" },
 	{ name : "jalp", category : "Sports", title : "Jalopnik is a news site about cars, racing, transportation, airplanes, and motorcycles", feed : "https://jalopnik.com/rss", homepage : "https://jalopnik.com" },
 	{ name : "rmlb", category : "Sports", title : "MLB subreddit covers Major League Baseball headlines and news.", feed : "https://www.reddit.com/r/mlb/.rss", homepage : "https://reddit.com/r/mlb" },
