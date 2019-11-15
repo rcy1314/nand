@@ -79,6 +79,7 @@ var menu = [
 	{ name : "rred", category : "Social", title : "Redhat subreddit discussion for Red Hat and Red Hat technologies!", feed : "https://reddit.com/r/redhat/.rss", homepage : "https://reddit.com/r/redhat" },
 	{ name : "rsec", category : "Social", title : "Security subreddit has been around for 11 years and has 93k subscribers.", feed : "https://www.reddit.com/r/security/.rss", homepage : "https://reddit.com/r/security" }, 
 	{ name : "sdot", category : "Social", title : "Slashdot is a social news website that originally billed itself as News for Nerds.", feed : "http://rss.slashdot.org/Slashdot/slashdot", homepage : "https://slashdot.org" },
+	{ name : "sope", category : "Social", title : "Softpedia Linux is a software and tech-news website based in Romania.", feed : "https://linux.softpedia.com/backend.xml", homepage : "https://linux.softpedia.com" },
 	{ name : "rsys", category : "Social", title : "Sysadmin subreddit dedicated to the profession of Computer System Administration.", feed : "https://www.reddit.com/r/sysadmin/.rss", homepage : "https://reddit.com/r/sysadmin" },
 	{ name : "rtch", category : "Social", title : "Tech subreddit the intelligent discussion of innovations and changes to technology.", feed : "https://www.reddit.com/r/tech/.rss", homepage : "https://www.reddit.com/r/tech" },
 	{ name : "tech", category : "Social", title : "Technology is a board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
