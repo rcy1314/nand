@@ -72,10 +72,10 @@ var sel = "Local";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em;padding-bottom:5em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em;padding-bottom:5em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>" + sel + "</b></div></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>")
+		$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>" + sel + "</b></div></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -109,7 +109,7 @@ var sel = "Local";
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>")
+			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>" + sel + "</b></div></div>")
 			app()
 			scr(".get")
 		})
