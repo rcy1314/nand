@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Ack News</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -70,7 +69,7 @@ var sel = "Local";
 	function url(n) { window.open(n); };
 	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000) }
 	function pop(n) {
-		$(document).attr("title", "Ack - " + n)
+		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
 		$('.out').append("<div class='bar' style='padding:10em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div><div class='pop' style='margin-top:" + $(".out").height() / 100 * 1 + "px'>")
