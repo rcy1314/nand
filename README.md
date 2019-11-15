@@ -28,7 +28,7 @@ Include an Iframe in your html with the [site](https://acktic.github.io).
 
 Also accepts variables such as initially Dark with category Technology
 
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=1&cat=Technology"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io/?dark=1&cat=Technology"></iframe>`
 
 Specify an Initial category
 
@@ -42,7 +42,7 @@ Specify an Initial category
 
 This would be for default white with category Local
 
-`<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Local"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io/?dark=0&cat=Local"></iframe>`
 
 ### Styling
 `See example.html`
