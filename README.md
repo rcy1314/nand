@@ -52,7 +52,7 @@ This would be for default white with category Local
 | Name | Use |
 | ------ | ------ |
 | dark | Dark mode |
-| rss | .get() -pop() |
+| rss | get() != pop() |
 | sel | .cat selected |
 
 ### Classes
@@ -76,11 +76,11 @@ This would be for default white with category Local
 | bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
-| pop | .sel Append |
-| xhr | .xml Click |
+| pop | .out sel Append |
+| xhr | .xml get() |
 | ran | Random |
 | app | Previously applyColors() |
-| get | Fetch XML |
+| get | ajax request |
   
 
 ### Cloning and app()
