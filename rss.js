@@ -145,6 +145,7 @@ var menu = [
 	{ name : "scrm", category : "Sports", title : "The Score MLB is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/mlb.rss", homepage : "https://thescore.com/mlb/news" },
 	{ name : "scrb", category : "Sports", title : "The Score MMA is the ultimate, personalized mobile sports experience.", feed : "https://feeds.thescore.com/mma.rss", homepage : "https://thescore.com/mma/news" },
 	{ name : "mmau", category : "Sports", title : "The Underground is a MMA website that features daily MMA news.", feed : "http://www.mixedmartialarts.com/news/feed", homepage : "http://mixedmartialarts.com" },
+	{ name : "tieb", category : "Sports", title : "Tiebreaker sports news headlines from around the world.", feed : "https://www.tiebreaker.com/feed", homepage : "https://www.tiebreaker.com" },
 	{ name : "ufcn", category : "Sports", title : "UFC is an American mixed martial arts promotion company based in Las Vegas, Nevada.", feed : "https://www.ufc.com/rss/news", homepage : "https://ufc.com" },
 	{ name : "vcfl", category : "Sports", title : "Vice Fightland is a website covering mixed martial arts (MMA).", feed : "http://fightland.vice.com/rss", homepage : "http://fightland.vice.com" },
 	{ name : "yahs", category : "Sports", title : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", feed : "https://sports.yahoo.com/rss", homepage : "https://sports.yahoo.com" },
