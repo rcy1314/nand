@@ -62,7 +62,7 @@ Here is the css for our iframe...
 ### Classes
 | Name | Use |
 | ------ | ------ |
-| .dark | Dark mode(true) |
+| .dark | Dark mode |
 | .get | XML Output |
 | .rss | .get() -pop() |
 | .sel | .cat selected |
