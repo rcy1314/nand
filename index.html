@@ -105,13 +105,6 @@ jQuery(function($) {
 	});
 	$.fn.url = function(n) { window.open(n); };
 	$.fn.scr = function(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
-	$.fn.xhr = function(n) {
-		$.each(menu, function(i, k) {
-			if (n == k.name) {
-				$(this).get(k.category, k.feed, k.title, k.homepage);
-			}
-		});
-	}
 	$.fn.pop = function(n) {
 		$(".pop, .xml, .bar").remove();
 		$(".cat").removeClass("sel");
@@ -125,6 +118,13 @@ jQuery(function($) {
 		});
 		$('.out').append("<div class='bar' onclick='$(this).ran($(\".sel\").attr(\"id\"))'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + $(".sel").attr("id") + "</b></div></div>");
 		$(this).app();
+	}
+	$.fn.xhr = function(n) {
+		$.each(menu, function(i, k) {
+			if (n == k.name) {
+				$(this).get(k.category, k.feed, k.title, k.homepage);
+			}
+		});
 	}
 	$.fn.ran = function(n) {
 		var obj = [];
