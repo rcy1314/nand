@@ -2,7 +2,7 @@ var menu = [
 
 	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno and national news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
 	{ name : "ycvc", category : "Local", title : "KSEE24 CBS47 your central valley in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
-	{ name : "gloc", category : "Local", title : "Google Local news from the United States.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=local+breaking+news&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
+	{ name : "gloc", category : "Local", title : "Google Local news from the United States.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=local+news&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
 	{ name : "abcb", category : "Local", title : "ABC WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://wcvb.com" },
 	{ name : "cbsb", category : "Local", title : "CBS WBZ-TV Boston Local Breaking News From Boston, Mass.", feed : "https://boston.cbslocal.com/feed", homepage : "https://boston.cbslocal.com/feed" },
 	{ name : "nbcb", category : "Local", title : "NBC WBTS-CD Boston local news, national news and Boston breaking news stories.", feed : "https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcboston.com" },
@@ -72,6 +72,7 @@ var menu = [
 	{ name : "4gch", category : "Social", title : "G Technology is a board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
 	{ name : "rgms", category : "Social", title : "Games subreddit aims to provide a place for informative and interesting gaming content.", feed : "http://www.reddit.com/r/games/.rss", homepage : "https://reddit.com/r/games" },
 	{ name : "glin", category : "Social", title : "Google Linux combination of top resources for linux.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
+	{ name : "gsoc", category : "Social", title : "Google Social news from top social media platforms.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=social+news&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
 	{ name : "hack", category : "Social", title : "Hacker News is a reader ran headline submission news purveyor.", feed : "https://news.ycombinator.com/rss", homepage : "https://news.ycombinator.com" },
 	{ name : "rhck", category : "Social", title : "Hacking subreddit dedicated to hacking and hackers.", feed : "https://www.reddit.com/r/hacking/.rss", homepage : "https://reddit.com/r/hacking" },
 	{ name : "rios", category : "Social", title : "iOS subreddit for everything Apple iOS.", feed : "https://www.reddit.com/r/ios/.rss", homepage : "https://www.reddit.com/r/ios" },
