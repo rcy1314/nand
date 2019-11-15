@@ -85,7 +85,7 @@ This would be for default white with category Local
 
 ### Cloning and app()
 
- - Replace https://acktic.github.io/rss.js in in index.html `<script src=>` with the local file for menu editing. 
+ - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
  - Default .app() mode uses transparent background and black foreground.
   
