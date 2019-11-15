@@ -47,17 +47,6 @@ This would be for default white with category Local
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
-Here is the css for our iframe...
-```sh
-.rss {
-        transform: translate(50%,50%);
-        position: absolute;
-        border: none;
-        bottom: 50%;
-        height: 80%;
-        width: 50%;
-        right: 50%;
-}
 ```
 ### Classes
 | Name | Use |
