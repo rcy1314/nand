@@ -135,7 +135,7 @@ var menu = [
 	{ name : "snfl", category : "Sports", title : "Sports Illustrated NFL latest news, scores, schedules, fantasy analysis.", feed : "https://www.si.com/rss/si_nfl.rss", homepage : "https://www.si.com/nfl" },
 	{ name : "sfut", category : "Sports", title : "Sports Illustrated Soccer stories, news, headlines, and analysis.", feed : "https://www.si.com/rss/si_soccer.rss", homepage : "https://www.si.com/soccer" },
 	{ name : "sten", category : "Sports", title : "Sports Illustrated Tennis matches, tournaments, previews, and news.", feed : "https://www.si.com/rss/si_tennis.rss", homepage : "https://www.si.com/tennis" },
-	{ name : "4chn", category : "Sports", title : "Sports is a 4Chan board that discusses International Sports.", feed : "http://boards.4chan.org/sp/index.rss", homepage : "http://boards.4channel.org/sp/" },
+	{ name : "4chn", category : "Sports", title : "Sports is a board that discusses International Sports.", feed : "http://boards.4chan.org/sp/index.rss", homepage : "http://boards.4channel.org/sp/" },
 	{ name : "spnw", category : "Sports", title : "Sporting News, originally The Sporting News, was established in 1886 as a weekly U.S. magazine.", feed : "http://www.sportingnews.com/us/rss", homepage : "http://sportingnews.com" },
 	{ name : "rspo", category : "Sports", title : "Sports subreddit for all the latest headlines and discussion in sports.", feed : "https://www.reddit.com/r/sports/.rss", homepage : "https://reddit.com/r/sports" },
 	{ name : "rten", category : "Sports", title : "Tennis subreddit discusses tennis, from tour professionals to recreational players.", feed : "https://www.reddit.com/r/tennis/.rss", homepage : "https://reddit.com/r/tennis" },
