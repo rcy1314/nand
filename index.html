@@ -110,7 +110,7 @@ jQuery(function($) {
 		$(".cat").removeClass("sel");
 		$("#" + n).addClass("sel")
 		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
-		$(this)1.scr(".pop");
+		$(this).scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
 				$(".out").append("<div id='" + k.name + "' class='xml' onclick='$(this).xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
