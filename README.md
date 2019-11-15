@@ -18,11 +18,11 @@ Here's what's used you won't need:
 
 * Simple Array Structure in rss.js
 
-`{ name : "(unique)", title : "About feed", feed : "xml url", homepage : "referring url" },`
+`{ name : "(unique)", title : "feed title", feed : "rss xml url", homepage : "external url" },`
 
 ### Sourcing
 
-Include an Iframe in your html with the [site](https://acktic.github.io).
+Include an iframe in your html with the [site](https://acktic.github.io).
 
 `<iframe class="rss" src="https://acktic.github.io"></iframe>`
 
@@ -48,14 +48,11 @@ This would be for default white with category Local
 `See example.html`
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
-`See example2.html`
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/8104541402666.png"></p>
-
 ### Variables
 | Name | Use |
 | ------ | ------ |
 | dark | Dark mode |
-| rss | .get() -pop() |
+| rss | get() != pop() |
 | sel | .cat selected |
 
 ### Classes
@@ -79,11 +76,11 @@ This would be for default white with category Local
 | bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
-| pop | .sel Append |
-| xhr | .xml Click |
+| pop | .out sel Append |
+| xhr | .xml get() |
 | ran | Random |
 | app | Previously applyColors() |
-| get | Fetch XML |
+| get | ajax request |
   
 
 ### Cloning and app()
