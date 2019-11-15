@@ -3,15 +3,12 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <body>
 <style>
-	::-webkit-scrollbar {
-		display: none;
-	}
+	::-webkit-scrollbar { display: none; }
 	div, .xml {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 12px;
@@ -54,20 +51,20 @@
 		padding: 6em;
 	}
 	.toggle {
-		font-size: 16px;
 		position: absolute;
-		left: 1em;
+		padding-right: 2em;
+		font-size: 16px;
 		bottom: -.2em;
 		padding: 1em;
-		padding-right: 2em;
+		left: 1em;
 	}
 	.random {
-		font-size: 16px;
 		position: absolute;
-		right: 1em;
+		padding-left: 2em;
+		font-size: 16px;
 		bottom: -.2em;
 		padding: 1em;
-		padding-left: 2em;
+		right: 1em;
 	}
 </style>
     <div class="con">
@@ -149,8 +146,6 @@ jQuery(function($) {
 		else {
 			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
 		}
-		$(".toggle").attr("style", "font-size:16px;position:absolute;left:1em;bottom:-.2em;padding:1em;padding-right:2em");
-		$(".random").attr("style", "font-size:16px;position:absolute;right:1em;bottom:-.2em;padding:1em;padding-left:2em");
 	}
 	$.fn.get = function(category, feed, title, homepage) {
 		$(".pop, .bar").remove();
