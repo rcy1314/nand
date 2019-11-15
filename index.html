@@ -39,112 +39,80 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
-    <div class="out" style="outline:none!important;position:absolute;overflow:auto;bottom:3em;width:98%;left:4px;top:4em"></div>
+	<div class="out" style="outline:none!important;position:absolute;overflow:auto;bottom:3em;width:98%;left:4px;top:4em"></div>
 		<div class="toggle" style="position:absolute;padding-right:2em;font-size:16px;bottom:-.2em;padding:1em;left:1em" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
 		<div class="random" style="position:absolute;padding-left:2em;font-size:16px;bottom:-.2em;padding:1em;right:1em" onclick="ran(sel)"><i class="fa fa-rotate-right"></i></div>
     </div>
 <script>
+var obj = [];
 var rss = false;
 var dark = true;
 var sel = "Local";
 	$(document).one("ready", function() {
 		pop(sel)
-		if ( location.href.match('\\?dark=0') ) dark = false;
-		if ( location.href.match('\\&cat=Local') ) pop("Local");
- 		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment");
-		if ( location.href.match('\\&cat=Social') ) pop("Social");
-		if ( location.href.match('\\&cat=Sports') ) pop("Sports");
-		if ( location.href.match('\\&cat=Technology') ) pop("Technology");
-		if ( location.href.match('\\&cat=World') ) pop("World");
+		if ( location.href.match('\\?dark=0') ) dark = false
+		if ( location.href.match('\\&cat=Local') ) pop("Local")
+ 		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment")
+		if ( location.href.match('\\&cat=Social') ) pop("Social")
+		if ( location.href.match('\\&cat=Sports') ) pop("Sports")
+		if ( location.href.match('\\&cat=Technology') ) pop("Technology")
+		if ( location.href.match('\\&cat=World') ) pop("World")
 		$(".out").attr('tabindex', -1).focus();
-		$(".out").focusout(function(){
-			$(".out").attr('tabindex', -1).focus();
-		});
-		app();
+		$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus() })
+		app()
    		$('.out').bind('scroll', function(){
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-				if (rss == false) {
-					pop(sel);
-				}
+				if (rss == false) pop(sel)
+				else rss = true
 			}
 		});
 	});
 	function url(n) { window.open(n); };
-	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
+	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000) }
 	function pop(n) {
-		$(document).attr("title", "Ack News - " + n);
-		sel = n;
-		$(".pop, .xml, .bar").remove();
-		$('.out').append("<div class='bar' style='padding:10em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
-		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 1 + "px'>");
-		scr(".pop");
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				$(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
-			}
-		});
-		$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
-		app();
+		$(document).attr("title", "Ack - " + n)
+		sel = n
+		$(".pop, .xml, .bar").remove()
+		$('.out').append("<div class='bar' style='padding:10em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div><div class='pop' style='margin-top:" + $(".out").height() / 100 * 1 + "px'>")
+		scr(".pop")
+		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>") })
+		$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>")
+		app()
 	}
-	function xhr(n) {
-		$.each(menu, function(i, k) {
-			if (n == k.name) {
-				get(k.category, k.feed, k.title, k.homepage);
-			}
-		});
-	}
+	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
 	function ran(n) {
-		var obj = [];
-		$.each(menu, function(i, k) {
-			if (n == k.category) {
-				obj.push(menu[i]);
-			}
-		});
-		var n = obj[Math.floor(Math.random()*obj.length)];
-		get(n.category, n.feed, n.title, n.homepage);
+		$.each(menu, function(i, k) { if (n == k.category) obj.push(menu[i]) })
+		var n = obj[Math.floor(Math.random()*obj.length)]
+		get(n.category, n.feed, n.title, n.homepage)
 	}
 	function app(n) {
-		if (n == "toggle") dark = dark != true;
-		if (dark == false) {
-			$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");
-		}
-		else if (dark == true) {
-			$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");
-		}
+		if (n == "toggle") dark = dark != true
+		if (dark == false) { $("body, .con, .cat, .xml").attr("style", "background-color:transparent;color:#000000") }
+		else if (dark == true) { $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF") }
 	}
 	function get(category, feed, title, homepage) {
-		rss = true;
-		$(".pop, .bar").remove();
+		rss = true
+		$(".pop, .bar").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
-		scr(".get");
+		scr(".get")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () {
-			$(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>");
-		 })
+		.fail(function () { $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>"); })
 		.success(function (data) {
-			var entry = $(data).find("entry");
-			if (entry.length > 0) {
-				var format = "entry"
-			}
-			else {
-				var format = "item"
-			}
-			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
+			var entry = $(data).find("entry")
+			if (entry.length > 0) { var format = "entry" }
+			else { var format = "item" }
+			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
 			$(data).find(format).each(function (i, k) {
-				if (format == "entry") {
-					var link = $(this).find("link").attr("href");
-				}
-				else {
-					var link = $(this).find("link").text();
-				}
+				if (format == "entry") { var link = $(this).find("link").attr("href") }
+				else { var link = $(this).find("link").text() }
 				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
-				if(i >= 24) { return false; }
+				if(i >= 24) return false
 			});
-			rss = false;
-			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
-			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
-			app();
-			scr(".get");
+			rss = false
+			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>")
+			app()
+			scr(".get")
 		})
 	}
 </script>
