@@ -26,8 +26,8 @@
 	.xml {
 		padding-bottom: 3em;
 		padding-left: 2.6em;
-		padding-top: 3em;
 		margin-right: 2.6em;
+		padding-top: 3em;
 	}
 </style>
     <div class="con" style="position:absolute;height:100%;width:99%;left:1px;top:0em">
@@ -76,7 +76,7 @@ var sel = "Local";
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 8 + "em;padding-bottom:2em' onclick='url(\"https://github.com/acktic/acktic.github.io\")'></div></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='margin-bottom:6em;padding:6em'></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:20em'></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
