@@ -45,7 +45,6 @@ This would be for default white with category Local
 `<iframe class="rss" src="https://acktic.github.io/index.html?dark=0&cat=Local"></iframe>`
 
 ### Styling
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/5314538296232.png"></p>
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
 Here is the css for our iframe...
