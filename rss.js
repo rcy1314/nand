@@ -66,7 +66,7 @@ var menu = [
 	{ name : "rcmd", category : "Social", title : "Commandline subreddit with questions and answers.", feed : "https://www.reddit.com/r/commandline/.rss", homepage : "https://reddit.com/r/commandline" },
 	{ name : "rcom", category : "Social", title : "Computer subreddit with questions and opinions.", feed : "https://www.reddit.com/r/computers/.rss", homepage : "https://reddit.com/r/computers" },
 	{ name : "rdeb", category : "Social", title : "Debian Linux subreddit covers topics revolving around Debian OS.", feed : "https://www.reddit.com/r/debian/.rss", homepage : "https://reddit.com/r/debian" },
-	{ name : "rdev", category : "Social", title : "Devops subreddit with 117k members created in 2010.", feed : "https://www.reddit.com/r/devops/.rss", homepage : "https://reddit.com/r/devops" },
+	{ name : "rdev", category : "Social", title : "Devops subreddit with 117,000 members created in 2010.", feed : "https://www.reddit.com/r/devops/.rss", homepage : "https://reddit.com/r/devops" },
 	{ name : "4diy", category : "Social", title : "DIY board discusses projects, ask questions, covers topics, exchanges ideas and techniques.", feed : "http://boards.4channel.org/diy/index.rss", homepage : "http://boards.4channel.org/diy" },
 	{ name : "rfed", category : "Social", title : "Fedora subreddit community for users, developers and people interested in Fedora.", feed : "https://www.reddit.com/r/fedora/.rss", homepage : "https://reddit.com/r/fedora" },
 	{ name : "4gch", category : "Social", title : "G Technology is a board that discusses technology.", feed : "http://boards.4chan.org/g/index.rss", homepage : "http://boards.4channel.org/g/" },
