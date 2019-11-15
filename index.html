@@ -19,13 +19,6 @@
 		cursor: default;
 		border: none;
 	}
-	.con {
-		position: absolute;
-		height: 100%;
-		width: 99%;
-		left: 1px;
-		top: 0em;
-	}
 	.cat {
 		display: inline-block;
 		padding-bottom: 1.5em;
@@ -34,44 +27,14 @@
 		font-size: 12px;
 		width: 16.3%;
 	}
-	.out {
-		outline: none !important;
-		position: absolute;
-		overflow: auto;
-		bottom: 3em;
-		width: 98%;
-		left: 4px;
-		top: 4em;
-	}
 	.xml {
 		padding-bottom: 3em;
 		padding-left: 2px;
 		padding-top: 3em;
 		width: 98%;
 	}
-	.bar {
-		margin-bottom: 8em;
-		margin-top: 6em;
-		padding: 6em;
-	}
-	.toggle {
-		position: absolute;
-		padding-right: 2em;
-		font-size: 16px;
-		bottom: -.2em;
-		padding: 1em;
-		left: 1em;
-	}
-	.random {
-		position: absolute;
-		padding-left: 2em;
-		font-size: 16px;
-		bottom: -.2em;
-		padding: 1em;
-		right: 1em;
-	}
 </style>
-    <div class="con">
+    <div class="con" style="position:absolute;height:100%;width:99%;left:1px;top:0em">
 	<div class="tag" style="justify-content: center; display: flex">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
@@ -79,9 +42,9 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
-	<div class="out"></div>
-		<div class="toggle" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
-		<div class="random" onclick="ran(sel)"><i class="fa fa-random"></i></div>
+    <div class="out" style="outline:none!important;position:absolute;overflow:auto;bottom:3em;width:98%;left:4px;top:4em"></div>
+		<div class="toggle" style="position:absolute;padding-right:2em;font-size:16px;bottom:-.2em;padding:1em;left:1em" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
+		<div class="random" style="position:absolute;padding-left:2em;font-size:16px;bottom:-.2em;padding:1em;right:1em" onclick="ran(sel)"><i class="fa fa-random"></i></div>
     </div>
 <script>
 var rss = false;
@@ -125,7 +88,7 @@ jQuery(function($) {
 				$(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'>&ensp;&ensp;<i class='fa fa-rss'></i>&ensp;&ensp;<b>" + k.category + "</b>&ensp;" + k.title + "</div>");
 			}
 		});
-		$('.out').append("<div class='bar' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
+		$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
 		app();
 	}
 	function xhr(n) {
@@ -185,7 +148,7 @@ jQuery(function($) {
 			});
 			rss = false;
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>");
-			$('.out').append("<div class='bar' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
+			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;padding:6em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
 			app();
 			scr(".get");
 		})
