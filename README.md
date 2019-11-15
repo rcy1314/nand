@@ -47,7 +47,7 @@ This would be for default white with category Local
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
-See example.html
+`See example.html`
 
 ### Classes
 | Name | Use |
@@ -85,7 +85,7 @@ See example.html
 
  - Replace https://acktic.github.io/rss.js in in index.html `<script src=>` with the local file for menu editing. 
 
- - Default app mode uses transparent background and black foreground.
+ - Default .app() mode uses transparent background and black foreground.
   
 `$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
 
