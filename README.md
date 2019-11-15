@@ -48,9 +48,6 @@ This would be for default white with category Local
 `See example.html`
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
-`See example2.html`
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/8104541402666.png"></p>
-
 ### Variables
 | Name | Use |
 | ------ | ------ |
