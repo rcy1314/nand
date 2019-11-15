@@ -16,7 +16,7 @@ Here's what's used you won't need:
 
 ### Menu Array
 
-* Simple Array Structure
+* Simple Array Structure in rss.js
 
 `{ name : "(unique)", title : "About feed", feed : "xml url", homepage : "referring url" },`
 
