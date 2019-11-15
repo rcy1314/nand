@@ -46,7 +46,7 @@ This would be for default white with category Local
 
 ### Styling
 
-![alt-text](https://ackti.files.wordpress.com/2019/11/5314538296232.png "Example iframe"){ width="800" height="600" style="display: block; margin: 0 auto" }
+![alt-text](https://ackti.files.wordpress.com/2019/11/5314538296232.png "Example iframe")
 ![alt text](https://ackti.files.wordpress.com/2019/11/6482967896674.png "Example iframe")
 
 Here is the css for our iframe...
@@ -139,8 +139,3 @@ License
 ----
 
 MIT
-
-img[src$="centerme"] {
-  display:block;
-  margin: 0 auto;
-}
