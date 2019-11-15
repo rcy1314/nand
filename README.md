@@ -50,8 +50,6 @@ This would be for default white with category Local
 ![alt text](https://ackti.files.wordpress.com/2019/11/5083752373589.png "Example iframe")
 ![alt text](https://ackti.files.wordpress.com/2019/11/6235673653326.png "Example iframe")
 ![alt text](https://ackti.files.wordpress.com/2019/11/6482967896674.png "Example iframe")
-![alt-text](https://ackti.files.wordpress.com/2019/11/7864746767418.png "Example iframe")
-![alt-text](https://ackti.files.wordpress.com/2019/11/3366071279769.png "Example iframe")
 
 Here is the css for our iframe...
 ```sh
