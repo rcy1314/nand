@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>acktic.github.io</title>
+    <title>ack</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -85,12 +85,12 @@
     </div>
 <script>
 var rss = false;
-var dark = false;
-var sel = "Social";
+var dark = true;
+var sel = "Local";
 jQuery(function($) {
     $(window).load(function() {
 	pop(sel)
-	if ( location.href.match('\\?dark=1') ) dark = true;
+	if ( location.href.match('\\?dark=0') ) dark = false;
 	if ( location.href.match('\\&cat=Local') ) pop("Local");
  	if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment");
 	if ( location.href.match('\\&cat=Social') ) pop("Social");
