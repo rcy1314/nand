@@ -125,7 +125,7 @@ var menu = [
 	{ name : "rnfl", category : "Sports", title : "NFL subreddit covers National Football League News & Discussion.", feed : "https://www.reddit.com/r/nfl/.rss", homepage : "https://reddit.com/r/nfl" },
 	{ name : "nysp", category : "Sports", title : "NYPost Sports including scores, trade rumors and standings for baseball, football, and basketball.", feed : "https://nypost.com/sports/feed", homepage : "https://nypost.com/sports" },
 	{ name : "ncaa", category : "Sports", title : "NCAA FBS College Football headlines.", feed : "https://www.ncaa.com/news/football/fbs/rss.xml", homepage : "https://ncaa.com/sports/football/fbs" },
-	{ name : "rtsp", category : "Sports", title : "RT Sport delivers latest news on sports from around the world", feed : "https://www.rt.com/rss/sport", homepage : "https://rt.com/sport" },
+	{ name : "rtsp", category : "Sports", title : "RT Sport delivers latest news on sports from around the world.", feed : "https://www.rt.com/rss/sport", homepage : "https://rt.com/sport" },
 	{ name : "sprt", category : "Sports", title : "Sports Illustrated Top Stories is a weekly sports magazine that originated in 1954.", feed : "https://www.si.com/rss/si_topstories.rss", homepage : "https://si.com" },
 	{ name : "sfan", category : "Sports", title : "Sports Illustrated Fantasy drafts, mockups, trades, rumors, deadlines.", feed : "https://www.si.com/rss/si_fantasy.rss", homepage : "https://www.si.com/fantasy" },
 	{ name : "smlb", category : "Sports", title : "Sports Illustrated MLB news, scores, stats, and fantasy.", feed : "https://www.si.com/rss/si_mlb.rss", homepage : "https://www.si.com/mlb" },
