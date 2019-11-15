@@ -46,8 +46,7 @@ This would be for default white with category Local
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/5314538296232.png"></p>
-![alt-text](https://ackti.files.wordpress.com/2019/11/5314538296232.png "Example iframe")
-![alt text](https://ackti.files.wordpress.com/2019/11/6482967896674.png "Example iframe")
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
 Here is the css for our iframe...
 ```sh
