@@ -19,7 +19,7 @@
 	.cat {
 		display: inline-block;
 		padding-bottom: 1.5em;
-		padding-top: 1.5em;
+		padding-top: .7em;
 		text-align: center;
 		font-size: 12px;
 		width: 16.3%;
@@ -41,7 +41,7 @@
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
     <div class="out" style="outline:none!important;position:absolute;overflow:auto;bottom:3em;width:98%;left:4px;top:4em"></div>
 		<div class="toggle" style="position:absolute;padding-right:2em;font-size:16px;bottom:-.2em;padding:1em;left:1em" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
-		<div class="random" style="position:absolute;padding-left:2em;font-size:16px;bottom:-.2em;padding:1em;right:1em" onclick="ran(sel)"><i class="fa fa-random"></i></div>
+		<div class="random" style="position:absolute;padding-left:2em;font-size:16px;bottom:-.2em;padding:1em;right:1em" onclick="ran(sel)"><i class="fa fa-rotate-right"></i></div>
     </div>
 <script>
 var rss = false;
@@ -75,7 +75,8 @@ var sel = "Local";
 		$(document).attr("title", "Ack News - " + n);
 		sel = n;
 		$(".pop, .xml, .bar").remove();
-		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 50 + "px'>");
+		$('.out').append("<div class='bar' style='padding:10em' onclick='ran(sel)'><div style='text-align:center;width:100%'>&ensp;&ensp;<b>Random " + sel + "</b></div></div>");
+		$(".out").append("<div class='pop' style='margin-top:" + $(".out").height() / 100 * 1 + "px'>");
 		scr(".pop");
 		$.each(menu, function(i, k) {
 			if (n == k.category) {
