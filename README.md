@@ -18,7 +18,7 @@ Here's what's used you won't need:
 
 * Simple Array Structure in rss.js
 
-`{ name : "(unique)", title : "About feed", feed : "xml url", homepage : "referring url" },`
+`{ name : "(unique)", title : "feed title", feed : "rss xml url", homepage : "external url" },`
 
 ### Sourcing
 
