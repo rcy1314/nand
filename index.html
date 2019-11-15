@@ -10,14 +10,11 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar {
-		display: none;
-	}
+	::-webkit-scrollbar { display: none; }
 	div {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 13px;
 		cursor: default;
-		border: none;
 	}
 	.cat {
 		display: inline-block;
@@ -50,32 +47,28 @@
 var rss = false;
 var dark = true;
 var sel = "Local";
-jQuery(function($) {
-    $(window).load(function() {
-	pop(sel)
-	if ( location.href.match('\\?dark=0') ) dark = false;
-	if ( location.href.match('\\&cat=Local') ) pop("Local");
- 	if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment");
-	if ( location.href.match('\\&cat=Social') ) pop("Social");
-	if ( location.href.match('\\&cat=Sports') ) pop("Sports");
-	if ( location.href.match('\\&cat=Technology') ) pop("Technology");
-	if ( location.href.match('\\&cat=World') ) pop("World");
-	$(".out").attr('tabindex', -1).focus();
-	$(".out").focusout(function(){
+	$(document).one("ready", function() {
+		pop(sel)
+		if ( location.href.match('\\?dark=0') ) dark = false;
+		if ( location.href.match('\\&cat=Local') ) pop("Local");
+ 		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment");
+		if ( location.href.match('\\&cat=Social') ) pop("Social");
+		if ( location.href.match('\\&cat=Sports') ) pop("Sports");
+		if ( location.href.match('\\&cat=Technology') ) pop("Technology");
+		if ( location.href.match('\\&cat=World') ) pop("World");
 		$(".out").attr('tabindex', -1).focus();
-	});
-	app();
-    });
-    $(document).one("ready", function() {
-   	$('.out').bind('scroll', function(){
-		if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-			if (rss == false) {
-				pop(sel);
+		$(".out").focusout(function(){
+			$(".out").attr('tabindex', -1).focus();
+		});
+		app();
+   		$('.out').bind('scroll', function(){
+			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
+				if (rss == false) {
+					pop(sel);
+				}
 			}
-		}
+		});
 	});
-    });
-});
 	function url(n) { window.open(n); };
 	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000); }
 	function pop(n) {
@@ -124,8 +117,7 @@ jQuery(function($) {
 		scr(".get");
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function () {
-			rss = false;
-			$(".out").append("<div class='get'><div class='xml'><div class='xml'>Oops! Something went wrong!</div></div>");
+			$(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>");
 		 })
 		.success(function (data) {
 			var entry = $(data).find("entry");
