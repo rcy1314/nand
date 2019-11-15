@@ -46,6 +46,7 @@ This would be for default white with category Local
 
 ### Styling
 `See example.html`
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2441926678030.png"></p>
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
 
 ### Variables
