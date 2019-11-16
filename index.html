@@ -63,11 +63,11 @@
 <script>
 var obj = [];
 var rss = false;
-var dark = true;
-var sel = "Technology";
+var dark = false;
+var sel = "Entertainment";
 	$(document).one("ready", function() {
 		pop(sel)
-		if ( location.href.match('\\?dark=0') ) dark = false
+		if ( location.href.match('\\?dark=1') ) dark = true
 		if ( location.href.match('\\&cat=Local') ) pop("Local")
  		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment")
 		if ( location.href.match('\\&cat=Social') ) pop("Social")
