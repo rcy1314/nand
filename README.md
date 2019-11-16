@@ -77,6 +77,7 @@ This would be for default white with category Local
 | pop | .out sel Append |
 | xhr | .xml get() |
 | app | Previously applyColors() |
+| ran | Random |
 | get | ajax request |
   
 
