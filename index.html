@@ -115,7 +115,7 @@ var sel = "Social";
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='url(\"https://github.com/acktic/acktic.github.io\")'></div></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:16em'></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:20em'></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -149,7 +149,7 @@ var sel = "Social";
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='margin-bottom:8em;margin-top:6em;'></div>")
+			$('.out').append("<div class='bar' style='margin-bottom:20em;'></div>")
 			app()
 			scr(".get")
 		})
