@@ -101,7 +101,7 @@ var sel = "Local";
 	}
 	function app(n) {
 		if (n == "toggle") dark = dark != true
-		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"white","color":"#000000"})
+		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
 		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
 	}
 	function pop(n) {
