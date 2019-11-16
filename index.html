@@ -92,7 +92,7 @@ var sel = "Technology";
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em'></div></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
