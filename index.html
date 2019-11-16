@@ -10,7 +10,9 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none; }
+	::-webkit-scrollbar {
+		display: none;
+	}
 	div {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 13px;
@@ -106,7 +108,8 @@ var sel = "Local"
 		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
 		else if (dark == true) $("body, .con, .cat, .xml").css({"background-color":"#000000","color":"#FFFFFF"})
 	}
-	function pop(n) { sel = n
+	function pop(n) {
+		sel = n
 		$(document).attr("title", n + " - ack")
 		$(".pop, .xml, .bar").remove()
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
@@ -116,7 +119,8 @@ var sel = "Local"
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
 	}
-	function get(category, feed, title, homepage) { rss = true
+	function get(category, feed, title, homepage) {
+		rss = true
 		$(".pop, .bar").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get")
