@@ -100,8 +100,7 @@ var sel = "Local"
 		get(n.category, n.feed, n.title, n.homepage)
 	}
 	function app(n) {
-		if (n == true) dark = true
-		if (n == false) dark = false
+		if (n == true || n == false) dark = n
 		if (n == "toggle") dark = dark != true
 		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
 		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
