@@ -88,9 +88,9 @@ This would be for default white with category Local
 
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
- - Default .app() mode uses transparent background and black foreground.
+ - Default .app() mode uses white background and black foreground.
   
-`$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
+`$("body, .con, .cat, .xml").attr("style", "background-color: white; color: #000000;");`
 
  - Dark mode uses black background and white foreground.
  
