@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://acktic.github.io/rss.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -19,10 +20,11 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		left: -.3em;
+		left: -.1em;
 		top: 0em;
 	}
 	.cat {
+		font-family: 'Source Code Pro';
 		display: inline-block;
 		padding-bottom: 2em;
 		padding-top: 1.4em;
@@ -37,7 +39,7 @@
 		bottom: 2.5em;
 		width: 100%;
 		left: 4px;
-		top: 3em;
+		top: 3.5em;
 	}
 	.xml {
 		padding-bottom: 2em;
@@ -57,8 +59,7 @@
 		width: 24px;
 	}
 </style>
-    <div class="con">
-	<div class="tag" style="justify-content: center; display: flex">
+	<div class="tag" style="justify-content:center;display:flex;">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
@@ -67,7 +68,6 @@
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
 		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
 	<div class="out"><div>
-    </div>
 <script>
 var obj = [];
 var rss = false
