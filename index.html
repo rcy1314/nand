@@ -45,6 +45,15 @@
 		padding-top: 3em;
 		line-height: 2em;
 	}
+	.fav {
+		transform: translateX(50%);
+		position: absolute;
+		bottom: -1em;
+		padding: 2em;
+		height: 24px;
+		width: 24px;
+		right: 48%;
+	}
 </style>
     <div class="con">
 	<div class="tag" style="justify-content: center; display: flex">
@@ -54,14 +63,14 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
-		<img src="https://acktic.github.io/favicon.png" style="position:absolute;bottom:-1em;padding-top:2em;padding:2em;transform:translateX(50%);right:48%;height:24px;width:24px" onclick="pop(sel)">
+		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
 	<div class="out"><div>
     </div>
 <script>
 var obj = [];
 var rss = false;
 var dark = false;
-var sel = "Entertainment";
+var sel = "Local";
 	$(document).one("ready", function() {
 		pop(sel)
 		if ( location.href.match('\\?dark=1') ) dark = true
@@ -73,7 +82,6 @@ var sel = "Entertainment";
 		if ( location.href.match('\\&cat=World') ) pop("World")
 		$(".out").attr('tabindex', -1).focus();
 		$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus() })
-		app()
    		$('.out').bind('scroll', function(){
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 				if (rss == false) pop(sel)
@@ -82,7 +90,13 @@ var sel = "Entertainment";
 		});
 	});
 	function url(n) { window.open(n); };
+	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
 	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000) }
+	function app(n) {
+		if (n == "toggle") dark = dark != true
+		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"white","color":"#000000"})
+		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
+	}
 	function pop(n) {
 		$(document).attr("title", n + " - acktic")
 		sel = n
@@ -92,17 +106,6 @@ var sel = "Entertainment";
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
-	}
-	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
-	function ran(n) {
-		$.each(menu, function(i, k) { if (n == k.category) obj.push(menu[i]) })
-		var n = obj[Math.floor(Math.random()*obj.length)]
-		get(n.category, n.feed, n.title, n.homepage)
-	}
-	function app(n) {
-		if (n == "toggle") dark = dark != true
-		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"white","color":"#000000"})
-		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
 	}
 	function get(category, feed, title, homepage) {
 		rss = true
