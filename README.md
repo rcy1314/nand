@@ -64,7 +64,6 @@ This would be for default white with category Local
 | .cat | Category |
 | .out | Output |
 | .pop | .sel Populate |
-| .ext | External Link |
 | .xml | .out Elements |
 | .bar | Scroll Buffer |
 | .random | .bot Icon |
@@ -73,13 +72,10 @@ This would be for default white with category Local
 ### Functions
 | Name | Use |
 |------|------|
-| load | Category and Set Focus |
-| bind | Scroll Top and pop() |
 | url | window.open() |
 | scr | Scroll element:last |
 | pop | .out sel Append |
 | xhr | .xml get() |
-| ran | Random |
 | app | Previously applyColors() |
 | get | ajax request |
   
