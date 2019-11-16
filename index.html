@@ -65,7 +65,8 @@
 		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
 	<div class="out"><div>
 <script>
-var obj = [];
+var tap = 0
+var obj = []
 var rss = false
 var dark = false
 var sel = "Local"
@@ -85,8 +86,20 @@ var sel = "Local"
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 				if (rss == false) pop(sel)
 			}
-			if ($(this).scrollTop() <= 1 ) scr(".pop")
+		})
+		$(document).on("click" , ".fav" , function() {
+			if(tap == 0) {
+				tap = 1
+				tap = setTimeout(function(){
+					tap = 0
+				}, 200)
+			}
+			else {
+				ran(sel)
+				tap = 0
+			}
 		});
+
 	});
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -105,8 +118,8 @@ var sel = "Local"
 	function pop(n) {
 		sel = n
 		$(document).attr("title", n + " - ack")
-		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$(".pop, .xml, .bar:last").remove()
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) {
 			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
@@ -117,7 +130,7 @@ var sel = "Local"
 		rss = true
 		$(".pop, .bar").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
-		scr(".get")
+		scr(".get:last")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
 		.fail(function() { $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>"); })
 		.success(function (data) {
