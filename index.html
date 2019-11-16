@@ -103,10 +103,10 @@ var sel = "Local"
 		if (n == true || n == false) dark = n
 		if (n == "toggle") dark = dark != true
 		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
-		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
+		else if (dark == true) $("body, .con, .cat, .xml").css({"background-color":"#000000","color":"#FFFFFF"})
 	}
 	function pop(n) { sel = n
-		$(document).attr("title", n + " - acktic")
+		$(document).attr("title", n + " - ack")
 		$(".pop, .xml, .bar").remove()
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
@@ -120,7 +120,7 @@ var sel = "Local"
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function () { $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>"); })
+		.fail(function() { $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div></div>"); })
 		.success(function (data) {
 			var entry = $(data).find("entry")
 			if (entry.length > 0) var format = "entry"
