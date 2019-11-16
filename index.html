@@ -87,7 +87,7 @@ var sel = "Local"
 			}
 		})
 var tapped=false
-$(".fav").on("touchstart",function(e){
+$(".fav").on("touchstart click",function(e){
     if(!tapped){ //if tap is not set, set up single tap
       tapped=setTimeout(function(){
           tapped=null
