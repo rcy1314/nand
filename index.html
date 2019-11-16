@@ -110,7 +110,7 @@ var sel = "Local";
 		$(".pop, .xml, .bar").remove()
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
-		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
+		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'></i><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
 	}
