@@ -67,9 +67,7 @@ This would be for default white with category Local
 | .out | Output |
 | .pop | .sel Populate |
 | .xml | .out Elements |
-| .bar | Scroll Buffer |
-| .random | .bot Icon |
-| .toggle | .bot Icon |
+| .bar | Buffer/Toggle |
 
 ### Functions
 | Name | Use |
