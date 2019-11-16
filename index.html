@@ -70,9 +70,9 @@
     </div>
 <script>
 var obj = [];
-var rss = false;
-var dark = false;
-var sel = "Local";
+var rss = false
+var dark = false
+var sel = "Local"
 	$(document).one("ready", function() {
 		pop(sel)
 		if ( location.href.match('\\?dark=1') ) dark = true
@@ -82,12 +82,12 @@ var sel = "Local";
 		if ( location.href.match('\\&cat=Sports') ) pop("Sports")
 		if ( location.href.match('\\&cat=Technology') ) pop("Technology")
 		if ( location.href.match('\\&cat=World') ) pop("World")
+		app()
 		$(".out").attr('tabindex', -1).focus();
 		$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus() })
    		$('.out').bind('scroll', function(){
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 				if (rss == false) pop(sel)
-				else rss = true
 			}
 		});
 	});
@@ -104,18 +104,17 @@ var sel = "Local";
 		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
 		else if (dark == true) $("body, .con, .cat, .xml").attr("style", "background-color:#000000;color:#FFFFFF")
 	}
-	function pop(n) {
+	function pop(n) { sel = n
 		$(document).attr("title", n + " - acktic")
-		sel = n
 		$(".pop, .xml, .bar").remove()
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 5 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
-		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><i class='fa fa-rss'></i><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
+		$.each(menu, function(i, k) {
+			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
 	}
-	function get(category, feed, title, homepage) {
-		rss = true
+	function get(category, feed, title, homepage) { rss = true
 		$(".pop, .bar").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get")
