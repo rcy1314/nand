@@ -30,9 +30,6 @@
 		width: 16.3%;
 	}
 	.out {
-		background-image: url(https://acktic.github.io/favicon.png);
-		background-repeat: no-repeat;
-		background-position: center;
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
@@ -90,7 +87,7 @@ var sel = "Entertainment";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='background-image: url(https://acktic.github.io/favicon.png);background-repeat: no-repeat;background-position: center;padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em'></div></div>")
@@ -127,7 +124,7 @@ var sel = "Entertainment";
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div>")
+			$('.out').append("<div class='bar' style='background-image: url(https://acktic.github.io/favicon.png);background-repeat: no-repeat;background-position: center;padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div>")
 			app()
 			scr(".get")
 		})
