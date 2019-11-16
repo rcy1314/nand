@@ -24,8 +24,7 @@
 	}
 	.cat {
 		display: inline-block;
-		padding-top: 1em;
-		padding-bottom: 2em;
+		padding-top: 1.4em;
 		text-align: center;
 		font-size: 12px;
 		width: 16.3%;
@@ -64,11 +63,11 @@
 <script>
 var obj = [];
 var rss = false;
-var dark = false;
-var sel = "Entertainment";
+var dark = true;
+var sel = "Technology";
 	$(document).one("ready", function() {
 		pop(sel)
-		if ( location.href.match('\\?dark=1') ) dark = true
+		if ( location.href.match('\\?dark=0') ) dark = false
 		if ( location.href.match('\\&cat=Local') ) pop("Local")
  		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment")
 		if ( location.href.match('\\&cat=Social') ) pop("Social")
@@ -94,7 +93,7 @@ var sel = "Entertainment";
 		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em'></div></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -119,7 +118,7 @@ var sel = "Entertainment";
 			var entry = $(data).find("entry")
 			if (entry.length > 0) var format = "entry"
 			else var format = "item"
-			$(".out").append("<div class='get' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
 			$(data).find(format).each(function (i, k) {
 				if (format == "entry") var link = $(this).find("link").attr("href")
 				else var link = $(this).find("link").text()
@@ -128,6 +127,7 @@ var sel = "Entertainment";
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div>")
 			app()
 			scr(".get")
 		})
