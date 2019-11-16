@@ -87,7 +87,7 @@ This would be for default white with category Local
 
  - app(dark=false) mode uses transparent background and black foreground.
   
-`$("body, .con, .cat, .xml").attr("style", "background-color: white; color: #000000;");`
+`$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
 
  - app(dark=true) mode uses black background and white foreground.
  
