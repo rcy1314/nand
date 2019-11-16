@@ -25,6 +25,7 @@
 	.cat {
 		display: inline-block;
 		padding-top: 1em;
+		padding-bottom: 2em;
 		text-align: center;
 		font-size: 12px;
 		width: 16.3%;
@@ -57,16 +58,17 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
+		<img src="https://acktic.github.io/favicon.png" style="position:absolute;bottom:-.5em;padding-top:2em;padding:1em;transform:translateX(50%);right:48%;height:24px;width:24px" onclick="ran(sel)">
 	<div class="out"><div>
     </div>
 <script>
 var obj = [];
 var rss = false;
-var dark = true;
-var sel = "Technology";
+var dark = false;
+var sel = "Entertainment";
 	$(document).one("ready", function() {
 		pop(sel)
-		if ( location.href.match('\\?dark=0') ) dark = false
+		if ( location.href.match('\\?dark=1') ) dark = true
 		if ( location.href.match('\\&cat=Local') ) pop("Local")
  		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment")
 		if ( location.href.match('\\&cat=Social') ) pop("Social")
@@ -117,7 +119,7 @@ var sel = "Technology";
 			var entry = $(data).find("entry")
 			if (entry.length > 0) var format = "entry"
 			else var format = "item"
-			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$(".out").append("<div class='get' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
 			$(data).find(format).each(function (i, k) {
 				if (format == "entry") var link = $(this).find("link").attr("href")
 				else var link = $(this).find("link").text()
