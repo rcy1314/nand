@@ -57,6 +57,7 @@ This would be for default white with category Local
 | dark | Dark mode |
 | rss | get() != pop() |
 | sel | .cat selected |
+| tap | touchstart tap |
 
 ### Classes
 | Name | Use |
@@ -67,7 +68,9 @@ This would be for default white with category Local
 | .out | Output |
 | .pop | .sel Populate |
 | .xml | .out Elements |
-| .bar | Buffer/Toggle |
+| .bot | Buffer/Toggle |
+| .top | Buffer/toggle |
+| .fav | Pop/Random |
 
 ### Functions
 | Name | Use |
