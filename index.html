@@ -10,7 +10,9 @@
   </head>
 <body>
 <style>
-	::-webkit-scrollbar { display: none }
+	::-webkit-scrollbar {
+		display: none
+	}
 	div {
 		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
 		font-size: 13px;
@@ -30,6 +32,7 @@
 		width: 16.3%;
 	}
 	.out {
+		webkit-overflow-scrolling: touch;
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
@@ -66,6 +69,7 @@
 	<div class="out"><div>
 <script>
 var obj = []
+var tap = false
 var rss = false
 var dark = false
 var sel = "Local"
@@ -86,23 +90,20 @@ var sel = "Local"
 				if (rss == false) pop(sel)
 			}
 		})
-var tapped=false
-$(".fav").on("touchstart click",function(e){
-    if(!tapped){ //if tap is not set, set up single tap
-      tapped=setTimeout(function(){
-          tapped=null
-         pop(sel) 
-	//insert things you want to do when single tapped
-      },300);   //wait 300ms then run single click code
-    } else {    //tapped within 300ms of last tap. double tap
-      clearTimeout(tapped); //stop single tap callback
-      tapped=null
-      ran(sel)
-	//insert things you want to do when double tapped
-    }
-    e.preventDefault()
-});
-
+		$(".fav").on("touchstart click",function(e){
+			if(!tap){
+				tap = setTimeout(function(){
+					tap = null
+					scr(".pop")
+				},300)
+			}
+			else {
+				clearTimeout(tap); //stop single tap callback
+				tap = null
+				ran(sel)
+			}
+		    e.preventDefault()
+		});
 	});
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -121,17 +122,17 @@ $(".fav").on("touchstart click",function(e){
 	function pop(n) {
 		sel = n
 		$(document).attr("title", n + " - ack")
-		$(".pop, .xml, .bar:last").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$(".pop, .xml, top:last, .bot").remove()
+		$('.out').append("<div class='top' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) {
 			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
+		$('.out').append("<div class='bot' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
 	}
 	function get(category, feed, title, homepage) {
 		rss = true
-		$(".pop, .bar").remove()
+		$(".pop, .top, .bot").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get:last")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -155,7 +156,7 @@ $(".fav").on("touchstart click",function(e){
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div>")
+			$('.out').append("<div class='bot' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div>")
 			app()
 			scr(".get")
 		})
