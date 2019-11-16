@@ -65,7 +65,6 @@
 		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
 	<div class="out"><div>
 <script>
-var tap = 0
 var obj = []
 var rss = false
 var dark = false
@@ -87,18 +86,22 @@ var sel = "Local"
 				if (rss == false) pop(sel)
 			}
 		})
-		$(document).on("click" , ".fav" , function() {
-			if(tap == 0) {
-				tap = 1
-				tap = setTimeout(function(){
-					tap = 0
-				}, 200)
-			}
-			else {
-				ran(sel)
-				tap = 0
-			}
-		});
+var tapped=false
+$(".fav").on("touchstart",function(e){
+    if(!tapped){ //if tap is not set, set up single tap
+      tapped=setTimeout(function(){
+          tapped=null
+         pop(sel) 
+	//insert things you want to do when single tapped
+      },300);   //wait 300ms then run single click code
+    } else {    //tapped within 300ms of last tap. double tap
+      clearTimeout(tapped); //stop single tap callback
+      tapped=null
+      ran(sel)
+	//insert things you want to do when double tapped
+    }
+    e.preventDefault()
+});
 
 	});
 	function url(n) { window.open(n); };
