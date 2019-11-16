@@ -2,7 +2,6 @@ var menu = [
 
 	{ name : "abcf", category : "Local", title : "ABC KFSN-TV local Fresno and national news.", feed : "https://abc30.com/feed", homepage : "https://abc30.com" },
 	{ name : "ycvc", category : "Local", title : "KSEE24 CBS47 your central valley in Fresno, California.", feed : "https://yourcentralvalley.com/feed", homepage : "https://www.yourcentralvalley.com" },
-	{ name : "gloc", category : "Local", title : "Google Local news from the United States.", feed : "https://news.google.com/rss/search?cf=all&pz=1&q=local+news&hl=en-US&gl=US&ceid=US:en", homepage : "https://google.com" },
 	{ name : "abcb", category : "Local", title : "ABC WCVB Boston news, weather and sports online, anytime.", feed : "https://www.wcvb.com/topstories-rss", homepage : "https://wcvb.com" },
 	{ name : "cbsb", category : "Local", title : "CBS WBZ-TV Boston Local Breaking News From Boston, Mass.", feed : "https://boston.cbslocal.com/feed", homepage : "https://boston.cbslocal.com/feed" },
 	{ name : "nbcb", category : "Local", title : "NBC WBTS-CD Boston local news, national news and Boston breaking news stories.", feed : "https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y", homepage : "https://nbcboston.com" },
