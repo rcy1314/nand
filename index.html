@@ -33,7 +33,7 @@
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
-		bottom: 3em;
+		bottom: 2.5em;
 		width: 100%;
 		left: 4px;
 		top: 3em;
@@ -52,7 +52,7 @@
 		padding: 2em;
 		height: 24px;
 		width: 24px;
-		right: 48%;
+		right: 49.2%;
 	}
 </style>
     <div class="con">
@@ -70,7 +70,7 @@
 var obj = [];
 var rss = false;
 var dark = false;
-var sel = "Social";
+var sel = "Local";
 	$(document).one("ready", function() {
 		pop(sel)
 		if ( location.href.match('\\?dark=1') ) dark = true
@@ -101,7 +101,7 @@ var sel = "Social";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 10 + "em' onclick='app(\"toggle\")'><p align='center'><img src='https://acktic.github.io/favicon.png' style='height:24px;width:24px'></p></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
@@ -128,7 +128,7 @@ var sel = "Social";
 					var link = $(this).find("link").text();
 					var date = $(this).find("pubDate").text()
 				}
-				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "<br><p align='right'>" + date + "</p></div>");
+				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "<br>&ensp;&ensp;" + date + "</div>");
 				if(i >= 24) return false
 			});
 			rss = false
