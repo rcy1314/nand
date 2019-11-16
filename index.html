@@ -48,7 +48,7 @@
 	.fav {
 		transform: translateX(50%);
 		position: absolute;
-		bottom: -1em;
+		bottom: -1.5em;
 		padding: 2em;
 		height: 24px;
 		width: 24px;
@@ -70,7 +70,7 @@
 var obj = [];
 var rss = false;
 var dark = false;
-var sel = "Local";
+var sel = "Social";
 	$(document).one("ready", function() {
 		pop(sel)
 		if ( location.href.match('\\?dark=1') ) dark = true
@@ -120,9 +120,15 @@ var sel = "Local";
 			else var format = "item"
 			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
 			$(data).find(format).each(function (i, k) {
-				if (format == "entry") var link = $(this).find("link").attr("href")
-				else var link = $(this).find("link").text()
-				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "</div>");
+				if (format == "entry") {
+					var link = $(this).find("link").attr("href")
+					var date = $(this).find("updated").text()
+				}
+				else {
+					var link = $(this).find("link").text();
+					var date = $(this).find("pubDate").text()
+				}
+				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "<br><p align='right'>" + date + "</p></div>");
 				if(i >= 24) return false
 			});
 			rss = false
