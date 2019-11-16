@@ -22,18 +22,12 @@
 		left: -.3em;
 		top: 0em;
 	}
-	.tag {
-		justify-content: center;
-		display: flex;
-	}
 	.cat {
 		display: inline-block;
 		padding-top: 1em;
 		text-align: center;
 		font-size: 12px;
 		width: 16.3%;
-	}
-	.fav {
 	}
 	.out {
 		background-image: url(https://acktic.github.io/favicon.png);
@@ -48,7 +42,7 @@
 		top: 3em;
 	}
 	.xml {
-		padding-bottom: 3em;
+		padding-bottom: 4em;
 		padding-left: 1em;
 		padding-right: 1em;;
 		padding-top: 3em;
@@ -56,7 +50,7 @@
 	}
 </style>
     <div class="con">
-	<div class="tag">
+	<div class="tag" style="justify-content: center; display: flex">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
@@ -69,7 +63,7 @@
 var obj = [];
 var rss = false;
 var dark = true;
-var sel = "Social";
+var sel = "Technology";
 	$(document).one("ready", function() {
 		pop(sel)
 		if ( location.href.match('\\?dark=0') ) dark = false
@@ -95,10 +89,10 @@ var sel = "Social";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:20em'></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 7 + "em'></div></div>")
 		app()
 	}
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
@@ -132,7 +126,6 @@ var sel = "Social";
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='margin-bottom:20em;'></div>")
 			app()
 			scr(".get")
 		})
