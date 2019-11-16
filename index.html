@@ -64,8 +64,7 @@
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
-		<div id="World" class="cat" onclick="pop('World')">World</div>
-	</div>
+		<div id="World" class="cat" onclick="pop('World')">World</div></div>
 		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
 	<div class="out"><div>
     </div>
@@ -95,6 +94,11 @@ var sel = "Local";
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
 	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000) }
+	function ran(n) {
+		$.each(menu, function(i, k) { if (n == k.category) obj.push(menu[i]) })
+		var n = obj[Math.floor(Math.random()*obj.length)]
+		get(n.category, n.feed, n.title, n.homepage)
+	}
 	function app(n) {
 		if (n == "toggle") dark = dark != true
 		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"white","color":"#000000"})
