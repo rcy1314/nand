@@ -33,7 +33,11 @@
 		font-size: 12px;
 		width: 16.3%;
 	}
+	.fav {
+	}
 	.out {
+		background-image: url(https://acktic.github.io/favicon.png);
+		background-repeat: no-repeat;
 		outline: none !important;
 		position: absolute;
 		overflow: auto;
@@ -49,25 +53,6 @@
 		padding-top: 3em;
 		line-height: 2em;
 	}
-	.toggle {
-		position: fixed;
-		padding-right: 2em;
-		font-size: 12px;
-		bottom: -.2em;
-		padding: 1em;
-		left: .1em;
-	}
-	.random {
-		position: fixed;
-		padding-left: 2em;
-		font-size: 12px;
-		bottom: -.2em;
-		padding: 1em;
-		right: .2em;
-	}
-	.unused {
-		display: none;
-	}
 </style>
     <div class="con">
 	<div class="tag">
@@ -77,10 +62,7 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
-		<img class="fav" style="padding-top:2em" src="https://acktic.github.io/favicon.png" onclick="app('toggle')">
 	<div class="out"><div>
-		<div class="unused" onclick="app('toggle')"><i class="fa fa-th-large"></i></div>
-		<div class="unused" onclick="ran(sel)"><i class="fa fa-rotate-right"></i></div>
     </div>
 <script>
 var obj = [];
@@ -112,7 +94,7 @@ var sel = "Social";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='url(\"https://github.com/acktic/acktic.github.io\")'></div></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 7 + "em' onclick='app(\"toggle\")'></div></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:20em'></div>")
