@@ -24,6 +24,7 @@
 	}
 	.cat {
 		display: inline-block;
+		padding-bottom: 2em;
 		padding-top: 1.4em;
 		text-align: center;
 		font-size: 12px;
@@ -50,9 +51,9 @@
 		position: absolute;
 		bottom: -1.5em;
 		padding: 2em;
+		right: 49%;
 		height: 24px;
 		width: 24px;
-		right: 49.2%;
 	}
 </style>
     <div class="con">
@@ -101,7 +102,7 @@ var sel = "Local";
 		$(document).attr("title", n + " - acktic")
 		sel = n
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 10 + "em' onclick='app(\"toggle\")'><p align='center'><img src='https://acktic.github.io/favicon.png' style='height:24px;width:24px'></p></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 10 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) { if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
 		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
