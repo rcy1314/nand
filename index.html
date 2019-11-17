@@ -20,7 +20,7 @@
 		cursor: default;
 	}
 	.con {
-		border: 1px solid #f9f9f9;
+		border-bottom: 1px solid #f9f9f9;
 		position: absolute;
 		height: 99%;
 		width: 96%;
@@ -63,7 +63,7 @@
     <div class="con">
 	<div class="tag" style="justify-content:center;display:flex;height:4.5em;width:100%">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
-		<div id="Style" class="cat" onclick="pop('Entertainment')">Style</div>
+		<div id="Style" class="cat" onclick="pop('Style')">Style</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
@@ -85,7 +85,7 @@ var sel = "Local"
 		if ( location.href.match('\\?dark=0') ) app(false)
 		if ( location.href.match('\\?dark=1') ) app(true)
 		if ( location.href.match('\\&cat=Local') ) pop("Local")
- 		if ( location.href.match('\\&cat=Entertainment') ) pop("Entertainment")
+ 		if ( location.href.match('\\&cat=Entertainment') ) pop("Style")
 		if ( location.href.match('\\&cat=Social') ) pop("Social")
 		if ( location.href.match('\\&cat=Sports') ) pop("Sports")
 		if ( location.href.match('\\&cat=Technology') ) pop("Technology")
