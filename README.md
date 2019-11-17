@@ -89,11 +89,11 @@ This would be for default white with category Local
 
  - app(dark=false) mode uses transparent background and black foreground.
   
-`$("body, .con, .cat, .xml").attr("style", "background-color: transparent; color: #000000;");`
+`$("body").attr("style", "background-color: transparent; color: #000000;");`
 
  - app(dark=true) mode uses black background and white foreground.
  
-`$("body, .con, .cat, .xml").attr("style", "background-color: #000000; color: #FFFFFF;");`
+`$("body").attr("style", "background-color: #000000; color: #FFFFFF;");`
 
  
 ### CORS Proxy
