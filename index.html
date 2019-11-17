@@ -29,9 +29,6 @@
 		width: 16.3%;
 	}
 	.out {
-		-webkit-box-shadow: 1px 1px 1px 1px rgba(50, 50, 50, 0.2);
-		-moz-box-shadow:    1px 1px 1px 1px rgba(50, 50, 50, 0.2);
-		box-shadow:         1px 1px 1px 1px rgba(50, 50, 50, 0.2);
 		webkit-overflow-scrolling: touch;
 		outline: none !important;
 		position: absolute;
@@ -55,13 +52,8 @@
 		right: 50%;
 		border-radius: 26px;
 	}
-	.tag { 
-		-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.4);
-		-moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.4);
-		box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
-}
 </style>
-    <div class="con" style="position:absolute;border:solid 1px #eee;height: 98%;width:96%">
+    <div class="con" style="position:absolute;height:98%;width:96%;border-top:1px solid #f9f9f9;border-bottom:1px solid #f9f9f9">
 	<div class="tag" style="justify-content:center;display:flex;width:100%">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
@@ -165,7 +157,7 @@ var sel = "Local"
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div>")
+			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em'></div>")
 			app()
 			scr(".get")
 		})
