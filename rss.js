@@ -1,6 +1,6 @@
 var menu=[
-{cli:"abcf",ver:"News",des:"ABC KFSN-TV Local Fresno and National news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
-{cli:"ycvc",ver:"News",des:"KSEE24 CBS47 your Central Valley in Fresno, California.",api:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
+{cli:"abcf",ver:"News",des:"ABC KFSN-TV Local Fresno and national news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
+{cli:"ycvc",ver:"News",des:"KSEE24 CBS47 your central valley in Fresno, California.",api:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {cli:"abcb",ver:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",api:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cli:"cbsb",ver:"News",des:"CBS WBZ-TV Boston Local Breaking News From Boston, Mass.",api:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
 {cli:"nbcb",ver:"News",des:"NBC WBTS-CD Boston Local news, national news and Boston breaking news stories.",api:"https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcboston.com"},
