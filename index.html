@@ -29,17 +29,15 @@
 		width: 16.3%;
 	}
 	.out {
--webkit-box-shadow: 1px 1px 2px 1px rgba(50, 50, 50, 0.4);
--moz-box-shadow:    1px 1px 2px 1px rgba(50, 50, 50, 0.4);
-box-shadow:         1px 1px 2px 1px rgba(50, 50, 50, 0.4);
+		-webkit-box-shadow: 1px 1px 1px 1px rgba(50, 50, 50, 0.2);
+		-moz-box-shadow:    1px 1px 1px 1px rgba(50, 50, 50, 0.2);
+		box-shadow:         1px 1px 1px 1px rgba(50, 50, 50, 0.2);
 		webkit-overflow-scrolling: touch;
 		outline: none !important;
 		position: absolute;
-		padding-right: 1em;
 		overflow: auto;
 		bottom: 3em;
-		top: 7em;
-		width: 93%;
+		width: 100%;
 	}
 	.xml {
 		padding-bottom: 2em;
@@ -48,26 +46,23 @@ box-shadow:         1px 1px 2px 1px rgba(50, 50, 50, 0.4);
 		line-height: 1.2em;
 		width: fit-content;
 	}
-	.fav {	border: 1px solid #F9f9f9;
--webkit-box-shadow: 1px 1px 2px 1px rgba(50, 50, 50, 0.2);
--moz-box-shadow:    1px 1px 2px 1px rgba(50, 50, 50, 0.2);
-box-shadow:         1px 1px 2px 1px rgba(50, 50, 50, 0.2);
+	.fav {
 		transform: translateX(50%);
 		position: absolute;
-		bottom: .1em;
-		height: 32px;
-		width: 32px;
+		bottom: .2em;
+		height: 30px;
+		width: 30px;
 		right: 50%;
 		border-radius: 26px;
 	}
 	.tag { 
--webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.4);
--moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.4);
-box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+		-moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+		box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
 }
 </style>
-    <div class="con" style="position:relative;border:solid 1px #eee">
-	<div class="tag" style="justify-content:center;display:flex">
+    <div class="con" style="position:absolute;border:solid 1px #eee;height: 98%;width:96%">
+	<div class="tag" style="justify-content:center;display:flex;width:100%">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
@@ -75,11 +70,9 @@ box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
-    </div>
 		<img class="fav" src="https://acktic.github.io/favicon.png">
-	<div class="put" style="justify-content:center;display:flex">
-	<div class="out" style="display:inline-block;width:97.8%"><div>
-	</div>
+	<div class="out"><div>
+    </div>
 <script>
 var obj = []
 var bar = 2.5
@@ -88,7 +81,7 @@ var rss = false
 var dark = false
 var sel = "Local"
 	$(document).one("ready", function() {
-		$(".out").css("width", $(".tag").width(true))
+		$(".out").css("top", $(".tag").height() + 2 + "px");
 		pop(sel)
 		if ( location.href.match('\\?dark=0') ) app(false)
 		if ( location.href.match('\\?dark=1') ) app(true)
