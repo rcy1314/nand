@@ -150,7 +150,7 @@ var menu = [
 	{ cli : "vcfl", ver : "Sports", sub : "Vice Fightland is a website covering mixed martial arts (MMA).", api : "http://fightland.vice.com/rss", ext : "http://fightland.vice.com" },
 	{ cli : "yahs", ver : "Sports", sub : "Yahoo! Sports has Comprehensive  news, scores, standings, fantasy games, rumors, and more.", api : "https://sports.yahoo.com/rss", ext : "https://sports.yahoo.com" },
 	{ cli : "abct", ver : "Technology", sub : "ABC Technology for latest science news, technology news, and more.", api : "https://abcnews.go.com/abcnews/technologyheadlines", ext : "https://abcnews.go.com/technology" },
-	{ cli : "amsg", ver : "Technology", sub : "AMS founded in 1888 to further the interests of mathematical research and scholarship.", api : "http://www.ams.org/cgi-bin/content/news_items.cgi?rss=1", ext : "http://www.ams.org" }
+	{ cli : "amsg", ver : "Technology", sub : "AMS founded in 1888 to further the interests of mathematical research and scholarship.", api : "http://www.ams.org/cgi-bin/content/news_items.cgi?rss=1", ext : "http://www.ams.org" },
 	{ cli : "nica", ver : "Technology", sub : "Ars Technica has became a trusted source for technology news.", api : "http://feeds.arstechnica.com/arstechnica/index?format=xml", ext : "https://arstechnica.com" },
 	{ cli : "bbcn", ver : "Technology", sub : "BBC Technology news, articles, and more.", api : "http://feeds.bbci.co.uk/news/technology/rss.xml", ext : "https://bbc.co.uk/news/technology" },
 	{ cli : "beta", ver : "Technology", sub : "BetaNews is a leading source of technology news and analysis.", api : "http://feeds.betanews.com/bn", ext : "https://betanews.com" },
