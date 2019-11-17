@@ -24,7 +24,7 @@
     </div>
 <script>
 var bar=2
-var obj=[]
+var hap=[]
 var tap=false
 var rss=false
 var sel="News"
@@ -43,12 +43,12 @@ var dark=false
 	$(".out").attr('tabindex', -1).focus();
 	$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus()})
 	$('.out').on('scroll', function(){ if ($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight){ if (rss==false) pop(sel)} if ($(this).scrollTop()<1) scr(".pop")})
-	$(".fav").on("touchstart click",function(e){ if(!tap){ tap=setTimeout(function(){ tap=null;pop(sel)},300)} else { clearTimeout(tap);tap=null;ran(sel) } e.preventDefault()})
+	$(".inv, .fav").on("touchstart click",function(e){ if(!tap){ tap=setTimeout(function(){ tap=null;pop(sel)},300)} else { clearTimeout(tap);tap=null;ran(sel) } e.preventDefault()})
     });
 function url(n){ window.open(n)}
 function xhr(n){ $.each(menu, function(i, k){ if (n==k.cli) get(k.ver,k.des,k.api,k.ext)})}
 function scr(n){ $(".out").animate({ scrollTop: $(n+":last").offset().top-$(".out").offset().top+$(".out").scrollTop() }, 300)}
-function ran(n){ $.each(menu, function(i, k){ if (n==k.ver) obj.push(menu[i])});var n = obj[Math.floor(Math.random()*obj.length)];get(n.ver,n.des,n.api,n.ext)}
+function ran(n){ $.each(menu, function(i, k){ if (n==k.ver) hap.push(menu[i])});var n = hap[Math.floor(Math.random()*hap.length)]; get(n.ver,n.des,n.api,n.ext)}
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
