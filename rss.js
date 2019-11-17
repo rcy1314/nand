@@ -1,5 +1,5 @@
 var menu=[
-3.{cli:"abcf",ver:"News",des:"ABC KFSN-TV local Fresno and national news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
+{cli:"abcf",ver:"News",des:"ABC KFSN-TV local Fresno and national news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cli:"ycvc",ver:"News",des:"KSEE24 CBS47 your central valley in Fresno, California.",api:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {cli:"abcb",ver:"News",des:"ABC WCVB Boston news, weather and sports online, anytime.",api:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cli:"cbsb",ver:"News",des:"CBS WBZ-TV Boston Local Breaking News From Boston, Mass.",api:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
