@@ -68,9 +68,8 @@ This would be for default white with category Local
 | .out | Output |
 | .pop | .sel Populate |
 | .xml | .out Elements |
-| .bot | Buffer/Toggle |
-| .top | Buffer/Toggle |
-| .fav | Pop |
+| .bar | Buffer/Toggle |
+| .fav | Pop/Random |
 
 ### Functions
 | Name | Use |
