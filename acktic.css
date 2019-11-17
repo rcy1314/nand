@@ -57,7 +57,7 @@
 	background-color: inherit;
 	padding-bottom: 2em;
 	line-height: 1.5em;
-	padding-top: 1em;
+	padding-top: 2em;
     }
     .inv, .fav {
 	transform: translateX(50%);
