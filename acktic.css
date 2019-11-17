@@ -44,5 +44,7 @@
 	transform: translateX(50%);
 	position: absolute;
 	bottom: -.7em;
+	height: 32px;
+	width: 32px;
 	right: 50%;
     }
