@@ -14,6 +14,8 @@
 		display: none
 	}
 	div {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Roboto', sans-serif;;
 		font-size: 12px;
 		cursor: default;
@@ -35,7 +37,7 @@
 		overflow: auto;
 		bottom: 3em;
 		left: 0px;
-		top: 4em;
+		top: 4.5em;
 	}
 	.xml {
 		padding-bottom: 2em;
@@ -54,13 +56,16 @@
 		width: 32px;
 	}
 </style>
+    <div class="con" style="position:relative;top:-.8em">
 	<div class="tag" style="justify-content:center;display:flex;">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
-		<div id="World" class="cat" onclick="pop('World')">World</div></div>
+		<div id="World" class="cat" onclick="pop('World')">World</div>
+	</div>
+    </div>
 		<img class="fav" src="https://acktic.github.io/favicon.png">
 	<div class="out"><div>
 <script>
