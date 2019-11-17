@@ -52,8 +52,8 @@ function ran(n){ $.each(menu, function(i, k){ if (n==k.ver) hap.push(menu[i])});
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
-	if (dark==false){ $("html").css("background-color","#FCFCFC"); $("body").css({"background-color":"transparent","color":"#000000"}); $(".fav").css("display","none"); $(".inv").css("display","block") }
-	else if (dark==true){ $("html").css("background-color","#000000"); $("body").css({"background-color":"#000000","color":"#FFFFFF"}); $(".inv").css("display","none"); $(".fav").css("display","block") }
+	if (dark==false){ $("body").css({"background-color":"transparent","color":"#000000"}); $(".fav").css("display","none"); $(".inv").css("display","block") }
+	else if (dark==true){ $("body").css({"background-color":"#000000","color":"#FFFFFF"}); $(".inv").css("display","none"); $(".fav").css("display","block") }
 }
 function pop(n){ sel=n
 	$(document).attr("title",n+" - ack")
