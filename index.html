@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://acktic.github.io/rss.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -14,12 +14,12 @@
 		display: none
 	}
 	div {
-		font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+		font-family: 'Roboto', sans-serif;;
 		font-size: 13px;
 		cursor: default;
 	}
 	.cat {
-		font-family: 'Source Code Pro';
+		font-family: 'Roboto', sans-serif;;
 		display: inline-block;
 		padding-bottom: 2em;
 		padding-top: 1.4em;
@@ -31,22 +31,23 @@
 		webkit-overflow-scrolling: touch;
 		outline: none !important;
 		position: absolute;
+		padding-right: 1em;
 		overflow: auto;
 		bottom: 3em;
-		left: 4px;
+		left: 0px;
 		top: 4em;
 	}
 	.xml {
 		padding-bottom: 2em;
 		padding-left: 1em;
 		padding-top: 1em;
-		line-height: 2em;
+		line-height: 1.2em;
 		width: fit-content;
 	}
 	.fav {
 		transform: translateX(50%);
 		position: absolute;
-		bottom: -1em;
+		bottom: -1.7em;
 		padding: 2em;
 		right: 50%;
 		height: 32px;
@@ -94,7 +95,7 @@ var sel = "Local"
 				},300)
 			}
 			else {
-				clearTimeout(tap); //stop single tap callback
+				clearTimeout(tap)
 				tap = null
 				ran(sel)
 			}
