@@ -32,17 +32,17 @@ Also accepts variables such as initially Dark with category Technology
 
 Specify an Initial category
 
-* Local
-* Entertainment
+* News
+* Style
 * Social
 * Sports
 * Technology
 * World
 
 
-This would be for default white with category Local
+This would be for default white with category News
 
-`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=Local"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=News"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3071428935855.png"></p>
