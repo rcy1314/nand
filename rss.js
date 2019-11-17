@@ -235,6 +235,7 @@ var menu = [
 	{ name : "nypt", category : "World", title : "New York Post is a daily newspaper in New York City.", feed : "https://nypost.com/feed", homepage : "https://nypost.com" },
 	{ name : "time", category : "World", title : "Time Magazine is one of the most authoritative and informative guides to what is happening in the world.", feed : "http://feeds.feedburner.com/time/topstories?format=xml", homepage : "https://time.com" },
 	{ name : "upif", category : "World", title : "United Press International is a leading provider of news, photos and information.", feed : "https://rss.upi.com/news/news.rss", homepage : "https://upi.com" },
+	{ name : "ustd", category : "World", title : "USA TODAY delivers local and national news, sports, entertainment, finance, technology, and more.", feed : "http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1", homepage : "https://www.usatoday.com" },
 	{ name : "vice", category : "World", title : "Vice Original reporting and documentaries on everything that matters in the world.", feed : "https://www.vice.com/en_us/rss", homepage : "https://vice.com" },
 	{ name : "wasw", category : "World", title : "Washington Times World News, Middle East News, Afghanistan War.", feed : "https://www.washingtontimes.com/rss/headlines/news/world", homepage : "https://washingtontimes.com/news/world" }
 
