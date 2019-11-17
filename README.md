@@ -70,7 +70,7 @@ This would be for default white with category Local
 | .xml | .out Elements |
 | .bot | Buffer/Toggle |
 | .top | Buffer/Toggle |
-| .fav | Pop/Random |
+| .fav | Pop |
 
 ### Functions
 | Name | Use |
