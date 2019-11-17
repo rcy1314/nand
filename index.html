@@ -29,6 +29,9 @@
 		width: 16.3%;
 	}
 	.out {
+-webkit-box-shadow: 1px 1px 2px 1px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:    1px 1px 2px 1px rgba(50, 50, 50, 0.4);
+box-shadow:         1px 1px 2px 1px rgba(50, 50, 50, 0.4);
 		webkit-overflow-scrolling: touch;
 		outline: none !important;
 		position: absolute;
@@ -36,6 +39,7 @@
 		overflow: auto;
 		bottom: 3em;
 		top: 7em;
+		width: 93%;
 	}
 	.xml {
 		padding-bottom: 2em;
@@ -44,19 +48,19 @@
 		line-height: 1.2em;
 		width: fit-content;
 	}
-	.fav {
+	.fav {	border: 1px solid #F9f9f9;
+-webkit-box-shadow: 1px 1px 2px 1px rgba(50, 50, 50, 0.2);
+-moz-box-shadow:    1px 1px 2px 1px rgba(50, 50, 50, 0.2);
+box-shadow:         1px 1px 2px 1px rgba(50, 50, 50, 0.2);
 		transform: translateX(50%);
 		position: absolute;
-		bottom: -1.9em;
-		padding: 2em;
+		bottom: .1em;
 		height: 32px;
 		width: 32px;
 		right: 50%;
-		border-radius: 24px;
-		border: 1px solid #eee;
+		border-radius: 26px;
 	}
 	.tag { 
-background-color: rgba(50,50,50,0.1);
 -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.4);
 -moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.4);
 box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
@@ -82,6 +86,7 @@ var rss = false
 var dark = false
 var sel = "Local"
 	$(document).one("ready", function() {
+		$(".out").css("width", $(".tag").width(true))
 		pop(sel)
 		if ( location.href.match('\\?dark=0') ) app(false)
 		if ( location.href.match('\\?dark=1') ) app(true)
