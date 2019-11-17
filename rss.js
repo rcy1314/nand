@@ -1,5 +1,5 @@
 var menu=[
-{cli:"abcf",ver:"News",des:"ABC KFSN-TV local Fresno and national news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
+3.{cli:"abcf",ver:"News",des:"ABC KFSN-TV local Fresno and national news.",api:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cli:"ycvc",ver:"News",des:"KSEE24 CBS47 your central valley in Fresno, California.",api:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {cli:"abcb",ver:"News",des:"ABC WCVB Boston news, weather and sports online, anytime.",api:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cli:"cbsb",ver:"News",des:"CBS WBZ-TV Boston Local Breaking News From Boston, Mass.",api:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
@@ -27,6 +27,7 @@ var menu=[
 {cli:"cbsw",ver:"News",des:"CBS WUSA 9 Washington station licensed to the capital city of Washington, District of Columbia.",api:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com"},
 {cli:"abce",ver:"Style",des:"ABC Entertainment Latest Celebrity News, Videos & Photos.",api:"https://abcnews.go.com/abcnews/entertainmentheadlines",ext:"https://abcnews.go.com/entertainment"},
 {cli:"aolf",ver:"Style",des:"AOL latest headlines on business, entertainment, politics, world news, tech, sports, and video.",api:"https://www.aol.com/rss",ext:"https://aol.com"},
+{cli:"avcb",ver:"Style",des:"AV Club is an entertainment website that examine films, music, television, books, and games.",api:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {cli:"bbce",ver:"Style",des:"BBC News Entertainment and Arts.",api:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
 {cli:"buzz",ver:"Style",des:"BuzzFeed  is an American Internet media, news and entertainment company.",api:"https://www.buzzfeed.com/index.xml",ext:"https://www.buzzfeed.com"},
 {cli:"soon",ver:"Style",des:"ComingSoon.net has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",api:"https://www.comingsoon.net/feed",ext:"https://comingsoon.net"},
