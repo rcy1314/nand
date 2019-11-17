@@ -55,8 +55,8 @@ This would be for default white with category News
 | Name | Use |
 | ------ | ------ |
 | dark | Dark mode |
-| rss | get() != pop() |
-| sel | .cat selected |
+| rss | get != pop |
+| sel | .cat Selected |
 | tap | Touchstart/Click |
 
 ### Classes
@@ -66,6 +66,7 @@ This would be for default white with category News
 | .tag | .cat Parent |
 | .cat | Category |
 | .out | Output |
+| .get | get() |
 | .pop | .sel Populate |
 | .xml | .out Elements |
 | .bar | Buffer/Toggle |
