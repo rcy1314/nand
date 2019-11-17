@@ -85,20 +85,6 @@ var sel = "Local"
 				if (rss == false) pop(sel)
 			}
 		})
-		$(".fav").on("touchstart click",function(e){
-			if(!tap){
-				tap = setTimeout(function(){
-					tap = null
-					scr(".pop:first")
-				},300)
-			}
-			else {
-				clearTimeout(tap); //stop single tap callback
-				tap = null
-				ran(sel)
-			}
-		    e.preventDefault()
-		});
 	});
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
