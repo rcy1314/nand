@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://acktic.github.io/rss.js"></script>
@@ -24,7 +23,7 @@
 		font-family: 'Roboto', sans-serif;;
 		display: inline-block;
 		padding-bottom: 2em;
-		padding-top: 1.4em;
+		padding-top: 2em;
 		text-align: center;
 		font-size: 14px;
 		width: 16.3%;
@@ -36,8 +35,7 @@
 		padding-right: 1em;
 		overflow: auto;
 		bottom: 3em;
-		left: 0px;
-		top: 4.5em;
+		top: 7em;
 	}
 	.xml {
 		padding-bottom: 2em;
@@ -51,13 +49,21 @@
 		position: absolute;
 		bottom: -1.9em;
 		padding: 2em;
-		right: 50%;
 		height: 32px;
 		width: 32px;
+		right: 50%;
+		border-radius: 24px;
+		border: 1px solid #eee;
 	}
+	.tag { 
+background-color: rgba(50,50,50,0.1);
+-webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.4);
+}
 </style>
-    <div class="con" style="position:relative;top:-.8em">
-	<div class="tag" style="justify-content:center;display:flex;">
+    <div class="con" style="position:relative;border:solid 1px #eee">
+	<div class="tag" style="justify-content:center;display:flex">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
@@ -70,6 +76,7 @@
 	<div class="out"><div>
 <script>
 var obj = []
+var bar = 2.5
 var tap = false
 var rss = false
 var dark = false
@@ -125,11 +132,11 @@ var sel = "Local"
 		sel = n
 		$(document).attr("title", n + " - ack")
 		$(".pop, .xml, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) {
 			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2.5 + "em'></div></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em'></div></div>")
 		app()
 	}
 	function get(category, feed, title, homepage) {
@@ -143,7 +150,7 @@ var sel = "Local"
 			var entry = $(data).find("entry")
 			if (entry.length > 0) var format = "entry"
 			else var format = "item"
-			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
 			$(data).find(format).each(function (i, k) {
 				if (format == "entry") {
 					var link = $(this).find("link").attr("href")
@@ -157,8 +164,8 @@ var sel = "Local"
 				if(i >= 24) return false
 			});
 			rss = false
-			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2.5 + "em' onclick='app(\"toggle\")'></div>")
+			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
+			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div>")
 			app()
 			scr(".get")
 		})
