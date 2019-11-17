@@ -51,15 +51,15 @@
 	<div class="out" style="webkit-overflow-scrolling:touch;outline:none!important;position:absolute;overflow:auto;height:90%"><div>
     </div>
 <script>
-var bar = 2
-var obj = []
-var tap = false
-var rss = false
-var dark = false
-var sel = "News"
+var bar=2
+var obj=[]
+var tap=false
+var rss=false
+var sel="News"
+var dark=false
 	$(document).one("ready", function() {
 		pop(sel)
-		$(".out").css("top", $(".tag").height() + "px");
+		$(".out").css("top", $(".tag").height()+"px");
 		if (location.href.match('\\?dark=0')) app(false)
 		if (location.href.match('\\?dark=1')) app(true)
 		if (location.href.match('\\&cat=News')) pop("News")
@@ -69,54 +69,54 @@ var sel = "News"
 		if (location.href.match('\\&cat=Technology')) pop("Technology")
 		if (location.href.match('\\&cat=World')) pop("World")
 		$(".out").attr('tabindex', -1).focus();
-		$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus() })
+		$(".out").focusout(function(){ $(".out").attr('tabindex', -1).focus()})
    		$('.out').on('scroll', function(){
-			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
-				if (rss == false) pop(sel)
+			if ($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight){
+				if (rss==false) pop(sel)
 			}
-			if ($(this).scrollTop() < 1) scr(".pop")
+			if ($(this).scrollTop()<1) scr(".pop")
 		})
 		$(".fav").on("touchstart click",function(e){
-			if(!tap){ tap = setTimeout(function(){ tap = null; pop(sel) },300) }
-			else { clearTimeout(tap); tap = null; ran(sel) }
+			if(!tap){ tap=setTimeout(function(){ tap=null;pop(sel)},300)}
+			else { clearTimeout(tap);tap=null;ran(sel) }
 		    e.preventDefault()
 		});
 	});
-	function url(n){ window.open(n) }
-	function xhr(n){ $.each(menu, function(i, k){ if (n == k.name) get(k.category, k.feed, k.title, k.homepage) }) }
-	function scr(n){ $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 200) }
+	function url(n){ window.open(n)}
+	function xhr(n){ $.each(menu, function(i, k){ if (n==k.cli) get(k.ver, k.api, k.sub, k.ext)})}
+	function scr(n){ $(".out").animate({ scrollTop: $(n+":last").offset().top-$(".out").offset().top+$(".out").scrollTop() }, 200)}
 	function ran(n){
-		$.each(menu, function(i, k){ if (n == k.category) obj.push(menu[i]) })
+		$.each(menu, function(i, k){ if (n==k.ver) obj.push(menu[i])})
 		var n = obj[Math.floor(Math.random()*obj.length)]
-		get(n.category, n.feed, n.title, n.homepage)
+		get(n.ver, n.api, n.sub, n.ext)
 	}
 	function app(n){
-		if (n == true || n == false) dark = n
-		if (n == "toggle") dark = dark != true
-		if (dark == false) $("body").css({"background-color":"transparent","color":"#000000"})
-		else if (dark == true) $("body").css({"background-color":"#000000","color":"#FFFFFF"})
+		if (n==true||n==false) dark=n
+		if (n=="toggle") dark=dark!=true
+		if (dark==false) $("body").attr("style","background-color:transparent;color:#000000")
+		else if (dark==true) $("body").attr("style","background-color:#000000;color:#FFFFFF")
 	}
 	function pop(n){ sel = n
-		$(document).attr("title", n + " - ack")
+		$(document).attr("title",n+" - ack")
 		$(".pop, .bar").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div><div class='pop'></div>")
+		$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div><div class='pop'></div>")
 		scr(".pop")
-		$.each(menu, function(i, k){ if (n == k.category) $(".pop").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div>")
+		$.each(menu, function(i, k){ if (n == k.ver) $(".pop").append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b>&ensp;"+k.sub+"</div>")})
+		$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div>")
 		app()
 	}
-	function get(category, feed, title, homepage){ rss = true
+	function get(ver, api, sub, ext){ rss = true
 		$(".bar:last").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
-		scr(".get:last")
-		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
-		.fail(function(){ $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>"); })
+		scr(".get")
+		$.get("https://salty-refuge-64158.herokuapp.com/"+api)
+		.fail(function(){ $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")})
 		.success(function(data){
 			var entry = $(data).find("entry")
 			if (entry.length > 0) var format = "entry"
 			else var format = "item"
-			$(".out").append("<div class='get'><div class='xml' onclick='url(\"" + homepage + "\")'><b>" + category + "</b>&ensp;" + title + "</div>")
-			$(data).find(format).each(function (i, k) {
+			$(".out").append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+sub+"</div>")
+			$(data).find(format).each(function (i, k){
 				if (format == "entry") {
 					var link = $(this).find("link").attr("href")
 					var date = $(this).find("updated").text()
@@ -125,12 +125,12 @@ var sel = "News"
 					var link = $(this).find("link").text();
 					var date = $(this).find("pubDate").text()
 				}
-				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;" + $(this).find("title").text() + "<br>-" + date + "</div>");
+				$(".out").append("<div class='xml' onclick='url(\""+link+"\")'>&ensp;"+$(this).find("sub").text()+"<br>-"+date+"</div>");
 				if(i >= 24) return false
 			})
 			rss = false
-			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><b>" + category + "</b>&ensp;" + title + "</div>" +
-					 "<div class='bar' onclick='app(\"toggle\")' style='padding-bottom:" + $(".out").height() / 100 * bar + "em'></div>")
+			$(".out").append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+sub+"</div>" +
+					 "<div class='bar' onclick='app(\"toggle\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
 			app()
 			scr(".get")
 		})
