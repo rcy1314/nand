@@ -57,7 +57,7 @@ This would be for default white with category Local
 | dark | Dark mode |
 | rss | get() != pop() |
 | sel | .cat selected |
-| tap | touchstart tap |
+| tap | Touchstart/Click |
 
 ### Classes
 | Name | Use |
@@ -69,7 +69,7 @@ This would be for default white with category Local
 | .pop | .sel Populate |
 | .xml | .out Elements |
 | .bot | Buffer/Toggle |
-| .top | Buffer/toggle |
+| .top | Buffer/Toggle |
 | .fav | Pop/Random |
 
 ### Functions
@@ -81,7 +81,7 @@ This would be for default white with category Local
 | xhr | .xml get() |
 | app | Previously applyColors() |
 | ran | Random |
-| get | ajax request |
+| get | Ajax Request |
   
 
 ### Cloning and app()
