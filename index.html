@@ -83,12 +83,12 @@ var dark=false
 		});
 	});
 	function url(n){ window.open(n)}
-	function xhr(n){ $.each(menu, function(i, k){ if (n==k.cli) get(k.ver, k.api, k.sub, k.ext)})}
+	function xhr(n){ $.each(menu, function(i, k){ if (n==k.cli) get(k.ver,k.sub,k.api,k.ext)})}
 	function scr(n){ $(".out").animate({ scrollTop: $(n+":last").offset().top-$(".out").offset().top+$(".out").scrollTop() }, 200)}
 	function ran(n){
 		$.each(menu, function(i, k){ if (n==k.ver) obj.push(menu[i])})
 		var n = obj[Math.floor(Math.random()*obj.length)]
-		get(n.ver, n.api, n.sub, n.ext)
+		get(n.ver,n.sub,n.api,n.ext)
 	}
 	function app(n){
 		if (n==true||n==false) dark=n
@@ -96,18 +96,18 @@ var dark=false
 		if (dark==false) $("body").attr("style","background-color:transparent;color:#000000")
 		else if (dark==true) $("body").attr("style","background-color:#000000;color:#FFFFFF")
 	}
-	function pop(n){ sel = n
+	function pop(n){ sel=n
 		$(document).attr("title",n+" - ack")
 		$(".pop, .bar").remove()
 		$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div><div class='pop'></div>")
 		scr(".pop")
-		$.each(menu, function(i, k){ if (n == k.ver) $(".pop").append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b>&ensp;"+k.sub+"</div>")})
+		$.each(menu, function(i, k){ if (n == k.ver) $(".pop").append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.sub+"</div>")})
 		$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div>")
 		app()
 	}
-	function get(ver, api, sub, ext){ rss = true
+	function get(ver,sub,api,ext){ rss=true
 		$(".bar:last").remove()
-		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
+		$(".out").append("<div class='get'><div class='xml'>It's on the way! &ensp;Please be patient.</div></div>")
 		scr(".get")
 		$.get("https://salty-refuge-64158.herokuapp.com/"+api)
 		.fail(function(){ $(".out").append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")})
@@ -125,7 +125,7 @@ var dark=false
 					var link = $(this).find("link").text();
 					var date = $(this).find("pubDate").text()
 				}
-				$(".out").append("<div class='xml' onclick='url(\""+link+"\")'>&ensp;"+$(this).find("sub").text()+"<br>-"+date+"</div>");
+				$(".out").append("<div class='xml' onclick='url(\""+link+"\")'>&ensp;"+$(this).find("title").text()+"<br>-"+date+"</div>");
 				if(i >= 24) return false
 			})
 			rss = false
