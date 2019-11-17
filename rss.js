@@ -97,6 +97,8 @@ var menu=[
 {cli:"4cwg",ver:"Social",des:"Wallpapers General including Desktops, Builds, Mobile, Mods, NO Requests.",api:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4chan.org/wg"},
 {cli:"rwin",ver:"Social",des:"Windows subreddit about the Operating System released by Microsoft as part of the Windows NT family.",api:"https://www.reddit.com/r/windows/.rss",ext:"https://www.reddit.com/r/windows"},
 {cli:"abcs",ver:"Sports",des:"ABC Sports the Latest Sports News, Articles and more.",api:"https://abcnews.go.com/abcnews/sportsheadlines",ext:"https://abcnews.go.com/Sports"},
+{cli:"bssp",ver:"Sports",des:"Barstool Sports is a sports & pop culture blog covering the latest news and viral highlights.",api:"https://cms.barstoolsports.com/feed",ext:"https://www.barstoolsports.com"}, 
+{cli:"rbss",ver:"Sports",des:"Barstool Sports subreddit By the Common Man, For the Common Man.",api:"https://reddit.com/r/barstoolsports/.rss",ext:"https://www.reddit.com/r/barstoolsports"},
 {cli:"rbas",ver:"Sports",des:"Baseball subreddit for the Bat-and-Ball Sport played between two teams of nine players.",api:"https://www.reddit.com/r/baseball/.rss",ext:"https://reddit.com/r/baseball"},
 {cli:"bbcs",ver:"Sports",des:"BBC Sports News from around the world.",api:"http://feeds.bbci.co.uk/sport/rss.xml",ext:"https://bbc.com/sport"},
 {cli:"bjpn",ver:"Sports",des:"BJPENN has become one of the most reliable destinations for your MMA and UFC needs. ",api:"https://www.bjpenn.com/feed",ext:"https://bjpenn.com"},
