@@ -19,6 +19,13 @@
 		font-size: 12px;
 		cursor: default;
 	}
+	.con {
+		border-bottom: 1px solid #f9f9f9;
+		border-top: 1px solid #f9f9f9;
+		position: absolute;
+		height: 98%;
+		width: 96%;
+	}
 	.cat {
 		font-family: 'Roboto', sans-serif;;
 		display: inline-block;
@@ -53,7 +60,7 @@
 		border-radius: 26px;
 	}
 </style>
-    <div class="con" style="position:absolute;height:98%;width:96%;border-top:1px solid #f9f9f9;border-bottom:1px solid #f9f9f9">
+    <div class="con">
 	<div class="tag" style="justify-content:center;display:flex;width:100%">
 		<div id="Local" class="cat" onclick="pop('Local')">Local</div>
 		<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
@@ -73,8 +80,8 @@ var rss = false
 var dark = false
 var sel = "Local"
 	$(document).one("ready", function() {
-		$(".out").css("top", $(".tag").height() + 2 + "px");
 		pop(sel)
+		$(".out").css("top", $(".tag").height() + 2 + "px");
 		if ( location.href.match('\\?dark=0') ) app(false)
 		if ( location.href.match('\\?dark=1') ) app(true)
 		if ( location.href.match('\\&cat=Local') ) pop("Local")
@@ -96,7 +103,7 @@ var sel = "Local"
 				tap = setTimeout(function(){
 					tap = null
 					pop(sel)
-				},300)
+				},200)
 			}
 			else {
 				clearTimeout(tap)
