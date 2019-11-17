@@ -74,17 +74,17 @@ function scr(n){ $(".out").animate({ scrollTop: $(n+":last").offset().top-$(".ou
 function ran(n){ $.each(menu, function(i, k){ if (n==k.ver) obj.push(menu[i])});var n = obj[Math.floor(Math.random()*obj.length)];get(n.ver,n.des,n.api,n.ext)}
 function app(n){
 	if (n==true||n==false) dark=n
-	if (n=="toggle") dark=dark!=true
+	if (n=="opp") dark=dark!=true
 	if (dark==false) $("body").css({"background-color":"transparent","color":"#000000"})
 	else if (dark==true) $("body").css({"background-color":"#000000","color":"#FFFFFF"})
 }
 function pop(n){ sel=n
 	$(document).attr("title",n+" - ack")
 	$(".pop, .bar").remove()
-	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	scr(".pop")
 	$.each(menu, function(i, k){ if(n == k.ver) $(".pop").append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>")})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"toggle\")'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
 }
 function get(ver,des,api,ext){ rss=true
@@ -111,8 +111,7 @@ function get(ver,des,api,ext){ rss=true
 			if(i >= 24) return false
 		})
 		rss = false
-		$(".out").append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
-				 "<div class='bar' onclick='app(\"toggle\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
+		$(".out").append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
 		app()
 		scr(".get")
 	})
