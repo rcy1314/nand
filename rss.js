@@ -239,4 +239,4 @@ var menu=[
 {cli:"ustd",ver:"World",sub:"USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",api:"http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",ext:"https://www.usatoday.com"},
 {cli:"vice",ver:"World",sub:"Vice Original reporting and documentaries on everything that matters in the world.",api:"https://www.vice.com/en_us/rss",ext:"https://vice.com"},
 {cli:"wasw",ver:"World",sub:"Washington Times World News, Middle East News, Afghanistan War.",api:"https://www.washingtontimes.com/rss/headlines/news/world",ext:"https://washingtontimes.com/news/world"}
-}
+]
