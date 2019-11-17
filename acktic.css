@@ -1,0 +1,42 @@
+@media only screen and (min-width: 960px) {
+    body {
+	transform: translate(50%,50%);
+    	position: fixed;
+	border: none;
+	bottom: 50%;
+	height: 90%;
+	width: 70%;
+	right: 50%;
+    }
+}
+    ::-webkit-scrollbar {
+	display: none;
+    }
+    .con {
+	postion:absolute;
+	height:99%;
+	width:96%;
+	top:-.5em;
+    }
+    div {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Roboto', sans-serif;;
+	font-size: 12px;
+	cursor: default;
+    }
+    .cat {
+	background-color: inherit;
+	display: inline-block;
+	padding-bottom: 3em;
+	text-align: center;
+	padding-top: 1.8em;
+	font-size: 14px;
+	width: 16.3%;
+    }
+    .xml {
+	background-color: inherit;
+	padding-bottom: 2em;
+	line-height: 1.2em;
+	padding-top: 1em;
+    }
