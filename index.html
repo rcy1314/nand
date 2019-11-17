@@ -20,7 +20,6 @@
 		cursor: default;
 	}
 	.con {
-		border-bottom: 1px solid #f9f9f9;
 		position: absolute;
 		height: 99%;
 		width: 96%;
@@ -124,8 +123,8 @@ var sel = "Local"
 	function app(n) {
 		if (n == true || n == false) dark = n
 		if (n == "toggle") dark = dark != true
-		if (dark == false) $("body, .con, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
-		else if (dark == true) $("body, .con, .cat, .xml").css({"background-color":"#000000","color":"#FFFFFF"})
+		if (dark == false) $("body, .cat, .xml").css({"background-color":"transparent","color":"#000000"})
+		else if (dark == true) $("body, .cat, .xml").css({"background-color":"#000000","color":"#FFFFFF"})
 	}
 	function pop(n) {
 		sel = n
