@@ -49,6 +49,7 @@ var menu = [
 	{ name : "pepl", category : "Entertainment", title : "People is an American weekly magazine of celebrity and human-interest stories.", feed : "https://people.com/tag/news/feed", homepage : "https://people.com" },
 	{ name : "pzhl", category : "Entertainment", title : "PerezHilton is known for posts covering gossip items about celebrities.", feed : "https://perezhilton.com/feed", homepage : "https://perezhilton.com" },
 	{ name : "rost", category : "Entertainment", title : "RollingStone Magazine, the authority on music, entertainment, politics and Entertainment culture.", feed : "https://www.rollingstone.com/feed", homepage : "https://rollingstone.com" },
+	{ name : "snop", category : "Entertainment", title : "Snopes.com’s fact checking and original investigative reporting.", feed : "https://www.snopes.com/feed", homepage : "https://www.snopes.com" },
 	{ name : "nyet", category : "Entertainment", title : "NYPost Entertainment latest and breaking news on celebrities, movies, and TV shows.", feed : "https://nypost.com/entertainment/feed", homepage : "https://nypost.com/entertainment/feed" }, 
 	{ name : "tmzn", category : "Entertainment", title : "TMZ is a tabloid news website that was a collaboration between AOL and Telepictures Productions.", feed : "https://www.tmz.com/rss.xml", homepage : "https://tmz.com" },
 	{ name : "uprx", category : "Entertainment", title : "Uproxx is an entertainment and Entertainmentular culture news website.", feed : "http://feeds.feedburner.com/uproxx/features", homepage : "https://uproxx.com" },
