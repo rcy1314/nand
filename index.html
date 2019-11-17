@@ -91,7 +91,7 @@ var sel = "Local"
 			if(!tap){
 				tap = setTimeout(function(){
 					tap = null
-					pop(sel)
+					scr(".pop:first")
 				},300)
 			}
 			else {
@@ -119,17 +119,17 @@ var sel = "Local"
 	function pop(n) {
 		sel = n
 		$(document).attr("title", n + " - ack")
-		$(".pop, .xml, top:last, .bot").remove()
-		$('.out').append("<div class='top' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$(".pop, .xml, .bar").remove()
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
 		scr(".pop")
 		$.each(menu, function(i, k) {
 			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>") })
-		$('.out').append("<div class='bot' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em'></div></div>")
 		app()
 	}
 	function get(category, feed, title, homepage) {
 		rss = true
-		$(".pop, .top, .bot").remove()
+		$(".pop, .bar").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get:last")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -153,7 +153,7 @@ var sel = "Local"
 			});
 			rss = false
 			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'><i class='fa fa-external-link'></i>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bot' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div>")
+			$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * 2 + "em' onclick='app(\"toggle\")'></div>")
 			app()
 			scr(".get")
 		})
