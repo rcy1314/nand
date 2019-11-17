@@ -42,6 +42,7 @@
 		position: absolute;
 		overflow: auto;
 		bottom: 3em;
+		height: 89%;
 		width: 100%;
 	}
 	.xml {
@@ -56,11 +57,10 @@
 	.fav {
 		transform: translateX(50%);
 		position: absolute;
-		bottom: -1em;
+		bottom: -.7em;
 		height: 30px;
 		width: 30px;
 		right: 50%;
-		border-radius: 26px;
 	}
 </style>
     <div class="con">
@@ -76,8 +76,8 @@
 	<div class="out"><div>
     </div>
 <script>
-var obj = []
 var bar = 2
+var obj = []
 var tap = false
 var rss = false
 var dark = false
@@ -117,7 +117,7 @@ var sel = "Local"
 		});
 	});
 	function url(n){ window.open(n) }
-	function xhr(n){ $.each(menu, function(i, k){ if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
+	function xhr(n){ $.each(menu, function(i, k){ if (n == k.name) get(k.category, k.feed, k.title, k.homepage) }) }
 	function scr(n){ $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 200) }
 	function ran(n){
 		$.each(menu, function(i, k){ if (n == k.category) obj.push(menu[i]) })
@@ -133,18 +133,18 @@ var sel = "Local"
 	function pop(n){
 		sel = n
 		$(document).attr("title", n + " - ack")
-		$(".pop, .bar:first, .bar:last, .xml").remove()
-		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div><div class='pop'>")
+		$(".pop, .bar").remove()
+		$('.out').append("<div class='bar' style='padding-top:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div><div class='pop'></div>")
 		scr(".pop")
 		$.each(menu, function(i, k){
-			if (n == k.category) $(".out").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>")
+			if (n == k.category) $(".pop").append("<div id='" + k.name + "' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>&ensp;&ensp;" + k.category + "</b>&ensp;" + k.title + "</div>")
 		})
-		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div></div>")
+		$('.out').append("<div class='bar' style='padding-bottom:" + $(".out").height() / 100 * bar + "em' onclick='app(\"toggle\")'></div>")
 		app()
 	}
 	function get(category, feed, title, homepage){
 		rss = true
-		$(".pop, .bar:first, .bar:last, .xml").remove()
+		$(".bar:last").remove()
 		$(".out").append("<div class='get'><div class='xml'>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div></div>")
 		scr(".get:last")
 		$.get("https://salty-refuge-64158.herokuapp.com/" + feed)
@@ -163,12 +163,11 @@ var sel = "Local"
 					var link = $(this).find("link").text();
 					var date = $(this).find("pubDate").text()
 				}
-				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "<br>&ensp;&ensp;" + date + "</div>");
+				$(".out").append("<div class='xml' onclick='url(\"" + link + "\")'>&ensp;&ensp;" + $(this).find("title").text() + "<br>-" + date + "</div>");
 				if(i >= 24) return false
 			});
 			rss = false
-			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div>")
-			$('.out').append("<div class='bar' onclick='app(\"toggle\")' style='padding-bottom:" + $(".out").height() / 100 * bar + "em'></div>")
+			$(".out").append("<div class='xml' onclick='url(\"" + homepage + "\")'>&ensp;&ensp;<b>" + category + "</b>&ensp;" + title + "</div><div class='bar' onclick='app(\"toggle\")' style='padding-bottom:" + $(".out").height() / 100 * bar + "em'></div>")
 			app()
 			scr(".get")
 		})
