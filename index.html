@@ -1,22 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://acktic.github.io/rss.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
 <body>
-<style> ::-webkit-scrollbar { display: none }
-div {
+<style>
+@media only screen and (min-width: 960px) {
+    body {
+	transform: translate(50%,50%);
+    	position: fixed;
+	border: none;
+	bottom: 50%;
+	height: 90%;
+	width: 70%;
+	right: 50%;
+    }
+}
+    ::-webkit-scrollbar {
+	display: none;
+    }
+    .con {
+	postion:absolute;
+	height:99%;
+	width:96%;
+	top:-.5em;
+    }
+    div {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: 'Roboto', sans-serif;;
 	font-size: 12px;
 	cursor: default;
-}
-.cat {
+    }
+    .cat {
 	background-color: inherit;
 	display: inline-block;
 	padding-bottom: 3em;
@@ -24,13 +44,13 @@ div {
 	padding-top: 1.8em;
 	font-size: 14px;
 	width: 16.3%;
-}
-.xml {
+    }
+    .xml {
 	background-color: inherit;
 	padding-bottom: 2em;
 	line-height: 1.2em;
 	padding-top: 1em;
-}
+    }
 </style>
     <div class="con" style="position:absolute;height:99%;width:96%;top:-.5em;">
 	<div class="tag" style="justify-content:center;display:flex;height:4.5em">
@@ -41,6 +61,7 @@ div {
 	<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 	<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
+	<img class="inv" style="transform:translateX(50%);position:absolute;bottom:-.7em;height:32px;width:32px;right:50%" src="invert.png">
 	<img class="fav" style="transform:translateX(50%);position:absolute;bottom:-.7em;height:32px;width:32px;right:50%" src="favicon.png">
 	<div class="out" style="webkit-overflow-scrolling:touch;outline:none!important;position:absolute;overflow:auto;height:90%;left:.3em"><div>
     </div>
@@ -74,8 +95,8 @@ function ran(n){ $.each(menu, function(i, k){ if (n==k.ver) obj.push(menu[i])});
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
-	if (dark==false) $("body").css({"background-color":"transparent","color":"#000000"})
-	else if (dark==true) $("body").css({"background-color":"#000000","color":"#FFFFFF"})
+	if (dark==false){ $("html").css("background-color","#FCFCFC"); $("body").css({"background-color":"transparent","color":"#000000"}); $(".fav").css("display","none"); $(".inv").css("display","block") }
+	else if (dark==true){ $("html").css("background-color","#000000"); $("body").css({"background-color":"#000000","color":"#FFFFFF"}); $(".inv").css("display","none"); $(".fav").css("display","block") }
 }
 function pop(n){ sel=n
 	$(document).attr("title",n+" - ack")
