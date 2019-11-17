@@ -49,7 +49,7 @@
 	.fav {
 		transform: translateX(50%);
 		position: absolute;
-		bottom: -1.7em;
+		bottom: -1.9em;
 		padding: 2em;
 		right: 50%;
 		height: 32px;
@@ -90,7 +90,7 @@ var sel = "Local"
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 				if (rss == false) pop(sel)
 			}
-			if ($(this).scrollTop() <= 1) scr(".pop")
+			if ($(this).scrollTop() < 1) scr(".pop")
 		})
 		$(".fav").on("touchstart click",function(e){
 			if(!tap){
@@ -109,7 +109,7 @@ var sel = "Local"
 	});
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
-	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 1000) }
+	function scr(n) { $(".out").animate({ scrollTop: $(n + ":last").offset().top - $(".out").offset().top + $(".out").scrollTop() }, 200) }
 	function ran(n) {
 		$.each(menu, function(i, k) { if (n == k.category) obj.push(menu[i]) })
 		var n = obj[Math.floor(Math.random()*obj.length)]
