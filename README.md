@@ -18,7 +18,7 @@ Here's what's used you won't need:
 
 * Simple Array Structure in rss.js
 
-`{ name : "(unique)", title : "feed title", feed : "rss xml url", homepage : "external url" },`
+`{ cli : "(unique)", desc : "description", api : "url", external : "external" },`
 
 ### Sourcing
 
@@ -87,14 +87,13 @@ This would be for default white with category News
 
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
- - app(dark=false) mode uses transparent background and black foreground.
+ - app(false) mode uses transparent background and black foreground.
   
-`$("body").attr("style", "background-color: transparent; color: #000000;");`
+` $("body").css({"background-color":"transparent","color":"#000000"})`
 
- - app(dark=true) mode uses black background and white foreground.
+ - app(true) mode uses black background and white foreground.
  
-`$("body").attr("style", "background-color: #000000; color: #FFFFFF;");`
-
+`$("body").css({"background-color":"#000000","color":"#FFFFFF"})`
  
 ### CORS Proxy
 
