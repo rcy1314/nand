@@ -60,7 +60,7 @@
 		<div id="Sports" class="cat" onclick="pop('Sports')">Sports</div>
 		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
 		<div id="World" class="cat" onclick="pop('World')">World</div></div>
-		<img class="fav" src="https://acktic.github.io/favicon.png" onclick="pop(sel)">
+		<img class="fav" src="https://acktic.github.io/favicon.png">
 	<div class="out"><div>
 <script>
 var obj = []
@@ -84,7 +84,22 @@ var sel = "Local"
 			if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight ) {
 				if (rss == false) pop(sel)
 			}
+			if ($(this).scrollTop() <= 1) scr(".pop")
 		})
+		$(".fav").on("touchstart click",function(e){
+			if(!tap){
+				tap = setTimeout(function(){
+					tap = null
+					pop(sel)
+				},300)
+			}
+			else {
+				clearTimeout(tap); //stop single tap callback
+				tap = null
+				ran(sel)
+			}
+		    e.preventDefault()
+		});
 	});
 	function url(n) { window.open(n); };
 	function xhr(n) { $.each(menu, function(i, k) { if (n == k.name) get(k.category, k.feed, k.title, k.homepage); }) }
