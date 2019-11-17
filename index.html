@@ -81,14 +81,14 @@ var obj = []
 var tap = false
 var rss = false
 var dark = false
-var sel = "Local"
+var sel = "News"
 	$(document).one("ready", function() {
 		pop(sel)
 		$(".out").css("top", $(".tag").height() + "px");
 		if (location.href.match('\\?dark=0')) app(false)
 		if (location.href.match('\\?dark=1')) app(true)
-		if (location.href.match('\\&cat=Local')) pop("Local")
- 		if (location.href.match('\\&cat=Entertainment')) pop("Style")
+		if (location.href.match('\\&cat=News')) pop("News")
+ 		if (location.href.match('\\&cat=Style')) pop("Style")
 		if (location.href.match('\\&cat=Social')) pop("Social")
 		if (location.href.match('\\&cat=Sports')) pop("Sports")
 		if (location.href.match('\\&cat=Technology')) pop("Technology")
