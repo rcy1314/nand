@@ -9,6 +9,7 @@
   </head>
 <style>
 @media only screen and (min-width: 960px) {
+
     body {
 	transform: translate(50%,50%);
     	position: fixed;
@@ -18,9 +19,12 @@
 	width: 70%;
 	right: 50%;
     }
+
 }
     ::-webkit-scrollbar {
+
 	display: none;
+
     }
     .con {
 	postion:absolute;
@@ -93,12 +97,12 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar=2
-var obj=[]
-var tap=false
-var rss=false
-var sel='Social'
-var dark=true
+var bar = 2
+var obj = []
+var tap = false
+var rss = false
+var sel = 'Social'
+var dark = true
     $(document).one('ready', function() {
 	pop(sel)
 	$('.out').css('top', $('.tag').height()+'px');
@@ -112,25 +116,40 @@ var dark=true
 	if (location.href.match('\\&cat=World')) pop('World')
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
-	$('.out').on('scroll',function(){if ($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight){ if (rss==false) pop(sel)} if ($(this).scrollTop()<1) scr('.pop')})
-	$('.inv,.fav').on('touchstart click',function(e){if(!tap){ tap=setTimeout(function(){tap=null;pop(sel)},300)} else {clearTimeout(tap);tap=null;ran(sel)} e.preventDefault()})
+	$('.out').on('scroll',function(){
+		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
+			if (rss==false) pop(sel)
+		}
+		 if ($(this).scrollTop()<1) scr('.pop')})
+	$('.inv,.fav').on('touchstart click', function(e){
+		if (!tap){
+			tap=setTimeout(function(){
+				tap = null;
+				pop(sel)
+			},300)}
+  		else {
+			clearTimeout(tap);
+			tap=null;
+			ran(sel)
+		}
+	    e.preventDefault()})
     });
-function url(n){window.open(n)}
-function xhr(n){$.each(menu,function(i,k){if(n==k.cli) get(k.ver,k.des,k.api,k.ext)})}
-function scr(n){$('.out').animate({scrollTop:$(n+':last').offset().top-$('.out').offset().top+$('.out').scrollTop()},300)}
-function ran(n){$.each(menu,function(i, k){if(n==k.ver) obj.push(menu[i])});var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext)}
+function url(n){ window.open(n) }
+function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
+function ran(n){ $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
-	if (dark==false){$('body').css({'background-color':'transparent','color':'#000'});$('.fav').css('display','none');$('.inv').css('display','block')}
-	else if (dark==true){$('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block')}
+	if (dark==false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
+	else if (dark==true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
 function pop(n){ sel=n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
 	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	scr('.pop')
-	$.each(menu,function(i, k){if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>")})
+	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
 }
@@ -139,23 +158,23 @@ function get(ver,des,api,ext){ rss=true
 	$('.out').append("<div class='get'><div class='xml'>It's on the way! &ensp;Please be patient.</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
-	.fail(function(){$('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")})
+	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
 	.success(function(data){
-		var entry=$(data).find('entry')
+		var entry = $(data).find('entry')
 		if (entry.length > 0) var mat="entry"
-		else var mat='item'
+		else var mat = 'item'
 		$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>")
-		$(data).find(mat).each(function(i,k){
-			if (mat=='entry'){
-				var ref=$(this).find('link').attr('href')
-				var utc=$(this).find('updated').text()
+		$(data).find(mat).each( function(i,k){
+			if (mat=='entry') {
+				var ref = $(this).find('link').attr('href')
+				var utc = $(this).find('updated').text()
 			}
 			else {
-				var ref=$(this).find('link').text();
-				var utc=$(this).find('pubDate').text()
+				var ref = $(this).find('link').text();
+				var utc = $(this).find('pubDate').text()
 			}
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"<br>-"+utc+"</div>");
-			if(i >= 24) return false
+			if (i >= 24) return false
 		})
 		rss=false
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
