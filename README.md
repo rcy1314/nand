@@ -59,8 +59,8 @@ This would be for default dark with category Technology.
 | .tag | .cat Parent |
 | .cat | Category |
 | .out | Output |
-| .get | get() |
-| .pop | .sel Populate |
+| .get | .xml Wrapper |
+| .pop | .sel Wrapper |
 | .xml | .out Elements |
 | .bar | Buffer/Toggle |
 | .fav | Pop/Random |
