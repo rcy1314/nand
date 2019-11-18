@@ -114,6 +114,10 @@ var dark = true
 	if (location.href.match('\\&cat=Sport')) pop('Sport')
 	if (location.href.match('\\&cat=Technology')) pop('Technology')
 	if (location.href.match('\\&cat=World')) pop('World')
+	if (location.href.match('\\&filter=')) {
+
+	var n = location.search.split("&filter=")[1]; alert(n);
+	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
