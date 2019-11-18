@@ -40,9 +40,9 @@ Specify an Initial category
 * World
 
 
-This would be for default dark with category Social
+This would be for default dark with category Technology
 
-`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=Social"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=Technology"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
