@@ -165,6 +165,7 @@ var menu=[
 {cli:"comp",ver:"Technology",des:"Computer Weekly stands out from the many Technology News Websites.",api:"https://www.computerweekly.com/rss/RSS-Feed.xml",ext:"https://computerweekly.com"},
 {cli:"dgtr",ver:"Technology",des:"Digital Trends is a Technology News, Lifestyle, and Information Website.",api:"https://www.digitaltrends.com/feed",ext:"https://digitaltrends.com"},
 {cli:"engt",ver:"Technology",des:"Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",api:"https://www.engadget.com/rss.xml",ext:"https://engadget.com"},
+{cli:"eugm",ver:"Technology",des:"EuroGamer Gaming news, reviews and the best long-form journalism.",api:"https://www.eurogamer.net/?format=rss&type=article",ext:"https://www.eurogamer.net"},
 {cli:"forb",ver:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",api:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com"},
 {cli:"gmln",ver:"Technology",des:"Gaming on Linux Latest Articles and Games.",api:"https://www.gamingonlinux.com/article_rss.php",ext:"https://gamingonlinux.com"},
 {cli:"geek",ver:"Technology",des:"GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",api:"https://www.geekwire.com/feed",ext:"https://geekwire.com"},
