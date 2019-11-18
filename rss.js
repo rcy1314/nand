@@ -49,7 +49,7 @@ var menu=[
 {cli:"pepl",ver:"Style",des:"People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",api:"https://people.com/tag/news/feed",ext:"https://people.com"},
 {cli:"pzhl",ver:"Style",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",api:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {cli:"rost",ver:"Style",des:"RollingStone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",api:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
-{cli:"snop",ver:"Style",des:"Snopes’s Fact Checking and Original Investigative Reporting.",api:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
+{cli:"snop",ver:"Style",des:"Snopes Fact Checking and Original Investigative Reporting.",api:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {cli:"nyet",ver:"Style",des:"NY Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",api:"https://nypost.com/entertainment/feed",ext:"https://nypost.com/entertainment/feed"}, 
 {cli:"tmzn",ver:"Style",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",api:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {cli:"uprx",ver:"Style",des:"Uproxx is an Entertainment and Entertainmentular Culture News website.",api:"http://feeds.feedburner.com/uproxx/features",ext:"https://uproxx.com"},
