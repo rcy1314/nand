@@ -1,6 +1,6 @@
 # RSS
 
-  - Cross Device Browser.
+  - Cross Device Support.
   - Easy to include.
   - Easy to use.
 
@@ -40,13 +40,13 @@ Specify an Initial category
 * World
 
 
-This would be for default white with category News
+This would be for default dark with category Social
 
-`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=News"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=Social"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"></p>
 
 ### Variables
 | Name | Use |
@@ -85,11 +85,11 @@ This would be for default white with category News
 
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
- - app(false) mode uses transparent background and black foreground.
+ - app(false) uses transparent background and black foreground.
   
 ` $("body").css({"background-color":"transparent","color":"#000000"})`
 
- - app(true) mode uses black background and white foreground.
+ - app(true) uses black background and white foreground.
  
 `$("body").css({"background-color":"#000000","color":"#FFFFFF"})`
  
