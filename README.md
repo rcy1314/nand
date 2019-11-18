@@ -1,4 +1,4 @@
-# RSS
+# RSS-Browser
 
   - Cross Device Support.
   - Easy to include.
@@ -8,7 +8,7 @@
 
 ### Dependencies
 
-Here's what's used you won't need:
+Here's what's used:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
