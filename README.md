@@ -43,6 +43,7 @@ This would be for default dark with category Technology.
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"></p>
+
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
 
 ### Variables
@@ -96,9 +97,6 @@ This would be for default dark with category Technology.
 
 - Heroku's CORS Proxy
 `http://cors-anywhere.herokuapp.com/`
-
-- Personal Heroku CORS-Anywhere Instance
-`https://salty-refuge-64158.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
 
