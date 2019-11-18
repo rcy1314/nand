@@ -18,7 +18,7 @@ Here's what's used you won't need:
 
 * Simple Array Structure in rss.js
 
-`{ cli : "(unique)", desc : "description", api : "url", external : "external" },`
+`{ cli : "(unique)", ver : "category, desc : "description", api : "url", external : "external" },`
 
 ### Sourcing
 
@@ -45,7 +45,8 @@ This would be for default white with category News
 `<iframe class="rss" src="https://acktic.github.io?dark=0&cat=News"></iframe>`
 
 ### Styling
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3071428935855.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
 
 ### Variables
 | Name | Use |
