@@ -36,7 +36,7 @@ Specify an Initial category
 * World
 
 
-This would be for default dark with category Technology
+This would be for default dark with category Technology.
 
 `<iframe class="rss" src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
 
