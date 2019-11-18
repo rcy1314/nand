@@ -48,8 +48,6 @@ This would be for default white with category News
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3071428935855.png"></p>
 `See example.html`
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6482967896674.png"></p>
-`See default.html`
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/4976021776718.png"></p>
 
 ### Variables
 | Name | Use |
