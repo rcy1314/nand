@@ -45,7 +45,8 @@ This would be for default white with category News
 `<iframe class="rss" src="https://acktic.github.io?dark=0&cat=News"></iframe>`
 
 ### Styling
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
+<p align="center" style="border 1px solid"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
 
 ### Variables
 | Name | Use |
