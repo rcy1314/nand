@@ -81,6 +81,8 @@ This would be for default dark with category Technology
 
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
+ - var sel = "Category"
+
  - app(false) uses transparent background and black foreground.
   
 ` $("body").css({"background-color":"transparent","color":"#000000"})`
