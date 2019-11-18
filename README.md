@@ -18,7 +18,7 @@ Here's what's used you won't need:
 
 * Simple Array Structure in rss.js
 
-`{ cli : "(unique)", desc : "description", api : "url", external : "external" },`
+`{ cli : "(unique)", ver : "category, desc : "description", api : "url", external : "external" },`
 
 ### Sourcing
 
