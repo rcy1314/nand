@@ -26,10 +26,6 @@ Include an iframe in your html with the [site](https://acktic.github.io).
 
 `<iframe class="rss" src="https://acktic.github.io"></iframe>`
 
-Also accepts variables such as initially Dark with category Technology
-
-`<iframe class="rss" src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
-
 Specify an Initial category
 
 * News
@@ -42,7 +38,7 @@ Specify an Initial category
 
 This would be for default dark with category Technology
 
-`<iframe class="rss" src="https://acktic.github.io?dark=0&cat=Technology"></iframe>`
+`<iframe class="rss" src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
