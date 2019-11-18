@@ -184,7 +184,6 @@ var menu=[
 {cli:"betp",ver:"Technology",des:"Medium's advice for Programmers covering Tutorials, Leadership, Management, and Productivity.",api:"https://medium.com/feed/better-programming",ext:"https://medium.com/better-programming"},
 {cli:"mirt",ver:"Technology",des:"Mirror.co.uk Technologys' Best Stories, Opinion, Pictures and Video.",api:"https://www.mirror.co.uk/tech/?service=rss",ext:"https://mirror.co.uk/tech"},
 {cli:"umit",ver:"Technology",des:"MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",api:"http://news.mit.edu/rss/feed",ext:"http://news.mit.edu"},
-{cli:"mitr",ver:"Technology",des:"MIT Technology Review is to bring about better-informed and more conscious decisions about Technology.",api:"https://www.technologyreview.com/topnews.rss",ext:"https://technologyreview.com"},
 {cli:"nasa",ver:"Technology",des:"NASA brings you the Latest Images, Videos and News from America's space agency.",api:"https://www.nasa.gov/rss/dyn/breaking_news.rss",ext:"https://nasa.gov"},
 {cli:"nbct",ver:"Technology",des:"NBC News Tech for Latest News on Technology, Businesses and Internet media.",api:"http://feeds.nbcnews.com/nbcnews/public/tech",ext:"https://nbcnews.com/tech-media"},
 {cli:"nypo",ver:"Technology",des:"New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.",api:"https://nypost.com/tech/feed",ext:"https://nypost.com/tech"},
