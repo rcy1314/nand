@@ -75,10 +75,10 @@
     }
     .fil {
 	position: absolute;
-	padding: -1em;
-	bottom: -.1em;
+	padding-left: 2em;
+	padding-top: 2em;
+	bottom: .2em;
 	right: .2em;
-	color: #333;
     }
     .inv, .fav {
 	transform: translateX(50%);
@@ -101,7 +101,7 @@
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
-	<div class="fil" onclick="fil()">filter</div>
+	<div class="fil">filter</div>
 	<div class="out"><div>
     </div>
 <script>
@@ -111,6 +111,7 @@ var tap = false
 var rss = false
 var sel = 'Social'
 var dark = true
+var filter = []
     $(document).one('ready', function() {
 	pop(sel)
 	$('.out').css('top', $('.tag').height()+'px');
@@ -143,6 +144,19 @@ var dark = true
 		}
 	    e.preventDefault()
 	})
+	$('.fil').on('touchstart click', function(e){
+		if (!tap){
+			tap=setTimeout(function(){
+				tap = null;
+				fil()
+			},300)}
+  		else {
+			clearTimeout(tap);
+			tap=null;
+			fil('random')
+		}
+	    e.preventDefault()
+	})
     });
 function url(n){ window.open(n) }
 function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
@@ -158,22 +172,27 @@ function pop(n){
 	sel=n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
-	$('.out').append("<div class='bar' style='position:absolute;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	scr('.pop')
 	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
 }
-function fil(){
+function fil(r){
 	if (!location.href.match('\\&filter=')) return false
 	rss = true
 	var n = location.search.split("&filter=")[1]
 	n = n.split("+")
+	if (r == "random") { var e=filter[Math.floor(Math.random()*filter.length)]; get(e.ver,e.des,e.api,e.ext); return false; }
 	$(document).attr('title',n[0]+' - ack')
 	$('.pop, .bar').remove()
-	$('.out').append("<div class='bar' style='position:absolute;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(n, function(i, k){
-		$.each(menu, function(o, a){ if(a.des.toLowerCase().indexOf(k) > -1) $('.pop').append("<div id='"+a.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'>"+a.des+"</div>") })
+		$.each(menu, function(o, a){
+			 if(a.des.toLowerCase().indexOf(k) > -1){
+				 filter.push(menu[o]); $('.pop').append("<div id='"+a.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'>"+a.des+"</div>")
+			}
+		 })
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	scr('.pop')
