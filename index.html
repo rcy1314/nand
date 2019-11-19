@@ -92,7 +92,7 @@
     </div>
 <script>
 var bar = 2.5
-var opp = true
+var opp = false
 var tap = false
 var rss = false
 var sel = 'Social'
@@ -106,7 +106,7 @@ var sel = 'Social'
 	    location.href.match("\\&cat=Sport") ||
 	    location.href.match("\\&cat=Technology") ||
 	    location.href.match("\\&cat=World")) pop(location.search.split("&cat=")[1])
-	else pop(sel)
+	else { pop(sel); app() }
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
@@ -138,7 +138,7 @@ function ran(n){
 	get(n.ver, n.des, n.api, n.ext)
 }
 function app(n){
-	if (n == true|| n == false) opp = n
+	if (n == true || n == false) opp = n
 	if ( n == "opp") opp = opp != true
 	if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 	else if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
