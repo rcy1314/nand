@@ -158,15 +158,12 @@ function get(ver, des, api, ext){
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
 	.success(function(data){
-		if ($(data).find('entry').length > 0){
-			var set = "entry"
-			var ref = $(this).find('link').attr('href')
-		}
-		else {
-			var set = 'item'
-			var ref = $(this).find('link').text();
-		}
-		$(data).find(set).each( function(i,k){
+		var entry = $(data).find('entry')
+		if (entry.length > 0) var format="entry"
+		else var format = 'item'
+		$(data).find(format).each( function(i,k){
+			if (format=='entry') var ref = $(this).find('link').attr('href')
+			else var ref = $(this).find('link').text();
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
 			if (i >= 24) return false
 		})
