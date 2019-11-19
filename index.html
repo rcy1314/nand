@@ -90,14 +90,12 @@
 	<div class="out"><div>
     </div>
 <script>
-
 var bar = 3.5
 var one = false
 var opp = false
 var tap = false
 var rss = false
 var sel = 'Social'
-
     $(document).one('ready', function() {
 	if (location.href.match("\\?opp=0")) app(false)
 	if (location.href.match("\\?opp=1")) app(true)
@@ -140,8 +138,16 @@ function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.o
 function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
-	if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
-	else if (opp==false){$('body').css({'background-color':'transparent','color':'#000'});$('.fav').css('display','none');$('.inv').css('display','block') }
+	if (opp == true){
+		$('body').css({'background-color':'#000','color':'#FFF'});
+		 $('.inv').css('display','none')
+		 $('.fav').css('display','block')
+	}
+	else if (opp == false){
+		$('body').css({'background-color':'transparent','color':'#000'})
+		$('.fav').css('display','none')
+		$('.inv').css('display','block')
+	}
 }
 function pop(n){
 	sel = n
@@ -149,7 +155,7 @@ function pop(n){
 	one = false
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*1+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.7+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if(n == k.ver){
 			obj.push(menu[i])
