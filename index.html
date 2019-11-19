@@ -116,23 +116,9 @@ var sel = 'Social'
 			if (rss == false) pop(sel)
 		}
 	})
-	$('.inv,.fav').on('touchstart click', function(e){
-		if (!tap){
-			tap=setTimeout(function(){
-				tap = null;
-				pop(sel)
-			},300)
-		}
-  		else {
-			clearTimeout(tap);
-			tap=null;
-			ran()
-		}
-	    e.preventDefault()
-	})
+	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
     });
 function url(n){ window.open(n) }
-function ran(n){ var n = obj[Math.floor(Math.random()*obj.length)]; get(n.ver, n.des, n.api, n.ext) }
 function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext); one = true } }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
@@ -151,14 +137,12 @@ function app(n){
 }
 function pop(n){
 	sel = n
-	obj = []
 	one = false
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.7+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if(n == k.ver){
-			obj.push(menu[i])
 			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
 		}
 	})
