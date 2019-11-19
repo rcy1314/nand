@@ -90,12 +90,13 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 3
-var one = false
-var opp = false
-var tap = false
-var rss = false
-var sel = 'News'
+var bar = 3      // Buffer
+var one = false  // Doubleclick Fallback
+var opp = false  // Dark mode
+var tap = false  // Home/Random
+var rss = false  // get() pop()
+var sel = 'News' // Category
+
     $(document).one('ready', function() {
 	if (location.href.match("\\?dark=0")) app(false)
 	if (location.href.match("\\?dark=1")) app(true)
@@ -111,11 +112,13 @@ var sel = 'News'
 	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
+
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
 			if (rss == false) pop(sel)
 		}
 	})
+
 	$('.inv,.fav').on('touchstart click', function(e){
 		if (!tap){
 			tap=setTimeout(function(){
@@ -135,7 +138,8 @@ function url(n){ window.open(n) }
 function ran(n){ var n = obj[Math.floor(Math.random()*obj.length)]; get(n.ver, n.des, n.api, n.ext) }
 function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext); one = true } }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function app(n){ opp = n
+function app(n){
+	opp = n
 	if (n == 'opp') opp = opp != true
 	if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 	else if (opp==false){$('body').css({'background-color':'transparent','color':'#000'});$('.fav').css('display','none');$('.inv').css('display','block') }
@@ -148,10 +152,7 @@ function pop(n){
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
-		if(n == k.ver){
-			obj.push(menu[i])
-			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
-		}
+		if(n == k.ver){ obj.push(menu[i]); $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>") }
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	setTimeout(function(){ $('.bar:first').remove(); },500)
