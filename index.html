@@ -144,7 +144,7 @@ function app(n){
 	else if (dark==true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
 function pop(n){
-	sel=n
+	sel = n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
 	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
@@ -154,7 +154,7 @@ function pop(n){
 	app()
 }
 function get(ver, des, api, ext){
-	rss=true
+	rss = true
 	$('.bar:last').remove()
 	$('.out').append("<div class='get'><div class='xml'>It's on the way! &ensp;Please be patient.</div></div>")
 	scr('.get')
