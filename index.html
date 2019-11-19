@@ -154,7 +154,6 @@ function pop(n){
 		if(n == k.ver){ obj.push(menu[i]); $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>") }
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
-	setTimeout(function(){ $('.bar:first').remove(); },500)
 	scr('.pop')
 }
 function get(ver, des, api, ext){
@@ -165,12 +164,8 @@ function get(ver, des, api, ext){
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 	.success(function(req){
-		if ($(req).find('entry').length > 0){
-			var set = "entry"
-		}
-		 else {
-			var set = 'item'
-		}
+		if ($(req).find('entry').length > 0) var set = "entry"
+		else var set = 'item'
 		$(req).find(set).each(function(i,k){
 			if (i >= 24) return false
 			if (set == 'entry'){ var ref = $(this).find('link').attr('href') } else { var ref = $(this).find('link').text() }
