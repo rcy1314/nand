@@ -4,7 +4,6 @@
   - Easy to include.
   - Easy to use.
 
-> 
 
 ### Dependencies
 
@@ -30,7 +29,7 @@ Specify an Initial category
 
 * News
 * Style
-* Social
+* Media
 * Sports
 * Technology
 * World
@@ -41,15 +40,17 @@ This would be for default dark with category Technology.
 `<iframe src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
 
 ### Styling
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9522649670120.png"></p>
 
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/8818084091300.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3843526843051.png"></p>
+
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/0174236037489.png"></p>
 
 ### Variables
 | Name | Use |
 | ------ | ------ |
 | dark | Dark mode |
+| fav | Home/Random |
 | rss | get != pop |
 | sel | .cat Selected |
 | obj | Random Array |
