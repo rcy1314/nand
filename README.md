@@ -52,15 +52,12 @@ Default, category Media would look like...
 ### Variables
 | Name | Use |
 | ------ | ------ |
-| opp | Dark = False|
+| opp | Dark = False |
 | rss | get pop fallback |
 | sel | .cat Selected |
-| bar | Buffer/Opposite |
+| req | Xhr Data |
 | set | Xml Entry/Item |
 | ref | Xml Link/Href |
-| req | Xhr Data |
-| one | Dblclick catch |
-| opp | Opposite Mode |
 | tap | Touchstart/Click |
 
 ### Classes
@@ -74,7 +71,6 @@ Default, category Media would look like...
 | .get | .xml Wrapper |
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
-| .bar | Buffer/Opposite |
 | .fav/.inv | Pop(sel) |
 
 ### Functions
