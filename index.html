@@ -109,7 +109,7 @@ var sel = 'Social' // Category
 	    location.href.match("\\&cat=World") ) pop(location.search.split("&cat=")[1])
 	else {
 		pop(sel)
-		app()
+		app(opp)
 	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
