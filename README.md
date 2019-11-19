@@ -40,10 +40,6 @@ This would be for default dark with category Technology.
 
 `<iframe src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
 
-Specify a filter (in progress)
-
-`<iframe src="https://acktic.github.io?dark=0&filter=local"></iframe>`
-
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/2586808985927.png"></p>
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3842359093289.png"></p>
