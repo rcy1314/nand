@@ -124,35 +124,36 @@ var sel = 'Social'
   		else {
 			clearTimeout(tap);
 			tap=null;
-			ran(sel)
+			ran()
 		}
 	    e.preventDefault()
 	})
     });
 function url(n){ window.open(n) }
-function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
+function ran(n){ var n = obj[Math.floor(Math.random()*obj.length)]; get(n.ver, n.des, n.api, n.ext) }
 function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext); one = true } }
-function ran(n){
-	var obj = []
-	$.each(menu, function(i, k){ if(n == k.ver) obj.push(menu[i]) })
-	var n = obj[Math.floor(Math.random()*obj.length)]
-	get(n.ver, n.des, n.api, n.ext)
-}
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
 	if (n == true || n == false) opp = n
-	if ( n == "opp") opp = opp != true
+	if (n == "opp") opp = opp != true
 	if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 	else if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
 function pop(n){
 	sel = n
+	obj = []
 	one = false
-	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
+	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
-	scr('.pop')
-	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>") })
+	$.each(menu, function(i, k){
+		if(n == k.ver){
+			obj.push(menu[i])
+			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
+		}
+	})
 	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	scr('.pop')
 }
 function get(ver, des, api, ext){
 	rss = true
