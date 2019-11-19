@@ -34,13 +34,13 @@ Specify an Initial category
 * Technology
 * World
 
-This would be for default dark with category Technology.
+This would be for Initially Opposite with category Technology.
 
-`<iframe src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
+`<iframe src="https://acktic.github.io?opp=1&cat=Technology"></iframe>`
 
 Default, category Media would look like...
 
-`<iframe src=https://acktic.github.io?dark=0&cat=Media"></iframe>`
+`<iframe src=https://acktic.github.io?opp=0&cat=Media"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9522649670120.png"></p>
@@ -58,9 +58,10 @@ Default, category Media would look like...
 | bar | Buffer/Opposite |
 | obj | Pop Array |
 | set | Xml Entry/Item |
-| ref | Xml Link/Href
+| ref | Xml Link/Href |
 | req | Xhr Data |
 | one | Dblclick catch |
+| opp | Opposite Mode |
 | tap | Touchstart/Click |
 
 ### Classes
