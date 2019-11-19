@@ -239,6 +239,7 @@ var menu=[
 {ver:"World",des:"MSN is a web portal of Internet services and apps for Windows and mobile devices.",api:"http://rss.msn.com",ext:"https://msn.com"},
 {ver:"World",des:"NBC News is the news division of the American broadcast television network NBC.",api:"http://feeds.nbcnews.com/nbcnews/public/news",ext:"https://nbcnews.com"},
 {ver:"World",des:"News subreddit articles relating to the United States and the rest of the World.",api:"https://reddit.com/r/news/.rss",ext:"https://reddit.com/r/news"},
+{ver:"World",des:"Newser is an American news aggregation website.",api:"http://rss.newser.com/rss/section/1.rss",ext:"https://www.newser.com"},
 {ver:"World",des:"NPR is an independent, nonprofit media organization that was founded to create a more informed public.",api:"https://www.npr.org/rss/rss.php?id=1019",ext:"https://npr.org"},
 {ver:"World",des:"Public Broadcasting Service is an American public broadcaster and television program distributor.",api:"https://www.pbs.org/newshour/feeds/rss/headlines",ext:"https://pbs.org"},
 {ver:"World",des:"World News subreddit with latest headlines from around the world.",api:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/worldnews"},
