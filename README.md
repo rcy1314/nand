@@ -53,6 +53,7 @@ This would be for default dark with category Technology.
 | fav | Home/Random |
 | rss | get != pop |
 | sel | .cat Selected |
+| bar | Buffer/Opposite |
 | obj | Pop Array |
 | one | Dblclick catch |
 | tap | Touchstart/Click |
@@ -67,7 +68,7 @@ This would be for default dark with category Technology.
 | .get | .xml Wrapper |
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
-| .bar | Buffer/Toggle |
+| .bar | Buffer/Opposite |
 | .fav | Pop/Random |
 
 ### Functions
