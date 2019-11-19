@@ -137,7 +137,7 @@ function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, m
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){ if (n == 'opp') opp = opp != true
 	if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
-	else if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
+	else if (opp==false){$('body').css({'background-color':'transparent','color':'#000'});$('.fav').css('display','none');$('.inv').css('display','block') }
 }
 function pop(n){
 	sel = n
