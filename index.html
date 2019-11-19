@@ -101,12 +101,12 @@ var sel = 'Social'
     $(document).one('ready', function() {
 	if (location.href.match("\\?opp=0")) app(false)
 	if (location.href.match("\\?opp=1")) app(true)
-	if (location.href.match("\\&cat=News") ||
-	    location.href.match("\\&cat=Media") ||
-	    location.href.match("\\&cat=Social") ||
-	    location.href.match("\\&cat=Sport") ||
-	    location.href.match("\\&cat=Technology") ||
-	    location.href.match("\\&cat=World")) pop(location.search.split("&cat=")[1])
+	if (location.href.match("\\&category=News") ||
+	    location.href.match("\\&category=Media") ||
+	    location.href.match("\\&category=Social") ||
+	    location.href.match("\\&category=Sport") ||
+	    location.href.match("\\&category=Technology") ||
+	    location.href.match("\\&category=World")) pop(location.search.split("&category=")[1])
 	else {
 		pop(sel)
 		app(opp)
