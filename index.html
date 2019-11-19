@@ -175,7 +175,7 @@ function pop(n){
 }
 function fil(){
 	filter = true	
-	if (!location.href.match('\\&filter=')) return false
+	if (!location.href.match('\\&filter=')){ pop(sel); return false }
 	var n = location.search.split("&filter=")[1]
 	n = n.split("+")
 	$(document).attr('title',n[0]+' - ack')
