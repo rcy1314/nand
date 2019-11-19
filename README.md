@@ -56,7 +56,6 @@ Default, category Media would look like...
 | rss | get pop fallback |
 | sel | .cat Selected |
 | bar | Buffer/Opposite |
-| obj | Pop Array |
 | set | Xml Entry/Item |
 | ref | Xml Link/Href |
 | req | Xhr Data |
@@ -76,7 +75,7 @@ Default, category Media would look like...
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
 | .bar | Buffer/Opposite |
-| .fav | Pop/Random |
+| .fav/.inv | Pop |
 
 ### Functions
 | Name | Use |
@@ -86,7 +85,6 @@ Default, category Media would look like...
 | pop | .out sel Append |
 | xhr | .xml get() |
 | app | Previously applyColors() |
-| ran | Random obj |
 | get | Ajax Request |
   
 
