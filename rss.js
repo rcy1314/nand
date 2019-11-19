@@ -77,6 +77,7 @@ var menu=[
 {ver:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",api:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
 {ver:"Social",des:"iOS subreddit for everything Apple iOS.",api:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
 {ver:"Social",des:"Javascript subreddit all about the JavaScript Programming Language!",api:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
+{ver:"Social",des:"KDE subreddit creating free and open source software for desktop and portable computing.",api:"https://reddit.com/r/kde/.rss",ext:"https://reddit.com/r/kde"},
 {ver:"Social",des:"Linux subreddit discusses topics evolving around Linux.",api:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {ver:"Social",des:"Math subreddit with nearly one million members.",api:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
 {ver:"Social",des:"Node subreddit all about NodeJs, created in 2009 with 141,000 members.",api:"https://reddit.com/r/node/.rss",ext:"https://reddit.com/r/node"},
