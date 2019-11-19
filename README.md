@@ -17,13 +17,13 @@ Here's what's used:
 
 * Simple Array Structure in rss.js
 
-`{ cli : "(unique)", ver : "category, desc : "description", api : "url", external : "external" },`
+`{ ver : "version", des : "description", api : "feed", external : "external" },`
 
 ### Sourcing
 
 Include an iframe in your html with the [site](https://acktic.github.io).
 
-`<iframe class="rss" src="https://acktic.github.io"></iframe>`
+`<iframe src="https://acktic.github.io"></iframe>`
 
 Specify an Initial category
 
@@ -34,10 +34,13 @@ Specify an Initial category
 * Technology
 * World
 
-
 This would be for default dark with category Technology.
 
 `<iframe src="https://acktic.github.io?dark=1&cat=Technology"></iframe>`
+
+Default, category Media would look like...
+
+`<iframe src=https://acktic.github.io?dark=0&cat=Media"></iframe>`
 
 ### Styling
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9522649670120.png"></p>
@@ -49,9 +52,8 @@ This would be for default dark with category Technology.
 ### Variables
 | Name | Use |
 | ------ | ------ |
-| opp | Color Scheme |
-| fav | Home/Random |
-| rss | get != pop |
+| opp | Dark = False|
+| rss | get pop failsafe |
 | sel | .cat Selected |
 | bar | Buffer/Opposite |
 | obj | Pop Array |
@@ -65,6 +67,7 @@ This would be for default dark with category Technology.
 | .tag | .cat Parent |
 | .cat | Category |
 | .out | Output |
+| .fav | Home/Random |
 | .get | .xml Wrapper |
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
