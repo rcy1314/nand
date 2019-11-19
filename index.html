@@ -85,7 +85,7 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 2.5
+var bar = 1.7
 var one = false
 var opp = false
 var tap = false
@@ -108,7 +108,6 @@ var sel = 'Social'
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
 			if (rss == false) pop(sel)
 		}
-		if ($(this).scrollTop()<1) scr('.pop')
 	})
 	$('.inv,.fav').on('touchstart click', function(e){
 		if (!tap){
@@ -148,27 +147,27 @@ function pop(n){
 		}
 	})
 	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	setTimeout(function(){ $('hr:first, .bar:first').remove(); },700)
 	scr('.pop')
 }
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar:last').remove()
-	$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
+	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
 	.success(function(req){
-		var entry = $(req).find('entry')
-		if (entry.length > 0) var set="entry"
+		if ($(req).find('entry').length > 0) var set="entry"
 		else var set = 'item'
 		$(req).find(set).each( function(i,k){
+			if (i >= 24) return false
 			if (set=='entry') var ref = $(this).find('link').attr('href')
 			else var ref = $(this).find('link').text();
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
-			if (i >= 24) return false
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
-				 "<div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
+				 "<div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
 		scr('.get')
 		rss = false
 	})
