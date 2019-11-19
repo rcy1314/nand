@@ -98,11 +98,10 @@
     </div>
 <script>
 var bar = 2.5
-var obj = []
 var tap = false
 var rss = false
+var dark = false
 var sel = 'Social'
-var dark = true
     $(document).one('ready', function() {
 	pop(sel)
 	$('.out').css('top', $('.tag').height()+'px');
@@ -114,10 +113,7 @@ var dark = true
 	if (location.href.match('\\&cat=Sport')) pop('Sport')
 	if (location.href.match('\\&cat=Technology')) pop('Technology')
 	if (location.href.match('\\&cat=World')) pop('World')
-	if (location.href.match('\\&filter=')) {
-
-	var n = location.search.split("&filter=")[1]; alert(n);
-	}
+	if (location.href.match('\\&filter=')) var n = location.search.split("&filter=")[1]
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
@@ -141,7 +137,7 @@ var dark = true
 function url(n){ window.open(n) }
 function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function ran(n){ $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
+function ran(n){ var obj = []; $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
@@ -151,10 +147,10 @@ function app(n){
 function pop(n){ sel=n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
-	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	scr('.pop')
 	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
 }
 function get(ver,des,api,ext){ rss=true
