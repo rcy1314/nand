@@ -156,7 +156,7 @@ function get(ver, des, api, ext){
 					if (i >= 24) return false
 					if (set == 'entry') var ref = $(this).find('link').attr('href')
 					else var ref = $(this).find('link').text()
-					$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
+					$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
