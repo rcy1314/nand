@@ -52,6 +52,7 @@ This would be for default dark with category Technology.
 | dark | Dark mode |
 | rss | get != pop |
 | sel | .cat Selected |
+| obj | Random Array |
 | tap | Touchstart/Click |
 
 ### Classes
