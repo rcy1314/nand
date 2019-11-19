@@ -9,7 +9,6 @@
   </head>
 <style>
 @media only screen and (min-width: 960px) {
-
     body {
 	transform: translate(50%,50%);
     	position: fixed;
@@ -19,13 +18,8 @@
 	width: 70%;
 	right: 50%;
     }
-
 }
-    ::-webkit-scrollbar {
-
-	display: none;
-
-    }
+    ::-webkit-scrollbar { display: none }
     .con {
 	postion:absolute;
 	height:99%;
@@ -113,7 +107,6 @@ var sel = 'Social'
 	if (location.href.match('\\&cat=Sport')) pop('Sport')
 	if (location.href.match('\\&cat=Technology')) pop('Technology')
 	if (location.href.match('\\&cat=World')) pop('World')
-	if (location.href.match('\\&filter=')) var n = location.search.split("&filter=")[1]
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
@@ -132,19 +125,28 @@ var sel = 'Social'
 			tap=null;
 			ran(sel)
 		}
-	    e.preventDefault()})
+	    e.preventDefault()
+	})
     });
 function url(n){ window.open(n) }
 function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function ran(n){ var obj = []; $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
+function ran(n){
+	var obj = []
+	$.each(menu, function(i, k){
+		if(n == k.ver) obj.push(menu[i])
+	})
+	var n = obj[Math.floor(Math.random()*obj.length)]
+	get(n.ver,n.des,n.api,n.ext)
+}
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
 	if (dark==false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 	else if (dark==true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
-function pop(n){ sel=n
+function pop(n){
+	sel=n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
 	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
@@ -153,7 +155,8 @@ function pop(n){ sel=n
 	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
 }
-function get(ver,des,api,ext){ rss=true
+function get(ver, des, api, ext){
+	rss=true
 	$('.bar:last').remove()
 	$('.out').append("<div class='get'><div class='xml'>It's on the way! &ensp;Please be patient.</div></div>")
 	scr('.get')
@@ -177,7 +180,7 @@ function get(ver,des,api,ext){ rss=true
 			if (i >= 24) return false
 		})
 		rss=false
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
+		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
 		app()
 		scr('.get')
 	})
