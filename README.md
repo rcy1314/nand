@@ -104,7 +104,7 @@ Default, category Media would look like...
  
 ### CORS Proxy
 
-- Heroku's CORS Proxy
+- Heroku's CORS-Anywhere Proxy
 `http://cors-anywhere.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
