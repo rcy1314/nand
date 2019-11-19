@@ -104,6 +104,7 @@ var menu=[
 {ver:"Sport",des:"BBC Sports News from around the world.",api:"http://feeds.bbci.co.uk/sport/rss.xml",ext:"https://bbc.com/sport"},
 {ver:"Sport",des:"BJPENN has become one of the most reliable destinations for your MMA and UFC needs. ",api:"https://www.bjpenn.com/feed",ext:"https://bjpenn.com"},
 {ver:"Sport",des:"Bleacher Report is a website that focuses on sport and sports culture.",api:"https://bleacherreport.com/articles/feed",ext:"https://bleacherreport.com"},
+{ver:"Sport",des:"Cars subreddit the largest automotive enthusiast community on the Internet.",api:"https://reddit.com/r/cars/.rss",ext:"https://reddit.com/r/cars"},
 {ver:"Sport",des:"CBS Sports is an American Sports News website operated by CBS Interactive.",api:"https://rss.cbssports.com/rss/headlines",ext:"https://cbssports.com"},
 {ver:"Sport",des:"CFB subreddit forum for all things college football focusing on NCAA football.",api:"https://reddit.com/r/cfb/.rss",ext:"https://reddit.com/r/cfb"},
 {ver:"Sport",des:"CNN Sports catalogues the Latest News from around the World.",api:"http://rss.cnn.com/rss/edition_sport.rss",ext:"https://cnn.com/sport"},
