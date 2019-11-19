@@ -139,7 +139,7 @@ function pop(n){
 		$.each(menu, function(i, k){
 			if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
 		})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em' onclick='app(\"opp\")'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
 	scr('.pop')
 }
 function get(ver, des, api, ext){
@@ -156,13 +156,13 @@ function get(ver, des, api, ext){
 					if (i >= 24) return false
 					if (set == 'entry') var ref = $(this).find('link').attr('href')
 					else var ref = $(this).find('link').text()
-					$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
-		})
+				$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
+				})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
 		scr('.get:last')
 		rss = false
-	})
+		})
 }
 </script>
 </body>
