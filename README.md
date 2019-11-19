@@ -75,7 +75,7 @@ Default, category Media would look like...
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
 | .bar | Buffer/Opposite |
-| .fav/.inv | Pop |
+| .fav/.inv | Pop(sel) |
 
 ### Functions
 | Name | Use |
