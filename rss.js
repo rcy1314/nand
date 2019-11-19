@@ -10,7 +10,6 @@ var menu=[
 {cli:"cbsf",ver:"News",des:"CBS KTVT Dallas Fort-Worth Texas breaking news, weather, traffic, and sports.",api:"https://dfw.cbslocal.com/feed",ext:"https://dfw.cbslocal.com"},
 {cli:"nbcw",ver:"News",des:"NBC KXAS-TV Dallas Fort-Worth News, Weather, Sports, Business, Lifestyle, Traffic and Health.",api:"https://www.nbcdfw.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://www.nbcdfw.com"},
 {cli:"abch",ver:"News",des:"ABC KTRK-TV Houston breaking news from Houston and the surrounding neighborhoods.",api:"https://abc13.com/feed",ext:"https://abc13.com"},
-{cli:"cbsi",ver:"News",des:"CBS WTTV Indianapolis News, Weather, Traffic and Sports.",api:"https://cbs4indy.com/feed",ext:"https://cbs4indy.com"},
 {cli:"ksat",ver:"News",des:"ABC KSAT-TV San Antonio Latest, news, weather and sports.",api:"https://www.ksat.com/arcio/rss/category/news/national/?size=10",ext:"https://www.ksat.com"},
 {cli:"abcl",ver:"News",des:"ABC7 Covers Los Angeles news, weather, sports, traffic and live video.",api:"https://abc7.com/feed",ext:"https://abc7.com"},
 {cli:"cbsl",ver:"News",des:"CBS KCBS-TV Los Angeles news, Sports, Weather, Traffic and the Best of LA and OC.",api:"https://losangeles.cbslocal.com/feed",ext:"https://losangeles.cbslocal.com"},
