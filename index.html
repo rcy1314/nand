@@ -42,6 +42,7 @@
     }
     .cat {
 	background-color: inherit;
+	border-bottom: 1px solid;
 	display: inline-block;
 	padding-bottom: 2em;
 	text-align: center;
@@ -91,43 +92,52 @@ var opp = false
 var tap = false
 var rss = false
 var sel = 'Social'
-    $(document).one('ready', function() {
-	if (location.href.match("\\?opp=0")) app(false)
-	if (location.href.match("\\?opp=1")) app(true)
-	if (location.href.match("\\&category=News") ||
-	    location.href.match("\\&category=Media") ||
-	    location.href.match("\\&category=Social") ||
-	    location.href.match("\\&category=Sport") ||
-	    location.href.match("\\&category=Technology") ||
-	    location.href.match("\\&category=World")) pop(location.search.split("&category=")[1])
-	else {
-		pop(sel)
-		app(opp)
+    if (location.href.match("\\?opp=0")) app(false)
+    if (location.href.match("\\?opp=1")) app(true)
+    if (location.href.match("\\&category=News") ||
+	location.href.match("\\&category=Media") ||
+	location.href.match("\\&category=Social") ||
+	location.href.match("\\&category=Sport") ||
+	location.href.match("\\&category=Technology") ||
+	location.href.match("\\&category=World")) pop(location.search.split("&category=")[1])
+    else {
+	pop(sel)
+	app(opp)
+    }
+$(".out").attr('tabindex',-1).focus();
+$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
+$('.out').on('scroll',function(){
+	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
+})
+$('.inv, .fav').on('touchstart click', function(e){
+	if (!tap){
+		tap=setTimeout(function(){
+			tap = null
+			pop(sel)
+		},300)
 	}
-	$(".out").attr('tabindex',-1).focus();
-	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
-	$('.out').on('scroll',function(){
-		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
-	})
-
-	$('.inv,.fav').on('touchstart click', function(e){
-		if (!tap){
-			tap=setTimeout(function(){
-				tap = null;
-				pop(sel)
-			},300)
-		}
-  		else {
-			clearTimeout(tap);
-			tap=null;
+  	else {
+		clearTimeout(tap);
+			tap=null
 			app('opp')
-		}
-	    e.preventDefault()
-	})
-    });
+	}
+    e.preventDefault()
+})
 function url(n){ window.open(n) }
 function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
+function pop(n){
+	sel = n
+	$('.pop, .bar').remove()
+	$(document).attr('title',n+' - ack')
+	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.5+"em'></div>" +
+			 "<div class='pop' style='padding-top:.5em'></div>")
+	$.each(menu, function(i, k){
+		if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.ver+"</b> "+k.des+"</div>")
+	})
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
+	scr('.pop')
+}
 function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
@@ -142,22 +152,10 @@ function app(n){
 		$('.inv').css('display','block')
 	}
 }
-function pop(n){
-	sel = n
-	$('.pop, .bar').remove()
-	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding-top:.5em'></div>")
-		$.each(menu, function(i, k){
-			if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
-		})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
-	scr('.pop')
-}
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar:last, hr:last').remove()
-	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
+	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div></div>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
@@ -168,7 +166,7 @@ function get(ver, des, api, ext){
 					if (i >= 24) return false
 					if (set == 'entry')  var ref = $(this).find('link').attr('href')
 					else 		     var ref = $(this).find('link').text()
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
