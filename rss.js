@@ -152,7 +152,6 @@ var menu=[
 {cli:"vcfl",ver:"Sport",des:"Vice Fightland is a website covering Mixed Martial Arts, MMA.",api:"http://fightland.vice.com/rss",ext:"http://fightland.vice.com"},
 {cli:"yahs",ver:"Sport",des:"Yahoo! Sports has Comprehensive  News, Scores, Standings, Fantasy Games, Rumors, and more.",api:"https://sports.yahoo.com/rss",ext:"https://sports.yahoo.com"},
 {cli:"abct",ver:"Technology",des:"ABC Technology for Latest Science News, Technology News, and more.",api:"https://abcnews.go.com/abcnews/technologyheadlines",ext:"https://abcnews.go.com/technology"},
-{cli:"amsg",ver:"Technology",des:"AMS founded in 1888 to further the interests of Mathematical Research and Scholarship.",api:"http://www.ams.org/cgi-bin/content/news_items.cgi?rss=1",ext:"http://www.ams.org"},
 {cli:"nica",ver:"Technology",des:"Ars Technica has became a Trusted Source for Technology News.",api:"http://feeds.arstechnica.com/arstechnica/index?format=xml",ext:"https://arstechnica.com"},
 {cli:"bbcn",ver:"Technology",des:"BBC Technology News, Articles, and more.",api:"http://feeds.bbci.co.uk/news/technology/rss.xml",ext:"https://bbc.co.uk/news/technology"},
 {cli:"beta",ver:"Technology",des:"BetaNews is a leading source of Technology News and Analysis.",api:"http://feeds.betanews.com/bn",ext:"https://betanews.com"},
