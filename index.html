@@ -19,7 +19,9 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar { display: none }
+    ::-webkit-scrollbar {
+	display: none
+    }
     div {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -61,6 +63,9 @@
 	line-height: 1.5em;
 	padding-top: 2em;
     }
+    .bar {
+	position: relative;
+    }
     .inv, .fav {
 	transform: translateX(50%);
 	position: absolute;
@@ -85,14 +90,13 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 2.7
+var bar = 3
 var one = false
 var opp = false
 var tap = false
 var rss = false
-var sel = 'Social'
+var sel = 'News'
     $(document).one('ready', function() {
-	$(".out").css("top", $(".tag").height()+"px");
 	if (location.href.match("\\?dark=0")) app(false)
 	if (location.href.match("\\?dark=1")) app(true)
 	if (location.href.match("\\&cat=News") ||
@@ -100,8 +104,11 @@ var sel = 'Social'
 	    location.href.match("\\&cat=Social") ||
 	    location.href.match("\\&cat=Sport") ||
 	    location.href.match("\\&cat=Technology") ||
-	    location.href.match("\\&cat=World")) pop(location.search.split("&cat=")[1])
-	else { pop(sel); app() }
+	    location.href.match("\\&cat=World") ) pop(location.search.split("&cat=")[1])
+	else {
+		pop(sel)
+		app()
+	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
@@ -114,7 +121,8 @@ var sel = 'Social'
 			tap=setTimeout(function(){
 				tap = null;
 				pop(sel)
-			},300)}
+			},300)
+		}
   		else {
 			clearTimeout(tap);
 			tap=null;
@@ -127,11 +135,9 @@ function url(n){ window.open(n) }
 function ran(n){ var n = obj[Math.floor(Math.random()*obj.length)]; get(n.ver, n.des, n.api, n.ext) }
 function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext); one = true } }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function app(n){
-	if (n == true || n == false) opp = n
-	if (n == 'opp') opp = opp != true
-	if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
-	else if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
+function app(n){ if (n == 'opp') opp = opp != true
+	if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
+	else if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 }
 function pop(n){
 	sel = n
@@ -139,15 +145,15 @@ function pop(n){
 	one = false
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if(n == k.ver){
 			obj.push(menu[i])
 			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
-	setTimeout(function(){ $('.bar:first').remove(); },450)
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	setTimeout(function(){ $('.bar:first').remove(); },500)
 	scr('.pop')
 }
 function get(ver, des, api, ext){
@@ -156,18 +162,15 @@ function get(ver, des, api, ext){
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
-	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
+	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 	.success(function(req){
-		if ($(req).find('entry').length > 0) var set="entry"
-		else var set = 'item'
-		$(req).find(set).each( function(i,k){
-			if (i >= 24) return false
-			if (set=='entry') var ref = $(this).find('link').attr('href')
-			else var ref = $(this).find('link').text();
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
+		if ($(req).find('entry').length > 0){ var set="entry" } else { var set = 'item' }
+		$(req).find(set).each( function(i,k){ if (i >= 24) return false
+			if (set == 'entry'){ var ref = $(this).find('link').attr('href') } else { var ref = $(this).find('link').text() }
+			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
-				 "<div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
+				 "<div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
 		scr('.get')
 		rss = false
 	})
