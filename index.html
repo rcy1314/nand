@@ -93,14 +93,14 @@
 
 var bar = 3.5      // Buffer
 var one = false    // Doubleclick Fallback
-var opp = false    // Dark mode
+var opp = false    // Opposite mode
 var tap = false    // Home/Random
 var rss = false    // get() pop()
 var sel = 'Social' // Category
 
     $(document).one('ready', function() {
-	if (location.href.match("\\?dark=0")) app(false)
-	if (location.href.match("\\?dark=1")) app(true)
+	if (location.href.match("\\?opp=0")) app(false)
+	if (location.href.match("\\?opp=1")) app(true)
 	if (location.href.match("\\&cat=News") ||
 	    location.href.match("\\&cat=Media") ||
 	    location.href.match("\\&cat=Social") ||
