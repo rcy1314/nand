@@ -1,6 +1,6 @@
 # RSS-Browser
 
-  - Cross Device Support.
+  - Cross Device Browser.
   - Easy to include.
   - Easy to use.
 
