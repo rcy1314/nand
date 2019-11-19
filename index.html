@@ -113,8 +113,7 @@ var sel = 'Social'
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss == false && one == false) pop(sel)
-			else one = true
+			if (rss == false) pop(sel)
 		}
 	})
 	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
@@ -138,7 +137,7 @@ function app(n){
 }
 function pop(n){
 	sel = n
-	one = false
+	rss = true
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='pop'></div>")
@@ -148,12 +147,13 @@ function pop(n){
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	rss = false
 	scr('.pop')
 }
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar:last').remove()
-	$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
+	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
@@ -168,7 +168,6 @@ function get(ver, des, api, ext){
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
 		rss = false
-		one = false
 		$('.pop').remove();
 		scr('.get')
 	})
