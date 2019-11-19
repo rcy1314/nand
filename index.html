@@ -151,9 +151,9 @@ function pop(n){
 }
 function get(ver, des, api, ext){
 	rss = true
-	$('.pop, .bar:last, hr:last').remove()
+	$('.bar:last, hr:last').remove()
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
-	scr('.get')
+	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 	.success(function(req){
@@ -166,7 +166,7 @@ function get(ver, des, api, ext){
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
-		scr('.get')
+		scr('.get:last')
 		rss = false
 	})
 }
