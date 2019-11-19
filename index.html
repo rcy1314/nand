@@ -111,7 +111,7 @@ var tap = false
 var rss = false
 var sel = 'Social'
 var dark = true
-var filter = []
+var filter
     $(document).one('ready', function() {
 	pop(sel)
 	$('.out').css('top', $('.tag').height()+'px');
@@ -128,7 +128,8 @@ var filter = []
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss==false) pop(sel)
+			if (rss==false && filter==false) pop(sel)
+			if (filter!=false){ fil(); filter = true }
 		}
 		 if ($(this).scrollTop()<1) scr('.pop')})
 	$('.inv,.fav').on('touchstart click', function(e){
@@ -177,9 +178,11 @@ function pop(n){
 	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
+	filter = false
 }
 function fil(r){
 	rss = true
+	filter = true	
 	if (!location.href.match('\\&filter=')) return false
 	if (r == "random") { var e=filter[Math.floor(Math.random()*filter.length)]; get(e.ver,e.des,e.api,e.ext); return false; }
 	var n = location.search.split("&filter=")[1]
@@ -190,7 +193,7 @@ function fil(r){
 	$.each(n, function(i, k){
 		$.each(menu, function(o, a){
 			 if(a.des.toLowerCase().indexOf(k) > -1){
-				 filter.push(menu[o]); $('.pop').append("<div id='"+a.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'>"+a.des+"</div>")
+				$('.pop').append("<div id='"+a.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'>"+a.des+"</div>")
 			}
 		 })
 	})
