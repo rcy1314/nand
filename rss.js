@@ -79,6 +79,7 @@ var menu=[
 {ver:"Social",des:"iOS subreddit for everything Apple iOS.",api:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
 {ver:"Social",des:"Javascript subreddit all about the JavaScript Programming Language!",api:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
 {ver:"Social",des:"KDE subreddit creating free and open source software for desktop and portable computing.",api:"https://reddit.com/r/kde/.rss",ext:"https://reddit.com/r/kde"},
+{ver:"Social",des:"Laptops subreddit The place to discuss anything laptop related.",api:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {ver:"Social",des:"Linux subreddit discusses topics evolving around Linux.",api:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {ver:"Social",des:"Math subreddit with nearly one million members.",api:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
 {ver:"Social",des:"MMORPG subreddit Massively multiplayer online role-playing game, we discuss them here!",api:"https://reddit.com/r/mmorpg/.rss",ext:"https://reddit.com/r/mmorpg"},
