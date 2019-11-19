@@ -101,7 +101,7 @@
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
-	<div class="fil">filter</div>
+	<div class="fil" onclick="fil()">filter</div>
 	<div class="out"><div>
     </div>
 <script>
@@ -137,25 +137,14 @@ var filter
 		if (!tap){
 			tap=setTimeout(function(){
 				tap = null;
+				if(filter!=false){ fil(); return false; }
 				pop(sel)
 			},300)}
   		else {
 			clearTimeout(tap);
 			tap=null;
+			if(filter!=false){ ran("random"); return false; }
 			ran(sel)
-		}
-	    e.preventDefault()
-	})
-	$('.fil').on('touchstart click', function(e){
-		if (!tap){
-			tap=setTimeout(function(){
-				tap = null;
-				fil()
-			},300)}
-  		else {
-			clearTimeout(tap);
-			tap=null;
-			fil('random')
 		}
 	    e.preventDefault()
 	})
@@ -163,7 +152,10 @@ var filter
 function url(n){ window.open(n) }
 function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function ran(n){ $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
+function ran(n){
+	if (n == "random") { var e=hap[Math.floor(Math.random()*hap.length)]; get(e.ver,e.des,e.api,e.ext); return false; }
+	 $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext)
+	 }
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
@@ -181,11 +173,9 @@ function pop(n){
 	app()
 	filter = false
 }
-function fil(r){
-	rss = true
+function fil(){
 	filter = true	
 	if (!location.href.match('\\&filter=')) return false
-	if (r == "random") { var e=hap[Math.floor(Math.random()*hap.length)]; get(e.ver,e.des,e.api,e.ext); return false; }
 	var n = location.search.split("&filter=")[1]
 	n = n.split("+")
 	$(document).attr('title',n[0]+' - ack')
@@ -203,7 +193,6 @@ function fil(r){
 	scr('.pop')
 	app()
 	rss = false
-
 }
 function get(ver,des,api,ext){ rss=true
 	$('.bar:last').remove()
