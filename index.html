@@ -75,19 +75,18 @@
 <body>
     <div class="con">
 	<div class="tag">
-	<div id="News" class="cat">News</div>
-	<div id="Media" class="cat">Media</div>
-	<div id="Social" class="cat">Social</div>
-	<div id="Sport" class="cat">Sport</div>
-	<div id="Technology" class="cat">Tech</div>
-	<div id="World" class="cat">World</div>
+	<div id="News" class="cat" onclick="pop('News')">News</div>
+	<div id="Media" class="cat" onclick="pop('Media')">Media</div>
+	<div id="Social" class="cat" onclick="pop('Social')">Social</div>
+	<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
+	<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
+	<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
 	<div class="out"><div>
     </div>
 <script>
-var obj = []
 var opp = false
 var tap = false
 var rss = false
@@ -125,24 +124,9 @@ var sel = 'Social'
 		}
 	    e.preventDefault()
 	})
-	$('.cat').on('touchstart click', function(e){
-		if (!tap){
-			tap=setTimeout(function(){
-				tap = null;
-				pop(sel)
-			},300)
-		}
-  		else {
-			clearTimeout(tap);
-			tap=null;
-			ran()
-		}
-	    e.preventDefault()
-	})
     });
 function url(n){ window.open(n) }
 function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) }
-function ran(n){ var n = obj[Math.floor(Math.random()*obj.length)]; get(n.ver, n.des, n.api, n.ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
 	if (n == 'opp') opp = opp != true
@@ -160,13 +144,11 @@ function app(n){
 }
 function pop(n){
 	sel = n
-	obj = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.5+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 		$.each(menu, function(i, k){
-			obj.push(menu[i])
 			if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
 		})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
@@ -182,12 +164,12 @@ function get(ver, des, api, ext){
 		.success(function(req){
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
-				$(req).find(set).each(function(i,k){
+				$(req).find(set).each(function(i, k){
 					if (i >= 24) return false
 					if (set == 'entry')  var ref = $(this).find('link').attr('href')
 					else 		     var ref = $(this).find('link').text()
-				$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
-				})
+			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
+		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
 		scr('.get:last')
