@@ -111,7 +111,7 @@ var sel = 'Social'
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss==false) pop(sel)
+			if (rss == false) pop(sel)
 		}
 		 if ($(this).scrollTop()<1) scr('.pop')})
 	$('.inv,.fav').on('touchstart click', function(e){
@@ -151,7 +151,6 @@ function pop(n){
 	scr('.pop')
 	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
 	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
-	app()
 }
 function get(ver, des, api, ext){
 	rss = true
@@ -175,9 +174,8 @@ function get(ver, des, api, ext){
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
 			if (i >= 24) return false
 		})
-		rss=false
+		rss = false
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
-		app()
 		scr('.get')
 	})
 }
