@@ -151,7 +151,7 @@ function pop(n){
 }
 function get(ver, des, api, ext){
 	rss = true
-	$('.bar:last, hr:last').remove()
+	$('.pop, .bar:last, hr:last').remove()
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
