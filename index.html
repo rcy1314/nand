@@ -108,7 +108,8 @@ var sel = 'Social'
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
 			if (rss == false) pop(sel)
 		}
-		 if ($(this).scrollTop()<1) scr('.pop')})
+		if ($(this).scrollTop()<1) scr('.pop')
+	})
 	$('.inv,.fav').on('touchstart click', function(e){
 		if (!tap){
 			tap=setTimeout(function(){
@@ -129,7 +130,7 @@ function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, m
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
 	if (n == true || n == false) opp = n
-	if (n == "opp") opp = opp != true
+	if (n == 'opp') opp = opp != true
 	if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 	else if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
@@ -152,7 +153,7 @@ function pop(n){
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar:last').remove()
-	$('.out').append("<div class='get'><div class='xml'>It's on the way! &ensp;Please be patient.</div></div>")
+	$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
@@ -160,20 +161,15 @@ function get(ver, des, api, ext){
 		var entry = $(data).find('entry')
 		if (entry.length > 0) var format="entry"
 		else var format = 'item'
-		$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>")
 		$(data).find(format).each( function(i,k){
-			if (format=='entry') {
-				var ref = $(this).find('link').attr('href')
-			}
-			else {
-				var ref = $(this).find('link').text();
-			}
+			if (format=='entry') var ref = $(this).find('link').attr('href')
+			else var ref = $(this).find('link').text();
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
 			if (i >= 24) return false
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
-		rss = false
 		scr('.get')
+		rss = false
 	})
 }
 </script>
