@@ -80,6 +80,7 @@ var menu=[
 {ver:"Social",des:"KDE subreddit creating free and open source software for desktop and portable computing.",api:"https://reddit.com/r/kde/.rss",ext:"https://reddit.com/r/kde"},
 {ver:"Social",des:"Linux subreddit discusses topics evolving around Linux.",api:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {ver:"Social",des:"Math subreddit with nearly one million members.",api:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
+{ver:"Social",des:"MMORPG subreddit Massively multiplayer online role-playing game, we discuss them here!",api:"https://reddit.com/r/mmorpg/.rss",ext:"https://reddit.com/r/mmorpg"},
 {ver:"Social",des:"Node subreddit all about NodeJs, created in 2009 with 141,000 members.",api:"https://reddit.com/r/node/.rss",ext:"https://reddit.com/r/node"},
 {ver:"Social",des:"Physics subreddit frequented by physicists, scientists, and those with a passion for physics.",api:"https://reddit.com/r/physics/.rss",ext:"https://reddit.com/r/physics"},
 {ver:"Social",des:"Programming subreddit shares user submitted articles on Programming.",api:"https://reddit.com/r/programming/.rss",ext:"https://reddit.com/r/programming"},
