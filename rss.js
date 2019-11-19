@@ -40,6 +40,7 @@ var menu=[
 {ver:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",api:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
 {ver:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",api:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
 {ver:"Media",des:"Google Entertainment Headlines, Opinions, and News.",api:"https://news.google.com/rss/search?cf=all&pz=1&q=film+movie+music+art+entertainment&hl=en-US&gl=US&ceid=US:en",ext:"https://google.com"},
+{ver:"Media",des:"GQ is an international monthly men's magazine based in New York City and founded in 1931.",api:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {ver:"Media",des:"IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",api:"https://www.indiewire.com/feed",ext:"https://www.indiewire.com"},
 {ver:"Media",des:"Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",api:"https://www.inverse.com/feed/articles/1.rss",ext:"https://www.inverse.com"},
 {ver:"Media",des:"Just Jared Jr. is the Definitive Site for Celebrity News.",api:"http://www.justjared.com/feed",ext:"http://justjared.com"},
