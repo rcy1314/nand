@@ -49,7 +49,7 @@ This would be for default dark with category Technology.
 ### Variables
 | Name | Use |
 | ------ | ------ |
-| dark | Dark mode |
+| opp | Color Scheme |
 | fav | Home/Random |
 | rss | get != pop |
 | sel | .cat Selected |
