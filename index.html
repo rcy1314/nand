@@ -113,7 +113,7 @@ var sel = 'Social'
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss == false && one == false) pop(sel)
+			if (rss != true && one != true) pop(sel)
 		}
 	})
 	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
