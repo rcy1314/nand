@@ -96,11 +96,11 @@ Default, category Media would look like...
 
  - app(false) uses transparent background and black foreground.
   
-` $("body").css({"background-color":"transparent","color":"#000000"})`
+` $("body").css({"background-color":"transparent","color":"#000"})`
 
  - app(true) uses black background and white foreground.
  
-`$("body").css({"background-color":"#000000","color":"#FFFFFF"})`
+`$("body").css({"background-color":"#000","color":"#FFF"})`
  
 ### CORS Proxy
 
