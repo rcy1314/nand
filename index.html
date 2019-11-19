@@ -75,12 +75,12 @@
 <body>
     <div class="con">
 	<div class="tag">
-	<div id="News" class="cat" onclick="pop('News')">News</div>
-	<div id="Media" class="cat" onclick="pop('Media')">Media</div>
-	<div id="Social" class="cat" onclick="pop('Social')">Social</div>
-	<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
-	<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
-	<div id="World" class="cat" onclick="pop('World')">World</div>
+	<div id="News" class="cat">News</div>
+	<div id="Media" class="cat">Media</div>
+	<div id="Social" class="cat">Social</div>
+	<div id="Sport" class="cat">Sport</div>
+	<div id="Technology" class="cat">Tech</div>
+	<div id="World" class="cat">World</div>
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
@@ -108,9 +108,7 @@ var sel = 'Social'
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
-		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss == false) pop(sel)
-		}
+		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 	})
 
 	$('.inv,.fav').on('touchstart click', function(e){
@@ -124,6 +122,20 @@ var sel = 'Social'
 			clearTimeout(tap);
 			tap=null;
 			app('opp')
+		}
+	    e.preventDefault()
+	})
+	$('.cat').on('touchstart click', function(e){
+		if (!tap){
+			tap=setTimeout(function(){
+				tap = null;
+				pop(sel)
+			},300)
+		}
+  		else {
+			clearTimeout(tap);
+			tap=null;
+			ran()
 		}
 	    e.preventDefault()
 	})
@@ -169,11 +181,11 @@ function get(ver, des, api, ext){
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 		.success(function(req){
 			if ($(req).find('entry').length > 0) var set = "entry"
-			else var set = 'item'
+			else 				     var set = 'item'
 				$(req).find(set).each(function(i,k){
 					if (i >= 24) return false
-					if (set == 'entry') var ref = $(this).find('link').attr('href')
-					else var ref = $(this).find('link').text()
+					if (set == 'entry')  var ref = $(this).find('link').attr('href')
+					else 		     var ref = $(this).find('link').text()
 				$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;&ensp;"+$(this).find("title").text()+"</div>")
 				})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
