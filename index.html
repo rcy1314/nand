@@ -60,11 +60,8 @@
     .xml {
 	background-color: inherit;
 	padding-bottom: 2.2em;
-	line-height: 1.5em;
-	padding-top: 2em;
-    }
-    .bar {
-	position: relative;
+	line-height: 2em;
+	padding-top: 2.2em;
     }
     .inv, .fav {
 	transform: translateX(50%);
@@ -90,7 +87,6 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 3.5
 var opp = false
 var tap = false
 var rss = false
@@ -115,7 +111,7 @@ var sel = 'Social'
 			if (rss == false) pop(sel)
 		}
 	})
-	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
+	$('.inv, .fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
     });
 function url(n){ window.open(n) }
 function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) }
@@ -138,13 +134,11 @@ function pop(n){
 	sel = n
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.7+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
-	$.each(menu, function(i, k){
-		if(n == k.ver){
-			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
-		}
-	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
+	$('.out').append("<div class='pop' style='padding-top:2em'></div>")
+		$.each(menu, function(i, k){
+			if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
+		})
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em' onclick='app(\"opp\")'></div>")
 	scr('.pop')
 }
 function get(ver, des, api, ext){
@@ -153,17 +147,18 @@ function get(ver, des, api, ext){
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
-	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
-	.success(function(req){
-		if ($(req).find('entry').length > 0) var set = "entry"
-		else var set = 'item'
-		$(req).find(set).each(function(i,k){
-			if (i >= 24) return false
-			if (set == 'entry'){ var ref = $(this).find('link').attr('href') } else { var ref = $(this).find('link').text() }
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
+		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
+		.success(function(req){
+			if ($(req).find('entry').length > 0) var set = "entry"
+			else var set = 'item'
+				$(req).find(set).each(function(i,k){
+					if (i >= 24) return false
+					if (set == 'entry') var ref = $(this).find('link').attr('href')
+					else var ref = $(this).find('link').text()
+					$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
-				 "<div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
+				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
 		scr('.get:last')
 		rss = false
 	})
