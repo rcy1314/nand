@@ -149,7 +149,7 @@ function pop(n){
 	one = false
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:2em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:4em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if(n == k.ver){
 			obj.push(menu[i])
