@@ -67,7 +67,6 @@ Default, category Media would look like...
 | .tag | .cat Parent |
 | .cat | Category |
 | .out | Output |
-| .fav | Home/Random |
 | .get | .xml Wrapper |
 | .pop | .sel Wrapper |
 | .xml | .out Elements |
