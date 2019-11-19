@@ -85,7 +85,7 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 1.7
+var bar = 2.7
 var one = false
 var opp = false
 var tap = false
@@ -147,12 +147,12 @@ function pop(n){
 		}
 	})
 	$('.out').append("<div class='bar' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
-	setTimeout(function(){ $('hr:first, .bar:first').remove(); },700)
+	setTimeout(function(){ $('.bar:first').remove(); },700)
 	scr('.pop')
 }
 function get(ver, des, api, ext){
 	rss = true
-	$('.bar:last').remove()
+	$('.bar:last, hr:last').remove()
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
