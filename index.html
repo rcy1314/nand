@@ -97,16 +97,16 @@ var rss = false
 var dark = false
 var sel = 'Social'
     $(document).one('ready', function() {
-	pop(sel)
-	$('.out').css('top', $('.tag').height()+'px');
-	if (location.href.match('\\?dark=0')) app(false)
-	if (location.href.match('\\?dark=1')) app(true)
-	if (location.href.match('\\&cat=News')) pop('News')
-	if (location.href.match('\\&cat=Entertainment')) pop('Entertainment')
-	if (location.href.match('\\&cat=Social')) pop('Social')
-	if (location.href.match('\\&cat=Sport')) pop('Sport')
-	if (location.href.match('\\&cat=Technology')) pop('Technology')
-	if (location.href.match('\\&cat=World')) pop('World')
+	$(".out").css("top", $(".tag").height()+"px");
+	if (location.href.match("\\?dark=0")) app(false)
+	if (location.href.match("\\?dark=1")) app(true)
+	if (location.href.match("\\&cat=News") ||
+	    location.href.match("\\&cat=Entertainment") ||
+	    location.href.match("\\&cat=Social") ||
+	    location.href.match("\\&cat=Sport") ||
+	    location.href.match("\\&cat=Technology") ||
+	    location.href.match("\\&cat=World")) pop(location.search.split("&cat=")[1])
+	else pop(sel)
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
@@ -133,9 +133,7 @@ function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function ran(n){
 	var obj = []
-	$.each(menu, function(i, k){
-		if(n == k.ver) obj.push(menu[i])
-	})
+	$.each(menu, function(i, k){ if(n == k.ver) obj.push(menu[i]) })
 	var n = obj[Math.floor(Math.random()*obj.length)]
 	get(n.ver,n.des,n.api,n.ext)
 }
@@ -164,19 +162,17 @@ function get(ver, des, api, ext){
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'>&ensp;&ensp;Oops! Something went wrong!</div>")} )
 	.success(function(data){
 		var entry = $(data).find('entry')
-		if (entry.length > 0) var mat="entry"
-		else var mat = 'item'
+		if (entry.length > 0) var format="entry"
+		else var format = 'item'
 		$('.out').append("<div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>")
-		$(data).find(mat).each( function(i,k){
-			if (mat=='entry') {
+		$(data).find(format).each( function(i,k){
+			if (format=='entry') {
 				var ref = $(this).find('link').attr('href')
-				var utc = $(this).find('updated').text()
 			}
 			else {
 				var ref = $(this).find('link').text();
-				var utc = $(this).find('pubDate').text()
 			}
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"<br>-"+utc+"</div>");
+			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
 			if (i >= 24) return false
 		})
 		rss=false
