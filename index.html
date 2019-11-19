@@ -91,12 +91,12 @@
     </div>
 <script>
 
-var bar = 3.5      // Buffer
-var one = false    // Doubleclick Fallback
-var opp = false    // Opposite mode
-var tap = false    // Home/Random
-var rss = false    // get() pop()
-var sel = 'Social' // Category
+var bar = 3.5
+var one = false
+var opp = false
+var tap = false
+var rss = false
+var sel = 'Social'
 
     $(document).one('ready', function() {
 	if (location.href.match("\\?opp=0")) app(false)
@@ -106,7 +106,7 @@ var sel = 'Social' // Category
 	    location.href.match("\\&cat=Social") ||
 	    location.href.match("\\&cat=Sport") ||
 	    location.href.match("\\&cat=Technology") ||
-	    location.href.match("\\&cat=World") ) pop(location.search.split("&cat=")[1])
+	    location.href.match("\\&cat=World")) pop(location.search.split("&cat=")[1])
 	else {
 		pop(sel)
 		app(opp)
@@ -151,7 +151,10 @@ function pop(n){
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
-		if(n == k.ver){ obj.push(menu[i]); $('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>") }
+		if(n == k.ver){
+			obj.push(menu[i])
+			$('.pop').append("<div class='xml' onclick='xhr(" + i + ")'><b>"+k.ver+"</b> "+k.des+"</div>")
+		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	scr('.pop')
