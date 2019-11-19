@@ -53,7 +53,8 @@ This would be for default dark with category Technology.
 | fav | Home/Random |
 | rss | get != pop |
 | sel | .cat Selected |
-| obj | Random Array |
+| obj | Pop Array |
+| one | Dblclick catch |
 | tap | Touchstart/Click |
 
 ### Classes
@@ -77,15 +78,13 @@ This would be for default dark with category Technology.
 | pop | .out sel Append |
 | xhr | .xml get() |
 | app | Previously applyColors() |
-| ran | Random |
+| ran | Random obj |
 | get | Ajax Request |
   
 
 ### Cloning and app()
 
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
-
- - var sel = "Category"
 
  - app(false) uses transparent background and black foreground.
   
