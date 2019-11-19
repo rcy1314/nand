@@ -73,6 +73,7 @@ var menu=[
 {ver:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",api:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/games"},
 {ver:"Social",des:"Google Linux combination of top resources for Linux.",api:"https://news.google.com/rss/search?cf=all&pz=1&q=linux&hl=en-US&gl=US&ceid=US:en",ext:"https://google.com"},
 {ver:"Social",des:"Google Social news from top Social Media platforms.",api:"https://news.google.com/rss/search?cf=all&pz=1&q=social+facebook+twitter+instagram+tiktok+snapchat+news&hl=en-US&gl=US&ceid=US:en",ext:"https://google.com"},
+{ver:"Social",des:"Guitar subreddit a community devoted to the exchange of guitar related information and entertainment.",api:"https://reddit.com/r/guitar/.rss",ext:"https://reddit.com/r/guitar"},
 {ver:"Social",des:"Hacker News is a reader ran headline submission news purveyor.",api:"https://news.ycombinator.com/rss",ext:"https://news.ycombinator.com"},
 {ver:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",api:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
 {ver:"Social",des:"iOS subreddit for everything Apple iOS.",api:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
