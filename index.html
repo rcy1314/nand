@@ -118,7 +118,7 @@ var sel = 'Social'
 	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
     });
 function url(n){ window.open(n) }
-function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) } }
+function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
 	if (n == 'opp') opp = opp != true
