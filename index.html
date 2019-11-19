@@ -77,10 +77,10 @@
     }
 </style>
 <body>
-    <div class="con" style="position:absolute;height:99%;width:96%;top:-.5em;">
-	<div class="tag" style="justify-content:center;display:flex;height:4.5em">
+    <div class="con">
+	<div class="tag">
 	<div id="News" class="cat" onclick="pop('News')">News</div>
-	<div id="Style" class="cat" onclick="pop('Style')">Style</div>
+	<div id="Entertainment" class="cat" onclick="pop('Entertainment')">Ent</div>
 	<div id="Social" class="cat" onclick="pop('Social')">Social</div>
 	<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
 	<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
@@ -102,7 +102,7 @@ var sel = 'Social'
 	if (location.href.match('\\?dark=0')) app(false)
 	if (location.href.match('\\?dark=1')) app(true)
 	if (location.href.match('\\&cat=News')) pop('News')
-	if (location.href.match('\\&cat=Style')) pop('Style')
+	if (location.href.match('\\&cat=Entertainment')) pop('Entertainment')
 	if (location.href.match('\\&cat=Social')) pop('Social')
 	if (location.href.match('\\&cat=Sport')) pop('Sport')
 	if (location.href.match('\\&cat=Technology')) pop('Technology')
