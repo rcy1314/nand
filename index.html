@@ -113,7 +113,7 @@ var sel = 'Social'
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss == false) pop(sel)
+			if (rss == false && one == false) pop(sel)
 		}
 	})
 	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
@@ -152,6 +152,7 @@ function pop(n){
 }
 function get(ver, des, api, ext){
 	rss = true
+	one = true
 	$('.bar:last').remove()
 	$('.out').append("<hr><div class='get'><div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;" + des + "</div></div>")
 	scr('.get')
@@ -168,6 +169,7 @@ function get(ver, des, api, ext){
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
 				 "<div class='bar' onclick='app(\"opp\")' style='padding-bottom:"+$(".out").height()/100*bar+"em'></div><hr>")
 		rss = false
+		one = false
 		$('.pop').remove();
 		scr('.get')
 	})
