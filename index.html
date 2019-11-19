@@ -92,9 +92,9 @@
     </div>
 <script>
 var bar = 2.5
+var opp = true
 var tap = false
 var rss = false
-var dark = true
 var sel = 'Social'
     $(document).one('ready', function() {
 	$(".out").css("top", $(".tag").height()+"px");
@@ -129,19 +129,19 @@ var sel = 'Social'
 	})
     });
 function url(n){ window.open(n) }
-function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
+function xhr(n){ $.each(menu, function(i,k){ if(n == k.cli) get(k.ver, k.des, k.api, k.ext) }) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function ran(n){
 	var obj = []
 	$.each(menu, function(i, k){ if(n == k.ver) obj.push(menu[i]) })
 	var n = obj[Math.floor(Math.random()*obj.length)]
-	get(n.ver,n.des,n.api,n.ext)
+	get(n.ver, n.des, n.api, n.ext)
 }
 function app(n){
-	if (n==true||n==false) dark=n
-	if (n=="opp") dark=dark!=true
-	if (dark==false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
-	else if (dark==true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
+	if (n == true|| n == false) opp = n
+	if ( n == "opp") opp = opp != true
+	if (opp == false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
+	else if (opp == true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
 function pop(n){
 	sel = n
@@ -174,8 +174,8 @@ function get(ver, des, api, ext){
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>");
 			if (i >= 24) return false
 		})
-		rss = false
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div><div class='bar' onclick='app(\"opp\")' style='position:relative;padding-bottom:"+$(".out").height()/100*bar+"em'></div>")
+		rss = false
 		scr('.get')
 	})
 }
