@@ -92,7 +92,6 @@
 <script>
 var bar = 3.5
 var opp = false
-var one = false
 var tap = false
 var rss = false
 var sel = 'Social'
@@ -119,7 +118,7 @@ var sel = 'Social'
 	$('.inv,.fav').on('touchstart click', function(e){ pop(sel); e.preventDefault() })
     });
 function url(n){ window.open(n) }
-function xhr(n){ if (one == false){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext); one = true } }
+function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) } }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
 function app(n){
 	if (n == 'opp') opp = opp != true
@@ -137,7 +136,6 @@ function app(n){
 }
 function pop(n){
 	sel = n
-	one = false
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.7+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
