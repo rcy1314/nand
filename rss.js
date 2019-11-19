@@ -82,6 +82,7 @@ var menu=[
 {ver:"Social",des:"Programming subreddit shares user submitted articles on Programming.",api:"https://www.reddit.com/r/programming/.rss",ext:"https://reddit.com/r/programming"},
 {ver:"Social",des:"Python subreddit about the Dynamic, Interpreted, Interactive, Object-Oriented, extensible language Python.",api:"https://www.reddit.com/r/python/.rss",ext:"https://reddit.com/r/python"},
 {ver:"Social",des:"Redhat subreddit discussion for Red Hat and Red Hat technologies!",api:"https://reddit.com/r/redhat/.rss",ext:"https://reddit.com/r/redhat"},
+{ver:"Social",des:"Science subreddit Read about the latest advances in astronomy, biology, medicine, physics, and social science.",api:"https://reddit.com/r/science/.rss",ext:"https://reddit.com/r/science" },
 {ver:"Social",des:"Security subreddit has been around for 11 years and has 93,000 subscribers.",api:"https://www.reddit.com/r/security/.rss",ext:"https://reddit.com/r/security"}, 
 {ver:"Social",des:"Slashdot is a social News website that originally billed itself as News for Nerds.",api:"http://rss.slashdot.org/Slashdot/slashdot",ext:"https://slashdot.org"},
 {ver:"Social",des:"Sysadmin subreddit dedicated to the Profession of Computer System Administration.",api:"https://www.reddit.com/r/sysadmin/.rss",ext:"https://reddit.com/r/sysadmin"},
