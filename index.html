@@ -73,13 +73,6 @@
 	line-height: 1.5em;
 	padding-top: 2em;
     }
-    .fil {
-	position: absolute;
-	padding-left: 3em;
-	padding-top: 3em;
-	bottom: .1em;
-	right: .3em;
-    }
     .inv, .fav {
 	transform: translateX(50%);
 	position: absolute;
@@ -101,18 +94,15 @@
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
-	<div class="fil" onclick="fil()">filter</div>
 	<div class="out"><div>
     </div>
 <script>
 var bar = 2.5
 var obj = []
-var hap = []
 var tap = false
 var rss = false
 var sel = 'Social'
 var dark = true
-var filter
     $(document).one('ready', function() {
 	pop(sel)
 	$('.out').css('top', $('.tag').height()+'px');
@@ -124,75 +114,48 @@ var filter
 	if (location.href.match('\\&cat=Sport')) pop('Sport')
 	if (location.href.match('\\&cat=Technology')) pop('Technology')
 	if (location.href.match('\\&cat=World')) pop('World')
-	if (location.href.match('\\&filter=')) fil()
+	if (location.href.match('\\&filter=')) {
+
+	var n = location.search.split("&filter=")[1]; alert(n);
+	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
-			if (rss==false && filter==false) pop(sel)
-			if (rss==false && filter!=false){ fil(); filter = true }
+			if (rss==false) pop(sel)
 		}
 		 if ($(this).scrollTop()<1) scr('.pop')})
 	$('.inv,.fav').on('touchstart click', function(e){
 		if (!tap){
 			tap=setTimeout(function(){
 				tap = null;
-				if(filter!=false){ fil(); return false; }
 				pop(sel)
 			},300)}
   		else {
 			clearTimeout(tap);
 			tap=null;
-			if(filter!=false){ ran("random"); return false; }
 			ran(sel)
 		}
-	    e.preventDefault()
-	})
+	    e.preventDefault()})
     });
 function url(n){ window.open(n) }
 function xhr(n){ $.each(menu, function(i,k){ if(n==k.cli) get(k.ver,k.des,k.api,k.ext) }) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
-function ran(n){
-	if (n == "random") { var e=hap[Math.floor(Math.random()*hap.length)]; get(e.ver,e.des,e.api,e.ext); return false; }
-	 $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext)
-	 }
+function ran(n){ $.each(menu, function(i, k){ if(n==k.ver) obj.push(menu[i])}); var n=obj[Math.floor(Math.random()*obj.length)]; get(n.ver,n.des,n.api,n.ext) }
 function app(n){
 	if (n==true||n==false) dark=n
 	if (n=="opp") dark=dark!=true
 	if (dark==false){ $('body').css({'background-color':'transparent','color':'#000'}); $('.fav').css('display','none'); $('.inv').css('display','block') }
 	else if (dark==true){ $('body').css({'background-color':'#000','color':'#FFF'}); $('.inv').css('display','none'); $('.fav').css('display','block') }
 }
-function pop(n){
-	sel=n
+function pop(n){ sel=n
 	$(document).attr('title',n+' - ack')
 	$('.pop, .bar').remove()
-	$('.out').append("<div class='bar' style='position:relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
 	scr('.pop')
 	$.each(menu, function(i, k){ if(n == k.ver) $('.pop').append("<div id='"+k.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'><b>"+k.ver+"</b> "+k.des+"</div>") })
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
 	app()
-	filter = false
-}
-function fil(){
-	filter = true	
-	if (!location.href.match('\\&filter=')){ pop(sel); return false }
-	var n = location.search.split("&filter=")[1]
-	n = n.split("+")
-	$(document).attr('title',n[0]+' - ack')
-	$('.pop, .bar').remove()
-	$('.out').append("<div class='bar' style='relative;padding-top:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div><div class='pop'></div>")
-	$.each(n, function(i, k){
-		$.each(menu, function(o, a){
-			 if(a.des.toLowerCase().indexOf(k) > -1){
-				hap.push(menu[o])
-				$('.pop').append("<div id='"+a.cli+"' class='xml' onclick='xhr($(this).attr(\"id\"))'>"+a.des+"</div>")
-			}
-		 })
-	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*bar+"em' onclick='app(\"opp\")'></div>")
-	scr('.pop')
-	app()
-	rss = false
 }
 function get(ver,des,api,ext){ rss=true
 	$('.bar:last').remove()
