@@ -90,12 +90,13 @@
 	<div class="out"><div>
     </div>
 <script>
-var bar = 3      // Buffer
-var one = false  // Doubleclick Fallback
-var opp = false  // Dark mode
-var tap = false  // Home/Random
-var rss = false  // get() pop()
-var sel = 'News' // Category
+
+var bar = 3        // Buffer
+var one = false    // Doubleclick Fallback
+var opp = false    // Dark mode
+var tap = false    // Home/Random
+var rss = false    // get() pop()
+var sel = 'Social' // Category
 
     $(document).one('ready', function() {
 	if (location.href.match("\\?dark=0")) app(false)
@@ -112,13 +113,11 @@ var sel = 'News' // Category
 	}
 	$(".out").attr('tabindex',-1).focus();
 	$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
-
 	$('.out').on('scroll',function(){
 		if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight){
 			if (rss == false) pop(sel)
 		}
 	})
-
 	$('.inv,.fav').on('touchstart click', function(e){
 		if (!tap){
 			tap=setTimeout(function(){
@@ -166,8 +165,14 @@ function get(ver, des, api, ext){
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 	.fail( function(){ $('.out').append("<div class='get'><div class='xml'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 	.success(function(req){
-		if ($(req).find('entry').length > 0){ var set="entry" } else { var set = 'item' }
-		$(req).find(set).each( function(i,k){ if (i >= 24) return false
+		if ($(req).find('entry').length > 0){
+			var set = "entry"
+		}
+		 else {
+			var set = 'item'
+		}
+		$(req).find(set).each(function(i,k){
+			if (i >= 24) return false
 			if (set == 'entry'){ var ref = $(this).find('link').attr('href') } else { var ref = $(this).find('link').text() }
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
 		})
