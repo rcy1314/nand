@@ -53,10 +53,13 @@ Default, category Media would look like...
 | Name | Use |
 | ------ | ------ |
 | opp | Dark = False|
-| rss | get pop failsafe |
+| rss | get pop fallback |
 | sel | .cat Selected |
 | bar | Buffer/Opposite |
 | obj | Pop Array |
+| set | Xml Entry/Item |
+| ref | Xml Link/Href
+| req | Xhr Data |
 | one | Dblclick catch |
 | tap | Touchstart/Click |
 
