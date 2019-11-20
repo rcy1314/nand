@@ -30,12 +30,17 @@
 	cursor: default;
     }
     .con {
+	background-color: #EFEFEF;
 	position: absolute;
-	height: 99%;
-	width: 96%;
-	top: -.5em;
+	height: 100%;
+	width: 100%;
+	left: 1px;
+	top: .1em;
     }
     .tag {
+	background-color: #EAEAEA;
+	width: 100%;
+	position:relative;
 	justify-content: center;
 	display: flex;
 	height: 4.5em
@@ -45,31 +50,43 @@
 	display: inline-block;
 	padding-bottom: 2em;
 	text-align: center;
-	padding-top: 1.8em;
-	font-size: 14px;
+	padding-top: 1.4em;
+	font-size: 13px;
 	width: 16.3%;
     }
     .out {
 	webkit-overflow-scrolling: touch;
 	outline: none !important;
-	position: absolute;
+	position: relative;
 	overflow: auto;
-	height: 89.7%;
-	left: .3em;
+	height: 87%;	
+	width: 100%;
     }
     .xml {
 	background-color: inherit;
 	padding-bottom: 2.2em;
-	line-height: 2em;
+	padding-right: 1em;
+	padding-left: 1em;
 	padding-top: 2.2em;
+	line-height: 2em;
     }
     .inv, .fav {
 	transform: translateX(50%);
 	position: absolute;
-	bottom: -.7em;
+	bottom: .3em;
 	height: 32px;
 	width: 32px;
 	right: 49%;
+    }
+    .def {
+	box-shadow: 1px 1px 2px #888;
+	background-color: #EAEAEA;
+	color: #454545;
+    }
+    .opp {
+	background-color: #000;
+	color: #EFEFEF;
+
     }
 </style>
 <body>
@@ -103,8 +120,8 @@ var sel = 'Social'
 	pop(sel)
 	app(opp)
     }
-$(".out").attr('tabindex',-1).focus();
-$(".out").focusout(function(){$('.out').attr('tabindex',-1).focus()})
+$('.out').attr('tabindex',-1).focus();
+$('.out').focusout(function(){$('.out').attr('tabindex',-1).focus()})
 $('.out').on('scroll',function(){
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 })
@@ -142,11 +159,15 @@ function app(n){
 	else if (n == true || n == false) opp = n
 	if (opp == true){
 		$('body').css({'background-color':'#000','color':'#FFF'});
-		 $('.inv').css('display','none')
-		 $('.fav').css('display','block')
+		$('.con, .out, .tag').removeClass('def');
+		$('.con, .out, .tag').addClass('opp');
+		$('.inv').css('display','none')
+		$('.fav').css('display','block')
 	}
 	else if (opp == false){
-		$('body').css({'background-color':'transparent','color':'#000'})
+		$('body').css({'background-color':'#EFEFEF','color':'#000'})
+		$('.con, .out, .tag').removeClass('opp');
+		$('.con, .out, .tag').addClass('def');
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
@@ -154,11 +175,12 @@ function app(n){
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar:last').remove()
-	$('.out').append("<div class='bar'><hr>It's on the way! Please be patient.</div><div class='get'>")
+	$('.out').append("<hr><div class='bar'>It's on the way! Please be patient.</div><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 		.success(function(req){
+			$('.bar:last').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
