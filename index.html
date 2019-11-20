@@ -142,8 +142,8 @@ function pop(n){
 	sel = n
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:"+$('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding-top:.5em'></div>")
+	$('.out').append("<div class='bar' style='padding-top:.5em'></div>" +
+			 "<div class='pop' style='padding-top:.5em'><hr></div>")
 	$.each(menu, function(i, k){
 		if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.ver+"</b> "+k.des+"</div>")
 	})
@@ -170,12 +170,12 @@ function app(n){
 }
 function get(ver, des, api, ext){
 	rss = true
+	$('.bar').remove();
 	$('.out').append("<hr><div class='bar'>It's on the way! Please be patient.</div><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 		.success(function(req){
-			$('.bar:last, hr:last').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
@@ -186,7 +186,7 @@ function get(ver, des, api, ext){
 			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div><hr>")
+				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
 		scr('.get:last')
 		rss = false
 		})
