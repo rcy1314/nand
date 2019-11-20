@@ -83,7 +83,7 @@ Default, category Media would look like...
 | get | Ajax Request |
   
 
-### Cloning and app()
+### Cloning
 
  - Host on [github-pages](https://pages.github.com) or run from your browser locally.
 
