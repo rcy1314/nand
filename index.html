@@ -154,16 +154,14 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body').css({'background-color':'#000','color':'#FFF'});
-		$('.con, .out, .tag').removeClass('def');
-		$('.con, .out, .tag').addClass('opp');
+		$('body, .con, .out, .tag').removeClass('def');
+		$('body, .con, .out, .tag').addClass('opp');
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
 	else if (opp == false){
-		$('body').css({'background-color':'#FAFAFA','color':'#000'})
-		$('.con, .out, .tag').removeClass('opp');
-		$('.con, .out, .tag').addClass('def');
+		$('body, .con, .out, .tag').removeClass('opp');
+		$('body, .con, .out, .tag').addClass('def');
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
