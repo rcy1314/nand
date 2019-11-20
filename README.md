@@ -85,6 +85,8 @@ Default, category Media would look like...
 
 ### Cloning and app()
 
+ - Host on [github-pages](https://pages.github.com) or run from your browser locally.
+
  - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
 
  - app(false) uses transparent background and black foreground.
