@@ -142,8 +142,8 @@ function pop(n){
 	sel = n
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:.5em'></div>" +
-			 "<div class='pop' style='padding-top:.5em'><hr></div>")
+	$('.out').append("<div class='bar' style='padding-top:.5em'><hr></div>" +
+			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.ver+"</b> "+k.des+"</div>")
 	})
