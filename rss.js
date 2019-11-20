@@ -164,6 +164,7 @@ var menu=[
 {ver:"Technology",des:"BBC Technology News, Articles, and more.",api:"http://feeds.bbci.co.uk/news/technology/rss.xml",ext:"https://bbc.co.uk/news/technology"},
 {ver:"Technology",des:"BetaNews is a leading source of Technology News and Analysis.",api:"http://feeds.betanews.com/bn",ext:"https://betanews.com"},
 {ver:"Technology",des:"BGR is a destination for News focused on the Consumer Electronics Market.",api:"https://bgr.com/tech/feed",ext:"https://bgr.com/tech"},
+{ver:"Technology",des:"Bleeping Computer is a information security and technology news publication.",api:"https://www.bleepingcomputer.com/feed/",ext:"https://www.bleepingcomputer.com"},
 {ver:"Technology",des:"Boston Technology including MIT, Auto, Social Media, and Business.",api:"https://www.boston.com/tag/technology/feed",ext:"https://www.boston.com/tag/technology"},
 {ver:"Technology",des:"Business Insider is a Growing Business site with Financial, Media, and Tech.",api:"https://www.businessinsider.com/rss",ext:"https://businessinsider.com"},
 {ver:"Technology",des:"CBS Technology on Social Media, Artificial Intelligence, Computers and more.",api:"https://www.cbsnews.com/latest/rss/technology",ext:"https://cbsnews.com/technology"},
