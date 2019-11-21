@@ -236,6 +236,7 @@ var menu=[
 {ver:"World",des:"Daily Mail is a British daily middle-market newspaper published in London.",api:"https://www.dailymail.co.uk/articles.rss",ext:"https://dailymail.co.uk"},
 {ver:"World",des:"Digital Trends’ team of experienced staffers provide the latest news.",api:"https://www.digitaltrends.com/news/feed",ext:"https://digitaltrends.com/news"},
 {ver:"World",des:"Drudge Report consists mainly of news stories from other outlets.",api:"http://feeds.feedburner.com/DrudgeReportFeed",ext:"https://drudgereport.com"},
+{ver:"World",des:"Fortune is an American multinational business magazine headquartered in New York City.",api:"https://fortune.com/feed",ext:"https://fortune.com"},
 {ver:"World",des:"Fox News breaking news, Latest news, and Current news.",api:"http://feeds.foxnews.com/foxnews/latest",ext:"https://foxnews.com"},
 {ver:"World",des:"Google is a multinational technology company that specializes in Internet-related services and products.",api:"https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",ext:"https://news.google.com"},
 {ver:"World",des:"Mirror.co.uk World headlines, pictures, analysis, opinion and video.",api:"https://www.mirror.co.uk/news/us-news/?service=rss",ext:"https://mirror.co.uk/news/us-news"},
