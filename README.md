@@ -47,7 +47,7 @@ Default, category Media would look like...
 
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3843526843051.png"></p>
 
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/0174236037489.png"></p>
+<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/4570998184127.png"></p>
 
 ### Variables
 | Name | Use |
