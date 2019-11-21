@@ -179,7 +179,7 @@ function get(ver, des, api, ext){
 					else 		     var ref = $(this).find('link').text()
 		$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
 		})
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a><hr></div>" +
+		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a><br><br><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
 		scr('.get:last')
 		rss = false
