@@ -67,6 +67,10 @@
 	padding-top: 1em;
 	line-height: 2em;
     }
+    a:hover {
+	text-decoration: underline;
+	color: #888;
+    }
     .inv, .fav {
 	transform: translateX(50%);
 	position: absolute;
@@ -137,7 +141,7 @@ function pop(n){
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.2+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
-		if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.ver+"</b> "+k.des+"</div>")
+		if (n == k.ver) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.ver+"</b>&ensp;<a>"+k.des+"</a></div>")
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
 	scr('.pop')
@@ -168,16 +172,16 @@ function get(ver, des, api, ext){
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 		.success(function(req){
 			$('.bar').remove();
-			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div></div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
 					if (i >= 24) return false
 					if (set == 'entry')  var ref = $(this).find('link').attr('href')
 					else 		     var ref = $(this).find('link').text()
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;"+$(this).find("title").text()+"</div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
 		})
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"<hr></div>" +
+		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
 		scr('.get:last')
 		rss = false
