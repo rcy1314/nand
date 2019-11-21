@@ -23,7 +23,9 @@
 	color: #888;
     }
 }
-    ::-webkit-scrollbar { display: none }
+    ::-webkit-scrollbar {
+	display: none
+    }
     div {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -46,7 +48,6 @@
 	height: 4em
     }
     .cat {
-	background-color: inherit;
 	display: inline-block;
 	padding-bottom: 2em;
 	text-align: center;
@@ -62,7 +63,6 @@
 	width: 100%;
     }
     .xml {
-	background-color: inherit;
 	padding-bottom: 2.2em;
 	padding-right: 1em;
 	padding-left: 1em;
@@ -97,14 +97,14 @@ var opp = false
 var tap = false
 var rss = false
 var sel = 'Social'
-    if (location.href.match("\\?opp=0")) app(false)
-    if (location.href.match("\\?opp=1")) app(true)
-    if (location.href.match("\\&category=News") ||
-	location.href.match("\\&category=Media") ||
-	location.href.match("\\&category=Social") ||
-	location.href.match("\\&category=Sport") ||
-	location.href.match("\\&category=Technology") ||
-	location.href.match("\\&category=World")) pop(location.search.split("&category=")[1])
+    if (location.href.match('\\?opp=0')) app(false)
+    if (location.href.match('\\?opp=1')) app(true)
+    if (location.href.match('\\&category=News') ||
+	location.href.match('\\&category=Media') ||
+	location.href.match('\\&category=Social') ||
+	location.href.match('\\&category=Sport') ||
+	location.href.match('\\&category=Technology') ||
+	location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
     else {
 	pop(sel)
 	app(opp)
@@ -131,7 +131,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 })
 function url(n){ window.open(n) }
 function xhr(n){ get(menu[n].ver, menu[n].des, menu[n].api, menu[n].ext) }
-function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()},300) }
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function pop(n){
 	sel = n
 	$('.pop, .bar').remove()
@@ -166,7 +166,7 @@ function get(ver, des, api, ext){
 	$('.out').append("<div class='bar'>&ensp;&ensp;It's on the way! Please be patient.</div><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
-		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
+		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
 		.success(function(req){
 			$('.bar').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a></div></div>")
