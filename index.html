@@ -19,9 +19,7 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar {
-	display: none
-    }
+    ::-webkit-scrollbar { display: none }
     div {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -179,7 +177,7 @@ function get(ver, des, api, ext){
 					if (i >= 24) return false
 					if (set == 'entry')  var ref = $(this).find('link').attr('href')
 					else 		     var ref = $(this).find('link').text()
-			$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
+		$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+ver+"</b>&ensp;"+des+"</a><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
