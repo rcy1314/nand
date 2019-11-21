@@ -162,12 +162,12 @@ function app(n){
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'>&ensp;&ensp;It's on the way! Please be patient.</div><div class='get'><hr>")
+	$('.out').append("<div class='bar'>&ensp;&ensp;It's on the way! Please be patient.</div><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>")} )
 		.success(function(req){
-			$('.bar, hr:last').remove();
+			$('.bar').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><b>"+ver+"</b>&ensp;"+des+"</div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
