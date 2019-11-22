@@ -145,7 +145,7 @@ function pdt(n){
 	var options = {
 		weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
 	}
-	var loc = date.toLocaleString('en-US', options);
+	var loc = utc.toLocaleString('en-US', options);
      return loc
 }   
 function pop(n){
