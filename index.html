@@ -59,21 +59,20 @@
 	outline: none !important;
 	overflow: auto;
 	height: 88%;
-	width: 100%;
     }
     .xml {
 	padding-bottom: 2em;
 	padding-right: 1em;
 	line-height: 1.2em;
-	padding-left: 2em;
+	padding-left: 1.5em;
 	padding-top: 2em;
     }
     .men {
 	width: fit-content;
     }
     .clr {
-	background-color: #FCFCFC;
-	margin-left: 2em;
+	background-color: #FBFBFB;
+	margin-left: 1.5em;
 	margin-right: 2em;
 	border-radius: 16px;
 	margin-bottom: 1em;
@@ -141,6 +140,14 @@ $('.inv, .fav').on('touchstart click', function(e){
 function url(n){ window.open(n) }
 function xhr(n){ get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
+function pdt(n){
+	var utc = new Date(n)
+	var options = {
+		weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
+	}
+	var loc = date.toLocaleString('en-US', options);
+     return loc
+}   
 function pop(n){
 	sel = n
 	$('.pop, .bar').remove()
@@ -165,7 +172,7 @@ function app(n){
 		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
 		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr').css({'background-color':'#FCFCFC','color':'#373737'})
+		$('.clr').css({'background-color':'#FBFBFB','color':'#373737'})
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
@@ -185,10 +192,10 @@ function get(cat, des, uri, ext){
 				$(req).find(set).each(function(i, k){
 					if (i >= 19) return false
 					if (set == 'entry'){ var ref = $(this).find('link').attr('href')
-							     var utc = $(this).find('updated').text()
+							     var utc = pdt($(this).find('updated').text())
 					}
 					else {		     var ref = $(this).find('link').text()
-							     var utc = $(this).find('pubDate').text()
+							     var utc = pdt($(this).find('pubDate').text())
 					}
 		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br><span>"+utc+"</span><br></div>")
 		})
