@@ -37,7 +37,7 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	left: 1px;
+	left: 0em;
 	top: 0em;
     }
     .tag {
@@ -72,7 +72,7 @@
     .inv, .fav {
 	transform: translateX(50%);
 	position: absolute;
-	bottom: 0em;
+	bottom: .35em;
 	height: 32px;
 	width: 32px;
 	right: 50%;
@@ -156,6 +156,7 @@ function app(n){
 	else if (opp == false){
 		$('body, .con, .out').css({'background-color':'#EFEFEF','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
+		$('.out').css('border-bottom','1px solid #AAA')
 		$('.con, .tag').css('box-shadow','1px 1px 3px #888')
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
@@ -164,7 +165,7 @@ function app(n){
 function get(ver, des, api, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'>&ensp;&ensp;It's on the way! Please be patient.</div><div class='get'>")
+	$('.out').append("<div class='bar'>&ensp;&ensp;It's on the way! Please be patient.</div><br><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+api)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
