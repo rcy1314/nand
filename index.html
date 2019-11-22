@@ -14,7 +14,7 @@
     	position: fixed;
 	border: none;
 	bottom: 50%;
-	height: 95%;
+	height: 100%;
 	width: 85%;
 	right: 50%;
     }
@@ -48,7 +48,7 @@
     .cat {
 	display: inline-block;
 	padding-bottom: 2em;
-	padding-top: 1.4em;
+	padding-top: 1.6em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
@@ -66,14 +66,13 @@
     .xml {
 	padding-bottom: 2em;
 	padding-right: 1em;
-	padding-top: 2em;
 	line-height: 1.2em;
 	padding-left: 1em;
+	padding-top: 2em;
     }
     .favicon {
-	transform: translateX(50%);
-	width: 95%;
-	right: 50%;	
+	justify-content: center;
+	display: flex;
     }
     .inv, .fav {
 	height: 36px;
@@ -149,12 +148,12 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .tag').css({'box-shadow':'0px 0px 0px #000','background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('body, .con, .out, .tag').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
 	else if (opp == false){
-		$('body, .con').css({'box-shadow':'1px 1px 3px #888','background-color':'#F5F5F5','color':'#373737'})
+		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
 		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
 		$('.fav').css('display','none')
