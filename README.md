@@ -43,6 +43,8 @@ Default, category Media would look like...
 `<iframe src=https://acktic.github.io?opp=0&cat=Media"></iframe>`
 
 ### Styling
+Double tap icon to invert colors.
+
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9522649670120.png"></p>
 
 <p align="center"><img src="https://ackti.files.wordpress.com/2019/11/3843526843051.png"></p>
