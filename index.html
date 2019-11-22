@@ -164,7 +164,7 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','color':'#EFEFEF'})
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
@@ -203,6 +203,7 @@ function get(cat, des, uri, ext){
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
 		scr('.get:last')
 		rss = false
+		app(opp)
 		})
 }
 </script>
