@@ -183,6 +183,7 @@ var menu=[
 {cat:"Technology",des:"Hackaday serves up Fresh Hacks Every Day from around the Internet.",uri:"https://hackaday.com/feed",ext:"https://hackaday.com"},
 {cat:"Technology",des:"Independent.co.uk for Latest Gadgets and Tech News.",uri:"http://www.independent.co.uk/life-style/gadgets-and-tech/rss",ext:"https://independent.co.uk/life-style/gadgets-and-tech"},
 {cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
+{cat:"Technology",des:"Inquirer publishes daily news, reviews on the latest gadgets and devices, articles for tech buffs and hobbyists.",uri:"https://www.theinquirer.net/feeds/rss/type/news",ext:"https://www.theinquirer.net"},
 {cat:"Technology",des:"Kotaku is a News and Opinion site about Games and things serious Gamers care about.",uri:"https://kotaku.com/rss",ext:"https://kotaku.com"},
 {cat:"Technology",des:"Krebs on security covering Computer security and Cybercrime.",uri:"http://feeds.feedburner.com/KrebsOncategoryurity",ext:"https://krebsoncategoryurity.com"},
 {cat:"Technology",des:"Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",uri:"https://www.latimes.com/business/technology/rss2.0.xml",ext:"https://latimes.com/business/technology"},
