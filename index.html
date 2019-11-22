@@ -71,10 +71,12 @@
 	width: fit-content;
     }
     .clr {
+	line-height: 1.6em;
 	margin-left: 1.5em;
 	margin-right: 2em;
 	border-radius: 16px;
 	margin-bottom: 1em;
+	box-shadow: 1px 1px 3px #AAA;
     }
     span {
 	float: right;
@@ -179,7 +181,7 @@ function app(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way! Please be patient.</div><br><br><div class='get'>")
+	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;&ensp;Please be patient.</div><br><br><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
@@ -194,9 +196,11 @@ function get(cat, des, uri, ext){
 							     var pdt = utc($(this).find('updated').text())
 					}
 					else {		     var ref = $(this).find('link').text()
-							     var pdt = utc($(this).find('pubDate').text())
+							if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
+							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br><span>"+pdt+"</span><br></div>")
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br>" +
+				 "<span>"+pdt+"</span><br></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
