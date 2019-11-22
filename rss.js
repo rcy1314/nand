@@ -77,6 +77,7 @@ var menu=[
 {cat:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",uri:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
 {cat:"Social",des:"iOS subreddit for everything Apple iOS.",uri:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
 {cat:"Social",des:"Javascript subreddit all about the JavaScript Programming Language!",uri:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
+{cat:"Social",des:"i3WM Official FAQ subreddit for the i3 window manager.",uri:"https://www.reddit.com/r/i3wm/.rss",ext:"https://www.reddit.com/r/i3wm"},
 {cat:"Social",des:"KDE subreddit creating free and open source software for desktop and portable computing.",uri:"https://reddit.com/r/kde/.rss",ext:"https://reddit.com/r/kde"},
 {cat:"Social",des:"Laptops subreddit The place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
