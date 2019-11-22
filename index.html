@@ -15,7 +15,7 @@
 	border: none;
 	bottom: 50%;
 	height: 100%;
-	width: 85%;
+	width: 65%;
 	right: 50%;
     }
     a:hover {
@@ -65,8 +65,11 @@
 	padding-bottom: 2em;
 	padding-right: 1em;
 	line-height: 1.2em;
-	padding-left: 1em;
+	padding-left: 2em;
 	padding-top: 2em;
+    }
+    .men {
+	width: fit-content;
     }
     .clr {
 	background-color: #FCFCFC;
@@ -145,7 +148,7 @@ function pop(n){
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
-		if (n == k.cat) $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		if (n == k.cat) $('.pop').append("<div class='xml men' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
 	scr('.pop')
