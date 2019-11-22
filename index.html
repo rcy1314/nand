@@ -71,7 +71,6 @@
 	width: fit-content;
     }
     .clr {
-	background-color: #FBFBFB;
 	margin-left: 1.5em;
 	margin-right: 2em;
 	border-radius: 16px;
@@ -150,7 +149,7 @@ function pdt(n){
 }   
 function pop(n){
 	sel = n
-	$('.pop, .bar').remove()
+	$('.bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
@@ -158,7 +157,7 @@ function pop(n){
 		if (n == k.cat) $('.pop').append("<div class='xml men' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
-	scr('.pop')
+	scr('.pop:last')
 }
 function app(n){
 	if (n == 'opp') opp = opp != true
@@ -172,7 +171,7 @@ function app(n){
 		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
 		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr').css({'background-color':'#FBFBFB','color':'#373737'})
+		$('.clr').css({'background-color':'#FEFEFE','color':'#373737'})
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
