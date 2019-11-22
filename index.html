@@ -58,8 +58,9 @@
 	webkit-overflow-scrolling: touch;
 	border-bottom: 1px solid #AAA;
 	outline: none !important;
+	position: relative;
 	overflow: auto;
-	height: 88%;	
+	height: 89%;	
 	width: 100%;
     }
     .xml {
@@ -69,28 +70,28 @@
 	line-height: 1.2em;
 	padding-left: 1em;
     }
-    .inv, .fav {
+    .favicon {
 	transform: translateX(50%);
-	position: absolute;
-	bottom: .3em;
+	width: 93%;
+	right: 50%;
+    }
+    .inv, .fav {
 	height: 32px;
 	width: 32px;
-	right: 50%;
     }
 </style>
 <body>
     <div class="con">
 	<div class="tag">
-	<div id="News" class="cat" onclick="pop('News')">News</div>
-	<div id="Media" class="cat" onclick="pop('Media')">Media</div>
-	<div id="Social" class="cat" onclick="pop('Social')">Social</div>
-	<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
-	<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
-	<div id="World" class="cat" onclick="pop('World')">World</div>
+		<div id="News" class="cat" onclick="pop('News')">News</div>
+		<div id="Media" class="cat" onclick="pop('Media')">Media</div>
+		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
+		<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
+		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
+		<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
-	<img class="inv" src="invert.png">
-	<img class="fav" src="favicon.png">
-	<div class="out"><div>
+	<div class="out"></div>
+	<div class="favicon"><img class="inv" src="invert.png"><img class="fav" src="favicon.png"></div>
     </div>
 <script>
 var opp = false
