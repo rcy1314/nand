@@ -70,6 +70,13 @@
     }
     .clr {
 	background-color: #FCFCFC;
+	margin-left: 2em;
+	margin-right: 2em;
+	border-radius: 16px;
+	margin-bottom: 1em;
+    }
+    span {
+	float: right;
     }
     .favicon {
 	justify-content: center;
@@ -180,7 +187,7 @@ function get(cat, des, uri, ext){
 					else {		     var ref = $(this).find('link').text()
 							     var utc = $(this).find('pubDate').text()
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br>"+utc+"</div>")
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br><span>"+utc+"</span><br></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
