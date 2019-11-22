@@ -79,13 +79,6 @@
 	width: 32px;
 	right: 50%;
     }
-    .res {
-	position: absolute;
-	font-size: 9px;
-	bottom: 1.5em;
-	color: #888;
-	right: 1em;
-    }
 </style>
 <body>
     <div class="con">
@@ -99,7 +92,6 @@
 	</div>
 	<img class="inv" src="https://ackti.files.wordpress.com/2019/11/invert.png">
 	<img class="fav" src="https://ackti.files.wordpress.com/2019/11/favicon.png">
-	<div class="res" onclick="event.preventDefault(); ran()">All Rights Reserved.</div>
 	<div class="out"><div>
     </div>
 <script>
@@ -131,7 +123,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 		},250)
 	}
   	else {
-		clearTimeout(tap);
+		clearTimeout(tap)
 			tap=null
 			app('opp')
 	}
@@ -151,7 +143,7 @@ function pop(n){
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			obj.push(menu[i])
-			 $('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+			$('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
@@ -161,17 +153,14 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .tag').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('.con, .tag').css('box-shadow','0px 0px 0px #000')
+		$('body, .con, .out, .tag').css({'box-shadow':'0px 0px 0px #000','background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
 	else if (opp == false){
-		$('body, .con, .tag').css({'background-color':'#F5F5F5','color':'#373737'})
-		$('.out').css({'background-color':'#FAFAFA','color':'#373737'})
+		$('body, .con, .tag').css({'box-shadow':'1px 1px 3px #888','background-color':'#F5F5F5','color':'#373737'})
+		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.out').css('border-bottom','1px solid #AAA')
-		$('.con, .tag').css('box-shadow','1px 1px 3px #888')
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
@@ -189,7 +178,7 @@ function get(cat, des, uri, ext){
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
-					if (i >= 24) return false
+					if (i >= 19) return false
 					if (set == 'entry')  var ref = $(this).find('link').attr('href')
 					else 		     var ref = $(this).find('link').text()
 		$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
