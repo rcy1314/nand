@@ -58,7 +58,7 @@
 	border-bottom: 1px solid #AAA;
 	outline: none !important;
 	overflow: auto;
-	height: 89%;	
+	height: 88%;
 	width: 100%;
     }
     .xml {
@@ -67,6 +67,9 @@
 	line-height: 1.2em;
 	padding-left: 1em;
 	padding-top: 2em;
+    }
+    .clr {
+	background-color: #FCFCFC;
     }
     .favicon {
 	justify-content: center;
@@ -139,14 +142,14 @@ function pop(n){
 			$('.pop').append("<div class='xml' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*3+"em'></div>")
 	scr('.pop')
 }
 function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .tag').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
@@ -154,6 +157,7 @@ function app(n){
 		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
 		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
+		$('.clr').css({'background-color':'#FCFCFC','color':'#373737'})
 		$('.fav').css('display','none')
 		$('.inv').css('display','block')
 	}
@@ -164,7 +168,7 @@ function get(cat, des, uri, ext){
 	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way! Please be patient.</div><br><br><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
+		.fail(function(){ $('.out').append("<div class='get clr'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
 		.success(function(req){
 			$('.bar').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div></div>")
@@ -172,12 +176,16 @@ function get(cat, des, uri, ext){
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
 					if (i >= 24) return false
-					if (set == 'entry')  var ref = $(this).find('link').attr('href')
-					else 		     var ref = $(this).find('link').text()
-		$('.out').append("<div class='xml' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a></div>")
+					if (set == 'entry'){ var ref = $(this).find('link').attr('href')
+							     var utc = $(this).find('updated').text()
+					}
+					else {		     var ref = $(this).find('link').text()
+							     var utc = $(this).find('pubDate').text()
+					}
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br>"+utc+"</div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3.5+"em'></div>")
+				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*3+"em'></div>")
 		scr('.get:last')
 		rss = false
 		})
