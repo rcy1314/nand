@@ -39,7 +39,6 @@ var menu=[
 {cat:"Media",des:"Daily Beast is a News and Opinion Website focusing on Politics, Power and Entertainment Culture.",uri:"https://feeds.thedailybeast.com/summary/rss/articles",ext:"https://www.thedailybeast.com"},
 {cat:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",uri:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
 {cat:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",uri:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
-{cat:"Media",des:"Google Entertainment Headlines, Opinions, and News.",uri:"https://news.google.com/rss/search?cf=all&pz=1&q=film+movie+music+art+entertainment&hl=en-US&gl=US&ceid=US:en",ext:"https://google.com"},
 {cat:"Media",des:"GQ is an international monthly men's magazine based in New York City and founded in 1931.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {cat:"Media",des:"IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",uri:"https://www.indiewire.com/feed",ext:"https://www.indiewire.com"},
 {cat:"Media",des:"Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",uri:"https://www.inverse.com/feed/articles/1.rss",ext:"https://www.inverse.com"},
