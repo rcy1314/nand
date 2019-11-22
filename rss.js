@@ -81,7 +81,6 @@ var menu=[
 {cat:"Social",des:"Laptops subreddit The place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {cat:"Social",des:"Math subreddit with nearly one million members.",uri:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
-{cat:"Social",des:"MMORPG subreddit Massively multiplayer online role-playing game, we discuss them here!",uri:"https://reddit.com/r/mmorpg/.rss",ext:"https://reddit.com/r/mmorpg"},
 {cat:"Social",des:"MU Music board thats about all things music.",uri:"http://boards.4channel.org/mu/index.rss",ext:"http://boards.4channel.org/mu"},
 {cat:"Social",des:"Node subreddit all about NodeJs, created in 2009 with 141,000 members.",uri:"https://reddit.com/r/node/.rss",ext:"https://reddit.com/r/node"},
 {cat:"Social",des:"Physics subreddit frequented by physicists, scientists, and those with a passion for physics.",uri:"https://reddit.com/r/physics/.rss",ext:"https://reddit.com/r/physics"},
