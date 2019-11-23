@@ -166,7 +166,7 @@ function ago(n){
 }
 function pop(n){
 	sel = n
-	$('.bar').remove()
+	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
@@ -181,6 +181,7 @@ function app(n){
 	else if (n == true || n == false) opp = n
 	if (opp == true){
 		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('.clr').css('box-shadow','0px 0px 0px #000')
 		$('.inv').css('display','none')
 		$('.fav').css('display','block')
 	}
@@ -214,7 +215,7 @@ function get(cat, des, uri, ext){
 			 if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a><br><br>" +
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a><br>" +
 				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
