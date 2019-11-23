@@ -227,7 +227,7 @@ function get(cat, des, uri, ext){
 							     var pdt = utc($(this).find('updated').text())
 					}
 					else {		     var ref = $(this).find('link').text()
-			 if ($(this).find('pubDate').text().length) var pdt = utc($(this).find('pubDate').text())
+			 if ($(this).find('pubDate').text().length > 0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
 		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
