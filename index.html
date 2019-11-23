@@ -119,6 +119,7 @@
 	<div class="favicon"><img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png"></div>
     </div>
 <script>
+var old = null
 var opp = false
 var tap = false
 var rss = false
@@ -154,7 +155,7 @@ $('.inv, .fav').on('touchstart click', function(e){
     e.preventDefault()
 })
 function url(n){ window.open(n) }
-function xhr(n){ get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
+function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function utc(n){
 	var dmz = []
@@ -184,10 +185,12 @@ function pop(n){
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
-		if (n == k.cat) $('.pop').append("<div class='xml men' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		if (n == k.cat) $('.pop').append("<div class='xml men "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
-	scr('.pop:last')
+	if (old!=null) scr('.'+old)
+	else scr('.pop:last')
+	old = null
 }
 function app(n){
 	if (n == 'opp') opp = opp != true
