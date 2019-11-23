@@ -155,7 +155,7 @@ $('.inv, .fav').on('touchstart click', function(e){
     e.preventDefault()
 })
 function url(n){ window.open(n) }
-function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
+function xhr(n){ get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function utc(n){
 	var dmz = []
@@ -185,12 +185,10 @@ function pop(n){
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
-		if (n == k.cat) $('.pop').append("<div class='xml men "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		if (n == k.cat) $('.pop').append("<div class='xml men' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
-	if (old!=null) scr('.'+old)
-	else scr('.pop:last')
-	old = null
+	scr('.pop:last')
 }
 function app(n){
 	if (n == 'opp') opp = opp != true
@@ -231,7 +229,7 @@ function get(cat, des, uri, ext){
 							     var pdt = utc($(this).find('updated').text())
 					}
 					else {		     var ref = $(this).find('link').text()
-			 if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
+		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find("dc\:date").text())
 					}
 		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
