@@ -139,7 +139,6 @@ var menu=[
 {cat:"Sport",des:"NY Post Sports including Scores, Trade Rumors and Standings for Baseball, Football, and Basketball.",uri:"https://nypost.com/sports/feed",ext:"https://nypost.com/sports"},
 {cat:"Sport",des:"NCAA FBS College Football Headlines.",uri:"https://www.ncaa.com/news/football/fbs/rss.xml",ext:"https://ncaa.com/sports/football/fbs"},
 {cat:"Sport",des:"RT Sport delivers Latest News on Sports from around the world.",uri:"https://www.rt.com/rss/sport",ext:"https://rt.com/sport"},
-{cat:"Sport",des:"Scorespro football news with soccer scores and analysis.",uri:"https://news.scorespro.com/feed",ext:"https://news.scorespro.com"},
 {cat:"Sport",des:"Sports Illustrated Top Stories is a Weekly Sports Magazine that originated in 1954.",uri:"https://www.si.com/rss/si_topstories.rss",ext:"https://si.com"},
 {cat:"Sport",des:"Sports Illustrated Fantasy Drafts, Mockups, Trades, Rumors, Deadlines.",uri:"https://www.si.com/rss/si_fantasy.rss",ext:"https://www.si.com/fantasy"},
 {cat:"Sport",des:"Sports Illustrated MLB News, Scores, Stats, and Fantasy.",uri:"https://www.si.com/rss/si_mlb.rss",ext:"https://www.si.com/mlb"},
