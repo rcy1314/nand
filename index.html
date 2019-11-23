@@ -75,7 +75,7 @@
 	margin: 1.5em;
     }
     a {
-	padding-right: 1.2em;
+	padding-right: 2em;
     }
     .clr {
 	box-shadow: 1px 1px 3px #AAA;
@@ -212,11 +212,13 @@ function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
+	var int = setInterval(function() { $(".bar").append(".") }, 500);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); rss = false })
 		.success(function(req){
-			$('.bar').remove();
+			clearInterval(int)
+			$('.bar').remove()
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
