@@ -145,7 +145,7 @@ function xhr(n){ get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function utc(n){
 	var dmz = []
-	ret.push(ago(n))
+	dmz.push(ago(n))
 	var utc = new Date(n)
 	var opt = {
 		weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
