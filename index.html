@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/favicon.png">
-    <script src="rss.js"></script>
+    <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <style>
 @media only screen and (min-width: 960px) {
@@ -215,7 +215,7 @@ function get(cat, des, uri, ext){
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); rss = false })
+		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); clearInterval(int); rss = false })
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
