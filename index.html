@@ -148,7 +148,7 @@ function utc(n){
 	dmz.push(ago(n))
 	var utc = new Date(n)
 	var opt = {
-		weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
+	weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
 	}
 	var gmt = utc.toLocaleString('en-US', opt);
 	dmz.push(gmt)
@@ -215,7 +215,7 @@ function get(cat, des, uri, ext){
 			 if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a><br>" +
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
 				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
