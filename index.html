@@ -54,9 +54,11 @@
 	width: 16.3%;
     }
     .out {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 	webkit-overflow-scrolling: touch;
 	border-bottom: 1px solid #AAA;
 	outline: none !important;
+	scrollbar-width: none;
 	overflow: auto;
 	height: 88.5%;
     }
@@ -225,7 +227,7 @@ function get(cat, des, uri, ext){
 							     var pdt = utc($(this).find('updated').text())
 					}
 					else {		     var ref = $(this).find('link').text()
-			 if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
+			 if ($(this).find('pubDate').text().length) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
 		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
