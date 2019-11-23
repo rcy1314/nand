@@ -25,7 +25,7 @@
     }
 }
     ::-webkit-scrollbar {
-	display: none
+	display: none;
     }
     div {
 	font-family: 'Roboto', sans-serif;;
@@ -42,12 +42,12 @@
     .tag {
 	justify-content: center;
 	display: flex;
-	height: 4em
+	height: 3.5em;
     }
     .cat {
 	display: inline-block;
 	padding-bottom: 2em;
-	padding-top: 1.4em;
+	padding-top: 1.3em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
@@ -58,7 +58,7 @@
 	border-bottom: 1px solid #AAA;
 	outline: none !important;
 	overflow: auto;
-	height: 88%;
+	height: 88.5%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -79,6 +79,7 @@
 	box-shadow: 1px 1px 3px #AAA;
     }
     span {
+	font-size: 9px;
 	float: right;
     }
     .favicon {
@@ -86,8 +87,8 @@
 	display: flex;
     }
     .inv, .fav {
-	height: 38px;
-	width: 38px;
+	height: 40px;
+	width: 40px;
     }
 </style>
 <body>
@@ -129,7 +130,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 		tap=setTimeout(function(){
 			tap = null
 			pop(sel)
-		},200)
+		},250)
 	}
   	else {
 		clearTimeout(tap)
@@ -199,7 +200,7 @@ function get(cat, des, uri, ext){
 			 if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"</a><br><br>" +
+		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+" ...</a><br><br>" +
 				 "<span>"+pdt+"</span><br></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
