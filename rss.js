@@ -84,6 +84,7 @@ var menu=[
 {cat:"Social",des:"Laptops subreddit The place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {cat:"Social",des:"Math subreddit with nearly one million members.",uri:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
+{cat:"Social",des:"Netsec subreddit A community for technical news and discussion of information security.",uri:"https://reddit.com/r/netsec/.rss",ext:"https:/reddit.com/r/netsec"},
 {cat:"Social",des:"Node subreddit all about NodeJs, created in 2009 with 141,000 members.",uri:"https://reddit.com/r/node/.rss",ext:"https://reddit.com/r/node"},
 {cat:"Social",des:"Nvidia subreddit talk about news, drivers, rumours, GPUs, the industry.",uri:"https://reddit.com/r/nvidia/.rss",ext:"https://www.reddit.com/r/nvidia"},
 {cat:"Social",des:"Physics subreddit frequented by physicists, scientists, and those with a passion for physics.",uri:"https://reddit.com/r/physics/.rss",ext:"https://reddit.com/r/physics"},
