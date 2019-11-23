@@ -54,10 +54,12 @@
 	width: 16.3%;
     }
     .out {
+	-ms-overflow-style: -ms-autohiding-scrollbar;	
 	border-bottom: 1px solid #AAA;
 	outline: none !important;
+	scrollbar-width: none;
 	overflow: auto;
-	height: 88.5%;
+	height: 88%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -133,9 +135,9 @@ var sel = 'Social'
 	pop(sel)
 	app(opp)
     }
-$('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').attr('tabindex',-1).focus();
-$('.out').focusout(function(){$('.out').attr('tabindex',-1).focus()})
+$('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
+$('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap){
@@ -173,7 +175,7 @@ function ago(n){
 	var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago';
 	var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago';
 	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago';
-	var y=m/12; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
+	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
 }
 function pop(n){
 	sel = n
