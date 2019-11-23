@@ -189,7 +189,7 @@ function app(n){
 		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
 		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr').css({'background-color':'#FEFEFE','color':'#373737'})
+		$('.clr').css({'background-color':'#FAFAFA','color':'#373737'})
 		$('.inv').css('display','block')
 		$('.fav').css('display','none')
 	}
@@ -200,7 +200,7 @@ function get(cat, des, uri, ext){
 	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div>"); rss = false })
+		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); rss = false })
 		.success(function(req){
 			$('.bar').remove();
 			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div></div>")
