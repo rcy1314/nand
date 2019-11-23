@@ -212,7 +212,7 @@ function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
-	var int = setInterval(function() { $(".bar").append(".") }, 500);
+	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
 		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); rss = false })
