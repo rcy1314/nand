@@ -70,13 +70,20 @@
     .men {
 	width: fit-content;
     }
+    .pad {
+	margin: 1.5em;
+    }
     .clr {
-	line-height: 1.6em;
-	margin-left: 1.5em;
-	margin-right: 2em;
-	border-radius: 16px;
-	margin-bottom: 1em;
 	box-shadow: 1px 1px 3px #AAA;
+	border-radius: 16px;
+	width: fit-content;
+	padding-left: 1em;
+	padding-right: 1em;
+	line-height: 1.6em;
+	margin-left: auto;
+	margin-bottom: 1em;
+	margin-right: .5em;
+	
     }
     .ago {
 	line-height: 1.2em;
@@ -215,8 +222,8 @@ function get(cat, des, uri, ext){
 			 if ($(this).find('pubDate').text()) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
-				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div>")
+		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
+				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
