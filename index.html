@@ -24,12 +24,10 @@
 	color: #222;
     }
 }
-    ::-webkit-scrollbar {
-	display: none;
-    }
-    a {
-	padding-right: 2.5em;
-    }
+    ::-webkit-scrollbar { display: none }
+
+    a { padding-right: 2.5em }
+
     div {
 	font-family: 'Roboto', sans-serif;;
 	font-size: 12px;
@@ -142,7 +140,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 	}
   	else {
 		clearTimeout(tap)
-			tap=null
+			tap = null
 			app('opp')
 	}
     e.preventDefault()
@@ -189,7 +187,6 @@ function app(n){
 }
 function pop(n){
 	if (n != sel) old = null
-	else {
 	sel = n
 	var lst = []
 	$('.pop, .bar').remove()
@@ -210,7 +207,6 @@ function pop(n){
 		old = null
 	}
 	else scr('.pop:last')
-	}
 }
 function get(cat, des, uri, ext){
 	rss = true
