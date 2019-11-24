@@ -221,6 +221,7 @@ var menu=[
 {cat:"Technology",des:"TechSpot is a leading Computer and Technology publication established in 1998.",uri:"https://www.techspot.com/backend.xml",ext:"https://techspot.com"},
 {cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
 {cat:"Technology",des:"TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",uri:"https://www.theregister.co.uk/headlines.atom",ext:"https://theregister.co.uk"},
+{cat:"Technology",des:"The Verge covers the intersection of technology, science, art, and culture.",uri:"https://www.theverge.com/rss/index.xml",ext:"https://www.theverge.com"},
 {cat:"Technology",des:"USA Today Technology is an internationally distributed American daily, middle-market Newspaper.",uri:"http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1",ext:"https://usatoday.com/tech/"},
 {cat:"Technology",des:"Wall Street Journals Latest Tech News, Reviews, and Stories.",uri:"https://feeds.a.dj.com/rss/RSSWSJD.xml",ext:"https://wsj.com/news/technology"},
 {cat:"Technology",des:"Washington Post is a major American daily newspaper published in Washington, D.C.",uri:"http://feeds.washingtonpost.com/rss/business/technology",ext:"https://washingtonpost.com/business/technology"},
