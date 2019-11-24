@@ -231,7 +231,7 @@ function get(cat, des, uri, ext){
 					}
 					else {		     var ref = $(this).find('link').text()
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
-							else var pdt = utc($(this).find('dc\\:date').eq(0).text())
+							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
 		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
