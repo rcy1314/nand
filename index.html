@@ -20,12 +20,15 @@
     }
     a:hover {
 	text-decoration: underline;
-	color: #888;
 	cursor: pointer;
+	color: #111;
     }
 }
     ::-webkit-scrollbar {
 	display: none;
+    }
+    a {
+	padding-right: 3em;
     }
     div {
 	font-family: 'Roboto', sans-serif;;
@@ -69,17 +72,7 @@
 	padding-left: 1.5em;
 	padding-top: 2em;
     }
-    .men {
-	width: fit-content;
-    }
-    .pad {
-	margin: 1.5em;
-    }
-    a {
-	padding-right: 3em;
-    }
     .clr {
-	box-shadow: 1px 1px 3px #AAA;
 	border-radius: 16px;
 	width: fit-content;
 	padding-right: 1em;
@@ -109,12 +102,12 @@
 <body>
     <div class="con">
 	<div class="tag">
-		<div id="News" class="cat" onclick="old = null; pop('News')">News</div>
-		<div id="Media" class="cat" onclick="old = null; pop('Media')">Media</div>
-		<div id="Social" class="cat" onclick="old = null; pop('Social')">Social</div>
-		<div id="Sport" class="cat" onclick="old = null; pop('Sport')">Sport</div>
-		<div id="Technology" class="cat" onclick="old = null; pop('Technology')">Tech</div>
-		<div id="World" class="cat" onclick="old = null; pop('World')">World</div>
+		<div id="News" class="cat" onclick="pop('News')">News</div>
+		<div id="Media" class="cat" onclick="pop('Media')">Media</div>
+		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
+		<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
+		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
+		<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
 	<div class="out"></div>
 	<div class="favicon"><img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png"></div>
@@ -140,7 +133,7 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false){ pop(sel) } else { rss = false } })
+$('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap){
 		tap=setTimeout(function(){
@@ -158,14 +151,12 @@ $('.inv, .fav').on('touchstart click', function(e){
 })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
-function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 500) }
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
 	var utc = new Date(n)
-	var opt = {
-	weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true
-	}
+	var opt = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true }
 	var gmt = utc.toLocaleString('en-US', opt);
 	dmz.push(gmt)
      return dmz
@@ -181,6 +172,7 @@ function ago(n){
 	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
 }
 function pop(n){
+	if (n != sel) old = null
 	sel = n
 	var lst = []
 	$('.pop, .bar').remove()
@@ -188,10 +180,13 @@ function pop(n){
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
-		if (n == k.cat){ lst.push(i); $('.pop').append("<div class='xml men "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>") }
+		if (n == k.cat){
+			lst.push(i)
+			$('.pop').append("<div class='xml "+i+"' style='width:fit-content' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length / 100 * 25){ rss = true; scr('.'+old); old = null }
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25) scr('.'+old)
 	else scr('.pop:last')
 }
 function app(n){
@@ -220,7 +215,11 @@ function get(cat, des, uri, ext){
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>"); clearInterval(int); rss = false })
+		.fail(function(){
+			$('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>")
+			clearInterval(int)
+			rss = false
+		})
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
@@ -236,13 +235,14 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find("dc\:date").text())
 					}
-		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
+		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
 				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
+				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
+		app(opp)
 		})
 }
 </script>
