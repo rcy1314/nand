@@ -238,7 +238,7 @@ function get(cat, des, uri, ext){
 		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
 				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a><br><br><br><br><br><br><hr></div>" +
+		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
