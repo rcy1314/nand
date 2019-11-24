@@ -191,7 +191,7 @@ function pop(n){
 		if (n == k.cat){ lst.push(i); $('.pop').append("<div class='xml men "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>") }
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()/100*2.5+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length / 2){ rss = true; scr('.'+old); old = null }
+	if (old!=null && lst.indexOf(old) <= lst.length / .75){ rss = true; scr('.'+old); old = null }
 	else scr('.pop:last')
 }
 function app(n){
