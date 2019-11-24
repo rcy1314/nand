@@ -21,7 +21,7 @@
     a:hover {
 	text-decoration: underline;
 	cursor: pointer;
-	color: #111;
+	color: #222;
     }
 }
     ::-webkit-scrollbar {
@@ -58,7 +58,6 @@
     }
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
-	border-bottom: 1px solid #AAA;
 	outline: none !important;
 	scrollbar-width: none;
 	overflow-y: scroll;
@@ -81,16 +80,13 @@
 	margin-right: .5em;
 	padding-left: 1em;
 	margin-left: auto;
+	cursor: pointer;
 	display: table;
     }
     .ago {
 	line-height: 1.2em;
-	font-size: 9px;
 	text-align: right;
-    }
-    .favicon {
-	justify-content: center;
-	display: flex;
+	font-size: 9px;
     }
     .inv, .fav {
 	box-shadow: 1px 1px 3px #AAA;
@@ -110,7 +106,10 @@
 		<div id="World" class="cat" onclick="pop('World')">World</div>
 	</div>
 	<div class="out"></div>
-	<div class="favicon"><img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png"></div>
+	<div class="favicon" style="display:flex;justify-content:center">
+		<img class="inv" src="favicon/invert.png">
+		<img class="fav" src="favicon/favicon.png">
+	</div>
     </div>
 <script>
 var old = null
@@ -177,15 +176,15 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.35+"em'></div>" +
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
 			 "<div class='pop' style='padding-top:.5em'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
-			$('.pop').append("<div class='xml "+i+"' style='width:fit-content' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+	$('.pop').append("<div class='xml "+i+"' style='width:fit-content' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.05+"em'></div>")
 	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25) scr('.'+old)
 	else scr('.pop:last')
 }
@@ -200,9 +199,8 @@ function app(n){
 	}
 	else if (opp == false){
 		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
-		$('.out').css({'border-bottom':'1px solid #AAA','background-color':'#FAFAFA','color':'#373737'})
+		$('.out, .clr').css({'background-color':'#FAFAFA','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr').css({'background-color':'#FAFAFA','color':'#373737'})
 		$('.clr, .fav, .inv').css('box-shadow','1px 1px 3px #AAA')
 		$('.inv').css('display','block')
 		$('.fav').css('display','none')
@@ -233,10 +231,10 @@ function get(cat, des, uri, ext){
 					}
 					else {		     var ref = $(this).find('link').text()
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
-							else var pdt = utc($(this).find("dc\:date").text())
+							else var pdt = utc($(this).find('dc\\:date').text())
 					}
-		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;<a>"+$(this).find("title").text()+"...</a>" +
-				 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
+		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;" +
+				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
 				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
