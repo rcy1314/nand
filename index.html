@@ -157,7 +157,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
-function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 1000) }
 function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
