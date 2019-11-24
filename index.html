@@ -137,7 +137,6 @@ $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap){
 		tap=setTimeout(function(){
 			tap = null
-			old = null
 			pop(sel)
 		},250)
 	}
@@ -170,24 +169,6 @@ function ago(n){
 	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago';
 	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
 }
-function pop(n){
-	if (n != sel) old = null
-	sel = n
-	var lst = []
-	$('.pop, .bar').remove()
-	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding-top:.5em'></div>")
-	$.each(menu, function(i, k){
-		if (n == k.cat){
-			lst.push(i)
-	$('.pop').append("<div class='xml "+i+"' style='width:fit-content' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
-		}
-	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.05+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25) scr('.'+old)
-	else scr('.pop:last')
-}
 function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
@@ -204,6 +185,31 @@ function app(n){
 		$('.clr, .fav, .inv').css('box-shadow','1px 1px 3px #AAA')
 		$('.inv').css('display','block')
 		$('.fav').css('display','none')
+	}
+}
+function pop(n){
+	if (n != sel) old = null
+	else {
+	sel = n
+	var lst = []
+	$('.pop, .bar').remove()
+	$(document).attr('title',n+' - ack')
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
+			 "<div class='pop' style='padding-top:.5em'></div>")
+	$.each(menu, function(i, k){
+		if (n == k.cat){
+			lst.push(i)
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		}
+	})
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.05+"em'></div>")
+	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25) scr('.'+old)
+	else if (old!=null & lst.indexOf(old) >= lst.length - lst.length * .25){
+		var mid = lst[Math.floor(lst.length / 2)]
+		scr('.'+mid)
+		old = null
+	}
+	else scr('.pop:last')
 	}
 }
 function get(cat, des, uri, ext){
