@@ -19,7 +19,6 @@
 	right: 50%;
     }
     a:hover {
-	text-decoration: underline;
 	cursor: pointer;
 	color: #222;
     }
@@ -68,24 +67,27 @@
 	overflow: auto;
 	height: 94%;
     }
-    .xml {
-	margin-bottom: 4.5em;
+    .xml, .bar {
+	font-family: Geogia;
+	font-size: 16px;
+	margin-bottom: 2.5em;
 	padding-right: 1em;
 	line-height: 1.2em;
-	margin-left: 1.2em;
+	margin-left: .5em;
 	margin-top: 1em;
-	padding-left: 5%;
+	padding-left: 10%;
+    }
+    .cls {
+	width: 90%;
+	line-height: 2.5em;
+	font-size: 10px;
     }
     .des {
 	font-family: Geogia;
 	font-size: 16px;
+	padding-right: 3em;
 	padding-left: 4.5em;
 	width: 75%;
-    }
-    .rss {
-	width: 90%;
-	line-height: 2.5em;
-	font-size: 10px;
     }
     .clr {
 	font-family: 'Roboto', sans-serif;;
@@ -93,12 +95,12 @@
 	font-size: 12px;
 	border-radius: 16px;
 	width: fit-content;
-	padding-top: 1.5em;
+	padding-top: 2em;
 	padding-right: 1em;
 	line-height: 1.6em;
-	margin-bottom: 1em;
-	margin-right: .5em;
-	padding-left: 1em;
+	margin-bottom: 2em;
+	margin-right: 1em;
+	padding-left: 2em;
 	margin-left: auto;
 	cursor: pointer;
 	display: table;
@@ -156,7 +158,7 @@ $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $
 $('.out').on('scroll',function(e){
   var st = $(this).scrollTop();
   if (st < lastScrollTop) $('.tag').slideDown();
-  else if (st > lastScrollTop && st > 100) $('.tag').slideUp()
+  else if (st > lastScrollTop && st > 200) $('.tag').slideUp()
    lastScrollTop = st;
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 
@@ -218,15 +220,15 @@ function pop(n){
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding-top:2.2em'><br></div>")
+			 "<div class='pop' style='padding-top:1.2em'><br></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><div class='rss'><hr><b>"+k.cat+"</b><div class='des'><a>"+k.des+"</a></div></div></div>")
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><div class='cls'><hr><b>"+k.cat+"</b><div class='des'><a>"+k.des+"</a></div></div></div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
+	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .1){
 		scr('.'+old)
 		old = null
 	}
@@ -241,7 +243,7 @@ function get(cat, des, uri, ext){
 	lastScrollTop = 100;
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
+	$('.out').append("<div class='bar'><br>It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -268,8 +270,7 @@ function get(cat, des, uri, ext){
 		$('.out').append("<div class='pad' style='margin:1.5em'><div class='xml clr' onclick='url(\""+ref+"\")'>&ensp;" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+		$('.out').append("<br><br><hr><div class='bar' style='padding-bottom:"+$(".out").height()*.01+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
