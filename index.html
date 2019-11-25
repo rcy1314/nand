@@ -18,10 +18,6 @@
 	width: 55%;
 	right: 50%;
     }
-    a:hover {
-	cursor: pointer;
-	color: #222;
-    }
 }
     ::-webkit-scrollbar {
 	display: none
@@ -157,9 +153,9 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(e){
   var st = $(this).scrollTop();
-  if (st < lastScrollTop && st > 250) $('.tag').slideDown();
-  else if (st > lastScrollTop && st > 151) $('.tag').slideUp()
-   lastScrollTop = st;
+  if (st < lastScrollTop && lastScrollTop > 151) $('.tag').slideDown();
+  else if (st > lastScrollTop && lastScrollTop > 151) $('.tag').slideUp()
+  lastScrollTop = st;
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 
 })
@@ -174,7 +170,7 @@ $('.inv, .fav').on('touchstart click', function(e){
 })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
-function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
+function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}) }
 function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
@@ -255,7 +251,7 @@ function get(cat, des, uri, ext){
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
-			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a>"+des+"</a></div></div>")
+			$('.out').append("<hr><br><br><div class='xml' onclick='url(\""+ext+"\")'><a>"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
