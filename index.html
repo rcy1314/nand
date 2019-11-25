@@ -54,7 +54,7 @@
     .cat {
 	display: inline-block;
 	padding-bottom: 2em;
-	padding-top: 1.5em;
+	padding-top: 1.8em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
@@ -88,6 +88,7 @@
 	font-size: 10px;
     }
     .clr {
+	font-family: 'Roboto', sans-serif;;
 	padding-bottom: 2.2em;
 	font-size: 12px;
 	border-radius: 16px;
@@ -252,7 +253,7 @@ function get(cat, des, uri, ext){
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
-			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a>&ensp;"+des+"</a></div></div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a>"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
