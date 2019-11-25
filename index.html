@@ -15,7 +15,7 @@
 	border: none;
 	bottom: 50%;
 	height: 100%;
-	width: 65%;
+	width: 55%;
 	right: 50%;
     }
     a:hover {
@@ -32,7 +32,7 @@
     }
     div {
 	font-family: 'Roboto', sans-serif;;
-	font-size: 14px;
+	font-size: 16px;
 	cursor: default;
     }
     .con {
@@ -43,6 +43,10 @@
 	top: 0em;
     }
     .tag {
+	position: absolute;
+	width: 100%;
+	top: 0em;
+	left: 0em;
 	justify-content: center;
 	display: flex;
 	height: 3.5em;
@@ -62,18 +66,33 @@
 	scrollbar-width: none;
 	overflow-y: scroll;
 	overflow: auto;
-	height: 88%;
+	height: 94%;
     }
     .xml {
-	padding-bottom: 2.5em;
+	margin-bottom: 4.5em;
 	padding-right: 1em;
 	line-height: 1.2em;
-	padding-left: 1.5em;
-	padding-top: 2.5em;
+	margin-left: 1.2em;
+	margin-top: 1em;
+	padding-left: 5%;
+    }
+    .des {
+	font-family: Geogia;
+	font-size: 16px;
+	padding-left: 4.5em;
+	width: 75%;
+    }
+    .rss {
+	width: 90%;
+	line-height: 2.5em;
+	font-size: 10px;
     }
     .clr {
+	padding-bottom: 2.2em;
+	font-size: 12px;
 	border-radius: 16px;
 	width: fit-content;
+	padding-top: 1.5em;
 	padding-right: 1em;
 	line-height: 1.6em;
 	margin-bottom: 1em;
@@ -112,6 +131,7 @@
 	</div>
     </div>
 <script>
+var lastScrollTop = 0
 var old = null
 var opp = false
 var tap = false
@@ -132,7 +152,14 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
+$('.out').on('scroll',function(e){
+  var st = $(this).scrollTop();
+  if (st < lastScrollTop) $('.tag').slideDown();
+  else if (st > lastScrollTop && st > 100) $('.tag').slideUp()
+   lastScrollTop = st;
+	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
+
+})
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) },250)
   	else {
@@ -183,20 +210,21 @@ function app(n){
 	}
 }
 function pop(n){
+	lastScrollTop = 100
 	if (n != sel) old = null
 	sel = n
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding-top:.5em'></div>")
+			 "<div class='pop' style='padding-top:2.2em'><br></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><b>"+k.cat+"</b>&ensp;<a>"+k.des+"</a></div>")
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><div class='rss'><hr><b>"+k.cat+"</b><div class='des'><a>"+k.des+"</a></div></div></div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.05+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
 		scr('.'+old)
 		old = null
@@ -209,6 +237,7 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
+	lastScrollTop = 100;
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
@@ -223,7 +252,7 @@ function get(cat, des, uri, ext){
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
-			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div></div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a>&ensp;"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
