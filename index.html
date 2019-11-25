@@ -24,10 +24,12 @@
 	color: #222;
     }
 }
-    ::-webkit-scrollbar { display: none }
-
-    a { padding-right: 2.5em }
-
+    ::-webkit-scrollbar {
+	display: none
+    }
+    a {
+	padding-right: 2.5em
+    }
     div {
 	font-family: 'Roboto', sans-serif;;
 	font-size: 12px;
@@ -132,12 +134,7 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
 $('.inv, .fav').on('touchstart click', function(e){
-	if (!tap){
-		tap=setTimeout(function(){
-			tap = null
-			pop(sel)
-		},250)
-	}
+	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) },250)
   	else {
 		clearTimeout(tap)
 			tap = null
@@ -200,7 +197,10 @@ function pop(n){
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.05+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25) scr('.'+old)
+	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
+		scr('.'+old)
+		old = null
+	}
 	else if (old!=null & lst.indexOf(old) >= lst.length - lst.length * .25){
 		var mid = lst[Math.floor(lst.length / 2)]
 		scr('.'+mid)
