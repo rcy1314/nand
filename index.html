@@ -157,7 +157,7 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(e){
   var st = $(this).scrollTop();
-  if (st < lastScrollTop && st > 200) $('.tag').slideDown();
+  if (st < lastScrollTop && st > 250) $('.tag').slideDown();
   else if (st > lastScrollTop && st > 151) $('.tag').slideUp()
    lastScrollTop = st;
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
@@ -217,7 +217,7 @@ function pop(n){
 	if (n != sel) old = null
 	sel = n
 	var lst = []
-	$('.bar').remove()
+	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
 			 "<div class='pop' style='padding-top:1.2em'></div>")
