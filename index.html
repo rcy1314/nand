@@ -198,7 +198,7 @@ function pop(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<br><div class='bar'>.</div><div class='get'></div>")
+	$('.out').append("<br><div class='bar' style='text-align:center'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
