@@ -30,12 +30,12 @@
 	height: 100%;
 	width: 100%;
 	left: 0em;
-	top: 0em;
+	top: .5em;
     }
     .cat {
 	display: inline-block;
 	padding-bottom: 2em;
-	padding-top: 1.5em;
+	padding-top: 1.3em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
@@ -183,7 +183,7 @@ function pop(n){
 			$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
 	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
 		old = null
@@ -224,7 +224,7 @@ function get(cat, des, uri, ext){
 					 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
