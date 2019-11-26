@@ -62,6 +62,7 @@
 	overflow-y: scroll;
 	overflow: auto;
 	height: 94%;
+	top: 3.5em;
     }
     .xml, .bar {
 	font-family: Geogia;
@@ -213,9 +214,9 @@ function pop(n){
 	if (n != sel) old = null
 	sel = n
 	var lst = []
-	$('.pop, .bar').remove()
+	$('.bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.1+"em'></div>" +
 			 "<div class='pop' style='padding-top:1.2em'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
@@ -239,7 +240,7 @@ function get(cat, des, uri, ext){
 	lastScrollTop = 150;
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
+	$('.out').append("<div class='bar'><br>It's on the way!&ensp;Please be patient.</div><br><div class='get'>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -250,8 +251,7 @@ function get(cat, des, uri, ext){
 		})
 		.success(function(req){
 			clearInterval(int)
-			$('.bar').remove()
-			$('.out').append("<hr><br><br><div class='xml' onclick='url(\""+ext+"\")'><a>"+des+"</a></div></div>")
+			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'><a>"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
