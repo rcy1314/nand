@@ -117,9 +117,9 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){
+$('.out').bind('scroll', function(e){
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
-	tag($(this).scrollTop())
+        tag($(this).scrollTop())
 })
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) }, 250)
@@ -131,7 +131,7 @@ function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
 	if (n < ost && n != 0) $('.tag').slideDown()
-	else if (n > ost && n != ost && n > 100) $('.tag').slideUp()
+	else if (n > ost && n > 100) $('.tag').slideUp()
 	ost = n
 }
 function utc(n){
