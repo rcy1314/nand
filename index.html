@@ -126,10 +126,10 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(){
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
-  var ost = $(this).scrollTop();
-  if (ost < lst && lst > 50) $('.tag').slideDown();
-  else if (ost > lst && lst > 50) $('.tag').slideUp()
-  lst = ost
+	var ost = $(this).scrollTop()
+	if (ost < lst && lst > 150) $('.tag').slideDown()
+	else if (ost > lst && lst > 150) $('.tag').slideUp()
+	lst = ost
 })
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) },250)
@@ -176,7 +176,7 @@ function app(n){
 	}
 }
 function pop(n){
-	lst = 49
+	lst = 149
 	if (n != sel) old = null
 	sel = n
 	var ago = []
@@ -202,7 +202,7 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
-	lst = 49
+	lst = 149
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'>")
