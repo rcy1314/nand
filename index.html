@@ -137,7 +137,7 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost && n != 0 && ost > 150) setTimeout(function(){ $('.tag').slideDown() }, 1000)
+	if (n < ost && ost > 150) $('.tag').slideDown()
 	else if (n > ost && ost > 150) $('.tag').slideUp()
 	ost = n
 }
@@ -179,7 +179,7 @@ function app(n){
 }
 function pop(n){
 	ost = 149
-	$('.pop, .bar').remove()
+	$('.bar').remove()
 	if (n != sel) old = null
 	sel = n
 	var ago = []
