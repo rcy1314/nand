@@ -139,7 +139,7 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost && n > 100) $('.tag').slideDown()
+	if (n < ost) $('.tag').slideDown()
 	else if (n > ost && n > 100) $('.tag').slideUp()
 	ost = n
 }
@@ -185,14 +185,14 @@ function pop(n){
 	$('.bar').remove()
 	if (n != sel) old = null
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<br><div class='bar' style='padding-top:"+$('.out').height()*.015+"em'></div><div class='pop'></div>")
+	$('.out').append("<br><div class='bar'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.005+"em'></div>")
 	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
 		old = null
@@ -207,7 +207,7 @@ function pop(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<br><div class='bar' style='margin-right:1em;text-align:center'>.</div><div class='get'></div>")
+	$('.out').append("<br><div class='bar' style='text-align:center'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -234,7 +234,7 @@ function get(cat, des, uri, ext){
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
