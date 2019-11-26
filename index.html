@@ -106,6 +106,7 @@
 	</div>
     </div>
 <script>
+var lst = 0
 var old = null
 var opp = false
 var tap = false
@@ -123,7 +124,13 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
+$('.out').on('scroll',function(){
+	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
+  var ost = $(this).scrollTop();
+  if (ost < lst && lst > 50) $('.tag').slideDown();
+  else if (ost > lst && lst > 50) $('.tag').slideUp()
+  lst = ost
+})
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) },250)
   	else { clearTimeout(tap); tap = null; app('opp') }
@@ -169,31 +176,33 @@ function app(n){
 	}
 }
 function pop(n){
+	lst = 49
 	if (n != sel) old = null
 	sel = n
-	var lst = []
+	var ago = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.15+"em'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.015+"em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
-			lst.push(i)
+			ago.push(i)
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
+	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
 		old = null
 	}
-	else if (old!=null & lst.indexOf(old) >= lst.length - lst.length * .25){
-		var mid = lst[Math.floor(lst.length / 2)]
+	else if (old!=null & ago.indexOf(old) >= ago.length - ago.length * .25){
+		var mid = ago[Math.floor(ago.length / 2)]
 		scr('.'+mid)
 		old = null
 	}
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
+	lst = 49
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'>")
