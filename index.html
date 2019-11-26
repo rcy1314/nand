@@ -130,8 +130,8 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost && n != 0) $('.tag').slideDown()
-	else if (n > ost && n > 100) $('.tag').slideUp()
+	if (n < ost && n != 0) $('.tag').slideDown({ duration: 250 })
+	else if (n > ost && n > 100) $('.tag').slideUp({ duration: 250 })
 	ost = n
 }
 function utc(n){
