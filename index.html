@@ -207,18 +207,18 @@ function get(cat, des, uri, ext){
 	lst = 149
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'>")
+	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
 		.fail(function(){
-			$('.out').append("<div class='get'><div class='xml'>&ensp;Oops! Something went wrong!</div></div></div>")
+			$('.out').append("<div class='get'><div class='xml'>&ensp;Oops! Something went wrong!</div></div>")
 			clearInterval(int)
 			rss = false
 		})
 		.success(function(req){
 			clearInterval(int)
-			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div></div>")
+			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
