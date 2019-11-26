@@ -23,12 +23,8 @@
 	display: none
     }
     a {
-	padding-right: 2.5em
-    }
-    div {
-	font-family: 'Roboto', sans-serif;;
-	font-size: 16px;
-	cursor: default;
+	padding-right: 2.5em;
+	cursor: pointer
     }
     .con {
 	position: absolute;
@@ -47,6 +43,7 @@
 	height: 3.5em;
     }
     .cat {
+	font-family: Roboto;
 	display: inline-block;
 	padding-bottom: 2em;
 	padding-top: 1.8em;
@@ -64,14 +61,13 @@
 	height: 94%;
 	top: 3.5em;
     }
-    .xml, .bar {
+    .xml {
 	font-family: Geogia;
 	font-size: 16px;
 	margin-bottom: 2.5em;
 	padding-right: 1em;
 	line-height: 1.2em;
 	margin-left: .5em;
-	margin-top: 1em;
 	padding-left: 10%;
     }
     .cls {
@@ -131,7 +127,7 @@
 	</div>
     </div>
 <script>
-var lastScrollTop = 0
+var lst = 0
 var old = null
 var opp = false
 var tap = false
@@ -154,9 +150,9 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(e){
   var st = $(this).scrollTop();
-  if (st < lastScrollTop && lastScrollTop > 151) $('.tag').slideDown();
-  else if (st > lastScrollTop && lastScrollTop > 151) $('.tag').slideUp()
-  lastScrollTop = st;
+  if (st < lst && lst > 151) $('.tag').slideDown();
+  else if (st > lst && lst > 151) $('.tag').slideUp()
+  lst = st;
 	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 
 })
@@ -210,37 +206,36 @@ function app(n){
 	}
 }
 function pop(n){
-	lastScrollTop = 150
+	lst = 150
 	if (n != sel) old = null
 	sel = n
-	var lst = []
-	$('.bar').remove()
+	var ago = []
+	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.1+"em'></div>" +
-			 "<div class='pop' style='padding-top:1.2em'></div>")
+	$('.out').append("<div class='pop' style='padding-top:3.2em'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
-			lst.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><div class='cls'><br><hr><b>"+k.cat+"</b><div class='des'><a>"+k.des+"</a></div></div></div>")
+			ago.push(i)
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><div class='cls'><hr><b>"+k.cat+"</b><div class='des'><a>"+k.des+"</a></div></div></div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
-	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .1){
+	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .1){
 		scr('.'+old)
 		old = null
 	}
-	else if (old!=null & lst.indexOf(old) >= lst.length - lst.length * .25){
-		var mid = lst[Math.floor(lst.length / 2)]
+	else if (old!=null & ago.indexOf(old) >= ago.length - ago.length * .25){
+		var mid = ago[Math.floor(ago.length / 2)]
 		scr('.'+mid)
 		old = null
 	}
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
-	lastScrollTop = 150;
+	lst = 150;
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>It's on the way!&ensp;Please be patient.</div><br><div class='get'>")
+	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><div class='get'>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
