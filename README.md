@@ -45,46 +45,6 @@ This would be for Initially Opposite with category Technology.
 ### Styling
 
 Double tap icon to invert colors.
-
-### Variables
-| Name | Use |
-| ------ | ------ |
-| opp | Dark = False |
-| rss | get pop fallback |
-| sel | .cat Selected |
-| req | Xhr Data |
-| set | Xml Entry/Item |
-| ref | Xml Link/Href |
-| tap | Touchstart/Click |
-
-### Classes
-| Name | Use |
-| ------ | ------ |
-| .con | Container |
-| .tag | .cat Parent |
-| .cat | Category |
-| .out | Output |
-| .get | .xml Wrapper |
-| .pop | .sel Wrapper |
-| .xml | .out Elements |
-| .fav/.inv | Pop(sel) |
-
-### Functions
-| Name | Use |
-|------|------|
-| url | window.open() |
-| scr | Scroll element:last |
-| pop | .out sel Append |
-| xhr | .xml get() |
-| app | Previously applyColors() |
-| get | Ajax Request |
-  
-
-### Cloning
-
- - Host on [github-pages](https://pages.github.com) or run from your browser locally.
-
- - Replace https://acktic.github.io/rss.js in index.html's `<script src=>` with the local rss.js for menu editing. 
  
 ### CORS Proxy
 
