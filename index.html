@@ -139,7 +139,7 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost) $('.tag').slideDown()
+	if (n < ost && n > 100) $('.tag').slideDown()
 	else if (n > ost && n > 100) $('.tag').slideUp()
 	ost = n
 }
@@ -180,12 +180,12 @@ function app(n){
 	}
 }
 function pop(n){
-	$('.bar').remove()
-	var ago = []
 	sel = n
+	var ago = []
+	$('.bar').remove()
 	if (n != sel) old = null
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<br><div class='bar' style='padding-top:.5em'></div><div class='pop'></div>")
+	$('.out').append("<br><div class='bar' style='padding-top:"+$('.out').height()*.015+"em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
