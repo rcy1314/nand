@@ -52,7 +52,7 @@
     .xml {
 	padding-bottom: 2em;
 	line-height: 1.4em;
-	margin-left: 18%;
+	margin-left: 17%;
 	font-size: 13px;
 	cursor: default;
 	height: 5em;
@@ -131,7 +131,7 @@ function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
 	if (n < ost && n != ost) $('.tag').slideDown()
-	else if (n > ost && n > 100) $('.tag').slideUp()
+	else if (n > ost && n != ost && n > 100) $('.tag').slideUp()
 	ost = n
 }
 function utc(n){
