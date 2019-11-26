@@ -72,14 +72,13 @@
 	font-size: 12px;
 	border-radius: 16px;
 	width: fit-content;
-	padding-right: .5em;
 	line-height: 1.6em;
 	margin-bottom: 1em;
 	margin-right: 1em;
 	margin-left: auto;
 	cursor: pointer;
 	display: table;
-	padding-top: 2em;
+	padding: 2em;
     }
     .ago {
 	line-height: 1.2em;
@@ -233,7 +232,7 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-		$('.out').append("<div class='pad' style='padding-left:1em'><div class='xml clr' onclick='url(\""+ref+"\")'>" +
+		$('.out').append("<div class='pad' style='padding-left:1em'><div class='clr' onclick='url(\""+ref+"\")'>" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
