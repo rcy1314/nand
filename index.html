@@ -19,12 +19,7 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar {
-	display: none
-    }
-    a {
-	cursor: default;
-    }
+    ::-webkit-scrollbar { display: none }
     .con {
 	position: absolute;
 	height: 100%;
@@ -54,7 +49,7 @@
 	overflow-y: scroll;
 	overflow: auto;
 	margin: .75em;
-	height: 84%;
+	height: 83.5%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -62,8 +57,9 @@
 	margin-left: 10%;
 	padding-left: 6%;
 	font-size: 18px;
-	width: 70%;
+	cursor: default;
 	height: 5em;
+	width: 70%;
     }
     .clr {
 	font-family: 'Roboto', sans-serif;
@@ -102,8 +98,7 @@
 	</div>
 	<div class="out"></div>
 	<div class="favicon" style="display:flex;justify-content:center">
-		<img class="inv" src="favicon/invert.png">
-		<img class="fav" src="favicon/favicon.png">
+		<img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png">
 	</div>
     </div>
 <script>
@@ -120,21 +115,14 @@ var sel = 'Social'
 	location.href.match('\\&category=Sport') ||
 	location.href.match('\\&category=Technology') ||
 	location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
-    else {
-	pop(sel)
-	app(opp)
-    }
+    else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) },250)
-  	else {
-		clearTimeout(tap)
-			tap = null
-			app('opp')
-	}
+  	else { clearTimeout(tap); tap = null; app('opp') }
     e.preventDefault()
 })
 function url(n){ window.open(n) }
@@ -164,15 +152,14 @@ function app(n){
 	else if (n == true || n == false) opp = n
 	if (opp == true){
 		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('.clr, .fav, .inv').css('box-shadow','0px 0px 0px #000')
+		$('.clr, .fav,').css('box-shadow','0px 0px 0px #000')
 		$('.fav').css('display','block')
 		$('.inv').css('display','none')
 	}
 	else if (opp == false){
-		$('body, .con').css({'background-color':'#F5F5F5','color':'#373737'})
-		$('.out, .clr').css({'background-color':'#FAFAFA','color':'#373737'})
+		$('body, .con, .clr').css({'background-color':'transparent','color':'#373737'})
 		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr, .fav, .inv').css('box-shadow','1px 1px 3px #AAA')
+		$('.clr, .inv').css('box-shadow','1px 1px 3px #AAA')
 		$('.inv').css('display','block')
 		$('.fav').css('display','none')
 	}
@@ -183,12 +170,11 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.2+"em'></div>" +
-			 "<div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.2+"em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr><a>"+k.des+"</a></div>")
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
@@ -211,13 +197,12 @@ function get(cat, des, uri, ext){
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
 		.fail(function(){
-			$('.out').append("<div class='get'><div class='xml'> &ensp;Oops! Something went wrong!</div></div></div>")
+			$('.out').append("<div class='get'><div class='xml'>&ensp;Oops! Something went wrong!</div></div></div>")
 			clearInterval(int)
 			rss = false
 		})
 		.success(function(req){
 			clearInterval(int)
-			$('.bar').remove()
 			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
