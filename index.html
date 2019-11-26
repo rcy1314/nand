@@ -19,8 +19,12 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar { display: none }
-    div { font-family: 'Roboto',Helvetica,Sans-Serif }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    div {
+	font-family: 'Roboto',Helvetica,Sans-Serif
+    }
     .con {
 	position: absolute;
 	height: 100%;
@@ -124,8 +128,7 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){
-	if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
+$('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 	var ost = $(this).scrollTop()
 	if (ost < lst && lst > 150) $('.tag').slideDown()
 	else if (ost > lst && lst > 150) $('.tag').slideUp()
@@ -176,11 +179,11 @@ function app(n){
 	}
 }
 function pop(n){
+	$('.pop').remove()
 	lst = 149
 	if (n != sel) old = null
 	sel = n
 	var ago = []
-	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.015+"em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
