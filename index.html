@@ -26,7 +26,6 @@
 	padding-right: 2.5em
     }
     div {
-	font-family: 'Georgia', sans-serif;
 	cursor: pointer;
 	font-size: 18px;
 	cursor: default;
@@ -44,6 +43,7 @@
 	height: 2.5em;
     }
     .cat {
+	font-family: 'Roboto', sans-serif;
 	display: inline-block;
 	padding-bottom: 2em;
 	padding-top: 1.5em;
@@ -64,10 +64,10 @@
     .xml {
 	width: 70%;
 	height: 5em;
-	padding-bottom: 2em;
 	margin-left: 10%;
 	line-height: 1.4em;
-	padding-left: 5%;
+	padding-left: 6%;
+	padding-bottom: 2em;
     }
     .clr {
 	font-family: 'Roboto', sans-serif;
@@ -80,7 +80,7 @@
 	margin-left: auto;
 	cursor: pointer;
 	display: table;
-	padding: 2em;
+	padding: 1.5em;
     }
     .ago {
 	line-height: 1.2em;
@@ -187,7 +187,7 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.25+"em'></div>" +
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.3+"em'></div>" +
 			 "<div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
@@ -195,7 +195,7 @@ function pop(n){
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr><a>"+k.des+"</a></div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.03+"em'></div>")
 	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
 		scr('.'+old)
 		old = null
@@ -210,7 +210,7 @@ function pop(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>.</div><div class='get'>")
+	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -237,8 +237,8 @@ function get(cat, des, uri, ext){
 		$('.out').append("<div class='pad' style='padding-left:1em'><div class='clr' onclick='url(\""+ref+"\")'>" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
-		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.01+"em'></div>")
+		$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
+				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)

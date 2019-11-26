@@ -35,6 +35,7 @@ var menu=[
 {cat:"Media",des:"Celebrity Hub subreddit Pictures and GIFs of Actresses, Singers, Models, Athletes and Celebs.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/celebhub"},
 {cat:"Media",des:"CNN Entertainment News Celebrities, Movies, TV, and Music.",uri:"http://rss.cnn.com/rss/cnn_showbiz.rss",ext:"https://cnn.com/entertainment"},
 {cat:"Media",des:"Deadline is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",uri:"https://deadline.com/feed",ext:"https://deadline.com"},
+{cat:"Media",des:"Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.",uri:"https://decider.com/feed",ext:"https://decider.com"},
 {cat:"Media",des:"Digital Trends Movie reviews, TV Show recaps, previews, and news.",uri:"https://www.digitaltrends.com/movies/feed/",ext:"https://digitaltrends.com/movies"},
 {cat:"Media",des:"Daily Beast is a News and Opinion Website focusing on Politics, Power and Entertainment Culture.",uri:"https://feeds.thedailybeast.com/summary/rss/articles",ext:"https://www.thedailybeast.com"},
 {cat:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",uri:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
