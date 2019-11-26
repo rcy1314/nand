@@ -48,7 +48,7 @@
 	padding-left: 1em;
 	scrollbar-width: none;
 	overflow: auto;
-	height: 88%;
+	height: 94%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -66,7 +66,7 @@
 	margin-bottom: 3em;
 	margin-right: 1em;
 	margin-left: auto;
-	font-size: 12px;
+	font-size: 13px;
 	cursor: pointer;
 	display: table;
 	padding: 1.5em;
@@ -106,6 +106,7 @@
 	</div>
     </div>
 <script>
+var ost = 0
 var old = null
 var opp = false
 var tap = false
@@ -113,12 +114,20 @@ var rss = false
 var sel = 'Social'
     if (location.href.match('\\?opp=0')) app(false)
     if (location.href.match('\\?opp=1')) app(true)
-    if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
+    if (location.href.match('\\&category=News') ||
+	location.href.match('\\&category=Media') ||
+	location.href.match('\\&category=Social') ||
+	location.href.match('\\&category=Sport') ||
+	location.href.match('\\&category=Technology') ||
+	location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
     else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
-$('.out').on('scroll',function(){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel) })
+$('.out').on('scroll',function(){
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
+	tag($(this).scrollTop())
+})
 $('.inv, .fav').on('touchstart click', function(e){
 	if (!tap) tap = setTimeout(function(){ tap = null; pop(sel) }, 250)
   	else { clearTimeout(tap); tap = null; app('opp') }
@@ -127,6 +136,11 @@ $('.inv, .fav').on('touchstart click', function(e){
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
+function tag(n){
+	if (n < ost && ost > 150) setTimeout(function(){ $('.tag').slideDown() }, 1000)
+	else if (n > ost && ost > 150) $('.tag').slideUp()
+	ost = n
+}
 function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
@@ -164,6 +178,7 @@ function app(n){
 	}
 }
 function pop(n){
+	ost = 149
 	$('.pop, .bar').remove()
 	if (n != sel) old = null
 	sel = n
@@ -189,6 +204,7 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
+	ost = 149
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<br><div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
@@ -227,4 +243,3 @@ function get(cat, des, uri, ext){
 </script>
 </body>
 </html>
-
