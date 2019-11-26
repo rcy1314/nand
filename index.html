@@ -170,14 +170,14 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.2+"em'></div><div class='pop'></div>")
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.15+"em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
 	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
 		scr('.'+old)
 		old = null
@@ -219,7 +219,7 @@ function get(cat, des, uri, ext){
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
