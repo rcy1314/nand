@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <link rel="icon" type="image/png" href="favicon/favicon.png">
+    <link rel="icon" type="image/png" href="favicon/invert.png">
     <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <style>
@@ -19,19 +19,18 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar { display: none }
-    div { font-family: 'Roboto',Helvetica,Sans-Serif }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    div {
+	font-family: 'Roboto',Helvetica,Sans-Serif
+    }
     .con {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	left: 0em;
 	top: 0em;
-    }
-    .tag {
-	justify-content: center;
-	display: flex;
-	height: 3em;
     }
     .cat {
 	display: inline-block;
@@ -91,7 +90,7 @@
 </style>
 <body>
     <div class="con">
-	<div class="tag">
+	<div class="tag" style='justify-content:center;display:flex;height:3em'>
 		<div id="News" class="cat" onclick="pop('News')">News</div>
 		<div id="Media" class="cat" onclick="pop('Media')">Media</div>
 		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
@@ -101,8 +100,7 @@
 	</div>
 	<div class="out"></div>
 	<div class="favicon" style="display:flex;justify-content:center">
-		<img class="inv" src="favicon/invert.png">
-		<img class="fav" src="favicon/favicon.png">
+		<img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png">
 	</div>
     </div>
 <script>
@@ -113,7 +111,7 @@ var tap = false
 var rss = false
 var sel = 'Social'
     if (location.href.match('\\?opp=0')) app(false)
-    if (location.href.match('\\?opp=1')) app(true)
+    else if (location.href.match('\\?opp=1')) app(true)
     if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
     else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
@@ -182,7 +180,7 @@ function pop(n){
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
+			$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
@@ -191,7 +189,7 @@ function pop(n){
 		old = null
 	}
 	else if (old!=null & ago.indexOf(old) >= ago.length - ago.length * .25){
-		var mid = ago[Math.floor(ago.length / 2)]
+		var mid = ago[Math.floor(ago.length / 1.5)]
 		scr('.'+mid)
 		old = null
 	}
@@ -204,14 +202,13 @@ function get(cat, des, uri, ext){
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){
-			$('.out').append("<div class='get'><div class='xml'>&ensp;Oops! Something went wrong!</div></div>")
+		.fail(function(){ $('.out').append("<div class='get'><div class='xml'>&ensp;Oops! Something went wrong!</div></div>")
 			clearInterval(int)
 			rss = false
 		})
 		.success(function(req){
 			clearInterval(int)
-			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>")
+			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
@@ -223,10 +220,10 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-			$('.out').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'>" +
-				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
+			$('.out').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
+					 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
-				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
+				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
 						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
