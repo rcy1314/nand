@@ -180,12 +180,12 @@ function app(n){
 	}
 }
 function pop(n){
-	sel = n
-	var ago = []
 	$('.bar').remove()
+	var ago = []
+	sel = n
 	if (n != sel) old = null
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<br><div class='bar' style='padding-top:"+$('.out').height()*.015+"em'></div><div class='pop'></div>")
+	$('.out').append("<br><div class='bar' style='padding-top:.5em'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
@@ -234,7 +234,7 @@ function get(cat, des, uri, ext){
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.01+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
