@@ -58,22 +58,22 @@
 	scrollbar-width: none;
 	overflow-y: scroll;
 	overflow: auto;
-	height: 85.5%;
-	margin: .5em;
+	height: 83%;
+	margin: 1em;
     }
     .xml {
-	width: 80%;
-	padding: 1em;
-	margin: 1em;
+	width: 70%;
+	padding-bottom: 2em;
+	margin-left: 10%;
 	line-height: 1.4em;
 	padding-left: 5%;
     }
     .clr {
-	font-size: 12px;
+	font-size: 13px;
 	border-radius: 16px;
 	width: fit-content;
 	line-height: 1.6em;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	margin-right: 1em;
 	margin-left: auto;
 	cursor: pointer;
@@ -208,7 +208,7 @@ function pop(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar'><br>&ensp;&ensp;It's on the way!&ensp;Please be patient.</div><br><br><div class='get'>")
+	$('.out').append("<div class='bar'><br>.</div><div class='get'>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -220,7 +220,7 @@ function get(cat, des, uri, ext){
 		.success(function(req){
 			clearInterval(int)
 			$('.bar').remove()
-			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div></div>")
+			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
