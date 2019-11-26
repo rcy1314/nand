@@ -19,8 +19,12 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar { display: none }
-    div { font-family: 'Roboto',Helvetica,Sans-Serif }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    div {
+	font-family: 'Roboto',Helvetica,Sans-Serif
+    }
     .con {
 	position: absolute;
 	height: 100%;
@@ -114,13 +118,11 @@ var rss = false
 var sel = 'Social'
     if (location.href.match('\\?opp=0')) app(false)
     if (location.href.match('\\?opp=1')) app(true)
-    if (location.href.match('\\&category=News') ||
-	location.href.match('\\&category=Media') ||
-	location.href.match('\\&category=Social') ||
-	location.href.match('\\&category=Sport') ||
-	location.href.match('\\&category=Technology') ||
-	location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
-    else { pop(sel); app(opp) }
+    if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
+    else {
+	pop(sel)
+	app(opp)
+    }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
@@ -137,8 +139,8 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost && ost > 150) $('.tag').slideDown()
-	else if (n > ost && ost > 150) $('.tag').slideUp()
+	if (n < ost) $('.tag').slideDown()
+	else if (n > ost && n > 100) $('.tag').slideUp()
 	ost = n
 }
 function utc(n){
@@ -178,11 +180,10 @@ function app(n){
 	}
 }
 function pop(n){
-	ost = 149
-	$('.bar').remove()
-	if (n != sel) old = null
 	sel = n
 	var ago = []
+	$('.bar').remove()
+	if (n != sel) old = null
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<br><div class='bar'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
@@ -204,7 +205,6 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
-	ost = 149
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<br><div class='bar' style='text-align:center'>.</div><div class='get'></div>")
@@ -234,7 +234,7 @@ function get(cat, des, uri, ext){
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.01+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
