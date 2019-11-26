@@ -49,6 +49,7 @@
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
 	outline: none !important;
+	padding-left: 1em;
 	scrollbar-width: none;
 	overflow: auto;
 	height: 94%;
@@ -56,7 +57,7 @@
     .xml {
 	padding-bottom: 2em;
 	line-height: 1.4em;
-	margin-left: 16%;
+	margin-left: 14%;
 	font-size: 13px;
 	cursor: default;
 	height: 5em;
@@ -129,8 +130,8 @@ $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() },100) }
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
 $('.out').on('scroll',function(){ if ($(this).scrollTop()+$(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
 	var ost = $(this).scrollTop()
-	if (ost < lst && lst > 150) $('.tag').slideDown()
-	else if (ost > lst && lst > 150) $('.tag').slideUp()
+	if (ost < lst && lst > 50) $('.tag').slideDown()
+	else if (ost > lst && lst > 50) $('.tag').slideUp()
 	lst = ost
 })
 $('.inv, .fav').on('touchstart click', function(e){
@@ -178,20 +179,20 @@ function app(n){
 	}
 }
 function pop(n){
-	$('.pop').remove()
-	lst = 149
+	lst = 49
+	$('.pop, .bar').remove()
 	if (n != sel) old = null
 	sel = n
 	var ago = []
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.015+"em'></div><div class='pop'></div>")
+	$('.out').append("<br><div class='bar'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.005+"em'></div>")
 	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
 		old = null
@@ -204,10 +205,10 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
-	lst = 149
+	lst = 49
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
+	$('.out').append("<br><div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
@@ -230,11 +231,11 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-			$('.out').append("<div class='pad' style='padding-left:1em'><div class='clr' onclick='url(\""+ref+"\")'>" +
+			$('.out').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'>" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.015+"em'></div>")
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.01+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
