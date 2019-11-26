@@ -137,7 +137,7 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost && ost > 150) setTimeout(function(){ $('.tag').slideDown() }, 1000)
+	if (n < ost && n != 0 && ost > 150) setTimeout(function(){ $('.tag').slideDown() }, 1000)
 	else if (n > ost && ost > 150) $('.tag').slideUp()
 	ost = n
 }
@@ -207,7 +207,7 @@ function get(cat, des, uri, ext){
 	ost = 149
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<br><div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
+	$('.out').append("<br><div class='bar' style='text-align:center'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
