@@ -19,12 +19,8 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar {
-	display: none
-    }
-    div {
-	font-family: 'Roboto',Helvetica,Sans-Serif
-    }
+    ::-webkit-scrollbar { display: none }
+    div { font-family: 'Roboto',Helvetica,Sans-Serif }
     .con {
 	position: absolute;
 	height: 100%;
@@ -119,10 +115,7 @@ var sel = 'Social'
     if (location.href.match('\\?opp=0')) app(false)
     if (location.href.match('\\?opp=1')) app(true)
     if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
-    else {
-	pop(sel)
-	app(opp)
-    }
+    else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
@@ -139,8 +132,8 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < ost) $('.tag').slideDown()
-	else if (n > ost && n > 100) $('.tag').slideUp()
+	if (n < ost ) $('.tag').slideDown()
+	else if (n > ost && n > 100){ $('.tag').slideUp(); return false }
 	ost = n
 }
 function utc(n){
@@ -180,16 +173,16 @@ function app(n){
 	}
 }
 function pop(n){
-	sel = n
-	var ago = []
 	$('.bar').remove()
 	if (n != sel) old = null
+	var ago = []
+	sel = n
 	$(document).attr('title',n+' - ack')
 	$('.out').append("<br><div class='bar'></div><div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
-		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr>"+k.des+"</div>")
+		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
 		}
 	})
 	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
