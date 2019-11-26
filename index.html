@@ -54,16 +54,17 @@
     }
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
-	outline: none !important;
+	outline: none !important;u
 	scrollbar-width: none;
 	overflow-y: scroll;
 	overflow: auto;
-	height: 87.5%;
+	height: 85.5%;
+	margin: .5em;
     }
     .xml {
-	width: 75%;
-	padding-bottom: 2em;
-	margin: 2em;
+	width: 80%;
+	padding: 1em;
+	margin: 1em;
 	line-height: 1.4em;
 	padding-left: 5%;
     }
@@ -74,8 +75,7 @@
 	padding-right: .5em;
 	line-height: 1.6em;
 	margin-bottom: 1em;
-	margin-right: .5em;
-	padding-left: 1em;
+	margin-right: 1em;
 	margin-left: auto;
 	cursor: pointer;
 	display: table;
@@ -186,8 +186,8 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.5+"em'></div>" +
-			 "<div class='pop' style='padding:2em'>"+sel+"</div>")
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.25+"em'></div>" +
+			 "<div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			lst.push(i)
@@ -233,7 +233,7 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-		$('.out').append("<div class='pad'><div class='xml clr' onclick='url(\""+ref+"\")'>" +
+		$('.out').append("<div class='pad' style='padding-left:1em'><div class='xml clr' onclick='url(\""+ref+"\")'>" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
 		$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'><a><b>"+cat+"</b>&ensp;"+des+"</a></div><br><br><hr>" +
