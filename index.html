@@ -106,7 +106,7 @@
 	</div>
     </div>
 <script>
-var tst = 0
+var ost = 0
 var old = null
 var opp = false
 var tap = false
@@ -120,7 +120,7 @@ var sel = 'Social'
 	location.href.match('\\&category=Sport') ||
 	location.href.match('\\&category=Technology') ||
 	location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
-    else { pop(sel) app(opp) }
+    else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
@@ -137,9 +137,9 @@ function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
-	if (n < tst && tst > 50) $('.tag').slideDown()
-	else if (n > tst && tst > 50) $('.tag').slideUp()
-	tst = n
+	if (n < ost && ost > 50) $('.tag').slideDown()
+	else if (n > ost && ost > 50) $('.tag').slideUp()
+	ost = n
 }
 function utc(n){
 	var dmz = []
@@ -178,7 +178,7 @@ function app(n){
 	}
 }
 function pop(n){
-	tst = 49
+	ost = 49
 	$('.pop, .bar').remove()
 	if (n != sel) old = null
 	sel = n
@@ -204,7 +204,7 @@ function pop(n){
 	else scr('.pop:last')
 }
 function get(cat, des, uri, ext){
-	tst = 49
+	ost = 49
 	rss = true
 	$('.bar').remove();
 	$('.out').append("<br><div class='bar' style='text-align:center'><br>.</div><div class='get'></div>")
