@@ -43,15 +43,8 @@ This would be for Initially Opposite with category Technology.
 `<iframe src="https://acktic.github.io?opp=1&cat=Technology"></iframe>`
 
 ### Styling
+
 Double tap icon to invert colors.
-
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/6878093904196.png"></p>
-
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9998840282269.png"></p>
-
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/8142152562660.png"></p>
-
-<p align="center"><img src="https://ackti.files.wordpress.com/2019/11/9030801429115.png"></p>
 
 ### Variables
 | Name | Use |
