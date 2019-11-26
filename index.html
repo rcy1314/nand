@@ -23,11 +23,6 @@
 	display: none
     }
     a {
-	padding-right: 2.5em
-    }
-    div {
-	cursor: pointer;
-	font-size: 18px;
 	cursor: default;
     }
     .con {
@@ -40,7 +35,7 @@
     .tag {
 	justify-content: center;
 	display: flex;
-	height: 2.5em;
+	height: 3em;
     }
     .cat {
 	font-family: 'Roboto', sans-serif;
@@ -54,14 +49,15 @@
     }
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
-	outline: none !important;u
+	outline: none !important;
 	scrollbar-width: none;
 	overflow-y: scroll;
 	overflow: auto;
-	height: 83%;
-	margin: 1em;
+	height: 82.5%;
+	margin: .75em;
     }
     .xml {
+	font-size: 18px;
 	width: 70%;
 	height: 5em;
 	margin-left: 10%;
@@ -148,7 +144,7 @@ function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
 	var utc = new Date(n)
-	var opt = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: '2-digit', hour12: true }
+	var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }
 	var gmt = utc.toLocaleString('en-US', opt);
 	dmz.push(gmt)
      return dmz
@@ -187,7 +183,7 @@ function pop(n){
 	var lst = []
 	$('.pop, .bar').remove()
 	$(document).attr('title',n+' - ack')
-	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.3+"em'></div>" +
+	$('.out').append("<div class='bar' style='padding-top:" + $('.out').height()/100*.2+"em'></div>" +
 			 "<div class='pop'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
@@ -195,7 +191,7 @@ function pop(n){
 		$('.pop').append("<div class='xml "+i+"' onclick='xhr("+i+")'><hr><a>"+k.des+"</a></div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.03+"em'></div>")
+	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
 	if (old!=null && lst.indexOf(old) <= lst.length  - lst.length * .25){
 		scr('.'+old)
 		old = null
@@ -234,11 +230,11 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-		$('.out').append("<div class='pad' style='padding-left:1em'><div class='clr' onclick='url(\""+ref+"\")'>" +
+			$('.out').append("<div class='pad' style='padding-left:1em'><div class='clr' onclick='url(\""+ref+"\")'>" +
 				 "<a>"+$(this).find("title").text()+"...</a><div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
 		})
-		$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
-				 "<div class='bar' style='padding-bottom:"+$(".out").height()*.025+"em'></div>")
+				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a></div>" +
+						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
 		scr('.get:last')
 		rss = false
 		app(opp)
