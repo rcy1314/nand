@@ -160,7 +160,7 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('.fav').css('display','block')
 		$('.inv').css('display','none')
 	}
@@ -175,7 +175,7 @@ function pop(n){
 	if (n != sel) old = null
 	var ago = []
 	sel = n
-	$(document).attr('title',n+' - ack')
+	$(document).attr('title','ack - '+n)
 	$('.out').append("<br><div class='bar'></div><div class='pop' style='margin-right:5%'></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
@@ -208,7 +208,7 @@ function get(cat, des, uri, ext){
 		})
 		.success(function(req){
 			clearInterval(int)
-			$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
+			$('.out').append("<div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
