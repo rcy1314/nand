@@ -23,9 +23,15 @@
 	border: 1px solid #ddd;
     }
 }
-    ::-webkit-scrollbar { display: none }
-    .cat:hover { color: #AAA }
-    div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    .cat:hover {
+	color: #AAA
+    }
+    div {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    }
     .con {
 	position: absolute;
 	height: 99%;
@@ -79,7 +85,7 @@
 	float: right;
 	clear: both;
     }
-    .favicon {
+    .ico {
 	transform: translate(50%,50%);
 	position: fixed;
 	bottom: 1.55em;
@@ -103,9 +109,9 @@
 		<div id="World" class="cat">World</div>
 	</div>
 	<div class="out"></div>
-	<div class="favicon" style="display:flex;justify-content:center">
-		<img class="inv" src="favicon/invert.png">
-		<img class="fav" src="favicon/favicon.png">
+	<div class="ico" style="display:flex;justify-content:center">
+		<img id="inv" class="fav" src="favicon/invert.png">
+		<img id="fav" class="fav" src="favicon/favicon.png">
 	</div>
     </div>
 <script>
@@ -122,14 +128,17 @@ var sel = 'Social'
 	|| location.href.match('\\&category=Social')
 	|| location.href.match('\\&category=Sport')
 	|| location.href.match('\\&category=Technology')
-	|| location.href.match('\\&category=World'))
+	|| location.href.match('\\&category=World') )
 	pop(location.search.split('&category=')[1])
-    else { pop(sel); app(opp) }
+    else {
+	pop(sel)
+	app(opp)
+    }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','#373737'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
-$('.out').bind('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel); tag($(this).scrollTop()) })
-$('.inv, .fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
+$('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel); tag($(this).scrollTop()) })
+$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].des, menu[n].uri, menu[n].ext) }
@@ -159,11 +168,11 @@ function app(n){
 	else if (n == true || n == false) opp = n
 	if (opp == true){
 		$('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('.fav').css('display','block'); $('.inv').css('display','none')
+		$('#fav').css('display','block'); $('#inv').css('display','none')
 	}
 	else if (opp == false){
 		$('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'})
-		$('.inv').css('display','block'); $('.fav').css('display','none')
+		$('#inv').css('display','block'); $('#fav').css('display','none')
 		$('html').css('background-color','rgba(38,38,38,.02)');
 	}
 }
@@ -175,10 +184,7 @@ function pop(n){
 	$(document).attr('title',n)
 	$('.out').append("<br><div class='gap'></div><div class='pop' style='margin-right:5%'><br></div>")
 	$.each(menu, function(i, k){
-		if (n == k.cat){
-			ago.push(i)
-			$('.pop').append("<div class='set "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
-		}
+		if (n == k.cat){ ago.push(i); $('.pop').append("<div class='set "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>") }
 	})
 	$('.out').append("<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
 	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
@@ -186,16 +192,16 @@ function pop(n){
 		old = null
 	}
 	else if (old!=null & ago.indexOf(old) >= ago.length - ago.length * .25){
-		var mid = ago[Math.floor(ago.length / 1.5)]
-		scr('.'+mid)
+		var end = ago[Math.floor(ago.length / 1.5)]
+		scr('.'+end)
 		old = null
 	}
-	else scr('.pop:last')
+	else scr('.pop')
 }
 function get(des, uri, ext){
 	rss = true
 	$('.gap').remove();
-	$('.out').append("<div class='gap' style='text-align:center;padding-right:.3em'>.</div><div class='get'></div>")
+	$('.out').append("<div class='gap' style='text-align:center;padding-right:.4em'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".gap").append(".") }, 1000);
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
