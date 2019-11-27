@@ -19,12 +19,8 @@
 	right: 50%;
     }
 }
-    ::-webkit-scrollbar {
-	display: none
-    }
-    div {
-	font-family: 'Roboto',Helvetica,Sans-Serif
-    }
+    ::-webkit-scrollbar { display: none }
+    div { font-family: 'Roboto',Helvetica,Sans-Serif }
     .con {
 	position: absolute;
 	height: 100%;
@@ -91,17 +87,15 @@
 <body>
     <div class="con">
 	<div class="tag" style='justify-content:center;display:flex;height:3em'>
-		<div id="News" class="cat" onclick="pop('News')">News</div>
-		<div id="Media" class="cat" onclick="pop('Media')">Media</div>
-		<div id="Social" class="cat" onclick="pop('Social')">Social</div>
-		<div id="Sport" class="cat" onclick="pop('Sport')">Sport</div>
-		<div id="Technology" class="cat" onclick="pop('Technology')">Tech</div>
-		<div id="World" class="cat" onclick="pop('World')">World</div>
+		<div id="News" class="cat">News</div>
+		<div id="Media" class="cat">Media</div>
+		<div id="Social" class="cat">Social</div>
+		<div id="Sport" class="cat">Sport</div>
+		<div id="Technology" class="cat">Tech</div>
+		<div id="World" class="cat">World</div>
 	</div>
 	<div class="out"></div>
-	<div class="favicon" style="display:flex;justify-content:center">
-		<img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png">
-	</div>
+	<div class="favicon" style="display:flex;justify-content:center"><img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png"></div>
     </div>
 <script>
 var ost = 0
@@ -117,6 +111,7 @@ var sel = 'Social'
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').hover(function(){ $(this).css('color','#AAA')}).mouseout(function(){ $(this).css('color','inherit') })
+$('.cat').on('touchstart click', function(e){ pop($(this).attr('id')) })
 $('.out').bind('scroll', function(e){
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel)
         tag($(this).scrollTop())
