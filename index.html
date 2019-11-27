@@ -31,7 +31,7 @@
     .cat {
 	display: inline-block;
 	padding-bottom: 2em;
-	padding-top: 1.3em;
+	padding-top: 1.5em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
@@ -40,10 +40,10 @@
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
 	outline: none !important;
-	margin-left: 1em;
+	padding-left: 1em;
 	scrollbar-width: none;
 	overflow: auto;
-	height: 92.5%;
+	height: 94%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -61,7 +61,7 @@
 	margin-bottom: 3em;
 	margin-right: 1em;
 	margin-left: auto;
-	font-size: 11px;
+	font-size: 13px;
 	cursor: pointer;
 	display: table;
 	padding: 1.5em;
@@ -193,7 +193,7 @@ function pop(n){
 function get(cat, des, uri, ext){
 	rss = true
 	$('.bar').remove();
-	$('.out').append("<div class='bar' style='margin-right:1em;text-align:center'>.</div><div class='get'></div>")
+	$('.out').append("<div class='bar' style='text-align:center'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".bar").append(".") }, 1000);
 	scr('.get:last')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
