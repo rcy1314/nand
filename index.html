@@ -14,13 +14,13 @@
     }
     body {
 	transform: translate(50%,50%);
+	border: 1px solid #ddd;
     	position: fixed;
 	border: none;
 	bottom: 49%;
 	height: 95%;
 	width: 45%;
 	right: 50%;
-	border: 1px solid #ddd;
     }
 }
     ::-webkit-scrollbar {
@@ -100,7 +100,7 @@
 </style>
 <body>
     <div class="con">
-	<div class="tag" style="justify-content:center;display:flex;height:1.7em;z-index:1;">
+	<div class="tag" style="justify-content:center;display:flex;height:1.7em">
 		<div id="News" class="cat">News</div>
 		<div id="Media" class="cat">Media</div>
 		<div id="Social" class="cat">Social</div>
@@ -116,27 +116,22 @@
     </div>
 <script>
 var ost = 0
+var opp = 0
 var old = null
-var opp = false
 var tap = false
 var rss = false
 var sel = 'Social'
-    if (location.href.match('\\?opp=0')) app(false)
-    else if (location.href.match('\\?opp=1')) app(true)
+    if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1])
     if (   location.href.match('\\&category=News') 
 	|| location.href.match('\\&category=Media')
 	|| location.href.match('\\&category=Social')
 	|| location.href.match('\\&category=Sport')
 	|| location.href.match('\\&category=Technology')
-	|| location.href.match('\\&category=World') )
-	pop(location.search.split('&category=')[1])
-    else {
-	pop(sel)
-	app(opp)
-    }
+	|| location.href.match('\\&category=World') ) pop(location.search.split('&category=')[1])
+    else pop(sel)
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
-$('.cat').on('touchstart click', function(e){ $('.cat').css('color','#373737'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
+$('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
 $('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel); tag($(this).scrollTop()) })
 $('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
@@ -165,12 +160,12 @@ function ago(n){
 }
 function app(n){
 	if (n == 'opp') opp = opp != true
-	else if (n == true || n == false) opp = n
-	if (opp == true){
+	else if (n == 1 || n == 0) opp = n
+	if (opp == 1){
 		$('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('#fav').css('display','block'); $('#inv').css('display','none')
 	}
-	else if (opp == false){
+	else if (opp == 0){
 		$('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'})
 		$('#inv').css('display','block'); $('#fav').css('display','none')
 		$('html').css('background-color','rgba(38,38,38,.02)');
@@ -223,8 +218,8 @@ function get(des, uri, ext){
 			$('.get').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
 					 "<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
 		})
-				$('.out').append("<br><div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
-						 "<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
+			$('.out').append("<br><div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
+					 "<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
 		scr('.get')
 		rss = false
 		app(opp)
