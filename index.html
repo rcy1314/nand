@@ -127,7 +127,7 @@ function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.o
 function tag(n){
 	console.log(n)
 	if (n < ost && n != 0) $('.tag').slideDown()
-	else if (n > ost && n > 25) $('.tag').hide()
+	else if (n > ost && n > 50) $('.tag').hide()
 	ost = n
 }
 function utc(n){
