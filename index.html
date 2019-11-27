@@ -107,7 +107,10 @@
 		<div id="World" class="cat">World</div>
 	</div>
 	<div class="out"></div>
-	<div class="favicon" style="display:flex;justify-content:center"><img class="inv" src="favicon/invert.png"><img class="fav" src="favicon/favicon.png"></div>
+	<div class="favicon" style="display:flex;justify-content:center">
+		<img class="inv" src="favicon/invert.png">
+		<img class="fav" src="favicon/favicon.png">
+	</div>
     </div>
 <script>
 var ost = 0
@@ -118,13 +121,20 @@ var rss = false
 var sel = 'Social'
     if (location.href.match('\\?opp=0')) app(false)
     else if (location.href.match('\\?opp=1')) app(true)
-    if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')) pop(location.search.split('&category=')[1])
+    if (   location.href.match('\\&category=News') 
+	|| location.href.match('\\&category=Media')
+	|| location.href.match('\\&category=Social')
+	|| location.href.match('\\&category=Sport')
+	|| location.href.match('\\&category=Technology')
+	|| location.href.match('\\&category=World'))
+	pop(location.search.split('&category=')[1])
     else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','#373737'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
 $('.out').bind('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel); tag($(this).scrollTop()) })
 $('.inv, .fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
+$('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
