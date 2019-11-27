@@ -177,7 +177,7 @@ function pop(n){
 	var ago = []
 	sel = n
 	$(document).attr('title','ack - '+n)
-	$('.out').append("<br><div class='bar'></div><div class='pop' style='margin-right:5%'></div>")
+	$('.out').append("<br><div class='bar'></div><div class='pop' style='margin-right:5%'><br></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
