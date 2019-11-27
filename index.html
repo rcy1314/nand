@@ -126,7 +126,7 @@ function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
 	console.log(n)
-	if (n < ost + 1 && n != 0) $('.tag').slideDown()
+	if (n < ost && n != 0) $('.tag').slideDown()
 	else if (n > ost && n > 25) $('.tag').hide()
 	ost = n
 }
