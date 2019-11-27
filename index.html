@@ -46,7 +46,7 @@
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
 	outline: none !important;
 	scrollbar-width: none;
-	padding-left: 1em;
+	padding-left: .3em;
 	overflow: auto;
 	height: 88%;
     }
@@ -60,6 +60,7 @@
 	width: 70%;
     }
     .clr {
+	text-align: right;
 	border-radius: 16px;
 	width: fit-content;
 	line-height: 1.6em;
@@ -75,6 +76,8 @@
 	line-height: 1.2em;
 	text-align: right;
 	font-size: 9px;
+	float: right;
+	clear: both;
     }
     .favicon {
 	transform: translate(50%,50%);
@@ -129,13 +132,9 @@ $('.out').bind('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHei
 $('.inv, .fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
 function url(n){ window.open(n) }
-function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext) }
+function xhr(n){ old = n; get(menu[n].des, menu[n].uri, menu[n].ext) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
-function tag(n){
-	if (n < ost && n != 0) $('.tag').animate({opacity:1},0)
-	else if (n > ost && n > 50) $('.tag').animate({opacity:0},0)
-	ost = n
-}
+function tag(n){ if (n < ost && n != 0){ $('.tag').animate({opacity:1},0) } else if (n > ost && n > 50){ $('.tag').animate({opacity:0},0) } ost = n }
 function utc(n){
 	var dmz = []
 	dmz.push(ago(n))
@@ -169,19 +168,19 @@ function app(n){
 	}
 }
 function pop(n){
-	$('.pop, .bar').remove()
+	$('.pop, .gap').remove()
 	if (n != sel) old = null
 	var ago = []
 	sel = n
 	$(document).attr('title',n)
-	$('.out').append("<br><div class='bar'></div><div class='pop' style='margin-right:5%'><br></div>")
+	$('.out').append("<br><div class='gap'></div><div class='pop' style='margin-right:5%'><br></div>")
 	$.each(menu, function(i, k){
 		if (n == k.cat){
 			ago.push(i)
 			$('.pop').append("<div class='set "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>")
 		}
 	})
-	$('.out').append("<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
+	$('.out').append("<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
 	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
 		old = null
@@ -193,20 +192,17 @@ function pop(n){
 	}
 	else scr('.pop:last')
 }
-function get(cat, des, uri, ext){
+function get(des, uri, ext){
 	rss = true
-	$('.bar').remove();
-	$('.out').append("<div class='bar' style='text-align:center;padding-right:1em'>.</div><div class='get'></div>")
-	var int = setInterval(function() { $(".bar").append(".") }, 1000);
-	scr('.get:last')
+	$('.gap').remove();
+	$('.out').append("<div class='gap' style='text-align:center;padding-right:.3em'>.</div><div class='get'></div>")
+	var int = setInterval(function() { $(".gap").append(".") }, 1000);
+	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='set'>&ensp;Oops! Something went wrong!</div></div>")
-			clearInterval(int)
-			rss = false
-		})
+		.fail(function(){ $('.out').append("<div class='get'><div class='set'>&ensp;Oops! Something went wrong!</div></div>"); clearInterval(int); rss = false })
 		.success(function(req){
 			clearInterval(int)
-			$('.out').append("<div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
+			$('.get').append("<div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
 			if ($(req).find('entry').length > 0) var set = "entry"
 			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
@@ -218,12 +214,12 @@ function get(cat, des, uri, ext){
 		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-			$('.out').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
-					 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
+			$('.get').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
+					 "<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
 		})
 				$('.out').append("<br><div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
-						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
-		scr('.get:last')
+						 "<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
+		scr('.get')
 		rss = false
 		app(opp)
 		})
