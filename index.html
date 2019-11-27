@@ -9,41 +9,48 @@
   </head>
 <style>
 @media only screen and (min-width: 960px) {
+    html {
+	background-color: rgba(38,38,38,.02);
+    }
     body {
 	transform: translate(50%,50%);
     	position: fixed;
 	border: none;
-	bottom: 50%;
-	height: 100%;
-	width: 50%;
+	bottom: 49%;
+	height: 93%;
+	width: 45%;
 	right: 50%;
+	border: 1px solid #ddd;
     }
 }
-    ::-webkit-scrollbar { display: none }
-    div { font-family: 'Roboto',Helvetica,Sans-Serif }
+    ::-webkit-scrollbar {
+	display: none;
+    }
+    div {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
     .con {
 	position: absolute;
-	height: 100%;
+	height: 99%;
 	width: 100%;
 	left: 0em;
 	top: .1em;
     }
     .cat {
 	display: inline-block;
-	padding-bottom: 2em;
-	padding-top: 1.5em;
 	text-align: center;
 	font-size: 12px;
 	cursor: pointer;
+	height: 2.5em;
 	width: 16.3%;
     }
     .out {
 	-ms-overflow-style: -ms-autohiding-scrollbar;	
 	outline: none !important;
-	padding-left: 1em;
 	scrollbar-width: none;
+	padding-left: .7em;
 	overflow: auto;
-	height: 94%;
+	height: 90%;
     }
     .xml {
 	padding-bottom: 2em;
@@ -74,7 +81,7 @@
     .favicon {
 	transform: translate(50%,50%);
 	position: fixed;
-	bottom: 1.4em;
+	bottom: 1.55em;
 	width: 50%;
 	right: 50%;
     }
@@ -86,7 +93,7 @@
 </style>
 <body>
     <div class="con">
-	<div class="tag" style='justify-content:center;display:flex;height:3em'>
+	<div class="tag" style="justify-content:center;display:flex;height:1.7em">
 		<div id="News" class="cat">News</div>
 		<div id="Media" class="cat">Media</div>
 		<div id="Social" class="cat">Social</div>
@@ -126,8 +133,8 @@ function xhr(n){ old = n; get(menu[n].cat, menu[n].des, menu[n].uri, menu[n].ext
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){
 	console.log(n)
-	if (n < ost && n != 0) $('.tag').slideDown()
-	else if (n > ost && n > 50) $('.tag').hide()
+	if (n < ost && n != 0) $('.tag').css('visibility','visible')
+	else if (n > ost && n > 50) $('.tag').css('visibility','hidden')
 	ost = n
 }
 function utc(n){
@@ -153,15 +160,12 @@ function app(n){
 	if (n == 'opp') opp = opp != true
 	else if (n == true || n == false) opp = n
 	if (opp == true){
-		$('body, .con, .out, .tag, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('.clr, .fav,').css('box-shadow','0px 0px 0px #000')
+		$('body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('.fav').css('display','block')
 		$('.inv').css('display','none')
 	}
 	else if (opp == false){
-		$('body, .con, .out, .clr').css({'background-color':'transparent','color':'#373737'})
-		$('.tag').css({'background-color': '#373737','color':'#EAEAEA'})
-		$('.clr, .inv').css('box-shadow','1px 1px 3px #AAA')
+		$('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'})
 		$('.inv').css('display','block')
 		$('.fav').css('display','none')
 	}
@@ -217,7 +221,7 @@ function get(cat, des, uri, ext){
 							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
 			$('.out').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
-					 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"</div></div></div>")
+					 "<div class='ago'>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
 		})
 				$('.out').append("<br><div class='xml' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
 						 "<div class='bar' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
