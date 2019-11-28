@@ -111,16 +111,15 @@ function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.o
 function tag(n){ if (n < ost && n != 0){ $('.tag').css('opacity','1'); } else if (n <= 0) { sky(sel) } else if (n > ost && n > 50){ $('.tag').css('opacity','0') } ost = n }
 function utc(n){ var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }; var dmz = []; dmz.push(ago(n)); var utc = new Date(n); var gmt = utc.toLocaleString('en-US', opt); dmz.push(gmt); return dmz }
 function ago(n){ var age = new Date(); var dis=age.getTime() - new Date(n).getTime(); var sec=dis/1000; if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'; var min=sec/60; if(min<60) return parseInt(min)+' minute'+(parseInt(min)>1?'s':'')+' ago'; var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'; var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'; var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'; var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago' }
+function rev(object) { var newObject = {}; var keys = []; for (var key in object) { keys.push(key) } for (var i = keys.length - 1; i >= 0; i--) { var value = object[keys[i]]; newObject[keys[i]]= value; } return newObject }
 function app(n){ if (n == 'opp'){ opp = opp != true } else if (n == 1 || n == 0) opp = n
 	if (opp == 1){ $('html, body, .con, .out, .log').css({'background-color':'#000','border':'none','color':'#EFEFEF'}); $('#fav').show(); $('#inv').hide(); $('hr').hide() }
 	else if (opp == 0){  $('body, .con, .out, .log').css({'background-color':'#fff','color':'#373737'}); $('.con').css('border','1px solid rgba(38,38,38,.2)'); $('html').css('background-color','rgba(38,38,38,.02)'); $('#inv').show(); $('#fav').hide(); $('hr').show() }
 }
 function sky(n){
-	pre = []
-	document.title = n + ' ack'
 	$('.sky, .arm, .gap').remove()
 	if (n != sel) his = null; sel = n
-	$.each(menu, function(i, k){ if (i == 0){ $('.out').prepend("<br><div class='sky'><br></div>") } if (n == k.cat){ pre.push(i); $('.sky').prepend("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } })
+	$.each(rev(menu.reverse()), function(i, k){ if (i == 0){ $('.out').prepend("<br><div class='sky'><br></div>") } if (n == k.cat){ $('.sky').prepend("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } })
 	$('.out').scrollTop($('.out').scrollTop() + $('.sky').outerHeight());
 	his = null
 }
