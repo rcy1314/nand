@@ -88,38 +88,38 @@
     .ico {
 	transform: translate(50%,50%);
 	position: fixed;
-	bottom: 1em;
+	bottom: 1.55em;
 	width: 50%;
 	right: 50%;
     }
-    #inv, #fav {
+    .inv, .fav {
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
     }
 </style>
 <body>
-    <div class='con'>
-	<div class='tag' style='justify-content:center;display:flex;height:1.7em'>
-		<div id='News' class='cat'>News</div>
-		<div id='Media' class='cat'>Media</div>
-		<div id='Social' class='cat'>Social</div>
-		<div id='Sport' class='cat'>Sport</div>
-		<div id='Technology' class='cat'>Tech</div>
-		<div id='World' class='cat'>World</div>
+    <div class="con">
+	<div class="tag" style="justify-content:center;display:flex;height:1.7em">
+		<div id="News" class="cat">News</div>
+		<div id="Media" class="cat">Media</div>
+		<div id="Social" class="cat">Social</div>
+		<div id="Sport" class="cat">Sport</div>
+		<div id="Technology" class="cat">Tech</div>
+		<div id="World" class="cat">World</div>
 	</div>
-	<div class='out'></div>
-	<div class='ico' style='display:flex;justify-content:center'>
-		<img id='inv' class='ico' src='favicon/invert.png'>
-		<img id='fav' class='ico' src='favicon/favicon.png'>
+	<div class="out"></div>
+	<div class="ico" style="display:flex;justify-content:center">
+		<img id="inv" class="fav" src="favicon/invert.png">
+		<img id="fav" class="fav" src="favicon/favicon.png">
 	</div>
     </div>
 <script>
 var ost = 0
 var opp = 0
-var rss = 0
-var old = 0
-var tap = 0
+var old = null
+var tap = false
+var rss = false
 var sel = 'Social'
     if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1])
     if (   location.href.match('\\&category=News') 
@@ -128,12 +128,12 @@ var sel = 'Social'
 	|| location.href.match('\\&category=Sport')
 	|| location.href.match('\\&category=Technology')
 	|| location.href.match('\\&category=World') ) pop(location.search.split('&category=')[1])
-    else { pop(sel); app(opp) }
+    else pop(sel)
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
-$('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == 0) pop(sel); tag($(this).scrollTop()) })
-$('.fav').on('touchstart click', function(e){ if (tap==0){ tap = setTimeout(function(){ tap = 0; pop(sel) }, 250) } else { clearTimeout(tap); tap = 0; app('opp') } e.preventDefault() })
+$('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (rss == false) pop(sel); tag($(this).scrollTop()) })
+$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].des, menu[n].uri, menu[n].ext) }
@@ -159,7 +159,7 @@ function ago(n){
 	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
 }
 function app(n){
-	if (n == 'opp') opp = !opp
+	if (n == 'opp') opp = opp != true
 	else if (n == 1 || n == 0) opp = n
 	if (opp == 1){
 		$('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
@@ -173,7 +173,7 @@ function app(n){
 }
 function pop(n){
 	$('.pop, .gap').remove()
-	if (n != sel) old = 0
+	if (n != sel) old = null
 	var ago = []
 	sel = n
 	$(document).attr('title',n)
@@ -182,47 +182,47 @@ function pop(n){
 		if (n == k.cat){ ago.push(i); $('.pop').append("<div class='set "+i+"' onclick='xhr("+i+")'><hr style='border-top:0px'>"+k.des+"</div>") }
 	})
 	$('.out').append("<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
-	if (old!=0 && ago.indexOf(old) <= ago.length  - ago.length * .25){
+	if (old!=null && ago.indexOf(old) <= ago.length  - ago.length * .25){
 		scr('.'+old)
-		old = 0
+		old = null
 	}
-	else if (old!=0 && ago.indexOf(old) >= ago.length - ago.length * .25){
+	else if (old!=null & ago.indexOf(old) >= ago.length - ago.length * .25){
 		var end = ago[Math.floor(ago.length / 1.5)]
 		scr('.'+end)
-		old = 0
+		old = null
 	}
 	else scr('.pop')
 }
 function get(des, uri, ext){
-	rss = 1
+	rss = true
 	$('.get, .gap').remove();
 	$('.out').append("<div class='gap' style='text-align:center;padding-right:.4em'>.</div><div class='get'></div>")
 	var int = setInterval(function() { $(".gap").append(".") }, 1000);
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/'+uri)
-		.fail(function(){ $('.out').append("<div class='get'><div class='set'>&ensp;Oops! Something went wrong!</div></div>"); clearInterval(int); rss = 0 })
+		.fail(function(){ $('.out').append("<div class='get'><div class='set'>&ensp;Oops! Something went wrong!</div></div>"); clearInterval(int); rss = false })
 		.success(function(req){
 			clearInterval(int)
 			$('.get').append("<div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>")
-			if ($(req).find('entry').length > 0)				     var set = "entry"
-			else 								     var set = 'item'
+			if ($(req).find('entry').length > 0) var set = "entry"
+			else 				     var set = 'item'
 				$(req).find(set).each(function(i, k){
 					if (i >= 19) return false
-					if (set == 'entry'){				     var ref = $(this).find('link').attr('href')
-											     var pdt = utc($(this).find('updated').text())
+					if (set == 'entry'){ var ref = $(this).find('link').attr('href')
+							     var pdt = utc($(this).find('updated').text())
 					}
-					else {						     var ref = $(this).find('link').text()
-						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
-											else var pdt = utc($(this).find('dc\\:date, date').text())
+					else {		     var ref = $(this).find('link').text()
+		if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
+							else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-					$('.get').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
-							 "<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
-				})
+			$('.get').append("<div class='pad'><div class='clr' onclick='url(\""+ref+"\")'><a>"+$(this).find("title").text()+"...</a>" +
+					 "<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='border-top:0px'></div></div></div>")
+		})
 			$('.get').append("<br><div class='set' onclick='url(\""+ext+"\")'>"+des+"</a><hr style='border-top:0px'></div>" +
 					 "<div class='gap' style='padding-bottom:"+$(".out").height()*.02+"em'></div>")
-			scr('.get')
-			app(opp)
-			rss = 0
+		scr('.get')
+		rss = false
+		app(opp)
 		})
 }
 </script>
