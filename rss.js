@@ -193,7 +193,7 @@ var menu=[
 {cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
 {cat:"Technology",des:"Inquirer publishes daily news, reviews on the latest gadgets and devices, articles for tech buffs and hobbyists.",uri:"https://www.theinquirer.net/feeds/rss/type/news",ext:"https://www.theinquirer.net"},
 {cat:"Technology",des:"Kotaku is a News and Opinion site about Games and things serious Gamers care about.",uri:"https://kotaku.com/rss",ext:"https://kotaku.com"},
-{cat:"Technology",des:"Krebs on security covering Computer security and Cybercrime.",uri:"http://feeds.feedburner.com/KrebsOncategoryurity",ext:"https://krebsoncategoryurity.com"},
+{cat:"Technology",des:"Krebs on security covering Computer security and Cybercrime.",uri:"http://feeds.feedburner.com/KrebsOnSecurity",ext:"https://krebsonsecurity.com"},
 {cat:"Technology",des:"Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",uri:"https://www.latimes.com/business/technology/rss2.0.xml",ext:"https://latimes.com/business/technology"},
 {cat:"Technology",des:"Lifehacker is the Ultimate Authority on optimizing every aspect of your life. Do everything better.",uri:"https://lifehacker.com/rss",ext:"https://lifehacker.com"},
 {cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
