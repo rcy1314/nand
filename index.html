@@ -115,7 +115,7 @@ $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
 $('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (job == false) pop(sel); tag($(this).scrollTop()) })
-$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
+$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 300) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.cat').on('mouseenter', function() { $('.tag').animate({opacity:1},0) })
 function url(n){ window.open(n) }
 function xhr(n){ old = n; get(menu[n].des, menu[n].uri, menu[n].ext) }
