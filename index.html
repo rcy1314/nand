@@ -88,11 +88,11 @@
     .ico {
 	transform: translate(50%,50%);
 	position: fixed;
-	bottom: 1.55em;
+	bottom: 1em;
 	width: 50%;
 	right: 50%;
     }
-    .inv, .fav {
+    #inv, #fav {
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
@@ -110,8 +110,8 @@
 	</div>
 	<div class='out'></div>
 	<div class='ico' style='display:flex;justify-content:center'>
-		<img id='inv' class='fav' src='favicon/invert.png'>
-		<img id='fav' class='fav' src='favicon/favicon.png'>
+		<img id='inv' class='ico' src='favicon/invert.png'>
+		<img id='fav' class='ico' src='favicon/favicon.png'>
 	</div>
     </div>
 <script>
@@ -128,7 +128,7 @@ var sel = 'Social'
 	|| location.href.match('\\&category=Sport')
 	|| location.href.match('\\&category=Technology')
 	|| location.href.match('\\&category=World') ) pop(location.search.split('&category=')[1])
-    else pop(sel)
+    else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
@@ -159,7 +159,7 @@ function ago(n){
 	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago';
 }
 function app(n){
-	if (n == 'opp') opp = opp != true
+	if (n == 'opp') opp = !opp
 	else if (n == 1 || n == 0) opp = n
 	if (opp == 1){
 		$('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
@@ -186,7 +186,7 @@ function pop(n){
 		scr('.'+old)
 		old = 0
 	}
-	else if (old!=0 & ago.indexOf(old) >= ago.length - ago.length * .25){
+	else if (old!=0 && ago.indexOf(old) >= ago.length - ago.length * .25){
 		var end = ago[Math.floor(ago.length / 1.5)]
 		scr('.'+end)
 		old = 0
