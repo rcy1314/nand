@@ -92,7 +92,7 @@
 	width: 50%;
 	right: 50%;
     }
-    .inv, .fav {
+    #inv, #fav {
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
@@ -128,7 +128,7 @@ var sel = 'Social'
 	|| location.href.match('\\&category=Sport')
 	|| location.href.match('\\&category=Technology')
 	|| location.href.match('\\&category=World') ) pop(location.search.split('&category=')[1])
-    else pop(sel)
+    else { pop(sel); app(opp) }
 $('.out').attr('tabindex',-1).focus();
 $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
