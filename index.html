@@ -46,9 +46,10 @@
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	outline: none !important;
 	scrollbar-width: none;
+	position: relative;
 	overflow: auto;
 	height: 88%;
-	
+	top: 1em;
     }
     .set {
 	padding-bottom: 2em;
@@ -119,7 +120,7 @@ function app(n){ if (n == 'opp'){ opp = opp != true } else if (n == 1 || n == 0)
 function sky(n){
 	$('.sky, .arm, .gap').remove()
 	if (n != sel) his = null; sel = n
-	$.each(rev(menu.reverse()), function(i, k){ if (i == 0){ $('.out').prepend("<br><div class='sky'><br></div>") } if (n == k.cat){ $('.sky').prepend("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } })
+	$.each(rev(menu.reverse()), function(i, k){ if (i == 0){ $('.out').prepend("<div class='sky' style='margin-top:.5em'></div>") } if (n == k.cat){ $('.sky').prepend("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } })
 	$('.out').scrollTop($('.out').scrollTop() + $('.sky').outerHeight());
 	his = null
 }
@@ -128,7 +129,7 @@ function pop(n){
 	document.title = n + ' ack'
 	$('.pop, .sky, .arm, .gap').remove()
 	if (n != sel) his = null; sel = n
-	$.each(menu, function(i, k){ if (i == 0){ $('.out').append("<br><div class='pop'><br></div>") } if (n == k.cat){ pre.push(i); $('.pop').append("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } if (i == menu.length - 1) $('.pop').append("<div class='gap'></div>") })
+	$.each(menu, function(i, k){ if (i == 0){ $('.out').append("<div class='pop' style='margin-top:.5em'></div>") } if (n == k.cat){ pre.push(i); $('.pop').append("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } if (i == menu.length - 1) $('.pop').append("<div class='gap'></div>") })
 	if (his && pre.indexOf(his)>=pre.length-pre.length*.25) scr('.'+pre[Math.floor(pre.length/1.5)])
 	else if (his && pre.indexOf(his)<=pre.length-pre.length*.25) scr('.'+his)
 	else scr('.pop')
