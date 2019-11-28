@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link rel="icon" type="image/png" href="favicon/invert.png">
+    <link rel="icon" type="image/png" href="favicon/favicon.png">
     <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <style>
@@ -14,16 +14,16 @@
 	border: 1px solid #ddd;
     	position: fixed;
 	border: none;
-	bottom: 49%;
+	bottom: 49.5%;
 	height: 95%;
 	width: 45%;
 	right: 50%;
     }
 }
-    hr { opacity: .2 }
+    hr { opacity: .1 }
     .cat:hover { color: #aaa }
+    .arm { text-align: center }
     .gap { padding-bottom: 12em }
-    #inv { box-shadow: 1px 1px 3px #aaa }
     ::-webkit-scrollbar { display: none }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
     .con {
@@ -31,12 +31,12 @@
 	height: 100%;
 	width: 100%;
 	left: 0em;
-	top: .1em;
+	top: 0em;
     }
     .cat {
 	display: inline-block;
 	text-align: center;
-	padding-top: .4em;
+	padding-top: .7em;
 	font-size: 12px;
 	cursor: pointer;
 	height: 2.5em;
@@ -48,6 +48,7 @@
 	scrollbar-width: none;
 	overflow: auto;
 	height: 88%;
+	
     }
     .set {
 	padding-bottom: 2em;
@@ -90,7 +91,7 @@
     }
 </style>
 <body>
-<div class="con"><div class="tag" style="justify-content:center;display:flex;height:1.7em"><div id="News" class="cat">News</div><div id="Media" class="cat">Media</div><div id="Social" class="cat">Social</div><div id="Sport" class="cat">Sport</div><div id="Technology" class="cat">Tech</div><div id="World" class="cat">World</div></div><div class="out"></div><div class="ico" style="display:flex;justify-content:center"><img id="inv" class="fav" src="favicon/invert.png"><img id="fav" class="fav" src="favicon/favicon.png"></div></div>
+<div class="con"><div class="tag" style="justify-content:center;display:flex;height:2em"><div id="News" class="cat">News</div><div id="Media" class="cat">Media</div><div id="Social" class="cat">Social</div><div id="Sport" class="cat">Sport</div><div id="Technology" class="cat">Tech</div><div id="World" class="cat">World</div></div><div class="out"></div><div class="ico" style="display:flex;justify-content:center"><img id="inv" class="fav" src="favicon/invert.png"><img id="fav" class="fav" src="favicon/favicon.png"></div></div>
 <script>
 var ost = 0		/*	.out.scrollTop			*/
 var opp = 0		/*	Default(1=Dark)			*/
@@ -104,20 +105,20 @@ $('.out').attr('tabindex',-1).focus(); $('.out').focusout(function(){ setTimeout
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')) })
 $('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (job == false) pop(sel); tag($(this).scrollTop()) })
 $('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
-$('.tag').on('mouseenter', function() { $(this).animate({opacity:1},0) })
+$('.tag').on('mouseenter', function() { $(this).css('opacity','1') })
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
-function tag(n){ if (n < ost && n != 0){ $('.tag').animate({opacity:1},0) } else if (n > ost && n > 50){ $('.tag').animate({opacity:0},0) } ost = n }
+function tag(n){ if (n < ost && n != 0){ $('.tag').css('opacity','1') } else if (n > ost && n > 50){ $('.tag').css('opacity','0') } ost = n }
 function utc(n){ var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }; var dmz = []; dmz.push(ago(n)); var utc = new Date(n); var gmt = utc.toLocaleString('en-US', opt); dmz.push(gmt); return dmz }
 function ago(n){ var age = new Date(); var dis=age.getTime() - new Date(n).getTime(); var sec=dis/1000; if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'; var min=sec/60; if(min<60) return parseInt(min)+' minute'+(parseInt(min)>1?'s':'')+' ago'; var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'; var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'; var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'; var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago' }
 function app(n){ if (n == 'opp'){ opp = opp != true } else if (n == 1 || n == 0) opp = n
 	if (opp == 1){ $('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'}); $('#fav').show(); $('#inv').hide(); $('hr').hide() }
-	else if (opp == 0){  $('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'}); $('html').css('background-color','rgba(38,38,38,.02)'); $('#inv').show(); $('#fav').hide(); $('hr').show() }
+	else if (opp == 0){  $('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'}); $('.con').css('border','1px solid rgba(38,38,38,.2)'); $('html').css('background-color','rgba(38,38,38,.02)'); $('#inv').show(); $('#fav').hide(); $('hr').show() }
 }
 function pop(n){
-	sel = n
 	var pre = []
 	document.title = n + ' ack'
 	$('.pop, .arm, .gap').remove()
+	if (n != sel) his = null; sel = n
 	$('.out').append("<br><div class='pop'><br></div>")
 	$.each(menu, function(i, k){ if (n == k.cat){ pre.push(i); $('.pop').append("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } if (i == menu.length - 1) $('.pop').append("<div class='gap'></div>") })
 	if      (his && pre.indexOf(his) >= pre.length - pre.length * .25) scr('.'+pre[Math.floor(pre.length/1.5)])
@@ -129,11 +130,11 @@ function get(n){
 	his = n
 	job = true
 	$('.gap').remove();
-	$('.out').append("<div class='arm' style='text-align:center'>.</div><div class='get'></div>")
-	var int = setInterval(function() { $(".arm").append(".") }, 1000);
+	$('.out').append("<div class='arm'></div><div class='get'></div>")
+	var int = setInterval(function(){ $('.arm').append('.') },1000)
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.out').append("<div class='set'>&ensp;Oops! Something went wrong!</div>"); clearInterval(int); job = false })
+		.fail(function(){    clearInterval(int); job = false })
 		.done(function(xhr){ clearInterval(int)
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
 			if ($(xhr).find('entry').length > 0)				     var set = "entry"
@@ -149,7 +150,7 @@ function get(n){
 					}
 					$('.get').append("<div class='clr' onclick='window.open(\""+ref+"\")'>"+$(this).find("title").text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr></div></div>")
 				})
-			$('.get').append("<br><div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"<hr></div><div class='gap'></div>")
+			$('.get').append("<br><div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"<hr><div class='gap'></div></div>")
 			job = false
 			scr('.get')
 		})
