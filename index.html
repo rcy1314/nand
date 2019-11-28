@@ -107,7 +107,6 @@ $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); 
 $('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (job == false) pop(sel); tag($(this).scrollTop()) })
 $('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 $('.tag').on('mouseenter', function() { $(this).css('opacity','1') })
-$('.out').click(function(){ ran() })
 function ran(n){ var n = menu[Math.floor(Math.random()*menu.length)]; get(menu.indexOf(n)) }
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){ if (n < ost && n != 0){ $('.tag').css('opacity','1') } else if (n > ost && n > 50){ $('.tag').css('opacity','0') } ost = n }
