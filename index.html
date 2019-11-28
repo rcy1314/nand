@@ -110,19 +110,18 @@ function tag(n){ if (n < ost && n != 0){ $('.tag').animate({opacity:1},0) } else
 function utc(n){ var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }; var dmz = []; dmz.push(ago(n)); var utc = new Date(n); var gmt = utc.toLocaleString('en-US', opt); dmz.push(gmt); return dmz }
 function ago(n){ var age = new Date(); var dis=age.getTime() - new Date(n).getTime(); var sec=dis/1000; if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'; var min=sec/60; if(min<60) return parseInt(min)+' minute'+(parseInt(min)>1?'s':'')+' ago'; var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'; var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'; var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'; var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago' }
 function app(n){ if (n == 'opp'){ opp = opp != true } else if (n == 1 || n == 0) opp = n
-	if (opp == 1){ $('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'}); $('#fav').show(); $('#inv').hide(); $('hr').toggle() }
+	if (opp == 1){ $('html, body, .con, .out, .clr').css({'background-color':'#000','border':'none','color':'#EFEFEF'}); $('#fav').show(); $('#inv').hide(); $('hr').hide() }
 	else if (opp == 0){  $('body, .con, .out, .clr').css({'background-color':'#fff','color':'#373737'}); $('html').css('background-color','rgba(38,38,38,.02)'); $('#inv').show(); $('#fav').hide(); $('hr').show() }
 }
 function pop(n){
 	sel = n
 	var pre = []
+	document.title = n + ' ack'
 	$('.pop, .arm, .gap').remove()
-	$(document).attr('title',n+' ack')
 	$('.out').append("<br><div class='pop'><br></div>")
-	$.each(menu, function(i, k){ if (n == k.cat){ pre.push(i); $('.pop').append("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } })
-	$('.pop').append("<div class='gap'></div>")
-	if (his  && pre.indexOf(his) >= pre.length - pre.length * .25) scr('.'+pre[Math.floor(pre.length/1.5)])
-	else if (his && pre.indexOf(his) <= pre.length  - pre.length * .25) scr('.'+his)
+	$.each(menu, function(i, k){ if (n == k.cat){ pre.push(i); $('.pop').append("<div class='set "+i+"' onclick='get("+i+")'><hr>"+k.des+"</div>") } if (i == menu.length - 1) $('.pop').append("<div class='gap'></div>") })
+	if      (his && pre.indexOf(his) >= pre.length - pre.length * .25) scr('.'+pre[Math.floor(pre.length/1.5)])
+	else if (his && pre.indexOf(his) <= pre.length - pre.length * .25) scr('.'+his)
 	else scr('.pop')
 	his = null
 }
