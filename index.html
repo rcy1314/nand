@@ -99,7 +99,7 @@ var his = 0		/*	Hist last set class		*/
 var job = false		/*	Get failsafe to pop		*/
 var alt = false		/*	Menu has been reversed		*/
 var tap = false		/*	Icon (1=pop) (2=app(opp))	*/
-var sel = 'Media'	/*	Initial Category (!Defined)	*/
+var sel = 'Social'	/*	Initial Category (!Defined)	*/
 if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1]); if (location.href.match('\\&category=News') || location.href.match('\\&category=Media') || location.href.match('\\&category=Social') || location.href.match('\\&category=Sport') || location.href.match('\\&category=Technology') || location.href.match('\\&category=World')){ pop(location.search.split('&category=')[1]) } else { pop(sel); app(opp); scr('.set:first') }
 $('.tag').on('mouseenter', function() { $(this).css('opacity','1') })
 $('.out').attr('tabindex',-1).focus(); $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
