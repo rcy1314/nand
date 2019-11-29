@@ -104,7 +104,7 @@ $('.tag').on('mouseenter', function() { $(this).css('opacity','1') })
 $('.out').attr('tabindex',-1).focus(); $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
 $('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')); scr('.pop') })
 $('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel); tag($(this).scrollTop()) })
-$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; scr('.set:first') }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
+$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel) }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
 function scr(n){ $('.out').animate({ scrollTop:$(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()}, 300) }
 function tag(n){ if (n < ost && n != 0){ $('.tag').css('opacity','1'); } else if (n <= 0 && job == false) { sky(sel) } else if (n > ost && n > 50){ $('.tag').css('opacity','0') } ost = n }
 function rev(object) { var newObject = {}; var keys = []; for (var key in object) { keys.push(key) } for (var i = keys.length - 1; i >= 0; i--) { var value = object[keys[i]]; newObject[keys[i]]= value; } return newObject }
