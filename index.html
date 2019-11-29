@@ -140,6 +140,7 @@ function pop(n){
 	sel = n
 	$('.out').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++){ if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>") }
+	scr('.pop:last');
 	his = 0
 	app()
 }
