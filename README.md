@@ -21,9 +21,7 @@ None. But here's what's used:
 
 ### Sourcing
 
-Include an iframe in your html with the [site](https://acktic.github.io) or view an [example](https://acktic.github.io/example).
-
-`<iframe src="https://acktic.github.io"></iframe>`
+[site](https://acktic.github.io)
 
 Specify an Initial category
 
@@ -34,21 +32,19 @@ Specify an Initial category
 * Technology
 * World
 
+You must define `?opp=`
+
 Default, category Media would look like...
 
-`<iframe src=https://acktic.github.io?opp=0&cat=Media"></iframe>`
+`https://acktic.github.io?opp=0&cat=Media`
 
-This would be for Initially Opposite with category Technology.
+Dark with category Technology.
 
-`<iframe src="https://acktic.github.io?opp=1&cat=Technology"></iframe>`
-
-There is also a transparency handler which only accepts one value for Default.
-
-`<iframe src="https://acktic.github.io?opp=0&cat=Media&transparent=1"></iframe>`
+`https://acktic.github.io?opp=1&cat=Technology`
 
 Remove the favicon
 
-`<iframe src='https://acktic.github.io?opp=0&transparent=1&fav=0'></iframe>`
+`https://acktic.github.io?opp=0&fav=0`
 
 ### Styling
 
@@ -56,14 +52,13 @@ Double tap icon to invert colors.
  
 ### CORS Proxy
 
-- Heroku's CORS-Anywhere Proxy
-`http://cors-anywhere.herokuapp.com/`
+- Heroku's CORS-Anywhere Proxy `http://cors-anywhere.herokuapp.com/`
 
 [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
 
 [heroku-cli](https://github.com/heroku/cli) makes it easy to create apps directly from the terminal.
 
-[npm](https://github.com/npm/cli) the package manager for JavaScript.
+[npm](https://github.com/npm/cli) the package manager for NodeJS.
 
 ```sh
 git clone https://github.com/Rob--W/cors-anywhere.git
@@ -77,7 +72,6 @@ git push heroku master
 
 Want to contribute? Great!
 - Clone this Repo
-- Submit a Feed
 - File an issue
 
 License
