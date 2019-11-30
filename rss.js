@@ -1,6 +1,5 @@
 var menu=[
 {cat:"News",des:"ABC News Youtube #News #LiveNews #ABCNewsLive #ABCNews Latest News.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
-{cat:"News",des:"BBC News Youtube World and UK news as well as local and regional perspectives.",ext:"https://www.youtube.com/feeds/videos.xml?user=BBCNews",ext:"https://www.youtube.com/user/BBCNews"},
 {cat:"News",des:"CNN Youtube latest top stories, weather, business, entertainment, politics, and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=CNN",ext:"https://www.youtube.com/user/CNN"},
 {cat:"News",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"News",des:"ABC KFSN-TV Local Fresno and national news.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
