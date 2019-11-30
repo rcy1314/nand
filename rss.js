@@ -32,6 +32,7 @@ var menu=[
 {cat:"News",des:"CBS WUSA licensed to the capital city of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com"},
 {cat:"Media",des:"ABC Entertainment Latest Celebrity News, Videos and Photos.",uri:"https://abcnews.go.com/abcnews/entertainmentheadlines",ext:"https://abcnews.go.com/entertainment"},
 {cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
+{cat:"Media",des:"AOL Youtube a global brand company that develops, grows, and invests in fantastic video production.",uri:"https://www.youtube.com/feeds/videos.xml?user=aol",ext:"https://www.youtube.com/user/aol"},
 {cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {cat:"Media",des:"BBC News Entertainment, Lifestyle, and Arts.",uri:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
 {cat:"Media",des:"BuzzFeed is an American Internet Media, News, and Entertainment Company.",uri:"https://www.buzzfeed.com/index.xml",ext:"https://www.buzzfeed.com"},
