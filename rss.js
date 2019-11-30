@@ -36,6 +36,7 @@ var menu=[
 {cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {cat:"Media",des:"BBC News Entertainment, Lifestyle, and Arts.",uri:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
 {cat:"Media",des:"BuzzFeed is an American Internet Media, News, and Entertainment Company.",uri:"https://www.buzzfeed.com/index.xml",ext:"https://www.buzzfeed.com"},
+{cat:"Media",des:"BuzzFeedVideo Youtube New videos posted daily! See behind-the-scenes & more.",uri:"https://www.youtube.com/feeds/videos.xml?user=BuzzFeedVideo",ext:"https://www.youtube.com/user/BuzzFeedVideo"}, 
 {cat:"Media",des:"ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",uri:"https://www.comingsoon.net/feed",ext:"https://comingsoon.net"},
 {cat:"Media",des:"CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",uri:"https://www.cbsnews.com/latest/rss/entertainment",ext:"https://cbsnews.com/latest/rss/entertainment"},
 {cat:"Media",des:"Celebrity Hub subreddit Pictures and GIFs of Actresses, Singers, Models, Athletes and Celebs.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/celebhub"},
