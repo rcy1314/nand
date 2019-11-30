@@ -21,7 +21,7 @@ None. But here's what's used:
 
 ### Sourcing
 
-Include an iframe in your html with the [site](https://acktic.github.io).
+Include an iframe in your html with the [site](https://acktic.github.io) or view an [example](https://acktic.github.io/example).
 
 `<iframe src="https://acktic.github.io"></iframe>`
 
