@@ -77,7 +77,6 @@ var menu=[
 {cat:"Media",des:"Washington Times Show Business News and Entertainment News.",uri:"https://www.washingtontimes.com/rss/headlines/culture/entertainment",ext:"https://washingtontimes.com/culture/entertainment"},
 {cat:"Media",des:"Yahoo Celebrity Latest News and Gossip on the World's Celebrities.",uri:"https://www.yahoo.com/celebrity/rss",ext:"https://yahoo.com/celebrity"},
 {cat:"Media",des:"Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",uri:"https://www.yahoo.com/entertainment/rss",ext:"https://yahoo.com/entertainment"},
-{cat:"Media",des:"Yahoo Youtube documenting the unflinching and unapologetic voices of real Americans.",uri:"https://www.youtube.com/feeds/videos.xml?user=yahoo",ext:"https://www.youtube.com/user/yahoo"},
 {cat:"Social",des:"Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",uri:"https://reddit.com/r/apple/.rss",ext:"https://reddit.com/r/apple"},
 {cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/android"},
 {cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/Amd"},
