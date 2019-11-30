@@ -291,6 +291,7 @@ var menu=[
 {cat:"World",des:"Telegraph.co.uk for the latest news from the UK and around the world.",uri:"https://www.telegraph.co.uk/rss.xml",ext:"https://www.telegraph.co.uk"},
 {cat:"World",des:"The Age National News from Australia, World News, Business News and Breaking News stories.",uri:"https://www.theage.com.au/rss/feed.xml",ext:"https://www.theage.com.au"},
 {cat:"World",des:"Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",uri:"http://feeds.feedburner.com/time/topstories?format=xml",ext:"https://time.com"},
+{cat:"World",des:"United Nations Top Stories Global perspective, human stories.",uri:"https://news.un.org/feed/subscribe/en/news/all/rss.xml",ext:"https://www.un.org"},
 {cat:"World",des:"United Press International is a leading provider of news, photos and information.",uri:"https://rss.upi.com/news/news.rss",ext:"https://upi.com"},
 {cat:"World",des:"USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",uri:"http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",ext:"https://www.usatoday.com"},
 {cat:"World",des:"Vice Original reporting and documentaries on everything that matters in the world.",uri:"https://www.vice.com/en_us/rss",ext:"https://vice.com"},
