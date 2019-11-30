@@ -147,11 +147,58 @@ else {
 	scr('.pop:first')
 }
 
-$('.tag').on('mouseenter', function() { $(this).css('opacity','1') })
-$('.out').attr('tabindex',-1).focus(); $('.out').focusout(function(){ setTimeout(function(){ $('.out').focus() }, 100) })
-$('.cat').on('touchstart click', function(e){ $('.cat').css('color','inherit'); $(this).css('color','#AAA'); pop($(this).attr('id')); scr('.pop:last') })
-$('.out').on('scroll', function(e){ if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel); tag($(this).scrollTop()) })
-$('.fav').on('touchstart click', function(e){ if (!tap){ tap = setTimeout(function(){ tap = null; pop(sel); scr('.pop') }, 250) } else { clearTimeout(tap); tap = null; app('opp') } e.preventDefault() })
+$('.tag').on('mouseenter', function() {
+
+	$(this).css('opacity','1')
+
+})
+
+$('.out').attr('tabindex',-1).focus()
+
+$('.out').focusout(function(){
+
+	setTimeout(function(){
+		$('.out').focus()
+	}, 100)
+
+ })
+
+$('.cat').on('touchstart click', function(e){
+
+	$('.cat').css('color','inherit')
+	$(this).css('color','#AAA')
+	pop($(this).attr('id'))
+	scr('.pop:last')
+
+})
+
+$('.out').on('scroll', function(e){
+
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
+		if (job == false)
+			pop(sel)
+			tag($(this).scrollTop()
+	)
+
+})
+
+$('.fav').on('touchstart click', function(e){
+
+	if (!tap){
+		tap = setTimeout(function(){
+			tap = null
+			pop(sel)
+			scr('.pop')
+		}, 250)
+	}
+	else {
+		clearTimeout(tap)
+		tap = null
+		app('opp')
+	}
+    e.preventDefault()
+
+})
 
 function scr(n){
 
@@ -236,9 +283,12 @@ function app(n){
 
 function air(n){
 
-	sel = n
 	$('.out').prepend("<div class='air'></div>")
-	$.each(rev(menu.reverse()), function(i, k){ if (n == k.cat){ $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>") } })
+	$.each(rev(menu.reverse()), function(i, k){
+		if (n == k.cat){
+			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>")
+		}
+	})
 	$('.out').scrollTop($('.out').scrollTop() + $('.air:first').outerHeight())
 	his = 0
 	app()
@@ -252,7 +302,9 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.out').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++){ if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>") }
+	for (var i = his; i < menu.length; i++){
+		if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
+	}
 	his = 0
 	app()
 
