@@ -126,7 +126,6 @@ function app(n){
 	}
 }
 function air(n){
-	if (n != sel) his = 0
 	sel = n
 	$('.out').prepend("<div class='air'></div>")
 	$.each(rev(menu.reverse()), function(i, k){ if (n == k.cat){ $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>") } })
