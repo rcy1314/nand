@@ -7,7 +7,7 @@
 
 ### Dependencies
 
-Here's what's used:
+None. But here's what's used:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
