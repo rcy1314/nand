@@ -28,8 +28,8 @@ Include an iframe in your html with the [site](https://acktic.github.io).
 Specify an Initial category
 
 * News
-* Style
 * Media
+* Social
 * Sports
 * Technology
 * World
