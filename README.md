@@ -42,6 +42,10 @@ This would be for Initially Opposite with category Technology.
 
 `<iframe src="https://acktic.github.io?opp=1&cat=Technology"></iframe>`
 
+There is also a transparency handler which only accepts one value for Default.
+
+`<iframe src="https://acktic.github.io?opp=0&cat=Media&transparency=1"></iframe>
+
 ### Styling
 
 Double tap icon to invert colors.
