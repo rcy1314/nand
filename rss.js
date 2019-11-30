@@ -198,6 +198,7 @@ var menu=[
 {cat:"Technology",des:"Lifehacker is the Ultimate Authority on optimizing every aspect of your life. Do everything better.",uri:"https://lifehacker.com/rss",ext:"https://lifehacker.com"},
 {cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
 {cat:"Technology",des:"Linux.com News For Open Source Professionals.",uri:"https://www.linux.com/feed",ext:"https://linux.com"},
+{cat:"Technology",des:"Linux Magazine keeps the emphasis on real-life, practical techniques.",uri:"http://www.linux-magazine.com/rss/feed/lmi_full",ext:"http://www.linux-magazine.com"},
 {cat:"Technology",des:"Medium's advice for Programmers covering Tutorials, Leadership, Management, and Productivity.",uri:"https://medium.com/feed/better-programming",ext:"https://medium.com/better-programming"},
 {cat:"Technology",des:"Mirror.co.uk Techs Best Stories, Opinion, Pictures and Video.",uri:"https://www.mirror.co.uk/tech/?service=rss",ext:"https://mirror.co.uk/tech"},
 {cat:"Technology",des:"MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",uri:"http://news.mit.edu/rss/feed",ext:"http://news.mit.edu"},
