@@ -93,6 +93,7 @@ var menu=[
 {cat:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",uri:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/games"},
 {cat:"Social",des:"Gnome subreddit about the Gnome Project a free and open source desktop and computing platform.",uri:"https://reddit.com/r/gnome/.rss",ext:"https://www.reddit.com/r/gnome"},
 {cat:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",uri:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
+{cat:"Social",des:"HR High Resolution Board for everything High Resolution.",uri:"http://boards.4chan.org/hr/index.rss",ext:"http://boards.4chan.org/hr"},
 {cat:"Social",des:"iOS subreddit for everything Apple iOS.",uri:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
 {cat:"Social",des:"Javascript subreddit all about the JavaScript Programming Language.",uri:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
 {cat:"Social",des:"i3 Official FAQ subreddit for the i3 window manager.",uri:"https://www.reddit.com/r/i3wm/.rss",ext:"https://www.reddit.com/r/i3wm"},
