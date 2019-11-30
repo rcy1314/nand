@@ -240,6 +240,7 @@ var menu=[
 {cat:"Technology",des:"Yahoo is a web services provider headquartered in California, and owned by Verizon Media.",uri:"https://www.yahoo.com/tech/rss",ext:"https://finance.yahoo.com/tech"},
 {cat:"Technology",des:"ZDNet is a business technology news website published by CBS Interactive.",uri:"https://www.zdnet.com/news/rss.xml",ext:"https://zdnet.com"},
 {cat:"World",des:"ABC is an American broadcast television network that is property of Walt Disney.",uri:"https://abcnews.go.com/abcnews/internationalheadlines",ext:"https://abc.com"},
+{cat:"World",des:"Al Jazeera is an Arabic-language television channel from Doha, Qatar.",uri:"https://www.aljazeera.com/xml/rss/all.xml",ext:"https://www.aljazeera.com"},
 {cat:"World",des:"BBC is the world’s leading public service broadcaster.",uri:"http://feeds.bbci.co.uk/news/rss.xml",ext:"https://bbc.com"},
 {cat:"World",des:"Bloomberg delivers business and markets news, data, analysis, and video.",uri:"https://www.bloomberg.com/view/rss",ext:"https://bloomberg.com"},
 {cat:"World",des:"Boston is a regional website that offers news and information about Boston, Massachusetts.",uri:"https://www.boston.com/tag/world-news/feed",ext:"https://www.boston.com/tag/world-news"},
