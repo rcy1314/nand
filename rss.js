@@ -68,6 +68,7 @@ var menu=[
 {cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {cat:"Media",des:"RollingStone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {cat:"Media",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
+{cat:"Media",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
 {cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {cat:"Media",des:"TMZ Youtube breaking celebrity news, gossip, and insight.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZ",ext:"https://www.youtube.com/user/TMZ"},
 {cat:"Media",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
@@ -127,6 +128,7 @@ var menu=[
 {cat:"Sport",des:"BBC Sports News from around the world.",uri:"http://feeds.bbci.co.uk/sport/rss.xml",ext:"https://bbc.com/sport"},
 {cat:"Sport",des:"Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. ",uri:"https://www.bjpenn.com/feed",ext:"https://bjpenn.com"},
 {cat:"Sport",des:"Bleacher Report is a website that focuses on sport and sports culture.",uri:"https://bleacherreport.com/articles/feed",ext:"https://bleacherreport.com"},
+{cat:"Sport",des:"Bleacher Report Youtube ports highlights, features and animations that drive fandom.",uri:"https://www.youtube.com/feeds/videos.xml?user=BleacherReport",ext:"https://www.youtube.com/user/BleacherReport"},
 {cat:"Sport",des:"Cars subreddit the largest automotive enthusiast community on the Internet.",uri:"https://reddit.com/r/cars/.rss",ext:"https://reddit.com/r/cars"},
 {cat:"Sport",des:"CBS Sports is an American Sports News website operated by CBS Interactive.",uri:"https://rss.cbssports.com/rss/headlines",ext:"https://cbssports.com"},
 {cat:"Sport",des:"CFB subreddit forum for all things college football focusing on NCAA football.",uri:"https://reddit.com/r/cfb/.rss",ext:"https://reddit.com/r/cfb"},
@@ -134,6 +136,7 @@ var menu=[
 {cat:"Sport",des:"Deadspin brings you the Latest Sports News, Stories, Videos, and more.",uri:"https://deadspin.com/rss",ext:"https://deadspin.com"},
 {cat:"Sport",des:"Digital Trends world of cars, speed and power.",uri:"https://www.digitaltrends.com/cars/feed",ext:"https://digitaltrends.com/cars"},
 {cat:"Sport",des:"ESPN is a cable network that plays Live and taped Sporting Events.",uri:"https://www.espn.com/espn/rss/news",ext:"https://espn.com"},
+{cat:"Sport",des:"ESPN Youtube features up-to-the-minute sports news coverage, scores, highlights and commentary.",uri:"https://www.youtube.com/feeds/videos.xml?user=ESNP",ext:"https://www.youtube.com/user/ESPN"},
 {cat:"Sport",des:"ESPN NFL Football News, Scores, Stats, Standings, Fantasy games, and more.",uri:"http://www.espn.com/espn/rss/nfl/news",ext:"https://espn.com/nfl"},
 {cat:"Sport",des:"ESPN NBA Team Stats, Schedules, Rosters, Depth charts and more.",uri:"http://www.espn.com/espn/rss/nba/news",ext:"https://espn.com/nba"},
 {cat:"Sport",des:"ESPN MLB Baseball News, Scores, Stats, Standings, Fantasy games, and more.",uri:"http://www.espn.com/espn/rss/mlb/news",ext:"https://espn.com/mlb"},
@@ -169,6 +172,7 @@ var menu=[
 {cat:"Sport",des:"Sports subreddit for all the Latest Headlines and Discussion in Sports.",uri:"https://reddit.com/r/sports/.rss",ext:"https://reddit.com/r/sports"},
 {cat:"Sport",des:"Telegraph Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
 {cat:"Sport",des:"Tennis subreddit discusses Tennis, from Tour Professionals to Recreational Players.",uri:"https://reddit.com/r/tennis/.rss",ext:"https://reddit.com/r/tennis"},
+{cat:"Sport",des:"The Score Trending News, Announcements, Highlights, and Analysis.",uri:"https://feeds.thescore.com/trending.rss",ext:"https://thescore.com"},
 {cat:"Sport",des:"The Score MLB Trending News & Rumors for Baseball, and More.",uri:"https://feeds.thescore.com/mlb.rss",ext:"https://thescore.com/mlb/news"},
 {cat:"Sport",des:"The Score MMA headlines, news, and analysis.",uri:"https://feeds.thescore.com/mma.rss",ext:"https://thescore.com/mma/news"},
 {cat:"Sport",des:"The Score NBA Scores, Stats, News, Rumors, Videos, Standings, Teams.",uri:"https://feeds.thescore.com/nba.rss",ext:"https://www.thescore.com/nba/news"},
@@ -290,5 +294,6 @@ var menu=[
 {cat:"World",des:"United Press International is a leading provider of news, photos and information.",uri:"https://rss.upi.com/news/news.rss",ext:"https://upi.com"},
 {cat:"World",des:"USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",uri:"http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",ext:"https://www.usatoday.com"},
 {cat:"World",des:"Vice Original reporting and documentaries on everything that matters in the world.",uri:"https://www.vice.com/en_us/rss",ext:"https://vice.com"},
+{cat:"World",des:"Vice News Youtube is the breaking, break-through news you need.",uri:"https://www.youtube.com/feeds/videos.xml?user=vicenews",ext:"https://www.youtube.com/user/vicenews"},
 {cat:"World",des:"Washington Times World News, Middle East News, Afghanistan War.",uri:"https://www.washingtontimes.com/rss/headlines/news/world",ext:"https://washingtontimes.com/news/world"}
 ]
