@@ -121,14 +121,14 @@
 var ost = 0		/*	.out.scrollTop() used in tag()	*/
 var opp = 0		/*	Default(1=Dark)	used in app()	*/
 var his = 0		/*	Hist set class used in pop()    */
-var art = '#fff'	/* 	app(0) Initial Background 	*/
+var see = '#fff'	/* 	app(0) Initial Background 	*/
 var job = false		/*	Get failsafe used in .out tag()	*/
 var tap = false		/*	(1=pop) (2=app(opp))     	*/
 var sel = 'Social'	/*	Initial Category if (!Defined)	*/
 
 if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1])
 
-if (location.href.match('\\&transparent=1')) art = 'transparent'
+if (location.href.match('\\&transparent=1')) see = 'transparent'
 
 if (location.href.match('\\&fav=0')) $('.ico').css('visibility','hidden')
 
@@ -273,7 +273,7 @@ function app(n){
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 	}
 	else if (opp == 0){
-		$('body, .con, .out').css({'background-color': art,'color':'#373737'})
+		$('body, .con, .out').css({'background-color': see,'color':'#373737'})
 		$('.con').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
 		$('#inv').show(); $('#fav').hide(); $('hr').show()
