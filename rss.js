@@ -168,7 +168,7 @@ var menu=[
 {cat:"Sport",des:"SP is a sports board that discusses International Sports.",uri:"http://boards.4chan.org/sp/index.rss",ext:"http://boards.4channel.org/sp/"},
 {cat:"Sport",des:"Sporting News was established in 1886 as a weekly U.S. Magazine.",uri:"http://www.sportingnews.com/us/rss",ext:"http://sportingnews.com"},
 {cat:"Sport",des:"Sports subreddit for all the Latest Headlines and Discussion in Sports.",uri:"https://reddit.com/r/sports/.rss",ext:"https://reddit.com/r/sports"},
-{cat:"Sport",des:"Telegraph Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
+{cat:"Sport",des:"Telegraph.co.uk Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
 {cat:"Sport",des:"Tennis subreddit discusses Tennis, from Tour Professionals to Recreational Players.",uri:"https://reddit.com/r/tennis/.rss",ext:"https://reddit.com/r/tennis"},
 {cat:"Sport",des:"The Score Trending News, Announcements, Highlights, and Analysis.",uri:"https://feeds.thescore.com/trending.rss",ext:"https://thescore.com"},
 {cat:"Sport",des:"The Score MLB Trending News & Rumors for Baseball, and More.",uri:"https://feeds.thescore.com/mlb.rss",ext:"https://thescore.com/mlb/news"},
