@@ -7,7 +7,7 @@
     <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <style>
-@media only screen and (min-width: 960px) {
+@media screen and (max-width: 960px) {
     html {
 	background-color: rgba(38,38,38,.02)
     }
@@ -22,6 +22,24 @@
 	right: 50%;
     }
 }
+    div {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    }
+    .arm {
+	text-align: center; margin-right: .3em
+    }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    .cat:hover {
+	color: #aaa
+    }
+    .tag {
+	opacity: 0
+    }
+    hr {
+	opacity: .2
+    }
     .con {
 	position: absolute;
 	height: 100%;
@@ -84,24 +102,6 @@
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
-    }
-    div {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
-    }
-    .arm {
-	text-align: center; margin-right: .3em
-    }
-    ::-webkit-scrollbar {
-	display: none
-    }
-    .cat:hover {
-	color: #aaa
-    }
-    .tag {
-	opacity: 0
-    }
-    hr {
-	opacity: .2
     }
 </style>
 <body>
