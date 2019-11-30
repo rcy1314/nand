@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon/favicon.png">
+    <script src="https://acktic.github.io/rss.js"></script>
+  </head>
+<style>
+@media only screen and (min-width: 960px) {
+    html {
+                background-image: url(https://ackti.files.wordpress.com/2019/11/1575040490349.jpg);
+                background-position: center;
+                background-size: cover;
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                left: 0em;
+                top: 0em;
+    }
+    body {
+	transform: translate(50%,50%);
+	border: 1px solid #ddd;
+    	position: fixed;
+	border: none;
+	bottom: 49.5%;
+	height: 95%;
+	width: 35%;
+	right: 20%;
+    }
+}
+    div {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    }
+    .arm {
+	text-align: center; margin-right: .3em
+    }
+    ::-webkit-scrollbar {
+	display: none
+    }
+    .cat:hover {
+	color: #aaa
+    }
+    .tag {
+	opacity: 0
+    }
+    hr {
+	opacity: .2
+    }
+    .con {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0em;
+	top: 0em;
+    }
+    .cat {
+	display: inline-block;
+	text-align: center;
+	padding-top: 1em;
+	font-size: 11px;
+	cursor: default;
+	height: 2.5em;
+	width: 16.3%;
+    }
+    .out {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	outline: none !important;
+	scrollbar-width: none;
+	overflow: auto;
+	height: 88.5%;
+    }
+    .set {
+	padding-bottom: 2em;
+	line-height: 1.4em;
+	margin-left: 15%;
+	font-size: 13px;
+	cursor: default;
+	height: 5em;
+	width: 70%;
+    }
+    .end {
+	width: fit-content;
+	line-height: 1.6em;
+	margin-bottom: 3em;
+	text-align: right;
+	margin-left: auto;
+	font-size: 13px;
+	cursor: pointer;
+	display: table;
+	padding: 1.5em;
+    }
+    .ago {
+	line-height: 1.4em;
+	text-align: right;
+	font-size: 9px;
+	float: right;
+    }
+    .ico {
+	transform: translate(50%,50%);
+	position: fixed;
+	bottom: 1.5em;
+	width: 50%;
+	right: 50%;
+    }
+    #fav, #inv {
+	border-radius: 24px;
+	height: 40px;
+	width: 40px;
+    }
+</style>
+<body>
+<div class="con">
+	<div class="tag" style="justify-content:center;display:flex;height:2em">
+		<div id="News" class="cat">News</div>
+		<div id="Media" class="cat">Media</div>
+		<div id="Social" class="cat">Social</div>
+		<div id="Sport" class="cat">Sport</div>
+		<div id="Technology" class="cat">Tech</div>
+		<div id="World" class="cat">World</div>
+	</div>
+	<div class="out"></div>
+	<div class="ico" style="display:flex;justify-content:center">
+		<img id="inv" class="fav" src="favicon/invert.png">
+		<img id="fav" class="fav" src="favicon/favicon.png">
+	</div>
+</div>
+<script>
+
+var ost = 0		/*	.out.scrollTop			*/
+var opp = 0		/*	Default(1=Dark)			*/
+var his = 0		/*	Hist last set class		*/
+var job = false		/*	Get failsafe to pop		*/
+var alt = false		/*	Menu has been reversed		*/
+var tap = false		/*	Icon (1=pop) (2=app(opp))	*/
+var sel = 'Social'	/*	Initial Category (!Defined)	*/
+
+if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1])
+
+if (location.href.match('\\&category=News')
+ || location.href.match('\\&category=Media')
+ || location.href.match('\\&category=Social')
+ || location.href.match('\\&category=Sport')
+ || location.href.match('\\&category=Technology')
+ || location.href.match('\\&category=World')){
+	pop(location.search.split('&category=')[1])
+}
+
+else {
+	pop(sel)
+	app(opp)
+	scr('.pop:first')
+}
+
+$('.tag').on('mouseenter', function() {
+
+	$(this).css('opacity','1')
+
+})
+
+$('.out').attr('tabindex', -1).focus()
+
+$('.out').focusout(function(){
+
+	setTimeout(function(){
+		$('.out').focus()
+	}, 100)
+
+ })
+
+$('.cat').on('touchstart click', function(e){
+
+	$('.cat').css('color','inherit')
+	$(this).css('color','#aaa')
+	pop($(this).attr('id'))
+	scr('.pop:last')
+
+})
+
+$('.out').on('scroll', function(e){
+
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
+		if (job == false)
+			pop(sel)
+			tag($(this).scrollTop())
+
+})
+
+$('.fav').on('touchstart click', function(e){
+
+	if (!tap){
+		tap = setTimeout(function(){
+			tap = null
+			pop(sel)
+			scr('.pop')
+		}, 250)
+	}
+	else {
+		clearTimeout(tap)
+		tap = null
+		app('opp')
+	}
+
+    e.preventDefault()
+
+})
+
+function scr(n){
+
+	$('.out').animate({
+		scrollTop: $(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()
+	}, 300)
+
+}
+
+function tag(n){
+
+	if (n < ost && n != 0){
+		$('.tag').css('opacity','1')
+	}
+	else if (n <= 0 && job == false) {
+		air(sel)
+	}
+	else if (n > ost && n > 50){
+		$('.tag').css('opacity','0')
+	}
+
+    ost = n
+
+}
+
+function rev(n) {
+
+	alt = true
+	var newn = {}
+	var keys = []
+	for (var key in n) {
+		keys.push(key)
+	}
+	for (var i = keys.length - 1; i >= 0; i--) {
+		var value = n[keys[i]]
+		newn[keys[i]] = value
+	}
+
+   return newn
+
+}
+
+function utc(n){
+
+	var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }
+	var dmz = []
+	dmz.push(ago(n))
+	var utc = new Date(n)
+	var gmt = utc.toLocaleString('en-US', opt)
+	dmz.push(gmt)
+
+    return dmz
+
+}
+
+function ago(n){
+
+	var age = new Date()
+	var dis=age.getTime() - new Date(n).getTime()
+	var sec=dis/1000
+	if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'
+	var min=sec/60; if(min<60) return parseInt(min)+' minute'+(parseInt(min)>1?'s':'')+' ago'
+	var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'
+	var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'
+	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'
+	var y=m/121;
+
+    return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago'
+
+}
+
+function app(n){
+
+	if (n == 'opp'){ opp = opp != true }
+	else if (n == 1 || n == 0) opp = n
+
+	if (opp == 1){
+		$('html, body, .con, .out').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('#fav').show(); $('#inv').hide(); $('hr').hide()
+	}
+	else if (opp == 0){
+		$('body, .con, .out').css({'background-color':'transparent','color':'#373737'})
+		$('.con').css('border','1px solid rgba(38,38,38,.2)')
+		$('html').css('background-color','rgba(38,38,38,.02)')
+		$('#inv').show(); $('#fav').hide(); $('hr').show()
+	}
+
+}
+
+function air(n){
+
+	$('.out').prepend("<div class='air'></div>")
+	$.each(rev(menu.reverse()), function(i, k){
+		if (n == k.cat)
+			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>")
+	})
+	$('.out').scrollTop($('.out').scrollTop() + $('.air:first').outerHeight())
+	his = 0
+	app()
+
+}
+
+function pop(n){
+
+	if (alt==true) rev(menu.reverse()); alt = false;
+	document.title = n + ' ack'
+	if (n != sel) his = 0
+	sel = n
+	$('.out').append("<div class='pop'></div>")
+	for (var i = his; i < menu.length; i++){
+		if (n == menu[i].cat)
+			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
+	}
+	his = 0
+	app()
+
+}
+
+function get(n){
+
+	his = n
+	job = true
+	$('.pop, .air, .get, .arm').remove()
+	$('.out').append("<div class='arm'>.</div><br><div class='get'></div>")
+
+	var int = setInterval(function(){
+		$('.arm').append('.')
+	}, 1000)
+
+	scr('.get')
+	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+
+		.fail(function(){    clearInterval(int); job = false; pop(sel) })
+		.done(function(xhr){ clearInterval(int)
+
+
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
+			if ($(xhr).find('entry').length > 0)				     var set = "entry"
+			else 								     var set = 'item'
+				$(xhr).find(set).each(function(i){
+					if (i >= 19) return false
+
+					if (set == 'entry'){				     var ref = $(this).find('link').attr('href')
+											     var pdt = utc($(this).find('updated').text())
+					}
+					else {						     var ref = $(this).find('link').text()
+						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
+											else var pdt = utc($(this).find('dc\\:date, date').text())
+					}
+
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>" +$(this).find("title").text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr></div></div>")
+				})
+
+			job = false
+			scr('.get')
+			app()
+		})
+}
+</script>
+</body>
+</html>
