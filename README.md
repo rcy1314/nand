@@ -44,7 +44,7 @@ This would be for Initially Opposite with category Technology.
 
 There is also a transparency handler which only accepts one value for Default.
 
-`<iframe src="https://acktic.github.io?opp=0&cat=Media&transparency=1"></iframe>
+`<iframe src="https://acktic.github.io?opp=0&cat=Media&transparent=1"></iframe>
 
 ### Styling
 
