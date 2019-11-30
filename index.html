@@ -22,30 +22,25 @@
 	right: 50%;
     }
 }
-    div {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
-    }
-    .arm {
-	text-align: center; margin-right: .3em
-    }
-    ::-webkit-scrollbar {
-	display: none
-    }
-    .cat:hover {
-	color: #aaa
-    }
-    .tag {
-	opacity: 0
-    }
-    hr {
-	opacity: .2
-    }
+    div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
+
+    ::-webkit-scrollbar { display: none }
+
+    .cat:hover { color: #aaa }
+
     .con {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	left: 0em;
 	top: 0em;
+    }
+
+    .tag {
+	justify-content: center;
+	display:flex;
+	height:2em;
+	opacity:0;
     }
     .cat {
 	display: inline-block;
@@ -93,8 +88,10 @@
     }
     .ico {
 	transform: translate(50%,50%);
+	justify-content: center;
 	position: fixed;
 	bottom: 1.5em;
+	display: flex;
 	width: 50%;
 	right: 50%;
     }
@@ -105,19 +102,19 @@
     }
 </style>
 <body>
-<div class="con">
-	<div class="tag" style="justify-content:center;display:flex;height:2em">
-		<div id="News" class="cat">News</div>
-		<div id="Media" class="cat">Media</div>
-		<div id="Social" class="cat">Social</div>
-		<div id="Sport" class="cat">Sport</div>
-		<div id="Technology" class="cat">Tech</div>
-		<div id="World" class="cat">World</div>
+<div class='con'>
+	<div class='tag'>
+		<div id="News" class='cat'>News</div>
+		<div id="Media" class='cat'>Media</div>
+		<div id="Social" class='cat'>Social</div>
+		<div id="Sport" class='cat'>Sport</div>
+		<div id="Technology" class='cat'>Tech</div>
+		<div id="World" class='cat'>World</div>
 	</div>
-	<div class="out"></div>
-	<div class="ico" style="display:flex;justify-content:center">
-		<img id="inv" class="fav" src="favicon/invert.png">
-		<img id="fav" class="fav" src="favicon/favicon.png">
+	<div class='out'></div>
+	<div class='ico'>
+		<img id='inv' class='fav' src='favicon/invert.png'>
+		<img id='fav' class='fav' src='favicon/favicon.png'>
 	</div>
 </div>
 <script>
@@ -291,7 +288,7 @@ function air(n){
 	$('.out').prepend("<div class='air'></div>")
 	$.each(rev(menu.reverse()), function(i, k){
 		if (n == k.cat)
-			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>")
+			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+k.des+"</div>")
 	})
 	$('.out').scrollTop($('.out').scrollTop() + $('.air:first').outerHeight())
 	app()
@@ -310,7 +307,7 @@ function pop(n){
 
 	for (var i = his; i < menu.length; i++){
 		if (n == menu[i].cat)
-			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
+			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+menu[i].des+"</div>")
 	}
 	his = 0
 	app()
@@ -322,7 +319,7 @@ function get(n){
 	his = n
 	job = true
 	$('.pop, .air, .get, .arm').remove()
-	$('.out').append("<div class='arm'>.</div><br><div class='get'></div>")
+	$('.out').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")
 
 	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
 
@@ -332,7 +329,7 @@ function get(n){
 		.fail(function(){    clearInterval(int); job = false; pop(sel) })
 		.done(function(xhr){ clearInterval(int)
 
-			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
 			if ($(xhr).find('entry').length > 0)				     var set = "entry"
 			else 								     var set = 'item'
 				$(xhr).find(set).each(function(i){
@@ -347,7 +344,7 @@ function get(n){
 					}
 
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>" +$(this).find("title").text()+"...<br>" +
-							 "<div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr></div></div>")
+							 "<div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
 
 			job = false
