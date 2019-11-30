@@ -51,6 +51,7 @@ var menu=[
 {cat:"Media",des:"HuffingtonPost Latest Entertainment News, Photos, Videos and more.",uri:"https://www.huffpost.com/dept/entertainment/feed",ext:"https://www.huffpost.com/entertainment"},
 {cat:"Media",des:"HuffingtonPost TV and Film news and scoops about your favorite TV shows and movies.",uri:"https://www.huffpost.com/section/tv/feed",ext:"https://www.huffpost.com/entertainment/tv"},
 {cat:"Media",des:"IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",uri:"https://www.indiewire.com/feed",ext:"https://www.indiewire.com"},
+{cat:"Media",des:"Inside Edition Entertainment Entertainment news, headlines, stories, photos, and videos.",uri:"https://www.insideedition.com/entertainment/rss",ext:"https://www.insideedition.com/entertainment"},
 {cat:"Media",des:"Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",uri:"https://www.inverse.com/feed/articles/1.rss",ext:"https://www.inverse.com"},
 {cat:"Media",des:"Just Jared is the Definitive Site for Celebrity News.",uri:"http://www.justjared.com/feed",ext:"http://justjared.com"},
 {cat:"Media",des:"Metacritic aggregates Reviews of Films, TV Shows, Music Albums, and Video Games.",uri:"https://www.metacritic.com/rss/features",ext:"https://www.metacritic.com"},
