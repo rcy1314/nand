@@ -52,7 +52,7 @@
 	text-align: center;
 	padding-top: 1em;
 	font-size: 11px;
-	cursor: pointer;
+	cursor: default;
 	height: 2.5em;
 	width: 16.3%;
     }
@@ -60,15 +60,13 @@
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	outline: none !important;
 	scrollbar-width: none;
-	position: relative;
 	overflow: auto;
 	height: 86.5%;
-	top: 1em;
     }
     .set {
 	padding-bottom: 2em;
 	line-height: 1.4em;
-	margin-left: 17%;
+	margin-left: 15%;
 	font-size: 13px;
 	cursor: default;
 	height: 5em;
@@ -79,7 +77,6 @@
 	line-height: 1.6em;
 	margin-bottom: 3em;
 	text-align: right;
-	margin-right: 1em;
 	margin-left: auto;
 	font-size: 13px;
 	cursor: pointer;
@@ -87,7 +84,7 @@
 	padding: 1.5em;
     }
     .ago {
-	line-height: 1.2em;
+	line-height: 1.4em;
 	text-align: right;
 	font-size: 9px;
 	float: right;
@@ -153,7 +150,7 @@ $('.tag').on('mouseenter', function() {
 
 })
 
-$('.out').attr('tabindex',-1).focus()
+$('.out').attr('tabindex', -1).focus()
 
 $('.out').focusout(function(){
 
@@ -166,7 +163,7 @@ $('.out').focusout(function(){
 $('.cat').on('touchstart click', function(e){
 
 	$('.cat').css('color','inherit')
-	$(this).css('color','#AAA')
+	$(this).css('color','#aaa')
 	pop($(this).attr('id'))
 	scr('.pop:last')
 
@@ -177,8 +174,7 @@ $('.out').on('scroll', function(e){
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
 		if (job == false)
 			pop(sel)
-			tag($(this).scrollTop()
-	)
+			tag($(this).scrollTop())
 
 })
 
@@ -196,6 +192,7 @@ $('.fav').on('touchstart click', function(e){
 		tap = null
 		app('opp')
 	}
+
     e.preventDefault()
 
 })
@@ -219,6 +216,7 @@ function tag(n){
 	else if (n > ost && n > 50){
 		$('.tag').css('opacity','0')
 	}
+
     ost = n
 
 }
@@ -233,8 +231,9 @@ function rev(n) {
 	}
 	for (var i = keys.length - 1; i >= 0; i--) {
 		var value = n[keys[i]]
-		newn[keys[i]]= value
+		newn[keys[i]] = value
 	}
+
    return newn
 
 }
@@ -247,6 +246,7 @@ function utc(n){
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
+
     return dmz
 
 }
@@ -261,17 +261,21 @@ function ago(n){
 	var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'
 	var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'
 	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'
-	var y=m/121; return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago'
+	var y=m/121;
+
+    return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago'
 
 }
 
 function app(n){
 
-	if (n == 'opp'){ opp = opp != true } else if (n == 1 || n == 0) opp = n
+	if (n == 'opp'){ opp = opp != true }
+	else if (n == 1 || n == 0) opp = n
+
 	if (opp == 1){
 		$('html, body, .con, .out').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
-}
+	}
 	else if (opp == 0){
 		$('body, .con, .out').css({'background-color':'#fff','color':'#373737'})
 		$('.con').css('border','1px solid rgba(38,38,38,.2)')
@@ -285,9 +289,8 @@ function air(n){
 
 	$('.out').prepend("<div class='air'></div>")
 	$.each(rev(menu.reverse()), function(i, k){
-		if (n == k.cat){
+		if (n == k.cat)
 			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+k.des+"</div>")
-		}
 	})
 	$('.out').scrollTop($('.out').scrollTop() + $('.air:first').outerHeight())
 	his = 0
@@ -297,13 +300,14 @@ function air(n){
 
 function pop(n){
 
-	if (alt==true) rev(menu.reverse())
+	if (alt==true) rev(menu.reverse()); alt = false;
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
 	$('.out').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++){
-		if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
+		if (n == menu[i].cat)
+			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
 	}
 	his = 0
 	app()
@@ -316,15 +320,24 @@ function get(n){
 	job = true
 	$('.pop, .air, .get, .arm').remove()
 	$('.out').append("<div class='arm'>.</div><br><div class='get'></div>")
-	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
+
+	var int = setInterval(function(){
+		$('.arm').append('.')
+	}, 1000)
+
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+
 		.fail(function(){    clearInterval(int); job = false; pop(sel) })
 		.done(function(xhr){ clearInterval(int)
+
+
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
 			if ($(xhr).find('entry').length > 0)				     var set = "entry"
 			else 								     var set = 'item'
-				$(xhr).find(set).each(function(i){ if (i >= 19) return false
+				$(xhr).find(set).each(function(i){
+					if (i >= 19) return false
+
 					if (set == 'entry'){				     var ref = $(this).find('link').attr('href')
 											     var pdt = utc($(this).find('updated').text())
 					}
@@ -332,8 +345,10 @@ function get(n){
 						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 											else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
+
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>" +$(this).find("title").text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr></div></div>")
 				})
+
 			job = false
 			scr('.get')
 			app()
