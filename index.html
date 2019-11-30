@@ -8,9 +8,9 @@
   </head>
 <style>
 @media screen and (min-width: 960px) {
-    html {
-	background-color: rgba(38,38,38,.02)
-    }
+
+    html { background-color: rgba(38,38,38,.02) }
+
     body {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
@@ -21,6 +21,7 @@
 	width: 45%;
 	right: 50%;
     }
+
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
@@ -35,7 +36,6 @@
 	left: 0em;
 	top: 0em;
     }
-
     .tag {
 	justify-content: center;
 	display:flex;
@@ -118,12 +118,11 @@
 	</div>
 </div>
 <script>
-var art = '#fff'	/* 	app(0) Initial Background 	*/
 var ost = 0		/*	.out.scrollTop() used in tag()	*/
 var opp = 0		/*	Default(1=Dark)	used in app()	*/
 var his = 0		/*	Hist set class used in pop()    */
+var art = '#fff'	/* 	app(0) Initial Background 	*/
 var job = false		/*	Get failsafe used in .out tag()	*/
-var alt = false		/*	Menu is reversed used in pop()	*/
 var tap = false		/*	(1=pop) (2=app(opp))     	*/
 var sel = 'Social'	/*	Initial Category if (!Defined)	*/
 
@@ -202,9 +201,7 @@ $('.fav').on('touchstart click', function(e){
 function scr(n){
 
 	$('.out').animate({
-
 		scrollTop: $(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()
-
 	}, 300)
 
 }
@@ -221,7 +218,6 @@ function tag(n){
 
 function rev(n) {
 
-	alt = true
 	var newn = {}
 	var keys = []
 	for (var key in n) {
@@ -284,9 +280,12 @@ function app(n){
 }
 
 function air(n){
-	
+
+	var obv = []
+	obv = rev(menu.reverse())
+	menu.reverse()
 	$('.out').prepend("<div class='air'></div>")
-	$.each(rev(menu.reverse()), function(i, k){
+	$.each(obv, function(i, k){
 		if (n == k.cat)
 			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+k.des+"</div>")
 	})
@@ -297,18 +296,18 @@ function air(n){
 
 function pop(n){
 
-	if (alt==true)
-		rev(menu.reverse())
-		alt = false
 	document.title = n + ' ack'
+
 	if (n != sel) his = 0
 	sel = n
+
 	$('.out').append("<div class='pop'></div>")
 
 	for (var i = his; i < menu.length; i++){
 		if (n == menu[i].cat)
 			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+menu[i].des+"</div>")
 	}
+
 	his = 0
 	app()
 
@@ -324,9 +323,10 @@ function get(n){
 	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
 
 	scr('.get')
+
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
-		.fail(function(){    clearInterval(int); job = false; pop(sel) })
+		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(xhr){ clearInterval(int)
 
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
