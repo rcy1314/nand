@@ -1,5 +1,6 @@
 var menu=[
-{cat:"News",des:"ABC News Youtube.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
+{cat:"News",des:"ABC #News #LiveNews #ABCNewsLive #ABCNews LATEST NEWS.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
+{cat:"News",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"News",des:"ABC KFSN-TV Local Fresno and national news.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cat:"News",des:"NBC KSEE24 CBS47 YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
