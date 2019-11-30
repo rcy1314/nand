@@ -63,7 +63,7 @@ var menu=[
 {cat:"Media",des:"MU Music board thats about all things music.",uri:"http://boards.4channel.org/mu/index.rss",ext:"http://boards.4channel.org/mu"},
 {cat:"Media",des:"New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",uri:"https://nypost.com/entertainment/feed",ext:"https://nypost.com/entertainment/feed"}, 
 {cat:"Media",des:"People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",uri:"https://people.com/tag/news/feed",ext:"https://people.com"},
-{cat:"Media",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people:",ext:"https://www.youtube.com/user/people"},
+{cat:"Media",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {cat:"Media",des:"RollingStone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {cat:"Media",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
