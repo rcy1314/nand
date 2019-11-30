@@ -233,7 +233,6 @@ var menu=[
 {cat:"Technology",des:"ReadWrite was founded on April 20, 2003 as ReadWriteWeb.",uri:"https://readwrite.com/feed",ext:"https://readwrite.com"},
 {cat:"Technology",des:"Reclaim The Net Restoring Individual Liberty Online. Free Speech. Privacy",uri:"https://reclaimthenet.org/feed",ext:"https://reclaimthenet.org"},
 {cat:"Technology",des:"ScienceDaily Top Technology News.",uri:"https://www.sciencedaily.com/rss/top/technology.xml",ext:"https://sciencedaily.com/news/top/technology"},
-{cat:"Technology",des:"Shodan finds specific types of computers connected to the internet using a variety of filters.",uri:"https://blog.shodan.io/rss",ext:"https://blog.shodan.io"},
 {cat:"Technology",des:"Sky News Technology is a British news organisation, which operates a TV network.",uri:"http://feeds.skynews.com/feeds/rss/technology.xml",ext:"https://sky.com/technology"},
 {cat:"Technology",des:"Slashdot is a social News website that originally billed itself as News for Nerds.",uri:"http://rss.slashdot.org/Slashdot/slashdot",ext:"https://slashdot.org"},
 {cat:"Technology",des:"TechCrunch Reports on the Business of Technology, Startups, Venture Capital funding, and Silicon Valley.",uri:"http://feeds.feedburner.com/TechCrunch",ext:"https://techcrunch.com"},
