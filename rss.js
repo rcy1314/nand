@@ -128,6 +128,7 @@ var menu=[
 {cat:"Sport",des:"Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. ",uri:"https://www.bjpenn.com/feed",ext:"https://bjpenn.com"},
 {cat:"Sport",des:"Bleacher Report is a website that focuses on sport and sports culture.",uri:"https://bleacherreport.com/articles/feed",ext:"https://bleacherreport.com"},
 {cat:"Sport",des:"Bleacher Report Youtube ports highlights, features and animations that drive fandom.",uri:"https://www.youtube.com/feeds/videos.xml?user=BleacherReport",ext:"https://www.youtube.com/user/BleacherReport"},
+{cat:"Sport",des:"Boxing subreddit News, Headlines, Videos, Articles, and more.",uri:"https://www.reddit.com/r/Boxing/.rss",ext:"https://www.reddit.com/r/Boxing"},
 {cat:"Sport",des:"Cars subreddit the largest automotive enthusiast community on the Internet.",uri:"https://reddit.com/r/cars/.rss",ext:"https://reddit.com/r/cars"},
 {cat:"Sport",des:"CBS Sports is an American Sports News website operated by CBS Interactive.",uri:"https://rss.cbssports.com/rss/headlines",ext:"https://cbssports.com"},
 {cat:"Sport",des:"CFB subreddit forum for all things college football focusing on NCAA football.",uri:"https://reddit.com/r/cfb/.rss",ext:"https://reddit.com/r/cfb"},
