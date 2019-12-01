@@ -127,16 +127,17 @@ var sel = 'Social'	/*	Initial Category if (!Defined)	*/
 
 if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) app(location.search.split('?opp=')[1])
 
+else if (location.href.match('\\&fav=0')) $('.ico').css('visibility','hidden')
 
-if (location.href.match('\\&fav=0')) $('.ico').css('visibility','hidden')
-
-if (location.href.match('\\&category=News')
+else if (location.href.match('\\&category=News')
  || location.href.match('\\&category=Media')
  || location.href.match('\\&category=Social')
  || location.href.match('\\&category=Sport')
  || location.href.match('\\&category=Technology')
  || location.href.match('\\&category=World')){
+
 	pop(location.search.split('&category=')[1])
+
 }
 
 else {
