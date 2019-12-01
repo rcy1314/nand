@@ -11,33 +11,15 @@
 
     html { background-color: rgba(38,38,38,.02) }
 
-    body {
-	height: 100%;
-	width: 100%;
-    }
-
     .wrapper {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
-	position: fixed;
+	position: absolute;
 	border: none;
 	bottom: 49.5%;
 	height: 95%;
-	width: 43%;
-	right: 22%;
-    }
-
-    .browser {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-	padding-left: 1em;
-	padding-right: 5em;
-	padding-bottom: 5em;
-	margin: 1em;
-	position: absolute;
-	color: #444;
-	left:1em;
-	top:0em;
-
+	width: 45%;
+	right: 50%;
     }
 
 }
@@ -75,7 +57,7 @@
 	scrollbar-width: none;
 	position: relative;
 	overflow: auto;
-	height: 87%;
+	height: 86.5%;
 	top: 1em;
     }
     .set {
@@ -105,10 +87,13 @@
 	float: right;
     }
     .icon {
+	transform: translate(50%,50%);
 	justify-content: center;
-	position: relative;
-	bottom: -1em;
+	position: fixed;
+	bottom: 1.5em;
 	display: flex;
+	width: 50%;
+	right: 50%;
     }
     #fav, #inv {
 	border-radius: 24px;
@@ -117,49 +102,6 @@
     }
 </style>
 <body>
-<div class='browser'>
-	<h1>RSS-Browser</h1>
-	<ul>
-	<li>Cross Device Browser.</li>
-	<li>Easy to include.</li>
-	<li>Easy to use.</li>
-	</ul>
-	<h3>Dependencies</h3>
-	<pre>&emsp;None. Here is what's used</pre>
-	&emsp;&emsp;<h5 style='display:inline'>Github</h5> - Hosting the reader.<br>
-	&emsp;&emsp;<h5 style='display:inline'>Heroku</h5> - Hosting the proxy.<br>
-	&emsp;&emsp;<h5 style='display:inline'>CORS-Anywhere</h5> - Cross Origin Resource Sharing.<br>
-	<h3>Menu Array</h3>
-	&emsp;<h5 style='display:inline'>Simple Array Structure</h5>
-	<pre>&emsp;&emsp;{cat:'category',des:'description',uri:'feed',ext:'external'}</pre>
-	<h3>Sourcing</h3>
-	&emsp;<b>Default</b>
-	<pre style='display:inline'>&emsp;&emsp;&lt;iframe src='https://acktic.github.io'&gt;&lt;/iframe&gt;</textarea></pre><br><br>
-	&emsp;<b>Opposite</b>
-	<pre style='display:inline'>&emsp;&lt;iframe src='https://acktic.github.io?opp=1'&gt;&lt;/iframe&gt;</textarea></pre><br><br>
-	<h3>Styling</h3>
-	&emsp;&emsp;<h5 style='display:inline'>Double tap icon to invert colors</h5><br>
-	<h2>CORS Proxy</h2>
-	&emsp;<b>Heroku</b> CORS-Anywhere&emsp;<pre style='display:inline'>https://cors-anywhere.herokuapp.com/</pre><br><br>
-	&emsp;<b>CORS-Anywhere</b> is a reverse proxy which adds CORS headers to the request.<br><br>
-	&emsp;<b>Heroku-Cli</b> makes it easy to create apps directly from the terminal.<br><br>
-	&emsp;<b>npm</b> the package manager for NodeJS.<br>
-	<br><pre>	git clone https://github.com/Rob--W/cors-anywhere.git
-	cd cors-anywhere/
-	npm install
-	heroku create
-	git push heroku master
-	</pre>
-	<h2>Development</h2>
-	&emsp;Want to contribute? Great!
-	<ul>
-	<li>Clone this <a target='_blank' href='https://github.com/acktic/acktic.github.io'>Repo</a></li>
-	<li>Submit a feed</li>
-	<li>File an issue</li>
-	</ul>
-	<h3>License</h3>
-	&emsp;MIT
-</div>
 <div class='wrapper'>
 <div class='container'>
 	<div class='attach'>
@@ -187,24 +129,25 @@ var sel = 'Social'
 
 if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')){
 
-	app(location.search.split('?opp=')[1])
+        app(location.search.split('?opp=')[1])
 
 }
 
 else {
 
-	app(opp)
+        app(opp)
 
 }
 
-	pop(sel)
-	scr('.pop')
+        pop(sel)
+        scr('.pop')
+
 
 $('.output').attr('tabindex', -1).focus()
 
 $('.output').focusout(function(){
 
-	setTimeout(function(){ $('.output').focus() }, 10000)
+	setTimeout(function(){ $('.output').focus() }, 100)
 
 })
 
@@ -322,13 +265,13 @@ function app(n){
 
 	if (opp == 1){
 		$('html, .container, .output').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('#fav').css({'display':'block','box-shadow':'0px 0px 0px #000'}) ; $('#inv').hide(); $('hr').hide()
+		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 	}
 	else if (opp == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('.container').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').css({'display':'block','box-shadow':'1px 1px 3px #888'}); $('#fav').hide(); $('hr').show()
+		$('#inv').show(); $('#fav').hide(); $('hr').show()
 	}
 
 }
@@ -337,6 +280,7 @@ function air(n){
 
 	var obv = []
 	obv = rev(menu.reverse())
+	menu.reverse()
 	$('.output').prepend("<div class='air'></div>")
 	$.each(obv, function(i, k){
 		if (n == k.cat)
