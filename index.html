@@ -244,7 +244,7 @@ function ago(n){											/* Thanks SO, compares UTC to	*/
 
 }
 
-function app(n){												/* Apply 'opp' to switch	*/
+function app(n){												/* Apply, 'opp' to switch	*/
 														/* 1 to dark, 0 to Default	*/
 	if (n == 'opp'){ opp = opp != true }
 	else if (n == 1 || n == 0) opp = n
@@ -296,16 +296,16 @@ function pop(n){												/* get() sets his-# to start	*/
 
 }
 
-function get(n){
-
-	his = n
-	job = true
-	$('.pop, .air, .get, .arm').remove()
-	$('.out').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")
-
-	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
-
-	scr('.get')
+function get(n){																		/* his=n, job started no pop		*/
+																				/* remove old elements create arm (....)*/
+	his = n																			/* ajax .get -> fail job false populate */ 
+	job = true																		/* .done clear interval set header	*/
+	$('.pop, .air, .get, .arm').remove()															/* find either entry or item in xml	*/
+	$('.out').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")					/* stop xhr at 20 headlines		*/
+																				/* find link(href)/updates in entry or	*/
+	var int = setInterval(function(){ $('.arm').append('.') }, 1000)											/* find link/pubdate/dc:date in item	*/
+																				/* pdt=utc(date), .ago [0][1] elements  */
+	scr('.get')																		/* job stops scroll to .get apply	*/
 
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
