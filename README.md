@@ -23,29 +23,6 @@ None. But here's what's used:
 
 [site](https://acktic.github.io)
 
-Specify an Initial category
-
-* News
-* Media
-* Social
-* Sports
-* Technology
-* World
-
-You must define `?opp=`
-
-Default, category Media would look like...
-
-`https://acktic.github.io?opp=0&category=Media`
-
-Dark with category Technology.
-
-`https://acktic.github.io?opp=1&category=Technology`
-
-Remove the favicon
-
-`https://acktic.github.io?opp=0&fav=0`
-
 ### Styling
 
 Double tap icon to invert colors.
