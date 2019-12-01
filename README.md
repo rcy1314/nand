@@ -36,11 +36,11 @@ You must define `?opp=`
 
 Default, category Media would look like...
 
-`https://acktic.github.io?opp=0&cat=Media`
+`https://acktic.github.io?opp=0&category=Media`
 
 Dark with category Technology.
 
-`https://acktic.github.io?opp=1&cat=Technology`
+`https://acktic.github.io?opp=1&category=Technology`
 
 Remove the favicon
 
