@@ -129,21 +129,21 @@ pop(sel)		/*	Populate out with menu.cat (sel)*/
 app(opp)		/*	Apply opp(0/1) css to elements  */
 scr('.pop:first')	/* 	Scroll to div .pop		*/
 
-$('.out').attr('tabindex', -1).focus()				/* Set focus for scrolling		*/
+$('.out').attr('tabindex', -1).focus()
 
-$('.out').focusout(function(){					/* Firefox timeout keeps focus		*/
+$('.out').focusout(function(){
 
-	setTimeout(function(){ $('.out').focus() }, 100)	/* Loses focus function			*/
+	setTimeout(function(){ $('.out').focus() }, 100)
 
 })
 
-$('.tag').on('mouseenter', function() {				/* .cat tags mouse hover function 	*/
+$('.tag').on('mouseenter', function() {
 
 	$(this).css('opacity','1')
 
 })
 
-$('.cat').on('touchstart click', function(e){			/* Category css and pop tap/click	*/
+$('.cat').on('touchstart click', function(e){
 
 	$('.cat').css('color','inherit')
 	$(this).css('color','#aaa')
@@ -152,19 +152,19 @@ $('.cat').on('touchstart click', function(e){			/* Category css and pop tap/clic
 
 })
 
-$('.out').on('scroll', function(e){								/* Scroll handling for out 		*/
+$('.out').on('scroll', function(e){
 
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)		/* If scroll Pos + Innerheight greater	*/
-		if (job == false)								/* than scrollheight execute		*/
-			pop(sel)								/* get(job) failsafe not to populate	*/
-			tag($(this).scrollTop())						/* tag(OutScrollTop[ost]) for cat .tag  */
-												/* hiding and air() reverse scroll	*/
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
+		if (job == false)
+			pop(sel)
+			tag($(this).scrollTop())
+
 })
 
-$('.fav').on('touchstart click', function(e){							/* Favicon tap once for pop twice for   */
-												/* app('opp') switches element css	*/
-	if (!tap){										/* tap timeout 250 millisecond if false */
-		tap = setTimeout(function(){							/* once otherwise its twice		*/
+$('.fav').on('touchstart click', function(e){
+
+	if (!tap){
+		tap = setTimeout(function(){
 			tap = null
 			pop(sel)
 			scr('.pop:last')
@@ -181,28 +181,28 @@ $('.fav').on('touchstart click', function(e){							/* Favicon tap once for pop 
 
 })
 
-function scr(n){											/* Scroll to element animate    */
-													/* animte element offset to out */
-	$('.out').animate({										/* scrolltop			*/
+function scr(n){
+
+	$('.out').animate({
 		scrollTop: $(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()
 	}, 300)
 
 }
 
-function tag(n){								/* n equals ost if less & not 0 going down show cat tag */
-										/* if less than 0 and get(!job) air(sel) otherwise	*/
+function tag(n){
+
 	if (n < ost && n != 0){ $('.tag').css('opacity','1') }			
 	else if (n <= 0 && job == false) { air(sel) }
-	else if (n > ost && n > 50){ $('.tag').css('opacity','0') }		/* if n greater than ost and 50 going up hide cat tags  */
+	else if (n > ost && n > 50){ $('.tag').css('opacity','0') }
 
     ost = n
 
 }
 
-function rev(n) {								/* Thanks SO, this just reverses the objects/indexes	*/
-										/* in an array, when paired with jquery .reverse() works*/
-	var newn = {}								/* as expected, but .reverse() is true so it has to be  */
-	var keys = []								/* .reverse() again					*/
+function rev(n) {
+
+	var newn = {}
+	var keys = []
 	for (var key in n) {
 		keys.push(key)
 	}
@@ -215,11 +215,11 @@ function rev(n) {								/* Thanks SO, this just reverses the objects/indexes	*/
 
 }
 
-function utc(n){								/* This is UTC formatting, opt is interchangeable	*/
+function utc(n){
 
 	var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }
 	var dmz = []
-	dmz.push(ago(n))							/* dmz push since UTC, also dmz push toLocaleString	*/
+	dmz.push(ago(n))
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
@@ -228,9 +228,9 @@ function utc(n){								/* This is UTC formatting, opt is interchangeable	*/
 
 }
 
-function ago(n){											/* Thanks SO, compares UTC to	*/
-													/* current UTC and diviedes by	*/
-	var age = new Date()										/* time attr			*/
+function ago(n){
+
+	var age = new Date()
 	var dis=age.getTime() - new Date(n).getTime()
 	var sec=dis/1000
 	if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'
@@ -244,8 +244,8 @@ function ago(n){											/* Thanks SO, compares UTC to	*/
 
 }
 
-function app(n){												/* Apply, 'opp' to switch	*/
-														/* 1 to dark, 0 to Default	*/
+function app(n){
+
 	if (n == 'opp'){ opp = opp != true }
 	else if (n == 1 || n == 0) opp = n
 
@@ -262,10 +262,10 @@ function app(n){												/* Apply, 'opp' to switch	*/
 
 }
 
-function air(n){												/* Called from tag() if !job	*/
-														/* creates array rev().reverse	*/
-	var obv = []												/* reverse() array back		*/
-	obv = rev(menu.reverse())										/* prepends ost to .air height	*/
+function air(n){
+
+	var obv = []
+	obv = rev(menu.reverse())
 	menu.reverse()
 	$('.out').prepend("<div class='air'></div>")
 	$.each(obv, function(i, k){
@@ -277,10 +277,10 @@ function air(n){												/* Called from tag() if !job	*/
 
 }
 
-function pop(n){												/* get() sets his-# to start	*/
-														/* pop() from, simple loop and	*/
-	document.title = n + ' ack'										/* cat switch his=0 create .pop */
-														/* append and apply		*/
+function pop(n){
+
+	document.title = n + ' ack'
+
 	if (n != sel) his = 0
 	sel = n
 
@@ -296,16 +296,16 @@ function pop(n){												/* get() sets his-# to start	*/
 
 }
 
-function get(n){																		/* his=n, job started no pop		*/
-																				/* remove old elements create arm (....)*/
-	his = n																			/* ajax .get -> fail job false populate */ 
-	job = true																		/* .done clear interval set header	*/
-	$('.pop, .air, .get, .arm').remove()															/* find either entry or item in xml	*/
-	$('.out').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")					/* stop xhr at 20 headlines		*/
-																				/* find link(href)/updates in entry or	*/
-	var int = setInterval(function(){ $('.arm').append('.') }, 1000)											/* find link/pubdate/dc:date in item	*/
-																				/* pdt=utc(date), .ago [0][1] elements  */
-	scr('.get')																		/* job stops scroll to .get apply	*/
+function get(n){
+
+	his = n
+	job = true
+	$('.pop, .air, .get, .arm').remove()
+	$('.out').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")
+
+	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
+
+	scr('.get')
 
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
