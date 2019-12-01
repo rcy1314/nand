@@ -125,8 +125,6 @@ var job = false		/*	Get failsafe used in .out tag()	*/
 var tap = false		/*	(1=pop) (2=app(opp))     	*/
 var sel = 'Social'	/*	Initial Category if (!Defined)	*/
 
-if (location.href.match('\\?opp=0') || location.href.match('\\?opp=1')) opp = location.search.split('?opp=')[1]
-
 	pop(sel)
 	app(opp)
 	scr('.pop:first')
