@@ -21,7 +21,13 @@ None. But here's what's used:
 
 ### Sourcing
 
-[site](https://acktic.github.io)
+Source the [site](https://acktic.github.io)
+
+Default
+`<iframe src='https://acktic.github.io'></iframe>`
+
+Opposite
+`<iframe src='https://acktic.github.io?opp=1'></iframe>`
 
 ### Styling
 
