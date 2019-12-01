@@ -11,15 +11,32 @@
 
     html { background-color: rgba(38,38,38,.02) }
 
+    body {
+	height: 100%;
+	width: 100%;
+    }
+
     .wrapper {
-	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: fixed;
 	border: none;
-	bottom: 49.5%;
-	height: 95%;
-	width: 45%;
-	right: 50%;
+	top: 1em;
+	right: 1em;
+	height: 47em;
+	width: 35em;;
+    }
+
+    .browser {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-bottom: 5em;
+	margin: 1em;
+	position: absolute;
+	color: #444;
+	left:1em;
+	top:0em;
+
     }
 
 }
@@ -87,13 +104,10 @@
 	float: right;
     }
     .icon {
-	transform: translate(50%,50%);
 	justify-content: center;
-	position: fixed;
-	bottom: 1.5em;
+	position: relative;
+	bottom: -1.5em;
 	display: flex;
-	width: 50%;
-	right: 50%;
     }
     #fav, #inv {
 	border-radius: 24px;
@@ -102,6 +116,46 @@
     }
 </style>
 <body>
+<div class='browser'>
+	<h1>RSS-Browser</h1>
+	<ul>
+	<li>Cross Device Browser.</li>
+	<li>Easy to include.</li>
+	<li>Easy to use.</li>
+	</ul>
+	<h3>Dependencies</h3>
+	<pre>&emsp;None. Here is what's used</pre>
+	&emsp;&emsp;<h5 style='display:inline'>Github</h5> - Hosting the reader.<br>
+	&emsp;&emsp;<h5 style='display:inline'>Heroku</h5> - Hosting the proxy.<br>
+	&emsp;&emsp;<h5 style='display:inline'>CORS-Anywhere</h5> - Cross Origin Resource Sharing.<br>
+	<br>
+	<h3>Menu Array</h3>
+	&emsp;&emsp;<h5 style='display:inline'>Simple Array Structure</h5>
+	<pre>&emsp;&emsp;{cat:'category',des:'description',uri:'feed',external:'external'}</pre><br>
+	<h3>Styling</h3>
+	&emsp;&emsp;<h5 style='display:inline'>Double tap icon to invert colors</h5><br><br>
+	<h2>CORS Proxy</h2>
+	&emsp;<b>Heroku</b> CORS-Anywhere&emsp;<pre style='display:inline'>https://cors-anywhere.herokuapp.com/</pre><br><br>
+	&emsp;<b>CORS-Anywhere</b> is a reverse proxy which adds CORS headers to the request.<br><br>
+	&emsp;<b>Heroku-Cli</b> makes it easy to create apps directly from the terminal.<br><br>
+	&emsp;<b>npm</b> the package manager for NodeJS.<br>
+	<br><pre>	git clone https://github.com/Rob--W/cors-anywhere.git
+	cd cors-anywhere/
+	npm install
+	heroku create
+	git push heroku master
+	</pre>
+	<h2>Development</h2>
+	&emsp;Want to contribute? Great!<br>
+	<br>
+	<ul>
+	<li>Clone this Repo</li>
+	<li>File an issue</li>
+	</ul>
+	<br>
+	<h3>License</h3>
+	&emsp;MIT
+</div>
 <div class='wrapper'>
 <div class='container'>
 	<div class='attach'>
@@ -131,11 +185,12 @@ pop(sel)
 app(opp)
 scr('.pop')
 
+
 $('.output').attr('tabindex', -1).focus()
 
 $('.output').focusout(function(){
 
-	setTimeout(function(){ $('.output').focus() }, 100)
+	setTimeout(function(){ $('.output').focus() }, 4000)
 
 })
 
@@ -268,7 +323,6 @@ function air(n){
 
 	var obv = []
 	obv = rev(menu.reverse())
-	menu.reverse()
 	$('.output').prepend("<div class='air'></div>")
 	$.each(obv, function(i, k){
 		if (n == k.cat)
