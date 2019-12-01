@@ -125,26 +125,25 @@ var job = false		/*	Get failsafe used in .out tag()	*/
 var tap = false		/*	(1=pop) (2=app(opp))     	*/
 var sel = 'Social'	/*	Initial Category if (!Defined)	*/
 
-	pop(sel)
-	app(opp)
-	scr('.pop:first')
+pop(sel)		/*	Populate out with menu.cat (sel)*/
+app(opp)		/*	Apply opp(0/1) css to elements  */
+scr('.pop:first')	/* 	Scroll to div .pop		*/
 
+$('.out').attr('tabindex', -1).focus()				/* Set focus for scrolling		*/
 
-$('.out').attr('tabindex', -1).focus()
+$('.out').focusout(function(){					/* Firefox timeout keeps focus		*/
 
-$('.tag').on('mouseenter', function() {
+	setTimeout(function(){ $('.out').focus() }, 100)	/* Loses focus function			*/
+
+})
+
+$('.tag').on('mouseenter', function() {				/* .cat tags mouse hover function 	*/
 
 	$(this).css('opacity','1')
 
 })
 
-$('.out').focusout(function(){
-
-	setTimeout(function(){ $('.out').focus() }, 100)
-
- })
-
-$('.cat').on('touchstart click', function(e){
+$('.cat').on('touchstart click', function(e){			/* Category css and pop tap/click	*/
 
 	$('.cat').css('color','inherit')
 	$(this).css('color','#aaa')
@@ -153,22 +152,22 @@ $('.cat').on('touchstart click', function(e){
 
 })
 
-$('.out').on('scroll', function(e){
+$('.out').on('scroll', function(e){								/* Scroll handling for out 		*/
 
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
-		if (job == false)
-			pop(sel)
-			tag($(this).scrollTop())
-
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)		/* If scroll Pos + Innerheight greater	*/
+		if (job == false)								/* than scrollheight execute		*/
+			pop(sel)								/* get(job) failsafe not to populate	*/
+			tag($(this).scrollTop())						/* tag(OutScrollTop[ost]) for cat .tag  */
+												/* hiding and air() reverse scroll	*/
 })
 
-$('.fav').on('touchstart click', function(e){
-
-	if (!tap){
-		tap = setTimeout(function(){
+$('.fav').on('touchstart click', function(e){							/* Favicon tap once for pop twice for   */
+												/* app('opp') switches element css	*/
+	if (!tap){										/* tap timeout 250 millisecond if false */
+		tap = setTimeout(function(){							/* once otherwise its twice		*/
 			tap = null
 			pop(sel)
-			scr('.pop')
+			scr('.pop:last')
 		}, 250)
 	}
 
@@ -182,28 +181,28 @@ $('.fav').on('touchstart click', function(e){
 
 })
 
-function scr(n){
-
-	$('.out').animate({
+function scr(n){											/* Scroll to element animate    */
+													/* animte element offset to out */
+	$('.out').animate({										/* scrolltop			*/
 		scrollTop: $(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop()
 	}, 300)
 
 }
 
-function tag(n){
-
-	if (n < ost && n != 0){ $('.tag').css('opacity','1') }
+function tag(n){								/* n equals ost if less & not 0 going down show cat tag */
+										/* if less than 0 and get(!job) air(sel) otherwise	*/
+	if (n < ost && n != 0){ $('.tag').css('opacity','1') }			
 	else if (n <= 0 && job == false) { air(sel) }
-	else if (n > ost && n > 50){ $('.tag').css('opacity','0') }
+	else if (n > ost && n > 50){ $('.tag').css('opacity','0') }		/* if n greater than ost and 50 going up hide cat tags  */
 
     ost = n
 
 }
 
-function rev(n) {
-
-	var newn = {}
-	var keys = []
+function rev(n) {								/* Thanks SO, this just reverses the objects/indexes	*/
+										/* in an array, when paired with jquery .reverse() works*/
+	var newn = {}								/* as expected, but .reverse() is true so it has to be  */
+	var keys = []								/* .reverse() again					*/
 	for (var key in n) {
 		keys.push(key)
 	}
@@ -216,11 +215,11 @@ function rev(n) {
 
 }
 
-function utc(n){
+function utc(n){								/* This is UTC formatting, opt is interchangeable	*/
 
 	var opt = { weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'numeric',minute:'numeric',second:'2-digit',hour12:true }
 	var dmz = []
-	dmz.push(ago(n))
+	dmz.push(ago(n))							/* dmz push since UTC, also dmz push toLocaleString	*/
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
@@ -229,9 +228,9 @@ function utc(n){
 
 }
 
-function ago(n){
-
-	var age = new Date()
+function ago(n){											/* Thanks SO, compares UTC to	*/
+													/* current UTC and diviedes by	*/
+	var age = new Date()										/* time attr			*/
 	var dis=age.getTime() - new Date(n).getTime()
 	var sec=dis/1000
 	if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'
@@ -245,8 +244,8 @@ function ago(n){
 
 }
 
-function app(n){
-
+function app(n){												/* Apply 'opp' to switch	*/
+														/* 1 to dark, 0 to Default	*/
 	if (n == 'opp'){ opp = opp != true }
 	else if (n == 1 || n == 0) opp = n
 
@@ -263,10 +262,10 @@ function app(n){
 
 }
 
-function air(n){
-
-	var obv = []
-	obv = rev(menu.reverse())
+function air(n){												/* Called from tag() if !job	*/
+														/* creates array rev().reverse	*/
+	var obv = []												/* reverse() array back		*/
+	obv = rev(menu.reverse())										/* prepends ost to .air height	*/
 	menu.reverse()
 	$('.out').prepend("<div class='air'></div>")
 	$.each(obv, function(i, k){
@@ -278,10 +277,10 @@ function air(n){
 
 }
 
-function pop(n){
-
-	document.title = n + ' ack'
-
+function pop(n){												/* get() sets his-# to start	*/
+														/* pop() from, simple loop and	*/
+	document.title = n + ' ack'										/* cat switch his=0 create .pop */
+														/* append and apply		*/
 	if (n != sel) his = 0
 	sel = n
 
