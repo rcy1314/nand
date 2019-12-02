@@ -275,14 +275,12 @@ function app(n){
 
 function air(n){
 
-	var obv = []
-	obv = rev(menu.reverse())
-	menu.reverse()
+	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
-	$.each(obv, function(i, k){
-		if (n == k.cat)
-			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+k.des+"</div>")
-	})
+	for (var i = menu.reverse().length - 1; i >= 0; i--){
+		if (n == menu[i].cat)
+			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+menu[i].des+"</div>")
+	}
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
