@@ -57,7 +57,7 @@
 	scrollbar-width: none;
 	position: relative;
 	overflow: auto;
-	height: 86.5%;
+	height: 86%;
 	top: 1em;
     }
     .set {
@@ -87,13 +87,10 @@
 	float: right;
     }
     .icon {
-	transform: translate(50%,50%);
 	justify-content: center;
-	position: fixed;
-	bottom: 1.5em;
+	position: relative;
 	display: flex;
-	width: 50%;
-	right: 50%;
+	top: 1em;
     }
     #fav, #inv {
 	border-radius: 24px;
@@ -315,7 +312,7 @@ function get(n){
 	his = n
 	job = true
 	$('.pop, .air, .get, .arm').remove()
-	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><br><div class='get'></div>")
+	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><div class='get'></div>")
 
 	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
 

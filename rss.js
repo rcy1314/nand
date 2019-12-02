@@ -271,7 +271,6 @@ var menu=[
 {cat:"World",des:"Digital Trends team of experienced staffers provide the latest news.",uri:"https://www.digitaltrends.com/news/feed",ext:"https://digitaltrends.com/news"},
 {cat:"World",des:"Drudge Report consists mainly of news stories from other outlets.",uri:"http://feeds.feedburner.com/DrudgeReportFeed",ext:"https://drudgereport.com"},
 {cat:"World",des:"Fortune is an American multinational business magazine headquartered in New York City.",uri:"https://fortune.com/feed",ext:"https://fortune.com"},
-{cat:"World",des:"Fox News breaking news, Latest news, and Current news.",uri:"http://feeds.foxnews.com/foxnews/latest",ext:"https://foxnews.com"},
 {cat:"World",des:"Google is a multinational technology company that specializes in Internet-related services and products.",uri:"https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",ext:"https://news.google.com"},
 {cat:"World",des:"HuffingtonPost World News, Breaking News, Top Stories, and Headlines.",uri:"https://www.huffpost.com/section/world-news/feed",ext:"https://www.huffpost.com/news/world-news"},
 {cat:"World",des:"Mirror.co.uk World headlines, pictures, analysis, opinion and video.",uri:"https://www.mirror.co.uk/news/us-news/?service=rss",ext:"https://mirror.co.uk/news/us-news"},
