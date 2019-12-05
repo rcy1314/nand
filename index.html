@@ -337,7 +337,7 @@ function get(n){
 											else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
 											     var idx = $(this).find("title").text()
-					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+idx+"...<br>" +
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+idx.unique(idx)+"...<br>" +
 							 "<div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
 
