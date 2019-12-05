@@ -323,7 +323,6 @@ function get(n){
 
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(xhr){ clearInterval(int)
-
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
 			if ($(xhr).find('entry').length > 0)				     var set = "entry"
 			else 								     var set = 'item'
@@ -338,7 +337,7 @@ function get(n){
 											else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
 								
-					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>" +$(this).find("media\\:title, title").text()+"...<br>" +
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>" +$(this).find("\\<title\\>").text()+"...<br>" +
 							 "<div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
 
