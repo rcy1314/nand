@@ -296,6 +296,8 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 
+	$('.pop, .air, .get, .arm').remove()
+
 	$('.output').append("<div class='pop'></div>")
 
 	for (var i = his; i < menu.length; i++){
@@ -309,13 +311,13 @@ function pop(n){
 }
 
 function get(n){
-
+	var n = 1
 	his = n
 	job = true
 	$('.pop, .air, .get, .arm').remove()
-	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>.</div><div class='get'></div>")
+	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+n+"</div><div class='get'></div>")
 
-	var int = setInterval(function(){ $('.arm').append('.') }, 1000)
+	var int = setInterval(function(){ n = n + 1; $('.arm').html(n) }, 1000)
 
 	scr('.get')
 
