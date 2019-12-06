@@ -18,7 +18,7 @@
 	border: none;
 	bottom: 49.5%;
 	height: 95%;
-	width: 45%;
+	width: 35%;
 	right: 50%;
     }
 
@@ -74,7 +74,7 @@
 	width: 70%;
     }
     .end {
-	width: fit-content;
+	width: 45%;
 	line-height: 1.6em;
 	margin-bottom: 3em;
 	text-align: right;
@@ -161,6 +161,7 @@ $('.attach').on('mouseenter', function() {
 
 $('.category').on('touchstart click', function(e){
 
+	$('.category').css('color','#373737')
 	$(this).css('color','#aaa')
 	pop($(this).attr('id'))
 	scr('.pop:last')
@@ -335,8 +336,11 @@ function get(n){
 						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 											else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
-					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+$(this).find('title:first').text()+"...<br>" +
-							 "<div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
+											     var thm = $(this).find('media\\:thumbnail, thumbnail').attr('url')
+									  if (thm != undefined){ thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
+											else var thm = ''
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thm +
+							$(this).find('title:first').text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
 
 			job = false
