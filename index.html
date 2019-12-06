@@ -15,8 +15,8 @@
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: absolute;
-	border: none;
 	bottom: 49.5%;
+	border: none;
 	height: 95%;
 	width: 35%;
 	right: 50%;
@@ -320,7 +320,7 @@ function get(n){
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
-		.done(function(xhr){ clearInterval(int); $('.arm').remove()
+		.done(function(xhr){ clearInterval(int)
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
 			if ($(xhr).find('entry').length > 0)				     var set = "entry"
 			else 								     var set = 'item'
