@@ -31,6 +31,8 @@
 
     .wrapper { height: 100% }
 
+    .arm { font-size: 11px }
+
     .container {
 	position: absolute;
 	height: 100%;
@@ -295,8 +297,6 @@ function pop(n){
 
 	if (n != sel) his = 0
 	sel = n
-
-	$('.pop, .air, .get, .arm').remove()
 
 	$('.output').append("<div class='pop'></div>")
 
