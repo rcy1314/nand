@@ -144,7 +144,6 @@ else {
 pop(sel)
 scr('.pop')
 
-
 $('.output').attr('tabindex', -1).focus()
 
 $('.output').focusout(function(){
@@ -316,7 +315,6 @@ function get(n){
 	job = true
 	$('.pop, .air, .get, .arm').remove()
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
-
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
@@ -342,7 +340,6 @@ function get(n){
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thm +
 							$(this).find('title:first').text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
-
 			job = false
 			scr('.get')
 			app()
