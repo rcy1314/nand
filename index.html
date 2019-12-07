@@ -315,8 +315,10 @@ function get(n){
 	job = true
 	$('.pop, .air, .get, .arm').remove()
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
+
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
+
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
@@ -327,20 +329,23 @@ function get(n){
 				$(data).find(chan).each(function(i){
 					if (i >= 19) return false
 
-					if (chan == 'entry'){				     var href = $(this).find('link').attr('href')
+					if (chan == 'entry'){
+											     var href = $(this).find('link').attr('href')
 											     var padt = utc($(this).find('updated').text())
 											     var thum = $(this).find('content').text()
-											     var thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
-								if (thum != undefined){	     var thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>" }
-											else var thum = ''
+												 thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
+								if (thum != undefined)		 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											else	 thum = ''
 					}
-					else {						     var href = $(this).find('link').text()
+					else {
+											     var href = $(this).find('link').text()
 						if ($(this).find('pubDate').text().length>0) var padt = utc($(this).find('pubDate').text())
 											else var padt = utc($(this).find('dc\\:date, date').text())
 					}
-					if (!thum){					     var thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')
-								if (thum != undefined)	     var thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
-											else var thum = ''
+					if (!thum){
+											     var thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')
+								if (thum != undefined)		 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											else	 thum = ''
 					}
 					$('.get').append("<div class='end' onclick='window.open(\""+href+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
 							 "<div class='ago'><br>"+padt[0]+"<br>"+padt[1]+"<hr style='opacity:.2'></div></div>")
