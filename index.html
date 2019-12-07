@@ -142,6 +142,7 @@ else {
 
 pop(sel)
 scr('.pop')
+
 $('#'+sel).css('color','#aaa')
 
 $('.output').attr('tabindex', -1).focus()
@@ -314,7 +315,9 @@ function get(n){
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
+
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){ clearInterval(int)
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
@@ -322,7 +325,6 @@ function get(n){
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
 					if (i >= 19) return false
-
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
@@ -339,13 +341,16 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 											else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
-												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+									if (thum.match(/ytimg/)) thum = "<div style='width:100%;height:75%;overflow:hidden'><img src='"+thum+"' style='height:75%;width:100%;margin:-11% 0'></div><br>"
+											/* Standard thumbnails */
+											else     thum = "<img src='"+thum+"' style='height:75%;width:100%'><br>"
 											}
 											/* 4chan thumbnails */
 											else if (thum = $(this).find('description').text()){
 												 thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/)
 												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
 											}
+											/* Empty invalid */
 											else 	 thum = ''
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
 							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>")
