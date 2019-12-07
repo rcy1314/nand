@@ -331,6 +331,7 @@ function get(n){
 											     var pdt = utc($(this).find('updated').text())
 											     var thm = $(this).find('content').text()
 											     var thm = thm.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
+
 								if (thm != undefined){	     var thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
 											else var thm = ''
 					}
@@ -339,6 +340,7 @@ function get(n){
 											else var pdt = utc($(this).find('dc\\:date, date').text())
 					}
 					if (!thm){					     var thm = $(this).find('media\\:thumbnail, thumbnail').attr('url')
+
 								if (thm != undefined){	     var thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
 											else var thm = ''
 					}
