@@ -317,6 +317,7 @@ function get(n){
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
+
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
@@ -329,14 +330,18 @@ function get(n){
 
 					if (set == 'entry'){				     var ref = $(this).find('link').attr('href')
 											     var pdt = utc($(this).find('updated').text())
+											     var thm = $(this).find('content').text()
+											     var thm = thm.match(/https\:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
+									  if (thm != undefined){ thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
+											else var thm = ''
 					}
 					else {						     var ref = $(this).find('link').text()
 						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
 											else var pdt = utc($(this).find('dc\\:date, date').text())
-					}
 											     var thm = $(this).find('media\\:thumbnail, thumbnail').attr('url')
 									  if (thm != undefined){ thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
 											else var thm = ''
+					}
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thm +
 							$(this).find('title:first').text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
 				})
