@@ -293,12 +293,9 @@ function air(n){
 function pop(n){
 
 	document.title = n + ' ack'
-
 	if (n != sel) his = 0
 	sel = n
-
 	$('.output').append("<div class='pop'></div>")
-
 	for (var i = his; i < menu.length; i++){
 		if (n == menu[i].cat)
 			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr style='opacity:.2'>"+menu[i].des+"</div>")
@@ -315,45 +312,43 @@ function get(n){
 	job = true
 	$('.pop, .air, .get, .arm').remove()
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
-
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
-
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){ clearInterval(int)
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
-			if ($(data).find('entry').length > 0)				     var chan = "entry"
-			else 								     var chan = 'item'
-				$(data).find(chan).each(function(i){
+			if ($(data).find('entry').length > 0)				     var chn = "entry"
+			else 								     var chn = 'item'
+				$(data).find(chn).each(function(i){
 					if (i >= 19) return false
 
-					if (chan == 'entry'){
-											     var href = $(this).find('link').attr('href')
-											     var padt = utc($(this).find('updated').text())
+					if (chn == 'entry'){
+											     var ref = $(this).find('link').attr('href')
+											     var dst = utc($(this).find('updated').text())
 					}
 					else {
-											     var href = $(this).find('link').text()
-						if ($(this).find('pubDate').text().length>0) var padt = utc($(this).find('pubDate').text())
-											else var padt = utc($(this).find('dc\\:date, date').text())
-					}
-											 if (thum = $(this).find('content').text()){
+											     var ref = $(this).find('link').text()
+						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
+											else var dst = utc($(this).find('dc\\:date, date').text())
+					}						/* Reddit thumbnails */
+											if (thum = $(this).find('content').text()){
 												 thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-										if (thum != null)thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
-											else     thum = ''
-											    }
+									       if (thum != null) thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+									       else		 thum = ''
+											}
+											/* Youtube thumbnails */
 											else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
 												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
 											}
+											/* 4chan thumbnails */
 											else if (thum = $(this).find('description').text()){
 												 thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/)
 												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
 											}
 											else 	 thum = ''
-					
-					$('.get').append("<div class='end' onclick='window.open(\""+href+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
-							 "<div class='ago'><br>"+padt[0]+"<br>"+padt[1]+"<hr style='opacity:.2'></div></div>")
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
+							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>")
 				})
 			job = false
 			scr('.get')
