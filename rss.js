@@ -286,7 +286,6 @@ var menu=[
 {cat:"Youtube",des:"Forbes highlights business, entrepreneurship, wealth, investing and leadership.",uri:"https://www.youtube.com/feeds/videos.xml?user=forbes",ext:"https://www.youtube.com/user/forbes"},
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
-{cat:"Youtube",des:"MovieClips Youtube find official clips from your favorite movies.",uri:"https://www.youtube.com/feeds/videos.xml?user=movieclips",ext:"https://www.youtube.com/user/movieclips"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
