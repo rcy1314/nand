@@ -165,7 +165,6 @@ var menu=[
 {cat:"Sport",des:"Sports Illustrated NBA Headlines and Analysis.",uri:"https://www.si.com/rss/si_nba.rss",ext:"https://www.si.com/nba"},
 {cat:"Sport",des:"Sports Illustrated NCAA College Football Headlines and Stories.",uri:"https://www.si.com/rss/si_ncaaf.rss",ext:"https://www.si.com/college/college-football"},
 {cat:"Sport",des:"Sports Illustrated NFL Latest News, Scores, Schedules, and Fantasy Analysis.",uri:"https://www.si.com/rss/si_nfl.rss",ext:"https://www.si.com/nfl"},
-{cat:"Sport",des:"Sports Illustrated Soccer Stories, News, Headlines, and Analysis.",uri:"https://www.si.com/rss/si_soccer.rss",ext:"https://www.si.com/soccer"},
 {cat:"Sport",des:"Sports Illustrated Tennis Matches, Tournaments, Previews, and more.",uri:"https://www.si.com/rss/si_tennis.rss",ext:"https://www.si.com/tennis"},
 {cat:"Sport",des:"SP is a sports board that discusses International Sports.",uri:"http://boards.4chan.org/sp/index.rss",ext:"http://boards.4channel.org/sp/"},
 {cat:"Sport",des:"Sporting News was established in 1886 as a weekly U.S. Magazine.",uri:"http://www.sportingnews.com/us/rss",ext:"http://sportingnews.com"},
