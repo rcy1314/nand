@@ -322,30 +322,28 @@ function get(n){
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){ clearInterval(int)
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr style='opacity:.2'></div>")
-			if ($(data).find('entry').length > 0)				     var set = "entry"
-			else 								     var set = 'item'
-				$(data).find(set).each(function(i){
+			if ($(data).find('entry').length > 0)				     var chan = "entry"
+			else 								     var chan = 'item'
+				$(data).find(chan).each(function(i){
 					if (i >= 19) return false
 
-					if (set == 'entry'){				     var ref = $(this).find('link').attr('href')
-											     var pdt = utc($(this).find('updated').text())
-											     var thm = $(this).find('content').text()
-											     var thm = thm.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
-
-								if (thm != undefined){	     var thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
-											else var thm = ''
+					if (chan == 'entry'){				     var href = $(this).find('link').attr('href')
+											     var padt = utc($(this).find('updated').text())
+											     var thum = $(this).find('content').text()
+											     var thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
+								if (thum != undefined){	     var thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>" }
+											else var thum = ''
 					}
-					else {						     var ref = $(this).find('link').text()
-						if ($(this).find('pubDate').text().length>0) var pdt = utc($(this).find('pubDate').text())
-											else var pdt = utc($(this).find('dc\\:date, date').text())
+					else {						     var href = $(this).find('link').text()
+						if ($(this).find('pubDate').text().length>0) var padt = utc($(this).find('pubDate').text())
+											else var padt = utc($(this).find('dc\\:date, date').text())
 					}
-					if (!thm){					     var thm = $(this).find('media\\:thumbnail, thumbnail').attr('url')
-
-								if (thm != undefined){	     var thm = "<img src='"+thm+"' style='height:75%;width:75%'><br>" }
-											else var thm = ''
+					if (!thum){					     var thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')
+								if (thum != undefined)	     var thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											else var thum = ''
 					}
-					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thm +
-							$(this).find('title:first').text()+"...<br><div class='ago'><br>"+pdt[0]+"<br>"+pdt[1]+"<hr style='opacity:.2'></div></div>")
+					$('.get').append("<div class='end' onclick='window.open(\""+href+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
+							 "<div class='ago'><br>"+padt[0]+"<br>"+padt[1]+"<hr style='opacity:.2'></div></div>")
 				})
 			job = false
 			scr('.get')
