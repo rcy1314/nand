@@ -332,21 +332,26 @@ function get(n){
 					if (chan == 'entry'){
 											     var href = $(this).find('link').attr('href')
 											     var padt = utc($(this).find('updated').text())
-											     var thum = $(this).find('content').text()
-												 thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.{47}/)
-								if (thum != undefined)		 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
-											else	 thum = ''
 					}
 					else {
 											     var href = $(this).find('link').text()
 						if ($(this).find('pubDate').text().length>0) var padt = utc($(this).find('pubDate').text())
 											else var padt = utc($(this).find('dc\\:date, date').text())
 					}
-					if (!thum){
-											     var thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')
-								if (thum != undefined)		 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
-											else	 thum = ''
-					}
+											 if (thum = $(this).find('content').text()){
+												 thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
+										if (thum != null)thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											else     thum = ''
+											    }
+											else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
+												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											}
+											else if (thum = $(this).find('description').text()){
+												 thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/)
+												 thum = "<img src='"+thum+"' style='height:75%;width:75%'><br>"
+											}
+											else 	 thum = ''
+					
 					$('.get').append("<div class='end' onclick='window.open(\""+href+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
 							 "<div class='ago'><br>"+padt[0]+"<br>"+padt[1]+"<hr style='opacity:.2'></div></div>")
 				})
