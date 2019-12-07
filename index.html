@@ -18,7 +18,7 @@
 	bottom: 49.5%;
 	border: none;
 	height: 95%;
-	width: 35%;
+	width: 40%;
 	right: 50%;
     }
 
@@ -44,7 +44,7 @@
 	justify-content: center;
 	display:flex;
 	height:2em;
-	opacity:0;
+	opacity:1;
     }
     .category {
 	display: inline-block;
@@ -53,7 +53,7 @@
 	font-size: 11px;
 	cursor: default;
 	height: 2.5em;
-	width: 16.3%;
+	width: 14%;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -101,7 +101,7 @@
 	height: 40px;
 	width: 40px;
     }
-    #ran {
+    #random {
 	position: absolute;
 	padding-left: 1em;
 	padding-top: 1em;
@@ -121,12 +121,13 @@
 		<div id='Sport' class='category'>Sport</div>
 		<div id='Technology' class='category'>Tech</div>
 		<div id='World' class='category'>World</div>
+		<div id='Youtube' class='category'>Youtube</div>
 	</div>
 	<div class='output'></div>
 	<div class='icon'>
 		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<img id='fav' class='favicon' src='favicon/favicon.png'>
-		<img id='ran' src='favicon/random.png'>
+		<img id='random' src='favicon/random.png'>
 	</div>
 </div>
 </div>
@@ -169,7 +170,7 @@ $('.attach').on('mouseenter', function() {
 
 })
 
-$('#ran').on('touchstart click', function(e) {
+$('#random').on('touchstart click', function(e) {
 
 	ran(sel)
 
@@ -344,7 +345,6 @@ function get(n){
 	scr('.get')
 
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){ clearInterval(int)
 
@@ -370,7 +370,7 @@ function get(n){
 											/* Youtube thumbnails */
 											else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
 											     if (thum.match(/ytimg/)) thum = "<div style='width:100%;height:75%;overflow:hidden'>" +
-															     "<img src='"+thum+"' style='height:75%;width:100%;margin:-11% 0'></div><br>"
+															     "<img src='"+thum+"' style='height:75%;width:100%;margin:-12% 0'></div><br>"
 											/* Standard thumbnails */
 											else     thum = "<img src='"+thum+"' style='height:75%;width:100%'><br>"
 											}
