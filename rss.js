@@ -275,8 +275,6 @@ var menu=[
 {cat:"World",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/worldnews"},
 {cat:"Youtube",des:"ABC News Youtube #News #LiveNews #ABCNewsLive #ABCNews Latest News.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
 {cat:"Youtube",des:"CNN Youtube latest top stories, weather, business, entertainment, politics, and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=CNN",ext:"https://www.youtube.com/user/CNN"},
-{cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
-{cat:"Youtube",des:"USA Today Youtube Investigative Journalism, National and Local News.",uri:"https://www.youtube.com/feeds/videos.xml?user=usatoday",ext:"https://www.youtube.com/user/usatoday"},
 {cat:"Youtube",des:"Bleacher Report Youtube ports highlights, features and animations that drive fandom.",uri:"https://www.youtube.com/feeds/videos.xml?user=BleacherReport",ext:"https://www.youtube.com/user/BleacherReport"},
 {cat:"Youtube",des:"BuzzFeedVideo Youtube New videos posted daily! See behind-the-scenes & more.",uri:"https://www.youtube.com/feeds/videos.xml?user=BuzzFeedVideo",ext:"https://www.youtube.com/user/BuzzFeedVideo"}, 
 {cat:"Youtube",des:"CNET Youtube important product reviews and follow the tech news and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=CNETTV",ext:"https://www.youtube.com/user/CNETTV"},
@@ -286,11 +284,13 @@ var menu=[
 {cat:"Youtube",des:"Forbes highlights business, entrepreneurship, wealth, investing and leadership.",uri:"https://www.youtube.com/feeds/videos.xml?user=forbes",ext:"https://www.youtube.com/user/forbes"},
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
+{cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
 {cat:"Youtube",des:"TMZ Youtube breaking celebrity news, gossip, and insight.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZ",ext:"https://www.youtube.com/user/TMZ"},
 {cat:"Youtube",des:"TMZ Sports Youtube where sport and celebrity cultures intersect.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZSports",ext:"https://www.youtube.com/user/TMZSports"},
+{cat:"Youtube",des:"USA Today Youtube Investigative Journalism, National and Local News.",uri:"https://www.youtube.com/feeds/videos.xml?user=usatoday",ext:"https://www.youtube.com/user/usatoday"},
 {cat:"Youtube",des:"Vice News Youtube is the breaking, break-through news you need.",uri:"https://www.youtube.com/feeds/videos.xml?user=vicenews",ext:"https://www.youtube.com/user/vicenews"},
 {cat:"Youtube",des:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",ext:"https://www.youtube.com/user/wired"}
 ]
