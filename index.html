@@ -106,6 +106,16 @@
 	right: .3em;
 	top: -1em;
     }
+    .opposite {
+	position: absolute;
+	padding-right: 2em;
+	padding-top: 2em;
+	cursor: default;
+	height: 24px;
+	width: 24px;
+	left: .3em;
+	top: -1em;
+    }
     #fav, #inv {
 	border-radius: 24px;
 	height: 40px;
@@ -129,11 +139,11 @@
 		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<img id='fav' class='favicon' src='favicon/favicon.png'>
 		<div class='random'></div>
+		<div class='opposite'></div>
 	</div>
 </div>
 </div>
 <script>
-
 var op = 0
 var ost = 0
 var his = 0
@@ -155,7 +165,6 @@ else {
 
 pop(sel)
 scr('.pop')
-
 $('#'+sel).css('color','#aaa')
 
 $('.output').attr('tabindex', -1).focus()
@@ -175,6 +184,12 @@ $('.attach').on('mouseenter', function() {
 $('.random').on('touchstart click', function(e) {
 
 	ran(sel)
+
+})
+
+$('.opposite').on('touchstart click', function(e) {
+
+	app('op')
 
 })
 
