@@ -56,6 +56,7 @@ var menu=[
 {cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {cat:"Media",des:"RollingStone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {cat:"Media",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
+{cat:"Media",des:"Television subreddit streaming services and the best series.",uri:"https://www.reddit.com/r/television/.rss",ext:"https://www.reddit.com/r/television"},
 {cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {cat:"Media",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
 {cat:"Media",des:"Uproxx is an Entertainment and Culture News website.",uri:"http://feeds.feedburner.com/uproxx/features",ext:"https://uproxx.com"},
