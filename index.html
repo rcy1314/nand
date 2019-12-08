@@ -96,21 +96,21 @@
 	display: flex;
 	top: 1.5em;
     }
+    .random {
+	position: absolute;
+	padding-left: 2em;
+	padding-top: 2em;
+	cursor: default;
+	height: 24px;
+	width: 24px;
+	right: .3em;
+	top: -1em;
+    }
     #fav, #inv {
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
     }
-    #random {
-	position: absolute;
-	padding-left: 1em;
-	padding-top: 1em;
-	cursor: default;
-	height: 24px;
-	width: 24px;
-	opacity: .2;
-	right: 1em;
-	top: -.2em;
 </style>
 <body>
 <div class='wrapper'>
@@ -128,7 +128,7 @@
 	<div class='icon'>
 		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<img id='fav' class='favicon' src='favicon/favicon.png'>
-		<div id='random'>&#8756;</div>
+		<div class='random'></div>
 	</div>
 </div>
 </div>
@@ -172,7 +172,7 @@ $('.attach').on('mouseenter', function() {
 
 })
 
-$('#random').on('touchstart click', function(e) {
+$('.random').on('touchstart click', function(e) {
 
 	ran(sel)
 
