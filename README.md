@@ -23,15 +23,13 @@ None. But here's what's used:
 
 Source the [site](https://acktic.github.io)
 
+### Styling
+
 Default
 `<iframe src='https://acktic.github.io'></iframe>`
 
 Opposite
-`<iframe src='https://acktic.github.io?opp=1'></iframe>`
-
-### Styling
-
-Double tap icon to invert colors.
+`<iframe src='https://acktic.github.io?op=1'></iframe>`
  
 ### CORS Proxy
 
