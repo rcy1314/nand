@@ -105,9 +105,10 @@
 	position: absolute;
 	padding-left: 1em;
 	padding-top: 1em;
+	cursor: default;
 	height: 24px;
 	width: 24px;
-	opacity: .1;
+	opacity: .2;
 	right: 1em;
 	top: -.2em;
 </style>
@@ -127,11 +128,12 @@
 	<div class='icon'>
 		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<img id='fav' class='favicon' src='favicon/favicon.png'>
-		<img id='random' src='favicon/random.png'>
+		<div id='random'>&#8756;</div>
 	</div>
 </div>
 </div>
 <script>
+
 var op = 0
 var ost = 0
 var his = 0
