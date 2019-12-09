@@ -383,7 +383,7 @@ function get(n){
 								  if (thum.match(/youtube/)){var res = thum.split('=')
 												thum = "<object data='https://youtube.com/embed/"+
 													res[1]+"' style='height:20em;width:30em'></object><br>" +
-												       "<div class='ago'>Views " + $(this).find('media\\:statistics').attr('views')
+												       "<div class='ago'><b>Views</b> " + $(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
 											}
