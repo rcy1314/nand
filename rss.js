@@ -281,6 +281,7 @@ var menu=[
 {cat:"Youtube",des:"CNET Youtube important product reviews and follow the tech news and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=CNETTV",ext:"https://www.youtube.com/user/CNETTV"},
 {cat:"Youtube",des:"Digital Trends YouTube gives an inside and in-depth look at trending tech coming out.",uri:"https://www.youtube.com/feeds/videos.xml?user=DigitalTrends",ext:"https://www.youtube.com/user/DigitalTrends"},
 {cat:"Youtube",des:"E! News Youtube entertainment news, celebrities, celeb news, and celebrity gossip.",uri:"https://www.youtube.com/feeds/videos.xml?user=enews",ext:"https://www.youtube.com/user/enews"},
+{cat:"Youtube",des:"Engadget Youtube laptops, cameras, instruments, VR headsets, smart locks and everything in between.",uri:"https://www.youtube.com/feeds/videos.xml?user=engadget",ext:"https://www.youtube.com/user/engadget"},
 {cat:"Youtube",des:"ESPN Youtube features up-to-the-minute sports news coverage, scores, highlights and commentary.",uri:"https://www.youtube.com/feeds/videos.xml?user=ESPN",ext:"https://www.youtube.com/user/ESPN"},
 {cat:"Youtube",des:"Forbes highlights business, entrepreneurship, wealth, investing and leadership.",uri:"https://www.youtube.com/feeds/videos.xml?user=forbes",ext:"https://www.youtube.com/user/forbes"},
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
