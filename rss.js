@@ -289,6 +289,7 @@ var menu=[
 {cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
+{cat:"Youtube",des:"TechCrunch Youtube startups, Internet products, and breaking tech news.",uri:"https://www.youtube.com/feeds/videos.xml?user=techcrunch",ext:"https://www.youtube.com/user/techcrunch"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
 {cat:"Youtube",des:"TMZ Youtube breaking celebrity news, gossip, and insight.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZ",ext:"https://www.youtube.com/user/TMZ"},
 {cat:"Youtube",des:"TMZ Sports Youtube where sport and celebrity cultures intersect.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZSports",ext:"https://www.youtube.com/user/TMZSports"},
