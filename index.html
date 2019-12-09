@@ -350,8 +350,8 @@ function get(n){
 	var e = 1
 	job = true
 	$('.pop, .air, .get, .arm').remove()
+	$('.attach').css('opacity','0')
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
-
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
 
@@ -363,7 +363,7 @@ function get(n){
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
-					if (i >= 19) return false
+					if (i >= 14) return false
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
