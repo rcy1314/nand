@@ -84,7 +84,7 @@
 	display: table;
 	padding: 1.5em;
     }
-    .ago {
+    .ago, .views {
 	line-height: 1.4em;
 	text-align: right;
 	font-size: 9px;
@@ -120,6 +120,10 @@
 	border-radius: 24px;
 	height: 40px;
 	width: 40px;
+    }
+    img, object {
+	height: 20em;
+	width: 30em;
     }
 </style>
 <body>
@@ -375,24 +379,22 @@ function get(n){
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-									       if (thum != null)thum = "<img src='"+thum+"' style='height:50%;width:100%'><br>"
+									       if (thum != null)thum = "<img src='"+thum+"'><br>"
 									       else		thum = ''
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								  if (thum.match(/youtube/)){var res = thum.split('=')
-												thum = "<object data='https://youtube.com/embed/"+
-													res[1]+"' style='height:20em;width:30em'></object><br>" +
-												       "<div class='ago'><b>Views</b> " + $(this).find('media\\:statistics').attr('views')
+								  if (thum.match(/youtube/)){   thum = "<object data='https://youtube.com/embed/" + thum.split('=')[1]+"'></object><br>" +
+												       "<div class='views'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
 											}
-											else    thum = "<img src='"+thum+"' style='height:50%;width:100%'><br>"
+											else    thum = "<img src='"+thum+"'><br>"
 											}
 											/* Description thumbnails */
 											else if(thum = $(this).find('description').text()){
 											     if(thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/))
-												thum = "<img src='"+thum+"' style='height:50%;width:100%'><br>"
+												thum = "<img src='"+thum+"'><br>"
 											   else thum = ''
 											}
 											/* Empty invalid */
