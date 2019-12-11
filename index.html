@@ -74,7 +74,7 @@
 	width: 70%;
     }
     .end {
-	width: 65%;
+	width: 75%;
 	line-height: 1.6em;
 	margin-bottom: 3em;
 	text-align: right;
@@ -82,9 +82,9 @@
 	font-size: 13px;
 	cursor: pointer;
 	display: table;
-	padding: 1.5em;
+	padding: 3em;
     }
-    .ago, .views {
+    .ago {
 	line-height: 1.4em;
 	text-align: right;
 	font-size: 9px;
@@ -121,9 +121,15 @@
 	height: 40px;
 	width: 40px;
     }
-    img, object {
-	height: 20em;
-	width: 30em;
+    iframe {
+	border: none;
+	height: 17em;
+	width: 100%;
+    }
+    img {
+	border: none;
+	height: 25%;
+	width: 50%;
     }
 </style>
 <body>
@@ -384,8 +390,8 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								  if (thum.match(/youtube/)){   thum = "<object data='https://youtube.com/embed/" + thum.split('=')[1]+"'></object><br>" +
-												       "<div class='views'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
+								  if (thum.match(/youtube/)){   thum = "<iframe src='https://youtube.com/embed/" + thum.split('=')[1]+"'></iframe><br>" +
+												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
 											}
