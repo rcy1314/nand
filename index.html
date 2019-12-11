@@ -121,9 +121,9 @@
 	height: 40px;
 	width: 40px;
     }
-    iframe {
+    embed {
 	border: none;
-	height: 20em;
+	height: 17em;
 	width: 100%;
     }
     img {
@@ -391,12 +391,12 @@ function get(n){
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
 								  if (thum.match(/youtube/)){var res = thum.split('=')[1]
-											   var views = $(this).find('media\\:statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<iframe type='text/html' src='https://www.youtube.com/watch?v=" + res + "' frameborder='0' allowfullscreen>" +
-												       "</iframe><br><div class='ago'><b>Views</b> " + views + "</div><br>"
+		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<iframe type='text/html' src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
+												       "</iframe><br>"
 												} else {
-												thum = "<iframe src='https://www.youtube.com/embed/" + res +"' frameborder='0' allowfullscreen></iframe><br>" +
-												       "<div class='ago'><b>Views</b> " + views + "</div><br>"
+												thum = "<iframe src='http://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe><br>" +
+												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
+																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 												}
 											/* Standard thumbnails */
 											}
