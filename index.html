@@ -73,7 +73,7 @@
 	width: 70%;
     }
     .end {
-	width: 75%;
+	width: 90%;
 	line-height: 1.6em;
 	margin-bottom: 3em;
 	text-align: right;
@@ -81,7 +81,7 @@
 	font-size: 13px;
 	cursor: pointer;
 	display: table;
-	padding: 3em;
+	padding: 1em;
     }
     .ago {
 	line-height: 1.4em;
@@ -120,10 +120,18 @@
 	height: 40px;
 	width: 40px;
     }
+    .yt {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+    }
     iframe {
-	border: none;
-	height: 265px;
-	width: 476px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
     }
     img {
 	border: none;
@@ -390,10 +398,10 @@ function get(n){
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
 								  if (thum.match(/youtube/)){var res = thum.split('=')[1]
-		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<iframe type='text/html' src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
-												       "</iframe><br>"
+		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<div class='yt'><iframe type='text/html' src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
+												       "</iframe></div><br>"
 												} else {
-												thum = "<iframe src='https://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe><br>" +
+												thum = "<div class='yt'><iframe sr	c='https://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 												}
