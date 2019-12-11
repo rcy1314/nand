@@ -410,10 +410,8 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-			setTimeout(function () {
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
 							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>")
-			}, i*2000);												
 				})
 			job = false
 			scr('.get')
