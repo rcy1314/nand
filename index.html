@@ -380,7 +380,7 @@ function get(n){
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
-					if (i >= 14) return false
+					if (i >= 9) return false
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
@@ -417,7 +417,7 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					$('.get').delay(i*2000).append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title').text()+"...<br>" +
+					$('.get').delay(i*1000).append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title').text()+"...<br>" +
 							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>")
 				})
 			job = false
