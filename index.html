@@ -402,9 +402,8 @@ function get(n){
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
 								  if (thum.match(/youtube/)){var res = thum.split('=')[1]
-												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + res +"' frameborder='0' allowfullscreen></iframe></div><br>" +
-												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
-																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
+												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen></iframe></div><br>" +
+												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
 											}
 											else    thum = "<img src='"+thum+"'><br>"
