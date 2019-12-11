@@ -163,7 +163,6 @@
 </div>
 </div>
 <script>
-var yt = 500
 var op = 0
 var ost = 0
 var his = 0
@@ -368,10 +367,9 @@ function get(n){
 	his = n
 	var e = 1
 	job = true
-	if (sel == 'Youtube') var let = 1000
-	else var let = 250
-	$('.pop, .air, .get, .arm').remove()
 	$('.attach').css('opacity','0')
+	$('.pop, .air, .get, .arm').remove()
+	if (sel == 'Youtube'){ var let = 1000 } else { var let = 250 }
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
