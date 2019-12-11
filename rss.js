@@ -242,6 +242,7 @@ var menu=[
 {cat:"World",des:"Boston is a regional website that offers news and information about Boston, Massachusetts.",uri:"https://www.boston.com/tag/world-news/feed",ext:"https://www.boston.com/tag/world-news"},
 {cat:"World",des:"Boston Herald is the leading source of breaking news, local news, sports, politics, and entertainment.",uri:"https://www.bostonherald.com/feed",ext:"https://www.bostonherald.com"},
 {cat:"World",des:"CBS is a media company that creates and distributes industry-leading content.",uri:"https://www.cbsnews.com/latest/rss/world",ext:"https://cbsnews.com"},
+{cat:"World",des:"Common Dreams is a daily, glorious taste of what the dominant media could be.",uri:"https://www.commondreams.org/rss.xml",ext:'https://www.commondreams.org"},
 {cat:"World",des:"CNBC latest headlines from around the world.",uri:"https://www.cnbc.com/id/100727362/device/rss/rss.html",ext:"https://cnbc.com/world"},
 {cat:"World",des:"CNN is among the world's leaders in online news and information delivery.",uri:"http://rss.cnn.com/rss/cnn_topstories.rss",ext:"https://cnn.com"},
 {cat:"World",des:"Daily Mail is a British daily middle-market newspaper published in London.",uri:"https://www.dailymail.co.uk/articles.rss",ext:"https://dailymail.co.uk"},
