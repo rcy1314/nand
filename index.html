@@ -121,7 +121,7 @@
 	height: 40px;
 	width: 40px;
     }
-    iframe {
+    object {
 	border: none;
 	height: 17em;
 	width: 100%;
@@ -391,8 +391,9 @@ function get(n){
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
 								  if (thum.match(/youtube/)){
-			if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){
-												 thum ="<iframe allow='autoplay; encrypted-media' src='https://www.youtube.com/embed/' + thum.split('=')[1]+"'></iframe>"
+			if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<object><param value='http://www.youtube.com/embed/" + thum.split('=')[1]+"'></param>" +
+												       "<embed src='http://www.youtube.com/embed/" + thum.split('=')[1] + "' type='application/x-shockwave-flash'>" +
+												       "</embed></object><br>"
 												} else {
 												thum = "<iframe src='http://www.youtube.com/embed/" + thum.split('=')[1]+"'></iframe><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
