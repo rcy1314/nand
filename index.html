@@ -56,9 +56,11 @@
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
 	outline: none !important;
 	scrollbar-width: none;
 	position: relative;
+	overflow-y: scroll;
 	overflow: auto;
 	height: 86%;
 	top: 1em;
@@ -400,13 +402,9 @@ function get(n){
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
 								  if (thum.match(/youtube/)){var res = thum.split('=')[1]
-		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<div class='yt'><iframe type='text/html' src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
-												       "</iframe></div><br>"
-												} else {
-												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
+												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + res +"' frameborder='0' allowfullscreen></iframe></div><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
-												}
 											/* Standard thumbnails */
 											}
 											else    thum = "<img src='"+thum+"'><br>"
