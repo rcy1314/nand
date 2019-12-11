@@ -401,7 +401,7 @@ function get(n){
 		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<div class='yt'><iframe type='text/html' src='https://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
 												       "</iframe></div><br>"
 												} else {
-												thum = "<div class='yt'><iframe sr	c='https://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
+												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 												}
@@ -417,8 +417,8 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					$(this).delay(i*1000).queue(function(){ $('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
-							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>") })
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'>"+thum+$(this).find('title:first').text()+"...<br>" +
+							 "<div class='ago'><br>"+dst[0]+"<br>"+dst[1]+"<hr style='opacity:.2'></div></div>")
 				})
 			job = false
 			scr('.get')
