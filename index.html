@@ -369,7 +369,7 @@ function get(n){
 	var e = 1
 	job = true
 	$('.attach').css('opacity','0')
-	$('.pop, .air, .get, .arm').remove()
+	$('.pop, .air, .get').remove()
 	if (sel == 'Youtube'){ var let = 1000 } else { var let = 100 }
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
