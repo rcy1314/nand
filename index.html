@@ -390,7 +390,7 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								  if (thum.match(/youtube/)){   thum = "<iframe src='https://youtube.com/embed/" + thum.split('=')[1]+"'></iframe><br>" +
+								  if (thum.match(/youtube/)){   thum = "<iframe src='http://youtube.com/embed/" + thum.split('=')[1]+"'></iframe><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
 																   .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
