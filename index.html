@@ -163,7 +163,7 @@
 </div>
 </div>
 <script>
-
+var yt = 500
 var op = 0
 var ost = 0
 var his = 0
@@ -368,12 +368,13 @@ function get(n){
 	his = n
 	var e = 1
 	job = true
+	if (sel == 'Youtube') var let = 1000
+	else var let = 250
 	$('.pop, .air, .get, .arm').remove()
 	$('.attach').css('opacity','0')
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	scr('.get')
-
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){ clearInterval(int)
@@ -382,7 +383,7 @@ function get(n){
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
-					$(this).delay(i*250).queue(function(){ 
+					$(this).delay(i*let).queue(function(){ 
 					if (i >= 14) return false
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
