@@ -390,10 +390,9 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								  if (thum.match(/youtube/)){
-		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<video>" +
-												       "<source type='video/youtube' src='http://www.youtube.com/v/" + thum.split('=')[1] + "'>" +
-												       "</video><br>"
+								  if (thum.match(/youtube/)){var res = thum.split('=')[1]
+		       if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)){thum = "<iframe id='ytplayer' type='text/html' src='http://www.youtube.com/embed/" + res + "' frameborder='0' allowfullscreen>" +
+												       "</iframe><br>"
 												} else {
 												thum = "<iframe src='http://www.youtube.com/embed/" + thum.split('=')[1]+"'></iframe><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics').attr('views')
