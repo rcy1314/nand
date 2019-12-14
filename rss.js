@@ -188,6 +188,7 @@ var menu=[
 {cat:"Technology",des:"Google Technology News, Opinion, and Analysis.",uri:"https://news.google.com/rss/search?cf=all&pz=1&q=technology&hl=en-US&gl=US&ceid=US:en",ext:"https://google.com"},
 {cat:"Technology",des:"Hackaday serves up Fresh Hacks Every Day from around the Internet.",uri:"https://hackaday.com/feed",ext:"https://hackaday.com"},
 {cat:"Technology",des:"Hacker News is a reader ran headline submission news purveyor.",uri:"https://news.ycombinator.com/rss",ext:"https://news.ycombinator.com"},
+{cat:"Technology",des:"Houston Chronicle Technology News and Headlines.",uri:"https://www.chron.com/rss/feed/Technology-289.php",ext:"https://www.chron.com/business/technology"},
 {cat:"Technology",des:"HuffingtonPost Tech news, headlines, and opinion.",uri:"https://www.huffpost.com/section/technology/feed",ext:"https://www.huffpost.com/impact/technology"},
 {cat:"Technology",des:"Independent.co.uk for Latest Gadgets and Tech News.",uri:"http://www.independent.co.uk/life-style/gadgets-and-tech/rss",ext:"https://independent.co.uk/life-style/gadgets-and-tech"},
 {cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
