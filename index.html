@@ -132,15 +132,14 @@
     }
     iframe {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
     }
     .thum, img {
-	margin-left: auto
+	margin-left: auto;
 	border: none;
-	height: 100%;
 	width: 100%;
     }
 </style>
@@ -382,7 +381,7 @@ function get(n){
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
 				    $(this).delay(i*let).queue(function(){ 
-					if (i >= 14) return false
+					if (i >= 9) return false
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
@@ -394,7 +393,7 @@ function get(n){
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-									       if (thum != null)thum = "<img src='"+thum+"'><br>"
+									       if (thum != null)thum = "<img src='"+thum+"' style='width: 50%'><br>"
 									       else		thum = ''
 											}
 											/* Youtube thumbnails */
