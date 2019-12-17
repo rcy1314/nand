@@ -365,11 +365,11 @@ function pop(n){
 
 function get(n){
 	his = n
-	var e = 1
+	var e = 0
 	job = true
 	$('.attach').css('opacity','0')
 	$('.pop, .air, .get').remove()
-	if (sel == 'Youtube'){ var let = 1000 } else { var let = 100 }
+	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
