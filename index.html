@@ -118,7 +118,6 @@
 	top: -1em;
     }
     #fav, #inv {
-	border-radius: 24px;
 	height: 32px;
 	width: 32px;
     }
@@ -323,13 +322,13 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('#fav').css({'-webkit-box-shadow':'0px 0px 0px #000','display':'block'}); $('#inv').hide(); $('hr').hide()
+		$('#fav').css({'display':'block'}); $('#inv').hide(); $('hr').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('.container').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').css({'-webkit-box-shadow':'1px 1px 3px #888','display':'block'}); $('#fav').hide(); $('hr').show()
+		$('#inv').css({'display':'block'}); $('#fav').hide(); $('hr').show()
 	}
 
 }
