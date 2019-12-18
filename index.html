@@ -137,7 +137,7 @@
 	left: 0;
 	top: 0;
     }
-    .thum, img {
+    .thum {
 	margin-left: auto;
 	border: none;
 	width: 100%;
@@ -405,7 +405,7 @@ function get(n){
 											   else thum = "<img src='"+thum+"'><br>"
 											} /*  Media Thumbnails */
 											else if (thum= $(this).find('media\\:thumbnail, thumbnail').attr('url')){
-												thum = "<img src='"+thum+"'><br>"
+												thum = "<img src='"+thum+"' style='width:100%'><br>"
 											}
 											/* Description thumbnails */
 											else if(thum = $(this).find('description').text()){
