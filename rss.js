@@ -302,6 +302,7 @@ var menu=[
 {cat:"Youtube",des:"TMZ Sports Youtube where sport and celebrity cultures intersect.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZSports",ext:"https://www.youtube.com/user/TMZSports"},
 {cat:"Youtube",des:"USA Today Youtube Investigative Journalism, National and Local News.",uri:"https://www.youtube.com/feeds/videos.xml?user=usatoday",ext:"https://www.youtube.com/user/usatoday"},
 {cat:"Youtube",des:"Vice News Youtube is the breaking, break-through news you need.",uri:"https://www.youtube.com/feeds/videos.xml?user=vicenews",ext:"https://www.youtube.com/user/vicenews"},
+{cat:"Youtube",des:"Vox Youtube helps you cut through the noise and understand what's driving headlines.",uri:"https://www.youtube.com/feeds/videos.xml?user=voxdotcom",ext:"https://www.youtube.com/user/voxdotcom"},
 {cat:"Youtube",des:"Wall Street Journal Youtube dig deeper into the news that matters to you.",uri:"https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",ext:"https://www.youtube.com/user/wsjdigitalnetwork"},
 {cat:"Youtube",des:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",ext:"https://www.youtube.com/user/wired"}
 ]
