@@ -8,7 +8,6 @@ var menu=[
 {cat:"News",des:"CBS WBBM-TV Chicago All the local news and information you need.",uri:"https://chicago.cbslocal.com/feed",ext:"https://chicago.cbslocal.com"},
 {cat:"News",des:"NBC WMAQ-TV Chicago latest weather, traffic, entertainment and politics.",uri:"https://www.nbcchicago.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcchicago.com"},
 {cat:"News",des:"CBS KTVT Dallas Texas breaking news, weather, traffic, and sports.",uri:"https://dfw.cbslocal.com/feed",ext:"https://dfw.cbslocal.com"},
-{cat:"News",des:"NBC KXAS-TV Dallas News, Weather, Sports, Business, Lifestyle, Traffic and Health.",uri:"https://www.nbcdfw.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://www.nbcdfw.com"},
 {cat:"News",des:"ABC KTRK-TV Houston Breaking News from Houston and the surrounding neighborhoods.",uri:"https://abc13.com/feed",ext:"https://abc13.com"},
 {cat:"News",des:"ABC KSAT-TV San Antonio Latest news, weather and sports.",uri:"https://www.ksat.com/arcio/rss/category/news/national/?size=10",ext:"https://www.ksat.com"},
 {cat:"News",des:"ABC Los Angeles cover news, weather, sports, traffic and live video.",uri:"https://abc7.com/feed",ext:"https://abc7.com"},
