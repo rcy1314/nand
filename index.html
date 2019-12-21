@@ -324,13 +324,15 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('#fav').css({'display':'block'}); $('#inv').hide(); $('hr').hide()
+		$('#fav').css({'display':'block'})
+		$('#inv').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('.container').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').css({'display':'block'}); $('#fav').hide(); $('hr').show()
+		$('#inv').css({'display':'block'})
+		$('#fav').hide()
 	}
 
 }
@@ -424,10 +426,10 @@ function get(n){
 							 "<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"<hr style='opacity:.2'></div></div>")
 				    })
 				})
+			})
 			job = false
 			scr('.get')
 			app()
-		})
 }
 </script>
 </body>
