@@ -388,7 +388,7 @@ function get(n){
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-									       if (thum != null)thum = "<img src='"+thum+"' style='width: 65%'><br>"
+									       if (thum != null)thum = "<img src='"+thum+"' style='width: 55%'><br>"
 									       else		thum = ''
 											}
 											/* Youtube thumbnails */
@@ -405,7 +405,7 @@ function get(n){
 											/* Description thumbnails */
 											else if(thum = $(this).find('description').text()){
 											     if(thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/))
-												thum = "<img src='"+thum+"' style='width:65%'><br>"
+												thum = "<img src='"+thum+"' style='width:55%'><br>"
 											   else thum = ''
 											}
 											/* Empty invalid */
