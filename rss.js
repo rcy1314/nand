@@ -290,6 +290,7 @@ var menu=[
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
 {cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
+{cat:"Youtube",des:"NFL Youtube highlights from your favorite teams and players, daily fantasy football updates.",uri:"https://www.youtube.com/feeds/videos.xml?user=nfl",ext:"https://www.youtube.com/user/nfl"},
 {cat:"Youtube",des:"National Geographic Youtube premium destination for science, exploration, and adventure.",uri:"https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",ext:"https://www.youtube.com/user/nationalgeographic"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
