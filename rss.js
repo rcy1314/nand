@@ -285,6 +285,7 @@ var menu=[
 {cat:"Youtube",des:"E! News Youtube entertainment news, celebrities, celeb news, and celebrity gossip.",uri:"https://www.youtube.com/feeds/videos.xml?user=enews",ext:"https://www.youtube.com/user/enews"},
 {cat:"Youtube",des:"Engadget Youtube laptops, cameras, instruments, VR headsets, smart locks and everything in between.",uri:"https://www.youtube.com/feeds/videos.xml?user=engadget",ext:"https://www.youtube.com/user/engadget"},
 {cat:"Youtube",des:"ESPN Youtube features up-to-the-minute sports news coverage, scores, highlights and commentary.",uri:"https://www.youtube.com/feeds/videos.xml?user=ESPN",ext:"https://www.youtube.com/user/ESPN"},
+{cat:"Youtube",des:"IGN Entertainment Youtube game reviews, trailers, and walkthroughs.",uri:"https://www.youtube.com/feeds/videos.xml?user=ignentertainment",ext:"https://www.youtube.com/user/ignentertainment"},
 {cat:"Youtube",des:"Forbes highlights business, entrepreneurship, wealth, investing and leadership.",uri:"https://www.youtube.com/feeds/videos.xml?user=forbes",ext:"https://www.youtube.com/user/forbes"},
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
