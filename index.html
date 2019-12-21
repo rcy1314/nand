@@ -162,7 +162,6 @@
 </div>
 </div>
 <script>
-var op = 0
 var ost = 0
 var his = 0
 var job = false
@@ -177,7 +176,7 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
 else {
 
-        app(op)
+        app('0')
 
 }
 
@@ -324,15 +323,13 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
-		$('#fav').css({'display':'block'})
-		$('#inv').hide()
+		$('#fav').css({'display':'block'}); $('#inv').hide(); $('hr').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('.container').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').css({'display':'block'})
-		$('#fav').hide()
+		$('#inv').css({'display':'block'}); $('#fav').hide(); $('hr').show()
 	}
 
 }
@@ -388,7 +385,7 @@ function get(n){
 				$(data).find(chn).each(function(i){
 				    $(this).delay(i*let).queue(function(){ 
 					if (i === 9) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a></div>")
-					if (i >= 9) return false
+					if (i >= 9){ app(); return false }
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
@@ -423,13 +420,12 @@ function get(n){
 											/* Empty invalid */
 											else 	thum = ''
 					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'><div class='thum'>"+thum+"</div>"+$(this).find('title:first').text()+"<br>" +
-							 "<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"<hr style='opacity:.2'></div></div>")
+							 "<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"<hr></div></div>")
 				    })
 				})
-			})
 			job = false
 			scr('.get')
-			app()
+		})
 }
 </script>
 </body>
