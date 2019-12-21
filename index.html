@@ -364,15 +364,16 @@ function pop(n){
 }
 
 function get(n){
+	var e = 0
 	var obj = []
+	var quit = 9
+	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
 	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
 	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
 	else his = parseInt(n) + 1
-	var e = 0
 	job = true
 	$('.attach').css('opacity','0')
 	$('.pop, .air, .get').remove()
-	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
@@ -384,8 +385,8 @@ function get(n){
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
 				    $(this).delay(i*let).queue(function(){ 
-					if (i === 9) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a></div>")
-					if (i >= 9){ app(); return false }
+					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a></div>")
+					if (i >= quit){ app(); return false }
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
