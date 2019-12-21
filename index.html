@@ -367,8 +367,8 @@ function pop(n){
 function get(n){
 	var obj = []
 	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
-	if (menu[n].des == obj.slice(-1)[0].des) his = 0
-	else his = n+1
+	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
+	else his = parseInt(n) + 1
 	var e = 0
 	job = true
 	$('.attach').css('opacity','0')
@@ -385,9 +385,7 @@ function get(n){
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
 				    $(this).delay(i*let).queue(function(){ 
-					if (i === 9){
-						$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a></div>")
-					}
+					if (i === 9) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a></div>")
 					if (i >= 9) return false
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
