@@ -31,7 +31,7 @@ Default
 Opposite
 `<iframe src='https://acktic.github.io?op=1'></iframe>`
  
- <p align='center'>![screenshot](https://ackti.files.wordpress.com/2019/12/4660423988033.jpg 'Default')</p>
+ <p align='center'><img src='https://ackti.files.wordpress.com/2019/12/4660423988033.jpg' 'Default'></p>
  
  
 ### CORS Proxy
