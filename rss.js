@@ -297,6 +297,7 @@ var menu=[
 {cat:"Youtube",des:"NFL Youtube highlights from your favorite teams and players, daily fantasy football updates.",uri:"https://www.youtube.com/feeds/videos.xml?user=nfl",ext:"https://www.youtube.com/user/nfl"},
 {cat:"Youtube",des:"National Geographic Youtube premium destination for science, exploration, and adventure.",uri:"https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",ext:"https://www.youtube.com/user/nationalgeographic"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
+{cat:"Youtube",des:"Rolling Stone Youtube exclusive videos on music, politics, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=rollingstone",ext:"https://www.youtube.com/user/rollingstone"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
 {cat:"Youtube",des:"TechCrunch Youtube startups, Internet products, and breaking tech news.",uri:"https://www.youtube.com/feeds/videos.xml?user=techcrunch",ext:"https://www.youtube.com/user/techcrunch"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
