@@ -17,7 +17,7 @@ None. But here's what's used:
 
 * Simple Array Structure in rss.js
 
-`{ cat : "category", des : "description", uri : "feed", external : "external" },`
+`{ cat : "category", des : "description", uri : "feed", external : "url" },`
 
 ### Sourcing
 
