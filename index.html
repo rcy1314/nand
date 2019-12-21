@@ -220,6 +220,8 @@ $('.category').on('touchstart click', function(e){
 	pop($(this).attr('id'))
 	scr('.pop:last')
 
+    e.preventDefault()
+
 })
 
 $('.output').on('scroll', function(e){
@@ -236,6 +238,8 @@ $('.favicon').on('touchstart click', function(e){
 	tap = null
 	pop(sel)
 	scr('.pop:last')
+
+    e.preventDefault()
 
 })
 
