@@ -17,7 +17,7 @@
 	position: absolute;
 	bottom: 49.5%;
 	border: none;
-	height: 98%;
+	height: 100%;
 	width: 55%;
 	right: 50%;
     }
@@ -322,12 +322,11 @@ function app(n){
 	else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output').css({'background-color':'#000','border':'none','color':'#EFEFEF'})
+		$('html, .container, .output').css({'background-color':'#000','color':'#EFEFEF'})
 		$('#fav').css({'display':'block'}); $('#inv').hide(); $('hr').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
-		$('.container').css('border','1px solid rgba(38,38,38,.2)')
 		$('html').css('background-color','rgba(38,38,38,.02)')
 		$('#inv').css({'display':'block'}); $('#fav').hide(); $('hr').show()
 	}
