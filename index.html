@@ -89,6 +89,7 @@
     }
     .ago {
 	text-align: right;
+	margin-top: -1em;
 	line-height: 1em;
 	font-size: 8px;
 	float: right;
@@ -118,6 +119,11 @@
     #fav, #inv {
 	height: 32px;
 	width: 32px;
+    }
+    .hed {
+	line-height: 1.4em;
+	margin-left: auto;
+	font-size: 14px;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -419,8 +425,8 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'><div class='thum'>"+thum+"</div>"+$(this).find('title:first').text()+"<br>" +
-							 "<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"<hr></div></div>")
+					$('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,80)+'...'+"</div>" +
+							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"<hr></div></div>")
 				    })
 				})
 			job = false
