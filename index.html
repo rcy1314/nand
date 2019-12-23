@@ -78,8 +78,8 @@
 	width: 80%;
     }
     .end {
+	margin-bottom: 3.5em;
 	line-height: 1.4em;
-	margin-bottom: 5em;
 	margin-right: auto;
 	text-align: left;
 	margin-left: 15%;
@@ -376,13 +376,13 @@ function pop(n){
 
 function get(n){
 	var e = 0
+	job = true
 	var obj = []
 	var quit = 11
 	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
 	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
 	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
 	else his = parseInt(n) + 1
-	job = true
 	$('.attach').css('opacity','0')
 	$('.pop, .air, .get').remove()
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
@@ -430,6 +430,7 @@ function get(n){
 											else 	thum = ''
 					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
 							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br><hr></div>"
+					/* No <hr> */
 					if (i === quit) $('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
 							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
 					if (i >= quit){ app(); return false }
@@ -437,7 +438,6 @@ function get(n){
 				    })
 				})
 			job = false
-			scr('.get')
 		})
 }
 </script>
