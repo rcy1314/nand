@@ -24,7 +24,7 @@
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .category:hover { color: #aaa !important }
+    .category:hover { color: #bbb !important }
 
     ::-webkit-scrollbar { display: none }
 
@@ -44,7 +44,7 @@
     .attach {
 	justify-content: center;
 	display: flex;
-	height: 2.2em;
+	height: 2.5em;
 	opacity: 1;
     }
     .category {
@@ -53,8 +53,9 @@
 	padding-top: 1.5em;
 	cursor: default;
 	font-size: 8px;
+	height: 55%;
 	width: 14.5%;
-	color: #777;
+	color: #888;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -198,8 +199,8 @@ else {
 
 pop(sel)
 scr('.pop')
-$('#'+sel).css('color','#aaa')
-$('#'+sel).css('border-bottom','1px solid #aaa')
+$('#'+sel).css('color','#bbb')
+$('#'+sel).css('border-bottom','1px solid #bbb')
 
 $('.output').attr('tabindex', -1).focus()
 
@@ -234,9 +235,9 @@ $('.opposite').on('touchstart click', function(e) {
 $('.category').on('touchstart click', function(e){
 
 	$('.category').css('border-bottom','none')
-	$('.category').css('color','#777')
-	$(this).css('border-bottom','1px solid #aaa')
-	$(this).css('color','#aaa')
+	$('.category').css('color','#888')
+	$(this).css('border-bottom','1px solid #bbb')
+	$(this).css('color','#bbb')
 	pop($(this).attr('id'))
 	scr('.pop:last')
 
@@ -341,12 +342,12 @@ function app(n){
 	else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output').css({'background-color':'#000','color':'#EFEFEF'})
+		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 		$('.attach').css('background-color','#000')
 	}
 	else if (op == 0){
-		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
+		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('html').css('background-color','rgba(38,38,38,.02)')
 		$('#inv').show(); $('#fav').hide(); $('hr').show()
 		$('.attach').css('background-color','#333')
