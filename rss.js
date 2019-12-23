@@ -18,7 +18,6 @@ var menu=[
 {cat:"News",des:"NBC WTVJ Florida Local News, National News and Breaking News Stories.",uri:"https://www.nbcmiami.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcmiami.com"},
 {cat:"News",des:"ABC San Francisco Local News and Headlines.",uri:"https://abc7news.com/feed",ext:"https://abc7news.com"},
 {cat:"News",des:"CBS KPIX San Francisco News, Sports, Weather, Traffic and the Best of San Francisco.",uri:"https://sanfrancisco.cbslocal.com/feed",ext:"https://sanfrancisco.cbslocal.com"},
-{cat:"News",des:"NBC KNTV San Franscisco Local Television Station in the Bay Area market.",uri:"https://www.nbcbayarea.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcbayarea.com"},
 {cat:"News",des:"ABC New York covering New York City, New Jersey, and Long Island.",uri:"https://abc7ny.com/feed",ext:"https://abc7ny.com"},
 {cat:"News",des:"CBS WCBS-TV New York City Digital Streaming News Service, It's always on.",uri:"https://newyork.cbslocal.com/feed",ext:"https://newyork.cbslocal.com"},
 {cat:"News",des:"NBC WNBC New York Weather, Traffic, Entertainment and Health.",uri:"https://www.nbcnewyork.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcnewyork.com"},
