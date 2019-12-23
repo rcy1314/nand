@@ -394,7 +394,7 @@ function get(n){
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){clearInterval(int)
 			$('.arm').remove()
-			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
