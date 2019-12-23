@@ -411,12 +411,12 @@ function get(n){
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-									       if (thum != null)thum = "<img src='"+thum+"' style='height:50%;width:55%'><br>"
+									       if (thum != null)thum = "<img src='"+thum+"' style='width:55%'><br>"
 									       else		thum = ''
 											}
 											/* Youtube thumbnails */
-										        else if (thum= $(this).find('link').attr('href')){
-								  if (thum.match(/youtube/)){   thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
+										       else if (thum = $(this).find('link').attr('href')){
+								    if (thum.match(/youtube/)){ thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
 											/* Standard thumbnails */
 											    }
@@ -428,7 +428,7 @@ function get(n){
 											/* Description thumbnails */
 											else if(thum = $(this).find('description').text()){
 											     if(thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/))
-												thum = "<img src='"+thum+"' style='height:50%;width:55%'><br>"
+												thum = "<img src='"+thum+"' style='width:55%'><br>"
 											   else thum = ''
 											}
 											/* Empty invalid */
