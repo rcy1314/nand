@@ -54,6 +54,7 @@
 	cursor: default;
 	font-size: 8px;
 	width: 14.5%;
+	color: #777;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -233,7 +234,7 @@ $('.opposite').on('touchstart click', function(e) {
 $('.category').on('touchstart click', function(e){
 
 	$('.category').css('border-bottom','none')
-	$('.category').css('color','#373737')
+	$('.category').css('color','#777')
 	$(this).css('border-bottom','1px solid #aaa')
 	$(this).css('color','#aaa')
 	pop($(this).attr('id'))
@@ -342,11 +343,13 @@ function app(n){
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EFEFEF'})
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
+		$('.attach').css('background-color','#000')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('html').css('background-color','rgba(38,38,38,.02)')
 		$('#inv').show(); $('#fav').hide(); $('hr').show()
+		$('.attach').css('background-color','#333')
 	}
 
 }
