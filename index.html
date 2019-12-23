@@ -78,16 +78,20 @@
 	width: 80%;
     }
     .end {
+	border-radius: 12px;
 	background-color: #fcfcfc;
 	margin-bottom: 3.5em;
+	padding-bottom: 2em;
 	line-height: 1.4em;
 	margin-right: auto;
+	padding-right: 2em;
+	padding-top: 3.5em;
+	padding-left: 2em;
 	text-align: left;
 	margin-left: 15%;
 	font-size: 10px;
 	cursor: pointer;
 	display: table;
-	padding: 2em;
 	width: 70%;
     }
     .ago {
@@ -380,7 +384,7 @@ function get(n){
 	var e = 0
 	job = true
 	var obj = []
-	var quit = 11
+	var quit = 10
 	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
 	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
 	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
@@ -431,10 +435,7 @@ function get(n){
 											/* Empty invalid */
 											else 	thum = ''
 					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
-							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br><hr></div>"
-					/* No <hr> */
-					if (i === quit) $('.get').append("<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
-							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
+							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
 					if (i >= quit){ app(); return false }
 					if (i < quit) $('.get').append(pub)
 				    })
