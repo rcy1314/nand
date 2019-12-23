@@ -44,7 +44,7 @@
     .attach {
 	justify-content: center;
 	display: flex;
-	height: 2.5em;
+	height: 2.2em;
 	opacity: 1;
     }
     .category {
@@ -52,8 +52,8 @@
 	text-align: center;
 	padding-top: 1.5em;
 	cursor: default;
-	font-size: 9px;
-	width: 14%;
+	font-size: 8px;
+	width: 14.5%;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -198,6 +198,7 @@ else {
 pop(sel)
 scr('.pop')
 $('#'+sel).css('color','#aaa')
+$('#'+sel).css('border-bottom','1px solid #aaa')
 
 $('.output').attr('tabindex', -1).focus()
 
@@ -231,7 +232,9 @@ $('.opposite').on('touchstart click', function(e) {
 
 $('.category').on('touchstart click', function(e){
 
+	$('.category').css('border-bottom','none')
 	$('.category').css('color','#373737')
+	$(this).css('border-bottom','1px solid #aaa')
 	$(this).css('color','#aaa')
 	pop($(this).attr('id'))
 	scr('.pop:last')
@@ -382,7 +385,7 @@ function get(n){
 	job = true
 	var obj = []
 	var quit = 9
-	if (sel == 'Youtube'){ var let = 250 } else { var let = 0 }
+	if (sel == 'Youtube'){ var let = 500 } else { var let = 0 }
 	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
 	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
 	else his = parseInt(n) + 1
