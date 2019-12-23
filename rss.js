@@ -148,6 +148,7 @@ var menu=[
 {cat:"Sport",des:"Sports subreddit for all the Latest Headlines and Discussion in Sports.",uri:"https://reddit.com/r/sports/.rss",ext:"https://reddit.com/r/sports"},
 {cat:"Sport",des:"Telegraph.co.uk Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
 {cat:"Sport",des:"Tennis subreddit discusses Tennis, from Tour Professionals to Recreational Players.",uri:"https://reddit.com/r/tennis/.rss",ext:"https://reddit.com/r/tennis"},
+{cat:"Sport",des:"The Ringer is a sports and pop culture website and podcast network",uri:"http://feeds.feedburner.com/TheRinger_RSS",ext:"https://www.theringer.com"},
 {cat:"Sport",des:"The Score Trending News, Announcements, Highlights, and Analysis.",uri:"https://feeds.thescore.com/trending.rss",ext:"https://thescore.com"},
 {cat:"Sport",des:"The Score MLB Trending News & Rumors for Baseball, and More.",uri:"https://feeds.thescore.com/mlb.rss",ext:"https://thescore.com/mlb/news"},
 {cat:"Sport",des:"The Score MMA headlines, news, and analysis.",uri:"https://feeds.thescore.com/mma.rss",ext:"https://thescore.com/mma/news"},
