@@ -340,12 +340,12 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EFEFEF'})
-		$('#fav').css({'display':'block'}); $('#inv').hide(); $('hr').hide()
+		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#373737'})
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').css({'display':'block'}); $('#fav').hide(); $('hr').show()
+		$('#inv').show(); $('#fav').hide(); $('hr').show()
 	}
 
 }
