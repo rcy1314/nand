@@ -52,7 +52,7 @@
 	text-align: center;
 	padding-top: 1.5em;
 	cursor: default;
-	font-size: 8px;
+	font-size: 9px;
 	width: 14%;
     }
     .output {
@@ -71,7 +71,7 @@
 	padding-bottom: 2em;
 	line-height: 1.4em;
 	margin-left: 15%;
-	font-size: 10px;
+	font-size: 14px;
 	cursor: default;
 	height: 5em;
 	width: 80%;
@@ -87,16 +87,25 @@
 	padding-left: 2em;
 	text-align: left;
 	margin-left: 15%;
-	font-size: 10px;
+	font-size: 14px;
 	cursor: pointer;
 	display: table;
 	width: 70%;
+    }
+    .hed {
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	font-family: Arial;
+	line-height: 1.4em;
+	margin-left: auto;
+	font-weight: bold;
+	font-size: 16px;
     }
     .ago {
 	margin-top: -.8em;
 	text-align: left;
 	line-height: 1em;
-	font-size: 8px;
+	font-size: 12px;
 	float: left;
     }
     .icon {
@@ -123,15 +132,6 @@
     #fav, #inv {
 	height: 32px;
 	width: 32px;
-    }
-    .hed {
-	text-transform: capitalize;
-	letter-spacing: 1px;
-	font-family: Arial;
-	line-height: 1.4em;
-	margin-left: auto;
-	font-weight: bold;
-	font-size: 13px;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -394,6 +394,7 @@ function get(n){
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){clearInterval(int)
 			$('.arm').remove()
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</a><hr></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -433,6 +434,7 @@ function get(n){
 											else 	thum = ''
 					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
 							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
+					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 					if (i < quit) $('.get').append(pub)
 				    })
