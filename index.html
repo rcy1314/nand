@@ -409,12 +409,12 @@ function get(n){
 				    $(this).delay(i*let).queue(function(){ 
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
-											     if (dst = utc($(this).find('updated').text())) val = $(this).find('updated').text()
+											     if (dst = utc($(this).find('updated').text())) age = $(this).find('updated').text()
 					}
 					else {
 											     var ref = $(this).find('link').text()
-											     if (dst = utc($(this).find('pubDate').text())) val = $(this).find('pubDate').text()
-											     if (dst = utc($(this).find('dc\\:date, date').text())) val = $(this).find('dc\\:date, date').text()
+											     if (dst = utc($(this).find('pubDate').text())) age = $(this).find('pubDate').text()
+											     if (dst = utc($(this).find('dc\\:date, date').text())) age = $(this).find('dc\\:date, date').text()
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
