@@ -107,7 +107,7 @@
 	margin-top: -.8em;
 	text-align: left;
 	line-height: 1em;
-	font-size: 10px;
+	font-size: 8px;
 	float: left;
     }
     .icon {
@@ -210,7 +210,7 @@ $('.output').focusout(function(){
 
 })
 
-$('.attach, .icon').mouseover(function() {
+$('.attach, .icon').on('mouseover', function() {
 
 	$(this).css('opacity','1')
 
@@ -437,7 +437,7 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,75)+'...'+"</div>" +
+					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,85)+'...'+"</div>" +
 							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
