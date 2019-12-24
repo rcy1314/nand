@@ -197,6 +197,7 @@ var menu=[
 {cat:"Technology",des:"MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",uri:"http://news.mit.edu/rss/feed",ext:"http://news.mit.edu"},
 {cat:"Technology",des:"NASA brings you the Latest Images, Videos and News from America's space agency.",uri:"https://www.nasa.gov/rss/dyn/breaking_news.rss",ext:"https://nasa.gov"},
 {cat:"Technology",des:"NBC News Tech for Latest News on Technology, Businesses and Internet media.",uri:"http://feeds.nbcnews.com/nbcnews/public/tech",ext:"https://nbcnews.com/tech-media"},
+{cat:"Technology",des:"News18 one of India's leading television broadcast networks and CNN International.",uri:"https://www.news18.com/rss/tech.xml",ext:"https://www.news18.com/tech"},
 {cat:"Technology",des:"New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.",uri:"https://nypost.com/tech/feed",ext:"https://nypost.com/tech"},
 {cat:"Technology",des:"New York Times is a Newspaper based in New York City with Worldwide Influence.",uri:"https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",ext:"https://nytimes.com/categorytion/technology"},
 {cat:"Technology",des:"Packet Storm is a Information Security website offering Current and Historical Computer Security Tools.",uri:"https://rss.packetstormcategoryurity.com/news/tags/usa",ext:"https://packetstormcategoryurity.com"},
