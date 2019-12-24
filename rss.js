@@ -218,6 +218,7 @@ var menu=[
 {cat:"Technology",des:"Popular Mechanics is a magazine of Popular Science and Technology.",uri:"https://www.popularmechanics.com/rss/all.xml",ext:"https://popularmechanics.com"},
 {cat:"Technology",des:"ReadWrite was founded on April 20, 2003 as ReadWriteWeb.",uri:"https://readwrite.com/feed",ext:"https://readwrite.com"},
 {cat:"Technology",des:"Reclaim The Net Restoring Individual Liberty Online. Free Speech. Privacy",uri:"https://reclaimthenet.org/feed",ext:"https://reclaimthenet.org"},
+{cat:"Technology",des:"Rnz.co.nz Tech New Zealand's independent public service multimedia organisation.",uri:"https://www.rnz.co.nz/rss/media-technology.xml",uri:"https://www.rnz.co.nz/topics/media-technology"},
 {cat:"Technology",des:"ScienceDaily Top Technology News.",uri:"https://www.sciencedaily.com/rss/top/technology.xml",ext:"https://sciencedaily.com/news/top/technology"},
 {cat:"Technology",des:"Security Affairs Every security issue is our affair.",uri:"http://securityaffairs.co/wordpress/feed",ext:"http://securityaffairs.co"},
 {cat:"Technology",des:"Sky News Technology is a British news organisation, which operates a TV network.",uri:"http://feeds.skynews.com/feeds/rss/technology.xml",ext:"https://sky.com/technology"},
