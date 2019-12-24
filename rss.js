@@ -217,6 +217,7 @@ var menu=[
 {cat:"Technology",des:"TechRepublic is an online Trade publication and social Community for IT Professionals.",uri:"https://www.techrepublic.com/rssfeeds/articles",ext:"https://techrepublic.com"},
 {cat:"Technology",des:"TechPowerUp is a leading Technology publication, on the forefront of PC Technologies.",uri:"https://www.techpowerup.com/rss/news",ext:"https://techpowerup.com"},
 {cat:"Technology",des:"TechSpot is a leading Computer and Technology publication established in 1998.",uri:"https://www.techspot.com/backend.xml",ext:"https://techspot.com"},
+{cat:"Technology",des:"TechWorld the space where innovation and entrepreneurship meet business tech.",uri:"https://www.techworld.com/news/rss",ext:"https://www.techworld.com"},
 {cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
 {cat:"Technology",des:"TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",uri:"https://www.theregister.co.uk/headlines.atom",ext:"https://theregister.co.uk"},
 {cat:"Technology",des:"The Verge covers the intersection of technology, science, art, and culture.",uri:"https://www.theverge.com/rss/index.xml",ext:"https://www.theverge.com"},
