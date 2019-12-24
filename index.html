@@ -93,7 +93,11 @@
 	display: table;
 	width: 70%;
     }
-    .hed {
+    .arm {
+	text-align: center;
+	margin-right: .3em;
+    }
+    .new {
 	text-transform: capitalize;
 	letter-spacing: 1px;
 	font-family: Arial;
@@ -386,13 +390,12 @@ function pop(n){
 function get(n){
 	var e = 0
 	job = true
-	var obj = []
 	var quit = 9
 	his = parseInt(n) + 1
 	if (sel == 'Youtube'){ var let = 500 } else { var let = 0 }
 	$('.attach').css('opacity','0')
 	$('.pop, .air, .get').remove()
-	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
+	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
@@ -405,12 +408,12 @@ function get(n){
 				    $(this).delay(i*let).queue(function(){ 
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
-											     var dst = utc($(this).find('updated').text())
+											     if (dst = utc($(this).find('updated').text())) val = $(this).find('updated').text()
 					}
 					else {
 											     var ref = $(this).find('link').text()
-						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
-											else var dst = utc($(this).find('dc\\:date, date').text())
+											     if (dst = utc($(this).find('pubDate').text())) val = $(this).find('pubDate').text()
+											     if (dst = utc($(this).find('dc\\:date, date').text())) val = $(this).find('dc\\:date, date').text()
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
@@ -419,13 +422,13 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								    if (thum.match(/youtube/)){ thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"' frameborder='0' allowfullscreen></iframe></div><br>" +
+								    if (thum.match(/youtube/)){ thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
 												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
+												}
 											/* Standard thumbnails */
-											      }
 											   else thum = "<img src='"+thum+"'><br>"
 											} /*  Media Thumbnails */
-											else if (thum= $(this).find('media\\:thumbnail, thumbnail').attr('url')){
+										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
 												thum = "<img src='"+thum+"' style='width:100%'><br>"
 											}
 											/* Description thumbnails */
@@ -436,13 +439,14 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='hed'>"+$(this).find('title:first').text().substring(0,82)+'...'+"</div>" +
-							 "<br><div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
+					var cap = $(this).find('title:first').text().substring(0,82)
+					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+cap+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 					if (i < quit) $('.get').append(pub)
 				    })
 				})
+			console.log(min)
 			job = false
 		})
 }
