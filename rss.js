@@ -1,6 +1,7 @@
 var menu=[
 {cat:"News",des:"ABC KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
+{cat:"News",des:"Baltimore Sun Your source for Baltimore breaking news, sports, business, entertainment, weather and traffic."uri:"https://www.baltimoresun.com/arcio/rss/category/latest/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.baltimoresun.com"},
 {cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cat:"News",des:"CBS WBZ Boston Local Breaking News From Boston, Massachusets.",uri:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
 {cat:"News",des:"NBC WBTS Boston Local, National News and Breaking News.",uri:"https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcboston.com"},
