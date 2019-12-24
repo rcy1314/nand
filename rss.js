@@ -215,6 +215,7 @@ var menu=[
 {cat:"Technology",des:"Slashdot is a social News website that originally billed itself as News for Nerds.",uri:"http://rss.slashdot.org/Slashdot/slashdot",ext:"https://slashdot.org"},
 {cat:"Technology",des:"TechCrunch Reports on the Business of Technology, Startups, Venture Capital funding, and Silicon Valley.",uri:"http://feeds.feedburner.com/TechCrunch",ext:"https://techcrunch.com"},
 {cat:"Technology",des:"TechMeme is an automated News curation service focused on the leading edge of Technology.",uri:"https://www.techmeme.com/feed.xml",ext:"https://techmeme.com"},
+{cat:"Technology",des:"TechNewsWorld Latest Tech News and Info from ECT News Network's online publications.",uri:"https://www.technewsworld.com/perl/syndication/rssfull.pl",ext:"https://www.technewsworld.com"},
 {cat:"Technology",des:"TechRadar is an online Publication focused on Technology.",uri:"https://www.techradar.com/rss",ext:"https://techradar.com"},
 {cat:"Technology",des:"TechRepublic is an online Trade publication and social Community for IT Professionals.",uri:"https://www.techrepublic.com/rssfeeds/articles",ext:"https://techrepublic.com"},
 {cat:"Technology",des:"TechPowerUp is a leading Technology publication, on the forefront of PC Technologies.",uri:"https://www.techpowerup.com/rss/news",ext:"https://techpowerup.com"},
