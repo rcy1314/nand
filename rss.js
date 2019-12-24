@@ -230,6 +230,7 @@ var menu=[
 {cat:"Technology",des:"TechSpot is a leading Computer and Technology publication established in 1998.",uri:"https://www.techspot.com/backend.xml",ext:"https://techspot.com"},
 {cat:"Technology",des:"TechWorld the space where innovation and entrepreneurship meet business tech.",uri:"https://www.techworld.com/news/rss",ext:"https://www.techworld.com"},
 {cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
+{cat:"Technology",des:"TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",uri:"http://feeds.feedburner.com/thenextweb",ext:"https://thenextweb.com"},
 {cat:"Technology",des:"TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",uri:"https://www.theregister.co.uk/headlines.atom",ext:"https://theregister.co.uk"},
 {cat:"Technology",des:"TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",uri:"https://www.thesun.co.uk/tech/feed",ext:"https://www.thesun.co.uk/tech"},
 {cat:"Technology",des:"The Verge covers the intersection of technology, science, art, and culture.",uri:"https://www.theverge.com/rss/index.xml",ext:"https://www.theverge.com"},
