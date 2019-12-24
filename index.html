@@ -409,12 +409,12 @@ function get(n){
 				    $(this).delay(i*let).queue(function(){ 
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
-											     if (dst = utc($(this).find('updated').text())) age = $(this).find('updated').text()
+											     var dst = utc($(this).find('updated').text())
 					}
 					else {
 											     var ref = $(this).find('link').text()
-											     if (dst = utc($(this).find('pubDate').text())) age = $(this).find('pubDate').text()
-											     if (dst = utc($(this).find('dc\\:date, date').text())) age = $(this).find('dc\\:date, date').text()
+						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
+											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
@@ -448,7 +448,6 @@ function get(n){
 					if (i < quit) $('.get').append(pub)
 				    })
 				})
-			console.log(min)
 			job = false
 		})
 }
