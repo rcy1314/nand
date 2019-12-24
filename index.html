@@ -148,6 +148,7 @@
     }
     iframe {
 	position: absolute;
+	border: none;
 	height: 100%;
 	width: 100%;
 	left: 0;
@@ -422,8 +423,9 @@ function get(n){
 											}
 											/* Youtube thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-								    if (thum.match(/youtube/)){ thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
-												       "<div class='ago'><b>Views</b> "+$(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div><br>"
+								    if (thum.match(/youtube/)){ view = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
+												       "<div class='ago'><b>Views</b> "+view+"</div><br>"
 												}
 											/* Standard thumbnails */
 											   else thum = "<img src='"+thum+"'><br>"
@@ -432,7 +434,7 @@ function get(n){
 												thum = "<img src='"+thum+"' style='width:100%'><br>"
 											}
 											/* Description thumbnails */
-											else if(thum = $(this).find('description').text()){
+										       else if (thum = $(this).find('description').text()){
 											     if(thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/))
 												thum = "<img src='"+thum+"' style='width:55%'><br>"
 											   else thum = ''
