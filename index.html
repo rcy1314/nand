@@ -389,10 +389,8 @@ function get(n){
 	job = true
 	var obj = []
 	var quit = 9
+	parseInt(n) + 1
 	if (sel == 'Youtube'){ var let = 500 } else { var let = 0 }
-	$.each(menu, function(i,k){ if (sel == k.cat) obj.push(menu[i]) })
-	if (obj.indexOf(menu[n]) == obj.lastIndexOflength - 1) his = 0
-	else his = parseInt(n) + 1
 	$('.attach').css('opacity','0')
 	$('.pop, .air, .get').remove()
 	$('.output').append("<div class='arm' style='text-align:center;margin-right:.3em'>"+e+"</div><div class='get'></div>")
