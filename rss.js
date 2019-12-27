@@ -318,6 +318,7 @@ var menu=[
 {cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
 {cat:"Media",des:"The Wrap covering the business of entertainment and media via digital, print and live events.",uri:"https://www.thewrap.com/feed",ext:"https://www.thewrap.com"},
 {cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
+{cat:"Media",des:"TV Guide television related news, celebrity interview, gossip, and film reviews.",uri:"https://rss.tvguide.com/breakingnews",ext:"https://www.tvguide.com"},
 {cat:"Media",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
 {cat:"Media",des:"Uproxx is an Entertainment and Culture News website.",uri:"http://feeds.feedburner.com/uproxx/features",ext:"https://uproxx.com"},
 {cat:"Media",des:"USA Today People celebrity news, gossip and interviews.",uri:"http://rssfeeds.usatoday.com/toppeople&x=1",ext:"https://www.usatoday.com/entertainment/celebrities"},
