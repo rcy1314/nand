@@ -304,7 +304,6 @@ var menu=[
 {cat:"Media",des:"Inside Edition Entertainment Entertainment news, headlines, stories, photos, and videos.",uri:"https://www.insideedition.com/entertainment/rss",ext:"https://www.insideedition.com/entertainment"},
 {cat:"Media",des:"Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",uri:"https://www.inverse.com/feed/articles/1.rss",ext:"https://www.inverse.com"},
 {cat:"Media",des:"Just Jared is the Definitive Site for Celebrity News.",uri:"http://www.justjared.com/feed",ext:"http://justjared.com"},
-{cat:"Media",des:"ABC KVUE Entertainment and Pop Culture News.",uri:"http://rssfeeds.kvue.com/kvue/entertainment",ext:"https://www.kvue.com/entertainment"},
 {cat:"Media",des:"Metacritic aggregates Reviews of Films, TV Shows, Music Albums, and Video Games.",uri:"https://www.metacritic.com/rss/features",ext:"https://www.metacritic.com"},
 {cat:"Media",des:"Movies subreddit News and Discussion about Major Motion Pictures.",uri:"https://reddit.com/r/movies/.rss",ext:"https://reddit.com/r/movies"},
 {cat:"Media",des:"MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.",uri:"https://movieweb.com/rss/all-news",ext:"https://movieweb.com"},
