@@ -8,7 +8,6 @@ var menu=[
 {cat:"News",des:"ABC California Los Angeles covers News, Weather, Sports, Traffic and live Video.",uri:"https://abc7.com/feed",ext:"https://abc7.com"},
 {cat:"News",des:"CBS KCBS California Los Angeles News, Sports, Weather, Traffic and the Best of LA and OC.",uri:"https://losangeles.cbslocal.com/feed",ext:"https://losangeles.cbslocal.com"},
 {cat:"News",des:"NBC KNBC California Los Angeles Weather, Traffic, Politics, Sports, and Entertainment.",uri:"https://www.nbclosangeles.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbclosangeles.com"},
-{cat:"News",des:"CBS KFMB California San Diego the first television station in San Diego to go on the air when it flipped the switch in 1949.",uri:"https://feeds.feedblitz.com/cbs8/news",ext:"https://www.cbs8.com/rss"},
 {cat:"News",des:"ABC KGO California San Francisco Local News and Headlines.",uri:"https://abc7news.com/feed",ext:"https://abc7news.com"},
 {cat:"News",des:"CBS KPIX California San Francisco News, Sports, Weather, Traffic and the Best of San Francisco.",uri:"https://sanfrancisco.cbslocal.com/feed",ext:"https://sanfrancisco.cbslocal.com"},
 {cat:"News",des:"ABC KMGB Colorado Denver for Weather, Local, Headlines, and Sports.",uri:"https://www.thedenverchannel.com/news.rss",ext:"https://www.thedenverchannel.com"},
