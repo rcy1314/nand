@@ -570,6 +570,7 @@ var menu=[
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
 {cat:"Youtube",des:"Rolling Stone Youtube exclusive videos on music, politics, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=rollingstone",ext:"https://www.youtube.com/user/rollingstone"},
 {cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/siswimsuit"},
+{cat:"Youtube",des:"Surfer Magazine Youtube award-winning photos, provocative interviews, and journeys to the coolest undiscovered surf spots.",uri:"https://www.youtube.com/feeds/videos.xml?user=surfer",ext:"https://www.youtube.com/user/surfer"},
 {cat:"Youtube",des:"TechCrunch Youtube startups, Internet products, and breaking tech news.",uri:"https://www.youtube.com/feeds/videos.xml?user=techcrunch",ext:"https://www.youtube.com/user/techcrunch"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
 {cat:"Youtube",des:"TMZ Youtube breaking celebrity news, gossip, and insight.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZ",ext:"https://www.youtube.com/user/TMZ"},
