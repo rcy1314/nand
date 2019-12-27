@@ -407,7 +407,6 @@ var menu=[
 {cat:"Sport",des:"Telegraph.co.uk Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
 {cat:"Sport",des:"Tennis subreddit discusses Tennis, from Tour Professionals to Recreational Players.",uri:"https://reddit.com/r/tennis/.rss",ext:"https://reddit.com/r/tennis"},
 {cat:"Sport",des:"TheSun.co.uk up to date on the latest sports news from the UK and the World.",uri:"https://www.thesun.co.uk/sport/feed",ext:"https://www.thesun.co.uk/sport/feed"},
-{cat:"Sport",des:"The Ringer is a sports and pop culture website and podcast network",uri:"http://feeds.feedburner.com/TheRinger_RSS",ext:"https://www.theringer.com"},
 {cat:"Sport",des:"The Score Trending News, Announcements, Highlights, and Analysis.",uri:"https://feeds.thescore.com/trending.rss",ext:"https://thescore.com"},
 {cat:"Sport",des:"The Score MLB Trending News & Rumors for Baseball, and More.",uri:"https://feeds.thescore.com/mlb.rss",ext:"https://thescore.com/mlb/news"},
 {cat:"Sport",des:"The Score MMA headlines, news, and analysis.",uri:"https://feeds.thescore.com/mma.rss",ext:"https://thescore.com/mma/news"},
