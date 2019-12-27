@@ -11,7 +11,7 @@
 
     html { background-color: rgba(38,38,38,.02) }
 
-    body {
+    .wrapper {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: absolute;
@@ -158,8 +158,15 @@
 	border: none;
 	width: 100%;
     }
+    .splash {
+	z-index: 1;
+	position: absolute;
+	right: 0em;
+	bottom: 0em;
+    }
 </style>
 <body>
+<img src='favicon/splash.png' class='splash'>
 <div class='wrapper'>
 <div class='container'>
 	<div class='attach'>
