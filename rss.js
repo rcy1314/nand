@@ -561,6 +561,7 @@ var menu=[
 {cat:"Youtube",des:"Game Trailers Youtube dedicated to archiving content from GameTrailers.com.",uri:"https://www.youtube.com/feeds/videos.xml?user=gametrailers",ext:"https://www.youtube.com/user/gametrailers"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
 {cat:"Youtube",des:"MLB Youtube home of Major Leage Baseball.",uri:"https://www.youtube.com/feeds/videos.xml?user=MLB",ext:"https://www.youtube.com/user/MLB"},
+{cat:"Youtube",des:"MotorTrend Youtube The ultimate automotive streaming service.",uri:"https://www.youtube.com/feeds/videos.xml?user=motortrend",ext:"https://www.youtube.com/user/motortrend"},
 {cat:"Youtube",des:"Nasa Youtube the future in space exploration, scientific discovery and aeronautics research.",uri:"https://www.youtube.com/feeds/videos.xml?user=nasatelevision",ext:"https://www.youtube.com/user/nasatelevision"},
 {cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"Youtube",des:"NBA Youtube home of the most compelling basketball action from the NBA.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBA",ext:"https://www.youtube.com/user/NBA"},
