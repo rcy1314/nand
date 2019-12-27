@@ -15,7 +15,7 @@
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: absolute;
-	bottom: 49.5%;
+	bottom: 50%;
 	border: none;
 	height: 100%;
 	width: 55%;
@@ -117,20 +117,23 @@
 	display: flex;
     }
     .random, .opposite {
+	border-bottom: 1px solid #888;
 	position: absolute;
 	padding-top: 2em;
 	cursor: default;
 	height: 24px;
 	width: 24px;
-	top: -1em;
+	bottom: 0em;
     }
     .random {
+	border-right: 1px solid #888;
 	padding-left: 2em;
-	right: .3em;
+	right: 0em;
     }
     .opposite {
+	border-left: 1px solid #888;
 	padding-right: 2em;
-	left: .3em;
+	left: 0em;
     }
     #fav, #inv {
 	height: 32px;
@@ -159,10 +162,12 @@
 	width: 100%;
     }
     .splash {
-	z-index: 1;
 	position: absolute;
-	right: 0em;
+	height: 25%;
+	width: 25%;
 	bottom: 0em;
+	z-index: 1;
+	right: 0em;
     }
 </style>
 <body>
@@ -180,8 +185,8 @@
 	</div>
 	<div class='output'></div>
 	<div class='icon'>
-		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<img id='fav' class='favicon' src='favicon/favicon.png'>
+		<img id='inv' class='favicon' src='favicon/invert.png'>
 		<div class='random'></div>
 		<div class='opposite'></div>
 	</div>
@@ -352,13 +357,13 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
-		$('#fav').show(); $('#inv').hide(); $('hr').hide()
+		$('#fav').show(); $('.splash').hide(); $('#inv').hide(); $('hr').hide()
 		$('.attach').css('background-color','#000')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('html').css('background-color','rgba(38,38,38,.02)')
-		$('#inv').show(); $('#fav').hide(); $('hr').show()
+		$('#inv').show(); $('hr').show(); $('.splash').show(); $('#fav').hide()
 		$('.attach').css('background-color','#333')
 	}
 
