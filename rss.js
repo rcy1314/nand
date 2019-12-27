@@ -567,6 +567,7 @@ var menu=[
 {cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"Youtube",des:"NBA Youtube home of the most compelling basketball action from the NBA.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBA",ext:"https://www.youtube.com/user/NBA"},
 {cat:"Youtube",des:"Netflix Youtube What's new on Netflix streaming.",uri:"https://www.youtube.com/feeds/videos.xml?user=newonnetflix",ext:"https://www.youtube.com/user/newonnetflix"},
+{cat:"Youtube",des:"The New York Times Youtube the standard for the most ambitious and innovative storytelling across features, news and investigations.",uri:"https://www.youtube.com/feeds/videos.xml?user=thenewyorktimes",ext:"https://www.youtube.com/user/thenewyorktimes"},
 {cat:"Youtube",des:"NFL Youtube highlights from your favorite teams and players, daily fantasy football updates.",uri:"https://www.youtube.com/feeds/videos.xml?user=nfl",ext:"https://www.youtube.com/user/nfl"},
 {cat:"Youtube",des:"National Geographic Youtube premium destination for science, exploration, and adventure.",uri:"https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",ext:"https://www.youtube.com/user/nationalgeographic"},
 {cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/people"},
