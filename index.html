@@ -180,6 +180,7 @@
 		<div class='opposite'></div>
 </div>
 <script>
+var off
 var opp = 0
 var ost = 0
 var his = 0
@@ -268,7 +269,16 @@ function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
 	else if (n < ost && n != 0) $('.attach, .icon').css('opacity','1')
-	else if (n > ost && n > 30) $('.attach, .icon').css('opacity','0')
+	else if (n > ost && n > 30){
+		$('.attach, .icon').css('opacity','0')
+		if ($('.pop, .air').length < 1 && off <= quit) {
+			if ($('#'+off).offset().top <= $('#'+off+' .ago').innerHeight()){
+				off = off + 1
+				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() + 10 }, 100)
+				return false
+			}
+		}
+	}
     ost = n
 
 }
@@ -370,6 +380,7 @@ function pop(n){
 }
 
 function get(n){
+	off = 0
 	var e = 0
 	job = true
 	his = parseInt(n) + 1
