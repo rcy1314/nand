@@ -374,7 +374,6 @@ function air(n){
 function pop(n){
 
 	if ($('.pop').length >= 2) $('.pop').remove()
-	$('.arm').hide('slow', function(){ $('.arm').remove() })
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
@@ -383,7 +382,6 @@ function pop(n){
 		if (n == menu[i].cat)
 			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
 	}
-	$('.pop').append("<div class='arm' style='padding: 10em'></div>")
 	his = 0
 	app()
 
