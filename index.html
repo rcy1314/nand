@@ -205,9 +205,9 @@ else {
 }
 
 pop(sel)
-scr('.pop')
 $('#'+sel).css('color','#bbb')
 $('#'+sel).css('border-bottom','1px solid #bbb')
+$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 
 $('.output').attr('tabindex', -1).focus()
 
@@ -219,7 +219,7 @@ $('.output').focusout(function(){
 
 $('.attach, .icon').on('mouseover', function() {
 
-	$('.attach, .icon').css('opacity','1')
+	$(this).css('opacity','1')
 
 })
 
@@ -246,7 +246,7 @@ $('.category').on('touchstart click', function(e){
 	$(this).css('border-bottom','1px solid #bbb')
 	$(this).css('color','#bbb')
 	pop($(this).attr('id'))
-	scr('.pop:last')
+	$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 
     e.preventDefault()
 
@@ -261,28 +261,21 @@ $('.output').on('scroll', function(e){
 	if ($('#'+off).length && $('.pop').length <= 0) {
 		if ($('#'+off).offset().top <= 0){
 			off = off + 1
-			scr('#'+off)
+			$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 		}
 	}
+
 })
 
 $('.favicon').on('touchstart click', function(e){
 
 	tap = null
 	pop(sel)
-	scr('.pop:last')
+	$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 
     e.preventDefault()
 
 })
-
-function scr(n){
-
-	$('.output').animate({
-		scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
-	}, 300)
-
-}
 
 function pin(n){
 
