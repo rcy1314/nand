@@ -286,7 +286,7 @@ function scr(n){
 function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
-	else if (n < ost && n != 0) $('.attach, .icon').css('opacity','1')
+	else if (n < ost && n != 0 && $('.pop').length > 0) $('.attach, .icon').css('opacity','1')
 	else if (n > ost && n > 30) $('.attach, .icon').css('opacity','0')
 
     ost = n
@@ -400,6 +400,7 @@ function get(n){
 	var e = 0
 	job = true
 	his = parseInt(n) + 1
+	$('.attach, .icon').css('opacity','0')
 	if (sel == 'Youtube'){ var let = 950 } else { var let = 0 }
 	$('.pop, .air, .get').remove()
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
