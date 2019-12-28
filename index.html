@@ -92,7 +92,7 @@
 	margin-left: 4em;
 	font-size: 10px;
     }
-    .new {
+    .pub {
 	text-transform: capitalize;
 	letter-spacing: 1px;
 	font-family: Arial;
@@ -424,7 +424,7 @@ function get(n){
 											else 	thum = ''
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
-					if (i < quit) $('.get').append("<div id='"+i+"' class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
+					if (i < quit) $('.get').append("<div id='"+i+"' class='end' onclick='window.open(\""+ref+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
 				    })
 				})
 			job = false
