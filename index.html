@@ -266,8 +266,7 @@ $('.output').on('scroll', function(e){
 
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
-		if (job == false)
-			pop(sel)
+		if (job == false) pop(sel)
 
 })
 
@@ -279,8 +278,10 @@ function pin(n){
 		$('.attach, .icon').css('opacity','0')
 		if ($('#'+off).length > 0 && $('.pop').length <= 0) {
 			if ($('#'+off).offset().top <= 0){
-				off = off + 1
-				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
+				if (off <= quit){
+					off = off + 1
+					$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
+				}
 			}
 		}
 	}
