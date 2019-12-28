@@ -378,7 +378,7 @@ function get(n){
 	$('.pop, .air, .get').remove()
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
-	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+	$.get('https://yacdn.org/serve/' + menu[n].uri + '?maxAge=1')
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){clearInterval(int)
 			$('.arm').remove()
