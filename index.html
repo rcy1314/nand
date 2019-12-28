@@ -28,8 +28,6 @@
 
     ::-webkit-scrollbar { display: none }
 
-    .wrapper { height: 100% }
-
     hr { opacity: .2 }
 
     .container {
@@ -68,11 +66,11 @@
     .set {
 	padding-bottom: 2em;
 	line-height: 1.4em;
-	margin-left: 9%;
+	margin-left: 13%;
 	font-size: 10px;
 	cursor: default;
 	height: 5em;
-	width: 90%;
+	width: 80%;
     }
     .end {
 	margin-bottom: 3.5em;
@@ -107,7 +105,7 @@
 	margin-top: -.8em;
 	text-align: left;
 	line-height: 1em;
-	font-size: 8px;
+	font-size: 10px;
 	float: left;
     }
     .icon {
@@ -203,9 +201,8 @@ else {
 }
 
 pop(sel)
-$('#'+sel).css('color','#bbb')
-$('#'+sel).css('border-bottom','1px solid #bbb')
-$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
+$('#'+sel).css('color','#ccc')
+$('#'+sel).css('border-bottom','1px solid #ccc')
 
 $('.output').attr('tabindex', -1).focus()
 
@@ -270,9 +267,7 @@ $('.output').on('scroll', function(e){
 function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
-
 	else if (n < ost && n != 0) $('.attach, .icon').css('opacity','1')
-
 	else if (n > ost && n > 30) $('.attach, .icon').css('opacity','0')
 
     ost = n
@@ -292,9 +287,7 @@ function rev(Object) {
 
 	var newObject = {}
 	var keys = []
-	for (var key in Object) {
-		keys.push(key)
-	}
+	for (var key in Object) keys.push(key)
 	for (var i = keys.length - 1; i >= 0; i--) {
 		var value = Object[keys[i]]
 		newObject[keys[i]] = value
@@ -371,10 +364,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++){
-		if (n == menu[i].cat)
-			$('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
-	}
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
 	his = 0
 	app()
 
@@ -432,11 +422,9 @@ function get(n){
 											}
 											/* Empty invalid */
 											else 	thum = ''
-					var cap = $(this).find('title:first').text().substring(0,82)
-					var pub = "<div id='"+i+"' class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+cap+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
-					if (i < quit) $('.get').append(pub)
+					if (i < quit) $('.get').append("<div id='"+i+"' class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
 				    })
 				})
 			job = false
