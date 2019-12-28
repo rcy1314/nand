@@ -274,7 +274,7 @@ function pin(n){
 		if ($('.pop, .air').length < 1 && off <= quit) {
 			if ($('#'+off).offset().top <= $('#'+off+' .ago').innerHeight()){
 				off = off + 1
-				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() + 10 }, 100)
+				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 				return false
 			}
 		}
