@@ -272,25 +272,9 @@ function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
 
-	else if (n < ost && n != 0){
-		$('.attach, .icon').css('opacity','1')
-		if ($('.pop, .air').length <= 0 && off >= 0) {
-			if ($('#'+off+' .ago').offset().top >= $('#'+off).outerHeight()){
-				off = off - 1
-				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
-			}
-		}
-	}
+	else if (n < ost && n != 0) $('.attach, .icon').css('opacity','1')
 
-	else if (n > ost && n > 30){
-		$('.attach, .icon').css('opacity','0')
-		if ($('.pop, .air').length < 1 && off <= quit) {
-			if ($('#'+off).offset().top <= $('#'+off+' .ago').innerHeight()){
-				off = off + 1
-				$('.output').animate({ scrollTop: $('#'+off).offset().top - $('.output').offset().top + $('.output').scrollTop() + 10 }, 100)
-			}
-		}
-	}
+	else if (n > ost && n > 30) $('.attach, .icon').css('opacity','0')
 
     ost = n
 
