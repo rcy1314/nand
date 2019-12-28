@@ -220,7 +220,6 @@ var menu=[
 {cat:"News",des:"ABC WBBJ Tennessee Jackson Local News for the greater Tennessee.",uri:"https://www.wbbjtv.com/feed",ext:"https://www.wbbjtv.com"},
 {cat:"News",des:"ABC WJHL Tennessee Johnson City the source for breaking local, weather and sports news in the Tri-Cities.",uri:"https://www.wjhl.com/feed",ext:"https://www.wjhl.com"},
 {cat:"News",des:"ABC WATE Tennessee Knoxville On Your Side provides the best latest news, weather and sports coverage.",uri:"https://www.wate.com/feed",ext:"https://www.wate.com"},
-{cat:"News",des:"NBC WBIR Tennessee Knoxville The station's call letters come from Jesse W. 'Jay' Birdwell, who founded WBIR radio in 1941.",uri:"http://rssfeeds.wbir.com/wbir/national-world-news",ext:"https://www.wbir.com"},
 {cat:"News",des:"ABC WATN Tennessee Memphis We tell Local Memphis News and Weather Stories.",uri:"https://www.localmemphis.com/feed",ext:"https://www.localmemphis.com"},
 {cat:"News",des:"CBS WREG Tennessee Memphis The channel is certified to Memphis, United States.",uri:"https://wreg.com/feed",ext:"https://wreg.com"},
 {cat:"News",des:"ABC WKRN Tennessee Nashville we do what we do to make Nashville & Tennessee a better place to live.",uri:"https://www.wkrn.com/feed",ext:"https://www.wkrn.com"},
