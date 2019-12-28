@@ -183,8 +183,10 @@
 		<div class='opposite'></div>
 </div>
 <script>
+var off = 0
 var ost = 0
 var his = 0
+var quit = 9
 var job = false
 var tap = false
 var sel = 'Social'
@@ -255,6 +257,12 @@ $('.output').on('scroll', function(e){
 		if (job == false)
 			pop(sel)
 			pin($(this).scrollTop())
+	if ($('#'+off).length && $('.pop').length <= 0) {
+		if ($('#'+off).offset().top <= 0){
+			off = off + 1
+			scr('#'+off)
+		}
+	}
 })
 
 $('.favicon').on('touchstart click', function(e){
@@ -373,6 +381,7 @@ function air(n){
 
 function pop(n){
 
+	off = 0
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
@@ -387,9 +396,9 @@ function pop(n){
 }
 
 function get(n){
+	off = 0
 	var e = 0
 	job = true
-	var quit = 9
 	his = parseInt(n) + 1
 	if (sel == 'Youtube'){ var let = 950 } else { var let = 0 }
 	$('.attach').css('opacity','0')
@@ -440,7 +449,7 @@ function get(n){
 											/* Empty invalid */
 											else 	thum = ''
 					var cap = $(this).find('title:first').text().substring(0,82)
-					var pub = "<div class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+cap+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
+					var pub = "<div id='"+i+"' class='end' onclick='window.open(\""+ref+"\")'><div class='new'>"+cap+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>"
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 					if (i < quit) $('.get').append(pub)
