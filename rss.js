@@ -315,7 +315,6 @@ var menu=[
 {cat:"Media",des:"WTLV Jacksonville Florida Entertainment News and Headlines.",uri:"http://rssfeeds.firstcoastnews.com/wtlv/firstcoastnews-entertainment",ext:"https://www.firstcoastnews.com/entertainment"},
 {cat:"Media",des:"Yahoo Celebrity Latest News and Gossip on the World's Celebrities.",uri:"https://www.yahoo.com/celebrity/rss",ext:"https://yahoo.com/celebrity"},
 {cat:"Media",des:"Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",uri:"https://www.yahoo.com/entertainment/rss",ext:"https://yahoo.com/entertainment"},
-{cat:"Social",des:"test",uri:"https://acktic.github.io/rss.html?world",ext:"test"},
 {cat:"Social",des:"Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",uri:"https://reddit.com/r/apple/.rss",ext:"https://reddit.com/r/apple"},
 {cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/android"},
 {cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/Amd"},
