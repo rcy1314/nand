@@ -24,6 +24,12 @@ var escapeHTML = function(n) {
   });
 };
 
+var enc = function(str) {
+			return str.replace(/&#(\d+);/g, function(match, dec) {
+				return String.fromCharCode(dec);
+			});
+		}
+
 if (location.href.match('\\?news') || location.href.match('\\?media') || location.href.match('\\?social') || location.href.match('\\?sport') || location.href.match('\\?tech') || location.href.match('\\?world')){
 
         var obj = []
@@ -36,7 +42,7 @@ if (location.href.match('\\?news') || location.href.match('\\?media') || locatio
                         var xml = new XMLSerializer().serializeToString(data)
                         var html = escapeHTML(xml)
 
-			document.write(html)
+			document.write(enc(html))
 
                 })
 
