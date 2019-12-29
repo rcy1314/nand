@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/favicon.png">
-    <script src="https://acktic.github.io/rss.js"></script>
+    <script src="rss.js"></script>
   </head>
 <style>
 @media screen and (min-width: 960px) {
@@ -374,7 +374,7 @@ function get(n){
 	$('.pop, .air, .get').remove()
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
-	$.get('https://yacdn.org/serve/' + menu[n].uri + '?maxAge=1')
+	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){clearInterval(int)
 			$('.arm').remove()
