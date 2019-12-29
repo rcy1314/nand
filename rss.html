@@ -35,7 +35,8 @@ if (location.href.match('\\?news')){
                 .done(function(data){
                         var xml = new XMLSerializer().serializeToString(data)
                         var html = escapeHTML(xml)
-                        document.write(html)
+			document.write(new DOMParser().parseFromString(html, "text/xml"))
+                        
 
 
                 })
