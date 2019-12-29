@@ -286,6 +286,7 @@ var menu=[
 {cat:"Media",des:"E! is an American basic cable channel owned by the NBCUniversal.",uri:"http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",ext:"https://www.eonline.com"},
 {cat:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",uri:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
 {cat:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",uri:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
+{cat:"Media",des:"ExtraTV entertainment news, photos, gossip, videos, music, movies, television and more.",uri:"https://feeds.extratv.com/rss",ext:"https://extratv.com"},
 {cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {cat:"Media",des:"HuffingtonPost Latest Entertainment News, Photos, Videos and more.",uri:"https://www.huffpost.com/dept/entertainment/feed",ext:"https://www.huffpost.com/entertainment"},
 {cat:"Media",des:"HuffingtonPost TV and Film news and scoops about your favorite TV shows and movies.",uri:"https://www.huffpost.com/section/tv/feed",ext:"https://www.huffpost.com/entertainment/tv"},
