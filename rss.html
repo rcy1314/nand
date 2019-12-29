@@ -35,9 +35,7 @@ if (location.href.match('\\?news') || location.href.match('\\?media') || locatio
                 .done(function(data){
                         var xml = new XMLSerializer().serializeToString(data)
                         var html = escapeHTML(xml)
-			document.write(html)
-                        
-
+			document.write(doc)
 
                 })
 
