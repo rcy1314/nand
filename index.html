@@ -198,26 +198,6 @@ var escapeHTML = function(n) {
   });
 };
 
-if (location.href.match('\\?news')){
-
-	var obj = []
-	$.each(menu, function(i,k){ if (location.search.split('?')[1] == k.cat.toLowerCase()) obj.push(menu[i]) })
-	var n = obj[Math.floor(Math.random()*obj.length)]
-
-	$.get('https://salty-refuge-64158.herokuapp.com/' + n.uri)
-		.fail(function(){ document.write('oops') })
-		.done(function(data){
-			var xml = new XMLSerializer().serializeToString(data)
-			var html = escapeHTML(xml)
-			document.write(html)
-
-
-		})
-
-}
-
-else { var input = null }
-
 if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
         app(location.search.split('?op=')[1])
