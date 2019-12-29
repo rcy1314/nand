@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/favicon.png">
-    <script src="rss.js"></script>
+    <script src="https://acktic.github.io/rss.js"></script>
   </head>
 <style>
 @media screen and (min-width: 960px) {
@@ -183,6 +183,40 @@ var quit = 9
 var job = false
 var tap = false
 var sel = 'Social'
+var escapeHTML = function(n) {
+  return n.replace(/[&<"']/g, function(m) {
+    switch (m) {
+      case '&':
+        return '&amp;';
+      case '<':
+        return '&lt;';
+      case '"':
+        return '&quot;';
+      default:
+        return '&#039;';
+    }
+  });
+};
+
+if (location.href.match('\\?news')){
+
+	var obj = []
+	$.each(menu, function(i,k){ if (location.search.split('?')[1] == k.cat.toLowerCase()) obj.push(menu[i]) })
+	var n = obj[Math.floor(Math.random()*obj.length)]
+
+	$.get('https://salty-refuge-64158.herokuapp.com/' + n.uri)
+		.fail(function(){ document.write('oops') })
+		.done(function(data){
+			var xml = new XMLSerializer().serializeToString(data)
+			var html = escapeHTML(xml)
+			document.write(html)
+
+
+		})
+
+}
+
+else { var input = null }
 
 if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
