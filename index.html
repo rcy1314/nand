@@ -392,7 +392,8 @@ function get(n){
 											/* Standard thumbnails */
 										       else if (thum = $(this).find('link').attr('href')) thum = "<img src='"+thum+"'><br>"
 											/*  Media Thumbnails */
-										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')) thum = "<img src='"+thum+"'><br>"
+										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url'))
+											    if (thum != null) thum = "<img src='"+thum+"'><br>"
 											/* Description thumbnails */
 										       else if (thum = $(this).find('description').text()){
 											    if (thum = thum.match(/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/)) thum = "<img src='"+thum[1]+"'><br>"
