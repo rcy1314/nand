@@ -26,11 +26,28 @@
 
     .category:hover { color: #ccc !important }
 
-    ::-webkit-scrollbar-thumb { background-color: #888 }
+    .default::-webkit-scrollbar-thumb { background-color: #888 }
 
-    ::-webkit-scrollbar {
+    .default::-webkit-scrollbar {
 	background-color: #f5f5f5;
 	width: 6px;
+    }
+
+    .default {
+	scrollbar-color: #888 #f5f5f5;
+	scrollbar-width: thin;
+    }
+
+    .invert::-webkit-scrollbar-thumb { background-color: #222 }
+
+    .invert::-webkit-scrollbar {
+	background-color: #000;
+	width: 6px;
+    }
+
+    .invert {
+	scrollbar-color: #222 #000;
+	scrollbar-width: thin;
     }
 
     hr { opacity: .2 }
@@ -59,11 +76,9 @@
     }
     .output {
 	-webkit-overflow-scrolling: touch;
-	scrollbar-color: #888 #f5f5f5;
 	height: calc(100% - 70px);
 	outline: none !important;
 	-ms-overflow-style: none;
-	scrollbar-width: thin;
 	overflow: auto;
     }
     .set {
@@ -75,7 +90,7 @@
 	width: 70%;
     }
     .end {
-	margin-bottom: 3.5em;
+	margin-bottom: 2em;
 	margin-right: auto;
 	padding-top: 3.5em;
 	padding-left: 16%;
@@ -99,10 +114,10 @@
 	font-size: 16px;
     }
     .ago {
-	margin-top: -.8em;
+	margin-right: auto;
+	margin-top: -1.5em;
 	text-align: left;
 	font-size: 10px;
-	float: left;
     }
     .icon {
 	justify-content: center;
@@ -129,9 +144,11 @@
 	padding-right: 2em;
 	left: 0em;
     }
-    .thum {
+    img {
 	margin-top: -1.25em;
 	margin-left: auto;
+	height: 180px;
+	width: 270px;
     }
 </style>
 <body>
@@ -305,14 +322,18 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
+		$('.output').removeClass('default').addClass('invert')
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 		$('.attach').css('background-color','#000')
+		$('.hold').attr('src','favicon/favicon.png')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
-		$('html').css('background-color','#FAFAFA')
+		$('.output').removeClass('invert').addClass('default')
 		$('#inv').show(); $('hr').show(); $('#fav').hide()
+		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
+		$('.hold').attr('src','favicon/invert.png')
 	}
 
 }
@@ -321,10 +342,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){
-		if (n == menu[i].cat)
-			$('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
-	}
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
@@ -370,24 +388,33 @@ function get(n){
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
 												thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)
-									       if (thum != null)thum = "<img src='"+thum+"' style='width:55%'><br>"
-									       else		thum = ''
-											}
+									       if (thum != null)thum = "<img src='"+thum+"'><br>"
+									       else { if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:280px;height:280px;'>"
+											   else thum = "<img class='hold' src='favicon/favicon.png' style='width:280px;height:280px;'>"
+										    }
+											    }
 											/* Standard thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
-												thum = "<img src='"+thum+"'><br>"
-											} /*  Media Thumbnails */
+									       if (thum != null)thum = "<img src='"+thum+"'><br>"
+									       else { if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:280px;height:280px;'>"
+											   else thum = "<img class='hold' src='favicon/favicon.png' style='width:280px;height:280px;'>"
+										    }
+											    }
+											  /*  Media Thumbnails */
 										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
-												thum = "<img src='"+thum+"' style='width:100%'><br>"
-											}
+									       if (thum != null)thum = "<img src='"+thum+"'><br>"
+									       else { if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:280px;height:280px;'>"
+											   else thum = "<img class='hold' src='favicon/favicon.png' style='width:280px;height:280px;'>"
+										    }
+											    }
 											/* Description thumbnails */
 										       else if (thum = $(this).find('description').text()){
-											     if(thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/))
-												thum = "<img src='"+thum+"' style='width:55%'><br>"
-											   else thum = ''
+											    if (thum = thum.match(/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/)) thum = "<img src='"+thum[1]+"'><br>"
+										       else if (thum = thum.match(/[a-z\-_0-9\/\:\.]*s\.jpg/)) thum = "<img src='"+thum+"'><br>"
 											}
-											/* Empty Invalid */
-											else 	thum = ''
+									       else { if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:280px;height:280px;'>"
+											   else thum = "<img class='hold' src='favicon/favicon.png' style='width:280px;height:280px;'>"
+											    }
 					if (i >= quit){ app(); return false }
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i < quit) $('.get').append("<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
