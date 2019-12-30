@@ -345,7 +345,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr><div style='float:left;padding-right:10px;'><img src='favicon/"+menu[i].fav+"' style='height:38px;width:38px'></div>"+menu[i].des+"</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr><div style='float:left;margin-left:-15px;padding-right:10px;'><img src='favicon/"+menu[i].fav+"' style='height:38px;width:38px'></div>"+menu[i].des+"</div>")
 	his = 0
 	app()
 
