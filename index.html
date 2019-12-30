@@ -58,12 +58,12 @@
     .attach {
 	justify-content: center;
 	display: flex;
-	height: 2em;
+	height: 2.3em;
     }
     .category {
 	display: inline-block;
 	text-align: center;
-	padding-top: .8em;
+	padding-top: 1.3em;
 	cursor: pointer;
 	font-size: 10px;
 	height: 2.3em;
@@ -78,8 +78,8 @@
 	overflow: auto;
     }
     .set {
-	font-weight: 550;
 	padding-bottom: 2em;
+	font-weight: 550;
 	margin-left: 16%;
 	font-size: 12px;
 	cursor: default;
@@ -345,7 +345,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr><div style='float:left;padding-right:10px;'><img src='favicon/"+menu[i].fav+"' style='height:38px;width:38px'></div>"+menu[i].des+"</div>")
 	his = 0
 	app()
 
