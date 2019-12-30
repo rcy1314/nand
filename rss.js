@@ -284,7 +284,7 @@ var menu=[
 {cat:"Media",des:"Digital Trends Movie reviews, TV Show recaps, Previews, and News.",uri:"https://www.digitaltrends.com/movies/feed/",ext:"https://digitaltrends.com/movies"},
 {cat:"Media",des:"Daily Beast is a News and Opinion Website focusing on Politics and Entertainment Culture.",uri:"https://feeds.thedailybeast.com/summary/rss/articles",ext:"https://www.thedailybeast.com"},
 {cat:"Media",des:"E! is an American basic cable channel owned by the NBCUniversal.",uri:"http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",ext:"https://www.eonline.com"},
-{cat:"Media",des:"Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",uri:"https://www.elle.com/rss/all.xml",ext:"https://www.elle.com"},
+{cat:"Media",des:"Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",uri:"https://www.elle.com/rss/culture.xml",ext:"https://www.elle.com"},
 {cat:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",uri:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
 {cat:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",uri:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
 {cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
