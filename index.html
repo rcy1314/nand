@@ -26,7 +26,12 @@
 
     .category:hover { color: #ccc !important }
 
-    ::-webkit-scrollbar { display: none }
+    ::-webkit-scrollbar-thumb { background-color: #888 }
+
+    ::-webkit-scrollbar {
+	background-color: #f5f5f5;
+	width: 6px;
+    }
 
     hr { opacity: .2 }
 
@@ -57,7 +62,7 @@
 	height: calc(100% - 70px);
 	outline: none !important;
 	-ms-overflow-style: none;
-	scrollbar-width: none;
+	scrollbar-width: 6px;
 	overflow: auto;
     }
     .set {
@@ -110,7 +115,6 @@
 	border-bottom: 1px solid #888;
 	position: absolute;
 	padding-top: 2em;
-	cursor: default;
 	height: 24px;
 	width: 24px;
 	bottom: 0em;
@@ -127,8 +131,6 @@
     .thum {
 	margin-top: -1.25em;
 	margin-left: auto;
-	border: none;
-	width: 100%;
     }
 </style>
 <body>
@@ -330,6 +332,7 @@ function air(n){
 
 function pop(n){
 
+	$('.pop').remove()
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
