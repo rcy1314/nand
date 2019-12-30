@@ -397,14 +397,9 @@ function get(n){
 									       if (thum != null)thum = "<img src='"+thum+"' style='width:55%'><br>"
 									       else		thum = ''
 											}
-											/* Youtube thumbnails */
-										       else if (thum = $(this).find('link').attr('href')){
-								    if (thum.match(/youtube/)){ view = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
-												       "<div class='ago'><b>Views</b> "+view+"</div><br>"
-												}
 											/* Standard thumbnails */
-											   else thum = "<img src='"+thum+"'><br>"
+										       else if (thum = $(this).find('link').attr('href')){
+												thum = "<img src='"+thum+"'><br>"
 											} /*  Media Thumbnails */
 										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
 												thum = "<img src='"+thum+"' style='width:100%'><br>"
@@ -415,7 +410,7 @@ function get(n){
 												thum = "<img src='"+thum+"' style='width:55%'><br>"
 											   else thum = ''
 											}
-											/* Empty invalid */
+											/* Empty Invalid */
 											else 	thum = ''
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
