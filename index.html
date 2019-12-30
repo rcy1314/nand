@@ -26,11 +26,12 @@
 
     .category:hover { color: #ccc !important }
 
-    .default::-webkit-scrollbar-thumb { background-color: #888 }
+    ::-webkit-scrollbar { width: 8px }
+
+    .default::-webkit-scrollbar-thumb {background-color: #888 }
 
     .default::-webkit-scrollbar {
 	background-color: #f5f5f5;
-	width: 6px;
     }
 
     .default {
@@ -42,7 +43,6 @@
 
     .invert::-webkit-scrollbar {
 	background-color: #000;
-	width: 6px;
     }
 
     .invert {
@@ -102,7 +102,6 @@
     }
     .arm {
 	text-align: center;
-	margin-left: 4em;
 	font-size: 10px;
     }
     .pub {
@@ -115,7 +114,7 @@
     }
     .ago {
 	margin-right: auto;
-	margin-top: -1.5em;
+	margin-top: -3.5em;
 	text-align: left;
 	font-size: 10px;
     }
@@ -145,7 +144,6 @@
 	left: 0em;
     }
     img {
-	margin-top: -1.25em;
 	margin-left: auto;
 	height: 180px;
 	width: 270px;
@@ -401,7 +399,8 @@ function get(n){
 											}
 									       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:280px;height:280px;'>"
 											   else thum = "<img class='hold' src='favicon/favicon.png' style='width:280px;height:280px;'>"
-					if (i < quit) $('.get').append("<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>" +
+									"<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 				})
