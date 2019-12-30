@@ -53,16 +53,17 @@
 	padding-top: .8em;
 	cursor: pointer;
 	font-size: 10px;
-	height: 2.4em;
+	height: 2.3em;
 	width: 22.5%;
 	color: #888;
     }
     .output {
 	-webkit-overflow-scrolling: touch;
+	scrollbar-color: #888 #f5f5f5;
 	height: calc(100% - 70px);
 	outline: none !important;
 	-ms-overflow-style: none;
-	scrollbar-width: 6px;
+	scrollbar-width: thin;
 	overflow: auto;
     }
     .set {
@@ -212,8 +213,7 @@ $('.category').on('touchstart click', function(e){
 
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
-	$(this).css('border-bottom','1px solid #ccc')
-	$(this).css('color','#ccc')
+	$(this).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 	pop($(this).attr('id'))
 	$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
 
@@ -388,8 +388,8 @@ function get(n){
 											}
 											/* Empty Invalid */
 											else 	thum = ''
-					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
+					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i < quit) $('.get').append("<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>"+"<div class='thum'>"+thum+"</div><div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><br></div>")
 				})
 			job = false
