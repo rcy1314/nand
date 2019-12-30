@@ -369,9 +369,8 @@ function get(n){
 	var e = 0
 	job = true
 	his = parseInt(n) + 1
-	$('.attach, .icon').css('opacity','0')
-	if (sel == 'Youtube'){ var let = 950 } else { var let = 0 }
 	$('.pop, .air, .get').remove()
+	$('.attach, .icon').css('opacity','0')
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
