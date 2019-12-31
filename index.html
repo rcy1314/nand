@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/favico.png">
-    <script src="https://acktic.github.io/rss.js"></script>
+    <script src="rss.js"></script>
   </head>
 <style>
 @media screen and (min-width: 960px) {
@@ -67,7 +67,7 @@
 	cursor: pointer;
 	font-size: 10px;
 	height: 2.3em;
-	width: 22.5%;
+	width: 14%;
 	color: #888;
     }
     .output {
@@ -80,22 +80,22 @@
     .set {
 	padding-bottom: 2em;
 	font-weight: 550;
-	margin-left: 16%;
+	margin-left: 10%;
 	font-size: 12px;
 	cursor: default;
 	height: 5em;
-	width: 70%;
+	width: 85%;
     }
     .end {
 	margin-bottom: 2em;
 	margin-right: auto;
 	padding-top: 3.5em;
-	padding-left: 16%;
+	padding-left: 10%;
 	text-align: left;
 	font-size: 14px;
 	cursor: pointer;
 	display: table;
-	width: 70%;
+	width: 85%;
     }
     .arm {
 	text-align: center;
@@ -112,7 +112,6 @@
     .ago {
 	margin-right: auto;
 	margin-top: -3.5em;
-	text-align: left;
 	font-size: 10px;
     }
     .icon {
@@ -122,6 +121,23 @@
     #fav, #inv {
 	height: 32px;
 	width: 32px;
+    }
+    .yt {
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 54.25%;
+	margin-bottom: 1em;
+	position: relative;
+	overflow-y: scroll;
+	width: 100%;
+	height: 0;
+    }
+    iframe {
+	position: absolute;
+	border: none;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
     }
     .random, .opposite {
 	border-bottom: 1px solid #888;
@@ -144,14 +160,14 @@
 	margin-left: auto;
 	margin-top: 2px;
 	height: 180px;
-	width: 270px;
+	width: 320px;
     }
 </style>
 <body>
 <div class='wrapper'>
 <div class='container'>
 	<div class='attach'>
-		<div id='News' class='category'>NEWS</div><div id='Media' class='category'>MEDIA</div><div id='Social' class='category'>SOCIAL</div><div id='Sport' class='category'>SPORT</div><div id='Technology' class='category'>TECH</div><div id='World' class='category'>WORLD</div>
+		<div id='News' class='category'>NEWS</div><div id='Media' class='category'>MEDIA</div><div id='Social' class='category'>SOCIAL</div><div id='Sport' class='category'>SPORT</div><div id='Technology' class='category'>TECH</div><div id='World' class='category'>WORLD</div><div id='Youtube' class='category'>YOUTUBE</div>
 	</div>
 	<div class='output'></div>
 	<div class='icon'>
@@ -166,7 +182,6 @@
 var opp = 0
 var ost = 0
 var his = 0
-var quit = 9
 var job = false
 var tap = false
 var sel = 'Social'
@@ -357,6 +372,7 @@ function get(n){
 	his = parseInt(n) + 1
 	$('.pop, .air, .get').remove()
 	$('.attach, .icon').css('opacity','0')
+	if (sel == 'Youtube'){ var let = 950; var quit = 5 } else { var let = 0; var quit = 9 }
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
@@ -367,6 +383,7 @@ function get(n){
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
+				    $(this).delay(i*let).queue(function(){ 
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text())
@@ -380,7 +397,13 @@ function get(n){
 											    if (thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) thum = "<img src='"+thum+"'><br>"
 										       }
 											/* Standard thumbnails */
-										       else if (thum = $(this).find('link').attr('href')) thum = "<img src='"+thum+"'><br>"
+										       else if (thum = $(this).find('link').attr('href')){
+								    if (thum.match(/youtube/)){ view = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
+												       "<div class='ago'><b>Views</b> "+view+"</div><br>"
+												}
+											   else thum = "<img src='"+thum+"'><br>"
+										       }
 											/*  Media Thumbnails */
 										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
 											    if (thum != null) thum = "<img src='"+thum+"'><br>"
@@ -395,6 +418,7 @@ function get(n){
 									"<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
+				    })
 				})
 			job = false
 		})
