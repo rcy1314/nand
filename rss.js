@@ -527,6 +527,7 @@ var menu=[
 {cat:"World",des:"Washington Times World News, Middle East News, Afghanistan War.",uri:"https://www.washingtontimes.com/rss/headlines/news/world",ext:"https://washingtontimes.com/news/world"},
 {cat:"World",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/worldnews"},
 {cat:"Youtube",des:"ABC News Youtube #News #LiveNews #ABCNewsLive #ABCNews Latest News.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
+{cat:"Youtube",des:"Andoid Authority Youtube Your source for all things Android.",uri:"https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",ext:"https://www.youtube.com/user/AndroidAuthrotiy"},
 {cat:"Youtube",des:"Bloomberg Youtube Breaking news. Exclusive interviews. Fascinating profiles. First looks at hot new products.",uri:"https://www.youtube.com/feeds/videos.xml?user=bloomberg",ext:"https://www.youtube.com/user/bloomberg"},
 {cat:"Youtube",des:"Caltech Youtube scholars expand human knowledge and benefit society through bold, collaborative explorations in science and engineering.",uri:"https://www.youtube.com/feeds/videos.xml?user=caltech",uri:"https://www.youtube.com/user/caltech"},
 {cat:"Youtube",des:"CBS News Youtube breaking news and top-level interviews engaging and informative.",uri:"https://www.youtube.com/feeds/videos.xml?user=cbsnewsonline",ext:"https://www.youtube.com/user/cbsnewsonline"},
