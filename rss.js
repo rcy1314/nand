@@ -528,6 +528,7 @@ var menu=[
 {cat:"World",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/worldnews"},
 {cat:"Youtube",des:"ABC News Youtube #News #LiveNews #ABCNewsLive #ABCNews Latest News.",uri:"https://www.youtube.com/feeds/videos.xml?user=ABCNews",ext:"https://www.youtube.com/user/ABCNews"},
 {cat:"Youtube",des:"Bloomberg Youtube Breaking news. Exclusive interviews. Fascinating profiles. First looks at hot new products.",uri:"https://www.youtube.com/feeds/videos.xml?user=bloomberg",ext:"https://www.youtube.com/user/bloomberg"},
+{cat:"Youtube",des:"Caltech Youtube scholars expand human knowledge and benefit society through bold, collaborative explorations in science and engineering.",uri:"https://www.youtube.com/feeds/videos.xml?user=caltech",uri:"https://www.youtube.com/user/caltech"},
 {cat:"Youtube",des:"CBS News Youtube breaking news and top-level interviews engaging and informative.",uri:"https://www.youtube.com/feeds/videos.xml?user=cbsnewsonline",ext:"https://www.youtube.com/user/cbsnewsonline"},
 {cat:"Youtube",des:"CNN Youtube latest top stories, weather, business, entertainment, politics, and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=CNN",ext:"https://www.youtube.com/user/CNN"},
 {cat:"Youtube",des:"BBC Youtube the world’s leading public service broadcaster..",uri:"https://www.youtube.com/feeds/videos.xml?user=bbc",ext:"https://www.youtube.com/user/bbc"},
