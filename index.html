@@ -355,6 +355,7 @@ function air(n){
 
 function pop(n){
 
+	if ($('.pop, .air').length > 1){ $('.pop:first, .air:first').remove(); scr('.pop:last') }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
