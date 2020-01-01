@@ -87,9 +87,8 @@
 	width: 85%;
     }
     .end {
-	margin-bottom: 2em;
 	margin-right: auto;
-	padding-top: 3.5em;
+	padding-top: 1.5em;
 	padding-right: 2em;
 	text-align: left;
 	margin-left: 7%;
@@ -114,14 +113,11 @@
 	margin-top: -2.2em;
 	font-size: 10px;
     }
-    .hold {
-	margin-top: 1.5em;
-    }
     .icon {
 	text-align: center;
 	position: relative;
     }
-    #fav, #inv {
+    #fav {
 	height: 32px;
 	width: 32px;
     }
@@ -174,7 +170,6 @@
 	<div class='output'></div>
 	<div class='icon'>
 		<img id='fav' class='favicon' src='favicon/favico.png'>
-		<img id='inv' class='favicon' src='favicon/invert.png'>
 	</div>
 </div>
 		<div class='random'></div>
@@ -340,17 +335,17 @@ function app(n){
 	if (op == 1){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
 		$('.output').removeClass('default').addClass('invert')
-		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 		$('.hold').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
+		$('hr').hide()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('.output').removeClass('invert').addClass('default')
-		$('#inv').show(); $('hr').show(); $('#fav').hide()
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
+		$('hr').show()
 	}
 
 }
@@ -385,7 +380,7 @@ function get(n, ran){
 	$('.attach, .icon').css('opacity','0')
 	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
 	if (sel == 'Youtube'){ var let = 950; var quit = 5 } else { var let = 0; var quit = 9 }
-	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
+	$('.output').append("<div class='arm'>"+e+"<br><br>If this is your first feed wait time can be upto 10 seconds.</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
@@ -426,8 +421,7 @@ function get(n, ran){
 											}
 					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:180px;height:180px;'>"
 											   else thum = "<img class='hold' src='favicon/favico.png' style='width:180px;height:180px;'>"
-					var pub = $(this).find('title:first').text().trunc(80, true)
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+pub+"</div><br>" +
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
 									"<div class='ago' style='color:#aaa'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
