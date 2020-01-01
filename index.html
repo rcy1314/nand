@@ -87,6 +87,7 @@
 	width: 85%;
     }
     .end {
+	padding-bottom: 3.5em;
 	margin-right: auto;
 	padding-top: 1.5em;
 	text-align: left;
@@ -111,12 +112,13 @@
 	margin-right: auto;
 	margin-top: -2.2em;
 	font-size: 10px;
+	color: #aaa;
     }
     .icon {
 	text-align: center;
 	position: relative;
     }
-    #fav {
+    #fav, #inv {
 	height: 32px;
 	width: 32px;
     }
@@ -154,6 +156,7 @@
 	left: 0em;
     }
     img {
+	padding-top: 2.5em;
 	margin-left: auto;
 	width: 60%;
     }
@@ -162,11 +165,18 @@
 <div class='wrapper'>
 <div class='container'>
 	<div class='attach'>
-		<div id='News' class='category'>NEWS</div><div id='Media' class='category'>MEDIA</div><div id='Social' class='category'>SOCIAL</div><div id='Sport' class='category'>SPORT</div><div id='Technology' class='category'>TECH</div><div id='World' class='category'>WORLD</div><div id='Youtube' class='category'>YOUTUBE</div>
+		<div id='News' class='category'>NEWS</div>
+		<div id='Media' class='category'>MEDIA</div>
+		<div id='Social' class='category'>SOCIAL</div>
+		<div id='Sport' class='category'>SPORT</div>
+		<div id='Technology' class='category'>TECH</div>
+		<div id='World' class='category'>WORLD</div>
+		<div id='Youtube' class='category'>YOUTUBE</div>
 	</div>
 	<div class='output'></div>
 	<div class='icon'>
 		<img id='fav' class='favicon' src='favicon/favico.png'>
+		<img id='inv' class='favicon' src='favicon/invert.png'>
 	</div>
 </div>
 		<div class='random'></div>
@@ -177,7 +187,6 @@ var opp = 0
 var ost = 0
 var his = 0
 var job = false
-var tap = false
 var sel = 'Social'
 
 if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
@@ -232,7 +241,7 @@ $('.category').on('touchstart click', function(e){
 	$('.category').css('color','#888')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 	pop($(this).attr('id'))
-	$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
+	scr('.pop')
 
     e.preventDefault()
 
@@ -241,7 +250,7 @@ $('.category').on('touchstart click', function(e){
 $('.favicon').on('touchstart click', function(e){
 
 	pop(sel)
-	$('.output').animate({ scrollTop: $('.pop:last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300)
+	scr('.pop')
 
     e.preventDefault()
 
@@ -252,6 +261,7 @@ $('.output').on('scroll', function(e){
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1)
 		if (job == false) pop(sel)
+
 })
 
 String.prototype.trunc =
@@ -265,13 +275,7 @@ String.prototype.trunc =
 
       }
 
-function scr(n){
-
-	$('.output').animate({
-		scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
-	}, 300)
-
-}
+function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 300) }
 
 function pin(n){
 
@@ -342,7 +346,7 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('.hold').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
-		$('hr').hide()
+		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -350,7 +354,7 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
-		$('hr').show()
+		$('hr').show(); $('#fav').hide(); $('#inv').show()
 	}
 
 }
@@ -359,7 +363,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\")'><hr>"+menu[i].des+"</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
@@ -379,14 +383,14 @@ function pop(n){
 }
 
 function get(n, ran){
-	var e = 0
+	var e = 1
 	job = true
 	$('.pop, .air, .get').remove()
 	$('.attach, .icon').css('opacity','0')
 	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
-	if (sel == 'Youtube'){ var let = 950; var quit = 5 } else { var let = 0; var quit = 9 }
-	$('.output').append("<div class='arm'>"+e+"<br><br>If this is your first feed wait time can be upto 10 seconds.</div><div class='get'></div>")
-	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
+	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
+	if (sel == 'Youtube'){ var let = 950; var quit = 5 } else { var let = 0; var quit = 10 }
+	var int = setInterval(function(){ e = e + 1; $('.arm').html(e + "<br><br>If this is your first feed wait time can be up to 10 seconds.") }, 1000)
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){clearInterval(int)
@@ -427,7 +431,7 @@ function get(n, ran){
 					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:180px;height:180px;'>"
 											   else thum = "<img class='hold' src='favicon/favico.png' style='width:180px;height:180px;'>"
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
-									"<div class='ago' style='color:#aaa'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
+									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 				    })
