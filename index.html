@@ -90,10 +90,9 @@
 	margin-bottom: 2em;
 	margin-right: auto;
 	padding-top: 3.5em;
-	padding: 2em;
+	padding-right: 2em;
 	text-align: left;
 	margin-left: 7%;
-	font-size: 14px;
 	cursor: pointer;
 	display: table;
 	width: 73%;
@@ -108,7 +107,7 @@
 	font-family: Arial;
 	margin-right: auto;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 18px;
     }
     .ago {
 	margin-right: auto;
@@ -427,7 +426,7 @@ function get(n){
 											}
 					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:180px;height:180px;'>"
 											   else thum = "<img class='hold' src='favicon/favico.png' style='width:180px;height:180px;'>"
-					var pub = $(this).find('title:first').text().trunc(60, true)
+					var pub = $(this).find('title:first').text().trunc(80, true)
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+pub+"</div><br>" +
 									"<div class='ago' style='color:#aaa'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
