@@ -433,9 +433,7 @@ function get(n, ran){
 											    if (thum != null) thum = "<img src='"+thum+"' class='out'><br>"
 										       }
 											/* Description thumbnails */
-										       else if (thum = $(this).find('description').text()){
-											    if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
-											}
+										       else if (thum = $(this).find('description').text()) if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
 					      if (!thum) if ($('.output').hasClass('default')){ thum = "<img class='hold' src='favicon/invert.png'></div>"} else { thum = "<img class='hold' src='favicon/favico.png'></div>" }
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
 									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
