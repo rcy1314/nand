@@ -263,6 +263,17 @@ $('.output').on('scroll', function(e){
 		if (job == false) pop(sel)
 })
 
+String.prototype.trunc =
+
+     function( n, useWordBoundary ){
+         if (this.length <= n) { return this; }
+         var subString = this.substr(0, n-1);
+         return (useWordBoundary 
+            ? subString.substr(0, subString.lastIndexOf(' ')) 
+            : subString) + "&hellip;";
+
+      }
+
 function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
@@ -416,9 +427,8 @@ function get(n){
 											}
 					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:180px;height:180px;'>"
 											   else thum = "<img class='hold' src='favicon/favico.png' style='width:180px;height:180px;'>"
-					var pub = $(this).find('title:first').text()
-					if (pub.length > 110) pub = pub.substr(0, 110)
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+pub+'...'+"</div><br>" +
+					var pub = $(this).find('title:first').text().trunc(60, true)
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+pub+"</div><br>" +
 									"<div class='ago' style='color:#aaa'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
