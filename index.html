@@ -269,9 +269,11 @@ String.prototype.trunc =
       }
 
 function scr(n){
+
 	$('.output').animate({
 		scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
 	}, 300)
+
 }
 
 function pin(n){
@@ -368,7 +370,7 @@ function air(n){
 
 function pop(n){
 
-	if ($('.pop, .air').length > 1){ $('.pop:first, .air:first').remove(); scr('.pop:last') }
+	if ($('.pop, .air').length > 1){ $('.pop:first, .air:first').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
