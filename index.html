@@ -80,24 +80,23 @@
     }
     .set {
 	padding-bottom: 2em;
-	margin-left: 10%;
+	margin-left: 9%;
 	font-size: 12px;
 	cursor: pointer;
 	height: 5em;
 	width: 85%;
     }
     .end {
-	background-color: #fafafa;
 	margin-bottom: 2em;
 	margin-right: auto;
 	padding-top: 3.5em;
 	padding: 2em;
 	text-align: left;
-	margin-left: 7.5%;
+	margin-left: 7%;
 	font-size: 14px;
 	cursor: pointer;
 	display: table;
-	width: 75%;
+	width: 73%;
     }
     .arm {
 	text-align: center;
@@ -113,8 +112,11 @@
     }
     .ago {
 	margin-right: auto;
-	margin-top: -3.5em;
+	margin-top: -2.2em;
 	font-size: 10px;
+    }
+    .hold {
+	margin-top: 1.5em;
     }
     .icon {
 	text-align: center;
@@ -332,7 +334,7 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 		$('.hold').attr('src','favicon/favico.png')
-		$('.attach').css('background-color','#000')
+		$('.attach, .end').css('background-color','#000')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -341,6 +343,7 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
+		$('.end').css('background-color','#fafafa')
 	}
 
 }
@@ -417,7 +420,7 @@ function get(n){
 					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='hold' src='favicon/invert.png' style='width:180px;height:180px;'>"
 											   else thum = "<img class='hold' src='favicon/favico.png' style='width:180px;height:180px;'>"
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text()+'...'+"</div><br>" +
-									"<div class='ago'><br><b>"+dst[0]+"</b> "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
+									"<div class='ago' style='color:#aaa'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
 					if (i >= quit){ app(); return false }
 				    })
