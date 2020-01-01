@@ -303,7 +303,6 @@ function utc(n){
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
-
     return dmz
 
 }
@@ -319,7 +318,6 @@ function ago(n){
 	var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'
 	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'
 	var y=m/121;
-
     return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago'
 
 }
@@ -334,7 +332,7 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('#fav').show(); $('#inv').hide(); $('hr').hide()
 		$('.hold').attr('src','favicon/favico.png')
-		$('.attach, .end').css('background-color','#000')
+		$('.attach').css('background-color','#000')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -343,7 +341,6 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
-		$('.end').css('background-color','#fafafa')
 	}
 
 }
