@@ -427,7 +427,7 @@ var menu=[
 {cat:"Technology",des:"Computer Weekly stands out from the many Technology News Websites.",uri:"https://www.computerweekly.com/rss/RSS-Feed.xml",ext:"https://computerweekly.com"},
 {cat:"Technology",des:"Digital Trends is a Technology News, Lifestyle, and Information Website.",uri:"https://www.digitaltrends.com/feed",ext:"https://digitaltrends.com"},
 {cat:"Technology",des:"Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",uri:"https://www.engadget.com/rss.xml",ext:"https://engadget.com"},
-{cat:"Technology",des:"Entrepreneur Technology Online and Electronic Business.",uri:"http://feeds.feedburner.com/entrepreneur/ebiz",ext:"https://www.entrepreneur.com/topic/technology"},
+{cat:"Technology",des:"Entrepreneur Technology Online and Electronic Business.",uri:"http://feeds.feedburner.com/entrepreneur/latest",ext:"https://www.entrepreneur.com/topic/technology"},
 {cat:"Technology",des:"EuroGamer Gaming news, reviews and the best long-form journalism.",uri:"https://www.eurogamer.net/?format=rss&type=article",ext:"https://www.eurogamer.net"},
 {cat:"Technology",des:"Exploit Database is a non-profit project that is provided as a public service by Offensive Security.",uri:"https://www.exploit-db.com/rss.xml",ext:"https://www.exploit-db.com"},
 {cat:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",uri:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com"},
