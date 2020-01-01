@@ -354,6 +354,7 @@ var menu=[
 {cat:"Social",des:"Sysadmin subreddit dedicated to the Profession of Computer System Administration.",uri:"https://reddit.com/r/sysadmin/.rss",ext:"https://reddit.com/r/sysadmin"},
 {cat:"Social",des:"Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",uri:"https://reddit.com/r/tech/.rss",ext:"https://reddit.com/r/tech"},
 {cat:"Social",des:"Technology subreddit shares submitted articles about Technology.",uri:"https://reddit.com/r/technology/.rss",ext:"https://reddit.com/r/technology"},
+{cat:"Social",des:"Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",uri:"https://reddit.com/r/thinkpad/.rss",ext:"https://reddit.com/r/thinkpad"},
 {cat:"Social",des:"Ubuntu subreddit or News, Information and General Discussion related to Ubuntu.",uri:"https://reddit.com/r/ubuntu/.rss",ext:"https://reddit.com/r/ubuntu"},
 {cat:"Social",des:"Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",uri:"https://reddit.com/r/unixporn/.rss",ext:"https://reddit.com/r/unixporn"},
 {cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/wallpaper"},
