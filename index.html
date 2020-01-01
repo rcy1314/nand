@@ -433,7 +433,7 @@ function get(n, ran){
 										       }
 											/* Description thumbnails */
 										       else if (thum = $(this).find('description').text()){
-											    if (thum = thum.match(/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
+											    if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
 											}
 					      if (!thum) if ($('.output').hasClass('default')){ thum = "<img class='hold' src='favicon/invert.png'></div>"} else { thum = "<img class='hold' src='favicon/favico.png'></div>" }
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
