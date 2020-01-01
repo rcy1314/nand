@@ -345,6 +345,7 @@ var menu=[
 {cat:"Social",des:"Redhat subreddit discussion for Red Hat and Red Hat technologies.",uri:"https://reddit.com/r/redhat/.rss",ext:"https://reddit.com/r/redhat"},
 {cat:"Social",des:"Science subreddit read about the latest advances in astronomy, biology, medicine, physics, and social science.",uri:"https://reddit.com/r/science/.rss",ext:"https://reddit.com/r/science"},
 {cat:"Social",des:"Security subreddit a friendly and professional place for discussing computer security.",uri:"https://reddit.com/r/security/.rss",ext:"https://reddit.com/r/security"}, 
+{cat:"Social",des:"Software subreddit where software applications are discussed.",uri:"https://www.reddit.com/r/software/.rss",ext:"https://www.reddit.com/r/software"},
 {cat:"Social",des:"Steam subreddit for members of the Steam Community.",uri:"https://reddit.com/r/steam/.rss",ext:"https://reddit.com/r/steam"},
 {cat:"Social",des:"Sysadmin subreddit dedicated to the Profession of Computer System Administration.",uri:"https://reddit.com/r/sysadmin/.rss",ext:"https://reddit.com/r/sysadmin"},
 {cat:"Social",des:"Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",uri:"https://reddit.com/r/tech/.rss",ext:"https://reddit.com/r/tech"},
