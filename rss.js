@@ -422,6 +422,7 @@ var menu=[
 {cat:"Technology",des:"CNBC is an American elevision News channel that is owned by NBC Universal.",uri:"https://www.cnbc.com/id/19854910/device/rss/rss.html",ext:"https://cnbc.com/technology"},
 {cat:"Technology",des:"CNET is an American media website that publishes Reviews, News, Articles, and Videos on Technology.",uri:"https://www.cnet.com/rss/news",ext:"https://cnet.com"},
 {cat:"Technology",des:"Computer Weekly stands out from the many Technology News Websites.",uri:"https://www.computerweekly.com/rss/RSS-Feed.xml",ext:"https://computerweekly.com"},
+{cat:"Technology",des:"Computer Hope computer terms, news, tips, chat, and online tools to help troubleshoot computer issues.",uri:"https://feeds.feedburner.com/LatestNewPagesOnComputerHope",ext:"https://www.computerhope.com"},
 {cat:"Technology",des:"Digital Trends is a Technology News, Lifestyle, and Information Website.",uri:"https://www.digitaltrends.com/feed",ext:"https://digitaltrends.com"},
 {cat:"Technology",des:"Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",uri:"https://www.engadget.com/rss.xml",ext:"https://engadget.com"},
 {cat:"Technology",des:"EuroGamer Gaming news, reviews and the best long-form journalism.",uri:"https://www.eurogamer.net/?format=rss&type=article",ext:"https://www.eurogamer.net"},
