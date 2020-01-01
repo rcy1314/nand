@@ -490,6 +490,7 @@ var menu=[
 {cat:"Technology",des:"ZDNet is a business technology news website published by CBS Interactive.",uri:"https://www.zdnet.com/news/rss.xml",ext:"https://zdnet.com"},
 {cat:"World",des:"ABC is an American broadcast television network that is property of Walt Disney.",uri:"https://abcnews.go.com/abcnews/internationalheadlines",ext:"https://abc.com"},
 {cat:"World",des:"Al Jazeera is an Arabic-language television channel from Doha, Qatar.",uri:"https://www.aljazeera.com/xml/rss/all.xml",ext:"https://www.aljazeera.com"},
+{cat:"World",des:"Axios known for delivering news, coverage, and insight with a distinctive brand of smart brevity.",uri:"https://api.axios.com/feed",ext:"https://www.axios.com"},
 {cat:"World",des:"Baltimore Sun Your source for Baltimore breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.baltimoresun.com/arcio/rss/category/latest/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.baltimoresun.com"},
 {cat:"World",des:"BBC is the world’s leading public service broadcaster.",uri:"http://feeds.bbci.co.uk/news/rss.xml",ext:"https://bbc.com"},
 {cat:"World",des:"Bloomberg delivers business and markets news, data, analysis, and video.",uri:"https://www.bloomberg.com/view/rss",ext:"https://bloomberg.com"},
