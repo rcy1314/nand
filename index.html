@@ -287,7 +287,7 @@ function ran(n){
 	var obj = []
 	$.each(menu, function(i,k){ if (n == k.cat) obj.push(menu[i]) })
 	var n = obj[Math.floor(Math.random()*obj.length)]
-	get(menu.indexOf(n))
+	get(menu.indexOf(n), true)
 
 }
 
@@ -378,12 +378,12 @@ function pop(n){
 
 }
 
-function get(n){
+function get(n, ran){
 	var e = 0
 	job = true
-	his = parseInt(n) + 1
 	$('.pop, .air, .get').remove()
 	$('.attach, .icon').css('opacity','0')
+	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
 	if (sel == 'Youtube'){ var let = 950; var quit = 5 } else { var let = 0; var quit = 9 }
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e) }, 1000)
