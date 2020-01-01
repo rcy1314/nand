@@ -47,6 +47,8 @@
 
     .category:hover { color: #ccc !important }
 
+    .icon { text-align: center }
+
     hr { opacity: .2 }
 
     .container {
@@ -89,6 +91,7 @@
     .arm {
 	text-align: center;
 	font-size: 10px;
+	padding: 2em;
     }
     .end {
 	padding-bottom: 3.5em;
@@ -118,10 +121,6 @@
 	margin-top: -2.2em;
 	font-size: 10px;
 	color: #888;
-    }
-    .icon {
-	text-align: center;
-	position: relative;
     }
     #fav, #inv {
 	height: 32px;
@@ -159,6 +158,10 @@
     .opposite {
 	padding-right: 2em;
 	left: 0em;
+    }
+    .hold {
+	height: 180px;
+	width: 180px;
     }
 </style>
 <body>
@@ -316,6 +319,7 @@ function utc(n){
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
+
     return dmz
 
 }
@@ -323,38 +327,42 @@ function utc(n){
 function ago(n){
 
 	var age = new Date()
-	var dis=age.getTime() - new Date(n).getTime()
-	var sec=dis/1000
-	if(sec<60) return parseInt(sec)+' second'+(parseInt(sec)>1?'s':'')+' ago'
-	var min=sec/60; if(min<60) return parseInt(min)+' minute'+(parseInt(min)>1?'s':'')+' ago'
-	var h=min/60; if(h<24) return parseInt(h)+' hour'+(parseInt(h)>1?'s':'')+' ago'
-	var d=h/24; if(d<30) return parseInt(d)+' day'+(parseInt(d)>1?'s':'')+' ago'
-	var m=d/30; if(m<12) return parseInt(m)+' month'+(parseInt(m)>1?'s':'')+' ago'
-	var y=m/121;
+	var dis = age.getTime() - new Date(n).getTime()
+	var sec = dis/1000
+	if (sec < 60) return parseInt(sec) + ' second' + (parseInt(sec) > 1 ? 's' : '') + ' ago'
+	var min = sec/60; if (min < 60) return parseInt(min) + ' minute' + (parseInt(min) > 1 ? 's' : '') + ' ago'
+	var h = min/60; if (h < 24) return parseInt(h) + ' hour' + (parseInt(h) > 1 ? 's' : '') + ' ago'
+	var d = h/24; if (d < 30) return parseInt(d) + ' day' + (parseInt(d) > 1 ? 's' : '') + ' ago'
+	var m = d/30; if (m < 12) return parseInt(m) + ' month' + (parseInt(m) > 1 ? 's' : '') + ' ago'
+	var y = m/121
 
-    return parseInt(y)+' year'+(parseInt(y)>1?'s':'')+' ago'
+    return parseInt(y) + ' year' + (parseInt(y) > 1 ? 's' : '') + ' ago'
 
 }
 
 function app(n){
 
-	if (n == 'op'){ op = op != true }
-	else if (n == 1 || n == 0) op = n
+	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
+
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
 		$('.output').removeClass('default').addClass('invert')
+		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.hold').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
-		$('hr').hide(); $('#inv').hide(); $('#fav').show()
+
 	}
+
 	else if (op == 0){
+
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('.output').removeClass('invert').addClass('default')
+		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
-		$('hr').show(); $('#fav').hide(); $('#inv').show()
+
 	}
 
 }
@@ -371,11 +379,10 @@ function air(n){
 
 function pop(n){
 
-	if ($('.pop, .air').length > 1){ $('.pop:first, .air:first').remove() }
 	document.title = n + ' ack'
-	if (n != sel) his = 0
-	sel = n
+	if (n != sel){ his = 0 } else { sel = n }
 	$('.output').append("<div class='pop'></div>")
+	if ($('.pop, .air').length > 2){ $('.pop:first, .air:first').remove(); scr('.pop:last') }
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>")
 	his = 0
 	app()
@@ -428,8 +435,7 @@ function get(n, ran){
 										       else if (thum = $(this).find('description').text()){
 											    if (thum = thum.match(/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
 											}
-					       if (!thum) if ($('.output').hasClass('default')) thum = "<img class='out' src='favicon/invert.png' style='width:180px;height:180px;'>"
-											   else thum = "<img class='out' src='favicon/favico.png' style='width:180px;height:180px;'>"
+					      if (!thum) if ($('.output').hasClass('default')){ thum = "<img class='hold' src='favicon/invert.png'></div>"} else { thum = "<img class='hold' src='favicon/favico.png'></div>" }
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
 									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
 					if (i === quit) $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</a></div>")
