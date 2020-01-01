@@ -432,6 +432,7 @@ var menu=[
 {cat:"Technology",des:"EuroGamer Gaming news, reviews and the best long-form journalism.",uri:"https://www.eurogamer.net/?format=rss&type=article",ext:"https://www.eurogamer.net"},
 {cat:"Technology",des:"Exploit Database is a non-profit project that is provided as a public service by Offensive Security.",uri:"https://www.exploit-db.com/rss.xml",ext:"https://www.exploit-db.com"},
 {cat:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",uri:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com"},
+{cat:"Technology",des:"Gadgets 360 Tech News, Latest Technology News, Best New Tech Gadgets, Mobile, Tables, Laptops, and Games.",uri:"https://gadgets.ndtv.com/rss/feeds",ext:"https://gadgets.ndtv.com"},
 {cat:"Technology",des:"Gaming on Linux Latest Articles and Games.",uri:"https://www.gamingonlinux.com/article_rss.php",ext:"https://gamingonlinux.com"},
 {cat:"Technology",des:"GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",uri:"https://www.geekwire.com/feed",ext:"https://geekwire.com"},
 {cat:"Technology",des:"Gizmodo is a Design, Technology, Science and Science Fiction website.",uri:"https://gizmodo.com/rss",ext:"https://gizmodo.com"},
