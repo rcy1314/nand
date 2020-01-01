@@ -425,6 +425,7 @@ var menu=[
 {cat:"Technology",des:"CNBC is an American elevision News channel that is owned by NBC Universal.",uri:"https://www.cnbc.com/id/19854910/device/rss/rss.html",ext:"https://cnbc.com/technology"},
 {cat:"Technology",des:"CNET is an American media website that publishes Reviews, News, Articles, and Videos on Technology.",uri:"https://www.cnet.com/rss/news",ext:"https://cnet.com"},
 {cat:"Technology",des:"Computer Weekly stands out from the many Technology News Websites.",uri:"https://www.computerweekly.com/rss/RSS-Feed.xml",ext:"https://computerweekly.com"},
+{cat:"Technology",des:"Digg the best articles, videos, and original content that the web is talking about right now.",uri:"https://www.digg.com/rss/index.xml",ext:"https://www.digg.com"},
 {cat:"Technology",des:"Digital Trends is a Technology News, Lifestyle, and Information Website.",uri:"https://www.digitaltrends.com/feed",ext:"https://digitaltrends.com"},
 {cat:"Technology",des:"Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",uri:"https://www.engadget.com/rss.xml",ext:"https://engadget.com"},
 {cat:"Technology",des:"Entrepreneur Technology Online and Electronic Business.",uri:"http://feeds.feedburner.com/entrepreneur/latest",ext:"https://www.entrepreneur.com/topic/technology"},
