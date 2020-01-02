@@ -48,14 +48,8 @@
     .category:hover { color: #ccc !important }
 
     .shadow {
-	-moz-box-shadow: 1p 1px 3px #888;
-	box-shadow: 1px 1px 3px #888;
-
-    }
-    .shadow:hover {
-	-moz-box-shadow: 1px 1px 3px #ccc;
-	box-shadow: 1px 1px 3px #ccc;
-
+	-moz-box-shadow: 1p 1px 5px #ccc;
+	box-shadow: 1px 1px 5px #ccc;
     }
     a:hover {
 	text-decoration: underline;
@@ -91,7 +85,7 @@
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
-	height: calc(100% - 70px);
+	height: calc(100% - 75px);
 	outline: none !important;
 	-ms-overflow-style: none;
 	overflow: auto;
@@ -139,9 +133,11 @@
 	color: #888;
     }
     .favicon {
+	position: relative;
 	border-radius: 24px;
 	height: 32px;
 	width: 32px;
+	top: 4px;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -272,6 +268,26 @@ $('.favicon').on('touchstart click', function(e){
 	scr('.pop')
 
     e.preventDefault()
+
+})
+
+$('#inv').on('touchstart click', function(e){
+
+	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'}) }, 100)
+	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
+
+})
+
+$('#inv').on('mouseover', function(e){
+
+	$(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+
+})
+
+$('#inv').on('mouseout', function(e){
+
+	$(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
 })
 
