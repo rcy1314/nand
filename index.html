@@ -47,9 +47,19 @@
 
     .category:hover { color: #ccc !important }
 
+    .shadow {
+	-moz-box-shadow: 1p 1px 3px #888;
+	box-shadow: 1px 1px 3px #888;
+
+    }
+    .shadow:hover {
+	-moz-box-shadow: 1px 1px 3px #ccc;
+	box-shadow: 1px 1px 3px #ccc;
+
+    }
     a:hover {
-	color: #888;
 	text-decoration: underline;
+	color: #888;
     }
 
     .icon { text-align: center }
@@ -128,7 +138,8 @@
 	font-size: 10px;
 	color: #888;
     }
-    #fav, #inv {
+    .favicon {
+	border-radius: 24px;
 	height: 32px;
 	width: 32px;
     }
@@ -283,13 +294,13 @@ String.prototype.trunc =
 
       }
 
-function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
+function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 200) }
 
 function pin(n){
 
 	if (n <= 0 && job == false) air(sel)
 	else if (n < ost) $('.attach, .icon').css('opacity','1')
-	else if (n > ost) $('.attach, .icon').css('opacity','0')
+	else if (n > ost && job == false) $('.attach, .icon').css('opacity','0')
     ost = n
 
 }
@@ -357,7 +368,7 @@ function app(n){
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.hold').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
-
+		$('.favicon').removeClass('shadow')
 	}
 
 	else if (op == 0){
@@ -368,6 +379,7 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#333')
 		$('.hold').attr('src','favicon/invert.png')
+		$('.favicon').addClass('shadow favicon')
 
 	}
 
@@ -385,6 +397,7 @@ function air(n){
 
 function pop(n){
 
+	job = true
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
