@@ -47,6 +47,11 @@
 
     .category:hover { color: #ccc !important }
 
+    a:hover {
+	color: #888;
+	text-decoration: underline;
+    }
+
     .icon { text-align: center }
 
     hr { opacity: .2 }
@@ -384,7 +389,7 @@ function pop(n){
 	sel = n
 	$('.output').append("<div class='pop'></div>")
 	if ($('.pop, .air').length > 2){ $('.pop:first, .air:first').remove(); scr('.pop:last') }
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr><br><a>"+menu[i].des+"</a></div>")
 	his = 0
 	app()
 
