@@ -301,9 +301,7 @@ $('.output').on('scroll', function(e){
 
 $('.output').on('touchmove', function(e){
 
-	return false
-
-    e.preventDefault
+    e.stopPropagation()
 
 })
 
