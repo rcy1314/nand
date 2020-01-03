@@ -319,7 +319,6 @@ function pin(n){
 
 	if (n > ost && job == false){ $('.attach, .icon').css('opacity','0'); $('.output').css({'top':'-2.2em','height':'100%'}) }
 	else if (n < ost){ $('.attach, .icon').css('opacity','1'); $('.output').css({'top':'0em','height':'calc(100% - 75px)'}) }
-	setTimeout(function(){ job = false }, 100)
     ost = n
 
 }
@@ -416,7 +415,6 @@ function air(n){
 
 function pop(n){
 
-	job = true
 	if ($('.pop, .air').length > 2){ $('.pop:first, .air:first').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
