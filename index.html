@@ -218,6 +218,7 @@ else {
 }
 
 pop(sel)
+air(sel)
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
 $('.output').attr('tabindex', -1).focus()
@@ -404,6 +405,7 @@ function app(n){
 
 function air(n){
 
+	job = true
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>") }
@@ -478,6 +480,7 @@ function get(n, ran){
 				    })
 				})
 			job = false
+			setTimeout(function(){ air(sel) }, 100)
 		})
 }
 </script>
