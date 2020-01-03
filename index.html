@@ -284,8 +284,14 @@ $('#inv').on('touchstart click', function(e){
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'}) }, 100)
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
     }
-	if (e.type == 'mouseover') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
-	if (e.type == 'mouseout') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+
+})
+
+$('#inv').on('mousemove mouseleave ', function(e){
+
+	if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+	if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+
 })
 
 $('.output').on('scroll touchmove', function(e){
