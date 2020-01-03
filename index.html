@@ -299,13 +299,6 @@ $('.output').on('scroll', function(e){
 
 })
 
-$('.output').on('touchmove', function(e){
-
-    job = true
-    e.stopPropagation()
-
-})
-
 String.prototype.trunc =
 
      function( n, useWordBoundary ){
@@ -421,12 +414,11 @@ function air(n){
 
 function pop(n){
 
-	job = true
+	if ($('.pop, .air').length > 2){ scr('.pop:first'); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	if ($('.pop, .air').length > 2){ $('.pop:first, .air:first').remove() }
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr><br><a>"+menu[i].des+"</a></div>")
 	his = 0
 	app()
