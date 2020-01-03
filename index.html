@@ -240,12 +240,6 @@ $('.output').focusout(function(){
 
 })
 
-$('.attach, .icon').on('mouseover', function() {
-
-	$(this).css('opacity','1')
-
-})
-
 $('.random').on('touchstart click', function(e) {
 
 	ran(sel)
@@ -317,8 +311,8 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n > ost && job == false){ $('.attach, .icon').css('opacity','0'); $('.output').css({'top':'-2.2em','height':'100%'}) }
-	else if (n < ost){ $('.attach, .icon').css('opacity','1'); $('.output').css({'top':'0em','height':'calc(100% - 75px)'}) }
+	if (n > ost && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
+	else if (n < ost) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
 	setTimeout(function(){ job = false }, 500)
     ost = n
 
