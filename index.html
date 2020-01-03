@@ -9,15 +9,20 @@
 <style>
 @media screen and (min-width: 960px) {
 
-    html { background-color: #FAFAFA; overflow: hidden }
+    html {
+
+	background-color: #FAFAFA;
+	overflow: hidden;
+
+    }
 
     .wrapper {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: absolute;
-	bottom: 50%;
 	border: none;
 	height: 100%;
+	bottom: 50%;
 	width: 55%;
 	right: 50%;
     }
@@ -44,11 +49,13 @@
 
 }
 
+    body { overflow: hidden }
+
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
     .category:hover { color: #ccc !important }
 
-    .shadow {
+    .outline {
 	-moz-box-shadow: 1p 1px 5px #ccc;
 	box-shadow: 1px 1px 5px #ccc;
     }
@@ -84,12 +91,13 @@
 	width: 14%;
     }
     .output {
-	position: relative;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
 	height: calc(100% - 75px);
 	outline: none !important;
 	-ms-overflow-style: none;
+	scrollbar-width: none;
+	position: relative;
 	overflow: auto;
     }
     .set {
@@ -379,7 +387,7 @@ function app(n){
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.hold').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
-		$('.favicon').removeClass('shadow')
+		$('.favicon').removeClass('outline')
 	}
 
 	else if (op == 0){
@@ -390,7 +398,7 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#222')
 		$('.hold').attr('src','favicon/invert.png')
-		$('.favicon').addClass('shadow favicon')
+		$('.favicon').addClass('outline favicon')
 
 	}
 
