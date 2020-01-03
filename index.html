@@ -315,9 +315,8 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n < ost) $('.attach, .icon').css('opacity','1')
-	else if (n > ost) $('.attach, .icon').css('opacity','0')
-	setTimeout(function(){ job = false }, 0)
+	if (n < ost){ $('.attach, .icon').css('opacity','1'); job = false }
+	else if (n > ost && job == false) $('.attach, .icon').css('opacity','0')
     ost = n
 
 }
@@ -404,7 +403,6 @@ function app(n){
 
 function air(n){
 
-	job = true
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>") }
