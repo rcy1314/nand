@@ -293,7 +293,7 @@ $('#inv').on('mouseout', function(e){
 
 })
 
-$('.output').on('scroll', function(e){
+$('.output').on('scroll touchmove', function(e){
 
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
