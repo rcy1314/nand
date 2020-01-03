@@ -425,9 +425,8 @@ function pop(n){
 function get(n, ran){
 	var e = 1
 	job = true
-	his = n
+	his = parseInt(n)
 	$('.pop, .air, .get').remove()
-	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	var int = setInterval(function(){ e = e + 1; $('.arm').html(e + "<br><br>If this is your first feed wait time can be up to 10 seconds.") }, 1000)
