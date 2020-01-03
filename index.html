@@ -276,22 +276,13 @@ $('.favicon').on('touchstart click', function(e){
 
 $('#inv').on('touchstart click', function(e){
 
+    if (e.type == 'touchstart' || e.type == 'click'){
 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'}) }, 100)
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
-
-})
-
-$('#inv').on('mouseover', function(e){
-
-	$(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
-
-})
-
-$('#inv').on('mouseout', function(e){
-
-	$(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
-
+    }
+	if (e.type == 'mouseover') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+	if (e.type == 'mouseout') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 })
 
 $('.output').on('scroll touchmove', function(e){
@@ -317,8 +308,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n > ost){ $('.attach, .icon').css('opacity','0'); $('.output').css({'top':'-2.2em','height':'100%'}) }
+	if (n > ost && job == false){ $('.attach, .icon').css('opacity','0'); $('.output').css({'top':'-2.2em','height':'100%'}) }
 	else if (n < ost){ $('.attach, .icon').css('opacity','1'); $('.output').css({'top':'0em','height':'calc(100% - 75px)'}) }
+	setTimeout(function(){ job = false }, 500)
     ost = n
 
 }
@@ -415,6 +407,7 @@ function air(n){
 
 function pop(n){
 
+	job = true
 	if ($('.pop, .air').length > 2){ $('.pop:first, .air:first').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
@@ -430,7 +423,6 @@ function get(n, ran){
 	var e = 1
 	job = true
 	$('.pop, .air, .get').remove()
-	$('.attach, .icon').css('opacity','0')
 	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
