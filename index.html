@@ -315,10 +315,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n <= 0 && job == false) air(sel)
-	else if (n < ost) $('.attach, .icon').css('opacity','1')
-	else if (n > ost && job == false) $('.attach, .icon').css('opacity','0')
-	setTimeout(function(){ job = false }, 500)
+	if (n < ost) $('.attach, .icon').css('opacity','1')
+	else if (n > ost) $('.attach, .icon').css('opacity','0')
+	setTimeout(function(){ job = false }, 0)
     ost = n
 
 }
@@ -480,7 +479,7 @@ function get(n, ran){
 				    })
 				})
 			job = false
-			setTimeout(function(){ air(sel) }, 100)
+			setTimeout(function(){ air(sel) }, 0)
 		})
 }
 </script>
