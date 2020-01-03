@@ -414,7 +414,7 @@ function air(n){
 
 function pop(n){
 
-	if ($('.pop, .air').length > 2) return false
+	if ($('.pop, .air').length > 2){ $('.pop, .air').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
