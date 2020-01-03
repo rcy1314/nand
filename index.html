@@ -402,7 +402,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr>"+menu[i].des+"</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set "+i+"' onclick='get("+i+", false)'><hr>"+menu[i].des+"</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
@@ -416,16 +416,16 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get(\""+i+"\", false)'><hr><br><a>"+menu[i].des+"</a></div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set "+i+"' onclick='get("+i+", false)'><hr><br><a>"+menu[i].des+"</a></div>")
 	his = 0
 	app()
 
 }
 
 function get(n, ran){
-	his = n
 	var e = 1
 	job = true
+	his = n
 	$('.pop, .air, .get').remove()
 	if (ran == true){ his = 0 } else { his = parseInt(n) + 1 }
 	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
