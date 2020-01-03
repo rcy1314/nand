@@ -315,7 +315,7 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n < ost){ $('.attach, .icon').css('opacity','1'); job = false }
+	if (n < ost) $('.attach, .icon').css('opacity','1')
 	else if (n > ost && job == false) $('.attach, .icon').css('opacity','0')
 	setTimeout(function(){ job = false }, 100)
     ost = n
