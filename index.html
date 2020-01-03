@@ -122,7 +122,7 @@
 	display: table;
 	width: 85%;
     }
-    .out {
+    .img {
 	margin-left: auto;
 	height: 200px;
 	width: 280px;
@@ -440,7 +440,7 @@ function get(n, ran){
 											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
 											    if (thum = $(this).find('content').text()){
-											    if (thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) thum = "<img src='"+thum+"' class='out'><br>"
+											    if (thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) thum = "<img src='"+thum+"' class='img'><br>"
 										       }
 											/* Standard thumbnails */
 										       else if (thum = $(this).find('link').attr('href')){
@@ -448,14 +448,14 @@ function get(n, ran){
 												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
 												       "<div class='ago'><b> Views</b> "+view+"</div><br>"
 												}
-											   else thum = "<img src='"+thum+"' class='out'><br>"
+											   else thum = "<img src='"+thum+"' class='img'><br>"
 										       }
 											/*  Media Thumbnails */
 										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
-											    if (thum != null) thum = "<img src='"+thum+"' class='out'><br>"
+											    if (thum != null) thum = "<img src='"+thum+"' class='img'><br>"
 										       }
 											/* Description thumbnails */
-										       else if (thum = $(this).find('description').text()) if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='out'><br>"
+										       else if (thum = $(this).find('description').text()) if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='img'><br>"
 					      if (!thum) if ($('.output').hasClass('default')){ thum = "<img class='hold' src='favicon/invert.png'></div>"} else { thum = "<img class='hold' src='favicon/favico.png'></div>" }
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
 									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
