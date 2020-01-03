@@ -62,6 +62,7 @@
     hr { opacity: .2 }
 
     .container {
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	left: 0em;
@@ -80,7 +81,7 @@
 	font-size: 10px;
 	height: 2.4em;
 	color: #888;
-	width: 13.5%;
+	width: 13%;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
@@ -315,8 +316,8 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n > ost){ $('.attach, .icon').css('display','none'); $('.output').css('height','100%') }
-	else if (n < ost && job == false){ $('.attach, .icon').css('display','block'); $('.output').css('height','calc(100% - 75px)') }
+	if (n > ost){ $('.attach, .icon').hide(); $('.output').css('height','100%') }
+	else if (n < ost && job == false){ $('.attach, .icon').show(); $('.output').css('height','calc(100% - 75px)') }
 	setTimeout(function(){ job = false }, 100)
     ost = n
 
