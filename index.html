@@ -9,7 +9,7 @@
 <style>
 @media screen and (min-width: 960px) {
 
-    html { background-color: #FAFAFA }
+    html { background-color: #FAFAFA; overflow: hidden }
 
     .wrapper {
 	transform: translate(50%,50%);
@@ -76,10 +76,10 @@
     .category {
 	display: inline-block;
 	text-align: center;
-	padding-top: 1em;
+	padding-top: 1.2em;
 	cursor: pointer;
-	font-size: 10px;
-	height: 2.4em;
+	font-size: 9px;
+	height: 2.6em;
 	color: #888;
 	width: 13.5%;
     }
@@ -221,6 +221,8 @@ else {
 
 pop(sel)
 air(sel)
+scr('.pop')
+
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
 $('.output').attr('tabindex', -1).focus()
