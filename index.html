@@ -177,8 +177,8 @@
 	left: 0em;
     }
     .own {
-	height: 200px;
-	width: 200px;
+	height: 280px;
+	width: 280px;
     }
 </style>
 <body>
@@ -362,7 +362,7 @@ function app(n){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
 		$('.output').removeClass('default').addClass('invert')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
-		$('.hold').attr('src','favicon/favico.png')
+		$('.own').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
 		$('.favicon').removeClass('outline')
 	}
@@ -374,7 +374,7 @@ function app(n){
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('html').css('background-color','#FAFAFA')
 		$('.attach').css('background-color','#222')
-		$('.hold').attr('src','favicon/invert.png')
+		$('.own').attr('src','favicon/invert.png')
 		$('.favicon').addClass('outline favicon')
 
 	}
@@ -406,16 +406,16 @@ function pop(n){
 }
 
 function get(n, ran){
-	var e = 1
 	job = true
 	his = parseInt(n) + 1
 	$('.pop, .air, .get').remove()
-	$('.output').append("<div class='arm'>"+e+"</div><div class='get'></div>")
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
-	var int = setInterval(function(){ e = e + 1; $('.arm').html(e + "<br><br>If this is your first feed wait time can be up to 10 seconds") }, 1000)
+	$('.output').append("<div class='arm'></div><div class='get'></div>")
+	if ($('.output').hasClass('default')){ gif = 'loading' } else { gif = 'opposite' }
+	$('.arm').html("<img src='favicon/" + gif + ".gif' style='width: 128px; height: 128px'>")
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-		.fail(function(){    clearInterval(int); $('.arm').remove(); job = false; pop(sel) })
-		.done(function(data){clearInterval(int)
+		.fail(function(){ $('.arm').remove(); job = false; pop(sel) })
+		.done(function(data){
 			$('.arm').remove()
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
