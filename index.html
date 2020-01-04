@@ -118,7 +118,7 @@
 	width: 85%;
     }
     .img {
-	margin-left: auto;
+	margin-right: auto;
 	height: 200px;
 	width: 280px;
     }
@@ -177,8 +177,8 @@
 	left: 0em;
     }
     .hold {
-	height: 280px;
-	width: 280px;
+	height: 200px;
+	width: 200px;
     }
 </style>
 <body>
@@ -215,15 +215,11 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
 }
 
-else {
-
-        app(opp)
-
-}
+else app(opp)
 
 pop(sel)
 air(sel)
-scr('.pop')
+
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
 $('.output').attr('tabindex', -1).focus()
@@ -256,7 +252,7 @@ $('.category').on('touchstart click', function(e){
 $('.favicon').on('touchstart click', function(e){
 
 	pop(sel)
-	scr('.pop')
+	scr('.pop:last')
     e.preventDefault()
 
 })
@@ -398,7 +394,7 @@ function air(n){
 function pop(n){
 
 	job = true
-	if ($('.pop, .air').length > 2){ $('.pop:last, .air:first').remove(); return false }
+	if ($('.pop, .air').length > 2){ $('.pop:last, .air:last').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
@@ -434,26 +430,30 @@ function get(n, ran){
 						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
 											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
-											    if (thum = $(this).find('content').text()){
-											    if (thum = thum.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) thum = "<img src='"+thum+"' class='img'><br>"
+											     if (img = $(this).find('content').text()){
+											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img src='"+img+"' class='img'><br>"
 										       }
 											/* Standard thumbnails */
-										       else if (thum = $(this).find('link').attr('href')){
-								    if (thum.match(/youtube/)){ view = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-												thum = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+thum.split('=')[1]+"'></iframe></div><br>" +
+											else if (img = $(this).find('link').attr('href')){
+								     if (img.match(/youtube/)){
+												view = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/"+img.split('=')[1]+"'></iframe></div><br>" +
 												       "<div class='ago'><b> Views</b> "+view+"</div><br>"
 												}
-											   else thum = "<img src='"+thum+"' class='img'><br>"
+											    else img = "<img src='"+img+"' class='img'><br>"
 										       }
 											/*  Media Thumbnails */
-										       else if (thum = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
-											    if (thum != null) thum = "<img src='"+thum+"' class='img'><br>"
-										       }
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
+											     if (img != null) img = "<img src='"+img+"' class='img'><br>"
+										        }
 											/* Description thumbnails */
-										       else if (thum = $(this).find('description').text()) if (thum = thum.match(/src=['"](.*?)['"]/)) thum = "<img src='"+thum[1]+"' class='img'><br>"
-					      if (!thum) if ($('.output').hasClass('default')){ thum = "<img class='hold' src='favicon/invert.png'></div>"} else { thum = "<img class='hold' src='favicon/favico.png'></div>" }
+										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='"+img[1]+"' class='img'><br>"
+
+					if (!img) if ($('.output').hasClass('default')){ img = "<img class='hold' src='favicon/invert.png'></div>"} else { img = "<img class='hold' src='favicon/favico.png'></div>" }
+
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
-									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='thum'>"+thum+"</div></div>")
+									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='img'>"+img+"</div></div>")
+
 					if (i === quit){ $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>"); air(sel) }
 					if (i >= quit){ app(); return false }
 				    })
