@@ -176,7 +176,7 @@
 	padding-right: 2em;
 	left: 0em;
     }
-    .hold {
+    .own {
 	height: 200px;
 	width: 200px;
     }
@@ -449,7 +449,7 @@ function get(n, ran){
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='"+img[1]+"' class='img'><br>"
 
-					if (!img) if ($('.output').hasClass('default')){ img = "<img class='hold' src='favicon/invert.png'></div>"} else { img = "<img class='hold' src='favicon/favico.png'></div>" }
+					if (!img) if ($('.output').hasClass('default')){ img = "<img class='own' src='favicon/invert.png'></div>"} else { img = "<img class='own' src='favicon/favico.png'></div>" }
 
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\""+ref.trim()+"\")'><div class='pub'>"+$(this).find('title:first').text().trunc(80, true)+"</div><br>" +
 									"<div class='ago'>"+dst[0]+" "+dst[1]+"</div><div class='img'>"+img+"</div></div>")
