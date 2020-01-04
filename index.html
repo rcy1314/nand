@@ -451,7 +451,7 @@ function get(n, ran){
 					if (!img) if ($('.output').hasClass('default')){ img = "<img class='own' src='favicon/invert.png'></div>"} else { img = "<img class='own' src='favicon/favico.png'></div>" }
 
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div><br>" +
-									"<div class='ago'>" + dst[0] + " " + dst[1] + "</div><div class='img'>" + img + "</div></div>")
+									"<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
 					if (i === quit){ $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>"); air(sel) }
 					if (i >= quit){ app(); return false }
