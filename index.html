@@ -180,8 +180,8 @@
 	-webkit-animation: spin 2.5s infinite ease;
 	-moz-animation: spin 2.5s infinite ease
 	animation-delay: 10ms
-	height: 280px;
-	width: 280px;
+	height: 200px;
+	width: 200px;
     }
     @-webkit-keyframes spin {
 	100% {-webkit-transform: rotate(360deg);}   
@@ -304,8 +304,8 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (n > ost && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
-	else if (n < ost) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
+	if (n > ost + 5 && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
+	else if (n < ost - 5) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
 	setTimeout(function(){ job = false }, 500)
     ost = n
 
