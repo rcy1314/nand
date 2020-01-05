@@ -411,7 +411,7 @@ function get(n, ran){
 	$('.pop, .air, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
-	if ($('.output').hasClass('default')){ gif = 'loading' } else { gif = 'opposite' }
+	if ($('.output').hasClass('default')){ gif = 'invert' } else { gif = 'favico' }
 	$('.arm').html("<img src='favicon/" + gif + ".gif' style='width: 128px; height: 128px'>")
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); job = false; pop(sel) })
