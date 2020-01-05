@@ -423,7 +423,7 @@ function get(n, ran){
 	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); job = false; pop(sel) })
 		.done(function(data){
-			$('.arm').remove()
+			$('.arm').slideUp()
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
