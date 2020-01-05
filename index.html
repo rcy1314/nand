@@ -210,6 +210,7 @@
 		<div class='opposite'></div>
 </div>
 <script>
+var request
 var opp = 0
 var ost = 0
 var his = 0
@@ -234,6 +235,7 @@ $('.output').attr('tabindex', -1).focus()
 $('.random').on('touchstart click', function(e) {
 
 	ran(sel)
+
     e.preventDefault()
 
 })
@@ -241,25 +243,35 @@ $('.random').on('touchstart click', function(e) {
 $('.opposite').on('touchstart click', function(e) {
 
 	app('op')
+
     e.preventDefault()
 
 })
 
 $('.category').on('touchstart click', function(e){
 
+	his = 0
+	job = false
+	request.abort()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 	pop($(this).attr('id'))
+	air(sel)
 	scr('.pop:last')
+
     e.preventDefault()
 
 })
 
 $('.favicon').on('touchstart click', function(e){
 
+	request.abort()	
+	job = false
 	pop(sel)
+	air(sel)
 	scr('.pop:last')
+
     e.preventDefault()
 
 })
@@ -271,6 +283,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'}) }, 100)
 	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
     }
+
     else if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
@@ -282,6 +295,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
+
     else if (e.type == 'focusout'){
 	setTimeout(function(){ $('.output').focus() }, 100)
     }
@@ -307,6 +321,7 @@ function pin(n){
 	if (n > ost + 5 && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
 	else if (n < ost - 5) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
 	setTimeout(function(){ job = false }, 500)
+
     ost = n
 
 }
@@ -329,6 +344,7 @@ function rev(Object) {
 		var value = Object[keys[i]]
 		newObject[keys[i]] = value
 	}
+
    return newObject
 
 }
@@ -341,6 +357,7 @@ function utc(n){
 	var utc = new Date(n)
 	var gmt = utc.toLocaleString('en-US', opt)
 	dmz.push(gmt)
+
     return dmz
 
 }
@@ -356,6 +373,7 @@ function ago(n){
 	var d = h/24; if (d < 30) return parseInt(d) + ' day' + (parseInt(d) > 1 ? 's' : '') + ' ago'
 	var m = d/30; if (m < 12) return parseInt(m) + ' month' + (parseInt(m) > 1 ? 's' : '') + ' ago'
 	var y = m/121
+
     return parseInt(y) + ' year' + (parseInt(y) > 1 ? 's' : '') + ' ago'
 
 }
@@ -420,10 +438,10 @@ function get(n, ran){
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><img class='gif' src='favicon/" + gif + "'>")
-	$.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.arm').remove(); job = false; pop(sel) })
+	request = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+		.fail(function(){ $('.arm').remove(); job = false; pop(sel); air(sel) })
 		.done(function(data){
-			$('.arm').slideUp()
+			$('.arm').remove()
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
@@ -456,10 +474,12 @@ function get(n, ran){
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'><br>"
 
 					if (!img) img = ''
+
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div><br>" +
 									"<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
 					if (i === quit){ $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>"); air(sel) }
+
 					if (i >= quit){ app(); return false }
 				    })
 			job = false
