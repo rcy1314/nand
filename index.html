@@ -264,6 +264,7 @@ $('.opp').on('touchstart click', function(e) {
 
 $('.category').on('touchstart click', function(e){
 
+	$('.pop, .air, .get').remove()
 	his = 0
 	job = false
 	if( job == true ) req.abort(); job = false
@@ -310,7 +311,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
 
-    else if (e.type == 'focusout') setTimeout(function(){ $('.out').focus() }, 100)
+    else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
 
 })
 
