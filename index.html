@@ -11,7 +11,7 @@
 
     html { background-color: #FAFAFA }
 
-    .box {
+    .wrapper {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
 	position: absolute;
@@ -48,7 +48,7 @@
 
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .cat:hover { color: #ccc !important }
+    .category:hover { color: #ccc !important }
 
     .outline {
 	-moz-box-shadow: 1p 1px 5px #ccc;
@@ -63,7 +63,7 @@
 
     hr { opacity: .2 }
 
-    .con {
+    .container {
 	position: absolute;
 	height: 100%;
 	width: 99%;
@@ -75,7 +75,7 @@
 	display: flex;
 	height: 2.2em;
     }
-    .cat {
+    .category {
 	display: inline-block;
 	text-align: center;
 	padding-top: 1.2em;
@@ -85,7 +85,7 @@
 	color: #888;
 	width: 16.5%;
     }
-    .out {
+    .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
 	height: calc(100% - 75px);
@@ -191,23 +191,23 @@
 </style>
 <body>
 
-<div class='box'>
+<div class='wrapper'>
 
-<div class='con'>
+<div class='container'>
 
 	<div class='att'>
 
-		<div id='News' class='cat'>NEWS</div>
-		<div id='Media' class='cat'>MEDIA</div>
-		<div id='Social' class='cat'>SOCIAL</div>
-		<div id='Sport' class='cat'>SPORT</div>
-		<div id='Technology' class='cat'>TECH</div>
-		<div id='World' class='cat'>WORLD</div>
-		<div id='Youtube' class='cat'>UTUBE</div>
+		<div id='News' class='category'>NEWS</div>
+		<div id='Media' class='category'>MEDIA</div>
+		<div id='Social' class='category'>SOCIAL</div>
+		<div id='Sport' class='category'>SPORT</div>
+		<div id='Technology' class='category'>TECH</div>
+		<div id='World' class='category'>WORLD</div>
+		<div id='Youtube' class='category'>UTUBE</div>
 
 	</div>
 
-	<div class='out'></div>
+	<div class='output'></div>
 
 	<div class='ico'>
 
@@ -244,7 +244,7 @@ air(sel)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
-$('.out').attr('tabindex', -1).focus()
+$('.output').attr('tabindex', -1).focus()
 
 $('.ran').on('touchstart click', function(e) {
 
@@ -262,13 +262,13 @@ $('.opp').on('touchstart click', function(e) {
 
 })
 
-$('.cat').on('touchstart click', function(e){
+$('.category').on('touchstart click', function(e){
 
 	his = 0
 	job = false
 	if( job == true ) req.abort(); job = false
-	$('.cat').css('border-bottom','none')
-	$('.cat').css('color','#888')
+	$('.category').css('border-bottom','none')
+	$('.category').css('color','#888')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 	pop($(this).attr('id'))
 	air(sel)
@@ -303,7 +303,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
 })
 
-$('.out').on('scroll touchmove focusout', function(e){
+$('.output').on('scroll touchmove focusout', function(e){
 
     if (e.type == 'scroll' || e.type == 'touchmove'){
 	pin($(this).scrollTop())
@@ -328,14 +328,14 @@ String.prototype.trunc =
 
 function scr(n){
 
-	$('.out').animate({ scrollTop: $(n+':last').offset().top - $('.out').offset().top + $('.out').scrollTop() }, 250)
+	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 250)
 
 }
 
 function pin(n){
 
-	if (n > ost + 5 && job == false) $('.out').css({'top':'-2.2em','height':'100%'})
-	else if (n < ost - 5) $('.out').css({'top':'0em','height':'calc(100% - 75px)'})
+	if (n > ost + 5 && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
+	else if (n < ost - 5) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
 	setTimeout(function(){ job = false }, 500)
 
     ost = n
@@ -400,8 +400,8 @@ function app(n){
 
 	if (op == 1){
 
-		$('html, .con, .out').css({'background-color':'#000','color':'#EEE'})
-		$('.out').removeClass('default').addClass('invert')
+		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
+		$('.output').removeClass('default').addClass('invert')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif').attr('src','favicon/favico.png')
 		$('.att').css('background-color','#000')
@@ -410,8 +410,8 @@ function app(n){
 
 	else if (op == 0){
 
-		$('.con, .out').css({'background-color': '#fff','color':'#333'})
-		$('.out').removeClass('invert').addClass('default')
+		$('.container, .output').css({'background-color': '#fff','color':'#333'})
+		$('.output').removeClass('invert').addClass('default')
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('html').css('background-color','#FAFAFA')
 		$('.att').css('background-color','#222')
@@ -425,9 +425,9 @@ function app(n){
 function air(n){
 
 	rev(menu.reverse())
-	$('.out').prepend("<div class='air'></div>")
+	$('.output').prepend("<div class='air'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<div class='set " + i + "' onclick='get(" + i + ")'><hr>" + menu[i].des + "</div>") }
-	$('.out').scrollTop($('.out').scrollTop() + $('.air:first').outerHeight())
+	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
 }
@@ -439,7 +439,7 @@ function pop(n){
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
-	$('.out').append("<div class='pop'></div>")
+	$('.output').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<div class='set " + i + "' onclick='get(" + i + ")'><hr><br><a>" + menu[i].des + "</a></div>")
 	his = 0
 	app()
@@ -451,8 +451,8 @@ function get(n){
 	his = parseInt(n) + 1
 	$('.pop, .air, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
-	$('.out').append("<div class='arm'></div><div class='get'></div>")
-	if ($('.out').hasClass('default')){ gif = 'invert' } else { gif = 'favico' }
+	$('.output').append("<div class='arm'></div><div class='get'></div>")
+	if ($('.output').hasClass('default')){ gif = 'invert' } else { gif = 'favico' }
 	$('.arm').html("<br><img class='gif' src='favicon/" + gif + ".png'>")
 	req = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); job = false; pop(sel); air(sel) })
