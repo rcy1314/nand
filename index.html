@@ -430,16 +430,6 @@ function air(n){
 
 }
 
-function res(n) {
-
-	var e = new Image()
-
-	e.onload = function() { if (e.width > 140) $('.img').width('100%') }
-
-    e.src = n
-
-}
-
 function pop(n){
 
 	if (job == true){ request.abort(); job = false }
@@ -451,6 +441,16 @@ function pop(n){
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set " + i + "' onclick='get(" + i + ")'><a>" + menu[i].des + "</a></div>")
 	his = 0
 	app()
+
+}
+
+function res(n) {
+
+	var e = new Image()
+
+	e.onload = function() { if (e.width > 320) $('.img').width('100%') }
+
+    e.src = n
 
 }
 
