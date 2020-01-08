@@ -159,7 +159,7 @@
 	left: 0;
 	top: 0;
     }
-    .ran, .opp {
+    .random, .opposite {
 	border-bottom: 1px solid #888;
 	position: absolute;
 	padding-top: 2em;
@@ -168,11 +168,11 @@
 	bottom: 0em;
 	z-index: 2;
     }
-    .ran {
+    .random {
 	padding-left: 2em;
 	right: 0em;
     }
-    .opp {
+    .opposite {
 	padding-right: 2em;
 	left: 0em;
     }
@@ -218,8 +218,8 @@
 
 </div>
 
-		<div class='ran'></div>
-		<div class='opp'></div>
+		<div class='random'></div>
+		<div class='opposite'></div>
 
 </div>
 <script>
@@ -246,7 +246,7 @@ $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
 $('.output').attr('tabindex', -1).focus()
 
-$('.ran').on('touchstart click', function(e) {
+$('.random').on('touchstart click', function(e) {
 
 	ran(sel)
 
@@ -254,7 +254,7 @@ $('.ran').on('touchstart click', function(e) {
 
 })
 
-$('.opp').on('touchstart click', function(e) {
+$('.opposite').on('touchstart click', function(e) {
 
 	app('op')
 
