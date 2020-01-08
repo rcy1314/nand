@@ -114,7 +114,6 @@
     }
     .img {
 	margin-right: auto;
-	width: 100%;
     }
     .pub {
 	text-transform: capitalize;
@@ -223,7 +222,7 @@
 
 </div>
 <script>
-var req
+var request
 var opp = 0
 var ost = 0
 var his = 0
@@ -239,7 +238,6 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 else app(opp)
 
 pop(sel)
-
 air(sel)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
@@ -265,7 +263,7 @@ $('.opposite').on('touchstart click', function(e) {
 $('.category').on('touchstart click', function(e){
 
 	his = 0
-	if (job == true){ req.abort(); job = false }
+	if (job == true){ request.abort(); job = false }
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
@@ -280,7 +278,7 @@ $('.category').on('touchstart click', function(e){
 
 $('.fav').on('touchstart click', function(e){
 
-	if( job == true ) req.abort(); job = false
+	if( job == true ) request.abort(); job = false
 	job = false
 	pop(sel)
 	air(sel)
@@ -432,9 +430,19 @@ function air(n){
 
 }
 
+function res(n) {
+
+	var e = new Image()
+
+	e.onload = function() { if (e.width > 140) $('.img').width('100%') }
+
+    e.src = n
+
+}
+
 function pop(n){
 
-	if (job == true){ req.abort(); job = false }
+	if (job == true){ request.abort(); job = false }
 	if ($('.pop, .air').length > 2){ $('.pop:last, .air:last').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
@@ -446,18 +454,6 @@ function pop(n){
 
 }
 
-function res(n) {
-    var e = new Image();
-
-    e.onload = function() {
-      var h = e.height;
-      var w = e.width;
-      console.log ('The image size is '+w+'*'+h);
-    }
-
-    e.src = n; // this must be done AFTER setting onload
-}
-
 function get(n){
 	job = true
 	his = parseInt(n) + 1
@@ -466,7 +462,7 @@ function get(n){
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
-	req = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
+	request = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); job = false; pop(sel); air(sel) })
 		.done(function(data){
 			$('.arm').remove()
@@ -500,9 +496,10 @@ function get(n){
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'>"
+
 					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if ($('.img').attr('src')){ res($('.img').attr('src')) }
+					if ($('.img').attr('src')) res($('.img').attr('src'))
 
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div>" + "<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
