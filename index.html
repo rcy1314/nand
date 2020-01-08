@@ -472,22 +472,22 @@ function get(n){
 											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
-											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img src='" + img + "' class='img'><br>"
+											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img src='" + img + "' class='img'>"
 										       }
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
 								     if (img.match(/youtube/)){
 												 sum = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div><br>" +
-												       "<div class='ago'><b> Views</b> " + sum + "</div><br>"
+												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div>" +
+												       "<div class='ago'><br><br><b> Views</b> " + sum + "</div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img src='" + img + "' class='img'><br>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img src='" + img + "' class='img'>"
 
 											/* Description thumbnails */
-										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'><br>"
+										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'>"
 
 					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
