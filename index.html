@@ -502,7 +502,7 @@ function get(n){
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'>"
 					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if ($('.img').attr('src')){ console.log(res($('.img').attr('src')) ) }
+					if ($('.img').attr('src')){ res($('.img').attr('src')) }
 
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div>" + "<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
