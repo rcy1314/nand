@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/favico.png">
     <script src="https://acktic.github.io/rss.js"></script>
@@ -59,6 +61,8 @@
 	color: #888;
     }
 
+    .scrollbar { width: 100.1% }
+
     .ico { text-align: center }
 
     hr { opacity: .2 }
@@ -66,7 +70,7 @@
     .container {
 	position: absolute;
 	height: 100%;
-	width: 99%;
+	width: 99.9%;
 	left: 0em;
 	top: 0em;
     }
@@ -85,15 +89,13 @@
 	color: #888;
 	width: 16.5%;
     }
-    .output {
+    .output, .scrollbar {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
 	height: calc(100% - 75px);
 	outline: none !important;
 	-ms-overflow-style: none;
-	scrollbar-width: none;
 	position: relative;
-	overflow-x: hidden;
 	overflow: auto;
     }
     .set {
@@ -118,7 +120,7 @@
 	display: table;
 	width: 85%;
     }
-    .agent {
+    .img, .agent {
 	margin-right: auto;
 	height: 230px;
 	width: 280px;
@@ -196,7 +198,7 @@
 
 <div class='container'>
 
-	<div class='att'>
+	<div class='attach'>
 
 		<div id='News' class='category'>NEWS</div>
 		<div id='Media' class='category'>MEDIA</div>
@@ -208,7 +210,11 @@
 
 	</div>
 
-	<div class='output'></div>
+	<div class='scrollbar'>
+
+		<div class='output'></div>
+
+	</div>
 
 	<div class='ico'>
 
