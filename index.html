@@ -480,7 +480,7 @@ function get(n){
 								     if (img.match(/youtube/)){
 												 sum = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div>" +
-												       "<div class='ago'><br><br><b> Views</b> " + sum + "</div>"
+												       "<div class='ago' style='padding-top:2em'><b> Views</b> " + sum + "</div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
