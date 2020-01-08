@@ -70,7 +70,7 @@
 	left: 0em;
 	top: 0em;
     }
-    .att {
+    .attach {
 	justify-content: center;
 	display: flex;
 	height: 2.2em;
@@ -118,9 +118,9 @@
 	display: table;
 	width: 85%;
     }
-    .img {
+    .agent {
 	margin-right: auto;
-	height: 200px;
+	height: 230px;
 	width: 280px;
     }
     .pub {
@@ -405,8 +405,8 @@ function app(n){
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
 		$('.output').removeClass('default').addClass('invert')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
-		$('.gif').attr('src','favicon/favico.png')
-		$('.att').css('background-color','#000')
+		$('.gif, .agent').attr('src','favicon/favico.png')
+		$('.attach').css('background-color','#000')
 		$('.fav').removeClass('outline')
 	}
 
@@ -415,9 +415,9 @@ function app(n){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('.output').removeClass('invert').addClass('default')
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
+		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
-		$('.att').css('background-color','#222')
-		$('.gif').attr('src','favicon/invert.png')
+		$('.attach').css('background-color','#222')
 		$('.fav').addClass('outline fav')
 
 	}
@@ -454,8 +454,8 @@ function get(n){
 	$('.pop, .air, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
-	if ($('.output').hasClass('default')){ gif = 'invert' } else { gif = 'favico' }
-	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + ".png'></div>")
+	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
+	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	req = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); job = false; pop(sel); air(sel) })
 		.done(function(data){
@@ -491,7 +491,7 @@ function get(n){
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'><br>"
 
-					if (!img || menu[n].des.match(/Slashdot/)) img = ''
+					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div><br>" + "<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
