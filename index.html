@@ -491,7 +491,7 @@ function get(n){
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
-											     if (img = img.match(/src=['"](.*?)['"]/)) if(!img[1].match(/feedburner|feedblitz/)) img = "<img id='" + i + "' src='" + img[1] + "'>"
+											     if (img = img.match(/src=['"](.*?)['"]/)) if(!img[1].match(/assets|feedburner|feedblitz/)) img = "<img id='" + i + "' src='" + img[1] + "'>"
 																       else img = null
 												}
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
