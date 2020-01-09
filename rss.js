@@ -318,7 +318,6 @@ var menu=[
 {cat:"Media",des:"Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",uri:"https://www.vanityfair.com/feed/rss",ext:"https://vanityfair.com"},
 {cat:"Media",des:"Video subreddit is the best place for Video content of all kinds.",uri:"https://reddit.com/r/videos/.rss",ext:"https://reddit.com/r/videos"},
 {cat:"Media",des:"Washington Times Show Business News and Entertainment News.",uri:"https://www.washingtontimes.com/rss/headlines/culture/entertainment",ext:"https://washingtontimes.com/culture/entertainment"},
-{cat:"Media",des:"Yahoo Celebrity Latest News and Gossip on the World's Celebrities.",uri:"https://www.yahoo.com/celebrity/rss",ext:"https://yahoo.com/celebrity"},
 {cat:"Media",des:"Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",uri:"https://www.yahoo.com/entertainment/rss",ext:"https://yahoo.com/entertainment"},
 {cat:"Social",des:"Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",uri:"https://reddit.com/r/apple/.rss",ext:"https://reddit.com/r/apple"},
 {cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/android"},
