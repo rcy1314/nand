@@ -306,7 +306,6 @@ var menu=[
 {cat:"Media",des:"People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",uri:"https://people.com/tag/news/feed",ext:"https://people.com"},
 {cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {cat:"Media",des:"RollingStone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
-{cat:"Media",des:"Screen Rant a passion for all things entertainment.",uri:"https://screenrant.com/feed",ext:"https://screenrant.com"},
 {cat:"Media",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {cat:"Media",des:"Television subreddit streaming services and the best series.",uri:"https://www.reddit.com/r/television/.rss",ext:"https://www.reddit.com/r/television"},
 {cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
