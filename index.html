@@ -450,8 +450,8 @@ function res(i, n) {
 }
 
 function get(n){
+	his = n
 	job = true
-	his = parseInt(n) + 1
 	$('.pop, .air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
