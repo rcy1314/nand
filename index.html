@@ -492,7 +492,7 @@ function get(n){
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'>"
 
-					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
+					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					if ($('.img').attr('src')) res($('.img').attr('src'))
 
