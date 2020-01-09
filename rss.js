@@ -309,7 +309,6 @@ var menu=[
 {cat:"Media",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {cat:"Media",des:"Television subreddit streaming services and the best series.",uri:"https://www.reddit.com/r/television/.rss",ext:"https://www.reddit.com/r/television"},
 {cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
-{cat:"Media",des:"The Wrap covering the business of entertainment and media via digital, print and live events.",uri:"https://www.thewrap.com/feed",ext:"https://www.thewrap.com"},
 {cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {cat:"Media",des:"TV Guide television related news, celebrity interview, gossip, and film reviews.",uri:"https://rss.tvguide.com/breakingnews",ext:"https://www.tvguide.com"},
 {cat:"Media",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
