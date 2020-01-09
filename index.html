@@ -273,8 +273,8 @@ $('.category').on('touchstart click', function(e){
 
 $('.fav').on('touchstart click', function(e){
 
-	if( job == true ) request.abort(); job = false
-	job = false
+	if( job == true ){ request.abort(); job = false }
+	$('.pop, .air, .arm, .get').remove()
 	pop(sel)
 	air(sel)
 	scr('.pop:last')
@@ -327,7 +327,7 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 5 && job == false) $('.output').css({'top':'-2.2em','height':'100%'})
+	if (n > ost + 5) $('.output').css({'top':'-2.2em','height':'100%'})
 	else if (n < ost - 5) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
 	setTimeout(function(){ job = false }, 500)
 
@@ -452,7 +452,7 @@ function res(i, n) {
 function get(n){
 	job = true
 	his = parseInt(n) + 1
-	$('.pop, .air, .get').remove()
+	$('.pop, .air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
@@ -494,7 +494,7 @@ function get(n){
 
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div>" + "<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
 					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
 
