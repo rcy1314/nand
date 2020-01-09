@@ -439,11 +439,11 @@ function pop(n){
 
 }
 
-function res(n) {
+function res(i, n) {
 
 	var e = new Image()
-
-	e.onload = function() { if (e.width > 320) $('.img').width('100%') }
+	
+	e.onload = function() { if (e.width > 320) $('#'+i).width('100%') }
 
     e.src = n
 
@@ -475,7 +475,7 @@ function get(n){
 											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
-											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img src='" + img + "' class='img'>"
+											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "'>"
 										       }
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
@@ -487,18 +487,16 @@ function get(n){
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img src='" + img + "' class='img'>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' src='" + img + "'>"
 
 											/* Description thumbnails */
-										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img src='" + img[1] + "' class='img'>"
+										        else if (img = $(this).find('description').text()) if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' src='" + img[1] + "'>"
 
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if ($('.img').attr('src')) res($('.img').attr('src'))
-
 					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div>" + "<div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
-					if (i === quit){ $('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>"); air(sel) }
+					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
 
 					if (i >= quit){ app(); return false }
 				})
