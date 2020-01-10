@@ -440,7 +440,10 @@ function pop(n){
 function res(i, n) {
 
 	var e = new Image()
-	e.onload = function() { if (e.width > 320) $('#'+i).width('100%') }
+	e.onload = function() {
+		if (e.width > 320) $('#'+i).width('100%')
+		$('#'+i).css('visibility','visible')
+	}
     e.src = n
 
 }
@@ -484,12 +487,12 @@ function get(n){
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' src='" + img + "'>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' src='" + img + "' style='visibility:hidden'>"
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
-																       else img = "<img id='" + i + "' src='" + img[1] + "'>"
+																       else img = "<img id='" + i + "' src='" + img[1] + "' style='visibility:hidden'>"
 												}
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
