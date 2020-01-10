@@ -87,6 +87,14 @@
 	width: 16.5%;
 	color: #888;
     }
+    .full {
+	top: -2.2em;
+	transition: all .5s;
+    }
+    .menu {
+	transition: all .5s;
+	top: 0em;
+    }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
@@ -328,9 +336,8 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 5) $('.output').css({'top':'-2.2em','height':'100%'})
-	else if (n < ost - 5) $('.output').css({'top':'0em','height':'calc(100% - 75px)'})
-	setTimeout(function(){ job = false }, 500)
+	if (n > ost + 5) $('.output').removeClass('menu').addClass('full').height('100%')
+	else if (n < ost - 5) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
 
     ost = n
 
