@@ -128,6 +128,7 @@
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 18px;
+	width: 110%;
     }
     .ago {
 	margin-right: auto;
@@ -215,22 +216,24 @@
 </div>
 <script>
 var request
-var op = 0
+var opp = 0
 var ost = 0
 var his = 0
 var evt = false
 var job = false
 var sel = 'Social'
 
-if (location.href.match('\\?')){
+if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
-	$('.output').append("<div class='pop'></div>")
-	for (var i = 0; i < menu.length; i++) if (menu[i].des.toLowerCase().indexOf(location.search.split('?')[1]) >= 0) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
-	if ($('.set').length > 0){ sel = location.search.split('?')[1]; air(location.search.split('?')[1]); scr('.pop:last') }
-	else { pop(sel); air(sel); scr('.pop:last') }
-	document.title =  location.search.split('?')[1] + ' ack'
+        app(location.search.split('?op=')[1])
 
 }
+
+else app(opp)
+
+air(sel)
+pop(sel)
+scr('.pop:last')
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
@@ -256,6 +259,7 @@ $('.category').on('touchstart click', function(e){
 
 	if (job == true){ request.abort(); job = false }
 	his = 0
+	evt = true
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
@@ -263,15 +267,18 @@ $('.category').on('touchstart click', function(e){
 	pop($(this).attr('id'))
 	air(sel)
 	scr('.pop:last')
+	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
 
 })
 
 $('.fav').on('touchstart click', function(e){
 
+    evt = true
 	air(sel)
 	pop(sel)
 	scr('.pop:last')
+	setTimeout(function(){ evt = false }, 250)
 
     e.preventDefault()
     e.stopPropagation()
@@ -293,7 +300,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 
     if (e.type == 'scroll' || e.type == 'touchmove'){
 	pin($(this).scrollTop())
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false){ evt = true; pop(sel) }
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
 
@@ -320,7 +327,7 @@ function scr(n){
 function pin(n){
 
 	if (n > ost + 5 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
-	else if (n < ost - 5 && evt == false && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
+	else if (n < ost - 5 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
     ost = n
 
 }
@@ -409,7 +416,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div class='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat || menu[i].des.toLowerCase().indexOf(sel) >= 0) $('.air').prepend("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
 
@@ -417,15 +424,13 @@ function air(n){
 
 function pop(n){
 
-	evt = true
 	if (job == true){ request.abort(); job = false }
-	if ($('.pop, .air').length > 2){ $('.pop:first, .air:last, .get').remove() }
+	if ($('.pop, .air').length > 2){ $('.pop, .air:last, .get').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat || menu[i].des.toLowerCase().indexOf(sel) >= 0) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
-	setTimeout(function(){ evt = false }, 250)
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
 	his = 0
 	app()
 
