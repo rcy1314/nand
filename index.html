@@ -337,7 +337,7 @@ function scr(n){
 function pin(n){
 
 	if (n > ost + 5) $('.output').removeClass('menu').addClass('full').height('100%')
-	else if (n < ost - 5) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
+	else if (n < ost - 5 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
 
     ost = n
 
