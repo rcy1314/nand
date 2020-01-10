@@ -455,7 +455,7 @@ function get(n){
 		.fail(function(){ $('.arm').remove(); pop(sel); air(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br>"+menu[n].des+"<br><br></div>")
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -485,8 +485,8 @@ function get(n){
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
-											     if (img = img.match(/src=['"](.*?)['"]/)) if(!img[1].match(/assets|feedburner|feedblitz/)) img = "<img id='" + i + "' src='" + img[1] + "'>"
-																       else img = null
+											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
+																       else img = "<img id='" + i + "' src='" + img[1] + "'>"
 												}
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
