@@ -328,6 +328,7 @@ function pin(n){
 
 	if (n > ost + 5 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
 	else if (n < ost - 5 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
+
     ost = n
 
 }
@@ -386,6 +387,7 @@ function ago(n){
 
 function app(n){
 
+	evt = true
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
@@ -401,7 +403,7 @@ function app(n){
 	else if (op == 0){
 
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
-		$('.output').removeClass('default').addClass('invert')
+		$('.output').removeClass('default').addClass('invert menu')
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
@@ -409,6 +411,8 @@ function app(n){
 		$('.fav').addClass('outline fav')
 
 	}
+
+	setTimeout(function(){ evt = false }, 250)
 
 }
 
@@ -443,6 +447,7 @@ function res(i, n) {
 		if (e.width > 320) $('#'+i).width('100%')
 		$('#'+i).css('visibility','visible')
 	}
+
     e.src = n
 
 }
