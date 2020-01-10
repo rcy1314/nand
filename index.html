@@ -230,6 +230,7 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 else app(opp)
 
 pop(sel)
+
 air(sel)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
@@ -271,9 +272,7 @@ $('.category').on('touchstart click', function(e){
 $('.fav').on('touchstart click', function(e){
 
 	if( job == true ){ request.abort(); job = false }
-	$('.pop, .air, .arm, .get').remove()
 	pop(sel)
-	air(sel)
 	scr('.pop:last')
 
     e.preventDefault()
@@ -282,13 +281,7 @@ $('.fav').on('touchstart click', function(e){
 
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
-    if (e.type == 'touchstart' || e.type == 'click'){
-	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
-	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'}) }, 100)
-	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
-    }
-
-    else if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+    if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
 })
@@ -423,7 +416,7 @@ function air(n){
 function pop(n){
 
 	if (job == true){ request.abort(); job = false }
-	if ($('.pop, .air').length > 2){ $('.pop:last, .air:last').remove(); return false }
+	if ($('.pop, .air').length > 1){ $('.pop:last, .air:last').remove(); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
