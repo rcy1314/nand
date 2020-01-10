@@ -56,7 +56,7 @@
 	-moz-box-shadow: 1p 1px 5px #ccc;
 	box-shadow: 1px 1px 5px #ccc;
     }
-    a:hover {
+    .set:hover {
 	text-decoration: underline;
 	color: #888;
     }
@@ -462,6 +462,7 @@ function get(n){
 	job = true
 	$('.pop, .air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
+	$('.output').removeClass('menu').addClass('full').height('100%')
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
