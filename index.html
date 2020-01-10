@@ -11,7 +11,7 @@
 <style>
 @media screen and (min-width: 960px) {
 
-    html { background-color: #FAFAFA }
+    html { background-color: #fafafa; }
 
     .wrapper {
 	transform: translate(50%,50%);
@@ -89,10 +89,10 @@
     }
     .full {
 	top: -2.2em;
-	transition: all .5s;
+	transition: all .2s;
     }
     .menu {
-	transition: all .5s;
+	transition: all .2s;
 	top: 0em;
     }
     .output {
@@ -466,7 +466,7 @@ function get(n){
 	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://salty-refuge-64158.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.arm').remove(); job = false; pop(sel); air(sel) })
+		.fail(function(){ $('.arm').remove(); pop(sel); air(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>")
