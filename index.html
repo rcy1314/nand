@@ -136,8 +136,8 @@
 	color: #888;
     }
     .fav {
-	position: relative;
 	border-radius: 24px;
+	position: relative;
 	height: 32px;
 	width: 32px;
 	top: 4px;
@@ -178,9 +178,9 @@
 	-webkit-animation: spin 2.5s infinite ease;
 	-moz-animation: spin 2.5s infinite ease
 	animation-delay: 10ms
+	border-radius: 24px;
 	height: 200px;
 	width: 200px;
-	border-radius: 24px;
     }
     @-webkit-keyframes spin {
 	100% {-webkit-transform: rotate(360deg);}   
@@ -302,7 +302,6 @@ $('.output').on('scroll touchmove focusout', function(e){
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
-
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
 
 })
