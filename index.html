@@ -218,6 +218,7 @@ var request
 var opp = 0
 var ost = 0
 var his = 0
+var evt = false
 var job = false
 var sel = 'Social'
 
@@ -257,6 +258,7 @@ $('.category').on('touchstart click', function(e){
 
 	if (job == true){ request.abort(); job = false }
 	his = 0
+	evt = true
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
@@ -264,22 +266,30 @@ $('.category').on('touchstart click', function(e){
 	pop($(this).attr('id'))
 	air(sel)
 	scr('.pop:last')
-
+	setTimeout(function(){ evt = false }, 100)
     e.preventDefault()
 
 })
 
 $('.fav').on('touchstart click', function(e){
 
-	pop(sel)
+    evt = true
 
+	pop(sel)
+	setTimeout(function(){ evt = false }, 250)
+
+    e.preventDefault()
     e.stopPropagation()
 
 })
 
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
-    if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+    if (e.type == 'touchstart' || e.type == 'click'){
+	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
+    }
+    else if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
 })
@@ -315,7 +325,7 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 5) $('.output').removeClass('menu').addClass('full').height('100%')
+	if (n > ost + 5 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
 	else if (n < ost - 5 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
     ost = n
 
@@ -414,12 +424,13 @@ function air(n){
 function pop(n){
 
 	if (job == true){ request.abort(); job = false }
-	if ($('.pop, .air').length > 1){ scr('.pop:last'); return false }
+	if ($('.pop, .air').length > 1) $('.pop:last, .get').remove()
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+	scr('.pop:last')
 	his = 0
 	app()
 
