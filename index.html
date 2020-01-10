@@ -26,20 +26,20 @@
 
     ::-webkit-scrollbar { width: 5px }
 
-    .default::-webkit-scrollbar-thumb {background-color: #ddd }
+    .invert::-webkit-scrollbar-thumb {background-color: #ddd }
 
-    .default::-webkit-scrollbar { background-color: #f5f5f5 }
+    .invert::-webkit-scrollbar { background-color: #f5f5f5 }
 
-    .default {
+    .invert {
 	scrollbar-color: #ddd #f5f5f5;
 	scrollbar-width: thin;
     }
 
-    .invert::-webkit-scrollbar-thumb { background-color: #222 }
+    .default::-webkit-scrollbar-thumb { background-color: #222 }
 
-    .invert::-webkit-scrollbar { background-color: #000 }
+    .default::-webkit-scrollbar { background-color: #000 }
 
-    .invert {
+    .default {
 	scrollbar-color: #222 #000;
 	scrollbar-width: thin;
     }
@@ -389,7 +389,7 @@ function app(n){
 	if (op == 1){
 
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
-		$('.output').removeClass('default').addClass('invert')
+		$('.output').removeClass('invert').addClass('default')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
 		$('.attach').css('background-color','#000')
@@ -399,7 +399,7 @@ function app(n){
 	else if (op == 0){
 
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
-		$('.output').removeClass('invert').addClass('default')
+		$('.output').removeClass('default').addClass('invert')
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
@@ -449,13 +449,13 @@ function get(n){
 	if (sel == 'Youtube'){ var quit = 5 } else { var quit = 10 }
 	$('.output').removeClass('menu').addClass('full').height('100%')
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
-	if ($('.output').hasClass('default')){ gif = 'invert.png' } else { gif = 'favico.png' }
+	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); pop(sel); air(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br><a>"+menu[n].des+"</a></div>")
+			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr><br>"+menu[n].des+"<br><br></div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
