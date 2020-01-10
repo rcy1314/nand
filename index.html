@@ -457,7 +457,7 @@ function get(n){
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.arm').remove(); air(sel) pop(sel); job = false })
+		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
 			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</div>")
