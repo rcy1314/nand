@@ -302,6 +302,7 @@ var menu=[
 {cat:"Media",des:"Metacritic aggregates Reviews of Films, TV Shows, Music Albums, and Video Games.",uri:"https://www.metacritic.com/rss/features",ext:"https://www.metacritic.com"},
 {cat:"Media",des:"Movies subreddit News and Discussion about Major Motion Pictures.",uri:"https://reddit.com/r/movies/.rss",ext:"https://reddit.com/r/movies"},
 {cat:"Media",des:"MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.",uri:"https://movieweb.com/rss/all-news",ext:"https://movieweb.com"},
+{cat:"Media",des:"MTV The ultimate news source for music, celebrity, entertainment, movies, and current events.",uri:"http://www.mtv.com/news/feed",ext:"http://www.mtv.com/news"},
 {cat:"Media",des:"MU Music board thats about all things music.",uri:"http://boards.4channel.org/mu/index.rss",ext:"http://boards.4channel.org/mu"},
 {cat:"Media",des:"New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",uri:"https://nypost.com/entertainment/feed",ext:"https://nypost.com/entertainment/feed"}, 
 {cat:"Media",des:"OANN One America News Network Entertainment.",uri:"https://www.oann.com/category/entertainment/feed",ext:"https://www.oann.com/category/entertainment"},
