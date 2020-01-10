@@ -218,7 +218,7 @@ var request
 var opp = 0
 var ost = 0
 var his = 0
-var evt = false
+var evt = true
 var job = false
 var sel = 'Social'
 
@@ -230,9 +230,9 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
 else app(opp)
 
-pop(sel)
-
 air(sel)
+pop(sel)
+scr('.pop:last')
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
@@ -266,7 +266,7 @@ $('.category').on('touchstart click', function(e){
 	pop($(this).attr('id'))
 	air(sel)
 	scr('.pop:last')
-	setTimeout(function(){ evt = false }, 100)
+	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
 
 })
@@ -275,7 +275,9 @@ $('.fav').on('touchstart click', function(e){
 
     evt = true
 
+	air(sel)
 	pop(sel)
+	scr('.pop:last')
 	setTimeout(function(){ evt = false }, 250)
 
     e.preventDefault()
@@ -319,7 +321,7 @@ String.prototype.trunc =
 
 function scr(n){
 
-	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 250)
+	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
 
 }
 
@@ -424,13 +426,12 @@ function air(n){
 function pop(n){
 
 	if (job == true){ request.abort(); job = false }
-	if ($('.pop, .air').length > 1) $('.pop:last, .get').remove()
+	if ($('.pop, .air').length > 2){ $('.pop, .air:last, .get').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
-	scr('.pop:last')
 	his = 0
 	app()
 
