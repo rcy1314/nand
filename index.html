@@ -88,11 +88,11 @@
 	color: #888;
     }
     .full {
-	transition: all .2s;
+	transition: all .15s;
 	top: -2.2em;
     }
     .menu {
-	transition: all .2s;
+	transition: all .15s;
 	top: 0em;
     }
     .output {
@@ -255,8 +255,8 @@ $('.opposite').on('touchstart click', function(e) {
 
 $('.category').on('touchstart click', function(e){
 
-	his = 0
 	if (job == true){ request.abort(); job = false }
+	his = 0
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
@@ -271,11 +271,9 @@ $('.category').on('touchstart click', function(e){
 
 $('.fav').on('touchstart click', function(e){
 
-	if( job == true ){ request.abort(); job = false }
 	pop(sel)
-	scr('.pop:last')
 
-    e.preventDefault()
+    e.stopPropagation()
 
 })
 
@@ -416,7 +414,7 @@ function air(n){
 function pop(n){
 
 	if (job == true){ request.abort(); job = false }
-	if ($('.pop, .air').length > 1){ $('.pop:last, .air:last').remove(); return false }
+	if ($('.pop, .air').length > 1){ scr('.pop:last'); return false }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
