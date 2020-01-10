@@ -2,7 +2,7 @@ var menu=[
 {cat:"News",des:"ABC KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
-{cat:"News",des:"CBS WBZ Boston Local Breaking News From Boston, Massachusets.",uri:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
+{cat:"News",des:"CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",uri:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
 {cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cat:"News",des:"NBC WBTS Boston Local, National News and Breaking News.",uri:"https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcboston.com"},
 {cat:"News",des:"ABC California Los Angeles covers News, Weather, Sports, Traffic and live Video.",uri:"https://abc7.com/feed",ext:"https://abc7.com"},
