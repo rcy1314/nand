@@ -291,8 +291,6 @@ var menu=[
 {cat:"Media",des:"Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",uri:"https://globalnews.ca/entertainment/feed",ext:"https://globalnews.ca/entertainment"},
 {cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {cat:"Media",des:"Heavy Entertainment news including tv, streaming, events, and more.",uri:"https://heavy.com/entertainment/feed",ext:"https://heavy.com/entertainment"},
-{cat:"Media",des:"HuffingtonPost Latest Entertainment News, Photos, Videos and more.",uri:"https://www.huffpost.com/dept/entertainment/feed",ext:"https://www.huffpost.com/entertainment"},
-{cat:"Media",des:"HuffingtonPost TV and Film news and scoops about your favorite TV shows and movies.",uri:"https://www.huffpost.com/section/tv/feed",ext:"https://www.huffpost.com/entertainment/tv"},
 {cat:"Media",des:"IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",uri:"https://www.indiewire.com/feed",ext:"https://www.indiewire.com"},
 {cat:"Media",des:"Inside Edition Entertainment Entertainment news, headlines, stories, photos, and videos.",uri:"https://www.insideedition.com/entertainment/rss",ext:"https://www.insideedition.com/entertainment"},
 {cat:"Media",des:"International Business Times Entertainment news, celebrity gossips, TV shows, trailers release, and movies.",uri:"https://www.ibtimes.sg/rss/entertainment",ext:"https://www.ibtimes.com/media-culture/entertainment"},
