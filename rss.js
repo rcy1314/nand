@@ -487,6 +487,7 @@ var menu=[
 {cat:"Technology",des:"Security Affairs Every security issue is our affair.",uri:"http://securityaffairs.co/wordpress/feed",ext:"http://securityaffairs.co"},
 {cat:"Technology",des:"Sky News Technology is a British news organisation, which operates a TV network.",uri:"http://feeds.skynews.com/feeds/rss/technology.xml",ext:"https://sky.com/technology"},
 {cat:"Technology",des:"Slashdot is a social News website that originally billed itself as News for Nerds.",uri:"http://rss.slashdot.org/Slashdot/slashdot",ext:"https://slashdot.org"},
+{cat:"Technology",des:"Space.com latest space exploration, innovation and astronomy news.",uri:"https://www.space.com/feeds/all",ext:"https://www.space.com"},
 {cat:"Technology",des:"TechCrunch Reports on the Business of Technology, Startups, Venture Capital funding, and Silicon Valley.",uri:"http://feeds.feedburner.com/TechCrunch",ext:"https://techcrunch.com"},
 {cat:"Technology",des:"TechMeme is an automated News curation service focused on the leading edge of Technology.",uri:"https://www.techmeme.com/feed.xml",ext:"https://techmeme.com"},
 {cat:"Technology",des:"TechNewsWorld Latest Tech News and Info from ECT News Network's online publications.",uri:"https://www.technewsworld.com/perl/syndication/rssfull.pl",ext:"https://www.technewsworld.com"},
