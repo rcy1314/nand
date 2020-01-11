@@ -277,7 +277,7 @@ $('.category').on('touchstart click', function(e){
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
-	$(this).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
+	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	pop($(this).attr('id'))
 	air(sel)
 	scr('.pop:last')
@@ -413,7 +413,7 @@ function app(n){
 		$('.output').removeClass('invert').addClass('default')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
-		$('.attach').css('background-color','rgba(0, 0, 0, 1')
+		$('.attach, .category').css({'color':'#888','background-color':'rgba(0, 0, 0, .7)'})
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -421,7 +421,7 @@ function app(n){
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
-		$('.attach').css('background-color','rgba(255, 255, 255, .7')
+		$('.attach, .category').css({'color':'#555','background-color':'rgba(255, 255, 255, .7)'})
 
 	}
 
