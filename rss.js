@@ -584,6 +584,7 @@ var menu=[
 {cat:"Youtube",des:"MSNBC Youtube the premier destination for in-depth analysis of daily headlines, insightful political commentary and informed perspectives.",uri:"https://www.youtube.com/feeds/videos.xml?user=msnbcleanforward",ext:"https://www.youtube.com/user/msnbcleanforward"},
 {cat:"Youtube",des:"MotorTrend Youtube The ultimate automotive streaming service.",uri:"https://www.youtube.com/feeds/videos.xml?user=motortrend",ext:"https://www.youtube.com/user/motortrend"},
 {cat:"Youtube",des:"Nasa Youtube the future in space exploration, scientific discovery and aeronautics research.",uri:"https://www.youtube.com/feeds/videos.xml?user=nasatelevision",ext:"https://www.youtube.com/user/nasatelevision"},
+{cat:"Youtube",des:"NBC Youtube eaturing episode highlights, first looks, and digital exclusives!",uri:"https://www.youtube.com/feeds/videos.xml?user=nbc",ext:"https://www.youtube.com/user/nbc"},
 {cat:"Youtube",des:"NBC News Youtube America's most-watched evening news broadcast.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBCNews",ext:"https://www.youtube.com/user/NBCNews"},
 {cat:"Youtube",des:"NBC Sports Youtube premier live events, insightful studio shows, and compelling original programming.",uri:"https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",ext:"https://www.youtube.com/user/2012nbcolympics"},
 {cat:"Youtube",des:"NBA Youtube home of the most compelling basketball action from the NBA.",uri:"https://www.youtube.com/feeds/videos.xml?user=NBA",ext:"https://www.youtube.com/user/NBA"},
