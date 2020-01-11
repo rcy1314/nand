@@ -52,7 +52,7 @@
 
     .category:hover { color: #ccc !important }
 
-    .outline {
+    #inv {
 	-moz-box-shadow: 1p 1px 5px #ccc;
 	box-shadow: 1px 1px 5px #ccc;
     }
@@ -61,13 +61,16 @@
 	color: #888;
     }
 
-    .arm, .ico { text-align: center }
+    .arm, .ico {
+	background-color: rgba(255, 255, 255, 0);
+	text-align: center;
+    }
 
-    .full { top: -2.2em }
+    .full { visibility: hidden }
 
     hr { opacity: .2 }
 
-    .menu { top: 0em }
+    .menu { visibility: visible }
 
     .container {
 	position: absolute;
@@ -77,24 +80,26 @@
 	top: 0em;
     }
     .attach {
+	background-color: rgba(255, 255, 255, .7);
 	justify-content: center;
 	display: flex;
 	height: 2.2em;
     }
     .category {
+	background-color: rgba(255, 255, 255, .7);
 	display: inline-block;
 	text-align: center;
 	padding-top: 1.2em;
 	cursor: pointer;
-	font-size: 9px;
+	font-size: 8px;
 	height: 2.6em;
 	width: 16.5%;
-	color: #888;
+	color: #555;
+	z-index: 2;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
-	height: calc(100% - 75px);
 	outline: none !important;
 	-ms-overflow-style: none;
 	overflow-x: hidden;
@@ -103,11 +108,13 @@
 	padding-right: 7%;
 	padding-left: 7%;
 	overflow: auto;
+	height: 100%;
+	top: -2.2em;
     }
     .set {
-	font-size: 11px;
+	font-size: 10px;
 	cursor: pointer;
-	padding: 1.5em;
+	padding: 2em;
     }
     .end {
 	padding-right: 1.5em;
@@ -138,7 +145,7 @@
 	position: relative;
 	height: 32px;
 	width: 32px;
-	top: 4px;
+	top: -75px;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -339,8 +346,8 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 11 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
-	else if (n < ost - 11 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
+	if (n > ost + 11 && evt == false){ $('.fav').css('top','0em'); $('.attach').addClass('full').removeClass('menu') }
+	else if (n < ost - 11 && job == false){ $('.fav').css('top','-75px'); $('.attach').addClass('menu').removeClass('full') }
 
     ost = n
 
@@ -408,19 +415,13 @@ function app(n){
 		$('.output').removeClass('invert').addClass('default')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
-		$('.attach').css('background-color','#000')
-		$('.fav').removeClass('outline')
 	}
-
 	else if (op == 0){
-
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('.output').removeClass('default').addClass('invert')
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
-		$('.attach').css('background-color','#222')
-		$('.fav').addClass('outline fav')
 
 	}
 
@@ -517,12 +518,9 @@ function get(n){
 
 					if (i >= quit){ app(); return false }
 				})
-
 			job = false
-
 		air(sel)
 		pop(sel)
-
 		})
 }
 </script>
