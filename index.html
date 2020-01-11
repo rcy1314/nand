@@ -88,11 +88,9 @@
 	color: #888;
     }
     .full {
-	transition: all .2s;
 	top: -2.2em;
     }
     .menu {
-	transition: all .2s;
 	top: 0em;
     }
     .output {
@@ -104,22 +102,22 @@
 	overflow-x: hidden;
 	margin-right: -2px;
 	position: relative;
-	padding-right: 7%;
+	padding-right: 8%;
 	padding-left: 7%;
 	overflow: auto;
     }
     .set {
 	font-size: 11px;
 	cursor: pointer;
-	padding: 2em;
+	padding: 1.5em;
     }
     .end {
-	padding-left: 1.4em;
-	padding-bottom: 3em;
+	margin-bottom: 3em;
 	margin-right: auto;
+	margin-left: -3%;
 	cursor: pointer;
 	display: table;
-	width: 90%;
+	width: 108%;
     }
     .pub {
 	text-transform: capitalize;
@@ -127,14 +125,14 @@
 	letter-spacing: 1px;
 	font-family: Arial;
 	font-weight: bold;
-	font-size: 18px;
-	width: 100%;
+	font-size: 15px;
+	margin-right: -1em;
     }
     .ago {
 	margin-right: auto;
-	margin-top: -2.2em;
+	margin-top: -2em;
 	font-size: 10px;
-	color: #888;
+	color: #555;
     }
     .fav {
 	border-radius: 24px;
@@ -176,9 +174,8 @@
 	left: 0em;
     }
     .gif {
-	-webkit-animation: spin 2.5s infinite ease;
-	-moz-animation: spin 2.5s infinite ease
-	animation-delay: 10ms
+	-webkit-animation: grow 1.5s infinite ease;
+	-moz-animation: grow 1.5s infinite ease
 	border-radius: 24px;
 	height: 200px;
 	width: 200px;
@@ -186,6 +183,18 @@
     @-webkit-keyframes spin {
 	100% {-webkit-transform: rotate(360deg);}   
 	0%  {-webkit-transform: rotate(0deg);}
+    }
+    @-moz-keyframes spin {
+	100% {-webkit-transform: rotate(360deg);}   
+	0%  {-webkit-transform: rotate(0deg);}
+    }
+    @-webkit-keyframes grow {
+	from { -webkit-transform:scale(1) }
+	to { -webkit-transform:scale(1.5) }
+    }
+    @-moz-keyframes grow {
+	from { -webkit-transform:scale(1) }
+	to { -webkit-transform:scale(1.5) }
     }
     .agent {
 	margin-right: auto;
@@ -219,7 +228,7 @@ var request
 var opp = 0
 var ost = 0
 var his = 0
-var evt = false
+var evt = true
 var job = false
 var sel = 'Social'
 
@@ -234,6 +243,7 @@ else app(opp)
 air(sel)
 pop(sel)
 scr('.pop:last')
+setTimeout(function(){ evt = false }, 250)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
@@ -326,8 +336,8 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 5 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
-	else if (n < ost - 5 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
+	if (n > ost + 11 && evt == false) $('.output').removeClass('menu').addClass('full').height('100%')
+	else if (n < ost - 11 && job == false) $('.output').removeClass('full').addClass('menu').height('calc(100% - 75px)')
 
     ost = n
 
@@ -462,7 +472,7 @@ function get(n){
 		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<div class='set' onclick='window.open(\""+menu[n].ext+"\")'><hr>"+menu[n].des+"</div>")
+			$('.get').append("<hr><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -497,7 +507,7 @@ function get(n){
 												}
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(80, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(55, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
 					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
 
@@ -507,7 +517,7 @@ function get(n){
 			job = false
 
 		air(sel)
-
+		pop(sel)
 		})
 }
 </script>
