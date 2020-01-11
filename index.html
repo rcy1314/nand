@@ -464,7 +464,7 @@ function get(n){
 	job = true
 	var quit = 10
 	$('.pop, .air, .arm, .get').remove()
-	if (sel = 'Youtube'){ quit = 6 } else { quit = 11 }
+	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
 	$('.output').removeClass('menu').addClass('full').height('100%')
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
