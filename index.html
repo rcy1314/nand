@@ -81,8 +81,10 @@
     }
     .attach {
 	justify-content: center;
+	position: relative;
 	display: flex;
 	height: 2.2em;
+	z-index: 1;
     }
     .category {
 	display: inline-block;
@@ -91,7 +93,7 @@
 	cursor: pointer;
 	font-size: 8px;
 	height: 2.6em;
-	width: 16.5%;
+	width: 18%;
 	color: #555;
 	z-index: 2;
     }
@@ -249,7 +251,7 @@ pop(sel)
 scr('.pop:last')
 setTimeout(function(){ evt = false }, 250)
 
-$('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
+$('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 
 $('.output').attr('tabindex', -1).focus()
 
@@ -275,7 +277,7 @@ $('.category').on('touchstart click', function(e){
 	his = 0
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
-	$('.category').css('color','#888')
+	$('.category').css('color','#aaa')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	pop($(this).attr('id'))
 	air(sel)
@@ -414,7 +416,8 @@ function app(n){
 		$('.output').removeClass('invert').addClass('default')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
-		$('.attach, .category').css({'color':'#888','background-color':'rgba(0, 0, 0, .7)'})
+		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
+		$('.category').css('color','#888')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -422,7 +425,8 @@ function app(n){
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
-		$('.attach, .category').css({'color':'#555','background-color':'rgba(255, 255, 255, .7)'})
+		$('.attach').css('background-color','rgba(255, 255, 255, .7)')
+		$('.category').css('color','#555')
 
 	}
 
@@ -495,8 +499,7 @@ function get(n){
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
 								     if (img.match(/youtube/)){
-												 sum = view($(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-												 img = "<div class='ago'><b>Views</b> " + sum + "</div>" +
+												 img = "<div class='ago'><b>Views</b> " + view($(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")) + "</div>" +
 												       "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
