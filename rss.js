@@ -537,6 +537,7 @@ var menu=[
 {cat:"World",des:"NPR is an independent, nonprofit media organization that was founded to create a more informed public.",uri:"https://www.npr.org/rss/rss.php?id=1019",ext:"https://npr.org"},
 {cat:"World",des:"OANN One America News Network.",uri:"https://www.oann.com/feed",ext:"https://www.oann.com"},
 {cat:"World",des:"Public Broadcasting Service is an American public broadcaster and television program distributor.",uri:"https://www.pbs.org/newshour/feeds/rss/headlines",ext:"https://pbs.org"},
+{cat:"World",des:"Quartz covers business, economics, markets, finance, technology, science, design, and fashion.",uri:"https://cms.qz.com/feed",ext:"https://qz.com"},
 {cat:"World",des:"RT delivers latest news on current events from around the world.",uri:"https://www.rt.com/rss",ext:"https://rt.com"},
 {cat:"World",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {cat:"World",des:"Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",uri:"https://sputniknews.com/export/rss2/archive/index.xml",ext:"https://sputniknews.com"},
