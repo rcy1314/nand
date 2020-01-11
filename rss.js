@@ -473,7 +473,6 @@ var menu=[
 {Cat:"Technology",des:"OANN One America News Network technology.",uri:"https://www.oann.com/category/tech/feed",ext:"https://www.oann.com/category/tech"},
 {cat:"Technology",des:"Packet Storm is a Information Security website offering Current and Historical Computer Security Tools.",uri:"https://rss.packetstormcategoryurity.com/news/tags/usa",ext:"https://packetstormcategoryurity.com"},
 {cat:"Technology",des:"PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.",uri:"https://www.pcworld.com/index.rss",ext:"https://pcworld.com"},
-{cat:"Technology",des:"Pew Research is a nonpartisan fact tank that informs the public about the issues, attitudes and trends shaping the world.",uri:"https://www.pewresearch.org/internet/feed",ext:"https://www.pewresearch.org/internet"},
 {cat:"Technology",des:"Phoronix Linux Hardware Reviews & News.",uri:"https://www.phoronix.com/rss.php",ext:"https://phoronix.com"},
 {cat:"Technology",des:"Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.",uri:"https://phys.org/rss-feed",ext:"https://phys.org"},
 {cat:"Technology",des:"Politico Tech strives to be the dominant source for Politics and Policy.",uri:"https://www.politico.com/rss/morningtech.xml",ext:"https://politico.com"},
