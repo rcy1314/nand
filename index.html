@@ -234,7 +234,7 @@ var request
 var opp = 0
 var ost = 0
 var his = 0
-var evt = true
+var evt = false
 var job = false
 var sel = 'Social'
 
@@ -249,7 +249,6 @@ else app(opp)
 air(sel)
 pop(sel)
 scr('.pop:last')
-setTimeout(function(){ evt = false }, 250)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#ccc'})
 
