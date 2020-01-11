@@ -234,7 +234,7 @@ var op = 0
 var request
 var ost = 0
 var his = 0
-var evt = true
+var evt = false
 var job = false
 var sel = 'Social'
 
@@ -279,8 +279,8 @@ $('.category').on('touchstart click', function(e){
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#aaa')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
-	pop($(this).attr('id'))
 	air(sel)
+	pop($(this).attr('id'))
 	scr('.pop:last')
     e.preventDefault()
 
