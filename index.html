@@ -128,7 +128,6 @@
     }
     .ago {
 	margin-bottom: 5px;
-	margin-right: auto;
 	font-size: 10px;
 	color: #555;
     }
@@ -464,6 +463,7 @@ function get(n){
 	job = true
 	var quit = 10
 	$('.pop, .air, .arm, .get').remove()
+	if (sel = 'Youtube'){ quit = 6 } else { quit = 11 }
 	$('.output').removeClass('menu').addClass('full').height('100%')
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
@@ -493,7 +493,7 @@ function get(n){
 								     if (img.match(/youtube/)){
 												 sum = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div>" +
-												       "<div class='ago' style='padding-top:2em'><b> Views</b> " + sum + "</div>"
+												       "<div class='ago'><b> Views</b> " + sum + "</div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
