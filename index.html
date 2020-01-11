@@ -273,7 +273,6 @@ $('.category').on('touchstart click', function(e){
 
 	if (job == true){ request.abort(); job = false }
 	his = 0
-	evt = true
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#888')
@@ -281,7 +280,6 @@ $('.category').on('touchstart click', function(e){
 	pop($(this).attr('id'))
 	air(sel)
 	scr('.pop:last')
-	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
 
 })
@@ -332,8 +330,11 @@ String.prototype.trunc =
       }
 
 var view = function (n) {
+
     var parts = n.split(",");
+
     return parts.length > 1 ? (Math.round(parseInt(parts.join(""), 10) / Math.pow(1000, parts.length-1)) + ["k", "m", "b"][parts.length-2]) : parts[0];
+
 }
 
 function scr(n){
@@ -466,10 +467,8 @@ function res(i, n) {
 function get(n){
 	his = n
 	job = true
-	var quit = 10
 	$('.pop, .air, .arm, .get').remove()
-	if (sel = 'Youtube'){ quit = 6 } else { quit = 11 }
-	$('.output').removeClass('menu').addClass('full').height('100%')
+	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
@@ -516,7 +515,7 @@ function get(n){
 
 					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
 
-					if (i >= quit){ app(); return false }
+					if (i >= quit){ app(op); return false }
 				})
 			job = false
 		air(sel)
