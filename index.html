@@ -111,7 +111,7 @@
     }
     .end {
 	padding-right: 1.5em;
-	margin-bottom: 1.5em;
+	margin-bottom: 3em;
 	margin-right: auto;
 	cursor: pointer;
 	display: table;
@@ -126,7 +126,7 @@
 	width: 100%;
     }
     .ago {
-	margin-bottom: 5px;
+	margin-top: -2px;
 	font-size: 10px;
 	color: #555;
     }
@@ -150,9 +150,9 @@
     iframe {
 	position: absolute;
 	border: none;
-	height: 100%;
-	width: 100%;
-	left: 0;
+	height: 110%;
+	width: 109%;
+	left: -4.5%;
 	top: 0;
     }
     .random, .opposite {
@@ -326,6 +326,11 @@ String.prototype.trunc =
 
       }
 
+var view = function (n) {
+    var parts = n.split(",");
+    return parts.length > 1 ? (Math.round(parseInt(parts.join(""), 10) / Math.pow(1000, parts.length-1)) + ["k", "m", "b"][parts.length-2]) : parts[0];
+}
+
 function scr(n){
 
 	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
@@ -490,15 +495,9 @@ function get(n){
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
 								     if (img.match(/youtube/)){
-												 sum = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' " + 
-												       "allowfullscreen='allowfullscreen' " +
-												       "mozallowfullscreen='mozallowfullscreen' " + 
-												       "msallowfullscreen='msallowfullscreen' " +
-												       "oallowfullscreen='oallowfullscreen' " +
-												       "webkitallowfullscreen='webkitallowfullscreen' " +
-												       "></iframe></div>" +
-												       "<div class='ago'><b> Views</b> " + sum + "</div>"
+												 sum = view($(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+												 img = "<div class='ago'><b>Views</b> " + sum + "</div>" +
+												       "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
@@ -518,6 +517,7 @@ function get(n){
 
 					if (i >= quit){ app(); return false }
 				})
+
 			job = false
 
 		air(sel)
