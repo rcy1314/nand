@@ -113,10 +113,9 @@
 	padding-right: 1.5em;
 	margin-bottom: 1.5em;
 	margin-right: auto;
-	margin-left: -3%;
 	cursor: pointer;
 	display: table;
-	width: 105%;
+	width: 100%;
     }
     .pub {
 	text-transform: capitalize;
@@ -492,7 +491,7 @@ function get(n){
 											else if (img = $(this).find('link').attr('href')){
 								     if (img.match(/youtube/)){
 												 sum = $(this).find('media\\:statistics, statistics').attr('views').replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div>" +
+												 img = "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>" +
 												       "<div class='ago'><b> Views</b> " + sum + "</div>"
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
