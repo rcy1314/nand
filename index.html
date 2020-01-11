@@ -80,13 +80,11 @@
 	top: 0em;
     }
     .attach {
-	background-color: rgba(255, 255, 255, .7);
 	justify-content: center;
 	display: flex;
 	height: 2.2em;
     }
     .category {
-	background-color: rgba(255, 255, 255, .7);
 	display: inline-block;
 	text-align: center;
 	padding-top: 1.2em;
@@ -230,8 +228,8 @@
 		<div class='opposite'></div>
 </div>
 <script>
+var op = 0
 var request
-var opp = 0
 var ost = 0
 var his = 0
 var evt = true
@@ -244,7 +242,7 @@ if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
 }
 
-else app(opp)
+else app(op)
 
 air(sel)
 pop(sel)
@@ -415,6 +413,7 @@ function app(n){
 		$('.output').removeClass('invert').addClass('default')
 		$('hr').hide(); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
+		$('.attach').css('background-color','rgba(0, 0, 0, 1')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -422,6 +421,7 @@ function app(n){
 		$('hr').show(); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
+		$('.attach').css('background-color','rgba(255, 255, 255, .7')
 
 	}
 
