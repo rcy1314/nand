@@ -279,7 +279,7 @@ $('.category').on('touchstart click', function(e){
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#aaa')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
-	air(sel)
+	air($(this).attr('id'))
 	pop($(this).attr('id'))
 	scr('.pop:last')
     e.preventDefault()
