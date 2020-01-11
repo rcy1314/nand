@@ -593,6 +593,7 @@ var menu=[
 {cat:"Youtube",des:"Surfer Magazine Youtube award-winning photos, provocative interviews, and journeys to the coolest undiscovered surf spots.",uri:"https://www.youtube.com/feeds/videos.xml?user=surfer",ext:"https://www.youtube.com/user/surfer"},
 {cat:"Youtube",des:"TechCrunch Youtube startups, Internet products, and breaking tech news.",uri:"https://www.youtube.com/feeds/videos.xml?user=techcrunch",ext:"https://www.youtube.com/user/techcrunch"},
 {cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/theverge"},
+{cat:"Youtube",des:"Time Magazine Youtube daily news, interviews, science, technology, politics, health, entertainment, and business updates.",uri:"https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA",ext:"https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA"},
 {cat:"Youtube",des:"TMZ Youtube breaking celebrity news, gossip, and insight.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZ",ext:"https://www.youtube.com/user/TMZ"},
 {cat:"Youtube",des:"TMZ Sports Youtube where sport and celebrity cultures intersect.",uri:"https://www.youtube.com/feeds/videos.xml?user=TMZSports",ext:"https://www.youtube.com/user/TMZSports"},
 {cat:"Youtube",des:"UFC Youtube Weigh-ins, Analysis, Highlights, and Interviews.",uri:"https://www.youtube.com/feeds/videos.xml?user=ufc",ext:"https://www.youtube.com/user/ufc"},
