@@ -571,6 +571,7 @@ var menu=[
 {cat:"Youtube",des:"IGN Entertainment Youtube game reviews, trailers, and walkthroughs.",uri:"https://www.youtube.com/feeds/videos.xml?user=ignentertainment",ext:"https://www.youtube.com/user/ignentertainment"},
 {cat:"Youtube",des:"Forbes highlights business, entrepreneurship, wealth, investing and leadership.",uri:"https://www.youtube.com/feeds/videos.xml?user=forbes",ext:"https://www.youtube.com/user/forbes"},
 {cat:"Youtube",des:"Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",uri:"https://www.youtube.com/feeds/videos.xml?user=foxsports",ext:"https://www.youtube.com/user/foxsports"},
+{cat:"Youtube",des:"FX Networks Youtube features critically-acclaimed and award-winning hit series.",uri:"https://www.youtube.com/feeds/videos.xml?user=fxnetworks",ext:"https://www.youtube.com/user/fxnetworks"},
 {cat:"Youtube",des:"Game Trailers Youtube dedicated to archiving content from GameTrailers.com.",uri:"https://www.youtube.com/feeds/videos.xml?user=gametrailers",ext:"https://www.youtube.com/user/gametrailers"},
 {cat:"Youtube",des:"HuffPost Youtube a platform and a voice to those who might not otherwise have one.",uri:"https://www.youtube.com/feeds/videos.xml?user=HuffingtonPost",ext:"https://www.youtube.com/user/HuffingtonPost"}, 
 {cat:"Youtube",des:"MIT News Office Youtube dvance knowledge and educate students in science, technology, and other areas.",uri:"https://www.youtube.com/feeds/videos.xml?user=MITNewsOffice",ext:"https://www.youtube.com/user/MITNewsOffice"},
