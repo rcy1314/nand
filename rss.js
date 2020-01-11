@@ -327,6 +327,7 @@ var menu=[
 {cat:"Social",des:"Coding subreddit Tutorials, Reviews, Videos, and Analysis.",uri:"https://reddit.com/r/coding/.rss",ext:"https://reddit.com/r/coding"},
 {cat:"Social",des:"Command Line subreddit shares tips, questions, and answers.",uri:"https://reddit.com/r/commandline/.rss",ext:"https://reddit.com/r/commandline"},
 {cat:"Social",des:"Computer subreddit covers computers, questions, tips, and suggestions.",uri:"https://reddit.com/r/computers/.rss",ext:"https://reddit.com/r/computers"},
+{cat:"Social",des:"DataHoarder subreddit bringing data hoarders together to share their passion with like minded people.",uri:"https://reddit.com/r/DataHoarder/.rss",ext:"https://reddit.com/r/DataHoarder"},
 {cat:"Social",des:"DataIsBeautiful subreddit for visualizations that effectively convey information.",uri:"https://reddit.com/r/dataisbeautiful/.rss",ext:"https://reddit.com/r/dataisbeautiful"},
 {cat:"Social",des:"Debian subreddit has questions and topics revolving around Debian OS.",uri:"https://reddit.com/r/debian/.rss",ext:"https://reddit.com/r/debian"},
 {cat:"Social",des:"Devops subreddit with 117,000 members created in 2010.",uri:"https://reddit.com/r/devops/.rss",ext:"https://reddit.com/r/devops"},
