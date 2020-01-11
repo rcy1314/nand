@@ -112,28 +112,30 @@
 	padding: 1.5em;
     }
     .end {
-	margin-bottom: 3em;
+	padding-right: 1.5em;
+	margin-bottom: 1.5em;
 	margin-right: auto;
 	margin-left: -3%;
 	cursor: pointer;
 	display: table;
-	width: 108%;
+	width: 107%;
     }
     .pub {
 	text-transform: capitalize;
-	padding-bottom: 1em;
 	letter-spacing: 1px;
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 15px;
-	width: 99%;
+	width: 100%;
     }
     .ago {
-	margin-bottom: 2px;
+	margin-bottom: 5px;
 	margin-right: auto;
-	margin-top: -2em;
 	font-size: 10px;
 	color: #555;
+    }
+    .img {
+	padding-bottom: 1.5em;
     }
     .fav {
 	border-radius: 24px;
@@ -199,8 +201,8 @@
     }
     .agent {
 	margin-right: auto;
-	height: 200px;
-	width: 210px;
+	height: 120px;
+	width: 130px;
     }
 </style>
 <body>
@@ -487,7 +489,7 @@ function get(n){
 											else var dst = utc($(this).find('dc\\:date, date').text())
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
-											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "'>"
+											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
 										       }
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
@@ -499,16 +501,16 @@ function get(n){
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' src='" + img + "' style='visibility:hidden'>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' src='" + img + "' class='img' style='visibility:hidden'>"
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
-																       else img = "<img id='" + i + "' src='" + img[1] + "' style='visibility:hidden'>"
+																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
 												}
 					if (!img || menu[n].des.match(/Slashdot|CNN/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
+					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
 
 					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
 
