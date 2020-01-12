@@ -1,7 +1,6 @@
 var menu=[
 {cat:"News",des:"ABC KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
-{cat:"News",des:"Baltimore Sun Your source for breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.baltimoresun.com/arcio/rss/category/latest/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.baltimoresun.com"},
 {cat:"News",des:"Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",uri:"https://reddit.com/r/boston/.rss",ext:"https://reddit.com/r/boston"},
 {cat:"News",des:"CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",uri:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
 {cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
@@ -139,6 +138,7 @@ var menu=[
 {cat:"News",des:"CBS KLFY Louisiana Lafayette we do what we do to make Lafayette, and the rest of Acadiana a better place to live.",uri:"https://www.klfy.com/feed/",ext:"https://www.klfy.com"},
 {cat:"News",des:"NBC KADN Louisiana Lafayette a mix of News, Weather, Sports, and Entertainment with a Focus on Families and the Community.",uri:"https://kadn.com/feed",ext:"https://kadn.com"},
 {cat:"News",des:"NBC WMTV Maine Portland We are a local Internet TV Station dedicated to serving our community with local news.",uri:"https://www.wmtw.com/topstories-rss",ext:"https://www.wmtw.com"},
+{cat:"News",des:"Baltimore Sun Your source for breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.baltimoresun.com/arcio/rss/category/latest/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.baltimoresun.com"},
 {cat:"News",des:"ABC WMDT Marlyand Salisbury for News, Traffic, Sports, and Entertainment.",uri:"https://www.wmdt.com/feed",ext:"https://www.wmdt.com"},
 {cat:"News",des:"CBS WBKB Michigan Alpena For all your local news, sports, and weather updates.",uri:"http://www.wbkb11.com/feed",ext:"http://www.wbkb11.com"},
 {cat:"News",des:"NBC WCSH Maine Portland serving Southern Maine as well as Eastern and Northern New Hampshire.",uri:"http://rssfeeds.wcsh6.com/newscentermaine/news",ext:"https://www.newscentermaine.com"},
