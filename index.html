@@ -46,14 +46,6 @@
 
 }
 
-    html, body, .container, .output {
-	overflow: hidden;
-	height: 100%;
-	right: 0em;
-	left: 0em;
-	top: 0em;
-    }
-
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
     .category:hover { color: #ccc !important }
@@ -75,6 +67,14 @@
 	left: 50%;
     }
 
+    html, body, .container, .output {
+	overflow: hidden;
+	height: 100%;
+	right: 0em;
+	left: 0em;
+	top: 0em;
+    }
+
     .arm {
 	background-color: rgba(255, 255, 255, 0);
 	text-align: center;
@@ -85,18 +85,18 @@
     .attach {
 	justify-content: center;
 	position: absolute;
-	height: 1.95em;
 	display: flex;
+	height: 3em;
 	width: 100%;
 	z-index: 1;
     }
     .category {
 	display: inline-block;
-	padding-top: 1.2em;
 	text-align: center;
+	padding-top: 2.2em;
 	cursor: pointer;
 	font-size: 8px;
-	height: 2.6em;
+	height: 3.6em;
 	width: 18%;
 	color: #555;
 	z-index: 2;
@@ -147,7 +147,6 @@
 	position: relative;
 	height: 32px;
 	width: 32px;
-	top: -75px;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -236,9 +235,10 @@ var op = 0
 var request
 var ost = 0
 var his = 0
-var evt = false
+var evt = true
 var job = false
 var sel = 'Social'
+setTimeout(function(){ evt = false }, 250)
 
 if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
@@ -358,7 +358,7 @@ function scr(n){
 
 function pin(n){
 
-	if (n > ost + 7 && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-1.95em'}) }
+	if (n > ost + 7 && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 	else if (n < ost - 7 && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 
     ost = n
