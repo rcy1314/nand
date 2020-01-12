@@ -1,7 +1,6 @@
 var menu=[
 {cat:"News",des:"ABC KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",ext:"https://abc30.com"},
 {cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
-{cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
 {cat:"News",des:"Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",uri:"https://reddit.com/r/boston/.rss",ext:"https://reddit.com/r/boston"},
 {cat:"News",des:"Chicago subreddit the community for the windy city Chicago, Illinois.",uri:"https://reddit.com/r/chicago/.rss",ext:"https://reddit.com/r/chicago"},
 {cat:"News",des:"Florida subreddit one stop shop for news and discussion about the sunshine state!",uri:"https://reddit.com/r/florida/.rss",ext:"https://reddit.com/r/florida"},
@@ -13,6 +12,7 @@ var menu=[
 {cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
 {cat:"News",des:"NBC WBTS Boston Local, National News and Breaking News.",uri:"https://www.nbcboston.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbcboston.com"},
 {cat:"News",des:"ABC California Los Angeles covers News, Weather, Sports, Traffic and live Video.",uri:"https://abc7.com/feed",ext:"https://abc7.com"},
+{cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
 {cat:"News",des:"CBS KCBS California Los Angeles News, Sports, Weather, Traffic and the Best of LA and OC.",uri:"https://losangeles.cbslocal.com/feed",ext:"https://losangeles.cbslocal.com"},
 {cat:"News",des:"NBC KNBC California Los Angeles Weather, Traffic, Politics, Sports, and Entertainment.",uri:"https://www.nbclosangeles.com/news/top-stories/?rss=y&embedThumb=y&summary=y",ext:"https://nbclosangeles.com"},
 {cat:"News",des:"ABC KGO California San Francisco Local News and Headlines.",uri:"https://abc7news.com/feed",ext:"https://abc7news.com"},
