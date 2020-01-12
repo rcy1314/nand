@@ -54,8 +54,6 @@
 
     .img { padding-bottom: 1.5em }
 
-    .arm { text-align: center }
-
     hr { opacity: .2 }
 
     html, body, .container, .output {
@@ -65,6 +63,14 @@
 	left: 0em;
 	top: 0em;
     }
+    .arm {
+	transform: translate(50%,50%);
+	position: absolute;
+	height: 50%;
+	right: 50%;
+	top: 0%;
+    }
+
     .ico {
 	transform: translateX(-50%);
 	position: absolute;
@@ -172,8 +178,8 @@
 	left: 0em;
     }
     .gif {
-	-webkit-animation: grow .7s infinite ease;
-	-moz-animation: grow .7s infinite ease
+	-webkit-animation: grow 1.7s infinite ease;
+	-moz-animation: grow 1.7s infinite ease
 	border-radius: 24px;
 	height: 200px;
 	width: 200px;
@@ -479,7 +485,6 @@ function get(n){
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
-			$('.arm').remove()
 			$('.get').append("<hr><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
