@@ -540,6 +540,7 @@ var menu=[
 {cat:"World",des:"Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",uri:"https://www.mercurynews.com/feed",ext:"https://mercurynews.com"},
 {cat:"World",des:"MSN is a web portal of Internet services and apps for Windows and mobile devices.",uri:"http://rss.msn.com",ext:"https://msn.com"},
 {cat:"World",des:"MSNBC Breaking news and in-depth analysis of the headlines.",uri:"http://www.msnbc.com/feeds/latest",ext:"http://www.msnbc.com"},
+{cat:"World",des:"National Post latest news, information, updates, exclusive video, audio and photo coverages on trending issues.",uri:"https://nationalpost.com/feed",ext:"https://nationalpost.com"},
 {cat:"World",des:"NBC News is the news division of the American broadcast television network NBC.",uri:"http://feeds.nbcnews.com/nbcnews/public/news",ext:"https://nbcnews.com"},
 {cat:"World",des:"News subreddit articles relating to the United States and the rest of the World.",uri:"https://reddit.com/r/news/.rss",ext:"https://reddit.com/r/news"},
 {cat:"World",des:"Newser is an American news aggregation website.",uri:"http://rss.newser.com/rss/section/1.rss",ext:"https://www.newser.com"},
