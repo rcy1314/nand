@@ -250,8 +250,6 @@ scr('.pop:last')
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 
-$('.output').attr('tabindex', -1).focus()
-
 $('.random').on('touchstart click', function(e) {
 
 	ran(sel)
@@ -314,7 +312,8 @@ $('.output').on('scroll touchmove focusout', function(e){
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
 
-})
+}).attr('tabindex', -1).focus()
+
 
 String.prototype.trunc =
 
@@ -340,7 +339,6 @@ function abr(n, e) {
 		n += a[i]
 	}
     }
-
     return n
 }
 
