@@ -54,7 +54,7 @@
 
     .img { padding-bottom: 1.5em }
 
-    hr { line-height: 1.2em; opacity: .2 }
+    hr { opacity: .2 }
 
     html, body, .container, .output {
 	overflow: hidden;
@@ -419,17 +419,17 @@ function app(n){
 	if (op == 1){
 
 		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
+		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
-		$('.br').replaceWith("<br class='br'>"); $('#inv').hide(); $('#fav').show()
 		$('.gif, .agent').attr('src','favicon/favico.png')
 		$('.category').css('color','#888')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
+		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
-		$('.br').replaceWith("<hr class='br'>"); $('#fav').hide(); $('#inv').show()
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
 		$('.category').css('color','#555')
