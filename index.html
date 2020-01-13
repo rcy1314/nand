@@ -170,11 +170,11 @@
 	z-index: 2;
     }
     .random {
-	padding-left: 2em;
+	padding-left: 3em;
 	right: 0em;
     }
     .opposite {
-	padding-right: 2em;
+	padding-right: 3em;
 	left: 0em;
     }
     .gif {
@@ -235,7 +235,7 @@ var his = 0
 var evt = false
 var job = false
 var sel = 'Social'
-setTimeout(function(){ evt = false }, 250)
+
 if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
 
         app(location.search.split('?op=')[1])
@@ -289,7 +289,7 @@ $('.fav').on('touchstart click', function(e){
 	air(sel)
 	pop(sel)
 	scr('.pop:last')
-	setTimeout(function(){ evt = false }, 250)
+
     e.preventDefault()
     e.stopPropagation()
 
@@ -414,6 +414,8 @@ function ago(n){
 
 function app(n){
 
+	evt = true
+
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
@@ -436,8 +438,9 @@ function app(n){
 
 	}
 
-	if ($('.get').length > 0) scr('.get:last')
-	else if ($('.pop:last').length > 0) scr('.pop:last')
+	if ($('.pop:last').length > 0) scr('.pop:last')
+	else if ($('.get').length > 0) scr('.get:last')
+	setTimeout(function(){ evt = false }, 250)
 
 }
 
