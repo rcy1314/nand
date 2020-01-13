@@ -478,6 +478,7 @@ function res(i, n) {
 }
 
 function get(n){
+	if (job == true){ request.abort(); job = false }
 	his = n
 	job = true
 	$('.pop, .air, .arm, .get').remove()
