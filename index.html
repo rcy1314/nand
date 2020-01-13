@@ -485,6 +485,7 @@ function get(n){
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
+			$('.arm').remove()
 			$('.get').append("<hr><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
