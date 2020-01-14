@@ -262,8 +262,9 @@ $('.random').on('touchstart click', function(e) {
 
 $('.opposite').on('touchstart click', function(e) {
 
+	evt = true
 	app('op')
-
+	pin(ost)
     e.preventDefault()
 
 })
@@ -341,7 +342,6 @@ function abr(n, e) {
 	}
 
     }
-
     return n
 
 }
