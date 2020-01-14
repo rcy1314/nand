@@ -291,7 +291,6 @@ $('.fav').on('touchstart click', function(e){
 
     e.preventDefault()
     e.stopPropagation()
-    setTimeout(function(){ evt = false }, 250)
 
 })
 
@@ -527,6 +526,7 @@ function get(n){
 
 					if (i >= quit){ app(op); return false }
 				})
+			setTimeout(function(){ job = false }, 250)
 		air(sel)
 		})
 }
