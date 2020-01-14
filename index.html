@@ -274,6 +274,7 @@ $('.category').on('touchstart click', function(e){
 	his = 0
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
+	$('.category').css('color','#888')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
