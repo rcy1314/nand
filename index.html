@@ -274,7 +274,6 @@ $('.category').on('touchstart click', function(e){
 	his = 0
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
-	$('.category').css('color','#aaa')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
@@ -292,6 +291,7 @@ $('.fav').on('touchstart click', function(e){
 
     e.preventDefault()
     e.stopPropagation()
+    setTimeout(function(){ evt = false }, 250)
 
 })
 
@@ -309,7 +309,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 $('.output').on('scroll touchmove focusout', function(e){
 
     if (e.type == 'scroll' || e.type == 'touchmove'){
-	pin($(this).scrollTop())
+	pin($(this).scrollTop(), false)
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
@@ -351,10 +351,10 @@ function scr(n){
 }
 
 function pin(n, e){
-	
-	if (e == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	if (e == false && evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
-	if (n > ost + 5 && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+
+	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+	if (n > ost + 5 && job !== true && evt == false){ console.log(e); $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 	else if (n < ost - 5 && evt == false && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 
     ost = n
@@ -415,8 +415,6 @@ function ago(n){
 
 function app(n){
 
-	evt = true
-
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
@@ -426,7 +424,6 @@ function app(n){
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.gif, .agent').attr('src','favicon/favico.png')
-		$('.category').css('color','#888')
 	}
 	else if (op == 0){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
@@ -435,12 +432,9 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
-		$('.category').css('color','#555')
 
 	}
 	
-	setTimeout(function(){ evt = false }, 250)
-
 }
 
 function air(n){
@@ -532,9 +526,8 @@ function get(n){
 
 					if (i >= quit){ app(op); return false }
 				})
-			job = false
+			setTimeout(function(){ job = false }, 250)
 		air(sel)
-		pin(ost, true)
 		})
 }
 </script>
