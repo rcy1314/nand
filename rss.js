@@ -354,6 +354,7 @@ var menu=[
 {cat:"Social",des:"Javascript subreddit all about the JavaScript Programming Language.",uri:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
 {cat:"Social",des:"Laptops subreddit the place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
+{cat:"Social",des:"Linux 4 Noobs subreddit introductions, tips and tutorials. Questions are encouraged.",uri:"https://reddit.com/r/linux4noobs/.rss",ext:"https://reddit.com/r/linux4noobs"},
 {cat:"Social",des:"Linux Questions subreddit for more answers to your Linux Questions.",uri:"https://reddit.com/r/linuxquestions/.rss",ext:"https://reddit.com/r/linuxquestions"},
 {cat:"Social",des:"Mac subreddit A community for all things relating to Apple's Macintosh line of computers.",uri:"https://reddit.com/r/mac/.rss",ext:"https://reddit.com/r/mac"},
 {cat:"Social",des:"Math subreddit with nearly one million members.",uri:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
