@@ -96,6 +96,7 @@
 	height: 3em;
 	width: 100%;
 	z-index: 1;
+	top: -3em;
     }
     .category {
 	display: inline-block;
@@ -349,9 +350,10 @@ function scr(n){
 
 }
 
-function pin(n){
-
-	if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+function pin(n, e){
+	
+	if (e == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	if (e == false && evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 	if (n > ost + 5 && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 	else if (n < ost - 5 && evt == false && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 
@@ -532,6 +534,7 @@ function get(n){
 				})
 			job = false
 		air(sel)
+		pin(ost, true)
 		})
 }
 </script>
