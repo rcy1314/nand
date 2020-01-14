@@ -265,6 +265,8 @@ $('.opposite').on('touchstart click', function(e) {
 	evt = true
 	app('op')
 	pin(ost)
+	setTimeout(function(){ evt = false }, 250)
+
     e.preventDefault()
 
 })
@@ -349,7 +351,6 @@ function abr(n, e) {
 function scr(n){
 
 	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
-	setTimeout(function(){ evt = false; job = false }, 250)
 
 }
 
