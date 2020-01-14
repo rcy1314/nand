@@ -348,6 +348,7 @@ var menu=[
 {cat:"Social",des:"G Technology is a board that discusses Technology.",uri:"http://boards.4chan.org/g/index.rss",ext:"http://boards.4channel.org/g/"},
 {cat:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",uri:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/games"},
 {cat:"Social",des:"Google subreddit For news and announcements from and about Google.",uri:"https://reddit.com/r/google/.rss",ext:"https://reddit.com/r/google"},
+{cat:"Social",des:"Hacker News subreddit A mirror of Hacker News' best submissions.",uri:"https://reddit.com/r/hackernews/.rss",ext:"https://reddit.com/r/hackernews"},
 {cat:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",uri:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
 {cat:"Social",des:"Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",uri:"https://reddit.com/r/hardware/.rss",ext:"https://reddit.com/r/hardware"},
 {cat:"Social",des:"iOS subreddit for everything Apple iOS.",uri:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
