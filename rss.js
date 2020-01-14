@@ -538,6 +538,7 @@ var menu=[
 {cat:"World",des:"Heavy news from around the world.",uri:"https://heavy.com/news/feed",ext:"https://heavy.com/news"},
 {cat:"World",des:"HuffingtonPost World News, Breaking News, Top Stories, and Headlines.",uri:"https://www.huffpost.com/section/world-news/feed",ext:"https://www.huffpost.com/news/world-news"},
 {cat:"World",des:"International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",uri:"https://www.ibtimes.sg/rss/world",ext:"https://www.ibtimes.com/world"},
+{cat:"World",des:"Market Watch published by Dow Jones & Co., tracks the pulse of markets for engaged investors.",uri:"http://feeds.marketwatch.com/marketwatch/topstories",ext:"http://marketwatch.com"},
 {cat:"World",des:"Mirror.co.uk World headlines, pictures, analysis, opinion and video.",uri:"https://www.mirror.co.uk/news/us-news/?service=rss",ext:"https://mirror.co.uk/news/us-news"},
 {cat:"World",des:"Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",uri:"https://www.mercurynews.com/feed",ext:"https://mercurynews.com"},
 {cat:"World",des:"MSN is a web portal of Internet services and apps for Windows and mobile devices.",uri:"http://rss.msn.com",ext:"https://msn.com"},
