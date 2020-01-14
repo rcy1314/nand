@@ -309,7 +309,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 $('.output').on('scroll touchmove focusout', function(e){
 
     if (e.type == 'scroll' || e.type == 'touchmove'){
-	pin($(this).scrollTop(), false)
+	pin($(this).scrollTop())
 	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
@@ -350,7 +350,7 @@ function scr(n){
 
 }
 
-function pin(n, e){
+function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
