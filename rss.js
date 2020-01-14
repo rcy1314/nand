@@ -355,6 +355,7 @@ var menu=[
 {cat:"Social",des:"Laptops subreddit the place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},
 {cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/linux"},
 {cat:"Social",des:"Linux Questions subreddit for more answers to your Linux Questions.",uri:"https://reddit.com/r/linuxquestions/.rss",ext:"https://reddit.com/r/linuxquestions"},
+{cat:"Social",des:"Mac subreddit A community for all things relating to Apple's Macintosh line of computers.",uri:"https://reddit.com/r/mac/.rss",ext:"https://reddit.com/r/mac"},
 {cat:"Social",des:"Math subreddit with nearly one million members.",uri:"https://reddit.com/r/math/.rss",ext:"https://reddit.com/r/math"},
 {cat:"Social",des:"Microsoft subreddit Microsoft's suite of services, products and games which we publish.",uri:"https://reddit.com/r/microsoft/.rss",ext:"https://reddit.com/r/microsoft"},
 {cat:"Social",des:"Netsec subreddit a community for technical news and discussion of information security.",uri:"https://reddit.com/r/netsec/.rss",ext:"https:/reddit.com/r/netsec"},
