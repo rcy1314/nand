@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/invert.png">
     <script src="https://acktic.github.io/rss.js"></script>
@@ -11,7 +10,7 @@
 <style>
 @media screen and (min-width: 960px) {
 
-    html { background-color: #fafafa; }
+    html { background-color: #fafafa }
 
     .wrapper {
 	transform: translate(50%,50%);
@@ -35,7 +34,7 @@
 	scrollbar-width: thin;
     }
 
-    .default::-webkit-scrollbar-thumb { background-color: #222 }
+    .default::-webkit-scrollbar-thumb { background-color: #0a0a0a }
 
     .default::-webkit-scrollbar { background-color: #000 }
 
@@ -68,7 +67,7 @@
 	position: absolute;
 	height: 50%;
 	right: 50%;
-	top: 0%;
+	top: 0;
     }
 
     .ico {
@@ -182,7 +181,6 @@
     .gif {
 	-webkit-animation: grow 1.7s infinite ease;
 	-moz-animation: grow 1.7s infinite ease
-	border-radius: 24px;
 	height: 200px;
 	width: 200px;
     }
@@ -238,9 +236,9 @@ var evt = false
 var job = false
 var sel = 'Social'
 
-if (location.href.match('\\?op=0') || location.href.match('\\?op=1')){
+if (location.href.match('\\?op=1')){
 
-        app(location.search.split('?op=')[1])
+        app(1)
 
 }
 
@@ -281,6 +279,7 @@ $('.category').on('touchstart click', function(e){
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
 	scr('.pop:last')
+
     e.preventDefault()
 
 })
@@ -322,9 +321,11 @@ $('.output').on('scroll touchmove focusout', function(e){
 String.prototype.trunc =
 
      function(n, e){
+
          if (this.length <= n) return this
          var subString = this.substr(0, n-1)
          return ( e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
+
       }
 
 function abr(n, e) {
@@ -344,6 +345,7 @@ function abr(n, e) {
 	}
 
     }
+
     return n
 
 }
@@ -380,8 +382,10 @@ function rev(Object) {
 	var keys = []
 	for (var key in Object) keys.push(key)
 	for (var i = keys.length - 1; i >= 0; i--) {
+
 		var value = Object[keys[i]]
 		newObject[keys[i]] = value
+
 	}
 
    return newObject
