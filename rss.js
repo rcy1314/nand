@@ -378,6 +378,7 @@ var menu=[
 {cat:"Social",des:"Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",uri:"https://reddit.com/r/thinkpad/.rss",ext:"https://reddit.com/r/thinkpad"},
 {cat:"Social",des:"Ubuntu subreddit or News, Information and General Discussion related to Ubuntu.",uri:"https://reddit.com/r/ubuntu/.rss",ext:"https://reddit.com/r/ubuntu"},
 {cat:"Social",des:"Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",uri:"https://reddit.com/r/unixporn/.rss",ext:"https://reddit.com/r/unixporn"},
+{cat:"Social",des:"Vim subreddit For Vim enthusiasts and anyone interested in Vim.",uri:"https://reddit.com/r/vim/.rss",ext:"https://reddit.com/r/vim"},
 {cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/wallpaper"},
 {cat:"Social",des:"Wallpapers subreddit for Work-safe wallpapers from all over!",uri:"https://reddit.com/r/wallpapers/.rss",ext:"https://reddit.com/r/wallpapers"},
 {cat:"Social",des:"Wallpapers General including Desktops, Builds, Mobile, Mods, NO Requests.",uri:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4chan.org/wg"},
