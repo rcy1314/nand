@@ -53,8 +53,6 @@
 
     .img { padding-bottom: 1.5em }
 
-    .pub:hover { color: #666 }
-
     .pop { padding-top: 1em }
 
     hr { opacity: .2 }
@@ -207,9 +205,12 @@
 	to { -webkit-transform:scale(1.5) }
     }
     .agent {
-	padding-top: 2em;
 	height: 120px;
 	width: 130px;
+    }
+    .agent:hover {
+	-webkit-animation: spin 2.5s infinite ease;
+	-moz-animation: grow 2.5s infinite ease
     }
 </style>
 <body>
@@ -530,7 +531,7 @@ function get(n){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
 																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
 												}
-					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
+					if (!img || menu[n].des.match(/Slashdot/)) img = "<br><img class='agent' src='favicon/" + gif + "'>"
 					
 					var ext = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
