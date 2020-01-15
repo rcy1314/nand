@@ -322,6 +322,7 @@ var menu=[
 {cat:"Media",des:"TV Guide television related news, celebrity interview, gossip, and film reviews.",uri:"https://rss.tvguide.com/breakingnews",ext:"https://www.tvguide.com"},
 {cat:"Media",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
 {cat:"Media",des:"USA Today People celebrity news, gossip and interviews.",uri:"http://rssfeeds.usatoday.com/toppeople&x=1",ext:"https://www.usatoday.com/entertainment/celebrities"},
+{cat:"Media",des:"US Weekly a weekly celebrity and entertainment magazine based in New York City.",uri:"https://www.usmagazine.com/feed",ext:"https://www.usmagazine.com"},
 {cat:"Media",des:"Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",uri:"https://www.vanityfair.com/feed/rss",ext:"https://vanityfair.com"},
 {cat:"Media",des:"Video subreddit is the best place for Video content of all kinds.",uri:"https://reddit.com/r/videos/.rss",ext:"https://reddit.com/r/videos"},
 {cat:"Media",des:"Washington Times Show Business News and Entertainment News.",uri:"https://www.washingtontimes.com/rss/headlines/culture/entertainment",ext:"https://washingtontimes.com/culture/entertainment"},
