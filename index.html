@@ -518,7 +518,8 @@ function get(n){
 											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
-											     if (img = img.match(/https:\/\/i\.redd\.it\/.+?(png|jpg)|https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
+											     if (img = img.match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
+											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
 										       }
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
