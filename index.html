@@ -448,7 +448,7 @@ function app(n){
 function air(n){
 
 	rev(menu.reverse())
-	$('.output').prepend("<div class='air'></div>")
+	$('.output').prepend("<br><div class='air'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<hr class='br'><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
