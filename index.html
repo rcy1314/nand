@@ -83,6 +83,7 @@
 	cursor: pointer;
 	height: 32px;
 	width: 32px;
+	top: 75px;
     }
     #inv {
 	-moz-box-shadow: 1p 1px 5px #ccc;
@@ -286,7 +287,7 @@ $('.fav').on('touchstart click', function(e){
 	air(sel)
 	pop(sel)
 	scr('.pop:last')
-
+	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
     e.stopPropagation()
 
@@ -356,8 +357,9 @@ function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
-	if (n < ost - 5 && evt == false && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (n > ost + 5 && job == false && evt == false && $('.output').scrollTop() != $('.air').outerHeight()){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+
+	if (n < ost - 5 && evt == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	else if (n > ost + 5 && job == false && $('.output').scrollTop() != $('.air').outerHeight()){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
     ost = n
 
