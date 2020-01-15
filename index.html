@@ -345,12 +345,15 @@ function abr(n, e) {
 	}
 
     }
-
     return n
 
 }
 
-function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
+function scr(n){
+
+	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
+
+}
 
 function pin(n){
 
@@ -429,6 +432,7 @@ function app(n){
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.gif, .agent').attr('src','favicon/favico.png')
+		$('.img').css('filter','brightness(50%)')
 
 	}
 
@@ -439,6 +443,7 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
+		$('.img').css('filter','brightness(100%)')
 
 	}
 	
