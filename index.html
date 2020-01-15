@@ -47,13 +47,13 @@
 
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .category:hover { color: #ccc !important }
-
     .set:hover, .pub:hover { text-decoration: underline }
 
-    .img { padding-bottom: 1.5em }
+    .category:hover { color: #ccc !important }
 
-    .pop { padding-top: 1em }
+    .pop, .air { padding-top: 1em }
+
+    .img { padding-bottom: 1.5em }
 
     hr { opacity: .2 }
 
@@ -127,7 +127,7 @@
     .set {
 	font-size: 10px;
 	cursor: pointer;
-	padding: 2.5em;
+	padding: 3.5em;
     }
     .end {
 	padding-right: 1.5em;
@@ -360,10 +360,10 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	if (job == true){ $('.fav').css({'transition':'.7s','top':'2em'}); $('.attach').css({'transition':'1s','top':'0em'}) }
 
-	if (n < ost - 5){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (n > ost + 5 && job == false && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'.7s','top':'2em'}); $('.attach').css({'transition':'1s','top':'0em'}) }
+	else if (n > ost + 5 && job == false && evt == false){ $('.fav').css({'transition':'.7s','top':'75px'}); $('.attach').css({'transition':'1s','top':'-3em'}) }
 
     ost = n
 
@@ -454,7 +454,7 @@ function app(n){
 function air(n){
 
 	rev(menu.reverse())
-	$('.output').prepend("<div class='air' style='padding-top:1.5em'></div>")
+	$('.output').prepend("<div class='air'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
@@ -468,7 +468,7 @@ function pop(n){
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
-	$('.output').append("<div class='pop'><br></div>")
+	$('.output').append("<div class='pop'></div>")
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
 	his = 0
 	app()
