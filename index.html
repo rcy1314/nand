@@ -456,7 +456,7 @@ function air(n){
 function pop(n){
 
 	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
-	if ($('.pop, .air').length > 2){ $('.pop, .air:last, .get').remove() }
+	if ($('.pop, .air').length > 1){ $('.pop, .air:last, .get').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
