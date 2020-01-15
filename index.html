@@ -53,6 +53,8 @@
 
     .img { padding-bottom: 1.5em }
 
+    .pop { padding-top: .5em }
+
     hr { opacity: .2 }
 
     html, body, .container, .output {
@@ -234,6 +236,7 @@ var op = 0
 var request
 var ost = 0
 var his = 0
+var att = false
 var evt = false
 var job = false
 var sel = 'Social'
@@ -250,6 +253,7 @@ pop(sel)
 air(sel)
 scr('.pop:last')
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
+setTimeout(function(){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }, 250)
 
 $('.random').on('touchstart click', function(e) {
 
@@ -270,6 +274,7 @@ $('.opposite').on('touchstart click', function(e) {
 $('.category').on('touchstart click', function(e){
 
 	his = 0
+	att = true
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#555')
@@ -277,7 +282,7 @@ $('.category').on('touchstart click', function(e){
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
 	scr('.pop:last')
-
+	setTimeout(function(){ att = false }, 250)
     e.preventDefault()
 
 })
@@ -352,7 +357,7 @@ function pin(n){
 	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
 
 	if (n < ost - 5 && evt == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (n > ost + 5 && job == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+	else if (n > ost + 5 && job == false && att == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
     ost = n
 
@@ -452,7 +457,7 @@ function air(n){
 
 function pop(n){
 
-	if (job == true){ request.abort(); job = false }
+	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
 	if ($('.pop, .air').length > 2){ $('.pop, .air:last, .get').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
@@ -480,7 +485,7 @@ function res(i, n) {
 }
 
 function get(n){
-	if (job == true){ request.abort(); job = false }
+	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
 	his = n
 	job = true
 	$('.pop, .air, .arm, .get').remove()
