@@ -142,7 +142,8 @@
 	width: 100%;
     }
     .ago {
-	margin-top: -2px;
+	margin-bottom: 2px;
+	margin-top: -3px;
 	font-size: 10px;
 	color: #888;
     }
@@ -349,11 +350,7 @@ function abr(n, e) {
 
 }
 
-function scr(n){
-
-	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
-
-}
+function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
 
 function pin(n){
 
@@ -476,8 +473,10 @@ function res(i, n) {
 
 	var e = new Image()
 	e.onload = function() {
+
 		if (e.width > 320) $('#'+i).width('100%')
 		$('#'+i).css('visibility','visible')
+
 	}
 
     e.src = n
@@ -537,6 +536,7 @@ function get(n){
 
 					if (i >= quit){ app(op) }
 				})
+
 			air(sel)
 		})
 }
