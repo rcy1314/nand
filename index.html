@@ -295,11 +295,7 @@ $('.fav').on('touchstart click', function(e){
 
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
-    if (e.type == 'touchstart' || e.type == 'click'){
-	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
-	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 200)
-    }
-    else if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
+    if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
 })
@@ -343,17 +339,12 @@ function abr(n, e) {
 		}
 		n += a[i]
 	}
-
     }
     return n
 
 }
 
-function scr(n){
-
-	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
-
-}
+function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
 
 function pin(n){
 
@@ -541,7 +532,6 @@ function get(n){
 
 					if (i >= quit){ app(op) }
 				})
-
 			air(sel)
 		})
 }
