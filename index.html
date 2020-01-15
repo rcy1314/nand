@@ -449,7 +449,7 @@ function app(n){
 function air(n){
 
 	rev(menu.reverse())
-	$('.output').prepend("<br><div class='air'></div>")
+	$('.output').prepend("<div class='air' style='padding-top:1.5em'></div>")
 	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<hr class='br'><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
 	app()
@@ -531,7 +531,7 @@ function get(n){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
 																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
 												}
-					if (!img || menu[n].des.match(/Slashdot/)) img = "<br><img class='agent' src='favicon/" + gif + "'>"
+					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 					
 					var ext = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
