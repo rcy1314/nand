@@ -242,7 +242,6 @@ var op = 0
 var request
 var ost = 0
 var his = 0
-var att = false
 var evt = false
 var job = false
 var sel = 'Social'
@@ -280,7 +279,7 @@ $('.opposite').on('touchstart click', function(e) {
 $('.category').on('touchstart click', function(e){
 
 	his = 0
-	att = true
+	evt = true
 	$('.pop, .air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#555')
@@ -288,7 +287,7 @@ $('.category').on('touchstart click', function(e){
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
 	scr('.pop:last')
-	setTimeout(function(){ att = false }, 250)
+	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
 
 })
@@ -360,10 +359,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
 
-	if (n < ost - 5 && evt == false){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (n > ost + 5 && job == false && att == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	else if (n > ost + 5 && job == false && evt == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
     ost = n
 
@@ -493,12 +491,11 @@ function res(i, n) {
 
 function get(n){
 	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
-	var k
 	his = n
 	job = true
 	var pub = []
 	$('.pop, .air, .arm, .get').remove()
-	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
+	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
@@ -550,7 +547,7 @@ function get(n){
 
 				pub.sort(function(a, b){ return b.top - a.top })
 
-				for (k = 0; k <= quit; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
+				for (var k = 0; k <= quit - 1; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
 
 			air(sel)
 		})
