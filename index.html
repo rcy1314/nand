@@ -259,10 +259,7 @@ $('.random').on('touchstart click', function(e) {
 
 $('.opposite').on('touchstart click', function(e) {
 
-	evt = true
 	app('op')
-	pin(ost)
-	setTimeout(function(){ evt = false }, 250)
 
     e.preventDefault()
 
@@ -358,7 +355,7 @@ function scr(n){
 function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
-	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
+	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
 	if (n < ost - 5 && evt == false && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (n > ost + 5 && job == false && evt == false && $('.output').scrollTop() != $('.air').outerHeight()){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
