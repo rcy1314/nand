@@ -53,7 +53,7 @@
 
     .img { padding-bottom: 1.5em }
 
-    .pop { padding-top: .5em }
+    .pop { padding-top: 1em }
 
     hr { opacity: .2 }
 
@@ -84,8 +84,9 @@
 	position: relative;
 	cursor: pointer;
 	height: 32px;
+	margin: 2em;
 	width: 32px;
-	top: 75px;
+	top: 2em;
     }
     #inv {
 	-moz-box-shadow: 1p 1px 5px #ccc;
@@ -139,16 +140,23 @@
     .pub {
 	text-transform: capitalize;
 	letter-spacing: 1px;
+	margin-bottom: 3px;
 	font-family: Arial;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 16px;
 	width: 100%;
     }
     .ago {
-	margin-bottom: 2px;
-	margin-top: -3px;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	width: fit-content;
+	border-radius: 5px;
+	margin-left: -5px;
+	padding-left: 5px;
+	margin-right: 5px;
+	margin-top: -5px;
 	font-size: 10px;
-	color: #888;
+	color: #555;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -253,7 +261,7 @@ pop(sel)
 air(sel)
 scr('.pop:last')
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
-setTimeout(function(){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }, 250)
+setTimeout(function(){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }, 250)
 
 $('.random').on('touchstart click', function(e) {
 
@@ -353,10 +361,10 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	if (job == true){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
 
-	if (n < ost - 5 && evt == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
+	if (n < ost - 5 && evt == false){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (n > ost + 5 && job == false && att == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
     ost = n
@@ -390,7 +398,7 @@ function rev(Object) {
 
 function utc(n){
 
-	var opt = { weekday : 'short', day : '2-digit', month : 'short', year : 'numeric', hour : 'numeric', minute : 'numeric' , second : '2-digit', hour12 : true }
+	var opt = { weekday : 'long', day : '2-digit', month : 'short', hour : 'numeric', minute : 'numeric' , second : '2-digit', hour12 : true }
 	var dmz = []
 	dmz.push(ago(n))
 	var utc = new Date(n)
@@ -423,7 +431,7 @@ function app(n){
 
 	if (op == 1){
 
-		$('html, .container, .output').css({'background-color':'#000','color':'#EEE'})
+		$('html, .container, .output, .ago').css({'background-color':'#000','color':'#EEE'})
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
@@ -436,6 +444,7 @@ function app(n){
 		$('.container, .output').css({'background-color': '#fff','color':'#333'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
+		$('.ago').css({'background-color':'#eee','color':'#888'})
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
@@ -486,7 +495,7 @@ function res(i, n) {
 
 function get(n){
 	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
-	var i
+	var k
 	his = n
 	job = true
 	var pub = []
@@ -499,7 +508,7 @@ function get(n){
 		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<hr><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
+			$('.get').append("<hr><br><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -535,17 +544,15 @@ function get(n){
 					
 					var out = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
-					var top = { top : rec, pub : out }
+					var top = { e: i, top : rec, pub : out }
 
 					pub.push(top)
 
 				})
 
-				if ($('#'+i).length) res(i, $('#'+i).attr('src'))
-
 				pub.sort(function(a, b){ return b.top - a.top })
 
-			for (i = 0; i <= quit; i++){ $('.get').append(pub[i].pub) }
+				for (k = 0; k <= quit; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
 
 			air(sel)
 		})
