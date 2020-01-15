@@ -205,6 +205,7 @@
 	to { -moz-transform:scale(1.5) }
     }
     .agent {
+	padding-top: 2em;
 	height: 120px;
 	width: 130px;
     }
@@ -303,6 +304,10 @@ $('.fav').on('touchstart click', function(e){
 
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
+    if (e.type == 'touchstart' || e.type == 'click'){
+	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 100)
+    }
     if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
 
@@ -531,7 +536,8 @@ function get(n){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
 																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
 												}
-					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
+					if (!img && i % 2) img = ''
+					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 					
 					var ext = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
@@ -542,14 +548,10 @@ function get(n){
 				})
 
 				pub.sort(function(a, b){ return b.top - a.top })
-
 				for (var k = 0; k <= quit - 1; k++){
-
 					$('.get').append(pub[k].pub)
 					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
-
 				}
-
 			air(sel)
 		})
 }
