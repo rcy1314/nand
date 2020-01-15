@@ -144,7 +144,6 @@
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 16px;
-	width: 100%;
     }
     .ago {
 	padding-bottom: 2px;
@@ -156,7 +155,6 @@
 	margin-right: 5px;
 	margin-top: -5px;
 	font-size: 10px;
-	color: #555;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -471,7 +469,7 @@ function pop(n){
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
-	$('.output').append("<div class='pop'></div>")
+	$('.output').append("<div class='pop'><br></div>")
 	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr class='br'><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
 	his = 0
 	app()
