@@ -244,9 +244,8 @@ if (location.href.match('\\?op=1')){
 
 else app(op)
 
-air(sel)
 pop(sel)
-scr('.pop:last')
+air(sel)
 
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 
@@ -537,6 +536,7 @@ function get(n){
 					if (i >= quit){ app(op); return false }
 				})
 			setTimeout(function(){ job = false }, 250)
+		pop(sel)
 		air(sel)
 		})
 }
