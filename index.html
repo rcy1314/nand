@@ -306,9 +306,11 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 $('.output').on('scroll touchmove focusout', function(e){
 
     if (e.type == 'scroll' || e.type == 'touchmove'){
+
 	pin($(this).scrollTop())
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
 	if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()) job = false
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
+
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
 
@@ -347,12 +349,17 @@ function abr(n, e) {
 
 }
 
-function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
+function scr(n){
+
+	$('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100)
+
+}
 
 function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (evt == true){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'})}
+
 	if (n < ost - 5 && job == false){ $('.fav').css({'transition':'.2s','top':'0px'}); $('.attach').css({'transition':'.5s','top':'0em'}) }
 	else if (n > ost + 5 && evt == false && job == false){ $('.fav').css({'transition':'.5s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-3em'}) }
 
@@ -463,6 +470,7 @@ function pop(n){
 	app()
 
 }
+
 
 function res(i, n) {
 
