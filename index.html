@@ -486,8 +486,10 @@ function res(i, n) {
 
 function get(n){
 	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
+	var i
 	his = n
 	job = true
+	var pub = []
 	$('.pop, .air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
@@ -503,12 +505,12 @@ function get(n){
 				$(data).find(chn).each(function(i){
 					if (chn == 'entry'){
 											     var ref = $(this).find('link').attr('href')
-											     var dst = utc($(this).find('updated').text())
+											     var dst = utc($(this).find('updated').text()); var rec = new Date($(this).find('updated').text()).getTime()
 					}
 					else {
 											     var ref = $(this).find('link').text()
 						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
-											else var dst = utc($(this).find('dc\\:date, date').text())
+											else var dst = utc($(this).find('dc\\:date, date').text()); var rec = new Date($(this).find('dc\\:date, date').text()).getTime()
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
 											     if (img = img.match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
@@ -530,15 +532,23 @@ function get(n){
 																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
 												}
 					if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
+					
+					var out = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
-					if (i < quit) $('.get').append( "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>")
+					var top = { top : rec, pub : out }
 
-					if ($('#'+i).length) res(i, $('#'+i).attr('src'))
+					pub.push(top)
 
-					if (i >= quit){ app(op) }
 				})
+				if ($('#'+i).length) res(i, $('#'+i).attr('src'))
+
+				pub.sort(function(a, b){ return b.top - a.top })
+
+			for (i = 0; i <= quit; i++){ $('.get').append(pub[i].pub) }
+
 			air(sel)
 		})
+		console.log(pub)
 }
 </script>
 </body>
