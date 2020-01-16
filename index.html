@@ -47,16 +47,6 @@
 
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .set:hover, .pub:hover { text-decoration: underline }
-
-    .category:hover { color: #ccc !important }
-
-    .pop, .air { padding-top: 1em }
-
-    .img { padding-bottom: 1.5em }
-
-    hr { opacity: .2 }
-
     html, body, .container, .output {
 	overflow: hidden;
 	height: 100%;
@@ -71,7 +61,6 @@
 	right: 50%;
 	top: 0;
     }
-
     .ico {
 	transform: translateX(-50%);
 	position: absolute;
@@ -88,10 +77,6 @@
 	width: 32px;
 	top: 2em;
     }
-    #inv {
-	-moz-box-shadow: 1p 1px 5px #ccc;
-	box-shadow: 1px 1px 5px #ccc;
-    }
     .attach {
 	justify-content: center;
 	position: absolute;
@@ -101,6 +86,7 @@
 	z-index: 1;
 	top: -3em;
     }
+    .category:hover { color: #ccc !important }
     .category {
 	display: inline-block;
 	text-align: center;
@@ -124,12 +110,15 @@
 	padding-left: 7%;
 	overflow: auto;
     }
-    .set {
+    .pop:hover, .air:hover, .pub:hover { text-decoration: underline }
+    #pop, #air { padding-top: 1em }
+    hr { opacity: .2 }
+    .pop, .air {
 	font-size: 10px;
 	cursor: pointer;
 	padding: 3.5em;
     }
-    .end {
+    #pub {
 	padding-right: 1.5em;
 	margin-bottom: 3em;
 	margin-right: auto;
@@ -145,6 +134,7 @@
 	font-weight: bold;
 	font-size: 16px;
     }
+    .img { padding-bottom: 1.5em }
     .ago {
 	padding-bottom: 2px;
 	margin-top: -5px;
@@ -254,7 +244,7 @@ else app(op)
 
 pop(sel)
 air(sel)
-scr('.pop:last')
+scr('#pop:last')
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 setTimeout(function(){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.5s','top':'0em'}) }, 250)
 
@@ -278,13 +268,13 @@ $('.category').on('touchstart click', function(e){
 
 	his = 0
 	evt = true
-	$('.pop, .air, .arm, .get').remove()
+	$('#pop, #air, .arm, .get').remove()
 	$('.category').css('border-bottom','none')
 	$('.category').css('color','#555')
 	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
-	scr('.pop:last')
+	scr('#pop:last')
 	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
 
@@ -295,7 +285,7 @@ $('.fav').on('touchstart click', function(e){
 	evt = true
 	air(sel)
 	pop(sel)
-	scr('.pop:last')
+	scr('#pop:last')
 	setTimeout(function(){ evt = false }, 250)
     e.preventDefault()
     e.stopPropagation()
@@ -305,8 +295,7 @@ $('.fav').on('touchstart click', function(e){
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
     if (e.type == 'touchstart' || e.type == 'click'){
-	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
-	setTimeout(function(){ 	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'}) }, 100)
+	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #888','box-shadow':'2px 2px 5px #888'})
     }
     if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
@@ -454,22 +443,22 @@ function app(n){
 function air(n){
 
 	rev(menu.reverse())
-	$('.output').prepend("<div class='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('.air').prepend("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
-	$('.output').scrollTop($('.output').scrollTop() + $('.air:first').outerHeight())
+	$('.output').prepend("<div id='air'></div>")
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<hr><div class='air' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
+	$('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
 	app()
 
 }
 
 function pop(n){
 
-	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
-	if ($('.pop, .air').length > 1){ $('.pop, .air:last, .get').remove() }
+	if (job == true && $('#pop, #air').length == 0){ request.abort(); job = false }
+	if ($('#pop, #air').length > 2){ $('#pop, #air:last, .get').remove() }
 	document.title = n + ' ack'
 	if (n != sel) his = 0
 	sel = n
-	$('.output').append("<div class='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('.pop').append("<hr><div class='set' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+	$('.output').append("<div id='pop'></div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<hr><div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
 	his = 0
 	app()
 
@@ -491,11 +480,11 @@ function res(i, n) {
 }
 
 function get(n){
-	if (job == true && $('.pop, .air').length == 0){ request.abort(); job = false }
+	if (job == true && $('#pop, #air').length == 0){ request.abort(); job = false }
 	his = n
 	job = true
 	var pub = []
-	$('.pop, .air, .arm, .get').remove()
+	$('#pop, #air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 10 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
@@ -504,7 +493,7 @@ function get(n){
 		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<hr><br><div class='set' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
+			$('.get').append("<hr><br><div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -540,7 +529,7 @@ function get(n){
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 					
-					var ext = "<div class='end' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
+					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
 					var top = { e: i, top : gen, pub : ext }
 
