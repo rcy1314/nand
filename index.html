@@ -534,7 +534,7 @@ function get(n){
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' src='" + img[1] + "' class='img'>"
 											     else if (menu[n].des.match(/AOL/)) img = 'https' + img.match(/placeholder="(\/\/.+)/)
-											     else if(img[1].match(/assets|feedburner|feedblitz/)) img = null
+											     else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
 											     }
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
