@@ -61,6 +61,10 @@
 	right: 50%;
 	top: 0;
     }
+    #inv {
+	-moz-box-shadow: 1p 1px 5px #ccc;
+	box-shadow: 1px 1px 5px #ccc;
+    }
     .ico {
 	transform: translateX(-50%);
 	position: absolute;
@@ -295,10 +299,10 @@ $('.fav').on('touchstart click', function(e){
 $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
     if (e.type == 'touchstart' || e.type == 'click'){
-	$('#inv').css({'-moz-box-shadow':'2px 2px 5px #888','box-shadow':'2px 2px 5px #888'})
+	$('#inv').css({'-moz-box-shadow':'1px 1px 5px #888','box-shadow':'1px 1px 5px #eee'})
     }
-    if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'2px 2px 5px #aaa','box-shadow':'2px 2px 5px #aaa'})
-    else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'2px 2px 5px #ccc','box-shadow':'2px 2px 5px #ccc'})
+    if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'})
+    else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'1px 1px 5px #ccc','box-shadow':'1px 1px 5px #ccc'})
 
 })
 
