@@ -523,9 +523,10 @@ function get(n){
 												 img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
 												       "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
 											      }
-											    else img = "<img src='"+img+"' class='img'><br>"
+											    else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
+										        else if (img = $(this).find('enclosure').attr('url')) img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
 										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')){
 												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
 												 else img = "<img id='" + i + "' src='" + img + "' class='img'>"
