@@ -526,8 +526,10 @@ function get(n){
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')) img = "<img id='" + i + "' src='" + img + "' class='img'>"
-
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')){
+												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
+												 img = "<img id='" + i + "' src='" + img + "' class='img'>"
+												}
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
