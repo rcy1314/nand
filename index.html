@@ -138,7 +138,10 @@
 	font-weight: bold;
 	font-size: 16px;
     }
-    .img { padding-bottom: 1.5em }
+    .img {
+	padding-bottom: 1.5em
+	display: none;
+    }
     .ago {
 	padding-bottom: 2px;
 	margin-top: -5px;
@@ -475,7 +478,7 @@ function res(i, n) {
 	e.onload = function() {
 
 		if (e.width > 320) $('#'+i).width('100%')
-		$('#'+i).css('visibility','visible')
+		$('#'+i).css('display','block')
 
 	}
 
@@ -523,12 +526,12 @@ function get(n){
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')) img = "<img id='" + i + "' src='" + img + "' class='img' style='visibility:hidden'>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')) img = "<img id='" + i + "' src='" + img + "' class='img'>"
 
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) if(img[1].match(/assets|feedburner|feedblitz/)) img = null
-																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img' style='visibility:hidden'>"
+																       else img = "<img id='" + i + "' src='" + img[1] + "' class='img'>"
 												}
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
