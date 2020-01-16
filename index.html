@@ -536,14 +536,13 @@ function get(n){
 												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
 											}
 										        else if (img = $(this).find('content\\:encoded').text()){
-												 if (menu[n].des.match(/Jared/)) img = img.match(/src=['"](.*?)['"]/)[1]
-												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
+												 if (menu[n].des.match(/Jared/)){ img = img.match(/src=['"](.*?)['"]/); img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>" }
+												 if (menu[n].des.match(/OANN/)){ img = img.match(/src=['"](.*?)['"]/); img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>" }
 											}
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
-											     if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-											     else if (menu[n].des.match(/AOL/)) img = "<img id='" + i + "' style='display:none' src='" + "https" + img.match(/placeholder="(\/\/.+)/) + " class='img'>"
-											     else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
+												if (menu[n].des.match(/AOL/)) img = "<img id='" + i + "' style='display:none' src='" + "https" + img.match(/placeholder="(\/\/.+)/) + " class='img'>"
+												if(img && img.match(/assets|feedburner|feedblitz/)) img = null
 										        }
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
