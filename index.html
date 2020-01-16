@@ -140,7 +140,6 @@
     }
     .img {
 	padding-bottom: 1.5em
-	display: none;
     }
     .ago {
 	padding-bottom: 2px;
@@ -514,8 +513,8 @@ function get(n){
 											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text()){
-											     if (img = img.match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
-											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' src='" + img + "' class='img'>"
+											     if (img = img.match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 										       }
 											/* Standard thumbnails */
 											else if (img = $(this).find('link').attr('href')){
@@ -526,15 +525,18 @@ function get(n){
 											    else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
 										        }
 											/*  Media Thumbnails */
-										        else if (img = $(this).find('enclosure').attr('url')) img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')){
+										        else if (img = $(this).find('enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='"+img+"' class='img'><br>"
+										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')){
+												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+												}
+										        else if (img = $(this).find('media\\:content, content').attr('url')){
 												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
-												 else img = "<img id='" + i + "' src='" + img + "' class='img'>"
+												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
 												}
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
-											     if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' src='" + img[1] + "' class='img'>"
-											     else if (menu[n].des.match(/AOL/)) img = 'https' + img.match(/placeholder="(\/\/.+)/)
+											     if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
+											     else if (menu[n].des.match(/AOL/)) img = "<img id='" + i + "' style='display:none' src='" + "https" + img.match(/placeholder="(\/\/.+)/) + " class='img'>"
 											     else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
 											     }
 					if (!img && i % 2) img = ''
