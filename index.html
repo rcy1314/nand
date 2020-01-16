@@ -525,10 +525,13 @@ function get(n){
 											      }
 											    else img = "<img src='"+img+"' class='img'><br>"
 										        }
+										        else if (img = $(this).find('content\\:encoded').text()){
+											         if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' src='" + img[1] + "' class='img'>"
+												}
 											/*  Media Thumbnails */
 										        else if (img = $(this).find('media\\:thumbnail, thumbnail, media\\:content, content').attr('url')){
 												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
-												 img = "<img id='" + i + "' src='" + img + "' class='img'>"
+												 else img = "<img id='" + i + "' src='" + img + "' class='img'>"
 												}
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
