@@ -522,7 +522,6 @@ var menu=[
 {cat:"Technology",des:"Wccftech has the Latest updates in the world of Tech, Mobile, PC Hardware, Gaming & Finance.",uri:"https://wccftech.com/feed",ext:"https://wccftech.com"},
 {cat:"Technology",des:"Windows Central News, Forums, Reviews, Help for Windows 10 and all things Microsoft.",uri:"https://www.windowscentral.com/rss",ext:"https://www.windowscentral.com"},
 {cat:"Technology",des:"WIRED is where tomorrow is realized. It is the essential source of information.",uri:"https://www.wired.com/feed/rss",ext:"https://wired.com"},
-{cat:"Technology",des:"Xenocell Gaming News, Reviews, and Info.",uri:"https://xenocell.com/feed",ext:"https://xenocell.com"},
 {cat:"Technology",des:"Yahoo is a web services provider headquartered in California, and owned by Verizon Media.",uri:"https://www.yahoo.com/tech/rss",ext:"https://finance.yahoo.com/tech"},
 {cat:"Technology",des:"ZDNet is a business technology news website published by CBS Interactive.",uri:"https://www.zdnet.com/news/rss.xml",ext:"https://zdnet.com"},
 {cat:"World",des:"ABC is an American broadcast television network that is property of Walt Disney.",uri:"https://abcnews.go.com/abcnews/internationalheadlines",ext:"https://abc.com"},
