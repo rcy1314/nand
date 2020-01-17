@@ -534,7 +534,7 @@ function get(n){
 				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 
-					if (!img && img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
+					if (!img || img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
 					if (!img && i % 2) img = ''
 					if (menu[n].des.match(/Slashdot|Time Magazine|Underground/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
