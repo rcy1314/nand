@@ -530,7 +530,7 @@ function get(n){
 												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 												}
 											else if (menu[n].des.match(/Jared/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>"
-											else if (menu[n].des.match(/OANN/)){ img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>" }
+											else if (menu[n].des.match(/OANN.+Entertainment/)){ img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>" }
 										        else if (img = $(this).find('media\\:content, content').attr('url')){
 												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
 												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
