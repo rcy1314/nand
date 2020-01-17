@@ -540,8 +540,8 @@ function get(n){
 						if (menu[n].des.match(/NBC/)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 						else img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 					}
-				        else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-				        else if (img = $(this).find('description').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
+				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
+				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 
 					if (!img || img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
 					if (!img && i % 2) img = ''
