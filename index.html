@@ -542,7 +542,7 @@ function get(n){
 					else if (!img || img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
 
 					if (!img && i % 2) img = ''
-					else if (!img || menu[n].des.match(/Slashdot|Time Magazine/)) img = "<img class='agent' src='favicon/" + gif + "'>"
+					else if (!img || menu[n].des.match(/Slashdot|Time Magazine|Underground/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
 						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
