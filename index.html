@@ -515,6 +515,7 @@ function get(n){
 					}
 					     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 					else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+					else if (img = $(this).find('image').find('link').text()) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 					else if (img = $(this).find('link').attr('href')){
 		    if (img.match(/youtube/)){
 						 img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
