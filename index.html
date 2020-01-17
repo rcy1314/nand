@@ -538,6 +538,9 @@ function get(n){
 												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
 												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
 												}
+										        else if (img = $(this).find('content\\:encoded').text()){
+												 if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
+												}
 											/* Description thumbnails */
 										        else if (img = $(this).find('description').text()){
 											     if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
