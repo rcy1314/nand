@@ -377,6 +377,7 @@ var menu=[
 {cat:"Sport",des:"MLB subreddit covers Major League Baseball Headlines and News.",uri:"https://reddit.com/r/mlb/.rss",ext:"https://reddit.com/r/mlb"},
 {cat:"Sport",des:"MLB is the official site of Major League Baseball.",uri:"https://www.mlb.com/feeds/news/rss.xml",ext:"https://mlb.com"},
 {cat:"Sport",des:"MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.",uri:"https://mmajunkie.com/news/feed",ext:"https://mmajunkie.com"},
+{cat:"Sport",des:"MMAtion Global events, results, rankings and more.",uri:"http://en.mmation.com/feed",ext:"http://en.mmation.com"},
 {cat:"Sport",des:"MMA News offers coverage of the MMA world with original content.",uri:"https://www.mmanews.com/feed",ext:"https://mmanews.com"},
 {cat:"Sport",des:"MMA subreddit for all things Mixed Martial Arts.",uri:"https://reddit.com/r/MMA/.rss",ext:"https://reddit.com/r/MMA"},
 {cat:"Sport",des:"NBC Sports is responsible for the televising of many Sports Events.",uri:"https://sports.nbcsports.com/feed",ext:"https://nbcsports.com"},
