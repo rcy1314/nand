@@ -426,7 +426,7 @@ function app(n){
 
 	if (op == 1){
 
-		$('html, .container, .output').css({'background-color':'#000','color':'#aaa'})
+		$('html, .container, .output').css({'background-color':'#000','color':'#ccc'})
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
@@ -526,30 +526,22 @@ function get(n){
 					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
 					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-				        else if (img = $(this).find('media\\:content, content, enclosure').attr('url')){
-						if (menu[n].des.match(/Yahoo/)) img = "<img id='" + i + "' style='display:none' src='" + img.match(/-\/(https:\/\/.+)/)[1] + "' class='img'>"
-						else img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-					}
+				        else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
 				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-
-					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|png/)) img = ''
+					console.log(img)
+					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|media|png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
 						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
 					var top = { e: i, top : gen, pub : ext }
-
 					pub.push(top)
 
 				})
-
 				pub.sort(function(a, b){ return b.top - a.top })
-				for (var k = 0; k <= quit - 1; k++){
-					$('.get').append(pub[k].pub)
-					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
-				}
+				for (var k = 0; k <= quit - 1; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
 			air(sel)
 		})
 }
