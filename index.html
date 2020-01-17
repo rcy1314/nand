@@ -512,10 +512,7 @@ function get(n){
 						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
 											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
 					}						/* Reddit thumbnails */
-										             if (img = $(data).find('entry').find('content').text()){ 
-											     if (img = img.match(/src=['"](.+?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-											     }
-											else if (img = $(this).find('content').text()){
+											     if (img = $(this).find('content').text()){
 											     if (img = img.match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 										       }
