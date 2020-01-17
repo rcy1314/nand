@@ -514,7 +514,7 @@ function get(n){
 					}						/* Reddit thumbnails */
 											     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-											/* Standard thumbnails */
+											/* Youtube */
 											else if (img = $(this).find('link').attr('href')){
 								     if (img.match(/youtube/)){
 												 img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
@@ -522,21 +522,17 @@ function get(n){
 											      }
 											    else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
 										        }
-											/*  Media Thumbnails */
-										        else if (img = $(this).find('enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='"+img+"' class='img'><br>"
 										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 											else if (menu[n].des.match(/Jared/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>"
 											else if (menu[n].des.match(/OANN.+Entertainment/)){ img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>" }
 										        else if (img = $(this).find('media\\:content, content').attr('url')){
-												 if (menu[n].des.match(/Yahoo/)) img = img.match(/-\/(https:\/\/.+)/)[1]
-												 img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img' style='display:none'>"
+												if (menu[n].des.match(/Yahoo/)) img = "<img id='" + i + "' style='display:none' src='" + img.match(/-\/(https:\/\/.+)/)[1] + "' class='img'>"
+												if (menu[n].des.match(/CNN/)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 												}
-										        else if (img = $(this).find('content\\:encoded').text()){
-												 if (img = img.match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-												}
-											/* Description thumbnails */
+										        else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 										        else if (img = $(this).find('description').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 											else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
+											
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 					
