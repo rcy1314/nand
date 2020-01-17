@@ -24,8 +24,6 @@
 	top: -40%;
     }
 
-    .ico { bottom: -1.2em !important }
-
     ::-webkit-scrollbar { width: 5px }
 
     .invert::-webkit-scrollbar-thumb {background-color: #ddd }
@@ -355,11 +353,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}) }
-
-	if (n < ost - 5){ $('.fav').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}) }
-	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'opacity .3s linear, visibility .3s linear','opacity':'0','visibility':'hidden'})
-								$('.attach').css({'transition':'opacity .3s linear, visibility .3s linear','opacity':'0','visibility':'hidden'}) }
+	if (job == true){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
+	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.3s','bottom':'-4.5em'}); $('.attach').css({'transition':'.3s','top':'-2.9em'}) }
 
     ost = n
 
@@ -523,12 +519,13 @@ function get(n){
 					     }
 					     else img = "<img id='" + i + "' src='" + img + "' class='img'><br>"
 				        }
-					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
+					else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
+					else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-				        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-				        else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
-				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
+					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
+					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
+					else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+
 					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|media|png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
