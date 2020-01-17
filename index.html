@@ -538,7 +538,7 @@ function get(n){
 					}
 				        else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('description').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-					else if (!img || img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
+					if (!img || img.match(/assets|feedburner|feedblitz|gravatar/)) img = null
 
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot|Time Magazine|Underground/)) img = "<img class='agent' src='favicon/" + gif + "'>"
