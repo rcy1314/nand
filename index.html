@@ -511,7 +511,7 @@ function get(n){
 					}
 					else if (chn = 'item'){
 											     var ref = $(this).find('link').text()
-					       if ($(this).find('pubDate').text().length>0){ var dst = utc($(this).find('pubDate').text()); var gen = new Date($(this).find('pubDate').text()).getTime() }
+					     if ($(this).find('pubDate').text().length > 0){ var dst = utc($(this).find('pubDate').text()); var gen = new Date($(this).find('pubDate').text()).getTime() }
 											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
 					}
 					     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
@@ -532,8 +532,8 @@ function get(n){
 					}
 				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-					console.log(img)
-					if (!img || img.match(/twitter/) || !img.match(/embed|gif|jpg|jpeg|png/)) img = ''
+
+					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
