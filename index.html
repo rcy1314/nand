@@ -507,36 +507,36 @@ function get(n){
 											     var ref = $(this).find('link').attr('href')
 											     var dst = utc($(this).find('updated').text()); var gen = new Date($(this).find('updated').text()).getTime()
 					}
-					else {
+					else if (chn = 'item'){
 											     var ref = $(this).find('link').text()
-						if ($(this).find('pubDate').text().length>0) var dst = utc($(this).find('pubDate').text())
+					       if ($(this).find('pubDate').text().length>0){ var dst = utc($(this).find('pubDate').text()); var gen = new Date($(this).find('pubDate').text()).getTime() }
 											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
-					}						/* Reddit thumbnails */
-											     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-											else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-											/* Youtube */
-											else if (img = $(this).find('link').attr('href')){
-								     if (img.match(/youtube/)){
-												 img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
-												       "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
-											      }
-											    else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
-										        }
-										        else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-											else if (menu[n].des.match(/Jared/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>"
-											else if (menu[n].des.match(/OANN.+Entertainment/)){ img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>" }
-										        else if (img = $(this).find('media\\:content, content').attr('url')){
-												if (menu[n].des.match(/Yahoo/)) img = "<img id='" + i + "' style='display:none' src='" + img.match(/-\/(https:\/\/.+)/)[1] + "' class='img'>"
-												if (menu[n].des.match(/CNN/)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-												}
-										        else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-										        else if (img = $(this).find('description').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-											else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
-											
+					}
+					     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+					else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+					else if (img = $(this).find('link').attr('href')){
+		    if (img.match(/youtube/)){
+						 img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
+						       "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
+					      }
+					else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
+				        }
+				        else if (img = $(this).find('media\\:thumbnail, thumbnail, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+					else if (menu[n].des.match(/Jared/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>"
+					else if (menu[n].des.match(/OANN.+Entertainment/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)[1] + "' class='img' style='display:none'>"
+				        else if (img = $(this).find('media\\:content, content').attr('url')){
+						if (menu[n].des.match(/Yahoo/)) img = "<img id='" + i + "' style='display:none' src='" + img.match(/-\/(https:\/\/.+)/)[1] + "' class='img'>"
+						if (menu[n].des.match(/CNN/)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
+					}
+				        else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
+				        else if (img = $(this).find('description').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
+					else if(img && img.match(/assets|feedburner|feedblitz/)) img = null
+
 					if (!img && i % 2) img = ''
 					else if (!img || menu[n].des.match(/Slashdot/)) img = "<img class='agent' src='favicon/" + gif + "'>"
 					
-					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
+					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
+						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
 					var top = { e: i, top : gen, pub : ext }
 
