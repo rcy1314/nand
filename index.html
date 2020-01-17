@@ -302,7 +302,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
     if (e.type == 'touchstart' || e.type == 'click'){
 	$('#inv').css({'-moz-box-shadow':'1px 1px 5px #888','box-shadow':'1px 1px 5px #eee'})
-	setTimeout(function(){ $('#inv').css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'}) }, 200)
+	setTimeout(function(){ $('#inv').css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'}) }, 100)
     }
     if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'1px 1px 5px #ccc','box-shadow':'1px 1px 5px #ccc'})
