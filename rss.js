@@ -449,7 +449,6 @@ var menu=[
 {cat:"Technology",des:"BetaNews is a leading source of Technology News and Analysis.",uri:"http://feeds.betanews.com/bn",ext:"https://betanews.com"},
 {cat:"Technology",des:"BGR is a destination for News focused on the Consumer Electronics Market.",uri:"https://bgr.com/tech/feed",ext:"https://bgr.com/tech"},
 {cat:"Technology",des:"Bleeping Computer is a information security and technology news publication.",uri:"https://www.bleepingcomputer.com/feed/",ext:"https://www.bleepingcomputer.com"},
-{cat:"Technology",des:"Boston Technology including MIT, Auto, Social Media, and Business.",uri:"https://www.boston.com/tag/technology/feed",ext:"https://www.boston.com/tag/technology"},
 {cat:"Technology",des:"Business Insider is a Growing Business site with Financial, Media, and Tech.",uri:"https://www.businessinsider.com/rss",ext:"https://businessinsider.com"},
 {cat:"Technology",des:"CBS Technology on Social Media, Artificial Intelligence, Computers and more.",uri:"https://www.cbsnews.com/latest/rss/technology",ext:"https://cbsnews.com/technology"},
 {cat:"Technology",des:"CNBC is an American elevision News channel that is owned by NBC Universal.",uri:"https://www.cnbc.com/id/19854910/device/rss/rss.html",ext:"https://cnbc.com/technology"},
