@@ -497,7 +497,7 @@ function get(n){
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.arm').remove(); air(sel); pop(sel); job = false })
+		.fail(function(){ $('.arm').remove(); $('.get').append("<hr><br><div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
 			$('.arm').remove()
 			$('.get').append("<hr><br><div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
@@ -518,7 +518,7 @@ function get(n){
 					else if (img = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) img = "<img id='" + i + "' style='display:none' src='" + img[0] + "' class='img'>"
 					else if (img = $(this).find('link').attr('href')){
 					     if (img.match(/youtube/)){ img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
-									     "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
+									      "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
 					     }
 					     else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
 				        }
@@ -533,8 +533,9 @@ function get(n){
 				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 
 					if (menu[n].des.match(/Slashdot|Time.+Magazine|Underground|Verge/)){ if (i % 2){ img = "<img class='agent' src='favicon/" + gif + "'>" } else { img = null } }
-					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 					if (!img || img.match(/comments|footer/)){ if (i % 2){ img = "<img class='agent' src='favicon/" + gif + "'>" } else { img = '' } } 
+					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
+
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
 						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
