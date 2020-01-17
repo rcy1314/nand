@@ -534,7 +534,7 @@ function get(n){
 
 					if (menu[n].des.match(/Slashdot|Time.+Magazine|Underground|Verge/)){ if (i % 2){ img = "<img class='agent' src='favicon/" + gif + "'>" } else { img = null } }
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
-					if (img.match(/comments/)) img = ''
+					if (img.match(/comments/)){ if (i % 2){ img = "<img class='agent' src='favicon/" + gif + "'>" } else { img = '' } } 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
 						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
 
