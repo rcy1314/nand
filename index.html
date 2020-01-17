@@ -10,8 +10,6 @@
 <style>
 @media screen and (min-width: 960px) {
 
-    html { background-color: #fafafa }
-
     .wrapper {
 	transform: translate(50%,50%);
 	border: 1px solid #ddd;
@@ -19,7 +17,7 @@
 	border: none;
 	height: 90%;
 	bottom: 60%;
-	width: 48%;
+	width: 50%;
 	right: 50%;
 	top: -40%;
     }
@@ -355,7 +353,7 @@ function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
 	if (n < ost - 5){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
-	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.3s','bottom':'-4.5em'}); $('.attach').css({'transition':'.3s','top':'-2.9em'}) }
+	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.3s','bottom':'-4em'}); $('.attach').css({'transition':'.3s','top':'-2em'}) }
 
     ost = n
 
