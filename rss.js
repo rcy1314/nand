@@ -395,7 +395,6 @@ var menu=[
 {cat:"Sport",des:"The Score NCAAF News, Rumors, Headlines, and everything CFB.",uri:"https://feeds.thescore.com/ncaaf.rss",ext:"https://www.thescore.com/ncaaf/news"},
 {cat:"Sport",des:"The Score NFL is the Ultimate, Personalized Mobile Sports Experience.",uri:"https://feeds.thescore.com/nfl.rss",ext:"https://thescore.com/nfl/news"},
 {cat:"Sport",des:"The Score PGA tour news, and everything golf.",uri:"https://feeds.thescore.com/pga.rss",ext:"https://www.thescore.com/pga/news"},
-{cat:"Sport",des:"Underground is a MMA website that features Daily MMA News.",uri:"http://www.mixedmartialarts.com/news/feed",ext:"http://mixedmartialarts.com"},
 {cat:"Sport",des:"Tiebreaker Sports News Headlines from around the world.",uri:"https://www.tiebreaker.com/feed",ext:"https://www.tiebreaker.com"},
 {cat:"Sport",des:"UFC is an American Mixed Martial Arts promotion Company based in Las Vegas, Nevada.",uri:"https://www.ufc.com/rss/news",ext:"https://ufc.com"},
 {cat:"Sport",des:"USA Today Sports Top Stories from the world on sports.",uri:"http://rssfeeds.usatoday.com/usatodaycomsports-topstories&x=1",ext:"https://www.usatoday.com/sports"},
