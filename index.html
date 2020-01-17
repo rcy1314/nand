@@ -17,11 +17,14 @@
 	border: 1px solid #ddd;
 	position: fixed;
 	border: none;
-	height: 100%;
-	bottom: 50%;
-	width: 50%;
+	height: 90%;
+	bottom: 60%;
+	width: 40%;
 	right: 50%;
+	top: -40%;
     }
+
+    .ico { bottom: -1.2em !important }
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -79,7 +82,7 @@
 	height: 32px;
 	margin: 2em;
 	width: 32px;
-	top: 2em;
+	bottom: -2em;
     }
     .attach {
 	justify-content: center;
@@ -89,7 +92,7 @@
 	width: 100%;
 	z-index: 1;
 	right: 0px;
-	top: -3em;
+	top: 0em;
     }
     .category:hover { color: #ccc !important }
     .category {
@@ -100,13 +103,11 @@
 	font-size: 8px;
 	height: 3.6em;
 	width: 14%;
-	color: #555;
 	z-index: 2;
     }
     .output {
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
-	height: calc(100% + 1.95em);
 	outline: none !important;
 	-ms-overflow-style: none;
 	position: absolute;
@@ -114,6 +115,7 @@
 	padding-right: 7%;
 	padding-left: 7%;
 	overflow: auto;
+	height: 99%;
     }
     .pop:hover, .air:hover, .pub:hover { text-decoration: underline }
     #pop, #air { padding-top: 1em }
@@ -124,7 +126,7 @@
 	padding: 3.5em;
     }
     #pub {
-	padding-right: 1.5em;
+	margin-right: 1.5em;
 	margin-bottom: 3em;
 	margin-right: auto;
 	cursor: pointer;
@@ -163,7 +165,7 @@
 	top: 0;
     }
     .random, .opposite {
-	border-bottom: 1px solid #888;
+	border-bottom: 1px solid rgba(0,0,0,.2);
 	padding-top: 2em;
 	position: fixed;
 	height: 24px;
@@ -253,7 +255,6 @@ pop(sel)
 air(sel)
 scr('#pop:last')
 $('#'+sel).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
-setTimeout(function(){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.2s','top':'0em'}) }, 250)
 
 $('.random').on('touchstart click', function(e) {
 
@@ -276,9 +277,6 @@ $('.category').on('touchstart click', function(e){
 	his = 0
 	evt = true
 	$('#pop, #air, .arm, .get').remove()
-	$('.category').css('border-bottom','none')
-	$('.category').css('color','#555')
-	$(this).css({'border-bottom':'1px solid #ccc','color':'#aaa'})
 	air($(this).attr('id'))
 	pop($(this).attr('id'))
 	scr('#pop:last')
@@ -303,7 +301,7 @@ $('#inv').on('touchstart click mousemove mouseleave', function(e){
 
     if (e.type == 'touchstart' || e.type == 'click'){
 	$('#inv').css({'-moz-box-shadow':'1px 1px 5px #888','box-shadow':'1px 1px 5px #eee'})
-	setTimeout(function(){ $('#inv').css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'}) }, 100)
+	setTimeout(function(){ $('#inv').css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'}) }, 50)
     }
     if (e.type == 'mousemove') $(this).css({'-moz-box-shadow':'1px 1px 5px #aaa','box-shadow':'1px 1px 5px #aaa'})
     else if (e.type == 'mouseleave') $(this).css({'-moz-box-shadow':'1px 1px 5px #ccc','box-shadow':'1px 1px 5px #ccc'})
@@ -357,10 +355,11 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.2s','top':'0em'}) }
+	if (job == true){ $('.fav').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}) }
 
-	if (n < ost - 5){ $('.fav').css({'transition':'.2s','top':'2em'}); $('.attach').css({'transition':'.2s','top':'0em'}) }
-	else if (n > ost + 5 && job == false && evt == false){ $('.fav').css({'transition':'.2s','top':'75px'}); $('.attach').css({'transition':'.2s','top':'-2.9em'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'opacity .3s linear','opacity':'1','visibility':'visible'}) }
+	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'opacity .3s linear, visibility .3s linear','opacity':'0','visibility':'hidden'})
+								$('.attach').css({'transition':'opacity .3s linear, visibility .3s linear','opacity':'0','visibility':'hidden'}) }
 
     ost = n
 
@@ -425,27 +424,28 @@ function app(n){
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-
-		$('html, .container, .output').css({'background-color':'#000','color':'#ccc'})
+		$('html, .container, .output, .pop, .air, .pub').css({'background-color':'#000','color':'rgba(255,255,255,.8'})
+		$('.category').css({'border-bottom':'none','color':'rgba(255,255,255,.5'})
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.gif, .agent').attr('src','favicon/favico.png')
 		$('.img').css('filter','brightness(50%)')
-
 	}
 
 	else if (op == 0){
-		$('.container, .output').css({'background-color': '#fff','color':'#333'})
+		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.6)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
+		$('.category').css({'border-bottom':'none','color':'rgba(0,0,0,.5'})
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.3)')
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
-
 	}
-	
+
 }
 
 function air(n){
@@ -521,7 +521,7 @@ function get(n){
 					     if (img.match(/youtube/)){ img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
 									      "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "' allowfullscreen='allowfullscreen'></iframe></div>"
 					     }
-					     else img = "<img id='" + i + "' src='"+img+"' class='img'><br>"
+					     else img = "<img id='" + i + "' src='" + img + "' class='img'><br>"
 				        }
 					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
 					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
@@ -529,7 +529,6 @@ function get(n){
 				        else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
 				        else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 				        else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-					console.log(img)
 					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|media|png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
