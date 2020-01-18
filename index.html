@@ -111,7 +111,7 @@
 	padding-right: 7%;
 	padding-left: 7%;
 	overflow: auto;
-	height: 99%;
+	height: 100%;
     }
     .pop:hover, .air:hover, .pub:hover { text-decoration: underline }
     #pop, #air { padding-top: 1em }
@@ -418,7 +418,7 @@ function app(n){
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output, .pop, .air, .pub').css({'background-color':'#000','color':'rgba(255,255,255,.8'})
+		$('html, .container, .output, .pop, .air, .pub').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
 		$('.category').css({'border-bottom':'none','color':'rgba(255,255,255,.5'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
