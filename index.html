@@ -524,7 +524,7 @@ function get(n){
 					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
 
-					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|media|png/)) img = ''
+					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|\.gif|\.jpg|\.jpeg|media|\.png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
