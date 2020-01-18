@@ -139,7 +139,6 @@
     }
     .img {
 	padding-bottom: 1.5em
-	width: 100%;
     }
     .box {
 	background-color: #fafafa;
@@ -484,6 +483,7 @@ function res(i, n) {
 	e.onload = function() {
 
 		if (e.width > 320) $('#'+i).width('100%')
+		else $('#'+i).css('padding','1.5em')
 		$('#'+i).css('visibility','visible')
 
 	}
@@ -522,8 +522,7 @@ function get(n){
 					     if (src = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) src = String(src)
 					else if (src = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) src = String(src)
 					else if (src = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) src = String(src[0])
-					else if (src = $(this).find('link').attr('href')) if (src.match(/youtube/)) src = 'https://www.youtube.com/embed/' + String(src.split('=')[1])
-					    						  else src = String(src)
+					else if (src = $(this).find('link').attr('href')) if (src.match(/youtube/)){ src = 'https://www.youtube.com/embed/' + String(src.split('=')[1]) } else { src = String(src) }
 					else if (src = $(this).find('media\\:thumbnail, thumbnail').attr('url')) src = src
 					else if (src = $(this).find('media\\:content, content, enclosure').attr('url')) src = String(src.match(/(https:\/\/.+)/)[1].split(','))
 					else if (src = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
@@ -535,9 +534,10 @@ function get(n){
 
 					if (src.match(/youtube/)) img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					else if (src.match(/favicon/)) img = "<div class='ago'>" + dst[0] + "&ensp;" + dst[1] + "<div class='agentbox'><img id='" + i + "' style='visibility:hidden' src='" + src + "' class='img'></div></div>"
+					else if (src.match(/favicon/)) img = "<div class='ago'>" + dst[0] + "&ensp;" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "' class='img'></div>"
 
-					else img = "<div class='box'><div class='ago'>" + dst[0] + "</div><img id='" + i + "' style='visibility:hidden' src='" + src + "' class='img'><div class='ago'>" + dst[1] + "</div></div></div>"
+					else img = "<div class='box'><div class='ago'>" + dst[0] + "</div><img id='" + i + "' style='visibility:hidden;width:100%' src='" + src + "' class='img'>" +
+						   "<div class='ago' style='text-align:right'>" + dst[1] + "</div></div></div>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" + img + "</div>"
 					var top = { e: i, top : gen, pub : ext }
