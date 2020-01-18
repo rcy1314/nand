@@ -507,7 +507,7 @@ function get(n){
 					else if (chn = 'item'){
 											     var ref = $(this).find('link').text()
 					     if ($(this).find('pubDate').text().length > 0){ var dst = utc($(this).find('pubDate').text()); var gen = new Date($(this).find('pubDate').text()).getTime() }
-											else var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
+										      else { var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime() }
 					}
 					     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 					else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
