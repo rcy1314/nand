@@ -517,12 +517,12 @@ function get(n){
 					     }
 					     else img = "<img id='" + i + "' src='" + img + "' class='img'><br>"
 				        }
+					else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 					else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
 					else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
 					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
-					else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
 
 					if (!img || img.match(/twitter|undefined/) || !img.match(/embed|gif|jpg|jpeg|media|png/)) img = ''
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
