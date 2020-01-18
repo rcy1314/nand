@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" href="favicon/invert.png">
-    <script src="https://acktic.github.io/rss.js"></script>
+    <script src="rss.js"></script>
   </head>
 <style>
 @media screen and (min-width: 960px) {
@@ -76,9 +76,9 @@
 	position: relative;
 	cursor: pointer;
 	height: 32px;
+	bottom: -2em;
 	margin: 2em;
 	width: 32px;
-	bottom: -2em;
     }
     .attach {
 	justify-content: center;
@@ -125,7 +125,6 @@
 	margin-right: 1.5em;
 	margin-bottom: 3em;
 	margin-right: auto;
-	cursor: pointer;
 	display: table;
 	width: 100%;
     }
@@ -139,6 +138,7 @@
     }
     .img {
 	padding-bottom: 1.5em
+	cursor: pointer;
     }
     .box {
 	background-color: #fafafa;
@@ -155,6 +155,14 @@
 	padding-bottom: 1em;
 	margin-top: -5px;
 	font-size: 10px;
+    }
+    a {
+	padding-bottom: 1em;
+	text-align: right;
+	margin-top: -5px;
+	font-size: 10px;
+	color: #08BD94;
+	cursor: pointer;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -211,8 +219,8 @@
 	to { -moz-transform:scale(1.5) }
     }
     .agent, .agentbox {
-	height: 120px;
-	width: 130px;
+	height: 150px;
+	width: 160px;
     }
     .agent:hover {
 	-webkit-animation: grow 1.7s infinite ease;
@@ -435,6 +443,7 @@ function app(n){
 		$('.output').removeClass('invert').addClass('default')
 		$('.gif, .agent').attr('src','favicon/favico.png')
 		$('.img').css('filter','brightness(75%)')
+		$('a').css('color','#F7426B')
 	}
 
 	else if (op == 0){
@@ -448,6 +457,7 @@ function app(n){
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
 		$('.box').css({'background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
+		$('a').css('color','#08BD94')
 	}
 
 }
@@ -534,12 +544,13 @@ function get(n){
 
 					if (src.match(/youtube/)) img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					else if (src.match(/favicon/)) img = "<div class='ago'>" + dst[0] + "&ensp;" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "' class='img'></div>"
+					else if (src.match(/favicon/)) img = "<div class='agentbox'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "'></div></div>"
 
-					else img = "<div class='box'><div class='ago'>" + dst[0] + "</div><img id='" + i + "' style='visibility:hidden;width:100%' src='" + src + "' class='img'>" +
-						   "<div class='ago' style='text-align:right'>" + dst[1] + "</div></div></div>"
+					else img = "<div class='box'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+						   "<img id='" + i + "' style='visibility:hidden;width:75%' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
+						   "<div class='ago' style='text-align:right'>Courtesy <a class='dec' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
-					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" + img + "</div>"
+					var ext = "<div id='pub'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" + img + "</div>"
 					var top = { e: i, top : gen, pub : ext }
 					pub.push(top)
 				})
