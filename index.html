@@ -441,7 +441,7 @@ function app(n){
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
-		$('.gif, .agent').attr('src','favicon/favico.png')
+		$('.agent').attr('src','favicon/favico.png')
 		$('.img').css('filter','brightness(75%)')
 		$('a').css('color','#F7426B')
 	}
@@ -451,12 +451,12 @@ function app(n){
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.category, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.3)')
+		$('.box').css({'background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
-		$('.gif, .agent').attr('src','favicon/invert.png')
+		$('.agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
-		$('.box').css({'background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('a').css('color','#08BD94')
 	}
 
@@ -544,7 +544,7 @@ function get(n){
 
 					if (src.match(/youtube/)) img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					else if (src.match(/favicon/)) img = "<div class='agentbox'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "'></div></div>"
+					else if (src.match(/favicon/)) img = "<div class='agentbox'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "' class='agent'></div></div>"
 
 					else img = "<div class='box'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 						   "<img id='" + i + "' style='visibility:hidden;width:75%' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
