@@ -388,7 +388,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Vim subreddit For Vim enthusiasts and anyone interested in Vim.",uri:"https://reddit.com/r/vim/.rss",ext:"https://reddit.com/r/vim"},
 {id:"Reddit",cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/wallpaper"},
 {id:"Reddit",cat:"Social",des:"Wallpapers subreddit for Work-safe wallpapers from all over!",uri:"https://reddit.com/r/wallpapers/.rss",ext:"https://reddit.com/r/wallpapers"},
-{id:"Reddit",cat:"Social",des:"Wallpapers General including Desktops, Builds, Mobile, Mods, NO Requests.",uri:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4chan.org/wg"},
+{id:"4chan",cat:"Social",des:"Wallpapers General including Desktops, Builds, Mobile, Mods, NO Requests.",uri:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4chan.org/wg"},
 {id:"Reddit",cat:"Social",des:"Webdev subreddit web development both front-end and back-end.",uri:"https://reddit.com/r/webdev/.rss",ext:"https://reddit.com/r/webdev"},
 {id:"Reddit",cat:"Social",des:"Windows subreddit a personal computer operating system released by Microsoft.",uri:"https://reddit.com/r/windows/.rss",ext:"https://reddit.com/r/windows"},
 {id:"ABC",cat:"Sport",des:"ABC Sports the Latest Sports News, Articles and more.",uri:"https://abcnews.go.com/abcnews/sportsheadlines",ext:"https://abcnews.go.com/Sports"},
