@@ -413,7 +413,7 @@ var menu=[
 {cat:"Technology",des:"CBS Technology on Social Media, Artificial Intelligence, Computers and more.",uri:"https://www.cbsnews.com/latest/rss/technology",ext:"https://cbsnews.com/technology"},
 {cat:"Technology",des:"CNBC is an American elevision News channel that is owned by NBC Universal.",uri:"https://www.cnbc.com/id/19854910/device/rss/rss.html",ext:"https://cnbc.com/technology"},
 {cat:"Technology",des:"CNET is an American media website that publishes Reviews, News, Articles, and Videos on Technology.",uri:"https://www.cnet.com/rss/news",ext:"https://cnet.com"},
-{cat:"Technology",des:"CNN Tech latest technology headlines, gadget and smartphone trends, and insights.",uri:"http://rss.cnn.com/rss/cnn_tech.rss",ext:"https://www.cnn.com/business/tech"},
+{cat:"Technology",des:"CNN Business new about the world's top companies, finance, tech, and innovations.",uri:"http://rss.cnn.com/rss/cnn_business.rss",ext:"https://www.cnn.com/business/"},
 {cat:"Technology",des:"Computer Weekly stands out from the many Technology News Websites.",uri:"https://www.computerweekly.com/rss/RSS-Feed.xml",ext:"https://computerweekly.com"},
 {cat:"Technology",des:"Digg the best articles, videos, and original content that the web is talking about right now.",uri:"https://www.digg.com/rss/index.xml",ext:"https://www.digg.com"},
 {cat:"Technology",des:"Digital Trends is a Technology News, Lifestyle, and Information Website.",uri:"https://www.digitaltrends.com/feed",ext:"https://digitaltrends.com"},
