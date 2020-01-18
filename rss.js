@@ -297,6 +297,7 @@ var menu=[
 {cat:"Media",des:"Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",uri:"https://www.elle.com/rss/culture.xml",ext:"https://www.elle.com"},
 {cat:"Media",des:"Entertainment subreddit has News and Discussion of the Entertainment Industry.",uri:"https://reddit.com/r/entertainment/.rss",ext:"https://reddit.com/r/entertainment"},
 {cat:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",uri:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
+{cat:"Media",des:"FHM dating tips, style advice, viral news, life hacks, sports and entertainment.",uri:"http://fhm.com/feed",ext:"http://fhm.com"},
 {cat:"Media",des:"Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",uri:"https://globalnews.ca/entertainment/feed",ext:"https://globalnews.ca/entertainment"},
 {cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {cat:"Media",des:"Heavy Entertainment news including tv, streaming, events, and more.",uri:"https://heavy.com/entertainment/feed",ext:"https://heavy.com/entertainment"},
