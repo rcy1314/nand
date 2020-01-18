@@ -150,7 +150,6 @@
 
     }
     .ago {
-	background: transparent;
 	padding-bottom: 1em;
 	margin-top: -5px;
 	font-size: 10px;
@@ -426,9 +425,9 @@ function app(n){
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output, .pop, .air, .pub, .box, .ago').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
-		$('.category').css({'border-bottom':'none','color':'rgba(255,255,255,.5'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
+		$('html, .container, .output, .pop, .air, .pub, .box').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
+		$('.category, .ago').css({'border-bottom':'none','color':'rgba(255,255,255,.8'})
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.8)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
@@ -437,10 +436,10 @@ function app(n){
 	}
 
 	else if (op == 0){
-		$('.container, .output, .pop, .air, .pub, .ago').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
+		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
-		$('.category').css({'border-bottom':'none','color':'rgba(0,0,0,.5'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.2)')
+		$('.category, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.7)')
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
