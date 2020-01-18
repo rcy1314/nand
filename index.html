@@ -426,7 +426,7 @@ function app(n){
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output, .pop, .air, .pub').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
+		$('html, .container, .output, .pop, .air, .pub, .box, .ago').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
 		$('.category').css({'border-bottom':'none','color':'rgba(255,255,255,.5'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
@@ -446,6 +446,7 @@ function app(n){
 		$('.gif, .agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
+		$('.box, .ago').css({'background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 	}
 
 }
