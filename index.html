@@ -117,6 +117,7 @@
     #pop, #air { padding-top: 1em }
     hr { opacity: .2 }
     .pop, .air {
+	padding-top: 2em;
 	font-size: 10px;
 	cursor: pointer;
 	padding: 3.5em;
@@ -137,7 +138,7 @@
 	font-weight: bold;
 	font-size: 16px;
     }
-    .img {
+    .img, .pad {
 	padding-bottom: 1.5em
     }
     .ago {
@@ -309,8 +310,8 @@ $('.output').on('scroll touchmove focusout', function(e){
     if (e.type == 'scroll' || e.type == 'touchmove'){
 
 	pin($(this).scrollTop())
-	if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()){ job = false }
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1) if (job == false) pop(sel)
+	if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()) job = false
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 20) if (job == false) pop(sel)
 
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
@@ -429,7 +430,7 @@ function app(n){
 	}
 
 	else if (op == 0){
-		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.6)'})
+		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.category').css({'border-bottom':'none','color':'rgba(0,0,0,.5'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.2)')
@@ -524,7 +525,7 @@ function get(n){
 					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
 					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
 
-					if (!img || img.match(/comments|twitter|undefined/) || !img.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) img = ''
+					if (!img || img.match(/comments|twitter|undefined/) || !img.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) img = "<div class='pad'></div>"
 					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
