@@ -138,8 +138,18 @@
 	font-weight: bold;
 	font-size: 16px;
     }
-    .img, .pad {
+    .img  {
 	padding-bottom: 1.5em
+    }
+    .box {
+	background-color: #fafafa;
+	margin-left: -4%;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
+	height: 100%;
+	width: 100%
     }
     .ago {
 	padding-bottom: 2px;
@@ -509,24 +519,27 @@ function get(n){
 					     if ($(this).find('pubDate').text().length > 0){ var dst = utc($(this).find('pubDate').text()); var gen = new Date($(this).find('pubDate').text()).getTime() }
 										      else { var dst = utc($(this).find('dc\\:date, date').text()); var gen = new Date($(this).find('dc\\:date, date').text()).getTime() }
 					}
-					     if (img = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-					else if (img = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-					else if (img = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) img = "<img id='" + i + "' style='display:none' src='" + img[0] + "' class='img'>"
-					else if (img = $(this).find('link').attr('href')){
-					     if (img.match(/youtube/)){ img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
-									      "<div class='yt'><iframe src='https://www.youtube.com/embed/" + img.split('=')[1] + "'></iframe></div>"
-					     }
-					     else img = "<img id='" + i + "' src='" + img + "' class='img'><br>"
+					     if (src = $(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) src = String(src)
+					else if (src = $(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/g)) src = String(src)
+					else if (src = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) src = String(src[0])
+					else if (src = $(this).find('link').attr('href')){
+					     if (src.match(/youtube/)) src = 'https://www.youtube.com/embed/' + String(src.split('=')[1])
+					     else src = String(src)
 				        }
-					else if (img = $(this).find('media\\:thumbnail, thumbnail').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img + "' class='img'>"
-					else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) img = "<img id='" + i + "' style='display:none' src='" + img.match(/(https:\/\/.+)/)[1].split(',') + "' class='img'>"
-					else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img' style='display:none'>"
-					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) img = "<img id='" + i + "' style='display:none' src='" + img[1] + "' class='img'>"
-					else if (menu[n].des.match(/ESPN/)) img = "<img id='" + i + "' style='display:none' src='" + $(this).find('image').text() + "' class='img' style='display:none'>"
+					else if (src = $(this).find('media\\:thumbnail, thumbnail').attr('url')) src = src
+					else if (img = $(this).find('media\\:content, content, enclosure').attr('url')) src = String(src.match(/(https:\/\/.+)/)[1].split(','))
+					else if (img = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) src = String(img[1])
+					else if (img = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
+					else if (img = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String(src[1])
+					else if (menu[n].des.match(/ESPN/)) src = $(this).find('image').text()
+					console.log(src)
+					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = 'favicon/' + gif
+					if (src.match(/youtube/)){
+									img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
+									      "<div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					if (!img || img.match(/comments|twitter|undefined/) || !img.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) img = "<div class='pad'></div>"
-					if (!img && i % 2) img = "<img class='agent' src='favicon/" + gif + "'>"
+					}
+					else img = "<div class='box'><img id='" + i + "' style='display:none' src='" + src + "' class='img'><div class='ago'>" + dst[1] + "</div></div></div>"
 
 					var ext = "<div id='pub' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) +
 						  "</div><div class='ago'>" + dst[0] + " " + dst[1] + "</div>" + img + "</div>"
