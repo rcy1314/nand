@@ -119,7 +119,7 @@
     .pop, .air {
 	font-size: 10px;
 	cursor: pointer;
-	padding: 3.5em;
+	padding: 3em;
     }
     #pub {
 	margin-right: 1.5em;
@@ -439,7 +439,7 @@ function app(n){
 		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.category, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.7)')
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.3)')
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
 		$('.gif, .agent').attr('src','favicon/invert.png')
@@ -454,7 +454,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div id='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<hr><div class='air' onclick='get(" + i + ")'>" + menu[i].des + "</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<br><hr><div class='air' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
 	app()
 
@@ -468,7 +468,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div id='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<hr><div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<br><hr><div class='pop' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>")
 	his = 0
 	app()
 
