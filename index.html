@@ -141,8 +141,9 @@
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
-	margin-left: -.5%;
 	padding-top: 1em;
+	margin-left: 1%;
+	max-width: 89%;
 	display: table;
     }
     .ago {
@@ -170,10 +171,10 @@
     }
     iframe {
 	position: absolute;
+	width: 104.5%;
 	border: none;
 	height: 100%;
-	width: 106%;
-	left: -3%;
+	left: -2.4%;
 	top: 0;
     }
     .random, .opposite {
@@ -472,7 +473,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div id='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<div class='pop' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
 	his = 0
 	app()
 
@@ -538,7 +539,6 @@ function get(n){
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
 									"<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
 									"<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
-
 					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 						   "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
