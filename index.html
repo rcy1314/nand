@@ -129,6 +129,7 @@
 	width: 100%;
     }
     .pub {
+	background-color: transparent;
 	text-transform: capitalize;
 	letter-spacing: 1px;
 	margin-bottom: 3px;
@@ -143,7 +144,7 @@
     }
     .box {
 	background-color: #fafafa;
-	padding-bottom: 1em;
+	margin-bottom: 2em;
 	padding-right: 1em;
 	padding-left: 1em;
 	padding-top: 1em;
@@ -220,7 +221,10 @@
 	from { -moz-transform:scale(1) }
 	to { -moz-transform:scale(1.5) }
     }
-    .agent, .agentbox {
+    .agentbox {
+	width: 100%;
+    }
+    .agent {
 	height: 150px;
 	width: 160px;
     }
@@ -433,8 +437,8 @@ function app(n){
 	if (n == 'op'){ op = op != true } else if (n == 1 || n == 0) op = n
 
 	if (op == 1){
-		$('html, .container, .output, .pop, .air, .pub, .box').css({'background-color':'#000','color':'rgba(255,255,255,.8)'})
-		$('.category, .ago').css({'border-bottom':'none','color':'rgba(255,255,255,.8'})
+		$('html, .container, .output, .pop, .air, .box').css({'border':'none','background-color':'#000','color':'rgba(255,255,255,.8)'})
+		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(255,255,255,.8'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.8)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
@@ -445,11 +449,11 @@ function app(n){
 	}
 
 	else if (op == 0){
-		$('.container, .output, .pop, .air, .pub').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
+		$('.container, .output, .pop, .air').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
-		$('.category, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
+		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.3)')
-		$('.box').css({'background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
+		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
 		$('.agent').attr('src','favicon/invert.png')
@@ -490,7 +494,7 @@ function res(i, n) {
 	var e = new Image()
 	e.onload = function() {
 
-		if (e.width > 320) $('#'+i).width('100%')
+		if (e.width > 320 && !n.match(/favicon/)) $('#'+i).width('100%')
 		else $('#'+i).css('padding','1.5em')
 		$('#'+i).css('visibility','visible')
 
@@ -542,14 +546,15 @@ function get(n){
 
 					if (src.match(/youtube/)) img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					else if (src.match(/favicon/) || src == '') img = "<div class='agentbox'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "<img id='" + i + "' style='visibility:hidden' src='" + src + "' class='agent'></div></div>"
+					else if (src.match(/favicon/) || src == '') img = "<div class='agentbox'><div id='pub'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+											  "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div><img id='" + i + "' style='visibility:hidden' src='" + src + "' class='agent'></div></div>"
 
-					else img = "<div class='box'><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+					else img = "<div class='box'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 						   "<img id='" + i + "' style='visibility:hidden;width:75%' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
 						   "<div class='ago' style='text-align:right'>Courtesy <a class='dec' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
 					var ext = "<div id='pub'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" + img + "</div>"
-					var top = { e: i, top : gen, pub : ext }
+					var top = { e: i, top : gen, pub : img }
 					pub.push(top)
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
