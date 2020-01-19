@@ -237,6 +237,7 @@
 </div>
 </div>
 <script>
+var gif
 var op = 0
 var request
 var ost = 0
@@ -434,6 +435,7 @@ function app(n){
 		$('.img').css('filter','brightness(75%)')
 		$('#inv').hide(); $('#fav').show()
 		$('a').css('color','#F7426B')
+		gif = 'favico.png'
 	}
 
 	else if (op == 0){
@@ -447,6 +449,7 @@ function app(n){
 		$('.img').css('filter','brightness(100%)')
 		$('#fav').hide(); $('#inv').show()
 		$('a').css('color','#08BD94')
+		gif = 'invert.png'
 	}
 
 }
@@ -496,9 +499,8 @@ function get(n){
 	var pub = []
 	$('#pop, #air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
-	if ($('.output').hasClass('invert')){ gif = 'invert' } else { gif = 'favico' }
 	$('.output').append("<div class='arm'></div><div class='get' style='display:none'></div>")
-	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + ".png'></div>")
+	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
