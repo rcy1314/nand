@@ -530,7 +530,8 @@ function get(n){
 					else if (src = $(this).find('image').text()) src = src
 
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
-
+					if (src == '') courtesy = ''
+					else courtesy = "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 					if (src.match(/youtube/)) ext =	"<div class='box' style='width:95%'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 									"<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
@@ -538,8 +539,7 @@ function get(n){
 
 					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-						   "<img id='" + i + "' style='display:none' src='" + src + "' onclick='window.open(\"" + src + "\")' class='img'>" +
-						   "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+						   "<img id='" + i + "' style='display:none' src='" + src + "' onclick='window.open(\"" + src + "\")' class='img'>" + courtesy
 
 					var top = { e: i, top : gen, pub : ext }
 					pub.push(top)
