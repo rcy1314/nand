@@ -538,7 +538,7 @@ function get(n){
 
 					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-						   "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+						   "<img id='" + i + "' style='display:none' src='" + src + "' onclick='window.open(\"" + src + "\")' class='img'>" +
 						   "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
 					var top = { e: i, top : gen, pub : ext }
