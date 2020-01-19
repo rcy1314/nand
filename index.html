@@ -132,11 +132,12 @@
 	cursor: pointer;
     }
     .img {
+	margin-bottom: .5em;
 	cursor: pointer;
     }
     .box {
 	background-color: #fefefe;
-	padding-bottom: 1em;
+	padding-bottom: .5em;
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
@@ -290,7 +291,6 @@ $('.category').on('touchstart click', function(e){
 
 $('.fav').on('touchstart click', function(e){
 
-	$('#pop, #air, .arm, .get').remove()
 	evt = true
 	air(sel)
 	pop(sel)
@@ -485,6 +485,7 @@ function res(i, n) {
 	e.onload = function() {
 
 		if (e.width > 320) $('#'+i).width('100%')
+		$('#'+i).css('display','block')
 
 	}
 
@@ -499,11 +500,12 @@ function get(n){
 	var pub = []
 	$('#pop, #air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
-	$('.output').append("<div class='arm'></div><div class='get' style='display:none'></div>")
+	$('.output').append("<div class='arm'></div><div class='get'></div>")
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
+			$('.arm').remove()
 			$('.get').append("<div class='pop' style='margin-top:4em' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
@@ -529,11 +531,8 @@ function get(n){
 					else if (src = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('image').text()) src = src
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
-					if (src == ''){ img = ''; courtesy = '' }
-					else {
-						courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-						img = "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy
-					}
+					if (src == '') courtesy = ''
+					else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 					if (src.match(/youtube/)) ext =	"<div class='box' style='width:92.5%;padding-bottom:2em'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 									"<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
@@ -541,18 +540,19 @@ function get(n){
 									"<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
 					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
-						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" + img + "</div>"
+						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+						   "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy
+
 					var top = { e: i, top : gen, pub : ext }
 					pub.push(top)
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
 				for (var k = 0; k <= quit - 1; k++){
-					$('.get').append(pub[k].pub);
-					app()
+					$('.get').append(pub[k].pub)
 					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
-					if (k >= quit - 1) $('#'+pub[k].e).on('load', function() { $('.arm').remove(); $('.get').css('display','block'); $('.img').css('display','block') })
 				}
-				if (!$('.img').length){ $('.arm').remove(); $('.get').css('display','block') }
+			pop(sel)
+			air(sel)
 		})
 }
 </script>
