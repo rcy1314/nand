@@ -22,6 +22,7 @@ var menu=[
 {id:"Reddit",cat:"News",des:"San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",uri:"https://reddit.com/r/sanfrancisco/.rss",ext:"https://reddit.com/r/sanfrancisco"},
 {id:"ABC",cat:"News",des:"ABC KGO San Francisco Local News and Headlines.",uri:"https://abc7news.com/feed",ext:"https://abc7news.com"},
 {id:"CBS",cat:"News",des:"CBS KPIX San Francisco News, Sports, Weather, Traffic and the Best of San Francisco.",uri:"https://sanfrancisco.cbslocal.com/feed",ext:"https://sanfrancisco.cbslocal.com"},
+{id:"Portland Press Herald",cat:"News",des:"Portland Press Herald Serves southern Maine from Portland, Cape Elizabeth, Gorham, Falmouth to Lewiston-Auburn.",uri:"https://www.pressherald.com/feed",ext:"https://www.pressherald.com"},
 {id:"Reddit",cat:"News",des:"Seattle subreddit News, current events in & around Seattle, Washington, USA.",uri:"https://reddit.com/r/Seattle/.rss",ext:"https://reddit.com/r/Seattle/"},
 {id:"NBC",cat:"News",des:"NBC KING Washington Seattle licensed to Seattle, Washington, United States and also serving Tacoma.",uri:"http://rssfeeds.king5.com/king5/home",ext:"https://www.king5.com"},
 {id:"Reddit",cat:"News",des:"Texas subreddit News, events, and general noise related to the great state of Texas!",uri:"https://reddit.com/r/texas/.rss",ext:"https://reddit.com/r/texas"},
