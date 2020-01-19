@@ -318,7 +318,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()) job = false
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1000) if (job == false) pop(sel)
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) if (job == false) pop(sel)
 
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
@@ -527,7 +527,7 @@ function get(n){
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
 					if (src == '') courtesy = ''
 					else courtesy = "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
-					if (src.match(/youtube/)) ext =	"<div class='box' style='width:95%'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+					if (src.match(/youtube/)) ext =	"<div class='box' style='width:95%;padding-bottom:2em'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 									"<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
 									"<div class='ago pro'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
@@ -541,6 +541,7 @@ function get(n){
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
 				for (var k = 0; k <= quit - 1; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
+			pop(sel)
 			air(sel)
 		})
 }
