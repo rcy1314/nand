@@ -550,7 +550,7 @@ function get(n){
 					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
 					if (k >= quit - 1) $('#'+pub[k].e).on('load', function() { $('.arm').remove(); $('.get').css('display','block'); $('.img').css('display','block') })
 				}
-				if (!$('.img').length){ $('.arm').remove(); $('.get').css('visibility','visible') }
+				if (!$('.img').length){ $('.arm').remove(); $('.get').css('display','block') }
 		})
 }
 </script>
