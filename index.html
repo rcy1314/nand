@@ -132,7 +132,7 @@
 	cursor: pointer;
     }
     .img {
-	margin-bottom: 1.5em;
+	margin-bottom: .5em;
 	cursor: pointer;
     }
     .box {
@@ -429,7 +429,7 @@ function app(n){
 	if (op == 1){
 		$('html, .container, .output, .pop, .air, .box').css({'border':'none','background-color':'#000','color':'rgba(255,255,255,.8)'})
 		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(255,255,255,.8'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.8)')
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
@@ -441,7 +441,7 @@ function app(n){
 		$('.container, .output, .pop, .air').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.3)')
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.1)')
 		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
@@ -537,8 +537,9 @@ function get(n){
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
 									"<div class='ago dec'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
-					else ext = "<div class='box'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-						   "<img id='" + i + "' style='display:none' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
+					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+						   "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						   "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
 					var top = { e: i, top : gen, pub : ext }
