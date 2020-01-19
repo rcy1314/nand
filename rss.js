@@ -340,7 +340,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Coding subreddit Tutorials, Reviews, Videos, and Analysis.",uri:"https://reddit.com/r/coding/.rss",ext:"https://reddit.com/r/coding"},
 {id:"Reddit",cat:"Social",des:"Command Line subreddit shares tips, questions, and answers.",uri:"https://reddit.com/r/commandline/.rss",ext:"https://reddit.com/r/commandline"},
 {id:"Reddit",cat:"Social",des:"Computer subreddit covers computers, questions, tips, and suggestions.",uri:"https://reddit.com/r/computers/.rss",ext:"https://reddit.com/r/computers"},
-{id:"Reddit",cat:"Social",des:"Crypto subreddit a technical subreddit focused on the algorithms and implementations of cryptography.",uri:"https://reddit.com/r/crypto/rss",ext:"https://reddit.com/r/crypto"},
+{id:"Reddit",cat:"Social",des:"Crypto subreddit a technical subreddit focused on the algorithms and implementations of cryptography.",uri:"https://reddit.com/r/crypto/.rss",ext:"https://reddit.com/r/crypto"},
 {id:"Reddit",cat:"Social",des:"CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",uri:"https://reddit.com/r/css/.rss",ext:"https://reddit.com/r/css"},
 {id:"Reddit",cat:"Social",des:"DataHoarder subreddit bringing data hoarders together to share their passion with like minded people.",uri:"https://reddit.com/r/DataHoarder/.rss",ext:"https://reddit.com/r/DataHoarder"},
 {id:"Reddit",cat:"Social",des:"DataIsBeautiful subreddit for visualizations that effectively convey information.",uri:"https://reddit.com/r/dataisbeautiful/.rss",ext:"https://reddit.com/r/dataisbeautiful"},
