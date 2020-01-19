@@ -15,11 +15,11 @@
 	border: 1px solid #ddd;
 	position: fixed;
 	border: none;
-	height: 86%;
+	height: 95%;
 	bottom: 60%;
 	width: 50%;
 	right: 50%;
-	top: -36%;
+	top: -45%;
     }
 
     ::-webkit-scrollbar { width: 5px }
@@ -357,9 +357,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'.2s','bottom':'-2em'}); $('.attach').css({'transition':'.2s','top':'-.1em'}) }
-	if (n < ost - 5){ $('.fav').css({'transition':'.2s','bottom':'-2em'}); $('.attach').css({'transition':'.2s','top':'-.1em'}) }
-	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.2s','bottom':'-4.6em'}); $('.attach').css({'transition':'.2s','top':'-2.9em'}) }
+	if (job == true){ $('.fav').css({'transition':'opacity .2s linear, visibility .2s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'all .2s linear','opacity':'1','visibility':'visible'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'opacity .2s linear, visibility .2s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'all .2s linear','opacity':'1','visibility':'visible'}) }
+	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'all .2s linear','opacity':'0','visible':'hidden'}); $('.attach').css({'transition':'all .2s linear','opacity':'0','visibility':'hidden'}) }
 
     ost = n
 
