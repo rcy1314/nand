@@ -108,8 +108,8 @@
 	-ms-overflow-style: none;
 	position: absolute;
 	overflow-x: hidden;
-	padding-right: 7%;
-	padding-left: 7%;
+	padding-right: 1%;
+	padding-left: 2%;
 	overflow: auto;
 	height: 100%;
     }
@@ -140,22 +140,20 @@
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
+	margin-left: -.3%;
 	padding-top: 1em;
 	display: table;
-	height: 100%;
     }
     .ago {
 	padding-bottom: .5em;
-	margin-top: -5px;
 	font-size: 10px;
 	cursor: default;
     }
     .pro {
 	position: absolute;
-	text-align: right;
 	bottom: -3em;
-	right: 0em;
     }
+    a:hover { text-decoration: underline }
     a {
 	text-align: right;
 	margin-top: -5px;
@@ -172,9 +170,10 @@
     }
     iframe {
 	position: absolute;
+	left: -3%;
 	border: none;
 	height: 100%;
-	width: 100%;
+	width: 106%;
 	top: 0;
     }
     .random, .opposite {
@@ -527,10 +526,11 @@ function get(n){
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
 					if (src == '') courtesy = ''
 					else courtesy = "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
-					if (src.match(/youtube/)) ext =	"<div class='box' style='width:95%;padding-bottom:2em'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
-									"<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
+					if (src.match(/youtube/)) ext =	"<div class='box' style='width:92.5%;padding-bottom:2em'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+									"<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
-									"<div class='ago pro'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+									"<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
+									"<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
 					else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 						   "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
