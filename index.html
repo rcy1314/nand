@@ -496,8 +496,9 @@ function get(n){
 	var pub = []
 	$('#pop, #air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
+	if ($('.output').hasClass('invert')){ gif = 'invert' } else { gif = 'favico' }
 	$('.output').append("<div class='arm'></div><div class='get' style='display:none'></div>")
-	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
+	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + ".png'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
