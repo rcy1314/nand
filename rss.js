@@ -443,7 +443,6 @@ var menu=[
 {id:"TieBreaker",cat:"Sport",des:"Tiebreaker Sports News Headlines from around the world.",uri:"https://www.tiebreaker.com/feed",ext:"https://www.tiebreaker.com"},
 {id:"UFC",cat:"Sport",des:"UFC is an American Mixed Martial Arts promotion Company based in Las Vegas, Nevada.",uri:"https://www.ufc.com/rss/news",ext:"https://ufc.com"},
 {id:"USA Today",cat:"Sport",des:"USA Today Sports Top Stories from the world on sports.",uri:"http://rssfeeds.usatoday.com/usatodaycomsports-topstories&x=1",ext:"https://www.usatoday.com/sports"},
-{id:"VICE",cat:"Sport",des:"Vice Fightland is a website covering Mixed Martial Arts, MMA.",uri:"http://fightland.vice.com/rss",ext:"http://fightland.vice.com"},
 {id:"Yahoo Sports",cat:"Sport",des:"Yahoo Sports has Comprehensive  News, Scores, Standings, Fantasy Games, Rumors, and more.",uri:"https://sports.yahoo.com/rss",ext:"https://sports.yahoo.com"},
 {id:"ABC",cat:"Technology",des:"ABC Technology for Latest Science News, Technology News, and more.",uri:"https://abcnews.go.com/abcnews/technologyheadlines",ext:"https://abcnews.go.com/technology"},
 {id:"Ars Technica",cat:"Technology",des:"Ars Technica has became a Trusted Source for Technology News.",uri:"http://feeds.arstechnica.com/arstechnica/index?format=xml",ext:"https://arstechnica.com"},
