@@ -359,9 +359,9 @@ function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $
 
 function pin(n){
 
-	if (job == true){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
-	if (n < ost - 5){ $('.fav').css({'transition':'.3s','bottom':'-2em'}); $('.attach').css({'transition':'.3s','top':'-.1em'}) }
-	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.3s','bottom':'-4.6em'}); $('.attach').css({'transition':'.3s','top':'-2.9em'}) }
+	if (job == true){ $('.fav').css({'transition':'.2s','bottom':'-2em'}); $('.attach').css({'transition':'.2s','top':'-.1em'}) }
+	if (n < ost - 5){ $('.fav').css({'transition':'.2s','bottom':'-2em'}); $('.attach').css({'transition':'.2s','top':'-.1em'}) }
+	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'.2s','bottom':'-4.6em'}); $('.attach').css({'transition':'.2s','top':'-2.9em'}) }
 
     ost = n
 
