@@ -135,7 +135,8 @@
 	cursor: pointer;
     }
     .box {
-	background-color: #fafafa;
+	background-color: #fefefe;
+	padding-bottom: .5em;
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
@@ -317,7 +318,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 
 	pin($(this).scrollTop())
 	if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()) job = false
-	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 20) if (job == false) pop(sel)
+	if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 1000) if (job == false) pop(sel)
 
     }
     else if (e.type == 'focusout') setTimeout(function(){ $('.output').focus() }, 100)
@@ -478,8 +479,7 @@ function res(i, n) {
 
 	var e = new Image()
 	e.onload = function() {
-		if (e.width > 320 && !n.match(/favicon/)) $('#'+i).width('100%')
-		else $('#'+i).css({'padding':'1.5em'})
+		if (e.width > 320) $('#'+i).width('100%')
 		$('#'+i).css('display','block')
 	}
 
@@ -541,7 +541,6 @@ function get(n){
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
 				for (var k = 0; k <= quit - 1; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
-			pop(sel)
 			air(sel)
 		})
 }
