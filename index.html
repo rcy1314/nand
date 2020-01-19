@@ -121,13 +121,6 @@
 	cursor: pointer;
 	padding: 3em;
     }
-    #pub {
-	margin-right: 1.5em;
-	margin-bottom: 3em;
-	margin-right: auto;
-	display: table;
-	width: 100%;
-    }
     .pub {
 	background-color: transparent;
 	text-transform: capitalize;
@@ -220,13 +213,6 @@
     @-moz-keyframes grow {
 	from { -moz-transform:scale(1) }
 	to { -moz-transform:scale(1.5) }
-    }
-    .agentbox {
-	width: 100%;
-    }
-    .agent {
-	height: 150px;
-	width: 160px;
     }
 </style>
 <body>
@@ -443,7 +429,6 @@ function app(n){
 		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
-		$('.agent').attr('src','favicon/favico.png')
 		$('.img').css('filter','brightness(75%)')
 		$('a').css('color','#F7426B')
 	}
@@ -456,7 +441,6 @@ function app(n){
 		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
-		$('.agent').attr('src','favicon/invert.png')
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
 		$('a').css('color','#08BD94')
@@ -495,8 +479,8 @@ function res(i, n) {
 	e.onload = function() {
 
 		if (e.width > 320 && !n.match(/favicon/)) $('#'+i).width('100%')
-		else $('#'+i).css('padding','1.5em')
-		$('#'+i).css('visibility','visible')
+		else $('#'+i).css({'padding':'1.5em'})
+		$('#'+i).css('display','block')
 
 	}
 
@@ -542,19 +526,15 @@ function get(n){
 					else if (src = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('image').text()) src = src
 
-					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) if (i % 3 == 0){ src = 'favicon/' + gif } else { src = '' }
+					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
 
-					if (src.match(/youtube/)) img = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
+					if (src.match(/youtube/)) ext = "<div class='ago'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div><div class='yt'><iframe src='" + src + "'></iframe></div>"
 
-					else if (src.match(/favicon/) || src == '') img = "<div class='agentbox'><div id='pub'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
-											  "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div><img id='" + i + "' style='visibility:hidden' src='" + src + "' class='agent'></div></div>"
-
-					else img = "<div class='box'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-						   "<img id='" + i + "' style='visibility:hidden;width:75%' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
+					else ext = "<div class='box'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div><div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+						   "<img id='" + i + "' style='display:none' src='" + src + "' onclick='window.open(\"" + ref.trim() + "\")' class='img'>" +
 						   "<div class='ago' style='text-align:right'>Courtesy <a class='dec' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
 
-					var ext = "<div id='pub'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" + img + "</div>"
-					var top = { e: i, top : gen, pub : img }
+					var top = { e: i, top : gen, pub : ext }
 					pub.push(top)
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
