@@ -114,8 +114,7 @@
 	height: 100%;
     }
     .pop:hover, .air:hover, .pub:hover { text-decoration: underline }
-    #pop, #air { padding-top: .85em }
-    hr { opacity: .2 }
+    #pop, #air { padding-top: 2em }
     .pop, .air {
 	font-size: 10px;
 	cursor: pointer;
@@ -128,7 +127,7 @@
 	margin-bottom: 3px;
 	font-family: Arial;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	cursor: pointer;
     }
     .img {
@@ -428,16 +427,15 @@ function app(n){
 		$('html, .container, .output, .pop, .air, .box').css({'border':'none','background-color':'#000','color':'rgba(255,255,255,.8)'})
 		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(255,255,255,.8'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
-		$('hr').css('visibility','hidden'); $('#inv').hide(); $('#fav').show()
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.img').css('filter','brightness(75%)')
+		$('#inv').hide(); $('#fav').show()
 		$('a').css('color','#F7426B')
 	}
 
 	else if (op == 0){
 		$('.container, .output, .pop, .air').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
-		$('hr').css('visibility','visible'); $('#fav').hide(); $('#inv').show()
 		$('.category, .pub, .ago').css({'border-bottom':'none','color':'rgba(0,0,0,.7'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.1)')
 		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
@@ -445,6 +443,7 @@ function app(n){
 		$('.output').removeClass('default').addClass('invert')
 		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
+		$('#fav').hide(); $('#inv').show()
 		$('a').css('color','#08BD94')
 	}
 
@@ -454,7 +453,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div id='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<br><hr><div class='air' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<div class='air' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
 	app()
 
@@ -468,7 +467,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div id='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<br><hr><div class='pop' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<div class='pop' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>")
 	his = 0
 	app()
 
@@ -479,11 +478,9 @@ function res(i, n) {
 
 	var e = new Image()
 	e.onload = function() {
-
 		if (e.width > 320 && !n.match(/favicon/)) $('#'+i).width('100%')
 		else $('#'+i).css({'padding':'1.5em'})
 		$('#'+i).css('display','block')
-
 	}
 
     e.src = n
@@ -501,10 +498,10 @@ function get(n){
 	if ($('.output').hasClass('invert')){ gif = 'invert.png' } else { gif = 'favico.png' }
 	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
-		.fail(function(){ $('.arm').remove(); $('.get').append("<hr><br><div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
+		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<hr><br><div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
+			$('.get').append("<div class='pop' style='margin-top:4em' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				$(data).find(chn).each(function(i){
@@ -522,12 +519,11 @@ function get(n){
 					else if (src = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) src = String(src[0])
 					else if (src = $(this).find('link').attr('href')) if (src.match(/youtube/)){ src = 'https://www.youtube.com/embed/' + String(src.split('=')[1]) } else { src = String(src) }
 					else if (src = $(this).find('media\\:thumbnail, thumbnail').attr('url')) src = src
-					else if (src = $(this).find('media\\:content, content, enclosure').attr('url') && menu[n].id != 'VICE') src = String(src.match(/(https:\/\/.+)/)[1].split(','))
+					else if (src = $(this).find('media\\:content, content, enclosure').attr('url')) if (menu[n].id == 'VICE'){ src = String(src) } else { src = String(src.match(/(https:\/\/.+)/)[1].split(',')) }
 					else if (src = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('image').text()) src = src
-					if (menu[n].id == 'VICE') src = String($(this).find('media\\:content, content, enclosure').attr('url'))
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
 					if (src == '') courtesy = ''
 					else courtesy = "<div class='ago' style='text-align:right'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
@@ -545,6 +541,7 @@ function get(n){
 				})
 				pub.sort(function(a, b){ return b.top - a.top })
 				for (var k = 0; k <= quit - 1; k++){ $('.get').append(pub[k].pub); if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src')) }
+			pop(sel)
 			air(sel)
 		})
 }
