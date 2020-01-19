@@ -142,7 +142,7 @@
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
-	margin-left: -.3%;
+	margin-left: -.4%;
 	padding-top: 1em;
 	display: table;
     }
@@ -328,9 +328,11 @@ $('.output').on('scroll touchmove focusout', function(e){
 
 String.prototype.trunc =
      function(n, e){
+
          if (this.length <= n) return this
          var subString = this.substr(0, n-1)
          return ( e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
+
       }
 
 function abr(n, e) {
@@ -479,8 +481,10 @@ function res(i, n) {
 
 	var e = new Image()
 	e.onload = function() {
+
 		if (e.width > 320) $('#'+i).width('100%')
 		$('#'+i).css('display','block')
+
 	}
 
     e.src = n
