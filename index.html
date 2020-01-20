@@ -526,7 +526,7 @@ function get(n){
 					else if (src = $(this).find('image').find('link, url').text().match(/https:\/\/.+?(png|jpg)/)) src = String(src[0])
 					else if (src = $(this).find('link').attr('href')) if (src.match(/youtube/)){ src = 'https://www.youtube.com/embed/' + String(src.split('=')[1]) } else { src = String(src) }
 					else if (src = $(this).find('media\\:thumbnail, thumbnail').attr('url')) src = src
-					else if (src = $(this).find('media\\:content, content, enclosure').attr('url')) if (menu[n].id == 'VICE'){ src = String(src) } else { src = String(src.match(/(https:\/\/.+)/)[1].split(',')) }
+					else if (src = $(this).find('media\\:content, content, enclosure').attr('url')) if (!menu[n].id.match(/Yahoo/)){ src = String(src) } else { src = String(src.match(/(https:\/\/.+)/)[1].split(',')) }
 					else if (src = $(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('content\\:encoded').text().match(/src=['"](.*?)['"]/)) src = String(src[1])
 					else if (src = $(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String(src[1])
