@@ -10,19 +10,13 @@
 <style>
 @media screen and (min-width: 1025px) {
 
-    .wrapper {
-	transform: translate(50%,50%);
-	border: 1px solid #ddd;
-	position: fixed;
+    html, boxy, .wrapper {
 	border: none;
-	height: 95%;
-	bottom: 60%;
-	width: 50%;
-	right: 50%;
-	top: -45.5%;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
     }
-
-    .ico { margin-bottom: -.5em }
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -61,7 +55,6 @@
 	position: absolute;
 	height: 50%;
 	right: 50%;
-	top: 0;
     }
     #inv {
 	-moz-box-shadow: 1p 1px 5px #ccc;
@@ -136,7 +129,8 @@
 	margin-bottom: .5em;
     }
     .box {
-	padding-bottom: 2em;
+	margin-bottom: 2em;
+	padding-bottom: 1em;
 	padding-right: 1em;
 	padding-left: 1em;
 	padding-top: 1em;
@@ -443,7 +437,6 @@ function app(n){
 		$('.box, .pop, .air').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
-		$('html').css('background-color','#FAFAFA')
 		$('.img').css('filter','brightness(100%)')
 		$('#fav').hide(); $('#inv').show()
 		$('a').css('color','#08BD94')
