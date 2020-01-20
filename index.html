@@ -24,6 +24,8 @@
 
     .ico { margin-bottom: -1.2em }
 
+    .output { margin-left: 6% }
+
     ::-webkit-scrollbar { width: 5px }
 
     .invert::-webkit-scrollbar-thumb {background-color: #ddd }
@@ -116,6 +118,9 @@
     .pop:hover, .air:hover, .pub:hover, a:hover { text-decoration: underline }
     #pop, #air { padding-top: 3em }
     .pop, .air {
+	margin-bottom: .5em;
+	margin-top: .5em;
+	max-width: 84%;
 	font-size: 10px;
 	cursor: pointer;
 	padding: 3em;
@@ -135,7 +140,6 @@
 	cursor: pointer;
     }
     .box {
-	background-color: #fefefe;
 	padding-bottom: 1em;
 	margin-bottom: 1em;
 	padding-right: 1em;
@@ -442,7 +446,7 @@ function app(n){
 		$('.container, .output, .pop, .air').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
 		$('.pub, .ago, .category').css({'border-bottom':'none','color':'rgba(0,0,0,.7)'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.1)')
-		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
+		$('.box, .pop, .air').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
 		$('html').css('background-color','#FAFAFA')
