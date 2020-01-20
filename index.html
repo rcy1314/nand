@@ -22,7 +22,7 @@
 	top: -45.5%;
     }
 
-    .ico { margin-bottom: -1em }
+    .ico { margin-bottom: -1.2em }
 
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
@@ -81,14 +81,15 @@
 	width: 32px;
     }
     .attach {
+	border-top: 1px solid #ddd;
 	justify-content: center;
 	position: absolute;
 	display: flex;
-	height: 3em;
+	height: 2.9em;
 	width: 100%;
 	z-index: 1;
-	right: 0px;
-	top: -.1em;
+	top: -1px;
+	right: 0;
     }
     .category {
 	display: inline-block;
@@ -135,13 +136,14 @@
 	margin-bottom: .5em;
     }
     .box {
-	margin-bottom: 2em;
 	padding-bottom: 1em;
+	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
 	padding-top: 1em;
 	margin-left: 1%;
 	max-width: 88%;
+	min-width: 20%;
 	display: table;
     }
     .ago {
@@ -159,7 +161,10 @@
 	font-size: 10px;
 	color: #08BD94;
     }
-    #yt { margin: auto }
+    #yt {
+	padding-bottom: 2em;
+	margin: 2em auto;
+    }
     .yt {
 	-webkit-overflow-scrolling: touch;
 	padding-bottom: 54.25%;
@@ -185,11 +190,13 @@
     }
     .random {
 	padding-left: 3em;
-	right: 0em;
+	bottom: -1px;
+	right: 0;
     }
     .opposite {
 	padding-right: 3em;
-	left: 0em;
+	bottom: -1px;
+	left: 0;
     }
     .gif {
 	-webkit-animation: spin 2.7s infinite ease;
@@ -427,7 +434,7 @@ function app(n){
 	if (op == 1){
 		$('html, .container, .output, .pop, .air, .box').css({'border':'none','background-color':'#000','color':'rgba(255,255,255,.8)'})
 		$('.pub, .ago, .category').css({'border-bottom':'none','color':'rgba(255,255,255,.8)'})
-		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
+		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.2)')
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.gif').attr('src','favicon/favico.png')
@@ -444,7 +451,7 @@ function app(n){
 		$('.box, .pop, .air').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
-		$('html').css('background-color','#fafafa')
+		$('html, .wrapper').css({'border':'1px solid #ddd','background-color':'#fafafa'})
 		$('.gif').attr('src','favicon/invert.png')
 		$('.img').css('filter','brightness(100%)')
 		$('#fav').hide(); $('#inv').show()
@@ -551,7 +558,6 @@ function get(n){
 					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
 				}
 			air(sel)
-			scr('.get')
 		})
 }
 </script>
