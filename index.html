@@ -118,6 +118,7 @@
     .pop:hover, .air:hover, .pub:hover, a:hover { text-decoration: underline }
     #pop, #air { padding-top: 3em }
     .pop, .air {
+	border-radius: 4px;
 	margin-bottom: .5em;
 	margin-top: .5em;
 	max-width: 84%;
@@ -555,6 +556,7 @@ function get(n){
 					if ($('#'+pub[k].e).length) res(pub[k].e, $('#'+pub[k].e).attr('src'))
 				}
 			air(sel)
+			scr('.get')
 		})
 }
 </script>
