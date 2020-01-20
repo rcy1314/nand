@@ -91,7 +91,6 @@
 	right: 0px;
 	top: -.1em;
     }
-    .category:hover { color: #ccc !important }
     .category {
 	display: inline-block;
 	text-align: center;
@@ -328,6 +327,7 @@ $('.output').on('scroll touchmove focusout', function(e){
 
 
 String.prototype.trunc =
+
      function(n, e){
 
          if (this.length <= n) return this
@@ -429,8 +429,7 @@ function app(n){
 
 	if (op == 1){
 		$('html, .container, .output, .pop, .air, .box').css({'border':'none','background-color':'#000','color':'rgba(255,255,255,.8)'})
-		$('.pub, .ago').css('color','rgba(255,255,255,.8)')
-		$('.category').css('border-bottom','none')
+		$('.pub, .ago, .category').css({'border-bottom':'none','color':'rgba(255,255,255,.8)'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(255,255,255,.3)')
 		$('.attach').css('background-color','rgba(0, 0, 0, .7)')
 		$('.output').removeClass('invert').addClass('default')
@@ -442,8 +441,7 @@ function app(n){
 
 	else if (op == 0){
 		$('.container, .output, .pop, .air').css({'background-color': '#fff','color':'rgba(0,0,0,.7)'})
-		$('.pub, .ago').css('color','rgba(0,0,0,.7)')
-		$('.category').css('border-bottom','none')
+		$('.pub, .ago, .category').css({'border-bottom':'none','color':'rgba(0,0,0,.7)'})
 		$('.random, .opposite, #'+sel).css('border-bottom','1px solid rgba(0,0,0,.1)')
 		$('.box').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
