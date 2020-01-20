@@ -136,13 +136,12 @@
 	margin-bottom: .5em;
     }
     .box {
-	padding-bottom: 1em;
-	margin-bottom: 2em;
+	padding-bottom: 2em;
 	padding-right: 1em;
 	padding-left: 1em;
 	padding-top: 1em;
 	margin-left: 1%;
-	max-width: 93%;
+	max-width: 88%;
 	display: table;
     }
     .ago {
@@ -160,6 +159,7 @@
 	font-size: 10px;
 	color: #08BD94;
     }
+    #yt { margin: auto }
     .yt {
 	-webkit-overflow-scrolling: touch;
 	padding-bottom: 54.25%;
@@ -169,10 +169,9 @@
     }
     iframe {
 	position: absolute;
-	width: 104.5%;
+	width: 100%;
 	border: none;
 	height: 100%;
-	left: -2.4%;
 	top: 0;
     }
     .random, .opposite {
@@ -532,7 +531,7 @@ function get(n){
 					if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
 					if (src == '') courtesy = ''
 					else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-					if (src.match(/youtube/)) ext =	"<div class='box' style='width:92.5%;padding-bottom:2em'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+					if (src.match(/youtube/)) ext =	"<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
 									"<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 									"<div class='yt'><iframe src='" + src + "'></iframe>" +
 									"<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
