@@ -22,9 +22,7 @@
 	top: -45.5%;
     }
 
-    .ico { margin-bottom: -1.2em }
-
-    .output { margin-left: 6% }
+    .ico { margin-bottom: -.5em }
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -49,6 +47,8 @@
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
+    .category, .fav, .pop, .air, .pub, .img, a { cursor: pointer }
+
     html, body, .container, .output {
 	overflow: hidden;
 	height: 100%;
@@ -70,17 +70,15 @@
     .ico {
 	transform: translateX(-50%);
 	position: absolute;
-	text-align: center;
 	bottom: 0em;
 	left: 50%;
     }
     .fav {
 	border-radius: 24px;
 	position: relative;
-	cursor: pointer;
+	bottom: -.5em;
+	margin: .5em;
 	height: 32px;
-	bottom: -2em;
-	margin: 2em;
 	width: 32px;
     }
     .attach {
@@ -97,7 +95,6 @@
 	display: inline-block;
 	text-align: center;
 	padding-top: 2.2em;
-	cursor: pointer;
 	font-size: 8px;
 	height: 3.6em;
 	width: 14%;
@@ -110,20 +107,20 @@
 	-ms-overflow-style: none;
 	position: absolute;
 	overflow-x: hidden;
-	padding-right: 1%;
-	padding-left: 2%;
 	overflow: auto;
+	padding-right: 1%;
+	padding-left: 1%;
 	height: 100%;
     }
     .pop:hover, .air:hover, .pub:hover, a:hover { text-decoration: underline }
-    #pop, #air { padding-top: 3em }
+    #pop, #air, .get { padding-top: 3em }
     .pop, .air {
+	margin: 0 auto;
 	border-radius: 4px;
 	margin-bottom: .5em;
 	margin-top: .5em;
 	max-width: 84%;
 	font-size: 10px;
-	cursor: pointer;
 	padding: 3em;
     }
     .pub {
@@ -134,20 +131,18 @@
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 14px;
-	cursor: pointer;
     }
     .img {
 	margin-bottom: .5em;
-	cursor: pointer;
     }
     .box {
 	padding-bottom: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	padding-right: 1em;
 	padding-left: 1em;
 	padding-top: 1em;
 	margin-left: 1%;
-	max-width: 89%;
+	max-width: 93%;
 	display: table;
     }
     .ago {
@@ -164,7 +159,6 @@
 	margin-top: -5px;
 	font-size: 10px;
 	color: #08BD94;
-	cursor: pointer;
     }
     .yt {
 	-webkit-overflow-scrolling: touch;
@@ -248,7 +242,7 @@ var op = 0
 var request
 var ost = 0
 var his = 0
-var evt = false
+var evt = true
 var job = false
 var sel = 'Social'
 
@@ -361,13 +355,13 @@ function abr(n, e) {
 
 }
 
-function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100) }
+function scr(n){ $('.output').animate({ scrollTop: $(n+':last').offset().top - $('.output').offset().top + $('.output').scrollTop() }, 100); setTimeout(function(){ evt = false }, 250) }
 
 function pin(n){
 
 	if (job == true){ $('.fav').css({'transition':'opacity .2s linear, visibility .2s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'all .2s linear','opacity':'1','visibility':'visible'}) }
 	if (n < ost - 5){ $('.fav').css({'transition':'opacity .2s linear, visibility .2s linear','opacity':'1','visibility':'visible'}); $('.attach').css({'transition':'all .2s linear','opacity':'1','visibility':'visible'}) }
-	else if (n > ost + 5 && ost != 0 && job == false && evt == false){  $('.fav').css({'transition':'all .2s linear','opacity':'0','visible':'hidden'}); $('.attach').css({'transition':'all .2s linear','opacity':'0','visibility':'hidden'}) }
+	else if (n > ost + 5 && job == false && evt == false){  $('.fav').css({'transition':'all .2s linear','opacity':'0','visible':'hidden'}); $('.attach').css({'transition':'all .2s linear','opacity':'0','visibility':'hidden'}) }
 
     ost = n
 
@@ -506,12 +500,12 @@ function get(n){
 	$('#pop, #air, .arm, .get').remove()
 	if (sel == 'Youtube'){ var quit = 6 } else { var quit = 11 }
 	$('.output').append("<div class='arm'></div><div class='get'></div>")
-	$('.arm').html("<br><div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
+	$('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
 	request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
 		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<div class='pop' style='margin-top:4em' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
+			$('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				if ($(data).find(chn).length<quit){ quit = $(data).find(chn).length }
