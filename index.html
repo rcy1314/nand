@@ -511,7 +511,7 @@ function get(n){
 		.fail(function(){ $('.arm').remove(); $('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>"); job = false })
 		.done(function(data){
 			$('.arm').remove()
-			$('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")' style='margin-bottom:2em'>"+menu[n].des+"</div><br>")
+			$('.get').append("<div class='pop' onclick='window.open(\""+menu[n].ext+"\")'>"+menu[n].des+"</div><br>")
 			if ($(data).find('entry').length > 0)				     var chn = "entry"
 			else 								     var chn = 'item'
 				if ($(data).find(chn).length<quit){ quit = $(data).find(chn).length }
