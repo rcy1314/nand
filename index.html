@@ -136,7 +136,7 @@
     }
     .box {
 	background-color: #fefefe;
-	padding-bottom: .5em;
+	padding-bottom: 1em;
 	margin-bottom: 3em;
 	padding-right: 1em;
 	padding-left: 1em;
@@ -458,7 +458,7 @@ function air(n){
 
 	rev(menu.reverse())
 	$('.output').prepend("<div id='air'></div>")
-	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<div class='air' onclick='get(" + i + ")'><br>" + menu[i].des + "</div>") }
+	for (var i = menu.reverse().length - 1; i >= 0; i--){ if (n == menu[i].cat) $('#air').prepend("<div class='box'><div class='air' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>") }
 	$('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
 	app()
 
@@ -472,7 +472,7 @@ function pop(n){
 	if (n != sel) his = 0
 	sel = n
 	$('.output').append("<div id='pop'></div>")
-	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+	for (var i = his; i < menu.length; i++) if (n == menu[i].cat) $('#pop').append("<div class='box'><div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>")
 	his = 0
 	app()
 
