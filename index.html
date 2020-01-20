@@ -10,13 +10,22 @@
 <style>
 @media screen and (min-width: 1025px) {
 
-    html, boxy, .wrapper {
+    .wrapper {
+	transform: translate(50%,50%);
+	border: 1px solid #ddd;
+	position: fixed;
 	border: none;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	top: 0;
+	height: 95%;
+	bottom: 60%;
+	width: 70%;
+	right: 50%;
+	top: -45.5%;
     }
+
+}
+    div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
+
+    .category, .fav, .pop, .air, .pub, .img, a { cursor: pointer }
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -37,11 +46,6 @@
 	scrollbar-color: #222 #000;
 	scrollbar-width: thin;
     }
-
-}
-    div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
-
-    .category, .fav, .pop, .air, .pub, .img, a { cursor: pointer }
 
     html, body, .container, .output {
 	overflow: hidden;
@@ -437,6 +441,7 @@ function app(n){
 		$('.box, .pop, .air').css({'border':'1px solid #eee','background-color':'#fafafa','color':'rgba(0,0,0,.7)'})
 		$('.attach').css('background-color','rgba(255, 255, 255, .9)')
 		$('.output').removeClass('default').addClass('invert')
+		$('html').css('background-color','#fafafa')
 		$('.img').css('filter','brightness(100%)')
 		$('#fav').hide(); $('#inv').show()
 		$('a').css('color','#08BD94')
