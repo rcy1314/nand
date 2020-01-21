@@ -143,7 +143,8 @@
     padding-left: 1%;
     height: 100%;
     }
-    .pub:hover, a:hover { text-decoration: underline }
+    .ext { font-size: 12px }
+	.pub:hover, .des:hover, a:hover { text-decoration: underline }
     #pop, #air, .get { padding-top: 3em }
     .pop, .air {
     margin: .5em auto;
@@ -580,7 +581,7 @@ function air(n) {
             } else {
                 var sub = menu[i].id
             }
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div>" + menu[i].des + "</div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -608,7 +609,7 @@ function pop(n) {
             } else {
                 var sub = menu[i].id
             }
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div>" + menu[i].des + "</div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
     }
     his = 0
     app()
