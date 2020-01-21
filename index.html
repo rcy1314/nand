@@ -724,8 +724,7 @@ function get(n) {
 					ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                     "<img onclick='event.stopPropagation(); $(this).toggleClass(\"exp\")'id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
-                }
-				var top = {
+                var top = {
                     e: i,
                     top: gen,
                     pub: ext
