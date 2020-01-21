@@ -666,7 +666,8 @@ function get(n) {
                 if (!src || src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/youtube/)) ext = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
+                if (src.match(/youtube/))
+                    ext = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                     "<div class='yt'><iframe src='" + src + "'></iframe>" +
                     "<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>" +
