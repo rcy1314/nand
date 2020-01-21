@@ -56,7 +56,10 @@
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .category, .fav, .pop, .air, .pub, .img, a { cursor: pointer }
+    .category, .fav, .pop, .air, .pub, .img, a {
+		text-decoration: none;
+		cursor: pointer;
+	}
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -140,12 +143,12 @@
 	padding-left: 1%;
 	height: 100%;
     }
-    .pop:hover, .air:hover, .pub:hover, a:hover { text-decoration: underline }
+	.pub:hover, a:hover { text-decoration: underline }
     #pop, #air, .get { padding-top: 3em }
     .pop, .air {
 	margin: .5em auto;
 	margin-top: .5em;
-	font-size: 10px;
+	font-size: 12px;
 	max-width: 84%;
 	padding: 3em;
     }
@@ -155,6 +158,7 @@
 	letter-spacing: 1px;
 	margin-bottom: 3px;
 	font-family: Arial;
+	width: fit-content;
 	font-weight: bold;
 	font-size: 14px;
     }
@@ -295,6 +299,13 @@ $('.category').on('touchstart click', function(e) {
         evt = false
     }, 250)
     e.preventDefault()
+
+})
+
+$('.ext').on('touchstart click', function(e){
+
+	window.open($(this).attr('ext'), '_blank')
+	e.stopPropagation()
 
 })
 
@@ -563,7 +574,15 @@ function air(n) {
     rev(menu.reverse())
     $('.output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
-        if (n == menu[i].cat) $('#air').prepend("<div class='air' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+		if (n == menu[i].cat){
+			if (menu[i].id == 'Reddit'){
+				var sub = menu[i].ext.match(/(\/r\/.+)/)[0]
+				sub = String(sub).toLowerCase()
+			} else {
+				var sub = menu[i].id
+    	    }
+			$('#air').prepend("<div class='air'><div class='pub'><div class='ext' ext='" + menu[i].ext + "'><a>" + sub + "</a></div></div><div class='req' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>")
+		}
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
     app()
@@ -584,7 +603,15 @@ function pop(n) {
     sel = n
     $('.output').append("<div id='pop'></div>")
     for (var i = his; i < menu.length; i++)
-        if (n == menu[i].cat) $('#pop').append("<div class='pop' onclick='get(" + i + ")'>" + menu[i].des + "</div>")
+		if (n == menu[i].cat){
+			if (menu[i].id == 'Reddit'){
+				var sub = menu[i].ext.match(/(\/r\/.+)/)[0]
+				sub = String(sub).toLowerCase()
+			} else {
+				var sub = menu[i].id
+    	    }
+			$('#pop').append("<div class='pop'><div class='pub'><div class='ext' ext='" + menu[i].ext + "'><a>" + sub + "</a></div></div><div class='req' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>")
+	}
     his = 0
     app()
 
@@ -621,6 +648,11 @@ function get(n) {
     }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
+	if (menu[n].id == 'Reddit'){
+		var sub = menu[n].ext.match(/(\/r\/.+)/)[0].toLowerCase()
+	} else {
+		var sub = menu[n].id
+    }
     request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
@@ -629,7 +661,7 @@ function get(n) {
         })
         .done(function(data) {
             $('.arm').remove()
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].des + "</div><br>")
+			$('.get').append("<div class='pop'><div class='pub'><a href='" + menu[n].ext + "' target='blank'>" + sub + "</a></div>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var chn = "entry"
             else var chn = 'item'
             if ($(data).find(chn).length < quit) {
