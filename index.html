@@ -576,12 +576,11 @@ function air(n) {
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var sub = menu[i].ext.match(/(\/r\/.+)/)[0]
-                sub = String(sub).toLowerCase()
+                var sub = menu[i].ext.match(/\b(\w+)$/)[0]
             } else {
                 var sub = menu[i].id
             }
-            $('#air').prepend("<div class='air'><div class='pub'><div class='ext' ext='" + menu[i].ext + "'><a>" + sub + "</a></div></div><div class='req' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div>" + menu[i].des + "</div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -605,12 +604,11 @@ function pop(n) {
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var sub = menu[i].ext.match(/(\/r\/.+)/)[0]
-                sub = String(sub).toLowerCase()
+                var sub = menu[i].ext.match(/\b(\w+)$/)[0]
             } else {
                 var sub = menu[i].id
             }
-            $('#pop').append("<div class='pop'><div class='pub'><div class='ext' ext='" + menu[i].ext + "'><a>" + sub + "</a></div></div><div class='req' onclick='get(" + i + ")'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a class='ext' ext='" + menu[i].ext + "'>" + sub + "</a></div>" + menu[i].des + "</div>")
     }
     his = 0
     app()
@@ -649,7 +647,7 @@ function get(n) {
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit'){
-        var sub = menu[n].ext.match(/(\/r\/.+)/)[0].toLowerCase()
+        var sub = menu[n].ext.match(/\b(\w+)$/)[0]
     } else {
         var sub = menu[n].id
     }
