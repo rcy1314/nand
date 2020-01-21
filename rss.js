@@ -331,7 +331,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",uri:"https://reddit.com/r/apple/.rss",ext:"https://reddit.com/r/apple"},
 {id:"Reddit",cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/android"},
 {id:"Reddit",cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/Amd"},
-{id:"Reddit",cat:"Social",des:"Arch Linux BBS is a Linux distribution for computers based on x86-64 architectures.",uri:"https://bbs.archlinux.org/extern.php?type=rss",ext:"http://bbs.archlinux.org"},
+{id:"Arch Linux",cat:"Social",des:"Arch Linux BBS is a Linux distribution for computers based on x86-64 architectures.",uri:"https://bbs.archlinux.org/extern.php?type=rss",ext:"http://bbs.archlinux.org"},
 {id:"Reddit",cat:"Social",des:"Arch Linux subreddit discusses topics revolving around Arch Linux.",uri:"https://reddit.com/r/archlinux/.rss",ext:"https://reddit.com/r/archlinux"},
 {id:"Reddit",cat:"Social",des:"Artificial subreddit the home for Artificial Intelligence.",uri:"https://reddit.com/r/artificial/.rss",ext:"https://reddit.com/r/artificial"},
 {id:"Reddit",cat:"Social",des:"BSD subreddit about Berkeley Software Distribution an operating system based on Unix.",uri:"https://reddit.com/r/bsd/.rss",ext:"https://reddit.com/r/bsd"},
