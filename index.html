@@ -578,7 +578,7 @@ function pop(n) {
         request.abort();
         job = false
     }
-    if ($('#pop, #air').length > 2) {
+    if ($('#pop, #air').length > 1) {
         $('#pop, #air:last, .get').remove()
     }
     document.title = n + ' ack'
@@ -626,7 +626,7 @@ function get(n) {
     request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")' style='margin-bottom:2em'>" + menu[n].des + "</div><br>");
+            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].des + "</div><br>");
             job = false
         })
         .done(function(data) {
@@ -684,7 +684,6 @@ function get(n) {
                 else ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                     "<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
-
                 var top = {
                     e: i,
                     top: gen,
