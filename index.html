@@ -190,7 +190,6 @@
     text-align: right;
     margin-top: -5px;
     font-size: 10px;
-    color: #08BD94;
     }
     #yt {
     padding-bottom: 2em;
@@ -299,6 +298,7 @@ $('.category').on('touchstart click', function(e) {
     setTimeout(function() {
         evt = false
     }, 250)
+	app()
     e.preventDefault()
 
 })
@@ -319,6 +319,7 @@ $('.fav').on('touchstart click', function(e) {
     setTimeout(function() {
         evt = false
     }, 250)
+	app()
     e.preventDefault()
     e.stopPropagation()
 
