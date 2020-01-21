@@ -143,10 +143,11 @@
     padding-left: 1%;
     height: 100%;
     }
-    .ext { font-size: 12px }
+    .ext { font-size: 10px }
 	.pub:hover, .des:hover, a:hover { text-decoration: underline }
     #pop, #air, .get { padding-top: 3em }
     .pop, .air {
+	margin-left: 2em;
     margin: .5em auto;
     margin-top: .5em;
     font-size: 12px;
@@ -298,7 +299,6 @@ $('.category').on('touchstart click', function(e) {
     setTimeout(function() {
         evt = false
     }, 250)
-	app()
     e.preventDefault()
 
 })
@@ -319,7 +319,6 @@ $('.fav').on('touchstart click', function(e) {
     setTimeout(function() {
         evt = false
     }, 250)
-	app()
     e.preventDefault()
     e.stopPropagation()
 
@@ -578,7 +577,7 @@ function air(n) {
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var sub = menu[i].ext.match(/\b(\w+)$/)[0]
+                var sub = menu[i].ext.match(/\b\w+$/)
             } else {
                 var sub = menu[i].id
             }
@@ -606,7 +605,7 @@ function pop(n) {
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var sub = menu[i].ext.match(/\b(\w+)$/)[0]
+                var sub = menu[i].ext.match(/\b\w+$/)
             } else {
                 var sub = menu[i].id
             }
@@ -656,12 +655,12 @@ function get(n) {
     request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].des + "</div><br>");
+            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='ext'>" + sub + "</a></div>" + menu[n].des + "</div></div>")
             job = false
         })
         .done(function(data) {
             $('.arm').remove()
-            $('.get').append("<div class='pop'><div class='pub'><a href='" + menu[n].ext + "' target='blank'>" + sub + "</a></div>" + menu[n].des + "</div></div>")
+            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='ext'>" + sub + "</a></div>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var chn = "entry"
             else var chn = 'item'
             if ($(data).find(chn).length < quit) {
@@ -730,6 +729,7 @@ function get(n) {
             }
             air(sel)
             pop(sel)
+			app()
             scr('.get')
         })
 }
