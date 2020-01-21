@@ -359,7 +359,6 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Hacker News subreddit A mirror of Hacker News' best submissions.",uri:"https://reddit.com/r/hackernews/.rss",ext:"https://reddit.com/r/hackernews"},
 {id:"Reddit",cat:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",uri:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/hacking"},
 {id:"Reddit",cat:"Social",des:"Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",uri:"https://reddit.com/r/hardware/.rss",ext:"https://reddit.com/r/hardware"},
-{id:"Reddit",cat:"Social",des:"Internet Is Beautiful subreddit based around sharing awesome, usually minimal and single-purpose websites and webtools.",uri:"https://reddit.com/r/InternetIsBeautiful/.rss",ext:"https://reddit.com/r/InternetIsBeautiful"},
 {id:"Reddit",cat:"Social",des:"iOS subreddit for everything Apple iOS.",uri:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/ios"},
 {id:"Reddit",cat:"Social",des:"Javascript subreddit all about the JavaScript Programming Language.",uri:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/javascript"},
 {id:"Reddit",cat:"Social",des:"Laptops subreddit the place to discuss anything laptop related.",uri:"https://reddit.com/r/laptops/.rss",ext:"https://reddit.com/r/laptop"},

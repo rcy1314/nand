@@ -1,0 +1,219 @@
+
+@media screen and (min-width: 1025px) {
+
+    html, body, .container, .output {
+	overflow: hidden;
+	height: 100%;
+	right: 0em;
+	left: 0em;
+	top: 0em;
+    }
+
+    .wrapper {
+	transform: translate(50%,50%);
+	border: 1px solid #ddd;
+	position: fixed;
+	border: none;
+	height: 95%;
+	bottom: 60%;
+	width: 70%;
+	right: 50%;
+	top: -45.5%;
+    }
+
+    .ico { margin-bottom: -1.2em }
+
+}
+    div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
+
+    .category, .fav, .pop, .air, .pub, .img, a { cursor: pointer }
+
+    ::-webkit-scrollbar { width: 5px }
+
+    .invert::-webkit-scrollbar-thumb {background-color: #ddd }
+
+    .invert::-webkit-scrollbar { background-color: #f5f5f5 }
+
+    .invert {
+	scrollbar-color: #ddd #f5f5f5;
+	scrollbar-width: thin;
+    }
+
+    .default::-webkit-scrollbar-thumb { background-color: #0a0a0a }
+
+    .default::-webkit-scrollbar { background-color: #000 }
+
+    .default {
+	scrollbar-color: #222 #000;
+	scrollbar-width: thin;
+    }
+
+    html, body, .container, .output {
+	overflow: hidden;
+	height: 100%;
+	right: 0em;
+	left: 0em;
+	top: 0em;
+    }
+    .arm {
+	transform: translate(50%,50%);
+	position: absolute;
+	height: 50%;
+	right: 50%;
+    }
+    #inv {
+	-moz-box-shadow: 1p 1px 5px #ccc;
+	box-shadow: 1px 1px 5px #ccc;
+    }
+    .ico {
+	transform: translateX(-50%);
+	position: absolute;
+	bottom: 0em;
+	left: 50%;
+    }
+    .fav {
+	border-radius: 24px;
+	position: relative;
+	bottom: -.5em;
+	margin: .5em;
+	height: 32px;
+	width: 32px;
+    }
+    .attach {
+	justify-content: center;
+	position: absolute;
+	display: flex;
+	height: 2.9em;
+	width: 100%;
+	z-index: 1;
+	top: -1px;
+	right: 0;
+    }
+    .category {
+	display: inline-block;
+	text-align: center;
+	padding-top: 2.2em;
+	font-size: 8px;
+	height: 3.6em;
+	width: 14%;
+	z-index: 2;
+    }
+    .output {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
+	outline: none !important;
+	-ms-overflow-style: none;
+	position: absolute;
+	overflow-x: hidden;
+	overflow: auto;
+	padding-right: 1%;
+	padding-left: 1%;
+	height: 100%;
+    }
+    .pop:hover, .air:hover, .pub:hover, a:hover { text-decoration: underline }
+    #pop, #air, .get { padding-top: 3em }
+    .pop, .air {
+	border-radius: 4px;
+	margin-top: .5em;
+	margin: .5em auto;
+	font-size: 10px;
+	max-width: 84%;
+	padding: 3em;
+    }
+    .pub {
+	background-color: transparent;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	margin-bottom: 3px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+    }
+    .img {
+	margin-bottom: .5em;
+    }
+    .box {
+	padding-bottom: 1em;
+	margin-bottom: 3em;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
+	margin-left: 1%;
+	max-width: 88%;
+	min-width: 20%;
+	display: table;
+    }
+    .ago {
+	padding-bottom: .5em;
+	font-size: 10px;
+	cursor: default;
+    }
+    .pro {
+	position: absolute;
+	bottom: -3em;
+    }
+    a {
+	text-align: right;
+	margin-top: -5px;
+	font-size: 10px;
+	color: #08BD94;
+    }
+    #yt {
+	padding-bottom: 2em;
+	margin: 2em auto;
+    }
+    .yt {
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 54.25%;
+	position: relative;
+	width: 100%;
+	height: 0;
+    }
+    iframe {
+	position: absolute;
+	width: 100%;
+	border: none;
+	height: 100%;
+	top: 0;
+    }
+    .random, .opposite {
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	padding-top: 2em;
+	position: fixed;
+	height: 24px;
+	width: 24px;
+	bottom: 0em;
+	z-index: 2;
+    }
+    .random {
+	padding-left: 3em;
+	bottom: -1px;
+	right: 0;
+    }
+    .opposite {
+	padding-right: 3em;
+	bottom: -1px;
+	left: 0;
+    }
+    .gif {
+	-webkit-animation: spin 2.7s infinite ease;
+	-moz-animation: spin 2.7s infinite ease
+	height: 200px;
+	width: 200px;
+    }
+    @-webkit-keyframes spin {
+	100% {-webkit-transform: rotate(360deg);}   
+	0%  {-webkit-transform: rotate(0deg);}
+    }
+    @-moz-keyframes spin {
+	100% {-moz-transform: rotate(360deg);}   
+	0%  {-moz-transform: rotate(0deg);}
+    }
+    @-webkit-keyframes grow {
+	from { -webkit-transform:scale(1) }
+	to { -webkit-transform:scale(1.5) }
+    }
+    @-moz-keyframes grow {
+	from { -moz-transform:scale(1) }
+	to { -moz-transform:scale(1.5) }
+    }
