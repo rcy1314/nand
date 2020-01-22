@@ -42,14 +42,17 @@
     .get { padding-left: 5% }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
 
-    .box { max-width: 92% !important }
+    .box {
+    min:width: 50% !important;
+    max-width: 92% !important;
+    }
 
     .get { padding-left: 5% }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
 
     html, body, .container, .output {
     overflow: hidden;
@@ -66,13 +69,13 @@
     border: none;
     height: 95%;
     bottom: 60%;
-    width: 70%;
+    width: 60%;
     right: 50%;
     top: -45.5%;
     }
 
 	.box {
-    min-width: 30%;
+    min-width: 50%;
     max-width: 88%;
     }
 
@@ -203,6 +206,7 @@
     padding-bottom: 1em;
     margin-bottom: 3em;
     padding-right: 1em;
+    width: fit-content;
     padding-left: 1em;
     padding-top: 1em;
     margin-left: 1%;
@@ -654,11 +658,10 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.width > 320) $('#' + e).parent().css('width', Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%')
-        else if (element.width < 320) $('#' + e).parent().css('width', Math.floor(Math.random() * (30 - 15 + 1)) + 15 + '%')
+        else if (element.width < 320) $('#' + e).width('50%').parent().css('width', Math.floor(Math.random() * (70 - 25 + 1)) + 15 + '%')
         $('#' + e).css('display', 'block')
         
     }
-
     element.src = n
 
 }
@@ -675,9 +678,7 @@ function expand(n) {
         $('#' + n).parent().width("100%")
     } else {
         $.each(obj, function(i, k) {
-            if (n == k.element) {
-                $('#' + n).parent().width(k.width)
-            }
+            if (n == k.element) $('#' + n).parent().width(k.width)
         })
     }
     $('#' + n).toggleClass("exp")
@@ -771,7 +772,7 @@ function get(n) {
                 "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
                 "<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
-					post = "<div class='box' style='width:'" + Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%' + "' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+					post = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 					"<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
 				}
