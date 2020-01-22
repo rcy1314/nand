@@ -84,7 +84,7 @@
     }
 
     .box {
-    min-width: 30%;
+    min-width: 40%;
     max-width: 92%;
     }
 
@@ -670,8 +670,10 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320) $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (80 - 55 + 1)) + 55 + '%')
-        else if (element.width < 320) $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (60 - 35 + 1)) + 45 + '%')
+        if (element.width > 320){
+            $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
+        obj.push({ element: e, width: element.width })
+        } else $('#' + e).width(element.width)
         $('#' + e).css('display', 'block')
         
     }
@@ -680,22 +682,24 @@ function resolution(e, n) {
 }
 
 function expand(n) {
-
-    if ($('#' + n).width() < "320") return false
-    if ($('#' + n).parent().width() / $(".output").width() * 100 < 75) {
+        var max
+        $.each(obj, function(i, k) {
+            if (n == k.element) max = k.width
+        })
+    console.log(max)
+    if ($('#' + n).parent().width() / $(".output").width() * 100 < 75 && max > 400) {
         img = {
             element: n,
             width: $('#' + n).parent().width()
         }
         obj.push(img)
-        $('#' + n).parent().width("100%")
+        $('#' + n).parent().width("88%")
     } else {
         $.each(obj, function(i, k) {
             if (n == k.element) $('#' + n).parent().width(k.width)
         })
     }
     $('#' + n).toggleClass("exp")
-
 }
 
 function get(n) {
