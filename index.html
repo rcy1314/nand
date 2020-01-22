@@ -28,6 +28,7 @@
         <div class='opposite'></div>
 </div>
 </div>
+<div class='rss' onclick='window.open("https://github.com/acktic/acktic.github.io", "_blank")'>rss-browser</div>
 <style>
 @media (max-width: 426px) {
 
@@ -74,6 +75,14 @@
     top: -45.5%;
     }
 
+    .rss {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    cursor: default;
+    font-size: 10px;
+    }
+
     .box {
     min-width: 50%;
     max-width: 88%;
@@ -86,7 +95,7 @@
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
-    .category, .fav, .pop, .air, .pub, .img, a {
+   .category, .fav, .pop, .air, .pub, .img, a {
         text-decoration: none;
         cursor: pointer;
     }
@@ -430,6 +439,10 @@ function abr(n, e) {
 
 }
 
+function external(n){
+    window.open(n, '_blank')
+}
+
 function scr(n) {
     $('.output').animate({
         scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
@@ -616,7 +629,7 @@ function prepend(n) {
             } else {
                 var id = menu[i].id
             }
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a class='external' ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -637,7 +650,7 @@ function populate(n) {
     if (n != sel) his = 0
     sel = n
     $('.output').append("<div id='pop'></div>")
-    $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:30px;color:grey'>" + sel + "</div>")
+    $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:20px;text-decoration:none' onclick='populate(sel); prepend(sel); scr(\"#pop:last\"); manifest(true)'>" + sel + "</div>")
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
@@ -645,7 +658,7 @@ function populate(n) {
             } else {
                 var id = menu[i].id
             }
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a class='external' ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
     }
     his = 0
     apply()
