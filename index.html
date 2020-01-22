@@ -90,7 +90,7 @@
     max-width: 92%;
     }
 
-    #pop, #air, .get { padding-left: 5%; }
+    #pop, #air, .get { padding-left: 1.5%; }
 
     .ico { margin-bottom: -1.2em }
 
@@ -183,16 +183,12 @@
     padding-left: 1%;
     height: 100%;
     }
-    .ext { font-size: 10px }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
     #pop, #air, .get { padding-top: 3em; }
     .pop, .air {
-    margin-left: 1.5em;
     margin: .5em auto;
-    font-weight: 550;
-    margin-top: .5em;
-    font-size: 12px;
-    max-width: 84%;
+    font-size: 10px;
+    max-width: 88%;
     padding: 3em;
     }
     .pub {
@@ -644,7 +640,6 @@ function populate(n) {
     if (n != sel) his = 0
     sel = n
     $('.output').append("<div id='pop'></div>")
-    $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:20px;text-decoration:none' onclick='populate(sel); prepend(sel); scr(\"#pop:last\"); manifest(true)'>" + sel + "</div>")
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
