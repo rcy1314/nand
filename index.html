@@ -670,7 +670,7 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320) {
+        if (element.width > 299) {
             $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (65 - 35 + 1)) + 35 + '%')
             obj.push({
                 element: e,
