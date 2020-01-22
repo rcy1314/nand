@@ -28,6 +28,7 @@
         <div class='opposite'></div>
 </div>
 </div>
+<div class='rss' onclick='window.open("https://github.com/acktic/acktic.github.io", "_blank")'>rss-browser</div>
 <style>
 @media (max-width: 426px) {
 
@@ -45,14 +46,14 @@
 @media (max-width: 1024px) {
 
     .box {
-    min:width: 50% !important;
+    min-width: 50% !important;
     max-width: 92% !important;
     }
 
     .get { padding-left: 5% }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 
     html, body, .container, .output {
     overflow: hidden;
@@ -74,8 +75,16 @@
     top: -45.5%;
     }
 
+    .rss {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    cursor: default;
+    font-size: 10px;
+    }
+
 	.box {
-    min-width: 50%;
+    min-width: 25%;
     max-width: 88%;
     }
 
@@ -87,8 +96,8 @@
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
     .category, .fav, .pop, .air, .pub, .img, a {
-        text-decoration: none;
-        cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
     }
 
     ::-webkit-scrollbar { width: 5px }
@@ -173,7 +182,7 @@
     padding-left: 1%;
     height: 100%;
     }
-    .ext { font-size: 10px }
+    .external { font-size: 10px }
 	.pub:hover, .des:hover, a:hover { text-decoration: underline }
     #pop, #air, .get { padding-top: 3em; padding-left: 5% }
     .pop, .air {
@@ -206,7 +215,6 @@
     padding-bottom: 1em;
     margin-bottom: 3em;
     padding-right: 1em;
-    width: fit-content;
     padding-left: 1em;
     padding-top: 1em;
     margin-left: 1%;
@@ -338,18 +346,11 @@ $('.category').on('touchstart click', function(e) {
 
 })
 
-$('.external').on('touchstart click', function(e){
-
-    window.open($(this).attr('ext'), '_blank')
-    e.stopPropagation()
-
-})
-
 $('.fav').on('touchstart click', function(e) {
 
     evt = true
-    prepend(sel)
     populate(sel)
+    prepend(sel)
     scr('#pop:last')
     setTimeout(function() {
         evt = false
@@ -389,7 +390,7 @@ $('.output').on('scroll touchmove focusout', function(e) {
     if (e.type == 'scroll' || e.type == 'touchmove') {
 
         manifest($(this).scrollTop())
-        if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('air').outerHeight()) job = false
+        if ($(this).scrolltop == $('#air').outerHeight()) job = false
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
 
     } else if (e.type == 'focusout') setTimeout(function() {
@@ -439,8 +440,11 @@ function scr(n) {
     }, 250)
 }
 
-function manifest(n) {
+function external(n){
+    window.open(n, '_blank')
+}
 
+function manifest(n) {
     if (job == true) {
         $('.fav').css({
             'transition': 'all .2s linear',
@@ -464,7 +468,8 @@ function manifest(n) {
             'opacity': '1',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && job == false && evt == false) {
+    }
+    if (n > ost + 5 || n == true && job == false && evt == false) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '0',
@@ -475,7 +480,7 @@ function manifest(n) {
             'opacity': '0',
             'visibility': 'hidden'
         })
-    }            
+    }
 
     ost = n
 
@@ -612,11 +617,11 @@ function prepend(n) {
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var id = menu[i].ext.match(/\b\w+$/)
+                var id = '/r/' + menu[i].ext.match(/\b\w+$/)
             } else {
                 var id = menu[i].id
             }
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a class='external' ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -626,27 +631,28 @@ function prepend(n) {
 
 function populate(n) {
 
-    if (job == true && $('#pop, #air').length == 0) {
+    if (job == true) {
         request.abort();
         job = false
     }
-    if ($('#pop, #air').length > 2) {
+    if ($('#pop, #air').length > 1) {
         $('#pop, #air:last, .get').remove()
     }
     document.title = n + ' ack'
     if (n != sel) his = 0
     sel = n
     $('.output').append("<div id='pop'></div>")
-    $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:30px;color:grey'>" + sel + "</div>")
+    $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:20px;text-decoration:none' onclick='populate(sel); prepend(sel); scr(\"#pop:last\"); manifest(true)'>" + sel + "</div>")
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat){
             if (menu[i].id == 'Reddit'){
-                var id = menu[i].ext.match(/\b\w+$/)
+                var id = '/r/' + menu[i].ext.match(/\b\w+$/)
             } else {
                 var id = menu[i].id
             }
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a class='external' ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
     }
+    manifest(true)
     his = 0
     apply()
 
@@ -657,8 +663,8 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320) $('#' + e).parent().css('width', Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%')
-        else if (element.width < 320) $('#' + e).width('50%').parent().css('width', Math.floor(Math.random() * (70 - 25 + 1)) + 15 + '%')
+        if (element.width > 320) $('#' + e).parent().width(Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%')
+        else if (element.width < 320) $('#' + e).width('45%').parent().width(Math.floor(Math.random() * (50 - 25 + 1)) + 25 + '%')
         $('#' + e).css('display', 'block')
         
     }
@@ -693,6 +699,7 @@ function get(n) {
     }
     his = n
     job = true
+    evt = true
     var pub = []
     $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube') {
@@ -716,13 +723,13 @@ function get(n) {
         .done(function(data) {
             $('.arm').remove()
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
-            if ($(data).find('entry').length > 0) var chn = "entry"
-            else var chn = 'item'
-            if ($(data).find(chn).length < quit) {
-                quit = $(data).find(chn).length
+            if ($(data).find('entry').length > 0) var channel = "entry"
+            else var channel = 'item'
+            if ($(data).find(channel).length < quit) {
+                quit = $(data).find(channel).length
             }
-            $(data).find(chn).each(function(i) {
-                if (chn == 'entry') {
+            $(data).find(channel).each(function(i) {
+                if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
                     var dst = utc($(this).find('updated').text());
                     var gen = new Date($(this).find('updated').text()).getTime()
