@@ -663,15 +663,22 @@ function res(i, n) {
 
 }
 
-function exp(n){
+function exp(n) {
 
     if ($('#' + n).width() < "320") return false
-    if ($('#' + n).parent().width() / $(".output").width() * 100 < 75){
-        img = { id : n, w : $('#' + n).parent().width() }
+    if ($('#' + n).parent().width() / $(".output").width() * 100 < 75) {
+        img = {
+            id: n,
+            w: $('#' + n).parent().width()
+        }
         obj.push(img)
         $('#' + n).parent().width("100%")
     } else {
-        $.each(obj, function(i, k){ if (n == k.id){ $('#' + n).parent().width(k.w) } })
+        $.each(obj, function(i, k) {
+            if (n == k.id) {
+                $('#' + n).parent().width(k.w)
+            }
+        })
     }
     $('#' + n).toggleClass("exp")
 
