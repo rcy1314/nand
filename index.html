@@ -475,7 +475,7 @@ function manifest(n) {
             'opacity': '1',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && job == false && evt == false) {
+    } else if (n > ost + 5 && job == false && evt == false || n == false) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '0',
@@ -651,13 +651,11 @@ function populate(n) {
     $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:20px;text-decoration:none' onclick='populate(sel); prepend(sel); scr(\"#pop:last\"); manifest(true)'>" + sel + "</div>")
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit') {
-                var id = menu[i].ext.match(/\b\w+$/)
-            } else {
-                var id = menu[i].id
-            }
+            if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
+    manifest(true)
     his = 0
     apply()
 
@@ -722,11 +720,8 @@ function get(n) {
     }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
-    if (menu[n].id == 'Reddit') {
-        var id = menu[n].ext.match(/\b(\w+)$/)[0]
-    } else {
-        var id = menu[n].id
-    }
+    if (menu[n].id == 'Reddit') var id = menu[n].ext.match(/\b(\w+)$/)[0]
+    else var id = menu[n].id
     request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
