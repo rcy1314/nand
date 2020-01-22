@@ -304,6 +304,7 @@ var menu=[
 {id:"GQ",cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {id:"Heavy",cat:"Media",des:"Heavy Entertainment news including tv, streaming, events, and more.",uri:"https://heavy.com/entertainment/feed",ext:"https://heavy.com/entertainment"},
 {id:"Hollywood Life",cat:"Media",des:"Hollywood Life Top Stories in the Entertainment world.",uri:"https://hollywoodlife.com/feed",ext:"https://hollywoodlife.com"},
+{id:"Hollywood Unlocked",cat:"Media",des:"Hollywood Unlocked is an exclusive entertainment news platform that provides celebrity news in a truthful and positive light.",uri:"http://thehollywoodunlocked.com/feed",ext:"http://thehollywoodunlocked.com"},
 {id:"HCR",cat:"Media",des:"Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and World News.",uri:"https://hotcelebrityreviews.com/feed",ext:"https://hotcelebrityreviews.com"},
 {id:"IndieWire",cat:"Media",des:"IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",uri:"https://www.indiewire.com/feed",ext:"https://www.indiewire.com"},
 {id:"Inside Edition",cat:"Media",des:"Inside Edition Entertainment Entertainment news, headlines, stories, photos, and videos.",uri:"https://www.insideedition.com/entertainment/rss",ext:"https://www.insideedition.com/entertainment"},
