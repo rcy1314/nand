@@ -5,6 +5,21 @@
   - Easy to use.
 
 
+### Features
+
+* Inline Image Expansion
+* Leave off from last feed
+* Ten image parsers
+* Reverse List
+* Predefined xml examples
+* Random (in category)
+* Toggle Opposite Color Scheme (?uri)
+* Youtube Views parsing
+* Times Since Post sorted to newest
+* Plain text for finding 
+* Media Rules for all your devices
+
+
 ### Dependencies
 
 None. But here's what's used:
@@ -17,7 +32,7 @@ None. But here's what's used:
 
 * Simple Array Structure in rss.js
 
-`{ cat : "category", des : "description", uri : "feed", external : "url" },`
+`{ id : "courtesy", cat : "category", des : "description", uri : "feed", external : "url" },`
 
 ### Sourcing
 
@@ -26,10 +41,10 @@ Source the [site](https://acktic.github.io)
 ### Styling
 
 Default
-`<iframe src='https://acktic.github.io'></iframe>`
+`https://acktic.github.io`
 
 Opposite
-`<iframe src='https://acktic.github.io?op=1'></iframe>`
+`https://acktic.github.io?op=1'`
  
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/01/0239362382529.jpg'></p>
  
