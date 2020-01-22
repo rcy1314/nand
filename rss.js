@@ -286,6 +286,7 @@ var menu=[
 {id:"AOL",cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
 {id:"AV Club",cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {id:"BBC",cat:"Media",des:"BBC News Entertainment, Lifestyle, and Arts.",uri:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
+{id:"Bustle",cat:"Media",des:"Bustle is the premier digital destination for millenial women, launched in 2013.",uri:"https://www.bustle.com/rss",ext:"https://www.bustle.com"},
 {id:"CBS",cat:"Media",des:"CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",uri:"https://www.cbsnews.com/latest/rss/entertainment",ext:"https://cbsnews.com/latest/rss/entertainment"},
 {id:"Reddit",cat:"Media",des:"Celebrity Hub subreddit Pictures and GIFs of Actresses, Singers, Models, Athletes and Celebs.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/CelebHub"},
 {id:"CNN",cat:"Media",des:"CNN Entertainment News Celebrities, Movies, TV, and Music.",uri:"http://rss.cnn.com/rss/cnn_showbiz.rss",ext:"https://cnn.com/entertainment"},
