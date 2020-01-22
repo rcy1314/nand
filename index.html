@@ -347,7 +347,7 @@ $('.category').on('touchstart click', function(e) {
 
 })
 
-$('.external').on('touchstart click', function(e){
+$('.external').on('touchstart click', function(e) {
 
     window.open($(this).attr('ext'), '_blank')
     e.stopPropagation()
@@ -439,7 +439,7 @@ function abr(n, e) {
 
 }
 
-function external(n){
+function external(n) {
     window.open(n, '_blank')
 }
 
@@ -488,7 +488,7 @@ function manifest(n) {
             'opacity': '0',
             'visibility': 'hidden'
         })
-    }            
+    }
 
     ost = n
 
@@ -623,8 +623,8 @@ function prepend(n) {
     reverse(menu.reverse())
     $('.output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
-        if (n == menu[i].cat){
-            if (menu[i].id == 'Reddit'){
+        if (n == menu[i].cat) {
+            if (menu[i].id == 'Reddit') {
                 var id = menu[i].ext.match(/\b\w+$/)
             } else {
                 var id = menu[i].id
@@ -652,14 +652,14 @@ function populate(n) {
     $('.output').append("<div id='pop'></div>")
     $('#pop').append("<div id='head' class='pub' style='margin-left:5%;font-size:20px;text-decoration:none' onclick='populate(sel); prepend(sel); scr(\"#pop:last\"); manifest(true)'>" + sel + "</div>")
     for (var i = his; i < menu.length; i++)
-        if (n == menu[i].cat){
-            if (menu[i].id == 'Reddit'){
+        if (n == menu[i].cat) {
+            if (menu[i].id == 'Reddit') {
                 var id = menu[i].ext.match(/\b\w+$/)
             } else {
                 var id = menu[i].id
             }
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-    }
+        }
     his = 0
     apply()
 
@@ -670,22 +670,25 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320){
+        if (element.width > 320) {
             $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
-        obj.push({ element: e, width: element.width })
+            obj.push({
+                element: e,
+                width: element.width
+            })
         } else $('#' + e).width(element.width)
         $('#' + e).css('display', 'block')
-        
+
     }
     element.src = n
 
 }
 
 function expand(n) {
-        var max
-        $.each(obj, function(i, k) {
-            if (n == k.element) max = k.width
-        })
+    var max
+    $.each(obj, function(i, k) {
+        if (n == k.element) max = k.width
+    })
     console.log(max)
     if ($('#' + n).parent().width() / $(".output").width() * 100 < 75 && max > 400) {
         img = {
@@ -719,7 +722,7 @@ function get(n) {
     }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
-    if (menu[n].id == 'Reddit'){
+    if (menu[n].id == 'Reddit') {
         var id = menu[n].ext.match(/\b(\w+)$/)[0]
     } else {
         var id = menu[n].id
@@ -769,29 +772,28 @@ function get(n) {
                     } else {
                         src = String($(this).find('media\\:content, content, enclosure').attr('url').match(/(https:\/\/.+)/)[1].split(','))
                     }
-                else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)){
+                else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
-                }
-                else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
                 if (src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/youtube/)){
-                    if ($(this).find('media\\:statistics, statistics').attr('views')){
+                if (src.match(/youtube/)) {
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
                         views = "<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     } else {
                         views = ''
                     }
-                post = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
-                "<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+                    post = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                        "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        "<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
                     post = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                    "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                    "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+                        "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 var select = {
                     element: i,
