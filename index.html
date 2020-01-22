@@ -317,7 +317,6 @@ scr('#pop:last')
 $('.random').on('touchstart click', function(e) {
 
     random(sel)
-
     e.preventDefault()
 
 })
@@ -325,7 +324,6 @@ $('.random').on('touchstart click', function(e) {
 $('.opposite').on('touchstart click', function(e) {
 
     apply('op')
-
     e.preventDefault()
 
 })
@@ -337,7 +335,7 @@ $('.category').on('touchstart click', function(e) {
     $('#pop, #air, .arm, .get').remove()
     prepend($(this).attr('id'))
     populate($(this).attr('id'))
-    scr('#pop:last').queue(function() {
+    scr('#pop:last').queue(function(){
         evt = false
     })
     e.preventDefault()
@@ -356,7 +354,7 @@ $('.fav').on('touchstart click', function(e) {
     evt = true
     prepend(sel)
     populate(sel)
-    scr('#pop:last').queue(function() {
+    scr('#pop:last').queue(function(){
         evt = false
     })
     e.preventDefault()
@@ -392,11 +390,8 @@ $('#invert').on('touchstart click mousemove mouseleave', function(e) {
 $('.output').on('scroll touchmove focusout', function(e) {
 
     if (e.type == 'scroll' || e.type == 'touchmove') {
-
         manifest($(this).scrollTop())
-        if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
-
     } else if (e.type == 'focusout') setTimeout(function() {
         $('.output').focus()
     }, 100)
