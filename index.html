@@ -29,13 +29,21 @@
 </div>
 </div>
 <style>
+@media (max-width: 375px) {
+
+	.box { width: 89% !important }
+
+}
+
 @media (max-width: 769px) {
 
 	.box {
     min-width: 45%;
-	max-width: 90%;
+	max-width: 93.5%;
 	}
-
+    .get {
+    padding-left: 5%;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -273,7 +281,7 @@
 </style>
 <script>
 var gif
-var per
+var perc
 var op = 0
 var request
 var ost = 0
@@ -641,7 +649,7 @@ function res(i, n) {
 
     var e = new Image()
     e.onload = function() {
-        if (e.width > 320) $('#' + i).parent().width(Math.floor(Math.random() * (65 - 30 + 1)) + 30 + '%')
+        if (e.width > 320) $('#' + i).parent().width(Math.floor(Math.random() * (70 - 45 + 1)) + 45 + '%')
         else if (e.width < 320) $('#' + i).parent().width(Math.floor(Math.random() * (45 - 30 + 1)) + 30 + '%')
         $('#' + i).css('display', 'block')
         
@@ -739,7 +747,7 @@ function get(n) {
                 } else {
 					ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-					"<img onclick='event.stopPropagation(); if ($(this).parent().width() / $(\".output\").width() * 100 < 75){ per = $(this).parent().width(); $(this).parent().width(\"100%\") } else { $(this).parent().width(per) }; $(this).toggleClass(\"exp\")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+					"<img onclick='event.stopPropagation(); if ($(this).width() < \"400\") return false; if ($(this).parent().width() / $(\".output\").width() * 100 < 75){ perc = $(this).parent().width(); $(this).parent().width(\"100%\") } else { $(this).parent().width(perc) }; $(this).toggleClass(\"exp\")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
 				}
                 var top = {
                     e: i,
