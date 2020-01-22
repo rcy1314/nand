@@ -285,11 +285,11 @@
 </style>
 <script>
 var gif
-var perc
 var op = 0
 var request
 var ost = 0
 var his = 0
+var obj = []
 var evt = true
 var job = false
 var sel = 'Social'
@@ -665,19 +665,20 @@ function res(i, n) {
 
 function exp(n){
 
-    
     if ($('#' + n).width() < "320") return false
     if ($('#' + n).parent().width() / $(".output").width() * 100 < 75){
-        perc = $('#' + n).parent().width()
+        img = { id : n, w : $('#' + n).parent().width() }
+        obj.push(img)
         $('#' + n).parent().width("100%")
     } else {
-        $('#' + n).parent().width(perc)
+        $.each(obj, function(i, k){ if (n == k.id){ $('#' + n).parent().width(k.w) } })
     }
     $('#' + n).toggleClass("exp")
 
 }
 
 function get(n) {
+    obj = []
     if (job == true) {
         request.abort();
         job = false
