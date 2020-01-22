@@ -207,10 +207,6 @@
     margin-bottom: .5em;
     width: 100%;
     }
-    .exp {
-    max-width: 100%;
-    width: 100%;
-    }
     .box {
     padding-bottom: 1em;
     margin-bottom: 3em;
@@ -444,12 +440,14 @@ function external(n) {
 }
 
 function scr(n) {
+
     $('.output').animate({
         scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
     }, 100);
     setTimeout(function() {
         evt = false
     }, 250)
+
 }
 
 function manifest(n) {
@@ -685,6 +683,7 @@ function resolution(e, n) {
 }
 
 function expand(n) {
+
     var max
     $.each(obj, function(i, k) {
         if (n == k.element) max = k.width
@@ -703,6 +702,7 @@ function expand(n) {
         })
     }
     $('#' + n).toggleClass("exp")
+
 }
 
 function get(n) {
