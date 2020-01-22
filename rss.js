@@ -532,6 +532,7 @@ var menu=[
 {id:"Boston",cat:"World",des:"Boston is a regional website that offers news and information about Boston, Massachusetts.",uri:"https://www.boston.com/tag/world-news/feed",ext:"https://www.boston.com/tag/world-news"},
 {id:"Boston Herald",cat:"World",des:"Boston Herald is the leading source of breaking news, local news, sports, politics, and entertainment.",uri:"https://www.bostonherald.com/feed",ext:"https://www.bostonherald.com"},
 {id:"CBS",cat:"World",des:"CBS is a media company that creates and distributes industry-leading content.",uri:"https://www.cbsnews.com/latest/rss/world",ext:"https://cbsnews.com"},
+{id:"CNA",cat:"World",des:"Channel News Asia is an English language news channel based in Singapore.",uri:"https://www.channelnewsasia.com/rssfeeds/8395986",ext:"https://www.channelnewsasia.com/news/international"},
 {id:"CNBC",cat:"World",des:"CNBC latest headlines from around the world.",uri:"https://www.cnbc.com/id/100727362/device/rss/rss.html",ext:"https://cnbc.com/world"},
 {id:"CNN",cat:"World",des:"CNN is among the world's leaders in online news and information delivery.",uri:"http://rss.cnn.com/rss/cnn_topstories.rss",ext:"https://cnn.com"},
 {id:"Common Dreams",cat:"World",des:"Common Dreams is a daily, glorious taste of what the dominant media could be.",uri:"https://www.commondreams.org/rss.xml",ext:"https://www.commondreams.org"},
