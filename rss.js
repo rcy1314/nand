@@ -542,6 +542,7 @@ var menu=[
 {id:"Fortune",cat:"World",des:"Fortune is an American multinational business magazine headquartered in New York City.",uri:"https://fortune.com/feed",ext:"https://fortune.com"},
 {id:"Global News",cat:"World",des:"Global News World breaking international news current world news headlines, international news and business.",uri:"https://globalnews.ca/world/feed",ext:"https://globalnews.ca/world"},
 {id:"Google",cat:"World",des:"Google is a multinational technology company that specializes in Internet-related services and products.",uri:"https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",ext:"https://news.google.com"},
+{id:"Harvard",cat:"World",des:"Harvard Gazette National and World Affairs.",uri:"https://news.harvard.edu/gazette/section/national-world-affairs/feed",ext:"https://news.harvard.edu/gazette/section/national-world-affairs"},
 {id:"Heavy",cat:"World",des:"Heavy news from around the world.",uri:"https://heavy.com/news/feed",ext:"https://heavy.com/news"},
 {id:"IBTimes",cat:"World",des:"International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",uri:"https://www.ibtimes.sg/rss/world",ext:"https://www.ibtimes.com/world"},
 {id:"Market Watch",cat:"World",des:"Market Watch published by Dow Jones & Co., tracks the pulse of markets for engaged investors.",uri:"http://feeds.marketwatch.com/marketwatch/topstories",ext:"http://marketwatch.com"},
