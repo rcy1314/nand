@@ -22,7 +22,7 @@
 
 ### Dependencies
 
-None. But here's what's used:
+Browser. Here's what's used:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
