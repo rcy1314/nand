@@ -84,8 +84,8 @@
     }
 
     .box {
-    min-width: 50%;
-    max-width: 88%;
+    min-width: 30%;
+    max-width: 92%;
     }
 
     .get { padding-left: 5% }
@@ -670,8 +670,8 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320) $('#' + e).parent().css('width', Math.floor(Math.random() * (88 - 35 + 1)) + 35 + '%')
-        else if (element.width < 320) $('#' + e).width('50%').parent().css('width', Math.floor(Math.random() * (60 - 25 + 1)) + 25 + '%')
+        if (element.width > 320) $('#' + e).parent().width(Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%')
+        else if (element.width < 320) $('#' + e).width('65%').parent().width(Math.floor(Math.random() * (50 - 25 + 1)) + 25 + '%')
         $('#' + e).css('display', 'block')
         
     }
