@@ -378,6 +378,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Programming subreddit shares user submitted articles on Programming.",uri:"https://reddit.com/r/programming/.rss",ext:"https://reddit.com/r/Programming"},
 {id:"Reddit",cat:"Social",des:"Python subreddit about the Dynamic, Interpreted, Interactive, Object-Oriented, extensible language Python.",uri:"https://reddit.com/r/python/.rss",ext:"https://reddit.com/r/Python"},
 {id:"Reddit",cat:"Social",des:"Redhat subreddit discussion for Red Hat and Red Hat technologies.",uri:"https://reddit.com/r/redhat/.rss",ext:"https://reddit.com/r/Redhat"},
+{id:"4chan",cat:"Social",des:"SCI Board for math and science questions and related topics.",uri:"http://boards.4channel.org/sci/index.rss",ext:"http://boards.4channel.org/sci"},
 {id:"Reddit",cat:"Social",des:"Science subreddit read about the latest advances in astronomy, biology, medicine, physics, and social science.",uri:"https://reddit.com/r/science/.rss",ext:"https://reddit.com/r/Science"},
 {id:"Reddit",cat:"Social",des:"Security subreddit a friendly and professional place for discussing computer security.",uri:"https://reddit.com/r/security/.rss",ext:"https://reddit.com/r/Security"}, 
 {id:"Reddit",cat:"Social",des:"Software subreddit where software applications are discussed.",uri:"https://reddit.com/r/software/.rss",ext:"https://reddit.com/r/Software"},
