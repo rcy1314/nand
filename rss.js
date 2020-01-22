@@ -562,6 +562,7 @@ var menu=[
 {id:"PBS",cat:"World",des:"Public Broadcasting Service is an American public broadcaster and television program distributor.",uri:"https://www.pbs.org/newshour/feeds/rss/headlines",ext:"https://pbs.org"},
 {id:"Quartz",cat:"World",des:"Quartz covers business, economics, markets, finance, technology, science, design, and fashion.",uri:"https://cms.qz.com/feed",ext:"https://qz.com"},
 {id:"RT",cat:"World",des:"RT delivers latest news on current events from around the world.",uri:"https://www.rt.com/rss",ext:"https://rt.com"},
+{id:"Salt Lake Tribune",cat:"World",des:"The Salt Lake Tribune covers news, entertainment, sports and faith for Salt Lake City and the state of Utah.",uri:"https://www.sltrib.com/arcio/rss/category/news/nation-world/?summary=true",ext:"https://www.sltrib.com/news/nation-world"},
 {id:"Snopes",cat:"World",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {id:"Sputnik",cat:"World",des:"Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",uri:"https://sputniknews.com/export/rss2/archive/index.xml",ext:"https://sputniknews.com"},
 {id:"Telegraph",cat:"World",des:"Telegraph.co.uk for the latest news from the UK and around the world.",uri:"https://www.telegraph.co.uk/rss.xml",ext:"https://www.telegraph.co.uk"},
