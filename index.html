@@ -663,6 +663,20 @@ function res(i, n) {
 
 }
 
+function exp(n){
+
+    
+    if ($('#' + n).width() < "320") return false
+    if ($('#' + n).parent().width() / $(".output").width() * 100 < 75){
+        perc = $('#' + n).parent().width()
+        $('#' + n).parent().width("100%")
+    } else {
+        $('#' + n).parent().width(perc)
+    }
+    $('#' + n).toggleClass("exp")
+
+}
+
 function get(n) {
     if (job == true) {
         request.abort();
@@ -751,7 +765,7 @@ function get(n) {
                 } else {
 					ext = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-					"<img onclick='event.stopPropagation(); if ($(this).width() < \"320\") return false; if ($(this).parent().width() / $(\".output\").width() * 100 < 75){ perc = $(this).parent().width(); $(this).parent().width(\"100%\") } else { $(this).parent().width(perc) }; $(this).toggleClass(\"exp\")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+					"<img onclick='event.stopPropagation(); exp(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
 				}
                 var top = {
                     e: i,
