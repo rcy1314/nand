@@ -34,6 +34,8 @@
 
     .box { width: 85.5% !important }
 
+    .img { width: 100% !important }
+
 }
 
 @media (max-width: 769px) {
@@ -291,7 +293,6 @@
     }
 </style>
 <script>
-
 var gif
 var op = 0
 var request
@@ -316,6 +317,7 @@ scr('#pop:last')
 $('.random').on('touchstart click', function(e) {
 
     random(sel)
+
     e.preventDefault()
 
 })
@@ -323,6 +325,7 @@ $('.random').on('touchstart click', function(e) {
 $('.opposite').on('touchstart click', function(e) {
 
     apply('op')
+
     e.preventDefault()
 
 })
@@ -430,9 +433,7 @@ function abr(n, e) {
 
 }
 
-function external(n) {
-    window.open(n, '_blank')
-}
+function external(n) { window.open(n, '_blank') }
 
 function scr(n) {
 
@@ -764,12 +765,11 @@ function get(n) {
                     }
                 else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
-                    if (menu[n].id.match(/4chan/)) {
-                        src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1]).slice(0, -5) + '.jpg'
-                    } else {
-                        src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
-                    }
+                }
+                else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
+                else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
+                    if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
+                    else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
                 if (src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
