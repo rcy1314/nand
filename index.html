@@ -291,16 +291,16 @@
     }
 </style>
 <script>
-var gif                    /* This keeps the favico/invert for app() & get() */
-var op = 0                 /* This is the app(0) invert, default(1)          */
-var request                /* The $.get used to abort for pop/recall         */
-var ost = 0                /* .output scrollTop() used in manifest()         */
-var his = 0                /* For populate() from last get(his)              */
-var obj = []               /* Holds min/max widths for .img and .box         */
-var min = 249              /* The minimum .img width to expand (leave)       */
-var evt = true             /* Like job keeps .attach/.fav visible            */
-var job = false            /* Stops populate ost max and used in manifest()  */
-var sel = 'Social'         /* Initial category                               */
+var gif
+var op = 0
+var request
+var ost = 0
+var his = 0
+var obj = []
+var min = 249
+var evt = true
+var job = false
+var sel = 'Social'
 
 if (location.href.match('\\?op=1')) {
 
