@@ -53,7 +53,7 @@
     .get { padding-left: 5% }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 
     html, body, .container, .output {
     overflow: hidden;
@@ -670,8 +670,8 @@ function resolution(e, n) {
 
     var element = new Image()
     element.onload = function() {
-        if (element.width > 320) $('#' + e).parent().width(Math.floor(Math.random() * (70 - 35 + 1)) + 35 + '%')
-        else if (element.width < 320) $('#' + e).width('65%').parent().width(Math.floor(Math.random() * (50 - 25 + 1)) + 25 + '%')
+        if (element.width > 320) $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (80 - 50 + 1)) + 40 + '%')
+        else if (element.width < 320) $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (50 - 35 + 1)) + 25 + '%')
         $('#' + e).css('display', 'block')
         
     }
