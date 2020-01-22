@@ -359,6 +359,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",uri:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/Games"},
 {id:"Reddit",cat:"Social",des:"Github subreddit for all things GitHub!",uri:"https://reddit.com/r/github/.rss",ext:"https://reddit.com/r/Github"},
 {id:"Reddit",cat:"Social",des:"Google subreddit For news and announcements from and about Google.",uri:"https://reddit.com/r/google/.rss",ext:"https://reddit.com/r/Google"},
+{id:"4chan",cat:"Social",des:"GD Graphic Design Board dedicated to the art of Design.",uri:"http://boards.4channel.org/gd/index.rss",ext:"http://boards.4channel.org/gd"},
 {id:"Reddit",cat:"Social",des:"Hacker News subreddit A mirror of Hacker News' best submissions.",uri:"https://reddit.com/r/hackernews/.rss",ext:"https://reddit.com/r/HackerNews"},
 {id:"Reddit",cat:"Social",des:"Hacking subreddit dedicated to Hacking and Hackers.",uri:"https://reddit.com/r/hacking/.rss",ext:"https://reddit.com/r/Hacking"},
 {id:"Reddit",cat:"Social",des:"Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",uri:"https://reddit.com/r/hardware/.rss",ext:"https://reddit.com/r/Hardware"},
