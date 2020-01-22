@@ -29,6 +29,15 @@
 </div>
 </div>
 <style>
+@media (max-width: 769px) {
+
+	.box {
+	min-width: 88%;
+	width: 88%;
+	}
+
+}
+
 @media screen and (min-width: 1025px) {
 
     html, body, .container, .output {
@@ -50,6 +59,8 @@
     right: 50%;
     top: -45.5%;
     }
+
+	.box { min-width: 30%; }
 
     .ico { margin-bottom: -1.2em }
 
@@ -169,6 +180,7 @@
 	width: 50%;
     }
 	.exp {
+	min-width: 88%;
 	width: 100%;
 	}
     .box {
@@ -180,9 +192,8 @@
     padding-top: 1em;
     margin-left: 1%;
   	max-width: 88%;
-	min-width: 30%;
     display: table;
-    }
+	}
     .ago {
     padding-bottom: .5em;
     font-size: 10px;
@@ -723,7 +734,7 @@ function get(n) {
                 } else {
 					ext = "<div class='box'  onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().trunc(90, true) + "</div>" +
                     "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                    "<img onclick='event.stopPropagation(); $(this).toggleClass(\"exp\")'id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+					"<img onclick='event.stopPropagation(); $(this).toggleClass(\"exp\")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
 				}
                 var top = {
                     e: i,
