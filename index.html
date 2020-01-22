@@ -574,8 +574,8 @@ function apply(n) {
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.attach').css('background-color', 'rgba(0, 0, 0, .7)')
         $('.output').removeClass('invert').addClass('default')
+        $('.img, iframe').css('filter', 'brightness(75%)')
         $('.gif').attr('src', 'favicon/favico.png')
-        $('.img').css('filter', 'brightness(75%)')
         $('#invert').hide();
         $('#favico').show()
         $('a').css('color', '#F7426B')
