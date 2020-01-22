@@ -468,6 +468,7 @@ var menu=[
 {id:"Global News",cat:"Technology",des:"Global News Technology breaking tech and gadget news, latest news and updates on all things tech and digital.",uri:"https://globalnews.ca/tech/feed",ext:"https://globalnews.ca/tech"},
 {id:"Hackaday",cat:"Technology",des:"Hackaday serves up Fresh Hacks Every Day from around the Internet.",uri:"https://hackaday.com/feed",ext:"https://hackaday.com"},
 {id:"YCombinator",cat:"Technology",des:"Hacker News is a reader ran headline submission news purveyor.",uri:"https://news.ycombinator.com/rss",ext:"https://news.ycombinator.com"},
+{id:"Harvard",cat:"Technology",des:"Harvard Gazette the official news outlet of Harvard University.",uri:"https://news.harvard.edu/gazette/section/science-technology/feed",ext:"https://news.harvard.edu/gazette/section/science-technology"},
 {id:"Heavy",cat:"Technology",des:"Heavy Technology news and related articles.",uri:"https://heavy.com/tech/feed",ext:"https://heavy.com/tech"},
 {id:"Houston Chronicle",cat:"Technology",des:"Houston Chronicle Technology News and Headlines.",uri:"https://www.chron.com/rss/feed/Technology-289.php",ext:"https://www.chron.com/business/technology"},
 {id:"Huffington Post",cat:"Technology",des:"HuffingtonPost Tech news, headlines, and opinion.",uri:"https://www.huffpost.com/section/technology/feed",ext:"https://www.huffpost.com/impact/technology"},
