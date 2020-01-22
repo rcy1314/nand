@@ -639,6 +639,7 @@ function res(i, n) {
     var e = new Image()
     e.onload = function() {
         if (e.width > 320) $('#' + i).parent().width('50%')
+        else if (e.width < 320) $('#' + i).width(e.width)
         $('#' + i).css('display', 'block')
         
     }
