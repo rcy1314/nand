@@ -88,7 +88,7 @@
     max-width: 92%;
     }
 
-    .get { padding-left: 5% }
+    #pop, #air, .get { padding-left: 5%; }
 
     .ico { margin-bottom: -1.2em }
 
@@ -183,11 +183,11 @@
     }
     .ext { font-size: 10px }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air, .get { padding-top: 3em; padding-left: 5% }
+    #pop, #air, .get { padding-top: 3em; }
     .pop, .air {
+    margin-left: 1.5em;
     margin: .5em auto;
     font-weight: 550;
-    margin-left: 2em;
     margin-top: .5em;
     font-size: 12px;
     max-width: 84%;
@@ -197,7 +197,6 @@
     background-color: transparent;
     text-transform: capitalize;
     letter-spacing: 1px;
-    margin-bottom: 3px;
     font-family: Arial;
     width: fit-content;
     font-weight: bold;
@@ -299,7 +298,7 @@ var request                /* The $.get used to abort for pop/recall         */
 var ost = 0                /* .output scrollTop() used in manifest()         */
 var his = 0                /* For populate() from last get(his)              */
 var obj = []               /* Holds min/max widths for .img and .box         */
-var min = 299              /* The minimum .img width to expand (leave)       */
+var min = 249              /* The minimum .img width to expand (leave)       */
 var evt = true             /* Like job keeps .attach/.fav visible            */
 var job = false            /* Stops populate ost max and used in manifest()  */
 var sel = 'Social'         /* Initial category                               */
@@ -391,6 +390,7 @@ $('.output').on('scroll touchmove focusout', function(e) {
 
     if (e.type == 'scroll' || e.type == 'touchmove') {
         manifest($(this).scrollTop())
+        if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
         if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
     } else if (e.type == 'focusout') setTimeout(function() {
         $('.output').focus()
@@ -662,7 +662,7 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.width > min) {
-            $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (65 - 35 + 1)) + 35 + '%')
+            $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
             obj.push({
                 element: e,
                 width: element.width
