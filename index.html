@@ -750,6 +750,7 @@ function get(n) {
                 $('.get').append(pub[k].pub)
                 if ($('#' + pub[k].e).length) res(pub[k].e, $('#' + pub[k].e).attr('src'))
             }
+			$('.box').css('max-width',$('.img').width())
             air(sel)
             pop(sel)
 			app()
