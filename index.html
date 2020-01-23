@@ -559,7 +559,7 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, .wrapper, .container, .output, .pop, .air, .box').css({
+        $('html, .wrapper, .container, .output, .pop, .air, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.8)'
@@ -578,7 +578,7 @@ function apply(n) {
         $('a').css('color', '#F7426B')
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.container, .output, .pop, .air').css({
+        $('.container, .output, .pop, .air, .rss').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -614,11 +614,10 @@ function prepend(n) {
     $('.output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit') {
-                var id = menu[i].ext.match(/\b\w+$/)
-            } else {
-                var id = menu[i].id
-            }
+            if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
+            if (menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
             $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
@@ -643,6 +642,8 @@ function populate(n) {
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
+            if (menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
