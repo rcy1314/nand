@@ -614,9 +614,7 @@ function prepend(n) {
     $('.output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            if (menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
             $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
@@ -641,9 +639,7 @@ function populate(n) {
     $('.output').append("<div id='pop'></div>")
     for (var i = his; i < menu.length; i++)
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit') var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            if (menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
