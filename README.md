@@ -15,7 +15,7 @@
 * Random (in category)
 * Toggle Opposite Color Scheme (?uri)
 * Youtube Views parsing
-* Times Since Post sorted to newest
+* Time Since Post sorted to newest
 * Plain text for finding 
 * Media Rules for all your devices
 
