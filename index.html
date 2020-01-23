@@ -310,7 +310,7 @@ populate(sel)
 prepend(sel)
 scr('#pop:last')
 
-$('.random').on('touchstart click', function(e) {
+$('.random').on('touchstart click', function(e){
 
     random(sel)
 
@@ -318,7 +318,7 @@ $('.random').on('touchstart click', function(e) {
 
 })
 
-$('.opposite').on('touchstart click', function(e) {
+$('.opposite').on('touchstart click', function(e){
 
     apply('op')
 
@@ -326,7 +326,7 @@ $('.opposite').on('touchstart click', function(e) {
 
 })
 
-$('.category').on('touchstart click', function(e) {
+$('.category').on('touchstart click', function(e){
 
     his = 0
     evt = true
@@ -340,23 +340,54 @@ $('.category').on('touchstart click', function(e) {
 
 })
 
-$('.external').on('touchstart click', function(e) {
+$('.external').on('touchstart click', function(e){
 
     window.open($(this).attr('ext'), '_blank')
     e.stopPropagation()
 
 })
 
-$('.fav').on('touchstart click', function(e) {
+$('.fav').on('touchstart click mouseover', function(e){
 
-    evt = true
-    prepend(sel)
-    populate(sel)
-    scr('#pop:last').queue(function(){
-        evt = false
-    })
+    if (e.type == 'mouseover'){
+        $('.fav').css({
+            'transition': 'all .2s linear',
+            'opacity': '1',
+            'visibility': 'visible'
+        });
+    } else {
+        evt = true
+        prepend(sel)
+        populate(sel)
+        scr('#pop:last').queue(function(){
+            evt = false
+        })
+    }
     e.preventDefault()
-    e.stopPropagation()
+
+})
+
+$('.attach').on('mouseover', function(e){
+
+        $('.attach').css({
+            'transition': 'all .2s linear',
+            'opacity': '1',
+            'visibility': 'visible'
+        })
+
+})
+
+$('.attach, .fav').on('mouseout', function(e){
+
+    setTimeout(function(){ $('.fav').css({
+            'transition': 'all .2s linear',
+            'opacity': '0',
+        });
+        $('.attach').css({
+            'transition': 'all .2s linear',
+            'opacity': '0',
+        })
+    }, 500)
 
 })
 
@@ -448,35 +479,29 @@ function manifest(n) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '1',
-            'visibility': 'visible'
         });
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '1',
-            'visibility': 'visible'
         })
     }
     if (n < ost - 5 || n == true) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '1',
-            'visibility': 'visible'
         });
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '1',
-            'visibility': 'visible'
         })
     } else if (n > ost + 5 && job == false && evt == false || n == false) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '0',
-            'visible': 'hidden'
         });
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '0',
-            'visibility': 'hidden'
         })
     }
 
