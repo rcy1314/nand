@@ -18,6 +18,7 @@
 * Time Since Post sorted to newest
 * Plain text for finding 
 * Media Rules for all your devices
+* Private proxy requests
 
 
 ### Dependencies
