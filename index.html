@@ -371,20 +371,6 @@ $('.attach').on('mousemove', function(e){
 
 })
 
-$('.attach, .fav').on('mouseout', function(e){
-
-    setTimeout(function(){ $('.fav').css({
-            'transition': 'all .2s linear',
-            'opacity': '0',
-        });
-        $('.attach').css({
-            'transition': 'all .2s linear',
-            'opacity': '0',
-        })
-    }, 1000)
-
-})
-
 $('#invert').on('touchstart click mousemove mouseleave', function(e) {
 
     if (e.type == 'touchstart' || e.type == 'click') {
