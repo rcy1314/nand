@@ -12,6 +12,8 @@
 
 @media screen and (min-width: 1025px) {
 
+	html { background-color: #fafafa } 
+
     html, body, .container, .output {
     overflow: hidden;
     height: 100%;
@@ -108,8 +110,7 @@
     margin: .5em;
     height: 32px;
     width: 32px;
-    }
-    .attach {
+    }.attach {
     justify-content: center;
     position: absolute;
     display: flex;
