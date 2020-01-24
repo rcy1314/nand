@@ -36,10 +36,11 @@
 
     .rss {
     position: absolute;
-    bottom: 2px;
-    right: 5px;
     cursor: default;
     font-size: 10px;
+	display: block;
+    bottom: 2px;
+    right: 5px;
     }
 
     .box { max-width: 93.5% }
