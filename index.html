@@ -84,8 +84,7 @@
     }
 
     .box {
-    min-width: 40%;
-    max-width: 92%;
+    max-width: 93.5%;
     }
 
     #pop, #air, .get { padding-left: 1.5%; }
@@ -699,14 +698,13 @@ function expand(n) {
     $.each(obj, function(i, k) {
         if (n == k.element) max = k.width
     })
-    console.log(max)
     if ($('#' + n).parent().width() / $(".output").width() * 100 < 75 && max > min) {
         img = {
             element: n,
             width: $('#' + n).parent().width()
         }
         obj.push(img)
-        $('#' + n).parent().width("88%")
+        $('#' + n).parent().width("100%")
     } else {
         $.each(obj, function(i, k) {
             if (n == k.element) $('#' + n).parent().width(k.width)
