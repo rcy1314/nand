@@ -649,8 +649,9 @@ function prepend(n) {
 
 function populate(n) {
 
-    if (job == true && $('#pop, #air').length == 0) {
-        request.abort();
+    if (job == true) {
+        $('.arm').remove()
+        request.abort()
         job = false
     }
     if ($('#pop, #air').length > 2) {
@@ -717,7 +718,7 @@ function expand(n) {
 function get(n) {
     obj = []
     if (job == true) {
-        request.abort();
+        request.abort()
         job = false
     }
     his = n
