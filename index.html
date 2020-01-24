@@ -119,9 +119,13 @@
     height: 50%;
     right: 50%;
     }
-    #invert {
-    -moz-box-shadow: 1p 1px 5px #aaa;
-    box-shadow: 1px 1px 5px #aaa;
+    #invert{
+    border-radius: 50%;
+    border-bottom: solid 1px #b5b5b5;
+    }
+    #invert:active {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: none;
     }
     .ico {
     transform: translateX(-50%);
@@ -360,31 +364,6 @@ $('.attach').on('mousemove', function(e){
             'opacity': '1',
             'visibility': 'visible'
         })
-
-})
-
-$('#invert').on('touchstart click mousemove mouseleave', function(e) {
-
-    if (e.type == 'touchstart' || e.type == 'click') {
-        $('#invert').css({
-            '-moz-box-shadow': '1px 1px 5px #555',
-            'box-shadow': '1px 1px 5px #555'
-        })
-        setTimeout(function() {
-            $('#invert').css({
-                '-moz-box-shadow': '1px 1px 5px #aaa',
-                'box-shadow': '1px 1px 5px #aaa'
-            })
-        }, 100)
-    }
-    if (e.type == 'mousemove') $(this).css({
-        '-moz-box-shadow': '1px 1px 5px #aaa',
-        'box-shadow': '1px 1px 5px #aaa'
-    })
-    else if (e.type == 'mouseleave') $(this).css({
-        '-moz-box-shadow': '1px 1px 5px #ccc',
-        'box-shadow': '1px 1px 5px #ccc'
-    })
 
 })
 
