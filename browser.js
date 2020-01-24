@@ -9,78 +9,78 @@ var evt = true
 var job = false
 var sel = 'Social'
 $(document).ready(function() {
-$('.wrapper').css('display','block')
+    $('.wrapper').css('display', 'block')
 
-if (location.href.match('\\?op=1')) {
+    if (location.href.match('\\?op=1')) {
 
-    apply(1)
+        apply(1)
 
-} else apply(op)
+    } else apply(op)
 
-populate(sel)
-prepend(sel)
-scr('#pop:last')
-
-$('.random').on('touchstart click', function(e){
-
-    random(sel)
-
-    e.preventDefault()
-
-})
-
-$('.opposite').on('touchstart click', function(e){
-
-    apply('op')
-
-    e.preventDefault()
-
-})
-
-$('.category').on('touchstart click', function(e){
-
-    his = 0
-    evt = true
-    $('#pop, #air, .arm, .get').remove()
-    prepend($(this).attr('id'))
-    populate($(this).attr('id'))
+    populate(sel)
+    prepend(sel)
     scr('#pop:last')
-    setTimeout(function(){
-        evt = false
-    }, 250)
-    e.preventDefault()
 
-})
+    $('.random').on('touchstart click', function(e) {
 
-$('.external').on('touchstart click', function(e){
+        random(sel)
 
-    window.open($(this).attr('ext'), '_blank')
-    e.stopPropagation()
+        e.preventDefault()
 
-})
+    })
 
-$('.fav').on('touchstart click mouseover', function(e){
+    $('.opposite').on('touchstart click', function(e) {
 
-    if (e.type == 'mouseover'){
-        $('.fav').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-            'visibility': 'visible'
-        });
-    } else {
+        apply('op')
+
+        e.preventDefault()
+
+    })
+
+    $('.category').on('touchstart click', function(e) {
+
+        his = 0
         evt = true
-        prepend(sel)
-        populate(sel)
+        $('#pop, #air, .arm, .get').remove()
+        prepend($(this).attr('id'))
+        populate($(this).attr('id'))
         scr('#pop:last')
-        setTimeout(function(){
+        setTimeout(function() {
             evt = false
         }, 250)
-    }
-    e.preventDefault()
+        e.preventDefault()
 
-})
+    })
 
-$('.attach').on('mousemove', function(e){
+    $('.external').on('touchstart click', function(e) {
+
+        window.open($(this).attr('ext'), '_blank')
+        e.stopPropagation()
+
+    })
+
+    $('.fav').on('touchstart click mouseover', function(e) {
+
+        if (e.type == 'mouseover') {
+            $('.fav').css({
+                'transition': 'all .2s linear',
+                'opacity': '1',
+                'visibility': 'visible'
+            });
+        } else {
+            evt = true
+            prepend(sel)
+            populate(sel)
+            scr('#pop:last')
+            setTimeout(function() {
+                evt = false
+            }, 250)
+        }
+        e.preventDefault()
+
+    })
+
+    $('.attach').on('mousemove', function(e) {
 
         $('.attach').css({
             'transition': 'all .2s linear',
@@ -88,25 +88,25 @@ $('.attach').on('mousemove', function(e){
             'visibility': 'visible'
         })
 
-})
+    })
 
-$('.output').on('scroll touchmove focusout', function(e) {
+    $('.output').on('scroll touchmove focusout', function(e) {
 
-    if (e.type == 'scroll' || e.type == 'touchmove') {
-        manifest($(this).scrollTop())
-        if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
-        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
-    } else if (e.type == 'focusout') setTimeout(function() {
-        $('.output').focus()
-    }, 100)
+        if (e.type == 'scroll' || e.type == 'touchmove') {
+            manifest($(this).scrollTop())
+            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
+            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
+        } else if (e.type == 'focusout') setTimeout(function() {
+            $('.output').focus()
+        }, 100)
 
-}).attr('tabindex', -1).focus()
+    }).attr('tabindex', -1).focus()
 
-$('.rss').on('click', function(e){
+    $('.rss').on('click', function(e) {
 
-	external('https://github.com/acktic/acktic.github.io')
+        external('https://github.com/acktic/acktic.github.io')
 
-})
+    })
 
 })
 
@@ -141,7 +141,9 @@ function abr(n, e) {
 
 }
 
-function external(n) { window.open(n, '_blank') }
+function external(n) {
+    window.open(n, '_blank')
+}
 
 function scr(n) {
 
@@ -463,11 +465,10 @@ function get(n) {
                     }
                 else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
-                }
-                else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
+                } else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
                 else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
                     if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-                    else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
                 if (src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
@@ -508,4 +509,3 @@ function get(n) {
             apply()
         })
 }
-
