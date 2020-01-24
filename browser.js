@@ -364,12 +364,12 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.width > min) {
-            $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
+            $('#' + e).width('100%').parent().width(Math.floor(Math.random() * (85 - 35 + 1)) + 35 + '%')
             obj.push({
                 element: e,
                 width: element.width
             })
-        } else $('#' + e).width(element.width)
+        } else $('#' + e).width(element.width).parent().css('width','fit-content')
         $('#' + e).css('display', 'block')
 
     }
