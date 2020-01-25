@@ -411,7 +411,7 @@ function get(n) {
     else var quit = 11
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
-    if (menu[n].id == 'Reddit') var id = menu[n].ext.match(/\b(\w+)$/)[0]
+    if (menu[n].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
     request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
         .fail(function() {
