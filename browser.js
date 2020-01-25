@@ -93,7 +93,6 @@ $(document).ready(function() {
     $('.output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			console.log($(this).scrollTop() + ' x ' + $('#air').outerHeight())
 			manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
