@@ -433,7 +433,7 @@ var menu=[
 {id:"MLB",cat:"Sport",des:"MLB is the official site of Major League Baseball.",uri:"https://www.mlb.com/feeds/news/rss.xml",ext:"https://mlb.com"},
 {id:"MMAJunkie",cat:"Sport",des:"MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.",uri:"https://mmajunkie.com/news/feed",ext:"https://mmajunkie.com"},
 {id:"MMAtion",cat:"Sport",des:"MMAtion Global events, results, rankings and more.",uri:"http://en.mmation.com/feed",ext:"http://en.mmation.com"},
-{id:"MMA",cat:"Sport",des:"MMA News offers coverage of the MMA world with original content.",uri:"https://www.mmanews.com/feed",ext:"https://mmanews.com"},
+{id:"MMA News",cat:"Sport",des:"MMA News offers coverage of the MMA world with original content.",uri:"https://www.mmanews.com/feed",ext:"https://mmanews.com"},
 {id:"Reddit",cat:"Sport",des:"MMA subreddit for all things Mixed Martial Arts.",uri:"https://reddit.com/r/MMA/.rss",ext:"https://reddit.com/r/MMA"},
 {id:"NBC Sports",cat:"Sport",des:"NBC Sports is responsible for the televising of many Sports Events.",uri:"https://sports.nbcsports.com/feed",ext:"https://nbcsports.com"},
 {id:"Reddit",cat:"Sport",des:"NFL subreddit covers National Football League News and Discussion.",uri:"https://reddit.com/r/nfl/.rss",ext:"https://reddit.com/r/NFL"},
