@@ -116,12 +116,12 @@
     }
 	.attach {
     justify-content: center;
-	width: calc(100% - 5px)
+	width: calc(100% - 6px);
     position: absolute;
     display: flex;
     height: 2.9em;
 	z-index: 2;
-    top: -1px;
+    top: 0px;
     }
     .category {
     display: inline-block;
