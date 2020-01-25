@@ -474,7 +474,6 @@ var menu=[
 {id:"Exploit Database",cat:"Technology",des:"Exploit Database is a non-profit project that is provided as a public service by Offensive Security.",uri:"https://www.exploit-db.com/rss.xml",ext:"https://www.exploit-db.com"},
 {id:"Forbes",cat:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",uri:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com"},
 {id:"Gadgets 360",cat:"Technology",des:"Gadgets 360 Tech News, Latest Technology News, Best New Tech Gadgets, Mobile, Tables, Laptops, and Games.",uri:"https://gadgets.ndtv.com/rss/feeds",ext:"https://gadgets.ndtv.com"},
-{id:"Gaming on Linux",cat:"Technology",des:"Gaming on Linux Latest Articles and Games.",uri:"https://www.gamingonlinux.com/article_rss.php",ext:"https://gamingonlinux.com"},
 {id:"GeekWire",cat:"Technology",des:"GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",uri:"https://www.geekwire.com/feed",ext:"https://geekwire.com"},
 {id:"Gizmodo",cat:"Technology",des:"Gizmodo is a Design, Technology, Science and Science Fiction website.",uri:"https://gizmodo.com/rss",ext:"https://gizmodo.com"},
 {id:"gHacks",cat:"Technology",des:"gHacks the Independent Rechnology News blog.",uri:"https://www.ghacks.net/feed",ext:"https://ghacks.net"},
