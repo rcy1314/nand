@@ -9,7 +9,7 @@ var evt = true
 var job = false
 var sel = 'Social'
 $(document).ready(function() {
-    $('.wrapper').css('display', 'block')
+    $('.wrapper, .rss').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
