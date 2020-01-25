@@ -331,8 +331,10 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand min').width('25%').parent().width(Math.floor(Math.random() * (45 - 25 + 1)) + 25 + '%')
-		} else $('#' + e).addClass('min').width(element.width).parent().css('width','fit-content')
+            $('#' + e).addClass('expand min').width('30%').parent().width(Math.floor(Math.random() * (45 - 20 + 1)) + 20 + '%')
+        } else if (element.width > min) {
+			$('#' + e).addClass('expand min').width('100%').parent().width(Math.floor(Math.random() * (45 - 20 + 1)) + 20 + '%')
+		} else $('#' + e).addClass('min').width(element.width)
         $('#' + e).css('display', 'block')
 
     }
@@ -417,7 +419,10 @@ function get(n) {
                 }
                 if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
-                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
+                else if ($(this).find('link').attr('href')){
+                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
+                    else { console.log('link-href'); src = String($(this).find('link').attr('href')) }
+                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
 					console.log('media:thumbnail-url')
 					src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
 				} else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
@@ -426,9 +431,6 @@ function get(n) {
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)){
 					console.log('image-link-url')
 					src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
-                } else if ($(this).find('link').attr('href')){
-                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-                    else { console.log('link-href'); src = String($(this).find('link').attr('href')) }
                 } else if ($(this).find('enclosure').attr('url')){
 					console.log('enclosure-url')
 					src = String($(this).find('enclosure').attr('url'))
