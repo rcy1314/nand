@@ -56,10 +56,10 @@ $(document).ready(function() {
 
     })
 
-    $('.fav').on('touchstart click mouseover', function(e) {
+    $('.icon').on('touchstart click mouseover', function(e) {
 
         if (e.type == 'mouseover') {
-            $('.fav').css({
+            $('.icon').css({
                 'transition': 'all .2s linear',
                 'opacity': '1',
                 'visibility': 'visible'
@@ -155,7 +155,7 @@ function abbreviate(n, e) {
 function manifest(n) {
 
     if (n < ost - 5) {
-        $('.fav').css({
+        $('.icon').css({
             'transition': 'all .2s linear',
             'opacity': '1',
         })
@@ -164,7 +164,7 @@ function manifest(n) {
             'opacity': '1',
         })
     } else if (n > ost + 5 && job == false && evt == false) {
-        $('.fav').css({
+        $('.icon').css({
             'transition': 'all .2s linear',
             'opacity': '0',
         })
