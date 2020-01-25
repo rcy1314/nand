@@ -513,7 +513,7 @@ var menu=[
 {id:"TechRepublic",cat:"Technology",des:"TechRepublic is an online Trade publication and social Community for IT Professionals.",uri:"https://www.techrepublic.com/rssfeeds/articles",ext:"https://techrepublic.com"},
 {id:"TechPowerUp",cat:"Technology",des:"TechPowerUp is a leading Technology publication, on the forefront of PC Technologies.",uri:"https://www.techpowerup.com/rss/news",ext:"https://techpowerup.com"},
 {id:"TechSpot",cat:"Technology",des:"TechSpot is a leading Computer and Technology publication established in 1998.",uri:"https://www.techspot.com/backend.xml",ext:"https://techspot.com"},
-{id:"Telegraph",cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
+{id:"Telegraph.co.uk",cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
 {id:"The Next Web",cat:"Technology",des:"TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",uri:"http://feeds.feedburner.com/thenextweb",ext:"https://thenextweb.com"},
 {id:"The Register",cat:"Technology",des:"TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",uri:"https://www.theregister.co.uk/headlines.atom",ext:"https://theregister.co.uk"},
 {id:"The Sun",cat:"Technology",des:"TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",uri:"https://www.thesun.co.uk/tech/feed",ext:"https://www.thesun.co.uk/tech"},
