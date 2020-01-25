@@ -305,7 +305,7 @@ var menu=[
 {id:"Esquire",cat:"Media",des:"Esquire is your destination for the Latest Entertainment News Headlines.",uri:"https://www.esquire.com/rss/entertainment.xml",ext:"https://esquire.com"},
 {id:"Extra",cat:"Media",des:"Extra TV current events in the mass-entertainment business such as movies, TV, music, etc.",uri:"https://feeds.extratv.com/atom",ext:"https://extratv.com"},
 {id:"Glamour",cat:"Media",des:"Glamour UK an online women's magazine founded in 1939.",uri:"https://www.glamourmagazine.co.uk/rss/article",ext:"https://www.glamourmagazine.co.uk"},
-{id:"Global New",cat:"Media",des:"Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",uri:"https://globalnews.ca/entertainment/feed",ext:"https://globalnews.ca/entertainment"},
+{id:"Global News",cat:"Media",des:"Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",uri:"https://globalnews.ca/entertainment/feed",ext:"https://globalnews.ca/entertainment"},
 {id:"GQ",cat:"Media",des:"GQ is an international monthly magazine based in New York City.",uri:"https://www.gq.com/feed/rss",ext:"https://www.gq.com"},
 {id:"Heavy",cat:"Media",des:"Heavy Entertainment news including tv, streaming, events, and more.",uri:"https://heavy.com/entertainment/feed",ext:"https://heavy.com/entertainment"},
 {id:"Hollywood Gossip",cat:"Media",des:"The Hollywood Gossip latest entertainment news, scandals, fashion, and pictures.",uri:"http://feeds.thehollywoodgossip.com/TheHollywoodGossip",ext:"https://www.thehollywoodgossip.com"},
