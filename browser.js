@@ -75,6 +75,8 @@ $(document).ready(function() {
     $('.output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
+			manifest($(this).scrollTop())
+            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
@@ -156,6 +158,32 @@ function reverse(Object) {
     }
 
     return newObject
+
+}
+
+function manifest(n) {
+
+    if (n < ost - 5) {
+        $('.icon').css({
+            'transition': 'all .2s linear',
+			'visibility': 'visible'
+        })
+        $('.attach').css({
+            'transition': 'all .2s linear',
+			'visibility': 'visible'
+        })
+    } else if (n > ost + 5 && job == false && evt == false) {
+        $('.icon').css({
+            'transition': 'all .2s linear',
+			'visibility': 'hidden'
+        })
+        $('.attach').css({
+            'transition': 'all .2s linear',
+			'visibility': 'hidden'
+        })
+    }
+
+	ost = n
 
 }
 
