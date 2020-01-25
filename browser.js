@@ -386,7 +386,7 @@ function expand(n) {
 		$('#' + n).parent().width('100%')
 	} else if (!$('#' + n).hasClass('expand') && $('#' + n).parent().width() / $('.output').width() * 100 > 88){
         $.each(obj, function(i, k) {
-            if (n == k.element && k.parent) $('#' + n).parent().width(k.parent)
+            if (n == k.element && k.parent) $('#' + n).parent().width(k.parent + 5)
         })
 	}
     if ($('#' + n).hasClass('expand') && $('#' + n).width() / $(".output").width() * 100 < 88) {
