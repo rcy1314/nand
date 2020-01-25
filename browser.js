@@ -437,7 +437,10 @@ function get(n) {
                 }
                 if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
-				else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
+                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
+					console.log('media:thumbnail-url')
+					src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
+				} else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
 					console.log('content-src')
 					src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)){
@@ -446,9 +449,6 @@ function get(n) {
                 } else if ($(this).find('link').attr('href')){
                     if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
                     else { console.log('link-href'); src = String($(this).find('link').attr('href')) }
-                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
-					console.log('media:thumbnail-url')
-					src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 } else if ($(this).find('enclosure').attr('url')){
 					console.log('enclosure-url')
 					src = String($(this).find('enclosure').attr('url'))
@@ -466,7 +466,7 @@ function get(n) {
                 } else if ($(this).find('image').text()){ console.log('image-text'); src = String($(this).find('image').text())
                 } else src = ''
 				console.log(src)
-                if (src.match(/app-icon|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
+                if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
