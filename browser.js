@@ -466,7 +466,6 @@ function get(n) {
                 } else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
-				console.log(src)
                 if (src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
