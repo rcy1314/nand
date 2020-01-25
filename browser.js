@@ -94,6 +94,10 @@ $(document).ready(function() {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			manifest($(this).scrollTop())
+            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()){
+				evt = false
+				job = false
+			}
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
@@ -499,9 +503,6 @@ function get(n) {
             }
             prepend(sel)
             populate(sel)
-			setTimeout(function(){
-				evt = false
-			}, 250)	
             apply()
         })
 }
