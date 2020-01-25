@@ -567,7 +567,7 @@ var menu=[
 {id:"Salt Lake Tribune",cat:"World",des:"The Salt Lake Tribune covers news, entertainment, sports and faith for Salt Lake City and the state of Utah.",uri:"https://www.sltrib.com/arcio/rss/category/news/nation-world/?summary=true",ext:"https://www.sltrib.com/news/nation-world"},
 {id:"Snopes",cat:"World",des:"Snopes Fact Checking and Original Investigative Reporting.",uri:"https://www.snopes.com/feed",ext:"https://www.snopes.com"},
 {id:"Sputnik",cat:"World",des:"Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",uri:"https://sputniknews.com/export/rss2/archive/index.xml",ext:"https://sputniknews.com"},
-{id:"Telegraph",cat:"World",des:"Telegraph.co.uk for the latest news from the UK and around the world.",uri:"https://www.telegraph.co.uk/rss.xml",ext:"https://www.telegraph.co.uk"},
+{id:"Telegraph.co.uk",cat:"World",des:"Telegraph.co.uk for the latest news from the UK and around the world.",uri:"https://www.telegraph.co.uk/rss.xml",ext:"https://www.telegraph.co.uk"},
 {id:"The Age",cat:"World",des:"The Age National News from Australia, World News, Business News and Breaking News stories.",uri:"https://www.theage.com.au/rss/feed.xml",ext:"https://www.theage.com.au"},
 {id:"TIME",cat:"World",des:"Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",uri:"http://feeds.feedburner.com/time/topstories?format=xml",ext:"https://time.com"},
 {id:"UN",cat:"World",des:"United Nations Top Stories Global perspective, human stories.",uri:"https://news.un.org/feed/subscribe/en/news/all/rss.xml",ext:"https://www.un.org"},
