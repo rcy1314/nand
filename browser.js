@@ -270,11 +270,11 @@ function apply(n) {
         $('html, .wrapper, .container, .output, .pop, .air, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
-            'color': 'rgba(255,255,255,.8)'
+            'color': 'rgba(255,255,255,.9)'
         })
         $('.pub, .ago, .category').css({
             'border-bottom': 'none',
-            'color': 'rgba(255,255,255,.8)'
+            'color': 'rgba(255,255,255,.9)'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.attach').css('background-color', 'rgba(0, 0, 0, .7)')
