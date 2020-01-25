@@ -333,10 +333,10 @@ function resolution(i, e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-			var expand = 'expand'
+			var expand = '[expand]'
             $('#' + e).addClass('expand min').width('75%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
         } else if (element.width > min) {
-			var expand = 'expand'
+			var expand = '[expand]'
 			$('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
 		} else { var expand = ''; $('#' + e).addClass('min').width(element.width) }
 		var xhr = new XMLHttpRequest(); 
