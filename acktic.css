@@ -4,7 +4,7 @@
 
 }
 
-@media (min-width: 769px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1025px) {
 
     .box { max-width: 93.5% !important }
 
