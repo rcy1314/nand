@@ -453,8 +453,10 @@ function get(n) {
 					if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded:first').text().match(/https:\/\/api\..+[^'"]/))
 					else src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
 				else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
-                    if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-	                else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                    if (menu[n].id == '4chan'){ src = String($(this).find('description').text().toLowerCase().match(/https:\/\/.+?(gif|png|jpg)/))
+						if (!src.match(/\.jpg/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1]) 
+						else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
+	                } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
 				console.log(src)
