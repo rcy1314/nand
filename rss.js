@@ -458,7 +458,6 @@ var menu=[
 {id:"Yahoo Sports",cat:"Sport",des:"Yahoo Sports has Comprehensive  News, Scores, Standings, Fantasy Games, Rumors, and more.",uri:"https://sports.yahoo.com/rss",ext:"https://sports.yahoo.com"},
 {id:"ABC",cat:"Technology",des:"ABC Technology for Latest Science News, Technology News, and more.",uri:"https://abcnews.go.com/abcnews/technologyheadlines",ext:"https://abcnews.go.com/technology"},
 {id:"Ars Technica",cat:"Technology",des:"Ars Technica has became a Trusted Source for Technology News.",uri:"http://feeds.arstechnica.com/arstechnica/index?format=xml",ext:"https://arstechnica.com"},
-{id:"Bangkok Post",cat:"Technology",des:"Bangkok Post Tech The world's window on tech from Thailand.",uri:"https://www.bangkokpost.com/rss/data/tech.xml",ext:"https://www.bangkokpost.com/tech"},
 {id:"BBC",cat:"Technology",des:"BBC Technology News, Articles, and more.",uri:"http://feeds.bbci.co.uk/news/technology/rss.xml",ext:"https://bbc.co.uk/news/technology"},
 {id:"BetaNews",cat:"Technology",des:"BetaNews is a leading source of Technology News and Analysis.",uri:"http://feeds.betanews.com/bn",ext:"https://betanews.com"},
 {id:"BGR",cat:"Technology",des:"BGR is a destination for News focused on the Consumer Electronics Market.",uri:"https://bgr.com/tech/feed",ext:"https://bgr.com/tech"},
