@@ -116,11 +116,10 @@
     }
 	.attach {
     justify-content: center;
-	width: calc(100% - 5px);
+	width: calc(100% - 5px)
     position: absolute;
     display: flex;
     height: 2.9em;
-    width: 100%;
 	z-index: 2;
     top: -1px;
     }
