@@ -333,16 +333,18 @@ function resolution(i, e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
+			var expand = 'expand'
             $('#' + e).addClass('expand min').width('75%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
         } else if (element.width > min) {
+			var expand = 'expand'
 			$('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
-		} else { $('#' + e).addClass('min').width(element.width) }
+		} else { var expand = ''; $('#' + e).addClass('min').width(element.width) }
 		var xhr = new XMLHttpRequest(); 
 		xhr.open('GET', heroku + i, true); 
 		xhr.responseType = 'blob';
 		xhr.onload = function() {
     		blob = xhr.response;
-			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + element.width + 'x' + element.height + ')')
+			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + element.width + 'x' + element.height + ') ' + expand)
 		}
 		xhr.send();
  		$('#' + e).css('display', 'block')
@@ -430,7 +432,7 @@ function get(n) {
                 } else if ($(this).find('enclosure').attr('url')){
 					src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')){
-                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').match(/(https:\/\/.+)/)[1].split(','))
+                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').split(','))
                     else src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){
 					if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
