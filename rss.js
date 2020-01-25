@@ -542,6 +542,7 @@ var menu=[
 {id:"Sputnik",cat:"World",des:"Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",uri:"https://sputniknews.com/export/rss2/archive/index.xml",ext:"https://sputniknews.com"},
 {id:"Telegraph.co.uk",cat:"World",des:"Telegraph.co.uk for the latest news from the UK and around the world.",uri:"https://www.telegraph.co.uk/rss.xml",ext:"https://www.telegraph.co.uk"},
 {id:"The Age",cat:"World",des:"The Age National News from Australia, World News, Business News and Breaking News stories.",uri:"https://www.theage.com.au/rss/feed.xml",ext:"https://www.theage.com.au"},
+{id:"The Guardian",cat:"World",des:"The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",uri:"https://www.theguardian.com/world/rss",ext:"https://www.theguardian.com/world"},
 {id:"TIME",cat:"World",des:"Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",uri:"http://feeds.feedburner.com/time/topstories?format=xml",ext:"https://time.com"},
 {id:"UN",cat:"World",des:"United Nations Top Stories Global perspective, human stories.",uri:"https://news.un.org/feed/subscribe/en/news/all/rss.xml",ext:"https://www.un.org"},
 {id:"United Press Int",cat:"World",des:"United Press International is a leading provider of news, photos and information.",uri:"https://rss.upi.com/news/news.rss",ext:"https://upi.com"},
