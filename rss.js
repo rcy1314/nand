@@ -477,7 +477,6 @@ var menu=[
 {id:"GeekWire",cat:"Technology",des:"GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",uri:"https://www.geekwire.com/feed",ext:"https://geekwire.com"},
 {id:"Gizmodo",cat:"Technology",des:"Gizmodo is a Design, Technology, Science and Science Fiction website.",uri:"https://gizmodo.com/rss",ext:"https://gizmodo.com"},
 {id:"gHacks",cat:"Technology",des:"gHacks the Independent Rechnology News blog.",uri:"https://www.ghacks.net/feed",ext:"https://ghacks.net"},
-{id:"Global News",cat:"Technology",des:"Global News Technology breaking tech and gadget news, latest news and updates on all things tech and digital.",uri:"https://globalnews.ca/tech/feed",ext:"https://globalnews.ca/tech"},
 {id:"Hackaday",cat:"Technology",des:"Hackaday serves up Fresh Hacks Every Day from around the Internet.",uri:"https://hackaday.com/feed",ext:"https://hackaday.com"},
 {id:"YCombinator",cat:"Technology",des:"Hacker News is a reader ran headline submission news purveyor.",uri:"https://news.ycombinator.com/rss",ext:"https://news.ycombinator.com"},
 {id:"Harvard",cat:"Technology",des:"Harvard Gazette the official news outlet of Harvard University.",uri:"https://news.harvard.edu/gazette/section/science-technology/feed",ext:"https://news.harvard.edu/gazette/section/science-technology"},
