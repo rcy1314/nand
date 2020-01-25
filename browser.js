@@ -21,6 +21,12 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
+    $('.rss').on('click', function(e) {
+
+        external('https://github.com/acktic/acktic.github.io')
+
+    })
+
     $('.random').on('touchstart click', function(e) {
 
         random(sel)
@@ -69,22 +75,12 @@ $(document).ready(function() {
     $('.output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			manifest($(this).scrollTop())
-            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()){
-				job = false
-			}
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
         }, 100)
 
     }).attr('tabindex', -1).focus()
-
-    $('.rss').on('click', function(e) {
-
-        external('https://github.com/acktic/acktic.github.io')
-
-    })
 
 })
 
@@ -99,7 +95,9 @@ String.prototype.truncate =
     }
 
 function external(n) {
+
     window.open(n, '_blank')
+
 }
 
 function display(n) {
@@ -131,36 +129,6 @@ function abbreviate(n, e) {
     }
 
     return n
-
-}
-
-function manifest(n) {
-
-    if (n < ost - 5) {
-        $('.icon').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-			'visibility': 'visible'
-        })
-        $('.attach').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-			'visibility': 'visible'
-        })
-    } else if (n > ost + 5 && job == false && evt == false) {
-        $('.icon').css({
-            'transition': 'all .2s linear',
-            'opacity': '0',
-			'visibility': 'hidden'
-        })
-        $('.attach').css({
-            'transition': 'all .2s linear',
-            'opacity': '0',
-			'visibility': 'hidden'
-        })
-    }
-
-    ost = n
 
 }
 
@@ -335,9 +303,7 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand min').width('60%').parent().width(Math.floor(Math.random() * (55 - 20 + 1)) + 20 + '%')
-        } else if (element.width > min) {
-			$('#' + e).addClass('expand min').width('75%').parent().width(Math.floor(Math.random() * (55 - 20 + 1)) + 20 + '%')
+            $('#' + e).addClass('expand min').width('25%').parent().width(Math.floor(Math.random() * (45 - 25 + 1)) + 25 + '%')
 		} else $('#' + e).addClass('min').width(element.width).parent().css('width','fit-content')
         $('#' + e).css('display', 'block')
 

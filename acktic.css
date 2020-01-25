@@ -4,7 +4,7 @@
 
 }
 
-@media (max-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1025px) {
 
     .box { max-width: 93.5% !important }
 
@@ -27,11 +27,11 @@
     border: 1px solid #ddd;
     position: fixed;
     border: none;
-    height: 100%;
+    height: 95%;
     bottom: 60%;
-    width: 100%;
+    width: 90%;
     right: 50%;
-    top: -50%;
+    top: -45.5%;
     }
 
     .rss {
@@ -44,6 +44,8 @@
     }
 
     #pop, #air, .get { padding-left: 1.5% }
+
+	#icon { margin-bottom: -1.2em }
 
     .box { max-width: 92.5% }
 
@@ -164,14 +166,10 @@
     width: 100%;
     }
     .box {
-    padding-bottom: 1em;
     margin-bottom: 1em;
-    padding-right: 1em;
     width: fit-content;
-    padding-left: 1em;
-    padding-top: 1em;
-    margin-left: 1%;
-    display: table;
+	margin-left: 1%;
+	padding: 1em;
     }
     .ago {
     padding-bottom: .5em;
