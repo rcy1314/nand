@@ -488,7 +488,7 @@ function get(n) {
                     post = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
-                        "<div class='ago pro' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+                        "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
                     post = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
