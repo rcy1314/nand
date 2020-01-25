@@ -93,9 +93,10 @@ $(document).ready(function() {
     $('.output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            manifest($(this).scrollTop())
+			console.log($(this).scrollTop() + ' x ' + $('#air').outerHeight())
+			manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
-            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 100 && job == false) populate(sel)
+            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
         }, 100)
@@ -158,30 +159,20 @@ function scr(n) {
 
 function manifest(n) {
 
-    if (job == true) {
+    if (n < ost - 5) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '1',
-        });
+        })
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '1',
         })
-    }
-    if (n < ost - 5 || n == true) {
-        $('.fav').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-        });
-        $('.attach').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-        })
-    } else if (n > ost + 5 && job == false && evt == false || n == false) {
+    } else if (n > ost + 5 && job == false && evt == false) {
         $('.fav').css({
             'transition': 'all .2s linear',
             'opacity': '0',
-        });
+        })
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '0',
@@ -333,7 +324,7 @@ function prepend(n) {
 }
 
 function populate(n) {
-
+	
     if (job == true) {
         $('.arm').remove()
         request.abort()
@@ -352,7 +343,6 @@ function populate(n) {
             else var id = menu[i].id
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-    manifest(true)
     his = 0
     apply()
 
@@ -411,6 +401,7 @@ function get(n) {
         job = false
     }
     his = n
+	evt = true
     job = true
     var pub = []
     $('#pop, #air, .arm, .get').remove()
@@ -510,7 +501,9 @@ function get(n) {
             }
             prepend(sel)
             populate(sel)
-            scr('.get')
+			setTimeout(function(){
+				evt = false
+			}, 250)	
             apply()
         })
 }
