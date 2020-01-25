@@ -45,9 +45,6 @@ $(document).ready(function() {
         prepend($(this).attr('id'))
         populate($(this).attr('id'))
         scr('#pop:last')
-        setTimeout(function() {
-            evt = false
-        }, 250)
         e.preventDefault()
 
     })
@@ -72,9 +69,6 @@ $(document).ready(function() {
             prepend(sel)
             populate(sel)
             scr('#pop:last')
-            setTimeout(function() {
-                evt = false
-            }, 250)
         }
         e.preventDefault()
 
@@ -95,7 +89,6 @@ $(document).ready(function() {
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()){
-				evt = false
 				job = false
 			}
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
