@@ -466,10 +466,11 @@ function get(n) {
                 else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
+				console.log(src)
                 if (src.match(/comments|twitter|undefined/) || !src.match(/https|embed|\.gif|\.jpg|\.jpeg|media|\.png/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/youtube/)) {
+                if (src.match(/twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
                         views = "<div class='ago views' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     } else {
