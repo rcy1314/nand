@@ -127,7 +127,7 @@ function scr(n) {
     }, 100);
     setTimeout(function() {
         evt = false
-    }, 250)
+    }, 500)
 
 }
 
