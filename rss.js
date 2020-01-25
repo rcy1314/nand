@@ -553,7 +553,6 @@ var menu=[
 {id:"Mirror.co.uk",cat:"World",des:"Mirror.co.uk World headlines, pictures, analysis, opinion and video.",uri:"https://www.mirror.co.uk/news/us-news/?service=rss",ext:"https://mirror.co.uk/news/us-news"},
 {id:"Mercury News",cat:"World",des:"Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",uri:"https://www.mercurynews.com/feed",ext:"https://mercurynews.com"},
 {id:"MSNBC",cat:"World",des:"MSNBC Breaking news and in-depth analysis of the headlines.",uri:"http://www.msnbc.com/feeds/latest",ext:"http://www.msnbc.com"},
-{id:"National Post",cat:"World",des:"National Post latest news, information, updates, exclusive video, audio and photo coverages on trending issues.",uri:"https://nationalpost.com/feed",ext:"https://nationalpost.com"},
 {id:"NBC",cat:"World",des:"NBC News is the news division of the American broadcast television network NBC.",uri:"http://feeds.nbcnews.com/nbcnews/public/news",ext:"https://nbcnews.com"},
 {id:"Reddit",cat:"World",des:"News subreddit articles relating to the United States and the rest of the World.",uri:"https://reddit.com/r/news/.rss",ext:"https://reddit.com/r/News"},
 {id:"Newsweek",cat:"World",des:"Newsweek provides the latest news about international issues, technology, business, culture and politics.",uri:"https://www.newsweek.com/rss",ext:"https://newsweek.com"},
