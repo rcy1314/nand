@@ -422,17 +422,17 @@ function get(n) {
         .done(function(data) {
             $('.arm').remove()
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
-            if ($(data).find('entry').length > 0) var chn = "entry"
-            else var chn = 'item'
-            if ($(data).find(chn).length < quit) {
-                quit = $(data).find(chn).length
+            if ($(data).find('entry').length > 0) var channel = "entry"
+            else var channel = 'item'
+            if ($(data).find(channel).length < quit) {
+                quit = $(data).find(channel).length
             }
-            $(data).find(chn).each(function(i) {
-                if (chn == 'entry') {
+            $(data).find(channel).each(function(i) {
+                if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
                     var dst = utc($(this).find('updated').text());
                     var gen = new Date($(this).find('updated').text()).getTime()
-                } else if (chn = 'item') {
+                } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text().length > 0) {
                         var dst = utc($(this).find('pubDate').text());
@@ -445,13 +445,13 @@ function get(n) {
                 if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
+                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('link').attr('href'))
                     if ($(this).find('link').attr('href').match(/youtube/)) {
                         src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
                     } else {
                         src = String($(this).find('link').attr('href'))
                     }
-                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('media\\:content, content, enclosure').attr('url'))
                     if (menu[n].id.match(/Yahoo/)) {
                         src = String($(this).find('media\\:content, content, enclosure').attr('url').match(/(https:\/\/.+)/)[1].split(','))
