@@ -170,6 +170,7 @@
     margin-bottom: 1em;
     width: fit-content;
 	margin-left: 1%;
+	display: table;
 	padding: 1em;
     }
     .ago {
