@@ -116,6 +116,21 @@ String.prototype.truncate =
 
     }
 
+function external(n) {
+    window.open(n, '_blank')
+}
+
+function scr(n) {
+
+    $('.output').animate({
+        scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
+    }, 100);
+    setTimeout(function() {
+        evt = false
+    }, 250)
+
+}
+
 function abbreviate(n, e) {
 
     e = Math.pow(10, e);
@@ -134,21 +149,6 @@ function abbreviate(n, e) {
     }
 
     return n
-
-}
-
-function external(n) {
-    window.open(n, '_blank')
-}
-
-function scr(n) {
-
-    $('.output').animate({
-        scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
-    }, 100);
-    setTimeout(function() {
-        evt = false
-    }, 250)
 
 }
 
