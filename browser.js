@@ -116,7 +116,7 @@ String.prototype.truncate =
 
     }
 
-function abr(n, e) {
+function abbreviate(n, e) {
 
     e = Math.pow(10, e);
     var a = ["k", "m", "b", "t"]
@@ -464,7 +464,7 @@ function get(n) {
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
-                        views = "<div class='ago views' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
+                        views = "<div class='ago views' style='left:0em'><b>Views</b> " + abbreviate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     } else {
                         views = ''
                     }
