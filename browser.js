@@ -4,7 +4,7 @@ var request
 var ost = 0
 var his = 0
 var obj = []
-var min = 249
+var min = 299
 var evt = true
 var job = false
 var sel = 'Social'
@@ -364,9 +364,9 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).width('35%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
+            $('#' + e).addClass('expand').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
         } else if (element.width > min) {
-			$('#' + e).width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
+			$('#' + e).addClass('expand').width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
 		} else $('#' + e).width(element.width).parent().css('width','fit-content')
         $('#' + e).css('display', 'block')
 
@@ -378,18 +378,25 @@ function resolution(e, n) {
 
 function expand(n) {
 
-    var max
-    $.each(obj, function(i, k) {
-        if (n == k.element) max = k.width
-    })
-    if ($('#' + n).width() / $(".output").width() * 100 < 88 || max > min) {
+    if (!$('#' + n).hasClass('expand') && $('#' + n).parent().width() / $('.output').width() * 100 < 88){
+            obj.push({
+                element: n,
+				parent: $('#' + n).parent().width()
+            })
+		$('#' + n).parent().width('100%')
+	} else if (!$('#' + n).hasClass('expand') && $('#' + n).parent().width() / $('.output').width() * 100 > 88){
+        $.each(obj, function(i, k) {
+            if (n == k.element && k.parent) $('#' + n).parent().width(k.parent)
+        })
+	}
+    if ($('#' + n).hasClass('expand') && $('#' + n).width() / $(".output").width() * 100 < 88) {
             obj.push({
                 element: n,
                 less: $('#' + n).width(),
 				parent: $('#' + n).parent().width()
             })
         $('#' + n).width('100%').parent().width("100%")
-    } else {
+	} else {
         $.each(obj, function(i, k) {
             if (n == k.element && k.less) $('#' + n).width(k.less).parent().width(k.parent)
         })
