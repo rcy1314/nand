@@ -8,6 +8,7 @@ var min = 299
 var evt = true
 var job = false
 var sel = 'Social'
+var heroku = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
     $('.wrapper, .rss').css('display', 'block')
 
@@ -51,6 +52,7 @@ $(document).ready(function() {
         prepend($(this).attr('id'))
         populate($(this).attr('id'))
         display('#pop:last')
+
         e.preventDefault()
 
     })
@@ -301,7 +303,7 @@ function prepend(n) {
 }
 
 function populate(n) {
-	
+
     if (job == true) {
         $('.arm').remove()
         request.abort()
@@ -326,17 +328,25 @@ function populate(n) {
 }
 
 
-function resolution(e, n) {
+function resolution(i, e, n) {
 
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand min').width('30%').parent().width(Math.floor(Math.random() * (45 - 20 + 1)) + 20 + '%')
+            $('#' + e).addClass('expand min').width('75%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
         } else if (element.width > min) {
-			$('#' + e).addClass('expand min').width('100%').parent().width(Math.floor(Math.random() * (45 - 20 + 1)) + 20 + '%')
-		} else $('#' + e).addClass('min').width(element.width)
-        $('#' + e).css('display', 'block')
-
+			$('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
+		} else { $('#' + e).addClass('min').width(element.width) }
+		var xhr = new XMLHttpRequest(); 
+		xhr.open('GET', heroku + i, true); 
+		xhr.responseType = 'blob';
+		xhr.onload = function() {
+    		blob = xhr.response;
+			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + element.width + 'x' + element.height + ')')
+		}
+		xhr.send();
+ 		$('#' + e).css('display', 'block')
+		
     }
 
     element.src = n
@@ -345,17 +355,6 @@ function resolution(e, n) {
 
 function expand(n) {
 
-    if (!$('#' + n).hasClass('expand') && $('#' + n).hasClass('min')){
-            obj.push({
-                element: n,
-				parent: $('#' + n).parent().width()
-            })
-		$('#' + n).removeClass('min').addClass('full').parent().width('100%')
-	} else if (!$('#' + n).hasClass('expand') && $('#' + n).hasClass('full')){
-        $.each(obj, function(i, k) {
-            if (n == k.element && k.parent) $('#' + n).removeClass('full').addClass('min').parent().width(k.parent + 5)
-        })
-	}
     if ($('#' + n).hasClass('expand min')) {
             obj.push({
                 element: n,
@@ -388,7 +387,7 @@ function get(n) {
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get('https://acktic-github-io.herokuapp.com/' + menu[n].uri)
+    request = $.get(heroku + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
@@ -421,33 +420,28 @@ function get(n) {
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('link').attr('href')){
                     if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-                    else { console.log('link-href'); src = String($(this).find('link').attr('href')) }
+                    else { src = String($(this).find('link').attr('href')) }
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
-					console.log('media:thumbnail-url')
 					src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
 				} else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
-					console.log('content-src')
 					src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)){
-					console.log('image-link-url')
 					src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('enclosure').attr('url')){
-					console.log('enclosure-url')
 					src = String($(this).find('enclosure').attr('url'))
-                } else if ($(this).find('media\\:content, content').attr('url')){ console.log('media:content')
+                } else if ($(this).find('media\\:content, content').attr('url')){
                     if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').match(/(https:\/\/.+)/)[1].split(','))
                     else src = String($(this).find('media\\:content, content').attr('url'))
-                } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){ console.log('content:encoded-img src')
+                } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){
 					if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
 					else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
-				} else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){ console.log('description-src')
+				} else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
                     if (menu[n].id == '4chan'){ src = String($(this).find('description').text().toLowerCase().match(/https:\/\/.+?(gif|png|jpg)/))
 						if (!src.match(/\.jpg/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1]) 
 						else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
 	                } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('image').text()){ console.log('image-text'); src = String($(this).find('image').text())
+                } else if ($(this).find('image').text()){ src = String($(this).find('image').text())
                 } else src = ''
-				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
@@ -461,10 +455,12 @@ function get(n) {
                 } else {
                     post = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+						"<div class='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 var select = {
                     element: i,
+					src: src,
                     since: gen,
                     post: post
                 }
@@ -475,7 +471,7 @@ function get(n) {
             })
             for (var k = 0; k <= quit - 1; k++) {
                 $('.get').append(pub[k].post)
-                if ($('#' + pub[k].element).length) resolution(pub[k].element, $('#' + pub[k].element).attr('src'))
+                if ($('#' + pub[k].element).length) resolution(pub[k].src, pub[k].element, $('#' + pub[k].element).attr('src'))
             }
             prepend(sel)
             populate(sel)
