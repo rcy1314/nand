@@ -460,10 +460,10 @@ function get(n) {
                     }
                 else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('description').text().toLowerCase().match(/img.+src=['"](.*?)['"]/)){
+                    if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/img.+src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
+	                else src = String($(this).find('description').text().toLowerCase().match(/img.+src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
-                else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
-                    if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-                else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').text()) src = String($(this).find('image').text())
                 else src = ''
 				console.log(src)
