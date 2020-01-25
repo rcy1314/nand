@@ -493,7 +493,7 @@ var menu=[
 {id:"NBC",cat:"Technology",des:"NBC News Tech for Latest News on Technology, Businesses and Internet media.",uri:"http://feeds.nbcnews.com/nbcnews/public/tech",ext:"https://nbcnews.com/tech-media"},
 {id:"New York Post",cat:"Technology",des:"New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.",uri:"https://nypost.com/tech/feed",ext:"https://nypost.com/tech"},
 {id:"New York Times",cat:"Technology",des:"New York Times is a Newspaper based in New York City with Worldwide Influence.",uri:"https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",ext:"https://nytimes.com/categorytion/technology"},
-{id:"OANN",cat:"Technology",des:"OANN One America News Network technology.",uri:"https://www.oann.com/category/tech/feed",ext:"https://www.oann.com/category/tech"},
+{id:"OANN",cat:"Technology",des:"OANN One America News Network Technology.",uri:"https://www.oann.com/category/tech/feed",ext:"https://www.oann.com/category/tech"},
 {id:"PC World",cat:"Technology",des:"PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.",uri:"https://www.pcworld.com/index.rss",ext:"https://pcworld.com"},
 {id:"Phoronix",cat:"Technology",des:"Phoronix Linux Hardware Reviews & News.",uri:"https://www.phoronix.com/rss.php",ext:"https://phoronix.com"},
 {id:"Phys",cat:"Technology",des:"Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.",uri:"https://phys.org/rss-feed",ext:"https://phys.org"},
