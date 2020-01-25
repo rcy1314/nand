@@ -50,14 +50,14 @@
     .box { max-width: 93.5% }
 
 }
+	.rss { display: none }
+
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
    .category, .fav, .pop, .air, .pub, .img, a {
         text-decoration: none;
         cursor: pointer;
     }
-
-	.rss { display: none }
 
     ::-webkit-scrollbar { width: 5px }
 
@@ -179,7 +179,7 @@
     font-size: 10px;
     cursor: default;
     }
-    .pro {
+    .views {
     position: absolute;
     bottom: -3em;
     }

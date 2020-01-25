@@ -481,7 +481,7 @@ function get(n) {
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
-                        views = "<div class='ago pro' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
+                        views = "<div class='ago views' style='left:0em'><b>Views</b> " + abr($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     } else {
                         views = ''
                     }
