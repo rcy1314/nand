@@ -497,7 +497,6 @@ var menu=[
 {id:"PC World",cat:"Technology",des:"PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.",uri:"https://www.pcworld.com/index.rss",ext:"https://pcworld.com"},
 {id:"Phoronix",cat:"Technology",des:"Phoronix Linux Hardware Reviews & News.",uri:"https://www.phoronix.com/rss.php",ext:"https://phoronix.com"},
 {id:"Phys.org",cat:"Technology",des:"Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.",uri:"https://phys.org/rss-feed",ext:"https://phys.org"},
-{id:"Politico",cat:"Technology",des:"Politico Tech strives to be the dominant source for Politics and Policy.",uri:"https://www.politico.com/rss/morningtech.xml",ext:"https://politico.com"},
 {id:"Popular Mechanics",cat:"Technology",des:"Popular Mechanics is a magazine of Popular Science and Technology.",uri:"https://www.popularmechanics.com/rss/all.xml",ext:"https://popularmechanics.com"},
 {id:"ReadWrite",cat:"Technology",des:"ReadWrite was founded on April 20, 2003 as ReadWriteWeb.",uri:"https://readwrite.com/feed",ext:"https://readwrite.com"},
 {id:"Reclaim the Net",cat:"Technology",des:"Reclaim The Net Restoring Individual Liberty Online. Free Speech. Privacy",uri:"https://reclaimthenet.org/feed",ext:"https://reclaimthenet.org"},
