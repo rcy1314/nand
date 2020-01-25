@@ -27,11 +27,11 @@
     border: 1px solid #ddd;
     position: fixed;
     border: none;
-    height: 95%;
+    height: 100%;
     bottom: 60%;
-    width: 65%;
+    width: 100%;
     right: 50%;
-    top: -45.5%;
+    top: -50%;
     }
 
     .rss {
@@ -167,7 +167,7 @@
     }
     .box {
     padding-bottom: 1em;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     padding-right: 1em;
     width: fit-content;
     padding-left: 1em;

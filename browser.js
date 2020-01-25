@@ -158,19 +158,23 @@ function manifest(n) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'opacity': '1',
+			'visibility': 'visible'
         })
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '1',
+			'visibility': 'visible'
         })
     } else if (n > ost + 5 && job == false && evt == false) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'opacity': '0',
+			'visibility': 'hidden'
         })
         $('.attach').css({
             'transition': 'all .2s linear',
             'opacity': '0',
+			'visibility': 'hidden'
         })
     }
 
@@ -349,9 +353,9 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
+            $('#' + e).addClass('expand min').width('25%').parent().width(Math.floor(Math.random() * (55 - 20 + 1)) + 20 + '%')
         } else if (element.width > min) {
-			$('#' + e).addClass('expand min').width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
+			$('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 20 + 1)) + 20 + '%')
 		} else $('#' + e).addClass('min').width(element.width).parent().css('width','fit-content')
         $('#' + e).css('display', 'block')
 
