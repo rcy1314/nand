@@ -356,7 +356,7 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
+            $('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
         } else if (element.width > min) {
 			$('#' + e).addClass('expand min').width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
 		} else $('#' + e).addClass('min').width(element.width).parent().css('width','fit-content')
