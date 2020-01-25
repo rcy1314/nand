@@ -493,6 +493,7 @@ function get(n) {
             }
             prepend(sel)
             populate(sel)
+			scr('.get')
             apply()
         })
 }

@@ -144,7 +144,7 @@
     height: 100%;
     }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air, .get { padding-top: 3em; }
+    #pop, #air, .get { padding-top: 1em; }
     .pop, .air {
     margin: .5em auto;
     font-size: 10px;
