@@ -444,6 +444,7 @@ function get(n) {
                 }
                 if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
+				else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)) src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('link').attr('href'))
@@ -458,9 +459,8 @@ function get(n) {
                     } else {
                         src = String($(this).find('media\\:content, content, enclosure').attr('url'))
                     }
-                else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
-                    src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
+                else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
+                else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
                     if (menu[n].id == '4chan') src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
 	                else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1])
