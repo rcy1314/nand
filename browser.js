@@ -439,13 +439,10 @@ function get(n) {
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
 				else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)) src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
-                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('link').attr('href'))
-                    if ($(this).find('link').attr('href').match(/youtube/)) {
-                        src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-                    } else {
-                        src = String($(this).find('link').attr('href'))
-                    }
+                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
+                    else src = String($(this).find('link').attr('href'))
+                else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('media\\:content, content, enclosure').attr('url'))
                     if (menu[n].id.match(/Yahoo/)) {
                         src = String($(this).find('media\\:content, content, enclosure').attr('url').match(/(https:\/\/.+)/)[1].split(','))
@@ -464,12 +461,9 @@ function get(n) {
                 if (src.match(/comments|news|twitter|undefined/) || !src.match(/https|embed|.gif|.jpg|.jpeg|media|.png/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
-                        views = "<div class='ago views' style='left:0em'><b>Views</b> " + abbreviate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
-                    } else {
-                        views = ''
-                    }
+                if (src.match(/youtube/)) {
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + abbreviate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
+                    else views = ''
                     post = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
