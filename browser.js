@@ -364,10 +364,10 @@ function resolution(e, n) {
     var element = new Image()
     element.onload = function() {
         if (element.height > min) {
-            $('#' + e).addClass('expand').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
+            $('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
         } else if (element.width > min) {
-			$('#' + e).addClass('expand').width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
-		} else $('#' + e).width(element.width).parent().css('width','fit-content')
+			$('#' + e).addClass('expand min').width('100%').parent().width(Math.floor(Math.random() * (75 - 35 + 1)) + 35 + '%')
+		} else $('#' + e).addClass('min').width(element.width).parent().css('width','fit-content')
         $('#' + e).css('display', 'block')
 
     }
@@ -378,27 +378,27 @@ function resolution(e, n) {
 
 function expand(n) {
 
-    if (!$('#' + n).hasClass('expand') && $('#' + n).parent().width() / $('.output').width() * 100 < 88){
+    if (!$('#' + n).hasClass('expand') && $('#' + n).hasClass('min')){
             obj.push({
                 element: n,
 				parent: $('#' + n).parent().width()
             })
-		$('#' + n).parent().width('100%')
-	} else if (!$('#' + n).hasClass('expand') && $('#' + n).parent().width() / $('.output').width() * 100 > 88){
+		$('#' + n).removeClass('min').addClass('full').parent().width('100%')
+	} else if (!$('#' + n).hasClass('expand') && $('#' + n).hasClass('full')){
         $.each(obj, function(i, k) {
-            if (n == k.element && k.parent) $('#' + n).parent().width(k.parent + 5)
+            if (n == k.element && k.parent) $('#' + n).removeClass('full').addClass('min').parent().width(k.parent + 5)
         })
 	}
-    if ($('#' + n).hasClass('expand') && $('#' + n).width() / $(".output").width() * 100 < 88) {
+    if ($('#' + n).hasClass('expand min')) {
             obj.push({
                 element: n,
                 less: $('#' + n).width(),
 				parent: $('#' + n).parent().width()
             })
-        $('#' + n).width('100%').parent().width("100%")
-	} else {
+        $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
+	} else if ($('#' + n).hasClass('expand full')) {
         $.each(obj, function(i, k) {
-            if (n == k.element && k.less) $('#' + n).width(k.less).parent().width(k.parent)
+            if (n == k.element && k.less) $('#' + n).removeClass('full').addClass('min').width(k.less).parent().width(k.parent)
         })
     }
 
@@ -463,10 +463,10 @@ function get(n) {
                     }
                 else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 else if ($(this).find('media\\:content, content, enclosure').attr('url'))
-                    if (!menu[n].id.match(/Yahoo/)) {
-                        src = String($(this).find('media\\:content, content, enclosure').attr('url'))
-                    } else {
+                    if (menu[n].id.match(/Yahoo/)) {
                         src = String($(this).find('media\\:content, content, enclosure').attr('url').match(/(https:\/\/.+)/)[1].split(','))
+                    } else {
+                        src = String($(this).find('media\\:content, content, enclosure').attr('url'))
                     }
                 else if ($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded:first').text().match(/src=['"](.*?)['"]/)[1])
