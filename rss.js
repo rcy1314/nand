@@ -484,7 +484,6 @@ var menu=[
 {id:"Independent.co.uk",cat:"Technology",des:"Independent.co.uk for Latest Gadgets and Tech News.",uri:"http://www.independent.co.uk/life-style/gadgets-and-tech/rss",ext:"https://independent.co.uk/life-style/gadgets-and-tech"},
 {id:"InfoWorld",cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
 {id:"IBTimes",cat:"Technology",des:"International Business Times Technology news and insight about tech gadgets, games and social media.",uri:"https://www.ibtimes.sg/rss/technology",ext:"https://www.ibtimes.com/technology"},
-{id:"Kotaku",cat:"Technology",des:"Kotaku is a News and Opinion site about Games and things serious Gamers care about.",uri:"https://kotaku.com/rss",ext:"https://kotaku.com"},
 {id:"Los Angeles Times",cat:"Technology",des:"Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",uri:"https://www.latimes.com/business/technology/rss2.0.xml",ext:"https://latimes.com/business/technology"},
 {id:"Life Hacker",cat:"Technology",des:"Lifehacker is the Ultimate Authority on optimizing every aspect of your life. Do everything better.",uri:"https://lifehacker.com/rss",ext:"https://lifehacker.com"},
 {id:"Leak Lookup",cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
