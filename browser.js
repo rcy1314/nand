@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     populate(sel)
     prepend(sel)
-    scr('#pop:last')
+    display('#pop:last')
 
     $('.random').on('touchstart click', function(e) {
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
         $('#pop, #air, .arm, .get').remove()
         prepend($(this).attr('id'))
         populate($(this).attr('id'))
-        scr('#pop:last')
+        display('#pop:last')
         e.preventDefault()
 
     })
@@ -68,7 +68,7 @@ $(document).ready(function() {
             evt = true
             prepend(sel)
             populate(sel)
-            scr('#pop:last')
+            display('#pop:last')
         }
         e.preventDefault()
 
@@ -120,7 +120,7 @@ function external(n) {
     window.open(n, '_blank')
 }
 
-function scr(n) {
+function display(n) {
 
     $('.output').animate({
         scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
@@ -495,7 +495,7 @@ function get(n) {
             }
             prepend(sel)
             populate(sel)
-			scr('.get')
+			display('.get')
             apply()
         })
 }
