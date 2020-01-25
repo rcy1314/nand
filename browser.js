@@ -56,31 +56,13 @@ $(document).ready(function() {
 
     })
 
-    $('.icon').on('touchstart click mouseover', function(e) {
+    $('.icon').on('touchstart click', function(e) {
 
-        if (e.type == 'mouseover') {
-            $('.icon').css({
-                'transition': 'all .2s linear',
-                'opacity': '1',
-                'visibility': 'visible'
-            });
-        } else {
             evt = true
             prepend(sel)
             populate(sel)
             display('#pop:last')
-        }
         e.preventDefault()
-
-    })
-
-    $('.attach').on('mousemove', function(e) {
-
-        $('.attach').css({
-            'transition': 'all .2s linear',
-            'opacity': '1',
-            'visibility': 'visible'
-        })
 
     })
 
