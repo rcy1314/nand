@@ -516,7 +516,7 @@ var menu=[
 {id:"Telegraph.co.uk",cat:"Technology",des:"Telegraph.co.uk Technology Intelligence news from the world of Technology.",uri:"https://www.telegraph.co.uk/technology/rss.xml",ext:"https://www.telegraph.co.uk/technology"},
 {id:"The Next Web",cat:"Technology",des:"TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",uri:"http://feeds.feedburner.com/thenextweb",ext:"https://thenextweb.com"},
 {id:"Register.co.uk",cat:"Technology",des:"TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",uri:"https://www.theregister.co.uk/headlines.atom",ext:"https://theregister.co.uk"},
-{id:"The Sun",cat:"Technology",des:"TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",uri:"https://www.thesun.co.uk/tech/feed",ext:"https://www.thesun.co.uk/tech"},
+{id:"TheSun.co.uk",cat:"Technology",des:"TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",uri:"https://www.thesun.co.uk/tech/feed",ext:"https://www.thesun.co.uk/tech"},
 {id:"The Verge",cat:"Technology",des:"The Verge covers the intersection of technology, science, art, and culture.",uri:"https://www.theverge.com/rss/index.xml",ext:"https://www.theverge.com"},
 {id:"USA Today",cat:"Technology",des:"USA Today Technology is an internationally distributed American daily, middle-market Newspaper.",uri:"http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1",ext:"https://usatoday.com/tech/"},
 {id:"Wall Street Journal",cat:"Technology",des:"Wall Street Journals Latest Tech News, Reviews, and Stories.",uri:"https://feeds.a.dj.com/rss/RSSWSJD.xml",ext:"https://wsj.com/news/technology"},
