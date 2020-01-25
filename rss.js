@@ -481,8 +481,6 @@ var menu=[
 {id:"YCombinator",cat:"Technology",des:"Hacker News is a reader ran headline submission news purveyor.",uri:"https://news.ycombinator.com/rss",ext:"https://news.ycombinator.com"},
 {id:"Harvard",cat:"Technology",des:"Harvard Gazette the official news outlet of Harvard University.",uri:"https://news.harvard.edu/gazette/section/science-technology/feed",ext:"https://news.harvard.edu/gazette/section/science-technology"},
 {id:"Heavy",cat:"Technology",des:"Heavy Technology news and related articles.",uri:"https://heavy.com/tech/feed",ext:"https://heavy.com/tech"},
-{id:"Houston Chronicle",cat:"Technology",des:"Houston Chronicle Technology News and Headlines.",uri:"https://www.chron.com/rss/feed/Technology-289.php",ext:"https://www.chron.com/business/technology"},
-{id:"Huffington Post",cat:"Technology",des:"HuffingtonPost Tech news, headlines, and opinion.",uri:"https://www.huffpost.com/section/technology/feed",ext:"https://www.huffpost.com/impact/technology"},
 {id:"Independent",cat:"Technology",des:"Independent.co.uk for Latest Gadgets and Tech News.",uri:"http://www.independent.co.uk/life-style/gadgets-and-tech/rss",ext:"https://independent.co.uk/life-style/gadgets-and-tech"},
 {id:"InfoWorld",cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
 {id:"IBTimes",cat:"Technology",des:"International Business Times Technology news and insight about tech gadgets, games and social media.",uri:"https://www.ibtimes.sg/rss/technology",ext:"https://www.ibtimes.com/technology"},
