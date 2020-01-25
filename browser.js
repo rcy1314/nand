@@ -244,11 +244,11 @@ function apply(n) {
             'border-bottom': 'none',
             'color': 'rgba(255,255,255,.9)'
         })
-        $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
+        $('.random, .opposite, .box, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.attach').css('background-color', 'rgba(0, 0, 0, .7)')
         $('.output').removeClass('invert').addClass('default')
         $('.img, iframe').css('filter', 'brightness(80%)')
-        $('.gif').attr('src', 'favicon/favico.png')
+	    $('.gif').attr('src', 'favicon/favico.png')
         $('a').css('color', '#F7426B')
         $('#invert').hide();
         $('#favico').show()
