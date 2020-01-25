@@ -279,11 +279,11 @@ function apply(n) {
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.attach').css('background-color', 'rgba(0, 0, 0, .7)')
         $('.output').removeClass('invert').addClass('default')
-        $('.img, iframe').css('filter', 'brightness(75%)')
+        $('.img, iframe').css('filter', 'brightness(80%)')
         $('.gif').attr('src', 'favicon/favico.png')
+        $('a').css('color', '#F7426B')
         $('#invert').hide();
         $('#favico').show()
-        $('a').css('color', '#F7426B')
         gif = 'favico.png'
     } else if (op == 0) {
         $('.container, .output, .pop, .air, .rss').css({
@@ -308,9 +308,9 @@ function apply(n) {
         })
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
+        $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
-        $('a').css('color', '#08BD94')
         gif = 'invert.png'
     }
 
