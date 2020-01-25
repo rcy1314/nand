@@ -290,7 +290,6 @@ var menu=[
 {id:"Bustle",cat:"Media",des:"Bustle is the premier digital destination for millenial women, launched in 2013.",uri:"https://www.bustle.com/rss",ext:"https://www.bustle.com"},
 {id:"Buzzfeed Celebrity",cat:"Media",des:"Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",uri:"https://www.buzzfeed.com/celebrity.xml",ext:"https://www.buzzfeed.com/celebrity"},
 {id:"CBS",cat:"Media",des:"CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",uri:"https://www.cbsnews.com/latest/rss/entertainment",ext:"https://cbsnews.com/latest/rss/entertainment"},
-{id:"Celebs Now",cat:"Media",des:"Celebs Now the latest celebrity news, high street fashion, amazing beauty buys, health, heart and happiness.",uri:"https://www.celebsnow.co.uk/feed",ext:"https://www.celebsnow.co.uk"},
 {id:"Reddit",cat:"Media",des:"Celebrity Hub subreddit Pictures and GIFs of Actresses, Singers, Models, Athletes and Celebs.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/CelebHub"},
 {id:"Celebrity Insider",cat:"Media",des:"Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, sports, and entertainment.",uri:"https://celebrityinsider.org/feed",ext:"https://celebrityinsider.org"},
 {id:"CNN",cat:"Media",des:"CNN Entertainment News Celebrities, Movies, TV, and Music.",uri:"http://rss.cnn.com/rss/cnn_showbiz.rss",ext:"https://cnn.com/entertainment"},
