@@ -487,7 +487,7 @@ var menu=[
 {id:"Los Angeles Times",cat:"Technology",des:"Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",uri:"https://www.latimes.com/business/technology/rss2.0.xml",ext:"https://latimes.com/business/technology"},
 {id:"Leak Lookup",cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
 {id:"Linux",cat:"Technology",des:"Linux.com News For Open Source Professionals.",uri:"https://www.linux.com/feed",ext:"https://linux.com"},
-{id:"Mirror",cat:"Technology",des:"Mirror.co.uk Techs Best Stories, Opinion, Pictures and Video.",uri:"https://www.mirror.co.uk/tech/?service=rss",ext:"https://mirror.co.uk/tech"},
+{id:"Mirror.co.uk",cat:"Technology",des:"Mirror.co.uk Techs Best Stories, Opinion, Pictures and Video.",uri:"https://www.mirror.co.uk/tech/?service=rss",ext:"https://mirror.co.uk/tech"},
 {id:"MIT",cat:"Technology",des:"MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",uri:"http://news.mit.edu/rss/feed",ext:"http://news.mit.edu"},
 {id:"NASA",cat:"Technology",des:"NASA brings you the Latest Images, Videos and News from America's space agency.",uri:"https://www.nasa.gov/rss/dyn/breaking_news.rss",ext:"https://nasa.gov"},
 {id:"NBC",cat:"Technology",des:"NBC News Tech for Latest News on Technology, Businesses and Internet media.",uri:"http://feeds.nbcnews.com/nbcnews/public/tech",ext:"https://nbcnews.com/tech-media"},
