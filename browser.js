@@ -336,9 +336,9 @@ function resolution(n) {
 			$('#' + n).addClass('expand min').width(Math.random() * (30 - 20 + 1) + 20 + '%').parent().width($('#' + n).siblings('.attr').width() + 100)
 		} else if ($('#' + n).get(0).naturalWidth > min) {
 			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (80 - 55 + 1) + 55 + '%').parent().width($('#' + n).siblings('.attr').width() + 100)
+			$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 100)
 		} else {
-			var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width() + 100)
+			var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + 100)
 		}
 		var xhr = new XMLHttpRequest(); 
 		xhr.open('GET', heroku + $('#' + n).attr('src'), true); 
