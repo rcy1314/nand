@@ -4,7 +4,8 @@ var request
 var ost = 0
 var his = 0
 var obj = []
-var min = 299
+var min = 399
+var tox = 1400
 var evt = true
 var job = false
 var sel = 'Social'
@@ -327,22 +328,27 @@ function populate(n) {
 }
 
 
-function resolution(i, e, n) {
+function resolution(n) {
 
-	$('#' + e).one('load', function(){
-		if ($('#' + e).get(0).naturalWidth > min) {
+	$('#' + n).one('load', function(){
+	if ($('#' + n).get(0).naturalHeight > tox && $('#' + n).get(0).naturalWidth < tox) {
 			var expand = '[<u>expand</u>]'
-			$('#' + e).addClass('expand min').width(Math.floor(Math.random() * (55 - 30 + 1)) + 30 + '%').parent().width($('#' + e).width())
-		} else { var expand = ''; $('#' + e).width($('#' + e).get(0).naturalWidth).parent().width(Math.random() * (55 - 30 + 1) + 30 + '%') }
+			$('#' + n).addClass('expand min').width(Math.random() * (30 - 20 + 1) + 20 + '%').parent().width($('#' + n).siblings('.attr').width() + 100)
+		} else if ($('#' + n).get(0).naturalWidth > min) {
+			var expand = '[<u>expand</u>]'
+			$('#' + n).addClass('expand min').width(Math.random() * (80 - 55 + 1) + 55 + '%').parent().width($('#' + n).siblings('.attr').width() + 100)
+		} else {
+			var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width() + 100)
+		}
 		var xhr = new XMLHttpRequest(); 
-		xhr.open('GET', heroku + i, true); 
+		xhr.open('GET', heroku + $('#' + n).attr('src'), true); 
 		xhr.responseType = 'blob';
 		xhr.onload = function() {
     		blob = xhr.response;
-			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + Math.round($('#' + e).get(0).naturalWidth) + 'x' + Math.round($('#' + e).get(0).naturalHeight) + ') ' + expand)
+			$('#' + n).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
 		}
 		xhr.send();
- 		$('#' + e).css('display', 'block')
+ 		$('#' + n).css('display', 'block')
 
 	})
 
@@ -455,7 +461,6 @@ function get(n) {
                 }
                 var select = {
                     element: i,
-					src: src,
                     since: gen,
                     post: post
                 }
@@ -466,7 +471,7 @@ function get(n) {
             })
             for (var k = 0; k <= quit - 1; k++) {
                 $('.get').append(pub[k].post)
-                if ($('#' + pub[k].element).length) resolution(pub[k].src, pub[k].element, $('#' + pub[k].element).attr('src'))
+                if ($('#' + pub[k].element).length) resolution(pub[k].element)
             }
             prepend(sel)
             populate(sel)
