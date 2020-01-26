@@ -330,10 +330,10 @@ function populate(n) {
 function resolution(i, e, n) {
 
 	$('#' + e).one('load', function(){
-		if ($('#' + e).width() > min) {
+		if ($('#' + e).get(0).naturalWidth > min) {
 			var expand = '[<u>expand</u>]'
-			$('#' + e).addClass('expand min').width(Math.floor(Math.random() * (60 - 35 + 1)) + 35 + '%').parent().width($('#' + e).width())
-		} else { var expand = ''; $('#' + e).width(e.width).parent().width($('#' + e).width()) }
+			$('#' + e).addClass('expand min').width(Math.floor(Math.random() * (55 - 30 + 1)) + 30 + '%').parent().width($('#' + e).width())
+		} else { var expand = ''; $('#' + e).width($('#' + e).get(0).naturalWidth).parent().width(Math.random() * (55 - 30 + 1) + 30 + '%') }
 		var xhr = new XMLHttpRequest(); 
 		xhr.open('GET', heroku + i, true); 
 		xhr.responseType = 'blob';
