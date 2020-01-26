@@ -197,7 +197,6 @@ function utc(n) {
         month: 'short',
         hour: 'numeric',
         minute: 'numeric',
-        second: '2-digit',
         hour12: true
     }
     var dmz = []
@@ -330,28 +329,22 @@ function populate(n) {
 
 function resolution(i, e, n) {
 
-    var element = new Image()
-    element.onload = function() {
-        if (element.height > min) {
-			var expand = '[expand]'
-            $('#' + e).addClass('expand min').width('75%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
-        } else if (element.width > min) {
-			var expand = '[expand]'
-			$('#' + e).addClass('expand min').width('50%').parent().width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%')
-		} else { var expand = ''; $('#' + e).addClass('min').width(element.width) }
+	$('#' + e).one('load', function(){
+		if ($('#' + e).width() > min) {
+			var expand = '[<u>expand</u>]'
+			$('#' + e).addClass('expand min').width(Math.floor(Math.random() * (55 - 25 + 1)) + 25 + '%').parent().width($('#' + e).width())
+		} else { var expand = ''; $('#' + e).width(e.width).parent().width($('#' + e).width()) }
 		var xhr = new XMLHttpRequest(); 
 		xhr.open('GET', heroku + i, true); 
 		xhr.responseType = 'blob';
 		xhr.onload = function() {
     		blob = xhr.response;
-			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + element.width + 'x' + element.height + ') ' + expand)
+			$('#' + e).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + Math.round($('#' + e).get(0).naturalWidth) + 'x' + Math.round($('#' + e).get(0).naturalHeight) + ') ' + expand)
 		}
 		xhr.send();
  		$('#' + e).css('display', 'block')
-		
-    }
 
-    element.src = n
+	})
 
 }
 
