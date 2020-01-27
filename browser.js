@@ -5,7 +5,7 @@ var ost = 0
 var his = 0
 var obj = []
 var min = 399
-var tox = 1400
+var tox = 799
 var evt = true
 var job = false
 var sel = 'Social'
@@ -331,12 +331,12 @@ function populate(n) {
 function resolution(n) {
 
 	$('#' + n).one('load', function(){
-	if ($('#' + n).get(0).naturalHeight > tox && $('#' + n).get(0).naturalWidth < tox) {
+	if ($('#' + n).get(0).naturalHeight > tox || $('#' + n).get(0).naturalWidth > tox) {
 			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (30 - 20 + 1) + 20 + '%').parent().width($('#' + n).siblings('.attr').width() + 100)
+			$('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
 		} else if ($('#' + n).get(0).naturalWidth > min) {
 			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 100)
+			$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
 		} else {
 			var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + 100)
 		}
