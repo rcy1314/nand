@@ -431,14 +431,14 @@ function get(n) {
                 } else if ($(this).find('enclosure').attr('url')){
 					src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')){
-                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').split(','))
+                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').match(/(https.+(.*?))/)[1])
                     else src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){
 					if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
 					else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
 				} else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
-                    if (menu[n].id == '4chan'){ src = String($(this).find('description').text().toLowerCase().match(/https:\/\/.+?(gif|png|jpg)/))
-						if (!src.match(/\.jpg/)) src = String($(this).find('description').text().toLowerCase().match(/href=['"](.*?)['"]/)[1]) 
+                    if (menu[n].id == '4chan'){ src = String($(this).find('description').text().match(/https:\/\/.+?(gif|png|jpg)/))
+						if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1]) 
 						else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
 	                } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()){ src = String($(this).find('image').text())
