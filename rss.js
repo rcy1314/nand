@@ -415,6 +415,7 @@ var menu=[
 {id:"New York Post",cat:"Sport",des:"New York Post Sports including Scores, Trade Rumors and Standings for Baseball, Football, and Basketball.",uri:"https://nypost.com/sports/feed",ext:"https://nypost.com/sports"},
 {id:"RT Sports",cat:"Sport",des:"RT Sports delivers Latest News on Sports from around the world.",uri:"https://www.rt.com/rss/sport",ext:"https://rt.com/sport"},
 {id:"4chan",cat:"Sport",des:"SP is a Ssports board that discusses International Sports.",uri:"http://boards.4chan.org/sp/index.rss",ext:"http://boards.4channel.org/sp/"},
+{id:"Sportzet",cat:"Sport",des:"Sportzet The latest international Sports and World.",uri:"https://www.sportzet.com/feed",ext:"https://www.sportzet.com"},
 {id:"Sporting News",cat:"Sport",des:"Sporting News was established in 1886 as a weekly U.S. Magazine.",uri:"http://www.sportingnews.com/us/rss",ext:"http://sportingnews.com"},
 {id:"Reddit",cat:"Sport",des:"Sports subreddit for all the Latest Headlines and Discussion in Sports.",uri:"https://reddit.com/r/sports/.rss",ext:"https://reddit.com/r/Sports"},
 {id:"Telegraph.co.uk",cat:"Sport",des:"Telegraph.co.uk Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
