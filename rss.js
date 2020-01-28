@@ -387,6 +387,7 @@ var menu=[
 {id:"Reddit",cat:"Sport",des:"Cars subreddit the largest automotive enthusiast community on the Internet.",uri:"https://reddit.com/r/cars/.rss",ext:"https://reddit.com/r/Cars"},
 {id:"CBS Sports",cat:"Sport",des:"CBS Sports is an American Sports News website operated by CBS Interactive.",uri:"https://rss.cbssports.com/rss/headlines",ext:"https://cbssports.com"},
 {id:"Reddit",cat:"Sport",des:"CFB subreddit forum for all things college football focusing on NCAA football.",uri:"https://reddit.com/r/cfb/.rss",ext:"https://reddit.com/r/CFB"},
+{id:"Clutch Points",cat:"Sport",des:"Clutch Points Sports news, reporting, videos, scores, and more for NBA and NFL.",uri:"https://clutchpoints.com/feed",ext:"https://clutchpoints.com"},
 {id:"CNN Sports",cat:"Sport",des:"CNN Sports catalogues the Latest News from around the World.",uri:"http://rss.cnn.com/rss/edition_sport.rss",ext:"https://cnn.com/sport"},
 {id:"Deadspin",cat:"Sport",des:"Deadspin brings you the Latest Sports News, Stories, Videos, and more.",uri:"https://deadspin.com/rss",ext:"https://deadspin.com"},
 {id:"Digital Trends",cat:"Sport",des:"Digital Trends world of cars, speed and power.",uri:"https://www.digitaltrends.com/cars/feed",ext:"https://digitaltrends.com/cars"},
