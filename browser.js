@@ -331,23 +331,17 @@ function populate(n) {
 function resolution(n) {
 
 	$('#' + n).one('load', function(){
-	if ($('#' + n).get(0).naturalHeight > max || $('#' + n).get(0).naturalWidth > max) {
-			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (40 - 25 + 1) + 25 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
-		} else if ($('#' + n).get(0).naturalWidth > min) {
-			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
-		} else {
-			var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + 100)
-		}
-		var xhr = new XMLHttpRequest(); 
-		xhr.open('GET', heroku + $('#' + n).attr('src'), true); 
-		xhr.responseType = 'blob';
-		xhr.onload = function() {
-    		blob = xhr.response;
-			$('#' + n).siblings('.attr').html('(' + Math.round(blob.size / 1024) + 'KB ' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-		}
-		xhr.send();
+		if ($('#' + n).get(0).naturalHeight > max && $('#' + n).get(0).naturalWidth > max) {
+				var expand = '[<u>expand</u>]'
+				$('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
+			} else if ($('#' + n).get(0).naturalWidth > min) {
+				var expand = '[<u>expand</u>]'
+				$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
+			} else {
+				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + 100)
+			}
+				$('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+			
  		$('#' + n).css('display', 'block')
 
 	})
@@ -388,7 +382,7 @@ function get(n) {
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get(heroku + menu[n].uri, { mimeType: 'text/html' })
+    request = $.get(heroku + menu[n].uri)
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
