@@ -360,6 +360,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Networking subreddit Network blogs, news and network management articles.",uri:"https://reddit.com/r/networking/.rss",ext:"https://reddit.com/r/Networking"},
 {id:"Reddit",cat:"Social",des:"Nvidia subreddit talk about news, drivers, rumours, GPUs, and the industry.",uri:"https://reddit.com/r/nvidia/.rss",ext:"https://www.reddit.com/r/Nvidia"},
 {id:"Reddit",cat:"Social",des:"Open Source subreddit for everything open source.",uri:"https://reddit.com/r/opensource/.rss",ext:"https://reddit.com/r/OpenSource"},
+{id:"Reddit",cat:"Social",des:"Photography subreddit a place to discuss the tools, technique and culture of photography.",uri:"https://reddit.com/r/photography/.rss",ext:"https://reddit.com/r/Photography"},
 {id:"Reddit",cat:"Social",des:"Physics subreddit frequented by physicists, scientists, and those with a passion for physics.",uri:"https://reddit.com/r/physics/.rss",ext:"https://reddit.com/r/Physics"},
 {id:"Reddit",cat:"Social",des:"Programming subreddit shares user submitted articles on Programming.",uri:"https://reddit.com/r/programming/.rss",ext:"https://reddit.com/r/Programming"},
 {id:"Reddit",cat:"Social",des:"Python subreddit about the Dynamic, Interpreted, Interactive, Object-Oriented, extensible language Python.",uri:"https://reddit.com/r/python/.rss",ext:"https://reddit.com/r/Python"},
