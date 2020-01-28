@@ -4,7 +4,7 @@ var request
 var ost = 0
 var his = 0
 var obj = []
-var min = 399
+var min = 299
 var max = 799
 var evt = true
 var job = false
@@ -333,7 +333,7 @@ function resolution(n) {
 	$('#' + n).one('load', function(){
 	if ($('#' + n).get(0).naturalHeight > max || $('#' + n).get(0).naturalWidth > max) {
 			var expand = '[<u>expand</u>]'
-			$('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
+			$('#' + n).addClass('expand min').width(Math.random() * (40 - 25 + 1) + 25 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
 		} else if ($('#' + n).get(0).naturalWidth > min) {
 			var expand = '[<u>expand</u>]'
 			$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
@@ -388,7 +388,7 @@ function get(n) {
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get(heroku + menu[n].uri)
+    request = $.get(heroku + menu[n].uri, { mimeType: 'text/html' })
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
