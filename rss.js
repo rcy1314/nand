@@ -519,6 +519,7 @@ var menu=[
 {id:"Daily Mail",cat:"World",des:"Daily Mail is a British daily middle-market newspaper published in London.",uri:"https://www.dailymail.co.uk/articles.rss",ext:"https://dailymail.co.uk"},
 {id:"Digital Trends",cat:"World",des:"Digital Trends team of experienced staffers provide the latest news.",uri:"https://www.digitaltrends.com/news/feed",ext:"https://digitaltrends.com/news"},
 {id:"Drudge Report",cat:"World",des:"Drudge Report consists mainly of news stories from other outlets.",uri:"http://feeds.feedburner.com/DrudgeReportFeed",ext:"https://drudgereport.com"},
+{id:"DW",cat:"World",des:"DW Discover news from around the world as they happen. DW looks at all the top stories.",uri:"http://rss.dw.com/rdf/rss-en-all",ext:"https://www.dw.com/en/top-stories"},
 {id:"Euronews",cat:"World",des:"Euronews is unapologetically impartial and seeks to offer a diversity of viewpoints.",uri:"http://feeds.feedburner.com/euronews/en/home",ext:"https://www.euronews.com"},
 {id:"Fortune",cat:"World",des:"Fortune is an American multinational business magazine headquartered in New York City.",uri:"https://fortune.com/feed",ext:"https://fortune.com"},
 {id:"Global News",cat:"World",des:"Global News World breaking international news current world news headlines, international news and business.",uri:"https://globalnews.ca/world/feed",ext:"https://globalnews.ca/world"},
