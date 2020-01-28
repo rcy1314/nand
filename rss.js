@@ -256,6 +256,7 @@ var menu=[
 {id:"CBS",cat:"News",des:"CBS WDJT Wisconsin Milwaukee your local source for the Milwaukee news, Milwaukee weather, and Milwaukee sports.",uri:"https://www.cbs58.com/rss",ext:"https://www.cbs58.com"},
 {id:"CBS",cat:"News",des:"CBS KBJR Wisconsin works in Superior, Duluth, Minnesota, Wisconsin areas.",uri:"https://kbjr6.com/feed",ext:"https://kbjr6.com"},
 {id:"ABC",cat:"News",des:"ABC WISN Wisconsin Wausau the day’s biggest stories and ones you may have missed.",uri:"https://www.wisn.com/topstories-rss",ext:"https://www.wisn.com"},
+{id:"NBC",cat:"News",des:"NBC15 Wisconsin Southwestern News, Sports, Weather and Live Updates.",uri:"https://www.nbc15.com/content/news/index.rss",ext:"https://www.nbc15.com"},
 {id:"ABC",cat:"Media",des:"ABC Entertainment Latest Celebrity News, Videos and Photos.",uri:"https://abcnews.go.com/abcnews/entertainmentheadlines",ext:"https://abcnews.go.com/entertainment"},
 {id:"AOL",cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
 {id:"AV Club",cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
