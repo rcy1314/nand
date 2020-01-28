@@ -382,7 +382,10 @@ function get(n) {
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get(heroku + menu[n].uri)
+    request = $.get({
+		url: heroku + menu[n].uri,
+		headers: { 'rss-browser': 'acktic.github.io' }
+		})
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
