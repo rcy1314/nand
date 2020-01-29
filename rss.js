@@ -273,6 +273,7 @@ var menu=[
 {id:"Daily Express",cat:"Media",des:"The Daily Express Celebrity News Latest news, showbiz, sport, comment, lifestyle, city, video and pictures.",uri:"http://feeds.feedburner.com/daily-express-celebritynews",ext:"https://www.express.co.uk"},
 {id:"Deadline",cat:"Media",des:"Deadline is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",uri:"https://deadline.com/feed",ext:"https://deadline.com"},
 {id:"Decider",cat:"Media",des:"Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.",uri:"https://decider.com/feed",ext:"https://decider.com"},
+{id:"Demotix",cat:"Media",des:"Demotix Celebrity articles with all the gossip in the celebrity world.",uri:"https://demotix.com/category/celebrities/feed",ext:"https://demotix.com/category/celebrities"},
 {id:"Digital Trends",cat:"Media",des:"Digital Trends Movie reviews, TV Show recaps, Previews, and News.",uri:"https://www.digitaltrends.com/movies/feed/",ext:"https://digitaltrends.com/movies"},
 {id:"Daily Beast",cat:"Media",des:"Daily Beast is a News and Opinion Website focusing on Politics and Entertainment Culture.",uri:"https://feeds.thedailybeast.com/summary/rss/articles",ext:"https://www.thedailybeast.com"},
 {id:"E! Online",cat:"Media",des:"E! is an American basic cable channel owned by the NBCUniversal.",uri:"http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",ext:"https://www.eonline.com"},
