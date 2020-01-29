@@ -353,9 +353,9 @@ function get(n) {
 	evt = true
     job = true
     var pub = []
-    $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube') var quit = 5
     else var quit = 11
+    $('#pop, #air, .arm, .get').remove()
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
