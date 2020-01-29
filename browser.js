@@ -231,7 +231,7 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, .wrapper, .container, .attach, .output, .pop, .air, .category, .des, .box, .rss').css({
+        $('html, body, .wrapper, .container, .attach, .category, .output, .pop, .air, .box, .des').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
@@ -245,7 +245,8 @@ function apply(n) {
         $('#favico').show()
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.container, .attach, .category, .output, .pop, .air, .des').css({
+        $('.output').removeClass('default').addClass('invert').css('background-color','#fff')
+        $('.container, .attach, .category, .pop, .air, .des').css({
             'background-color': 'rgba(255, 255, 255, .7)',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -255,9 +256,9 @@ function apply(n) {
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('.output').removeClass('default').addClass('invert')
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
+		$('.box').css('border', '1px solid #eee')
         $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
@@ -315,7 +316,7 @@ function resolution(n) {
 				var expand = '[<u>expand</u>]'
 				$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
 			} else {
-				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + 100)
+				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + Math.random() * (225 - 100 + 1) + 100)
 			}
 				$('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
 			
