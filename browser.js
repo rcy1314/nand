@@ -58,13 +58,6 @@ $(document).ready(function() {
 
     })
 
-    $('.external').on('touchstart click', function(e) {
-
-        window.open($(this).attr('ext'), '_blank')
-        e.stopPropagation()
-
-    })
-
     $('.icon').on('touchstart click', function(e) {
 
             evt = true
