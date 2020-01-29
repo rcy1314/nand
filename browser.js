@@ -252,17 +252,13 @@ function apply(n) {
 			'border': 'none'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('.box').css({
+        $('.html, .wrapper, .box').css({
             'border': '1px solid #eee',
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
         $('.attach').css('background-color', 'rgba(255, 255, 255, .9)')
         $('.output').removeClass('default').addClass('invert')
-        $('html, .wrapper').css({
-            'border': '1px solid #ddd',
-            'background-color': '#fafafa'
-        })
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
         $('a').css('color', '#08BD94')
