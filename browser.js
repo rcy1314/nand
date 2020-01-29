@@ -258,7 +258,7 @@ function apply(n) {
         })
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
-		$('.box').css('border', '1px solid #eee')
+		$('.wrapper, .box').css('border', '1px solid #eee')
         $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
