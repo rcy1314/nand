@@ -34,14 +34,6 @@
     top: -45.5%;
     }
 
-    .rss {
-    position: absolute;
-    cursor: default;
-    font-size: 10px;
-    bottom: 2px;
-    right: 5px;
-    }
-
     #pop, #air, .get { padding-left: 1.5% }
 
 	#icon { margin-bottom: -.7em }

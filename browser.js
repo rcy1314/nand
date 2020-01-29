@@ -11,7 +11,7 @@ var job = false
 var sel = 'Social'
 var heroku = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('.wrapper, .rss').css('display', 'block')
+    $('.wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -245,8 +245,8 @@ function apply(n) {
         $('#favico').show()
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.container, .output, .pop, .air, .pub, .ago, .category, .des, .rss').css({
-            'background-color': '#fff',
+        $('.container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .rss').css({
+            'background-color': 'rgba(255, 255, 255, .9)',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
