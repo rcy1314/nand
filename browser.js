@@ -230,13 +230,9 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, .wrapper, .container, .output, .pop, .air, .box, .rss').css({
+        $('html, .wrapper, .container, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
-            'color': 'rgba(255,255,255,.9)'
-        })
-        $('.pub, .ago, .category').css({
-            'border-bottom': 'none',
             'color': 'rgba(255,255,255,.9)'
         })
         $('.random, .opposite, .box, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
@@ -249,13 +245,10 @@ function apply(n) {
         $('#favico').show()
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.container, .output, .pop, .air, .rss').css({
+        $('.container, .output, .pop, .air, .pub, .ago, .category, .des, .rss').css({
             'background-color': '#fff',
-            'color': 'rgba(0,0,0,.7)'
-        })
-        $('.pub, .ago, .category').css({
-            'border-bottom': 'none',
-            'color': 'rgba(0,0,0,.7)'
+            'color': 'rgba(0,0,0,.7)',
+			'border': 'none'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('.box').css({
@@ -381,12 +374,12 @@ function get(n) {
 		})
         .fail(function() {
             $('.arm').remove();
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
+            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             job = false
         })
         .done(function(data) {
             $('.arm').remove()
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a class='external'>" + id + "</a></div>" + menu[n].des + "</div></div>")
+            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
