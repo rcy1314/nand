@@ -47,12 +47,12 @@ $(document).ready(function() {
 
     $('.category').on('touchstart click', function(e) {
 
-        his = 0
-        evt = true
-        $('#pop, #air, .arm, .get').remove()
-        prepend($(this).attr('id'))
-        populate($(this).attr('id'))
-        display('#pop:last')
+    	    his = 0
+    	    evt = true
+    	    $('#pop, #air, .arm, .get').remove()
+    	    prepend($(this).attr('id'))
+    	    populate($(this).attr('id'))
+	        display('#pop:last')
 
         e.preventDefault()
 
@@ -60,6 +60,7 @@ $(document).ready(function() {
 
     $('.icon').on('touchstart click', function(e) {
 
+        	$('#pop, #air, .arm, .get').remove()
             evt = true
             prepend(sel)
             populate(sel)
@@ -294,9 +295,6 @@ function populate(n) {
         $('.arm').remove()
         request.abort()
         job = false
-    }
-    if ($('#pop, #air').length > 2) {
-        $('#pop, #air:last, .get').remove()
     }
     document.title = n + ' ack'
     if (n != sel) his = 0
