@@ -231,7 +231,7 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, .wrapper, .container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
+        $('html, body, .wrapper, .container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
@@ -251,8 +251,7 @@ function apply(n) {
 			'border': 'none'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('.html, .wrapper, .box').css({
-            'border': '1px solid #eee',
+        $('html, body, .wrapper, .box').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
