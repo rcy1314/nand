@@ -306,6 +306,7 @@ var menu=[
 {id:"Reddit",cat:"Media",des:"Pics subreddit A place for pictures and photographs.",uri:"https://reddit.com/r/pics/.rss",ext:"https://reddit.com/r/Pics"},
 {id:"Rolling Stone",cat:"Media",des:"Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {id:"Reddit",cat:"Media",des:"Television subreddit streaming services and the best series.",uri:"https://www.reddit.com/r/television/.rss",ext:"https://www.reddit.com/r/Television"},
+{id:"Slash Film",cat:"Media",des:"Slash Film covers movie news, reviews, interviews, and trailers.",uri:"https://www.slashfilm.com/feed",ext:"https://www.slashfilm.com"},
 {id:"The Sun",cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
 {id:"The Wrap",cat:"Media",des:"The Wrap is the leading digital-first news organization covering the business of entertainment and media via digital, print and live events.",uri:"https://www.thewrap.com/feed",ext:"https://www.thewrap.com"},
 {id:"TMZ",cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
