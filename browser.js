@@ -231,7 +231,7 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, .wrapper, .container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
+        $('html, body, .wrapper, .container, .attach, .output, .pop, .air, .category, .des, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
@@ -245,8 +245,8 @@ function apply(n) {
         $('#favico').show()
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .rss').css({
-            'background-color': 'rgba(255, 255, 255, .9)',
+        $('.container, .attach, .category, .output, .pop, .air, .des').css({
+            'background-color': 'rgba(255, 255, 255, .7)',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
