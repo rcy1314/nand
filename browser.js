@@ -231,13 +231,12 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, .wrapper, .container, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
+        $('html, .wrapper, .container, .attach, .output, .pop, .air, .pub, .ago, .category, .des, .box, .rss').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
         })
         $('.random, .opposite, .box, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
-        $('.attach').css('background-color', 'rgba(0, 0, 0, .7)')
         $('.output').removeClass('invert').addClass('default')
         $('.img, iframe').css('filter', 'brightness(80%)')
 	    $('.gif').attr('src', 'favicon/favico.png')
