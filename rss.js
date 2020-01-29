@@ -57,6 +57,8 @@ var menu=[
 {id:"ABC",cat:"News",des:"ABC KHBS Arkansas Fort Smith Trending and Latest Headlines.",uri:"https://www.4029tv.com/topstories-rss",ext:"https://www.4029tv.com"},
 {id:"NBC",cat:"News",des:"NBC KVOA Arizona Tucson’s NBC affiliate, KVOA serves more than a million people.",uri:"https://kvoa.com/feed",ext:"https://kvoa.com"},
 {id:"NBC",cat:"News",des:"NBC KYMA Arizona television station licensed to Yuma, Arizona.",uri:"https://kyma.com/feed",ext:"https://kyma.com"},
+{id:"NBC",cat:"News",des:"NBC KPNX Arizona Phoenix Updates and Stories, News, and Weather.",uri:"http://rssfeeds.12news.com/kpnx/local&x=1",ext:"http://www.12news.com"},
+{id:"Reddit",cat:"Social",des:"Photography subreddit a place to discuss the tools, technique and culture of photography.",uri:"https://reddit.com/r/photography/.rss",ext:"https://reddit.com/r/Photography"},
 {id:"NBC",cat:"News",des:"NBC KTVE Arkansas El Dorado Your Southern Arkansas Local News Leader.",uri:"https://www.myarklamiss.com/feed",ext:"https://www.myarklamiss.com"},
 {id:"FOX",cat:"News",des:"FOX KFTA Arkansas Fort Smith overs the rapidly growing and vibrant Northwest Arkansas and River Valley.",uri:"https://www.nwahomepage.com/feed",ext:"https://www.nwahomepage.com"},
 {id:"CBS",cat:"News",des:"CBS KFSM Arkansas Fort Smith serving the Arkansas River Valley and Northwest Arkansas.",uri:"https://5newsonline.com/feed",ext:"https://5newsonline.com"},
