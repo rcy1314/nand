@@ -256,7 +256,6 @@ function apply(n) {
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('.attach').css('background-color', 'rgba(255, 255, 255, .9)')
         $('.output').removeClass('default').addClass('invert')
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
@@ -276,7 +275,7 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -299,7 +298,7 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a class='external' onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
     apply()
