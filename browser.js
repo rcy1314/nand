@@ -23,6 +23,14 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
+	$('a').on('touchstart click', function(e) {
+
+		e.stopPropagation()
+	
+		external($(this).attr('ext'))
+
+	})
+
     $('.random').on('touchstart click', function(e) {
 
         random(sel)
@@ -269,7 +277,7 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -292,7 +300,7 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
     apply()
