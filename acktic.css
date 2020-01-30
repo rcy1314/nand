@@ -108,6 +108,7 @@
     display: flex;
     height: 2.9em;
 	z-index: 2;
+	top: 0em;`
 	}
     .category {
     display: inline-block;
