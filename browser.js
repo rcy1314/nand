@@ -239,12 +239,12 @@ function apply(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, .wrapper, .container, .attach, .category, .output, .pop, .air, .box, .des').css({
+        $('html, body, .wrapper, .container, .attach, .category, .output, .pop, .air, .item, .des').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
         })
-        $('.random, .opposite, .box, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
+        $('.random, .opposite, .item, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.output').removeClass('invert').addClass('default')
         $('.img, iframe').css('filter', 'brightness(80%)')
 	    $('.gif').attr('src', 'favicon/favico.png')
@@ -259,12 +259,12 @@ function apply(n) {
 			'border': 'none'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('html, body, .wrapper, .box').css({
+        $('html, body, .wrapper, .item').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
         $('.output').removeClass('default').addClass('invert')
-		$('.wrapper, .box').css('border', '1px solid #eee')
+		$('.wrapper, .item').css('border', '1px solid #eee')
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
         $('a').css('color', '#08BD94')
@@ -431,12 +431,12 @@ function get(n) {
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + abbreviate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     else views = ''
-                    post = "<div id='yt' class='box' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                    post = "<div id='yt' class='item' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
-                    post = "<div class='box' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                    post = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
 						"<div class='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
