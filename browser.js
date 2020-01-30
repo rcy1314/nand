@@ -239,8 +239,7 @@ function apply(n) {
         $('#favico').show()
         gif = 'favico.png'
     } else if (op == 0) {
-        $('.output').removeClass('default').addClass('invert').css('background-color','#fff')
-        $('.container, .attach, .category, .pop, .air, .des').css({
+        $('.container, .attach, .category, .output, .pop, .air, .des').css({
             'background-color': 'rgba(255, 255, 255, .7)',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -250,9 +249,10 @@ function apply(n) {
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
+        $('.output').removeClass('default').addClass('invert')
+		$('.wrapper, .box').css('border', '1px solid #eee')
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
-		$('.wrapper, .box').css('border', '1px solid #eee')
         $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
@@ -269,7 +269,7 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub' style='text-transform:none'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
