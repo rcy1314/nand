@@ -31,6 +31,12 @@ $(document).ready(function() {
 
 	})
 
+	$('.pop, .air').on('touchstart click', function(e) {
+
+		get($(this).attr('get'))
+
+	})
+
     $('.random').on('touchstart click', function(e) {
 
         random(sel)
@@ -300,7 +306,7 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
     apply()
