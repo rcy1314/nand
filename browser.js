@@ -23,7 +23,7 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-    $('.random').on('touchstart click', function(e) {
+    $('.random').on('touch click', function(e) {
 
         random(sel)
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     })
 
-    $('.opposite').on('touchstart click', function(e) {
+    $('.opposite').on('touch click', function(e) {
 
         apply('op')
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     })
 
-    $('.category').on('touchstart click', function(e) {
+    $('.category').on('touch click', function(e) {
 
     	    his = 0
     	    evt = true
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     })
 
-    $('.icon').on('touchstart click', function(e) {
+    $('.icon').on('touch click', function(e) {
 
         	$('#pop, #air, .arm, .get').remove()
             evt = true
@@ -75,13 +75,13 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
-}).on('touchstart click', 'a', function(e) {
+}).on('touch click', 'a', function(e) {
 
 		e.stopPropagation()
 	
 		external($(this).attr('ext'))
 
-	}).on('touchstart click', '.pop, .air', function(e) {
+	}).on('touch click', '.pop, .air', function(e) {
 
 		get($(this).attr('get'))
 
