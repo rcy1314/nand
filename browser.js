@@ -283,7 +283,7 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -361,9 +361,8 @@ function get(n) {
 	evt = true
     job = true
     var pub = []
-    if (sel == 'Youtube') var quit = 5
-    else var quit = 11
     $('#pop, #air, .arm, .get').remove()
+    if (sel == 'Youtube'){ var quit = 5 } else { var quit = 11 }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
@@ -428,7 +427,7 @@ function get(n) {
                 } else src = ''
                 if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div class='ago' style='text-align:left'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div class='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + abbreviate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     else views = ''
