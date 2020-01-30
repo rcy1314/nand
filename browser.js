@@ -23,12 +23,6 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-    $('.rss').on('click', function(e) {
-
-        external('https://github.com/acktic/acktic.github.io')
-
-    })
-
     $('.random').on('touchstart click', function(e) {
 
         random(sel)
