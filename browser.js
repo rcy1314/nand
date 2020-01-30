@@ -23,20 +23,6 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-	$('a').on('touchstart click', function(e) {
-
-		e.stopPropagation()
-	
-		external($(this).attr('ext'))
-
-	})
-
-	$('.pop, .air').on('touchstart click', function(e) {
-
-		get($(this).attr('get'))
-
-	})
-
     $('.random').on('touchstart click', function(e) {
 
         random(sel)
@@ -89,7 +75,18 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
-})
+}).on('touchstart click', 'a', function(e) {
+
+		e.stopPropagation()
+	
+		external($(this).attr('ext'))
+
+	}).on('touchstart click', '.pop, .air', function(e) {
+
+		get($(this).attr('get'))
+
+	})
+
 
 String.prototype.truncate =
 
