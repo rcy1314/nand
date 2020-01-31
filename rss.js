@@ -260,6 +260,7 @@ var menu=[
 {id:"CBS",cat:"Media",des:"CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",uri:"https://www.cbsnews.com/latest/rss/entertainment",ext:"https://cbsnews.com/latest/rss/entertainment"},
 {id:"Celebrity Insider",cat:"Media",des:"Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, sports, and entertainment.",uri:"https://celebrityinsider.org/feed",ext:"https://celebrityinsider.org"},
 {id:"Cheatsheet",cat:"Media",des:"Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.",uri:"https://www.cheatsheet.com/feed",ext:"https://www.cheatsheet.com"},
+{id:"Closer Weekly",cat:"Media",des:"Closer Weekly Your ultimate source for breaking celebrity news — get closer to the stars you love.",uri:"https://www.closerweekly.com/feed",ext:"https://www.closerweekly.com"},
 {id:"CNN",cat:"Media",des:"CNN Entertainment News Celebrities, Movies, TV, and Music.",uri:"http://rss.cnn.com/rss/cnn_showbiz.rss",ext:"https://cnn.com/entertainment"},
 {id:"ComingSoon",cat:"Media",des:"ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",uri:"https://www.comingsoon.net/feed",ext:"https://comingsoon.net"},
 {id:"Deadline",cat:"Media",des:"Deadline is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",uri:"https://deadline.com/feed",ext:"https://deadline.com"},
