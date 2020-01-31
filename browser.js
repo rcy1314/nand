@@ -321,7 +321,7 @@ function resolution(n) {
 				var expand = '[<u>expand</u>]'
 				$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
 			} else {
-				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).width() + Math.random() * (225 - 100 + 1) + 100)
+				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width())
 			}
 				$('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
 			
