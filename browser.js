@@ -139,8 +139,8 @@ function abbreviate(n, e) {
 function random(n) {
 
     var obj = []
-    $.each(menu, function(i, k) {
-        if (n == k.cat) obj.push(menu[i])
+    menu.forEach(function(e) {
+		if (n == e.cat) obj.push(e)
     })
     var n = obj[Math.floor(Math.random() * obj.length)]
     get(menu.indexOf(n))
