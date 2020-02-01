@@ -205,6 +205,7 @@ function apply(n) {
     if (op == 1) {
         $('html, body, .wrapper, .container, .attach, .category, .output, .pop, .air, .item, .des').css({
             'border': 'none',
+			'border-bottom': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
         })
