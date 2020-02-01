@@ -26,7 +26,7 @@ window.onload = function() {
 	document.getElementsByClassName('random')[0].addEventListener('click', function(e) { random(sel); e.preventDefault() })
 	document.getElementsByClassName('random')[0].addEventListener('touch', function(e) { random(sel); e.preventDefault() })
 	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
-	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
+	document.getElementsByClassName('opposite')[0].addEventListener('touch', function(e) { apply('op'); e.preventDefault() })
 
     $('.output').on('scroll touchmove focusout', function(e) {
 
