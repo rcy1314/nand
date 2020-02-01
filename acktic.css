@@ -108,7 +108,7 @@
     display: flex;
     height: 2.9em;
 	z-index: 2;
-	top: 0em;`
+	top: -1px;`
 	}
     .category {
     display: inline-block;
