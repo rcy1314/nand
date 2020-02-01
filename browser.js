@@ -67,8 +67,8 @@ function category (n) {
 	prepend(n)
 	populate(n)
 	display('#pop:last')
-	$('.category').css('border-bottom','none')
 	apply(op)
+
 }
 
 function display(n) {
@@ -251,7 +251,7 @@ function prepend(n) {
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
-    apply()
+    apply(op)
 
 }
 
@@ -273,7 +273,7 @@ function populate(n) {
             $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
-    apply()
+    apply(op)
 
 }
 
