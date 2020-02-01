@@ -10,8 +10,8 @@ var evt = true
 var job = false
 var sel = 'Social'
 var heroku = 'https://acktic-github-io.herokuapp.com/'
-$(document).ready(function() {
-    $('.wrapper').css('display', 'block')
+window.onload = function() {
+	document.getElementsByClassName('wrapper')[0].style.display = 'block'
 
     if (location.href.match('\\?op=1')) {
 
@@ -23,45 +23,10 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-    $('.random').on('touch click', function(e) {
-
-        random(sel)
-
-        e.preventDefault()
-
-    })
-
-    $('.opposite').on('touch click', function(e) {
-
-        apply('op')
-
-        e.preventDefault()
-
-    })
-
-    $('.category').on('touch click', function(e) {
-
-    	    his = 0
-    	    evt = true
-    	    $('#pop, #air, .arm, .get').remove()
-    	    prepend($(this).attr('id'))
-    	    populate($(this).attr('id'))
-	        display('#pop:last')
-
-        e.preventDefault()
-
-    })
-
-    $('.icon').on('touch click', function(e) {
-
-        	$('#pop, #air, .arm, .get').remove()
-            evt = true
-            prepend(sel)
-            populate(sel)
-            display('#pop:last')
-        e.preventDefault()
-
-    })
+	document.getElementsByClassName('random')[0].addEventListener('click', function(e) { random(sel); e.preventDefault() })
+	document.getElementsByClassName('random')[0].addEventListener('touch', function(e) { random(sel); e.preventDefault() })
+	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
+	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
 
     $('.output').on('scroll touchmove focusout', function(e) {
 
@@ -75,18 +40,7 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
-}).on('touch click', 'a', function(e) {
-
-		e.stopPropagation()
-	
-		external($(this).attr('ext'))
-
-	}).on('touch click', '.pop, .air', function(e) {
-
-		get($(this).attr('get'))
-
-	})
-
+}
 
 String.prototype.truncate =
 
@@ -101,6 +55,17 @@ String.prototype.truncate =
 function external(n) {
 
     window.open(n, '_blank')
+
+}
+
+function category (n) {
+
+	his = 0
+	evt = true
+	$('#pop, #air, .arm, .get').remove()
+	prepend(n)
+	populate(n)
+	display('#pop:last')
 
 }
 
@@ -280,7 +245,7 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
@@ -303,7 +268,7 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
     apply()

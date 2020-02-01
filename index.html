@@ -13,18 +13,18 @@
 <div class='wrapper' style='display:none'>
 <div class='container'>
     <div class='attach'>
-        <div id='News' class='category'>NEWS</div>
-        <div id='Media' class='category'>MEDIA</div>
-        <div id='Social' class='category'>SOCIAL</div>
-        <div id='Sport' class='category'>SPORT</div>
-        <div id='Technology' class='category'>TECH</div>
-        <div id='World' class='category'>WORLD</div>
-        <div id='Youtube' class='category'>YT</div>
+        <div id='News' class='category' onclick='category(this.id)'>NEWS</div>
+        <div id='Media' class='category' onclick='category(this.id)'>MEDIA</div>
+        <div id='Social' class='category' onclick='category(this.id)'>SOCIAL</div>
+        <div id='Sport' class='category' onclick='category(this.id)'>SPORT</div>
+        <div id='Technology' class='category' onclick='category(this.id)'>TECH</div>
+        <div id='World' class='category' onclick='category(this.id)'>WORLD</div>
+        <div id='Youtube' class='category' onclick='category(this.id)'>YT</div>
     </div>
         <div class='output'></div>
     <div id='icon'>
-        <img id='favico' class='icon' src='favicon/favico.png'>
-        <img id='invert' class='icon' src='favicon/invert.png'>
+        <img id='favico' class='icon' onclick='category(sel)' src='favicon/favico.png'>
+        <img id='invert' class='icon' onclick='category(sel)' src='favicon/invert.png'>
     </div>
         <div class='random'></div>
         <div class='opposite'></div>
