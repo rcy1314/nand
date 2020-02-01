@@ -61,12 +61,12 @@ function external(n) {
 function category (n) {
 
 	his = 0
+	sel = n
 	evt = true
 	$('#pop, #air, .arm, .get').remove()
 	prepend(n)
 	populate(n)
 	display('#pop:last')
-	$('.category').css('border','none')
 	apply()
 }
 
