@@ -341,8 +341,8 @@ function expand(n) {
             })
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
 	} else if ($('#' + n).hasClass('expand full')) {
-        $.each(obj, function(i, k) {
-            if (n == k.element && k.less) $('#' + n).removeClass('full').addClass('min').width(k.less).parent().width(k.parent)
+        obj.forEach(function(e) {
+            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parent().width(e.parent)
         })
     }
 
