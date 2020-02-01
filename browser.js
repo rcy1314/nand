@@ -67,7 +67,7 @@ function category (n) {
 	prepend(n)
 	populate(n)
 	display('#pop:last')
-	apply()
+	apply(op)
 }
 
 function display(n) {
