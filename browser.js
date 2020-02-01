@@ -67,6 +67,7 @@ function category (n) {
 	prepend(n)
 	populate(n)
 	display('#pop:last')
+	$('.category').css('border-bottom','none')
 	apply(op)
 }
 
