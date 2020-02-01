@@ -220,6 +220,7 @@ function apply(n) {
     } else if (op == 0) {
         $('.container, .attach, .category, .output, .pop, .air, .des').css({
             'background-color': 'rgba(255, 255, 255, .7)',
+			'border-bottom': 'none',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
