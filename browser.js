@@ -23,30 +23,6 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-    $('.category').on('touch click', function(e) {
-
-            his = 0
-            evt = true
-            $('#pop, #air, .arm, .get').remove()
-            populate($(this).attr('id'))
-            prepend($(this).attr('id'))
-            display('#pop:last')
-
-        e.preventDefault()
-
-    })
-
-    $('.icon').on('touch click', function(e) {
-
-            $('#pop, #air, .arm, .get').remove()
-            evt = true
-            populate(sel)
-            prepend(sel)
-            display('#pop:last')
-        e.preventDefault()
-
-    })
-
     $('.output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
@@ -59,7 +35,7 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
-}).on('touch click', 'a', function(e) {
+	}).on('touch click', 'a', function(e) {
 
         e.stopPropagation()
     
@@ -81,6 +57,27 @@ String.prototype.truncate =
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
 
     }
+
+function home() {
+
+	$('#pop, #air, .arm, .get').remove()
+	evt = true
+	populate(sel)
+	prepend(sel)
+	display('#pop:last')
+
+}
+
+function category(n) {
+
+	his = 0
+	evt = true
+	$('#pop, #air, .arm, .get').remove()
+	populate(n)
+	prepend(n)
+	display('#pop:last')
+
+}
 
 function external(n) {
 
