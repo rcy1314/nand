@@ -56,16 +56,6 @@ String.prototype.truncate =
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
     }
 
-function home() {
-
-	$('#pop, #air, .arm, .get').remove()
-	evt = true
-	populate(sel)
-	prepend(sel)
-	display('#pop:last')
-
-}
-
 function category(n) {
 
 	his = 0
