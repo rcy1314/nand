@@ -9,7 +9,7 @@ var max = 799
 var evt = true
 var job = false
 var sel = 'Social'
-var heroku = 'https://acktic-github-io.herokuapp.com/'
+var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
     $('.wrapper').css('display', 'block')
 
@@ -143,7 +143,7 @@ function manifest(n) {
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && job == false && evt == false) {
+    } else if (n > ost + 5 && evt == false && job == false) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
@@ -313,22 +313,22 @@ function expand(n) {
 }
 
 function get(n) {
+    if (job == true) {
+        request.abort()
+        job = false
+    }
     his = n
     obj = []
     evt = true
     job = true
     var pub = []
-    if (job == true) {
-        request.abort()
-        job = false
-    }
     $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube'){ var quit = 5 } else { var quit = 11 }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get({ url: heroku + menu[n].uri })
+    request = $.get({ url: cor + menu[n].uri })
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")

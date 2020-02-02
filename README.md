@@ -8,22 +8,22 @@
 ### Features
 
 * Inline Image Expansion
-* Leave off from last feed
-* Ten image parsers
-* Reverse List
-* Predefined xml examples
-* Random (in category)
+* History from last feed
+* 11 image parsers
+* Reverse Scroll List
+* 600+ XML examples
+* Random in category
 * Toggle Opposite Color Scheme (?uri)
-* Youtube Views parsing
-* Time Since Post sorted to newest
-* Plain text for finding 
-* Media Rules for all your devices
+* Youtube XML parsing
+* TimeDate Post sorted to newest
+* Plain text for find
+* Media Rules for all devices
 * Private proxy requests
 
 
 ### Dependencies
 
-Browser. Here's what's used:
+A Browser. Here's what's used:
 
 * Github - Hosting the reader.
 * Heroku - Hosting the proxy.
