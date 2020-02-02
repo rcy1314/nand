@@ -51,11 +51,9 @@ $(document).ready(function() {
 String.prototype.truncate =
 
     function(n, e) {
-
         if (this.length <= n) return this
         var subString = this.substr(0, n - 1)
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
-
     }
 
 function home() {
@@ -325,25 +323,22 @@ function expand(n) {
 }
 
 function get(n) {
+    his = n
     obj = []
+    evt = true
+    job = true
+    var pub = []
     if (job == true) {
         request.abort()
         job = false
     }
-    his = n
-    evt = true
-    job = true
-    var pub = []
     $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube'){ var quit = 5 } else { var quit = 11 }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
-    request = $.get({
-        url: heroku + menu[n].uri,
-        headers: { 'rss-browser': 'acktic.github.io' }
-        })
+    request = $.get({ url: heroku + menu[n].uri })
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
@@ -372,21 +367,17 @@ function get(n) {
                         var gen = new Date($(this).find('dc\\:date').text()).getTime()
                     }
                 }
-                if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
-                else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
+                if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(png|jpg/))
+                else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(png|jpg)/)[0])
                 else if ($(this).find('link').attr('href')){
                     if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
                     else { src = String($(this).find('link').attr('href')) }
-                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
-                    src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-                } else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
-                    src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)){
-                    src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
-                } else if ($(this).find('enclosure').attr('url')){
-                    src = String($(this).find('enclosure').attr('url'))
-                } else if ($(this).find('media\\:content, content').attr('url')){
-                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').match(/(https.+(.*?))/)[1])
+                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
+                else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)) src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
+                else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
+                else if ($(this).find('enclosure').attr('url')) src = String($(this).find('enclosure').attr('url'))
+                else if ($(this).find('media\\:content, content').attr('url')){
+                    if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url'))
                     else src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){
                     if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
@@ -396,8 +387,8 @@ function get(n) {
                         if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1]) 
                         else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
                     } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('image').text()){ src = String($(this).find('image').text())
-                } else src = ''
+                } else if ($(this).find('image').text()) src = String($(this).find('image').text())
+                else src = ''
                 if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div class='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
