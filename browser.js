@@ -44,8 +44,8 @@ $(document).ready(function() {
             his = 0
             evt = true
             $('#pop, #air, .arm, .get').remove()
-            prepend($(this).attr('id'))
             populate($(this).attr('id'))
+            prepend($(this).attr('id'))
             display('#pop:last')
 
         e.preventDefault()
@@ -56,8 +56,8 @@ $(document).ready(function() {
 
             $('#pop, #air, .arm, .get').remove()
             evt = true
-            prepend(sel)
             populate(sel)
+            prepend(sel)
             display('#pop:last')
         e.preventDefault()
 
@@ -452,8 +452,8 @@ function get(n) {
                 $('.get').append(pub[k].post)
                 if ($('#' + pub[k].element).length) resolution(pub[k].element)
             }
-            prepend(sel)
             populate(sel)
+            prepend(sel)
             display('.get')
             apply()
         })
