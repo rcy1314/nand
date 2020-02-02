@@ -57,11 +57,14 @@ function external(n) {
 
 function category (n) {
 
-	$('#' + sel).css('border-bottom','none')
+	document.getElementById(sel).style.borderBottom = 'none'
 	his = 0
 	sel = n
 	evt = true
-	$('#pop, #air, .arm, .get').remove()
+	var e = document.getElementsByClassName('output')[0]
+	while (e.firstChild) {
+    	e.removeChild(e.firstChild);
+	}	
 	prepend(n)
 	populate(n)
 	display('#pop:last')
