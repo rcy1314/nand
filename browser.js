@@ -10,8 +10,8 @@ var evt = true
 var job = false
 var sel = 'Social'
 var heroku = 'https://acktic-github-io.herokuapp.com/'
-window.onload = function() {
-	document.getElementsByClassName('wrapper')[0].style.display = 'block'
+$(document).ready(function() {
+    $('.wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -21,23 +21,72 @@ window.onload = function() {
 
     populate(sel)
     prepend(sel)
-    display('pop')
+    display('#pop:last')
 
-	document.getElementsByClassName('random')[0].addEventListener('click', function(e) { random(sel); e.preventDefault() })
-	document.getElementsByClassName('random')[0].addEventListener('touch', function(e) { random(sel); e.preventDefault() })
-	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
-	document.getElementsByClassName('opposite')[0].addEventListener('touch', function(e) { apply('op'); e.preventDefault() })
+    $('.random').on('touch click', function(e) {
 
-    document.getElementsByClassName('output')[0].addEventListener('scroll', function(e) {
+        random(sel)
 
-			manifest($(this).scrollTop())
-            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
-            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
+        e.preventDefault()
 
     })
-	document.getElementsByClassName('output')[0].focus()
 
-}
+    $('.opposite').on('touch click', function(e) {
+
+        apply('op')
+
+        e.preventDefault()
+
+    })
+
+    $('.category').on('touch click', function(e) {
+
+            his = 0
+            evt = true
+            $('#pop, #air, .arm, .get').remove()
+            prepend($(this).attr('id'))
+            populate($(this).attr('id'))
+            display('#pop:last')
+
+        e.preventDefault()
+
+    })
+
+    $('.icon').on('touch click', function(e) {
+
+            $('#pop, #air, .arm, .get').remove()
+            evt = true
+            prepend(sel)
+            populate(sel)
+            display('#pop:last')
+        e.preventDefault()
+
+    })
+
+    $('.output').on('scroll touchmove focusout', function(e) {
+
+        if (e.type == 'scroll' || e.type == 'touchmove') {
+            manifest($(this).scrollTop())
+            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
+            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
+        } else if (e.type == 'focusout') setTimeout(function() {
+            $('.output').focus()
+        }, 100)
+
+    }).attr('tabindex', -1).focus()
+
+}).on('touch click', 'a', function(e) {
+
+        e.stopPropagation()
+    
+        external($(this).attr('ext'))
+
+    }).on('touch click', '.pop, .air', function(e) {
+
+        get($(this).attr('get'))
+
+    })
+
 
 String.prototype.truncate =
 
@@ -55,27 +104,10 @@ function external(n) {
 
 }
 
-function category (n) {
-
-	document.getElementById(sel).style.borderBottom = 'none'
-	his = 0
-	sel = n
-	evt = true
-	var e = document.getElementsByClassName('output')[0]
-	while (e.firstChild) {
-    	e.removeChild(e.firstChild);
-	}	
-	prepend(n)
-	populate(n)
-	display('pop')
-	apply(op)
-
-}
-
 function display(n) {
 
-    document.getElementsByClassName('output')[0].animate({
-        scrollTop: document.getElementById(n).offsetTop - document.getElementsByClassName('output')[0].offsetTop + document.getElementsByClassName('output')[0].scrollTop
+    $('.output').animate({
+        scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
     }, 100);
     setTimeout(function() {
         evt = false
@@ -108,7 +140,7 @@ function random(n) {
 
     var obj = []
     menu.forEach(function(e) {
-		if (n == e.cat) obj.push(e)
+        if (n == e.cat) obj.push(e)
     })
     var n = obj[Math.floor(Math.random() * obj.length)]
     get(menu.indexOf(n))
@@ -134,18 +166,26 @@ function reverse(Object) {
 function manifest(n) {
 
     if (n < ost - 5) {
-        document.getElementsByClassName('icon')[0].style.transition = 'all .2s linear'
-        document.getElementsByClassName('icon')[0].style.visibility = 'visible'
-        document.getElementsByClassName('attach')[0].style.transition = 'all .2s linear'
-        document.getElementsByClassName('attach')[0].style.visibility = 'visible'
+        $('.icon').css({
+            'transition': 'all .2s linear',
+            'visibility': 'visible'
+        })
+        $('.attach').css({
+            'transition': 'all .2s linear',
+            'visibility': 'visible'
+        })
     } else if (n > ost + 5 && job == false && evt == false) {
-        document.getElementsByClassName('icon')[0].style.transition = 'all .2s linear'
-		document.getElementsByClassName('icon')[0].style.visibility = 'hidden'
-        document.getElementsByClassName('attach')[0].style.transition = 'all .2s linear'
-        document.getElementsByClassName('attach')[0].style.visibility = 'hidden'
+        $('.icon').css({
+            'transition': 'all .2s linear',
+            'visibility': 'hidden'
+        })
+        $('.attach').css({
+            'transition': 'all .2s linear',
+            'visibility': 'hidden'
+        })
     }
 
-	ost = n
+    ost = n
 
 }
 
@@ -204,7 +244,7 @@ function apply(n) {
         $('.random, .opposite, .item, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.output').removeClass('invert').addClass('default')
         $('.img, iframe').css('filter', 'brightness(80%)')
-	    $('.gif').attr('src', 'favicon/favico.png')
+        $('.gif').attr('src', 'favicon/favico.png')
         $('a').css('color', '#F7426B')
         $('#invert').hide();
         $('#favico').show()
@@ -213,7 +253,7 @@ function apply(n) {
         $('.container, .attach, .category, .output, .pop, .air, .des').css({
             'background-color': 'rgba(255, 255, 255, .7)',
             'color': 'rgba(0,0,0,.7)',
-			'border': 'none'
+            'border': 'none'
         })
         $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('html, body, .wrapper, .item').css({
@@ -221,7 +261,7 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)'
         })
         $('.output').removeClass('default').addClass('invert')
-		$('.wrapper, .item').css('border', '1px solid #eee')
+        $('.wrapper, .item').css('border', '1px solid #eee')
         $('.gif').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
         $('a').css('color', '#08BD94')
@@ -240,11 +280,11 @@ function prepend(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
-    apply(op)
+    apply()
 
 }
 
@@ -263,31 +303,31 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' onclick='get(" + i + ")'><div class='pub'><a onclick='event.stopPropagation(); external(\"" + menu[i].ext + "\")'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     his = 0
-    apply(op)
+    apply()
 
 }
 
 
 function resolution(n) {
 
-	$('#' + n).one('load', function(){
-		if ($('#' + n).get(0).naturalHeight > max && $('#' + n).get(0).naturalWidth > max) {
-				var expand = '[<u>expand</u>]'
-				$('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
-			} else if ($('#' + n).get(0).naturalWidth > min) {
-				var expand = '[<u>expand</u>]'
-				$('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
-			} else {
-				var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width())
-			}
-				$('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-			
- 		$('#' + n).css('display', 'block')
+    $('#' + n).one('load', function(){
+        if ($('#' + n).get(0).naturalHeight > max && $('#' + n).get(0).naturalWidth > max) {
+                var expand = '[<u>expand</u>]'
+                $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
+            } else if ($('#' + n).get(0).naturalWidth > min) {
+                var expand = '[<u>expand</u>]'
+                $('#' + n).addClass('expand min').width(Math.random() * (60 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
+            } else {
+                var expand = ''; $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width())
+            }
+                $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+            
+        $('#' + n).css('display', 'block')
 
-	})
+    })
 
 }
 
@@ -297,10 +337,10 @@ function expand(n) {
             obj.push({
                 element: n,
                 less: $('#' + n).width(),
-				parent: $('#' + n).parent().width()
+                parent: $('#' + n).parent().width()
             })
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
-	} else if ($('#' + n).hasClass('expand full')) {
+    } else if ($('#' + n).hasClass('expand full')) {
         obj.forEach(function(e) {
             if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parent().width(e.parent)
         })
@@ -315,22 +355,19 @@ function get(n) {
         job = false
     }
     his = n
-	evt = true
+    evt = true
     job = true
     var pub = []
-	var e = document.getElementsByClassName('output')[0]
-	while (e.firstChild) {
-    	e.removeChild(e.firstChild);
-	}	
+    $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube'){ var quit = 5 } else { var quit = 11 }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
     request = $.get({
-		url: heroku + menu[n].uri,
-		headers: { 'rss-browser': 'acktic.github.io' }
-		})
+        url: heroku + menu[n].uri,
+        headers: { 'rss-browser': 'acktic.github.io' }
+        })
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
@@ -365,24 +402,24 @@ function get(n) {
                     if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
                     else { src = String($(this).find('link').attr('href')) }
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')){
-					src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-				} else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
-					src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
+                    src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
+                } else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)){
+                    src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)){
-					src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
+                    src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('enclosure').attr('url')){
-					src = String($(this).find('enclosure').attr('url'))
+                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')){
                     if (menu[n].id.match(/Yahoo/)) src = String($(this).find('media\\:content, content').attr('url').match(/(https.+(.*?))/)[1])
                     else src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)){
-					if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
-					else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
-				} else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
+                    if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
+                    else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)){
                     if (menu[n].id == '4chan'){ src = String($(this).find('description').text().match(/https:\/\/.+?(gif|png|jpg)/))
-						if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1]) 
-						else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-	                } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                        if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1]) 
+                        else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
+                    } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()){ src = String($(this).find('image').text())
                 } else src = ''
                 if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
@@ -398,7 +435,7 @@ function get(n) {
                 } else {
                     post = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-						"<div class='ago attr'></div>" +
+                        "<div class='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 var select = {
@@ -417,7 +454,7 @@ function get(n) {
             }
             prepend(sel)
             populate(sel)
-			display('.get')
+            display('.get')
             apply()
         })
 }
