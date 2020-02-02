@@ -23,22 +23,6 @@ $(document).ready(function() {
     prepend(sel)
     display('#pop:last')
 
-    $('.random').on('touch click', function(e) {
-
-        random(sel)
-
-        e.preventDefault()
-
-    })
-
-    $('.opposite').on('touch click', function(e) {
-
-        apply('op')
-
-        e.preventDefault()
-
-    })
-
     $('.category').on('touch click', function(e) {
 
             his = 0
