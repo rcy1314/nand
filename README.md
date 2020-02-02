@@ -37,7 +37,7 @@ A Browser. Here's what's used:
 
 ### Sourcing
 
-Source the [site](https://acktic.github.io)
+Source the [site](https://acktic.github.io) in an iframe.
 
 ### Styling
 
