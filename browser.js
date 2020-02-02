@@ -28,17 +28,14 @@ window.onload = function() {
 	document.getElementsByClassName('opposite')[0].addEventListener('click', function(e) { apply('op'); e.preventDefault() })
 	document.getElementsByClassName('opposite')[0].addEventListener('touch', function(e) { apply('op'); e.preventDefault() })
 
-    $('.output').on('scroll touchmove focusout', function(e) {
+    document.getElementsByClassName('output')[0].addEventListener('scroll', function(e) {
 
-        if (e.type == 'scroll' || e.type == 'touchmove') {
 			manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10) if (job == false) populate(sel)
-        } else if (e.type == 'focusout') setTimeout(function() {
-            $('.output').focus()
-        }, 100)
 
-    }).attr('tabindex', -1).focus()
+    })
+	document.getElementsByClassName('output')[0].focus()
 
 }
 
