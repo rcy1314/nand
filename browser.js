@@ -21,7 +21,7 @@ window.onload = function() {
 
     populate(sel)
     prepend(sel)
-    display('#pop:last')
+    display('pop')
 
 	document.getElementsByClassName('random')[0].addEventListener('click', function(e) { random(sel); e.preventDefault() })
 	document.getElementsByClassName('random')[0].addEventListener('touch', function(e) { random(sel); e.preventDefault() })
@@ -67,15 +67,15 @@ function category (n) {
 	}	
 	prepend(n)
 	populate(n)
-	display('#pop:last')
+	display('pop')
 	apply(op)
 
 }
 
 function display(n) {
 
-    $('.output').animate({
-        scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
+    document.getElementsByClassName('output')[0].animate({
+        scrollTop: document.getElementById(n).offsetTop - document.getElementsByClassName('output')[0].offsetTop + document.getElementsByClassName('output')[0].scrollTop
     }, 100);
     setTimeout(function() {
         evt = false
@@ -326,7 +326,10 @@ function get(n) {
 	evt = true
     job = true
     var pub = []
-    $('#pop, #air, .arm, .get').remove()
+	var e = document.getElementsByClassName('output')[0]
+	while (e.firstChild) {
+    	e.removeChild(e.firstChild);
+	}	
     if (sel == 'Youtube'){ var quit = 5 } else { var quit = 11 }
     $('.output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
