@@ -134,23 +134,15 @@ function reverse(Object) {
 function manifest(n) {
 
     if (n < ost - 5) {
-        $('.icon').css({
-            'transition': 'all .2s linear',
-			'visibility': 'visible'
-        })
-        $('.attach').css({
-            'transition': 'all .2s linear',
-			'visibility': 'visible'
-        })
+        document.getElementsByClassName('icon')[0].style.transition = 'all .2s linear'
+        document.getElementsByClassName('icon')[0].style.visibility = 'visible'
+        document.getElementsByClassName('attach')[0].style.transition = 'all .2s linear'
+        document.getElementsByClassName('attach')[0].style.visibility = 'visible'
     } else if (n > ost + 5 && job == false && evt == false) {
-        $('.icon').css({
-            'transition': 'all .2s linear',
-			'visibility': 'hidden'
-        })
-        $('.attach').css({
-            'transition': 'all .2s linear',
-			'visibility': 'hidden'
-        })
+        document.getElementsByClassName('icon')[0].style.transition = 'all .2s linear'
+		document.getElementsByClassName('icon')[0].style.visibility = 'hidden'
+        document.getElementsByClassName('attach')[0].style.transition = 'all .2s linear'
+        document.getElementsByClassName('attach')[0].style.visibility = 'hidden'
     }
 
 	ost = n
