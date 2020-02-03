@@ -402,6 +402,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Windows subreddit a personal computer operating system released by Microsoft.",uri:"https://reddit.com/r/windows/.rss",ext:"https://reddit.com/r/Windows"},
 {id:"Reddit",cat:"Social",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/WorldNews"},
 {id:"ABC",cat:"Sport",des:"ABC Sports the Latest Sports News, Articles and more.",uri:"https://abcnews.go.com/abcnews/sportsheadlines",ext:"https://abcnews.go.com/Sports"},
+{id:"Action Network",cat:"Sport",des:"Action Network Sports entertainment experience through original news, premium insights, betting tools, data & odds.",uri:"https://www.actionnetwork.com/feed",ext:"https://www.actionnetwork.com"},
 {id:"BBC",cat:"Sport",des:"BBC Sports News from around the world.",uri:"http://feeds.bbci.co.uk/sport/rss.xml",ext:"https://bbc.com/sport"},
 {id:"BJPenn",cat:"Sport",des:"Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. ",uri:"https://www.bjpenn.com/feed",ext:"https://bjpenn.com"},
 {id:"Bleacher Report",cat:"Sport",des:"Bleacher Report is a website that focuses on sport and sports culture.",uri:"https://bleacherreport.com/articles/feed",ext:"https://bleacherreport.com"},
