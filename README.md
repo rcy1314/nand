@@ -13,7 +13,7 @@
 * Reverse Scroll List
 * 600+ XML examples
 * Random in category
-* Toggle Opposite Color Scheme (?uri)
+* Toggle Opposite Color Scheme ?op apply()
 * Youtube XML parsing
 * TimeDate Post sorted to newest
 * Plain text for find
@@ -51,6 +51,8 @@ Opposite
  
  
 ### CORS Proxy
+
+Modern Browsers Require Cors Headers for Cross Site requests this is circumvented with a proxy.
 
 - Heroku's CORS-Anywhere Proxy `http://cors-anywhere.herokuapp.com/`
 
