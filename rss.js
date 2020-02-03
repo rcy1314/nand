@@ -291,6 +291,7 @@ var menu=[
 {id:"One America News Network",cat:"Media",des:"OANN One America News Network Entertainment.",uri:"https://www.oann.com/category/entertainment/feed",ext:"https://www.oann.com/category/entertainment"},
 {id:"People",cat:"Media",des:"People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",uri:"https://people.com/tag/news/feed",ext:"https://people.com"},
 {id:"Perez Hilton",cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
+{id:"Pop Sugar",cat:"Media",des:"Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",uri:"https://www.popsugar.com/feed",ext:"https://www.popsugar.com"},
 {id:"Rolling Stone",cat:"Media",des:"Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {id:"Slash Film",cat:"Media",des:"Slash Film covers movie news, reviews, interviews, and trailers.",uri:"https://www.slashfilm.com/feed",ext:"https://www.slashfilm.com"},
 {id:"The Sun",cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
