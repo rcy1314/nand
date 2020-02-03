@@ -3,6 +3,7 @@ var menu=[
 {id:"NBC",cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com"},
 {id:"CBS",cat:"News",des:"CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",uri:"https://boston.cbslocal.com/feed",ext:"https://boston.cbslocal.com/feed"},
 {id:"ABC",cat:"News",des:"ABC WCVB Boston News, Weather and Sports online, anytime.",uri:"https://www.wcvb.com/topstories-rss",ext:"https://wcvb.com"},
+{id:"Central News",cat:"News",des:"Central News Now latest, breaking Central news on ITV News. Videos, stories and updates",uri:"https://centralnewsnow.com/feed",ext:"https://centralnewsnow.com"},
 {id:"Chicago Tribune",cat:"News",des:"Chicago Tribune Your source for Chicago breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.chicagotribune.com/arcio/rss/category/news/breaking/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.chicagotribune.com"},
 {id:"ABC",cat:"News",des:"ABC Chicago Breaking News covering Weather, Traffic and Sports.",uri:"https://abc7chicago.com/feed",ext:"https://abc7chicago.com"},
 {id:"CBS",cat:"News",des:"CBS WBBM Chicago All the Local News and information you need.",uri:"https://chicago.cbslocal.com/feed",ext:"https://chicago.cbslocal.com"},
