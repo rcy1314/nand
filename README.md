@@ -8,16 +8,16 @@
 ### Features
 
 * Inline Image Expansion
-* History from last feed
+* Former from last feed
 * 11 image parsers
 * Reverse Scroll List
-* 600+ XML examples
-* Random in category
-* Toggle Opposite Color Scheme ?op apply()
+* 620+ XML examples
+* Random in Category
+* Color Scheme ?op apply()
 * Youtube XML parsing
-* TimeDate Post sorted to newest
+* TimeDate Post sorted
 * Plain text for find
-* Media Rules for all devices
+* Media Rules for devices
 * Private proxy requests
 
 
