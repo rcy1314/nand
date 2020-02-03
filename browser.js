@@ -211,12 +211,11 @@ function feed(n) {
         })
         .fail(function() {
             $('.arm').remove();
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
+            $('.get').append("<div class='pop' style='margin-top:1em' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
         })
         .done(function(data) {
             $('.arm').remove()
-            $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
