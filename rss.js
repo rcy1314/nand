@@ -427,6 +427,7 @@ var menu=[
 {id:"RT Sports",cat:"Sport",des:"RT Sports delivers Latest News on Sports from around the world.",uri:"https://www.rt.com/rss/sport",ext:"https://rt.com/sport"},
 {id:"Sportzet",cat:"Sport",des:"Sportzet The latest international Sports and World.",uri:"https://www.sportzet.com/feed",ext:"https://www.sportzet.com"},
 {id:"Sporting News",cat:"Sport",des:"Sporting News was established in 1886 as a weekly U.S. Magazine.",uri:"http://www.sportingnews.com/us/rss",ext:"http://sportingnews.com"},
+{id:"Sportsnaut",cat:"Sport",des:"Sportsnaut cover the big and little stories in sports without any agenda.",uri:"https://sportsnaut.com/feed",ext:"https://sportsnaut.com"},
 {id:"Telegraph.co.uk",cat:"Sport",des:"Telegraph.co.uk Sport news from around the world.",uri:"https://www.telegraph.co.uk/sport/rss.xml",ext:"https://www.telegraph.co.uk/sport"},
 {id:"The Sun",cat:"Sport",des:"TheSun.co.uk up to date on the latest sports news from the UK and the World.",uri:"https://www.thesun.co.uk/sport/feed",ext:"https://www.thesun.co.uk/sport/feed"},
 {id:"The Score",cat:"Sport",des:"The Score Trending News, Announcements, Highlights, and Analysis.",uri:"https://feeds.thescore.com/trending.rss",ext:"https://thescore.com"},
