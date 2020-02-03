@@ -11,7 +11,7 @@
 * Former from last feed
 * 11 image parsers
 * Reverse Scroll List
-* 620+ XML examples
+* 635 XML examples
 * Random in Category
 * Color Scheme ?op apply()
 * Youtube XML parsing
