@@ -7,7 +7,7 @@ var min = 299
 var max = 799
 var former = 0
 var events = true
-var job = false
+var operation = false
 var sel = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
@@ -27,9 +27,9 @@ $(document).ready(function() {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
             manifest($(this).scrollTop())
-            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) job = false
+            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (job == false) populate(sel)
+                if (operation == false) populate(sel)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
         }, 100)
@@ -144,7 +144,7 @@ function manifest(n) {
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && events == false && job == false) {
+    } else if (n > ost + 5 && events == false && operation == false) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
@@ -260,10 +260,10 @@ function prepend(n) {
 
 function populate(n) {
 
-    if (job == true) {
+    if (operation == true) {
         $('.arm').remove()
         request.abort()
-        job = false
+        operation = false
     }
     document.title = n + ' ack'
     if (n != sel) former = 0
@@ -320,14 +320,14 @@ function expand(n) {
 }
 
 function get(n) {
-    if (job == true) {
+    if (operation == true) {
         request.abort()
-        job = false
+        operation = false
     }
     obj = []
     former = n
     events = true
-    job = true
+    operation = true
     var pub = []
     $('#pop, #air, .arm, .get').remove()
     if (sel == 'Youtube') {
@@ -345,7 +345,7 @@ function get(n) {
         .fail(function() {
             $('.arm').remove();
             $('.get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
-            job = false
+            operation = false
         })
         .done(function(data) {
             $('.arm').remove()
