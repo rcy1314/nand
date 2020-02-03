@@ -2,8 +2,8 @@ var gif
 var op = 0
 var request
 var ost = 0
-var obj = []
 var former = 0
+var object = []
 var events = true
 var minimum = 299
 var maximum = 799
@@ -166,14 +166,14 @@ function display(n) {
 function expand(n) {
 
     if ($('#' + n).hasClass('expand min')) {
-        obj.push({
+        object.push({
             element: n,
             less: $('#' + n).width(),
             parent: $('#' + n).parent().width()
         })
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
     } else if ($('#' + n).hasClass('expand full')) {
-        obj.forEach(function(e) {
+        object.forEach(function(e) {
             if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parent().width(e.parent)
         })
     }
