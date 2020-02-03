@@ -38,9 +38,9 @@ $(document).ready(function() {
 
 }).on('touch click', 'a', function(e) {
 
-    e.stopPropagation()
-
     external($(this).attr('ext'))
+
+    e.stopPropagation()
 
 }).on('touch click', '.pop, .air', function(e) {
 
