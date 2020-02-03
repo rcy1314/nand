@@ -2,10 +2,10 @@ var gif
 var op = 0
 var request
 var ost = 0
-var his = 0
 var obj = []
 var min = 299
 var max = 799
+var former = 0
 var evt = true
 var job = false
 var sel = 'Social'
@@ -59,7 +59,7 @@ String.prototype.truncate =
 
 function category(n) {
 
-    his = 0
+    former = 0
     evt = true
     $('#pop, #air, .arm, .get').remove()
     populate(n)
@@ -266,16 +266,16 @@ function populate(n) {
         job = false
     }
     document.title = n + ' ack'
-    if (n != sel) his = 0
+    if (n != sel) former = 0
     sel = n
     $('.output').append("<div id='pop'></div>")
-    for (var i = his; i < menu.length; i++)
+    for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-    his = 0
+    former = 0
     apply()
 
 }
@@ -324,8 +324,8 @@ function get(n) {
         request.abort()
         job = false
     }
-    his = n
     obj = []
+    former = n
     evt = true
     job = true
     var pub = []
