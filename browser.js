@@ -8,7 +8,7 @@ var max = 799
 var former = 0
 var events = true
 var operation = false
-var sel = 'Social'
+var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
     $('.wrapper').css('display', 'block')
@@ -19,8 +19,8 @@ $(document).ready(function() {
 
     } else apply(op)
 
-    populate(sel)
-    prepend(sel)
+    populate(designate)
+    prepend(designate)
     display('#pop:last')
 
     $('.output').on('scroll touchmove focusout', function(e) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
             manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false) populate(sel)
+                if (operation == false) populate(designate)
         } else if (e.type == 'focusout') setTimeout(function() {
             $('.output').focus()
         }, 100)
@@ -211,7 +211,7 @@ function apply(n) {
             'background-color': '#000',
             'color': 'rgba(255,255,255,.9)'
         })
-        $('.random, .opposite, .item, #' + sel).css('border-bottom', '1px solid rgba(255,255,255,.2)')
+        $('.random, .opposite, .item, #' + designate).css('border-bottom', '1px solid rgba(255,255,255,.2)')
         $('.output').removeClass('invert').addClass('default')
         $('.img, iframe').css('filter', 'brightness(80%)')
         $('.gif').attr('src', 'favicon/favico.png')
@@ -225,7 +225,7 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
-        $('.random, .opposite, #' + sel).css('border-bottom', '1px solid rgba(0,0,0,.1)')
+        $('.random, .opposite, #' + designate).css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('html, body, .wrapper, .item').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)'
@@ -266,8 +266,8 @@ function populate(n) {
         operation = false
     }
     document.title = n + ' ack'
-    if (n != sel) former = 0
-    sel = n
+    if (n != designate) former = 0
+    designate = n
     $('.output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
@@ -330,7 +330,7 @@ function get(n) {
     operation = true
     var pub = []
     $('#pop, #air, .arm, .get').remove()
-    if (sel == 'Youtube') {
+    if (designate == 'Youtube') {
         var quit = 5
     } else {
         var quit = 11
@@ -429,8 +429,8 @@ function get(n) {
                 $('.get').append(pub[k].post)
                 if ($('#' + pub[k].element).length) resolution(pub[k].element)
             }
-            populate(sel)
-            prepend(sel)
+            populate(designate)
+            prepend(designate)
             display('.get')
             apply()
         })
