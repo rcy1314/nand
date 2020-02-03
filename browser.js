@@ -3,10 +3,10 @@ var op = 0
 var request
 var ost = 0
 var obj = []
-var min = 299
-var max = 799
 var former = 0
 var events = true
+var minimum = 299
+var maximum = 799
 var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
@@ -284,10 +284,10 @@ function populate(n) {
 function resolution(n) {
 
     $('#' + n).one('load', function() {
-        if ($('#' + n).get(0).naturalHeight > max && $('#' + n).get(0).naturalWidth > max) {
+        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
             var expand = '[<u>expand</u>]'
             $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width() + 75)
-        } else if ($('#' + n).get(0).naturalWidth > min) {
+        } else if ($('#' + n).get(0).naturalWidth > minimum) {
             var expand = '[<u>expand</u>]'
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 75)
         } else {
