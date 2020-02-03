@@ -210,8 +210,8 @@
     left: 0;
     }
     .gif {
-    -webkit-animation: grow 1.7s infinite ease;
-    -moz-animation: grow 1.7s infinite ease
+    -webkit-animation: spin 7s infinite ease;
+    -moz-animation: spin 7s infinite ease
     height: 200px;
     width: 200px;
     }
