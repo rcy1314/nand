@@ -110,7 +110,7 @@ function apply(n) {
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
-		$('.random, .opposite, .item, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
+		$('.random, .opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
 		$('.output').removeClass('invert').addClass('default')
 		$('.img, iframe').css('filter', 'brightness(80%)')
 		$('.gif').attr('src', 'favicon/favico.png')
