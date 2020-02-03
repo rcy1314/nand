@@ -6,7 +6,7 @@ var obj = []
 var min = 299
 var max = 799
 var former = 0
-var evt = true
+var events = true
 var job = false
 var sel = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
@@ -60,7 +60,7 @@ String.prototype.truncate =
 function category(n) {
 
     former = 0
-    evt = true
+    events = true
     $('#pop, #air, .arm, .get').remove()
     populate(n)
     prepend(n)
@@ -80,7 +80,7 @@ function display(n) {
         scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
     }, 100);
     setTimeout(function() {
-        evt = false
+        events = false
     }, 500)
 
 }
@@ -144,7 +144,7 @@ function manifest(n) {
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && evt == false && job == false) {
+    } else if (n > ost + 5 && events == false && job == false) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
@@ -326,7 +326,7 @@ function get(n) {
     }
     obj = []
     former = n
-    evt = true
+    events = true
     job = true
     var pub = []
     $('#pop, #air, .arm, .get').remove()
