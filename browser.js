@@ -304,7 +304,7 @@ function feed(n) {
 
 function manifest(n) {
 
-    if (n < ost - 5) {
+    if (n < ost) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
@@ -313,7 +313,7 @@ function manifest(n) {
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
-    } else if (n > ost + 5 && events == false && operation == false) {
+    } else if (n > ost && events == false && operation == false) {
         $('.icon').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
