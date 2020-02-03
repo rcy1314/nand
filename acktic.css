@@ -1,12 +1,18 @@
 @media (max-width: 426px) {
 
-    .item { width: 90% !important }
+    .item {
+    width: 90% !important;
+    margin-top: 2em;
+    }
 
 }
 
 @media (min-width: 768px) and (max-width: 1025px) {
 
-    .item { max-width: 93.5% !important }
+    .item {
+    max-width: 93.5% !important;
+    margin-top: 2em;
+    }
 
 }
 
@@ -38,7 +44,10 @@
 
 	#icon { margin-bottom: -.7em }
 
-    .item { max-width: 92.5% }
+    .item {
+    max-width: 92.5%;
+    margin-top: 2em;
+    }
 
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
@@ -152,6 +161,7 @@
     .item {
     margin-bottom: 1em;
 	width: fit-content;
+    margin-top: 2em;
     margin-left: 1%;
 	display: table;
 	padding: 1em;
