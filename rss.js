@@ -255,6 +255,7 @@ var menu=[
 {id:"AOL",cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
 {id:"AV Club",cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {id:"BBC",cat:"Media",des:"BBC News Entertainment, Lifestyle, and Arts.",uri:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
+{id:"Best Life",cat:"Media",des:"Best Life Online destination for sophisticated men & women.",uri:"https://bestlifeonline.com/feed",ext:"https://bestlifeonline.com"},
 {id:"Bustle",cat:"Media",des:"Bustle is the premier digital destination for millenial women, launched in 2013.",uri:"https://www.bustle.com/rss",ext:"https://www.bustle.com"},
 {id:"Buzzfeed Celebrity",cat:"Media",des:"Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",uri:"https://www.buzzfeed.com/celebrity.xml",ext:"https://www.buzzfeed.com/celebrity"},
 {id:"CBS",cat:"Media",des:"CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",uri:"https://www.cbsnews.com/latest/rss/entertainment",ext:"https://cbsnews.com/latest/rss/entertainment"},
