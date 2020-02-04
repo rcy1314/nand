@@ -7,18 +7,18 @@
 
 ### Features
 
-* Inline Image Expansion
-* Former from last feed
-* 11 image parsers
-* Reverse Scroll List
+* 11 Image Parsers
 * 635 XML examples
 * Random in Category
-* Color Scheme ?op apply()
-* Youtube XML parsing
-* TimeDate Post sorted
-* Plain text for find
-* Media Rules for devices
-* Private proxy requests
+* Reverse Scroll List
+* Plain Text for Find
+* Youtube XML Parsing
+* TimeDate Post Sorted
+* Former from last feed
+* Inline Image Expansion
+* Private Proxy Requests
+* Color Scheme Opposites
+* Media Rules for Devices
 
 
 ### Dependencies
@@ -33,7 +33,7 @@ A Browser. Here's what's used:
 
 * Simple Array Structure in rss.js
 
-`{ id : "courtesy", cat : "category", des : "description", uri : "feed", external : "url" },`
+`{ id : "courtesy", cat : "category", des : "description", uri : "feed", ext : "url" },`
 
 ### Sourcing
 
@@ -52,7 +52,7 @@ Opposite
  
 ### CORS Proxy
 
-Modern Browsers Require Cors Headers for Cross Site requests this is circumvented with a proxy.
+Modern Browsers Require CORS Headers for Cross Site Requests this is circumvented with a Proxy.
 
 - Heroku's CORS-Anywhere Proxy `http://cors-anywhere.herokuapp.com/`
 
@@ -73,7 +73,7 @@ git push heroku master
 ### Development
 
 Want to contribute? Great!
-- Clone this Repo
+- Clone this Repository
 - Submit a feed
 - File an issue
 

@@ -64,33 +64,33 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, .wrapper, .container, #attach, .category, #output, .pop, .air, .item, .des').css({
+		$('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .item, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
-		$('.random, .opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
+		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
 		$('#output').removeClass('invert').addClass('default')
 		$('.img, iframe').css('filter', 'brightness(80%)')
-		$('.gif').attr('src', 'favicon/favico.png')
+		$('#gif').attr('src', 'favicon/favico.png')
 		$('a').css('color', '#F7426B')
 		$('#invert').hide();
 		$('#favico').show()
 		gif = 'favico.png'
 	} else if (op == 0) {
-		$('.container, #attach, .category, #output, .pop, .air, .des').css({
+		$('#container, #attach, .category, #output, .pop, .air, .des').css({
 			'background-color': 'rgba(255, 255, 255, .7)',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
 		})
-		$('.random, .opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
+		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
 		$('html, body, .wrapper, .item').css({
 			'background-color': '#fafafa',
 			'color': 'rgba(0,0,0,.7)'
 		})
 		$('#output').removeClass('default').addClass('invert')
-		$('.wrapper, .item').css('border', '1px solid #eee')
-		$('.gif').attr('src', 'favicon/invert.png')
+		$('#wrapper, .item').css('border', '1px solid #eee')
+		$('#gif').attr('src', 'favicon/invert.png')
 		$('.img').css('filter', 'brightness(100%)')
 		$('a').css('color', '#08BD94')
 		$('#favico').hide();
@@ -104,7 +104,7 @@ function category(n) {
 
     former = 0
     events = true
-    $('#pop, #air, .arm, #get').remove()
+    $('#pop, #air, #arm, #get').remove()
     populate(n)
     prepend(n)
     display('#pop:last')
@@ -155,26 +155,26 @@ function feed(n) {
     events = true
     operation = true
     var pub = []
-    $('#pop, #air, .arm, .get').remove()
+    $('#pop, #air, #arm, #get').remove()
     if (designate == 'Youtube') {
         var quit = 5
     } else {
         var quit = 11
     }
-    $('#output').append("<div class='arm'></div><div id='get'></div>")
-    $('.arm').html("<div><img class='gif' src='favicon/" + gif + "'></div>")
+    $('#output').append("<div id='arm'></div><div id='get'></div>")
+    $('#arm').html("<div><img id='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
     request = $.get({
             url: cor + menu[n].uri
         })
         .fail(function() {
-            $('.arm').remove();
+            $('#arm').remove();
             $('#get').append("<div class='pop' style='margin-top:1em' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
         })
         .done(function(data) {
-            $('.arm').remove()
+            $('#arm').remove()
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
@@ -378,7 +378,7 @@ function utc(n) {
 function populate(n) {
 
     if (operation == true) {
-        $('.arm').remove()
+        $('#arm').remove()
         request.abort()
         operation = false
     }
