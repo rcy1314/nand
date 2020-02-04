@@ -165,7 +165,7 @@
 	padding: 1em;
     }
     .img { margin-bottom: .5em }
-    #ago {
+    #ago, .ago {
     padding-bottom: .5em;
     font-size: 10px;
     cursor: default;
@@ -217,7 +217,7 @@
     bottom: -1px;
     left: 0;
     }
-    .gif {
+    #gif {
     -webkit-animation: spin 7s infinite ease;
     -moz-animation: spin 7s infinite ease
     height: 200px;
