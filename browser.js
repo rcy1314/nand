@@ -238,7 +238,7 @@ function feed(n) {
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" +
                         "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                        "<div id='ago attr'></div>" +
+                        "<div class='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 pub.push({
