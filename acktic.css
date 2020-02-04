@@ -20,7 +20,7 @@
 
 	html { background-color: #fafafa } 
 
-    html, body, .container, .output {
+    html, body, #container, .output {
     overflow: hidden;
     height: 100%;
     right: 0em;
@@ -77,7 +77,7 @@
     scrollbar-width: thin;
     }
 
-    html, body, .container, .output {
+    html, body, #container, .output {
     overflow: hidden;
     height: 100%;
 	bottom: 0em;
@@ -110,7 +110,7 @@
     height: 32px;
     width: 32px;
     }
-	.attach {
+	#attach {
     justify-content: center;
 	width: calc(100% - 6px);
     position: absolute;
