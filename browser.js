@@ -57,27 +57,6 @@ String.prototype.truncate =
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
     }
 
-function translate(n, e) {
-
-    e = Math.pow(10, e);
-    var a = ["k", "m", "b", "t"]
-
-    for (var i = a.length - 1; i >= 0; i--) {
-        var size = Math.pow(10, (i + 1) * 3)
-        if (size <= n) {
-            n = Math.round(n * e / size) / e
-            if ((n == 1000) && (i < a.length - 1)) {
-                n = 1
-                i++
-            }
-            n += a[i]
-        }
-    }
-
-    return n
-
-}
-
 function ago(n) {
 
     var age = new Date()
@@ -352,6 +331,27 @@ function reverse(Object) {
     }
 
     return newObject
+
+}
+
+function translate(n, e) {
+
+    e = Math.pow(10, e);
+    var a = ["k", "m", "b", "t"]
+
+    for (var i = a.length - 1; i >= 0; i--) {
+        var size = Math.pow(10, (i + 1) * 3)
+        if (size <= n) {
+            n = Math.round(n * e / size) / e
+            if ((n == 1000) && (i < a.length - 1)) {
+                n = 1
+                i++
+            }
+            n += a[i]
+        }
+    }
+
+    return n
 
 }
 
