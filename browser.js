@@ -23,7 +23,7 @@ $(document).ready(function() {
     prepend(designate)
     display('#pop:last')
 
-    $('.output').on('scroll touchmove focusout', function(e) {
+    $('#output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
             manifest($(this).scrollTop())
@@ -31,7 +31,7 @@ $(document).ready(function() {
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false) populate(designate)
         } else if (e.type == 'focusout') setTimeout(function() {
-            $('.output').focus()
+            $('#output').focus()
         }, 100)
 
     }).attr('tabindex', -1).focus()
@@ -64,13 +64,13 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, .wrapper, .container, .attach, .category, .output, .pop, .air, .item, .des').css({
+		$('html, body, .wrapper, .container, .attach, .category, #output, .pop, .air, .item, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
 		$('.random, .opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
-		$('.output').removeClass('invert').addClass('default')
+		$('#output').removeClass('invert').addClass('default')
 		$('.img, iframe').css('filter', 'brightness(80%)')
 		$('.gif').attr('src', 'favicon/favico.png')
 		$('a').css('color', '#F7426B')
@@ -78,7 +78,7 @@ function apply(n) {
 		$('#favico').show()
 		gif = 'favico.png'
 	} else if (op == 0) {
-		$('.container, .attach, .category, .output, .pop, .air, .des').css({
+		$('.container, .attach, .category, #output, .pop, .air, .des').css({
 			'background-color': 'rgba(255, 255, 255, .7)',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -88,7 +88,7 @@ function apply(n) {
 			'background-color': '#fafafa',
 			'color': 'rgba(0,0,0,.7)'
 		})
-		$('.output').removeClass('default').addClass('invert')
+		$('#output').removeClass('default').addClass('invert')
 		$('.wrapper, .item').css('border', '1px solid #eee')
 		$('.gif').attr('src', 'favicon/invert.png')
 		$('.img').css('filter', 'brightness(100%)')
@@ -113,8 +113,8 @@ function category(n) {
 
 function display(n) {
 
-    $('.output').animate({
-        scrollTop: $(n + ':last').offset().top - $('.output').offset().top + $('.output').scrollTop()
+    $('#output').animate({
+        scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
     }, 100);
     setTimeout(function() {
         events = false
@@ -161,7 +161,7 @@ function feed(n) {
     } else {
         var quit = 11
     }
-    $('.output').append("<div class='arm'></div><div class='get'></div>")
+    $('#output').append("<div class='arm'></div><div class='get'></div>")
     $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
@@ -385,7 +385,7 @@ function populate(n) {
     document.title = n + ' ack'
     if (n != designate) former = 0
     designate = n
-    $('.output').append("<div id='pop'></div>")
+    $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
@@ -400,7 +400,7 @@ function populate(n) {
 function prepend(n) {
 
     reverse(menu.reverse())
-    $('.output').prepend("<div id='air'></div>")
+    $('#output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
@@ -408,7 +408,7 @@ function prepend(n) {
             $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
-    $('.output').scrollTop($('.output').scrollTop() + $('#air:first').outerHeight())
+    $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
     apply()
 
 }
