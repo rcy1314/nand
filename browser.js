@@ -11,7 +11,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('.wrapper').css('display', 'block')
+    $('#wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
