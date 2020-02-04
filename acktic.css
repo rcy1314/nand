@@ -155,9 +155,6 @@
     font-weight: bold;
     font-size: 12px;
     }
-    .img {
-    margin-bottom: .5em;
-    }
     .item {
     margin-bottom: 1em;
 	width: fit-content;
@@ -166,6 +163,7 @@
 	display: table;
 	padding: 1em;
     }
+    .img { margin-bottom: .5em }
     .ago {
     padding-bottom: .5em;
     font-size: 10px;
@@ -178,7 +176,6 @@
     bottom: -3em;
     }
     a {
-    text-align: right;
     margin-top: -5px;
     font-size: 10px;
     }
