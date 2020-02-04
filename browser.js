@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     populate(designate)
     prepend(designate)
-    display('#pop:last')
+    display('#pop')
 
     $('#output').on('scroll touchmove focusout', function(e) {
 
@@ -64,7 +64,7 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, .wrapper, .container, .attach, .category, #output, .pop, .air, .item, .des').css({
+		$('html, body, .wrapper, .container, #attach, .category, #output, .pop, .air, .item, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
@@ -78,7 +78,7 @@ function apply(n) {
 		$('#favico').show()
 		gif = 'favico.png'
 	} else if (op == 0) {
-		$('.container, .attach, .category, #output, .pop, .air, .des').css({
+		$('.container, #attach, .category, #output, .pop, .air, .des').css({
 			'background-color': 'rgba(255, 255, 255, .7)',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -104,7 +104,7 @@ function category(n) {
 
     former = 0
     events = true
-    $('#pop, #air, .arm, .get').remove()
+    $('#pop, #air, .arm, #get').remove()
     populate(n)
     prepend(n)
     display('#pop:last')
@@ -161,8 +161,8 @@ function feed(n) {
     } else {
         var quit = 11
     }
-    $('#output').append("<div class='arm'></div><div class='get'></div>")
-    $('.arm').html("<div style='display:inline-block'><img class='gif' src='favicon/" + gif + "'></div>")
+    $('#output').append("<div class='arm'></div><div id='get'></div>")
+    $('.arm').html("<div><img class='gif' src='favicon/" + gif + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
     request = $.get({
@@ -170,7 +170,7 @@ function feed(n) {
         })
         .fail(function() {
             $('.arm').remove();
-            $('.get').append("<div class='pop' style='margin-top:1em' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
+            $('#get').append("<div class='pop' style='margin-top:1em' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
         })
         .done(function(data) {
@@ -251,12 +251,12 @@ function feed(n) {
                 return b.since - a.since
             })
             for (var i = 0; i <= quit - 1; i++) {
-                $('.get').append(pub[i].post)
+                $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
             populate(designate)
             prepend(designate)
-            display('.get')
+            display('#get')
             apply()
         })
 }
@@ -264,20 +264,20 @@ function feed(n) {
 function manifest(n) {
 
     if (n < ost) {
-        $('.icon').css({
+        $('#icon').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
-        $('.attach').css({
+        $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
     } else if (n > ost && events == false && operation == false) {
-        $('.icon').css({
+        $('#icon').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
         })
-        $('.attach').css({
+        $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
         })

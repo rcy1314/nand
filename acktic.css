@@ -41,7 +41,7 @@
     top: -45.5%;
     }
 
-    #pop, #air, .get { padding-left: 1.5% }
+    #pop, #air, #get { padding-left: 1.5% }
 
 	#icon { margin-bottom: -.7em }
 
@@ -140,7 +140,7 @@
     height: 100%;
     }
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air, .get { padding-top: 1em; }
+    #pop, #air, #get { padding-top: 1em; }
     .pop, .air {
     margin: .5em auto;
     font-size: 10px;
