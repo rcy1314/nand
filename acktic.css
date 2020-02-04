@@ -32,6 +32,7 @@
     transform: translate(50%,50%);
     border: 1px solid #ddd;
     position: fixed;
+	display: none;
     border: none;
     height: 95%;
     bottom: 60%;
