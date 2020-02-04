@@ -141,6 +141,7 @@ var menu=[
 {id:"CBS",cat:"News",des:"CBS WCCO Minnesota Minneapolis All the local news and information you need – plus other fun stuff – from the team at WCCO.",uri:"https://minnesota.cbslocal.com/feed",ext:"https://minnesota.cbslocal.com"},
 {id:"NBC",cat:"News",des:"NBC KARE Minnesota Minneapolis erves up a fresh take for a new day with the latest news and weather.",uri:"http://rssfeeds.kare11.com/kare11/topstories&x=1",ext:"http://www.kare11.com"},
 {id:"NBC",cat:"News",des:"NBC KTTC Minnesota Rochester The area's most watched news team provides the latest news, weather and sports on-air and online.",uri:"https://kttc.com/feed",ext:"https://kttc.com"},
+{id:"Star Tribune",cat:"News",des:"Minneapolis Star Tribune the largest newspaper in Minnesota.",uri:"http://www.startribune.com/rss",ext:"http://www.startribune.com"},
 {id:"CBS",cat:"News",des:"CBS WCBI Mississippi Columbus Tupelo serving northeastern Mississippi and northwestern Alabama.",uri:"https://www.wcbi.com/feed",ext:"https://www.wcbi.com"},
 {id:"ABC",cat:"News",des:"ABC WAPT Mississippi Jackson News The One To Watch.",uri:"https://www.wapt.com/topstories-rss",ext:"https://www.wapt.com"},
 {id:"CBS",cat:"News",des:"CBS WJTV Mississippi Jackson Local Mississippi breaking news and weather from CBS 12 News WJTV.",uri:"https://www.wjtv.com/feed",ext:"https://www.wjtv.com"},
