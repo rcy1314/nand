@@ -227,18 +227,18 @@ function feed(n) {
                 } else src = ''
                 if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div class='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + translate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div id='ago views' style='left:0em'><b>Views</b> " + translate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     else views = ''
                     html = "<div id='yt' class='item' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                        "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
-                        "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+                        "<div id='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" +
-                        "<div class='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                        "<div class='ago attr'></div>" +
+                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<div id='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 pub.push({
