@@ -293,6 +293,7 @@ var menu=[
 {id:"MTV",cat:"Media",des:"MTV The ultimate news source for music, celebrity, entertainment, movies, and current events.",uri:"http://www.mtv.com/news/feed",ext:"http://www.mtv.com/news"},
 {id:"New York Post",cat:"Media",des:"New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",uri:"https://nypost.com/entertainment/feed",ext:"https://nypost.com/entertainment/feed"}, 
 {id:"One America News Network",cat:"Media",des:"OANN One America News Network Entertainment.",uri:"https://www.oann.com/category/entertainment/feed",ext:"https://www.oann.com/category/entertainment"},
+{id:"Ozy",cat:"Media",des:"Ozy committed to producing premium, original storytelling across television, festivals, podcasts and news.",uri:"https://www.ozy.com/feed",ext:"https://www.ozy.com"},
 {id:"People",cat:"Media",des:"People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",uri:"https://people.com/tag/news/feed",ext:"https://people.com"},
 {id:"Perez Hilton",cat:"Media",des:"PerezHilton is known for posts covering Gossip Items about Celebrities.",uri:"https://perezhilton.com/feed",ext:"https://perezhilton.com"},
 {id:"Pop Sugar",cat:"Media",des:"Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",uri:"https://www.popsugar.com/feed",ext:"https://www.popsugar.com"},
