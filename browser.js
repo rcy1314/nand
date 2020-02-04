@@ -231,12 +231,12 @@ function feed(n) {
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div id='ago views' style='left:0em'><b>Views</b> " + translate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
                     else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div id='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
-                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" +
+                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" +
                         "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div id='ago attr'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
@@ -390,7 +390,7 @@ function populate(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#pop').append("<div class='pop' get='" + i + "'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     former = 0
     apply()
