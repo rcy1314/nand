@@ -366,7 +366,7 @@ function utc(n) {
         hour12: true
     }
     var dmz = []
-    dmz.push(ago(n))
+    dmz.push(moment(n))
     var utc = new Date(n)
     var gmt = utc.toLocaleString('en-US', opt)
     dmz.push(gmt)

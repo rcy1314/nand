@@ -197,7 +197,7 @@
     height: 100%;
     top: 0;
     }
-    .random, .opposite {
+    #random, #opposite {
     border-bottom: 1px solid rgba(0,0,0,.2);
     padding-top: 2em;
     position: fixed;
@@ -206,12 +206,12 @@
     bottom: 0em;
     z-index: 2;
     }
-    .random {
+    #random {
     padding-left: 3em;
     bottom: -1px;
     right: 0;
     }
-    .opposite {
+    #opposite {
     padding-right: 3em;
     bottom: -1px;
     left: 0;
