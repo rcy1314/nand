@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.pop, .air', function(e) {
 
-    feed($(this).attr('get'))
+    request($(this).attr('get'))
 
 })
 
@@ -79,7 +79,7 @@ function apply(n) {
 		gif = 'favico.png'
 	} else if (op == 0) {
 		$('#container, #attach, .category, #output, .pop, .air, .des').css({
-			'background-color': 'rgba(255, 255, 255, .7)',
+			'background-color': 'rgba(255, 255, 255)',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
 		})
@@ -89,7 +89,6 @@ function apply(n) {
 			'color': 'rgba(0,0,0,.7)'
 		})
 		$('#output').removeClass('default').addClass('invert')
-		$('#wrapper, .item').css('border', '1px solid #eee')
 		$('#gif').attr('src', 'favicon/invert.png')
 		$('.img').css('filter', 'brightness(100%)')
 		$('a').css('color', '#08BD94')
@@ -145,7 +144,7 @@ function external(n) {
 
 }
 
-function feed(n) {
+function request(n) {
     if (operation == true) {
         request.abort()
         operation = false
@@ -307,6 +306,42 @@ function moment(n) {
 
 }
 
+function populate(n) {
+
+    if (operation == true) {
+        $('#arm').remove()
+        request.abort()
+        operation = false
+    }
+    document.title = n + ' ack'
+    if (n != designate) former = 0
+    designate = n
+    $('#output').append("<div id='pop'></div>")
+    for (var i = former; i < menu.length; i++)
+        if (n == menu[i].cat) {
+            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
+            $('#pop').append("<div class='pop' get='" + i + "'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+        }
+    apply()
+
+}
+
+function precede(n) {
+
+    reverse(menu.reverse())
+    $('#output').prepend("<div id='air'></div>")
+    for (var i = menu.reverse().length - 1; i >= 0; i--) {
+        if (n == menu[i].cat) {
+            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
+            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+        }
+    }
+    $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
+    apply()
+
+}
 function random(n) {
 
     var obj = []
@@ -314,7 +349,28 @@ function random(n) {
         if (n == e.cat) obj.push(e)
     })
     var n = obj[Math.floor(Math.random() * obj.length)]
-    feed(menu.indexOf(n))
+    request(menu.indexOf(n))
+
+}
+
+function resolution(n) {
+
+    $('#' + n).one('load', function() {
+        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
+            var expand = '[<u>expand</u>]'
+            $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
+        } else if ($('#' + n).get(0).naturalWidth > minimum) {
+            var expand = '[<u>expand</u>]'
+            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
+        } else {
+            var expand = '';
+            $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width() - 20)
+        }
+        $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+
+        $('#' + n).css('display', 'block')
+
+    })
 
 }
 
@@ -374,62 +430,3 @@ function utc(n) {
     return dmz
 
 }
-
-function populate(n) {
-
-    if (operation == true) {
-        $('#arm').remove()
-        request.abort()
-        operation = false
-    }
-    document.title = n + ' ack'
-    if (n != designate) former = 0
-    designate = n
-    $('#output').append("<div id='pop'></div>")
-    for (var i = former; i < menu.length; i++)
-        if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            $('#pop').append("<div class='pop' get='" + i + "'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        }
-    apply()
-
-}
-
-function precede(n) {
-
-    reverse(menu.reverse())
-    $('#output').prepend("<div id='air'></div>")
-    for (var i = menu.reverse().length - 1; i >= 0; i--) {
-        if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        }
-    }
-    $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
-    apply()
-
-}
-
-function resolution(n) {
-
-    $('#' + n).one('load', function() {
-        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-            var expand = '[<u>expand</u>]'
-            $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
-        } else if ($('#' + n).get(0).naturalWidth > minimum) {
-            var expand = '[<u>expand</u>]'
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
-        } else {
-            var expand = '';
-            $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width() - 20)
-        }
-        $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-
-        $('#' + n).css('display', 'block')
-
-    })
-
-}
-
