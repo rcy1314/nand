@@ -15,10 +15,10 @@
 * Youtube XML Parsing
 * TimeDate Post Sorted
 * Former from last feed
-* Inline Image Expansion
 * Private Proxy Requests
-* Color Scheme Opposites
+* Inline Image Expansion
 * Media Rules for Devices
+* Color Scheme Opposites
 
 
 ### Dependencies
