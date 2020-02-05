@@ -79,7 +79,7 @@ function apply(n) {
 		gif = 'favico.png'
 	} else if (op == 0) {
 		$('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
-			'background-color': 'rgba(255, 255, 255)',
+			'background-color': '#fff',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
 		})
