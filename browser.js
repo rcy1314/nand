@@ -78,17 +78,16 @@ function apply(n) {
 		$('#favico').show()
 		gif = 'favico.png'
 	} else if (op == 0) {
-		$('#container, #attach, .category, .pop, .air, .des').css({
-			'background-color': 'rgba(255, 255, 255, .7)',
+		$('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
+			'background-color': 'rgba(255, 255, 255)',
 			'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
 		})
 		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-		$('html, body, .wrapper, .item').css({
+		$('html, body, .item').css({
 			'background-color': '#fafafa',
 			'color': 'rgba(0,0,0,.7)'
 		})
-		$('#output').css('background-color','rgba(255, 255, 255)')
 		$('#output').removeClass('default').addClass('invert')
 		$('#gif').attr('src', 'favicon/invert.png')
 		$('.img').css('filter', 'brightness(100%)')
