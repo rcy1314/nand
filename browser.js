@@ -20,7 +20,7 @@ $(document).ready(function() {
     } else apply(op)
 
     populate(designate)
-    prepend(designate)
+    precede(designate)
     display('#pop')
 
     $('#output').on('scroll touchmove focusout', function(e) {
@@ -106,7 +106,7 @@ function category(n) {
     events = true
     $('#pop, #air, #arm, #get').remove()
     populate(n)
-    prepend(n)
+    precede(n)
     display('#pop:last')
 
 }
@@ -255,7 +255,7 @@ function feed(n) {
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
             populate(designate)
-            prepend(designate)
+            precede(designate)
             display('#get')
             apply()
         })
@@ -397,7 +397,7 @@ function populate(n) {
 
 }
 
-function prepend(n) {
+function precede(n) {
 
     reverse(menu.reverse())
     $('#output').prepend("<div id='air'></div>")
