@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.pop, .air', function(e) {
 
-    request($(this).attr('get'))
+    response($(this).attr('get'))
 
 })
 
@@ -144,7 +144,7 @@ function external(n) {
 
 }
 
-function request(n) {
+function response(n) {
     if (operation == true) {
         request.abort()
         operation = false
@@ -349,7 +349,7 @@ function random(n) {
         if (n == e.cat) obj.push(e)
     })
     var n = obj[Math.floor(Math.random() * obj.length)]
-    request(menu.indexOf(n))
+    response(menu.indexOf(n))
 
 }
 
