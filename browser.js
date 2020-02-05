@@ -102,12 +102,12 @@ function apply(n) {
 
 function category(n) {
 
-    former = 0
     events = true
     $('#pop, #air, #arm, #get').remove()
     populate(n)
     precede(n)
     display('#pop:last')
+	former = 0
 
 }
 
@@ -376,7 +376,7 @@ function utc(n) {
 }
 
 function populate(n) {
-
+console.log(former)
     if (operation == true) {
         $('#arm').remove()
         request.abort()
@@ -392,7 +392,6 @@ function populate(n) {
             else var id = menu[i].id
             $('#pop').append("<div class='pop' get='" + i + "'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-    former = 0
     apply()
 
 }
