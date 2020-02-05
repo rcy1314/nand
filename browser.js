@@ -169,7 +169,7 @@ function request(n) {
         })
         .fail(function() {
             $('#arm').remove();
-            $('#get').append("<div class='pop' style='margin-top:1em' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
+            $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
         })
         .done(function(data) {
