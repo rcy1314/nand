@@ -1,5 +1,7 @@
 @media (max-width: 426px) {
 
+	#output { margin-left: 2.5% }
+
     .item {
     width: 90% !important;
     margin-top: 2em;
