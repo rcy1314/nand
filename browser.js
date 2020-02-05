@@ -376,7 +376,7 @@ function utc(n) {
 }
 
 function populate(n) {
-console.log(former)
+
     if (operation == true) {
         $('#arm').remove()
         request.abort()
