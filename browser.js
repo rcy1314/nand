@@ -335,7 +335,7 @@ function precede(n) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             else var id = menu[i].id
-            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'><b><a ext='" + menu[i].ext + "'>" + id + "</a></b></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
