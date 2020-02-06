@@ -1,6 +1,6 @@
 @media (max-width: 426px) {
 
-	#output { margin-left: 2.5% }
+	#output { padding-left: 2.5% }
 
     .item {
     width: 90% !important;
