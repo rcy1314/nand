@@ -323,6 +323,7 @@ function populate(n) {
             else var id = menu[i].id
             $('#pop').append("<div class='pop' get='" + i + "'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
+	former = 0
     apply()
 
 }
