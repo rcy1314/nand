@@ -304,7 +304,7 @@ var menu=[
 {id:"TMZ",cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {id:"USA Today",cat:"Media",des:"USA Today People celebrity news, gossip and interviews.",uri:"http://rssfeeds.usatoday.com/toppeople&x=1",ext:"https://www.usatoday.com/entertainment/celebrities"},
 {id:"US Weekly",cat:"Media",des:"US Weekly a weekly celebrity and entertainment magazine based in New York City.",uri:"https://www.usmagazine.com/feed",ext:"https://www.usmagazine.com"},
-{id:"Vanity Fiar",cat:"Media",des:"Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",uri:"https://www.vanityfair.com/feed/rss",ext:"https://vanityfair.com"},
+{id:"Vanity Fair",cat:"Media",des:"Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",uri:"https://www.vanityfair.com/feed/rss",ext:"https://vanityfair.com"},
 {id:"Washington Times",cat:"Media",des:"Washington Times Show Business News and Entertainment News.",uri:"https://www.washingtontimes.com/rss/headlines/culture/entertainment",ext:"https://washingtontimes.com/culture/entertainment"},
 {id:"Yahoo Entertainment",cat:"Media",des:"Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",uri:"https://www.yahoo.com/entertainment/rss",ext:"https://yahoo.com/entertainment"},
 {id:"Wopular",cat:"Media",des:"Wopular is a news aggregation site, giving a summary view of the top headlines from the top news sites.",uri:"http://www.wopular.com/rss/sections/all",ext:"http://www.wopular.com"},
