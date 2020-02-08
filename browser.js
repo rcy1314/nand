@@ -48,7 +48,6 @@ $(document).ready(function() {
 
 })
 
-
 String.prototype.truncate =
 
     function(n, e) {
