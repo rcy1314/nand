@@ -1,5 +1,5 @@
-var gif
 var op = 0
+var animate
 var request
 var ost = 0
 var former = 0
@@ -71,11 +71,11 @@ function apply(n) {
 		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
 		$('#output').removeClass('invert').addClass('default')
 		$('.img, iframe').css('filter', 'brightness(80%)')
-		$('#gif').attr('src', 'favicon/favico.png')
+		$('#animate').attr('src', 'favicon/favico.png')
 		$('a').css('color', '#F7426B')
 		$('#invert').hide();
 		$('#favico').show()
-		gif = 'favico.png'
+		animate = 'favico.png'
 	} else if (op == 0) {
 		$('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
 			'background-color': '#fff',
@@ -88,12 +88,12 @@ function apply(n) {
 			'color': 'rgba(0,0,0,.7)'
 		})
 		$('#output').removeClass('default').addClass('invert')
-		$('#gif').attr('src', 'favicon/invert.png')
+		$('#animate').attr('src', 'favicon/invert.png')
 		$('.img').css('filter', 'brightness(100%)')
 		$('a').css('color', '#08BD94')
 		$('#favico').hide();
 		$('#invert').show()
-		gif = 'invert.png'
+		animate = 'invert.png'
 	}
 
 }
@@ -160,7 +160,7 @@ function response(n) {
         var quit = 11
     }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
-    $('#arm').html("<div><img id='gif' src='favicon/" + gif + "'></div>")
+    $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
     else var id = menu[n].id
     request = $.get({
