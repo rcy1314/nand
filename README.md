@@ -10,15 +10,15 @@
 * 11 Image Parsers
 * Reverse Scroll List
 * Plain Text for Find
-* 645 XML examples
+* 645 XML Examples
 * Random in Category
 * Youtube XML Parsing
 * TimeDate Post Sorted
-* Former from last feed
+* Former from Last Feed
 * Private Proxy Requests
 * Inline Image Expansion
 * Media Rules for Devices
-* Color Scheme Opposites
+* Color Scheme Opposite
 
 
 ### Dependencies
