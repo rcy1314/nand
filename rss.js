@@ -320,6 +320,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"BSD subreddit about Berkeley Software Distribution an operating system based on Unix.",uri:"https://reddit.com/r/bsd/.rss",ext:"https://reddit.com/r/BSD"},
 {id:"Reddit",cat:"Social",des:"California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",uri:"https://reddit.com/r/California/.rss",ext:"https://reddit.com/r/California"},
 {id:"Reddit",cat:"Social",des:"Cars subreddit the largest automotive enthusiast community on the Internet.",uri:"https://reddit.com/r/cars/.rss",ext:"https://reddit.com/r/Cars"},
+{id:"Reddit",cat:"Social",des:"Celebhub famous actresses, singers, models, athletes and others.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/Celebhub"},
 {id:"Reddit",cat:"Social",des:"CFB subreddit forum for all things college football focusing on NCAA football.",uri:"https://reddit.com/r/cfb/.rss",ext:"https://reddit.com/r/CFB"},
 {id:"Reddit",cat:"Social",des:"Chicago subreddit the community for the windy city Chicago, Illinois.",uri:"https://reddit.com/r/chicago/.rss",ext:"https://reddit.com/r/Chicago"},
 {id:"Reddit",cat:"Social",des:"Chrome subreddit with topics related to Google's Chrome Web Browser.",uri:"https://reddit.com/r/chrome/.rss",ext:"https://reddit.com/r/Chrome"},
