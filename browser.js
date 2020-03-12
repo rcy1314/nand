@@ -131,7 +131,7 @@ function expand(n) {
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
     } else if ($('#' + n).hasClass('expand full')) {
         object.forEach(function(e) {
-            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parent().width(e.parent)
+            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').parent().width(e.parent + 20)
         })
     }
 
@@ -236,7 +236,7 @@ function response(n) {
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                        "<div class='ago attr'></div>" +
+                        "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 pub.push({
@@ -357,10 +357,10 @@ function resolution(n) {
 
     $('#' + n).one('load', function() {
         if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-            var expand = '[<u>expand</u>]'
+            var expand = "[<u>expand</u>]"
             $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
         } else if ($('#' + n).get(0).naturalWidth > minimum) {
-            var expand = '[<u>expand</u>]'
+            var expand = "[<u>expand</u>]"
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
         } else {
             var expand = '';
