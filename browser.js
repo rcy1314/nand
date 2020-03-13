@@ -125,7 +125,7 @@ function expand(n) {
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
-			item: $('#' + n).parents('.item').width() + 20,
+			item: $('#' + n).parents('.item').width() + 10,
             less: $('#' + n).width(),
             parent: $('#' + n).parent().width()
         })
@@ -359,7 +359,7 @@ function resolution(n) {
     $('#' + n).one('load', function() {
         if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
             var expand = "[<u>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
+            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 20)
         } else if ($('#' + n).get(0).naturalWidth > minimum) {
             var expand = "[<u>expand</u>]"
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
