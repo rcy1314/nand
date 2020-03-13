@@ -173,7 +173,10 @@
     cursor: default;
 	line-height: 1;
     }
-	.attr { margin-top: -4px }
+	.attr {
+	width: fit-content;
+	margin-top: -4px;
+	}
     .views {
     position: absolute;
     bottom: -3em;
