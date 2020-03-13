@@ -125,13 +125,14 @@ function expand(n) {
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
+			item: $('#' + n).parents('.item').width() + 20,
             less: $('#' + n).width(),
             parent: $('#' + n).parent().width()
         })
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
     } else if ($('#' + n).hasClass('expand full')) {
         object.forEach(function(e) {
-            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').parent().width(e.parent + 20)
+            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parents('.item').width(e.item)
         })
     }
 
@@ -358,7 +359,7 @@ function resolution(n) {
     $('#' + n).one('load', function() {
         if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
             var expand = "[<u>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (50 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
+            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).siblings('.attr').width())
         } else if ($('#' + n).get(0).naturalWidth > minimum) {
             var expand = "[<u>expand</u>]"
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
