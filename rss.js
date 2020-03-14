@@ -387,7 +387,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Seattle subreddit News, current events in & around Seattle, Washington, USA.",uri:"https://reddit.com/r/Seattle/.rss",ext:"https://reddit.com/r/Seattle"},
 {id:"Reddit",cat:"Social",des:"Security subreddit a friendly and professional place for discussing computer security.",uri:"https://reddit.com/r/security/.rss",ext:"https://reddit.com/r/Security"}, 
 {id:"Reddit",cat:"Social",des:"Software subreddit where software applications are discussed.",uri:"https://reddit.com/r/software/.rss",ext:"https://reddit.com/r/Software"},
-{id:"4chan",cat:"Social",des:"SP is a Ssports board that discusses International Sports.",uri:"http://boards.4chan.org/sp/index.rss",ext:"http://boards.4channel.org/sp/"},
+{id:"4chan",cat:"Social",des:"SP is a Sports board that discusses International Sports.",uri:"http://boards.4chan.org/sp/index.rss",ext:"http://boards.4channel.org/sp/"},
 {id:"Reddit",cat:"Social",des:"Sports subreddit for all the Latest Headlines and Discussion in Sports.",uri:"https://reddit.com/r/sports/.rss",ext:"https://reddit.com/r/Sports"},
 {id:"Reddit",cat:"Social",des:"Steam subreddit for members of the Steam Community.",uri:"https://reddit.com/r/steam/.rss",ext:"https://reddit.com/r/Steam"},
 {id:"Reddit",cat:"Social",des:"Surface Linux subreddit development for Microsoft Surface-Series devices..",uri:"https://www.reddit.com/r/SurfaceLinux/.rss",ext:"https://www.reddit.com/r/SurfaceLinux"},
