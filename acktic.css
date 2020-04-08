@@ -199,10 +199,9 @@
     }
     iframe {
     position: absolute;
-    height: 98.25%;
-    width: 94.5%;
     border: none;
-	left: 1em;
+    height: 100%;
+    width: 100%;
     top: 0;
     }
     #random, #opposite {
