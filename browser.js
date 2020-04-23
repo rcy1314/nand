@@ -63,7 +63,7 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .item, .des').css({
+		$('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .item, #pub, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
