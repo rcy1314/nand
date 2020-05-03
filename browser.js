@@ -87,7 +87,7 @@ function apply(n) {
         $('#favico').show()
         animate = 'favico.png'
     } else if (op == 0) {
-        $('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
+        $('html, body, #wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
             'background-color': '#f5f5f5',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
