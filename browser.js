@@ -87,6 +87,31 @@ function apply(n) {
 		$('#opposite').show()
 		animate = 'opposite.png'
 	} else if (op == 0) {
+    if (op == 1) {
+        $('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .des').css({
+            'border': 'none',
+            'background-color': '#000',
+            'color': 'rgba(255,255,255,.9)'
+        })
+        $('.item').css({
+            'border': '1px solid rgba(255,255,255, .05)',
+            'color': 'rgba(255,255,255, .7)',
+            'background-color': '#0a0a0a' 
+        })
+        $('.item #pub').css({
+            'color': 'rgba(255,255,255, .7)',
+            'background-color': '#0a0a0a' 
+        })
+        $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
+        $('#output').removeClass('invert').addClass('opposite')
+        $('.img, iframe').css('filter', 'brightness(80%)')
+        $('#animate').attr('src', 'favicon/favico.png')
+        $('.pop #pub').css('background-color','#000')
+        $('a').css('color', '#F7426B')
+        $('#invert').hide();
+        $('#favico').show()
+        animate = 'favico.png'
+    } else if (op == 0) {
         $('html, body, #wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
             'background-color': '#f5f5f5',
             'color': 'rgba(0,0,0,.7)',
@@ -102,6 +127,11 @@ function apply(n) {
 		    'color': 'rgba(0,0,0, .7)'
         })
         $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
+        $('.item #pub').css({
+            'background-color': '#fafafa',
+            'color': 'rgba(0,0,0, .7)'
+        })
+        $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('.pop #pub').css('background-color','#f5f5f5')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -111,6 +141,10 @@ function apply(n) {
         $('#invert').show()
         animate = 'invert.png'
 	}
+        $('#favico').hide();
+        $('#invert').show()
+        animate = 'invert.png'
+    }
 
 }
 
