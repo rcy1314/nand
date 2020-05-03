@@ -62,39 +62,39 @@ function apply(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 
-	if (op == 1) {
-		$('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .item, #pub, .des').css({
-			'border': 'none',
-			'background-color': '#000',
-			'color': 'rgba(255,255,255,.9)'
-		})
-		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
-		$('#output').removeClass('invert').addClass('default')
-		$('.img, iframe').css('filter', 'brightness(80%)')
-		$('#animate').attr('src', 'favicon/favico.png')
-		$('a').css('color', '#F7426B')
-		$('#invert').hide();
-		$('#favico').show()
-		animate = 'favico.png'
-	} else if (op == 0) {
-		$('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
-			'background-color': '#fff',
-			'color': 'rgba(0,0,0,.7)',
-			'border': 'none'
-		})
-		$('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-		$('html, body, .item').css({
-			'background-color': '#fafafa',
-			'color': 'rgba(0,0,0,.7)'
-		})
-		$('#output').removeClass('default').addClass('invert')
-		$('#animate').attr('src', 'favicon/invert.png')
-		$('.img').css('filter', 'brightness(100%)')
-		$('a').css('color', '#08BD94')
-		$('#favico').hide();
-		$('#invert').show()
-		animate = 'invert.png'
-	}
+    if (op == 1) {
+        $('html, body, #wrapper, #container, #attach, .category, #output, .pop, .air, .item, #pub, .des').css({
+            'border': 'none',
+            'background-color': '#000',
+            'color': 'rgba(255,255,255,.9)'
+        })
+        $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
+        $('#output').removeClass('invert').addClass('default')
+        $('.img, iframe').css('filter', 'brightness(80%)')
+        $('#animate').attr('src', 'favicon/favico.png')
+        $('a').css('color', '#F7426B')
+        $('#invert').hide();
+        $('#favico').show()
+        animate = 'favico.png'
+    } else if (op == 0) {
+        $('#wrapper, #container, #attach, #output, .category, .pop, .air, .des').css({
+            'background-color': '#f5f5f5',
+            'color': 'rgba(0,0,0,.7)',
+            'border': 'none'
+        })
+        $('.item').css({'color':'rgba(0,0,0,.7)','background-color':'#fafafa','border':'1px solid rgba(0,0,0,.1)'})
+        $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
+        $('.pop #pub, .item #pub').css('background-color','#fafafa')
+        $('#output').removeClass('default').addClass('invert')
+        $('#animate').attr('src', 'favicon/invert.png')
+        $('.img').css('filter', 'brightness(100%)')
+        $('.item #pub').css('color','rgba(0,0,0,.7)')
+        $('a').css('color', '#08BD94')
+        $('#favico').hide();
+        $('#invert').show()
+        animate = 'invert.png'
+    }
+
 
 }
 
