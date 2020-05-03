@@ -71,11 +71,11 @@
     scrollbar-width: thin;
     }
 
-    .default::-webkit-scrollbar-thumb { background-color: #0a0a0a }
+    .opposite::-webkit-scrollbar-thumb { background-color: #0a0a0a }
 
-    .default::-webkit-scrollbar { background-color: #000 }
+    .opposite::-webkit-scrollbar { background-color: #000 }
 
-    .default {
+    .opposite {
     scrollbar-color: #222 #000;
     scrollbar-width: thin;
     }
