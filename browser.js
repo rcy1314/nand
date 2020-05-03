@@ -86,7 +86,7 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
-        $('#output, .pop, .pop #pub, .pop .des, .air, .air #pub, .air .des, .item #pub, .item .des').css({
+        $('#output, .pop, .pop #pub, .pop .des, .air, .air #pub, .air .des').css({
             'background-color':'#fafafa',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -95,6 +95,7 @@ function apply(n) {
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
+        $('.item #pub').css('background-color','#fff')
         $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
         $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
