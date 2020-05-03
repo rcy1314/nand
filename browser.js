@@ -106,7 +106,7 @@ function apply(n) {
         $('.pop #pub').css('background-color','#f5f5f5')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
-        $('a').css('color', '#08BD94')
+        $('a').css('color', '#337ab7')
         $('#favico').hide();
         $('#invert').show()
         animate = 'invert.png'
