@@ -84,7 +84,7 @@ function apply(n) {
         })
         $('.item').css({'color':'rgba(0,0,0,.7)','background-color':'#fafafa','border':'1px solid rgba(0,0,0,.1)'})
         $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-        $('.pop #pub, .item #pub').css('background-color','#fafafa')
+        $('.pop #pub, .item #pub').css('background-color','#f5f5f5')
         $('#output').removeClass('default').addClass('invert')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
