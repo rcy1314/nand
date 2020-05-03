@@ -224,8 +224,8 @@
     left: 0;
     }
     #animate {
-    -webkit-animation: grow 2.7s infinite ease;
-    -moz-animation: grow 2.7s infinite ease
+    -webkit-animation: spin 7.2s infinite ease;
+    -moz-animation: spin 7.2s infinite ease
     height: 200px;
     width: 200px;
     }
