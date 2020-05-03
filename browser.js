@@ -89,12 +89,12 @@ function apply(n) {
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
         $('.item #pub').css('color','rgba(0,0,0,.7)')
+        $('#arm').css('background-color','#fff')
         $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
         animate = 'invert.png'
     }
-
 
 }
 
