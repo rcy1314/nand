@@ -20,19 +20,18 @@
 
 @media screen and (min-width: 768px) {
 
-	html { background-color: #fafafa } 
-
     html, body, #container, #output {
     overflow: hidden;
     height: 100%;
-    right: 0em;
-    left: 0em;
-    top: 0em;
+    width: 100%;
+    margin: 0;
+    right: 0;
+    left: 0;
+    top: 0;
     }
 
     #wrapper {
     transform: translate(50%,50%);
-    border: 1px solid #ddd;
     position: fixed;
 	display: none;
     border: none;
@@ -83,10 +82,12 @@
     html, body, #container, #output {
     overflow: hidden;
     height: 100%;
-	bottom: 0em;
-    right: 0em;
-    left: 0em;
-    top: 0em;
+    width: 100%;
+    margin: 0;
+	bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
     }
     #arm {
     transform: translate(50%,50%);
@@ -124,21 +125,26 @@
     width: 48px;
     }
 	#attach {
-    justify-content: center;
-	width: calc(100% - 6px);
-    position: absolute;
-    display: flex;
+    border-bottom: 1px solid rgba(0,0,0, .1);
+	width: calc(100%);
+    position: fixed;
     height: 2.9em;
 	z-index: 2;
 	top: -1px;`
 	}
-    .category {
+    .acktic, .category {
     display: inline-block;
     text-align: center;
-    padding-top: 2.2em;
-    font-size: 8px;
-    height: 3.6em;
-    width: 14%;
+    margin-right: 5px;
+    padding-top: 2em;
+    font-size: 9px;
+    float: right;
+    height: 3em;
+    width: 10%;
+    }
+    .acktic {
+    position: absolute;
+    left: 2em
     }
     #output {
     -ms-overflow-style: -ms-autohiding-scrollbar;
