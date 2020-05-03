@@ -78,7 +78,7 @@ function apply(n) {
             'background-color': '#0a0a0a' 
         })
         $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
-        $('#output').removeClass('invert').addClass('default')
+        $('#output').removeClass('invert').addClass('opposite')
         $('.img, iframe').css('filter', 'brightness(80%)')
         $('#animate').attr('src', 'favicon/favico.png')
         $('.pop #pub').css('background-color','#000')
@@ -102,7 +102,7 @@ function apply(n) {
             'color': 'rgba(0,0,0, .7)'
         })
         $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-        $('#output').removeClass('default').addClass('invert')
+        $('#output').removeClass('opposite').addClass('invert')
         $('.pop #pub').css('background-color','#f5f5f5')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
