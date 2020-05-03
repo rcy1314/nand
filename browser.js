@@ -36,6 +36,11 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
+    $('.category').on('touchmove click', function(e) {
+        $('.category').css('border','none')
+        $(this).css('border-bottom','1px solid rgba(0,0,0,.1)')
+    })
+
 }).on('touch click', 'a', function(e) {
 
     external($(this).attr('ext'))
