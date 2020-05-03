@@ -84,16 +84,19 @@ function apply(n) {
         })
         $('.item').css({'color':'rgba(0,0,0,.7)','background-color':'#fafafa','border':'1px solid rgba(0,0,0,.1)'})
         $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-        $('.pop #pub, .item #pub').css('background-color','#fafafa')
         $('#output').removeClass('default').addClass('invert')
+        $('.item #pub').css({
+		'background-color': '#fafafa',
+		'color': 'rgba(0,0,0, .7)'
+	})
+        $('.pop #pub').css('background-color','#f5f5f5')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
-        $('.item #pub').css('color','rgba(0,0,0,.7)')
-        $('#arm').css('background-color','#fff')
         $('a').css('color', '#08BD94')
         $('#favico').hide();
         $('#invert').show()
         animate = 'invert.png'
+
     }
 
 }
