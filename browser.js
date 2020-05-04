@@ -277,19 +277,19 @@ function response(n) {
 function manifest(n) {
 
     if (n < ost) {
-        $('#icon').css({
-            'transition': 'all .2s linear',
-            'visibility': 'visible'
-        })
+    /*    $('#icon').css({                      */
+    /*        'transition': 'all .2s linear',   */
+    /*        'visibility': 'visible'           */
+    /*    })                                    */
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
     } else if (n > ost && events == false && operation == false) {
-        $('#icon').css({
-            'transition': 'all .2s linear',
-            'visibility': 'hidden'
-        })
+    /*    $('#icon').css({                      */
+    /*        'transition': 'all .2s linear',   */
+    /*        'visibility': 'hidden'            */
+    /*    })                                    */
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
