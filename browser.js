@@ -242,7 +242,7 @@ function response(n) {
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + translate($(this).find('media\\:statistics, statistics').attr('views'), 2) + "</div>"
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     else views = ''
                     html = "<div id='yt' class='item' style='width: 100%'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
