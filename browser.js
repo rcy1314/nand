@@ -36,11 +36,6 @@ $(document).ready(function() {
 
     }).attr('tabindex', -1).focus()
 
-    $('.category').on('touchmove click', function(e) {
-        $('.category').css('border','none')
-        $(this).css('border-bottom','1px solid rgba(0,0,0,.1)')
-    })
-
 }).on('touch click', 'a', function(e) {
 
     external($(this).attr('ext'))
@@ -77,7 +72,7 @@ function apply(n) {
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
-		$('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
+        $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
 		$('#output').removeClass('invert').addClass('opposite')
 		$('.img, iframe').css('filter', 'brightness(80%)')
 		$('#animate').attr('src', 'favicon/favico.png')
@@ -100,9 +95,8 @@ function apply(n) {
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
+        $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.2)')
         $('.item #pub').css('background-color','#fff')
-        $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
-        $('#random, #opposite, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.img').css('filter', 'brightness(100%)')
@@ -115,6 +109,10 @@ function apply(n) {
 }
 
 function category(n) {
+
+    $('#' + designate).attr('style','border-bottom: none')
+    $('#' + n).css('border-bottom','1px solid rgba(0,0,0,.1)')
+    
 
     events = true
     $('#pop, #air, #arm, #get').remove()
