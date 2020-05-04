@@ -23,6 +23,15 @@ $(document).ready(function() {
     precede(designate)
     display('#pop')
 
+    $('.category').on('mouseenter mouseleave', function (e) {
+            if (e.type == 'mouseenter') $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
+            if (e.type == 'mouseleave'){
+                    $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
+                    if ($(this).attr('id') != designate) $(this).css('border-bottom','none')
+            }
+    })
+
+
     $('#output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
@@ -112,9 +121,8 @@ function apply(n) {
 
 function category(n) {
 
-    $('#' + designate).attr('style','border-bottom: none')
+    $('#' + designate).css('border-bottom','none')
     $('#' + n).css('border-bottom','1px solid rgba(0,0,0,.1)')
-    
 
     events = true
     $('#pop, #air, #arm, #get').remove()
