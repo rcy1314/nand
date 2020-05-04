@@ -1,7 +1,5 @@
 @media (max-width: 426px) {
 
-	#output { padding-left: 2.5% }
-
     .item {
     width: 90% !important;
     margin-top: 2em;
@@ -150,9 +148,9 @@
     -webkit-overflow-scrolling: touch;
     outline: none !important;
     height: 100% !important;
+    padding-right: .5em;
     position: absolute;
     overflow-x: hidden;
-    padding-right: .5em;
     overflow: auto;
     }
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
@@ -199,8 +197,8 @@
     font-size: 16px;
     }
     #yt {
-    padding-bottom: 2em;
-    margin: 2em auto;
+    padding-bottom: 2.2em;
+    margin: 1em auto;
     }
     .yt {
     -webkit-overflow-scrolling: touch;
