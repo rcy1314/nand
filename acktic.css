@@ -158,11 +158,10 @@
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
     #pop, #air, #get { padding-top: 1em; }
     .pop, .air {
-    margin: .5em auto;
+    margin-top: 2em;
     font-size: 10px;
     max-width: 88%;
 	padding: 2em;
-    margin: 2em;
     }
     #pub {
     text-transform: capitalize;
