@@ -1,7 +1,7 @@
 @media (max-width: 426px) {
 
     .item {
-    max-width: 100% !important;
+    max-width: 95% !important;
     margin-left: 5px;
     margin-top: 2em;
     }
