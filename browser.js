@@ -75,6 +75,7 @@ function apply(n) {
         $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(255,255,255,.2)')
 		$('#output').removeClass('invert').addClass('opposite')
 		$('.img, iframe').css('filter', 'brightness(80%)')
+        $('#favicon').attr('href','favicon/opposite.png')
 		$('#animate').attr('src', 'favicon/favico.png')
 		$('a').css('color', '#F7426B')
 		$('#invert').hide();
@@ -96,9 +97,10 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)'
         })
         $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(0,0,0,.2)')
-        $('.item #pub').css('background-color','#fff')
         $('#output').removeClass('opposite').addClass('invert')
+        $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
+        $('.item #pub').css('background-color','#fff')
         $('.img').css('filter', 'brightness(100%)')
         $('a').css('color', '#337ab7')
         $('#opposite').hide();
@@ -327,7 +329,7 @@ function populate(n) {
         request.abort()
         operation = false
     }
-    document.title = n + ' ack'
+    document.title = n
     if (n != designate) former = 0
     designate = n
     $('#output').append("<div id='pop'></div>")
