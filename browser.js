@@ -81,7 +81,7 @@ function apply(n) {
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
-        $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(128,128,128,.5)')
+        $('#random, #apply').css('border-bottom', '2px solid rgba(128,128,128,.5)')
 		$('#output').removeClass('invert').addClass('opposite')
 		$('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href','favicon/opposite.png')
@@ -105,7 +105,7 @@ function apply(n) {
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('#random, #apply, #' + designate).css('border-bottom', '2px solid rgba(128,128,128,.5)')
+        $('#random, #apply').css('border-bottom', '2px solid rgba(128,128,128,.5)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
