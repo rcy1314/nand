@@ -1,7 +1,8 @@
 @media (max-width: 426px) {
 
     .item {
-    width: 90%;
+    max-width: 100% !important;
+    margin-left: 5px;
     margin-top: 2em;
     }
 
@@ -45,7 +46,7 @@
 	#icon { margin-bottom: -.7em }
 
     .item {
-    max-width: 92.5%;
+    max-width: 93%;
     margin-top: 2em;
     }
 
@@ -148,7 +149,6 @@
     -webkit-overflow-scrolling: touch;
     outline: none !important;
     height: 100% !important;
-    padding-right: .5em;
     position: absolute;
     overflow-x: hidden;
     overflow: auto;
