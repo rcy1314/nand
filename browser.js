@@ -25,15 +25,17 @@ $(document).ready(function() {
 
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
-    $('.category').on('touch click mouseenter mouseleave', function (e) {
+    $('.category').on('touch click mouseenter mouseout', function (e) {
             if (e.type == 'mouseenter') $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
-            if (e.type == 'mouseleave'){
-                if ($(this).attr('id') != designate) $(this).css('border-bottom','none')
-            }
+            if (e.type == 'mouseout') $('.category').css('border-bottom','none')
             if (e.type == 'touch' || 'click'){
                 $('.category').css('border-bottom','none')
                 $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
             }
+    })
+    $('#attach').on('mouseout', function () { 
+                $('.category').css('border-bottom','none')
+                $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
 
