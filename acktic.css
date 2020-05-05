@@ -133,12 +133,12 @@
     .acktic, .category {
     display: inline-block;
     text-align: center;
-    margin-right: 7px;
+    margin-right: 5px;
     padding-top: 2em;
     font-size: 9px;
     float: right;
     height: 3em;
-    width: 8%;
+    width: 10%;
     }
     .acktic {
     position: absolute;
