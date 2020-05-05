@@ -25,11 +25,14 @@ $(document).ready(function() {
 
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
-    $('.category').on('mouseenter mouseleave', function (e) {
+    $('.category').on('touch click mouseenter mouseleave', function (e) {
             if (e.type == 'mouseenter') $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
             if (e.type == 'mouseleave'){
-                    $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
-                    if ($(this).attr('id') != designate) $(this).css('border-bottom','none')
+                if ($(this).attr('id') != designate) $(this).css('border-bottom','none')
+            }
+            if (e.type == 'touch' || 'click'){
+                $('.category').css('border-bottom','none')
+                $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
             }
     })
 
@@ -122,10 +125,7 @@ function apply(n) {
 }
 
 function category(n) {
-
-    $('#' + designate).css('border-bottom','none')
-    $('#' + n).css('border-bottom','1px solid rgba(0,0,0,.1)')
-
+    
     events = true
     $('#pop, #air, #arm, #get').remove()
     populate(n)
