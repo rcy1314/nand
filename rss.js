@@ -308,7 +308,6 @@ var menu=[
 {id:"Washington Times",cat:"Media",des:"Washington Times Show Business News and Entertainment News.",uri:"https://www.washingtontimes.com/rss/headlines/culture/entertainment",ext:"https://washingtontimes.com/culture/entertainment"},
 {id:"Yahoo Entertainment",cat:"Media",des:"Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",uri:"https://www.yahoo.com/entertainment/rss",ext:"https://yahoo.com/entertainment"},
 {id:"Wopular",cat:"Media",des:"Wopular is a news aggregation site, giving a summary view of the top headlines from the top news sites.",uri:"http://www.wopular.com/rss/sections/all",ext:"http://www.wopular.com"},
-{id:"Twitter",cat:"Social",des:"ack's Twitter Feed (experimental feed).",uri:"https://feed43.com/5040078744102176.xml",ext:"https://twitter.com/acktic"},
 {id:"Reddit",cat:"Social",des:"Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",uri:"https://reddit.com/r/apple/.rss",ext:"https://reddit.com/r/Apple"},
 {id:"Reddit",cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/Android"},
 {id:"Reddit",cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/AMD"},

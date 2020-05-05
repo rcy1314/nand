@@ -133,12 +133,12 @@
     .acktic, .category {
     display: inline-block;
     text-align: center;
-    margin-right: 5px;
+    margin-right: 7px;
     padding-top: 2em;
     font-size: 9px;
     float: right;
     height: 3em;
-    width: 10%;
+    width: 8%;
     }
     .acktic {
     position: absolute;
@@ -161,7 +161,7 @@
     max-width: 100%;
 	padding: 2em;
     }
-    #pub {
+    #pub, .air a {
     text-transform: capitalize;
     letter-spacing: 1px;
     font-family: Arial;
