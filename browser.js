@@ -231,6 +231,8 @@ function response(n) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 } else if ($(this).find('content').text().match(/src=['"](.*?)['"]/)) {
                     src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
+                    src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('enclosure').attr('url')) {
