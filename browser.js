@@ -23,6 +23,8 @@ $(document).ready(function() {
     precede(designate)
     display('#pop')
 
+    $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
+
     $('.category').on('mouseenter mouseleave', function (e) {
             if (e.type == 'mouseenter') $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
             if (e.type == 'mouseleave'){
