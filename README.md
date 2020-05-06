@@ -45,7 +45,7 @@ Default
 `https://acktic.github.io`
 
 Opposite
-`https://acktic.github.io?op=1`
+`https://acktic.github.io/?op=1`
  
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/01/8197227400950.png'></p>
  
