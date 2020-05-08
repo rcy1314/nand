@@ -376,7 +376,6 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",uri:"https://reddit.com/r/thinkpad/.rss",ext:"https://reddit.com/r/Thinkpad"},
 {id:"4chan",cat:"Social",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
 {id:"Reddit",cat:"Social",des:"Video subreddit is the best place for Video content of all kinds.",uri:"https://reddit.com/r/videos/.rss",ext:"https://reddit.com/r/Videos"},
-{id:"Reddit",cat:"Social",des:"Vim subreddit For Vim enthusiasts and anyone interested in Vim.",uri:"https://reddit.com/r/vim/.rss",ext:"https://reddit.com/r/Vim"},
 {id:"Reddit",cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/Wallpaper"},
 {id:"Reddit",cat:"Social",des:"Wallpapers subreddit for Work-safe wallpapers from all over!",uri:"https://reddit.com/r/wallpapers/.rss",ext:"https://reddit.com/r/Wallpapers"},
 {id:"Reddit",cat:"Social",des:"Windows subreddit a personal computer operating system released by Microsoft.",uri:"https://reddit.com/r/windows/.rss",ext:"https://reddit.com/r/Windows"},
