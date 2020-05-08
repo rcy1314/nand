@@ -328,7 +328,6 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Crypto subreddit a technical subreddit focused on the algorithms and implementations of cryptography.",uri:"https://reddit.com/r/crypto/.rss",ext:"https://reddit.com/r/Crypto"},
 {id:"Reddit",cat:"Social",des:"CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",uri:"https://reddit.com/r/css/.rss",ext:"https://reddit.com/r/CSS"},
 {id:"4chan",cat:"Social",des:"Current News Board that distributes, discusses, and analyzes news.",uri:"http://boards.4channel.org/news/index.rss",ext:"http://boards.4channel.org/news"},
-{id:"Reddit",cat:"Social",des:"DataHoarder subreddit bringing data hoarders together to share their passion with like minded people.",uri:"https://reddit.com/r/DataHoarder/.rss",ext:"https://reddit.com/r/DataHoarder"},
 {id:"Reddit",cat:"Social",des:"DataIsBeautiful subreddit for visualizations that effectively convey information.",uri:"https://reddit.com/r/dataisbeautiful/.rss",ext:"https://reddit.com/r/DataisBeautiful"},
 {id:"Reddit",cat:"Social",des:"Debian subreddit has questions and topics revolving around Debian OS.",uri:"https://reddit.com/r/debian/.rss",ext:"https://reddit.com/r/Debian"},
 {id:"Reddit",cat:"Social",des:"Design subreddit with the art in all mediums.",uri:"https://reddit.com/r/Design/.rss",ext:"https://reddit.com/r/Design"},
