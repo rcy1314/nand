@@ -254,7 +254,7 @@ function response(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                if (src.match(/app-icon|assets|comments|dmpxsnews|footer|twitter|undefined/)) src = ''
+                if (src.match(/app-icon|assets|comments|dmpxsnews|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
