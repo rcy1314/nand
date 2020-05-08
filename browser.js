@@ -236,7 +236,8 @@ function response(n) {
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('enclosure').attr('url')) {
-                    src = String($(this).find('enclosure').attr('url'))
+                    if ($(this).find('enclosure').attr('url').match(/youtube/)) src = ''
+                    else src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
                     if (menu[n].id.match(/Yahoo/) && $(this).find('media\\:content, content').attr('url').match(/https.*/)) src = String($(this).find('media\\:content, content').attr('url').match(/https.*/))
                     else src = String($(this).find('media\\:content, content').attr('url'))
@@ -252,6 +253,7 @@ function response(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
+                console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
