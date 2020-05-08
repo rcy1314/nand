@@ -39,14 +39,9 @@ $(document).ready(function() {
     })
 
 
-    $('#output').on('scroll touchmove focusout', function(e) {
+    $('#output').on('focusout', function(e) {
 
-        if (e.type == 'scroll' || e.type == 'touchmove') {
-            manifest($(this).scrollTop())
-            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
-            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false) populate(designate)
-        } else if (e.type == 'focusout') setTimeout(function() {
+        setTimeout(function() {
             $('#output').focus()
         }, 100)
 
@@ -290,32 +285,6 @@ function response(n) {
         })
 }
 
-function manifest(n) {
-
-    if (n < ost) {
-    /*    $('#icon').css({                      */
-    /*        'transition': 'all .2s linear',   */
-    /*        'visibility': 'visible'           */
-    /*    })                                    */
-        $('#attach').css({
-            'transition': 'all .2s linear',
-            'visibility': 'visible'
-        })
-    } else if (n > ost && events == false && operation == false) {
-    /*    $('#icon').css({                      */
-    /*        'transition': 'all .2s linear',   */
-    /*        'visibility': 'hidden'            */
-    /*    })                                    */
-        $('#attach').css({
-            'transition': 'all .2s linear',
-            'visibility': 'hidden'
-        })
-    }
-
-    ost = n
-
-}
-
 function moment(n) {
 
     var age = new Date()
@@ -418,27 +387,6 @@ function reverse(Object) {
     }
 
     return newObject
-
-}
-
-function translate(n, e) {
-
-    e = Math.pow(10, e);
-    var a = ["k", "m", "b", "t"]
-
-    for (var i = a.length - 1; i >= 0; i--) {
-        var size = Math.pow(10, (i + 1) * 3)
-        if (size <= n) {
-            n = Math.round(n * e / size) / e
-            if ((n == 1000) && (i < a.length - 1)) {
-                n = 1
-                i++
-            }
-            n += a[i]
-        }
-    }
-
-    return n
 
 }
 
