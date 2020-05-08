@@ -395,7 +395,7 @@ function resolution(n) {
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
         } else {
             var expand = '';
-            $('#' + n).width($('#' + n).get(0).naturalWidth).parent().width($('#' + n).siblings('.pub').width() - 20)
+            $('#' + n).width(Math.random() * (95 - 55 + 1) + 55 + '%').parent().width($('#' + n).width())
         }
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
 
