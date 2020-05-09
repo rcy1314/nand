@@ -1,43 +1,27 @@
 # RSS-Browser
 
   - Cross Device Browser.
-  - Easy to include.
-  - Easy to use.
 
 
 ### Features
 
-* 11 Image Parsers
-* Plain Text for Find
-* Reverse Scroll List
+* Image Parsing
 * 645 XML Examples
 * Random in Category
-* Youtube XML Parsing
-* TimeDate Post Sorted
-* Former from Last Feed
 * Private Proxy Requests
 * Inline Image Expansion
-* Media Rules for Devices
-* Color Scheme Opposite
+* Opposite Visual Scheme
 
 
 ### Dependencies
 
-A Browser. Here's what's used:
-
-* Github - Hosting the reader.
-* Heroku - Hosting the proxy.
-* CORS-Anywhere - CORS Headers proxy.
+A Browser is needed.
 
 ### Menu Array
 
-* Simple Array Structure in rss.js
+* Array Structure in rss.js
 
-`{ id : "courtesy", cat : "category", des : "description", uri : "feed", ext : "url" },`
-
-### Sourcing
-
-Source the [site](https://acktic.github.io) in an iframe.
+`{ id : "Courtesy", cat : "Category", des : "Description", uri : "Feed", ext : "URL" },`
 
 ### Styling
 
@@ -53,22 +37,6 @@ Opposite
 ### CORS Proxy
 
 Modern Browsers Require CORS Headers for Cross Site Requests this is circumvented with a Proxy.
-
-- Heroku's CORS-Anywhere Proxy `http://cors-anywhere.herokuapp.com/`
-
-[cors-anywhere](https://github.com/Rob--W/cors-anywhere) is a reverse proxy which adds CORS headers to the request.
-
-[heroku-cli](https://github.com/heroku/cli) makes it easy to create apps directly from the terminal.
-
-[npm](https://github.com/npm/cli) the package manager for NodeJS.
-
-```sh
-git clone https://github.com/Rob--W/cors-anywhere.git
-cd cors-anywhere/
-npm install
-heroku create
-git push heroku master
-```
 
 ### Development
 
