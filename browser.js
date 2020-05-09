@@ -98,14 +98,10 @@ function apply(n) {
 		$('#opposite').show()
 		animate = 'opposite.png'
 	} else if (op == 0) {
-        $('html, body, #wrapper, #container').css({
+        $('html, body, #wrapper, #container, #output, .pop, .pop #pub, .pop .des, .air, .air #pub, .air .des').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
-        })
-        $('#output, .pop, .pop #pub, .pop .des, .air, .air #pub, .air .des').css({
-            'background-color':'#fafafa',
-            'color': 'rgba(0,0,0,.7)'
         })
         $('#attach, .item').css({
             'border':'1px solid rgba(0,0,0,.1)',
@@ -113,10 +109,10 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)'
         })
         $('#random, #apply').css('border-bottom', '2px solid rgba(128,128,128,.5)')
+        $('.item #pub').css({'background-color':'#fff','color':'#000'})
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('.item #pub').css('background-color','#fff')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('a').css('color', '#337ab7')
         $('#opposite').hide();
@@ -365,7 +361,8 @@ function response(n) {
                     } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
-                }
+                } else src = ''
+				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
