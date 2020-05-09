@@ -433,7 +433,7 @@ var menu=[
 {id:"Ars Technica",cat:"Technology",des:"Ars Technica has became a Trusted Source for Technology News.",uri:"http://feeds.arstechnica.com/arstechnica/index?format=xml",ext:"https://arstechnica.com"},
 {id:"BBC",cat:"Technology",des:"BBC Technology News, Articles, and more.",uri:"http://feeds.bbci.co.uk/news/technology/rss.xml",ext:"https://bbc.co.uk/news/technology"},
 {id:"BetaNews",cat:"Technology",des:"BetaNews is a leading source of Technology News and Analysis.",uri:"http://feeds.betanews.com/bn",ext:"https://betanews.com"},
-{id:"BGR",cat:"Technology",des:"BGR is a destination for News focused on the Consumer Electronics Market.",uri:"https://bgr.com/tech/feed",ext:"https://bgr.com/tech"},
+{id:"Boy Genius Report",cat:"Technology",des:"BGR is a destination for News focused on the Consumer Electronics Market.",uri:"https://bgr.com/tech/feed",ext:"https://bgr.com/tech"},
 {id:"Bleeping Computer",cat:"Technology",des:"Bleeping Computer is a information security and technology news publication.",uri:"https://www.bleepingcomputer.com/feed/",ext:"https://www.bleepingcomputer.com"},
 {id:"Business Insider",cat:"Technology",des:"Business Insider is a Growing Business site with Financial, Media, and Tech.",uri:"https://www.businessinsider.com/rss",ext:"https://businessinsider.com"},
 {id:"CBS",cat:"Technology",des:"CBS Technology on Social Media, Artificial Intelligence, Computers and more.",uri:"https://www.cbsnews.com/latest/rss/technology",ext:"https://cbsnews.com/technology"},
