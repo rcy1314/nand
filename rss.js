@@ -312,7 +312,6 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/Android"},
 {id:"Reddit",cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/AMD"},
 {id:"Arch Linux",cat:"Social",des:"Arch Linux BBS is a Linux distribution for computers based on x86-64 architectures.",uri:"https://bbs.archlinux.org/extern.php?type=rss",ext:"http://bbs.archlinux.org"},
-{id:"Reddit",cat:"Social",des:"Arch Linux subreddit discusses topics revolving around Arch Linux.",uri:"https://reddit.com/r/archlinux/.rss",ext:"https://reddit.com/r/ArchLinux"},
 {id:"Reddit",cat:"Social",des:"Artificial subreddit the home for Artificial Intelligence.",uri:"https://reddit.com/r/artificial/.rss",ext:"https://reddit.com/r/Artificial"},
 {id:"Reddit",cat:"Social",des:"Baseball subreddit for the Bat-and-Ball Sport played between two teams of nine players.",uri:"https://reddit.com/r/baseball/.rss",ext:"https://reddit.com/r/Baseball"},
 {id:"Reddit",cat:"Social",des:"Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",uri:"https://reddit.com/r/boston/.rss",ext:"https://reddit.com/r/Boston"},
