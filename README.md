@@ -5,8 +5,8 @@
 
 ### Features
 
-* XML Examples
 * Image Parsing
+* XML Examples
 * Random in Category
 * Private Proxy Requests
 * Inline Image Expansion
