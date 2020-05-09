@@ -117,7 +117,7 @@ function apply(n) {
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.item #pub').css('background-color','#fff')
-        $('.img').css('filter', 'brightness(100%)')
+        $('.img, iframe').css('filter', 'brightness(100%)')
         $('a').css('color', '#337ab7')
         $('#opposite').hide();
         $('#invert').show()
