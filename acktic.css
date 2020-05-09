@@ -154,7 +154,9 @@
     color: #000;
     }
     .item {
+	margin-bottom: -1em;
 	width: fit-content;
+	margin-top: 2em;
 	display: table;
 	padding: .5em;
     }
