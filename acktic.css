@@ -1,7 +1,7 @@
 @media (max-width: 426px) {
 
     .item {
-    max-width: 95% !important;
+    max-width: 94% !important;
     margin-left: 5px;
     margin-top: 2em;
     }
@@ -19,16 +19,6 @@
 
 @media screen and (min-width: 769px) {
 
-    html, body, #container, #output {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    right: 0;
-    left: 0;
-    top: 0;
-    }
-
     #wrapper {
     transform: translate(50%,50%);
     position: fixed;
@@ -41,12 +31,6 @@
     top: -50%;
     }
 
-    #pop, #air, #get { padding-left: 1.5% }
-
-    .item {
-    max-width: 93%;
-    margin-top: 2em;
-    }
 
 }
     div { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
@@ -113,13 +97,12 @@
     .icon {
     transform: translateX(-50%);
     position: absolute;
+	height: 48px;
+	width: 48px;
     bottom: 0em;
     left: 50%;
-    height: 48px;
-    width: 48px;
     }
 	#attach {
-    border-bottom: 1px solid rgba(0,0,0, .1);
 	width: calc(100%);
     position: fixed;
     height: 2.9em;
@@ -157,7 +140,11 @@
     max-width: 100%;
 	padding: 2em;
     }
-    #pub, .air a {
+	.pop a, .air a {
+    text-transform: capitalize;
+    font-size: 14px;
+	}
+    #pub {
     text-transform: capitalize;
     letter-spacing: 1px;
     font-family: Arial;
@@ -167,9 +154,7 @@
     color: #000;
     }
     .item {
-    margin-bottom: -1.5em;
 	width: fit-content;
-    margin-top: 2em;
 	display: table;
 	padding: .5em;
     }
