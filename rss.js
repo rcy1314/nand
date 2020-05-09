@@ -459,7 +459,7 @@ var menu=[
 {id:"InfoWorld",cat:"Technology",des:"InfoWorld is an Information Technology Media Business.",uri:"https://www.infoworld.com/index.rss",ext:"https://infoworld.com"}, 
 {id:"International Business Times",cat:"Technology",des:"International Business Times Technology news and insight about tech gadgets, games and social media.",uri:"https://www.ibtimes.sg/rss/technology",ext:"https://www.ibtimes.com/technology"},
 {id:"Los Angeles Times",cat:"Technology",des:"Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",uri:"https://www.latimes.com/business/technology/rss2.0.xml",ext:"https://latimes.com/business/technology"},
-{id:"Leak Lookup",cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
+{id:"Leak-Lookup",cat:"Technology",des:"Leak-Lookup Latest Database Leaks and Records Counting.",uri:"https://leak-lookup.com/rss",ext:"https://leak-lookup.com"},
 {id:"Linux.com",cat:"Technology",des:"Linux.com News For Open Source Professionals.",uri:"https://www.linux.com/feed",ext:"https://linux.com"},
 {id:"LWN",cat:"Technology",des:"Linux Weekly News Headlines.",uri:"https://lwn.net/headlines/rss",ext:"https://lwn.net"},
 {id:"Mirror.co.uk",cat:"Technology",des:"Mirror.co.uk Techs Best Stories, Opinion, Pictures and Video.",uri:"https://www.mirror.co.uk/tech/?service=rss",ext:"https://mirror.co.uk/tech"},
