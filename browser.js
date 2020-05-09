@@ -99,7 +99,7 @@ function apply(n) {
 		animate = 'opposite.png'
 	} else if (op == 0) {
         $('html, body, #wrapper, #container').css({
-            'background-color': '#fdfdfd',
+            'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
