@@ -111,15 +111,14 @@ function apply(n) {
         $('#random, #apply').css('border-bottom', '2px solid rgba(128,128,128,.5)')
         $('.item #pub').css({'background-color':'#fff','color':'#000'})
         $('#output').removeClass('opposite').addClass('invert')
+        $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('.img, iframe').css('filter', 'brightness(100%)')
         $('a').css('color', '#337ab7')
         $('#opposite').hide();
         $('#invert').show()
         animate = 'invert.png'
 	}
-
 }
 
 function category(n) {
