@@ -40,7 +40,7 @@ Opposite
  
 ### CORS Proxy
 
-Modern Browsers Require CORS Headers for Cross Site Requests this is circumvented with a [https://github.com/Rob--W/cors-anywhere](cors-anywhere).
+Modern Browsers Require CORS Headers for Cross Site Requests this is circumvented with a [cors-anywhere](https://github.com/Rob--W/cors-anywhere "cors-anywhere").
 
 ### Development
 
