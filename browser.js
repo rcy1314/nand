@@ -173,6 +173,7 @@ function external(n) {
 }
 
 function response(n) {
+	var src = ''
     if (operation == true) {
         request.abort()
         operation = false
@@ -252,7 +253,7 @@ function response(n) {
                     } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
-                } else src = ''
+                }
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
