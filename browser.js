@@ -284,7 +284,6 @@ function resolution(n) {
 }
 
 function response(n) {
-	var src = ''
     if (operation == true) {
         request.abort()
         operation = false
@@ -295,8 +294,11 @@ function response(n) {
     operation = true
     var pub = []
     $('#pop, #air, #arm, #get').remove()
-    if (designate == 'Youtube') var quit = 5
-    else var quit = 11
+    if (designate == 'Youtube') {
+        var quit = 5
+    } else {
+        var quit = 11
+    }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
     if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
@@ -333,9 +335,11 @@ function response(n) {
                 }
                 if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
                 else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
-                else if ($(this).find('link').attr('href')) {
+                else if ($(this).find('link').attr('href').match(/https:\/\/.+?(gif|png|jpg)/) || $(this).find('link').attr('href').match(/youtube/)) {
                     if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-                    else if ($(this).find('link').attr('href').match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('link').attr('href'))
+                    else {
+                        src = String($(this).find('link').attr('href'))
+                    }
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
@@ -345,8 +349,7 @@ function response(n) {
                 } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
                 } else if ($(this).find('enclosure').attr('url')) {
-                    if ($(this).find('enclosure').attr('url').match(/youtube/)) src = ''
-                    else src = String($(this).find('enclosure').attr('url'))
+                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
                     if (menu[n].id.match(/Yahoo/) && $(this).find('media\\:content, content').attr('url').match(/https.*/)) src = String($(this).find('media\\:content, content').attr('url').match(/https.*/))
                     else src = String($(this).find('media\\:content, content').attr('url'))
@@ -362,7 +365,6 @@ function response(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
