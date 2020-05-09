@@ -15,7 +15,11 @@
 
 ### Dependencies
 
-A Browser is needed.
+Browser Tested on
+* Apple Safari
+* Google Chrome
+* Mozilla Firefox
+
 
 ### Menu Array
 
