@@ -172,124 +172,6 @@ function external(n) {
 
 }
 
-function response(n) {
-	var src = ''
-    if (operation == true) {
-        request.abort()
-        operation = false
-    }
-    obj = []
-    former = n
-    events = true
-    operation = true
-    var pub = []
-    $('#pop, #air, #arm, #get').remove()
-    if (designate == 'Youtube') {
-        var quit = 5
-    } else {
-        var quit = 11
-    }
-    $('#output').append("<div id='arm'></div><div id='get'></div>")
-    $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
-    if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
-    else var id = menu[n].id
-    request = $.get({
-            url: cor + menu[n].uri
-        })
-        .fail(function() {
-            $('#arm').remove();
-            $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
-            operation = false
-        })
-        .done(function(data) {
-            $('#arm').remove()
-            if ($(data).find('entry').length > 0) var channel = "entry"
-            else var channel = 'item'
-            if ($(data).find(channel).length < quit) {
-                quit = $(data).find(channel).length
-            }
-            $(data).find(channel).each(function(i) {
-                if (channel == 'entry') {
-                    var ref = $(this).find('link').attr('href')
-                    var dst = utc($(this).find('updated').text());
-                    var gen = new Date($(this).find('updated').text()).getTime()
-                } else if (channel = 'item') {
-                    var ref = $(this).find('link').text()
-                    if ($(this).find('pubDate').text().length > 0) {
-                        var dst = utc($(this).find('pubDate').text());
-                        var gen = new Date($(this).find('pubDate').text()).getTime()
-                    } else {
-                        var dst = utc($(this).find('dc\\:date, date').text());
-                        var gen = new Date($(this).find('dc\\:date').text()).getTime()
-                    }
-                }
-                if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
-                else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
-                else if ($(this).find('link').attr('href')) {
-                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-                    else if ($(this).find('link').attr('href').match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('link').attr('href'))
-                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
-                    src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-                } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
-                    src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
-                    src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
-                } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
-                    src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
-                } else if ($(this).find('enclosure').attr('url')) {
-                    if ($(this).find('enclosure').attr('url').match(/youtube/)) src = ''
-                    else src = String($(this).find('enclosure').attr('url'))
-                } else if ($(this).find('media\\:content, content').attr('url')) {
-                    if (menu[n].id.match(/Yahoo/) && $(this).find('media\\:content, content').attr('url').match(/https.*/)) src = String($(this).find('media\\:content, content').attr('url').match(/https.*/))
-                    else src = String($(this).find('media\\:content, content').attr('url'))
-                } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
-                    if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
-                    else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
-                    if (menu[n].id == '4chan') {
-                        src = String($(this).find('description').text().match(/https:\/\/.+?(gif|png|jpg)/))
-                        if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1])
-                        else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-                    } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
-                } else if ($(this).find('image').text()) {
-                    src = String($(this).find('image').text())
-                }
-                if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
-                if (src == '') courtesy = ''
-                else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/mp4|twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
-                    else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
-                        "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
-                } else {
-                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
-                        "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
-                }
-                pub.push({
-                    element: i,
-                    since: gen,
-                    post: html
-                })
-            })
-            pub.sort(function(a, b) {
-                return b.since - a.since
-            })
-            for (var i = 0; i <= quit - 1; i++) {
-                $('#get').append(pub[i].post)
-                if ($('#' + pub[i].element).length) resolution(pub[i].element)
-            }
-            populate(designate)
-            precede(designate)
-            display('#get')
-            apply()
-        })
-}
-
 function manifest(n) {
 
     if (n < ost) {
@@ -405,6 +287,121 @@ function resolution(n) {
 
 }
 
+function response(n) {
+	var src = ''
+    if (operation == true) {
+        request.abort()
+        operation = false
+    }
+    obj = []
+    former = n
+    events = true
+    operation = true
+    var pub = []
+    $('#pop, #air, #arm, #get').remove()
+    if (designate == 'Youtube') var quit = 5
+    else var quit = 11
+    $('#output').append("<div id='arm'></div><div id='get'></div>")
+    $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
+    if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
+    else var id = menu[n].id
+    request = $.get({
+            url: cor + menu[n].uri
+        })
+        .fail(function() {
+            $('#arm').remove();
+            $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
+            operation = false
+        })
+        .done(function(data) {
+            $('#arm').remove()
+            if ($(data).find('entry').length > 0) var channel = "entry"
+            else var channel = 'item'
+            if ($(data).find(channel).length < quit) {
+                quit = $(data).find(channel).length
+            }
+            $(data).find(channel).each(function(i) {
+                if (channel == 'entry') {
+                    var ref = $(this).find('link').attr('href')
+                    var dst = utc($(this).find('updated').text());
+                    var gen = new Date($(this).find('updated').text()).getTime()
+                } else if (channel = 'item') {
+                    var ref = $(this).find('link').text()
+                    if ($(this).find('pubDate').text().length > 0) {
+                        var dst = utc($(this).find('pubDate').text());
+                        var gen = new Date($(this).find('pubDate').text()).getTime()
+                    } else {
+                        var dst = utc($(this).find('dc\\:date, date').text());
+                        var gen = new Date($(this).find('dc\\:date').text()).getTime()
+                    }
+                }
+                if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
+                else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g))
+                else if ($(this).find('link').attr('href')) {
+                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
+                    else if ($(this).find('link').attr('href').match(/https:\/\/.+?(gif|png|jpg)/)) src = String($(this).find('link').attr('href'))
+                } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
+                    src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
+                } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
+                    src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
+                    src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
+                } else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
+                    src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg)/)[0])
+                } else if ($(this).find('enclosure').attr('url')) {
+                    if ($(this).find('enclosure').attr('url').match(/youtube/)) src = ''
+                    else src = String($(this).find('enclosure').attr('url'))
+                } else if ($(this).find('media\\:content, content').attr('url')) {
+                    if (menu[n].id.match(/Yahoo/) && $(this).find('media\\:content, content').attr('url').match(/https.*/)) src = String($(this).find('media\\:content, content').attr('url').match(/https.*/))
+                    else src = String($(this).find('media\\:content, content').attr('url'))
+                } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
+                    if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
+                    else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
+                    if (menu[n].id == '4chan') {
+                        src = String($(this).find('description').text().match(/https:\/\/.+?(gif|png|jpg)/))
+                        if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1])
+                        else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
+                    } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('image').text()) {
+                    src = String($(this).find('image').text())
+                }
+                if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
+                if (src == '') courtesy = ''
+                else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                if (src.match(/mp4|twitch|youtube/)) {
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
+                    else views = ''
+                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
+                } else {
+                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div id='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                        "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
+                        "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+                }
+                pub.push({
+                    element: i,
+                    since: gen,
+                    post: html
+                })
+            })
+            pub.sort(function(a, b) {
+                return b.since - a.since
+            })
+            for (var i = 0; i <= quit - 1; i++) {
+                $('#get').append(pub[i].post)
+                if ($('#' + pub[i].element).length) resolution(pub[i].element)
+            }
+            populate(designate)
+            precede(designate)
+            display('#get')
+            apply()
+        })
+}
+
 function reverse(Object) {
 
     var newObject = {}
@@ -418,27 +415,6 @@ function reverse(Object) {
     }
 
     return newObject
-
-}
-
-function translate(n, e) {
-
-    e = Math.pow(10, e);
-    var a = ["k", "m", "b", "t"]
-
-    for (var i = a.length - 1; i >= 0; i--) {
-        var size = Math.pow(10, (i + 1) * 3)
-        if (size <= n) {
-            n = Math.round(n * e / size) / e
-            if ((n == 1000) && (i < a.length - 1)) {
-                n = 1
-                i++
-            }
-            n += a[i]
-        }
-    }
-
-    return n
 
 }
 
