@@ -94,12 +94,12 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, #wrapper, #container, #output').css({
+		$('html, body, #wrapper, #container, #output, .pop, .pop #pub, .air, .air #pub, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
-        $('#attach, .pop, .pop #pub, .air, .air #pub, .des, .item, .item #pub').css({
+        $('#attach, .item, .item #pub').css({
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })

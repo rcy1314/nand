@@ -124,7 +124,7 @@
     overflow: auto;
     }
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air, #get { padding-top: 3em }
+    #pop, #air { padding-top: 2em }
     .pop, .air {
     margin-bottom: 2em;
     font-size: 10px;
@@ -135,6 +135,7 @@
     text-transform: capitalize;
     font-size: 14px;
 	}
+	#get { padding-top: 1em }
     #pub {
     text-transform: capitalize;
     letter-spacing: 1px;
