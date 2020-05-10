@@ -35,10 +35,10 @@
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
 
     ::-webkit-scrollbar { width: 5px }
-    
-	.img { margin-bottom: .5em }
 
-	#get { padding-top: 1em }
+	#get { padding-top: 1.05em }
+ 
+	.img { margin-bottom: .5em }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
 
@@ -120,23 +120,22 @@
     overflow-x: hidden;
     overflow: auto;
     }
-    #pop, #air {
-	padding-top: 3em;
+	#pop { 
 	padding-bottom: 2em;
+	padding-top: 2em;
 	}
+	#air { padding-top: 3em }
     .pop, .air {
-    margin-bottom: 2em;
+	margin-left: -1em;
     font-size: 10px;
-	padding: 2em;
+	padding: 3em;
     }
-	.pop a, .air a {
+	.pop a, .air a, .pub {
     text-transform: capitalize;
     font-size: 14px;
 	}
     .pub {
-    text-transform: capitalize;
     letter-spacing: 1px;
-    font-size: 14px;
 	line-height: 1;
     }
     .item {

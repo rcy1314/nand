@@ -1,4 +1,3 @@
-
 var op = 0
 var animate
 var request
@@ -123,9 +122,9 @@ function apply(n) {
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
+        $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('.item .pub').css({'background-color':'#fff','color':'#000'})
-        $('#output').removeClass('opposite').addClass('invert')
         $('a, #air .air .pub, .acktic').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
@@ -239,7 +238,7 @@ function populate(n) {
     document.title = n
     if (n != designate) former = 0
     designate = n
-    $('#output').append("<div id='pop'></div>")
+    $('#output').append("<div id='pop'><br></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
@@ -294,7 +293,7 @@ function resolution(n) {
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         $('#' + n).css('display', 'block')
     })
-	} else $('#' + n).parent().width(Math.random() * (95 - 55 + 1) + 55 + '%')
+	} else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
 
 }
 
