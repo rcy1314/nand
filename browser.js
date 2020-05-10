@@ -279,6 +279,7 @@ function random(n) {
 
 function resolution(n) {
 
+	if ($('#' + n).attr('src')){
     $('#' + n).one('load', function() {
         if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
             var expand = "[<u>expand</u>]"
@@ -291,10 +292,9 @@ function resolution(n) {
             $('#' + n).width(Math.random() * (65 - 50 + 1) + 50 + '%').parent().width($('#' + n).width())
         }
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-
         $('#' + n).css('display', 'block')
-
     })
+	} else $('#' + n).parent().width(Math.random() * (95 - 55 + 1) + 50 + '%')
 
 }
 
@@ -377,7 +377,8 @@ function response(n) {
                     } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
-                } else src = ''
+                }
+				if (!src.match(/https:\/\/.+?(gif|png|jpg)/)) src = ''
 				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''

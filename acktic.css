@@ -136,19 +136,17 @@
     .pub {
     text-transform: capitalize;
     letter-spacing: 1px;
-    width: fit-content;
     font-size: 14px;
+	line-height: 1;
     }
     .item {
 	margin-bottom: -1em;
-	width: fit-content;
 	margin-top: 2em;
 	display: table;
 	padding: .5em;
     }
     #ago, .ago, .attr {
     padding-bottom: .3em;
-	width: fit-content;
 	margin-top: -1px;
     font-size: 10px;
     cursor: default;
