@@ -294,7 +294,7 @@ function resolution(n) {
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         $('#' + n).css('display', 'block')
     })
-	} else $('#' + n).parent().width(Math.random() * (95 - 55 + 1) + 50 + '%')
+	} else $('#' + n).parent().width(Math.random() * (95 - 55 + 1) + 55 + '%')
 
 }
 
