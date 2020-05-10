@@ -134,9 +134,9 @@ svg .animated-circle {
     overflow: auto;
     }
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air, #get { padding-top: 1em; }
+    #pop, #air, #get { padding-top: 2em }
     .pop, .air {
-    margin-top: 2em;
+    margin-bottom: 2em;
     font-size: 10px;
     max-width: 100%;
 	padding: 2em;
