@@ -99,6 +99,7 @@ function apply(n) {
 			'color': 'rgba(255,255,255,.9)'
 		})
         $('#attach, .item, .item .pub').css({
+			'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
@@ -117,14 +118,13 @@ function apply(n) {
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
-        $('#attach, .item').css({
-            'border':'1px solid rgba(0,0,0,.1)',
+        $('#attach, .item, .item .pub').css({
+            'border-bottom':'1px solid rgba(0,0,0,.1)',
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-        $('.item .pub').css({'background-color':'#fff','color':'#000'})
         $('a, #air .air .pub, .acktic').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
