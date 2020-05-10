@@ -24,22 +24,18 @@ $(document).ready(function() {
     precede(designate)
     display('#pop')
 
-    function updateProgress(perc){
-        var circle_offset = 126 * perc;
+    function updateProgress(n){
+        var circle_offset = 131 * n;
         $('svg circle').css({
-            "stroke-dashoffset" : 126 - circle_offset
+            "stroke-dashoffset" : 131 - circle_offset
         });
     }
 
 (function(){
-    var $w = $('#output');
-    var $circ = $('.animated-circle');
-    var wh = $w.height();
-    var h = $('#output')[0].scrollHeight;
-    var sHeight = h - wh;
-    $w.on('scroll', function(){
-        var perc = Math.max(0, Math.min(1, $('#output').scrollTop()/sHeight));
-        updateProgress(perc);
+    var h = $('#output')[0].scrollHeight - $('#output').innerHeight() + 20;
+    $('#output').on('scroll', function(){
+        var n = Math.max(0, Math.min(1, $('#output').scrollTop() / h));
+        updateProgress(n);
     });
  
  
