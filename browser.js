@@ -376,8 +376,7 @@ function response(n) {
                     } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
-                }
-				if (!src.match(/https:\/\/.+?(gif|png|jpg)/)) src = ''
+                } else src = ''
 				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
