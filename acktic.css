@@ -193,8 +193,8 @@
     left: 0;
     }
     #animate {
-    -webkit-animation: grow 2.7s infinite ease;
-    -moz-animation: grow 2.7s infinite ease
+    -webkit-animation: spin 7s infinite ease;
+    -moz-animation: spin 7s infinite ease
     height: 200px;
     width: 200px;
     }
@@ -208,9 +208,9 @@
     }
     @-webkit-keyframes grow {
     from { -webkit-transform:scale(1) }
-    to { -webkit-transform:scale(2) }
+    to { -webkit-transform:scale(1.5) }
     }
     @-moz-keyframes grow {
     from { -moz-transform:scale(1) }
-    to { -moz-transform:scale(2) }
+    to { -moz-transform:scale(1.6) }
     }
