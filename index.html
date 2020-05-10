@@ -23,10 +23,13 @@
 <div id='wrapper'>
 	<div id='container'>
         	<div id='output'></div>
-    	<div id='icon'>
+<div class="progress-indicator">
+    <svg>
+            <circle cx="48" cy="24" r="21" class="animated-circle" onclick='category(designate)'>
         	<img id='opposite' class='icon' onclick='category(designate)' src='favicon/opposite.png'>
         	<img id='invert' class='icon' onclick='category(designate)' src='favicon/invert.png'>
-    	</div>
+    </svg>
+</div>
         	<div id='random' onclick='random(designate)'></div>
         	<div id='apply' onclick="apply('op')"></div>
 	</div>

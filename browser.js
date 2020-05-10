@@ -1,3 +1,4 @@
+
 var op = 0
 var animate
 var request
@@ -22,6 +23,27 @@ $(document).ready(function() {
     populate(designate)
     precede(designate)
     display('#pop')
+
+    function updateProgress(perc){
+        var circle_offset = 126 * perc;
+        $('svg circle').css({
+            "stroke-dashoffset" : 126 - circle_offset
+        });
+    }
+
+(function(){
+    var $w = $('#output');
+    var $circ = $('.animated-circle');
+    var wh = $w.height();
+    var h = $('#output')[0].scrollHeight;
+    var sHeight = h - wh;
+    $w.on('scroll', function(){
+        var perc = Math.max(0, Math.min(1, $('#output').scrollTop()/sHeight));
+        updateProgress(perc);
+    });
+ 
+ 
+}());
 
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
@@ -91,6 +113,7 @@ function apply(n) {
         $('#random, #apply').css('border-bottom', '2px solid rgba(128,128,128,.5)')
 		$('#output').removeClass('invert').addClass('opposite')
 		$('.img, iframe').css('filter', 'brightness(80%)')
+		$('svg .animated-circle').css('stroke','#F74268')
         $('#favicon').attr('href','favicon/opposite.png')
 		$('#animate').attr('src', 'favicon/favico.png')
 		$('a').css('color', '#F7426B')
@@ -112,6 +135,7 @@ function apply(n) {
         $('.item #pub').css({'background-color':'#fff','color':'#000'})
         $('#output').removeClass('opposite').addClass('invert')
         $('.img, iframe').css('filter', 'brightness(100%)')
+		$('svg .animated-circle').css('stroke','#0A74DA')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('a').css('color', '#337ab7')
@@ -215,6 +239,7 @@ function moment(n) {
 
 function populate(n) {
 
+	if ($('#pop').length >= 1) return false
     if (operation == true) {
         $('#arm').remove()
         request.abort()
