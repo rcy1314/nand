@@ -105,12 +105,12 @@ function apply(n) {
         })
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
 		$('#output').removeClass('invert').addClass('opposite')
+		$('a, #air .air .pub, .acktic').css('color', '#F7426B')
 		$('.img, iframe').css('filter', 'brightness(80%)')
-		$('svg .animated-circle').css('stroke','#F74268')
         $('#favicon').attr('href','favicon/opposite.png')
 		$('#animate').attr('src', 'favicon/favico.png')
-		$('a, #air .air .pub, .acktic').css('color', '#F7426B')
 		$('.icon').attr('src','favicon/opposite.png');
+		$('svg .ring').css('stroke','#F74268')
 		animate = 'opposite.png'
 	} else if (op == 0) {
         $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
@@ -126,12 +126,12 @@ function apply(n) {
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('.item .pub').css({'background-color':'#fff','color':'#000'})
         $('#output').removeClass('opposite').addClass('invert')
+        $('a, #air .air .pub, .acktic').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
-		$('svg .animated-circle').css('stroke','#0A74DA')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('a, #air .air .pub, .acktic').css('color', '#337ab7')
         $('.icon').attr('src','favicon/invert.png');
+		$('svg .ring').css('stroke','#0A74DA')
         animate = 'invert.png'
 	}
 }

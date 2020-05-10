@@ -94,7 +94,7 @@
     height: 50%;
     right: 50%;
     }
-    .icon, .progress-indicator, svg, svg .animated-circle {
+    .icon, .home, svg, svg .ring {
     transform: translateX(-50%);
     position: absolute;
 	height: 48px;
@@ -102,7 +102,7 @@
     bottom: 0em;
     left: 50%;
     }
- 	svg .animated-circle {
+ 	svg .ring {
 	transform-origin: 50% 50%;
 	transform: rotate(90deg);
     stroke-dashoffset: 131;
