@@ -109,7 +109,7 @@ function apply(n) {
 		$('svg .animated-circle').css('stroke','#F74268')
         $('#favicon').attr('href','favicon/opposite.png')
 		$('#animate').attr('src', 'favicon/favico.png')
-		$('a').css('color', '#F7426B')
+		$('a, .acktic').css('color', '#F7426B')
 		$('#invert').hide();
 		$('#opposite').show()
 		animate = 'opposite.png'
@@ -131,7 +131,7 @@ function apply(n) {
 		$('svg .animated-circle').css('stroke','#0A74DA')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('a').css('color', '#337ab7')
+        $('a, .acktic').css('color', '#337ab7')
         $('#opposite').hide();
         $('#invert').show()
         animate = 'invert.png'
