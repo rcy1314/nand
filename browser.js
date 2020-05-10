@@ -25,21 +25,18 @@ $(document).ready(function() {
     display('#pop')
 
     function updateProgress(n){
-        var circle_offset = 131 * n;
         $('svg circle').css({
-            "stroke-dashoffset" : 131 - circle_offset
+            "stroke-dashoffset" : 131 - (131 * n)
         });
     }
 
-(function(){
-    var h = $('#output')[0].scrollHeight - $('#output').innerHeight() + 20;
-    $('#output').on('scroll', function(){
-        var n = Math.max(0, Math.min(1, $('#output').scrollTop() / h));
-        updateProgress(n);
-    });
- 
- 
-}());
+	(function(){
+    	$('#output').on('scroll', function(){
+        	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
+        	updateProgress(n);
+    	})
+
+	}())
 
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 

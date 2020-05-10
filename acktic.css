@@ -76,7 +76,7 @@
     height: 50%;
     right: 50%;
     }
-    .icon, svg, svg .animated-circle {
+    .icon, .progress-indicator, svg, svg .animated-circle {
     transform: translateX(-50%);
     position: absolute;
 	height: 48px;
@@ -84,25 +84,15 @@
     bottom: 0em;
     left: 50%;
     }
-.progress-indicator {
-	position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 48px;
-}
-circle {
-    fill: rgba(255,255,255,0.9);
-}
-svg {
-	z-index: 2;
-	}
- 
-svg .animated-circle {
+	svg { z-index: 2 }
+ 	svg .animated-circle {
+	transform-origin: 50% 50%;
+	transform: rotate(90deg);
     fill: transparent;
     stroke-width: 1px;
     stroke-dasharray: 131;
     stroke-dashoffset: 131;
-}
+	}
 	#attach {
 	width: calc(100%);
     position: fixed;
