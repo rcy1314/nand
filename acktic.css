@@ -124,7 +124,10 @@
     overflow: auto;
     }
     #pub:hover, .des:hover, a:hover { text-decoration: underline }
-    #pop, #air { padding-top: 2em }
+    #pop, #air {
+	padding-top: 3em;
+	padding-bottom: 2em;
+	}
     .pop, .air {
     margin-bottom: 2em;
     font-size: 10px;
