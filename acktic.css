@@ -98,7 +98,6 @@
     position: fixed;
     height: 2.9em;
 	z-index: 2;
-	top: -1px;`
 	}
     .acktic, .category {
     display: inline-block;
