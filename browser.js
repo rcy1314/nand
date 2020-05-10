@@ -110,8 +110,7 @@ function apply(n) {
         $('#favicon').attr('href','favicon/opposite.png')
 		$('#animate').attr('src', 'favicon/favico.png')
 		$('a, #air .air .pub, .acktic').css('color', '#F7426B')
-		$('#invert').hide();
-		$('#opposite').show()
+		$('.icon').attr('src','favicon/opposite.png');
 		animate = 'opposite.png'
 	} else if (op == 0) {
         $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
@@ -132,8 +131,7 @@ function apply(n) {
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('a, #air .air .pub, .acktic').css('color', '#337ab7')
-        $('#opposite').hide();
-        $('#invert').show()
+        $('.icon').attr('src','favicon/invert.png');
         animate = 'invert.png'
 	}
 }
