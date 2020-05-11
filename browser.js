@@ -11,7 +11,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper').css('display', 'block')
+    $('#wrapper, .search').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -52,16 +52,28 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
+	$('.search').on('keyup', function () {
+		if ($('.search').val().length <= 2){
+   			$('#output').empty()
+	 		populate(designate)
+    		precede(designate)
+    		display('#pop')
+			events = true
+			return false
+		}
+		else search($('.search').val())
+	})
 
-    $('#output').on('scroll touchmove focusout', function(e) {
+    $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
             manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false) populate(designate)
-        } else if (e.type == 'focusout') setTimeout(function() {
-            $('#output').focus()
+        } else if (e.type == 'focus') setTimeout(function() {
+            if ($('.search').is(':focus')) return false
+			else $('#output').focus()
         }, 100)
 
     }).attr('tabindex', -1).focus()
@@ -93,12 +105,12 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+		$('html, body, #wrapper, #container, .search, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
-        $('#attach, .item, .item .pub').css({
+        $('#attach, #Search, .item, .item .pub').css({
 			'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
@@ -113,12 +125,12 @@ function apply(n) {
 		$('svg .ring').css('stroke','#F74268')
 		animate = 'opposite.png'
 	} else if (op == 0) {
-        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
+        $('html, body, #wrapper, #container, .search, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
-        $('#attach, .item, .item .pub').css({
+        $('#attach, #Search, .item, .item .pub').css({
             'border-bottom':'1px solid rgba(0,0,0,.1)',
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
@@ -150,7 +162,7 @@ function display(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 300);
+    }, 100);
     setTimeout(function() {
         events = false
     }, 500)
@@ -409,10 +421,15 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
-            populate(designate)
-            precede(designate)
-            display('#get')
-            apply()
+			if ($('.search').val().length > 2 && $('#output #get').length) {
+				former = 0
+				search($('.search').val())
+			} else {
+            	populate(designate)
+            	precede(designate)
+            	display('#get')
+            	apply()
+			}
         })
 }
 
@@ -430,6 +447,39 @@ function reverse(Object) {
 
     return newObject
 
+}
+
+function search(n){
+
+		if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
+		else $('#output').append("<div id='pop'></div>")
+	    for (var i = 0; i < menu.length; i++){
+    	    if (menu[i].des.toLowerCase().includes($('.search').val())) {
+        	    if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            	else var id = menu[i].id
+            	$('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+        	}
+		}
+		var key = []
+    	for (var i = 0; i < menu.length; i++){
+        	if (menu[i].des.toLowerCase().includes($('.search').val())) {
+			key.push(i)
+			}
+		}
+		if (key.length >= 7){
+			$('#output').prepend("<div id='air'></div>")
+		    reverse(menu.reverse())
+    			for (var i = menu.reverse().length - 1; i >= 0; i--) {
+        			if (menu[i].des.toLowerCase().includes($('.search').val())) {
+            			if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            			else var id = menu[i].id
+            			$('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+        			}
+    			}
+				apply()
+				display('#pop')
+		} else apply()
+		events = true
 }
 
 function utc(n) {
