@@ -26,8 +26,6 @@ $(document).ready(function() {
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
     $('.category').on('touch click mouseenter mouseout', function (e) {
-            if (e.type == 'mouseenter') $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
-            if (e.type == 'mouseout') $('.category').css('border-bottom','none')
             if (e.type == 'touch' || 'click'){
                 $('.category').css('border-bottom','none')
                 $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
@@ -48,7 +46,7 @@ $(document).ready(function() {
         if (e.type == 'scroll' || e.type == 'touchmove') {
         	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
         	updateProgress(n);
-            manifest($(this).scrollTop())
+            /* manifest($(this).scrollTop()) */
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false && $('.search').val().length > 2) {
@@ -239,7 +237,7 @@ function populate(n) {
     document.title = n
     if (n != designate) former = 0
     designate = n
-    $('#output').append("<div id='pop'><br></div>")
+    $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
