@@ -11,7 +11,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper, .search').css('display', 'block')
+    $('#wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -36,25 +36,20 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-	$('.search').on('keyup focus', function () {
-		if ($('.search').val().length <= 2) return false
-		else search($('.search').val())
-	})
 
     $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
         	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
         	updateProgress(n);
-            /* manifest($(this).scrollTop()) */
+            manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false && $('.search').val().length > 2) {
+                if (operation == false) {
 					populate(designate)
 				}
         } else if (e.type == 'focus') setTimeout(function() {
-            if ($('.search').is(':focus')) return false
-			else $('#output').focus()
+			$('#output').focus()
         }, 100)
 
     }).attr('tabindex', -1).focus()
@@ -149,7 +144,7 @@ function display(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 100);
+    }, 300);
     setTimeout(function() {
         events = false
     }, 500)
@@ -409,12 +404,6 @@ function response(n) {
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
 			display('#get')
-			if ($('.search').val().length > 2) search($('.search').val())
-			else {
-    			populate(designate)
-    			precede(designate)
-			}
-			display('#get')
 			apply()
         })
 }
@@ -432,35 +421,6 @@ function reverse(Object) {
     }
 
     return newObject
-
-}
-
-function search(n){
-
-	if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
-    if (operation == true) {
-        $('#arm').remove()
-        request.abort()
-        operation = false
-    }
-		if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-		else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
-		else {
-			$('#output #pop').remove()
-			$('#output').append("<div id='pop'></div>")
-		}
-	    for (var i = 0; i < menu.length; i++){
-    	    if (menu[i].cat.toLowerCase().includes($('.search').val()) || menu[i].des.toLowerCase().includes($('.search').val()) || menu[i].uri.toLowerCase().includes($('.search').val())) {
-        	    if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            	else var id = menu[i].id
-            	$('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        	}
-		}
-		if (!$('#output #get').length) display('#pop:last')
-		else display('#get')
-		apply()
-		former = 0
-		events = true
 
 }
 
