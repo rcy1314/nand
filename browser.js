@@ -36,7 +36,7 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-    $('#output').on('scroll' function(){
+    $('#output').on('scroll', function(){
 	        var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
         	updateProgress(n);
     })
