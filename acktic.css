@@ -7,14 +7,14 @@
 @media screen and (min-width: 769px) {
 
     #wrapper {
-    transform: translate(50%, 50%);
+    transform: translateX(50%);
+	margin-top: 2.5em;
     position: fixed;
 	display: none;
     border: none;
-    height: 100%;
+    height: calc(100% - 2.5em);
     width: 65%;
     right: 50%;
-    top: -50%;
     }
 
 	.search {
@@ -96,7 +96,7 @@
 	outline: none;
 	display: none;
 	width: 14em;
-	top: 1.7em;
+	top: 1.5em;
 	}	
     #arm {
     transform: translate(50%, 50%);
@@ -132,7 +132,7 @@
     }
 	#pop { 
 	padding-bottom: 2em;
-	padding-top: 2em;
+	padding-top: 1em;
 	}
 	#air { padding-top: 3em }
     .pop, .air {
@@ -150,8 +150,7 @@
 	line-height: 1;
     }
     .item {
-	margin-bottom: -1em;
-	margin-top: 2em;
+	margin-bottom: 2em;
 	display: table;
 	padding: .5em;
     }
