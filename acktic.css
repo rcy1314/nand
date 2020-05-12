@@ -1,15 +1,8 @@
 @media (max-width: 426px) {
 
+	.acktic { z-index: -1 }
+
     .item { max-width: 94% !important }
-
-}
-@media screen and (min-width: 768px) {
-
-	.search {
-    transform: translateX(-50%);
-    position: absolute;
-    left: 50%;
-	}
 
 }
 
@@ -45,7 +38,7 @@
 
     ::-webkit-scrollbar { width: 5px }
 
-	#get { padding-top: 1.05em }
+	#get { padding-top: 2em }
  
 	.img { margin-bottom: .5em }
 
@@ -83,16 +76,20 @@
 	width: 100%;
 	z-index: 2;
 	}
-    .category {
+    .acktic, .category {
     display: inline-block;
-    padding-right: .4em;
+	padding-right: .75em;
+	padding-left: .75em;
     width: fit-content;
     text-align: center;
-	padding-left: .4em;
     padding-top: 2em;
     font-size: 9px;
     height: 2.3em;
     float: right;
+    }
+    .acktic {
+    position: absolute;
+    left: 2em;
     }
 	.search {
 	border-color: rgba(0, 0, 0, .15);
