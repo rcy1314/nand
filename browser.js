@@ -52,15 +52,8 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-	$('.search').on('keyup', function () {
-		if ($('.search').val().length <= 2){
-   			$('#output').empty()
-	 		populate(designate)
-    		precede(designate)
-    		display('#pop')
-			events = true
-			return false
-		}
+	$('.search').on('keyup focus', function () {
+		if ($('.search').val().length <= 3) return false
 		else search($('.search').val())
 	})
 
@@ -105,12 +98,12 @@ function apply(n) {
 	} else if (n == 1 || n == 0) op = n
 
 	if (op == 1) {
-		$('html, body, #wrapper, #container, .search, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+		$('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
 			'border': 'none',
 			'background-color': '#000',
 			'color': 'rgba(255,255,255,.9)'
 		})
-        $('#attach, #Search, .item, .item .pub').css({
+        $('#attach, .item, .item .pub').css({
 			'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
@@ -125,12 +118,12 @@ function apply(n) {
 		$('svg .ring').css('stroke','#F74268')
 		animate = 'opposite.png'
 	} else if (op == 0) {
-        $('html, body, #wrapper, #container, .search, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
+        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
         })
-        $('#attach, #Search, .item, .item .pub').css({
+        $('#attach, .item, .item .pub').css({
             'border-bottom':'1px solid rgba(0,0,0,.1)',
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
@@ -241,7 +234,7 @@ function moment(n) {
 
 function populate(n) {
 
-	if ($('#pop').length >= 1) return false
+	if ($('#output #pop').length > 1) return false
     if (operation == true) {
         $('#arm').remove()
         request.abort()
@@ -421,15 +414,7 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
-			if ($('.search').val().length > 2 && $('#output #get').length) {
-				former = 0
-				search($('.search').val())
-			} else {
-            	populate(designate)
-            	precede(designate)
-            	display('#get')
-            	apply()
-			}
+			if ($('.search').val().length > 2 && !$('#output #get').length) search($('.search').val())
         })
 }
 
@@ -451,35 +436,30 @@ function reverse(Object) {
 
 function search(n){
 
+	var key = []
+	if ($('#output #get, #output #get').length) return false
+    if (operation == true) {
+        $('#arm').remove()
+        request.abort()
+        operation = false
+    }
 		if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-		else $('#output').append("<div id='pop'></div>")
+		else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
+		else {
+			$('#output #pop').remove()
+			$('#output').append("<div id='pop'></div>")
+		}
 	    for (var i = 0; i < menu.length; i++){
-    	    if (menu[i].des.toLowerCase().includes($('.search').val())) {
+    	    if (menu[i].cat.toLowerCase().includes($('.search').val()) || menu[i].des.toLowerCase().includes($('.search').val()) || menu[i].uri.toLowerCase().includes($('.search').val())) {
         	    if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
             	else var id = menu[i].id
             	$('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         	}
 		}
-		var key = []
-    	for (var i = 0; i < menu.length; i++){
-        	if (menu[i].des.toLowerCase().includes($('.search').val())) {
-			key.push(i)
-			}
-		}
-		if (key.length >= 7){
-			$('#output').prepend("<div id='air'></div>")
-		    reverse(menu.reverse())
-    			for (var i = menu.reverse().length - 1; i >= 0; i--) {
-        			if (menu[i].des.toLowerCase().includes($('.search').val())) {
-            			if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            			else var id = menu[i].id
-            			$('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        			}
-    			}
-				apply()
-				display('#pop')
-		} else apply()
-		events = true
+		display('#pop')
+		apply()
+	events = true
+
 }
 
 function utc(n) {

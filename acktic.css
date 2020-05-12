@@ -69,25 +69,29 @@
     top: 0;
     }
 	#attach {
-	width: calc(100%);
     position: fixed;
     height: 2.5em;
+	width: 100%;
 	z-index: 2;
 	}
     .category {
     display: inline-block;
+    padding-right: .4em;
+    width: fit-content;
     text-align: center;
 	padding-left: .4em;
-    padding-right: .4em;
     padding-top: 2em;
     font-size: 9px;
-    float: right;
     height: 2.3em;
-    width: fit-content;
+    float: right;
     }
 	.search {
+	border-color: rgba(0, 0, 0, .15);
+	color: rgba(128,128,128,1);
+	border: 1px solid #cdcdcd;
     position: absolute;
-	padding-left: 5px;
+	padding-left: 2px;
+	margin-left: 5px;
 	font-size: 10px;
 	outline: none;
 	display: none;
