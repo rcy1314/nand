@@ -23,20 +23,6 @@ $(document).ready(function() {
     precede(designate)
     display('#pop')
 
-    function updateProgress(n){
-        $('svg circle').css({
-            "stroke-dashoffset" : 131 - (131 * n)
-        });
-    }
-
-	(function(){
-    	$('#output').on('scroll', function(){
-        	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
-        	updateProgress(n);
-    	})
-
-	}())
-
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
     $('.category').on('touch click mouseenter mouseout', function (e) {
@@ -60,6 +46,8 @@ $(document).ready(function() {
     $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
+        	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
+        	updateProgress(n);
             manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
@@ -91,6 +79,12 @@ String.prototype.truncate =
         if (this.length <= n) return this
         var subString = this.substr(0, n - 1)
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
+    }
+
+    function updateProgress(n){
+        $('svg circle').css({
+            "stroke-dashoffset" : 131 - (131 * n)
+        });
     }
 
 function apply(n) {
@@ -422,6 +416,7 @@ function response(n) {
     			populate(designate)
     			precede(designate)
 			}
+			display('#get')
 			apply()
         })
 }
@@ -444,8 +439,7 @@ function reverse(Object) {
 
 function search(n){
 
-	var key = []
-	if ($('#output #get').length && $('#output #pop').length) return false
+	if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
     if (operation == true) {
         $('#arm').remove()
         request.abort()
