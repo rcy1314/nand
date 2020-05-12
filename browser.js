@@ -37,7 +37,7 @@ $(document).ready(function() {
     })
 
 
-    $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
+    $('body, #wrapper, #container, #output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
         	var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
@@ -48,7 +48,7 @@ $(document).ready(function() {
                 if (operation == false) {
 					populate(designate)
 				}
-        } else if (e.type == 'focus') setTimeout(function() {
+        } else if (e.type == 'focusout') setTimeout(function() {
 			$('#output').focus()
         }, 100)
 
