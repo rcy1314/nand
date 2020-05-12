@@ -53,7 +53,7 @@ $(document).ready(function() {
     })
 
 	$('.search').on('keyup focus', function () {
-		if ($('.search').val().length <= 3) return false
+		if ($('.search').val().length <= 2) return false
 		else search($('.search').val())
 	})
 
@@ -63,7 +63,9 @@ $(document).ready(function() {
             manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false) populate(designate)
+                if (operation == false && $('.search').val().length > 2) {
+					populate(designate)
+				}
         } else if (e.type == 'focus') setTimeout(function() {
             if ($('.search').is(':focus')) return false
 			else $('#output').focus()
@@ -234,7 +236,7 @@ function moment(n) {
 
 function populate(n) {
 
-	if ($('#output #pop').length > 1) return false
+	if ($('#output #pop').length > 1) $('#output').empty()
     if (operation == true) {
         $('#arm').remove()
         request.abort()
@@ -414,7 +416,12 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
+			display('#get')
 			if ($('.search').val().length > 2) search($('.search').val())
+			else {
+    			populate(designate)
+    			precede(designate)
+			}
 			apply()
         })
 }
@@ -457,9 +464,11 @@ function search(n){
             	$('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         	}
 		}
-		display('#pop')
+		if (!$('#output #get').length) display('#pop:last')
+		else display('#get')
 		apply()
-	events = true
+		former = 0
+		events = true
 
 }
 
