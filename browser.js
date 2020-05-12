@@ -414,7 +414,8 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
-			if ($('.search').val().length > 2 && !$('#output #get').length) search($('.search').val())
+			if ($('.search').val().length > 2) search($('.search').val())
+			apply()
         })
 }
 
@@ -437,7 +438,7 @@ function reverse(Object) {
 function search(n){
 
 	var key = []
-	if ($('#output #get, #output #get').length) return false
+	if ($('#output #get').length && $('#output #pop').length) return false
     if (operation == true) {
         $('#arm').remove()
         request.abort()
