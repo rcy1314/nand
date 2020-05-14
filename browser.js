@@ -109,7 +109,7 @@ function apply(n) {
             'border': 'none'
         })
         $('#attach, .search, .item, .item .pub').css({
-            'border':'1px solid rgba(255,255,255,.1)',
+            'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
