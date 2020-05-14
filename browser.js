@@ -11,7 +11,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper').css('display', 'block')
+    $('#wrapper, .search').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -36,22 +36,25 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-    $('#output').on('scroll', function(){
-	        var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
-        	updateProgress(n);
+    $('.search').on('keyup focus', function () {
+        if ($('.search').val().length <= 2) return false
+        else search($('.search').val())
     })
 
-    $('#output').on('scroll touchmove focusout', function(e) {
+    $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
+            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
+            updateProgress(n);
             /* manifest($(this).scrollTop()) */
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false) {
-					populate(designate)
-				}
-        } else if (e.type == 'focusout') setTimeout(function() {
-			$('#output').focus()
+                if (operation == false && $('.search').val().length > 2) {
+                    populate(designate)
+                }
+        } else if (e.type == 'focus') setTimeout(function() {
+            if ($('.search').is(':focus')) return false
+            else $('#output').focus()
         }, 100)
 
     }).attr('tabindex', -1).focus()
@@ -84,31 +87,31 @@ String.prototype.truncate =
 
 function apply(n) {
 
-	if (n == 'op') {
-		op = op != true
-	} else if (n == 1 || n == 0) op = n
+    if (n == 'op') {
+        op = op != true
+    } else if (n == 1 || n == 0) op = n
 
-	if (op == 1) {
-		$('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
-			'border': 'none',
-			'background-color': '#000',
-			'color': 'rgba(255,255,255,.9)'
-		})
+    if (op == 1) {
+        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+            'border': 'none',
+            'background-color': '#000',
+            'color': 'rgba(255,255,255,.9)'
+        })
         $('#attach, .item, .item .pub').css({
-			'border-bottom':'1px solid rgba(255,255,255,.1)',
+            'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-		$('#output').removeClass('invert').addClass('opposite')
-		$('a, #air .air .pub, .acktic').css('color', '#F7426B')
-		$('.img, iframe').css('filter', 'brightness(80%)')
+        $('#output').removeClass('invert').addClass('opposite')
+        $('a, #air .air .pub, .acktic').css('color', '#F7426B')
+        $('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href','favicon/opposite.png')
-		$('#animate').attr('src', 'favicon/favico.png')
-		$('.icon').attr('src','favicon/opposite.png');
-		$('svg .ring').css('stroke','#F74268')
-		animate = 'opposite.png'
-	} else if (op == 0) {
+        $('#animate').attr('src', 'favicon/favico.png')
+        $('.icon').attr('src','favicon/opposite.png');
+        $('svg .ring').css('stroke','#F74268')
+        animate = 'opposite.png'
+    } else if (op == 0) {
         $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
@@ -126,9 +129,9 @@ function apply(n) {
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.icon').attr('src','favicon/invert.png');
-		$('svg .ring').css('stroke','#0A74DA')
+        $('svg .ring').css('stroke','#0A74DA')
         animate = 'invert.png'
-	}
+    }
 }
 
 function category(n) {
@@ -138,7 +141,7 @@ function category(n) {
     populate(n)
     precede(n)
     display('#pop:last')
-	former = 0
+    former = 0
 
 }
 
@@ -146,7 +149,7 @@ function display(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 300);
+    }, 100);
     setTimeout(function() {
         events = false
     }, 500)
@@ -158,11 +161,11 @@ function expand(n) {
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
-			item: $('#' + n).parents('.item').width() + 10,
+            item: $('#' + n).parents('.item').width() + 10,
             less: $('#' + n).width(),
             parent: $('#' + n).parent().width()
         })
-        $('#' + n).removeClass('min').addClass('full').width('95%').parent().width("95%")
+        $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
     } else if ($('#' + n).hasClass('expand full')) {
         object.forEach(function(e) {
             if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parents('.item').width(e.item)
@@ -225,7 +228,7 @@ function moment(n) {
 
 function populate(n) {
 
-	if ($('#output #pop').length > 1) $('#output').empty()
+    if ($('#output #pop').length > 1) $('#output').empty()
     if (operation == true) {
         $('#arm').remove()
         request.abort()
@@ -241,7 +244,7 @@ function populate(n) {
             else var id = menu[i].id
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-	former = 0
+    former = 0
     apply()
 
 }
@@ -274,7 +277,7 @@ function random(n) {
 
 function resolution(n) {
 
-	if ($('#' + n).attr('src')){
+    if ($('#' + n).attr('src')){
     $('#' + n).one('load', function() {
         if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
             var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
@@ -289,7 +292,7 @@ function resolution(n) {
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         $('#' + n).css('display', 'block')
     })
-	} else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
+    } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
 
 }
 
@@ -373,25 +376,22 @@ function response(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-				console.log(src)
+                console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + 
-                        "</a></div><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                        "<div id='ago'>" + dst[0] + 
-                        /* "<br>" + dst[1] + */
-                        "</div>" +
+                    html = "<div id='yt' class='item' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
-						/* "<br>" + dst[1] + */ 
-						"<br></div>" +
+                        /* "<br>" + dst[1] + */ 
+                        "<br></div>" +
                         "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
@@ -407,9 +407,14 @@ function response(n) {
             for (var i = 0; i <= quit - 1; i++) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
+            }       display('#get')
+            if ($('.search').val().length > 2) search($('.search').val())
+            else {
+                populate(designate)
+                precede(designate)
             }
-			display('#get')
-			apply()
+            display('#get')
+            apply()
         })
 }
 
@@ -426,6 +431,35 @@ function reverse(Object) {
     }
 
     return newObject
+
+}
+
+function search(n){
+
+    if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
+    if (operation == true) {
+        $('#arm').remove()
+        request.abort()
+        operation = false
+    }
+        if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
+        else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
+        else {
+            $('#output #pop').remove()
+            $('#output').append("<div id='pop'></div>")
+        }
+        for (var i = 0; i < menu.length; i++){
+            if (menu[i].cat.toLowerCase().includes($('.search').val()) || menu[i].des.toLowerCase().includes($('.search').val()) || menu[i].uri.toLowerCase().includes($('.search').val())) {
+                if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+                else var id = menu[i].id
+                $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            }
+        }
+        if (!$('#output #get').length) display('#pop:last')
+        else display('#get')
+        apply()
+        former = 0
+        events = true
 
 }
 

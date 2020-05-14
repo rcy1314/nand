@@ -1,21 +1,27 @@
+@media (max-width: 426px) {
+
+    .item { max-width: 94% !important }
+
+}
+
 @media screen and (min-width: 769px) {
 
     #wrapper {
     transform: translateX(50%);
-	margin-top: 2.5em;
+    margin-top: 2.5em;
     position: fixed;
-	display: none;
+    display: none;
     border: none;
     height: calc(100% - 2.5em);
     width: 65%;
     right: 50%;
     }
 
-	.search {
+    .search {
     transform: translateX(-50%);
     position: absolute;
     left: 50%;
-	}
+    }
 
     .item { max-width: 93.5% !important }
 
@@ -30,9 +36,9 @@
 
     ::-webkit-scrollbar { width: 5px }
 
-	#get { padding-top: 2em }
+    #get { padding-top: 1.05em }
  
-	.img { margin-bottom: .5em }
+    .img { margin-bottom: .5em }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
 
@@ -57,32 +63,41 @@
     height: 100%;
     width: 100%;
     margin: 0;
-	bottom: 0;
+    bottom: 0;
     right: 0;
     left: 0;
     top: 0;
     }
-	#attach {
+    #attach {
     position: fixed;
     height: 2.5em;
-	width: 100%;
-	z-index: 2;
-	}
-    .acktic, .category {
+    width: 100%;
+    z-index: 2;
+    }
+    .category {
     display: inline-block;
-	padding-right: .75em;
-	padding-left: .75em;
+    padding-right: .4em;
     width: fit-content;
     text-align: center;
+    padding-left: .4em;
     padding-top: 2em;
     font-size: 9px;
     height: 2.3em;
     float: right;
     }
-    .acktic {
+    .search {
+    border-color: rgba(0, 0, 0, .15);
+    color: rgba(128,128,128,1);
+    border: 1px solid #cdcdcd;
     position: absolute;
-    left: .5em;
-    }
+    padding-left: 2px;
+    margin-left: 5px;
+    font-size: 10px;
+    outline: none;
+    display: none;
+    width: 14em;
+    top: 1.5em;
+    }   
     #arm {
     transform: translate(50%, 50%);
     position: absolute;
@@ -92,20 +107,20 @@
     .icon, .home, svg, svg .ring {
     transform: translateX(-50%);
     position: absolute;
-	height: 48px;
-	width: 48px;
+    height: 48px;
+    width: 48px;
     bottom: 0em;
     left: 50%;
     }
- 	svg .ring {
-	transform-origin: 50% 50%;
-	transform: rotate(90deg);
+    svg .ring {
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
     stroke-dashoffset: 131;
     stroke-dasharray: 131;
     fill: transparent;
     stroke-width: 1px;
-	}
-	svg { z-index: 2 }
+    }
+    svg { z-index: 2 }
     #output {
     -ms-overflow-style:-ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
@@ -115,37 +130,37 @@
     overflow-x: hidden;
     overflow: auto;
     }
-	#pop { 
-	padding-bottom: 2em;
-	padding-top: 1em;
-	}
-	#air { padding-top: 3em }
-    .pop, .air {
-	margin-left: -1em;
-    font-size: 10px;
-	padding: 3em;
+    #pop { 
+    padding-bottom: 2em;
+    padding-top: 1em;
     }
-	.pop a, .air a, .pub {
+    #air { padding-top: 3em }
+    .pop, .air {
+    margin-left: -1em;
+    font-size: 10px;
+    padding: 3em;
+    }
+    .pop a, .air a, .pub {
     text-transform: capitalize;
     font-size: 14px;
-	}
+    }
     .pub {
     letter-spacing: 1px;
-	padding-bottom: 5px;
-	line-height: 1;
+    padding-bottom: 5px;
+    line-height: 1;
     }
     .item {
-	margin-bottom: 2em;
-	display: table;
-	padding: .5em;
+    margin-bottom: 2em;
+    display: table;
+    padding: .5em;
     }
     #ago, .ago, .attr {
-	text-transform: uppercase;
-	color: rgba(128,128,128,1);
+    text-transform: uppercase;
+    color: rgba(128,128,128,1);
     padding-bottom: 5px;
-	margin-top: 5px;
+    margin-top: 5px;
     cursor: default;
-	line-height: .5;
+    line-height: .5;
     font-size: 9px;
     }
     .views {
@@ -154,8 +169,8 @@
     }
     #yt {
     padding-bottom: 2.2em;
-    margin-bottom: .5em;
-    margin-left: 1px;
+    margin-bottom: -1.5em;
+    margin-top: 2em;
     }
     .yt {
     -webkit-overflow-scrolling: touch;

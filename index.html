@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link id='favicon' rel="icon" type="image/png" href="favicon/invert.png">
     <link rel="stylesheet" type="text/css" href="acktic.css">
@@ -13,25 +13,25 @@
     <div id='attach'>
         <div id='Youtube' class='category' onclick='category(this.id)'>Youtube</div>
         <div id='World' class='category' onclick='category(this.id)'>World</div>
-        <div id='Technology' class='category' onclick='category(this.id)'>Tech</div>
+        <div id='Science' class='category' onclick='category(this.id)'>Science</div>
         <div id='Sport' class='category' onclick='category(this.id)'>Sport</div>
         <div id='Social' class='category' onclick='category(this.id)'>Social</div>
         <div id='Media' class='category' onclick='category(this.id)'>Media</div>
         <div id='News' class='category' onclick='category(this.id)'>News</div>
-	    <div class='acktic' onclick="external('https://github.com/acktic/acktic.github.io')">github.io</div>
+        <div><input type='text' class='search'></div>
     </div>
 <div id='wrapper'>
-	<div id='container'>
-        	<div id='output'></div>
-	<div class="home">
-    	<svg>
+    <div id='container'>
+            <div id='output'></div>
+    <div class="home">
+        <svg>
             <circle cx="24" cy="24" r="21" class="ring" onclick='category(designate)'>
-        	<img class='icon'>
-    	</svg>
-	</div>
-        	<div id='random' onclick='random(designate)'></div>
-        	<div id='apply' onclick="apply('op')"></div>
-	</div>
+            <img class='icon'>
+        </svg>
+    </div>
+            <div id='random' onclick='random(designate)'></div>
+            <div id='apply' onclick="apply('op')"></div>
+    </div>
 </div>
 </body>
 </html>
