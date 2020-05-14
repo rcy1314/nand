@@ -383,8 +383,10 @@ function response(n) {
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
-                        "<div id='ago'>" + dst[0] + "<br>" + dst[1] + "</div>" +
+                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + 
+                        "<div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
+                        "<div id='ago'>" + dst[0] +
+                        /* "<br>" + dst[1] + "</div>" + */
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
