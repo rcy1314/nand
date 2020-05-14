@@ -36,16 +36,20 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-    $('.search').on('keyup focus', function () {
+    $('.search').on('keyup focus', function (e) {
         if ($('.search').val().length <= 2) return false
         else search($('.search').val())
+        e.PreventDefault()
     })
 
     $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
 
-        if (e.type == 'scroll' || e.type == 'touchmove') {
+        if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
             updateProgress(n);
+        }
+
+        if (e.type == 'scroll' || e.type == 'touchmove') {
             /* manifest($(this).scrollTop()) */
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
