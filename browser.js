@@ -162,7 +162,7 @@ function expand(n) {
             less: $('#' + n).width(),
             parent: $('#' + n).parent().width()
         })
-        $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
+        $('#' + n).removeClass('min').addClass('full').width('95%').parent().width("95%")
     } else if ($('#' + n).hasClass('expand full')) {
         object.forEach(function(e) {
             if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parents('.item').width(e.item)
