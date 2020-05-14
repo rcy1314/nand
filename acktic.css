@@ -155,6 +155,7 @@
     #yt {
     padding-bottom: 2.2em;
     margin-bottom: .5em;
+    margin-left: 1px;
     }
     .yt {
     -webkit-overflow-scrolling: touch;
