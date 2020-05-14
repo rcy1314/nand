@@ -37,12 +37,19 @@ $(document).ready(function() {
     })
 
     $('.search').on('keyup focus', function (e) {
-        if ($('.search').val().length <= 2) return false
+		if (e.type == 'focus') return false
+		if ($('.search').val().length == 0) {
+			$('#output').empty()
+		    populate(designate)
+		    precede(designate)
+		    display('#pop')
+		}
+        else if ($('.search').val().length <= 2) return false
         else search($('.search').val())
         e.PreventDefault()
     })
 
-    $('body, #wrapper, #container, #output').on('scroll touchmove focus', function(e) {
+    $('body, #output').on('scroll touchmove focusout', function(e) {
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
@@ -56,7 +63,7 @@ $(document).ready(function() {
                 if (operation == false && $('.search').val().length > 2) {
                     populate(designate)
                 }
-        } else if (e.type == 'focus') setTimeout(function() {
+        } else if (e.type == 'focusout') setTimeout(function() {
             if ($('.search').is(':focus')) return false
             else $('#output').focus()
         }, 100)
@@ -97,18 +104,18 @@ function apply(n) {
 
     if (op == 1) {
         $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
-            'border': 'none',
+            'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
-            'color': 'rgba(255,255,255,.9)'
+            'border': 'none'
         })
-        $('#attach, .item, .item .pub').css({
-            'border-bottom':'1px solid rgba(255,255,255,.1)',
+        $('#attach, .search, .item, .item .pub').css({
+            'border':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
-        $('a, #air .air .pub, .acktic').css('color', '#F7426B')
+        $('a, #air .air .pub, .repo').css('color', '#F7426B')
         $('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href','favicon/opposite.png')
         $('#animate').attr('src', 'favicon/favico.png')
@@ -116,7 +123,7 @@ function apply(n) {
         $('svg .ring').css('stroke','#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
+        $('html, body, #wrapper, #container, .search, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
             'background-color': '#fafafa',
             'color': 'rgba(0,0,0,.7)',
             'border': 'none'
@@ -128,7 +135,7 @@ function apply(n) {
         })
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-        $('a, #air .air .pub, .acktic').css('color', '#337ab7')
+        $('a, #air .air .pub, .repo').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -140,11 +147,11 @@ function apply(n) {
 
 function category(n) {
     
+    $('#output').empty()
     events = true
-    $('#pop, #air, #arm, #get').remove()
     populate(n)
     precede(n)
-    display('#pop:last')
+    display('#pop')
     former = 0
 
 }
@@ -310,7 +317,7 @@ function response(n) {
     events = true
     operation = true
     var pub = []
-    $('#pop, #air, #arm, #get').remove()
+    $('#output').empty()
     if (designate == 'Youtube') {
         var quit = 5
     } else {
