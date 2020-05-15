@@ -26,11 +26,12 @@ $(document).ready(function() {
     $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
 
     $('.category').on('touch click mouseenter mouseout', function (e) {
-            if (e.type == 'touch' || 'click'){
-                $('.category').css('border-bottom','none')
-                $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
-            }
+    	if (e.type == 'touch' || 'click'){
+            $('.category').css('border-bottom','none')
+            $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
+        }
     })
+
     $('#attach').on('mouseout', function () { 
                 $('.category').css('border-bottom','none')
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
@@ -473,24 +474,24 @@ function search(k, n, o, p){
         request.abort()
         operation = false
     }
-        if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><br></div>")
-        else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><br></div>")
-        else {
-            $('#output #pop').remove()
-            $('#output').append("<div id='pop'><br></div>")
+    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><br></div>")
+    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><br></div>")
+    else {
+        $('#output #pop').remove()
+        $('#output').append("<div id='pop'><br></div>")
+    }
+    for (var i = 0; i < menu.length; i++){
+        if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
+            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
+            else var id = menu[i].id
+            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-        for (var i = 0; i < menu.length; i++){
-            if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
-                if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-                else var id = menu[i].id
-                $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-            }
-        }
-        if (!$('#output #get').length) display('#pop:last')
-        else display('#get')
-        apply()
-        former = 0
-        events = true
+    }
+    if (!$('#output #get').length) display('#pop:last')
+    else display('#get')
+    apply()
+    former = 0
+    events = true
 
 }
 
