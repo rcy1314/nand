@@ -4,7 +4,7 @@
 
 	.github { z-index: -1 }
 
-	input { width: 7em }
+	input { width: 9em }
 
 }
 
@@ -77,18 +77,22 @@
     width: 100%;
     z-index: 2;
     }
+	.attach {
+	height: 24px;
+	width: 24px;
+	}
 	.github {
 	position: absolute;
 	z-index: -1;
 	left: 2em;
 	}
     .github, .attach {
+	padding-bottom: .5em;
     display: inline-block;
     padding-right: .4em;
-    width: fit-content;
     text-align: center;
     padding-left: .4em;
-    padding-top: 1.7em;
+    padding-top: 1.2em;
     font-size: 10px;
     height: 2.3em;
     float: right;
