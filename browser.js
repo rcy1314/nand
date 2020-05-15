@@ -435,9 +435,9 @@ function response(n) {
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
 			if ($('.search').val().length > 2) {
-				var opening = $(this).val().toLowerCase().match(/^\w+/g)
-				var closing = $(this).val().toLowerCase().match(/\w+$/g)
-				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'))
+				var opening = $('.search').val().toLowerCase().match(/^\w+/g)
+				var closing = $('.search').val().toLowerCase().match(/\w+$/g)
+				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
 				populate(designate)
 				precede(designate)
 			} else {
