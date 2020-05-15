@@ -36,10 +36,10 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-    $('.search').on('keyup focus', function (e) {
+    $('.search').on('keyup click focusin', function (e) {
+	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
 		if (e.keyCode == 8 && $(this).val() == '') return false
-		if (e.type == 'focus') return false
 		if ($(this).val().length <= 1) {
 			$('#output').empty()
 		    populate(designate)
@@ -52,7 +52,9 @@ $(document).ready(function() {
 	}
     })
 
-    $('body, #output').on('scroll touchmove focusout', function(e) {
+    $('body, #output').on('scroll touchmove mouseover', function(e) {
+
+		if (e.type == 'mouseover') $('#output').attr('tabindex', -1).focus()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
@@ -66,12 +68,9 @@ $(document).ready(function() {
                 if (operation == false && $('.search').val().length > 2) {
                     populate(designate)
                 }
-        } else if (e.type == 'focusout') setTimeout(function() {
-            if ($('.search').is(':focus')) return false
-            else $('#output').focus()
-        }, 100)
+        }
 
-    }).attr('tabindex', -1).focus()
+    }).attr('tabindex', -1)
 
 }).on('touch click', 'a', function(e) {
 
