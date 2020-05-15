@@ -41,8 +41,6 @@
 
     ::-webkit-scrollbar { width: 5px }
 
-    #get { padding-top: 1.05em }
- 
     .img { margin-bottom: .5em }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
@@ -136,11 +134,6 @@
     overflow-x: hidden;
     overflow: auto;
     }
-    #pop { 
-    padding-bottom: 2em;
-    padding-top: 1em;
-    }
-    #air { padding-top: 3em }
     .pop, .air {
     margin-left: -1em;
     font-size: 10px;
