@@ -2,6 +2,8 @@
 
     .item { max-width: 94% !important }
 
+	.search { width: 8em }
+
 	.repo { z-index: -1 }
 
 }
@@ -22,6 +24,7 @@
     .search {
     transform: translateX(-50%);
     position: absolute;
+	width: 14em;
     left: 50%;
     }
 
@@ -92,16 +95,13 @@
     float: right;
     }
     .search {
-    border-color: rgba(0, 0, 0, .15);
     color: rgba(128,128,128,1);
-    border: 1px solid #cdcdcd;
     position: absolute;
     padding-left: 2px;
     margin-left: 5px;
     font-size: 10px;
     outline: none;
     display: none;
-    width: 8em;
     top: 1.5em;
     }   
     #arm {
