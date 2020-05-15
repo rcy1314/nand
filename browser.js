@@ -11,7 +11,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper, .search').css('display', 'block')
+    $('#wrapper, input[type=text]').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
-    $('.search').on('keyup click focusin', function (e) {
+    $('input[type=text]').on('keyup click focusin', function (e) {
 	var opening = $(this).val().toLowerCase().match(/^\w+/g)
 	var closing = $(this).val().toLowerCase().match(/\w+$/g)
 	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
@@ -48,7 +48,7 @@ $(document).ready(function() {
 		    precede(designate)
 		    display('#pop')
 		}
-        else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+        else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase(), opening + '.+' + closing, closing + '.+' + opening)
         e.preventDefault()
 	}
     })
@@ -66,7 +66,7 @@ $(document).ready(function() {
             /* manifest($(this).scrollTop()) */
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
-                if (operation == false && $('.search').val().length > 2) {
+                if (operation == false && $('input[type=text]').val().length > 2) {
                     populate(designate)
                 }
         }
@@ -116,14 +116,14 @@ function apply(n) {
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
-		$('.search').css({
+		$('input[type=text]').css({
 			'border':'1px solid rgba(255,255,255,.1)',
 			'background-color':'#000',
 			'color':'rgba(255,255,255,.9)'
 		})
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
-        $('a, #air .air .pub, .repo').css('color', '#F7426B')
+        $('a, #air .air .pub, .github').css('color', '#F7426B')
         $('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href','favicon/opposite.png')
         $('#animate').attr('src', 'favicon/favico.png')
@@ -141,14 +141,14 @@ function apply(n) {
             'background-color':'#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-		$('.search').css({
+		$('input[type=text]').css({
 			'border':'1px solid #cdcdcd',
 			'background-color':'#fafafa',
 			'color':'rgba(0,0,0,.7)'
 		})
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-        $('a, #air .air .pub, .repo').css('color', '#337ab7')
+        $('a, #air .air .pub, .github').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -311,10 +311,10 @@ function resolution(n) {
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
         } else {
             var expand = '';
-            $('#' + n).width(Math.random() * (65 - 50 + 1) + 50 + '%').parent().width($('#' + n).width())
+            $('#' + n).width(Math.random() * (65 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
         }
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-        $('#' + n).css('display', 'block')
+ 		$('#' + n).css('display', 'block')
     })
     } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
 
@@ -411,13 +411,13 @@ function response(n) {
                         "<div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + "</div>" + */
-                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        "</div><div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + */ 
-                        "<br></div>" +
+                        "</div>" +
                         "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
                         "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
@@ -434,10 +434,10 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
-			if ($('.search').val().length > 2) {
-				var opening = $('.search').val().toLowerCase().match(/^\w+/g)
-				var closing = $('.search').val().toLowerCase().match(/\w+$/g)
-				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+			if ($('input[type=text').val().length > 2) {
+				var opening = $('input[type=text]').val().toLowerCase().match(/^\w+/g)
+				var closing = $('input[type=text]').val().toLowerCase().match(/\w+$/g)
+				search($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase(), opening + '.+' + closing, closing + '.+' + opening)
 				populate(designate)
 				precede(designate)
 			} else {
