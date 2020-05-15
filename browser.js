@@ -41,7 +41,7 @@ $(document).ready(function() {
 	var closing = $(this).val().toLowerCase().match(/\w+$/g)
 	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-		if (e.keyCode == 8 && $(this).val() == '') return false
+		if (e.keyCode == 8 && $(this).val() == '' && $('#output #air').length) return false
 		else if ($(this).val().length <= 1) {
 			$('#output').empty()
 		    populate(designate)
@@ -261,7 +261,7 @@ function populate(n) {
     document.title = n
     if (n != designate) former = 0
     designate = n
-    $('#output').append("<div id='pop'></div>")
+    $('#output').append("<div id='pop'><br></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
@@ -276,7 +276,7 @@ function populate(n) {
 function precede(n) {
 
     reverse(menu.reverse())
-    $('#output').prepend("<div id='air'></div>")
+    $('#output').prepend("<div id='air'><br></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
             if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
@@ -473,11 +473,11 @@ function search(k, n, o, p){
         request.abort()
         operation = false
     }
-        if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-        else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
+        if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><br></div>")
+        else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><br></div>")
         else {
             $('#output #pop').remove()
-            $('#output').append("<div id='pop'></div>")
+            $('#output').append("<div id='pop'><br></div>")
         }
         for (var i = 0; i < menu.length; i++){
             if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
