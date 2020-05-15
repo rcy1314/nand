@@ -438,7 +438,7 @@ function xmlResponse(n) {
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text().length > 0) {
-                        var dst = uncordinatedTimeZone($(this).find('pubDate').text());
+                        var dst = uncoordinatedTimeZone($(this).find('pubDate').text());
                         var gen = new Date($(this).find('pubDate').text()).getTime()
                     } else {
                         var dst = uncoordinatedTimeZone($(this).find('dc\\:date, date').text());
