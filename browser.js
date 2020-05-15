@@ -42,13 +42,12 @@ $(document).ready(function() {
 	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
 		if (e.keyCode == 8 && $(this).val() == '') return false
-		if ($(this).val().length <= 1) {
+		else if ($(this).val().length <= 1) {
 			$('#output').empty()
 		    populate(designate)
 		    precede(designate)
 		    display('#pop')
 		}
-        else if ($(this).val().length <= 1) return false
         else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
         e.preventDefault()
 	}
@@ -438,7 +437,7 @@ function response(n) {
 			if ($('.search').val().length > 2) {
 				var opening = $(this).val().toLowerCase().match(/^\w+/g)
 				var closing = $(this).val().toLowerCase().match(/\w+$/g)
-				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'))
 				populate(designate)
 				precede(designate)
 			} else {
