@@ -37,16 +37,16 @@ $(document).ready(function() {
     })
 
     $('.search').on('keyup focus', function (e) {
-	if (e.keyCode <= 90 && e.keyCode >= 48) {
+	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
 		if (e.type == 'focus') return false
-		if ($('.search').val().length <= 1) {
+		if ($(this).val().length <= 1) {
 			$('#output').empty()
 		    populate(designate)
 		    precede(designate)
 		    display('#pop')
 		}
-        else if ($('.search').val().length <= 1) return false
-        else search($('.search').val().toLowerCase())
+        else if ($(this).val().length <= 1) return false
+        else search($(this).val().toLowerCase().replace(/ /g, '.+\s.+'))
         e.preventDefault()
 	}
     })
@@ -474,7 +474,7 @@ function search(n){
             $('#output').append("<div id='pop'></div>")
         }
         for (var i = 0; i < menu.length; i++){
-            if (menu[i].cat.toLowerCase().includes(n) || menu[i].des.toLowerCase().includes(n) || menu[i].uri.toLowerCase().includes(n)) {
+            if (menu[i].cat.toLowerCase().includes(n) || menu[i].des.toLowerCase().replace(/ /g, '.+\s.+').match(n) || menu[i].uri.toLowerCase().includes(n)) {
                 if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
                 else var id = menu[i].id
                 $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
