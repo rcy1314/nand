@@ -346,7 +346,7 @@ var menu=[
 {id:"Reddit",cat:"Social",des:"Hacker News subreddit A mirror of Hacker News' best submissions.",uri:"https://reddit.com/r/hackernews/.rss",ext:"https://reddit.com/r/HackerNews"},
 {id:"Reddit",cat:"Social",des:"Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",uri:"https://reddit.com/r/hardware/.rss",ext:"https://reddit.com/r/Hardware"},
 {id:"Reddit",cat:"Social",des:"iOS subreddit for everything Apple iOS.",uri:"https://reddit.com/r/ios/.rss",ext:"https://reddit.com/r/iOS"},
-{id:"Reddit",cat:"Social",des:"iPad subreddit Information, discussion, news, iPadOS, hardware, and more.",uri:"https://reddit.com/r/ipad/.rss",ext:"https://reddit.com/r/ipad"},
+{id:"Reddit",cat:"Social",des:"iPad subreddit Information, discussion, news, iPadOS, hardware, and more about Apple's product.",uri:"https://reddit.com/r/ipad/.rss",ext:"https://reddit.com/r/ipad"},
 {id:"Reddit",cat:"Social",des:"Javascript subreddit all about the JavaScript Programming Language.",uri:"https://reddit.com/r/javascript/.rss",ext:"https://reddit.com/r/Javascript"},
 {id:"Reddit",cat:"Social",des:"Linux subreddit discusses topics evolving around Linux.",uri:"https://reddit.com/r/linux/.rss",ext:"https://reddit.com/r/Linux"},
 {id:"Reddit",cat:"Social",des:"Los Angeles subreddit The international epicenter of entertainment.",uri:"https://reddit.com/r/LosAngeles/.rss",ext:"https://reddit.com/r/LosAngeles"},
