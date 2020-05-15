@@ -433,12 +433,15 @@ function response(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
             }
-			display('#get')
-			if ($('.search').val().length > 2) search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'))
-			else {
+			if ($('.search').val().length > 2) {
+				search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'))
+				populate(designate)
+				precede(designate)
+			} else {
     			populate(designate)
     			precede(designate)
 			}
+			display('#get')
 			apply()
         })
 }
