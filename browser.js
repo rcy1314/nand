@@ -46,7 +46,7 @@ $(document).ready(function() {
 		closing = $(this).val().toLowerCase().match(/\w+$/g)
 		if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 		if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-			if (e.keyCode == 8 && $(this).val() == '' && $('#output #air').length) return false
+			if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
 			else if ($(this).val().length <= 1) {
 				$('#output').empty()
 		    	populateResponse(designate)
@@ -68,7 +68,7 @@ $(document).ready(function() {
         }
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            manifest($(this).scrollTop())
+            /* manifest($(this).scrollTop()) */
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
@@ -105,19 +105,19 @@ function applyOpposite(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, #attach, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
         })
-        $('#attach, .item, .item .pub').css({
+        $('.item, .item .pub').css({
             'border-bottom':'1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
 		$('input[type=text]').css({
 			'border':'none',
-			'background-color':'#0a0a0a',
+			'background-color':'#000',
 			'color':'rgba(255,255,255,.7)'
 		})
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
