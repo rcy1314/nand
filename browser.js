@@ -232,7 +232,7 @@ function imageResolution(n) {
             $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
         } else {
             var expand = '';
-            $('#' + n).width(Math.random() * (65 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
+            $('#' + n).width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
         }
         $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
  		$('#' + n).css('display', 'block')
