@@ -38,6 +38,7 @@ $(document).ready(function() {
 
     $('.search').on('keyup focus', function (e) {
 	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
+		if (e.keyCode == 8 && $(this).val() == '') return false
 		if (e.type == 'focus') return false
 		if ($(this).val().length <= 1) {
 			$('#output').empty()
