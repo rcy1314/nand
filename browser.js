@@ -200,11 +200,11 @@ function filterResponse(k, n, o, p){
         operation = false
         request.abort()
     }
-    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><div class='pop'></div></div>")
-    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><div class='pop'></div></div>")
+    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
+    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
     else {
         $('#output #pop').remove()
-        $('#output').append("<div id='pop'><div class='pop'></div></div>")
+        $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++){
         if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
@@ -298,13 +298,12 @@ function populateResponse(n) {
     document.title = n
     if (n != designate) former = 0
     designate = n
-    $('#output').append("<div id='pop'><div class='pop'></div></div>")
+    $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
 			var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-	$('#pop').append("<div class='pop'></div>")
     applyOpposite()
     former = 0
 
@@ -320,7 +319,6 @@ function precedeResponse(n) {
             $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
-	$('#air').prepend("<div class='air'></div>")
     $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
     applyOpposite()
 

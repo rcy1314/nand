@@ -135,8 +135,12 @@
     overflow-x: hidden;
     overflow: auto;
     }
+	#pop, #air {
+	padding-bottom: 2em;
+	margin-left: 2px;
+	padding-top: 2em;
+	}
     .pop, .air {
-    margin-left: -1em;
     font-size: 10px;
     padding: 3em;
     }
