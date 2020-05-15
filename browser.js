@@ -41,14 +41,15 @@ $(document).ready(function() {
 	var closing = $(this).val().toLowerCase().match(/\w+$/g)
 	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-		if (e.keyCode == 8 && $(this).val() == '' || $(this).val().length <=1 || e.keyCode == 32) return false
+		if (e.keyCode == 8 && $(this).val() == '') return false
 		if ($(this).val().length <= 1) {
 			$('#output').empty()
 		    populate(designate)
 		    precede(designate)
 		    display('#pop')
 		}
-        else search($(this).val().toLowerCase().replace(/ /g, ''), opening + '.+' + closing, closing + '.+' + opening)
+        else if ($(this).val().length <= 1) return false
+        else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
         e.preventDefault()
 	}
     })
@@ -463,7 +464,7 @@ function reverse(Object) {
 
 }
 
-function search(k, n, o){
+function search(k, n, o, p){
 
     if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
     if (operation == true) {
@@ -478,7 +479,7 @@ function search(k, n, o){
             $('#output').append("<div id='pop'></div>")
         }
         for (var i = 0; i < menu.length; i++){
-            if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].uri.toLowerCase().match(k) || menu[i].uri.toLowerCase().match(n)) {
+            if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
                 if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
                 else var id = menu[i].id
                 $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
