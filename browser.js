@@ -46,7 +46,7 @@ $(document).ready(function() {
 		    display('#pop')
 		}
         else if ($(this).val().length <= 1) return false
-        else search($(this).val().toLowerCase().replace(/ /g, '.+\s.+'))
+        else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'))
         e.preventDefault()
 	}
     })
@@ -459,7 +459,7 @@ function reverse(Object) {
 
 }
 
-function search(n){
+function search(k, n){
 
     if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
     if (operation == true) {
@@ -474,7 +474,7 @@ function search(n){
             $('#output').append("<div id='pop'></div>")
         }
         for (var i = 0; i < menu.length; i++){
-            if (menu[i].cat.toLowerCase().includes(n) || menu[i].des.toLowerCase().replace(/ /g, '.+\s.+').match(n) || menu[i].uri.toLowerCase().includes(n)) {
+            if (menu[i].des.toLowerCase().match(n) || menu[i].uri.toLowerCase().match(k) || menu[i].uri.toLowerCase().match(n)) {
                 if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
                 else var id = menu[i].id
                 $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
