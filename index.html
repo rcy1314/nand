@@ -11,27 +11,27 @@
   </head>
 <body>
     <div id='attach'>
-        <div id='Youtube' class='category' onclick='category(this.id)'>Youtube</div>
-        <div id='World' class='category' onclick='category(this.id)'>World</div>
-        <div id='Technology' class='category' onclick='category(this.id)'>Tech</div>
-        <div id='Sport' class='category' onclick='category(this.id)'>Sport</div>
-        <div id='Social' class='category' onclick='category(this.id)'>Social</div>
-        <div id='Media' class='category' onclick='category(this.id)'>Media</div>
-        <div id='News' class='category' onclick='category(this.id)'>News</div>
+        <div id='Youtube' class='attach' onclick='refreshResponse(this.id)'>Youtube</div>
+        <div id='World' class='attach' onclick='refreshResponse(this.id)'>World</div>
+        <div id='Technology' class='attach' onclick='refreshResponse(this.id)'>Tech</div>
+        <div id='Sport' class='attach' onclick='refreshResponse(this.id)'>Sport</div>
+        <div id='Social' class='attach' onclick='refreshResponse(this.id)'>Social</div>
+        <div id='Media' class='attach' onclick='refreshResponse(this.id)'>Media</div>
+        <div id='News' class='attach' onclick='refreshResponse(this.id)'>News</div>
         <input type='text' placeholder='search'>
-		<div class='github' onclick="external('https://github.com/acktic/acktic.github.io')">github.io</div>
+		<a class='github' onclick="externalURL('https://github.com/acktic/acktic.github.io')">rss-browser</a>
     </div>
 <div id='wrapper'>
     <div id='container'>
             <div id='output'></div>
-    <div class="home">
+    <div>
         <svg>
-            <circle cx="24" cy="24" r="21" class="ring" onclick='category(designate)'>
+            <circle cx='24' cy='24' r='21' class='ring' onclick='refreshResponse(designate)'>
             <img class='icon'>
         </svg>
     </div>
-            <div id='random' onclick='random(designate)'></div>
-            <div id='apply' onclick="apply('op')"></div>
+            <div id='random' onclick='randomResponse(designate)'></div>
+            <div id='apply' onclick="applyOpposite('op')"></div>
     </div>
 </div>
 </body>

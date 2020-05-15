@@ -1,24 +1,25 @@
 # RSS-Browser
 
+  - Really Simple Syndicate.
   - Cross Device Browser.
-
+  
 
 ### Features
 
-* Image Parsing
+* Random
 * XML Examples
-* Random in Category
-* Private Proxy Requests
-* Inline Image Expansion
-* Opposite Visual Scheme
+* Image Expand
+* Opposite Visual
+* Private Requests
 
 
 ### Dependencies
 
-Browser Tested on
-* Apple Safari
+Tested on
+* Apple Safari iOS (9+)
 * Mozilla Firefox
 * Google Chrome
+* LG Web OS
 
 
 ### Menu Array
@@ -38,9 +39,9 @@ Opposite
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/01/8197227400950.png'></p>
  
  
-### CORS Proxy
+### CORS Anywhere
 
-Modern Browsers Require CORS Headers for Cross Site Requests this is circumvented with [cors-anywhere](https://github.com/Rob--W/cors-anywhere "cors-anywhere").
+Modern Browsers Require CORS Headers to Cross-Site Request [cors-anywhere](https://github.com/Rob--W/cors-anywhere "cors-anywhere").
 
 ### Development
 

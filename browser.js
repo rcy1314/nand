@@ -2,6 +2,8 @@ var op = 0
 var animate
 var request
 var ost = 0
+var closing
+var opening
 var former = 0
 var object = []
 var events = true
@@ -11,47 +13,49 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper, input[type=text]').css('display', 'block')
+    $('#wrapper, input[type=text], #output').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
-        apply(1)
+        applyOpposite(1)
 
-    } else apply(op)
+    } else applyOpposite(0)
 
-    populate(designate)
-    precede(designate)
-    display('#pop')
+    populateResponse(designate)
+    precedeResponse(designate)
+    displayAnimate('#pop')
 
-    $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5')
-
-    $('.category').on('touch click mouseenter mouseout', function (e) {
-    	if (e.type == 'touch' || 'click'){
-            $('.category').css('border-bottom','none')
-            $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
-        }
-    })
+    $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
 
     $('#attach').on('mouseout', function () { 
                 $('.category').css('border-bottom','none')
                 $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
     })
 
+    $('.attach').on('touch click', function (e) {
+    	if (e.type == 'touch' || e.type == 'click'){
+            $('.attach').css('border-bottom','none')
+            $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
+			refreshResponse($(this).attr('id'))
+        }
+    })
+
     $('input[type=text]').on('keyup click focusin', function (e) {
-	var opening = $(this).val().toLowerCase().match(/^\w+/g)
-	var closing = $(this).val().toLowerCase().match(/\w+$/g)
-	if (e.type == 'click' || e.type == 'focusin') $(this).val('')
-	if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-		if (e.keyCode == 8 && $(this).val() == '' && $('#output #air').length) return false
-		else if ($(this).val().length <= 1) {
-			$('#output').empty()
-		    populate(designate)
-		    precede(designate)
-		    display('#pop')
+		events = true
+		opening = $(this).val().toLowerCase().match(/^\w+/g)
+		closing = $(this).val().toLowerCase().match(/\w+$/g)
+		if (e.type == 'click' || e.type == 'focusin') $(this).val('')
+		if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
+			if (e.keyCode == 8 && $(this).val() == '' && $('#output #air').length) return false
+			else if ($(this).val().length <= 1) {
+				$('#output').empty()
+		    	populateResponse(designate)
+		    	precedeResponse(designate)
+		    	displayAnimate('#pop')
+			}
+        	else filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+        	e.preventDefault()
 		}
-        else search($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase(), opening + '.+' + closing, closing + '.+' + opening)
-        e.preventDefault()
-	}
     })
 
     $('body, #output').on('scroll touchmove mouseover', function(e) {
@@ -64,25 +68,25 @@ $(document).ready(function() {
         }
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            /* manifest($(this).scrollTop()) */
+            manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
-                    populate(designate)
+                    populateResponse(designate)
                 }
         }
 
-    }).attr('tabindex', -1)
+    }).attr('tabindex', -1).focus()
 
 }).on('touch click', 'a', function(e) {
 
-    external($(this).attr('ext'))
+    externalURL($(this).attr('ext'))
 
     e.stopPropagation()
 
 }).on('touch click', '.pop, .air', function(e) {
 
-    response($(this).attr('get'))
+    xmlResponse($(this).attr('get'))
 
 })
 
@@ -94,13 +98,7 @@ String.prototype.truncate =
         return (e ? subString.substr(0, subString.lastIndexOf(' ')) : subString) + "&hellip;"
     }
 
-    function updateProgress(n){
-        $('svg circle').css({
-            "stroke-dashoffset" : 131 - (131 * n)
-        });
-    }
-
-function apply(n) {
+function applyOpposite(n) {
 
     if (n == 'op') {
         op = op != true
@@ -124,7 +122,7 @@ function apply(n) {
 		})
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
-        $('a, #air .air .pub, .github').css('color', '#F7426B')
+        $('a, #air .air .pub').css('color', '#F7426B')
         $('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href','favicon/opposite.png')
         $('#animate').attr('src', 'favicon/favico.png')
@@ -149,7 +147,7 @@ function apply(n) {
 		})
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-        $('a, #air .air .pub, .github').css('color', '#337ab7')
+        $('a, #air .air .pub').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href','favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -159,18 +157,7 @@ function apply(n) {
     }
 }
 
-function category(n) {
-    
-    $('#output').empty()
-    events = true
-    populate(n)
-    precede(n)
-    display('#pop')
-    former = 0
-
-}
-
-function display(n) {
+function displayAnimate(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
@@ -181,7 +168,7 @@ function display(n) {
 
 }
 
-function expand(n) {
+function expandImage(n) {
 
     if ($('#' + n).hasClass('expand min')) {
         object.push({
@@ -199,9 +186,58 @@ function expand(n) {
 
 }
 
-function external(n) {
+function externalURL(n) {
 
     window.open(n, '_blank')
+
+}
+
+function filterResponse(k, n, o, p){
+
+    if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
+    if (operation == true) {
+        $('#arm').remove()
+        operation = false
+        request.abort()
+    }
+    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><div class='pop'></div></div>")
+    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><div class='pop'></div></div>")
+    else {
+        $('#output #pop').remove()
+        $('#output').append("<div id='pop'><div class='pop'></div></div>")
+    }
+    for (var i = 0; i < menu.length; i++){
+        if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
+			var id = sanitizeID(menu[i].id, menu[i].ext)
+            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+        }
+    }
+    if (!$('#output #get').length) displayAnimate('#pop:last')
+    else displayAnimate('#get')
+    applyOpposite()
+    events = true
+    former = 0
+
+}
+
+function imageResolution(n) {
+
+    if ($('#' + n).attr('src')){
+    $('#' + n).one('load', function() {
+        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
+            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 20)
+        } else if ($('#' + n).get(0).naturalWidth > minimum) {
+            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
+        } else {
+            var expand = '';
+            $('#' + n).width(Math.random() * (65 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
+        }
+        $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+ 		$('#' + n).css('display', 'block')
+    })
+    } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
 
 }
 
@@ -231,7 +267,7 @@ function manifest(n) {
 
 }
 
-function moment(n) {
+function momentTimeStamp(n) {
 
     var age = new Date()
     var dis = age.getTime() - new Date(n).getTime()
@@ -251,7 +287,7 @@ function moment(n) {
 
 }
 
-function populate(n) {
+function populateResponse(n) {
 
     if ($('#output #pop').length > 1) $('#output').empty()
     if (operation == true) {
@@ -262,69 +298,109 @@ function populate(n) {
     document.title = n
     if (n != designate) former = 0
     designate = n
-    $('#output').append("<div id='pop'><br></div>")
+    $('#output').append("<div id='pop'><div class='pop'></div></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div><br></div>")
+			var id = sanitizeID(menu[i].id, menu[i].ext)
+            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
+	$('#pop').append("<div class='pop'></div>")
+    applyOpposite()
     former = 0
-    apply()
 
 }
 
-function precede(n) {
+function precedeResponse(n) {
 
-    reverse(menu.reverse())
-    $('#output').prepend("<div id='air'><br></div>")
+    reverseArray(menu.reverse())
+    $('#output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
-            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            $('#air').prepend("<div class='air' get='" + i + "'><br><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			var id = sanitizeID(menu[i].id, menu[i].ext)
+            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
+	$('#air').prepend("<div class='air'></div>")
     $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
-    apply()
+    applyOpposite()
 
 }
-function random(n) {
+function randomResponse(n) {
 
     var obj = []
     menu.forEach(function(e) {
         if (n == e.cat) obj.push(e)
     })
     var n = obj[Math.floor(Math.random() * obj.length)]
-    response(menu.indexOf(n))
+    xmlResponse(menu.indexOf(n))
 
 }
 
-function resolution(n) {
+function refreshResponse(n){
 
-    if ($('#' + n).attr('src')){
-    $('#' + n).one('load', function() {
-        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 20)
-        } else if ($('#' + n).get(0).naturalWidth > minimum) {
-            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
-        } else {
-            var expand = '';
-            $('#' + n).width(Math.random() * (65 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
-        }
-        $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
- 		$('#' + n).css('display', 'block')
-    })
-    } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
+    		events = true
+			designate = n
+    		$('#output').empty()
+    		populateResponse(designate)
+    		precedeResponse(designate)
+    		displayAnimate('#pop')
+    		former = 0
+}
+
+function reverseArray(Object) {
+
+    var newObject = {}
+    var keys = []
+    for (var key in Object) keys.push(key)
+    for (var i = keys.length - 1; i >= 0; i--) {
+
+        var value = Object[keys[i]]
+        newObject[keys[i]] = value
+
+    }
+
+    return newObject
 
 }
 
-function response(n) {
+function sanitizeID(n, o){
+
+    if (n == 'Reddit' || n == 'Youtube' && !o.match(/channel/)) return o.match(/\b(\w+)$/)[0]
+    else return n
+
+}
+
+function uncoordinatedTimeZone(n) {
+
+    var opt = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+    }
+    var dmz = []
+    dmz.push(momentTimeStamp(n))
+    var utc = new Date(n)
+    var gmt = utc.toLocaleString('en-US', opt)
+    dmz.push(gmt)
+
+    return dmz
+
+}
+
+function updateProgress(n){
+    $('svg circle').css({
+        "stroke-dashoffset" : 131 - (131 * n)
+    });
+}
+
+function xmlResponse(n) {
     if (operation == true) {
-        request.abort()
+		$('#arm').remove()
         operation = false
+        request.abort()
     }
     obj = []
     former = n
@@ -339,8 +415,7 @@ function response(n) {
     }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
-    if (menu[n].id == 'Reddit' || menu[n].id == 'Youtube' && !menu[n].ext.match(/channel/)) var id = menu[n].ext.match(/\b(\w+)$/)[0]
-    else var id = menu[n].id
+	var id = sanitizeID(menu[n].id, menu[n].ext)
     request = $.get({
             url: cor + menu[n].uri
         })
@@ -348,6 +423,7 @@ function response(n) {
             $('#arm').remove();
             $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
+			applyOpposite()
         })
         .done(function(data) {
             $('#arm').remove()
@@ -359,15 +435,15 @@ function response(n) {
             $(data).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
-                    var dst = utc($(this).find('updated').text());
+                    var dst = uncoordinatedTimeZone($(this).find('updated').text());
                     var gen = new Date($(this).find('updated').text()).getTime()
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text().length > 0) {
-                        var dst = utc($(this).find('pubDate').text());
+                        var dst = uncordinatedTimeZone($(this).find('pubDate').text());
                         var gen = new Date($(this).find('pubDate').text()).getTime()
                     } else {
-                        var dst = utc($(this).find('dc\\:date, date').text());
+                        var dst = uncoordinatedTimeZone($(this).find('dc\\:date, date').text());
                         var gen = new Date($(this).find('dc\\:date').text()).getTime()
                     }
                 }
@@ -419,8 +495,8 @@ function response(n) {
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + */ 
                         "</div>" +
-                        "<div class='ago attr' onclick='event.stopPropagation(); expand(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation(); expand(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
+                        "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
+                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 pub.push({
                     element: i,
@@ -433,84 +509,17 @@ function response(n) {
             })
             for (var i = 0; i <= quit - 1; i++) {
                 $('#get').append(pub[i].post)
-                if ($('#' + pub[i].element).length) resolution(pub[i].element)
+                if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			if ($('input[type=text').val().length > 2) {
-				var opening = $('input[type=text]').val().toLowerCase().match(/^\w+/g)
-				var closing = $('input[type=text]').val().toLowerCase().match(/\w+$/g)
-				search($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase(), opening + '.+' + closing, closing + '.+' + opening)
-				populate(designate)
-				precede(designate)
+				filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+				populateResponse(designate)
+				precedeResponse(designate)
 			} else {
-    			populate(designate)
-    			precede(designate)
+    			populateResponse(designate)
+    			precedeResponse(designate)
 			}
-			display('#get')
-			apply()
+			displayAnimate('#get')
+			applyOpposite()
         })
-}
-
-function reverse(Object) {
-
-    var newObject = {}
-    var keys = []
-    for (var key in Object) keys.push(key)
-    for (var i = keys.length - 1; i >= 0; i--) {
-
-        var value = Object[keys[i]]
-        newObject[keys[i]] = value
-
-    }
-
-    return newObject
-
-}
-
-function search(k, n, o, p){
-
-    if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
-    if (operation == true) {
-        $('#arm').remove()
-        request.abort()
-        operation = false
-    }
-    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'><br></div>")
-    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'><br></div>")
-    else {
-        $('#output #pop').remove()
-        $('#output').append("<div id='pop'><br></div>")
-    }
-    for (var i = 0; i < menu.length; i++){
-        if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
-            if (menu[i].id == 'Reddit' || menu[i].id == 'Youtube' && !menu[i].ext.match(/channel/)) var id = menu[i].ext.match(/\b\w+$/)
-            else var id = menu[i].id
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        }
-    }
-    if (!$('#output #get').length) display('#pop:last')
-    else display('#get')
-    apply()
-    former = 0
-    events = true
-
-}
-
-function utc(n) {
-
-    var opt = {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'short',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-    }
-    var dmz = []
-    dmz.push(moment(n))
-    var utc = new Date(n)
-    var gmt = utc.toLocaleString('en-US', opt)
-    dmz.push(gmt)
-
-    return dmz
-
 }
