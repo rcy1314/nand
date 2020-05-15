@@ -161,7 +161,7 @@ function displayAnimate(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 100);
+    }, 300);
     setTimeout(function() {
         events = false
     }, 500)
