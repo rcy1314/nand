@@ -116,9 +116,9 @@ function applyOpposite(n) {
             'background-color': '#0a0a0a'
         })
 		$('input[type=text]').css({
-			'border':'1px solid rgba(255,255,255,.1)',
-			'background-color':'#000',
-			'color':'rgba(255,255,255,.9)'
+			'border':'none',
+			'background-color':'#0a0a0a',
+			'color':'rgba(255,255,255,.7)'
 		})
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
@@ -141,8 +141,8 @@ function applyOpposite(n) {
             'color': 'rgba(0,0,0,.7)'
         })
 		$('input[type=text]').css({
-			'border':'1px solid #cdcdcd',
-			'background-color':'#fafafa',
+			'border':'none',
+			'background-color':'#fff',
 			'color':'rgba(0,0,0,.7)'
 		})
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')

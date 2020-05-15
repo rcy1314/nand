@@ -1,10 +1,42 @@
-@media (max-width: 426px) {
+@media screen and (min-width: 320px) {
 
     .item { max-width: 94% !important }
 
-	.github { z-index: -1 }
+	.attach {
+    padding-right: 1em;
+    padding-left: 1em;
+	}
 
-	input { width: 9em }
+}
+
+@media screen and (min-width: 375px) {
+
+    .item { max-width: 94% !important }
+
+	.attach {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+	}
+
+}
+
+@media screen and (min-width: 425px) {
+
+    .item { max-width: 94% !important }
+
+	.attach {
+    padding-right: 1.9em;
+    padding-left: 1.9em;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	.attach {
+    padding-right: 3em;
+    padding-left: 3em;
+	}
 
 }
 
@@ -29,6 +61,11 @@
     }
 
     .item { max-width: 93.5% !important }
+
+	.attach {
+    padding-right: 2em;
+    padding-left: 2em;
+	}
 
 }
     div, input { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
@@ -72,40 +109,39 @@
     top: 0;
     }
     #attach {
+	justify-content: center;
     position: fixed;
-    height: 2.5em;
+    height: 3.75em;
+	display: flex;
     width: 100%;
     z-index: 2;
     }
-	.attach {
-	height: 24px;
-	width: 24px;
+	#filter {
+	margin-top: 2.5em; 
+	position: fixed;
+	height: 2em;
+	width: 100%;
 	}
-	.github {
-	position: absolute;
-	z-index: -1;
-	left: 2em;
-	}
-    .github, .attach {
-	padding-bottom: .5em;
+    .attach {
+	padding-bottom: .4em;
     display: inline-block;
-    padding-right: .4em;
     text-align: center;
-    padding-left: .4em;
     padding-top: 1.2em;
     font-size: 10px;
     height: 2.3em;
-    float: right;
+	width: 24px;
+	z-index: 2;
     }
-	input[type="text"]::placeholder { text-align: center }
-    input {
+	input[type='text']::placeholder { text-align: center }
+    input[type='text'] {
+    transform: translateX(-50%);
     color: rgba(128,128,128,1);
     position: absolute;
-    padding-left: 2px;
     font-size: 10px;
     outline: none;
     display: none;
-    top: 1.5em;
+    left: 50%;
+    top: .3em;
     }   
     #arm {
     transform: translate(50%, 50%);
@@ -142,7 +178,7 @@
 	#pop, #air, #get {
 	padding-bottom: 2em;
 	margin-left: 2px;
-	padding-top: 3em;
+	padding-top: 4em;
 	}
     .pop, .air {
     font-size: 10px;
