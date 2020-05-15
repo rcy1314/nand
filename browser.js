@@ -68,7 +68,7 @@ $(document).ready(function() {
         }
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            /* manifest($(this).scrollTop()) */
+            manifest($(this).scrollTop())
             if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
             if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
