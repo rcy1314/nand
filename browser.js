@@ -432,14 +432,14 @@ function response(n) {
             for (var i = 0; i <= quit - 1; i++) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) resolution(pub[i].element)
-            }       display('#get')
-            if ($('.search').val().length > 2) search($('.search').val())
-            else {
-                populate(designate)
-                precede(designate)
             }
-            display('#get')
-            apply()
+			display('#get')
+			if ($('.search').val().length > 2) search($('.search').val().toLowerCase().replace(/ /g, ''), $('.search').val().toLowerCase().replace(/ /g, '.+'))
+			else {
+    			populate(designate)
+    			precede(designate)
+			}
+			apply()
         })
 }
 
