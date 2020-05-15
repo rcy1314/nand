@@ -38,7 +38,7 @@
     padding-left: 3em;
 	}
 
-    .item { max-width: 93.5% !important }
+    .item { max-width: 96% !important }
 
 }
 
@@ -210,7 +210,9 @@
     #yt {
     padding-bottom: 2.2em;
     margin-bottom: .5em;
-    margin-left: 2px;
+	margin-right: .5em;
+    margin-left: .5em;
+	width: 100%
     }
     .yt {
     -webkit-overflow-scrolling: touch;
