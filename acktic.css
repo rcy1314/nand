@@ -21,7 +21,7 @@
     right: 50%;
     }
 
-    .search {
+    input {
     transform: translateX(-50%);
     position: absolute;
 	width: 14em;
@@ -92,7 +92,8 @@
     height: 2.3em;
     float: right;
     }
-    .search {
+	input[type="text"]::placeholder { text-align: center }
+    input {
     color: rgba(128,128,128,1);
     position: absolute;
     padding-left: 2px;
