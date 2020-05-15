@@ -37,6 +37,7 @@ $(document).ready(function() {
     })
 
     $('.search').on('keyup focus', function (e) {
+	if (e.keyCode <= 90 && e.keyCode >= 48) {
 		if (e.type == 'focus') return false
 		if ($('.search').val().length <= 1) {
 			$('#output').empty()
@@ -47,6 +48,7 @@ $(document).ready(function() {
         else if ($('.search').val().length <= 1) return false
         else search($('.search').val().toLowerCase())
         e.preventDefault()
+	}
     })
 
     $('body, #output').on('scroll touchmove focusout', function(e) {
