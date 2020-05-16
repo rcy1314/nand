@@ -5,9 +5,12 @@
     padding-left: 1em;
 	}
 
-	#yt { margin-left: .15em }
+    .item {
+	width: 95% !important;
+	margin: .4em !important;
+	}
 
-    .item { max-width: 94% !important }
+	#yt { margin-left: .15em }
 
 }
 
@@ -18,7 +21,10 @@
     padding-left: 1.5em;
 	}
 
-    .item { max-width: 95% !important }
+    .item {
+	width: 90% !important;
+	margin: 1em !important;
+	}
 
 	#yt { margin-left: .22em }
 
@@ -31,7 +37,10 @@
     padding-left: 1.9em;
 	}
 
-    .item { max-width: 95% !important }
+    .item {
+	width: 92% !important;
+	margin: 1em !important;
+	}
 
 	#yt { margin-left: .3em }
 
@@ -46,7 +55,10 @@
 
 	.fa { font-size: 20px }
 
-    .item { max-width: 97% !important }
+    .item {
+	width: 75% !important;
+	margin: 6em !important;
+	}
 
 	#yt { margin-left: .5em }
 
@@ -77,7 +89,10 @@
 	font-size: 12px;
 	}
 
-    .item { max-width: 97% !important }
+    .item {
+	width: 75% !important;
+	margin: 4em !important;
+	}
 
 	#yt {
 	margin-left: .15em
@@ -178,9 +193,9 @@
 	z-index: 2;
 	}
 	.home {
+	width: calc(100% - 3px);
 	position: fixed;
 	height: 48px;
-	width: calc(100% - 3px);
 	bottom: 0;
 	}
     #output {
@@ -211,11 +226,10 @@
     line-height: 1;
     }
     .item {
+	border: 1px solid rgba(0,0,0,.1);
     margin-bottom: 2em;
-	margin-left: 1px;
-    display: table;
-    padding: .5em;
     }
+	.item .pub { padding-top: 1em }
     .img { margin-bottom: .5em }
     #ago, .ago, .attr {
     text-transform: uppercase;

@@ -58,7 +58,13 @@ $(document).ready(function() {
         }
     })
 
-    $('#output').on('scroll touchmove mouseover', function(e) {
+    $('#output').on('scroll touchmove mouseover focusout', function(e) {
+
+		if (e.type == 'focusout'){
+
+			if (!$('input[type=text]').is('focus')) $('#output').attr('tabindex', -1).focus()
+
+		}
 
 		if (e.type == 'mouseover') $(this).attr('tabindex', -1).focus()
 
@@ -141,7 +147,7 @@ function applyOpposite(n) {
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
+        $('.item .pub, #random, #apply').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href', 'favicon/invert.png')
@@ -219,10 +225,10 @@ function imageResolution(n) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width(Math.random() * (65 - 45 + 1) + 45 + '%').parent().width($('#' + n).width() + 20)
+                $('#' + n).addClass('expand min').width('100%')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
+                $('#' + n).addClass('expand min').width('100%')
             } else {
                 var expand = '';
                 $('#' + n).width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
@@ -464,7 +470,6 @@ function xmlResponse(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform: capitalize'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
@@ -478,11 +483,13 @@ function xmlResponse(n) {
                         "</div><div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
-                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
+                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'>" +
+						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
+						"<div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + */
                         "</div>" +
-                        "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
+                        /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
                         "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
                 }
                 pub.push({
