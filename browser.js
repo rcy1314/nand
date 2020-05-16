@@ -41,7 +41,6 @@ $(document).ready(function() {
     })
 
     $('input[type=text]').on('keyup click focusin', function (e) {
-		events = true
 		opening = $(this).val().toLowerCase().match(/^\w+/g)
 		closing = $(this).val().toLowerCase().match(/\w+$/g)
 		if (e.type == 'click' || e.type == 'focusin') $(this).val('')
@@ -51,9 +50,9 @@ $(document).ready(function() {
 				$('#output').empty()
 		    	populateResponse(designate)
 		    	precedeResponse(designate)
-		    	displayAnimate('#pop')
 			}
         	else filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+			
         	e.preventDefault()
 		}
     })
@@ -212,10 +211,10 @@ function filterResponse(k, n, o, p){
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
+    events = true
     if (!$('#output #get').length) displayAnimate('#pop:last')
     else displayAnimate('#get')
     applyOpposite()
-    events = true
     former = 0
 
 }

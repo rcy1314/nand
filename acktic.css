@@ -131,11 +131,6 @@
     width: 100%;
     z-index: 2;
     }
-	#filter {
-	margin-top: 3.5em; 
-	position: fixed;
-	width: 100%;
-	}
     .attach {
 	padding-bottom: 1.5em;
     display: inline-block;
@@ -148,14 +143,13 @@
     }
 	input[type='text']::placeholder { text-align: center }
     input[type='text'] {
-    transform: translateX(-50%);
     color: rgba(128,128,128,1);
     position: absolute;
     font-size: 10px;
     outline: none;
     display: none;
-    left: 50%;
-    top: .3em;
+    top: 5.5em;
+	margin: 0 auto;
     }   
     #arm {
     transform: translate(50%, 50%);
