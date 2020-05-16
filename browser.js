@@ -56,7 +56,7 @@ $(document).ready(function() {
 		}
     })
 
-	#('#output').on('scroll', function () {
+	$('#output').on('scroll', function () {
 
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
             updateProgress(n);
