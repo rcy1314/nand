@@ -63,20 +63,15 @@ $(document).ready(function() {
 
 	})
 
-    $('#output').on('scroll touchmove mouseover', function(e) {
+    $('#output').on('scroll touchmove', function(e) {
 
-		if (e.type == 'mouseover') $('#output').attr('tabindex', -1).focus()
-
-        if (e.type == 'scroll' || e.type == 'touchmove') {
             /* manifest($(this).scrollTop()) */
-            /* if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false */
-            if ($('#outut').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10){
+            if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
+            if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 20)
                 if (operation == false && $('input[type=text]').val().length > 2) {
 					filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                     populateResponse(designate)
                 } else if (operation == false) populateResponse(designate)
-			}
-        }
 
     }).attr('tabindex', -1).focus()
 
@@ -202,7 +197,7 @@ function filterResponse(k, n, o, p){
         request.abort()
     }
     if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-    else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
+    else if ($('#output #get').length) $('#output').append("<div id='pop'></div>")
     for (var i = 0; i < menu.length; i++){
         if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
 			var id = sanitizeID(menu[i].id, menu[i].ext)
@@ -210,8 +205,6 @@ function filterResponse(k, n, o, p){
         }
     }
     events = true
-    if (!$('#output #get').length) displayAnimate('#pop:last')
-    else displayAnimate('#get')
     applyOpposite()
     former = 0
 
@@ -506,12 +499,7 @@ function xmlResponse(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			if ($('input[type=text').val().length > 2) {
-				filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
-			}
-			populateResponse(designate)
 			displayAnimate('#get')
-			operation = false
 			applyOpposite()
         })
 }
