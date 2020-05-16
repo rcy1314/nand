@@ -277,7 +277,6 @@
 	.toggle { color: #000 }
     .img {
 	margin: 0 auto;	
-	margin-bottom: .5em
 	}
     #ago, .ago, .attr {
     text-transform: uppercase;

@@ -486,7 +486,7 @@ function xmlResponse(n) {
                         /* "<br>" + dst[1] + */
                         "</div>" +
                         /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
-                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div id='ago' class='fa fa-bookmark-o' style='float:right'></div></div>"
+                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='ago fa fa-bookmark-o' style='float:right'></div><div class='ago fa fa-heart-o' style='float:right'></div></div>"
                 }
                 pub.push({
                     element: i,
