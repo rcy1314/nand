@@ -164,7 +164,7 @@ function displayAnimate(n) {
     }, 300);
     setTimeout(function() {
         events = false
-    }, 1000)
+    }, 1500)
 
 }
 
