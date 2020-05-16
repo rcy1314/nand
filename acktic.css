@@ -82,7 +82,7 @@
     padding-left: 3em;
 	}
 
-	.fa-bookmark-o {
+	.fa-repeat {
 	font-size: 12px;
 	}
 	.fa-spinner {
@@ -114,6 +114,30 @@
 
 }
 
+@media screen and (min-width: 2160px) {
+
+    #wrapper {
+    transform: translateX(50%);
+    position: fixed;
+    display: none;
+    border: none;
+    height: 100%;
+    width: 40%;
+    right: 50%;
+	top: 0em;
+    }
+
+    .item {
+	width: 70% !important;
+	margin: 10em !important;
+	}
+
+	#yt {
+	margin-left: .15em
+	}
+
+
+}
     div, input { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
    .attach, .icon, .pop, .air, .pub, .img, a {
@@ -122,7 +146,7 @@
     }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
 
-    ::-webkit-scrollbar { width: 2px }
+    ::-webkit-scrollbar { width: 1px }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
 
@@ -154,7 +178,7 @@
     }
     #attach {
 	justify-content: center;
-    width: calc(100% - 4px);
+    width: calc(100% - 1px);
     position: fixed;
 	display: flex;
     height: 5em;
@@ -250,6 +274,7 @@
 	padding-top: 1em;
 	padding: 5px !important;
 	}
+	.toggle { color: #000 }
     .img {
 	margin: 0 auto;	
 	margin-bottom: .5em
@@ -257,10 +282,12 @@
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);
-    margin: 10px;
+	display: inline-block;
+	width: fit-content;
     cursor: default;
     line-height: .5;
     font-size: 9px;
+    margin: 10px;
     }
     .views {
     position: absolute;
@@ -303,7 +330,7 @@
     padding-right: 3em;
     left: 0;
     }
-	.fa-bookmark-o {
+	.fa-repeat {
 	position: absolute;
 	bottom: .5em;
 	right: .5em;
