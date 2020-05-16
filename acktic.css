@@ -68,7 +68,7 @@
     height: 100%;
     width: 65%;
     right: 50%;
-	top: 5em;
+	top: 0em;
     }
 
 	.attach {
@@ -92,8 +92,6 @@
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
 
     ::-webkit-scrollbar { width: 2px }
-
-    .img { margin-bottom: .5em }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
 
@@ -184,11 +182,12 @@
     position: absolute;
     overflow-x: hidden;
     overflow: auto;
+	top: 5em;
     }
 	#pop, #air, #get {
 	padding-bottom: 2em;
 	margin-left: 2px;
-	padding-top: 2em;
+	margin-top: 2em;
 	}
     .pop, .air {
     font-size: 10px;
@@ -209,6 +208,7 @@
     display: table;
     padding: .5em;
     }
+    .img { margin-bottom: .5em }
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);

@@ -43,7 +43,6 @@ $(document).ready(function() {
     $('input[type=text]').on('keyup click focusin', function (e) {
 		opening = $(this).val().toLowerCase().match(/^\w+/g)
 		closing = $(this).val().toLowerCase().match(/\w+$/g)
-		if (e.type == 'click' || e.type == 'focusin') $(this).val('')
 		if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
 			if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
 			else if ($(this).val().length <= 1) {
@@ -67,7 +66,7 @@ $(document).ready(function() {
 
             /* manifest($(this).scrollTop()) */
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
-            if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 20)
+            if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
 					filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                     populateResponse(designate)
@@ -327,6 +326,7 @@ function refreshResponse(n){
 
     		events = true
 			designate = n
+			$('input[type=text]').val('')
     		$('#output').empty()
     		populateResponse(designate)
     		precedeResponse(designate)
