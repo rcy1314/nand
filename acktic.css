@@ -99,6 +99,21 @@
 	}
 
 }
+
+@media screen and (min-width: 769px) {
+
+    .item {
+	width: 90% !important;
+	margin: 2em !important;
+	}
+
+	#yt {
+	margin-left: .15em
+	}
+
+
+}
+
     div, input { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
 
    .attach, .icon, .pop, .air, .pub, .img, a {
@@ -139,11 +154,12 @@
     }
     #attach {
 	justify-content: center;
+    width: calc(100% - 4px);
     position: fixed;
-    height: 5em;
 	display: flex;
-    width: calc(100% - 3px);
+    height: 5em;
     z-index: 2;
+	left: 1px;
     }
     .attach {
 	padding-bottom: 1.5em;
@@ -201,7 +217,8 @@
     #output {
     -ms-overflow-style:-ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
-    outline: none !important;
+	border-left: .3px solid rgba(0,0,0,.1);
+	outline: none !important;
     height: 100% !important;
     position: fixed;
     overflow: auto;
@@ -233,7 +250,10 @@
 	padding-top: 1em;
 	padding: 5px !important;
 	}
-    .img { margin-bottom: .5em }
+    .img {
+	margin: 0 auto;	
+	margin-bottom: .5em
+	}
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);

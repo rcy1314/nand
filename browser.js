@@ -49,7 +49,6 @@ $(document).ready(function() {
                 $('#output').empty()
                 populateResponse(designate)
                 precedeResponse(designate)
-				displayAnimate('#pop')
             } else {
                 filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                 displayAnimate('#pop')
@@ -59,12 +58,6 @@ $(document).ready(function() {
     })
 
     $('#output').on('scroll touchmove mouseover focusout', function(e) {
-
-		if (e.type == 'focusout'){
-
-			if (!$('input[type=text]').is('focus')) $('#output').attr('tabindex', -1).focus()
-
-		}
 
 		if (e.type == 'mouseover') $(this).attr('tabindex', -1).focus()
 
@@ -131,7 +124,6 @@ function applyOpposite(n) {
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
-        $('.img, iframe').css('filter', 'brightness(80%)')
         $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/favico.png')
         $('.icon').attr('src', 'favicon/opposite.png');
@@ -149,7 +141,6 @@ function applyOpposite(n) {
         })
         $('.item .pub, #random, #apply').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
-        $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('a, #air .air .pub').css('color', '#337ab7')
@@ -234,7 +225,7 @@ function imageResolution(n) {
                 $('#' + n).addClass('expand min').width('100%')
             } else {
                 var expand = '';
-                $('#' + n).width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
+                $('#' + n).width($('#' + n).get(0).naturalWidth)
             }
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
             $('#' + n).css('display', 'block')
