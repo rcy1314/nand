@@ -229,13 +229,15 @@
 	border: 1px solid rgba(0,0,0,.1);
     margin-bottom: 2em;
     }
-	.item .pub { padding-top: 1em }
+	.item .pub {
+	padding-top: 1em;
+	padding: 5px !important;
+	}
     .img { margin-bottom: .5em }
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);
-    padding-bottom: 5px;
-    margin-top: 5px;
+    margin: 10px;
     cursor: default;
     line-height: .5;
     font-size: 9px;
