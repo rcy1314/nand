@@ -143,13 +143,14 @@
     }
 	input[type='text']::placeholder { text-align: center }
     input[type='text'] {
-    color: rgba(128,128,128,1);
-    position: absolute;
+    color: rgba(128,128,128, 1);
+	transform: translateX(-50%);
+    position: fixed;
     font-size: 10px;
     outline: none;
     display: none;
     top: 5.5em;
-	margin: 0 auto;
+	left: 50%;
     }   
     #arm {
     transform: translate(50%, 50%);
