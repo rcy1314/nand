@@ -69,7 +69,7 @@ $(document).ready(function() {
             });
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            /* manifest($(this).scrollTop()) */
+            manifest($(this).scrollTop())
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
@@ -106,7 +106,7 @@ function applyOpposite(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, #attach, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, #attach, .home, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -132,13 +132,7 @@ function applyOpposite(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
-            'background-color': '#fafafa',
-            'color': 'rgba(0,0,0,.7)',
-            'border': 'none'
-        })
-        $('#attach, .item, .item .pub').css({
-            'border-bottom': '1px solid rgba(0,0,0,.1)',
+        $('html, body, #wrapper, #container, #output, #attach, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -147,12 +141,12 @@ function applyOpposite(n) {
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
-        $('a, #air .air .pub').css('color', '#337ab7')
+        $('#output').removeClass('opposite').addClass('invert')
         $('.img, iframe').css('filter', 'brightness(100%)')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
+        $('a, #air .air .pub').css('color', '#337ab7')
         $('.icon').attr('src', 'favicon/invert.png');
         $('svg .ring').css('stroke', '#0A74DA')
         animate = 'invert.png'
@@ -473,7 +467,7 @@ function xmlResponse(n) {
                 console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform: capitalize'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     else views = ''

@@ -3,6 +3,7 @@
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link id='favicon' rel="icon" type="image/png" href="favicon/invert.png">
     <link rel="stylesheet" type="text/css" href="acktic.css">
@@ -23,14 +24,14 @@
         <input type='text' placeholder='search'>
     </div>
             <div id='output'></div>
-    <div>
+    <div class='home'>
         <svg>
             <circle cx='24' cy='24' r='21' class='ring' onclick='refreshResponse(designate)'>
             <img class='icon'>
         </svg>
     </div>
-            <div id='random' onclick='randomResponse(designate)'></div>
-            <div id='apply' onclick="applyOpposite('op')"></div>
+            <div id='random' onclick='randomResponse(designate)' title='Random'><i class='fa fa-bookmark-o'></i></div>
+            <div id='apply' onclick="applyOpposite('op')" title='Opposite'><i class='fa fa-spinner'></i></div>
     </div>
 </div>
 </body>

@@ -5,9 +5,7 @@
     padding-left: 1em;
 	}
 
-	#yt {
-	margin-left: .15em
-	}
+	#yt { margin-left: .15em }
 
     .item { max-width: 94% !important }
 
@@ -22,9 +20,7 @@
 
     .item { max-width: 95% !important }
 
-	#yt {
-	margin-left: .22em
-	}
+	#yt { margin-left: .22em }
 
 }
 
@@ -37,9 +33,7 @@
 
     .item { max-width: 95% !important }
 
-	#yt {
-	margin-left: .3em
-	}
+	#yt { margin-left: .3em }
 
 }
 
@@ -50,11 +44,11 @@
     padding-left: 3em;
 	}
 
+	.fa { font-size: 20px }
+
     .item { max-width: 97% !important }
 
-	#yt {
-	margin-left: .5em
-	}
+	#yt { margin-left: .5em }
 
 }
 
@@ -74,6 +68,13 @@
 	.attach {
     padding-right: 3em;
     padding-left: 3em;
+	}
+
+	.fa-bookmark-o {
+	font-size: 12px;
+	}
+	.fa-spinner {
+	font-size: 12px;
 	}
 
     .item { max-width: 97% !important }
@@ -157,7 +158,7 @@
     height: 50%;
     right: 50%;
     }
-    .icon, .home, svg, svg .ring {
+    .icon, svg, svg .ring {
     transform: translateX(-50%);
     position: absolute;
     height: 48px;
@@ -173,7 +174,15 @@
     fill: transparent;
     stroke-width: 1px;
     }
-    svg { z-index: 2 }
+    svg {
+	z-index: 2;
+	}
+	.home {
+	position: fixed;
+	height: 48px;
+	width: calc(100% - 3px);
+	bottom: 0;
+	}
     #output {
     -ms-overflow-style:-ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
@@ -181,12 +190,11 @@
     height: 100% !important;
     position: fixed;
     overflow: auto;
-	top: 5em;
     }
 	#pop, #air, #get {
 	margin-bottom: 2em;
 	margin-left: 2px;
-	margin-top: 2em;
+	padding-top: 4em;
 	}
     .pop, .air {
 	width: fit-content;
@@ -243,11 +251,13 @@
     }
     #random, #apply {
     padding-top: 2em;
+	font-size: 24px;
     position: fixed;
     height: 24px;
     width: 24px;
     bottom: 0em;
     z-index: 2;
+	bottom: 0;
     }
     #random {
     padding-left: 3em;
@@ -257,6 +267,16 @@
     padding-right: 3em;
     left: 0;
     }
+	.fa-bookmark-o {
+	position: absolute;
+	bottom: .5em;
+	right: .5em;
+	}
+	.fa-spinner {
+	position: absolute;
+	bottom: .5em;
+	left: .5em;
+	}
     #animate {
     -webkit-animation: spin 7s infinite ease;
     -moz-animation: spin 7s infinite ease
