@@ -56,14 +56,16 @@ $(document).ready(function() {
 		}
     })
 
+	#('#output').on('scroll', function () {
+
+            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
+            updateProgress(n);
+
+	})
+
     $('#output').on('scroll touchmove mouseover', function(e) {
 
 		if (e.type == 'mouseover') $('#output').attr('tabindex', -1).focus()
-
-        if (e.type == 'scroll') {
-            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
-            updateProgress(n);
-        }
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
             /* manifest($(this).scrollTop()) */
