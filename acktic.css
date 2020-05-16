@@ -179,7 +179,7 @@
     -webkit-overflow-scrolling: touch;
     outline: none !important;
     height: 100% !important;
-    position: absolute;
+    position: fixed;
     overflow-x: hidden;
     overflow: auto;
 	top: 5em;

@@ -25,56 +25,55 @@ $(document).ready(function() {
     precedeResponse(designate)
     displayAnimate('#pop')
 
-    $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
+    $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
 
-    $('#attach').on('mouseout', function () { 
-                $('.category').css('border-bottom','none')
-                $('#' + designate).css('border-bottom','1px solid rgba(128,128,128,.5)')
+    $('#attach').on('mouseout', function() {
+        $('.category').css('border-bottom', 'none')
+        $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
     })
 
-    $('.attach').on('touch click', function (e) {
-    	if (e.type == 'touch' || e.type == 'click'){
-            $('.attach').css('border-bottom','none')
-            $(this).css('border-bottom','1px solid rgba(128,128,128,.5)')
-			refreshResponse($(this).attr('id'))
+    $('.attach').on('touch click', function(e) {
+        if (e.type == 'touch' || e.type == 'click') {
+            $('.attach').css('border-bottom', 'none')
+            $(this).css('border-bottom', '1px solid rgba(128,128,128,.5)')
+            refreshResponse($(this).attr('id'))
         }
     })
 
-    $('input[type=text]').on('keyup click focusin', function (e) {
-		opening = $(this).val().toLowerCase().match(/^\w+/g)
-		closing = $(this).val().toLowerCase().match(/\w+$/g)
-		if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-			if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
-			else if ($(this).val().length <= 1) {
-				$('#output').empty()
-		    	populateResponse(designate)
-		    	precedeResponse(designate)
-			}
-        	else {
-				filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
-			displayAnimate('#pop')
-			}
-        	e.preventDefault()
-		}
+    $('input[type=text]').on('keyup click focusin', function(e) {
+        opening = $(this).val().toLowerCase().match(/^\w+/g)
+        closing = $(this).val().toLowerCase().match(/\w+$/g)
+        if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
+            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
+            else if ($(this).val().length <= 1) {
+                $('#output').empty()
+                populateResponse(designate)
+                precedeResponse(designate)
+            } else {
+                filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+                displayAnimate('#pop')
+            }
+            e.preventDefault()
+        }
     })
-
-	$('#output').on('scroll', function () {
-
-            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20) ));
-            updateProgress(n);
-
-	})
 
     $('#output').on('scroll touchmove', function(e) {
 
+        if (e.type == 'scroll') {
+            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
+            $('svg circle').css({
+                "stroke-dashoffset": 131 - (131 * n)
+            });
+        }
+        if (e.type == 'scroll' || e.type == 'touchmove') {
             /* manifest($(this).scrollTop()) */
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
-					filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                     populateResponse(designate)
                 } else if (operation == false) populateResponse(designate)
-
+        }
     }).attr('tabindex', -1).focus()
 
 }).on('touch click', 'a', function(e) {
@@ -110,23 +109,23 @@ function applyOpposite(n) {
             'border': 'none'
         })
         $('.item, .item .pub').css({
-            'border-bottom':'1px solid rgba(255,255,255,.1)',
+            'border-bottom': '1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
             'background-color': '#0a0a0a'
         })
-		$('input[type=text]').css({
-			'border':'none',
-			'background-color':'#000',
-			'color':'rgba(255,255,255,.7)'
-		})
+        $('input[type=text]').css({
+            'border': 'none',
+            'background-color': '#000',
+            'color': 'rgba(255,255,255,.7)'
+        })
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
         $('.img, iframe').css('filter', 'brightness(80%)')
-        $('#favicon').attr('href','favicon/opposite.png')
+        $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/favico.png')
-        $('.icon').attr('src','favicon/opposite.png');
-        $('svg .ring').css('stroke','#F74268')
+        $('.icon').attr('src', 'favicon/opposite.png');
+        $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
         $('html, body, #wrapper, #container, #output, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des').css({
@@ -135,23 +134,23 @@ function applyOpposite(n) {
             'border': 'none'
         })
         $('#attach, .item, .item .pub').css({
-            'border-bottom':'1px solid rgba(0,0,0,.1)',
-            'background-color':'#fff',
+            'border-bottom': '1px solid rgba(0,0,0,.1)',
+            'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-		$('input[type=text]').css({
-			'border':'none',
-			'background-color':'#fff',
-			'color':'rgba(0,0,0,.7)'
-		})
+        $('input[type=text]').css({
+            'border': 'none',
+            'background-color': '#fff',
+            'color': 'rgba(0,0,0,.7)'
+        })
         $('#output').removeClass('opposite').addClass('invert').css('border-left', '.3px solid rgba(128,128,128,.5)')
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('a, #air .air .pub').css('color', '#337ab7')
         $('.img, iframe').css('filter', 'brightness(100%)')
-        $('#favicon').attr('href','favicon/invert.png')
+        $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('.icon').attr('src','favicon/invert.png');
-        $('svg .ring').css('stroke','#0A74DA')
+        $('.icon').attr('src', 'favicon/invert.png');
+        $('svg .ring').css('stroke', '#0A74DA')
         animate = 'invert.png'
     }
 }
@@ -191,7 +190,7 @@ function externalURL(n) {
 
 }
 
-function filterResponse(k, n, o, p){
+function filterResponse(k, n, o, p) {
 
     if (operation == true) {
         $('#arm').remove()
@@ -200,9 +199,9 @@ function filterResponse(k, n, o, p){
     }
     if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
     else if ($('#output #get').length) $('#output').append("<div id='pop'></div>")
-    for (var i = 0; i < menu.length; i++){
+    for (var i = 0; i < menu.length; i++) {
         if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
-			var id = sanitizeID(menu[i].id, menu[i].ext)
+            var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
@@ -213,21 +212,21 @@ function filterResponse(k, n, o, p){
 
 function imageResolution(n) {
 
-    if ($('#' + n).attr('src')){
-    $('#' + n).one('load', function() {
-        if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 20)
-        } else if ($('#' + n).get(0).naturalWidth > minimum) {
-            var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-            $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
-        } else {
-            var expand = '';
-            $('#' + n).width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
-        }
-        $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
- 		$('#' + n).css('display', 'block')
-    })
+    if ($('#' + n).attr('src')) {
+        $('#' + n).one('load', function() {
+            if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
+                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+                $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 20)
+            } else if ($('#' + n).get(0).naturalWidth > minimum) {
+                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+                $('#' + n).addClass('expand min').width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width())
+            } else {
+                var expand = '';
+                $('#' + n).width(Math.random() * (55 - 35 + 1) + 35 + '%').parent().width($('#' + n).width() + 60)
+            }
+            $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+            $('#' + n).css('display', 'block')
+        })
     } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
 
 }
@@ -235,19 +234,19 @@ function imageResolution(n) {
 function manifest(n) {
 
     if (n < ost) {
-    /*    $('#icon').css({                      */
-    /*        'transition': 'all .2s linear',   */
-    /*        'visibility': 'visible'           */
-    /*    })                                    */
+        /*    $('#icon').css({                      */
+        /*        'transition': 'all .2s linear',   */
+        /*        'visibility': 'visible'           */
+        /*    })                                    */
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
     } else if (n > ost && events == false && operation == false) {
-    /*    $('#icon').css({                      */
-    /*        'transition': 'all .2s linear',   */
-    /*        'visibility': 'hidden'            */
-    /*    })                                    */
+        /*    $('#icon').css({                      */
+        /*        'transition': 'all .2s linear',   */
+        /*        'visibility': 'hidden'            */
+        /*    })                                    */
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
@@ -292,7 +291,7 @@ function populateResponse(n) {
     $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++)
         if (n == menu[i].cat) {
-			var id = sanitizeID(menu[i].id, menu[i].ext)
+            var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     applyOpposite()
@@ -306,7 +305,7 @@ function precedeResponse(n) {
     $('#output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
         if (n == menu[i].cat) {
-			var id = sanitizeID(menu[i].id, menu[i].ext)
+            var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
@@ -314,6 +313,7 @@ function precedeResponse(n) {
     applyOpposite()
 
 }
+
 function randomResponse(n) {
 
     var obj = []
@@ -325,16 +325,16 @@ function randomResponse(n) {
 
 }
 
-function refreshResponse(n){
+function refreshResponse(n) {
 
-    		events = true
-			designate = n
-			$('input[type=text]').val('')
-    		$('#output').empty()
-    		populateResponse(designate)
-    		precedeResponse(designate)
-    		displayAnimate('#pop')
-    		former = 0
+    events = true
+    designate = n
+    $('input[type=text]').val('')
+    $('#output').empty()
+    populateResponse(designate)
+    precedeResponse(designate)
+    displayAnimate('#pop')
+    former = 0
 }
 
 function reverseArray(Object) {
@@ -353,7 +353,7 @@ function reverseArray(Object) {
 
 }
 
-function sanitizeID(n, o){
+function sanitizeID(n, o) {
 
     if (n == 'Reddit' || n == 'Youtube' && !o.match(/channel/)) return o.match(/\b(\w+)$/)[0]
     else return n
@@ -380,15 +380,9 @@ function uncoordinatedTimeZone(n) {
 
 }
 
-function updateProgress(n){
-    $('svg circle').css({
-        "stroke-dashoffset" : 131 - (131 * n)
-    });
-}
-
 function xmlResponse(n) {
     if (operation == true) {
-		$('#arm').remove()
+        $('#arm').remove()
         operation = false
         request.abort()
     }
@@ -405,7 +399,7 @@ function xmlResponse(n) {
     }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
-	var id = sanitizeID(menu[n].id, menu[n].ext)
+    var id = sanitizeID(menu[n].id, menu[n].ext)
     request = $.get({
             url: cor + menu[n].uri
         })
@@ -413,7 +407,7 @@ function xmlResponse(n) {
             $('#arm').remove();
             $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
-			applyOpposite()
+            applyOpposite()
         })
         .done(function(data) {
             $('#arm').remove()
@@ -474,7 +468,7 @@ function xmlResponse(n) {
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) views = "<div class='ago views' style='left:0em'><b>Views</b> " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + 
+                    html = "<div id='yt' class='item' style='width: 100%'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" +
                         "<div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + "</div>" + */
@@ -483,7 +477,7 @@ function xmlResponse(n) {
                 } else {
                     html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'><div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
-                        /* "<br>" + dst[1] + */ 
+                        /* "<br>" + dst[1] + */
                         "</div>" +
                         "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
                         "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + '</div>'
@@ -501,7 +495,7 @@ function xmlResponse(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			displayAnimate('#get')
-			applyOpposite()
+            displayAnimate('#get')
+            applyOpposite()
         })
 }
