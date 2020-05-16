@@ -56,7 +56,7 @@ $(document).ready(function() {
 		}
     })
 
-    $('body, #output').on('scroll touchmove mouseover', function(e) {
+    $('#output').on('scroll touchmove mouseover', function(e) {
 
 		if (e.type == 'mouseover') $('#output').attr('tabindex', -1).focus()
 
