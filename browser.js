@@ -50,7 +50,10 @@ $(document).ready(function() {
 		    	populateResponse(designate)
 		    	precedeResponse(designate)
 			}
-        	else filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+        	else {
+				filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+			displayAnimate('#pop')
+			}
         	e.preventDefault()
 		}
     })
