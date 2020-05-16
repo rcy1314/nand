@@ -505,11 +505,6 @@ function xmlResponse(n) {
             }
 			if ($('input[type=text').val().length > 2) {
 				filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
-				populateResponse(designate)
-				precedeResponse(designate)
-			} else {
-    			populateResponse(designate)
-    			precedeResponse(designate)
 			}
 			displayAnimate('#get')
 			applyOpposite()
