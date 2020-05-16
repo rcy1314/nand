@@ -52,7 +52,6 @@ $(document).ready(function() {
 		    	precedeResponse(designate)
 			}
         	else filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
-			
         	e.preventDefault()
 		}
     })
@@ -194,7 +193,6 @@ function externalURL(n) {
 
 function filterResponse(k, n, o, p){
 
-    if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
     if (operation == true) {
         $('#arm').remove()
         operation = false
@@ -202,10 +200,6 @@ function filterResponse(k, n, o, p){
     }
     if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
     else if ($('#output #get, #output #pop').length) $('#output').append("<div id='pop'></div>")
-    else {
-        $('#output #pop').remove()
-        $('#output').append("<div id='pop'></div>")
-    }
     for (var i = 0; i < menu.length; i++){
         if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
 			var id = sanitizeID(menu[i].id, menu[i].ext)
