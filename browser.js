@@ -49,6 +49,7 @@ $(document).ready(function() {
                 $('#output').empty()
                 populateResponse(designate)
                 precedeResponse(designate)
+				displayAnimate('#pop')
             } else {
                 filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                 displayAnimate('#pop')
@@ -111,13 +112,14 @@ function applyOpposite(n) {
         $('.item, .item .pub').css({
             'border-bottom': '1px solid rgba(255,255,255,.1)',
             'color': 'rgba(255,255,255, .7)',
-            'background-color': '#0a0a0a'
+            'background-color': 'rgba(10,10,10,1)'
         })
         $('input[type=text]').css({
             'border': 'none',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.7)'
         })
+		$('#attach').css({'border-bottom':'1px solid rgba(255,255,255,.1)'})
         $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
