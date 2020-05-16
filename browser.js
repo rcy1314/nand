@@ -67,12 +67,13 @@ $(document).ready(function() {
 
         if (e.type == 'scroll' || e.type == 'touchmove') {
             /* manifest($(this).scrollTop()) */
-            if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false
-            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10)
+            /* if ($(this).scrollTop() != 0 && $(this).scrollTop() != $('#air').outerHeight()) operation = false */
+            if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 10){
                 if (operation == false && $('input[type=text]').val().length > 2) {
 					filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
                     populateResponse(designate)
                 } else if (operation == false) populateResponse(designate)
+			}
         }
 
     }).attr('tabindex', -1).focus()
@@ -507,6 +508,7 @@ function xmlResponse(n) {
 				filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
 			}
 			displayAnimate('#get')
+			operation = false
 			applyOpposite()
         })
 }
