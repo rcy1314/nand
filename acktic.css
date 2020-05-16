@@ -1,32 +1,44 @@
 @media screen and (min-width: 320px) {
 
-    .item { max-width: 94% !important }
-
 	.attach {
     padding-right: 1em;
     padding-left: 1em;
 	}
 
+	#yt {
+	margin-left: .15em
+	}
+
+    .item { max-width: 94% !important }
+
 }
 
 @media screen and (min-width: 375px) {
-
-    .item { max-width: 94% !important }
 
 	.attach {
     padding-right: 1.5em;
     padding-left: 1.5em;
 	}
 
+    .item { max-width: 95% !important }
+
+	#yt {
+	margin-left: .22em
+	}
+
 }
 
 @media screen and (min-width: 425px) {
 
-    .item { max-width: 94% !important }
-
 	.attach {
     padding-right: 1.9em;
     padding-left: 1.9em;
+	}
+
+    .item { max-width: 95% !important }
+
+	#yt {
+	margin-left: .3em
 	}
 
 }
@@ -38,7 +50,11 @@
     padding-left: 3em;
 	}
 
-    .item { max-width: 96% !important }
+    .item { max-width: 97% !important }
+
+	#yt {
+	margin-left: .5em
+	}
 
 }
 
@@ -60,7 +76,11 @@
     padding-left: 3em;
 	}
 
-    .item { max-width: 93.5% !important }
+    .item { max-width: 97% !important }
+
+	#yt {
+	margin-left: .15em
+	}
 
 }
     div, input { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
@@ -106,19 +126,18 @@
     #attach {
 	justify-content: center;
     position: fixed;
-    height: 3.75em;
+    height: 5em;
 	display: flex;
     width: 100%;
     z-index: 2;
     }
 	#filter {
-	margin-top: 2.5em; 
+	margin-top: 3.5em; 
 	position: fixed;
-	height: 2em;
 	width: 100%;
 	}
     .attach {
-	padding-bottom: .4em;
+	padding-bottom: 1.5em;
     display: inline-block;
     text-align: center;
     padding-top: 1.2em;
@@ -170,10 +189,14 @@
     overflow-x: hidden;
     overflow: auto;
     }
-	#pop, #air, #get {
+	#air, #get {
+	margin-left: 2px;
+	padding-top: 5em;
+	}
+	#pop {
 	padding-bottom: 2em;
 	margin-left: 2px;
-	padding-top: 4em;
+	padding-top: 5em;
 	}
     .pop, .air {
     font-size: 10px;
@@ -210,8 +233,6 @@
     #yt {
     padding-bottom: 2.2em;
     margin-bottom: .5em;
-	margin-right: .5em;
-    margin-left: .5em;
 	width: 100%
     }
     .yt {
