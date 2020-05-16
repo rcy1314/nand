@@ -61,14 +61,14 @@
 @media screen and (min-width: 769px) {
 
     #wrapper {
-    transform: translate(50%, 50%);
+    transform: translateX(50%);
     position: fixed;
     display: none;
     border: none;
     height: 100%;
     width: 65%;
     right: 50%;
-	top: -50%;
+	top: 5em;
     }
 
 	.attach {
@@ -91,7 +91,7 @@
     }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
 
-    ::-webkit-scrollbar { width: 5px }
+    ::-webkit-scrollbar { width: 2px }
 
     .img { margin-bottom: .5em }
 
@@ -145,6 +145,7 @@
     input[type='text'] {
     color: rgba(128,128,128, 1);
 	transform: translateX(-50%);
+	text-align: center;
     position: fixed;
     font-size: 10px;
     outline: none;
@@ -184,14 +185,10 @@
     overflow-x: hidden;
     overflow: auto;
     }
-	#air, #get {
-	margin-left: 2px;
-	padding-top: 5em;
-	}
-	#pop {
+	#pop, #air, #get {
 	padding-bottom: 2em;
 	margin-left: 2px;
-	padding-top: 5em;
+	padding-top: 2em;
 	}
     .pop, .air {
     font-size: 10px;

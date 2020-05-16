@@ -204,7 +204,6 @@ function filterResponse(k, n, o, p){
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
-    events = true
     applyOpposite()
     former = 0
 
