@@ -284,7 +284,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if ($('#output #pop').length > 1) $('#output').empty()
+    if ($('#output #pop').length > 1) $('#output #pop').remove()
     if (operation == true) {
         $('#arm').remove()
         request.abort()
