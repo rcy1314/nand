@@ -215,8 +215,8 @@ function imageResolution(n) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth < maximum) {
+                $('#' + n).addClass('expand min').width('35%')
+            } else if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
                 $('#' + n).addClass('expand min').width('50%')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
