@@ -412,7 +412,7 @@ function xmlResponse(n) {
             applyOpposite()
         })
         .done(function(data) {
-            /* $('#arm').remove() */
+            $('#arm').remove()
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
