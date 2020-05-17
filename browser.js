@@ -108,7 +108,7 @@ function applyOpposite(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, #attach, #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, #attach, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -120,8 +120,6 @@ function applyOpposite(n) {
         })
         $('input[type=text]').css({
             'border': '1px solid rgba(255,255,255,.2)',
-            'background-color': '#000',
-            'color': 'rgba(255,255,255,.7)'
         })
 		$('#attach, #random, #apply').css({'border-bottom':'1px solid rgba(255,255,255,.1)'})
         $('#output').removeClass('invert').addClass('opposite')
@@ -132,16 +130,14 @@ function applyOpposite(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, #attach, #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('html, body, #wrapper, #container, #attach, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
         $('input[type=text]').css({
             'border': '1px solid rgba(0,0,0,.1)',
-            'background-color': '#fff',
-            'color': 'rgba(0,0,0,.7)'
         })
-        $('#random, #apply, .item .pub, #random, #apply').css('border-bottom', '1px solid rgba(0,0,0,.1)')
+        $('#random, #apply, .item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -371,9 +367,9 @@ function xmlResponse(n) {
     events = true
     operation = true
     $('#output').empty()
+    var id = sanitizeID(menu[n].id, menu[n].ext)
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
-    var id = sanitizeID(menu[n].id, menu[n].ext)
     request = $.get({
             url: cor + menu[n].uri
         })
