@@ -15,21 +15,23 @@
     <div id='container'>
     <div id='attach'>
         <img id='News' class='attach' src='favicon/news.png' onclick='refreshResponse(this.id)' title='News'>
-        <img id='Media' class='attach' src='favicon/media.png' onclick='refreshResponse(this.id)' title='Media'>
+        <img id='Media' class='attach' src='favicon/media.png' onclick='refreshResponse(this.id)' title='Celebrity'>
         <img id='Social' class='attach' src='favicon/social.png' onclick='refreshResponse(this.id)' title='Social'>
         <img id='Sport' class='attach' src='favicon/sport.png' onclick='refreshResponse(this.id)' title='Sport'>
         <img id='Technology' class='attach' src='favicon/technology.png' onclick='refreshResponse(this.id)' title='Technology'>
         <img id='World' class='attach' src='favicon/world.png' onclick='refreshResponse(this.id)' title='World'>
         <img id='Youtube' class='attach' src='favicon/youtube.png' onclick='refreshResponse(this.id)' title='Youtube'>
-        <input type='text' placeholder='search'>
+		<div id='filter'>
+        	<input type='text' placeholder='search'>
+		</div>
     </div>
-            <div id='output'></div>
-    <div class='home'>
-        <svg>
-            <circle cx='24' cy='24' r='21' class='ring' onclick='refreshResponse(designate)'>
-            <img class='icon'>
-        </svg>
-    </div>
+        <div id='output'></div>
+    	<div class='home'>
+        	<svg>
+            	<circle cx='24' cy='24' r='21' class='ring' onclick='refreshResponse(designate)'>
+            	<img class='icon'>
+        	</svg>
+    	</div>
             <div id='random' onclick='randomResponse(designate)' title='Random'><i class='fa fa-repeat'></i></div>
             <div id='apply' onclick="applyOpposite('op')" title='Opposite'><i class='fa fa-spinner'></i></div>
     </div>
