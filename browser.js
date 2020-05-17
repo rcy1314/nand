@@ -228,7 +228,7 @@ function imageResolution(n) {
             }
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
-    } else $('#' + n).attr('src','favicon/' + animate).css('width','10%').parent().height(130)
+    } else $('#' + n).height(130)
     $('#' + n).css('display', 'block')
 
 }
@@ -485,7 +485,7 @@ function xmlResponse(n) {
                         /* "<br>" + dst[1] + */
                         "</div>" +
                         /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
-                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='ago fa fa-bookmark-o' style='float:right'></div><div class='ago fa fa-heart-o' style='float:right'></div></div>"
+                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='margin-left: 85%'><i class='ago fa fa-heart-o'></i><i class='ago fa fa-bookmark-o'></i></div>"
                 }
                 pub.push({
                     element: i,

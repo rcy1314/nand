@@ -325,6 +325,9 @@
     padding-right: 3em;
     left: 0;
     }
+	.fa {
+	display: inline-block;
+	}
 	.fa-repeat {
 	position: absolute;
 	bottom: .5em;
