@@ -40,9 +40,9 @@ $(document).ready(function() {
         }
     })
 
-    $('input[type=text]').on('keyup click focusin', function(e) {
-        opening = $(this).val().toLowerCase().match(/^\w+/g)
-        closing = $(this).val().toLowerCase().match(/\w+$/g)
+    $('input[type=text]').on('keyup', function(e) {
+        opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
+        closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
             if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
             else if ($(this).val().length <= 1) {
@@ -50,7 +50,7 @@ $(document).ready(function() {
                 populateResponse(designate)
                 precedeResponse(designate)
             } else {
-                filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+                filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
                 displayAnimate('#pop')
             }
             e.preventDefault()
@@ -82,11 +82,13 @@ $(document).ready(function() {
 
     externalURL($(this).attr('ext'))
 
-    e.stopPropagation()
-
 }).on('touch click', '.pop, .air', function(e) {
 
     xmlResponse($(this).attr('get'))
+
+}).on('touch click', '.fa-heart-o, .fa-heart', function(e){
+
+	$('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
 
 })
 
@@ -485,7 +487,7 @@ function xmlResponse(n) {
                         /* "<br>" + dst[1] + */
                         "</div>" +
                         /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
-                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i><i class='ago fa fa-bookmark-o'></i></div>"
+                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
                 pub.push({
                     element: i,
