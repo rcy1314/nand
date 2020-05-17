@@ -215,10 +215,10 @@ function imageResolution(n) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('35%')
+                $('#' + n).addClass('expand min').width('100%')
             } else if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('50%')
+                var expand = "[<u style='cursor:pointerxt-transform:lowercase'>expand</u>]"
+                $('#' + n).addClass('expand min').width('100%')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
                 $('#' + n).addClass('expand min').width('100%')
