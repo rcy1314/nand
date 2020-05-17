@@ -224,7 +224,7 @@ function imageResolution(n) {
                 $('#' + n).addClass('expand min').width('100%')
             } else {
                 var expand = '';
-                $('#' + n).width($('#' + n).get(0).naturalWidth)
+                $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
             }
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
@@ -485,7 +485,7 @@ function xmlResponse(n) {
                         /* "<br>" + dst[1] + */
                         "</div>" +
                         /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
-                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='margin-left: 85%'><i class='ago fa fa-heart-o'></i><i class='ago fa fa-bookmark-o'></i></div>"
+                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i><i class='ago fa fa-bookmark-o'></i></div>"
                 }
                 pub.push({
                     element: i,
