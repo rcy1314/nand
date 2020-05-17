@@ -5,7 +5,6 @@ var ost = 0
 var closing
 var opening
 var former = 0
-var object = []
 var events = true
 var minimum = 299
 var maximum = 799
@@ -198,22 +197,14 @@ function imageResolution(n) {
 
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalHeight > maximum && $('#' + n).get(0).naturalWidth > maximum) {
-                var expand = "[<u style='cursor:pointerxt-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalWidth > minimum) {
-                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+            if ($('#' + n).get(0).naturalWidth > maximum) {
                 $('#' + n).addClass('expand min').width('100%')
             } else {
                 var expand = '';
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
             }
-    		$('#' + n).css('display', 'block')
-            $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
+    	$('#' + n).css('display', 'block')
     }
 
 }
