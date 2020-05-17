@@ -73,7 +73,7 @@ $(document).ready(function() {
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
-                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + '.+' + closing, closing + '.+' + opening)
+                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
                     populateResponse(designate)
                 } else if (operation == false) populateResponse(designate)
         }
@@ -160,24 +160,6 @@ function displayAnimate(n) {
     setTimeout(function() {
         events = false
     }, 1500)
-
-}
-
-function expandImage(n) {
-
-    if ($('#' + n).hasClass('expand min')) {
-        object.push({
-            element: n,
-            item: $('#' + n).parents('.item').width() + 10,
-            less: $('#' + n).width(),
-            parent: $('#' + n).parent().width()
-        })
-        $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
-    } else if ($('#' + n).hasClass('expand full')) {
-        object.forEach(function(e) {
-            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parents('.item').width(e.item)
-        })
-    }
 
 }
 
@@ -489,7 +471,8 @@ function xmlResponse(n) {
                         /* "<br>" + dst[1] + */
                         "</div>" +
                         /* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
-                        "<img onclick='event.stopPropagation(); expandImage(" + i + ")' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + "<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
+                        "<img onclick='event.stopPropagation()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
                 pub.push({
                     element: i,
