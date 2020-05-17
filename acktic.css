@@ -67,13 +67,11 @@
 @media screen and (min-width: 769px) {
 
     #wrapper {
-    transform: translateX(50%);
-    position: fixed;
+	margin: 0 auto;
     display: none;
     border: none;
     height: 100%;
     width: 65%;
-    right: 50%;
 	top: 0em;
     }
 
@@ -182,33 +180,34 @@
     #attach {
 	justify-content: center;
     width: calc(100% - 1px);
-	position: fixed;
+	position: absolute;
 	display: flex;
-    height: 5em;
+    height: 4em;
     z-index: 2;
 	left: 1px;
 	top: 0;
     }
     .attach {
 	padding-bottom: 1.5em;
-    display: inline-block;
     text-align: center;
     padding-top: 1.2em;
     font-size: 10px;
     height: 2.3em;
 	width: 24px;
     }
+	#filter {
+	position: absolute;
+	width: 100%;
+	top: 4em;
+	}
 	input[type='text']::placeholder { text-align: center }
     input[type='text'] {
     color: rgba(128,128,128, 1);
-	transform: translateX(-50%);
 	text-align: center;
-    position: fixed;
     font-size: 10px;
+	margin: 0 auto;
     outline: none;
     display: none;
-    top: 7em;
-	left: 50%;
     }   
     #arm {
 	display: flex;
@@ -220,13 +219,19 @@
 	#animate {
 	margin: auto;
 	}
-    .icon, svg, svg .ring {
-    transform: translateX(-50%);
-    position: absolute;
+    svg, svg .ring {
     height: 48px;
     width: 48px;
-    bottom: 0em;
-    left: 50%;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+    }
+    .icon {
+    height: 48px;
+    width: 48px;
+	margin: -48px auto;
+	display: block;
+	position: relative;
     }
     svg .ring {
     transform-origin: 50% 50%;
@@ -240,10 +245,11 @@
 	z-index: 2;
 	}
 	.home {
-	width: calc(100% - 3px);
-	position: fixed;
+	width: 100%;
+	position: absolute;
 	height: 48px;
 	bottom: 0;
+	left: 0;
 	}
     #output {
     -ms-overflow-style:-ms-autohiding-scrollbar;
@@ -254,7 +260,7 @@
     overflow: auto;
 	width: 100%;
     }
-	#pop, #air, #arm, #get {
+	#pop, #air, #get {
 	padding-top: 5em;
 	margin-bottom: 2em;
 	}
