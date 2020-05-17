@@ -124,7 +124,7 @@ function applyOpposite(n) {
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
         $('#favicon').attr('href', 'favicon/opposite.png')
-        $('#animate').attr('src', 'favicon/favico.png')
+        $('#animate').attr('src', 'favicon/opposite.png')
         $('.icon').attr('src', 'favicon/opposite.png');
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
@@ -400,7 +400,7 @@ function xmlResponse(n) {
         var quit = 11
     }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
-    $('#arm').html("<div><img id='animate' src='favicon/" + animate + "'></div>")
+    $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     var id = sanitizeID(menu[n].id, menu[n].ext)
     request = $.get({
             url: cor + menu[n].uri
@@ -412,7 +412,7 @@ function xmlResponse(n) {
             applyOpposite()
         })
         .done(function(data) {
-            $('#arm').remove()
+            /* $('#arm').remove() */
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
