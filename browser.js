@@ -4,6 +4,7 @@ var request
 var ost = 0
 var closing
 var opening
+var quit = 8
 var former = 0
 var events = true
 var minimum = 299
@@ -366,15 +367,10 @@ function xmlResponse(n) {
     }
     obj = []
     former = n
+    var pub = []
     events = true
     operation = true
-    var pub = []
     $('#output').empty()
-    if (designate == 'Youtube') {
-        var quit = 5
-    } else {
-        var quit = 11
-    }
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     var id = sanitizeID(menu[n].id, menu[n].ext)
