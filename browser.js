@@ -108,7 +108,7 @@ function applyOpposite(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, #attach, .home, #output, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, #attach, #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -132,7 +132,7 @@ function applyOpposite(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, #output, #attach, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('html, body, #wrapper, #container, #attach, #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -232,26 +232,26 @@ function imageResolution(n) {
     		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
-    } else $('#' + n).parent().height(130)
+    }
 
 }
 
 function manifest(n) {
 
     if (n < ost) {
-        /*    $('#icon').css({                      */
-        /*        'transition': 'all .2s linear',   */
-        /*        'visibility': 'visible'           */
-        /*    })                                    */
+        $('.home').css({        
+        	'transition': 'all .2s linear',
+        	'visibility': 'visible'
+        })
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'visible'
         })
     } else if (n > ost && events == false && operation == false) {
-        /*    $('#icon').css({                      */
-        /*        'transition': 'all .2s linear',   */
-        /*        'visibility': 'hidden'            */
-        /*    })                                    */
+        $('.home').css({
+            'transition': 'all .2s linear',
+            'visibility': 'hidden'
+        })
         $('#attach').css({
             'transition': 'all .2s linear',
             'visibility': 'hidden'
@@ -416,6 +416,7 @@ function xmlResponse(n) {
         })
         .done(function(data) {
             $('#arm').remove()
+            $('#get').append("<div class='pop' get='" + n + "'><div class='pub'><a ext='" + menu[n].ext + "'>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(data).find(channel).length < quit) {
