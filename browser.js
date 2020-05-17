@@ -116,12 +116,11 @@ function applyOpposite(n) {
             'background-color': 'rgba(10,10,10,1)'
         })
         $('input[type=text]').css({
-            'border': 'none',
+            'border': '1px solid rgba(255,255,255,.2)',
             'background-color': '#000',
             'color': 'rgba(255,255,255,.7)'
         })
-		$('#attach').css({'border-bottom':'1px solid rgba(255,255,255,.1)'})
-        $('#random, #apply').css('border-bottom', '1px solid rgba(128,128,128,.5)')
+		$('#attach, #random, #apply').css({'border-bottom':'1px solid rgba(255,255,255,.1)'})
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
         $('#favicon').attr('href', 'favicon/opposite.png')
@@ -135,11 +134,11 @@ function applyOpposite(n) {
             'color': 'rgba(0,0,0,.7)'
         })
         $('input[type=text]').css({
-            'border': 'none',
+            'border': '1px solid rgba(0,0,0,.1)',
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('.item .pub, #random, #apply').css('border-bottom', '1px solid rgba(0,0,0,.1)')
+        $('#random, #apply, .item .pub, #random, #apply').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -228,9 +227,9 @@ function imageResolution(n) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth)
             }
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
-            $('#' + n).css('display', 'block')
         })
-    } else $('#' + n).parent().width(Math.random() * (95 - 40 + 1) + 40 + '%')
+    } else $('#' + n).attr('src','favicon/' + animate).css('width','10%').parent().height(130)
+    $('#' + n).css('display', 'block')
 
 }
 

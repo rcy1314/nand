@@ -271,13 +271,9 @@
     margin-bottom: 2em;
     }
 	.item .pub {
-	padding-top: 1em;
 	padding: 5px !important;
 	}
-	.toggle { color: #000 }
-    .img {
-	margin: 0 auto;	
-	}
+    .img { margin: 0 auto }
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);
