@@ -476,7 +476,7 @@ function xmlResponse(n) {
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
 						"<div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
-						/* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
+						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>"
                         "<img onclick='event.stopPropagation();expandImage(" + i + ")' ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
