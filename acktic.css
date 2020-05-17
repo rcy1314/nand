@@ -68,7 +68,7 @@
 
 @media screen and (min-width: 769px) {
 
-    #wrapper {
+    #wrapper, #attach {
 	margin: 0 auto;
     display: none;
     border: none;
@@ -147,7 +147,7 @@
     }
     .pub:hover, .des:hover, a:hover { text-decoration: underline }
 
-    ::-webkit-scrollbar { width: 1px }
+    ::-webkit-scrollbar { width: 2px }
 
     .invert::-webkit-scrollbar-thumb { background-color: #ddd }
 
@@ -184,7 +184,7 @@
     }
     #attach {
 	justify-content: center;
-    width: calc(100% - 1px);
+    width: calc(100% - 2px);
 	position: absolute;
 	display: flex;
     height: 4em;
@@ -266,13 +266,14 @@
 	width: 100%;
     }
 	#pop, #air, #get {
-	padding-top: 5em;
 	margin-bottom: 2em;
+	padding-top: 5em;
 	}
     .pop, .air {
 	width: fit-content;
     font-size: 10px;
     padding: 3em;
+	margin-left: 1px;
     }
     .pop a, .air a, .pub {
     text-transform: capitalize;
