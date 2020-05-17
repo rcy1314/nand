@@ -56,7 +56,7 @@
 
 @media screen and (min-width: 769px) {
 
-    #wrapper, #attach {
+    #wrapper {
     margin: 0 auto;
     display: none;
     border: none;
@@ -146,12 +146,12 @@
     #attach {
     justify-content: center;
     width: calc(100% - 2px);
-    position: absolute;
+    position: relative;
     display: flex;
     height: 4em;
     z-index: 2;
     left: 1px;
-    top: 0;
+    top: 4em;
     }
     .attach {
     padding-bottom: 1.5em;
@@ -211,10 +211,9 @@
     z-index: 2;
     }
     .home {
-    width: 100%;
-    position: absolute;
+	position: relative;
     height: 48px;
-    bottom: 0;
+    bottom: 48px;
     left: 0;
     }
     #output {
@@ -289,7 +288,6 @@
     #random, #apply {
     padding-top: 2em;
     font-size: 24px;
-    position: fixed;
     height: 24px;
     width: 24px;
     bottom: 0em;
