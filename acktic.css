@@ -16,26 +16,14 @@
 
 @media screen and (min-width: 375px) {
 
-	.attach {
-    padding-right: 1.5em;
-    padding-left: 1.5em;
-	}
-
     .item {
 	width: 90% !important;
 	margin: 1em !important;
 	}
 
-	#yt { margin-left: .22em }
-
 }
 
 @media screen and (min-width: 425px) {
-
-	.attach {
-    padding-right: 1.9em;
-    padding-left: 1.9em;
-	}
 
     .item {
 	width: 92% !important;
@@ -86,55 +74,28 @@
 	font-size: 12px;
 	}
 
-    .item {
-	width: 75% !important;
-	margin: 4em !important;
-	}
-
-	#yt {
-	margin-left: .15em
-	}
-
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1440px) {
 
-    .item {
-	width: 90% !important;
-	margin: 2em !important;
+	#wrapper {
+	width: 50%;
 	}
-
-	#yt {
-	margin-left: .15em
-	}
-
 
 }
 
 @media screen and (min-width: 2160px) {
 
-    .item {
-	width: 75% !important;
-	margin: 12em !important;
+	#wrapper {
+	width: 35%;
 	}
-
-	#yt {
-	margin-left: .15em
-	}
-
 
 }
 
 @media screen and (min-width: 2560px) {
 
-
-    .item {
-	width: 95% !important;
-	margin: 2em !important;
-	}
-
-	#yt {
-	margin-left: .15em
+	#wrapper {
+	width: 25%;
 	}
 
 }
@@ -184,16 +145,14 @@
     }
     #attach {
 	justify-content: center;
-    width: calc(100% - 2px);
 	position: absolute;
 	display: flex;
     height: 4em;
     z-index: 2;
-	left: 1px;
-	top: 0;
+	top: 0em;
     }
     .attach {
-	padding-bottom: 1.5em;
+	padding-bottom: 1em;
     text-align: center;
     padding-top: 1.2em;
     font-size: 10px;
@@ -212,7 +171,6 @@
     font-size: 10px;
 	margin: 0 auto;
     outline: none;
-    display: none;
     }   
     #arm {
 	display: flex;
