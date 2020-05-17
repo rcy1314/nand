@@ -41,6 +41,7 @@ $(document).ready(function() {
     })
 
     $('input[type=text]').on('keyup', function(e) {
+		events = true
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
@@ -228,10 +229,10 @@ function imageResolution(n) {
                 var expand = '';
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
             }
+    		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
-    } /* else $('#' + n).height(130) */
-    $('#' + n).css('display', 'block')
+    } else $('#' + n).parent().height(130)
 
 }
 
