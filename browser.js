@@ -6,7 +6,9 @@ var closing
 var opening
 var quit = 8
 var former = 0
+var object = []
 var events = true
+var mobile = 1440
 var minimum = 299
 var maximum = 799
 var operation = false
@@ -148,6 +150,24 @@ function applyOpposite(n) {
     }
 }
 
+function expandImage(n) {
+
+    if ($('#' + n).hasClass('expand min')) {
+        object.push({
+            element: n,
+            item: $('#' + n).parents('.item').width() + 10,
+            less: $('#' + n).width(),
+            parent: $('#' + n).parent().width()
+        })
+        $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
+    } else if ($('#' + n).hasClass('expand full')) {
+        object.forEach(function(e) {
+            if (n == e.element && e.less) $('#' + n).removeClass('full').addClass('min').width(e.less).parents('.item').width(e.item)
+        })
+    }
+
+}
+
 function displayAnimate(n) {
 
     $('#output').animate({
@@ -194,15 +214,20 @@ function imageResolution(n) {
 
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalWidth > maximum) {
+            if ($('#' + n).get(0).naturalWidth > maximum && $('#' + n).get(0).naturalHeight < mobile) {
+                var expand = ""
                 $('#' + n).addClass('expand min').width('100%')
+            } else if ($('#' + n).get(0).naturalHeight > mobile) {
+                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
+                $('#' + n).addClass('expand min').width('30%')
             } else {
                 var expand = '';
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
             }
+    		$('#' + n).css('display', 'block')
+            $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
-    	$('#' + n).css('display', 'block')
-    }
+    } else $('#' + n).parent().height(130)
 
 }
 
@@ -304,8 +329,8 @@ function refreshResponse(n) {
 
     events = true
     designate = n
-    $('input[type=text]').val('')
     $('#output').empty()
+    $('input[type=text]').val('')
     populateResponse(designate)
     precedeResponse(designate)
     displayAnimate('#pop')
@@ -451,7 +476,8 @@ function xmlResponse(n) {
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
 						"<div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
-                        "<img onclick='event.stopPropagation()' ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						/* "<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" + */
+                        "<img onclick='event.stopPropagation();expandImage(" + i + ")' ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
                 pub.push({
