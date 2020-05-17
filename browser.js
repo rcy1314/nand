@@ -219,7 +219,7 @@ function imageResolution(n) {
                 $('#' + n).addClass('expand min').width('100%')
             } else if ($('#' + n).get(0).naturalHeight > mobile) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('30%')
+                $('#' + n).addClass('expand min').width('30%').css('margin','0 auto')
             } else {
                 var expand = '';
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
