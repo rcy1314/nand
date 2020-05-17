@@ -258,7 +258,6 @@
     .item .pub {
     padding: 5px !important;
     }
-    .img { border: 1px solid rgba(128,128,128,.5) }
     #ago, .ago, .attr {
     text-transform: uppercase;
     color: rgba(128,128,128,1);
