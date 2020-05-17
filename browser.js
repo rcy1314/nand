@@ -214,10 +214,10 @@ function imageResolution(n) {
 
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalWidth > maximum && $('#' + n).get(0).naturalHeight < mobile) {
+            if ($('#' + n).get(0).naturalWidth > maximum) {
                 var expand = ""
                 $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalHeight > mobile) {
+            } else if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth < mobile) {
                 var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
                 $('#' + n).addClass('expand min').width('30%').css('margin','0 auto')
             } else {
@@ -225,7 +225,7 @@ function imageResolution(n) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
             }
     		$('#' + n).css('display', 'block')
-            $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
+            $('#' + n).siblings('.attr').html(expand)
         })
     } else $('#' + n).parent().height(130)
 
@@ -476,7 +476,7 @@ function xmlResponse(n) {
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
 						"<div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
-						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>"
+						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
                         "<img onclick='event.stopPropagation();expandImage(" + i + ")' ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
