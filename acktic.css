@@ -116,20 +116,9 @@
 
 @media screen and (min-width: 2160px) {
 
-    #wrapper {
-    transform: translateX(50%);
-    position: fixed;
-    display: none;
-    border: none;
-    height: 100%;
-    width: 40%;
-    right: 50%;
-	top: 0em;
-    }
-
     .item {
-	width: 70% !important;
-	margin: 10em !important;
+	width: 75% !important;
+	margin: 15em !important;
 	}
 
 	#yt {
@@ -166,13 +155,12 @@
     scrollbar-width: thin;
     }
 
-    html, body, #container, #output {
+    html, body {
     overflow: hidden;
     height: 100%;
     width: 100%;
     margin: 0;
     bottom: 0;
-    right: 0;
     left: 0;
     top: 0;
     }
@@ -208,10 +196,9 @@
 	left: 50%;
     }   
     #arm {
-    transform: translate(50%, 50%);
-    position: absolute;
-    height: 50%;
-    right: 50%;
+	margin: 0 auto;
+    height: 100%;
+    width: 100%;
     }
     .icon, svg, svg .ring {
     transform: translateX(-50%);
@@ -259,11 +246,10 @@
     }
     .pop a, .air a, .pub {
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
     }
     .pub {
     letter-spacing: 1px;
-    padding-bottom: 5px;
     line-height: 1;
     }
     .item {

@@ -228,7 +228,7 @@ function imageResolution(n) {
             }
             $('#' + n).siblings('.attr').html('(' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + ') ' + expand)
         })
-    } else $('#' + n).height(130)
+    } /* else $('#' + n).height(130) */
     $('#' + n).css('display', 'block')
 
 }
@@ -474,7 +474,7 @@ function xmlResponse(n) {
                         "<div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
                         "<div id='ago'>" + dst[0] +
                         /* "<br>" + dst[1] + "</div>" + */
-                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        "</div><div class='yt'><iframe src='" + src + "'></iframe>" + views +
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
