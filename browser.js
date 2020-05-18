@@ -195,7 +195,7 @@ function filterResponse(k, n, o, p) {
         $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
+        if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].cat.toLowerCase().match(n)) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
