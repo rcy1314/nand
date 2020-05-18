@@ -146,8 +146,9 @@ function applyVisual(n) {
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('input[type=text]').css({
-            'border': '1px solid rgba(0,0,0,.1)',
+        $('html, body, input[type=text]').css({
+			'background-color': '#fafafa',
+            'border': '1px solid rgba(0,0,0,.1)'
         })
         $('#random, #apply, .item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
