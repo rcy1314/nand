@@ -19,9 +19,7 @@ $(document).ready(function() {
 
     } else applyVisual(0)
 
-    populateResponse()
-    precedeResponse()
-    displayAnimate('#pop')
+	$('circle').click()
 
     $('input[type=text]').on('keyup', function(e) {
 		events = true
@@ -42,8 +40,6 @@ $(document).ready(function() {
     })
 
     $('#output').on('scroll touchmove focusin', function(e) {
-
-		if (e.type == 'focusin') $('input[type=text]').hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
@@ -181,7 +177,6 @@ function externalURL(n) {
 
 function filterResponse(k, n, o, p) {
 
-    if ($('#output #get').length && $('#output #pop').length) $('#output').empty()
     if (operation == true) {
         $('#arm').remove()
         operation = false
