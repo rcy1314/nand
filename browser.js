@@ -230,9 +230,9 @@ function imageResolution(n) {
             if ($('#' + n).get(0).naturalHeight > mobile) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
-            } else if ($('#' + n).get(0).naturalWidth > maximum) {
+            } else if ($('#' + n).get(0).naturalWidth > minimum) {
                 $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalWidth < maximum) {
+            } else if ($('#' + n).get(0).naturalWidth < minimum) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
     		$('#' + n).css('display', 'block')
