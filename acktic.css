@@ -283,6 +283,7 @@
     width: calc(100% - 1.5em);
     padding-bottom: 54.25%;
     position: relative;
+	margin: 0 auto;
     height: 0;
     }
     iframe {
