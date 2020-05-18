@@ -8,7 +8,7 @@ var quit = 8
 var former = 0
 var object = []
 var events = true
-var mobile = 1440
+var mobile = 1096
 var minimum = 299
 var maximum = 799
 var operation = false
@@ -210,12 +210,12 @@ function imageResolution(n) {
 
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalWidth > maximum) {
+            if ($('#' + n).get(0).naturalHeight > mobile) {
+                var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
+                $('#' + n).addClass('expand min').width('30%').css('margin','0 auto')
+            } else if ($('#' + n).get(0).naturalWidth > maximum) {
                 var expand = ""
                 $('#' + n).addClass('expand min').width('100%')
-            } else if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth < mobile) {
-                var expand = "[<u style='cursor:pointer;text-transform:lowercase'>expand</u>]"
-                $('#' + n).addClass('expand min').width('30%').css('margin','0 auto')
             } else {
                 var expand = '';
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
@@ -460,7 +460,8 @@ function xmlResponse(n) {
 				console.log(src)
                 if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined|vidible/)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
+								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " + 
@@ -481,8 +482,7 @@ function xmlResponse(n) {
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation();expandImage(" + i + ")'" + 
-						"ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()'" +
+                        "<img onclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()'" +
 						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'" + 
 						"onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i>" +
