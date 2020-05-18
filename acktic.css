@@ -184,9 +184,9 @@
     margin-bottom: 2em;
     }
     .pop, .air {
-    width: fit-content;
     margin-left: 1px;
     font-size: 10px;
+	display: table;
     padding: 3em;
     }
     .pop a, .air a, .pub {
