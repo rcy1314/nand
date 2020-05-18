@@ -12,7 +12,7 @@ var operation = false
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
     $('#wrapper').css('display', 'block')
-
+	document.title = 'RSS-Browser`'
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)

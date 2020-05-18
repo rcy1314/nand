@@ -140,18 +140,18 @@
     margin: auto;
     }
     svg, svg .ring {
-    height: 48px;
-    width: 48px;
+    position: relative;
     margin: 0 auto;
     display: block;
-    position: relative;
-    }
-    .icon {
     height: 48px;
     width: 48px;
-    margin: -48px auto;
-    display: block;
+    }
+    .icon {
     position: relative;
+    margin: -49px auto;
+    display: block;
+    height: 48px;
+    width: 48px;
     }
     svg .ring {
     transform-origin: 50% 50%;
