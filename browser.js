@@ -90,15 +90,27 @@ $(document).ready(function() {
 
     xmlResponse($(this).attr('get'))
 
+}).on('touch click', '.item', function(e) {
+
+	externalURL($(this).attr('ext'))	
+
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
 	$('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
+	e.stopPropagation()
 
-}).on('touch click', '.img', function(e) {
+}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e){
+
+	$('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
+	e.stopPropagation()
+
+}).on('touch click', '.img', function(event) {
 
 	if ($(this).hasClass('expand min')) expandImage($(this).attr('id'))
-	else $(this).parent().find('.fa-heart-o, .fa-heart').toggleClass('.fa-heart-o .fa-heart')
-
+	else if ($(this).hasClass('expand full')) expandImage($(this).attr('id'))
+	else $(this).parent().find('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
+	e.stopPropagation()
+	
 })
 
 function applyOpposite(n) {
@@ -480,16 +492,15 @@ function xmlResponse(n) {
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
                 } else {
-                    html = "<div class='item' onclick='window.open(\"" + ref.trim() + "\")'>" +
+                    html = "<div class='item' ext='" + ref.trim() + "'>" +
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
-						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
-						"<img onclick='event.stopPropagation(); $(this).parent().find(\".fa-heart, .fa-heart-o\").toggleClass(\"fa-heart fa-heart-o\")' " +
+						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
+						"<img " +
 						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
-						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'" + 
-						"onclick='event.stopPropagation()'></i>" +
-						"<i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i>" +
+						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
+						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>"
                 }
                 pub.push({
