@@ -75,7 +75,11 @@ $(document).ready(function() {
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
-                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''), $('input[type=text]').val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
+                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
+						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
+						opening + closing,
+						closing + opening
+					)
                     populateResponse(designate)
                 } else if (operation == false) populateResponse(designate)
         }
@@ -200,7 +204,7 @@ function filterResponse(k, n, o, p) {
         $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].uri.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
+        if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].uri.toLowerCase().match(n)) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
@@ -227,7 +231,7 @@ function imageResolution(n) {
     		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(expand)
         })
-    } else $('#' + n).parent().height(130)
+    }
 
 }
 
@@ -400,7 +404,7 @@ function xmlResponse(n) {
         })
         .fail(function() {
             $('#arm').remove();
-            $('#get').append("<div class='pop' onclick='window.open(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
+            $('#get').append("<div class='pop' onclick='external(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
             applyOpposite()
         })
@@ -465,11 +469,8 @@ function xmlResponse(n) {
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " + 
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
-                    }
-					else views = ''
                     html = "<div id='yt' class='item'>" +
 						/* "<div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
                         "<div class='pub'>" + $(this).find('title:first').text().trim().truncate(90, true) + "</div>" +
@@ -484,8 +485,12 @@ function xmlResponse(n) {
 						"<div class='pub'>" + $(this).find('title:first').text().trim().truncate(120, true) + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation();expandImage(" + i + ")' ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()' id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
-						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i><i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
+                        "<img onclick='event.stopPropagation();expandImage(" + i + ")'" + 
+						"ondblclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()'" +
+						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'" + 
+						"onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i>" +
+						"<i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i></div>"
                 }
                 pub.push({
                     element: i,
