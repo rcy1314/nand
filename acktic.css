@@ -10,8 +10,6 @@
     margin: .4em !important;
     }
 
-    #yt { margin-left: .15em }
-
 }
 
 @media screen and (min-width: 375px) {
@@ -30,8 +28,6 @@
     margin: 1em !important;
     }
 
-    #yt { margin-left: .3em }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -49,8 +45,6 @@
     width: 88% !important;
     margin: 3em !important;
     }
-
-    #yt { margin-left: .5em }
 
 }
 
@@ -296,7 +290,6 @@
     border: none;
     height: 100%;
     width: 100%;
-    top: 10px;
     }
     #random, #apply {
     padding-top: 2em;
