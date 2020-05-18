@@ -406,7 +406,6 @@
 {id:"Youtube",cat:"Youtube",des:"People TV Youtube #1 online news source all things pop culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=people",ext:"https://www.youtube.com/user/People"},
 {id:"Youtube",cat:"Youtube",des:"Rolling Stone Youtube exclusive videos on music, politics, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=rollingstone",ext:"https://www.youtube.com/user/RollingStone"},
 {id:"Youtube",cat:"Youtube",des:"ScreenRant Youtube the go-to source for movie and TV news, reviews and in-depth analysis.",uri:"https://www.youtube.com/feeds/videos.xml?user=screenrant",ext:"https://www.youtube.com/user/ScreenRant"},
-{id:"Youtube",cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/SISwimsuit"},
 {id:"Youtube",cat:"Youtube",des:"Ted Talks Youtube Technology, Entertainment and Design -- plus science, business, global issues, the arts and more.",uri:"https://www.youtube.com/feeds/videos.xml?channel_id=UCAuUUnT6oDeKwE6v1NGQxug",ext:"https://www.youtube.com/user/TEDtalksDirector"},
 {id:"Youtube",cat:"Youtube",des:"The Telegraph Youtube covering world events, sports, entertainment, technology, motoring, food, fashion, beauty, travel and more.",uri:"https://www.youtube.com/feeds/videos.xml?user=telegraphtv",ext:"https://www.youtube.com/user/TelegraphTV"},
 {id:"Youtube",cat:"Youtube",des:"Time Magazine Youtube daily news, interviews, science, technology, politics, health, entertainment, and business updates.",uri:"https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA",ext:"https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA"},
@@ -415,7 +414,6 @@
 {id:"Youtube",cat:"Youtube",des:"UFC Youtube Weigh-ins, Analysis, Highlights, and Interviews.",uri:"https://www.youtube.com/feeds/videos.xml?user=ufc",ext:"https://www.youtube.com/user/UFC"},
 {id:"Youtube",cat:"Youtube",des:"USA Today Youtube Investigative Journalism, National and Local News.",uri:"https://www.youtube.com/feeds/videos.xml?user=usatoday",ext:"https://www.youtube.com/user/USAToday"},
 {id:"Youtube",cat:"Youtube",des:"Wall Street Journal Youtube dig deeper into the news that matters to you.",uri:"https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",ext:"https://www.youtube.com/user/WSJDigitalNetwork"},
-{id:"Youtube",cat:"Youtube",des:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",ext:"https://www.youtube.com/user/Wired"}
 {id:"Harvard",cat:"Technology",des:"Harvard Gazette the official news outlet of Harvard University.",uri:"https://news.harvard.edu/gazette/section/science-technology/feed",ext:"https://news.harvard.edu/gazette/section/science-technology"},
 {id:"Harvard",cat:"World",des:"Harvard Gazette National and World Affairs.",uri:"https://news.harvard.edu/gazette/section/national-world-affairs/feed",ext:"https://news.harvard.edu/gazette/section/national-world-affairs"},
 */
@@ -576,8 +574,10 @@ var menu=[
 {id:"Youtube",cat:"Youtube",des:"IGN Entertainment Youtube game reviews, trailers, and walkthroughs.",uri:"https://www.youtube.com/feeds/videos.xml?user=ignentertainment",ext:"https://www.youtube.com/user/IGNEntertainment"},
 {id:"Youtube",cat:"Youtube",des:"MotorTrend Youtube The ultimate automotive streaming service.",uri:"https://www.youtube.com/feeds/videos.xml?user=motortrend",ext:"https://www.youtube.com/user/Motortrend"},
 {id:"Youtube",cat:"Youtube",des:"PCMag Youtube the best product reviews, updated tech news, and tips on how to advance your digital needs.",uri:"https://www.youtube.com/feeds/videos.xml?user=pcmagazinereviews",ext:"https://www.youtube.com/user/PCMagazineReviews"},
+{id:"Youtube",cat:"Youtube",des:"Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",uri:"https://www.youtube.com/feeds/videos.xml?user=siswimsuit",ext:"https://www.youtube.com/user/SISwimsuit"},
 {id:"Youtube",cat:"Youtube",des:"Surfer Magazine Youtube award-winning photos, provocative interviews, and journeys to the coolest undiscovered surf spots.",uri:"https://www.youtube.com/feeds/videos.xml?user=surfer",ext:"https://www.youtube.com/user/Surfer"},
 {id:"Youtube",cat:"Youtube",des:"TechCrunch Youtube startups, Internet products, and breaking tech news.",uri:"https://www.youtube.com/feeds/videos.xml?user=techcrunch",ext:"https://www.youtube.com/user/TechCrunch"},
 {id:"Youtube",cat:"Youtube",des:"The Verge Youtube videos, reviews, opinion, and technology.",uri:"https://www.youtube.com/feeds/videos.xml?user=theverge",ext:"https://www.youtube.com/user/TheVerge"},
 {id:"Youtube",cat:"Youtube",des:"Vice News Youtube is the breaking, break-through news you need.",uri:"https://www.youtube.com/feeds/videos.xml?user=vicenews",ext:"https://www.youtube.com/user/ViceNews"},
+{id:"Youtube",cat:"Youtube",des:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",ext:"https://www.youtube.com/user/Wired"}
 ]

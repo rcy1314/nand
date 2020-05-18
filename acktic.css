@@ -129,7 +129,6 @@
     top: 0em;
     }
     #arm {
-	position: absolute;
     display: flex;
     height: 100%;
     width: 100%;
@@ -200,7 +199,7 @@
     }
     .item {
     border: 1px solid rgba(0,0,0,.1);
-    margin-bottom: 2em;
+    margin-bottom: 5em;
     overflow: hidden;
     }
     .item .pub {
@@ -278,11 +277,6 @@
     }
     .fa {
     display: inline-block;
-    }
-    .fa-mail-reply-all {
-    position: absolute;
-    bottom: .5em;
-    right: .5em;
     }
     .fa-spinner {
     position: absolute;
