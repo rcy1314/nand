@@ -4,7 +4,7 @@ var request
 var ost = 0
 var closing
 var opening
-var quit = 8
+var quit = 11
 var former = 0
 var object = []
 var events = true
@@ -12,7 +12,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper, input[type=text]').css('display', 'block')
+    $('#wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -23,21 +23,6 @@ $(document).ready(function() {
     populateResponse(designate)
     precedeResponse(designate)
     displayAnimate('#pop')
-
-    $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
-
-    $('#attach').on('mouseout', function() {
-        $('.category').css('border-bottom', 'none')
-        $('#' + designate).css('border-bottom', '1px solid rgba(128,128,128,.5)')
-    })
-
-    $('.attach').on('touch click', function(e) {
-        if (e.type == 'touch' || e.type == 'click') {
-            $('.attach').css('border-bottom', 'none')
-            $(this).css('border-bottom', '1px solid rgba(128,128,128,.5)')
-            refreshResponse($(this).attr('id'))
-        }
-    })
 
     $('input[type=text]').on('keyup', function(e) {
 		events = true
@@ -57,18 +42,17 @@ $(document).ready(function() {
         }
     })
 
-    $('#output').on('scroll touchmove mouseover focusout', function(e) {
+    $('#output').on('scroll touchmove focusin', function(e) {
 
-		if (e.type == 'mouseover') $(this).attr('tabindex', -1).focus()
+		if (e.type == 'focusin') $('input[type=text]').hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * n)
-            });
+            })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            manifest($(this).scrollTop())
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
@@ -77,8 +61,8 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-                    populateResponse(designate)
-                } else if (operation == false) populateResponse(designate)
+                    populateResponse()
+                } else if (operation == false) populateResponse()
         }
     }).attr('tabindex', -1).focus()
 
@@ -88,6 +72,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.pop, .air', function(e) {
 
+	$('input[type=text]').hide()
     xmlResponse($(this).attr('get'))
 
 }).on('touch click', '.item', function(e) {
@@ -120,7 +105,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, .attach, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -133,7 +118,6 @@ function applyVisual(n) {
         $('input[type=text]').css({
             'border': '1px solid rgba(255,255,255,.2)',
         })
-		$('#attach, #random, #apply').css({'border-bottom':'1px solid rgba(255,255,255,.1)'})
         $('#output').removeClass('invert').addClass('opposite')
         $('a, #air .air .pub').css('color', '#F7426B')
         $('#favicon').attr('href', 'favicon/opposite.png')
@@ -142,7 +126,7 @@ function applyVisual(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, .attach, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('html, body, #wrapper, #container, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -150,7 +134,7 @@ function applyVisual(n) {
 			'background-color': '#fafafa',
             'border': '1px solid rgba(0,0,0,.1)'
         })
-        $('#random, #apply, .item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
+        $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
@@ -228,7 +212,7 @@ function imageResolution(n) {
 	var maximum = 799
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalHeight > mobile) {
+            if ($('#' + n).get(0).naturalHeight > mobile &&) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
@@ -240,32 +224,6 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(expand)
         })
     }
-
-}
-
-function manifest(n) {
-
-    if (n < ost) {
-        $('.home').css({        
-        	'transition': 'all .2s linear',
-        	'visibility': 'visible'
-        })
-        $('#attach').css({
-            'transition': 'all .2s linear',
-            'visibility': 'visible'
-        })
-    } else if (n > ost && events == false && operation == false) {
-        $('.home').css({
-            'transition': 'all .2s linear',
-            'visibility': 'hidden'
-        })
-        $('#attach').css({
-            'transition': 'all .2s linear',
-            'visibility': 'hidden'
-        })
-    }
-
-    ost = n
 
 }
 
@@ -297,15 +255,13 @@ function populateResponse(n) {
         request.abort()
         operation = false
     }
-    document.title = n
     if (n != designate) former = 0
     designate = n
     $('#output').append("<div id='pop'></div>")
-    for (var i = former; i < menu.length; i++)
-        if (n == menu[i].cat) {
+    for (var i = former; i < menu.length; i++){
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        }
+	}
     applyVisual()
     former = 0
 
@@ -316,10 +272,8 @@ function precedeResponse(n) {
     reverseArray(menu.reverse())
     $('#output').prepend("<div id='air'></div>")
     for (var i = menu.reverse().length - 1; i >= 0; i--) {
-        if (n == menu[i].cat) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-        }
     }
     $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
     applyVisual()
@@ -328,17 +282,14 @@ function precedeResponse(n) {
 
 function randomResponse(n) {
 
-    var obj = []
-    menu.forEach(function(e) {
-        if (n == e.cat) obj.push(e)
-    })
-    var n = obj[Math.floor(Math.random() * obj.length)]
+    var n = menu[Math.floor(Math.random() * menu.length)]
     xmlResponse(menu.indexOf(n))
 
 }
 
 function refreshResponse(n) {
 
+	$('input[type=text]').css('display','block').animate({'bottom':'64px'},2000).focus()
     events = true
     designate = n
     $('#output').empty()
