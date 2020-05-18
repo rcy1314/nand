@@ -37,7 +37,7 @@ Default
 Opposite
 `https://acktic.github.io/?op=1`
  
- <p align='center'><img src='https://ackti.files.wordpress.com/2020/01/8197227400950.png'></p>
+ <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/6659963258788.png'></p>
  
  
 ### CORS Anywhere
