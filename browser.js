@@ -96,12 +96,12 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
-	$('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
+	$(this).toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e){
 
-	$('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
+	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
@@ -120,7 +120,7 @@ function applyOpposite(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, #attach, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('html, body, #wrapper, #container, .attach, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -142,7 +142,7 @@ function applyOpposite(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, #attach, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('html, body, #wrapper, #container, .attach, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
