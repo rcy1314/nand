@@ -212,7 +212,7 @@ function imageResolution(n) {
 	var maximum = 799
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalHeight > mobile &&) {
+            if ($('#' + n).get(0).naturalHeight > mobile) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
