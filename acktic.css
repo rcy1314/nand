@@ -14,6 +14,11 @@
 
 @media screen and (min-width: 375px) {
 
+    .attach {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    }
+
     .item {
     width: 90% !important;
     margin: 1em !important;
@@ -22,6 +27,11 @@
 }
 
 @media screen and (min-width: 425px) {
+
+    .attach {
+    padding-right: 2em;
+    padding-left: 2em;
+    }
 
     .item {
     width: 92% !important;
@@ -35,8 +45,8 @@
     #wrapper { width: 100% }
 
     .attach {
-    padding-right: 3em;
-    padding-left: 3em;
+    padding-right: 4.5em;
+    padding-left: 4.5em;
     }
 
     .fa { font-size: 20px }
