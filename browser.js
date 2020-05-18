@@ -8,9 +8,6 @@ var quit = 8
 var former = 0
 var object = []
 var events = true
-var mobile = 1096
-var minimum = 299
-var maximum = 799
 var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
@@ -96,6 +93,11 @@ $(document).ready(function() {
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
 	$('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
+
+}).on('touch click', '.img', function(e) {
+
+	if ($(this).hasClass('expand min')) expandImage($(this).attr('id'))
+	else $(this).parent().find('.fa-heart-o, .fa-heart').toggleClass('.fa-heart-o .fa-heart')
 
 })
 
@@ -208,17 +210,21 @@ function filterResponse(k, n, o, p) {
 
 function imageResolution(n) {
 
+	var mobile = 1096
+	var minimum = 299
+	var maximum = 799
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
-                $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
+                $('#' + n).addClass('expand min').width('45%').css('margin','0 auto').on('touch click', function (e) {
+					e.stopPropagation()
+					expandImage(n)
+				})
             } else if ($('#' + n).get(0).naturalWidth > maximum) {
-                var expand = ""
                 $('#' + n).addClass('expand min').width('100%')
-            } else {
-                var expand = '';
-                $('#' + n).width($('#' + n).get(0).naturalWidth).css('padding','.5em')
+            } else if ($('#' + n).get(0).naturalWidth > maximum) {
+                $('#' + n).width($('#' + n).get(0).naturalWidth)
             }
     		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(expand)
@@ -482,10 +488,10 @@ function xmlResponse(n) {
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation();expandImage(\"" + i + "\")'" +
+						"<img onclick='event.stopPropagation(); $(this).parent().find(\".fa-heart, .fa-heart-o\").toggleClass(\"fa-heart fa-heart-o\")' " +
 						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'" + 
-						"onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i>" +
+						"onclick='event.stopPropagation()'></i>" +
 						"<i class='ago fa fa-bookmark-o' onclick='event.stopPropagation();$(this).toggleClass(\"fa-bookmark-o fa-bookmark\")'></i>" +
 						"</div>"
                 }
