@@ -104,7 +104,7 @@ $(document).ready(function() {
 	$('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touch click', '.img', function(event) {
+}).on('touch click', '.img', function(e) {
 
 	if ($(this).hasClass('expand min')) expandImage($(this).attr('id'))
 	else if ($(this).hasClass('expand full')) expandImage($(this).attr('id'))
@@ -497,8 +497,7 @@ function xmlResponse(n) {
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
-						"<img " +
-						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>"
