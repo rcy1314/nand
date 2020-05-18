@@ -12,7 +12,7 @@ var operation = false
 var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-    $('#wrapper, input[type=text], #output').css('display', 'block')
+    $('#wrapper').css('display', 'block')
 
     if (location.href.match('\\?op=1')) {
 
@@ -182,7 +182,7 @@ function displayAnimate(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 300);
+    }, 350);
     setTimeout(function() {
         events = false
     }, 1500)
