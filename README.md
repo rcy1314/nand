@@ -19,9 +19,8 @@ Tested on
 * Apple Safari iOS (9+)
 * Google Chrome
 * Mozilla Firefox
-* Min (1.14)
 * LG Web OS
-
+* Min (1.14)
 
 ### Menu Array
 
