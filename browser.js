@@ -9,7 +9,6 @@ var former = 0
 var object = []
 var events = true
 var operation = false
-var designate = 'Social'
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
     $('#wrapper').css('display', 'block')
@@ -20,8 +19,8 @@ $(document).ready(function() {
 
     } else applyVisual(0)
 
-    populateResponse(designate)
-    precedeResponse(designate)
+    populateResponse()
+    precedeResponse()
     displayAnimate('#pop')
 
     $('input[type=text]').on('keyup', function(e) {
@@ -32,8 +31,8 @@ $(document).ready(function() {
             if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
             else if ($(this).val().length <= 1) {
                 $('#output').empty()
-                populateResponse(designate)
-                precedeResponse(designate)
+                populateResponse()
+                precedeResponse()
             } else {
                 filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
                 displayAnimate('#pop')
@@ -255,8 +254,6 @@ function populateResponse(n) {
         request.abort()
         operation = false
     }
-    if (n != designate) former = 0
-    designate = n
     $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++){
             var id = sanitizeID(menu[i].id, menu[i].ext)
@@ -289,13 +286,12 @@ function randomResponse(n) {
 
 function refreshResponse(n) {
 
-	$('input[type=text]').css('display','block').animate({'bottom':'64px'},2000).focus()
     events = true
-    designate = n
+	$('input[type=text]').css('display','block').animate({'bottom':'64px'},2000).focus()
     $('#output').empty()
     $('input[type=text]').val('')
-    populateResponse(designate)
-    precedeResponse(designate)
+    populateResponse()
+    precedeResponse()
     displayAnimate('#pop')
     former = 0
 }
@@ -476,7 +472,7 @@ function xmlResponse(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			precedeResponse(designate)
+			precedeResponse()
             displayAnimate('#get')
             applyVisual()
         })
