@@ -482,7 +482,7 @@ function xmlResponse(n) {
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='event.stopPropagation(); expandImage(" + i + ")'></div>" +
-                        "<img onclick='event.stopPropagation();$(this).parent().find(\".fa-heart, .fa-heart-o\").click()'" +
+                        "<img onclick='event.stopPropagation();expandImage(\"" + i + "\")'" +
 						"id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'" + 
 						"onclick='event.stopPropagation();$(this).toggleClass(\"fa-heart-o fa-heart\")'></i>" +
