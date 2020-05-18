@@ -6,6 +6,7 @@
 
 ### Features
 
+* Filter
 * Random
 * XML Examples
 * Image Expand
