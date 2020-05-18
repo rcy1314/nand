@@ -26,7 +26,7 @@ var menu=[
 {id:"CBS",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
 {id:"ABC",cat:"News",des:"ABC KMGB Colorado Denver for Weather, Local, Headlines, and Sports.",uri:"https://www.thedenverchannel.com/news.rss",ext:"https://www.thedenverchannel.com"},
 {id:"CBS",cat:"News",des:"CBS KCNC Colorado Denver Denver news, Colorado news, Colorado weather forecasts and sports reports.",uri:"https://denver.cbslocal.com/feed",ext:"https://denver.cbslocal.com"},
-{id:"CBS",cat:"News",des:"CBS WWL Louisiana New Orleans dedicated to serving the community through in-depth local news coverage.",uri:"http://rssfeeds.wwltv.com/wwl/local&x1",ext:"https://www.wwltv.com"},
+{id:"CBS",cat:"News",des:"CBS WWL Louisiana New Orleans dedicated to serving the community through in-depth local news coverage.",uri:"http://rssfeeds.wwltv.com/wwl/local&x=1",ext:"https://www.wwltv.com"},
 {id:"NBC",cat:"News",des:"NBC WDSU Louisiana New Orleans Get New Orleans News and Weather from WDSU News.",uri:"https://www.wdsu.com/topstories-rss",ext:"https://www.wdsu.com"},
 {id:"ABC",cat:"News",des:"ABC WGNO Louisiana New Orleans for Local and National News and Headlines.",uri:"https://wgno.com/feed",ext:"https://wgno.com"},
 {id:"CBS",cat:"News",des:"CBS WJZ Maryland Baltimore serving the greater area of Maryland.",uri:"https://baltimore.cbslocal.com/feed",ext:"https://baltimore.cbslocal.com"},
