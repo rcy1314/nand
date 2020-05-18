@@ -17,8 +17,9 @@
 
 Tested on
 * Apple Safari iOS (9+)
-* Mozilla Firefox
 * Google Chrome
+* Mozilla Firefox
+* Min (1.14)
 * LG Web OS
 
 

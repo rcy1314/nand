@@ -407,7 +407,16 @@ function xmlResponse(n) {
     $('#output').append("<div id='arm'></div><div id='get'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     request = $.get({
-            url: cor + menu[n].uri
+            url: cor + menu[n].uri,
+			method: 'GET',
+			dataType: 'XML',
+			contentType: 'text/html; charset=utf-8',
+ 			headers: {          
+				Accept: 'text/html; charset=utf-8',         
+						'Content-Type': 'text/html; charset=utf-8',
+						'X-Requested-With': '*',   
+			}
+
         })
         .fail(function() {
             $('#arm').remove();
