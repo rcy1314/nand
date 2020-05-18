@@ -457,12 +457,16 @@ function xmlResponse(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined/)) src = ''
+				console.log(src)
+                if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined|vidible/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " + 
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
+                    }
+					else views = ''
                     html = "<div id='yt' class='item'>" +
 						/* "<div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
                         "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
