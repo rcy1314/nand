@@ -125,7 +125,7 @@ function applyVisual(n) {
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('html, body, #wrapper, #container, input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
@@ -193,20 +193,19 @@ function filterResponse(k, n, o, p) {
         $('#output #pop').remove()
         $('#output').append("<div id='pop'></div>")
     }
-    for (var i = 0; i < menu.length; i++) {
+    for (var i = former + 1; i < menu.length; i++) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].cat.toLowerCase().match(n)) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     applyVisual()
-    former = 0
 
 }
 
 function imageResolution(n) {
 
-	var mobile = 1096
+	var mobile = 1440
 	var minimum = 299
 	var maximum = 799
     if ($('#' + n).attr('src')) {
