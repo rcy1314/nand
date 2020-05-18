@@ -144,7 +144,7 @@
     }
     #attach {
     justify-content: center;
-    width: calc(100% - 2px);
+    width: calc(100% - 3px);
     position: relative;
     display: flex;
     height: 4em;
