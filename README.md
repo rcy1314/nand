@@ -34,7 +34,10 @@ Tested on
 Default
 `https://acktic.github.io`
 
-Opposite
+
+ <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/8739379571267.png'></p>
+ 
+ Opposite
 `https://acktic.github.io/?op=1`
  
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/7931090231392-1.png'></p>
