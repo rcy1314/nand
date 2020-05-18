@@ -16,9 +16,9 @@ $(document).ready(function() {
 
     if (location.href.match('\\?op=1')) {
 
-        applyOpposite(1)
+        applyVisual(1)
 
-    } else applyOpposite(0)
+    } else applyVisual(0)
 
     populateResponse(designate)
     precedeResponse(designate)
@@ -113,7 +113,7 @@ $(document).ready(function() {
 	
 })
 
-function applyOpposite(n) {
+function applyVisual(n) {
 
     if (n == 'op') {
         op = op != true
@@ -215,7 +215,7 @@ function filterResponse(k, n, o, p) {
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
-    applyOpposite()
+    applyVisual()
     former = 0
 
 }
@@ -305,7 +305,7 @@ function populateResponse(n) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
-    applyOpposite()
+    applyVisual()
     former = 0
 
 }
@@ -321,7 +321,7 @@ function precedeResponse(n) {
         }
     }
     $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
-    applyOpposite()
+    applyVisual()
 
 }
 
@@ -422,7 +422,7 @@ function xmlResponse(n) {
             $('#arm').remove();
             $('#get').append("<div class='pop' onclick='external(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
-            applyOpposite()
+            applyVisual()
         })
         .done(function(data) {
             $('#arm').remove()
@@ -526,6 +526,6 @@ function xmlResponse(n) {
             }
 			precedeResponse(designate)
             displayAnimate('#get')
-            applyOpposite()
+            applyVisual()
         })
 }
