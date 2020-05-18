@@ -214,7 +214,7 @@ function imageResolution(n) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
-                $('#' + n).addClass('expand min').width('100%')
+                $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
