@@ -188,7 +188,10 @@
  .item .pub {
      padding: 10px !important;
 }
- #ago, .ago, .attr {
+ #ago {
+	 float: left;
+}
+ #ago, .ago, .timestamp {
      text-transform: uppercase;
      color: rgba(128,128,128,1);
      cursor: default;
@@ -196,7 +199,7 @@
      font-size: 9px;
      margin: 10px;
 }
- .stamp {
+ .timestamp {
 	 float:right;
 }
  .img {
