@@ -11,7 +11,7 @@ var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container').show()
+    $('#container, input[type=text]').show()
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
@@ -121,13 +121,10 @@ function applyVisual(n) {
             'background-color': '#000',
             'border': 'none'
         })
-        $('.item .pub').css({
+        $('input[type=text], .item .pub').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
    			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, 1)'
-        })
-        $('input[type=text], .item').css({
-            'border': '1px solid rgba(255,255,255,.1)',
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#main').removeClass('invert').addClass('opposite')
@@ -140,11 +137,12 @@ function applyVisual(n) {
     } else if (op == 0) {
         $('input[type=text], #main, #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'background-color': '#fff',
-            'color': 'rgba(0,0,0,.7)'
+            'color': 'rgba(0,0,0,.7)',
+			'border': 'none'
         })
-        $('.item, input[type=text]').css({
-            'border': '1px solid rgba(0,0,0,.1)',
-        })
+        $('input[type=text], .item .pub').css({
+	        'border-bottom': '1px solid rgba(0,0,0,.1)',
+		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
@@ -185,8 +183,8 @@ function filterResponse(k, n, o, p) {
     }
 	$('.populate').remove()
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].cat.toLowerCase().match(k) ||
-			menu[i].uri.toLowerCase().match(n) ||
+        if (menu[i].des.toLowerCase().match(n) ||
+			menu[i].cat.toLowerCase().match(k) ||
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p)
 			) {
