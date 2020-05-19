@@ -205,7 +205,7 @@
      position: absolute;
      height: 50px;
      bottom: 0px;
-     width: 102%;
+     width: 100%;
 }
  input {
      transform: translate(-50%, -50%);
