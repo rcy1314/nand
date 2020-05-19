@@ -188,6 +188,7 @@ function filterResponse(k, n, o, p) {
     }
 	$('.populate').remove()
     for (var i = 0; i < menu.length; i++) {
+		if (i = former) continue
         if (menu[i].des.toLowerCase().match(n) ||
 			menu[i].cat.toLowerCase().match(k) ||
 			menu[i].des.toLowerCase().match(o) ||
