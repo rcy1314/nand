@@ -181,7 +181,7 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-	$('#main').empty()
+	$('#item').slideUp(250)
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
         if (menu[i].uri.toLowerCase().match(k) ||
