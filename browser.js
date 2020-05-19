@@ -11,15 +11,11 @@ var events = true
 var operation = false
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
-     document.ontouchmove = function(e){
-          e.preventDefault();
-          }
-input.onfocus = function () {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-}
-    $('#wrapper').css('display', 'block')
 	document.title = 'RSS-Browser`'
+    document.ontouchmove = function(e){
+          e.preventDefault();
+    }
+    $('#wrapper').css('display', 'block')
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
@@ -28,8 +24,10 @@ input.onfocus = function () {
 
 	$('circle').click()
 
-    $('input[type=text]').on('keyup', function(e) {
+    $('input[type=text]').on('keyup focus', function(e) {
 		events = true
+		window.scrollTo(0, 0)
+		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
