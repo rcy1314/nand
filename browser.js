@@ -31,7 +31,7 @@ $(document).ready(function() {
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
-            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').hide().blur()
+            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) displayAnimate('#pop')
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) {
                 $('#output').empty()
