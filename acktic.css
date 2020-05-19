@@ -1,303 +1,293 @@
 @media screen and (min-width: 320px) {
-
-    .item {
-    width: 95% !important;
-    margin: .4em !important;
+     .item {
+         width: 95% !important;
+         margin: .4em !important;
     }
-
 }
-
-@media screen and (min-width: 375px) {
-
-    .item {
-    width: 90% !important;
-    margin: 1em !important;
+ @media screen and (min-width: 375px) {
+     .item {
+         width: 90% !important;
+         margin: 1em !important;
     }
-
 }
-
-@media screen and (min-width: 425px) {
-
-    .item {
-    width: 92% !important;
-    margin: 1em !important;
+ @media screen and (min-width: 425px) {
+     .item {
+         width: 92% !important;
+         margin: 1em !important;
     }
-
 }
-
-@media screen and (min-width: 768px) {
-
-    #wrapper { width: 100% }
-
-    .fa { font-size: 20px }
-
-    .item {
-    width: 88% !important;
-    margin: 3em !important;
+ @media screen and (min-width: 768px) {
+     #wrapper {
+         width: 100% 
     }
-
+     .fa {
+         font-size: 20px 
+    }
+     .item {
+         width: 88% !important;
+         margin: 3em !important;
+    }
 }
-
-@media screen and (min-width: 769px) {
-
-    #wrapper {
-    margin: 0 auto;
-    display: none;
-    border: none;
-    height: 100%;
-    width: 65%;
-    top: 0em;
+ @media screen and (min-width: 769px) {
+     #wrapper {
+         margin: 0 auto;
+         display: none;
+         border: none;
+         height: 100%;
+         width: 65%;
+         top: 0em;
     }
-
-    .item {
-    width: 83% !important;
-    margin: 3em !important;
+     .item {
+         width: 83% !important;
+         margin: 3em !important;
     }
-    
-	.fa {
-    font-size: 12px;
+     .fa {
+         font-size: 12px;
     }
-
 }
-
-@media screen and (min-width: 1440px) {
-
-    #wrapper {
-    width: 50%;
+ @media screen and (min-width: 1440px) {
+     #wrapper {
+         width: 50%;
     }
-
 }
-
-@media screen and (min-width: 2160px) {
-
-    #wrapper {
-    width: 35%;
+ @media screen and (min-width: 2160px) {
+     #wrapper {
+         width: 35%;
     }
-
 }
-
-@media screen and (min-width: 2560px) {
-
-    #wrapper {
-    width: 25%;
+ @media screen and (min-width: 2560px) {
+     #wrapper {
+         width: 25%;
     }
-
 }
-
-    div, input { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif }
-
-   .icon, .pop, .air, .pub, .img, a {
-        text-decoration: none;
-        cursor: pointer;
+ div, input {
+     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif 
+}
+ .icon, .pop, .air, .pub, .img, a {
+     text-decoration: none;
+     cursor: pointer;
+}
+ .pub:hover, .des:hover, a:hover {
+     text-decoration: underline 
+}
+ ::-webkit-scrollbar {
+     width: 2px 
+}
+ .invert::-webkit-scrollbar-thumb {
+     background-color: #ddd 
+}
+ .invert::-webkit-scrollbar {
+     background-color: #f5f5f5 
+}
+ .invert {
+     scrollbar-color: #ddd #f5f5f5;
+     scrollbar-width: thin;
+}
+ .opposite::-webkit-scrollbar-thumb {
+     background-color: #0a0a0a 
+}
+ .opposite::-webkit-scrollbar {
+     background-color: #000 
+}
+ .opposite {
+     scrollbar-color: #222 #000;
+     scrollbar-width: thin;
+}
+ html, body, #container {
+     position: relative;
+     overflow: hidden;
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     bottom: 0;
+     left: 0;
+     top: 0;
+}
+ #wrapper {
+     display: none;
+     border: none;
+     height: 100%;
+     top: 0em;
+}
+ #arm {
+     display: flex;
+     height: 100%;
+     width: 100%;
+     left: 0;
+     top: 0;
+}
+ #animate {
+     margin: auto;
+}
+ svg, svg .ring {
+     position: relative;
+     margin: 0 auto;
+     display: block;
+     height: 48px;
+     width: 48px;
+}
+ .icon {
+     position: relative;
+     margin: -49px auto;
+     display: block;
+     height: 48px;
+     width: 48px;
+}
+ svg .ring {
+     transform-origin: 50% 50%;
+     transform: rotate(90deg);
+     stroke-dashoffset: 131;
+     stroke-dasharray: 131;
+     fill: transparent;
+     stroke-width: 1px;
+}
+ svg {
+     z-index: 2;
+}
+ .home {
+     background-color: transparent;
+     position: relative;
+     height: 50px;
+     bottom: 50px;
+     width: 99%;
+     left: 1px;
+}
+ #output {
+     -ms-overflow-style:-ms-autohiding-scrollbar;
+     -webkit-overflow-scrolling: touch;
+     border-left: .3px solid rgba(0,0,0,.1);
+     outline: none !important;
+     position: relative;
+     overflow: auto;
+     height: 100%;
+     width: 100%;
+}
+ #pop, #air, #get {
+     margin-bottom: 2em;
+}
+ .pop, .air {
+     margin-left: 1px;
+     font-size: 10px;
+     display: table;
+     padding: 3em;
+}
+ .pop a, .air a, .pub {
+     text-transform: capitalize;
+     font-size: 12px;
+}
+ .pub {
+     letter-spacing: 1px;
+     line-height: 1;
+}
+ .item {
+     border: 1px solid rgba(0,0,0,.1);
+     margin-bottom: 5em;
+     overflow: hidden;
+}
+ .item .pub {
+     padding: 10px !important;
+}
+ #ago, .ago, .attr {
+     text-transform: uppercase;
+     color: rgba(128,128,128,1);
+     display: inline-block;
+     width: fit-content;
+     cursor: default;
+     line-height: .5;
+     font-size: 9px;
+     margin: 10px;
+}
+ .img {
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+     -moz-user-select: -moz-none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     padding-top: 5px;
+}
+ .views {
+     position: absolute;
+     bottom: -3em;
+}
+ #yt {
+     padding-bottom: 2em;
+     margin-bottom: .5em;
+}
+ .yt {
+     -webkit-overflow-scrolling: touch;
+     width: calc(100% - 1.5em);
+     padding-bottom: 54.25%;
+     position: relative;
+     margin: 0 auto;
+     height: 0;
+}
+ iframe {
+     position: absolute;
+     border: none;
+     height: 100%;
+     width: 100%;
+}
+ input[type=text] {
+     text-align: center 
+}
+ input {
+     transform: translate(-50%, -50%);
+     position: absolute;
+     font-size: 18px;
+     width: 20em;
+     z-index: 2;
+     left: 50%;
+     top: 50%;
+}
+ #random, #apply {
+     position: absolute;
+     padding-top: 2em;
+     font-size: 24px;
+     height: 24px;
+     width: 24px;
+     bottom: 0em;
+     z-index: 2;
+     bottom: 0;
+}
+ #random {
+     padding-left: 3em;
+     right: 0;
+}
+ #apply {
+     padding-right: 3em;
+     left: 0;
+}
+ .fa {
+     display: inline-block;
+}
+ .fa-mail-reply-all {
+     position: absolute;
+     bottom: .5em;
+     right: .5em;
+}
+ .fa-spinner {
+     position: absolute;
+     bottom: .5em;
+     left: .5em;
+}
+ #animate {
+     -webkit-animation: spin 7s infinite ease;
+     -moz-animation: spin 7s infinite ease height: 200px;
+     width: 200px;
+}
+ @-webkit-keyframes spin {
+     100% {
+        -webkit-transform: rotate(360deg);
     }
-    .pub:hover, .des:hover, a:hover { text-decoration: underline }
-
-    ::-webkit-scrollbar { width: 2px }
-
-    .invert::-webkit-scrollbar-thumb { background-color: #ddd }
-
-    .invert::-webkit-scrollbar { background-color: #f5f5f5 }
-
-    .invert {
-    scrollbar-color: #ddd #f5f5f5;
-    scrollbar-width: thin;
+     0% {
+        -webkit-transform: rotate(0deg);
     }
-
-    .opposite::-webkit-scrollbar-thumb { background-color: #0a0a0a }
-
-    .opposite::-webkit-scrollbar { background-color: #000 }
-
-    .opposite {
-    scrollbar-color: #222 #000;
-    scrollbar-width: thin;
+}
+ @-moz-keyframes spin {
+     100% {
+        -moz-transform: rotate(360deg);
     }
-
-    html, body, #container {
-	position: relative;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    bottom: 0;
-    left: 0;
-    top: 0;
+     0% {
+        -moz-transform: rotate(0deg);
     }
-    #wrapper {
-    display: none;
-    border: none;
-    height: 100%;
-    top: 0em;
-    }
-    #arm {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    }
-    #animate {
-    margin: auto;
-    }
-    svg, svg .ring {
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    height: 48px;
-    width: 48px;
-    }
-    .icon {
-    position: relative;
-    margin: -49px auto;
-    display: block;
-    height: 48px;
-    width: 48px;
-    }
-    svg .ring {
-    transform-origin: 50% 50%;
-    transform: rotate(90deg);
-    stroke-dashoffset: 131;
-    stroke-dasharray: 131;
-    fill: transparent;
-    stroke-width: 1px;
-    }
-    svg {
-    z-index: 2;
-    }
-    .home {
-	background-color: transparent;
-	position: relative;
-    height: 50px;
-    bottom: 50px;
-	width: 99%;
-    left: 1px;
-    }
-    #output {
-    -ms-overflow-style:-ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-    border-left: .3px solid rgba(0,0,0,.1);
-    outline: none !important;
-	position: relative;
-    overflow: auto;
-    height: 100%;
-    width: 100%;
-    }
-    #pop, #air, #get {
-    margin-bottom: 2em;
-    }
-    .pop, .air {
-    margin-left: 1px;
-    font-size: 10px;
-	display: table;
-    padding: 3em;
-    }
-    .pop a, .air a, .pub {
-    text-transform: capitalize;
-    font-size: 12px;
-    }
-    .pub {
-    letter-spacing: 1px;
-    line-height: 1;
-    }
-    .item {
-    border: 1px solid rgba(0,0,0,.1);
-    margin-bottom: 5em;
-    overflow: hidden;
-    }
-    .item .pub {
-    padding: 10px !important;
-    }
-    #ago, .ago, .attr {
-    text-transform: uppercase;
-    color: rgba(128,128,128,1);
-    display: inline-block;
-    width: fit-content;
-    cursor: default;
-    line-height: .5;
-    font-size: 9px;
-    margin: 10px;
-    }
-	.img {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	padding-top: 5px;
-	}
-    .views {
-    position: absolute;
-    bottom: -3em;
-    }
-    #yt {
-    padding-bottom: 2em;
-    margin-bottom: .5em;
-    }
-    .yt {
-    -webkit-overflow-scrolling: touch;
-    width: calc(100% - 1.5em);
-    padding-bottom: 54.25%;
-    position: relative;
-	margin: 0 auto;
-    height: 0;
-    }
-    iframe {
-    position: absolute;
-    border: none;
-    height: 100%;
-    width: 100%;
-    }
-	input[type=text] { text-align: center }
-	input {
- 	transform: translate(-50%, -50%);
- 	position: absolute;
-	font-size: 18px;
-	width: 20em;
-	z-index: 2;
- 	left: 50%;
- 	top: 50%;
-	}
-    #random, #apply {
- 	position: absolute;
-    padding-top: 2em;
-    font-size: 24px;
-    height: 24px;
-    width: 24px;
-    bottom: 0em;
-    z-index: 2;
-    bottom: 0;
-    }
-    #random {
-	padding-left: 3em;
-    right: 0;
-    }
-    #apply {
-    padding-right: 3em;
-    left: 0;
-    }
-    .fa {
-    display: inline-block;
-    }
-    .fa-mail-reply-all {
-    position: absolute;
-    bottom: .5em;
-    right: .5em;
-    }
-    .fa-spinner {
-    position: absolute;
-    bottom: .5em;
-    left: .5em;
-    }
-    #animate {
-    -webkit-animation: spin 7s infinite ease;
-    -moz-animation: spin 7s infinite ease
-    height: 200px;
-    width: 200px;
-    }
-    @-webkit-keyframes spin {
-    100% {-webkit-transform: rotate(360deg);}   
-    0%  {-webkit-transform: rotate(0deg);}
-    }
-    @-moz-keyframes spin {
-    100% {-moz-transform: rotate(360deg);}   
-    0%  {-moz-transform: rotate(0deg);}
-    }
+}
