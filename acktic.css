@@ -164,6 +164,7 @@
 }
  #pop, #air, #get {
      margin-bottom: 2em;
+	 padding-top: 2em;
 }
  .pop, .air {
      margin-left: 1px;

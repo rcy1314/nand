@@ -114,24 +114,26 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('html, body, #wrapper, #container, input[type=text], #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('body, #wrapper, #container, #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
         })
         $('.item, .item .pub').css({
             'border-bottom': '1px solid rgba(255,255,255,.1)',
-            'color': 'rgba(255,255,255, .7)',
-            'background-color': 'rgba(10,10,10,1)'
+            'background-color': 'rgba(10,10,10,1)',
+            'color': 'rgba(255,255,255, .9)'
         })
         $('input[type=text]').css({
             'border': '1px solid rgba(255,255,255,.2)',
+            'color': 'rgba(255,255,255,.9)',
+            'background-color': '#000'
         })
         $('#output').removeClass('invert').addClass('opposite')
-        $('a, #air .air .pub').css('color', '#F7426B')
         $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/opposite.png')
         $('.icon').attr('src', 'favicon/opposite.png');
+        $('a, .air .pub').css('color', '#F7426B')
         $('svg .ring').css('stroke', '#F74268')
         animate = 'opposite.png'
     } else if (op == 0) {
@@ -139,16 +141,16 @@ function applyVisual(n) {
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('html, body, input[type=text]').css({
-			'background-color': '#fafafa',
-            'border': '1px solid rgba(0,0,0,.1)'
+        $('body, input[type=text]').css({
+            'border': '1px solid rgba(0,0,0,.1)',
+			'background-color': '#fafafa'
         })
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('a, #air .air .pub').css('color', '#337ab7')
         $('.icon').attr('src', 'favicon/invert.png');
+        $('a, .air .pub').css('color', '#0A74DA')
         $('svg .ring').css('stroke', '#0A74DA')
         animate = 'invert.png'
     }
@@ -197,14 +199,19 @@ function filterResponse(k, n, o, p) {
         request.abort()
     }
     if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-    else if ($('#output #get').length) $('#output').append("<div id='pop'></div>")
-    else {
+    else if ($('#output #get').length) {
+		$('#output').append("<div id='pop'></div>")
+		$('#pop:first').remove()
+    } else {
         $('#output #pop').remove()
         $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++) {
-		if (i == former) continue
-        if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].cat.toLowerCase().match(n)) {
+        if (menu[i].des.toLowerCase().match(n) ||
+			menu[i].des.toLowerCase().match(o) ||
+			menu[i].des.toLowerCase().match(p) ||
+			menu[i].cat.toLowerCase().match(n)
+			) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
@@ -228,9 +235,9 @@ function imageResolution(n) {
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
-    		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(expand)
         })
+    	$('#' + n).css('display', 'block')
     }
 
 }
@@ -373,26 +380,21 @@ function xmlResponse(n) {
 			dataType: 'XML',
 			contentType: 'text/html; charset=utf-8',
  			headers: {          
-				Accept: 'text/html; charset=utf-8',         
+				Accept: 'text/html; charset=utf-8',
 						'Content-Type': 'text/html; charset=utf-8',
-						'X-Requested-With': '*',   
+						'X-Requested-With': '*'
 			}
-
         })
         .fail(function() {
             $('#arm').remove();
-            $('#get').append("<div class='pop' onclick='external(\"" + menu[n].ext + "\")'><div class='pub'><a>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             operation = false
             applyVisual()
         })
         .done(function(data) {
             $('#arm').remove()
-            $('#get').append("<div class='pop' get='" + n + "'><div class='pub'><a ext='" + menu[n].ext + "'>" + id + "</a></div><div class='des'>" + menu[n].des + "</div></div>")
             if ($(data).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
-            if ($(data).find(channel).length < quit) {
-                quit = $(data).find(channel).length
-            }
+            if ($(data).find(channel).length < quit) quit = $(data).find(channel).length
             $(data).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
@@ -443,7 +445,8 @@ function xmlResponse(n) {
                     src = String($(this).find('image').text())
                 } else src = ''
 				console.log(src)
-                if (src.match(/app-icon|assets|comments|dmpxsnews|feedburner|footer|smilies|twitter|undefined|vidible/)) src = ''
+				if (!src.match(/https?:\/\/.+?(gif|png|jpg)/)) src = ''
+                if (src.match(/default|undefined/)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
 								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
@@ -488,5 +491,6 @@ function xmlResponse(n) {
 			precedeResponse()
             displayAnimate('#get')
             applyVisual()
-        })
+        }
+)
 }
