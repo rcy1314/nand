@@ -41,6 +41,8 @@ $(document).ready(function() {
 
     $('#output').on('scroll touchmove focusin', function(e) {
 
+		if (e.type == 'focusin') $('input[type=text]').hide()
+
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
             $('svg circle').css({
@@ -64,6 +66,7 @@ $(document).ready(function() {
 }).on('touch click', 'a', function(e) {
 
     externalURL($(this).attr('ext'))
+	e.stopPropagation()
 
 }).on('touch click', '.pop, .air', function(e) {
 
