@@ -294,9 +294,15 @@ function refreshResponse(n) {
     events = true
 	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
 	else $('input[type=text]').show().focus()
-    $('#get').remove()
-    displayAnimate('#pop')
-    former = 0
+	if ($('input[type=text]').val() == '') {
+		populateResponse()
+		precedeResponse()
+		displayAnimate('#pop')
+	} else {
+	    $('#get').remove()
+	    displayAnimate('#pop')
+	    former = 0
+	}
 }
 
 function reverseArray(Object) {
