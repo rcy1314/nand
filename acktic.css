@@ -217,12 +217,12 @@
      left: 50%;
      top: 50%;
 }
- .fa-toggle-on, .fa-toggle-off, .fa-500px {
+ .fa-toggle-on, .fa-toggle-off, .fa-terminal {
      position: absolute;
      font-size: 20px;
      bottom: .5em;
 }
- .fa-500px {
+ .fa-terminal {
      right: 1em;
 }
  .fa-toggle-on, .fa-toggle-off {
