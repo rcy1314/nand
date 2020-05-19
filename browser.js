@@ -44,8 +44,10 @@ $(document).ready(function() {
 				$('#output').attr('tabindex', -1).focus()
 			}
             else if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) displayAnimate('#pop')
-			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
-            else if ($(this).val().length <= 1) {
+			else if (e.keyCode == 13) {
+				$('input[type=text]').hide().blur()
+				displayAnimate('#pop')
+            } else if ($(this).val().length <= 1) {
                 $('#output').empty()
                 populateResponse()
                 precedeResponse()
@@ -211,10 +213,7 @@ function filterResponse(k, n, o, p) {
         request.abort()
     }
     if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-    else if ($('#output #get').length) {
-		$('#output').append("<div id='pop'></div>")
-		$('#pop:first').remove()
-    } else {
+    else {
         $('#output #pop').remove()
         $('#output').append("<div id='pop'></div>")
     }
@@ -228,6 +227,7 @@ function filterResponse(k, n, o, p) {
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
+	displayAnimate('#pop')
     applyVisual()
 
 }
@@ -480,7 +480,7 @@ function xmlResponse(n) {
                     html = "<div class='item' ext='" + ref.trim() + "'>" +
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago'>" + dst[0] + "</div>" +
+                        "<div id='ago'>" + dst[0] + "<div class='stamp'>" + dst[1] + "</div></div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
