@@ -30,8 +30,20 @@ $(document).ready(function() {
 		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
-        if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
-            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) displayAnimate('#pop')
+        if (e.keyCode <= 90 && e.keyCode >= 48 ||
+			e.keyCode == 8 ||
+			e.keyCode == 32 ||
+			e.keyCode == 13 ||
+			e.keyCode == 27 ||
+			e.keyCode == 38 ||
+			e.keyCode == 40
+		) {
+			if (e.keyCode == 27 || e.keyCode == 38 || e.keyCode == 40) {
+				$('input[type=text]').hide().blur()
+				displayAnimate('#pop')
+				$('#output').attr('tabindex', -1).focus()
+			}
+            else if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) displayAnimate('#pop')
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) {
                 $('#output').empty()
