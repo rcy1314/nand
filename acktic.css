@@ -139,8 +139,8 @@
  svg .progress {
      transform-origin: 50% 50%;
      transform: rotate(90deg);
-     stroke-dashoffset: 131;
-     stroke-dasharray: 131;
+     stroke-dashoffset: 132;
+     stroke-dasharray: 132;
      fill: transparent;
      stroke-width: 3px;
 }
