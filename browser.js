@@ -182,7 +182,7 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    $('#main #contents').remove()
+    $('#main #contents, #main #get').remove()
     $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
@@ -262,10 +262,12 @@ function populateResponse(n) {
 
 }
 
-function randomResponse(n) {
+function randomResponse() {
 
 	$('input[type=text]').hide().blur()
-    xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+	var n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
+    xmlResponse(n)
+	former = n
 
 }
 
