@@ -192,6 +192,7 @@ function filterResponse(k, n, o, p) {
         $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++) {
+		if (i == former) continue
         if (menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p) || menu[i].cat.toLowerCase().match(n)) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
             $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
@@ -203,7 +204,7 @@ function filterResponse(k, n, o, p) {
 
 function imageResolution(n) {
 
-	var mobile = 1440
+	var mobile = 2976
 	var minimum = 299
 	var maximum = 799
     if ($('#' + n).attr('src')) {
