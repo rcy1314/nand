@@ -47,7 +47,7 @@ $(document).ready(function() {
 
     $('#output').on('scroll touchmove focusin', function(e) {
 
-		if (e.type == 'focusin') $('input[type=text]').blur().hide()
+		if (e.type == 'focusin' || e.type == 'touchmove') $('input[type=text]').blur().hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
