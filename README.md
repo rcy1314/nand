@@ -13,18 +13,18 @@
 
 ### Styling
 
-Default
+### Default
 `https://acktic.github.io`
-* Initial
+# Initial
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/1800004058715-1.png'></p>
-* Working
+# Working
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/6012904813793-1.png'></p>
  
- Opposite
+### Opposite
 `https://acktic.github.io/?op=1`
-* Initial
+# Initial
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/5178728867558-1.png'></p>
-* Working
+# Working
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/3908088471094-1.png'></p>
 
 License
