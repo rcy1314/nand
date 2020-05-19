@@ -38,7 +38,11 @@ $(document).ready(function() {
                 populateResponse()
                 precedeResponse()
             } else {
-                filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
+                filterResponse($(this).val().toLowerCase().replace(/ /g, ''),
+					$(this).val().toLowerCase().replace(/ /g, '.+'),
+					opening + closing,
+					closing + opening
+				)
                 $('#output').scrollTop(0)
             }
             e.preventDefault()
