@@ -120,14 +120,15 @@ function applyVisual(n) {
             'background-color': '#000',
             'border': 'none'
         })
-        $('.item, .item .pub').css({
+        $('.item .pub').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
    			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, 1)'
         })
-        $('input[type=text]').css({
-            'border': '1px solid rgba(255,255,255,.2)',
+        $('input[type=text], .item').css({
+            'border': '1px solid rgba(255,255,255,.1)',
         })
+		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/opposite.png')
