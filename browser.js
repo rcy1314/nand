@@ -246,9 +246,9 @@ function imageResolution(n) {
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
+    		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(expand)
         })
-    	$('#' + n).css('display', 'block')
     }
 
 }
