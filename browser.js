@@ -29,7 +29,7 @@ $(document).ready(function() {
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
             if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').blur()
-			else if (e.keyCode == 13) $('input[type=text]').blur()
+			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) {
                 $('#output').empty()
                 populateResponse()
@@ -208,12 +208,12 @@ function filterResponse(k, n, o, p) {
 
 function imageResolution(n) {
 
-	var mobile = 2976
+	var mobile = 1440
 	var minimum = 299
 	var maximum = 799
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalHeight > mobile) {
+            if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
