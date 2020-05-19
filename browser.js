@@ -68,6 +68,7 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
+					populateResponse()
                 } else if (operation == false) populateResponse()
         }
     }).attr('tabindex', -1).focus()
