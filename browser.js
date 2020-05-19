@@ -6,6 +6,7 @@ var closing
 var opening
 var quit = 9
 var former = 0
+var object = []
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -32,10 +33,8 @@ $(document).ready(function() {
 		) {
 			if (e.keyCode == 27 || e.keyCode == 38 || e.keyCode == 40) {
 				$('input[type=text]').hide().blur()
-				displayAnimate('#contents')
 				$('#main').attr('tabindex', -1).focus()
 			}
-            else if (e.keyCode == 8 && $(this).val() == '' && $('#main #contents').length) displayAnimate('#contents')
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) $('#main').empty()
             else {
@@ -44,7 +43,6 @@ $(document).ready(function() {
 					opening + closing,
 					closing + opening
 				)
-                $('#main').scrollTop(0)
             }
             e.preventDefault()
         }
@@ -79,18 +77,13 @@ $('input[type=text]').show().focus()
 
 }).on('touch click', 'a', function(e) {
 
-    externalURL($(this).attr('ext'))
+	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
 
-}).on('touch click', '.populate, .air', function(e) {
+}).on('touch click', '.populate', function(e) {
 
 	$('input[type=text]').hide().blur()
     xmlResponse($(this).attr('get'))
-
-}).on('touch click', '.pub', function(e) {
-
-	externalURL($(this).attr('ext'))	
-    e.stopPropagation()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -100,6 +93,11 @@ $('input[type=text]').show().focus()
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e){
 
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
+	e.stopPropagation()
+
+}).on('touch click', '.fa-toggle-on, .fa-toggle-off', function(e){
+
+	$(this).toggleClass('fa-toggle-on fa-toggle-off')
 	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
@@ -134,7 +132,6 @@ function applyVisual(n) {
         $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/opposite.png')
-        $('.icon').attr('src', 'favicon/opposite.png');
         $('svg .progress').css('stroke', '#F74268')
         $('a, .air .pub').css('color', '#F7426B')
 		$('.a').css('color','#fff')
@@ -152,7 +149,6 @@ function applyVisual(n) {
         $('a, .air .pub').css('color', 'rgba(0,0,0, .8)')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('.icon').attr('src', 'favicon/invert.png')
 		$('body').css('background-color','#fafafa')
         $('svg .progress').css('stroke', '#000')
 		$('.a').css('color','#000')
@@ -162,7 +158,6 @@ function applyVisual(n) {
 
 function expandImage(n) {
 
-	var object = []
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
@@ -179,20 +174,6 @@ function expandImage(n) {
 
 }
 
-function displayAnimate(n) {
-
-    $('#main').animate({
-        scrollTop: $(n + ':last').offset().top - $('#main').offset().top + $('#main').scrollTop()
-    }, 200);
-
-}
-
-function externalURL(n) {
-
-    window.open(n, '_blank')
-
-}
-
 function filterResponse(k, n, o, p) {
 
     if (operation == true) {
@@ -203,13 +184,15 @@ function filterResponse(k, n, o, p) {
     $('#main #contents').remove()
     $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
+		if (i == former) continue
         if (menu[i].uri.toLowerCase().match(k) ||
 			menu[i].des.toLowerCase().match(n) ||
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p) ||
 			menu[i].cat.toLowerCase().match(n)
 			) {
-            var id = sanitizeID(menu[i].id, menu[i].ext)
+    		if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
+			else id = menu[i].id
             $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
@@ -269,7 +252,8 @@ function populateResponse(n) {
     }
     $('#main').append("<div id='contents'></div>")
     for (var i = former; i < menu.length; i++){
-            var id = sanitizeID(menu[i].id, menu[i].ext)
+    	if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
+		else id = menu[i].id
             $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
     applyVisual()
@@ -279,6 +263,7 @@ function populateResponse(n) {
 
 function randomResponse(n) {
 
+	$('input[type=text]').hide().blur()
     xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 
 }
@@ -287,37 +272,7 @@ function refreshResponse(n) {
 
 	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
 	else $('input[type=text]').show().focus()
-	if ($('input[type=text]').val() == '') {
-		populateResponse()
-		displayAnimate('#contents')
-	} else {
-	    $('#get').remove()
-	    displayAnimate('#contents')
-	    former = 0
-	}
-}
-
-function reverseArray(Object) {
-
-    var newObject = {}
-    var keys = []
-    for (var key in Object) keys.push(key)
-    for (var i = keys.length - 1; i >= 0; i--) {
-
-        var value = Object[keys[i]]
-        newObject[keys[i]] = value
-
-    }
-
-    return newObject
-
-}
-
-function sanitizeID(n, o) {
-
-    if (n == 'Reddit') return o.match(/\b(\w+)$/)[0]
-    else return n
-
+	if ($('input[type=text]').val() == '') populateResponse()
 }
 
 function uncoordinatedTimeZone(n) {
@@ -352,7 +307,6 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('#main').empty()
-    var id = sanitizeID(menu[n].id, menu[n].ext)
     $('#main').append("<div id='arm'></div><div id='get' style='padding-top:10px'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     request = $.get({
@@ -421,10 +375,9 @@ function xmlResponse(n) {
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
 								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                    html = "<div class='item' ext='" + ref.trim() + "'>" +
-						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
+                 html = "<div class='item'>" +
 						"<div class='acktic'><i class='fa fa-at'></i></div>" +
-						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
+						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
@@ -444,7 +397,6 @@ function xmlResponse(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-            displayAnimate('#get')
             applyVisual()
         })
 

@@ -164,7 +164,7 @@
 	 bottom: 50px;
      width: 100%;
 }
- .populate, .air {
+ .populate {
      font-size: 10px;
      display: table;
      padding: 3em;
@@ -217,7 +217,7 @@
      left: 50%;
      top: 50%;
 }
- .fa-spinner, .fa-500px {
+ .fa-toggle-on, .fa-toggle-off, .fa-500px {
      position: absolute;
      font-size: 20px;
      bottom: .5em;
@@ -225,6 +225,6 @@
  .fa-500px {
      right: 1em;
 }
- .fa-spinner {
+ .fa-toggle-on, .fa-toggle-off {
      left: 1em;
 }
