@@ -29,7 +29,6 @@ $(document).ready(function() {
             if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').blur()
 			else if (e.keyCode == 13) $('input[type=text]').blur()
             else if ($(this).val().length <= 1) {
-				$('input[type=text]').hide().blur()
                 $('#output').empty()
                 populateResponse()
                 precedeResponse()
