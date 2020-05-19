@@ -182,7 +182,8 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    $('#main #contents, #main #get').remove()
+    $('#main #contents').remove()
+	$('#main #get').slideUp(0000)
     $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
