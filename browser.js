@@ -73,7 +73,8 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-$('input[type=text]').show().focus()
+randomResponse()
+/* $('input[type=text]').show().focus() */
 
 }).on('touch click', 'a', function(e) {
 
