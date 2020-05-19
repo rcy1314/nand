@@ -479,8 +479,8 @@ function xmlResponse(n) {
                 } else {
                     html = "<div class='item' ext='" + ref.trim() + "'>" +
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
-						"<div class='acktic' style='margin:10px'><i class='fa fa-at'></i>" +
-						"<div class='pub'>" + $(this).find('title:first').text() + "</div></div>" +
+						"<div class='acktic' style='margin:5px;position:absolute'><i class='fa fa-at'></i></div>" +
+						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 

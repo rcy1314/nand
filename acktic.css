@@ -42,7 +42,7 @@
          margin: 3em !important;
     }
      .fa {
-         font-size: 12px;
+         font-size: 24px;
     }
 }
  @media screen and (min-width: 1440px) {
@@ -187,6 +187,8 @@
 }
  .item .pub {
      padding: 10px !important;
+	 margin-left: 15px;
+	 margin-right: 15px;
 }
  #ago, .ago, .attr {
      text-transform: uppercase;
