@@ -126,14 +126,14 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #wrapper, #container, #output, .home, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('body, #wrapper, #container, #output, .home, .item, .pop, .pop .pub, .air, .air .pub, .des').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
         })
         $('.item, .item .pub').css({
-            'border-bottom': '1px solid rgba(255,255,255,.1)',
-            'background-color': 'rgba(10,10,10,1)',
+	        'border-bottom': '1px solid rgba(255,255,255,.1)',
+   			'background-color': 'rgba(0,0,0,.8)',
             'color': 'rgba(255,255,255, .9)'
         })
         $('input[type=text]').css({
@@ -153,10 +153,10 @@ function applyVisual(n) {
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('body, input[type=text]').css({
+        $('body, .item, input[type=text]').css({
             'border': '1px solid rgba(0,0,0,.1)',
-			'background-color': '#fafafa'
         })
+		$('body').css('background-color','#fafafa')
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#output').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'favicon/invert.png')
@@ -479,7 +479,8 @@ function xmlResponse(n) {
                 } else {
                     html = "<div class='item' ext='" + ref.trim() + "'>" +
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
-						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
+						"<div class='acktic' style='margin:10px'><i class='fa fa-at'></i>" +
+						"<div class='pub'>" + $(this).find('title:first').text() + "</div></div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
