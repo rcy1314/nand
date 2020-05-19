@@ -147,6 +147,7 @@ function applyVisual(n) {
         $('.icon').attr('src', 'favicon/opposite.png');
         $('a, .air .pub').css('color', '#F7426B')
         $('svg .ring').css('stroke', '#F74268')
+		$('.a').css('color','#fff')
         animate = 'opposite.png'
     } else if (op == 0) {
         $('input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
@@ -162,8 +163,9 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
         $('.icon').attr('src', 'favicon/invert.png');
-        $('a, .air .pub').css('color', '#0A74DA')
-        $('svg .ring').css('stroke', '#0A74DA')
+        $('a, .air .pub').css('color', 'rgba(0,0,0,.8)')
+        $('svg .ring').css('stroke', '#000')
+		$('.a').css('color','#000')
         animate = 'invert.png'
     }
 }
