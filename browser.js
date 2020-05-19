@@ -25,9 +25,11 @@ $(document).ready(function() {
 		events = true
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
-        if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32) {
-            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) return false
+        if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
+            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').blur()
+			else if (e.keyCode == 13) $('input[type=text]').blur()
             else if ($(this).val().length <= 1) {
+				$('input[type=text]').hide().blur()
                 $('#output').empty()
                 populateResponse()
                 precedeResponse()
@@ -41,7 +43,7 @@ $(document).ready(function() {
 
     $('#output').on('scroll touchmove focusin', function(e) {
 
-		if (e.type == 'focusin') $('input[type=text]').hide()
+		if (e.type == 'focusin') $('input[type=text]').blur().hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
@@ -50,6 +52,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
+			if (events == false) $('input[type=test]').blur()
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
