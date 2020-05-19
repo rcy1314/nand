@@ -7,12 +7,11 @@ var opening
 var quit = 11
 var former = 0
 var object = []
-var events = true
 var operation = false
-var cor = 'https://acktic-github-io.herokuapp.com/'
+var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#wrapper').css('display', 'block')
+    $('#wrapper, input[type=text]').css('display', 'block')
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
@@ -25,7 +24,6 @@ $(document).ready(function() {
 
 
     $('input[type=text]').on('keyup focus', function(e) {
-		events = true
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
@@ -72,7 +70,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			if (events == false) $('input[type=test]').hide().blur()
+			$('input[type=test]').hide().blur()
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
@@ -112,8 +110,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.img', function(e) {
 
-	if ($(this).hasClass('expand min')) expandImage($(this).attr('id'))
-	else if ($(this).hasClass('expand full')) expandImage($(this).attr('id'))
+	if ($(this).hasClass('expand min') || $(this).hasClass('expand full')) expandImage($(this).attr('id'))
 	else $(this).parent().find('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
 	
@@ -133,7 +130,7 @@ function applyVisual(n) {
         })
         $('.item, .item .pub').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
-   			'background-color': 'rgba(0,0,0,.8)',
+   			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, .9)'
         })
         $('input[type=text]').css({
@@ -175,9 +172,9 @@ function expandImage(n) {
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
-            item: $('#' + n).parents('.item').width() + 10,
-            less: $('#' + n).width(),
-            parent: $('#' + n).parent().width()
+            item: $('#' + n).parents('.item').width(),
+            parent: $('#' + n).parent().width(),
+            less: $('#' + n).width()
         })
         $('#' + n).removeClass('min').addClass('full').width('100%').parent().width("100%")
     } else if ($('#' + n).hasClass('expand full')) {
@@ -192,9 +189,8 @@ function displayAnimate(n) {
 
     $('#output').animate({
         scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 350);
+    }, 250);
     setTimeout(function() {
-        events = false
     }, 1500)
 
 }
@@ -221,7 +217,8 @@ function filterResponse(k, n, o, p) {
         $('#output').append("<div id='pop'></div>")
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].des.toLowerCase().match(n) ||
+        if (menu[i].uri.toLowerCase().match(k) ||
+			menu[i].des.toLowerCase().match(n) ||
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p) ||
 			menu[i].cat.toLowerCase().match(n)
@@ -280,9 +277,9 @@ function populateResponse(n) {
 
     if ($('#output #pop').length > 1) $('#output #pop').remove()
     if (operation == true) {
-        $('#arm').remove()
         request.abort()
         operation = false
+        $('#arm').remove()
     }
     $('#output').append("<div id='pop'></div>")
     for (var i = former; i < menu.length; i++){
@@ -309,14 +306,12 @@ function precedeResponse(n) {
 
 function randomResponse(n) {
 
-    var n = menu[Math.floor(Math.random() * menu.length)]
-    xmlResponse(menu.indexOf(n))
+    xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 
 }
 
 function refreshResponse(n) {
 
-    events = true
 	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
 	else $('input[type=text]').show().focus()
 	if ($('input[type=text]').val() == '') {
@@ -374,6 +369,7 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
+
     if (operation == true) {
         $('#arm').remove()
         operation = false
@@ -382,14 +378,13 @@ function xmlResponse(n) {
     obj = []
     former = n
     var pub = []
-    events = true
     operation = true
     $('#output').empty()
     var id = sanitizeID(menu[n].id, menu[n].ext)
-    $('#output').append("<div id='arm'></div><div id='get'></div>")
+    $('#output').append("<div id='arm'></div><div id='get' style='padding-top:10px'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     request = $.get({
-            url: cor + menu[n].uri,
+            url: cors + menu[n].uri,
 			method: 'GET',
 			dataType: 'XML',
 			contentType: 'text/html; charset=utf-8',
@@ -404,12 +399,12 @@ function xmlResponse(n) {
             operation = false
             applyVisual()
         })
-        .done(function(data) {
+        .done(function(xhr) {
             $('#arm').remove()
-            if ($(data).find('entry').length > 0) var channel = "entry"
+            if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
-            if ($(data).find(channel).length < quit) quit = $(data).find(channel).length
-            $(data).find(channel).each(function(i) {
+            if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
+            $(xhr).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
                     var dst = uncoordinatedTimeZone($(this).find('updated').text());
@@ -443,28 +438,20 @@ function xmlResponse(n) {
                 } else if ($(this).find('enclosure').attr('url')) {
                     src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
-                    if (menu[n].id.match(/Yahoo/) && $(this).find('media\\:content, content').attr('url').match(/https.*/)) {
-						src = String($(this).find('media\\:content, content').attr('url').match(/https.*/))
-                    } else src = String($(this).find('media\\:content, content').attr('url'))
+                    src = String($(this).find('media\\:content, content').attr('url').match(/https?\:\/\/.+/))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
-                    if (menu[n].id == 'TIME') src = String($(this).find('content\\:encoded').text().match(/https:\/\/api\..+[^'"]/))
-                    else src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
+                    src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
-                    if (menu[n].id == '4chan') {
-                        src = String($(this).find('description').text().match(/https:\/\/.+?(gif|png|jpg)/))
-                        if (!src.match(/\.jpg/)) src = String($(this).find('description').text().match(/href=['"](.*?)['"]/)[1])
-                        else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)(s\.jpg)['"]/)[1]) + '.jpg'
-                    } else src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+                    src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-				console.log(src)
-				if (!src.match(/https?:\/\/.+?(gif|png|jpg)/)) src = ''
                 if (src.match(/default|undefined/)) src = ''
+				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
 								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/mp4|twitch|youtube/)) {
+                if (src.match(/youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " + 
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
@@ -506,6 +493,6 @@ function xmlResponse(n) {
 			precedeResponse()
             displayAnimate('#get')
             applyVisual()
-        }
-)
+        })
+
 }
