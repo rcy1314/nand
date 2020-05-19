@@ -166,8 +166,8 @@
     .home {
 	background-color: transparent;
 	position: relative;
-    height: 48px;
-    bottom: 49px;
+    height: 50px;
+    bottom: 50px;
     left: 0;
     }
     #output {
@@ -252,6 +252,7 @@
 	}
 	input[type=text] { text-align: center }
 	input {
+	position: absolute;
 	font-size: 12px;
 	margin: 0 auto;
 	display: none;
