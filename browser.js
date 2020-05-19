@@ -80,6 +80,11 @@ $('input[type=text]').show().focus()
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
 
+}).on('touch click', '.item', function(e){
+
+	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
+	e.stopPropagation()
+
 }).on('touch click', '.populate', function(e) {
 
 	$('input[type=text]').hide().blur()
