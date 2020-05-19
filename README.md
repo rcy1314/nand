@@ -27,6 +27,8 @@
 * Working
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/3908088471094-1.png'></p>
 
+for reference the min browser is shown.
+
 License
 ----
 
