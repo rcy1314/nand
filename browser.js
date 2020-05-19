@@ -19,7 +19,10 @@ $(document).ready(function() {
 
     } else applyVisual(0)
 
-	$('circle').click()
+	populateResponse()
+	precedeResponse()
+	displayAnimate('#pop')
+
 
     $('input[type=text]').on('keyup focus', function(e) {
 		events = true
@@ -28,7 +31,7 @@ $(document).ready(function() {
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
         closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
         if (e.keyCode <= 90 && e.keyCode >= 48 || e.keyCode == 8 || e.keyCode == 32 || e.keyCode == 13) {
-            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').blur()
+            if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) $('input[type=text]').hide().blur()
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) {
                 $('#output').empty()
@@ -53,7 +56,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			if (events == false) $('input[type=test]').blur()
+			if (events == false) $('input[type=test]').hide().blur()
             if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
             if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
@@ -74,7 +77,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.pop, .air', function(e) {
 
-	$('input[type=text]').hide()
+	$('input[type=text]').hide().blur()
     xmlResponse($(this).attr('get'))
 
 }).on('touch click', '.item', function(e) {
@@ -289,11 +292,9 @@ function randomResponse(n) {
 function refreshResponse(n) {
 
     events = true
-    $('input[type=text]').val('')
-	$('input[type=text]').show().focus()
-    $('#output').empty()
-    populateResponse()
-    precedeResponse()
+	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
+	else $('input[type=text]').show().focus()
+    $('#get').remove()
     displayAnimate('#pop')
     former = 0
 }

@@ -168,7 +168,8 @@
 	position: relative;
     height: 50px;
     bottom: 50px;
-    left: 0;
+	width: 99%;
+    left: 1px;
     }
     #output {
     -ms-overflow-style:-ms-autohiding-scrollbar;
