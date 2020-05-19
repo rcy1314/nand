@@ -11,6 +11,13 @@ var events = true
 var operation = false
 var cor = 'https://acktic-github-io.herokuapp.com/'
 $(document).ready(function() {
+     document.ontouchmove = function(e){
+          e.preventDefault();
+          }
+input.onfocus = function () {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+}
     $('#wrapper').css('display', 'block')
 	document.title = 'RSS-Browser`'
     if (location.href.match('\\?op=1')) {
@@ -34,7 +41,7 @@ $(document).ready(function() {
                 precedeResponse()
             } else {
                 filterResponse($(this).val().toLowerCase().replace(/ /g, ''), $(this).val().toLowerCase().replace(/ /g, '.+'), opening + closing, closing + opening)
-                displayAnimate('#pop')
+                $('#output').scrollTop(0)
             }
             e.preventDefault()
         }
