@@ -181,7 +181,6 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    $('#main').empty()
     $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
