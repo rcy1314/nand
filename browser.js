@@ -73,8 +73,7 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-randomResponse()
-/* $('input[type=text]').show().focus() */
+$('input[type=text]').show().focus()
 
 }).on('touch click', 'a', function(e) {
 
@@ -182,8 +181,7 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    $('#main #contents').remove()
-	$('#main #get').slideUp(0000)
+    $('#main').empty()
     $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
@@ -210,15 +208,17 @@ function imageResolution(n) {
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth > maximum) {
-                var expand = "<a style='cursor:pointer;text-transform:lowercase'>expand</a>"
+                var expand = "<a onclick='event.stopPropagation();expandImage(" + n + ")' style='cursor:default;text-transform:capitalize'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
             } else if ($('#' + n).get(0).naturalWidth > minimum) {
+				expand = ''
                 $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
+				expand = ''
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
     		$('#' + n).css('display', 'block')
-            $('#' + n).siblings('.attr').html(expand)
+            $('#' + n).siblings('.attr').html(expand + '&ensp;' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight))
         })
     }
 
@@ -380,10 +380,10 @@ function xmlResponse(n) {
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
 								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                  html = "<div class='item'>" +
-						"<div class='acktic'><i class='fa fa-at'></i></div>" +
+						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
-						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
+						"<div class='ago attr'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
