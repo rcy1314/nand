@@ -292,7 +292,7 @@ function randomResponse(n) {
 function refreshResponse(n) {
 
     events = true
-	$('input[type=text]').show()
+	$('input[type=text]').show().focus()
     $('#output').empty()
     $('input[type=text]').val('')
     populateResponse()
