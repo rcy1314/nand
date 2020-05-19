@@ -58,7 +58,12 @@
  div, input {
      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif 
 }
- .icon, .populate, .air, .pub, .img, a {
+ .populate, .pub, .img, a {
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+     -moz-user-select: -moz-none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
      text-decoration: none;
      cursor: pointer;
 }
@@ -169,7 +174,7 @@
      display: table;
      padding: 3em;
 }
- .acktic {
+ .ack {
 	 font-size: 12px !important;
 	 position: absolute;
 	 margin: 10px;
@@ -193,11 +198,6 @@
      margin: 10px;
 }
  .img {
-     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-     -moz-user-select: -moz-none;
-     -webkit-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
 	 margin-top: 5px;
 }
  #navigate {

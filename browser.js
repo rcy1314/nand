@@ -181,7 +181,6 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
         if (menu[i].uri.toLowerCase().match(k) ||
@@ -192,7 +191,7 @@ function filterResponse(k, n, o, p) {
 			) {
     		if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
 			else id = menu[i].id
-            $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     applyVisual()
@@ -245,17 +244,15 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if ($('#main #contents').length > 1) $('#main #contents').remove()
     if (operation == true) {
         request.abort()
         operation = false
         $('#arm').remove()
     }
-    $('#main').append("<div id='contents'></div>")
     for (var i = former; i < menu.length; i++){
     	if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
 		else id = menu[i].id
-            $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
     applyVisual()
     former = 0
@@ -365,7 +362,8 @@ function xmlResponse(n) {
                 } else if ($(this).find('enclosure').attr('url')) {
                     src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
-                    src = String($(this).find('media\\:content, content').attr('url').match(/https?\:\/\/.+/))
+					if ($(this).find('media\\:content, content').attr('url').match(/^(http.+)(https\:\/\/.+)/)) src = String($(this).find('media\\:content, content').attr('url').match(/^(http.+)(https\:\/\/.+)/)[2])
+                    else src = String($(this).find('media\\:content, content').attr('url').match(/(https\:\/\/.+)$/))
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
