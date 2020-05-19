@@ -53,7 +53,7 @@ $(document).ready(function() {
 		if (e.type == 'focusin' || e.type == 'touchmove') $('input[type=text]').blur().hide()
 
         if (e.type == 'scroll') {
-            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() + 20)));
+            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * n)
             })
@@ -61,7 +61,7 @@ $(document).ready(function() {
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			$('input[type=test]').hide().blur()
             if ($('#main').scrollTop() != 0 && $('#main').scrollTop() != $('#air').outerHeight()) operation = false
-            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight - 10)
+            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (operation == false && $('input[type=text]').val().length > 2) {
                     filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
@@ -117,14 +117,14 @@ function applyVisual(n) {
 
     if (op == 1) {
         $('body, #container, #container, #main, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
-            'color': 'rgba(255,255,255,.9)',
+            'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
         })
         $('.item, .item .pub').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
    			'background-color': 'rgba(0,0,0,.9)',
-            'color': 'rgba(255,255,255, .9)'
+            'color': 'rgba(255,255,255, 1)'
         })
         $('input[type=text]').css({
             'border': '1px solid rgba(255,255,255,.2)',
@@ -181,6 +181,7 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
+	$('#main').empty()
     for (var i = 0; i < menu.length; i++) {
 		if (i == former) continue
         if (menu[i].uri.toLowerCase().match(k) ||
@@ -216,7 +217,7 @@ function imageResolution(n) {
                 $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left','10px')
             }
     		$('#' + n).css('display', 'block')
-            $('#' + n).siblings('.attr').html(expand + '&ensp;' + Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight))
+            $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
     }
 
@@ -307,7 +308,7 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('#main').empty()
-    $('#main').append("<div id='arm'></div><div id='get' style='padding-top:10px'></div>")
+    $('#main').append("<div id='arm'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
@@ -374,15 +375,15 @@ function xmlResponse(n) {
                 if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
-								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago'>" + dst[0] + "</div>" +
-						"<div class='ago attr'></div>" +
+                        "<div id='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
+						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
+						"<div class='ago attr' style='width:100%;display:block'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
-						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
+						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>"
                 pub.push({
@@ -395,7 +396,7 @@ function xmlResponse(n) {
                 return b.since - a.since
             })
             for (var i = 0; i <= quit - 1; i++) {
-                $('#get').append(pub[i].post)
+                $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
             applyVisual()
