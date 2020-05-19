@@ -4,24 +4,18 @@ var request
 var ost = 0
 var closing
 var opening
-var quit = 11
+var quit = 9
 var former = 0
-var object = []
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#wrapper, input[type=text]').css('display', 'block')
+    $('#container').show()
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
 
     } else applyVisual(0)
-
-	populateResponse()
-	precedeResponse()
-	displayAnimate('#pop')
-
 
     $('input[type=text]').on('keyup focus', function(e) {
 		window.scrollTo(0, 0)
@@ -38,41 +32,38 @@ $(document).ready(function() {
 		) {
 			if (e.keyCode == 27 || e.keyCode == 38 || e.keyCode == 40) {
 				$('input[type=text]').hide().blur()
-				displayAnimate('#pop')
-				$('#output').attr('tabindex', -1).focus()
+				displayAnimate('#contents')
+				$('#main').attr('tabindex', -1).focus()
 			}
-            else if (e.keyCode == 8 && $(this).val() == '' && $('#output #pop').length) displayAnimate('#pop')
+            else if (e.keyCode == 8 && $(this).val() == '' && $('#main #contents').length) displayAnimate('#contents')
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
-            else if ($(this).val().length <= 1) {
-                $('#output').empty()
-                populateResponse()
-                precedeResponse()
-            } else {
+            else if ($(this).val().length <= 1) $('#main').empty()
+            else {
                 filterResponse($(this).val().toLowerCase().replace(/ /g, ''),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
 					opening + closing,
 					closing + opening
 				)
-                $('#output').scrollTop(0)
+                $('#main').scrollTop(0)
             }
             e.preventDefault()
         }
     })
 
-    $('#output').on('scroll touchmove focusin', function(e) {
+    $('#main').on('focusin scroll touchmove', function(e) {
 
 		if (e.type == 'focusin' || e.type == 'touchmove') $('input[type=text]').blur().hide()
 
         if (e.type == 'scroll') {
-            var n = Math.max(0, Math.min(1, $('#output').scrollTop() / ($('#output')[0].scrollHeight - $('#output').innerHeight() + 20)));
+            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() + 20)));
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * n)
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			$('input[type=test]').hide().blur()
-            if ($('#output').scrollTop() != 0 && $('#output').scrollTop() != $('#air').outerHeight()) operation = false
-            if ($('#output').scrollTop() + $('#output').innerHeight() >= $('#output')[0].scrollHeight - 10)
+            if ($('#main').scrollTop() != 0 && $('#main').scrollTop() != $('#air').outerHeight()) operation = false
+            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight - 10)
                 if (operation == false && $('input[type=text]').val().length > 2) {
                     filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
@@ -84,19 +75,22 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
+$('input[type=text]').show().focus()
+
 }).on('touch click', 'a', function(e) {
 
     externalURL($(this).attr('ext'))
 	e.stopPropagation()
 
-}).on('touch click', '.pop, .air', function(e) {
+}).on('touch click', '.populate, .air', function(e) {
 
 	$('input[type=text]').hide().blur()
     xmlResponse($(this).attr('get'))
 
-}).on('touch click', '.item', function(e) {
+}).on('touch click', '.pub', function(e) {
 
 	externalURL($(this).attr('ext'))	
+    e.stopPropagation()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -116,6 +110,7 @@ $(document).ready(function() {
 	
 })
 
+
 function applyVisual(n) {
 
     if (n == 'op') {
@@ -123,7 +118,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #wrapper, #container, #output, .home, .item, .pop, .pop .pub, .air, .air .pub, .des').css({
+        $('body, #container, #container, #main, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,.9)',
             'background-color': '#000',
             'border': 'none'
@@ -135,33 +130,31 @@ function applyVisual(n) {
         })
         $('input[type=text]').css({
             'border': '1px solid rgba(255,255,255,.2)',
-            'color': 'rgba(255,255,255,.9)',
-            'background-color': '#000'
         })
-        $('#output').removeClass('invert').addClass('opposite')
+        $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'favicon/opposite.png')
         $('#animate').attr('src', 'favicon/opposite.png')
         $('.icon').attr('src', 'favicon/opposite.png');
+        $('svg .progress').css('stroke', '#F74268')
         $('a, .air .pub').css('color', '#F7426B')
-        $('svg .ring').css('stroke', '#F74268')
 		$('.a').css('color','#fff')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #output, .home, .pop, .pop .pub, .pop .des, .air, .air .pub, .air .des, .item, .item .pub').css({
+        $('input[type=text], #main, #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)'
         })
-        $('body, .item, input[type=text]').css({
+        $('.item, input[type=text]').css({
             'border': '1px solid rgba(0,0,0,.1)',
         })
-		$('body').css('background-color','#fafafa')
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('#output').removeClass('opposite').addClass('invert')
+        $('#main').removeClass('opposite').addClass('invert')
+        $('a, .air .pub').css('color', 'rgba(0,0,0, .8)')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
-        $('.icon').attr('src', 'favicon/invert.png');
-        $('a, .air .pub').css('color', 'rgba(0,0,0,.8)')
-        $('svg .ring').css('stroke', '#000')
+        $('.icon').attr('src', 'favicon/invert.png')
+		$('body').css('background-color','#fafafa')
+        $('svg .progress').css('stroke', '#000')
 		$('.a').css('color','#000')
         animate = 'invert.png'
     }
@@ -169,6 +162,7 @@ function applyVisual(n) {
 
 function expandImage(n) {
 
+	var object = []
     if ($('#' + n).hasClass('expand min')) {
         object.push({
             element: n,
@@ -187,11 +181,9 @@ function expandImage(n) {
 
 function displayAnimate(n) {
 
-    $('#output').animate({
-        scrollTop: $(n + ':last').offset().top - $('#output').offset().top + $('#output').scrollTop()
-    }, 250);
-    setTimeout(function() {
-    }, 1500)
+    $('#main').animate({
+        scrollTop: $(n + ':last').offset().top - $('#main').offset().top + $('#main').scrollTop()
+    }, 200);
 
 }
 
@@ -208,14 +200,8 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-    if (!$('#output #get').length) $('#output').empty().append("<div id='pop'></div>")
-    else if ($('#output #get').length) {
-		$('#output').append("<div id='pop'></div>")
-		$('#pop:first').remove()
-    } else {
-        $('#output #pop').remove()
-        $('#output').append("<div id='pop'></div>")
-    }
+    $('#main #contents').remove()
+    $('#main').append("<div id='contents'></div>")
     for (var i = 0; i < menu.length; i++) {
         if (menu[i].uri.toLowerCase().match(k) ||
 			menu[i].des.toLowerCase().match(n) ||
@@ -224,7 +210,7 @@ function filterResponse(k, n, o, p) {
 			menu[i].cat.toLowerCase().match(n)
 			) {
             var id = sanitizeID(menu[i].id, menu[i].ext)
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
         }
     }
     applyVisual()
@@ -275,32 +261,19 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if ($('#output #pop').length > 1) $('#output #pop').remove()
+    if ($('#main #contents').length > 1) $('#main #contents').remove()
     if (operation == true) {
         request.abort()
         operation = false
         $('#arm').remove()
     }
-    $('#output').append("<div id='pop'></div>")
+    $('#main').append("<div id='contents'></div>")
     for (var i = former; i < menu.length; i++){
             var id = sanitizeID(menu[i].id, menu[i].ext)
-            $('#pop').append("<div class='pop' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#contents').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
     applyVisual()
     former = 0
-
-}
-
-function precedeResponse(n) {
-
-    reverseArray(menu.reverse())
-    $('#output').prepend("<div id='air'></div>")
-    for (var i = menu.reverse().length - 1; i >= 0; i--) {
-            var id = sanitizeID(menu[i].id, menu[i].ext)
-            $('#air').prepend("<div class='air' get='" + i + "'><div class='pub'<a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-    }
-    $('#output').scrollTop($('#output').scrollTop() + $('#air:first').outerHeight())
-    applyVisual()
 
 }
 
@@ -316,11 +289,10 @@ function refreshResponse(n) {
 	else $('input[type=text]').show().focus()
 	if ($('input[type=text]').val() == '') {
 		populateResponse()
-		precedeResponse()
-		displayAnimate('#pop')
+		displayAnimate('#contents')
 	} else {
 	    $('#get').remove()
-	    displayAnimate('#pop')
+	    displayAnimate('#contents')
 	    former = 0
 	}
 }
@@ -343,7 +315,7 @@ function reverseArray(Object) {
 
 function sanitizeID(n, o) {
 
-    if (n == 'Reddit' || n == 'Youtube' && !o.match(/channel/)) return o.match(/\b(\w+)$/)[0]
+    if (n == 'Reddit') return o.match(/\b(\w+)$/)[0]
     else return n
 
 }
@@ -379,9 +351,9 @@ function xmlResponse(n) {
     former = n
     var pub = []
     operation = true
-    $('#output').empty()
+    $('#main').empty()
     var id = sanitizeID(menu[n].id, menu[n].ext)
-    $('#output').append("<div id='arm'></div><div id='get' style='padding-top:10px'></div>")
+    $('#main').append("<div id='arm'></div><div id='get' style='padding-top:10px'></div>")
     $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
@@ -426,9 +398,7 @@ function xmlResponse(n) {
                 } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
                     src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('link').attr('href')) {
-                    if ($(this).find('link').attr('href').match(/youtube/)) {
-						src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-					} else src = String($(this).find('link').attr('href'))
+					src = String($(this).find('link').attr('href'))
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
                 } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
@@ -446,29 +416,14 @@ function xmlResponse(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                if (src.match(/default|undefined/)) src = ''
+                if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy " +
 								"<a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
-                if (src.match(/youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
-						views = "<div class='ago views' style='left:0em'><b>Views</b> " + 
-						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
-                    }
-					else views = ''
-                    html = "<div id='yt' class='item'>" +
-						/* "<div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
-                        "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago'>" + dst[0] +
-                        /* "<br>" + dst[1] + "</div>" + */
-                        "</div><div class='yt'><iframe src='" + src + "'></iframe>" + views +
-                        "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
-						"Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div></div>"
-                } else {
                     html = "<div class='item' ext='" + ref.trim() + "'>" +
 						/* <div id='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div>" + */
-						"<div class='acktic' style='margin:5px;position:absolute'><i class='fa fa-at'></i></div>" +
+						"<div class='acktic'><i class='fa fa-at'></i></div>" +
 						"<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago'>" + dst[0] + "</div>" +
 						"<div class='ago attr' onclick='expandImage(" + i + ")'></div>" +
@@ -476,7 +431,6 @@ function xmlResponse(n) {
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>"
-                }
                 pub.push({
                     element: i,
                     since: gen,
@@ -490,7 +444,6 @@ function xmlResponse(n) {
                 $('#get').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			precedeResponse()
             displayAnimate('#get')
             applyVisual()
         })

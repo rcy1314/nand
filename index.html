@@ -11,17 +11,17 @@
     <script src="rss.js"></script>
   </head>
 <body>
-<div id='wrapper'>
-    <div id='container'>
-		<input type='text'>
-        <div id='output'></div>
-    	<div class='home'>
-        	<svg><circle cx='24' cy='26.5' r='21' class='ring' onclick='refreshResponse()'></svg>
+<div id='container'>
+    <input type='text' placeholder='chan,  media,  social,  tech,  world'>
+        <div id='main'></div>
+    	<div id='navigate'>
+        	<svg>
+                <circle cx='25' cy='26.5' r='21' class='progress' onclick='refreshResponse()'>
+            </svg>
             <i class='a fa fa-at' onclick='refreshResponse()'></i>
             <div id='random' onclick='randomResponse()' title='Random'><i class='fa fa-500px'></i></div>
            	<div id='apply' onclick="applyVisual('op')" title='Opposite'><i class='fa fa-spinner'></i></div>
     	</div>
-    </div>
 </div>
 </body>
 </html>
