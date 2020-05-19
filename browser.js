@@ -60,7 +60,7 @@ $(document).ready(function() {
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			$('input[type=test]').hide().blur()
-            if ($('#main').scrollTop() != 0 && $('#main').scrollTop() != $('#air').outerHeight()) operation = false
+            if ($('#main').scrollTop() != 0) operation = false
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (operation == false && $('input[type=text]').val().length > 2) {
                     filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
@@ -68,7 +68,6 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-                    populateResponse()
                 } else if (operation == false) populateResponse()
         }
     }).attr('tabindex', -1).focus()
@@ -116,7 +115,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #container, #main, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
@@ -145,11 +144,12 @@ function applyVisual(n) {
             'border': '1px solid rgba(0,0,0,.1)',
         })
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
+		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
-        $('a, .air .pub').css('color', 'rgba(0,0,0, .8)')
         $('#favicon').attr('href', 'favicon/invert.png')
         $('#animate').attr('src', 'favicon/invert.png')
 		$('body').css('background-color','#fafafa')
+        $('a, .pub').css('color', 'rgba(0,0,0,.7)')
         $('svg .progress').css('stroke', '#000')
 		$('.a').css('color','#000')
         animate = 'invert.png'
@@ -181,14 +181,12 @@ function filterResponse(k, n, o, p) {
         operation = false
         request.abort()
     }
-	$('#item').slideUp(250)
+	$('.populate').remove()
     for (var i = 0; i < menu.length; i++) {
-		if (i == former) continue
-        if (menu[i].uri.toLowerCase().match(k) ||
-			menu[i].des.toLowerCase().match(n) ||
+        if (menu[i].cat.toLowerCase().match(k) ||
+			menu[i].uri.toLowerCase().match(n) ||
 			menu[i].des.toLowerCase().match(o) ||
-			menu[i].des.toLowerCase().match(p) ||
-			menu[i].cat.toLowerCase().match(n)
+			menu[i].des.toLowerCase().match(p)
 			) {
     		if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
 			else id = menu[i].id
