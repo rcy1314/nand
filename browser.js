@@ -10,11 +10,8 @@ var object = []
 var events = true
 var operation = false
 var cor = 'https://acktic-github-io.herokuapp.com/'
+document.title = 'RSS-Browser`'
 $(document).ready(function() {
-	document.title = 'RSS-Browser`'
-    document.ontouchmove = function(e){
-          e.preventDefault();
-    }
     $('#wrapper').css('display', 'block')
     if (location.href.match('\\?op=1')) {
 
@@ -292,9 +289,9 @@ function randomResponse(n) {
 function refreshResponse(n) {
 
     events = true
+    $('input[type=text]').val('')
 	$('input[type=text]').show().focus()
     $('#output').empty()
-    $('input[type=text]').val('')
     populateResponse()
     precedeResponse()
     displayAnimate('#pop')
