@@ -159,8 +159,9 @@ function applyVisual(n) {
         $('input[type=text], .item .pub').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
-		$('#arm').css('background-image','url(images/filter.jpg)')
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
+		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
+		$('#arm').css('background-image','url(images/filter.jpg)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
