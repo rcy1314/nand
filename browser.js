@@ -188,7 +188,6 @@ function filterResponse(k, n, o, p) {
     }
 	$('.populate').remove()
     for (var i = 0; i < menu.length; i++) {
-		if (i = former) continue
         if (menu[i].des.toLowerCase().match(n) ||
 			menu[i].cat.toLowerCase().match(k) ||
 			menu[i].des.toLowerCase().match(o) ||
@@ -275,6 +274,7 @@ function randomResponse() {
 
 function refreshResponse(n) {
 
+	$('input[type=text]').val('')
 	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
 	else $('input[type=text]').show().focus()
 	if ($('input[type=text]').val() == '') populateResponse()
