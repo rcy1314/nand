@@ -198,9 +198,7 @@ function filterResponse(k, n, o, p) {
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p)
 			) {
-    		if (menu[i].id.match(/\//)) id = menu[i].id.match(/(\w+)$/)[0]
-			else id = menu[i].id
-            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 			if (search != 0) search = i + 1
         }
     }
@@ -261,9 +259,7 @@ function populateResponse(n) {
         $('#arm').remove()
     }
     for (var i = former; i < menu.length; i++){
-    	if (menu[i].id.match(/\//)) id = menu[i].id.match(/(\w+)$/)[0]
-		else id = menu[i].id
-            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
     applyVisual()
 
