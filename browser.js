@@ -293,9 +293,10 @@ function randomResponse() {
 function refreshResponse(n) {
 
 	$('input[type=text]').val('')
-	if ($('#arm').length){
+	if ($('#arm').length || $('input[type=text]').is(':focus')) {
 		$('input[type=text]').hide().blur()
 		$('#arm').fadeOut(550).remove()
+		populateResponse()
 	} else {
 		$('input[type=text]').show().focus()
 		$('#main').css('background-color','rgba(128,128,128,.5)').html("<div id='arm'></div>")
@@ -309,7 +310,7 @@ function refreshResponse(n) {
 		}).hide().fadeIn(250)
 
 	}
-
+	applyVisual()
 }
 
 function uncoordinatedTimeZone(n) {
