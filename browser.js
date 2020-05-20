@@ -288,7 +288,7 @@ function refreshResponse(n) {
 	$('input[type=text]').val('')
 	if ($('#arm').length){
 		$('input[type=text]').hide().blur()
-		$('#main').empty()
+		$('#arm').fadeOut(350)
 		populateResponse()
 	} else {
 		$('input[type=text]').show().focus()
