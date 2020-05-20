@@ -60,7 +60,10 @@ $(document).ready(function() {
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
 			$('input[type=test]').hide().blur()
-            if ($('#main').scrollTop() != 0) operation = false
+            if ($('#main').scrollTop() != 0) {
+				former = 0
+				operation = false
+			}
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (former == 0 && operation == false && $('input[type=text]').val().length > 2) {
                     filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
@@ -260,7 +263,6 @@ function populateResponse(n) {
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
     applyVisual()
-    former = 0
 
 }
 
