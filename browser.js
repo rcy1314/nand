@@ -12,7 +12,7 @@ var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container, input[type=text]').show()
+    $('#container').show()
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
@@ -50,7 +50,10 @@ $(document).ready(function() {
 
     $('#main').on('focusin scroll touchmove', function(e) {
 
-		if (e.type == 'focusin') $('input[type=text]').val('').blur().hide()
+		if (e.type == 'focusin') {
+            $('input[type=text]').val('').blur().hide()
+            populateResponse()
+        }
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
@@ -80,7 +83,7 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-refreshResponse()
+randomResponse()
 
 }).on('touch click', 'a', function(e) {
 
@@ -143,9 +146,9 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
+        $('#animate, .progress').attr('src', 'images/opposite.png')
         $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'images/opposite.png')
-        $('#animate, .progress').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('a, .air .pub').css('color', '#F7426B')
 		$('.a').css('color','#fff')
@@ -162,13 +165,17 @@ function applyVisual(n) {
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
 		$('#arm').css('background-image','url(images/filter.jpg)')
+        $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
+		$('body, #navigate').css({
+            'border-top': '.3px solid rgba(128,128,128,.5)',
+            'color': 'rgba(128,128,128,.9)',
+            'background-color':'#fafafa'
+        })
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
-        $('#animate, .progress').attr('src', 'images/invert.png')
-		$('body, #navigate').css('background-color','#fafafa')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
-        $('svg .progress').css('stroke', '#000')
+        $('svg .progress').css('stroke', 'rgba(128,128,128,.5')
 		$('.a').css('color','#000')
         animate = 'invert.png'
     }
@@ -289,7 +296,6 @@ function refreshResponse(n) {
 	if ($('#arm').length){
 		$('input[type=text]').hide().blur()
 		$('#arm').fadeOut(550)
-		populateResponse()
 	} else {
 		$('input[type=text]').show().focus()
 		$('#main').html("<div id='arm'></div>")
@@ -298,8 +304,8 @@ function refreshResponse(n) {
 			'background-position': 'center',
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover',
-			'-webkit-backdrop-filter': 'blur(5px)',
-			'filter': 'blur(5px)'
+			'-webkit-backdrop-filter': 'blur(10px)',
+			'filter': 'blur(10px)'
 		})
 	}
 	applyVisual()
@@ -406,7 +412,7 @@ function xmlResponse(n) {
                 if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + menu[n].ext + "\")'>" + menu[n].id.match(/^\w+/) + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + menu[n].ext + "\")'>" + menu[n].id.match(/^\w.+/) + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
