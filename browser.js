@@ -83,7 +83,7 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-randomResponse()
+refreshResponse()
 
 }).on('touch click', 'a', function(e) {
 
@@ -298,7 +298,7 @@ function refreshResponse(n) {
 		$('#arm').fadeOut(550)
 	} else {
 		$('input[type=text]').show().focus()
-		$('#main').html("<div id='arm'></div>")
+		$('#main').css('background-color','rgba(128,128,128,.5)').html("<div id='arm'></div>")
 		$('#arm').css({
 			'background-image': 'url(images/filter.jpg)',
 			'background-position': 'center',
@@ -306,9 +306,9 @@ function refreshResponse(n) {
 			'background-size': 'cover',
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
-		})
+		}).hide().fadeIn(250)
+
 	}
-	applyVisual()
 
 }
 
