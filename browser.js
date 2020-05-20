@@ -285,7 +285,6 @@ function randomResponse() {
 
 function refreshResponse(n) {
 
-	console.log('response')
 	$('input[type=text]').val('')
 	if ($('#arm').length){
 		$('input[type=text]').hide().blur()
