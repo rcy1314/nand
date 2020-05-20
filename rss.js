@@ -36,7 +36,7 @@ var menu=[
 {id:"Reddit/Android",cat:"Social",des:"Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",uri:"https://reddit.com/r/android/.rss",ext:"https://reddit.com/r/Android"},
 {id:"Reddit/AMD",cat:"Social",des:"AMD subreddit dedicated to Advanced Micro Devices and its products.",uri:"https://reddit.com/r/Amd/.rss",ext:"https://www.reddit.com/r/AMD"},
 {id:"Arch Linux",cat:"Social",des:"Arch Linux BBS Forum newest topics, questions, and answers.",uri:"https://bbs.archlinux.org/extern.php?action=active&type=RSS",ext:"https://www.archlinux.org"},
-{id:"Reddit",cat:"Social",des:"Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",uri:"https://reddit.com/r/ArchLinux/.rss",ext:"http://reddit.com/r/ArchLinux"},
+{id:"Reddit/Arch Linux",cat:"Social",des:"Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",uri:"https://reddit.com/r/ArchLinux/.rss",ext:"http://reddit.com/r/ArchLinux"},
 {id:"Reddit/Boston",cat:"Social",des:"Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",uri:"https://reddit.com/r/boston/.rss",ext:"https://reddit.com/r/Boston"},
 {id:"Reddit/California",cat:"Social",des:"California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",uri:"https://reddit.com/r/California/.rss",ext:"https://reddit.com/r/California"},
 {id:"Reddit/Celebhub",cat:"Social",des:"CelebHub famous actresses, singers, models, athletes and others.",uri:"https://reddit.com/r/celebhub/.rss",ext:"https://reddit.com/r/CelebHub"},
