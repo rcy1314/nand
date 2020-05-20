@@ -103,6 +103,10 @@ refreshResponse()
 
     xmlResponse($(this).attr('get'))
 
+}).on('touch click', '.progress', function(e) {
+
+    refreshResponse()
+
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
 	$(this).toggleClass('fa-heart-o fa-heart')
@@ -293,21 +297,22 @@ function randomResponse() {
 function refreshResponse(n) {
 
 	$('input[type=text]').val('')
-	if ($('#arm').length || $('input[type=text]').is(':focus')) {
+	if ($('input[type=text]').is(':visible')) {
 		$('input[type=text]').hide().blur()
-		$('#arm').fadeOut(550).remove()
-		populateResponse()
+		$('#arm').fadeOut('slow').hide()
+		setTimeout(function(){ populateResponse()
+		}, 550)
 	} else {
 		$('input[type=text]').show().focus()
 		$('#main').css('background-color','rgba(128,128,128,.5)').html("<div id='arm'></div>")
 		$('#arm').css({
-			'background-image': 'url(images/filter.jpg)',
+			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover',
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
-		}).hide().fadeIn(250)
+		}).hide().fadeIn('slow')
 
 	}
 	applyVisual()
