@@ -48,7 +48,15 @@ $(document).ready(function() {
         }
     })
 
+	$('#arm').on('focusin touch touchmove', function() {
+
+            $('input[type=text]').val('').blur().hide()
+            populateResponse()
+	})
+
     $('#main').on('focusin scroll touchmove', function(e) {
+
+		$('#main').css('background-color','#fff')
 
 		if (e.type == 'focusin') {
             $('input[type=text]').val('').blur().hide()
