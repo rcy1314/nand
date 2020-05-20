@@ -45,7 +45,6 @@ $(document).ready(function() {
 					closing + opening
 				)
             }
-            e.preventDefault()
         }
     })
 
@@ -81,12 +80,16 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-$('input[type=text]').show().focus()
+refreshResponse()
 
 }).on('touch click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
+
+}).on('touch click', '#arm', function(e){
+
+	refreshResponse()
 
 }).on('touch click', '.item', function(e){
 
@@ -129,9 +132,10 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, #arm, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
+			'background-image': 'none',
             'border': 'none'
         })
         $('input[type=text], .item .pub').css({
@@ -141,8 +145,8 @@ function applyVisual(n) {
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#main').removeClass('invert').addClass('opposite')
-        $('#favicon').attr('href', 'favicon/opposite.png')
-        $('#animate').attr('src', 'favicon/opposite.png')
+        $('#favicon').attr('href', 'images/opposite.png')
+        $('#animate').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('a, .air .pub').css('color', '#F7426B')
 		$('.a').css('color','#fff')
@@ -156,11 +160,12 @@ function applyVisual(n) {
         $('input[type=text], .item .pub').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
+		$('#arm').css('background-image','url(images/filter.jpg)')
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
-        $('#favicon').attr('href', 'favicon/invert.png')
-        $('#animate').attr('src', 'favicon/invert.png')
+        $('#favicon').attr('href', 'images/invert.png')
+        $('#animate').attr('src', 'images/invert.png')
 		$('body').css('background-color','#fafafa')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
         $('svg .progress').css('stroke', '#000')
@@ -189,6 +194,7 @@ function expandImage(n) {
 
 function filterResponse(k, n, o, p) {
 
+	$('#arm').remove()
     if (operation == true) {
         $('#arm').remove()
         operation = false
@@ -218,8 +224,7 @@ function imageResolution(n) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth > maximum) {
                 var expand = "<a onclick='event.stopPropagation();expandImage(" + n + ")' style='cursor:default;text-transform:capitalize'>expand</a>"
-                $('#' + n).addClass('expand min').width('45%').css('margin','0 auto')
-            } else if ($('#' + n).get(0).naturalWidth > minimum) {
+                $('#' + n).addClass('expand min').width('45%').css('margin','0 auto') } else if ($('#' + n).get(0).naturalWidth > minimum) {
 				expand = ''
                 $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
@@ -280,10 +285,26 @@ function randomResponse() {
 
 function refreshResponse(n) {
 
+	console.log('response')
 	$('input[type=text]').val('')
-	if ($('input[type=text]').is(':visible')) $('input[type=text]').hide().blur()
-	else $('input[type=text]').show().focus()
-	if ($('input[type=text]').val() == '') populateResponse()
+	if ($('#arm').length){
+		$('input[type=text]').hide().blur()
+		$('#main').empty()
+		populateResponse()
+	} else {
+		$('input[type=text]').show().focus()
+		$('#main').html("<div id='arm'></div>")
+		$('#arm').css({
+			'background-image': 'url(images/filter.jpg)',
+			'background-position': 'center',
+			'background-repeat': 'no-repeat',
+			'background-size': 'cover',
+			'-webkit-backdrop-filter': 'blur(5px)',
+			'filter': 'blur(5px)'
+		})
+	}
+	applyVisual()
+
 }
 
 function uncoordinatedTimeZone(n) {
@@ -320,7 +341,7 @@ function xmlResponse(n) {
     operation = true
     $('#main').empty()
     $('#main').append("<div id='arm'></div>")
-    $('#arm').html("<img id='animate' src='favicon/" + animate + "'>")
+    $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
