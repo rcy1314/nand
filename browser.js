@@ -198,7 +198,7 @@ function filterResponse(k, n, o, p) {
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p)
 			) {
-    		if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
+    		if (menu[i].id.match(/\//)) id = menu[i].id.match(/(\w+)$/)[0]
 			else id = menu[i].id
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 			if (search != 0) search = i + 1
@@ -261,7 +261,7 @@ function populateResponse(n) {
         $('#arm').remove()
     }
     for (var i = former; i < menu.length; i++){
-    	if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
+    	if (menu[i].id.match(/\//)) id = menu[i].id.match(/(\w+)$/)[0]
 		else id = menu[i].id
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
@@ -386,7 +386,7 @@ function xmlResponse(n) {
                 if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[n].id + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + menu[n].ext + "\")'>" + menu[n].id.match(/^\w+/) + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
