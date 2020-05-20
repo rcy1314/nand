@@ -72,9 +72,12 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
+					$('input[type=text]').val('')
 					populateResponse(search)
 					former = 0
-                } else if (operation == false) populateResponse()
+                } else {
+					populateResponse(0)
+				}
         }
     }).attr('tabindex', -1).focus()
 
@@ -261,6 +264,8 @@ function populateResponse(n) {
     for (var i = former; i < menu.length; i++){
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
+	former = 0
+	search = 0
     applyVisual()
 
 }
@@ -270,7 +275,6 @@ function randomResponse() {
 	$('input[type=text]').hide().blur()
 	var n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     xmlResponse(n)
-	former = n
 
 }
 
