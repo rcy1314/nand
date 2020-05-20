@@ -57,6 +57,7 @@ var menu=[
 {id:"4chan",cat:"Social",des:"4chan DIY board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",uri:"http://boards.4channel.org/diy/index.rss",ext:"http://boards.4channel.org/diy"},
 {id:"Reddit/Firefox",cat:"Social",des:"Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",uri:"https://reddit.com/r/firefox/.rss",ext:"https://reddit.com/r/Firefox"},
 {id:"Reddit/Gadgets",cat:"Social",des:"Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",uri:"https://reddit.com/r/gadgets/.rss",ext:"https://reddit.com/r/Gadgets"},
+{id:"Reddit/Goddesses",cat:"Social",des:"Goddesses subreddit pretty pictures of pretty girls.",uri:"https://reddit.com/r/goddesses/.rss",ext:"https://reddit.com/r/Goddesses"},
 {id:"Reddit/Google",cat:"Social",des:"Google subreddit For news and announcements from and about Google.",uri:"https://reddit.com/r/google/.rss",ext:"https://reddit.com/r/Google"},
 {id:"4chan",cat:"Social",des:"4chan G Technology is a board that discusses Technology.",uri:"http://boards.4chan.org/g/index.rss",ext:"http://boards.4channel.org/g/"},
 {id:"4chan",cat:"Social",des:"4chan GD Graphic Design Board dedicated to the art of Design.",uri:"http://boards.4channel.org/gd/index.rss",ext:"http://boards.4channel.org/gd"},

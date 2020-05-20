@@ -48,9 +48,9 @@ $(document).ready(function() {
         }
     })
 
-    $('#main').on('scroll touchmove', function(e) {
+    $('#main').on('focusin scroll touchmove', function(e) {
 
-		$('input[type=text]').val('').blur().hide()
+		if (e.type == 'focusin') $('input[type=text]').val('').blur().hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
