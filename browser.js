@@ -48,9 +48,9 @@ $(document).ready(function() {
         }
     })
 
-    $('#main').on('focusin scroll touchmove', function(e) {
+    $('#main').on('scroll touchmove', function(e) {
 
-		if (e.type == 'focusin' || e.type == 'touchmove') $('input[type=text]').blur().hide()
+		$('input[type=text]').val('').blur().hide()
 
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
@@ -74,7 +74,7 @@ $(document).ready(function() {
 					$('input[type=text]').val('')
 					populateResponse(search)
 					former = 0
-                } else {
+                } else if (operation == false) {
 					populateResponse(0)
 				}
         }
@@ -98,7 +98,6 @@ refreshResponse()
 
 }).on('touch click', '.populate', function(e) {
 
-	$('input[type=text]').hide().blur()
     xmlResponse($(this).attr('get'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
