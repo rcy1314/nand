@@ -151,7 +151,7 @@ function applyVisual(n) {
 		$('.a').css('color','#fff')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #main, #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('input[type=text], #main, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -166,7 +166,7 @@ function applyVisual(n) {
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
         $('#animate, .progress').attr('src', 'images/invert.png')
-		$('body').css('background-color','#fafafa')
+		$('body, #navigate').css('background-color','#fafafa')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
         $('svg .progress').css('stroke', '#000')
 		$('.a').css('color','#000')
