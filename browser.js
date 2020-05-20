@@ -62,13 +62,14 @@ $(document).ready(function() {
 			$('input[type=test]').hide().blur()
             if ($('#main').scrollTop() != 0) operation = false
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
-                if (operation == false && $('input[type=text]').val().length > 2) {
+                if (former == 0 && operation == false && $('input[type=text]').val().length > 2) {
                     filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
 						opening + closing,
 						closing + opening
 					)
 					populateResponse()
+					former = 0
                 } else if (operation == false) populateResponse()
         }
     }).attr('tabindex', -1).focus()
