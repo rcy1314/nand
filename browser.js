@@ -4,7 +4,7 @@ var request
 var ost = 0
 var closing
 var opening
-var quit = 9
+var quit = 12
 var search = 0
 var former = 0
 var object = []
