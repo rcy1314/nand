@@ -48,15 +48,7 @@ $(document).ready(function() {
         }
     })
 
-	$('#arm').on('focusin touch touchmove', function() {
-
-            $('input[type=text]').val('').blur().hide()
-            populateResponse()
-	})
-
     $('#main').on('focusin scroll touchmove', function(e) {
-
-		$('#main').css('background-color','#fff')
 
 		if (e.type == 'focusin') {
             $('input[type=text]').val('').blur().hide()
@@ -303,7 +295,7 @@ function refreshResponse(n) {
 	$('input[type=text]').val('')
 	if ($('#arm').length){
 		$('input[type=text]').hide().blur()
-		$('#arm').fadeOut(550)
+		$('#arm').fadeOut(550).remove()
 	} else {
 		$('input[type=text]').show().focus()
 		$('#main').css('background-color','rgba(128,128,128,.5)').html("<div id='arm'></div>")
