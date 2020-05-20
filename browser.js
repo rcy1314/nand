@@ -5,6 +5,7 @@ var ost = 0
 var closing
 var opening
 var quit = 9
+var search = 0
 var former = 0
 var object = []
 var operation = false
@@ -71,7 +72,7 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-					populateResponse()
+					populateResponse(search)
 					former = 0
                 } else if (operation == false) populateResponse()
         }
@@ -200,6 +201,7 @@ function filterResponse(k, n, o, p) {
     		if (menu[i].id == 'Reddit') id = menu[i].ext.match(/\b(\w+)$/)[0]
 			else id = menu[i].id
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + id + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if (search != 0) search = i + 1
         }
     }
     applyVisual()
@@ -252,6 +254,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
+	if (search > 0) former = search
     if (operation == true) {
         request.abort()
         operation = false
@@ -312,6 +315,7 @@ function xmlResponse(n) {
     }
     obj = []
     former = n
+	search = n
     var pub = []
     operation = true
     $('#main').empty()
