@@ -79,6 +79,7 @@ var menu=[
 {id:"Reddit/Wallpaper",cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/Wallpaper"},
 {id:"Reddit/Wallpapers",cat:"Social",des:"Wallpapers subreddit for Work-safe wallpapers from all over!",uri:"https://reddit.com/r/wallpapers/.rss",ext:"https://reddit.com/r/Wallpapers"},
 {id:"Reddit/Windows",cat:"Social",des:"Windows subreddit a personal computer operating system released by Microsoft.",uri:"https://reddit.com/r/windows/.rss",ext:"https://reddit.com/r/Windows"},
+{id:"Reddit/World News",cat:"Social",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/WorldNews"},
 {id:"ABC",cat:"Sports",des:"ABC Sports the Latest Sports News, Articles and more.",uri:"https://abcnews.go.com/abcnews/sportsheadlines",ext:"https://abcnews.go.com/Sports"},
 {id:"Action Network",cat:"Sports",des:"Action Network Sports entertainment experience through original news, premium insights, betting tools, data & odds.",uri:"https://www.actionnetwork.com/feed",ext:"https://www.actionnetwork.com"},
 {id:"Clutch Points",cat:"Sports",des:"Clutch Points Sports news, reporting, videos, scores, and more for NBA and NFL.",uri:"https://clutchpoints.com/feed",ext:"https://clutchpoints.com"},
@@ -161,7 +162,6 @@ var menu=[
 {id:"The Guardian",cat:"World",des:"The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",uri:"https://www.theguardian.com/world/rss",ext:"https://www.theguardian.com/world"},
 {id:"USA Today",cat:"World",des:"USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",uri:"http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",ext:"https://www.usatoday.com"},
 {id:"VICE",cat:"World",des:"Vice Original reporting and documentaries on everything that matters in the world.",uri:"https://www.vice.com/en_us/rss",ext:"https://vice.com"},
-{id:"Reddit/World News",cat:"Social",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/WorldNews"},
 ]
 /* rip
 {id:"CBS",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},

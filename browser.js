@@ -6,7 +6,6 @@ var ost = 0
 var closing
 var opening
 var quit = 12
-var search = 0
 var former = 0
 var visual = 1
 var object = []
@@ -24,6 +23,7 @@ $(document).ready(function() {
 
 	else if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
+		applyVisual(op)
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
                     filterResponse(1, location.search.split('?')[1].toLowerCase().replace(/\+/g, ''),
@@ -54,7 +54,7 @@ $(document).ready(function() {
 			}
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else {
-                filterResponse(0, $(this).val().toLowerCase().replace(/ /g, ''),
+                filterResponse(0, $(this).val(),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
 					opening + closing,
 					closing + opening
@@ -71,11 +71,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-            if ($('#main').scrollTop() != 0) {
-				former = 0
-				operation = false
-				$('input[type=text]').hide().blur()
-			}
+            if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (former == 0 && operation == false && $('input[type=text]').val().length >= 2) {
                     filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
@@ -206,28 +202,22 @@ function expandImage(n) {
 function filterResponse(random, k, n, o, p) {
 
 	filter = []
-	if (!$('#main .filter, #main .item').length) $('#main').empty()
+	$('#main #arm').remove()
+	if (!$('#main .item, #main .populate').length) $('#main .filter').remove()
     if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
-    for (var i = 0; i < menu.length; i++) {
-        if (menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) filter.push(menu[i])
-		if (search != 0) search = i + 1
+	reverseResponse(menu.reverse())
+	for (var i = menu.length - 1; i >= 0; i--) {
+        if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+	            	$('#main').prepend("<div class='filter' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				filter.push(menu[i])
+				former = i
+        }
     }
-	reverseResponse(filter.reverse())
-	if ($('#main .populate').length) {
-		for (var i = filter.length - 1; i >= 0; i--) {
-			$('#main').append("<div class='" + i + " filter' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
-		}
-	} else {
-		for (var i = filter.length - 1; i >= 0; i--) {
-			$('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
-		}
-	}
 	if (random == 1) {
-		reverseResponse(filter.reverse())
 		if (filter[filter.length - 1] == undefined) randomResponse()
 		else xmlResponse(menu.indexOf(filter[filter.length - 1]))
 	}
@@ -279,18 +269,16 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-
-	if (search > 0) former = search
+	console.log(former)
     if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
-    for (var i = former; i < menu.length; i++){
+	for (var i = former; i <= menu.length - 1; i++) {
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
-	search = 0
     applyVisual()
 
 }
@@ -364,7 +352,6 @@ function xmlResponse(n) {
     }
     obj = []
     former = n
-	search = n
     var pub = []
     operation = true
     $('.item, .populate').remove()
