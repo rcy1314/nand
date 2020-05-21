@@ -372,6 +372,7 @@ function xmlResponse(n) {
 		'-webkit-backdrop-filter': 'blur(5px)',
 		'filter': 'blur(5px)'
 	}).hide().fadeIn('slow')
+	$('input[type=text]').hide()
     $('#arm').show().html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
