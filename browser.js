@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     } else if (location.href.match('\\?op=1')) applyVisual(0)
 
-	if (location.search.split('?')[1]) {
+	else if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
@@ -28,11 +28,10 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-	} else {
+	} 
 
 		$('#arm').click()
 
-	}
 
     $('input[type=text]').on('keyup', function(e) {
 		window.scrollTo(0, 0)
