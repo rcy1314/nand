@@ -236,7 +236,8 @@ function filterResponse(r, k, n, o, p) {
     }
 	if (r == 1) {
 
-		xmlResponse(filter[0])
+		if (filter[0] == undefined) randomResponse()
+		else xmlResponse(filter[0])
 
 	}
 
