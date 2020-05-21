@@ -221,6 +221,7 @@ function filterResponse(random, k, n, o, p) {
 		else xmlResponse(menu.indexOf(filter[Math.floor(Math.random()*filter.length)]))
         return false
 	}
+    
 	applyVisual()
 
 }
@@ -451,6 +452,7 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+            populateResponse()
             applyVisual()
         })
 
