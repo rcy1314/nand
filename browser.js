@@ -96,7 +96,7 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
 
-}).on('touch click', '#arm, .progress', function(e){
+}).on('touch click', '#arm, circle, .progress', function(e){
 
 		$('#main').scrollTop(0)
 		$('.populate, .item').remove()
