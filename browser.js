@@ -33,7 +33,6 @@ $(document).ready(function() {
 					)
 	} 
 
-		$('#arm').click()
 		applyVisual(op)
 
     $('input[type=text]').on('keyup', function(e) {
@@ -218,7 +217,7 @@ function expandImage(n) {
 function filterResponse(r, k, n, o, p) {
 
 	filter = []
-	$('#main').empty()
+	if (!$('#main .filter, #main .item').length) $('#main').empty()
     if (operation == true) {
         operation = false
         $('#arm').hide()
