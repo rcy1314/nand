@@ -64,7 +64,6 @@ $(document).ready(function() {
     })
 
     $('#main').on('focusin scroll touchmove', function(e) {
-
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
             $('svg circle').css({
@@ -72,7 +71,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			$('input[type=test]').hide().blur()
+			$('input[type=text]').hide().blur()
             if ($('#main').scrollTop() != 0) {
 				former = 0
 				operation = false
