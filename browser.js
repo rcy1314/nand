@@ -105,7 +105,7 @@ $(document).ready(function() {
 	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touch click', '.populate', function(e) {
+}).on('touch click', '.filter, .populate', function(e) {
 
     xmlResponse($(this).attr('get'))
 
