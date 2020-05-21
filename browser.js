@@ -30,7 +30,7 @@ $(document).ready(function() {
 					)
 	} else {
 
-		refreshResponse()
+		$('#arm').click()
 
 	}
 
@@ -99,9 +99,22 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
 
-}).on('touch click', '#arm', function(e){
+}).on('touch click', '#arm, .progress', function(e){
 
-	refreshResponse()
+		$('.populate').remove()
+		$('input[type=text]').val('').focus()
+		$('#arm').fadeOut('slow').hide()
+		setTimeout(function(){ populateResponse()
+		}, 550)
+		$('input[type=text]').show().focus()
+		$('#arm').show().css({
+			'background-image': 'url(images/filter.jpg?op=1)',
+			'background-position': 'center',
+			'background-repeat': 'no-repeat',
+			'background-size': 'cover',
+			'-webkit-backdrop-filter': 'blur(10px)',
+			'filter': 'blur(10px)'
+		}).hide().fadeIn('slow')
 
 }).on('touch click', '.item', function(e){
 
@@ -111,10 +124,6 @@ $(document).ready(function() {
 }).on('touch click', '.populate', function(e) {
 
     xmlResponse($(this).attr('get'))
-
-}).on('touch click', '.progress', function(e) {
-
-    refreshResponse()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -309,29 +318,6 @@ function randomResponse() {
 	var n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     xmlResponse(n)
 
-}
-
-function refreshResponse(n) {
-
-	$('input[type=text]').val('')
-	if ($('input[type=text]').is(':visible')) {
-		$('input[type=text]').hide().blur()
-		$('#arm').fadeOut('slow').hide()
-		setTimeout(function(){ populateResponse()
-		}, 550)
-	} else {
-		$('input[type=text]').show().focus()
-		$('#arm').show().css({
-			'background-image': 'url(images/filter.jpg?op=1)',
-			'background-position': 'center',
-			'background-repeat': 'no-repeat',
-			'background-size': 'cover',
-			'-webkit-backdrop-filter': 'blur(10px)',
-			'filter': 'blur(10px)'
-		}).hide().fadeIn('slow')
-
-	}
-	applyVisual()
 }
 
 function uncoordinatedTimeZone(n) {
