@@ -177,7 +177,7 @@ function applyVisual(n) {
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
-		if ($('#arm').is(':visible')) $('#arm').css('background-image','url(images/filter.jpg?op=1)')
+		if ($('#arm').is(':visible') && operation == false) $('#arm').css('background-image','url(images/filter.jpg?op=1)')
         $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
 		$('body, #navigate').css({
