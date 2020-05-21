@@ -233,7 +233,6 @@ function filterResponse(r, k, n, o, p) {
         $('#arm').hide()
         request.abort()
     }
-	$('.populate').remove()
     for (var i = 0; i < menu.length; i++) {
         if (menu[i].des.toLowerCase().match(n) ||
 			menu[i].cat.toLowerCase().match(k) ||
