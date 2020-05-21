@@ -32,7 +32,7 @@ $(document).ready(function() {
 						closing + opening
 					)
 		$('input[type=text]').blur().hide()
-	} 
+	} else refreshResponse()
 		applyVisual(op)
 
     $('input[type=text]').on('keyup', function(e) {
@@ -96,19 +96,9 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
 
-}).on('touch click', '#arm, circle, .progress', function(e){
+}).on('touch click focus', '#arm, circle, .progress', function(e){
 
-		applyVisual()
-		$('#main').scrollTop(0)
-		$('.populate, .item').remove()
-		$('#arm').fadeOut('slow').hide()
-		$('input[type=text').val('').focus()
-		setTimeout(function(){ /* allow filter */
-		}, 550)
-		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
-    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
-		$('#arm').show().hide().fadeIn('slow')
-		$('input[type=text]').show().focus()
+	refreshResponse()
 
 }).on('touch click', '.item', function(e){
 
@@ -228,12 +218,12 @@ function filterResponse(random, k, n, o, p) {
     }
 	reverseResponse(filter.reverse())
 	if ($('#main .populate').length) {
+		reverseResponse(filter.reverse())
 		for (var i = 0; i < filter.reverse().length; i++) {
 			$('#main').append("<div class='" + i + " filter' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
 		}
 	} else {
-			reverseResponse(filter.reverse())
-			for (var i = 0; i < filter.length; i++) {
+			for (var i = 0; i < filter.reverse().length; i++) {
 		   	    $('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
 		}
 		if (random == 1) {
@@ -313,6 +303,22 @@ function randomResponse() {
 
 }
 
+function refreshResponse(){
+
+		applyVisual()
+		$('#main').scrollTop(0)
+		$('.populate, .item').remove()
+		$('#arm').fadeOut('slow').hide()
+		$('input[type=text').val('').focus()
+		setTimeout(function(){ /* allow filter */
+		}, 550)
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
+    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#arm').show().hide().fadeIn('slow')
+		$('input[type=text]').show().focus()
+
+}
+
 function reverseResponse(Object) {
 
     var newObject = {}
@@ -362,12 +368,12 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('.item, .populate').remove()
+	$('input[type=text]').blur().hide()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
 		'-webkit-backdrop-filter': 'blur(5px)',
 		'filter': 'blur(5px)'
 	}).hide().fadeIn('slow')
-	$('input[type=text]').hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
