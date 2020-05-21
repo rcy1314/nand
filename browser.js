@@ -1,5 +1,5 @@
-var r
-var op = 1
+var random
+var op = 0
 var animate
 var request
 var ost = 0
@@ -32,7 +32,7 @@ $(document).ready(function() {
 						closing + opening
 					)
 	} 
-
+		$('#arm').click()
 		applyVisual(op)
 
     $('input[type=text]').on('keyup', function(e) {
@@ -179,11 +179,10 @@ function applyVisual(n) {
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
-		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
         $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
 		$('body, #navigate').css({
-            'border-top': '.3px solid rgba(128,128,128,.5)',
+			'border-top': '.3px solid rgba(128,128,128,.5)',
             'color': 'rgba(128,128,128,.9)',
             'background-color':'#fafafa'
         })
@@ -214,7 +213,7 @@ function expandImage(n) {
 
 }
 
-function filterResponse(r, k, n, o, p) {
+function filterResponse(random, k, n, o, p) {
 
 	filter = []
 	if (!$('#main .filter, #main .item').length) $('#main').empty()
@@ -236,7 +235,7 @@ function filterResponse(r, k, n, o, p) {
 			for (var i = 0; i < filter.length; i++) {
 		   	    $('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
 		}
-		if (r == 1) {
+		if (random == 1) {
 			if (filter[0] == undefined) randomResponse()
 			else xmlResponse(filter[0])
 		}
