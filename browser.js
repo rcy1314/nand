@@ -63,7 +63,7 @@ $(document).ready(function() {
         }
     })
 
-    $('#main').on('focusin scroll touchmove', function(e) {
+    $('#main').on('scroll touchmove', function(e) {
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
             $('svg circle').css({
@@ -103,15 +103,15 @@ $(document).ready(function() {
 		$('#arm').fadeOut('slow').hide()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
-		$('#main').append("<div id='arm'></div>")
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>")
 		$('input[type=text]').show().focus()
 		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover',
-			'-webkit-backdrop-filter': 'blur(10px)',
-			'filter': 'blur(10px)'
+			'-webkit-backdrop-filter': 'blur(4px)',
+			'filter': 'blur(4px)'
 		})
 		applyVisual()
 
