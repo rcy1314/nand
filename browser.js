@@ -106,7 +106,7 @@ $(document).ready(function() {
 		$('input[type=text').val('').focus()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
-		if ($('#main #arm').length <= 1) $('#main').prepend("<div id='arm'></div>").scrollTop(0)
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
     	$('#arm').html("<img id='home' src='images/" + animate + "'>")
 		$('#arm').show().hide().fadeIn('slow')
 		$('input[type=text]').show().focus()
