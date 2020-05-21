@@ -71,7 +71,6 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			$('input[type=text]').hide().blur()
             if ($('#main').scrollTop() != 0) {
 				former = 0
 				operation = false
@@ -116,6 +115,7 @@ $(document).ready(function() {
 			$('#arm').remove()
 		} else if ($('#arm').length <= 1) {
 			$('#main').append("<div id='arm'></div>")
+			$('#main').scrollTop(0)
 			populateResponse()
 		}
 		applyVisual()
