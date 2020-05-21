@@ -225,7 +225,7 @@ function expandImage(n) {
 function filterResponse(r, k, n, o, p) {
 
 	var filter = []
-	$('#arm').hide()
+	$('#arm').remove()
 	applyVisual()
     if (operation == true) {
         operation = false
@@ -238,9 +238,13 @@ function filterResponse(r, k, n, o, p) {
 			menu[i].des.toLowerCase().match(o) ||
 			menu[i].des.toLowerCase().match(p)
 			) {
-            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-			if (search != 0) search = i + 1
-			filter.push(i)
+	        $('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if ($('.' + i).length) {
+				$('.' + i).remove()
+	            	$('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				if (search != 0) search = i + 1
+				filter.push(i)
+			}
         }
     }
 	if (r == 1) {
