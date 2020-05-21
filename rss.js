@@ -161,7 +161,7 @@ var menu=[
 {id:"The Guardian",cat:"World",des:"The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",uri:"https://www.theguardian.com/world/rss",ext:"https://www.theguardian.com/world"},
 {id:"USA Today",cat:"World",des:"USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",uri:"http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",ext:"https://www.usatoday.com"},
 {id:"VICE",cat:"World",des:"Vice Original reporting and documentaries on everything that matters in the world.",uri:"https://www.vice.com/en_us/rss",ext:"https://vice.com"},
-{id:"Reddit",cat:"Social",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/WorldNews"},
+{id:"Reddit/World News",cat:"Social",des:"World News subreddit with latest headlines from around the world.",uri:"https://reddit.com/r/worldnews/.rss",ext:"https://reddit.com/r/WorldNews"},
 ]
 /* rip
 {id:"CBS",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},
