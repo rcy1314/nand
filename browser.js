@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     } else if (location.href.match('\\?op=1')) applyVisual(0)
 
-	if (location.href.match('\\?')) {
+	if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
@@ -54,7 +54,7 @@ $(document).ready(function() {
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else if ($(this).val().length <= 1) $('#main').empty()
             else {
-                filterResponse($(this).val().toLowerCase().replace(/ /g, ''),
+                filterResponse(0, $(this).val().toLowerCase().replace(/ /g, ''),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
 					opening + closing,
 					closing + opening
