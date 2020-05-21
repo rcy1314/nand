@@ -31,8 +31,8 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
+		$('input[type=text]').blur().hide()
 	} 
-		$('#arm').click()
 		applyVisual(op)
 
     $('input[type=text]').on('keyup', function(e) {
@@ -237,7 +237,7 @@ function filterResponse(random, k, n, o, p) {
 		}
 		if (random == 1) {
 			if (filter[0] == undefined) randomResponse()
-			else xmlResponse(filter[0])
+			else xmlResponse(menu.indexOf(filter[0]))
 		}
 	}
 	applyVisual()
