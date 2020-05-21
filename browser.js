@@ -232,8 +232,8 @@ function filterResponse(r, k, n, o, p) {
     }
     for (var i = 0; i < menu.length; i++) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	        if ($('#main .' + i).length < 1) $('#main').append("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-			if ($('#main .item').length < 0) {
+	        $('#main').append("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if ($('#main .' + i).length) {
 				$('.' + i).remove()
 	            	$('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(i)
