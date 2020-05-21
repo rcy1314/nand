@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 	}
 
-    $('input[type=text]').on('keyup focus', function(e) {
+    $('input[type=text]').on('keyup', function(e) {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
@@ -71,10 +71,10 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
-			$('input[type=text]').hide().blur()
             if ($('#main').scrollTop() != 0) {
 				former = 0
 				operation = false
+				$('input[type=text]').hide().blur()
 			}
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (former == 0 && operation == false && $('input[type=text]').val().length > 2) {
@@ -100,13 +100,13 @@ $(document).ready(function() {
 
 }).on('touch click', '#arm, .progress', function(e){
 
+		$('#main').scrollTop(0)
 		$('.populate, .item').remove()
-		$('input[type=text]').val('').focus()
 		$('#arm').fadeOut('slow').hide()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
 		$('#main').append("<div id='arm'></div>")
-		$('input[type=text]').show().focus()
+		$('input[type=text]').val('').show().focus()
 		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
