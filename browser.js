@@ -77,15 +77,13 @@ $(document).ready(function() {
 				$('input[type=text]').hide().blur()
 			}
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
-                if (former == 0 && operation == false && $('input[type=text]').val().length > 2) {
-                    filterResponse($('input[type=text]').val().toLowerCase().replace(/ /g, ''),
+                if (former == 0 && operation == false && $('input[type=text]').val().length >= 2) {
+                    filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
 						opening + closing,
 						closing + opening
 					)
-					$('input[type=text]').val('')
-					populateResponse(search)
-					former = 0
+					populateResponse()
                 } else if (operation == false) {
 					populateResponse(0)
 				}
@@ -106,7 +104,7 @@ $(document).ready(function() {
 		setTimeout(function(){ /* allow filter */
 		}, 550)
 		$('#main').append("<div id='arm'></div>")
-		$('input[type=text]').val('').show().focus()
+		$('input[type=text]').show().focus()
 		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
@@ -224,8 +222,8 @@ function expandImage(n) {
 
 function filterResponse(r, k, n, o, p) {
 
-	var filter = []
 	$('#arm').remove()
+	var filter = []
 	applyVisual()
     if (operation == true) {
         operation = false
@@ -233,25 +231,19 @@ function filterResponse(r, k, n, o, p) {
         request.abort()
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].des.toLowerCase().match(n) ||
-			menu[i].cat.toLowerCase().match(k) ||
-			menu[i].des.toLowerCase().match(o) ||
-			menu[i].des.toLowerCase().match(p)
-			) {
-	        $('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-			if ($('.' + i).length) {
+        if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+	        $('#main').append("<div class='filter " + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if (!$('.item').length) {
 				$('.' + i).remove()
 	            	$('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-				if (search != 0) search = i + 1
 				filter.push(i)
 			}
+			if (search != 0) search = i + 1
         }
     }
 	if (r == 1) {
-
 		if (filter[0] == undefined) randomResponse()
 		else xmlResponse(filter[0])
-
 	}
 	applyVisual()
 }
@@ -357,14 +349,14 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('.item, .populate').remove()
-	$('#main').scrollTop(0)
+	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
 		'background-image': 'none',
 		'-webkit-backdrop-filter': 'blur(5px)',
 		'filter': 'blur(5px)'
 	}).hide().fadeIn('slow')
 	$('input[type=text]').hide()
-    $('#arm').show().html("<img id='animate' src='images/" + animate + "'>")
+    $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
