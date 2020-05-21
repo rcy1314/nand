@@ -353,7 +353,7 @@ function xmlResponse(n) {
 	search = n
     var pub = []
     operation = true
-    $('.populate').remove()
+    $('.item, .populate').remove()
 	$('#arm').show().css({
 		'background-image': 'none',
 		'-webkit-backdrop-filter': 'blur(5px)',
