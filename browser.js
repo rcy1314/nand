@@ -116,6 +116,7 @@ $(document).ready(function() {
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
 		})
+		applyVisual()
 
 }).on('touch click', '.item', function(e){
 
