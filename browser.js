@@ -254,7 +254,7 @@ function imageResolution(n) {
     		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
-    }
+    } else $('#' + n).parent().css('padding-bottom','7em')
 
 }
 
