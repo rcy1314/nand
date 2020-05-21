@@ -13,11 +13,27 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
     $('#container').show()
+	console.log(window.location.pathname)
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
 
-    } else applyVisual(0)
+    } else if (location.href.match('\\?op=1')) applyVisual(0)
+
+	if (location.href.match('\\/')) {
+		var n = location.search.split('?')[1]
+        opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
+        closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
+                    filterResponse(1, location.search.split('?')[1].toLowerCase().replace(/\+/g, ''),
+						location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+'),
+						opening + closing,
+						closing + opening
+					)
+	} else {
+
+		refreshResponse()
+
+	}
 
     $('input[type=text]').on('keyup focus', function(e) {
 		window.scrollTo(0, 0)
@@ -50,11 +66,6 @@ $(document).ready(function() {
 
     $('#main').on('focusin scroll touchmove', function(e) {
 
-		if (e.type == 'focusin') {
-            $('input[type=text]').val('').blur().hide()
-            populateResponse()
-        }
-
         if (e.type == 'scroll') {
             var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
             $('svg circle').css({
@@ -83,7 +94,6 @@ $(document).ready(function() {
         }
     }).attr('tabindex', -1).focus()
 
-refreshResponse()
 
 }).on('touch click', 'a', function(e) {
 
@@ -168,7 +178,7 @@ function applyVisual(n) {
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
-		$('#arm').css('background-image','url(images/filter.jpg)')
+		if ($('#arm').is(':visible')) $('#arm').css('background-image','url(images/filter.jpg?op=1)')
         $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
 		$('body, #navigate').css({
@@ -203,9 +213,11 @@ function expandImage(n) {
 
 }
 
-function filterResponse(k, n, o, p) {
+function filterResponse(r, k, n, o, p) {
 
-	$('#arm').remove()
+	var filter = []
+	$('#arm').hide()
+	applyVisual()
     if (operation == true) {
         $('#arm').remove()
         operation = false
@@ -220,9 +232,14 @@ function filterResponse(k, n, o, p) {
 			) {
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 			if (search != 0) search = i + 1
+			filter.push(i)
         }
     }
-    applyVisual()
+	if (r == 1) {
+
+		xmlResponse(filter[0])
+
+	}
 
 }
 
@@ -304,8 +321,7 @@ function refreshResponse(n) {
 		}, 550)
 	} else {
 		$('input[type=text]').show().focus()
-		$('#main').css('background-color','rgba(128,128,128,.5)').html("<div id='arm'></div>")
-		$('#arm').css({
+		$('#arm').show().css({
 			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
 			'background-repeat': 'no-repeat',
@@ -350,9 +366,8 @@ function xmlResponse(n) {
 	search = n
     var pub = []
     operation = true
-    $('#main').empty()
-    $('#main').append("<div id='arm'></div>")
-    $('#arm').html("<img id='animate' src='images/" + animate + "'>")
+    $('.populate').remove()
+    $('#arm').show().html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
