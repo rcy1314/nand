@@ -31,6 +31,7 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
+                    populateResponse()
 		$('input[type=text]').blur().hide()
 	} else refreshResponse()
 		applyVisual(op)
@@ -275,7 +276,7 @@ function populateResponse(n) {
         $('#arm').hide()
         request.abort()
     }
-	for (var i = former; i <= menu.length - 1; i++) {
+	for (var i = former + 1; i <= menu.length - 1; i++) {
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
