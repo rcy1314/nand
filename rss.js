@@ -9,7 +9,7 @@ var menu=[
 {id:"CBS",cat:"News",des:"CBS KPIX San Francisco News, Sports, Weather, Traffic and the Best of San Francisco.",uri:"https://sanfrancisco.cbslocal.com/feed",ext:"https://sanfrancisco.cbslocal.com"},
 {id:"ABC",cat:"News",des:"ABC New York covering New York City, New Jersey, and Long Island.",uri:"https://abc7ny.com/feed",ext:"https://abc7ny.com"},
 {id:"CBS",cat:"News",des:"CBS WCBS New York City Digital Streaming News Service, It's always on.",uri:"https://newyork.cbslocal.com/feed",ext:"https://newyork.cbslocal.com"},
-{id:"ABC",cat:"Media",des:"ABC Entertainment Latest Celebrity News, Videos and Photos.",uri:"https://abcnews.go.com/abcnews/entertainmentheadlines",ext:"https://abcnews.go.com/entertainment"},
+{id:"ABC",cat:"Media",des:"ABC Entertainment Latest News, Videos and Photos.",uri:"https://abcnews.go.com/abcnews/entertainmentheadlines",ext:"https://abcnews.go.com/entertainment"},
 {id:"AV Club",cat:"Media",des:"AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",uri:"https://www.avclub.com/rss",ext:"https://www.avclub.com"},
 {id:"BBC",cat:"Media",des:"BBC News Entertainment, Lifestyle, and Arts.",uri:"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",ext:"https://bbc.com/news/entertainment_and_arts"},
 {id:"Bustle",cat:"Media",des:"Bustle is the premier digital destination for millenial women, launched in 2013.",uri:"https://www.bustle.com/rss",ext:"https://www.bustle.com"},
