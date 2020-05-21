@@ -98,22 +98,17 @@ $(document).ready(function() {
 
 }).on('touch click', '#arm, circle, .progress', function(e){
 
+		applyVisual()
 		$('#main').scrollTop(0)
+		$('input[type=text').val('')
 		$('.populate, .item').remove()
 		$('#arm').fadeOut('slow').hide()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
-		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>")
+		if ($('#main #arm').length <= 1) $('#main').prepend("<div id='arm'></div>").scrollTop(0)
+    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#arm').show().hide().fadeIn('slow')
 		$('input[type=text]').show().focus()
-		$('#arm').fadeIn('slow').css({
-			'background-image': 'url(images/filter.jpg?op=1)',
-			'background-position': 'center',
-			'background-repeat': 'no-repeat',
-			'background-size': 'cover',
-			'-webkit-backdrop-filter': 'blur(4px)',
-			'filter': 'blur(4px)'
-		})
-		applyVisual()
 
 }).on('touch click', '.item', function(e){
 
@@ -185,7 +180,6 @@ function applyVisual(n) {
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#main').css('border-left','.3px solid rgba(128,128,128,.5)')
-		if ($('#arm').is(':visible') && operation == false) $('#arm').css('background-image','url(images/filter.jpg?op=1)')
         $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
 		$('body, #navigate').css({
@@ -351,7 +345,6 @@ function xmlResponse(n) {
     $('.item, .populate').remove()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
-		'background-image': 'none',
 		'-webkit-backdrop-filter': 'blur(5px)',
 		'filter': 'blur(5px)'
 	}).hide().fadeIn('slow')

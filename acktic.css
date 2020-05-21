@@ -103,9 +103,12 @@
      top: 0;
 }
  #arm {
+	 -webkit-backdrop-filter: blur(4px);
+	 filter: blur(4px);
      display: flex;
 }
- #animate {
+ #home, #animate {
+	 height: 200px;	
      margin: auto;
 }
  #animate {
@@ -227,12 +230,12 @@
      width: 20em;
      z-index: 3;
      left: 50%;
-     top: 50%;
+     top: 60%;
 }
  .fa-toggle-on, .fa-toggle-off, .fa-terminal {
      position: absolute;
      font-size: 20px;
-     bottom: .5em;
+     bottom: .75em;
 }
  .fa-terminal {
      right: 1em;
