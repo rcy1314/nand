@@ -54,7 +54,7 @@ $(document).ready(function() {
 			}
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else {
-                filterResponse(0, $(this).val(),
+                filterResponse(0, $(this).val().toLowerCase(),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
 					opening + closing,
 					closing + opening
