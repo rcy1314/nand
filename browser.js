@@ -218,18 +218,18 @@ function filterResponse(random, k, n, o, p) {
     }
 	reverseResponse(filter.reverse())
 	if ($('#main .populate').length) {
-		reverseResponse(filter.reverse())
-		for (var i = 0; i < filter.reverse().length; i++) {
+		for (var i = filter.length - 1; i >= 0; i--) {
 			$('#main').append("<div class='" + i + " filter' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
 		}
 	} else {
-			for (var i = 0; i < filter.reverse().length; i++) {
-		   	    $('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
+		for (var i = filter.length - 1; i >= 0; i--) {
+			$('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
 		}
-		if (random == 1) {
-			if (filter[0] == undefined) randomResponse()
-			else xmlResponse(menu.indexOf(filter[0]))
-		}
+	}
+	if (random == 1) {
+		reverseResponse(filter.reverse())
+		if (filter[filter.length - 1] == undefined) randomResponse()
+		else xmlResponse(menu.indexOf(filter[filter.length - 1]))
 	}
 	applyVisual()
 

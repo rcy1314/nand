@@ -153,7 +153,7 @@ var menu=[
 {id:"Mercury News",cat:"World",des:"Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",uri:"https://www.mercurynews.com/feed",ext:"https://mercurynews.com"},
 {id:"MSNBC",cat:"World",des:"MSNBC Breaking news and in-depth analysis of the headlines.",uri:"http://www.msnbc.com/feeds/latest",ext:"http://www.msnbc.com"},
 {id:"NBC",cat:"World",des:"NBC News is the news division of the American broadcast television network NBC.",uri:"http://feeds.nbcnews.com/nbcnews/public/news",ext:"https://nbcnews.com"},
-{id:"New York Daily",cat:"World",des:"New York Daily News news coverage, sports, entertainment news, celebrity gossip, autos, videos and photos.",uri:"https://www.nydailynews.com/cmlink/NYDN.News.World.rss",ext:"https://www.nydailynews.com/news/world"},
+{id:"New York Daily",cat:"World",des:"New York Daily News news coverage, sports, entertainment news, gossip, autos, videos and photos.",uri:"https://www.nydailynews.com/cmlink/NYDN.News.World.rss",ext:"https://www.nydailynews.com/news/world"},
 {id:"New York Post",cat:"World",des:"New York Post is a daily newspaper in New York City.",uri:"https://nypost.com/feed",ext:"https://nypost.com"},
 {id:"PBS",cat:"World",des:"Public Broadcasting Service is an American public broadcaster and television program distributor.",uri:"https://www.pbs.org/newshour/feeds/rss/headlines",ext:"https://pbs.org"},
 {id:"RT",cat:"World",des:"RT delivers latest news on current events from around the world.",uri:"https://www.rt.com/rss",ext:"https://rt.com"},
