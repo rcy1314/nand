@@ -31,7 +31,6 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-                    populateResponse()
 		$('input[type=text]').blur().hide()
 	} else refreshResponse()
 		applyVisual(op)
@@ -80,7 +79,6 @@ $(document).ready(function() {
 						opening + closing,
 						closing + opening
 					)
-					populateResponse()
                 } else if (operation == false) {
 					populateResponse(0)
 				}
@@ -219,8 +217,9 @@ function filterResponse(random, k, n, o, p) {
         }
     }
 	if (random == 1) {
-		if (filter[filter.length - 1] == undefined) randomResponse()
-		else xmlResponse(menu.indexOf(filter[filter.length - 1]))
+		if (filter[0] == undefined) randomResponse()
+		else xmlResponse(menu.indexOf(filter[Math.floor(Math.random()*filter.length)]))
+        return false
 	}
 	applyVisual()
 
@@ -270,7 +269,7 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-	console.log(former)
+
     if (operation == true) {
         operation = false
         $('#arm').hide()
