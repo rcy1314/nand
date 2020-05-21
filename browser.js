@@ -103,9 +103,6 @@ $(document).ready(function() {
 		$('.populate, .item').remove()
 		$('input[type=text]').val('').focus()
 		$('#arm').fadeOut('slow').hide()
-		setTimeout(function(){ /* allow filter */
-		}, 550)
-		$('#main').append("<div id='arm'></div>")
 		$('input[type=text]').show().focus()
 		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
@@ -115,6 +112,12 @@ $(document).ready(function() {
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
 		})
+		if ($('#arm').length < 1) {
+			$('#arm').remove()
+		} else if ($('#arm').length <= 1) {
+			$('#main').append("<div id='arm'></div>")
+			populateResponse()
+		}
 		applyVisual()
 
 }).on('touch click', '.item', function(e){
@@ -225,7 +228,7 @@ function expandImage(n) {
 function filterResponse(r, k, n, o, p) {
 
 	var filter = []
-	$('#arm').hide()
+	$('#arm').remove()
 	applyVisual()
     if (operation == true) {
         operation = false
@@ -300,7 +303,7 @@ function populateResponse(n) {
 	if (search > 0) former = search
     if (operation == true) {
         operation = false
-        $('#arm').hide()
+        $('#arm').remove()
         request.abort()
     }
     for (var i = former; i < menu.length; i++){
@@ -344,7 +347,7 @@ function xmlResponse(n) {
 
     if (operation == true) {
         operation = false
-        $('#arm').hide()
+        $('#arm').remove()
         request.abort()
     }
     obj = []
