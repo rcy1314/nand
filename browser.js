@@ -101,20 +101,21 @@ $(document).ready(function() {
 
 }).on('touch click', '#arm, .progress', function(e){
 
-		$('.populate').remove()
+		$('.populate, .item').remove()
 		$('input[type=text]').val('').focus()
 		$('#arm').fadeOut('slow').hide()
-		setTimeout(function(){ populateResponse()
+		setTimeout(function(){ /* allow filter */
 		}, 550)
+		$('#main').append("<div id='arm'></div>")
 		$('input[type=text]').show().focus()
-		$('#arm').show().css({
+		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
 			'background-position': 'center',
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover',
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
-		}).hide().fadeIn('slow')
+		})
 
 }).on('touch click', '.item', function(e){
 
@@ -227,8 +228,8 @@ function filterResponse(r, k, n, o, p) {
 	$('#arm').hide()
 	applyVisual()
     if (operation == true) {
-        $('#arm').remove()
         operation = false
+        $('#arm').hide()
         request.abort()
     }
 	$('.populate').remove()
@@ -299,9 +300,9 @@ function populateResponse(n) {
 
 	if (search > 0) former = search
     if (operation == true) {
-        request.abort()
         operation = false
-        $('#arm').remove()
+        $('#arm').hide()
+        request.abort()
     }
     for (var i = former; i < menu.length; i++){
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
@@ -343,8 +344,8 @@ function uncoordinatedTimeZone(n) {
 function xmlResponse(n) {
 
     if (operation == true) {
-        $('#arm').remove()
         operation = false
+        $('#arm').hide()
         request.abort()
     }
     obj = []
