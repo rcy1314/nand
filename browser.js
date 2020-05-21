@@ -1,4 +1,4 @@
-var op = 0
+var op = 1
 var animate
 var request
 var ost = 0
@@ -7,6 +7,7 @@ var opening
 var quit = 12
 var search = 0
 var former = 0
+var visual = 1
 var object = []
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -31,7 +32,7 @@ $(document).ready(function() {
 	} 
 
 		$('#arm').click()
-
+		applyVisual(op)
 
     $('input[type=text]').on('keyup', function(e) {
 		window.scrollTo(0, 0)
@@ -99,9 +100,9 @@ $(document).ready(function() {
 
 		applyVisual()
 		$('#main').scrollTop(0)
-		$('input[type=text').val('')
 		$('.populate, .item').remove()
 		$('#arm').fadeOut('slow').hide()
+		$('input[type=text').val('').focus()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
 		if ($('#main #arm').length <= 1) $('#main').prepend("<div id='arm'></div>").scrollTop(0)
@@ -215,7 +216,7 @@ function expandImage(n) {
 
 function filterResponse(r, k, n, o, p) {
 
-	$('#arm').remove()
+	$('#arm, .populate, .filter').remove()
 	var filter = []
 	applyVisual()
     if (operation == true) {
@@ -224,11 +225,15 @@ function filterResponse(r, k, n, o, p) {
         request.abort()
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].cat.toLowerCase().match(k) ||
+			menu[i].des.toLowerCase().match(n) ||
+			menu[i].des.toLowerCase().match(o) ||
+			menu[i].des.toLowerCase().match(p)
+			) {
 	        $('#main').append("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-			if ($('#main .' + i).length) {
-				$('.' + i).remove()
-	            	$('#main').prepend("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if ($('#main .populate .' + i).length) {
+				$('#main .filter .' + i).remove()
+	            	$('#main').prepend("<div class='" + i + " filter' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(i)
 			}
 			if (search != 0) search = i + 1
