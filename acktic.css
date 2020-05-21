@@ -230,6 +230,9 @@
      left: 50%;
      top: 60%;
 }
+ input[type='submit'] {
+	 display: none;
+}
  .fa-toggle-on, .fa-toggle-off, .fa-terminal {
      position: absolute;
      font-size: 20px;

@@ -21,7 +21,9 @@ $(document).ready(function() {
 
     } else if (location.href.match('\\?op=1')) applyVisual(0)
 
-	else if (location.search.split('?')[1]) {
+	else applyVisual(op)
+
+	if (!location.href.match('\\?op=1') && location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
 		applyVisual(op)
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
@@ -33,7 +35,7 @@ $(document).ready(function() {
 					)
 		$('input[type=text]').blur().hide()
 	} else refreshResponse()
-		applyVisual(op)
+
 
     $('input[type=text]').on('keyup', function(e) {
 		window.scrollTo(0, 0)
@@ -90,6 +92,11 @@ $(document).ready(function() {
 
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
+
+}).on('submit', '#search', function(e){
+
+	$('input[type=text]').hide().blur()
+	e.preventDefault()
 
 }).on('touch click focus', '#arm, circle, .progress', function(e){
 
