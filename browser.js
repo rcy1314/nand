@@ -13,14 +13,13 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
     $('#container').show()
-	console.log(window.location.pathname)
     if (location.href.match('\\?op=1')) {
 
         applyVisual(1)
 
     } else if (location.href.match('\\?op=1')) applyVisual(0)
 
-	if (location.href.match('\\/')) {
+	if (location.href.match('\\?')) {
 		var n = location.search.split('?')[1]
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
