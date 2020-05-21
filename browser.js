@@ -1,3 +1,4 @@
+var r
 var op = 1
 var animate
 var request
@@ -9,6 +10,7 @@ var search = 0
 var former = 0
 var visual = 1
 var object = []
+var filter = []
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -52,7 +54,6 @@ $(document).ready(function() {
 				$('#main').attr('tabindex', -1).focus()
 			}
 			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
-            else if ($(this).val().length <= 1) $('#main').empty()
             else {
                 filterResponse(0, $(this).val().toLowerCase().replace(/ /g, ''),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
@@ -216,34 +217,33 @@ function expandImage(n) {
 
 function filterResponse(r, k, n, o, p) {
 
-	$('#arm, .populate, .filter').remove()
-	var filter = []
-	applyVisual()
+	filter = []
+	$('#main').empty()
     if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
     for (var i = 0; i < menu.length; i++) {
-        if (menu[i].cat.toLowerCase().match(k) ||
-			menu[i].des.toLowerCase().match(n) ||
-			menu[i].des.toLowerCase().match(o) ||
-			menu[i].des.toLowerCase().match(p)
-			) {
-	        $('#main').append("<div class='" + i + " populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-			if ($('#main .populate .' + i).length) {
-				$('#main .filter .' + i).remove()
-	            	$('#main').prepend("<div class='" + i + " filter' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-				filter.push(i)
-			}
-			if (search != 0) search = i + 1
-        }
+        if (menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(n) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) filter.push(menu[i])
+		if (search != 0) search = i + 1
     }
-	if (r == 1) {
-		if (filter[0] == undefined) randomResponse()
-		else xmlResponse(filter[0])
+	reverseResponse(filter.reverse())
+	if ($('#main .populate').length) {
+		for (var i = 0; i < filter.reverse().length; i++) {
+			$('#main').append("<div class='" + i + " filter' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
+		}
+	} else {
+			for (var i = 0; i < filter.length; i++) {
+		   	    $('#main').prepend("<div class='" + i + " populate' get='" + menu.indexOf(filter[i]) + "'><div class='pub'><a ext='" + filter[i].ext + "'>" + filter[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + filter[i].des + "</div></div>")
+		}
+		if (r == 1) {
+			if (filter[0] == undefined) randomResponse()
+			else xmlResponse(filter[0])
+		}
 	}
 	applyVisual()
+
 }
 
 function imageResolution(n) {
@@ -311,6 +311,22 @@ function randomResponse() {
 	$('input[type=text]').hide().blur()
 	var n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     xmlResponse(n)
+
+}
+
+function reverseResponse(Object) {
+
+    var newObject = {}
+    var keys = []
+    for (var key in Object) keys.push(key)
+    for (var i = keys.length - 1; i >= 0; i--) {
+
+        var value = Object[keys[i]]
+        newObject[keys[i]] = value
+
+    }
+
+    return newObject
 
 }
 
