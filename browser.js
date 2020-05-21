@@ -240,7 +240,7 @@ function filterResponse(r, k, n, o, p) {
 		else xmlResponse(filter[0])
 
 	}
-
+	applyVisual()
 }
 
 function imageResolution(n) {
