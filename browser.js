@@ -71,6 +71,7 @@ $(document).ready(function() {
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
+			$('input[type=text]').hide().blur()
             if ($('#main').scrollTop() != 0) {
 				former = 0
 				operation = false
@@ -102,6 +103,9 @@ $(document).ready(function() {
 		$('.populate, .item').remove()
 		$('input[type=text]').val('').focus()
 		$('#arm').fadeOut('slow').hide()
+		setTimeout(function(){ /* allow filter */
+		}, 550)
+		$('#main').append("<div id='arm'></div>")
 		$('input[type=text]').show().focus()
 		$('#arm').fadeIn('slow').css({
 			'background-image': 'url(images/filter.jpg?op=1)',
@@ -111,13 +115,6 @@ $(document).ready(function() {
 			'-webkit-backdrop-filter': 'blur(10px)',
 			'filter': 'blur(10px)'
 		})
-		if ($('#arm').length < 1) {
-			$('#arm').remove()
-		} else if ($('#arm').length <= 1) {
-			$('#main').append("<div id='arm'></div>")
-			$('#main').scrollTop(0)
-			populateResponse()
-		}
 		applyVisual()
 
 }).on('touch click', '.item', function(e){
@@ -228,7 +225,7 @@ function expandImage(n) {
 function filterResponse(r, k, n, o, p) {
 
 	var filter = []
-	$('#arm').remove()
+	$('#arm').hide()
 	applyVisual()
     if (operation == true) {
         operation = false
@@ -303,7 +300,7 @@ function populateResponse(n) {
 	if (search > 0) former = search
     if (operation == true) {
         operation = false
-        $('#arm').remove()
+        $('#arm').hide()
         request.abort()
     }
     for (var i = former; i < menu.length; i++){
@@ -347,7 +344,7 @@ function xmlResponse(n) {
 
     if (operation == true) {
         operation = false
-        $('#arm').remove()
+        $('#arm').hide()
         request.abort()
     }
     obj = []
@@ -356,6 +353,7 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('.item, .populate').remove()
+	$('#main').scrollTop(0)
 	$('#arm').show().css({
 		'background-image': 'none',
 		'-webkit-backdrop-filter': 'blur(5px)',
@@ -380,7 +378,6 @@ function xmlResponse(n) {
             applyVisual()
         })
         .done(function(xhr) {
-            $('#arm').remove()
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
@@ -448,6 +445,7 @@ function xmlResponse(n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
+            $('#main').empty()
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
