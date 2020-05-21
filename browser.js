@@ -367,6 +367,11 @@ function xmlResponse(n) {
     var pub = []
     operation = true
     $('.populate').remove()
+	$('#arm').show().css({
+		'background-image': 'none',
+		'-webkit-backdrop-filter': 'blur(5px)',
+		'filter': 'blur(5px)'
+	}).hide().fadeIn('slow')
     $('#arm').show().html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
