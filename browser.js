@@ -66,6 +66,12 @@ $(document).ready(function() {
     })
 
     $('#main').on('scroll touchmove', function(e) {
+        if (e.type == 'scroll') {
+            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
+            $('svg circle').css({
+                "stroke-dashoffset": 131 - (131 * n)
+            })
+        }
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
@@ -143,6 +149,8 @@ function applyVisual(n) {
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#main').removeClass('invert').addClass('opposite')
+        $('#home, .progress').attr('src', 'images/opposite.png')
+        $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
@@ -159,6 +167,8 @@ function applyVisual(n) {
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
+        $('svg .progress').css('stroke', 'rgba(128,128,128,.5')
+        $('#home, .progress').attr('src', 'images/invert.png')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
         animate = 'invert.png'
     }

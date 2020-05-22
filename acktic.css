@@ -180,3 +180,34 @@
  input[type='submit'] {
 	 display: none;
 }
+ svg, svg .progress {
+     position: relative;
+     margin: 0 auto;
+     display: block;
+     height: 48px;
+     width: 48px;
+}
+ .progress {
+     position: relative;
+     margin: -46px auto;
+     display: block;
+     height: 48px;
+     width: 48px;
+}
+ svg .progress {
+     transform-origin: 50% 50%;
+     transform: rotate(90deg);
+     stroke-dashoffset: 131;
+     stroke-dasharray: 131;
+     fill: transparent;
+     stroke-width: 1px;
+}
+ svg {
+     z-index: 2;
+}
+ #navigate {
+     position: absolute;
+     height: 52px;
+     bottom: 0px;
+     width: 100%;
+}
