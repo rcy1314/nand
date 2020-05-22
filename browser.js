@@ -216,7 +216,6 @@ function filterResponse(random, k, n, o, p) {
 	setTimeout(function() {
 		populateResponse()
 	}, 500)
-	filter = []
 	applyVisual()
 
 }
