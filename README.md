@@ -21,7 +21,7 @@
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/6012904813793-1.png'></p>
  
 ### Opposite
-`https://acktic.github.io/?op=1`
+`https://acktic.github.io/?+1`
 * Initial
  <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/5178728867558-1.png'></p>
 * Working
