@@ -16,11 +16,11 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
     $('#container').show()
-    if (location.href.match('\\?op=1')) {
+    if (location.href.match('\\+1')) {
 
-        applyVisual(1)
+        applyVisual(!op)
 
-    } else if (location.href.match('\\?op=1')) applyVisual(0)
+    } 
 
 	else applyVisual(op)
 
@@ -207,7 +207,6 @@ function filterResponse(random, k, n, o, p) {
 				former = menu.indexOf(menu[i])
         }
     }
-	console.log(filter.length)
 	if (random == 1) {
 		if (filter[0] == undefined) randomResponse()
 		else xmlResponse(filter[Math.floor(Math.random()*filter.length)])
