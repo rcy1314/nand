@@ -10,6 +10,7 @@ var former = 0
 var visual = 1
 var object = []
 var filter = []
+var identify = 'social'
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -54,7 +55,6 @@ $(document).ready(function() {
 				$('input[type=text]').hide().blur()
 				$('#main').attr('tabindex', -1).focus()
 			}
-			else if (e.keyCode == 13) $('input[type=text]').hide().blur()
             else {
                 filterResponse(0, $(this).val().toLowerCase(),
 					$(this).val().toLowerCase().replace(/ /g, '.+'),
@@ -66,12 +66,6 @@ $(document).ready(function() {
     })
 
     $('#main').on('scroll touchmove', function(e) {
-        if (e.type == 'scroll') {
-            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
-            $('svg circle').css({
-                "stroke-dashoffset": 131 - (131 * n)
-            })
-        }
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
@@ -121,11 +115,6 @@ $(document).ready(function() {
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touch click', '.fa-toggle-on, .fa-toggle-off', function(e){
-
-	$(this).toggleClass('fa-toggle-on fa-toggle-off')
-	e.stopPropagation()
-
 }).on('touch click', '.img', function(e) {
 
 	if ($(this).hasClass('expand min') || $(this).hasClass('expand full')) expandImage($(this).attr('id'))
@@ -145,7 +134,6 @@ function applyVisual(n) {
         $('body, #container, #main, #arm, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
-			'background-image': 'none',
             'border': 'none'
         })
         $('input[type=text], .item .pub').css({
@@ -154,12 +142,9 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#home, .progress').attr('src', 'images/opposite.png')
         $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'images/opposite.png')
-        $('svg .progress').css('stroke', '#F74268')
-        $('a, .air .pub').css('color', '#F7426B')
-		$('.a').css('color','#fff')
+        $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
         $('input[type=text], #main, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
@@ -171,13 +156,10 @@ function applyVisual(n) {
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('#home, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
-        $('svg .progress').css('stroke', 'rgba(128,128,128,.5')
-		$('.a').css('color','#000')
         animate = 'invert.png'
     }
 }

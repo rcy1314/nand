@@ -26,33 +26,27 @@
     }
 }
  @media screen and (min-width: 769px) {
-     #container {
-		 position: relative;
-         margin: 0 auto;
-         display: none;
-         border: none;
-         height: 100%;
-         width: 65%;
-         top: 0em;
-    }
      .item {
-         width: 83% !important;
-         margin: 3em !important;
+         width: 63% !important;
+         margin: 12em !important;
     }
 }
  @media screen and (min-width: 1440px) {
-     #container {
-         width: 50%;
+     .item {
+         width: 55% !important;
+         margin: 20em !important;
     }
 }
  @media screen and (min-width: 2160px) {
-     #container {
-         width: 35%;
+     .item {
+         width: 55% !important;
+         margin: 36em !important;
     }
 }
  @media screen and (min-width: 2560px) {
-     #container {
-         width: 25%;
+     .item {
+         width: 55% !important;
+         margin: 36em !important;
     }
 }
  div, input[type=text] {
@@ -93,7 +87,7 @@
      scrollbar-color: #222 #000;
      scrollbar-width: thin;
 }
- html, body, #arm {
+ html, body, #main, #arm {
      overflow: hidden;
      height: 100%;
      width: 100%;
@@ -132,51 +126,12 @@
         -moz-transform: rotate(0deg);
     }
 }
- svg, svg .progress {
-     position: relative;
-     margin: 0 auto;
-     display: block;
-     height: 48px;
-     width: 48px;
-}
- .progress {
-     position: relative;
-     margin: -46px auto;
-     display: block;
-     height: 48px;
-     width: 48px;
-}
- svg .progress {
-     transform-origin: 50% 50%;
-     transform: rotate(90deg);
-     stroke-dashoffset: 131;
-     stroke-dasharray: 131;
-     fill: transparent;
-     stroke-width: 1px;
-}
- svg {
-     z-index: 2;
-}
- .a {
-	 background-color: transparent;
-	 display: block !important;
-	 position: relative;
-	 font-size: 36px;
-	 margin: 0 auto;
-	 bottom: 43px;
-	 height: 36px;
- 	 width: 36px;
-	 z-index: 2;
-}
  #main {
      -ms-overflow-style:-ms-autohiding-scrollbar;
      -webkit-overflow-scrolling: touch;
-     height: calc(100% - 50px);
      outline: none !important;
      position: absolute;
      overflow: auto;
-	 bottom: 50px;
-     width: 100%;
 }
  .filter, .populate {
      font-size: 10px;
@@ -208,12 +163,6 @@
  .img {
 	 margin-top: 5px;
 }
- #navigate {
-     position: absolute;
-     height: 52px;
-     bottom: 0px;
-     width: 100%;
-}
  input {
      transform: translate(-50%, -50%);
 	 border-radius: 24px;
@@ -230,15 +179,4 @@
 }
  input[type='submit'] {
 	 display: none;
-}
- .fa-toggle-on, .fa-toggle-off, .fa-terminal {
-     position: absolute;
-     font-size: 20px;
-     bottom: .75em;
-}
- .fa-terminal {
-     right: 1em;
-}
- .fa-toggle-on, .fa-toggle-off {
-     left: 1em;
 }
