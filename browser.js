@@ -209,7 +209,7 @@ function filterResponse(random, k, n, o, p) {
     }
 	if (random == 1) {
 		if (filter[0] == undefined) randomResponse()
-		else xmlResponse(menu.indexOf(filter[Math.floor(Math.random()*filter.length)]))
+		else xmlResponse(filter[Math.floor(Math.random()*filter.length)])
         return false
 	}
 	setTimeout(function() {
