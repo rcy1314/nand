@@ -27,12 +27,13 @@ $(document).ready(function() {
 
 	else applyVisual(op)
 
-	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
+	if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
-        opening = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '') + '.+'
-        closing = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '.+') + '.+'
-                    filterResponse(1, n.toLowerCase().replace(/(\+|%20)/g, ''),
-						n.toLowerCase().replace(/(\+|%20)/g, '.+'),
+		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
+   	    opening = '.+' + n.toLowerCase().replace(/(\+|%20|\-)/g, '') + '.+'
+        closing = '.+' + n.toLowerCase().replace(/(\+|%20|\-)/g, '.+') + '.+'
+                    filterResponse(1, n.toLowerCase().replace(/(\+|%20|\-)/g, ''),
+						n.toLowerCase().replace(/(\+|%20|\-)/g, '.+'),
 						opening + closing,
 						closing + opening
 					)
@@ -201,7 +202,7 @@ function filterResponse(random, k, n, o, p) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\.|\s]/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
         }
@@ -275,7 +276,7 @@ function populateResponse(n) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
-				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\/|\s]/, '+') + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\/|\s|\-]/, '+') + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
 	filter = []
