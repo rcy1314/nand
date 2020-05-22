@@ -117,11 +117,6 @@ $(document).ready(function() {
 	$(this).toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
 
-}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e){
-
-	$(this).toggleClass('fa-bookmark-o fa-bookmark')
-	e.stopPropagation()
-
 }).on('touch click', '.img', function(e) {
 
 	if ($(this).hasClass('expand min') || $(this).hasClass('expand full')) expandImage($(this).attr('id'))
@@ -433,7 +428,7 @@ function xmlResponse(n) {
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
+						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
