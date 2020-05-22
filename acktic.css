@@ -64,29 +64,6 @@
  .pub:hover, .des:hover, a:hover {
      text-decoration: underline 
 }
- ::-webkit-scrollbar {
-     width: 2px 
-}
- .invert::-webkit-scrollbar-thumb {
-     background-color: rgba(128,128,128,.1)
-}
- .invert::-webkit-scrollbar {
-     background-color: #f5f5f5 
-}
- .invert {
-     scrollbar-color: #eee #f5f5f5;
-     scrollbar-width: thin;
-}
- .opposite::-webkit-scrollbar-thumb {
-     background-color: #0a0a0a 
-}
- .opposite::-webkit-scrollbar {
-     background-color: #000 
-}
- .opposite {
-     scrollbar-color: #222 #000;
-     scrollbar-width: thin;
-}
  html, body, #main, #arm {
      overflow: hidden;
      height: 100%;
@@ -200,7 +177,7 @@
      stroke-dashoffset: 131;
      stroke-dasharray: 131;
      fill: transparent;
-     stroke-width: 1px;
+     stroke-width: 2px;
 }
  svg {
      z-index: 2;

@@ -82,7 +82,7 @@ $(document).ready(function() {
 						closing + opening
 					)
                 } else if (operation == false) {
-					populateResponse(0)
+					populateResponse()
 				}
         }
     }).attr('tabindex', -1).focus()
@@ -142,20 +142,19 @@ function applyVisual(n) {
             'background-color': '#000',
             'border': 'none'
         })
-        $('input[type=text], .item .pub').css({
+        $('input[type=text]').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
    			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#main').removeClass('invert').addClass('opposite')
         $('#home, .progress').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #main, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('input[type=text], #main, a, .populate, .populate .pub, .populate .des, .item, .item .pub, .pub').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -163,13 +162,10 @@ function applyVisual(n) {
         $('input[type=text], .item .pub').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
-        $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-        $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
-        $('svg .progress').css('stroke', 'rgba(128,128,128,.5')
+        $('svg .progress').css('stroke', '#000')
         $('#home, .progress').attr('src', 'images/invert.png')
-        $('a, .pub').css('color', 'rgba(0,0,0,.7)')
         animate = 'invert.png'
     }
 }
@@ -215,7 +211,6 @@ function filterResponse(random, k, n, o, p) {
 		else xmlResponse(menu.indexOf(filter[Math.floor(Math.random()*filter.length)]))
         return false
 	}
-    
 	applyVisual()
 
 }
@@ -270,7 +265,7 @@ function populateResponse(n) {
         $('#arm').hide()
         request.abort()
     }
-	for (var i = former + 1; i <= menu.length - 1; i++) {
+	for (var i = former; i <= menu.length - 1; i++) {
             $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
