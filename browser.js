@@ -200,7 +200,7 @@ function filterResponse(random, k, n, o, p) {
         $('#arm').hide()
         request.abort()
     }
-	for (var i = 0; i < menu.length -1; i++) {
+	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
@@ -208,9 +208,10 @@ function filterResponse(random, k, n, o, p) {
         }
     }
 	if (random == 1) {
-		if (filter[0] == undefined) randomResponse()
-		else xmlResponse(filter[Math.floor(Math.random()*filter.length)])
-        return false
+		var x = filter[Math.floor(Math.random()*filter.length)]
+		if (filter === undefined || filter == 0) console.log('random')
+		else xmlResponse(x)
+		return false
 	}
 	setTimeout(function() {
 		populateResponse()
@@ -270,7 +271,9 @@ function populateResponse(n) {
         $('#arm').hide()
         request.abort()
     }
-	for (var i = former; i <= menu.length - 1; i++) {
+	if (filter === undefined || filter.length == 0) i = former + 1
+	else i = former - 1
+	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
@@ -347,14 +350,16 @@ function xmlResponse(n) {
         $('#arm').hide()
         request.abort()
     }
+	console.log(n)
     obj = []
     former = n
     var pub = []
     operation = true
     $('.item, .populate').remove()
 	$('input[type=text]').blur().hide()
-	if (filter.length > 0) {
+	if (filter.length >= 0) {
 		filter = reverseResponse(menu.reverse())
+		n = menu.length - n
 	} else filter = menu.reverse()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
