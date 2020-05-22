@@ -154,7 +154,7 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#animate, .progress').attr('src', 'images/opposite.png')
+        $('#home, .progress').attr('src', 'images/opposite.png')
         $('#main').removeClass('invert').addClass('opposite')
         $('#favicon').attr('href', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
@@ -171,7 +171,7 @@ function applyVisual(n) {
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
-        $('#animate, .progress').attr('src', 'images/invert.png')
+        $('#home, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
