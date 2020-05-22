@@ -29,7 +29,7 @@ $(document).ready(function() {
 		applyVisual(op)
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
-                    filterResponse(1, location.search.split('?')[1].toLowerCase(),
+                    filterResponse(1, location.search.split('?')[1].toLowerCase().replace(/\+/g, ''),
 						location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+'),
 						opening + closing,
 						closing + opening
@@ -215,6 +215,7 @@ function filterResponse(random, k, n, o, p) {
 	setTimeout(function() {
 		populateResponse()
 	}, 500)
+	filter = []
 	applyVisual()
 
 }
@@ -341,8 +342,6 @@ function uncoordinatedTimeZone(n) {
 
 function xmlResponse(n) {
 
-	if (filter.length) filter = reverseResponse(menu.reverse())
-	else filter = menu
     if (operation == true) {
         operation = false
         $('#arm').hide()
@@ -354,6 +353,9 @@ function xmlResponse(n) {
     operation = true
     $('.item, .populate').remove()
 	$('input[type=text]').blur().hide()
+	if (filter.length > 0) {
+		filter = reverseResponse(menu.reverse())
+	} else filter = menu.reverse()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
 		'-webkit-backdrop-filter': 'blur(5px)',
