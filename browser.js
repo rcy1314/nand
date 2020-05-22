@@ -10,7 +10,6 @@ var former = 0
 var visual = 1
 var object = []
 var filter = []
-var identify = 'social'
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
