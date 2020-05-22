@@ -209,8 +209,6 @@
 	 margin-top: 5px;
 }
  #navigate {
-     border-top: .5px solid rgba(128,128,128,.9);
-     background-color: transparent;
      position: absolute;
      height: 52px;
      bottom: 0px;

@@ -173,11 +173,6 @@ function applyVisual(n) {
         $('.item .pub').css('border-bottom', '1px solid rgba(0,0,0,.1)')
         $('#animate, .progress').attr('src', 'images/invert.png')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-		$('body, #navigate').css({
-			'border-top': '.3px solid rgba(128,128,128,.5)',
-            'color': 'rgba(128,128,128,.9)',
-            'background-color':'#fafafa'
-        })
         $('#main').removeClass('opposite').addClass('invert')
         $('#favicon').attr('href', 'images/invert.png')
         $('a, .pub').css('color', 'rgba(0,0,0,.7)')
