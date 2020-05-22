@@ -200,7 +200,7 @@ function filterResponse(random, k, n, o, p) {
         $('#arm').hide()
         request.abort()
     }
-	for (var i = menu.length - 1; i >= 0; i--) {
+	for (var i = 0; i < menu.length -1; i++) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
