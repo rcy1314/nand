@@ -341,15 +341,13 @@ function uncoordinatedTimeZone(n) {
 
 function xmlResponse(n) {
 
-	if (filter.length) filter = menu.reverse()
+	if (filter.length) filter = reverseResponse(menu.reverse())
 	else filter = menu
     if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
-	console.log(n)
-	console.log(menu[n].id)
     obj = []
     former = n
     var pub = []
