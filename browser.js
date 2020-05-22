@@ -18,21 +18,20 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
-        applyVisual(!op)
+		n = n.replace(/\+1/, '')
         refreshResponse()
+		applyVisual(op)
 
     } 
 
 	else applyVisual(op)
 
-	if (location.search.match('\\?+1') && location.search.split('?')[1]) {
+	if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
-		n = n.replace(/\+1/, '')
-		applyVisual(op)
-        opening = '.+' + n.toLowerCase().replace(/\+/g, '') + '.+'
-        closing = '.+' + n.toLowerCase().replace(/\+/g, '.+') + '.+'
-                    filterResponse(1, n.toLowerCase().replace(/\+/g, ''),
-						n.toLowerCase().replace(/\+/g, '.+'),
+        opening = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '') + '.+'
+        closing = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '.+') + '.+'
+                    filterResponse(1, n.toLowerCase().replace(/(\+|%20)/g, ''),
+						n.toLowerCase().replace(/(\+|%20)/g, '.+'),
 						opening + closing,
 						closing + opening
 					)
@@ -112,7 +111,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	window.location.assign('?' + $(this).attr('get').toLowerCase())
+	window.location.assign('?' + $(this).attr('get'))
     /* xmlResponse($(this).attr('get')) */
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
@@ -193,7 +192,7 @@ function filterResponse(random, k, n, o, p) {
 	$('#main #arm').remove()
 	$('#main .filter').remove()
 	$('#main .populate').remove()
-    if (operation == true) {
+	 if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
