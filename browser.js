@@ -24,13 +24,14 @@ $(document).ready(function() {
 
 	else applyVisual(op)
 
-	if (!location.href.match('\\?op=1') && location.search.split('?')[1]) {
+	if (location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
+		n = n.replace(/\+1/, '')
 		applyVisual(op)
-        opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
-        closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
-                    filterResponse(1, location.search.split('?')[1].toLowerCase().replace(/\+/g, ''),
-						location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+'),
+        opening = '.+' + n.toLowerCase().replace(/\+/g, '') + '.+'
+        closing = '.+' + n.toLowerCase().replace(/\+/g, '.+') + '.+'
+                    filterResponse(1, n.toLowerCase().replace(/\+/g, ''),
+						n.toLowerCase().replace(/\+/g, '.+'),
 						opening + closing,
 						closing + opening
 					)
@@ -209,8 +210,9 @@ function filterResponse(random, k, n, o, p) {
     }
 	if (random == 1) {
 		var x = filter[Math.floor(Math.random()*filter.length)]
-		if (filter === undefined || filter == 0) console.log('random')
-		else xmlResponse(x)
+		console.log(x - +1)
+		if (filter === undefined || filter == 0) randomResponse()
+		else xmlResponse(x + +1)
 		return false
 	}
 	setTimeout(function() {
@@ -349,7 +351,6 @@ function xmlResponse(n) {
         $('#arm').hide()
         request.abort()
     }
-	console.log(n)
     obj = []
     former = n
     var pub = []
