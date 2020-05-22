@@ -290,7 +290,7 @@ function refreshResponse(){
 
 		applyVisual()
 		$('#main').scrollTop(0)
-		$('.populate, .item').remove()
+		$('.populate, .filter, .item').remove()
 		$('#arm').fadeOut('slow').hide()
 		$('input[type=text').val('').focus()
 		setTimeout(function(){ /* allow filter */
