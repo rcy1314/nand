@@ -29,7 +29,7 @@ $(document).ready(function() {
 		applyVisual(op)
         opening = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '') + '.+'
         closing = '.+' + location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+') + '.+'
-                    filterResponse(1, location.search.split('?')[1].toLowerCase().replace(/\+/g, ''),
+                    filterResponse(1, location.search.split('?')[1].toLowerCase(),
 						location.search.split('?')[1].toLowerCase().replace(/\+/g, '.+'),
 						opening + closing,
 						closing + opening
@@ -341,11 +341,15 @@ function uncoordinatedTimeZone(n) {
 
 function xmlResponse(n) {
 
+	if (filter.length) filter = menu.reverse()
+	else filter = menu
     if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
+	console.log(n)
+	console.log(menu[n].id)
     obj = []
     former = n
     var pub = []
@@ -422,7 +426,7 @@ function xmlResponse(n) {
                 if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + menu[n].ext + "\")'>" + menu[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
