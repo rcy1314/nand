@@ -110,7 +110,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-    xmlResponse($(this).attr('get'))
+	window.location.assign($(this).attr('get'))
+    /* xmlResponse($(this).attr('get')) */
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -197,7 +198,7 @@ function filterResponse(random, k, n, o, p) {
     }
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/([^\/]*)(\s|\.)/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
         }
@@ -266,7 +267,7 @@ function populateResponse(n) {
         $('#arm').hide()
         request.abort()
     }
-	if (filter === undefined || filter.length == 0) i = former + 1
+	if (filter === undefined || filter.length == 0 || !former) i = former + 1
 	else i = former - 1
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
