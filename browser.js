@@ -10,6 +10,7 @@ var former = 0
 var visual = 1
 var object = []
 var filter = []
+var reverse = 0
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -110,7 +111,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	window.location.assign($(this).attr('get'))
+	window.location.assign('?' + $(this).attr('get'))
     /* xmlResponse($(this).attr('get')) */
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
@@ -186,7 +187,7 @@ function expandImage(n) {
 }
 
 function filterResponse(random, k, n, o, p) {
-
+    console.log(reverse)
 	filter = []
 	$('#main #arm').remove()
 	$('#main .filter').remove()
@@ -196,9 +197,10 @@ function filterResponse(random, k, n, o, p) {
         $('#arm').hide()
         request.abort()
     }
+    if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/([^\/]*)(\s|\.)/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\.|\s]/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
         }
@@ -271,7 +273,7 @@ function populateResponse(n) {
 	else i = former - 1
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
-				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\/|\s]/, '+') + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
 	filter = []
@@ -314,7 +316,7 @@ function reverseResponse(Object) {
         newObject[keys[i]] = value
 
     }
-
+    reverse = !reverse
     return newObject
 
 }
