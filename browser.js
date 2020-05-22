@@ -155,7 +155,7 @@ function applyVisual(n) {
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
-        $('input[type=text], .item .pub, .courtesy').css({
+        $('input[type=text], .item .pub').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
@@ -425,8 +425,7 @@ function xmlResponse(n) {
                 if (src.match(/comments|default|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
-                else courtesy = "<div id='ago' class='courtesy' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + 
-								filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
+                else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
