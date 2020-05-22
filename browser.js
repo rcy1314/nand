@@ -138,7 +138,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, #arm, input[type=text], #navigate, .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, #arm, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'

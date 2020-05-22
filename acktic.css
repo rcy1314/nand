@@ -64,7 +64,7 @@
  .pub:hover, .des:hover, a:hover {
      text-decoration: underline 
 }
- html, body, #main, #arm {
+ html, body, #wrapper, #container, #main, #arm {
      overflow: hidden;
      height: 100%;
      width: 100%;
@@ -183,8 +183,11 @@
      z-index: 2;
 }
  #navigate {
+	 background-color: transparent;
+     width: calc(100% - 2em);
      position: absolute;
      height: 52px;
      bottom: 0px;
-     width: 100%;
+	 right: 1em;
+	 left: 1em;
 }
