@@ -56,8 +56,8 @@ $(document).ready(function() {
 				$('#main').attr('tabindex', -1).focus()
 			}
             else {
-                filterResponse(0, $(this).val().toLowerCase(),
-					$(this).val().toLowerCase().replace(/ /g, '.+'),
+                filterResponse(0, $('input[type=text]').val().toLowerCase(),
+					$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
 					opening + closing,
 					closing + opening
 				)
@@ -192,7 +192,8 @@ function filterResponse(random, k, n, o, p) {
 
 	filter = []
 	$('#main #arm').remove()
-	if (!$('#main .item, #main .populate').length) $('#main .filter').remove()
+	$('#main .filter').remove()
+	$('#main .populate').remove()
     if (operation == true) {
         operation = false
         $('#arm').hide()
@@ -201,8 +202,8 @@ function filterResponse(random, k, n, o, p) {
 	reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	            	$('#main').prepend("<div class='filter' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
-				filter.push(menu[i])
+	            	if (!$('#main .filter .' + menu.indexOf(menu[i])).length) $('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				filter.push(menu.indexOf(menu[i]))
 				former = i
         }
     }
@@ -211,6 +212,9 @@ function filterResponse(random, k, n, o, p) {
 		else xmlResponse(menu.indexOf(filter[Math.floor(Math.random()*filter.length)]))
         return false
 	}
+	setTimeout(function() {
+		populateResponse()
+	}, 500)
 	applyVisual()
 
 }
@@ -266,7 +270,8 @@ function populateResponse(n) {
         request.abort()
     }
 	for (var i = former; i <= menu.length - 1; i++) {
-            $('#main').append("<div class='populate' get='" + i + "'><div class='pub'><a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
+				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + i + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
 	former = 0
     applyVisual()
