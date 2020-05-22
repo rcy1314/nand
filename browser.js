@@ -207,6 +207,7 @@ function filterResponse(random, k, n, o, p) {
 				former = menu.indexOf(menu[i])
         }
     }
+	console.log(filter.length)
 	if (random == 1) {
 		if (filter[0] == undefined) randomResponse()
 		else xmlResponse(filter[Math.floor(Math.random()*filter.length)])
