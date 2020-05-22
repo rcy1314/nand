@@ -11,6 +11,7 @@ var visual = 1
 var object = []
 var filter = []
 var reverse = 0
+var contrast = false
 var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -18,15 +19,15 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
-		n = n.replace(/\+1/, '')
         refreshResponse()
-		applyVisual(op)
+		applyVisual(!op)
+		contrast = true
 
     } 
 
 	else applyVisual(op)
 
-	if (location.search.split('?')[1]) {
+	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
         opening = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '') + '.+'
         closing = '.+' + n.toLowerCase().replace(/(\+|%20)/g, '.+') + '.+'
@@ -111,8 +112,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	window.location.assign('?' + $(this).attr('get'))
-    /* xmlResponse($(this).attr('get')) */
+	if (contrast = true) window.location.assign('?' + $(this).attr('get') + '+1')
+    else window.location.assign('?' + $(this).attr('get'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -162,7 +163,7 @@ function applyVisual(n) {
 		})
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#favicon').attr('href', 'images/invert.png')
-        $('svg .progress').css('stroke', '#000')
+        $('svg .progress').css('stroke', '#08bd93')
         $('#home, .progress').attr('src', 'images/invert.png')
         animate = 'invert.png'
     }
