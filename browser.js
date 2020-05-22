@@ -20,13 +20,12 @@ $(document).ready(function() {
 
         applyVisual(!op)
         refreshResponse()
-        return false        
 
     } 
 
 	else applyVisual(op)
 
-	if (location.search.split('?')[1]) {
+	if (location.search.match('\\?+1') && location.search.split('?')[1]) {
 		var n = location.search.split('?')[1]
 		n = n.replace(/\+1/, '')
 		applyVisual(op)
@@ -201,7 +200,7 @@ function filterResponse(random, k, n, o, p) {
     }
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\.|\s]/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
