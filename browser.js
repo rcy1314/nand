@@ -157,14 +157,11 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
+	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, '.')
 	if (random == 1) {
-	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.')
-   	    var o = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
         var p = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
 	} else if (random == 0) {
-		var n = x.toLowerCase().replace(/ /g, '.+')
-        var o = '.+' + x.toLowerCase().match(/^\w+/g) + '.+'
-        var p = '.+' + x.toLowerCase().match(/\w+$/g) + '.+'
+        var p = '.+' + x.toLowerCase().match(/^\w+|\w+$/g) + '.+'
 	}
 	filter = []
 	 if (operation == true) {
@@ -177,7 +174,7 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
