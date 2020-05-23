@@ -34,7 +34,10 @@ $(document).ready(function() {
 
 	} else refreshResponse()
 
-    $('#main').on('scroll touchmove', function(e) {
+    $('#main').on('scroll touchmove focus', function(e) {
+
+		if (e.type == 'focus') $('input[type=text]').blur().hide()
+
         if (e.type == 'scroll') {
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
@@ -153,7 +156,8 @@ function expandImage(n) {
 
 }
 
-function filterResponse(random, x) {
+function filterResponse(random) {
+	var x = document.getElementById('text').value.toLowerCase();
 	if (random == 1) {
 	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+')
    	    var o = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
@@ -172,7 +176,6 @@ function filterResponse(random, x) {
         $('#arm').hide()
         request.abort()
     }
-	if (x.length <= 2) return false
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p) || menu[i].des.toLowerCase().match(p)) {
