@@ -298,9 +298,9 @@ function refreshResponse(){
 
 		applyVisual()
 		$('#main').scrollTop(0)
-		$('.populate, .filter, .item').remove()
+		$('#arm, .populate, .filter, .item').remove()
 		$('input[type=text').val('').focus()
-		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
+		$('#main').append("<div id='arm'></div>").scrollTop(0)
     	$('#arm').html("<img id='home' src='images/" + animate + "'>")
 		$('input[type=text]').show().focus()
 
