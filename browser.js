@@ -102,7 +102,7 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touchstart click focus', '#arm, circle, .progress', function(e){
+}).on('ontouchstart click', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
@@ -299,6 +299,7 @@ function refreshResponse(){
 		$('#main').empty()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home'></div>")
+		$('#main #arm').hide().fadeIn('slow')
 		applyVisual()
 
 }
