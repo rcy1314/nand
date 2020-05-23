@@ -58,6 +58,8 @@ var menu=[
 {id:"4chan DIY",cat:"Social",des:"4chan DIY board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",uri:"http://boards.4channel.org/diy/index.rss",ext:"http://boards.4channel.org/diy"},
 {id:"Reddit/Firefox",cat:"Social",des:"Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",uri:"https://reddit.com/r/firefox/.rss",ext:"https://reddit.com/r/Firefox"},
 {id:"Reddit/Gadgets",cat:"Social",des:"Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",uri:"https://reddit.com/r/gadgets/.rss",ext:"https://reddit.com/r/Gadgets"},
+{id:"Reddit/Games",cat:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",uri:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/games"},
+{id:"Reddit/Github",cat:"Social",des:"Github subreddit for all things GitHub!",uri:"https://reddit.com/r/github/.rss",ext:"https://reddit.com/r/github"},
 {id:"Reddit/Goddesses",cat:"Social",des:"Goddesses subreddit pretty pictures of pretty girls.",uri:"https://reddit.com/r/goddesses/.rss",ext:"https://reddit.com/r/Goddesses"},
 {id:"Reddit/Google",cat:"Social",des:"Google subreddit For news and announcements from and about Google.",uri:"https://reddit.com/r/google/.rss",ext:"https://reddit.com/r/Google"},
 {id:"4chan Technology",cat:"Social",des:"4chan G Technology is a board that discusses Technology.",uri:"http://boards.4chan.org/g/index.rss",ext:"http://boards.4channel.org/g/"},
