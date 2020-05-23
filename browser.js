@@ -102,7 +102,7 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touchstart click focus', '#arm, circle, .progress', function(e){
+}).on('touch click focus', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
@@ -297,8 +297,9 @@ function populateResponse(n) {
 function refreshResponse(){
 
 		$('#main').scrollTop(0)
-		$('#main').append("<div id='arm'></div>")
+		$('.filter, .populate, .item').remove()
 		$('input[type=text').val('').show().focus()
+		if ($('#main #arm').length < 1) $('#main').append("<div id='arm'></div>")
 		$('#arm').html("<img id='home' src='images/" + animate + "'>")
 
 }
