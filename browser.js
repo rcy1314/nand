@@ -42,7 +42,7 @@ $(document).ready(function() {
 	} else refreshResponse()
 
 
-    $('input[type=text]').on('keyup input', function(e) {
+    $('input[type=text]').on('keyup input touchend', function(e) {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
