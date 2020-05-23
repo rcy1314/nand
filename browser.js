@@ -102,9 +102,13 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touch click focus', '#arm, circle, .progress', function(e){
+}).on('touchstart click focus', '#main #arm, circle, .progress', function(e){
 
-	refreshResponse()
+		$('#main').scrollTop(0)
+		$('#main, #main .filter, #main .populate, #main .item').remove()
+		$('input[type=text').val('').show().focus()
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>")
+		$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
 
 }).on('touch click', '.item', function(e){
 
@@ -296,11 +300,6 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
-		$('#main').scrollTop(0)
-		$('.filter, .populate, .item').remove()
-		$('input[type=text').val('').show().focus()
-		if ($('#main #arm').length < 1) $('#main').append("<div id='arm'></div>")
-		$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
 
 }
 
@@ -376,7 +375,6 @@ function xmlResponse(n) {
         .fail(function() {
             $('#arm').remove();
             operation = false
-            refreshResponse()
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel = "entry"

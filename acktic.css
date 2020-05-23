@@ -80,7 +80,7 @@
 }
  #home, #animate {
 	 height: 200px;	
-     margin: 0 auto;
+     margin: auto;
 }
  #animate {
      -webkit-animation: spin 7s infinite ease;
