@@ -19,14 +19,13 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
+        refreshResponse()
 		applyVisual(!op)
 		contrast = true
 
-    } else {
+    } 
 
-		applyVisual(op)
-
-	}
+	else applyVisual(op)
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
@@ -39,7 +38,7 @@ $(document).ready(function() {
 						closing + opening
 					)
 		$('input[type=text]').blur().hide()
-	}
+	} else refreshResponse()
 
 
     $('input[type=text]').on('keyup', function(e) {
@@ -102,13 +101,9 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touchstart click focus', '#main #arm, circle, .progress', function(e){
+}).on('touch click focus', '#arm, circle, .progress', function(e){
 
-		$('#main').scrollTop(0)
-		$('#main, #main .filter, #main .populate, #main .item').remove()
-		$('input[type=text').val('').show().focus()
-		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>")
-		$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
+	refreshResponse()
 
 }).on('touch click', '.item', function(e){
 
@@ -300,6 +295,17 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
+		applyVisual()
+		$('#main').scrollTop(0)
+		$('.populate, .filter, .item').remove()
+		$('#arm').fadeOut('slow').hide()
+		$('input[type=text').val('').focus()
+		setTimeout(function(){ /* allow filter */
+		}, 550)
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
+    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#arm').show().hide().fadeIn('slow')
+		$('input[type=text]').show().focus()
 
 }
 
@@ -375,6 +381,7 @@ function xmlResponse(n) {
         .fail(function() {
             $('#arm').remove();
             operation = false
+            refreshResponse()
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel = "entry"
