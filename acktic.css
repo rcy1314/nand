@@ -71,15 +71,13 @@
  #arm {
 	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
-     display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
 }
  #home, #animate {
+	 transform: translate(-50%,-50%);
+	 position: absolute;
 	 height: 200px;	
-     margin: auto;
+	 left: 50%;
+	 top: 50%;
 }
  #animate {
      -webkit-animation: spin 7s infinite ease;
