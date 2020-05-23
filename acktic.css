@@ -69,9 +69,6 @@
      top: 0;
 }
  #arm {
-	 -webkit-filter: blur(4px);
-	 filter: blur(4px);
-     display: flex;
 }
  #home, #animate {
 	 height: 200px;	
@@ -103,6 +100,7 @@
      -webkit-overflow-scrolling: touch;
      position: absolute;
      overflow: auto;
+	 outline: none;
 }
  .filter, .populate {
      font-size: 10px;
