@@ -148,6 +148,7 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
+        $('#home, .progress').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
@@ -164,6 +165,7 @@ function applyVisual(n) {
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#favicon').attr('href', 'images/invert.png')
         $('svg .progress').css('stroke', '#08bd93')
+        $('#home, .progress').attr('src', 'images/invert.png')
         animate = 'invert.png'
     }
 }
@@ -294,11 +296,10 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
-		applyVisual()
 		$('#main').empty()
 		$('input[type=text').val('').show().focus()
-		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
-		$('#main #arm').hide().fadeIn('slow')
+		$('#main').append("<div id='arm'><img id='home'></div>")
+		applyVisual()
 
 }
 
