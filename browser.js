@@ -19,12 +19,16 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
+		refreshResponse()
 		applyVisual(!op)
 		contrast = true
 
-    } 
+    } else {
 
-	else applyVisual(op)
+		refreshResponse()
+		applyVisual(op)
+
+	}
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
