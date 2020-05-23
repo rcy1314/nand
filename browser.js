@@ -16,7 +16,7 @@ var operation = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container').show()
+    $('#container, #arm, input[type=text]').show()
     if (location.href.match('\\+1')) {
 
 		applyVisual(!op)
@@ -296,11 +296,11 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
-		applyVisual()
 		$('#main').empty()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('#main #arm').hide().fadeIn('slow')
+		applyVisual()
 
 }
 

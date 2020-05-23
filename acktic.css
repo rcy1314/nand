@@ -71,7 +71,7 @@
  #arm {
 	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
-     display: table;
+     display: flex;
 }
  #home, #animate {
 	 height: 200px;	
@@ -139,8 +139,9 @@
      transform: translate(-50%, -50%);
 	 border-radius: 24px;
      position: absolute;
-	 padding-left: 15px;
+	 padding-left: 7px;
      font-size: 12px;
+	 outline: none;
 	 height: 2em;
      width: 20em;
      z-index: 3;
