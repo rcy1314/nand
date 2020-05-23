@@ -297,13 +297,15 @@ function populateResponse(n) {
 function refreshResponse(){
 
 		applyVisual()
-		$('#main').empty()
 		$('#main').scrollTop(0)
-		$('input[type=text').val('').show().focus()
+		$('.populate, .filter, .item').remove()
+		$('#arm').fadeOut('slow').remove()
+		$('input[type=text').val('').focus()
 		setTimeout(function(){ /* allow filter */
 		}, 550)
-		if ($('#main #arm').length <= 0) $('#main').append("<div id='arm'></div>").scrollTop(0)
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
     	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#arm').show().hide().fadeIn('slow')
 		$('input[type=text]').show().focus()
 
 }
