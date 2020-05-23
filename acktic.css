@@ -130,7 +130,7 @@
 	 margin-left: 15px;
 }
  #ago, .ago, .attr {
-     text-transform: uppercase;
+     text-transform: capitalize;
      display: inline-block;
      width: fit-content;
      line-height: .3;
@@ -161,12 +161,12 @@
      position: relative;
      margin: 0 auto;
      display: block;
-     height: 48px;
+     height: 50px;
      width: 48px;
 }
  .progress {
      position: relative;
-     margin: -46px auto;
+     margin: -47px auto;
      display: block;
      height: 48px;
      width: 48px;
@@ -177,7 +177,7 @@
      stroke-dashoffset: 131;
      stroke-dasharray: 131;
      fill: transparent;
-     stroke-width: 2px;
+     stroke-width: 3px;
 }
  svg {
      z-index: 2;

@@ -70,15 +70,14 @@ $(document).ready(function() {
 
     $('#main').on('scroll touchmove', function(e) {
         if (e.type == 'scroll') {
-            var n = Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight())));
             $('svg circle').css({
-                "stroke-dashoffset": 131 - (131 * n)
+                "stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
             })
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
-                if (former == 0 && operation == false && $('input[type=text]').val().length >= 2) {
+                if (operation == false && $('input[type=text]').val().length >= 2) {
                     filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
 						opening + closing,
@@ -113,8 +112,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	if (contrast == true) window.location.assign('?' + $(this).attr('get') + '+1')
-    else window.location.assign('?' + $(this).attr('get'))
+	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
+    else window.location.assign('?' + $(this).attr('response'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -154,7 +153,7 @@ function applyVisual(n) {
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #main, a, .populate, .populate .pub, .populate .des, .item, .item .pub, .pub').css({
+        $('input[type=text], #main, .populate, .populate .pub, .populate .des, .item, .item .pub, .pub, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -202,7 +201,12 @@ function filterResponse(random, k, n, o, p) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
-	    	$('#main').prepend("<div class='filter " + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'><div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+	    	$('#main').prepend(
+				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'> " +
+				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='des'>" + menu[i].des + "</div>" +
+				"</div>"
+			)
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
         }
@@ -210,7 +214,7 @@ function filterResponse(random, k, n, o, p) {
 	if (random == 1) {
 		var x = filter[Math.floor(Math.random()*filter.length)]
 		console.log(x - +1)
-		if (filter === undefined || filter == 0) randomResponse()
+		if (filter === undefined || filter == 0) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		else xmlResponse(x + +1)
 		return false
 	}
@@ -223,7 +227,7 @@ function filterResponse(random, k, n, o, p) {
 
 function imageResolution(n) {
 
-	var mobile = 1440
+	var mobile = 1280
 	var minimum = 299
 	var maximum = 799
     if ($('#' + n).attr('src')) {
@@ -276,19 +280,16 @@ function populateResponse(n) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
-				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\/|\s|\-]/, '+') + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
+				$('#main').append(
+					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\/|\s|\-]/, '+') + "'>" +
+					"<div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+					"<div class='des'>" + menu[i].des + "</div>" +
+					"</div>"
+				)
 	}
 	former = -1
 	filter = []
     applyVisual()
-
-}
-
-function randomResponse() {
-
-	$('input[type=text]').hide().blur()
-	var n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
-    xmlResponse(n)
 
 }
 
@@ -320,6 +321,7 @@ function reverseResponse(Object) {
 
     }
     reverse = !reverse
+
     return newObject
 
 }
@@ -355,8 +357,6 @@ function xmlResponse(n) {
     former = n
     var pub = []
     operation = true
-    $('.item, .populate').remove()
-	$('input[type=text]').blur().hide()
 	if (filter.length >= 0) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
@@ -370,7 +370,7 @@ function xmlResponse(n) {
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
-			dataType: 'XML',
+			dataType: 'xml',
 			contentType: 'text/html; charset=utf-8',
  			headers: {          
 				Accept: 'text/html; charset=utf-8',
@@ -381,7 +381,7 @@ function xmlResponse(n) {
         .fail(function() {
             $('#arm').remove();
             operation = false
-            applyVisual()
+            refreshResponse()
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel = "entry"
@@ -435,7 +435,8 @@ function xmlResponse(n) {
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
+                        "<div id='ago' style='width:100%;display:block'>" + filter[n].cat + "</div>" + 
+                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
