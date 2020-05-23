@@ -6,8 +6,8 @@ var ost = 0
 var closing
 var opening
 var quit = 12
-var former = 0
 var visual = 1
+var former = -1
 var object = []
 var filter = []
 var reverse = 0
@@ -77,7 +77,7 @@ $(document).ready(function() {
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
-            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight - 10)
+            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
                 if (former == 0 && operation == false && $('input[type=text]').val().length >= 2) {
                     filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
@@ -113,7 +113,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	if (contrast = true) window.location.assign('?' + $(this).attr('get') + '+1')
+	if (contrast == true) window.location.assign('?' + $(this).attr('get') + '+1')
     else window.location.assign('?' + $(this).attr('get'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
@@ -278,7 +278,7 @@ function populateResponse(n) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append("<div class='populate '" + menu.indexOf(menu[i]) + "' get='" + menu[i].id.replace(/[\/|\/|\s|\-]/, '+') + "'><div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div><div class='des'>" + menu[i].des + "</div></div>")
 	}
-	former = 0
+	former = -1
 	filter = []
     applyVisual()
 
