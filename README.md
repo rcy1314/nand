@@ -20,8 +20,6 @@
 ### Opposite
 `https://acktic.github.io/?+1`
 
-for reference the min browser is shown.
-
 License
 ----
 
