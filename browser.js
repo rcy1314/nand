@@ -19,13 +19,11 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
-		refreshResponse()
 		applyVisual(!op)
 		contrast = true
 
     } else {
 
-		refreshResponse()
 		applyVisual(op)
 
 	}
@@ -41,7 +39,7 @@ $(document).ready(function() {
 						closing + opening
 					)
 		$('input[type=text]').blur().hide()
-	} else refreshResponse()
+	}
 
 
     $('input[type=text]').on('keyup', function(e) {
@@ -302,8 +300,6 @@ function refreshResponse(){
 		$('#main').scrollTop(0)
 		$('.populate, .filter, .item').remove()
 		$('input[type=text').val('').focus()
-		setTimeout(function(){ /* allow filter */
-		}, 550)
 		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
     	$('#arm').html("<img id='home' src='images/" + animate + "'>")
 		$('input[type=text]').show().focus()
