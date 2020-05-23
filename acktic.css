@@ -72,6 +72,10 @@
 	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
      display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 }
  #home, #animate {
 	 height: 200px;	
