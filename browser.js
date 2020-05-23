@@ -19,6 +19,7 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
+        refreshResponse()
 		applyVisual(!op)
 		contrast = true
 
@@ -29,10 +30,10 @@ $(document).ready(function() {
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
-   	    opening = '.+' + n.toLowerCase().replace(/(\+|%20|\-)/g, '') + '.+'
-        closing = '.+' + n.toLowerCase().replace(/(\+|%20|\-)/g, '.+') + '.+'
-                    filterResponse(1, n.toLowerCase().replace(/(\+|%20|\-)/g, ''),
-						n.toLowerCase().replace(/(\+|%20|\-)/g, '.+'),
+   	    opening = '.+' + n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
+        closing = '.+' + n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
+                    filterResponse(1, n.toLowerCase().replace(/(\+|%20|\-|\_)/g, ''),
+						n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+'),
 						opening + closing,
 						closing + opening
 					)
