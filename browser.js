@@ -137,7 +137,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, #arm, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
@@ -148,7 +148,6 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#home, .progress').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
@@ -165,7 +164,6 @@ function applyVisual(n) {
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#favicon').attr('href', 'images/invert.png')
         $('svg .progress').css('stroke', '#08bd93')
-        $('#home, .progress').attr('src', 'images/invert.png')
         animate = 'invert.png'
     }
 }
