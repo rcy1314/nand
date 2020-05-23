@@ -19,7 +19,6 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
-        refreshResponse()
 		applyVisual(!op)
 		contrast = true
 
