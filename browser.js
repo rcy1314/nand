@@ -42,7 +42,7 @@ $(document).ready(function() {
 	} else refreshResponse()
 
 
-    $('input[type=text]').on('keyup', function(e) {
+    $('input[type=text]').on('keyup input', function(e) {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
         opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
@@ -102,7 +102,7 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('ontouchstart click', '#arm, circle, .progress', function(e){
+}).on('touchstart click focus', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
@@ -137,7 +137,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, #arm, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
@@ -296,11 +296,11 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
+		applyVisual()
 		$('#main').empty()
 		$('input[type=text').val('').show().focus()
-		$('#main').append("<div id='arm'><img id='home'></div>")
+		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('#main #arm').hide().fadeIn('slow')
-		applyVisual()
 
 }
 
