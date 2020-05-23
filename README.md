@@ -5,6 +5,7 @@
 ### Passed Tests
 
 * Google Chrome (81.0.4044.138)
+* Chromium (83.0.4103.61)
 * Apple Mobile Safari iOS (9+)
 * Mozilla Firefox (76.0.1)
 * Opera (68.0.3618.104) 
