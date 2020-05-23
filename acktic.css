@@ -69,7 +69,7 @@
      top: 0;
 }
  #arm {
-	 -webkit-backdrop-filter: blur(4px);
+	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
      display: flex;
 }
