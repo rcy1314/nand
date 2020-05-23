@@ -298,13 +298,10 @@ function refreshResponse(){
 
 		applyVisual()
 		$('#main').empty()
-		$('#arm').fadeOut('slow').remove()
 		$('input[type=text').val('').show().focus()
-		setTimeout(function(){ /* allow filter */
 		$('#main').append("<div id='arm'></div>")
     	$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
 		$('#main #arm').show().hide().fadeIn('slow')
-		}, 550)
 
 }
 
