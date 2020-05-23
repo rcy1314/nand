@@ -300,7 +300,7 @@ function refreshResponse(){
 		$('.filter, .populate, .item').remove()
 		$('input[type=text').val('').show().focus()
 		if ($('#main #arm').length < 1) $('#main').append("<div id='arm'></div>")
-		$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
 
 }
 
