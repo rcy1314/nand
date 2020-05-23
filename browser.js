@@ -274,7 +274,6 @@ function populateResponse(n) {
 function refreshResponse(){
 
 		$('#main #arm, #main .populate, #main .filter, #main .item').remove()
-		$('input[type=text]').blur().hide()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('#main #arm').hide()
