@@ -19,8 +19,8 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
-        refreshResponse()
 		applyVisual(!op)
+        refreshResponse()
 		contrast = true
 
     } 
@@ -38,7 +38,7 @@ $(document).ready(function() {
 						closing + opening
 					)
 		$('input[type=text]').blur().hide()
-	} else refreshResponse()
+	}
 
 
     $('input[type=text]').on('keyup', function(e) {
