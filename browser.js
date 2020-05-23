@@ -102,7 +102,7 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touch click focus', '#arm, circle, .progress', function(e){
+}).on('touchstart click focus', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
