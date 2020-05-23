@@ -19,14 +19,17 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
+		refreshResponse()
 		applyVisual(!op)
 		contrast = true
-		$('#arm').click()
 
     } else {
+
+		refreshResponse()
 		applyVisual(op)
-		$('#arm').click()
+
 	}
+
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
@@ -103,17 +106,7 @@ $(document).ready(function() {
 
 }).on('touch click focus', '#arm, circle, .progress', function(e){
 
-	applyVisual()
-	$('#main').scrollTop(0)
-	$('.populate, .filter, .item').remove()
-	$('#arm').fadeOut('slow').hide()
-	$('input[type=text').val('').focus()
-	setTimeout(function(){ /* allow filter */
-	}, 550)
-	if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
-   	$('#arm').html("<img id='home' src='images/" + animate + "'>")
-	$('#arm').show().hide().fadeIn('slow')
-	$('input[type=text]').show().focus()
+	refreshResponse()
 
 }).on('touch click', '.item', function(e){
 
@@ -305,6 +298,15 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
+		applyVisual()
+		$('#main').scrollTop(0)
+		$('.populate, .filter, .item').remove()
+		$('input[type=text').val('').focus()
+		setTimeout(function(){ /* allow filter */
+		}, 550)
+		if ($('#main #arm').length <= 1) $('#main').append("<div id='arm'></div>").scrollTop(0)
+    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('input[type=text]').show().focus()
 
 }
 
