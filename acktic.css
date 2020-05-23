@@ -141,6 +141,7 @@
      position: absolute;
 	 padding-left: 7px;
      font-size: 12px;
+	 display: none;
 	 outline: none;
 	 height: 2em;
      width: 20em;

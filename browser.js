@@ -34,9 +34,9 @@ $(document).ready(function() {
 
 	} else refreshResponse()
 
-    $('#main').on('scroll touchmove focus', function(e) {
+    $('#main').on('scroll touchmove', function(e) {
 
-		if (e.type == 'focus') $('input[type=text]').blur().hide()
+		$('input[type=text]').blur().hide()
 
         if (e.type == 'scroll') {
             $('svg circle').css({
@@ -156,10 +156,9 @@ function expandImage(n) {
 
 }
 
-function filterResponse(random) {
-	var x = document.getElementById('text').value.toLowerCase();
+function filterResponse(random, x) {
 	if (random == 1) {
-	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+')
+	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.')
    	    var o = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
         var p = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
 	} else if (random == 0) {
@@ -168,17 +167,17 @@ function filterResponse(random) {
         var p = '.+' + x.toLowerCase().match(/\w+$/g) + '.+'
 	}
 	filter = []
-	$('#main #arm').remove()
-	$('#main .filter').remove()
-	$('#main .populate').remove()
 	 if (operation == true) {
         operation = false
         $('#arm').hide()
         request.abort()
     }
+	$('#main #arm').remove()
+	$('#main .filter').remove()
+	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -190,10 +189,11 @@ function filterResponse(random) {
         }
     }
 	if (random == 1) {
-		var x = filter[Math.floor(Math.random()*filter.length)]
-		console.log(x - +1)
+		$('input[type=text]').blur().hide()
+		var r = filter[Math.floor(Math.random()*filter.length)]
+		console.log(r - +1)
 		if (filter === undefined || filter == 0) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-		else xmlResponse(x + +1)
+		else xmlResponse(r + +1)
 		return false
 	}
 	setTimeout(function() {
@@ -273,7 +273,8 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
-		$('#main #arm').remove()
+		$('#main #arm, #main .populate, #main .filter, #main .item').remove()
+		$('input[type=text]').blur().hide()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('#main #arm').hide()
