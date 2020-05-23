@@ -30,16 +30,9 @@ $(document).ready(function() {
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
-		$('input[type=text]').blur().hide()
         filterResponse(1, n)
 
 	} else refreshResponse()
-
-
-    $('input[type=text]').on('keyup onkeypress', function(e) {
-		window.scrollTo(0, 0)
-		document.body.scrollTop = 0
-    })
 
     $('#main').on('scroll touchmove', function(e) {
         if (e.type == 'scroll') {
@@ -50,7 +43,7 @@ $(document).ready(function() {
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
             if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
-                if (operation == false && $('input[type=text]').val().length >= 2) {
+                if (former = -1 && operation == false && $('input[type=text]').val().length >= 2) {
                     filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
 						opening + closing,
@@ -161,7 +154,6 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
-	if (x.length <= 2) $('#main').empty()	
 	if (random == 1) {
 	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+')
    	    var o = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
@@ -180,6 +172,7 @@ function filterResponse(random, x) {
         $('#arm').hide()
         request.abort()
     }
+	if (x.length <= 2) return false
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p) || menu[i].des.toLowerCase().match(p)) {
@@ -277,10 +270,13 @@ function populateResponse(n) {
 
 function refreshResponse(){
 
-		$('#main').empty()
+		$('#main #arm').remove()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
-		$('#main #arm').hide().fadeIn('slow')
+		$('#main #arm').hide()
+		setTimeout(function () { 
+		$('#main #arm').fadeIn('slow')
+		}, 550)
 		applyVisual()
 
 }
