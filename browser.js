@@ -299,9 +299,8 @@ function refreshResponse(){
 		applyVisual()
 		$('#main').empty()
 		$('input[type=text').val('').show().focus()
-		$('#main').append("<div id='arm'></div>")
-    	$('#main #arm').html("<img id='home' src='images/" + animate + "'>")
-		$('#main #arm').show().hide().fadeIn('slow')
+		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
+		$('#main #arm').hide().fadeIn('slow')
 
 }
 
