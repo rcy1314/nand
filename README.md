@@ -15,17 +15,9 @@
 
 ### Default
 `https://acktic.github.io`
-* Initial
- <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/1800004058715-1.png'></p>
-* Working
- <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/6012904813793-1.png'></p>
- 
+
 ### Opposite
 `https://acktic.github.io/?+1`
-* Initial
- <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/5178728867558-1.png'></p>
-* Working
- <p align='center'><img src='https://ackti.files.wordpress.com/2020/05/3908088471094-1.png'></p>
 
 for reference the min browser is shown.
 
