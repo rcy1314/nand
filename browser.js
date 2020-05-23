@@ -19,9 +19,14 @@ $(document).ready(function() {
     $('#container').show()
     if (location.href.match('\\+1')) {
 
+		applyVisual(!op)
 		contrast = true
 
-    }
+    } else {
+
+		applyVisual(op)
+
+	}
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
@@ -292,8 +297,8 @@ function populateResponse(n) {
 function refreshResponse(){
 
 		$('#main').scrollTop(0)
+		$('#main').append("<div id='arm'></div>")
 		$('input[type=text').val('').show().focus()
-		$('#main').html("<div id='arm'></div>").scrollTop(0)
 		$('#arm').html("<img id='home' src='images/" + animate + "'>")
 
 }
