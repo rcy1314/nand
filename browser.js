@@ -77,7 +77,7 @@ $(document).ready(function() {
         }
         if (e.type == 'scroll' || e.type == 'touchmove') {
             if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
-            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
+            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight + 10)
                 if (former == 0 && operation == false && $('input[type=text]').val().length >= 2) {
                     filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
 						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
