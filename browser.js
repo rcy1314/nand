@@ -91,7 +91,7 @@ $(document).ready(function() {
 
 	reverseResponse(menu.reverse())
 
-}).on('touch click', 'a', function(e) {
+}).on('touchstart click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank')
 	e.stopPropagation()
@@ -101,26 +101,26 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touch click focus', '#arm, circle, .progress', function(e){
+}).on('touchstart click focus', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
-}).on('touch click', '.item', function(e){
+}).on('touchstart click', '.item', function(e){
 
 	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touch click', '.filter, .populate', function(e) {
+}).on('touchstart click', '.filter, .populate', function(e) {
 
 	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
     else window.location.assign('?' + $(this).attr('response'))
 
-}).on('touch click', '.fa-heart-o, .fa-heart', function(e){
+}).on('touchstart click', '.fa-heart-o, .fa-heart', function(e){
 
 	$(this).toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
 
-}).on('touch click', '.img', function(e) {
+}).on('touchstart click', '.img', function(e) {
 
 	if ($(this).hasClass('expand min') || $(this).hasClass('expand full')) expandImage($(this).attr('id'))
 	else $(this).parent().find('.fa-heart-o, .fa-heart').toggleClass('fa-heart-o fa-heart')
