@@ -30,14 +30,8 @@ $(document).ready(function() {
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
-   	    opening = '.+' + n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
-        closing = '.+' + n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
-                    filterResponse(1, n.toLowerCase().replace(/(\+|%20|\-|\_)/g, ''),
-						n.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+'),
-						opening + closing,
-						closing + opening
-					)
 		$('input[type=text]').blur().hide()
+        filterResponse(1, n)
 
 	} else refreshResponse()
 
@@ -45,13 +39,6 @@ $(document).ready(function() {
     $('input[type=text]').on('keyup onkeypress', function(e) {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
-        opening = '.+' + $(this).val().toLowerCase().match(/^\w+/g) + '.+'
-        closing = '.+' + $(this).val().toLowerCase().match(/\w+$/g) + '.+'
-                filterResponse(0, $('input[type=text]').val().toLowerCase(),
-					$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
-					opening + closing,
-					closing + opening
-				)
     })
 
     $('#main').on('scroll touchmove', function(e) {
@@ -173,8 +160,17 @@ function expandImage(n) {
 
 }
 
-function filterResponse(random, k, n, o, p) {
-    console.log(reverse)
+function filterResponse(random, x) {
+	if (x.length <= 2) $('#main').empty()	
+	if (random == 1) {
+	    var n = x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+')
+   	    var o = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '') + '.+'
+        var p = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
+	} else if (random == 0) {
+		var n = x.toLowerCase().replace(/ /g, '.+')
+        var o = '.+' + x.toLowerCase().match(/^\w+/g) + '.+'
+        var p = '.+' + x.toLowerCase().match(/\w+$/g) + '.+'
+	}
 	filter = []
 	$('#main #arm').remove()
 	$('#main .filter').remove()
@@ -186,7 +182,7 @@ function filterResponse(random, k, n, o, p) {
     }
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(k) || menu[i].des.toLowerCase().match(o) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -206,7 +202,7 @@ function filterResponse(random, k, n, o, p) {
 	}
 	setTimeout(function() {
 		populateResponse()
-	}, 500)
+	}, 750)
 	applyVisual()
 
 }
