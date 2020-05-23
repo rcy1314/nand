@@ -71,6 +71,7 @@
  #arm {
 	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
+     display: flex;
 }
  #home, #animate {
 	 height: 200px;	
@@ -100,7 +101,6 @@
  #main {
      -ms-overflow-style:-ms-autohiding-scrollbar;
      -webkit-overflow-scrolling: touch;
-     outline: none !important;
      position: absolute;
      overflow: auto;
 }
@@ -140,7 +140,6 @@
      position: absolute;
 	 padding-left: 15px;
      font-size: 12px;
-	 outline: none;
 	 height: 2em;
      width: 20em;
      z-index: 3;
