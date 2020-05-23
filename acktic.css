@@ -53,11 +53,6 @@
      font-family: Arial; 
 }
  .filter, .populate, .pub, .img, a {
-     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-     -moz-user-select: -moz-none;
-     -webkit-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
      text-decoration: none;
      cursor: pointer;
 }
