@@ -299,8 +299,8 @@ function refreshResponse(){
 		$('#main').scrollTop(0)
 		$('input[type=text').val('').show().focus()
 		$('#arm, .populate, .filter, .item').remove()
-		$('#main').append("<div id='arm'></div>").scrollTop(0)
-    	$('#arm').html("<img id='home' src='images/" + animate + "'>")
+		$('#main').html("<div id='arm'></div>").scrollTop(0)
+		$('#arm').html("<img id='home' src='images/" + animate + "'>")
 
 }
 
