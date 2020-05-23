@@ -59,7 +59,7 @@
  .pub:hover, .des:hover, a:hover {
      text-decoration: underline 
 }
- html, body, #main {
+ html, body, #main, #arm {
      overflow: hidden;
      height: 100%;
      width: 100%;
@@ -71,17 +71,16 @@
  #arm {
 	 -webkit-filter: blur(4px);
 	 filter: blur(4px);
-     display: flex;
-	 height: 100%;
+     display: table;
 }
  #home, #animate {
 	 height: 200px;	
      margin: auto;
+     width: 200px;
 }
  #animate {
      -webkit-animation: spin 7s infinite ease;
      -moz-animation: spin 7s infinite ease height: 200px;
-     width: 200px;
 }
  @-webkit-keyframes spin {
      100% {
