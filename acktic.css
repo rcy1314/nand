@@ -73,11 +73,8 @@
 	 filter: blur(4px);
 }
  #home, #animate {
-	 transform: translate(-50%,-50%);
-	 position: absolute;
 	 height: 200px;	
-	 left: 50%;
-	 top: 50%;
+     margin: auto;
 }
  #animate {
      -webkit-animation: spin 7s infinite ease;
@@ -143,7 +140,6 @@
      position: absolute;
 	 padding-left: 15px;
      font-size: 12px;
-	 display: none;
 	 outline: none;
 	 height: 2em;
      width: 20em;
