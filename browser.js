@@ -457,6 +457,7 @@ function xmlResponse(n) {
             populateResponse()
             if (contrast == true) applyVisual(+op)
 			else applyVisual()
+			$('#main').attr('tabindex', -1).focus()
         })
 
 }
