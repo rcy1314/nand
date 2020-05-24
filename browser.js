@@ -152,8 +152,9 @@ function filterResponse(random, x) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
 		var e = menu[i].id.replace(/(\/)/, ' ').toLowerCase()
-        if (e == n || menu[i].cat.toLowerCase().match(n)) {
+        if (e == n || menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
+			window.history.replaceState( {} , n, x)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
