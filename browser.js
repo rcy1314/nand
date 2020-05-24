@@ -26,8 +26,8 @@ $(document).ready(function() {
 
     } else applyVisual(op)
 
-	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
-		var n = location.search.split('?')[1]
+	if (location.search.split('/')[1] && !location.href.match('\\?\\+1')) {
+		var n = location.search.split('/')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
