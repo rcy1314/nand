@@ -151,7 +151,7 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (e == n || menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
+        if (menu[i].id.toLowerCase().replace(/(\/)/, ' ') == n || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
