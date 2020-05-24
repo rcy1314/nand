@@ -320,7 +320,7 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-	window.history.replaceState(null, null, window.location.pathname.replace(/)%20)/, '-'))
+	window.history.replaceState(null, null, window.location.pathname.replace(/(%20)/, '-'))
 	window.history.replaceState(null, null, window.location.pathname.replace(/(\?)/, ''))
     if (operation == true) {
         operation = false
