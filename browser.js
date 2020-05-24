@@ -318,7 +318,7 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-
+	console.log(n)
     if (operation == true) {
         operation = false
         $('#arm').hide()
@@ -381,6 +381,11 @@ function xmlResponse(n) {
                 } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
                     src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('link').attr('href')) {
+                    if ($(this).find('link').attr('href').match(/youtube/)) src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
+                    else src = String($(this).find('link').attr('href'))
+                } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
+                    src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
+                } else if ($(this).find('link').attr('href')) {
 					src = String($(this).find('link').attr('href'))
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
@@ -404,6 +409,21 @@ function xmlResponse(n) {
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
+				console.log(src)
+                if (src.match(/mp4|twitch|youtube/)) {
+                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
+						views = "<div class='ago views' style='left:0em'><b>Views</b> " +
+						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
+                    } else views = ''
+                    html = "<div id='yt' class='item' style='width: 100%'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div>" + 
+                        "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
+                        "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
+                        "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
+                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
+						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
+                } else {
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
@@ -415,6 +435,7 @@ function xmlResponse(n) {
 						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>"
+				}
                 pub.push({
                     element: i,
                     since: gen,

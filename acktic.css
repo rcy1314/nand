@@ -184,3 +184,23 @@ input[type='submit'] {
 	 right: 1em;
 	 left: 1em;
 }
+ .views {
+	 position: absolute;
+	 bottom: -3em;
+}
+ #yt {
+	 padding-bottom: 2.2em;
+	 margin-left: 2px;
+}
+ .yt {
+	 -webkit-overflow-scrolling: touch;
+	 padding-bottom: 54.25%;
+	 position: relative;
+	 width: 100%;
+}
+ iframe {
+	position: absolute;
+	border: none;
+	height: 100%;
+	width: 100%;
+}
