@@ -34,24 +34,10 @@ $(document).ready(function() {
 
     $('#main').on('scroll touchmove', function(e) {
 
-        if (e.type == 'scroll') {
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
             })
-        }
-        if (e.type == 'scroll' || e.type == 'touchmove') {
-            if ($('#main').scrollTop() != 0) $('input[type=text]').hide().blur()
-            if ($('#main').scrollTop() + $('#main').innerHeight() >= $('#main')[0].scrollHeight)
-                if (former = -1 && operation == false && $('input[type=text]').val().length >= 2) {
-                    filterResponse(0, $('input[type=text]').val().toLowerCase().replace(/ /g, ''),
-						$('input[type=text]').val().toLowerCase().replace(/ /g, '.+'),
-						opening + closing,
-						closing + opening
-					)
-                } else if (operation == false) {
-					populateResponse()
-				}
-        }
+
     })
 
 	reverseResponse(menu.reverse())
@@ -66,7 +52,7 @@ $(document).ready(function() {
 	$('input[type=text]').hide().blur()
 	e.preventDefault()
 
-}).on('touchstart click focus', '#arm, circle, .progress', function(e){
+}).on('touchmove click scroll focus', '#arm, circle, .progress', function(e){
 
 	refreshResponse()
 
@@ -153,7 +139,7 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
-	if (x == random) {
+	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
@@ -272,7 +258,7 @@ function precedeResponse(n) {
     $('#main').prepend("<div id='air'></div>")
     for (var i; i >= 0; i--) {
             $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
-				"<div class='pub'>" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='pub'>air&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
 			)

@@ -15,7 +15,7 @@
 <body>
 <div id='wrapper'>
 	<div id='container'>
-    	    <div id='main'></div>
+    	    <div id='main' onclick="$('input[type=text]').blur().hide()"></div>
 	</div>
 	<div id='navigate'>
 		<svg>
@@ -24,7 +24,7 @@
 		</svg>
     </div>
 </div>
-<form id='search' action='#'>
+<form id='search' action='#' onsubmit='precedeResponse()'>
     <input id='text' type='text' onkeypress="filterResponse(0, this.value)">
     <input type='submit'>
 </form>
