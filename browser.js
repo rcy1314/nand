@@ -98,7 +98,7 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#home, .progress').attr('src', 'images/opposite.png')
+        $('#home, .indicator').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
@@ -115,7 +115,7 @@ function applyVisual(n) {
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#favicon').attr('href', 'images/invert.png')
         $('svg .progress').css('stroke', '#08bd93')
-        $('#home, .progress').attr('src', 'images/invert.png')
+        $('#home, .indicator').attr('src', 'images/invert.png')
         animate = 'invert.png'
     }
 }
@@ -139,10 +139,6 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
-	if (x == 'random') {
-		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-		return false
-	}
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, '.')
 	filter = []
 	 if (operation == true) {
@@ -167,10 +163,12 @@ function filterResponse(random, x) {
 				former = menu.indexOf(menu[i])
         }
     }
+	if (x == 'random') {
+		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		return false
+	}
 	if (random == 1) {
-		$('input[type=text]').blur().hide()
 		var r = filter[Math.floor(Math.random()*filter.length)]
-		console.log(r - +1)
 		if (filter === undefined || filter == 0) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		else xmlResponse(r + +1)
 		return false
@@ -334,10 +332,11 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
+	$('input[type=text]').blur().hide()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
-		'-webkit-backdrop-filter': 'blur(5px)',
-		'filter': 'blur(5px)'
+		'-webkit-backdrop-filter': 'blur(2px)',
+		'filter': 'blur(2px)'
 	}).hide().fadeIn('slow')
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
