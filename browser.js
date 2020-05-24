@@ -26,8 +26,8 @@ $(document).ready(function() {
 
     } else applyVisual(op)
 
-	if (location.search.split('\\?')[1] && !location.href.match('\\?\\+1')) {
-		var n = location.search.split('\\/')[1]
+	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
+		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
@@ -151,7 +151,7 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().replace(/(\/)/, ' ') == n || menu[i].cat.toLowerCase().match(n)) {
+        if (menu[i].id.replace(/(\/)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
@@ -168,14 +168,9 @@ function filterResponse(random, x) {
 		return false
 	}
 	if (random == 1) {
-		if (filter === undefined || filter == 0) {
-			var r = filter[Math.floor(Math.random()*filter.length)]
-			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
-			xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-		} else {
-			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
-			xmlResponse(r + +1)
-		}
+		var r = filter[Math.floor(Math.random()*filter.length)]
+		if (filter === undefined || filter == 0) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		else xmlResponse(r + +1)
 		return false
 	}
 	setTimeout(function() {
@@ -325,6 +320,8 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
+	window.history.replaceState(null, null, window.location.pathname.replace(/)%20)/, '-'))
+	window.history.replaceState(null, null, window.location.pathname.replace(/(\?)/, ''))
     if (operation == true) {
         operation = false
         $('#arm').hide()
