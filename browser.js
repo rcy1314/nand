@@ -140,7 +140,7 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
-	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, '.')
+	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, ' ')
 	filter = []
 	 if (operation == true) {
         operation = false
@@ -151,7 +151,8 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
+		var e = menu[i].id.replace(/(\/)/, ' ').toLowerCase()
+        if (e == n || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
@@ -320,7 +321,6 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-	console.log(n)
     if (operation == true) {
         operation = false
         $('#arm').hide()
@@ -411,7 +411,6 @@ function xmlResponse(n) {
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
-				console.log(src)
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
 						quit = 5
