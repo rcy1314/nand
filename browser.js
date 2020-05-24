@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
-	$('input[type=text]').hide().blur()
+	$('input[type=text]').attr('placeholder', '').hide().blur()
 	e.preventDefault()
 
 }).on('touchmove click scroll focus', '#arm, circle, .progress', function(e){
