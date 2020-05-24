@@ -52,7 +52,7 @@ $(document).ready(function() {
 					populateResponse()
 				}
         }
-    }).attr('tabindex', -1).focus()
+    })
 
 	reverseResponse(menu.reverse())
 
@@ -153,6 +153,10 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
+	if (x == random) {
+		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		return false
+	}
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, '.')
 	filter = []
 	 if (operation == true) {
