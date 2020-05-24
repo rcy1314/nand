@@ -52,7 +52,7 @@
  div, input[type=text] {
      font-family: Arial; 
 }
- .filter, .populate, .pub, .img, a {
+ .filter, .air, .populate, .pub, .img, a {
      text-decoration: none;
      cursor: pointer;
 }
@@ -105,7 +105,7 @@
      overflow: auto;
 	 outline: none;
 }
- .filter, .populate {
+ .air, .filter, .populate {
      font-size: 10px;
      display: table;
      padding: 3em;
