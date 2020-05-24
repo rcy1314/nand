@@ -157,11 +157,11 @@ input[type='submit'] {
 }
  svg, svg .progress {
 	 transform: translateX(50%);
-	 left: calc(50% - 52px);
+	 left: calc(50% - 60px);
      position: absolute;
      height: 52px;
-	 bottom: 0em;
      width: 52px;
+	 bottom: 0;
 }
  svg .progress {
      transform-origin: 50% 50%;
@@ -176,12 +176,12 @@ input[type='submit'] {
 }
  .indicator {
 	 transform: translateX(50%);
-	 left: calc(50% - 48px);
+	 left: calc(50% - 54px);
      position: absolute;
      display: block;
      height: 48px;
      width: 48px;
-	 bottom: 0em;
+	 bottom: 2px;
 }
  .views {
 	 position: absolute;
