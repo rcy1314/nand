@@ -174,7 +174,7 @@ function filterResponse(random, x) {
 			window.history.replaceState( {} , n, filter[r].id)
 			xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		} else {
-			window.history.replaceState( {} , n, x)
+			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
 			xmlResponse(r + +1)
 		}
 		return false
