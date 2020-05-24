@@ -77,7 +77,7 @@ $(document).ready(function() {
 	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touchstart click', '.filter, .populate', function(e) {
+}).on('touchstart click', '.filter, .air, .populate', function(e) {
 
 	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
     else window.location.assign('?' + $(this).attr('response'))
