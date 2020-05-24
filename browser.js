@@ -5,6 +5,7 @@ var request
 var ost = 0
 var closing
 var opening
+var request
 var quit = 12
 var visual = 1
 var former = -1
@@ -454,7 +455,8 @@ function xmlResponse(n) {
             }
 			precedeResponse()
             populateResponse()
-            applyVisual()
+            if (contrast == true) applyVisual(+op)
+			else applyVisual()
         })
 
 }
