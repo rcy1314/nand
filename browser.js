@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 }).on('touchstart click', 'a', function(e) {
 
-	window.open($(this).attr('ext'), '_blank')
+	window.open($(this).attr('ext'), '_blank', 'noopener')
 	e.stopPropagation()
 
 }).on('submit', '#search', function(e){
