@@ -34,8 +34,6 @@ $(document).ready(function() {
 
     $('#main').on('scroll touchmove', function(e) {
 
-		$('input[type=text]').blur().hide()
-
         if (e.type == 'scroll') {
             $('svg circle').css({
                 "stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
@@ -156,11 +154,6 @@ function expandImage(n) {
 
 function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, '.')
-	if (random == 1) {
-        var p = '.+' + x.toLowerCase().replace(/(\+|%20|\-|\_)/g, '.+') + '.+'
-	} else if (random == 0) {
-        var p = '.+' + x.toLowerCase().match(/^\w+|\w+$/g) + '.+'
-	}
 	filter = []
 	 if (operation == true) {
         operation = false
@@ -172,7 +165,7 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p)) {
+        if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x)) {
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '+') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -286,6 +279,7 @@ function precedeResponse(n) {
 
 function refreshResponse(){
 
+		operation = true
 		$('#main #arm, #main .air, #main .populate, #main .filter, #main .item').remove()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
