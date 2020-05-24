@@ -145,7 +145,6 @@ function filterResponse(random, x) {
 	 if (operation == true) {
         operation = false
         $('#arm').hide()
-        request.abort()
     }
 	$('#main #arm').remove()
 	$('#main .filter').remove()
@@ -415,6 +414,7 @@ function xmlResponse(n) {
 				console.log(src)
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views')) {
+						quit = 5
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " +
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     } else views = ''
@@ -427,6 +427,7 @@ function xmlResponse(n) {
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
+				 quit = 12
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
