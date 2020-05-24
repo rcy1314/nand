@@ -151,7 +151,6 @@ function filterResponse(random, x) {
 	$('#main .populate').remove()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		var e = menu[i].id.replace(/(\/)/, ' ').toLowerCase()
         if (e == n || menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main').prepend(
@@ -171,7 +170,7 @@ function filterResponse(random, x) {
 	if (random == 1) {
 		if (filter === undefined || filter == 0) {
 			var r = filter[Math.floor(Math.random()*filter.length)]
-			window.history.replaceState( {} , n, window.location.href.rep;ace(/%20/, '-'))
+			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
 			xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		} else {
 			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
