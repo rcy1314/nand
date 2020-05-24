@@ -155,7 +155,7 @@ function filterResponse(random, x) {
 			if (random == 0)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '+') + "'> " +
-				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
 			)
@@ -237,7 +237,7 @@ function populateResponse(n) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append(
 					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
-					"<div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+					"<div class='pub'>populate&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 					"<div class='des'>" + menu[i].des + "</div>" +
 					"</div>"
 				)
@@ -256,7 +256,7 @@ function precedeResponse(n) {
     $('#main').prepend("<div id='air'></div>")
     for (var i; i >= 0; i--) {
             $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
-				"<div class='pub'>air&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='pub'>air&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
 			)
