@@ -26,8 +26,8 @@ $(document).ready(function() {
 
     } else applyVisual(op)
 
-	if (location.search.split('/')[1] && !location.href.match('\\+1')) {
-		var n = location.search.split('/')[1]
+	if (location.search.split('\\?')[1] && !location.href.match('\\?\\+1')) {
+		var n = location.search.split('\\/')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
@@ -64,8 +64,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .air, .populate', function(e) {
 
-	if (contrast == true) window.location.assign($(this).attr('response') + '+1')
-    else window.location.assign($(this).attr('response'))
+	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
+    else window.location.assign('?' + $(this).attr('response'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
@@ -171,7 +171,7 @@ function filterResponse(random, x) {
 	if (random == 1) {
 		if (filter === undefined || filter == 0) {
 			var r = filter[Math.floor(Math.random()*filter.length)]
-			window.history.replaceState( {} , n, filter[r].id)
+			window.history.replaceState( {} , n, window.location.href.rep;ace(/%20/, '-'))
 			xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		} else {
 			window.history.replaceState( {} , n, window.location.href.replace(/%20/, '-'))
