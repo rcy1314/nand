@@ -320,8 +320,6 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-	window.history.replaceState(null, null, window.location.pathname.replace(/(%20)/, '-'))
-	window.history.replaceState(null, null, window.location.pathname.replace(/(\?)/, ''))
     if (operation == true) {
         operation = false
         $('#arm').hide()
@@ -335,6 +333,7 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
+	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
 	$('input[type=text]').blur().hide()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
