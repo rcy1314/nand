@@ -154,8 +154,8 @@ function filterResponse(random, x) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x)) {
 			if (random == 0)
 	    	$('#main').prepend(
-				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '+') + "'> " +
-				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
 			)
@@ -236,8 +236,8 @@ function populateResponse(n) {
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append(
-					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
-					"<div class='pub'>populate&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
+					"<div class='pub'>populate&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 					"<div class='des'>" + menu[i].des + "</div>" +
 					"</div>"
 				)
@@ -255,13 +255,15 @@ function precedeResponse(n) {
     if (reverse == true) reverseArray(menu.reverse())
     $('#main').prepend("<div id='air'></div>")
     for (var i; i >= 0; i--) {
-            $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
-				"<div class='pub'>air&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+            $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
+				"<div class='pub'>air&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
 			)
     }
-    $('#main').scrollTop($('#main').scrollTop() + $('#air:first').outerHeight())
+	setTimeout(function() {
+    $('#main').scrollTop($('#main').scrollTop() + $('#air').outerHeight())
+	}, 250)
     applyVisual()
 
 }
