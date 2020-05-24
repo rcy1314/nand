@@ -154,7 +154,6 @@ function filterResponse(random, x) {
 		var e = menu[i].id.replace(/(\/)/, ' ').toLowerCase()
         if (e == n || menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
-			window.history.replaceState( {} , n, x)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -170,9 +169,14 @@ function filterResponse(random, x) {
 		return false
 	}
 	if (random == 1) {
-		var r = filter[Math.floor(Math.random()*filter.length)]
-		if (filter === undefined || filter == 0) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-		else xmlResponse(r + +1)
+		if (filter === undefined || filter == 0) {
+			var r = filter[Math.floor(Math.random()*filter.length)]
+			window.history.replaceState( {} , n, filter[r].id)
+			xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		} else {
+			window.history.replaceState( {} , n, x)
+			xmlResponse(r + +1)
+		}
 		return false
 	}
 	setTimeout(function() {
