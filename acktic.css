@@ -142,6 +142,7 @@
      transform: translate(-50%, -50%);
 	 caret-color: transparent !important;
 	 text-align: center;
+	 padding-right: 2px;
      position: absolute;
      font-size: 12px;
 	 display: none;
