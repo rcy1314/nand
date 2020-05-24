@@ -23,9 +23,7 @@ $(document).ready(function() {
         refreshResponse()
 		contrast = true
 
-    } 
-
-	else applyVisual(op)
+    } else applyVisual(op)
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
@@ -176,7 +174,7 @@ function filterResponse(random, x) {
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(x) || menu[i].des.toLowerCase().match(p)) {
 	    	$('#main').prepend(
-				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\.|\s|\-]/, '+') + "'> " +
+				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '+') + "'> " +
 				"<div class='pub'>filter&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 				"<div class='des'>" + menu[i].des + "</div>" +
 				"</div>"
@@ -256,7 +254,7 @@ function populateResponse(n) {
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append(
-					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.replace(/[\/|\/|\s|\-]/, '+') + "'>" +
+					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
 					"<div class='pub'>populate&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
 					"<div class='des'>" + menu[i].des + "</div>" +
 					"</div>"
@@ -268,9 +266,27 @@ function populateResponse(n) {
 
 }
 
+function precedeResponse(n) {
+
+	if (filter === undefined || filter.length == 0 || !former) i = former + 1
+	else i = former - 1
+    if (reverse == true) reverseArray(menu.reverse())
+    $('#main').prepend("<div id='air'></div>")
+    for (var i; i >= 0; i--) {
+            $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '+') + "'>" +
+				"<div class='pub'>" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+				"<div class='des'>" + menu[i].des + "</div>" +
+				"</div>"
+			)
+    }
+    $('#main').scrollTop($('#main').scrollTop() + $('#air:first').outerHeight())
+    applyVisual()
+
+}
+
 function refreshResponse(){
 
-		$('#main #arm, #main .populate, #main .filter, #main .item').remove()
+		$('#main #arm, #main .air, #main .populate, #main .filter, #main .item').remove()
 		$('input[type=text').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('#main #arm').hide()
@@ -429,6 +445,7 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			precedeResponse()
             populateResponse()
             applyVisual()
         })
