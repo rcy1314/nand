@@ -151,10 +151,11 @@ input[type='submit'] {
 	 display: none;
 }
  svg, svg .progress {
-     position: relative;
-     margin: 0 auto;
-     display: block;
+	 transform: translateX(50%);
+	 left: calc(50% - 52px);
+     position: absolute;
      height: 52px;
+	 bottom: 0em;
      width: 52px;
 }
  svg .progress {
@@ -169,20 +170,13 @@ input[type='submit'] {
      z-index: 2;
 }
  .indicator {
-     position: relative;
-     margin: -48px auto;
+	 transform: translateX(50%);
+	 left: calc(50% - 48px);
+     position: absolute;
      display: block;
      height: 48px;
      width: 48px;
-}
- #navigate {
-	 background-color: transparent;
-     width: calc(100% - 2em);
-     position: absolute;
-     height: 52px;
-     bottom: 0px;
-	 right: 1em;
-	 left: 1em;
+	 bottom: 0em;
 }
  .views {
 	 position: absolute;
