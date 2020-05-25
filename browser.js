@@ -20,11 +20,14 @@ $(document).ready(function() {
     $('#container, #arm, input[type=text]').show()
     if (location.href.match('\\+1')) {
 
-		applyVisual(!op)
         refreshResponse()
+		applyVisual(!op)
 		contrast = true
 
-    } else applyVisual(op)
+    } else {
+		refreshResponse()
+		applyVisual(op)
+	}
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
@@ -60,7 +63,7 @@ $(document).ready(function() {
 	$('#main').scrollTop(0)
 	e.stopPropagation()
 
-}).on('touch click scroll focus', '#arm, svg circle, .progress, .indicator', function(e){
+}).on('touch click scroll focus', 'svg circle, .progress, .indicator', function(e){
 
 	refreshResponse()
 
@@ -69,7 +72,7 @@ $(document).ready(function() {
 	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
-}).on('touch click', '.filter, .air, .populate', function(e) {
+}).on('touch click', '.filter, .populate', function(e) {
 
 	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
     else window.location.assign('?' + $(this).attr('response'))
@@ -154,19 +157,12 @@ function expandImage(n) {
 function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, ' ')
 	filter = []
-	 if (operation == true) {
-        operation = false
-        $('#arm').hide()
-    }
-	$('#main #arm').remove()
-	$('#main .filter').remove()
-	$('#main .populate').remove()
 	$('svg circle, .indicator').show()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
 			if (random == 0)
-	    	$('#main').prepend(
+	    	$('#main .result').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
 				"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
@@ -189,7 +185,7 @@ function filterResponse(random, x) {
 	}
 	setTimeout(function() {
 		populateResponse()
-	}, 750)
+	}, 250)
 	applyVisual()
 
 }
@@ -239,18 +235,13 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if (operation == true) {
-        operation = false
-        $('#arm').hide()
-        request.abort()
-    }
 	if (filter === undefined || filter.length == 0 || !former) i = former + 1
 	else i = former - 1
     if (reverse == true) reverseResponse(menu.reverse())
-	for (i; i <= menu.length - 1; i++) {
+	for (i; i = Math.floor(Math.random() * menu.length - 1); i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
-				$('#main').append(
-					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
+				$('#main .result').append(
+					"<div class='populate' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
 					"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
 					"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
@@ -259,16 +250,16 @@ function populateResponse(n) {
 	}
 	former = -1
 	filter = []
-    applyVisual()
-
+	applyVisual()
 }
 
 function refreshResponse(){
 
 		operation = true
-		$('#main #arm, #main .air, #main .populate, #main .filter, #main .item').remove()
+		$('#main .result').remove()
 		$('input[type=text]').val('').show().focus()
-		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
+		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+		if ($('#main #arm').length < 1) $('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 
@@ -443,8 +434,7 @@ function xmlResponse(n) {
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
             populateResponse()
-            if (contrast == true) applyVisual(+op)
-			else applyVisual()
+			applyVisual()
 			$('#main').attr('tabindex', -1).focus()
         })
 

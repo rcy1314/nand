@@ -22,9 +22,9 @@
 		<img class='indicator'>
 	</svg>
 </div>
-<form id='search' action='#' onsubmit="$('#main').attr('tabindex', -1).focus()">
+<form id='search' action='#' onsubmit="filterResponse(0, $('input[type=text]').val());$('#main').attr('tabindex', -1).focus()">
     <input type='submit'>
-    <input id='text' type='text' onkeypress="filterResponse(0, this.value)">
+    <input id='text' type='text'>
 </form>
 </body>
 </html>
