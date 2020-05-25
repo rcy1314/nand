@@ -56,7 +56,7 @@
      text-decoration: none;
      cursor: pointer;
 }
- html, body, #backdrop, #main, #arm {
+ html, body, #main, #arm, #backdrop {
      overflow: hidden;
      height: 100%;
      width: 100%;
@@ -66,9 +66,7 @@
      top: 0;
 }
  #backdrop {
-	 z-index: 1;
-	 backdrop-filter: blur(1px);
-	 filter: blur(1px);
+	 backdrop-filter: blur(.9px) grayscale(0.8);
 }
  #arm {
 	 z-index: 2;
