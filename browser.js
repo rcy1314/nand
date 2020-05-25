@@ -51,7 +51,6 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('input[type=text]').hide().blur()
-	$('#backdrop').hide()
 	e.preventDefault()
 
 }).on('touch click', '.category', function(e){
@@ -268,7 +267,6 @@ function refreshResponse(){
 
 		operation = true
 		$('#main #arm, #main .air, #main .populate, #main .filter, #main .item').remove()
-		$('#backdrop').show()
 		$('input[type=text]').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('svg .progress, .indicator').hide()
@@ -330,7 +328,7 @@ function xmlResponse(n) {
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm, svg circle, .indicator').show().hide().fadeIn('slow')
-	$('input[type=text], #backdrop').blur().hide()
+	$('input[type=text]').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
