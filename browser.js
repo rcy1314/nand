@@ -56,7 +56,9 @@ $(document).ready(function() {
 
 }).on('touch click', '.category', function(e){
 
+	$('#main').empty()
 	filterResponse(0, $(this).attr('category'))
+	$('#main').scrollTop(0)
 	e.stopPropagation()
 
 }).on('touch click scroll focus', '#arm, svg circle, .progress, .indicator', function(e){
@@ -160,7 +162,7 @@ function filterResponse(random, x) {
 	$('#main #arm').remove()
 	$('#main .filter').remove()
 	$('#main .populate').remove()
-	$('svg .progress, .indicator').show()
+	$('svg circle, .indicator').show()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
@@ -269,7 +271,7 @@ function refreshResponse(){
 		$('#backdrop').show()
 		$('input[type=text]').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
-		$('.progress, .indicator').hide()
+		$('svg .progress, .indicator').hide()
 		applyVisual()
 
 }
@@ -327,7 +329,7 @@ function xmlResponse(n) {
 	} else filter = menu.reverse()
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
-	$('#arm, #backdrop').show().hide().fadeIn('slow')
+	$('#arm, svg circle, .indicator').show().hide().fadeIn('slow')
 	$('input[type=text], #backdrop').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({

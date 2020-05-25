@@ -146,7 +146,7 @@
 	 width: 100%;
 	 bottom: 0;
 }
- .category:hover, .title:hover, .des:hover {
+ .description:hover {
      text-decoration: underline 
 }
  .ack {
@@ -196,7 +196,6 @@ input[type='submit'] {
 	 transform: translateX(50%);
 	 left: calc(50% - 54px);
      position: absolute;
-	 display: none;
      height: 52px;
      width: 52px;
 	 bottom: 0;
@@ -209,7 +208,7 @@ input[type='submit'] {
      fill: transparent;
      stroke-width: 3px;
 }
- svg, svg .progress, .indicator {
+ svg {
      z-index: 2;
 }
  .indicator {
