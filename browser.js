@@ -50,10 +50,16 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
-	$('input[type=text]').attr('placeholder', '').hide().blur()
+	$('input[type=text]').hide().blur()
+	$('#backdrop').hide()
 	e.preventDefault()
 
-}).on('touch click scroll focus', '#arm, circle, .progress', function(e){
+}).on('touch click', '.category', function(e){
+
+	filterResponse(0, $(this).attr('category'))
+	e.stopPropagation()
+
+}).on('touch click scroll focus', '#arm, svg circle, .progress, .indicator', function(e){
 
 	refreshResponse()
 
@@ -110,13 +116,18 @@ function applyVisual(n) {
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
-        $('input[type=text], .item .pub').css({
+        $('input[type=text], .item .pub, .type').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 		})
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-        $('#favicon').attr('href', 'images/invert.png')
-        $('svg .progress').css('stroke', '#08bd93')
         $('#home, .indicator').attr('src', 'images/invert.png')
+        $('#favicon').attr('href', 'images/invert.png')
+        $('svg .progress, .category').css({
+			'stroke': '#08bd93',
+			'background-color': '#08bd93',
+			'color': '#fff'
+		})
+		$('.title').css('border','.3px solid rgba(0,0,0,.3)')
         animate = 'invert.png'
     }
 }
@@ -149,15 +160,17 @@ function filterResponse(random, x) {
 	$('#main #arm').remove()
 	$('#main .filter').remove()
 	$('#main .populate').remove()
+	$('svg .progress, .indicator').show()
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.replace(/(\/)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
+        if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-				"<div class='pub'>filter&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-				"<div class='des'>" + menu[i].des + "</div>" +
-				"</div>"
+				"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
+				"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+				"</div><div class='type'>filter</div></div>"
 			)
 				filter.push(menu.indexOf(menu[i]))
 				former = menu.indexOf(menu[i])
@@ -237,33 +250,14 @@ function populateResponse(n) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main').append(
 					"<div class='populate '" + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
-					"<div class='pub'>populate&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-					"<div class='des'>" + menu[i].des + "</div>" +
-					"</div>"
+					"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
+					"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+					"</div><div class='type'>populate</div></div>"
 				)
 	}
 	former = -1
 	filter = []
-    applyVisual()
-
-}
-
-function precedeResponse(n) {
-
-	if (filter === undefined || filter.length == 0 || !former) i = former + 1
-	else i = former - 1
-    if (reverse == true) reverseArray(menu.reverse())
-    $('#main').prepend("<div id='air'></div>")
-    for (var i; i >= 0; i--) {
-            $('#air').prepend("<div class='air' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
-				"<div class='pub'>air&ensp;" + menu[i].cat + "&ensp;" + menu.indexOf(menu[i]) + "&ensp;<a ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-				"<div class='des'>" + menu[i].des + "</div>" +
-				"</div>"
-			)
-    }
-	setTimeout(function() {
-    $('#main').scrollTop($('#main').scrollTop() + $('#air').outerHeight())
-	}, 250)
     applyVisual()
 
 }
@@ -274,10 +268,7 @@ function refreshResponse(){
 		$('#main #arm, #main .air, #main .populate, #main .filter, #main .item').remove()
 		$('input[type=text]').val('').show().focus()
 		$('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
-		$('#main #arm').hide()
-		setTimeout(function () { 
-		$('#main #arm').fadeIn('slow')
-		}, 550)
+		$('.progress, .indicator').hide()
 		applyVisual()
 
 }
@@ -453,7 +444,6 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			precedeResponse()
             populateResponse()
             if (contrast == true) applyVisual(+op)
 			else applyVisual()

@@ -22,9 +22,11 @@
 		<img class='indicator'>
 	</svg>
 </div>
+<div id='backdrop'>
 <form id='search' action='#' onsubmit="$('#main').attr('tabindex', -1).focus()">
-    <input id='text' type='text' placeholder='random, media, news, social, sports, technology, youtube' onkeypress="filterResponse(0, this.value)">
     <input type='submit'>
+</div>
+    <input id='text' type='text' placeholder='random, news, media, social, sports, technology, world' onkeypress="filterResponse(0, this.value)">
 </form>
 </body>
 </html>

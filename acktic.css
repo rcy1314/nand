@@ -56,10 +56,7 @@
      text-decoration: none;
      cursor: pointer;
 }
- .pub:hover, .des:hover, a:hover {
-     text-decoration: underline 
-}
- html, body, #main, #arm {
+ html, body, #backdrop, #main, #arm {
      overflow: hidden;
      height: 100%;
      width: 100%;
@@ -68,7 +65,13 @@
      left: 0;
      top: 0;
 }
+ #backdrop {
+	 z-index: 1;
+	 backdrop-filter: blur(1px);
+	 filter: blur(1px);
+}
  #arm {
+	 z-index: 2;
      display: flex;
 }
  #home, #animate {
@@ -93,7 +96,7 @@
         -moz-transform: rotate(360deg);
     }
      0% {
-        -moz-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
     }
 }
  #main {
@@ -102,16 +105,49 @@
      -webkit-overflow-scrolling: touch;
      -moz-user-select: -moz-none;
      -webkit-user-select: none;
+	 justify-content: center;
      -ms-user-select: none;
+	 display: inline-flex;
      position: absolute;
      user-select: none;
+	 flex-wrap: wrap;
      overflow: auto;
 	 outline: none;
 }
- .air, .filter, .populate {
-     font-size: 10px;
-     display: table;
-     padding: 3em;
+ .filter, .populate {
+	 display: inline-flex;
+     font-size: 12px;
+	 flex-wrap: wrap;
+     padding: 2em;
+	 margin: 1em;
+	 width: 23em;
+}
+ .category, .title {
+	 display: inline-block;
+	 float:left;
+}
+ .category {
+	 border-radius: 10px;
+	 padding: 7px;
+}
+ .title {
+	 border-radius: 10px;
+	 padding: 7px;
+}
+ .description {
+	 display: table-cell;
+	 position: relative;
+	 left: 10px;
+	 top: 0;
+}
+ .type {
+	 position: relative;
+	 font-size: 10px;
+	 width: 100%;
+	 bottom: 0;
+}
+ .category:hover, .title:hover, .des:hover {
+     text-decoration: underline 
 }
  .ack {
 	 font-size: 12px !important;
@@ -160,6 +196,7 @@ input[type='submit'] {
 	 transform: translateX(50%);
 	 left: calc(50% - 54px);
      position: absolute;
+	 display: none;
      height: 52px;
      width: 52px;
 	 bottom: 0;
@@ -172,7 +209,7 @@ input[type='submit'] {
      fill: transparent;
      stroke-width: 3px;
 }
- svg {
+ svg, svg .progress, .indicator {
      z-index: 2;
 }
  .indicator {
