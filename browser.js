@@ -326,12 +326,9 @@ function xmlResponse(n) {
 		n = menu.length - n
 	} else filter = menu.reverse()
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-	$('input[type=text], #backdrop').blur().hide()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
-	$('#arm').show().css({
-		'-webkit-backdrop-filter': 'blur(2px)',
-		'filter': 'blur(2px)'
-	}).hide().fadeIn('slow')
+	$('#arm, #backdrop').show().hide().fadeIn('slow')
+	$('input[type=text], #backdrop').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
