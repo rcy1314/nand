@@ -326,7 +326,7 @@ function xmlResponse(n) {
 		n = menu.length - n
 	} else filter = menu.reverse()
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-	$('input[type=text]').blur().hide()
+	$('input[type=text], #backdrop').blur().hide()
 	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
 	$('#arm').show().css({
 		'-webkit-backdrop-filter': 'blur(2px)',
