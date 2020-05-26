@@ -233,6 +233,7 @@ function populateResponse(n) {
 	if (filter === undefined || filter.length == 0 || !former) i = former + 1
 	else i = former - 1
     if (reverse == true) reverseResponse(menu.reverse())
+	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main .result').append(
@@ -316,7 +317,6 @@ function xmlResponse(n) {
 	} else filter = menu.reverse()
 	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-	$('input[type=text]').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
             url: cors + menu[n].uri,
@@ -430,9 +430,9 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			$('#main').attr('tabindex', -1).focus()
             populateResponse()
 			applyVisual()
-			$('#main').attr('tabindex', -1).focus()
         })
 
 }
