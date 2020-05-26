@@ -252,7 +252,6 @@ function refreshResponse(){
 
 		operation = true
 		$('#main').empty()
-		$('input[type=text]').val('').show().focus()
 		if ($('#main #arm').length < 1 && !$('#animate').length)
 			 $('#main').append(
 				"<div id='arm'>" +
@@ -263,6 +262,7 @@ function refreshResponse(){
 				"</form>" +
 				"</div>"
 		)
+		$('input[type=text]').attr('tabindex', -1).focus()
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 
