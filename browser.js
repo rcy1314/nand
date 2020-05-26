@@ -130,7 +130,7 @@ function applyVisual(n) {
 			'background-color': '#08bd93',
 			'color': '#fff'
 		})
-		$('.title').css('border','.3px solid rgba(0,0,0,.3)')
+		$('.title').css('border','.5px solid rgba(0,0,0,.4)')
         animate = 'invert.png'
     }
 }
