@@ -32,6 +32,7 @@ $(document).ready(function() {
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
+		$('input[type=text]').val(n.replace(/\-/, ' '))
         filterResponse(1, n)
 
 	} else refreshResponse()
@@ -63,6 +64,7 @@ $(document).ready(function() {
 
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
+	$('input[type=text]').val('')
 	$('#main .item').remove()
 	refreshResponse()
 
