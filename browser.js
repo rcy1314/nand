@@ -158,6 +158,7 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, ' ')
 	filter = []
 	$('svg circle, .indicator').show()
+	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
@@ -256,10 +257,9 @@ function populateResponse(n) {
 function refreshResponse(){
 
 		operation = true
-		$('#main .result').remove()
+		$('#main').empty()
 		$('input[type=text]').val('').show().focus()
-		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-		if ($('#main #arm').length < 1) $('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
+		if ($('#main #arm').length < 1 && !$('#animate').length) $('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 
@@ -303,11 +303,6 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-    if (operation == true) {
-        operation = false
-        $('#arm').hide()
-        request.abort()
-    }
     obj = []
     former = n
     var pub = []
@@ -317,8 +312,6 @@ function xmlResponse(n) {
 		n = menu.length - n
 	} else filter = menu.reverse()
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-	$('#main').prepend("<div id='arm'></div>").scrollTop(0)
-	$('#arm, svg circle, .indicator').show().hide().fadeIn('slow')
 	$('input[type=text]').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
     request = $.get({
