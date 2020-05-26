@@ -189,6 +189,7 @@
 }
  input[type=text] {
 	 padding-left: 7px;
+	 caret-color: transparent !important;
      position: relative;
      font-size: 10px;
 	 outline: none;
