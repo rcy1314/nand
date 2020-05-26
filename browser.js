@@ -34,9 +34,7 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
-	} else {
-		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-	}
+	} else refreshResponse()
 
     $('#main').on('scroll touchmove', function(e) {
 
@@ -325,6 +323,7 @@ function xmlResponse(n) {
 	} else filter = menu.reverse()
 	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
+	$('input[type=text]').val(filter[n].cat.toLowerCase()).attr('tabindex', -1).focus()
 	refreshResponse()
 	$('#main #home').addClass('animate')
     request = $.get({
@@ -440,8 +439,6 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('input[type=text]').val(filter[n].cat.toLowerCase())
-			$('#main').attr('tabindex', -1).focus()
 			applyVisual()
         })
 
