@@ -63,7 +63,7 @@ $(document).ready(function() {
 	$('#main').scrollTop(0)
 	e.stopPropagation()
 
-}).on('touch click scroll focus', 'svg circle, .progress, .indicator', function(e){
+}).on('touch click scroll focus', '#arm, svg circle, .progress, .indicator', function(e){
 
 	refreshResponse()
 
@@ -98,7 +98,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, #arm, input[type=text], .populate, .populate .pub, .populate .des, .item, .item .pub').css({
+        $('body, #container, #main, #arm, input[type=text], .item, .item .pub').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
@@ -115,7 +115,7 @@ function applyVisual(n) {
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #main, .populate, .populate .pub, .populate .des, .item, .item .pub, .pub, a').css({
+        $('input[type=text], #main, .item, .item .pub, .pub, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -238,14 +238,14 @@ function populateResponse(n) {
 	if (filter === undefined || filter.length == 0 || !former) i = former + 1
 	else i = former - 1
     if (reverse == true) reverseResponse(menu.reverse())
-	for (i; i = Math.floor(Math.random() * menu.length - 1); i++) {
+	for (i; i <= menu.length - 1; i++) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main .result').append(
-					"<div class='populate' response='" + menu[i].id.toLowerCase().replace(/[\/|\/|\s|\-]/, '-') + "'>" +
-					"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
-					"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
-					"</div><div class='type'>populate</div></div>"
+				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+				"<div class='pub'><div class='category' category='" + menu[i].cat + "'>" + menu[i].cat + "</div>" +
+				"&ensp;<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+				"</div><div class='type'>populate</div></div>"
 				)
 	}
 	former = -1
