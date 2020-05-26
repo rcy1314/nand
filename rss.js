@@ -85,7 +85,7 @@ var menu=[
 {id:"4chan TV",cat:"Social",des:"TV board dedicated to the TV and Film industry.",uri:"http://boards.4channel.org/tv/index.rss",ext:"http://boards.4channel.org/tv"},
 {id:"Reddit/Unix Porn",cat:"Social",des:"Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",uri:"https://reddit.com/r/unixporn/.rss",ext:"https://reddit.com/r/Unixporn"},
 {id:"Reddit/Video",cat:"Social",des:"Video subreddit is the best place for Video content of all kinds.",uri:"https://reddit.com/r/videos/.rss",ext:"https://reddit.com/r/Videos"},
-{id:"4chan Wallpapers General",cat:"Social",des:"4chan WG Wallpapers General read the sticky.",uri:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4channel.org/wg"},
+{id:"4chan WG",cat:"Social",des:"4chan WG Wallpapers General read the sticky.",uri:"http://boards.4chan.org/wg/index.rss",ext:"http://boards.4channel.org/wg"},
 {id:"Reddit/Wallpaper",cat:"Social",des:"Wallpaper subreddit with Computer Desktops and Background Images.",uri:"https://reddit.com/r/wallpaper/.rss",ext:"https://reddit.com/r/Wallpaper"},
 {id:"Reddit/Wallpapers",cat:"Social",des:"Wallpapers subreddit for Work-safe wallpapers from all over!",uri:"https://reddit.com/r/wallpapers/.rss",ext:"https://reddit.com/r/Wallpapers"},
 {id:"Reddit/Windows",cat:"Social",des:"Windows subreddit a personal computer operating system released by Microsoft.",uri:"https://reddit.com/r/windows/.rss",ext:"https://reddit.com/r/Windows"},
