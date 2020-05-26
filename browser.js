@@ -59,6 +59,7 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle, .progress, .indicator', function(e){
 
+	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	refreshResponse()
 
 }).on('touch click', '.item', function(e){
@@ -247,6 +248,7 @@ function populateResponse(n) {
 }
 
 function refreshResponse(){
+
 
 		operation = true
 		$('#main').empty()
