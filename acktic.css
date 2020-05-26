@@ -113,20 +113,19 @@
 }
  .result {
 	 position: relative;
-	 display: block;
-	 margin: 0 auto;
-	 width: 80%;
+	 display: flex;
+	 flex-wrap: wrap;
+	 justify-content: center;
+	 width: 100%;
 }
  .filter, .populate {
 	 display: inline-flex;
      font-size: 12px;
 	 flex-wrap: wrap;
-     padding: 2em;
-	 margin: 1em;
-	 width: 23em;
+	 margin: 3em;
+	 width: 30em;
 }
  .category, .title {
-	 display: inline-block;
 	 float:left;
 }
  .category {
@@ -141,7 +140,8 @@
 	 display: table-cell;
 	 position: relative;
 	 left: 10px;
-	 top: 0;
+	 width: 100%;
+	 top: -10px;
 }
  .type {
 	 position: relative;
