@@ -53,10 +53,11 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
-	$('input[type=text]').hide().blur()
+	filterResponse(0, $('input[type=text]').val())
+	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
 
-}).on('touch click scroll focus', '#arm, svg circle, .progress, .indicator', function(e){
+}).on('touch click scroll focus', 'svg circle, .progress, .indicator', function(e){
 
 	refreshResponse()
 
@@ -250,7 +251,16 @@ function refreshResponse(){
 		operation = true
 		$('#main').empty()
 		$('input[type=text]').val('').show().focus()
-		if ($('#main #arm').length < 1 && !$('#animate').length) $('#main').append("<div id='arm'><img id='home' src='images/" + animate + "'></div>")
+		if ($('#main #arm').length < 1 && !$('#animate').length)
+			 $('#main').append(
+				"<div id='arm'>" +
+				"<img id='home' src='images/" + animate + "'>" +
+				"<form id='search' action='#'>" +
+    			"<input type='submit'>" +
+				"<input id='text' type='text' placeholder='news, sports, media, social, technology, youtube, world'>" +
+				"</form>" +
+				"</div>"
+		)
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 

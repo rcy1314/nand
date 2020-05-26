@@ -15,16 +15,12 @@
 <body>
 <div id='wrapper'>
 	<div id='container'>
-    	    <div id='main' onclick="$('input[type=text]').blur().hide()"></div>
+    	    <div id='main'></div>
 	</div>
 	<svg>
 		<circle cx='26.5' cy='24' r='21' class='progress' onclick='refreshResponse()'>
 		<img class='indicator'>
 	</svg>
 </div>
-<form id='search' action='#' onsubmit="filterResponse(0, $('input[type=text]').val());$('#main').attr('tabindex', -1).focus()">
-    <input type='submit'>
-    <input id='text' type='text' placeholder='news,  sports,  media,  social,  technology,  world'>
-</form>
 </body>
 </html>

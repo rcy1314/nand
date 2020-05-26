@@ -66,9 +66,10 @@
      top: 0;
 }
  #arm {
-	 height: 50%;
+	 height: 75%;
 	 z-index: 2;
      display: flex;
+	 flex-wrap: wrap;
 }
  #home, #animate {
 	 height: 200px;	
@@ -178,22 +179,23 @@
  .img {
 	 margin-top: 5px;
 }
+ #search {
+	 justify-content: center;
+	 align-items: center;
+	 width: 100%;
+	 display: flex;
+}
  input[type=text] {
-     transform: translate(-50%, -50%);
-	 caret-color: transparent !important;
-	 text-align: center;
-	 padding-right: 2px;
-     position: absolute;
+	 padding-left: 7px;
+     position: relative;
      font-size: 12px;
-	 display: none;
 	 outline: none;
 	 height: 4em;
      width: 26em;
      z-index: 3;
-     left: 50%;
-     top: 35%;
+	 top: -6em;
 }
-input[type='submit'] {
+ input[type=submit] {
 	 display: none;
 }
  svg, svg .progress {
