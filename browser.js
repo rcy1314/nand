@@ -53,6 +53,8 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
+	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
+	document.title = $('input[type=text]').val()
 	filterResponse(0, $('input[type=text]').val())
 	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
@@ -61,6 +63,7 @@ $(document).ready(function() {
 
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
+	$('#main .item').remove()
 	refreshResponse()
 
 }).on('touch click', '.item', function(e){
@@ -154,7 +157,10 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, ' ')
 	filter = []
 	$('svg circle, .indicator').show()
-	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+	if ($('#main .result').length < 1) {
+		$('#main .item').remove()	
+		$('#main').append("<div class='result'></div>")
+	}
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
@@ -253,7 +259,6 @@ function refreshResponse(){
 
 
 		operation = true
-		$('#main').empty()
 		if ($('#main #arm').length < 1 && !$('#animate').length)
 			 $('#main').append(
 				"<div id='arm'>" +
@@ -318,7 +323,8 @@ function xmlResponse(n) {
 	} else filter = menu.reverse()
 	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-    $('#arm').html("<img id='animate' src='images/" + animate + "'>")
+	refreshResponse()
+	$('#main #home').addClass('animate')
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
@@ -336,6 +342,7 @@ function xmlResponse(n) {
             refreshResponse()
         })
         .done(function(xhr) {
+			$('#main #home').removeClass('animate')
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
@@ -426,13 +433,12 @@ function xmlResponse(n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-            $('#main').empty()
+			$('svg .progress, .indicator').show()
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			$('#main').attr('tabindex', -1).focus()
-            populateResponse()
 			applyVisual()
         })
 
