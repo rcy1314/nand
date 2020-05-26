@@ -312,6 +312,7 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
+	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
 	$('input[type=text]').blur().hide()
     $('#arm').html("<img id='animate' src='images/" + animate + "'>")
