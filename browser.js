@@ -81,6 +81,11 @@ $(document).ready(function() {
 	$(this).toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
 
+}).on('touch click', '.fa-ellipsis-h', function(e){
+
+	$(this).siblings('.url').select()
+	document.execCommand('copy')
+
 }).on('touch click', '.img', function(e) {
 
 	if ($(this).hasClass('expand min') || $(this).hasClass('expand full')) expandImage($(this).attr('id'))
@@ -157,8 +162,8 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s)/g, ' ')
 	filter = []
 	$('svg circle, .indicator').show()
+	$('#main .item').remove()	
 	if ($('#main .result').length < 1) {
-		$('#main .item').remove()	
 		$('#main').append("<div class='result'></div>")
 	}
     if (reverse == true) reverseResponse(menu.reverse())
@@ -403,8 +408,8 @@ function xmlResponse(n) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " +
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     } else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div>" + 
+                    html = "<div id='yt' class='item' style='width: 100%'><input class='url' value='" + ref.trim() + "' style='position:relative;z-index:-1'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' style='float:right;margin-top:33px;font-size:12px;' title='Copy URL'></i>" + 
                         "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
@@ -413,8 +418,9 @@ function xmlResponse(n) {
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
 				 quit = 12
-                 html = "<div class='item'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' style='float:right;margin-top:12px;font-size:12px;'></i>" +
+                 html = "<div class='item'><input class='url' value='" + ref.trim() + "' style='position:relative;z-index:-1'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div>" +
+						"<i class='fa fa-ellipsis-h' style='float:right;margin-top:33px;font-size:12px;' title='Copy URL'></i>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='width:100%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
