@@ -14,6 +14,7 @@ var filter = []
 var reverse = 0
 var contrast = false
 var operation = false
+var re = /(\b[a-z](?!\s))/g
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
@@ -54,7 +55,11 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
-	document.title = $('input[type=text]').val()
+	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
+	sanitize = sanitize.replace(re, function(e) {
+		return e.toUpperCase()
+	})
+	document.title = sanitize
 	filterResponse(0, $('input[type=text]').val())
 	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
@@ -351,7 +356,11 @@ function xmlResponse(n) {
 		n = menu.length - n
 	} else filter = menu.reverse()
 	$('#main .result').remove()
-	document.title = filter[n].id.replace(/(\/|\.)/g, ' ')
+	var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
+	sanitize = sanitize.replace(re, function(e) {
+		return e.toUpperCase()
+	})
+	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
 	$('#main #home').addClass('animate')
