@@ -72,7 +72,7 @@
 }
  #home, #animate {
 	 top: -10px;
-	 position: fixed;
+	 position: absolute;
 	 height: 100px;	
      width: 100px;
 }
@@ -115,7 +115,6 @@
 	 height: calc(100% - 13%);
 }
  .result {
-	 position: relative;
 	 display: flex;
 	 flex-wrap: wrap;
 	 justify-content: center;
