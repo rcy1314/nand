@@ -160,7 +160,8 @@
 	 margin-bottom: 3.5em !important;
 }
  .item .pub {
-	 font-size: 12px !important;
+	 font-weight: bold;
+	 font-size: 14px !important;
      padding: 10px !important;
 	 margin-right: 15px;
 	 margin-left: 15px;
@@ -172,6 +173,10 @@
      line-height: .3;
      font-size: 9px;
      margin: 10px;
+}
+ .border {
+	padding: .5em;
+	border-top: .3px solid rgba(128,128,128,.3);
 }
  .img {
 	 margin-top: 5px;
