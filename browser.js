@@ -414,9 +414,8 @@ function xmlResponse(n) {
                 } else {
 				 quit = 12
                  html = "<div class='item'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
-						"<i class='fa fa-ellipsis-h' style='float:right'></i></div>" +
+						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' style='float:right;margin-top:12px;font-size:12px;'></i>" +
+						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='width:100%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
