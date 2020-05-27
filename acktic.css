@@ -106,16 +106,16 @@
 	 justify-content: center;
      -ms-user-select: none;
 	 display: inline-flex;
-     position: absolute;
+     position: fixed;
      user-select: none;
 	 flex-wrap: wrap;
      overflow: auto;
 	 outline: none;
 	 overflow-y: scroll;
 	 top: 15%;
+	 height: calc(100% - 15%);
 }
  .result {
-	 top: 15%;
 	 position: relative;
 	 display: flex;
 	 flex-wrap: wrap;
