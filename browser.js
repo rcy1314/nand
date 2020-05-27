@@ -85,6 +85,8 @@ $(document).ready(function() {
 
 	$(this).siblings('.url').select()
 	document.execCommand('copy')
+	$('.item .copy').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+	$(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
 	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
@@ -421,7 +423,7 @@ function xmlResponse(n) {
 				 quit = 12
                  html = "<div class='item'><input class='url' value='" + ref.trim() + "' style='position:relative;z-index:-1'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<i class='fa fa-ellipsis-h' style='float:right;margin-top:33px;font-size:12px;' title='Copy URL'></i>" +
+						"<i class='copy fa fa-ellipsis-h' style='float:right;margin-top:33px;font-size:12px;' title='Copy URL'></i>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='width:100%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
