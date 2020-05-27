@@ -334,7 +334,6 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
-	console.log(n)
     obj = []
     former = n
     var pub = []
@@ -343,7 +342,7 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
-	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
+	document.title = filter[n].id.replace(/(\/|\.)/g, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
 	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
 	refreshResponse()
