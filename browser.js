@@ -143,6 +143,18 @@ function applyVisual(n) {
     }
 }
 
+function changeTimeZone(date, n) {
+
+	var invdate = new Date(date.toLocaleString('en-US', {
+    	timeZone: n
+ 	}))
+
+	var diff = date.getTime() - invdate.getTime()
+
+	return new Date(date.getTime() + diff)
+
+}
+
 function expandImage(n) {
 
     if ($('#' + n).hasClass('expand min')) {
@@ -226,7 +238,8 @@ function imageResolution(n) {
 function momentTimeStamp(n) {
 
     var age = new Date()
-    var dis = age.getTime() - new Date(n).getTime()
+	var utc = changeTimeZone(new Date(), 'America/New_York')
+    var dis = age.getTime() - utc.getTime()
     var sec = dis / 1000;
     if (sec < 60) return parseInt(sec) + ' second' + (parseInt(sec) > 1 ? 's' : '') + ' ago'
     var min = sec / 60;
