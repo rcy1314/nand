@@ -11,6 +11,7 @@ var menu=[
 {id:"CBS San Francisco",cat:"News",des:"CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",uri:"https://sanfrancisco.cbslocal.com/feed",ext:"https://sanfrancisco.cbslocal.com"},
 {id:"ABC New York",cat:"News",des:"ABC New York covering New York City, New Jersey, and Long Island.",uri:"https://abc7ny.com/feed",ext:"https://abc7ny.com"},
 {id:"CBS New York",cat:"News",des:"CBS WCBS New York City Digital Streaming News Service, It's always on.",uri:"https://newyork.cbslocal.com/feed",ext:"https://newyork.cbslocal.com"},
+{id:"AOL",cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
 {id:"Best Life",cat:"Media",des:"Best Life Online destination for sophisticated men & women.",uri:"https://bestlifeonline.com/feed",ext:"https://bestlifeonline.com"},
 {id:"Buzzfeed Celebrity",cat:"Media",des:"Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",uri:"https://www.buzzfeed.com/celebrity.xml",ext:"https://www.buzzfeed.com/celebrity"},
 {id:"Cheatsheet",cat:"Media",des:"Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.",uri:"https://www.cheatsheet.com/feed",ext:"https://www.cheatsheet.com"},
@@ -595,5 +596,4 @@ var menu=[
 {id:"CBS",cat:"News",des:"CBS KBJR Wisconsin works in Superior, Duluth, Minnesota, Wisconsin areas.",uri:"https://kbjr6.com/feed",ext:"https://kbjr6.com"},
 {id:"ABC",cat:"News",des:"ABC WISN Wisconsin Wausau the day’s biggest stories and ones you may have missed.",uri:"https://www.wisn.com/topstories-rss",ext:"https://www.wisn.com"},
 {id:"NBC",cat:"News",des:"NBC15 Wisconsin Southwestern News, Sports, Weather and Live Updates.",uri:"https://www.nbc15.com/content/news/index.rss",ext:"https://www.nbc15.com"},
-{id:"AOL",cat:"Media",des:"AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",uri:"https://www.aol.com/rss",ext:"https://aol.com"},
 */

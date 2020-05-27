@@ -126,10 +126,17 @@
 	 margin: 3em;
 	 width: 25em;
 }
- .title {
-	 float:left;
+ .pub {
+	 width: 100%;
+}
+ .category {
+	 float: left;
+	 border-radius: 10px;
+	 padding: 7px;
 }
  .title {
+	 float:left;
+	 clear: left;
 	 border-radius: 10px;
 	 padding: 7px;
 }

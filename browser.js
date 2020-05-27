@@ -187,7 +187,7 @@ function filterResponse(random, x) {
 			if (random == 0)
 	    	$('#main .result').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-				"<div class='pub'><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 				"</div><div class='type'>filter</div></div>"
 			)
@@ -266,7 +266,7 @@ function populateResponse(n) {
 			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-				"<div class='pub'><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 				"</div><div class='type'>populate</div></div>"
 				)
