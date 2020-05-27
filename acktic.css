@@ -197,7 +197,7 @@
 }
  input[type=text] {
 	 padding-left: 7px;
-	 caret-color: transparent !important;
+	 caret-color: rgba(128,128,128,.7) !important;
      position: relative;
      font-size: 10px;
 	 outline: none;
