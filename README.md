@@ -9,6 +9,7 @@
 * Chromium (83.0.4103.61)
 * Mozilla Firefox (76.0.1)
 * Opera (68.0.3618.104) 
+* SeaMonkey (2.53.2) 
 * LG Web OS
 * Min (1.14)
 
