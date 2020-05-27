@@ -126,6 +126,9 @@
 	 margin: 3em;
 	 width: 25em;
 }
+ .pub {
+	 width: 100%;
+}
  .category {
 	 float: left;
 	 border-radius: 10px;
@@ -164,6 +167,7 @@
 	 margin-bottom: 3.5em !important;
 }
  .item .pub {
+	 width: 90% !important;
 	 font-weight: bold;
 	 font-size: 14px !important;
      padding: 10px !important;
