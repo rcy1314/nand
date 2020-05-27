@@ -112,7 +112,7 @@
 	 outline: none;
 	 overflow-y: scroll;
 	 top: 13%;
-	 height: calc(100% - 15%);
+	 height: calc(100% - 13%);
 }
  .result {
 	 position: relative;
