@@ -459,7 +459,7 @@ function xmlResponse(n) {
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
-						"<div class='border'><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<div class='border'></div><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div></div>"
