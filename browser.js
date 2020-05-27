@@ -423,8 +423,8 @@ function xmlResponse(n) {
                 } else if ($(this).find('enclosure').attr('url')) {
                     src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
-					if ($(this).find('media\\:content, content').attr('url').match(/^(http.+)(https\:\/\/.+)/)) src = String($(this).find('media\\:content, content').attr('url').match(/^(http.+)(https\:\/\/.+)/)[2])
-                    else src = String($(this).find('media\\:content, content').attr('url').match(/(https\:\/\/.+)$/))
+                    src = String($(this).find('media\\:content, content').attr('url'))
+					console.log(src)
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
