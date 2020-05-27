@@ -197,7 +197,6 @@
  #search {
 	 top: 0;
 	 width: 100%;
-	 z-index: 3;
 	 height: 100% !important;
 	 position: absolute;
 	 justify-content: center;
@@ -211,7 +210,7 @@
 	 caret-color: rgba(128,128,128,.7) !important;
      position: absolute;
      font-size: 10px;
-	 margin: 0 auto;
+	 margin: 0 auto !important;
 	 outline: none;
 	 height: 3em;
      width: 26em;
