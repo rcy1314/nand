@@ -415,7 +415,8 @@ function xmlResponse(n) {
 				 quit = 12
                  html = "<div class='item'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
+						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref + "\", \"_blank\")'>" + $(this).find('title:first').text() +
+						"<i class='fa fa-ellipsis-h' style='float:right'></i></div>" +
                         "<div id='ago' style='width:100%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
