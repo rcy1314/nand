@@ -117,7 +117,7 @@ function applyVisual(n) {
             'background-color': '#000',
             'border': 'none'
         })
-        $('input[type=text]').css({
+        $('input[type=text], .type').css({
 	        'border-bottom': '1px solid rgba(255,255,255,.1)',
    			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, 1)'
