@@ -183,7 +183,7 @@ function filterResponse(random, x) {
 	}
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.replace(/(\/|\-)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
+        if (menu[i].id.replace(/(\/|\-|\.)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main .result').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
