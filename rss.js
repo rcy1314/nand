@@ -102,6 +102,7 @@ var menu=[
 {id:"Reddit/Movies",cat:"Social",des:"Movies subreddit News and Discussion about Major Motion Pictures.",uri:"https://reddit.com/r/movies/.rss",ext:"https://reddit.com/r/Movies"},
 {id:"4chan Music",cat:"Social",des:"4chan MU Music board thats about all things music.",uri:"http://boards.4channel.org/mu/index.rss",ext:"http://boards.4channel.org/mu"},
 {id:"Reddit/News",cat:"Social",des:"News subreddit articles relating to the United States and the rest of the World.",uri:"https://reddit.com/r/news/.rss",ext:"https://reddit.com/r/News"},
+{id:"Reddit/nvidia",cat:"Social",des:"nvidia subreddit news, builds, compatibility, and other information.",uri:"https://reddit.com/r/nvidia/.rss",ext:"https://www.reddit.com/r/nvidia"},
 {id:"Reddit/Open Source",cat:"Social",des:"Open Source subreddit for everything open source.",uri:"https://reddit.com/r/opensource/.rss",ext:"https://reddit.com/r/opensource"},
 {id:"Reddit/Pics",cat:"Social",des:"Pics subreddit A place for pictures and photographs.",uri:"https://reddit.com/r/pics/.rss",ext:"https://reddit.com/r/Pics"},
 {id:"Reddit/Programming",cat:"Social",des:"Programming subreddit shares user submitted articles on Programming.",uri:"https://reddit.com/r/programming/.rss",ext:"https://reddit.com/r/Programming"},
