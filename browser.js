@@ -36,20 +36,18 @@ $(document).ready(function() {
 
 	} else refreshResponse()
 
-    $('#main').on('scroll touchmove', function(e) {
-
-            $('svg circle').css({
-                "stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
-            })
-
-    })
-
 	reverseResponse(menu.reverse())
 
 }).on('touch click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noopener')
 	e.stopPropagation()
+
+}).on('scroll touchmove', '#main', function(e){
+
+	$('svg circle').css({
+		"stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
+	})
 
 }).on('submit', '#search', function(e){
 
@@ -59,11 +57,11 @@ $(document).ready(function() {
 	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
 
-}).on('touch click scroll focus', 'svg circle, .progress, .indicator', function(e){
+}).on('touch click scroll focus', 'svg circle', function(e){
 
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
-	$('#main .item').remove()
+	$('#main .item, #main .result').remove()
 	refreshResponse()
 
 }).on('touch click', '.item', function(e){
@@ -129,13 +127,14 @@ function applyVisual(n) {
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #main, .item, .item .pub, .pub, a').css({
+        $('input[type=text], #arm, .result, .item, .item .pub, .pub, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
-        $('input[type=text], .item .pub, .type').css({
+        $('#main, input[type=text]').css({
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
+			'background-color': '#fafafa'
 		})
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#home, .indicator').attr('src', 'images/invert.png')
@@ -349,10 +348,10 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
+	$('#main .result').remove()
 	document.title = filter[n].id.replace(/(\/|\.)/g, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
-	refreshResponse()
 	$('#main #home').addClass('animate')
     request = $.get({
             url: cors + menu[n].uri,
