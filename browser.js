@@ -85,6 +85,7 @@ $(document).ready(function() {
 
 	$(this).siblings('.url').select()
 	document.execCommand('copy')
+	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
 
