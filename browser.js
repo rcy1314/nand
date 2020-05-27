@@ -76,6 +76,11 @@ $(document).ready(function() {
 	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
     else window.location.assign('?' + $(this).attr('response'))
 
+}).on('mouseover mouseout', '.pub', function(e){
+
+	$(this).parent().find('.fa-at').toggleClass('animate')
+	e.stopPropagation()
+
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e){
 
 	$(this).toggleClass('fa-heart-o fa-heart')
@@ -85,8 +90,10 @@ $(document).ready(function() {
 
 	$(this).siblings('.url').select()
 	document.execCommand('copy')
-	$('.item .copy').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
 	$(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
+	setTimeout(function() {
+		$('.item .copy').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+	}, 250)
 	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
@@ -442,7 +449,7 @@ function xmlResponse(n) {
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
-						"<div class='border'></div><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<div class='border'><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div></div>"
