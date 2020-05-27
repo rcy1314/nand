@@ -231,14 +231,14 @@ function imageResolution(n) {
     		$('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math.round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
-    } else $('#' + n).parent().css('padding-bottom','7em')
+    } else $('#' + n).parent().css('padding-bottom','1.5em')
 
 }
 
 function momentTimeStamp(n) {
 
-    var age = new Date()
-	var utc = changeTimeZone(new Date(), 'America/New_York')
+    var age = changeTimeZone(new Date(), 'America/New_York')
+	var utc = changeTimeZone(new Date(n), 'America/New_York')
     var dis = age.getTime() - utc.getTime()
     var sec = dis / 1000;
     if (sec < 60) return parseInt(sec) + ' second' + (parseInt(sec) > 1 ? 's' : '') + ' ago'
@@ -442,10 +442,10 @@ function xmlResponse(n) {
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
-						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
+						"<div class='border'><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" + courtesy + 
 						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
-						"</div>"
+						"</div></div>"
 				}
                 pub.push({
                     element: i,
