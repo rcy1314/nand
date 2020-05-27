@@ -295,16 +295,6 @@ function refreshResponse(){
 
 
 		operation = true
-		if ($('#main #arm').length < 1 && !$('#animate').length)
-			 $('#main').append(
-				"<div id='arm'>" +
-				"<img id='home' src='images/" + animate + "'>" +
-				"<form id='search' action='#'>" +
-    			"<input type='submit'>" +
-				"<input id='text' type='text' placeholder='news, sports, media, social, technology, youtube, world'>" +
-				"</form>" +
-				"</div>"
-		)
 		$('input[type=text]').attr('tabindex', -1).focus()
 		$('svg .progress, .indicator').hide()
 		applyVisual()
