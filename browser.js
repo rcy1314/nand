@@ -323,7 +323,7 @@ function xmlResponse(n) {
 	} else filter = menu.reverse()
 	document.title = filter[n].id.replace(/(\/|\.)/, ' ')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
-	$('input[type=text]').val(filter[n].cat.toLowerCase()).attr('tabindex', -1).focus()
+	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
 	refreshResponse()
 	$('#main #home').addClass('animate')
     request = $.get({
