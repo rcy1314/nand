@@ -343,7 +343,7 @@ function xmlResponse(n) {
 		n = menu.length - n
 	} else filter = menu.reverse()
 	document.title = filter[n].id.replace(/(\/|\.)/g, ' ')
-	history.replaceState(null, null, window.location.href.replace(/(%20)/, '-'))
+	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
 	refreshResponse()
 	$('#main #home').addClass('animate')
