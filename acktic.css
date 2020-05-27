@@ -218,10 +218,10 @@
  svg, svg .progress {
 	 transform: translateX(50%);
 	 left: calc(50% - 54px);
-     position: absolute;
+     position: fixed;
      height: 52px;
      width: 52px;
-	 bottom: -15%;
+	 bottom: 0;
 }
  svg .progress {
      transform-origin: 50% 50%;
@@ -237,11 +237,11 @@
  .indicator {
 	 transform: translateX(50%);
 	 left: calc(50% - 48px);
-     position: absolute;
+     position: fixed;
      display: block;
      height: 48px;
      width: 48px;
-	 bottom: -15%;
+	 bottom: 0;
 }
  .views {
 	 position: absolute;
