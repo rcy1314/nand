@@ -36,18 +36,20 @@ $(document).ready(function() {
 
 	} else refreshResponse()
 
+	$('#main').on('scroll touchmove', function(){
+
+		$('svg circle').css({
+			"stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
+		})
+
+	})
+
 	reverseResponse(menu.reverse())
 
 }).on('touch click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noopener')
 	e.stopPropagation()
-
-}).on('scroll touchmove', '#main', function(e){
-
-	$('svg circle').css({
-		"stroke-dashoffset": 131 - (131 * Math.max(0, Math.min(1, $('#main').scrollTop() / ($('#main')[0].scrollHeight - $('#main').innerHeight() ))))
-	})
 
 }).on('submit', '#search', function(e){
 
