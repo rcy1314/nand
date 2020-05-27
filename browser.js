@@ -134,7 +134,7 @@ function applyVisual(n) {
         $('a').css('color', '#F7426B')
         animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], #arm, .result, .item, a').css({
+        $('input[type=text], .result, .item, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
@@ -355,7 +355,7 @@ function xmlResponse(n) {
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
-	$('#main #home').addClass('animate')
+	$('#home').addClass('animate')
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
@@ -373,7 +373,7 @@ function xmlResponse(n) {
             refreshResponse()
         })
         .done(function(xhr) {
-			$('#main #home').removeClass('animate')
+			$('#home').removeClass('animate')
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
