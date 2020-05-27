@@ -143,6 +143,7 @@ function applyVisual(n) {
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
+		$('.item').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#home, .indicator').attr('src', 'images/invert.png')
