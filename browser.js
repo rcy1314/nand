@@ -183,10 +183,10 @@ function filterResponse(random, x) {
 	}
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.replace(/(\/|\-|\.)/, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
+        if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main .result').prepend(
-				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 				"</div><div class='type'>filter</div></div>"
@@ -199,9 +199,9 @@ function filterResponse(random, x) {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
-	if (random == 1) {
+	if (random == 1) {i
 		var r = filter[Math.floor(Math.random()*filter.length)]
-		if (filter === undefined || filter == -1) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		if (filter == -1) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		else xmlResponse(r + +1)
 		return false
 	}
@@ -334,6 +334,7 @@ function uncoordinatedTimeZone(n) {
 }
 
 function xmlResponse(n) {
+	console.log(n)
     obj = []
     former = n
     var pub = []
