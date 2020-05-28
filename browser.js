@@ -65,9 +65,15 @@ $(document).ready(function() {
 
 	reverseResponse(menu.reverse())
 
-}).on('touch click', 'a', function(e) {
+}).on('touch click', '#item a, #result a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noopener')
+	e.stopPropagation()
+
+}).on('touch click', '#main #visit #info li a', function(e) {
+
+	$('#main #visit').remove()
+	filterResponse(0, $(this).text())
 	e.stopPropagation()
 
 }).on('submit', '#search', function(e){
