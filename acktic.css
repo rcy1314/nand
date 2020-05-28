@@ -91,11 +91,11 @@
  #arm {
 	 display: none;
 	 width: 100%;
-	 height: 75px;
+	 height: 55px;
 }
  #home, #animate {
-	 height: 75px;	
-     width: 75px;
+	 height: 55px;	
+     width: 55px;
 }
  .animate {
      -webkit-animation: spin 7s infinite ease;
@@ -133,7 +133,7 @@
 	 flex-wrap: wrap;
      overflow: auto;
 	 outline: none;
-	 top: 75px;
+	 top: 55px;
 }
  .result {
 	 justify-content: center;
@@ -214,24 +214,24 @@
 }
  #search {
 	 position: absolute;
-	 height: 68px;
+	 height: 55px;
 	 width: 100%;
 	 padding: 0;
 	 margin: 0;
 	 top: 0;
 }
  input[type=text] {
-	 caret-color: rgba(128,128,128,.7);
+	 text-align: center;
+	 caret-color: transparent;
      position: relative;
 	 padding-left: 7px;
      font-size: 10px;
 	 margin: 0 auto;
-	 display: block;
+	 display: table;
 	 outline: none;
 	 height: 3em;
      width: 20em;
-	 left: 15px;
-	 top: -5em;
+	 top: -4.3em;
 }
  input[type=submit] {
 	 display: none;

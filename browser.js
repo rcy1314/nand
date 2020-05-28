@@ -45,6 +45,22 @@ $(document).ready(function() {
 
 	})
 
+	$('input[type=text]').on('touch click focusin', function(e) {
+
+		$(this).attr('placeholder','').css({
+			'caret-color': 'rgba(128,128,128,.7)',
+			'text-align': 'left'
+		})
+
+	}).on('focusout blur', function(e) {
+
+		$(this).val('').attr('placeholder','Search').css({
+			'caret-color': 'rgba(128,128,128,.7)',
+			'text-align': 'center'
+		})
+
+	})
+
 	reverseResponse(menu.reverse())
 
 }).on('touch click', 'a', function(e) {
@@ -66,10 +82,10 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle', function(e){
 
+	filterResponse(0, document.title)
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
 	$('#main .item, #main .result').remove()
-	filterResponse(0, $('input[type=text]').val())
 
 }).on('touch click', '#home', function(e){
 
@@ -204,7 +220,7 @@ function filterResponse(random, x) {
 	}
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-        if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
+				if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (random == 0)
 	    	$('#main .result').prepend(
 				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
