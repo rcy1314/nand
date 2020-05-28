@@ -69,7 +69,7 @@ $(document).ready(function() {
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
 	$('#main .item, #main .result').remove()
-	refreshResponse()
+	filterResponse(0, $('input[type=text]').val())
 
 }).on('touch click', '#home', function(e){
 
