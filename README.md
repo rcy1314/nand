@@ -17,11 +17,11 @@
 
 ### Invert
 `https://acktic.github.io`
-<p align='center'><img src='http://acktic.github.io/images/wall.png'></p>
+<a href='https://acktic.github.io/' rel='nofollow'><p align='center'><img src='http://acktic.github.io/images/wall.png'></p></a>
 
 ### Opposite
 `https://acktic.github.io/?+1`
-<p align='center'><img src='http://acktic.github.io/images/visual.png'></p>
+<a href='https://acktic.github.io/?+1' rel='nofollow'><p align='center'><img src='http://acktic.github.io/images/visual.png'></p></a>
 
 License
 ----
