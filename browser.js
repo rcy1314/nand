@@ -73,8 +73,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#home', function(e){
 
-	applyVisual(!op)
-	contrast = true
+	applyVisual('op')
 
 }).on('touch click', '.item', function(e){
 
@@ -120,7 +119,7 @@ function applyVisual(n) {
     if (n == 'op') {
         op = op != true
     } else if (n == 1 || n == 0) op = n
-
+	console.log(op)
     if (op == 1) {
         $('body, #container, #main, #arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a').css({
             'color': 'rgba(255,255,255,1)',
@@ -150,10 +149,16 @@ function applyVisual(n) {
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-        $('#home, .indicator').attr('src', 'images/invert.png')
+        $('#home').attr('src', 'images/transparent.png')
+		$('.indicator').attr('src', 'images/invert.png')
         $('#favicon').attr('href', 'images/invert.png')
         $('svg .progress').css('stroke', '#08bd93')
     }
+	if ($('#main .result').length && op == 0) {
+		$('#arm').css('background-color','#fafafa')
+		$('input[type=text]').css('background-color','#fff')
+	}
+	
 }
 
 function changeTimeZone(date, n) {
