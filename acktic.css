@@ -20,6 +20,11 @@
      #container {
          width: 100% 
     }
+	 #info {
+		 display: inline-block;
+		 left: 2em;
+		 top: -3em;
+	}
      .item {
          width: 88% !important;
          margin: 3em !important;
@@ -137,30 +142,25 @@
 }
  #visit {
 	 font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-	 font-size: 12px;
 	 font-weight: normal;
-	 top: -3em;
-	 left: -3em;
-	 display: none;
 	 position: relative;
+	 font-size: 12px;
+	 display: none;
 	 margin: auto;
 }
  #placeholder {
 	 border: .3px solid rgba(128,128,128,.5);
 	 position: relative;
-	 width: 350px;
-	 display: inline-block;
 	 margin: 0 auto;
+	 width: 300px;
 }
  #info {
 	 border: .3px solid rgba(128,128,128,.5);
-	 padding: 2em;
 	 background-color: #fff;
-	 left: 3em;
-	 display: inline-block;
 	 position: relative;
+	 margin-bottom: 2em;
+	 padding: 2em;
 	 width: 21em;
-	 top: -4em;
 }
  .result {
 	 justify-content: center;

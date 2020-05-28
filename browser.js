@@ -299,17 +299,19 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	i = former
+	i = former - +1
 	if (former > menu.length / 2) i = 0 
     if (reverse == true) reverseResponse(menu.reverse())
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
+		if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 				$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 				"</div><div class='type'>populate</div></div>"
 				)
+		}
 	}
 	former = 0
 	filter = []
@@ -378,7 +380,7 @@ function xmlResponse(n) {
 	})
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
-	$('input[type=text]').val(filter[n].cat)
+	$('input[type=text]').val(document.title)
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
 	$('#home').addClass('animate')
