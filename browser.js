@@ -77,7 +77,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.item', function(e){
 
-	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleclass('fa-bookmark-o fa-bookmark')
+	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
 	e.stoppropagation()
 
 }).on('touch click', '.filter, .populate', function(e) {
@@ -131,6 +131,7 @@ function applyVisual(n) {
    			'background-color': 'rgba(0,0,0,.9)',
             'color': 'rgba(255,255,255, 1)'
         })
+		$('#main').addClass('opposite').removeClass('invert')
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#home, .indicator').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
@@ -146,6 +147,7 @@ function applyVisual(n) {
 	        'border': '.3px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
+		$('#main').addClass('invert').removeClass('opposite')
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')

@@ -49,6 +49,29 @@
          margin: 36em !important;
     }
 }
+ ::-webkit-scrollbar {
+     width: 7px 
+}
+ .invert::-webkit-scrollbar-thumb {
+     background-color: rgba(128,128,128,.1)
+}
+ .invert::-webkit-scrollbar {
+     background-color: #f5f5f5 
+}
+ .invert {
+     scrollbar-color: #eee #f5f5f5;
+     scrollbar-width: thin;
+}
+ .opposite::-webkit-scrollbar-thumb {
+     background-color: #222 
+}
+ .opposite::-webkit-scrollbar {
+     background-color: #000 
+}
+ .opposite {
+     scrollbar-color: #222 #000;
+     scrollbar-width: thin;
+}
  div, input[type=text] {
      font-family: Arial; 
 }
