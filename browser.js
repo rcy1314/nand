@@ -234,7 +234,6 @@ function filterResponse(random, x) {
 				former = menu.indexOf(menu[i])
         }
     }
-	former = former - +1
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
@@ -298,7 +297,8 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	i = former + 1
+	i = former
+	if (i > menu.length / 2) i = 0
     if (reverse == true) reverseResponse(menu.reverse())
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
