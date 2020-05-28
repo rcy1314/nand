@@ -317,7 +317,6 @@ function refreshResponse(){
 
 
 		operation = true
-		$('input[type=text]').attr('tabindex', -1).focus()
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 
@@ -369,14 +368,15 @@ function xmlResponse(n) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
 	} else filter = menu.reverse()
-	$('#main .result').remove()
 	var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
 	})
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
-	$('input[type=text]').val(filter[n].cat).attr('tabindex', -1).focus()
+	$('input[type=text]').val(filter[n].cat)
+	$('#main').attr('tabindex', -1).focus()
+	$('#main .result').remove()
 	$('#home').addClass('animate')
     request = $.get({
             url: cors + menu[n].uri,
