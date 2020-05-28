@@ -88,6 +88,7 @@ var menu=[
 {id:"Reddit/Firefox",cat:"Social",des:"Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",uri:"https://reddit.com/r/firefox/.rss",ext:"https://reddit.com/r/Firefox"},
 {id:"Reddit/Gadgets",cat:"Social",des:"Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",uri:"https://reddit.com/r/gadgets/.rss",ext:"https://reddit.com/r/Gadgets"},
 {id:"Reddit/Games",cat:"Social",des:"Games subreddit aims to provide a place for Informative and interesting Gaming Content.",uri:"http://reddit.com/r/games/.rss",ext:"https://reddit.com/r/games"},
+{id:"Reddit/Gifs",cat:"Social",des:"Gifs subreddit Funny, animated GIFs: Your favorite computer file type.",uri:"https://reddit.com/r/gifs/.rss",ext:"https://reddit.com/r/gifs"},
 {id:"Reddit/Github",cat:"Social",des:"Github subreddit for all things GitHub!",uri:"https://reddit.com/r/github/.rss",ext:"https://reddit.com/r/github"},
 {id:"Reddit/Goddesses",cat:"Social",des:"Goddesses subreddit pretty pictures of pretty girls.",uri:"https://reddit.com/r/goddesses/.rss",ext:"https://reddit.com/r/Goddesses"},
 {id:"Reddit/Google",cat:"Social",des:"Google subreddit For news and announcements from and about Google.",uri:"https://reddit.com/r/google/.rss",ext:"https://reddit.com/r/Google"},
