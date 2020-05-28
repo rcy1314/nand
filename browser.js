@@ -450,7 +450,7 @@ function xmlResponse(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                if (src.match(/comments|default|undefined/)) src = ''
+                if (src.match(/comments|default|feeds|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div>"
