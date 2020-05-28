@@ -71,10 +71,15 @@ $(document).ready(function() {
 	$('#main .item, #main .result').remove()
 	refreshResponse()
 
+}).on('touch click', '#home', function(e){
+
+	applyVisual(!op)
+	contrast = true
+
 }).on('touch click', '.item', function(e){
 
-	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
-	e.stopPropagation()
+	$(this).find('.fa-bookmark-o, .fa-bookmark').toggleclass('fa-bookmark-o fa-bookmark')
+	e.stoppropagation()
 
 }).on('touch click', '.filter, .populate', function(e) {
 
@@ -132,14 +137,13 @@ function applyVisual(n) {
         $('svg .progress').css('stroke', '#F74268')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
-        animate = 'opposite.png'
     } else if (op == 0) {
-        $('input[type=text], .result, .item, a').css({
+        $('#arm, input[type=text], .result, .item, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
         })
-        $('#main, input[type=text]').css({
+        $('#main, input[type=text], .category').css({
 	        'border': '1px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
@@ -149,12 +153,7 @@ function applyVisual(n) {
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#home, .indicator').attr('src', 'images/invert.png')
         $('#favicon').attr('href', 'images/invert.png')
-        $('svg .progress, .category').css({
-			'stroke': '#08bd93',
-			'background-color': '#08bd93',
-			'color': '#fff'
-		})
-        animate = 'invert.png'
+        $('svg .progress').css('stroke', '#08bd93')
     }
 }
 
