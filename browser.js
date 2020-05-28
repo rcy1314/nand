@@ -18,7 +18,7 @@ var re = /(\b[a-z](?!\s))/g
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container, input[type=text], #arm').show()
+    $('#container, input[type=text], #arm, #bottom').show()
     if (location.href.match('\\+1')) {
 
         refreshResponse()
@@ -135,7 +135,6 @@ function applyVisual(n) {
     if (n == 'op') {
         op = op != true
     } else if (n == 1 || n == 0) op = n
-	console.log(op)
     if (op == 1) {
         $('body, #container, #main, #arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a').css({
             'color': 'rgba(255,255,255,1)',
@@ -232,6 +231,7 @@ function filterResponse(random, x) {
 				former = menu.indexOf(menu[i])
         }
     }
+	former = former - +1
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
@@ -295,12 +295,10 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	if (filter === undefined || filter.length == 0 || !former) i = former + 1
-	else i = former - 1
+	i = former + 1
     if (reverse == true) reverseResponse(menu.reverse())
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
-			if ($.inArray(menu.indexOf(menu[i]), filter) == -1)
 				$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
@@ -437,7 +435,6 @@ function xmlResponse(n) {
                     src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
                     src = String($(this).find('media\\:content, content').attr('url'))
-					console.log(src)
                 } else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)) {
                     src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
                 } else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)) {
