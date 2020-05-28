@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 	}).on('focusout blur', function(e) {
 
-		$(this).val('').attr('placeholder','Search').css({
+		$(this).attr('placeholder','Search').css({
 			'caret-color': 'rgba(128,128,128,.7)',
 			'text-align': 'center'
 		})
@@ -85,10 +85,10 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle', function(e){
 
-	filterResponse(0, document.title)
+	$('#main .item, #main .result').remove()
+	filterResponse(0, $('input[type=text]').val())
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
-	$('#main .item, #main .result').remove()
 
 }).on('touch click', '#home', function(e){
 
@@ -238,7 +238,7 @@ function filterResponse(random, x) {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
-	if (random == 1) {i
+	if (random == 1) {
 		var r = filter[Math.floor(Math.random()*filter.length)]
 		if (filter == -1) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		else xmlResponse(r + +1)
@@ -298,7 +298,6 @@ function momentTimeStamp(n) {
 function populateResponse(n) {
 
 	i = former
-	if (i > menu.length / 2) i = 0
     if (reverse == true) reverseResponse(menu.reverse())
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
@@ -377,7 +376,7 @@ function xmlResponse(n) {
 	})
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
-	$('input[type=text]').val(document.title).attr('tabindex', -1).focus()
+	$('input[type=text]').val(filter[n].cat).attr('tabindex', -1).focus()
 	$('#home').addClass('animate')
     request = $.get({
             url: cors + menu[n].uri,
