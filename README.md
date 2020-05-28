@@ -17,11 +17,7 @@
 
 ### Default
 `https://acktic.github.io`
-<p align='center'><img src='https://ackti.files.wordpress.com/2020/05/0548581674502-1.png'></p>
-
-### Opposite
-`https://acktic.github.io/?+1`
-<p align='center'><img src='https://ackti.files.wordpress.com/2020/05/9180741142667-1.png'></p>
+<p align='center'><img src='images/wall.png'></p>
 
 License
 ----
