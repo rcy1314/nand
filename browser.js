@@ -122,7 +122,7 @@ function applyVisual(n) {
     } else if (n == 1 || n == 0) op = n
 
     if (op == 1) {
-        $('body, #container, #main, #arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub').css({
+        $('body, #container, #main, #arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
@@ -138,7 +138,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, a').css({
+        $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a').css({
             'background-color': '#fff',
             'color': 'rgba(0,0,0,.7)',
 			'border': 'none'
