@@ -1,13 +1,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
     <link id='favicon' rel="icon" type="image/png" href="images/invert.png">
-<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="acktic.css">
     <script src="browser.js"></script>
     <script src="rss.js"></script>
@@ -15,19 +12,21 @@
 <body>
 <div id='wrapper'>
 	<div id='container'>
-				<div id='arm'>
-				<form id='search' action='#'>
+		<div id='arm'>
+			<form id='search' action='#'>
 				<img id='home'>
     			<input type='submit'>
 				<input id='text' type='text' placeholder='news, sports, media, social, technology'>
-				</form>
-				</div>
-    	    <div id='main'></div>
+			</form>
+		</div>
+    	<div id='main'></div>
 	</div>
+	<div id='bottom'>
 	<svg>
-		<circle cx='26.5' cy='24' r='21' class='progress' onclick='refreshResponse()'>
-		<img class='indicator'>
+		<circle cx='24' cy='26' r='21' class='progress' onclick='refreshResponse()'>
 	</svg>
+	<img class='indicator'>
+	</div>
 </div>
 </body>
 </html>
