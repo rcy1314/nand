@@ -47,12 +47,12 @@ $(document).ready(function() {
 
 	})
 
-	$('input[type=text]').on('touch click focusin', function(e) {
+	$('input[type=text]').on('touch click', function(e) {
 
 		$(this).attr('placeholder','').css({
 			'caret-color': 'rgba(128,128,128,.7)',
 			'text-align': 'left'
-		})
+		}).val('')
 
 	}).on('focusout blur', function(e) {
 
