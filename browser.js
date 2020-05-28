@@ -191,6 +191,7 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('svg circle, .indicator').show()
+	$('#main').scrollTop(0)
 	$('#main .item').remove()	
 	if ($('#main .result').length < 1) {
 		$('#main').append("<div class='result'></div>")
