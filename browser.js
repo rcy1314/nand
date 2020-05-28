@@ -144,10 +144,9 @@ function applyVisual(n) {
 			'border': 'none'
         })
         $('#main, input[type=text], .category').css({
-	        'border': '1px solid rgba(0,0,0,.1)',
+	        'border': '.3px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
-		$('#main').css('border-top','.3px solid rgba(128,128,128,.3)')
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
