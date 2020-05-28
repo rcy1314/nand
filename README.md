@@ -17,7 +17,7 @@
 
 ### Default
 `https://acktic.github.io`
-<p align='center'><img src='images/wall.png'></p>
+<p align='center'><img src='http://acktic.github.io/images/wall.png'></p>
 
 License
 ----
