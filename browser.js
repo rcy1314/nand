@@ -223,17 +223,18 @@ function filterResponse(random, x) {
 	}
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-				if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-			if (random == 0)
-	    	$('#main .result').prepend(
-				"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
-				"</div><div class='type'>filter</div></div>"
-			)
-				filter.push(menu.indexOf(menu[i]))
-				former = menu.indexOf(menu[i])
-        }
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
+			if (random == 0) {
+		    	$('#main .result').prepend(
+					"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+					"</div><div class='type'>filter</div></div>"
+				)
+			}
+			filter.push(menu.indexOf(menu[i]))
+			former = filter[0] + +1
+        } else former = 0
     }
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
