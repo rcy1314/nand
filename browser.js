@@ -217,7 +217,7 @@ function filterResponse(random, x) {
 	filter = []
 	$('svg circle, .indicator').show()
 	$('#main').scrollTop(0)
-	$('#main .item').remove()	
+	$('#main .item, #main .result').remove()	
 	if ($('#main .result').length < 1) {
 		$('#main').append("<div class='result'></div>")
 	}
@@ -234,7 +234,7 @@ function filterResponse(random, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-        } else former = 0
+        }
     }
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -300,6 +300,7 @@ function momentTimeStamp(n) {
 function populateResponse(n) {
 
 	i = former
+	if (former > menu.length / 2) i = 0 
     if (reverse == true) reverseResponse(menu.reverse())
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	for (i; i <= menu.length - 1; i++) {
@@ -310,7 +311,7 @@ function populateResponse(n) {
 				"</div><div class='type'>populate</div></div>"
 				)
 	}
-	former = -1
+	former = 0
 	filter = []
 	applyVisual()
 }
