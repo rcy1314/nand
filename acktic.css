@@ -135,6 +135,33 @@
 	 outline: none;
 	 top: 55px;
 }
+ #visit {
+	 font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	 font-size: 12px;
+	 font-weight: normal;
+	 top: -3em;
+	 left: -3em;
+	 display: none;
+	 position: relative;
+	 margin: auto;
+}
+ #placeholder {
+	 border: .3px solid rgba(128,128,128,.5);
+	 position: relative;
+	 width: 350px;
+	 display: inline-block;
+	 margin: 0 auto;
+}
+ #info {
+	 border: .3px solid rgba(128,128,128,.5);
+	 padding: 2em;
+	 background-color: #fff;
+	 left: 3em;
+	 display: inline-block;
+	 position: relative;
+	 width: 21em;
+	 top: -4em;
+}
  .result {
 	 justify-content: center;
 	 flex-wrap: wrap;

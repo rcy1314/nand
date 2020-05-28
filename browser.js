@@ -24,10 +24,12 @@ $(document).ready(function() {
         refreshResponse()
 		applyVisual(!op)
 		contrast = true
+		$('#main #placeholder').attr('src','images/visual.png')
 
     } else {
 		refreshResponse()
 		applyVisual(op)
+		$('#main #placeholder').attr('src','images/wall.png')
 	}
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
@@ -35,7 +37,7 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
-	} else populateResponse()
+	} else $('#main #visit').show()
 
 	$('#main').on('scroll touchmove', function(){
 
@@ -70,6 +72,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
+	$('#main #visit').remove()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
@@ -89,7 +92,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#home', function(e){
 
-	applyVisual('op')
+	location.reload()
 
 }).on('touch click', '.item', function(e){
 
@@ -136,7 +139,7 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('body, #container, #main, #arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a').css({
+        $('body, #container, #main, #arm, #info, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a, a').css({
             'color': 'rgba(255,255,255,1)',
             'background-color': '#000',
             'border': 'none'
