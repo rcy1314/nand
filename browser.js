@@ -35,7 +35,7 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
         filterResponse(1, n)
 
-	} else refreshResponse()
+	} else populateResponse()
 
 	$('#main').on('scroll touchmove', function(){
 
