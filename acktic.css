@@ -76,8 +76,7 @@
 }
  .animate {
      -webkit-animation: spin 7s infinite ease;
-     -moz-animation: spin 7s infinite ease;
-	 height: 200px;
+     -moz-animation: spin 7s infinite ease height: 200px;
 }
  @-webkit-keyframes spin {
      100% {
