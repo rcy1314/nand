@@ -143,7 +143,8 @@ function applyVisual(n) {
 	        'border-bottom': '1px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
-		$('.item').css('border','.3px solid rgba(128,128,128,.3)')
+		$('#main').css('border-top','.3px solid rgba(128,128,128,.3)')
+		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
         $('#home, .indicator').attr('src', 'images/invert.png')
@@ -153,7 +154,6 @@ function applyVisual(n) {
 			'background-color': '#08bd93',
 			'color': '#fff'
 		})
-		$('.title').css('border','.3px solid rgba(0,0,0,.3)')
         animate = 'invert.png'
     }
 }
