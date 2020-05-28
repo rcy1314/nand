@@ -34,7 +34,7 @@ var menu=[
 {id:"Pop Sugar",cat:"Media",des:"Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",uri:"https://www.popsugar.com/feed",ext:"https://www.popsugar.com"},
 {id:"Rolling Stone",cat:"Media",des:"Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",uri:"https://www.rollingstone.com/feed",ext:"https://rollingstone.com"},
 {id:"TheSun.co.uk",cat:"Media",des:"TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",uri:"https://www.thesun.co.uk/tvandshowbiz/feed",ext:"https://www.thesun.co.uk/tvandshowbiz"},
-{id:"TMZ",cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
+{id:"TMZ News",cat:"Media",des:"TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",uri:"https://www.tmz.com/rss.xml",ext:"https://tmz.com"},
 {id:"Trend Hunter Celebrity Fashion",cat:"Media",des:"Trend Hunter Celebrity Fashion will help you stay on top of all the latest celebrity happenings.",uri:"https://www.trendhunter.com/rss/category/Celebrity-Fashion",ext:"https://www.trendhunter.com/celebs"},
 {id:"USA Today",cat:"Media",des:"USA Today People celebrity news, gossip and interviews.",uri:"http://rssfeeds.usatoday.com/toppeople&x=1",ext:"https://www.usatoday.com/entertainment/celebrities"},
 {id:"US Weekly",cat:"Media",des:"US Weekly a weekly celebrity and entertainment magazine based in New York City.",uri:"https://www.usmagazine.com/feed",ext:"https://www.usmagazine.com"},
