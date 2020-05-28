@@ -18,7 +18,7 @@ var re = /(\b[a-z](?!\s))/g
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container, input[type=text]').show()
+    $('#container, input[type=text], #arm').show()
     if (location.href.match('\\+1')) {
 
         refreshResponse()
