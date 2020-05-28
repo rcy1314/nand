@@ -15,9 +15,13 @@
 
 ### Styling
 
-### Default
+### Invert
 `https://acktic.github.io`
 <p align='center'><img src='http://acktic.github.io/images/wall.png'></p>
+
+### Opposite
+`https://acktic.github.io/?+1`
+<p align='center'><img src='http://acktic.github.io/images/visual.png'></p>
 
 License
 ----
