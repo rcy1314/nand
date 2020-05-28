@@ -89,6 +89,7 @@ $(document).ready(function() {
 	filterResponse(0, $('input[type=text]').val())
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
+	$('#main').attr('tabindex',-1).focus()	
 
 }).on('touch click', '#home', function(e){
 
@@ -317,6 +318,7 @@ function refreshResponse(){
 
 
 		operation = true
+		$('input[type=text]').attr('tabindex',-1).focus()
 		$('svg .progress, .indicator').hide()
 		applyVisual()
 
