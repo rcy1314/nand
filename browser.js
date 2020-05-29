@@ -77,6 +77,7 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('#main #visit').remove()
+	$('svg circle .progress, .indicator').show()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
@@ -220,7 +221,7 @@ function expandImage(n) {
 function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
-	$('svg circle, .indicator').show()
+	$('#bottom').show()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
@@ -389,8 +390,8 @@ function xmlResponse(n) {
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title)
 	$('#main').attr('tabindex', -1).focus()
-	$('#main .result').remove()
 	$('#home').addClass('animate')
+	$('#main .result').remove()
     request = $.get({
             url: cors + menu[n].uri,
 			method: 'GET',
@@ -407,6 +408,7 @@ function xmlResponse(n) {
             operation = false
         })
         .done(function(xhr) {
+			$('svg circle, .indicator').show()
 			$('#home').removeClass('animate')
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
