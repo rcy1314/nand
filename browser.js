@@ -77,7 +77,6 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('#main #visit').remove()
-	$('#home').addClass('animate')
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
@@ -302,7 +301,8 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	if (former != -1) i = former
+	filter = []
+	if (former != -1) i = former - 1
 	else i = 0
 	if (i < menu.length - 1 / 2 || i == menu.length - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
