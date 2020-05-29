@@ -301,8 +301,8 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	if (former) i = former - +1
-	else i = n - +1
+	if (former != -1) i = former - +1
+	else i = 0
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
@@ -469,8 +469,8 @@ function xmlResponse(n) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " +
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     } else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><input class='url' value='" + ref.trim() + "' style='position:relative;height:0;z-index:-1'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' style='float:right;margin-top:20px;font-size:12px;' title='Copy URL'></i>" + 
+                    html = "<div id='yt' class='item' style='width: 100%'><input class='url' value='" + ref.trim() + "'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' title='Copy URL'></i>" + 
                         "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
@@ -479,9 +479,9 @@ function xmlResponse(n) {
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
 				 quit = 12
-                 html = "<div class='item'><input class='url' value='" + ref.trim() + "' style='position:relative;height:0;z-index:-1'>" +
+                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<i class='copy fa fa-ellipsis-h' style='float:right;margin-top:20px;font-size:12px;' title='Copy URL'></i>" +
+						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='width:99%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
