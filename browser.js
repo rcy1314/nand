@@ -77,7 +77,7 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('#main #visit').remove()
-	$('svg circle .progress, .indicator').show()
+	$('#home').addClass('animate')
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
@@ -219,6 +219,7 @@ function expandImage(n) {
 }
 
 function filterResponse(random, x) {
+
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('#bottom').show()
@@ -301,25 +302,28 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	filter = []
-	if (former != -1) i = former - +1
+	if (former != -1) i = former
 	else i = 0
+	if (i < menu.length - 1 / 2 || i == menu.length - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 		for (i; i <= menu.length - 1; i++) {
-				$('#main .result').append(
-					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
-					"</div><div class='type'>populate</div></div>"
-				)
-		filter.push(menu.indexOf(menu[i]))
-		former = i
+				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+					$('#main .result').append(
+						"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+						"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+						"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+						"</div><div class='type'>populate</div></div>"
+					)
+				filter.push(menu.indexOf(menu[i]))
+				former = i
+				}
 		}
-	if (i > menu.length - 1 / 2) {
+	} 
+	if (former > menu.length - 1 / 2 || former == menu.length - 1) {
 		if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
-			for (i = former; i >= 0; i--) {
+			for (var i = menu.length - 1; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
 					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
