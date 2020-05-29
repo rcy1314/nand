@@ -317,8 +317,6 @@ function populateResponse(n) {
 	filter = []
 	if (former != -1) n = former - 1
 	else n = 0
-	console.log(former)
-	console.log(n)
 	if (n == menu.length - 1 || former == n + 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
