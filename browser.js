@@ -92,7 +92,7 @@ $(document).ready(function() {
 }).on('touch click scroll focus', 'svg circle', function(e){
 
 	$('#main .item, #main .result').remove()
-	filterResponse(0, $('input[type=text]').val())
+	populateResponse(former)
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
 	$('#main').attr('tabindex',-1).focus()	
@@ -224,9 +224,7 @@ function filterResponse(random, x) {
 	$('svg circle, .indicator').show()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
-	if ($('#main .result').length < 1) {
-		$('#main').append("<div class='result'></div>")
-	}
+	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
 		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
@@ -253,7 +251,7 @@ function filterResponse(random, x) {
 		return false
 	}
 	setTimeout(function() {
-		populateResponse()
+		populateResponse(former)
 	}, 250)
 	applyVisual()
 
@@ -305,21 +303,34 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	i = former - +1
-	if (former > menu.length / 2) i = 0 
-    if (reverse == true) reverseResponse(menu.reverse())
+	if (former) i = former - +1
+	else i = n - +1
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-	for (i; i <= menu.length - 1; i++) {
-		if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+	if (i > menu.length / 2){
+		for (i; i >= 0; i--) {
+			if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 				$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 				"</div><div class='type'>populate</div></div>"
 				)
+			}
+		} 
+	} else {
+	    if (reverse == true) reverseResponse(menu.reverse())
+		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+		for (i; i <= menu.length - 1; i++) {
+			if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+				$('#main .result').append(
+					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+					"</div><div class='type'>populate</div></div>"
+				)
+			}
 		}
 	}
-	former = 0
 	filter = []
 	applyVisual()
 }
