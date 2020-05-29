@@ -89,6 +89,7 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle', function(e){
 
+	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	populateResponse(former)
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
