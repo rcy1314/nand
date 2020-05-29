@@ -233,7 +233,7 @@ function filterResponse(random, x) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (random == 0) {
 		    	$('#main .result').prepend(
 					"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
@@ -422,7 +422,7 @@ function xmlResponse(n) {
         .done(function(xhr) {
 			$('#visit').hide()
 			$('svg circle, .indicator').show()
-			$('#progressBar').width(100%)
+			$('#progressBar').width('100%')
 			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 				$(this).removeClass('response').width(0)
 			})
