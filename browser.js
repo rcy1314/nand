@@ -31,6 +31,7 @@ $(document).ready(function() {
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
 		var n = location.search.split('?')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
+		$('#visit').show()
         filterResponse(1, n)
 
 	} else $('#main #visit').show()
@@ -160,9 +161,8 @@ function applyVisual(n) {
 		$('#main').addClass('opposite').removeClass('invert')
 		$('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#home, .indicator').attr('src', 'images/opposite.png')
-        $('svg .progress').css('stroke', '#F74268')
-        $('#favicon').attr('href', 'images/opposite.png')
+        $('#home, .indicator').attr('src', 'images/opposite.png').css('filter','none')
+        $('#favicon').attr('href', 'images/transparent.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
         $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a').css({
@@ -180,9 +180,8 @@ function applyVisual(n) {
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-		$('.indicator').attr('src', 'images/invert.png')
+		$('.indicator').attr('src', 'images/transparent.png').css('filter','brightness(20%) saturate(50%) invert(90%)')
         $('#favicon').attr('href', 'images/invert.png')
-        $('svg .progress').css('stroke', '#08bd93')
     }
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css('background-color','#fafafa')
@@ -226,7 +225,6 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('#main').scrollTop(0)
-	$('svg .progress, .indicator').show()
 	$('#main .item, #main .result').remove()	
 	$('#progressBar').addClass('response').css('width','100%')
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
@@ -404,7 +402,6 @@ function xmlResponse(n) {
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title)
 	$('#main').attr('tabindex', -1).focus()
-	$('#home').addClass('animate')
 	$('#main .result').remove()
     request = $.get({
             url: cors + menu[n].uri,
@@ -422,8 +419,8 @@ function xmlResponse(n) {
             operation = false
         })
         .done(function(xhr) {
+			$('#visit').hide()
 			$('svg circle, .indicator').show()
-			$('#home').removeClass('animate')
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length

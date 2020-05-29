@@ -163,22 +163,18 @@ body,
 	user-select: none;
 	position: fixed;
 	flex-wrap: wrap;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 	outline: none;
 	top: 55px;
 }
 #visit {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	font-weight: normal;
 	position: relative;
-	font-size: 12px;
-	display: none;
 	margin: auto;
+	display: none;
 }
 #placeholder {
 	filter: brightness(20%) saturate(50%) invert(90%);
-	position: relative;
-	margin: 0 auto;
 }
 .result {
 	justify-content: center;
@@ -240,7 +236,7 @@ body,
 	font-weight: bold;
 	font-size: 14px;
 	padding: 10px;
-	width: 90%;
+	width: 85%;
 }
 .url {
 	position: relative;
@@ -285,6 +281,7 @@ input[type=text] {
 	margin: 0 auto;
 	display: table;
 	outline: none;
+	right: 10px;
 	height: 3em;
 	width: 20em;
 	top: -4.6em;
@@ -317,6 +314,7 @@ svg .progress {
 	stroke-dasharray: 131;
 	fill: transparent;
 	stroke-width: 3px;
+	stroke: #F74268;
 	display: none;
 }
 svg {
