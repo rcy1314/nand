@@ -241,7 +241,7 @@ body,
 	margin: 12px;
 }
 .item {
-	margin-bottom: 3.5em !important;
+	margin-bottom: 1em !important;
 	margin-top: 1em !important;
 	padding: .5em;
 }
@@ -326,7 +326,7 @@ svg circle .progress {
 }
 svg .progress {
 	transform-origin: 50% 50%;
-	transform: rotate(90deg);
+	transform: rotate(270deg);
 	stroke-dashoffset: 131;
 	stroke-dasharray: 131;
 	fill: transparent;

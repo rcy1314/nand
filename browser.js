@@ -264,6 +264,7 @@ function filterResponse(random, x) {
 	setTimeout(function() {
 		populateResponse(former)
 	}, 350)
+	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
 }
