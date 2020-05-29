@@ -21,13 +21,11 @@ $(document).ready(function() {
     $('#container, input[type=text], #arm, #bottom').show()
     if (location.href.match('\\+1')) {
 
-        refreshResponse()
 		applyVisual(!op)
 		contrast = true
 		$('#main #placeholder').attr('src','images/visual.png')
 
     } else {
-		refreshResponse()
 		applyVisual(op)
 		$('#main #placeholder').attr('src','images/wall.png')
 	}
@@ -61,7 +59,7 @@ $(document).ready(function() {
 			'text-align': 'center'
 		})
 
-	})
+	}).attr('tabindex', -1).focus()
 
 	reverseResponse(menu.reverse())
 
@@ -307,18 +305,6 @@ function populateResponse(n) {
 	if (former) i = former - +1
 	else i = n - +1
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-	if (i > menu.length / 2){
-		for (i; i >= 0; i--) {
-			if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
-				$('#main .result').append(
-				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
-				"</div><div class='type'>populate</div></div>"
-				)
-			}
-		} 
-	} else {
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 		for (i; i <= menu.length - 1; i++) {
@@ -330,20 +316,22 @@ function populateResponse(n) {
 					"</div><div class='type'>populate</div></div>"
 				)
 			}
+		former = i
 		}
-	}
+	if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
+		for (i = former; i >= 0; i--) {
+			if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+				$('#main .result').append(
+				"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+				"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+				"&ensp;<div class='description'>" + menu[i].des + "</div>" +
+				"</div><div class='type'>reverse</div></div>"
+				)
+			}
+		}
+	$('svg .progress, .indicator').show()
 	filter = []
 	applyVisual()
-}
-
-function refreshResponse(){
-
-
-		operation = true
-		$('input[type=text]').attr('tabindex',-1).focus()
-		$('svg .progress, .indicator').hide()
-		applyVisual()
-
 }
 
 function reverseResponse(Object) {
@@ -416,7 +404,6 @@ function xmlResponse(n) {
         .fail(function() {
             $('#arm').remove();
             operation = false
-            refreshResponse()
         })
         .done(function(xhr) {
 			$('#home').removeClass('animate')
