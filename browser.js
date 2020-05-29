@@ -92,12 +92,9 @@ $(document).ready(function() {
 
 }).on('touch click', '.indicator', function(e){
 
-	$('#progressBar').addClass('response').css('width','100%')
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-		$(this).removeClass('response').width(0)
-	})
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
+	$('#progressBar').addClass('response').width('50%')
 	populateResponse()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
@@ -230,6 +227,7 @@ function filterResponse(random, x) {
 	filter = []
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
+	$('#progressBar').addClass('response').width('50%')
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
@@ -343,6 +341,10 @@ function populateResponse(n) {
 				}
 			}
 	}
+	$('#progressBar').addClass('response').width('100%')
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	applyVisual()
 	filter = []
 	former = 1
@@ -400,7 +402,6 @@ function xmlResponse(n) {
 	})
 	document.title = sanitize
 	$('input[type=text]').val(document.title)
-	$('#progressBar').addClass('response').css('width','50%')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
