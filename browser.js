@@ -227,7 +227,7 @@ function filterResponse(random, x) {
 	filter = []
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
-	$('#progressBar').addClass('response').width('50%')
+	$('#progressBar').addClass('response').width('33%')
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
