@@ -250,7 +250,6 @@ function filterResponse(random, x) {
 		else xmlResponse(r + +1)
 		return false
 	}
-	populateResponse(former)
 	applyVisual()
 
 }
