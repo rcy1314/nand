@@ -496,7 +496,6 @@ function xmlResponse(n) {
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
-				 quit = 12
                  html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
