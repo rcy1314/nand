@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 	reverseResponse(menu.reverse())
 
-}).on('touch click', '#item a, #result a', function(e) {
+}).on('touch click', '#main .item a, #main .result a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noopener')
 	e.stopPropagation()
