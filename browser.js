@@ -485,9 +485,10 @@ function xmlResponse(n) {
 						views = "<div class='ago views' style='left:0em'><b>Views</b> " +
 						$(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     } else views = ''
-                    html = "<div id='yt' class='item' style='width: 100%'><input class='url' value='" + ref.trim() + "'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div><i class='fa fa-ellipsis-h' title='Copy URL'></i>" + 
-                        "<div class='pub'>" + $(this).find('title:first').text() + "</div>" +
+                    html = "<div id='yt' class='item'><input class='url' value='" + ref.trim() + "'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div>" +
+						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" + 
+                        "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
