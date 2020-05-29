@@ -93,6 +93,9 @@ $(document).ready(function() {
 	setTimeout(function() {
 		$('#progressBar').addClass('response').css('width','100%')
 	}, 250)
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	populateResponse()
@@ -235,6 +238,9 @@ function filterResponse(random, x) {
 	setTimeout(function() {
 		$('#progressBar').addClass('response').css('width','100%')
 	}, 250)
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {

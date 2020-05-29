@@ -1,4 +1,7 @@
 @media screen and (min-width: 320px) {
+	#placeholder {
+		width: 300px;
+	}
 	.item {
 		width: 95% !important;
 		margin: .4em !important;
@@ -20,10 +23,13 @@
 	#container {
 		width: 100%
 	}
+	#placeholder {
+		width: 350px;
+	}
 	#info {
 		display: inline-block;
 		left: 2em;
-		top: -3em;
+		top: -1.5em;
 	}
 	.item {
 		width: 88% !important;
@@ -90,9 +96,9 @@
 	width: 0%;
 }
 .response {
-	-moz-transition: all 2s ease;
+	-moz-transition: all 1s ease;
 	-moz-transition-delay: 0s;
-	-webkit-transition: all 2s ease;
+	-webkit-transition: all 1s ease;
 	-webkit-transition-delay: 0s;
 }
 div,
@@ -180,15 +186,17 @@ body,
 	border: .3px solid rgba(128, 128, 128, .5);
 	position: relative;
 	margin: 0 auto;
-	width: 300px;
 }
 #info {
 	border: .3px solid rgba(128, 128, 128, .5);
 	background-color: #fff;
 	position: relative;
-	margin-bottom: 2em;
 	padding: 2em;
 	width: 21em;
+}
+#info li a {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 20px;
 }
 .result {
 	justify-content: center;
@@ -297,7 +305,7 @@ input[type=text] {
 	outline: none;
 	height: 3em;
 	width: 20em;
-	top: -4.3em;
+	top: -4.6em;
 }
 input[type=submit] {
 	display: none;
