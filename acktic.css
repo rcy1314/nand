@@ -79,13 +79,13 @@
 }
 .responseInvert {
 	background-color: #ffbd77;
-	background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 37%, #acfcd9 100%);
+	background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 100%, #acfcd9 100%);
 	height: 3px;
 	width: 0%;
 }
 .responseOpposite {
 	background-color: #7fd82b;
-	background-image: linear-gradient(319deg, #7fd82b 0%, #ef4063 37%, #e557c6 100%);
+	background-image: linear-gradient(319deg, #ef4063 0%, #e557c6 100%);
 	height: 3px;
 	width: 0%;
 }
