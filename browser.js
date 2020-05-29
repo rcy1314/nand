@@ -228,8 +228,8 @@ function filterResponse(random, x) {
 
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
-	$('#bottom').show()
 	$('#main').scrollTop(0)
+	$('svg .progress, .indicator').show()
 	$('#main .item, #main .result').remove()	
 	$('#progressBar').removeClass('response').width(0)
 	setTimeout(function() {
@@ -347,7 +347,6 @@ function populateResponse(n) {
 				}
 			}
 	}
-	$('svg .progress, .indicator').show()
 	applyVisual()
 	filter = []
 	former = 1
