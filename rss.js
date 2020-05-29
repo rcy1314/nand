@@ -1499,7 +1499,7 @@ var menu = [{
 		uri: "https://www.windowscentral.com/rss",
 		ext: "https://www.windowscentral.com"
 	}, {
-		id: "Wired",
+		id: "Wired Technology",
 		cat: "Technology",
 		des: "WIRED is where tomorrow is realized. It is the essential source of information.",
 		uri: "https://www.wired.com/feed/rss",
