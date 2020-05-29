@@ -1169,6 +1169,12 @@ var menu = [{
 		uri: "https://gadgets.ndtv.com/rss/feeds",
 		ext: "https://gadgets.ndtv.com"
 	}, {
+		id: "Gamespot",
+		cat: "Technology",
+		des: "Gamespot's Everything Feed! All the latest from GameSpot.",
+		uri: "https://www.gamespot.com/feeds/mashup/",
+		ext: "https://www.gamespot.com"
+	}, {
 		id: "GeekWire",
 		cat: "Technology",
 		des: "GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",
