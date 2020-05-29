@@ -1223,9 +1223,9 @@ var menu = [{
 		uri: "https://www.inverse.com/feed/articles/1.rss",
 		ext: "https://www.inverse.com"
 	}, {
-		id: "Leak-Lookup",
+		id: "Leak Lookup",
 		cat: "Technology",
-		des: "Leak-Lookup Latest Database Leaks and Records Counting.",
+		des: "Leak Lookup Latest Database Leaks and Records Counting.",
 		uri: "https://leak-lookup.com/rss",
 		ext: "https://leak-lookup.com"
 	}, {
