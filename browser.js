@@ -95,7 +95,7 @@ $(document).ready(function() {
 	}, 250)
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
-	populateResponse(former)
+	populateResponse()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	document.title = 'RSS-Browser`'
 	$('#main').attr('tabindex',-1).focus()	
@@ -315,13 +315,15 @@ function momentTimeStamp(n) {
 function populateResponse(n) {
 
 	filter = []
-	if (former != -1) i = former - 1
-	else i = 0
-	if (i < menu.length / 2 || i == menu.length - 1) {
+	if (former != -1) n = former - 1
+	else n = 0
+	console.log(former)
+	console.log(n)
+	if (n == menu.length - 1 || former == n + 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-		for (i; i <= menu.length - 1; i++) {
+		for (var i = n; i <= menu.length - 1; i++) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
 						"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
@@ -333,10 +335,10 @@ function populateResponse(n) {
 				former = i
 				}
 		}
-	} 
+	}
 	if (former > menu.length / 2) {
 		if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
-			for (var i = menu.length - 1; i >= 0; i--) {
+			for (var i = former; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
 					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
