@@ -250,6 +250,9 @@ function filterResponse(random, x) {
 		else xmlResponse(r + +1)
 		return false
 	}
+	setTimeout(function() {
+		populateResponse(former)
+	}, 150)
 	applyVisual()
 
 }
@@ -303,7 +306,7 @@ function populateResponse(n) {
 	filter = []
 	if (former != -1) i = former - 1
 	else i = 0
-	if (i < menu.length - 1 / 2 || i == menu.length - 1) {
+	if (i < menu.length / 2 || i == menu.length - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
@@ -320,7 +323,7 @@ function populateResponse(n) {
 				}
 		}
 	} 
-	if (former > menu.length - 1 / 2 || former == menu.length - 1) {
+	if (former > menu.length / 2) {
 		if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
 			for (var i = menu.length - 1; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
