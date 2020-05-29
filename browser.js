@@ -518,6 +518,7 @@ function xmlResponse(n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			$('#main').attr('tabindex', -1).focus()
 			applyVisual()
         })
 
