@@ -227,6 +227,7 @@
  #ago, .ago, .attr {
      text-transform: capitalize;
      display: inline-block;
+	 position: relative;
      width: fit-content;
      line-height: .3;
      font-size: 9px;
