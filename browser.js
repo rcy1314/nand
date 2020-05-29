@@ -75,6 +75,10 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
+	$('#progressBar').addClass('response').css('width','100%')
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	$('#main #visit').remove()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
@@ -226,14 +230,10 @@ function filterResponse(random, x) {
 	filter = []
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
-	$('#progressBar').addClass('response').css('width','100%')
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-		$(this).removeClass('response').width(0)
-	})
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\-|\.)/g, ' ').toLowerCase().match(n)) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0) {
 		    	$('#main .result').prepend(
 					"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
@@ -399,8 +399,9 @@ function xmlResponse(n) {
 		return e.toUpperCase()
 	})
 	document.title = sanitize
-	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('input[type=text]').val(document.title)
+	$('#progressBar').addClass('response').css('width','50%')
+	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
     request = $.get({
@@ -421,6 +422,10 @@ function xmlResponse(n) {
         .done(function(xhr) {
 			$('#visit').hide()
 			$('svg circle, .indicator').show()
+			$('#progressBar').width(100%)
+			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+				$(this).removeClass('response').width(0)
+			})
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
