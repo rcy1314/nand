@@ -89,6 +89,10 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle', function(e){
 
+	$('#progressBar').removeClass('response').width(0)
+	setTimeout(function() {
+		$('#progressBar').addClass('response').css('width','100%')
+	}, 250)
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	populateResponse(former)
@@ -156,6 +160,7 @@ function applyVisual(n) {
             'color': 'rgba(255,255,255, 1)'
         })
 		$('#main').addClass('opposite').removeClass('invert')
+		$('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#home, .indicator').attr('src', 'images/opposite.png')
         $('svg .progress').css('stroke', '#F74268')
@@ -172,6 +177,7 @@ function applyVisual(n) {
 			'background-color': '#fafafa'
 		})
 		$('#placeholder, #info, .item').css('box-shadow', '.7px .7px 4px rgba(0,0,0,.1)')
+		$('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
 		$('#main').addClass('invert').removeClass('opposite')
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
@@ -225,6 +231,10 @@ function filterResponse(random, x) {
 	$('#bottom').show()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()	
+	$('#progressBar').removeClass('response').width(0)
+	setTimeout(function() {
+		$('#progressBar').addClass('response').css('width','100%')
+	}, 250)
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
@@ -253,7 +263,7 @@ function filterResponse(random, x) {
 	}
 	setTimeout(function() {
 		populateResponse(former)
-	}, 150)
+	}, 350)
 	applyVisual()
 
 }

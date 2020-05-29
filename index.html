@@ -1,49 +1,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+
+<head>
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
-    <link id='favicon' rel="icon" type="image/png" href="images/invert.png">
-    <link rel="stylesheet" type="text/css" href="acktic.css">
-    <script src="browser.js"></script>
-    <script src="rss.js"></script>
-  </head>
+	<link id='favicon' rel="icon" type="image/png" href="images/invert.png">
+	<link rel="stylesheet" type="text/css" href="acktic.css">
+	<script src="browser.js"></script>
+	<script src="rss.js"></script>
+</head>
+
 <body>
-<div id='wrapper'>
-	<div id='container'>
-		<div id='arm'>
-			<form id='search' action='#'>
-				<img id='home'>
-    			<input type='submit'>
-				<input id='text' type='text' placeholder='Search'>
-			</form>
-		</div>
-    	<div id='main'>
-			<div id='visit'>
-			<img id='placeholder'>
-			<div id='info'>
-				You'll find a wealth of information here.<br>
-				Here are the categories
-				<ul>
-					<li><a>News</a></li>
-					<li><a>Social</a></li>
-					<li><a>Media</a></li>
-					<li><a>Sports</a></li>
-					<li><a>Technology</a></li>
-					<li><a>World</a></li>
-					<li><a>Youtube</a></li>
-				</ul>
-				<div class='pro'>Want to contribute? Take a look at the <a href='https://github.com/acktic/acktic.github.io' ref='noopener' target='_blank'>source</a>!</div>
+	<div id='wrapper'>
+		<div id='container'>
+			<div id='arm'>
+				<form id='search' action='#'>
+					<div id="progressBar" class="progress_bar"></div>
+					<img id='home'>
+					<input type='submit'>
+					<input id='text' type='text' placeholder='Search'>
+				</form>
+			</div>
+			<div id='main'>
+				<div id='visit'>
+					<img id='placeholder'>
+					<div id='info'>You'll find a wealth of information here.
+						<br>Here are the categories
+						<ul>
+							<li><a>News</a>
+							</li>
+							<li><a>Social</a>
+							</li>
+							<li><a>Media</a>
+							</li>
+							<li><a>Sports</a>
+							</li>
+							<li><a>Technology</a>
+							</li>
+							<li><a>World</a>
+							</li>
+							<li><a>Youtube</a>
+							</li>
+						</ul>
+						<div class='pro'>Want to contribute? Take a look at the <a href='https://github.com/acktic/acktic.github.io' ref='noopener' target='_blank'>source</a>!</div>
+					</div>
+				</div>
+			</div>
+			<div id='bottom'>
+				<svg>
+					<circle cx='24' cy='26' r='21' class='progress'>
+				</svg>
+				<img class='indicator'>
 			</div>
 		</div>
-	</div>
-	<div id='bottom'>
-	<svg>
-		<circle cx='24' cy='26' r='21' class='progress'>
-	</svg>
-	<img class='indicator'>
-	</div>
-</div>
 </body>
+
 </html>
