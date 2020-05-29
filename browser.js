@@ -475,6 +475,7 @@ function xmlResponse(n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
+				console.log(src)
                 if (src.match(/comments|default|feeds|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
@@ -500,7 +501,7 @@ function xmlResponse(n) {
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago' style='width:99%;display:block'>" + filter[n].cat + "</div>" + 
+                        "<div id='ago' style='width:98%;display:block'>" + filter[n].cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
