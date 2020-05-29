@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#home', function(e){
 
-	location.reload()
+	location.href = window.location.origin
 
 }).on('touch click', '.item', function(e){
 
