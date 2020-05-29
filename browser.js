@@ -86,7 +86,7 @@ $(document).ready(function() {
 	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
 
-}).on('touch click scroll focus', 'svg circle', function(e){
+}).on('touch click', '.indicator', function(e){
 
 	$('#progressBar').addClass('response').css('width','100%')
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
