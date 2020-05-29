@@ -23,11 +23,9 @@ $(document).ready(function() {
 
 		applyVisual(!op)
 		contrast = true
-		$('#main #placeholder').attr('src','images/visual.png')
 
     } else {
 		applyVisual(op)
-		$('#main #placeholder').attr('src','images/wall.png')
 	}
 
 	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
@@ -89,10 +87,7 @@ $(document).ready(function() {
 
 }).on('touch click scroll focus', 'svg circle', function(e){
 
-	$('#progressBar').removeClass('response').width(0)
-	setTimeout(function() {
-		$('#progressBar').addClass('response').css('width','100%')
-	}, 250)
+	$('#progressBar').addClass('response').css('width','100%')
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 		$(this).removeClass('response').width(0)
 	})
@@ -179,13 +174,12 @@ function applyVisual(n) {
 	        'border': '.3px solid rgba(0,0,0,.1)',
 			'background-color': '#fafafa'
 		})
-		$('#placeholder, #info, .item').css('box-shadow', '.7px .7px 4px rgba(0,0,0,.1)')
+		$('.item').css('box-shadow', '.7px .7px 4px rgba(0,0,0,.1)')
 		$('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
 		$('#main').addClass('invert').removeClass('opposite')
 		$('.item, .title').css('border','.3px solid rgba(128,128,128,.3)')
 		$('.pub').css('color','rgba(0,0,0,.8)')
 		$('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
-        $('#home').attr('src', 'images/transparent.png')
 		$('.indicator').attr('src', 'images/invert.png')
         $('#favicon').attr('href', 'images/invert.png')
         $('svg .progress').css('stroke', '#08bd93')
@@ -234,10 +228,7 @@ function filterResponse(random, x) {
 	$('#main').scrollTop(0)
 	$('svg .progress, .indicator').show()
 	$('#main .item, #main .result').remove()	
-	$('#progressBar').removeClass('response').width(0)
-	setTimeout(function() {
-		$('#progressBar').addClass('response').css('width','100%')
-	}, 250)
+	$('#progressBar').addClass('response').css('width','100%')
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 		$(this).removeClass('response').width(0)
 	})
@@ -268,8 +259,8 @@ function filterResponse(random, x) {
 		return false
 	}
 	setTimeout(function() {
-		populateResponse(former)
-	}, 350)
+		populateResponse()
+	}, 250)
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
@@ -320,10 +311,9 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-
 	if (former != -1) n = former - 1
 	else n = 0
-	if (n == menu.length - 1 || former == n + 1) {
+	if (n == menu.length - 1 || n == 0 || n == former - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
@@ -341,9 +331,10 @@ function populateResponse(n) {
 				}
 		}
 	}
-	if (former > menu.length / 2) {
+	if (former > menu.length / 4) {
+		if (former == menu.length) former = former - 1
 		if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
-			for (var i = former; i >= 0; i--) {
+			for (var i = former - 1; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
 					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
