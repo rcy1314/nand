@@ -315,7 +315,6 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-	filter = []
 	if (former != -1) n = former - 1
 	else n = 0
 	if (n == menu.length - 1 || former == n + 1) {
@@ -324,6 +323,7 @@ function populateResponse(n) {
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 		for (var i = n; i <= menu.length - 1; i++) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+				filter = []
 					$('#main .result').append(
 						"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 						"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
