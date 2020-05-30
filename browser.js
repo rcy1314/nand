@@ -242,7 +242,7 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('#main').scrollTop(0)
-	$('#progressBar').width(Math.floor(Math.random() * 66) + 33 + '%')
+	$('#progressBar').width(Math.floor(Math.random() * (66 - 25 + 1) + 25) + '%')
 	$('#main .item, #main .result').remove()	
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
