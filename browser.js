@@ -98,7 +98,9 @@ $(document).ready(function() {
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	$('#progressBar').addClass('response').width('50%')
+	setTimeout(function() {
 	filterResponse(0, $('input[type=text]').val())
+	}, 300)
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	$('#main').attr('tabindex',-1).focus()	
 
