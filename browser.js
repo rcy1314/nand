@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('#visit').show()
 		if (!n[1]) {
 			if (n[0]) {
-				filterResponse(0, n[0].replace(/\-/g, ' '))
+				filterResponse(1, n[0].replace(/\-/g, ' '))
 				$('input[type=text]').val(n[0])
 			}
 		} 
@@ -100,7 +100,7 @@ $(document).ready(function() {
 	$('#main .item, #main .result').remove()
 	$('#progressBar').addClass('response').width('33%')
 	setTimeout(function() {
-	filterResponse(0, $('input[type=text]').val())
+		filterResponse(0, $('input[type=text]').val())
 	}, 300)
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	$('#main').attr('tabindex',-1).focus()	
@@ -427,7 +427,6 @@ function xmlResponse(n) {
 		return e.toUpperCase()
 	})
 	document.title = sanitize
-	$('#progressBar').width('66%')
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
@@ -449,7 +448,7 @@ function xmlResponse(n) {
         .done(function(xhr) {
 			$('#visit').hide()
 			$('svg circle, .indicator').show()
-			$('#progressBar').width('100%')
+			$('#progressBar').addClass('response').width('100%')
 			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 				$(this).removeClass('response').width(0)
 			})
