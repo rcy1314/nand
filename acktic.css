@@ -210,6 +210,8 @@ body,
 }
 #placeholder {
 	filter: brightness(20%) saturate(50%) invert(90%);
+	position: relative;
+	left: 10px;
 }
 .result {
 	justify-content: center;
