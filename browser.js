@@ -33,7 +33,12 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
-		if (!n[1]) n[1] = n[0] 
+		if (!n[1]) {
+			if (n[0]) {
+				filterResponse(0, n[0].replace(/\-/g, ' '))
+				$('input[type=text]').val(n[0])
+			}
+		} 
 		if (n[0] && n[0] != '&') {
 			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
 			$('#main #visit').hide()
@@ -77,10 +82,6 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e){
 
-	$('#progressBar').addClass('response').css('width','100%')
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-		$(this).removeClass('response').width(0)
-	})
 	$('#main #visit').remove()
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
@@ -97,7 +98,7 @@ $(document).ready(function() {
 	$('#visit').remove()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
-	$('#progressBar').addClass('response').width('50%')
+	$('#progressBar').addClass('response').width('33%')
 	setTimeout(function() {
 	filterResponse(0, $('input[type=text]').val())
 	}, 300)
@@ -241,8 +242,8 @@ function filterResponse(random, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('#main').scrollTop(0)
+	$('#progressBar').width(Math.floor(Math.random() * 66) + 33 + '%')
 	$('#main .item, #main .result').remove()	
-	$('#progressBar').addClass('response').width('33%')
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
