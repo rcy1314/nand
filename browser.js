@@ -75,12 +75,6 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noopener')
 	e.stopPropagation()
 
-}).on('touch click', '#main #visit #info li a', function(e) {
-
-	$('#main #visit').remove()
-	filterResponse(0, $(this).text())
-	e.stopPropagation()
-
 }).on('submit', '#search', function(e){
 
 	$('#progressBar').addClass('response').css('width','100%')
@@ -98,8 +92,9 @@ $(document).ready(function() {
 	$('#main').attr('tabindex', -1).focus()
 	e.preventDefault()
 
-}).on('touch click', '.indicator', function(e){
+}).on('touch click', '#placeholder, .indicator', function(e){
 
+	$('#visit').remove()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	$('#progressBar').addClass('response').width('50%')
