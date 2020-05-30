@@ -168,7 +168,7 @@ function applyVisual(n) {
 		$('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
 		$('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
         $('#home, .indicator').attr('src', 'images/opposite.png').css('filter','none')
-        $('#favicon').attr('href', 'images/transparent.png')
+        $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
         $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a').css({
