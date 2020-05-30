@@ -250,6 +250,7 @@ function filterResponse(random, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
+			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (random == 0) {
 				writeResponse(menu.indexOf(menu[i]))
@@ -257,8 +258,6 @@ function filterResponse(random, x) {
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
 			
-		} else if (menu[i].cat.toLowerCase().match(n) && menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() != n) { 
-			break
 		} else if (menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0) {
 				writeResponse(menu.indexOf(menu[i]))
