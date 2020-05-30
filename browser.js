@@ -238,7 +238,7 @@ function filterResponse(random, x) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n && menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (random == 0) {
 		    	$('#main .result').prepend(
 					"<div class='filter " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
