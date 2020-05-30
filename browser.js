@@ -28,12 +28,20 @@ $(document).ready(function() {
 		applyVisual(op)
 	}
 
-	if (location.search.split('?')[1] && !location.href.match('\\?\\+1')) {
-		var n = location.search.split('?')[1]
+	if (location.search.split('?q=')[1] && !location.href.match('\\?\\+1')) {
+		var n = location.search.split('?q=')[1]
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
+		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
-        filterResponse(1, n)
-
+		if (!n[1]) n[1] = n[0] 
+		if (n[0] && n[1]) {
+			$('input[type=text]').val(n[0])
+			$('#main #visit').hide()
+        	filterResponse(1, n[1])
+		} else {
+			populateResponse()
+			$('#main #visit').hide()
+		}
 	} else $('#main #visit').show()
 
 	$('#main').on('scroll touchmove', function(){
@@ -95,9 +103,8 @@ $(document).ready(function() {
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
 	$('#progressBar').addClass('response').width('50%')
-	populateResponse()
+	filterResponse(0, $('input[type=text]').val())
 	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
-	document.title = 'RSS-Browser`'
 	$('#main').attr('tabindex',-1).focus()	
 
 }).on('touch click', '#home', function(e){
@@ -231,10 +238,10 @@ function filterResponse(random, x) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n || menu[i].cat.toLowerCase().match(n)) {
 			if (random == 0) {
 		    	$('#main .result').prepend(
-					"<div class='filter " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+					"<div class='filter " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 					"</div><div class='type'>filter</div></div>"
@@ -317,7 +324,7 @@ function populateResponse(n) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 				filter = []
 					$('#main .result').append(
-						"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+						"<div class='populate " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 						"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 						"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 						"</div><div class='type'>populate</div></div>"
@@ -333,7 +340,7 @@ function populateResponse(n) {
 			for (var i = former - 1; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
-					"<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+					"<div class='populate " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 					"</div><div class='type'>reverse</div></div>"
@@ -402,7 +409,6 @@ function xmlResponse(n) {
 	})
 	document.title = sanitize
 	$('#progressBar').width('66%')
-	$('input[type=text]').val(document.title)
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
