@@ -11,6 +11,7 @@
 * Opera (68.0.3618.104) 
 * Vivaldi (3.0.1874.38)
 * SeaMonkey (2.53.2) 
+* Brave (1.9.76) 
 * LG Web OS
 * Min (1.14)
 
