@@ -442,8 +442,9 @@ function xmlResponse(n) {
 			}
         })
         .fail(function() {
-            $('#arm').remove();
-            operation = false
+			$('#main #visit').remove()
+			if ($('input[type=text]').val().length) filterResponse(0, $('input[type=text]').val())
+			else populateResponse()
         })
         .done(function(xhr) {
 			$('#visit').hide()
