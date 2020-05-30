@@ -34,7 +34,7 @@ $(document).ready(function() {
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
 		if (!n[1]) n[1] = n[0] 
-		if (n[0]) {
+		if (n[0] && n[0] != '&') {
 			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
