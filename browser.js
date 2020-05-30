@@ -34,8 +34,8 @@ $(document).ready(function() {
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
 		if (!n[1]) n[1] = n[0] 
-		if (n[0] && n[1]) {
-			$('input[type=text]').val(n[0])
+		if (n[0]) {
+			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
 		} else {
@@ -228,6 +228,17 @@ function expandImage(n) {
 
 }
 
+function writeResponse(n) {
+
+	$('#main .result').prepend(
+		"<div class='filter " + menu.indexOf(menu[n]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+		"<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n].ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a>" +
+		"&ensp;<div class='description'>" + menu[n].des + "</div>" +
+		"</div><div class='type'>filter</div></div>"
+	)
+
+}
+
 function filterResponse(random, x) {
 
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
@@ -238,19 +249,30 @@ function filterResponse(random, x) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n && menu[i].cat.toLowerCase().match(n) || menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
 			if (random == 0) {
-		    	$('#main .result').prepend(
-					"<div class='filter " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
-					"</div><div class='type'>filter</div></div>"
-				)
+				writeResponse(menu.indexOf(menu[i]))
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-        }
-    }
+   		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
+			if (random == 0) {
+				writeResponse(menu.indexOf(menu[i]))
+			}
+			filter.push(menu.indexOf(menu[i]))
+			former = filter[0] + +1
+			
+		} else if (menu[i].cat.toLowerCase().match(n) && menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() != n) { 
+			break
+		} else if (menu[i].cat.toLowerCase().match(n)) {
+			if (random == 0) {
+				writeResponse(menu.indexOf(menu[i]))
+			}
+			filter.push(menu.indexOf(menu[i]))
+			former = filter[0] + +1
+
+		}
+	}
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
