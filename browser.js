@@ -401,6 +401,7 @@ function xmlResponse(n) {
 		return e.toUpperCase()
 	})
 	document.title = sanitize
+	$('#progressBar').width('66%')
 	$('input[type=text]').val(document.title)
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
