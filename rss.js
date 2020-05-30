@@ -1433,6 +1433,12 @@ var menu = [{
 		uri: "https://www.techspot.com/backend.xml",
 		ext: "https://techspot.com"
 	}, {
+		id: "TheOlognion",
+		cat: "Technology",
+		des: "The Olognion Exquisite tech news.",
+		uri: "https://www.theolognion.com/rss",
+		ext: "https://www.theolognion.com"
+	}, {
 		id: "The Next Web",
 		cat: "Technology",
 		des: "TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",
