@@ -118,8 +118,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	if (contrast == true) window.location.assign('?' + $(this).attr('response') + '+1')
-    else window.location.assign('?' + $(this).attr('response'))
+	if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr('response') + '+1')
+    else window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr('response'))
 
 }).on('mouseover mouseout', '.pub', function(e){
 
@@ -231,7 +231,7 @@ function expandImage(n) {
 function writeResponse(n) {
 
 	$('#main .result').prepend(
-		"<div class='filter " + menu.indexOf(menu[n]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+		"<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 		"<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n].ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a>" +
 		"&ensp;<div class='description'>" + menu[n].des + "</div>" +
 		"</div><div class='type'>filter</div></div>"
@@ -346,7 +346,7 @@ function populateResponse(n) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 				filter = []
 					$('#main .result').append(
-						"<div class='populate " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+						"<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 						"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 						"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 						"</div><div class='type'>populate</div></div>"
@@ -362,7 +362,7 @@ function populateResponse(n) {
 			for (var i = former - 1; i >= 0; i--) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
 					$('#main .result').append(
-					"<div class='populate " + menu.indexOf(menu[i]) + "' response='q=" + $('input[type=text]').val() + "&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
+					"<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 					"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
 					"&ensp;<div class='description'>" + menu[i].des + "</div>" +
 					"</div><div class='type'>reverse</div></div>"
