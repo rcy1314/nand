@@ -283,7 +283,8 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, exact)
 		return false
 	}
-	if (response == 0 && !exact && filter.length == 0) {
+	if (response == 0 && !exact && filter.length <= 0) {
+		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 	}
 	$('#progressBar').addClass('response').width('100%')
