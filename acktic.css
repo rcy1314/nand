@@ -134,7 +134,6 @@ input[type=text] {
 	font-family: Arial;
 }
 .filter,
-.search,
 .populate,
 .pub,
 .img,
@@ -219,7 +218,6 @@ body,
 	display: flex;
 	width: 100%;
 }
-.search,
 .filter,
 .populate {
 	display: inline-flex;
@@ -239,15 +237,12 @@ body,
 .title {
 	border-radius: 10px;
 	padding: 7px;
-	clear: left;
 	float: left;
 }
 .description {
 	display: table-cell;
 	position: relative;
-	width: 100%;
-	left: 10px;
-	top: -6px;
+	width: fit-content;
 }
 .type {
 	position: relative;
@@ -320,7 +315,7 @@ input[type=text] {
 	display: table;
 	outline: none;
 	height: 3em;
-	width: 20em;
+	width: 30em;
 	top: -4.6em;
 }
 input[type=submit] {

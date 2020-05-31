@@ -227,9 +227,9 @@ function writeResponse(n) {
 
 	$('#main .result').prepend(
 		"<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-		"<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n].ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a>" +
-		"&ensp;<div class='description'>" + menu[n].des + "</div>" +
-		"</div><div class='type'>filter</div></div>"
+		"<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n].ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
+		"<div class='description'>&emsp;" + menu[n].des + "</div>" +
+		"<div class='type'>filter</div></div>"
 	)
 
 }
