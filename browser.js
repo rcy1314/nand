@@ -35,14 +35,13 @@ $(document).ready(function() {
 		$('#visit').show()
 		if (!n[1] && n[0]) {
 				filterResponse(0, n[0].replace(/\-/g, ' '))
-				$('input[type=text]').val(n[0])
+				$('input[type=text]').val(n[0].replace(/\%20/g, ''))
 		} 
 		if (n[1] && n[0] != '&') {
-			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
+			$('input[type=text]').val(n[0].replace(/(\-|\%20)/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
 		} else {
-			populateResponse()
 			$('#main #visit').hide()
 		}
 	} else $('#main #visit').show()
@@ -189,7 +188,7 @@ function applyVisual(n) {
     }
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css('background-color','#fafafa')
-		$('input[type=text]').css('background-color','#fff')
+		$('input[type=text], #main').css('background-color','#fff')
 	}
 	
 }
@@ -260,6 +259,13 @@ function filterResponse(response, x) {
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
 			
+   		} else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
+			if (response == 0) {
+				writeResponse(menu.indexOf(menu[i]))
+			}
+			filter.push(menu.indexOf(menu[i]))
+			former = filter[0] + +1
+			
 		} else if (menu[i].cat.toLowerCase().match(n)) {
 			if (response == 0) {
 				writeResponse(menu.indexOf(menu[i]))
@@ -277,12 +283,71 @@ function filterResponse(response, x) {
 		xmlResponse(exact)
 		return false
 	}
-	setTimeout(function() {
-		populateResponse()
-	}, 250)
+	if (response == 0 && !exact) {
+		xmlSearch(n)
+	}
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
+}
+
+function xmlSearch(n) {
+	var pub = []
+    request = $.get({
+            url: cors + 'https://www.bing.com/search?q=' + n + '&format=RSS',
+			method: 'GET',
+			dataType: 'xml',
+			contentType: 'text/html; charset=utf-8',
+ 			headers: {          
+				Accept: 'text/html; charset=utf-8',
+						'Content-Type': 'text/html; charset=utf-8',
+						'X-Requested-With': '*'
+			}
+        })
+        .fail(function() {
+			$('#main #visit').remove()
+			if ($('input[type=text]').val().length) filterResponse(0, $('input[type=text]').val())
+			else populateResponse()
+        })
+        .done(function(xhr) {
+			$('#progressBar').addClass('response').width('100%')
+			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+				$(this).removeClass('response').width(0)
+			})
+			if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+            $(xhr).find('item').each(function(i) {
+            if ($(xhr).find('item').length < quit) quit = $(xhr).find('item').length
+                    var ref = $(this).find('link').text()
+                        var dst = uncoordinatedTimeZone($(this).find('pubDate').text());
+                        var gen = new Date($(this).find('pubDate').text()).getTime()
+                courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"https://www.bing.com/\")'>Bing</a></div>"
+                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
+						"<div class='ack'><i class='fa fa-at'></i></div>" +
+						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
+                        "<div id='ago' style='width:98%;display:block;text-transform:none'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>" + 
+                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
+						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
+						"<div class='ago attr' style='width:100%;display:block'></div>" +
+						"<div class='border'></div>" + courtesy + 
+						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
+						"<i class='ago fa fa-bookmark-o'></i>" +
+						"</div></div>"
+                pub.push({
+                    element: i,
+                    since: gen,
+                    post: html
+                })
+			})
+            pub.sort(function(a, b) {
+                return b.since - a.since
+            })
+			$('svg .progress, .indicator').show()
+            for (var e = 0; e <= quit - 1; e++) {
+                $('#main').append(pub[e].post)
+            }
+			applyVisual()
+		})
 }
 
 function imageResolution(n) {

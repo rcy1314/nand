@@ -134,7 +134,7 @@ input[type=text] {
 	font-family: Arial;
 }
 .filter,
-.air,
+.search,
 .populate,
 .pub,
 .img,
@@ -219,6 +219,7 @@ body,
 	display: flex;
 	width: 100%;
 }
+.search,
 .filter,
 .populate {
 	display: inline-flex;
