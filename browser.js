@@ -34,7 +34,7 @@ $(document).ready(function() {
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
 		if (!n[1] && n[0]) {
-				filterResponse(0, n[0].replace(/(\-|\+)/g, ' '))
+				filterResponse(1, n[0].replace(/(\-|\+)/g, ' '))
 				$('input[type=text]').val(n[0].replace(/(\%20|\+)/g, ' '))
 		} 
 		if (n[1] && n[0] != '&') {
@@ -250,7 +250,7 @@ function filterResponse(response, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-			var exact = i
+			var exact = i + +1
 			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (response == 0) {
@@ -272,24 +272,33 @@ function filterResponse(response, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-
 		}
 	}
+	console.log(filter)
 	if (x == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
-	}
-	if (response == 1 && exact) {
+	} else if (response == 1 && exact) {
 		xmlResponse(null, null, exact)
 		return false
-	}
-	if (response == 0 && !exact && filter.length < 0) {
+	} else if (response == 0 && !exact && filter === undefined || filter == 0) {
 		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
+		return false
+	} else if (response == 1) {
+		for (var i = filter.length - 1; i >= 0; i--) {
+			writeResponse(filter[i])
+		}
+		setTimeout(function() {
+			populateResponse()
+		}, 250)
+		setTimeout(function() {
+			$('#progressBar').addClass('response').width('100%')
+		}, 300)
+		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+			$(this).removeClass('response').width(0)
+		})
 	}
-	setTimeout(function() {
-		populateResponse()
-	}, 250)
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
@@ -340,8 +349,8 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-	if (former != -1) n = former - 1
-	else n = 0
+	if (former === undefined || former == 0) n = 0
+	else n = former - 1
 	if (n == menu.length - 1 || n == 0 || n == former - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 	    if (reverse == true) reverseResponse(menu.reverse())
