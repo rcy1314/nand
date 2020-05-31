@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('#visit').show()
 		if (!n[1]) {
 			if (n[0]) {
-				filterResponse(1, n[0].replace(/\-/g, ' '))
+				filterResponse(0, n[0].replace(/\-/g, ' '))
 				$('input[type=text]').val(n[0])
 			}
 		} 

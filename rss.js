@@ -725,6 +725,12 @@ var menu = [{
 		uri: "http://boards.4chan.org/wg/index.rss",
 		ext: "http://boards.4channel.org/wg"
 	}, {
+		id: "Reddit/iWallpaper",
+		cat: "Social",
+		des: "iWallpaper subreddit for wallpaper enthusiasts.",
+		uri: "https://reddit.com/r/iwallpaper/.rss",
+		ext: "https://reddit.com/r/iWallpaper"
+	}, {
 		id: "Reddit/Wallpaper",
 		cat: "Social",
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
