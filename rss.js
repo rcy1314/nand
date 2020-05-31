@@ -503,6 +503,12 @@ var menu = [{
 		uri: "http://boards.4channel.org/diy/index.rss",
 		ext: "http://boards.4channel.org/diy"
 	}, {
+		id: "Reddit/DuckDuckGo",
+		cat: "Social",
+		des: "r/DuckDuckGo is for news, updates and discussion about the search engine DuckDuckGo.",
+		uri: "https://reddit.com/r/duckduckgo/.rss",
+		ext: "https://reddit.com/r/duckduckgo/"
+	}, {
 		id: "Reddit/Entertainment",
 		cat: "Social",
 		des: "Entertainment subreddit has News and Discussion of the Entertainment Industry.",
