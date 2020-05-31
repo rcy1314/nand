@@ -363,7 +363,9 @@ function populateResponse(n) {
 				}
 			}
 	}
+	setTimeout(function () {
 	$('#progressBar').addClass('response').width('100%')
+	}, 300)
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 		$(this).removeClass('response').width(0)
 	})
