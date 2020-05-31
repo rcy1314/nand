@@ -283,9 +283,13 @@ function filterResponse(response, x) {
 		xmlResponse(exact)
 		return false
 	}
-	if (response == 0 && !exact) {
+	if (response == 0 && !exact && filter.length <= 3) {
 		xmlSearch(n)
 	}
+	$('#progressBar').addClass('response').width('100%')
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
