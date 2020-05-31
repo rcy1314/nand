@@ -1,4 +1,10 @@
 var menu = [{
+		id: "Bing",
+		cat: "News",
+		des: "Bing Search Engine Latest News.",
+		uri: "https://www.bing.com/search?q=",
+		ext: "https://www.bing.com"
+	}, {
 		id: "ABC Fresno",
 		cat: "News",
 		des: "ABC KFSN Local Fresno and National News.",
