@@ -293,9 +293,6 @@ function filterResponse(response, x) {
 
 function xmlSearch(n) {
 	var sanitize = n.replace(/(\/|\.|\+)/g, ' ')
-	sanitize = sanitize.replace(re, function(e) {
-		return e.toUpperCase()
-	})
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, ' '))
 	$('input[type=text]').val(sanitize)
