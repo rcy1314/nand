@@ -286,8 +286,8 @@ function filterResponse(response, x) {
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 		return false
 	} else if (response == 1) {
-		for (var i = filter.length - 1; i >= 0; i--) {
-			writeResponse(filter[i])
+		for (var i = 0; i < filter.length - 1; i++) {
+			writeResponse(filter[i+1])
 		}
 		setTimeout(function() {
 			populateResponse()
