@@ -33,11 +33,9 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
-		if (!n[1]) {
-			if (n[0]) {
+		if (!n[1] && n[0]) {
 				filterResponse(0, n[0].replace(/\-/g, ' '))
 				$('input[type=text]').val(n[0])
-			}
 		} 
 		if (n[1] && n[0] != '&') {
 			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
@@ -237,7 +235,7 @@ function writeResponse(n) {
 
 }
 
-function filterResponse(random, x) {
+function filterResponse(response, x) {
 
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
@@ -248,7 +246,7 @@ function filterResponse(random, x) {
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
 		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
-			if (random == 0) {
+			if (response == 0) {
 				writeResponse(menu.indexOf(menu[i]))
 			}
 			filter.push(menu.indexOf(menu[i]))
@@ -256,14 +254,14 @@ function filterResponse(random, x) {
 			var exact = i + +1
 			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-			if (random == 0) {
+			if (response == 0) {
 				writeResponse(menu.indexOf(menu[i]))
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
 			
 		} else if (menu[i].cat.toLowerCase().match(n)) {
-			if (random == 0) {
+			if (response == 0) {
 				writeResponse(menu.indexOf(menu[i]))
 			}
 			filter.push(menu.indexOf(menu[i]))
@@ -271,12 +269,11 @@ function filterResponse(random, x) {
 
 		}
 	}
-	console.log(exact)
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
-	if (random == 1) {
+	if (response == 1 && exact) {
 		xmlResponse(exact)
 		return false
 	}
@@ -341,7 +338,6 @@ function populateResponse(n) {
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 		for (var i = n; i <= menu.length - 1; i++) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
-				filter = []
 					$('#main .result').append(
 						"<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
 						"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
