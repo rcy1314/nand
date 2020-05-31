@@ -250,7 +250,7 @@ function filterResponse(response, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-			var exact = i + +1
+			var exact = i
 			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (response == 0) {
