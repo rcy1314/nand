@@ -34,11 +34,11 @@ $(document).ready(function() {
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
 		if (!n[1] && n[0]) {
-				filterResponse(0, n[0].replace(/\-/g, ' '))
-				$('input[type=text]').val(n[0].replace(/\%20/g, ''))
+				filterResponse(0, n[0].replace(/(\-|\+)/g, ' '))
+				$('input[type=text]').val(n[0].replace(/(\%20|\+)/g, ' '))
 		} 
 		if (n[1] && n[0] != '&') {
-			$('input[type=text]').val(n[0].replace(/(\-|\%20)/g, ' '))
+			$('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
 		} else {
@@ -292,6 +292,13 @@ function filterResponse(response, x) {
 }
 
 function xmlSearch(n) {
+	var sanitize = n.replace(/(\/|\.|\+)/g, ' ')
+	sanitize = sanitize.replace(re, function(e) {
+		return e.toUpperCase()
+	})
+	document.title = sanitize
+	history.replaceState(null, null, window.location.href.replace(/(%20)/g, ' '))
+	$('input[type=text]').val(sanitize)
 	var pub = []
     request = $.get({
             url: cors + 'https://www.bing.com/search?q=' + n + '&format=RSS',
