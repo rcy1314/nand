@@ -196,7 +196,7 @@ body,
 	display: inline-flex;
 	overflow-y: scroll;
 	user-select: none;
-	position: fixed;
+	position: absolute;
 	flex-wrap: wrap;
 	overflow-x: hidden;
 	overflow-y: auto;
