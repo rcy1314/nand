@@ -228,7 +228,7 @@ function writeResponse(n) {
 	$('#main .result').prepend(
 		"<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 		"<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n].ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
-		"<div class='description'>&emsp;" + menu[n].des + "</div>" +
+		"<div class='description'>" + menu[n].des + "</div>" +
 		"<div class='type'>filter</div></div>"
 	)
 
@@ -276,15 +276,15 @@ function filterResponse(response, x) {
 		}
 	}
 	if (x == 'random') {
-		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
 	if (response == 1 && exact) {
-		xmlResponse(exact)
+		xmlResponse(null, null, exact)
 		return false
 	}
-	if (response == 0 && !exact && filter.length <= 3) {
-		xmlSearch(n)
+	if (response == 0 && !exact && filter.length == 0) {
+		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 	}
 	$('#progressBar').addClass('response').width('100%')
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
@@ -293,69 +293,6 @@ function filterResponse(response, x) {
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
-}
-
-function xmlSearch(n) {
-	var sanitize = n.replace(/(\/|\.|\+)/g, ' ')
-	document.title = sanitize
-	history.replaceState(null, null, window.location.href.replace(/(%20)/g, ' '))
-	$('input[type=text]').val(sanitize)
-	var pub = []
-    request = $.get({
-            url: cors + 'https://www.bing.com/search?q=' + n + '&format=RSS',
-			method: 'GET',
-			dataType: 'xml',
-			contentType: 'text/html; charset=utf-8',
- 			headers: {          
-				Accept: 'text/html; charset=utf-8',
-						'Content-Type': 'text/html; charset=utf-8',
-						'X-Requested-With': '*'
-			}
-        })
-        .fail(function() {
-			$('#main #visit').remove()
-			if ($('input[type=text]').val().length) filterResponse(0, $('input[type=text]').val())
-			else populateResponse()
-        })
-        .done(function(xhr) {
-			$('#progressBar').addClass('response').width('100%')
-			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-				$(this).removeClass('response').width(0)
-			})
-			if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-            $(xhr).find('item').each(function(i) {
-            if ($(xhr).find('item').length < quit) quit = $(xhr).find('item').length
-                    var ref = $(this).find('link').text()
-                        var dst = uncoordinatedTimeZone($(this).find('pubDate').text());
-                        var gen = new Date($(this).find('pubDate').text()).getTime()
-                courtesy = "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"https://www.bing.com/\")'>Bing</a></div>"
-                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div>" +
-						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
-						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago' style='width:98%;display:block;text-transform:none'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>" + 
-                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
-						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
-						"<div class='ago attr' style='width:100%;display:block'></div>" +
-						"<div class='border'></div>" + courtesy + 
-						"<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
-						"<i class='ago fa fa-bookmark-o'></i>" +
-						"</div></div>"
-                pub.push({
-                    element: i,
-                    since: gen,
-                    post: html
-                })
-			})
-            pub.sort(function(a, b) {
-                return b.since - a.since
-            })
-			$('svg .progress, .indicator').show()
-            for (var e = 0; e <= quit - 1; e++) {
-                $('#main').append(pub[e].post)
-            }
-			applyVisual()
-		})
 }
 
 function imageResolution(n) {
@@ -484,15 +421,18 @@ function uncoordinatedTimeZone(n) {
 
 }
 
-function xmlResponse(n) {
+function xmlResponse(e, s, n) {
     obj = []
     former = n
     var pub = []
     operation = true
-	if (filter.length >= 0) {
+	if (e == 'search'){
+		uri = cors + menu[n].uri + s + '&format=RSS'
+	} else uri = cors + menu[n].uri
+	if (filter.length) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
-	} else filter = menu.reverse()
+	} else filter = menu
 	var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
@@ -502,7 +442,7 @@ function xmlResponse(n) {
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result').remove()
     request = $.get({
-            url: cors + menu[n].uri,
+            url: uri,
 			method: 'GET',
 			dataType: 'xml',
 			contentType: 'text/html; charset=utf-8',
