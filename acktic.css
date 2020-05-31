@@ -243,6 +243,8 @@ body,
 	display: table-cell;
 	position: relative;
 	width: fit-content;
+	clear: left;
+	float: left;
 }
 .type {
 	position: relative;

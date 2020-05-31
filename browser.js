@@ -283,14 +283,13 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, exact)
 		return false
 	}
-	if (response == 0 && !exact && filter.length <= 0) {
+	if (response == 0 && !exact && filter.length < 0) {
 		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 	}
-	$('#progressBar').addClass('response').width('100%')
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-		$(this).removeClass('response').width(0)
-	})
+	setTimeout(function() {
+		populateResponse()
+	}, 250)
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
