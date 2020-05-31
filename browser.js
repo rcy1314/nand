@@ -39,7 +39,7 @@ $(document).ready(function() {
 				$('input[type=text]').val(n[0])
 			}
 		} 
-		if (n[0] && n[0] != '&') {
+		if (n[1] && n[0] != '&') {
 			$('input[type=text]').val(n[0].replace(/\-/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
@@ -247,12 +247,13 @@ function filterResponse(random, x) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 0; i--) {
-		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
+		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
 			if (random == 0) {
 				writeResponse(menu.indexOf(menu[i]))
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
+			var exact = i + +1
 			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (random == 0) {
@@ -270,14 +271,13 @@ function filterResponse(random, x) {
 
 		}
 	}
+	console.log(exact)
 	if (x == 'random') {
 		xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	}
 	if (random == 1) {
-		var r = filter[Math.floor(Math.random()*filter.length)]
-		if (filter == -1) xmlResponse(menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-		else xmlResponse(r + +1)
+		xmlResponse(exact)
 		return false
 	}
 	setTimeout(function() {
