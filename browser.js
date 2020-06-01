@@ -45,18 +45,16 @@ $(document).ready(function() {
     }
 
     if (location.search.split('?q=')[1] && !location.href.match('\\?\\+1')) {
-        var n = location.search.split('?q=')[1]
-        if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '')
-        if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
-        $('#visit').show()
-        if (n[1] && n[0]) {
-            $('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
+        var uri = location.search.split('?q=')[1]
+        if (uri.match(/(\+1)/)) uri = uri.replace(/(\+1)/, '')
+        if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
             $('#main #visit').hide()
-            filterResponse(1, n[1])
-        } else if (!n[1] && n[0]) {
-            $('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
-            $('#main #visit').hide()
-            filterResponse(1, n[0])
+        if (uri[1] && uri[0]) {
+            $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
+            filterResponse(1, uri[1])
+        } else if (!uri[1] && uri[0]) {
+            $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
+            filterResponse(1, uri[0])
         } else {
             $('#main #visit').hide()
         }
@@ -82,11 +80,7 @@ $(document).ready(function() {
     $('#main #visit').remove()
     if ($('input[type=text]').val() != '') history.replaceState(null, null, '?q=' + $(
         'input[type=text]').val().replace(/\s/g, '+'))
-    var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
-    sanitize = sanitize.replace(re, function(e) {
-        return e.toUpperCase()
-    })
-    document.title = sanitize
+    if ($('input[type=text]').val().length) document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
     filterResponse(0, $('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
@@ -99,17 +93,9 @@ $(document).ready(function() {
     setTimeout(function() {
         filterResponse(0, $('input[type=text]').val())
     }, 300)
-    var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
-    sanitize = sanitize.replace(re, function(e) {
-        return e.toUpperCase()
-    })
-    document.title = sanitize
+    document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
     history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
     $('#main').attr('tabindex', -1).focus()
-
-}).on('touch click', '#home', function(e) {
-
-    location.href = window.location.origin
 
 }).on('touch click', '.item', function(e) {
 
@@ -151,6 +137,13 @@ $(document).ready(function() {
 
 })
 
+	String.prototype.sanitize = function() {
+
+    	return this.replace(re, function(n) {
+        	return n.toUpperCase()
+    	})
+	
+	}
 
 function applyVisual(n) {
 
@@ -454,11 +447,7 @@ function xmlResponse(e, s, n) {
         if (reverse == false) filter = reverseResponse(menu.reverse())
         n = menu.length - n - 1
     } else filter = menu
-    var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
-    sanitize = sanitize.replace(re, function(e) {
-        return e.toUpperCase()
-    })
-    document.title = sanitize
+    document.title = filter[n].id.replace(/(\/|\.)/g, ' ').sanitize()
     $('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
