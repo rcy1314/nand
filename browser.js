@@ -42,7 +42,6 @@ $(document).ready(function() {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(uri[1])
         } else if (!uri[1] && uri[0]) {
-            $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(uri[0])
 		}
     } else $('#main #visit').show()
@@ -87,6 +86,12 @@ $(document).ready(function() {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	}
     $('#main').attr('tabindex', -1).focus()
+
+}).on('touch click', '#text a', function(e) {
+
+	$('#main').empty()
+	filterResponse($(this).text())
+    e.stopPropagation()
 
 }).on('touch click', '.item', function(e) {
 
@@ -251,7 +256,6 @@ function filterResponse(n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
-	progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -394,6 +398,7 @@ function xmlResponse(e, s, n) {
     } else uri = cors + menu[n].uri
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
+	progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
@@ -412,7 +417,7 @@ function xmlResponse(e, s, n) {
         })
         .done(function(xhr) {
             $('#visit').hide()
-            $('svg circle, .indicator').show()
+            progressResponse(100)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
@@ -542,7 +547,6 @@ function xmlResponse(e, s, n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-            progressResponse(100)
             $('#main').attr('tabindex', -1).focus()
             applyVisual()
         })
