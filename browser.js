@@ -77,16 +77,6 @@ $(document).ready(function() {
 
 	bottomResponse()
 
-}).on('touch click', '#text a', function(e) {
-
-	$('#main').empty()
-	progressResponse(100)
-	filterResponse($(this).text())
-	$('input[type=text]').val($(this).text())
-	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-	document.title = $(this).text().capitalize()
-    e.stopPropagation()
-
 }).on('touch click', '.item', function(e) {
 
     $(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
@@ -350,17 +340,18 @@ function populateResponse(n) {
         }
     }
     $('#main').attr('tabindex', -1).focus()
-    progressResponse(100)
+    progressResponse(true, 100)
     applyVisual()
     filter = []
 }
 
-function progressResponse(n) {
+function progressResponse(complete, n) {
 
     setTimeout(function() {
         $('#progressBar').addClass('response').width(n + '%')
     }, 300)
-    $('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+    if (complete == true)
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
         $(this).removeClass('response').width(0)
     })
 
@@ -411,7 +402,7 @@ function xmlResponse(e, s, n) {
     } else uri = cors + menu[n].uri
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
-	progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
+	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
@@ -431,7 +422,9 @@ function xmlResponse(e, s, n) {
         .done(function(xhr) {
             $('#visit').hide()
             $('#bottom').show()
-            progressResponse(100)
+			setTimeout(function() { 
+            	progressResponse(true, 100)
+			}, 300)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
