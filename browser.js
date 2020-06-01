@@ -6,7 +6,7 @@ var ost = 0
 var closing
 var opening
 var request
-var quit = 12
+var quit = 15
 var visual = 1
 var former = -1
 var object = []
@@ -289,13 +289,13 @@ function filterResponse(response, x) {
 		for (var i = filter.length - 1; i >= 0; i--) {
 			writeResponse(filter[i])
 		}
-		setTimeout(function() {
-			$('#progressBar').addClass('response').width('100%')
-		}, 300)
-		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-			$(this).removeClass('response').width(0)
-		})
 	}
+	setTimeout(function() {
+		$('#progressBar').addClass('response').width('100%')
+	}, 300)
+	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+		$(this).removeClass('response').width(0)
+	})
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
