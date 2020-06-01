@@ -102,7 +102,7 @@ $(document).ready(function() {
 	setTimeout(function() {
 		filterResponse(0, $('input[type=text]').val())
 	}, 300)
-	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
+	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	$('#main').attr('tabindex',-1).focus()	
 
 }).on('touch click', '#home', function(e){
@@ -457,7 +457,6 @@ function xmlResponse(e, s, n) {
 		return e.toUpperCase()
 	})
 	document.title = sanitize
-	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
 	$('#main .result, #main .item').remove()
     request = $.get({
