@@ -192,8 +192,10 @@ function bottomResponse() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	}
-	else document.title = 'RSS-Browser`'
-
+	else {
+	    history.replaceState(null, null, '?q=')
+		document.title = 'RSS-Browser`'
+	}
 }
 
 function changeTimeZone(date, n) {
