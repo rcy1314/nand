@@ -16,7 +16,7 @@ $(document).ready(function() {
             'text-align': 'left'
         }).val('')
 
-		$('#main').animate({top:'75px'},350)
+		$('#main').animate({top:'75px', height: 'calc(100% - 75px)'},350)
 
     }).on('focusout blur', function(e) {
 
@@ -25,7 +25,7 @@ $(document).ready(function() {
         })
 
 		setTimeout(function() {
-			$('#main').animate({top:'50px'},350)
+			$('#main').animate({top:'50px', height: 'calc(100% - 75px)'},350)
 		}, 500)
     })
 
@@ -77,7 +77,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, svg circle', function(e) {
+}).on('touch click', '#placeholder, #bottom', function(e) {
 
 	$(this).hide()
     $('#visit').remove()
