@@ -298,7 +298,6 @@ function filterResponse(response, x) {
             populateResponse()
         }, 300)
     }
-    progressResponse(100)
     $('#main').attr('tabindex', -1).focus()
     applyVisual()
 
