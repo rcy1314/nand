@@ -223,7 +223,7 @@ body,
 	font-size: 12px;
 	flex-wrap: wrap;
 	margin: 2em;
-	width: 16em;
+	width: 18em;
 }
 .pub {
 	justify-content: center;
@@ -233,11 +233,14 @@ body,
 .category,
 .title {
 	border-radius: 10px;
-	margin: auto 1px;
+	margin: auto 0;
 	padding: 7px;
 	float: left;
 }
 .description {
+	margin-top: 5px;
+	padding-bottom: 5px;
+	text-align: justify;
 	display: table-cell;
 	position: relative;
 	width: fit-content;
@@ -251,9 +254,6 @@ body,
 	width: 100%;
 	bottom: 0;
 }
-.description:hover {
-	text-decoration: underline
-}
 .ack {
 	position: absolute;
 	font-size: 14px;
@@ -264,10 +264,12 @@ body,
 	margin-top: 1em !important;
 }
 .item .pub {
+	justify-content: left;
 	margin-right: 15px;
 	margin-left: 15px;
 	font-weight: bold;
 	font-size: 14px;
+	display: block;
 	padding: 10px;
 	width: 85%;
 }

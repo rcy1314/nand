@@ -146,6 +146,7 @@ function applyVisual(n) {
         $('input[type=text]').css({
             'border-bottom': '1px solid #333',
         })
+		$('.description').css({'border-bottom': '.3px solid #333'})
         $('#main').addClass('opposite').removeClass('invert')
         $('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
         $('#ago, .ago, .attr').css('color', '#eee')
@@ -162,6 +163,7 @@ function applyVisual(n) {
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
+		$('.description').css({'border-bottom': '.3px solid #ccc'})
         $('.item').css('box-shadow', '.7px .7px 4px #eee')
         $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
@@ -320,13 +322,12 @@ function populateResponse(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
-                "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id
-                    .toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-                "<div class='pub'><div class='category'>" + menu[i].cat +
-                "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(
-                    /[^\/]+$/g) + "</a>" +
-                "&ensp;<div class='description'>" + menu[i].des + "</div>" +
-                "</div><div class='type'>populate</div></div>"
+		        "<div class='filter " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+        		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+        		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
+        		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+        		"<div class='description'>" + menu[i].des + "</div>" +
+        		"<div class='type'>filter</div></div>"
             )
             filter.push(menu.indexOf(menu[i]))
         }
@@ -412,7 +413,6 @@ function xmlResponse(e, s, n) {
         .done(function(xhr) {
             $('#visit').hide()
             $('svg circle, .indicator').show()
-            progressResponse(100)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
@@ -542,6 +542,7 @@ function xmlResponse(e, s, n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+            progressResponse(100)
             $('#main').attr('tabindex', -1).focus()
             applyVisual()
         })

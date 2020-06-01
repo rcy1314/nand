@@ -263,7 +263,7 @@ var menu = [{
 		uri: "http://thehollywoodunlocked.com/feed",
 		ext: "http://thehollywoodunlocked.com"
 	}, {
-		id: "International Business Times",
+		id: "Int Business Times",
 		cat: "Media",
 		des: "International Business Times Entertainment news, celebrity gossips, TV shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
@@ -965,7 +965,7 @@ var menu = [{
 		uri: "https://www.goal.com/feeds/en/news",
 		ext: "https://goal.com"
 	}, {
-		id: "International Business Times Sports",
+		id: "Int Business Times Sports",
 		cat: "Sports",
 		des: "International Business Times Sports emphasis on soccer, basketball, football, golf, baseball, tennis and hockey.",
 		uri: "https://www.ibtimes.sg/rss/sports",
@@ -1343,7 +1343,7 @@ var menu = [{
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com"
 	}, {
-		id: "International Business Times",
+		id: "Int Business Times",
 		cat: "Technology",
 		des: "International Business Times Technology news and insight about tech gadgets, games and social media.",
 		uri: "https://www.ibtimes.sg/rss/technology",
@@ -1667,7 +1667,7 @@ var menu = [{
 		uri: "https://heavy.com/news/feed",
 		ext: "https://heavy.com/news"
 	}, {
-		id: "International Business Times",
+		id: "Int Business Times",
 		cat: "World",
 		des: "International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",
 		uri: "https://www.ibtimes.sg/rss/world",
