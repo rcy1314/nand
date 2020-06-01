@@ -252,35 +252,26 @@ function filterResponse(response, x) {
     progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-	console.log(reverse)
-    if (!reverse) reverseResponse(menu.reverse())
+    if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
-            if (response == 0) {
                 writeResponse(menu.indexOf(menu[i]))
-            }
             filter.push(menu.indexOf(menu[i]))
             former = filter[0] + +1
             var exact = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-            if (response == 0) {
                 writeResponse(menu.indexOf(menu[i]))
-            }
             filter.push(menu.indexOf(menu[i]))
             former = filter[0] + +1
 
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-            if (response == 0) {
                 writeResponse(menu.indexOf(menu[i]))
-            }
             filter.push(menu.indexOf(menu[i]))
             former = filter[0] + +1
 
         } else if (menu[i].cat.toLowerCase().match(n)) {
-            if (response == 0) {
                 writeResponse(menu.indexOf(menu[i]))
-            }
             filter.push(menu.indexOf(menu[i]))
             former = filter[0] + +1
         }
@@ -289,7 +280,6 @@ function filterResponse(response, x) {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
     } else if (response == 1 && exact || exact == 0) {
-        console.log(exact)
         if (exact == 0) exact = exact + +1
         else exact = exact
         xmlResponse(null, null, exact)
@@ -299,13 +289,6 @@ function filterResponse(response, x) {
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
     } else if (response == 0 && filter.length <= 3) {
-        setTimeout(function() {
-            populateResponse()
-        }, 300)
-    } else if (response == 1) {
-        for (var i = filter.length - 1; i >= 0; i--) {
-            writeResponse(filter[i])
-        }
         setTimeout(function() {
             populateResponse()
         }, 300)
@@ -365,11 +348,10 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
+	filter = []
     if (former === undefined || former == 0) n = 0
     else n = former - 1
     if (n == menu.length - 1 || n == 0 || n == former - 1) {
-        if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-        if (reverse == false) reverseResponse(menu.reverse())
         if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
         for (var i = n; i <= menu.length - 1; i++) {
             if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
