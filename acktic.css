@@ -222,7 +222,7 @@ body,
 	font-size: 12px;
 	flex-wrap: wrap;
 	margin: 2em;
-	width: 26em;
+	width: 16em;
 }
 .pub {
 	width: 100%;
@@ -344,7 +344,7 @@ svg .progress {
 	stroke-dashoffset: 131;
 	stroke-dasharray: 131;
 	fill: transparent;
-	stroke-width: 3px;
+	stroke-width: .3px;
 	stroke: #F74268;
 	display: none;
 }

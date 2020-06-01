@@ -250,6 +250,7 @@ function filterResponse(n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
+	progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
