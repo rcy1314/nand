@@ -277,12 +277,13 @@ function filterResponse(response, x) {
 			former = filter[0] + +1
 		}
 	}
+	console.log(exact)
 	if (x == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
-	} else if (response == 1 && exact) {
+	} else if (response == 1 && exact || exact == 0) {
 		console.log(exact)
-		if (exact === 1) exact = exact - +1
+		if (exact == 0) exact = exact + +1
 		else exact = exact
 		xmlResponse(null, null, exact)
 		return false
