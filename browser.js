@@ -34,8 +34,10 @@ $(document).ready(function() {
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
 		if (!n[1] && n[0]) {
-				filterResponse(1, n[0].replace(/(\-|\+)/g, ' '))
-				$('input[type=text]').val(n[0].replace(/(\%20|\+)/g, ' '))
+		filter = menu[0]
+		xmlResponse('search', n[0].replace(/\s/g, '+'), 0)
+		$('input[type=text]').val(n[0].replace(/(\%20|\+)/g, ' '))
+		return false
 		} 
 		if (n[1] && n[0] != '&') {
 			$('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
@@ -281,9 +283,8 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, exact)
 		return false
 	} else if (response == 0 && !exact && filter === undefined || filter == 0 && filter.length <= 0) {
-		filter = menu[0]
-		xmlResponse('search', n.replace(/\s/g, '+'), 0)
-		return false
+		if (contrast == true) window.location.href = '?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '+1'
+		else window.location.href = '?q=' + $('input[type=text]').val().replace(/\s/g, '+')
 	} else if (response == 0 && filter.length <= 3) {
 		setTimeout(function() {
 			populateResponse()
