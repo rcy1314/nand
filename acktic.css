@@ -212,6 +212,7 @@ body,
 }
 .result {
 	justify-content: center;
+	margin-left: 10px;
 	flex-wrap: wrap;
 	display: flex;
 	width: 100%;

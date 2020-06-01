@@ -19,7 +19,6 @@ $(document).ready(function() {
     }).on('focusout blur', function(e) {
 
         $(this).attr('placeholder', 'Search').css({
-            'caret-color': 'rgba(128,128,128,.7)',
             'text-align': 'center'
         })
 
