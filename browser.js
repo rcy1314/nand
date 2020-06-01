@@ -258,6 +258,7 @@ function filterResponse(n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
+		progressResponse(true, 100)
     }
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -502,8 +503,7 @@ function xmlResponse(e, s, n) {
                             $(this).find('media\\:statistics, statistics').attr('views')
                             .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
                     } else views = ''
-                    html = "<div id='yt' class='item'><input class='url' value='" + ref.trim() +
-                        "'>" +
+                    html = "<div id='yt' class='item'>" +
                         "<div class='ack'><i class='fa fa-at'></i></div>" +
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
@@ -512,9 +512,11 @@ function xmlResponse(e, s, n) {
                         "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
                         "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
                         "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+						"<input class='url' value='" + ref.trim() + "'>" +
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
                         "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
-                            n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
+                            n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" +
+						"</div></div>"
                 } else {
                     if (e == 'search') {
                         var cat =
@@ -523,13 +525,13 @@ function xmlResponse(e, s, n) {
                     } else {
                         var cat = filter[n].cat
                     }
-                    html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
+                    html = "<div class='item'>" +
                         "<div class='ack'><i class='fa fa-at'></i></div>" +
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
                         "</div>" +
-                        "<div id='ago' style='width:98%;display:block'>" + cat + "</div>" +
+                        "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" +
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
                         "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
                         "<div class='ago attr' style='width:100%;display:block'></div>" +
@@ -537,6 +539,7 @@ function xmlResponse(e, s, n) {
                         "' style='display:none' src='" + src + "' class='img'>" + courtesy +
                         "<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
                         "</div></div>"
                 }
                 pub.push({
