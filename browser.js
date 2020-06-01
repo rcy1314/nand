@@ -1,19 +1,11 @@
-var random
 var op = 0
-var animate
-var request
-var ost = 0
-var closing
-var opening
 var request
 var quit = 15
-var visual = 1
-var former = -1
+var former = 0
 var object = []
 var filter = []
 var reverse = false
 var contrast = false
-var operation = false
 var re = /(\b[a-z](?!\s))/g
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
@@ -51,13 +43,11 @@ $(document).ready(function() {
             $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(1, uri[1])
+            filterResponse(uri[1])
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(1, uri[0])
-        } else {
-            $('#main #visit').hide()
-        }
+            filterResponse(uri[0])
+		}
     } else $('#main #visit').show()
 
     $('#main').on('scroll touchmove', function() {
@@ -80,8 +70,9 @@ $(document).ready(function() {
     $('#main #visit').remove()
     if ($('input[type=text]').val() != '') history.replaceState(null, null, '?q=' + $(
         'input[type=text]').val().replace(/\s/g, '+'))
-    if ($('input[type=text]').val().length) document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
-    filterResponse(0, $('input[type=text]').val())
+    if ($('input[type=text]').val().length) document.title = $(
+		'input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
+    filterResponse($('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
@@ -91,7 +82,7 @@ $(document).ready(function() {
     $('#main').scrollTop(0)
     $('#main .item, #main .result').remove()
     setTimeout(function() {
-        filterResponse(0, $('input[type=text]').val())
+        filterResponse($('input[type=text]').val())
     }, 300)
     document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
     history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
@@ -240,7 +231,7 @@ function writeResponse(n) {
 
 }
 
-function filterResponse(response, x) {
+function filterResponse(x) {
 
     var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
@@ -253,34 +244,29 @@ function filterResponse(response, x) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
                 writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-            former = filter[0] + +1
-            var exact = i
+            if (i > 0) var exact = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
                 writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-            former = filter[0] + +1
 
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
                 writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-            former = filter[0] + +1
 
         } else if (menu[i].cat.toLowerCase().match(n)) {
                 writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-            former = filter[0] + +1
         }
+        former = filter[0] + +1
     }
     if (x == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
-    } else if (response == 1 && $.isNumeric(exact)) {
-        if (exact == 0) exact = exact + +1
-        else exact = exact
+    } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
         return false
-    } else if (response == 0 && !$.isNumeric(exact) && filter === undefined || filter == 0 && filter.length <= 0) {
+    } else if (!$.isNumeric(exact) && !filter.length) {
         filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
@@ -289,7 +275,6 @@ function filterResponse(response, x) {
             populateResponse()
         }, 300)
     }
-    $('#main').attr('tabindex', -1).focus()
     applyVisual()
 
 }
@@ -302,7 +287,7 @@ function imageResolution(n) {
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth >
-                maximum) {
+                mobile) {
                 var expand = "<a onclick='event.stopPropagation();expandImage(" + n +
                     ")' style='cursor:default;text-transform:capitalize'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin', '0 auto')
@@ -343,7 +328,6 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-	filter = []
     if (!former) n = 0
     else n = former - 1
     if (n == menu.length - 1 || n == 0 || n == former - 1) {
@@ -381,6 +365,7 @@ function populateResponse(n) {
             }
         }
     }
+    $('#main').attr('tabindex', -1).focus()
     progressResponse(100)
     applyVisual()
     filter = []
@@ -439,7 +424,6 @@ function xmlResponse(e, s, n) {
     obj = []
     former = n
     var pub = []
-    operation = true
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
@@ -462,7 +446,7 @@ function xmlResponse(e, s, n) {
         })
         .fail(function() {
             $('#main #visit').remove()
-            if ($('input[type=text]').val().length) filterResponse(0, $('input[type=text]').val())
+            if ($('input[type=text]').val().length) filterResponse($('input[type=text]').val())
             else populateResponse()
         })
         .done(function(xhr) {
