@@ -16,17 +16,12 @@ $(document).ready(function() {
             'text-align': 'left'
         }).val('')
 
-		$('#main').animate({top:'75px', height: 'calc(100% - 75px)'},350)
-
     }).on('focusout blur', function(e) {
 
         $(this).attr('placeholder', 'Search').css({
             'text-align': 'center'
         })
 
-		setTimeout(function() {
-			$('#main').animate({top:'50px', height: 'calc(100% - 75px)'},350)
-		}, 500)
     })
 
     if (location.href.match('\\+1')) {
@@ -77,7 +72,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, #bottom, svg, circle, .progress, .indicator', function(e) {
+}).on('touch click', '#placeholder, svg circle', function(e) {
 
 	$(this).hide()
     $('#visit').remove()

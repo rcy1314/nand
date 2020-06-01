@@ -182,7 +182,7 @@ body,
 	-webkit-overflow-scrolling: touch;
 	-moz-user-select: -moz-none;
 	-webkit-user-select: none;
-	height: calc(100% - 50px);
+	height: calc(100% - 75px);
 	justify-content: center;
 	-ms-user-select: none;
 	display: inline-flex;
@@ -193,7 +193,7 @@ body,
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: none;
-	top: 50px;
+	top: 75px;
 }
 #visit {
 	position: relative;
@@ -340,14 +340,12 @@ input[type=submit] {
 }
 svg,
 svg circle .progress {
-	position: absolute;
-	margin: auto;
+	position: relative;
+	display: block;
+	margin: 0 auto;
 	height: 52px;
-	bottom: -3px;
 	width: 52px;
-	right: 0;
-	left: 0;
-	top: 0;
+	bottom: 0;
 }
 svg .progress {
 	transform-origin: 50% 50%;
