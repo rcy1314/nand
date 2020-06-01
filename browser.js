@@ -446,7 +446,7 @@ function xmlResponse(e, s, n) {
 	document.title = sanitize
 	history.replaceState(null, null, window.location.href.replace(/(%20)/g, '-'))
 	$('#main').attr('tabindex', -1).focus()
-	$('#main .result').remove()
+	$('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
 			method: 'GET',
@@ -541,10 +541,8 @@ function xmlResponse(e, s, n) {
                 } else {
 				if (e == 'search') {
 						var cat = "<div style='width:98%;display:block;text-transform:lowercase'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
-						$('svg .progress, .indicator').hide()
 				} else {
 						var cat = filter[n].cat
-						$('svg .progress, .indicator').show()
 				}
 	                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
@@ -572,6 +570,7 @@ function xmlResponse(e, s, n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			$('svg .progress, .indicator').show()
 			$('#main').attr('tabindex', -1).focus()
 			applyVisual()
         })
