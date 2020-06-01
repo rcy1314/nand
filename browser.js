@@ -11,7 +11,7 @@ var visual = 1
 var former = -1
 var object = []
 var filter = []
-var reverse = 0
+var reverse = false
 var contrast = false
 var operation = false
 var re = /(\b[a-z](?!\s))/g
@@ -71,8 +71,6 @@ $(document).ready(function() {
         })
 
     })
-
-    reverseResponse(menu.reverse())
 
 }).on('touch click', '#main .item a, #main .result a', function(e) {
 
@@ -254,7 +252,8 @@ function filterResponse(response, x) {
     progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-    if (reverse == true) reverseResponse(menu.reverse())
+	console.log(reverse)
+    if (!reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
             if (response == 0) {
@@ -286,7 +285,6 @@ function filterResponse(response, x) {
             former = filter[0] + +1
         }
     }
-    console.log(exact)
     if (x == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -305,7 +303,6 @@ function filterResponse(response, x) {
             populateResponse()
         }, 300)
     } else if (response == 1) {
-        if (reverse == true) reverseResponse(filter.reverse())
         for (var i = filter.length - 1; i >= 0; i--) {
             writeResponse(filter[i])
         }
@@ -471,8 +468,8 @@ function xmlResponse(e, s, n) {
     } else uri = cors + menu[n].uri
     if (filter.length) {
         filter = reverseResponse(menu.reverse())
-        n = menu.length - n
-    } else filter = menu
+        n = menu.length - n - 1
+    } else filter = menu.reverse()
     var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
     sanitize = sanitize.replace(re, function(e) {
         return e.toUpperCase()
