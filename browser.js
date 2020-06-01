@@ -240,11 +240,11 @@ function filterResponse(x) {
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
-    for (var i = menu.length - 1; i >= 0; i--) {
+    for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
                 writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-            if (i > 0) var exact = i
+            var exact = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
                 writeResponse(menu.indexOf(menu[i]))
