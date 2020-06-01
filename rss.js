@@ -1,7 +1,7 @@
 var menu = [{
 		id: "Bing",
-		cat: "News",
-		des: "Bing Search Engine Latest Local Fresno, California and National News.",
+		cat: "Bing",
+		des: "Bing Search Engine.",
 		uri: "https://www.bing.com/search?q=",
 		ext: "https://www.bing.com"
 	}, {
