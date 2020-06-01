@@ -192,6 +192,7 @@ function bottomResponse() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	}
+	else document.title = 'RSS-Browser`'
     $('#main').attr('tabindex', -1).focus()
 
 }
@@ -428,6 +429,7 @@ function xmlResponse(e, s, n) {
         })
         .done(function(xhr) {
             $('#visit').hide()
+            $('#bottom').show()
             progressResponse(100)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
@@ -524,9 +526,7 @@ function xmlResponse(e, s, n) {
                         var cat =
                             "<div style='width:98%;display:block;text-transform:lowercase'>" + ref
                             .match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
-                        $('#bottom').hide()
                     } else {
-                        $('#bottom').show()
                         var cat = filter[n].cat
                     }
                     html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
