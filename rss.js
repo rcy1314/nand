@@ -715,7 +715,7 @@ var menu = [{
 	}, {
 		id: "4Chan/TV",
 		cat: "Social",
-		des: "TV board dedicated to the TV and Film industry.",
+		des: "4Chan TV board dedicated to the TV and Film industry.",
 		uri: "http://boards.4channel.org/tv/index.rss",
 		ext: "http://boards.4channel.org/tv"
 	}, {
