@@ -77,13 +77,11 @@
 	scrollbar-width: thin;
 }
 .responseInvert {
-	background-color: #ffbd77;
 	background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 100%, #acfcd9 100%);
 	height: 3px;
 	width: 0%;
 }
 .responseOpposite {
-	background-color: #7fd82b;
 	background-image: linear-gradient(319deg, #ef4063 0%, #e557c6 100%);
 	height: 3px;
 	width: 0%;
@@ -297,7 +295,6 @@ body,
 }
 .border {
 	border-top: .3px solid rgba(128, 128, 128, .3);
-	margin-bottom: 5px;
 }
 #search {
 	position: absolute;

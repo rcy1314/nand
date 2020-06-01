@@ -83,8 +83,10 @@ $(document).ready(function() {
     setTimeout(function() {
         filterResponse($('input[type=text]').val())
     }, 300)
-    document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
-    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+    if ($('input[type=text]').val().length) { document.title = $(
+		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
+	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	}
     $('#main').attr('tabindex', -1).focus()
 
 }).on('touch click', '.item', function(e) {
@@ -315,21 +317,20 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-        if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-        for (var i = 1; i <= menu.length - 1; i++) {
-            if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
-                $('#main .result').append(
-                    "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id
+    for (var i = 1; i <= menu.length - 1; i++) {
+        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
+            $('#main .result').append(
+                "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id
                     .toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-                    "<div class='pub'><div class='category'>" + menu[i].cat +
-                    "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(
-                        /[^\/]+$/g) + "</a>" +
-                    "&ensp;<div class='description'>" + menu[i].des + "</div>" +
-                    "</div><div class='type'>populate</div></div>"
-                )
-                filter.push(menu.indexOf(menu[i]))
-            }
+                "<div class='pub'><div class='category'>" + menu[i].cat +
+                "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(
+                    /[^\/]+$/g) + "</a>" +
+                "&ensp;<div class='description'>" + menu[i].des + "</div>" +
+                "</div><div class='type'>populate</div></div>"
+            )
+            filter.push(menu.indexOf(menu[i]))
         }
+    }
     $('#main').attr('tabindex', -1).focus()
     progressResponse(100)
     applyVisual()
@@ -390,10 +391,7 @@ function xmlResponse(e, s, n) {
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
-    if (filter.length) {
-        if (reverse == false) filter = reverseResponse(menu.reverse())
-        n = menu.length - n - 1
-    } else filter = menu
+	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     $('#main .result, #main .item').remove()
     request = $.get({
