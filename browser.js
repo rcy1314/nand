@@ -274,7 +274,6 @@ function filterResponse(response, x) {
 			former = filter[0] + +1
 		}
 	}
-	console.log(filter)
 	if (x == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
@@ -285,12 +284,10 @@ function filterResponse(response, x) {
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 		return false
 	} else if (response == 1) {
+		reverseResponse(filter.reverse())
 		for (var i = filter.length - 1; i >= 0; i--) {
 			writeResponse(filter[i])
 		}
-		setTimeout(function() {
-			populateResponse()
-		}, 250)
 		setTimeout(function() {
 			$('#progressBar').addClass('response').width('100%')
 		}, 300)
