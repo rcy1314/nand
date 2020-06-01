@@ -64,11 +64,11 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e) {
 
     $('#main #visit').remove()
-    history.replaceState(null, null, '?q=' + $(
-        'input[type=text]').val().replace(/\s/g, '+'))
-    if ($('input[type=text]').val().length) document.title = $(
+    if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
-	else document.title = 'RSS-Browser`'
+    	history.replaceState(null, null, '?q=' + $(
+        	'input[type=text]').val().replace(/\s/g, '+'))
+	} else document.title = 'RSS-Browser`'
     filterResponse($('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
