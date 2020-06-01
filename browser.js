@@ -77,7 +77,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, #bottom', function(e) {
+}).on('touch click', '#placeholder, #bottom, svg, circle, .progress, .indicator', function(e) {
 
 	$(this).hide()
     $('#visit').remove()
