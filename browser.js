@@ -254,7 +254,7 @@ function filterResponse(response, x) {
     progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-    if (reverse == false) reverseResponse(menu.reverse())
+    if (reverse == true) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
             if (response == 0) {
@@ -305,7 +305,7 @@ function filterResponse(response, x) {
             populateResponse()
         }, 300)
     } else if (response == 1) {
-        if (reverse == false) reverseResponse(filter.reverse())
+        if (reverse == true) reverseResponse(filter.reverse())
         for (var i = filter.length - 1; i >= 0; i--) {
             writeResponse(filter[i])
         }
