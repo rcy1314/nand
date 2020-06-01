@@ -1,12 +1,10 @@
 var op = 0
 var request
 var quit = 15
-var former = 0
 var object = []
 var filter = []
 var reverse = false
 var contrast = false
-var re = /(\b[a-z](?!\s))/g
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
@@ -71,20 +69,21 @@ $(document).ready(function() {
     if ($('input[type=text]').val() != '') history.replaceState(null, null, '?q=' + $(
         'input[type=text]').val().replace(/\s/g, '+'))
     if ($('input[type=text]').val().length) document.title = $(
-		'input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
+		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     filterResponse($('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, svg circle', function(e) {
+}).on('touch click', '#placeholder, #bottom', function(e) {
 
+	$(this).hide()
     $('#visit').remove()
     $('#main').scrollTop(0)
     $('#main .item, #main .result').remove()
     setTimeout(function() {
         filterResponse($('input[type=text]').val())
     }, 300)
-    document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').sanitize()
+    document.title = $('input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
     $('#main').attr('tabindex', -1).focus()
 
@@ -98,11 +97,6 @@ $(document).ready(function() {
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr(
         'response') + '+1')
     else window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr('response'))
-
-}).on('mouseover mouseout', '.pub', function(e) {
-
-    $(this).parent().find('.fa-at').toggleClass('animate')
-    e.stopPropagation()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
 
@@ -128,9 +122,9 @@ $(document).ready(function() {
 
 })
 
-	String.prototype.sanitize = function() {
+	String.prototype.capitalize = function() {
 
-    	return this.replace(re, function(n) {
+    	return this.replace(/(\b[a-z](?!\s))/g, function(n) {
         	return n.toUpperCase()
     	})
 	
@@ -232,29 +226,27 @@ function filterResponse(n) {
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
     $('#main').scrollTop(0)
-    progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
-                writeResponse(menu.indexOf(menu[i]))
+            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
             var exact = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-                writeResponse(menu.indexOf(menu[i]))
+            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
 
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-                writeResponse(menu.indexOf(menu[i]))
+            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
 
         } else if (menu[i].cat.toLowerCase().match(n)) {
-                writeResponse(menu.indexOf(menu[i]))
+            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
-        former = filter[0] + +1
     }
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -268,7 +260,7 @@ function filterResponse(n) {
         return false
     } else if (filter.length <= 9) {
         setTimeout(function() {
-            populateResponse()
+            populateResponse(filter[filter.length - 1] + +1)
         }, 300)
     }
     applyVisual()
@@ -282,8 +274,7 @@ function imageResolution(n) {
     var maximum = 799
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
-            if ($('#' + n).get(0).naturalHeight > mobile && $('#' + n).get(0).naturalWidth >
-                mobile) {
+            if ($('#' + n).get(0).naturalHeight > mobile) {
                 var expand = "<a onclick='event.stopPropagation();expandImage(" + n +
                     ")' style='cursor:default;text-transform:capitalize'>expand</a>"
                 $('#' + n).addClass('expand min').width('45%').css('margin', '0 auto')
@@ -324,12 +315,9 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
-    if (!former) n = 0
-    else n = former - 1
-    if (n == menu.length - 1 || n == 0 || n == former - 1) {
         if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-        for (var i = n; i <= menu.length - 1; i++) {
-            if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
+        for (var i = 1; i <= menu.length - 1; i++) {
+            if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
                 $('#main .result').append(
                     "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id
                     .toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
@@ -340,32 +328,12 @@ function populateResponse(n) {
                     "</div><div class='type'>populate</div></div>"
                 )
                 filter.push(menu.indexOf(menu[i]))
-                former = i
             }
         }
-    }
-    if (former > menu.length / 4) {
-        if (former == menu.length) former = former - 1
-        if ($('#main .result').length < 2) $('#main').append("<div class='result'></div>")
-        for (var i = former - 1; i >= 0; i--) {
-            if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
-                $('#main .result').append(
-                    "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id
-                    .toLowerCase().replace(/[\/|\.|\s|\-]/, '-') + "'> " +
-                    "<div class='pub'><div class='category'>" + menu[i].cat +
-                    "</div><a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(
-                        /[^\/]+$/g) + "</a>" +
-                    "&ensp;<div class='description'>" + menu[i].des + "</div>" +
-                    "</div><div class='type'>reverse</div></div>"
-                )
-            }
-        }
-    }
     $('#main').attr('tabindex', -1).focus()
     progressResponse(100)
     applyVisual()
     filter = []
-    former = 1
 }
 
 function progressResponse(n) {
@@ -418,7 +386,6 @@ function uncoordinatedTimeZone(n) {
 
 function xmlResponse(e, s, n) {
     obj = []
-    former = n
     var pub = []
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
@@ -427,7 +394,7 @@ function xmlResponse(e, s, n) {
         if (reverse == false) filter = reverseResponse(menu.reverse())
         n = menu.length - n - 1
     } else filter = menu
-    document.title = filter[n].id.replace(/(\/|\.)/g, ' ').sanitize()
+    document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     $('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
@@ -441,9 +408,8 @@ function xmlResponse(e, s, n) {
             }
         })
         .fail(function() {
-            $('#main #visit').remove()
+            $('#main #visit').show()
             if ($('input[type=text]').val().length) filterResponse($('input[type=text]').val())
-            else populateResponse()
         })
         .done(function(xhr) {
             $('#visit').hide()
