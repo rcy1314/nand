@@ -72,7 +72,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, #bottom', function(e) {
+}).on('touch click', '#placeholder, svg circle', function(e) {
 
 	$(this).hide()
     $('#visit').remove()
@@ -92,6 +92,8 @@ $(document).ready(function() {
 	$('#main').empty()
 	filterResponse($(this).text())
 	$('input[type=text]').val($(this).text())
+	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	document.title = $(this).text().capitalize()
 	progressResponse(100)
     e.stopPropagation()
 
@@ -181,7 +183,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/invert.png')
     }
     if ($('#main .result').length && op == 0) {
-        $('#arm').css('background-color', '#fafafa')
+        $('#arm, #text a').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
     }
 

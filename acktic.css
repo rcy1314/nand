@@ -242,7 +242,7 @@ body,
 	clear: left;
 	float: left;
 }
-mtype {
+.type {
 	position: relative;
 	margin-top: 10px;
 	font-size: 10px;
@@ -307,6 +307,8 @@ mtype {
 	top: .8em;
 }
 #text a {
+	padding-bottom: 1em;
+	padding-top: 1em;
 	font-size: 11px;
 	top: -10px;
 }
