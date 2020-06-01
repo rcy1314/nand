@@ -182,7 +182,7 @@ function applyVisual(n) {
 function bottomResponse() {
 
 	$('#bottom').hide()
-    $('#visit').remove()
+    $('#visit').hide()
     $('#main').scrollTop(0)
     $('#main .item, #main .result').remove()
     setTimeout(function() {
@@ -193,7 +193,6 @@ function bottomResponse() {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	}
 	else document.title = 'RSS-Browser`'
-    $('#main').attr('tabindex', -1).focus()
 
 }
 
