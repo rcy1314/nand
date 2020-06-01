@@ -454,9 +454,9 @@ function xmlResponse(e, s, n) {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
     if (filter.length) {
-        filter = reverseResponse(menu.reverse())
+        if (reverse == false) filter = reverseResponse(menu.reverse())
         n = menu.length - n - 1
-    } else filter = menu.reverse()
+    } else filter = menu
     var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
     sanitize = sanitize.replace(re, function(e) {
         return e.toUpperCase()
