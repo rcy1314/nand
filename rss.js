@@ -737,12 +737,6 @@ var menu = [{
 		uri: "https://rss.app/feeds/a0cfGfRhfVK2Y1IY.xml",
 		ext: "http://imgur.com/t/wallpaper"
 	}, {
-		id: "Imgur/Wallpapers",
-		cat: "Social",
-		des: "Imgur posts with the tag #wallpapers from rss.app.",
-		uri: "https://rss.app/feeds/XnAFEwNQxC35Ws9v.xml",
-		ext: "http://imgur.com/t/wallpapers"
-	}, {
 		id: "4Chan/Wallpapers General",
 		cat: "Social",
 		des: "4chan Wallpapers General read the sticky.",
