@@ -72,7 +72,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, svg circle', function(e) {
+}).on('touch click', '#placeholder, svg circle .progress', function(e) {
 
 	$(this).hide()
     $('#visit').remove()

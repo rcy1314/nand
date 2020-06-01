@@ -345,7 +345,7 @@ svg circle .progress {
 	margin: 0 auto;
 	height: 52px;
 	width: 52px;
-	bottom: 0;
+	bottom: -4px;
 }
 svg .progress {
 	transform-origin: 50% 50%;
@@ -361,15 +361,12 @@ svg {
 	z-index: 2;
 }
 .indicator {
-	position: absolute;
-	display: none;
+	position: relative;
+	display: block;
+	margin: 0 auto;
 	height: 48px;
-	margin: auto;
 	width: 48px;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	top: 0;
+	bottom: 48px;
 }
 .views {
 	position: absolute;
