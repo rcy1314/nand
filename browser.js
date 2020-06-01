@@ -280,14 +280,14 @@ function filterResponse(response, x) {
 	} else if (response == 1 && exact) {
 		xmlResponse(null, null, exact)
 		return false
+	} else if (response == 0 && !exact && filter === undefined || filter == 0 && filter.length <= 0) {
+		filter = menu[0]
+		xmlResponse('search', n.replace(/\s/g, '+'), 0)
+		return false
 	} else if (response == 0 && filter.length <= 3) {
 		setTimeout(function() {
 			populateResponse()
 		},300)
-	} else if (response == 0 && !exact && filter === undefined || filter == 0) {
-		filter = menu[0]
-		xmlResponse('search', n.replace(/\s/g, '+'), 0)
-		return false
 	} else if (response == 1) {
 		reverseResponse(filter.reverse())
 		for (var i = filter.length - 1; i >= 0; i--) {
@@ -544,7 +544,9 @@ function xmlResponse(e, s, n) {
                 } else {
 				if (e == 'search') {
 						var cat = "<div style='width:98%;display:block;text-transform:lowercase'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
+						$('svg .progress, .indicator').hide()
 				} else {
+						$('svg .progress, .indicator').show()
 						var cat = filter[n].cat
 				}
 	                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
@@ -573,7 +575,6 @@ function xmlResponse(e, s, n) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('svg .progress, .indicator').show()
 			$('#main').attr('tabindex', -1).focus()
 			applyVisual()
         })
