@@ -193,7 +193,7 @@ body,
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: none;
-	top: 75px;
+	top: 50px;
 }
 #visit {
 	position: relative;
@@ -217,7 +217,7 @@ body,
 	display: inline-flex;
 	font-size: 12px;
 	flex-wrap: wrap;
-	margin: 2em;
+	margin: 4em;
 	width: 18em;
 }
 .pub {
@@ -307,6 +307,8 @@ body,
 	top: .8em;
 }
 #text a {
+	padding-left: .7em;
+	padding-right: .9em;
 	padding-bottom: 1em;
 	padding-top: 1em;
 	font-size: 11px;

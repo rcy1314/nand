@@ -16,13 +16,18 @@ $(document).ready(function() {
             'text-align': 'left'
         }).val('')
 
+		$('#main').animate({top:'75px'},350)
+
     }).on('focusout blur', function(e) {
 
         $(this).attr('placeholder', 'Search').css({
             'text-align': 'center'
         })
 
-    }).attr('tabindex', -1).focus()
+		setTimeout(function() {
+			$('#main').animate({top:'50px'},350)
+		}, 500)
+    })
 
     if (location.href.match('\\+1')) {
 
@@ -90,11 +95,11 @@ $(document).ready(function() {
 }).on('touch click', '#text a', function(e) {
 
 	$('#main').empty()
+	progressResponse(100)
 	filterResponse($(this).text())
 	$('input[type=text]').val($(this).text())
 	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	document.title = $(this).text().capitalize()
-	progressResponse(100)
     e.stopPropagation()
 
 }).on('touch click', '.item', function(e) {
