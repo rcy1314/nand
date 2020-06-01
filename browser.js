@@ -193,7 +193,7 @@ function bottomResponse() {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	}
 	else {
-	    history.replaceState(null, null, '?q=')
+	    history.replaceState(null, null, '?')
 		document.title = 'RSS-Browser`'
 	}
 }
