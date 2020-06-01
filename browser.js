@@ -281,6 +281,7 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, exact)
 		return false
 	} else if (response == 0 && !exact && filter === undefined || filter == 0) {
+		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 		return false
 	} else if (response == 1) {
@@ -437,7 +438,7 @@ function xmlResponse(e, s, n) {
 	if (filter.length) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
-	} else filter = menu.reverse()
+	} else filter = menu
 	var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
@@ -538,8 +539,13 @@ function xmlResponse(e, s, n) {
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
-				if (e == 'search') var cat = "<div style='width:98%;display:block;text-transform:lowercase'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
-				else var cat = filter[n].cat
+				if (e == 'search') {
+						var cat = "<div style='width:98%;display:block;text-transform:lowercase'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
+						$('svg .progress, .indicator').hide()
+				} else {
+						var cat = filter[n].cat
+						$('svg .progress, .indicator').show()
+				}
 	                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
@@ -562,7 +568,6 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-			$('svg .progress, .indicator').show()
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
