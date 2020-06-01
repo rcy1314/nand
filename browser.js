@@ -91,6 +91,8 @@ $(document).ready(function() {
 
 	$('#main').empty()
 	filterResponse($(this).text())
+	$('input[type=text]').val($(this).text())
+	progressResponse(100)
     e.stopPropagation()
 
 }).on('touch click', '.item', function(e) {
