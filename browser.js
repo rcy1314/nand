@@ -98,7 +98,7 @@ $(document).ready(function() {
 	$('#visit').remove()
 	$('#main').scrollTop(0)
 	$('#main .item, #main .result').remove()
-	$('#progressBar').addClass('response').width('33%')
+	progressResponse(33)
 	setTimeout(function() {
 		filterResponse(0, $('input[type=text]').val())
 	}, 300)
@@ -242,7 +242,7 @@ function filterResponse(response, x) {
 	var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
 	filter = []
 	$('#main').scrollTop(0)
-	$('#progressBar').width(Math.floor(Math.random() * (66 - 25 + 1) + 25) + '%')
+	progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
 	$('#main .item, #main .result').remove()	
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse == true) reverseResponse(menu.reverse())
@@ -304,12 +304,7 @@ function filterResponse(response, x) {
 			populateResponse()
 		},300)
 	}
-	setTimeout(function() {
-		$('#progressBar').addClass('response').width('100%')
-	}, 300)
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-		$(this).removeClass('response').width(0)
-	})
+	progressResponse(100)
 	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 
@@ -393,15 +388,21 @@ function populateResponse(n) {
 				}
 			}
 	}
+	progressResponse(100)
+	applyVisual()
+	filter = []
+	former = 1
+}
+
+function progressResponse(n) {
+
 	setTimeout(function () {
-	$('#progressBar').addClass('response').width('100%')
+	$('#progressBar').addClass('response').width(n + '%')
 	}, 300)
 	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
 		$(this).removeClass('response').width(0)
 	})
-	applyVisual()
-	filter = []
-	former = 1
+
 }
 
 function reverseResponse(Object) {
@@ -479,10 +480,7 @@ function xmlResponse(e, s, n) {
         .done(function(xhr) {
 			$('#visit').hide()
 			$('svg circle, .indicator').show()
-			$('#progressBar').addClass('response').width('100%')
-			$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-				$(this).removeClass('response').width(0)
-			})
+			progressResponse(100)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
