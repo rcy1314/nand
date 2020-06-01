@@ -76,7 +76,7 @@ $(document).ready(function() {
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, .indicator', function(e) {
+}).on('touch click', '#placeholder, svg circle', function(e) {
 
     $('#visit').remove()
     $('#main').scrollTop(0)
@@ -142,42 +142,38 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('body, #container, #main, #arm, #info, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, #ago a, a')
+        $('body, #container, #main, #arm, #info, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
             .css({
-                'color': 'rgba(255,255,255,1)',
+                'color': '#fff',
                 'background-color': '#000',
-                'border': 'none'
+				'border': 'none'
             })
         $('input[type=text]').css({
-            'border-bottom': '1px solid rgba(255,255,255,.1)',
-            'background-color': 'rgba(0,0,0,.9)',
-            'color': 'rgba(255,255,255, 1)'
+            'border-bottom': '1px solid #333',
         })
         $('#main').addClass('opposite').removeClass('invert')
         $('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
-        $('#ago, .ago, .attr').css('color', 'rgba(255,255,255,.7)')
-        $('#home, .indicator').attr('src', 'images/opposite.png').css('filter', 'none')
+        $('#ago, .ago, .attr').css('color', '#eee')
+        $('.indicator').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
         $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
             .css({
                 'background-color': '#fff',
-                'color': 'rgba(0,0,0,.7)',
-                'border': 'none'
+                'color': '#555',
             })
         $('#main, input[type=text], .category').css({
-            'border': '.3px solid rgba(0,0,0,.1)',
+            'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
-        $('.item').css('box-shadow', '.7px .7px 4px rgba(0,0,0,.1)')
+        $('.item').css('box-shadow', '.7px .7px 4px #eee')
         $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
-        $('.item, .title').css('border', '.3px solid rgba(128,128,128,.3)')
-        $('.pub').css('color', 'rgba(0,0,0,.8)')
-        $('#ago, .ago, .attr').css('color', 'rgba(10,10,10,.7)')
+        $('.item, .title').css('border', '.3px solid #ddd')
+        $('.pub').css('color', '#111')
         $('.indicator').attr('src', 'images/transparent.png').css('filter',
-            'brightness(20%) saturate(50%) invert(90%)')
+            'saturate(50%) invert(90%)')
         $('#favicon').attr('href', 'images/invert.png')
     }
     if ($('#main .result').length && op == 0) {
@@ -231,9 +227,9 @@ function writeResponse(n) {
 
 }
 
-function filterResponse(x) {
+function filterResponse(n) {
 
-    var n = x.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
+    var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
     $('#main').scrollTop(0)
     progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
@@ -260,7 +256,7 @@ function filterResponse(x) {
         }
         former = filter[0] + +1
     }
-    if (x == 'random') {
+    if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
     } else if ($.isNumeric(exact)) {
@@ -302,7 +298,7 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
-    } else $('#' + n).parent().css('padding-bottom', '1.5em')
+    } else $('#' + n).parent().css('padding-bottom', '.5em')
 
 }
 
