@@ -313,6 +313,7 @@ body,
 	top: -10px;
 }
 input[type=text] {
+	-webkit-appearance: none;
 	caret-color: transparent;
 	text-align: center;
 	position: relative;
