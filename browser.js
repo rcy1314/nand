@@ -83,7 +83,7 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('#main #visit').remove()
-	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	if ($('input[type=text]').val() != '') history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
