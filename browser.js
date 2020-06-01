@@ -49,16 +49,17 @@ $(document).ready(function() {
 		if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '') 
 		if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
 		$('#visit').show()
-		if (!n[1] && n[0]) {
-		filter = menu[0]
-		xmlResponse('search', n[0].replace(/\s/g, '+'), 0)
-		$('input[type=text]').val(n[0].replace(/(\%20|\+)/g, ' '))
-		return false
-		} 
-		if (n[1] && n[0] != '&') {
+		console.log(n[0] + ' ' + n[1])
+		if (n[1] && n[0]) {
+			console.log(n[0])
 			$('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
 			$('#main #visit').hide()
         	filterResponse(1, n[1])
+		} else if (!n[1] && n[0]) {
+			console.log(n[0])
+			$('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
+			$('#main #visit').hide()
+        	filterResponse(1, n[0])
 		} else {
 			$('#main #visit').hide()
 		}
@@ -82,7 +83,7 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e){
 
 	$('#main #visit').remove()
-	history.replaceState(null, null, window.location.href.replace(/\?.+/, ''))
+	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
@@ -280,20 +281,26 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
 		return false
 	} else if (response == 1 && exact) {
+		console.log(exact)
+		if (exact == 1) exact == exact - +1
 		xmlResponse(null, null, exact)
 		return false
 	} else if (response == 0 && !exact && filter === undefined || filter == 0 && filter.length <= 0) {
-		if (contrast == true) window.location.href = '?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '+1'
-		else window.location.href = '?q=' + $('input[type=text]').val().replace(/\s/g, '+')
+		filter = menu[0]
+		xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
+		return false
 	} else if (response == 0 && filter.length <= 3) {
 		setTimeout(function() {
 			populateResponse()
 		},300)
 	} else if (response == 1) {
-		reverseResponse(filter.reverse())
+		if (reverse == false) reverseResponse(filter.reverse())
 		for (var i = filter.length - 1; i >= 0; i--) {
 			writeResponse(filter[i])
 		}
+		setTimeout(function() {
+			populateResponse()
+		},300)
 	}
 	setTimeout(function() {
 		$('#progressBar').addClass('response').width('100%')
