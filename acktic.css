@@ -182,7 +182,7 @@ body,
 	-webkit-overflow-scrolling: touch;
 	-moz-user-select: -moz-none;
 	-webkit-user-select: none;
-	height: calc(100% - 75px);
+	height: calc(100% - 50px);
 	justify-content: center;
 	-ms-user-select: none;
 	display: inline-flex;
@@ -193,7 +193,7 @@ body,
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: none;
-	top: 75px;
+	top: 50px;
 }
 #visit {
 	position: relative;
@@ -295,24 +295,10 @@ body,
 }
 #search {
 	position: absolute;
-	height: 90px;
+	height: 50px;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-}
-#text {
-	position: relative;
-	text-align: center;
-	font-size: 10px;
-	top: .8em;
-}
-#text a {
-	padding-left: .7em;
-	padding-right: .9em;
-	padding-bottom: 1em;
-	padding-top: 1em;
-	font-size: 11px;
-	top: -10px;
 }
 input[type=text] {
 	-webkit-appearance: none;
@@ -327,6 +313,7 @@ input[type=text] {
 	outline: none;
 	height: 3em;
 	width: 30em;
+	top: .7em;
 }
 input[type=submit] {
 	display: none;
@@ -344,8 +331,8 @@ svg circle .progress {
 	display: block;
 	margin: 0 auto;
 	height: 52px;
-	width: 52px;
 	bottom: -4px;
+	width: 52px;
 }
 svg .progress {
 	transform-origin: 50% 50%;
@@ -355,7 +342,7 @@ svg .progress {
 	fill: transparent;
 	stroke-width: .3px;
 	stroke: #F74268;
-	display: none;
+	display: block;
 }
 svg {
 	z-index: 2;

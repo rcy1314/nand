@@ -8,7 +8,7 @@ var contrast = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
-    $('#container, input[type=text], #arm, #bottom').show()
+    $('#container, input[type=text], #arm').show()
     $('input[type=text]').on('touch click', function(e) {
 
         $(this).attr('placeholder', '').css({
@@ -64,28 +64,18 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e) {
 
     $('#main #visit').remove()
-    if ($('input[type=text]').val() != '') history.replaceState(null, null, '?q=' + $(
+    history.replaceState(null, null, '?q=' + $(
         'input[type=text]').val().replace(/\s/g, '+'))
     if ($('input[type=text]').val().length) document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
+	else document.title = 'RSS-Browser`'
     filterResponse($('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
-}).on('touch click', '#placeholder, svg circle .progress', function(e) {
+}).on('touch click', '#placeholder', function(e) {
 
-	$(this).hide()
-    $('#visit').remove()
-    $('#main').scrollTop(0)
-    $('#main .item, #main .result').remove()
-    setTimeout(function() {
-        filterResponse($('input[type=text]').val())
-    }, 300)
-    if ($('input[type=text]').val().length) { document.title = $(
-		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
-	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-	}
-    $('#main').attr('tabindex', -1).focus()
+	bottomResponse()
 
 }).on('touch click', '#text a', function(e) {
 
@@ -186,6 +176,23 @@ function applyVisual(n) {
         $('#arm, #text a').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
     }
+
+}
+
+function bottomResponse() {
+
+	$('#bottom').hide()
+    $('#visit').remove()
+    $('#main').scrollTop(0)
+    $('#main .item, #main .result').remove()
+    setTimeout(function() {
+        filterResponse($('input[type=text]').val())
+    }, 300)
+    if ($('input[type=text]').val().length) { document.title = $(
+		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
+	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	}
+    $('#main').attr('tabindex', -1).focus()
 
 }
 
@@ -295,7 +302,7 @@ function imageResolution(n) {
                 $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth < minimum) {
                 expand = ''
-                $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin-left', '10px')
+                $('#' + n).width($('#' + n).get(0).naturalWidth).css('margin', '10px')
             }
             $('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
@@ -517,9 +524,9 @@ function xmlResponse(e, s, n) {
                         var cat =
                             "<div style='width:98%;display:block;text-transform:lowercase'>" + ref
                             .match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
-                        $('svg .progress, .indicator').hide()
+                        $('#bottom').hide()
                     } else {
-                        $('svg .progress, .indicator').show()
+                        $('#bottom').show()
                         var cat = filter[n].cat
                     }
                     html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
