@@ -19,6 +19,22 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'RSS-Browser`'
 $(document).ready(function() {
     $('#container, input[type=text], #arm, #bottom').show()
+	$('input[type=text]').on('touch click', function(e) {
+
+		$(this).attr('placeholder','').css({
+			'caret-color': 'rgba(128,128,128,.7)',
+			'text-align': 'left'
+		}).val('')
+
+	}).on('focusout blur', function(e) {
+
+		$(this).attr('placeholder','Search').css({
+			'caret-color': 'rgba(128,128,128,.7)',
+			'text-align': 'center'
+		})
+
+	}).attr('tabindex', -1).focus()
+
     if (location.href.match('\\+1')) {
 
 		applyVisual(!op)
@@ -55,22 +71,6 @@ $(document).ready(function() {
 		})
 
 	})
-
-	$('input[type=text]').on('touch click', function(e) {
-
-		$(this).attr('placeholder','').css({
-			'caret-color': 'rgba(128,128,128,.7)',
-			'text-align': 'left'
-		}).val('')
-
-	}).on('focusout blur', function(e) {
-
-		$(this).attr('placeholder','Search').css({
-			'caret-color': 'rgba(128,128,128,.7)',
-			'text-align': 'center'
-		})
-
-	}).attr('tabindex', -1).focus()
 
 	reverseResponse(menu.reverse())
 
