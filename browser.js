@@ -96,11 +96,9 @@ $(document).ready(function() {
     $('#visit').remove()
     $('#main').scrollTop(0)
     $('#main .item, #main .result').remove()
-    progressResponse(33)
     setTimeout(function() {
         filterResponse(0, $('input[type=text]').val())
     }, 300)
-    populateResponse()
     var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
     sanitize = sanitize.replace(re, function(e) {
         return e.toUpperCase()
@@ -293,7 +291,7 @@ function filterResponse(response, x) {
         filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
-    } else if (response == 0 && filter.length <= 3) {
+    } else if (filter.length <= 9) {
         setTimeout(function() {
             populateResponse()
         }, 300)
