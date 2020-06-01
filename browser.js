@@ -282,7 +282,6 @@ function filterResponse(response, x) {
 		xmlResponse(null, null, exact)
 		return false
 	} else if (response == 0 && !exact && filter === undefined || filter == 0) {
-		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
 		return false
 	} else if (response == 1) {
@@ -441,7 +440,7 @@ function xmlResponse(e, s, n) {
 	if (filter.length) {
 		filter = reverseResponse(menu.reverse())
 		n = menu.length - n
-	} else filter = menu
+	} else filter = menu.reverse()
 	var sanitize = filter[n].id.replace(/(\/|\.)/g, ' ')
 	sanitize = sanitize.replace(re, function(e) {
 		return e.toUpperCase()
@@ -542,11 +541,13 @@ function xmlResponse(e, s, n) {
                         "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
 						"Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a></div></div>"
                 } else {
-                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
+				if (e == 'search') var cat = "<div style='width:98%;display:block;text-transform:lowercase'>" + ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
+				else var cat = filter[n].cat
+	                 html = "<div class='item'><input class='url' value='" + ref.trim() + "'>" +
 						"<div class='ack'><i class='fa fa-at'></i></div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref.trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() + "</div>" +
-                        "<div id='ago' style='width:98%;display:block'>" + filter[n].cat + "</div>" + 
+                        "<div id='ago' style='width:98%;display:block'>" + cat + "</div>" + 
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" + 
 						"<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
