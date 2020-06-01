@@ -102,6 +102,7 @@ $(document).ready(function() {
 	setTimeout(function() {
 		filterResponse(0, $('input[type=text]').val())
 	}, 300)
+	populateResponse()
 	history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	$('#main').attr('tabindex',-1).focus()	
 
@@ -359,7 +360,7 @@ function populateResponse(n) {
 	else n = former - 1
 	if (n == menu.length - 1 || n == 0 || n == former - 1) {
 	if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-	    if (reverse == true) reverseResponse(menu.reverse())
+	    if (reverse == false) reverseResponse(menu.reverse())
 		if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
 		for (var i = n; i <= menu.length - 1; i++) {
 				if ($.inArray(menu.indexOf(menu[i]), filter) == -1) {
