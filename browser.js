@@ -49,14 +49,11 @@ $(document).ready(function() {
         if (n.match(/(\+1)/)) n = n.replace(/(\+1)/, '')
         if (n.match(/[^&]+/g)) n = (n.match(/[^&]+/g))
         $('#visit').show()
-        console.log(n[0] + ' ' + n[1])
         if (n[1] && n[0]) {
-            console.log(n[0])
             $('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
             $('#main #visit').hide()
             filterResponse(1, n[1])
         } else if (!n[1] && n[0]) {
-            console.log(n[0])
             $('input[type=text]').val(n[0].replace(/(\-|\+|\%20)/g, ' '))
             $('#main #visit').hide()
             filterResponse(1, n[0])
@@ -257,7 +254,7 @@ function filterResponse(response, x) {
     progressResponse(Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .item, #main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
-    if (reverse == true) reverseResponse(menu.reverse())
+    if (reverse == false) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 0; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
             if (response == 0) {
