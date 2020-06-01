@@ -280,6 +280,10 @@ function filterResponse(response, x) {
 	} else if (response == 1 && exact) {
 		xmlResponse(null, null, exact)
 		return false
+	} else if (response == 0 && filter.length <= 3) {
+		setTimeout(function() {
+			populateResponse()
+		},300)
 	} else if (response == 0 && !exact && filter === undefined || filter == 0) {
 		filter = menu[0]
 		xmlResponse('search', n.replace(/\s/g, '+'), 0)
@@ -518,7 +522,6 @@ function xmlResponse(e, s, n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-				console.log(src)
                 if (src.match(/comments|default|feeds|undefined/)) src = ''
 				if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
