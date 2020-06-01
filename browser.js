@@ -351,7 +351,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 	filter = []
-    if (former === undefined || former == 0) n = 0
+    if (!former) n = 0
     else n = former - 1
     if (n == menu.length - 1 || n == 0 || n == former - 1) {
         if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
@@ -459,7 +459,6 @@ function xmlResponse(e, s, n) {
         return e.toUpperCase()
     })
     document.title = sanitize
-    $('#main').attr('tabindex', -1).focus()
     $('#main .result, #main .item').remove()
     request = $.get({
             url: uri,
