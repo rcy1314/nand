@@ -101,6 +101,11 @@ $(document).ready(function() {
         filterResponse(0, $('input[type=text]').val())
     }, 300)
     populateResponse()
+    var sanitize = $('input[type=text]').val().replace(/(\/|\.)/g, ' ')
+    sanitize = sanitize.replace(re, function(e) {
+        return e.toUpperCase()
+    })
+    document.title = sanitize
     history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
     $('#main').attr('tabindex', -1).focus()
 
