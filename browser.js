@@ -282,12 +282,12 @@ function filterResponse(response, x) {
     if (x == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
-    } else if (response == 1 && exact || exact == 0) {
+    } else if (response == 1 && $.isNumeric(exact)) {
         if (exact == 0) exact = exact + +1
         else exact = exact
         xmlResponse(null, null, exact)
         return false
-    } else if (response == 0 && !exact && filter === undefined || filter == 0 && filter.length <= 0) {
+    } else if (response == 0 && !$.isNumeric(exact) && filter === undefined || filter == 0 && filter.length <= 0) {
         filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
