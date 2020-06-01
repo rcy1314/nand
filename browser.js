@@ -253,7 +253,7 @@ function filterResponse(response, x) {
 			}
 			filter.push(menu.indexOf(menu[i]))
 			former = filter[0] + +1
-			var exact = i + +1
+			var exact = i
 			break
    		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
 			if (response == 0) {
@@ -282,7 +282,8 @@ function filterResponse(response, x) {
 		return false
 	} else if (response == 1 && exact) {
 		console.log(exact)
-		if (exact == 1) exact == exact - +1
+		if (exact === 1) exact = exact - +1
+		else exact = exact
 		xmlResponse(null, null, exact)
 		return false
 	} else if (response == 0 && !exact && filter === undefined || filter == 0 && filter.length <= 0) {
