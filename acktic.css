@@ -3,18 +3,21 @@
 		width: 100px;
 		left: 1em;
 	}
+	.center,
 	.channel {
 		width: 95% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 375px) {
+	.center,
 	.channel {
 		width: 90% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 425px) {
+	.center,
 	.channel {
 		width: 92% !important;
 		margin: 0 auto !important;
@@ -24,30 +27,35 @@
 	#container {
 		width: 100%
 	}
+	.center, 
 	.channel {
 		width: 88% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 769px) {
+	.center,
 	.channel {
 		width: 55% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 1440px) {
+	.center,
 	.channel {
 		width: 55% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 2160px) {
+	.center,
 	.channel {
 		width: 55% !important;
 		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 2560px) {
+	.center,
 	.channel {
 		width: 55% !important;
 		margin: 0 auto !important;
@@ -266,10 +274,13 @@ body,
 	border-radius: 24px;
 	position: relative;
 	margin: 25px auto;
-	padding: .5em;
+	padding: 1em;
 }
 #fc {
 	width: 36px;
+}
+.center {
+	margin: 0 auto;
 }
 .channel {
 	padding: 0;
@@ -282,8 +293,7 @@ body,
 }
 .item {
 	margin: 0;
-	margin-top: 2em;
-	padding-top: .2em !important;
+	margin-bottom: 2em;
 }
 .item .pub {
 	justify-content: left;
@@ -301,7 +311,6 @@ body,
 	clear: left;
 	width: 100%;
 	padding: 1em;
-	border-radius: 12px;
 }
 .url {
 	position: absolute;

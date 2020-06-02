@@ -1,4 +1,3 @@
-var id
 var op = 0
 var request
 var quit = 15
@@ -127,7 +126,7 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('body, #container, #main, #arm, #info, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
+        $('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
             .css({
                 'color': '#fff',
                 'background-color': '#000',
@@ -135,6 +134,7 @@ function applyVisual(n) {
             })
         $('input[type=text]').css({
             'border-bottom': '1px solid #333',
+
         })
 		$('.description').css({'border-bottom': '.3px solid #333'})
         $('#main').addClass('opposite').removeClass('invert')
@@ -144,17 +144,19 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .channel, .result, .title, .category, .description, .item, .item .pub, .type, #ago, a')
+        $('#arm, input[type=text], .comment, .channel, .result, .title, .category, .description, .item, .item .pub, .type, #ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
+				'border': 'none'
             })
-        $('#main, input[type=text], .category, .feed, .comment').css({
+        $('#main, input[type=text], .category, .feed').css({
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
+		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
-        $('.item').css('box-shadow', '.7px .7px 4px #eee')
+        $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
         $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
@@ -263,7 +265,6 @@ function filterResponse(passthrough, n) {
         }
 		if (passthrough == false) progressResponse(true, 100)
     }
-    id = filter[filter.length - 1] + +1
 	
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -350,10 +351,10 @@ function populateResponse(n) {
 
 function feedResponse(n) {
 	var count = 0
-    for (var i = id; i <= menu.length - 1; i++) {
+    for (var i = n; i <= menu.length - 1; i++) {
 	if (count == 5) break
-		if (menu[id].cat == menu[i].cat) {
-            $('#main .channel .feed').append(
+		if (menu[n].cat == menu[i].cat) {
+            $('#main .center .feed').append(
 		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
         		"</div>"
@@ -569,13 +570,13 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-    		if ($('#main .channel').length < 1) $('#main').append("<div class='channel'><div class='feed'></div></div>")
+    		if ($('#main .channel').length < 1) $('#main').append("<div class='center'><div class='feed'></div><div class='channel'></div></div>")
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
             $('#main').attr('tabindex', -1).focus()
-			feedResponse()
+			feedResponse(n)
             applyVisual()
         })
 
