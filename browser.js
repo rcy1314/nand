@@ -575,7 +575,7 @@ function xmlResponse(e, s, n) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('.channel').append("<div id='bottom'><img class='indicator' onclick='bottomResponse()'></div>")
+			$('.channel').append("<div id='bottom' onclick='bottomResponse()'><img class='indicator'></div>")
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()

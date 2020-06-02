@@ -587,6 +587,12 @@ var menu = [{
 		uri: "https://reddit.com/r/hardware/.rss",
 		ext: "https://reddit.com/r/Hardware"
 	}, {
+		id: "Reddit/Intel",
+		cat: "Social",
+		des: "Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.",
+		uri: "https://reddit.com/r/intel/.rss",
+		ext: "https://reddit.com/r/intel"
+	}, {
 		id: "Reddit/iOS",
 		cat: "Social",
 		des: "iOS subreddit for everything Apple iOS.",
