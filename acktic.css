@@ -360,7 +360,7 @@ input[type=submit] {
 	display: none;
 }
 #bottom {
-	position: absolute;
+	position: relative;
 	display: none;
 	height: 48px;
 	width: 100%;
@@ -394,7 +394,7 @@ svg {
 	margin: 0 auto;
 	height: 48px;
 	width: 48px;
-	bottom: 48px;
+	bottom: 0;
 }
 .views {
 	position: absolute;

@@ -161,9 +161,7 @@ function applyVisual(n) {
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.indicator').attr('src', 'images/transparent.png').css({
-			'filter': 'brightness(100%) saturate(50%) invert(90%)',
-			'border-radius': '24px',
-			'box-shadow': '.7px .7px 3px #fefefe'
+			'filter': 'saturate(50%) invert(90%)'
 		})
         $('#favicon').attr('href', 'images/invert.png')
     }
@@ -576,6 +574,7 @@ function xmlResponse(e, s, n) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			$('.channel').append("<img class='indicator'>")
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
