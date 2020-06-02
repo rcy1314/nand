@@ -189,7 +189,6 @@ body,
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
 	-webkit-user-select: none;
-	height: calc(100% - 50px);
 	justify-content: center;
 	-ms-user-select: none;
 	display: inline-flex;
