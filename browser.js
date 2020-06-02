@@ -370,10 +370,11 @@ function progressResponse(complete, n) {
     setTimeout(function() {
         $('#progressBar').addClass('response').width(n + '%')
     }, 300)
-    if (complete == true)
-	$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
-        $(this).removeClass('response').width(0)
-    })
+    if (complete == true) {
+		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
+    	    $(this).removeClass('response').width(0)
+    	})
+	}
 
 }
 
