@@ -276,6 +276,11 @@ function filterResponse(passthrough, n) {
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
     }
+    } else if (filter.length <= 9) {
+        setTimeout(function() {
+            populateResponse(filter[filter.length - 1] + +1)
+        }, 300)
+	}
     applyVisual()
 
 }
