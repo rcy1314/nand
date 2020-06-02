@@ -22,7 +22,7 @@ $(document).ready(function() {
             'text-align': 'center'
         })
 
-    })
+    }).attr('tabindex', -1).focus()
 
     if (location.href.match('\\+1')) {
 
