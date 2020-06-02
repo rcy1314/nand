@@ -40,9 +40,9 @@ $(document).ready(function() {
             $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(uri[1])
+            filterResponse(false, uri[1])
         } else if (!uri[1] && uri[0]) {
-            filterResponse(uri[0])
+            filterResponse(false, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
 	} else document.title = 'RSS-Browser`'
-    filterResponse($('input[type=text]').val())
+    filterResponse(true, $('input[type=text]').val())
     $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
@@ -173,10 +173,9 @@ function bottomResponse() {
 
 	$('#bottom').hide()
     $('#visit').hide()
-    $('#main').scrollTop(0)
     $('#main .item, #main .result').remove()
     setTimeout(function() {
-        filterResponse($('input[type=text]').val())
+        filterResponse(true, $('input[type=text]').val())
     }, 300)
     if ($('input[type=text]').val().length) { document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
@@ -232,7 +231,7 @@ function writeResponse(n) {
 
 }
 
-function filterResponse(n) {
+function filterResponse(passthrough, n) {
 
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
@@ -258,7 +257,7 @@ function filterResponse(n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
-		progressResponse(true, 100)
+		if (passthrough) progressResponse(true, 100)
     }
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -418,7 +417,7 @@ function xmlResponse(e, s, n) {
         })
         .fail(function() {
             $('#main #visit').show()
-            if ($('input[type=text]').val().length) filterResponse($('input[type=text]').val())
+            if ($('input[type=text]').val().length) filterResponse(true, $('input[type=text]').val())
         })
         .done(function(xhr) {
             $('#visit').hide()
