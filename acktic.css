@@ -31,7 +31,7 @@
 }
 @media screen and (min-width: 769px) {
 	.channel {
-		width: 63% !important;
+		width: 55% !important;
 		margin: 0 auto !important;
 	}
 }
@@ -225,7 +225,7 @@ body,
 	margin: 4em;
 	width: 18em;
 }
-.pub {
+.feed .pub {
 	justify-content: center;
 	display: flex;
 	width: 100%;
@@ -259,26 +259,50 @@ body,
 	font-size: 14px;
 	margin: 12px;
 }
+.feed {
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+	width: 75%;
+	border-radius: 24px;
+	position: relative;
+	margin: 25px auto;
+	padding: .5em;
+}
+#fc {
+	width: 36px;
+}
 .channel {
 	padding: 0;
 	margin: 0;
 	position: absolute;
 	width: fit-content;
 }
+.img {
+	padding-top: 1em;
+}
 .item {
 	margin: 0;
+	margin-top: 2em;
 	margin-bottom: 52px !important;
-	margin-top: .5em !important;
+	padding-top: .2em !important;
 }
 .item .pub {
 	justify-content: left;
 	margin-right: 15px;
-	margin-left: 15px;
-	font-weight: bold;
-	font-size: 14px;
+	margin-left: 0px;
+	font-weight: normal;
+	font-size: 12px;
 	display: block;
-	padding: 10px;
+	margin-top: 10px;
+	padding-left: 10px;
 	width: 85%;
+}
+.comment {
+	border: none;
+	clear: left;
+	width: 100%;
+	padding: 1em;
 }
 .url {
 	position: absolute;
@@ -295,7 +319,7 @@ body,
 #ago,
 .ago,
 .attr {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	display: inline-block;
 	position: relative;
 	width: fit-content;

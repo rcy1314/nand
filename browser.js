@@ -1,8 +1,10 @@
+var id
 var op = 0
 var request
 var quit = 15
 var object = []
 var filter = []
+var channel = []
 var reverse = false
 var contrast = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -63,7 +65,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
-    $('#main #visit, #bottom').hide()
+    $('#main #visit, #main .feed, #bottom').hide()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
@@ -81,7 +83,7 @@ $(document).ready(function() {
     $(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
     e.stoppropagation()
 
-}).on('touch click', '.filter, .populate', function(e) {
+}).on('touch click', '.filter, .populate, .feed .id', function(e) {
 
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr(
         'response') + '+1')
@@ -142,12 +144,12 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .channel, .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
+        $('#arm, input[type=text], .channel, .result, .title, .category, .description, .item, .item .pub, .type, #ago, a')
             .css({
                 'background-color': '#fff',
-                'color': '#555',
+                'color': '#666',
             })
-        $('#main, input[type=text], .category').css({
+        $('#main, input[type=text], .category, .feed, .comment').css({
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
@@ -156,7 +158,6 @@ function applyVisual(n) {
         $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
-        $('.pub').css('color', '#111')
         $('.indicator').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(100%) saturate(50%) invert(90%)',
 			'border-radius': '24px',
@@ -165,7 +166,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/invert.png')
     }
     if ($('#main .result').length && op == 0) {
-        $('#arm, #text a').css('background-color', '#fafafa')
+        $('#arm').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
     }
 
@@ -262,6 +263,8 @@ function filterResponse(passthrough, n) {
         }
 		if (passthrough == false) progressResponse(true, 100)
     }
+    id = filter[filter.length - 1] + +1
+	
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -272,10 +275,6 @@ function filterResponse(passthrough, n) {
         filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
-    } else if (filter.length <= 9) {
-        setTimeout(function() {
-            populateResponse(filter[filter.length - 1] + +1)
-        }, 300)
     }
     applyVisual()
 
@@ -283,7 +282,7 @@ function filterResponse(passthrough, n) {
 
 function imageResolution(n) {
 
-    var mobile = 1280
+    var mobile = 1680
     var minimum = 299
     var maximum = 799
     if ($('#' + n).attr('src')) {
@@ -303,7 +302,7 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
-    } else $('#' + n).parent().css('padding-bottom', '1.5em')
+    }
 
 }
 
@@ -330,21 +329,35 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
-        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
+        if ($.inarray(menu.indexof(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
-		        "<div class='filter " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+		        "<div class='filter " + menu.indexof(menu[i]) + "' response='&" + menu[i].id.tolowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
         		"<div class='description'>" + menu[i].des + "</div>" +
         		"<div class='type'>filter</div></div>"
             )
-            filter.push(menu.indexOf(menu[i]))
         }
     }
-    progressResponse(true, 100)
+    progressresponse(true, 100)
     applyVisual()
-    filter = []
+}
+
+function feedResponse(n) {
+	var count = 0
+    for (var i = id; i <= menu.length - 1; i++) {
+	if (count == 5) break
+		if (menu[id].cat == menu[i].cat) {
+            $('#main .channel .feed').append(
+		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+        		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+        		"</div>"
+            )
+		count++
+		}
+    }
+    applyVisual()
 }
 
 function progressResponse(complete, n) {
@@ -527,21 +540,23 @@ function xmlResponse(e, s, n) {
                         var cat = filter[n].cat
                     }
                     html = "<div class='item'>" +
-                        "<div class='ack'><i class='fa fa-at'></i></div>" +
+                        /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+                        /* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
+                        /* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
+                        "<div class='ago attr' style='width:100%;display:block'></div>" + */
+                        /* "<div class='border'></div>" + */
+						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
                         "</div>" +
-                        "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" +
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
-                        "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
-                        "<div class='ago attr' style='width:100%;display:block'></div>" +
-                        "<div class='border'></div><img id='" + i +
-                        "' style='display:none' src='" + src + "' class='img'>" + courtesy +
                         "<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-                        "</div></div>"
+						"</div>" +
+						"<input class='comment' onclick='event.stopPropagation()' placeholder='Leave a reply...'>" +
+                        "</div>"
                 }
                 pub.push({
                     element: i,
@@ -552,12 +567,13 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-    		if ($('#main .channel').length < 1) $('#main').append("<div class='channel'></div>")
+    		if ($('#main .channel').length < 1) $('#main').append("<div class='channel'><div class='feed'></div></div>")
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
             $('#main').attr('tabindex', -1).focus()
+			feedResponse()
             applyVisual()
         })
 
