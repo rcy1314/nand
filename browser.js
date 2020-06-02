@@ -527,8 +527,8 @@ function xmlResponse(e, s, n) {
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" + $(this).find('title:first').text() +
                         "</div>" +
-						"</div>" +
-						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>"
+						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
+						"</div>"
                 } else {
                     if (e == 'search') {
                         var cat =
