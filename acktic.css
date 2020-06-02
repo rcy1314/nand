@@ -205,6 +205,11 @@ body,
 	position: relative;
 	left: 10px;
 }
+#home {
+	position: absolute;
+	left: 10px;
+	top: 5px;
+}
 .result {
 	justify-content: center;
 	margin-left: 10px;
@@ -321,7 +326,7 @@ input[type=submit] {
 	display: none;
 	height: 48px;
 	width: 100%;
-	bottom: 0;
+	bottom: 4px;
 }
 svg,
 svg circle .progress {
@@ -338,7 +343,7 @@ svg .progress {
 	stroke-dashoffset: 131;
 	stroke-dasharray: 131;
 	fill: transparent;
-	stroke-width: .3px;
+	stroke-width: 1px;
 	stroke: #F74268;
 	display: block;
 }

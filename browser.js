@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
-    $('#main #visit').remove()
+    $('#main #visit, #bottom').hide()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
@@ -157,8 +157,11 @@ function applyVisual(n) {
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.pub').css('color', '#111')
-        $('.indicator').attr('src', 'images/transparent.png').css('filter',
-            'saturate(50%) invert(90%)')
+        $('.indicator').attr('src', 'images/transparent.png').css({
+			'filter': 'brightness(100%) saturate(50%) invert(90%)',
+			'border-radius': '24px',
+			'box-shadow': '.7px .7px 3px #fefefe'
+		})
         $('#favicon').attr('href', 'images/invert.png')
     }
     if ($('#main .result').length && op == 0) {
