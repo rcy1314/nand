@@ -549,10 +549,10 @@ function xmlResponse(e, s, n) {
                         "<div class='ago attr' style='width:100%;display:block'></div>" + */
                         /* "<div class='border'></div>" + */
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
                         "</div>" +
-                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
                         "<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
