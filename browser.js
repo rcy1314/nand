@@ -176,7 +176,7 @@ function bottomResponse() {
 
     $('#visit').hide()
 	$('#bottom').hide()
-    $('#main .item, #main .result').remove()
+    $('#main .center, #main .result').remove()
     setTimeout(function() {
         filterResponse(true, $('input[type=text]').val())
     }, 300)
@@ -574,7 +574,7 @@ function xmlResponse(e, s, n) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('.channel').append("<img class='indicator'>")
+			$('.channel').append("<img class='indicator' onclick='bottomResponse()'>")
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
