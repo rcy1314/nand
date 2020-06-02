@@ -142,7 +142,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
+        $('#arm, input[type=text], .channel, .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#555',
@@ -552,8 +552,9 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
+    		if ($('#main .channel').length < 1) $('#main').append("<div class='channel'></div>")
             for (var i = 0; i <= quit - 1; i++) {
-                $('#main').append(pub[i].post)
+                $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
             $('#main').attr('tabindex', -1).focus()

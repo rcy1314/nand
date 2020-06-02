@@ -3,54 +3,54 @@
 		width: 100px;
 		left: 1em;
 	}
-	.item {
+	.channel {
 		width: 95% !important;
-		margin: .4em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 375px) {
-	.item {
+	.channel {
 		width: 90% !important;
-		margin: 1em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 425px) {
-	.item {
+	.channel {
 		width: 92% !important;
-		margin: 1em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 768px) {
 	#container {
 		width: 100%
 	}
-	.item {
+	.channel {
 		width: 88% !important;
-		margin: 3em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 769px) {
-	.item {
+	.channel {
 		width: 63% !important;
-		margin: 12em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 1440px) {
-	.item {
+	.channel {
 		width: 55% !important;
-		margin: 20em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 2160px) {
-	.item {
+	.channel {
 		width: 55% !important;
-		margin: 36em !important;
+		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 2560px) {
-	.item {
+	.channel {
 		width: 55% !important;
-		margin: 36em !important;
+		margin: 0 auto !important;
 	}
 }
 ::-webkit-scrollbar {
@@ -259,7 +259,14 @@ body,
 	font-size: 14px;
 	margin: 12px;
 }
+.channel {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	width: fit-content;
+}
 .item {
+	margin: 0;
 	margin-bottom: 52px !important;
 	margin-top: .5em !important;
 }
