@@ -42,9 +42,9 @@ $(document).ready(function() {
             $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(false, uri[1])
+            filterResponse(true, uri[1])
         } else if (!uri[1] && uri[0]) {
-            filterResponse(false, uri[0])
+            filterResponse(true, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -511,26 +511,24 @@ function xmlResponse(e, s, n) {
                     filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] +
                     "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
-                    if ($(this).find('media\\:statistics, statistics').attr('views')) {
-                        quit = 5
-                        views = "<div class='ago views' style='left:0em'><b>Views</b> " +
-                            $(this).find('media\\:statistics, statistics').attr('views')
-                            .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
-                    } else views = ''
                     html = "<div id='yt' class='item'>" +
-                        "<div class='ack'><i class='fa fa-at'></i></div>" +
+                        /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
-                        "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
-                        .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
-                        "</div>" +
-                        "<div id='ago' style='display:block'>" + dst[0] + "</div>" +
-                        "<div id='ago' style='display:block'>" + dst[1] + "</div>" +
-                        "<div class='yt'><iframe src='" + src + "'></iframe>" + views +
+                        /* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
+                        "<div class='yt'><iframe src='" + src + "'></iframe>" +
+                        "<div class='ago views'>views " +
+                            $(this).find('media\\:statistics, statistics').attr('views')
+                            .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-                        "<div class='ago views' style='right:0em;text-transform:capitalize'>" +
-                        "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
-                            n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" +
-						"</div></div>"
+                        /* "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
+                            n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
+						"</div>" +
+                        "<div id='ago' style='display:block;top:3.5em;'>" + dst[0] + "</div>" +
+                        "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
+                        .trim() + "\", \"_blank\")' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" + $(this).find('title:first').text() +
+                        "</div>" +
+						"</div>" +
+						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>"
                 } else {
                     if (e == 'search') {
                         var cat =
@@ -555,7 +553,7 @@ function xmlResponse(e, s, n) {
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"</div>" +
-						"<input class='comment' onclick='event.stopPropagation()' placeholder='Leave a reply...'>" +
+						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
                         "</div>"
                 }
                 pub.push({
