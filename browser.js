@@ -70,7 +70,6 @@ $(document).ready(function() {
         	'input[type=text]').val().replace(/\s/g, '+'))
 	} else document.title = 'RSS-Browser`'
     filterResponse(true, $('input[type=text]').val())
-    $('#main').attr('tabindex', -1).focus()
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -171,8 +170,8 @@ function applyVisual(n) {
 
 function bottomResponse() {
 
-	$('#bottom').hide()
     $('#visit').hide()
+	$('#bottom').hide()
     $('#main .item, #main .result').remove()
     setTimeout(function() {
         filterResponse(true, $('input[type=text]').val())
@@ -185,6 +184,7 @@ function bottomResponse() {
 	    history.replaceState(null, null, '?')
 		document.title = 'RSS-Browser`'
 	}
+	$('#main').attr('tabindex', -1).focus()
 }
 
 function changeTimeZone(date, n) {
@@ -257,7 +257,7 @@ function filterResponse(passthrough, n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
-		if (passthrough) progressResponse(true, 100)
+		if (passthrough == false) progressResponse(true, 100)
     }
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -339,7 +339,6 @@ function populateResponse(n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
-    $('#main').attr('tabindex', -1).focus()
     progressResponse(true, 100)
     applyVisual()
     filter = []
