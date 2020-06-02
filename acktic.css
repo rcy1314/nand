@@ -303,7 +303,7 @@ body,
 	font-size: 12px;
 	display: block;
 	margin-top: 10px;
-	padding-left: 10px;
+	margin-left: 10px;
 	width: 85%;
 }
 .comment {
@@ -332,11 +332,10 @@ body,
 	position: relative;
 	width: fit-content;
 	line-height: .3;
-	font-size: 9px;
+	font-size: 8.5px;
 	margin: 10px;
 }
 .border {
-	border-top: .3px solid rgba(128, 128, 128, .3);
 }
 #search {
 	height: 50px;

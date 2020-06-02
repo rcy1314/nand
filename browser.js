@@ -307,7 +307,7 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
-    }
+    } else $('#' + n).parent().find('.border').css({'margin-bottom': '10em'})
 
 }
 
@@ -549,13 +549,13 @@ function xmlResponse(e, s, n) {
                         /* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
                         /* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
                         "<div class='ago attr' style='width:100%;display:block'></div>" + */
-                        /* "<div class='border'></div>" + */
+                        "<div class='border'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
                         "</div>" +
-                        "<div class='fa'style='float:right'><i class='ago fa fa-heart-o'></i>" +
+                        "<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"</div>" +
