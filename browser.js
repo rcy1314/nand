@@ -333,9 +333,9 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
-        if ($.inarray(menu.indexof(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
+        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
-		        "<div class='filter " + menu.indexof(menu[i]) + "' response='&" + menu[i].id.tolowerCase()
+		        "<div class='filter " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -344,7 +344,7 @@ function populateResponse(n) {
             )
         }
     }
-    progressresponse(true, 100)
+    progressResponse(true, 100)
     applyVisual()
 }
 
