@@ -360,11 +360,11 @@ input[type=submit] {
 	display: none;
 }
 #bottom {
-	position: relative;
-	display: none;
-	height: 48px;
+	position: absolute;
+	display: block;
+	height: 2em;
 	width: 100%;
-	bottom: 4px;
+	bottom: 0;
 }
 svg,
 svg circle .progress {

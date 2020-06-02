@@ -154,6 +154,7 @@ function applyVisual(n) {
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
+		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
         $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
@@ -574,7 +575,7 @@ function xmlResponse(e, s, n) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('.channel').append("<img class='indicator' onclick='bottomResponse()'>")
+			$('.channel').append("<div id='bottom'><img class='indicator' onclick='bottomResponse()'></div>")
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
