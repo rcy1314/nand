@@ -262,7 +262,10 @@ function filterResponse(passthrough, n) {
         }
 		if (passthrough == false) progressResponse(true, 100)
     }
-    if ($.isNumeric(exact)) {
+    if (n == 'random') {
+        xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
+        return false
+    } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
         return false
     } else if (!$.isNumeric(exact) && !filter.length) {
