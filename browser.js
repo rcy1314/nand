@@ -307,7 +307,7 @@ function imageResolution(n) {
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
     } else $('#' + n).parent().find('.border').css({'margin-bottom': '10em'})
-
+	$('.center').css('display','block')
 }
 
 function momentTimeStamp(n) {
@@ -570,7 +570,7 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-    		if ($('#main .channel').length < 1) $('#main').append("<div class='center'><div class='feed'></div><div class='channel'></div></div>")
+    		$('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
