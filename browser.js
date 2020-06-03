@@ -41,10 +41,10 @@ $(document).ready(function() {
             $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, $('input[type=text]').val())
+            filterResponse(true, uri[1])
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, $('input[type=text]').val())
+            filterResponse(true, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -87,7 +87,7 @@ $(document).ready(function() {
 
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr(
         'response') + '+1')
-    else window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr('response'))
+    else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + $(this).attr('response'))
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
 
@@ -246,7 +246,7 @@ function filterResponse(passthrough, n) {
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
-        if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() === n) {
+        if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
             var exact = i
@@ -262,13 +262,17 @@ function filterResponse(passthrough, n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
+	console.log(exact + ' ' + filter[0])
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
     } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
         return false
-    } else if (!$.isNumeric(exact) && !filter.length) {
+    } else if (!$.isNumeric(exact) && filter.length == 1) {
+        xmlResponse(null, null, filter[0])
+        return false
+ 	} else if (!$.isNumeric(exact) && !filter.length) {
         filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
