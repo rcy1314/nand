@@ -1,3 +1,4 @@
+var id
 var op = 0
 var request
 var quit = 15
@@ -174,21 +175,15 @@ function applyVisual(n) {
 
 }
 
-function bottomResponse() {
+function bottomResponse(n) {
 
     $('#visit').hide()
-    $('#main .center, #main .result').remove()
+    $('#main .center').remove()
     setTimeout(function() {
-        filterResponse(true, $('input[type=text]').val())
+		populateResponse(n)
     }, 300)
-    if ($('input[type=text]').val().length) { document.title = $(
-		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
-	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-	}
-	else {
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
-	}
 	progressResponse(true, 100)
 	$('#main').attr('tabindex', -1).focus()
 }
@@ -254,6 +249,7 @@ function filterResponse(passthrough, n) {
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
+			id = i
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
@@ -262,12 +258,12 @@ function filterResponse(passthrough, n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
-	console.log(exact + ' ' + filter[0])
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
     } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
+		id = exact
         return false
     } else if (!$.isNumeric(exact) && filter.length == 1) {
         xmlResponse(null, null, filter[0])
@@ -334,6 +330,8 @@ function momentTimeStamp(n) {
 }
 
 function populateResponse(n) {
+
+    if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
@@ -421,7 +419,7 @@ function xmlResponse(e, s, n) {
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
-    $('#main .result').remove()
+    $('#main .result').empty()
     request = $.get({
             url: uri,
             method: 'GET',
@@ -574,7 +572,7 @@ function xmlResponse(e, s, n) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('.channel').append("<div id='bottom' onclick='bottomResponse()'><img class='indicator'></div>")
+			$('.channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
 			setTimeout(function() {
 				$('.center').css('display','block')
 			}, 250)
