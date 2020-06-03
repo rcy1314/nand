@@ -369,7 +369,7 @@ input[type=submit] {
 	display: block;
 	height: 2em;
 	width: 100%;
-	bottom: 0;
+	bottom: -2em;
 }
 svg,
 svg circle .progress {
