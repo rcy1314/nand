@@ -350,8 +350,10 @@ function populateResponse(n) {
 }
 
 function feedResponse(n) {
-	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
-    for (var i = n; i <= n + 4 && n <= menu.length - 1; i++) {
+
+	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+	else if (n >= menu.length - 4) n = 1
+    for (var i = n; i <= 4; i++) {
             $('#main .center .feed').append(
 		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
