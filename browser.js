@@ -97,7 +97,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-ellipsis-h', function(e) {
 
-    $(this).siblings('.url').select()
+    $(this).parent().find('.url').select()
     document.execCommand('copy')
     $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
     setTimeout(function() {
