@@ -163,6 +163,10 @@ body,
 	width: 100%;
 	height: 95px;
 }
+#placeholder {
+	width: 100px;
+	left: 10px;
+}
 .animate {
 	-webkit-animation: spin 3s infinite ease;
 	-moz-animation: spin 3s infinite ease height: 200px;
