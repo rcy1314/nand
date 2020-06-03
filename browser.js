@@ -39,7 +39,7 @@ $(document).ready(function() {
         var uri = location.search.split('?q=')[1]
         if (uri.match(/(\+1)/)) uri = uri.replace(/(\+1)/, '')
         if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
-            $('#main #visit').hide()
+        $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(true, uri[1])
@@ -177,7 +177,6 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
-    $('#visit').hide()
     $('#main .center').remove()
     setTimeout(function() {
 		populateResponse(n)
@@ -220,17 +219,19 @@ function expandImage(n) {
 
 }
 
-function writeResponse(n) {
+function feedResponse(n) {
 
-    $('#main .result').prepend(
-        "<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase()
-        .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-        "<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n]
-        .ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
-        "<div class='description'>" + menu[n].des + "</div>" +
-        "<div class='type'>filter</div></div>"
-    )
-
+	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+	else if (n >= menu.length - 4) n = 1
+	console.log(n)
+    for (var i = n; i <= n + 4; i++) {
+            $('#main .center .feed').append(
+		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+        		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+        		"</div>"
+            )
+    }
+    applyVisual()
 }
 
 function filterResponse(passthrough, n) {
@@ -238,7 +239,7 @@ function filterResponse(passthrough, n) {
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
     $('#main').scrollTop(0)
-    $('#main .item, #main .result').remove()
+    $('#main .result, #main .center').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
@@ -349,20 +350,6 @@ function populateResponse(n) {
     applyVisual()
 }
 
-function feedResponse(n) {
-
-	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-	else if (n >= menu.length - 4) n = 1
-    for (var i = n; i <= 4; i++) {
-            $('#main .center .feed').append(
-		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-        		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
-        		"</div>"
-            )
-    }
-    applyVisual()
-}
-
 function precedeResponse(n) {
 
 
@@ -387,9 +374,7 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-    setTimeout(function() {
         $('#progressBar').addClass('response').width(n + '%')
-    }, 300)
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
     	    $(this).removeClass('response').width(0)
@@ -435,6 +420,19 @@ function uncoordinatedTimeZone(n) {
 
 }
 
+function writeResponse(n) {
+
+    $('#main .result').prepend(
+        "<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase()
+        .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+        "<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n]
+        .ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
+        "<div class='description'>" + menu[n].des + "</div>" +
+        "<div class='type'>filter</div></div>"
+    )
+
+}
+
 function xmlResponse(e, s, n) {
     obj = []
     var pub = []
@@ -445,6 +443,7 @@ function xmlResponse(e, s, n) {
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result').remove()
+    $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({
             url: uri,
             method: 'GET',
@@ -461,11 +460,6 @@ function xmlResponse(e, s, n) {
             if ($('input[type=text]').val().length) filterResponse(true, $('input[type=text]').val())
         })
         .done(function(xhr) {
-            $('#visit').hide()
-            $('#bottom').show()
-			setTimeout(function() { 
-            	progressResponse(true, 100)
-			}, 300)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
             if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length - 1
@@ -549,7 +543,7 @@ function xmlResponse(e, s, n) {
                         /* "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
                             n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
-                        "<div id='ago' style='display:block;top:3.5em;'>" + dst[0] + "</div>" +
+                        "<div id='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" + $(this).find('title:first').text() +
                         "</div>" +
@@ -571,7 +565,7 @@ function xmlResponse(e, s, n) {
                         "<div class='ago attr' style='width:100%;display:block'></div>" + */
                         "<div class='border'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
-                        "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
+                        "<div class='ago'>" + dst[0] + "</div>" +
 						cat +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
@@ -592,14 +586,14 @@ function xmlResponse(e, s, n) {
             pub.sort(function(a, b) {
                 return b.since - a.since
             })
-    		$('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
             for (var i = 0; i <= quit - 1; i++) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('.channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
+			$('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
 			setTimeout(function() {
-				$('.center').css('display','block')
+				$('#main .center').css('display','block')
+            	progressResponse(true, 100)
 			}, 250)
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)

@@ -281,12 +281,8 @@ body,
 	margin: 25px auto;
 	padding: 1em;
 }
-#fc {
-	width: 36px;
-}
 .center {
 	margin: 0 auto;
-	position: relative;
 }
 .channel {
 	padding: 0;
