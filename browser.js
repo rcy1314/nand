@@ -7,7 +7,7 @@ var channel = []
 var reverse = false
 var contrast = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
-document.title = 'RSS-Browser`'
+document.title = 'acktic'
 $(document).ready(function() {
     $('#container, input[type=text], #arm').show()
     $('input[type=text]').on('touch click', function(e) {
@@ -69,7 +69,7 @@ $(document).ready(function() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
-	} else document.title = 'RSS-Browser`'
+	} else document.title = 'acktic'
     filterResponse(true, $('input[type=text]').val())
     e.preventDefault()
 
@@ -187,7 +187,7 @@ function bottomResponse() {
 	}
 	else {
 	    history.replaceState(null, null, '?')
-		document.title = 'RSS-Browser`'
+		document.title = 'acktic'
 	}
 	$('#main').attr('tabindex', -1).focus()
 }

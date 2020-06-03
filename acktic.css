@@ -161,7 +161,7 @@ body,
 #arm {
 	display: none;
 	width: 100%;
-	height: 95px;
+	height: 50px;
 }
 #placeholder {
 	width: 100px;
@@ -290,7 +290,6 @@ body,
 .channel {
 	padding: 0;
 	margin: 0;
-	position: relative;
 	width: fit-content;
 }
 .img {
