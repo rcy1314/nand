@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
-    $('#main #visit, #main .center').remove()
+    $('#main #visit, #main .center, #main .result, #main #air').remove()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
@@ -181,6 +181,7 @@ function bottomResponse(n) {
     $('#main .center').remove()
     setTimeout(function() {
 		populateResponse(n)
+		precedeResponse()
     }, 300)
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
@@ -360,6 +361,28 @@ function feedResponse(n) {
     applyVisual()
 }
 
+function precedeResponse(n) {
+
+
+    if ($('#main #air').length < 1) $('#main').prepend("<div id='air'></div>")
+    if (reverse == true) reverseArray(menu.reverse())
+    for (var i = 1; i < menu.length - 1; i++) {
+		if (menu[id].cat == menu[i].cat) {
+            $('#main #air').append(
+		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+        		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+        		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
+        		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
+        		"<div class='description'>" + menu[i].des + "</div>" +
+        		"<div class='type'>air</div></div>"
+			)
+		}
+    }
+    $('#main').scrollTop($('#main').scrollTop() + $('#air:first').outerHeight())
+    applyVisual()
+
+}
+
 function progressResponse(complete, n) {
 
     setTimeout(function() {
@@ -419,7 +442,7 @@ function xmlResponse(e, s, n) {
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
-    $('#main .result').empty()
+    $('#main .result').remove()
     request = $.get({
             url: uri,
             method: 'GET',
