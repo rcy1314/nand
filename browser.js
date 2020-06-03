@@ -41,9 +41,10 @@ $(document).ready(function() {
             $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, uri[1])
+            filterResponse(true, $('input[type=text]').val())
         } else if (!uri[1] && uri[0]) {
-            filterResponse(true, uri[0])
+            $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
+            filterResponse(true, $('input[type=text]').val())
 		}
     } else $('#main #visit').show()
 
@@ -260,7 +261,6 @@ function filterResponse(passthrough, n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
-		if (passthrough == false) progressResponse(true, 100)
     }
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -277,6 +277,7 @@ function filterResponse(passthrough, n) {
             populateResponse(filter[filter.length - 1] + +1)
         }, 300)
 	}
+	if (passthrough == false) progressResponse(true, 100)
     applyVisual()
 
 }
@@ -530,10 +531,10 @@ function xmlResponse(e, s, n) {
                 } else {
                     if (e == 'search') {
                         var cat =
-                            "<div style='width:98%;display:block;text-transform:lowercase'>" + ref
+                            "<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" + ref
                             .match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
                     } else {
-                        var cat = filter[n].cat
+                        var cat = ''
                     }
                     html = "<div class='item'>" +
                         /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
@@ -544,6 +545,7 @@ function xmlResponse(e, s, n) {
                         "<div class='border'></div>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         "<div class='ago' style='width:100%;display:block'>" + dst[0] + "</div>" +
+						cat +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
                         "</div>" +
