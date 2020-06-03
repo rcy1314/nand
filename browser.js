@@ -176,7 +176,6 @@ function applyVisual(n) {
 function bottomResponse() {
 
     $('#visit').hide()
-	$('#bottom').hide()
     $('#main .center, #main .result').remove()
     setTimeout(function() {
         filterResponse(true, $('input[type=text]').val())
@@ -189,6 +188,7 @@ function bottomResponse() {
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
 	}
+	progressResponse(true, 100)
 	$('#main').attr('tabindex', -1).focus()
 }
 
@@ -253,23 +253,24 @@ function filterResponse(passthrough, n) {
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-
         } else if (menu[i].cat.toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
         }
 		if (passthrough == false) progressResponse(true, 100)
     }
-	
+	console.log(filter.length)	
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
     } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
+        return false
+    } else if (!$.isNumeric(exact) && filter.length == 1) {
+        xmlResponse(null, null, filter[0])
         return false
     } else if (!$.isNumeric(exact) && !filter.length) {
         filter = menu[0]
@@ -307,7 +308,9 @@ function imageResolution(n) {
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
     } else $('#' + n).parent().find('.border').css({'margin-bottom': '10em'})
-	$('.center').css('display','block')
+	setTimeout(function() {
+		$('.center').css('display','block')
+	}, 250)
 }
 
 function momentTimeStamp(n) {
