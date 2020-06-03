@@ -166,6 +166,7 @@ body,
 #placeholder {
 	width: 100px;
 	left: 10px;
+	top: -50px;
 }
 .animate {
 	-webkit-animation: spin 3s infinite ease;
