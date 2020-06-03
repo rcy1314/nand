@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
-    $('#main #visit, #main .feed, #bottom').hide()
+    $('#main #visit, #main .center').remove()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
@@ -262,15 +262,8 @@ function filterResponse(passthrough, n) {
         }
 		if (passthrough == false) progressResponse(true, 100)
     }
-	console.log(filter.length)	
-    if (n == 'random') {
-        xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
-        return false
-    } else if ($.isNumeric(exact)) {
+    if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
-        return false
-    } else if (!$.isNumeric(exact) && filter.length == 1) {
-        xmlResponse(null, null, filter[0])
         return false
     } else if (!$.isNumeric(exact) && !filter.length) {
         filter = menu[0]
@@ -308,9 +301,7 @@ function imageResolution(n) {
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
     } else $('#' + n).parent().find('.border').css({'margin-bottom': '10em'})
-	setTimeout(function() {
-		$('.center').css('display','block')
-	}, 250)
+
 }
 
 function momentTimeStamp(n) {
@@ -338,7 +329,7 @@ function populateResponse(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
-		        "<div class='filter " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -352,17 +343,13 @@ function populateResponse(n) {
 }
 
 function feedResponse(n) {
-	var count = 0
-    for (var i = n; i <= menu.length - 1; i++) {
-	if (count == 5) break
-		if (menu[n].cat == menu[i].cat) {
+	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
+    for (var i = n; i <= n + 4 && n <= menu.length - 1; i++) {
             $('#main .center .feed').append(
 		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
         		"</div>"
             )
-		count++
-		}
     }
     applyVisual()
 }
@@ -426,7 +413,7 @@ function xmlResponse(e, s, n) {
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
-    $('#main .result, #main .item').remove()
+    $('#main .result').remove()
     request = $.get({
             url: uri,
             method: 'GET',
@@ -450,7 +437,7 @@ function xmlResponse(e, s, n) {
 			}, 300)
             if ($(xhr).find('entry').length > 0) var channel = "entry"
             else var channel = 'item'
-            if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length
+            if ($(xhr).find(channel).length < quit) quit = $(xhr).find(channel).length - 1
             $(xhr).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr('href')
@@ -575,10 +562,13 @@ function xmlResponse(e, s, n) {
             })
     		$('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
             for (var i = 0; i <= quit - 1; i++) {
-                $('#main .channel').append(pub[i].post)
+                $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			$('.channel').append("<div id='bottom' onclick='bottomResponse()'><img class='indicator'></div>")
+			setTimeout(function() {
+				$('.center').css('display','block')
+			}, 250)
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
