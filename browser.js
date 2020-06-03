@@ -77,7 +77,8 @@ $(document).ready(function() {
 
 }).on('touch click', '#placeholder', function(e) {
 
-	bottomResponse()
+	$('main #visit, #main #placeholder').remove()
+	filterResponse(false, $('input[type=text]').val())
 
 }).on('touch click', '.item', function(e) {
 
