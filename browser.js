@@ -134,11 +134,10 @@ function applyVisual(n) {
                 'background-color': '#000',
 				'border': 'none'
             })
-        $('input[type=text]').css({
+        $('input[type=text], .description, .comment').css({
             'border-bottom': '1px solid #333',
 
         })
-		$('.description').css({'border-bottom': '.3px solid #333'})
         $('#main').addClass('opposite').removeClass('invert')
         $('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
         $('#ago, .ago, .attr').css('color', '#eee')
