@@ -511,7 +511,7 @@ function xmlResponse(e, s, n) {
                 } else if ($(this).find('image').text()) {
                     src = String($(this).find('image').text())
                 } else src = ''
-                if (src.match(/comments|default|feeds|undefined/)) src = ''
+                if (src.match(/comments|default|feeds|fsdn|undefined/)) src = ''
                 if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy =
