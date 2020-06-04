@@ -442,6 +442,12 @@ var menu = [{
 		uri: "https://reddit.com/r/askcomputerscience/.rss",
 		ext: "https://reddit.com/r/AskComputerScience"
 	}, {
+		id: "Reddit/Bash",
+		cat: "Social",
+		des: "Bash subreddit dedicated to bash scripting.",
+		uri: "https://reddit.com/r/bash/.rss",
+		ext: "https://reddit.com/r/Bash"
+	}, {
 		id: "Reddit/Boston",
 		cat: "Social",
 		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
