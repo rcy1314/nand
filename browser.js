@@ -178,19 +178,11 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
-    $('#main .center').remove()
-	if ($('input[type=text]').val() != '') {
-		filterResponse(false, $('input[type=text]').val())
-		setTimeout(function() {
-			precedeResponse()
-		}, 300)
-	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-	} else {
+    $('#main #visit, #main .center, #main .result, #main #air').remove()
 		populateResponse(n)
 		precedeResponse()
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
-	}
 	progressResponse(true, 100)
 	applyVisual()
 }
@@ -374,7 +366,7 @@ function precedeResponse(n) {
 			)
 		}
     }
-    $('#main').scrollTop($('#main').scrollTop() + $('#air:first').outerHeight())
+	$('#main').scrollTop($('#air').outerHeight())
     applyVisual()
 
 }
