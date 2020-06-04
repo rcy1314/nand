@@ -178,14 +178,19 @@ function applyVisual(n) {
 function bottomResponse(n) {
 
     $('#main .center').remove()
-    setTimeout(function() {
+	if ($('input[type=text]').val() != '') {
+		filterResponse(false, $('input[type=text]').val())
+		precedeResponse()
+	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	} else {
 		populateResponse(n)
 		precedeResponse()
-    }, 300)
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
+	}
 	progressResponse(true, 100)
 	$('#main').attr('tabindex', -1).focus()
+	applyVisual()
 }
 
 function changeTimeZone(date, n) {
