@@ -165,7 +165,7 @@ function applyVisual(n) {
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.indicator').attr('src', 'images/transparent.png').css({
-			'filter': 'saturate(50%) invert(90%)'
+			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
         $('#favicon').attr('href', 'images/invert.png')
     }
@@ -245,7 +245,7 @@ function filterResponse(passthrough, n) {
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
     $('#main').scrollTop(0)
-    $('#main .result, #main .center').remove()
+    $('#main .result').remove()
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
@@ -451,6 +451,7 @@ function xmlResponse(e, s, n) {
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result').remove()
+	$('svg, .indicator').show()
     $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({
             url: uri,
@@ -599,8 +600,7 @@ function xmlResponse(e, s, n) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			if (e != 'search') $('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
-			$('#main .center').css('display','block')
+			$('#main .center, svg, .indicator').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
 			feedResponse(id)

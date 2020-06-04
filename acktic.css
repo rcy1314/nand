@@ -344,13 +344,12 @@ input[type=submit] {
 	bottom: 0em;
 }
 svg,
-svg circle .progress {
-	position: relative;
-	display: block;
-	margin: 0 auto;
+.indicator {
+	position: fixed;
 	height: 52px;
-	bottom: -4px;
 	width: 52px;
+	right: 10%;
+	top: 8%;
 }
 svg .progress {
 	transform-origin: 50% 50%;
@@ -360,18 +359,15 @@ svg .progress {
 	fill: transparent;
 	stroke-width: 1px;
 	stroke: #F74268;
-	display: block;
 }
-svg {
+svg,
+.indicator {
+	display: none;
 	z-index: 2;
 }
 .indicator {
-	position: relative;
-	display: block;
-	margin: 0 auto;
 	height: 48px;
 	width: 48px;
-	bottom: 0;
 }
 .views {
 	position: absolute;
