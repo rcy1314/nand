@@ -441,7 +441,6 @@ var menu = [{
 		des: "AskComputerScience subreddit where questions are asked about Computer Science.",
 		uri: "https://reddit.com/r/askcomputerscience/.rss",
 		ext: "https://reddit.com/r/AskComputerScience"
-		ext: "https://reddit.com/r/Apple"
 	}, {
 		id: "Reddit/Boston",
 		cat: "Social",
