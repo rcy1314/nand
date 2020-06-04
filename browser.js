@@ -566,7 +566,6 @@ function xmlResponse(e, s, n) {
                         var cat = ''
                     }
                     html = "<div class='item'>" +
-                        /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
                         /* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
@@ -576,7 +575,9 @@ function xmlResponse(e, s, n) {
                         "<div class='ago'>" + dst[0] + "</div>" +
 						cat +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
-                        .trim() + "\", \"_blank\")'>" + $(this).find('title:first').text() +
+                        .trim() + "\", \"_blank\")'>" +
+                        "<div class='ack'><i class='fa fa-at'></i></div>" +
+						$(this).find('title:first').text() +
                         "</div>" +
                         "<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +

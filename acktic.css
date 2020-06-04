@@ -265,6 +265,9 @@ body,
 .img {
 	padding-top: 1em;
 }
+.ack {
+	display: inline-block;
+}
 .item {
 	margin: 0;
 	margin-bottom: 2em;
@@ -373,7 +376,8 @@ svg {
 .views {
 	position: absolute;
 	right: 0;
-	bottom: -6em;
+	bottom: -5.8em;
+	z-index: 2;
 }
 .yt {
 	-webkit-overflow-scrolling: touch;
