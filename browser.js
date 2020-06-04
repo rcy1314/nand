@@ -604,7 +604,6 @@ function xmlResponse(e, s, n) {
             	progressResponse(true, 100)
 			}, 250)
 			$('#main .center').css('display','block')
-            $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
         })
