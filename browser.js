@@ -285,6 +285,7 @@ function filterResponse(passthrough, n) {
         }, 300)
 	}
 	if (passthrough == false) progressResponse(true, 100)
+	$('#main').attr('tabindex', -1).focus()
     applyVisual()
 
 }
