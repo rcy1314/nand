@@ -45,7 +45,7 @@ $(document).ready(function() {
             filterResponse(true, uri[1])
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(false, uri[0])
+            filterResponse(true, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -232,7 +232,7 @@ function feedResponse(n) {
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 	else if (n >= menu.length - 4) n = 1
 	console.log(n)
-    for (var i = n; i <= n + 4; i++) {
+    for (var i = n + 1; i <= n + 4; i++) {
             $('#main .center .feed').append(
 		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
@@ -600,10 +600,8 @@ function xmlResponse(e, s, n) {
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			$('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
-			setTimeout(function() {
-            	progressResponse(true, 100)
-			}, 250)
 			$('#main .center').css('display','block')
+            progressResponse(true, 100)
 			feedResponse(n)
             applyVisual()
         })

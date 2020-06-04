@@ -85,13 +85,15 @@
 	scrollbar-width: thin;
 }
 .responseInvert {
-	background-image: linear-gradient(319deg, #ffbd77 0%, #f0f4a4 100%, #acfcd9 100%);
-	height: 3px;
+	background: #abbaab;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 2px;
 	width: 0%;
 }
 .responseOpposite {
-	background-image: linear-gradient(319deg, #ef4063 0%, #e557c6 100%);
-	height: 3px;
+	background-image: linear-gradient(to left, #ef4063 0%, #e557c6 100%);
+	height: 2px;
 	width: 0%;
 }
 .response {
@@ -108,12 +110,12 @@
     background: -moz-linear-gradient(left , rgba(255,255,255,.3) 30%, rgba(255,255,255,.6) 80%, rgba(255,255,255,.3) 100%) repeat;
     -moz-background-size: 50% 100%;
     -moz-animation-name: moving-gradient;
-    -moz-animation-duration: 1s;
+    -moz-animation-duration: 2s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
     -webkit-background-size: 50% 100%;
     -webkit-animation-name: moving-gradient;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 }
@@ -343,7 +345,7 @@ input[type=submit] {
 	display: block;
 	height: 2em;
 	width: 100%;
-	bottom: -2em;
+	bottom: 0em;
 }
 svg,
 svg circle .progress {
