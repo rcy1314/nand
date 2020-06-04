@@ -61,7 +61,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#main .item a, #main .result a', function(e) {
 
-    window.open($(this).attr('ext'), '_blank', 'noopener')
+    window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
 }).on('submit', '#search', function(e) {
