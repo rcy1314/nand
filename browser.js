@@ -179,10 +179,18 @@ function applyVisual(n) {
 function bottomResponse(n) {
 
     $('#main #visit, #main .center, #main .result, #main #air').remove()
+	if ($('input[type=text]').val() != menu[id].cat) {
 		populateResponse(n)
 		precedeResponse()
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
+	} else {
+		filterResponse(false, $('input[type=text]').val())
+		setTimeout(function() {
+			precedeResponse()
+		}, 300)
+	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+	}
 	progressResponse(true, 100)
 	applyVisual()
 }
