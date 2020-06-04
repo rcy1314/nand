@@ -180,7 +180,9 @@ function bottomResponse(n) {
     $('#main .center').remove()
 	if ($('input[type=text]').val() != '') {
 		filterResponse(false, $('input[type=text]').val())
-		precedeResponse()
+		setTimeout(function() {
+			precedeResponse()
+		}, 300)
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 	} else {
 		populateResponse(n)
