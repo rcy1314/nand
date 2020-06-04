@@ -407,11 +407,11 @@ var menu = [{
 		uri: "http://www.wopular.com/rss/sections/all",
 		ext: "http://www.wopular.com"
 	}, {
-		id: "Reddit/Apple",
+		id: "Reddit/AMD",
 		cat: "Social",
-		des: "Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",
-		uri: "https://reddit.com/r/apple/.rss",
-		ext: "https://reddit.com/r/Apple"
+		des: "AMD subreddit dedicated to Advanced Micro Devices and its products.",
+		uri: "https://reddit.com/r/Amd/.rss",
+		ext: "https://www.reddit.com/r/AMD"
 	}, {
 		id: "Reddit/Android",
 		cat: "Social",
@@ -419,11 +419,10 @@ var menu = [{
 		uri: "https://reddit.com/r/android/.rss",
 		ext: "https://reddit.com/r/Android"
 	}, {
-		id: "Reddit/AMD",
+		id: "Reddit/Apple",
 		cat: "Social",
-		des: "AMD subreddit dedicated to Advanced Micro Devices and its products.",
-		uri: "https://reddit.com/r/Amd/.rss",
-		ext: "https://www.reddit.com/r/AMD"
+		des: "Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",
+		uri: "https://reddit.com/r/apple/.rss",
 	}, {
 		id: "Arch Linux",
 		cat: "Social",
@@ -436,6 +435,13 @@ var menu = [{
 		des: "Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",
 		uri: "https://reddit.com/r/ArchLinux/.rss",
 		ext: "http://reddit.com/r/ArchLinux"
+	}, {
+		id: "Reddit/AskComputerScience",
+		cat: "Social",
+		des: "AskComputerScience subreddit where questions are asked about Computer Science.",
+		uri: "https://reddit.com/r/askcomputerscience/.rss",
+		ext: "https://reddit.com/r/AskComputerScience"
+		ext: "https://reddit.com/r/Apple"
 	}, {
 		id: "Reddit/Boston",
 		cat: "Social",
@@ -1672,6 +1678,12 @@ var menu = [{
 		des: "Heavy News from around the world.",
 		uri: "https://heavy.com/news/feed",
 		ext: "https://heavy.com/news"
+	}, {
+		id: "InfoWars",
+		cat: "World",
+		des: "Infowars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
+		uri: "https://infowars.com/feed",
+		ext: "https://infowars.com"
 	}, {
 		id: "Int Business Times",
 		cat: "World",
