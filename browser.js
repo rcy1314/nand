@@ -192,7 +192,6 @@ function bottomResponse(n) {
 		document.title = 'acktic'
 	}
 	progressResponse(true, 100)
-	$('#main').attr('tabindex', -1).focus()
 	applyVisual()
 }
 
@@ -599,7 +598,7 @@ function xmlResponse(e, s, n) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
+			if (e != 'search') $('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
 			$('#main .center').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
