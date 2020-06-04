@@ -45,7 +45,7 @@ $(document).ready(function() {
             filterResponse(true, uri[1])
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, uri[0])
+            filterResponse(false, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -72,7 +72,8 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
 	} else document.title = 'acktic'
-    filterResponse(true, $('input[type=text]').val())
+	progressResponse(true, 100)
+    filterResponse(false, $('input[type=text]').val())
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -267,6 +268,7 @@ function filterResponse(passthrough, n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
+	if (passthrough == false) progressResponse(true, 100)
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -286,7 +288,6 @@ function filterResponse(passthrough, n) {
             populateResponse(filter[filter.length - 1] + +1)
         }, 300)
 	}
-	if (passthrough == false) progressResponse(true, 100)
 	$('#main').attr('tabindex', -1).focus()
     applyVisual()
 
@@ -382,7 +383,7 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-        $('#progressBar').addClass('response').width(n + '%')
+    $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
     	    $(this).removeClass('response').width(0)
@@ -600,9 +601,9 @@ function xmlResponse(e, s, n) {
             }
 			$('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
 			setTimeout(function() {
-				$('#main .center').css('display','block')
             	progressResponse(true, 100)
 			}, 250)
+			$('#main .center').css('display','block')
             $('#main').attr('tabindex', -1).focus()
 			feedResponse(n)
             applyVisual()
