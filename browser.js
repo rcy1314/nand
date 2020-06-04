@@ -180,7 +180,7 @@ function bottomResponse(n) {
 
     $('#main #visit, #main .center, #main .result, #main #air').remove()
 	if ($('input[type=text]').val() != menu[id].cat) {
-		populateResponse(n)
+		populateResponse(id)
 		precedeResponse()
 	    history.replaceState(null, null, '?')
 		document.title = 'acktic'
@@ -253,6 +253,7 @@ function filterResponse(passthrough, n) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
             var exact = i
+			id = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
@@ -602,7 +603,7 @@ function xmlResponse(e, s, n) {
 			$('#main .center').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
-			feedResponse(n)
+			feedResponse(id)
             applyVisual()
         })
 
