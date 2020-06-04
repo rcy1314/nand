@@ -600,6 +600,7 @@ function xmlResponse(e, s, n) {
             }
 			$('#main .channel').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='indicator'></div>")
 			$('#main .center').css('display','block')
+			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
 			feedResponse(n)
             applyVisual()
