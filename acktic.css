@@ -284,10 +284,10 @@ body,
 	width: 85%;
 }
 .comment {
+	padding: 1em;
 	border: none;
 	clear: left;
-	width: 100%;
-	padding: 1em;
+	width: 99%;
 }
 .url {
 	position: absolute;
@@ -346,9 +346,11 @@ input[type=submit] {
 svg,
 .indicator {
 	position: fixed;
+	display: none;
 	height: 52px;
 	width: 52px;
 	right: 10%;
+	z-index: 2;
 	top: 8%;
 }
 svg .progress {
@@ -359,11 +361,6 @@ svg .progress {
 	fill: transparent;
 	stroke-width: 1px;
 	stroke: #F74268;
-}
-svg,
-.indicator {
-	display: none;
-	z-index: 2;
 }
 .indicator {
 	height: 48px;
