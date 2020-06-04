@@ -1,7 +1,7 @@
 var menu = [{
 		id: "Bing",
-		cat: "Bing",
-		des: "Bing Search Engine.",
+		cat: "Search Results",
+		des: "Bing Search Results.",
 		uri: "https://www.bing.com/search?q=",
 		ext: "https://www.bing.com"
 	}, {
