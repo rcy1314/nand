@@ -577,7 +577,7 @@ function xmlResponse(e, s, n) {
                         "<div class='ago'>" + dst[0] + "</div>" +
 						cat +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
-                        .trim() + "\", \"_blank\")'>" +
+                        .trim() + "\", \"_blank\")' 'noreferrer'>" +
                         "<div class='ack'><i class='fa fa-at'></i></div>" +
 						$(this).find('title:first').text() +
                         "</div>" +
