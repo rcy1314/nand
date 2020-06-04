@@ -211,7 +211,7 @@ body,
 	display: inline-flex;
 	font-size: 12px;
 	flex-wrap: wrap;
-	margin: 4em;
+	margin: 3em;
 	width: 18em;
 }
 .feed .pub {
@@ -243,11 +243,6 @@ body,
 	width: 100%;
 	bottom: 0;
 }
-.ack {
-	position: absolute;
-	font-size: 14px;
-	margin: 12px;
-}
 .feed {
 	font-size: 10px;
 	display: flex;
@@ -259,13 +254,14 @@ body,
 	padding: 1em;
 }
 .center {
+	scrollbar-width: none;
 	overflow-y: scroll;
 	position: relative;
 	margin: 0 auto;
 }
 .channel {
 	padding: 0;
-	padding-left: 2px;
+	padding-left: 1px;
 	padding-right: 2px;
 }
 .img {
