@@ -178,6 +178,7 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
+	$('svg, .indicator').hide()
     $('#main #visit, #main .center, #main .result, #main #air').remove()
 	if ($('input[type=text]').val() != menu[id].cat) {
 		populateResponse(id)
