@@ -85,7 +85,7 @@
 }
 @media screen and (min-width: 2560px) {
 	#main {
-		width: 50% !important;
+		width: 100% !important;
 		margin: 0 auto !important;
 		display: block !important;
 		position: relative !important;
