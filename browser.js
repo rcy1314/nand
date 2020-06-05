@@ -64,6 +64,17 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
+}).on('submit', '.addComment', function(e) {
+
+	if ($(this).parent().find('.add').length >= 3) {
+		$(this).parent().find('.add:first').html($(this).children('.comment').val())
+		return false
+	} else {
+		$(this).parent().find('.pub').append("<div class='add'>" + $(this).children('.comment').val() + "</div>")
+	}
+	$(this).children('.comment').val('')
+	e.preventDefault()
+
 }).on('submit', '#search', function(e) {
 
     $('#main #visit, #main .center, #main .result, #main #air').remove()
@@ -141,7 +152,6 @@ function applyVisual(n) {
 
         })
         $('#main').addClass('opposite').removeClass('invert')
-        $('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
         $('#ago, .ago, .attr').css('color', '#eee')
         $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
@@ -161,14 +171,14 @@ function applyVisual(n) {
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
         $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
-        $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
-        $('.indicator, .bottom').attr('src', 'images/transparent.png').css({
+        $('.bottom').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
         $('#favicon').attr('href', 'images/invert.png')
     }
+	$('#progressBar').addClass('responseOpposite')
     if ($('#main .result').length && op == 0) {
         $('#arm').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
@@ -178,7 +188,6 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
-	$('svg, .indicator').hide()
     $('#main #visit, #main .center, #main .result, #main #air').remove()
 	if ($('input[type=text]').val() != menu[id].cat) {
 		populateResponse(id)
@@ -451,7 +460,6 @@ function xmlResponse(e, s, n) {
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result').remove()
-	$('svg, .indicator').show()
     $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({
             url: uri,
@@ -580,14 +588,14 @@ function xmlResponse(e, s, n) {
 						cat +
                         "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
                         .trim() + "\", \"_blank\")' 'noreferrer'>" +
-                        "<div class='ack'><i class='fa fa-at'></i></div>" +
+                        /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						$(this).find('title:first').text() +
                         "</div>" +
                         "<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"</div>" +
-						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
+						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' placeholder='Leave a Comment...'></form>" +
                         "</div>"
                 }
                 pub.push({
@@ -603,8 +611,8 @@ function xmlResponse(e, s, n) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
-			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='bottom'></div>")
-			$('#main .center, svg, .indicator').css('display','block')
+			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + id + ")'><img class='bottom'></div>")
+			$('#main .center').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
 			feedResponse(id)
