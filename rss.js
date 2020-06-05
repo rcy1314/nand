@@ -1228,6 +1228,12 @@ var menu = [{
 		uri: "https://gizmodo.com/rss",
 		ext: "https://gizmodo.com"
 	}, {
+		id: "The Gadget Flow",
+		cat: "Technology",
+		des: "The Gadget Flow Stay up to date with the latest tech, gear, and most incredible crowdfunding campaigns.",
+		uri: "http://feeds.feedburner.com/thegadgetflow",
+		ext: "https://thegadgetflow.com"
+	}, {
 		id: "gHacks",
 		cat: "Technology",
 		des: "gHacks the Independent Rechnology News blog.",
