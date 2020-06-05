@@ -108,12 +108,12 @@
     background: -moz-linear-gradient(left , rgba(255,255,255,.3) 30%, rgba(255,255,255,.6) 80%, rgba(255,255,255,.3) 100%) repeat;
     -moz-background-size: 50% 100%;
     -moz-animation-name: moving-gradient;
-    -moz-animation-duration: 2s;
+    -moz-animation-duration: 1s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
     -webkit-background-size: 50% 100%;
     -webkit-animation-name: moving-gradient;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 }
