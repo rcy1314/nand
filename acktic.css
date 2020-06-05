@@ -18,8 +18,14 @@
 	}
 }
 @media screen and (min-width: 425px) {
+	#main {
+		width: 100% !important;
+		margin: 0 auto !important;
+		display: block !important;
+		position: relative !important;
+	}
 	.center {
-		width: 92% !important;
+		width: 95% !important;
 		margin: 0 auto !important;
 	}
 	#home {
@@ -27,8 +33,14 @@
 	}
 }
 @media screen and (min-width: 768px) {
+	#main {
+		width: 100% !important;
+		margin: 0 auto !important;
+		display: block !important;
+		position: relative !important;
+	}
 	.center {
-		width: 70% !important;
+		width: 75% !important;
 		margin: 0 auto !important;
 	}
 	#home {
@@ -36,8 +48,14 @@
 	}
 }
 @media screen and (min-width: 769px) {
+	#main {
+		width: 100% !important;
+		margin: 0 auto !important;
+		display: block !important;
+		position: relative !important;
+	}
 	.center {
-		width: 55% !important;
+		width: 65% !important;
 		margin: 0 auto !important;
 	}
 }
@@ -63,6 +81,9 @@
 	.channel {
 		width: 85%;
 		margin: 0 auto;
+	}
+	svg, .indicator {
+		right: 27% !important;
 	}
 }
 @media screen and (min-width: 2160px) {
@@ -286,7 +307,7 @@ body,
 .center {
 	position: relative;
 	margin: 0 auto;
-	width: 90% !important;
+	width: 90%;
 }
 .channel {
 	padding: 0;
@@ -380,7 +401,7 @@ svg,
 	display: none;
 	height: 52px;
 	width: 52px;
-	right: 10%;
+	right: 5%;
 	z-index: 2;
 	top: 8%;
 }
