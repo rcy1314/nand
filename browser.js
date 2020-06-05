@@ -599,7 +599,7 @@ function xmlResponse(e, s, n) {
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"</div>" +
-						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' placeholder='Leave a Comment...'></form>" +
+						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' placeholder='...'></form>" +
                         "</div>"
                 }
                 pub.push({
