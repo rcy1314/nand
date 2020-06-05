@@ -61,13 +61,13 @@
 }
 @media screen and (min-width: 1024px) {
 	#main {
-		width: 80% !important;
+		width: 100% !important;
 		margin: 0 auto !important;
 		display: block !important;
 		position: relative !important;
 	}
 	.channel {
-		width: 85%;
+		width: 80%;
 		margin: 0 auto;
 	}
 }
@@ -385,11 +385,16 @@ input[type=submit] {
 	display: none;
 }
 #bottom {
-	position: absolute;
-	display: block;
+	position: relative;
+	bottom: 2em;
 	height: 2em;
 	width: 100%;
-	bottom: 0em;
+}
+.bottom {
+	position: relative !important;
+	display: block;
+	margin: 0 auto !important;
+	width: 52px;
 }
 svg,
 .indicator {

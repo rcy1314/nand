@@ -143,7 +143,7 @@ function applyVisual(n) {
         $('#main').addClass('opposite').removeClass('invert')
         $('#progressBar').addClass('responseOpposite').removeClass('responseInvert')
         $('#ago, .ago, .attr').css('color', '#eee')
-        $('.indicator').attr('src', 'images/opposite.png').css('filter', 'none')
+        $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
@@ -164,7 +164,7 @@ function applyVisual(n) {
         $('#progressBar').addClass('responseInvert').removeClass('responseOpposite')
         $('#main').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
-        $('.indicator').attr('src', 'images/transparent.png').css({
+        $('.indicator, .bottom').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
         $('#favicon').attr('href', 'images/invert.png')
@@ -601,6 +601,7 @@ function xmlResponse(e, s, n) {
                 $('#main .center .channel').append(pub[i].post)
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
+			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + menu.indexOf(menu[id]) + ")'><img class='bottom'></div>")
 			$('#main .center, svg, .indicator').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
