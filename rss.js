@@ -736,6 +736,12 @@ var menu = [{
 		uri: "http://boards.4channel.org/tv/index.rss",
 		ext: "http://boards.4channel.org/tv"
 	}, {
+		id: "Imgur/Unix Porn",
+		cat: "Social",
+		des: "#UnixPorn on imgur provided by rss.app.",
+		uri: "https://rss.app/feeds/5ETL2LvqYVD6wP5G.xml",
+		ext: "https://imgur.com/t/unixporn"
+	}, {
 		id: "Reddit/Unix Porn",
 		cat: "Social",
 		des: "Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",
