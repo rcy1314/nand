@@ -95,7 +95,6 @@ $(document).ready(function() {
 }).on('touch click', '.item', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
-    $(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
     e.stoppropagation()
 
 }).on('touch click', '.filter, .populate, .feed .id', function(e) {
@@ -103,6 +102,11 @@ $(document).ready(function() {
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr(
         'response') + '+1')
     else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + $(this).attr('response'))
+
+}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
+
+    $(this).toggleClass('fa-bookmark-o fa-bookmark')
+    e.stopPropagation()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
 
