@@ -200,7 +200,9 @@ a {
 }
 html,
 body,
-#visit {
+#visit,
+#wrapper,
+#container {
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
@@ -221,15 +223,9 @@ body,
 	-webkit-overflow-scrolling: touch;
 	-webkit-user-select: none;
 	height: calc(100% - 50px);
-	justify-content: center;
 	-ms-user-select: none;
-	display: inline-flex;
-	overflow-y: scroll;
 	user-select: none;
-	position: absolute;
-	flex-wrap: wrap;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: auto;
 	outline: none;
 	width: 100%;
 }
