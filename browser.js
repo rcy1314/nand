@@ -94,6 +94,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.item', function(e) {
 
+	window.open($(this).attr('ext'), '_blank', 'noreferrer')
     $(this).find('.fa-bookmark-o, .fa-bookmark').toggleClass('fa-bookmark-o fa-bookmark')
     e.stoppropagation()
 
@@ -553,7 +554,7 @@ function xmlResponse(e, s, n) {
                             $(this).find('media\\:statistics, statistics').attr('views')
                             .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
 					else var views = ''
-                    html = "<div id='yt' class='item'>" +
+                    html = "<div id='yt' class='item' ext='" + ref.trim() + "'>" +
                         /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
@@ -564,8 +565,8 @@ function xmlResponse(e, s, n) {
                             n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
                         "<div id='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
-                        "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
-                        .trim() + "\", \"_blank\")' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" + $(this).find('title:first').text() +
+                        "<div class='pub' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" +
+						$(this).find('title:first').text() +
                         "</div>" +
 						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
 						"</div>"
@@ -577,7 +578,7 @@ function xmlResponse(e, s, n) {
                     } else {
                         var cat = ''
                     }
-                    html = "<div class='item'>" +
+                    html = "<div class='item' ext='" + ref.trim() + "'>" +
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
                         /* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
@@ -586,8 +587,7 @@ function xmlResponse(e, s, n) {
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
 						cat +
-                        "<div class='pub' onclick='event.stopPropagation();window.open(\"" + ref
-                        .trim() + "\", \"_blank\")' 'noreferrer'>" +
+                        "<div class='pub'>" +
                         /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						$(this).find('title:first').text() +
                         "</div>" +
