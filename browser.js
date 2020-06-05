@@ -190,10 +190,10 @@ function applyVisual(n) {
 function bottomResponse(n) {
 
     $('#main #visit, #main .center, #main .result, #main #air').remove()
-	if ($('input[type=text]').val() != menu[id].cat) {
+	if ($('input[type=text]').val().toLowerCase() != menu[id].cat.toLowerCase()) {
 		populateResponse(id)
 		precedeResponse()
-	    history.replaceState(null, null, '?')
+	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
 	} else {
 		filterResponse(false, $('input[type=text]').val())
