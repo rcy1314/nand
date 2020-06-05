@@ -163,7 +163,7 @@ function applyVisual(n) {
                 'color': '#666',
 				'border': 'none'
             })
-        $('#main, input[type=text], .category, .feed').css({
+        $('#main, input[type=text], .comment, .category, .feed').css({
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
