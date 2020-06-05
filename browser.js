@@ -97,11 +97,17 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stoppropagation()
 
-}).on('touch click', '.filter, .populate, .feed .id', function(e) {
+}).on('touch click', '.feed .id', function(e) {
 
-    if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + $(this).attr(
+    if (contrast == true) window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr(
         'response') + '+1')
-    else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + $(this).attr('response'))
+    else window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr('response'))
+
+}).on('touch click', '.filter, .populate', function(e) {
+
+    if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + '&' + $(this).attr(
+        'response') + '+1')
+    else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + $(this).attr('response'))
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
 
@@ -246,7 +252,7 @@ function feedResponse(n) {
 	else if (n >= menu.length - 5) n = 0
     for (var i = n + 1; i <= n + 4; i++) {
             $('#main .center .feed').append(
-		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+		        "<div class='id " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<a class='title' ext='" + menu[i].ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
         		"</div>"
             )
@@ -359,7 +365,7 @@ function populateResponse(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
-		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -380,7 +386,7 @@ function precedeResponse(n) {
     for (var i = 1; i < menu.length - 1; i++) {
 		if (menu[id].cat == menu[i].cat) {
             $('#main #air').append(
-		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase()
+		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
@@ -445,7 +451,7 @@ function uncoordinatedTimeZone(n) {
 function writeResponse(n) {
 
     $('#main .result').prepend(
-        "<div class='filter " + menu.indexOf(menu[n]) + "' response='&" + menu[n].id.toLowerCase()
+        "<div class='filter " + menu.indexOf(menu[n]) + "' response='" + menu[n].id.toLowerCase()
         .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         "<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n]
         .ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
