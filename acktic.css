@@ -60,30 +60,15 @@
 	}
 }
 @media screen and (min-width: 1024px) {
-	#main {
-		width: 100% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
 	.channel {
 		width: 80%;
 		margin: 0 auto;
 	}
 }
 @media screen and (min-width: 1440px) {
-	#main {
-		width: 50% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
 	.channel {
 		width: 85%;
 		margin: 0 auto;
-	}
-	svg, .indicator {
-		right: 27% !important;
 	}
 }
 @media screen and (min-width: 2160px) {
@@ -186,6 +171,7 @@
         background-position: right bottom;
     }
 }
+
 div,
 input[type=text] {
 	font-family: Arial;
@@ -200,6 +186,7 @@ a {
 }
 html,
 body,
+#main,
 #visit,
 #wrapper,
 #container {
@@ -226,6 +213,7 @@ body,
 	-ms-user-select: none;
 	user-select: none;
 	overflow: auto;
+	overflow-x: hidden;
 	outline: none;
 	width: 100%;
 }
@@ -396,7 +384,7 @@ input[type=submit] {
 	margin: 0 auto !important;
 	width: 52px;
 }
-svg,
+.reader,
 .indicator {
 	position: fixed;
 	display: none;
@@ -406,7 +394,7 @@ svg,
 	z-index: 2;
 	top: 8%;
 }
-svg .progress {
+.progress {
 	transform-origin: 50% 50%;
 	transform: rotate(270deg);
 	stroke-dashoffset: 131;
