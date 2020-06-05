@@ -230,7 +230,6 @@ function feedResponse(n) {
 
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 	else if (n >= menu.length - 5) n = 0
-	console.log(n)
     for (var i = n + 1; i <= n + 4; i++) {
             $('#main .center .feed').append(
 		        "<div class='id " + menu.indexOf(menu[i]) + "' response='&" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
@@ -541,14 +540,17 @@ function xmlResponse(e, s, n) {
                     filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] +
                     "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
+					if ($(this).find('media\\:statistics, statistics').attr('views'))
+						var views = "<div class='ago views'>views " +
+                            $(this).find('media\\:statistics, statistics').attr('views')
+                            .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>"
+					else var views = ''
                     html = "<div id='yt' class='item'>" +
                         /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
                         "<div class='yt'><iframe src='" + src + "'></iframe>" +
-                        "<div class='ago views'>views " +
-                            $(this).find('media\\:statistics, statistics').attr('views')
-                            .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</div>" +
+						views +
 						"<input class='url' value='" + ref.trim() + "'>" +
                         /* "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
                             n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
