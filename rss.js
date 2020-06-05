@@ -64,7 +64,17 @@ var menu = [{
 		des: "CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com"
-	}, {
+	},
+{id:"CBS",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},
+{id:"NBC",cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
+{id:"CBS",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
+{id:"NBC",cat:"News",des:"NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",uri:"https://www.kcra.com/topstories-rss",ext:"https://www.kcra.com"},
+{id:"ABC",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
+{id:"NBC",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
+{id:"CBS",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
+{id:"ABC",cat:"News",des:"ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",uri:"https://feeds.feedblitz.com/kxtv/news&x=1",ext:"https://www.abc10.com"},
+{id:"ABC",cat:"News",des:"ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",uri:"https://keyt.com/feed",ext:"https://keyt.com"},
+ {
 		id: "ABC New York",
 		cat: "News",
 		des: "ABC New York covering New York City, New Jersey, and Long Island.",
@@ -76,7 +86,13 @@ var menu = [{
 		des: "CBS WCBS New York City Digital Streaming News Service, It's always on.",
 		uri: "https://newyork.cbslocal.com/feed",
 		ext: "https://newyork.cbslocal.com"
-	}, {
+	},
+{id:"CBS",cat:"News",des:"CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",uri:"https://www.8newsnow.com/feed",ext:"https://www.8newsnow.com"},
+{id:"ABC",cat:"News",des:"ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",uri:"http://rssfeeds.kvue.com/kvue/home&x=1",ext:"http://www.kvue.com"},
+{id:"NBC",cat:"News",des:"NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",uri:"https://www.kxan.com/feed",ext:"https://www.kxan.com"},
+{id:"NBC",cat:"News",des:"NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",uri:"https://ksltv.com/feed",ext:"https://ksltv.com"},
+{id:"ABC",cat:"News",des:"ABC KTVX Utah Salt Lake the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
+ {
 		id: "ABC Entertainment",
 		cat: "Media",
 		des: "ABC Entertainment Latest News, Videos and Photos.",
@@ -2213,15 +2229,6 @@ var menu = [{
 		ext: "https://www.youtube.com/user/Wired"
 	}]
 	/* rip
-{id:"CBS",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},
-{id:"NBC",cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
-{id:"CBS",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
-{id:"NBC",cat:"News",des:"NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",uri:"https://www.kcra.com/topstories-rss",ext:"https://www.kcra.com"},
-{id:"ABC",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
-{id:"NBC",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
-{id:"CBS",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
-{id:"ABC",cat:"News",des:"ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",uri:"https://feeds.feedblitz.com/kxtv/news&x=1",ext:"https://www.abc10.com"},
-{id:"ABC",cat:"News",des:"ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",uri:"https://keyt.com/feed",ext:"https://keyt.com"},
 {id:"ABC",cat:"News",des:"ABC KSBW California Salinas Action News 8 is your source for the Latest Local Headlines.",uri:"https://www.ksbw.com/topstories-rss",ext:"https://www.ksbw.com"},
 {id:"Central News",cat:"News",des:"Central News Now latest, breaking Central news on ITV News. Videos, stories and updates",uri:"https://centralnewsnow.com/feed",ext:"https://centralnewsnow.com"},
 {id:"Chicago Tribune",cat:"News",des:"Chicago Tribune Your source for Chicago breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.chicagotribune.com/arcio/rss/category/news/breaking/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.chicagotribune.com"},
@@ -2233,7 +2240,6 @@ var menu = [{
 {id:"ABC",cat:"News",des:"ABC KTRK Texas Houston Breaking News from Houston and the surrounding neighborhoods.",uri:"https://abc13.com/feed",ext:"https://abc13.com"},
 {id:"ABC",cat:"News",des:"ABC KSAT Texas San Antonio Latest News, Weather and Sports.",uri:"https://www.ksat.com/arcio/rss/category/news/national/?size=10",ext:"https://www.ksat.com"},
 {id:"New York Sun",cat:"News",des:"The New York Sun was the first successful penny daily newspaper in the United States.",uri:"https://www.nysun.com/rss.xml",ext:"https://www.nysun.com"},
-{id:"CBS",cat:"News",des:"CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",uri:"https://www.8newsnow.com/feed",ext:"https://www.8newsnow.com"},
 {id:"ABC",cat:"News",des:"ABC KMGB Colorado Denver for Weather, Local, Headlines, and Sports.",uri:"https://www.thedenverchannel.com/news.rss",ext:"https://www.thedenverchannel.com"},
 {id:"CBS",cat:"News",des:"CBS KCNC Colorado Denver Denver news, Colorado news, Colorado weather forecasts and sports reports.",uri:"https://denver.cbslocal.com/feed",ext:"https://denver.cbslocal.com"},
 {id:"CBS",cat:"News",des:"CBS WWL Louisiana New Orleans dedicated to serving the community through in-depth local news coverage.",uri:"http://rssfeeds.wwltv.com/wwl/local&x=1",ext:"https://www.wwltv.com"},
@@ -2248,8 +2254,6 @@ var menu = [{
 {id:"ABC",cat:"News",des:"ABC WPVI Pennsylvania Philadelphia source for breaking news and live streaming video online.",uri:"https://6abc.com/feed",ext:"https://6abc.com"},
 {id:"CBS",cat:"News",des:"CBS KENS Texas San Antonio television station which works San Antonio, Texas Valley cities.",uri:"http://rssfeeds.kens5.com/kens5/local-news&x=1",ext:"https://www.kens5.com"},
 {id:"Salt Lake Tribune",cat:"News",des:"The Salt Lake Tribune covers news, entertainment, sports and faith for Salt Lake City and the state of Utah.",uri:"https://www.sltrib.com/arcio/rss/category/news/nation-world/?summary=true",ext:"https://www.sltrib.com/news/nation-world"},
-{id:"NBC",cat:"News",des:"NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",uri:"https://ksltv.com/feed",ext:"https://ksltv.com"},
-{id:"ABC",cat:"News",des:"ABC KTVX Utah Salt Lake the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
 {id:"CBS",cat:"News",des:"CBS WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com"},
 {id:"NBC",cat:"News",des:"NBC WVTM Alabama Birmingham broadcasts across Central Alabama.",uri:"https://www.wvtm13.com/topstories-rss",ext:"https://www.wvtm13.com"},
 {id:"CBS",cat:"News",des:"CBS WIAT Alabama Birmingham Local, Weather, and Live.",uri:"https://www.cbs42.com/feed",ext:"https://www.cbs42.com"},
@@ -2419,8 +2423,6 @@ var menu = [{
 {id:"ABC",cat:"News",des:"ABC WATN Tennessee Memphis We tell Local Memphis News and Weather Stories.",uri:"https://www.localmemphis.com/feed",ext:"https://www.localmemphis.com"},
 {id:"CBS",cat:"News",des:"CBS WREG Tennessee Memphis The channel is certified to Memphis, United States.",uri:"https://wreg.com/feed",ext:"https://wreg.com"},
 {id:"ABC",cat:"News",des:"ABC WKRN Tennessee Nashville we do what we do to make Nashville & Tennessee a better place to live.",uri:"https://www.wkrn.com/feed",ext:"https://www.wkrn.com"},
-{id:"ABC",cat:"News",des:"ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",uri:"http://rssfeeds.kvue.com/kvue/home&x=1",ext:"http://www.kvue.com"},
-{id:"NBC",cat:"News",des:"NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",uri:"https://www.kxan.com/feed",ext:"https://www.kxan.com"},
 {id:"NBC",cat:"News",des:"NBC KRBC Texas Abilene the station is owned by Mission Broadcasting.",uri:"https://www.bigcountryhomepage.com/feed",ext:"https://www.bigcountryhomepage.com"},
 {id:"NBC",cat:"News",des:"NBC KAMR Texas Amarillo The Latest News and Updates in About Us brought to you by the team at KAMR.",uri:"https://www.myhighplains.com/feed",ext:"https://www.myhighplains.com"},
 {id:"NBC",cat:"News",des:"NBC KVEO Texas Brownsville serves the entire surrounding metropolitan area, known as the Rio Grande Valley.",uri:"https://www.kveo.com/feed",ext:"https://www.kveo.com"},
