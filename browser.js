@@ -82,8 +82,9 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
 	} else document.title = 'acktic'
-	progressResponse(true, 100)
     filterResponse(false, $('input[type=text]').val())
+	precedeResponse()
+	progressResponse(true, 100)
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -200,7 +201,7 @@ function bottomResponse(n) {
 
     $('#main .center').remove()
 	$('#main #visit').show()
-	if ($('input[type=text]').val().toLowerCase() != menu[id].cat.toLowerCase()) {
+	if ($('input[type=text]').val().toLowerCase() == '') {
 	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
 		populateResponse(id)
@@ -260,9 +261,9 @@ function feedResponse(n) {
 
 function filterResponse(passthrough, n) {
 
-    $('#main .result').remove()
-    var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
+    $('#main .result, #main #air').remove()
+    var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     $('#main').scrollTop(0)
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
@@ -284,7 +285,6 @@ function filterResponse(passthrough, n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
-	if (passthrough == false) progressResponse(true, 100)
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -295,15 +295,15 @@ function filterResponse(passthrough, n) {
         xmlResponse(null, null, filter[0])
         return false
  	} else if (!$.isNumeric(exact) && !filter.length) {
-        filter = menu[0]
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
-    } else if (filter.length <= 9) {
-        setTimeout(function() {
-            populateResponse(filter[filter.length - 1] + +1)
-        }, 300)
-	}
-	$('#main').attr('tabindex', -1).focus()
+    }
+    setTimeout(function() {
+        populateResponse(filter[filter.length - 1] + +1)
+		precedeResponse()
+    }, 300)
+	if (passthrough == false) progressResponse(true, 100)
+	$('#main').attr('tabindex', -1)
     applyVisual()
 
 }
@@ -357,7 +357,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if ($('#main .result').length < 1) $('#main').append("<div class='result' style='visibility:hidden'></div>")
+    if ($('#main .result').length < 1) $('#main').append("<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
@@ -376,7 +376,7 @@ function populateResponse(n) {
 function precedeResponse(n) {
 
 
-    if ($('#main #air').length < 1) $('#main').prepend("<div id='air' style='visibility:hidden'></div>")
+    if ($('#main #air').length < 1) $('#main').prepend("<div id='air' style='display:none'></div>")
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
 		if (menu[id].cat == menu[i].cat) {
@@ -391,7 +391,6 @@ function precedeResponse(n) {
 		}
     }
 	setTimeout(function() {
-		$('#main').scrollTop($('#air').outerHeight())
 	}, 300)
     applyVisual()
 
@@ -404,9 +403,12 @@ function progressResponse(complete, n) {
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
     	    $(this).removeClass('response').width(0)
-    	if ($('#main .result').length == 1) $('#main .result').css('visibility','visible')
-    	if ($('#main #air').length == 1) $('#main #air').css('visibility','visible')
+    	if ($('#main .result').length == 1) $('#main .result').show()
     	if ($('#main .center').length == 1) $('#main .center').show()
+    	if ($('#main #air').length == 1){
+			$('#main #air').show()
+			$('#main').scrollTop($('#air').outerHeight())
+		}
 		$('#main #visit').hide()
     	})
 	}
