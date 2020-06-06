@@ -39,13 +39,12 @@ $(document).ready(function() {
         var uri = location.search.split('?q=')[1]
         if (uri.match(/(\+1)/)) uri = uri.replace(/(\+1)/, '')
         if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
-        $('#main #visit').hide()
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(true, uri[1])
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, uri[0])
+            filterResponse(false, uri[0])
 		}
     } else $('#main #visit').show()
 
@@ -77,7 +76,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
-    $('#main #visit, #main .center, #main .result, #main #air').remove()
+    $('#main .center, #main .result, #main #air').remove()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
@@ -89,13 +88,13 @@ $(document).ready(function() {
 
 }).on('touch click', '#placeholder', function(e) {
 
-	$('#main #visit, #main #placeholder').remove()
+	$('#main #visit, #main #placeholder').hide()
 	filterResponse(false, $('input[type=text]').val())
 
 }).on('touch click', '.item', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
-    e.stoppropagation()
+    e.stopPropagation()
 
 }).on('touch click', '.feed .id', function(e) {
 
@@ -199,18 +198,17 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
-    $('#main #visit, #main .center, #main .result, #main #air').remove()
+    $('#main .center').remove()
+	$('#main #visit').show()
 	if ($('input[type=text]').val().toLowerCase() != menu[id].cat.toLowerCase()) {
-		populateResponse(id)
-		precedeResponse()
 	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
+		populateResponse(id)
+		precedeResponse()
 	} else {
-		filterResponse(false, $('input[type=text]').val())
-		setTimeout(function() {
-			precedeResponse()
-		}, 300)
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
+		filterResponse(false, $('input[type=text]').val())
+		precedeResponse()
 	}
 	progressResponse(true, 100)
 	applyVisual()
@@ -262,11 +260,10 @@ function feedResponse(n) {
 
 function filterResponse(passthrough, n) {
 
+    $('#main .result').remove()
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     filter = []
     $('#main').scrollTop(0)
-    $('#main .result').remove()
-    if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
@@ -293,7 +290,6 @@ function filterResponse(passthrough, n) {
         return false
     } else if ($.isNumeric(exact)) {
         xmlResponse(null, null, exact)
-		id = exact
         return false
     } else if (!$.isNumeric(exact) && filter.length == 1) {
         xmlResponse(null, null, filter[0])
@@ -361,7 +357,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
-    if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+    if ($('#main .result').length < 1) $('#main').append("<div class='result' style='visibility:hidden'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
             $('#main .result').append(
@@ -374,14 +370,13 @@ function populateResponse(n) {
             )
         }
     }
-    progressResponse(true, 100)
     applyVisual()
 }
 
 function precedeResponse(n) {
 
 
-    if ($('#main #air').length < 1) $('#main').prepend("<div id='air'></div>")
+    if ($('#main #air').length < 1) $('#main').prepend("<div id='air' style='visibility:hidden'></div>")
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
 		if (menu[id].cat == menu[i].cat) {
@@ -395,17 +390,24 @@ function precedeResponse(n) {
 			)
 		}
     }
-	$('#main').scrollTop($('#air').outerHeight())
+	setTimeout(function() {
+		$('#main').scrollTop($('#air').outerHeight())
+	}, 300)
     applyVisual()
 
 }
 
 function progressResponse(complete, n) {
 
+	$('#main #visit').show()
     $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
     	    $(this).removeClass('response').width(0)
+    	if ($('#main .result').length == 1) $('#main .result').css('visibility','visible')
+    	if ($('#main #air').length == 1) $('#main #air').css('visibility','visible')
+    	if ($('#main .center').length == 1) $('#main .center').show()
+		$('#main #visit').hide()
     	})
 	}
 
@@ -450,6 +452,7 @@ function uncoordinatedTimeZone(n) {
 
 function writeResponse(n) {
 
+    if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
     $('#main .result').prepend(
         "<div class='filter " + menu.indexOf(menu[n]) + "' response='" + menu[n].id.toLowerCase()
         .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
@@ -471,6 +474,7 @@ function xmlResponse(e, s, n) {
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result').remove()
+	$('#main #visit').show()
     $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({
             url: uri,
@@ -623,7 +627,6 @@ function xmlResponse(e, s, n) {
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + id + ")'><img class='bottom'></div>")
-			$('#main .center').css('display','block')
 			$('#main').attr('tabindex', -1)
             progressResponse(true, 100)
 			feedResponse(id)
