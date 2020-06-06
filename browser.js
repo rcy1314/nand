@@ -67,8 +67,8 @@ $(document).ready(function() {
 }).on('submit', '.addComment', function(e) {
 
 	if ($(this).parent().find('.add').length >= 3) {
-		$(this).parent().find('.add:first').html($(this).children('.comment').val())
-		return false
+		$(this).parent().find('.add:last').remove()
+		$(this).parent().find('.add:first').before("<div class='add'>" + $(this).children('.comment').val() + "</div>")
 	} else {
 		$(this).parent().find('.pub').append("<div class='add'>" + $(this).children('.comment').val() + "</div>")
 	}
@@ -605,7 +605,8 @@ function xmlResponse(e, s, n) {
                         "<i class='ago fa fa-bookmark-o'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"</div>" +
-						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' placeholder='...'></form>" +
+						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' " +
+						"maxlength='88' placeholder='...'></form>" +
                         "</div>"
                 }
                 pub.push({
