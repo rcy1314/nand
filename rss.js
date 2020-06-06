@@ -692,12 +692,6 @@ var menu = [{
 		uri: "https://reddit.com/r/programming/.rss",
 		ext: "https://reddit.com/r/Programming"
 	}, {
-		id: "Giphy/Reactions",
-		cat: "Social",
-		des: "Giphy reactions from rss.app.",
-		uri: "https://rss.app/feeds/I7IJezuohj1sfHqB.xml",
-		ext: "https://giphy.com/feed"
-	}, {
 		id: "Reddit/San Francisco",
 		cat: "Social",
 		des: "San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",
