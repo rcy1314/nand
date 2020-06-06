@@ -574,6 +574,7 @@ function xmlResponse(e, s, n) {
 					else var views = ''
                     html = "<div id='yt' class='item' ext='" + ref.trim() + "'>" +
                         /* "<div class='ack'><i class='fa fa-at'></i></div>" + */
+						"<div class='ago'>" + courtesy + "</div>" +
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
                         "<div class='yt'><iframe src='" + src + "'></iframe>" +
@@ -597,6 +598,7 @@ function xmlResponse(e, s, n) {
                         var cat = ''
                     }
                     html = "<div class='item' ext='" + ref.trim() + "'>" +
+						"<div class='ago'>" + courtesy + "</div>" +
                         "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
                         /* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
                         /* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
