@@ -276,7 +276,6 @@ function filterResponse(passthrough, n) {
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
-			id = i
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
             writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
@@ -285,6 +284,7 @@ function filterResponse(passthrough, n) {
             filter.push(menu.indexOf(menu[i]))
         }
     }
+	id = filter[filter.length - 1] + +1
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
@@ -507,10 +507,13 @@ function xmlResponse(e, s, n) {
                     if ($(this).find('pubDate').text().length > 0) {
                         var dst = uncoordinatedTimeZone($(this).find('pubDate').text());
                         var gen = new Date($(this).find('pubDate').text()).getTime()
-                    } else {
+                    } else if ($(this).find('dc\\:date, date').text()) {
                         var dst = uncoordinatedTimeZone($(this).find('dc\\:date, date').text());
                         var gen = new Date($(this).find('dc\\:date').text()).getTime()
-                    }
+                    } else {
+						var dst = []
+						dst.push('')
+					}
                 }
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) {
@@ -535,6 +538,8 @@ function xmlResponse(e, s, n) {
                     src = String($(this).find('link').attr('href'))
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
+                } else if ($(this).find('enclosure').attr('url')) {
+                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)[
                         0])
@@ -542,8 +547,6 @@ function xmlResponse(e, s, n) {
                         /https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('image').find('link, url').text().match(
                         /https:\/\/.+?(gif|png|jpg)/)[0])
-                } else if ($(this).find('enclosure').attr('url')) {
-                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
                     src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(
