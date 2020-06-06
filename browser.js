@@ -83,8 +83,6 @@ $(document).ready(function() {
         	'input[type=text]').val().replace(/\s/g, '+'))
 	} else document.title = 'acktic'
     filterResponse(false, $('input[type=text]').val())
-	precedeResponse()
-	progressResponse(true, 100)
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -297,11 +295,12 @@ function filterResponse(passthrough, n) {
  	} else if (!$.isNumeric(exact) && !filter.length) {
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
-    }
-    setTimeout(function() {
-        populateResponse(filter[filter.length - 1] + +1)
-		precedeResponse()
-    }, 300)
+    } else {
+	    setTimeout(function() {
+    	    populateResponse(filter[filter.length - 1] + +1)
+			precedeResponse()
+	    }, 300)
+	}
 	if (passthrough == false) progressResponse(true, 100)
 	$('#main').attr('tabindex', -1)
     applyVisual()
@@ -538,8 +537,6 @@ function xmlResponse(e, s, n) {
                     src = String($(this).find('link').attr('href'))
                 } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
                     src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-                } else if ($(this).find('enclosure').attr('url')) {
-                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg)/)[
                         0])
@@ -547,6 +544,8 @@ function xmlResponse(e, s, n) {
                         /https:\/\/.+?(gif|png|jpg)/)) {
                     src = String($(this).find('image').find('link, url').text().match(
                         /https:\/\/.+?(gif|png|jpg)/)[0])
+                } else if ($(this).find('enclosure').attr('url')) {
+                    src = String($(this).find('enclosure').attr('url'))
                 } else if ($(this).find('media\\:content, content').attr('url')) {
                     src = String($(this).find('media\\:content, content').attr('url'))
                 } else if ($(this).find('content\\:encoded').text().match(
