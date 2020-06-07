@@ -199,7 +199,7 @@ function bottomResponse(n) {
 
     $('#main .center').remove()
 	$('#main #visit').show()
-	if ($('input[type=text]').val().toLowerCase() == '') {
+	if ($('input[type=text]').val().toLowerCase() == menu[id].cat.toLowerCase()) {
 	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
 		populateResponse(id)
