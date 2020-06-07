@@ -1781,6 +1781,12 @@ var menu = [{
 		uri: "https://www.oann.com/feed",
 		ext: "https://www.oann.com"
 	}, {
+		id: "The Onion",
+		cat: "World",
+		des: "The Onion America's Finest News Source..",
+		uri: "https://www.theonion.com/rss",
+		ext: "https://www.theonion.com"
+	}, {
 		id: "PBS",
 		cat: "World",
 		des: "Public Broadcasting Service is an American public broadcaster and television program distributor.",
