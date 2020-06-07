@@ -488,8 +488,7 @@ function xmlResponse(e, s, n) {
             }
         })
         .fail(function() {
-            $('#main #visit').show()
-            if ($('input[type=text]').val().length) filterResponse(true, $('input[type=text]').val())
+			bottomResponse()
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel = "entry"

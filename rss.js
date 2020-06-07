@@ -69,9 +69,6 @@ var menu = [{
 {id:"NBC/Bakersfield",cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
 {id:"CBS/Sacramento",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
 {id:"NBC/Sacramento",cat:"News",des:"NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",uri:"https://www.kcra.com/topstories-rss",ext:"https://www.kcra.com"},
-{id:"ABC/Palm Springs",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
-{id:"NBC/Palm Springs",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
-{id:"CBS/Palm Springs",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
 {id:"ABC/Sacramento",cat:"News",des:"ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",uri:"https://feeds.feedblitz.com/kxtv/news&x=1",ext:"https://www.abc10.com"},
 {id:"ABC/Santa Barbara",cat:"News",des:"ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",uri:"https://keyt.com/feed",ext:"https://keyt.com"},
  {
@@ -2223,6 +2220,9 @@ var menu = [{
 		ext: "https://www.youtube.com/user/Wired"
 	}]
 	/* rip
+{id:"ABC/Palm Springs",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
+{id:"NBC/Palm Springs",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
+{id:"CBS/Palm Springs",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
 {id:"ABC",cat:"News",des:"ABC KSBW California Salinas Action News 8 is your source for the Latest Local Headlines.",uri:"https://www.ksbw.com/topstories-rss",ext:"https://www.ksbw.com"},
 {id:"Central News",cat:"News",des:"Central News Now latest, breaking Central news on ITV News. Videos, stories and updates",uri:"https://centralnewsnow.com/feed",ext:"https://centralnewsnow.com"},
 {id:"Chicago Tribune",cat:"News",des:"Chicago Tribune Your source for Chicago breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.chicagotribune.com/arcio/rss/category/news/breaking/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.chicagotribune.com"},
