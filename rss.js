@@ -5,93 +5,93 @@ var menu = [{
 		uri: "https://www.bing.com/search?q=",
 		ext: "https://www.bing.com"
 	}, {
-		id: "ABC Fresno",
+		id: "ABC/Fresno",
 		cat: "News",
 		des: "ABC KFSN Local Fresno and National News.",
 		uri: "https://abc30.com/feed",
 		ext: "https://abc30.com"
 	}, {
-		id: "NBC Fresno",
+		id: "NBC/Fresno",
 		cat: "News",
 		des: "NBC KSEE YourCentralValley in Fresno, California.",
 		uri: "https://yourcentralvalley.com/feed",
 		ext: "https://www.yourcentralvalley.com"
 	}, {
-		id: "CBS Boston",
+		id: "CBS/Boston",
 		cat: "News",
 		des: "CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",
 		uri: "https://boston.cbslocal.com/feed",
 		ext: "https://boston.cbslocal.com/feed"
 	}, {
-		id: "ABC Boston",
+		id: "ABC/Boston",
 		cat: "News",
 		des: "ABC WCVB Boston News, Weather, and Traffic online, anytime.",
 		uri: "https://www.wcvb.com/topstories-rss",
 		ext: "https://wcvb.com"
 	}, {
-		id: "ABC Miami",
+		id: "ABC/Miami",
 		cat: "News",
 		des: "ABC WPLG Florida Miami Breaking News and Headlines.",
 		uri: "https://www.local10.com/arcio/rss/category/news/?size=10",
 		ext: "https://local10.com"
 	}, {
-		id: "CBS Miami",
+		id: "CBS/Miami",
 		cat: "News",
 		des: "CBS WFOR Florida Miami a Full Service Television Station serving Miami.",
 		uri: "https://miami.cbslocal.com/feed",
 		ext: "https://miami.cbslocal.com"
 	}, {
-		id: "ABC Los Angeles",
+		id: "ABC/Los Angeles",
 		cat: "News",
 		des: "ABC Los Angeles covers News, Weather, Traffic and Live Video.",
 		uri: "https://abc7.com/feed",
 		ext: "https://abc7.com"
 	}, {
-		id: "CBS Los Angeles",
+		id: "CBS/Los Angeles",
 		cat: "News",
 		des: "CBS KCBS Los Angeles News, Weather, Traffic and the Best of LA and OC.",
 		uri: "https://losangeles.cbslocal.com/feed",
 		ext: "https://losangeles.cbslocal.com"
 	}, {
-		id: "ABC San Francisco",
+		id: "ABC/San Francisco",
 		cat: "News",
 		des: "ABC KGO San Francisco Local News and Headlines.",
 		uri: "https://abc7news.com/feed",
 		ext: "https://abc7news.com"
 	}, {
-		id: "CBS San Francisco",
+		id: "CBS/San Francisco",
 		cat: "News",
 		des: "CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com"
 	},
-{id:"CBS",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},
-{id:"NBC",cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
-{id:"CBS",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
-{id:"NBC",cat:"News",des:"NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",uri:"https://www.kcra.com/topstories-rss",ext:"https://www.kcra.com"},
-{id:"ABC",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
-{id:"NBC",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
-{id:"CBS",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
-{id:"ABC",cat:"News",des:"ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",uri:"https://feeds.feedblitz.com/kxtv/news&x=1",ext:"https://www.abc10.com"},
-{id:"ABC",cat:"News",des:"ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",uri:"https://keyt.com/feed",ext:"https://keyt.com"},
+{id:"CBS/Monterey",cat:"News",des:"CBS KION California Monterey serving the Monterey Bay area.",uri:"https://kion546.com/feed",ext:"https://kion546.com"},
+{id:"NBC/Bakersfield",cat:"News",des:"NBC KGET California Bakersfield local news & weather stories, making a better place to live.",uri:"https://www.kget.com/feed",ext:"https://www.kget.com"},
+{id:"CBS/Sacramento",cat:"News",des:"CBS KOVR California Sacramento also serving Stockton and Modesto.",uri:"https://sacramento.cbslocal.com/feed",ext:"https://sacramento.cbslocal.com"},
+{id:"NBC/Sacramento",cat:"News",des:"NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",uri:"https://www.kcra.com/topstories-rss",ext:"https://www.kcra.com"},
+{id:"ABC/Palm Springs",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
+{id:"NBC/Palm Springs",cat:"News",des:"NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",uri:"https://nbcpalmsprings.com/feed",ext:"https://nbcpalmsprings.com"},
+{id:"CBS/Palm Springs",cat:"News",des:"CBS KESQ California Palm Springs Daily News Headlines Morning Forecast Breaking News Severe Weather.",uri:"https://kesq.com/feed",ext:"https://kesq.com"},
+{id:"ABC/Sacramento",cat:"News",des:"ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",uri:"https://feeds.feedblitz.com/kxtv/news&x=1",ext:"https://www.abc10.com"},
+{id:"ABC/Santa Barbara",cat:"News",des:"ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",uri:"https://keyt.com/feed",ext:"https://keyt.com"},
  {
-		id: "ABC New York",
+		id: "ABC/New York",
 		cat: "News",
 		des: "ABC New York covering New York City, New Jersey, and Long Island.",
 		uri: "https://abc7ny.com/feed",
 		ext: "https://abc7ny.com"
 	}, {
-		id: "CBS New York",
+		id: "CBS/New York",
 		cat: "News",
 		des: "CBS WCBS New York City Digital Streaming News Service, It's always on.",
 		uri: "https://newyork.cbslocal.com/feed",
 		ext: "https://newyork.cbslocal.com"
 	},
-{id:"CBS",cat:"News",des:"CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",uri:"https://www.8newsnow.com/feed",ext:"https://www.8newsnow.com"},
-{id:"ABC",cat:"News",des:"ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",uri:"http://rssfeeds.kvue.com/kvue/home&x=1",ext:"http://www.kvue.com"},
-{id:"NBC",cat:"News",des:"NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",uri:"https://www.kxan.com/feed",ext:"https://www.kxan.com"},
-{id:"NBC",cat:"News",des:"NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",uri:"https://ksltv.com/feed",ext:"https://ksltv.com"},
-{id:"ABC",cat:"News",des:"ABC KTVX Utah Salt Lake the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
+{id:"CBS/Las Vegas",cat:"News",des:"CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",uri:"https://www.8newsnow.com/feed",ext:"https://www.8newsnow.com"},
+{id:"ABC/Austin",cat:"News",des:"ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",uri:"http://rssfeeds.kvue.com/kvue/home&x=1",ext:"http://www.kvue.com"},
+{id:"NBC/Austin",cat:"News",des:"NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",uri:"https://www.kxan.com/feed",ext:"https://www.kxan.com"},
+{id:"NBC/Salt Lake City",cat:"News",des:"NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",uri:"https://ksltv.com/feed",ext:"https://ksltv.com"},
+{id:"ABC/Salt Lake City",cat:"News",des:"ABC KTVX Utah Salt Lake the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
  {
 		id: "ABC Entertainment",
 		cat: "Media",
