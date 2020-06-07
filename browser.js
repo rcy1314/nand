@@ -207,7 +207,6 @@ function bottomResponse(n) {
 	} else {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 		filterResponse(false, $('input[type=text]').val())
-		precedeResponse()
 	}
 	progressResponse(true, 100)
 	applyVisual()
