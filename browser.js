@@ -173,14 +173,14 @@ function applyVisual(n) {
                 'color': '#666',
 				'border': 'none'
             })
-        $('#main, input[type=text], .comment, .category, .feed').css({
+        $('#main, input[type=text], .comment, .category, .feed, .filter, .populate').css({
             'border': '.3px solid #ddd',
             'background-color': '#f9f9f9',
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-		$('.populate, .filter, .description, .type, .hilight').css('background-color','#e4e4e4')
+		$('.populate, .filter, .description, .type, .hilight').css('background-color','#f9f9f9')
 		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
