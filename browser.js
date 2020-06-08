@@ -488,7 +488,10 @@ function xmlResponse(e, s, n) {
             }
         })
         .fail(function() {
-			bottomResponse()
+			populateResponse(id)
+			precedeResponse()
+			$('#main .center .feed').html("This site could not be reached.")
+			progressResponse(true, 100)
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel = "entry"
