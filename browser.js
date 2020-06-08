@@ -46,7 +46,7 @@ $(document).ready(function() {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(false, uri[0])
 		}
-    } else $('#main #visit').show()
+    }
 
     $('#main').on('scroll touchmove', function() {
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
-	} else document.title = 'acktic'
+	} else bottomResponse()
     filterResponse(false, $('input[type=text]').val())
     e.preventDefault()
 
@@ -170,7 +170,7 @@ function applyVisual(n) {
         $('#ago, .ago, .attr').css('color', '#eee')
         $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
-        $('a').css('color', '#F7426B')
+        $('a, .hilight').css('color', '#F7426B')
     } else if (op == 0) {
         $('#arm, input[type=text], .comment, .channel, .result, .title, .item, .item .pub, .type, #ago, a')
             .css({
@@ -196,10 +196,6 @@ function applyVisual(n) {
 		})
         $('#favicon').attr('href', 'images/invert.png')
         $('.hilight').css('color', '#F7426B')
-    }
-    if ($('#main .result').length && op == 0) {
-        $('#arm').css('background-color', '#fafafa')
-        $('input[type=text], #main').css('background-color', '#fff')
     }
 
 }
