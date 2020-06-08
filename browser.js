@@ -101,6 +101,11 @@ $(document).ready(function() {
         'response') + '+1')
     else window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr('response'))
 
+}).on('mouseover mouseout', '.filter, .populate', function(e) {
+
+	if (e.type == 'mouseover') $(this).toggleClass('overlay')
+	if (e.type == 'mouseout') $(this).removeClass('overlay')
+
 }).on('touch click', '.filter, .populate', function(e) {
 
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + '&' + $(this).attr(
@@ -167,7 +172,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .comment, .channel, .result, .title, .description, .item, .item .pub, .type, #ago, a')
+        $('#arm, input[type=text], .comment, .channel, .result, .title, .item, .item .pub, .type, #ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -180,7 +185,6 @@ function applyVisual(n) {
         })
 		$('.type').css('color','#fff')
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-		$('.populate, .filter, .description, .type, .hilight').css('background-color','#f9f9f9')
 		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
