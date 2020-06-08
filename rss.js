@@ -276,7 +276,7 @@ var menu = [{
 		uri: "http://thehollywoodunlocked.com/feed",
 		ext: "http://thehollywoodunlocked.com"
 	}, {
-		id: "Int Business Times",
+		id: "International Business Times",
 		cat: "Media",
 		des: "International Business Times Entertainment news, celebrity gossips, TV shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
@@ -296,7 +296,7 @@ var menu = [{
 	}, {
 		id: "Mens Health",
 		cat: "Media",
-		des: "Men's Health the best-selling men's magazine on U.S. newsstands.",
+		des: "Mens Health the best-selling men's magazine on U.S. newsstands.",
 		uri: "https://www.menshealth.com/rss/all.xml",
 		ext: "https://www.menshealth.com"
 	}, {
@@ -320,7 +320,7 @@ var menu = [{
 	}, {
 		id: "OANN Entertainment",
 		cat: "Media",
-		des: "OANN One America News Network Entertainment.",
+		des: "OANN Entertainment One America News Network Entertainment.",
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment"
 	}, {
@@ -647,7 +647,7 @@ var menu = [{
 		uri: "https://reddit.com/r/movies/.rss",
 		ext: "https://reddit.com/r/Movies"
 	}, {
-		id: "4Chan/Music",
+		id: "4Chan/MU Music",
 		cat: "Social",
 		des: "4chan MU Music board thats about all things music.",
 		uri: "http://boards.4channel.org/mu/index.rss",
@@ -707,9 +707,9 @@ var menu = [{
 		uri: "https://reddit.com/r/softwaregore/.rss",
 		ext: "https://reddit.com/r/softwaregore"
 	}, {
-		id: "4Chan/Sports",
+		id: "4Chan/SP Sports",
 		cat: "Social",
-		des: "4chan SP is a Sports board that discusses International Sports.",
+		des: "4chan SP Sports is a board that discusses International Sports.",
 		uri: "http://boards.4chan.org/sp/index.rss",
 		ext: "http://boards.4channel.org/sp/"
 	}, {
@@ -763,7 +763,7 @@ var menu = [{
 	}, {
 		id: "Imgur/Wallpaper",
 		cat: "Social",
-		des: "Imgur posts with the tag #wallpaper from rss.app.",
+		des: "Imgur posts with the tag Wallpaper from rss.app.",
 		uri: "https://rss.app/feeds/a0cfGfRhfVK2Y1IY.xml",
 		ext: "http://imgur.com/t/wallpaper"
 	}, {
@@ -995,7 +995,7 @@ var menu = [{
 		uri: "https://www.goal.com/feeds/en/news",
 		ext: "https://goal.com"
 	}, {
-		id: "Int Business Times Sports",
+		id: "International Business Times Sports",
 		cat: "Sports",
 		des: "International Business Times Sports emphasis on soccer, basketball, football, golf, baseball, tennis and hockey.",
 		uri: "https://www.ibtimes.sg/rss/sports",
@@ -1327,7 +1327,7 @@ var menu = [{
 	}, {
 		id: "OANN Technology",
 		cat: "Technology",
-		des: "One America News Network Technology.",
+		des: "OANN Technology One America News Network Technology.",
 		uri: "https://www.oann.com/category/tech/feed",
 		ext: "https://www.oann.com/category/tech"
 	}, {
@@ -1379,7 +1379,7 @@ var menu = [{
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com"
 	}, {
-		id: "Int Business Times",
+		id: "International Business Times",
 		cat: "Technology",
 		des: "International Business Times Technology news and insight about tech gadgets, games and social media.",
 		uri: "https://www.ibtimes.sg/rss/technology",
@@ -1709,7 +1709,7 @@ var menu = [{
 		uri: "https://infowars.com/feed",
 		ext: "https://infowars.com"
 	}, {
-		id: "Int Business Times",
+		id: "International Business Times",
 		cat: "World",
 		des: "International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",
 		uri: "https://www.ibtimes.sg/rss/world",
@@ -1777,7 +1777,7 @@ var menu = [{
 	}, {
 		id: "OANN World",
 		cat: "World",
-		des: "OANN One America News Network.",
+		des: "OANN World One America News Network.",
 		uri: "https://www.oann.com/feed",
 		ext: "https://www.oann.com"
 	}, {
