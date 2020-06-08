@@ -160,6 +160,7 @@ function applyVisual(n) {
             'border-bottom': '1px solid #333',
 
         })
+		$('#progressBar').removeClass('reponseInvert').addClass('responseOpposite')
         $('#main').addClass('opposite').removeClass('invert')
         $('#ago, .ago, .attr').css('color', '#eee')
         $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
@@ -176,6 +177,7 @@ function applyVisual(n) {
             'border': '.3px solid #ddd',
             'background-color': '#fafafa'
         })
+		$('#progressBar').removeClass('reponseOpposite').addClass('responseInvert')
 		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
@@ -187,7 +189,6 @@ function applyVisual(n) {
 		})
         $('#favicon').attr('href', 'images/invert.png')
     }
-	$('#progressBar').addClass('responseOpposite')
     if ($('#main .result').length && op == 0) {
         $('#arm').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
