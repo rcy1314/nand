@@ -175,7 +175,7 @@ function applyVisual(n) {
             })
         $('#main, input[type=text], .comment, .category, .feed').css({
             'border': '.3px solid #ddd',
-            'background-color': '#fafafa',
+            'background-color': '#f9f9f9',
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
