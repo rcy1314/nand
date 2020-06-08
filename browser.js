@@ -75,14 +75,13 @@ $(document).ready(function() {
 	e.preventDefault()
 
 }).on('submit', '#search', function(e) {
-
+	$('#main #visit, #main #placeholder').show()
     $('#main .center, #main .result, #main #air').remove()
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
-	} else bottomResponse()
-    filterResponse(false, $('input[type=text]').val())
+	} else return false
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
