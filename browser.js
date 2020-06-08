@@ -367,8 +367,8 @@ function populateResponse(n) {
     if ($('#main .result').length < 1) $('#main').append("<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
-		var tag = menu[i].id.match(/[^\/]+$/g)
-		var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
+			var tag = menu[i].id.match(/[^\/]+$/g)
+			var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
             $('#main .result').append(
         		"<div class='populate " + menu.indexOf(menu[n]) + "' response='" + menu[i].id.toLowerCase()
 		        .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
@@ -388,9 +388,9 @@ function precedeResponse(n) {
     if ($('#main #air').length < 1) $('#main').prepend("<div id='air' style='display:none'></div>")
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
-		if (menu[id].cat == menu[i].cat) {
-		var tag = menu[i].id.match(/[^\/]+$/g)
-		var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
+        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
+			var tag = menu[i].id.match(/[^\/]+$/g)
+			var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
             $('#main #air').append(
 		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
