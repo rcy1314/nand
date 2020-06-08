@@ -475,7 +475,7 @@ var menu = [{
 	}, {
 		id: "Reddit/Celebhub",
 		cat: "Social",
-		des: "CelebHub famous actresses, singers, models, athletes and others.",
+		des: "Celebhub famous actresses, singers, models, athletes and others.",
 		uri: "https://reddit.com/r/celebhub/.rss",
 		ext: "https://reddit.com/r/CelebHub"
 	}, {
@@ -527,9 +527,9 @@ var menu = [{
 		uri: "https://reddit.com/r/Design/.rss",
 		ext: "https://reddit.com/r/Design"
 	}, {
-		id: "4Chan/DIY",
+		id: "4Chan/Do It Yourself",
 		cat: "Social",
-		des: "4chan DIY board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",
+		des: "4chan Do It Yourself board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",
 		uri: "http://boards.4channel.org/diy/index.rss",
 		ext: "http://boards.4channel.org/diy"
 	}, {
@@ -587,13 +587,13 @@ var menu = [{
 		uri: "https://reddit.com/r/google/.rss",
 		ext: "https://reddit.com/r/Google"
 	}, {
-		id: "4Chan/Technology",
+		id: "4Chan/G Technology",
 		cat: "Social",
 		des: "4chan G Technology is a board that discusses Technology.",
 		uri: "http://boards.4chan.org/g/index.rss",
 		ext: "http://boards.4channel.org/g/"
 	}, {
-		id: "4Chan/Graphic Design",
+		id: "4Chan/GD Graphic Design",
 		cat: "Social",
 		des: "4chan GD Graphic Design Board dedicated to the art of Design.",
 		uri: "http://boards.4channel.org/gd/index.rss",
@@ -655,7 +655,7 @@ var menu = [{
 	}, {
 		id: "4chan News",
 		cat: "Social",
-		des: "4chan Current News Board that distributes, discusses, and analyzes news.",
+		des: "4chan News Board that distributes, discusses, and analyzes news.",
 		uri: "http://boards.4channel.org/news/index.rss",
 		ext: "http://boards.4channel.org/news"
 	}, {
@@ -1291,7 +1291,7 @@ var menu = [{
 	}, {
 		id: "Mirror.co.uk Technology",
 		cat: "Technology",
-		des: "Mirror.co.uk Techs Best Stories, Opinion, Pictures and Video.",
+		des: "Mirror.co.uk Technology Best Stories, Opinion, Pictures and Video.",
 		uri: "https://www.mirror.co.uk/tech/?service=rss",
 		ext: "https://mirror.co.uk/tech"
 	}, {
@@ -1417,7 +1417,7 @@ var menu = [{
 	}, {
 		id: "Reclaim the Net",
 		cat: "Technology",
-		des: "Reclaim The Net Restoring Individual Liberty Online. Free Speech. Privacy",
+		des: "Reclaim the Net Restoring Individual Liberty Online. Free Speech. Privacy",
 		uri: "https://reclaimthenet.org/feed",
 		ext: "https://reclaimthenet.org"
 	}, {
@@ -1429,7 +1429,7 @@ var menu = [{
 	}, {
 		id: "Science Daily",
 		cat: "Technology",
-		des: "ScienceDaily Top Technology News.",
+		des: "Science Daily Top Technology News.",
 		uri: "https://www.sciencedaily.com/rss/top/technology.xml",
 		ext: "https://sciencedaily.com/news/top/technology"
 	}, {
@@ -1697,7 +1697,7 @@ var menu = [{
 		uri: "https://globalnews.ca/world/feed",
 		ext: "https://globalnews.ca/world"
 	}, {
-		id: "Heavy News World",
+		id: "Heavy News",
 		cat: "World",
 		des: "Heavy News from around the world.",
 		uri: "https://heavy.com/news/feed",
@@ -1705,7 +1705,7 @@ var menu = [{
 	}, {
 		id: "InfoWars",
 		cat: "World",
-		des: "Infowars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
+		des: "InfoWars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
 		uri: "https://infowars.com/feed",
 		ext: "https://infowars.com"
 	}, {
@@ -1723,7 +1723,7 @@ var menu = [{
 	}, {
 		id: "Mirror.co.uk World News",
 		cat: "World",
-		des: "Mirror.co.uk World headlines, pictures, analysis, opinion and video.",
+		des: "Mirror.co.uk World News headlines, pictures, analysis, opinion and video.",
 		uri: "https://www.mirror.co.uk/news/us-news/?service=rss",
 		ext: "https://mirror.co.uk/news/us-news"
 	}, {

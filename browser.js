@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     })
 
-}).on('touch click', '#main .item a, #main .result a', function(e) {
+}).on('touch click', '#main .item a, #main u', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
@@ -160,14 +160,14 @@ function applyVisual(n) {
             'border-bottom': '1px solid #333',
 
         })
-		$('#progressBar').removeClass('reponseInvert').addClass('responseOpposite')
+		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
         $('#main').addClass('opposite').removeClass('invert')
         $('#ago, .ago, .attr').css('color', '#eee')
         $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
         $('a').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .comment, .channel, .result, .title, .category, .description, .item, .item .pub, .type, #ago, a')
+        $('#arm, input[type=text], .comment, .channel, .result, .title, .description, .item, .item .pub, .type, #ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -175,9 +175,12 @@ function applyVisual(n) {
             })
         $('#main, input[type=text], .comment, .category, .feed').css({
             'border': '.3px solid #ddd',
-            'background-color': '#fafafa'
+            'background-color': '#fafafa',
+			'color':'#666'
         })
-		$('#progressBar').removeClass('reponseOpposite').addClass('responseInvert')
+		$('.type').css('color','#fff')
+		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
+		$('.populate, .filter, .description, .type, .hilight').css('background-color','#e4e4e4')
 		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
@@ -188,6 +191,7 @@ function applyVisual(n) {
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
         $('#favicon').attr('href', 'images/invert.png')
+        $('.hilight').css('color', '#F7426B')
     }
     if ($('#main .result').length && op == 0) {
         $('#arm').css('background-color', '#fafafa')
@@ -204,7 +208,7 @@ function bottomResponse(n) {
 	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
 		populateResponse(id)
-		precedeResponse()
+		precedeResponse(id)
 	} else {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
 		filterResponse(false, $('input[type=text]').val())
@@ -298,7 +302,7 @@ function filterResponse(passthrough, n) {
     } else {
 	    setTimeout(function() {
     	    populateResponse(filter[filter.length - 1] + +1)
-			precedeResponse()
+			precedeResponse(id)
 	    }, 300)
 	}
 	if (passthrough == false) progressResponse(true, 100)
@@ -359,13 +363,15 @@ function populateResponse(n) {
     if ($('#main .result').length < 1) $('#main').append("<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n].cat == menu[i].cat) {
+		var tag = menu[i].id.match(/[^\/]+$/g)
+		var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
             $('#main .result').append(
-		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase()
-        		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-        		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
-        		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-        		"<div class='description'>" + menu[i].des + "</div>" +
-        		"<div class='type'>filter</div></div>"
+        		"<div class='populate " + menu.indexOf(menu[n]) + "' response='" + menu[i].id.toLowerCase()
+		        .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+		        "<div class='pub'><div class='category'>" + menu[i].cat + "</div><u class='title' ext='" + menu[i]
+		        .ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</u></div>" +
+		        "<div class='description'>" + hilight + "</div>" +
+		        "<div class='type'>populate</div></div>"
             )
         }
     }
@@ -379,12 +385,14 @@ function precedeResponse(n) {
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
 		if (menu[id].cat == menu[i].cat) {
+		var tag = menu[i].id.match(/[^\/]+$/g)
+		var hilight = menu[i].des.replace(tag, "<a class='hilight'>" + tag + '</a>')
             $('#main #air').append(
 		        "<div class='populate " + menu.indexOf(menu[i]) + "' response='" + menu[i].id.toLowerCase()
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-        		"<div class='description'>" + menu[i].des + "</div>" +
+        		"<div class='description'>" + hilight + "</div>" +
         		"<div class='type'>air</div></div>"
 			)
 		}
@@ -454,12 +462,14 @@ function uncoordinatedTimeZone(n) {
 function writeResponse(n) {
 
     if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+	var tag = menu[n].id.match(/[^\/]+$/g)
+	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
     $('#main .result').prepend(
         "<div class='filter " + menu.indexOf(menu[n]) + "' response='" + menu[n].id.toLowerCase()
         .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-        "<div class='pub'><div class='category'>" + menu[n].cat + "</div><a class='title' ext='" + menu[n]
-        .ext + "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a></div>" +
-        "<div class='description'>" + menu[n].des + "</div>" +
+        "<div class='pub'><div class='category'>" + menu[n].cat + "</div><u class='title' ext='" + menu[n]
+        .ext + "'>" + menu[n].id.match(/[^\/]+$/g) + "</u></div>" +
+        "<div class='description'>" + hilight + "</div>" +
         "<div class='type'>filter</div></div>"
     )
 
@@ -490,7 +500,7 @@ function xmlResponse(e, s, n) {
         })
         .fail(function() {
 			populateResponse(id)
-			precedeResponse()
+			precedeResponse(id)
 			$('#main .center .feed').html("This site could not be reached.")
 			progressResponse(true, 100)
         })
