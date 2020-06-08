@@ -761,12 +761,6 @@ var menu = [{
 		uri: "https://reddit.com/r/videos/.rss",
 		ext: "https://reddit.com/r/Videos"
 	}, {
-		id: "Imgur/Wallpaper",
-		cat: "Social",
-		des: "Imgur posts with the tag Wallpaper from rss.app.",
-		uri: "https://rss.app/feeds/a0cfGfRhfVK2Y1IY.xml",
-		ext: "http://imgur.com/t/wallpaper"
-	}, {
 		id: "4Chan/Wallpapers General",
 		cat: "Social",
 		des: "4chan Wallpapers General read the sticky.",
