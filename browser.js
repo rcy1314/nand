@@ -65,30 +65,36 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
-}).on('keyup', '#search input[type=text]', function(e) {
+}).on('keyup focus', '#search input[type=text]', function(e) {
 
+	$('#main #visit, #main #placeholder').show()
+	if (e.type == 'focus') {
+		$('#search .listing').show()
+		$('#search .listing .index:first').focus()
+	}
 	if (e.keyCode == 13) {
-		$('#search .listing').hide()
+		xmlResponse(false, false, $('#search .listing .hover').attr('response'))
 		return false
 	}
-	$('#main #visit, #main #placeholder').show()
 	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
 		filterResponse(true, $(this).val(), true)
 		$('#search .listing .hover').removeClass('hover')
 		$('#search .listing .index:first').addClass('hover')
 	} else if ($(this).val().length >= 2 && e.keyCode == 8){
 		filterResponse(true, $(this).val(), true)
-	}
-	if (e.keyCode == 40) {
+	} else if (e.keyCode == 40) {
+		$('#search .listing').show()
 		$('#search .listing .hover').next().focus().attr('class', 'hover')
 		$(this).attr('tabindex', -1).focus()
 		$('#search .listing .hover').prev().attr('class', 'index').blur()
-	}
-	if (e.keyCode == 38) {
+	} else if (e.keyCode == 38) {
 		$('#search .listing .hover').prev().focus().attr('class', 'hover')
 		$(this).attr('tabindex', -1).focus()
 		$('#search .listing .hover').next().attr('class', 'index')
+	} else if (e.keyCode == 27) {
+		$('#search .listing').hide()
 	}
+	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
 
@@ -103,6 +109,12 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
+	if ($('#search .listing .hover').length) {
+		xmlResponse(null, null, $('#search .listing .hover').attr('response'))
+ 		$('#search .listing .hover').removeClass('hover').addClass('index')
+		$('#search .listing').hide()
+		return false
+	}
 	$('#search .listing').hide()
     $('#main .center, #main .result, #main #air').remove()
     if ($('input[type=text]').val().length){ document.title = $(
@@ -150,13 +162,11 @@ $(document).ready(function() {
 }).on('touch click mouseenter mouseleave', '.index', function(e) {
 
 	if (e.type == 'mouseenter' && contrast == false) {
-			$('#search .listing .index').removeClass('hover')
+			$('#search .listing .hover').removeClass('hover').addClass('index')
 			$(this).addClass('hover')
-			$(this).focus()
 			return false
 	} else if (e.type == 'mouseleave' && contrast == false) {
 			$('#search .listing .index').removeClass('hover')
-			$('#search .listing .index:first').focus()
 			return false
 	}
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
@@ -477,7 +487,7 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-	if (!$('#main #visit').is(':visible')) $('#main #visit').show()
+	$('#main #visit').show()
     $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
@@ -557,7 +567,7 @@ function xmlResponse(e, s, n) {
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .center, #main #air').remove()
-	$('#main #visit').show()
+	$('#main #visit, #main #placeholder').show()
     $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({
             url: uri,
