@@ -106,7 +106,7 @@ $(document).ready(function() {
 }).on('touch click', '#placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	filterResponse(false, $('input[type=text]').val(), true)
+	filterResponse(false, $('input[type=text]').val(), false)
 
 }).on('touch click', '.item', function(e) {
 
