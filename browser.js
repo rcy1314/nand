@@ -93,6 +93,7 @@ $(document).ready(function() {
 	} else if (e.keyCode == 27) {
 		$('#search .listing').hide()
 	}
+	applyVisual()
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
@@ -216,16 +217,17 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .title, .category, .description, .type, .item, .item .pub, #ago, a')
+        $('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #ago, a')
             .css({
                 'color': '#fff',
                 'background-color': '#000',
 				'border': 'none'
             })
-        $('input[type=text], .description, .comment').css({
+        $('input[type=text], .index, .hover, .description, .comment').css({
             'border-bottom': '1px solid #333',
 
         })
+		$('.hover').css('background-color','#333')
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
         $('#main, .listing').addClass('opposite').removeClass('invert')
         $('#ago, .ago, .attr').css('color', '#eee')
@@ -245,8 +247,9 @@ function applyVisual(n) {
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
+		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-		$('#bottom').css('background-color','#fafafa')
+		$('#bottom, .index').css('background-color','#fcfcfc')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description, .index').css({'border-bottom': '.3px solid #ccc'})
         $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
