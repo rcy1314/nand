@@ -13,6 +13,7 @@ $(document).ready(function() {
     $('#container, input[type=text], #arm').show()
     $('input[type=text]').on('touch click', function(e) {
 
+		$('.listing').show()
         $(this).attr('placeholder', '').css({
             'caret-color': 'rgba(128,128,128,.7)',
             'text-align': 'left'
@@ -23,8 +24,11 @@ $(document).ready(function() {
         $(this).attr('placeholder', 'Search').css({
             'text-align': 'center'
         })
+		setTimeout(function() {
+			$('.listing').hide()
+		}, 250)
 
-    }).attr('tabindex', -1).focus()
+    })
 
     if (location.href.match('\\+1')) {
 
@@ -41,10 +45,10 @@ $(document).ready(function() {
         if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, uri[1])
+            filterResponse(true, uri[1], false)
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(false, uri[0])
+            filterResponse(false, uri[0], false)
 		}
     }
 
@@ -62,6 +66,10 @@ $(document).ready(function() {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
+
+}).on('keyup', '#search input[type=text]', function(e) {
+
+	if ($(this).val().length >= 2) filterResponse(true, $(this).val(), true)
 
 }).on('submit', '.addComment', function(e) {
 
@@ -81,7 +89,7 @@ $(document).ready(function() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
-    	filterResponse(false, $('input[type=text]').val())
+    	filterResponse(false, $('input[type=text]').val(), false)
 	} else {
 		$('#main #visit, #main #placeholder').show()
 		return false
@@ -91,7 +99,7 @@ $(document).ready(function() {
 }).on('touch click', '#placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	filterResponse(false, $('input[type=text]').val())
+	filterResponse(false, $('input[type=text]').val(), true)
 
 }).on('touch click', '.item', function(e) {
 
@@ -121,6 +129,11 @@ $(document).ready(function() {
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val() + '&' + $(this).attr(
         'response') + '+1')
     else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + $(this).attr('response'))
+
+}).on('touch click', '.index', function(e) {
+
+	var i = $(this).attr('response')
+	xmlResponse(null, null, i)
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
 
@@ -176,7 +189,7 @@ function applyVisual(n) {
 
         })
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
-        $('#main').addClass('opposite').removeClass('invert')
+        $('#main, .listing').addClass('opposite').removeClass('invert')
         $('#ago, .ago, .attr').css('color', '#eee')
         $('.indicator, .bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
@@ -199,7 +212,7 @@ function applyVisual(n) {
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description').css({'border-bottom': '.3px solid #ccc'})
         $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
-        $('#main').addClass('invert').removeClass('opposite')
+        $('#main, .listing').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.bottom').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
@@ -275,7 +288,7 @@ function feedResponse(n) {
     applyVisual()
 }
 
-function filterResponse(passthrough, n) {
+function filterResponse(passthrough, n, listing) {
 
     filter = []
     $('#main .result, #main #air').remove()
@@ -284,36 +297,40 @@ function filterResponse(passthrough, n) {
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
-            writeResponse(menu.indexOf(menu[i]))
-            filter.push(menu.indexOf(menu[i]))
+			filter.push(menu.indexOf(menu[i]))
+            if (listing == false) writeResponse(menu.indexOf(menu[i]))
+            else listResponse(menu.indexOf(menu[i]))
             var exact = i
 			id = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
+            if (listing == false) writeResponse(menu.indexOf(menu[i]))
+            else listResponse(menu.indexOf(menu[i]))
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase().match(n)) {
-            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
+            if (listing == false) writeResponse(menu.indexOf(menu[i]))
+            else listResponse(menu.indexOf(menu[i]))
         } else if (menu[i].cat.toLowerCase().match(n)) {
-            writeResponse(menu.indexOf(menu[i]))
             filter.push(menu.indexOf(menu[i]))
+            if (listing == false) writeResponse(menu.indexOf(menu[i]))
+            else listResponse(menu.indexOf(menu[i]))
         }
     }
 	id = filter[filter.length - 1] + +1
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
         return false
-    } else if ($.isNumeric(exact)) {
+    } else if ($.isNumeric(exact) && listing == false) {
         xmlResponse(null, null, exact)
         return false
-    } else if (!$.isNumeric(exact) && filter.length == 1) {
+    } else if (!$.isNumeric(exact) && filter.length == 1 && listing == false) {
         xmlResponse(null, null, filter[0])
         return false
- 	} else if (!$.isNumeric(exact) && !filter.length) {
+ 	} else if (!$.isNumeric(exact) && !filter.length && listing == false) {
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
-    } else {
+    } else if (listing == false){
 	    setTimeout(function() {
     	    populateResponse(filter[filter.length - 1] + +1)
 			precedeResponse(id)
@@ -348,6 +365,18 @@ function imageResolution(n) {
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
         })
     } else $('#' + n).parent().find('.border').css({'margin-bottom': '10em'})
+
+}
+
+function listResponse(n) {
+
+	var tag = menu[n].id.match(/[^\/]+$/g)
+	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
+    $('#search .listing').prepend(
+        "<div class='index " + menu.indexOf(menu[n]) + "' response='" + n + "'>" +
+        "<div class='pubListing'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
+        "</div>"
+    )
 
 }
 
@@ -498,7 +527,7 @@ function xmlResponse(e, s, n) {
 	filter = menu
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
-    $('#main .result').remove()
+    $('#main .result, #main .center, #main #air').remove()
 	$('#main #visit').show()
     $('#main').append("<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>")
     request = $.get({

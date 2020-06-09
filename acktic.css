@@ -186,6 +186,7 @@ div,
 input[type=text] {
 	font-family: Arial;
 }
+.index,
 .filter,
 .populate,
 .pub,
@@ -384,7 +385,33 @@ input[type=text] {
 	outline: none;
 	height: 3em;
 	width: 30em;
-	top: .7em;
+	top: 0em;
+}
+.match {
+	position: relative;
+	display: block;
+	top: .5em;
+	height: 10em;
+	width: fit-content;
+	margin: 0 auto;
+}
+.listing {
+	padding-left: 10px;
+	overflow-y: scroll;
+	display: none;
+	z-index: 2;
+	position: absolute;
+	top: 2em;
+	width: calc(100% - 10px);
+	height: 10em;
+	background-color: #fff;
+}
+.index {
+	margin-top: 10px;
+	position: relative;
+	height: 3em;
+	width: 100%;
+	font-size: 9px;
 }
 input[type=submit] {
 	display: none;

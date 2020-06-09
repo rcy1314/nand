@@ -88,7 +88,7 @@ var menu = [{
 {id:"ABC/Austin",cat:"News",des:"ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",uri:"http://rssfeeds.kvue.com/kvue/home&x=1",ext:"http://www.kvue.com"},
 {id:"NBC/Austin",cat:"News",des:"NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",uri:"https://www.kxan.com/feed",ext:"https://www.kxan.com"},
 {id:"NBC/Salt Lake City",cat:"News",des:"NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",uri:"https://ksltv.com/feed",ext:"https://ksltv.com"},
-{id:"ABC/Salt Lake City",cat:"News",des:"ABC KTVX Utah Salt Lake the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
+{id:"ABC/Salt Lake City",cat:"News",des:"ABC KTVX Utah Salt Lake City the oldest television station located in the Mountain Time Zone.",uri:"https://www.abc4.com/feed",ext:"https://www.abc4.com"},
  {
 		id: "ABC Entertainment",
 		cat: "Media",
@@ -511,7 +511,7 @@ var menu = [{
 	}, {
 		id: "Reddit/Data is Beautiful",
 		cat: "Social",
-		des: "DataIsBeautiful subreddit for visualizations that effectively convey information.",
+		des: "Data Is Beautiful subreddit for visualizations that effectively convey information.",
 		uri: "https://reddit.com/r/dataisbeautiful/.rss",
 		ext: "https://reddit.com/r/DataisBeautiful"
 	}, {
