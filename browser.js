@@ -67,10 +67,9 @@ $(document).ready(function() {
 
 }).on('keyup focus', '#search input[type=text]', function(e) {
 
-	$('#main #visit, #main #placeholder').show()
 	if (e.type == 'focus') {
 		$('#search .listing').show()
-		$('#search .listing .index:first').focus()
+		$('#search .listing .index:first').addClass('hover').removeClass('index').focus()
 	}
 	if (e.keyCode == 13) {
 		xmlResponse(false, false, $('#search .listing .hover').attr('response'))
@@ -84,6 +83,7 @@ $(document).ready(function() {
 		filterResponse(true, $(this).val(), true)
 	} else if (e.keyCode == 40) {
 		$('#search .listing').show()
+		if (!$('#search .listing .hover').length) $('#search .listing .index:first').addClass('hover')
 		$('#search .listing .hover').next().focus().attr('class', 'hover')
 		$(this).attr('tabindex', -1).focus()
 		$('#search .listing .hover').prev().attr('class', 'index').blur()
