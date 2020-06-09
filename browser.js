@@ -69,10 +69,9 @@ $(document).ready(function() {
 
 	if (e.type == 'focus') {
 		$('#search .listing').show()
-		$('#search .listing .index:first').addClass('hover').removeClass('index').focus()
 	}
 	if (e.keyCode == 13) {
-		xmlResponse(false, false, $('#search .listing .hover').attr('response'))
+		xmlResponse(null, null, $('#search .listing .hover').attr('response'))
 		return false
 	}
 	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
@@ -80,11 +79,13 @@ $(document).ready(function() {
 	} else if ($(this).val().length >= 2 && e.keyCode == 8){
 		filterResponse(true, $(this).val(), true)
 	} else if (e.keyCode == 40) {
-		$('#search .listing').show()
-		if (!$('#search .listing .hover').length) $('#search .listing .index:first').addClass('hover')
-		$('#search .listing .hover').next().focus().attr('class', 'hover')
-		$(this).attr('tabindex', -1).focus()
-		$('#search .listing .hover').prev().attr('class', 'index').blur()
+		if (!$('#search .listing .hover').length) $('#search .listing .index:first').addClass('hover').removeClass('index')
+		else {
+			$('#search .listing').show()
+			$('#search .listing .hover').next().focus().attr('class', 'hover')
+			$(this).attr('tabindex', -1).focus()
+			$('#search .listing .hover').prev().attr('class', 'index').blur()
+		}
 	} else if (e.keyCode == 38) {
 		$('#search .listing .hover').prev().focus().attr('class', 'hover')
 		$(this).attr('tabindex', -1).focus()
@@ -328,6 +329,7 @@ function feedResponse(n) {
 function filterResponse(passthrough, n, listing) {
 
     filter = []
+	$('#search .listing').empty()
     $('#main .result, #main #air').remove()
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     $('#main').scrollTop(0)
