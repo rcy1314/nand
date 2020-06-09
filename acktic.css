@@ -396,14 +396,15 @@ input[type=text] {
 	top: .5em;
 }
 .listing {
-	width: calc(100% - 2px);
+	width: 18.6em;
 	background-color: #fff;
 	overflow-y: auto;
-	position: absolute;
+	position: relative;
+	margin: 0 auto;
 	display: none;
 	height: calc(12.5em + 102px);
 	z-index: 2;
-	top: 1.8em;
+	top: -1.25em;
 }
 .index {
 	padding-bottom: 10px;
