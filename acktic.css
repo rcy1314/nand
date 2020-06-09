@@ -167,7 +167,7 @@
 .overlay {
 	position: relative;
 	width: 100%;
-    background: linear-gradient(140deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 45%, rgba(255,255,255,.8) 50%, rgba(255,255,255,.2) 55%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(140deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 45%, rgba(255,255,255,1) 50%, rgba(255,255,255,.2) 55%, rgba(255,255,255,0) 100%);
     background-size: 100% 1700%;
     -moz-animation: gloss 5s linear .5;
     -webkit-animation: gloss 5s linear .5;
