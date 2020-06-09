@@ -26,7 +26,7 @@ $(document).ready(function() {
             'text-align': 'center'
         })
 
-    })
+    }).attr('tabIndex', -1).focus()
 
     if (location.href.match('\\+1')) {
 
@@ -73,6 +73,7 @@ $(document).ready(function() {
 
 	$('#search .listing').show()
 	if (e.keyCode == 13) {
+		$('#search .listing').hide()
 		return false
 	}
 	if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
@@ -115,14 +116,13 @@ $(document).ready(function() {
  		$('#search .listing .hover').removeClass('hover').addClass('index')
 		$('#search .listing').hide()
 		return false
-	}
-	$('#search .listing').hide()
-    $('#main .center, #main .result, #main #air').remove()
+	} else {
     if ($('input[type=text]').val().length){ document.title = $(
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
-    	history.replaceState(null, null, '?q=' + $(
-        	'input[type=text]').val().replace(/\s/g, '+'))
+	   	history.replaceState(null, null, '?q=' + $(
+	       	'input[type=text]').val().replace(/\s/g, '+'))
 	    	filterResponse(false, $('input[type=text]').val(), false)
+		}
 	}
 	applyVisual() 
     e.preventDefault()
