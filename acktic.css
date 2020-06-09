@@ -388,30 +388,33 @@ input[type=text] {
 	top: 0em;
 }
 .match {
+	width: fit-content;
 	position: relative;
 	display: block;
-	top: .5em;
-	height: 10em;
-	width: fit-content;
 	margin: 0 auto;
+	height: 10em;
+	top: .5em;
 }
 .listing {
-	padding-left: 10px;
-	overflow-y: scroll;
-	display: none;
-	z-index: 2;
-	position: absolute;
-	top: 2em;
-	width: calc(100% - 10px);
-	height: 10em;
+	width: calc(100% - 2px);
 	background-color: #fff;
+	overflow-y: scroll;
+	position: absolute;
+	display: none;
+	height: 13.5em;
+	z-index: 2;
+	top: 1.8em;
 }
 .index {
-	margin-top: 10px;
+	padding-bottom: 10px;
 	position: relative;
-	height: 3em;
-	width: 100%;
+	padding-top: 10px;
 	font-size: 9px;
+	height: 2.5em;
+	width: 100%;
+}
+.hover {
+	background-color: #e4e4e4;
 }
 input[type=submit] {
 	display: none;

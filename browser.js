@@ -69,9 +69,16 @@ $(document).ready(function() {
 
 }).on('keyup', '#search input[type=text]', function(e) {
 
-	if (e.keyCode == 13) return false
-	$('#search .listing').show()
-	if ($(this).val().length >= 2) filterResponse(true, $(this).val(), true)
+	if (e.keyCode == 13) {
+		$('#search .listing').hide()
+		return false
+	}
+	$('#main #visit, #main #placeholder').show()
+	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
+		filterResponse(true, $(this).val(), true)
+	} else if ($(this).val().length >= 2 && e.keyCode == 8){
+		filterResponse(true, $(this).val(), true)
+	}
 
 }).on('submit', '.addComment', function(e) {
 
@@ -93,10 +100,7 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
 	    	filterResponse(false, $('input[type=text]').val(), false)
-	} else {
-		$('#main #visit, #main #placeholder').show()
-		return false
-	}
+	} 
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -133,10 +137,18 @@ $(document).ready(function() {
         'response') + '+1')
     else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + $(this).attr('response'))
 
-}).on('touch click', '.index', function(e) {
+}).on('touch click mouseenter mouseleave', '.index', function(e) {
 
-	var i = $(this).attr('response')
-	xmlResponse(null, null, i)
+	if (e.type == 'mouseenter' && contrast == false) {
+			$(this).addClass('hover')
+			return false
+	} else if (e.type == 'mouseleave' && contrast == false) {
+			$(this).removeClass('hover')
+			return false
+	}
+    if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
+		menu.indexOf($(this).attr('response')) + '+1')
+    else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + menu[$(this).attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-'))
 	e.preventDefault()
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
@@ -205,7 +217,7 @@ function applyVisual(n) {
                 'color': '#666',
 				'border': 'none'
             })
-        $('#main, input[type=text], .comment, .category, .feed, .filter, .populate').css({
+        $('#main, input[type=text], .comment, .category, .feed, .listing, .filter, .populate').css({
             'border': '.3px solid #ddd',
             'background-color': '#fcfcfc',
 			'color':'#666'
@@ -214,7 +226,7 @@ function applyVisual(n) {
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
 		$('#bottom').css('background-color','#fafafa')
 		$('.comment').css('border-top','.3px solid #ddd')
-		$('.description').css({'border-bottom': '.3px solid #ccc'})
+		$('.description, .index').css({'border-bottom': '.3px solid #ccc'})
         $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
         $('#main, .listing').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
@@ -378,7 +390,7 @@ function listResponse(n) {
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
 	    $('#search .listing').prepend(
 	        "<div class='index " + menu.indexOf(menu[n]) + "' response='" + n + "'>" +
-	        "<div class='pubListing'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
+	        "<div class='pubListing'>&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
 	        "</div>"
 	    )
 	if ($('#search .listing .' + n).length > 1) $('#search .listing .' + n + ':last').remove()
