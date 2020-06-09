@@ -1,4 +1,5 @@
 var id
+var list
 var op = 0
 var request
 var quit = 15
@@ -76,6 +77,8 @@ $(document).ready(function() {
 	$('#main #visit, #main #placeholder').show()
 	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
 		filterResponse(true, $(this).val(), true)
+		$('#search .listing .hover').removeClass('hover')
+		$('#search .listing .index:first').addClass('hover')
 	} else if ($(this).val().length >= 2 && e.keyCode == 8){
 		filterResponse(true, $(this).val(), true)
 	}
@@ -141,9 +144,11 @@ $(document).ready(function() {
 
 	if (e.type == 'mouseenter' && contrast == false) {
 			$(this).addClass('hover')
+			$(this).focus()
 			return false
 	} else if (e.type == 'mouseleave' && contrast == false) {
 			$(this).removeClass('hover')
+			$('#search .listing .index:first').focus()
 			return false
 	}
     if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
@@ -254,7 +259,7 @@ function bottomResponse(n) {
 		precedeResponse(id)
 	} else {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-		filterResponse(false, $('input[type=text]').val())
+		filterResponse(false, $('input[type=text]').val(), false)
 	}
 	progressResponse(true, 100)
 	applyVisual()

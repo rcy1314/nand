@@ -401,7 +401,7 @@ input[type=text] {
 	overflow-y: scroll;
 	position: absolute;
 	display: none;
-	height: 13.5em;
+	height: calc(12.5em + 102px);
 	z-index: 2;
 	top: 1.8em;
 }
@@ -415,6 +415,10 @@ input[type=text] {
 }
 .hover {
 	background-color: #e4e4e4;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 9px;
+	height: 2.5em;
 }
 input[type=submit] {
 	display: none;
