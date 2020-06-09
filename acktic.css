@@ -138,28 +138,17 @@
 .overlay {
 	position: relative;
 	width: 100%;
-	height: auto;
-    background: linear-gradient(320deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,.8) 50%, rgba(255,255,255,.3) 100%);
-    background-size: 525% 525%;
-    -webkit-animation: moving-gradient 6s linear infinite;
-    -moz-animation: moving-gradient 6s linear infinite;
-    animation: moving-gradient 6s linear infinite;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+    background: linear-gradient(140deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.8) 50%, rgba(255,255,255,0) 100%);
+    background-size: 100% 1700%;
+    -moz-animation: moving-gradient 4s linear .5;
+    -webkit-animation: moving-gradient 4s linear .5;
 }
 @-webkit-keyframes moving-gradient {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+    0%{background-position:0% 0%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 0%}
 }
 @-moz-keyframes moving-gradient {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@keyframes moving-gradient {
     0%{background-position:10% 0%}
     50%{background-position:91% 100%}
     100%{background-position:10% 0%}
@@ -218,7 +207,6 @@ body,
 	filter: brightness(20%) saturate(50%) invert(90%);
 	width: 100px !important;
 	margin-top: -100px;
-	margin-left: 20px;
 }
 #home {
 	position: absolute;
@@ -227,7 +215,6 @@ body,
 }
 .result, #air {
 	justify-content: center;
-	margin-left: 5px;
 	flex-wrap: wrap;
 	display: flex;
 	width: 100%;

@@ -81,8 +81,8 @@ $(document).ready(function() {
 		'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
-	}
-    filterResponse(false, $('input[type=text]').val())
+    	filterResponse(false, $('input[type=text]').val())
+	} else return false
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -101,10 +101,17 @@ $(document).ready(function() {
         'response') + '+1')
     else window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr('response'))
 
-}).on('mouseover mouseout', '.filter, .populate', function(e) {
+}).on('mouseenter mouseleave', '.filter, .populate', function(e) {
 
-	if (e.type == 'mouseover') $(this).toggleClass('overlay')
-	if (e.type == 'mouseout') $(this).removeClass('overlay')
+	if (e.type == 'mouseenter') {
+		$(this).toggleClass('overlay')
+		$(this).on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+			$(this).removeClass('overlay')
+			void this.clientWidth
+			$(this).addClass('overlay')
+		})
+	}
+	if (e.type == 'mouseleave') $(this).removeClass('overlay')
 
 }).on('touch click', '.filter, .populate', function(e) {
 
@@ -180,7 +187,7 @@ function applyVisual(n) {
             })
         $('#main, input[type=text], .comment, .category, .feed, .filter, .populate').css({
             'border': '.3px solid #ddd',
-            'background-color': '#f9f9f9',
+            'background-color': '#fbfbfb',
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
@@ -196,6 +203,10 @@ function applyVisual(n) {
 		})
         $('#favicon').attr('href', 'images/invert.png')
         $('.hilight').css('color', '#F7426B')
+    }
+    if ($('#main .result').is(':visible') && op == 0) {
+        $('#arm').css('background-color', '#fafafa')
+        $('input[type=text], #main').css('background-color', '#fff')
     }
 
 }
@@ -405,7 +416,7 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-	$('#main #visit').show()
+	if (!$('#main #visit').is(':visible')) $('#main #visit').show()
     $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
@@ -461,7 +472,7 @@ function uncoordinatedTimeZone(n) {
 
 function writeResponse(n) {
 
-    if ($('#main .result').length < 1) $('#main').append("<div class='result'></div>")
+    if ($('#main .result').length < 1) $('#main').append("<div class='result' style='display:none'></div>")
 	var tag = menu[n].id.match(/[^\/]+$/g)
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
     $('#main .result').prepend(
