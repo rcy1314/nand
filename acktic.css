@@ -398,7 +398,7 @@ input[type=text] {
 .listing {
 	width: calc(100% - 2px);
 	background-color: #fff;
-	overflow-y: scroll;
+	overflow-y: auto;
 	position: absolute;
 	display: none;
 	height: calc(12.5em + 102px);
@@ -419,6 +419,7 @@ input[type=text] {
 	padding-top: 10px;
 	font-size: 9px;
 	height: 2.5em;
+	width: 100%;
 }
 input[type=submit] {
 	display: none;

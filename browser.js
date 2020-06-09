@@ -25,9 +25,6 @@ $(document).ready(function() {
         $(this).attr('placeholder', 'Search').css({
             'text-align': 'center'
         })
-		setTimeout(function() {
-			$('.listing').hide()
-		}, 250)
 
     })
 
@@ -81,6 +78,16 @@ $(document).ready(function() {
 		$('#search .listing .index:first').addClass('hover')
 	} else if ($(this).val().length >= 2 && e.keyCode == 8){
 		filterResponse(true, $(this).val(), true)
+	}
+	if (e.keyCode == 40) {
+		$('#search .listing .hover').next().focus().attr('class', 'hover')
+		$(this).attr('tabindex', -1).focus()
+		$('#search .listing .hover').prev().attr('class', 'index').blur()
+	}
+	if (e.keyCode == 38) {
+		$('#search .listing .hover').prev().focus().attr('class', 'hover')
+		$(this).attr('tabindex', -1).focus()
+		$('#search .listing .hover').next().attr('class', 'index')
 	}
 
 }).on('submit', '.addComment', function(e) {
@@ -143,11 +150,12 @@ $(document).ready(function() {
 }).on('touch click mouseenter mouseleave', '.index', function(e) {
 
 	if (e.type == 'mouseenter' && contrast == false) {
+			$('#search .listing .index').removeClass('hover')
 			$(this).addClass('hover')
 			$(this).focus()
 			return false
 	} else if (e.type == 'mouseleave' && contrast == false) {
-			$(this).removeClass('hover')
+			$('#search .listing .index').removeClass('hover')
 			$('#search .listing .index:first').focus()
 			return false
 	}
@@ -259,7 +267,7 @@ function bottomResponse(n) {
 		precedeResponse(id)
 	} else {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-		filterResponse(false, $('input[type=text]').val(), false)
+		filterResponse(false, $('input[type=text]').val())
 	}
 	progressResponse(true, 100)
 	applyVisual()
@@ -394,7 +402,7 @@ function listResponse(n) {
 	var tag = menu[n].id.match(/[^\/]+$/g)
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
 	    $('#search .listing').prepend(
-	        "<div class='index " + menu.indexOf(menu[n]) + "' response='" + n + "'>" +
+	        "<div class='index " + menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + n + "'>" +
 	        "<div class='pubListing'>&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
 	        "</div>"
 	    )
