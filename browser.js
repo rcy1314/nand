@@ -374,12 +374,12 @@ function listResponse(n) {
 
 	var tag = menu[n].id.match(/[^\/]+$/g)
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
-    $('#search .listing').prepend(
-        "<div class='index " + menu.indexOf(menu[n]) + "' response='" + n + "'>" +
-        "<div class='pubListing'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
-        "</div>"
-    )
-
+	    $('#search .listing').prepend(
+	        "<div class='index " + menu.indexOf(menu[n]) + "' response='" + n + "'>" +
+	        "<div class='pubListing'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
+	        "</div>"
+	    )
+	if ($('#search .listing .' + n).length > 1) $('#search .listing .' + n + ':last').remove()
 }
 
 function momentTimeStamp(n) {
