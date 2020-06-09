@@ -82,7 +82,10 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
     	filterResponse(false, $('input[type=text]').val())
-	} else return false
+	} else {
+		$('#main #visit, #main #placeholder').show()
+		return false
+	}
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -179,7 +182,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a, .hilight').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .comment, .channel, .result, .title, .item, .item .pub, .type, #ago, a')
+        $('#arm, input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, #ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -381,7 +384,7 @@ function populateResponse(n) {
 		        .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 		        "<div class='pub'><div class='category'>" + menu[i].cat + "</div><u class='title' ext='" + menu[i]
 		        .ext + "'>" + menu[i].id.match(/[^\/]+$/g) + "</u></div>" +
-		        "<div class='description'>" + hilight + "</div>" +
+		        "<div class='description'>&emsp;" + hilight + "</div>" +
 		        "<div class='type'>populate</div></div>"
             )
         }
@@ -403,7 +406,7 @@ function precedeResponse(n) {
         		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         		"<div class='pub'><div class='category'>" + menu[i].cat + "</div><a class='title' ext='" + menu[i]
         		.ext + "' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) + "</a></div>" +
-        		"<div class='description'>" + hilight + "</div>" +
+        		"<div class='description'>&emsp;" + hilight + "</div>" +
         		"<div class='type'>air</div></div>"
 			)
 		}
@@ -480,7 +483,7 @@ function writeResponse(n) {
         .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         "<div class='pub'><div class='category'>" + menu[n].cat + "</div><u class='title' ext='" + menu[n]
         .ext + "'>" + menu[n].id.match(/[^\/]+$/g) + "</u></div>" +
-        "<div class='description'>" + hilight + "</div>" +
+        "<div class='description'>&emsp;" + hilight + "</div>" +
         "<div class='type'>filter</div></div>"
     )
 
