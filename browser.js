@@ -77,8 +77,6 @@ $(document).ready(function() {
 	}
 	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
 		filterResponse(true, $(this).val(), true)
-		$('#search .listing .hover').removeClass('hover')
-		$('#search .listing .index:first').addClass('hover')
 	} else if ($(this).val().length >= 2 && e.keyCode == 8){
 		filterResponse(true, $(this).val(), true)
 	} else if (e.keyCode == 40) {
