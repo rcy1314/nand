@@ -70,6 +70,7 @@ $(document).ready(function() {
 }).on('keyup', '#search input[type=text]', function(e) {
 
 	if (e.keyCode == 13) return false
+	$('#search .listing').show()
 	if ($(this).val().length >= 2) filterResponse(true, $(this).val(), true)
 
 }).on('submit', '.addComment', function(e) {
@@ -136,6 +137,7 @@ $(document).ready(function() {
 
 	var i = $(this).attr('response')
 	xmlResponse(null, null, i)
+	e.preventDefault()
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
 
