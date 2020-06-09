@@ -60,35 +60,36 @@ $(document).ready(function() {
 
     })
 
+}).on('touch click', '#main, #arm', function(e) {
+
+	$('#search .listing').hide()
+
 }).on('touch click', '#main .item a, #main u', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
-}).on('keyup focus', '#search input[type=text]', function(e) {
+}).on('keyup', '#search input[type=text]', function(e) {
 
-	if (e.type == 'focus') {
-		$('#search .listing').show()
-	}
+	$('#search .listing').show()
 	if (e.keyCode == 13) {
-		xmlResponse(null, null, $('#search .listing .hover').attr('response'))
 		return false
 	}
-	if ($(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
+	if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
 		filterResponse(true, $(this).val(), true)
-	} else if ($(this).val().length >= 2 && e.keyCode == 8){
-		filterResponse(true, $(this).val(), true)
+	} else if ($(this).val().length < 2 && e.keyCode == 8){
+		$('#search .listing').hide()
 	} else if (e.keyCode == 40) {
 		if (!$('#search .listing .hover').length) $('#search .listing .index:first').addClass('hover').removeClass('index')
 		else {
 			$('#search .listing').show()
 			$('#search .listing .hover').next().focus().attr('class', 'hover')
-			$(this).attr('tabindex', -1).focus()
-			$('#search .listing .hover').prev().attr('class', 'index').blur()
+			$(this).attr('tabIndex', -1).focus()
+			$('#search .listing .hover').prev().attr('class', 'index')
 		}
 	} else if (e.keyCode == 38) {
 		$('#search .listing .hover').prev().focus().attr('class', 'hover')
-		$(this).attr('tabindex', -1).focus()
+		$(this).attr('tabIndex', -1).focus()
 		$('#search .listing .hover').next().attr('class', 'index')
 	} else if (e.keyCode == 27) {
 		$('#search .listing').hide()
@@ -122,7 +123,8 @@ $(document).ready(function() {
     	history.replaceState(null, null, '?q=' + $(
         	'input[type=text]').val().replace(/\s/g, '+'))
 	    	filterResponse(false, $('input[type=text]').val(), false)
-	} 
+	}
+	applyVisual() 
     e.preventDefault()
 
 }).on('touch click', '#placeholder', function(e) {
@@ -165,7 +167,7 @@ $(document).ready(function() {
 			$('#search .listing .hover').removeClass('hover').addClass('index')
 			$(this).attr('class', 'hover')
 	} else if (e.type == 'mouseleave') {
-			$('#search .listing .hover').removeClass('hover')
+			$('#search .listing .hover').removeClass('hover').addClass('index')
 	} else if (e.type == 'touch' || e.type == 'click') {
 		if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
 			menu.indexOf($(this).attr('response')) + '+1')
@@ -261,7 +263,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/invert.png')
         $('.hilight').css('color', '#F7426B')
     }
-    if ($('#main .result').is(':visible') && op == 0) {
+    if ($('#main .result').length && op == 0) {
         $('#arm').css('background-color', '#fafafa')
         $('input[type=text], #main').css('background-color', '#fff')
     }
@@ -379,7 +381,7 @@ function filterResponse(passthrough, n, listing) {
 	    }, 300)
 	}
 	if (passthrough == false) progressResponse(true, 100)
-	$('#main').attr('tabindex', -1)
+	$('#main').attr('tabIndex', -1)
     applyVisual()
 
 }
@@ -730,7 +732,7 @@ function xmlResponse(e, s, n) {
                 if ($('#' + pub[i].element).length) imageResolution(pub[i].element)
             }
 			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + id + ")'><img class='bottom'></div>")
-			$('#main').attr('tabindex', -1)
+			$('#main').attr('tabIndex', -1)
 			progressResponse(true, 100)
 			feedResponse(id)
             applyVisual()
