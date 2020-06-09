@@ -159,20 +159,20 @@ $(document).ready(function() {
         'response') + '+1')
     else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + $(this).attr('response'))
 
-}).on('touch click mouseenter mouseleave', '.index', function(e) {
+}).on('touch click mouseenter mouseleave', '.index, .hover', function(e) {
 
-	if (e.type == 'mouseenter' && contrast == false) {
+	if (e.type == 'mouseenter') {
 			$('#search .listing .hover').removeClass('hover').addClass('index')
-			$(this).addClass('hover')
-			return false
-	} else if (e.type == 'mouseleave' && contrast == false) {
-			$('#search .listing .index').removeClass('hover')
-			return false
+			$(this).attr('class', 'hover')
+	} else if (e.type == 'mouseleave') {
+			$('#search .listing .hover').removeClass('hover')
+	} else if (e.type == 'touch' || e.type == 'click') {
+		if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
+			menu.indexOf($(this).attr('response')) + '+1')
+    	else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + menu[$(this).attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-'))
 	}
-    if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
-		menu.indexOf($(this).attr('response')) + '+1')
-    else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + menu[$(this).attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-'))
 	e.preventDefault()
+	applyVisual()	
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(e) {
 
@@ -416,7 +416,7 @@ function listResponse(n) {
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
 	    $('#search .listing').prepend(
 	        "<div class='index " + menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + n + "'>" +
-	        "<div class='pubListing'>&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
+	        "&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) +
 	        "</div>"
 	    )
 	if ($('#search .listing .' + n).length > 1) $('#search .listing .' + n + ':last').remove()
