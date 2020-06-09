@@ -187,7 +187,7 @@ function applyVisual(n) {
             })
         $('#main, input[type=text], .comment, .category, .feed, .filter, .populate').css({
             'border': '.3px solid #ddd',
-            'background-color': '#fbfbfb',
+            'background-color': '#fcfcfc',
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
@@ -657,7 +657,7 @@ function xmlResponse(e, s, n) {
             }
 			$('#main .center').append("<div id='bottom' onclick='bottomResponse(" + id + ")'><img class='bottom'></div>")
 			$('#main').attr('tabindex', -1)
-            progressResponse(true, 100)
+			progressResponse(true, 100)
 			feedResponse(id)
             applyVisual()
         })
