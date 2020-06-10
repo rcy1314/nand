@@ -4,12 +4,12 @@
 		width: 100% !important;
 		margin: 0 auto !important;
 	}
-	#home {
-		display: none;
-	}
 	#main .result .filter, #main .result .populate {
 		margin: 1em;
 		width: 32%;
+	}
+	::-webkit-scrollbar {
+		display: none;
 	}
 }
 @media screen and (min-width: 375px) {
@@ -17,8 +17,8 @@
 		width: 90% !important;
 		margin: 0 auto !important;
 	}
-	#home {
-		display: none;
+	::-webkit-scrollbar {
+		display: block;
 	}
 }
 @media screen and (min-width: 425px) {
@@ -32,9 +32,6 @@
 		width: 95% !important;
 		margin: 0 auto !important;
 	}
-	#home {
-		display: none;
-	}
 }
 @media screen and (min-width: 768px) {
 	#main {
@@ -46,9 +43,6 @@
 	.center {
 		width: 75% !important;
 		margin: 0 auto !important;
-	}
-	#home {
-		display: block;
 	}
 	#main .result .filter, #main .result .populate {
 		width: 16em;
@@ -248,14 +242,15 @@ body,
 	justify-content: center;
 }
 #placeholder {
-	filter: brightness(20%) saturate(50%) invert(90%);
+	filter: brightness(50%) saturate(20%) invert(90%);
 	width: 100px !important;
 	margin-top: -100px;
 }
 #home {
 	position: absolute;
-	left: 10px;
-	top: 7px;
+	left: 1px;
+	top: 5px;
+	height: 85%;
 }
 .result, #air {
 	justify-content: center;
@@ -364,8 +359,7 @@ body,
 	width: 100%;
 }
 .url {
-	position: absolute;
-	float: left;
+	position: relative;
 	z-index: -1;
 	height: 0;
 }
@@ -393,6 +387,7 @@ body,
 #search {
 	height: 50px;
 	width: 100%;
+	margin: 0;
 }
 input[type=text] {
 	-webkit-appearance: none;
@@ -404,9 +399,9 @@ input[type=text] {
 	margin: 0 auto;
 	display: table;
 	outline: none;
-	height: 3em;
+	height: 4.5em;
 	width: 20em;
-	top: .75em;
+	top: 3px;
 }
 #match {
 	width: fit-content;

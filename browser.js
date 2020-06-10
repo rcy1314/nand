@@ -16,6 +16,7 @@ $(document).ready(function() {
 
         $('#arm #search #match').show()
         $(this).attr('placeholder', '').css({
+			'caret-color': '#e4e4e4',
             'text-align': 'left'
         }).val('')
 
@@ -233,10 +234,11 @@ function applyVisual(n) {
                 'background-color': '#000',
                 'border': 'none'
             })
-        $('input[type=text], .index, .hover, .description, .comment').css({
+        $('#arm, .index, .hover, .description, .comment').css({
             'border-bottom': '1px solid #333',
 
         })
+		$('#home').attr('src','images/apply.png')
         $('.hover').css('background-color', '#333')
         $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
         $('#main, .listing').addClass('opposite').removeClass('invert')
@@ -245,26 +247,27 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a, .hilight').css('color', '#F7426B')
     } else if (op == 0) {
-        $('#arm, input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
+        $('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
                 'border': 'none'
             })
-        $('#main, input[type=text], .category, .feed, .listing, .filter, .populate, #image').css({
+        $('#arm, .category, .feed, .listing, .filter, .populate, #image').css({
             'border': '.3px solid #ddd',
             'background-color': '#fcfcfc',
             'color': '#666'
         })
+		$('#home').attr('src','images/acktic.png')
         $('.type').css('color', '#fff')
-        $('.hover').css('background-color', '#f5f5f5')
+        $('.hover, #visit').css('background-color', '#f5f5f5')
         $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
         $('#bottom, .index').css('background-color', '#fcfcfc')
         $('.comment').css('border-top', '.3px solid #ddd')
         $('.description, .index').css({
             'border-bottom': '.3px solid #ccc'
         })
-        $('.listing, .item, .feed').css('box-shadow', '1px 1px 6px #eee')
+        $('#home, .listing, .item, .feed').css('box-shadow', '1px 1px 6px #eee')
         $('#main, .listing').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.bottom').attr('src', 'images/transparent.png').css({
@@ -579,10 +582,9 @@ function xmlResponse(e, s, n) {
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
-    filter = menu
-    if (reverse) reverseResponse(filter.reverse())
-	if (!id) id = filter.length - +1
-    document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
+    if (reverse) reverseResponse(menu.reverse())
+	if (!id) id = menu.length - +1
+    document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .center, #main #air').remove()
     $('#main #visit, #main #placeholder').show()
@@ -676,7 +678,7 @@ function xmlResponse(e, s, n) {
                 if (src == '') courtesy = ''
                 else courtesy =
                     "<div id='ago' style='text-transform:capitalize'><a onclick='event.stopPropagation();window.open(\"" +
-                    filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] +
+                    menu[n].ext + "\")'>" + menu[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] +
                     "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
                     if ($(this).find('media\\:statistics, statistics').attr('views'))
@@ -692,7 +694,7 @@ function xmlResponse(e, s, n) {
                         "<div class='yt'><iframe src='" + src + "'></iframe>" +
                         views +
                         "<input class='url' value='" + ref.trim() + "'>" +
-                        /* "Courtesy <a onclick='window.open(\"" + filter[n].ext + "\")'>" + filter[
+                        /* "Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[
                             n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
                         "</div>" +
                         "<div id='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
