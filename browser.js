@@ -75,7 +75,7 @@ $(document).ready(function() {
         $('#arm #search #match').hide()
         return false
     } else if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90) {
-        filterResponse(true, $(this).val(), true)
+        filterResponse(true, $(this).val().replace(/\s/g, '.+'), true)
     } else if ($(this).val().length < 2 && e.keyCode == 8) {
         $('#arm #search #match').hide()
     } else if (e.keyCode == 40 || e.keyCode == 34) {
@@ -345,7 +345,7 @@ function filterResponse(passthrough, n, listing) {
     filter = []
     $('#arm #search #match .listing').empty()
     $('#main .result, #main #air').remove()
-    var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
+    var n = n.toLowerCase().replace(/(%20|\-|\_|\s)/g, ' ')
     $('#main').scrollTop(0)
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
