@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('#arm #search #match').show()
         $(this).attr('placeholder', '').css({
             'text-align': 'left'
-        })
+        }).val('')
 
     }).on('focusout blur', function(e) {
 
@@ -577,6 +577,7 @@ function xmlResponse(e, s, n) {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
     filter = menu
+    if (reverse) reverseResponse(filter.reverse())
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .center, #main #air').remove()
@@ -670,7 +671,7 @@ function xmlResponse(e, s, n) {
                 if (!src.match(/https?:\/\//)) src = ''
                 if (src == '') courtesy = ''
                 else courtesy =
-                    "<div id='ago' style='text-transform:capitalize'>Courtesy <a onclick='event.stopPropagation();window.open(\"" +
+                    "<div id='ago' style='text-transform:capitalize'><a onclick='event.stopPropagation();window.open(\"" +
                     filter[n].ext + "\")'>" + filter[n].id.match(/([^\/]+)\/?([^\/]*)/)[1] +
                     "</a></div>"
                 if (src.match(/mp4|twitch|youtube/)) {
