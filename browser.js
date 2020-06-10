@@ -14,10 +14,8 @@ $(document).ready(function() {
     $('#container, input[type=text], #arm').show()
     $('input[type=text]').on('touch click', function(e) {
 
-        $('#arm #search #match').show()
         $(this).attr('placeholder', '').css({
 			'caret-color': '#e4e4e4',
-            'text-align': 'left'
         }).val('')
 
     }).on('focusout blur', function(e) {
@@ -71,13 +69,15 @@ $(document).ready(function() {
 
 }).on('keyup', '#search input[type=text]', function(e) {
 
-    if ($('#arm #search #match .listing .index').length) $('#arm #search #match').show()
+    $('#arm #search #match').show()
     if (e.keyCode == 13) {
-        $('#arm #search #match').hide()
+    	$('#arm #search #match').hide()
         return false
     } else if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90) {
         filterResponse(true, '(' + $(this).val().replace(/\s/g, '|') + ')', true)
-    } else if ($(this).val().length < 2 && e.keyCode == 8) {
+    } else if ($(this).val().length >= 2 && e.keyCode == 8) {
+        filterResponse(true, '(' + $(this).val().replace(/\s/g, '|') + ')', true)
+    } else if ($(this).val().length <= 2 && e.keyCode == 8) {
         $('#arm #search #match').hide()
     } else if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('#arm #search #match .listing .hover').length) $('#search .listing .index:first').addClass('hover').removeClass('index')
@@ -110,6 +110,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
+	$('#arm #search #match').hide()
     if ($('#search .listing .hover').length) {
         if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' +
             menu[$('#arm #search #match .hover').attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-') + '+1')
@@ -247,7 +248,7 @@ function applyVisual(n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('a, .hilight').css('color', '#F7426B')
     } else if (op == 0) {
-        $('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
+        $('#arm, input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -255,9 +256,10 @@ function applyVisual(n) {
             })
         $('#arm, .category, .feed, .listing, .filter, .populate, #image').css({
             'border': '.3px solid #ddd',
-            'background-color': '#fcfcfc',
+            'background-color': '#fafafa',
             'color': '#666'
         })
+		$('input[type=text]').css('border','.3px solid #ddd')
 		$('#home').attr('src','images/acktic.png')
         $('.type').css('color', '#fff')
         $('.hover, #visit').css('background-color', '#f5f5f5')
@@ -277,7 +279,10 @@ function applyVisual(n) {
         $('.hilight').css('color', '#F7426B')
     }
     if ($('#main .result').length && op == 0) {
-        $('#arm').css('background-color', '#fafafa')
+        $('#arm').css({
+			'background-color': '#fafafa',
+			'border': '.3px solid #ddd'
+		})
         $('input[type=text], #main').css('background-color', '#fff')
     }
 
@@ -346,7 +351,10 @@ function feedResponse(n) {
 function filterResponse(passthrough, n, listing) {
 
     filter = []
-    $('#arm #search #match .listing').empty()
+    if (listing == false) {
+		$('#arm #search #match .listing').empty()
+		$('#arm #search #match').hide()
+	}
     $('#main .result, #main #air').remove()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s)/g, ' ')
     $('#main').scrollTop(0)
