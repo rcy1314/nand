@@ -331,7 +331,7 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/opposite.png')
 		$('a, .hilight').css('color', '#F7426B')
 	} else if (op == 0) {
-		$('#arm, input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
+		$('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
@@ -340,17 +340,16 @@ function applyVisual(n) {
 		$('#arm, .category, .feed, .listing, .filter, .populate, #image')
 			.css({
 				'border': '.3px solid #ddd',
-				'background-color': '#fafafa',
+				'background-color': '#fefefe',
 				'color': '#666'
 			})
 		$('input[type=text]').css('border', '.3px solid #ddd')
 		$('#home').attr('src', 'images/acktic.png')
 		$('.type').css('color', '#fff')
-		$('.hover, #visit').css('background-color', '#f5f5f5')
+		$('#main, #visit, .hover').css('background-color', '#fefefe')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
 		$('#bottom, .index').css('background-color', '#fcfcfc')
-		$('.comment').css('border-top', '.3px solid #ddd')
 		$('.description, .index').css({
 			'border-bottom': '.3px solid #ccc'
 		})
@@ -365,9 +364,14 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/invert.png')
 		$('.hilight').css('color', '#F7426B')
 	}
-	if ($('#main .result').length && op == 0) {
+	if ($('#main .result').lenth && op == 0) {
 		$('#arm').css({
-			'background-color': '#fafafa',
+			'background-color': '#fefefe',
+			'border': '.3px solid #ddd'
+		})
+	} else if ($('#main .center').length && op == 0) {
+		$('#arm').css({
+			'background-color': '#fff',
 			'border': '.3px solid #ddd'
 		})
 	}
@@ -451,7 +455,7 @@ function filterResponse(passthrough, n, listing) {
 		$('#arm #search #match .listing').empty()
 		$('#arm #search #match').hide()
 	}
-	$('#main .result, #main #air').remove()
+	$('#main .result, #main #air, #main .center').remove()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s)/g, ' ')
 	$('#main').scrollTop(0)
 	if (reverse) reverseResponse(menu.reverse())
@@ -479,7 +483,6 @@ function filterResponse(passthrough, n, listing) {
 			else listResponse(menu.indexOf(menu[i]))
 		}
 	}
-	console.log(filter)
 	id = filter[filter.length - 1] + +1
 	if (n == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
@@ -976,9 +979,9 @@ function xmlResponse(e, s, n) {
 						"</div>" +
 						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
+						"</div>" +
 						"<input class='url' value='" + ref
 						.trim() + "'>" +
-						"</div>" +
 						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' " +
 						"maxlength='88' placeholder='...'></form>" +
 						"</div>"
