@@ -141,9 +141,9 @@ $(document).ready(function() {
 
 }).on('touch click', '.feed .id', function(e) {
 
-    if (contrast == true) window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr(
+    if (contrast == true) window.location.assign('?q=' + $('#search input[type=text]').val().toLowerCase().replace(/\s/g, '+') + '&' + $(this).attr(
         'response') + '+1')
-    else window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr('response'))
+    else window.location.assign('?q=' + $('#search input[type=text]').val().toLowerCase().replace(/\s/g, '+') + '&' + $(this).attr('response'))
 
 }).on('wekitAnimationEnd oanimationend msAnimationEnd animationend', '.overlay', function(e) {
 
