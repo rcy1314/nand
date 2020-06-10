@@ -2,6 +2,10 @@
 
   - Really Simple Syndicate.
   - Rich Site Summary.
+
+### Known Issues
+
+* Nearly half XML responses have no images attached. An image overlay is used.
   
 ### Passed Tests
 
