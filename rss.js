@@ -509,7 +509,7 @@ var menu = [{
 		uri: "https://reddit.com/r/css/.rss",
 		ext: "https://reddit.com/r/CSS"
 	}, {
-		id: "Reddit/Data is Beautiful",
+		id: "Reddit/Data Is Beautiful",
 		cat: "Social",
 		des: "Data Is Beautiful subreddit for visualizations that effectively convey information.",
 		uri: "https://reddit.com/r/dataisbeautiful/.rss",
