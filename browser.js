@@ -42,7 +42,7 @@ $(document).ready(function() {
         if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
         if (uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(true, uri[1], false)
+            filterResponse(false, uri[1], false)
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(false, uri[0], false)
@@ -145,6 +145,12 @@ $(document).ready(function() {
         'response') + '+1')
     else window.location.assign('?q=' + $(this).attr('response').replace(/\-/g, '+') + '&' + $(this).attr('response'))
 
+}).on('wekitAnimationEnd oanimationend msAnimationEnd animationend', '.overlay', function(e) {
+
+            $(this).removeClass('overlay')
+            void this.clientWidth
+            $(this).addClass('overlay')
+
 }).on('mouseenter mouseleave', '.filter, .populate', function(e) {
 
     if (e.type == 'mouseenter') {
@@ -221,7 +227,7 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #ago, a')
+        $('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #image, #ago, a')
             .css({
                 'color': '#fff',
                 'background-color': '#000',
@@ -245,7 +251,7 @@ function applyVisual(n) {
                 'color': '#666',
                 'border': 'none'
             })
-        $('#main, input[type=text], .comment, .category, .feed, .listing, .filter, .populate').css({
+        $('#main, input[type=text], .category, .feed, .listing, .filter, .populate, #image').css({
             'border': '.3px solid #ddd',
             'background-color': '#fcfcfc',
             'color': '#666'
@@ -410,10 +416,8 @@ function imageResolution(n) {
             $('#' + n).css('display', 'block')
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
-        })
-    } else $('#' + n).parent().find('.border').css({
-        'margin-bottom': '10em'
-    })
+    	    })
+    	} else $('#' + n).replaceWith("<div id='image' class='overlay' style='left:-1px;width:calc(100%-2px);height:50%;margin-top:10px'></div>")
 
 }
 
