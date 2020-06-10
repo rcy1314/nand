@@ -191,9 +191,14 @@
     50%{background-position:0% 10%}
     100%{background-position:90% 100%}
 }
+@font-face {
+  font-family: Proxima Nova;
+  src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
+}
+
 div,
 input[type=text] {
-	font-family: Arial;
+	font-family: Proxima Nova;
 }
 .index,
 .filter,
@@ -346,6 +351,7 @@ body,
 	width: 85%;
 }
 .comment {
+	font-family: Proxima Nova;
 	padding: 1em;
 	border: none;
 	clear: left;
@@ -371,7 +377,7 @@ body,
 	position: relative;
 	width: fit-content;
 	line-height: .3;
-	font-size: 8.5px;
+	font-size: 10px;
 	margin: 10px;
 }
 .addComment {

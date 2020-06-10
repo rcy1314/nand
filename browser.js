@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('#arm #search #match').show()
         $(this).attr('placeholder', '').css({
             'text-align': 'left'
-        }).val('')
+        })
 
     }).on('focusout blur', function(e) {
 
