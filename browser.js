@@ -11,7 +11,8 @@ var contrast = false
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'acktic'
 $(document).ready(function() {
-    $('#container, input[type=text], #arm').show()
+    $('#container').show()
+	$('input[type=text]').css('display','block')
     $('input[type=text]').on('touch click', function(e) {
 
         $(this).attr('placeholder', '').css({
@@ -46,7 +47,7 @@ $(document).ready(function() {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
             filterResponse(false, uri[0], false)
         }
-    }
+    } else filterResponse(false, '', false)
 
     $('#main').on('scroll touchmove', function() {
 
@@ -69,13 +70,14 @@ $(document).ready(function() {
 
 }).on('keyup', '#search input[type=text]', function(e) {
 
-    $('#arm #search #match').show()
     if (e.keyCode == 13) {
     	$('#arm #search #match').hide()
         return false
     } else if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90) {
+    	$('#main #visit, #main #placeholder, #arm #search #match').show()
         filterResponse(true, '(' + $(this).val().replace(/\s/g, '|') + ')', true)
     } else if ($(this).val().length >= 2 && e.keyCode == 8) {
+    	$('#main #visit, #main placeholder, #arm #search #match').show()
         filterResponse(true, '(' + $(this).val().replace(/\s/g, '|') + ')', true)
     } else if ($(this).val().length <= 2 && e.keyCode == 8) {
         $('#arm #search #match').hide()
@@ -283,7 +285,6 @@ function applyVisual(n) {
 			'background-color': '#fafafa',
 			'border': '.3px solid #ddd'
 		})
-        $('input[type=text], #main').css('background-color', '#fff')
     }
 
 }
