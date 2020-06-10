@@ -112,6 +112,7 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
+	$('input[type=text]').blur()
 	$('#arm #search #match').hide()
     if ($('#search .listing .hover').length) {
         if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' +
