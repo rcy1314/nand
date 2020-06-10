@@ -417,8 +417,10 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
     	    })
-    	} else $('#' + n).replaceWith("<div id='image' class='overlay'></div>")
-
+    	} else {
+			if (contrast == true) $('#' + n).replaceWith("<div id='image'></div>")
+			else $('#' + n).replaceWith("<div id='image' class='overlay'></div>")
+		}
 }
 
 function listResponse(n) {
