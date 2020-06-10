@@ -45,12 +45,14 @@ $(document).ready(function() {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1], false)
+			applyVisual()
 		} else if (!uri[1] && uri[0]) {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, '(' + $('input[type=text]')
 				.val().toLowerCase().replace(/\s/g, '|') +
 				')', false)
+			applyVisual()
 		}
 	} else filterResponse(false, '', false)
 
@@ -343,7 +345,7 @@ function applyVisual(n) {
 				'color': '#666',
 				'border': 'none'
 			})
-		$('#arm, .category, .feed, .listing, .filter, .populate, #image')
+		$('.category, .feed, .listing, .filter, .populate, #image')
 			.css({
 				'border': '.3px solid #ddd',
 				'background-color': '#fefefe',
@@ -352,10 +354,11 @@ function applyVisual(n) {
 		$('input[type=text]').css('border', '.3px solid #ddd')
 		$('#home').attr('src', 'images/acktic.png')
 		$('.type').css('color', '#fff')
-		$('#main, #visit, .hover').css('background-color', '#fefefe')
+		$('#main, #visit').css('background-color', '#fafafa')
+		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
-		$('#bottom, .index').css('background-color', '#fcfcfc')
+		$('#bottom, .index').css('background-color', '#fafafa')
 		$('.description, .index').css({
 			'border-bottom': '.3px solid #ccc'
 		})
@@ -370,15 +373,15 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/invert.png')
 		$('.hilight').css('color', '#F7426B')
 	}
-	if ($('#main .result').lenth && op == 0) {
+	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fefefe',
-			'border': '.3px solid #ddd'
+			'border-bottom': '.3px solid #ddd'
 		})
 	} else if ($('#main .center').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fff',
-			'border': '.3px solid #ddd'
+			'border-bottom': '.3px solid #ddd'
 		})
 	}
 
@@ -440,7 +443,7 @@ function feedResponse(n) {
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
 		.length - 1)])
 	else if (n >= menu.length - 5) n = 0
-	for (var i = n + 1; i <= n + 4; i++) {
+	for (var i = n; i <= n + 4; i++) {
 		$('#main .center .feed').append(
 			"<div class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
@@ -490,7 +493,6 @@ function filterResponse(passthrough, n, listing) {
 		}
 	}
 	id = filter[filter.length - 1] + +1
-	console.log(filter)
 	if (n == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
 			.random() * menu.length)]))
