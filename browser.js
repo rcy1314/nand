@@ -14,9 +14,8 @@ $(document).ready(function() {
     $('#container, input[type=text], #arm').show()
     $('input[type=text]').on('touch click', function(e) {
 
-		$('.listing').show()
+		$('#arm #search #match').show()
         $(this).attr('placeholder', '').css({
-            'caret-color': 'rgba(128,128,128,.7)',
             'text-align': 'left'
         }).val('')
 
@@ -62,7 +61,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#main, #arm', function(e) {
 
-	$('#search .listing').hide()
+	$('#arm #search #match').hide()
 
 }).on('touch click', '#main .item a, #main u', function(e) {
 
@@ -71,29 +70,28 @@ $(document).ready(function() {
 
 }).on('keyup', '#search input[type=text]', function(e) {
 
-	$('#search .listing').show()
+	if ($('#arm #search #match .listing .index').length) $('#arm #search #match').show()
 	if (e.keyCode == 13) {
-		$('#search .listing').hide()
+		$('#arm #search #match').hide()
 		return false
-	}
-	if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
+	} else if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90){
 		filterResponse(true, $(this).val(), true)
 	} else if ($(this).val().length < 2 && e.keyCode == 8){
-		$('#search .listing').hide()
-	} else if (e.keyCode == 40) {
-		if (!$('#search .listing .hover').length) $('#search .listing .index:first').addClass('hover').removeClass('index')
+		$('#arm #search #match').hide()
+	} else if (e.keyCode == 40 || e.keyCode == 34) {
+		if (!$('#arm #search #match .listing .hover').length) $('#search .listing .index:first').addClass('hover').removeClass('index')
 		else {
-			$('#search .listing').show()
-			$('#search .listing .hover').next().focus().attr('class', 'hover')
+			$('#arm #search #match').show()
+			$('#arm #search #match .listing .hover').next().focus().attr('class', 'hover')
 			$(this).attr('tabIndex', -1).focus()
-			$('#search .listing .hover').prev().attr('class', 'index')
+			$('#arm #search #match .listing .hover').prev().attr('class', 'index')
 		}
-	} else if (e.keyCode == 38) {
-		$('#search .listing .hover').prev().focus().attr('class', 'hover')
+	} else if (e.keyCode == 38 || e.keyCode == 33) {
+		$('#arm #search #match .listing .hover').prev().focus().attr('class', 'hover')
 		$(this).attr('tabIndex', -1).focus()
-		$('#search .listing .hover').next().attr('class', 'index')
+		$('#arm #search #match .listing .hover').next().attr('class', 'index')
 	} else if (e.keyCode == 27) {
-		$('#search .listing').hide()
+		$('#arm #search #match').hide()
 	}
 	applyVisual()
 	e.preventDefault()
@@ -112,9 +110,12 @@ $(document).ready(function() {
 }).on('submit', '#search', function(e) {
 
 	if ($('#search .listing .hover').length) {
-		xmlResponse(null, null, $('#search .listing .hover').attr('response'))
+		if (contrast == true) window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' + 
+			menu[$('#arm #search #match .hover').attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-') + '+1')
+    	else window.location.assign('?q=' + $('input[type=text]').val().replace(/\s/g, '+') + '&' +
+			menu[$('#arm #search #match .hover').attr('response')].id.toLowerCase().replace(/[\/|\.|\s]/g, '-'))
  		$('#search .listing .hover').removeClass('hover').addClass('index')
-		$('#search .listing').hide()
+		$('#arm #search #match').hide()
 		return false
 	} else {
     if ($('input[type=text]').val().length){ document.title = $(
@@ -249,12 +250,12 @@ function applyVisual(n) {
 			'color':'#666'
         })
 		$('.type').css('color','#fff')
-		$('.hover').css('background-color','#e4e4e4')
+		$('.hover').css('background-color','#f5f5f5')
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
 		$('#bottom, .index').css('background-color','#fcfcfc')
 		$('.comment').css('border-top','.3px solid #ddd')
 		$('.description, .index').css({'border-bottom': '.3px solid #ccc'})
-        $('.item, .feed').css('box-shadow', '.7px .7px 4px #eee')
+        $('.listing, .item, .feed').css('box-shadow', '1px 1px 6px #eee')
         $('#main, .listing').addClass('invert').removeClass('opposite')
         $('.item, .title').css('border', '.3px solid #ddd')
         $('.bottom').attr('src', 'images/transparent.png').css({
@@ -273,7 +274,6 @@ function applyVisual(n) {
 function bottomResponse(n) {
 
     $('#main .center').remove()
-	$('#main #visit').show()
 	if ($('input[type=text]').val().toLowerCase() == menu[id].cat.toLowerCase()) {
 	    history.replaceState(null, null, '?q=' + menu[id].cat.toLowerCase())
 		document.title = 'acktic'
@@ -281,7 +281,7 @@ function bottomResponse(n) {
 		precedeResponse(id)
 	} else {
 	    history.replaceState(null, null, '?q=' + $('input[type=text]').val().replace(/\s/g, '+'))
-		filterResponse(false, $('input[type=text]').val())
+		filterResponse(false, $('input[type=text]').val(), false)
 	}
 	progressResponse(true, 100)
 	applyVisual()
@@ -334,7 +334,7 @@ function feedResponse(n) {
 function filterResponse(passthrough, n, listing) {
 
     filter = []
-	$('#search .listing').empty()
+	$('#arm #search #match .listing').empty()
     $('#main .result, #main #air').remove()
     var n = n.toLowerCase().replace(/(\+|%20|\-|\_|\s|\.)/g, ' ')
     $('#main').scrollTop(0)
@@ -416,7 +416,7 @@ function listResponse(n) {
 
 	var tag = menu[n].id.match(/[^\/]+$/g)
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
-	    $('#search .listing').prepend(
+	    $('#arm #search #match .listing').prepend(
 	        "<div class='index " + menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + n + "'>" +
 	        "&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) +
 	        "</div>"
@@ -492,12 +492,12 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-	$('#main #visit').show()
+	$('#main #visit, #main #placeholder').show()
     $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
 		$('#progressBar').on('transitionend webkitTransitionEnd oTransitionEnd', function(e) {
     	    $(this).removeClass('response').width(0)
-			$('#main #visit').hide()
+			$('#main #visit, #main #placeholder').hide()
     		if ($('#main .result').length == 1) $('#main .result').show()
     		if ($('#main .center').length == 1) $('#main .center').show()
     		if ($('#main #air').length == 1){

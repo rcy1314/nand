@@ -392,15 +392,23 @@ input[type=text] {
 	outline: none;
 	height: 3em;
 	width: 20em;
-	top: 0em;
+	top: .75em;
 }
-.match {
+#match {
 	width: fit-content;
 	position: relative;
-	display: block;
 	margin: 0 auto;
-	height: 10em;
-	top: .5em;
+	display: none;
+	z-index: 2;
+	top: 1em;
+}
+.fa-caret-up {
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+	width: 12.4em;
+	height: .5em;
+	top: -.75em;
 }
 .listing {
 	width: 12.4em;
@@ -408,10 +416,9 @@ input[type=text] {
 	overflow-y: auto;
 	position: relative;
 	margin: 0 auto;
-	display: none;
 	height: calc(12.5em + 102px);
 	z-index: 2;
-	top: -1.25em;
+	top: -.5em;
 }
 .index {
 	padding-bottom: 10px;
