@@ -75,7 +75,7 @@ $(document).ready(function() {
         $('#arm #search #match').hide()
         return false
     } else if (e.type == 'keyup' && $(this).val().length >= 2 && e.keyCode >= 65 && e.keyCode <= 90) {
-        filterResponse(true, $(this).val().replace(/\s/g, '.+'), true)
+        filterResponse(true, '(' + $(this).val().replace(/\s/g, '|') + ')', true)
     } else if ($(this).val().length < 2 && e.keyCode == 8) {
         $('#arm #search #match').hide()
     } else if (e.keyCode == 40 || e.keyCode == 34) {
@@ -123,7 +123,7 @@ $(document).ready(function() {
                 'input[type=text]').val().replace(/(\/|\.)/g, ' ').capitalize()
             history.replaceState(null, null, '?q=' + $(
                 'input[type=text]').val().replace(/\s/g, '+'))
-            filterResponse(false, $('input[type=text]').val(), false)
+            filterResponse(false, '(' + $('input[type=text]').val().toLowerCase().replace(/\s/g, '|') + ')', false)
         }
     }
     applyVisual()
@@ -370,6 +370,7 @@ function filterResponse(passthrough, n, listing) {
             else listResponse(menu.indexOf(menu[i]))
         }
     }
+	console.log(filter)
     id = filter[filter.length - 1] + +1
     if (n == 'random') {
         xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math.random() * menu.length)]))
@@ -380,7 +381,7 @@ function filterResponse(passthrough, n, listing) {
     } else if (!$.isNumeric(exact) && filter.length == 1 && listing == false) {
         xmlResponse(null, null, filter[0])
         return false
-    } else if (!$.isNumeric(exact) && !filter.length && listing == false) {
+    } else if (!$.isNumeric(exact) && filter.length == -1 && listing == false) {
         xmlResponse('search', $('input[type=text]').val().replace(/\s/g, '+'), 0)
         return false
     } else if (listing == false) {
@@ -580,6 +581,7 @@ function xmlResponse(e, s, n) {
     } else uri = cors + menu[n].uri
     filter = menu
     if (reverse) reverseResponse(filter.reverse())
+	if (!id) id = filter.length - +1
     document.title = filter[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) + 25))
     $('#main .result, #main .center, #main #air').remove()
