@@ -229,15 +229,18 @@ $(document).ready(function() {
 }).on('touch click', '.filter, .populate', function(e) {
 
 	if ($('input[type=text]').val() == '') {
-		$('input[type=text]').val($(this).attr('response'))
+		$('input[type=text]').val($(this).attr('response').replace(
+		/\-/g, ' '))
 	}
 	if (contrast == true) window.location.assign('?q=' + $(
-			'input[type=text]').val() + '&' + $(this)
-		.attr(
-			'response') + '+1')
-	else window.location.assign('?q=' + $('input[type=text]')
+			'input[type=text]').val().replace(
+			/\s/g, '+') + '&' + $(this)
+		.attr('response') + '+1')
+	else {
+		window.location.assign('?q=' + $('input[type=text]')
 		.val().replace(/\s/g, '+') + '&' + $(this).attr(
 			'response'))
+	}
 
 }).on('touch click mouseenter mouseleave', '.index, .hover',
 	function(e) {
