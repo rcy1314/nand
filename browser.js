@@ -45,7 +45,8 @@ $(document).ready(function() {
             filterResponse(false, uri[1], false)
         } else if (!uri[1] && uri[0]) {
             $('input[type=text]').val(uri[0].replace(/(\-|\+|\%20)/g, ' '))
-            filterResponse(false, uri[0], false)
+            filterResponse(false, '(' + $('input[type=text]').val().toLowerCase().replace(/\s/g, '|')
+				+ ')', false)
         }
     } else filterResponse(false, '', false)
 
