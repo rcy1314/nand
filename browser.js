@@ -228,6 +228,9 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
+	if ($('input[type=text]').val() == '') {
+		$('input[type=text]').val($(this).attr('response'))
+	}
 	if (contrast == true) window.location.assign('?q=' + $(
 			'input[type=text]').val() + '&' + $(this)
 		.attr(
@@ -484,6 +487,7 @@ function filterResponse(passthrough, n, listing) {
 		}
 	}
 	id = filter[filter.length - 1] + +1
+	console.log(filter)
 	if (n == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
 			.random() * menu.length)]))
@@ -761,10 +765,10 @@ function xmlResponse(e, s, n) {
 			}
 		})
 		.fail(function() {
+			$('#main').append("<div class='feed'></div>")
+			$('#main .feed').html("This site could not be reached.")
 			populateResponse(id)
 			precedeResponse(id)
-			$('#main .center .feed').html(
-				"This site could not be reached.")
 			progressResponse(true, 100)
 		})
 		.done(function(xhr) {
