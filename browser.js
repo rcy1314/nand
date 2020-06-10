@@ -417,7 +417,7 @@ function imageResolution(n) {
             $('#' + n).siblings('.attr').html(Math.round($('#' + n).get(0).naturalWidth) + 'x' + Math
                 .round($('#' + n).get(0).naturalHeight) + '&ensp;' + expand)
     	    })
-    	} else $('#' + n).replaceWith("<div id='image' class='overlay' style='left:-1px;width:calc(100%-2px);height:50%;margin-top:10px'></div>")
+    	} else $('#' + n).replaceWith("<div id='image' class='overlay'></div>")
 
 }
 
