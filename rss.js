@@ -732,7 +732,8 @@ var menu = [{
 		cat: "Media",
 		des: "Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",
 		uri: "https://www.yahoo.com/entertainment/rss",
-		ext: "https://yahoo.com/entertainment"
+		ext: "https://yahoo.com/entertainment",
+		img: "Yahoo"
 	}
 
 	,
@@ -1510,7 +1511,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Yahoo Sports has Comprehensive  News, Scores, Standings, Fantasy Games, Rumors, and more.",
 		uri: "https://sports.yahoo.com/rss",
-		ext: "https://sports.yahoo.com"
+		ext: "https://sports.yahoo.com",
+		img: "Yahoo"
 	}
 
 	,
@@ -2405,7 +2407,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechRepublic is an online Trade publication and social Community for IT Professionals.",
 		uri: "https://www.techrepublic.com/rssfeeds/articles",
-		ext: "https://techrepublic.com"
+		ext: "https://techrepublic.com",
+		img: "TechRepublic"
 	}
 
 	,
@@ -2579,7 +2582,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.",
 		uri: "https://www.yahoo.com/tech/rss",
-		ext: "https://finance.yahoo.com/tech"
+		ext: "https://finance.yahoo.com/tech",
+		img: "Yahoo"
 	}
 
 	,
