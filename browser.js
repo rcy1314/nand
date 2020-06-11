@@ -754,10 +754,6 @@ function xmlResponse(e, s, n) {
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) +
 		25))
 	$('#main .result, #main .center, #main #air').remove()
-	$('#main #visit, #main #placeholder').show()
-	$('#main').append(
-		"<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>"
-	)
 	request = $.get({
 			url: uri,
 			method: 'GET',
@@ -1004,6 +1000,9 @@ function xmlResponse(e, s, n) {
 			pub.sort(function(a, b) {
 				return b.since - a.since
 			})
+			$('#main').append(
+				"<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>"
+			)
 			for (var i = 0; i <= quit - 1; i++) {
 				$('#main .center .channel').append(pub[i].post)
 				if ($('#' + pub[i].element).length)
