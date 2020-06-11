@@ -2256,7 +2256,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Slashdot is a social News website that originally billed itself as News for Nerds.",
 		uri: "http://rss.slashdot.org/Slashdot/slashdot",
-		ext: "https://slashdot.org"
+		ext: "https://slashdot.org",
+		img: "Slashdot"
 	}
 
 	,
