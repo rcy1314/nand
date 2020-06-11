@@ -238,6 +238,7 @@ $(document).ready(function() {
 	}).on('mouseenter mouseleave', '.filter, .populate', function(
 	e) {
 
+	if (contrast == false)
 	if (e.type == 'mouseenter') {
 		$(this).toggleClass('overlay')
 		$(this).on(
@@ -638,6 +639,8 @@ function populateResponse(n) {
 			var tag = menu[i].id.match(/[^\/]+$/g)
 			var hilight = menu[i].des.replace(tag,
 				"<a class='hilight'>" + tag + '</a>')
+			if (!menu[i].img) var img = 'images/apply' + '.png'
+			else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 			$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[n]) +
 				"' response='" + menu[i].id.toLowerCase()
@@ -649,7 +652,7 @@ function populateResponse(n) {
 				"</u></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<div class='type'>populate</div></div>"
+				"<img class='type' src='" + img + "'></div>"
 			)
 		}
 	}
@@ -668,6 +671,8 @@ function precedeResponse(n) {
 			var tag = menu[i].id.match(/[^\/]+$/g)
 			var hilight = menu[i].des.replace(tag,
 				"<a class='hilight'>" + tag + '</a>')
+			if (!menu[i].img) var img = 'images/apply' + '.png'
+			else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 			$('#main #air').append(
 				"<div class='populate " + menu.indexOf(menu[i]) +
 				"' response='" + menu[i].id.toLowerCase()
@@ -679,7 +684,7 @@ function precedeResponse(n) {
 					/[^\/]+$/g) + "</a></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<div class='type'>air</div></div>"
+				"<img class='type' src='" + img + "'>air</div></div>"
 			)
 		}
 	}
