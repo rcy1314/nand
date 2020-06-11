@@ -1,100 +1,41 @@
 
-@media screen and (min-width: 320px) {
-	.center {
-		width: 100% !important;
-		margin: 0 auto !important;
+@media screen and (max-width: 320px) {
+	::-webkit-scrollbar {
+		display: none !important;
+	}
+}
+@media screen and (max-width: 425px) {
+	#main .center {
+		width: 95% !important;
 	}
 	#main .result .filter, #main .result .populate {
 		margin: 1em;
 		width: 32%;
 	}
-	::-webkit-scrollbar {
-		display: none;
-	}
-}
-@media screen and (min-width: 375px) {
-	.center {
-		width: 90% !important;
-		margin: 0 auto !important;
-	}
-	::-webkit-scrollbar {
-		display: block;
-	}
-}
-@media screen and (min-width: 425px) {
-	#main {
-		width: 100% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
-	.center {
-		width: 95% !important;
-		margin: 0 auto !important;
-	}
 }
 @media screen and (min-width: 768px) {
-	#main {
-		width: 100% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
-	.center {
+	#main .center {
 		width: 75% !important;
-		margin: 0 auto !important;
-	}
-	#main .result .filter, #main .result .populate {
-		width: 16em;
-		margin: 3em;	
-	}
-}
-@media screen and (min-width: 769px) {
-	#main {
-		width: 100% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
-	.center {
-		width: 65% !important;
-		margin: 0 auto !important;
 	}
 }
 @media screen and (min-width: 1024px) {
-	.channel {
-		width: 80%;
-		margin: 0 auto;
+	#main .center {
+		width: 70% !important;
 	}
 }
 @media screen and (min-width: 1440px) {
-	.channel {
-		width: 85%;
-		margin: 0 auto;
+	#main .center {
+		width: 50% !important;
 	}
 }
 @media screen and (min-width: 2160px) {
-	#main {
-		width: 50% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
-	.channel {
-		width: 65%;
-		margin: 0 auto;
+	#main .center {
+		width: 45% !important;
 	}
 }
 @media screen and (min-width: 2560px) {
-	#main {
-		width: 100% !important;
-		margin: 0 auto !important;
-		display: block !important;
-		position: relative !important;
-	}
-	.channel {
-		width: 65%;
-		margin: 0 auto;
+	#main .center {
+		width: 40% !important;
 	}
 }
 ::-webkit-scrollbar {
@@ -354,7 +295,6 @@ body,
 	margin-right: 15px;
 	margin-left: 10px;
 	margin-top: 10px;
-	margin-left: 0px;
 	font-size: 12px;
 	display: block;
 	width: 85%;
