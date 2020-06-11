@@ -8,6 +8,7 @@ var filter = []
 var channel = []
 var reverse = false
 var contrast = false
+var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'acktic'
 $(document).ready(function() {
@@ -54,7 +55,7 @@ $(document).ready(function() {
 				')', false)
 			applyVisual()
 		}
-	} else filterResponse(false, '', false)
+	} else filterResponse(false, category, false)
 
 	$('#main').on('scroll touchmove', function() {
 
