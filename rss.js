@@ -1909,7 +1909,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Bleeping Computer is a information security and technology news publication.",
 		uri: "https://www.bleepingcomputer.com/feed/",
-		ext: "https://www.bleepingcomputer.com"
+		ext: "https://www.bleepingcomputer.com",
+		img: "BleepingComputer"
 	}
 
 	,
@@ -1918,7 +1919,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Computer Weekly stands out from the many Technology News Websites.",
 		uri: "https://www.computerweekly.com/rss/RSS-Feed.xml",
-		ext: "https://computerweekly.com"
+		ext: "https://computerweekly.com",
+		img: "ComputerWeekly"
 	}
 
 	,
@@ -1927,7 +1929,8 @@ var menu = [{
 		cat: "Technology",
 		des: "BGR is a destination for News focused on the Consumer Electronics Market.",
 		uri: "https://bgr.com/tech/feed",
-		ext: "https://bgr.com/tech"
+		ext: "https://bgr.com/tech",
+		img: "BGR"
 	}
 
 	,
@@ -2225,7 +2228,8 @@ var menu = [{
 		cat: "Technology",
 		des: "PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.",
 		uri: "https://www.pcworld.com/index.rss",
-		ext: "https://pcworld.com"
+		ext: "https://pcworld.com",
+		img: "PCWorld"
 	}
 
 	,
@@ -2234,7 +2238,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Popular Mechanics is a magazine of Popular Science and Technology.",
 		uri: "https://www.popularmechanics.com/rss/all.xml",
-		ext: "https://popularmechanics.com"
+		ext: "https://popularmechanics.com",
+		img: "PopularMechanics"
 	}
 
 	,
@@ -2243,7 +2248,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Phoronix Linux Hardware Reviews & News.",
 		uri: "https://www.phoronix.com/rss.php",
-		ext: "https://phoronix.com"
+		ext: "https://phoronix.com",
+		img: "Phoronix"
 	}
 
 	,
@@ -2445,7 +2451,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechRadar is an online Publication focused on Technology.",
 		uri: "https://www.techradar.com/rss",
-		ext: "https://techradar.com"
+		ext: "https://techradar.com",
+		img: "TechRadar"
 	}
 
 	,
@@ -2528,7 +2535,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Wall Street Journals Latest Tech News, Reviews, and Stories.",
 		uri: "https://feeds.a.dj.com/rss/RSSWSJD.xml",
-		ext: "https://wsj.com/news/technology"
+		ext: "https://wsj.com/news/technology",
+		img: "WSJ"
 	}
 
 	,
@@ -2593,7 +2601,8 @@ var menu = [{
 		cat: "Technology",
 		des: "ZDNet is a business technology news website published by CBS Interactive.",
 		uri: "https://www.zdnet.com/news/rss.xml",
-		ext: "https://zdnet.com"
+		ext: "https://zdnet.com",
+		img: "ZDNet"
 	}
 
 	,
@@ -2768,7 +2777,8 @@ var menu = [{
 		cat: "World",
 		des: "Google is a multinational technology company that specializes in Internet-related services and products.",
 		uri: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
-		ext: "https://news.google.com"
+		ext: "https://news.google.com",
+		img: "Google"
 	}
 
 	,
@@ -2861,7 +2871,8 @@ var menu = [{
 		cat: "World",
 		des: "Newsweek provides the latest news about international issues, technology, business, culture and politics.",
 		uri: "https://www.newsweek.com/rss",
-		ext: "https://newsweek.com"
+		ext: "https://newsweek.com",
+		img: "Newsweek"
 	}
 
 	,
@@ -2969,7 +2980,8 @@ var menu = [{
 		cat: "World",
 		des: "Telegraph.co.uk for the latest news from the UK and around the world.",
 		uri: "https://www.telegraph.co.uk/rss.xml",
-		ext: "https://www.telegraph.co.uk"
+		ext: "https://www.telegraph.co.uk",
+		img: "Telegraph"
 	}
 
 	,
@@ -3032,7 +3044,8 @@ var menu = [{
 		cat: "World",
 		des: "USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",
 		uri: "http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",
-		ext: "https://www.usatoday.com"
+		ext: "https://www.usatoday.com",
+		img: "USAToday"
 	}
 
 	,
