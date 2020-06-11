@@ -655,7 +655,8 @@ function populateResponse(n) {
 				"</u></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<img class='type' src='" + img + "'></div>"
+				"<img class='type' style='top:10px' src='" + img + "'>" + 
+				"</div>"
 			)
 		}
 	}
@@ -687,7 +688,8 @@ function precedeResponse(n) {
 					/[^\/]+$/g) + "</a></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<img class='type' src='" + img + "'>air</div></div>"
+				"<img class='type' style='top:10px' src='" + img + "'>" +
+				"</div></div>"
 			)
 		}
 	}
@@ -773,7 +775,7 @@ function writeResponse(n) {
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
 		"</u></div>" +
 		"<div class='description'>&emsp;" + hilight + "</div>" +
-		"<img class='type' src='" + img + "'></div>"
+		"<img class='type' style='top:10px' src='" + img + "'></div>"
 	)
 
 }
