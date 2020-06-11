@@ -739,7 +739,8 @@ var menu = [{
 		cat: "Media",
 		des: "Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",
 		uri: "https://www.vanityfair.com/feed/rss",
-		ext: "https://vanityfair.com"
+		ext: "https://vanityfair.com",
+		img: "VanityFair"
 	}
 
 	,
@@ -1935,7 +1936,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Business Insider is a Growing Business site with Financial, Media, and Tech.",
 		uri: "https://www.businessinsider.com/rss",
-		ext: "https://businessinsider.com"
+		ext: "https://businessinsider.com",
+		img: "BusinessInsider"
 	}
 
 	,
@@ -2139,7 +2141,8 @@ var menu = [{
 		cat: "Media",
 		des: "Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",
 		uri: "https://www.inverse.com/feed/articles/1.rss",
-		ext: "https://www.inverse.com"
+		ext: "https://www.inverse.com",
+		img: "Inverse"
 	}
 
 	,
@@ -2552,7 +2555,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Washington Times is an American daily newspaper published in Washington, D.C.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/technology",
-		ext: "https://washingtontimes.com/culture/technology"
+		ext: "https://washingtontimes.com/culture/technology",
+		img: "TheWashingtonTimes"
 	}
 
 	,
@@ -2691,7 +2695,8 @@ var menu = [{
 		cat: "World",
 		des: "Common Dreams is a daily, glorious taste of what the dominant media could be.",
 		uri: "https://www.commondreams.org/rss.xml",
-		ext: "https://www.commondreams.org"
+		ext: "https://www.commondreams.org",
+		img: "CommonDreams"
 	}
 
 	,
