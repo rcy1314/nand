@@ -229,14 +229,13 @@ body,
 	float: left;
 }
 .type {
-	border-radius: 32px;
+	display: inline-block;
+	border-radius: 28px;
 	position: relative;
-	margin-top: 10px;
 	font-size: 10px;
-	height: 32px;
-	padding: 5px;
-	width: 32px;
-	bottom: 3px;
+	height: 28px;
+	width: 28px;
+	left: 5px;
 }
 .quick {
 	border-radius: 2px;
@@ -421,6 +420,11 @@ input[type=text] {
 	font-size: 9px;
 	height: 2.5em;
 	width: 100%;
+}
+.text {
+	display: inline-block;
+	position: relative;
+	bottom: 10px;
 }
 .hover {
 	background-color: #e4e4e4;

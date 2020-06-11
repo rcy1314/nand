@@ -88,7 +88,7 @@ $(document).ready(function() {
 		$('#arm #search #match').hide()
 		return false
 	} else if (e.type == 'keyup' && $(this).val().length >=
-		2 && e.keyCode >= 65 && e.keyCode <= 90) {
+		3 && e.keyCode >= 65 && e.keyCode <= 90) {
 		$('#main #visit, #main #placeholder, #arm #search #match')
 			.show()
 		filterResponse(true, '(' + $(this).val().replace(
@@ -588,13 +588,16 @@ function imageResolution(n) {
 
 function listResponse(n) {
 
+	if (!menu[n].img) var img = 'images/apply' + '.png'
+	else var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
 	var tag = menu[n].id.match(/[^\/]+$/g)
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
 	$('#arm #search #match .listing').prepend(
-		"<div class='index " + menu.indexOf(menu[n]) +
-		"' tabIndex='-1' response='" + n + "'>" +
-		"&emsp;" + menu[n].cat + "<br>&emsp;" + menu[n].id.match(
-			/[^\/]+$/g) +
+		"<div class='index " +
+		menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + 
+		n + "'><img class='type' src='" + img + "'>" + 
+		"<div class='text'>&emsp;" + 
+		menu[n].id.match(/[^\/]+$/g) + "</div>" +
 		"</div>"
 	)
 	if ($('#search .listing .' + n).length > 1) $(
