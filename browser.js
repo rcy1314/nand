@@ -355,7 +355,7 @@ function applyVisual(n) {
 		$('#home').attr('src', 'images/acktic.png')
 		$('.type').css('color', '#fff')
 		$('#main, #visit').css('background-color', '#fafafa')
-		$('.hover').css('background-color','#e4e4e4')
+		$('.hover, #image').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
 		$('#bottom, .index').css('background-color', '#fafafa')
@@ -445,11 +445,13 @@ function feedResponse(n) {
 	else if (n >= menu.length - 5) n = 0
 	for (var i = n; i <= n + 4; i++) {
 		$('#main .center .feed').append(
+			"<div id='asset'>" +
 			"<div class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 				/[\/|\.|\s|\-]/g, '-') + "'> " +
-			"<a class='title' ext='" + menu[i].ext +
-			"' rel='nofollow'>" + menu[i].id.match(/[^\/]+$/g) +
+			"</div><a style='margin-left:5px;width:100%' ext='" + menu[i].ext +
+			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
+			.substring(0, 12) + '...' +
 			"</a>" +
 			"</div>"
 		)
