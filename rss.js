@@ -539,7 +539,8 @@ var menu = [{
 		cat: "Media",
 		des: "Nnternational Business Times entertainment news, celebrity gossips, tv shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
-		ext: "https://www.ibtimes.com/media-culture/entertainment"
+		ext: "https://www.ibtimes.com/media-culture/entertainment",
+		img: "IBT"
 	}
 
 	,
@@ -1686,7 +1687,8 @@ var menu = [{
 		cat: "Sports",
 		des: "International Business Times Sports emphasis on soccer, basketball, football, golf, baseball, tennis and hockey.",
 		uri: "https://www.ibtimes.sg/rss/sports",
-		ext: "https://www.ibtimes.com/sports"
+		ext: "https://www.ibtimes.com/sports",
+		img: "IBT"
 	}
 
 	,
@@ -2275,7 +2277,8 @@ var menu = [{
 		cat: "Technology",
 		des: "International Business Times Technology news and insight about tech gadgets, games and social media.",
 		uri: "https://www.ibtimes.sg/rss/technology",
-		ext: "https://www.ibtimes.com/technology"
+		ext: "https://www.ibtimes.com/technology",
+		img: "IBT"
 	}
 
 	,
@@ -2777,7 +2780,8 @@ var menu = [{
 		cat: "World",
 		des: "International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",
 		uri: "https://www.ibtimes.sg/rss/world",
-		ext: "https://www.ibtimes.com/world"
+		ext: "https://www.ibtimes.com/world",
+		img: "IBT"
 	}
 
 	,
