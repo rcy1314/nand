@@ -586,6 +586,7 @@ var menu = [{
 		des: "MTV The ultimate news source for music, celebrity, entertainment, movies, and current events.",
 		uri: "http://www.mtv.com/news/feed",
 		ext: "http://www.mtv.com/news"
+		img: "MTV"
 	}
 
 	,
