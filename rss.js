@@ -12,7 +12,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KFSN Local Fresno and National News.",
 		uri: "https://abc30.com/feed",
-		ext: "https://abc30.com"
+		ext: "https://abc30.com",
+		img: "ABC"
 	}
 
 	,
@@ -21,7 +22,8 @@ var menu = [{
 		cat: "News",
 		des: "NBC KSEE YourCentralValley in Fresno, California.",
 		uri: "https://yourcentralvalley.com/feed",
-		ext: "https://www.yourcentralvalley.com"
+		ext: "https://www.yourcentralvalley.com",
+		img: "NBC"
 	}
 
 	,
@@ -30,7 +32,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",
 		uri: "https://boston.cbslocal.com/feed",
-		ext: "https://boston.cbslocal.com/feed"
+		ext: "https://boston.cbslocal.com/feed",
+		img: "CBS"
 	}
 
 	,
@@ -39,7 +42,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC WCVB Boston News, Weather, and Traffic online, anytime.",
 		uri: "https://www.wcvb.com/topstories-rss",
-		ext: "https://wcvb.com"
+		ext: "https://wcvb.com",
+		img: "ABC"
 	}
 
 	,
@@ -48,7 +52,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC WPLG Florida Miami Breaking News and Headlines.",
 		uri: "https://www.local10.com/arcio/rss/category/news/?size=10",
-		ext: "https://local10.com"
+		ext: "https://local10.com",
+		img: "ABC"
 	}
 
 	,
@@ -57,7 +62,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS WFOR Florida Miami a Full Service Television Station serving Miami.",
 		uri: "https://miami.cbslocal.com/feed",
-		ext: "https://miami.cbslocal.com"
+		ext: "https://miami.cbslocal.com",
+		img: "CBS"
 	}
 
 	,
@@ -66,7 +72,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC Los Angeles covers News, Weather, Traffic and Live Video.",
 		uri: "https://abc7.com/feed",
-		ext: "https://abc7.com"
+		ext: "https://abc7.com",
+		img: "ABC"
 	}
 
 	,
@@ -75,7 +82,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS KCBS Los Angeles News, Weather, Traffic and the Best of LA and OC.",
 		uri: "https://losangeles.cbslocal.com/feed",
-		ext: "https://losangeles.cbslocal.com"
+		ext: "https://losangeles.cbslocal.com",
+		img: "CBS"
 	}
 
 	,
@@ -84,7 +92,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KGO San Francisco Local News and Headlines.",
 		uri: "https://abc7news.com/feed",
-		ext: "https://abc7news.com"
+		ext: "https://abc7news.com",
+		img: "ABC"
 	}
 
 	,
@@ -93,7 +102,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",
 		uri: "https://sanfrancisco.cbslocal.com/feed",
-		ext: "https://sanfrancisco.cbslocal.com"
+		ext: "https://sanfrancisco.cbslocal.com",
+		img: "CBS"
 	}
 
 	,
@@ -102,7 +112,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS KION California Monterey serving the Monterey Bay area.",
 		uri: "https://kion546.com/feed",
-		ext: "https://kion546.com"
+		ext: "https://kion546.com",
+		img: "CBS"
 	}
 
 	,
@@ -111,7 +122,8 @@ var menu = [{
 		cat: "News",
 		des: "NBC KGET California Bakersfield local news & weather stories, making a better place to live.",
 		uri: "https://www.kget.com/feed",
-		ext: "https://www.kget.com"
+		ext: "https://www.kget.com",
+		img: "NBC"
 	}
 
 	,
@@ -120,7 +132,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS KOVR California Sacramento also serving Stockton and Modesto.",
 		uri: "https://sacramento.cbslocal.com/feed",
-		ext: "https://sacramento.cbslocal.com"
+		ext: "https://sacramento.cbslocal.com",
+		img: "CBS"
 	}
 
 	,
@@ -129,7 +142,8 @@ var menu = [{
 		cat: "News",
 		des: "NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",
 		uri: "https://www.kcra.com/topstories-rss",
-		ext: "https://www.kcra.com"
+		ext: "https://www.kcra.com",
+		img: "NBC"
 	}
 
 	,
@@ -138,7 +152,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",
 		uri: "https://feeds.feedblitz.com/kxtv/news&x=1",
-		ext: "https://www.abc10.com"
+		ext: "https://www.abc10.com",
+		img: "ABC"
 	}
 
 	,
@@ -147,7 +162,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",
 		uri: "https://keyt.com/feed",
-		ext: "https://keyt.com"
+		ext: "https://keyt.com",
+		img: "ABC"
 	}
 
 	,
@@ -156,7 +172,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC New York covering New York City, New Jersey, and Long Island.",
 		uri: "https://abc7ny.com/feed",
-		ext: "https://abc7ny.com"
+		ext: "https://abc7ny.com",
+		img: "ABC"
 	}
 
 	,
@@ -165,7 +182,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS WCBS New York City Digital Streaming News Service, It's always on.",
 		uri: "https://newyork.cbslocal.com/feed",
-		ext: "https://newyork.cbslocal.com"
+		ext: "https://newyork.cbslocal.com",
+		img: "CBS"
 	}
 
 	,
@@ -174,7 +192,8 @@ var menu = [{
 		cat: "News",
 		des: "CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",
 		uri: "https://www.8newsnow.com/feed",
-		ext: "https://www.8newsnow.com"
+		ext: "https://www.8newsnow.com",
+		img: "CBS"
 	}
 
 	,
@@ -183,7 +202,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",
 		uri: "http://rssfeeds.kvue.com/kvue/home&x=1",
-		ext: "http://www.kvue.com"
+		ext: "http://www.kvue.com",
+		img: "ABC"
 	}
 
 	,
@@ -192,7 +212,8 @@ var menu = [{
 		cat: "News",
 		des: "NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",
 		uri: "https://www.kxan.com/feed",
-		ext: "https://www.kxan.com"
+		ext: "https://www.kxan.com",
+		img: "NBC"
 	}
 
 	,
@@ -201,7 +222,8 @@ var menu = [{
 		cat: "News",
 		des: "NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",
 		uri: "https://ksltv.com/feed",
-		ext: "https://ksltv.com"
+		ext: "https://ksltv.com",
+		img: "NBC"
 	}
 
 	,
@@ -210,7 +232,8 @@ var menu = [{
 		cat: "News",
 		des: "ABC KTVX Utah Salt Lake City the oldest television station located in the Mountain Time Zone.",
 		uri: "https://www.abc4.com/feed",
-		ext: "https://www.abc4.com"
+		ext: "https://www.abc4.com",
+		img: "ABC"
 	}
 
 	,
@@ -219,7 +242,8 @@ var menu = [{
 		cat: "Media",
 		des: "ABC Entertainment Latest News, Videos and Photos.",
 		uri: "https://abcnews.go.com/abcnews/entertainmentheadlines",
-		ext: "https://abcnews.go.com/entertainment"
+		ext: "https://abcnews.go.com/entertainment",
+		img: "ABC"
 	}
 
 	,
@@ -246,7 +270,8 @@ var menu = [{
 		cat: "Media",
 		des: "BBC News Entertainment, Lifestyle, and Arts.",
 		uri: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
-		ext: "https://bbc.com/news/entertainment_and_arts"
+		ext: "https://bbc.com/news/entertainment_and_arts",
+		img: "BBC"
 	}
 
 	,
@@ -273,7 +298,8 @@ var menu = [{
 		cat: "Media",
 		des: "Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",
 		uri: "https://www.buzzfeed.com/celebrity.xml",
-		ext: "https://www.buzzfeed.com/celebrity"
+		ext: "https://www.buzzfeed.com/celebrity",
+		img: "BuzzFeed"
 	}
 
 	,
@@ -296,11 +322,12 @@ var menu = [{
 
 	,
 	{
-		id: "CBS",
+		id: "CBS Entertainment",
 		cat: "Media",
 		des: "CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",
 		uri: "https://www.cbsnews.com/latest/rss/entertainment",
-		ext: "https://cbsnews.com/latest/rss/entertainment"
+		ext: "https://cbsnews.com/latest/rss/entertainment",
+		img: "CBS"
 	}
 
 	,
@@ -318,7 +345,8 @@ var menu = [{
 		cat: "Media",
 		des: "CNN Entertainment News Celebrities, Movies, TV, and Music.",
 		uri: "http://rss.cnn.com/rss/cnn_showbiz.rss",
-		ext: "https://cnn.com/entertainment"
+		ext: "https://cnn.com/entertainment",
+		img: "CNN"
 	}
 
 	,
@@ -381,7 +409,8 @@ var menu = [{
 		cat: "Media",
 		des: "Digital Trends Movie reviews, TV Show recaps, Previews, and News.",
 		uri: "https://www.digitaltrends.com/movies/feed/",
-		ext: "https://digitaltrends.com/movies"
+		ext: "https://digitaltrends.com/movies",
+		img: "DigitalTrends"
 	}
 
 	,
@@ -390,7 +419,8 @@ var menu = [{
 		cat: "Media",
 		des: "E! is an American basic cable channel owned by the NBCUniversal.",
 		uri: "http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",
-		ext: "https://www.eonline.com"
+		ext: "https://www.eonline.com",
+		img: "ENews"
 	}
 
 	,
@@ -435,7 +465,8 @@ var menu = [{
 		cat: "Media",
 		des: "Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",
 		uri: "https://globalnews.ca/entertainment/feed",
-		ext: "https://globalnews.ca/entertainment"
+		ext: "https://globalnews.ca/entertainment",
+		img: "CBC"
 	}
 
 	,
@@ -615,7 +646,8 @@ var menu = [{
 		cat: "Media",
 		des: "Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",
 		uri: "https://www.rollingstone.com/feed",
-		ext: "https://rollingstone.com"
+		ext: "https://rollingstone.com",
+		img: "RollingStone"
 	}
 
 	,
@@ -651,7 +683,8 @@ var menu = [{
 		cat: "Media",
 		des: "TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",
 		uri: "https://www.tmz.com/rss.xml",
-		ext: "https://tmz.com"
+		ext: "https://tmz.com",
+		img: "TMZ"
 	}
 
 	,
@@ -669,7 +702,8 @@ var menu = [{
 		cat: "Media",
 		des: "USA Today People celebrity news, gossip and interviews.",
 		uri: "http://rssfeeds.usatoday.com/toppeople&x=1",
-		ext: "https://www.usatoday.com/entertainment/celebrities"
+		ext: "https://www.usatoday.com/entertainment/celebrities",
+		img: "USAToday"
 	}
 
 	,
@@ -723,7 +757,8 @@ var menu = [{
 		cat: "Social",
 		des: "AMD subreddit dedicated to Advanced Micro Devices and its products.",
 		uri: "https://reddit.com/r/Amd/.rss",
-		ext: "https://www.reddit.com/r/AMD"
+		ext: "https://www.reddit.com/r/AMD",
+		img: "AMD"
 	}
 
 	,
@@ -732,7 +767,8 @@ var menu = [{
 		cat: "Social",
 		des: "Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",
 		uri: "https://reddit.com/r/android/.rss",
-		ext: "https://reddit.com/r/Android"
+		ext: "https://reddit.com/r/Android",
+		img: "Android"
 	}
 
 	,
@@ -741,6 +777,7 @@ var menu = [{
 		cat: "Social",
 		des: "Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",
 		uri: "https://reddit.com/r/apple/.rss",
+		img: "Apple"
 	}
 
 	,
@@ -749,7 +786,8 @@ var menu = [{
 		cat: "Social",
 		des: "Arch Linux BBS Forum newest topics, questions, and answers.",
 		uri: "https://bbs.archlinux.org/extern.php?action=active&type=RSS",
-		ext: "https://www.archlinux.org"
+		ext: "https://www.archlinux.org",
+		img: "ArchLinux"
 	}
 
 	,
@@ -758,7 +796,8 @@ var menu = [{
 		cat: "Social",
 		des: "Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",
 		uri: "https://reddit.com/r/ArchLinux/.rss",
-		ext: "http://reddit.com/r/ArchLinux"
+		ext: "http://reddit.com/r/ArchLinux",
+		img: "Arch"
 	}
 
 	,
@@ -767,7 +806,8 @@ var menu = [{
 		cat: "Social",
 		des: "AskComputerScience subreddit where questions are asked about Computer Science.",
 		uri: "https://reddit.com/r/askcomputerscience/.rss",
-		ext: "https://reddit.com/r/AskComputerScience"
+		ext: "https://reddit.com/r/AskComputerScience",
+		img: "AskComputerScience"
 	}
 
 	,
@@ -776,7 +816,8 @@ var menu = [{
 		cat: "Social",
 		des: "Bash subreddit dedicated to bash scripting.",
 		uri: "https://reddit.com/r/bash/.rss",
-		ext: "https://reddit.com/r/Bash"
+		ext: "https://reddit.com/r/Bash",
+		img: "Reddit"
 	}
 
 	,
@@ -785,7 +826,8 @@ var menu = [{
 		cat: "Social",
 		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
 		uri: "https://reddit.com/r/boston/.rss",
-		ext: "https://reddit.com/r/Boston"
+		ext: "https://reddit.com/r/Boston",
+		img: "Boston"
 	}
 
 	,
@@ -794,7 +836,8 @@ var menu = [{
 		cat: "Social",
 		des: "California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",
 		uri: "https://reddit.com/r/California/.rss",
-		ext: "https://reddit.com/r/California"
+		ext: "https://reddit.com/r/California",
+		img: "California"
 	}
 
 	,
@@ -803,7 +846,8 @@ var menu = [{
 		cat: "Social",
 		des: "Celebhub famous actresses, singers, models, athletes and others.",
 		uri: "https://reddit.com/r/celebhub/.rss",
-		ext: "https://reddit.com/r/CelebHub"
+		ext: "https://reddit.com/r/CelebHub",
+		img: "CelebHub"
 	}
 
 	,
@@ -812,7 +856,8 @@ var menu = [{
 		cat: "Social",
 		des: "Chrome subreddit with topics related to Google's Chrome Web Browser.",
 		uri: "https://reddit.com/r/chrome/.rss",
-		ext: "https://reddit.com/r/Chrome"
+		ext: "https://reddit.com/r/Chrome",
+		img: "Chrome"
 	}
 
 	,
@@ -821,7 +866,8 @@ var menu = [{
 		cat: "Social",
 		des: "Coding subreddit Tutorials, Reviews, Videos, and Analysis.",
 		uri: "https://reddit.com/r/coding/.rss",
-		ext: "https://reddit.com/r/Coding"
+		ext: "https://reddit.com/r/Coding",
+		img: "Reddit"
 	}
 
 	,
@@ -830,16 +876,18 @@ var menu = [{
 		cat: "Social",
 		des: "Command Line subreddit shares tips, questions, and answers.",
 		uri: "https://reddit.com/r/commandline/.rss",
-		ext: "https://reddit.com/r/Commandline"
+		ext: "https://reddit.com/r/Commandline",
+		img: "CommandLine"
 	}
 
 	,
 	{
-		id: "Reddit/Computer",
+		id: "Reddit/Computers",
 		cat: "Social",
 		des: "Computer subreddit covers computers, questions, tips, and suggestions.",
 		uri: "https://reddit.com/r/computers/.rss",
-		ext: "https://reddit.com/r/Computers"
+		ext: "https://reddit.com/r/Computers",
+		img: "Black"
 	}
 
 	,
@@ -848,7 +896,8 @@ var menu = [{
 		cat: "Social",
 		des: "CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",
 		uri: "https://reddit.com/r/css/.rss",
-		ext: "https://reddit.com/r/CSS"
+		ext: "https://reddit.com/r/CSS",
+		img: "Reddit"
 	}
 
 	,
@@ -857,7 +906,8 @@ var menu = [{
 		cat: "Social",
 		des: "Data Is Beautiful subreddit for visualizations that effectively convey information.",
 		uri: "https://reddit.com/r/dataisbeautiful/.rss",
-		ext: "https://reddit.com/r/DataisBeautiful"
+		ext: "https://reddit.com/r/DataisBeautiful",
+		img: "DataIsBeautiful"
 	}
 
 	,
@@ -866,7 +916,8 @@ var menu = [{
 		cat: "Social",
 		des: "Debian subreddit has questions and topics revolving around Debian OS.",
 		uri: "https://reddit.com/r/debian/.rss",
-		ext: "https://reddit.com/r/Debian"
+		ext: "https://reddit.com/r/Debian",
+		img: "Debian"
 	}
 
 	,
@@ -875,7 +926,8 @@ var menu = [{
 		cat: "Social",
 		des: "Design subreddit with the art in all mediums.",
 		uri: "https://reddit.com/r/Design/.rss",
-		ext: "https://reddit.com/r/Design"
+		ext: "https://reddit.com/r/Design",
+		img: "Black"
 	}
 
 	,
@@ -884,7 +936,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan Do It Yourself board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",
 		uri: "http://boards.4channel.org/diy/index.rss",
-		ext: "http://boards.4channel.org/diy"
+		ext: "http://boards.4channel.org/diy",
+		img: "4chan"
 	}
 
 	,
@@ -893,7 +946,8 @@ var menu = [{
 		cat: "Social",
 		des: "r/DuckDuckGo is for news, updates and discussion about the search engine DuckDuckGo.",
 		uri: "https://reddit.com/r/duckduckgo/.rss",
-		ext: "https://reddit.com/r/duckduckgo/"
+		ext: "https://reddit.com/r/duckduckgo/",
+		img: "DuckDuckGo"
 	}
 
 	,
@@ -902,7 +956,8 @@ var menu = [{
 		cat: "Social",
 		des: "Entertainment subreddit has News and Discussion of the Entertainment Industry.",
 		uri: "https://reddit.com/r/entertainment/.rss",
-		ext: "https://reddit.com/r/Entertainment"
+		ext: "https://reddit.com/r/Entertainment",
+		img: "Reddit"
 	}
 
 	,
@@ -911,7 +966,8 @@ var menu = [{
 		cat: "Social",
 		des: "Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",
 		uri: "https://reddit.com/r/firefox/.rss",
-		ext: "https://reddit.com/r/Firefox"
+		ext: "https://reddit.com/r/Firefox",
+		img: "Firefox"
 	}
 
 	,
@@ -920,7 +976,8 @@ var menu = [{
 		cat: "Social",
 		des: "Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",
 		uri: "https://reddit.com/r/gadgets/.rss",
-		ext: "https://reddit.com/r/Gadgets"
+		ext: "https://reddit.com/r/Gadgets",
+		img: "Gadgets"
 	}
 
 	,
@@ -929,7 +986,8 @@ var menu = [{
 		cat: "Social",
 		des: "Games subreddit aims to provide a place for Informative and interesting Gaming Content.",
 		uri: "http://reddit.com/r/games/.rss",
-		ext: "https://reddit.com/r/games"
+		ext: "https://reddit.com/r/games",
+		img: "Games"
 	}
 
 	,
@@ -938,7 +996,8 @@ var menu = [{
 		cat: "Social",
 		des: "Gifs subreddit Funny, animated GIFs: Your favorite computer file type.",
 		uri: "https://reddit.com/r/gifs/.rss",
-		ext: "https://reddit.com/r/gifs"
+		ext: "https://reddit.com/r/gifs",
+		img: "Gifs"
 	}
 
 	,
@@ -947,7 +1006,8 @@ var menu = [{
 		cat: "Social",
 		des: "Github subreddit for all things GitHub!",
 		uri: "https://reddit.com/r/github/.rss",
-		ext: "https://reddit.com/r/github"
+		ext: "https://reddit.com/r/github",
+		img: "Github"
 	}
 
 	,
@@ -956,7 +1016,8 @@ var menu = [{
 		cat: "Social",
 		des: "Goddesses subreddit pretty pictures of pretty girls.",
 		uri: "https://reddit.com/r/goddesses/.rss",
-		ext: "https://reddit.com/r/Goddesses"
+		ext: "https://reddit.com/r/Goddesses",
+		img: "Black"
 	}
 
 	,
@@ -965,7 +1026,8 @@ var menu = [{
 		cat: "Social",
 		des: "Google subreddit For news and announcements from and about Google.",
 		uri: "https://reddit.com/r/google/.rss",
-		ext: "https://reddit.com/r/Google"
+		ext: "https://reddit.com/r/Google",
+		img: "Google"
 	}
 
 	,
@@ -974,7 +1036,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan G Technology is a board that discusses Technology.",
 		uri: "http://boards.4chan.org/g/index.rss",
-		ext: "http://boards.4channel.org/g/"
+		ext: "http://boards.4channel.org/g/",
+		img: "4chan"
 	}
 
 	,
@@ -983,7 +1046,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan GD Graphic Design Board dedicated to the art of Design.",
 		uri: "http://boards.4channel.org/gd/index.rss",
-		ext: "http://boards.4channel.org/gd"
+		ext: "http://boards.4channel.org/gd",
+		img: "4chan"
 	}
 
 	,
@@ -992,7 +1056,8 @@ var menu = [{
 		cat: "Social",
 		des: "Hacker News subreddit A mirror of Hacker News' best submissions.",
 		uri: "https://reddit.com/r/hackernews/.rss",
-		ext: "https://reddit.com/r/HackerNews"
+		ext: "https://reddit.com/r/HackerNews",
+		img: "Reddit"
 	}
 
 	,
@@ -1001,7 +1066,8 @@ var menu = [{
 		cat: "Social",
 		des: "Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",
 		uri: "https://reddit.com/r/hardware/.rss",
-		ext: "https://reddit.com/r/Hardware"
+		ext: "https://reddit.com/r/Hardware",
+		img: "Hardware"
 	}
 
 	,
@@ -1010,7 +1076,8 @@ var menu = [{
 		cat: "Social",
 		des: "Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.",
 		uri: "https://reddit.com/r/intel/.rss",
-		ext: "https://reddit.com/r/intel"
+		ext: "https://reddit.com/r/intel",
+		img: "Intel"
 	}
 
 	,
@@ -1019,7 +1086,8 @@ var menu = [{
 		cat: "Social",
 		des: "iOS subreddit for everything Apple iOS.",
 		uri: "https://reddit.com/r/ios/.rss",
-		ext: "https://reddit.com/r/iOS"
+		ext: "https://reddit.com/r/iOS",
+		img: "iOS"
 	}
 
 	,
@@ -1028,7 +1096,8 @@ var menu = [{
 		cat: "Social",
 		des: "Linux subreddit discusses topics evolving around Linux.",
 		uri: "https://reddit.com/r/linux/.rss",
-		ext: "https://reddit.com/r/Linux"
+		ext: "https://reddit.com/r/Linux",
+		img: "Linux"
 	}
 
 	,
@@ -1037,7 +1106,8 @@ var menu = [{
 		cat: "Social",
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
 		uri: "https://reddit.com/r/LosAngeles/.rss",
-		ext: "https://reddit.com/r/LosAngeles"
+		ext: "https://reddit.com/r/LosAngeles",
+		img: "Black"
 	}
 
 	,
@@ -1046,7 +1116,8 @@ var menu = [{
 		cat: "Social",
 		des: "Microsoft subreddit Microsoft's suite of services, products and games which we publish.",
 		uri: "https://reddit.com/r/microsoft/.rss",
-		ext: "https://reddit.com/r/Microsoft"
+		ext: "https://reddit.com/r/Microsoft",
+		img: "Microsoft"
 	}
 
 	,
@@ -1055,7 +1126,8 @@ var menu = [{
 		cat: "Social",
 		des: "Movies subreddit News and Discussion about Major Motion Pictures.",
 		uri: "https://reddit.com/r/movies/.rss",
-		ext: "https://reddit.com/r/Movies"
+		ext: "https://reddit.com/r/Movies",
+		img: "Reddit"
 	}
 
 	,
@@ -1064,7 +1136,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan MU Music board thats about all things music.",
 		uri: "http://boards.4channel.org/mu/index.rss",
-		ext: "http://boards.4channel.org/mu"
+		ext: "http://boards.4channel.org/mu",
+		img: "4chan"
 	}
 
 	,
@@ -1073,7 +1146,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan News Board that distributes, discusses, and analyzes news.",
 		uri: "http://boards.4channel.org/news/index.rss",
-		ext: "http://boards.4channel.org/news"
+		ext: "http://boards.4channel.org/news",
+		img: "4chan"
 	}
 
 	,
@@ -1082,7 +1156,8 @@ var menu = [{
 		cat: "Social",
 		des: "News subreddit articles relating to the United States and the rest of the World.",
 		uri: "https://reddit.com/r/news/.rss",
-		ext: "https://reddit.com/r/News"
+		ext: "https://reddit.com/r/News",
+		img: "News"
 	}
 
 	,
@@ -1091,7 +1166,8 @@ var menu = [{
 		cat: "Social",
 		des: "NVIDIA subreddit news, builds, compatibility, and other information.",
 		uri: "https://reddit.com/r/nvidia/.rss",
-		ext: "https://www.reddit.com/r/nvidia"
+		ext: "https://www.reddit.com/r/nvidia",
+		img: "Nvidia"
 	}
 
 	,
@@ -1100,7 +1176,8 @@ var menu = [{
 		cat: "Social",
 		des: "Open Source subreddit for everything open source.",
 		uri: "https://reddit.com/r/opensource/.rss",
-		ext: "https://reddit.com/r/opensource"
+		ext: "https://reddit.com/r/opensource",
+		img: "Reddit"
 	}
 
 	,
@@ -1109,7 +1186,8 @@ var menu = [{
 		cat: "Social",
 		des: "Pics subreddit A place for pictures and photographs.",
 		uri: "https://reddit.com/r/pics/.rss",
-		ext: "https://reddit.com/r/Pics"
+		ext: "https://reddit.com/r/Pics",
+		img: "Black"
 	}
 
 	,
@@ -1118,7 +1196,8 @@ var menu = [{
 		cat: "Social",
 		des: "Programming subreddit shares user submitted articles on Programming.",
 		uri: "https://reddit.com/r/programming/.rss",
-		ext: "https://reddit.com/r/Programming"
+		ext: "https://reddit.com/r/Programming",
+		img: "Programming"
 	}
 
 	,
@@ -1127,7 +1206,8 @@ var menu = [{
 		cat: "Social",
 		des: "San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",
 		uri: "https://reddit.com/r/sanfrancisco/.rss",
-		ext: "https://reddit.com/r/SanFrancisco"
+		ext: "https://reddit.com/r/SanFrancisco",
+		img: "Reddit"
 	}
 
 	,
@@ -1136,7 +1216,8 @@ var menu = [{
 		cat: "Social",
 		des: "Software subreddit where software applications are discussed.",
 		uri: "https://reddit.com/r/software/.rss",
-		ext: "https://reddit.com/r/Software"
+		ext: "https://reddit.com/r/Software",
+		img: "Black"
 	}
 
 	,
@@ -1145,7 +1226,8 @@ var menu = [{
 		cat: "Social",
 		des: "Software Gore subreddit poke fun at nasty software.",
 		uri: "https://reddit.com/r/softwaregore/.rss",
-		ext: "https://reddit.com/r/softwaregore"
+		ext: "https://reddit.com/r/softwaregore",
+		img: "SoftwareGore"
 	}
 
 	,
@@ -1154,7 +1236,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan SP Sports is a board that discusses International Sports.",
 		uri: "http://boards.4chan.org/sp/index.rss",
-		ext: "http://boards.4channel.org/sp/"
+		ext: "http://boards.4channel.org/sp/",
+		img: "4chan"
 	}
 
 	,
@@ -1163,7 +1246,8 @@ var menu = [{
 		cat: "Social",
 		des: "Sports subreddit for all the Latest Headlines and Discussion in Sports.",
 		uri: "https://reddit.com/r/sports/.rss",
-		ext: "https://reddit.com/r/Sports"
+		ext: "https://reddit.com/r/Sports",
+		img: "Sports"
 	}
 
 	,
@@ -1172,7 +1256,8 @@ var menu = [{
 		cat: "Social",
 		des: "Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",
 		uri: "https://reddit.com/r/tech/.rss",
-		ext: "https://reddit.com/r/Tech"
+		ext: "https://reddit.com/r/Tech",
+		img: "Black"
 	}
 
 	,
@@ -1181,7 +1266,8 @@ var menu = [{
 		cat: "Social",
 		des: "Technology subreddit shares submitted articles about Technology.",
 		uri: "https://reddit.com/r/technology/.rss",
-		ext: "https://reddit.com/r/Technology"
+		ext: "https://reddit.com/r/Technology",
+		img: "Technology"
 	}
 
 	,
@@ -1190,7 +1276,8 @@ var menu = [{
 		cat: "Social",
 		des: "Television subreddit streaming services and the best series.",
 		uri: "https://www.reddit.com/r/television/.rss",
-		ext: "https://www.reddit.com/r/Television"
+		ext: "https://www.reddit.com/r/Television",
+		img: "Television"
 	}
 
 	,
@@ -1199,7 +1286,8 @@ var menu = [{
 		cat: "Social",
 		des: "Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",
 		uri: "https://reddit.com/r/thinkpad/.rss",
-		ext: "https://reddit.com/r/Thinkpad"
+		ext: "https://reddit.com/r/Thinkpad",
+		img: "Thinkpad"
 	}
 
 	,
@@ -1208,7 +1296,8 @@ var menu = [{
 		cat: "Social",
 		des: "4Chan TV board dedicated to the TV and Film industry.",
 		uri: "http://boards.4channel.org/tv/index.rss",
-		ext: "http://boards.4channel.org/tv"
+		ext: "http://boards.4channel.org/tv",
+		img: "4chan"
 	}
 
 	,
@@ -1217,16 +1306,8 @@ var menu = [{
 		cat: "Social",
 		des: "Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",
 		uri: "https://reddit.com/r/unixporn/.rss",
-		ext: "https://reddit.com/r/Unixporn"
-	}
-
-	,
-	{
-		id: "Reddit/Video",
-		cat: "Social",
-		des: "Video subreddit is the best place for Video content of all kinds.",
-		uri: "https://reddit.com/r/videos/.rss",
-		ext: "https://reddit.com/r/Videos"
+		ext: "https://reddit.com/r/Unixporn",
+		img: "Unix"
 	}
 
 	,
@@ -1235,7 +1316,8 @@ var menu = [{
 		cat: "Social",
 		des: "4chan Wallpapers General read the sticky.",
 		uri: "http://boards.4chan.org/wg/index.rss",
-		ext: "http://boards.4channel.org/wg"
+		ext: "http://boards.4channel.org/wg",
+		img: "4chan"
 	}
 
 	,
@@ -1244,7 +1326,8 @@ var menu = [{
 		cat: "Social",
 		des: "iWallpaper subreddit for wallpaper enthusiasts.",
 		uri: "https://reddit.com/r/iwallpaper/.rss",
-		ext: "https://reddit.com/r/iWallpaper"
+		ext: "https://reddit.com/r/iWallpaper",
+		img: "Reddit"
 	}
 
 	,
@@ -1253,7 +1336,8 @@ var menu = [{
 		cat: "Social",
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
 		uri: "https://reddit.com/r/wallpaper/.rss",
-		ext: "https://reddit.com/r/Wallpaper"
+		ext: "https://reddit.com/r/Wallpaper",
+		img: "Wallpaper"
 	}
 
 	,
@@ -1262,7 +1346,8 @@ var menu = [{
 		cat: "Social",
 		des: "Wallpapers subreddit for Work-safe wallpapers from all over!",
 		uri: "https://reddit.com/r/wallpapers/.rss",
-		ext: "https://reddit.com/r/Wallpapers"
+		ext: "https://reddit.com/r/Wallpapers",
+		img: "Reddit"
 	}
 
 	,
@@ -1271,7 +1356,8 @@ var menu = [{
 		cat: "Social",
 		des: "Windows subreddit a personal computer operating system released by Microsoft.",
 		uri: "https://reddit.com/r/windows/.rss",
-		ext: "https://reddit.com/r/Windows"
+		ext: "https://reddit.com/r/Windows",
+		img: "Windows"
 	}
 
 	,
@@ -1280,7 +1366,8 @@ var menu = [{
 		cat: "Social",
 		des: "World News subreddit with latest headlines from around the world.",
 		uri: "https://reddit.com/r/worldnews/.rss",
-		ext: "https://reddit.com/r/WorldNews"
+		ext: "https://reddit.com/r/WorldNews",
+		img: "Reddit"
 	}
 
 	,
@@ -1289,7 +1376,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ABC Sports the Latest Sports News, Articles and more.",
 		uri: "https://abcnews.go.com/abcnews/sportsheadlines",
-		ext: "https://abcnews.go.com/Sports"
+		ext: "https://abcnews.go.com/Sports",
+		img: "ABC"
 	}
 
 	,
@@ -1316,7 +1404,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Digital Trends world of cars, speed and power.",
 		uri: "https://www.digitaltrends.com/cars/feed",
-		ext: "https://digitaltrends.com/cars"
+		ext: "https://digitaltrends.com/cars",
+		img: "DigitalTrends"
 	}
 
 	,
@@ -1325,7 +1414,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ESPN is a cable network that plays Live and taped Sporting Events.",
 		uri: "https://www.espn.com/espn/rss/news",
-		ext: "https://espn.com"
+		ext: "https://espn.com",
+		img: "ESPN"
 	}
 
 	,
@@ -1334,7 +1424,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports is a wide array of Multi-Platform US-based Sports Assets.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU",
-		ext: "https://foxsports.com"
+		ext: "https://foxsports.com",
+		img: "FoxSports"
 	}
 
 	,
@@ -1361,7 +1452,8 @@ var menu = [{
 		cat: "Sports",
 		des: "NBC Sports is responsible for the televising of many Sports Events.",
 		uri: "https://sports.nbcsports.com/feed",
-		ext: "https://nbcsports.com"
+		ext: "https://nbcsports.com",
+		img: "NBCSports"
 	}
 
 	,
@@ -1406,7 +1498,8 @@ var menu = [{
 		cat: "Sports",
 		des: "USA Today Sports Top Stories from the world on sports.",
 		uri: "http://rssfeeds.usatoday.com/usatodaycomsports-topstories&x=1",
-		ext: "https://www.usatoday.com/sports"
+		ext: "https://www.usatoday.com/sports",
+		img: "USAToday"
 	}
 
 	,
@@ -1424,7 +1517,8 @@ var menu = [{
 		cat: "Sports",
 		des: "BBC Sports News from around the world.",
 		uri: "http://feeds.bbci.co.uk/sport/rss.xml",
-		ext: "https://bbc.com/sport"
+		ext: "https://bbc.com/sport",
+		img: "BBC"
 	}
 
 	,
@@ -1442,7 +1536,8 @@ var menu = [{
 		cat: "Sports",
 		des: "CBS Sports is an American Sports News website operated by CBS Interactive.",
 		uri: "https://rss.cbssports.com/rss/headlines",
-		ext: "https://cbssports.com"
+		ext: "https://cbssports.com",
+		img: "CBS"
 	}
 
 	,
@@ -1451,7 +1546,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Bleacher Report is a website that focuses on sport and sports culture.",
 		uri: "https://bleacherreport.com/articles/feed",
-		ext: "https://bleacherreport.com"
+		ext: "https://bleacherreport.com",
+		img: "BleacherReport"
 	}
 
 	,
@@ -1460,7 +1556,8 @@ var menu = [{
 		cat: "Sports",
 		des: "CNN Sports catalogues the Latest News from around the World.",
 		uri: "http://rss.cnn.com/rss/edition_sport.rss",
-		ext: "https://cnn.com/sport"
+		ext: "https://cnn.com/sport",
+		img: "CNN"
 	}
 
 	,
@@ -1469,7 +1566,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ESPN NFL Football News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/nfl/news",
-		ext: "https://espn.com/nfl"
+		ext: "https://espn.com/nfl",
+		img: "ESPN"
 	}
 
 	,
@@ -1478,7 +1576,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ESPN NBA Team Stats, Schedules, Rosters, Depth charts and more.",
 		uri: "http://www.espn.com/espn/rss/nba/news",
-		ext: "https://espn.com/nba"
+		ext: "https://espn.com/nba",
+		img: "ESPN"
 	}
 
 	,
@@ -1487,7 +1586,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ESPN MLB Baseball News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/mlb/news",
-		ext: "https://espn.com/mlb"
+		ext: "https://espn.com/mlb",
+		img: "ESPN"
 	}
 
 	,
@@ -1496,7 +1596,8 @@ var menu = [{
 		cat: "Sports",
 		des: "ESPN NHL Hockey News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/nhl/news",
-		ext: "https://espn.com/nhl"
+		ext: "https://espn.com/nhl",
+		img: "ESPN"
 	}
 
 	,
@@ -1505,7 +1606,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports MLB videos, rumors, stats, standings, team schedules & fantasy games on FOX Sports.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb",
-		ext: "https://www.foxsports.com/mlb"
+		ext: "https://www.foxsports.com/mlb",
+		img: "FoxSports"
 	}
 
 	,
@@ -1514,7 +1616,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports NFL live NFL scores, pro football player & team news, NFL videos, rumors, stats, standings, team schedules & fantasy football games.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl",
-		ext: "https://www.foxsports.com/nfl"
+		ext: "https://www.foxsports.com/nfl",
+		img: "FoxSports"
 	}
 
 	,
@@ -1523,7 +1626,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports NCAAFB NCAA Football player & team news.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb",
-		ext: "https://www.foxsports.com/college-football"
+		ext: "https://www.foxsports.com/college-football",
+		img: "FoxSports"
 	}
 
 	,
@@ -1532,7 +1636,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports NBA videos, rumors, stats, standings, and team schedules.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba",
-		ext: "https://www.foxsports.com/nba"
+		ext: "https://www.foxsports.com/nba",
+		img: "FoxSports"
 	}
 
 	,
@@ -1541,7 +1646,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports NHL player & team news.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nhl",
-		ext: "https://www.foxsports.com/nhl"
+		ext: "https://www.foxsports.com/nhl",
+		img: "FoxSports"
 	}
 
 	,
@@ -1550,7 +1656,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports Golf Unique perspectives on the daily sports topics that matter most.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf",
-		ext: "https://www.foxsports.com/golf/usga"
+		ext: "https://www.foxsports.com/golf/usga",
+		img: "FoxSports"
 	}
 
 	,
@@ -1559,7 +1666,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Fox Sports Motor including F1, MotoGp, V8 Supercars, WRC & More.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=motor",
-		ext: "https://www.foxsports.com/motor"
+		ext: "https://www.foxsports.com/motor",
+		img: "FoxSports"
 	}
 
 	,
@@ -1586,7 +1694,8 @@ var menu = [{
 		cat: "Sports",
 		des: "MLB is the official site of Major League Baseball.",
 		uri: "https://www.mlb.com/feeds/news/rss.xml",
-		ext: "https://mlb.com"
+		ext: "https://mlb.com",
+		img: "MLB"
 	}
 
 	,
@@ -1631,7 +1740,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Telegraph.co.uk Sport news from around the world.",
 		uri: "https://www.telegraph.co.uk/sport/rss.xml",
-		ext: "https://www.telegraph.co.uk/sport"
+		ext: "https://www.telegraph.co.uk/sport",
+		img: "Telegraph"
 	}
 
 	,
@@ -1739,7 +1849,8 @@ var menu = [{
 		cat: "Technology",
 		des: "ABC Technology for Latest Science News, Technology News, and more.",
 		uri: "https://abcnews.go.com/abcnews/technologyheadlines",
-		ext: "https://abcnews.go.com/technology"
+		ext: "https://abcnews.go.com/technology",
+		img: "ABC"
 	}
 
 	,
@@ -1757,7 +1868,8 @@ var menu = [{
 		cat: "Technology",
 		des: "BBC Technology News, Articles, and more.",
 		uri: "http://feeds.bbci.co.uk/news/technology/rss.xml",
-		ext: "https://bbc.co.uk/news/technology"
+		ext: "https://bbc.co.uk/news/technology",
+		img: "BBC"
 	}
 
 	,
@@ -1811,7 +1923,8 @@ var menu = [{
 		cat: "Technology",
 		des: "CBS Technology on Social Media, Artificial Intelligence, Computers and more.",
 		uri: "https://www.cbsnews.com/latest/rss/technology",
-		ext: "https://cbsnews.com/technology"
+		ext: "https://cbsnews.com/technology",
+		img: "CBS"
 	}
 
 	,
@@ -1820,7 +1933,8 @@ var menu = [{
 		cat: "Technology",
 		des: "CNBC is an American elevision News channel that is owned by NBC Universal.",
 		uri: "https://www.cnbc.com/id/19854910/device/rss/rss.html",
-		ext: "https://cnbc.com/technology"
+		ext: "https://cnbc.com/technology",
+		img: "CNBC"
 	}
 
 	,
@@ -1829,7 +1943,8 @@ var menu = [{
 		cat: "Technology",
 		des: "CNET is an American media website that publishes Reviews, News, Articles, and Videos on Technology.",
 		uri: "https://www.cnet.com/rss/news",
-		ext: "https://cnet.com"
+		ext: "https://cnet.com",
+		img: "CNET"
 	}
 
 	,
@@ -1847,7 +1962,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Digital Trends is a Technology News, Lifestyle, and Information Website.",
 		uri: "https://www.digitaltrends.com/feed",
-		ext: "https://digitaltrends.com"
+		ext: "https://digitaltrends.com",
+		img: "DigitalTrends"
 	}
 
 	,
@@ -1865,7 +1981,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",
 		uri: "https://www.engadget.com/rss.xml",
-		ext: "https://engadget.com"
+		ext: "https://engadget.com",
+		img: "Engadget"
 	}
 
 	,
@@ -1892,7 +2009,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",
 		uri: "https://www.forbes.com/most-popular/feed",
-		ext: "https://forbes.com"
+		ext: "https://forbes.com",
+		img: "Forbes"
 	}
 
 	,
@@ -2027,7 +2145,8 @@ var menu = [{
 		cat: "Technology",
 		des: "MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",
 		uri: "http://news.mit.edu/rss/feed",
-		ext: "http://news.mit.edu"
+		ext: "http://news.mit.edu",
+		img: "MIT"
 	}
 
 	,
@@ -2045,7 +2164,8 @@ var menu = [{
 		cat: "Technology",
 		des: "NBC News Tech for Latest News on Technology, Businesses and Internet media.",
 		uri: "http://feeds.nbcnews.com/nbcnews/public/tech",
-		ext: "https://nbcnews.com/tech-media"
+		ext: "https://nbcnews.com/tech-media",
+		img: "NBC"
 	}
 
 	,
@@ -2158,7 +2278,7 @@ var menu = [{
 
 	,
 	{
-		id: "Los Angeles Times",
+		id: "The Los Angeles Times",
 		cat: "Technology",
 		des: "Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",
 		uri: "https://www.latimes.com/business/technology/rss2.0.xml",
@@ -2261,7 +2381,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechCrunch Reports on the Business of Technology, Startups, Venture Capital funding, and Silicon Valley.",
 		uri: "http://feeds.feedburner.com/TechCrunch",
-		ext: "https://techcrunch.com"
+		ext: "https://techcrunch.com",
+		img: "TechCrunch"
 	}
 
 	,
@@ -2351,7 +2472,8 @@ var menu = [{
 		cat: "Technology",
 		des: "The Verge covers the intersection of technology, science, art, and culture.",
 		uri: "https://www.theverge.com/rss/index.xml",
-		ext: "https://www.theverge.com"
+		ext: "https://www.theverge.com",
+		img: "TheVerge"
 	}
 
 	,
@@ -2365,11 +2487,12 @@ var menu = [{
 
 	,
 	{
-		id: "USA Today Tech",
+		id: "USA Today Technology",
 		cat: "Technology",
 		des: "USA Today Technology is an internationally distributed American daily, middle-market Newspaper.",
 		uri: "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1",
-		ext: "https://usatoday.com/tech/"
+		ext: "https://usatoday.com/tech/",
+		img: "USAToday"
 	}
 
 	,
@@ -2428,11 +2551,12 @@ var menu = [{
 
 	,
 	{
-		id: "Wired Technology",
+		id: "WIRED Technology",
 		cat: "Technology",
 		des: "WIRED is where tomorrow is realized. It is the essential source of information.",
 		uri: "https://www.wired.com/feed/rss",
-		ext: "https://wired.com"
+		ext: "https://wired.com",
+		img: "WIRED"
 	}
 
 	,
@@ -2459,7 +2583,8 @@ var menu = [{
 		cat: "World",
 		des: "ABC is an American broadcast television network that is property of Walt Disney.",
 		uri: "https://abcnews.go.com/abcnews/internationalheadlines",
-		ext: "https://abc.com"
+		ext: "https://abc.com",
+		img: "ABC"
 	}
 
 	,
@@ -2513,7 +2638,8 @@ var menu = [{
 		cat: "World",
 		des: "CBS is a media company that creates and distributes industry-leading content.",
 		uri: "https://www.cbsnews.com/latest/rss/world",
-		ext: "https://cbsnews.com"
+		ext: "https://cbsnews.com",
+		img: "CBS"
 	}
 
 	,
@@ -2621,7 +2747,8 @@ var menu = [{
 		cat: "World",
 		des: "Global News World breaking international news current world news headlines, international news and business.",
 		uri: "https://globalnews.ca/world/feed",
-		ext: "https://globalnews.ca/world"
+		ext: "https://globalnews.ca/world",
+		img: "CBC"
 	}
 
 	,
@@ -2693,7 +2820,8 @@ var menu = [{
 		cat: "World",
 		des: "NBC News is the news division of the American broadcast television network NBC.",
 		uri: "http://feeds.nbcnews.com/nbcnews/public/news",
-		ext: "https://nbcnews.com"
+		ext: "https://nbcnews.com",
+		img: "NBC"
 	}
 
 	,
@@ -2909,7 +3037,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Andoid Authority Youtube Your source for all things Android.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",
-		ext: "https://www.youtube.com/user/AndroidAuthrotiy"
+		ext: "https://www.youtube.com/user/AndroidAuthrotiy",
+		img: "AndroidAuthority"
 	}
 
 	,
@@ -2918,7 +3047,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Bein Sports Youtube a global network of sports channels owned and operated by beIN Media Group.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BeInSportUSA",
-		ext: "https://www.youtube.com/user/BeINsportUSA"
+		ext: "https://www.youtube.com/user/BeINsportUSA",
+		img: "BeIn"
 	}
 
 	,
@@ -2927,7 +3057,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "CBC Canada Youtube is the country’s largest news organization, employing several hundred journalists in Canada and around the globe.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbcnews",
-		ext: "https://www.youtube.com/user/CBCNews"
+		ext: "https://www.youtube.com/user/CBCNews",
+		img: "CBC"
 	}
 
 	,
@@ -2936,7 +3067,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "BuzzFeedVideo Youtube New videos posted daily! See behind-the-scenes & more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BuzzFeedVideo",
-		ext: "https://www.youtube.com/user/BuzzFeedVideo"
+		ext: "https://www.youtube.com/user/BuzzFeedVideo",
+		img: "BuzzFeed"
 	}
 
 	,
@@ -2945,7 +3077,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Discovery Networks Youtube amazing stories and experiences from the world of science, natural history, anthropology, survival, geography, and engineering.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DiscoveryNetworks",
-		ext: "https://www.youtube.com/user/DiscoveryNetworks"
+		ext: "https://www.youtube.com/user/DiscoveryNetworks",
+		img: "Discovery"
 	}
 
 	,
@@ -2954,7 +3087,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Global News Youtube news and information from breaking news in their community to complex world issues.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=globaltoronto",
-		ext: "https://www.youtube.com/user/GlobalToronto"
+		ext: "https://www.youtube.com/user/GlobalToronto",
+		img: "CBC"
 	}
 
 	,
@@ -2963,7 +3097,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "MIT News Office Youtube advances knowledge and educate students in science, technology, and other areas.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MITNewsOffice",
-		ext: "https://www.youtube.com/user/MITNewsOffice"
+		ext: "https://www.youtube.com/user/MITNewsOffice",
+		img: "MIT"
 	}
 
 	,
@@ -2972,7 +3107,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Netflix Youtube What's new on Netflix streaming.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newonnetflix",
-		ext: "https://www.youtube.com/user/NewOnNetflix"
+		ext: "https://www.youtube.com/user/NewOnNetflix",
+		img: "Netflix"
 	}
 
 	,
@@ -2981,7 +3117,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "National Geographic Youtube premium destination for science, exploration, and adventure.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",
-		ext: "https://www.youtube.com/user/NationalGeographic"
+		ext: "https://www.youtube.com/user/NationalGeographic",
+		img: "NationalGeographic"
 	}
 
 	,
@@ -2990,7 +3127,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "ScreenRant Youtube the go-to source for movie and TV news, reviews and in-depth analysis.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=screenrant",
-		ext: "https://www.youtube.com/user/ScreenRant"
+		ext: "https://www.youtube.com/user/ScreenRant",
+		img: "ScreenRant"
 	}
 
 	,
@@ -3008,7 +3146,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "CBS News Youtube breaking news and top-level interviews engaging and informative.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbsnewsonline",
-		ext: "https://www.youtube.com/user/CBSNewsOnline"
+		ext: "https://www.youtube.com/user/CBSNewsOnline",
+		img: "CBSNewsOnline"
 	}
 
 	,
@@ -3017,7 +3156,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Comedy Central Youtube everything you love about Comedy Central: comedians, jokes, roasts and beyond.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=comedycentral",
-		ext: "https://www.youtube.com/user/ComedyCentral"
+		ext: "https://www.youtube.com/user/ComedyCentral",
+		img: "ComedyCentral"
 	}
 
 	,
@@ -3026,7 +3166,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "CNBC Youtube special sneak peeks of your favorite shows, exclusive video and real-time news updates from around the world.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cnbc",
-		ext: "https://www.youtube.com/user/CNBC"
+		ext: "https://www.youtube.com/user/CNBC",
+		img: "CNBC"
 	}
 
 	,
@@ -3035,7 +3176,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "CNN Youtube latest top stories, weather, business, entertainment, politics, and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNN",
-		ext: "https://www.youtube.com/user/CNN"
+		ext: "https://www.youtube.com/user/CNN",
+		img: "CNN"
 	}
 
 	,
@@ -3044,7 +3186,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "BBC Youtube the world’s leading public service broadcaster..",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bbc",
-		ext: "https://www.youtube.com/user/BBC"
+		ext: "https://www.youtube.com/user/BBC",
+		img: "BBC"
 	}
 
 	,
@@ -3053,7 +3196,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Bleacher Report Youtube ports highlights, features and animations that drive fandom.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BleacherReport",
-		ext: "https://www.youtube.com/user/BleacherReport"
+		ext: "https://www.youtube.com/user/BleacherReport",
+		img: "BleacherReport"
 	}
 
 	,
@@ -3062,7 +3206,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "CNET TV Youtube important product reviews and follow the tech news and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNETTV",
-		ext: "https://www.youtube.com/user/CNETTV"
+		ext: "https://www.youtube.com/user/CNETTV",
+		img: "CNET"
 	}
 
 	,
@@ -3071,7 +3216,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Digital Trends YouTube gives an inside and in-depth look at trending tech coming out.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DigitalTrends",
-		ext: "https://www.youtube.com/user/DigitalTrends"
+		ext: "https://www.youtube.com/user/DigitalTrends",
+		img: "DigitalTrends"
 	}
 
 	,
@@ -3080,7 +3226,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "E! News Youtube entertainment news, celebrities, celeb news, and celebrity gossip.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=enews",
-		ext: "https://www.youtube.com/user/ENews"
+		ext: "https://www.youtube.com/user/ENews",
+		img: "ENews"
 	}
 
 	,
@@ -3089,7 +3236,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Engadget Youtube laptops, cameras, instruments, VR headsets, smart locks and everything in between.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=engadget",
-		ext: "https://www.youtube.com/user/Engadget"
+		ext: "https://www.youtube.com/user/Engadget",
+		img: "Engadget"
 	}
 
 	,
@@ -3098,7 +3246,7 @@ var menu = [{
 		cat: "Youtube",
 		des: "ET Youtube the Leading source of all things entertainment.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=entertainmenttonight",
-		ext: "https://www.youtube.com/user/EntertainmentTonight"
+		ext: "https://www.youtube.com/user/EntertainmentTonight",
 	}
 
 	,
@@ -3107,7 +3255,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "ESPN Youtube features up-to-the-minute sports news coverage, scores, highlights and commentary.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ESPN",
-		ext: "https://www.youtube.com/user/ESPN"
+		ext: "https://www.youtube.com/user/ESPN",
+		img: "ESPN"
 	}
 
 	,
@@ -3116,7 +3265,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "IGN Entertainment Youtube game reviews, trailers, and walkthroughs.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ignentertainment",
-		ext: "https://www.youtube.com/user/IGNEntertainment"
+		ext: "https://www.youtube.com/user/IGNEntertainment",
+		img: "IGN"
 	}
 
 	,
@@ -3125,7 +3275,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Forbes highlights business, entrepreneurship, wealth, investing and leadership.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=forbes",
-		ext: "https://www.youtube.com/user/Forbes"
+		ext: "https://www.youtube.com/user/Forbes",
+		img: "Forbes"
 	}
 
 	,
@@ -3134,7 +3285,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Fox News Youtube dedicated to delivering breaking news as well as political and business news.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxnewschannel",
-		ext: "https://www.youtube.com/user/FoxNewsChannel"
+		ext: "https://www.youtube.com/user/FoxNewsChannel",
+		img: "FoxNews"
 	}
 
 	,
@@ -3143,7 +3295,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxsports",
-		ext: "https://www.youtube.com/user/Foxsports"
+		ext: "https://www.youtube.com/user/Foxsports",
+		img: "FoxSports"
 	}
 
 	,
@@ -3152,7 +3305,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Game Trailers Youtube dedicated to archiving content from GameTrailers.com.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=gametrailers",
-		ext: "https://www.youtube.com/user/GameTrailers"
+		ext: "https://www.youtube.com/user/GameTrailers",
+		img: "GameTrailers"
 	}
 
 	,
@@ -3161,7 +3315,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Google Youtube our products, technology, company happenings and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=google",
-		ext: "https://www.youtube.com/user/Google"
+		ext: "https://www.youtube.com/user/Google",
+		img: "Google"
 	}
 
 	,
@@ -3170,7 +3325,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "MLB Youtube home of Major Leage Baseball.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MLB",
-		ext: "https://www.youtube.com/user/MLB"
+		ext: "https://www.youtube.com/user/MLB",
+		img: "MLB"
 	}
 
 	,
@@ -3178,8 +3334,9 @@ var menu = [{
 		id: "Youtube/MSNBC",
 		cat: "Youtube",
 		des: "MSNBC Youtube the premier destination for in-depth analysis of daily headlines, insightful political commentary and informed perspectives.",
-		uri: "https://www.youtube.com/feeds/videos.xml?user=msnbcleanforward",
-		ext: "https://www.youtube.com/user/MSNBCCleanForward"
+		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCaXkIU1QidjPwiAYu6GcHjg",
+		ext: "https://www.youtube.com/channel/UCaXkIU1QidjPwiAYu6GcHjg",
+		img: "MSNBC"
 	}
 
 	,
@@ -3188,7 +3345,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "MotorTrend Youtube The ultimate automotive streaming service.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=motortrend",
-		ext: "https://www.youtube.com/user/Motortrend"
+		ext: "https://www.youtube.com/user/Motortrend",
+		img: "MotorTrend"
 	}
 
 	,
@@ -3197,7 +3355,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "NBC Youtube eaturing episode highlights, first looks, and digital exclusives!",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nbc",
-		ext: "https://www.youtube.com/user/NBC"
+		ext: "https://www.youtube.com/user/NBC",
+		img: "NBC"
 	}
 
 	,
@@ -3206,7 +3365,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "NBC News Youtube America's most-watched evening news broadcast.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBCNews",
-		ext: "https://www.youtube.com/user/NBCNews"
+		ext: "https://www.youtube.com/user/NBCNews",
+		img: "NBCNews"
 	}
 
 	,
@@ -3215,7 +3375,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "NBC Sports Youtube premier live events, insightful studio shows, and compelling original programming.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",
-		ext: "https://www.youtube.com/user/2012NBCOlympics"
+		ext: "https://www.youtube.com/user/2012NBCOlympics",
+		img: "NBCSports"
 	}
 
 	,
@@ -3224,7 +3385,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "NBA Youtube home of the most compelling basketball action from the NBA.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBA",
-		ext: "https://www.youtube.com/user/NBA"
+		ext: "https://www.youtube.com/user/NBA",
+		img: "NBC"
 	}
 
 	,
@@ -3233,7 +3395,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "NewEgg Youtube tech, gaming, DIY, unboxings, overviews, interviews, live event coverage and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newegg",
-		ext: "https://www.youtube.com/user/Newegg"
+		ext: "https://www.youtube.com/user/Newegg",
+		img: "Newegg"
 	}
 
 	,
@@ -3242,7 +3405,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "The New York Times Youtube the standard for the most ambitious and innovative storytelling across features, news and investigations.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=thenewyorktimes",
-		ext: "https://www.youtube.com/user/TheNewYorkTimes"
+		ext: "https://www.youtube.com/user/TheNewYorkTimes",
+		img: "TheNewYorkTimes"
 	}
 
 	,
@@ -3251,16 +3415,18 @@ var menu = [{
 		cat: "Youtube",
 		des: "NFL Youtube highlights from your favorite teams and players, daily fantasy football updates.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nfl",
-		ext: "https://www.youtube.com/user/NFL"
+		ext: "https://www.youtube.com/user/NFL",
+		img: "NFL"
 	}
 
 	,
 	{
-		id: "Youtube/PBS News",
+		id: "Youtube/PBS News Hour",
 		cat: "Youtube",
 		des: "PBS News Hour Youtube one of the most trusted news programs in television and online.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pbsnewshour",
-		ext: "https://www.youtube.com/user/PBSNewsHour"
+		ext: "https://www.youtube.com/user/PBSNewsHour",
+		img: "PBSNewsHour"
 	}
 
 	,
@@ -3269,7 +3435,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "PCMag Youtube the best product reviews, updated tech news, and tips on how to advance your digital needs.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pcmagazinereviews",
-		ext: "https://www.youtube.com/user/PCMagazineReviews"
+		ext: "https://www.youtube.com/user/PCMagazineReviews",
+		img: "PCMag"
 	}
 
 	,
@@ -3278,7 +3445,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "People TV Youtube #1 online news source all things pop culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=people",
-		ext: "https://www.youtube.com/user/People"
+		ext: "https://www.youtube.com/user/People",
+		img: "PeopleTV"
 	}
 
 	,
@@ -3287,16 +3455,18 @@ var menu = [{
 		cat: "Youtube",
 		des: "Rolling Stone Youtube exclusive videos on music, politics, and culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=rollingstone",
-		ext: "https://www.youtube.com/user/RollingStone"
+		ext: "https://www.youtube.com/user/RollingStone",
+		img: "RollingStone"
 	}
 
 	,
 	{
-		id: "Youtube/Sports Illustrated",
+		id: "Youtube/Sports Illustrated Swimsuit",
 		cat: "Youtube",
 		des: "Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=siswimsuit",
-		ext: "https://www.youtube.com/user/SISwimsuit"
+		ext: "https://www.youtube.com/user/SISwimsuit",
+		img: "SportsIllustratedSwimsuit"
 	}
 
 	,
@@ -3305,7 +3475,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Surfer Magazine Youtube award-winning photos, provocative interviews, and journeys to the coolest undiscovered surf spots.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=surfer",
-		ext: "https://www.youtube.com/user/Surfer"
+		ext: "https://www.youtube.com/user/Surfer",
+		img: "Surfer"
 	}
 
 	,
@@ -3314,7 +3485,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "TechCrunch Youtube startups, Internet products, and breaking tech news.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=techcrunch",
-		ext: "https://www.youtube.com/user/TechCrunch"
+		ext: "https://www.youtube.com/user/TechCrunch",
+		img: "TechCrunch"
 	}
 
 	,
@@ -3323,7 +3495,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Ted Talks Youtube Technology, Entertainment and Design -- plus science, business, global issues, the arts and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCAuUUnT6oDeKwE6v1NGQxug",
-		ext: "https://www.youtube.com/user/TEDtalksDirector"
+		ext: "https://www.youtube.com/user/TEDtalksDirector",
+		img: "TED"
 	}
 
 	,
@@ -3332,7 +3505,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "The Telegraph Youtube covering world events, sports, entertainment, technology, motoring, food, fashion, beauty, travel and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=telegraphtv",
-		ext: "https://www.youtube.com/user/TelegraphTV"
+		ext: "https://www.youtube.com/user/TelegraphTV",
+		img: "Telegraph"
 	}
 
 	,
@@ -3341,7 +3515,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "The Verge Youtube videos, reviews, opinion, and technology.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=theverge",
-		ext: "https://www.youtube.com/user/TheVerge"
+		ext: "https://www.youtube.com/user/TheVerge",
+		img: "TheVerge"
 	}
 
 	,
@@ -3350,7 +3525,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Time Magazine Youtube daily news, interviews, science, technology, politics, health, entertainment, and business updates.",
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA",
-		ext: "https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA"
+		ext: "https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA",
+		img: "TIME"
 	}
 
 	,
@@ -3359,7 +3535,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "TMZ Youtube breaking celebrity news, gossip, and insight.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZ",
-		ext: "https://www.youtube.com/user/TMZ"
+		ext: "https://www.youtube.com/user/TMZ",
+		img: "TMZ"
 	}
 
 	,
@@ -3368,7 +3545,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "TMZ Sports Youtube where sport and celebrity cultures intersect.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZSports",
-		ext: "https://www.youtube.com/user/TMZSports"
+		ext: "https://www.youtube.com/user/TMZSports",
+		img: "TMZSports"
 	}
 
 	,
@@ -3377,7 +3555,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "UFC Youtube Weigh-ins, Analysis, Highlights, and Interviews.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ufc",
-		ext: "https://www.youtube.com/user/UFC"
+		ext: "https://www.youtube.com/user/UFC",
+		img: "UFC"
 	}
 
 	,
@@ -3386,7 +3565,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "USA Today Youtube Investigative Journalism, National and Local News.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=usatoday",
-		ext: "https://www.youtube.com/user/USAToday"
+		ext: "https://www.youtube.com/user/USAToday",
+		img: "USAToday"
 	}
 
 	,
@@ -3395,7 +3575,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Vice News Youtube is the breaking, break-through news you need.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=vicenews",
-		ext: "https://www.youtube.com/user/ViceNews"
+		ext: "https://www.youtube.com/user/ViceNews",
+		img: "ViceNews"
 	}
 
 	,
@@ -3404,16 +3585,18 @@ var menu = [{
 		cat: "Youtube",
 		des: "Wall Street Journal Youtube dig deeper into the news that matters to you.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",
-		ext: "https://www.youtube.com/user/WSJDigitalNetwork"
+		ext: "https://www.youtube.com/user/WSJDigitalNetwork",
+		img: "WSJ"
 	}
 
 	,
 	{
-		id: "Youtube/Wired",
+		id: "Youtube/WIRED",
 		cat: "Youtube",
 		des: "WIRED Youtube explores the future of business, innovation, and culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wired",
-		ext: "https://www.youtube.com/user/Wired"
+		ext: "https://www.youtube.com/user/Wired",
+		img: "WIRED"
 	}
 
 ]

@@ -339,7 +339,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #image, a')
+		$('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #image, .ago, a')
 			.css({
 				'color': '#fff',
 				'background-color': '#000',
@@ -355,13 +355,12 @@ function applyVisual(n) {
 			'responseOpposite')
 		$('#main, .listing').addClass('opposite').removeClass(
 			'invert')
-		$('#ago, .ago, .attr').css('color', '#eee')
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
 			.css('filter', 'none')
 		$('#favicon').attr('href', 'images/opposite.png')
 		$('a, .hilight').css('color', '#F7426B')
 	} else if (op == 0) {
-		$('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, a')
+		$('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
@@ -466,14 +465,16 @@ function feedResponse(n) {
 		.length - 1)])
 	else if (n >= menu.length - 5) n = 0
 	for (var i = n; i <= n + 13; i++) {
+		if (!menu[i].img) var img = 'images/acktic' + '.png'
+		else var img = 'images/ID/PNG/' + menu[i].img + '.png'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
-			"<div class='id " + menu.indexOf(menu[i]) +
+			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 				/[\/|\.|\s|\-]/g, '-') + "'> " +
-			"</div><a style='margin-left:5px;width:100%' ext='" + menu[i].ext +
+			"<a style='margin-left:5px;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
-			.substring(0, 9) + '...' +
+			.substring(0, 7) + '...' +
 			"</a>" +
 			"</div>"
 		)
@@ -748,6 +749,8 @@ function uncoordinatedTimeZone(n) {
 
 function writeResponse(n) {
 
+	if (!menu[n].img) var img = 'images/apply' + '.png'
+	else var img = 'images/ID/PNG/' + menu[n].img + '.png'
 	if ($('#main .result').length < 1) $('#main').append(
 		"<div class='result' style='display:none'></div>")
 	var tag = menu[n].id.match(/[^\/]+$/g)
@@ -761,7 +764,7 @@ function writeResponse(n) {
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
 		"</u></div>" +
 		"<div class='description'>&emsp;" + hilight + "</div>" +
-		"<div class='type'>filter</div></div>"
+		"<img class='type' src='" + img + "'></div>"
 	)
 
 }
@@ -777,6 +780,9 @@ function xmlResponse(e, s, n) {
 	document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) +
 		25))
+	var complete = setInterval(function() {
+		$('#progressBar').width($('#progressBar').width() + 20)
+	}, 250)
 	$('#main .result, #main .center, #main #air').remove()
 	request = $.get({
 			url: uri,
@@ -993,8 +999,8 @@ function xmlResponse(e, s, n) {
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						/* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
 						/* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
-						"<div class='ago attr' style='width:100%;display:block'></div>" + */
-						"<div class='border'></div>" +
+						"<div class='ago attr' style='width:100%;display:block'></div>" +
+						"<div class='border'></div>" + */
 						"<img id='" + i +
 						"' style='display:none' src='" +
 						src + "' class='img'>" +
@@ -1025,7 +1031,9 @@ function xmlResponse(e, s, n) {
 				return b.since - a.since
 			})
 			$('#main').append(
-				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div><div class='left fa fa-angle-left' style='display:none'></div><div class='right fa fa-angle-right'></div></div><div class='channel'></div></div>"
+				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
+				"<div class='left fa fa-angle-left' style='display:none'></div><div class='right fa fa-angle-right'>" +
+				"</div></div><div class='channel'></div></div>"
 			)
 			for (var i = 0; i <= quit - 1; i++) {
 				$('#main .center .channel').append(pub[i].post)
@@ -1038,6 +1046,7 @@ function xmlResponse(e, s, n) {
 				")'><img class='bottom'></div>")
 			$('#main').attr('tabIndex', -1)
 			progressResponse(true, 100)
+			clearInterval(complete)
 			feedResponse(id)
 			applyVisual()
 		})
