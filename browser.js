@@ -204,6 +204,28 @@ $(document).ready(function() {
 		.toLowerCase().replace(/\s/g, '+') +
 		'&' + $(this).attr('response'))
 
+}).on('touch click', '#main .center .quick .right', function(e) {
+		var leftPos = $('#main .center .quick .feed').scrollLeft()
+		console.log(leftPos + ' ' + $('#main .center .quick .feed').width())
+		$('#main .center .quick .feed').animate({
+			scrollLeft: leftPos + 360
+		}, 'slow')
+		if ($('#main .center .quick .feed').scrollLeft() >=
+			$('#main .center .quick .feed').width() - 360)
+				$(this).hide()
+		if ($('#main .center .quick .feed').scrollLeft() >= 1)
+			$('#main .center .quick .left').show()
+	
+
+}).on('touch click', '#main .center .quick .left', function(e) {
+		var leftPos = $('#main .center .quick .feed').scrollLeft()
+		$('#main .center .quick .feed').animate({
+			scrollLeft: leftPos - 360
+		}, 'slow')
+		if ($('#main .center .quick .feed').scrollLeft() <= 160)
+				$(this).hide()
+				$('#main .center .quick .right').show()
+
 }).on(
 	'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 	'.overlay',
@@ -443,7 +465,7 @@ function feedResponse(n) {
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
 		.length - 1)])
 	else if (n >= menu.length - 5) n = 0
-	for (var i = n; i <= n + 4; i++) {
+	for (var i = n; i <= n + 13; i++) {
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
 			"<div class='id " + menu.indexOf(menu[i]) +
@@ -451,7 +473,7 @@ function feedResponse(n) {
 				/[\/|\.|\s|\-]/g, '-') + "'> " +
 			"</div><a style='margin-left:5px;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
-			.substring(0, 12) + '...' +
+			.substring(0, 7) + '...' +
 			"</a>" +
 			"</div>"
 		)
@@ -1003,7 +1025,7 @@ function xmlResponse(e, s, n) {
 				return b.since - a.since
 			})
 			$('#main').append(
-				"<div class='center' style='display:none'><div class='feed'></div><div class='channel'></div></div>"
+				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div><div class='left fa fa-angle-left' style='display:none'></div><div class='right fa fa-angle-right'></div></div><div class='channel'></div></div>"
 			)
 			for (var i = 0; i <= quit - 1; i++) {
 				$('#main .center .channel').append(pub[i].post)
