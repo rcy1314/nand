@@ -3,7 +3,8 @@ var menu = [{
 		cat: "Search Results",
 		des: "Bing Search Results.",
 		uri: "https://www.bing.com/search?q=",
-		ext: "https://www.bing.com"
+		ext: "https://www.bing.com",
+		img: "Bing"
 	}
 
 	,

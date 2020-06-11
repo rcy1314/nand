@@ -529,7 +529,7 @@ function filterResponse(passthrough, n, listing) {
 		false) {
 		xmlResponse(null, null, filter[0])
 		return false
-	} else if (!$.isNumeric(exact) && filter.length == -1 &&
+	} else if (!$.isNumeric(exact) && filter.length == 0 &&
 		listing == false) {
 		xmlResponse('search', $('input[type=text]').val().replace(
 			/\s/g, '+'), 0)
@@ -629,6 +629,7 @@ function momentTimeStamp(n) {
 
 function populateResponse(n) {
 
+	if (!n) n = 1
 	if ($('#main .result').length < 1) $('#main').append(
 		"<div class='result' style='display:none'></div>")
 	for (var i = 1; i <= menu.length - 1; i++) {
@@ -656,8 +657,8 @@ function populateResponse(n) {
 }
 
 function precedeResponse(n) {
-
-
+	
+	if (!n) n = 1
 	if ($('#main #air').length < 1) $('#main').prepend(
 		"<div id='air' style='display:none'></div>")
 	if (reverse == true) reverseArray(menu.reverse())
