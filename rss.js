@@ -1307,7 +1307,7 @@ var menu = [{
 		des: "Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",
 		uri: "https://reddit.com/r/unixporn/.rss",
 		ext: "https://reddit.com/r/Unixporn",
-		img: "Unix"
+		img: "UnixPorn"
 	}
 
 	,
