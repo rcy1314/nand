@@ -466,7 +466,7 @@ function feedResponse(n) {
 	else if (n >= menu.length - 5) n = 0
 	for (var i = n; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/acktic' + '.png'
-		else var img = 'images/ID/PNG/' + menu[i].img + '.png'
+		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
@@ -750,7 +750,7 @@ function uncoordinatedTimeZone(n) {
 function writeResponse(n) {
 
 	if (!menu[n].img) var img = 'images/apply' + '.png'
-	else var img = 'images/ID/PNG/' + menu[n].img + '.png'
+	else var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
 	if ($('#main .result').length < 1) $('#main').append(
 		"<div class='result' style='display:none'></div>")
 	var tag = menu[n].id.match(/[^\/]+$/g)
