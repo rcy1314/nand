@@ -253,7 +253,8 @@ var menu = [{
 		cat: "Media",
 		des: "AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",
 		uri: "https://www.aol.com/rss",
-		ext: "https://aol.com"
+		ext: "https://aol.com",
+		img: "AOL"
 	}
 
 	,
@@ -365,7 +366,8 @@ var menu = [{
 		cat: "Media",
 		des: "Cosmopolitan the Woman's Magazine for Fashion.",
 		uri: "https://www.cosmopolitan.com/rss/all.xml",
-		ext: "https://www.cosmopolitan.com"
+		ext: "https://www.cosmopolitan.com",
+		img: "Cosmopolitan"
 	}
 
 	,
@@ -392,7 +394,8 @@ var menu = [{
 		cat: "Media",
 		des: "Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.",
 		uri: "https://decider.com/feed",
-		ext: "https://decider.com"
+		ext: "https://decider.com",
+		img: "Decider"
 	}
 
 	,
@@ -430,7 +433,8 @@ var menu = [{
 		cat: "Media",
 		des: "Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",
 		uri: "https://www.elle.com/rss/culture.xml",
-		ext: "https://www.elle.com"
+		ext: "https://www.elle.com",
+		img: "ELLE"
 	}
 
 	,
@@ -439,7 +443,8 @@ var menu = [{
 		cat: "Media",
 		des: "Esquire is your destination for the Latest Entertainment News Headlines.",
 		uri: "https://www.esquire.com/rss/entertainment.xml",
-		ext: "https://esquire.com"
+		ext: "https://esquire.com",
+		img: "Esquire"
 	}
 
 	,
@@ -448,7 +453,8 @@ var menu = [{
 		cat: "Media",
 		des: "Entertainment Tonight Canada a Canadian entertainment news television series.",
 		uri: "https://etcanada.com/feed",
-		ext: "https://etcanada.com"
+		ext: "https://etcanada.com",
+		img: "ET"
 	}
 
 	,
@@ -457,7 +463,8 @@ var menu = [{
 		cat: "Media",
 		des: "Glamour UK an online women's magazine founded in 1939.",
 		uri: "https://www.glamourmagazine.co.uk/rss/article",
-		ext: "https://www.glamourmagazine.co.uk"
+		ext: "https://www.glamourmagazine.co.uk",
+		img: "Glamour"
 	}
 
 	,
@@ -476,7 +483,8 @@ var menu = [{
 		cat: "Media",
 		des: "GQ is an international monthly magazine based in New York City.",
 		uri: "https://www.gq.com/feed/rss",
-		ext: "https://www.gq.com"
+		ext: "https://www.gq.com",
+		img: "GQ"
 	}
 
 	,
@@ -503,7 +511,8 @@ var menu = [{
 		cat: "Media",
 		des: "Extra TV current events in the mass-entertainment business such as movies, TV, music, etc.",
 		uri: "https://feeds.extratv.com/atom",
-		ext: "https://extratv.com"
+		ext: "https://extratv.com",
+		img: "Extra"
 	}
 
 	,
@@ -549,7 +558,8 @@ var menu = [{
 		cat: "Media",
 		des: "IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",
 		uri: "https://www.indiewire.com/feed",
-		ext: "https://www.indiewire.com"
+		ext: "https://www.indiewire.com",
+		img: "IndieWire"
 	}
 
 	,
@@ -558,7 +568,8 @@ var menu = [{
 		cat: "Media",
 		des: "Just Jared is the Definitive Site for Celebrity News.",
 		uri: "http://www.justjared.com/feed",
-		ext: "http://justjared.com"
+		ext: "http://justjared.com",
+		img: "JustJared"
 	}
 
 	,
@@ -567,7 +578,8 @@ var menu = [{
 		cat: "Media",
 		des: "Mens Health the best-selling men's magazine on U.S. newsstands.",
 		uri: "https://www.menshealth.com/rss/all.xml",
-		ext: "https://www.menshealth.com"
+		ext: "https://www.menshealth.com",
+		img: "MensHealth"
 	}
 
 	,
@@ -595,7 +607,8 @@ var menu = [{
 		cat: "Media",
 		des: "New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",
 		uri: "https://nypost.com/entertainment/feed",
-		ext: "https://nypost.com/entertainment/feed"
+		ext: "https://nypost.com/entertainment/feed",
+		img: "NYPost"
 	}
 
 	,
@@ -622,7 +635,8 @@ var menu = [{
 		cat: "Media",
 		des: "People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",
 		uri: "https://people.com/tag/news/feed",
-		ext: "https://people.com"
+		ext: "https://people.com",
+		img: "People"
 	}
 
 	,
@@ -715,7 +729,8 @@ var menu = [{
 		cat: "Media",
 		des: "US Weekly a weekly celebrity and entertainment magazine based in New York City.",
 		uri: "https://www.usmagazine.com/feed",
-		ext: "https://www.usmagazine.com"
+		ext: "https://www.usmagazine.com",
+		img: "UsWeekly"
 	}
 
 	,
