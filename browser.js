@@ -998,23 +998,19 @@ function xmlResponse(e, s, n) {
 						"<div id='yt' class='item' ext='" +
 						ref.trim() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
-						"<div class='ago'>" + courtesy +
-						"</div>" +
-						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+						"<div class='ago'>" + courtesy + "</div>" +
+						"<i class='copy fa fa-ellipsis-h' style='margin-top:-20px' title='Copy URL'></i>" +
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
-						"<div class='yt'><iframe src='" +
-						src + "'></iframe>" +
+						"<div class='yt'>" +
+						"<iframe src='" + src + "'></iframe>" +
 						views +
-						"<input class='url' value='" + ref
-						.trim() + "'>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
 						/* "Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[
 						    n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
-						"<div id='ago' style='display:block;top:3em;'>" +
-						dst[0] + "</div>" +
+						"<div id='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" +
-						$(this).find('title:first')
-						.text() +
+						$(this).find('title:first').text() +
 						"</div>" +
 						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
 						"</div>"
@@ -1031,28 +1027,24 @@ function xmlResponse(e, s, n) {
 					}
 					html = "<div class='item' ext='" + ref
 						.trim() + "'>" +
-						"<div id='ago'>" + courtesy +
-						"</div>" +
+						"<div id='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						/* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
 						/* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
 						"<div class='ago attr' style='width:100%;display:block'></div>" +
 						"<div class='border'></div>" + */
-						"<img id='" + i +
-						"' style='display:none' src='" +
-						src + "' class='img'>" +
-						"<div class='ago'>" + dst[0] +
-						"</div>" +
+						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+						"<div class='ago'>" + dst[0] + "</div>" +
 						cat +
 						"<div class='pub' text='" + $(this).find('title:first').text() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						$(this).find('title:first').text().truncate(20, true) + "</div>" +
 						more +
-						"<div class='tag'><i class='ago fa fa-heart-o'></i>" +
+						"<div class='tag'>" +
+						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>" +
-						"<input class='url' value='" + ref
-						.trim() + "'>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
 						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' " +
 						"maxlength='88' placeholder='...'></form>" +
 						"</div>"
