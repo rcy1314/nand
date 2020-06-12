@@ -1008,11 +1008,18 @@ function xmlResponse(e, s, n) {
 						/* "Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[
 						    n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
-						"<div class='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
-						"<div class='pub' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" +
-						$(this).find('title:first').text() +
+						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
+						"<div class='pub' style='margin-top:20px' " +
+						"text='" + $(this).find('title:first').text() + "'>" +
+						$(this).find('title:first').text().truncate(20, true) +
+						"</div>" + more +
+						"<div class='tag'>" +
+						"<i class='ago fa fa-heart-o'></i>" +
+						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>" +
-						"<input class='comment' onclick='event.stopPropagation()' placeholder='...'>" +
+						"<form class='addComment' action'#'>" +
+						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
+						"</form>"
 						"</div>"
 				} else {
 					if (e == 'search') {
@@ -1045,8 +1052,9 @@ function xmlResponse(e, s, n) {
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						"<form class='addComment' action'#'><input class='comment' onclick='event.stopPropagation()' " +
-						"maxlength='88' placeholder='...'></form>" +
+						"<form class='addComment' action'#'>" +
+						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
+						"</form>" +
 						"</div>"
 				}
 				pub.push({

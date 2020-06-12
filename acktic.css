@@ -338,6 +338,7 @@ body,
 .item .pub, .item .add {
 	justify-content: left;
 	font-weight: normal;
+	margin-bottom: .5em;
 	margin-right: 5px;
 	margin-left: 10px;
 	margin-top: 20px;
