@@ -2671,7 +2671,7 @@ var menu = [{
 		des: "Windows Central News, Forums, Reviews, Help for Windows 10 and all things Microsoft.",
 		uri: "https://www.windowscentral.com/rss",
 		ext: "https://www.windowscentral.com",
-		img: "Windows Central"
+		img: "WindowsCentral"
 	}
 
 	,
@@ -3549,7 +3549,7 @@ var menu = [{
 		des: "NBC Sports Youtube premier live events, insightful studio shows, and compelling original programming.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",
 		ext: "https://www.youtube.com/user/2012NBCOlympics",
-		img: "NBCSports"
+		img: "NBC"
 	}
 
 	,
