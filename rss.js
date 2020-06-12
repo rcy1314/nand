@@ -543,7 +543,8 @@ var menu = [{
 		cat: "Media",
 		des: "Hollywood Unlocked is an exclusive entertainment news platform that provides celebrity news in a truthful and positive light.",
 		uri: "http://thehollywoodunlocked.com/feed",
-		ext: "http://thehollywoodunlocked.com"
+		ext: "http://thehollywoodunlocked.com",
+		img: "HollywoodUnlocked"
 	}
 
 	,
