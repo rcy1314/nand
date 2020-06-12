@@ -978,6 +978,9 @@ function xmlResponse(e, s, n) {
 					menu[n].ext + "\")'>Courtesy " + menu[n].id
 					.match(/([^\/]+)\/?([^\/]*)/)[1] +
 					"</a></div>"
+				if ($(this).find('title:first').text().length > 20) var more =
+					"<div class='more' script='event.stopPropagation()'>more...</div>"
+				else var more = "<div class='more'></div>"
 				if (src.match(/mp4|twitch|youtube/)) {
 					if ($(this).find(
 							'media\\:statistics, statistics'
@@ -1044,8 +1047,7 @@ function xmlResponse(e, s, n) {
 						"<div class='pub' text='" + $(this).find('title:first').text() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						$(this).find('title:first').text().truncate(20, true) + "</div>" +
-						"<div class='more' script='event.stopPropagation()'>" +
-						"more...</div>" +
+						more +
 						"<div class='tag'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>" +
