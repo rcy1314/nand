@@ -476,7 +476,7 @@ function feedResponse(n) {
 				/[\/|\.|\s|\-]/g, '-') + "'> " +
 			"<a style='left:0;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
-			.substring(0, 10) + '...' +
+			.substring(0, 9) + '...' +
 			"</a>" +
 			"</div>"
 		)
