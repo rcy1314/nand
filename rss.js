@@ -313,7 +313,8 @@ var menu = [{
 		cat: "Media",
 		des: "Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.",
 		uri: "https://www.cheatsheet.com/feed",
-		ext: "https://www.cheatsheet.com"
+		ext: "https://www.cheatsheet.com",
+		img: "CheatSheet"
 	}
 
 	,
@@ -362,7 +363,8 @@ var menu = [{
 		cat: "Media",
 		des: "ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",
 		uri: "https://www.comingsoon.net/feed",
-		ext: "https://comingsoon.net"
+		ext: "https://comingsoon.net",
+		img: "ComingSoon"
 	}
 
 	,
@@ -501,7 +503,8 @@ var menu = [{
 		cat: "Media",
 		des: "Heavy Entertainment news including tv, streaming, events, and more.",
 		uri: "https://heavy.com/entertainment/feed",
-		ext: "https://heavy.com/entertainment"
+		ext: "https://heavy.com/entertainment",
+		img: "Heavy"
 	}
 
 	,
@@ -530,7 +533,8 @@ var menu = [{
 		cat: "Media",
 		des: "Hollywood Life Top Stories in the Entertainment world.",
 		uri: "https://hollywoodlife.com/feed",
-		ext: "https://hollywoodlife.com"
+		ext: "https://hollywoodlife.com",
+		img: "HollywoodLife"
 	}
 
 	,
@@ -628,7 +632,8 @@ var menu = [{
 		cat: "Media",
 		des: "OANN Entertainment One America News Network Entertainment.",
 		uri: "https://www.oann.com/category/entertainment/feed",
-		ext: "https://www.oann.com/category/entertainment"
+		ext: "https://www.oann.com/category/entertainment",
+		img: "OANN"
 	}
 
 	,
@@ -727,7 +732,8 @@ var menu = [{
 		cat: "Media",
 		des: "Trend Hunter Celebrity Fashion will help you stay on top of all the latest celebrity happenings.",
 		uri: "https://www.trendhunter.com/rss/category/Celebrity-Fashion",
-		ext: "https://www.trendhunter.com/celebs"
+		ext: "https://www.trendhunter.com/celebs",
+		img: "TrendHunter"
 	}
 
 	,
@@ -786,7 +792,8 @@ var menu = [{
 		cat: "Media",
 		des: "Wopular is a news aggregation site, giving a summary view of the top headlines from the top news sites.",
 		uri: "http://www.wopular.com/rss/sections/all",
-		ext: "http://www.wopular.com"
+		ext: "http://www.wopular.com",
+		img: "Wopular"
 	}
 
 	,
@@ -1414,7 +1421,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Action Network Sports entertainment experience through original news, premium insights, betting tools, data & odds.",
 		uri: "https://www.actionnetwork.com/feed",
-		ext: "https://www.actionnetwork.com"
+		ext: "https://www.actionnetwork.com",
+		img: "ActionNetwork"
 	}
 
 	,
@@ -1423,7 +1431,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Clutch Points Sports news, reporting, videos, scores, and more for NBA and NFL.",
 		uri: "https://clutchpoints.com/feed",
-		ext: "https://clutchpoints.com"
+		ext: "https://clutchpoints.com",
+		img: "ClutchPoints"
 	}
 
 	,
@@ -1462,7 +1471,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Heavy Sports News, Games, Comments, and more.",
 		uri: "https://heavy.com/sports/feed",
-		ext: "https://heavy.com/sports"
+		ext: "https://heavy.com/sports",
+		img: "Heavy"
 	}
 
 	,
@@ -1471,7 +1481,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Jalopnik is a Sews site about Cars, Racing, Transportation, Airplanes, and Motorcycles",
 		uri: "https://jalopnik.com/rss",
-		ext: "https://jalopnik.com"
+		ext: "https://jalopnik.com",
+		img: "Jalopnik"
 	}
 
 	,
@@ -1490,7 +1501,8 @@ var menu = [{
 		cat: "Sports",
 		des: "New York Post Sports including Scores, Trade Rumors and Standings for Baseball, Football, and Basketball.",
 		uri: "https://nypost.com/sports/feed",
-		ext: "https://nypost.com/sports"
+		ext: "https://nypost.com/sports",
+		img: "NewYorkPost"
 	}
 
 	,
@@ -1499,7 +1511,8 @@ var menu = [{
 		cat: "Sports",
 		des: "RT Sports delivers Latest News on Sports from around the world.",
 		uri: "https://www.rt.com/rss/sport",
-		ext: "https://rt.com/sport"
+		ext: "https://rt.com/sport",
+		img: "RT"
 	}
 
 	,
@@ -1508,7 +1521,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Sporting News was established in 1886 as a weekly U.S. Magazine.",
 		uri: "http://www.sportingnews.com/us/rss",
-		ext: "http://sportingnews.com"
+		ext: "http://sportingnews.com",
+		img: "SportingNews"
 	}
 
 	,
@@ -1517,7 +1531,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Sportsnaut cover the big and little stories in sports without any agenda.",
 		uri: "https://sportsnaut.com/feed",
-		ext: "https://sportsnaut.com"
+		ext: "https://sportsnaut.com",
+		img: "Sportsnaut"
 	}
 
 	,
@@ -1556,7 +1571,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. ",
 		uri: "https://www.bjpenn.com/feed",
-		ext: "https://bjpenn.com"
+		ext: "https://bjpenn.com",
+		img: "BJPenn"
 	}
 
 	,
@@ -1705,7 +1721,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Goal Latest Soccer News, Live Scores, Results, Rumours, and Transfers.",
 		uri: "https://www.goal.com/feeds/en/news",
-		ext: "https://goal.com"
+		ext: "https://goal.com",
+		img: "Goal"
 	}
 
 	,
@@ -1734,7 +1751,8 @@ var menu = [{
 		cat: "Sports",
 		des: "MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.",
 		uri: "https://mmajunkie.com/news/feed",
-		ext: "https://mmajunkie.com"
+		ext: "https://mmajunkie.com",
+		img: "MMAJunkie"
 	}
 
 	,
@@ -1743,7 +1761,8 @@ var menu = [{
 		cat: "Sports",
 		des: "MMAtion Global events, results, rankings and more.",
 		uri: "http://en.mmation.com/feed",
-		ext: "http://en.mmation.com"
+		ext: "http://en.mmation.com",
+		img: "MMAtion"
 	}
 
 	,
@@ -1752,7 +1771,8 @@ var menu = [{
 		cat: "Sports",
 		des: "MMA News offers coverage of the MMA world with original content.",
 		uri: "https://www.mmanews.com/feed",
-		ext: "https://mmanews.com"
+		ext: "https://mmanews.com",
+		img: "MMANews"
 	}
 
 	,
@@ -1780,7 +1800,8 @@ var menu = [{
 		cat: "Sports",
 		des: "TheSun.co.uk up to date on the latest sports news from the UK and the World.",
 		uri: "https://www.thesun.co.uk/sport/feed",
-		ext: "https://www.thesun.co.uk/sport/feed"
+		ext: "https://www.thesun.co.uk/sport/feed",
+		img: "TheSun"
 	}
 
 	,
@@ -1789,61 +1810,68 @@ var menu = [{
 		cat: "Sports",
 		des: "The Score Trending News, Announcements, Highlights, and Analysis.",
 		uri: "https://feeds.thescore.com/trending.rss",
-		ext: "https://thescore.com"
+		ext: "https://thescore.com",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score MLB",
 		cat: "Sports",
 		des: "The Score MLB Trending News & Rumors for Baseball, and More.",
 		uri: "https://feeds.thescore.com/mlb.rss",
-		ext: "https://thescore.com/mlb/news"
+		ext: "https://thescore.com/mlb/news",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score MMA",
 		cat: "Sports",
 		des: "The Score MMA headlines, news, and analysis.",
 		uri: "https://feeds.thescore.com/mma.rss",
-		ext: "https://thescore.com/mma/news"
+		ext: "https://thescore.com/mma/news",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score NBA",
 		cat: "Sports",
 		des: "The Score NBA Scores, Stats, News, Rumors, Videos, Standings, Teams.",
 		uri: "https://feeds.thescore.com/nba.rss",
-		ext: "https://www.thescore.com/nba/news"
+		ext: "https://www.thescore.com/nba/news",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score NCAAF",
 		cat: "Sports",
 		des: "The Score NCAAF News, Rumors, Headlines, and everything CFB.",
 		uri: "https://feeds.thescore.com/ncaaf.rss",
-		ext: "https://www.thescore.com/ncaaf/news"
+		ext: "https://www.thescore.com/ncaaf/news",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score NFL",
 		cat: "Sports",
 		des: "The Score NFL is the Ultimate, Personalized Mobile Sports Experience.",
 		uri: "https://feeds.thescore.com/nfl.rss",
-		ext: "https://thescore.com/nfl/news"
+		ext: "https://thescore.com/nfl/news",
+		img: "TheScore"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score PGA",
 		cat: "Sports",
 		des: "The Score PGA tour news, and everything golf.",
 		uri: "https://feeds.thescore.com/pga.rss",
-		ext: "https://www.thescore.com/pga/news"
+		ext: "https://www.thescore.com/pga/news",
+		img: "TheScore"
 	}
 
 	,
@@ -1862,16 +1890,18 @@ var menu = [{
 		cat: "Sports",
 		des: "UFC is an American Mixed Martial Arts promotion Company based in Las Vegas, Nevada.",
 		uri: "https://www.ufc.com/rss/news",
-		ext: "https://ufc.com"
+		ext: "https://ufc.com",
+		img: "UFC"
 	}
 
 	,
 	{
-		id: "Washington Examiner",
+		id: "Washington Examiner Sports",
 		cat: "Sports",
 		des: "Washington Examiner The Washington Examiner is an American conservative news website and weekly magazine based in Washington, D.C.",
 		uri: "http://feeds.feedburner.com/dcexaminer/Sports",
-		ext: "https://www.washingtonexaminer.com/tag/sports"
+		ext: "https://www.washingtonexaminer.com/tag/sports",
+		img: "WashingtonExaminer"
 	}
 
 	,
@@ -2010,7 +2040,8 @@ var menu = [{
 		cat: "Technology",
 		des: "DZone Technology News giving developers a voice, with the goal of providing them with useful and valuable resources at no cost.",
 		uri: "http://feeds.dzone.com/home",
-		ext: "http://www.dzone.com"
+		ext: "http://www.dzone.com",
+		img: "DZone"
 	}
 
 	,
@@ -2109,7 +2140,8 @@ var menu = [{
 		cat: "Technology",
 		des: "The Gadget Flow Stay up to date with the latest tech, gear, and most incredible crowdfunding campaigns.",
 		uri: "http://feeds.feedburner.com/thegadgetflow",
-		ext: "https://thegadgetflow.com"
+		ext: "https://thegadgetflow.com",
+		img: "TheGadgetFlow"
 	}
 
 	,
@@ -2138,7 +2170,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Heavy Technology news and related articles.",
 		uri: "https://heavy.com/tech/feed",
-		ext: "https://heavy.com/tech"
+		ext: "https://heavy.com/tech",
+		img: "Heavy"
 	}
 
 	,
@@ -2147,7 +2180,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Independent.co.uk for Latest Gadgets and Tech News.",
 		uri: "http://www.independent.co.uk/life-style/gadgets-and-tech/rss",
-		ext: "https://independent.co.uk/life-style/gadgets-and-tech"
+		ext: "https://independent.co.uk/life-style/gadgets-and-tech",
+		img: "TheIndependent"
 	}
 
 	,
@@ -2246,7 +2280,8 @@ var menu = [{
 		cat: "Technology",
 		des: "OANN Technology One America News Network Technology.",
 		uri: "https://www.oann.com/category/tech/feed",
-		ext: "https://www.oann.com/category/tech"
+		ext: "https://www.oann.com/category/tech",
+		img: "OANN"
 	}
 
 	,
@@ -2295,7 +2330,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Security Affairs Every security issue is our affair.",
 		uri: "http://securityaffairs.co/wordpress/feed",
-		ext: "http://securityaffairs.co"
+		ext: "http://securityaffairs.co",
+		img: "SecurityAffairs"
 	}
 
 	,
@@ -2384,7 +2420,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Privacy.com.sg Where Privacy Matters Matter!",
 		uri: "https://www.privacy.com.sg/feed",
-		ext: "https://www.privacy.com.sg"
+		ext: "https://www.privacy.com.sg",
+		img: "PrivacyNinja"
 	}
 
 	,
@@ -2429,11 +2466,12 @@ var menu = [{
 
 	,
 	{
-		id: "Telegraph.co.uk",
+		id: "Telegraph.co.uk Technology",
 		cat: "Technology",
 		des: "Telegraph.co.uk Technology Intelligence news from the world of Technology.",
 		uri: "https://www.telegraph.co.uk/technology/rss.xml",
-		ext: "https://www.telegraph.co.uk/technology"
+		ext: "https://www.telegraph.co.uk/technology",
+		img: "Telegraph"
 	}
 
 	,
@@ -2442,7 +2480,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",
 		uri: "https://www.theregister.co.uk/headlines.atom",
-		ext: "https://theregister.co.uk"
+		ext: "https://theregister.co.uk",
+		img: "TheRegister"
 	}
 
 	,
@@ -2481,7 +2520,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechNewsWorld Latest Tech News and Info from ECT News Network's online publications.",
 		uri: "https://www.technewsworld.com/perl/syndication/rssfull.pl",
-		ext: "https://www.technewsworld.com"
+		ext: "https://www.technewsworld.com",
+		img: "TechNewsWorld"
 	}
 
 	,
@@ -2500,7 +2540,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechPowerUp is a leading Technology publication, on the forefront of PC Technologies.",
 		uri: "https://www.techpowerup.com/rss/news",
-		ext: "https://techpowerup.com"
+		ext: "https://techpowerup.com",
+		img: "TechPowerUp"
 	}
 
 	,
@@ -2559,7 +2600,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Trend Hunter Computer and Laptops a platform for new and innovative content and helping some of the biggest brands stay ahead of the curve.",
 		uri: "https://www.trendhunter.com/rss/category/Computers-and-Laptops",
-		ext: "https://www.trendhunter.com/computers"
+		ext: "https://www.trendhunter.com/computers",
+		img: "TrendHunter"
 	}
 
 	,
@@ -2574,7 +2616,7 @@ var menu = [{
 
 	,
 	{
-		id: "Wall Street Journal",
+		id: "Wall Street Journal Technology",
 		cat: "Technology",
 		des: "Wall Street Journals Latest Tech News, Reviews, and Stories.",
 		uri: "https://feeds.a.dj.com/rss/RSSWSJD.xml",
@@ -2808,7 +2850,8 @@ var menu = [{
 		cat: "World",
 		des: "DW Discover news from around the world as they happen. DW looks at all the top stories.",
 		uri: "http://rss.dw.com/rdf/rss-en-all",
-		ext: "https://www.dw.com/en/top-stories"
+		ext: "https://www.dw.com/en/top-stories",
+		img: "DW"
 	}
 
 	,
@@ -2857,7 +2900,8 @@ var menu = [{
 		cat: "World",
 		des: "Heavy News from around the world.",
 		uri: "https://heavy.com/news/feed",
-		ext: "https://heavy.com/news"
+		ext: "https://heavy.com/news",
+		img: "Heavy"
 	}
 
 	,
@@ -2986,7 +3030,8 @@ var menu = [{
 		cat: "World",
 		des: "OANN World One America News Network.",
 		uri: "https://www.oann.com/feed",
-		ext: "https://www.oann.com"
+		ext: "https://www.oann.com",
+		img: "OANN"
 	}
 
 	,
@@ -3264,7 +3309,8 @@ var menu = [{
 		cat: "Youtube",
 		des: "Bloomberg Youtube Breaking news. Exclusive interviews. Fascinating profiles. First looks at hot new products.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bloomberg",
-		ext: "https://www.youtube.com/user/Bloomberg"
+		ext: "https://www.youtube.com/user/Bloomberg",
+		img: "Bloomberg"
 	}
 
 	,
