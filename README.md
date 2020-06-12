@@ -5,7 +5,7 @@
 
 ### Known Issues
 
-* Nearly half XML responses have no images attached. An image overlay is used.
+* Nearly half XML responses have no images attached.
   
 ### Passed Tests
 
