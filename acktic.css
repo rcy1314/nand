@@ -313,12 +313,12 @@ body,
 }
 #image {
 	width: calc(100% -2px);
-	margin-top: 10px;
+	margin-top: 50px;
 	height: 50%;
 	left: -1px;
 }
 .img {
-	margin-top: -5px !important;
+	margin-top: 15px !important;
 }
 .ack {
 	display: inline-block;
@@ -332,10 +332,24 @@ body,
 	font-weight: normal;
 	margin-right: 5px;
 	margin-left: 10px;
-	margin-top: 10px;
+	margin-top: 20px;
 	font-size: 15px;
-	display: block;
 	width: 85%;
+}
+.item .pub {
+	display: inline-block;
+	width: fit-content;
+}
+.more {
+	position: absolute;
+	display: inline-block;
+	margin-top: 19px;
+	color: #aaa;
+}
+.tag {
+	position: relative;
+	margin-left: 90%;
+	margin-bottom: 10px;
 }
 .comment {
 	font-family: Proxima Nova;
@@ -359,7 +373,6 @@ body,
 .ago,
 .attr {
 	text-transform: uppercase;
-	display: inline-block;
 	position: relative;
 	width: fit-content;
 	line-height: .3;

@@ -56,7 +56,7 @@ $(document).ready(function() {
 				')', false)
 			applyVisual()
 		}
-	} filterResponse(false, category, false)
+	} else filterResponse(false, category, false)
 
 	$('#main').on('scroll touchmove', function() {
 
@@ -135,7 +135,7 @@ $(document).ready(function() {
 				'.comment').val() +
 			"</div>")
 	} else {
-		$(this).parent().find('.pub').append(
+		$(this).parent().find('.more').after(
 			"<div class='add'>" + $(this).children(
 				'.comment').val() +
 			"</div>")
@@ -300,6 +300,18 @@ $(document).ready(function() {
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 
+}).on('touch click', '.more', function(e) {
+
+	e.stopPropagation()
+	$(this).siblings('.pub').html($(this)
+		.siblings('.pub').attr('text'))
+	$(this).siblings('.pub').animate({
+		width: '85%',
+	},'fast', function() {
+		$(this).siblings('.pub').height('auto')
+	})
+	$(this).hide()
+
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
 
 	$(this).toggleClass('fa-heart-o fa-heart')
@@ -335,6 +347,17 @@ String.prototype.capitalize = function() {
 	})
 
 }
+
+String.prototype.truncate =
+
+     function( n, useWordBoundary ){
+         if (this.length <= n) { return this; }
+         var subString = this.substr(0, n-1);
+         return (useWordBoundary 
+            ? subString.substr(0, subString.lastIndexOf(' ')) 
+            : subString) /* + "&hellip;" */
+
+      }
 
 function applyVisual(n) {
 
@@ -584,11 +607,6 @@ function imageResolution(n) {
 				.round($('#' + n).get(0).naturalHeight) +
 				'&ensp;' + expand)
 		})
-	} else {
-		if (contrast == true) $('#' + n).replaceWith(
-			"<div id='image'></div>")
-		else $('#' + n).replaceWith(
-			"<div id='image' class='overlay'></div>")
 	}
 }
 
@@ -1025,12 +1043,12 @@ function xmlResponse(e, s, n) {
 						"<div class='ago'>" + dst[0] +
 						"</div>" +
 						cat +
-						"<div class='pub'>" +
+						"<div class='pub' text='" + $(this).find('title:first').text() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
-						$(this).find('title:first')
-						.text() +
-						"</div>" +
-						"<div class='fa' style='float:right'><i class='ago fa fa-heart-o'></i>" +
+						$(this).find('title:first').text().truncate(20, true) + "</div>" +
+						"<div class='more' script='event.stopPropagation()'>" +
+						"more...</div>" +
+						"<div class='tag'><i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"</div>" +
 						"<input class='url' value='" + ref
