@@ -378,7 +378,7 @@ function applyVisual(n) {
 		$('#home').attr('src', 'images/acktic.png')
 		$('.type').css('color', '#fff')
 		$('#main, #visit').css('background-color', '#fafafa')
-		$('.hover, #image').css('background-color','#e4e4e4')
+		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
 		$('#bottom, .index').css('background-color', '#fafafa')
