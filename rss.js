@@ -263,7 +263,8 @@ var menu = [{
 		cat: "Media",
 		des: "AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",
 		uri: "https://www.avclub.com/rss",
-		ext: "https://www.avclub.com"
+		ext: "https://www.avclub.com",
+		img: "AVClub"
 	}
 
 	,
@@ -282,7 +283,8 @@ var menu = [{
 		cat: "Media",
 		des: "Best Life Online destination for sophisticated men & women.",
 		uri: "https://bestlifeonline.com/feed",
-		ext: "https://bestlifeonline.com"
+		ext: "https://bestlifeonline.com",
+		img: "BestLife"
 	}
 
 	,
@@ -291,7 +293,8 @@ var menu = [{
 		cat: "Media",
 		des: "Bustle is the premier digital destination for millenial women, launched in 2013.",
 		uri: "https://www.bustle.com/rss",
-		ext: "https://www.bustle.com"
+		ext: "https://www.bustle.com",
+		img: "Bustle"
 	}
 
 	,
@@ -319,7 +322,8 @@ var menu = [{
 		cat: "Media",
 		des: "Closer Weekly Your ultimate source for breaking celebrity news — get closer to the stars you love.",
 		uri: "https://www.closerweekly.com/feed",
-		ext: "https://www.closerweekly.com"
+		ext: "https://www.closerweekly.com",
+		img: "CloserWeekly"
 	}
 
 	,
@@ -338,7 +342,8 @@ var menu = [{
 		cat: "Media",
 		des: "Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, sports, and entertainment.",
 		uri: "https://celebrityinsider.org/feed",
-		ext: "https://celebrityinsider.org"
+		ext: "https://celebrityinsider.org",
+		img: "CelebrityInsider"
 	}
 
 	,
@@ -376,16 +381,18 @@ var menu = [{
 		cat: "Media",
 		des: "Daily Beast is a News and Opinion Website focusing on Politics and Entertainment Culture.",
 		uri: "https://feeds.thedailybeast.com/summary/rss/articles",
-		ext: "https://www.thedailybeast.com"
+		ext: "https://www.thedailybeast.com",
+		img: "DailyBeast"
 	}
 
 	,
 	{
-		id: "Deadline",
+		id: "Deadline Hollywood",
 		cat: "Media",
-		des: "Deadline is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",
+		des: "Deadline Hollywood is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",
 		uri: "https://deadline.com/feed",
-		ext: "https://deadline.com"
+		ext: "https://deadline.com",
+		img: "DeadlineHollywood"
 	}
 
 	,
@@ -404,7 +411,8 @@ var menu = [{
 		cat: "Media",
 		des: "Demotix Celebrity articles with all the gossip in the celebrity world.",
 		uri: "https://demotix.com/category/celebrities/feed",
-		ext: "https://demotix.com/category/celebrities"
+		ext: "https://demotix.com/category/celebrities",
+		img: "Demotix"
 	}
 
 	,
@@ -502,7 +510,8 @@ var menu = [{
 		cat: "Media",
 		des: "Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and World News.",
 		uri: "https://hotcelebrityreviews.com/feed",
-		ext: "https://hotcelebrityreviews.com"
+		ext: "https://hotcelebrityreviews.com",
+		img: "HotCelebrityNews"
 	}
 
 	,
@@ -539,7 +548,8 @@ var menu = [{
 		cat: "Media",
 		des: "Inquisitr offers a constantly updated mix of the latest stories to hit the web, covering news, entertainment, technology, news, sport, health and everything.",
 		uri: "https://www.inquisitr.com/feed",
-		ext: "https://www.inquisitr.com"
+		ext: "https://www.inquisitr.com",
+		img: "Inquisitr"
 	}
 
 	,
@@ -588,7 +598,8 @@ var menu = [{
 		cat: "Media",
 		des: "MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.",
 		uri: "https://movieweb.com/rss/all-news",
-		ext: "https://movieweb.com"
+		ext: "https://movieweb.com",
+		img: "MovieWeb"
 	}
 
 	,
@@ -626,7 +637,8 @@ var menu = [{
 		cat: "Media",
 		des: "Ozy committed to producing premium, original storytelling across television, festivals, podcasts and news.",
 		uri: "https://www.ozy.com/feed",
-		ext: "https://www.ozy.com"
+		ext: "https://www.ozy.com",
+		img: "Ozy"
 	}
 
 	,
@@ -645,7 +657,8 @@ var menu = [{
 		cat: "Media",
 		des: "PerezHilton is known for posts covering Gossip Items about Celebrities.",
 		uri: "https://perezhilton.com/feed",
-		ext: "https://perezhilton.com"
+		ext: "https://perezhilton.com",
+		img: "PerezHilton"
 	}
 
 	,
@@ -654,7 +667,8 @@ var menu = [{
 		cat: "Media",
 		des: "Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",
 		uri: "https://www.popsugar.com/feed",
-		ext: "https://www.popsugar.com"
+		ext: "https://www.popsugar.com",
+		img: "PopSugar"
 	}
 
 	,
@@ -673,7 +687,8 @@ var menu = [{
 		cat: "Media",
 		des: "Slash Film covers movie news, reviews, interviews, and trailers.",
 		uri: "https://www.slashfilm.com/feed",
-		ext: "https://www.slashfilm.com"
+		ext: "https://www.slashfilm.com",
+		img: "SlashFilm"
 	}
 
 	,
@@ -691,7 +706,8 @@ var menu = [{
 		cat: "Media",
 		des: "The Wrap is the leading digital-first news organization covering the business of entertainment and media via digital, print and live events.",
 		uri: "https://www.thewrap.com/feed",
-		ext: "https://www.thewrap.com"
+		ext: "https://www.thewrap.com",
+		img: "TheWrap"
 	}
 
 	,
@@ -755,11 +771,12 @@ var menu = [{
 
 	,
 	{
-		id: "Washington Times",
+		id: "The Washington Times",
 		cat: "Media",
-		des: "Washington Times Show Business News and Entertainment News.",
+		des: "The Washington Times Show Business News and Entertainment News.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/entertainment",
-		ext: "https://washingtontimes.com/culture/entertainment"
+		ext: "https://washingtontimes.com/culture/entertainment",
+		img: "TheWashingtonTimes"
 	}
 
 	,
