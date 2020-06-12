@@ -13,21 +13,18 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'acktic'
 $(document).ready(function() {
 	$('#container').show()
-	$('input[type=text]').css('display', 'block')
-	$('input[type=text]').on('touch click', function(e) {
+    $('input[type=text]').on('touch click', function(e) {
 
-		$(this).attr('placeholder', '').css({
+        $(this).attr('placeholder', '').css({
 			'caret-color': '#e4e4e4',
-			'color': '#999'
-		}).val('')
+        }).val('')
 
-	}).on('focusout blur', function(e) {
+    }).on('focusout blur', function(e) {
 
-		$(this).css({
-			'text-align': 'center'
-		}).css('color', '#999').val('Search')
-
-	}).attr('tabIndex', -1)
+        $(this).attr('placeholder', 'Search').css({
+            'text-align': 'center'
+        })
+	}).css('display','block').attr('tabIndex', -1)
 
 	if (location.href.match('\\+1')) {
 
@@ -51,9 +48,8 @@ $(document).ready(function() {
 		} else if (!uri[1] && uri[0]) {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
-			filterResponse(false, '(' + $('input[type=text]')
-				.val().toLowerCase().replace(/\s/g, '|') +
-				')', false)
+			filterResponse(false, $('input[type=text]')
+				.val().toLowerCase(), false)
 			applyVisual()
 		}
 	} else filterResponse(false, category, false)
@@ -93,13 +89,11 @@ $(document).ready(function() {
 		3 && e.keyCode >= 65 && e.keyCode <= 90) {
 		$('#main #visit, #main #placeholder, #arm #search #match')
 			.show()
-		filterResponse(true, '(' + $(this).val().replace(
-			/\s/g, '|') + ')', true)
+		filterResponse(true, $(this).val(), true)
 	} else if ($(this).val().length >= 2 && e.keyCode == 8) {
 		$('#main #visit, #main placeholder, #arm #search #match')
 			.show()
-		filterResponse(true, '(' + $(this).val().replace(
-			/\s/g, '|') + ')', true)
+		filterResponse(true, $(this).val(), true)
 	} else if ($(this).val().length <= 2 && e.keyCode == 8) {
 		$('#arm #search #match').hide()
 	} else if (e.keyCode == 40 || e.keyCode == 34) {
@@ -175,10 +169,8 @@ $(document).ready(function() {
 			history.replaceState(null, null, '?q=' + $(
 				'input[type=text]').val().replace(
 				/\s/g, '+'))
-			filterResponse(false, '(' + $('input[type=text]')
-				.val().toLowerCase().replace(/\s/g, '|') +
-				')',
-				false)
+			filterResponse(false, $('input[type=text]')
+				.val().toLowerCase(), false)
 		}
 	}
 	applyVisual()
@@ -522,7 +514,7 @@ function filterResponse(passthrough, n, listing) {
 		$('#arm #search #match').hide()
 	}
 	$('#main .result, #main #air, #main .center').remove()
-	var n = n.toLowerCase().replace(/(%20|\-|\_|\s)/g, ' ')
+	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
 	$('#main').scrollTop(0)
 	if (reverse) reverseResponse(menu.reverse())
 	for (var i = menu.length - 1; i >= 1; i--) {
