@@ -393,7 +393,6 @@ function applyVisual(n) {
 			})
 		$('input[type=text], .item, .title').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
-		$('.type').css('color', '#fff')
 		$('#main, #visit').css('background-color', '#fafafa')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
@@ -423,7 +422,7 @@ function applyVisual(n) {
 			'background-color': '#fff',
 			'border-bottom': '.3px solid #ddd'
 		})
-	} else {
+	} else if (op == 0) {
 		$('#arm').css({
 			'border-bottom': '.3px solid #ddd'
 		})
