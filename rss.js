@@ -697,7 +697,8 @@ var menu = [{
 		cat: "Media",
 		des: "TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",
 		uri: "https://www.thesun.co.uk/tvandshowbiz/feed",
-		ext: "https://www.thesun.co.uk/tvandshowbiz"
+		ext: "https://www.thesun.co.uk/tvandshowbiz",
+		img: "TheSun"
 	}
 
 	,
@@ -1861,7 +1862,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Tiebreaker Sports News Headlines from around the world.",
 		uri: "https://www.tiebreaker.com/feed",
-		ext: "https://www.tiebreaker.com"
+		ext: "https://www.tiebreaker.com",
+		img: "TieBreaker"
 	}
 
 	,
@@ -1904,7 +1906,7 @@ var menu = [{
 
 	,
 	{
-		id: "BBC",
+		id: "BBC Technology",
 		cat: "Technology",
 		des: "BBC Technology News, Articles, and more.",
 		uri: "http://feeds.bbci.co.uk/news/technology/rss.xml",
@@ -2686,7 +2688,8 @@ var menu = [{
 		cat: "World",
 		des: "Al Jazeera is an Arabic-language television channel from Doha, Qatar.",
 		uri: "https://www.aljazeera.com/xml/rss/all.xml",
-		ext: "https://www.aljazeera.com"
+		ext: "https://www.aljazeera.com",
+		img: "AlJazeera"
 	}
 
 	,
@@ -2695,7 +2698,8 @@ var menu = [{
 		cat: "World",
 		des: "Axios known for delivering news, coverage, and insight with a distinctive brand of smart brevity.",
 		uri: "https://api.axios.com/feed",
-		ext: "https://www.axios.com"
+		ext: "https://www.axios.com",
+		img: "Axios"
 	}
 
 	,
@@ -2704,7 +2708,8 @@ var menu = [{
 		cat: "World",
 		des: "BBC is the world’s leading public service broadcaster.",
 		uri: "http://feeds.bbci.co.uk/news/rss.xml",
-		ext: "https://bbc.com"
+		ext: "https://bbc.com",
+		img: "BBC"
 	}
 
 	,
@@ -2713,7 +2718,8 @@ var menu = [{
 		cat: "World",
 		des: "Boston is a regional website that offers news and information about Boston, Massachusetts.",
 		uri: "https://www.boston.com/tag/world-news/feed",
-		ext: "https://www.boston.com/tag/world-news"
+		ext: "https://www.boston.com/tag/world-news",
+		img: "Boston"
 	}
 
 	,
@@ -2722,7 +2728,8 @@ var menu = [{
 		cat: "World",
 		des: "Boston Herald is the leading source of breaking news, local news, sports, politics, and entertainment.",
 		uri: "https://www.bostonherald.com/feed",
-		ext: "https://www.bostonherald.com"
+		ext: "https://www.bostonherald.com",
+		img: "BostonHerald"
 	}
 
 	,
@@ -2741,7 +2748,8 @@ var menu = [{
 		cat: "World",
 		des: "CNBC latest headlines from around the world.",
 		uri: "https://www.cnbc.com/id/100727362/device/rss/rss.html",
-		ext: "https://cnbc.com/world"
+		ext: "https://cnbc.com/world",
+		img: "CNBC"
 	}
 
 	,
@@ -2750,7 +2758,8 @@ var menu = [{
 		cat: "World",
 		des: "CNN is among the world's leaders in online news and information delivery.",
 		uri: "http://rss.cnn.com/rss/cnn_topstories.rss",
-		ext: "https://cnn.com"
+		ext: "https://cnn.com",
+		img: "CNN"
 	}
 
 	,
@@ -2769,7 +2778,8 @@ var menu = [{
 		cat: "World",
 		des: "CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",
 		uri: "http://podcast.c-span.org/xml/radio_feed.xml",
-		ext: "https://www.c-span.org/"
+		ext: "https://www.c-span.org/",
+		img: "CSpan"
 	}
 
 	,
@@ -2778,7 +2788,8 @@ var menu = [{
 		cat: "World",
 		des: "Daily Mail is a British daily middle-market newspaper published in London.",
 		uri: "https://www.dailymail.co.uk/articles.rss",
-		ext: "https://dailymail.co.uk"
+		ext: "https://dailymail.co.uk",
+		img: "DailyMail"
 	}
 
 	,
@@ -2787,7 +2798,8 @@ var menu = [{
 		cat: "World",
 		des: "Digital Trends team of experienced staffers provide the latest news.",
 		uri: "https://www.digitaltrends.com/news/feed",
-		ext: "https://digitaltrends.com/news"
+		ext: "https://digitaltrends.com/news",
+		img: "DigitalTrends"
 	}
 
 	,
@@ -2796,7 +2808,8 @@ var menu = [{
 		cat: "World",
 		des: "Drudge Report consists mainly of news stories from other outlets.",
 		uri: "http://feeds.feedburner.com/DrudgeReportFeed",
-		ext: "https://drudgereport.com"
+		ext: "https://drudgereport.com",
+		img: "DrudgeReport"
 	}
 
 	,
@@ -2814,7 +2827,8 @@ var menu = [{
 		cat: "World",
 		des: "Euro News is unapologetically impartial and seeks to offer a diversity of viewpoints.",
 		uri: "http://feeds.feedburner.com/euronews/en/home",
-		ext: "https://www.euronews.com"
+		ext: "https://www.euronews.com",
+		img: "EuroNews"
 	}
 
 	,
@@ -2823,7 +2837,8 @@ var menu = [{
 		cat: "World",
 		des: "Fortune is an American multinational business magazine headquartered in New York City.",
 		uri: "https://fortune.com/feed",
-		ext: "https://fortune.com"
+		ext: "https://fortune.com",
+		img: "Fortune"
 	}
 
 	,
@@ -2861,7 +2876,8 @@ var menu = [{
 		cat: "World",
 		des: "InfoWars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
 		uri: "https://infowars.com/feed",
-		ext: "https://infowars.com"
+		ext: "https://infowars.com",
+		img: "InfoWars"
 	}
 
 	,
@@ -2880,7 +2896,8 @@ var menu = [{
 		cat: "World",
 		des: "Market Watch published by Dow Jones & Co., tracks the pulse of markets for engaged investors.",
 		uri: "http://feeds.marketwatch.com/marketwatch/topstories",
-		ext: "http://marketwatch.com"
+		ext: "http://marketwatch.com",
+		img: "MarketWatch"
 	}
 
 	,
@@ -2889,7 +2906,8 @@ var menu = [{
 		cat: "World",
 		des: "Mirror.co.uk World News headlines, pictures, analysis, opinion and video.",
 		uri: "https://www.mirror.co.uk/news/us-news/?service=rss",
-		ext: "https://mirror.co.uk/news/us-news"
+		ext: "https://mirror.co.uk/news/us-news",
+		img: "Mirror"
 	}
 
 	,
@@ -2898,7 +2916,8 @@ var menu = [{
 		cat: "World",
 		des: "Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",
 		uri: "https://www.mercurynews.com/feed",
-		ext: "https://mercurynews.com"
+		ext: "https://mercurynews.com",
+		img: "Mercury"
 	}
 
 	,
@@ -2907,7 +2926,8 @@ var menu = [{
 		cat: "World",
 		des: "MSNBC Breaking news and in-depth analysis of the headlines.",
 		uri: "http://www.msnbc.com/feeds/latest",
-		ext: "http://www.msnbc.com"
+		ext: "http://www.msnbc.com",
+		img: "MSNBC"
 	}
 
 	,
@@ -2936,7 +2956,8 @@ var menu = [{
 		cat: "World",
 		des: "Newser is an American news aggregation website.",
 		uri: "http://rss.newser.com/rss/section/1.rss",
-		ext: "https://www.newser.com"
+		ext: "https://www.newser.com",
+		img: "Newser"
 	}
 
 	,
@@ -2945,7 +2966,8 @@ var menu = [{
 		cat: "World",
 		des: "New York Daily News news coverage, sports, entertainment news, gossip, autos, videos and photos.",
 		uri: "https://www.nydailynews.com/cmlink/NYDN.News.World.rss",
-		ext: "https://www.nydailynews.com/news/world"
+		ext: "https://www.nydailynews.com/news/world",
+		img: "NewYorkDailyNews"
 	}
 
 	,
@@ -2954,7 +2976,8 @@ var menu = [{
 		cat: "World",
 		des: "New York Post is a daily newspaper in New York City.",
 		uri: "https://nypost.com/feed",
-		ext: "https://nypost.com"
+		ext: "https://nypost.com",
+		img: "NewYorkPost"
 	}
 
 	,
@@ -2982,7 +3005,8 @@ var menu = [{
 		cat: "World",
 		des: "The Onion America's Finest News Source..",
 		uri: "https://www.theonion.com/rss",
-		ext: "https://www.theonion.com"
+		ext: "https://www.theonion.com",
+		img: "TheOnion"
 	}
 
 	,
@@ -2991,7 +3015,8 @@ var menu = [{
 		cat: "World",
 		des: "Public Broadcasting Service is an American public broadcaster and television program distributor.",
 		uri: "https://www.pbs.org/newshour/feeds/rss/headlines",
-		ext: "https://pbs.org"
+		ext: "https://pbs.org",
+		img: "PBS"
 	}
 
 	,
@@ -3009,7 +3034,8 @@ var menu = [{
 		cat: "World",
 		des: "RT delivers latest news on current events from around the world.",
 		uri: "https://www.rt.com/rss",
-		ext: "https://rt.com"
+		ext: "https://rt.com",
+		img: "RT"
 	}
 
 	,
@@ -3018,7 +3044,8 @@ var menu = [{
 		cat: "World",
 		des: "Snopes Fact Checking and Original Investigative Reporting.",
 		uri: "https://www.snopes.com/feed",
-		ext: "https://www.snopes.com"
+		ext: "https://www.snopes.com",
+		img: "Snopes"
 	}
 
 	,
@@ -3027,7 +3054,8 @@ var menu = [{
 		cat: "World",
 		des: "Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",
 		uri: "https://sputniknews.com/export/rss2/archive/index.xml",
-		ext: "https://sputniknews.com"
+		ext: "https://sputniknews.com",
+		img: "Sputnik"
 	}
 
 	,
@@ -3046,7 +3074,8 @@ var menu = [{
 		cat: "World",
 		des: "The Age National News from Australia, World News, Business News and Breaking News stories.",
 		uri: "https://www.theage.com.au/rss/feed.xml",
-		ext: "https://www.theage.com.au"
+		ext: "https://www.theage.com.au",
+		img: "TheAge"
 	}
 
 	,
@@ -3055,7 +3084,8 @@ var menu = [{
 		cat: "World",
 		des: "The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",
 		uri: "https://www.theguardian.com/world/rss",
-		ext: "https://www.theguardian.com/world"
+		ext: "https://www.theguardian.com/world",
+		img: "TheGuardian"
 	}
 
 	,
@@ -3064,7 +3094,8 @@ var menu = [{
 		cat: "World",
 		des: "Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",
 		uri: "http://feeds.feedburner.com/time/topstories?format=xml",
-		ext: "https://time.com"
+		ext: "https://time.com",
+		img: "TIME"
 	}
 
 	,
@@ -3073,7 +3104,8 @@ var menu = [{
 		cat: "World",
 		des: "Unilad.co.uk a British Internet media company and website.",
 		uri: "https://unilad.co.uk/feed",
-		ext: "https://www.unilad.co.uk"
+		ext: "https://www.unilad.co.uk",
+		img: "Unilad"
 	}
 
 	,
@@ -3082,7 +3114,8 @@ var menu = [{
 		cat: "World",
 		des: "United Nations Top Stories Global perspective, human stories.",
 		uri: "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
-		ext: "https://www.un.org"
+		ext: "https://www.un.org",
+		img: "UN"
 	}
 
 	,
@@ -3091,7 +3124,8 @@ var menu = [{
 		cat: "World",
 		des: "United Press International is a leading provider of news, photos and information.",
 		uri: "https://rss.upi.com/news/news.rss",
-		ext: "https://upi.com"
+		ext: "https://upi.com",
+		img: "UPI"
 	}
 
 	,
@@ -3110,7 +3144,8 @@ var menu = [{
 		cat: "World",
 		des: "Vice Original reporting and documentaries on everything that matters in the world.",
 		uri: "https://www.vice.com/en_us/rss",
-		ext: "https://vice.com"
+		ext: "https://vice.com",
+		img: "VICE"
 	}
 
 	,
@@ -3119,7 +3154,8 @@ var menu = [{
 		cat: "World",
 		des: "Washington Examiner World News.",
 		uri: "http://feeds.feedburner.com/dcexaminer/WorldNews",
-		ext: "https://www.washingtonexaminer.com/tag/world"
+		ext: "https://www.washingtonexaminer.com/tag/world",
+		img: "WashingtonExaminer"
 	}
 
 	,
@@ -3128,7 +3164,8 @@ var menu = [{
 		cat: "World",
 		des: "Washington Times World News, Middle East News, Afghanistan War.",
 		uri: "https://www.washingtontimes.com/rss/headlines/news/world",
-		ext: "https://washingtontimes.com/news/world"
+		ext: "https://washingtontimes.com/news/world",
+		img: "TheWashingtonTimes"
 	}
 
 	,
