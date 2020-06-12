@@ -2234,7 +2234,8 @@ var menu = [{
 		cat: "Technology",
 		des: "New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.",
 		uri: "https://nypost.com/tech/feed",
-		ext: "https://nypost.com/tech"
+		ext: "https://nypost.com/tech",
+		img: "NewYorkPost"
 	}
 
 	,
@@ -2243,7 +2244,8 @@ var menu = [{
 		cat: "Technology",
 		des: "New York Times is a Newspaper based in New York City with Worldwide Influence.",
 		uri: "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
-		ext: "https://nytimes.com/categorytion/technology"
+		ext: "https://nytimes.com/categorytion/technology",
+		img: "NewYorkTimes"
 	}
 
 	,
@@ -2291,7 +2293,8 @@ var menu = [{
 		cat: "Technology",
 		des: "ReadWrite was founded on April 20, 2003 as ReadWriteWeb.",
 		uri: "https://readwrite.com/feed",
-		ext: "https://readwrite.com"
+		ext: "https://readwrite.com",
+		img: "ReadWrite"
 	}
 
 	,
@@ -2309,7 +2312,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Sky News Technology is a British news organisation, which operates a TV network.",
 		uri: "http://feeds.skynews.com/feeds/rss/technology.xml",
-		ext: "https://sky.com/technology"
+		ext: "https://sky.com/technology",
+		img: "SkyNews"
 	}
 
 	,
@@ -2328,7 +2332,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Hacker News is a reader ran headline submission news purveyor.",
 		uri: "https://news.ycombinator.com/rss",
-		ext: "https://news.ycombinator.com"
+		ext: "https://news.ycombinator.com",
+		img: "YCombinator"
 	}
 
 	,
@@ -2347,7 +2352,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",
 		uri: "https://www.latimes.com/business/technology/rss2.0.xml",
-		ext: "https://latimes.com/business/technology"
+		ext: "https://latimes.com/business/technology",
+		img: "LosAngelesTimes"
 	}
 
 	,
@@ -2356,7 +2362,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Linux.com News For Open Source Professionals.",
 		uri: "https://www.linux.com/feed",
-		ext: "https://linux.com"
+		ext: "https://linux.com",
+		img: "Linux"
 	}
 
 	,
@@ -2365,7 +2372,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Linux Weekly News Headlines.",
 		uri: "https://lwn.net/headlines/rss",
-		ext: "https://lwn.net"
+		ext: "https://lwn.net",
+		img: "LWN"
 	}
 
 	,
@@ -2374,7 +2382,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.",
 		uri: "https://phys.org/rss-feed",
-		ext: "https://phys.org"
+		ext: "https://phys.org",
+		img: "Phys"
 	}
 
 	,
@@ -2392,7 +2401,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Reclaim the Net Restoring Individual Liberty Online. Free Speech. Privacy",
 		uri: "https://reclaimthenet.org/feed",
-		ext: "https://reclaimthenet.org"
+		ext: "https://reclaimthenet.org",
+		img: "ReclaimTheNet"
 	}
 
 	,
@@ -2401,7 +2411,8 @@ var menu = [{
 		cat: "Technology",
 		des: "San Francisco Gate is the Hearst-owned website sister-site of the San Francisco Chronicle.",
 		uri: "https://www.sfgate.com/rss/feed/Business-and-Technology-News-448.php",
-		ext: "https://sfgate.com/technology"
+		ext: "https://sfgate.com/technology",
+		img: "SanFranciscoGate"
 	}
 
 	,
@@ -2410,7 +2421,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Science Daily Top Technology News.",
 		uri: "https://www.sciencedaily.com/rss/top/technology.xml",
-		ext: "https://sciencedaily.com/news/top/technology"
+		ext: "https://sciencedaily.com/news/top/technology",
+		img: "ScienceDaily"
 	}
 
 	,
@@ -2419,7 +2431,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Space.com latest space exploration, innovation and astronomy news.",
 		uri: "https://www.space.com/feeds/all",
-		ext: "https://www.space.com"
+		ext: "https://www.space.com",
+		img: "Space"
 	}
 
 	,
@@ -2456,7 +2469,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechMeme is an automated News curation service focused on the leading edge of Technology.",
 		uri: "https://www.techmeme.com/feed.xml",
-		ext: "https://techmeme.com"
+		ext: "https://techmeme.com",
+		img: "TechMeme"
 	}
 
 	,
@@ -2503,7 +2517,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TechSpot is a leading Computer and Technology publication established in 1998.",
 		uri: "https://www.techspot.com/backend.xml",
-		ext: "https://techspot.com"
+		ext: "https://techspot.com",
+		img: "TechSpot"
 	}
 
 	,
@@ -2512,7 +2527,8 @@ var menu = [{
 		cat: "Technology",
 		des: "The Olognion Exquisite tech news.",
 		uri: "https://www.theolognion.com/rss",
-		ext: "https://www.theolognion.com"
+		ext: "https://www.theolognion.com",
+		img: "TheOlognion"
 	}
 
 	,
@@ -2521,7 +2537,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",
 		uri: "http://feeds.feedburner.com/thenextweb",
-		ext: "https://thenextweb.com"
+		ext: "https://thenextweb.com",
+		img: "TheNextWeb"
 	}
 
 	,
@@ -2530,7 +2547,8 @@ var menu = [{
 		cat: "Technology",
 		des: "TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",
 		uri: "https://www.thesun.co.uk/tech/feed",
-		ext: "https://www.thesun.co.uk/tech"
+		ext: "https://www.thesun.co.uk/tech",
+		img: "TheSun"
 	}
 
 	,
@@ -2578,7 +2596,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Washington Examiner Science and Technology.",
 		uri: "http://feeds.feedburner.com/dcexaminer/tech",
-		ext: "https://www.washingtonexaminer.com/tag/science"
+		ext: "https://www.washingtonexaminer.com/tag/science",
+		img: "WashingtonExaminer"
 	}
 
 	,
@@ -2587,7 +2606,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Washington Post is a major American daily newspaper published in Washington, D.C.",
 		uri: "http://feeds.washingtonpost.com/rss/business/technology",
-		ext: "https://washingtonpost.com/business/technology"
+		ext: "https://washingtonpost.com/business/technology",
+		img: "WashingtonPost"
 	}
 
 	,
@@ -2602,11 +2622,12 @@ var menu = [{
 
 	,
 	{
-		id: "WCCFTech",
+		id: "Wccftech",
 		cat: "Technology",
-		des: "WCCFtech has the Latest updates in the world of Tech, Mobile, PC Hardware, Gaming & Finance.",
+		des: "Wccftech has the Latest updates in the world of Tech, Mobile, PC Hardware, Gaming & Finance.",
 		uri: "https://wccftech.com/feed",
-		ext: "https://wccftech.com"
+		ext: "https://wccftech.com",
+		img: "Wccftech"
 	}
 
 	,
@@ -2615,7 +2636,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Windows Central News, Forums, Reviews, Help for Windows 10 and all things Microsoft.",
 		uri: "https://www.windowscentral.com/rss",
-		ext: "https://www.windowscentral.com"
+		ext: "https://www.windowscentral.com",
+		img: "Windows Central"
 	}
 
 	,
