@@ -1898,7 +1898,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Ars Technica has became a Trusted Source for Technology News.",
 		uri: "http://feeds.arstechnica.com/arstechnica/index?format=xml",
-		ext: "https://arstechnica.com"
+		ext: "https://arstechnica.com",
+		img: "ArsTechnica"
 	}
 
 	,
@@ -1917,7 +1918,8 @@ var menu = [{
 		cat: "Technology",
 		des: "BetaNews is a leading source of Technology News and Analysis.",
 		uri: "http://feeds.betanews.com/bn",
-		ext: "https://betanews.com"
+		ext: "https://betanews.com",
+		img: "BetaNews"
 	}
 
 	,
@@ -1996,7 +1998,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Digg the best articles, videos, and original content that the web is talking about right now.",
 		uri: "https://www.digg.com/rss/index.xml",
-		ext: "https://www.digg.com"
+		ext: "https://www.digg.com",
+		img: "Digg"
 	}
 
 	,
@@ -2034,7 +2037,8 @@ var menu = [{
 		cat: "Technology",
 		des: "EuroGamer Gaming news, reviews and the best long-form journalism.",
 		uri: "https://www.eurogamer.net/?format=rss&type=article",
-		ext: "https://www.eurogamer.net"
+		ext: "https://www.eurogamer.net",
+		img: "EuroGamer"
 	}
 
 	,
@@ -2043,7 +2047,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Exploit Database is a non-profit project that is provided as a public service by Offensive Security.",
 		uri: "https://www.exploit-db.com/rss.xml",
-		ext: "https://www.exploit-db.com"
+		ext: "https://www.exploit-db.com",
+		img: "ExploitDatabase"
 	}
 
 	,
@@ -2062,7 +2067,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Futurism brings you the world, the news, products, and narratives of tomorrow, today.",
 		uri: "https://futurism.com/feed",
-		ext: "https://futurism.com"
+		ext: "https://futurism.com",
+		img: "Futurism"
 	}
 
 	,
@@ -2071,7 +2077,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Gadgets 360 Tech News, Latest Technology News, Best New Tech Gadgets, Mobile, Tables, Laptops, and Games.",
 		uri: "https://gadgets.ndtv.com/rss/feeds",
-		ext: "https://gadgets.ndtv.com"
+		ext: "https://gadgets.ndtv.com",
+		img: "Gadgets360"
 	}
 
 	,
@@ -2080,7 +2087,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Gamespot's Everything Feed! All the latest from GameSpot.",
 		uri: "https://www.gamespot.com/feeds/mashup/",
-		ext: "https://www.gamespot.com"
+		ext: "https://www.gamespot.com",
+		img: "GameSpot"
 	}
 
 	,
@@ -2089,7 +2097,8 @@ var menu = [{
 		cat: "Technology",
 		des: "GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",
 		uri: "https://www.geekwire.com/feed",
-		ext: "https://geekwire.com"
+		ext: "https://geekwire.com",
+		img: "GeekWire"
 	}
 
 	,
@@ -2098,7 +2107,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Gizmodo is a Design, Technology, Science and Science Fiction website.",
 		uri: "https://gizmodo.com/rss",
-		ext: "https://gizmodo.com"
+		ext: "https://gizmodo.com",
+		img: "Gizmodo"
 	}
 
 	,
@@ -2116,16 +2126,18 @@ var menu = [{
 		cat: "Technology",
 		des: "gHacks the Independent Rechnology News blog.",
 		uri: "https://www.ghacks.net/feed",
-		ext: "https://ghacks.net"
+		ext: "https://ghacks.net",
+		img: "gHacks"
 	}
 
 	,
 	{
-		id: "Hackaday",
+		id: "HackADay",
 		cat: "Technology",
-		des: "Hackaday serves up Fresh Hacks Every Day from around the Internet.",
+		des: "HackADay serves up Fresh Hacks Every Day from around the Internet.",
 		uri: "https://hackaday.com/feed",
-		ext: "https://hackaday.com"
+		ext: "https://hackaday.com",
+		img: "HackADay"
 	}
 
 	,
@@ -2152,7 +2164,8 @@ var menu = [{
 		cat: "Technology",
 		des: "InfoWorld is an Information Technology Media Business.",
 		uri: "https://www.infoworld.com/index.rss",
-		ext: "https://infoworld.com"
+		ext: "https://infoworld.com",
+		img: "InfoWorld"
 	}
 
 	,
@@ -2171,7 +2184,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Leak Lookup Latest Database Leaks and Records Counting.",
 		uri: "https://leak-lookup.com/rss",
-		ext: "https://leak-lookup.com"
+		ext: "https://leak-lookup.com",
+		img: "Leak-Lookup"
 	}
 
 	,
@@ -2180,7 +2194,8 @@ var menu = [{
 		cat: "Technology",
 		des: "Mirror.co.uk Technology Best Stories, Opinion, Pictures and Video.",
 		uri: "https://www.mirror.co.uk/tech/?service=rss",
-		ext: "https://mirror.co.uk/tech"
+		ext: "https://mirror.co.uk/tech",
+		img: "Mirror"
 	}
 
 	,
@@ -2199,7 +2214,8 @@ var menu = [{
 		cat: "Technology",
 		des: "NASA brings you the Latest Images, Videos and News from America's space agency.",
 		uri: "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-		ext: "https://nasa.gov"
+		ext: "https://nasa.gov",
+		img: "NASA"
 	}
 
 	,
