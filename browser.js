@@ -1,5 +1,7 @@
 var id
+var gen
 var list
+var local
 var op = 0
 var request
 var quit = 15
@@ -39,22 +41,35 @@ $(document).ready(function() {
 		.match('\\?\\+1')) {
 		var uri = location.search.split('?q=')[1]
 		if (uri.match(/(\+1)/)) uri = uri.replace(/(\+1)/, '')
+		if ($.isNumeric(location.hash.substr(1))){
+			var post = location.hash.substr(1)
+			uri = uri.replace(/\#\d+/g, '')
+		} else var post = false
 		if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
-		if (uri[1] && uri[0]) {
+		if ($.isNumeric(post) && uri[0] && uri[1]) {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
-			filterResponse(false, uri[1], false)
+			filterResponse(false, uri[1], post, false)
 			applyVisual()
-		} else if (!uri[1] && uri[0]) {
+		} else if ($.isNumeric(post) && uri[0] && !uri[1]) {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), false)
+				.val().toLowerCase(), post, false)
+			applyVisual()
+		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
+			$('input[type=text]').val(uri[0].replace(
+				/(\-|\+|\%20)/g, ' '))
+			filterResponse(false, uri[1].replace(
+				/(\-|\+|\%20)/g, ' '), post, false)
+			applyVisual()
+		} else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
+			$('input[type=text]').val(uri[0].replace(
+				/(\-|\+|\%20)/g, ' '))
+			filterResponse(false, $('input[type=text]')
+				.val().toLowerCase(), post, false)
 			applyVisual()
 		}
-	} else {
-		filterResponse(false, category, false)
-		precedeResponse()
 	}
 	$('#main').on('scroll touchmove', function() {
 
@@ -91,11 +106,11 @@ $(document).ready(function() {
 		3 && e.keyCode >= 65 && e.keyCode <= 90) {
 		$('#main #visit, #main #placeholder, #arm #search #match')
 			.show()
-		filterResponse(true, $(this).val(), true)
+		filterResponse(true, $(this).val(), false, true)
 	} else if ($(this).val().length >= 2 && e.keyCode == 8) {
 		$('#main #visit, #main placeholder, #arm #search #match')
 			.show()
-		filterResponse(true, $(this).val(), true)
+		filterResponse(true, $(this).val(), false, true)
 	} else if ($(this).val().length <= 2 && e.keyCode == 8) {
 		$('#arm #search #match').hide()
 	} else if (e.keyCode == 40 || e.keyCode == 34) {
@@ -172,7 +187,7 @@ $(document).ready(function() {
 				'input[type=text]').val().replace(
 				/\s/g, '+'))
 			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), false)
+				.val().toLowerCase(), false, false)
 		}
 	}
 	applyVisual()
@@ -181,7 +196,7 @@ $(document).ready(function() {
 }).on('touch click', '#placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	filterResponse(false, $('input[type=text]').val(), false)
+	filterResponse(false, $('input[type=text]').val(), false, false)
 	precedeResponse()
 
 }).on('touch click', '.item', function(e) {
@@ -315,7 +330,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-ellipsis-h', function(e) {
 
-	$(this).parent().find('.url').select()
+	$(this).siblings('.url').select()
 	document.execCommand('copy')
 	$(this).removeClass('fa-ellipsis-h').addClass(
 		'fa-ellipsis-v')
@@ -323,6 +338,13 @@ $(document).ready(function() {
 		$('.item .copy').removeClass('fa-ellipsis-v')
 			.addClass('fa-ellipsis-h')
 	}, 250)
+	e.stopPropagation()
+
+}).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
+
+	$(this).siblings('.share').select()
+	document.execCommand('copy')
+	$(this).toggleClass('fa-sticky-note-o fa-sticky-note')
 	e.stopPropagation()
 
 }).on('touch click', '.img', function(e) {
@@ -448,7 +470,7 @@ function bottomResponse(n) {
 	} else {
 		history.replaceState(null, null, '?q=' + $('input[type=text]')
 			.val().replace(/\s/g, '+'))
-		filterResponse(false, $('input[type=text]').val(), false)
+		filterResponse(false, $('input[type=text]').val(), false, false)
 	}
 	progressResponse(true, 100)
 	applyVisual()
@@ -518,8 +540,7 @@ function feedResponse(n) {
 	applyVisual()
 }
 
-function filterResponse(passthrough, n, listing) {
-
+function filterResponse(passthrough, n, post, listing) {
 	filter = []
 	if (listing == false) {
 		$('#arm #search #match .listing').empty()
@@ -535,7 +556,7 @@ function filterResponse(passthrough, n, listing) {
 			if (listing == false) writeResponse(menu.indexOf(menu[i]))
 			else listResponse(menu.indexOf(menu[i]))
 			var exact = i
-			id = i
+			id = i 
 			break
 		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase()
 			.match(n)) {
@@ -553,24 +574,25 @@ function filterResponse(passthrough, n, listing) {
 			else listResponse(menu.indexOf(menu[i]))
 		}
 	}
-	id = filter[filter.length - 1] + +1
+	if (!id) id = filter[filter.length - 1] + +1
 	if (n == 'random') {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
-			.random() * menu.length)]))
+			.random() * menu.length)]), post)
 		return false
 	} else if ($.isNumeric(exact) && listing == false) {
-		xmlResponse(null, null, exact)
+		xmlResponse(null, null, exact, post)
 		return false
-	} else if (!$.isNumeric(exact) && filter.length == 1 && listing ==
+	} else if ($.isNumeric(id) && filter.length == -1 && listing ==
 		false) {
-		xmlResponse(null, null, filter[0])
+		xmlResponse(null, null, id, post)
 		return false
 	} else if (!$.isNumeric(exact) && filter.length == 0 &&
 		listing == false) {
 		xmlResponse('search', $('input[type=text]').val().replace(
 			/\s/g, '+'), 0)
 		return false
-	} else if (listing == false) {
+	} 
+	else if (listing == false) {
 		setTimeout(function() {
 			populateResponse(filter[filter.length - 1] + +1)
 			precedeResponse(id)
@@ -815,14 +837,14 @@ function writeResponse(n) {
 
 }
 
-function xmlResponse(e, s, n) {
+function xmlResponse(e, s, n, post) {
 	obj = []
 	var pub = []
 	if (e == 'search') {
 		uri = cors + menu[n].uri + s + '&format=RSS'
 	} else uri = cors + menu[n].uri
 	if (reverse) reverseResponse(menu.reverse())
-	if (!id) id = menu.length - +1
+	if (!$.isNumeric(id)) id = menu.length - +1
 	document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) +
 		25))
@@ -859,10 +881,14 @@ function xmlResponse(e, s, n) {
 				if (channel == 'entry') {
 					var ref = $(this).find('link').attr(
 						'href')
+					var share = window.location.origin + '?q=' +
+						menu[n].cat.toLowerCase() + '&' +
+						menu[n].id.replace(/\/|\.|\s/g, '+') + '#' + i
+					if (contrast == true) share = share + '+1'
 					var dst = uncoordinatedTimeZone($(
 							this).find('updated')
 						.text());
-					var gen = new Date($(this).find(
+						var gen = new Date($(this).find(
 						'updated').text()).getTime()
 				} else if (channel = 'item') {
 					var ref = $(this).find('link').text()
@@ -1015,6 +1041,7 @@ function xmlResponse(e, s, n) {
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
 						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
 						"<input class='url' value='" + ref.trim() + "'>" +
+						"<input class='share' value='" + gen + "'>" +
 						"</div>" +
 						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:20px' " +
@@ -1024,6 +1051,7 @@ function xmlResponse(e, s, n) {
 						"<div class='tag'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
+						"<i class='ago fa fa-sticky-note-o'></i>" +
 						"</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
@@ -1044,10 +1072,13 @@ function xmlResponse(e, s, n) {
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 						$(this).find('title:first').text().truncate(20, true) + "</div>" + more +
 						"<div class='tag'>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
+						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
+						'&' + menu[n].id.toLowerCase().match(/[^\/]+$/g) + '#' + gen + "'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
+						"<i class='ago fa fa-sticky-note-o'></i>" +
 						"</div>" +
-						"<input class='url' value='" + ref.trim() + "'>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
 						"</form>" +
@@ -1058,19 +1089,29 @@ function xmlResponse(e, s, n) {
 					since: gen,
 					post: html
 				})
-			})
-			pub.sort(function(a, b) {
-				return b.since - a.since
+				pub.sort(function(a, b) {
+					return b.since - a.since
+				})
+				$.each(pub, function(i) {
+					if (pub[i].since == post)
+						local = i
+				})
 			})
 			$('#main').append(
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>"
 			)
-			for (var i = 0; i <= quit - 1; i++) {
-				$('#main .center .channel').append(pub[i].post)
-				if ($('#' + pub[i].element).length)
-					imageResolution(pub[i].element)
+			if ($.isNumeric(local)) {
+				$('#main .center .channel').append(pub[local].post)
+				if ($('#' + pub[local].element).length)
+					imageResolution(pub[local].element)
+			} else {
+				for (var i = 0; i <= quit - 1; i++) {
+					$('#main .center .channel').append(pub[i].post)
+					if ($('#' + pub[i].element).length)
+						imageResolution(pub[i].element)
+				}
 			}
 			$('#main .center').append(
 				"<div id='bottom' onclick='bottomResponse(" +
