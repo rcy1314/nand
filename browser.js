@@ -56,7 +56,7 @@ $(document).ready(function() {
 				')', false)
 			applyVisual()
 		}
-	} /* else filterResponse(false, category, false) */
+	} filterResponse(false, category, false)
 
 	$('#main').on('scroll touchmove', function() {
 
