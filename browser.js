@@ -18,13 +18,14 @@ $(document).ready(function() {
 
 		$(this).attr('placeholder', '').css({
 			'caret-color': '#e4e4e4',
+			'color': '#999'
 		}).val('')
 
 	}).on('focusout blur', function(e) {
 
-		$(this).attr('placeholder', 'Search').css({
+		$(this).css({
 			'text-align': 'center'
-		})
+		}).css('color', '#999').val('Search')
 
 	}).attr('tabIndex', -1)
 
@@ -374,7 +375,7 @@ function applyVisual(n) {
 				'background-color': '#fefefe',
 				'color': '#666'
 			})
-		$('input[type=text]').css('border', '.3px solid #ddd')
+		$('input[type=text], .item, .title').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
 		$('.type').css('color', '#fff')
 		$('#main, #visit').css('background-color', '#fafafa')
@@ -389,7 +390,6 @@ function applyVisual(n) {
 			'1px 1px 6px #eee')
 		$('#main, .listing').addClass('invert').removeClass(
 			'opposite')
-		$('.item, .title').css('border', '.3px solid #ddd')
 		$('.bottom').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
