@@ -722,7 +722,7 @@ var menu = [{
 
 	,
 	{
-		id: "Trend Hunter Celebrity Fashion",
+		id: "Trend Hunter Fashion",
 		cat: "Media",
 		des: "Trend Hunter Celebrity Fashion will help you stay on top of all the latest celebrity happenings.",
 		uri: "https://www.trendhunter.com/rss/category/Celebrity-Fashion",
@@ -2925,7 +2925,8 @@ var menu = [{
 		cat: "World",
 		des: "NPR is an independent, nonprofit media organization that was founded to create a more informed public.",
 		uri: "https://www.npr.org/rss/rss.php?id=1019",
-		ext: "https://npr.org"
+		ext: "https://npr.org",
+		img: "NPR"
 	}
 
 	,

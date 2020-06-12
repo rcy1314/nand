@@ -245,7 +245,7 @@ body,
 	position: relative;
 	margin: 25px auto;
 	width: 80%;
-	height: 5.5em;
+	height: 5em;
 }
 .feed {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -290,14 +290,15 @@ body,
 	display: inline-block;
 	padding-right: 15px;
 	text-align: center;
+	margin-top: 2px;
 	width: 6em;
 }
 .id {
 	border-radius: 36px;
 	position: relative;
 	margin: 5px;
-	height: 6em;
-	width: 6em;
+	height: 5.5em;
+	width: 5.5em;
 }
 .center {
 	position: relative;

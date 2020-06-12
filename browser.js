@@ -467,16 +467,16 @@ function feedResponse(n) {
 		.length - 1)])
 	else if (n >= menu.length - 5) n = 0
 	for (var i = n; i <= n + 13; i++) {
-		if (!menu[i].img) var img = 'images/acktic' + '.png'
+		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 				/[\/|\.|\s|\-]/g, '-') + "'> " +
-			"<a style='margin-left:5px;width:100%' ext='" + menu[i].ext +
+			"<a style='left:0;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
-			.substring(0, 7) + '...' +
+			.substring(0, 10) + '...' +
 			"</a>" +
 			"</div>"
 		)
@@ -656,7 +656,7 @@ function populateResponse(n) {
 				"</a></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<img class='type' style='top:10px' src='" + img + "'>" + 
+				"<img class='id' style='top:10px' src='" + img + "'>" + 
 				"</div>"
 			)
 		}
@@ -689,7 +689,7 @@ function precedeResponse(n) {
 					/[^\/]+$/g) + "</a></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
-				"<img class='type' style='top:10px' src='" + img + "'>" +
+				"<img class='id' style='top:10px' src='" + img + "'>" +
 				"</div>"
 			)
 		}
@@ -776,7 +776,7 @@ function writeResponse(n) {
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
 		"</a></div>" +
 		"<div class='description'>&emsp;" + hilight + "</div>" +
-		"<img class='type' style='top:10px' src='" + img + "'>" +
+		"<img class='id' style='top:10px' src='" + img + "'>" +
 		"</div>"
 	)
 
@@ -954,7 +954,7 @@ function xmlResponse(e, s, n) {
 				if (src == '') courtesy = ''
 				else courtesy =
 					"<div id='ago' style='text-transform:capitalize'><a onclick='event.stopPropagation();window.open(\"" +
-					menu[n].ext + "\")'>" + menu[n].id
+					menu[n].ext + "\")'>Courtesy " + menu[n].id
 					.match(/([^\/]+)\/?([^\/]*)/)[1] +
 					"</a></div>"
 				if (src.match(/mp4|twitch|youtube/)) {
