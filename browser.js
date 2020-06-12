@@ -598,7 +598,7 @@ function listResponse(n) {
 		menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + 
 		n + "'><img class='type' src='" + img + "'>" + 
 		"<div class='text'>&emsp;" + menu[n].cat + 
-		"&ensp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
+		"<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
 		"</div>"
 	)
 	if ($('#search .listing .' + n).length > 1) $(

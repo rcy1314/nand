@@ -428,7 +428,7 @@ input[type=text] {
 .text {
 	display: inline-block;
 	position: relative;
-	bottom: 10px;
+	bottom: 5px;
 }
 .hover {
 	background-color: #e4e4e4;
