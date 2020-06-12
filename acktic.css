@@ -370,7 +370,12 @@ body,
 }
 .url {
 	position: relative;
-	z-index: -1;
+	z-index: -2;
+	height: 0;
+}
+.share {
+	position: relative;
+	z-index: -2;
 	height: 0;
 }
 .copy {
