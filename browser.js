@@ -1008,7 +1008,7 @@ function xmlResponse(e, s, n) {
 						/* "Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[
 						    n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
-						"<div id='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
+						"<div class='ago' style='display:block;top:3em;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:3.5em;margin-bottom:3em;bottom:2em;clear:left'>" +
 						$(this).find('title:first').text() +
 						"</div>" +
