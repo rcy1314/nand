@@ -52,8 +52,10 @@ $(document).ready(function() {
 				.val().toLowerCase(), false)
 			applyVisual()
 		}
-	} else filterResponse(false, category, false)
-
+	} else {
+		filterResponse(false, category, false)
+		precedeResponse()
+	}
 	$('#main').on('scroll touchmove', function() {
 
 		$('svg circle').css({
@@ -330,6 +332,7 @@ $(document).ready(function() {
 	else $(this).parent().find('.fa-heart-o, .fa-heart')
 		.toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
+	applyVisual()
 
 })
 
@@ -995,18 +998,13 @@ function xmlResponse(e, s, n) {
 								",") + "</div>"
 					else var views = ''
 					html =
-						"<div id='yt' class='item' ext='" +
-						ref.trim() + "'>" +
+						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						"<div class='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' style='margin-top:-20px' title='Copy URL'></i>" +
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
-						"<div class='yt'>" +
-						"<iframe src='" + src + "'></iframe>" +
-						views +
+						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						/* "Courtesy <a onclick='window.open(\"" + menu[n].ext + "\")'>" + menu[
-						    n].id.match(/([^\/]+)\/?([^\/]*)/)[1] + "</a>" + */
 						"</div>" +
 						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:20px' " +
@@ -1025,28 +1023,17 @@ function xmlResponse(e, s, n) {
 					if (e == 'search') {
 						var cat =
 							"<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
-							ref
-							.match(
-								/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g
-							) + "</div>"
-					} else {
-						var cat = ''
-					}
+							ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
+					} else var cat = ''
 					html = "<div class='item' ext='" + ref
 						.trim() + "'>" +
 						"<div id='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
-						/* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */
-						/* "<div class='ago' style='width:100%;display:block'>" + dst[1] + "</div>" +
-						"<div class='ago attr' style='width:100%;display:block'></div>" +
-						"<div class='border'></div>" + */
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
-						"<div class='ago'>" + dst[0] + "</div>" +
-						cat +
+						"<div class='ago'>" + dst[0] + "</div>" + cat +
 						"<div class='pub' text='" + $(this).find('title:first').text() + "'>" +
-						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
-						$(this).find('title:first').text().truncate(20, true) + "</div>" +
-						more +
+						"<div class='ack'><i class='fa fa-at'></i></div>" +
+						$(this).find('title:first').text().truncate(20, true) + "</div>" + more +
 						"<div class='tag'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
