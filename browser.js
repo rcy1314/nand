@@ -51,7 +51,7 @@ $(document).ready(function() {
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1], post, false)
 			applyVisual()
-		} else if ($.isNumeric(post) && uri[0] && !uri[1]) {
+		} else if ($.isNumeric(post) && uri[0] && uri[1]) {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, $('input[type=text]')
@@ -1074,7 +1074,7 @@ function xmlResponse(e, s, n, post) {
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
-						'&' + menu[n].id.toLowerCase().match(/[^\/]+$/g) + '#' + gen + "'>" +
+						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"<i class='ago fa fa-sticky-note-o'></i>" +
