@@ -122,8 +122,9 @@
   src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
 }
 
-div {
-	font-family: Proxima Nova;
+div,
+input {
+	font-family: Proxima Nova !important;
 }
 .index,
 .filter,
@@ -330,6 +331,7 @@ body,
 .courtesy {
 	text-transform: capitalize;
 	position: relative;
+	width: fit-content;
 	left: 0;
 }
 .item .pub, .item .add {
@@ -373,11 +375,9 @@ body,
 	height: 0;
 }
 .copy {
-	position: relative;
 	margin-right: 10px;
 	font-size: 12px;
 	float: right;
-	top: -20px;
 }
 #ago,
 .ago,
@@ -420,15 +420,6 @@ input[type=text] {
 	z-index: 2;
 	top: 1em;
 }
-.fa-caret-up {
-	text-align: center;
-	position: relative;
-	margin: 0 auto;
-	display: block;
-	width: 12.4em;
-	height: .5em;
-	top: -.75em;
-}
 .listing {
 	height: calc(12.5em + 102px);
 	background-color: #fff;
@@ -437,7 +428,7 @@ input[type=text] {
 	margin: 0 auto;
 	width: 12.4em;
 	z-index: 2;
-	top: -.5em;
+	right: 5px;
 }
 .index {
 	padding-bottom: 10px;

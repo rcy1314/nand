@@ -600,9 +600,13 @@ function imageResolution(n) {
 				maximum) {
 				expand = ''
 				$('#' + n).width($('#' + n).get(0)
-					.naturalWidth).css('margin-left','10px')
+					.naturalWidth).css({
+						'margin-left':'10px',
+						'margin-top': '10px'
+					})
 			}
-			$('#' + n).css('display', 'block')
+			$('#' + n).css('display', 'block').siblings('.copy')
+				.css('margin-top','-20px')
 			$('#' + n).siblings('.attr').html(Math.round($(
 					'#' + n).get(0).naturalWidth) + 'x' +
 				Math
