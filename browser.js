@@ -55,7 +55,7 @@ $(document).ready(function() {
 				')', false)
 			applyVisual()
 		}
-	} else filterResponse(false, category, false)
+	} /* else filterResponse(false, category, false) */
 
 	$('#main').on('scroll touchmove', function() {
 
@@ -406,7 +406,12 @@ function applyVisual(n) {
 			'background-color': '#fff',
 			'border-bottom': '.3px solid #ddd'
 		})
+	} else {
+		$('#arm').css({
+			'border-bottom': '.3px solid #ddd'
+		})
 	}
+	
 
 }
 
