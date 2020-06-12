@@ -309,6 +309,7 @@ $(document).ready(function() {
 
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
+	applyVisual()
 
 }).on('touch click', '.more', function(e) {
 
@@ -346,6 +347,7 @@ $(document).ready(function() {
 	document.execCommand('copy')
 	$(this).toggleClass('fa-sticky-note-o fa-sticky-note')
 	e.stopPropagation()
+	applyVisual()
 
 }).on('touch click', '.img', function(e) {
 
@@ -438,6 +440,8 @@ function applyVisual(n) {
 		$('.hilight').css('color', '#F7426B')
 	}
 	$('.fa-heart').css('color','lightcoral')
+	$('.fa-bookmark').css('color','rosybrown')
+	$('.fa-sticky-note').css('color','lightsteelblue')
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fefefe',
@@ -1040,7 +1044,6 @@ function xmlResponse(e, s, n, post) {
 						"<i class='copy fa fa-ellipsis-h' style='margin-top:-20px' title='Copy URL'></i>" +
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
 						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
-						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + gen + "'>" +
 						"</div>" +
 						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
@@ -1049,6 +1052,9 @@ function xmlResponse(e, s, n, post) {
 						$(this).find('title:first').text().truncate(20, true) +
 						"</div>" + more +
 						"<div class='tag'>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
+						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
+						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "' title='Sticky Post'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"<i class='ago fa fa-sticky-note-o'></i>" +
@@ -1074,7 +1080,7 @@ function xmlResponse(e, s, n, post) {
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
-						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "'>" +
+						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "' title='Sticky Post'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"<i class='ago fa fa-sticky-note-o'></i>" +
