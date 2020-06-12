@@ -1492,7 +1492,7 @@ var menu = [{
 		des: "NBC Sports is responsible for the televising of many Sports Events.",
 		uri: "https://sports.nbcsports.com/feed",
 		ext: "https://nbcsports.com",
-		img: "NBCSports"
+		img: "NBC"
 	}
 
 	,
