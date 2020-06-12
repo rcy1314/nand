@@ -182,6 +182,7 @@ $(document).ready(function() {
 
 	$('#main #visit, #main #placeholder').hide()
 	filterResponse(false, $('input[type=text]').val(), false)
+	precedeResponse()
 
 }).on('touch click', '.item', function(e) {
 
@@ -296,7 +297,6 @@ $(document).ready(function() {
 
 }).on('touch click', '.more', function(e) {
 
-	e.stopPropagation()
 	$(this).siblings('.pub').html($(this)
 		.siblings('.pub').attr('text'))
 	$(this).siblings('.pub').animate({
@@ -304,6 +304,7 @@ $(document).ready(function() {
 	},'slow', function() {
 		$(this).siblings('.pub').height('auto')
 	})
+	e.stopPropagation()
 	$(this).hide()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
@@ -464,6 +465,15 @@ function changeTimeZone(date, n) {
 	return new Date(date.getTime() + diff)
 
 }
+
+function escapeHtml(n) {
+    return n
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
 
 function expandImage(n) {
 
@@ -1008,7 +1018,7 @@ function xmlResponse(e, s, n) {
 						"</div>" +
 						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:20px' " +
-						"text='" + $(this).find('title:first').text() + "'>" +
+						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 						$(this).find('title:first').text().truncate(20, true) +
 						"</div>" + more +
 						"<div class='tag'>" +
@@ -1031,8 +1041,7 @@ function xmlResponse(e, s, n) {
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"<div class='ago'>" + dst[0] + "</div>" + cat +
-						"<div class='pub' text='" + $(this).find('title:first').text() + "'>" +
-						"<div class='ack'><i class='fa fa-at'></i></div>" +
+						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 						$(this).find('title:first').text().truncate(20, true) + "</div>" + more +
 						"<div class='tag'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
