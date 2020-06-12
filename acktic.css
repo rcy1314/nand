@@ -134,6 +134,9 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+a:hover {
+	text-decoration: underline;
+}
 html,
 body,
 #main,
@@ -290,7 +293,6 @@ body,
 	width: 6em;
 }
 .id {
-	border: 1px solid #ddd;
 	border-radius: 36px;
 	position: relative;
 	margin: 5px;

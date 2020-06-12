@@ -360,7 +360,7 @@ function applyVisual(n) {
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
 			.css('filter', 'none')
 		$('#favicon').attr('href', 'images/opposite.png')
-		$('a, .hilight').css('color', '#F7426B')
+		$('.hilight').css('color', '#F7426B')
 	} else if (op == 0) {
 		$('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
 			.css({
@@ -642,7 +642,7 @@ function populateResponse(n) {
 			.cat == menu[i].cat) {
 			var tag = menu[i].id.match(/[^\/]+$/g)
 			var hilight = menu[i].des.replace(tag,
-				"<a class='hilight'>" + tag + '</a>')
+				"<b>" + tag + '</b>')
 			if (!menu[i].img) var img = 'images/apply' + '.png'
 			else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 			$('#main .result').append(
@@ -650,10 +650,10 @@ function populateResponse(n) {
 				"' response='" + menu[i].id.toLowerCase()
 				.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 				"<div class='pub'><div class='category'>" + menu[
-					i].cat + "</div><u class='title' ext='" +
+					i].cat + "</div><a class='title' ext='" +
 				menu[i]
 				.ext + "'>" + menu[i].id.match(/[^\/]+$/g) +
-				"</u></div>" +
+				"</a></div>" +
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
 				"<img class='type' style='top:10px' src='" + img + "'>" + 
@@ -675,7 +675,7 @@ function precedeResponse(n) {
 			.cat == menu[i].cat) {
 			var tag = menu[i].id.match(/[^\/]+$/g)
 			var hilight = menu[i].des.replace(tag,
-				"<a class='hilight'>" + tag + '</a>')
+				"<b>" + tag + '</b>')
 			if (!menu[i].img) var img = 'images/apply' + '.png'
 			else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 			$('#main #air').append(
@@ -690,7 +690,7 @@ function precedeResponse(n) {
 				"<div class='description'>&emsp;" + hilight +
 				"</div>" +
 				"<img class='type' style='top:10px' src='" + img + "'>" +
-				"</div></div>"
+				"</div>"
 			)
 		}
 	}
@@ -772,11 +772,12 @@ function writeResponse(n) {
 		"' response='" + menu[n].id.toLowerCase()
 		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
 		"<div class='pub'><div class='category'>" + menu[n].cat +
-		"</div><u class='title' ext='" + menu[n]
+		"</div><a class='title' ext='" + menu[n]
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
-		"</u></div>" +
+		"</a></div>" +
 		"<div class='description'>&emsp;" + hilight + "</div>" +
-		"<img class='type' style='top:10px' src='" + img + "'></div>"
+		"<img class='type' style='top:10px' src='" + img + "'>" +
+		"</div>"
 	)
 
 }
