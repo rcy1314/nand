@@ -205,9 +205,9 @@ $(document).ready(function() {
 			scrollLeft: leftPos + 360
 		}, 'slow')
 		if ($('#main .center .quick .feed').scrollLeft() >=
-			$('#main .center .quick .feed').width() - 360)
+			$('#main .center .quick .feed').width() - 359)
 				$(this).hide()
-		if ($('#main .center .quick .feed').scrollLeft() >= 1)
+		if ($('#main .center .quick .feed').scrollLeft() >= 0)
 			$('#main .center .quick .left').show()
 	
 
@@ -216,7 +216,7 @@ $(document).ready(function() {
 		$('#main .center .quick .feed').animate({
 			scrollLeft: leftPos - 360
 		}, 'slow')
-		if ($('#main .center .quick .feed').scrollLeft() <= 160)
+		if ($('#main .center .quick .feed').scrollLeft() <= 360)
 				$(this).hide()
 				$('#main .center .quick .right').show()
 
@@ -1060,7 +1060,7 @@ function xmlResponse(e, s, n) {
 			})
 			$('#main').append(
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
-				"<div class='left fa fa-angle-left' style='display:none'></div><div class='right fa fa-angle-right'>" +
+				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>"
 			)
 			for (var i = 0; i <= quit - 1; i++) {
