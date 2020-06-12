@@ -872,7 +872,7 @@ var menu = [{
 		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
 		uri: "https://reddit.com/r/boston/.rss",
 		ext: "https://reddit.com/r/Boston",
-		img: "Boston"
+		img: "BostonMA"
 	}
 
 	,
