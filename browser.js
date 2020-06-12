@@ -135,7 +135,7 @@ $(document).ready(function() {
 				'.comment').val() +
 			"</div>")
 	} else {
-		$(this).parent().find('.more').after(
+		$(this).parent().find('.tag').after(
 			"<div class='add'>" + $(this).children(
 				'.comment').val() +
 			"</div>")
@@ -307,7 +307,7 @@ $(document).ready(function() {
 		.siblings('.pub').attr('text'))
 	$(this).siblings('.pub').animate({
 		width: '85%',
-	},'fast', function() {
+	},'slow', function() {
 		$(this).siblings('.pub').height('auto')
 	})
 	$(this).hide()
@@ -316,6 +316,7 @@ $(document).ready(function() {
 
 	$(this).toggleClass('fa-heart-o fa-heart')
 	e.stopPropagation()
+	applyVisual()
 
 }).on('touch click', '.fa-ellipsis-h', function(e) {
 
@@ -419,6 +420,7 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/invert.png')
 		$('.hilight').css('color', '#F7426B')
 	}
+	$('.fa-heart').css('color','lightcoral')
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fefefe',
@@ -595,10 +597,10 @@ function imageResolution(n) {
 				expand = ''
 				$('#' + n).width('100%')
 			} else if ($('#' + n).get(0).naturalWidth <
-				minimum) {
+				maximum) {
 				expand = ''
 				$('#' + n).width($('#' + n).get(0)
-					.naturalWidth).css('margin', '10px')
+					.naturalWidth).css('margin-left','10px')
 			}
 			$('#' + n).css('display', 'block')
 			$('#' + n).siblings('.attr').html(Math.round($(
@@ -817,7 +819,8 @@ function xmlResponse(e, s, n) {
 	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) +
 		25))
 	var complete = setInterval(function() {
-		$('#progressBar').width($('#progressBar').width() + 20)
+		$('#progressBar').width($('#progressBar').width() + 
+			Math.floor(Math.random() * (10 - 0 + 1) + 0))
 	}, 250)
 	$('#main .result, #main .center, #main #air').remove()
 	request = $.get({
@@ -976,7 +979,7 @@ function xmlResponse(e, s, n) {
 				if (!src.match(/https?:\/\//)) src = ''
 				if (src == '') courtesy = ''
 				else courtesy =
-					"<div id='ago' style='text-transform:capitalize'><a onclick='event.stopPropagation();window.open(\"" +
+					"<div class='courtesy'><a onclick='event.stopPropagation();window.open(\"" +
 					menu[n].ext + "\")'>Courtesy " + menu[n].id
 					.match(/([^\/]+)\/?([^\/]*)/)[1] +
 					"</a></div>"
@@ -1030,7 +1033,7 @@ function xmlResponse(e, s, n) {
 					}
 					html = "<div class='item' ext='" + ref
 						.trim() + "'>" +
-						"<div class='ago'>" + courtesy +
+						"<div id='ago'>" + courtesy +
 						"</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						/* "<div id='ago' style='width:98%;display:block;margin-top:0px'>" + cat + "</div>" + */

@@ -1360,16 +1360,6 @@ var menu = [{
 
 	,
 	{
-		id: "Reddit/iWallpaper",
-		cat: "Social",
-		des: "iWallpaper subreddit for wallpaper enthusiasts.",
-		uri: "https://reddit.com/r/iwallpaper/.rss",
-		ext: "https://reddit.com/r/iWallpaper",
-		img: "Reddit"
-	}
-
-	,
-	{
 		id: "Reddit/Wallpaper",
 		cat: "Social",
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
