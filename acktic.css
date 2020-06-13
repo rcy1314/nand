@@ -15,17 +15,17 @@
 }
 @media screen and (min-width: 768px) {
 	#main .center {
-		width: 65% !important;
+		width: 75% !important;
 	}
 }
 @media screen and (min-width: 1024px) {
 	#main .center {
-		width: 55% !important;
+		width: 65% !important;
 	}
 }
 @media screen and (min-width: 2560px) {
 	#main .center {
-		width: 40% !important;
+		width: 55% !important;
 	}
 }
 ::-webkit-scrollbar {
