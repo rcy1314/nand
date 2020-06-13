@@ -2057,6 +2057,16 @@ var menu = [{
 
 	,
 	{
+		id: "ESET Security",
+		cat: "Technology",
+		des: "ESET Security It's trusted by over 110 million users worldwide to detect and neutralize all types of digital threats, including viruses, rootkits, worms and spyware.",
+		uri: "https://www.welivesecurity.com/feed/",
+		ext: "https://www.welivesecurity.com",
+        img: "ESET"
+	}
+
+	,
+	{
 		id: "EuroGamer",
 		cat: "Technology",
 		des: "EuroGamer Gaming news, reviews and the best long-form journalism.",
@@ -2593,6 +2603,16 @@ var menu = [{
 		uri: "https://www.theverge.com/rss/index.xml",
 		ext: "https://www.theverge.com",
 		img: "TheVerge"
+	}
+
+	,
+	{
+		id: "Tor Project",
+		cat: "Technology",
+		des: "The Tor Project, Inc, became a 501(c)3 nonprofit in 2006, but the idea of \"onion routing\" began in the mid 1990s.",
+		uri: "https://blog.torproject.org/rss.xml",
+		ext: "https://blog.torproject.org"
+        img: "TOR"
 	}
 
 	,
