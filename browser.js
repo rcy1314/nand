@@ -919,7 +919,7 @@ function xmlResponse(e, s, n, post) {
 				}
 				var share = window.location.origin + '?q=' +
 					menu[n].cat.toLowerCase() + '&' +
-					menu[n].id.replace(/\/|\.|\s/g, '+') + '#'  + gen
+					menu[n].id.toLowerCase().replace(/\/|\.|\s/g, '+') + '#'  + gen
 				if (contrast == true) share = share + '+1'
 				if ($(this).find('content').text().match(
 						/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
