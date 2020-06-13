@@ -2611,7 +2611,7 @@ var menu = [{
 		cat: "Technology",
 		des: "The Tor Project, Inc, became a 501(c)3 nonprofit in 2006, but the idea of \"onion routing\" began in the mid 1990s.",
 		uri: "https://blog.torproject.org/rss.xml",
-		ext: "https://blog.torproject.org"
+		ext: "https://blog.torproject.org",
         img: "TOR"
 	}
 
