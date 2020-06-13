@@ -2367,6 +2367,16 @@ var menu = [{
 
 	,
 	{
+		id: "Slate Technology",
+		cat: "Technology",
+		des: "Slate is an online magazine that covers current affairs, politics, and culture in the United States.",
+		uri: "https://slate.com/feeds/technology.rss",
+		ext: "https://slate.com",
+		img: "Slate"
+	}
+
+	,
+	{
 		id: "YCombinator",
 		cat: "Technology",
 		des: "Hacker News is a reader ran headline submission news purveyor.",
