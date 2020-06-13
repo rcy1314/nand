@@ -69,7 +69,10 @@ $(document).ready(function() {
 			filterResponse(false, $('input[type=text]')
 				.val().toLowerCase(), post, false)
 			applyVisual()
-		}
+		} 
+	} else {
+		filterResponse(false, category, false, false)
+		precedeResponse()
 	}
 	$('#main').on('scroll touchmove', function() {
 
@@ -885,10 +888,6 @@ function xmlResponse(e, s, n, post) {
 				if (channel == 'entry') {
 					var ref = $(this).find('link').attr(
 						'href')
-					var share = window.location.origin + '?q=' +
-						menu[n].cat.toLowerCase() + '&' +
-						menu[n].id.replace(/\/|\.|\s/g, '+') + '#' + i
-					if (contrast == true) share = share + '+1'
 					var dst = uncoordinatedTimeZone($(
 							this).find('updated')
 						.text());
@@ -918,6 +917,10 @@ function xmlResponse(e, s, n, post) {
 						dst.push('')
 					}
 				}
+				var share = window.location.origin + '?q=' +
+					menu[n].cat.toLowerCase() + '&' +
+					menu[n].id.replace(/\/|\.|\s/g, '+') + '#'  + gen
+				if (contrast == true) share = share + '+1'
 				if ($(this).find('content').text().match(
 						/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
 					)) {
@@ -1021,7 +1024,7 @@ function xmlResponse(e, s, n, post) {
 					menu[n].ext + "\")'>Courtesy " + menu[n].id
 					.match(/([^\/]+)\/?([^\/]*)/)[1] +
 					"</a></div>"
-				if ($(this).find('title:first').text().length > 20) var more =
+				if ($(this).find('title:first').text().length > 35) var more =
 					"<div class='more' script='event.stopPropagation()'>more...</div>"
 				else var more = "<div class='more'></div>"
 				if (src.match(/mp4|twitch|youtube/)) {
@@ -1049,12 +1052,11 @@ function xmlResponse(e, s, n, post) {
 						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
 						"<div class='pub' style='margin-top:20px' " +
 						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(20, true) +
+						$(this).find('title:first').text().truncate(35, true) +
 						"</div>" + more +
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
-						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "' title='Sticky Post'>" +
+						"<input class='share' value='" + share + "' title='Sticky Post'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
 						"<i class='ago fa fa-sticky-note-o'></i>" +
@@ -1076,14 +1078,13 @@ function xmlResponse(e, s, n, post) {
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"<div class='ago'>" + dst[0] + "</div>" + cat +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(20, true) + "</div>" + more +
+						$(this).find('title:first').text().truncate(35, true) + "</div>" + more +
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + window.location.origin + '?q=' + menu[n].cat.toLowerCase() +
-						'&' + menu[n].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + '#' + gen + "' title='Sticky Post'>" +
-						"<i class='ago fa fa-heart-o'></i>" +
-						"<i class='ago fa fa-bookmark-o'></i>" +
-						"<i class='ago fa fa-sticky-note-o'></i>" +
+						"<input class='share' value='" + share + "' title='Sticky Post'>" +
+						"<div class='ago fa fa-heart-o'></div>" +
+						"<div class='ago fa fa-bookmark-o'></div>" +
+						"<div class='ago fa fa-sticky-note-o'></div>" +
 						"</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
