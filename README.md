@@ -9,8 +9,8 @@
   
 ### Passed Tests
 
+* Microsoft Edge (44.18362.449.0)
 * Google Chrome (81.0.4044.138)
-* Microsoft Edge 44.18362.449.0
 * Apple Mobile Safari iOS (9+)
 * Chromium (83.0.4103.61)
 * Mozilla Firefox (76.0.1)
