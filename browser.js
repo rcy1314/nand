@@ -672,6 +672,7 @@ function momentTimeStamp(n) {
 	var age = changeTimeZone(new Date(), 'America/New_York')
 	var utc = changeTimeZone(new Date(n), 'America/New_York')
 	var dis = age.getTime() - utc.getTime()
+	if (dis < 0) dis = Math.floor(Math.random() * (11111111 - 00000000 + 1) + 00000000)
 	var sec = dis / 1000;
 	if (sec < 60) return parseInt(sec) + ' second' + (parseInt(sec) >
 		1 ? 's' : '') + ' ago'
