@@ -1025,7 +1025,7 @@ function xmlResponse(e, s, n, post) {
 					.match(/([^\/]+)\/?([^\/]*)/)[1] +
 					"</a></div>"
 				if ($(this).find('title:first').text().length > 35) var more =
-					"<div class='more' script='event.stopPropagation()'>more...</div>"
+					"<div class='more' script='event.stopPropagation()'>more</div>"
 				else var more = "<div class='more'></div>"
 				if (src.match(/mp4|twitch|youtube/)) {
 					if ($(this).find(
@@ -1056,10 +1056,10 @@ function xmlResponse(e, s, n, post) {
 						"</div>" + more +
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + share + "' title='Sticky Post'>" +
+						"<input class='share' value='" + share + "'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<i class='ago fa fa-bookmark-o'></i>" +
-						"<i class='ago fa fa-sticky-note-o'></i>" +
+						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
 						"</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
@@ -1081,10 +1081,10 @@ function xmlResponse(e, s, n, post) {
 						$(this).find('title:first').text().truncate(35, true) + "</div>" + more +
 						"<div class='tag'>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + share + "' title='Sticky Post'>" +
+						"<input class='share' value='" + share + "'>" +
 						"<div class='ago fa fa-heart-o'></div>" +
 						"<div class='ago fa fa-bookmark-o'></div>" +
-						"<div class='ago fa fa-sticky-note-o'></div>" +
+						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
 						"</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +

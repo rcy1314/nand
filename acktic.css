@@ -119,7 +119,7 @@
 }
 @font-face {
   font-family: Proxima Nova;
-  src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
+  src: url(images/ProximaNova-Regular.woff);
 }
 
 div,
@@ -245,9 +245,8 @@ body,
 	border-radius: 2px;
 	position: relative;
 	margin: 25px auto;
-	width: 80%;
-	height: 5em;
-	left: -.5em;
+	width: 100%;
+	height: 6.5em;
 }
 .feed {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -258,7 +257,6 @@ body,
 	font-size: 10px;
 	display: flex;
 	height: 100%;
-	padding: 5px;
 	width: 100%;
 
 }
@@ -266,19 +264,19 @@ body,
 	display: none;
 }
 .right {
-	background-color: rgba(0,0,0,.1);
+	background-color: rgba(255,255,255,.5);
 	height: 5.7em;
 	justify-content: center;
-	right: -.7em;
 	align-items: center;
 	position: absolute;
 	display: flex;
 	width: 1.5em;
 	z-index: 2;
+	right: -1px;
 	top: 0;
 }
 .left {
-	background-color: rgba(0,0,0,.1);
+	background-color: rgba(255,255,255,.5);
 	height: 5.7em;
 	justify-content: center;
 	left: 0;
@@ -291,7 +289,7 @@ body,
 }
 #asset {
 	display: inline-block;
-	padding-right: 15px;
+	padding: 10px;
 	text-align: center;
 	margin-top: 2px;
 	width: 6em;
@@ -306,11 +304,7 @@ body,
 .center {
 	position: relative;
 	margin: 0 auto;
-	width: 90%;
-}
-.channel {
-	padding-right: 2px;
-	padding-left: 1px;
+	width: 100%;
 }
 .img {
 	margin-top: 20px;
@@ -360,6 +354,19 @@ body,
 	position: relative;
 	bottom: -15px;
 	float: right;
+}
+.fa-heart,
+.fa-heart-o,
+.fa-bookmark,
+.fa-bookmark-o,
+.fa-sticky-note,
+.fa-sticky-note-o {
+	font-size: 16px !important;
+}
+.fa-heart-o,
+.fa-bookmark-o,
+.fa-sticky-note-o {
+	color: #ccc !important;
 }
 .comment {
 	font-family: Proxima Nova;
@@ -486,6 +493,6 @@ iframe {
 	position: absolute;
 	border: none;
 	height: 100%;
-	width: 100%;
-	top: -3px;
+	width: calc(100% + 1px);
+	top: 10px;
 }
