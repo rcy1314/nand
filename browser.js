@@ -911,7 +911,7 @@ function xmlResponse(e, s, n, post) {
 								'dc\\:date, date')
 							.text());
 						var gen = new Date($(this).find(
-								'dc\\:date').text())
+								'dc\\:date, date').text())
 							.getTime()
 					} else {
 						var dst = []
