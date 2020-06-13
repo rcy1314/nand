@@ -2369,7 +2369,7 @@ var menu = [{
 	{
 		id: "Slate Technology",
 		cat: "Technology",
-		des: "Slate is an online magazine that covers current affairs, politics, and culture in the United States.",
+		des: "Slate Technology online tech news from Slate Magazine.",
 		uri: "https://slate.com/feeds/technology.rss",
 		ext: "https://slate.com",
 		img: "Slate"
@@ -3102,6 +3102,16 @@ var menu = [{
 		uri: "https://www.rt.com/rss",
 		ext: "https://rt.com",
 		img: "RT"
+	}
+
+	,
+	{
+		id: "Slate",
+		cat: "Technology",
+		des: "Slate is an online magazine that covers current affairs, politics, and culture in the United States.",
+		uri: "https://slate.com/feeds/all.rss",
+		ext: "https://slate.com",
+		img: "Slate"
 	}
 
 	,
