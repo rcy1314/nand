@@ -930,7 +930,7 @@ var menu = [{
 	{
 		id: "Reddit/Computers",
 		cat: "Social",
-		des: "Computer subreddit covers computers, questions, tips, and suggestions.",
+		des: "Computers subreddit covers computers, questions, tips, and suggestions.",
 		uri: "https://reddit.com/r/computers/.rss",
 		ext: "https://reddit.com/r/Computers",
 		img: "Black"
@@ -1263,7 +1263,7 @@ var menu = [{
 		des: "Software subreddit where software applications are discussed.",
 		uri: "https://reddit.com/r/software/.rss",
 		ext: "https://reddit.com/r/Software",
-		img: "Black"
+		img: "Software"
 	}
 
 	,
