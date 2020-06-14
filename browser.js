@@ -399,6 +399,7 @@ function applyVisual(n) {
 			'border-bottom': '1px solid #333',
 
 		})
+		$('.right, .left').css('background-color','rgba(0,0,0,.1)')
 		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
 		$('#progressBar').removeClass('responseInvert').addClass(
@@ -422,6 +423,7 @@ function applyVisual(n) {
 				'background-color': '#fefefe',
 				'color': '#666'
 			})
+		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
 		$('#main, #visit').css('background-color', '#fafafa')
