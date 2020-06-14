@@ -525,29 +525,28 @@ $.ajax({
   url: 'https://api.kanye.rest?format=json',
   dataType: 'json',
   success: function(quote) {
-
-$.ajax({
-  url: 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
-  dataType: 'json',
-  success: function(data) {
 	$.ajax({
-	  url: 'https://randomuser.me/api/',
+	  url: 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
 	  dataType: 'json',
-	  success: function(api) {
-			$('.' + n + ' .ago:last').after(
-				"<div class='add'><b>" + api.results[0].location.city
-					.toLowerCase().trim() + '.' +
-					api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
-						Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-					data.emoji + ' ' + quote.quote +
-				"</div>")
-		}
+	  success: function(data) {
+			$.ajax({
+			  url: 'https://randomuser.me/api/',
+			  dataType: 'json',
+			  success: function(api) {
+				$('.' + n + ' .ago:last').after(
+						"<div class='add'><b>" + api.results[0].location.city
+							.toLowerCase().trim() + '.' +
+							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
+							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+							data.emoji + ' ' + quote.quote +
+						"</div>")
+				}
+			})
+			$('.' + n + ' .addComment .comment').val('')
+			applyVisual()
+  		}
 	})
-		$('.' + n + ' .addComment .comment').val('')
-		applyVisual()
   }
-})
-}
 })
 
 
@@ -1186,13 +1185,18 @@ function xmlResponse(e, s, n, post) {
 				$('#main .center .channel').append(pub[local].post)
 				if ($('#' + pub[local].element).length)
 					imageResolution(pub[local].element)
+					if ($('#' + pub[local].element).attr('src') != '' && menu[n].cat == 'Social') {
+						commentResponse(pub[local].element)
+						commentResponse(pub[local].element)
+						commentResponse(pub[local].element)
+					}
 			} else {
 				for (var i = 0; i <= pub.length - 1; i++) {
 					$('#main .center .channel').append(pub[i].post)
 					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
 					}
-					if ($('#' + pub[i].element).attr('src') != '') {
+					if ($('#' + pub[i].element).attr('src') != '' && menu[n].cat == 'Social') {
 						commentResponse(pub[i].element)
 						commentResponse(pub[i].element)
 						commentResponse(pub[i].element)
