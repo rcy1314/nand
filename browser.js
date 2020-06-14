@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     }).on('focusout blur', function(e) {
 
-        $(this).attr('placeholder', 'Search').css({
+        $(this).val('Search').css({
             'text-align': 'center'
         })
 	}).css('display','block').attr('tabIndex', -1)
@@ -50,12 +50,6 @@ $(document).ready(function() {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1], post, false)
-			applyVisual()
-		} else if ($.isNumeric(post) && uri[0] && uri[1]) {
-			$('input[type=text]').val(uri[0].replace(
-				/(\-|\+|\%20)/g, ' '))
-			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), post, false)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
 			$('input[type=text]').val(uri[0].replace(
@@ -95,7 +89,7 @@ $(document).ready(function() {
 
 	$('#arm #search #match').hide()
 
-}).on('touch click', '#main .item a, #main u', function(e) {
+}).on('touch click', '#main .item a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
@@ -207,19 +201,18 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
-}).on('touch click', '.feed .id', function(e) {
+}).on('touch click', '#asset .id', function(e) {
 
 	if ($('input[type=text]').val() == 'Search') {
-		$('input[type=text]').val($(this).attr('response').replace(
-		/\-/g, ' '))
+		$('input[type=text]').val($(this).attr('search'))
 	}
 	if (contrast == true) window.location.assign('?q=' + $(
-			'#search input[type=text]').val()
+			'input[type=text]').val()
 		.toLowerCase()
 		.replace(/\s/g, '+') + '&' + $(this).attr(
 			'response') + '+1')
 	else window.location.assign('?q=' + $(
-			'#search input[type=text]').val()
+			'input[type=text]').val()
 		.toLowerCase().replace(/\s/g, '+') +
 		'&' + $(this).attr('response'))
 
@@ -273,8 +266,7 @@ $(document).ready(function() {
 }).on('touch click', '.filter, .populate', function(e) {
 
 	if ($('input[type=text]').val() == 'Search') {
-		$('input[type=text]').val($(this).attr('response').replace(
-		/\-/g, ' '))
+		$('input[type=text]').val($(this).attr('search'))
 	}
 	if (contrast == true) window.location.assign('?q=' + $(
 			'input[type=text]').val().replace(
@@ -542,7 +534,8 @@ function feedResponse(n) {
 			"<div id='asset'>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
-				/[\/|\.|\s|\-]/g, '-') + "'> " +
+			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[i].cat.
+			toLowerCase() + "'> " +
 			"<a style='left:0;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
 			.substring(0, 9) + '...' +
@@ -665,7 +658,8 @@ function listResponse(n) {
 	$('#arm #search #match .listing').prepend(
 		"<div class='index " +
 		menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + 
-		n + "'><img class='type' src='" + img + "'>" + 
+		n + "' search='" + menu[n].cat.toLowerCase() + "'>" + 
+		"<img class='type' src='" + img + "'>" + 
 		"<div class='text'>&emsp;" + menu[n].cat + 
 		"<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
 		"</div>"
@@ -718,7 +712,8 @@ function populateResponse(n) {
 			$('#main .result').append(
 				"<div class='populate " + menu.indexOf(menu[n]) +
 				"' response='" + menu[i].id.toLowerCase()
-				.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+				.replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
+				menu[i].cat.toLowerCase() + "'> " +
 				"<div class='pub'><div class='category'>" + menu[
 					i].cat + "</div><a class='title' ext='" +
 				menu[i]
@@ -751,7 +746,8 @@ function precedeResponse(n) {
 			$('#main #air').append(
 				"<div class='populate " + menu.indexOf(menu[i]) +
 				"' response='" + menu[i].id.toLowerCase()
-				.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+				.replace(/[\/|\.|\s|\-]/g, '-') + "' search='" + 
+				menu[i].cat.toLowerCase() + "'> " +
 				"<div class='pub'><div class='category'>" + menu[
 					i].cat + "</div><a class='title' ext='" +
 				menu[i]
@@ -839,8 +835,9 @@ function writeResponse(n) {
 	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
 	$('#main .result').prepend(
 		"<div class='filter " + menu.indexOf(menu[n]) +
-		"' response='" + menu[n].id.toLowerCase()
-		.replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
+		"' response='" + menu[n].id.toLowerCase().replace(
+			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[n].cat
+		.toLowerCase() + "'> " +
 		"<div class='pub'><div class='category'>" + menu[n].cat +
 		"</div><a class='title' ext='" + menu[n]
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
