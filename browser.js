@@ -149,7 +149,7 @@ $(document).ready(function() {
 				'.comment').val() +
 			"</div>")
 	} else {
-		$(this).parent().find('.tag').after(
+		$(this).parent().find('.ago:last').after(
 			"<div class='add'>" + $(this).children(
 				'.comment').val() +
 			"</div>")
@@ -641,8 +641,9 @@ function imageResolution(n) {
 				$('#' + n).width($('#' + n).get(0)
 					.naturalWidth).css({
 						'margin-left':'10px',
-						'margin-top': '15px'
+						'margin-top': '20px'
 					})
+				$('#' + n).parent().find('.fa-bookmark, .fa-bookmark-o').css('float','none')
 			}
 			$('#' + n).css('display', 'block').siblings('.copy')
 				.css('margin-top','-20px')
@@ -652,7 +653,7 @@ function imageResolution(n) {
 				.round($('#' + n).get(0).naturalHeight) +
 				'&ensp;' + expand)
 		})
-	}
+	} else $('#' + n).parent().find('.tag').css('display','none')
 }
 
 function listResponse(n) {
@@ -1087,16 +1088,16 @@ function xmlResponse(e, s, n, post) {
 						"<div id='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
-						"<div class='ago'>" + dst[0] + "</div>" + cat +
-						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(35, true) + "</div>" + more +
 						"<div class='tag'>" +
+						"<div class='ago fa fa-heart-o'></div>" +
+						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
+						"<div class='ago fa fa-bookmark-o' style='float:right'></div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
-						"<div class='ago fa fa-heart-o'></div>" +
-						"<div class='ago fa fa-bookmark-o'></div>" +
-						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
 						"</div>" +
+						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
+						$(this).find('title:first').text().truncate(35, true) + "</div>" + more +
+						"<div class='ago'>" + dst[0] + "</div>" + cat +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
 						"</form>" +
