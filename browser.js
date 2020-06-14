@@ -141,7 +141,7 @@ $(document).ready(function() {
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
-if ($(this).children('.comment').val().length > 0)
+if ($(this).children('.comment').val() != ''){
 item = $(this).parent().attr('item')
 $.ajax({
   url: 'https://randomuser.me/api/',
@@ -166,9 +166,9 @@ $.ajax({
 			"</div>")
 	}
 	$('.' + item + ' .addComment .comment').val('')
-	$('.' + item + ' .fa-comment-o').toggleClass('fa-comment-o fa-comment')
   }
 })
+}
 	e.preventDefault()
 
 }).on('submit', '#search', function(e) {
@@ -267,8 +267,7 @@ $.ajax({
 		void this.clientWidth
 		$(this).addClass('overlay')
 
-	}).on('mouseenter mouseleave', '.filter, .populate', function(
-	e) {
+}).on('mouseenter mouseleave', '.filter, .populate', function(e) {
 
 	if (contrast == false)
 	if (e.type == 'mouseenter') {
@@ -466,9 +465,10 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/invert.png')
 		$('.hilight').css('color', '#F7426B')
 	}
-	$('.fa-heart').css('color','lightcoral')
 	$('.fa-bookmark').css('color','black')
-	$('.fa-sticky-note').css('color','lightsteelblue')
+	$('.fa-heart').css('color','lightcoral')
+	$('.fa-comment').css('color','black')
+	$('.fa-sticky-note').css('color','black')
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fefefe',
@@ -516,6 +516,40 @@ function changeTimeZone(date, n) {
 	var diff = date.getTime() - invdate.getTime()
 
 	return new Date(date.getTime() + diff)
+
+}
+
+function commentResponse(n) {
+
+$.ajax({
+  url: 'https://api.kanye.rest?format=json',
+  dataType: 'json',
+  success: function(quote) {
+
+$.ajax({
+  url: 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
+  dataType: 'json',
+  success: function(data) {
+	$.ajax({
+	  url: 'https://randomuser.me/api/',
+	  dataType: 'json',
+	  success: function(api) {
+			$('.' + n + ' .ago:last').after(
+				"<div class='add'><b>" + api.results[0].location.city
+					.toLowerCase().trim() + '.' +
+					api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
+						Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+					data.emoji + ' ' + quote.quote +
+				"</div>")
+		}
+	})
+		$('.' + n + ' .addComment .comment').val('')
+		applyVisual()
+  }
+})
+}
+})
+
 
 }
 
@@ -639,7 +673,7 @@ function filterResponse(passthrough, n, post, listing) {
 
 function imageResolution(n) {
 
-	var mobile = 1680
+	var mobile = 1480
 	var minimum = 299
 	var maximum = 799
 	if ($('#' + n).attr('src')) {
@@ -662,7 +696,7 @@ function imageResolution(n) {
 				maximum) {
 				expand = ''
 				$('#' + n).width($('#' + n).get(0)
-					.naturalWidth).css({
+					.naturalWidth + 30).css({
 						'margin-left':'10px',
 						'margin-top': '20px'
 					})
@@ -1153,10 +1187,16 @@ function xmlResponse(e, s, n, post) {
 				if ($('#' + pub[local].element).length)
 					imageResolution(pub[local].element)
 			} else {
-				for (var i = 0; i <= quit - 1; i++) {
+				for (var i = 0; i <= pub.length - 1; i++) {
 					$('#main .center .channel').append(pub[i].post)
-					if ($('#' + pub[i].element).length)
+					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
+					}
+					if ($('#' + pub[i].element).attr('src') != '') {
+						commentResponse(pub[i].element)
+						commentResponse(pub[i].element)
+						commentResponse(pub[i].element)
+					}
 				}
 			}
 			$('#main .center').append(
