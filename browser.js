@@ -576,6 +576,7 @@ function filterResponse(passthrough, n, post, listing) {
 			filter.push(menu.indexOf(menu[i]))
 			if (listing == false) writeResponse(menu.indexOf(menu[i]))
 			else listResponse(menu.indexOf(menu[i]))
+			id = i
 		} else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase()
 			.match(n)) {
 			filter.push(menu.indexOf(menu[i]))
@@ -595,7 +596,7 @@ function filterResponse(passthrough, n, post, listing) {
 	} else if ($.isNumeric(exact) && listing == false) {
 		xmlResponse(null, null, exact, post)
 		return false
-	} else if ($.isNumeric(id) && filter.length == -1 && listing ==
+	} else if ($.isNumeric(id) && filter.length == 1 && listing ==
 		false) {
 		xmlResponse(null, null, id, post)
 		return false
