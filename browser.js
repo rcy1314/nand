@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     }).on('focusout blur', function(e) {
 
-        $(this).val('Search').css({
+        $(this).attr('placeholder', 'Search').css({
             'text-align': 'center'
         })
 	}).css('display','block').attr('tabIndex', -1)
@@ -50,6 +50,12 @@ $(document).ready(function() {
 			$('input[type=text]').val(uri[0].replace(
 				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1], post, false)
+			applyVisual()
+		} else if ($.isNumeric(post) && uri[0] && uri[1]) {
+			$('input[type=text]').val(uri[0].replace(
+				/(\-|\+|\%20)/g, ' '))
+			filterResponse(false, $('input[type=text]')
+				.val().toLowerCase(), post, false)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
 			$('input[type=text]').val(uri[0].replace(
@@ -157,7 +163,7 @@ $(document).ready(function() {
 	$('#arm #search #match').hide()
 	if ($('#search .listing .hover').length) {
 		if (contrast == true) window.location.assign('?q=' +
-			$('input[type=text]').val().replace(/\s/g,
+			$('#search .listing .hover').replace(/\s/g,
 				'+') +
 			'&' +
 			menu[$('#arm #search #match .hover').attr(
@@ -165,8 +171,8 @@ $(document).ready(function() {
 				/[\/|\.|\s]/g,
 				'-') + '+1')
 		else window.location.assign('?q=' + $(
-				'input[type=text]').val().replace(/\s/g,
-				'+') + '&' +
+				'#search .listing .hover').attr('search')
+				.replace(/\s/g, '+') + '&' +
 			menu[$('#arm #search #match .hover').attr(
 				'response')].id.toLowerCase().replace(
 				/[\/|\.|\s]/g,
