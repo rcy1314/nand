@@ -141,6 +141,7 @@ $(document).ready(function() {
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
+if ($(this).children('.comment').val().length > 0)
 item = $(this).parent().attr('item')
 $.ajax({
   url: 'https://randomuser.me/api/',
