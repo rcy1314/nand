@@ -144,7 +144,7 @@ $(document).ready(function() {
 if ($(this).children('.comment').val() != ''){
 item = $(this).parent().attr('item')
 $.ajax({
-  url: 'https://randomuser.me/api/',
+  url: cors + 'https://randomuser.me/api/',
   dataType: 'json',
   success: function(data) {
 	if ($('.add').length >= 3) {
@@ -522,11 +522,11 @@ function changeTimeZone(date, n) {
 function commentResponse(n) {
 
 	$.ajax({
-	  url: 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
+	  url: cors + 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
 	  dataType: 'json',
 	  success: function(data) {
 			$.ajax({
-			  url: 'https://randomuser.me/api/',
+			  url: cors + 'https://randomuser.me/api/',
 			  dataType: 'json',
 			  success: function(api) {
 				$('.' + n + ' .ago:last').after(
