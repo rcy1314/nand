@@ -65,9 +65,9 @@
 	width: 0%;
 }
 .response {
-	-moz-transition: all 1s ease;
+	-moz-transition: all .25s ease;
 	-moz-transition-delay: 0s;
-	-webkit-transition: all 1s ease;
+	-webkit-transition: all .25s ease;
 	-webkit-transition-delay: 0s;
 }
 .progress {
@@ -386,7 +386,6 @@ body,
 	height: 0;
 }
 .copy {
-	margin-top: 10px;
 	padding-right: 10px;
 	font-size: 12px;
 	float: right;

@@ -1099,9 +1099,9 @@ function xmlResponse(e, s, n, post) {
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"<div class='tag'>" +
 						"<div class='ago fa fa-heart-o'></div>" +
+						"<div class='ago fa fa-comment-o'></div>" +
 						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
 						"<div class='ago fa fa-bookmark-o' style='float:right'></div>" +
-						"<div class='ago fa fa-comment-o'></div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
 						"</div>" +
