@@ -141,20 +141,35 @@ $(document).ready(function() {
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
-
-	if ($(this).parent().find('.add').length >= 3) {
-		$(this).parent().find('.add:last').remove()
-		$(this).parent().find('.add:first').before(
-			"<div class='add'>" + $(this).children(
+item = $(this).parent().attr('id')
+$.ajax({
+  url: 'https://randomuser.me/api/',
+  dataType: 'json',
+  success: function(data) {
+	if ($('.add').length >= 3) {
+		$('.add:last').remove()
+		$('.add:first').before(
+			"<div class='add'><b>" + data.results[0].location.city
+				.toLowerCase().trim() + '.' +
+				data.results[0].location.state.toLowerCase().trim() +
+					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+				$('#' + item + ' .addComment').children(
 				'.comment').val() +
 			"</div>")
 	} else {
-		$(this).parent().find('.ago:last').after(
-			"<div class='add'>" + $(this).children(
+		console.log(data.results[0].location.city)
+		$('#' + item + ' .ago:last').after(
+			"<div class='add'><b>" + data.results[0].location.city
+				.toLowerCase().trim() + '.' +
+				data.results[0].location.state.toLowerCase().replace(/\s/g, '') +
+					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+				$('#' + item + ' .addComment').children(
 				'.comment').val() +
 			"</div>")
 	}
-	$(this).children('.comment').val('')
+	$('#' + item + ' .comment').val('')
+  }
+})
 	e.preventDefault()
 
 }).on('submit', '#search', function(e) {
@@ -1095,7 +1110,7 @@ function xmlResponse(e, s, n, post) {
 							"<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
 							ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
 					} else var cat = ''
-					html = "<div class='item' ext='" + ref
+					html = "<div id='" + i + "' class='item' ext='" + ref
 						.trim() + "'>" +
 						"<div id='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
