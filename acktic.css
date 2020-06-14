@@ -354,6 +354,8 @@ body,
 }
 .fa-heart,
 .fa-heart-o,
+.fa-comment,
+.fa-comment-o,
 .fa-bookmark,
 .fa-bookmark-o,
 .fa-sticky-note,
@@ -361,6 +363,7 @@ body,
 	font-size: 16px !important;
 }
 .fa-heart-o,
+.fa-comment-o,
 .fa-bookmark-o,
 .fa-sticky-note-o {
 	color: #ccc !important;

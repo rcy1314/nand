@@ -334,6 +334,12 @@ $(document).ready(function() {
 	e.stopPropagation()
 	applyVisual()
 
+}).on('touch click', '.fa-comment-o, .fa-comment', function(e) {
+
+	$(this).toggleClass('fa-comment-o fa-comment')
+	e.stopPropagation()
+	applyVisual()
+
 }).on('touch click', '.fa-ellipsis-h', function(e) {
 
 	$(this).siblings('.url').select()
@@ -447,7 +453,7 @@ function applyVisual(n) {
 		$('.hilight').css('color', '#F7426B')
 	}
 	$('.fa-heart').css('color','lightcoral')
-	$('.fa-bookmark').css('color','rosybrown')
+	$('.fa-bookmark').css('color','black')
 	$('.fa-sticky-note').css('color','lightsteelblue')
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
@@ -630,11 +636,14 @@ function imageResolution(n) {
 					n +
 					")' style='cursor:default;text-transform:capitalize'>expand</a>"
 				$('#' + n).addClass('expand min').width('45%')
-					.css('margin', '0 auto')
+					.css({
+						'margin': '0 auto',
+						'margin-top': '20px'
+					})
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
-				$('#' + n).width('100%')
+				$('#' + n).width('100%').css('margin-top','20px')
 			} else if ($('#' + n).get(0).naturalWidth <
 				maximum) {
 				expand = ''
@@ -1092,6 +1101,7 @@ function xmlResponse(e, s, n, post) {
 						"<div class='ago fa fa-heart-o'></div>" +
 						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
 						"<div class='ago fa fa-bookmark-o' style='float:right'></div>" +
+						"<div class='ago fa fa-comment-o'></div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
 						"</div>" +
