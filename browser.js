@@ -147,9 +147,9 @@ $.ajax({
   url: cors + 'https://randomuser.me/api/',
   dataType: 'json',
   success: function(data) {
-	if ($('.add').length >= 3) {
-		$('.add:last').remove()
-		$('.add:first').before(
+	if ($('.' + item + ' .add').length >= 3) {
+		$('.' + item + ' .add:last').remove()
+		$('.' + item + ' .add:first').before(
 			"<div class='add'><b>" + data.results[0].location.city
 				.toLowerCase().trim() + '.' +
 				data.results[0].location.state.toLowerCase().trim() +
