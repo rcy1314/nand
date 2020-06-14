@@ -3226,6 +3226,16 @@ var menu = [{
 
 	,
 	{
+		id: "Vox",
+		cat: "World",
+		des: "Vox is an American news and opinion website owned by Vox Media.",
+		uri: "https://www.vox.com/rss/index.xml",
+		ext: "https://www.vox.com",
+		img: "Vox"
+	}
+
+	,
+	{
 		id: "Washington Examiner",
 		cat: "World",
 		des: "Washington Examiner World News.",
