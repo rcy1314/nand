@@ -383,6 +383,7 @@ body,
 	height: 0;
 }
 .copy {
+	margin-top: 10px;
 	padding-right: 10px;
 	font-size: 12px;
 	float: right;
@@ -396,6 +397,7 @@ body,
 	font-size: 10px;
 	color: #e4e4e4;
 	margin: 10px;
+	margin-top: 20px;
 }
 .addComment {
 	margin: 0;
