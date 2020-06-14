@@ -157,7 +157,6 @@ $.ajax({
 				'.comment').val() +
 			"</div>")
 	} else {
-		console.log(data.results[0].location.city)
 		$('#' + item + ' .ago:last').after(
 			"<div class='add'><b>" + data.results[0].location.city
 				.toLowerCase().trim() + '.' +
