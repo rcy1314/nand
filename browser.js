@@ -166,6 +166,7 @@ $.ajax({
 			"</div>")
 	}
 	$('.' + item + ' .addComment .comment').val('')
+	$('.' + item + ' .fa-comment-o').toggleClass('fa-comment-o fa-comment')
   }
 })
 	e.preventDefault()
