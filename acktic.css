@@ -305,8 +305,8 @@ body,
 	width: 100%;
 }
 .img {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 25px;
+	margin-bottom: 10px;
 }
 .ack {
 	display: inline-block;
@@ -335,6 +335,7 @@ body,
 	width: fit-content;
 }
 .item .add {
+	margin-bottom: 10px;
 	margin-left: 15px !important;
 	font-size: 12px;
 }
@@ -350,7 +351,7 @@ body,
 }
 .tag {
 	position: relative;
-	bottom: -15px;
+	bottom: 40px;
 	float: right;
 }
 .fa-heart,
@@ -397,6 +398,7 @@ body,
 	font-size: 10px;
 	color: #e4e4e4;
 	margin: 10px;
+	margin-top: 20px;
 }
 .addComment {
 	margin: 0;

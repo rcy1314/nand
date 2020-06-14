@@ -163,7 +163,7 @@ $(document).ready(function() {
 	$('#arm #search #match').hide()
 	if ($('#search .listing .hover').length) {
 		if (contrast == true) window.location.assign('?q=' +
-			$('#search .listing .hover').replace(/\s/g,
+			$('input[type=text]').val().replace(/\s/g,
 				'+') +
 			'&' +
 			menu[$('#arm #search #match .hover').attr(
@@ -171,8 +171,8 @@ $(document).ready(function() {
 				/[\/|\.|\s]/g,
 				'-') + '+1')
 		else window.location.assign('?q=' + $(
-				'#search .listing .hover').attr('search')
-				.replace(/\s/g, '+') + '&' +
+				'input[type=text]').val().replace(/\s/g,
+				'+') + '&' +
 			menu[$('#arm #search #match .hover').attr(
 				'response')].id.toLowerCase().replace(
 				/[\/|\.|\s]/g,
@@ -641,7 +641,7 @@ function imageResolution(n) {
 				$('#' + n).width($('#' + n).get(0)
 					.naturalWidth).css({
 						'margin-left':'10px',
-						'margin-top': '10px'
+						'margin-top': '15px'
 					})
 			}
 			$('#' + n).css('display', 'block').siblings('.copy')
