@@ -141,7 +141,7 @@ $(document).ready(function() {
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
-item = $(this).parent().attr('id')
+item = $(this).parent().attr('item')
 $.ajax({
   url: 'https://randomuser.me/api/',
   dataType: 'json',
@@ -153,20 +153,18 @@ $.ajax({
 				.toLowerCase().trim() + '.' +
 				data.results[0].location.state.toLowerCase().trim() +
 					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-				$('#' + item + ' .addComment').children(
-				'.comment').val() +
+				$('.' + item + ' .addComment .comment').val() +
 			"</div>")
 	} else {
-		$('#' + item + ' .ago:last').after(
+		$('.' + item + ' .ago:last').after(
 			"<div class='add'><b>" + data.results[0].location.city
 				.toLowerCase().trim() + '.' +
 				data.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-				$('#' + item + ' .addComment').children(
-				'.comment').val() +
+				$('.' + item + ' .addComment .comment').val() +
 			"</div>")
 	}
-	$('#' + item + ' .comment').val('')
+	$('.' + item + ' .addComment .comment').val('')
   }
 })
 	e.preventDefault()
@@ -1109,7 +1107,7 @@ function xmlResponse(e, s, n, post) {
 							"<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
 							ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
 					} else var cat = ''
-					html = "<div id='" + i + "' class='item' ext='" + ref
+					html = "<div item='" + i + "' class='item " + i + "' ext='" + ref
 						.trim() + "'>" +
 						"<div id='ago'>" + courtesy + "</div>" +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
