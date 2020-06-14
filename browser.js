@@ -209,6 +209,10 @@ $(document).ready(function() {
 
 }).on('touch click', '.feed .id', function(e) {
 
+	if ($('input[type=text]').val() == 'Search') {
+		$('input[type=text]').val($(this).attr('response').replace(
+		/\-/g, ' '))
+	}
 	if (contrast == true) window.location.assign('?q=' + $(
 			'#search input[type=text]').val()
 		.toLowerCase()
@@ -268,7 +272,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	if ($('input[type=text]').val() == '') {
+	if ($('input[type=text]').val() == 'Search') {
 		$('input[type=text]').val($(this).attr('response').replace(
 		/\-/g, ' '))
 	}
@@ -399,7 +403,7 @@ function applyVisual(n) {
 			'border-bottom': '1px solid #333',
 
 		})
-		$('.right, .left').css('background-color','rgba(0,0,0,.1)')
+		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
 		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
 		$('#progressBar').removeClass('responseInvert').addClass(
