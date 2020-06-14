@@ -521,10 +521,6 @@ function changeTimeZone(date, n) {
 
 function commentResponse(n) {
 
-$.ajax({
-  url: 'https://api.kanye.rest?format=json',
-  dataType: 'json',
-  success: function(quote) {
 	$.ajax({
 	  url: 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
 	  dataType: 'json',
@@ -538,17 +534,14 @@ $.ajax({
 							.toLowerCase().trim() + '.' +
 							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-							data.emoji + ' ' + quote.quote +
+							data.emoji +
 						"</div>")
 				}
 			})
 			$('.' + n + ' .addComment .comment').val('')
 			applyVisual()
-  		}
+  	  }
 	})
-  }
-})
-
 
 }
 
