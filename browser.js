@@ -520,28 +520,29 @@ function changeTimeZone(date, n) {
 }
 
 function commentResponse(n) {
-
-	$.ajax({
-	  url: cors + 'https://ranmoji.herokuapp.com/emojis/api/v.1.0/',
-	  dataType: 'json',
-	  success: function(data) {
+	var emoji = []
+	var comment = []
+	var e = Math.floor(Math.random() * (3 - 0 + 1) + 1)
+	for (i = 0; i <= e; i++) {
+		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
+	}
+	$.each(comment, function(k, i) {
+		emoji.push(emojis[comment[k]])
+	})
 			$.ajax({
 			  url: cors + 'https://randomuser.me/api/',
 			  dataType: 'json',
 			  success: function(api) {
 				$('.' + n + ' .ago:last').after(
-						"<div class='add'><b>" + api.results[0].location.city
-							.toLowerCase().trim() + '.' +
+						"<div class='add'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
 							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-							data.emoji +
+							emoji.join('') +
 						"</div>")
 				}
 			})
 			$('.' + n + ' .addComment .comment').val('')
 			applyVisual()
-  	  }
-	})
 
 }
 
