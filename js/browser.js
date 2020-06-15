@@ -1093,7 +1093,8 @@ function xmlResponse(e, s, n, post) {
 				if ($(this).find('title:first').text().length > 35) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
 				else var more = "<div class='more'></div>"
-				if (src.match(/mp4|twitch|youtube/)) {
+				console.log(src)
+				if (src.match(/mp4|twitch|youtube/g)) {
 					if ($(this).find(
 							'media\\:statistics, statistics'
 						).attr('views'))
@@ -1129,7 +1130,7 @@ function xmlResponse(e, s, n, post) {
 						"</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
-						"</form>"
+						"</form>" +
 						"</div>"
 				} else {
 					if (e == 'search') {
@@ -1171,6 +1172,7 @@ function xmlResponse(e, s, n, post) {
 						local = i
 				})
 			})
+			console.log(html)
 			$('#main').append(
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
@@ -1186,7 +1188,7 @@ function xmlResponse(e, s, n, post) {
 						commentResponse(pub[local].element)
 					}
 			} else {
-				for (var i = 0; i <= quit; i++) {
+				$.each(pub, function(i, k) {
 					$('#main .center .channel').append(pub[i].post)
 					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
@@ -1196,7 +1198,7 @@ function xmlResponse(e, s, n, post) {
 						commentResponse(pub[i].element)
 						commentResponse(pub[i].element)
 					}
-				}
+				})
 			}
 			$('#main .center').append(
 				"<div id='bottom' onclick='bottomResponse(" +
