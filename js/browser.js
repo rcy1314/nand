@@ -580,7 +580,7 @@ function feedResponse(n) {
 
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
 		.length - 1)])
-	else if (n >= menu.length - 5) n = 0
+	else if (n >= menu.length - 13) n = 1
 	for (var i = n; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
@@ -654,10 +654,8 @@ function filterResponse(passthrough, n, post, listing) {
 		return false
 	} 
 	else if (listing == false) {
-		setTimeout(function() {
-			populateResponse(filter[filter.length - 1] + +1)
-			precedeResponse(id)
-		}, 300)
+		populateResponse(filter[filter.length - 1] + +1)
+		precedeResponse(id)
 	}
 	if (passthrough == false) progressResponse(true, 100)
 	$('#main').attr('tabIndex', -1)
@@ -794,8 +792,7 @@ function precedeResponse(n) {
 		"<div id='air' style='display:none'></div>")
 	if (reverse == true) reverseArray(menu.reverse())
 	for (var i = 1; i < menu.length - 1; i++) {
-		if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n]
-			.cat == menu[i].cat) {
+		if (menu[n].cat == menu[i].cat) {
 			var tag = menu[i].id.match(/[^\/]+$/g)
 			var hilight = menu[i].des.replace(tag,
 				"<b>" + tag + '</b>')
@@ -818,7 +815,6 @@ function precedeResponse(n) {
 			)
 		}
 	}
-	setTimeout(function() {}, 300)
 	applyVisual()
 
 }
@@ -1201,6 +1197,7 @@ function xmlResponse(e, s, n, post) {
 					}
 				})
 			}
+			if (!id) id = menu.indexOf(menu[n])
 			$('#main .center').append(
 				"<div id='bottom' onclick='bottomResponse(" +
 				id +
