@@ -8,7 +8,7 @@
 	#main .center {
 		width: 95% !important;
 	}
-	#main .result .filter, #main .result .populate {
+	#main #air .populate, #main .result .filter, #main .result .populate {
 		margin: 1em;
 		width: 32%;
 	}
@@ -339,6 +339,7 @@ body,
 	margin-left: 15px !important;
 	margin-bottom: 10px;
 	font-size: 12px;
+	width: 85%;
 }
 .img {
 	position: relative;
