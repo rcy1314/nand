@@ -981,7 +981,7 @@ function xmlResponse(e, s, n, post) {
 				if ($('#search input[type=text]').val() != 'Search') var search = $(
 					'#search input[type=text]').val()
 				else var search = menu[n].cat.toLowerCase()
-				var share = window.location.origin + '?q=' +
+				var share = window.location.origin + '/?q=' +
 					search + '&' +
 					menu[n].id.toLowerCase().replace(/\/|\.|\s/g, '+') + '#'  + gen
 				if (contrast == true) share = share + '+0'
