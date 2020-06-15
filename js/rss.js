@@ -3471,6 +3471,7 @@ var menu = [{
 		des: "ET Youtube the Leading source of all things entertainment.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=entertainmenttonight",
 		ext: "https://www.youtube.com/user/EntertainmentTonight",
+		img: "ET"
 	}
 
 	,
