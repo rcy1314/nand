@@ -1099,7 +1099,7 @@ function xmlResponse(e, s, n, post) {
 							'media\\:statistics, statistics'
 						).attr('views'))
 						var views =
-							"<div class='ago views'>views " +
+							"<div class='ago views' style='margin-bottom:25px'>views " +
 							$(this).find(
 								'media\\:statistics, statistics'
 							).attr('views')
@@ -1111,23 +1111,23 @@ function xmlResponse(e, s, n, post) {
 						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
 						"<div class='ago'>" + courtesy + "</div>" +
-						"<i class='copy fa fa-ellipsis-h' style='margin-top:-20px' title='Copy URL'></i>" +
+						"<i class='copy fa fa-ellipsis-h' style='margin-top:-25px' title='Copy URL'></i>" +
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
 						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
-						"<input class='share' value='" + gen + "'>" +
 						"</div>" +
-						"<div class='ago' style='display:block;top:20px;'>" + dst[0] + "</div>" +
-						"<div class='pub' style='margin-top:20px' " +
+						"<div class='tag' style='margin-top:5px'>" +
+						"<i class='ago fa fa-heart-o'></i>" +
+						"<div class='ago fa fa-comment-o'></div>" +
+						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
+						"<i class='ago fa fa-bookmark-o'></i>" +
+						"<input class='url' value='" + ref.trim() + "'>" +
+						"<input class='share' value='" + share + "'>" +
+						"</div>" +
+						"<div class='pub' " +
 						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 						$(this).find('title:first').text().truncate(35, true) +
 						"</div>" + more +
-						"<div class='tag'>" +
-						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + share + "'>" +
-						"<i class='ago fa fa-heart-o'></i>" +
-						"<i class='ago fa fa-bookmark-o'></i>" +
-						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
-						"</div>" +
+						"<div class='ago'>" + dst[0] + "</div>" +
 						"<form class='addComment' action'#'>" +
 						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
 						"</form>" +
