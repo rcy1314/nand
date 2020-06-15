@@ -1189,6 +1189,7 @@ function xmlResponse(e, s, n, post) {
 					}
 			} else {
 				$.each(pub, function(i, k) {
+					if (i == quit) return false
 					$('#main .center .channel').append(pub[i].post)
 					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
