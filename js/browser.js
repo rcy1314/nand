@@ -102,6 +102,7 @@ $(document).ready(function() {
 
 }).on('keyup', '#search input[type=text]', function(e) {
 
+	if ($(this).val() == 'random') return false
 	if (e.keyCode == 13) {
 		$('#arm #search #match').hide()
 		return false
