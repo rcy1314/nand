@@ -984,7 +984,7 @@ function xmlResponse(e, s, n, post) {
 				var share = window.location.origin + '/?q=' +
 					search + '&' +
 					menu[n].id.toLowerCase().replace(/\/|\.|\s/g, '+') + '#'  + gen
-				if (contrast == true) share = share + '+0'
+				if (contrast == true) share = share + '+1'
 				if ($(this).find('content').text().match(
 						/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
 					)) {
