@@ -1184,7 +1184,7 @@ function xmlResponse(e, s, n, post) {
 						commentResponse(pub[local].element)
 					}
 			} else {
-				for (var i = 0; i <= pub.length - 1; i++) {
+				for (var i = 0; i <= quit; i++) {
 					$('#main .center .channel').append(pub[i].post)
 					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
