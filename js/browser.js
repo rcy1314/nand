@@ -14,13 +14,13 @@ $(document).ready(function() {
 	$('#container').show()
     $('input[type=text]').on('touch click', function(e) {
 
-        $(this).attr('placeholder', '').css({
+        $(this).css({
 			'caret-color': '#e4e4e4',
         }).val('')
 
     }).on('focusout blur', function(e) {
 
-        $(this).attr('placeholder', 'Search').css({
+        $(this).val('Search').css({
             'text-align': 'center'
         })
 	}).css('display','block').attr('tabIndex', -1)
@@ -115,13 +115,15 @@ $(document).ready(function() {
 	} else if ($(this).val().length <= 2 && e.keyCode == 8) {
 		$('#arm #search #match').hide()
 	} else if (e.keyCode == 40 || e.keyCode == 34) {
-		if (!$('#arm #search #match .listing .hover').length)
+		if (!$('#arm #search #match .listing .hover').length) {
 			$('#search .listing .index:first').addClass(
 				'hover').removeClass('index')
-		else {
+		} else {
 			$('#arm #search #match').show()
 			$('#arm #search #match .listing .hover').next()
 				.focus().attr('class', 'hover')
+		$('input[type=text]').val($('#arm #search .listing .hover')
+			.attr('search'))
 			$(this).attr('tabIndex', -1).focus()
 			$('#arm #search #match .listing .hover').prev()
 				.attr('class', 'index')
@@ -129,6 +131,8 @@ $(document).ready(function() {
 	} else if (e.keyCode == 38 || e.keyCode == 33) {
 		$('#arm #search #match .listing .hover').prev()
 			.focus().attr('class', 'hover')
+		$('input[type=text]').val($('#arm #search .listing .hover')
+			.attr('search'))
 		$(this).attr('tabIndex', -1).focus()
 		$('#arm #search #match .listing .hover').next().attr(
 			'class', 'index')
@@ -141,10 +145,6 @@ $(document).ready(function() {
 }).on('submit', '.addComment', function(e) {
 if ($(this).children('.comment').val() != ''){
 item = $(this).parent().attr('item')
-$.ajax({
-  url: cors + 'https://randomuser.me/api/',
-  dataType: 'json',
-  success: function(data) {
 	if ($('.' + item + ' .add').length >= 3) {
 		$('.' + item + ' .add:last').remove()
 		$('.' + item + ' .add:first').before(
@@ -158,8 +158,6 @@ $.ajax({
 			"</div>")
 	}
 	$('.' + item + ' .addComment .comment').val('')
-  }
-})
 }
 	e.preventDefault()
 
@@ -169,16 +167,15 @@ $.ajax({
 	$('#arm #search #match').hide()
 	if ($('#search .listing .hover').length) {
 		if (contrast == true) window.location.assign('?q=' +
-			$('input[type=text]').val().replace(/\s/g,
-				'+') +
-			'&' +
+			$('#arm #search #match .hover').attr('search') +
+				'&' +
 			menu[$('#arm #search #match .hover').attr(
 				'response')].id.toLowerCase().replace(
 				/[\/|\.|\s]/g,
 				'-') + '+1')
-		else window.location.assign('?q=' + $(
-				'input[type=text]').val().replace(/\s/g,
-				'+') + '&' +
+		else window.location.assign('?q=' +
+			$('#arm #search #match .hover').attr('search') +
+				 '&' +
 			menu[$('#arm #search #match .hover').attr(
 				'response')].id.toLowerCase().replace(
 				/[\/|\.|\s]/g,
@@ -213,7 +210,7 @@ $.ajax({
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
-}).on('touch click', '#asset .id', function(e) {
+}).on('touch click', '#asset .id, .combine div', function(e) {
 
 	if ($('input[type=text]').val() == 'Search') {
 		$('input[type=text]').val($(this).attr('search'))
@@ -301,13 +298,12 @@ $.ajax({
 				.addClass('index')
 		} else if (e.type == 'touch' || e.type == 'click') {
 			if (contrast == true) window.location.assign('?q=' +
-				$('input[type=text]').val().replace(/\s/g,
-					'+') +
+				$(this).attr('search') +
 				'&' +
 				menu.indexOf($(this).attr('response')) + '+1')
-			else window.location.assign('?q=' + $(
-					'input[type=text]').val().replace(/\s/g,
-					'+') + '&' + menu[$(this)
+			else window.location.assign('?q=' +
+				$(this).attr('search') +
+					'&' + menu[$(this)
 					.attr('response')].id.toLowerCase()
 				.replace(/[\/|\.|\s]/g, '-'))
 		}
@@ -851,18 +847,17 @@ function reverseResponse(Object) {
 
 function suggestResponse(n) {
 
-	if (n == 0) n =
-		menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-	else if (n >= menu.length - 9) n = 1
-	for (var i = n + 1; i <= n + 9; i++) {
+	for (var i = 0; i <= 9; i++) {
 		var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 		$('#main .suggestions').append(
 			"<div class='combine' style='width:100%'>" +
-			"<a style='left:0;width:100%' ext='" + menu[e].ext +
-			"' rel='nofollow'>" + String(menu[e].id.match(/[^\/]+$/g)) +
-			"</a>" +
+			"<div style='width:100%' response='" + menu[e].id.toLowerCase()
+			.replace(/(\/|\.|\s)/g, '+') + "' search='" + menu[e].cat.toLowerCase() +
+			"'>" + menu[e].id.match(/[^\/]+$/g) +
+			"</div>" +
 			"</div>"
 		)
+	if (i == 9) return false
 	}
 	applyVisual()
 }
@@ -1116,8 +1111,7 @@ function xmlResponse(e, s, n, post) {
 					html =
 						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
 						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
-						"<div class='ago'>" + courtesy + "</div>" +
-						"<i class='copy fa fa-ellipsis-h' style='margin-top:-25px' title='Copy URL'></i>" +
+						"<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
 						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
 						"</div>" +

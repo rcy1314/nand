@@ -3091,7 +3091,8 @@ var menu = [{
 		cat: "World",
 		des: "Quartz covers business, economics, markets, finance, technology, science, design, and fashion.",
 		uri: "https://cms.qz.com/feed",
-		ext: "https://qz.com"
+		ext: "https://qz.com",
+		img: "Quartz"
 	}
 
 	,
