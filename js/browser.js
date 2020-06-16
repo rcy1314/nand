@@ -1173,7 +1173,7 @@ function xmlResponse(e, s, n, post) {
 				})
 			})
 			$('#main').append(
-				"<div class='suggestions'><b>Suggestions</b><br></div>" +
+				"<div class='suggestions'><b>suggestions</b><br></div>" +
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>"
