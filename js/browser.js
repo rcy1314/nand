@@ -1,7 +1,4 @@
 var id
-var gen
-var list
-var local
 var op = 0
 var request
 var quit = 15
@@ -95,7 +92,7 @@ $(document).ready(function() {
 
 	$('#arm #search #match').hide()
 
-}).on('touch click', '#main .item a', function(e) {
+}).on('touch click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
@@ -151,19 +148,13 @@ $.ajax({
 	if ($('.' + item + ' .add').length >= 3) {
 		$('.' + item + ' .add:last').remove()
 		$('.' + item + ' .add:first').before(
-			"<div class='add'><b>" + data.results[0].location.city
-				.toLowerCase().trim() + '.' +
-				data.results[0].location.state.toLowerCase().trim() +
-					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-				$('.' + item + ' .addComment .comment').val() +
+			"<div class='add'><b>" + $('.' + item + 
+			' .addComment .comment').val() +
 			"</div>")
 	} else {
 		$('.' + item + ' .ago:last').after(
-			"<div class='add'><b>" + data.results[0].location.city
-				.toLowerCase().trim() + '.' +
-				data.results[0].location.state.toLowerCase().replace(/\s/g, '') +
-					Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-				$('.' + item + ' .addComment .comment').val() +
+			"<div class='add'><b>" + $('.' + item + 
+			' .addComment .comment').val() +
 			"</div>")
 	}
 	$('.' + item + ' .addComment .comment').val('')
@@ -411,7 +402,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('body, #container, #main, #arm, #info, input[type=text], .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, #image, .ago, a')
+		$('body, #container, #main, #arm, #info, input[type=text], .suggestions, .combine, .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'color': '#fff',
 				'background-color': '#000',
@@ -433,7 +424,7 @@ function applyVisual(n) {
 		$('#favicon').attr('href', 'images/opposite.png')
 		$('.hilight').css('color', '#F7426B')
 	} else if (op == 0) {
-		$('input[type=text], .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
+		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
@@ -446,7 +437,7 @@ function applyVisual(n) {
 				'color': '#666'
 			})
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
-		$('input[type=text], .item, .title').css('border', '.3px solid #ddd'),
+		$('input[type=text], .item, .title, .suggestions').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
 		$('#main, #visit').css('background-color', '#fafafa')
 		$('.hover').css('background-color','#e4e4e4')
@@ -456,7 +447,7 @@ function applyVisual(n) {
 		$('.description, .index').css({
 			'border-bottom': '.3px solid #ccc'
 		})
-		$('#home, .listing, .item, .feed').css('box-shadow',
+		$('#home, .listing, .item, .feed, .suggestions').css('box-shadow',
 			'1px 1px 6px #eee')
 		$('#main, .listing').addClass('invert').removeClass(
 			'opposite')
@@ -581,7 +572,7 @@ function feedResponse(n) {
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
 		.length - 1)])
 	else if (n >= menu.length - 13) n = 1
-	for (var i = n; i <= n + 13; i++) {
+	for (var i = n + 1; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
@@ -690,20 +681,19 @@ function imageResolution(n) {
 				$('#' + n).width($('#' + n).get(0)
 					.naturalWidth + 30).css({
 						'margin-left':'10px',
-						'margin-top': '20px'
+						'margin-top': '10px'
 					})
 				$('#' + n).parent().find('.fa-bookmark, .fa-bookmark-o').css('float','none')
 			}
-			$('#' + n).css('display', 'block').siblings('.copy')
-				.css('margin-top','-20px')
-			$('#' + n).siblings('.attr').html(Math.round($(
-					'#' + n).get(0).naturalWidth) + 'x' +
-				Math
-				.round($('#' + n).get(0).naturalHeight) +
-				'&ensp;' + expand)
+			$('#' + n).css('display', 'block')
 		})
-	} else $('#' + n).parent().find('.tag').css('display','none')
-}
+	} else {
+		 $('#' + n).parent().find('.tag').css('display','none')
+		 $('#' + n).parent().find('.copy').css('margin-top','45px')
+		$('#' + n).parent().css('margin-top','30px')
+		$('#' + n).parent().css('padding-top','10px')
+	}
+}		
 
 function listResponse(n) {
 
@@ -859,6 +849,24 @@ function reverseResponse(Object) {
 
 }
 
+function suggestResponse(n) {
+
+	if (n == 0) n =
+		menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+	else if (n >= menu.length - 9) n = 1
+	for (var i = n + 1; i <= n + 9; i++) {
+		var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+		$('#main .suggestions').append(
+			"<div class='combine' style='width:100%'>" +
+			"<a style='left:0;width:100%' ext='" + menu[e].ext +
+			"' rel='nofollow'>" + String(menu[e].id.match(/[^\/]+$/g)) +
+			"</a>" +
+			"</div>"
+		)
+	}
+	applyVisual()
+}
+
 function uncoordinatedTimeZone(n) {
 
 	var opt = {
@@ -905,7 +913,9 @@ function writeResponse(n) {
 
 function xmlResponse(e, s, n, post) {
 	obj = []
+	var local
 	var pub = []
+	var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
 	if (e == 'search') {
 		uri = cors + menu[n].uri + s + '&format=RSS'
 	} else uri = cors + menu[n].uri
@@ -916,8 +926,8 @@ function xmlResponse(e, s, n, post) {
 		25))
 	var complete = setInterval(function() {
 		$('#progressBar').width($('#progressBar').width() + 
-			Math.floor(Math.random() * (10 - 0 + 1) + 0))
-	}, 250)
+			Math.floor(Math.random() * (5 - 0 + 1) + 0))
+	}, 350)
 	$('#main .result, #main .center, #main #air').remove()
 	request = $.get({
 			url: uri,
@@ -1082,14 +1092,14 @@ function xmlResponse(e, s, n, post) {
 				if (!src.match(/https?:\/\//)) src = ''
 				if (src == '') courtesy = ''
 				else courtesy =
-					"<div class='courtesy'><a onclick='event.stopPropagation();window.open(\"" +
-					menu[n].ext + "\")'>Courtesy " + menu[n].id
-					.match(/([^\/]+)\/?([^\/]*)/)[1] +
+					"<div class='courtesy'><img class='id' src='" + img + "'>" +
+					"<a onclick='event.stopPropagation();window.open(\"" +
+					menu[n].ext + "\")'>" + menu[n].id
+					.match(/([^\/]+)\/?([^\/]*)/)[2] +
 					"</a></div>"
-				if ($(this).find('title:first').text().length > 35) var more =
+				if ($(this).find('title:first').text().length > 60) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
 				else var more = "<div class='more'></div>"
-				console.log(src)
 				if (src.match(/mp4|twitch|youtube/g)) {
 					if ($(this).find(
 							'media\\:statistics, statistics'
@@ -1111,7 +1121,7 @@ function xmlResponse(e, s, n, post) {
 						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
 						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
 						"</div>" +
-						"<div class='tag' style='margin-top:5px'>" +
+						"<div class='tag'>" +
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<div class='ago fa fa-comment-o'></div>" +
 						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
@@ -1121,11 +1131,11 @@ function xmlResponse(e, s, n, post) {
 						"</div>" +
 						"<div class='pub' " +
 						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(35, true) +
+						$(this).find('title:first').text().truncate(60, true) +
 						"</div>" + more +
 						"<div class='ago'>" + dst[0] + "</div>" +
 						"<form class='addComment' action'#'>" +
-						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
+						"<input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
 						"</form>" +
 						"</div>"
 				} else {
@@ -1136,7 +1146,7 @@ function xmlResponse(e, s, n, post) {
 					} else var cat = ''
 					html = "<div item='" + i + "' class='item " + i + "' ext='" + ref
 						.trim() + "'>" +
-						"<div id='ago'>" + courtesy + "</div>" +
+						courtesy +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"<div class='tag'>" +
@@ -1148,10 +1158,10 @@ function xmlResponse(e, s, n, post) {
 						"<input class='share' value='" + share + "'>" +
 						"</div>" +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(35, true) + "</div>" + more +
+						$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
 						"<div class='ago'>" + dst[0] + "</div>" + cat +
 						"<form class='addComment' action'#'>" +
-						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='...'>" +
+						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
 						"</form>" +
 						"</div>"
 				}
@@ -1168,8 +1178,8 @@ function xmlResponse(e, s, n, post) {
 						local = i
 				})
 			})
-			console.log(html)
 			$('#main').append(
+				"<div class='suggestions'><b>Suggestions</b><br></div>" +
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>"
@@ -1203,6 +1213,7 @@ function xmlResponse(e, s, n, post) {
 				id +
 				")'><img class='bottom'></div>")
 			$('#main').attr('tabIndex', -1)
+			suggestResponse(n)
 			progressResponse(true, 100)
 			clearInterval(complete)
 			feedResponse(id)
