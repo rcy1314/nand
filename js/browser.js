@@ -435,11 +435,10 @@ function applyVisual(n) {
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title, .suggestions').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
-		$('#main, #visit').css('background-color', '#fafafa')
+		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
-		$('#bottom, .index').css('background-color', '#fafafa')
 		$('.description, .index').css({
 			'border-bottom': '.3px solid #ccc'
 		})
@@ -478,7 +477,7 @@ function applyVisual(n) {
 
 function bottomResponse(n) {
 
-	$('#main .center').remove()
+	$('#main .center, #main .suggestions').remove()
 	if ($('input[type=text]').val().toLowerCase() == menu[id].cat
 		.toLowerCase()) {
 		history.replaceState(null, null, '?q=' + menu[id].cat
@@ -849,9 +848,10 @@ function suggestResponse(n) {
 
 	for (var i = 0; i <= 9; i++) {
 		var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+		if (menu[e])
 		$('#main .suggestions').append(
-			"<div class='combine' style='width:100%'>" +
-			"<div style='width:100%' response='" + menu[e].id.toLowerCase()
+			"<div class='combine'>" +
+			"<div response='" + menu[e].id.toLowerCase()
 			.replace(/(\/|\.|\s)/g, '+') + "' search='" + menu[e].cat.toLowerCase() +
 			"'>" + menu[e].id.match(/[^\/]+$/g) +
 			"</div>" +
@@ -1173,10 +1173,10 @@ function xmlResponse(e, s, n, post) {
 				})
 			})
 			$('#main').append(
-				"<div class='suggestions'><b>suggestions</b><br></div>" +
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
-				"</div></div><div class='channel'></div></div>"
+				"</div></div><div class='channel'></div></div>" +
+				"<div class='suggestions'><b>suggested</b><br></div>"
 			)
 			if ($.isNumeric(local)) {
 				$('#main .center .channel').append(pub[local].post)
