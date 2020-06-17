@@ -378,6 +378,7 @@ svg .border {
 	width: fit-content;
 }
 .item .pub {
+	margin-bottom: 10px;
 	display: inline-block;
 	width: fit-content;
 }
