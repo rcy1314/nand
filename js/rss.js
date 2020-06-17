@@ -1917,6 +1917,16 @@ var menu = [{
 
 	,
 	{
+		id: "AnandTech",
+		cat: "Technology",
+		des: "AnandTech PC components, smartphones, tablets, pre-built desktops, notebooks, Macs, and enterprise/cloud computing technologies..",
+		uri: "https://www.anandtech.com/rss",
+		ext: "https://www.anandtech.com",
+		img: "AnandTech"
+	}
+
+	,
+	{
 		id: "Ars Technica",
 		cat: "Technology",
 		des: "Ars Technica has became a Trusted Source for Technology News.",
