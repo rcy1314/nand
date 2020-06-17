@@ -559,7 +559,7 @@ function feedResponse(n) {
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
-			"<svg><circle cx='35' cy='34' r='28' class='border'>" +
+			"<svg><circle cx='35' cy='34' r='28' class='border'></circle></svg>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[i].cat.
@@ -567,7 +567,7 @@ function feedResponse(n) {
 			"<a style='left:0;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
 			.substring(0, 9) + '...' +
-			"</a></svg>" +
+			"</a>" +
 			"</div>"
 		)
 	}
