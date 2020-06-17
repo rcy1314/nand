@@ -495,33 +495,6 @@ function changeTimeZone(date, n) {
 
 }
 
-function commentResponse(n) {
-	var emoji = []
-	var comment = []
-	var e = Math.floor(Math.random() * (2 - 0 + 1) + 1)
-	for (i = 0; i <= e; i++) {
-		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
-	}
-	$.each(comment, function(k, i) {
-		emoji.push(emojis[comment[k]])
-	})
-			$.ajax({
-			  url: cors + 'https://randomuser.me/api/',
-			  dataType: 'json',
-			  success: function(api) {
-				$('.' + n + ' .ago:last').after(
-						"<div class='add'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
-							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
-							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-							emoji.join('') +
-						"</div>")
-				}
-			})
-			$('.' + n + ' .addComment .comment').val('')
-			applyVisual()
-
-}
-
 function escapeHtml(n) {
     return n
          .replace(/&/g, "&amp;")
@@ -1186,16 +1159,12 @@ function xmlResponse(e, s, n, post) {
 				$('#main .center .channel').append(pub[local].post)
 				if ($('#' + pub[local].element).length)
 					imageResolution(pub[local].element)
-					if ($('#' + pub[local].element).attr('src') != '' && menu[n].cat == 'Social') {
-					}
 			} else {
 				$.each(pub, function(i, k) {
 					if (i == quit) return false
 					$('#main .center .channel').append(pub[i].post)
 					if ($('#' + pub[i].element).length) {
 						imageResolution(pub[i].element)
-					}
-					if ($('#' + pub[i].element).attr('src') != '' && menu[n].cat == 'Social') {
 					}
 				})
 			}
