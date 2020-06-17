@@ -71,22 +71,6 @@ $(document).ready(function() {
 		filterResponse(false, category, false, false)
 		precedeResponse()
 	}
-	$('#main').on('scroll touchmove', function() {
-
-		$('svg circle').css({
-			"stroke-dashoffset": 131 - (131 *
-				Math.max(0, Math.min(1, $(
-						'#main')
-					.scrollTop() / ($(
-							'#main')[
-							0]
-						.scrollHeight -
-						$('#main')
-						.innerHeight()
-					))))
-		})
-
-	})
 
 }).on('touch click', '#main, #arm', function(e) {
 
@@ -210,21 +194,24 @@ item = $(this).parent().attr('item')
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
-}).on('touch click', '#asset .id, .combine div', function(e) {
-
+}).on('touch click', '#asset .id', function(e) {
+var $this = $(this)
+	$(this).parent().find('svg circle').addClass('mask').on(
+		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
+		function() {
 	if ($('input[type=text]').val() == 'Search') {
 		$('input[type=text]').val($(this).attr('search'))
 	}
 	if (contrast == true) window.location.assign('?q=' + $(
 			'input[type=text]').val()
 		.toLowerCase()
-		.replace(/\s/g, '+') + '&' + $(this).attr(
+		.replace(/\s/g, '+') + '&' + $this.attr(
 			'response') + '+1')
 	else window.location.assign('?q=' + $(
 			'input[type=text]').val()
 		.toLowerCase().replace(/\s/g, '+') +
-		'&' + $(this).attr('response'))
-
+		'&' + $this.attr('response'))
+	})
 }).on('touch click', '#main .center .quick .right', function(e) {
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
 		console.log(leftPos + ' ' + $('#main .center .quick .feed').width())
@@ -572,6 +559,7 @@ function feedResponse(n) {
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
+			"<svg><circle cx='35' cy='34' r='28' class='border'>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[i].cat.
@@ -579,7 +567,7 @@ function feedResponse(n) {
 			"<a style='left:0;width:100%' ext='" + menu[i].ext +
 			"' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g))
 			.substring(0, 9) + '...' +
-			"</a>" +
+			"</a></svg>" +
 			"</div>"
 		)
 	}
@@ -669,7 +657,7 @@ function imageResolution(n) {
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
-				$('#' + n).width('100%').css('margin-top','20px')
+				$('#' + n).width('100%')
 			} else if ($('#' + n).get(0).naturalWidth <
 				maximum) {
 				expand = ''
@@ -1183,9 +1171,6 @@ function xmlResponse(e, s, n, post) {
 				if ($('#' + pub[local].element).length)
 					imageResolution(pub[local].element)
 					if ($('#' + pub[local].element).attr('src') != '' && menu[n].cat == 'Social') {
-						commentResponse(pub[local].element)
-						commentResponse(pub[local].element)
-						commentResponse(pub[local].element)
 					}
 			} else {
 				$.each(pub, function(i, k) {
@@ -1195,9 +1180,6 @@ function xmlResponse(e, s, n, post) {
 						imageResolution(pub[i].element)
 					}
 					if ($('#' + pub[i].element).attr('src') != '' && menu[n].cat == 'Social') {
-						commentResponse(pub[i].element)
-						commentResponse(pub[i].element)
-						commentResponse(pub[i].element)
 					}
 				})
 			}
