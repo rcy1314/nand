@@ -1608,41 +1608,11 @@ var menu = [{
 
 	,
 	{
-		id: "ESPN NFL",
-		cat: "Sports",
-		des: "ESPN NFL Football News, Scores, Stats, Standings, Fantasy games, and more.",
-		uri: "http://www.espn.com/espn/rss/nfl/news",
-		ext: "https://espn.com/nfl",
-		img: "ESPN"
-	}
-
-	,
-	{
-		id: "ESPN NBA",
-		cat: "Sports",
-		des: "ESPN NBA Team Stats, Schedules, Rosters, Depth charts and more.",
-		uri: "http://www.espn.com/espn/rss/nba/news",
-		ext: "https://espn.com/nba",
-		img: "ESPN"
-	}
-
-	,
-	{
 		id: "ESPN MLB",
 		cat: "Sports",
 		des: "ESPN MLB Baseball News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/mlb/news",
 		ext: "https://espn.com/mlb",
-		img: "ESPN"
-	}
-
-	,
-	{
-		id: "ESPN NHL",
-		cat: "Sports",
-		des: "ESPN NHL Hockey News, Scores, Stats, Standings, Fantasy games, and more.",
-		uri: "http://www.espn.com/espn/rss/nhl/news",
-		ext: "https://espn.com/nhl",
 		img: "ESPN"
 	}
 
@@ -1658,12 +1628,42 @@ var menu = [{
 
 	,
 	{
+		id: "The Score MLB",
+		cat: "Sports",
+		des: "The Score MLB Trending News & Rumors for Baseball, and More.",
+		uri: "https://feeds.thescore.com/mlb.rss",
+		ext: "https://thescore.com/mlb/news",
+		img: "TheScore"
+	}
+
+	,
+	{
+		id: "ESPN NFL",
+		cat: "Sports",
+		des: "ESPN NFL Football News, Scores, Stats, Standings, Fantasy games, and more.",
+		uri: "http://www.espn.com/espn/rss/nfl/news",
+		ext: "https://espn.com/nfl",
+		img: "ESPN"
+	}
+
+	,
+	{
 		id: "FOX Sports NFL",
 		cat: "Sports",
 		des: "Fox Sports NFL live NFL scores, pro football player & team news, NFL videos, rumors, stats, standings, team schedules & fantasy football games.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl",
 		ext: "https://www.foxsports.com/nfl",
 		img: "FoxSports"
+	}
+
+	,
+	{
+		id: "The Score NFL",
+		cat: "Sports",
+		des: "The Score NFL is the Ultimate, Personalized Mobile Sports Experience.",
+		uri: "https://feeds.thescore.com/nfl.rss",
+		ext: "https://thescore.com/nfl/news",
+		img: "TheScore"
 	}
 
 	,
@@ -1678,12 +1678,52 @@ var menu = [{
 
 	,
 	{
+		id: "The Score NCAAF",
+		cat: "Sports",
+		des: "The Score NCAAF News, Rumors, Headlines, and everything CFB.",
+		uri: "https://feeds.thescore.com/ncaaf.rss",
+		ext: "https://www.thescore.com/ncaaf/news",
+		img: "TheScore"
+	}
+
+	,
+	{
+		id: "ESPN NBA",
+		cat: "Sports",
+		des: "ESPN NBA Team Stats, Schedules, Rosters, Depth charts and more.",
+		uri: "http://www.espn.com/espn/rss/nba/news",
+		ext: "https://espn.com/nba",
+		img: "ESPN"
+	}
+
+	,
+	{
 		id: "FOX Sports NBA",
 		cat: "Sports",
 		des: "Fox Sports NBA videos, rumors, stats, standings, and team schedules.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba",
 		ext: "https://www.foxsports.com/nba",
 		img: "FoxSports"
+	}
+
+	,
+	{
+		id: "The Score NBA",
+		cat: "Sports",
+		des: "The Score NBA Scores, Stats, News, Rumors, Videos, Standings, Teams.",
+		uri: "https://feeds.thescore.com/nba.rss",
+		ext: "https://www.thescore.com/nba/news",
+		img: "TheScore"
+	}
+
+	,
+	{
+		id: "ESPN NHL",
+		cat: "Sports",
+		des: "ESPN NHL Hockey News, Scores, Stats, Standings, Fantasy games, and more.",
+		uri: "http://www.espn.com/espn/rss/nhl/news",
+		ext: "https://espn.com/nhl",
+		img: "ESPN"
 	}
 
 	,
@@ -1778,6 +1818,16 @@ var menu = [{
 
 	,
 	{
+		id: "The Score MMA",
+		cat: "Sports",
+		des: "The Score MMA headlines, news, and analysis.",
+		uri: "https://feeds.thescore.com/mma.rss",
+		ext: "https://thescore.com/mma/news",
+		img: "TheScore"
+	}
+
+	,
+	{
 		id: "Sportzet",
 		cat: "Sports",
 		des: "Sportzet The latest international Sports and World.",
@@ -1812,56 +1862,6 @@ var menu = [{
 		des: "The Score Trending News, Announcements, Highlights, and Analysis.",
 		uri: "https://feeds.thescore.com/trending.rss",
 		ext: "https://thescore.com",
-		img: "TheScore"
-	}
-
-	,
-	{
-		id: "The Score MLB",
-		cat: "Sports",
-		des: "The Score MLB Trending News & Rumors for Baseball, and More.",
-		uri: "https://feeds.thescore.com/mlb.rss",
-		ext: "https://thescore.com/mlb/news",
-		img: "TheScore"
-	}
-
-	,
-	{
-		id: "The Score MMA",
-		cat: "Sports",
-		des: "The Score MMA headlines, news, and analysis.",
-		uri: "https://feeds.thescore.com/mma.rss",
-		ext: "https://thescore.com/mma/news",
-		img: "TheScore"
-	}
-
-	,
-	{
-		id: "The Score NBA",
-		cat: "Sports",
-		des: "The Score NBA Scores, Stats, News, Rumors, Videos, Standings, Teams.",
-		uri: "https://feeds.thescore.com/nba.rss",
-		ext: "https://www.thescore.com/nba/news",
-		img: "TheScore"
-	}
-
-	,
-	{
-		id: "The Score NCAAF",
-		cat: "Sports",
-		des: "The Score NCAAF News, Rumors, Headlines, and everything CFB.",
-		uri: "https://feeds.thescore.com/ncaaf.rss",
-		ext: "https://www.thescore.com/ncaaf/news",
-		img: "TheScore"
-	}
-
-	,
-	{
-		id: "The Score NFL",
-		cat: "Sports",
-		des: "The Score NFL is the Ultimate, Personalized Mobile Sports Experience.",
-		uri: "https://feeds.thescore.com/nfl.rss",
-		ext: "https://thescore.com/nfl/news",
 		img: "TheScore"
 	}
 

@@ -284,7 +284,7 @@ svg .border {
 }
 .mask {
   fill: none;
-  animation: dash 2s ease-out forwards;
+  animation: dash 2s ease-out alternate;
 }
 @keyframes dash {
   from{
@@ -391,6 +391,7 @@ svg .border {
 	clear: left;
 }
 .more {
+	font-size: 13px;
 	position: relative;
 	display: inline-block;
 	color: #aaa;
