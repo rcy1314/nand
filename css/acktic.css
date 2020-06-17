@@ -276,26 +276,24 @@ svg {
 } 
 svg .border {
 	transform-origin: 50% 50%;
-	transform: rotate(320deg);
 	position: absolute;
 	fill: transparent;
-	stroke-width: 2;
-	stroke-dasharray: 191;
-    stroke-dashoffset: 0;
-	stroke: #F74268;
+	stroke-width: 3;
+    stroke-dasharray: 1;
+    stroke-linecap: round;
 }
 .mask {
   fill: none;
-  animation: dash .5s linear forwards;
+  animation: dash 2s ease-out forwards;
 }
-
 @keyframes dash {
-  from {
-    stroke-dashoffset: 0;
+  from{
+    stroke-dasharray: 8;
   }
-  to {
-    stroke-dashoffset: 191;
-  }
+  to{
+    transform:rotate(360deg);
+    stroke-dasharray: 1;
+ }
 }
 .right {
 	height: 5.7em;
@@ -331,8 +329,8 @@ svg .border {
 	border-radius: 36px;
 	position: relative;
 	margin: 10px;
-	height: 4.5em;
-	width: 4.5em;
+	height: 48px;
+	width: 48px;
 }
 .center {
 	text-align: left;

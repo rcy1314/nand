@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     }).on('focusout blur', function(e) {
 
-        $(this).val('Search').css({
+        $(this).css({
             'text-align': 'center'
         })
 	}).css('display','block').attr('tabIndex', -1)
@@ -147,7 +147,6 @@ item = $(this).parent().attr('item')
 
 }).on('submit', '#search', function(e) {
 
-	$('input[type=text]').blur()
 	$('#arm #search #match').hide()
 	if ($('#search .listing .hover').length) {
 		if (contrast == true) window.location.assign('?q=' +
@@ -180,6 +179,7 @@ item = $(this).parent().attr('item')
 				.val().toLowerCase(), false, false)
 		}
 	}
+	$('input[type=text]').val('Search').blur()
 	applyVisual()
 	e.preventDefault()
 
@@ -559,7 +559,12 @@ function feedResponse(n) {
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
-			"<svg><circle cx='35' cy='34' r='28' class='border'></circle></svg>" +
+			"<svg>" +
+			"<defs><linearGradient id='gradient'>" +
+			"<stop offset='0%' stop-color='#F7797d' />" +
+			"<stop offset='99%' stop-color='#fbd786' />" +
+			"</linearGradient></defs>" +
+			"<circle stroke='url(#gradient)' cx='36' cy='36' r='28' class='border'></circle></svg>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[i].cat.
