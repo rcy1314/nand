@@ -588,6 +588,7 @@ function filterResponse(passthrough, n, post, listing) {
 		$('#arm #search #match').hide()
 	}
 	$('#main .result, #main #air, #main .center, #main .suggestions').remove()
+	$('#main #visit, #main #placeholder').show()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
 	$('#main').scrollTop(0)
 	if (reverse) reverseResponse(menu.reverse())
@@ -801,14 +802,15 @@ function precedeResponse(n) {
 
 function progressResponse(complete, n) {
 
-	$('#main #visit, #main #placeholder').show()
 	$('#progressBar').addClass('response').width(n + '%')
 	if (complete == true) {
+		$('#main #visit, #main #placeholder').hide()
 		$('#progressBar').on(
 			'transitionend webkitTransitionEnd oTransitionEnd',
 			function(e) {
 				$(this).removeClass('response').width(0)
-				$('#main #visit, #main #placeholder').hide()
+				if ($('#main .suggestions').length == 1) $(
+					'#main .suggestions').css('visibility','visible')
 				if ($('#main .result').length == 1) $(
 					'#main .result').show()
 				if ($('#main .center').length == 1) $(
@@ -931,11 +933,16 @@ function xmlResponse(e, s, n, post) {
 			}
 		})
 		.fail(function() {
-			$('#main').append("<div class='feed'></div>")
+			$('#main').append(
+				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
+				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
+				"</div></div><div class='channel'></div></div>" +
+				"<div class='suggestions'><b>suggested</b><br></div>"
+			)
 			$('#main .feed').html("This site could not be reached.")
-			populateResponse(id)
-			precedeResponse(id)
+			suggestResponse()
 			progressResponse(true, 100)
+			applyVisual()
 		})
 		.done(function(xhr) {
 			if ($(xhr).find('entry').length > 0) var channel =
@@ -1173,7 +1180,7 @@ function xmlResponse(e, s, n, post) {
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>" +
-				"<div class='suggestions'><b>suggested</b><br></div>"
+				"<div class='suggestions' style='visibility:hidden'><b>suggested</b><br></div>"
 			)
 			if ($.isNumeric(local)) {
 				$('#main .center .channel').append(pub[local].post)
@@ -1198,9 +1205,9 @@ function xmlResponse(e, s, n, post) {
 				id +
 				")'><img class='bottom'></div>")
 			$('#main').attr('tabIndex', -1)
-			suggestResponse(n)
 			progressResponse(true, 100)
 			clearInterval(complete)
+			suggestResponse(n)
 			feedResponse(id)
 			applyVisual()
 		})

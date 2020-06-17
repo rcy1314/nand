@@ -71,9 +71,9 @@
 	width: 0%;
 }
 .response {
-	-moz-transition: all .25s ease;
+	-moz-transition: all .5s ease;
 	-moz-transition-delay: 0s;
-	-webkit-transition: all .25s ease;
+	-webkit-transition: all .5s ease;
 	-webkit-transition-delay: 0s;
 }
 .progress {
@@ -322,7 +322,7 @@ svg .border {
 	padding: 10px;
 	text-align: center;
 	margin-top: 2px;
-	width: 6em;
+	width: 100%;
 }
 .id {
 	padding: 2px;
@@ -344,7 +344,7 @@ svg .border {
 	position: relative;
 	height: fit-content;
 	left: 10px;
-	margin-top: 158px;
+	margin-top: 159px;
 	vertical-align: top;
 	padding: 15px;
 	width: 140px;
