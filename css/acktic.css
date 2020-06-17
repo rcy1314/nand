@@ -277,7 +277,7 @@ svg {
 svg .border {
 	transform-origin: 50% 50%;
 	position: absolute;
-	fill: transparent;
+	fill: none;
 	stroke-width: 3;
     stroke-dasharray: 1;
     stroke-linecap: round;
@@ -292,7 +292,7 @@ svg .border {
   }
   to{
     transform:rotate(360deg);
-    stroke-dasharray: 1;
+	stroke-dashoffset: 191;
  }
 }
 .right {
@@ -426,12 +426,9 @@ svg .border {
 	font-size: 12px;
 	color: #aaa;
 }
-.url {
-	position: relative;
-	z-index: -2;
-	height: 0;
-}
-.share {
+.url,
+.share,
+.source {
 	position: relative;
 	z-index: -2;
 	height: 0;

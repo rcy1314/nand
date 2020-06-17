@@ -300,6 +300,8 @@ var $this = $(this)
 	}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
+	$(this).siblings('.source').select()
+	document.execCommand('copy')
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 	applyVisual()
@@ -585,7 +587,7 @@ function filterResponse(passthrough, n, post, listing) {
 		$('#arm #search #match .listing').empty()
 		$('#arm #search #match').hide()
 	}
-	$('#main .result, #main #air, #main .center').remove()
+	$('#main .result, #main #air, #main .center, #main .suggestions').remove()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
 	$('#main').scrollTop(0)
 	if (reverse) reverseResponse(menu.reverse())
@@ -1112,9 +1114,10 @@ function xmlResponse(e, s, n, post) {
 						"<i class='ago fa fa-heart-o'></i>" +
 						"<div class='ago fa fa-comment-o'></div>" +
 						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
-						"<i class='ago fa fa-bookmark-o'></i>" +
+						"<i class='ago fa fa-bookmark-o' title='Copy Source'></i>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
+						"<input class='source' value='" + src + "'>" +
 						"</div>" +
 						"<div class='pub' " +
 						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
@@ -1140,9 +1143,10 @@ function xmlResponse(e, s, n, post) {
 						"<div class='ago fa fa-heart-o'></div>" +
 						"<div class='ago fa fa-comment-o'></div>" +
 						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
-						"<div class='ago fa fa-bookmark-o' style='float:right'></div>" +
+						"<div class='ago fa fa-bookmark-o' style='float:right' title='Copy Source'></div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
+						"<input class='source' value='" + src + "'>" +
 						"</div>" +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 						$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
