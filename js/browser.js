@@ -398,7 +398,7 @@ function applyVisual(n) {
 
 		})
 		$('svg circle').css('stroke','url(#gradientOpposite)')
-		$('.suggestions').css('border','.3px solid #333')
+		$('.suggestions').css('border','1px solid #333')
 		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
 		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
@@ -419,20 +419,20 @@ function applyVisual(n) {
 			})
 		$('.category, .feed, .listing, .filter, .populate, #image')
 			.css({
-				'border': '.3px solid #ddd',
+				'border': '1px solid #ddd',
 				'background-color': '#fefefe',
 				'color': '#666'
 			})
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
-		$('input[type=text], .item, .title, .suggestions').css('border', '.3px solid #ddd'),
+		$('input[type=text], .item, .title, .suggestions').css('border', '1px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
 		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
 		$('.description, .index').css({
-			'border-bottom': '.3px solid #ccc'
+			'border-bottom': '1px solid #ccc'
 		})
 		$('#home, .listing, .item, .feed, .suggestions').css('box-shadow',
 			'1px 1px 6px #eee')
@@ -451,19 +451,19 @@ function applyVisual(n) {
 	if ($('#main .result').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fefefe',
-			'border-bottom': '.3px solid #ddd'
+			'border-bottom': '1px solid #ddd'
 		})
 	} else if ($('#main .center').length && op == 0) {
 		$('#arm').css({
 			'background-color': '#fff',
-			'border-bottom': '.3px solid #ddd'
+			'border-bottom': '1px solid #ddd'
 		})
 		$('#search input[type=text]').css(
 			'background-color','#fafafa'
 		)
 	} else if (op == 0) {
 		$('#arm').css({
-			'border-bottom': '.3px solid #ddd'
+			'border-bottom': '1px solid #ddd'
 		})
 	}
 	
