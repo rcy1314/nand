@@ -44,27 +44,15 @@ $(document).ready(function() {
 		} else var post = false
 		if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
 		if ($.isNumeric(post) && uri[0] && uri[1]) {
-			$('input[type=text]').val(uri[0].replace(
-				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1], post, false)
 			applyVisual()
-		} else if ($.isNumeric(post) && uri[0] && uri[1]) {
-			$('input[type=text]').val(uri[0].replace(
-				/(\-|\+|\%20)/g, ' '))
-			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), post, false)
-			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
-			$('input[type=text]').val(uri[0].replace(
-				/(\-|\+|\%20)/g, ' '))
 			filterResponse(false, uri[1].replace(
 				/(\-|\+|\%20)/g, ' '), post, false)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
-			$('input[type=text]').val(uri[0].replace(
-				/(\-|\+|\%20)/g, ' '))
-			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), post, false)
+			filterResponse(false, uri[0].replace(
+				/(\-|\+|\%20)/g, ' '), post, false)
 			applyVisual()
 		} 
 	} else {
@@ -275,17 +263,14 @@ var $this = $(this)
 
 }).on('touch click', '.filter, .populate', function(e) {
 
-	if ($('input[type=text]').val() == 'Search') {
-		$('input[type=text]').val($(this).attr('search'))
-	}
 	if (contrast == true) window.location.assign('?q=' + $(
-			'input[type=text]').val().replace(
-			/\s/g, '+') + '&' + $(this)
-		.attr('response') + '+1')
+			this).attr('search').replace(
+			/\s/g, '+') + '&' + 
+			$(this).attr('response') + '+1')
 	else {
-		window.location.assign('?q=' + $('input[type=text]')
-		.val().replace(/\s/g, '+') + '&' + $(this).attr(
-			'response'))
+		window.location.assign('?q=' + $(
+			this).attr('search').replace(/\s/g, '+') + '&' + 
+			$(this).attr('response'))
 	}
 
 }).on('touch click mouseenter mouseleave', '.index, .hover',
@@ -491,14 +476,12 @@ function bottomResponse(n) {
 	if ($('input[type=text]').val() == 'Search') {
 		history.replaceState(null, null, '?q=' + menu[id].cat
 		.toLowerCase())
-		$('input[type=text').val(menu[id].cat.toLowerCase())
 		filterResponse(false, menu[id].cat
 		.toLowerCase(), false, false)
 	} else {
 		history.replaceState(null, null, '?q=' + menu[id].cat
 			.toLowerCase())
 		document.title = 'acktic'
-		$('input[type=text').val(menu[id].cat.toLowerCase())
 		populateResponse(id)
 		precedeResponse(id)
 	}
