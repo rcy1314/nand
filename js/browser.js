@@ -552,7 +552,7 @@ function feedResponse(n) {
 	if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
 		.length - 1)])
 	else if (n >= menu.length - 13) n = 1
-	for (var i = n + 1; i <= n + 13; i++) {
+	for (var i = n; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
 		$('#main .center .feed').append(
