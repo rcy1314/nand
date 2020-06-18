@@ -199,22 +199,22 @@ var $this = $(this)
 	$(this).parent().find('svg circle').addClass('mask').on(
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
-	$this.parent().find('svg circle').css({
-		'stroke-dashoffset': '191',
-		'stroke-dasharray': '191'
-	})
-	if ($('input[type=text]').val() == 'Search') {
-		$('input[type=text]').val($(this).attr('search'))
-	}
-	if (contrast == true) window.location.assign('?q=' + $(
-			'input[type=text]').val()
-		.toLowerCase()
-		.replace(/\s/g, '+') + '&' + $this.attr(
-			'response') + '+1')
-	else window.location.assign('?q=' + $(
-			'input[type=text]').val()
-		.toLowerCase().replace(/\s/g, '+') +
-		'&' + $this.attr('response'))
+		$this.parent().find('svg circle').css({
+			'stroke-dasharray': '8'
+		}).animate({
+			'stroke-dasharray': 191,
+			'stroke-dashoffset':-191
+			},{easing: 'linear', duration: 1000, complete: function() {
+				if ($('input[type=text]').val() == 'Search') {
+					$('input[type=text]').val($(this).attr('search'))
+				}
+				if (contrast == true) window.location.assign('?q=' +
+					'&' + $this.attr(
+					'response') + '+1')
+				else window.location.assign('?q=' +
+					'&' + $this.attr('response'))
+			}
+		})
 	})
 }).on('touch click', '#main .center .quick .right', function(e) {
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
