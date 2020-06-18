@@ -204,7 +204,7 @@ var $this = $(this)
 		}).animate({
 			'stroke-dasharray': 191,
 			'stroke-dashoffset':-191
-			},{easing: 'linear', duration: 1000, complete: function() {
+			},{easing: 'linear', duration: 750, complete: function() {
 				if ($('input[type=text]').val() == 'Search') {
 					$('input[type=text]').val($(this).attr('search'))
 				}
