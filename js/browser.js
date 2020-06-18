@@ -22,7 +22,7 @@ $(document).ready(function() {
 
         $(this).css({
             'text-align': 'center'
-        })
+        }).val('Search')
 	}).css('display','block').attr('tabIndex', -1)
 
 	if (location.href.match('\\+1')) {
@@ -200,11 +200,11 @@ var $this = $(this)
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
 		$this.parent().find('svg circle').css({
-			'stroke-dasharray': '8'
+			'stroke-dasharray': '191'
 		}).animate({
 			'stroke-dasharray': 191,
 			'stroke-dashoffset':-191
-			},{easing: 'linear', duration: 750, complete: function() {
+			},{easing: 'linear', duration: 350, complete: function() {
 				if ($('input[type=text]').val() == 'Search') {
 					$('input[type=text]').val($(this).attr('search'))
 				}
@@ -216,6 +216,16 @@ var $this = $(this)
 			}
 		})
 	})
+}).on('touch click', '.combine div', function(e) {
+		if ($('input[type=text]').val() == 'Search') {
+			$('input[type=text]').val($(this).attr('search'))
+		}
+		if (contrast == true) { window.location.assign('?q=' +
+			'&' + $(this).attr(
+			'response') + '+1')
+		} else { window.location.assign('?q=' +
+			'&' + $(this).attr('response'))
+		}
 }).on('touch click', '#main .center .quick .right', function(e) {
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
 		console.log(leftPos + ' ' + $('#main .center .quick .feed').width())
@@ -401,6 +411,8 @@ function applyVisual(n) {
 			'border-bottom': '1px solid #333',
 
 		})
+		$('svg circle').css('stroke','url(#gradientOpposite)')
+		$('.suggestions').css('border','.3px solid #333')
 		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
 		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
@@ -425,6 +437,7 @@ function applyVisual(n) {
 				'background-color': '#fefefe',
 				'color': '#666'
 			})
+		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title, .suggestions').css('border', '.3px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
@@ -459,6 +472,9 @@ function applyVisual(n) {
 			'background-color': '#fff',
 			'border-bottom': '.3px solid #ddd'
 		})
+		$('#search input[type=text]').css(
+			'background-color','#fafafa'
+		)
 	} else if (op == 0) {
 		$('#arm').css({
 			'border-bottom': '.3px solid #ddd'
@@ -471,17 +487,19 @@ function applyVisual(n) {
 function bottomResponse(n) {
 
 	$('#main .center, #main .suggestions').remove()
-	if ($('input[type=text]').val().toLowerCase() == menu[id].cat
-		.toLowerCase()) {
+	if ($('input[type=text]').val() == 'Search') {
+		history.replaceState(null, null, '?q=' + menu[id].cat
+		.toLowerCase())
+		$('input[type=text').val(menu[id].cat.toLowerCase())
+		filterResponse(false, menu[id].cat
+		.toLowerCase(), false, false)
+	} else {
 		history.replaceState(null, null, '?q=' + menu[id].cat
 			.toLowerCase())
 		document.title = 'acktic'
+		$('input[type=text').val(menu[id].cat.toLowerCase())
 		populateResponse(id)
 		precedeResponse(id)
-	} else {
-		history.replaceState(null, null, '?q=' + $('input[type=text]')
-			.val().replace(/\s/g, '+'))
-		filterResponse(false, $('input[type=text]').val(), false, false)
 	}
 	progressResponse(true, 100)
 	applyVisual()
@@ -539,11 +557,17 @@ function feedResponse(n) {
 		$('#main .center .feed').append(
 			"<div id='asset'>" +
 			"<svg>" +
-			"<defs><linearGradient id='gradient'>" +
+			"<defs>" +
+			"<linearGradient id='gradientOpposite'>" +
+			"<stop offset='0%' stop-color='#ef4063' />" +
+			"<stop offset='99%' stop-color='#e557c6' />" +
+			"</linearGradient>" +
+			"<linearGradient id='gradientInvert'>" +
 			"<stop offset='0%' stop-color='#F7797d' />" +
 			"<stop offset='99%' stop-color='#fbd786' />" +
-			"</linearGradient></defs>" +
-			"<circle stroke='url(#gradient)' cx='36' cy='36' r='28' class='border'></circle></svg>" +
+			"</linearGradient>" +
+			"</defs>" +
+			"<circle cx='36' cy='36' r='28' class='border'></circle></svg>" +
 			"<img src='" + img + "' class='id " + menu.indexOf(menu[i]) +
 			"' response='" + menu[i].id.toLowerCase().replace(
 			/[\/|\.|\s|\-]/g, '-') + "' search='" + menu[i].cat.
