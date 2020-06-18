@@ -200,8 +200,8 @@ var $this = $(this)
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
 	$this.parent().find('svg circle').css({
-		'stroke-dashoffset':'191',
-		'stroke-dasharray':'191'
+		'stroke-dashoffset': '191',
+		'stroke-dasharray': '191'
 	})
 	if ($('input[type=text]').val() == 'Search') {
 		$('input[type=text]').val($(this).attr('search'))

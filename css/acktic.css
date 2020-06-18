@@ -276,10 +276,11 @@ svg {
 } 
 svg .border {
 	transform-origin: 50% 50%;
+	transform: rotate(-90deg);
 	position: absolute;
 	fill: none;
 	stroke-width: 3;
-    stroke-dasharray: 1;
+	stroke-dasharray: 0;
     stroke-linecap: round;
 }
 .mask {
@@ -287,12 +288,20 @@ svg .border {
   animation: dash 2s ease-out alternate;
 }
 @keyframes dash {
-  from{
+  0%{
     stroke-dasharray: 8;
   }
-  to{
-    transform:rotate(360deg);
+  50%{
+	stroke-dasharray: 8;
+ }
+  75%{
+	transform: rotate(640deg);
 	stroke-dashoffset: 191;
+	stroke-dasharray: 191;
+ }
+  100%{
+	stroke-dashoffset: 191;
+	stroke-dasharray: 191;
  }
 }
 .right {
