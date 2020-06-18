@@ -200,11 +200,12 @@ var $this = $(this)
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
 		$this.parent().find('svg circle').css({
-			'stroke-dasharray': '191'
+			'transform': 'rotate(270deg)',
+			'stroke-dasharray': '8'
 		}).animate({
 			'stroke-dasharray': 191,
 			'stroke-dashoffset':-191
-			},{easing: 'linear', duration: 350, complete: function() {
+			},{easing: 'swing', duration: 2500, complete: function() {
 				if ($('input[type=text]').val() == 'Search') {
 					$('input[type=text]').val($(this).attr('search'))
 				}
