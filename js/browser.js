@@ -199,6 +199,10 @@ var $this = $(this)
 	$(this).parent().find('svg circle').addClass('mask').on(
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
+	$this.parent().find('svg circle').css({
+		'stroke-dashoffset':'191',
+		'stroke-dasharray':'191'
+	})
 	if ($('input[type=text]').val() == 'Search') {
 		$('input[type=text]').val($(this).attr('search'))
 	}
@@ -431,7 +435,7 @@ function applyVisual(n) {
 		$('.description, .index').css({
 			'border-bottom': '.3px solid #ccc'
 		})
-		$('#home, .listing, .item, .feed, .item .id, .suggestions').css('box-shadow',
+		$('#home, .listing, .item, .feed, .suggestions').css('box-shadow',
 			'1px 1px 6px #eee')
 		$('#main, .listing').addClass('invert').removeClass(
 			'opposite')
