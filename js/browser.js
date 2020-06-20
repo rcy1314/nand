@@ -471,19 +471,19 @@ function applyVisual(n) {
 }
 
 function bottomResponse(n) {
-
+	document.title = 'acktic'
 	$('#main .center, #main .suggestions').remove()
 	if ($('input[type=text]').val() == 'Search') {
 		history.replaceState(null, null, '?q=' + menu[id].cat
 		.toLowerCase())
-		filterResponse(false, menu[id].cat
-		.toLowerCase(), false, false)
+		populateResponse(id)
+		precedeResponse(id)
 	} else {
 		history.replaceState(null, null, '?q=' + menu[id].cat
 			.toLowerCase())
 		document.title = 'acktic'
-		populateResponse(id)
-		precedeResponse(id)
+		filterResponse(false, menu[id].cat
+		.toLowerCase(), false, false)
 	}
 	progressResponse(true, 100)
 	applyVisual()
