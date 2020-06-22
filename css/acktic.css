@@ -331,6 +331,9 @@ svg .border {
 	height: 48px;
 	width: 48px;
 }
+.item .id {
+	border: 1px solid #ddd;
+}
 .center {
 	text-align: left;
 	display: inline-block;

@@ -1403,7 +1403,7 @@ var menu = [{
 		des: "World News subreddit with latest headlines from around the world.",
 		uri: "https://reddit.com/r/worldnews/.rss",
 		ext: "https://reddit.com/r/WorldNews",
-		img: "Reddit"
+		img: "Black"
 	}
 
 	,
