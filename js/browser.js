@@ -288,7 +288,7 @@ $(document).ready(function() {
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
-	$(this).siblings('.source').select()
+	$(this).parent().parent().find('.source').select()
 	document.execCommand('copy')
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
@@ -332,7 +332,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
 
-	$(this).siblings('.share').select()
+	$(this).parent().parent().find('.share').select()
 	document.execCommand('copy')
 	$(this).toggleClass('fa-sticky-note-o fa-sticky-note')
 	e.stopPropagation()
@@ -526,7 +526,7 @@ function feedResponse(n) {
 	for (var i = n; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
-		$('#main .center .feed').css('overflow-x','none').append(
+		$('#main .center .feed').append(
 			"<div id='asset'>" +
 			"<svg>" +
 			"<defs>" +
@@ -551,7 +551,6 @@ function feedResponse(n) {
 			"</div>"
 		)
 	}
-	$('#main .center .feed').css('overflow-x','auto')
 	applyVisual()
 }
 
@@ -635,11 +634,11 @@ function imageResolution(n) {
 					.css({
 						'margin': '0 auto',
 						'margin-top': '20px'
-					})
+					}).parent().width('100%')
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
-				$('#' + n).width('100%')
+				$('#' + n).width('100%').parent().width($('#' + n).width())
 			} else if ($('#' + n).get(0).naturalWidth <
 				maximum) {
 				expand = ''
@@ -647,14 +646,13 @@ function imageResolution(n) {
 					.naturalWidth + 30).css({
 						'margin-left':'10px',
 						'margin-top': '10px'
-					})
+					}).parent().width($('#' + n).width() + 20)
 				$('#' + n).parent().find('.fa-bookmark, .fa-bookmark-o').css('float','none')
 			}
 			$('#' + n).css('display', 'block')
 		})
 	} else {
 		 $('#' + n).parent().find('.tag').css('display','none')
-		 $('#' + n).parent().find('.copy').css('margin-top','45px')
 		$('#' + n).parent().css('margin-top','30px')
 		$('#' + n).parent().css('padding-top','10px')
 	}
@@ -1119,12 +1117,13 @@ function xmlResponse(e, s, n, post) {
 						.trim() + "'>" +
 						courtesy +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
-						"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+						"<div class='image'><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"<div class='tag'>" +
 						"<div class='ago fa fa-heart-o'></div>" +
 						"<div class='ago fa fa-comment-o'></div>" +
 						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
-						"<div class='ago fa fa-bookmark-o' style='float:right' title='Copy Source'></div>" +
+						"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
+						"</div>" +
 						"<input class='url' value='" + ref.trim() + "'>" +
 						"<input class='share' value='" + share + "'>" +
 						"<input class='source' value='" + src + "'>" +

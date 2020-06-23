@@ -389,6 +389,9 @@ svg .border {
 	font-size: 12px;
 	width: 85%;
 }
+.image {
+	position: relative;
+}
 .img {
 	position: relative;
 	clear: left;
@@ -400,7 +403,9 @@ svg .border {
 	color: #aaa;
 }
 .tag {
+	justify-content: space-between;
 	position: relative;
+	display: flex;
 	width: 100%;
 }
 .fa-heart,
