@@ -262,7 +262,7 @@ body,
 	overflow-x: auto;
 	font-size: 10px;
 	display: flex;
-	height: 101%;
+	height: 100%;
 	width: 100%;
 
 }
@@ -270,9 +270,10 @@ body,
 	display: none;
 }
 svg {
-	position: absolute;
+	position: relative;
 	width: 72px;
 	height: 72px;
+	bottom: -72px;
 } 
 svg .border {
 	transform-origin: 50% 50%;
@@ -319,7 +320,9 @@ svg .border {
 #asset {
 	display: inline-block;
 	position: relative;
-	padding: 10px !important;
+	text-align: center;
+	padding: 10px;
+	bottom: 72px;
 }
 .id {
 	border-radius: 36px;
