@@ -11,28 +11,14 @@ var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 document.title = 'acktic'
 $(document).ready(function() {
-	$('#container').show()
-    $('input[type=text]').on('touch click', function(e) {
-
-        $(this).css({
-			'caret-color': '#e4e4e4',
-        }).val('')
-
-    }).on('focusout blur', function(e) {
-
-        $(this).css({
-            'text-align': 'center'
-        }).val('Search')
-	}).css('display','block').attr('tabIndex', -1)
+	$('#search input[type=text]').css('display','block')
 
 	if (location.href.match('\\+1')) {
 
 		applyVisual(!op)
 		contrast = true
 
-	} else {
-		applyVisual(op)
-	}
+	} else applyVisual(op)
 
 	if (location.search.split('?q=')[1] && !location.href
 		.match('\\?\\+1')) {
@@ -69,9 +55,21 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
-}).on('keyup', '#search input[type=text]', function(e) {
+}).on('keyup touch click focusout blur', '#search input[type=text]', function(e) {
 
 	if ($(this).val() == 'random') return false
+
+	if (e.type == 'touch' || e.type == 'click')
+        $(this).css({
+            'text-align': 'center',
+        }).val('').attr('tabindex', -1)
+
+	if (e.type == 'focusout' || e.type == 'blur')
+
+        $(this).css({
+			'caret-color': '#e4e4e4',
+        }).val('Search')
+
 	if (e.keyCode == 13) {
 		$('#arm #search #match').hide()
 		return false
@@ -108,15 +106,14 @@ $(document).ready(function() {
 		$(this).attr('tabIndex', -1).focus()
 		$('#arm #search #match .listing .hover').next().attr(
 			'class', 'index')
-	} else if (e.keyCode == 27) {
-		$('#arm #search #match').hide()
-	}
+	} else if (e.keyCode == 27) $('#arm #search #match').hide()
 	applyVisual()
 	e.preventDefault()
 
 }).on('submit', '.addComment', function(e) {
-if ($(this).children('.comment').val() != ''){
-item = $(this).parent().attr('item')
+
+	if ($(this).children('.comment').val() != '')
+		item = $(this).parent().attr('item')
 	if ($('.' + item + ' .add').length >= 3) {
 		$('.' + item + ' .add:last').remove()
 		$('.' + item + ' .add:first').before(
@@ -130,7 +127,6 @@ item = $(this).parent().attr('item')
 			"</div>")
 	}
 	$('.' + item + ' .addComment .comment').val('')
-}
 	e.preventDefault()
 
 }).on('submit', '#search', function(e) {
@@ -183,7 +179,8 @@ item = $(this).parent().attr('item')
 	e.stopPropagation()
 
 }).on('touch click', '#asset .id', function(e) {
-var $this = $(this)
+
+	var $this = $(this)
 	$(this).parent().find('svg circle').addClass('mask').on(
 		'wekitAnimationEnd oanimationend msAnimationEnd animationend',
 		function() {
@@ -193,7 +190,7 @@ var $this = $(this)
 		}).animate({
 			'stroke-dasharray': 191,
 			'stroke-dashoffset':-191
-			},{easing: 'swing', duration: 2500, complete: function() {
+			},{easing: 'swing', duration: 2000, complete: function() {
 				if ($('input[type=text]').val() == 'Search') {
 					$('input[type=text]').val($(this).attr('search'))
 				}
@@ -206,9 +203,7 @@ var $this = $(this)
 		})
 	})
 }).on('touch click', '.combine div', function(e) {
-		if ($('input[type=text]').val() == 'Search') {
-			$('input[type=text]').val($(this).attr('search'))
-		}
+
 		if (contrast == true) { window.location.assign('?q=' +
 			'&' + $(this).attr(
 			'response') + '+1')
@@ -216,6 +211,7 @@ var $this = $(this)
 			'&' + $(this).attr('response'))
 		}
 }).on('touch click', '#main .center .quick .right', function(e) {
+
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
 		console.log(leftPos + ' ' + $('#main .center .quick .feed').width())
 		$('#main .center .quick .feed').animate({
@@ -229,6 +225,7 @@ var $this = $(this)
 	
 
 }).on('touch click', '#main .center .quick .left', function(e) {
+
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
 		$('#main .center .quick .feed').animate({
 			scrollLeft: leftPos - 360
@@ -236,15 +233,6 @@ var $this = $(this)
 		if ($('#main .center .quick .feed').scrollLeft() <= 360)
 				$(this).hide()
 				$('#main .center .quick .right').show()
-
-}).on(
-	'wekitAnimationEnd oanimationend msAnimationEnd animationend',
-	'.overlay',
-	function(e) {
-
-		$(this).removeClass('overlay')
-		void this.clientWidth
-		$(this).addClass('overlay')
 
 }).on('mouseenter mouseleave', '.filter, .populate', function(e) {
 
@@ -297,7 +285,7 @@ var $this = $(this)
 		e.preventDefault()
 		applyVisual()
 
-	}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
+}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
 	$(this).siblings('.source').select()
@@ -427,7 +415,7 @@ function applyVisual(n) {
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title, .suggestions').css('border', '1px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
-		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
+		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fefefe')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
