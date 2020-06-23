@@ -255,9 +255,10 @@ body,
 	height: 6.5em;
 }
 .feed {
-	-webkit-overflow-scrolling: touch !important;
+	-webkit-overflow-scrolling: touch;
 	position: relative;
 	border-radius: 2px;
+	overflow-y: hidden;
 	overflow-x: auto;
 	font-size: 10px;
 	display: flex;
@@ -316,16 +317,16 @@ svg .border {
 	top: 0;
 }
 #asset {
+	padding: 10px !important;
 	display: inline-block;
-	padding: 10px;
 	text-align: center;
 	margin-top: 2px;
 	width: 100%;
 }
 .id {
-	padding: 2px;
 	border-radius: 36px;
 	position: relative;
+	padding: 2px;
 	margin: 10px;
 	height: 48px;
 	width: 48px;
