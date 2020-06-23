@@ -257,9 +257,10 @@ body,
 .feed {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
+	-webkit-overflow-scrolling: touch;
+	overflow-x: auto !important;
 	position: relative;
 	border-radius: 2px;
-	overflow-x: auto;
 	font-size: 10px;
 	display: flex;
 	height: 100%;
