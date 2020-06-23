@@ -258,7 +258,7 @@ body,
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 	-webkit-overflow-scrolling: touch;
-	overflow-x: auto !important;
+	overflow-x: scroll !important;
 	position: relative;
 	border-radius: 2px;
 	font-size: 10px;
