@@ -278,7 +278,7 @@ svg {
 svg .border {
 	transform-origin: 50% 50%;
 	transform: rotate(-90deg);
-	position: absolute;
+	position: relative;
 	fill: none;
 	stroke-width: 3;
     stroke-linecap: round;
