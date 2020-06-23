@@ -319,7 +319,10 @@ svg .border {
 	position: relative;
 	text-align: center;
 	flex-shrink: 0;
-	margin: 10px;
+	padding: 10px;
+}
+#asset a {
+	display: block;
 }
 .id {
 	border-radius: 36px;
