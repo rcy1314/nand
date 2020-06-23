@@ -317,11 +317,9 @@ svg .border {
 	top: 0;
 }
 #asset {
-	padding: 10px !important;
+	padding: 10px;
 	display: inline-block;
-	text-align: center;
 	margin-top: 2px;
-	width: 100%;
 }
 .id {
 	border-radius: 36px;
