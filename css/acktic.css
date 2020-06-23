@@ -270,15 +270,14 @@ body,
 	display: none;
 }
 svg {
-	position: relative;
+	position: absolute;
 	width: 72px;
 	height: 72px;
-	bottom: -72px;
 } 
 svg .border {
 	transform-origin: 50% 50%;
 	transform: rotate(-90deg);
-	position: relative;
+	position: absolute;
 	fill: none;
 	stroke-width: 3;
     stroke-linecap: round;
@@ -321,8 +320,7 @@ svg .border {
 	display: inline-block;
 	position: relative;
 	text-align: center;
-	padding: 10px;
-	bottom: 72px;
+	margin: 10px;
 }
 .id {
 	border-radius: 36px;
