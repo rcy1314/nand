@@ -526,7 +526,7 @@ function feedResponse(n) {
 	for (var i = n; i <= n + 13; i++) {
 		if (!menu[i].img) var img = 'images/apply' + '.png'
 		else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
-		$('#main .center .feed').append(
+		$('#main .center .feed').css('overflow-x','none').append(
 			"<div id='asset'>" +
 			"<svg>" +
 			"<defs>" +
@@ -551,6 +551,7 @@ function feedResponse(n) {
 			"</div>"
 		)
 	}
+	$('#main .center .feed').css('overflow-x','auto')
 	applyVisual()
 }
 
