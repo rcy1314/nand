@@ -1053,7 +1053,7 @@ var menu = [{
 		des: "Github subreddit for all things GitHub!",
 		uri: "https://reddit.com/r/github/.rss",
 		ext: "https://reddit.com/r/github",
-		img: "Github"
+		img: "Octocat"
 	}
 
 	,
