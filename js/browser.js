@@ -507,12 +507,13 @@ function expandImage(n) {
 			parent: $('#' + n).parent().width(),
 			less: $('#' + n).width()
 		})
-		$('#' + n).removeClass('min').addClass('full').width('100%')
+		$('#' + n).removeClass('min').addClass('full')
+			.width('100%').parent().width('100%')
 	} else if ($('#' + n).hasClass('expand full')) {
 		object.forEach(function(e) {
 			if (n == e.element && e.less) $('#' + n)
 				.removeClass('full').addClass('min').width(e
-					.less)
+					.less).parent().width(e.less)
 		})
 	}
 
@@ -630,15 +631,15 @@ function imageResolution(n) {
 					"<a onclick='event.stopPropagation();expandImage(" +
 					n +
 					")' style='cursor:default;text-transform:capitalize'>expand</a>"
-				$('#' + n).addClass('expand min').width('45%')
-					.css({
+				$('#' + n).addClass('expand min').width('100%')
+					.parent().css({
 						'margin': '0 auto',
-						'margin-top': '20px'
-					}).parent().width($('#' + n).width())
+						'width': '45%'
+					})
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
-				$('#' + n).width('100%').parent().width($('#' + n).width())
+				$('#' + n).width('100%').parent().width('100%')
 			} else if ($('#' + n).get(0).naturalWidth <
 				maximum) {
 				expand = ''
