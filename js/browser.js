@@ -656,8 +656,8 @@ function listResponse(n) {
 
 function momentTimeStamp(n) {
 
-	var age = changeTimeZone(new Date(), 'America/New_York')
-	var utc = changeTimeZone(new Date(n), 'America/New_York')
+	var age = new Date()
+	var utc = new Date(n)
 	var dis = age.getTime() - utc.getTime()
 	if (dis < 0) dis = -dis
 	var sec = dis / 1000;
