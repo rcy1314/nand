@@ -376,7 +376,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('#main, #arm, input[type=text], .suggestions, .combine, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, input[type=text], .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'background-color': '#000',
 				'color': '#fff',
