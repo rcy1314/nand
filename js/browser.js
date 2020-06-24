@@ -454,18 +454,6 @@ function bottomResponse(n) {
 
 }
 
-function changeTimeZone(date, n) {
-
-	var invdate = new Date(date.toLocaleString('en-US', {
-		timeZone: n
-	}))
-
-	var diff = date.getTime() - invdate.getTime()
-
-	return new Date(date.getTime() + diff)
-
-}
-
 function escapeHtml(n) {
     return n
          .replace(/&/g, "&amp;")
