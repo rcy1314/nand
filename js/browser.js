@@ -55,12 +55,24 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
+}).on('touch click', '#placeholder', function(e) {
+
+	$('#main #visit, #main #placeholder').hide()
+	populateResponse(id)
+	precedeResponse(id)
+
+}).on('touch click', '.item', function(e) {
+
+	window.open($(this).attr('ext'), '_blank', 'noreferrer')
+	e.stopPropagation()
+
 }).on('keyup touch click focusout blur', '#search input[type=text]', function(e) {
 
 	if ($(this).val() == 'random') return false
 
 	if (e.type == 'touch' || e.type == 'click')
-        $(this).css({
+ 
+       $(this).css({
             'text-align': 'center',
         }).val('').attr('tabindex', -1)
 
@@ -70,7 +82,7 @@ $(document).ready(function() {
 			'caret-color': '#e4e4e4',
         }).val('Search')
 
-	if (e.keyCode == 13) {
+	if (e.type == 'keyup' && e.keyCode == 13) {
 		$('#arm #search #match').hide()
 		return false
 	} else if (e.type == 'keyup' && $(this).val().length >=
@@ -83,7 +95,8 @@ $(document).ready(function() {
 			.show()
 		filterResponse(true, $(this).val(), false, true)
 	} else if ($(this).val().length <= 2 && e.keyCode == 8) {
-		$('#arm #search #match').hide()
+		$('#main #visit, #main #placeholder, #arm #search #match').hide()
+		$('#main .result, #main #air, #main .center, #main .suggestions').show()
 	} else if (e.keyCode == 40 || e.keyCode == 34) {
 		if (!$('#arm #search #match .listing .hover').length) {
 			$('#search .listing .index:first').addClass(
@@ -106,9 +119,12 @@ $(document).ready(function() {
 		$(this).attr('tabIndex', -1).focus()
 		$('#arm #search #match .listing .hover').next().attr(
 			'class', 'index')
-	} else if (e.keyCode == 27) $('#arm #search #match').hide()
-	applyVisual()
+	} else if (e.keyCode == 27) {
+		$('#main #visit, #main #placeholder, #arm #search #match').hide()
+		$('#main .result, #main #air, #main .center, #main .suggestions').show()
+	}
 	e.preventDefault()
+	applyVisual()
 
 }).on('submit', '.addComment', function(e) {
 
@@ -164,19 +180,8 @@ $(document).ready(function() {
 		}
 	}
 	$('input[type=text]').val('Search').blur()
-	applyVisual()
 	e.preventDefault()
-
-}).on('touch click', '#placeholder', function(e) {
-
-	$('#main #visit, #main #placeholder').hide()
-	filterResponse(false, $('input[type=text]').val(), false, false)
-	precedeResponse()
-
-}).on('touch click', '.item', function(e) {
-
-	window.open($(this).attr('ext'), '_blank', 'noreferrer')
-	e.stopPropagation()
+	applyVisual()
 
 }).on('touch click', '#asset .id', function(e) {
 
@@ -191,9 +196,6 @@ $(document).ready(function() {
 			'stroke-dasharray': 191,
 			'stroke-dashoffset':-191
 			},{easing: 'swing', duration: 2000, complete: function() {
-				if ($('input[type=text]').val() == 'Search') {
-					$('input[type=text]').val($(this).attr('search'))
-				}
 				if (contrast == true) window.location.assign('?q=' +
 					'&' + $this.attr(
 					'response') + '+1')
@@ -234,7 +236,7 @@ $(document).ready(function() {
 				$(this).hide()
 				$('#main .center .quick .right').show()
 
-}).on('mouseenter mouseleave', '.filter, .populate', function(e) {
+}).on('touch click mouseenter mouseleave', '.filter, .populate', function(e) {
 
 	if (contrast == false)
 	if (e.type == 'mouseenter') {
@@ -248,17 +250,16 @@ $(document).ready(function() {
 			})
 	}
 	if (e.type == 'mouseleave') $(this).removeClass('overlay')
-
-}).on('touch click', '.filter, .populate', function(e) {
-
-	if (contrast == true) window.location.assign('?q=' + $(
+	if (e.type == 'touch' || e.type == 'click') {
+		if (contrast == true) window.location.assign('?q=' + $(
 			this).attr('search').replace(
 			/\s/g, '+') + '&' + 
 			$(this).attr('response') + '+1')
-	else {
-		window.location.assign('?q=' + $(
-			this).attr('search').replace(/\s/g, '+') + '&' + 
-			$(this).attr('response'))
+		else {
+			window.location.assign('?q=' + $(
+				this).attr('search').replace(/\s/g, '+') + '&' + 
+				$(this).attr('response'))
+		}
 	}
 
 }).on('touch click mouseenter mouseleave', '.index, .hover',
@@ -275,7 +276,7 @@ $(document).ready(function() {
 			if (contrast == true) window.location.assign('?q=' +
 				$(this).attr('search') +
 				'&' +
-				menu.indexOf($(this).attr('response')) + '+1')
+				$(this).attr('response') + '+1')
 			else window.location.assign('?q=' +
 				$(this).attr('search') +
 					'&' + menu[$(this)
@@ -293,18 +294,6 @@ $(document).ready(function() {
 	$(this).toggleClass('fa-bookmark-o fa-bookmark')
 	e.stopPropagation()
 	applyVisual()
-
-}).on('touch click', '.more', function(e) {
-
-	$(this).siblings('.pub').html($(this)
-		.siblings('.pub').attr('text'))
-	$(this).siblings('.pub').animate({
-		width: '85%',
-	},'slow', function() {
-		$(this).siblings('.pub').height('auto')
-	})
-	e.stopPropagation()
-	$(this).hide()
 
 }).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
 
@@ -348,6 +337,18 @@ $(document).ready(function() {
 	e.stopPropagation()
 	applyVisual()
 
+}).on('touch click', '.more', function(e) {
+
+	$(this).siblings('.pub').html($(this)
+		.siblings('.pub').attr('text'))
+	$(this).siblings('.pub').animate({
+		width: '85%',
+	},'slow', function() {
+		$(this).siblings('.pub').height('auto')
+	})
+	e.stopPropagation()
+	$(this).hide()
+
 })
 
 String.prototype.capitalize = function() {
@@ -375,10 +376,10 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('body, #container, #main, #arm, #info, input[type=text], .suggestions, .combine, .comment, .result, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, input[type=text], .suggestions, .combine, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
-				'color': '#fff',
 				'background-color': '#000',
+				'color': '#fff',
 				'border': 'none'
 			})
 		$('#arm, .index, .hover, .description, .comment').css({
@@ -386,7 +387,6 @@ function applyVisual(n) {
 
 		})
 		$('svg circle').css('stroke','url(#gradientOpposite)')
-		$('.suggestions').css('border','1px solid #333')
 		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
 		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
@@ -395,9 +395,7 @@ function applyVisual(n) {
 		$('#main, .listing').addClass('opposite').removeClass(
 			'invert')
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
-			.css('filter', 'none')
 		$('#favicon').attr('href', 'images/opposite.png')
-		$('.hilight').css('color', '#F7426B')
 	} else if (op == 0) {
 		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
 			.css({
@@ -405,17 +403,17 @@ function applyVisual(n) {
 				'color': '#666',
 				'border': 'none'
 			})
-		$('.category, .feed, .listing, .filter, .populate, #image')
+		$('.category, .feed, .listing, .filter, .populate')
 			.css({
-				'border': '1px solid #ddd',
 				'background-color': '#fefefe',
+				'border': '1px solid #ddd',
 				'color': '#666'
 			})
+		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fefefe')
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title, .suggestions').css('border', '1px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
-		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fefefe')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
@@ -430,35 +428,17 @@ function applyVisual(n) {
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
 		$('#favicon').attr('href', 'images/invert.png')
-		$('.hilight').css('color', '#F7426B')
+		$('#arm').css({
+			'border-bottom': '1px solid #ddd'
+		})
 	}
-	$('.fa-bookmark').css('color','black')
 	$('.fa-heart').css('color','lightcoral')
-	$('.fa-comment').css('color','black')
-	$('.fa-sticky-note').css('color','black')
-	if ($('#main .result').length && op == 0) {
-		$('#arm').css({
-			'background-color': '#fefefe',
-			'border-bottom': '1px solid #ddd'
-		})
-	} else if ($('#main .center').length && op == 0) {
-		$('#arm').css({
-			'background-color': '#fff',
-			'border-bottom': '1px solid #ddd'
-		})
-		$('#search input[type=text]').css(
-			'background-color','#fafafa'
-		)
-	} else if (op == 0) {
-		$('#arm').css({
-			'border-bottom': '1px solid #ddd'
-		})
-	}
-	
+	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color','black')
 
 }
 
 function bottomResponse(n) {
+
 	document.title = 'acktic'
 	$('#main .center, #main .suggestions').remove()
 	if ($('input[type=text]').val() == 'Search') {
@@ -475,6 +455,7 @@ function bottomResponse(n) {
 	}
 	progressResponse(true, 100)
 	applyVisual()
+
 }
 
 function changeTimeZone(date, n) {
@@ -561,7 +542,7 @@ function filterResponse(passthrough, n, post, listing) {
 		$('#arm #search #match .listing').empty()
 		$('#arm #search #match').hide()
 	}
-	$('#main .result, #main #air, #main .center, #main .suggestions').remove()
+	$('#main .result, #main #air, #main .center, #main .suggestions').hide()
 	$('#main #visit, #main #placeholder').show()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
 	$('#main').scrollTop(0)
@@ -614,7 +595,7 @@ function filterResponse(passthrough, n, post, listing) {
 		precedeResponse(id)
 	}
 	if (passthrough == false) progressResponse(true, 100)
-	$('#main').attr('tabIndex', -1)
+	$('#main').attr('tabindex', -1)
 	applyVisual()
 
 }
@@ -666,7 +647,8 @@ function listResponse(n) {
 	$('#arm #search #match .listing').prepend(
 		"<div class='index " +
 		menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + 
-		n + "' search='" + menu[n].cat.toLowerCase() + "'>" + 
+		menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + 
+		"' search='" + menu[n].cat.toLowerCase() + "'>" + 
 		"<img class='type' src='" + img + "'>" + 
 		"<div class='text'>&emsp;" + menu[n].cat + 
 		"<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
@@ -885,7 +867,7 @@ function xmlResponse(e, s, n, post) {
 	if (reverse) reverseResponse(menu.reverse())
 	if (!$.isNumeric(id)) id = menu.length - +1
 	document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
-	progressResponse(false, Math.floor(Math.random() * (66 - 25 + 1) +
+	progressResponse(false, Math.floor(Math.random() * (55 - 25 + 1) +
 		25))
 	var complete = setInterval(function() {
 		$('#progressBar').width($('#progressBar').width() + 
@@ -908,11 +890,13 @@ function xmlResponse(e, s, n, post) {
 				"<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
 				"<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
 				"</div></div><div class='channel'></div></div>" +
-				"<div class='suggestions'><b>suggested</b><br></div>"
+				"<div class='suggestions' style='visibility:hidden'><b>suggested</b><br></div>"
 			)
-			$('#main .feed').html("This site could not be reached.")
-			suggestResponse()
+			$('#main .channel').html("This site could not be reached.")
 			progressResponse(true, 100)
+			clearInterval(complete)
+			suggestResponse(id)
+			feedResponse(id)
 			applyVisual()
 		})
 		.done(function(xhr) {
@@ -1083,28 +1067,26 @@ function xmlResponse(e, s, n, post) {
 					else var views = ''
 					html =
 						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
-						/* "<div class='ack'><i class='fa fa-at'></i></div>" + */
-						"<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
-						/* "<div id='ago' style='display:block'>" + dst[1] + "</div>" + */
-						"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views +
-						"</div>" +
-						"<div class='tag'>" +
-						"<i class='ago fa fa-heart-o'></i>" +
-						"<div class='ago fa fa-comment-o'></div>" +
-						"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
-						"<i class='ago fa fa-bookmark-o' title='Copy Source'></i>" +
-						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + share + "'>" +
-						"<input class='source' value='" + src + "'>" +
-						"</div>" +
-						"<div class='pub' " +
-						"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(60, true) +
-						"</div>" + more +
-						"<div class='ago'>" + dst[0] + "</div>" +
-						"<form class='addComment' action'#'>" +
-						"<input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
-						"</form>" +
+							"<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
+							"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
+							"<div class='tag'>" +i
+								"<i class='ago fa fa-heart-o'></i>" +
+								"<i class='ago fa fa-comment-o'></div>" +
+								"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
+								"<i class='ago fa fa-bookmark-o' title='Copy Source'></i>" +
+								"<input class='url' value='" + ref.trim() + "'>" +
+								"<input class='share' value='" + share + "'>" +
+								"<input class='source' value='" + src + "'>" +
+							"</div>" +
+							"<div class='pub' " +
+								"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
+								$(this).find('title:first').text().truncate(60, true) +
+							"</div>" +
+							more +
+							"<div class='ago'>" + dst[0] + "</div>" +
+							"<form class='addComment' action'#'>" +
+								"<input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
+							"</form>" +
 						"</div>"
 				} else {
 					if (e == 'search') {
@@ -1112,26 +1094,28 @@ function xmlResponse(e, s, n, post) {
 							"<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
 							ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
 					} else var cat = ''
-					html = "<div item='" + i + "' class='item " + i + "' ext='" + ref
-						.trim() + "'>" +
+					html = 
+						"<div class='item' ext='" + ref.trim() + "'>" +
 						courtesy +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
-						"<div class='image'><img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
-						"<div class='tag'>" +
-						"<div class='ago fa fa-heart-o'></div>" +
-						"<div class='ago fa fa-comment-o'></div>" +
-						"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
-						"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
-						"</div>" +
-						"<input class='url' value='" + ref.trim() + "'>" +
-						"<input class='share' value='" + share + "'>" +
-						"<input class='source' value='" + src + "'>" +
+						"<div class='image'>" +
+							"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+							"<div class='tag'>" +
+								"<div class='ago fa fa-heart-o'></div>" +
+								"<div class='ago fa fa-comment-o'></div>" +
+								"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
+								"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
+							"</div>" +
+							"<input class='url' value='" + ref.trim() + "'>" +
+							"<input class='share' value='" + share + "'>" +
+							"<input class='source' value='" + src + "'>" +
 						"</div>" +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-						$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
-						"<div class='ago'>" + dst[0] + "</div>" + cat +
+							$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
+						"<div class='ago'>" + dst[0] + "</div>" +
+						cat +
 						"<form class='addComment' action'#'>" +
-						"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
+							"<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
 						"</form>" +
 						"</div>"
 				}
@@ -1172,10 +1156,10 @@ function xmlResponse(e, s, n, post) {
 				"<div id='bottom' onclick='bottomResponse(" +
 				id +
 				")'><img class='bottom'></div>")
-			$('#main').attr('tabIndex', -1)
+			$('#main').attr('tabindex', -1)
 			progressResponse(true, 100)
 			clearInterval(complete)
-			suggestResponse(n)
+			suggestResponse(id)
 			feedResponse(id)
 			applyVisual()
 		})

@@ -397,9 +397,9 @@ svg .border {
 	clear: left;
 }
 .more {
-	font-size: 13px;
-	position: relative;
 	display: inline-block;
+	position: relative;
+	font-size: 13px;
 	color: #aaa;
 }
 .tag {
@@ -412,10 +412,10 @@ svg .border {
 .fa-heart-o,
 .fa-comment,
 .fa-comment-o,
-.fa-bookmark,
-.fa-bookmark-o,
 .fa-sticky-note,
-.fa-sticky-note-o {
+.fa-sticky-note-o,
+.fa-bookmark,
+.fa-bookmark-o {
 	font-size: 16px !important;
 }
 .fa-heart-o,
