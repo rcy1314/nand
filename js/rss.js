@@ -888,16 +888,6 @@ var menu = [{
 
 	,
 	{
-		id: "Reddit/Celebhub",
-		cat: "Social",
-		des: "Celebhub famous actresses, singers, models, athletes and others.",
-		uri: "https://reddit.com/r/celebhub/.rss",
-		ext: "https://reddit.com/r/CelebHub",
-		img: "CelebHub"
-	}
-
-	,
-	{
 		id: "Reddit/Chrome",
 		cat: "Social",
 		des: "Chrome subreddit with topics related to Google's Chrome Web Browser.",
@@ -1054,16 +1044,6 @@ var menu = [{
 		uri: "https://reddit.com/r/github/.rss",
 		ext: "https://reddit.com/r/github",
 		img: "Github"
-	}
-
-	,
-	{
-		id: "Reddit/Goddesses",
-		cat: "Social",
-		des: "Goddesses subreddit pretty pictures of pretty girls.",
-		uri: "https://reddit.com/r/goddesses/.rss",
-		ext: "https://reddit.com/r/Goddesses",
-		img: "Black"
 	}
 
 	,

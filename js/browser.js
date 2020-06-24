@@ -634,7 +634,7 @@ function imageResolution(n) {
 					.css({
 						'margin': '0 auto',
 						'margin-top': '20px'
-					}).parent().width('100%')
+					}).parent().width($('#' + n).width())
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
@@ -647,14 +647,12 @@ function imageResolution(n) {
 						'margin-left':'10px',
 						'margin-top': '10px'
 					}).parent().width($('#' + n).width() + 20)
-				$('#' + n).parent().find('.fa-bookmark, .fa-bookmark-o').css('float','none')
 			}
 			$('#' + n).css('display', 'block')
+		 	$('#' + n).parent().parent().find('.copy').css('top','-45px')
 		})
 	} else {
 		 $('#' + n).parent().find('.tag').css('display','none')
-		$('#' + n).parent().css('margin-top','30px')
-		$('#' + n).parent().css('padding-top','10px')
 	}
 }		
 
