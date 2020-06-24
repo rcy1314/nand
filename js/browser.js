@@ -42,13 +42,15 @@ $(document).ready(function() {
 			applyVisual()
 		} 
 	} else {
-		filterResponse(false, category, false, false)
-		precedeResponse()
+	/*	filterResponse(false, category, false, false)
+		precedeResponse() */
 	}
 
 }).on('touch click', '#main, #arm', function(e) {
 
 	$('#arm #search #match').hide()
+	$('#main #visit, #main #placeholder, #arm #search #match').hide()
+	$('#main .result, #main #air, #main .center, #main .suggestions').show()
 
 }).on('touch click', 'a', function(e) {
 
@@ -58,8 +60,9 @@ $(document).ready(function() {
 }).on('touch click', '#placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	populateResponse(id)
-	precedeResponse(id)
+	filterResponse(false, category, false, false)
+	precedeResponse()
+	progressResponse(true, 100)
 
 }).on('touch click', '.item', function(e) {
 
