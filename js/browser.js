@@ -46,12 +46,6 @@ $(document).ready(function() {
 		precedeResponse() */
 	}
 
-}).on('touch click', '#main, #arm', function(e) {
-
-	$('#arm #search #match').hide()
-	$('#main #visit, #main #placeholder, #arm #search #match').hide()
-	$('#main .result, #main #air, #main .center, #main .suggestions').show()
-
 }).on('touch click', 'a', function(e) {
 
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
@@ -282,9 +276,8 @@ $(document).ready(function() {
 				$(this).attr('response') + '+1')
 			else window.location.assign('?q=' +
 				$(this).attr('search') +
-					'&' + menu[$(this)
-					.attr('response')].id.toLowerCase()
-				.replace(/[\/|\.|\s]/g, '-'))
+					'&' + $(this)
+					.attr('response'))
 		}
 		e.preventDefault()
 		applyVisual()

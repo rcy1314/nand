@@ -135,6 +135,9 @@ input {
 .index,
 .filter,
 .populate,
+#github,
+.index,
+.hover,
 .pub,
 .img,
 a {
@@ -195,7 +198,6 @@ body,
 #github {
 	background-color: transparent;
 	position: absolute;
-	cursor: pointer;
 	color: #e4e4e4;
 	padding: 10px;
 	top: 10px;
