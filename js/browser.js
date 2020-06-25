@@ -393,13 +393,13 @@ function applyVisual(n) {
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
 		$('#favicon').attr('href', 'images/opposite.png')
 	} else if (op == 0) {
-		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .title, .item, .item .pub, .type, .ago, a')
+		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .feed, .title, .item, .item .pub, .type, .ago, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
 				'border': 'none'
 			})
-		$('.category, .feed, .listing, .filter, .populate')
+		$('.category, .listing, .filter, .populate')
 			.css({
 				'background-color': '#fafafa',
 				'border': '1px solid #ddd',
@@ -408,7 +408,7 @@ function applyVisual(n) {
 		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
-		$('input[type=text], .item, .title, .suggestions').css('border', '1px solid #ddd'),
+		$('input[type=text], .feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
 		$('#home').attr('src', 'images/acktic.png')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
