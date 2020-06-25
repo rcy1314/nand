@@ -603,10 +603,12 @@ function listResponse(n) {
 					'#search .listing .' + n + ':last').remove()
 		}
 	}
-	setTimeout(function() {
-		$('#main #visit, #main placeholder, #arm #search #match')
-		.show()
-	}, 50)
+	if (!$('#arm #search #match').is(':visible')) {
+		setTimeout(function() {
+			$('#main #visit, #main placeholder, #arm #search #match')
+				.show()
+		}, 50)
+	}
 }
 
 function momentTimeStamp(n) {
