@@ -1832,7 +1832,8 @@ var menu = [{
 		cat: "Sports",
 		des: "Sportzet The latest international Sports and World.",
 		uri: "https://www.sportzet.com/feed",
-		ext: "https://www.sportzet.com"
+		ext: "https://www.sportzet.com",
+		img: "Sportzet"
 	}
 
 	,

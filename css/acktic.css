@@ -218,11 +218,6 @@ body,
 	margin: 3em;
 	width: 16em;
 }
-.type,
-.hilight,
-.description {
-	background-color: transparent !important;
-}
 .category,
 .title {
 	border-radius: 10px;
@@ -334,8 +329,9 @@ svg .border {
 	height: 48px;
 	width: 48px;
 }
+.type,
 .item .id {
-	border: 1px solid #ddd;
+	border: 1px solid #ddd !important;
 }
 .center {
 	text-align: left;
@@ -494,7 +490,7 @@ input[type=text] {
 	top: 1em;
 }
 .listing {
-	height: calc(12.5em + 102px);
+	height: 18.1em;
 	background-color: #fff;
 	position: relative;
 	overflow-y: auto;
@@ -504,7 +500,7 @@ input[type=text] {
 	right: 5px;
 }
 .index {
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	position: relative;
 	padding-top: 10px;
 	font-size: 9px;
@@ -518,7 +514,7 @@ input[type=text] {
 }
 .hover {
 	background-color: #e4e4e4;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	padding-top: 10px;
 	font-size: 9px;
 	height: 2.5em;

@@ -51,6 +51,10 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
+}).on('touch click', '#search', function(e) {
+
+	$('#arm #search #match').hide()
+
 }).on('touch click', '#visit, #placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
@@ -84,22 +88,17 @@ $(document).ready(function() {
 		return false
 	} else if (e.type == 'keyup' && $(this).val().length >=
 		3 && e.keyCode >= 65 && e.keyCode <= 90) {
-		$('#main #visit, #main #placeholder, #arm #search #match')
-			.show()
-		filterResponse(true, $(this).val(), false, true)
+		listResponse($(this).val())
 	} else if ($(this).val().length >= 2 && e.keyCode == 8) {
-		$('#main #visit, #main placeholder, #arm #search #match')
-			.show()
-		filterResponse(true, $(this).val(), false, true)
+		listResponse($(this).val())
 	} else if ($(this).val().length <= 2 && e.keyCode == 8) {
-		$('#main #visit, #main #placeholder, #arm #search #match').hide()
+		$('#arm #search #match').hide()
 		$('#main .result, #main #air, #main .center, #main .suggestions').show()
 	} else if (e.keyCode == 40 || e.keyCode == 34) {
 		if (!$('#arm #search #match .listing .hover').length) {
 			$('#search .listing .index:first').addClass(
 				'hover').removeClass('index')
 		} else {
-			$('#arm #search #match').show()
 			$('#arm #search #match .listing .hover').next()
 				.focus().attr('class', 'hover')
 		$('input[type=text]').val($('#arm #search .listing .hover')
@@ -500,12 +499,8 @@ function feedResponse(n) {
 	applyVisual()
 }
 
-function filterResponse(passthrough, n, post, listing) {
+function filterResponse(passthrough, n, post) {
 	filter = []
-	if (listing == false) {
-		$('#arm #search #match .listing').empty()
-		$('#arm #search #match').hide()
-	}
 	$('#main .result, #main #air, #main .center, #main .suggestions').hide()
 	$('#main #visit, #main #placeholder').show()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
@@ -514,26 +509,22 @@ function filterResponse(passthrough, n, post, listing) {
 	for (var i = menu.length - 1; i >= 1; i--) {
 		if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
 			filter.push(menu.indexOf(menu[i]))
-			if (listing == false) writeResponse(menu.indexOf(menu[i]))
-			else listResponse(menu.indexOf(menu[i]))
+			writeResponse(menu.indexOf(menu[i]))
 			var exact = i
 			id = i 
 			break
 		} else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase()
 			.match(n)) {
 			filter.push(menu.indexOf(menu[i]))
-			if (listing == false) writeResponse(menu.indexOf(menu[i]))
-			else listResponse(menu.indexOf(menu[i]))
+			writeResponse(menu.indexOf(menu[i]))
 			id = i
 		} else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase()
 			.match(n)) {
 			filter.push(menu.indexOf(menu[i]))
-			if (listing == false) writeResponse(menu.indexOf(menu[i]))
-			else listResponse(menu.indexOf(menu[i]))
+			writeResponse(menu.indexOf(menu[i]))
 		} else if (menu[i].cat.toLowerCase().match(n)) {
 			filter.push(menu.indexOf(menu[i]))
-			if (listing == false) writeResponse(menu.indexOf(menu[i]))
-			else listResponse(menu.indexOf(menu[i]))
+			writeResponse(menu.indexOf(menu[i]))
 		}
 	}
 	if (!id) id = filter[filter.length - 1] + +1
@@ -541,23 +532,17 @@ function filterResponse(passthrough, n, post, listing) {
 		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
 			.random() * menu.length)]), post)
 		return false
-	} else if ($.isNumeric(exact) && listing == false) {
+	} else if ($.isNumeric(exact)) {
 		xmlResponse(null, null, exact, post)
 		return false
-	} else if ($.isNumeric(id) && filter.length == 1 && listing ==
-		false) {
+	} else if ($.isNumeric(id) && filter.length == 1) {
 		xmlResponse(null, null, id, post)
 		return false
-	} else if (!$.isNumeric(exact) && filter.length == 0 &&
-		listing == false) {
+	} else if (!$.isNumeric(exact) && filter.length == 0) {
 		xmlResponse('search', $('input[type=text]').val().replace(
 			/\s/g, '+'), 0)
 		return false
 	} 
-	else if (listing == false) {
-		populateResponse(filter[filter.length - 1] + +1)
-		precedeResponse(id)
-	}
 	if (passthrough == false) progressResponse(true, 100)
 	$('#main').attr('tabindex', -1)
 	applyVisual()
@@ -604,22 +589,28 @@ function imageResolution(n) {
 
 function listResponse(n) {
 
-	if (!menu[n].img) var img = 'images/apply' + '.png'
-	else var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
-	var tag = menu[n].id.match(/[^\/]+$/g)
-	var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
-	$('#arm #search #match .listing').prepend(
-		"<div class='index " +
-		menu.indexOf(menu[n]) + "' tabIndex='-1' response='" + 
-		menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + 
-		"' search='" + menu[n].cat.toLowerCase() + "'>" + 
-		"<img class='type' src='" + img + "'>" + 
-		"<div class='text'>&emsp;" + menu[n].cat + 
-		"<br>&emsp;" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
-		"</div>"
-	)
-	if ($('#search .listing .' + n).length > 1) $(
-		'#search .listing .' + n + ':last').remove()
+	for (var i = menu.length - 1; i >= 1; i--) {
+		if (menu[i].des.toLowerCase()
+			.match(n) || menu[i].cat.toLowerCase().match(n)) {
+				$('#arm #search #match .listing').prepend(
+					"<div class='index " +
+					menu.indexOf(menu[i]) + "' tabIndex='-1' response='" + 
+					menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + 
+					"' search='" + menu[i].cat.toLowerCase() + "'>" + 
+					"<img class='type' src='" + 
+					"images/ID/JPG/" + menu[i].img + '.jpg' + "'>" + 
+					"<div class='text'>&emsp;" + menu[i].cat + 
+					"<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
+					"</div>"
+				)
+				if ($('#search .listing .' + n).length > 1) $(
+					'#search .listing .' + n + ':last').remove()
+		}
+	}
+	setTimeout(function() {
+		$('#main #visit, #main placeholder, #arm #search #match')
+		.show()
+	}, 250)
 }
 
 function momentTimeStamp(n) {
