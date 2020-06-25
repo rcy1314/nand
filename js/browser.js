@@ -28,17 +28,18 @@ $(document).ready(function() {
 			var post = location.hash.substr(1)
 			uri = uri.replace(/\#\d+/g, '')
 		} else var post = false
+		var uri = location.search.split('?q=')[1]
 		if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
 		if ($.isNumeric(post) && uri[0] && uri[1]) {
-			filterResponse(false, uri[1], post, false)
+			filterResponse(false, uri[1], post)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
 			filterResponse(false, uri[1].replace(
-				/(\-|\+|\%20)/g, ' '), post, false)
+				/(\-|\+|\%20)/g, ' '), post)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
 			filterResponse(false, uri[0].replace(
-				/(\-|\+|\%20)/g, ' '), post, false)
+				/(\-|\+|\%20)/g, ' '), post)
 			applyVisual()
 		} 
 	} else {
@@ -53,12 +54,13 @@ $(document).ready(function() {
 
 }).on('touch click', '#search', function(e) {
 
-	$('#arm #search #match').hide()
+	if ($('#arm #search #match').is(':visible')) $('#arm #search #match').hide()
 
 }).on('touch click', '#visit, #placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	filterResponse(false, category, false, false)
+	history.replaceState(null, null, '?q=' + category.toLowerCase())
+	filterResponse(false, category, false)
 	precedeResponse()
 	progressResponse(true, 100)
 
@@ -163,7 +165,7 @@ $(document).ready(function() {
 				'input[type=text]').val().replace(
 				/\s/g, '+'))
 			filterResponse(false, $('input[type=text]')
-				.val().toLowerCase(), false, false)
+				.val().toLowerCase(), false)
 		}
 	}
 	$('input[type=text]').val('Search').blur()
@@ -231,10 +233,11 @@ $(document).ready(function() {
 			})
 	}
 	if (e.type == 'mouseleave') $(this).removeClass('overlay')
-	if (e.type == 'touch' || e.type == 'click')
-		exitResponse('?q=' + $(
-				this).attr('search').replace(/\s/g, '+') + '&' + 
+	if (e.type == 'touch' || e.type == 'click') {
+		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+		exitResponse('?q=' + uri + '&' + 
 				$(this).attr('response'))
+	}
 
 }).on('touch click mouseenter mouseleave', '.index, .hover',
 	function(e) {
@@ -409,18 +412,11 @@ function bottomResponse(n) {
 
 	document.title = 'acktic'
 	$('#main .center, #main .suggestions').remove()
-	if ($('input[type=text]').val() == 'Search') {
-		history.replaceState(null, null, '?q=' + menu[id].cat
-		.toLowerCase())
-		populateResponse(id)
-		precedeResponse(id)
-	} else {
-		history.replaceState(null, null, '?q=' + menu[id].cat
-			.toLowerCase())
+		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+		history.replaceState(null, null, '?q=' + uri[0])
 		document.title = 'acktic'
-		filterResponse(false, menu[id].cat
-		.toLowerCase(), false, false)
-	}
+		filterResponse(false, uri[0]
+		.toLowerCase(), false)
 	progressResponse(true, 100)
 	applyVisual()
 
@@ -607,10 +603,8 @@ function listResponse(n) {
 					'#search .listing .' + n + ':last').remove()
 		}
 	}
-	setTimeout(function() {
 		$('#main #visit, #main placeholder, #arm #search #match')
 		.show()
-	}, 250)
 }
 
 function momentTimeStamp(n) {
