@@ -789,8 +789,6 @@ function uncoordinatedTimeZone(n) {
 
 function writeResponse(n) {
 
-	if (!menu[n].img) var img = 'images/apply' + '.png'
-	else var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
 	if ($('#main .result').length < 1) $('#main').append(
 		"<div class='result' style='display:none'></div>")
 	var tag = menu[n].id.match(/[^\/]+$/g)
@@ -805,7 +803,8 @@ function writeResponse(n) {
 		.ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
 		"</a></div>" +
 		"<div class='description'>&emsp;" + hilight + "</div>" +
-		"<img class='id' style='top:10px' src='" + img + "'>" +
+		"<img class='id' style='top:10px' src='" + 
+		"images/ID/JPG/" + menu[n].img + ".jpg'>" +
 		"</div>"
 	)
 
