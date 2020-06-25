@@ -1049,7 +1049,7 @@ function xmlResponse(e, s, n, post) {
 							ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + "</div>"
 					} else var cat = ''
 					html = 
-						"<div class='item' ext='" + ref.trim() + "'>" +
+						"<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
 						courtesy +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<div class='image'>" +
