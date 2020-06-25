@@ -603,8 +603,10 @@ function listResponse(n) {
 					'#search .listing .' + n + ':last').remove()
 		}
 	}
+	setTimeout(function() {
 		$('#main #visit, #main placeholder, #arm #search #match')
 		.show()
+	}, 150)
 }
 
 function momentTimeStamp(n) {
