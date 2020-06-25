@@ -149,17 +149,13 @@ $(document).ready(function() {
 		if (contrast == true) window.location.assign('?q=' +
 			$('#arm #search #match .hover').attr('search') +
 				'&' +
-			menu[$('#arm #search #match .hover').attr(
-				'response')].id.toLowerCase().replace(
-				/[\/|\.|\s]/g,
-				'-') + '+1')
+			$('#arm #search #match .hover').attr(
+				'response') + '+1')
 		else window.location.assign('?q=' +
 			$('#arm #search #match .hover').attr('search') +
 				 '&' +
-			menu[$('#arm #search #match .hover').attr(
-				'response')].id.toLowerCase().replace(
-				/[\/|\.|\s]/g,
-				'-'))
+			$('#arm #search #match .hover').attr(
+				'response'))
 		$('#search .listing .hover').removeClass('hover')
 			.addClass('index')
 		$('#arm #search #match').hide()
@@ -1036,7 +1032,7 @@ function xmlResponse(e, s, n, post) {
 				if ($(this).find('title:first').text().length > 60) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
 				else var more = "<div class='more'></div>"
-				if (src.match(/mp4|twitch|youtube/g)) {
+				if (src.match(/mp4|youtube/g)) {
 					if ($(this).find(
 							'media\\:statistics, statistics'
 						).attr('views'))
