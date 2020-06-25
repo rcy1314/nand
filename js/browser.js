@@ -606,7 +606,7 @@ function listResponse(n) {
 	setTimeout(function() {
 		$('#main #visit, #main placeholder, #arm #search #match')
 		.show()
-	}, 150)
+	}, 50)
 }
 
 function momentTimeStamp(n) {
