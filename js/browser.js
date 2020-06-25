@@ -715,6 +715,7 @@ function progressResponse(complete, n) {
 			'transitionend webkitTransitionEnd oTransitionEnd',
 			function(e) {
 				$(this).removeClass('response').width(0)
+				$('#main #visit, #main #placeholder, #arm #search #match').hide()
 				if ($('#main .suggestions').length == 1) $(
 					'#main .suggestions').css('visibility','visible')
 				if ($('#main .result').length == 1) $(
