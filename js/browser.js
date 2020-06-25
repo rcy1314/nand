@@ -51,7 +51,7 @@ $(document).ready(function() {
 	window.open($(this).attr('ext'), '_blank', 'noreferrer')
 	e.stopPropagation()
 
-}).on('touch click', '#placeholder', function(e) {
+}).on('touch click', '#visit, #placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
 	filterResponse(false, category, false, false)
@@ -401,11 +401,11 @@ function applyVisual(n) {
 			})
 		$('.category, .feed, .listing, .filter, .populate')
 			.css({
-				'background-color': '#fefefe',
+				'background-color': '#fafafa',
 				'border': '1px solid #ddd',
 				'color': '#666'
 			})
-		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fefefe')
+		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .item, .title, .suggestions').css('border', '1px solid #ddd'),
