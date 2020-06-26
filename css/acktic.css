@@ -1,13 +1,20 @@
 
 @media screen and (max-width: 425px) {
-	#home {
-		display: none;
+	#home,
+	.left,
+	.right,
+	::-webkit-scrollbar {
+		display: none !important;
 	}
 	input[type=text] {
 		left: 0 !important;
 	}
 	#main {
 		height: calc(100% - 35px);
+	}
+	#main .center {
+		margin-left: 1%;
+		width: 97.5%;
 	}
 	#option {
 		position: absolute !important;
@@ -23,11 +30,6 @@
 	}
 }
 @media screen and (width: 768px) {
-	.left,
-	.right,
-	::-webkit-scrollbar {
-		display: none !important;
-	}
 	#main .center {
 		width: 95% !important;
 		padding: 0 !important;
@@ -334,26 +336,26 @@ svg .border {
   }
 }
 .right {
-	height: 5.7em;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
 	display: flex;
 	width: 1.5em;
-	z-index: 2;
+	height: 100%;
 	right: -1px;
-	top: 0;
+	z-index: 2;
+	top: 1px;
 }
 .left {
-	height: 5.7em;
 	justify-content: center;
-	left: 0;
 	position: absolute;
 	align-items: center;
 	display: flex;
 	width: 1.5em;
+	height: 100%;
 	z-index: 2;
-	top: 0;
+	left: -1px;
+	top: 1px;
 }
 #asset {
 	position: relative;
@@ -400,6 +402,7 @@ svg .border {
 }
 .item {
 	margin-bottom: 2em;
+	width: 100%;
 }
 .courtesy {
 	text-transform: capitalize;
@@ -439,7 +442,10 @@ svg .border {
 }
 .more {
 	display: inline-block;
+	padding-bottom: 10px;
+	padding-right: 10px;
 	position: relative;
+	padding-top: 10px;
 	font-size: 13px;
 	color: #aaa;
 }
