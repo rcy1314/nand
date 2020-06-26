@@ -244,9 +244,10 @@ body,
 .fa-th,
 .fa-git,
 .fa-circle,
-.fa-terminal,
-.fa-circle-thin {
+.fa-circle-thin,
+.fa-user-circle {
 	margin-left: 25px;
+	color: #666;
 }
 .result, #air {
 	justify-content: center;
@@ -439,7 +440,6 @@ svg .border {
 }
 .img {
 	position: relative;
-	clear: left;
 }
 .more {
 	display: inline-block;
@@ -495,7 +495,7 @@ svg .border {
 	padding-right: 10px;
 	font-size: 12px;
 	float: right;
-	top: 10px;
+	top: 30px;
 }
 #ago,
 .ago,

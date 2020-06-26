@@ -376,7 +376,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('#main, #arm, #option, input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, #option, .fa-user-circle, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'background-color': '#000',
 				'color': '#fff',
@@ -394,7 +394,7 @@ function applyVisual(n) {
 			'responseOpposite')
 		$('#main, .listing').addClass('opposite').removeClass(
 			'invert')
-		$('.indicator, .bottom').attr('src', 'images/opposite.png')
+		$('.bottom').attr('src', 'images/opposite.png')
 		$('#favicon').attr('href', 'images/opposite.png')
 	} else if (op == 0) {
 		$('.suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
@@ -418,9 +418,13 @@ function applyVisual(n) {
 			'background-color': '#fafafa',
 			'color': '#666'
 		})
+		$('.fa-user-circle, .fa-git, .fa-circle-thin, .fa-th').css({
+			'background-color': 'transparent',
+			'color': '#666'
+		})
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
-		$('input[type=text], .feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
+		$('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
@@ -431,7 +435,7 @@ function applyVisual(n) {
 			'1px 1px 6px #eee')
 		$('#main, .listing').addClass('invert').removeClass(
 			'opposite')
-		$('.bottom').attr('src', 'images/transparent.png').css({
+		$('#placeholder, .bottom').attr('src', 'images/transparent.png').css({
 			'filter': 'brightness(50%) saturate(20%) invert(90%)'
 		})
 		$('#favicon').attr('href', 'images/invert.png')
@@ -589,7 +593,7 @@ function imageResolution(n) {
 					")' style='cursor:default;text-transform:capitalize'>expand</a>"
 				$('#' + n).addClass('expand min').width('100%')
 					.parent().css({
-						'margin': '0 auto',
+						'margin': '75px auto',
 						'width': '45%'
 					})
 			} else if ($('#' + n).get(0).naturalWidth >
@@ -606,7 +610,6 @@ function imageResolution(n) {
 					}).parent().width($('#' + n).width() + 20)
 			}
 			$('#' + n).css('display', 'block')
-		 	$('#' + n).parent().parent().find('.copy').css('top','-45px')
 		})
 	} else {
 		 $('#' + n).parent().find('.tag').css('display','none')
@@ -1028,7 +1031,7 @@ function xmlResponse(e, s, n, post) {
 				if (!src.match(/https?:\/\//)) src = ''
 				if (src == '') courtesy = ''
 				else courtesy =
-					"<div class='courtesy'><img class='id' src='" + img + "'>" +
+					"<div class='courtesy' style='float:left'><img class='id' src='" + img + "'>" +
 					"<a onclick='event.stopPropagation();window.open(\"" +
 					menu[n].ext + "\")'>" + menu[n].id
 					.match(/([^\/]+)([^\/]*)/)[1] +
