@@ -23,10 +23,9 @@ $(document).ready(function() {
 
 	} else applyVisual(op)
 
-	if (location.search.split('?q=')[1] && !location.href
-		.match('\\?\\+1')) {
+	if (location.search.split('?q=')[1]) {
 		var uri = location.search.split('?q=')[1]
-		if (uri.match(/\?\+1/)) uri = uri.replace(/\?\+1/, '')
+		if (uri.match(/(\?\+1)/)) uri = uri.replace(/(\?\+1)/, '')
 		if ($.isNumeric(location.hash.substr(1))){
 			var post = location.hash.substr(1)
 			uri = uri.replace(/\#\d+/g, '')
@@ -413,6 +412,7 @@ function applyVisual(n) {
 			'border-bottom': '1px solid #333',
 
 		})
+		$('.more').css('color','#333')
 		$('svg circle').css('stroke','url(#gradientOpposite)')
 		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
 		$('.hover').css('background-color', '#333')
@@ -496,7 +496,7 @@ function escapeHtml(n) {
 
 function exitResponse(n) {
 
-	if (contrast == true) window.location.assign(n + '+1')
+	if (contrast == true) window.location.assign(n + '?+1')
 	else window.location.assign(n)
 
 }
@@ -1061,7 +1061,7 @@ function xmlResponse(e, s, n, post) {
 					menu[n].ext + "\")'>" + menu[n].id
 					.match(/([^\/]+)$/g) +
 					"</a></div>"
-				if ($(this).find('title:first').text().length > 60) var more =
+				if ($(this).find('title:first').text().length > 165) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
 				else var more = "<div class='more'></div>"
 				if (src.match(/mp4|youtube/g)) {
@@ -1092,7 +1092,7 @@ function xmlResponse(e, s, n, post) {
 							"</div>" +
 							"<div class='pub' " +
 								"text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-								$(this).find('title:first').text().truncate(60, true) +
+								$(this).find('title:first').text().truncate(165, true) +
 							"</div>" +
 							more +
 							"<div class='ago'>" + dst[0] + "</div>" +
@@ -1121,7 +1121,7 @@ function xmlResponse(e, s, n, post) {
 								"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
 							"</div>" +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-							$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
+							$(this).find('title:first').text().truncate(165, true) + "</div>" + more +
 							"<input class='url' value='" + ref.trim() + "'>" +
 							"<input class='share' value='" + share + "'>" +
 							"<input class='source' value='" + src + "'>" +

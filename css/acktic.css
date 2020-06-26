@@ -459,6 +459,7 @@ svg .border {
 	position: relative;
 }
 .more {
+	background-color: transparent;
 	display: inline-block;
 	padding-bottom: 10px;
 	padding-right: 10px;
