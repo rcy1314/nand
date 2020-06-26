@@ -427,9 +427,9 @@ function applyVisual(n) {
 			'background-color': '#fafafa',
 			'color': '#666'
 		})
-		$('.fa-user-circle, .fa-git, .fa-circle-thin, .fa-th').css({
+		$('#home, .fa-user-circle, .fa-git, .fa-circle-thin, .fa-th').css({
 			'background-color': 'transparent',
-			'color': '#666'
+			'color': '#333'
 		})
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
