@@ -23,6 +23,7 @@
 		top: calc(100% - 45px) !important;
 		height: 35px !important;
 		z-index: 2;
+		left: -12px !important;
 	}
 	#main #air .populate, #main .result .filter, #main .result .populate {
 		margin: 1em;
@@ -232,7 +233,7 @@ body,
 	position: absolute;
 	font-size: 50px;
 	cursor: pointer;
-	height: 56px;
+	height: 51px;
 	left: 10px;
 	top: 5px;
 }
@@ -249,6 +250,7 @@ body,
 .fa-th,
 .fa-git,
 .fa-circle,
+.fa-terminal,
 .fa-circle-thin,
 .fa-user-circle {
 	margin-left: 25px;
