@@ -248,8 +248,9 @@ body,
 .filter,
 .populate {
 	display: inline-flex;
-	font-size: 9px;
+	border-radius: 2px;
 	flex-wrap: wrap;
+	font-size: 9px;
 	padding: 15px;
 	margin: 3em;
 	width: 16em;
