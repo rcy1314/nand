@@ -850,6 +850,8 @@ function xmlResponse(e, s, n, post) {
 	if (reverse) reverseResponse(menu.reverse())
 	if (!$.isNumeric(id)) id = menu.length - +1
 	document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
+	history.replaceState(null, null, '?q=' + menu[n].cat.toLowerCase() +
+		'&' + menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-'))
 	progressResponse(false, Math.floor(Math.random() * (55 - 25 + 1) +
 		25))
 	var complete = setInterval(function() {
@@ -1030,7 +1032,7 @@ function xmlResponse(e, s, n, post) {
 					"<div class='courtesy'><img class='id' src='" + img + "'>" +
 					"<a onclick='event.stopPropagation();window.open(\"" +
 					menu[n].ext + "\")'>" + menu[n].id
-					.match(/([^\/]+)\/?([^\/]*)/)[2] +
+					.match(/([^\/]+)([^\/]*)/)[1] +
 					"</a></div>"
 				if ($(this).find('title:first').text().length > 60) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
