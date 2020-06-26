@@ -1,4 +1,9 @@
 
+@media screen and (max-width: 425px) {
+	#home {
+		display: none;
+	}
+}
 @media screen and (max-width: 768px) {
 	.left,
 	.right,
@@ -197,8 +202,9 @@ body,
 	position: absolute;
 	font-size: 60px;
 	cursor: pointer;
-	left: 10px;
-	top: 0;
+	height: 56px;
+	left: 5px;
+	top: 5px;
 }
 #github {
 	background-color: transparent;
@@ -467,7 +473,7 @@ svg .border {
 	margin: 0;
 }
 #search {
-	height: 60px;
+	height: 56px;
 	width: 100%;
 	margin: 0;
 }
