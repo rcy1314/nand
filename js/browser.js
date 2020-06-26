@@ -527,7 +527,7 @@ function feedResponse(n) {
 
 function filterResponse(passthrough, n, post) {
 	filter = []
-	$('#main .result, #main #air, #main .center, #main .suggestions').hide()
+	$('#main .result, #main #air, #main .center, #main .suggestions').remove()
 	$('#main #visit, #main #placeholder').show()
 	var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
 	$('#main').scrollTop(0)
