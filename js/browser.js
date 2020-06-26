@@ -856,7 +856,7 @@ function xmlResponse(e, s, n, post) {
 		$('#progressBar').width($('#progressBar').width() + 
 			Math.floor(Math.random() * (5 - 0 + 1) + 0))
 	}, 350)
-	$('#main .result, #main .center, #main #air').remove()
+	$('#main .result, #main .center, #main #air, #main .suggestions').remove()
 	request = $.get({
 			url: uri,
 			method: 'GET',
@@ -1052,11 +1052,11 @@ function xmlResponse(e, s, n, post) {
 						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
 							"<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
 							"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
-							"<div class='tag'>" +i
-								"<i class='ago fa fa-heart-o'></i>" +
-								"<i class='ago fa fa-comment-o'></div>" +
-								"<i class='ago fa fa-sticky-note-o' title='Copy Post'></i>" +
-								"<i class='ago fa fa-bookmark-o' title='Copy Source'></i>" +
+							"<div class='tag' style='margin-left:10px;margin-bottom:10px'>" +
+								"<div class='fa fa-heart-o'></div>" +
+								"<div class='fa fa-comment-o'></div>" +
+								"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
+								"<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
 								"<input class='url' value='" + ref.trim() + "'>" +
 								"<input class='share' value='" + share + "'>" +
 								"<input class='source' value='" + src + "'>" +
