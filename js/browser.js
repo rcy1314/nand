@@ -399,7 +399,10 @@ function applyVisual(n) {
 				'border': 'none',
 				'color': '#000'
 		})
-		$('#main, #visit, .description, .channel, .index, #bottom').css('background-color', '#fafafa')
+		$('#main, #visit, .description, .channel, .index, #bottom').css({
+			'background-color': '#fafafa',
+			'color': '#666'
+		})
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
