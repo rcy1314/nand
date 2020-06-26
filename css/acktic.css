@@ -6,6 +6,9 @@
 	input[type=text] {
 		left: 0 !important;
 	}
+	#main {
+		height: calc(100% - 35px);
+	}
 	#option {
 		position: absolute !important;
 		padding: 10px !important;
@@ -166,6 +169,8 @@ input {
 .pub,
 .img,
 a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
 	text-decoration: none;
 	cursor: pointer;
 }
