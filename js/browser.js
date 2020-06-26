@@ -262,11 +262,14 @@ $(document).ready(function() {
 	contrast = true
 	applyVisual('op')
 
-}).on('touch click', '.fa-th', function(
-	e) {
+}).on('touch click', '.fa-th', function(e) {
 
 	var cat = categoryResponse()
 	filterResponse(false, cat, false)
+
+}).on('touch click', '.fa-user-circle', function(e) {
+
+	filterResponse(false, 'random', false)
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
