@@ -216,9 +216,10 @@ body,
 	outline: none;
 }
 #visit {
-	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 105%;
 }
 #placeholder {
 	filter: brightness(50%) saturate(20%) invert(90%);
@@ -412,6 +413,10 @@ svg .border {
 }
 .item {
 	margin-bottom: 2em;
+	width: 100%;
+}
+#header {
+	height: 45px;
 	width: 100%;
 }
 .courtesy {
