@@ -83,6 +83,7 @@ $(document).ready(function() {
 			'caret-color': '#e4e4e4',
         }).val('Search')
 
+	if ($('input[type=text]').val() != 'Search') var keyup = $('input[type=text]').val()
 	if (e.type == 'keyup' && e.keyCode == 13) {
 		$('#arm #search #match').hide()
 		return false
@@ -101,8 +102,7 @@ $(document).ready(function() {
 		} else {
 			$('#arm #search #match .listing .hover').next()
 				.focus().attr('class', 'hover')
-		$('input[type=text]').val($('#arm #search .listing .hover')
-			.attr('search'))
+			$('input[type=text]').val(keyup)
 			$(this).attr('tabIndex', -1).focus()
 			$('#arm #search #match .listing .hover').prev()
 				.attr('class', 'index')
@@ -110,8 +110,7 @@ $(document).ready(function() {
 	} else if (e.keyCode == 38 || e.keyCode == 33) {
 		$('#arm #search #match .listing .hover').prev()
 			.focus().attr('class', 'hover')
-		$('input[type=text]').val($('#arm #search .listing .hover')
-			.attr('search'))
+		$('input[type=text]').val(keyup)
 		$(this).attr('tabIndex', -1).focus()
 		$('#arm #search #match .listing .hover').next().attr(
 			'class', 'index')
@@ -146,7 +145,7 @@ $(document).ready(function() {
 	$('#arm #search #match').hide()
 	if ($('#search .listing .hover').length) {
 		exitResponse('?q=' +
-			$('#arm #search #match .hover').attr('search') +
+			$('input[type=text]').val() +
 				 '&' +
 			$('#arm #search #match .hover').attr(
 				'response'))
@@ -863,8 +862,6 @@ function xmlResponse(e, s, n, post) {
 	if (reverse) reverseResponse(menu.reverse())
 	if (!$.isNumeric(id)) id = menu.length - +1
 	document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
-	history.replaceState(null, null, '?q=' + menu[n].cat.toLowerCase() +
-		'&' + menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-'))
 	progressResponse(false, Math.floor(Math.random() * (55 - 25 + 1) +
 		25))
 	var complete = setInterval(function() {
