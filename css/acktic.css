@@ -31,7 +31,7 @@
 	}
 	#main #air .populate, #main .result .filter, #main .result .populate {
 		margin: 1em;
-		width: 32%;
+		width: 25%;
 	}
 	.suggestions {
 		display: none;
@@ -373,13 +373,13 @@ svg .border {
 	padding-right: 10px;
 }
 .suggestions {
-	text-align: left;
 	display: inline-block;
-	position: relative;
 	height: fit-content;
-	left: 10px;
-	margin-top: 159px;
 	vertical-align: top;
+	position: relative;
+	left: 10px;
+	margin-top: 155px;
+	text-align: left;
 	padding: 15px;
 	width: 140px;
 	font-size: 12px;
@@ -447,13 +447,13 @@ svg .border {
 .fa-sticky-note-o,
 .fa-bookmark,
 .fa-bookmark-o {
-	font-size: 16px !important;
+	font-size: 20px !important;
 }
 .fa-heart-o,
 .fa-comment-o,
 .fa-bookmark-o,
 .fa-sticky-note-o {
-	color: #ccc !important;
+	color: #aaa !important;
 }
 .comment {
 	font-family: Proxima Nova;
