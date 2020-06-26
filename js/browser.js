@@ -607,7 +607,7 @@ function listResponse(n) {
 		setTimeout(function() {
 			$('#main #visit, #main placeholder, #arm #search #match')
 				.show()
-		}, 50)
+		}, 250)
 	}
 }
 
