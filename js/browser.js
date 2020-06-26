@@ -594,7 +594,7 @@ function imageResolution(n) {
 	var minimum = 299
 	var maximum = 799
 	if (!$('#' + n).attr('src').match(/(gif|png|jpg|jpeg)/g)) {
-		$('#' + n).parent().siblings('.tag, .courtesy').css('display','none')
+		$('#' + n).parent().siblings('#header, .tag, .courtesy').css('display','none')
 		return false
 	}
 	if ($('#' + n).attr('src')) {
@@ -606,7 +606,7 @@ function imageResolution(n) {
 					")' style='cursor:default;text-transform:capitalize'>expand</a>"
 				$('#' + n).addClass('expand min').width('100%')
 					.parent().css({
-						'margin': '75px auto',
+						'margin': '0 auto',
 						'width': '45%'
 					})
 			} else if ($('#' + n).get(0).naturalWidth >
@@ -1094,8 +1094,9 @@ function xmlResponse(e, s, n, post) {
 					} else var cat = ''
 					html = 
 						"<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
-						courtesy +
+						"<div id='header'>" + courtesy +
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+						"</div>" +
 						"<div class='image'>" +
 							"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
 						"</div>" +
