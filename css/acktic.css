@@ -295,7 +295,7 @@ body,
 	border-radius: 2px;
 	position: relative;
 	margin: 25px auto;
-	height: 6.5em;
+	height: 8em;
 	width: 100%;
 }
 .feed {
@@ -363,7 +363,8 @@ svg .border {
 	position: relative;
 	text-align: center;
 	flex-shrink: 0;
-	padding: 10px;
+	padding-right: 20px;
+	padding-top: 20px;
 }
 #asset a {
 	display: block;
@@ -391,12 +392,12 @@ svg .border {
 	height: fit-content;
 	vertical-align: top;
 	position: relative;
-	left: 10px;
-	margin-top: 154px;
+	margin-top: 178px;
 	text-align: left;
-	padding: 15px;
-	width: 140px;
 	font-size: 12px;
+	padding: 15px;
+	width: 150px;
+	left: 10px;
 }
 .combine {
 	width: fit-content;
