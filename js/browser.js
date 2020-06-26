@@ -397,13 +397,13 @@ function applyVisual(n) {
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
 		$('#favicon').attr('href', 'images/opposite.png')
 	} else if (op == 0) {
-		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
+		$('.suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
 				'border': 'none'
 			})
-		$('.category, .listing, .filter, .populate')
+		$('input[type=text], .category, .listing, .filter, .populate')
 			.css({
 				'background-color': '#fafafa',
 				'border': '1px solid #ddd',
