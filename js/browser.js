@@ -412,7 +412,7 @@ function applyVisual(n) {
 				'color': '#666',
 				'border': 'none'
 			})
-		$('input[type=text], .category, .listing, .filter, .populate')
+		$('input[type=text], .category, .listing')
 			.css({
 				'background-color': '#fafafa',
 				'border': '1px solid #ddd',
@@ -423,7 +423,7 @@ function applyVisual(n) {
 				'border': 'none',
 				'color': '#000'
 		})
-		$('#main, #visit, .description, .channel, .index, #bottom').css({
+		$('#main, #visit, .filter, .populate, .description, .channel, .index, #bottom').css({
 			'background-color': '#fafafa',
 			'color': '#666'
 		})
