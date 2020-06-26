@@ -596,8 +596,8 @@ function listResponse(n) {
 					"<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
 					"</div>"
 				)
-				if ($('#search .listing .' + n).length > 1) $(
-					'#search .listing .' + n + ':last').remove()
+				if ($('#search .listing .' + i).length > 1) $(
+					'#search .listing .' + i + ':last').remove()
 		}
 	}
 	if (!$('#arm #search #match').is(':visible')) {
