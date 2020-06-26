@@ -23,23 +23,20 @@ $(document).ready(function() {
 	if (location.search.split('?q=')[1] && !location.href
 		.match('\\?\\+1')) {
 		var uri = location.search.split('?q=')[1]
-		if (uri.match(/(\+1)/)) uri = uri.replace(/(\+1)/, '')
+		if (uri.match(/\+1/)) uri = uri.replace(/\+1/, '')
 		if ($.isNumeric(location.hash.substr(1))){
 			var post = location.hash.substr(1)
 			uri = uri.replace(/\#\d+/g, '')
 		} else var post = false
-		var uri = location.search.split('?q=')[1]
 		if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
 		if ($.isNumeric(post) && uri[0] && uri[1]) {
 			filterResponse(false, uri[1], post)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && uri[1]) {
-			filterResponse(false, uri[1].replace(
-				/(\-|\+|\%20)/g, ' '), post)
+			filterResponse(false, uri[1], post)
 			applyVisual()
 		} else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
-			filterResponse(false, uri[0].replace(
-				/(\-|\+|\%20)/g, ' '), post)
+			filterResponse(false, uri[0], post)
 			applyVisual()
 		} 
 	} else {
