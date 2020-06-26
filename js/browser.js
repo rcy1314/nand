@@ -599,7 +599,7 @@ function imageResolution(n) {
 			} else if ($('#' + n).get(0).naturalWidth >
 				minimum) {
 				expand = ''
-				$('#' + n).width('100%').parent().width('100%')
+				$('#' + n).width('100%').parent()
 			} else if ($('#' + n).get(0).naturalWidth <
 				maximum) {
 				expand = ''
