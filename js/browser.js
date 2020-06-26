@@ -356,7 +356,6 @@ function applyVisual(n) {
 		})
 		$('svg circle').css('stroke','url(#gradientOpposite)')
 		$('.right, .left').css('background-color','rgba(0,0,0,.5)')
-		$('#home').attr('src', 'images/apply.png')
 		$('.hover').css('background-color', '#333')
 		$('#progressBar').removeClass('responseInvert').addClass(
 			'responseOpposite')
@@ -381,7 +380,6 @@ function applyVisual(n) {
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
-		$('#home').attr('src', 'images/acktic.png')
 		$('.hover').css('background-color','#e4e4e4')
 		$('#progressBar').removeClass('responseOpposite').addClass(
 			'responseInvert')
