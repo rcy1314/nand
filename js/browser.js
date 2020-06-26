@@ -10,12 +10,14 @@ var reverse = false
 var contrast = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
+var translations = ['Social','News','Media','Sports','Technology','World','Youtube']
 document.title = 'acktic'
 $(document).ready(function() {
 	$('#search input[type=text]').css('display','block')
 
 	if (location.href.match('\\?\\+1')) {
 
+		$('#option .fa-circle-thin').toggleClass('fa-circle-thin fa-circle')
 		applyVisual(!op)
 		contrast = true
 
@@ -282,6 +284,22 @@ $(document).ready(function() {
 		.random() * menu.length)]), false)
 	return false
 
+}).on('touch click', '.fa-terminal', function(e) {
+
+	var array = []
+	for (i = 1; i <= menu.length - 1; i++) {
+		if (menu[i].cat == translations[current])
+			array.push(menu.indexOf(menu[i]))
+	}
+	var n = array[Math.floor(Math.random() * array.length)]
+	if (location.href.match('\\?\\+1') != null && contrast == true) {
+		var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
+			menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
+		history.replaceState(null, null, re + '?+1')
+	}
+	xmlResponse(null, null, n, false)
+	return false
+
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
@@ -384,7 +402,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('#main, #arm, #option, .fa-user-circle, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, #home, #option, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'background-color': '#000',
 				'color': '#fff',
@@ -426,7 +444,7 @@ function applyVisual(n) {
 			'background-color': '#fafafa',
 			'color': '#666'
 		})
-		$('#home, .fa-user-circle, .fa-git, .fa-circle-thin, .fa-th').css({
+		$('#home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin, .fa-th').css({
 			'background-color': 'transparent',
 			'color': '#333'
 		})
@@ -458,7 +476,6 @@ function applyVisual(n) {
 
 function categoryResponse() {
 
-	var translations = ['Social','News','Media','Sports','Technology','World','Youtube']
     var len = translations.length
     var direction = 1
     if (current >= len - 1) current = -1
