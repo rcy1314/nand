@@ -269,7 +269,9 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-user-circle', function(e) {
 
-	filterResponse(false, 'random', false)
+	xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
+		.random() * menu.length)]), false)
+	return false
 
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
@@ -557,11 +559,7 @@ function filterResponse(passthrough, n, post) {
 		}
 	}
 	if (!id) id = filter[filter.length - 1] + +1
-	if (n == 'random') {
-		xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
-			.random() * menu.length)]), post)
-		return false
-	} else if ($.isNumeric(exact)) {
+	if ($.isNumeric(exact)) {
 		xmlResponse(null, null, exact, post)
 		return false
 	} else if ($.isNumeric(id) && filter.length == 1) {
