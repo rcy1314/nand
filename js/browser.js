@@ -4,7 +4,7 @@ var request
 var quit = 15
 var object = []
 var filter = []
-var current = 3
+var current = 0
 var channel = []
 var reverse = false
 var contrast = false
@@ -439,11 +439,12 @@ function bottomResponse(n) {
 
 function categoryResponse() {
 
-	var translations = ['News','Media','Social','Sports','Technology','World','Youtube']
+	var translations = ['Social','News','Media','Sports','Technology','World','Youtube']
     var len = translations.length
     var direction = 1
     if (current >= len - 1) current = -1
     current += direction
+	history.replaceState(null, null, '?q=' + translations[current].toLowerCase())
 	return translations[current]
 
 }
