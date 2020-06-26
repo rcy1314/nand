@@ -1044,7 +1044,7 @@ function xmlResponse(e, s, n, post) {
 							'media\\:statistics, statistics'
 						).attr('views'))
 						var views =
-							"<div class='ago views' style='margin-bottom:25px'>views " +
+							"<div class='ago views' style='margin-bottom:20px'>views " +
 							$(this).find(
 								'media\\:statistics, statistics'
 							).attr('views')
@@ -1056,7 +1056,7 @@ function xmlResponse(e, s, n, post) {
 						"<div id='yt' class='item' ext='" + ref.trim() + "'>" +
 							"<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
 							"<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
-							"<div class='tag' style='margin-left:10px;margin-bottom:10px'>" +
+							"<div class='tag' style='margin-left:10px'>" +
 								"<div class='fa fa-heart-o'></div>" +
 								"<div class='fa fa-comment-o'></div>" +
 								"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
@@ -1087,6 +1087,7 @@ function xmlResponse(e, s, n, post) {
 						"<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
 						"<div class='image'>" +
 							"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+						"</div>" +
 							"<div class='tag'>" +
 								"<div class='ago fa fa-heart-o'></div>" +
 								"<div class='ago fa fa-comment-o'></div>" +
@@ -1096,7 +1097,6 @@ function xmlResponse(e, s, n, post) {
 							"<input class='url' value='" + ref.trim() + "'>" +
 							"<input class='share' value='" + share + "'>" +
 							"<input class='source' value='" + src + "'>" +
-						"</div>" +
 						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
 							$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
 						"<div class='ago'>" + dst[0] + "</div>" +
