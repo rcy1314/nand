@@ -127,7 +127,10 @@
   font-family: Proxima Nova;
   src: url(../fonts/ProximaNova-Regular.woff);
 }
-
+@font-face {
+  font-family: Billabong;
+  src: url(../fonts/Billabong.ttf);
+}
 div,
 input {
 	font-family: Proxima Nova;
@@ -190,10 +193,12 @@ body,
 	margin-top: -100px;
 }
 #home {
+	font-family: Billabong;
 	position: absolute;
-	left: 1px;
-	top: 5px;
-	height: 85%;
+	font-size: 60px;
+	cursor: pointer;
+	left: 10px;
+	top: 0;
 }
 #github {
 	background-color: transparent;
