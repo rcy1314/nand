@@ -14,7 +14,7 @@ document.title = 'acktic'
 $(document).ready(function() {
 	$('#search input[type=text]').css('display','block')
 
-	if (location.href.match('\\+1')) {
+	if (location.href.match('\\?\\+1')) {
 
 		applyVisual(!op)
 		contrast = true
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	if (location.search.split('?q=')[1] && !location.href
 		.match('\\?\\+1')) {
 		var uri = location.search.split('?q=')[1]
-		if (uri.match(/\+1/)) uri = uri.replace(/\+1/, '')
+		if (uri.match(/\?\+1/)) uri = uri.replace(/\?\+1/, '')
 		if ($.isNumeric(location.hash.substr(1))){
 			var post = location.hash.substr(1)
 			uri = uri.replace(/\#\d+/g, '')
@@ -259,7 +259,16 @@ $(document).ready(function() {
 	e) {
 
 	$(this).toggleClass('fa-circle-thin fa-circle')
-	contrast = true
+	var opposite = document.location.href + '?+1'
+	if (!location.href.match('\\?\\+1') && contrast == false) {
+		history.replaceState(null, null, opposite)
+		contrast = true
+	} else {
+		var invert = document.location.href
+		invert = invert.replace(/\?\+1/g, '')
+		history.replaceState(null, null, invert)
+		contrast = false
+	}
 	applyVisual('op')
 
 }).on('touch click', '.fa-th', function(e) {
