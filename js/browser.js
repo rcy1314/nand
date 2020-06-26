@@ -265,6 +265,7 @@ $(document).ready(function() {
 }).on('touch click', '.fa-th', function(e) {
 
 	var cat = categoryResponse()
+	history.replaceState(null, null, '?q=' + cat.toLowerCase())
 	filterResponse(false, cat, false)
 
 }).on('touch click', '.fa-user-circle', function(e) {
@@ -335,6 +336,18 @@ $(document).ready(function() {
 	})
 	e.stopPropagation()
 	$(this).hide()
+
+}).on('touch click', '#bottom', function(e) {
+
+	document.title = 'acktic'
+	$('#main .center, #main .suggestions').remove()
+		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+		history.replaceState(null, null, '?q=' + uri[0])
+		document.title = 'acktic'
+		filterResponse(false, uri[0]
+		.toLowerCase(), false)
+	progressResponse(true, 100)
+	applyVisual()
 
 })
 
@@ -428,20 +441,6 @@ function applyVisual(n) {
 	}
 	$('.fa-heart').css('color','lightcoral')
 	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color','black')
-
-}
-
-function bottomResponse(n) {
-
-	document.title = 'acktic'
-	$('#main .center, #main .suggestions').remove()
-		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-		history.replaceState(null, null, '?q=' + uri[0])
-		document.title = 'acktic'
-		filterResponse(false, uri[0]
-		.toLowerCase(), false)
-	progressResponse(true, 100)
-	applyVisual()
 
 }
 
@@ -1138,9 +1137,7 @@ function xmlResponse(e, s, n, post) {
 			}
 			if (!id) id = menu.indexOf(menu[n])
 			$('#main .center').append(
-				"<div id='bottom' onclick='bottomResponse(" +
-				id +
-				")'><img class='bottom'></div>")
+				"<div id='bottom'><img class='bottom'></div>")
 			$('#main').attr('tabindex', -1)
 			progressResponse(true, 100)
 			clearInterval(complete)
