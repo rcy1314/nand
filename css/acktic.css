@@ -365,11 +365,11 @@ svg .border {
 	top: 1px;
 }
 #asset {
+	padding-left: 15px;
 	position: relative;
 	text-align: center;
-	flex-shrink: 0;
-	padding-right: 20px;
 	padding-top: 20px;
+	flex-shrink: 0;
 }
 #asset a {
 	display: block;
