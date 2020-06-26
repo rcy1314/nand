@@ -29,6 +29,9 @@
 	#main .center {
 		width: 95% !important;
 	}
+	#main .center {
+		padding: 0 !important;
+	}
 	#main #air .populate, #main .result .filter, #main .result .populate {
 		margin: 1em;
 		width: 25%;
