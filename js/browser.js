@@ -621,7 +621,7 @@ function imageResolution(n) {
 			$('#' + n).css('display', 'block')
 		})
 	} else {
-		 $('#' + n).parent().find('.tag').css('display','none')
+		 $('#' + n).parent().siblings('.tag').css('display','none')
 	}
 }		
 
@@ -1043,7 +1043,7 @@ function xmlResponse(e, s, n, post) {
 					"<div class='courtesy' style='float:left'><img class='id' src='" + img + "'>" +
 					"<a onclick='event.stopPropagation();window.open(\"" +
 					menu[n].ext + "\")'>" + menu[n].id
-					.match(/([^\/]+)([^\/]*)/)[1] +
+					.match(/([^\/]+)([^\/]*)/g)[1] +
 					"</a></div>"
 				if ($(this).find('title:first').text().length > 60) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
