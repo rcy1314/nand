@@ -601,16 +601,16 @@ input[type=submit] {
 }
 .views {
 	position: absolute;
-	right: 0;
 	bottom: -80px;;
+	right: 10px;
 	z-index: 2;
 }
 .yt {
 	-webkit-overflow-scrolling: touch;
+	width: calc(100% - 1px);
 	padding-bottom: 54.25%;
 	margin-bottom: 35px;
 	position: relative;
-	width: 100%;
 }
 iframe {
 	position: absolute;
