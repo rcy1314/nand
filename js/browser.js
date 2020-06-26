@@ -159,8 +159,8 @@ $(document).ready(function() {
 				'input[type=text]').val().replace(
 				/(\/|\.)/g, ' ').capitalize()
 			history.replaceState(null, null, '?q=' + $(
-				'input[type=text]').val().replace(
-				/\s/g, '+'))
+				'input[type=text]').val()
+				.toLowerCase().replace(/\s/g, '+'))
 			filterResponse(false, $('input[type=text]')
 				.val().toLowerCase(), false)
 		}

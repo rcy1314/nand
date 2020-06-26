@@ -251,7 +251,7 @@ var menu = [{
 	{
 		id: "AOL",
 		cat: "Media",
-		des: "AOL Latest Headlines in Business, Entertainment, Politics, World News, Tech, Sports, and Video.",
+		des: "AOL Latest Headlines in Business, Entertainment, Politics, and Video.",
 		uri: "https://www.aol.com/rss",
 		ext: "https://aol.com",
 		img: "AOL"
