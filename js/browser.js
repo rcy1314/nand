@@ -4,6 +4,7 @@ var request
 var quit = 15
 var object = []
 var filter = []
+var current = 3
 var channel = []
 var reverse = false
 var contrast = false
@@ -261,6 +262,12 @@ $(document).ready(function() {
 	contrast = true
 	applyVisual('op')
 
+}).on('touch click', '.fa-th', function(
+	e) {
+
+	var cat = categoryResponse()
+	filterResponse(false, cat, false)
+
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
@@ -427,6 +434,17 @@ function bottomResponse(n) {
 		.toLowerCase(), false)
 	progressResponse(true, 100)
 	applyVisual()
+
+}
+
+function categoryResponse() {
+
+	var translations = ['News','Media','Social','Sports','Technology','World','Youtube']
+    var len = translations.length
+    var direction = 1
+    if (current >= len - 1) current = -1
+    current += direction
+	return translations[current]
 
 }
 

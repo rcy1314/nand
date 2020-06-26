@@ -3,8 +3,21 @@
 	#home {
 		display: none;
 	}
-	.fa-git {
-		display: none;
+	#arm {
+		height: 90px !important;
+	}
+	input[type=text] {
+		left: 0 !important;
+	}
+	#main {
+		top: 90px !important;
+	}
+	#option {
+		position: relative !important;
+		padding: 0 !important;
+		margin: 0 auto !important;
+		width: fit-content !important;
+		top: 0 !important;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -218,7 +231,7 @@ body,
 	top: 5px;
 	right: 0;
 }
-.fa-reorder,
+.fa-th,
 .fa-circle,
 .fa-circle-thin {
 	margin-left: 20px;

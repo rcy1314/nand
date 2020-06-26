@@ -151,7 +151,7 @@ var menu = [{
 	{
 		id: "ABC/Sacramento",
 		cat: "News",
-		des: "ABC KXTV California Sacramento Local and National Sports, Weather, and Politics.",
+		des: "ABC KXTV California Sacramento Local News, Weather, and Politics.",
 		uri: "https://feeds.feedblitz.com/kxtv/news&x=1",
 		ext: "https://www.abc10.com",
 		img: "ABC"
@@ -161,7 +161,7 @@ var menu = [{
 	{
 		id: "ABC/Santa Barbara",
 		cat: "News",
-		des: "ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and Sports.",
+		des: "ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and more.",
 		uri: "https://keyt.com/feed",
 		ext: "https://keyt.com",
 		img: "ABC"
@@ -221,7 +221,7 @@ var menu = [{
 	{
 		id: "NBC/Salt Lake City",
 		cat: "News",
-		des: "NBC KSL Utah Salt Lake City local news, weather, traffic, live sports, daytime, primetime, & late night programming.",
+		des: "NBC KSL Utah Salt Lake City local and national news, weather, traffic, daytime, primetime, and late night programming.",
 		uri: "https://ksltv.com/feed",
 		ext: "https://ksltv.com",
 		img: "NBC"
@@ -341,7 +341,7 @@ var menu = [{
 	{
 		id: "Celebrity Insider",
 		cat: "Media",
-		des: "Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, sports, and entertainment.",
+		des: "Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, and entertainment.",
 		uri: "https://celebrityinsider.org/feed",
 		ext: "https://celebrityinsider.org",
 		img: "CelebrityInsider"
@@ -411,7 +411,7 @@ var menu = [{
 	{
 		id: "Demotix",
 		cat: "Media",
-		des: "Demotix Celebrity articles with all the gossip in the celebrity world.",
+		des: "Demotix Celebrity articles with all the gossip in celebrity news.",
 		uri: "https://demotix.com/category/celebrities/feed",
 		ext: "https://demotix.com/category/celebrities",
 		img: "Demotix"
@@ -511,7 +511,7 @@ var menu = [{
 	{
 		id: "Hot Celebrity News",
 		cat: "Media",
-		des: "Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and World News.",
+		des: "Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and National News.",
 		uri: "https://hotcelebrityreviews.com/feed",
 		ext: "https://hotcelebrityreviews.com",
 		img: "HotCelebrityNews"
@@ -531,7 +531,7 @@ var menu = [{
 	{
 		id: "Hollywood Life",
 		cat: "Media",
-		des: "Hollywood Life Top Stories in the Entertainment world.",
+		des: "Hollywood Life Top Stories in the Entertainment Industry.",
 		uri: "https://hollywoodlife.com/feed",
 		ext: "https://hollywoodlife.com",
 		img: "HollywoodLife"
