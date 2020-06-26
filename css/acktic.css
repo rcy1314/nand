@@ -196,6 +196,7 @@ body,
 }
 #arm {
 	position: relative;
+	padding-left: 12px;
 	height: 60px;
 	width: 100%;
 }
@@ -221,6 +222,7 @@ body,
 	filter: brightness(50%) saturate(20%) invert(90%);
 	width: 100px !important;
 	margin-top: -100px;
+	margin-left: 25px;
 }
 #home {
 	font-family: Billabong;
@@ -401,6 +403,7 @@ svg .border {
 }
 .combine {
 	width: fit-content;
+	margin-top: 10px;
 	margin: 5px;
 }
 .item {
@@ -529,8 +532,7 @@ input[type=text] {
 	display: none;
 	outline: none;
 	height: 2.5em;
-	width: 16.5em;
-	left: -5px;
+	width: 16em;
 	top: 1em;
 }
 #match {
