@@ -384,6 +384,8 @@ svg .border {
 .type,
 .item .id {
 	border: 1px solid #ddd !important;
+	height: 24px;
+	width: 24px;
 }
 .center {
 	text-align: left;
@@ -427,8 +429,10 @@ svg .border {
 	font-weight: normal;
 	margin-right: 5px;
 	margin-left: 10px;
+	margin-top: 12px;
 	font-size: 13px;
 	width: fit-content;
+	left: 0;
 }
 .item .pub {
 	margin-bottom: 10px;
@@ -502,7 +506,7 @@ svg .border {
 	padding-right: 10px;
 	font-size: 12px;
 	float: right;
-	top: 30px;
+	top: 15px;
 }
 #ago,
 .ago,
@@ -512,8 +516,7 @@ svg .border {
 	width: fit-content;
 	font-size: 10px;
 	color: #e4e4e4;
-	margin: 10px;
-	margin-top: 5px;
+	margin-left: 10px;
 }
 .addComment {
 	margin: 0;

@@ -593,6 +593,10 @@ function imageResolution(n) {
 	var mobile = 1480
 	var minimum = 299
 	var maximum = 799
+	if (!$('#' + n).attr('src').match(/(gif|png|jpg|jpeg)/g)) {
+		$('#' + n).parent().siblings('.tag, .courtesy').css('display','none')
+		return false
+	}
 	if ($('#' + n).attr('src')) {
 		$('#' + n).one('load', function() {
 			if ($('#' + n).get(0).naturalHeight > mobile) {
@@ -616,12 +620,10 @@ function imageResolution(n) {
 					.naturalWidth + 30).css({
 						'margin-left':'10px',
 						'margin-top': '10px'
-					}).parent().width($('#' + n).width() + 20)
+					})
 			}
 			$('#' + n).css('display', 'block')
 		})
-	} else {
-		 $('#' + n).parent().siblings('.tag').css('display','none')
 	}
 }		
 
@@ -1043,7 +1045,7 @@ function xmlResponse(e, s, n, post) {
 					"<div class='courtesy' style='float:left'><img class='id' src='" + img + "'>" +
 					"<a onclick='event.stopPropagation();window.open(\"" +
 					menu[n].ext + "\")'>" + menu[n].id
-					.match(/([^\/]+)([^\/]*)/g)[1] +
+					.match(/([^\/]+)$/g) +
 					"</a></div>"
 				if ($(this).find('title:first').text().length > 60) var more =
 					"<div class='more' script='event.stopPropagation()'>more</div>"
@@ -1103,11 +1105,11 @@ function xmlResponse(e, s, n, post) {
 								"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
 								"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
 							"</div>" +
+						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
+							$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
 							"<input class='url' value='" + ref.trim() + "'>" +
 							"<input class='share' value='" + share + "'>" +
 							"<input class='source' value='" + src + "'>" +
-						"<div class='pub' text='" + escapeHtml($(this).find('title:first').text()) + "'>" +
-							$(this).find('title:first').text().truncate(60, true) + "</div>" + more +
 						"<div class='ago'>" + dst[0] + "</div>" +
 						cat +
 						"<form class='addComment' action'#'>" +
