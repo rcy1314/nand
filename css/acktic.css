@@ -3,6 +3,9 @@
 	#home {
 		display: none;
 	}
+	.fa-git {
+		display: none;
+	}
 }
 @media screen and (max-width: 768px) {
 	.left,
@@ -143,7 +146,7 @@ input {
 .index,
 .filter,
 .populate,
-#github,
+#option,
 .index,
 .hover,
 .pub,
@@ -206,13 +209,19 @@ body,
 	left: 10px;
 	top: 5px;
 }
-#github {
+#option {
 	background-color: transparent;
 	position: absolute;
-	color: #e4e4e4;
+	margin-right: 10px;
+	font-size: 30px;
 	padding: 10px;
-	top: 10px;
+	top: 5px;
 	right: 0;
+}
+.fa-reorder,
+.fa-circle,
+.fa-circle-thin {
+	margin-left: 20px;
 }
 .result, #air {
 	justify-content: center;

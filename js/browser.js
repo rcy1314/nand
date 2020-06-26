@@ -254,6 +254,13 @@ $(document).ready(function() {
 		e.preventDefault()
 		applyVisual()
 
+}).on('touch click', '.fa-circle-thin, .fa-circle', function(
+	e) {
+
+	$(this).toggleClass('fa-circle-thin fa-circle')
+	contrast = true
+	applyVisual('op')
+
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
 	e) {
 
@@ -344,11 +351,12 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('#main, #arm, input[type=text], .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, input[type=text], #visit, .result, .filter, populate, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'background-color': '#000',
 				'color': '#fff',
-				'border': 'none'
+				'border': 'none',
+				'box-shadow': 'none'
 			})
 		$('#arm, .index, .hover, .description, .comment').css({
 			'border-bottom': '1px solid #333',
@@ -364,7 +372,7 @@ function applyVisual(n) {
 		$('.indicator, .bottom').attr('src', 'images/opposite.png')
 		$('#favicon').attr('href', 'images/opposite.png')
 	} else if (op == 0) {
-		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .feed, .title, .item, .item .pub, .type, .ago, a')
+		$('input[type=text], .suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .description, .feed, .title, .item, .item .pub, .type, .ago, a')
 			.css({
 				'background-color': '#fff',
 				'color': '#666',
@@ -376,6 +384,11 @@ function applyVisual(n) {
 				'border': '1px solid #ddd',
 				'color': '#666'
 			})
+		$('#arm').css({
+				'background-color': '#fff',
+				'border': 'none',
+				'color': '#000'
+		})
 		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
