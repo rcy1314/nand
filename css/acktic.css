@@ -3,24 +3,23 @@
 	#home {
 		display: none;
 	}
-	#arm {
-		height: 90px !important;
-	}
 	input[type=text] {
 		left: 0 !important;
 	}
-	#main {
-		top: 90px !important;
-	}
 	#option {
-		position: relative !important;
-		padding: 0 !important;
-		margin: 0 auto !important;
-		width: fit-content !important;
-		top: 0 !important;
+		position: absolute !important;
+		padding: 10px !important;
+		width: calc(100% - 20px) !important;
+		top: calc(100% - 45px) !important;
+		height: 35px !important;
+		z-index: 2;
+	}
+	#main #air .populate, #main .result .filter, #main .result .populate {
+		margin: 1em;
+		width: 32%;
 	}
 }
-@media screen and (max-width: 768px) {
+@media screen and (width: 768px) {
 	.left,
 	.right,
 	::-webkit-scrollbar {
@@ -28,8 +27,6 @@
 	}
 	#main .center {
 		width: 95% !important;
-	}
-	#main .center {
 		padding: 0 !important;
 	}
 	#main #air .populate, #main .result .filter, #main .result .populate {
@@ -226,18 +223,21 @@ body,
 	top: 5px;
 }
 #option {
+	justify-content: space-between;
 	background-color: transparent;
 	position: absolute;
-	margin-right: 10px;
-	font-size: 30px;
+	font-size: 24px;
 	padding: 10px;
-	top: 5px;
+	display: flex;
+	top: 10px;
 	right: 0;
 }
 .fa-th,
+.fa-git,
 .fa-circle,
+.fa-terminal,
 .fa-circle-thin {
-	margin-left: 20px;
+	margin-left: 25px;
 }
 .result, #air {
 	justify-content: center;

@@ -358,7 +358,7 @@ function applyVisual(n) {
 		op = op != true
 	} else if (n == 1 || n == 0) op = n
 	if (op == 1) {
-		$('#main, #arm, input[type=text], #visit, .result, .filter, populate, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+		$('#main, #arm, #option, input[type=text], #visit, .result, .filter, populate, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
 			.css({
 				'background-color': '#000',
 				'color': '#fff',
@@ -385,18 +385,18 @@ function applyVisual(n) {
 				'color': '#666',
 				'border': 'none'
 			})
-		$('.category, .listing, .filter, .populate, .description')
+		$('.category, .listing, .filter, .populate')
 			.css({
 				'background-color': '#fafafa',
 				'border': '1px solid #ddd',
 				'color': '#666'
 			})
-		$('#arm').css({
+		$('#arm, #option').css({
 				'background-color': '#fff',
 				'border': 'none',
 				'color': '#000'
 		})
-		$('#main, #visit, .channel, .index, #bottom').css('background-color', '#fafafa')
+		$('#main, #visit, .description, .channel, .index, #bottom').css('background-color', '#fafafa')
 		$('svg circle').css('stroke','url(#gradientInvert)')
 		$('.right, .left').css('background-color','rgba(255,255,255,.5)')
 		$('input[type=text], .feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
