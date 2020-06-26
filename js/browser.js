@@ -705,7 +705,6 @@ function progressResponse(complete, n) {
 
 	$('#progressBar').addClass('response').width(n + '%')
 	if (complete == true) {
-		$('#main #visit, #main #placeholder').hide()
 		$('#progressBar').on(
 			'transitionend webkitTransitionEnd oTransitionEnd',
 			function(e) {

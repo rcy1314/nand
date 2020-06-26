@@ -551,7 +551,7 @@ var menu = [{
 	{
 		id: "Inquisitr",
 		cat: "Media",
-		des: "Inquisitr offers a constantly updated mix of the latest stories to hit the web, covering news, entertainment, technology, news, sport, health and everything.",
+		des: "Inquisitr offers a constantly updated mix of the latest stories to hit the web.",
 		uri: "https://www.inquisitr.com/feed",
 		ext: "https://www.inquisitr.com",
 		img: "Inquisitr"

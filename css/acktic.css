@@ -200,10 +200,10 @@ body,
 #home {
 	font-family: Billabong;
 	position: absolute;
-	font-size: 60px;
+	font-size: 50px;
 	cursor: pointer;
 	height: 56px;
-	left: 5px;
+	left: 10px;
 	top: 5px;
 }
 #github {
