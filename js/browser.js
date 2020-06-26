@@ -388,7 +388,7 @@ function applyVisual(n) {
 		$('.description, .index').css({
 			'border-bottom': '1px solid #ccc'
 		})
-		$('#home, .listing, .item, .feed, .suggestions').css('box-shadow',
+		$('.listing, .item, .feed, .suggestions').css('box-shadow',
 			'1px 1px 6px #eee')
 		$('#main, .listing').addClass('invert').removeClass(
 			'opposite')
