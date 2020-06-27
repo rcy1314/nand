@@ -5,7 +5,6 @@ var quit = 15
 var object = []
 var filter = []
 var current = 0
-var channel = []
 var reverse = false
 var contrast = false
 var category = 'Social'
@@ -484,7 +483,7 @@ function applyVisual(n) {
             '1px 1px 6px #eee')
         $('#main, .listing').addClass('invert').removeClass(
             'opposite')
-        $('#placeholder, .bottom').attr('src', 'images/transparent.png').css({
+        $('.bottom').attr('src', 'images/transparent.png').css({
             'filter': 'brightness(50%) saturate(20%) invert(90%)'
         })
         $('#favicon').attr('href', 'images/invert.png')
