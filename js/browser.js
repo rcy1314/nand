@@ -196,7 +196,6 @@ $(document).ready(function() {
 }).on('touch click', '#main .center .quick .right', function(e) {
 
 		var leftPos = $('#main .center .quick .feed').scrollLeft()
-		console.log(leftPos + ' ' + $('#main .center .quick .feed').width())
 		$('#main .center .quick .feed').animate({
 			scrollLeft: leftPos + 360
 		}, 'slow')
@@ -259,13 +258,22 @@ $(document).ready(function() {
 	e) {
 
 	$(this).toggleClass('fa-circle-thin fa-circle')
-	var opposite = document.location.href + '?+1'
-	if (!location.href.match('\\?\\+1') && contrast == false) {
+	if (!location.href.match('\\?q=') && 
+			!location.href.match('\\?\\+1') && 
+			contrast == false) {
+		var init = document.location.href + '?+1'
+		history.replaceState(null, null, init)
+	} else if (location.href.match('\\?q=') && 
+			!location.href.match('\\+\\1') && 
+			contrast == false) {
+		var opposite = document.location.href + '+1'
 		history.replaceState(null, null, opposite)
 		contrast = true
-	} else {
+	} else if (location.href.match('\\?\\+1') ||
+		location.href.match('\\+1') || 
+			contrast == false) { 
 		var invert = document.location.href
-		invert = invert.replace(/\?\+1/g, '')
+		invert = invert.replace(/(\?\+1|\+1)/g, '')
 		history.replaceState(null, null, invert)
 		contrast = false
 	}
@@ -293,8 +301,9 @@ $(document).ready(function() {
 	var n = array[Math.floor(Math.random() * array.length)]
 	var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
 		menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
-	if (location.href.match('\\?\\+1') != null && contrast == true) {
-		history.replaceState(null, null, re + '?+1')
+	if (location.href.match('\\?\\+1') != null || 
+		location.href.match('\\+1') != null && contrast == true) {
+		history.replaceState(null, null, re + '+1')
 	} else history.replaceState(null, null, re)
 	xmlResponse(null, null, n, false)
 	return false
