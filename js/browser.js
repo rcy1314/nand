@@ -15,7 +15,7 @@ document.title = 'acktic'
 $(document).ready(function() {
 	$('#search input[type=text]').css('display','block')
 
-	if (location.href.match('\\?\\+1')) {
+	if (location.href.match('\\+1')) {
 
 		$('#option .fa-circle-thin').toggleClass('fa-circle-thin fa-circle')
 		applyVisual(!op)
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 	if (location.search.split('?q=')[1]) {
 		var uri = location.search.split('?q=')[1]
-		if (uri.match(/(\?\+1)/)) uri = uri.replace(/(\?\+1)/, '')
+		if (uri.match(/(\+1)/)) uri = uri.replace(/(\?\+1|\?\+1)/, '')
 		if ($.isNumeric(location.hash.substr(1))){
 			var post = location.hash.substr(1)
 			uri = uri.replace(/\#\d+/g, '')
@@ -263,6 +263,7 @@ $(document).ready(function() {
 			contrast == false) {
 		var init = document.location.href + '?+1'
 		history.replaceState(null, null, init)
+		contrast = true
 	} else if (location.href.match('\\?q=') && 
 			!location.href.match('\\+\\1') && 
 			contrast == false) {
@@ -301,8 +302,7 @@ $(document).ready(function() {
 	var n = array[Math.floor(Math.random() * array.length)]
 	var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
 		menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
-	if (location.href.match('\\?\\+1') != null || 
-		location.href.match('\\+1') != null && contrast == true) {
+	if (contrast == true) {
 		history.replaceState(null, null, re + '+1')
 	} else history.replaceState(null, null, re)
 	xmlResponse(null, null, n, false)
