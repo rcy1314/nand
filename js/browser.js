@@ -26,13 +26,17 @@ $(document).ready(function() {
     if (location.search.split('?q=')[1]) {
         var uri = location.search.split('?q=')[1]
         if (uri.match(/\+1/)) uri = uri.replace(/\?\+1|\+1/, '')
-        if ($.isNumeric(location.hash.substr(1))) {
-            var post = location.hash.substr(1)
-            uri = uri.replace(/\#\d+/g, '')
-        } else var post = false
         if (uri.match(/[^&]+/g)) uri = (uri.match(/[^&]+/g))
+		if (location.hash.substr(1).match(/\+1/g))
+			var post = location.hash.substr(1).replace(/\+1/g, '')
+		else if ($.isNumeric(location.hash.substr(1)))
+			var post = location.hash.substr(1)
+		else var post = false
         if ($.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(false, uri[1], post)
+            applyVisual()
+        } else if ($.isNumeric(post) && uri[0] && !uri[1]) {
+            filterResponse(false, uri[0], post)
             applyVisual()
         } else if (!$.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(false, uri[1], post)
@@ -352,8 +356,10 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
 
-	if (contrast == true) $(this).parent().parent().find('.share').val(
-		$(this).parent().parent().find('.share').val() + '+1')
+	if (contrast == true) 
+		if (!$(this).parent().parent().find('.share').val().match(/\+1/g))
+			$(this).parent().parent().find('.share').val(
+			$(this).parent().parent().find('.share').val() + '+1')
     $(this).parent().parent().find('.share').select()
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
