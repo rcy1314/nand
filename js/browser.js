@@ -549,6 +549,7 @@ function feedResponse(n) {
     if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
         .length - 1)])
     else if (n >= menu.length - 13) n = 1
+    if (reverse == true) reverseArray(menu.reverse())
     for (var i = n; i <= n + 13; i++) {
         if (!menu[i].img) var img = 'images/apply' + '.png'
         else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
@@ -901,6 +902,7 @@ function writeResponse(n) {
 }
 
 function xmlResponse(e, s, n, post) {
+	id = n
     obj = []
     var local
     var pub = []
