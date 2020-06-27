@@ -352,6 +352,8 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
 
+	if (contrast == true) $(this).parent().parent().find('.share').val(
+		$(this).parent().parent().find('.share').val() + '+1')
     $(this).parent().parent().find('.share').select()
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
@@ -433,6 +435,7 @@ function applyVisual(n) {
             'border-bottom': '1px solid #333',
 
         })
+    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
@@ -471,6 +474,7 @@ function applyVisual(n) {
                 'background-color': 'transparent',
                 'color': '#333'
             })
+    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
@@ -493,7 +497,6 @@ function applyVisual(n) {
         })
     }
     $('.fa-heart').css('color', 'lightcoral')
-    $('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', 'black')
 
 }
 
