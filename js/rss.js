@@ -1558,7 +1558,7 @@ var menu = [{
 
 	,
 	{
-		id: "BBC",
+		id: "BBC Sports",
 		cat: "Sports",
 		des: "BBC Sports News from around the world.",
 		uri: "http://feeds.bbci.co.uk/sport/rss.xml",

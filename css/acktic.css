@@ -16,7 +16,6 @@
     }
 
     #main .center {
-        margin-left: 1%;
         width: 97.5%;
     }
 
@@ -68,13 +67,15 @@
 
 @media screen and (min-width: 1024px) {
     #main .center {
-        width: 65% !important;
+        width: 55% !important;
+		margin-left: 150px !important;
     }
 }
 
 @media screen and (min-width: 2560px) {
     #main .center {
         width: 35% !important;
+		margin-left: 150px !important;
     }
 }
 
@@ -476,10 +477,10 @@ svg .border {
 }
 
 .center {
-    text-align: left;
     display: inline-block;
-    position: relative;
     padding-right: 10px;
+    position: relative;
+    text-align: left;
 }
 
 .suggestions {
@@ -497,8 +498,11 @@ svg .border {
 
 .combine {
     width: fit-content;
-    margin-top: 10px;
     margin: 5px;
+}
+
+.combine div {
+    margin-top: 10px;
 }
 
 .item {
@@ -525,11 +529,11 @@ svg .border {
 .item .add {
     justify-content: left;
     font-weight: normal;
+    width: fit-content;
     margin-right: 5px;
     margin-left: 10px;
     margin-top: 12px;
     font-size: 13px;
-    width: fit-content;
     left: 0;
 }
 

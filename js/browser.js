@@ -1099,9 +1099,9 @@ function xmlResponse(e, s, n, post) {
                     menu[n].ext + "\")'>" + menu[n].id
                     .match(/([^\/]+)$/g) +
                     "</a></div>"
-                if ($(this).find('title:first').text().length > 165)
+                if ($(this).find('title:first').text().length > 65)
                     var more =
-                        "<div class='more' script='event.stopPropagation()'>more</div>"
+                        "<div class='more'>more</div>"
                 else var more = "<div class='more'></div>"
                 if (src.match(/mp4|youtube/g)) {
                     if ($(this).find(
@@ -1138,7 +1138,7 @@ function xmlResponse(e, s, n, post) {
                         "text='" + escapeHtml($(this).find(
                             'title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
-                            165, true) +
+                            65, true) +
                         "</div>" +
                         more +
                         "<div class='ago'>" + dst[0] + "</div>" +
@@ -1175,7 +1175,7 @@ function xmlResponse(e, s, n, post) {
                             this).find('title:first').text()) +
                         "'>" +
                         $(this).find('title:first').text().truncate(
-                            165, true) + "</div>" + more +
+                            65, true) + "</div>" + more +
                         "<input class='url' value='" + ref.trim() +
                         "'>" +
                         "<input class='share' value='" + share +
