@@ -14,7 +14,7 @@ var menu = [{
 		des: "ABC KFSN Local Fresno and National News.",
 		uri: "https://abc30.com/feed",
 		ext: "https://abc30.com",
-		img: "ABC"
+		img: "KFSNTV30"
 	}
 
 	,
@@ -24,7 +24,7 @@ var menu = [{
 		des: "NBC KSEE YourCentralValley in Fresno, California.",
 		uri: "https://yourcentralvalley.com/feed",
 		ext: "https://www.yourcentralvalley.com",
-		img: "NBC"
+		img: "KSEE24"
 	}
 
 	,
@@ -34,7 +34,7 @@ var menu = [{
 		des: "CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",
 		uri: "https://boston.cbslocal.com/feed",
 		ext: "https://boston.cbslocal.com/feed",
-		img: "CBS"
+		img: "WBZTV4"
 	}
 
 	,
@@ -44,7 +44,7 @@ var menu = [{
 		des: "ABC WCVB Boston News, Weather, and Traffic online, anytime.",
 		uri: "https://www.wcvb.com/topstories-rss",
 		ext: "https://wcvb.com",
-		img: "ABC"
+		img: "WCVB5"
 	}
 
 	,
@@ -54,7 +54,7 @@ var menu = [{
 		des: "ABC WPLG Florida Miami Breaking News and Headlines.",
 		uri: "https://www.local10.com/arcio/rss/category/news/?size=10",
 		ext: "https://local10.com",
-		img: "ABC"
+		img: "WPLG10"
 	}
 
 	,
@@ -64,7 +64,7 @@ var menu = [{
 		des: "CBS WFOR Florida Miami a Full Service Television Station serving Miami.",
 		uri: "https://miami.cbslocal.com/feed",
 		ext: "https://miami.cbslocal.com",
-		img: "CBS"
+		img: "WFOR4"
 	}
 
 	,
@@ -74,7 +74,7 @@ var menu = [{
 		des: "ABC Los Angeles covers News, Weather, Traffic and Live Video.",
 		uri: "https://abc7.com/feed",
 		ext: "https://abc7.com",
-		img: "ABC"
+		img: "KABC7"
 	}
 
 	,
@@ -84,7 +84,7 @@ var menu = [{
 		des: "CBS KCBS Los Angeles News, Weather, Traffic and the Best of LA and OC.",
 		uri: "https://losangeles.cbslocal.com/feed",
 		ext: "https://losangeles.cbslocal.com",
-		img: "CBS"
+		img: "KCAL9"
 	}
 
 	,
@@ -94,7 +94,7 @@ var menu = [{
 		des: "ABC KGO San Francisco Local News and Headlines.",
 		uri: "https://abc7news.com/feed",
 		ext: "https://abc7news.com",
-		img: "ABC"
+		img: "KGO7"
 	}
 
 	,
@@ -104,7 +104,7 @@ var menu = [{
 		des: "CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com",
-		img: "CBS"
+		img: "KPIX5"
 	}
 
 	,
@@ -114,7 +114,7 @@ var menu = [{
 		des: "CBS KION California Monterey serving the Monterey Bay area.",
 		uri: "https://kion546.com/feed",
 		ext: "https://kion546.com",
-		img: "CBS"
+		img: "KION546"
 	}
 
 	,
@@ -124,7 +124,7 @@ var menu = [{
 		des: "NBC KGET California Bakersfield local news & weather stories, making a better place to live.",
 		uri: "https://www.kget.com/feed",
 		ext: "https://www.kget.com",
-		img: "NBC"
+		img: "KGET17"
 	}
 
 	,
@@ -134,7 +134,7 @@ var menu = [{
 		des: "CBS KOVR California Sacramento also serving Stockton and Modesto.",
 		uri: "https://sacramento.cbslocal.com/feed",
 		ext: "https://sacramento.cbslocal.com",
-		img: "CBS"
+		img: "CBS13"
 	}
 
 	,
@@ -144,7 +144,7 @@ var menu = [{
 		des: "NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",
 		uri: "https://www.kcra.com/topstories-rss",
 		ext: "https://www.kcra.com",
-		img: "NBC"
+		img: "KCRA3"
 	}
 
 	,
@@ -154,7 +154,7 @@ var menu = [{
 		des: "ABC KXTV California Sacramento Local News, Weather, and Politics.",
 		uri: "https://feeds.feedblitz.com/kxtv/news&x=1",
 		ext: "https://www.abc10.com",
-		img: "ABC"
+		img: "KXTV10"
 	}
 
 	,
@@ -164,27 +164,27 @@ var menu = [{
 		des: "ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and more.",
 		uri: "https://keyt.com/feed",
 		ext: "https://keyt.com",
-		img: "ABC"
+		img: "KEYT3"
 	}
 
 	,
 	{
 		id: "ABC/New York",
 		cat: "News",
-		des: "ABC New York covering New York City, New Jersey, and Long Island.",
+		des: "ABC WABC New York covering New York City, New Jersey, and Long Island.",
 		uri: "https://abc7ny.com/feed",
 		ext: "https://abc7ny.com",
-		img: "ABC"
+		img: "WABC7"
 	}
 
 	,
 	{
 		id: "CBS/New York",
 		cat: "News",
-		des: "CBS WCBS New York City Digital Streaming News Service, It's always on.",
+		des: "CBS WLNY New York City Digital Streaming News Service, It's always on.",
 		uri: "https://newyork.cbslocal.com/feed",
 		ext: "https://newyork.cbslocal.com",
-		img: "CBS"
+		img: "WLNY1055"
 	}
 
 	,
@@ -194,7 +194,7 @@ var menu = [{
 		des: "CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",
 		uri: "https://www.8newsnow.com/feed",
 		ext: "https://www.8newsnow.com",
-		img: "CBS"
+		img: "KLAS8"
 	}
 
 	,
@@ -204,7 +204,7 @@ var menu = [{
 		des: "ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",
 		uri: "http://rssfeeds.kvue.com/kvue/home&x=1",
 		ext: "http://www.kvue.com",
-		img: "ABC"
+		img: "KVUE9"
 	}
 
 	,
@@ -214,7 +214,7 @@ var menu = [{
 		des: "NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",
 		uri: "https://www.kxan.com/feed",
 		ext: "https://www.kxan.com",
-		img: "NBC"
+		img: "KXAN"
 	}
 
 	,
@@ -224,7 +224,7 @@ var menu = [{
 		des: "NBC KSL Utah Salt Lake City local and national news, weather, traffic, daytime, primetime, and late night programming.",
 		uri: "https://ksltv.com/feed",
 		ext: "https://ksltv.com",
-		img: "NBC"
+		img: "KSLTV5"
 	}
 
 	,
@@ -234,7 +234,7 @@ var menu = [{
 		des: "ABC KTVX Utah Salt Lake City the oldest television station located in the Mountain Time Zone.",
 		uri: "https://www.abc4.com/feed",
 		ext: "https://www.abc4.com",
-		img: "ABC"
+		img: "KTVXTV4"
 	}
 
 	,
