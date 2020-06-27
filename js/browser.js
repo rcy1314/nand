@@ -389,6 +389,7 @@ $(document).ready(function() {
     document.title = 'acktic'
     filterResponse(false, uri[0]
         .toLowerCase(), false)
+	precedeResponse(id)
     progressResponse(true, 100)
     applyVisual()
 
