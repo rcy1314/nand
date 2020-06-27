@@ -265,13 +265,14 @@ body,
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
     -webkit-user-select: none;
-    height: calc(100% - 60px);
+    height: calc(100% - 56px);
     -ms-user-select: none;
     user-select: none;
-    overflow: auto;
     text-align: center;
     overflow-x: hidden;
+    overflow: auto;
     outline: none;
+	top: 56px;
 }
 
 #visit {
