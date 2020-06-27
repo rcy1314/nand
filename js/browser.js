@@ -58,7 +58,7 @@ $(document).ready(function() {
 }).on('touch click', '#visit, #placeholder', function(e) {
 
 	$('#main #visit, #main #placeholder').hide()
-	history.replaceState(null, null, '?q=' + category.toLowerCase())
+	stateResponse('?q=' + category.toLowerCase())
 	filterResponse(false, category, false)
 	precedeResponse()
 	progressResponse(true, 100)
@@ -159,7 +159,7 @@ $(document).ready(function() {
 			document.title = $(
 				'input[type=text]').val().replace(
 				/(\/|\.)/g, ' ').capitalize()
-			history.replaceState(null, null, '?q=' + $(
+			stateResponse('?q=' + $(
 				'input[type=text]').val()
 				.toLowerCase().replace(/\s/g, '+'))
 			filterResponse(false, $('input[type=text]')
@@ -262,20 +262,20 @@ $(document).ready(function() {
 			!location.href.match('\\?\\+1') && 
 			contrast == false) {
 		var init = document.location.href + '?+1'
-		history.replaceState(null, null, init)
+		stateResponse(init)
 		contrast = true
 	} else if (location.href.match('\\?q=') && 
 			!location.href.match('\\+\\1') && 
 			contrast == false) {
 		var opposite = document.location.href + '+1'
-		history.replaceState(null, null, opposite)
+		stateResponse(opposite)
 		contrast = true
 	} else if (location.href.match('\\?\\+1') ||
 		location.href.match('\\+1') || 
 			contrast == false) { 
 		var invert = document.location.href
 		invert = invert.replace(/(\?\+1|\+1)/g, '')
-		history.replaceState(null, null, invert)
+		stateResponse(invert)
 		contrast = false
 	}
 	applyVisual('op')
@@ -283,7 +283,7 @@ $(document).ready(function() {
 }).on('touch click', '.fa-th', function(e) {
 
 	var cat = categoryResponse()
-	history.replaceState(null, null, '?q=' + cat.toLowerCase())
+	stateResponse('?q=' + cat.toLowerCase())
 	filterResponse(false, cat, false)
 
 }).on('touch click', '.fa-user-circle', function(e) {
@@ -304,9 +304,7 @@ $(document).ready(function() {
 	var n = array[Math.floor(Math.random() * array.length)]
 	var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
 		menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
-	if (contrast == true) {
-		history.replaceState(null, null, re + '+1')
-	} else history.replaceState(null, null, re)
+	stateResponse(re)
 	xmlResponse(null, null, n, false)
 	return false
 
@@ -378,7 +376,7 @@ $(document).ready(function() {
 	document.title = 'acktic'
 	$('#main .center, #main .suggestions').remove()
 		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-		history.replaceState(null, null, '?q=' + uri[0])
+		stateResponse('?q=' + uri[0])
 		document.title = 'acktic'
 		filterResponse(false, uri[0]
 		.toLowerCase(), false)
@@ -491,7 +489,7 @@ function categoryResponse() {
     var direction = 1
     if (current >= len - 1) current = -1
     current += direction
-	history.replaceState(null, null, '?q=' + translations[current].toLowerCase())
+	stateResponse('?q=' + translations[current].toLowerCase())
 	return translations[current]
 
 }
@@ -507,7 +505,7 @@ function escapeHtml(n) {
 
 function exitResponse(n) {
 
-	if (contrast == true) window.location.assign(n + '?+1')
+	if (contrast == true) window.location.assign(n + '+1')
 	else window.location.assign(n)
 
 }
@@ -815,6 +813,13 @@ function reverseResponse(Object) {
 	reverse = !reverse
 
 	return newObject
+
+}
+
+function stateResponse(n) {
+
+	if (contrast == true) history.replaceState(null, null, n + '+1')
+	else history.replaceState(null, null, n)
 
 }
 
