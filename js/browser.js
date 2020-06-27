@@ -900,6 +900,10 @@ function xmlResponse(e, s, n, post) {
 	var complete = setInterval(function() {
 		$('#progressBar').width($('#progressBar').width() + 
 			Math.floor(Math.random() * (5 - 0 + 1) + 0))
+			if ($('#progressBar').width() >= 100) {
+				cleartInterval(complete)
+				$('#progressBar').width(0)
+			}
 	}, 350)
 	$('#main .result, #main .center, #main #air, #main .suggestions').remove()
 	request = $.get({
