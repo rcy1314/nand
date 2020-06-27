@@ -274,8 +274,8 @@ $(document).ready(function() {
 		location.href.match('\\+1') || 
 			contrast == false) { 
 		var invert = document.location.href
-		invert = invert.replace(/(\?\+1|\+1)/g, '')
-		stateResponse(invert)
+		invert = invert.replace(/\?\+1|\+1/g, '')
+		history.replaceState(null, null, invert)
 		contrast = false
 	}
 	applyVisual('op')
