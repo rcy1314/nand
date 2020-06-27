@@ -2386,14 +2386,22 @@ var menu = [{
 		img: "Slate"
 	}
 
-	,
-	{
+	, {
 		id: "YCombinator",
 		cat: "Technology",
 		des: "Hacker News is a reader ran headline submission news purveyor.",
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com",
 		img: "YCombinator"
+	}
+
+	, {
+		id: "Smashing Magazine",
+		cat: "Technology",
+		des: "Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web design and web development.",
+		uri: "https://www.smashingmagazine.com/feed",
+		ext: "https://www.smashingmagazine.com",
+		img: "SmashingMagazine"
 	}
 
 	,
