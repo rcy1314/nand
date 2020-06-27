@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     if (location.search.split('?q=')[1]) {
         var uri = location.search.split('?q=')[1]
-        if (uri.match(/\+1/)) uri = uri.replace(/\?\+1|\?\+1/, '')
+        if (uri.match(/\+1/)) uri = uri.replace(/\?\+1|\+1/, '')
         if ($.isNumeric(location.hash.substr(1))) {
             var post = location.hash.substr(1)
             uri = uri.replace(/\#\d+/g, '')
