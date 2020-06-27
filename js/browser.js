@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     if (location.search.split('?q=')[1]) {
         var uri = location.search.split('?q=')[1]
-        if (uri.match(/(\+1)/)) uri = uri.replace(/(\?\+1|\?\+1)/, '')
+        if (uri.match(/\+1/)) uri = uri.replace(/\?\+1|\?\+1/, '')
         if ($.isNumeric(location.hash.substr(1))) {
             var post = location.hash.substr(1)
             uri = uri.replace(/\#\d+/g, '')
@@ -918,10 +918,6 @@ function xmlResponse(e, s, n, post) {
     var complete = setInterval(function() {
         $('#progressBar').width($('#progressBar').width() +
             Math.floor(Math.random() * (5 - 0 + 1) + 0))
-        if ($('#progressBar').width() >= 100) {
-            cleartInterval(complete)
-            $('#progressBar').width(0)
-        }
     }, 350)
     $('#main .result, #main .center, #main #air, #main .suggestions').remove()
     request = $.get({
