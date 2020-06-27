@@ -577,8 +577,8 @@ svg .border {
 
 .fa-heart,
 .fa-heart-o,
-.fa-comment,
-.fa-comment-o,
+.fa-comments,
+.fa-comments-o,
 .fa-sticky-note,
 .fa-sticky-note-o,
 .fa-bookmark,
@@ -588,7 +588,7 @@ svg .border {
 }
 
 .fa-heart-o,
-.fa-comment-o,
+.fa-comments-o,
 .fa-bookmark-o,
 .fa-sticky-note-o {
     color: #aaa !important;

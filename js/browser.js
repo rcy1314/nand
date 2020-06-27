@@ -332,9 +332,9 @@ $(document).ready(function() {
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.fa-comment-o, .fa-comment', function(e) {
+}).on('touch click', '.fa-comments-o, .fa-comments', function(e) {
 
-    $(this).toggleClass('fa-comment-o fa-comment')
+    $(this).toggleClass('fa-comments-o fa-comments')
     e.stopPropagation()
     applyVisual()
 
@@ -424,7 +424,7 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('#main, #arm, #home, #option, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .comment, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
@@ -435,7 +435,7 @@ function applyVisual(n) {
             'border-bottom': '1px solid #333',
 
         })
-    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#fff')
+    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
@@ -474,7 +474,7 @@ function applyVisual(n) {
                 'background-color': 'transparent',
                 'color': '#333'
             })
-    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#000')
+    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
@@ -1127,7 +1127,7 @@ function xmlResponse(e, s, n, post) {
                         "'></iframe>" + views + "</div>" +
                         "<div class='tag' style='margin-left:10px'>" +
                         "<div class='fa fa-heart-o'></div>" +
-                        "<div class='fa fa-comment-o'></div>" +
+                        "<div class='fa fa-comments-o'></div>" +
                         "<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
                         "<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
                         "<input class='url' value='" + ref.trim() +
@@ -1169,7 +1169,7 @@ function xmlResponse(e, s, n, post) {
                         "</div>" +
                         "<div class='tag'>" +
                         "<div class='ago fa fa-heart-o'></div>" +
-                        "<div class='ago fa fa-comment-o'></div>" +
+                        "<div class='ago fa fa-comments-o'></div>" +
                         "<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
                         "<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
                         "</div>" +
