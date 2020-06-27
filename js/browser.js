@@ -291,11 +291,11 @@ $(document).ready(function() {
 			array.push(menu.indexOf(menu[i]))
 	}
 	var n = array[Math.floor(Math.random() * array.length)]
+	var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
+		menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
 	if (location.href.match('\\?\\+1') != null && contrast == true) {
-		var re = '?q=' + menu[n].cat.toLowerCase() + '&' + 
-			menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
 		history.replaceState(null, null, re + '?+1')
-	}
+	} else history.replaceState(null, null, re)
 	xmlResponse(null, null, n, false)
 	return false
 
