@@ -370,12 +370,12 @@ $(document).ready(function() {
 
 }).on('touch click', '.more', function(e) {
 
-    $(this).siblings('.pub').html($(this)
-        .siblings('.pub').attr('text'))
-    $(this).siblings('.pub').animate({
+    $(this).parent().html($(this)
+        .parent().attr('text'))
+    $(this).parent().animate({
         width: '85%',
     }, 'slow', function() {
-        $(this).siblings('.pub').height('auto')
+        $(this).parent().height('auto')
     })
     e.stopPropagation()
     $(this).hide()
@@ -412,7 +412,7 @@ String.prototype.truncate =
         var subString = this.substr(0, n - 1);
         return (useWordBoundary ?
             subString.substr(0, subString.lastIndexOf(' ')) :
-            subString) /* + "&hellip;" */
+            subString) + "&hellip;"
 
     }
 
@@ -1099,7 +1099,7 @@ function xmlResponse(e, s, n, post) {
                     menu[n].ext + "\")'>" + menu[n].id
                     .match(/([^\/]+)$/g) +
                     "</a></div>"
-                if ($(this).find('title:first').text().length > 65)
+                if ($(this).find('title:first').text().length > 125)
                     var more =
                         "<div class='more'>more</div>"
                 else var more = "<div class='more'></div>"
@@ -1138,9 +1138,8 @@ function xmlResponse(e, s, n, post) {
                         "text='" + escapeHtml($(this).find(
                             'title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
-                            65, true) +
-                        "</div>" +
-                        more +
+                            125, true) +
+                        more + "</div>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
                         "<form class='addComment' action'#'>" +
                         "<input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
@@ -1172,16 +1171,12 @@ function xmlResponse(e, s, n, post) {
                         "<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
                         "</div>" +
                         "<div class='pub' text='" + escapeHtml($(
-                            this).find('title:first').text()) +
-                        "'>" +
+                            this).find('title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
-                            65, true) + "</div>" + more +
-                        "<input class='url' value='" + ref.trim() +
-                        "'>" +
-                        "<input class='share' value='" + share +
-                        "'>" +
-                        "<input class='source' value='" + src +
-                        "'>" +
+                            125, true) + more + "</div>" +
+                        "<input class='url' value='" + ref.trim() + "'>" +
+                        "<input class='share' value='" + share + "'>" +
+                        "<input class='source' value='" + src + "'>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
                         cat +
                         "<form class='addComment' action'#'>" +
