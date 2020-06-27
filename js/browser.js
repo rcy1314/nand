@@ -294,9 +294,11 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-terminal', function(e) {
 
+	if (!id) id = translations[current]
+	else id = menu[id].cat
 	var array = []
 	for (i = 1; i <= menu.length - 1; i++) {
-		if (menu[i].cat == translations[current])
+		if (menu[i].cat == id)
 			array.push(menu.indexOf(menu[i]))
 	}
 	var n = array[Math.floor(Math.random() * array.length)]
