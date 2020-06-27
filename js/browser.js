@@ -240,7 +240,7 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-        var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+        var uri = location.search.split('?q=')[1].match(/[^&+1]+/g)
         exitResponse('?q=' + uri + '&' +
             $(this).attr('response'))
     }
