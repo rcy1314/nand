@@ -134,10 +134,8 @@ $(document).ready(function() {
             $('#arm #search #match .listing .hover').next().attr(
                 'class', 'index')
         } else if (e.keyCode == 27) {
-            $('#main #visit, #main #placeholder, #arm #search #match')
-                .hide()
-            $('#main .result, #main #air, #main .center, #main .suggestions')
-                .show()
+            $('#arm #search #match').hide()
+			$('input[type=text]').val('Search')
         }
         e.preventDefault()
         applyVisual()
@@ -859,7 +857,7 @@ function progressResponse(complete, n) {
                 if ($('#main #air').length == 1) {
                     $('#main #air').show()
                     $('#main').scrollTop($('#air').outerHeight())
-                }
+                } 
             })
     }
 
