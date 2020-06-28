@@ -402,6 +402,7 @@ $(document).ready(function() {
     document.title = 'acktic'
     filterResponse(false, uri[0]
         .toLowerCase(), false)
+	populateResponse(id)
 	precedeResponse(id)
     progressResponse(true, 100)
     applyVisual()
@@ -518,6 +519,7 @@ function categoryResponse() {
     if (current >= len - 1) current = -1
     current += direction
     stateResponse('?q=' + translations[current].toLowerCase())
+	$('input[type=text]').val(translations[current].toLowerCase())
     return translations[current]
 
 }
