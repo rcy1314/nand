@@ -360,6 +360,11 @@ $(document).ready(function() {
 		if (!$(this).parent().parent().find('.share').val().match(/\+1/g))
 			$(this).parent().parent().find('.share').val(
 			$(this).parent().parent().find('.share').val() + '+1')
+	if (contrast == false && $(this).parent().parent().find('.share').val()
+			.match(/\+1/g))
+			$(this).parent().parent().find('.share').val(
+				$(this).parent().parent().find('.share').val()
+				.replace(/\+1/g, ''))
     $(this).parent().parent().find('.share').select()
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
