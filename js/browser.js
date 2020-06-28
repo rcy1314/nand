@@ -436,7 +436,7 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('#main, #arm, #home, #option, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
@@ -456,7 +456,7 @@ function applyVisual(n) {
             'responseOpposite')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
-        $('.bottom').attr('src', 'images/opposite.png')
+        $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
     } else if (op == 0) {
         $('.suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
@@ -476,7 +476,7 @@ function applyVisual(n) {
             'border': 'none',
             'color': '#000'
         })
-        $('#main, #visit, .filter, .populate, .description, .channel, .index, #bottom')
+        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, .index, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'
