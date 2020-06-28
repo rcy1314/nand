@@ -1293,7 +1293,7 @@ var menu = [{
 		des: "Sports subreddit for all the Latest Headlines and Discussion in Sports.",
 		uri: "https://reddit.com/r/sports/.rss",
 		ext: "https://reddit.com/r/Sports",
-		img: "Sports"
+		img: "RSports"
 	}
 
 	,
@@ -1313,7 +1313,7 @@ var menu = [{
 		des: "Technology subreddit shares submitted articles about Technology.",
 		uri: "https://reddit.com/r/technology/.rss",
 		ext: "https://reddit.com/r/Technology",
-		img: "Technology"
+		img: "RTechnology"
 	}
 
 	,

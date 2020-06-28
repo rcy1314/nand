@@ -4,7 +4,6 @@ var request
 var quit = 15
 var object = []
 var filter = []
-var current = 0
 var reverse = false
 var contrast = false
 var category = 'Social'
@@ -55,11 +54,6 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
-}).on('touch click', '#search', function(e) {
-
-    if ($('#arm #search #match').is(':visible')) $(
-        '#arm #search #match').hide()
-
 }).on('touch click', '#visit, #placeholder', function(e) {
 
     $('#main #visit, #main #placeholder').hide()
@@ -73,21 +67,39 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
+}).on('touch click', '#arm', function(e) {
+
+	if (!$('input[type=text]').is(':focus'))$('#arm #search #match').hide()
+
+}).on('touch click', '#main', function(e) {
+
+	$('#arm #search #match').hide()
+
 }).on('keyup touch click focusout blur', '#search input[type=text]',
     function(e) {
 
-        if (e.type == 'touch' || e.type == 'click')
-
+        if (e.type == 'touch' || e.type == 'click' || 
+			$('input[type=text]').val().length == -1){
+			$('#arm #search #match').show()
+			$('#arm #search #match .listing').empty()
+		    $.each(translations, function(i) {
+        	    $('#arm #search #match .listing').append(
+                	"<div class='index' tabIndex='-1' response='" +
+                		translations[i] + "'>" +
+                	"<img class='type' src='" +
+                	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
+                	"<div class='text'>&emsp;" + translations[i] +
+                	"</div>"
+				)
+			})
             $(this).css({
                 'text-align': 'center',
             }).val('').attr('tabindex', -1)
-
+		}
         if (e.type == 'focusout' || e.type == 'blur')
-
             $(this).css({
                 'caret-color': '#e4e4e4',
             }).val('Search')
-
         if ($('input[type=text]').val() != 'Search') var keyup = $(
             'input[type=text]').val()
         if (e.type == 'keyup' && e.keyCode == 13) {
@@ -130,7 +142,7 @@ $(document).ready(function() {
         e.preventDefault()
         applyVisual()
 
-    }).on('submit', '.addComment', function(e) {
+}).on('submit', '.addComment', function(e) {
 
     if ($(this).children('.comment').val() != '')
         item = $(this).parent().attr('item')
@@ -151,17 +163,18 @@ $(document).ready(function() {
 
 }).on('submit', '#search', function(e) {
 
+	$('#main #air, #main .result, #main .center').remove()
     $('#arm #search #match').hide()
     if ($('#search .listing .hover').length) {
-        exitResponse('?q=' +
+		if (translations.indexOf($('.hover').attr('response')) > -1) {
+			categoryResponse($('.hover').attr('response'))
+			stateResponse('?q=&' + $('.hover').attr('response')
+				.toLowerCase())
+        } else exitResponse('?q=' +
             $('input[type=text]').val() +
             '&' +
             $('#arm #search #match .hover').attr(
                 'response'))
-        $('#search .listing .hover').removeClass('hover')
-            .addClass('index')
-        $('#arm #search #match').hide()
-        return false
     } else {
         if ($('input[type=text]').val().length) {
             document.title = $(
@@ -260,14 +273,18 @@ $(document).ready(function() {
             $('#search .listing .hover').removeClass('hover')
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
-            exitResponse('?q=' +
+		if (translations.indexOf($('.hover').attr('response')) > -1) {
+			categoryResponse($('.hover').attr('response'))
+			stateResponse('?q=&' + $('.hover').attr('response')
+				.toLowerCase())
+        } else exitResponse('?q=' +
                 $(this).attr('search') +
                 '&' + $(this)
                 .attr('response'))
         e.preventDefault()
         applyVisual()
 
-    }).on('touch click', '.fa-circle-thin, .fa-circle', function(
+}).on('touch click', '.fa-circle-thin, .fa-circle', function(
     e) {
 
     $(this).toggleClass('fa-circle-thin fa-circle')
@@ -293,16 +310,13 @@ $(document).ready(function() {
     }
     applyVisual('op')
 
-}).on('touch click', '.fa-th', function(e) {
-
-    var cat = categoryResponse()
-    stateResponse('?q=' + cat.toLowerCase())
-    filterResponse(false, cat, false)
-
 }).on('touch click', '.fa-user-circle', function(e) {
 
-    xmlResponse(null, null, menu.indexOf(menu[Math.floor(Math
-        .random() * menu.length)]), false)
+	var re = menu.indexOf(menu[Math.floor(Math.random() *
+		menu.length)])
+	stateResponse('?q=' + menu[re].cat.toLowerCase() + '&' +
+		menu[re].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+    xmlResponse(null, null, re, null)
     return false
 
 }).on('touch click', '.fa-terminal', function(e) {
@@ -400,8 +414,6 @@ $(document).ready(function() {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
     stateResponse('?q=' + uri[0])
     document.title = 'acktic'
-    filterResponse(false, uri[0]
-        .toLowerCase(), false)
 	populateResponse(id)
 	precedeResponse(id)
     progressResponse(true, 100)
@@ -436,14 +448,14 @@ function applyVisual(n) {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-th ,input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, input[type=text], #visit, .result, .filter, populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
                 'border': 'none',
                 'box-shadow': 'none'
             })
-        $('#arm, .index, .hover, .description, .comment').css({
+        $('#arm, .description, .comment').css({
             'border-bottom': '1px solid #333',
 
         })
@@ -481,7 +493,7 @@ function applyVisual(n) {
                 'background-color': '#fafafa',
                 'color': '#666'
             })
-        $('#home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin, .fa-th')
+        $('#home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin')
             .css({
                 'background-color': 'transparent',
                 'color': '#333'
@@ -512,16 +524,36 @@ function applyVisual(n) {
 
 }
 
-function categoryResponse() {
+function categoryResponse(n) {
 
-    var len = translations.length
-    var direction = 1
-    if (current >= len - 1) current = -1
-    current += direction
-    stateResponse('?q=' + translations[current].toLowerCase())
-	$('input[type=text]').val(translations[current].toLowerCase())
-    return translations[current]
-
+	$('#main #air, #main .result, #main .center, #main .suggestions').remove()
+    if ($('#main .result').length < 1) $('#main').append(
+        "<div class='result' style='display:none'></div>")
+    for (var i = 1; i <= menu.length - 1; i++) {
+        if (n == menu[i].cat) {
+            var tag = menu[i].id.match(/[^\/]+$/g)
+            var hilight = menu[i].des.replace(tag,
+                "<b>" + tag + '</b>')
+            if (!menu[i].img) var img = 'images/apply' + '.png'
+            else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            $('#main .result').append(
+                "<div class='populate " + menu.indexOf(menu[n]) +
+                "' response='" + menu[i].id.toLowerCase()
+                .replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
+                menu[i].cat.toLowerCase() + "'> " +
+                "<div class='pub'><div class='category'>" + menu[
+                    i].cat + "</div><a class='title' ext='" +
+                menu[i]
+                .ext + "'>" + menu[i].id.match(/[^\/]+$/g) +
+                "</a></div>" +
+                "<div class='description'>&emsp;" + hilight +
+                "</div>" +
+                "<img class='id' style='top:10px' src='" + img + "'>" +
+                "</div>"
+            )
+        }
+    }
+	progressResponse(true, 100)
 }
 
 function escapeHtml(n) {
@@ -686,6 +718,7 @@ function imageResolution(n) {
 
 function listResponse(n) {
 
+	$('#arm #search #match .listing').empty()
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].des.toLowerCase()
             .match(n) || menu[i].cat.toLowerCase().match(n)) {
@@ -706,7 +739,7 @@ function listResponse(n) {
     }
     if (!$('#arm #search #match').is(':visible')) {
         setTimeout(function() {
-            $('#main #visit, #main placeholder, #arm #search #match')
+            $('#arm #search #match')
                 .show()
         }, 50)
     }
@@ -1135,7 +1168,9 @@ function xmlResponse(e, s, n, post) {
                     html =
                         "<div id='yt' class='item' ext='" + ref
                         .trim() + "'>" +
-                        "<i class='copy fa fa-ellipsis-h' style='top:10px;z-index:2' title='Copy URL'></i>" +
+                        "<div id='header'>" + courtesy +
+                        "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+                        "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src +
                         "'></iframe>" + views + "</div>" +
                         "<div class='tag' style='margin-left:10px'>" +

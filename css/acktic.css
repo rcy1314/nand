@@ -26,7 +26,6 @@
         top: calc(100% - 45px) !important;
         height: 35px !important;
         z-index: 2;
-        left: -12px !important;
     }
 
     #main #air .populate,
@@ -310,13 +309,11 @@ body,
     right: 0;
 }
 
-.fa-th,
-.fa-git,
 .fa-circle,
 .fa-terminal,
 .fa-circle-thin,
 .fa-user-circle {
-    margin-left: 25px;
+    margin-left: 20px;
     color: #666;
 }
 
@@ -669,14 +666,13 @@ input[type=text] {
 }
 
 .listing {
-    height: 18.1em;
+    height: 21.22em;
     background-color: #fff;
     position: relative;
     overflow-y: auto;
     margin: 0 auto;
-    width: 12.4em;
+    width: 12em;
     z-index: 2;
-    right: 5px;
 }
 
 .index {
@@ -723,8 +719,7 @@ input[type=submit] {
 
 .views {
     position: absolute;
-    bottom: -80px;
-    ;
+    bottom: -50px;
     right: 10px;
     z-index: 2;
 }
@@ -733,7 +728,7 @@ input[type=submit] {
     -webkit-overflow-scrolling: touch;
     width: calc(100% - 1px);
     padding-bottom: 54.25%;
-    margin-bottom: 35px;
+    margin-bottom: 5px;
     position: relative;
 }
 
@@ -742,5 +737,6 @@ iframe {
     border: none;
     height: 100%;
     width: 100%;
-    top: 30px;
+	top: 5px;
+	left: 0;
 }
