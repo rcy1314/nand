@@ -141,6 +141,11 @@ $(document).ready(function() {
         e.preventDefault()
         applyVisual()
 
+}).on('touch click', '.post', function(e) {
+
+	$(this).siblings('.comment').focus().submit()
+	e.stopPropagation()
+
 }).on('submit', '.addComment', function(e) {
 
     if ($(this).children('.comment').val() != '')
@@ -337,7 +342,7 @@ $(document).ready(function() {
 }).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
     e) {
 
-    $(this).parent().parent().find('.source').select()
+    $(this).parents('.item').find('.source').select()
     document.execCommand('copy')
     $(this).toggleClass('fa-bookmark-o fa-bookmark')
     e.stopPropagation()
@@ -370,15 +375,15 @@ $(document).ready(function() {
 }).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
 
 	if (contrast == true) 
-		if (!$(this).parent().parent().find('.share').val().match(/\+1/g))
-			$(this).parent().parent().find('.share').val(
-			$(this).parent().parent().find('.share').val() + '+1')
-	if (contrast == false && $(this).parent().parent().find('.share').val()
+		if (!$(this).parents('.item').find('.share').val().match(/\+1/g))
+			$(this).parents('.item').find('.share').val(
+			$(this).parents('.item').find('.share').val() + '+1')
+	if (contrast == false && $(this).parents('.item').find('.share').val()
 			.match(/\+1/g))
-			$(this).parent().parent().find('.share').val(
-				$(this).parent().parent().find('.share').val()
+			$(this).parents('.item').find('.share').val(
+				$(this).parents('.item').find('.share').val()
 				.replace(/\+1/g, ''))
-    $(this).parent().parent().find('.share').select()
+    $(this).parents('.item').find('.share').select()
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
     e.stopPropagation()
@@ -699,10 +704,6 @@ function imageResolution(n) {
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile) {
-                var expand =
-                    "<a onclick='event.stopPropagation();expandImage(" +
-                    n +
-                    ")' style='cursor:default;text-transform:capitalize'>expand</a>"
                 $('#' + n).addClass('expand min').width('100%')
                     .parent().css({
                         'margin': '0 auto',
@@ -719,7 +720,7 @@ function imageResolution(n) {
                     .naturalWidth + 30).css({
                     'margin-left': '10px',
                     'margin-top': '10px'
-                })
+                }).parent().width($('#' + n).width() + 20)
             }
             $('#' + n).css('display', 'block')
         })
@@ -1204,6 +1205,7 @@ function xmlResponse(e, s, n, post) {
                         "<div class='ago'>" + dst[0] + "</div>" +
                         "<form class='addComment' action'#'>" +
                         "<input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
+						"<div class='post'><b>Post</b></div>" +
                         "</form>" +
                         "</div>"
                 } else {
@@ -1224,12 +1226,12 @@ function xmlResponse(e, s, n, post) {
                         "<img id='" + i +
                         "' style='display:none' src='" + src +
                         "' class='img'>" +
-                        "</div>" +
                         "<div class='tag'>" +
                         "<div class='ago fa fa-heart-o'></div>" +
                         "<div class='ago fa fa-comments-o'></div>" +
                         "<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
                         "<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
+                        "</div>" +
                         "</div>" +
                         "<div class='pub' text='" + escapeHtml($(
                             this).find('title:first').text()) + "'>" +
@@ -1242,6 +1244,7 @@ function xmlResponse(e, s, n, post) {
                         cat +
                         "<form class='addComment' action'#'>" +
                         "<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
+						"<div class='post'><b>Post</b></div>" +
                         "</form>" +
                         "</div>"
                 }

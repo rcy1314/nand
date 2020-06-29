@@ -212,6 +212,7 @@ input {
 .index,
 .hover,
 .more,
+.post,
 .pub,
 .img,
 a {
@@ -514,7 +515,7 @@ svg .border {
     width: fit-content;
     margin-right: 5px;
     margin-left: 10px;
-    margin-top: 12px;
+    margin-top: 5px;
     font-size: 13px;
     left: 0;
 }
@@ -571,14 +572,28 @@ svg .border {
 
 .fa-heart-o,
 .fa-comments-o,
-.fa-sticky-note-o {
+.fa-sticky-note-o,
+.fa-bookmark-o {
     color: #aaa !important;
 }
 
 .fa-bookmark,
-.fa-bookmark-o{
-	color: #aaa !important;
+.fa-bookmark-o {
 	float: right !important;
+}
+
+.post {
+	position: relative;
+	color: lightcyan;
+	font-size: 12px;
+	padding: 30px;
+	right: -20px;
+	float: right;
+	top: -60px;
+}
+
+.addComment {
+	margin: 0;
 }
 
 .comment {
@@ -616,13 +631,13 @@ svg .border {
     text-transform: uppercase;
     position: relative;
     width: fit-content;
+    margin-left: 10px;
     font-size: 10px;
     color: #e4e4e4;
-    margin-left: 10px;
 }
 
 .addComment {
-    margin: 0;
+    margin-top: 5px;
 }
 
 #search {
