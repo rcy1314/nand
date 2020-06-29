@@ -36,27 +36,16 @@
     }
 }
 
-@media screen and (width: 768px) {
+@media screen and (min-width: 768px) {
     #main .center {
-        width: 95% !important;
-        padding: 0 !important;
+        width: 60% !important;
     }
 
     #main #air .populate,
     #main .result .filter,
     #main .result .populate {
-        margin: 1em;
-        width: 25%;
-    }
-
-    .suggestions {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #main .center {
-        width: 65% !important;
+        margin: 2em;
+        width: 16%;
     }
 
     .suggestions {
@@ -67,7 +56,6 @@
 @media screen and (min-width: 1024px) {
     #main .center {
         width: 55% !important;
-		margin-left: 150px !important;
     }
 }
 
@@ -217,7 +205,6 @@ input {
     font-family: Proxima Nova;
 }
 
-.index,
 .filter,
 .populate,
 #bottom,
@@ -266,12 +253,12 @@ body,
     -webkit-user-select: none;
     height: calc(100% - 56px);
     -ms-user-select: none;
-    user-select: none;
+	position: relative;
     text-align: center;
     overflow-x: hidden;
+    user-select: none;
     overflow: auto;
     outline: none;
-	top: 56px;
 }
 
 #visit {
@@ -291,11 +278,11 @@ body,
 #home {
     font-family: Billabong;
     position: absolute;
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
     height: 51px;
     left: 10px;
-    top: 5px;
+    top: 10px;
 }
 
 #option {
@@ -369,7 +356,7 @@ body,
     border-radius: 2px;
     position: relative;
     margin: 25px auto;
-    height: 8em;
+    height: 7.5em;
     width: 100%;
 }
 
@@ -400,13 +387,13 @@ svg .border {
     transform: rotate(-90deg);
     position: absolute;
     fill: none;
-    stroke-width: 3;
+    stroke-width: 2;
     stroke-linecap: round;
 }
 
 .mask {
     fill: none;
-    animation: dash 1s linear alternate;
+    animation: dash 2s linear alternate;
 }
 
 @keyframes dash {
@@ -415,7 +402,7 @@ svg .border {
     }
 
     100% {
-        stroke-dasharray: 8;
+        stroke-dasharray: 16;
     }
 }
 
@@ -444,10 +431,10 @@ svg .border {
 }
 
 #asset {
-    padding-left: 15px;
     position: relative;
     text-align: center;
-    padding-top: 20px;
+    padding-left: 7px;
+    padding-top: 15px;
     flex-shrink: 0;
 }
 
@@ -458,17 +445,17 @@ svg .border {
 .id {
     border-radius: 36px;
     position: relative;
-    padding: 2px;
+    padding: 1px;
     margin: 10px;
-    height: 48px;
-    width: 48px;
+    height: 50px;
+    width: 50px;
 }
 
 .type,
 .item .id {
     border: 1px solid #ddd !important;
-    height: 24px;
-    width: 24px;
+    height: 28px;
+    width: 28px;
 }
 
 .center {
@@ -482,13 +469,13 @@ svg .border {
     display: inline-block;
     height: fit-content;
     vertical-align: top;
-    position: relative;
-    margin-top: 178px;
+    position: absolute;
+    margin-top: 170px;
     text-align: left;
+	margin-left: 5px;
     font-size: 12px;
     padding: 15px;
     width: 150px;
-    left: 10px;
 }
 
 .combine {
@@ -566,9 +553,7 @@ svg .border {
 }
 
 .tag {
-    justify-content: space-between;
     position: relative;
-    display: flex;
     width: 100%;
 }
 
@@ -586,9 +571,14 @@ svg .border {
 
 .fa-heart-o,
 .fa-comments-o,
-.fa-bookmark-o,
 .fa-sticky-note-o {
     color: #aaa !important;
+}
+
+.fa-bookmark,
+.fa-bookmark-o{
+	color: #aaa !important;
+	float: right !important;
 }
 
 .comment {
@@ -646,8 +636,8 @@ input[type=text] {
     caret-color: transparent;
     text-align: center;
     position: relative;
-    border-radius: 2px;
-    font-size: 12px;
+    border-radius: 4px;
+    font-size: 13px;
     margin: 0 auto;
     display: none;
     outline: none;
@@ -666,20 +656,20 @@ input[type=text] {
 }
 
 .listing {
-    height: 21.22em;
+    height: 19em;
     background-color: #fff;
     position: relative;
     overflow-y: auto;
     margin: 0 auto;
-    width: 12em;
+    width: 14em;
     z-index: 2;
 }
 
 .index {
     padding-bottom: 15px;
     position: relative;
-    padding-top: 10px;
-    font-size: 9px;
+    padding-top: 15px;
+    font-size: 12px;
     height: 2.5em;
     width: 100%;
 }
@@ -687,14 +677,14 @@ input[type=text] {
 .text {
     display: inline-block;
     position: relative;
-    bottom: 5px;
+    bottom: 3px;
 }
 
 .hover {
     background-color: #e4e4e4;
     padding-bottom: 15px;
-    padding-top: 10px;
-    font-size: 9px;
+    padding-top: 15px;
+    font-size: 12px;
     height: 2.5em;
     width: 100%;
 }

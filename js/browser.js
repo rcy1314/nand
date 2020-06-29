@@ -88,7 +88,8 @@ $(document).ready(function() {
                 		translations[i] + "'>" +
                 	"<img class='type' src='" +
                 	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
-                	"<div class='text'>&emsp;" + translations[i] +
+                	"<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+                	"<br>&emsp;" + grepResponse(translations[i]) + " feeds</div>" +
                 	"</div>"
 				)
 			})
@@ -197,7 +198,7 @@ $(document).ready(function() {
         function() {
             $this.parent().find('svg circle').css({
                 'transform': 'rotate(270deg)',
-                'stroke-dasharray': '8'
+                'stroke-dasharray': '16'
             }).animate({
                 'stroke-dasharray': 191,
                 'stroke-dashoffset': -191
@@ -388,7 +389,7 @@ $(document).ready(function() {
     if ($(this).hasClass('expand min') || $(this).hasClass(
             'expand full')) expandImage($(this).attr(
         'id'))
-    else $(this).parent().find('.fa-heart-o, .fa-heart')
+    else $(this).parent().parent().find('.fa-heart-o, .fa-heart')
         .toggleClass('fa-heart-o fa-heart')
     e.stopPropagation()
     applyVisual()
@@ -483,12 +484,12 @@ function applyVisual(n) {
                 'border': '1px solid #ddd',
                 'color': '#666'
             })
-        $('#arm, #option').css({
+        $('#arm, #option, .index').css({
             'background-color': '#fff',
             'border': 'none',
-            'color': '#000'
+            'color': '#666'
         })
-        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, .index, #bottom')
+        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'
@@ -501,8 +502,8 @@ function applyVisual(n) {
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
-        $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd'),
-            $('.hover').css('background-color', '#e4e4e4')
+        $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
+        $('.hover').css('background-color', '#fafafa')
         $('#progressBar').removeClass('responseOpposite').addClass(
             'responseInvert')
         $('.description, .index').css({
@@ -676,6 +677,15 @@ function filterResponse(passthrough, n, post) {
 
 }
 
+function grepResponse(n) {
+
+	var numOccurences = $.grep(menu, function (elem) {
+	    return elem.cat === n;
+	}).length;
+	return numOccurences
+
+}
+
 function imageResolution(n) {
 
     var mobile = 1480
@@ -729,7 +739,7 @@ function listResponse(n) {
                 "' search='" + menu[i].cat.toLowerCase() + "'>" +
                 "<img class='type' src='" +
                 "images/ID/JPG/" + menu[i].img + '.jpg' + "'>" +
-                "<div class='text'>&emsp;" + menu[i].cat +
+                "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
                 "<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
                 "</div>"
             )
