@@ -166,7 +166,7 @@ $(document).ready(function() {
     if ($('#search .listing .hover').length) {
 		if (translations.indexOf($('.hover').attr('response')) > -1) {
 			categoryResponse($('.hover').attr('response'))
-			stateResponse('?q=&' + $('.hover').attr('response')
+			stateResponse('?q=' + $('.hover').attr('response')
 				.toLowerCase())
         } else exitResponse('?q=' +
             $('input[type=text]').val() +
@@ -273,7 +273,7 @@ $(document).ready(function() {
         } else if (e.type == 'touch' || e.type == 'click')
 		if (translations.indexOf($('.hover').attr('response')) > -1) {
 			categoryResponse($('.hover').attr('response'))
-			stateResponse('?q=&' + $('.hover').attr('response')
+			stateResponse('?q=' + $('.hover').attr('response')
 				.toLowerCase())
         } else exitResponse('?q=' +
                 $(this).attr('search') +
@@ -412,6 +412,8 @@ $(document).ready(function() {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
     stateResponse('?q=' + uri[0])
     document.title = 'acktic'
+    filterResponse(false, uri[0]
+        .toLowerCase(), false)
 	populateResponse(id)
 	precedeResponse(id)
     progressResponse(true, 100)
