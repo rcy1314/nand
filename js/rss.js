@@ -1203,7 +1203,7 @@ var menu = [{
 		des: "News subreddit articles relating to the United States and the rest of the World.",
 		uri: "https://reddit.com/r/news/.rss",
 		ext: "https://reddit.com/r/News",
-		img: "News"
+		img: "RNews"
 	}
 
 	,
