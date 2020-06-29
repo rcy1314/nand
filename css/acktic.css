@@ -276,7 +276,7 @@ body,
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
     -webkit-user-select: none;
-    height: calc(100% - 56px);
+    height: calc(100% - 64px);
     -ms-user-select: none;
 	position: relative;
     text-align: center;
@@ -396,7 +396,7 @@ svg .border {
 }
 
 .mask {
-    animation: dash 2s linear alternate;
+    animation: dash 1s linear alternate;
     fill: none;
 }
 

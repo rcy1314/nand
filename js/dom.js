@@ -43,8 +43,10 @@ $(document).ready(function() {
 }).on('touch click', '#main #visit, #main #placeholder', function(e) {
 
     $('#main #visit, #main #placeholder').hide()
-    stateResponse('?q=' + category.toLowerCase())
+	var uri = '?q=' + category.toLowerCase()
+	if (contrast == true) uri = uri + '+1'
     filterResponse(false, category, false)
+    stateResponse(uri)
     precedeResponse()
     progressResponse(true, 100)
 
@@ -159,22 +161,30 @@ $(document).ready(function() {
 			'#arm #search #match .listing .hover').attr('response')) > -1) {
 			categoryResponse($(
 			'#arm #search #match .listing .hover').attr('response'))
-			stateResponse('?q=' + $(
-			'#arm #search #match .listing .hover').attr('response')
-				.toLowerCase())
-        } else exitResponse('?q=' +
-            $('#arm #search input[type=text]').val() +
-            '&' +
-            $('#arm #search #match .listing .hover').attr(
-                'response'))
+				var uri = '?q=' + $(
+					'#arm #search #match .listing .hover').attr('response')
+					.toLowerCase()
+			if (contrast == true) uri = uri + '+1' 
+			stateResponse(uri)
+        } else {
+			var uri = '?q=' +
+            	$('#arm #search input[type=text]').val() +
+            		'&' +
+            	$('#arm #search #match .listing .hover').attr(
+                	'response')
+			if (contrast == true) uri = uri + '+1'
+			exitResponse(uri)
+		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
             document.title = $(
                 '#arm #search input[type=text]').val().replace(
                 /(\/|\.)/g, ' ').capitalize()
-            stateResponse('?q=' + $(
-                    '#arm #search input[type=text]').val()
-                .toLowerCase().replace(/\s/g, '+'))
+            uri = '?q=' + $(
+                '#arm #search input[type=text]').val()
+                .toLowerCase().replace(/\s/g, '+')
+			if (contrast == true) uri = uri + '+1'
+			stateResponse(uri)
             filterResponse(false, $('#arm #search input[type=text]')
                 .val().toLowerCase(), false)
         }
@@ -199,17 +209,18 @@ $(document).ready(function() {
                 easing: 'swing',
                 duration: 750,
                 complete: function() {
-                    exitResponse('?q=' +
-                        '&' + $this.attr('response')
-                    )
+                    var uri = '?q=' + '&' + $this.attr('response')
+					if (contrast == true) uri = uri + '+1'
+					exitResponse(uri)
                 }
             })
         })
 
 }).on('touch click', '#main .suggestions .combine div', function(e) {
 
-    exitResponse('?q=' +
-        '&' + $(this).attr('response'))
+    var uri = '?q=' + '&' + $(this).attr('response')
+	if (contrast == true) uri = uri + '+1'
+	exitResponse(uri)
 
 }).on('touch click', '#main .center .quick .right', function(e) {
 
@@ -252,8 +263,8 @@ $(document).ready(function() {
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
         var uri = location.search.split('?q=')[1].match(/[^&+1]+/g)
-        exitResponse('?q=' + uri + '&' +
-            $(this).attr('response'))
+		if (contrast == true) uri = uri + '+1'
+        exitResponse(uri)
     }
 
 }).on('touch click mouseenter mouseleave', 
@@ -272,13 +283,17 @@ $(document).ready(function() {
 			'#arm #search #match .listing .hover').attr('response')) > -1) {
 			categoryResponse($(
 				'#arm #search #match .listing .hover').attr('response'))
-			stateResponse('?q=' + $(
-				'#arm #search #match .listing .hover').attr('response')
-				.toLowerCase())
-        } else exitResponse('?q=' +
+			var uri = '?q=' +
+				$('#arm #search #match .listing .hover').attr('response')
+				.toLowerCase()
+			if (contrast == true) uri = uri + '+1'
+			stateResponse(uri)
+        } else var uri = '?q=' +
                 $(this).attr('search') +
                 '&' + $(this)
-                .attr('response'))
+                .attr('response')
+			if (contrast == true) uri = uri + '+1'
+			exitResponse(uri)
         e.preventDefault()
         applyVisual()
 
@@ -320,9 +335,11 @@ $(document).ready(function() {
 
 	var re = menu.indexOf(menu[Math.floor(Math.random() *
 		menu.length)])
-	stateResponse('?q=' + menu[re].cat.toLowerCase() + '&' +
-		menu[re].id.toLowerCase().replace(/\s|\.|\//g, '-'))
-    xmlResponse(null, null, re, null)
+	var uri = '?q=' + menu[re].cat.toLowerCase() + '&' +
+		menu[re].id.toLowerCase().replace(/\s|\.|\//g, '-')
+	if (contrast == true) uri = uri + '+1'    
+	stateResponse(uri)
+	xmlResponse(null, null, re, null)
     return false
 
 }).on('touch click', '#option .fa-terminal', function(e) {
@@ -337,6 +354,7 @@ $(document).ready(function() {
     var n = array[Math.floor(Math.random() * array.length)]
     var re = '?q=' + menu[n].cat.toLowerCase() + '&' +
         menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
+	if (contrast == true) re = re + '+1'
     stateResponse(re)
     xmlResponse(null, null, n, false)
     return false
@@ -425,7 +443,8 @@ $(document).ready(function() {
     document.title = 'acktic'
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-    stateResponse('?q=' + uri[0])
+	if (contrast == true) uri = uri[0] + '+1'
+    stateResponse('?q=' + uri)
     document.title = 'acktic'
     filterResponse(false, uri[0]
         .toLowerCase(), false)

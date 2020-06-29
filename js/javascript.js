@@ -1,5 +1,3 @@
-document.title = 'acktic'
-
 String.prototype.capitalize = function() {
 
     return this.replace(/(\b[a-z](?!\s))/g, function(n) {
@@ -33,12 +31,11 @@ var escapeHtml = function (n) {
 
 var exitResponse = function (n) {
 
-    if (contrast == true) window.location.assign(n + '+1')
-    else window.location.assign(n)
+    window.location.assign(n)
 
 }
 
-var grepResonse = function (n) {
+var grepResponse = function (n) {
 
 	var numOccurences = $.grep(menu, function (elem) {
 	    return elem.cat === n;
@@ -95,8 +92,7 @@ var reverseResponse = function (Object) {
 
 var stateResponse = function (n) {
 
-    if (contrast == true) history.replaceState(null, null, n + '+1')
-    else history.replaceState(null, null, n)
+    history.replaceState(null, null, n)
 
 }
 

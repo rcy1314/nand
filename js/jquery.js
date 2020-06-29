@@ -32,8 +32,6 @@ function applyVisual(n) {
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
         $('.hover').css('background-color', '#333')
-        $('#progressBar').removeClass('responseInvert').addClass(
-            'responseOpposite')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
@@ -71,8 +69,6 @@ function applyVisual(n) {
         $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
         $('.hover').css('background-color', '#fafafa')
-        $('#progressBar').removeClass('responseOpposite').addClass(
-            'responseInvert')
         $('.description, .index').css({
             'border-bottom': '1px solid #ccc'
         })
@@ -358,12 +354,14 @@ function precedeResponse(n) {
 
 var progressResponse = function (complete, n) {
 
-    $('#progressBar').addClass('response').width(n + '%')
+    if (contrast == true) $('#progressBar').addClass('response responseOpposite').width(n + '%')
+    else $('#progressBar').addClass('response responseInvert').width(n + '%')
     if (complete == true) {
         $('#progressBar').on(
             'transitionend webkitTransitionEnd oTransitionEnd',
             function(e) {
-                $(this).removeClass('response').width(0)
+                if (contrast == true) $(this).removeClass('response responseOpposite').width(0)
+                else $(this).removeClass('response responseInvert').width(0)
                 $('#main #visit, #main #placeholder, #arm #search #match')
                     .hide()
                 if ($('#main .suggestions').length == 1) $(
@@ -376,6 +374,7 @@ var progressResponse = function (complete, n) {
                     $('#main .air').show()
                     $('#main').scrollTop($('.air').outerHeight())
                 } 
+				$('#main').attr('tabindex', -1).focus()
             })
     }
 
@@ -638,24 +637,19 @@ function xmlResponse(e, s, n, post) {
                                 ",") + "</div>"
                     else var views = ''
                     html =
-                        "<div id='yt' class='item' ext='" + ref
-                        .trim() + "'>" +
+                        "<div id='yt' class='item' ext='" + ref.trim() + "'>" +
                         "<div class='header'>" + courtesy +
-                        "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
+                        	"<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
-                        "<div class='yt'>" + "<iframe src='" + src +
-                        "'></iframe>" + views + "</div>" +
+                        "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
                         "<div class='tag' style='margin-left:10px'>" +
-                        "<div class='fa fa-heart-o'></div>" +
-                        "<div class='fa fa-comments-o'></div>" +
-                        "<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
-                        "<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
-                        "<input class='url' value='" + ref.trim() +
-                        "'>" +
-                        "<input class='share' value='" + share +
-                        "'>" +
-                        "<input class='source' value='" + src +
-                        "'>" +
+                        	"<div class='fa fa-heart-o'></div>" +
+                        	"<div class='fa fa-comments-o'></div>" +
+                        	"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
+                        	"<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
+                        	"<input class='url' value='" + ref.trim() + "'>" +
+                        	"<input class='share' value='" + share + "'>" +
+                        	"<input class='source' value='" + src + "'>" +
                         "</div>" +
                         "<div class='pub' " +
                         "text='" + escapeHtml($(this).find(
@@ -673,26 +667,22 @@ function xmlResponse(e, s, n, post) {
                     if (e == 'search') {
                         var cat =
                             "<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
-                            ref.match(
-                                /^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g
-                            ) + "</div>"
+                            	ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + 
+							"</div>"
                     } else var cat = ''
                     html =
-                        "<div class='item " + i + "' item='" + i +
-                        "' ext='" + ref.trim() + "'>" +
+                        "<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
                         "<div class='header'>" + courtesy +
                         "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
-                        "<img id='" + i +
-                        "' style='display:none' src='" + src +
-                        "' class='img'>" +
-                        "<div class='tag'>" +
-                        "<div class='ago fa fa-heart-o'></div>" +
-                        "<div class='ago fa fa-comments-o'></div>" +
-                        "<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
-                        "<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
-                        "</div>" +
+                        	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+                        	"<div class='tag'>" +
+                        		"<div class='ago fa fa-heart-o'></div>" +
+                        		"<div class='ago fa fa-comments-o'></div>" +
+                        		"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
+                        		"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
+                        	"</div>" +
                         "</div>" +
                         "<div class='pub' text='" + escapeHtml($(
                             this).find('title:first').text()) + "'>" +
@@ -723,9 +713,12 @@ function xmlResponse(e, s, n, post) {
                 })
             })
             $('#main').append(
-                "<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
-                "<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
-                "</div></div><div class='channel'></div></div>" +
+                "<div class='center' style='display:none'>" +
+				"<div class='quick'>" +
+				"<div class='feed'></div>" +
+                "<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'></div>" +
+                "</div>" + 
+				"<div class='channel'></div></div>" +
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you...<br></div>"
             )
             if ($.isNumeric(local)) {
