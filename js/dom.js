@@ -262,7 +262,8 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-        var uri = location.search.split('?q=')[1].match(/[^&+1]+/g)
+        var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
+			'&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
         exitResponse(uri)
     }
