@@ -217,7 +217,7 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+a:hover, .combine div:hover {
     text-decoration: underline;
 }
 
@@ -481,28 +481,27 @@ svg .border {
 
 .courtesy {
     text-transform: capitalize;
+    align-items: center;
     position: relative;
     width: fit-content;
     font-size: 10px;
-    left: 0;
     display: flex;
-    align-items: center;
+    left: 0;
 }
 
 .item .pub,
 .item .add {
     justify-content: left;
-    width: fit-content;
     margin-left: 10px;
     margin-top: 5px;
     font-size: 13px;
+    width: 95%;
     left: 0;
 }
 
 .item .pub {
     display: inline-block;
-    margin-bottom: 10px;
-    width: fit-content;
+    margin-bottom: 5px;
 }
 
 .more {
@@ -588,9 +587,8 @@ svg .border {
 
 .copy {
     font-size: 12px;
-    padding: 10px;
+    padding: 15px;
     float: right;
-    top: 15px;
 }
 
 .ago {
@@ -627,10 +625,10 @@ input[type=text] {
 }
 
 .listing {
-    height: 19em;
     background-color: #fff;
     position: relative;
     overflow-y: auto;
+    height: 19.1em;
     margin: 0 auto;
     width: 14em;
     z-index: 2;
