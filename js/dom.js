@@ -282,6 +282,14 @@ $(document).ready(function() {
         e.preventDefault()
         applyVisual()
 
+}).on('touch click', '#arm #home', function(e) {
+
+	window.location.href = window.location.origin
+
+}).on('touch click', '#option .fa-git', function(e) {
+
+	window.open('https://github.com/acktic/acktic.github.io', '_blank', 'noreferrer')
+
 }).on('touch click', '#option .fa-circle-thin, #option .fa-circle', function(
     e) {
 
