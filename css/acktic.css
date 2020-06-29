@@ -7,10 +7,6 @@
         display: none !important;
     }
 
-    input[type=text] {
-        left: 0 !important;
-    }
-
     #main {
         height: calc(100% - 35px);
     }
@@ -28,7 +24,7 @@
         z-index: 2;
     }
 
-    #main #air .populate,
+    #main .air .populate,
     #main .result .filter,
     #main .result .populate {
         margin: 1em;
@@ -41,7 +37,7 @@
         width: 60% !important;
     }
 
-    #main #air .populate,
+    #main .air .populate,
     #main .result .filter,
     #main .result .populate {
         margin: 2em;
@@ -55,20 +51,19 @@
 
 @media screen and (min-width: 1024px) {
     #main .center {
-        width: 55% !important;
+        width: 50% !important;
     }
 }
 
 @media screen and (min-width: 2560px) {
     #main .center {
         width: 35% !important;
-		margin-left: 150px !important;
     }
 }
 
 ::-webkit-scrollbar {
     display: block;
-    width: 7px
+    width: 5px
 }
 
 .invert::-webkit-scrollbar-thumb {
@@ -247,6 +242,35 @@ body,
     width: 100%;
 }
 
+#search {
+	position: absolute;
+    height: 56px;
+    width: 100%;
+    margin: 0;
+	top: 4px;
+}
+
+#home {
+    font-family: Billabong;
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    height: 51px;
+    left: 10px;
+    top: 10px;
+}
+
+#option {
+    justify-content: space-between;
+    background-color: transparent;
+    position: absolute;
+    font-size: 24px;
+    padding: 10px;
+    display: flex;
+    top: 10px;
+    right: 0;
+}
+
 #main {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -276,27 +300,6 @@ body,
     margin-left: 25px;
 }
 
-#home {
-    font-family: Billabong;
-    position: absolute;
-    font-size: 40px;
-    cursor: pointer;
-    height: 51px;
-    left: 10px;
-    top: 10px;
-}
-
-#option {
-    justify-content: space-between;
-    background-color: transparent;
-    position: absolute;
-    font-size: 24px;
-    padding: 10px;
-    display: flex;
-    top: 10px;
-    right: 0;
-}
-
 .fa-circle,
 .fa-terminal,
 .fa-circle-thin,
@@ -305,8 +308,8 @@ body,
     color: #666;
 }
 
-.result,
-#air {
+.air,
+.result {
     justify-content: center;
     flex-wrap: wrap;
     display: flex;
@@ -324,8 +327,8 @@ body,
     width: 16em;
 }
 
-.category,
-.title {
+.title,
+.category {
     border-radius: 10px;
     margin: auto 0;
     padding: 7px;
@@ -386,15 +389,15 @@ svg {
 svg .border {
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
-    position: absolute;
-    fill: none;
-    stroke-width: 2;
     stroke-linecap: round;
+    position: absolute;
+    stroke-width: 2;
+    fill: none;
 }
 
 .mask {
-    fill: none;
     animation: dash 2s linear alternate;
+    fill: none;
 }
 
 @keyframes dash {
@@ -431,7 +434,7 @@ svg .border {
     top: 1px;
 }
 
-#asset {
+.asset {
     position: relative;
     text-align: center;
     padding-left: 7px;
@@ -439,7 +442,7 @@ svg .border {
     flex-shrink: 0;
 }
 
-#asset a {
+.asset a {
     display: block;
 }
 
@@ -452,13 +455,6 @@ svg .border {
     width: 50px;
 }
 
-.type,
-.item .id {
-    border: 1px solid #ddd !important;
-    height: 28px;
-    width: 28px;
-}
-
 .center {
     display: inline-block;
     padding-right: 3px;
@@ -466,34 +462,19 @@ svg .border {
     text-align: left;
 }
 
-.suggestions {
-    display: inline-block;
-    height: fit-content;
-    vertical-align: top;
-    position: absolute;
-    margin-top: 170px;
-    text-align: left;
-	margin-left: 5px;
-    font-size: 12px;
-    padding: 15px;
-    width: 150px;
-}
-
-.combine {
-    width: fit-content;
-    margin: 5px;
-}
-
-.combine div {
-    margin-top: 10px;
-}
-
 .item {
     margin-bottom: 2em;
     width: 100%;
 }
 
-#header {
+.type,
+.item .id {
+    border: 1px solid #ddd !important;
+    height: 28px;
+    width: 28px;
+}
+
+.header {
     height: 45px;
     width: 100%;
 }
@@ -511,9 +492,7 @@ svg .border {
 .item .pub,
 .item .add {
     justify-content: left;
-    font-weight: normal;
     width: fit-content;
-    margin-right: 5px;
     margin-left: 10px;
     margin-top: 5px;
     font-size: 13px;
@@ -521,24 +500,9 @@ svg .border {
 }
 
 .item .pub {
-    margin-bottom: 10px;
     display: inline-block;
-    width: fit-content;
-}
-
-.item .add {
-    margin-left: 15px !important;
     margin-bottom: 10px;
-    font-size: 12px;
-    width: 85%;
-}
-
-.image {
-    position: relative;
-}
-
-.img {
-    position: relative;
+    width: fit-content;
 }
 
 .more {
@@ -551,6 +515,18 @@ svg .border {
     padding-top: 10px;
     font-size: 13px;
     color: #aaa;
+}
+
+.item .add {
+    margin-left: 15px !important;
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 85%;
+}
+
+.img,
+.image {
+    position: relative;
 }
 
 .tag {
@@ -570,29 +546,22 @@ svg .border {
     margin: 10px !important;
 }
 
-.fa-heart-o,
-.fa-comments-o,
-.fa-sticky-note-o,
-.fa-bookmark-o {
-    color: #aaa !important;
-}
-
 .fa-bookmark,
 .fa-bookmark-o {
 	float: right !important;
 }
 
 .post {
+	margin-right: 10px;
 	position: relative;
 	color: lightcyan;
 	font-size: 12px;
-	padding: 30px;
-	right: -20px;
 	float: right;
-	top: -60px;
+	top: -27px;
 }
 
 .addComment {
+    margin-top: 5px;
 	margin: 0;
 }
 
@@ -618,17 +587,15 @@ svg .border {
 }
 
 .copy {
-    position: relative;
-    padding-right: 10px;
     font-size: 12px;
+    padding: 10px;
     float: right;
     top: 15px;
 }
 
-#ago,
-.ago,
-.attr {
+.ago {
     text-transform: uppercase;
+	margin-bottom: 5px;
     position: relative;
     width: fit-content;
     margin-left: 10px;
@@ -636,18 +603,7 @@ svg .border {
     color: #e4e4e4;
 }
 
-.addComment {
-    margin-top: 5px;
-}
-
-#search {
-    height: 56px;
-    width: 100%;
-    margin: 0;
-}
-
 input[type=text] {
-    -webkit-appearance: none;
     caret-color: transparent;
     text-align: center;
     position: relative;
@@ -689,12 +645,6 @@ input[type=text] {
     width: 100%;
 }
 
-.text {
-    display: inline-block;
-    position: relative;
-    bottom: 3px;
-}
-
 .hover {
     background-color: #e4e4e4;
     padding-bottom: 15px;
@@ -702,6 +652,12 @@ input[type=text] {
     font-size: 12px;
     height: 2.5em;
     width: 100%;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
 }
 
 input[type=submit] {
@@ -721,6 +677,29 @@ input[type=submit] {
     display: block;
     width: 52px;
 }
+
+.suggestions {
+    display: inline-block;
+    height: fit-content;
+    vertical-align: top;
+    position: absolute;
+    margin-top: 170px;
+    text-align: left;
+	margin-left: 5px;
+    font-size: 12px;
+    padding: 15px;
+    width: 150px;
+}
+
+.combine {
+    width: 100%;
+    margin: 5px;
+}
+
+.combine div {
+    margin-top: 10px;
+}
+
 
 .views {
     position: absolute;

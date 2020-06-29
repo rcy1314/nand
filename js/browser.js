@@ -54,7 +54,7 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
-}).on('touch click', '#visit, #placeholder', function(e) {
+}).on('touch click', '#main #visit, #main #placeholder', function(e) {
 
     $('#main #visit, #main #placeholder').hide()
     stateResponse('?q=' + category.toLowerCase())
@@ -62,24 +62,24 @@ $(document).ready(function() {
     precedeResponse()
     progressResponse(true, 100)
 
-}).on('touch click', '.item', function(e) {
+}).on('touch click', '#main .center .channel .item', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
 }).on('touch click', '#arm', function(e) {
 
-	if (!$('input[type=text]').is(':focus'))$('#arm #search #match').hide()
+	if (!$('#arm #search input[type=text]').is(':focus'))$('#arm #search #match').hide()
 
 }).on('touch click', '#main', function(e) {
 
 	$('#arm #search #match').hide()
 
-}).on('keyup touch click focusout blur', '#search input[type=text]',
+}).on('keyup touch click focusout blur', '#arm #search input[type=text]',
     function(e) {
 
         if (e.type == 'touch' || e.type == 'click' || 
-			$('input[type=text]').val().length == -1){
+			$('#arm #search input[type=text]').val().length == -1){
 			$('#arm #search #match').show()
 			$('#arm #search #match .listing').empty()
 		    $.each(translations, function(i) {
@@ -95,14 +95,14 @@ $(document).ready(function() {
 			})
             $(this).css({
                 'text-align': 'center',
-            }).val('').attr('tabindex', -1)
+            }).val('')
 		}
         if (e.type == 'focusout' || e.type == 'blur')
             $(this).css({
                 'caret-color': '#e4e4e4',
             }).val('Search')
-        if ($('input[type=text]').val() != 'Search') var keyup = $(
-            'input[type=text]').val()
+        if ($(this).val() != 'Search') var keyup = $(
+            this).val()
         if (e.type == 'keyup' && e.keyCode == 13) {
             $('#arm #search #match').hide()
             return false
@@ -113,7 +113,7 @@ $(document).ready(function() {
             listResponse($(this).val())
         } else if ($(this).val().length <= 2 && e.keyCode == 8) {
             $('#arm #search #match').hide()
-            $('#main .result, #main #air, #main .center, #main .suggestions')
+            $('#main .result, #main .air, #main .center, #main .suggestions')
                 .show()
         } else if (e.keyCode == 40 || e.keyCode == 34) {
             if (!$('#arm #search #match .listing .hover').length) {
@@ -122,7 +122,7 @@ $(document).ready(function() {
             } else {
                 $('#arm #search #match .listing .hover').next()
                     .focus().attr('class', 'hover')
-                $('input[type=text]').val(keyup)
+                $(this).val(keyup)
                 $(this).attr('tabIndex', -1).focus()
                 $('#arm #search #match .listing .hover').prev()
                     .attr('class', 'index')
@@ -130,23 +130,22 @@ $(document).ready(function() {
         } else if (e.keyCode == 38 || e.keyCode == 33) {
             $('#arm #search #match .listing .hover').prev()
                 .focus().attr('class', 'hover')
-            $('input[type=text]').val(keyup)
-            $(this).attr('tabIndex', -1).focus()
+            $(this).val(keyup)
+            $(this).focus()
             $('#arm #search #match .listing .hover').next().attr(
                 'class', 'index')
         } else if (e.keyCode == 27) {
             $('#arm #search #match').hide()
-			$('input[type=text]').val('Search')
+			$(this).val('Search')
         }
-        e.preventDefault()
         applyVisual()
 
-}).on('touch click', '.post', function(e) {
+}).on('touch click', '#main .center .channel .item .post', function(e) {
 
 	$(this).siblings('.comment').focus().submit()
 	e.stopPropagation()
 
-}).on('submit', '.addComment', function(e) {
+}).on('submit', '#main .center .channel .item .addComment', function(e) {
 
     if ($(this).children('.comment').val() != '')
         item = $(this).parent().attr('item')
@@ -163,39 +162,42 @@ $(document).ready(function() {
             "</div>")
     }
     $('.' + item + ' .addComment .comment').val('')
-    e.preventDefault()
+	e.preventDefault()
 
-}).on('submit', '#search', function(e) {
+}).on('submit', '#arm #search', function(e) {
 
-	$('#main #air, #main .result, #main .center').remove()
+	$('#main .air, #main .result, #main .center').remove()
     $('#arm #search #match').hide()
-    if ($('#search .listing .hover').length) {
-		if (translations.indexOf($('.hover').attr('response')) > -1) {
-			categoryResponse($('.hover').attr('response'))
-			stateResponse('?q=' + $('.hover').attr('response')
+    if ($('#arm #search .listing .hover').length) {
+		if (translations.indexOf($(
+			'#arm #search #match .listing .hover').attr('response')) > -1) {
+			categoryResponse($(
+			'#arm #search #match .listing .hover').attr('response'))
+			stateResponse('?q=' + $(
+			'#arm #search #match .listing .hover').attr('response')
 				.toLowerCase())
         } else exitResponse('?q=' +
-            $('input[type=text]').val() +
+            $('#arm #search input[type=text]').val() +
             '&' +
-            $('#arm #search #match .hover').attr(
+            $('#arm #search #match .listing .hover').attr(
                 'response'))
     } else {
-        if ($('input[type=text]').val().length) {
+        if ($('#arm #search input[type=text]').val().length) {
             document.title = $(
-                'input[type=text]').val().replace(
+                '#arm #search input[type=text]').val().replace(
                 /(\/|\.)/g, ' ').capitalize()
             stateResponse('?q=' + $(
-                    'input[type=text]').val()
+                    '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+'))
-            filterResponse(false, $('input[type=text]')
+            filterResponse(false, $('#arm #search input[type=text]')
                 .val().toLowerCase(), false)
         }
     }
-    $('input[type=text]').val('Search').blur()
+    $('#arm #search input[type=text]').val('Search').blur()
     e.preventDefault()
     applyVisual()
 
-}).on('touch click', '#asset .id', function(e) {
+}).on('touch click', '#main .center .quick .feed .asset .id', function(e) {
 
     var $this = $(this)
     $(this).parent().find('svg circle').addClass('mask').on(
@@ -217,7 +219,8 @@ $(document).ready(function() {
                 }
             })
         })
-}).on('touch click', '.combine div', function(e) {
+
+}).on('touch click', '#main .suggestions .combine div', function(e) {
 
     exitResponse('?q=' +
         '&' + $(this).attr('response'))
@@ -245,8 +248,9 @@ $(document).ready(function() {
         $(this).hide()
     $('#main .center .quick .right').show()
 
-}).on('touch click mouseenter mouseleave', '.filter, .populate', function(
-    e) {
+}).on('touch click mouseenter mouseleave', 
+	'.air .filter, .result .filter, .air .populate, .result .populate', 
+	function(e) {
 
     if (contrast == false)
         if (e.type == 'mouseenter') {
@@ -266,20 +270,24 @@ $(document).ready(function() {
             $(this).attr('response'))
     }
 
-}).on('touch click mouseenter mouseleave', '.index, .hover',
-    function(e) {
+}).on('touch click mouseenter mouseleave', 
+	'#arm #search #match .listing .index, #arm #search #match .listing .hover', 
+	function(e) {
 
         if (e.type == 'mouseenter') {
-            $('#search .listing .hover').removeClass('hover')
+            $('#arm #search .listing .hover').removeClass('hover')
                 .addClass('index')
             $(this).attr('class', 'hover')
         } else if (e.type == 'mouseleave') {
-            $('#search .listing .hover').removeClass('hover')
+            $('#arm #search .listing .hover').removeClass('hover')
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
-		if (translations.indexOf($('.hover').attr('response')) > -1) {
-			categoryResponse($('.hover').attr('response'))
-			stateResponse('?q=' + $('.hover').attr('response')
+		if (translations.indexOf($(
+			'#arm #search #match .listing .hover').attr('response')) > -1) {
+			categoryResponse($(
+				'#arm #search #match .listing .hover').attr('response'))
+			stateResponse('?q=' + $(
+				'#arm #search #match .listing .hover').attr('response')
 				.toLowerCase())
         } else exitResponse('?q=' +
                 $(this).attr('search') +
@@ -288,7 +296,7 @@ $(document).ready(function() {
         e.preventDefault()
         applyVisual()
 
-}).on('touch click', '.fa-circle-thin, .fa-circle', function(
+}).on('touch click', '#option .fa-circle-thin, #option .fa-circle', function(
     e) {
 
     $(this).toggleClass('fa-circle-thin fa-circle')
@@ -314,7 +322,7 @@ $(document).ready(function() {
     }
     applyVisual('op')
 
-}).on('touch click', '.fa-user-circle', function(e) {
+}).on('touch click', '#option .fa-user-circle', function(e) {
 
 	var re = menu.indexOf(menu[Math.floor(Math.random() *
 		menu.length)])
@@ -323,7 +331,7 @@ $(document).ready(function() {
     xmlResponse(null, null, re, null)
     return false
 
-}).on('touch click', '.fa-terminal', function(e) {
+}).on('touch click', '#option .fa-terminal', function(e) {
 
     if (!id) id = translations[current]
     else id = menu[id].cat
@@ -339,8 +347,9 @@ $(document).ready(function() {
     xmlResponse(null, null, n, false)
     return false
 
-}).on('touch click', '.fa-bookmark-o, .fa-bookmark', function(
-    e) {
+}).on('touch click', 
+	'#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark',
+	function(e) {
 
     $(this).parents('.item').find('.source').select()
     document.execCommand('copy')
@@ -348,31 +357,37 @@ $(document).ready(function() {
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.fa-heart-o, .fa-heart', function(e) {
+}).on('touch click', 
+	'#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-heart',
+	function(e) {
 
     $(this).toggleClass('fa-heart-o fa-heart')
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.fa-comments-o, .fa-comments', function(e) {
+}).on('touch click', 
+	'#main .center .channel .item .image .tag .fa-comments-o, #main .center .channel .item .image .tag .fa-comments',
+	function(e) {
 
     $(this).toggleClass('fa-comments-o fa-comments')
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.fa-ellipsis-h', function(e) {
+}).on('touch click', '#main .center .channel .item .header .fa-ellipsis-h', function(e) {
 
     $(this).siblings('.url').select()
     document.execCommand('copy')
     $(this).removeClass('fa-ellipsis-h').addClass(
         'fa-ellipsis-v')
     setTimeout(function() {
-        $('.item .copy').removeClass('fa-ellipsis-v')
+        $('#main .center .channel .item .copy').removeClass('fa-ellipsis-v')
             .addClass('fa-ellipsis-h')
     }, 250)
     e.stopPropagation()
 
-}).on('touch click', '.fa-sticky-note-o, .fa-sticky-note', function(e) {
+}).on('touch click', 
+	'#main .center .channel .item .image .tag .fa-sticky-note-o, #main .center .channel .item .image .tag .fa-sticky-note',
+	function(e) {
 
 	if (contrast == true) 
 		if (!$(this).parents('.item').find('.share').val().match(/\+1/g))
@@ -389,7 +404,7 @@ $(document).ready(function() {
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.img', function(e) {
+}).on('touch click', '#main .center .channel .item .image .img', function(e) {
 
     if ($(this).hasClass('expand min') || $(this).hasClass(
             'expand full')) expandImage($(this).attr(
@@ -399,7 +414,7 @@ $(document).ready(function() {
     e.stopPropagation()
     applyVisual()
 
-}).on('touch click', '.more', function(e) {
+}).on('touch click', '#main .center .channel .item .pub .more', function(e) {
 
     $(this).parent().html($(this)
         .parent().attr('text'))
@@ -411,7 +426,7 @@ $(document).ready(function() {
     e.stopPropagation()
     $(this).hide()
 
-}).on('touch click', '#bottom', function(e) {
+}).on('touch click', '#main .center #bottom', function(e) {
 
     document.title = 'acktic'
     $('#main .center, #main .suggestions').remove()
@@ -477,7 +492,7 @@ function applyVisual(n) {
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
     } else if (op == 0) {
-        $('.suggestions, .combine, .comment, .channel, #air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
+        $('.suggestions, .combine, .comment, .channel, .air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -532,7 +547,7 @@ function applyVisual(n) {
 
 function categoryResponse(n) {
 
-	$('#main #air, #main .result, #main .center, #main .suggestions').remove()
+	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
@@ -609,7 +624,7 @@ function feedResponse(n) {
         if (!menu[i].img) var img = 'images/apply' + '.png'
         else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
         $('#main .center .feed').append(
-            "<div id='asset'>" +
+            "<div class='asset'>" +
             "<svg>" +
             "<defs>" +
             "<linearGradient id='gradientOpposite'>" +
@@ -638,7 +653,7 @@ function feedResponse(n) {
 
 function filterResponse(passthrough, n, post) {
     filter = []
-    $('#main .result, #main #air, #main .center, #main .suggestions').remove()
+    $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit, #main #placeholder').show()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
     $('#main').scrollTop(0)
@@ -696,11 +711,6 @@ function imageResolution(n) {
     var mobile = 1480
     var minimum = 299
     var maximum = 799
-    if (!$('#' + n).attr('src').match(/(gif|png|jpg|jpeg)/g)) {
-        $('#' + n).parent().siblings('#header, .tag, .courtesy').css('display',
-            'none')
-        return false
-    }
     if ($('#' + n).attr('src')) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile) {
@@ -712,7 +722,7 @@ function imageResolution(n) {
             } else if ($('#' + n).get(0).naturalWidth >
                 minimum) {
                 expand = ''
-                $('#' + n).width('100%').parent()
+                $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth <
                 maximum) {
                 expand = ''
@@ -724,7 +734,7 @@ function imageResolution(n) {
             }
             $('#' + n).css('display', 'block')
         })
-    }
+    } else $('#' + n).parents('.item').find('.tag, .header').hide()
 }
 
 function listResponse(n) {
@@ -820,8 +830,8 @@ function populateResponse(n) {
 function precedeResponse(n) {
 
     if (!n) n = 1
-    if ($('#main #air').length < 1) $('#main').prepend(
-        "<div id='air' style='display:none'></div>")
+    if ($('#main .air').length < 1) $('#main').prepend(
+        "<div class='air' style='display:none'></div>")
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
         if (menu[n].cat == menu[i].cat) {
@@ -830,7 +840,7 @@ function precedeResponse(n) {
                 "<b>" + tag + '</b>')
             if (!menu[i].img) var img = 'images/apply' + '.png'
             else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
-            $('#main #air').append(
+            $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
                 "' response='" + menu[i].id.toLowerCase()
                 .replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
@@ -867,9 +877,9 @@ function progressResponse(complete, n) {
                     '#main .result').show()
                 if ($('#main .center').length == 1) $(
                     '#main .center').show()
-                if ($('#main #air').length == 1) {
-                    $('#main #air').show()
-                    $('#main').scrollTop($('#air').outerHeight())
+                if ($('#main .air').length == 1) {
+                    $('#main .air').show()
+                    $('#main').scrollTop($('.air').outerHeight())
                 } 
             })
     }
@@ -980,7 +990,7 @@ function xmlResponse(e, s, n, post) {
         $('#progressBar').width($('#progressBar').width() +
             Math.floor(Math.random() * (5 - 0 + 1) + 0))
     }, 350)
-    $('#main .result, #main .center, #main #air, #main .suggestions').remove()
+    $('#main .result, #main .center, #main .air, #main .suggestions').remove()
     request = $.get({
             url: uri,
             method: 'GET',
@@ -1179,8 +1189,8 @@ function xmlResponse(e, s, n, post) {
                     html =
                         "<div id='yt' class='item' ext='" + ref
                         .trim() + "'>" +
-                        "<div id='header'>" + courtesy +
-                        "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+                        "<div class='header'>" + courtesy +
+                        "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src +
                         "'></iframe>" + views + "</div>" +
@@ -1219,8 +1229,8 @@ function xmlResponse(e, s, n, post) {
                     html =
                         "<div class='item " + i + "' item='" + i +
                         "' ext='" + ref.trim() + "'>" +
-                        "<div id='header'>" + courtesy +
-                        "<i class='copy fa fa-ellipsis-h' title='Copy URL'></i>" +
+                        "<div class='header'>" + courtesy +
+                        "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
                         "<img id='" + i +
@@ -1283,7 +1293,6 @@ function xmlResponse(e, s, n, post) {
             if (!id) id = menu.indexOf(menu[n])
             $('#main .center').append(
                 "<div id='bottom'><img class='bottom'></div>")
-            $('#main').attr('tabindex', -1)
             progressResponse(true, 100)
             clearInterval(complete)
             suggestResponse(id)
