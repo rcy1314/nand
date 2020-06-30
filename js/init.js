@@ -1,21 +1,10 @@
-var id
-var op = 0
-var request
-var quit = 15
-var object = []
-var filter = []
-var reverse = false
-var contrast = false
-var category = 'Social'
-var cors = 'https://acktic-github-io.herokuapp.com/'
-var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
     if (location.href.match('\\+1')) {
 
         applyVisual(!op)
         contrast = true
 
-    } else applyVisual(op)
+    }
 
     if (location.search.split('?q=')[1]) {
         var uri = location.search.split('?q=')[1]
@@ -28,16 +17,12 @@ var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 
 		else var post = false
         if ($.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(true, uri[1], post)
-            applyVisual()
         } else if ($.isNumeric(post) && uri[0] && !uri[1]) {
-            filterResponse(true, uri[0], post)
-            applyVisual()
+            filterResponse(false, uri[0], post)
         } else if (!$.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(true, uri[1], post)
-            applyVisual()
         } else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
-            filterResponse(true, uri[0], post)
-            applyVisual()
+            filterResponse(false, uri[0], post)
         }
     }
 

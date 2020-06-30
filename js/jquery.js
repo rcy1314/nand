@@ -1,3 +1,15 @@
+var id
+var op = 0
+var request
+var quit = 15
+var object = []
+var filter = []
+var reverse = false
+var contrast = false
+var category = 'Social'
+var cors = 'https://acktic-github-io.herokuapp.com/'
+var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
+
 var applyVisual = function (n) {
 
     if (n == 'op') {
@@ -15,6 +27,7 @@ var applyVisual = function (n) {
             'border-bottom': '1px solid #333',
 
         })
+		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
@@ -53,6 +66,7 @@ var applyVisual = function (n) {
                 'background-color': 'transparent',
                 'color': '#333'
             })
+		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
@@ -174,7 +188,9 @@ function filterResponse(passthrough, n, post) {
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
+	console.log(n)
     $('#main').scrollTop(0)
+$(document).ready(function() {
     if (reverse) reverseResponse(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
@@ -210,12 +226,16 @@ function filterResponse(passthrough, n, post) {
 	            /\s/g, '+'), 0)
 	        return false
 	    }
-	} else if (passthrough == false) progressResponse(true, 100)
-    applyVisual()
+	} else if (passthrough == false) {
+		progressResponse(true, 100)
+		populateResponse(id)
+		precedeResponse(id)
+	}
+})
 
 }
 
-function imageResolution(n) {
+var imageResolution = function (n) {
 
     var mobile = 1480
     var minimum = 299
@@ -344,13 +364,13 @@ function precedeResponse(n) {
 
 var progressResponse = function (complete, n) {
 
-    if (contrast == true) $('#progressBar').addClass('response responseOpposite').width(n + '%')
-    else $('#progressBar').addClass('response responseInvert').width(n + '%')
+$(document).ready(function() {
+    $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
         $('#progressBar').on(
             'transitionend webkitTransitionEnd oTransitionEnd',
             function(e) {
-                $(this).removeClass('response responseInvert responseOpposite').width(0)
+                $(this).removeClass('response').width(0)
                 $('#main #visit, #arm #search #match')
                     .hide()
                 if ($('#main .suggestions').length == 1) $(
@@ -365,15 +385,17 @@ var progressResponse = function (complete, n) {
                 } 
 				$('#main').attr('tabindex', -1).focus()
             })
+		applyVisual()
     }
-
+})
 }
 
 var suggestResponse = function (n) {
-
+var dupe = []
     for (var i = 0; i <= 9; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-        if (menu[e])
+		dupe.push(e)
+        if ($.inArray(dupe, e) == -1 && menu[e])
             $('#main .suggestions').append(
                 "<div class='combine'>" +
                 "<div response='" + menu[e].id.toLowerCase()

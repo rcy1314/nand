@@ -134,26 +134,22 @@ $(document).ready(function() {
 			if (contrast == true) uri = uri + '+1' 
 			stateResponse(uri)
         } else {
-			var uri = '?q=' +
-            	$('#arm #search input[type=text]').val() +
-            		'&' +
-            	$('#arm #search #match .listing .hover').attr(
-                	'response')
+			var uri = '?q=' + $('#arm #search input[type=text]').val()
 			if (contrast == true) uri = uri + '+1'
-			exitResponse(uri)
+			filterResponse(true, $('#arm #search input[type=text]').val(), null)
 		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
             document.title = $(
                 '#arm #search input[type=text]').val().replace(
                 /(\/|\.)/g, ' ').capitalize()
-            uri = '?q=' + $(
+            var uri = '?q=' + $(
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
-			if (contrast == true) uri = uri + '+1'
-			stateResponse(uri)
-            filterResponse(true, $('#arm #search input[type=text]')
-                .val().toLowerCase(), false)
+			if (contrast == true) var uri = uri + '+1'
+			exitResponse(uri)
+			populateResponse(id)
+			precedeResponse(id)
         }
     }
     $('#arm #search input[type=text]').val('Search').blur()
@@ -178,7 +174,8 @@ $(document).ready(function() {
                 complete: function() {
                     var uri = '?q=' + '&' + $this.attr('response')
 					if (contrast == true) uri = uri + '+1'
-					exitResponse(uri)
+					filterResponse(true, $this.attr('response'), null)
+					stateResponse(uri)
                 }
             })
         })
@@ -229,11 +226,14 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-        var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
+		if (location.search.split('?q=')[1].match(/[^&]+/g)[0]
+			 == menu[id].id.toLowerCase().replace(/\s|\.|\//g, '+'))
+			 var uri = '?q=' + '&' + $(this).attr('response')
+        else var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
 			'&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
-		stateResponse(uri)
         filterResponse(true, $(this).attr('response'), null)
+		stateResponse(uri)
     }
 
 }).on('touch click mouseenter mouseleave', 
@@ -411,7 +411,7 @@ $(document).ready(function() {
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
 	if (contrast == true) uri = uri + '+1'
-    stateResponse('?q=' + uri)
+    stateResponse('?q=' + uri.replace(/\-/g, '+'))
     document.title = 'acktic'
     filterResponse(false, uri
         .toLowerCase(), false)
