@@ -400,7 +400,7 @@ $(document).ready(function() {
     document.title = 'acktic'
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
-	if (contrast == true) uri = uri + '+1'
+	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     stateResponse('?q=' + uri.replace(/\-/g, '+'))
 	filterResponse(false, uri.replace(/\-/g, ' '))
 
