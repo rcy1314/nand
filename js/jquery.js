@@ -208,17 +208,19 @@ function filterResponse(passthrough, n, post) {
         }
     }
     if (!id) id = filter[filter.length - 1] + +1
-    if ($.isNumeric(exact)) {
-        xmlResponse(null, null, exact, post)
-        return false
-    } else if ($.isNumeric(id) && filter.length == 1) {
-        xmlResponse(null, null, id, post)
-        return false
-    } else if (!$.isNumeric(exact) && filter.length == 0) {
-        xmlResponse('search', $('input[type=text]').val().replace(
-            /\s/g, '+'), 0)
-        return false
-    }
+	if (passthrough == true) {
+	    if ($.isNumeric(exact)) {
+	        xmlResponse(null, null, exact, post)
+	        return false
+	    } else if ($.isNumeric(id) && filter.length == 1) {
+	        xmlResponse(null, null, id, post)
+	        return false
+	    } else if (!$.isNumeric(exact) && filter.length == 0) {
+	        xmlResponse('search', $('input[type=text]').val().replace(
+	            /\s/g, '+'), 0)
+	        return false
+	    }
+	}
     if (passthrough == false) progressResponse(true, 100)
     $('#main').attr('tabindex', -1)
     applyVisual()

@@ -681,12 +681,12 @@ input[type=submit] {
     height: fit-content;
     vertical-align: top;
     position: absolute;
-    margin-top: 170px;
     text-align: left;
 	margin-left: 5px;
     font-size: 12px;
     padding: 15px;
     width: 150px;
+    top: 170px;
 }
 
 .combine {

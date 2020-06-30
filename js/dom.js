@@ -21,16 +21,16 @@ $(document).ready(function() {
 			var post = location.hash.substr(1)
 		else var post = false
         if ($.isNumeric(post) && uri[0] && uri[1]) {
-            filterResponse(false, uri[1], post)
+            filterResponse(true, uri[1], post)
             applyVisual()
         } else if ($.isNumeric(post) && uri[0] && !uri[1]) {
-            filterResponse(false, uri[0], post)
+            filterResponse(true, uri[0], post)
             applyVisual()
         } else if (!$.isNumeric(post) && uri[0] && uri[1]) {
-            filterResponse(false, uri[1], post)
+            filterResponse(true, uri[1], post)
             applyVisual()
         } else if (!$.isNumeric(post) && uri[0] && !uri[1]) {
-            filterResponse(false, uri[0], post)
+            filterResponse(true, uri[0], post)
             applyVisual()
         }
     }
@@ -269,32 +269,30 @@ $(document).ready(function() {
     }
 
 }).on('touch click mouseenter mouseleave', 
-	'#arm #search #match .listing .index, #arm #search #match .listing .hover', 
-	function(e) {
+	'#arm #search #match .listing .index, #arm #search #match .listing .hover',
+    function(e) {
 
         if (e.type == 'mouseenter') {
-            $('#arm #search .listing .hover').removeClass('hover')
+            $('#search .listing .hover').removeClass('hover')
                 .addClass('index')
             $(this).attr('class', 'hover')
         } else if (e.type == 'mouseleave') {
-            $('#arm #search .listing .hover').removeClass('hover')
+            $('#search .listing .hover').removeClass('hover')
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
-		if (translations.indexOf($(
-			'#arm #search #match .listing .hover').attr('response')) > -1) {
-			categoryResponse($(
-				'#arm #search #match .listing .hover').attr('response'))
-			var uri = '?q=' +
-				$('#arm #search #match .listing .hover').attr('response')
-				.toLowerCase()
+		if (translations.indexOf($('.hover').attr('response')) > -1) {
+			categoryResponse($('.hover').attr('response'))
+			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
 			if (contrast == true) uri = uri + '+1'
 			stateResponse(uri)
-        } else var uri = '?q=' +
+        } else {
+			var uri = '?q=' +
                 $(this).attr('search') +
                 '&' + $(this)
                 .attr('response')
 			if (contrast == true) uri = uri + '+1'
 			exitResponse(uri)
+		}
         e.preventDefault()
         applyVisual()
 
@@ -443,11 +441,11 @@ $(document).ready(function() {
 
     document.title = 'acktic'
     $('#main .center, #main .suggestions').remove()
-    var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-	if (contrast == true) uri = uri[0] + '+1'
+    var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
+	if (contrast == true) uri = uri + '+1'
     stateResponse('?q=' + uri)
     document.title = 'acktic'
-    filterResponse(false, uri[0]
+    filterResponse(false, uri
         .toLowerCase(), false)
 	populateResponse(id)
 	precedeResponse(id)
