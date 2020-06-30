@@ -395,15 +395,13 @@ var dupe = []
 		dupe.push(e)
 		if (menu[e])
         if ($.inArray(dupe, e) == -1 && menu[e])
-			var slim = menu[e].id.match(/[^\/]+$/g)
-			slim = String(slim)
             $('#main .suggestions').append(
                 "<div class='combine'>" +
                 "<div title='" + menu[e].id.replace(/\//g, ' ') + 
 				"' response='" + menu[e].id.toLowerCase()
                 .replace(/(\/|\.|\s)/g, '+') + "' search='" + menu[e].cat
                 .toLowerCase() +
-                "'>" + slim.truncate(30, true) +
+                "'>" + menu[e].id.match(/[^\/]+$/g) +
                 "</div>" +
                 "</div>"
             )
