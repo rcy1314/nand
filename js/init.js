@@ -18,7 +18,7 @@
         if ($.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(true, uri[1], post)
         } else if ($.isNumeric(post) && uri[0] && !uri[1]) {
-            filterResponse(false, uri[0], post)
+            filterResponse(true, uri[0], post)
         } else if (!$.isNumeric(post) && uri[0] && uri[1]) {
             filterResponse(true, uri[1], post)
         } else if (!$.isNumeric(post) && uri[0] && !uri[1]) {

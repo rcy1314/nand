@@ -188,7 +188,6 @@ function filterResponse(passthrough, n, post) {
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
-	console.log(n)
     $('#main').scrollTop(0)
 $(document).ready(function() {
     if (reverse) reverseResponse(menu.reverse())
@@ -222,8 +221,7 @@ $(document).ready(function() {
 	        xmlResponse(null, null, id, post)
 	        return false
 	    } else if (!$.isNumeric(exact) && filter.length == 0) {
-	        xmlResponse('search', $('input[type=text]').val().replace(
-	            /\s/g, '+'), 0)
+	        xmlResponse('search', n, 0)
 	        return false
 	    }
 	} else if (passthrough == false) {

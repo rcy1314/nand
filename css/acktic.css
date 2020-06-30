@@ -412,7 +412,7 @@ svg .border {
     }
 
     100% {
-        stroke-dasharray: 16;
+        stroke-dasharray: 4;
     }
 }
 

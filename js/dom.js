@@ -140,16 +140,11 @@ $(document).ready(function() {
 		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
-            document.title = $(
-                '#arm #search input[type=text]').val().replace(
-                /(\/|\.)/g, ' ').capitalize()
             var uri = '?q=' + $(
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
 			if (contrast == true) var uri = uri + '+1'
 			exitResponse(uri)
-			populateResponse(id)
-			precedeResponse(id)
         }
     }
     $('#arm #search input[type=text]').val('Search').blur()
@@ -163,19 +158,18 @@ $(document).ready(function() {
         'wekitAnimationEnd oanimationend msAnimationEnd animationend',
         function() {
             $this.parent().find('svg circle').css({
-                'transform': 'rotate(270deg)',
                 'stroke-dasharray': '16'
             }).animate({
-                'stroke-dasharray': 191,
-                'stroke-dashoffset': -191
+                'stroke-dasharray': 175,
+                'stroke-dashoffset': 191,
+				'stroke-width': 0,
             }, {
-                easing: 'swing',
-                duration: 750,
+                easing: 'linear',
+                duration: 1000,
                 complete: function() {
                     var uri = '?q=' + '&' + $this.attr('response')
 					if (contrast == true) uri = uri + '+1'
-					filterResponse(true, $this.attr('response'), null)
-					stateResponse(uri)
+					exitResponse(uri)
                 }
             })
         })
@@ -229,11 +223,10 @@ $(document).ready(function() {
 		if (location.search.split('?q=')[1].match(/[^&]+/g)[0]
 			 == menu[id].id.toLowerCase().replace(/\s|\.|\//g, '+'))
 			 var uri = '?q=' + '&' + $(this).attr('response')
-        else var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
-			'&' + $(this).attr('response')
+        else var uri = '?q=' + location.search.split('?q=')[1].match(/[^&]+/g)
+			.replace(/\-/g, '+') + '&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
-        filterResponse(true, $(this).attr('response'), null)
-		stateResponse(uri)
+		exitResponse(uri)
     }
 
 }).on('touch click mouseenter mouseleave', 
@@ -412,12 +405,6 @@ $(document).ready(function() {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
 	if (contrast == true) uri = uri + '+1'
     stateResponse('?q=' + uri.replace(/\-/g, '+'))
-    document.title = 'acktic'
-    filterResponse(false, uri
-        .toLowerCase(), false)
-	populateResponse(id)
-	precedeResponse(id)
-    progressResponse(true, 100)
-    applyVisual()
+	filterResponse(false, uri.replace(/\-/g, ' '))
 
 })
