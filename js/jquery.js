@@ -1,15 +1,3 @@
-var id
-var op = 0
-var request
-var quit = 15
-var object = []
-var filter = []
-var reverse = false
-var contrast = false
-var category = 'Social'
-var cors = 'https://acktic-github-io.herokuapp.com/'
-var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
-
 var applyVisual = function (n) {
 
     if (n == 'op') {
@@ -184,7 +172,7 @@ function feedResponse(n) {
 function filterResponse(passthrough, n, post) {
     filter = []
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
-    $('#main #visit, #main #placeholder').show()
+    $('#main #visit').show()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
     $('#main').scrollTop(0)
     if (reverse) reverseResponse(menu.reverse())
@@ -222,9 +210,7 @@ function filterResponse(passthrough, n, post) {
 	            /\s/g, '+'), 0)
 	        return false
 	    }
-	}
-    if (passthrough == false) progressResponse(true, 100)
-    $('#main').attr('tabindex', -1)
+	} else if (passthrough == false) progressResponse(true, 100)
     applyVisual()
 
 }
@@ -364,9 +350,8 @@ var progressResponse = function (complete, n) {
         $('#progressBar').on(
             'transitionend webkitTransitionEnd oTransitionEnd',
             function(e) {
-                if (contrast == true) $(this).removeClass('response responseOpposite').width(0)
-                else $(this).removeClass('response responseInvert').width(0)
-                $('#main #visit, #main #placeholder, #arm #search #match')
+                $(this).removeClass('response responseInvert responseOpposite').width(0)
+                $('#main #visit, #arm #search #match')
                     .hide()
                 if ($('#main .suggestions').length == 1) $(
                     '#main .suggestions').css('visibility', 'visible')
@@ -384,7 +369,7 @@ var progressResponse = function (complete, n) {
 
 }
 
-function suggestResponse(n) {
+var suggestResponse = function (n) {
 
     for (var i = 0; i <= 9; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
@@ -403,7 +388,7 @@ function suggestResponse(n) {
     applyVisual()
 }
 
-function writeResponse(n) {
+var writeResponse = function (n) {
 
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
@@ -426,17 +411,16 @@ function writeResponse(n) {
 
 }
 
-function xmlResponse(e, s, n, post) {
+var xmlResponse = function (e, s, n, post) {
 	id = n
     obj = []
     var local
     var pub = []
+    if (reverse) reverseResponse(menu.reverse())
     var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
-    if (reverse) reverseResponse(menu.reverse())
-    if (!$.isNumeric(id)) id = menu.length - +1
     document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progressResponse(false, Math.floor(Math.random() * (55 - 25 + 1) +
         25))

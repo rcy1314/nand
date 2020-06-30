@@ -1,3 +1,15 @@
+var id
+var op = 0
+var request
+var quit = 15
+var object = []
+var filter = []
+var reverse = false
+var contrast = false
+var category = 'Social'
+var cors = 'https://acktic-github-io.herokuapp.com/'
+var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
+
     if (location.href.match('\\+1')) {
 
         applyVisual(!op)

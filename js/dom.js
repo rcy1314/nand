@@ -7,9 +7,9 @@ $(document).ready(function() {
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
 
-}).on('touch click', '#main #visit, #main #placeholder', function(e) {
+}).on('touch click', '#main #visit', function(e) {
 
-    $('#main #visit, #main #placeholder').hide()
+    $('#main #visit').hide()
 	var uri = '?q=' + category.toLowerCase()
 	if (contrast == true) uri = uri + '+1'
     filterResponse(false, category, false)
@@ -232,7 +232,7 @@ $(document).ready(function() {
         var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
 			'&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
-        exitResponse(uri)
+        filterResponse(true, $(this).attr('response'), null)
     }
 
 }).on('touch click mouseenter mouseleave', 
