@@ -144,7 +144,7 @@ $(document).ready(function() {
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
 			if (contrast == true) var uri = uri + '+1'
-			filterResponse(false, $('#arm #search input[type=text]').val(), null)
+			filterResponse(true, $('#arm #search input[type=text]').val(), null)
 			stateResponse(uri)
         }
     }
