@@ -232,6 +232,7 @@ $(document).ready(function() {
         var uri = '?q=' + location.search.split('?q=')[1].match(/[^&+1]+/g) +
 			'&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
+		stateResponse(uri)
         filterResponse(true, $(this).attr('response'), null)
     }
 
