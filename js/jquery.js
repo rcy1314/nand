@@ -393,6 +393,7 @@ var dupe = []
     for (var i = 0; i <= 9; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 		dupe.push(e)
+		if (menu[e])
         if ($.inArray(dupe, e) == -1 && menu[e])
 			var slim = menu[e].id.match(/[^\/]+$/g)
 			slim = String(slim)
@@ -402,7 +403,7 @@ var dupe = []
 				"' response='" + menu[e].id.toLowerCase()
                 .replace(/(\/|\.|\s)/g, '+') + "' search='" + menu[e].cat
                 .toLowerCase() +
-                "'>" + slim.truncate(15, true) +
+                "'>" + slim.truncate(30, true) +
                 "</div>" +
                 "</div>"
             )
