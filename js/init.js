@@ -1,7 +1,5 @@
     if (location.href.match('\\+1')) {
 
-        $('#option .fa-circle-thin').toggleClass(
-            'fa-circle-thin fa-circle')
         applyVisual(!op)
         contrast = true
 

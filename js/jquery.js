@@ -10,13 +10,13 @@ var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
-function applyVisual(n) {
+var applyVisual = function (n) {
 
     if (n == 'op') {
         op = op != true
     } else if (n == 1 || n == 0) op = n
     if (op == 1) {
-        $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, input[type=text], #visit, .result, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-circle-thin, input[type=text], #visit, .result, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
@@ -36,6 +36,7 @@ function applyVisual(n) {
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
+        $('#option .fa-circle-thin').toggleClass('fa-circle-thin fa-circle')
     } else if (op == 0) {
         $('.suggestions, .combine, .comment, .channel, .air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
             .css({
@@ -59,7 +60,7 @@ function applyVisual(n) {
                 'background-color': '#fafafa',
                 'color': '#666'
             })
-        $('#home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin')
+        $('#home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin, .fa-circle')
             .css({
                 'background-color': 'transparent',
                 'color': '#333'
@@ -83,6 +84,7 @@ function applyVisual(n) {
         $('#arm').css({
             'border-bottom': '1px solid #ddd'
         })
+        $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     }
     $('.fa-heart').css('color', 'lightcoral')
 

@@ -92,6 +92,11 @@
     scrollbar-width: thin;
 }
 
+#progressBar {
+	height: 4px;
+	width: 0;
+}
+
 .responseInvert {
     background: #C6FFDD;
     /* fallback for old browsers */
@@ -206,6 +211,7 @@ input {
 #option,
 .index,
 .hover,
+#visit,
 .more,
 .post,
 .pub,
