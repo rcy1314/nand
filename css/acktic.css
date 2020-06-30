@@ -32,6 +32,15 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+
+	#main .center .quick .right,
+	#main .center .quick .left {
+		display: none !important;
+	}
+
+}
+
 @media screen and (min-width: 768px) {
     #main .center {
         width: 60% !important;
