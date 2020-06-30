@@ -221,11 +221,7 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-		if (location.search.split('?q=')[1].match(/[^&]+/g)[0]
-			 == menu[id].id.toLowerCase().replace(/\s|\.|\//g, '+'))
-			 var uri = '?q=' + '&' + $(this).attr('response')
-        else var uri = '?q=' + location.search.split('?q=')[1].match(/[^&]+/g)
-			.replace(/\-/g, '+') + '&' + $(this).attr('response')
+		var uri = '?q=&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
 		exitResponse(uri)
     }

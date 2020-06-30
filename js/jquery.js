@@ -212,7 +212,7 @@ $(document).ready(function() {
             writeResponse(menu.indexOf(menu[i]))
         }
     }
-    if (!id) id = filter[filter.length - 1] + +1
+    if (!id) id = filter[filter.length - 1]
 	if (passthrough == true) {
 	    if ($.isNumeric(exact)) {
 	        xmlResponse(null, null, exact, post)
@@ -727,7 +727,7 @@ var xmlResponse = function (e, s, n, post) {
                 "<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'></div>" +
                 "</div>" + 
 				"<div class='channel'></div></div>" +
-                "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you...<br></div>"
+                "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;...<br></div>"
             )
             if ($.isNumeric(local)) {
                 $('#main .center .channel').append(pub[local].post)

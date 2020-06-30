@@ -34,7 +34,7 @@
 
 @media screen and (min-width: 768px) {
     #main .center {
-        width: 60% !important;
+        width: 55% !important;
     }
 
     #main .air .populate,
@@ -463,7 +463,7 @@ svg .border {
 
 .center {
     display: inline-block;
-    padding-right: 3px;
+    padding-right: 5px;
     position: relative;
     text-align: left;
 }
@@ -608,6 +608,7 @@ svg .border {
 }
 
 input[type=text] {
+    -webkit-appearance: none;
     caret-color: transparent;
     text-align: center;
     position: relative;
