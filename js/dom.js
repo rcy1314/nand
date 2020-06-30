@@ -152,7 +152,7 @@ $(document).ready(function() {
                 .toLowerCase().replace(/\s/g, '+')
 			if (contrast == true) uri = uri + '+1'
 			stateResponse(uri)
-            filterResponse(false, $('#arm #search input[type=text]')
+            filterResponse(true, $('#arm #search input[type=text]')
                 .val().toLowerCase(), false)
         }
     }
