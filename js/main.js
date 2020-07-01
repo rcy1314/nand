@@ -38,6 +38,7 @@ $(document).ready(function() {
 	$('.arrow').removeClass('active')
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',
+
     function(e) {
 		$this = $(this)
         if (e.type == 'touch' || e.type == 'click' || 
@@ -63,18 +64,20 @@ $(document).ready(function() {
 				'text-align': 'left',
                 'caret-color': '#e4e4e4',
 			})
-			} else
+			} else {
 			setTimeout(function () {
             $this.css({
 				'padding-left': '30px',
                 'caret-color': '#e4e4e4',
                 'text-align': 'left',
             })
-			}, 750)
+			}, 500)
 			$('#arm #search #input .icon').addClass('slide')
+			}
 		}
         if (e.type == 'focusout' || e.type == 'blur')
             $(this).css({
+                'caret-color': 'transparent',
 				'padding': '0',
                 'text-align': 'center'
             }).val('Search').siblings('.icon').removeClass('slide')
@@ -112,11 +115,13 @@ $(document).ready(function() {
             $('#arm #search #match .listing .hover').next().attr(
                 'class', 'index')
         } else if (e.keyCode == 27) {
+			$('.arrow').removeClass('active')
             $('#arm #search #match').hide()
             $(this).css({
+                'caret-color': 'transparent',
 				'padding': '0',
                 'text-align': 'center'
-            }).val('').siblings('.icon').removeClass('slide')
+            }).val('Search').siblings('.icon').removeClass('slide')
         }
         visual()
 

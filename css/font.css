@@ -1,0 +1,110 @@
+
+@font-face {
+    font-family: FontAwesome;
+    src: url(../fonts/fontawesome-webfont.woff2);
+}
+
+.fa {
+	display: inline-block;
+}
+
+.fa-home:before {
+	font-family: FontAwesome;
+	content:"\f015";
+}
+
+.fa-git,
+.fa-circle,
+.fa-terminal,
+.fa-circle-thin,
+.fa-user-circle {
+    margin-left: 20px;
+    color: #666;
+}
+
+.fa-search:before {
+	font-family: FontAwesome;
+	content:"\f002";
+	color: #aaa;
+}
+
+.fa-git:before {
+	font-family: FontAwesome;
+	content:"\f1d3";
+}
+
+.fa-circle-thin:before {
+	font-family: FontAwesome;
+	content:"\f1db";
+}
+
+.fa-circle:before {
+	font-family: FontAwesome;
+	content:"\f111";
+}
+
+.fa-terminal:before {
+	font-family: FontAwesome;
+	content:"\f120";
+}
+
+.fa-user-circle:before {
+	font-family: FontAwesome;
+	content:"\f2be";
+}
+.fa-heart,
+.fa-heart-o,
+.fa-comments,
+.fa-comments-o,
+.fa-sticky-note,
+.fa-sticky-note-o,
+.fa-bookmark,
+.fa-bookmark-o {
+    font-size: 16px !important;
+    margin: 10px !important;
+}
+
+.fa-ellipsis-h:before {
+	font-family: FontAwesome;
+	content:"\f141";
+}
+.fa-ellipsis-v:before {
+	font-family: FontAwesome;
+	content:"\f142";
+}
+.fa-bookmark,
+.fa-bookmark-o {
+	float: right !important;
+}
+.fa-heart:before {
+	font-family: FontAwesome;
+	content:"\f004";
+}
+.fa-comments:before {
+	font-family: FontAwesome;
+	content:"\f086";
+}
+.fa-sticky-note:before {
+	font-family: FontAwesome;
+	content:"\f02e";	
+}
+.fa-bookmark:before {
+	font-family: FontAwesome;
+	content:"\f02e";
+}
+.fa-heart-o:before {
+	font-family: FontAwesome;
+	content:"\f08a";
+}
+.fa-comments-o:before {
+	font-family: FontAwesome;
+	content:"\f0e6";
+}
+.fa-sticky-note-o:before {
+	font-family: FontAwesome;
+	content:"\f24a";
+}
+.fa-bookmark-o:before {
+	font-family: FontAwesome;
+	content:"\f097";
+}

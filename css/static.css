@@ -1,0 +1,386 @@
+::-webkit-scrollbar {
+    display: block;
+    width: 5px
+}
+
+.invert::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, .1)
+}
+
+.invert::-webkit-scrollbar {
+    background-color: #f5f5f5
+}
+
+.invert {
+    scrollbar-color: #eee #f5f5f5;
+    scrollbar-width: thin;
+}
+
+.opposite::-webkit-scrollbar-thumb {
+    background-color: #222
+}
+
+.opposite::-webkit-scrollbar {
+    background-color: #000
+}
+
+.opposite {
+    scrollbar-color: #222 #000;
+    scrollbar-width: thin;
+}
+
+#progressBar {
+	height: 4px;
+	width: 0;
+}
+
+.responseInvert {
+    background: #C6FFDD;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 4px;
+	width: 0;
+}
+
+.responseOpposite {
+    background-image: linear-gradient(to left, #ef4063 0%, #e557c6 100%);
+	height: 4px;
+	width: 0;
+}
+
+@font-face {
+    font-family: Billabong;
+    src: url(../fonts/Billabong.ttf);
+}
+
+div,
+input {
+    font-family: Proxima Nova;
+}
+
+.icon {
+	position: absolute;
+	left: 60px;
+	top: 7px;
+}
+.wrap,
+.arrow {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  left: 1px;
+  top: 2px;
+}
+.filter,
+.populate,
+.combine div,
+#bottom,
+#option,
+.index,
+.hover,
+#visit,
+.more,
+.post,
+.pub,
+.img,
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, .combine div:hover {
+    text-decoration: underline;
+}
+
+html,
+body,
+#main,
+#visit,
+#wrapper,
+#container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+}
+
+#arm {
+    position: relative;
+    height: 60px;
+    width: 100%;
+}
+
+#search {
+	position: absolute;
+    height: 56px;
+    width: 100%;
+    margin: 0;
+	top: 4px;
+}
+
+#home {
+    font-family: Billabong;
+    position: absolute;
+    font-size: 40px;
+    cursor: pointer;
+    height: 46px;
+    left: 10px;
+    top: 5px;
+}
+
+#option {
+    justify-content: space-between;
+    background-color: transparent;
+    position: absolute;
+    font-size: 24px;
+    padding: 10px;
+    display: flex;
+    top: 12px;
+    right: 0;
+}
+
+#main {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    height: calc(100% - 64px);
+    -ms-user-select: none;
+	position: relative;
+    text-align: center;
+    overflow-x: hidden;
+    user-select: none;
+    overflow: auto;
+    outline: none;
+}
+
+#visit {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 105%;
+}
+
+#placeholder {
+    filter: brightness(50%) saturate(20%) invert(90%);
+    width: 100px !important;
+    margin-top: -100px;
+    margin-left: 25px;
+}
+
+.air,
+.result {
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+}
+
+.filter,
+.populate {
+    display: inline-flex;
+    border-radius: 2px;
+    flex-wrap: wrap;
+    font-size: 9px;
+    padding: 15px;
+    margin: 3em;
+    width: 16em;
+}
+
+.title,
+.category {
+    border-radius: 10px;
+    margin: auto 0;
+    padding: 7px;
+    float: left;
+}
+
+.description {
+    padding-bottom: 5px;
+    text-align: justify;
+    display: table-cell;
+    position: relative;
+    width: fit-content;
+    margin-top: 5px;
+    clear: left;
+    float: left;
+}
+
+.type {
+    display: inline-block;
+    border-radius: 28px;
+    position: relative;
+    font-size: 10px;
+    height: 28px;
+    width: 28px;
+    left: 5px;
+}
+
+.quick {
+    border-radius: 2px;
+    position: relative;
+    margin: 25px auto;
+    height: 7.5em;
+    width: 100%;
+}
+
+.feed {
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    border-radius: 2px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    font-size: 10px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.feed::-webkit-scrollbar {
+    display: none;
+}
+
+svg {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+}
+
+svg .border {
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    stroke-linecap: round;
+    position: absolute;
+    stroke-width: 2;
+    fill: none;
+}
+
+
+.right {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    right: -1px;
+    z-index: 2;
+    top: 1px;
+}
+
+.left {
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    z-index: 2;
+    left: -1px;
+    top: 1px;
+}
+
+.asset {
+    position: relative;
+    text-align: center;
+    padding-left: 7px;
+    padding-top: 15px;
+    flex-shrink: 0;
+}
+
+.asset a {
+    display: block;
+}
+
+.id {
+    border-radius: 36px;
+    position: relative;
+    padding: 1px;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.center {
+    display: inline-block;
+    padding-right: 5px;
+    position: relative;
+	margin-left: 120px;
+    text-align: left;
+}
+
+#input {
+    position: relative;
+    margin: 0 auto;
+    display: none;
+	width: fit-content;
+    top: .7em;
+}
+
+input[type=text] {
+    -webkit-appearance: none;
+    caret-color: transparent;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    height: 2.5em;
+    width: 16em;
+}
+
+#match {
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+    display: none;
+    z-index: 2;
+    top: 1em;
+}
+
+.listing {
+    background-color: #fff;
+    position: relative;
+    overflow-y: auto;
+    height: 19.1em;
+    margin: 0 auto;
+    width: 16em;
+    z-index: 2;
+}
+
+.index {
+    padding-bottom: 15px;
+    position: relative;
+    padding-top: 15px;
+    font-size: 12px;
+    height: 2.5em;
+    width: 100%;
+}
+
+.hover {
+    background-color: #e4e4e4;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    height: 2.5em;
+    width: 100%;
+}
+
+.text {
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
+}
+
+input[type=submit] {
+    display: none;
+}

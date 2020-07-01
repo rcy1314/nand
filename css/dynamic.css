@@ -1,0 +1,187 @@
+@font-face {
+    font-family: Proxima Nova;
+    src: url(../fonts/ProximaNova-Regular.woff);
+}
+
+.item {
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.type,
+.item .id {
+    border: 1px solid #ddd !important;
+    height: 28px;
+    width: 28px;
+}
+
+.header {
+    height: 45px;
+    width: 100%;
+}
+
+.courtesy {
+    text-transform: capitalize;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    font-size: 10px;
+    display: flex;
+    left: 0;
+}
+
+.item .pub,
+.item .add {
+    justify-content: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 13px;
+    width: 95%;
+    left: 0;
+}
+
+.item .pub {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.more {
+    background-color: transparent;
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.item .add {
+    margin-left: 15px !important;
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 85%;
+}
+
+.img,
+.image {
+    position: relative;
+}
+
+.tag {
+    position: relative;
+    width: 100%;
+}
+
+.post {
+	margin-right: 10px;
+	position: relative;
+	color: lightcyan;
+	font-size: 12px;
+	float: right;
+	top: -27px;
+}
+
+.addComment {
+    margin-top: 5px;
+	margin: 0;
+}
+
+.comment {
+    font-family: Proxima Nova;
+    padding: 1em;
+    border: none;
+    clear: left;
+    width: 100%;
+}
+
+.comment::placeholder {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.url,
+.share,
+.source {
+    position: relative;
+    z-index: -2;
+    height: 0;
+}
+
+.copy {
+    font-size: 12px;
+    padding: 20px;
+    float: right;
+}
+
+.ago {
+    text-transform: uppercase;
+	margin-bottom: 5px;
+    position: relative;
+    width: fit-content;
+    margin-left: 10px;
+    font-size: 10px;
+    color: #e4e4e4;
+}
+
+#bottom {
+    position: relative;
+    bottom: 2em;
+    height: 2em;
+    width: 100%;
+}
+
+.bottom {
+    position: relative !important;
+    margin: 0 auto !important;
+    display: block;
+    width: 52px;
+}
+
+.suggestions {
+    display: inline-block;
+    height: fit-content;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+	margin-left: 5px;
+    font-size: 10px;
+    padding: 15px;
+    width: 120px;
+    top: 170px;
+}
+
+.combine {
+    width: 100%;
+    margin: 5px;
+}
+
+.combine div {
+    margin-top: 15px;
+}
+
+
+.views {
+    position: absolute;
+    bottom: -50px;
+    right: 10px;
+    z-index: 2;
+}
+
+.yt {
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% - 1px);
+    padding-bottom: 54.25%;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+iframe {
+    position: absolute;
+    border: none;
+    height: 100%;
+    width: 100%;
+	top: 5px;
+	left: 0;
+}

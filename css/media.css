@@ -1,0 +1,72 @@
+@media screen and (max-width: 425px) {
+
+    #home,
+    .left,
+    .right,
+    ::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #main {
+        height: calc(100% - 96px);
+    }
+
+    #main .center {
+        width: 97.5%;
+    }
+
+    #option {
+        position: absolute !important;
+        padding: 10px !important;
+        width: calc(100% - 20px) !important;
+        top: calc(100% - 45px) !important;
+        height: 35px !important;
+        z-index: 2;
+    }
+
+    #main .air .populate,
+    #main .result .filter,
+    #main .result .populate {
+        margin: 1em;
+        width: 32%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+	#main .center .quick .right,
+	#main .center .quick .left {
+		display: none !important;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+    #main .center {
+        width: 60% !important;
+    }
+
+    #main .air .populate,
+    #main .result .filter,
+    #main .result .populate {
+        margin: 2em;
+        width: 16%;
+    }
+
+    .suggestions {
+        display: inline-block !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #main .center {
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    #main .center {
+        width: 35% !important;
+    }
+}
+
