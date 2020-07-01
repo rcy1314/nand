@@ -700,10 +700,10 @@ var xml = function (e, s, n, post) {
                             this).find('title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
                             125, true) + more + "</div>" +
+                        "<div class='ago'>" + dst[0] + "</div>" +
                         "<input class='url' value='" + ref.trim() + "'>" +
                         "<input class='share' value='" + share + "'>" +
                         "<input class='source' value='" + src + "'>" +
-                        "<div class='ago'>" + dst[0] + "</div>" +
                         cat +
                         "<form class='addComment' action'#'>" +
                         "<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +

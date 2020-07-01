@@ -34,7 +34,6 @@
 .item .add {
     justify-content: left;
     margin-left: 10px;
-    margin-top: 5px;
     font-size: 13px;
     width: 95%;
     left: 0;
@@ -42,7 +41,6 @@
 
 .item .pub {
     display: inline-block;
-    margin-bottom: 5px;
 }
 
 .more {
@@ -104,9 +102,11 @@
 .url,
 .share,
 .source {
+	display: inline-block;
     position: relative;
     z-index: -2;
     height: 0;
+	width: 10px;
 }
 
 .copy {
@@ -118,6 +118,7 @@
 .ago {
     text-transform: uppercase;
 	margin-bottom: 5px;
+	display: inline-block;
     position: relative;
     width: fit-content;
     margin-left: 10px;
