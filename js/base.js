@@ -112,7 +112,6 @@ function groups(n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            if (!menu[i].img) var img = 'images/apply' + '.png'
             else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
@@ -163,7 +162,6 @@ function feed(n) {
     else if (n >= menu.length - 13) n = 1
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = n; i <= n + 13; i++) {
-        if (!menu[i].img) var img = 'images/apply' + '.png'
         else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
         $('#main .center .feed').append(
             "<div class='asset'>" +
@@ -313,7 +311,6 @@ var populate = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            if (!menu[i].img) var img = 'images/apply' + '.png'
             else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
@@ -346,7 +343,6 @@ function air(n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            if (!menu[i].img) var img = 'images/apply' + '.png'
             else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
