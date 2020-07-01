@@ -205,6 +205,11 @@
 }
 
 @font-face {
+    font-family: FontAwesome;
+    src: url(../fonts/fontawesome-webfont.woff2);
+}
+
+@font-face {
     font-family: Billabong;
     src: url(../fonts/Billabong.ttf);
 }
@@ -212,6 +217,30 @@
 div,
 input {
     font-family: Proxima Nova;
+}
+
+.fa {
+	display: inline-block;
+}
+
+.fa-git:before {
+	font-family: FontAwesome;
+	content:"\f1d3";
+}
+
+.fa-circle:before {
+	font-family: FontAwesome;
+	content:"\f10c";
+}
+
+.fa-terminal:before {
+	font-family: FontAwesome;
+	content:"\f120";
+}
+
+.fa-user-circle:before {
+	font-family: FontAwesome;
+	content:"\f2be";
 }
 
 .filter,
@@ -566,7 +595,38 @@ svg .border {
 .fa-bookmark-o {
 	float: right !important;
 }
-
+.fa-heart:before {
+	font-family: FontAwesome;
+	content:"\f004";
+}
+.fa-comments:before {
+	font-family: FontAwesome;
+	content:"\f086";
+}
+.fa-sticky-note:before {
+	font-family: FontAwesome;
+	content:"\f02e";	
+}
+.fa-bookmark:before {
+	font-family: FontAwesome;
+	content:"\f02e";
+}
+.fa-heart-o:before {
+	font-family: FontAwesome;
+	content:"\f08a";
+}
+.fa-comments-o:before {
+	font-family: FontAwesome;
+	content:"\f0e6";
+}
+.fa-sticky-note-o:before {
+	font-family: FontAwesome;
+	content:"\f24a";
+}
+.fa-bookmark-o:before {
+	font-family: FontAwesome;
+	content:"\f097";
+}
 .post {
 	margin-right: 10px;
 	position: relative;

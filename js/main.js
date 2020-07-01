@@ -9,13 +9,17 @@ $(document).ready(function() {
 
 }).on('touch click', '#main #visit', function(e) {
 
-    $('#main #visit').hide()
-	var uri = '?q=' + category.toLowerCase()
-	if (contrast == true) uri = uri + '+1'
-    filterResponse(false, category, false)
-    stateResponse(uri)
-    precedeResponse()
-    progressResponse(true, 100)
+	if ($('#arm #search #match .listing').is(':visible'))
+		$('#arm #search #match').hide()
+	else {
+        $('#main #visit').hide()
+	    var uri = '?q=' + category.toLowerCase()
+        if (contrast == true) uri = uri + '+1'
+        response(false, category, false)
+        state(uri)
+        air(id)
+        progress(true, 100)
+	}
 
 }).on('touch click', '#main .center .channel .item', function(e) {
 
@@ -44,7 +48,7 @@ $(document).ready(function() {
                 	"<img class='type' src='" +
                 	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
                 	"<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-                	"<br>&emsp;" + grepResponse(translations[i]) + " feeds</div>" +
+                	"<br>&emsp;" + grep(menu, translations[i]) + " feeds</div>" +
                 	"</div>"
 				)
 			})
@@ -63,9 +67,9 @@ $(document).ready(function() {
             return false
         } else if (e.type == 'keyup' && $(this).val().length >=
             3 && e.keyCode >= 65 && e.keyCode <= 90) {
-            listResponse($(this).val())
+            list($(this).val())
         } else if ($(this).val().length >= 2 && e.keyCode == 8) {
-            listResponse($(this).val())
+            list($(this).val())
         } else if ($(this).val().length <= 2 && e.keyCode == 8) {
             $('#arm #search #match').hide()
             $('#main .result, #main .air, #main .center, #main .suggestions')
@@ -93,7 +97,7 @@ $(document).ready(function() {
             $('#arm #search #match').hide()
 			$(this).val('Search')
         }
-        applyVisual()
+        visual()
 
 }).on('touch click', '#main .center .channel .item .post', function(e) {
 
@@ -126,17 +130,17 @@ $(document).ready(function() {
     if ($('#arm #search .listing .hover').length) {
 		if (translations.indexOf($(
 			'#arm #search #match .listing .hover').attr('response')) > -1) {
-			categoryResponse($(
+			category($(
 			'#arm #search #match .listing .hover').attr('response'))
 				var uri = '?q=' + $(
 					'#arm #search #match .listing .hover').attr('response')
 					.toLowerCase()
 			if (contrast == true) uri = uri + '+1' 
-			stateResponse(uri)
+			state(uri)
         } else {
 			var uri = '?q=' + $('#arm #search input[type=text]').val()
 			if (contrast == true) uri = uri + '+1'
-			filterResponse(true, $('#arm #search input[type=text]').val(), null)
+			response(true, $('#arm #search input[type=text]').val(), null)
 		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
@@ -144,13 +148,13 @@ $(document).ready(function() {
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
 			if (contrast == true) var uri = uri + '+1'
-			filterResponse(true, $('#arm #search input[type=text]').val(), null)
-			stateResponse(uri)
+			response(true, $('#arm #search input[type=text]').val(), null)
+			state(uri)
         }
     }
     $('#arm #search input[type=text]').val('Search').blur()
     e.preventDefault()
-    applyVisual()
+    visual()
 
 }).on('touch click', '#main .center .quick .feed .asset .id', function(e) {
 
@@ -170,7 +174,7 @@ $(document).ready(function() {
                 complete: function() {
                     var uri = '?q=' + '&' + $this.attr('response')
 					if (contrast == true) uri = uri + '+1'
-					exitResponse(uri)
+					exit(uri)
                 }
             })
         })
@@ -179,7 +183,7 @@ $(document).ready(function() {
 
     var uri = '?q=' + '&' + $(this).attr('response')
 	if (contrast == true) uri = uri + '+1'
-	exitResponse(uri)
+	exit(uri)
 
 }).on('touch click', '#main .center .quick .right', function(e) {
 
@@ -223,7 +227,7 @@ $(document).ready(function() {
     if (e.type == 'touch' || e.type == 'click') {
 		var uri = '?q=&' + $(this).attr('response')
 		if (contrast == true) uri = uri + '+1'
-		exitResponse(uri)
+		exit(uri)
     }
 
 }).on('touch click mouseenter mouseleave', 
@@ -239,20 +243,20 @@ $(document).ready(function() {
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
 		if (translations.indexOf($('.hover').attr('response')) > -1) {
-			categoryResponse($('.hover').attr('response'))
+			category($('.hover').attr('response'))
 			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
 			if (contrast == true) uri = uri + '+1'
-			stateResponse(uri)
+			state(uri)
         } else {
 			var uri = '?q=' +
                 $(this).attr('search') +
                 '&' + $(this)
                 .attr('response')
 			if (contrast == true) uri = uri + '+1'
-			exitResponse(uri)
+			exit(uri)
 		}
         e.preventDefault()
-        applyVisual()
+        visual()
 
 }).on('touch click', '#arm #home', function(e) {
 
@@ -270,13 +274,13 @@ $(document).ready(function() {
         !location.href.match('\\?\\+1') &&
         contrast == false) {
         var init = document.location.href + '?+1'
-        stateResponse(init)
+        state(init)
         contrast = true
     } else if (location.href.match('\\?q=') &&
         !location.href.match('\\+\\1') &&
         contrast == false) {
         var opposite = document.location.href + '+1'
-        stateResponse(opposite)
+        state(opposite)
         contrast = true
     } else if (location.href.match('\\?\\+1') ||
         location.href.match('\\+1') ||
@@ -286,7 +290,7 @@ $(document).ready(function() {
         history.replaceState(null, null, invert)
         contrast = false
     }
-    applyVisual('op')
+    visual('op')
 
 }).on('touch click', '#option .fa-user-circle', function(e) {
 
@@ -295,7 +299,7 @@ $(document).ready(function() {
 	var uri = '?q=' + menu[re].cat.toLowerCase() + '&' +
 		menu[re].id.toLowerCase().replace(/\s|\.|\//g, '-')
 	if (contrast == true) uri = uri + '+1'    
-	stateResponse(uri)
+	state(uri)
 	xmlResponse(null, null, re, null)
     return false
 
@@ -312,7 +316,7 @@ $(document).ready(function() {
     var re = '?q=' + menu[n].cat.toLowerCase() + '&' +
         menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
 	if (contrast == true) re = re + '+1'
-    stateResponse(re)
+    state(re)
     xmlResponse(null, null, n, false)
     return false
 
@@ -324,7 +328,7 @@ $(document).ready(function() {
     document.execCommand('copy')
     $(this).toggleClass('fa-bookmark-o fa-bookmark')
     e.stopPropagation()
-    applyVisual()
+    visual()
 
 }).on('touch click', 
 	'#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-heart',
@@ -332,15 +336,15 @@ $(document).ready(function() {
 
     $(this).toggleClass('fa-heart-o fa-heart')
     e.stopPropagation()
-    applyVisual()
+    visual()
 
 }).on('touch click', 
-	'#main .center .channel .item .image .tag .fa-comments-o, #main .center .channel .item .image .tag .fa-comments',
+	'#main .center .channel .item .image .tag .fa-comment-o, #main .center .channel .item .image .tag .fa-comment',
 	function(e) {
 
-    $(this).toggleClass('fa-comments-o fa-comments')
+    $(this).toggleClass('fa-comment-o fa-comment')
     e.stopPropagation()
-    applyVisual()
+    visual()
 
 }).on('touch click', '#main .center .channel .item .header .fa-ellipsis-h', function(e) {
 
@@ -371,17 +375,17 @@ $(document).ready(function() {
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
     e.stopPropagation()
-    applyVisual()
+    visual()
 
 }).on('touch click', '#main .center .channel .item .image .img', function(e) {
 
     if ($(this).hasClass('expand min') || $(this).hasClass(
-            'expand full')) expandImage($(this).attr(
+            'expand full')) expand($(this).attr(
         'id'))
     else $(this).parent().parent().find('.fa-heart-o, .fa-heart')
         .toggleClass('fa-heart-o fa-heart')
     e.stopPropagation()
-    applyVisual()
+    visual()
 
 }).on('touch click', '#main .center .channel .item .pub .more', function(e) {
 
@@ -397,11 +401,10 @@ $(document).ready(function() {
 
 }).on('touch click', '#main .center #bottom', function(e) {
 
-    document.title = 'acktic'
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    stateResponse('?q=' + uri.replace(/\-/g, '+'))
-	filterResponse(false, uri.replace(/\-/g, ' '))
+    state('?q=' + uri.replace(/\-/g, '+'))
+	response(false, uri.replace(/\-/g, ' '))
 
 })

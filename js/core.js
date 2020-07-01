@@ -20,24 +20,25 @@ String.prototype.truncate =
     }
 
 
-var escapeHtml = function (n) {
+var escape = function (n) {
+
     return n
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(/'/g, "&#039;")
 }
 
-var exitResponse = function (n) {
+var exit = function (n) {
 
     window.location.assign(n)
 
 }
 
-var grepResponse = function (n) {
+var grep = function (array, n) {
 
-	var numOccurences = $.grep(menu, function (elem) {
+	var numOccurences = $.grep(array, function (elem) {
 	    return elem.cat === n;
 	}).length;
 	return numOccurences
@@ -45,7 +46,7 @@ var grepResponse = function (n) {
 }
 
 
-var momentTimeStamp = function(n) {
+var moment = function(n) {
 
     var age = new Date()
     var utc = new Date(n)
@@ -73,7 +74,7 @@ var momentTimeStamp = function(n) {
 
 }
 
-var reverseResponse = function (Object) {
+var transpose = function (Object) {
 
     var newObject = {}
     var keys = []
@@ -90,14 +91,14 @@ var reverseResponse = function (Object) {
 
 }
 
-var stateResponse = function (n) {
+var state = function (n) {
 
     history.replaceState(null, null, n)
 
 }
 
 
-var uncoordinatedTimeZone = function (n) {
+var zulu = function (n) {
 
     var opt = {
         weekday: 'long',
@@ -108,7 +109,7 @@ var uncoordinatedTimeZone = function (n) {
         hour12: true
     }
     var dmz = []
-    dmz.push(momentTimeStamp(n))
+    dmz.push(moment(n))
     var utc = new Date(n)
     var gmt = utc.toLocaleString('en-US', opt)
     dmz.push(gmt)
@@ -116,4 +117,3 @@ var uncoordinatedTimeZone = function (n) {
     return dmz
 
 }
-

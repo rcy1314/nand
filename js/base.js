@@ -1,7 +1,5 @@
 var id
 var op = 0
-var request
-var quit = 15
 var object = []
 var filter = []
 var reverse = false
@@ -10,12 +8,12 @@ var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
-var applyVisual = function (n) {
+var visual = function (n) {
 
-    if (n == 'op') {
+    if (n == 'op')
         op = op != true
-    } else if (n == 1 || n == 0) op = n
-    if (op == 1) {
+    else if (n == 1 || n == 0) op = n
+    if (op == 1 || contrast == true) {
         $('#main, #arm, #home, #option, #bottom, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-circle-thin, input[type=text], #visit, .result, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
@@ -38,7 +36,7 @@ var applyVisual = function (n) {
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
         $('#option .fa-circle-thin').toggleClass('fa-circle-thin fa-circle')
-    } else if (op == 0) {
+    } else if (op == 0 || contrast == false) {
         $('.suggestions, .combine, .comment, .channel, .air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
             .css({
                 'background-color': '#fff',
@@ -92,7 +90,7 @@ var applyVisual = function (n) {
 
 }
 
-function categoryResponse(n) {
+function category(n) {
 
 	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
@@ -121,10 +119,10 @@ function categoryResponse(n) {
             )
         }
     }
-	progressResponse(true, 100)
+	progress(true, 100)
 }
 
-function expandImage(n) {
+function expand(n) {
 
     if ($('#' + n).hasClass('expand min')) {
         object.push({
@@ -146,7 +144,7 @@ function expandImage(n) {
 }
 
 
-function feedResponse(n) {
+function feed(n) {
 
     if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
         .length - 1)])
@@ -180,60 +178,61 @@ function feedResponse(n) {
             "</div>"
         )
     }
-    applyVisual()
+    visual()
 }
 
-function filterResponse(passthrough, n, post) {
+var response =  function (passthrough, n, post) {
     filter = []
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
     $('#main').scrollTop(0)
-$(document).ready(function() {
-    if (reverse) reverseResponse(menu.reverse())
+	$(document).ready(function() {
+    if (reverse) transpose(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
             filter.push(menu.indexOf(menu[i]))
-            writeResponse(menu.indexOf(menu[i]))
+            write(menu.indexOf(menu[i]))
             var exact = i
             id = i
             break
         } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase()
             .match(n)) {
             filter.push(menu.indexOf(menu[i]))
-            writeResponse(menu.indexOf(menu[i]))
+            write(menu.indexOf(menu[i]))
             id = i
         } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase()
             .match(n)) {
             filter.push(menu.indexOf(menu[i]))
-            writeResponse(menu.indexOf(menu[i]))
+            write(menu.indexOf(menu[i]))
         } else if (menu[i].cat.toLowerCase().match(n)) {
             filter.push(menu.indexOf(menu[i]))
-            writeResponse(menu.indexOf(menu[i]))
+            write(menu.indexOf(menu[i]))
         }
     }
     if (!id) id = filter[filter.length - 1]
 	if (passthrough == true) {
 	    if ($.isNumeric(exact)) {
-	        xmlResponse(null, null, exact, post)
+	        xml(null, null, exact, post)
 	        return false
 	    } else if ($.isNumeric(id) && filter.length == 1) {
-	        xmlResponse(null, null, id, post)
+	        xml(null, null, id, post)
 	        return false
 	    } else if (!$.isNumeric(exact) && filter.length == 0) {
-	        xmlResponse('search', n, 0)
+	        xml('search', n, 0, null)
 	        return false
 	    }
 	} else if (passthrough == false) {
-		progressResponse(true, 100)
-		populateResponse(id)
-		precedeResponse(id)
+		populate(id)
+		air(id)
+		progress(true, 100)
 	}
+
 })
 
 }
 
-var imageResolution = function (n) {
+var image = function (n) {
 
     var mobile = 1480
     var minimum = 299
@@ -248,11 +247,9 @@ var imageResolution = function (n) {
                     })
             } else if ($('#' + n).get(0).naturalWidth >
                 minimum) {
-                expand = ''
                 $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth <
                 maximum) {
-                expand = ''
                 $('#' + n).width($('#' + n).get(0)
                     .naturalWidth + 30).css({
                     'margin-left': '10px',
@@ -264,7 +261,7 @@ var imageResolution = function (n) {
     } else $('#' + n).parents('.item').find('.tag, .header').hide()
 }
 
-function listResponse(n) {
+var list = function (n) {
 
 	$('#arm #search #match .listing').empty()
     for (var i = menu.length - 1; i >= 1; i--) {
@@ -293,7 +290,7 @@ function listResponse(n) {
     }
 }
 
-function populateResponse(n) {
+var populate = function (n) {
 
     if (!n) n = 1
     if ($('#main .result').length < 1) $('#main').append(
@@ -323,10 +320,10 @@ function populateResponse(n) {
             )
         }
     }
-    applyVisual()
+    visual()
 }
 
-function precedeResponse(n) {
+function air(n) {
 
     if (!n) n = 1
     if ($('#main .air').length < 1) $('#main').prepend(
@@ -356,13 +353,13 @@ function precedeResponse(n) {
             )
         }
     }
-    applyVisual()
+    visual()
 
 }
 
-var progressResponse = function (complete, n) {
+var progress = function (complete, n) {
 
-$(document).ready(function() {
+	$(document).ready(function() {
     $('#progressBar').addClass('response').width(n + '%')
     if (complete == true) {
         $('#progressBar').on(
@@ -383,13 +380,13 @@ $(document).ready(function() {
                 } 
 				$('#main').attr('tabindex', -1).focus()
             })
-		applyVisual()
+		visual()
     }
-})
+  })
 }
 
-var suggestResponse = function (n) {
-var dupe = []
+var suggest = function (n) {
+	var dupe = []
     for (var i = 0; i <= 9; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 		dupe.push(e)
@@ -407,10 +404,10 @@ var dupe = []
             )
         if (i == 9) return false
     }
-    applyVisual()
+    visual()
 }
 
-var writeResponse = function (n) {
+var write = function (n) {
 
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
@@ -433,25 +430,25 @@ var writeResponse = function (n) {
 
 }
 
-var xmlResponse = function (e, s, n, post) {
+var xml = function (e, s, n, post) {
 	id = n
     obj = []
     var local
     var pub = []
-    if (reverse) reverseResponse(menu.reverse())
+    if (reverse) transpose(menu.reverse())
     var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
     document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
-    progressResponse(false, Math.floor(Math.random() * (55 - 25 + 1) +
+    progress(false, Math.floor(Math.random() * (55 - 25 + 1) +
         25))
     var complete = setInterval(function() {
         $('#progressBar').width($('#progressBar').width() +
             Math.floor(Math.random() * (5 - 0 + 1) + 0))
     }, 350)
     $('#main .result, #main .center, #main .air, #main .suggestions').remove()
-    request = $.get({
+    $.get({
             url: uri,
             method: 'GET',
             dataType: 'xml',
@@ -470,24 +467,22 @@ var xmlResponse = function (e, s, n, post) {
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b><br></div>"
             )
             $('#main .channel').html("This site could not be reached.")
-            progressResponse(true, 100)
+            progress(true, 100)
             clearInterval(complete)
-            suggestResponse(id)
-            feedResponse(id)
-            applyVisual()
+            suggest(id)
+            feed(id)
+            visual()
         })
         .done(function(xhr) {
             if ($(xhr).find('entry').length > 0) var channel =
                 "entry"
             else var channel = 'item'
-            if ($(xhr).find(channel).length < quit) quit = $(xhr)
-                .find(channel).length - 1
+            quit = $(xhr).find(channel).length - 1
             $(xhr).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr(
                         'href')
-                    var dst = uncoordinatedTimeZone($(
-                            this).find('updated')
+                    var dst = zulu($(this).find('updated')
                         .text());
                     var gen = new Date($(this).find(
                         'updated').text()).getTime()
@@ -495,16 +490,14 @@ var xmlResponse = function (e, s, n, post) {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text()
                         .length > 0) {
-                        var dst = uncoordinatedTimeZone($(
-                                this).find('pubDate')
+                        var dst = zulu($(this).find('pubDate')
                             .text());
                         var gen = new Date($(this).find(
                                 'pubDate').text())
                             .getTime()
                     } else if ($(this).find(
                             'dc\\:date, date').text()) {
-                        var dst = uncoordinatedTimeZone($(
-                                this).find(
+                        var dst = zulu($(this).find(
                                 'dc\\:date, date')
                             .text());
                         var gen = new Date($(this).find(
@@ -662,7 +655,7 @@ var xmlResponse = function (e, s, n, post) {
                         	"<input class='source' value='" + src + "'>" +
                         "</div>" +
                         "<div class='pub' " +
-                        "text='" + escapeHtml($(this).find(
+                        "text='" + escape($(this).find(
                             'title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
                             125, true) +
@@ -694,7 +687,7 @@ var xmlResponse = function (e, s, n, post) {
                         		"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
                         	"</div>" +
                         "</div>" +
-                        "<div class='pub' text='" + escapeHtml($(
+                        "<div class='pub' text='" + escape($(
                             this).find('title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
                             125, true) + more + "</div>" +
@@ -734,24 +727,24 @@ var xmlResponse = function (e, s, n, post) {
             if ($.isNumeric(local)) {
                 $('#main .center .channel').append(pub[local].post)
                 if ($('#' + pub[local].element).length)
-                    imageResolution(pub[local].element)
+                    image(pub[local].element)
             } else {
                 $.each(pub, function(i, k) {
                     if (i == quit) return false
                     $('#main .center .channel').append(pub[i].post)
                     if ($('#' + pub[i].element).length) {
-                        imageResolution(pub[i].element)
+                        image(pub[i].element)
                     }
                 })
             }
             if (!id) id = menu.indexOf(menu[n])
             $('#main .center').append(
                 "<div id='bottom'><img class='bottom'></div>")
-            progressResponse(true, 100)
             clearInterval(complete)
-            suggestResponse(id)
-            feedResponse(id)
-            applyVisual()
+            progress(true, 100)
+            suggest(id)
+            feed(id)
+            visual()
         })
 
 }
