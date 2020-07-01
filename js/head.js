@@ -2956,6 +2956,16 @@ var menu = [{
 
 	,
 	{
+		id: "Breitbart",
+		cat: "World",
+		des: "Breitbart is an American far-right syndicated news, opinion and commentary website.",
+		uri: "http://feeds.feedburner.com/breitbart",
+		ext: "https://www.breitbart.com",
+		img: "Breitbart"
+	}
+
+	,
+	{
 		id: "InfoWars",
 		cat: "World",
 		des: "InfoWars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
