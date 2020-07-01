@@ -304,7 +304,7 @@ $(document).ready(function() {
         history.replaceState(null, null, invert)
         contrast = false
     }
-    visual('op')
+    visual()
 
 }).on('touch click', '#option .fa-user-circle', function(e) {
 
