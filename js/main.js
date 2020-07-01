@@ -162,7 +162,10 @@ $(document).ready(function() {
         } else {
 			var uri = '?q=' + $('#arm #search input[type=text]').val()
 			if (contrast == true) uri = uri + '+1'
-			response(true, $('#arm #search input[type=text]').val(), null)
+			state('?q=&' + $('#arm #search #match .listing .hover')
+				.attr('response'))
+			response(true, $('#arm #search #match .listing .hover')
+				.attr('response'), null)
 		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
