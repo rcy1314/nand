@@ -112,7 +112,7 @@ function groups(n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -162,7 +162,7 @@ function feed(n) {
     else if (n >= menu.length - 13) n = 1
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = n; i <= n + 13; i++) {
-        else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+        var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
         $('#main .center .feed').append(
             "<div class='asset'>" +
             "<svg>" +
@@ -311,7 +311,7 @@ var populate = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -343,7 +343,7 @@ function air(n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            else var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
             $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
                 "' response='" + menu[i].id.toLowerCase()
