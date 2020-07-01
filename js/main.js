@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#search input[type=text]').css('display', 'block')
+    $('#input').css('display', 'block')
 
 }).on('touch click', 'a', function(e) {
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',
     function(e) {
-
+		$this = $(this)
         if (e.type == 'touch' || e.type == 'click' || 
 			$('#arm #search input[type=text]').val().length == -1){
 			$('#arm #search #match').show()
@@ -52,14 +52,28 @@ $(document).ready(function() {
                 	"</div>"
 				)
 			})
-            $(this).css({
-                'text-align': 'center',
-            }).val('')
+			$(this).val('')
+			if ($('#arm #search #input .icon').hasClass('slide'))
+			$(this).css({
+				'padding-left': '30px',
+				'text-align': 'left',
+                'caret-color': '#e4e4e4',
+			})
+			else
+			setTimeout(function () {
+            $this.css({
+				'padding-left': '30px',
+                'caret-color': '#e4e4e4',
+                'text-align': 'left',
+            })
+			}, 1000)
+			$('#arm #search #input .icon').addClass('slide')
 		}
         if (e.type == 'focusout' || e.type == 'blur')
             $(this).css({
-                'caret-color': '#e4e4e4',
-            }).val('Search')
+				'padding': '0',
+                'text-align': 'center',
+            }).val('Search').siblings('.icon').removeClass('slide')
         if ($(this).val() != 'Search') var keyup = $(
             this).val()
         if (e.type == 'keyup' && e.keyCode == 13) {

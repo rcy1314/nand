@@ -223,14 +223,40 @@ input {
 	display: inline-block;
 }
 
+.fa-search:before {
+	font-family: FontAwesome;
+	content:"\f002";
+	color: #aaa;
+}
+.icon {
+	display: inline-block;
+	position: absolute;
+	left: 60px;
+	top: 7px;
+
+}
+.slide {
+	transition: 1s;
+	left: 10px;
+}
+.fa-home:before {
+	font-family: FontAwesome;
+	content:"\f015";
+}
+
 .fa-git:before {
 	font-family: FontAwesome;
 	content:"\f1d3";
 }
 
+.fa-circle-thin:before {
+	font-family: FontAwesome;
+	content:"\f1db";
+}
+
 .fa-circle:before {
 	font-family: FontAwesome;
-	content:"\f10c";
+	content:"\f111";
 }
 
 .fa-terminal:before {
@@ -344,7 +370,7 @@ body,
     margin-top: -100px;
     margin-left: 25px;
 }
-
+.fa-git,
 .fa-circle,
 .fa-terminal,
 .fa-circle-thin,
@@ -591,6 +617,14 @@ svg .border {
     margin: 10px !important;
 }
 
+.fa-ellipsis-h:before {
+	font-family: FontAwesome;
+	content:"\f141";
+}
+.fa-ellipsis-v:before {
+	font-family: FontAwesome;
+	content:"\f142";
+}
 .fa-bookmark,
 .fa-bookmark-o {
 	float: right !important;
@@ -678,19 +712,23 @@ svg .border {
     color: #e4e4e4;
 }
 
+#input {
+    position: relative;
+    margin: 0 auto;
+    display: none;
+	width: fit-content;
+    top: .7em;
+}
+
 input[type=text] {
     -webkit-appearance: none;
     caret-color: transparent;
     text-align: center;
-    position: relative;
     border-radius: 4px;
     font-size: 13px;
-    margin: 0 auto;
-    display: none;
     outline: none;
     height: 2.5em;
     width: 16em;
-    top: 1em;
 }
 
 #match {
@@ -708,7 +746,7 @@ input[type=text] {
     overflow-y: auto;
     height: 19.1em;
     margin: 0 auto;
-    width: 14em;
+    width: 16em;
     z-index: 2;
 }
 
