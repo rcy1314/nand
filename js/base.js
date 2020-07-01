@@ -90,7 +90,7 @@ var visual = function (n) {
 
 }
 
-function category(n) {
+function groups(n) {
 
 	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(

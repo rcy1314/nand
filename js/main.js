@@ -144,7 +144,7 @@ $(document).ready(function() {
     if ($('#arm #search .listing .hover').length) {
 		if (translations.indexOf($(
 			'#arm #search #match .listing .hover').attr('response')) > -1) {
-			category($(
+			groups($(
 			'#arm #search #match .listing .hover').attr('response'))
 				var uri = '?q=' + $(
 					'#arm #search #match .listing .hover').attr('response')
@@ -257,7 +257,7 @@ $(document).ready(function() {
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
 		if (translations.indexOf($('.hover').attr('response')) > -1) {
-			category($('.hover').attr('response'))
+			groups($('.hover').attr('response'))
 			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
 			if (contrast == true) uri = uri + '+1'
 			state(uri)
