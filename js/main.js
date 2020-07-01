@@ -28,11 +28,14 @@ $(document).ready(function() {
 
 }).on('touch click', '#arm', function(e) {
 
-	if (!$('#arm #search input[type=text]').is(':focus'))$('#arm #search #match').hide()
-
+	if (!$('#arm #search input[type=text]').is(':focus')) {
+		$('#arm #search #match').hide()
+		$('.arrow').removeClass('active')
+	}
 }).on('touch click', '#main', function(e) {
 
 	$('#arm #search #match').hide()
+	$('.arrow').removeClass('active')
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',
     function(e) {
@@ -53,26 +56,27 @@ $(document).ready(function() {
 				)
 			})
 			$(this).val('')
-			if ($('#arm #search #input .icon').hasClass('slide'))
+			$('.arrow').addClass('active')
+			if ($('#arm #search #input .icon').hasClass('slide')) {
 			$(this).css({
 				'padding-left': '30px',
 				'text-align': 'left',
                 'caret-color': '#e4e4e4',
 			})
-			else
+			} else
 			setTimeout(function () {
             $this.css({
 				'padding-left': '30px',
                 'caret-color': '#e4e4e4',
                 'text-align': 'left',
             })
-			}, 1000)
+			}, 750)
 			$('#arm #search #input .icon').addClass('slide')
 		}
         if (e.type == 'focusout' || e.type == 'blur')
             $(this).css({
 				'padding': '0',
-                'text-align': 'center',
+                'text-align': 'center'
             }).val('Search').siblings('.icon').removeClass('slide')
         if ($(this).val() != 'Search') var keyup = $(
             this).val()
@@ -109,7 +113,10 @@ $(document).ready(function() {
                 'class', 'index')
         } else if (e.keyCode == 27) {
             $('#arm #search #match').hide()
-			$(this).val('Search')
+            $(this).css({
+				'padding': '0',
+                'text-align': 'center'
+            }).val('').siblings('.icon').removeClass('slide')
         }
         visual()
 

@@ -25,12 +25,13 @@ var visual = function (n) {
             'border-bottom': '1px solid #333',
 
         })
+
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
-        $('.hover').css('background-color', '#333')
+        $('.arrow span, .hover').css('background-color', '#333')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
@@ -54,7 +55,7 @@ var visual = function (n) {
             'border': 'none',
             'color': '#666'
         })
-        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
+        $('.arrow span, #main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'
@@ -225,8 +226,8 @@ var response =  function (passthrough, n, post) {
 	} else if (passthrough == false) {
 		populate(id)
 		air(id)
-		progress(true, 100)
 	}
+	progress(true, 100)
 
 })
 
