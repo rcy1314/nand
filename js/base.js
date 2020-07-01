@@ -31,7 +31,7 @@ var visual = function (n) {
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
-        $('.arrow span, .hover').css('background-color', '#333')
+        $('.hover').css('background-color', '#333')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
@@ -55,7 +55,7 @@ var visual = function (n) {
             'border': 'none',
             'color': '#666'
         })
-        $('.arrow span, #main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
+        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'

@@ -28,14 +28,12 @@ $(document).ready(function() {
 
 }).on('touch click', '#arm', function(e) {
 
-	if (!$('#arm #search input[type=text]').is(':focus')) {
+	if (!$('#arm #search input[type=text]').is(':focus'))
 		$('#arm #search #match').hide()
-		$('.arrow').removeClass('active')
-	}
+
 }).on('touch click', '#main', function(e) {
 
 	$('#arm #search #match').hide()
-	$('.arrow').removeClass('active')
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',
 
@@ -57,7 +55,6 @@ $(document).ready(function() {
 				)
 			})
 			$(this).val('')
-			$('.arrow').addClass('active')
 			if ($('#arm #search #input .icon').hasClass('slide')) {
 			$(this).css({
 				'padding-left': '30px',
@@ -115,7 +112,6 @@ $(document).ready(function() {
             $('#arm #search #match .listing .hover').next().attr(
                 'class', 'index')
         } else if (e.keyCode == 27) {
-			$('.arrow').removeClass('active')
             $('#arm #search #match').hide()
             $(this).css({
                 'caret-color': 'transparent',

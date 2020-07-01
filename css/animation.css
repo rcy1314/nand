@@ -52,21 +52,6 @@
 	left: 10px !important;
 }
 
-.arrow span {
-  width: .75rem;
-  height: 0.2rem;
-  position: absolute;
-  transition: all 0.2s ease;
-}
-.arrow.active span:first-of-type {
-  left: .35em;
-  transform: rotate(-45deg);
-}
-.arrow.active span:last-of-type {
-  right: .35em;
-  transform: rotate(45deg);
-}
-
 .response {
     -moz-transition: all .5s ease;
     -moz-transition-delay: 0s;

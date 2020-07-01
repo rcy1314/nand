@@ -66,16 +66,7 @@ input {
 	left: 60px;
 	top: 7px;
 }
-.wrap,
-.arrow {
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  left: 1px;
-  top: 2px;
-}
+
 .filter,
 .populate,
 .combine div,
