@@ -63,8 +63,8 @@ input {
 
 .icon {
 	position: absolute;
-	left: 60px;
-	top: 7px;
+	left: 70px;
+	top: 10px;
 }
 
 .filter,
@@ -122,11 +122,11 @@ body,
 #home {
     font-family: Billabong;
     position: absolute;
-    font-size: 40px;
+    font-size: 28px;
     cursor: pointer;
     height: 46px;
-    left: 10px;
-    top: 5px;
+    left: 15px;
+    top: 15px;
 }
 
 #option {
