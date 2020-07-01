@@ -108,6 +108,7 @@ function groups(n) {
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
         if (n == menu[i].cat) {
+			id = menu.indexOf(menu[i])
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')

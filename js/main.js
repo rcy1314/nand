@@ -157,8 +157,11 @@ $(document).ready(function() {
 				var uri = '?q=' + $(
 					'#arm #search #match .listing .hover').attr('response')
 					.toLowerCase()
-			if (contrast == true) uri = uri + '+1' 
-			state(uri)
+			air(id)
+			state('?q=' + $('#arm #search #match .listing .hover')
+				.attr('response').toLowerCase())
+			document.title = $('#arm #search #match .listing .hover')
+				.attr('response')
         } else {
 			var uri = '?q=' + $('#arm #search input[type=text]').val()
 			if (contrast == true) uri = uri + '+1'
@@ -166,13 +169,14 @@ $(document).ready(function() {
 				.attr('response'))
 			response(true, $('#arm #search #match .listing .hover')
 				.attr('response'), null)
+			document.title = $('#arm #search #match .listing .hover')
+				.attr('response')
 		}
     } else {
         if ($('#arm #search input[type=text]').val().length) {
             var uri = '?q=' + $(
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
-			if (contrast == true) var uri = uri + '+1'
 			response(true, $('#arm #search input[type=text]').val(), null)
 			state(uri)
         }
@@ -431,5 +435,5 @@ $(document).ready(function() {
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))
 	response(false, uri.replace(/\-/g, ' '))
-
+	air(id)
 })
