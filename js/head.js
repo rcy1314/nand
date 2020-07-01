@@ -3146,8 +3146,18 @@ var menu = [{
 
 	,
 	{
+		id: "Salon",
+		cat: "World",
+		des: "Salon In-depth news, politics, business, technology & culture.",
+		uri: "https://www.salon.com/feed",
+		ext: "https://www.salon.com",
+		img: "Salon"
+	}
+
+	,
+	{
 		id: "Slate",
-		cat: "Technology",
+		cat: "World",
 		des: "Slate is an online magazine that covers current affairs, politics, and culture in the United States.",
 		uri: "https://slate.com/feeds/all.rss",
 		ext: "https://slate.com",
