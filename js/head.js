@@ -3196,7 +3196,7 @@ var menu = [{
 
 	,
 	{
-		id: "TIME",
+		id: "TIME Magazine",
 		cat: "World",
 		des: "Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",
 		uri: "http://feeds.feedburner.com/time/topstories?format=xml",
