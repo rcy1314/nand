@@ -22,6 +22,16 @@
     color: #666;
 }
 
+.fa-angle-double-left:before {
+	font-family: FontAwesome;
+	content:"\f100";
+}
+
+.fa-angle-double-right:before {
+	font-family: FontAwesome;
+	content:"\f101";
+}
+
 .fa-search:before {
 	font-family: FontAwesome;
 	content:"\f002";

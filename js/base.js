@@ -30,7 +30,12 @@ var visual = function (n) {
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
-        $('.right, .left').css('background-color', 'rgba(0,0,0,.5)')
+        $('.right, .left').css({
+			'background-color': 'rgba(0,0,0,.5)',
+		})
+        $('.fa-angle-double-left, .fa-angle-double-right').css({
+			'color': '#fff'
+		})
         $('.hover').css('background-color', '#333')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
@@ -68,7 +73,10 @@ var visual = function (n) {
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
-        $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
+        $('.fa-angle-double-left, .fa-angle-double-right, .right, .left').css({
+			'background-color': 'rgba(255,255,255,.5)',
+			'color': '#fff'
+		})
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
         $('.hover').css('background-color', '#fafafa')
         $('.description, .index').css({
@@ -463,7 +471,7 @@ var xml = function (e, s, n, post) {
         .fail(function() {
             $('#main').append(
                 "<div class='center' style='display:none'><div class='quick'><div class='feed'></div>" +
-                "<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'>" +
+                "<div class='left fa-angle-double-left' style='display:none'></div><div class='right fa-angle-double-right'>" +
                 "</div></div><div class='channel'></div></div>" +
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b><br></div>"
             )
@@ -720,7 +728,7 @@ var xml = function (e, s, n, post) {
                 "<div class='center' style='display:none'>" +
 				"<div class='quick'>" +
 				"<div class='feed'></div>" +
-                "<div class='left fa fa-angle-double-left' style='display:none'></div><div class='right fa fa-angle-double-right'></div>" +
+                "<div class='left' style='display:none'><div class='fa-angle-double-left'></div></div><div class='right'><div class='fa-angle-double-right'></div></div>" +
                 "</div>" + 
 				"<div class='channel'></div></div>" +
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;...<br></div>"
