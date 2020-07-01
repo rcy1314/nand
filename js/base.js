@@ -73,9 +73,11 @@ var visual = function (n) {
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
-        $('.fa-angle-double-left, .fa-angle-double-right, .right, .left').css({
+        $('.right, .left').css({
 			'background-color': 'rgba(255,255,255,.5)',
-			'color': '#fff'
+		})
+        $('.fa-angle-double-left, .fa-angle-double-right').css({
+			'color': '#666'
 		})
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
         $('.hover').css('background-color', '#fafafa')

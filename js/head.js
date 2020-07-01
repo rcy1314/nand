@@ -1908,6 +1908,16 @@ var menu = [{
 
 	,
 	{
+		id: "9to5Linux",
+		cat: "Technology",
+		des: "9to5Linux was founded as a technology blog covering latest Linux and Open Source news.",
+		uri: "https://9to5linux.com/feed",
+		ext: "https://9to5linux.com",
+		img: "9to5Linux"
+	}
+
+	,
+	{
 		id: "ABC Technology",
 		cat: "Technology",
 		des: "ABC Technology for Latest Science News, Technology News, and more.",
