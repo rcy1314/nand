@@ -314,7 +314,7 @@ svg .border {
     position: relative;
     margin: 0 auto;
     display: none;
-	width: fit-content;
+	width: 16em;
     top: .7em;
 }
 
@@ -326,7 +326,7 @@ input[type=text] {
     font-size: 13px;
     outline: none;
     height: 2.5em;
-    width: 16em;
+    width: 100%;
 }
 
 #match {
