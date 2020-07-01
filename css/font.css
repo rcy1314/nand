@@ -75,6 +75,7 @@
 .fa-bookmark,
 .fa-bookmark-o {
 	float: right !important;
+	margin: 10px !important;
 }
 .fa-heart:before {
 	font-family: FontAwesome;

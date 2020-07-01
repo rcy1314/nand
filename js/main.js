@@ -343,7 +343,7 @@ $(document).ready(function() {
     return false
 
 }).on('touch click', 
-	'#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark',
+	'#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark-o',
 	function(e) {
 
     $(this).parents('.item').find('.source').select()

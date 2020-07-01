@@ -632,7 +632,7 @@ var xml = function (e, s, n, post) {
                             'media\\:statistics, statistics'
                         ).attr('views'))
                         var views =
-                            "<div class='ago views' style='margin-bottom:20px'>views " +
+                            "<div class='ago views'>views " +
                             $(this).find(
                                 'media\\:statistics, statistics'
                             ).attr('views')
@@ -646,7 +646,7 @@ var xml = function (e, s, n, post) {
                         	"<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
-                        "<div class='tag' style='margin-left:10px'>" +
+                        "<div class='tag'>" +
                         	"<div class='fa fa-heart-o'></div>" +
                         	"<div class='fa fa-comments-o'></div>" +
                         	"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
