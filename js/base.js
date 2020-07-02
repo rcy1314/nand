@@ -159,6 +159,7 @@ function feed(n) {
 
 var response =  function (passthrough, n, post) {
     filter = []
+	if (id) filter.push(menu.indexOf(menu[id]))
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     if ($('#main .result').length < 1) $('#main').append(
@@ -199,10 +200,10 @@ var response =  function (passthrough, n, post) {
 	        xml('search', n, 0, null)
 	        return false
 	    }
-	} else if (passthrough == false) {
-		populate(id)
-		air(id)
 	}
+	if (id) write(menu.indexOf(menu[id]))
+	populate(id)
+	air(id)
 	progress(true, 100)
 
 })
@@ -392,6 +393,7 @@ var write = function (n) {
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
     var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
+	if (n != id || n != filter[filter.length - 1])
     $('#main .result').prepend(
         "<div class='filter " + menu.indexOf(menu[n]) +
         "' response='" + menu[n].id.toLowerCase().replace(
