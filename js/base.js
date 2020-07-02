@@ -101,38 +101,6 @@ var visual = function (n) {
 
 }
 
-function groups(n) {
-
-	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
-    if ($('#main .result').length < 1) $('#main').append(
-        "<div class='result' style='display:none'></div>")
-    for (var i = 1; i <= menu.length - 1; i++) {
-        if (n == menu[i].cat) {
-			id = menu.indexOf(menu[i])
-            var tag = menu[i].id.match(/[^\/]+$/g)
-            var hilight = menu[i].des.replace(tag,
-                "<b>" + tag + '</b>')
-            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
-            $('#main .result').append(
-                "<div class='populate " + menu.indexOf(menu[n]) +
-                "' response='" + menu[i].id.toLowerCase()
-                .replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
-                menu[i].cat.toLowerCase() + "'> " +
-                "<div class='pub'><div class='category'>" + menu[
-                    i].cat + "</div><a class='title' ext='" +
-                menu[i]
-                .ext + "'>" + menu[i].id.match(/[^\/]+$/g) +
-                "</a></div>" +
-                "<div class='description'>&emsp;" + hilight +
-                "</div>" +
-                "<img class='id' style='top:10px' src='" + img + "'>" +
-                "</div>"
-            )
-        }
-    }
-	progress(true, 100)
-}
-
 function expand(n) {
 
     if ($('#' + n).hasClass('expand min')) {
@@ -303,11 +271,16 @@ var list = function (n) {
 var populate = function (n) {
 
     if (!n) n = 1
+	if (!$.isNumeric(n)) var cat = n
+	else if (!n) cat = menu[id].cat
+	else cat = menu[n].cat
+	console.log(cat)
+	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
-        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && menu[n]
-            .cat == menu[i].cat) {
+        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 &&
+            cat == menu[i].cat) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
@@ -315,8 +288,7 @@ var populate = function (n) {
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
                 "' response='" + menu[i].id.toLowerCase()
-                .replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
-                menu[i].cat.toLowerCase() + "'> " +
+                .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
                 "<div class='pub'><div class='category'>" + menu[
                     i].cat + "</div><a class='title' ext='" +
                 menu[i]
@@ -332,14 +304,16 @@ var populate = function (n) {
     visual()
 }
 
-function air(n) {
+var air = function (n) {
 
-    if (!n) n = 1
+	if (!$.isNumeric(n)) var cat = n
+	else if (!n) cat = menu[id].cat
+	else cat = menu[n].cat
     if ($('#main .air').length < 1) $('#main').prepend(
         "<div class='air' style='display:none'></div>")
     if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
-        if (menu[n].cat == menu[i].cat) {
+        if (cat == menu[i].cat) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
@@ -347,8 +321,7 @@ function air(n) {
             $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
                 "' response='" + menu[i].id.toLowerCase()
-                .replace(/[\/|\.|\s|\-]/g, '-') + "' search='" +
-                menu[i].cat.toLowerCase() + "'> " +
+                .replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
                 "<div class='pub'><div class='category'>" + menu[
                     i].cat + "</div><a class='title' ext='" +
                 menu[i]

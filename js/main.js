@@ -12,12 +12,14 @@ $(document).ready(function() {
 	if ($('#arm #search #match .listing').is(':visible'))
 		$('#arm #search #match').hide()
 	else {
+		filter = []
         $('#main #visit').hide()
 	    var uri = '?q=' + category.toLowerCase()
         if (contrast == true) uri = uri + '+1'
-        response(false, category, false)
+		document.title = category
+        populate(category)
+        air(category)
         state(uri)
-        air(id)
         progress(true, 100)
 	}
 
@@ -48,7 +50,7 @@ $(document).ready(function() {
                 	"<div class='index' tabIndex='-1' response='" +
                 		translations[i] + "'>" +
                 	"<img class='type' src='" +
-                	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
+                	"images/ID/JPG/" + translations[i] + '.jpg' + "'>" +
                 	"<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
                 	"<br>&emsp;" + grep(menu, translations[i]) + " feeds</div>" +
                 	"</div>"
@@ -152,7 +154,7 @@ $(document).ready(function() {
     if ($('#arm #search .listing .hover').length) {
 		if (translations.indexOf($(
 			'#arm #search #match .listing .hover').attr('response')) > -1) {
-			groups($(
+			populate($(
 			'#arm #search #match .listing .hover').attr('response'))
 				var uri = '?q=' + $(
 					'#arm #search #match .listing .hover').attr('response')
@@ -162,6 +164,7 @@ $(document).ready(function() {
 				.attr('response').toLowerCase())
 			document.title = $('#arm #search #match .listing .hover')
 				.attr('response')
+			progress(true, 100)
         } else {
 			var uri = '?q=' + $('#arm #search input[type=text]').val()
 			if (contrast == true) uri = uri + '+1'
@@ -272,10 +275,13 @@ $(document).ready(function() {
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
 		if (translations.indexOf($('.hover').attr('response')) > -1) {
-			groups($('.hover').attr('response'))
+			filter = []
+			populate($('.hover').attr('response'))
 			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
 			if (contrast == true) uri = uri + '+1'
+			air($('.hover').attr('response'))
 			state(uri)
+			progress(true, 100)
         } else {
 			var uri = '?q=' +
                 $(this).attr('search') +
