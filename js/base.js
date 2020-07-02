@@ -376,7 +376,7 @@ var suggest = function (n) {
                 "<div class='combine'>" +
                 "<div title='" + menu[e].id.replace(/\//g, ' ') + 
 				"' response='" + menu[e].id.toLowerCase()
-                .replace(/(\/|\.|\s)/g, '+') + "' search='" + menu[e].cat
+                .replace(/(\/|\.|\s)/g, '-') + "' search='" + menu[e].cat
                 .toLowerCase() +
                 "'>" + menu[e].id.match(/[^\/]+$/g) +
                 "</div>" +
