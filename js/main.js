@@ -306,6 +306,16 @@ $(document).ready(function() {
 
 	window.location.href = window.location.origin
 
+}).on('touch click', '#option .fa-home', function(e) {
+
+	$('#main .center, #main .suggestions, #main .result, #main .air').remove()
+	$('#main #visit').show()
+	populate(menu[id].cat)
+	state('?q=' + menu[id].cat.toLowerCase())
+	document.title = menu[id].cat
+	air(menu[id].cat)
+	progress(true, 100)
+
 }).on('touch click', '#option .fa-git', function(e) {
 
 	window.open('https://github.com/acktic/acktic.github.io', '_blank', 'noreferrer')

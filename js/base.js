@@ -67,7 +67,7 @@ var visual = function (n) {
         $('#home, .fa-home, .fa-user-circle, .fa-git, .fa-terminal, .fa-circle-thin, .fa-circle')
             .css({
                 'background-color': 'transparent',
-                'color': '#333'
+                'color': '#222'
             })
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
@@ -183,6 +183,7 @@ var response =  function (passthrough, n, post) {
             .match(n)) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
+			id = i
         } else if (menu[i].cat.toLowerCase().match(n)) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
@@ -201,7 +202,6 @@ var response =  function (passthrough, n, post) {
 	        return false
 	    }
 	}
-	if (id) write(menu.indexOf(menu[id]))
 	populate(id)
 	air(id)
 	progress(true, 100)
@@ -393,7 +393,8 @@ var write = function (n) {
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
     var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
-	if (n != id || n != filter[filter.length - 1])
+	if (n != id || n != filter[filter.length - 1] || filter
+		.length >= 1)
     $('#main .result').prepend(
         "<div class='filter " + menu.indexOf(menu[n]) +
         "' response='" + menu[n].id.toLowerCase().replace(
