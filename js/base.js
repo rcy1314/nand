@@ -13,7 +13,7 @@ var visual = function (n) {
         op = op != true
     else if (n == 1 || n == 0) op = n
     if (op == 1 || contrast == true) {
-        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-circle-thin, input[type=text], #visit, .result, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-user-circle, .fa-terminal, .fa-git, .fa-circle, .fa-circle-thin, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
