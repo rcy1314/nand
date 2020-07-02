@@ -15,7 +15,8 @@ $(document).ready(function() {
 		filter = []
         $('#main #visit').hide()
 	    var uri = '?q=' + category.toLowerCase()
-        if (contrast == true) uri = uri + '+1'
+		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+		else if (contrast == true) uri = uri + '+1'
 		document.title = category
         populate(category)
         air(category)
@@ -167,7 +168,8 @@ $(document).ready(function() {
 			progress(true, 100)
         } else {
 			var uri = '?q=' + $('#arm #search input[type=text]').val()
-			if (contrast == true) uri = uri + '+1'
+			if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+			else if (contrast == true) uri = uri + '+1'
 			state('?q=&' + $('#arm #search #match .listing .hover')
 				.attr('response'))
 			response(true, $('#arm #search #match .listing .hover')
@@ -205,7 +207,8 @@ $(document).ready(function() {
                 duration: 1000,
                 complete: function() {
                     var uri = '?q=' + '&' + $this.attr('response')
-					if (contrast == true) uri = uri + '+1'
+					if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+					else if (contrast == true) uri = uri + '+1'
 					exit(uri)
                 }
             })
@@ -214,7 +217,8 @@ $(document).ready(function() {
 }).on('touch click', '#main .suggestions .combine div', function(e) {
 
     var uri = '?q=' + '&' + $(this).attr('response')
-	if (contrast == true) uri = uri + '+1'
+	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+	else if (contrast == true) uri = uri + '+1'
 	exit(uri)
 
 }).on('touch click', '#main .center .quick .right', function(e) {
@@ -258,7 +262,8 @@ $(document).ready(function() {
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
 		var uri = '?q=&' + $(this).attr('response')
-		if (contrast == true) uri = uri + '+1'
+		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+		else if (contrast == true) uri = uri + '+1'
 		exit(uri)
     }
 
@@ -278,7 +283,8 @@ $(document).ready(function() {
 			filter = []
 			populate($('.hover').attr('response'))
 			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
-			if (contrast == true) uri = uri + '+1'
+			if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+			else if (contrast == true) uri = uri + '+1'
 			air($('.hover').attr('response'))
 			state(uri)
 			progress(true, 100)
@@ -287,7 +293,8 @@ $(document).ready(function() {
                 $(this).attr('search') +
                 '&' + $(this)
                 .attr('response')
-			if (contrast == true) uri = uri + '+1'
+			if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+			else if (contrast == true) uri = uri + '+1'
 			exit(uri)
 		}
         e.preventDefault()
@@ -333,7 +340,8 @@ $(document).ready(function() {
 		menu.length)])
 	var uri = '?q=' + menu[re].cat.toLowerCase() + '&' +
 		menu[re].id.toLowerCase().replace(/\s|\.|\//g, '-')
-	if (contrast == true) uri = uri + '+1'    
+	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+	else if (contrast == true) uri = uri + '+1'
 	state(uri)
 	xmlResponse(null, null, re, null)
     return false
@@ -350,7 +358,8 @@ $(document).ready(function() {
     var n = array[Math.floor(Math.random() * array.length)]
     var re = '?q=' + menu[n].cat.toLowerCase() + '&' +
         menu[n].id.toLowerCase().replace(/(\s|\.|\/)/g, '-')
-	if (contrast == true) re = re + '+1'
+	if (contrast == true && !location.href.match('\\+1')) re = re + '+1'
+	else if (contrast == true) uri = uri + '+1'
     state(re)
     xmlResponse(null, null, n, false)
     return false
@@ -439,7 +448,8 @@ $(document).ready(function() {
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))
-	response(false, uri.replace(/\-/g, ' '))
+	response(false, menu[id].id.replace(/\s|\.|\//g, ' '), null)
 	air(id)
 })

@@ -2,7 +2,6 @@ var id
 var op = 0
 var object = []
 var filter = []
-var reverse = false
 var contrast = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -128,7 +127,6 @@ function feed(n) {
     if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu
         .length - 1)])
     else if (n >= menu.length - 13) n = 1
-    if (reverse == true) reverseArray(menu.reverse())
     for (var i = n; i <= n + 13; i++) {
         var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
         $('#main .center .feed').append(
@@ -163,10 +161,11 @@ var response =  function (passthrough, n, post) {
     filter = []
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
+    if ($('#main .result').length < 1) $('#main').append(
+        "<div class='result' style='display:none'></div>")
     var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
     $('#main').scrollTop(0)
 	$(document).ready(function() {
-    if (reverse) transpose(menu.reverse())
     for (var i = menu.length - 1; i >= 1; i--) {
         if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
             filter.push(menu.indexOf(menu[i]))
@@ -275,7 +274,7 @@ var populate = function (n) {
 	else if (!n) cat = menu[id].cat
 	else cat = menu[n].cat
 	console.log(cat)
-	$('#main .air, #main .result, #main .center, #main .suggestions').remove()
+	$('#main .air, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
@@ -311,7 +310,6 @@ var air = function (n) {
 	else cat = menu[n].cat
     if ($('#main .air').length < 1) $('#main').prepend(
         "<div class='air' style='display:none'></div>")
-    if (reverse == true) reverseArray(menu.reverse())
     for (var i = 1; i < menu.length - 1; i++) {
         if (cat == menu[i].cat) {
             var tag = menu[i].id.match(/[^\/]+$/g)
@@ -389,7 +387,7 @@ var suggest = function (n) {
 }
 
 var write = function (n) {
-
+	console.log(menu[n])
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
@@ -416,7 +414,6 @@ var xml = function (e, s, n, post) {
     obj = []
     var local
     var pub = []
-    if (reverse) transpose(menu.reverse())
     var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
@@ -607,7 +604,7 @@ var xml = function (e, s, n, post) {
                     var more =
                         "<div class='more'>more</div>"
                 else var more = "<div class='more'></div>"
-                if (src.match(/mp4|youtube/g)) {
+                if (src.match(/youtube/g)) {
                     if ($(this).find(
                             'media\\:statistics, statistics'
                         ).attr('views'))

@@ -85,7 +85,6 @@ var transpose = function (Object) {
         newObject[keys[i]] = value
 
     }
-    reverse = !reverse
 
     return newObject
 
