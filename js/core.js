@@ -6,9 +6,8 @@ String.prototype.capitalize = function() {
 
 }
 
-String.prototype.truncate =
+String.prototype.truncate = function(n, useWordBoundary) {
 
-    function(n, useWordBoundary) {
         if (this.length <= n) {
             return this;
         }
@@ -17,8 +16,7 @@ String.prototype.truncate =
             subString.substr(0, subString.lastIndexOf(' ')) :
             subString) + "&hellip;"
 
-    }
-
+}
 
 var escape = function (n) {
 
@@ -28,6 +26,7 @@ var escape = function (n) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;")
+
 }
 
 var exit = function (n) {
@@ -44,7 +43,6 @@ var grep = function (array, n) {
 	return numOccurences
 
 }
-
 
 var moment = function(n) {
 
@@ -71,22 +69,6 @@ var moment = function(n) {
 
     return parseInt(y) + ' year' + (parseInt(y) > 1 ? 's' : '') +
         ' ago'
-
-}
-
-var transpose = function (Object) {
-
-    var newObject = {}
-    var keys = []
-    for (var key in Object) keys.push(key)
-    for (var i = keys.length - 1; i >= 0; i--) {
-
-        var value = Object[keys[i]]
-        newObject[keys[i]] = value
-
-    }
-
-    return newObject
 
 }
 

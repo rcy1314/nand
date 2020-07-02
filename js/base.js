@@ -387,7 +387,7 @@ var suggest = function (n) {
 }
 
 var write = function (n) {
-	console.log(menu[n])
+
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
