@@ -261,7 +261,8 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-		var uri = '?q=&' + $(this).attr('response')
+		var uri = '?q=' + location.search.split('?q=')[1].match(/[^&]+/g)[0] +
+			'&' + $(this).attr('response')
 		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 		else if (contrast == true) uri = uri + '+1'
 		exit(uri)
@@ -450,6 +451,6 @@ $(document).ready(function() {
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))
-	response(false, menu[id].id.replace(/\s|\.|\//g, ' '), null)
+	response(false, uri.replace(/\-/g, ' '), null)
 	air(id)
 })
