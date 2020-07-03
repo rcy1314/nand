@@ -199,26 +199,13 @@ $(document).ready(function() {
 }).on('touch click', '#main .center .quick .feed .asset .id', function(e) {
 
     var $this = $(this)
-    $(this).parent().find('svg circle').addClass('mask').on(
-        'wekitAnimationEnd oanimationend msAnimationEnd animationend',
-        function() {
-            $this.parent().find('svg circle').css({
-                'stroke-dasharray': '16'
-            }).animate({
-                'stroke-dasharray': 175,
-                'stroke-dashoffset': 191,
-				'stroke-width': 0,
-            }, {
-                easing: 'linear',
-                duration: 1000,
-                complete: function() {
+    $(this).parent().find('svg circle').addClass('mask')
+		setTimeout(function () {
                     var uri = '?q=' + '&' + $this.attr('response')
 					if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 					else if (contrast == true) uri = uri + '+1'
 					exit(uri)
-                }
-            })
-        })
+		}, 550)
 
 }).on('touch click', '#main .suggestions .combine div', function(e) {
 
