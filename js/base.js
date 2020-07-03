@@ -452,7 +452,7 @@ var xml = function (e, s, n, post) {
             if ($(xhr).find('entry').length > 0) var channel =
                 "entry"
             else var channel = 'item'
-            quit = $(xhr).find(channel).length - 1
+            quit = $(xhr).find(channel).length - 2
             $(xhr).find(channel).each(function(i) {
                 if (channel == 'entry') {
                     var ref = $(this).find('link').attr(

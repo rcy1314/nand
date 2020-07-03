@@ -2,6 +2,10 @@ $(document).ready(function() {
 
     $('#input').css('display', 'block')
 
+}).on('touch click', '#arm #search #input .icon', function(e) {
+
+	$('#arm #search #input input[type=text]').focus()
+
 }).on('touch click', 'a', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
@@ -38,11 +42,11 @@ $(document).ready(function() {
 
 	$('#arm #search #match').hide()
 
-}).on('keyup touch click focusout blur', '#arm #search input[type=text]',
+}).on('keyup touch click focusin focusout blur', '#arm #search input[type=text]',
 
     function(e) {
 		$this = $(this)
-        if (e.type == 'touch' || e.type == 'click' || 
+        if (e.type == 'touch' || e.type == 'click' || e.type == 'focusin' ||
 			$('#arm #search input[type=text]').val().length == -1){
 			$('#arm #search #match').show()
 			$('#arm #search #match .listing').empty()
@@ -461,10 +465,10 @@ $(document).ready(function() {
 
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
+	response(false, uri.replace(/\-|\+1/g, ' '), null)
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))
-	response(false, uri.replace(/\-/g, ' '), null)
 	air(id)
 
 })

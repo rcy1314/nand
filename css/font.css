@@ -64,8 +64,8 @@
 }
 .fa-heart,
 .fa-heart-o,
-.fa-comments,
-.fa-comments-o,
+.fa-comment,
+.fa-comment-o,
 .fa-sticky-note,
 .fa-sticky-note-o,
 .fa-bookmark,
@@ -106,9 +106,9 @@
 	font-family: FontAwesome;
 	content:"\f08a";
 }
-.fa-comments-o:before {
+.fa-comment-o:before {
 	font-family: FontAwesome;
-	content:"\f0e6";
+	content:"\f0e5";
 }
 .fa-sticky-note-o:before {
 	font-family: FontAwesome;
