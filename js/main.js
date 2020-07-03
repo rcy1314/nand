@@ -42,11 +42,11 @@ $(document).ready(function() {
 
 	$('#arm #search #match').hide()
 
-}).on('keyup touch click focusin focusout blur', '#arm #search input[type=text]',
+}).on('keyup touch click focusout blur', '#arm #search input[type=text]',
 
     function(e) {
 		$this = $(this)
-        if (e.type == 'touch' || e.type == 'click' || e.type == 'focusin' ||
+        if (e.type == 'touch' || e.type == 'click' ||
 			$('#arm #search input[type=text]').val().length == -1){
 			$('#arm #search #match').show()
 			$('#arm #search #match .listing').empty()

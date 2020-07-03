@@ -366,7 +366,7 @@ var suggest = function (n) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 		dupe.push(e)
 		if (menu[e] && e != 1)
-        if ($.inArray(dupe, e) == -1 && menu[e])
+        if ($.inArray(dupe, e) === -1 && menu[e])
             $('#main .suggestions').append(
                 "<div class='combine'>" +
                 "<div title='" + menu[e].id.replace(/\//g, ' ') + 
