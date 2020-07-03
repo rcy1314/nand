@@ -291,6 +291,7 @@ $(document).ready(function() {
 			else if (contrast == true) uri = uri + '+1'
 			air($('.hover').attr('response'))
 			state(uri)
+			document.title = $('.hover').attr('response')
 			progress(true, 100)
         } else {
 			var uri = '?q=' +
