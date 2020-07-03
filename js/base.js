@@ -128,7 +128,7 @@ function feed(n) {
         .length - 1)])
     else if (n >= menu.length - 13) n = 1
     for (var i = n; i <= n + 13; i++) {
-        var img = 'images/ID/PNG/' + menu[i].img + '.png'
+        var img = 'images/png/' + menu[i].img + '.png'
         $('#main .center .feed').append(
             "<div class='asset'>" +
             "<svg>" +
@@ -249,7 +249,7 @@ var list = function (n) {
                 menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') +
                 "' search='" + menu[i].cat.toLowerCase() + "'>" +
                 "<img class='type' src='" +
-                "images/ID/PNG/" + menu[i].img + '.png' + "'>" +
+                "images/png/" + menu[i].img + '.png' + "'>" +
                 "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
                 "<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
                 "</div>"
@@ -281,7 +281,7 @@ var populate = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            var img = 'images/ID/PNG/' + menu[i].img + '.png'
+            var img = 'images/png/' + menu[i].img + '.png'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -312,7 +312,7 @@ var air = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            var img = 'images/ID/PNG/' + menu[i].img + '.png'
+            var img = 'images/png/' + menu[i].img + '.png'
             $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -400,7 +400,7 @@ var write = function (n) {
         "</a></div>" +
         "<div class='description'>&emsp;" + hilight + "</div>" +
         "<img class='id' style='top:10px' src='" +
-        "images/ID/PNG/" + menu[n].img + ".png'>" +
+        "images/png/" + menu[n].img + ".png'>" +
         "</div>"
     )
 
@@ -411,7 +411,7 @@ var xml = function (e, s, n, post) {
     obj = []
     var local
     var pub = []
-    var img = 'images/ID/PNG/' + menu[n].img + '.png'
+    var img = 'images/png/' + menu[n].img + '.png'
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri

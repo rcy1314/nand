@@ -51,7 +51,7 @@ $(document).ready(function() {
                 	"<div class='index' tabIndex='-1' response='" +
                 		translations[i] + "'>" +
                 	"<img class='type' src='" +
-                	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
+                	"images/" + translations[i] + '.png' + "'>" +
                 	"<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
                 	"<br>&emsp;" + grep(menu, translations[i]) + " feeds</div>" +
                 	"</div>"
