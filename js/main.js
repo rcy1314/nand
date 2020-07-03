@@ -316,16 +316,16 @@ $(document).ready(function() {
 
 	$('#main .center, #main .suggestions, #main .result, #main .air').remove()
 	$('#main #visit').show()
-	populate(menu[id].cat)
-	var uri = '?q=' + menu[id].cat.toLowerCase()
+	populate(category)
+	var uri = '?q=' + category.toLowerCase()
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
 	state(uri)
-	document.title = menu[id].cat
-	air(menu[id].cat)
+	document.title = category
+	air(category)
 	progress(true, 100)
 
-}).on('touch click', '#option .fa-git', function(e) {
+}).on('touch click', '#option .repo', function(e) {
 
 	window.open('https://github.com/acktic/acktic.github.io', '_blank', 'noreferrer')
 

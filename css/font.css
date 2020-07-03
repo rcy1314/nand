@@ -12,8 +12,7 @@
 	font-family: FontAwesome;
 	content:"\f015";
 }
-
-.fa-git,
+.fa-home,
 .fa-code,
 .fa-circle,
 .fa-terminal,
@@ -36,11 +35,6 @@
 	content:"\f002";
 	color: #aaa;
 	font-size: 12px;
-}
-
-.fa-git:before {
-	font-family: FontAwesome;
-	content:"\f1d3";
 }
 
 .fa-circle-thin:before {
