@@ -182,6 +182,8 @@ $(document).ready(function() {
             var uri = '?q=' + $(
                 '#arm #search input[type=text]').val()
                 .toLowerCase().replace(/\s/g, '+')
+			if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+			else if (contrast == true) uri = uri + '+1'
 			response(true, $('#arm #search input[type=text]').val(), null)
 			state(uri)
         }
@@ -458,7 +460,7 @@ $(document).ready(function() {
 }).on('touch click', '#main .center #bottom', function(e) {
 
     $('#main .center, #main .suggestions').remove()
-    var uri = location.search.split('?q=')[1].match(/[^&]+/g)[0]
+    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))

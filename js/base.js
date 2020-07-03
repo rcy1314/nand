@@ -159,7 +159,6 @@ function feed(n) {
 
 var response =  function (passthrough, n, post) {
     filter = []
-	if (id) filter.push(menu.indexOf(menu[id]))
     $('#main .result, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     if ($('#main .result').length < 1) $('#main').append(
@@ -274,7 +273,6 @@ var populate = function (n) {
 	if (!$.isNumeric(n)) var cat = n
 	else if (!n) cat = menu[id].cat
 	else cat = menu[n].cat
-	console.log(cat)
 	$('#main .air, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
@@ -388,7 +386,6 @@ var suggest = function (n) {
 }
 
 var write = function (n) {
-
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
