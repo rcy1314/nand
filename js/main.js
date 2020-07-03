@@ -325,10 +325,6 @@ $(document).ready(function() {
 	air(category)
 	progress(true, 100)
 
-}).on('touch click', '#option .repo', function(e) {
-
-	window.open('https://github.com/acktic/acktic.github.io', '_blank', 'noreferrer')
-
 }).on('touch click', '#option .fa-circle-thin, #option .fa-circle', function(
     e) {
 
