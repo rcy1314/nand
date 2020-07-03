@@ -51,7 +51,7 @@ $(document).ready(function() {
                 	"<div class='index' tabIndex='-1' response='" +
                 		translations[i] + "'>" +
                 	"<img class='type' src='" +
-                	"images/ID/JPG/" + translations[i] + '.jpg' + "'>" +
+                	"images/ID/PNG/" + translations[i] + '.png' + "'>" +
                 	"<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
                 	"<br>&emsp;" + grep(menu, translations[i]) + " feeds</div>" +
                 	"</div>"
@@ -303,7 +303,6 @@ $(document).ready(function() {
 			exit(uri)
 		}
         e.preventDefault()
-        visual()
 
 }).on('touch click', '#arm #home', function(e) {
 
@@ -467,4 +466,5 @@ $(document).ready(function() {
     state('?q=' + uri.replace(/\-/g, '+'))
 	response(false, uri.replace(/\-/g, ' '), null)
 	air(id)
+
 })

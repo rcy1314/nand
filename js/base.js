@@ -26,7 +26,7 @@ var visual = function (n) {
         })
 
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
+    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css({
@@ -70,7 +70,7 @@ var visual = function (n) {
                 'color': '#222'
             })
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
+    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css({
 			'background-color': 'rgba(255,255,255,.5)',
@@ -128,7 +128,7 @@ function feed(n) {
         .length - 1)])
     else if (n >= menu.length - 13) n = 1
     for (var i = n; i <= n + 13; i++) {
-        var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+        var img = 'images/ID/PNG/' + menu[i].img + '.png'
         $('#main .center .feed').append(
             "<div class='asset'>" +
             "<svg>" +
@@ -154,7 +154,6 @@ function feed(n) {
             "</div>"
         )
     }
-    visual()
 }
 
 var response =  function (passthrough, n, post) {
@@ -250,7 +249,7 @@ var list = function (n) {
                 menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') +
                 "' search='" + menu[i].cat.toLowerCase() + "'>" +
                 "<img class='type' src='" +
-                "images/ID/JPG/" + menu[i].img + '.jpg' + "'>" +
+                "images/ID/PNG/" + menu[i].img + '.png' + "'>" +
                 "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
                 "<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
                 "</div>"
@@ -282,7 +281,7 @@ var populate = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            var img = 'images/ID/PNG/' + menu[i].img + '.png'
             $('#main .result').append(
                 "<div class='populate " + menu.indexOf(menu[n]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -299,7 +298,6 @@ var populate = function (n) {
             )
         }
     }
-    visual()
 }
 
 var air = function (n) {
@@ -314,7 +312,7 @@ var air = function (n) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
-            var img = 'images/ID/JPG/' + menu[i].img + '.jpg'
+            var img = 'images/ID/PNG/' + menu[i].img + '.png'
             $('#main .air').append(
                 "<div class='populate " + menu.indexOf(menu[i]) +
                 "' response='" + menu[i].id.toLowerCase()
@@ -331,7 +329,6 @@ var air = function (n) {
             )
         }
     }
-    visual()
 
 }
 
@@ -368,7 +365,7 @@ var suggest = function (n) {
     for (var i = 0; i <= 9; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
 		dupe.push(e)
-		if (menu[e])
+		if (menu[e] && e != 1)
         if ($.inArray(dupe, e) == -1 && menu[e])
             $('#main .suggestions').append(
                 "<div class='combine'>" +
@@ -382,10 +379,10 @@ var suggest = function (n) {
             )
         if (i == 9) return false
     }
-    visual()
 }
 
 var write = function (n) {
+
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     var tag = menu[n].id.match(/[^\/]+$/g)
@@ -403,7 +400,7 @@ var write = function (n) {
         "</a></div>" +
         "<div class='description'>&emsp;" + hilight + "</div>" +
         "<img class='id' style='top:10px' src='" +
-        "images/ID/JPG/" + menu[n].img + ".jpg'>" +
+        "images/ID/PNG/" + menu[n].img + ".png'>" +
         "</div>"
     )
 
@@ -414,7 +411,7 @@ var xml = function (e, s, n, post) {
     obj = []
     var local
     var pub = []
-    var img = 'images/ID/JPG/' + menu[n].img + '.jpg'
+    var img = 'images/ID/PNG/' + menu[n].img + '.png'
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
@@ -625,7 +622,7 @@ var xml = function (e, s, n, post) {
                         "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
                         "<div class='tag'>" +
                         	"<div class='fa fa-heart-o'></div>" +
-                        	"<div class='fa fa-comments-o'></div>" +
+                        	"<div class='fa fa-comment-o'></div>" +
                         	"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
                         	"<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
                         	"<input class='url' value='" + ref.trim() + "'>" +
@@ -660,7 +657,7 @@ var xml = function (e, s, n, post) {
                         	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         	"<div class='tag'>" +
                         		"<div class='ago fa fa-heart-o'></div>" +
-                        		"<div class='ago fa fa-comments-o'></div>" +
+                        		"<div class='ago fa fa-comment-o'></div>" +
                         		"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
                         		"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
                         	"</div>" +
@@ -696,8 +693,10 @@ var xml = function (e, s, n, post) {
             $('#main').append(
                 "<div class='center' style='display:none'>" +
 				"<div class='quick'>" +
-				"<div class='feed'></div>" +
-                "<div class='left' style='display:none'><div class='fa-angle-double-left'></div></div><div class='right'><div class='fa-angle-double-right'></div></div>" +
+					"<div class='feed'></div>" +
+        		        "<div class='left' style='display:none'><div class='fa-angle-double-left'></div></div>" +
+						"<div class='right'><div class='fa-angle-double-right'></div>" +
+					"</div>" +
                 "</div>" + 
 				"<div class='channel'></div></div>" +
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;...<br></div>"
@@ -722,7 +721,6 @@ var xml = function (e, s, n, post) {
             progress(true, 100)
             suggest(id)
             feed(id)
-            visual()
         })
 
 }

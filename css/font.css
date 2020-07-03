@@ -90,9 +90,9 @@
 	font-family: FontAwesome;
 	content:"\f004";
 }
-.fa-comments:before {
+.fa-comment:before {
 	font-family: FontAwesome;
-	content:"\f086";
+	content:"\f075";
 }
 .fa-sticky-note:before {
 	font-family: FontAwesome;

@@ -10,7 +10,6 @@
 
 .type,
 .item .id {
-    border: 1px solid #ddd !important;
     height: 28px;
     width: 28px;
 }
