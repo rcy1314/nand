@@ -68,11 +68,12 @@
     position: relative;
 }
 .image {
-	min-width: 30%;
+	min-width: 35% !important;
 }
 .tag {
     position: relative;
     width: 100%;
+
 }
 
 .post {

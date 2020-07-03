@@ -317,7 +317,10 @@ $(document).ready(function() {
 	$('#main .center, #main .suggestions, #main .result, #main .air').remove()
 	$('#main #visit').show()
 	populate(menu[id].cat)
-	state('?q=' + menu[id].cat.toLowerCase())
+	var uri = '?q=' + menu[id].cat.toLowerCase()
+	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+	else if (contrast == true) uri = uri + '+1'
+	state(uri)
 	document.title = menu[id].cat
 	air(menu[id].cat)
 	progress(true, 100)
