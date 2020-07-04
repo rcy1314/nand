@@ -802,7 +802,7 @@ var menu = [{
 		id: "Reddit/AMD",
 		cat: "Social",
 		des: "AMD subreddit dedicated to Advanced Micro Devices and its products.",
-		uri: "https://reddit.com/r/Amd/.rss",
+		uri: "https://www.reddit.com/r/Amd/.rss",
 		ext: "https://www.reddit.com/r/AMD",
 		img: "AMD"
 	}
@@ -812,8 +812,8 @@ var menu = [{
 		id: "Reddit/Android",
 		cat: "Social",
 		des: "Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",
-		uri: "https://reddit.com/r/android/.rss",
-		ext: "https://reddit.com/r/Android",
+		uri: "https://www.reddit.com/r/android/.rss",
+		ext: "https://www.reddit.com/r/Android",
 		img: "Android"
 	}
 
@@ -822,7 +822,8 @@ var menu = [{
 		id: "Reddit/Apple",
 		cat: "Social",
 		des: "Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",
-		uri: "https://reddit.com/r/apple/.rss",
+		uri: "https://www.reddit.com/r/apple/.rss",
+		ext: "https://www.reddit.com/r/apple",
 		img: "Apple"
 	}
 
@@ -841,8 +842,8 @@ var menu = [{
 		id: "Reddit/Arch Linux",
 		cat: "Social",
 		des: "Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",
-		uri: "https://reddit.com/r/ArchLinux/.rss",
-		ext: "http://reddit.com/r/ArchLinux",
+		uri: "https://www.reddit.com/r/ArchLinux/.rss",
+		ext: "http://www.reddit.com/r/ArchLinux",
 		img: "Arch"
 	}
 
@@ -851,8 +852,8 @@ var menu = [{
 		id: "Reddit/AskComputerScience",
 		cat: "Social",
 		des: "AskComputerScience subreddit where questions are asked about Computer Science.",
-		uri: "https://reddit.com/r/askcomputerscience/.rss",
-		ext: "https://reddit.com/r/AskComputerScience",
+		uri: "https://www.reddit.com/r/askcomputerscience/.rss",
+		ext: "https://www.reddit.com/r/AskComputerScience",
 		img: "AskComputerScience"
 	}
 
@@ -861,8 +862,8 @@ var menu = [{
 		id: "Reddit/Bash",
 		cat: "Social",
 		des: "Bash subreddit dedicated to bash scripting.",
-		uri: "https://reddit.com/r/bash/.rss",
-		ext: "https://reddit.com/r/Bash",
+		uri: "https://www.reddit.com/r/bash/.rss",
+		ext: "https://www.reddit.com/r/Bash",
 		img: "Reddit"
 	}
 
@@ -871,8 +872,8 @@ var menu = [{
 		id: "Reddit/Boston",
 		cat: "Social",
 		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
-		uri: "https://reddit.com/r/boston/.rss",
-		ext: "https://reddit.com/r/Boston",
+		uri: "https://www.reddit.com/r/boston/.rss",
+		ext: "https://www.reddit.com/r/Boston",
 		img: "BostonMA"
 	}
 
@@ -881,8 +882,8 @@ var menu = [{
 		id: "Reddit/California",
 		cat: "Social",
 		des: "California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",
-		uri: "https://reddit.com/r/California/.rss",
-		ext: "https://reddit.com/r/California",
+		uri: "https://www.reddit.com/r/California/.rss",
+		ext: "https://www.reddit.com/r/California",
 		img: "California"
 	}
 
@@ -891,8 +892,8 @@ var menu = [{
 		id: "Reddit/Celebhub",
 		cat: "Social",
 		des: "Celebhub famous actresses, singers, models, athletes and others.",
-		uri: "https://reddit.com/r/celebhub/.rss",
-		ext: "https://reddit.com/r/CelebHub",
+		uri: "https://www.reddit.com/r/celebhub/.rss",
+		ext: "https://www.reddit.com/r/CelebHub",
 		img: "CelebHub"
 	}
 
@@ -901,8 +902,8 @@ var menu = [{
 		id: "Reddit/Chrome",
 		cat: "Social",
 		des: "Chrome subreddit with topics related to Google's Chrome Web Browser.",
-		uri: "https://reddit.com/r/chrome/.rss",
-		ext: "https://reddit.com/r/Chrome",
+		uri: "https://www.reddit.com/r/chrome/.rss",
+		ext: "https://www.reddit.com/r/Chrome",
 		img: "Chrome"
 	}
 
@@ -911,8 +912,8 @@ var menu = [{
 		id: "Reddit/Coding",
 		cat: "Social",
 		des: "Coding subreddit Tutorials, Reviews, Videos, and Analysis.",
-		uri: "https://reddit.com/r/coding/.rss",
-		ext: "https://reddit.com/r/Coding",
+		uri: "https://www.reddit.com/r/coding/.rss",
+		ext: "https://www.reddit.com/r/Coding",
 		img: "Reddit"
 	}
 
@@ -921,8 +922,8 @@ var menu = [{
 		id: "Reddit/Command Line",
 		cat: "Social",
 		des: "Command Line subreddit shares tips, questions, and answers.",
-		uri: "https://reddit.com/r/commandline/.rss",
-		ext: "https://reddit.com/r/Commandline",
+		uri: "https://www.reddit.com/r/commandline/.rss",
+		ext: "https://www.reddit.com/r/Commandline",
 		img: "CommandLine"
 	}
 
@@ -931,8 +932,8 @@ var menu = [{
 		id: "Reddit/Computers",
 		cat: "Social",
 		des: "Computers subreddit covers computers, questions, tips, and suggestions.",
-		uri: "https://reddit.com/r/computers/.rss",
-		ext: "https://reddit.com/r/Computers",
+		uri: "https://www.reddit.com/r/computers/.rss",
+		ext: "https://www.reddit.com/r/Computers",
 		img: "Black"
 	}
 
@@ -941,8 +942,8 @@ var menu = [{
 		id: "Reddit/CSS",
 		cat: "Social",
 		des: "CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",
-		uri: "https://reddit.com/r/css/.rss",
-		ext: "https://reddit.com/r/CSS",
+		uri: "https://www.reddit.com/r/css/.rss",
+		ext: "https://www.reddit.com/r/CSS",
 		img: "Reddit"
 	}
 
@@ -951,8 +952,8 @@ var menu = [{
 		id: "Reddit/Data Is Beautiful",
 		cat: "Social",
 		des: "Data Is Beautiful subreddit for visualizations that effectively convey information.",
-		uri: "https://reddit.com/r/dataisbeautiful/.rss",
-		ext: "https://reddit.com/r/DataisBeautiful",
+		uri: "https://www.reddit.com/r/dataisbeautiful/.rss",
+		ext: "https://www.reddit.com/r/DataisBeautiful",
 		img: "DataIsBeautiful"
 	}
 
@@ -961,8 +962,8 @@ var menu = [{
 		id: "Reddit/Debian",
 		cat: "Social",
 		des: "Debian subreddit has questions and topics revolving around Debian OS.",
-		uri: "https://reddit.com/r/debian/.rss",
-		ext: "https://reddit.com/r/Debian",
+		uri: "https://www.reddit.com/r/debian/.rss",
+		ext: "https://www.reddit.com/r/Debian",
 		img: "Debian"
 	}
 
@@ -971,8 +972,8 @@ var menu = [{
 		id: "Reddit/Design",
 		cat: "Social",
 		des: "Design subreddit with the art in all mediums.",
-		uri: "https://reddit.com/r/Design/.rss",
-		ext: "https://reddit.com/r/Design",
+		uri: "https://www.reddit.com/r/Design/.rss",
+		ext: "https://www.reddit.com/r/Design",
 		img: "Black"
 	}
 
@@ -991,8 +992,8 @@ var menu = [{
 		id: "Reddit/DuckDuckGo",
 		cat: "Social",
 		des: "r/DuckDuckGo is for news, updates and discussion about the search engine DuckDuckGo.",
-		uri: "https://reddit.com/r/duckduckgo/.rss",
-		ext: "https://reddit.com/r/duckduckgo/",
+		uri: "https://www.reddit.com/r/duckduckgo/.rss",
+		ext: "https://www.reddit.com/r/duckduckgo/",
 		img: "DuckDuckGo"
 	}
 
@@ -1001,8 +1002,8 @@ var menu = [{
 		id: "Reddit/Entertainment",
 		cat: "Social",
 		des: "Entertainment subreddit has News and Discussion of the Entertainment Industry.",
-		uri: "https://reddit.com/r/entertainment/.rss",
-		ext: "https://reddit.com/r/Entertainment",
+		uri: "https://www.reddit.com/r/entertainment/.rss",
+		ext: "https://www.reddit.com/r/Entertainment",
 		img: "Reddit"
 	}
 
@@ -1011,8 +1012,8 @@ var menu = [{
 		id: "Reddit/Firefox",
 		cat: "Social",
 		des: "Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",
-		uri: "https://reddit.com/r/firefox/.rss",
-		ext: "https://reddit.com/r/Firefox",
+		uri: "https://www.reddit.com/r/firefox/.rss",
+		ext: "https://www.reddit.com/r/Firefox",
 		img: "Firefox"
 	}
 
@@ -1021,8 +1022,8 @@ var menu = [{
 		id: "Reddit/Gadgets",
 		cat: "Social",
 		des: "Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",
-		uri: "https://reddit.com/r/gadgets/.rss",
-		ext: "https://reddit.com/r/Gadgets",
+		uri: "https://www.reddit.com/r/gadgets/.rss",
+		ext: "https://www.reddit.com/r/Gadgets",
 		img: "Gadgets"
 	}
 
@@ -1031,8 +1032,8 @@ var menu = [{
 		id: "Reddit/Games",
 		cat: "Social",
 		des: "Games subreddit aims to provide a place for Informative and interesting Gaming Content.",
-		uri: "http://reddit.com/r/games/.rss",
-		ext: "https://reddit.com/r/games",
+		uri: "https://www.reddit.com/r/games/.rss",
+		ext: "https://www.reddit.com/r/games",
 		img: "Games"
 	}
 
@@ -1041,8 +1042,8 @@ var menu = [{
 		id: "Reddit/Gifs",
 		cat: "Social",
 		des: "Gifs subreddit Funny, animated GIFs: Your favorite computer file type.",
-		uri: "https://reddit.com/r/gifs/.rss",
-		ext: "https://reddit.com/r/gifs",
+		uri: "https://www.reddit.com/r/gifs/.rss",
+		ext: "https://www.reddit.com/r/gifs",
 		img: "Gifs"
 	}
 
@@ -1051,8 +1052,8 @@ var menu = [{
 		id: "Reddit/Github",
 		cat: "Social",
 		des: "Github subreddit for all things GitHub!",
-		uri: "https://reddit.com/r/github/.rss",
-		ext: "https://reddit.com/r/github",
+		uri: "https://www.reddit.com/r/github/.rss",
+		ext: "https://www.reddit.com/r/github",
 		img: "Octocat"
 	}
 
@@ -1061,8 +1062,8 @@ var menu = [{
 		id: "Reddit/Goddesses",
 		cat: "Social",
 		des: "Goddesses subreddit pretty pictures of pretty girls.",
-		uri: "https://reddit.com/r/goddesses/.rss",
-		ext: "https://reddit.com/r/Goddesses",
+		uri: "https://www.reddit.com/r/goddesses/.rss",
+		ext: "https://www.reddit.com/r/Goddesses",
 		img: "Black"
 	}
 
@@ -1071,8 +1072,8 @@ var menu = [{
 		id: "Reddit/Google",
 		cat: "Social",
 		des: "Google subreddit For news and announcements from and about Google.",
-		uri: "https://reddit.com/r/google/.rss",
-		ext: "https://reddit.com/r/Google",
+		uri: "https://www.reddit.com/r/google/.rss",
+		ext: "https://www.reddit.com/r/Google",
 		img: "Google"
 	}
 
@@ -1101,8 +1102,8 @@ var menu = [{
 		id: "Reddit/Hacker News",
 		cat: "Social",
 		des: "Hacker News subreddit A mirror of Hacker News' best submissions.",
-		uri: "https://reddit.com/r/hackernews/.rss",
-		ext: "https://reddit.com/r/HackerNews",
+		uri: "https://www.reddit.com/r/hackernews/.rss",
+		ext: "https://www.reddit.com/r/HackerNews",
 		img: "Reddit"
 	}
 
@@ -1111,8 +1112,8 @@ var menu = [{
 		id: "Reddit/Hardware",
 		cat: "Social",
 		des: "Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",
-		uri: "https://reddit.com/r/hardware/.rss",
-		ext: "https://reddit.com/r/Hardware",
+		uri: "https://www.reddit.com/r/hardware/.rss",
+		ext: "https://www.reddit.com/r/Hardware",
 		img: "Hardware"
 	}
 
@@ -1121,8 +1122,8 @@ var menu = [{
 		id: "Reddit/Intel",
 		cat: "Social",
 		des: "Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.",
-		uri: "https://reddit.com/r/intel/.rss",
-		ext: "https://reddit.com/r/intel",
+		uri: "https://www.reddit.com/r/intel/.rss",
+		ext: "https://www.reddit.com/r/intel",
 		img: "Intel"
 	}
 
@@ -1131,8 +1132,8 @@ var menu = [{
 		id: "Reddit/iOS",
 		cat: "Social",
 		des: "iOS subreddit for everything Apple iOS.",
-		uri: "https://reddit.com/r/ios/.rss",
-		ext: "https://reddit.com/r/iOS",
+		uri: "https://www.reddit.com/r/ios/.rss",
+		ext: "https://www.reddit.com/r/iOS",
 		img: "iOS"
 	}
 
@@ -1141,8 +1142,8 @@ var menu = [{
 		id: "Reddit/Linux",
 		cat: "Social",
 		des: "Linux subreddit discusses topics evolving around Linux.",
-		uri: "https://reddit.com/r/linux/.rss",
-		ext: "https://reddit.com/r/Linux",
+		uri: "https://www.reddit.com/r/linux/.rss",
+		ext: "https://www.reddit.com/r/Linux",
 		img: "Linux"
 	}
 
@@ -1151,8 +1152,8 @@ var menu = [{
 		id: "Reddit/Los Angeles",
 		cat: "Social",
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
-		uri: "https://reddit.com/r/LosAngeles/.rss",
-		ext: "https://reddit.com/r/LosAngeles",
+		uri: "https://www.reddit.com/r/LosAngeles/.rss",
+		ext: "https://www.reddit.com/r/LosAngeles",
 		img: "Black"
 	}
 
@@ -1161,8 +1162,8 @@ var menu = [{
 		id: "Reddit/Microsoft",
 		cat: "Social",
 		des: "Microsoft subreddit Microsoft's suite of services, products and games which we publish.",
-		uri: "https://reddit.com/r/microsoft/.rss",
-		ext: "https://reddit.com/r/Microsoft",
+		uri: "https://www.reddit.com/r/microsoft/.rss",
+		ext: "https://www.reddit.com/r/Microsoft",
 		img: "Microsoft"
 	}
 
@@ -1171,8 +1172,8 @@ var menu = [{
 		id: "Reddit/Movies",
 		cat: "Social",
 		des: "Movies subreddit News and Discussion about Major Motion Pictures.",
-		uri: "https://reddit.com/r/movies/.rss",
-		ext: "https://reddit.com/r/Movies",
+		uri: "https://www.reddit.com/r/movies/.rss",
+		ext: "https://www.reddit.com/r/Movies",
 		img: "Reddit"
 	}
 
@@ -1201,8 +1202,8 @@ var menu = [{
 		id: "Reddit/News",
 		cat: "Social",
 		des: "News subreddit articles relating to the United States and the rest of the World.",
-		uri: "https://reddit.com/r/news/.rss",
-		ext: "https://reddit.com/r/News",
+		uri: "https://www.reddit.com/r/news/.rss",
+		ext: "https://www.reddit.com/r/News",
 		img: "RNews"
 	}
 
@@ -1211,7 +1212,7 @@ var menu = [{
 		id: "Reddit/NVIDIA",
 		cat: "Social",
 		des: "NVIDIA subreddit news, builds, compatibility, and other information.",
-		uri: "https://reddit.com/r/nvidia/.rss",
+		uri: "https://www.reddit.com/r/nvidia/.rss",
 		ext: "https://www.reddit.com/r/nvidia",
 		img: "Nvidia"
 	}
@@ -1221,8 +1222,8 @@ var menu = [{
 		id: "Reddit/Open Source",
 		cat: "Social",
 		des: "Open Source subreddit for everything open source.",
-		uri: "https://reddit.com/r/opensource/.rss",
-		ext: "https://reddit.com/r/opensource",
+		uri: "https://www.reddit.com/r/opensource/.rss",
+		ext: "https://www.reddit.com/r/opensource",
 		img: "Reddit"
 	}
 
@@ -1231,8 +1232,8 @@ var menu = [{
 		id: "Reddit/Pics",
 		cat: "Social",
 		des: "Pics subreddit A place for pictures and photographs.",
-		uri: "https://reddit.com/r/pics/.rss",
-		ext: "https://reddit.com/r/Pics",
+		uri: "https://www.reddit.com/r/pics/.rss",
+		ext: "https://www.reddit.com/r/Pics",
 		img: "Black"
 	}
 
@@ -1251,8 +1252,8 @@ var menu = [{
 		id: "Reddit/San Francisco",
 		cat: "Social",
 		des: "San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",
-		uri: "https://reddit.com/r/sanfrancisco/.rss",
-		ext: "https://reddit.com/r/SanFrancisco",
+		uri: "https://www.reddit.com/r/sanfrancisco/.rss",
+		ext: "https://www.reddit.com/r/SanFrancisco",
 		img: "Reddit"
 	}
 
@@ -1261,8 +1262,8 @@ var menu = [{
 		id: "Reddit/Software",
 		cat: "Social",
 		des: "Software subreddit where software applications are discussed.",
-		uri: "https://reddit.com/r/software/.rss",
-		ext: "https://reddit.com/r/Software",
+		uri: "https://www.reddit.com/r/software/.rss",
+		ext: "https://www.reddit.com/r/Software",
 		img: "Software"
 	}
 
@@ -1271,8 +1272,8 @@ var menu = [{
 		id: "Reddit/Software Gore",
 		cat: "Social",
 		des: "Software Gore subreddit poke fun at nasty software.",
-		uri: "https://reddit.com/r/softwaregore/.rss",
-		ext: "https://reddit.com/r/softwaregore",
+		uri: "https://www.reddit.com/r/softwaregore/.rss",
+		ext: "https://www.reddit.com/r/softwaregore",
 		img: "SoftwareGore"
 	}
 
@@ -1291,8 +1292,8 @@ var menu = [{
 		id: "Reddit/Sports",
 		cat: "Social",
 		des: "Sports subreddit for all the Latest Headlines and Discussion in Sports.",
-		uri: "https://reddit.com/r/sports/.rss",
-		ext: "https://reddit.com/r/Sports",
+		uri: "https://www.reddit.com/r/sports/.rss",
+		ext: "https://www.reddit.com/r/Sports",
 		img: "Sports"
 	}
 
@@ -1301,8 +1302,8 @@ var menu = [{
 		id: "Reddit/Tech",
 		cat: "Social",
 		des: "Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",
-		uri: "https://reddit.com/r/tech/.rss",
-		ext: "https://reddit.com/r/Tech",
+		uri: "https://www.reddit.com/r/tech/.rss",
+		ext: "https://www.reddit.com/r/Tech",
 		img: "Black"
 	}
 
@@ -1311,8 +1312,8 @@ var menu = [{
 		id: "Reddit/Technology",
 		cat: "Social",
 		des: "Technology subreddit shares submitted articles about Technology.",
-		uri: "https://reddit.com/r/technology/.rss",
-		ext: "https://reddit.com/r/Technology",
+		uri: "https://www.reddit.com/r/technology/.rss",
+		ext: "https://www.reddit.com/r/Technology",
 		img: "Technology"
 	}
 
@@ -1331,8 +1332,8 @@ var menu = [{
 		id: "Reddit/Thinkpad",
 		cat: "Social",
 		des: "Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",
-		uri: "https://reddit.com/r/thinkpad/.rss",
-		ext: "https://reddit.com/r/Thinkpad",
+		uri: "https://www.reddit.com/r/thinkpad/.rss",
+		ext: "https://www.reddit.com/r/Thinkpad",
 		img: "Thinkpad"
 	}
 
@@ -1351,8 +1352,8 @@ var menu = [{
 		id: "Reddit/Unix Porn",
 		cat: "Social",
 		des: "Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",
-		uri: "https://reddit.com/r/unixporn/.rss",
-		ext: "https://reddit.com/r/Unixporn",
+		uri: "https://www.reddit.com/r/unixporn/.rss",
+		ext: "https://www.reddit.com/r/Unixporn",
 		img: "UnixPorn"
 	}
 
@@ -1371,8 +1372,8 @@ var menu = [{
 		id: "Reddit/Wallpaper",
 		cat: "Social",
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
-		uri: "https://reddit.com/r/wallpaper/.rss",
-		ext: "https://reddit.com/r/Wallpaper",
+		uri: "https://www.reddit.com/r/wallpaper/.rss",
+		ext: "https://www.reddit.com/r/Wallpaper",
 		img: "Wallpaper"
 	}
 
@@ -1381,8 +1382,8 @@ var menu = [{
 		id: "Reddit/Wallpapers",
 		cat: "Social",
 		des: "Wallpapers subreddit for Work-safe wallpapers from all over!",
-		uri: "https://reddit.com/r/wallpapers/.rss",
-		ext: "https://reddit.com/r/Wallpapers",
+		uri: "https://www.reddit.com/r/wallpapers/.rss",
+		ext: "https://www.reddit.com/r/Wallpapers",
 		img: "Reddit"
 	}
 
@@ -1391,8 +1392,8 @@ var menu = [{
 		id: "Reddit/Windows",
 		cat: "Social",
 		des: "Windows subreddit a personal computer operating system released by Microsoft.",
-		uri: "https://reddit.com/r/windows/.rss",
-		ext: "https://reddit.com/r/Windows",
+		uri: "https://www.reddit.com/r/windows/.rss",
+		ext: "https://www.reddit.com/r/Windows",
 		img: "Windows"
 	}
 
@@ -1401,8 +1402,8 @@ var menu = [{
 		id: "Reddit/World News",
 		cat: "Social",
 		des: "World News subreddit with latest headlines from around the world.",
-		uri: "https://reddit.com/r/worldnews/.rss",
-		ext: "https://reddit.com/r/WorldNews",
+		uri: "https://www.reddit.com/r/worldnews/.rss",
+		ext: "https://www.reddit.com/r/WorldNews",
 		img: "Black"
 	}
 
