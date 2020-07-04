@@ -388,14 +388,6 @@ $(document).ready(function() {
     e.stopPropagation()
     visual()
 
-}).on('touch click', 
-	'#main .center .channel .item .image .tag .fa-comment-o, #main .center .channel .item .image .tag .fa-comments',
-	function(e) {
-
-    $(this).toggleClass('fa-comment-o fas fa-comments')
-    e.stopPropagation()
-    visual()
-
 }).on('touch click', '#main .center .channel .item .header .fa-ellipsis-h', function(e) {
 
     $(this).siblings('.url').select()

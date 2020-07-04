@@ -618,14 +618,14 @@ var xml = function (e, s, n, post) {
                     html =
                         "<div id='yt' class='item' ext='" + ref.trim() + "'>" +
                         "<div class='header'>" + courtesy +
-                        	"<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
+                        	"<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
                         "<div class='tag'>" +
-                        	"<div class='far fa-heart-o'></div>" +
-                        	"<div class='far fa-comment-o'></div>" +
-                        	"<div class='far fa-sticky-note-o' title='Copy Post'></div>" +
-                        	"<div class='far fa-bookmark-o' title='Copy Source'></div>" +
+                        	"<div class='fa-heart-o'></div>" +
+                        	"<div class='fa-comment-o'></div>" +
+                        	"<div class='fa-sticky-note-o' title='Copy Post'></div>" +
+                        	"<div class='fa-bookmark-o' title='Copy Source'></div>" +
                         	"<input class='url' value='" + ref.trim() + "'>" +
                         	"<input class='share' value='" + share + "'>" +
                         	"<input class='source' value='" + src + "'>" +
@@ -652,7 +652,7 @@ var xml = function (e, s, n, post) {
                     html =
                         "<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
                         "<div class='header'>" + courtesy +
-                        "<div class='copy fas fa-ellipsis-h' title='Copy URL'></div>" +
+                        "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
                         	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
