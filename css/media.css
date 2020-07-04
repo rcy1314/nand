@@ -11,9 +11,16 @@
         height: calc(100% - 96px);
     }
 
-    #main .center {
-        width: 97.5%;
+    #main .center, #main .channel {
+		background-color: #fff !important;
+        width: 100%;
+		margin: 0;
     }
+
+	#main .item, #main .feed {
+		box-shadow: none !important;
+		border: none !important;
+	}
 
     #option {
         position: absolute !important;
@@ -30,6 +37,7 @@
         margin: 1em;
         width: 32%;
     }
+
 }
 
 @media screen and (max-width: 768px) {

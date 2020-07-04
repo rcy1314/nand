@@ -2,22 +2,36 @@
 @font-face {
     font-family: FontAwesome;
     src: url(../fonts/fontawesome-webfont.woff2);
+	font-display: block;
 }
 
 .fa {
 	display: inline-block;
 }
 
-.fa-home:before {
-	font-family: FontAwesome;
-	content:"\f015";
-}
 .fa-home,
 .fa-code,
 .fa-circle,
 .fa-terminal,
 .fa-circle-thin {
     margin-left: 20px;
+}
+
+.fa-heart,
+.fa-heart-o,
+.fa-comment,
+.fa-comment-o,
+.fa-sticky-note,
+.fa-sticky-note-o,
+.fa-bookmark,
+.fa-bookmark-o {
+    font-size: 16px !important;
+    padding: 5px !important;
+}
+
+.fa-home:before {
+	font-family: FontAwesome;
+	content:"\f015";
 }
 
 .fa-angle-double-left:before {
@@ -55,17 +69,6 @@
 .fa-code:before {
 	font-family: FontAwesome;
 	content:"\f121";
-}
-.fa-heart,
-.fa-heart-o,
-.fa-comment,
-.fa-comment-o,
-.fa-sticky-note,
-.fa-sticky-note-o,
-.fa-bookmark,
-.fa-bookmark-o {
-    font-size: 16px !important;
-    padding: 5px !important;
 }
 
 .fa-ellipsis-h:before {

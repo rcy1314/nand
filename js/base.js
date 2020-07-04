@@ -231,7 +231,7 @@ var image = function (n) {
                     .naturalWidth + 30).css({
                     'margin-left': '10px',
                     'margin-top': '10px'
-                }).parent().width($('#' + n).width() + 20)
+                }).parent().width($('#' + n).width() + 10)
             }
             $('#' + n).css('display', 'block')
         })
