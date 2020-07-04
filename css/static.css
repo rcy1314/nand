@@ -236,7 +236,7 @@ body,
     position: relative;
     border-radius: 2px;
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: hidden;
     font-size: 10px;
     display: flex;
     height: 100%;
