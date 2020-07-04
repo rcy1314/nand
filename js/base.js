@@ -217,7 +217,7 @@ var image = function (n) {
         $('#' + n).one('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile) {
                 $('#' + n).addClass('expand min')
-					.removeClass('out').width('100%')
+					.width('100%')
                     .parent().css({
                         'margin': '0 auto',
                         'width': '45%'
@@ -228,7 +228,7 @@ var image = function (n) {
             } else if ($('#' + n).get(0).naturalWidth <
                 maximum) {
                 $('#' + n).width($('#' + n).get(0)
-                    .naturalWidth + 30).removeClass('out').css({
+                    .naturalWidth + 30).css({
                     'margin-left': '10px',
                     'margin-top': '10px'
                 }).parent().width($('#' + n).width() + 20)
@@ -655,7 +655,7 @@ var xml = function (e, s, n, post) {
                         "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
-                        	"<img id='" + i + "' class='out' style='display:none' src='" + src + "' class='img'>" +
+                        	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         	"<div class='tag'>" +
                         		"<div class='ago fa fa-heart-o'></div>" +
                         		"<div class='ago fa fa-comment-o'></div>" +

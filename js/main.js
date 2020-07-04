@@ -6,12 +6,6 @@ $(document).ready(function() {
 
 	$('#arm #search #input input[type=text]').focus()
 
-}).on('touch click', '.out', function(e) {
-
-	window.open($(this).parents('.item').find('.url').val(),
-		'_blank', 'noreferrer')
-	e.stopPropagation()
-
 }).on('touch click', 'a', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
