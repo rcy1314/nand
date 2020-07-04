@@ -5,7 +5,8 @@
 	font-display: block;
 }
 
-.fa {
+.fa,
+.far {
 	display: inline-block;
 }
 
@@ -30,22 +31,22 @@
 }
 
 .fa-home:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f015";
 }
 
 .fa-angle-double-left:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f100";
 }
 
 .fa-angle-double-right:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f101";
 }
 
 .fa-search:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f002";
 	color: #aaa;
 	font-size: 12px;
@@ -62,21 +63,21 @@
 }
 
 .fa-terminal:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f120";
 }
 
 .fa-code:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f121";
 }
 
 .fa-ellipsis-h:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f141";
 }
 .fa-ellipsis-v:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f142";
 }
 .fa-bookmark,
@@ -84,19 +85,19 @@
 	float: right !important;
 }
 .fa-heart:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f004";
 }
 .fa-comment:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f075";
 }
 .fa-sticky-note:before {
-	font-family: FontAwesome;
-	content:"\f02e";	
+	font-family: "Font Awesome 5 Pro";
+	content:"\f249";
 }
 .fa-bookmark:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f02e";
 }
 .fa-heart-o:before {

@@ -622,10 +622,10 @@ var xml = function (e, s, n, post) {
                         "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
                         "<div class='tag'>" +
-                        	"<div class='fa fa-heart-o'></div>" +
-                        	"<div class='fa fa-comment-o'></div>" +
-                        	"<div class='fa fa-sticky-note-o' title='Copy Post'></div>" +
-                        	"<div class='fa fa-bookmark-o' title='Copy Source'></div>" +
+                        	"<div class='far fa-heart-o'></div>" +
+                        	"<div class='far fa-comment-o'></div>" +
+                        	"<div class='far fa-sticky-note-o' title='Copy Post'></div>" +
+                        	"<div class='far fa-bookmark-o' title='Copy Source'></div>" +
                         	"<input class='url' value='" + ref.trim() + "'>" +
                         	"<input class='share' value='" + share + "'>" +
                         	"<input class='source' value='" + src + "'>" +
@@ -657,10 +657,10 @@ var xml = function (e, s, n, post) {
                         "<div class='image'>" +
                         	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         	"<div class='tag'>" +
-                        		"<div class='ago fa fa-heart-o'></div>" +
-                        		"<div class='ago fa fa-comment-o'></div>" +
-                        		"<div class='ago fa fa-sticky-note-o' title='Copy Post'></div>" +
-                        		"<div class='ago fa fa-bookmark-o' title='Copy Source'></div>" +
+                        		"<div class='ago far fa-heart-o'></div>" +
+                        		"<div class='ago far fa-comment-o'></div>" +
+                        		"<div class='ago far fa-sticky-note-o' title='Copy Post'></div>" +
+                        		"<div class='ago far fa-bookmark-o' title='Copy Source'></div>" +
                         	"</div>" +
                         "</div>" +
                         "<div class='pub' text='" + escape($(
