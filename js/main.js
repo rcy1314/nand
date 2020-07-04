@@ -149,6 +149,8 @@ $(document).ready(function() {
                 ' .addComment .comment').val() +
             "</div>")
     }
+    $(this).parents('.item').find('.fa-comment-o')
+		.removeClass('fa-comment-o').addClass('fas fa-comments')
     $('.' + item + ' .addComment .comment').val('')
 	e.preventDefault()
 
@@ -379,18 +381,18 @@ $(document).ready(function() {
     visual()
 
 }).on('touch click', 
-	'#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-heart',
+	'#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-gratipay',
 	function(e) {
 
-    $(this).toggleClass('fa-heart-o fa-heart')
+    $(this).toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
     visual()
 
 }).on('touch click', 
-	'#main .center .channel .item .image .tag .fa-comment-o, #main .center .channel .item .image .tag .fa-comment',
+	'#main .center .channel .item .image .tag .fa-comment-o, #main .center .channel .item .image .tag .fa-comments',
 	function(e) {
 
-    $(this).toggleClass('fa-comment-o fa-comment')
+    $(this).toggleClass('fa-comment-o fas fa-comments')
     e.stopPropagation()
     visual()
 
@@ -430,8 +432,8 @@ $(document).ready(function() {
     if ($(this).hasClass('expand min') || $(this).hasClass(
             'expand full')) expand($(this).attr(
         'id'))
-    else $(this).parent().parent().find('.fa-heart-o, .fa-heart')
-        .toggleClass('fa-heart-o fa-heart')
+    else $(this).parent().parent().find('.fa-heart-o, .fa-gratipay')
+        .toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
     visual()
 

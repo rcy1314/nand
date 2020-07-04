@@ -20,7 +20,8 @@
 
 .fa-heart,
 .fa-heart-o,
-.fa-comment,
+.fa-comments,
+.fa-gratipay,
 .fa-comment-o,
 .fa-sticky-note,
 .fa-sticky-note-o,
@@ -53,12 +54,12 @@
 }
 
 .fa-circle-thin:before {
-	font-family: FontAwesome;
-	content:"\f1db";
+	font-family: "Font Awesome 5 Pro";
+	content:"\f1ce";
 }
 
 .fa-circle:before {
-	font-family: FontAwesome;
+	font-family: "Font Awesome 5 Pro";
 	content:"\f111";
 }
 
@@ -103,16 +104,20 @@
 .fa-heart-o:before {
 	font-family: FontAwesome;
 	content:"\f08a";
+	font-weight: 400;
 }
 .fa-comment-o:before {
 	font-family: FontAwesome;
 	content:"\f0e5";
+	font-weight: 400;
 }
 .fa-sticky-note-o:before {
 	font-family: FontAwesome;
 	content:"\f24a";
+	font-weight: 400;
 }
 .fa-bookmark-o:before {
 	font-family: FontAwesome;
 	content:"\f097";
+	font-weight: 400;
 }

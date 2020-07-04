@@ -96,7 +96,7 @@ var visual = function (n) {
         })
         $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     }
-    $('.fa-heart').css('color', 'lightcoral')
+    $('.fa-gratipay').css('color', 'lightcoral')
 
 }
 
@@ -652,15 +652,15 @@ var xml = function (e, s, n, post) {
                     html =
                         "<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
                         "<div class='header'>" + courtesy +
-                        "<div class='copy fa fa-ellipsis-h' title='Copy URL'></div>" +
+                        "<div class='copy fas fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
                         	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
                         	"<div class='tag'>" +
-                        		"<div class='ago far fa-heart-o'></div>" +
-                        		"<div class='ago far fa-comment-o'></div>" +
-                        		"<div class='ago far fa-sticky-note-o' title='Copy Post'></div>" +
-                        		"<div class='ago far fa-bookmark-o' title='Copy Source'></div>" +
+                        		"<div class='ago fa-heart-o'></div>" +
+                        		"<div class='ago fa-comment-o'></div>" +
+                        		"<div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
+                        		"<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
                         	"</div>" +
                         "</div>" +
                         "<div class='pub' text='" + escape($(
