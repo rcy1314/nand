@@ -24,10 +24,10 @@
 
     #option {
         position: absolute !important;
-        padding: 10px !important;
         width: calc(100% - 20px) !important;
         top: calc(100% - 45px) !important;
         height: 35px !important;
+		left: -5px !important;
         z-index: 2;
     }
 
