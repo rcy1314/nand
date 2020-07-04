@@ -1,0 +1,1 @@
+curl -q -s "https://acktic.github.io/js/head.js" | grep uri | awk '{print $2}' | tr -d ',' | tr -d '"' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 30 -q -s -q -k "{}" -I | grep -e text -e xml -e rss >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"'
