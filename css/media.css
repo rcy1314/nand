@@ -12,7 +12,6 @@
     }
 
     #main .center, #main .channel {
-		background-color: #fff !important;
         width: 100%;
 		margin: 0;
     }
@@ -37,6 +36,10 @@
         margin: 1em;
         width: 32%;
     }
+
+	#main .suggestions {
+		display: none !important;
+	}
 
 }
 
