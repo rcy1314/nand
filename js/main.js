@@ -450,7 +450,7 @@ $(document).ready(function() {
 }).on('touch click', '#main .center #bottom', function(e) {
 
     $('#main .center, #main .suggestions').remove()
-    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[1]
+    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
 	response(false, uri.replace(/\-|\+1/g, ' '), null)
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
