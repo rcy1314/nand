@@ -233,10 +233,11 @@ body,
 
 .feed {
     -webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
     position: relative;
     border-radius: 2px;
     overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-x: scroll;
     font-size: 10px;
     display: flex;
     height: 100%;
