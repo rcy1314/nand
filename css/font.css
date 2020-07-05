@@ -9,14 +9,15 @@
 .far {
 	display: inline-block;
 }
-
+.fa-git,
 .fa-home,
 .fa-code,
 .fa-globe,
 .fa-circle,
 .fa-terminal,
-.fa-circle-thin {
+.fa-circle-notch {
     margin-left: 20px;
+	font-size: 18px;
 }
 
 .fa-heart,
@@ -31,12 +32,14 @@
     font-size: 16px !important;
     padding: 5px !important;
 }
-
+.fa-globe:before {
+	font-family: "Font Awesome 5 Pro";
+	content:"\f0ac";
+}
 .fa-home:before {
 	font-family: "Font Awesome 5 Pro";
 	content:"\f015";
 }
-
 .fa-angle-double-left:before {
 	font-family: "Font Awesome 5 Pro";
 	content:"\f100";
@@ -120,5 +123,10 @@
 .fa-bookmark-o:before {
 	font-family: FontAwesome;
 	content:"\f097";
+	font-weight: 400;
+}
+.fa-git:before {
+	font-family: FontAwesome;
+	content:"\f1d3";
 	font-weight: 400;
 }

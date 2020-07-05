@@ -13,7 +13,7 @@ var visual = function (n) {
         op = op != true
     else if (n == 1 || n == 0) op = n
     if (op == 1 || contrast == true) {
-        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-circle, .fa-circle-thin, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
@@ -40,7 +40,7 @@ var visual = function (n) {
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
         $('#favicon').attr('href', 'images/opposite.png')
-        $('#option .fa-circle-thin').toggleClass('fa-circle-thin fa-circle')
+        $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     } else if (op == 0 || contrast == false) {
         $('.suggestions, .combine, .comment, .channel, .air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
             .css({
@@ -64,7 +64,7 @@ var visual = function (n) {
                 'background-color': '#fafafa',
                 'color': '#666'
             })
-        $('#home, .fa-home, .fa-code, .fa-globe, .fa-git, .fa-terminal, .fa-circle-thin, .fa-circle')
+        $('#home, .fa-home, .fa-code, .fa-globe, .fa-git, .fa-terminal, .fa-circle-notch, .fa-circle')
             .css({
                 'background-color': 'transparent',
                 'color': '#222'
