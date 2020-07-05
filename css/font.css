@@ -93,13 +93,13 @@
 	font-family: "Font Awesome 5 Pro";
 	content:"\f075";
 }
-.fa-sticky-note:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f249";
-}
 .fa-bookmark:before {
 	font-family: "Font Awesome 5 Pro";
 	content:"\f02e";
+}
+.fa-sticky-note:before {
+	font-family: FontAwesome;
+	content:"\f249";
 }
 .fa-heart-o:before {
 	font-family: FontAwesome;

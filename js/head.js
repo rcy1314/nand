@@ -3497,7 +3497,7 @@ var menu = [{
 
 	,
 	{
-		id: "Youtube/!E News",
+		id: "Youtube/E News",
 		cat: "Youtube",
 		des: "E! News Youtube entertainment news, celebrities, celeb news, and celebrity gossip.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=enews",

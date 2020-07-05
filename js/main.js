@@ -2,6 +2,19 @@ $(document).ready(function() {
 
     $('#input').css('display', 'block')
 
+}).on('touch click', '#arm', function(e) {
+
+	if (!$('#arm #search input[type=text]').is(':focus'))
+		$('#arm #search #match').hide()
+
+}).on('touch click', '#main', function(e) {
+
+	$('#arm #search #match').hide()
+
+}).on('touch click', '#arm #home', function(e) {
+
+	window.location.href = window.location.origin
+
 }).on('touch click', '#arm #search #input .icon', function(e) {
 
 	$('#arm #search #input input[type=text]').focus()
@@ -10,6 +23,16 @@ $(document).ready(function() {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
+
+}).on('touch click', '#main .center .channel .item', function(e) {
+
+    window.open($(this).attr('ext'), '_blank', 'noreferrer')
+    e.stopPropagation()
+
+}).on('touch click', '#main .center .channel .item .post', function(e) {
+
+	$(this).siblings('.comment').focus().submit()
+	e.stopPropagation()
 
 }).on('touch click', '#main #visit', function(e) {
 
@@ -28,19 +51,15 @@ $(document).ready(function() {
         progress(true, 100)
 	}
 
-}).on('touch click', '#main .center .channel .item', function(e) {
+}).on('touch click', '#main .center #bottom', function(e) {
 
-    window.open($(this).attr('ext'), '_blank', 'noreferrer')
-    e.stopPropagation()
-
-}).on('touch click', '#arm', function(e) {
-
-	if (!$('#arm #search input[type=text]').is(':focus'))
-		$('#arm #search #match').hide()
-
-}).on('touch click', '#main', function(e) {
-
-	$('#arm #search #match').hide()
+    $('#main .center, #main .suggestions').remove()
+    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
+	response(false, uri.replace(/\-|\+1/g, ' '), null)
+	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+	else if (contrast == true) uri = uri + '+1'
+    state('?q=' + uri.replace(/\-/g, '+'))
+	air(id)
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',
 
@@ -63,20 +82,20 @@ $(document).ready(function() {
 			})
 			$(this).val('')
 			if ($('#arm #search #input .icon').hasClass('slide')) {
-			$(this).css({
-				'padding-left': '30px',
-				'text-align': 'left',
-                'caret-color': '#e4e4e4',
-			})
+				$(this).css({
+            	    'caret-color': '#e4e4e4',
+					'padding-left': '30px',
+					'text-align': 'left'
+				})
 			} else {
-			setTimeout(function () {
-            $this.css({
-				'padding-left': '30px',
-                'caret-color': '#e4e4e4',
-                'text-align': 'left',
-            })
-			}, 500)
-			$('#arm #search #input .icon').addClass('slide')
+				setTimeout(function () {
+            		$this.css({
+            	    	'caret-color': '#e4e4e4',
+						'padding-left': '30px',
+            	    	'text-align': 'left',
+            		})
+				}, 500)
+				$('#arm #search #input .icon').addClass('slide')
 			}
 		}
         if (e.type == 'focusout' || e.type == 'blur')
@@ -127,11 +146,6 @@ $(document).ready(function() {
             }).val('Search').siblings('.icon').removeClass('slide')
         }
         visual()
-
-}).on('touch click', '#main .center .channel .item .post', function(e) {
-
-	$(this).siblings('.comment').focus().submit()
-	e.stopPropagation()
 
 }).on('submit', '#main .center .channel .item .addComment', function(e) {
 
@@ -276,15 +290,17 @@ $(document).ready(function() {
             $('#search .listing .hover').removeClass('hover')
                 .addClass('index')
         } else if (e.type == 'touch' || e.type == 'click')
-		if (translations.indexOf($('.hover').attr('response')) > -1) {
+		if (translations.indexOf($('#arm #search #match .listing .hover')
+			.attr('response')) > -1) {
 			filter = []
 			populate($('.hover').attr('response'))
-			var uri = '?q=' + $('.hover').attr('response').toLowerCase()
+			var uri = '?q=' + $('#arm #search #match .listing .hover')
+				.attr('response').toLowerCase()
 			if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 			else if (contrast == true) uri = uri + '+1'
-			air($('.hover').attr('response'))
+			air($('#arm #search #match .listing .hover').attr('response'))
 			state(uri)
-			document.title = $('.hover').attr('response')
+			document.title = $('#arm #search #match .listing .hover').attr('response')
 			progress(true, 100)
         } else {
 			var uri = '?q=' +
@@ -296,10 +312,6 @@ $(document).ready(function() {
 			exit(uri)
 		}
         e.preventDefault()
-
-}).on('touch click', '#arm #home', function(e) {
-
-	window.location.href = window.location.origin
 
 }).on('touch click', '#option .fa-home', function(e) {
 
@@ -417,7 +429,6 @@ $(document).ready(function() {
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
     e.stopPropagation()
-    visual()
 
 }).on('touch click', '#main .center .channel .item .image .img', function(e) {
 
@@ -427,7 +438,6 @@ $(document).ready(function() {
     else $(this).parent().parent().find('.fa-heart-o, .fa-gratipay')
         .toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
-    visual()
 
 }).on('touch click', '#main .center .channel .item .pub .more', function(e) {
 
@@ -440,15 +450,5 @@ $(document).ready(function() {
     })
     e.stopPropagation()
     $(this).hide()
-
-}).on('touch click', '#main .center #bottom', function(e) {
-
-    $('#main .center, #main .suggestions').remove()
-    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
-	response(false, uri.replace(/\-|\+1/g, ' '), null)
-	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-	else if (contrast == true) uri = uri + '+1'
-    state('?q=' + uri.replace(/\-/g, '+'))
-	air(id)
 
 })
