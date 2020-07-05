@@ -19,6 +19,10 @@ $(document).ready(function() {
 
 	$('#arm #search #input input[type=text]').focus()
 
+}).on('touch click', '.fa-globe', function(e) {
+
+	window.location.href = 'rip.txt'
+
 }).on('touch click', 'a', function(e) {
 
     window.open($(this).attr('ext'), '_blank', 'noreferrer')

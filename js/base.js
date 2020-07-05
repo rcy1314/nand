@@ -64,7 +64,7 @@ var visual = function (n) {
                 'background-color': '#fafafa',
                 'color': '#666'
             })
-        $('#home, .fa-home, .fa-code, .fa-git, .fa-terminal, .fa-circle-thin, .fa-circle')
+        $('#home, .fa-home, .fa-code, .fa-globe, .fa-git, .fa-terminal, .fa-circle-thin, .fa-circle')
             .css({
                 'background-color': 'transparent',
                 'color': '#222'
