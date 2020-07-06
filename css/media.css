@@ -37,6 +37,7 @@
         width: 32%;
     }
 
+	#main .item .ago,
 	#main .suggestions {
 		display: none !important;
 	}

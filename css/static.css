@@ -4,6 +4,12 @@
 	font-display: block;
 }
 
+@font-face {
+    font-family: Proxima Nova;
+    src: url(../fonts/ProximaNova-Regular.woff);
+	font-display: block;
+}
+
 ::-webkit-scrollbar {
     display: block;
     width: 5px
