@@ -1,8 +1,13 @@
 const myDecipher = decipher('mySecretSalt')
 
 if (location.href.split('?')[1])
-	if(location.href.split('?')[1].match(/^[a-z0-9]+$/i))
-	location.href = window.location.origin + myDecipher(location.search.split('?')[1])
+	if (location.href.split('?')[1].match(/^[a-z0-9]+$/i)) {
+	var re = myDecipher(location.href.split('?')[1])
+	var id = re.slice(0, 3)
+	var ts = parseInt(re.substring(3), '36')
+	location.href = 'file:///home/ack/acktic.github.io/index.html?q=&' + id + ts
+
+	}
 
 if (location.href.match('\\+1'))
 

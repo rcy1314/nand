@@ -128,6 +128,7 @@ function feed(n) {
         .length - 1)])
     else if (n >= menu.length - 13) n = 1
     for (var i = n; i <= n + 13; i++) {
+		if (menu[i])
         var img = 'images/png/' + menu[i].img + '.png'
         $('#main .center .feed').append(
             "<div class='asset'>" +
@@ -162,23 +163,30 @@ var response =  function (passthrough, n, post) {
     $('#main #visit').show()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
-    var n = n.toLowerCase().replace(/(%20|\-|\_|\s|\+)/g, ' ')
+    var n = n.replace(/(%20|\-|\_|\s|\+)/g, ' ')
     $('#main').scrollTop(0)
 	$(document).ready(function() {
     for (var i = menu.length - 1; i >= 1; i--) {
-        if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase() == n) {
+        if (menu[i].hash == n) {
+            filter.push(menu.indexOf(menu[i]))
+            write(menu.indexOf(menu[i]))
+			exact = i
+            id = i
+			break
+        } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == 
+			n.toLowerCase()) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
             var exact = i
             id = i
             break
-        } else if (menu[i].id.replace(/(\/|\.)/g, ' ').toLowerCase()
-            .match(n)) {
+        } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ')
+            .match(n.toLowerCase())) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
             id = i
-        } else if (menu[i].des.replace(/(\/|\.)/g, ' ').toLowerCase()
-            .match(n)) {
+        } else if (menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ')
+            .match(n.toLowerCase())) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
         } else if (menu[i].cat.toLowerCase().match(n)) {
@@ -487,11 +495,9 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = '?q=&' +
-                    menu[n].id.toLowerCase().replace(/\/|\.|\s/g,
-                        '+') + '#' + gen
+                var share = menu[n].hash + '#' + (gen).toString(36)
+				share = window.location.origin + '/?' + myCipher(share)
                 if (contrast == true) share = share + '+1'
-				share = window.location.origin + '/?' + (myCipher(share))
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {

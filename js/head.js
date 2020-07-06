@@ -14,7 +14,8 @@ var menu = [{
 		des: "ABC KFSN Local Fresno and National News.",
 		uri: "https://abc30.com/feed",
 		ext: "https://abc30.com",
-		img: "KFSNTV30"
+		img: "KFSNTV30",
+		hash: "fA"
 	}
 
 	,
@@ -24,7 +25,8 @@ var menu = [{
 		des: "NBC KSEE YourCentralValley in Fresno, California.",
 		uri: "https://yourcentralvalley.com/feed",
 		ext: "https://www.yourcentralvalley.com",
-		img: "KSEE24"
+		img: "KSEE24",
+		hash: "oN"
 	}
 
 	,
@@ -34,7 +36,8 @@ var menu = [{
 		des: "CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",
 		uri: "https://boston.cbslocal.com/feed",
 		ext: "https://boston.cbslocal.com/feed",
-		img: "WBZTV4"
+		img: "WBZTV4",
+		hash: "bC"
 	}
 
 	,
@@ -44,7 +47,8 @@ var menu = [{
 		des: "ABC WCVB Boston News, Weather, and Traffic online, anytime.",
 		uri: "https://www.wcvb.com/topstories-rss",
 		ext: "https://wcvb.com",
-		img: "WCVB5"
+		img: "WCVB5",
+		hash: "tA"
 	}
 
 	,
@@ -54,7 +58,8 @@ var menu = [{
 		des: "ABC WPLG Florida Miami Breaking News and Headlines.",
 		uri: "https://www.local10.com/arcio/rss/category/news/?size=10",
 		ext: "https://local10.com",
-		img: "WPLG10"
+		img: "WPLG10",
+		hash: "Mb"
 	}
 
 	,
@@ -64,7 +69,8 @@ var menu = [{
 		des: "CBS WFOR Florida Miami a Full Service Television Station serving Miami.",
 		uri: "https://miami.cbslocal.com/feed",
 		ext: "https://miami.cbslocal.com",
-		img: "WFOR4"
+		img: "WFOR4",
+		hash: "sI"
 	}
 
 	,
@@ -74,7 +80,8 @@ var menu = [{
 		des: "ABC Los Angeles covers News, Weather, Traffic and Live Video.",
 		uri: "https://abc7.com/feed",
 		ext: "https://abc7.com",
-		img: "KABC7"
+		img: "KABC7",
+		hash: "Ac"
 	}
 
 	,
@@ -84,7 +91,8 @@ var menu = [{
 		des: "CBS KCBS Los Angeles News, Weather, Traffic and the Best of LA and OC.",
 		uri: "https://losangeles.cbslocal.com/feed",
 		ext: "https://losangeles.cbslocal.com",
-		img: "KCAL9"
+		img: "KCAL9",
+		hash: "Sl"
 	}
 
 	,
@@ -94,7 +102,8 @@ var menu = [{
 		des: "ABC KGO San Francisco Local News and Headlines.",
 		uri: "https://abc7news.com/feed",
 		ext: "https://abc7news.com",
-		img: "KGO7"
+		img: "KGO7",
+		hash: "Fb"
 	}
 
 	,
@@ -104,7 +113,8 @@ var menu = [{
 		des: "CBS KPIX San Francisco News, Weather, Traffic and the Best of San Francisco.",
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com",
-		img: "KPIX5"
+		img: "KPIX5",
+		hash: "cB"
 	}
 
 	,
@@ -114,7 +124,8 @@ var menu = [{
 		des: "CBS KION California Monterey serving the Monterey Bay area.",
 		uri: "https://kion546.com/feed",
 		ext: "https://kion546.com",
-		img: "KION546"
+		img: "KION546",
+		hash: "Mc"
 	}
 
 	,
@@ -124,7 +135,8 @@ var menu = [{
 		des: "NBC KGET California Bakersfield local news & weather stories, making a better place to live.",
 		uri: "https://www.kget.com/feed",
 		ext: "https://www.kget.com",
-		img: "KGET17"
+		img: "KGET17",
+		hash: "Nb"
 	}
 
 	,
@@ -134,7 +146,8 @@ var menu = [{
 		des: "CBS KOVR California Sacramento also serving Stockton and Modesto.",
 		uri: "https://sacramento.cbslocal.com/feed",
 		ext: "https://sacramento.cbslocal.com",
-		img: "CBS13"
+		img: "CBS13",
+		hash: "bO"
 	}
 
 	,
@@ -144,7 +157,8 @@ var menu = [{
 		des: "NBC KCRA California Sacramento News is your source for the latest local headlines and live alerts.",
 		uri: "https://www.kcra.com/topstories-rss",
 		ext: "https://www.kcra.com",
-		img: "KCRA3"
+		img: "KCRA3",
+		hash: "cM"
 	}
 
 	,
@@ -154,7 +168,8 @@ var menu = [{
 		des: "ABC KXTV California Sacramento Local News, Weather, and Politics.",
 		uri: "https://feeds.feedblitz.com/kxtv/news&x=1",
 		ext: "https://www.abc10.com",
-		img: "KXTV10"
+		img: "KXTV10",
+		hash: "mC"
 	}
 
 	,
@@ -164,7 +179,8 @@ var menu = [{
 		des: "ABC KEYT California Santa Barbara News, Weather, Livestream, Alerts, and more.",
 		uri: "https://keyt.com/feed",
 		ext: "https://keyt.com",
-		img: "KEYT3"
+		img: "KEYT3",
+		hash: "Sa"
 	}
 
 	,
@@ -174,7 +190,8 @@ var menu = [{
 		des: "ABC WABC New York covering New York City, New Jersey, and Long Island.",
 		uri: "https://abc7ny.com/feed",
 		ext: "https://abc7ny.com",
-		img: "WABC7"
+		img: "WABC7",
+		hash: "yN"
 	}
 
 	,
@@ -184,7 +201,8 @@ var menu = [{
 		des: "CBS WLNY New York City Digital Streaming News Service, It's always on.",
 		uri: "https://newyork.cbslocal.com/feed",
 		ext: "https://newyork.cbslocal.com",
-		img: "WLNY1055"
+		img: "WLNY1055",
+		hash: "Ny"
 	}
 
 	,
@@ -194,7 +212,8 @@ var menu = [{
 		des: "CBS KLAS Nevada Las Vegas television station located in Las Vegas, Nevada.",
 		uri: "https://www.8newsnow.com/feed",
 		ext: "https://www.8newsnow.com",
-		img: "KLAS8"
+		img: "KLAS8",
+		hash: "vL"
 	}
 
 	,
@@ -204,7 +223,8 @@ var menu = [{
 		des: "ABC KVUE Texas Austin latest news and weather delivered to your inbox every morning.",
 		uri: "http://rssfeeds.kvue.com/kvue/home&x=1",
 		ext: "http://www.kvue.com",
-		img: "KVUE9"
+		img: "KVUE9",
+		hash: "aU"
 	}
 
 	,
@@ -214,7 +234,8 @@ var menu = [{
 		des: "NBC KXAN Texas Austin committed to succinct and powerful hard news coverage.",
 		uri: "https://www.kxan.com/feed",
 		ext: "https://www.kxan.com",
-		img: "KXAN"
+		img: "KXAN",
+		hash: "Nc"
 	}
 
 	,
@@ -224,7 +245,8 @@ var menu = [{
 		des: "NBC KSL Utah Salt Lake City local and national news, weather, traffic, daytime, primetime, and late night programming.",
 		uri: "https://ksltv.com/feed",
 		ext: "https://ksltv.com",
-		img: "KSLTV5"
+		img: "KSLTV5",
+		hash: "tC"
 	}
 
 	,
@@ -234,7 +256,8 @@ var menu = [{
 		des: "ABC KTVX Utah Salt Lake City the oldest television station located in the Mountain Time Zone.",
 		uri: "https://www.abc4.com/feed",
 		ext: "https://www.abc4.com",
-		img: "KTVXTV4"
+		img: "KTVXTV4",
+		hash: "aT"
 	}
 
 	,
@@ -244,7 +267,8 @@ var menu = [{
 		des: "ABC Entertainment Latest News, Videos and Photos.",
 		uri: "https://abcnews.go.com/abcnews/entertainmentheadlines",
 		ext: "https://abcnews.go.com/entertainment",
-		img: "ABC"
+		img: "ABC",
+		hash: "Na"
 	}
 
 	,
@@ -254,7 +278,8 @@ var menu = [{
 		des: "AOL Latest Headlines in Business, Entertainment, Politics, and Video.",
 		uri: "https://www.aol.com/rss",
 		ext: "https://aol.com",
-		img: "AOL"
+		img: "AOL",
+		hash: "mA"
 	}
 
 	,
@@ -264,7 +289,8 @@ var menu = [{
 		des: "AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",
 		uri: "https://www.avclub.com/rss",
 		ext: "https://www.avclub.com",
-		img: "AVClub"
+		img: "AVClub",
+		hash: "vA"
 	}
 
 	,
@@ -274,7 +300,8 @@ var menu = [{
 		des: "BBC News Entertainment, Lifestyle, and Arts.",
 		uri: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
 		ext: "https://bbc.com/news/entertainment_and_arts",
-		img: "BBC"
+		img: "BBC",
+		hash: "bC"
 	}
 
 	,
@@ -284,7 +311,8 @@ var menu = [{
 		des: "Best Life Online destination for sophisticated men & women.",
 		uri: "https://bestlifeonline.com/feed",
 		ext: "https://bestlifeonline.com",
-		img: "BestLife"
+		img: "BestLife",
+		hash: "lB"
 	}
 
 	,
@@ -294,7 +322,8 @@ var menu = [{
 		des: "Bustle is the premier digital destination for millenial women, launched in 2013.",
 		uri: "https://www.bustle.com/rss",
 		ext: "https://www.bustle.com",
-		img: "Bustle"
+		img: "Bustle",
+		hash: "sT"
 	}
 
 	,
@@ -304,7 +333,8 @@ var menu = [{
 		des: "Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",
 		uri: "https://www.buzzfeed.com/celebrity.xml",
 		ext: "https://www.buzzfeed.com/celebrity",
-		img: "BuzzFeed"
+		img: "BuzzFeed",
+		hash: "zC"
 	}
 
 	,
@@ -314,7 +344,8 @@ var menu = [{
 		des: "Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.",
 		uri: "https://www.cheatsheet.com/feed",
 		ext: "https://www.cheatsheet.com",
-		img: "CheatSheet"
+		img: "CheatSheet",
+		hash: "Ae"
 	}
 
 	,
@@ -324,7 +355,8 @@ var menu = [{
 		des: "Closer Weekly Your ultimate source for breaking celebrity news — get closer to the stars you love.",
 		uri: "https://www.closerweekly.com/feed",
 		ext: "https://www.closerweekly.com",
-		img: "CloserWeekly"
+		img: "CloserWeekly",
+		hash: "wC"
 	}
 
 	,
@@ -334,7 +366,8 @@ var menu = [{
 		des: "CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",
 		uri: "https://www.cbsnews.com/latest/rss/entertainment",
 		ext: "https://cbsnews.com/latest/rss/entertainment",
-		img: "CBS"
+		img: "CBS",
+		hash: "iA"
 	}
 
 	,
@@ -344,7 +377,8 @@ var menu = [{
 		des: "Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, and entertainment.",
 		uri: "https://celebrityinsider.org/feed",
 		ext: "https://celebrityinsider.org",
-		img: "CelebrityInsider"
+		img: "CelebrityInsider",
+		hash: "cI"
 	}
 
 	,
@@ -354,7 +388,8 @@ var menu = [{
 		des: "CNN Entertainment News Celebrities, Movies, TV, and Music.",
 		uri: "http://rss.cnn.com/rss/cnn_showbiz.rss",
 		ext: "https://cnn.com/entertainment",
-		img: "CNN"
+		img: "CNN",
+		hash: "mN"
 	}
 
 	,
@@ -364,7 +399,8 @@ var menu = [{
 		des: "ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",
 		uri: "https://www.comingsoon.net/feed",
 		ext: "https://comingsoon.net",
-		img: "ComingSoon"
+		img: "ComingSoon",
+		hash: "oS"
 	}
 
 	,
@@ -374,7 +410,8 @@ var menu = [{
 		des: "Cosmopolitan the Woman's Magazine for Fashion.",
 		uri: "https://www.cosmopolitan.com/rss/all.xml",
 		ext: "https://www.cosmopolitan.com",
-		img: "Cosmopolitan"
+		img: "Cosmopolitan",
+		hash: "Om"
 	}
 
 	,
@@ -384,7 +421,8 @@ var menu = [{
 		des: "Daily Beast is a News and Opinion Website focusing on Politics and Entertainment Culture.",
 		uri: "https://feeds.thedailybeast.com/summary/rss/articles",
 		ext: "https://www.thedailybeast.com",
-		img: "DailyBeast"
+		img: "DailyBeast",
+		hash: "bD"
 	}
 
 	,
@@ -394,7 +432,8 @@ var menu = [{
 		des: "Deadline Hollywood is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",
 		uri: "https://deadline.com/feed",
 		ext: "https://deadline.com",
-		img: "DeadlineHollywood"
+		img: "DeadlineHollywood",
+		hash: "dH"
 	}
 
 	,
@@ -404,7 +443,8 @@ var menu = [{
 		des: "Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.",
 		uri: "https://decider.com/feed",
 		ext: "https://decider.com",
-		img: "Decider"
+		img: "Decider",
+		hash: "cD"
 	}
 
 	,
@@ -414,7 +454,8 @@ var menu = [{
 		des: "Demotix Celebrity articles with all the gossip in celebrity news.",
 		uri: "https://demotix.com/category/celebrities/feed",
 		ext: "https://demotix.com/category/celebrities",
-		img: "Demotix"
+		img: "Demotix",
+		hash: "dX"
 	}
 
 	,
@@ -424,7 +465,8 @@ var menu = [{
 		des: "Digital Trends Movie reviews, TV Show recaps, Previews, and News.",
 		uri: "https://www.digitaltrends.com/movies/feed/",
 		ext: "https://digitaltrends.com/movies",
-		img: "DigitalTrends"
+		img: "DigitalTrends",
+		hash: "mT"
 	}
 
 	,
@@ -434,7 +476,8 @@ var menu = [{
 		des: "E! is an American basic cable channel owned by the NBCUniversal.",
 		uri: "http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",
 		ext: "https://www.eonline.com",
-		img: "ENews"
+		img: "ENews",
+		hash: "eO"
 	}
 
 	,
@@ -444,7 +487,8 @@ var menu = [{
 		des: "Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",
 		uri: "https://www.elle.com/rss/culture.xml",
 		ext: "https://www.elle.com",
-		img: "ELLE"
+		img: "ELLE",
+		hash: "lE"
 	}
 
 	,
@@ -454,7 +498,8 @@ var menu = [{
 		des: "Esquire is your destination for the Latest Entertainment News Headlines.",
 		uri: "https://www.esquire.com/rss/entertainment.xml",
 		ext: "https://esquire.com",
-		img: "Esquire"
+		img: "Esquire",
+		hash: "qI"
 	}
 
 	,
@@ -464,7 +509,8 @@ var menu = [{
 		des: "Entertainment Tonight Canada a Canadian entertainment news television series.",
 		uri: "https://etcanada.com/feed",
 		ext: "https://etcanada.com",
-		img: "ET"
+		img: "ET",
+		hash: "tE"
 	}
 
 	,
@@ -474,7 +520,8 @@ var menu = [{
 		des: "Glamour UK an online women's magazine founded in 1939.",
 		uri: "https://www.glamourmagazine.co.uk/rss/article",
 		ext: "https://www.glamourmagazine.co.uk",
-		img: "Glamour"
+		img: "Glamour",
+		hash: "Rg"
 	}
 
 	,
@@ -484,7 +531,8 @@ var menu = [{
 		des: "Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",
 		uri: "https://globalnews.ca/entertainment/feed",
 		ext: "https://globalnews.ca/entertainment",
-		img: "CBC"
+		img: "CBC",
+		hash: "gV"
 	}
 
 	,
@@ -494,7 +542,8 @@ var menu = [{
 		des: "GQ is an international monthly magazine based in New York City.",
 		uri: "https://www.gq.com/feed/rss",
 		ext: "https://www.gq.com",
-		img: "GQ"
+		img: "GQ",
+		hash: "qG"
 	}
 
 	,
@@ -504,7 +553,8 @@ var menu = [{
 		des: "Heavy Entertainment news including tv, streaming, events, and more.",
 		uri: "https://heavy.com/entertainment/feed",
 		ext: "https://heavy.com/entertainment",
-		img: "Heavy"
+		img: "Heavy",
+		hash: "Eh"
 	}
 
 	,
@@ -514,7 +564,8 @@ var menu = [{
 		des: "Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and National News.",
 		uri: "https://hotcelebrityreviews.com/feed",
 		ext: "https://hotcelebrityreviews.com",
-		img: "HotCelebrityNews"
+		img: "HotCelebrityNews",
+		hash: "sH"
 	}
 
 	,
@@ -524,7 +575,8 @@ var menu = [{
 		des: "Extra TV current events in the mass-entertainment business such as movies, TV, music, etc.",
 		uri: "https://feeds.extratv.com/atom",
 		ext: "https://extratv.com",
-		img: "Extra"
+		img: "Extra",
+		hash: "xA"
 	}
 
 	,
@@ -534,7 +586,8 @@ var menu = [{
 		des: "Hollywood Life Top Stories in the Entertainment Industry.",
 		uri: "https://hollywoodlife.com/feed",
 		ext: "https://hollywoodlife.com",
-		img: "HollywoodLife"
+		img: "HollywoodLife",
+		hash: "fH"
 	}
 
 	,
@@ -544,7 +597,8 @@ var menu = [{
 		des: "Hollywood Unlocked is an exclusive entertainment news platform that provides celebrity news in a truthful and positive light.",
 		uri: "http://thehollywoodunlocked.com/feed",
 		ext: "http://thehollywoodunlocked.com",
-		img: "HollywoodUnlocked"
+		img: "HollywoodUnlocked",
+		hash: "uD"
 	}
 
 	,
@@ -554,7 +608,8 @@ var menu = [{
 		des: "Inquisitr offers a constantly updated mix of the latest stories to hit the web.",
 		uri: "https://www.inquisitr.com/feed",
 		ext: "https://www.inquisitr.com",
-		img: "Inquisitr"
+		img: "Inquisitr",
+		hash: "qI"
 	}
 
 	,
@@ -564,7 +619,8 @@ var menu = [{
 		des: "Nnternational Business Times entertainment news, celebrity gossips, tv shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
 		ext: "https://www.ibtimes.com/media-culture/entertainment",
-		img: "IBT"
+		img: "IBT",
+		hash: "tI"
 	}
 
 	,
@@ -574,7 +630,8 @@ var menu = [{
 		des: "IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",
 		uri: "https://www.indiewire.com/feed",
 		ext: "https://www.indiewire.com",
-		img: "IndieWire"
+		img: "IndieWire",
+		hash: "wI"
 	}
 
 	,
@@ -584,7 +641,8 @@ var menu = [{
 		des: "Just Jared is the Definitive Site for Celebrity News.",
 		uri: "http://www.justjared.com/feed",
 		ext: "http://justjared.com",
-		img: "JustJared"
+		img: "JustJared",
+		hash: "jA"
 	}
 
 	,
@@ -594,7 +652,8 @@ var menu = [{
 		des: "Mens Health the best-selling men's magazine on U.S. newsstands.",
 		uri: "https://www.menshealth.com/rss/all.xml",
 		ext: "https://www.menshealth.com",
-		img: "MensHealth"
+		img: "MensHealth",
+		hash: "hM"
 	}
 
 	,
@@ -604,7 +663,8 @@ var menu = [{
 		des: "MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.",
 		uri: "https://movieweb.com/rss/all-news",
 		ext: "https://movieweb.com",
-		img: "MovieWeb"
+		img: "MovieWeb",
+		hash: "eW"
 	}
 
 	,
@@ -614,7 +674,8 @@ var menu = [{
 		des: "MTV The ultimate news source for music, celebrity, entertainment, movies, and current events.",
 		uri: "http://www.mtv.com/news/feed",
 		ext: "http://www.mtv.com/news",
-		img: "MTV"
+		img: "MTV",
+		hash: "mT"
 	}
 
 	,
@@ -624,7 +685,8 @@ var menu = [{
 		des: "New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",
 		uri: "https://nypost.com/entertainment/feed",
 		ext: "https://nypost.com/entertainment/feed",
-		img: "NYPost"
+		img: "NYPost",
+		hash: "yP"
 	}
 
 	,
@@ -634,7 +696,8 @@ var menu = [{
 		des: "OANN Entertainment One America News Network Entertainment.",
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment",
-		img: "OANN"
+		img: "OANN",
+		hash: "eO"
 	}
 
 	,
@@ -644,7 +707,8 @@ var menu = [{
 		des: "Ozy committed to producing premium, original storytelling across television, festivals, podcasts and news.",
 		uri: "https://www.ozy.com/feed",
 		ext: "https://www.ozy.com",
-		img: "Ozy"
+		img: "Ozy",
+		hash: "zY"
 	}
 
 	,
@@ -654,7 +718,8 @@ var menu = [{
 		des: "People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",
 		uri: "https://people.com/tag/news/feed",
 		ext: "https://people.com",
-		img: "People"
+		img: "People",
+		hash: "lP"
 	}
 
 	,
@@ -664,7 +729,8 @@ var menu = [{
 		des: "PerezHilton is known for posts covering Gossip Items about Celebrities.",
 		uri: "https://perezhilton.com/feed",
 		ext: "https://perezhilton.com",
-		img: "PerezHilton"
+		img: "PerezHilton",
+		hash: "nZ"
 	}
 
 	,
@@ -674,7 +740,8 @@ var menu = [{
 		des: "Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",
 		uri: "https://www.popsugar.com/feed",
 		ext: "https://www.popsugar.com",
-		img: "PopSugar"
+		img: "PopSugar",
+		hash: "sP"
 	}
 
 	,
@@ -684,7 +751,8 @@ var menu = [{
 		des: "Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",
 		uri: "https://www.rollingstone.com/feed",
 		ext: "https://rollingstone.com",
-		img: "RollingStone"
+		img: "RollingStone",
+		hash: "Re"
 	}
 
 	,
@@ -694,7 +762,8 @@ var menu = [{
 		des: "Slash Film covers movie news, reviews, interviews, and trailers.",
 		uri: "https://www.slashfilm.com/feed",
 		ext: "https://www.slashfilm.com",
-		img: "SlashFilm"
+		img: "SlashFilm",
+		hash: "fS"
 	}
 
 	,
@@ -704,7 +773,8 @@ var menu = [{
 		des: "TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",
 		uri: "https://www.thesun.co.uk/tvandshowbiz/feed",
 		ext: "https://www.thesun.co.uk/tvandshowbiz",
-		img: "TheSun"
+		img: "TheSun",
+		hash: "kS"
 	}
 
 	,
@@ -714,7 +784,8 @@ var menu = [{
 		des: "The Wrap is the leading digital-first news organization covering the business of entertainment and media via digital, print and live events.",
 		uri: "https://www.thewrap.com/feed",
 		ext: "https://www.thewrap.com",
-		img: "TheWrap"
+		img: "TheWrap",
+		hash: "wT"
 	}
 
 	,
@@ -724,7 +795,8 @@ var menu = [{
 		des: "TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",
 		uri: "https://www.tmz.com/rss.xml",
 		ext: "https://tmz.com",
-		img: "TMZ"
+		img: "TMZ",
+		hash: "zT"
 	}
 
 	,
@@ -734,7 +806,8 @@ var menu = [{
 		des: "Trend Hunter Celebrity Fashion will help you stay on top of all the latest celebrity happenings.",
 		uri: "https://www.trendhunter.com/rss/category/Celebrity-Fashion",
 		ext: "https://www.trendhunter.com/celebs",
-		img: "TrendHunter"
+		img: "TrendHunter",
+		hash: "rR"
 	}
 
 	,
@@ -744,7 +817,8 @@ var menu = [{
 		des: "USA Today People celebrity news, gossip and interviews.",
 		uri: "http://rssfeeds.usatoday.com/toppeople&x=1",
 		ext: "https://www.usatoday.com/entertainment/celebrities",
-		img: "USAToday"
+		img: "USAToday",
+		hash: "sY"
 	}
 
 	,
@@ -754,7 +828,8 @@ var menu = [{
 		des: "US Weekly a weekly celebrity and entertainment magazine based in New York City.",
 		uri: "https://www.usmagazine.com/feed",
 		ext: "https://www.usmagazine.com",
-		img: "UsWeekly"
+		img: "UsWeekly",
+		hash: "wU"
 	}
 
 	,
@@ -764,7 +839,8 @@ var menu = [{
 		des: "Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",
 		uri: "https://www.vanityfair.com/feed/rss",
 		ext: "https://vanityfair.com",
-		img: "VanityFair"
+		img: "VanityFair",
+		hash: "fV"
 	}
 
 	,
@@ -774,7 +850,8 @@ var menu = [{
 		des: "Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",
 		uri: "https://www.yahoo.com/entertainment/rss",
 		ext: "https://yahoo.com/entertainment",
-		img: "Yahoo"
+		img: "Yahoo",
+		hash: "oY"
 	}
 
 	,
@@ -784,7 +861,8 @@ var menu = [{
 		des: "The Washington Times Show Business News and Entertainment News.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/entertainment",
 		ext: "https://washingtontimes.com/culture/entertainment",
-		img: "TheWashingtonTimes"
+		img: "TheWashingtonTimes",
+		hash: "gW"
 	}
 
 	,
@@ -794,7 +872,8 @@ var menu = [{
 		des: "Wopular is a news aggregation site, giving a summary view of the top headlines from the top news sites.",
 		uri: "http://www.wopular.com/rss/sections/all",
 		ext: "http://www.wopular.com",
-		img: "Wopular"
+		img: "Wopular",
+		hash: "uP"
 	}
 
 	,
@@ -804,7 +883,8 @@ var menu = [{
 		des: "AMD subreddit dedicated to Advanced Micro Devices and its products.",
 		uri: "https://www.reddit.com/r/Amd/.rss",
 		ext: "https://www.reddit.com/r/AMD",
-		img: "AMD"
+		img: "AMD",
+		hash: "aD"
 	}
 
 	,
@@ -814,7 +894,8 @@ var menu = [{
 		des: "Android subreddit News, Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.",
 		uri: "https://www.reddit.com/r/android/.rss",
 		ext: "https://www.reddit.com/r/Android",
-		img: "Android"
+		img: "Android",
+		hash: "nD"
 	}
 
 	,
@@ -824,7 +905,8 @@ var menu = [{
 		des: "Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.",
 		uri: "https://www.reddit.com/r/apple/.rss",
 		ext: "https://www.reddit.com/r/apple",
-		img: "Apple"
+		img: "Apple",
+		hash: "pA"
 	}
 
 	,
@@ -834,7 +916,8 @@ var menu = [{
 		des: "Arch Linux BBS Forum newest topics, questions, and answers.",
 		uri: "https://bbs.archlinux.org/extern.php?action=active&type=RSS",
 		ext: "https://www.archlinux.org",
-		img: "ArchLinux"
+		img: "ArchLinux",
+		hash: "aL"
 	}
 
 	,
@@ -844,7 +927,8 @@ var menu = [{
 		des: "Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..",
 		uri: "https://www.reddit.com/r/ArchLinux/.rss",
 		ext: "http://www.reddit.com/r/ArchLinux",
-		img: "Arch"
+		img: "Arch",
+		hash: "Al"
 	}
 
 	,
@@ -854,7 +938,8 @@ var menu = [{
 		des: "AskComputerScience subreddit where questions are asked about Computer Science.",
 		uri: "https://www.reddit.com/r/askcomputerscience/.rss",
 		ext: "https://www.reddit.com/r/AskComputerScience",
-		img: "AskComputerScience"
+		img: "AskComputerScience",
+		hash: "sC"
 	}
 
 	,
@@ -864,7 +949,8 @@ var menu = [{
 		des: "Bash subreddit dedicated to bash scripting.",
 		uri: "https://www.reddit.com/r/bash/.rss",
 		ext: "https://www.reddit.com/r/Bash",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "As"
 	}
 
 	,
@@ -874,7 +960,8 @@ var menu = [{
 		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
 		uri: "https://www.reddit.com/r/boston/.rss",
 		ext: "https://www.reddit.com/r/Boston",
-		img: "BostonMA"
+		img: "BostonMA",
+		hash: "tA"
 	}
 
 	,
@@ -884,7 +971,8 @@ var menu = [{
 		des: "California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",
 		uri: "https://www.reddit.com/r/California/.rss",
 		ext: "https://www.reddit.com/r/California",
-		img: "California"
+		img: "California",
+		hash: "cA"
 	}
 
 	,
@@ -894,7 +982,8 @@ var menu = [{
 		des: "Celebhub famous actresses, singers, models, athletes and others.",
 		uri: "https://www.reddit.com/r/celebhub/.rss",
 		ext: "https://www.reddit.com/r/CelebHub",
-		img: "CelebHub"
+		img: "CelebHub",
+		hash: "hC"
 	}
 
 	,
@@ -904,7 +993,8 @@ var menu = [{
 		des: "Chrome subreddit with topics related to Google's Chrome Web Browser.",
 		uri: "https://www.reddit.com/r/chrome/.rss",
 		ext: "https://www.reddit.com/r/Chrome",
-		img: "Chrome"
+		img: "Chrome",
+		hash: "eC"
 	}
 
 	,
@@ -914,7 +1004,8 @@ var menu = [{
 		des: "Coding subreddit Tutorials, Reviews, Videos, and Analysis.",
 		uri: "https://www.reddit.com/r/coding/.rss",
 		ext: "https://www.reddit.com/r/Coding",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "cG"
 	}
 
 	,
@@ -924,7 +1015,8 @@ var menu = [{
 		des: "Command Line subreddit shares tips, questions, and answers.",
 		uri: "https://www.reddit.com/r/commandline/.rss",
 		ext: "https://www.reddit.com/r/Commandline",
-		img: "CommandLine"
+		img: "CommandLine",
+		hash: "mL"
 	}
 
 	,
@@ -934,7 +1026,8 @@ var menu = [{
 		des: "Computers subreddit covers computers, questions, tips, and suggestions.",
 		uri: "https://www.reddit.com/r/computers/.rss",
 		ext: "https://www.reddit.com/r/Computers",
-		img: "Black"
+		img: "Black",
+		hash: "pC"
 	}
 
 	,
@@ -944,7 +1037,8 @@ var menu = [{
 		des: "CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",
 		uri: "https://www.reddit.com/r/css/.rss",
 		ext: "https://www.reddit.com/r/CSS",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "Cs"
 	}
 
 	,
@@ -954,7 +1048,8 @@ var menu = [{
 		des: "Data Is Beautiful subreddit for visualizations that effectively convey information.",
 		uri: "https://www.reddit.com/r/dataisbeautiful/.rss",
 		ext: "https://www.reddit.com/r/DataisBeautiful",
-		img: "DataIsBeautiful"
+		img: "DataIsBeautiful",
+		hash: "pD"
 	}
 
 	,
@@ -964,7 +1059,8 @@ var menu = [{
 		des: "Debian subreddit has questions and topics revolving around Debian OS.",
 		uri: "https://www.reddit.com/r/debian/.rss",
 		ext: "https://www.reddit.com/r/Debian",
-		img: "Debian"
+		img: "Debian",
+		hash: "dN"
 	}
 
 	,
@@ -974,7 +1070,8 @@ var menu = [{
 		des: "Design subreddit with the art in all mediums.",
 		uri: "https://www.reddit.com/r/Design/.rss",
 		ext: "https://www.reddit.com/r/Design",
-		img: "Black"
+		img: "Black",
+		hash: "iD"
 	}
 
 	,
@@ -984,7 +1081,8 @@ var menu = [{
 		des: "4chan Do It Yourself board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",
 		uri: "http://boards.4channel.org/diy/index.rss",
 		ext: "http://boards.4channel.org/diy",
-		img: "4chan"
+		img: "4chan",
+		hash: "Yo"
 	}
 
 	,
@@ -994,7 +1092,8 @@ var menu = [{
 		des: "r/DuckDuckGo is for news, updates and discussion about the search engine DuckDuckGo.",
 		uri: "https://www.reddit.com/r/duckduckgo/.rss",
 		ext: "https://www.reddit.com/r/duckduckgo/",
-		img: "DuckDuckGo"
+		img: "DuckDuckGo",
+		hash: "dD"
 	}
 
 	,
@@ -1004,7 +1103,8 @@ var menu = [{
 		des: "Entertainment subreddit has News and Discussion of the Entertainment Industry.",
 		uri: "https://www.reddit.com/r/entertainment/.rss",
 		ext: "https://www.reddit.com/r/Entertainment",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "Ne"
 	}
 
 	,
@@ -1014,7 +1114,8 @@ var menu = [{
 		des: "Firefox subreddit latest news and developments on Firefox and Mozilla, a global non-profit.",
 		uri: "https://www.reddit.com/r/firefox/.rss",
 		ext: "https://www.reddit.com/r/Firefox",
-		img: "Firefox"
+		img: "Firefox",
+		hash: "fI"
 	}
 
 	,
@@ -1024,7 +1125,8 @@ var menu = [{
 		des: "Gadgets subreddit all about discussing, reviewing, and enjoying gadgets.",
 		uri: "https://www.reddit.com/r/gadgets/.rss",
 		ext: "https://www.reddit.com/r/Gadgets",
-		img: "Gadgets"
+		img: "Gadgets",
+		hash: "Ag"
 	}
 
 	,
@@ -1034,7 +1136,8 @@ var menu = [{
 		des: "Games subreddit aims to provide a place for Informative and interesting Gaming Content.",
 		uri: "https://www.reddit.com/r/games/.rss",
 		ext: "https://www.reddit.com/r/games",
-		img: "Games"
+		img: "Games",
+		hash: "sG"
 	}
 
 	,
@@ -1044,7 +1147,8 @@ var menu = [{
 		des: "Gifs subreddit Funny, animated GIFs: Your favorite computer file type.",
 		uri: "https://www.reddit.com/r/gifs/.rss",
 		ext: "https://www.reddit.com/r/gifs",
-		img: "Gifs"
+		img: "Gifs",
+		hash: "fG"
 	}
 
 	,
@@ -1054,7 +1158,8 @@ var menu = [{
 		des: "Github subreddit for all things GitHub!",
 		uri: "https://www.reddit.com/r/github/.rss",
 		ext: "https://www.reddit.com/r/github",
-		img: "Octocat"
+		img: "Octocat",
+		hash: "bG"
 	}
 
 	,
@@ -1064,7 +1169,8 @@ var menu = [{
 		des: "Goddesses subreddit pretty pictures of pretty girls.",
 		uri: "https://www.reddit.com/r/goddesses/.rss",
 		ext: "https://www.reddit.com/r/Goddesses",
-		img: "Black"
+		img: "Black",
+		hash: "gO"
 	}
 
 	,
@@ -1074,7 +1180,8 @@ var menu = [{
 		des: "Google subreddit For news and announcements from and about Google.",
 		uri: "https://www.reddit.com/r/google/.rss",
 		ext: "https://www.reddit.com/r/Google",
-		img: "Google"
+		img: "Google",
+		hash: "oO"
 	}
 
 	,
@@ -1084,7 +1191,8 @@ var menu = [{
 		des: "4chan G Technology is a board that discusses Technology.",
 		uri: "http://boards.4chan.org/g/index.rss",
 		ext: "http://boards.4channel.org/g/",
-		img: "4chan"
+		img: "4chan",
+		hash: "gK"
 	}
 
 	,
@@ -1094,7 +1202,8 @@ var menu = [{
 		des: "4chan GD Graphic Design Board dedicated to the art of Design.",
 		uri: "http://boards.4channel.org/gd/index.rss",
 		ext: "http://boards.4channel.org/gd",
-		img: "4chan"
+		img: "4chan",
+		hash: "dP"
 	}
 
 	,
@@ -1104,7 +1213,8 @@ var menu = [{
 		des: "Hacker News subreddit A mirror of Hacker News' best submissions.",
 		uri: "https://www.reddit.com/r/hackernews/.rss",
 		ext: "https://www.reddit.com/r/HackerNews",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "nH"
 	}
 
 	,
@@ -1114,7 +1224,8 @@ var menu = [{
 		des: "Hardware subreddit a place for quality hardware news, reviews, and intelligent discussion.",
 		uri: "https://www.reddit.com/r/hardware/.rss",
 		ext: "https://www.reddit.com/r/Hardware",
-		img: "Hardware"
+		img: "Hardware",
+		hash: "wR"
 	}
 
 	,
@@ -1124,7 +1235,8 @@ var menu = [{
 		des: "Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.",
 		uri: "https://www.reddit.com/r/intel/.rss",
 		ext: "https://www.reddit.com/r/intel",
-		img: "Intel"
+		img: "Intel",
+		hash: "tN"
 	}
 
 	,
@@ -1134,7 +1246,8 @@ var menu = [{
 		des: "iOS subreddit for everything Apple iOS.",
 		uri: "https://www.reddit.com/r/ios/.rss",
 		ext: "https://www.reddit.com/r/iOS",
-		img: "iOS"
+		img: "iOS",
+		hash: "Si"
 	}
 
 	,
@@ -1144,7 +1257,8 @@ var menu = [{
 		des: "Linux subreddit discusses topics evolving around Linux.",
 		uri: "https://www.reddit.com/r/linux/.rss",
 		ext: "https://www.reddit.com/r/Linux",
-		img: "Linux"
+		img: "Linux",
+		hash: "lX"
 	}
 
 	,
@@ -1154,7 +1268,8 @@ var menu = [{
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
 		uri: "https://www.reddit.com/r/LosAngeles/.rss",
 		ext: "https://www.reddit.com/r/LosAngeles",
-		img: "Black"
+		img: "Black",
+		hash: "ge"
 	}
 
 	,
@@ -1164,7 +1279,8 @@ var menu = [{
 		des: "Microsoft subreddit Microsoft's suite of services, products and games which we publish.",
 		uri: "https://www.reddit.com/r/microsoft/.rss",
 		ext: "https://www.reddit.com/r/Microsoft",
-		img: "Microsoft"
+		img: "Microsoft",
+		hash: "mi"
 	}
 
 	,
@@ -1174,7 +1290,8 @@ var menu = [{
 		des: "Movies subreddit News and Discussion about Major Motion Pictures.",
 		uri: "https://www.reddit.com/r/movies/.rss",
 		ext: "https://www.reddit.com/r/Movies",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "mo"
 	}
 
 	,
@@ -1184,7 +1301,8 @@ var menu = [{
 		des: "4chan MU Music board thats about all things music.",
 		uri: "http://boards.4channel.org/mu/index.rss",
 		ext: "http://boards.4channel.org/mu",
-		img: "4chan"
+		img: "4chan",
+		hash: "mu"
 	}
 
 	,
@@ -1194,7 +1312,8 @@ var menu = [{
 		des: "4chan News Board that distributes, discusses, and analyzes news.",
 		uri: "http://boards.4channel.org/news/index.rss",
 		ext: "http://boards.4channel.org/news",
-		img: "4chan"
+		img: "4chan",
+		hash: "nw"
 	}
 
 	,
@@ -1204,7 +1323,8 @@ var menu = [{
 		des: "News subreddit articles relating to the United States and the rest of the World.",
 		uri: "https://www.reddit.com/r/news/.rss",
 		ext: "https://www.reddit.com/r/News",
-		img: "RNews"
+		img: "RNews",
+		hash: "ns"
 	}
 
 	,
@@ -1214,7 +1334,8 @@ var menu = [{
 		des: "NVIDIA subreddit news, builds, compatibility, and other information.",
 		uri: "https://www.reddit.com/r/nvidia/.rss",
 		ext: "https://www.reddit.com/r/nvidia",
-		img: "Nvidia"
+		img: "Nvidia",
+		hash: "nV"
 	}
 
 	,
@@ -1224,7 +1345,8 @@ var menu = [{
 		des: "Open Source subreddit for everything open source.",
 		uri: "https://www.reddit.com/r/opensource/.rss",
 		ext: "https://www.reddit.com/r/opensource",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "sE"
 	}
 
 	,
@@ -1234,7 +1356,8 @@ var menu = [{
 		des: "Pics subreddit A place for pictures and photographs.",
 		uri: "https://www.reddit.com/r/pics/.rss",
 		ext: "https://www.reddit.com/r/Pics",
-		img: "Black"
+		img: "Black",
+		hash: "cL"
 	}
 
 	,
@@ -1244,7 +1367,8 @@ var menu = [{
 		des: "Programming subreddit shares user submitted articles on Programming.",
 		uri: "https://reddit.com/r/programming/.rss",
 		ext: "https://reddit.com/r/Programming",
-		img: "Programming"
+		img: "Programming",
+		hash: "rO"
 	}
 
 	,
@@ -1254,7 +1378,8 @@ var menu = [{
 		des: "San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",
 		uri: "https://www.reddit.com/r/sanfrancisco/.rss",
 		ext: "https://www.reddit.com/r/SanFrancisco",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "rS"
 	}
 
 	,
@@ -1264,7 +1389,8 @@ var menu = [{
 		des: "Software subreddit where software applications are discussed.",
 		uri: "https://www.reddit.com/r/software/.rss",
 		ext: "https://www.reddit.com/r/Software",
-		img: "Software"
+		img: "Software",
+		hash: "wA"
 	}
 
 	,
@@ -1274,7 +1400,8 @@ var menu = [{
 		des: "Software Gore subreddit poke fun at nasty software.",
 		uri: "https://www.reddit.com/r/softwaregore/.rss",
 		ext: "https://www.reddit.com/r/softwaregore",
-		img: "SoftwareGore"
+		img: "SoftwareGore",
+		hash: "gS"
 	}
 
 	,
@@ -1284,7 +1411,8 @@ var menu = [{
 		des: "4chan SP Sports is a board that discusses International Sports.",
 		uri: "http://boards.4chan.org/sp/index.rss",
 		ext: "http://boards.4channel.org/sp/",
-		img: "4chan"
+		img: "4chan",
+		hash: "sP"
 	}
 
 	,
@@ -1294,7 +1422,8 @@ var menu = [{
 		des: "Sports subreddit for all the Latest Headlines and Discussion in Sports.",
 		uri: "https://www.reddit.com/r/sports/.rss",
 		ext: "https://www.reddit.com/r/Sports",
-		img: "Sports"
+		img: "Sports",
+		hash: "St"
 	}
 
 	,
@@ -1304,7 +1433,8 @@ var menu = [{
 		des: "Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",
 		uri: "https://www.reddit.com/r/tech/.rss",
 		ext: "https://www.reddit.com/r/Tech",
-		img: "Black"
+		img: "Black",
+		hash: "hT"
 	}
 
 	,
@@ -1314,7 +1444,8 @@ var menu = [{
 		des: "Technology subreddit shares submitted articles about Technology.",
 		uri: "https://www.reddit.com/r/technology/.rss",
 		ext: "https://www.reddit.com/r/Technology",
-		img: "Technology"
+		img: "Technology",
+		hash: "tH"
 	}
 
 	,
@@ -1324,7 +1455,8 @@ var menu = [{
 		des: "Television subreddit streaming services and the best series.",
 		uri: "https://www.reddit.com/r/television/.rss",
 		ext: "https://www.reddit.com/r/Television",
-		img: "Television"
+		img: "Television",
+		hash: "vT"
 	}
 
 	,
@@ -1334,7 +1466,8 @@ var menu = [{
 		des: "Thinkpad subreddit IBM and Lenovo ThinkPad laptop enthusiasts.",
 		uri: "https://www.reddit.com/r/thinkpad/.rss",
 		ext: "https://www.reddit.com/r/Thinkpad",
-		img: "Thinkpad"
+		img: "Thinkpad",
+		hash: "tP"
 	}
 
 	,
@@ -1344,7 +1477,8 @@ var menu = [{
 		des: "4Chan TV board dedicated to the TV and Film industry.",
 		uri: "http://boards.4channel.org/tv/index.rss",
 		ext: "http://boards.4channel.org/tv",
-		img: "4chan"
+		img: "4chan",
+		hash: "tV"
 	}
 
 	,
@@ -1354,7 +1488,8 @@ var menu = [{
 		des: "Unix subreddit *NIX Desktops, Themes, and nifty Configurations.",
 		uri: "https://www.reddit.com/r/unixporn/.rss",
 		ext: "https://www.reddit.com/r/Unixporn",
-		img: "UnixPorn"
+		img: "UnixPorn",
+		hash: "uX"
 	}
 
 	,
@@ -1364,7 +1499,8 @@ var menu = [{
 		des: "4chan Wallpapers General read the sticky.",
 		uri: "http://boards.4chan.org/wg/index.rss",
 		ext: "http://boards.4channel.org/wg",
-		img: "4chan"
+		img: "4chan",
+		hash: "wG"
 	}
 
 	,
@@ -1374,7 +1510,8 @@ var menu = [{
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
 		uri: "https://www.reddit.com/r/wallpaper/.rss",
 		ext: "https://www.reddit.com/r/Wallpaper",
-		img: "Wallpaper"
+		img: "Wallpaper",
+		hash: "wP"
 	}
 
 	,
@@ -1384,7 +1521,8 @@ var menu = [{
 		des: "Wallpapers subreddit for Work-safe wallpapers from all over!",
 		uri: "https://www.reddit.com/r/wallpapers/.rss",
 		ext: "https://www.reddit.com/r/Wallpapers",
-		img: "Reddit"
+		img: "Reddit",
+		hash: "sW"
 	}
 
 	,
@@ -1394,7 +1532,8 @@ var menu = [{
 		des: "Windows subreddit a personal computer operating system released by Microsoft.",
 		uri: "https://www.reddit.com/r/windows/.rss",
 		ext: "https://www.reddit.com/r/Windows",
-		img: "Windows"
+		img: "Windows",
+		hash: "wW"
 	}
 
 	,
@@ -1404,7 +1543,8 @@ var menu = [{
 		des: "World News subreddit with latest headlines from around the world.",
 		uri: "https://www.reddit.com/r/worldnews/.rss",
 		ext: "https://www.reddit.com/r/WorldNews",
-		img: "Black"
+		img: "Black",
+		hash: "rN"
 	}
 
 	,
@@ -1414,7 +1554,8 @@ var menu = [{
 		des: "ABC Sports the Latest Sports News, Articles and more.",
 		uri: "https://abcnews.go.com/abcnews/sportsheadlines",
 		ext: "https://abcnews.go.com/Sports",
-		img: "ABC"
+		img: "ABC",
+		hash: "sS"
 	}
 
 	,
@@ -1424,7 +1565,8 @@ var menu = [{
 		des: "Action Network Sports entertainment experience through original news, premium insights, betting tools, data & odds.",
 		uri: "https://www.actionnetwork.com/feed",
 		ext: "https://www.actionnetwork.com",
-		img: "ActionNetwork"
+		img: "ActionNetwork",
+		hash: "nA"
 	}
 
 	,
@@ -1434,17 +1576,19 @@ var menu = [{
 		des: "Clutch Points Sports news, reporting, videos, scores, and more for NBA and NFL.",
 		uri: "https://clutchpoints.com/feed",
 		ext: "https://clutchpoints.com",
-		img: "ClutchPoints"
+		img: "ClutchPoints",
+		hash: "pC"
 	}
 
 	,
 	{
-		id: "Digital Trends",
+		id: "Digital Trends Sports",
 		cat: "Sports",
 		des: "Digital Trends world of cars, speed and power.",
 		uri: "https://www.digitaltrends.com/cars/feed",
 		ext: "https://digitaltrends.com/cars",
-		img: "DigitalTrends"
+		img: "DigitalTrends",
+		hash: "pD"
 	}
 
 	,
@@ -1454,7 +1598,8 @@ var menu = [{
 		des: "ESPN is a cable network that plays Live and taped Sporting Events.",
 		uri: "https://www.espn.com/espn/rss/news",
 		ext: "https://espn.com",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "sE"
 	}
 
 	,
@@ -1464,7 +1609,8 @@ var menu = [{
 		des: "Fox Sports is a wide array of Multi-Platform US-based Sports Assets.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU",
 		ext: "https://foxsports.com",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "xF"
 	}
 
 	,
@@ -1474,7 +1620,8 @@ var menu = [{
 		des: "Heavy Sports News, Games, Comments, and more.",
 		uri: "https://heavy.com/sports/feed",
 		ext: "https://heavy.com/sports",
-		img: "Heavy"
+		img: "Heavy",
+		hash: "tY"
 	}
 
 	,
@@ -1484,7 +1631,8 @@ var menu = [{
 		des: "Jalopnik is a Sews site about Cars, Racing, Transportation, Airplanes, and Motorcycles",
 		uri: "https://jalopnik.com/rss",
 		ext: "https://jalopnik.com",
-		img: "Jalopnik"
+		img: "Jalopnik",
+		hash: "jK"
 	}
 
 	,
@@ -1494,7 +1642,8 @@ var menu = [{
 		des: "NBC Sports is responsible for the televising of many Sports Events.",
 		uri: "https://sports.nbcsports.com/feed",
 		ext: "https://nbcsports.com",
-		img: "NBC"
+		img: "NBC",
+		hash: "oP"
 	}
 
 	,
@@ -1504,7 +1653,8 @@ var menu = [{
 		des: "New York Post Sports including Scores, Trade Rumors and Standings for Baseball, Football, and Basketball.",
 		uri: "https://nypost.com/sports/feed",
 		ext: "https://nypost.com/sports",
-		img: "NewYorkPost"
+		img: "NewYorkPost",
+		hash: "wE"
 	}
 
 	,
@@ -1514,7 +1664,8 @@ var menu = [{
 		des: "RT Sports delivers Latest News on Sports from around the world.",
 		uri: "https://www.rt.com/rss/sport",
 		ext: "https://rt.com/sport",
-		img: "RT"
+		img: "RT",
+		hash: "rT"
 	}
 
 	,
@@ -1524,7 +1675,8 @@ var menu = [{
 		des: "Sporting News was established in 1886 as a weekly U.S. Magazine.",
 		uri: "http://www.sportingnews.com/us/rss",
 		ext: "http://sportingnews.com",
-		img: "SportingNews"
+		img: "SportingNews",
+		hash: "wS"
 	}
 
 	,
@@ -1534,7 +1686,8 @@ var menu = [{
 		des: "Sportsnaut cover the big and little stories in sports without any agenda.",
 		uri: "https://sportsnaut.com/feed",
 		ext: "https://sportsnaut.com",
-		img: "Sportsnaut"
+		img: "Sportsnaut",
+		hash: "Uo"
 	}
 
 	,
@@ -1544,7 +1697,8 @@ var menu = [{
 		des: "USA Today Sports Top Stories from the world on sports.",
 		uri: "http://rssfeeds.usatoday.com/usatodaycomsports-topstories&x=1",
 		ext: "https://www.usatoday.com/sports",
-		img: "USAToday"
+		img: "USAToday",
+		hash: "sU"
 	}
 
 	,
@@ -1554,7 +1708,8 @@ var menu = [{
 		des: "Yahoo Sports has Comprehensive  News, Scores, Standings, Fantasy Games, Rumors, and more.",
 		uri: "https://sports.yahoo.com/rss",
 		ext: "https://sports.yahoo.com",
-		img: "Yahoo"
+		img: "Yahoo",
+		hash: "oY"
 	}
 
 	,
@@ -1564,7 +1719,8 @@ var menu = [{
 		des: "BBC Sports News from around the world.",
 		uri: "http://feeds.bbci.co.uk/sport/rss.xml",
 		ext: "https://bbc.com/sport",
-		img: "BBC"
+		img: "BBC",
+		hash: "cB"
 	}
 
 	,
@@ -1574,7 +1730,8 @@ var menu = [{
 		des: "Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. ",
 		uri: "https://www.bjpenn.com/feed",
 		ext: "https://bjpenn.com",
-		img: "BJPenn"
+		img: "BJPenn",
+		hash: "jP"
 	}
 
 	,
@@ -1584,7 +1741,8 @@ var menu = [{
 		des: "CBS Sports is an American Sports News website operated by CBS Interactive.",
 		uri: "https://rss.cbssports.com/rss/headlines",
 		ext: "https://cbssports.com",
-		img: "CBS"
+		img: "CBS",
+		hash: "bS"
 	}
 
 	,
@@ -1594,7 +1752,8 @@ var menu = [{
 		des: "Bleacher Report is a website that focuses on sport and sports culture.",
 		uri: "https://bleacherreport.com/articles/feed",
 		ext: "https://bleacherreport.com",
-		img: "BleacherReport"
+		img: "BleacherReport",
+		hash: "bR"
 	}
 
 	,
@@ -1604,7 +1763,8 @@ var menu = [{
 		des: "CNN Sports catalogues the Latest News from around the World.",
 		uri: "http://rss.cnn.com/rss/edition_sport.rss",
 		ext: "https://cnn.com/sport",
-		img: "CNN"
+		img: "CNN",
+		hash: "nN"
 	}
 
 	,
@@ -1614,7 +1774,8 @@ var menu = [{
 		des: "ESPN MLB Baseball News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/mlb/news",
 		ext: "https://espn.com/mlb",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "mL"
 	}
 
 	,
@@ -1624,7 +1785,8 @@ var menu = [{
 		des: "Fox Sports MLB videos, rumors, stats, standings, team schedules & fantasy games on FOX Sports.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb",
 		ext: "https://www.foxsports.com/mlb",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "xB"
 	}
 
 	,
@@ -1634,7 +1796,8 @@ var menu = [{
 		des: "The Score MLB Trending News & Rumors for Baseball, and More.",
 		uri: "https://feeds.thescore.com/mlb.rss",
 		ext: "https://thescore.com/mlb/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "tB"
 	}
 
 	,
@@ -1644,7 +1807,8 @@ var menu = [{
 		des: "ESPN NFL Football News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/nfl/news",
 		ext: "https://espn.com/nfl",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "eF"
 	}
 
 	,
@@ -1654,7 +1818,8 @@ var menu = [{
 		des: "Fox Sports NFL live NFL scores, pro football player & team news, NFL videos, rumors, stats, standings, team schedules & fantasy football games.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl",
 		ext: "https://www.foxsports.com/nfl",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "fN"
 	}
 
 	,
@@ -1664,7 +1829,8 @@ var menu = [{
 		des: "The Score NFL is the Ultimate, Personalized Mobile Sports Experience.",
 		uri: "https://feeds.thescore.com/nfl.rss",
 		ext: "https://thescore.com/nfl/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "sN"
 	}
 
 	,
@@ -1674,7 +1840,8 @@ var menu = [{
 		des: "Fox Sports NCAAFB NCAA Football player & team news.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb",
 		ext: "https://www.foxsports.com/college-football",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "fC"
 	}
 
 	,
@@ -1684,7 +1851,8 @@ var menu = [{
 		des: "The Score NCAAF News, Rumors, Headlines, and everything CFB.",
 		uri: "https://feeds.thescore.com/ncaaf.rss",
 		ext: "https://www.thescore.com/ncaaf/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "cF"
 	}
 
 	,
@@ -1694,7 +1862,8 @@ var menu = [{
 		des: "ESPN NBA Team Stats, Schedules, Rosters, Depth charts and more.",
 		uri: "http://www.espn.com/espn/rss/nba/news",
 		ext: "https://espn.com/nba",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "eN"
 	}
 
 	,
@@ -1704,7 +1873,8 @@ var menu = [{
 		des: "Fox Sports NBA videos, rumors, stats, standings, and team schedules.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba",
 		ext: "https://www.foxsports.com/nba",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "fN"
 	}
 
 	,
@@ -1714,7 +1884,8 @@ var menu = [{
 		des: "The Score NBA Scores, Stats, News, Rumors, Videos, Standings, Teams.",
 		uri: "https://feeds.thescore.com/nba.rss",
 		ext: "https://www.thescore.com/nba/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "nT"
 	}
 
 	,
@@ -1724,7 +1895,8 @@ var menu = [{
 		des: "ESPN NHL Hockey News, Scores, Stats, Standings, Fantasy games, and more.",
 		uri: "http://www.espn.com/espn/rss/nhl/news",
 		ext: "https://espn.com/nhl",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "hE"
 	}
 
 	,
@@ -1734,7 +1906,8 @@ var menu = [{
 		des: "Fox Sports NHL player & team news.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nhl",
 		ext: "https://www.foxsports.com/nhl",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "fH"
 	}
 
 	,
@@ -1744,7 +1917,8 @@ var menu = [{
 		des: "Fox Sports Golf Unique perspectives on the daily sports topics that matter most.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf",
 		ext: "https://www.foxsports.com/golf/usga",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "gF"
 	}
 
 	,
@@ -1754,7 +1928,8 @@ var menu = [{
 		des: "Fox Sports Motor including F1, MotoGp, V8 Supercars, WRC & More.",
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=motor",
 		ext: "https://www.foxsports.com/motor",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "rX"
 	}
 
 	,
@@ -1764,7 +1939,8 @@ var menu = [{
 		des: "Goal Latest Soccer News, Live Scores, Results, Rumours, and Transfers.",
 		uri: "https://www.goal.com/feeds/en/news",
 		ext: "https://goal.com",
-		img: "Goal"
+		img: "Goal",
+		hash: "gA"
 	}
 
 	,
@@ -1774,7 +1950,8 @@ var menu = [{
 		des: "International Business Times Sports emphasis on soccer, basketball, football, golf, baseball, tennis and hockey.",
 		uri: "https://www.ibtimes.sg/rss/sports",
 		ext: "https://www.ibtimes.com/sports",
-		img: "IBT"
+		img: "IBT",
+		hash: "sS"
 	}
 
 	,
@@ -1784,7 +1961,8 @@ var menu = [{
 		des: "MLB is the official site of Major League Baseball.",
 		uri: "https://www.mlb.com/feeds/news/rss.xml",
 		ext: "https://mlb.com",
-		img: "MLB"
+		img: "MLB",
+		hash: "Ml"
 	}
 
 	,
@@ -1794,7 +1972,8 @@ var menu = [{
 		des: "MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.",
 		uri: "https://mmajunkie.com/news/feed",
 		ext: "https://mmajunkie.com",
-		img: "MMAJunkie"
+		img: "MMAJunkie",
+		hash: "jM"
 	}
 
 	,
@@ -1804,7 +1983,8 @@ var menu = [{
 		des: "MMAtion Global events, results, rankings and more.",
 		uri: "http://en.mmation.com/feed",
 		ext: "http://en.mmation.com",
-		img: "MMAtion"
+		img: "MMAtion",
+		hash: "tA"
 	}
 
 	,
@@ -1814,7 +1994,8 @@ var menu = [{
 		des: "MMA News offers coverage of the MMA world with original content.",
 		uri: "https://www.mmanews.com/feed",
 		ext: "https://mmanews.com",
-		img: "MMANews"
+		img: "MMANews",
+		hash: "sM"
 	}
 
 	,
@@ -1824,7 +2005,8 @@ var menu = [{
 		des: "The Score MMA headlines, news, and analysis.",
 		uri: "https://feeds.thescore.com/mma.rss",
 		ext: "https://thescore.com/mma/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "Am"
 	}
 
 	,
@@ -1834,37 +2016,41 @@ var menu = [{
 		des: "Sportzet The latest international Sports and World.",
 		uri: "https://www.sportzet.com/feed",
 		ext: "https://www.sportzet.com",
-		img: "Sportzet"
+		img: "Sportzet",
+		hash: "zP"
 	}
 
 	,
 	{
-		id: "Telegraph.co.uk",
+		id: "Telegraph.co.uk Sports",
 		cat: "Sports",
 		des: "Telegraph.co.uk Sport news from around the world.",
 		uri: "https://www.telegraph.co.uk/sport/rss.xml",
 		ext: "https://www.telegraph.co.uk/sport",
-		img: "Telegraph"
+		img: "Telegraph",
+		hash: "tK"
 	}
 
 	,
 	{
-		id: "TheSun.co.uk",
+		id: "TheSun.co.uk Sports",
 		cat: "Sports",
 		des: "TheSun.co.uk up to date on the latest sports news from the UK and the World.",
 		uri: "https://www.thesun.co.uk/sport/feed",
 		ext: "https://www.thesun.co.uk/sport/feed",
-		img: "TheSun"
+		img: "TheSun",
+		hash: "sO"
 	}
 
 	,
 	{
-		id: "The Score",
+		id: "The Score Sports",
 		cat: "Sports",
 		des: "The Score Trending News, Announcements, Highlights, and Analysis.",
 		uri: "https://feeds.thescore.com/trending.rss",
 		ext: "https://thescore.com",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "tR"
 	}
 
 	,
@@ -1874,7 +2060,8 @@ var menu = [{
 		des: "The Score PGA tour news, and everything golf.",
 		uri: "https://feeds.thescore.com/pga.rss",
 		ext: "https://www.thescore.com/pga/news",
-		img: "TheScore"
+		img: "TheScore",
+		hash: "pG"
 	}
 
 	,
@@ -1884,7 +2071,8 @@ var menu = [{
 		des: "Tiebreaker Sports News Headlines from around the world.",
 		uri: "https://www.tiebreaker.com/feed",
 		ext: "https://www.tiebreaker.com",
-		img: "TieBreaker"
+		img: "TieBreaker",
+		hash: "bT"
 	}
 
 	,
@@ -1894,7 +2082,8 @@ var menu = [{
 		des: "UFC is an American Mixed Martial Arts promotion Company based in Las Vegas, Nevada.",
 		uri: "https://www.ufc.com/rss/news",
 		ext: "https://ufc.com",
-		img: "UFC"
+		img: "UFC",
+		hash: "uC"
 	}
 
 	,
@@ -1904,7 +2093,8 @@ var menu = [{
 		des: "Washington Examiner The Washington Examiner is an American conservative news website and weekly magazine based in Washington, D.C.",
 		uri: "http://feeds.feedburner.com/dcexaminer/Sports",
 		ext: "https://www.washingtonexaminer.com/tag/sports",
-		img: "WashingtonExaminer"
+		img: "WashingtonExaminer",
+		hash: "wE"
 	}
 
 	,
@@ -1914,7 +2104,8 @@ var menu = [{
 		des: "9to5Linux was founded as a technology blog covering latest Linux and Open Source news.",
 		uri: "https://9to5linux.com/feed",
 		ext: "https://9to5linux.com",
-		img: "9to5Linux"
+		img: "9to5Linux",
+		hash: "tO"
 	}
 
 	,
@@ -1924,7 +2115,8 @@ var menu = [{
 		des: "ABC Technology for Latest Science News, Technology News, and more.",
 		uri: "https://abcnews.go.com/abcnews/technologyheadlines",
 		ext: "https://abcnews.go.com/technology",
-		img: "ABC"
+		img: "ABC",
+		hash: "Tc"
 	}
 
 	,
@@ -1934,7 +2126,8 @@ var menu = [{
 		des: "AnandTech PC components, smartphones, tablets, pre-built desktops, notebooks, Macs, and enterprise/cloud computing technologies..",
 		uri: "https://www.anandtech.com/rss",
 		ext: "https://www.anandtech.com",
-		img: "AnandTech"
+		img: "AnandTech",
+		hash: "Aa"
 	}
 
 	,
@@ -1944,7 +2137,8 @@ var menu = [{
 		des: "Ars Technica has became a Trusted Source for Technology News.",
 		uri: "http://feeds.arstechnica.com/arstechnica/index?format=xml",
 		ext: "https://arstechnica.com",
-		img: "ArsTechnica"
+		img: "ArsTechnica",
+		hash: "rN"
 	}
 
 	,
@@ -1954,7 +2148,8 @@ var menu = [{
 		des: "BBC Technology News, Articles, and more.",
 		uri: "http://feeds.bbci.co.uk/news/technology/rss.xml",
 		ext: "https://bbc.co.uk/news/technology",
-		img: "BBC"
+		img: "BBC",
+		hash: "Bt"
 	}
 
 	,
@@ -1964,7 +2159,8 @@ var menu = [{
 		des: "BetaNews is a leading source of Technology News and Analysis.",
 		uri: "http://feeds.betanews.com/bn",
 		ext: "https://betanews.com",
-		img: "BetaNews"
+		img: "BetaNews",
+		hash: "Wb"
 	}
 
 	,
@@ -1974,7 +2170,8 @@ var menu = [{
 		des: "Bleeping Computer is a information security and technology news publication.",
 		uri: "https://www.bleepingcomputer.com/feed/",
 		ext: "https://www.bleepingcomputer.com",
-		img: "BleepingComputer"
+		img: "BleepingComputer",
+		hash: "Cb"
 	}
 
 	,
@@ -1984,7 +2181,8 @@ var menu = [{
 		des: "Computer Weekly stands out from the many Technology News Websites.",
 		uri: "https://www.computerweekly.com/rss/RSS-Feed.xml",
 		ext: "https://computerweekly.com",
-		img: "ComputerWeekly"
+		img: "ComputerWeekly",
+		hash: "Wc"
 	}
 
 	,
@@ -1994,7 +2192,8 @@ var menu = [{
 		des: "BGR is a destination for News focused on the Consumer Electronics Market.",
 		uri: "https://bgr.com/tech/feed",
 		ext: "https://bgr.com/tech",
-		img: "BGR"
+		img: "BGR",
+		hash: "gB"
 	}
 
 	,
@@ -2004,17 +2203,19 @@ var menu = [{
 		des: "Business Insider is a Growing Business site with Financial, Media, and Tech.",
 		uri: "https://www.businessinsider.com/rss",
 		ext: "https://businessinsider.com",
-		img: "BusinessInsider"
+		img: "BusinessInsider",
+		hash: "Ie"
 	}
 
 	,
 	{
-		id: "CBS",
+		id: "CBS Technology",
 		cat: "Technology",
 		des: "CBS Technology on Social Media, Artificial Intelligence, Computers and more.",
 		uri: "https://www.cbsnews.com/latest/rss/technology",
 		ext: "https://cbsnews.com/technology",
-		img: "CBS"
+		img: "CBS",
+		hash: "gC"
 	}
 
 	,
@@ -2024,7 +2225,8 @@ var menu = [{
 		des: "CNBC is an American elevision News channel that is owned by NBC Universal.",
 		uri: "https://www.cnbc.com/id/19854910/device/rss/rss.html",
 		ext: "https://cnbc.com/technology",
-		img: "CNBC"
+		img: "CNBC",
+		hash: "Cc"
 	}
 
 	,
@@ -2034,7 +2236,8 @@ var menu = [{
 		des: "CNET is an American media website that publishes Reviews, News, Articles, and Videos on Technology.",
 		uri: "https://www.cnet.com/rss/news",
 		ext: "https://cnet.com",
-		img: "CNET"
+		img: "CNET",
+		hash: "ne"
 	}
 
 	,
@@ -2044,7 +2247,8 @@ var menu = [{
 		des: "Digg the best articles, videos, and original content that the web is talking about right now.",
 		uri: "https://www.digg.com/rss/index.xml",
 		ext: "https://www.digg.com",
-		img: "Digg"
+		img: "Digg",
+		hash: "iG"
 	}
 
 	,
@@ -2054,7 +2258,8 @@ var menu = [{
 		des: "Digital Trends is a Technology News, Lifestyle, and Information Website.",
 		uri: "https://www.digitaltrends.com/feed",
 		ext: "https://digitaltrends.com",
-		img: "DigitalTrends"
+		img: "DigitalTrends",
+		hash: "Ch"
 	}
 
 	,
@@ -2064,7 +2269,8 @@ var menu = [{
 		des: "DZone Technology News giving developers a voice, with the goal of providing them with useful and valuable resources at no cost.",
 		uri: "http://feeds.dzone.com/home",
 		ext: "http://www.dzone.com",
-		img: "DZone"
+		img: "DZone",
+		hash: "zD"
 	}
 
 	,
@@ -2074,7 +2280,8 @@ var menu = [{
 		des: "Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",
 		uri: "https://www.engadget.com/rss.xml",
 		ext: "https://engadget.com",
-		img: "Engadget"
+		img: "Engadget",
+		hash: "nT"
 	}
 
 	,
@@ -2084,7 +2291,8 @@ var menu = [{
 		des: "ESET Security It's trusted by over 110 million users worldwide to detect and neutralize all types of digital threats, including viruses, rootkits, worms and spyware.",
 		uri: "https://www.welivesecurity.com/feed/",
 		ext: "https://www.welivesecurity.com",
-        img: "ESET"
+        img: "ESET",
+		hash: "eE"
 	}
 
 	,
@@ -2094,7 +2302,8 @@ var menu = [{
 		des: "EuroGamer Gaming news, reviews and the best long-form journalism.",
 		uri: "https://www.eurogamer.net/?format=rss&type=article",
 		ext: "https://www.eurogamer.net",
-		img: "EuroGamer"
+		img: "EuroGamer",
+		hash: "gE"
 	}
 
 	,
@@ -2104,7 +2313,8 @@ var menu = [{
 		des: "Exploit Database is a non-profit project that is provided as a public service by Offensive Security.",
 		uri: "https://www.exploit-db.com/rss.xml",
 		ext: "https://www.exploit-db.com",
-		img: "ExploitDatabase"
+		img: "ExploitDatabase",
+		hash: "dA"
 	}
 
 	,
@@ -2114,7 +2324,8 @@ var menu = [{
 		des: "Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",
 		uri: "https://www.forbes.com/most-popular/feed",
 		ext: "https://forbes.com",
-		img: "Forbes"
+		img: "Forbes",
+		hash: "fO"
 	}
 
 	,
@@ -2124,7 +2335,8 @@ var menu = [{
 		des: "Futurism brings you the world, the news, products, and narratives of tomorrow, today.",
 		uri: "https://futurism.com/feed",
 		ext: "https://futurism.com",
-		img: "Futurism"
+		img: "Futurism",
+		hash: "rF"
 	}
 
 	,
@@ -2134,7 +2346,8 @@ var menu = [{
 		des: "Gadgets 360 Tech News, Latest Technology News, Best New Tech Gadgets, Mobile, Tables, Laptops, and Games.",
 		uri: "https://gadgets.ndtv.com/rss/feeds",
 		ext: "https://gadgets.ndtv.com",
-		img: "Gadgets360"
+		img: "Gadgets360",
+		hash: "eD"
 	}
 
 	,
@@ -2144,7 +2357,8 @@ var menu = [{
 		des: "Gamespot's Everything Feed! All the latest from GameSpot.",
 		uri: "https://www.gamespot.com/feeds/mashup/",
 		ext: "https://www.gamespot.com",
-		img: "GameSpot"
+		img: "GameSpot",
+		hash: "mS"
 	}
 
 	,
@@ -2154,7 +2368,8 @@ var menu = [{
 		des: "GeekWire is an American Technology News site that covers Startups and Established Technology Companies.",
 		uri: "https://www.geekwire.com/feed",
 		ext: "https://geekwire.com",
-		img: "GeekWire"
+		img: "GeekWire",
+		hash: "wI"
 	}
 
 	,
@@ -2164,7 +2379,8 @@ var menu = [{
 		des: "Gizmodo is a Design, Technology, Science and Science Fiction website.",
 		uri: "https://gizmodo.com/rss",
 		ext: "https://gizmodo.com",
-		img: "Gizmodo"
+		img: "Gizmodo",
+		hash: "zO"
 	}
 
 	,
@@ -2174,7 +2390,8 @@ var menu = [{
 		des: "The Gadget Flow Stay up to date with the latest tech, gear, and most incredible crowdfunding campaigns.",
 		uri: "http://feeds.feedburner.com/thegadgetflow",
 		ext: "https://thegadgetflow.com",
-		img: "TheGadgetFlow"
+		img: "TheGadgetFlow",
+		hash: "fG"
 	}
 
 	,
@@ -2184,7 +2401,8 @@ var menu = [{
 		des: "gHacks the Independent Rechnology News blog.",
 		uri: "https://www.ghacks.net/feed",
 		ext: "https://ghacks.net",
-		img: "gHacks"
+		img: "gHacks",
+		hash: "Ga"
 	}
 
 	,
@@ -2194,7 +2412,8 @@ var menu = [{
 		des: "HackADay serves up Fresh Hacks Every Day from around the Internet.",
 		uri: "https://hackaday.com/feed",
 		ext: "https://hackaday.com",
-		img: "HackADay"
+		img: "HackADay",
+		hash: "yH"
 	}
 
 	,
@@ -2204,7 +2423,8 @@ var menu = [{
 		des: "Heavy Technology news and related articles.",
 		uri: "https://heavy.com/tech/feed",
 		ext: "https://heavy.com/tech",
-		img: "Heavy"
+		img: "Heavy",
+		hash: "hY"
 	}
 
 	,
@@ -2214,7 +2434,8 @@ var menu = [{
 		des: "Independent.co.uk for Latest Gadgets and Tech News.",
 		uri: "http://www.independent.co.uk/life-style/gadgets-and-tech/rss",
 		ext: "https://independent.co.uk/life-style/gadgets-and-tech",
-		img: "TheIndependent"
+		img: "TheIndependent",
+		hash: "iT"
 	}
 
 	,
@@ -2224,7 +2445,8 @@ var menu = [{
 		des: "InfoWorld is an Information Technology Media Business.",
 		uri: "https://www.infoworld.com/index.rss",
 		ext: "https://infoworld.com",
-		img: "InfoWorld"
+		img: "InfoWorld",
+		hash: "fW"
 	}
 
 	,
@@ -2234,7 +2456,8 @@ var menu = [{
 		des: "Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",
 		uri: "https://www.inverse.com/feed/articles/1.rss",
 		ext: "https://www.inverse.com",
-		img: "Inverse"
+		img: "Inverse",
+		hash: "vS"
 	}
 
 	,
@@ -2244,7 +2467,8 @@ var menu = [{
 		des: "Leak Lookup Latest Database Leaks and Records Counting.",
 		uri: "https://leak-lookup.com/rss",
 		ext: "https://leak-lookup.com",
-		img: "Leak-Lookup"
+		img: "Leak-Lookup",
+		hash: "lL"
 	}
 
 	,
@@ -2254,7 +2478,8 @@ var menu = [{
 		des: "Mirror.co.uk Technology Best Stories, Opinion, Pictures and Video.",
 		uri: "https://www.mirror.co.uk/tech/?service=rss",
 		ext: "https://mirror.co.uk/tech",
-		img: "Mirror"
+		img: "Mirror",
+		hash: "kM"
 	}
 
 	,
@@ -2264,7 +2489,8 @@ var menu = [{
 		des: "MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.",
 		uri: "http://news.mit.edu/rss/feed",
 		ext: "http://news.mit.edu",
-		img: "MIT"
+		img: "MIT",
+		hash: "mT"
 	}
 
 	,
@@ -2274,17 +2500,19 @@ var menu = [{
 		des: "NASA brings you the Latest Images, Videos and News from America's space agency.",
 		uri: "https://www.nasa.gov/rss/dyn/breaking_news.rss",
 		ext: "https://nasa.gov",
-		img: "NASA"
+		img: "NASA",
+		hash: "aS"
 	}
 
 	,
 	{
-		id: "NBC",
+		id: "NBC Technology",
 		cat: "Technology",
 		des: "NBC News Tech for Latest News on Technology, Businesses and Internet media.",
 		uri: "http://feeds.nbcnews.com/nbcnews/public/tech",
 		ext: "https://nbcnews.com/tech-media",
-		img: "NBC"
+		img: "NBC",
+		hash: "tY"
 	}
 
 	,
@@ -2294,7 +2522,8 @@ var menu = [{
 		des: "New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.",
 		uri: "https://nypost.com/tech/feed",
 		ext: "https://nypost.com/tech",
-		img: "NewYorkPost"
+		img: "NewYorkPost",
+		hash: "pL"
 	}
 
 	,
@@ -2304,7 +2533,8 @@ var menu = [{
 		des: "New York Times is a Newspaper based in New York City with Worldwide Influence.",
 		uri: "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
 		ext: "https://nytimes.com/categorytion/technology",
-		img: "NewYorkTimes"
+		img: "NewYorkTimes",
+		hash: "yM"
 	}
 
 	,
@@ -2314,7 +2544,8 @@ var menu = [{
 		des: "OANN Technology One America News Network Technology.",
 		uri: "https://www.oann.com/category/tech/feed",
 		ext: "https://www.oann.com/category/tech",
-		img: "OANN"
+		img: "OANN",
+		hash: "nL"
 	}
 
 	,
@@ -2324,7 +2555,8 @@ var menu = [{
 		des: "PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.",
 		uri: "https://www.pcworld.com/index.rss",
 		ext: "https://pcworld.com",
-		img: "PCWorld"
+		img: "PCWorld",
+		hash: "wC"
 	}
 
 	,
@@ -2334,7 +2566,8 @@ var menu = [{
 		des: "Popular Mechanics is a magazine of Popular Science and Technology.",
 		uri: "https://www.popularmechanics.com/rss/all.xml",
 		ext: "https://popularmechanics.com",
-		img: "PopularMechanics"
+		img: "PopularMechanics",
+		hash: "mP"
 	}
 
 	,
@@ -2344,7 +2577,8 @@ var menu = [{
 		des: "Phoronix Linux Hardware Reviews & News.",
 		uri: "https://www.phoronix.com/rss.php",
 		ext: "https://phoronix.com",
-		img: "Phoronix"
+		img: "Phoronix",
+		hash: "xP"
 	}
 
 	,
@@ -2354,7 +2588,8 @@ var menu = [{
 		des: "ReadWrite was founded on April 20, 2003 as ReadWriteWeb.",
 		uri: "https://readwrite.com/feed",
 		ext: "https://readwrite.com",
-		img: "ReadWrite"
+		img: "ReadWrite",
+		hash: "rR"
 	}
 
 	,
@@ -2364,7 +2599,8 @@ var menu = [{
 		des: "Security Affairs Every security issue is our affair.",
 		uri: "http://securityaffairs.co/wordpress/feed",
 		ext: "http://securityaffairs.co",
-		img: "SecurityAffairs"
+		img: "SecurityAffairs",
+		hash: "iF"
 	}
 
 	,
@@ -2374,7 +2610,8 @@ var menu = [{
 		des: "Sky News Technology is a British news organisation, which operates a TV network.",
 		uri: "http://feeds.skynews.com/feeds/rss/technology.xml",
 		ext: "https://sky.com/technology",
-		img: "SkyNews"
+		img: "SkyNews",
+		hash: "kS"
 	}
 
 	,
@@ -2384,7 +2621,8 @@ var menu = [{
 		des: "Slashdot is a social News website that originally billed itself as News for Nerds.",
 		uri: "http://rss.slashdot.org/Slashdot/slashdot",
 		ext: "https://slashdot.org",
-		img: "Slashdot"
+		img: "Slashdot",
+		hash: "lT"
 	}
 
 	,
@@ -2394,7 +2632,8 @@ var menu = [{
 		des: "Slate Technology online tech news from Slate Magazine.",
 		uri: "https://slate.com/feeds/technology.rss",
 		ext: "https://slate.com",
-		img: "Slate"
+		img: "Slate",
+		hash: "eL"
 	}
 
 	, {
@@ -2403,7 +2642,8 @@ var menu = [{
 		des: "Hacker News is a reader ran headline submission news purveyor.",
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com",
-		img: "YCombinator"
+		img: "YCombinator",
+		hash: "yC"
 	}
 
 	, {
@@ -2412,7 +2652,8 @@ var menu = [{
 		des: "Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web design and web development.",
 		uri: "https://www.smashingmagazine.com/feed",
 		ext: "https://www.smashingmagazine.com",
-		img: "SmashingMagazine"
+		img: "SmashingMagazine",
+		hash: "zS"
 	}
 
 	,
@@ -2422,7 +2663,8 @@ var menu = [{
 		des: "International Business Times Technology news and insight about tech gadgets, games and social media.",
 		uri: "https://www.ibtimes.sg/rss/technology",
 		ext: "https://www.ibtimes.com/technology",
-		img: "IBT"
+		img: "IBT",
+		hash: "bB"
 	}
 
 	,
@@ -2432,7 +2674,8 @@ var menu = [{
 		des: "Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",
 		uri: "https://www.latimes.com/business/technology/rss2.0.xml",
 		ext: "https://latimes.com/business/technology",
-		img: "LosAngelesTimes"
+		img: "LosAngelesTimes",
+		hash: "Me"
 	}
 
 	,
@@ -2442,7 +2685,8 @@ var menu = [{
 		des: "Linux.com News For Open Source Professionals.",
 		uri: "https://www.linux.com/feed",
 		ext: "https://linux.com",
-		img: "Linux"
+		img: "Linux",
+		hash: "lN"
 	}
 
 	,
@@ -2452,7 +2696,8 @@ var menu = [{
 		des: "Linux Weekly News Headlines.",
 		uri: "https://lwn.net/headlines/rss",
 		ext: "https://lwn.net",
-		img: "LWN"
+		img: "LWN",
+		hash: "wN"
 	}
 
 	,
@@ -2462,7 +2707,8 @@ var menu = [{
 		des: "Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.",
 		uri: "https://phys.org/rss-feed",
 		ext: "https://phys.org",
-		img: "Phys"
+		img: "Phys",
+		hash: "pR"
 	}
 
 	,
@@ -2472,7 +2718,8 @@ var menu = [{
 		des: "Privacy.com.sg Where Privacy Matters Matter!",
 		uri: "https://www.privacy.com.sg/feed",
 		ext: "https://www.privacy.com.sg",
-		img: "PrivacyNinja"
+		img: "PrivacyNinja",
+		hash: "nP"
 	}
 
 	,
@@ -2482,7 +2729,8 @@ var menu = [{
 		des: "Reclaim the Net Restoring Individual Liberty Online. Free Speech. Privacy",
 		uri: "https://reclaimthenet.org/feed",
 		ext: "https://reclaimthenet.org",
-		img: "ReclaimTheNet"
+		img: "ReclaimTheNet",
+		hash: "iR"
 	}
 
 	,
@@ -2492,7 +2740,8 @@ var menu = [{
 		des: "San Francisco Gate is the Hearst-owned website sister-site of the San Francisco Chronicle.",
 		uri: "https://www.sfgate.com/rss/feed/Business-and-Technology-News-448.php",
 		ext: "https://sfgate.com/technology",
-		img: "SanFranciscoGate"
+		img: "SanFranciscoGate",
+		hash: "gF"
 	}
 
 	,
@@ -2502,7 +2751,8 @@ var menu = [{
 		des: "Science Daily Top Technology News.",
 		uri: "https://www.sciencedaily.com/rss/top/technology.xml",
 		ext: "https://sciencedaily.com/news/top/technology",
-		img: "ScienceDaily"
+		img: "ScienceDaily",
+		hash: "dS"
 	}
 
 	,
@@ -2512,7 +2762,8 @@ var menu = [{
 		des: "Space.com latest space exploration, innovation and astronomy news.",
 		uri: "https://www.space.com/feeds/all",
 		ext: "https://www.space.com",
-		img: "Space"
+		img: "Space",
+		hash: "oM"
 	}
 
 	,
@@ -2522,7 +2773,8 @@ var menu = [{
 		des: "Telegraph.co.uk Technology Intelligence news from the world of Technology.",
 		uri: "https://www.telegraph.co.uk/technology/rss.xml",
 		ext: "https://www.telegraph.co.uk/technology",
-		img: "Telegraph"
+		img: "Telegraph",
+		hash: "kT"
 	}
 
 	,
@@ -2532,7 +2784,8 @@ var menu = [{
 		des: "TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",
 		uri: "https://www.theregister.co.uk/headlines.atom",
 		ext: "https://theregister.co.uk",
-		img: "TheRegister"
+		img: "TheRegister",
+		hash: "Rh"
 	}
 
 	,
@@ -2542,7 +2795,8 @@ var menu = [{
 		des: "TechCrunch Reports on the Business of Technology, Startups, Venture Capital funding, and Silicon Valley.",
 		uri: "http://feeds.feedburner.com/TechCrunch",
 		ext: "https://techcrunch.com",
-		img: "TechCrunch"
+		img: "TechCrunch",
+		hash: "cT"
 	}
 
 	,
@@ -2552,7 +2806,8 @@ var menu = [{
 		des: "TechMeme is an automated News curation service focused on the leading edge of Technology.",
 		uri: "https://www.techmeme.com/feed.xml",
 		ext: "https://techmeme.com",
-		img: "TechMeme"
+		img: "TechMeme",
+		hash: "eE"
 	}
 
 	,
@@ -2562,7 +2817,8 @@ var menu = [{
 		des: "TechRepublic is an online Trade publication and social Community for IT Professionals.",
 		uri: "https://www.techrepublic.com/rssfeeds/articles",
 		ext: "https://techrepublic.com",
-		img: "TechRepublic"
+		img: "TechRepublic",
+		hash: "pT"
 	}
 
 	,
@@ -2572,7 +2828,8 @@ var menu = [{
 		des: "TechNewsWorld Latest Tech News and Info from ECT News Network's online publications.",
 		uri: "https://www.technewsworld.com/perl/syndication/rssfull.pl",
 		ext: "https://www.technewsworld.com",
-		img: "TechNewsWorld"
+		img: "TechNewsWorld",
+		hash: "cH"
 	}
 
 	,
@@ -2582,7 +2839,8 @@ var menu = [{
 		des: "TechRadar is an online Publication focused on Technology.",
 		uri: "https://www.techradar.com/rss",
 		ext: "https://techradar.com",
-		img: "TechRadar"
+		img: "TechRadar",
+		hash: "rD"
 	}
 
 	,
@@ -2592,7 +2850,8 @@ var menu = [{
 		des: "TechPowerUp is a leading Technology publication, on the forefront of PC Technologies.",
 		uri: "https://www.techpowerup.com/rss/news",
 		ext: "https://techpowerup.com",
-		img: "TechPowerUp"
+		img: "TechPowerUp",
+		hash: "tU"
 	}
 
 	,
@@ -2602,7 +2861,8 @@ var menu = [{
 		des: "TechSpot is a leading Computer and Technology publication established in 1998.",
 		uri: "https://www.techspot.com/backend.xml",
 		ext: "https://techspot.com",
-		img: "TechSpot"
+		img: "TechSpot",
+		hash: "Po"
 	}
 
 	,
@@ -2612,7 +2872,8 @@ var menu = [{
 		des: "The Olognion Exquisite tech news.",
 		uri: "https://www.theolognion.com/rss",
 		ext: "https://www.theolognion.com",
-		img: "TheOlognion"
+		img: "TheOlognion",
+		hash: "oG"
 	}
 
 	,
@@ -2622,7 +2883,8 @@ var menu = [{
 		des: "TheNextWeb provides insights into private tech companies by turning unstructured content into structured data and intelligence.",
 		uri: "http://feeds.feedburner.com/thenextweb",
 		ext: "https://thenextweb.com",
-		img: "TheNextWeb"
+		img: "TheNextWeb",
+		hash: "xW"
 	}
 
 	,
@@ -2632,7 +2894,8 @@ var menu = [{
 		des: "TheSun.co.uk New technology, scientific breakthroughs, discoveries and research.",
 		uri: "https://www.thesun.co.uk/tech/feed",
 		ext: "https://www.thesun.co.uk/tech",
-		img: "TheSun"
+		img: "TheSun",
+		hash: "Ns"
 	}
 
 	,
@@ -2642,7 +2905,8 @@ var menu = [{
 		des: "The Verge covers the intersection of technology, science, art, and culture.",
 		uri: "https://www.theverge.com/rss/index.xml",
 		ext: "https://www.theverge.com",
-		img: "TheVerge"
+		img: "TheVerge",
+		hash: "vG"
 	}
 
 	,
@@ -2652,7 +2916,8 @@ var menu = [{
 		des: "The Tor Project, Inc, became a 501(c)3 nonprofit in 2006, but the idea of \"onion routing\" began in the mid 1990s.",
 		uri: "https://blog.torproject.org/rss.xml",
 		ext: "https://blog.torproject.org",
-        img: "TOR"
+        img: "TOR",
+		hash: "tO"
 	}
 
 	,
@@ -2662,7 +2927,8 @@ var menu = [{
 		des: "Trend Hunter Computer and Laptops a platform for new and innovative content and helping some of the biggest brands stay ahead of the curve.",
 		uri: "https://www.trendhunter.com/rss/category/Computers-and-Laptops",
 		ext: "https://www.trendhunter.com/computers",
-		img: "TrendHunter"
+		img: "TrendHunter",
+		hash: "eR"
 	}
 
 	,
@@ -2672,7 +2938,8 @@ var menu = [{
 		des: "USA Today Technology is an internationally distributed American daily, middle-market Newspaper.",
 		uri: "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1",
 		ext: "https://usatoday.com/tech/",
-		img: "USAToday"
+		img: "USAToday",
+		hash: "sY"
 	}
 
 	,
@@ -2682,7 +2949,8 @@ var menu = [{
 		des: "Wall Street Journals Latest Tech News, Reviews, and Stories.",
 		uri: "https://feeds.a.dj.com/rss/RSSWSJD.xml",
 		ext: "https://wsj.com/news/technology",
-		img: "WSJ"
+		img: "WSJ",
+		hash: "WJ"
 	}
 
 	,
@@ -2692,7 +2960,8 @@ var menu = [{
 		des: "Washington Examiner Science and Technology.",
 		uri: "http://feeds.feedburner.com/dcexaminer/tech",
 		ext: "https://www.washingtonexaminer.com/tag/science",
-		img: "WashingtonExaminer"
+		img: "WashingtonExaminer",
+		hash: "xW"
 	}
 
 	,
@@ -2702,7 +2971,8 @@ var menu = [{
 		des: "Washington Post is a major American daily newspaper published in Washington, D.C.",
 		uri: "http://feeds.washingtonpost.com/rss/business/technology",
 		ext: "https://washingtonpost.com/business/technology",
-		img: "WashingtonPost"
+		img: "WashingtonPost",
+		hash: "pW"
 	}
 
 	,
@@ -2712,7 +2982,8 @@ var menu = [{
 		des: "Washington Times is an American daily newspaper published in Washington, D.C.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/technology",
 		ext: "https://washingtontimes.com/culture/technology",
-		img: "TheWashingtonTimes"
+		img: "TheWashingtonTimes",
+		hash: "Mw"
 	}
 
 	,
@@ -2722,7 +2993,8 @@ var menu = [{
 		des: "Wccftech has the Latest updates in the world of Tech, Mobile, PC Hardware, Gaming & Finance.",
 		uri: "https://wccftech.com/feed",
 		ext: "https://wccftech.com",
-		img: "Wccftech"
+		img: "Wccftech",
+		hash: "cC"
 	}
 
 	,
@@ -2732,7 +3004,8 @@ var menu = [{
 		des: "Windows Central News, Forums, Reviews, Help for Windows 10 and all things Microsoft.",
 		uri: "https://www.windowscentral.com/rss",
 		ext: "https://www.windowscentral.com",
-		img: "WindowsCentral"
+		img: "WindowsCentral",
+		hash: "cW"
 	}
 
 	,
@@ -2742,7 +3015,8 @@ var menu = [{
 		des: "WIRED is where tomorrow is realized. It is the essential source of information.",
 		uri: "https://www.wired.com/feed/rss",
 		ext: "https://wired.com",
-		img: "WIRED"
+		img: "WIRED",
+		hash: "wD"
 	}
 
 	,
@@ -2752,7 +3026,8 @@ var menu = [{
 		des: "ZDNet is a business technology news website published by CBS Interactive.",
 		uri: "https://www.zdnet.com/news/rss.xml",
 		ext: "https://zdnet.com",
-		img: "ZDNet"
+		img: "ZDNet",
+		hash: "zD"
 	}
 
 	,
@@ -2762,7 +3037,8 @@ var menu = [{
 		des: "Yahoo is a web services provider headquartered in California, and owned by Verizon Media.",
 		uri: "https://www.yahoo.com/tech/rss",
 		ext: "https://finance.yahoo.com/tech",
-		img: "Yahoo"
+		img: "Yahoo",
+		hash: "tA"
 	}
 
 	,
@@ -2772,7 +3048,8 @@ var menu = [{
 		des: "ABC is an American broadcast television network that is property of Walt Disney.",
 		uri: "https://abcnews.go.com/abcnews/internationalheadlines",
 		ext: "https://abc.com",
-		img: "ABC"
+		img: "ABC",
+		hash: "wA"
 	}
 
 	,
@@ -2782,7 +3059,8 @@ var menu = [{
 		des: "Al Jazeera is an Arabic-language television channel from Doha, Qatar.",
 		uri: "https://www.aljazeera.com/xml/rss/all.xml",
 		ext: "https://www.aljazeera.com",
-		img: "AlJazeera"
+		img: "AlJazeera",
+		hash: "aJ"
 	}
 
 	,
@@ -2792,17 +3070,19 @@ var menu = [{
 		des: "Axios known for delivering news, coverage, and insight with a distinctive brand of smart brevity.",
 		uri: "https://api.axios.com/feed",
 		ext: "https://www.axios.com",
-		img: "Axios"
+		img: "Axios",
+		hash: "xS"
 	}
 
 	,
 	{
-		id: "BBC",
+		id: "BBC World",
 		cat: "World",
 		des: "BBC is the world’s leading public service broadcaster.",
 		uri: "http://feeds.bbci.co.uk/news/rss.xml",
 		ext: "https://bbc.com",
-		img: "BBC"
+		img: "BBC",
+		hash: "cD"
 	}
 
 	,
@@ -2812,7 +3092,8 @@ var menu = [{
 		des: "Boston is a regional website that offers news and information about Boston, Massachusetts.",
 		uri: "https://www.boston.com/tag/world-news/feed",
 		ext: "https://www.boston.com/tag/world-news",
-		img: "Boston"
+		img: "Boston",
+		hash: "oO"
 	}
 
 	,
@@ -2822,37 +3103,42 @@ var menu = [{
 		des: "Boston Herald is the leading source of breaking news, local news, sports, politics, and entertainment.",
 		uri: "https://www.bostonherald.com/feed",
 		ext: "https://www.bostonherald.com",
-		img: "BostonHerald"
+		img: "BostonHerald",
+		hash: "hB"
 	}
 
 	,
 	{
-		id: "CBS",
+		id: "CBS World",
 		cat: "World",
 		des: "CBS is a media company that creates and distributes industry-leading content.",
 		uri: "https://www.cbsnews.com/latest/rss/world",
 		ext: "https://cbsnews.com",
-		img: "CBS"
+		img: "CBS",
+		hash: "Lw"
+	
 	}
 
 	,
 	{
-		id: "CNBC",
+		id: "CNBC World",
 		cat: "World",
 		des: "CNBC latest headlines from around the world.",
 		uri: "https://www.cnbc.com/id/100727362/device/rss/rss.html",
 		ext: "https://cnbc.com/world",
-		img: "CNBC"
+		img: "CNBC",
+		hash: "nB"
 	}
 
 	,
 	{
-		id: "CNN",
+		id: "CNN World",
 		cat: "World",
 		des: "CNN is among the world's leaders in online news and information delivery.",
 		uri: "http://rss.cnn.com/rss/cnn_topstories.rss",
 		ext: "https://cnn.com",
-		img: "CNN"
+		img: "CNN",
+		hash: "oN"
 	}
 
 	,
@@ -2862,7 +3148,8 @@ var menu = [{
 		des: "Common Dreams is a daily, glorious taste of what the dominant media could be.",
 		uri: "https://www.commondreams.org/rss.xml",
 		ext: "https://www.commondreams.org",
-		img: "CommonDreams"
+		img: "CommonDreams",
+		hash: "dC"
 	}
 
 	,
@@ -2872,7 +3159,8 @@ var menu = [{
 		des: "CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",
 		uri: "http://podcast.c-span.org/xml/radio_feed.xml",
 		ext: "https://www.c-span.org/",
-		img: "CSpan"
+		img: "CSpan",
+		hash: "aC"
 	}
 
 	,
@@ -2882,7 +3170,8 @@ var menu = [{
 		des: "Daily Mail is a British daily middle-market newspaper published in London.",
 		uri: "https://www.dailymail.co.uk/articles.rss",
 		ext: "https://dailymail.co.uk",
-		img: "DailyMail"
+		img: "DailyMail",
+		hash: "mD"
 	}
 
 	,
@@ -2892,7 +3181,8 @@ var menu = [{
 		des: "Digital Trends team of experienced staffers provide the latest news.",
 		uri: "https://www.digitaltrends.com/news/feed",
 		ext: "https://digitaltrends.com/news",
-		img: "DigitalTrends"
+		img: "DigitalTrends",
+		hash: "wI"
 	}
 
 	,
@@ -2902,7 +3192,8 @@ var menu = [{
 		des: "Drudge Report consists mainly of news stories from other outlets.",
 		uri: "http://feeds.feedburner.com/DrudgeReportFeed",
 		ext: "https://drudgereport.com",
-		img: "DrudgeReport"
+		img: "DrudgeReport",
+		hash: "rG"
 	}
 
 	,
@@ -2912,7 +3203,8 @@ var menu = [{
 		des: "DW Discover news from around the world as they happen. DW looks at all the top stories.",
 		uri: "http://rss.dw.com/rdf/rss-en-all",
 		ext: "https://www.dw.com/en/top-stories",
-		img: "DW"
+		img: "DW",
+		hash: "dW"
 	}
 
 	,
@@ -2922,7 +3214,8 @@ var menu = [{
 		des: "Euro News is unapologetically impartial and seeks to offer a diversity of viewpoints.",
 		uri: "http://feeds.feedburner.com/euronews/en/home",
 		ext: "https://www.euronews.com",
-		img: "EuroNews"
+		img: "EuroNews",
+		hash: "nU"
 	}
 
 	,
@@ -2932,7 +3225,8 @@ var menu = [{
 		des: "Fortune is an American multinational business magazine headquartered in New York City.",
 		uri: "https://fortune.com/feed",
 		ext: "https://fortune.com",
-		img: "Fortune"
+		img: "Fortune",
+		hash: "uO"
 	}
 
 	,
@@ -2942,7 +3236,8 @@ var menu = [{
 		des: "Google is a multinational technology company that specializes in Internet-related services and products.",
 		uri: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
 		ext: "https://news.google.com",
-		img: "Google"
+		img: "Google",
+		hash: "gG"
 	}
 
 	,
@@ -2952,7 +3247,8 @@ var menu = [{
 		des: "Global News World breaking international news current world news headlines, international news and business.",
 		uri: "https://globalnews.ca/world/feed",
 		ext: "https://globalnews.ca/world",
-		img: "CBC"
+		img: "CBC",
+		hash: "bA"
 	}
 
 	,
@@ -2962,7 +3258,8 @@ var menu = [{
 		des: "Heavy News from around the world.",
 		uri: "https://heavy.com/news/feed",
 		ext: "https://heavy.com/news",
-		img: "Heavy"
+		img: "Heavy",
+		hash: "vY"
 	}
 
 	,
@@ -2972,7 +3269,8 @@ var menu = [{
 		des: "Breitbart is an American far-right syndicated news, opinion and commentary website.",
 		uri: "http://feeds.feedburner.com/breitbart",
 		ext: "https://www.breitbart.com",
-		img: "Breitbart"
+		img: "Breitbart",
+		hash: "bB"
 	}
 
 	,
@@ -2982,7 +3280,8 @@ var menu = [{
 		des: "InfoWars is a far-right American conspiracy theory and fake news website owned by Alex Jones.",
 		uri: "https://infowars.com/feed",
 		ext: "https://infowars.com",
-		img: "InfoWars"
+		img: "InfoWars",
+		hash: "wF"
 	}
 
 	,
@@ -2992,7 +3291,8 @@ var menu = [{
 		des: "International Business Times Breaking world news, comment and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.",
 		uri: "https://www.ibtimes.sg/rss/world",
 		ext: "https://www.ibtimes.com/world",
-		img: "IBT"
+		img: "IBT",
+		hash: "wU"
 	}
 
 	,
@@ -3002,7 +3302,8 @@ var menu = [{
 		des: "Market Watch published by Dow Jones & Co., tracks the pulse of markets for engaged investors.",
 		uri: "http://feeds.marketwatch.com/marketwatch/topstories",
 		ext: "http://marketwatch.com",
-		img: "MarketWatch"
+		img: "MarketWatch",
+		hash: "kW"
 	}
 
 	,
@@ -3012,7 +3313,8 @@ var menu = [{
 		des: "Mirror.co.uk World News headlines, pictures, analysis, opinion and video.",
 		uri: "https://www.mirror.co.uk/news/us-news/?service=rss",
 		ext: "https://mirror.co.uk/news/us-news",
-		img: "Mirror"
+		img: "Mirror",
+		hash: "iW"
 	}
 
 	,
@@ -3022,17 +3324,19 @@ var menu = [{
 		des: "Mercury News is passionate about serving readers in Silicon Valley and its global technology community.",
 		uri: "https://www.mercurynews.com/feed",
 		ext: "https://mercurynews.com",
-		img: "Mercury"
+		img: "Mercury",
+		hash: "cU"
 	}
 
 	,
 	{
-		id: "MSNBC",
+		id: "MSNBC World",
 		cat: "World",
 		des: "MSNBC Breaking news and in-depth analysis of the headlines.",
 		uri: "http://www.msnbc.com/feeds/latest",
 		ext: "http://www.msnbc.com",
-		img: "MSNBC"
+		img: "MSNBC",
+		hash: "sM"
 	}
 
 	,
@@ -3042,7 +3346,8 @@ var menu = [{
 		des: "NBC News is the news division of the American broadcast television network NBC.",
 		uri: "http://feeds.nbcnews.com/nbcnews/public/news",
 		ext: "https://nbcnews.com",
-		img: "NBC"
+		img: "NBC",
+		hash: "ON"
 	}
 
 	,
@@ -3052,7 +3357,8 @@ var menu = [{
 		des: "Newsweek provides the latest news about international issues, technology, business, culture and politics.",
 		uri: "https://www.newsweek.com/rss",
 		ext: "https://newsweek.com",
-		img: "Newsweek"
+		img: "Newsweek",
+		hash: "wK"
 	}
 
 	,
@@ -3062,7 +3368,8 @@ var menu = [{
 		des: "Newser is an American news aggregation website.",
 		uri: "http://rss.newser.com/rss/section/1.rss",
 		ext: "https://www.newser.com",
-		img: "Newser"
+		img: "Newser",
+		hash: "nR"
 	}
 
 	,
@@ -3072,7 +3379,8 @@ var menu = [{
 		des: "New York Daily News news coverage, sports, entertainment news, gossip, autos, videos and photos.",
 		uri: "https://www.nydailynews.com/cmlink/NYDN.News.World.rss",
 		ext: "https://www.nydailynews.com/news/world",
-		img: "NewYorkDailyNews"
+		img: "NewYorkDailyNews",
+		hash: "yY"
 	}
 
 	,
@@ -3082,7 +3390,8 @@ var menu = [{
 		des: "New York Post is a daily newspaper in New York City.",
 		uri: "https://nypost.com/feed",
 		ext: "https://nypost.com",
-		img: "NewYorkPost"
+		img: "NewYorkPost",
+		hash: "yP"
 	}
 
 	,
@@ -3092,7 +3401,8 @@ var menu = [{
 		des: "NPR is an independent, nonprofit media organization that was founded to create a more informed public.",
 		uri: "https://www.npr.org/rss/rss.php?id=1019",
 		ext: "https://npr.org",
-		img: "NPR"
+		img: "NPR",
+		hash: "nP"
 	}
 
 	,
@@ -3102,7 +3412,8 @@ var menu = [{
 		des: "OANN World One America News Network.",
 		uri: "https://www.oann.com/feed",
 		ext: "https://www.oann.com",
-		img: "OANN"
+		img: "OANN",
+		hash: "oA"
 	}
 
 	,
@@ -3112,7 +3423,8 @@ var menu = [{
 		des: "The Onion America's Finest News Source..",
 		uri: "https://www.theonion.com/rss",
 		ext: "https://www.theonion.com",
-		img: "TheOnion"
+		img: "TheOnion",
+		hash: "oT"
 	}
 
 	,
@@ -3122,7 +3434,8 @@ var menu = [{
 		des: "Public Broadcasting Service is an American public broadcaster and television program distributor.",
 		uri: "https://www.pbs.org/newshour/feeds/rss/headlines",
 		ext: "https://pbs.org",
-		img: "PBS"
+		img: "PBS",
+		hash: "oB"
 	}
 
 	,
@@ -3132,7 +3445,8 @@ var menu = [{
 		des: "Quartz covers business, economics, markets, finance, technology, science, design, and fashion.",
 		uri: "https://cms.qz.com/feed",
 		ext: "https://qz.com",
-		img: "Quartz"
+		img: "Quartz",
+		hash: "qZ"
 	}
 
 	,
@@ -3142,7 +3456,8 @@ var menu = [{
 		des: "RT delivers latest news on current events from around the world.",
 		uri: "https://www.rt.com/rss",
 		ext: "https://rt.com",
-		img: "RT"
+		img: "RT",
+		hash: "tL"
 	}
 
 	,
@@ -3152,7 +3467,8 @@ var menu = [{
 		des: "Salon In-depth news, politics, business, technology & culture.",
 		uri: "https://www.salon.com/feed",
 		ext: "https://www.salon.com",
-		img: "Salon"
+		img: "Salon",
+		hash: "Ao"
 	}
 
 	,
@@ -3162,7 +3478,8 @@ var menu = [{
 		des: "Slate is an online magazine that covers current affairs, politics, and culture in the United States.",
 		uri: "https://slate.com/feeds/all.rss",
 		ext: "https://slate.com",
-		img: "Slate"
+		img: "Slate",
+		hash: "Ae"
 	}
 
 	,
@@ -3172,7 +3489,8 @@ var menu = [{
 		des: "Snopes Fact Checking and Original Investigative Reporting.",
 		uri: "https://www.snopes.com/feed",
 		ext: "https://www.snopes.com",
-		img: "Snopes"
+		img: "Snopes",
+		hash: "pN"
 	}
 
 	,
@@ -3182,17 +3500,19 @@ var menu = [{
 		des: "Sputnik is a major new media brand with modern multimedia centers in dozens of countries.",
 		uri: "https://sputniknews.com/export/rss2/archive/index.xml",
 		ext: "https://sputniknews.com",
-		img: "Sputnik"
+		img: "Sputnik",
+		hash: "sK"
 	}
 
 	,
 	{
-		id: "Telegraph.co.uk",
+		id: "Telegraph.co.uk World",
 		cat: "World",
 		des: "Telegraph.co.uk for the latest news from the UK and around the world.",
 		uri: "https://www.telegraph.co.uk/rss.xml",
 		ext: "https://www.telegraph.co.uk",
-		img: "Telegraph"
+		img: "Telegraph",
+		hash: "kE"
 	}
 
 	,
@@ -3202,7 +3522,8 @@ var menu = [{
 		des: "The Age National News from Australia, World News, Business News and Breaking News stories.",
 		uri: "https://www.theage.com.au/rss/feed.xml",
 		ext: "https://www.theage.com.au",
-		img: "TheAge"
+		img: "TheAge",
+		hash: "aG"
 	}
 
 	,
@@ -3212,7 +3533,8 @@ var menu = [{
 		des: "The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",
 		uri: "https://www.theguardian.com/world/rss",
 		ext: "https://www.theguardian.com/world",
-		img: "TheGuardian"
+		img: "TheGuardian",
+		hash: "gT"
 	}
 
 	,
@@ -3222,7 +3544,8 @@ var menu = [{
 		des: "Time Magazine is one of the most authoritative and informative guides to what is happening in the world.",
 		uri: "http://feeds.feedburner.com/time/topstories?format=xml",
 		ext: "https://time.com",
-		img: "TIME"
+		img: "TIME",
+		hash: "mI"
 	}
 
 	,
@@ -3232,7 +3555,8 @@ var menu = [{
 		des: "Unilad.co.uk a British Internet media company and website.",
 		uri: "https://unilad.co.uk/feed",
 		ext: "https://www.unilad.co.uk",
-		img: "Unilad"
+		img: "Unilad",
+		hash: "uL"
 	}
 
 	,
@@ -3242,7 +3566,8 @@ var menu = [{
 		des: "United Nations Top Stories Global perspective, human stories.",
 		uri: "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
 		ext: "https://www.un.org",
-		img: "UN"
+		img: "UN",
+		hash: "uN"
 	}
 
 	,
@@ -3252,7 +3577,8 @@ var menu = [{
 		des: "United Press International is a leading provider of news, photos and information.",
 		uri: "https://rss.upi.com/news/news.rss",
 		ext: "https://upi.com",
-		img: "UPI"
+		img: "UPI",
+		hash: "pI"
 	}
 
 	,
@@ -3262,7 +3588,8 @@ var menu = [{
 		des: "USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",
 		uri: "http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",
 		ext: "https://www.usatoday.com",
-		img: "USAToday"
+		img: "USAToday",
+		hash: "aY"
 	}
 
 	,
@@ -3272,7 +3599,8 @@ var menu = [{
 		des: "Vice Original reporting and documentaries on everything that matters in the world.",
 		uri: "https://www.vice.com/en_us/rss",
 		ext: "https://vice.com",
-		img: "VICE"
+		img: "VICE",
+		hash: "vC"
 	}
 
 	,
@@ -3282,7 +3610,8 @@ var menu = [{
 		des: "Vox is an American news and opinion website owned by Vox Media.",
 		uri: "https://www.vox.com/rss/index.xml",
 		ext: "https://www.vox.com",
-		img: "Vox"
+		img: "Vox",
+		hash: "xV"
 	}
 
 	,
@@ -3292,7 +3621,8 @@ var menu = [{
 		des: "Washington Examiner World News.",
 		uri: "http://feeds.feedburner.com/dcexaminer/WorldNews",
 		ext: "https://www.washingtonexaminer.com/tag/world",
-		img: "WashingtonExaminer"
+		img: "WashingtonExaminer",
+		hash: "hX"
 	}
 
 	,
@@ -3302,7 +3632,8 @@ var menu = [{
 		des: "Washington Times World News, Middle East News, Afghanistan War.",
 		uri: "https://www.washingtontimes.com/rss/headlines/news/world",
 		ext: "https://washingtontimes.com/news/world",
-		img: "TheWashingtonTimes"
+		img: "TheWashingtonTimes",
+		hash: "hS"
 	}
 
 	,
@@ -3312,7 +3643,8 @@ var menu = [{
 		des: "Andoid Authority Youtube Your source for all things Android.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",
 		ext: "https://www.youtube.com/user/AndroidAuthrotiy",
-		img: "AndroidAuthority"
+		img: "AndroidAuthority",
+		hash: "yA"
 	}
 
 	,
@@ -3322,7 +3654,8 @@ var menu = [{
 		des: "Bein Sports Youtube a global network of sports channels owned and operated by beIN Media Group.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BeInSportUSA",
 		ext: "https://www.youtube.com/user/BeINsportUSA",
-		img: "BeIn"
+		img: "BeIn",
+		hash: "bI"
 	}
 
 	,
@@ -3332,7 +3665,8 @@ var menu = [{
 		des: "CBC Canada Youtube is the country’s largest news organization, employing several hundred journalists in Canada and around the globe.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbcnews",
 		ext: "https://www.youtube.com/user/CBCNews",
-		img: "CBC"
+		img: "CBC",
+		hash: "cb"
 	}
 
 	,
@@ -3342,7 +3676,8 @@ var menu = [{
 		des: "BuzzFeedVideo Youtube New videos posted daily! See behind-the-scenes & more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BuzzFeedVideo",
 		ext: "https://www.youtube.com/user/BuzzFeedVideo",
-		img: "BuzzFeed"
+		img: "BuzzFeed",
+		hash: "zz"
 	}
 
 	,
@@ -3352,7 +3687,8 @@ var menu = [{
 		des: "Discovery Networks Youtube amazing stories and experiences from the world of science, natural history, anthropology, survival, geography, and engineering.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DiscoveryNetworks",
 		ext: "https://www.youtube.com/user/DiscoveryNetworks",
-		img: "Discovery"
+		img: "Discovery",
+		hash: "dN"
 	}
 
 	,
@@ -3362,7 +3698,8 @@ var menu = [{
 		des: "Global News Youtube news and information from breaking news in their community to complex world issues.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=globaltoronto",
 		ext: "https://www.youtube.com/user/GlobalToronto",
-		img: "CBC"
+		img: "CBC",
+		hash: "Gn"
 	}
 
 	,
@@ -3372,7 +3709,8 @@ var menu = [{
 		des: "MIT News Office Youtube advances knowledge and educate students in science, technology, and other areas.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MITNewsOffice",
 		ext: "https://www.youtube.com/user/MITNewsOffice",
-		img: "MIT"
+		img: "MIT",
+		hash: "yM"
 	}
 
 	,
@@ -3382,7 +3720,8 @@ var menu = [{
 		des: "Netflix Youtube What's new on Netflix streaming.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newonnetflix",
 		ext: "https://www.youtube.com/user/NewOnNetflix",
-		img: "Netflix"
+		img: "Netflix",
+		hash: "nF"
 	}
 
 	,
@@ -3392,7 +3731,8 @@ var menu = [{
 		des: "National Geographic Youtube premium destination for science, exploration, and adventure.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",
 		ext: "https://www.youtube.com/user/NationalGeographic",
-		img: "NationalGeographic"
+		img: "NationalGeographic",
+		hash: "Na"
 	}
 
 	,
@@ -3402,7 +3742,8 @@ var menu = [{
 		des: "ScreenRant Youtube the go-to source for movie and TV news, reviews and in-depth analysis.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=screenrant",
 		ext: "https://www.youtube.com/user/ScreenRant",
-		img: "ScreenRant"
+		img: "ScreenRant",
+		hash: "sR"
 	}
 
 	,
@@ -3412,7 +3753,8 @@ var menu = [{
 		des: "Bloomberg Youtube Breaking news. Exclusive interviews. Fascinating profiles. First looks at hot new products.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bloomberg",
 		ext: "https://www.youtube.com/user/Bloomberg",
-		img: "Bloomberg"
+		img: "Bloomberg",
+		hash: "bB"
 	}
 
 	,
@@ -3422,7 +3764,8 @@ var menu = [{
 		des: "CBS News Youtube breaking news and top-level interviews engaging and informative.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbsnewsonline",
 		ext: "https://www.youtube.com/user/CBSNewsOnline",
-		img: "CBSNewsOnline"
+		img: "CBSNewsOnline",
+		hash: "nC"
 	}
 
 	,
@@ -3432,7 +3775,8 @@ var menu = [{
 		des: "Comedy Central Youtube everything you love about Comedy Central: comedians, jokes, roasts and beyond.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=comedycentral",
 		ext: "https://www.youtube.com/user/ComedyCentral",
-		img: "ComedyCentral"
+		img: "ComedyCentral",
+		hash: "CC"
 	}
 
 	,
@@ -3442,7 +3786,8 @@ var menu = [{
 		des: "CNBC Youtube special sneak peeks of your favorite shows, exclusive video and real-time news updates from around the world.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cnbc",
 		ext: "https://www.youtube.com/user/CNBC",
-		img: "CNBC"
+		img: "CNBC",
+		hash: "yC"
 	}
 
 	,
@@ -3452,7 +3797,8 @@ var menu = [{
 		des: "CNN Youtube latest top stories, weather, business, entertainment, politics, and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNN",
 		ext: "https://www.youtube.com/user/CNN",
-		img: "CNN"
+		img: "CNN",
+		hash: "yN"
 	}
 
 	,
@@ -3462,7 +3808,8 @@ var menu = [{
 		des: "BBC Youtube the world’s leading public service broadcaster..",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bbc",
 		ext: "https://www.youtube.com/user/BBC",
-		img: "BBC"
+		img: "BBC",
+		hash: "yy"
 	}
 
 	,
@@ -3472,7 +3819,8 @@ var menu = [{
 		des: "Bleacher Report Youtube ports highlights, features and animations that drive fandom.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BleacherReport",
 		ext: "https://www.youtube.com/user/BleacherReport",
-		img: "BleacherReport"
+		img: "BleacherReport",
+		hash: "yH"
 	}
 
 	,
@@ -3482,7 +3830,8 @@ var menu = [{
 		des: "CNET TV Youtube important product reviews and follow the tech news and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNETTV",
 		ext: "https://www.youtube.com/user/CNETTV",
-		img: "CNET"
+		img: "CNET",
+		hash: "nE"
 	}
 
 	,
@@ -3492,7 +3841,8 @@ var menu = [{
 		des: "Digital Trends YouTube gives an inside and in-depth look at trending tech coming out.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DigitalTrends",
 		ext: "https://www.youtube.com/user/DigitalTrends",
-		img: "DigitalTrends"
+		img: "DigitalTrends",
+		hash: "bT"
 	}
 
 	,
@@ -3502,7 +3852,8 @@ var menu = [{
 		des: "E! News Youtube entertainment news, celebrities, celeb news, and celebrity gossip.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=enews",
 		ext: "https://www.youtube.com/user/ENews",
-		img: "ENews"
+		img: "ENews",
+		hash: "yE"
 	}
 
 	,
@@ -3512,7 +3863,8 @@ var menu = [{
 		des: "Engadget Youtube laptops, cameras, instruments, VR headsets, smart locks and everything in between.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=engadget",
 		ext: "https://www.youtube.com/user/Engadget",
-		img: "Engadget"
+		img: "Engadget",
+		hash: "ga"
 	}
 
 	,
@@ -3522,7 +3874,8 @@ var menu = [{
 		des: "ET Youtube the Leading source of all things entertainment.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=entertainmenttonight",
 		ext: "https://www.youtube.com/user/EntertainmentTonight",
-		img: "ET"
+		img: "ET",
+		hash: "tE"
 	}
 
 	,
@@ -3532,7 +3885,8 @@ var menu = [{
 		des: "ESPN Youtube features up-to-the-minute sports news coverage, scores, highlights and commentary.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ESPN",
 		ext: "https://www.youtube.com/user/ESPN",
-		img: "ESPN"
+		img: "ESPN",
+		hash: "sY"
 	}
 
 	,
@@ -3542,7 +3896,8 @@ var menu = [{
 		des: "IGN Entertainment Youtube game reviews, trailers, and walkthroughs.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ignentertainment",
 		ext: "https://www.youtube.com/user/IGNEntertainment",
-		img: "IGN"
+		img: "IGN",
+		hash: "iG"
 	}
 
 	,
@@ -3552,7 +3907,8 @@ var menu = [{
 		des: "Forbes highlights business, entrepreneurship, wealth, investing and leadership.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=forbes",
 		ext: "https://www.youtube.com/user/Forbes",
-		img: "Forbes"
+		img: "Forbes",
+		hash: "oR"
 	}
 
 	,
@@ -3562,7 +3918,8 @@ var menu = [{
 		des: "Fox News Youtube dedicated to delivering breaking news as well as political and business news.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxnewschannel",
 		ext: "https://www.youtube.com/user/FoxNewsChannel",
-		img: "FoxNews"
+		img: "FoxNews",
+		hash: "oX"
 	}
 
 	,
@@ -3572,7 +3929,8 @@ var menu = [{
 		des: "Fox Sports Youtube exclusive highlights, original programming, and behind the scenes footage.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxsports",
 		ext: "https://www.youtube.com/user/Foxsports",
-		img: "FoxSports"
+		img: "FoxSports",
+		hash: "Xs"
 	}
 
 	,
@@ -3582,7 +3940,8 @@ var menu = [{
 		des: "Game Trailers Youtube dedicated to archiving content from GameTrailers.com.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=gametrailers",
 		ext: "https://www.youtube.com/user/GameTrailers",
-		img: "GameTrailers"
+		img: "GameTrailers",
+		hash: "gT"
 	}
 
 	,
@@ -3592,7 +3951,8 @@ var menu = [{
 		des: "Google Youtube our products, technology, company happenings and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=google",
 		ext: "https://www.youtube.com/user/Google",
-		img: "Google"
+		img: "Google",
+		hash: "eL"
 	}
 
 	,
@@ -3602,7 +3962,8 @@ var menu = [{
 		des: "MLB Youtube home of Major Leage Baseball.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MLB",
 		ext: "https://www.youtube.com/user/MLB",
-		img: "MLB"
+		img: "MLB",
+		hash: "yB"
 	}
 
 	,
@@ -3612,7 +3973,8 @@ var menu = [{
 		des: "MSNBC Youtube the premier destination for in-depth analysis of daily headlines, insightful political commentary and informed perspectives.",
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCaXkIU1QidjPwiAYu6GcHjg",
 		ext: "https://www.youtube.com/channel/UCaXkIU1QidjPwiAYu6GcHjg",
-		img: "MSNBC"
+		img: "MSNBC",
+		hash: "yN"
 	}
 
 	,
@@ -3622,7 +3984,8 @@ var menu = [{
 		des: "MotorTrend Youtube The ultimate automotive streaming service.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=motortrend",
 		ext: "https://www.youtube.com/user/Motortrend",
-		img: "MotorTrend"
+		img: "MotorTrend",
+		hash: "tM"
 	}
 
 	,
@@ -3632,7 +3995,8 @@ var menu = [{
 		des: "NBC Youtube eaturing episode highlights, first looks, and digital exclusives!",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nbc",
 		ext: "https://www.youtube.com/user/NBC",
-		img: "NBC"
+		img: "NBC",
+		hash: "nB"
 	}
 
 	,
@@ -3642,7 +4006,8 @@ var menu = [{
 		des: "NBC News Youtube America's most-watched evening news broadcast.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBCNews",
 		ext: "https://www.youtube.com/user/NBCNews",
-		img: "NBCNews"
+		img: "NBCNews",
+		hash: "nN"
 	}
 
 	,
@@ -3652,7 +4017,8 @@ var menu = [{
 		des: "NBC Sports Youtube premier live events, insightful studio shows, and compelling original programming.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",
 		ext: "https://www.youtube.com/user/2012NBCOlympics",
-		img: "NBC"
+		img: "NBC",
+		hash: "tT"
 	}
 
 	,
@@ -3662,7 +4028,8 @@ var menu = [{
 		des: "NBA Youtube home of the most compelling basketball action from the NBA.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBA",
 		ext: "https://www.youtube.com/user/NBA",
-		img: "NBC"
+		img: "NBC",
+		hash: "uB"
 	}
 
 	,
@@ -3672,7 +4039,8 @@ var menu = [{
 		des: "NewEgg Youtube tech, gaming, DIY, unboxings, overviews, interviews, live event coverage and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newegg",
 		ext: "https://www.youtube.com/user/Newegg",
-		img: "Newegg"
+		img: "Newegg",
+		hash: "eG"
 	}
 
 	,
@@ -3682,7 +4050,8 @@ var menu = [{
 		des: "The New York Times Youtube the standard for the most ambitious and innovative storytelling across features, news and investigations.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=thenewyorktimes",
 		ext: "https://www.youtube.com/user/TheNewYorkTimes",
-		img: "TheNewYorkTimes"
+		img: "TheNewYorkTimes",
+		hash: "yI"
 	}
 
 	,
@@ -3692,7 +4061,8 @@ var menu = [{
 		des: "NFL Youtube highlights from your favorite teams and players, daily fantasy football updates.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nfl",
 		ext: "https://www.youtube.com/user/NFL",
-		img: "NFL"
+		img: "NFL",
+		hash: "lF"
 	}
 
 	,
@@ -3702,7 +4072,8 @@ var menu = [{
 		des: "PBS News Hour Youtube one of the most trusted news programs in television and online.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pbsnewshour",
 		ext: "https://www.youtube.com/user/PBSNewsHour",
-		img: "PBSNewsHour"
+		img: "PBSNewsHour",
+		hash: "yH"
 	}
 
 	,
@@ -3712,7 +4083,8 @@ var menu = [{
 		des: "PCMag Youtube the best product reviews, updated tech news, and tips on how to advance your digital needs.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pcmagazinereviews",
 		ext: "https://www.youtube.com/user/PCMagazineReviews",
-		img: "PCMag"
+		img: "PCMag",
+		hash: "cP"
 	}
 
 	,
@@ -3722,7 +4094,8 @@ var menu = [{
 		des: "People TV Youtube #1 online news source all things pop culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=people",
 		ext: "https://www.youtube.com/user/People",
-		img: "PeopleTV"
+		img: "PeopleTV",
+		hash: "eV"
 	}
 
 	,
@@ -3732,7 +4105,8 @@ var menu = [{
 		des: "Rolling Stone Youtube exclusive videos on music, politics, and culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=rollingstone",
 		ext: "https://www.youtube.com/user/RollingStone",
-		img: "RollingStone"
+		img: "RollingStone",
+		hash: "Ll"
 	}
 
 	,
@@ -3742,7 +4116,8 @@ var menu = [{
 		des: "Sports Illustrated Swimsuit features female fashion models, celebrities and athletes wearing swimwear.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=siswimsuit",
 		ext: "https://www.youtube.com/user/SISwimsuit",
-		img: "SportsIllustratedSwimsuit"
+		img: "SportsIllustratedSwimsuit",
+		hash: "sW"
 	}
 
 	,
@@ -3752,7 +4127,8 @@ var menu = [{
 		des: "Surfer Magazine Youtube award-winning photos, provocative interviews, and journeys to the coolest undiscovered surf spots.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=surfer",
 		ext: "https://www.youtube.com/user/Surfer",
-		img: "Surfer"
+		img: "Surfer",
+		hash: "sU"
 	}
 
 	,
@@ -3762,7 +4138,8 @@ var menu = [{
 		des: "TechCrunch Youtube startups, Internet products, and breaking tech news.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=techcrunch",
 		ext: "https://www.youtube.com/user/TechCrunch",
-		img: "TechCrunch"
+		img: "TechCrunch",
+		hash: "tH"
 	}
 
 	,
@@ -3772,7 +4149,8 @@ var menu = [{
 		des: "Ted Talks Youtube Technology, Entertainment and Design -- plus science, business, global issues, the arts and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCAuUUnT6oDeKwE6v1NGQxug",
 		ext: "https://www.youtube.com/user/TEDtalksDirector",
-		img: "TED"
+		img: "TED",
+		hash: "tT"
 	}
 
 	,
@@ -3782,7 +4160,8 @@ var menu = [{
 		des: "The Telegraph Youtube covering world events, sports, entertainment, technology, motoring, food, fashion, beauty, travel and more.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=telegraphtv",
 		ext: "https://www.youtube.com/user/TelegraphTV",
-		img: "Telegraph"
+		img: "Telegraph",
+		hash: "tL"
 	}
 
 	,
@@ -3792,7 +4171,8 @@ var menu = [{
 		des: "The Verge Youtube videos, reviews, opinion, and technology.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=theverge",
 		ext: "https://www.youtube.com/user/TheVerge",
-		img: "TheVerge"
+		img: "TheVerge",
+		hash: "vH"
 	}
 
 	,
@@ -3802,7 +4182,8 @@ var menu = [{
 		des: "Time Magazine Youtube daily news, interviews, science, technology, politics, health, entertainment, and business updates.",
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA",
 		ext: "https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA",
-		img: "TIME"
+		img: "TIME",
+		hash: "zT"
 	}
 
 	,
@@ -3812,7 +4193,8 @@ var menu = [{
 		des: "TMZ Youtube breaking celebrity news, gossip, and insight.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZ",
 		ext: "https://www.youtube.com/user/TMZ",
-		img: "TMZ"
+		img: "TMZ",
+		hash: "zM"
 	}
 
 	,
@@ -3822,7 +4204,8 @@ var menu = [{
 		des: "TMZ Sports Youtube where sport and celebrity cultures intersect.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZSports",
 		ext: "https://www.youtube.com/user/TMZSports",
-		img: "TMZSports"
+		img: "TMZSports",
+		hash: "sZ"
 	}
 
 	,
@@ -3832,7 +4215,8 @@ var menu = [{
 		des: "UFC Youtube Weigh-ins, Analysis, Highlights, and Interviews.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ufc",
 		ext: "https://www.youtube.com/user/UFC",
-		img: "UFC"
+		img: "UFC",
+		hash: "UF"
 	}
 
 	,
@@ -3842,7 +4226,8 @@ var menu = [{
 		des: "USA Today Youtube Investigative Journalism, National and Local News.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=usatoday",
 		ext: "https://www.youtube.com/user/USAToday",
-		img: "USAToday"
+		img: "USAToday",
+		hash: "sY"
 	}
 
 	,
@@ -3852,7 +4237,8 @@ var menu = [{
 		des: "Vice News Youtube is the breaking, break-through news you need.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=vicenews",
 		ext: "https://www.youtube.com/user/ViceNews",
-		img: "ViceNews"
+		img: "ViceNews",
+		hash: "nV"
 	}
 
 	,
@@ -3862,7 +4248,8 @@ var menu = [{
 		des: "Wall Street Journal Youtube dig deeper into the news that matters to you.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",
 		ext: "https://www.youtube.com/user/WSJDigitalNetwork",
-		img: "WSJ"
+		img: "WSJ",
+		hash: "jO"
 	}
 
 	,
@@ -3872,7 +4259,8 @@ var menu = [{
 		des: "WIRED Youtube explores the future of business, innovation, and culture.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wired",
 		ext: "https://www.youtube.com/user/Wired",
-		img: "WIRED"
+		img: "WIRED",
+		hash: "dI"
 	}
 
 ]
