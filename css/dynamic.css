@@ -70,10 +70,8 @@
 .image {
     position: relative;
 }
-.image {
-	min-width: 38% !important;
-}
 .tag {
+	min-width: 38% !important;
     position: relative;
     width: 100%;
 }
@@ -123,7 +121,6 @@
 
 .ago {
     text-transform: uppercase;
-	margin-bottom: 5px;
 	display: inline-block;
     position: relative;
     width: fit-content;

@@ -226,11 +226,13 @@ var image = function (n) {
                 $('#' + n).width('100%')
             } else if ($('#' + n).get(0).naturalWidth <
                 maximum) {
-                $('#' + n).width($('#' + n).get(0)
-                    .naturalWidth + 30).css({
-                    'margin-left': '10px',
-                    'margin-top': '10px'
-                }).parent().width($('#' + n).width() + 10)
+                $('#' + n).width(99).css({
+						'margin': '5px'
+                }).parents('.classic').css({
+					'display': 'flex',
+					'align-items': 'center',
+				}).find('.header, .tag, .addComment')
+					.css('display','none')
             }
             $('#' + n).css('display', 'block')
         })
@@ -647,6 +649,7 @@ var xml = function (e, s, n, post) {
                     } else var cat = ''
                     html =
                         "<div class='item " + i + "' item='" + i + "' ext='" + ref.trim() + "'>" +
+						"<div class='classic'>" +
                         "<div class='header'>" + courtesy +
                         "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
@@ -672,6 +675,7 @@ var xml = function (e, s, n, post) {
                         "<input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
 						"<div class='post'><b>Post</b></div>" +
                         "</form>" +
+						"</div>" +
                         "</div>"
                 }
                 pub.push({
