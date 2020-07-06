@@ -64,10 +64,11 @@ $(document).ready(function() {
 
     $('#main .center, #main .suggestions').remove()
     var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
-	response(false, uri.replace(/\-|\+1/g, ' '), null)
+	response(false, uri.replace(/\-|\+/g, ' '), null)
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri.replace(/\-/g, '+'))
+	populate(id)
 	air(id)
 
 }).on('keyup touch click focusout blur', '#arm #search input[type=text]',

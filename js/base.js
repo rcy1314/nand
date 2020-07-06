@@ -181,7 +181,6 @@ var response =  function (passthrough, n, post) {
             .match(n)) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
-			id = i
         } else if (menu[i].cat.toLowerCase().match(n)) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
@@ -270,12 +269,12 @@ var list = function (n) {
 var populate = function (n) {
 
 	if (!$.isNumeric(n)) var cat = n
-	else if (!n) cat = menu[id].cat
+	else cat = menu[id].cat
 	$('#main .air, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
-        if ($.inArray(menu.indexOf(menu[i]), filter) == -1 &&
+        if (menu.indexOf(menu[id]) != menu.indexOf(menu[i]) &&
             cat == menu[i].cat) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
@@ -297,7 +296,6 @@ var populate = function (n) {
             )
         }
     }
-	filter = []
 }
 
 var air = function (n) {
@@ -329,7 +327,6 @@ var air = function (n) {
             )
         }
     }
-
 }
 
 var progress = function (complete, n) {
@@ -594,9 +591,9 @@ var xml = function (e, s, n, post) {
                     "<div class='courtesy' style='float:left'><img class='id' src='" +
                     img + "'>" +
                     "<a onclick='event.stopPropagation();window.open(\"" +
-                    menu[n].ext + "\")'>" + menu[n].id
+                    menu[n].ext + "\")'><b>" + menu[n].id
                     .match(/([^\/]+)$/g) +
-                    "</a></div>"
+                    "</b></a></div>"
                 if ($(this).find('title:first').text().length > 125)
                     var more =
                         "<div class='more'>more</div>"
@@ -621,10 +618,10 @@ var xml = function (e, s, n, post) {
                         "</div>" +
                         "<div class='yt'>" + "<iframe src='" + src + "'></iframe>" + views + "</div>" +
                         "<div class='tag'>" +
-                        	"<div class='fa-heart-o'></div>" +
-                        	"<div class='fa-comment-o'></div>" +
-                        	"<div class='fa-sticky-note-o' title='Copy Post'></div>" +
-                        	"<div class='fa-bookmark-o' title='Copy Source'></div>" +
+                        	"<div class='ago fa-heart-o'></div>" +
+                        	"<div class='ago fa-comment-o'></div>" +
+                        	"<div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
+                        	"<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
                         	"<input class='url' value='" + ref.trim() + "'>" +
                         	"<input class='share' value='" + share + "'>" +
                         	"<input class='source' value='" + src + "'>" +
