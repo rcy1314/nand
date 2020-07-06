@@ -5,11 +5,11 @@ if (location.href.split('?')[1])
 		if (location.href.match('\\+1'))
 
 			contrast = true
-			var strip = location.href.split('?')[1].replace(/\+1/g, '')
-			var timestamp = location.href.split('?')[1].replace(/\+1/g, '')
+
+	var strip = location.href.split('?')[1].replace(/\+1/g, '')
 	var re = strip.slice(0,6)
 	var id = myDecipher(re)
-	var ts = parseInt(timestamp.slice(6), '36')
+	var ts = parseInt(strip.slice(6), '36')
 	var loc = window.location.origin + '?q=&' + id + ts
 	if (contrast == true) loc = loc + '+1'
 	location.href = loc
