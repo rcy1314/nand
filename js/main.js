@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 }).on('touch click', '.fa-globe', function(e) {
 
-	window.location.href = 'rip.txt'
+	window.location.href = 'maintenance/rip.txt'
 
 }).on('touch click', 'a', function(e) {
 
