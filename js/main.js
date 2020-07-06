@@ -335,10 +335,10 @@ $(document).ready(function() {
 	air(category)
 	progress(true, 100)
 
-}).on('touch click', '#option .fa-circle-thin, #option .fa-circle', function(
+}).on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(
     e) {
 
-    $(this).toggleClass('fa-circle-thin fa-circle')
+    $(this).toggleClass('fa-circle-notch fa-circle')
     if (!location.href.match('\\?q=') &&
         !location.href.match('\\?\\+1') &&
         contrast == false) {
