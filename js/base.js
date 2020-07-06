@@ -268,11 +268,9 @@ var list = function (n) {
 }
 
 var populate = function (n) {
-
-    if (!n) n = 1
+	filter = []
 	if (!$.isNumeric(n)) var cat = n
 	else if (!n) cat = menu[id].cat
-	else cat = menu[n].cat
 	$('#main .air, #main .center, #main .suggestions').remove()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")

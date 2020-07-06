@@ -326,12 +326,12 @@ $(document).ready(function() {
 
 	$('#main .center, #main .suggestions, #main .result, #main .air').remove()
 	$('#main #visit').show()
-	populate(category)
 	var uri = '?q=' + category.toLowerCase()
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
 	state(uri)
 	document.title = category
+	populate(category)
 	air(category)
 	progress(true, 100)
 
