@@ -9,7 +9,7 @@ if (location.href.split('?')[1])
 
 	var re = strip.slice(0,6)
 	var id = myDecipher(re)
-	var ts = parseInt(location.href.split('?')[1].slice(6), '36')
+	var ts = parseInt(strip.slice(6), '36')
 	var loc = window.location.origin + '?q=&' + id + ts
 	if (contrast == true) loc = loc + '+1'
 	location.href = loc
