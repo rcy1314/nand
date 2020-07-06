@@ -487,7 +487,7 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = ?q=&' +
+                var share = '?q=&' +
                     menu[n].id.toLowerCase().replace(/\/|\.|\s/g,
                         '+') + '#' + gen
                 if (contrast == true) share = share + '+1'
