@@ -491,7 +491,7 @@ var xml = function (e, s, n, post) {
                     menu[n].id.toLowerCase().replace(/\/|\.|\s/g,
                         '+') + '#' + gen
                 if (contrast == true) share = share + '+1'
-				share = (myCipher(share))
+				share = window.location.orgin + '?' + (myCipher(share))
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {
