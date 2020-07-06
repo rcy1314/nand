@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~/acktic.github.io/maintenance
+./rip.sh > rip.txt
+git add -A rip.txt
+git push
