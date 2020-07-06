@@ -487,11 +487,11 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = window.location.origin + '/?q=&' +
+                var share = ?q=&' +
                     menu[n].id.toLowerCase().replace(/\/|\.|\s/g,
                         '+') + '#' + gen
                 if (contrast == true) share = share + '+1'
-				share = window.location.orgin + '?' + (myCipher(share))
+				share = window.location.orgin + '/?' + (myCipher(share))
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {
