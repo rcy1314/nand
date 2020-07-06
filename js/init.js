@@ -1,17 +1,24 @@
 const myDecipher = decipher('mySecretSalt')
 
 if (location.href.split('?')[1])
-	if (location.href.split('?')[1].match(/^[a-z0-9]+$/i)) {
-	var re = myDecipher(location.href.split('?')[1])
-	var id = re.slice(0, 3)
-	var ts = parseInt(re.substring(3), '36')
-	location.href = window.location.origin + '?q=&' + id + ts
+	if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i)) {
+		if (location.href.match('\\+1')){
 
+			contrast = true
+			var strip = location.href.split('?')[1].replace(/\+1/g, '')
+
+	}
+	var re = strip.slice(0,6)
+	var id = myDecipher(re)
+	var ts = parseInt(location.href.split('?')[1].slice(6), '36')
+	var loc = window.location.origin + '?q=&' + id + ts
+	if (contrast == true) loc = loc + '+1'
+	location.href = loc
 	}
 
 if (location.href.match('\\+1'))
 
-        contrast = true
+	contrast = true
 
 if (location.search.split('?q=')[1]) {
 
