@@ -141,6 +141,7 @@
     margin: 0 auto !important;
     display: block;
     width: 52px;
+	left: 25px !important;
 }
 
 .suggestions {
