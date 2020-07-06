@@ -26,7 +26,7 @@ var visual = function (n) {
         })
 
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#fff')
+    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
         $('svg circle').css('stroke', 'url(#gradientOpposite)')
         $('.right, .left').css({
@@ -70,7 +70,7 @@ var visual = function (n) {
                 'color': '#222'
             })
 		$('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-    	$('.fa-bookmark, .fa-comment, .fa-sticky-note').css('color', '#000')
+    	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
         $('svg circle').css('stroke', 'url(#gradientInvert)')
         $('.right, .left').css({
 			'background-color': 'rgba(255,255,255,.5)',
@@ -268,7 +268,7 @@ var list = function (n) {
 }
 
 var populate = function (n) {
-	filter = []
+
 	if (!$.isNumeric(n)) var cat = n
 	else if (!n) cat = menu[id].cat
 	$('#main .air, #main .center, #main .suggestions').remove()
@@ -297,6 +297,7 @@ var populate = function (n) {
             )
         }
     }
+	filter = []
 }
 
 var air = function (n) {

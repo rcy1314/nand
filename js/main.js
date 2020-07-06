@@ -176,6 +176,7 @@ $(document).ready(function() {
 		.removeClass('fa-comment-o').addClass('fas fa-comments')
     $('.' + item + ' .addComment .comment').val('')
 	e.preventDefault()
+	visual()
 
 }).on('submit', '#arm #search', function(e) {
 
@@ -438,6 +439,7 @@ $(document).ready(function() {
     document.execCommand('copy')
     $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
     e.stopPropagation()
+	visual()
 
 }).on('touch click', '#main .center .channel .item .image .img', function(e) {
 
@@ -447,6 +449,7 @@ $(document).ready(function() {
     else $(this).parent().parent().find('.fa-heart-o, .fa-gratipay')
         .toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
+	visual()
 
 }).on('touch click', '#main .center .channel .item .pub .more', function(e) {
 
