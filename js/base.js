@@ -496,8 +496,8 @@ var xml = function (e, s, n, post) {
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
                 var share = menu[n].hash + '#' + (gen).toString(36)
-				share = window.location.origin + '/?' + myCipher(share)
                 if (contrast == true) share = share + '+1'
+				share = window.location.origin + '/?' + myCipher(share)
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {
