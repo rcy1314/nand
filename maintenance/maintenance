@@ -2,5 +2,5 @@
 cd ~/acktic.github.io/maintenance
 ./rip.sh > rip.txt
 git add rip.txt
-git commit -m "$(curl -s http://whatthecommit.com/index.txt)"
+git commit -m "maintenance"
 git push
