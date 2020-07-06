@@ -1,3 +1,4 @@
+var strip
 const myDecipher = decipher('mySecretSalt')
 
 if (location.href.split('?')[1])
@@ -5,7 +6,7 @@ if (location.href.split('?')[1])
 		if (location.href.match('\\+1')){
 
 			contrast = true
-			var strip = location.href.split('?')[1].replace(/\+1/g, '')
+			strip = location.href.split('?')[1].replace(/\+1/g, '')
 
 	}
 	var re = strip.slice(0,6)
