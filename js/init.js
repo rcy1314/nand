@@ -1,3 +1,9 @@
+const myDecipher = decipher('mySecretSalt')
+
+if (location.href.split('?')[1])
+	if(location.href.split('?')[1].match(/^[a-z0-9]+$/i))
+	location.href = myDecipher(location.search.split('?')[1])
+
 if (location.href.match('\\+1'))
 
         contrast = true

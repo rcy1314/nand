@@ -414,6 +414,7 @@ var xml = function (e, s, n, post) {
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
+	const myCipher = cipher('mySecretSalt')
     document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progress(false, Math.floor(Math.random() * (55 - 25 + 1) +
         25))
@@ -486,11 +487,11 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = window.location.origin + '/?q=' +
-                    search + '&' +
+                var share = window.location.origin + '/?q=&' +
                     menu[n].id.toLowerCase().replace(/\/|\.|\s/g,
                         '+') + '#' + gen
                 if (contrast == true) share = share + '+1'
+				share = (myCipher(share))
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {
