@@ -5,7 +5,7 @@ if (location.href.split('?')[1])
 	var re = myDecipher(location.href.split('?')[1])
 	var id = re.slice(0, 3)
 	var ts = parseInt(re.substring(3), '36')
-	location.href = 'file:///home/ack/acktic.github.io/index.html?q=&' + id + ts
+	location.href = window.location.origin + '?q=&' + id + ts
 
 	}
 
