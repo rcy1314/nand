@@ -15,6 +15,11 @@ $(document).ready(function() {
 
 	window.location.href = window.location.origin
 
+}).on('touch click', '#option .fa-git', function(e) {
+
+	window.location.href = 
+		'https://github.com/acktic/acktic.github.io'
+
 }).on('touch click', '#arm #search #input .icon', function(e) {
 
 	$('#arm #search #input input[type=text]').focus()
