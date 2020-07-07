@@ -422,7 +422,6 @@ var xml = function (e, s, n, post) {
     if (e == 'search') {
         uri = cors + menu[n].uri + s + '&format=RSS'
     } else uri = cors + menu[n].uri
-	const myCipher = cipher('mySecretSalt')
     document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
     progress(false, Math.floor(Math.random() * (55 - 25 + 1) +
         25))
@@ -467,8 +466,11 @@ var xml = function (e, s, n, post) {
                         'href')
                     var dst = zulu($(this).find('updated')
                         .text());
-                    var gen = new Date($(this).find(
-                        'updated').text()).getTime()
+                    var gen = $(this).find(
+                        'updated').text().toLocaleString()
+					gen = btoa(gen
+						.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+						.toString().replace(/\:/g, ''))
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text()
@@ -476,8 +478,10 @@ var xml = function (e, s, n, post) {
                         var dst = zulu($(this).find('pubDate')
                             .text());
                         var gen = new Date($(this).find(
-                                'pubDate').text())
-                            .getTime()
+                                'pubDate').text()).toLocaleString()
+						gen = btoa(gen
+							.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+							.toString().replace(/\:/g, ''))
                     } else if ($(this).find(
                             'dc\\:date, date').text()) {
                         var dst = zulu($(this).find(
@@ -495,9 +499,9 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = menu[n].hash + '#' 
+                var share = menu[n].hash 
 				var ts = (gen).toString(36)
-				share = window.location.origin + '/?' + myCipher(share) + ts
+				share = window.location.origin + '/?' + share + ts
                 if ($(this).find('content').text().match(
                         /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
                     )) {
@@ -694,7 +698,8 @@ var xml = function (e, s, n, post) {
                     return b.since - a.since
                 })
                 $.each(pub, function(i) {
-                    if (pub[i].since == post)
+					console.log(atob(pub[i].since) + ' ' + post)
+                    if (atob(pub[i].since) == post)
                         local = i
                 })
             })
