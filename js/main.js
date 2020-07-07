@@ -72,10 +72,30 @@ $(document).ready(function() {
 	populate(id)
 	air(id)
 
-}).on('keyup touch click focusout blur', '#arm #search input[type=text]',
+}).on('keyup touch click focusin focusout blur', '#arm #search input[type=text]',
 
     function(e) {
 		$this = $(this)
+		if (e.type == 'focusin') {
+				$(this).val('')
+				if ($('#arm #search #input .icon').hasClass('slide')) {
+					$(this).css({
+        	    	    'caret-color': '#e4e4e4',
+						'padding-left': '30px',
+						'text-align': 'left'
+					})
+				} else {
+					setTimeout(function () {
+            			$this.css({
+            		    	'caret-color': '#e4e4e4',
+							'padding-left': '30px',
+            	    		'text-align': 'left',
+	            		})
+					}, 500)
+				$('#arm #search #input .icon').addClass('slide')
+			}
+			return false
+		}
         if (e.type == 'touch' || e.type == 'click' ||
 			$('#arm #search input[type=text]').val().length == -1){
 			$('#arm #search #match').show()
