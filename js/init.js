@@ -6,6 +6,7 @@ if (location.href.split('?')[1])
 		var ts = atob(location.href.split('?')[1].slice(2, 10))
 		var loc = window.location.origin + '?q=&' + id + '#' + ts
 		if (contrast == true) loc = loc + '+1'
+		console.log(loc)
 		location.href = loc
 	}
 
