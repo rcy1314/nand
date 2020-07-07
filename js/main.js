@@ -2,14 +2,17 @@ $(document).ready(function() {
 
     $('#input').css('display', 'block')
 
-}).on('touch click', '#arm', function(e) {
+}).on('touch click', '#arm, #option', function(e) {
 
-	if (!$('#arm #search input[type=text]').is(':focus'))
+	if (!$('#arm #search input[type=text]').is(':focus')) {
 		$('#arm #search #match').hide()
+		$('#arm #search #input .icon').removeClass('slide')
+	}
 
 }).on('touch click', '#main', function(e) {
 
 	$('#arm #search #match').hide()
+	$('#arm #search #input .icon').removeClass('slide')
 
 }).on('touch click', '#arm #home', function(e) {
 
@@ -84,7 +87,7 @@ $(document).ready(function() {
 						'padding-left': '30px',
 						'text-align': 'left'
 					})
-				} else {
+				} else if (!$('#arm #search #input .icon').hasClass('slide')) {
 					setTimeout(function () {
             			$this.css({
             		    	'caret-color': '#e4e4e4',
@@ -93,7 +96,7 @@ $(document).ready(function() {
 	            		})
 					}, 500)
 				$('#arm #search #input .icon').addClass('slide')
-			}
+				}
 			return false
 		}
         if (e.type == 'touch' || e.type == 'click' ||
@@ -118,7 +121,7 @@ $(document).ready(function() {
 					'padding-left': '30px',
 					'text-align': 'left'
 				})
-			} else {
+			} else if (!$('#arm #search #input .icon').hasClass('slide')) {
 				setTimeout(function () {
             		$this.css({
             	    	'caret-color': '#e4e4e4',
@@ -134,7 +137,7 @@ $(document).ready(function() {
                 'caret-color': 'transparent',
 				'padding': '0',
                 'text-align': 'center'
-            }).val('Search').siblings('.icon').removeClass('slide')
+            }).val('Search').siblings('.icon')
         if ($(this).val() != 'Search') var keyup = $(
             this).val()
         if (e.type == 'keyup' && e.keyCode == 13) {
