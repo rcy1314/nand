@@ -2,8 +2,8 @@ const myDecipher = decipher('mySecretSalt')
 
 if (location.href.split('?')[1])
 	if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i)) {
-		var id = myDecipher(location.href.split('?')[1].slice(0, 6))
-		var ts = parseInt(location.href.split('?')[1].slice(6, 12), '36')
+		var id = myDecipher(location.href.split('?')[1].slice(0, 5))
+		var ts = parseInt(location.href.split('?')[1].slice(5, 11), '36')
 		var loc = window.location.origin + '?q=&' + id + ts
 		if (location.href.match('\\+1')) loc = loc + '+1'
 			location.href = loc
