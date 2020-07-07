@@ -64,8 +64,8 @@ $(document).ready(function() {
 
     $('#main .center, #main .suggestions').remove()
     var uri = menu.indexOf(menu[id])
-	response(false, menu[uri].id.toLowerCase().replace(/\s|\//g, '-'), null)
-	uri = menu[uri].id.toLowerCase().replace(/\s|\//g, '+')
+	response(false, menu[uri].id.toLowerCase().replace(/\s|\/|\./g, ' '), null)
+	uri = menu[uri].id.toLowerCase().replace(/\s|\/|\./g, '+')
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
     state('?q=' + uri)
