@@ -698,7 +698,6 @@ var xml = function (e, s, n, post) {
                     return b.since - a.since
                 })
                 $.each(pub, function(i) {
-					console.log(atob(pub[i].since) + ' ' + post)
                     if (atob(pub[i].since) == post)
                         local = i
                 })
