@@ -467,23 +467,17 @@ var xml = function (e, s, n, post) {
                         'href')
                     var dst = zulu($(this).find('updated')
                         .text());
-                    var gen = $(this).find(
-                        'updated').text().toLocaleString()
-					gen = gen
-						.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
-						.toString().replace(/\:/g, '')
-					console.log(gen)
+                    var gen = new Date($(this).find(
+                        'updated').text()).getTime()
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text()
                         .length > 0) {
                         var dst = zulu($(this).find('pubDate')
                             .text());
-                        var gen = $(this).find(
-                                'pubDate').text().toLocaleString()
-						gen = gen
-							.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
-							.toString().replace(/\:/g, '')
+                        var gen = new Date($(this).find(
+                                'pubDate').text())
+                            .getTime()
                     } else if ($(this).find(
                             'dc\\:date, date').text()) {
                         var dst = zulu($(this).find(
