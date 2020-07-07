@@ -466,6 +466,8 @@ var xml = function (e, s, n, post) {
                         'href')
                     var dst = zulu($(this).find('updated')
                         .text());
+                    var since = new Date($(this).find(
+                        'updated').text()).getTime()
                     var gen = $(this).find(
                         'updated').text().toLocaleString()
 					gen = parseInt(gen
@@ -478,6 +480,8 @@ var xml = function (e, s, n, post) {
                         .length > 0) {
                         var dst = zulu($(this).find('pubDate')
                             .text());
+                        var since = new Date($(this).find(
+                                'pubDate').text())
                         var gen = new Date($(this).find(
                                 'pubDate').text()).toLocaleString()
 						gen = parseInt(gen
@@ -693,14 +697,15 @@ var xml = function (e, s, n, post) {
                 }
                 pub.push({
                     element: i,
-                    since: gen,
-                    post: html
+                    since: since,
+                    post: html,
+					gen: gen
                 })
                 pub.sort(function(a, b) {
                     return b.since - a.since
                 })
                 $.each(pub, function(i) {
-                    if(parseInt(pub[i].since, 36) == post)
+                    if(parseInt(pub[i].gen, 36) == post)
                         local = i
                 })
             })

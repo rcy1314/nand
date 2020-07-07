@@ -1,7 +1,6 @@
 if (location.href.split('?')[1])
 	if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i)) {
-		if (location.href.match('\\+1'))
-			contrast = true
+		if (location.href.match('\\+1')) contrast = true
 		var id = location.href.split('?')[1].slice(0, 2)
 		var i = menu.findIndex((item) => item.hash === id)
 		var ts = parseInt(location.href.split('?')[1].slice(2), 36)
