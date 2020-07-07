@@ -468,9 +468,10 @@ var xml = function (e, s, n, post) {
                         .text());
                     var gen = $(this).find(
                         'updated').text().toLocaleString()
-					gen = btoa(gen
+					gen = parseInt(gen
 						.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
 						.toString().replace(/\:/g, ''))
+							.toString(36)
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text()
@@ -479,9 +480,10 @@ var xml = function (e, s, n, post) {
                             .text());
                         var gen = new Date($(this).find(
                                 'pubDate').text()).toLocaleString()
-						gen = btoa(gen
+						gen = parseInt(gen
 							.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
 							.toString().replace(/\:/g, ''))
+								.toString(36)
                     } else if ($(this).find(
                             'dc\\:date, date').text()) {
                         var dst = zulu($(this).find(
@@ -698,7 +700,7 @@ var xml = function (e, s, n, post) {
                     return b.since - a.since
                 })
                 $.each(pub, function(i) {
-                    if (atob(pub[i].since) == post)
+                    if(parseInt(pub[i].since, 36) == post)
                         local = i
                 })
             })

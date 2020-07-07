@@ -3,7 +3,7 @@ if (location.href.split('?')[1])
 		if (location.href.match('\\+1'))
 			contrast = true
 		var id = location.href.split('?')[1].slice(0, 2)
-		var ts = atob(location.href.split('?')[1].slice(2, 10))
+		var ts = parseInt(location.href.split('?')[1].slice(2), 36)
 		var loc = window.location.origin + '?q=&' + id + '#' + ts
 		if (contrast == true) loc = loc + '+1'
 		location.href = loc
