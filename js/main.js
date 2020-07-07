@@ -157,10 +157,10 @@ $(document).ready(function() {
         }
         visual()
 
-}).on('submit', '#main .center .channel .item .addComment', function(e) {
+}).on('submit', '#main .center .channel .item .classic .addComment', function(e) {
 
     if ($(this).children('.comment').val() != '')
-        item = $(this).parent().attr('item')
+        item = $(this).parents('.item').attr('item')
     if ($('.' + item + ' .add').length >= 3) {
         $('.' + item + ' .add:last').remove()
         $('.' + item + ' .add:first').before(
