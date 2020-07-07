@@ -63,11 +63,12 @@ $(document).ready(function() {
 }).on('touch click', '#main .center #bottom', function(e) {
 
     $('#main .center, #main .suggestions').remove()
-    var uri = location.search.split('?q=')[1].match(/[^&^\+1]+/g)[0]
-	response(false, uri.replace(/\-|\+/g, ' '), null)
+    var uri = menu.indexOf(menu[id])
+	response(false, menu[uri].id.toLowerCase().replace(/\s|\//g, '-'), null)
+	uri = menu[uri].id.toLowerCase().replace(/\s|\//g, '+')
 	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 	else if (contrast == true) uri = uri + '+1'
-    state('?q=' + uri.replace(/\-/g, '+'))
+    state('?q=' + uri)
 	populate(id)
 	air(id)
 

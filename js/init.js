@@ -3,10 +3,10 @@ if (location.href.split('?')[1])
 		if (location.href.match('\\+1'))
 			contrast = true
 		var id = location.href.split('?')[1].slice(0, 2)
+		var i = menu.findIndex((item) => item.hash === id)
 		var ts = parseInt(location.href.split('?')[1].slice(2), 36)
-		var loc = window.location.origin + '?q=&' + id + '#' + ts
-		if (contrast == true) loc = loc + '+1'
-		location.href = loc
+		response(true, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), ts)
+		visual()
 	}
 
 if (location.href.match('\\+1'))
