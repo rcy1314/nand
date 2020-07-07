@@ -118,10 +118,12 @@
     padding: 20px;
     float: right;
 }
-
+.wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
 .ago {
     text-transform: uppercase;
-	display: inline-block;
 	margin-bottom: 5px;
     position: relative;
     width: fit-content;

@@ -52,7 +52,7 @@ var visual = function (n) {
             .css({
                 'background-color': '#fafafa',
                 'border': '1px solid #ddd',
-                'color': '#666'
+                'color': '#aaa'
             })
         $('#arm, #option, .index').css({
             'background-color': '#fff',
@@ -238,7 +238,7 @@ var image = function (n) {
 						'margin': '5px'
                 }).parents('.classic').css({
 					'display': 'flex',
-					'align-items': 'center',
+					'align-items': 'center'
 				}).find('.header, .tag, .addComment')
 					.css('display','none')
             }
@@ -679,11 +679,13 @@ var xml = function (e, s, n, post) {
                         		"<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
                         	"</div>" +
                         "</div>" +
+						"<div class='wrap'>" +
                         "<div class='pub' text='" + escape($(
                             this).find('title:first').text()) + "'>" +
                         $(this).find('title:first').text().truncate(
                             125, true) + more + "</div>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
+						"</div>" +
                         "<input class='url' value='" + ref.trim() + "'>" +
                         "<input class='share' value='" + share + "'>" +
                         "<input class='source' value='" + src + "'>" +
