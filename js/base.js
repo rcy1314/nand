@@ -468,7 +468,10 @@ var xml = function (e, s, n, post) {
                     var dst = zulu($(this).find('updated')
                         .text());
                     var gen = new Date($(this).find(
-                        'updated').text()).getTime()
+                        'updated').text()).toLocaleString()
+					gen = gen
+						.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+						.toString().replace(/\:/g, '')
                 } else if (channel = 'item') {
                     var ref = $(this).find('link').text()
                     if ($(this).find('pubDate').text()
@@ -476,8 +479,10 @@ var xml = function (e, s, n, post) {
                         var dst = zulu($(this).find('pubDate')
                             .text());
                         var gen = new Date($(this).find(
-                                'pubDate').text())
-                            .getTime()
+                                'pubDate').text()).toLocaleString()
+						gen = gen
+							.match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+							.toString().replace(/\:/g, '')
                     } else if ($(this).find(
                             'dc\\:date, date').text()) {
                         var dst = zulu($(this).find(
