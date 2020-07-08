@@ -75,8 +75,8 @@ input {
 
 .icon {
 	position: absolute;
-	left: 70px;
-	top: 8px;
+	left: 67px;
+	top: 9px;
 }
 
 .filter,
@@ -350,14 +350,25 @@ input[type=text] {
     margin: 0 auto;
     display: none;
     z-index: 2;
-    top: 1em;
+    top: 2.2em;
 }
-
+#match:before {
+	content: "";
+	position: absolute;
+	left: 45px;
+	top: -9px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #fff transparent;
+	z-index: 3;
+}
 .listing {
     background-color: #fff;
     position: relative;
     overflow-y: auto;
-    height: 19.1em;
+    height: 22.85em;
     margin: 0 auto;
     width: 16em;
     z-index: 2;
