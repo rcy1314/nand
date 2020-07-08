@@ -325,6 +325,8 @@ $(document).ready(function() {
 		if (translations.indexOf($('#arm #search #match .listing .hover')
 			.attr('response')) > -1) {
 			filter = []
+			$('#main .air, #main .result, #main .center, #main .suggestions')
+				.remove()
 			populate($('.hover').attr('response'))
 			var uri = '?q=' + $('#arm #search #match .listing .hover')
 				.attr('response').toLowerCase()

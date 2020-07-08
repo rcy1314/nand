@@ -286,8 +286,7 @@ var populate = function (n) {
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
-        if (menu.indexOf(menu[id]) != menu.indexOf(menu[i]) &&
-            cat == menu[i].cat) {
+        if (cat == menu[i].cat) {
             var tag = menu[i].id.match(/[^\/]+$/g)
             var hilight = menu[i].des.replace(tag,
                 "<b>" + tag + '</b>')
