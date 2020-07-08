@@ -50,6 +50,9 @@
 	#main .center .quick .left {
 		display: none !important;
 	}
+    #main .center {
+        width: 60% !important;
+    }
 
 }
 
