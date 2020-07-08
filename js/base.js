@@ -13,7 +13,7 @@ var visual = function (n) {
         op = op != true
     else if (n == 1 || n == 0) op = n
     if (op == 1 || contrast == true) {
-        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .listing, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
+        $('#main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a')
             .css({
                 'background-color': '#000',
                 'color': '#fff',
@@ -48,7 +48,7 @@ var visual = function (n) {
                 'color': '#666',
                 'border': 'none'
             })
-        $('input[type=text], .category, .listing')
+        $('input[type=text], .hover, .category')
             .css({
                 'background-color': '#fafafa',
                 'border': '1px solid #ddd',
@@ -56,10 +56,9 @@ var visual = function (n) {
             })
         $('#arm, #option, .index').css({
             'background-color': '#fff',
-            'border': 'none',
             'color': '#666'
         })
-        $('#main, #visit, #bottom, .filter, .populate, .description, .channel, #bottom')
+        $('#main, #visit, #bottom, .hover, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'
@@ -79,11 +78,10 @@ var visual = function (n) {
 			'color': '#666'
 		})
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
-        $('.hover').css('background-color', '#fafafa')
         $('.description, .index').css({
             'border-bottom': '1px solid #ccc'
         })
-        $('.listing, .item, .feed, .suggestions').css('box-shadow',
+        $('.item, .feed, .suggestions').css('box-shadow',
             '1px 1px 6px #eee')
         $('#main, .listing').addClass('invert').removeClass(
             'opposite')

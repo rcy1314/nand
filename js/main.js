@@ -328,7 +328,6 @@ $(document).ready(function() {
 
         if (e.type == 'mouseenter') {
             $('#search .listing .hover').removeClass('hover')
-                .addClass('index')
             $(this).attr('class', 'hover')
         } else if (e.type == 'mouseleave') {
             $('#search .listing .hover').removeClass('hover')
