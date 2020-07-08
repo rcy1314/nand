@@ -727,8 +727,7 @@ var xml = function (e, s, n, post) {
             )
             if ($.isNumeric(local)) {
                 $('#main .center .channel').append(pub[local].post)
-                if ($('#' + pub[local].element).length)
-                    image(pub[local].element, pub[i].src)
+                    image(pub[local].element, pub[local].src)
             } else {
                 $.each(pub, function(i, k) {
                     if (i == quit) return false
