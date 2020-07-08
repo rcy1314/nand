@@ -215,13 +215,16 @@ var response =  function (passthrough, n, post) {
 
 }
 
-var image = function (n) {
+var image = function (n, src) {
 
     var mobile = 1480
     var minimum = 299
     var maximum = 799
-    if ($('#' + n).attr('src')) {
-        $('#' + n).one('load', function() {
+    $('#' + n).on('error', function () {
+		$(this).parents('.classic')
+		.find('.tag, .header')
+		.css('display','none') })
+        .on('load', function() {
             if ($('#' + n).get(0).naturalHeight > mobile) {
                 $('#' + n).addClass('expand min')
 					.width('100%')
@@ -243,8 +246,7 @@ var image = function (n) {
 					.css('display','none')
             }
             $('#' + n).css('display', 'block')
-        })
-    } else $('#' + n).parents('.item').find('.tag, .header').hide()
+        }).attr('src', src)
 }
 
 var list = function (n) {
@@ -671,7 +673,7 @@ var xml = function (e, s, n, post) {
                         "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                         "</div>" +
                         "<div class='image'>" +
-                        	"<img id='" + i + "' style='display:none' src='" + src + "' class='img'>" +
+                        	"<img id='" + i + "' style='display:none' class='img'>" +
                         	"<div class='tag'>" +
                         		"<div class='ago fa-heart-o'></div>" +
                         		"<div class='ago fa-comment-o'></div>" +
@@ -701,6 +703,7 @@ var xml = function (e, s, n, post) {
                     element: i,
                     since: since,
                     post: html,
+					src: src,
 					gen: gen
                 })
                 pub.sort(function(a, b) {
@@ -725,14 +728,12 @@ var xml = function (e, s, n, post) {
             if ($.isNumeric(local)) {
                 $('#main .center .channel').append(pub[local].post)
                 if ($('#' + pub[local].element).length)
-                    image(pub[local].element)
+                    image(pub[local].element, src)
             } else {
                 $.each(pub, function(i, k) {
                     if (i == quit) return false
                     $('#main .center .channel').append(pub[i].post)
-                    if ($('#' + pub[i].element).length) {
-                        image(pub[i].element)
-                    }
+                        image(pub[i].element, pub[i].src)
                 })
             }
             if (!id) id = menu.indexOf(menu[n])
