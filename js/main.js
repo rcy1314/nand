@@ -302,8 +302,12 @@ $(document).ready(function() {
         }
     if (e.type == 'mouseleave') $(this).removeClass('overlay')
     if (e.type == 'touch' || e.type == 'click') {
-		var uri = '?q=' + location.search.split('?q=')[1]
-			.replace(/\?\+1|\+1/g, '').match(/[^&]+/g)[0] +
+		var uri = location.search.split('?q=')[1]
+			.replace(/\+|\?\+1|\+1/g, ' ').match(/[^&]+/g)[0]
+		if ($(this).attr('response').match(uri)) {
+			uri = '?q=' + uri.replace(/\s/g, '+') + '&' +
+			$(this).attr('response')
+		} else uri = '?q=&' + $(this).attr('response')
 			'&' + $(this).attr('response')
 		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 		else if (contrast == true) uri = uri + '+1'
