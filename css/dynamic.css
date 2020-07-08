@@ -124,6 +124,7 @@
 }
 .ago {
     text-transform: uppercase;
+	display: inline-block;
 	margin-bottom: 5px;
     position: relative;
     width: fit-content;
