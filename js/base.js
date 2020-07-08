@@ -650,8 +650,8 @@ var xml = function (e, s, n, post) {
                         "<div class='pub' " +
                         "text='" + escape($(this).find(
                             'title:first').text()) + "'>" +
-                        $(this).find('title:first').text().truncate(
-                            125, true) +
+                        escape($(this).find('title:first').text().truncate(
+                            125, true)) +
                         more + "</div>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
                         "<form class='addComment' action'#'>" +
@@ -684,8 +684,8 @@ var xml = function (e, s, n, post) {
 						"<div class='wrap'>" +
                         "<div class='pub' text='" + escape($(
                             this).find('title:first').text()) + "'>" +
-                        $(this).find('title:first').text().truncate(
-                            125, true) + more + "</div>" +
+                        escape($(this).find('title:first').text().truncate(
+                            125, true)) + more + "</div>" +
                         "<div class='ago'>" + dst[0] + "</div>" +
 						"</div>" +
                         "<input class='url' value='" + ref.trim() + "'>" +
