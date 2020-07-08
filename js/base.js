@@ -42,7 +42,7 @@ var visual = function (n) {
         $('#favicon').attr('href', 'images/opposite.png')
         $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     } else if (op == 0 || contrast == false) {
-        $('.suggestions, .combine, .comment, .channel, .air, .result, .filter, .populate, .feed, .title, .item, .item .pub, .type, .ago, a')
+        $('.air, .result, .suggestions, .combine, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a')
             .css({
                 'background-color': '#fff',
                 'color': '#666',
@@ -159,7 +159,7 @@ function feed(n) {
 
 var response =  function (passthrough, n, post) {
     filter = []
-    $('#main .result, #main .air, #main .center, #main .suggestions').remove()
+    $('#main .fesult, #main .air, #main .center, #main .suggestions').remove()
     $('#main #visit').show()
     if ($('#main .result').length < 1) $('#main').append(
         "<div class='result' style='display:none'></div>")
