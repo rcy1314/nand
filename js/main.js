@@ -66,11 +66,19 @@ $(document).ready(function() {
 }).on('touch click', '#main .center #bottom', function(e) {
 
     $('#main .center, #main .suggestions').remove()
-	var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-	response(false, uri[0].replace(/\s|\/|\.|\+|\-/g, ' '), null)
-	if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-	else if (contrast == true) uri = uri + '+1'
-    state('?q=' + uri[0].replace(/\s/g, '+'))
+	if (location.href.match('\\?q=')) {
+		var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+		response(false, uri[0].replace(/\s|\/|\.|\+|\-/g, ' '), null)
+		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+		else if (contrast == true) uri = uri + '+1'
+	    state('?q=' + uri[0].replace(/\s/g, '+'))
+	} else {
+		uri = menu[id].id.toLowerCase().replace(/\s|\.|\//g, '+')
+		response(false, uri.replace(/\+/g, ' '), null)
+		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+		else if (contrast == true) uri = uri + '+1'
+	    state('?q=' + uri)
+	}
 
 }).on('keyup touch click focusin focusout blur', '#arm #search input[type=text]',
 
