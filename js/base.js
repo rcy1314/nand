@@ -24,7 +24,7 @@ var visual = function (n) {
             'border-bottom': '1px solid #333',
 
         })
-		$('.index, .hover').addClass('contrast')
+		$('.index, .hover').addClass('contrast').removeClass('visual')
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
@@ -57,7 +57,7 @@ var visual = function (n) {
             'background-color': '#fff',
             'color': '#666'
         })
-		$('.index, .hover').addClass('visual')
+		$('.index, .hover').addClass('visual').removeClass('contrast')
         $('#main, #visit, #bottom, .hover, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
