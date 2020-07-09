@@ -393,6 +393,7 @@ input[type=text] {
 .index {
 	border: 1px solid #ddd;
 	border-bottom: none !important;
+    background-color: #fff !important;
     padding-bottom: 15px;
     position: relative;
     padding-top: 15px;
@@ -403,10 +404,18 @@ input[type=text] {
 .hover:last-child {
 	border-bottom: 1px solid #ddd !important;
 }
+.contrast {
+	background-color: #000 !important;
+	color: #fff !important;
+}
+.visual {
+	background-color: #fff !important;
+	color: #000 !important;
+}
 .hover {
 	border: 1px solid #ddd;
 	border-bottom: none !important;
-    background-color: #ddd;
+    background-color: #bbb !important;
     padding-bottom: 15px;
     padding-top: 15px;
     font-size: 12px;

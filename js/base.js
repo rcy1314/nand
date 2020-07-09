@@ -24,7 +24,7 @@ var visual = function (n) {
             'border-bottom': '1px solid #333',
 
         })
-
+		$('.index, .hover').addClass('contrast')
 		$('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     	$('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#fff')
         $('.more').css('color', '#333')
@@ -35,7 +35,6 @@ var visual = function (n) {
         $('.fa-angle-double-left, .fa-angle-double-right').css({
 			'color': '#fff'
 		})
-        $('.hover').css('background-color', '#333')
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
         $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
@@ -48,7 +47,7 @@ var visual = function (n) {
                 'color': '#666',
                 'border': 'none'
             })
-        $('input[type=text], .hover, .category')
+        $('input[type=text], .category')
             .css({
                 'background-color': '#fafafa',
                 'border': '1px solid #ddd',
@@ -58,6 +57,7 @@ var visual = function (n) {
             'background-color': '#fff',
             'color': '#666'
         })
+		$('.index, .hover').addClass('visual')
         $('#main, #visit, #bottom, .hover, .filter, .populate, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',

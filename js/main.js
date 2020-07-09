@@ -327,12 +327,16 @@ $(document).ready(function() {
     function(e) {
 
         if (e.type == 'mouseenter') {
-            $('#search .listing .hover').removeClass('hover')
-            $(this).attr('class', 'hover')
-        } else if (e.type == 'mouseleave') {
-            $('#search .listing .hover').removeClass('hover')
-                .addClass('index')
-        } else if (e.type == 'touch' || e.type == 'click')
+            $('#arm #search #match .listing .hover').attr('class','index')
+			if (contrast == true)
+            	$(this).addClass('hover contrast')
+			else $(this).addClass('hover visual')
+        }
+		if (e.type == 'mouseleave') {
+			if (contrast == true)
+            	$('#arm #search #match .listing .hover').attr('class','index contrast')
+        }
+		if (e.type == 'touch' || e.type == 'click')
 		if (translations.indexOf($('#arm #search #match .listing .hover')
 			.attr('response')) > -1) {
 			filter = []
