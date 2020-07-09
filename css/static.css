@@ -410,7 +410,7 @@ input[type=text] {
 }
 .visual {
 	background-color: #fff !important;
-	color: #000 !important;
+	color: #666 !important;
 }
 .hover {
 	border: 1px solid #ddd;
