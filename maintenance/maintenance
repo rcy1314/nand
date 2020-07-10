@@ -1,6 +1,7 @@
 #!/bin/bash
 cd ~/acktic.github.io/maintenance
 ./rip.sh > rip.txt
+git pull --no-edit
 git add rip.txt
 git commit -m "maintenance"
 git push
