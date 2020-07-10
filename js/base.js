@@ -20,7 +20,7 @@ var visual = function (n) {
                 'border': 'none',
                 'box-shadow': 'none'
             })
-        $('#arm, .description, .comment').css({
+        $('#top, .description, .comment').css({
             'border-bottom': '1px solid #333',
 
         })
@@ -78,7 +78,7 @@ var visual = function (n) {
 			'color': '#666'
 		})
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
-        $('.description, .index').css({
+        $('#top, .description, .index').css({
             'border-bottom': '1px solid #ccc'
         })
         $('.item, .feed, .suggestions').css('box-shadow',
@@ -89,9 +89,6 @@ var visual = function (n) {
             'filter': 'brightness(50%) saturate(20%) invert(90%)'
         })
         $('#favicon').attr('href', 'images/invert.png')
-        $('#arm').css({
-            'border-bottom': '1px solid #ddd'
-        })
         $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     }
     $('.fa-gratipay').css('color', 'lightcoral')
@@ -171,7 +168,7 @@ var response =  function (passthrough, n, post) {
 			exact = i
             id = i
 			break
-        } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == 
+        } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') ==
 			n.toLowerCase()) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
@@ -359,7 +356,7 @@ var progress = function (complete, n) {
                 if ($('#main .air').length == 1) {
                     $('#main .air').show()
                     $('#main').scrollTop($('.air').outerHeight())
-                } 
+                }
 				$('#main').attr('tabindex', -1).focus()
             })
 		visual()
@@ -376,7 +373,7 @@ var suggest = function (n) {
         if ($.inArray(dupe, e) === -1 && menu[e])
             $('#main .suggestions').append(
                 "<div class='combine'>" +
-                "<div title='" + menu[e].id.replace(/\//g, ' ') + 
+                "<div title='" + menu[e].id.replace(/\//g, ' ') +
 				"' response='" + menu[e].id.toLowerCase()
                 .replace(/(\/|\.|\s)/g, '-') + "' search='" + menu[e].cat
                 .toLowerCase() +
@@ -505,7 +502,7 @@ var xml = function (e, s, n, post) {
                     var search = $(
                         '#search input[type=text]').val()
                 else var search = menu[n].cat.toLowerCase()
-                var share = menu[n].hash 
+                var share = menu[n].hash
 				var ts = (gen).toString(36)
 				share = window.location.origin + '/?' + share + ts
                 if ($(this).find('content').text().match(
@@ -661,7 +658,7 @@ var xml = function (e, s, n, post) {
                     if (e == 'search') {
                         var cat =
                             "<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
-                            	ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) + 
+                            	ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) +
 							"</div>"
                     } else var cat = ''
                     html =
@@ -719,7 +716,7 @@ var xml = function (e, s, n, post) {
         		        "<div class='left' style='display:none'><div class='fa-angle-double-left'></div></div>" +
 						"<div class='right'><div class='fa-angle-double-right'></div>" +
 					"</div>" +
-                "</div>" + 
+                "</div>" +
 				"<div class='channel'></div></div>" +
                 "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;...<br></div>"
             )

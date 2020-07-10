@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar {
-    display: block;
+    display: none;
     width: 5px
 }
 
@@ -75,7 +75,7 @@ input {
 
 .icon {
 	position: absolute;
-	left: 67px;
+	left: 60px;
 	top: 9px;
 }
 
@@ -173,7 +173,7 @@ body,
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 105%;
+    height: 100%;
 }
 
 #placeholder {
@@ -329,7 +329,7 @@ svg .border {
     position: relative;
     margin: 0 auto;
     display: none;
-	width: 13em;
+	width: 12em;
     top: .7em;
 }
 

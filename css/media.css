@@ -22,7 +22,7 @@
 	}
 
     #option {
-        position: absolute !important;
+        position: fixed !important;
         width: calc(100% - 20px) !important;
         top: calc(100% - 40px) !important;
         height: 35px !important;
@@ -74,14 +74,46 @@
 }
 
 @media screen and (min-width: 1024px) {
-    #main .center {
-        width: 50% !important;
+    #container {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        width: 100% !important;
+    }
+    #arm {
+      width: 100%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #container {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+        width: 100% !important;
+    }
+    #arm {
+      width: 80%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 2560px) {
-    #main .center {
-        width: 35% !important;
+    #container {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+        width: 100% !important;
+    }
+    #arm {
+      width: 60%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
     }
 }
-
