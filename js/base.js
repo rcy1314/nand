@@ -58,7 +58,7 @@ var visual = function (n) {
             'color': '#666'
         })
 		$('.index, .hover').addClass('visual').removeClass('contrast')
-        $('#main, #visit, #bottom, .hover, .filter, .populate, .description, .channel, #bottom')
+        $('#main, #visit, #bottom, .hover, .description, .channel, #bottom')
             .css({
                 'background-color': '#fafafa',
                 'color': '#666'
@@ -77,6 +77,7 @@ var visual = function (n) {
         $('.fa-angle-double-left, .fa-angle-double-right').css({
 			'color': '#666'
 		})
+      $('.filter, .populate, .description').css('background-color','#efefef')
         $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
         $('#top, .description, .index').css({
             'border-bottom': '1px solid #ccc'

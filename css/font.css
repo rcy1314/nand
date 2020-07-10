@@ -1,13 +1,14 @@
 @font-face {
     font-family: FontAwesome;
     src: url(../fonts/fontawesome-webfont.woff2);
-	font-display: block;
+	  font-display: block;
 }
 
 .fa,
 .far {
 	display: inline-block;
 }
+
 .fa-git,
 .fa-home,
 .fa-code,
@@ -16,7 +17,7 @@
 .fa-terminal,
 .fa-circle-notch {
     margin-left: 20px;
-	font-size: 20px;
+	  font-size: 20px;
 }
 
 .fa-heart,
@@ -84,10 +85,7 @@
 	font-family: "Font Awesome 5 Pro";
 	content:"\f142";
 }
-.fa-bookmark,
-.fa-bookmark-o {
-	float: right !important;
-}
+
 .fa-heart:before {
 	font-family: "Font Awesome 5 Pro";
 	content:"\f004";
@@ -99,6 +97,10 @@
 .fa-bookmark:before {
 	font-family: "Font Awesome 5 Pro";
 	content:"\f02e";
+}
+.fa-bookmark,
+.fa-bookmark-o {
+	float: right !important;
 }
 .fa-sticky-note:before {
 	font-family: FontAwesome;

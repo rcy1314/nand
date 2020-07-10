@@ -26,7 +26,7 @@
         width: calc(100% - 20px) !important;
         top: calc(100% - 40px) !important;
         height: 35px !important;
-		left: -10px !important;
+		    left: -10px !important;
         z-index: 2;
     }
 
@@ -93,10 +93,10 @@
       display: block;
       position: relative;
       margin: 0 auto;
-        width: 100% !important;
+      width: 100% !important;
     }
-    #arm {
-      width: 80%;
+    #main, #arm {
+      width: 60%;
       display: block;
       position: relative;
       margin: 0 auto;
@@ -108,10 +108,10 @@
       display: block;
       position: relative;
       margin: 0 auto;
-        width: 100% !important;
+      width: 100% !important;
     }
-    #arm {
-      width: 60%;
+    #main, #arm {
+      width: 50%;
       display: block;
       position: relative;
       margin: 0 auto;
