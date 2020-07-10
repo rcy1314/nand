@@ -78,7 +78,28 @@
         display: block;
         position: relative;
         margin: 0 auto;
-        width: 60% !important;
+        width: 100% !important;
+    }
+    #arm {
+      width: 100%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #container {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+        width: 100% !important;
+    }
+    #arm {
+      width: 80%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
     }
 }
 
@@ -87,6 +108,12 @@
       display: block;
       position: relative;
       margin: 0 auto;
-      width: 50% !important;
+        width: 100% !important;
+    }
+    #arm {
+      width: 60%;
+      display: block;
+      position: relative;
+      margin: 0 auto;
     }
 }
