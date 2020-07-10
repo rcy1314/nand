@@ -290,6 +290,7 @@ svg .border {
 .id {
     border-radius: 36px;
     position: relative;
+    padding: 1px;
     margin: 10px;
     height: 50px;
     width: 50px;
