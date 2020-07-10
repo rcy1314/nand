@@ -37,8 +37,8 @@ var visual = function (n) {
 		})
         $('#main, .listing').addClass('opposite').removeClass(
             'invert')
-        $('.bottom').attr('src', 'images/opposite.png').css('filter', 'none')
-        $('#favicon').attr('href', 'images/opposite.png')
+        $('.bottom').attr('src', 'images/icon/opposite.png').css('filter', 'none')
+        $('#favicon').attr('href', 'images/icon/opposite.png')
         $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     } else if (op == 0 || contrast == false) {
         $('.air, .result, .suggestions, .combine, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a')
@@ -86,10 +86,10 @@ var visual = function (n) {
             '1px 1px 6px #eee')
         $('#main, .listing').addClass('invert').removeClass(
             'opposite')
-        $('.bottom').attr('src', 'images/transparent.png').css({
+        $('.bottom').attr('src', 'images/icon/transparent.png').css({
             'filter': 'brightness(50%) saturate(20%) invert(90%)'
         })
-        $('#favicon').attr('href', 'images/invert.png')
+        $('#favicon').attr('href', 'images/icon/invert.png')
         $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     }
     $('.fa-gratipay').css('color', 'lightcoral')
