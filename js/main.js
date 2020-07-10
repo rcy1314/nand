@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 }).on('touch click', '#option .fa-git', function(e) {
 
-	window.location.href = 
+	window.location.href =
 		'https://github.com/acktic/acktic.github.io'
 
 }).on('touch click', '#arm #search #input .icon', function(e) {
@@ -71,7 +71,7 @@ $(document).ready(function() {
 		response(false, uri[0].replace(/\s|\/|\.|\+|\-/g, ' '), null)
 		if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
 		else if (contrast == true) uri = uri + '+1'
-	    state('?q=' + uri[0].replace(/\s/g, '+'))
+	    state('?q=' + uri[0].replace(/\-/g, '+'))
 	} else {
 		uri = menu[id].id.toLowerCase().replace(/\s|\.|\//g, '+')
 		response(false, uri.replace(/\+/g, ' '), null)
@@ -293,8 +293,8 @@ $(document).ready(function() {
         $(this).hide()
     $('#main .center .quick .right').show()
 
-}).on('touch click mouseenter mouseleave', 
-	'.air .filter, .result .filter, .air .populate, .result .populate', 
+}).on('touch click mouseenter mouseleave',
+	'.air .filter, .result .filter, .air .populate, .result .populate',
 	function(e) {
 
     if (contrast == false)
@@ -322,7 +322,7 @@ $(document).ready(function() {
 		exit(uri)
     }
 
-}).on('touch click mouseenter mouseleave', 
+}).on('touch click mouseenter mouseleave',
 	'#arm #search #match .listing .index, #arm #search #match .listing .hover',
     function(e) {
 
@@ -431,7 +431,7 @@ $(document).ready(function() {
     xmlResponse(null, null, n, false)
     return false
 
-}).on('touch click', 
+}).on('touch click',
 	'#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark-o',
 	function(e) {
 
@@ -441,7 +441,7 @@ $(document).ready(function() {
     e.stopPropagation()
     visual()
 
-}).on('touch click', 
+}).on('touch click',
 	'#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-gratipay',
 	function(e) {
 
@@ -461,11 +461,11 @@ $(document).ready(function() {
     }, 250)
     e.stopPropagation()
 
-}).on('touch click', 
+}).on('touch click',
 	'#main .center .channel .item .image .tag .fa-sticky-note-o, #main .center .channel .item .image .tag .fa-sticky-note',
 	function(e) {
 
-	if (contrast == true) 
+	if (contrast == true)
 		if (!$(this).parents('.item').find('.share').val().match(/\+1/g))
 			$(this).parents('.item').find('.share').val(
 			$(this).parents('.item').find('.share').val() + '+1')
