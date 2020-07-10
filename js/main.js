@@ -485,30 +485,27 @@ $(document)
     }
     visual()
   })
-  .on('touch click', '#option .fa-user-circle', function(e) {
+  .on('touch click', '#option .fa-code', function(e) {
     var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
       .replace(/\s|\.|\//g, '-')
     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     else if (contrast == true) uri = uri + '+1'
-    state(uri)
-    xmlResponse(null, null, re, null)
+    exit(uri)
     return false
   })
   .on('touch click', '#option .fa-terminal', function(e) {
-    if (!id) id = translations[current]
-    else id = menu[id].cat
+  id = menu[id].cat
     var array = []
     for (i = 1; i <= menu.length - 1; i++) {
       if (menu[i].cat == id) array.push(menu.indexOf(menu[i]))
     }
     var n = array[Math.floor(Math.random() * array.length)]
-    var re = '?q=' + menu[n].cat.toLowerCase() + '&' + menu[n].id.toLowerCase()
+    var uri = '?q=' + menu[n].cat.toLowerCase() + '&' + menu[n].id.toLowerCase()
       .replace(/(\s|\.|\/)/g, '-')
-    if (contrast == true && !location.href.match('\\+1')) re = re + '+1'
+    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     else if (contrast == true) uri = uri + '+1'
-    state(re)
-    xmlResponse(null, null, n, false)
+    exit(uri)
     return false
   })
   .on('touch click',
