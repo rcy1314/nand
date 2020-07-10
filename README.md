@@ -5,8 +5,10 @@
 
 ### Known Issues
 
+* Failed Microsoft Internet Explorer (11.900.18362.0).
 * Nearly half XML responses have no images attached.
-  
+
+
 ### Passed Tests
 
 * Microsoft Edge (44.18362.449.0)
@@ -15,9 +17,9 @@
 * Chromium (83.0.4103.61)
 * Mozilla Firefox (76.0.1)
 * qutebrowser (1.12.0-1)
-* Opera (68.0.3618.104) 
-* SeaMonkey (2.53.2) 
-* Brave (1.9.76) 
+* Opera (68.0.3618.104)
+* SeaMonkey (2.53.2)
+* Brave (1.9.76)
 * LG Web OS
 * Min (1.14)
 
