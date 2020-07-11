@@ -73,6 +73,7 @@ $(document)
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
       if (location.href.match('\\+1'))
         var res = uri[0].replace(/\+1/g, '')
+      else var res = uri[0]
       res = res.replace(/\-|\+/g, ' ')
       response(false, res, null)
       if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
