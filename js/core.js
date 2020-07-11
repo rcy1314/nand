@@ -18,6 +18,12 @@ String.prototype.truncate = function(n, useWordBoundary) {
 
 }
 
+var blank = function (n) {
+
+  window.open(n, '_blank', 'noreferrer')
+
+}
+
 var escape = function (n) {
 
     return n

@@ -580,6 +580,15 @@ $(document)
     })
   .on('touch click', '#main .center .channel .item .image .img', function(e) {
     if ($(this)
+      .parent()
+      .find('img')
+      .hasClass('pub')) window
+        .open($(this)
+          .parents('.item')
+          .attr('ext'),
+            '_blank',
+            'noreferrer')
+    else if ($(this)
       .hasClass('expand min') || $(this)
       .hasClass('expand full')) expand($(this)
       .attr('id'))
