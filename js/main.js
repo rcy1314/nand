@@ -71,17 +71,10 @@ $(document)
       .remove()
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-      response(false, uri[0].replace(/\s|\/|\.|\+|\-/g, ' '), null)
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
+      var res = uri[0].replace(/\+1/g, ' ')
+      response(false, res, null)
+      if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
       state('?q=' + uri[0].replace(/\-/g, '+'))
-    } else {
-      uri = menu[id].id.toLowerCase()
-        .replace(/\s|\.|\//g, '+')
-      response(false, uri.replace(/\+/g, ' '), null)
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
-      state('?q=' + uri)
     }
   })
   .on('keyup touch click focusin focusout blur',
