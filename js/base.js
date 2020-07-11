@@ -466,7 +466,7 @@ var xml = function(e, s, n, post) {
         "</b></a></div>"
       if ($(this).find('title:first').text().length > 125) var more =
         "<div class='more'>more</div>"
-      else var more = "<div class='more'></div>"
+      else var more = ""
       if (src.match(/youtube/g)) {
         if ($(this).find('media\\:statistics, statistics').attr(
             'views')) var views = "<div class='ago views'>views " + $(
