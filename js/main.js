@@ -71,7 +71,9 @@ $(document)
       .remove()
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-      var res = uri[0].replace(/\+1/g, ' ')
+      if (location.href.match('\\+1'))
+        var res = uri[0].replace(/\+1/g, '')
+      res = res.replace(/\-|\+/g, ' ')
       response(false, res, null)
       if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
       state('?q=' + uri[0].replace(/\-/g, '+'))
