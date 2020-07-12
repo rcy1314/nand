@@ -201,7 +201,7 @@ var image = function(n, src) {
         'width': '45%'
       })
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
-      $('#' + n).width('100%').addClass('pub')
+      $('#' + n).width('100%').addClass('expand')
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
       $('#' + n).width(99).css({
         'margin': '5px'

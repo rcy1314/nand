@@ -582,7 +582,7 @@ $(document)
     if ($(this)
       .parent()
       .find('img')
-      .hasClass('pub')) window
+      .hasClass('expand')) window
         .open($(this)
           .parents('.item')
           .attr('ext'),
