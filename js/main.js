@@ -580,18 +580,18 @@ $(document)
     })
   .on('touch click', '#main .center .channel .item .image .img', function(e) {
     if ($(this)
-      .parent()
-      .find('img')
-      .hasClass('expand')) window
-        .open($(this)
-          .parents('.item')
-          .attr('ext'),
-            '_blank',
-            'noreferrer')
-    else if ($(this)
       .hasClass('expand min') || $(this)
       .hasClass('expand full')) expand($(this)
       .attr('id'))
+    else if ($(this)
+        .parent()
+        .find('img')
+        .hasClass('expand')) window
+          .open($(this)
+            .parents('.item')
+            .attr('ext'),
+              '_blank',
+              'noreferrer')
     else $(this)
       .parent()
       .parent()
