@@ -30,7 +30,7 @@ var visual = function(n) {
     $('.more').css('color', '#333')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.right, .left').css({
-      'background-color': 'rgba(0,0,0,.5)',
+      'background-color': 'rgba(33,33,33,.9)',
     })
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'

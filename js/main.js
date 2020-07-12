@@ -491,7 +491,8 @@ $(document)
     return false
   })
   .on('touch click', '#option .fa-terminal', function(e) {
-  id = menu[id].cat
+  if (!id) id = category
+  else id = menu[id].cat
     var array = []
     for (i = 1; i <= menu.length - 1; i++) {
       if (menu[i].cat == id) array.push(menu.indexOf(menu[i]))
