@@ -10,6 +10,7 @@
 
 * Failed Microsoft Internet Explorer (11.900.18362.0).
 * Nearly half XML responses have no images attached.
+* Comments aren't stored anywhere.
 * File size ~30MB
 
 
