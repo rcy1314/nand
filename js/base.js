@@ -36,6 +36,9 @@ var visual = function(n) {
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
+    $('.first').css('cssText','fill: #ef4063 !important')
+    $('.second').css('cssText','fill: #e557c6 !important')
+    $('.third').css('cssText','fill: #ff6289 !important')
     $('#main, .listing').addClass('opposite').removeClass('invert')
     $('.bottom').attr('src', 'images/icon/opposite.png').css('filter', 'none')
     $('#favicon').attr('href', 'images/icon/opposite.png')
@@ -68,6 +71,9 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#222'
     })
+    $('.first').css('cssText','fill: #1fa2ff !important')
+    $('.second').css('cssText','fill: #12d8fa !important')
+    $('.third').css('cssText','fill: #06ffcb !important')
     $('#progressBar').removeClass('responseOpposite').addClass(
       'responseInvert')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
@@ -209,7 +215,7 @@ var image = function(n, src) {
       }).parents('.classic').css({
         'display': 'flex',
         'align-items': 'center'
-      }).find('.header, .tag, .addComment').css('display', 'none')
+      }).find('.fill, .header, .tag, .addComment').css('display', 'none')
     }
     $('#' + n)
     .parents('.image')
@@ -512,15 +518,15 @@ var xml = function(e, s, n, post) {
           "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
           "</div><div class='fill'>" +
           "<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
-          "    <rect y='0' width='2' height='50' fill='#1fa2ff'>" +
+          "    <rect class='first' y='0' width='2' height='50'>" +
           "        <animate attributeName='height' values='50;10;50' begin='0s' dur='1s' repeatCount='indefinite' />" +
           "        <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
           "    </rect> " +
-          "    <rect x='19' y='0' width='2' height='50' fill='#12d8fa'>" +
+          "    <rect class='second' x='19' y='0' width='2' height='50'>" +
           "        <animate attributeName='height' values='50;10;50' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
           "        <animate attributeName='y' values='0;20;0' begin='0.2s' dur='1s' repeatCount='indefinite' />" +
           "    </rect>" +
-          "<rect x='38' y='0' width='2' height='50' fill='#06ffcb'>" +
+          "<rect class='third' x='38' y='0' width='2' height='50'>" +
           "<animate attributeName='height' values='50;10;50' begin='0.6s' dur='1s' repeatCount='indefinite' />" +
           "<animate attributeName='y' values='0;20;0' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
           "</rect>" +
