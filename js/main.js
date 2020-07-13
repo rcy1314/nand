@@ -1,4 +1,4 @@
-tap$(document)
+$(document)
   .ready(function() {
     $('#input')
       .css('display', 'block')
