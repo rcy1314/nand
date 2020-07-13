@@ -1,4 +1,4 @@
-$(document)
+tap$(document)
   .ready(function() {
     $('#input')
       .css('display', 'block')
@@ -583,24 +583,39 @@ $(document)
       visual()
     })
   .on('touch click', '#main .center .channel .item .image .img', function(e) {
-    if ($(this)
-      .hasClass('expand min') || $(this)
-      .hasClass('expand full')) expand($(this)
-      .attr('id'))
-    else if ($(this)
-        .parent()
-        .find('img')
-        .hasClass('expand')) window
-          .open($(this)
-            .parents('.item')
-            .attr('ext'),
-              '_blank',
-              'noreferrer')
-    else $(this)
-      .parent()
-      .parent()
-      .find('.fa-heart-o, .fa-gratipay')
-      .toggleClass('fa-heart-o fab fa-gratipay')
+    if (tap == 0) {
+        // set first click
+        tap = new Date().getTime();
+    } else {
+        // compare first click to this click and see if they occurred within double click threshold
+        if (((new Date().getTime()) - tap) < 300) {
+            // double click occurred
+            $(this)
+              .parent()
+              .parent()
+              .find('.fa-heart-o, .fa-gratipay')
+              .toggleClass('fa-heart-o fab fa-gratipay')
+            e.stopPropagation()
+            visual()
+            tap = 0;
+        } else {
+          if ($(this)
+            .hasClass('expand min') || $(this)
+            .hasClass('expand full')) expand($(this)
+            .attr('id'))
+          else if ($(this)
+              .parent()
+              .find('')
+              .hasClass('expand')) window
+                .open($(this)
+                  .parents('.item')
+                  .attr('ext'),
+                    '_blank',
+                    'noreferrer')
+            // not a double click so set as a new first click
+            tap = 0;
+        }
+    }
     e.stopPropagation()
     visual()
   })

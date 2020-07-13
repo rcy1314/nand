@@ -1,5 +1,6 @@
 var id
 var op = 0
+var tap = 0
 var object = []
 var filter = []
 var contrast = false
