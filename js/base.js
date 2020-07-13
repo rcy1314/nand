@@ -31,7 +31,7 @@ var visual = function(n) {
     $(
       '#container, #main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a'
     ).css({
-      'background-color': '#212121',
+      'background-color': '#000',
       'color': '#fff',
       'border': 'none',
       'box-shadow': 'none'
