@@ -32,11 +32,18 @@
     left: 0;
 }
 
+.fill {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 5em;
+}
+
 .item .pub,
 .item .add {
     justify-content: left;
     margin-left: 10px;
-	margin-top: 5px;
+	  margin-top: 5px;
     font-size: 13px;
     width: 95%;
     left: 0;

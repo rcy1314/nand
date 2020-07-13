@@ -192,7 +192,7 @@ var image = function(n, src) {
   var minimum = 299
   var maximum = 799
   $('#' + n).on('error', function() {
-    $(this).parents('.classic').find('.tag, .header').css('display',
+    $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none')
   }).on('load', function() {
     if ($('#' + n).get(0).naturalHeight > mobile) {
@@ -210,7 +210,11 @@ var image = function(n, src) {
         'align-items': 'center'
       }).find('.header, .tag, .addComment').css('display', 'none')
     }
-    $('#' + n).css('display', 'block')
+    $('#' + n)
+    .parents('.image')
+    .css('display', 'block')
+    .siblings('.fill')
+    .css('display','none')
   }).attr('src', src)
 }
 var list = function(n) {
@@ -505,8 +509,23 @@ var xml = function(e, s, n, post) {
           ref.trim() + "'>" + "<div class='classic'>" +
           "<div class='header'>" + courtesy +
           "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-          "</div>" + "<div class='image'>" + "<img id='" + i +
-          "' style='display:none' class='img'>" + "<div class='tag'>" +
+          "</div><div class='fill'>" +
+          "<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
+          "    <rect y='0' width='2' height='50' fill='#1fa2ff'>" +
+          "        <animate attributeName='height' values='50;10;50' begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "        <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "    </rect> " +
+          "    <rect x='19' y='0' width='2' height='50' fill='#12d8fa'>" +
+          "        <animate attributeName='height' values='50;10;50' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "        <animate attributeName='y' values='0;20;0' begin='0.2s' dur='1s' repeatCount='indefinite' />" +
+          "    </rect>" +
+          "<rect x='38' y='0' width='2' height='50' fill='#06ffcb'>" +
+          "<animate attributeName='height' values='50;10;50' begin='0.6s' dur='1s' repeatCount='indefinite' />" +
+          "<animate attributeName='y' values='0;20;0' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "</rect>" +
+          "</svg></div>" +
+          "<div class='image' style='display:none'>" + "<img id='" + i +
+          "' class='img'>" + "<div class='tag'>" +
           "<div class='ago fa-heart-o'></div>" +
           "<div class='ago fa-comment-o'></div>" +
           "<div class='ago fa-sticky-note-o' title='Copy Post'></div>" +

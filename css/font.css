@@ -9,6 +9,10 @@
 	display: inline-block;
 }
 
+.fa-globe {
+    margin-right: 20px;
+}
+
 .fa-git,
 .fa-home,
 .fa-code,
