@@ -267,6 +267,8 @@ $(document)
       .length) {
       if (translations.indexOf($('#arm #search #match .listing .hover')
           .attr('response')) > -1) {
+        category = $('#arm #search #match .listing .hover')
+          .attr('response')
         populate($('#arm #search #match .listing .hover')
           .attr('response'))
         var uri = '?q=' + $('#arm #search #match .listing .hover')
@@ -417,7 +419,8 @@ $(document)
       if (e.type == 'touch' || e.type == 'click')
         if (translations.indexOf($('#arm #search #match .listing .hover')
             .attr('response')) > -1) {
-          filter = []
+          category = $('#arm #search #match .listing .hover')
+            .attr('response')
           $('#main .air, #main .result, #main .center, #main .suggestions')
             .remove()
           populate($('.hover')
