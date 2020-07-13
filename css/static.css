@@ -5,8 +5,8 @@
 }
 
 ::-webkit-scrollbar {
-    display: none;
-    width: 5px
+    display: block;
+    width: 2px
 }
 
 .invert::-webkit-scrollbar-thumb {

@@ -9,6 +9,21 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World',
   'Youtube'
 ]
+var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
+          "    <rect class='first' y='0' width='2' height='50'>" +
+          "        <animate attributeName='height' values='20;5;20' begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "        <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "    </rect> " +
+          "    <rect class='second' x='19' y='0' width='2' height='50'>" +
+          "        <animate attributeName='height' values='20;5;20' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "        <animate attributeName='y' values='0;20;0' begin='0.2s' dur='1s' repeatCount='indefinite' />" +
+          "    </rect>" +
+          "<rect class='third' x='38' y='0' width='2' height='50'>" +
+          "<animate attributeName='height' values='20;5;20' begin='0.6s' dur='1s' repeatCount='indefinite' />" +
+          "<animate attributeName='y' values='0;20;0' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "</rect>" +
+          "</svg>"
+
 var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
@@ -118,7 +133,7 @@ function expand(n) {
   }
 }
 
-function feed(n) {
+var feed  = function(n) {
   if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
   else if (n >= menu.length - 13) n = 1
   for (var i = n; i <= n + 13; i++) {
@@ -200,28 +215,31 @@ var image = function(n, src) {
   var maximum = 799
   $('#' + n).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
-      'none')
+      'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
     if ($('#' + n).get(0).naturalHeight > mobile) {
-      $('#' + n).addClass('expand min').width('100%').parent().css({
+      $('#' + n).addClass('expand min').width('100%').parents('.item')
+        .find('.image').css({
         'margin': '0 auto',
         'width': '45%'
-      })
+      }).siblings('.fill').html(fill)
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
+        .parents('.item').find('.fill').html(fill)
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(99).css({
-        'margin': '5px'
-      }).parents('.classic').css({
+      $('#' + n).width(99)
+      .parents('.item')
+      .find('.classic').css({
         'display': 'flex',
         'align-items': 'center'
-      }).find('.fill, .header, .tag, .addComment').css('display', 'none')
+      }).find('.header, .tag, .addComment').css('display', 'none')
+      .siblings('.fill').css('left', '18px').html(fill)
     }
     $('#' + n)
-    .parents('.image')
-    .css('display', 'block')
+    .parents('.item').find('.image, .pub').css('display', 'block')
     .siblings('.fill')
-    .css('display','none')
+    .remove()
+  visual()
   }).attr('src', src)
 }
 var list = function(n) {
@@ -517,20 +535,7 @@ var xml = function(e, s, n, post) {
           "<div class='header'>" + courtesy +
           "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
           "</div><div class='fill'>" +
-          "<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
-          "    <rect class='first' y='0' width='2' height='50'>" +
-          "        <animate attributeName='height' values='50;10;50' begin='0s' dur='1s' repeatCount='indefinite' />" +
-          "        <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
-          "    </rect> " +
-          "    <rect class='second' x='19' y='0' width='2' height='50'>" +
-          "        <animate attributeName='height' values='50;10;50' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
-          "        <animate attributeName='y' values='0;20;0' begin='0.2s' dur='1s' repeatCount='indefinite' />" +
-          "    </rect>" +
-          "<rect class='third' x='38' y='0' width='2' height='50'>" +
-          "<animate attributeName='height' values='50;10;50' begin='0.6s' dur='1s' repeatCount='indefinite' />" +
-          "<animate attributeName='y' values='0;20;0' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
-          "</rect>" +
-          "</svg></div>" +
+          "</div>" +
           "<div class='image' style='display:none'>" + "<img id='" + i +
           "' class='img'>" + "<div class='tag'>" +
           "<div class='ago fa-heart-o'></div>" +
@@ -538,10 +543,10 @@ var xml = function(e, s, n, post) {
           "<div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
           "<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
           "</div>" + "</div>" + "<div class='wrap'>" +
-          "<div class='pub' text='" + escape($(this).find(
+          "<div class='pub' style='display:none' text='" + escape($(this).find(
             'title:first').text()) + "'>" + escape($(this).find(
             'title:first').text().truncate(125, true)) + more +
-          "</div>" + "<div class='ago'>" + dst[0] + "</div>" +
+          "</div>" + "<div class='ago' style='display:none'>" + dst[0] + "</div>" +
           "</div>" + "<input class='url' value='" + ref.trim() + "'>" +
           "<input class='share' value='" + share + "'>" +
           "<input class='source' value='" + src + "'>" + cat +
