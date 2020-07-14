@@ -243,13 +243,14 @@ var image = function(n, src) {
       comment(n)
       }
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(99)
+      $('#' + n).width(99).css('margin','10px')
       .parents('.item')
       .find('.classic').css({
         'display': 'flex',
         'align-items': 'center'
       }).find('.header, .tag, .addComment').css('display', 'none')
       .siblings('.fill').css('left', '18px').html(fill)
+      .parents('.item').find('.ago').css('display','inline-block')
     }
     $('#' + n)
     .parents('.item').find('.image, .pub').css('display', 'block')
