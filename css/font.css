@@ -105,6 +105,7 @@
 .fa-bookmark,
 .fa-bookmark-o {
 	float: right !important;
+  margin-right: 5px;
 }
 .fa-sticky-note:before {
 	font-family: FontAwesome;
