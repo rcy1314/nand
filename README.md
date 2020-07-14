@@ -10,8 +10,8 @@
 
 * Failed Microsoft Internet Explorer (11.900.18362.0).
 * Nearly half XML responses have no images attached.
-* Heroku cors-anywhere first response ~7s.
-* Comments aren't stored anywhere.
+* cors-anywhere first response ~7s.
+* Comments aren't stored.
 * File size ~30MB.
 
 

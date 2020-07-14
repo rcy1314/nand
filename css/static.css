@@ -6,7 +6,7 @@
 
 ::-webkit-scrollbar {
     display: block;
-    width: 2px
+    width: 4px
 }
 
 .invert::-webkit-scrollbar-thumb {
@@ -91,7 +91,8 @@ body,
 #main,
 #visit,
 #wrapper,
-#container {
+#container,
+.background {
     overflow: hidden;
     height: 100%;
     width: 100%;
