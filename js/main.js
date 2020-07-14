@@ -599,9 +599,7 @@ $(document)
             .hasClass('expand full')) expand($(this)
             .attr('id'))
           else if ($(this)
-              .parent()
-              .find('')
-              .hasClass('expand')) window
+                .hasClass('expand')) window
                 .open($(this)
                   .parents('.item')
                   .attr('ext'),
