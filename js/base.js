@@ -224,7 +224,8 @@ var image = function(n, src) {
       $('#' + n).addClass('expand min').width('100%').parents('.item')
         .find('.image').css({
         'margin': '0 auto',
-        'width': '45%'
+        'width': '45%',
+        'left': '15px'
       }).siblings('.fill').html(fill)
       .parents('.item').find('.ago').css('display','inline-block')
               var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
