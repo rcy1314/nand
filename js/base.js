@@ -210,14 +210,16 @@ var response = function(passthrough, n, post) {
   })
 }
 var image = function(n, src) {
-  var mobile = 1480
+  var mobile = 1281
   var minimum = 299
   var maximum = 799
   $('#' + n).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
-    if ($('#' + n).get(0).naturalHeight > mobile) {
+    if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
+        .get(0).naturalHeight > maximum && $('#' + n)
+        .get(0).naturalWidth < maximum) {
       $('#' + n).addClass('expand min').width('100%').parents('.item')
         .find('.image').css({
         'margin': '0 auto',
