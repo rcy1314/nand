@@ -240,7 +240,7 @@ var image = function(n, src) {
     .siblings('.fill')
     .remove()
   visual()
-  }).attr('src', src)
+}).attr('src', src).parent().siblings('.fill').html(fill)
 }
 var list = function(n) {
   $('#arm #search #match .listing').empty()
