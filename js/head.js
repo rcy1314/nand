@@ -1166,7 +1166,7 @@ var menu = [{
 	{
 		id: "Reddit/Goddesses",
 		cat: "Social",
-		des: "Goddesses subreddit pretty pictures of pretty girls.",
+		des: "Goddesses subreddit Images of Actresses, Models and all manner of female eye-candy.",
 		uri: "https://www.reddit.com/r/goddesses/.rss",
 		ext: "https://www.reddit.com/r/Goddesses",
 		img: "Black",
@@ -3116,7 +3116,7 @@ var menu = [{
 		ext: "https://cbsnews.com",
 		img: "CBS",
 		hash: "Lw"
-	
+
 	}
 
 	,
