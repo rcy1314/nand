@@ -66,6 +66,18 @@ $(document)
       progress(true, 100)
     }
   })
+  .on('touch click', '#main .center #bottom .previous', function(e) {
+
+    if (id == 1) id = menu.length
+    exit('?q=&' + menu[id - +1].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+
+  })
+  .on('touch click', '#main .center #bottom .next', function(e) {
+
+    if (id == menu.length - 1) id = 0
+    exit('?q=&' + menu[id + +1].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+
+  })
   .on('touch click', '#main .center #bottom', function(e) {
     $('#main .center, #main .suggestions')
       .remove()
@@ -581,9 +593,13 @@ $(document)
     if (tap == 0) {
         // set first click
         tap = new Date().getTime();
+        img = $(this).attr('id')
+        setTimeout(function () {
+          tap = 0
+        }, 800)
     } else {
         // compare first click to this click and see if they occurred within double click threshold
-        if (((new Date().getTime()) - tap) < 300) {
+        if (((new Date().getTime()) - tap) < 200) {
             // double click occurred
             $(this)
               .parent()
@@ -593,7 +609,7 @@ $(document)
             e.stopPropagation()
             visual()
             tap = 0;
-        } else {
+        } else if (img == $(this).attr('id')){
           if ($(this)
             .hasClass('expand min') || $(this)
             .hasClass('expand full')) expand($(this)
@@ -607,6 +623,7 @@ $(document)
                     'noreferrer')
             // not a double click so set as a new first click
             tap = 0;
+            img = $(this).attr('id')
         }
     }
     e.stopPropagation()

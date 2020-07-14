@@ -1,4 +1,5 @@
 var id
+var img
 var op = 0
 var tap = 0
 var object = []
@@ -631,7 +632,7 @@ var xml = function(e, s, n, post) {
     }
     if (!id) id = menu.indexOf(menu[n])
     $('#main .center').append(
-      "<div id='bottom'><img class='bottom'></div>")
+      "<div id='bottom'><button class='previous'>Prev</button><img class='bottom'><button class='next'>Next</button></div>")
     clearInterval(complete)
     progress(true, 100)
     suggest(id)

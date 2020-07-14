@@ -40,6 +40,7 @@
     align-items: center;
     display: flex;
     height: 5em;
+    margin-left: 30px !important;
 }
 
 .item .pub,
@@ -147,17 +148,28 @@
 
 #bottom {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     bottom: 2em;
     height: 2em;
     width: 100%;
 }
 
+.previous {
+    float: left !important;
+}
+
 .bottom {
     position: relative !important;
     margin: 0 auto !important;
-    display: block;
+    display: inline-block;
+    left: 25px !important;
     width: 52px;
-	left: 25px !important;
+}
+
+.next {
+    float: right !important;
 }
 
 .suggestions {
