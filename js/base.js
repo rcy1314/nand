@@ -223,6 +223,7 @@ var image = function(n, src) {
         'margin': '0 auto',
         'width': '45%'
       }).siblings('.fill').html(fill)
+      .parents('.item').find('.ago').css('display','inline-block')
               var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
               for (y= 0; y <= re; y++ ){
               comment(n)
