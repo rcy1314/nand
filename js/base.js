@@ -223,9 +223,20 @@ var image = function(n, src) {
         'margin': '0 auto',
         'width': '45%'
       }).siblings('.fill').html(fill)
+              var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+              for (y= 0; y <= re; y++ ){
+              comment(n)
+              }
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
-        .parents('.item').find('.fill').html(fill)
+      .parents('.item')
+      .find('.ago')
+      .css('display','inline-block')
+      .parents('.item').find('.fill').html(fill)
+      var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+      for (y= 0; y <= re; y++ ){
+      comment(n)
+      }
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
       $('#' + n).width(99)
       .parents('.item')
@@ -263,6 +274,31 @@ var list = function(n) {
       $('#arm #search #match').show()
     }, 50)
   }
+}
+var comment = function (n) {
+	var emoji = []
+	var comment = []
+	var e = Math.floor(Math.random() * (2 - 0 + 1) + 1)
+	for (i = 0; i <= e; i++) {
+		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
+	}
+	$.each(comment, function(k, i) {
+		emoji.push(emojis[comment[k]])
+	})
+			$.ajax({
+			  url: cors + 'https://randomuser.me/api/',
+			  dataType: 'json',
+			  success: function(api) {
+				$('.' + n + ' .ago:last').after(
+						"<div class='add' style='width:100%'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
+							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
+							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+							emoji.join('') +
+						"</div>")
+				}
+			})
+			$('.' + n + ' .addComment .comment').val('')
+			visual()
 }
 var populate = function(n) {
   if (!$.isNumeric(n)) var cat = n

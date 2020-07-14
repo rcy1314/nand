@@ -12,13 +12,13 @@
     }
 
     #main .center, #main .channel {
-        width: 100%;
-		margin: 0;
+        width: 100% !important;
+		    margin: 0;
     }
 
 	#main .item, #main .feed {
-		box-shadow: none !important;
-		border: none !important;
+		    box-shadow: none !important;
+		    border: none !important;
 	}
 
     #option {
@@ -41,24 +41,14 @@
 	#main .suggestions {
 		display: none !important;
 	}
-
-}
-
-@media screen and (max-width: 768px) {
-
-	#main .center .quick .right,
+  #main .center .quick .right,
 	#main .center .quick .left {
 		display: none !important;
 	}
-    #main .center {
-        width: 60% !important;
-    }
-
 }
-
 @media screen and (min-width: 768px) {
     #main .center {
-        width: 60% !important;
+        width: 65% !important;
     }
 
     #main .air .populate,
