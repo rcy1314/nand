@@ -227,6 +227,7 @@ var image = function(n, src) {
       }).siblings('.fill').html(fill)
       .parents('.item').find('.ago').css('display','inline-block')
               var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+              if (category == 'Social')
               for (y= 0; y <= re; y++ ){
               comment(n)
               }
@@ -237,6 +238,7 @@ var image = function(n, src) {
       .css('display','inline-block')
       .parents('.item').find('.fill').html(fill)
       var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+      if (category == 'Social')
       for (y= 0; y <= re; y++ ){
       comment(n)
       }
@@ -402,6 +404,7 @@ var xml = function(e, s, n, post) {
   obj = []
   var local
   var pub = []
+  category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
