@@ -238,16 +238,11 @@ $(document)
       .length >= 3) {
       $('.' + item + ' .add:last')
         .remove()
+    }
       $('.' + item + ' .add:first')
         .before("<div class='add'><b>" + $('.' + item +
             ' .addComment .comment')
           .val() + "</div>")
-    } else {
-      $('.' + item + ' .ago:last')
-        .after("<div class='add'><b>" + $('.' + item +
-            ' .addComment .comment')
-          .val() + "</div>")
-    }
     $(this)
       .parents('.item')
       .find('.fa-comment-o')

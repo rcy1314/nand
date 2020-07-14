@@ -289,7 +289,7 @@ var comment = function (n) {
 			  url: cors + 'https://randomuser.me/api/',
 			  dataType: 'json',
 			  success: function(api) {
-				$('.' + n + ' .ago:last').after(
+				$('.' + n + ' .pub:last').after(
 						"<div class='add' style='width:100%'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
 							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
