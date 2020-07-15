@@ -389,20 +389,25 @@ input[type=text] {
     width: 99%;
 }
 .hover:last-child {
-	  border-bottom: 1px solid #ddd !important;
+	  border-bottom: 1px solid #eee !important;
 }
 .contrast {
 	  background-color: #000 !important;
 	  color: #fff !important;
 }
+.contrast:hover {
+    background-color: #222 !important;
+}
 .visual {
 	  background-color: #fff !important;
 	  color: #666 !important;
 }
+.visual:hover {
+    background-color: #eee !important;
+}
 .hover {
  	  border: 1px solid #ddd;
 	  border-bottom: none !important;
-    background-color: #bbb !important;
     padding-bottom: 15px;
     padding-top: 15px;
     font-size: 12px;
