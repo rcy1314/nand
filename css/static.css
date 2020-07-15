@@ -104,8 +104,10 @@ body,
 
 #arm {
     position: relative;
+    display: block;
+    margin: 0 auto;
     height: 55px;
-     width: 100%;
+    width: 100%;
 }
 
 #search {
@@ -301,7 +303,6 @@ svg .border {
     display: inline-block;
     padding-right: 5px;
     position: relative;
-	  margin-left: 130px;
     text-align: left;
 }
 

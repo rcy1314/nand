@@ -61,7 +61,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#container, .suggestions, .combine, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#container, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
@@ -77,7 +77,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $('.index, .hover').addClass('visual').removeClass('contrast')
-    $('.background, #main, #visit, .air, .result, #bottom, .hover, .description, .channel, #bottom').css({
+    $('.background, #main, #visit, .air, .result, #bottom, .hover, .description, .channel, .suggestions, .combine, #bottom').css({
       'background-color': '#fafafa',
       'color': '#666'
     })
@@ -101,11 +101,11 @@ var visual = function(n) {
       'color': '#666'
     })
     $('.filter, .populate, .description').css('background-color', '#efefef')
-    $('.feed, .item, .title, .suggestions').css('border', '1px solid #ddd')
+    $('.feed, .item, .title').css('border', '1px solid #ddd')
     $('#top, .description, .index').css({
       'border-bottom': '1px solid #ccc'
     })
-    $('.item, .feed, .suggestions').css('box-shadow', '1px 1px 6px #eee')
+    $('.item, .feed').css('box-shadow', '1px 1px 6px #eee')
     $('#main, .listing').addClass('invert').removeClass('opposite')
     $('.bottom').attr('src', 'images/icon/transparent.png').css({
       'filter': 'brightness(50%) saturate(20%) invert(90%)'
