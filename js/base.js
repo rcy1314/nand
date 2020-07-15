@@ -292,7 +292,7 @@ var list = function(n) {
 var comment = function (n) {
 	var emoji = []
 	var comment = []
-	var e = Math.floor(Math.random() * (2 - 0 + 1) + 1)
+	var e = Math.floor(Math.random() * (3 - 0) + 0)
 	for (i = 0; i <= e; i++) {
 		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
 	}

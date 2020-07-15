@@ -340,6 +340,15 @@ input[type=text] {
     top: 1em;
 	  height: 28.5em;
 }
+.index:first-child:hover:after {
+	  border-color: transparent transparent #eee transparent;
+}
+.contrast:first-child:hover:before {
+	  border-color: transparent transparent #222 transparent;
+}
+.contrast:first-child:hover:after {
+	  border-color: transparent transparent #222 transparent;
+}
 .index:first-child:before {
 	  content: "";
 	  position: absolute;

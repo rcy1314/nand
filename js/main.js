@@ -458,6 +458,7 @@ $(document)
   .on('touch click', '#option .fa-home', function(e) {
     $('#main .center, #main .suggestions, #main .result, #main .air')
       .remove()
+    filter = []
     $('#main #visit')
       .show()
     var uri = '?q=' + category.toLowerCase()
