@@ -508,7 +508,7 @@ $(document)
       if (menu[i].cat == id) array.push(menu.indexOf(menu[i]))
     }
     var n = array[Math.floor(Math.random() * array.length)]
-    var uri = '?q=' + menu[n].cat.toLowerCase() + '&' + menu[n].id.toLowerCase()
+    var uri = '?q=&' + menu[n].id.toLowerCase()
       .replace(/(\s|\.|\/)/g, '-')
     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     else if (contrast == true) uri = uri + '+1'
