@@ -80,7 +80,7 @@
         width: 61% !important;
     }
     #arm {
-      width: 80% !important;
+      width: 78% !important;
     }
 }
 
@@ -92,10 +92,10 @@
       width: 100% !important;
     }
     #arm {
-      width: 40% !important;
+      width: 50% !important;
     }
     #main {
-      width: 47%;
+      width: 62%;
       display: block;
       position: relative;
       margin: 0 auto;
