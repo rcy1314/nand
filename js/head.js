@@ -697,7 +697,7 @@ var menu = [{
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment",
 		img: "OANN",
-		hash: "eO"
+		hash: "nO"
 	}
 
 	,
@@ -764,6 +764,17 @@ var menu = [{
 		ext: "https://www.slashfilm.com",
 		img: "SlashFilm",
 		hash: "fS"
+	}
+
+	,
+	{
+		id: "The Root",
+		cat: "Media",
+		des: "The Root The Blacker the Content the Sweeter the Truth",
+		uri: "https://www.theroot.com/rss",
+		ext: "https://www.theroot.com",
+		img: "TheRoot",
+		hash: "Rr"
 	}
 
 	,
