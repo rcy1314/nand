@@ -52,6 +52,7 @@ var visual = function(n) {
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
+    $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
     $('.first').css('cssText','fill: #ef4063 !important')
     $('.second').css('cssText','fill: #e557c6 !important')
@@ -250,7 +251,7 @@ var image = function(n, src) {
       comment(n)
       }
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(99).css('margin','10px')
+      $('#' + n).width(99).addClass('expand').css('margin','10px')
       .parents('.item')
       .find('.classic').css({
         'display': 'flex',
