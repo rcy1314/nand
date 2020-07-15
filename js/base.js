@@ -118,7 +118,7 @@ var visual = function(n) {
   $('.fa-gratipay').css('color', 'lightcoral')
 }
 
-function expand(n) {
+var expand = function(n) {
   if ($('#' + n).hasClass('expand min')) {
     object.push({
       element: n,
@@ -126,8 +126,11 @@ function expand(n) {
       parent: $('#' + n).parent().width(),
       less: $('#' + n).width()
     })
-    $('#' + n).removeClass('min').addClass('full').width('100%').parent().width(
-      '100%')
+    $('#' + n).removeClass('min').addClass('full').width('100%').parent()
+      .css({
+        'width': '100%',
+        'left': '0'
+      })
   } else if ($('#' + n).hasClass('expand full')) {
     object.forEach(function(e) {
       if (n == e.element && e.less) $('#' + n).removeClass('full').addClass(

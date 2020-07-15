@@ -599,7 +599,7 @@ $(document)
         }, 800)
     } else {
         // compare first click to this click and see if they occurred within double click threshold
-        if (((new Date().getTime()) - tap) < 800) {
+        if (((new Date().getTime()) - tap) < 300) {
             // double click occurred
             $(this)
               .parent()

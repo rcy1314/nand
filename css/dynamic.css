@@ -82,7 +82,7 @@
     position: relative;
 }
 .tag {
-	min-width: 38% !important;
+	  min-width: 38% !important;
     position: relative;
     width: 100%;
 }
