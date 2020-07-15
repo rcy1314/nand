@@ -395,15 +395,17 @@ input[type=text] {
 	  background-color: #000 !important;
 	  color: #fff !important;
 }
-.contrast:hover {
-    background-color: #222 !important;
+.contrast.hover {
+  background-color: #222 !important;
+  color: #fff !important;
 }
 .visual {
 	  background-color: #fff !important;
 	  color: #666 !important;
 }
-.visual:hover {
-    background-color: #eee !important;
+.visual.hover {
+	  background-color: #eee !important;
+	  color: #666 !important;
 }
 .hover {
  	  border: 1px solid #ddd;

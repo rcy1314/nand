@@ -52,6 +52,7 @@ var visual = function(n) {
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
+    $('.hover').addClass('contrast.hover')
     $('.first').css('cssText','fill: #ef4063 !important')
     $('.second').css('cssText','fill: #e557c6 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
@@ -87,6 +88,7 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#222'
     })
+    $('.hover').addClass('visual.hover')
     $('.first').css('cssText','fill: #1fa2ff !important')
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
