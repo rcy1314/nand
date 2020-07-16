@@ -36,7 +36,7 @@
         margin: 1em;
         width: 32%;
     }
-    
+
 	#main .content {
 		display: none !important;
 	}
@@ -67,7 +67,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #container {
         display: block;
         position: relative;
@@ -75,10 +75,10 @@
         width: 100% !important;
     }
     #main .center {
-        width: 42% !important;
+        width: 60% !important;
     }
     #arm {
-      width: 90% !important;
+      width: 100% !important;
     }
 }
 
@@ -90,7 +90,31 @@
       width: 100% !important;
     }
     #arm  {
+      width: 75% !important;
+    }
+    #main .center {
+        width: 55% !important;
+    }
+    #main .result,
+    #main .air {
       width: 70% !important;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+    }
+}
+@media screen and (max-width: 2560px) {
+    #container {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      width: 100% !important;
+    }
+    #arm  {
+      width: 60% !important;
+    }
+    #main .center {
+        width: 45% !important;
     }
     #main .result,
     #main .air {
