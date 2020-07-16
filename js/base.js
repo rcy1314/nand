@@ -224,7 +224,8 @@ var image = function(n, src) {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
-    if ($('#home').css('display') == 'none') {
+    if ($('#home').css('display') == 'none'
+        && $('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
       .find('.ago')
@@ -235,8 +236,17 @@ var image = function(n, src) {
       for (y= 0; y <= re; y++ ){
       comment(n)
       }
-    }
-    else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
+   } else if ($('#' + n).get(0).naturalWidth < maximum
+      && $('#home').css('display') == 'none') {
+    $('#' + n).width(99).addClass('expand').css('margin','10px')
+    .parents('.item')
+    .find('.classic').css({
+      'display': 'flex',
+      'align-items': 'center'
+    }).find('.header, .tag, .addComment').css('display', 'none')
+    .siblings('.fill').css('left', '18px').html(fill)
+    .parents('.item').find('.ago').css('display','inline-block')
+   } else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
         .get(0).naturalHeight > maximum && $('#' + n)
         .get(0).naturalWidth < maximum) {
       $('#' + n).addClass('expand min').width('100%').parents('.item')
