@@ -296,13 +296,6 @@ svg .border {
     width: 50px;
 }
 
-.center {
-    display: inline-block;
-    padding-right: 5px;
-    position: relative;
-    text-align: left;
-}
-
 #input {
     position: relative;
     margin: 0 auto;

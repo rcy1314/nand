@@ -79,7 +79,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $('.index, .hover').addClass('visual').removeClass('contrast')
-    $('.background, #main, #visit, .air, .result, #bottom, .hover, .description, .channel, .suggestions, .combine, #bottom').css({
+    $('.background, #main, #visit, .air, .result, #bottom, .hover, .description, .channel, .stats, .suggestions, .combine, #bottom').css({
       'background-color': '#fafafa',
       'color': '#666'
     })
@@ -143,7 +143,7 @@ var expand = function(n) {
 var feed  = function(n) {
   if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
   else if (n >= menu.length - 13) n = 1
-  for (var i = n; i <= n + 13; i++) {
+  for (var i = n + 1; i <= n + 13; i++) {
     if (menu[i]) var img = 'images/png/' + menu[i].img + '.png'
     $('#main .center .feed').append("<div class='asset'>" + "<svg>" + "<defs>" +
       "<linearGradient id='gradientOpposite'>" +
@@ -161,6 +161,18 @@ var feed  = function(n) {
       "' rel='nofollow'>" + String(menu[i].id.match(/[^\/]+$/g)).substring(0,
         9) + '...' + "</a>" + "</div>")
   }
+}
+var content  = function(n, recent, oldest, images, posts) {
+    var img = 'images/png/' + menu[n].img + '.png'
+    $('#main .stats').append(
+      "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
+      "<div class='info'>" +
+      "<a ext='" + menu[n].ext +
+      "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a><br><br>" +
+        "<b>most recent</b> " + recent +"<br><br>" +
+        "<b>oldest post </b> " + oldest + "<br><br>" +
+        "<b>images</b> " + images + "<br><br>" +
+        "<b>posts</b> " + posts + "</div>")
 }
 var response = function(passthrough, n, post) {
   filter = []
@@ -387,6 +399,10 @@ var progress = function(complete, n) {
         function(e) {
           $(this).removeClass('response').width(0)
           $('#main #visit, #arm #search #match').hide()
+          if ($('#main .content').length == 1) $(
+            '#main .stats').css('visibility', 'visible')
+          if ($('#main .content').length == 1) $(
+            '#main .stats').css('visibility', 'visible')
           if ($('#main .suggestions').length == 1) $(
             '#main .suggestions').css('visibility', 'visible')
           if ($('#main .result').length == 1) $('#main .result').show()
@@ -633,6 +649,7 @@ var xml = function(e, s, n, post) {
         since: since,
         post: html,
         src: src,
+        dst: dst[0],
         gen: gen
       })
       pub.sort(function(a, b) {
@@ -647,7 +664,8 @@ var xml = function(e, s, n, post) {
       "<div class='left' style='display:none'><div class='fa-angle-double-left'></div></div>" +
       "<div class='right'><div class='fa-angle-double-right'></div>" +
       "</div>" + "</div>" + "<div class='channel'></div></div>" +
-      "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;...<br></div>"
+      "<div class='content' style='visibility:hidden'><div class='stats' style='visibility:hidden'></div>" +
+      "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
       $('#main .center .channel').append(pub[local].post)
@@ -660,8 +678,13 @@ var xml = function(e, s, n, post) {
       })
     }
     if (!id) id = menu.indexOf(menu[n])
+    posts = pub.length
+    recent = pub[0].dst
+    oldest = pub[pub.length - 1].dst
+    images = $('#main .center .channel .item .image img.img[src!=""]').length
     $('#main .center').append(
       "<div id='bottom'><button class='previous'>Prev</button><img class='bottom'><button class='next'>Next</button></div>")
+    content(n, recent, oldest, images, posts)
     clearInterval(complete)
     progress(true, 100)
     suggest(id)

@@ -49,11 +49,11 @@
 @media screen and (min-width: 768px) {
     #main .center {
         width: 60% !important;
-        left: -110px !important;
+        left: -75px !important;
     }
 
     #arm {
-        width: 92% !important;
+        width: 100% !important;
     }
 
     #main .air .populate,
@@ -63,9 +63,8 @@
         width: 16%;
     }
 
-    .suggestions {
-        display: inline-block !important;
-        margin-left: -110px !important;
+    .content {
+        margin-left: -75px !important;
     }
 }
 
@@ -92,7 +91,7 @@
       width: 100% !important;
     }
     #arm  {
-      width: 60% !important;
+      width: 70% !important;
     }
     #main .result,
     #main .air {
