@@ -349,6 +349,12 @@ input[type=text] {
 .contrast:first-child:hover:after {
 	  border-color: transparent transparent #222 transparent;
 }
+.contrast:first-child:not(:hover):after {
+	  border-color: transparent transparent #000 transparent;
+}
+.contrast:first-child:not(:hover):before {
+	  border-color: transparent transparent #ccc transparent;
+}
 .index:first-child:before {
 	  content: "";
 	  position: absolute;
