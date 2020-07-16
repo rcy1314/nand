@@ -12,7 +12,7 @@ $(document)
         .removeClass('slide')
     }
   })
-  .on('touch click', '#main', function(e) {
+  .on('touch click', '#main, .background', function(e) {
     $('#arm #search #match')
       .hide()
     $('#arm #search #input .icon')
