@@ -30,7 +30,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1 || contrast == true) {
     $(
-      '#container, .background, #main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .filter, .populate, .feed, .comment, .channel, .suggestions, .combine, .index, .title, .category, .description, .type, .item, .item .pub, .ago, a'
+      '#container, .background, #main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
     ).css({
       'background-color': '#000',
       'color': '#fff',
@@ -47,10 +47,14 @@ var visual = function(n) {
     $('.more').css('color', '#333')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.right, .left').css({
-      'background-color': 'rgba(33,33,33,.9)',
+      'background-color': 'rgba(33,33,33,.2)',
     })
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
+    })
+    $('.filter, .populate, .title, .category, .description, .type, .item, .item .pub, .ago').css({
+      'background-color': '#0e0e0e',
+      'border': '1px solid #000'
     })
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
@@ -353,7 +357,7 @@ var comment = function (n) {
 var populate = function(n) {
   if (!$.isNumeric(n)) var cat = n
   else cat = menu[id].cat
-  $('#main .air, #main .center, #main .suggestions').remove()
+  $('#main .air, #main .result, #main .center, #main .content').remove()
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
   for (var i = 1; i <= menu.length - 1; i++) {
