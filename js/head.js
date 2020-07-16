@@ -1087,6 +1087,17 @@ var menu = [{
 
 	,
 	{
+		id: "Reddit/DIY",
+		cat: "Social",
+		des: "Do it yourself subreddit where people can come to learn and share their experiences of doing, building and fixing things on their own.",
+		uri: "https://www.reddit.com/r/DIY/.rss",
+		ext: "https://www.reddit.com/r/DIY/",
+		img: "Orange",
+		hash: "Di"
+	}
+
+	,
+	{
 		id: "4Chan/Do It Yourself",
 		cat: "Social",
 		des: "4chan Do It Yourself board discusses Projects, asks Questions, covers Topics, exchanges Ideas and Techniques.",
@@ -1149,6 +1160,17 @@ var menu = [{
 		ext: "https://www.reddit.com/r/games",
 		img: "Games",
 		hash: "sG"
+	}
+
+	,
+	{
+		id: "Reddit/Gaming",
+		cat: "Social",
+		des: "Gaming subreddit related to games - video games, board games, card games, etc.",
+		uri: "https://www.reddit.com/r/gaming/.rss",
+		ext: "https://www.reddit.com/r/gaming",
+		img: "Gaming",
+		hash: "Gi"
 	}
 
 	,
@@ -1224,7 +1246,7 @@ var menu = [{
 		des: "Hacker News subreddit A mirror of Hacker News' best submissions.",
 		uri: "https://www.reddit.com/r/hackernews/.rss",
 		ext: "https://www.reddit.com/r/HackerNews",
-		img: "Reddit",
+		img: "Orange",
 		hash: "nH"
 	}
 
@@ -1532,7 +1554,7 @@ var menu = [{
 		des: "Wallpapers subreddit for Work-safe wallpapers from all over!",
 		uri: "https://www.reddit.com/r/wallpapers/.rss",
 		ext: "https://www.reddit.com/r/Wallpapers",
-		img: "Reddit",
+		img: "Orange",
 		hash: "sW"
 	}
 

@@ -174,7 +174,7 @@ var content  = function(n, recent, oldest, images, posts) {
         "<b>images</b> " + images + "<br><br>" +
         "<b>posts</b> " + posts + "</div>")
 }
-var response = function(passthrough, n, post) {
+var response = function(passthrough, repopulate, n, post) {
   filter = []
   $('#main .fesult, #main .air, #main .center, #main .suggestions').remove()
   $('#main #visit').show()
@@ -223,7 +223,9 @@ var response = function(passthrough, n, post) {
         return false
       }
     }
-    populate(id)
+    if (repopulate == true) {
+      populate(id)
+    }
     air(id)
     progress(true, 100)
   })

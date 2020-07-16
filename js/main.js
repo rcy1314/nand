@@ -87,7 +87,7 @@ $(document)
         var res = uri[0].replace(/\+1/g, '')
       else var res = uri[0]
       res = res.replace(/\-|\+/g, ' ')
-      response(false, res, null)
+      response(false, true, res, null)
       if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
       state('?q=' + uri[0].replace(/\-/g, '+'))
     }
@@ -296,7 +296,7 @@ $(document)
         else if (contrast == true) uri = uri + '+1'
         state('?q=&' + $('#arm #search #match .listing .hover')
           .attr('response'))
-        response(true, $('#arm #search #match .listing .hover')
+        response(true, false, $('#arm #search #match .listing .hover')
           .attr('response'), null)
         document.title = $('#arm #search #match .listing .hover')
           .attr('response')
@@ -312,7 +312,7 @@ $(document)
         if (contrast == true && !location.href.match('\\+1')) uri = uri +
           '+1'
         else if (contrast == true) uri = uri + '+1'
-        response(true, $('#arm #search input[type=text]')
+        response(true, false, $('#arm #search input[type=text]')
           .val(), null)
         state(uri)
       }
