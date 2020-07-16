@@ -456,19 +456,14 @@ $(document)
       e.preventDefault()
     })
   .on('touch click', '#option .fa-home', function(e) {
-    $('#main .center, #main .suggestions, #main .result, #main .air')
+    $('#main .center, #main .content, #main .result, #main .air')
       .remove()
-    filter = []
     $('#main #visit')
       .show()
     var uri = '?q=' + category.toLowerCase()
     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     else if (contrast == true) uri = uri + '+1'
-    state(uri)
-    document.title = category
-    populate(category)
-    air(category)
-    progress(true, 100)
+    exit(uri)
   })
   .on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(e) {
     $(this)
