@@ -224,7 +224,19 @@ var image = function(n, src) {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
-    if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
+    if ($('#home').css('display') == 'none') {
+      $('#' + n).width('100%').addClass('expand')
+      .parents('.item')
+      .find('.ago')
+      .css('display','inline-block')
+      .parents('.item').find('.fill').html(fill)
+      var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+      if (category == 'Social')
+      for (y= 0; y <= re; y++ ){
+      comment(n)
+      }
+    }
+    else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
         .get(0).naturalHeight > maximum && $('#' + n)
         .get(0).naturalWidth < maximum) {
       $('#' + n).addClass('expand min').width('100%').parents('.item')
