@@ -36,9 +36,8 @@
         margin: 1em;
         width: 32%;
     }
-
-	#main .item .ago,
-	#main .suggestions {
+    
+	#main .content {
 		display: none !important;
 	}
   #main .center .quick .right,
