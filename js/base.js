@@ -678,10 +678,10 @@ var xml = function(e, s, n, post) {
       })
     }
     if (!id) id = menu.indexOf(menu[n])
-    posts = pub.length
-    recent = pub[0].dst
-    oldest = pub[pub.length - 1].dst
-    images = $('#main .center .channel .item .image img.img[src!=""]').length
+    var posts = pub.length
+    var recent = pub[0].dst
+    var oldest = pub[pub.length - 2].dst
+    var images = $('#main .center .channel .item .image img.img[src!=""]').length
     $('#main .center').append(
       "<div id='bottom'><button class='previous'>Prev</button><img class='bottom'><button class='next'>Next</button></div>")
     content(n, recent, oldest, images, posts)
