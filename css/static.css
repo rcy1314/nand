@@ -340,6 +340,9 @@ input[type=text] {
 .index:first-child:hover:after {
 	  border-color: transparent transparent #eee transparent;
 }
+.hover:first-child:not(:hover):after {
+	  border-color: transparent transparent #eee transparent;
+}
 .contrast:first-child:hover:before {
 	  border-color: transparent transparent #222 transparent;
 }
