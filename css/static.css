@@ -132,9 +132,6 @@ body,
     justify-content: space-between;
     background-color: transparent;
     position: absolute;
-	  padding-right: 5px;
-	  padding-left: 5px;
-	  padding-top: 10px;
     display: flex;
     top: 10px;
     right: 0;

@@ -10,12 +10,13 @@
 }
 
 .fa-git,
+.fa-home,
 .fa-code,
 .fa-globe,
 .fa-circle,
 .fa-terminal,
 .fa-circle-notch {
-    margin-left: 20px;
+    padding: 10px;
 	  font-size: 20px;
 }
 
