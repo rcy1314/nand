@@ -181,38 +181,44 @@ var content  = function(n, recent, oldest, images, posts) {
         "<b>Images</b> " + images + "<br><br>" +
         "<b>Posts</b> " + posts + "</div>")
 }
-var response = function(passthrough, repopulate, n, post) {
+var response = function(passthrough, repopulate, n, bloat, post) {
   filter = []
-  $('#main .fesult, #main .air, #main .center, #main .suggestions').remove()
+  $('#main .result, #main .air, #main .center, #main .suggestions').remove()
   $('#main #visit').show()
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
-  var n = n.replace(/(%20|\-|\_|\s|\+)/g, ' ')
+  if (n) var n = n.replace(/(%20|\-|\_|\s|\+)/g, ' ')
+  else var n = repopulate.replace(/(%20|\-|\_|\s|\+)/g, ' ')
+  if (repopulate) var term = repopulate.replace(/(%20|\-|\_|\s|\+)/g, ' ')
+  else term = n
   $('#main').scrollTop(0)
   $(document).ready(function() {
-    for (var i = menu.length - 1; i >= 1; i--) {
+    for (var i = 1; i <= menu.length - 1; i++) {
       if (menu[i].hash == n) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
         exact = i
         id = i
-        break
-      } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == n.toLowerCase()) {
+      } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == n.toLowerCase() ||
+          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == term.toLowerCase()) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
         var exact = i
         id = i
-        break
       } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(
-          n.toLowerCase())) {
+          n.toLowerCase()) ||
+          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(
+              term.toLowerCase())) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
         id = i
       } else if (menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ').match(
-          n.toLowerCase())) {
+          n.toLowerCase()) ||
+          menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ').match(
+              term.toLowerCase())) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
-      } else if (menu[i].cat.toLowerCase().match(n)) {
+      } else if (menu[i].cat.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(term)) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
       }
@@ -230,7 +236,7 @@ var response = function(passthrough, repopulate, n, post) {
         return false
       }
     }
-    if (repopulate == true) {
+    if (bloat == true) {
       populate(id)
       air(id)
     }
@@ -315,7 +321,8 @@ var list = function(n) {
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(
         n)) {
-      $('#arm #search #match .listing').prepend("<div class='index " + menu.indexOf(
+      $('#arm #search #match .listing').prepend("<div class='index' index='" +
+      menu.indexOf(
           menu[i]) + "' tabIndex='-1' response='" + menu[i].id.toLowerCase()
         .replace(/\s|\/|\./g, '-') + "' search='" + menu[i].cat.toLowerCase() +
         "'>" + "<img class='type' src='" + "images/png/" + menu[i].img +
@@ -342,33 +349,36 @@ var comment = function (n) {
 	$.each(comment, function(k, i) {
 		emoji.push(emojis[comment[k]])
 	})
-			$.ajax({
-			  url: cors + 'https://randomuser.me/api/',
-			  dataType: 'json',
-			  success: function(api) {
-				$('.' + n + ' .pub:last').after(
-						"<div class='add' style='width:100%'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
-							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
-							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
+//			$.ajax({
+//			  url: cors + 'https://randomuser.me/api/',
+//			  dataType: 'json',
+//			  success: function(api) {
+//				$('.' + n + ' .pub:last').after(
+//						"<div class='add' style='width:100%'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
+//							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
+//							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
 							emoji.join('') +
-						"</div>")
-				}
-			})
+//						"</div>")
+//				}
+//			})
 			$('.' + n + ' .addComment .comment').val('')
 			visual()
 }
 var populate = function(n) {
-  if (!$.isNumeric(n)) var cat = n
+  if (!$.isNumeric(n)) {
+    filter = []
+    var cat = n
+  }
   else cat = menu[id].cat
   $('#main .air, #main .center, #main .content').remove()
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
   for (var i = 1; i <= menu.length - 1; i++) {
-    if (!$.inArray(filter, menu.indexOf(menu[i])) && cat == menu[i].cat) {
+    if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && cat == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
-      $('#main .result').append("<div class='populate " + menu.indexOf(menu[n]) +
+      $('#main .result').append("<div class='populate' index='" + menu.indexOf(menu[i]) +
         "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g,
           '-') + "'> " + "<div class='pub'><div class='category'>" + menu[i]
         .cat + "</div><a class='title' ext='" + menu[i].ext + "'>" + menu[i]
@@ -377,6 +387,7 @@ var populate = function(n) {
         "<img class='id' style='top:10px' src='" + img + "'>" + "</div>")
     }
   }
+  air(id)
 }
 var air = function(n) {
   if (!$.isNumeric(n)) var cat = n
@@ -389,7 +400,7 @@ var air = function(n) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
-      $('#main .air').append("<div class='populate " + menu.indexOf(menu[i]) +
+      $('#main .air').append("<div class='populate' + index='" + menu.indexOf(menu[i]) +
         "' response='" + menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g,
           '-') + "'> " + "<div class='pub'><div class='category'>" + menu[i]
         .cat + "</div><a class='title' ext='" + menu[i].ext +
@@ -450,7 +461,7 @@ var write = function(n) {
   var tag = menu[n].id.match(/[^\/]+$/g)
   var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
   if (n != id || n != filter[filter.length - 1] || filter.length >= 1) $(
-    '#main .result').prepend("<div class='filter " + menu.indexOf(menu[n]) +
+    '#main .result').append("<div class='filter' index='" + menu.indexOf(menu[n]) +
     "' response='" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') +
     "' search='" + menu[n].cat.toLowerCase() + "'> " +
     "<div class='pub'><div class='category'>" + menu[n].cat +
@@ -464,12 +475,21 @@ var xml = function(e, s, n, post) {
   obj = []
   var local
   var pub = []
+  console.log(n)
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
+  var next = filter.indexOf(menu.indexOf(menu[n]))
+  console.log(filter[next - +1])
+  if (filter[next + +1] && n != menu.length - 1) var plus = filter[next + +1]
+  else if (n = menu.length - 1) var plus = 0 + +1
+  if (filter[next - +1]) var back = filter[next - +1]
+  else if (n == 1) var back = menu.length - 1
+  else var back = n - +1
   document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
+  console.log(next + ' ' + menu[plus] + ' ' + menu[back])
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
     $('#progressBar').width($('#progressBar').width() + Math.floor(Math.random() *
@@ -690,13 +710,17 @@ var xml = function(e, s, n, post) {
         image(pub[i].element, pub[i].src)
       })
     }
+    console.log(filter)
     if (!id) id = menu.indexOf(menu[n])
     var posts = pub.length
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
     var images = $('#main .center .channel .item .image img.img[src!=""]').length
+    if (filter.length > 1)
     $('#main .center').append(
-      "<div id='bottom'><button class='previous'>Prev</button><img class='bottom'><button class='next'>Next</button></div>")
+      "<div id='bottom'><button class='previous'>Previous</button>&ensp;" +
+      menu[back].id.match(/[^\/]+$/g) + "<img class='bottom'>" +
+      menu[plus].id.match(/[^\/]+$/g) + "&ensp;<button class='next'>Next</button></div>")
     content(n, recent, oldest, images, posts)
     clearInterval(complete)
     progress(true, 100)

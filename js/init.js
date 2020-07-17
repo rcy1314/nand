@@ -16,7 +16,7 @@ if (location.search.split('?q=')[1]) {
   if (location.hash.substr(1).match(/\+1/g)) var post = location.hash.substr(1)
     .replace(/\+1/g, '')
   else var post = location.hash.substr(1)
-  if (!uri[1]) response(true, true, uri[0], post)
-  else if (uri[1]) response(true, false, uri[1], post)
+  if (!uri[1]) response(true, uri[0], uri[0], true, post)
+  else if (uri[1]) response(true, uri[0], uri[1], false, post)
 }
 visual()

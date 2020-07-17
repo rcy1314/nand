@@ -87,7 +87,7 @@ $(document)
         var res = uri[0].replace(/\+1/g, '')
       else var res = uri[0]
       res = res.replace(/\-|\+/g, ' ')
-      response(false, true, res, null)
+      response(false, true, res, true, null)
       if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
       state('?q=' + uri[0].replace(/\-/g, '+'))
     }
@@ -266,7 +266,7 @@ $(document)
     visual()
   })
   .on('submit', '#arm #search', function(e) {
-    $('#main .air, #main .result, #main .center')
+    $('#main .air, #main .result, #main .center, #main .content')
       .remove()
     $('#arm #search #match')
       .hide()
@@ -297,7 +297,7 @@ $(document)
         state('?q=&' + $('#arm #search #match .listing .hover')
           .attr('response'))
         response(true, false, $('#arm #search #match .listing .hover')
-          .attr('response'), null)
+          .attr('response'), true, null)
         document.title = $('#arm #search #match .listing .hover')
           .attr('response')
       }
@@ -313,7 +313,7 @@ $(document)
           '+1'
         else if (contrast == true) uri = uri + '+1'
         response(true, false, $('#arm #search input[type=text]')
-          .val(), null)
+          .val(), true, null)
         state(uri)
       }
     }
@@ -399,7 +399,7 @@ $(document)
           .match(uri)) {
           uri = '?q=' + uri.replace(/\s/g, '+') + '&' + $(this)
             .attr('response')
-        } else uri = '?q=&' + $(this)
+        } else uri = '?q=' + menu[$(this).attr('index')].cat.toLowerCase() + '&' + $(this)
           .attr('response')
         '&' + $(this)
           .attr('response')
