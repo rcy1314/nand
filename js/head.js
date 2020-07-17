@@ -1263,6 +1263,17 @@ var menu = [{
 
 	,
 	{
+		id: "4Chan/HR High Resolution",
+		cat: "Social",
+		des: "4chan HR High Resolution images with upscaling high resolution.",
+		uri: "http://boards.4channel.org/hr/index.rss",
+		ext: "http://boards.4channel.org/hr",
+		img: "4chan",
+		hash: "Hr"
+	}
+
+	,
+	{
 		id: "Reddit/Intel",
 		cat: "Social",
 		des: "Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.",
