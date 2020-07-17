@@ -208,22 +208,24 @@
 .suggestions {
     height: fit-content;
     text-align: left;
-	  margin-left: 65px !important;
+	  margin-left: 15px !important;
     font-size: 10px;
     padding: 15px;
     width: 200px;
     top: 215px;
 }
 
+.suggestions .id {
+    width: 24px;
+    height: 24px;
+}
+
 .combine {
+    display: flex;
+    align-items: center;
     width: 100%;
     margin: 5px;
 }
-
-.combine div {
-    margin-top: 15px;
-}
-
 
 .views {
     position: absolute;

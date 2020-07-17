@@ -173,10 +173,10 @@ var content  = function(n, recent, oldest, images, posts) {
       "<div class='info'>" +
       "<a ext='" + menu[n].ext +
       "' rel='nofollow'>" + menu[n].id.match(/[^\/]+$/g) + "</a><br><br>" +
-        "<b>most recent</b> " + recent +"<br><br>" +
-        "<b>oldest post </b> " + oldest + "<br><br>" +
-        "<b>images</b> " + images + "<br><br>" +
-        "<b>posts</b> " + posts + "</div>")
+        "<b>Most recent</b> " + recent +"<br><br>" +
+        "<b>Oldest post </b> " + oldest + "<br><br>" +
+        "<b>Images</b> " + images + "<br><br>" +
+        "<b>Posts</b> " + posts + "</div>")
 }
 var response = function(passthrough, repopulate, n, post) {
   filter = []
@@ -429,11 +429,15 @@ var suggest = function(n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0)
+    var img = 'images/png/' + menu[e].img + '.png'
       if ($.inArray(dupe, e) === -1 && menu[e]) $('#main .suggestions').append(
-        "<div class='combine'>" + "<div title='" + menu[e].id.replace(/\//g,
+        "<div class='combine'>" +
+        "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
+        "<div title='" + menu[e].id.replace(/\//g,
           ' ') + "' response='" + menu[e].id.toLowerCase().replace(
           /(\/|\.|\s)/g, '-') + "' search='" + menu[e].cat.toLowerCase() +
-        "'>" + menu[e].id.match(/[^\/]+$/g) + "</div>" + "</div>")
+        "'>" + menu[e].id.match(/[^\/]+$/g) + "<br><b>" +
+        menu[e].cat + "</b></div>" + "</div>")
     if (i == 9) return false
   }
 }
