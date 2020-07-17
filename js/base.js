@@ -231,8 +231,8 @@ var response = function(passthrough, repopulate, n, post) {
     }
     if (repopulate == true) {
       populate(id)
+      air(id)
     }
-    air(id)
     progress(true, 100)
   })
 }
@@ -359,7 +359,7 @@ var comment = function (n) {
 var populate = function(n) {
   if (!$.isNumeric(n)) var cat = n
   else cat = menu[id].cat
-  $('#main .air, #main .result, #main .center, #main .content').remove()
+  $('#main .air, #main .center, #main .content').remove()
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
   for (var i = 1; i <= menu.length - 1; i++) {
