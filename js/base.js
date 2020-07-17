@@ -258,11 +258,8 @@ var image = function(n, src) {
       .find('.ago')
       .css('display','inline-block')
       .parents('.item').find('.fill').html(fill)
-      var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
       if (category == 'Social')
-      for (y= 0; y <= re; y++ ){
       comment(n)
-      }
    } else if ($('#' + n).get(0).naturalWidth < maximum
       && $('#home').css('display') == 'none') {
     $('#' + n).width(99).addClass('expand').css('margin','10px')
@@ -283,22 +280,16 @@ var image = function(n, src) {
         'left': '15px'
       }).siblings('.fill').html(fill)
       .parents('.item').find('.ago').css('display','inline-block')
-              var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
               if (category == 'Social')
-              for (y= 0; y <= re; y++ ){
               comment(n)
-              }
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
       .find('.ago')
       .css('display','inline-block')
       .parents('.item').find('.fill').html(fill)
-      var re = Math.floor(Math.random() * (3 - 1 + 1) + 1)
       if (category == 'Social')
-      for (y= 0; y <= re; y++ ){
       comment(n)
-      }
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
       $('#' + n).width(99).addClass('expand').css('margin','10px')
       .parents('.item')
@@ -342,23 +333,24 @@ var list = function(n) {
 var comment = function (n) {
 	var emoji = []
 	var comment = []
-	var e = Math.floor(Math.random() * (3 - 0) + 0)
+	var e = Math.floor(Math.random() * (10 - 0) + 0)
 	for (i = 0; i <= e; i++) {
 		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
 	}
 	$.each(comment, function(k, i) {
-		emoji.push(emojis[comment[k]])
+		emoji.push(emojis[comment[k]] + '&emsp;')
 	})
 //			$.ajax({
 //			  url: cors + 'https://randomuser.me/api/',
 //			  dataType: 'json',
 //			  success: function(api) {
-//				$('.' + n + ' .pub:last').after(
-//						"<div class='add' style='width:100%'><b>" + api.results[0].email.replace(/\@.+/g, '') + '.' +
+				$('.' + n + ' .pub:last').after(
+						"<div class='add' style='width:100%'><b>" +
+//              api.results[0].email.replace(/\@.+/g, '') + '.' +
 //							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 //							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
 							emoji.join('') +
-//						"</div>")
+						"</div>")
 //				}
 //			})
 			$('.' + n + ' .addComment .comment').val('')
