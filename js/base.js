@@ -86,6 +86,7 @@ var visual = function(n) {
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('.background, #main, #visit, .air, .result, #bottom, .hover, .description, .channel, .stats, .suggestions, .combine, #bottom').css({
       'background-color': '#fafafa',
+      'border': 'none',
       'color': '#666'
     })
     $(
