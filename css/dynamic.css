@@ -147,11 +147,12 @@
 }
 
 #bottom {
-    position: relative;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 12px;
     bottom: 1.95em;
+    display: flex;
     height: 5em;
     width: 100%;
 }

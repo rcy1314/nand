@@ -475,21 +475,20 @@ var xml = function(e, s, n, post) {
   obj = []
   var local
   var pub = []
-  console.log(n)
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
-  var next = filter.indexOf(menu.indexOf(menu[n]))
-  console.log(filter[next - +1])
-  if (filter[next + +1] && n != menu.length - 1) var plus = filter[next + +1]
-  else if (n = menu.length - 1) var plus = 0 + +1
+  if (filter.length > 1) var next = filter.indexOf(menu.indexOf(menu[n]))
+  else var next = n
+  if (filter[next + +1]) var plus = filter[next + +1]
+  else if (n == menu.length - 1) var plus = 1 + +1
+  else var plus = n + +1
   if (filter[next - +1]) var back = filter[next - +1]
   else if (n == 1) var back = menu.length - 1
   else var back = n - +1
   document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
-  console.log(next + ' ' + menu[plus] + ' ' + menu[back])
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
     $('#progressBar').width($('#progressBar').width() + Math.floor(Math.random() *
@@ -710,17 +709,15 @@ var xml = function(e, s, n, post) {
         image(pub[i].element, pub[i].src)
       })
     }
-    console.log(filter)
     if (!id) id = menu.indexOf(menu[n])
     var posts = pub.length
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
     var images = $('#main .center .channel .item .image img.img[src!=""]').length
-    if (filter.length > 1)
     $('#main .center').append(
-      "<div id='bottom'><button class='previous'>Previous</button>&ensp;" +
+      "<div id='bottom'><button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
       menu[back].id.match(/[^\/]+$/g) + "<img class='bottom'>" +
-      menu[plus].id.match(/[^\/]+$/g) + "&ensp;<button class='next'>Next</button></div>")
+      menu[plus].id.match(/[^\/]+$/g) + "&ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button></div>")
     content(n, recent, oldest, images, posts)
     clearInterval(complete)
     progress(true, 100)

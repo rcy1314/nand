@@ -68,14 +68,12 @@ $(document)
   })
   .on('touch click', '#main .center #bottom .previous', function(e) {
 
-    if (id == 1) id = menu.length
-    exit('?q=&' + menu[id - +1].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+    exit('?q=&' + menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-'))
 
   })
   .on('touch click', '#main .center #bottom .next', function(e) {
 
-    if (id == menu.length - 1) id = 0
-    exit('?q=&' + menu[id + +1].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+    exit('?q=&' + menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-'))
 
   })
   .on('touch click', '#main .center #bottom', function(e) {
