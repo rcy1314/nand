@@ -52,9 +52,10 @@ var visual = function(n) {
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
-    $('.filter, .populate, .title, .category, .description, .type, .item, .item .pub, .ago').css({
+    $('.filter, .populate, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .item .pub, .ago').css({
       'background-color': '#0e0e0e',
-      'border': '1px solid #000'
+      'border': '1px solid #000',
+      'box-shadow': 'none'
     })
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')

@@ -196,7 +196,7 @@
     margin-bottom: 2em;
     text-align: left;
     font-size: 10px;
-    width: 220px;
+    width: 230px;
     height: 120px;
 }
 
@@ -208,7 +208,6 @@
 .suggestions {
     height: fit-content;
     text-align: left;
-	  margin-left: 15px !important;
     font-size: 10px;
     padding: 15px;
     width: 200px;
