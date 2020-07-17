@@ -2988,7 +2988,7 @@ var menu = [{
 
 	,
 	{
-		id: "Wall Street Journal Technology",
+		id: "Wall Street Journal Tech",
 		cat: "Technology",
 		des: "Wall Street Journals Latest Tech News, Reviews, and Stories.",
 		uri: "https://feeds.a.dj.com/rss/RSSWSJD.xml",
