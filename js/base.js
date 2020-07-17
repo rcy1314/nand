@@ -110,11 +110,12 @@ var visual = function(n) {
       'color': '#666'
     })
     $('.filter, .populate, .description').css('background-color', '#efefef')
+    $('.filter, .populate').css('border','1px solid #ddd')
     $('.feed, .item, .title').css('border', '1px solid #ddd')
     $('#top, .description, .index').css({
       'border-bottom': '1px solid #ccc'
     })
-    $('.item, .feed').css('box-shadow', '1px 1px 6px #eee')
+    $('.filter, .populate, .item, .feed').css('box-shadow', '1px 1px 6px #eee')
     $('#main, .listing').addClass('invert').removeClass('opposite')
     $('.bottom').attr('src', 'images/icon/transparent.png').css({
       'filter': 'brightness(50%) saturate(20%) invert(90%)'
@@ -363,7 +364,7 @@ var populate = function(n) {
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
   for (var i = 1; i <= menu.length - 1; i++) {
-    if (menu.indexOf(menu[id]) != menu.indexOf(menu[i]) && cat == menu[i].cat) {
+    if (!$.inArray(filter, menu.indexOf(menu[i])) && cat == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
