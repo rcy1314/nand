@@ -181,16 +181,15 @@ var content  = function(n, recent, oldest, images, posts) {
         "<b>Images</b> " + images + "<br><br>" +
         "<b>Posts</b> " + posts + "</div>")
 }
-var response = function(passthrough, repopulate, n, bloat, post) {
+var response = function(passthrough, uri, n, bloat, post) {
   filter = []
   $('#main .result, #main .air, #main .center, #main .suggestions').remove()
   $('#main #visit').show()
   if ($('#main .result').length < 1) $('#main').append(
     "<div class='result' style='display:none'></div>")
   if (n) var n = n.replace(/(%20|\-|\_|\s|\+)/g, ' ')
-  else var n = repopulate.replace(/(%20|\-|\_|\s|\+)/g, ' ')
-  if (repopulate) var term = repopulate.replace(/(%20|\-|\_|\s|\+)/g, ' ')
-  else term = n
+  if (uri) uri = uri.replace(/(%20|\-|\_|\s|\+)/g, ' ')
+  else uri = n
   $('#main').scrollTop(0)
   $(document).ready(function() {
     for (var i = 1; i <= menu.length - 1; i++) {
@@ -200,7 +199,7 @@ var response = function(passthrough, repopulate, n, bloat, post) {
         exact = i
         id = i
       } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == n.toLowerCase() ||
-          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == term.toLowerCase()) {
+          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') == uri.toLowerCase()) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
         var exact = i
@@ -208,17 +207,17 @@ var response = function(passthrough, repopulate, n, bloat, post) {
       } else if (menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(
           n.toLowerCase()) ||
           menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(
-              term.toLowerCase())) {
+              uri.toLowerCase())) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
         id = i
       } else if (menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ').match(
           n.toLowerCase()) ||
           menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ').match(
-              term.toLowerCase())) {
+              uri.toLowerCase())) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
-      } else if (menu[i].cat.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(term)) {
+      } else if (menu[i].cat.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(uri)) {
         filter.push(menu.indexOf(menu[i]))
         write(menu.indexOf(menu[i]))
       }
