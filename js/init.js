@@ -5,7 +5,7 @@ if (location.href.split('?')[1])
     var id = location.href.split('?')[1].slice(0, 2)
     var i = menu.findIndex((item) => item.hash === id)
     var ts = parseInt(location.href.split('?')[1].slice(2), 36)
-    response(true, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), ts)
+    response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), false, ts)
     visual()
   }
 if (location.href.match('\\+1')) contrast = true
