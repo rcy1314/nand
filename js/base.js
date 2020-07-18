@@ -278,7 +278,7 @@ var image = function(n, src) {
            $('#' + n).get(0).naturalHeight > mobile || $('#' + n)
            .get(0).naturalHeight > maximum && $('#' + n)
            .get(0).naturalWidth < maximum) {
-             var width = $('#' + n).get(0).naturalHeight * .30
+             var width = $('#' + n).get(0).naturalHeight * .5
              $('#' + n).width('100%')
              .parents('.guide')
                .find('.image').width(width)
@@ -297,6 +297,13 @@ var image = function(n, src) {
       .parents('.item').find('.ago').css('display','inline-block')
               if (category == 'Social')
               comment(n)
+      } else if ($('#' + n).hasClass('guide') &&
+        $('#' + n).get(0).naturalWidth > minimum) {
+              $('#' + n).width('100%').addClass('expand')
+              .parents('.item')
+              .find('.ago')
+              .css('display','inline-block')
+              .parents('.item').find('.fill').html(fill)
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
@@ -306,7 +313,7 @@ var image = function(n, src) {
       if (category == 'Social')
       comment(n)
     } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(99).addClass('expand').css('margin','10px')
+      $('#' + n).width(120).addClass('expand').css('margin','10px')
       .parents('.item')
       .find('.classic').css({
         'display': 'flex',
