@@ -397,7 +397,7 @@ $(document)
           .match(uri)) {
           uri = '?q=' + uri.replace(/\s/g, '+') + '&' + $(this)
             .attr('response')
-        } else uri = '?q=' + menu[$(this).attr('index')].cat.toLowerCase() + '&' + $(this)
+        } else uri = '?q=&' + $(this)
           .attr('response')
         '&' + $(this)
           .attr('response')
