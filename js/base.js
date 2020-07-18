@@ -255,7 +255,13 @@ var image = function(n, src) {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
-    if ($('#home').css('display') == 'none'
+    if ($('#' + n).closest('.sticky').length > 0) {
+      $('#' + n).width('100%').addClass('expand')
+      .parents('.item')
+      .find('.ago')
+      .css('display','inline-block')
+      .parents('.item').find('.fill').html(fill)
+    } else if ($('#home').css('display') == 'none'
         && $('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
