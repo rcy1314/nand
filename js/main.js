@@ -252,8 +252,8 @@ $(document)
       $('.' + item + ' .add:last')
         .remove()
     }
-      $('.' + item + ' .add:first')
-        .before("<div class='add'><b>" + $('.' + item +
+      $('.' + item + ' .pub:last')
+        .after("<div class='add'><b>" + $('.' + item +
             ' .addComment .comment')
           .val() + "</div>")
     $(this)
@@ -513,10 +513,10 @@ $(document)
     return false
   })
   .on('touch click',
-    '#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark-o',
+    '#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark-o, #container .sticky .wrap .tag .fa-bookmark, #container .sticky .wrap .tag .fa-bookmark-o',
     function(e) {
       $(this)
-        .parents('.item')
+        .parents('.item, .wrap')
         .find('.source')
         .select()
       document.execCommand('copy')
@@ -526,7 +526,7 @@ $(document)
       visual()
     })
   .on('touch click',
-    '#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-gratipay',
+    '#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-gratipay, #container .sticky .wrap .tag .fa-heart-o, #container .sticky .wrap .tag .fa-gratipay',
     function(e) {
       $(this)
         .toggleClass('fa-heart-o fab fa-gratipay')
@@ -535,7 +535,7 @@ $(document)
     })
   .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, #container .sticky .header .fa-ellipsis-h',
     function(e) {
-      $(this).parents('.item')
+      $(this).parents('.item, .wrap')
         .find('.url')
         .select()
       document.execCommand('copy')
@@ -586,7 +586,7 @@ $(document)
       e.stopPropagation()
       visual()
     })
-  .on('touch click', '#main .center .channel .item .image .img', function(e) {
+  .on('touch click', '#main .center .channel .item .image .img, #container .sticky .post .item .img', function(e) {
     if (tap == 0) {
         // set first click
         tap = new Date().getTime();
@@ -599,8 +599,7 @@ $(document)
         if (((new Date().getTime()) - tap) < 300) {
             // double click occurred
             $(this)
-              .parent()
-              .parent()
+              .parents('.item, .post')
               .find('.fa-heart-o, .fa-gratipay')
               .toggleClass('fa-heart-o fab fa-gratipay')
             e.stopPropagation()

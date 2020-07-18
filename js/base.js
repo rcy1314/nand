@@ -30,7 +30,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1 || contrast == true) {
     $(
-      '#container, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
+      '#container, .post, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
     ).css({
       'background-color': '#000',
       'color': '#fff',
@@ -73,7 +73,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#top, #arm, #container, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#top, #arm, #container, .post, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
@@ -337,24 +337,25 @@ var list = function(n) {
 var comment = function (n) {
 	var emoji = []
 	var comment = []
-	var e = Math.floor(Math.random() * (10 - 0) + 0)
+	var e = Math.floor(Math.random() * (3 - 1) + 1)
 	for (i = 0; i <= e; i++) {
 		comment.push(emojis.indexOf(emojis[Math.floor(Math.random() * emojis.length - 1)]))
 	}
 	$.each(comment, function(k, i) {
-		emoji.push(emojis[comment[k]] + '&emsp;')
+		emoji.push('&ensp;' + emojis[comment[k]] + '&ensp;')
 	})
 //			$.ajax({
 //			  url: cors + 'https://randomuser.me/api/',
 //			  dataType: 'json',
 //			  success: function(api) {
-				$('.' + n + ' .pub:last').after(
-						"<div class='add' style='width:100%'><b>" +
+				$('.' + n + ' .pub:last').html($('.' + n + ' .pub:last').text() +
+						//"<div class='add' style='width:100%'><b>" +
 //              api.results[0].email.replace(/\@.+/g, '') + '.' +
 //							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
 //							Math.floor(Math.random() * (99 - 1 + 1) + 1) + '</b> ' +
-							emoji.join('') +
-						"</div>")
+							emoji.join('')
+						//"</div>"
+          )
 //				}
 //			})
 			$('.' + n + ' .addComment .comment').val('')
@@ -703,18 +704,23 @@ var xml = function(e, s, n, post) {
     if ($.isNumeric(local)) {
       $('#container').append("<div class='sticky'><div class='blur'></div>" +
       "<div class='fa fa-close'></div>" +
-      "<div class='item'><div class='header'>" + courtesy +
+      "<div class='post'>" +
+      "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
+      "<div class='image' style='display:none'>" +
+      "<img class='img' id='" + pub[local].element + "'>" +
+      "</div></div>" + "<div class='wrap'>" +
+      "<div class='header'>" + courtesy +
       "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-      "</div><div class='image' style='display:none'>" +
-      "<img class='img' id='" + pub[local].element + "'>"+
-      "</div>" + "<div class='wrap'>" +
+      "</div>" +
       "<div class='pub' text='" + pub[local].title +
       "'>" + pub[local].title.truncate(125, true) + pub[local].more +
       "</div>" + "<div class='ago'>" + pub[local].dst + "</div>" +
-      "</div>" + "<input class='url' value='" + pub[local].ref + "'>" +
-      "<input class='share' value='" + pub[local].share + "'>" +
+      "<input class='url' value='" + pub[local].ref + "'>" +
       "<input class='source' value='" + pub[local].src + "'>" +
-      "</div></div>" +
+      "<div class='tag'>" +
+      "<div class='ago fa-heart-o'></div>" +
+      "<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
+      "</div>" +
       "</div>")
       image(pub[local].element, pub[local].src)
     }

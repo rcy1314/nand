@@ -63,7 +63,7 @@
 }
 
 .header {
-    height: 45px;
+    height: 70px;
     width: 100%;
 }
 
@@ -72,8 +72,10 @@
     align-items: center;
     position: relative;
     width: fit-content;
+    margin-top: 5px;
     font-size: 10px;
     display: flex;
+    height: 50px;
     left: 0;
 }
 
@@ -104,16 +106,38 @@
 }
 
 .blur {
-  background-color: rgba(0,0,0,.1);
-  backdrop-filter: blur(4px);
-  -webkit-filter: blur(4px);
-  filter: blur(4px);
-  z-index: -1;
+    background-color: rgba(0,0,0,.1);
+    backdrop-filter: blur(4px);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    z-index: -1;
 }
 
-.sticky .item {
+.sticky .post {
+    width: 80%;
+}
+
+.sticky .post .item {
+    box-shadow: none !important;
+    border: none !important;
+    display: inline-block;
+    margin: 0;
     width: 70%;
-    height: fit-content;
+}
+
+
+.sticky .post .wrap {
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    height: 100%;
+}
+
+.sticky .pub {
+    position: relative;
+    height: calc(100% - 125px);
+    padding: 5px;
 }
 
 .item .pub,
@@ -171,7 +195,7 @@
 
 .addComment {
     margin-top: 5px;
-	margin: 0;
+	  margin: 0;
 }
 
 .comment {
@@ -199,7 +223,7 @@
 
 .copy {
     font-size: 12px;
-    padding: 20px;
+    padding: 23px;
     float: right;
 }
 
