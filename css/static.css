@@ -103,7 +103,7 @@ body,
 }
 
 #top {
-    height: 56px;
+    height: 57px;
 }
 #arm {
     position: relative;
@@ -127,6 +127,7 @@ body,
     position: absolute;
     font-size: 36px;
     cursor: pointer;
+    height: 40px;
     left: 15px;
     top: 5px;
 }

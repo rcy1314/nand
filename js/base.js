@@ -30,7 +30,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1 || contrast == true) {
     $(
-      '#container, .background, #main, #arm, #home, #option, #bottom, .fa-home, .fa-code, .fa-terminal, .fa-git, .fa-globe, .fa-circle, .fa-circle-notch, input[type=text], #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
+      '#container, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
     ).css({
       'background-color': '#000',
       'color': '#fff',
@@ -52,10 +52,15 @@ var visual = function(n) {
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
-    $('.filter, .populate, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .item .pub, .ago').css({
+    $('#top, #arm, input[type=text], .filter, .populate, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .item .pub, .ago').css({
       'background-color': '#0e0e0e',
       'border': '1px solid #000',
-      'box-shadow': 'none'
+      'box-shadow': 'none',
+      'color': '#fff'
+    })
+    $('.fas, input[type=text]').css({
+      'background-color': '#0e0e0e',
+      'border': 'none'
     })
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
@@ -68,7 +73,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#container, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#top, #arm, #container, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
