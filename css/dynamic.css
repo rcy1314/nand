@@ -114,7 +114,8 @@
 }
 
 .sticky .post {
-    width: 80%;
+
+    width: 50%;
 }
 
 .sticky .post .item {
@@ -124,7 +125,6 @@
     margin: 0;
     width: 70%;
 }
-
 
 .sticky .post .wrap {
     position: absolute;

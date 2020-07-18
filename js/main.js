@@ -28,7 +28,7 @@ $(document)
     $('#arm #search #input input[type=text]')
       .focus()
   })
-  .on('touch click', '.fa-close', function(e) {
+  .on('touch click', '.fa-times-circle', function(e) {
     $('.sticky').remove()
   })
   .on('touch click', '.fa-globe', function(e) {

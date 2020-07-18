@@ -103,12 +103,13 @@
 	float: right !important;
   margin-right: 5px;
 }
-.fa-close:before {
+.fa-times-circle:before {
   position: absolute;
-  top: 5px;
-  right: 5px;
-	font-family: FontAwesome;
-	content:"\f00d";
+  padding: 10px;
+  top: 0;
+  right: 0;
+	font-family: "Font Awesome 5 Pro";
+	content:"\f057";
 }
 .fa-sticky-note:before {
 	font-family: FontAwesome;

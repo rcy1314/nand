@@ -30,7 +30,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1 || contrast == true) {
     $(
-      '#container, .post, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
+      '#container, .wrap, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
     ).css({
       'background-color': '#000',
       'color': '#fff',
@@ -73,7 +73,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#top, #arm, #container, .post, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#top, #arm, #container, .wrap, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
@@ -255,13 +255,7 @@ var image = function(n, src) {
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
-    if ($('#' + n).closest('.sticky').length > 0) {
-      $('#' + n).width('100%').addClass('expand')
-      .parents('.item')
-      .find('.ago')
-      .css('display','inline-block')
-      .parents('.item').find('.fill').html(fill)
-    } else if ($('#home').css('display') == 'none'
+    if ($('#home').css('display') == 'none'
         && $('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
@@ -272,7 +266,7 @@ var image = function(n, src) {
       comment(n)
    } else if ($('#' + n).get(0).naturalWidth < maximum
       && $('#home').css('display') == 'none') {
-    $('#' + n).width(99).addClass('expand').css('margin','10px')
+    $('#' + n).width(120).addClass('expand').css('margin','10px')
     .parents('.item')
     .find('.classic').css({
       'display': 'flex',
@@ -280,6 +274,17 @@ var image = function(n, src) {
     }).find('.header, .tag, .addComment').css('display', 'none')
     .siblings('.fill').css('left', '18px').html(fill)
     .parents('.item').find('.ago').css('display','inline-block')
+  } else if ($('#' + n).hasClass('guide') &&
+           $('#' + n).get(0).naturalHeight > mobile || $('#' + n)
+           .get(0).naturalHeight > maximum && $('#' + n)
+           .get(0).naturalWidth < maximum) {
+             var width = $('#' + n).get(0).naturalHeight * .30
+             $('#' + n).width('100%')
+             .parents('.guide')
+               .find('.image').width(width)
+             $('#' + n).parents('.guide')
+             .width(width)
+             .siblings('.fill').html(fill)
    } else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
         .get(0).naturalHeight > maximum && $('#' + n)
         .get(0).naturalWidth < maximum) {
@@ -708,12 +713,12 @@ var xml = function(e, s, n, post) {
       "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
-      $('#container').append("<div class='sticky'><div class='blur'></div>" +
-      "<div class='fa fa-close'></div>" +
+      $('#guide').append("<div class='sticky'><div class='blur'></div>" +
+      "<div class='fa fa-times-circle'></div>" +
       "<div class='post'>" +
       "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
       "<div class='image' style='display:none'>" +
-      "<img class='img' id='" + pub[local].element + "'>" +
+      "<img class='img guide' id='" + pub[local].element + "'>" +
       "</div></div>" + "<div class='wrap'>" +
       "<div class='header'>" + courtesy +
       "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
