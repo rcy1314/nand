@@ -85,7 +85,7 @@ $(document)
         var res = uri[0].replace(/\+1/g, '')
       else var res = uri[0]
       res = res.replace(/\-|\+/g, ' ')
-      response(false, true, res, true, null)
+      response(false, false, res, true, null)
       if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
       state('?q=' + uri[0].replace(/\-/g, '+'))
     }
