@@ -30,7 +30,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1 || contrast == true) {
     $(
-      '#container, .wrap, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
+      '#container, .wrap, .fa-times-circle, .background, #main, #arm, #home, #option, #bottom, .fas,  #visit, .result, .air, .feed, .comment, .channel, .suggestions, .combine, .index, a'
     ).css({
       'background-color': '#000',
       'color': '#fff',
@@ -73,7 +73,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#top, #arm, #container, .wrap, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#top, #arm, #container, .wrap, .fa-times-circle, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
