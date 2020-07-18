@@ -28,6 +28,9 @@ $(document)
     $('#arm #search #input input[type=text]')
       .focus()
   })
+  .on('touch click', '.fa-close', function(e) {
+    $('.sticky').remove()
+  })
   .on('touch click', '.fa-globe', function(e) {
     window.location.href = 'maintenance/rip.txt'
   })
@@ -530,17 +533,17 @@ $(document)
       e.stopPropagation()
       visual()
     })
-  .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h',
+  .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, #container .sticky .header .fa-ellipsis-h',
     function(e) {
-      $(this)
-        .siblings('.url')
+      $(this).parents('.item')
+        .find('.url')
         .select()
       document.execCommand('copy')
       $(this)
         .removeClass('fa-ellipsis-h')
         .addClass('fa-ellipsis-v')
       setTimeout(function() {
-        $('#main .center .channel .item .copy')
+        $('#main .center .channel .item .copy, #container .sticky .header .copy')
           .removeClass('fa-ellipsis-v')
           .addClass('fa-ellipsis-h')
       }, 250)

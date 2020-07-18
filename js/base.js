@@ -47,18 +47,18 @@ var visual = function(n) {
     $('.more').css('color', '#333')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.right, .left').css({
-      'background-color': 'rgba(33,33,33,.2)',
+      'background-color': 'rgba(0,0,0,.2)',
     })
     $('.fa-angle-double-left, .fa-angle-double-right').css({
       'color': '#fff'
     })
-    $('#top, #arm, input[type=text], .filter, .populate, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .item .pub, .ago').css({
+    $('#top, #arm, input[type=text], .filter, .populate, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .ago').css({
       'background-color': '#0e0e0e',
       'border': '1px solid #000',
       'box-shadow': 'none',
       'color': '#fff'
     })
-    $('.fas, input[type=text]').css({
+    $('.fas, input[type=text], .item .pub').css({
       'background-color': '#0e0e0e',
       'border': 'none'
     })
@@ -674,8 +674,13 @@ var xml = function(e, s, n, post) {
       }
       pub.push({
         element: i,
+        title: escape($(this).find('title:first').text()),
+        courtesy: courtesy,
         since: since,
+        share: share,
+        more: more,
         post: html,
+        ref: ref.trim(),
         src: src,
         dst: dst[0],
         gen: gen
@@ -696,15 +701,30 @@ var xml = function(e, s, n, post) {
       "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
-      $('#main .center .channel').append(pub[local].post)
+      $('#container').append("<div class='sticky'><div class='blur'></div>" +
+      "<div class='fa fa-close'></div>" +
+      "<div class='item'><div class='header'>" + courtesy +
+      "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
+      "</div><div class='image' style='display:none'>" +
+      "<img class='img' id='" + pub[local].element + "'>"+
+      "</div>" + "<div class='wrap'>" +
+      "<div class='pub' text='" + pub[local].title +
+      "'>" + pub[local].title.truncate(125, true) + pub[local].more +
+      "</div>" + "<div class='ago'>" + pub[local].dst + "</div>" +
+      "</div>" + "<input class='url' value='" + pub[local].ref + "'>" +
+      "<input class='share' value='" + pub[local].share + "'>" +
+      "<input class='source' value='" + pub[local].src + "'>" +
+      "</div></div>" +
+      "</div>")
       image(pub[local].element, pub[local].src)
-    } else {
+    }
       $.each(pub, function(i, k) {
         if (i == quit) return false
-        $('#main .center .channel').append(pub[i].post)
+        if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
+        else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
         image(pub[i].element, pub[i].src)
       })
-    }
+
     if (!id) id = menu.indexOf(menu[n])
     var posts = pub.length
     var recent = pub[0].dst

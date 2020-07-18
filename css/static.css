@@ -254,52 +254,6 @@ svg .border {
     fill: none;
 }
 
-
-.right {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    display: flex;
-    width: 1.5em;
-    height: 100%;
-    right: -1px;
-    z-index: 2;
-    top: 1px;
-}
-
-.left {
-    justify-content: center;
-    position: absolute;
-    align-items: center;
-    display: flex;
-    width: 1.5em;
-    height: 100%;
-    z-index: 2;
-    left: -1px;
-    top: 1px;
-}
-
-.asset {
-    position: relative;
-    text-align: center;
-    padding-left: 7px;
-    padding-top: 15px;
-    flex-shrink: 0;
-}
-
-.asset a {
-    display: block;
-}
-
-.id {
-    border-radius: 36px;
-    position: relative;
-    padding: 1px;
-    margin: 10px;
-    height: 50px;
-    width: 50px;
-}
-
 #input {
     position: relative;
     margin: 0 auto;

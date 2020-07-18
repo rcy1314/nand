@@ -103,6 +103,13 @@
 	float: right !important;
   margin-right: 5px;
 }
+.fa-close:before {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+	font-family: FontAwesome;
+	content:"\f00d";
+}
 .fa-sticky-note:before {
 	font-family: FontAwesome;
 	content:"\f249";

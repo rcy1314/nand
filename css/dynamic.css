@@ -17,6 +17,51 @@
     width: 28px;
 }
 
+.right {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    right: -1px;
+    z-index: 2;
+    top: 1px;
+}
+
+.left {
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    width: 1.5em;
+    height: 100%;
+    z-index: 2;
+    left: -1px;
+    top: 1px;
+}
+
+.asset {
+    position: relative;
+    text-align: center;
+    padding-left: 7px;
+    padding-top: 15px;
+    flex-shrink: 0;
+}
+
+.asset a {
+    display: block;
+}
+
+.id {
+    border-radius: 36px;
+    position: relative;
+    padding: 1px;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
 .header {
     height: 45px;
     width: 100%;
@@ -41,6 +86,34 @@
     display: flex;
     height: 5em;
     margin-left: 10px !important;
+}
+
+.sticky, .blur {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+    z-index: 3;
+    left: 0;
+    top: 0;
+}
+
+.blur {
+  background-color: rgba(0,0,0,.1);
+  backdrop-filter: blur(4px);
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.sticky .item {
+    width: 70%;
+    height: fit-content;
 }
 
 .item .pub,
