@@ -81,16 +81,15 @@
 
 .fill {
     position: relative;
-    width: 100%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 5em;
-    margin-left: 10px !important;
+    height: 7em;
+    margin-left: 30px !important;
 }
 
-.sticky, .blur {
+#guide, .blur {
     position: absolute;
     display: flex;
     align-items: center;
@@ -113,24 +112,23 @@
     z-index: -1;
 }
 
-.sticky .post {
-
-    width: 60%;
+.sticky {
+    position: relative;
+    display: table;
+    align-items: center;
 }
 
-.sticky .post .item {
+.sticky .item {
     box-shadow: none !important;
     border: none !important;
-    display: inline-block;
+    display: table-cell !important;
     margin: 0;
-    width: 70%;
 }
 
-.sticky .post .wrap {
-    position: absolute;
-    display: inline-block;
+.sticky .wrap {
+    display: table-cell !important;
     vertical-align: top;
-    width: 30%;
+    width: 300px;
     height: 100%;
 }
 
@@ -138,6 +136,19 @@
     position: relative;
     height: calc(100% - 125px);
     padding: 5px;
+    width: 300px;
+}
+
+.sticky .ts {
+    position: absolute;
+    width: 300px;
+    bottom: 30px;
+}
+
+.sticky .tag {
+    position: absolute;
+    width: 300px;
+    bottom: 0;
 }
 
 .item .pub,
@@ -178,7 +189,7 @@
 .image {
     position: relative;
 }
-.tag {
+.item .tag {
 	  min-width: 38% !important;
     position: relative;
     width: 100%;

@@ -248,6 +248,7 @@ var response = function(passthrough, uri, n, bloat, post) {
   })
 }
 var image = function(n, src) {
+  var large  = 2800
   var mobile = 1281
   var minimum = 299
   var maximum = 799
@@ -278,13 +279,11 @@ var image = function(n, src) {
            $('#' + n).get(0).naturalHeight > mobile || $('#' + n)
            .get(0).naturalHeight > maximum && $('#' + n)
            .get(0).naturalWidth < maximum) {
-             var width = $('#' + n).get(0).naturalHeight * .5
-             $('#' + n).width('100%')
-             .parents('.guide')
-               .find('.image').width(width)
-             $('#' + n).parents('.guide')
-             .width(width)
-             .siblings('.fill').html(fill)
+             $('#' + n).width('100%').addClass('expand')
+             .parents('.sticky').width('50%')
+             $('#' + n).parents('.sticky')
+             .find('.fill')
+             .html(fill)
    } else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
         .get(0).naturalHeight > maximum && $('#' + n)
         .get(0).naturalWidth < maximum) {
@@ -300,10 +299,12 @@ var image = function(n, src) {
       } else if ($('#' + n).hasClass('guide') &&
         $('#' + n).get(0).naturalWidth > minimum) {
               $('#' + n).width('100%').addClass('expand')
+              .parents('.sticky').width('65%')
               .parents('.item')
               .find('.ago')
               .css('display','inline-block')
-              .parents('.item').find('.fill').html(fill)
+              $('#' + n).parents('.sticky').find('.fill')
+              .html(fill)
     } else if ($('#' + n).get(0).naturalWidth > minimum) {
       $('#' + n).width('100%').addClass('expand')
       .parents('.item')
@@ -320,11 +321,15 @@ var image = function(n, src) {
         'align-items': 'center'
       }).find('.header, .tag, .addComment').css('display', 'none')
       .siblings('.fill').css('left', '18px').html(fill)
-      .parents('.item').find('.ago').css('display','inline-block')
+      .parents('.item').find('.ago').css('display','none')
     }
     $('#' + n)
-    .parents('.item').find('.image, .pub').css('display', 'block')
-    .siblings('.fill')
+    .parents('.item, #guide').find('.image, .img, .header, .pub, .tag').css('display', 'block')
+    $('#' + n)
+    .parents('.guide').find('.ago, .wrap').css('display', 'inline-block')
+    $('#' + n)
+    .parents('.item, #guide')
+    .find('.fill')
     .remove()
   visual()
 }).attr('src', src).parent().siblings('.fill').html(fill)
@@ -720,28 +725,29 @@ var xml = function(e, s, n, post) {
       "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
-      $('#guide').append("<div class='sticky'><div class='blur'></div>" +
-      "<div class='fa fa-times-circle'></div>" +
-      "<div class='post'>" +
+      $('#guide').append("<div class='fa fa-times-circle'></div><div class='blur'>" +
+      "</div><div class='sticky'>" +
+      "" +
       "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
-      "<div class='image' style='display:none'>" +
-      "<img class='img guide' id='" + pub[local].element + "'>" +
-      "</div></div>" + "<div class='wrap'>" +
-      "<div class='header'>" + courtesy +
+      "<div class='image'><div class='fill'></div>" +
+      "<img class='img guide' style='display:none' id='" + pub[local].element + "'>" +
+      "</div></div>" + "<div class='wrap' style='display:none'>" +
+      "<div class='header' style='display:none'>" + pub[local].courtesy +
       "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
       "</div>" +
-      "<div class='pub' text='" + pub[local].title +
+      "<div class='pub' style='display:none' text='" + pub[local].title +
       "'>" + pub[local].title.truncate(125, true) + pub[local].more +
-      "</div>" + "<div class='ago'>" + pub[local].dst + "</div>" +
+      "</div>" + "<div class='ago ts' style='display:none'>" + pub[local].dst + "</div>" +
       "<input class='url' value='" + pub[local].ref + "'>" +
       "<input class='source' value='" + pub[local].src + "'>" +
-      "<div class='tag'>" +
+      "<div class='tag' style='display:none'>" +
       "<div class='ago fa-heart-o'></div>" +
+      "<div class='ago fa-comment-o'></div>" +
       "<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
       "</div>" +
       "</div>")
       image(pub[local].element, pub[local].src)
-    }
+    } else $('#guide').remove()
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)

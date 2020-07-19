@@ -29,7 +29,7 @@ $(document)
       .focus()
   })
   .on('touch click', '.fa-times-circle', function(e) {
-    $('.sticky').remove()
+    $('#guide').remove()
   })
   .on('touch click', '.fa-globe', function(e) {
     window.location.href = 'maintenance/rip.txt'
@@ -586,7 +586,7 @@ $(document)
       e.stopPropagation()
       visual()
     })
-  .on('touch click', '#main .center .channel .item .image .img, #container .sticky .post .item .img', function(e) {
+  .on('touch click', '#main .center .channel .item .image .img, #wrapper #container #guide .sticky .item .image .img', function(e) {
     if (tap == 0) {
         // set first click
         tap = new Date().getTime();
@@ -599,7 +599,7 @@ $(document)
         if (((new Date().getTime()) - tap) < 300) {
             // double click occurred
             $(this)
-              .parents('.item, .post')
+              .parents('.item, .sticky')
               .find('.fa-heart-o, .fa-gratipay')
               .toggleClass('fa-heart-o fab fa-gratipay')
             e.stopPropagation()
