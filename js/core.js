@@ -1,87 +1,106 @@
-var image = function(n, src) {
-  var large  = 2800
-  var mobile = 1281
-  var minimum = 299
-  var maximum = 799
-  $('#' + n).on('error', function() {
-    $(this).parents('.classic').find('.tag, .fill, .header').css('display',
-      'none').parents('.item').find('.pub, .ago').css('display','block')
-  }).on('load', function() {
-    if ($('#home').css('display') == 'none'
-        && $('#' + n).get(0).naturalWidth > minimum) {
-      $('#' + n).width('100%').addClass('expand')
-      .parents('.item')
-      .find('.ago')
-      .css('display','inline-block')
-      .parents('.item').find('.fill').html(fill)
-      if (category == 'Social')
-      comment(n)
-   } else if ($('#' + n).get(0).naturalWidth < maximum
-      && $('#home').css('display') == 'none') {
-    $('#' + n).width(120).addClass('expand').css('margin','10px')
-    .parents('.item')
-    .find('.classic').css({
-      'display': 'flex',
-      'align-items': 'center'
-    }).find('.header, .tag, .addComment').css('display', 'none')
-    .siblings('.fill').css('left', '18px').html(fill)
-    .parents('.item').find('.ago').css('display','inline-block')
-  } else if ($('#' + n).hasClass('guide') &&
-           $('#' + n).get(0).naturalHeight > mobile || $('#' + n)
-           .get(0).naturalHeight > maximum && $('#' + n)
-           .get(0).naturalWidth < maximum) {
-             $('#' + n).width('100%').addClass('expand')
-             .parents('.sticky').width('50%')
-             $('#' + n).parents('.sticky')
-             .find('.fill')
-             .html(fill)
-   } else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
-        .get(0).naturalHeight > maximum && $('#' + n)
-        .get(0).naturalWidth < maximum) {
-      $('#' + n).addClass('expand min').width('100%').parents('.item')
-        .find('.image').css({
-        'margin': '0 auto',
-        'width': '45%',
-        'left': '15px'
-      }).siblings('.fill').html(fill)
-      .parents('.item').find('.ago').css('display','inline-block')
-              if (category == 'Social')
-              comment(n)
-      } else if ($('#' + n).hasClass('guide') &&
-        $('#' + n).get(0).naturalWidth > minimum) {
-              $('#' + n).width('100%').addClass('expand')
-              .parents('.sticky').width('65%')
-              .parents('.item')
-              .find('.ago')
-              .css('display','inline-block')
-              $('#' + n).parents('.sticky').find('.fill')
-              .html(fill)
-    } else if ($('#' + n).get(0).naturalWidth > minimum) {
-      $('#' + n).width('100%').addClass('expand')
-      .parents('.item')
-      .find('.ago')
-      .css('display','inline-block')
-      .parents('.item').find('.fill').html(fill)
-      if (category == 'Social')
-      comment(n)
-    } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(120).addClass('expand').css('margin','10px')
-      .parents('.item')
-      .find('.classic').css({
-        'display': 'flex',
-        'align-items': 'center'
-      }).find('.header, .tag, .addComment').css('display', 'none')
-      .siblings('.fill').css('left', '18px').html(fill)
-      .parents('.item').find('.ago, .header').css('display','none')
+String.prototype.capitalize = function() {
+
+    return this.replace(/(\b[a-z](?!\s))/g, function(n) {
+        return n.toUpperCase()
+    })
+
+}
+
+String.prototype.truncate = function(n, useWordBoundary) {
+
+        if (this.length <= n) {
+            return this;
+        }
+        var subString = this.substr(0, n - 1);
+        return (useWordBoundary ?
+            subString.substr(0, subString.lastIndexOf(' ')) :
+            subString) + "..."
+
+}
+
+var blank = function (n) {
+
+  window.open(n, '_blank', 'noreferrer')
+
+}
+
+var escape = function (n) {
+
+    return n
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+
+}
+
+var exit = function (n) {
+
+    window.location.assign(n)
+
+}
+
+var grep = function (array, n) {
+
+	var numOccurences = $.grep(array, function (elem) {
+	    return elem.cat === n;
+	}).length;
+	return numOccurences
+
+}
+
+var moment = function(n) {
+
+    var age = new Date()
+    var utc = new Date(n)
+    var dis = age.getTime() - utc.getTime()
+    if (dis < 0) dis = -dis
+    var sec = dis / 1000;
+    if (sec < 60) return parseInt(sec) + ' second' + (parseInt(sec) >
+        1 ? 's' : '') + ' ago'
+    var min = sec / 60;
+    if (min < 60) return parseInt(min) + ' minute' + (parseInt(min) >
+        1 ? 's' : '') + ' ago'
+    var h = min / 60;
+    if (h < 24) return parseInt(h) + ' hour' + (parseInt(h) > 1 ?
+        's' : '') + ' ago'
+    var d = h / 24;
+    if (d < 30) return parseInt(d) + ' day' + (parseInt(d) > 1 ? 's' :
+        '') + ' ago'
+    var m = d / 30;
+    if (m < 12) return parseInt(m) + ' month' + (parseInt(m) > 1 ?
+        's' : '') + ' ago'
+    var y = m / 121
+
+    return parseInt(y) + ' year' + (parseInt(y) > 1 ? 's' : '') +
+        ' ago'
+
+}
+
+var state = function (n) {
+
+    history.replaceState(null, null, n)
+
+}
+
+
+var zulu = function (n) {
+
+    var opt = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
     }
-    $('#' + n)
-    .parents('.item, #guide').find('.image, .img, .pub, .tag').css('display', 'block')
-    $('#' + n)
-    .parents('#guide').find('.header, .ago, .wrap').css('display', 'inline-block')
-    $('#' + n)
-    .parents('.item, #guide')
-    .find('.fill')
-    .remove()
-  visual()
-}).attr('src', src).parent().siblings('.fill').html(fill)
+    var dmz = []
+    dmz.push(moment(n))
+    var utc = new Date(n)
+    var gmt = utc.toLocaleString('en-US', opt)
+    dmz.push(gmt)
+
+    return dmz
+
 }
