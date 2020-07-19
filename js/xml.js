@@ -233,36 +233,35 @@ var xml = function(e, s, n, post) {
       "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
-      $('#guide').css('display','flex').append("<div class='fa fa-times-circle'></div><div class='blur'>" +
-      "</div><div class='sticky'>" +
-      "" +
-      "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
-      "<div class='image'><div class='fill'></div>" +
-      "<img class='img guide' style='display:none' id='" + pub[local].element + "'>" +
-      "</div></div>" + "<div class='wrap' style='display:none'>" +
-      "<div class='header' style='display:none'>" + pub[local].courtesy +
-      "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-      "</div>" +
-      "<div class='pub' style='display:none' text='" + pub[local].title +
-      "'>" + pub[local].title.truncate(125, true) + pub[local].more +
-      "</div>" + "<div class='ago ts' style='display:none'>" + pub[local].dst + "</div>" +
-      "<input class='url' value='" + pub[local].ref + "'>" +
-      "<input class='source' value='" + pub[local].src + "'>" +
-      "<div class='tag' style='display:none'>" +
-      "<div class='ago fa-heart-o'></div>" +
-      "<div class='ago fa-comment-o'></div>" +
-      "<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
-      "</div>" +
-      "</div>")
+      $('#guide').css('display', 'flex').append("<div class='fa fa-times-circle'></div><div class='blur'>" +
+        "</div><div class='sticky'>" +
+        "" +
+        "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
+        "<div class='image'><div class='fill'></div>" +
+        "<img class='img guide' style='display:none' id='" + pub[local].element + "'>" +
+        "</div></div>" + "<div class='wrap' style='display:none'>" +
+        "<div class='header' style='display:none'>" + pub[local].courtesy +
+        "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
+        "</div>" +
+        "<div class='pub' style='display:none' text='" + pub[local].title +
+        "'>" + pub[local].title.truncate(125, true) + pub[local].more +
+        "</div>" + "<div class='ago ts' style='display:none'>" + pub[local].dst + "</div>" +
+        "<input class='url' value='" + pub[local].ref + "'>" +
+        "<input class='source' value='" + pub[local].src + "'>" +
+        "<div class='tag' style='display:none'>" +
+        "<div class='ago fa-heart-o'></div>" +
+        "<div class='ago fa-comment-o'></div>" +
+        "<div class='ago fa-bookmark-o' title='Copy Source'></div>" +
+        "</div>" +
+        "</div>")
       image(pub[local].element, pub[local].src)
     } else $('#guide').remove()
-      $.each(pub, function(i, k) {
-        if (i == quit) return false
-        if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
-        else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
-        image(pub[i].element, pub[i].src)
-      })
-
+    $.each(pub, function(i, k) {
+      if (i == quit) return false
+      if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
+      else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
+      image(pub[i].element, pub[i].src)
+    })
     if (!id) id = menu.indexOf(menu[n])
     var posts = pub.length
     var recent = pub[0].dst

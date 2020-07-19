@@ -1,12 +1,12 @@
 @font-face {
-    font-family: FontAwesome;
-    src: url(../fonts/fontawesome-webfont.woff2);
-	  font-display: block;
+  font-family: FontAwesome;
+  src: url(../fonts/fontawesome-webfont.woff2);
+  font-display: block;
 }
 
 .fa,
 .far {
-	display: inline-block;
+  display: inline-block;
 }
 
 .fa-git,
@@ -16,8 +16,8 @@
 .fa-circle,
 .fa-terminal,
 .fa-circle-notch {
-    padding: 10px;
-	  font-size: 20px;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .fa-heart,
@@ -29,114 +29,128 @@
 .fa-sticky-note-o,
 .fa-bookmark,
 .fa-bookmark-o {
-    font-size: 16px !important;
-    padding: 5px !important;
+  font-size: 24px !important;
+  padding: 5px !important;
 }
+
 .fa-globe:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f0ac";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f0ac";
 }
+
 .fa-home:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f015";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f015";
 }
+
 .fa-angle-double-left:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f100";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f100";
 }
 
 .fa-angle-double-right:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f101";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f101";
 }
 
 .fa-search:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f002";
-	color: #aaa;
-	font-size: 12px;
+  font-family: "Font Awesome 5 Pro";
+  content: "\f002";
+  color: #aaa;
+  font-size: 12px;
 }
 
 .fa-circle-thin:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f1ce";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1ce";
 }
 
 .fa-circle:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f111";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f111";
 }
 
 .fa-terminal:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f120";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f120";
 }
 
 .fa-code:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f121";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f121";
 }
 
 .fa-ellipsis-h:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f141";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f141";
 }
+
 .fa-ellipsis-v:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f142";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f142";
 }
 
 .fa-heart:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f004";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f004";
 }
+
 .fa-comment:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f075";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f075";
 }
+
 .fa-bookmark:before {
-	font-family: "Font Awesome 5 Pro";
-	content:"\f02e";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f02e";
 }
+
 .fa-bookmark,
 .fa-bookmark-o {
-	float: right !important;
+  float: right !important;
   margin-right: 5px;
 }
+
 .fa-times-circle:before {
   position: absolute;
   padding: 10px;
   top: 0;
   right: 0;
-	font-family: "Font Awesome 5 Pro";
-	content:"\f057";
+  font-family: "Font Awesome 5 Pro";
+  content: "\f057";
 }
+
 .fa-sticky-note:before {
-	font-family: FontAwesome;
-	content:"\f249";
+  font-family: FontAwesome;
+  content: "\f249";
 }
+
 .fa-heart-o:before {
-	font-family: FontAwesome;
-	content:"\f08a";
-	font-weight: 400;
+  font-family: FontAwesome;
+  content: "\f08a";
+  font-weight: 400;
 }
+
 .fa-comment-o:before {
-	font-family: FontAwesome;
-	content:"\f0e5";
-	font-weight: 400;
+  font-family: FontAwesome;
+  content: "\f0e5";
+  font-weight: 400;
 }
+
 .fa-sticky-note-o:before {
-	font-family: FontAwesome;
-	content:"\f24a";
-	font-weight: 400;
+  font-family: FontAwesome;
+  content: "\f24a";
+  font-weight: 400;
 }
+
 .fa-bookmark-o:before {
-	font-family: FontAwesome;
-	content:"\f097";
-	font-weight: 400;
+  font-family: FontAwesome;
+  content: "\f097";
+  font-weight: 400;
 }
+
 .fa-git:before {
-	font-family: FontAwesome;
-	content:"\f1d3";
-	font-weight: 400;
+  font-family: FontAwesome;
+  content: "\f1d3";
+  font-weight: 400;
 }
