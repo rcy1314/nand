@@ -35,9 +35,13 @@
     scrollbar-width: thin;
 }
 
+#guide {
+    display: none;
+}
+
 #progressBar {
-	height: 4px;
-	width: 0;
+	  height: 4px;
+	  width: 0;
 }
 
 .responseInvert {
@@ -103,7 +107,7 @@ body,
 }
 
 #top {
-    height: 57px;
+    height: 56px;
 }
 #arm {
     position: relative;

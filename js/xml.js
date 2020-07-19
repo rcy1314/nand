@@ -233,7 +233,7 @@ var xml = function(e, s, n, post) {
       "<div class='suggestions' style='visibility:hidden'><b>suggested</b>&ensp;for you&ensp;...<br></div></div>"
     )
     if ($.isNumeric(local)) {
-      $('#guide').append("<div class='fa fa-times-circle'></div><div class='blur'>" +
+      $('#guide').css('display','flex').append("<div class='fa fa-times-circle'></div><div class='blur'>" +
       "</div><div class='sticky'>" +
       "" +
       "<div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
