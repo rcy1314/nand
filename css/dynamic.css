@@ -1,359 +1,361 @@
 @font-face {
-    font-family: Proxima Nova;
-    src: url(../fonts/ProximaNova-Regular.woff);
-	  font-display: block;
+  font-family: Proxima Nova;
+  src: url(../fonts/ProximaNova-Regular.woff);
+  font-display: block;
 }
 
 .item {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-user-select: none;
-    margin-bottom: 2em;
-    width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  margin-bottom: 2em;
+  width: 100%;
 }
 
 .type,
 .item .id {
-    height: 28px;
-    width: 28px;
+  height: 28px;
+  width: 28px;
 }
 
 .right {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    display: flex;
-    width: 1.5em;
-    height: 100%;
-    right: -1px;
-    z-index: 2;
-    top: 1px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  width: 1.5em;
+  height: 100%;
+  right: -1px;
+  z-index: 2;
+  top: 1px;
 }
 
 .left {
-    justify-content: center;
-    position: absolute;
-    align-items: center;
-    display: flex;
-    width: 1.5em;
-    height: 100%;
-    z-index: 2;
-    left: -1px;
-    top: 1px;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  display: flex;
+  width: 1.5em;
+  height: 100%;
+  z-index: 2;
+  left: -1px;
+  top: 1px;
 }
 
 .asset {
-    position: relative;
-    text-align: center;
-    padding-left: 7px;
-    padding-top: 15px;
-    flex-shrink: 0;
+  position: relative;
+  text-align: center;
+  padding-left: 7px;
+  padding-top: 15px;
+  flex-shrink: 0;
 }
 
 .asset a {
-    display: block;
+  display: block;
 }
 
 .id {
-    border-radius: 36px;
-    position: relative;
-    padding: 1px;
-    margin: 10px;
-    height: 50px;
-    width: 50px;
+  border-radius: 36px;
+  position: relative;
+  padding: 1px;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
 }
 
 .header {
-    height: 70px;
-    width: 100%;
+  height: 70px;
+  width: 100%;
 }
 
 .courtesy {
-    text-transform: capitalize;
-    align-items: center;
-    position: relative;
-    width: fit-content;
-    margin-top: 5px;
-    font-size: 10px;
-    display: flex;
-    height: 50px;
-    left: 0;
+  text-transform: capitalize;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin-top: 5px;
+  font-size: 10px;
+  display: flex;
+  height: 50px;
+  left: 0;
 }
 
 .fill {
-    position: relative;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 7em;
-    margin-left: 30px !important;
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 7em;
+  margin-left: 30px !important;
 }
 
-#guide, .blur {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    bottom: 0;
-    z-index: 3;
-    left: 0;
-    top: 0;
+#guide,
+.blur {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  z-index: 3;
+  left: 0;
+  top: 0;
 }
 
 .blur {
-    background-color: rgba(0,0,0,.1);
-    backdrop-filter: blur(4px);
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    z-index: -1;
+  background-color: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(4px);
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  z-index: -1;
 }
 
 .sticky {
-    position: relative;
-    display: table;
-    align-items: center;
+  position: relative;
+  display: table;
+  align-items: center;
 }
 
 .sticky .item {
-    box-shadow: none !important;
-    border: none !important;
-    display: table-cell !important;
-    margin: 0;
+  box-shadow: none !important;
+  border: none !important;
+  display: table-cell !important;
+  margin: 0;
 }
 
 .sticky .wrap {
-    display: table-cell !important;
-    vertical-align: top;
-    width: 300px;
-    height: 100%;
+  display: table-cell !important;
+  vertical-align: top;
+  width: 300px;
+  height: 100%;
 }
 
 .sticky .pub {
-    position: relative;
-    height: calc(100% - 125px);
-    padding: 5px;
-    width: 300px;
+  position: relative;
+  height: calc(100% - 125px);
+  padding: 10px;
+  width: 300px;
 }
 
 .sticky .ts {
-    position: absolute;
-    width: 300px;
-    bottom: 30px;
+  position: absolute;
+  width: 300px;
+  bottom: 30px;
 }
 
 .sticky .tag {
-    position: absolute;
-    width: 300px;
-    bottom: 0;
+  position: absolute;
+  width: 300px;
+  bottom: 0;
 }
 
 .item .pub,
 .item .add {
-    justify-content: left;
-    margin-left: 10px;
-	  margin-top: 5px;
-    font-size: 13px;
-    width: 95% !important;
-    left: 0;
+  justify-content: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 13px;
+  width: 95% !important;
+  left: 0;
 }
 
 .item .pub {
-    display: inline-block;
-	  margin-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 .more {
-    background-color: transparent;
-    display: inline-block;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    position: relative;
-    padding-top: 5px;
-    font-size: 13px;
-    color: #aaa;
+  background-color: transparent;
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  padding-top: 5px;
+  font-size: 13px;
+  color: #aaa;
 }
 
 .item .add {
-    margin-left: 15px !important;
-    margin-bottom: 10px;
-    font-size: 12px;
-    width: 85%;
+  margin-left: 15px !important;
+  margin-bottom: 10px;
+  font-size: 12px;
+  width: 85%;
 }
 
 .img,
 .image {
-    position: relative;
+  position: relative;
 }
+
 .item .tag {
-	  min-width: 38% !important;
-    position: relative;
-    width: 100%;
+  min-width: 38% !important;
+  position: relative;
+  width: 100%;
 }
 
 .post {
-	margin-right: 10px;
-	position: relative;
-	color: lightcyan;
-	font-size: 12px;
-	float: right;
-	top: -27px;
+  margin-right: 10px;
+  position: relative;
+  color: lightcyan;
+  font-size: 12px;
+  float: right;
+  top: -27px;
 }
 
 .addComment {
-    margin-top: 5px;
-	  margin: 0;
+  margin-top: 5px;
+  margin: 0;
 }
 
 .comment {
-    font-family: Proxima Nova;
-    padding: 1em;
-    border: none;
-    clear: left;
-    width: 100%;
+  font-family: Proxima Nova;
+  padding: 1em;
+  border: none;
+  clear: left;
+  width: 100%;
 }
 
 .comment::placeholder {
-    font-size: 12px;
-    color: #aaa;
+  font-size: 12px;
+  color: #aaa;
 }
 
 .url,
 .share,
 .source {
-	display: inline-block;
-    position: relative;
-    z-index: -2;
-	width: 10px;
-    height: 0;
+  display: inline-block;
+  position: relative;
+  z-index: -2;
+  width: 10px;
+  height: 0;
 }
 
 .copy {
-    font-size: 12px;
-    padding: 23px;
-    float: right;
+  font-size: 12px;
+  padding: 23px;
+  float: right;
 }
 
 .wrap {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ago {
-    text-transform: uppercase;
-	  display: inline-block;
-	  margin-bottom: 5px;
-    position: relative;
-    width: fit-content;
-    margin-left: 12px;
-    font-size: 9px;
-    color: #e4e4e4;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 5px;
+  position: relative;
+  width: fit-content;
+  margin-left: 12px;
+  font-size: 9px;
+  color: #e4e4e4;
 }
 
 #bottom {
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    font-size: 12px;
-    bottom: 1.95em;
-    display: flex;
-    height: 5em;
-    width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 12px;
+  bottom: 1.95em;
+  display: flex;
+  height: 5em;
+  width: 100%;
 }
 
 .previous {
-    float: left !important;
+  float: left !important;
 }
 
 .bottom {
-    position: relative !important;
-    margin: 0 auto !important;
-    display: inline-block;
-    width: 52px;
+  position: relative !important;
+  margin: 0 auto !important;
+  display: inline-block;
+  width: 52px;
 }
 
 .next {
-    float: right !important;
+  float: right !important;
 }
 
 .center {
-    display: inline-block;
-    margin-right: 5px;
-    position: relative;
-    text-align: left;
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  text-align: left;
 }
 
 .content {
-    display: inline-block;
-    height: fit-content;
-    vertical-align: top;
-    text-align: left;
-    position: sticky;
-    font-size: 10px;
-    padding: 15px;
-    width: 150px;
-    top: 8px;
+  display: inline-block;
+  height: fit-content;
+  vertical-align: top;
+  text-align: left;
+  position: sticky;
+  font-size: 10px;
+  padding: 15px;
+  width: 150px;
+  top: 8px;
 }
 
 .stats {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2em;
-    text-align: left;
-    font-size: 10px;
-    width: 230px;
-    height: 120px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  text-align: left;
+  font-size: 10px;
+  width: 230px;
+  height: 120px;
 }
 
 .stats .id {
-    padding: 4px;
-    border: 1px solid #ccc;
+  padding: 4px;
+  border: 1px solid #ccc;
 }
 
 .suggestions {
-    height: fit-content;
-    text-align: left;
-    font-size: 10px;
-    padding: 15px;
-    width: 200px;
-    top: 215px;
+  height: fit-content;
+  text-align: left;
+  font-size: 10px;
+  padding: 15px;
+  width: 200px;
+  top: 215px;
 }
 
 .suggestions .id {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .combine {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 5px;
 }
 
 .views {
-    position: absolute;
-    bottom: -30px;
-    right: 30px;
+  position: absolute;
+  bottom: -30px;
+  right: 30px;
 }
 
 .yt {
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-    padding-bottom: 54.25%;
-    margin-bottom: 5px;
-    position: relative;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding-bottom: 54.25%;
+  margin-bottom: 5px;
+  position: relative;
 }
 
 iframe {
-    position: absolute;
-    border: none;
-    height: 100%;
-    width: 100%;
-	top: 5px;
-	left: 0;
+  position: absolute;
+  border: none;
+  height: 100%;
+  width: 100%;
+  top: 5px;
+  left: 0;
 }

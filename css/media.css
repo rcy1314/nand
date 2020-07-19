@@ -1,126 +1,140 @@
 @media screen and (max-width: 425px) {
 
-    #home,
-    .left,
-    .right,
-    ::-webkit-scrollbar {
-        display: none !important;
-    }
+  #home,
+  .left,
+  .right,
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
 
-    #main {
-        height: calc(100% - 89px);
-    }
+  #main {
+    height: calc(100% - 89px);
+  }
 
-    #main .center, #main .channel {
-        width: 100% !important;
-		    margin: 0;
-    }
+  #main .center,
+  #main .channel {
+    width: 100% !important;
+    margin: 0;
+  }
 
-	#main .item, #main .feed {
-		    box-shadow: none !important;
-		    border: none !important;
-	}
+  #main .item,
+  #main .feed {
+    box-shadow: none !important;
+    border: none !important;
+  }
 
-    #option {
-        position: fixed !important;
-        width: calc(100% - 20px) !important;
-        top: calc(100% - 40px) !important;
-        height: 35px !important;
-		    left: 10px !important;
-        z-index: 2;
-    }
+  #option {
+    position: fixed !important;
+    width: calc(100% - 20px) !important;
+    top: calc(100% - 40px) !important;
+    height: 35px !important;
+    left: 10px !important;
+    z-index: 2;
+  }
 
-    #main .air .populate,
-    #main .result .filter,
-    #main .result .populate {
-        margin: 1em;
-        width: 32%;
-    }
+  #main .air .populate,
+  #main .result .filter,
+  #main .result .populate {
+    margin: 1em;
+    width: 32%;
+  }
 
-	#main .content {
-		display: none !important;
-	}
+  #main .content {
+    display: none !important;
+  }
+
   #main .center .quick .right,
-	#main .center .quick .left {
-		display: none !important;
-	}
+  #main .center .quick .left {
+    display: none !important;
+  }
 }
+
 @media screen and (min-width: 768px) {
-    #main .center {
-        width: 60% !important;
-        left: -75px !important;
-    }
+  #main .center {
+    width: 60% !important;
+    left: -75px !important;
+  }
 
-    #arm {
-        width: 95% !important;
-    }
+  #arm {
+    width: 95% !important;
+  }
 
-    #main .air .populate,
-    #main .result .filter,
-    #main .result .populate {
-        margin: 2em;
-        width: 16%;
-    }
-    #main .result,
-    #main .air {
-      width: 100% !important;
-      display: block;
-      position: relative;
-      margin: 0 auto;
-    }
-    .content {
-        margin-left: -75px !important;
-    }
+  #main .air .populate,
+  #main .result .filter,
+  #main .result .populate {
+    margin: 2em;
+    width: 16%;
+  }
+
+  #main .result,
+  #main .air {
+    width: 100% !important;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .content {
+    margin-left: -75px !important;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    #main .center {
-        width: 60% !important;
-    }
-    #arm {
-      width: 88% !important;
-    }
+  #main .center {
+    width: 60% !important;
+  }
+
+  #arm {
+    width: 88% !important;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    #container {
-      display: block;
-      position: relative;
-      margin: 0 auto;
-      width: 100% !important;
-    }
-    #arm  {
-      width: 75% !important;
-    }
-    #main .center {
-        width: 55% !important;
-    }
-    #main .result,
-    #main .air {
-      width: 80% !important;
-      display: block;
-      position: relative;
-      margin: 0 auto;
-    }
+  #container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100% !important;
+  }
+
+  #arm {
+    width: 75% !important;
+  }
+
+  #main .center {
+    width: 55% !important;
+  }
+
+  #main .result,
+  #main .air {
+    width: 80% !important;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
 }
+
 @media screen and (min-width: 2560px) {
-    #container {
-      display: block;
-      position: relative;
-      margin: 0 auto;
-      width: 100% !important;
-    }
-    #arm  {
-      width: 55% !important;
-    }
-    #main .center {
-        width: 45% !important;
-    }
-    #main .result,
-    #main .air {
-      width: 60% !important;
-      display: block;
-      position: relative;
-      margin: 0 auto;
-    }
+  #container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100% !important;
+  }
+
+  #arm {
+    width: 55% !important;
+  }
+
+  #main .center {
+    width: 45% !important;
+  }
+
+  #main .result,
+  #main .air {
+    width: 60% !important;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
 }
