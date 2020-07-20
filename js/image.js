@@ -1,9 +1,12 @@
 var image = function(n, src) {
 
-  var large  = 3840
+  var uhd = 3840
+  var large  = 2800
   var mobile = 1281
   var maximum = 799
   var minimum = 299
+
+  if (src.match(/gif|jpg|jpeg|png/g))
   $('#' + n).on('error', function() {
     if (!$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
@@ -23,6 +26,16 @@ var image = function(n, src) {
          'align-items': 'center'
         }).find('.header, .tag, .addComment').remove()
    } else if ($(this).hasClass('guide') &&
+        $(this).get(0).naturalHeight > uhd) {
+          $(this).width('100%').addClass('expand')
+          .parents('.sticky').width('35%')
+   } else if ($(this).get(0).naturalHeight > uhd) {
+      $(this).addClass('expand min').width('100%').parents('.item')
+        .find('.image').css({
+          'margin': '0 auto',
+          'width': '35%'
+        })
+   } else if ($(this).hasClass('guide') &&
      $(this).get(0).naturalHeight > large) {
        $(this).width('100%').addClass('expand')
        .parents('.sticky').width('50%')
@@ -30,14 +43,25 @@ var image = function(n, src) {
       $(this).addClass('expand min').width('100%').parents('.item')
         .find('.image').css({
           'margin': '0 auto',
-          'width': '60%'
+          'width': '50%'
         })
     } else if ($(this).hasClass('guide') &&
-      $(this).get(0).naturalHeight < large) {
+      $(this).get(0).naturalHeight > mobile) {
         $(this).width('100%').addClass('expand')
         .parents('.sticky').width('70%')
+    } else if ($(this).get(0).naturalWidth > mobile) {
+      $(this).addClass('expand min').width('100%').parents('.item')
+        .find('.image').css({
+          'margin': '0 auto',
+          'width': '50%'
+        })
+    } else if ($(this).hasClass('guide') &&
+      $(this).get(0).naturalWidth > minimum) {
+        $(this).width('100%').addClass('expand')
+          .parents('.sticky').width('70%')
     } else if ($(this).get(0).naturalWidth > minimum) {
-      $(this).width('100%').addClass('expand')
+      $(this).addClass('expand min').width('100%').parents('.item')
+        .find('.image').width('100%')
     } else if ($(this).get(0).naturalWidth < maximum) {
       $(this).width(120).addClass('expand').css('margin','10px')
       .parents('.item')
@@ -65,5 +89,8 @@ var image = function(n, src) {
     if (category == 'Social') comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
+  else
+    $('#' + n).parents('.item').find('.pub').css('display','block')
+      .parents('.item').find('.header, .image, .img, .fill').remove()
 
 }

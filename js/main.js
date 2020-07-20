@@ -132,11 +132,12 @@ $(document)
           .empty()
         $.each(translations, function(i) {
           $('#arm #search #match .listing')
-            .append("<div class='index' tabIndex='-1' response='" +
-              translations[i] + "'>" + "<img class='type' src='" +
-              "images/" + translations[i] + '.png' + "'>" +
-              "<div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-              "<br>&emsp;" + grep(menu, translations[i]) + " feeds</div>" +
+            .append(
+              "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
+              "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
+              "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+              "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
+              "  </div>" +
               "</div>")
         })
         $(this)
@@ -513,7 +514,12 @@ $(document)
     return false
   })
   .on('touch click',
-    '#main .center .channel .item .image .tag .fa-bookmark-o, #main .center .channel .item .image .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark, #main .center .channel #yt .tag .fa-bookmark-o, #container .sticky .wrap .tag .fa-bookmark, #container .sticky .wrap .tag .fa-bookmark-o',
+    '#main .center .channel .item .image .tag .fa-bookmark-o, ' +
+    '#main .center .channel .item .image .tag .fa-bookmark, ' +
+    '#main .center .channel #yt .tag .fa-bookmark, ' +
+    '#main .center .channel #yt .tag .fa-bookmark-o, ' +
+    '#container .sticky .wrap .tag .fa-bookmark, ' +
+    '#container .sticky .wrap .tag .fa-bookmark-o',
     function(e) {
       $(this)
         .parents('.item, .wrap')
@@ -526,14 +532,19 @@ $(document)
       visual()
     })
   .on('touch click',
-    '#main .center .channel .item .image .tag .fa-heart-o, #main .center .channel .item .image .tag .fa-gratipay, #container .sticky .wrap .tag .fa-heart-o, #container .sticky .wrap .tag .fa-gratipay',
+    '#main .center .channel .item .image .tag .fa-heart-o, ' +
+    '#main .center .channel .item .image .tag .fa-gratipay, ' +
+    '#container .sticky .wrap .tag .fa-heart-o, ' +
+    '#container .sticky .wrap .tag .fa-gratipay',
     function(e) {
       $(this)
         .toggleClass('fa-heart-o fab fa-gratipay')
       e.stopPropagation()
       visual()
     })
-  .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, #container .sticky .header .fa-ellipsis-h',
+  .on('touch click',
+    '#main .center .channel .item .header .fa-ellipsis-h, ' +
+    '#container .sticky .header .fa-ellipsis-h',
     function(e) {
       $(this).parents('.item, .wrap')
         .find('.url')
@@ -543,14 +554,15 @@ $(document)
         .removeClass('fa-ellipsis-h')
         .addClass('fa-ellipsis-v')
       setTimeout(function() {
-        $('#main .center .channel .item .copy, #container .sticky .header .copy')
+        $('#main .center .channel .item .copy, #guide .sticky .header .copy')
           .removeClass('fa-ellipsis-v')
           .addClass('fa-ellipsis-h')
       }, 250)
       e.stopPropagation()
     })
   .on('touch click',
-    '#main .center .channel .item .image .tag .fa-sticky-note-o, #main .center .channel .item .image .tag .fa-sticky-note',
+    '#main .center .channel .item .image .tag .fa-sticky-note-o, ' +
+    '#main .center .channel .item .image .tag .fa-sticky-note',
     function(e) {
       if (contrast == true)
         if (!$(this)
@@ -586,7 +598,9 @@ $(document)
       e.stopPropagation()
       visual()
     })
-  .on('touch click', '#main .center .channel .item .image .img, #wrapper #container #guide .sticky .item .image .img', function(e) {
+  .on('touch click',
+    '#main .center .channel .item .image .img, ' +
+    '#wrapper #container #guide .sticky .item .image .img', function(e) {
     if (tap == 0) {
         // set first click
         tap = new Date().getTime();

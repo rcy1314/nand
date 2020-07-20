@@ -311,9 +311,9 @@ var xml = function(e, s, n, post) {
     $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
-        menu[back].id.match(/[^\/]+$/g) +
+          menu[back].id.match(/[^\/]+$/g) +
       "  <img class='bottom'>" +
-        menu[plus].id.match(/[^\/]+$/g) +
+          menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
     content(n, recent, oldest, images, posts, $('.img').queue().length)
