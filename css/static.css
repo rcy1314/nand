@@ -233,34 +233,6 @@ body,
   width: 100%;
 }
 
-.feed {
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  position: relative;
-  border-radius: 2px;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  font-size: 10px;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-svg {
-  position: absolute;
-  height: 72px;
-  width: 72px;
-}
-
-svg .border {
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  stroke-linecap: round;
-  position: absolute;
-  stroke-width: 2;
-  fill: none;
-}
-
 #input {
   position: relative;
   margin: 0 auto;

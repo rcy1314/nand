@@ -48,7 +48,6 @@ var expand = function(n) {
 }
 
 var feed  = function(n) {
-
   if (n == 0) n = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
   else if (n >= menu.length - 13) n = 1
   for (var i = n + 1; i <= n + 13; i++) {

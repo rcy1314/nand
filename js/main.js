@@ -352,11 +352,10 @@ $(document)
     $('#main .center .quick .feed')
       .animate({
         scrollLeft: leftPos + 720
-      }, 'slow')
-    if ($('#main .center .quick .feed')
-      .scrollLeft() >= $('#main .center .quick .feed')
-      .width() - 359) $(this)
-      .hide()
+      }, 'fast')
+      if (leftPos >= $('#main .center .quick .feed')[0]
+          .scrollWidth - $('#main .center .quick .feed').width() - 720) $(this)
+          .hide()
     if ($('#main .center .quick .feed')
       .scrollLeft() >= 0) $('#main .center .quick .left')
       .show()
