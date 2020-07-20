@@ -73,6 +73,7 @@ var image = function(n, src) {
       }).find('.header, .tag, .addComment').remove()
       .siblings('.fill').css('left', '18px').html(fill)
     }
+    $('#main .stats .info .queue').html(parseInt($('#main .stats .info .queue').text()) - 1)
     $('#' + n)
     .parents('.item, #guide').find('.image, .ago, .img, .pub, .tag').css('display', 'block')
     $('#' + n)

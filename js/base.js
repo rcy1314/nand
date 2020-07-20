@@ -68,7 +68,8 @@ var feed  = function(n) {
         9) + '...' + "</a>" + "</div>")
   }
 }
-var content  = function(n, recent, oldest, images, posts) {
+var content  = function(n, recent, oldest, images, posts, queue) {
+  var queue = $('.img').queue().length
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
@@ -78,7 +79,8 @@ var content  = function(n, recent, oldest, images, posts) {
         "<b>Most recent</b> " + recent +"<br><br>" +
         "<b>Oldest post </b> " + oldest + "<br><br>" +
         "<b>Images</b> " + images + "<br><br>" +
-        "<b>Posts</b> " + posts + "</div>")
+        "<b>Posts</b> " + posts + "<br><br>" +
+        "<b>Queue</b> <div class='queue'>" + queue + "</div></div>")
 }
 var list = function(n) {
   $('#arm #search #match .listing').empty()

@@ -317,6 +317,10 @@
   border: 1px solid #ccc;
 }
 
+.queue {
+  display: inline-block;
+}
+
 .suggestions {
   height: fit-content;
   text-align: left;

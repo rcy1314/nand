@@ -126,8 +126,10 @@ body,
   top: 4px;
 }
 
-#home {
+#home a {
   font-family: Billabong;
+  color: #000 !important;
+  text-decoration: none;
   font-display: block;
   position: absolute;
   font-size: 36px;
@@ -135,6 +137,10 @@ body,
   height: 40px;
   left: 15px;
   top: 5px;
+}
+
+#home a:active {
+  color: #555 !important;
 }
 
 #option {

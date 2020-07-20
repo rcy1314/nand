@@ -1,6 +1,7 @@
 var xml = function(e, s, n, post) {
   id = n
   obj = []
+  var queue
   var local
   var pub = []
   category = menu[n].cat
@@ -52,6 +53,7 @@ var xml = function(e, s, n, post) {
     quit = $(xhr).find(channel).length - 2
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
+        queue = 'entry'
         var ref = $(this).find('link').attr('href')
         var dst = zulu($(this).find('updated').text());
         var since = new Date($(this).find('updated').text()).getTime()
@@ -59,6 +61,7 @@ var xml = function(e, s, n, post) {
         gen = parseInt(gen.match(/([0-9]+\:[0-9]+\:[0-9]+)/g).toString()
           .replace(/\:/g, '')).toString(36)
       } else if (channel = 'item') {
+        queue = 'item'
         var ref = $(this).find('link').text()
         if ($(this).find('pubDate').text().length > 0) {
           var dst = zulu($(this).find('pubDate').text());
@@ -260,11 +263,14 @@ var xml = function(e, s, n, post) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
-        image(pub[i].element, pub[i].src)
+        $('.img')
+          .queue(function (next) {
+            image(pub[i].element, pub[i].src)
+          })
       })
 
     if (!id) id = menu.indexOf(menu[n])
-    var posts = pub.length
+    var posts = pub.length - 2
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
     var images = $('#main .center .channel .item .image img.img[src!=""]').length
@@ -272,7 +278,7 @@ var xml = function(e, s, n, post) {
       "<div id='bottom'><button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
       menu[back].id.match(/[^\/]+$/g) + "<img class='bottom'>" +
       menu[plus].id.match(/[^\/]+$/g) + "&ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button></div>")
-    content(n, recent, oldest, images, posts)
+    content(n, recent, oldest, images, posts, queue)
     clearInterval(complete)
     progress(true, 100)
     suggest(id)
