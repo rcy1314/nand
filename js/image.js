@@ -1,70 +1,43 @@
 var image = function(n, src) {
-  var large  = 2800
+
+  var large  = 3840
   var mobile = 1281
-  var minimum = 299
   var maximum = 799
+  var minimum = 299
   $('#' + n).on('error', function() {
-    $('#main .stats .info .queue').html(parseInt($('#main .stats .info .queue').text()) - 1)
-    $(this).parents('.classic').find('.tag, .fill, .header').css('display',
-      'none').parents('.item').find('.pub, .ago').css('display','block')
+    if (!$(this).hasClass('guide'))
+      $('#main .stats .info .queue').html(
+        parseInt($('#main .stats .info .queue').text()) - 1
+      )
+    $(this).parents('.classic').find('.tag, .fill, .header').remove()
   }).on('load', function() {
     if ($('#home').css('display') == 'none'
         && $(this).get(0).naturalWidth > minimum) {
       $(this).width('100%').addClass('expand')
-      .parents('.item')
-      .find('.ago')
-      .css('display','inline-block')
-      .parents('.item').find('.fill').html(fill)
-      if (category == 'Social')
-      comment(n)
-   } else if ($(this).get(0).naturalWidth < maximum
-      && $('#home').css('display') == 'none') {
-    $(this).width(120).addClass('expand').css('margin','10px')
-    .parents('.item')
-    .find('.classic').css({
-      'display': 'flex',
-      'align-items': 'center'
-    }).find('.header, .tag, .addComment').css('display', 'none')
-    .siblings('.fill').css('left', '18px').html(fill)
-    .parents('.item').find('.ago').css('display','inline-block')
-  } else if ($(this).hasClass('guide') &&
-           $(this).get(0).naturalHeight > mobile || $(this)
-           .get(0).naturalHeight > maximum && $(this)
-           .get(0).naturalWidth < maximum) {
-             $(this).width('100%').addClass('expand')
-             .parents('.sticky').width('50%')
-             $(this).parents('.sticky')
-             .find('.fill')
-             .html(fill)
-   } else if ($(this).get(0).naturalHeight > mobile || $(this)
-        .get(0).naturalHeight > maximum && $(this)
-        .get(0).naturalWidth < maximum) {
+   } else if ( $('#home').css('display') == 'none' &&
+     $(this).get(0).naturalWidth < maximum) {
+       $(this).width(120).addClass('expand').css('margin','10px')
+       .parents('.item')
+       .find('.classic').css({
+         'display': 'flex',
+         'align-items': 'center'
+        }).find('.header, .tag, .addComment').remove()
+   } else if ($(this).hasClass('guide') &&
+     $(this).get(0).naturalHeight > large) {
+       $(this).width('100%').addClass('expand')
+       .parents('.sticky').width('50%')
+   } else if ($(this).get(0).naturalHeight > large) {
       $(this).addClass('expand min').width('100%').parents('.item')
         .find('.image').css({
-        'margin': '0 auto',
-        'width': '45%',
-        'left': '15px'
-      }).siblings('.fill').html(fill)
-      .parents('.item').find('.ago').css('display','inline-block')
-              if (category == 'Social')
-              comment(n)
-      } else if ($(this).hasClass('guide') &&
-        $(this).get(0).naturalWidth > minimum) {
-              $(this).width('100%').addClass('expand')
-              .parents('.sticky').width('55%')
-              .parents('.item')
-              .find('.ago')
-              .css('display','inline-block')
-              $(this).parents('.sticky').find('.fill')
-              .html(fill)
+          'margin': '0 auto',
+          'width': '60%'
+        })
+    } else if ($(this).hasClass('guide') &&
+      $(this).get(0).naturalHeight < large) {
+        $(this).width('100%').addClass('expand')
+        .parents('.sticky').width('70%')
     } else if ($(this).get(0).naturalWidth > minimum) {
       $(this).width('100%').addClass('expand')
-      .parents('.item')
-      .find('.ago')
-      .css('display','inline-block')
-      .parents('.item').find('.fill').html(fill)
-      if (category == 'Social')
-      comment(n)
     } else if ($(this).get(0).naturalWidth < maximum) {
       $(this).width(120).addClass('expand').css('margin','10px')
       .parents('.item')
@@ -72,17 +45,25 @@ var image = function(n, src) {
         'display': 'flex',
         'align-items': 'center'
       }).find('.header, .tag, .addComment').remove()
-      .siblings('.fill').css('left', '18px').html(fill)
     }
-    $('#main .stats .info .queue').html(parseInt($('#main .stats .info .queue').text()) - 1)
+    if (!$(this).hasClass('guide'))
+      $('#main .stats .info .queue').html(
+        parseInt($('#main .stats .info .queue').text()) - 1
+    )
     $('#' + n)
-    .parents('.item, #guide').find('.image, .ago, .img, .pub, .tag').css('display', 'block')
+      .parents('.item, #guide')
+      .find('.image, .img, .pub, .tag')
+      .css('display', 'block')
     $('#' + n)
-    .parents('.item, #guide').find('.header, .ago, .wrap').css('display', 'inline-block')
+      .parents('.item, #guide')
+      .find('.header, .wrap, .ago')
+      .css('display', 'inline-block')
     $('#' + n)
-    .parents('.item, #guide')
-    .find('.fill')
-    .remove()
-  visual()
-}).attr('src', src).parent().siblings('.fill').html(fill)
+      .parents('.item, #guide')
+      .find('.fill')
+      .remove()
+    if (category == 'Social') comment(n)
+    visual()
+  }).attr('src', src).parent().siblings('.fill').html(fill)
+
 }
