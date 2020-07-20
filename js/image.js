@@ -4,6 +4,7 @@ var image = function(n, src) {
   var minimum = 299
   var maximum = 799
   $('#' + n).on('error', function() {
+    $('#main .stats .info .queue').html(parseInt($('#main .stats .info .queue').text()) - 1)
     $(this).parents('.classic').find('.tag, .fill, .header').css('display',
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
