@@ -24,9 +24,9 @@
   }
 
   #option {
-    position: fixed !important;
     width: calc(100% - 20px) !important;
     top: calc(100% - 40px) !important;
+    position: fixed !important;
     height: 35px !important;
     left: 10px !important;
     z-index: 2;
@@ -51,8 +51,8 @@
 
 @media screen and (min-width: 768px) {
   #main .center {
-    width: 60% !important;
     left: -75px !important;
+    width: 60% !important;
   }
 
   #arm {
@@ -69,8 +69,8 @@
   #main .result,
   #main .air {
     width: 100% !important;
-    display: block;
     position: relative;
+    display: block;
     margin: 0 auto;
   }
 
@@ -91,10 +91,10 @@
 
 @media screen and (min-width: 1440px) {
   #container {
-    display: block;
-    position: relative;
-    margin: 0 auto;
     width: 100% !important;
+    position: relative;
+    display: block;
+    margin: 0 auto;
   }
 
   #arm {
@@ -108,18 +108,18 @@
   #main .result,
   #main .air {
     width: 80% !important;
-    display: block;
     position: relative;
+    display: block;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 2560px) {
   #container {
-    display: block;
-    position: relative;
-    margin: 0 auto;
     width: 100% !important;
+    position: relative;
+    display: block;
+    margin: 0 auto;
   }
 
   #arm {
@@ -133,8 +133,8 @@
   #main .result,
   #main .air {
     width: 60% !important;
-    display: block;
     position: relative;
+    display: block;
     margin: 0 auto;
   }
 }

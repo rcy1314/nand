@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Billabong;
   src: url(../fonts/Billabong.ttf);
+  font-family: Billabong;
   font-display: block;
 }
 
@@ -45,14 +45,11 @@
 }
 
 .responseInvert {
-  background: #C6FFDD;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 4px;
   width: 0;
+  height: 4px;
+  background: #C6FFDD;
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
 }
 
 .responseOpposite {
@@ -252,8 +249,8 @@ body,
 
 svg {
   position: absolute;
-  width: 72px;
   height: 72px;
+  width: 72px;
 }
 
 svg .border {
@@ -294,10 +291,10 @@ input[type=text] {
   width: fit-content;
   position: relative;
   margin: 0 auto;
+  height: 28.5em;
   display: none;
   z-index: 2;
   top: 1em;
-  height: 28.5em;
 }
 
 .index:first-child:hover:after {
@@ -325,38 +322,38 @@ input[type=text] {
 }
 
 .index:first-child:before {
-  content: "";
+  border-color: transparent transparent #ccc transparent;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
   position: absolute;
+  content: "";
   left: 44px;
   top: -10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #ccc transparent;
   z-index: 3;
+  height: 0;
+  width: 0;
 }
 
 .index:first-child:after {
-  content: "";
-  position: absolute;
-  left: 45px;
-  top: -9px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 9px 9px 9px;
   border-color: transparent transparent #fff transparent;
+  border-width: 0 9px 9px 9px;
+  border-style: solid;
+  position: absolute;
+  content: "";
+  left: 45px;
   z-index: 4;
+  top: -9px;
+  height: 0;
+  width: 0;
 }
 
 .listing {
   background-color: #tranparent;
   position: relative;
-  overflow-y: auto;
-  height: 28em;
   padding-top: 12px;
+  overflow-y: auto;
   margin: 0 auto;
+  height: 28em;
   width: 16em;
   z-index: 2;
 }
@@ -366,9 +363,9 @@ input[type=text] {
 }
 
 .index {
-  border: 1px solid #ddd;
-  border-bottom: none !important;
   background-color: #fff !important;
+  border-bottom: none !important;
+  border: 1px solid #ddd;
   padding-bottom: 15px;
   position: relative;
   padding-top: 15px;
@@ -402,8 +399,8 @@ input[type=text] {
 }
 
 .hover {
-  border: 1px solid #ddd;
   border-bottom: none !important;
+  border: 1px solid #ddd;
   padding-bottom: 15px;
   padding-top: 15px;
   font-size: 12px;

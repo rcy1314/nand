@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Proxima Nova;
   src: url(../fonts/ProximaNova-Regular.woff);
+  font-family: Proxima Nova;
   font-display: block;
 }
 
@@ -31,8 +31,8 @@
 
 .left {
   justify-content: center;
-  position: absolute;
   align-items: center;
+  position: absolute;
   display: flex;
   width: 1.5em;
   height: 100%;
@@ -80,27 +80,27 @@
 }
 
 .fill {
-  position: relative;
-  margin: 0 auto;
+  margin-left: 30px !important;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin: 0 auto;
   display: flex;
   height: 7em;
-  margin-left: 30px !important;
 }
 
 #guide,
 .blur {
-  position: absolute;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: absolute;
   overflow: hidden;
+  display: flex;
   height: 100%;
   width: 100%;
+  z-index: 3;
   margin: 0;
   bottom: 0;
-  z-index: 3;
   left: 0;
   top: 0;
 }
@@ -114,15 +114,15 @@
 }
 
 .sticky {
+  align-items: center;
   position: relative;
   display: table;
-  align-items: center;
 }
 
 .sticky .item {
+  display: table-cell !important;
   box-shadow: none !important;
   border: none !important;
-  display: table-cell !important;
   margin: 0;
 }
 
@@ -134,8 +134,8 @@
 }
 
 .sticky .pub {
-  position: relative;
   height: calc(100% - 125px);
+  position: relative;
   padding: 10px;
   width: 300px;
 }
@@ -303,18 +303,18 @@
 }
 
 .stats {
-  display: flex;
   align-items: center;
   margin-bottom: 2em;
   text-align: left;
   font-size: 10px;
-  width: 230px;
   height: 120px;
+  display: flex;
+  width: 230px;
 }
 
 .stats .id {
-  padding: 4px;
   border: 1px solid #ccc;
+  padding: 4px;
 }
 
 .queue {
@@ -331,13 +331,13 @@
 }
 
 .suggestions .id {
-  width: 24px;
   height: 24px;
+  width: 24px;
 }
 
 .combine {
-  display: flex;
   align-items: center;
+  display: flex;
   width: 100%;
   margin: 5px;
 }
@@ -350,10 +350,10 @@
 
 .yt {
   -webkit-overflow-scrolling: touch;
-  width: 100%;
   padding-bottom: 54.25%;
   margin-bottom: 5px;
   position: relative;
+  width: 100%;
 }
 
 iframe {

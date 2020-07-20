@@ -66,7 +66,8 @@ var feed  = function(n) {
       "      <stop offset='99%' stop-color='#fbd786' />" +
       "    </linearGradient>" +
       "  </defs>" +
-      "  <circle cx='36' cy='36' r='28' class='border'></circle></svg>" +
+      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+      "</svg>" +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[i]) + "'" +
       "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
       "  search='" + menu[i].cat.toLowerCase() + "'> " +

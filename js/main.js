@@ -350,7 +350,7 @@ $(document)
       .scrollLeft()
     $('#main .center .quick .feed')
       .animate({
-        scrollLeft: leftPos + 360
+        scrollLeft: leftPos + 720
       }, 'slow')
     if ($('#main .center .quick .feed')
       .scrollLeft() >= $('#main .center .quick .feed')
