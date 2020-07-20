@@ -155,16 +155,17 @@
 .item .pub,
 .item .add {
   justify-content: left;
+  width: 95% !important;
   margin-left: 10px;
   margin-top: 5px;
   font-size: 13px;
-  width: 95% !important;
   left: 0;
 }
 
 .item .pub {
   display: inline-block;
   margin-bottom: 5px;
+  overflow-y: auto;
 }
 
 .more {
