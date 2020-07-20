@@ -47,6 +47,10 @@
   #main .center .quick .left {
     display: none !important;
   }
+
+  #guide .sticky .wrap {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 768px) {
