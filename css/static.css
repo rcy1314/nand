@@ -104,7 +104,7 @@ body,
 }
 
 #top {
-  height: 56px;
+  height: 57px;
 }
 
 #arm {
@@ -125,7 +125,6 @@ body,
 
 #home a {
   font-family: Billabong;
-  color: #000 !important;
   text-decoration: none;
   font-display: block;
   position: absolute;
