@@ -70,14 +70,13 @@ var image = function(n, src) {
       .find('.classic').css({
         'display': 'flex',
         'align-items': 'center'
-      }).find('.header, .tag, .addComment').css('display', 'none')
+      }).find('.header, .tag, .addComment').remove()
       .siblings('.fill').css('left', '18px').html(fill)
-      .parents('.item').find('.ago, .header').css('display','none')
     }
     $('#' + n)
-    .parents('.item, #guide').find('.image, .img, .pub, .tag').css('display', 'block')
+    .parents('.item, #guide').find('.image, .ago, .img, .pub, .tag').css('display', 'block')
     $('#' + n)
-    .parents('#guide').find('.header, .ago, .wrap').css('display', 'inline-block')
+    .parents('.item, #guide').find('.header, .ago, .wrap').css('display', 'inline-block')
     $('#' + n)
     .parents('.item, #guide')
     .find('.fill')

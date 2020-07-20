@@ -165,7 +165,6 @@
 .item .pub {
   display: inline-block;
   margin-bottom: 5px;
-  overflow-y: auto;
 }
 
 .more {
@@ -242,8 +241,9 @@
 }
 
 .wrap {
-  display: flex;
+  width: 95% !important;
   flex-wrap: wrap;
+  display: flex;
 }
 
 .ago {
