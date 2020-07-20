@@ -50,7 +50,7 @@ var image = function(n, src) {
       } else if ($(this).hasClass('guide') &&
         $(this).get(0).naturalWidth > minimum) {
               $(this).width('100%').addClass('expand')
-              .parents('.sticky').width('65%')
+              .parents('.sticky').width('55%')
               .parents('.item')
               .find('.ago')
               .css('display','inline-block')
