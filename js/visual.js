@@ -27,7 +27,7 @@ var visual = function(n) {
     })
     $('#top, #arm, input[type=text], .filter, .populate, .wrap, .header, .pub, .tag, .stats, .suggestions, .combine, .title, .category, .description, .type, .item, .ago').css({
       'background-color': '#0e0e0e',
-      'border': '1px solid #0e0e0e',
+      'border': 'none',
       'box-shadow': 'none',
       'color': '#fff'
     })
@@ -88,8 +88,11 @@ var visual = function(n) {
       'color': '#666'
     })
     $('.filter, .populate, .description').css('background-color', '#efefef')
-    $('.filter, .populate').css('border','1px solid #ddd')
-    $('.feed, .item, .title').css('border', '1px solid #ddd')
+    $('.filter, .populate, .feed, .item, .title').css('border', '1px solid #ddd')
+    $('.filter .pub').css({
+      'background-color': "#efefef",
+      'border': 'none'
+    })
     $('#top, .description, .index').css({
       'border-bottom': '1px solid #ccc'
     })
