@@ -46,7 +46,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
   } else if (op == 0 || contrast == false) {
     $(
-      '#top, #arm, #container, .wrap, .fa-times-circle, .comment, .channel, .feed, .title, .item, .item .pub, .type, .ago, a'
+      '#top, #arm, #container, .wrap, .fa-times-circle, .comment, .channel, .feed, .title, .header, .tag, .item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
@@ -71,7 +71,7 @@ var visual = function(n) {
       '#home, .fa-home, .fa-code, .fa-globe, .fa-git, .fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
       'background-color': 'transparent',
-      'color': '#222'
+      'color': '#000'
     })
     $('.hover').addClass('visual.hover')
     $('.first').css('cssText','fill: #1fa2ff !important')
