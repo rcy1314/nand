@@ -8,17 +8,17 @@ var image = function(n, src) {
       'none').parents('.item').find('.pub, .ago').css('display','block')
   }).on('load', function() {
     if ($('#home').css('display') == 'none'
-        && $('#' + n).get(0).naturalWidth > minimum) {
-      $('#' + n).width('100%').addClass('expand')
+        && $(this).get(0).naturalWidth > minimum) {
+      $(this).width('100%').addClass('expand')
       .parents('.item')
       .find('.ago')
       .css('display','inline-block')
       .parents('.item').find('.fill').html(fill)
       if (category == 'Social')
       comment(n)
-   } else if ($('#' + n).get(0).naturalWidth < maximum
+   } else if ($(this).get(0).naturalWidth < maximum
       && $('#home').css('display') == 'none') {
-    $('#' + n).width(120).addClass('expand').css('margin','10px')
+    $(this).width(120).addClass('expand').css('margin','10px')
     .parents('.item')
     .find('.classic').css({
       'display': 'flex',
@@ -26,19 +26,19 @@ var image = function(n, src) {
     }).find('.header, .tag, .addComment').css('display', 'none')
     .siblings('.fill').css('left', '18px').html(fill)
     .parents('.item').find('.ago').css('display','inline-block')
-  } else if ($('#' + n).hasClass('guide') &&
-           $('#' + n).get(0).naturalHeight > mobile || $('#' + n)
-           .get(0).naturalHeight > maximum && $('#' + n)
+  } else if ($(this).hasClass('guide') &&
+           $(this).get(0).naturalHeight > mobile || $(this)
+           .get(0).naturalHeight > maximum && $(this)
            .get(0).naturalWidth < maximum) {
-             $('#' + n).width('100%').addClass('expand')
+             $(this).width('100%').addClass('expand')
              .parents('.sticky').width('50%')
-             $('#' + n).parents('.sticky')
+             $(this).parents('.sticky')
              .find('.fill')
              .html(fill)
-   } else if ($('#' + n).get(0).naturalHeight > mobile || $('#' + n)
-        .get(0).naturalHeight > maximum && $('#' + n)
+   } else if ($(this).get(0).naturalHeight > mobile || $(this)
+        .get(0).naturalHeight > maximum && $(this)
         .get(0).naturalWidth < maximum) {
-      $('#' + n).addClass('expand min').width('100%').parents('.item')
+      $(this).addClass('expand min').width('100%').parents('.item')
         .find('.image').css({
         'margin': '0 auto',
         'width': '45%',
@@ -47,25 +47,25 @@ var image = function(n, src) {
       .parents('.item').find('.ago').css('display','inline-block')
               if (category == 'Social')
               comment(n)
-      } else if ($('#' + n).hasClass('guide') &&
-        $('#' + n).get(0).naturalWidth > minimum) {
-              $('#' + n).width('100%').addClass('expand')
+      } else if ($(this).hasClass('guide') &&
+        $(this).get(0).naturalWidth > minimum) {
+              $(this).width('100%').addClass('expand')
               .parents('.sticky').width('65%')
               .parents('.item')
               .find('.ago')
               .css('display','inline-block')
-              $('#' + n).parents('.sticky').find('.fill')
+              $(this).parents('.sticky').find('.fill')
               .html(fill)
-    } else if ($('#' + n).get(0).naturalWidth > minimum) {
-      $('#' + n).width('100%').addClass('expand')
+    } else if ($(this).get(0).naturalWidth > minimum) {
+      $(this).width('100%').addClass('expand')
       .parents('.item')
       .find('.ago')
       .css('display','inline-block')
       .parents('.item').find('.fill').html(fill)
       if (category == 'Social')
       comment(n)
-    } else if ($('#' + n).get(0).naturalWidth < maximum) {
-      $('#' + n).width(120).addClass('expand').css('margin','10px')
+    } else if ($(this).get(0).naturalWidth < maximum) {
+      $(this).width(120).addClass('expand').css('margin','10px')
       .parents('.item')
       .find('.classic').css({
         'display': 'flex',
