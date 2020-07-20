@@ -117,7 +117,7 @@ var comment = function (n) {
 //			  url: cors + 'https://randomuser.me/api/',
 //			  dataType: 'json',
 //			  success: function(api) {
-				$('.' + n + ' .pub:last').html($('.' + n + ' .pub:last').text() +
+				$('.' + n + ' .pub:last').html($('.' + n + ' .pub:last').html() +
 						//"<div class='add' style='width:100%'><b>" +
 //              api.results[0].email.replace(/\@.+/g, '') + '.' +
 //							api.results[0].location.state.toLowerCase().replace(/\s/g, '') +
