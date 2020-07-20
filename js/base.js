@@ -69,7 +69,6 @@ var feed  = function(n) {
   }
 }
 var content  = function(n, recent, oldest, images, posts, queue) {
-  var queue = 
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
