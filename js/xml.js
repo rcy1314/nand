@@ -314,7 +314,7 @@ var xml = function(e, s, n, post) {
           menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
-    content(n, recent, oldest, images, posts, quit)
+    content(n, recent, oldest, images, posts)
     clearInterval(complete)
     progress(true, 100)
     suggest(id)

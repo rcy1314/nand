@@ -80,7 +80,7 @@ var feed  = function(n) {
 
 }
 
-var content  = function(n, recent, oldest, images, posts, queue) {
+var content  = function(n, recent, oldest, images, posts) {
 
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
@@ -94,7 +94,7 @@ var content  = function(n, recent, oldest, images, posts, queue) {
       "  <b>Oldest post </b> " + oldest + "<br><br>" +
       "  <b>Images</b> " + images + "<br><br>" +
       "  <b>Posts</b> " + posts + "<br><br>" +
-      "  <b>Queue</b> <div class='queue'>" + queue + "</div>" +
+      "  <b>Queue</b> <div class='queue'>" + posts + "</div>" +
       "</div>"
     )
 
