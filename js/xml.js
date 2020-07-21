@@ -298,10 +298,7 @@ var xml = function(e, s, n, post) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
-        $('.img')
-          .queue(function (next) {
             image(pub[i].element, pub[i].src)
-          })
       })
 
     if (!id) id = menu.indexOf(menu[n])
@@ -317,7 +314,7 @@ var xml = function(e, s, n, post) {
           menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
-    content(n, recent, oldest, images, posts, $('.img').queue().length)
+    content(n, recent, oldest, images, posts, quit)
     clearInterval(complete)
     progress(true, 100)
     suggest(id)

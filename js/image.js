@@ -6,7 +6,7 @@ var image = function(n, src) {
   var maximum = 799
   var minimum = 299
 
-  if (src.match(/gif|jpg|jpeg|png/g))
+  if (src.match(/\.gif|\.jpg|\.jpeg|\.png/g))
   $('#' + n).on('error', function() {
     if (!$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
@@ -86,7 +86,7 @@ var image = function(n, src) {
       .parents('.item, #guide')
       .find('.fill')
       .remove()
-    if (category == 'Social') comment(n)
+    if (category == 'Social' && $(this).get(0).naturalWidth > minimum) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   else
