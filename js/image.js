@@ -77,11 +77,11 @@ var image = function(n, src) {
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {
-    setTimeout(function () {
-    $('#main .stats .info .queue').html(
-      parseInt($('#main .stats .info .queue').text()) - 1
-    )
-  }, 50)
+    $(document)
+      .ready(function() {
+        $('#main .stats .info .queue').html(
+          parseInt($('#main .stats .info .queue').text()) - 1
+        })
     $('#' + n).parents('.item').find('.pub').css('display','block')
       .parents('.item').find('.header, .image, .img, .fill').remove()
     }
