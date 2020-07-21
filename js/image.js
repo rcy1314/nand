@@ -81,7 +81,8 @@ var image = function(n, src) {
       .ready(function() {
         $('#main .stats .info .queue').html(
           parseInt($('#main .stats .info .queue').text()) - 1
-        })
+        )
+      })
     $('#' + n).parents('.item').find('.pub').css('display','block')
       .parents('.item').find('.header, .image, .img, .fill').remove()
     }

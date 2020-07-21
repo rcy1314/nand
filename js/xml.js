@@ -294,6 +294,7 @@ var xml = function(e, s, n, post) {
       )
       image(pub[local].element, pub[local].src)
     } else $('#guide').remove()
+      progress(false, Math.floor(Math.random() * (75 - 55 + 1) + 55))
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
@@ -316,7 +317,9 @@ var xml = function(e, s, n, post) {
       "</div>")
     content(n, recent, oldest, images, posts)
     clearInterval(complete)
-    progress(true, 100)
+    setTimeout(function () {
+      progress(true, 100)
+    }, 1000)
     suggest(id)
     feed(id)
   })
