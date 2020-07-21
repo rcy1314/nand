@@ -100,17 +100,6 @@
   content: "\f075";
 }
 
-.fa-bookmark:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f02e";
-}
-
-.fa-bookmark,
-.fa-bookmark-o {
-  float: right !important;
-  margin-right: 5px;
-}
-
 .fa-times-circle:before {
   font-family: "Font Awesome 5 Pro";
   position: absolute;
@@ -148,4 +137,15 @@
 .fa-git:before {
   font-family: FontAwesome;
   content: "\f1d3";
+}
+
+.fa-bookmark:before {
+  font-family: FontAwesome;
+  content: "\f02e";
+}
+
+.fa-bookmark,
+.fa-bookmark-o {
+  float: right !important;
+  margin-right: 5px;
 }

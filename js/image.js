@@ -30,8 +30,8 @@ var image = function(n, src) {
           $(this).width('100%').addClass('expand')
           .parents('.sticky').width('35%')
    } else if ($(this).get(0).naturalHeight > uhd) {
-      $(this).addClass('expand min').width('100%').parents('.item')
-        .find('.image').css({
+      $(this).addClass('expand min').width('100%')
+        .parents('.item').find('.image').css({
           'margin': '0 auto',
           'width': '35%'
         })
@@ -40,8 +40,8 @@ var image = function(n, src) {
        $(this).width('100%').addClass('expand')
        .parents('.sticky').width('50%')
    } else if ($(this).get(0).naturalHeight > large) {
-      $(this).addClass('expand min').width('100%').parents('.item')
-        .find('.image').css({
+      $(this).addClass('expand min').width('100%')
+        .parents('.item').find('.image').css({
           'margin': '0 auto',
           'width': '50%'
         })
@@ -49,19 +49,19 @@ var image = function(n, src) {
       $(this).get(0).naturalHeight > mobile) {
         $(this).width('100%').addClass('expand')
         .parents('.sticky').width('70%')
-    } else if ($(this).get(0).naturalWidth > mobile) {
-      $(this).addClass('expand min').width('100%').parents('.item')
-        .find('.image').css({
-          'margin': '0 auto',
-          'width': '50%'
-        })
     } else if ($(this).hasClass('guide') &&
       $(this).get(0).naturalWidth > minimum) {
         $(this).width('100%').addClass('expand')
           .parents('.sticky').width('70%')
+    } else if ($(this).get(0).naturalWidth > mobile) {
+      $(this).addClass('expand min').width('100%')
+        .parents('.item').find('.image').css({
+          'margin': '0 auto',
+          'width': '50%'
+      })
     } else if ($(this).get(0).naturalWidth > minimum) {
-      $(this).addClass('expand min').width('100%').parents('.item')
-        .find('.image').width('100%')
+      $(this).addClass('expand min').width('100%')
+        .parents('.item').find('.image').width('100%')
     } else if ($(this).get(0).naturalWidth < maximum) {
       $(this).width(120).addClass('expand').css('margin','10px')
       .parents('.item')
