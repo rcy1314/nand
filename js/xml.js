@@ -269,8 +269,8 @@ var xml = function(e, s, n, post) {
         "<div class='blur'></div>" +
         "<div class='sticky'>" +
         "  <div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
+        "    <div class='fill'></div>" +
         "    <div class='image'>" +
-        "      <div class='fill'></div>" +
         "      <img class='img guide' style='display:none' id='" + pub[local].element + "'>" +
         "    </div>" +
         "  </div>" +
