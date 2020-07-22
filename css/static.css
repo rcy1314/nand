@@ -318,7 +318,7 @@ input[type=text] {
   border-color: transparent transparent #ccc transparent;
 }
 
-.index:first-child:before {
+#arm #search #match .index:first-child:before {
   border-color: transparent transparent #ccc transparent;
   border-width: 0 10px 10px 10px;
   border-style: solid;
@@ -331,7 +331,7 @@ input[type=text] {
   width: 0;
 }
 
-.index:first-child:after {
+#arm #search #match .index:first-child:after {
   border-color: transparent transparent #fff transparent;
   border-width: 0 9px 9px 9px;
   border-style: solid;
