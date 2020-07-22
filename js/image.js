@@ -83,8 +83,10 @@ var image = function(n, src) {
           parseInt($('#main .stats .info .queue').text()) - 1
         )
       })
-    $('#' + n).parents('.item').find('.pub').css('display','block')
-      .parents('.item').find('.header, .image, .img, .fill').remove()
+    $('#' + n).parents('.item').find('.ago')
+        .css('display', 'inline-block')
+        .parents('.item').find('.pub').css('display','block')
+        .parents('.item').find('.header, .image, .img, .fill').remove()
     }
 
 }
