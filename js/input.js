@@ -354,6 +354,7 @@ $(document).ready()
     visual()
   })
   .on('submit', '#main #visit #page #front', function(e) {
+    $('#main #visit #page #front .icon').css('visibility','hidden')
     if ($('#main #visit #page #front #first .listing .hover')
       .length) {
       if (translations.indexOf($('#main #visit #page #front #first .listing .hover')

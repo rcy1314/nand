@@ -199,6 +199,7 @@ body,
 }
 
 #page .icon {
+  visibility: hidden;
   top: 37px;
 }
 

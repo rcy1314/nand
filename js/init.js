@@ -22,7 +22,8 @@ if (location.href.split('?')[1] &&
 } else {
   $(document)
     .ready(function() {
-      $('#main #visit #page #front input[type=text').css('visibility','visible')
+      $('#main #visit #page #front input[type=text], ' +
+      '#main #visit #page #front .icon').css('visibility','visible')
 })
 }
 
