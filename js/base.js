@@ -128,6 +128,36 @@ var list = function(n) {
 
 }
 
+var base = function(n) {
+
+  $('#main #visit #page #front #first .listing').empty()
+  for (var i = menu.length - 1; i >= 1; i--) {
+    if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
+      $('#main #visit #page #front #first .listing').prepend(
+        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
+        "  tabIndex='-1'" +
+        "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
+        "  search='" + menu[i].cat.toLowerCase() + "'>" +
+        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
+        "<br>&emsp;" +
+        menu[i].id.match(/[^\/]+$/g) + "</div>" +
+        "</div>"
+      )
+      if ($('#main #visit #page #front #first .listing .' + i).length > 1)
+        $('#main #visit #page #front #first .listing .' + i + ':last')
+        .remove()
+    }
+  }
+  if (!$('#main #visit #page #front #first').is(':visible')) {
+    setTimeout(function() {
+      $('#main #visit #page #front #first').show()
+    }, 50)
+  }
+
+}
+
+
 var comment = function (n) {
 
 	var emoji = []

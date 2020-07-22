@@ -8,6 +8,11 @@
   transition: .5s;
 }
 
+.search {
+  left: 10px !important;
+  transition: .5s;
+}
+
 .response {
   -webkit-transition: all .75s ease-in-out;
   -webkit-transition-delay: 0s;

@@ -70,7 +70,6 @@ input {
 #option,
 .index,
 .hover,
-#visit,
 #home,
 .more,
 .post,
@@ -172,24 +171,36 @@ body,
 }
 
 #page {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 30em;
-  top: -6em;
 }
 
 #placeholder {
   width: 100px !important;
 }
 
+#front {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 30em;
+}
+
+#front #first .listing {
+  position: relative;
+  height: 28em;
+  width: 30em;
+}
+
 #page input[type=text] {
   border-radius: 4px;
   visibility: hidden;
-  font-size: 16px;
-  margin-top: 100px;
+  font-size: 18px;
   margin-top: 25px;
 }
+
+#page .icon {
+  top: 37px;
+}
+
 
 .air,
 .result {
@@ -252,7 +263,7 @@ body,
   margin: 0 auto;
   display: none;
   width: 12em;
-  top: .7em;
+  top: .2em;
 }
 
 input[type=text] {
@@ -260,7 +271,7 @@ input[type=text] {
   caret-color: transparent;
   text-align: center;
   border-radius: 2px;
-  font-size: 13px;
+  font-size: 16px;
   outline: none;
   height: 2.2em;
   width: 100%;
@@ -268,8 +279,8 @@ input[type=text] {
 
 .icon {
   position: absolute;
-  left: 60px;
-  top: 9px;
+  left: 55px;
+  top: 10px;
 }
 
 #match {
@@ -306,7 +317,7 @@ input[type=text] {
   border-color: transparent transparent #ccc transparent;
 }
 
-.index:first-child:before {
+#arm #search #match .index:first-child:before {
   border-color: transparent transparent #ccc transparent;
   border-width: 0 10px 10px 10px;
   border-style: solid;
@@ -319,7 +330,7 @@ input[type=text] {
   width: 0;
 }
 
-.index:first-child:after {
+#arch #search #match .index:first-child:after {
   border-color: transparent transparent #fff transparent;
   border-width: 0 9px 9px 9px;
   border-style: solid;
@@ -336,6 +347,7 @@ input[type=text] {
   background-color: #tranparent;
   position: relative;
   padding-top: 12px;
+  text-align: left;
   overflow-y: auto;
   margin: 0 auto;
   height: 28em;

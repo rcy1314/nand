@@ -48,8 +48,13 @@
     display: none !important;
   }
 
-  #main #visit #page #front input[type=text] {
-    width: 23em !important;
+  #main #visit #page #front input[type=text],
+  #main #visit #page #front #first .listing {
+    width: 16em !important;
+  }
+
+  #main #visit #page #front .icon {
+    display: none !important;
   }
 
   #guide .sticky .wrap {

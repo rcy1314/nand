@@ -3,7 +3,7 @@ $(document)
     $('#input')
       .css('display', 'block')
   })
-  .on('touch click', '#arm, #option', function(e) {
+  .on('touch click', '#arm, #option, #main, #visit, #container', function(e) {
     if (!$('#arm #search input[type=text]')
       .is(':focus')) {
       $('#arm #search #match')
@@ -11,22 +11,13 @@ $(document)
       $('#arm #search #input .icon')
         .removeClass('slide')
     }
-  })
-  .on('touch click', '#arm #home', function(e) {
-    window.location.href = window.location.origin
-  })
-  .on('touch click', '#option .fa-git', function(e) {
-    window.location.href = 'https://github.com/acktic/acktic.github.io'
+    $('#main #visit #page #front .icon')
+      .removeClass('search')
+    $('#main #visit #page #front #first').css('visibility','hidden')
   })
   .on('touch click', '#arm #search #input .icon', function(e) {
     $('#arm #search #input input[type=text]')
       .focus()
-  })
-  .on('touch click', '.fa-times-circle', function(e) {
-    $('#guide').remove()
-  })
-  .on('touch click', '.fa-globe', function(e) {
-    window.location.href = 'maintenance/rip.txt'
   })
   .on('touch click', 'a', function(e) {
     window.open($(this)
@@ -64,16 +55,6 @@ $(document)
       progress(true, 100)
     }
   })
-  .on('touch click', '#main #visit #page input[type=text]', function(e) {
-
-    e.stopPropagation()
-
-  })
-  .on('keyup touch click focusin focusout blur',
-     '#main #visit #page input[type=text]', function(e) {
-       if (e.type == 'keyup' && e.keyCode == 13)
-         return false
-  })
   .on('touch click', '#main .center #bottom .previous', function(e) {
 
     exit('?q=&' + menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-'))
@@ -98,152 +79,6 @@ $(document)
       state('?q=' + uri[0].replace(/\-/g, '+'))
     }
   })
-  .on('keyup touch click focusin focusout blur',
-    '#arm #search input[type=text]',
-    function(e) {
-      $this = $(this)
-      if (e.type == 'focusin') {
-        $(this)
-          .val('')
-        if ($('#arm #search #input .icon')
-          .hasClass('slide')) {
-          $(this)
-            .css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left'
-            })
-        } else if (!$('#arm #search #input .icon')
-          .hasClass('slide')) {
-          setTimeout(function() {
-            $this.css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left',
-            })
-          }, 500)
-          $('#arm #search #input .icon')
-            .addClass('slide')
-        }
-        return false
-      }
-      if (e.type == 'touch' || e.type == 'click') {
-        $('#arm #search #match')
-          .show()
-        $('#arm #search #match .listing')
-          .empty()
-        $.each(translations, function(i) {
-          $('#arm #search #match .listing')
-            .append(
-              "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
-              "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
-              "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-              "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
-              "  </div>" +
-              "</div>")
-        })
-        $(this)
-          .val('')
-        if ($('#arm #search #input .icon')
-          .hasClass('slide')) {
-          $(this)
-            .css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left'
-            })
-        } else if (!$('#arm #search #input .icon')
-          .hasClass('slide')) {
-          setTimeout(function() {
-            $this.css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left',
-            })
-          }, 500)
-          $('#arm #search #input .icon')
-            .addClass('slide')
-        }
-      }
-      if (e.type == 'focusout' || e.type == 'blur') $(this)
-        .css({
-          'caret-color': 'transparent',
-          'padding': '0',
-          'text-align': 'center'
-        })
-        .val('Search')
-        .siblings('.icon')
-      if ($(this)
-        .val() != 'Search') var keyup = $(this)
-        .val()
-      if (e.type == 'keyup' && e.keyCode == 13) {
-        $('#arm #search #match')
-          .hide()
-        return false
-      } else if (e.type == 'keyup' && $(this)
-        .val()
-        .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90) {
-        list($(this)
-          .val())
-      } else if ($(this)
-        .val()
-        .length >= 2 && e.keyCode == 8) {
-        list($(this)
-          .val())
-      } else if ($(this)
-        .val()
-        .length <= 2 && e.keyCode == 8) {
-        $('#arm #search #match')
-          .hide()
-        $('#main .result, #main .air, #main .center, #main .suggestions')
-          .show()
-      } else if (e.keyCode == 40 || e.keyCode == 34) {
-        if (!$('#arm #search #match .listing .hover')
-          .length) {
-          $('#search .listing .index:first')
-            .addClass('hover')
-            .removeClass('index')
-        } else {
-          $('#arm #search #match .listing .hover')
-            .next()
-            .focus()
-            .attr('class', 'hover')
-          $(this)
-            .val(keyup)
-          $(this)
-            .attr('tabIndex', -1)
-            .focus()
-          $('#arm #search #match .listing .hover')
-            .prev()
-            .attr('class', 'index')
-        }
-      } else if (e.keyCode == 38 || e.keyCode == 33) {
-        $('#arm #search #match .listing .hover')
-          .prev()
-          .focus()
-          .attr('class', 'hover')
-        $(this)
-          .val(keyup)
-        $(this)
-          .focus()
-        $('#arm #search #match .listing .hover')
-          .next()
-          .attr('class', 'index')
-      } else if (e.keyCode == 27) {
-        $('#arm #search #match')
-          .hide()
-        $(this)
-          .css({
-            'caret-color': 'transparent',
-            'padding': '0',
-            'text-align': 'center'
-          })
-          .val('Search')
-          .siblings('.icon')
-          .removeClass('slide')
-      }
-      visual()
-    })
   .on('submit', '#main .center .channel .item .classic .addComment', function(e) {
     if ($(this)
       .children('.comment')
@@ -266,75 +101,6 @@ $(document)
       .addClass('fas fa-comments')
     $('.' + item + ' .addComment .comment')
       .val('')
-    e.preventDefault()
-    visual()
-  })
-  .on('submit', '#main #visit #page #front', function(e) {
-    if ($('#main #visit #page #front input[type=text]').val().length)
-      var uri = '?q=' + $('#main #visit #page #front input[type=text]')
-        .val()
-        .toLowerCase()
-        .replace(/\s/g, '+')
-      if (contrast == true && !location.href.match('\\+1')) uri = uri +
-        '+1'
-      else if (contrast == true) uri = uri + '+1'
-      exit(uri)
-    e.preventDefault()
-  })
-  .on('submit', '#arm #search', function(e) {
-    $('#main .air, #main .result, #main .center, #main .content')
-      .remove()
-    $('#arm #search #match')
-      .hide()
-    if ($('#arm #search .listing .hover')
-      .length) {
-      if (translations.indexOf($('#arm #search #match .listing .hover')
-          .attr('response')) > -1) {
-        category = $('#arm #search #match .listing .hover')
-          .attr('response')
-        populate($('#arm #search #match .listing .hover')
-          .attr('response'))
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
-          .attr('response')
-          .toLowerCase()
-        air(id)
-        state('?q=' + $('#arm #search #match .listing .hover')
-          .attr('response')
-          .toLowerCase())
-        document.title = $('#arm #search #match .listing .hover')
-          .attr('response')
-        progress(true, 100)
-      } else {
-        var uri = '?q=' + $('#arm #search input[type=text]')
-          .val()
-        if (contrast == true && !location.href.match('\\+1')) uri = uri +
-          '+1'
-        else if (contrast == true) uri = uri + '+1'
-        state('?q=&' + $('#arm #search #match .listing .hover')
-          .attr('response'))
-        response(true, false, $('#arm #search #match .listing .hover')
-          .attr('response'), true, null)
-        document.title = $('#arm #search #match .listing .hover')
-          .attr('response')
-      }
-    } else {
-      if ($('#arm #search input[type=text]').val()
-        .length) {
-        var uri = '?q=' + $('#arm #search input[type=text]')
-          .val()
-          .toLowerCase()
-          .replace(/\s/g, '+')
-        if (contrast == true && !location.href.match('\\+1')) uri = uri +
-          '+1'
-        else if (contrast == true) uri = uri + '+1'
-        response(true, false, $('#arm #search input[type=text]')
-          .val(), true, null)
-        state(uri)
-      }
-    }
-    $('#arm #search input[type=text]')
-      .val('Search')
-      .blur()
     e.preventDefault()
     visual()
   })
@@ -423,10 +189,13 @@ $(document)
       }
     })
   .on('touch click mouseenter mouseleave',
-    '#arm #search #match .listing .index, #arm #search #match .listing .hover',
+    '#arm #search #match .listing .index, #arm #search #match .listing .hover, ' +
+    '#main #visit #page #front #first .listing .index, ' +
+    '#main #visit #page #front #first .listing .hover',
     function(e) {
       if (e.type == 'mouseenter') {
-        $('#arm #search #match .listing .hover')
+        $('#arm #search #match .listing .hover, ' +
+          '#main #visit #page #front #first .listing .hover')
           .attr('class', 'index')
         if (op == 0) $(this)
           .addClass('hover contrast.hover')
@@ -434,29 +203,34 @@ $(document)
           .addClass('hover visual.hover')
       }
       if (e.type == 'mouseleave') {
-        if (op == 1) $('#arm #search #match .listing .hover')
+        if (op == 1) $('#arm #search #match .listing .hover, ' +
+          '#main #visit #page #front #first .listing .hover')
           .attr('class', 'index contrast')
         else $('#arm #search #match .listing .hover').attr('class','index visual')
       }
       if (e.type == 'touch' || e.type == 'click')
-        if (translations.indexOf($('#arm #search #match .listing .hover')
+        if (translations.indexOf($('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response')) > -1) {
-          category = $('#arm #search #match .listing .hover')
+          $('#top').css('visibility','visible')
+          category = $('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response')
-          $('#main .air, #main .result, #main .center, #main .suggestions')
-            .remove()
           populate($('.hover')
             .attr('response'))
-          var uri = '?q=' + $('#arm #search #match .listing .hover')
+          var uri = '?q=' + $('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response')
             .toLowerCase()
           if (contrast == true && !location.href.match('\\+1')) uri = uri +
             '+1'
           else if (contrast == true) uri = uri + '+1'
-          air($('#arm #search #match .listing .hover')
+          air($('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response'))
           state(uri)
-          document.title = $('#arm #search #match .listing .hover')
+          document.title = $('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response')
           progress(true, 100)
         } else {
@@ -468,64 +242,9 @@ $(document)
           else if (contrast == true) uri = uri + '+1'
           exit(uri)
         }
+        visual()
       e.preventDefault()
     })
-  .on('touch click', '#option .fa-home', function(e) {
-    $('#main .center, #main .content, #main .result, #main .air')
-      .remove()
-    $('#main #visit')
-      .show()
-    var uri = '?q=' + category.toLowerCase()
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    else if (contrast == true) uri = uri + '+1'
-    exit(uri)
-  })
-  .on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(e) {
-    $(this)
-      .toggleClass('fa-circle-notch fa-circle')
-    if (!location.href.match('\\?q=') && !location.href.match('\\?\\+1') &&
-      contrast == false) {
-      var init = document.location.href + '?+1'
-      state(init)
-      contrast = contrast != true
-    } else if (location.href.match('\\?q=') && !location.href.match('\\+\\1') &&
-      contrast == false) {
-      var opposite = document.location.href + '+1'
-      state(opposite)
-      contrast = contrast != true
-    } else if (location.href.match('\\?\\+1') || location.href.match('\\+1') ||
-      contrast == false) {
-      var invert = document.location.href
-      invert = invert.replace(/\?\+1|\+1/g, '')
-      history.replaceState(null, null, invert)
-      contrast = true
-    }
-    visual('op')
-  })
-  .on('touch click', '#option .fa-code', function(e) {
-    var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
-    var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
-      .replace(/\s|\.|\//g, '-')
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    else if (contrast == true) uri = uri + '+1'
-    exit(uri)
-    return false
-  })
-  .on('touch click', '#option .fa-terminal', function(e) {
-  if (!id) id = category
-  else id = menu[id].cat
-    var array = []
-    for (i = 1; i <= menu.length - 1; i++) {
-      if (menu[i].cat == id) array.push(menu.indexOf(menu[i]))
-    }
-    var n = array[Math.floor(Math.random() * array.length)]
-    var uri = '?q=&' + menu[n].id.toLowerCase()
-      .replace(/(\s|\.|\/)/g, '-')
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    else if (contrast == true) uri = uri + '+1'
-    exit(uri)
-    return false
-  })
   .on('touch click',
     '#main .center .channel .item .image .tag .fa-bookmark-o, ' +
     '#main .center .channel .item .image .tag .fa-bookmark, ' +

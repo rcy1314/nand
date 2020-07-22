@@ -14,7 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/font.css">
     <script src="js/response.js"></script>
     <script src="js/visual.js"></script>
+    <script src="js/option.js"></script>
     <script src="js/emoji.js"></script>
+    <script src="js/input.js"></script>
     <script src="js/image.js"></script>
     <script src="js/head.js"></script>
     <script src="js/core.js"></script>
@@ -40,7 +42,6 @@
                                 <div class='fa fa-search'></div>
                             </div>
                             <input type='text' value='Search'>
-                            <br>
                         </div>
                         <input type='submit'>
                         <div id='match'>
@@ -57,16 +58,24 @@
                     </div>
                 </div>
             </div>
+            <div id='background'>
             <div id='main'>
                 <div id='visit'>
                   <div id='page'>
                     <img id='placeholder' src='images/icon/transparent.png'>
                     <form id='front' action='#'>
-                    <input type='text'>
+                      <div class='icon'>
+                          <div class='fa fa-search'></div>
+                      </div>
+                    <input type='text' value=''>
+                    <div id='first'>
+                        <div class='listing'></div>
+                    </div>
                     <input type='submit'>
                     </form>
                   </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
