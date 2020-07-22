@@ -14,23 +14,33 @@ if (location.href.split('?')[1] &&
       var id = location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
       var ts = parseInt(location.href.split('?')[1].slice(2), 36)
-      response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), false, ts)
+      if (!menu[i]) {
+        $(document)
+          .ready(function() {
+            $('#top').css('visibility','hidden')
+            $('#main #visit #page #front input[type=text], ' +
+            '#main #visit #page #front .icon').css('visibility','visible')
+        })
+      }
+      else {
+        response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), false, ts)
+      }
     visual()
 
   }
 
-} else {
-  $(document)
+} else if (location.href.match('\\+1')) {
+  op = op != true
+  contrast = contrast != true
+
+} else if (location.href.split('?')[1] != '+1') {
+    $(document)
     .ready(function() {
       $('#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
 })
 }
 
-  if (location.href.match('\\+1')){
-     op = op != true
-     contrast = contrast != true
-  }
   if (location.search.split('?q=')[1]) {
 
     var uri = location.search.split('?q=')[1]

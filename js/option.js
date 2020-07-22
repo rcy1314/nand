@@ -24,18 +24,15 @@ $(document).ready()
 .on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(e) {
   $(this)
     .toggleClass('fa-circle-notch fa-circle')
-  if (!location.href.match('\\?q=') && !location.href.match('\\?\\+1') &&
-    contrast == false) {
-    var init = document.location.href + '?+1'
+  if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
+    var init = document.location.href + '+1'
     state(init)
     contrast = contrast != true
-  } else if (location.href.match('\\?q=') && !location.href.match('\\+\\1') &&
-    contrast == false) {
+  } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
     var opposite = document.location.href + '+1'
     state(opposite)
     contrast = contrast != true
-  } else if (location.href.match('\\?\\+1') || location.href.match('\\+1') ||
-    contrast == false) {
+  } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
     var invert = document.location.href
     invert = invert.replace(/\?\+1|\+1/g, '')
     history.replaceState(null, null, invert)
