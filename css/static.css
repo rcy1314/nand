@@ -318,7 +318,7 @@ input[type=text] {
   border-color: transparent transparent #ccc transparent;
 }
 
-#arm #search #match .index:first-child:before {
+.index:first-child:before {
   border-color: transparent transparent #ccc transparent;
   border-width: 0 10px 10px 10px;
   border-style: solid;
@@ -331,7 +331,7 @@ input[type=text] {
   width: 0;
 }
 
-#arch #search #match .index:first-child:after {
+.index:first-child:after {
   border-color: transparent transparent #fff transparent;
   border-width: 0 9px 9px 9px;
   border-style: solid;
@@ -363,7 +363,6 @@ input[type=text] {
 .index {
   background-color: #fff;
   border-bottom: none !important;
-  border: 1px solid #ddd;
   padding-bottom: 15px;
   position: relative;
   padding-top: 15px;
@@ -398,7 +397,6 @@ input[type=text] {
 
 .hover {
   border-bottom: none !important;
-  border: 1px solid #ddd;
   padding-bottom: 15px;
   padding-top: 15px;
   font-size: 12px;
