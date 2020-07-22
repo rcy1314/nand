@@ -346,7 +346,7 @@ input[type=text] {
 }
 
 .index {
-  background-color: #fff !important;
+  background-color: #fff;
   border-bottom: none !important;
   border: 1px solid #ddd;
   padding-bottom: 15px;
@@ -361,23 +361,23 @@ input[type=text] {
   border-bottom: 1px solid #eee !important;
 }
 
-.contrast {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
 .contrast.hover {
   background-color: #222 !important;
   color: #fff !important;
 }
 
-.visual {
-  background-color: #fff !important;
-  color: #666 !important;
+.contrast {
+  background-color: #000 !important;
+  color: #fff !important;
 }
 
 .visual.hover {
   background-color: #eee !important;
+  color: #666 !important;
+}
+
+.visual {
+  background-color: #fff !important;
   color: #666 !important;
 }
 

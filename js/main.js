@@ -428,14 +428,15 @@ $(document)
       if (e.type == 'mouseenter') {
         $('#arm #search #match .listing .hover')
           .attr('class', 'index')
-        if (contrast == true) $(this)
-          .addClass('hover contrast')
+        if (op == 0) $(this)
+          .addClass('hover contrast.hover')
         else $(this)
-          .addClass('hover visual')
+          .addClass('hover visual.hover')
       }
       if (e.type == 'mouseleave') {
-        if (contrast == true) $('#arm #search #match .listing .hover')
+        if (op == 1) $('#arm #search #match .listing .hover')
           .attr('class', 'index contrast')
+        else $('#arm #search #match .listing .hover').attr('class','index visual')
       }
       if (e.type == 'touch' || e.type == 'click')
         if (translations.indexOf($('#arm #search #match .listing .hover')

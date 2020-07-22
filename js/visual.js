@@ -29,10 +29,10 @@ var visual = function(n) {
       'background-color': '#0e0e0e',
       'border': 'none'
     })
+    $('#top, input[type=text], .description, .comment').css('border-bottom', '1px solid #333')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.filter, .populate, .category, .title').css('border','1px solid #0e0e0e')
     $('.bottom').attr('src', 'images/icon/opposite.png').css('filter', 'none')
-    $('#top, .description, .comment').css('border-bottom', '1px solid #333')
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     $('#main, .listing').addClass('opposite').removeClass('invert')
     $('.index, .hover').addClass('contrast').removeClass('visual')
@@ -42,9 +42,9 @@ var visual = function(n) {
     $('.second').css('cssText','fill: #e557c6 !important')
     $('.first').css('cssText','fill: #ef4063 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
-    $('.more').css('color', '#333')
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
+    $('.more').css('color', '#333')
   } else if (op == 0) {
     $(
       '#top, #arm, #container, .wrap, .fa-times-circle, ' +

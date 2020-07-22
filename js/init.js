@@ -9,7 +9,7 @@ if (location.href.split('?')[1] &&
 
       if (location.href.match('\\+1')){
         op = op != true
-        contrast = true
+        contrast = contrast != true
       }
       var id = location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
@@ -28,7 +28,7 @@ if (location.href.split('?')[1] &&
 
   if (location.href.match('\\+1')){
      op = op != true
-     contrast = true
+     contrast = contrast != true
   }
   if (location.search.split('?q=')[1]) {
 
