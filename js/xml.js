@@ -303,7 +303,8 @@ var xml = function(e, s, n, post) {
       })
 
     if (!id) id = menu.indexOf(menu[n])
-    var posts = pub.length - 2
+    if (!$.isNumeric(local)) var posts = pub.length - 2
+    else var posts = pub.length - 1
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
     var images = $('#main .center .channel .item .image img.img[src!=""]').length
