@@ -28,21 +28,31 @@ if (location.href.split('?')[1] &&
     visual()
 
   }
+} else if (location.href.match('\\?\\+1')){
+    op = op != true
+    contrast = contrast != true
+      $(document)
+    .ready(function() {
+      $('#main #visit #page #front input[type=text], ' +
+      '#main #visit #page #front .icon').css('visibility','visible')
+})
 
 } else if (location.href.match('\\+1')) {
   op = op != true
   contrast = contrast != true
 
-} else if (location.href.split('?')[1] != '+1') {
+} else {
     $(document)
     .ready(function() {
       $('#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
-})
+    })
 }
-
   if (location.search.split('?q=')[1]) {
-
+    if (location.href.match('\\+1')){
+      op = op != true
+      contrast = contrast != true
+    }
     var uri = location.search.split('?q=')[1]
     uri = uri.replace(/\?\+1|\+1/, '')
     uri = (uri.match(/[^&]+/g))
