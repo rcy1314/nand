@@ -17,7 +17,7 @@ var visual = function(n) {
     ).css('color', '#fff')
     $(
       '#top, #arm, #home a, .filter, .populate, .wrap, ' +
-      '.header, .title, .category, .description, .type, .item, .ago, ' +
+      '.header, .title, .category, .type, .item, .ago, ' +
       '.pub, .tag, .stats, .suggestions, .combine'
     ).css({
       'background-color': '#0e0e0e',
@@ -80,7 +80,7 @@ var visual = function(n) {
     })
     $(
       '#front #option, #container, #main, #visit, .air, .result, #bottom, .hover, ' +
-      '.description, .channel, .stats, .suggestions, .combine, #bottom'
+      '.channel, .stats, .suggestions, .combine, #bottom'
     ).css({
       'background-color': '#fafafa',
       'border': 'none',
@@ -104,7 +104,7 @@ var visual = function(n) {
     $('.filter, .populate, .feed, .item, .title').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #eee')
-    $('.filter, .populate, .description').css('background-color', '#efefef')
+    $('.filter, .populate').css('background-color', '#efefef')
     $('.fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')

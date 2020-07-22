@@ -238,6 +238,7 @@ body,
 }
 
 .description {
+  background-color: transparent !important;
   padding-bottom: 5px;
   text-align: justify;
   display: table-cell;
