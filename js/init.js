@@ -18,7 +18,8 @@ if (location.href.split('?')[1] &&
         $(document)
           .ready(function() {
             $('#top').css('visibility','hidden')
-            $('#main #visit #page #front input[type=text], ' +
+            $('#main #visit #page #front #option, ' +
+            '#main #visit #page #front input[type=text], ' +
             '#main #visit #page #front .icon').css('visibility','visible')
         })
       }
@@ -33,7 +34,8 @@ if (location.href.split('?')[1] &&
     contrast = contrast != true
       $(document)
     .ready(function() {
-      $('#main #visit #page #front input[type=text], ' +
+      $('#main #visit #page #front #option, ' +
+      '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
 })
 
@@ -44,7 +46,8 @@ if (location.href.split('?')[1] &&
 } else {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front input[type=text], ' +
+      $('#main #visit #page #front #option, '+
+      '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
     })
 }

@@ -5,7 +5,7 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #visit, #option, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
-      '.result, .air, .fa-times-cirlce, .wrap, .fas'
+      '.result, .air, .fa-times-circle, .wrap, .fas'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -27,12 +27,22 @@ var visual = function(n) {
     })
     $('.fas, input[type=text], .item .pub').css({
       'background-color': '#0e0e0e',
+      'box-shadow': 'none',
       'border': 'none'
     })
     $('input[type=text]').css({
       'background-color': '#1a1a1a',
       'color': '#ddd'
     })
+    $(
+      '#home a, ' +
+      '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
+      '.fa-terminal, .fa-circle-notch, .fa-circle'
+    ).css({
+      'background-color': '#000',
+      'color': '#fff'
+    })
+
     $('#top, .description, .comment').css('border-bottom', '1px solid #333')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.filter, .populate, .category, .title').css('border','1px solid #0e0e0e')
@@ -64,12 +74,12 @@ var visual = function(n) {
       'border': '1px solid #ddd',
       'color': '#aaa'
     })
-    $('#arm, #option, .index').css({
+    $('#arm, #arm #option, .index').css({
       'background-color': '#fff',
       'color': '#666'
     })
     $(
-      '#container, #main, #visit, .air, .result, #bottom, .hover, ' +
+      '#front #option, #container, #main, #visit, .air, .result, #bottom, .hover, ' +
       '.description, .channel, .stats, .suggestions, .combine, #bottom'
     ).css({
       'background-color': '#fafafa',

@@ -203,6 +203,12 @@ body,
   top: 37px;
 }
 
+#front #option {
+  visibility: hidden;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
 
 .air,
 .result {

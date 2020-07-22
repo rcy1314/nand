@@ -25,20 +25,16 @@ $(document).ready()
   $(this)
     .toggleClass('fa-circle-notch fa-circle')
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
-    var init = document.location.href + '+1'
-    state(init)
     contrast = contrast != true
+    op = op != true
   } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
-    var opposite = document.location.href + '+1'
-    state(opposite)
     contrast = contrast != true
+    op = op != true
   } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
-    var invert = document.location.href
-    invert = invert.replace(/\?\+1|\+1/g, '')
-    history.replaceState(null, null, invert)
     contrast = true
+    op = op != true
   }
-  visual('op')
+  visual()
 })
 .on('touch click', '#option .fa-code', function(e) {
   var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
