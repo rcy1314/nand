@@ -12,12 +12,6 @@ $(document)
         .removeClass('slide')
     }
   })
-  .on('touch click', '#main, .background', function(e) {
-    $('#arm #search #match')
-      .hide()
-    $('#arm #search #input .icon')
-      .removeClass('slide')
-  })
   .on('touch click', '#arm #home', function(e) {
     window.location.href = window.location.origin
   })
@@ -51,14 +45,15 @@ $(document)
       .submit()
     e.stopPropagation()
   })
-  .on('touch click', '#main #visit', function(e) {
+  .on('touch click', '#main #visit #placeholder', function(e) {
+    $('#top').css('visibility','visible')
+    $('#main #visit #page #front input[type=text]')
+      .css('visibility','hidden')
     if ($('#arm #search #match .listing')
       .is(':visible')) $('#arm #search #match')
       .hide()
     else {
       filter = []
-      $('#main #visit')
-        .hide()
       var uri = '?q=' + category.toLowerCase()
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
@@ -68,6 +63,16 @@ $(document)
       state(uri)
       progress(true, 100)
     }
+  })
+  .on('touch click', '#main #visit #page input[type=text]', function(e) {
+
+    e.stopPropagation()
+
+  })
+  .on('keyup touch click focusin focusout blur',
+     '#main #visit #page input[type=text]', function(e) {
+       if (e.type == 'keyup' && e.keyCode == 13)
+         return false
   })
   .on('touch click', '#main .center #bottom .previous', function(e) {
 
@@ -122,10 +127,7 @@ $(document)
         }
         return false
       }
-      if (e.type == 'touch' || e.type == 'click' || $(
-          '#arm #search input[type=text]')
-        .val()
-        .length == -1) {
+      if (e.type == 'touch' || e.type == 'click') {
         $('#arm #search #match')
           .show()
         $('#arm #search #match .listing')
@@ -267,6 +269,18 @@ $(document)
     e.preventDefault()
     visual()
   })
+  .on('submit', '#main #visit #page #front', function(e) {
+    if ($('#main #visit #page #front input[type=text]').val().length)
+      var uri = '?q=' + $('#main #visit #page #front input[type=text]')
+        .val()
+        .toLowerCase()
+        .replace(/\s/g, '+')
+      if (contrast == true && !location.href.match('\\+1')) uri = uri +
+        '+1'
+      else if (contrast == true) uri = uri + '+1'
+      exit(uri)
+    e.preventDefault()
+  })
   .on('submit', '#arm #search', function(e) {
     $('#main .air, #main .result, #main .center, #main .content')
       .remove()
@@ -304,8 +318,7 @@ $(document)
           .attr('response')
       }
     } else {
-      if ($('#arm #search input[type=text]')
-        .val()
+      if ($('#arm #search input[type=text]').val()
         .length) {
         var uri = '?q=' + $('#arm #search input[type=text]')
           .val()

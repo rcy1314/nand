@@ -65,7 +65,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#main, #visit, .air, .result, #bottom, .hover, ' +
+      '#container, #main, #visit, .air, .result, #bottom, .hover, ' +
       '.description, .channel, .stats, .suggestions, .combine, #bottom'
     ).css({
       'background-color': '#fafafa',
@@ -83,13 +83,13 @@ var visual = function(n) {
     $('.bottom')
       .attr('src', 'images/icon/transparent.png')
       .css('filter', 'brightness(50%) saturate(20%) invert(90%)')
-    $('.filter .pub').css({
+    $('.filter .pub, .populate .pub').css({
       'background-color': "#efefef",
       'border': 'none'
     })
     $('.filter, .populate, .feed, .item, .title').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-    $('.filter, .populate, .item, .feed').css('box-shadow', '1px 1px 6px #eee')
+    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #eee')
     $('.filter, .populate, .description').css('background-color', '#efefef')
     $('.fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')

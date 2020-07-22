@@ -1,5 +1,9 @@
-if (location.href.split('?')[1])
-
+if (location.href.split('?')[1] &&
+  location.href.split('?')[1] != '+1') {
+  $(document)
+    .ready(function() {
+      $('#top').css('visibility','visible')
+  })
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
     location.href.split('?')[1] != '+1') {
 
@@ -11,6 +15,13 @@ if (location.href.split('?')[1])
     visual()
 
   }
+
+} else {
+  $(document)
+    .ready(function() {
+      $('#main #visit #page #front input[type=text').css('visibility','visible')
+})
+}
 
   if (location.href.match('\\+1')) contrast = true
 

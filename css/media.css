@@ -48,6 +48,10 @@
     display: none !important;
   }
 
+  #main #visit #page #front input[type=text] {
+    width: 23em !important;
+  }
+
   #guide .sticky .wrap {
     display: none !important;
   }
