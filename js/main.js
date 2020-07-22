@@ -486,20 +486,20 @@ $(document)
       contrast == false) {
       var init = document.location.href + '?+1'
       state(init)
-      contrast = true
+      contrast = contrast != true
     } else if (location.href.match('\\?q=') && !location.href.match('\\+\\1') &&
       contrast == false) {
       var opposite = document.location.href + '+1'
       state(opposite)
-      contrast = true
+      contrast = contrast != true
     } else if (location.href.match('\\?\\+1') || location.href.match('\\+1') ||
       contrast == false) {
       var invert = document.location.href
       invert = invert.replace(/\?\+1|\+1/g, '')
       history.replaceState(null, null, invert)
-      contrast = false
+      contrast = true
     }
-    visual()
+    visual('op')
   })
   .on('touch click', '#option .fa-code', function(e) {
     var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])

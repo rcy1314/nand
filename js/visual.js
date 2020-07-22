@@ -1,7 +1,7 @@
 var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
-  if (op == 1 || contrast == true) {
+  if (op == 1) {
     $(
       '#container, #arm, #main, #visit, #option, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
@@ -45,7 +45,7 @@ var visual = function(n) {
     $('.more').css('color', '#333')
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
-  } else if (op == 0 || contrast == false) {
+  } else if (op == 0) {
     $(
       '#top, #arm, #container, .wrap, .fa-times-circle, ' +
       '.comment, .channel, .feed, .title, .header, .tag, ' +

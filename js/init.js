@@ -7,7 +7,10 @@ if (location.href.split('?')[1] &&
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
     location.href.split('?')[1] != '+1') {
 
-      if (location.href.match('\\+1')) contrast = true
+      if (location.href.match('\\+1')){
+        op = op != true
+        contrast = true
+      }
       var id = location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
       var ts = parseInt(location.href.split('?')[1].slice(2), 36)
@@ -23,8 +26,10 @@ if (location.href.split('?')[1] &&
 })
 }
 
-  if (location.href.match('\\+1')) contrast = true
-
+  if (location.href.match('\\+1')){
+     op = op != true
+     contrast = true
+  }
   if (location.search.split('?q=')[1]) {
 
     var uri = location.search.split('?q=')[1]
