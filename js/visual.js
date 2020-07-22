@@ -16,7 +16,7 @@ var visual = function(n) {
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
-      '#top, #arm, input[type=text], #home a, .filter, .populate, .wrap, ' +
+      '#top, #arm, #home a, .filter, .populate, .wrap, ' +
       '.header, .title, .category, .description, .type, .item, .ago, ' +
       '.pub, .tag, .stats, .suggestions, .combine'
     ).css({
@@ -29,7 +29,11 @@ var visual = function(n) {
       'background-color': '#0e0e0e',
       'border': 'none'
     })
-    $('#top, input[type=text], .description, .comment').css('border-bottom', '1px solid #333')
+    $('input[type=text]').css({
+      'background-color': '#1a1a1a',
+      'color': '#ddd'
+    })
+    $('#top, .description, .comment').css('border-bottom', '1px solid #333')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.filter, .populate, .category, .title').css('border','1px solid #0e0e0e')
     $('.bottom').attr('src', 'images/icon/opposite.png').css('filter', 'none')
