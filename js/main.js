@@ -389,7 +389,7 @@ $(document)
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',
     function(e) {
-      if (contrast == false)
+      if (op == 0)
         if (e.type == 'mouseenter') {
           $(this)
             .toggleClass('overlay')
