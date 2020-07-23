@@ -28,10 +28,9 @@ $(document)
       $('#front .icon, #front #option').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]')
         .css('visibility','hidden')
-      if ($('#arm #search #match .listing')
-        .is(':visible')) $('#arm #search #match')
+      if ($('#main #page #visit #front #first .listing')
+        .is(':visible')) $('#main #page #visit #front #first')
         .hide()
-      else {
         filter = []
         var uri = '?q=' + category.toLowerCase()
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
@@ -41,7 +40,6 @@ $(document)
         air(category)
         state(uri)
         progress(true, 100)
-      }
     $('#main #visit #page #front .icon')
       .removeClass('search')
     $('#main #visit #page #front #first').css('visibility','hidden')
