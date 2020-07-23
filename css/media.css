@@ -73,7 +73,7 @@
   }
 
   #arm {
-    width: 95% !important;
+    width: 100% !important;
   }
 
   #main .air .populate,
@@ -91,8 +91,8 @@
     margin: 0 auto;
   }
 
-  #input, #match {
-    right: 50px;
+  #option {
+    margin-left: 70px;
   }
 
   .content {

@@ -3,6 +3,7 @@ var xml = function(e, s, n, post) {
   obj = []
   var local
   var pub = []
+  var src = ''
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
@@ -311,14 +312,13 @@ var xml = function(e, s, n, post) {
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
           menu[back].id.match(/[^\/]+$/g) +
+      "  <img class='bottom'>" +
           menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
     content(n, recent, oldest, images, posts)
     clearInterval(complete)
-    setTimeout(function () {
-      progress(true, 100)
-    }, 1000)
+    progress(true, 100)
     suggest(id)
     feed(id)
   })

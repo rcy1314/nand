@@ -145,8 +145,8 @@ body,
   background-color: transparent;
   position: absolute;
   display: flex;
+  right: 10px;
   top: 10px;
-  right: 0;
 }
 
 #main {
@@ -302,7 +302,7 @@ input[type=text] {
   margin: 0 auto;
   height: 28.5em;
   display: none;
-  z-index: 2;
+  z-index: 4;
   top: 1em;
 }
 

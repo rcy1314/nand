@@ -14,9 +14,9 @@
 }
 
 .response {
-  -webkit-transition: all .75s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
   -webkit-transition-delay: 0s;
-  -moz-transition: all .75s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
   -moz-transition-delay: 0s;
 }
 
