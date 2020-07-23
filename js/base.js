@@ -252,7 +252,6 @@ var progress = function(complete, n) {
       $('#progressBar').on(
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
-          $('#top').css('visibility','visible')
           $(this).removeClass('response').width(0)
           $('#main #visit, #arm #search #match').hide()
           if ($('#main .content').length == 1) $(
@@ -268,6 +267,7 @@ var progress = function(complete, n) {
             $('#main').scrollTop($('.air').outerHeight())
           }
           $('#main').attr('tabindex', -1).focus()
+          $('#top').css('visibility','visible')
         })
       visual()
     }

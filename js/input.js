@@ -344,13 +344,14 @@ $(document).ready()
         if (op == 1) $('#arm #search #match .listing .hover, ' +
           '#main #visit #page #front #first .listing .hover')
           .attr('class', 'index contrast')
-        else $('#arm #search #match .listing .hover').attr('class','index visual')
+        else $('#arm #search #match .listing .hover, ' +
+          '#main #visit #page #front #first .listing .hover')
+          .attr('class','index visual')
       }
-      if (e.type == 'touch' || e.type == 'click')
+      if (e.type == 'touch' || e.type == 'click') {
         if (translations.indexOf($('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')) > -1) {
-          $('#top').css('visibility','visible')
           category = $('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')
@@ -360,26 +361,24 @@ $(document).ready()
             '#main #visit #page #front #first .listing .hover')
             .attr('response')
             .toLowerCase()
-          if (contrast == true && !location.href.match('\\+1')) uri = uri +
-            '+1'
+          if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           air($('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response'))
-          state(uri)
+          exit(uri)
           document.title = $('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')
           progress(true, 100)
         } else {
-          var uri = '?q=' + $(this)
-            .attr('search') + '&' + $(this)
+          var uri = '?q=' + $(this).attr('search') + '&' + $(this)
             .attr('response')
-          if (contrast == true && !location.href.match('\\+1')) uri = uri +
-            '+1'
+          if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           exit(uri)
         }
         visual()
       e.preventDefault()
+    }
     })

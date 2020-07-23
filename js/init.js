@@ -1,8 +1,12 @@
 if (location.href.split('?')[1] &&
   location.href.split('?')[1] != '+1') {
+    $(document)
+    .ready(function() {
+      $('#main #visit #page #front').css('visibility','hidden')
+    })
+
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
     location.href.split('?')[1] != '+1') {
-
       if (location.href.match('\\+1')){
         op = op != true
         contrast = contrast != true
@@ -48,6 +52,11 @@ if (location.href.split('?')[1] &&
     })
 }
   if (location.search.split('?q=')[1]) {
+    $(document)
+    .ready(function() {
+      $('#main #visit #page #front').css('visibility','hidden')
+    })
+
     if (location.href.match('\\+1')){
       op = op != true
       contrast = contrast != true

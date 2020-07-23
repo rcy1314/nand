@@ -91,6 +91,10 @@
     margin: 0 auto;
   }
 
+  #page .icon {
+    left: 120px;
+  }
+
   #option {
     margin-left: 70px;
   }
