@@ -100,10 +100,10 @@ var visual = function(n) {
       'background-color': "#efefef",
       'border': 'none'
     })
+    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #eee')
+    if ($('#main').width() > 425) $('#container').css('background-color','#fafafa')
     $('.filter, .populate, .feed, .item, .title').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #eee')
-    $('.filter, .populate').css('background-color', '#efefef')
     $('.fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
@@ -111,6 +111,7 @@ var visual = function(n) {
     $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     $('#main, .listing').addClass('invert').removeClass('opposite')
     $('.index, .hover').addClass('visual').removeClass('contrast')
+    $('.filter, .populate').css('background-color', '#efefef')
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.first').css('cssText','fill: #1fa2ff !important')

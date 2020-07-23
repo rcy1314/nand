@@ -69,7 +69,7 @@
 @media screen and (min-width: 768px) {
   #main .center {
     left: -75px !important;
-    width: 60% !important;
+    width: 45% !important;
   }
 
   #arm {
@@ -91,18 +91,12 @@
     margin: 0 auto;
   }
 
+  #input, #match {
+    right: 50px;
+  }
+
   .content {
     margin-left: -75px !important;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  #main .center {
-    width: 60% !important;
-  }
-
-  #arm {
-    width: 88% !important;
   }
 }
 
@@ -115,16 +109,16 @@
   }
 
   #arm {
-    width: 75% !important;
+    width: 65% !important;
   }
 
   #main .center {
-    width: 55% !important;
+    width: 35% !important;
   }
 
   #main .result,
   #main .air {
-    width: 80% !important;
+    width: 60% !important;
     position: relative;
     display: block;
     margin: 0 auto;
@@ -141,7 +135,7 @@
   }
 
   #arm {
-    width: 55% !important;
+    width: 45% !important;
   }
 
   #main .center {
