@@ -4,6 +4,7 @@ $(document)
       .css('display', 'block')
   })
   .on('touch click', 'a', function(e) {
+    if ($(this).attr('id') != 'home')
     window.open($(this)
       .attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
