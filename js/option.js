@@ -1,6 +1,7 @@
 $(document).ready()
-.on('touch click', '#arm #home', function(e) {
+.on('touch click', '#arm #home a', function(e) {
   window.location.href = window.location.origin
+  e.preventDefault()
 })
 .on('touch click', '#option .fa-git', function(e) {
   window.location.href = 'https://github.com/acktic/acktic.github.io'
