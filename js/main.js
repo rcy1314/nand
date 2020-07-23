@@ -189,63 +189,6 @@ $(document)
         exit(uri)
       }
     })
-  .on('touch click mouseenter mouseleave',
-    '#arm #search #match .listing .index, #arm #search #match .listing .hover, ' +
-    '#main #visit #page #front #first .listing .index, ' +
-    '#main #visit #page #front #first .listing .hover',
-    function(e) {
-      if (e.type == 'mouseenter') {
-        $('#arm #search #match .listing .hover, ' +
-          '#main #visit #page #front #first .listing .hover')
-          .attr('class', 'index')
-        if (op == 0) $(this)
-          .addClass('hover contrast.hover')
-        else $(this)
-          .addClass('hover visual.hover')
-      }
-      if (e.type == 'mouseleave') {
-        if (op == 1) $('#arm #search #match .listing .hover, ' +
-          '#main #visit #page #front #first .listing .hover')
-          .attr('class', 'index contrast')
-        else $('#arm #search #match .listing .hover').attr('class','index visual')
-      }
-      if (e.type == 'touch' || e.type == 'click')
-        if (translations.indexOf($('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')) > -1) {
-          $('#top').css('visibility','visible')
-          category = $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
-          populate($('.hover')
-            .attr('response'))
-          var uri = '?q=' + $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
-            .toLowerCase()
-          if (contrast == true && !location.href.match('\\+1')) uri = uri +
-            '+1'
-          else if (contrast == true) uri = uri + '+1'
-          air($('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response'))
-          state(uri)
-          document.title = $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
-          progress(true, 100)
-        } else {
-          var uri = '?q=' + $(this)
-            .attr('search') + '&' + $(this)
-            .attr('response')
-          if (contrast == true && !location.href.match('\\+1')) uri = uri +
-            '+1'
-          else if (contrast == true) uri = uri + '+1'
-          exit(uri)
-        }
-        visual()
-      e.preventDefault()
-    })
   .on('touch click',
     '#main .center .channel .item .image .tag .fa-bookmark-o, ' +
     '#main .center .channel .item .image .tag .fa-bookmark, ' +
@@ -298,33 +241,15 @@ $(document)
     '#main .center .channel .item .image .tag .fa-sticky-note',
     function(e) {
       if (contrast == true)
-        if (!$(this)
-          .parents('.item')
-          .find('.share')
-          .val()
-          .match(/\+1/g)) $(this)
-          .parents('.item')
-          .find('.share')
-          .val($(this)
-            .parents('.item')
-            .find('.share')
-            .val() + '+1')
-      if (contrast == false && $(this)
-        .parents('.item')
-        .find('.share')
-        .val()
-        .match(/\+1/g)) $(this)
-        .parents('.item')
-        .find('.share')
-        .val($(this)
-          .parents('.item')
-          .find('.share')
-          .val()
-          .replace(/\+1/g, ''))
-      $(this)
-        .parents('.item')
-        .find('.share')
-        .select()
+        if (!$(this).parents('.item').find('.share').val()
+          .match(/\+1/g))
+          $(this).parents('.item').find('.share')
+          .val($(this).parents('.item').find('.share').val() + '+1')
+      if (contrast == false && $(this).parents('.item').find('.share').val()
+        .match(/\+1/g))
+        $(this).parents('.item').find('.share').val(
+          $(this).parents('.item').find('.share').val().replace(/\+1/g, ''))
+      $(this).parents('.item').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note'))
         $(this).toggleClass('fa-sticky-note-o fa-sticky-note')

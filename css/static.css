@@ -132,7 +132,7 @@ body,
   font-size: 36px;
   cursor: pointer;
   height: 40px;
-  left: 15px;
+  left: 40px;
   top: 5px;
 }
 
@@ -292,7 +292,7 @@ input[type=text] {
 
 .icon {
   position: absolute;
-  left: 50px;
+  left: 100px;
   top: 11px;
 }
 

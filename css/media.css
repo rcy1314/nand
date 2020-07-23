@@ -68,8 +68,8 @@
 
 @media screen and (min-width: 768px) {
   #main .center {
-    left: -75px !important;
-    width: 45% !important;
+    left: -95px !important;
+    width: 50% !important;
   }
 
   #arm {
@@ -113,7 +113,7 @@
   }
 
   #main .center {
-    width: 35% !important;
+    width: 40% !important;
   }
 
   #main .result,

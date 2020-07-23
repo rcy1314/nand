@@ -1,9 +1,5 @@
 if (location.href.split('?')[1] &&
   location.href.split('?')[1] != '+1') {
-  $(document)
-    .ready(function() {
-      $('#top').css('visibility','visible')
-  })
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
     location.href.split('?')[1] != '+1') {
 
