@@ -37,7 +37,6 @@ $(document)
     e.stopPropagation()
   })
   .on('touch click', '#main #visit #placeholder', function(e) {
-    $('#top').css('visibility','visible')
     $('#front .icon, #front #option').css('visibility','hidden')
     $('#main #visit #page #front input[type=text]')
       .css('visibility','hidden')
