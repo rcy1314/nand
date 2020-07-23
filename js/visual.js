@@ -35,11 +35,11 @@ var visual = function(n) {
       'color': '#ddd'
     })
     $(
-      '#home a, ' +
+      '#home a, .description, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
-      'background-color': '#000',
+      'background-color': 'transparent',
       'color': '#fff'
     })
 
@@ -87,7 +87,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#home a, ' +
+      '#home a, .description, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
