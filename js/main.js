@@ -16,6 +16,13 @@ $(document)
       $('#arm #search #input .icon')
         .removeClass('slide')
     }
+    if (!$('#main #visit #page #front input[type=text]')
+      .is(':focus')) {
+      $('#main #visit #page #front #first')
+        .css('visibility','hidden')
+      $('#main #visit #page #front .icon')
+        .removeClass('slide')
+    }
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
       $('#front .icon, #front #option').css('visibility','hidden')
