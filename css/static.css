@@ -35,10 +35,6 @@
   scrollbar-width: thin;
 }
 
-#guide {
-  display: none;
-}
-
 #progressBar {
   height: 4px;
   width: 0;
@@ -101,6 +97,10 @@ body,
   bottom: 0;
   left: 0;
   top: 0;
+}
+
+#guide {
+  display: none;
 }
 
 #top {
@@ -171,12 +171,15 @@ body,
   height: 100%;
 }
 
-#page {
-  margin-top: -300px;
-}
-
 #placeholder {
   width: 100px !important;
+}
+
+#page {
+  position: relative;
+  margin-top: 200px !important;
+  margin: 0 auto;
+  display: block;
 }
 
 #front {

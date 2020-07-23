@@ -14,7 +14,7 @@ var xml = function(e, s, n, post) {
   else if (n == menu.length - 1) var plus = 1 + +1
   else var plus = n + +1
   if (filter[next - +1]) var back = filter[next - +1]
-  else if (n == 1) var back = menu.length - 1
+  else if (n == 0) var back = menu.length - 1
   else var back = n - +1
   document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
@@ -138,8 +138,7 @@ var xml = function(e, s, n, post) {
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
-      }
-      else if (src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/))
+      } else if (src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/))
         src = ''
       if (src == '') courtesy = ''
       else courtesy =
@@ -308,11 +307,10 @@ var xml = function(e, s, n, post) {
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
     var images = $('#main .center .channel .item .image img.img[src!=""]').length
-    $('#main .center').append(
+    if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
           menu[back].id.match(/[^\/]+$/g) +
-      "  <img class='bottom'>" +
           menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")

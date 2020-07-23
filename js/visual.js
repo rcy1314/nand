@@ -79,7 +79,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#front #option, #container, #main, #visit, .air, .result, #bottom, .hover, ' +
+      '#front #option, #main, #visit, .air, .result, #bottom, .hover, ' +
       '.channel, .stats, .suggestions, .combine, #bottom'
     ).css({
       'background-color': '#fafafa',
@@ -96,7 +96,6 @@ var visual = function(n) {
     })
     $('.bottom')
       .attr('src', 'images/icon/transparent.png')
-      .css('filter', 'brightness(50%) saturate(20%) invert(90%)')
     $('.filter .pub, .populate .pub').css({
       'background-color': "#efefef",
       'border': 'none'

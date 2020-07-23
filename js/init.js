@@ -14,7 +14,7 @@ if (location.href.split('?')[1] &&
       var id = location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
       var ts = parseInt(location.href.split('?')[1].slice(2), 36)
-      if (!menu[i]) {
+      if (!i) {
         $(document)
           .ready(function() {
             $('#top').css('visibility','hidden')

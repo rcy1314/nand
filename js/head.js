@@ -4,7 +4,9 @@ var menu = [{
 		des: "Bing Search Results.",
 		uri: "https://www.bing.com/search?q=",
 		ext: "https://www.bing.com",
-		img: "Bing"
+		img: "Bing",
+		hash: "mB"
+
 	}
 
 	,
