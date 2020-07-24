@@ -107,7 +107,7 @@ var xml = function(e, s, n, post) {
         src = String($(this).find('content').text()
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('link').attr('href')) {
-        if ($(this).find('link').attr('href').match(/youtube/))
+        if ($(this).find('link').attr('href').match(/youtube\.com/))
           src = 'https://www.youtube.com/embed/' +
             String($(this).find('link').attr('href').split('=')[1])
         else src = String($(this).find('link').attr('href'))
@@ -152,7 +152,7 @@ var xml = function(e, s, n, post) {
       if ($(this).find('title:first').text().length > 125)
         var more = "<div class='more'>more</div>"
       else var more = ""
-      if (src.match(/youtube/g)) {
+      if (src.match(/youtube\.com/g)) {
         if ($(this).find('media\\:statistics, statistics').attr('views'))
             var views =
             "<div class='ago views'>" +
