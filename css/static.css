@@ -109,11 +109,11 @@ body,
 }
 
 #arm {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee !important;
   position: relative;
   display: block;
   margin: 0 auto;
-  height: 51px;
+  height: 54px;
   width: 100%;
 }
 
@@ -157,11 +157,12 @@ body,
   -webkit-user-select: none;
   height: calc(100% - 59px);
   -ms-user-select: none;
-  position: relative;
+  position: absolute;
   text-align: center;
   overflow-y: scroll;
   user-select: none;
   outline: none;
+  top: 59px;
 }
 
 #visit {
