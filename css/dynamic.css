@@ -325,7 +325,6 @@ svg .border {
   display: inline-block;
   position: relative;
   overflow-y: scroll;
-  margin-right: 5px;
   text-align: left;
 }
 
