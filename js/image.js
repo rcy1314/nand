@@ -13,6 +13,12 @@ var image = function(n, src) {
         parseInt($('#main .stats .info .queue').text()) - 1
       )
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
+    $('#' + n).parents('.item').find('.ago')
+        .css('display', 'inline-block')
+        .parents('.item').find('.pub').css('display','block')
+        .parents('.item')
+        .find('.url, .share, .source, .header, .image, .img, .fill, .addComment').remove()
+    }
   }).on('load', function() {
     $('#main .stats .info .queue').html(
       parseInt($('#main .stats .info .queue').text()) - 1
