@@ -9,13 +9,21 @@
   -webkit-user-select: none;
   margin-bottom: 2em;
   padding: 1px;
-  width: 100%;
+  width: 99%;
 }
 
 .type,
 .item .id {
   height: 28px;
   width: 28px;
+}
+
+.quick {
+  border-radius: 2px;
+  position: relative;
+  margin: 25px auto;
+  height: 7.5em;
+  width: 99%;
 }
 
 .feed {
@@ -315,8 +323,9 @@ svg .border {
 
 .center {
   display: inline-block;
-  margin-right: 5px;
   position: relative;
+  overflow-y: scroll;
+  margin-right: 5px;
   text-align: left;
 }
 

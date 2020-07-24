@@ -263,14 +263,6 @@ body,
   left: 5px;
 }
 
-.quick {
-  border-radius: 2px;
-  position: relative;
-  margin: 25px auto;
-  height: 7.5em;
-  width: 100%;
-}
-
 #input {
   position: relative;
   margin: 0 auto;
