@@ -158,9 +158,8 @@ body,
   -ms-user-select: none;
   position: relative;
   text-align: center;
-  overflow-x: hidden;
+  overflow-y: scroll;
   user-select: none;
-  overflow-y: auto;
   outline: none;
 }
 
