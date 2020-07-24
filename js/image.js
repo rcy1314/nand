@@ -1,7 +1,7 @@
 var image = function(n, src) {
 
   var uhd = 3840
-  var large  = 2800
+  var large  = 2400
   var mobile = 1281
   var maximum = 799
   var minimum = 299
