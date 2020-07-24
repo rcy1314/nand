@@ -44,8 +44,7 @@ if (window.location.href.split('?')[1] &&
   contrast = contrast != true
 
 } else {
-    $(document)
-    .ready(function() {
+    jQuery(function() {
       $('#main #visit #page #front #option, '+
       '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
