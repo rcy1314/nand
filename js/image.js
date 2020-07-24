@@ -18,7 +18,7 @@ var image = function(n, src) {
         .parents('.item').find('.pub').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill, .addComment').remove()
-    }
+
   }).on('load', function() {
     $('#main .stats .info .queue').html(
       parseInt($('#main .stats .info .queue').text()) - 1
