@@ -109,17 +109,16 @@ body,
 }
 
 #arm {
-  border-bottom: 1px solid #eee !important;
   position: relative;
   display: block;
   margin: 0 auto;
-  height: 54px;
+  height: 51px;
   width: 100%;
 }
 
 #search {
   position: absolute;
-  height: 56px;
+  height: 51px;
   width: 100%;
   margin: 0;
   top: 4px;
@@ -155,14 +154,14 @@ body,
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
   -webkit-user-select: none;
-  height: calc(100% - 59px);
+  height: calc(100% - 62px);
   -ms-user-select: none;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
   user-select: none;
   outline: none;
-  top: 59px;
+  top: 62px;
 }
 
 #visit {
