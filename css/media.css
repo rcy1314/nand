@@ -66,6 +66,11 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  #guide .sticky .wrap {
+    display: none !important;
+  }
+}
 @media screen and (min-width: 768px) {
   #main .center {
     left: -95px !important;

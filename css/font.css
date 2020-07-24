@@ -104,6 +104,7 @@
   font-family: "Font Awesome 5 Pro";
   position: absolute;
   content: "\f057";
+  font-size: 24px;
   padding: 10px;
   z-index: 3;
   right: 0;
