@@ -100,9 +100,9 @@ var visual = function(n) {
       'background-color': "#efefef",
       'border': 'none'
     })
-    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #eee')
+    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #ddd')
     if ($('#main').width() > 425) $('#container').css('background-color','#fafafa')
-    $('.filter, .populate, .feed, .item, .title').css('border', '1px solid #ddd')
+    $('.filter, .populate, .title').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
