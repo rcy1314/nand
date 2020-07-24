@@ -87,7 +87,8 @@ var image = function(n, src) {
     $('#' + n).parents('.item').find('.ago')
         .css('display', 'inline-block')
         .parents('.item').find('.pub').css('display','block')
-        .parents('.item').find('.header, .image, .img, .fill, .addComment').remove()
+        .parents('.item')
+        .find('.url, .share, .source, .header, .image, .img, .fill, .addComment').remove()
     }
 
 }

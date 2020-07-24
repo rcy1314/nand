@@ -189,7 +189,7 @@ var xml = function(e, s, n, post) {
       } else {
         if (e == 'search') {
           var cat =
-            "<div style='width:98%;font-size:10;margin:10px;text-transform:lowercase'>" +
+            "<div class='external'>" +
               ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) +
             "</div>"
         } else var cat = ''

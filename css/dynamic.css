@@ -283,6 +283,14 @@ svg .border {
   display: flex;
 }
 
+.external {
+  width:98%;
+  font-size:10;
+  margin-left:10px;
+  padding-bottom:10px;
+  text-transform:lowercase;
+}
+
 .ago {
   text-transform: uppercase;
   display: inline-block;
