@@ -284,10 +284,11 @@ var xml = function(e, s, n, post) {
         "  </div>" +
         "  <div class='ago ts' style='display:none'>" + pub[local].dst + "</div>" +
         "  <input class='url' value='" + pub[local].ref + "'>" +
+        "  <input class='share' value='" + pub[local].share + "'>" +
         "  <input class='source' value='" + pub[local].src + "'>" +
         "  <div class='tag' style='display:none'>" +
         "    <div class='ago fa-heart-o'></div>" +
-        "    <div class='ago fa-comment-o'></div>" +
+        "    <div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
         "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
         "  </div>" +
         "</div>"

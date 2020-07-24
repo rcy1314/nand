@@ -29,15 +29,16 @@ var image = function(n, src) {
            }).find('.header, .tag, .addComment').remove()
        }
     } else if ($(this).hasClass('guide')) {
-       if ($(this).get(0).naturalHeight > uhd) {
-         $(this).width('100%').parents('.sticky').width('35%')
-       } else if ($(this).get(0).naturalHeight > large) {
+       if ($(this).get(0).naturalHeight > uhd)
+         $(this).width('100%').parents('.sticky').width('30%')
+       else if ($(this).get(0).naturalHeight > large)
          $(this).width('100%').parents('.sticky').width('50%')
-       } else if ($(this).get(0).naturalHeight > mobile) {
+       else if ($(this).get(0).naturalHeight > mobile)
+         $(this).width('100%').parents('.sticky').width('60%')
+       else if ($(this).get(0).naturalWidth > maximum)
          $(this).width('100%').parents('.sticky').width('70%')
-       }
     } else {
-     if ($(this).get(0).naturalHeight > uhd) {
+      if ($(this).get(0).naturalHeight > uhd) {
        $(this).addClass('expand min').width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',

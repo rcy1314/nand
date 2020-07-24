@@ -155,6 +155,26 @@ $(document)
     e.stopPropagation()
     visual()
   })
+.on('touch click',
+'#container .sticky .wrap .tag .fa-sticky-note-o, ' +
+'#container .sticky .wrap .tag .fa-sticky-note',
+function(e) {
+  if (contrast == true)
+    if (!$(this).parents('.wrap').find('.share').val()
+      .match(/\+1/g))
+      $(this).parents('.wrap').find('.share')
+      .val($(this).parents('.wrap').find('.share').val() + '+1')
+  if (contrast == false && $(this).parents('.wrap').find('.share').val()
+    .match(/\+1/g))
+    $(this).parents('.wrap').find('.share').val(
+      $(this).parents('.wrap').find('.share').val().replace(/\+1/g, ''))
+  $(this).parents('.wrap').find('.share').select()
+  document.execCommand('copy')
+  if (!$(this).hasClass('fa-sticky-note'))
+    $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
+  e.stopPropagation()
+  visual()
+})
 .on('touch click', '#main .center .channel .item .pub .more', function(e) {
   $(this)
     .parent()
