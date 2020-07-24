@@ -109,6 +109,7 @@ body,
 }
 
 #arm {
+  border-bottom: 1px solid #eee;
   position: relative;
   display: block;
   margin: 0 auto;
