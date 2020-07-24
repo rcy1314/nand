@@ -109,7 +109,6 @@ body,
   align-items: center;
   position: absolute;
   overflow: hidden;
-  display: flex;
   height: 100%;
   width: 100%;
   z-index: 3;
