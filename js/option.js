@@ -35,7 +35,7 @@ $(document).ready()
     op = op != true
   } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
     var uri = window.location.href.replace(/\?\+1|\+1/g, '')
-    contrast = true
+    contrast = false
     op = op != true
   }
   if ($(this).parents('#main')) state(uri)
