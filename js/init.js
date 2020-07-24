@@ -1,19 +1,19 @@
-if (location.href.split('?')[1] &&
-  location.href.split('?')[1] != '+1') {
+if (window.location.href.split('?')[1] &&
+  window.location.href.split('?')[1] != '+1') {
     $(document)
     .ready(function() {
       $('#main #visit #page #front').css('visibility','hidden')
     })
 
-  if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
-    location.href.split('?')[1] != '+1') {
-      if (location.href.match('\\+1')){
+  if (window.location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
+    window.location.href.split('?')[1] != '+1') {
+      if (window.location.href.match('\\+1')){
         op = op != true
         contrast = contrast != true
       }
-      var id = location.href.split('?')[1].slice(0, 2)
+      var id = window.location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
-      var ts = parseInt(location.href.split('?')[1].slice(2), 36)
+      var ts = parseInt(window.location.href.split('?')[1].slice(2), 36)
       if (!i) {
         $(document)
           .ready(function() {
@@ -29,7 +29,7 @@ if (location.href.split('?')[1] &&
     visual()
 
   }
-} else if (location.href.match('\\?\\+1')){
+} else if (window.location.href.match('\\?\\+1')){
     op = op != true
     contrast = contrast != true
       $(document)
@@ -39,7 +39,7 @@ if (location.href.split('?')[1] &&
       '#main #visit #page #front .icon').css('visibility','visible')
 })
 
-} else if (location.href.match('\\+1')) {
+} else if (window.location.href.match('\\+1')) {
   op = op != true
   contrast = contrast != true
 
@@ -57,7 +57,7 @@ if (location.href.split('?')[1] &&
       $('#main #visit #page #front').css('visibility','hidden')
     })
 
-    if (location.href.match('\\+1')){
+    if (window.location.href.match('\\+1')){
       op = op != true
       contrast = contrast != true
     }
