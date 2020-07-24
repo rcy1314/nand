@@ -52,7 +52,6 @@ var xml = function(e, s, n, post) {
     $('#main .channel').html("This site could not be reached.")
     clearInterval(complete)
     progress(true, 100)
-    suggest(id)
     feed(id)
     visual()
   }).done(function(xhr) {

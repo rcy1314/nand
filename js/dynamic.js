@@ -7,11 +7,16 @@ $(document)
     .find('svg circle')
     .addClass('mask')
   setTimeout(function() {
-    var uri = '?q=' + '&' + $this.attr('response')
-    if (contrast == true && !location.href.match('\\+1')) uri = uri +
-      '+1'
-    else if (contrast == true) uri = uri + '+1'
-    exit(uri)
+    if (location.href.match('\\?q=')) {
+      var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+      if (location.href.match('\\+1'))
+        var res = uri[0].replace(/\+1/g, '')
+      else var res = uri[0]
+      if (contrast == true && !location.href.match('\\+1')) uri[0] = uri[0] + '+1'
+      else if (contrast == true) uri[0] = uri[0] + '+1'
+      var uri = '?q=' + uri[0] + '&' + $this.attr('response')
+      exit(uri)
+    }
   }, 750)
 })
 
