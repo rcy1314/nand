@@ -22,7 +22,7 @@ $(document)
       $('#main #visit #page #front #first')
         .css('visibility','hidden')
       $('#main #visit #page #front .icon')
-        .removeClass('slide')
+        .removeClass('search')
     }
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
