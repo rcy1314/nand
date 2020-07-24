@@ -255,6 +255,15 @@ function(e) {
     if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
     state('?q=' + uri[0].replace(/\-/g, '+'))
   }
+  else {
+    if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i))
+        var id = location.href.split('?')[1].slice(0, 2)
+        var i = menu.findIndex((item) => item.hash === id)
+        response(false, false,
+          menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '),
+          true, false
+        )
+  }
 })
 .on('touch click', '#main .suggestions .combine div', function(e) {
   var uri = '?q=' + '&' + $(this)
