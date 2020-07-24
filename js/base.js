@@ -90,10 +90,10 @@ var content  = function(n, recent, oldest, images, posts) {
         menu[n].id.match(/[^\/]+$/g) +
       "  </a>" +
       "  <br><br>" +
-      "  <b>Most recent</b> " + recent +"<br><br>" +
-      "  <b>Oldest post </b> " + oldest + "<br><br>" +
-      "  <b>Images</b> " + images + "<br><br>" +
-      "  <b>Posts</b> " + posts + "<br><br>" +
+      "  <b>Most recent</b> " + recent +"<br>" +
+      "  <b>Oldest post </b> " + oldest + "<br>" +
+      "  <b>Images</b> " + images + "<br>" +
+      "  <b>Posts</b> " + posts + "<br>" +
       "  <b>Queue</b> <div class='queue'>" + posts + "</div>" +
       "</div>"
     )
