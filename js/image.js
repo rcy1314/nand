@@ -33,7 +33,7 @@ var image = function(n, src) {
        if ($(this).get(0).naturalHeight > uhd)
          $(this).width('100%').parents('.sticky').width('30%')
        else if ($(this).get(0).naturalHeight > large)
-         $(this).width('100%').parents('.sticky').width('50%')
+         $(this).width('100%').parents('.sticky').width('40%')
        else if ($(this).get(0).naturalHeight > mobile)
          $(this).width('100%').parents('.sticky').width('60%')
        else if ($(this).get(0).naturalWidth > maximum)
