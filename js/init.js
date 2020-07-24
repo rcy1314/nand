@@ -1,4 +1,3 @@
-alert(window.location)
 if (location.href.split('?')[1] &&
   location.href.split('?')[1] != '+1') {
     $(document)
