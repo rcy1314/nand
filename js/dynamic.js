@@ -208,12 +208,18 @@ $(document)
 })
 .on('touch click', '#main .center #bottom .previous', function(e) {
 
-  exit('?q=&' + menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+  var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
+  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+  else if (contrast == true) uri = uri + '+1'
+  exit('?q=&' + uri)
 
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
 
-  exit('?q=&' + menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-'))
+  var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
+  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+  else if (contrast == true) uri = uri + '+1'
+  exit('?q=&' + uri)
 
 })
 .on('touch click', '#main .center #bottom', function(e) {
