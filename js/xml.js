@@ -144,7 +144,7 @@ var xml = function(e, s, n, post) {
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
         "  <img class='id' src='" + img + "'>" +
-        "  <a ext=''" + menu[n].ext + "'>" +
+        "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
         "</div>"
