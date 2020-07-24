@@ -3,7 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $(
-      '#container, #arm, #main, #visit, #option, #bottom, ' +
+      '#container, #arm, #main, #visit, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
       '.result, .air, .fa-times-circle, .wrap, .fas'
     ).css({
@@ -16,7 +16,7 @@ var visual = function(n) {
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
-      '#top, #arm, #home a, .filter, .populate, .wrap, ' +
+      '#top, #arm, #home a, #option, .filter, .populate, .wrap, ' +
       '.header, .title, .category, .type, .item, .ago, ' +
       '.pub, .tag, .stats, .suggestions, .combine'
     ).css({
