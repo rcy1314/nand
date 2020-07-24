@@ -58,7 +58,7 @@ if (location.href.split('?')[1] &&
       $('#main #visit #page #front').css('visibility','hidden')
     })
 
-    if (location.match('\\+1')){
+    if (location.href.match('\\+1')){
       op = op != true
       contrast = contrast != true
     }
