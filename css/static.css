@@ -5,8 +5,11 @@
 }
 
 #progressBar {
+  position: fixed;
   height: 4px;
+  z-index: 3;
   width: 0;
+  top: 0;
 }
 
 .responseInvert {

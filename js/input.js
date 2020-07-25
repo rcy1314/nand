@@ -348,10 +348,12 @@ $(document).ready()
         if (translations.indexOf($('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')) > -1) {
+          $('#main .result, #main .air').remove()
           category = $('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')
-          populate($('.hover')
+          populate($('#arm #search #match .listing .hover, ' +
+            '#main #visit #page #front #first .listing .hover')
             .attr('response'))
           var uri = '?q=' + $('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
@@ -362,7 +364,7 @@ $(document).ready()
           air($('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response'))
-          exit(uri)
+          state(uri)
           document.title = $('#arm #search #match .listing .hover, ' +
             '#main #visit #page #front #first .listing .hover')
             .attr('response')
