@@ -17,7 +17,7 @@ var image = function(n, src) {
         .css('display', 'inline-block')
         .parents('.item').find('.pub').css('display','block')
         .parents('.item')
-        .find('.url, .share, .source, .header, .image, .img, .fill, .addComment').remove()
+        .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
     $('#main .stats .info .queue').html(
@@ -95,7 +95,7 @@ var image = function(n, src) {
         .css('display', 'inline-block')
         .parents('.item').find('.pub').css('display','block')
         .parents('.item')
-        .find('.url, .share, .source, .header, .image, .img, .fill, .addComment').remove()
+        .find('.url, .share, .source, .header, .image, .img, .fill').remove()
     }
 
 }

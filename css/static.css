@@ -4,37 +4,6 @@
   font-display: block;
 }
 
-::-webkit-scrollbar {
-  display: block;
-  width: 9px
-}
-
-.invert::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, .1)
-}
-
-.invert::-webkit-scrollbar {
-  background-color: #f5f5f5
-}
-
-.invert {
-  scrollbar-color: #eee #f5f5f5;
-  scrollbar-width: thin;
-}
-
-.opposite::-webkit-scrollbar-thumb {
-  background-color: #222
-}
-
-.opposite::-webkit-scrollbar {
-  background-color: #000
-}
-
-.opposite {
-  scrollbar-color: #222 #000;
-  scrollbar-width: thin;
-}
-
 #progressBar {
   height: 4px;
   width: 0;
@@ -127,8 +96,12 @@ body,
 }
 
 #top {
+  width: calc(100% - 17px);
   visibility: hidden;
+  position: fixed;
   height: 57px;
+  z-index: 2;
+  top: 0;
 }
 
 #arm {
@@ -177,14 +150,12 @@ body,
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
   -webkit-user-select: none;
-  height: calc(100% - 62px);
   -ms-user-select: none;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
   user-select: none;
   outline: none;
-  top: 62px;
 }
 
 #visit {
@@ -243,6 +214,7 @@ body,
   flex-wrap: wrap;
   display: flex;
   width: 100%;
+  top: 60px;
 }
 
 .filter,
