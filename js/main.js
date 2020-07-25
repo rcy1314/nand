@@ -49,6 +49,10 @@ $(document)
     $('#arm #search #input input[type=text]')
       .focus()
   })
+  .on('touch click', '#main #visit #page #front .icon', function(e) {
+    $('#main #visit #page #front input[type=text]')
+      .focus()
+  })
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',
     function(e) {
