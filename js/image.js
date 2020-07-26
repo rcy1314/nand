@@ -68,7 +68,7 @@ var image = function(n, src) {
         $(this).addClass('expand min').width('100%')
           .parents('.item').find('.image').width('100%')
       } else if ($(this).get(0).naturalWidth < maximum) {
-        $(this).width(120).addClass('expand').css('margin','10px')
+        $(this).width(120).addClass('expand default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
