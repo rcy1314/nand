@@ -174,9 +174,9 @@ body,
 
 #page {
   position: relative;
-  margin-top: 200px !important;
   margin: 0 auto;
   display: block;
+  top: 15px;
 }
 
 #front {
@@ -188,6 +188,7 @@ body,
 
 #front #first .listing {
   position: relative;
+  border-radius: 4px;
   height: 28em;
   width: 30em;
 }

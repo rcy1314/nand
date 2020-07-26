@@ -28,7 +28,6 @@
     top: calc(100% - 40px) !important;
     position: fixed !important;
     height: 35px !important;
-    left: 10px !important;
     z-index: 2;
   }
 
@@ -61,9 +60,6 @@
     display: none !important;
   }
 
-  #page {
-    margin-top: -300px !important;
-  }
 }
 
 @media screen and (max-width: 768px) {
