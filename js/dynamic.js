@@ -249,7 +249,7 @@ function(e) {
 
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
-  $('#top, #main .center, #main .content')
+  $('#main .center, #main .content')
     .remove()
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
