@@ -73,11 +73,27 @@ $(document)
 .on('touch click', '#guide', function (e) {
   $('#guide').hide()
 })
-.on('touch click', '#wrapper #container #guide .sticky .item .image .img', function (e) {
-  $(this)
-    .parents('.item, .sticky')
-    .find('.fa-heart-o, .fa-gratipay')
-    .toggleClass('fa-heart-o fab fa-gratipay')
+.on('touch click', '#wrapper #container #guide .sticky .item .image .img',
+  function (e) {
+  if (tap == 0) {
+      // set first click
+      tap = new Date().getTime();
+      setTimeout(function () {
+        tap = 0
+      }, 800)
+  } else {
+      // compare first click to this click and see if they occurred within double click threshold
+      if (((new Date().getTime()) - tap) < 300) {
+          // double click occurred
+          $(this)
+            .parents('.item, .sticky')
+            .find('.fa-heart-o, .fa-gratipay')
+            .toggleClass('fa-heart-o fab fa-gratipay')
+          e.stopPropagation()
+          visual()
+          tap = 0;
+      } else $('#guide').hide()
+  }
   e.stopPropagation()
   visual()
 })
