@@ -187,6 +187,17 @@ var menu = [{
 
 	,
 	{
+		id: "Spectrum/New York",
+		cat: "News",
+		des: "New York Breaking news, weather alerts, live streaming video and more from NY1.",
+		uri: "https://www.ny1.com/services/contentfeed.nyc%7call-boroughs%7cnews.landing.rss",
+		ext: "https://www.ny1.com",
+		img: "NY1",
+		hash: "Sn"
+	}
+
+	,
+	{
 		id: "ABC/New York",
 		cat: "News",
 		des: "ABC WABC New York covering New York City, New Jersey, and Long Island.",
@@ -2321,6 +2332,17 @@ var menu = [{
 
 	,
 	{
+		id: "Electronics Weekly",
+		cat: "Technology",
+		des: " Electronics Weekly is the UK's leading website for electronics professionals.",
+		uri: "https://www.electronicsweekly.com/news/feed/",
+		ext: "https://www.electronicsweekly.com",
+		img: "ElectronicsWeekly",
+		hash: "We"
+	}
+
+	,
+	{
 		id: "Engadget",
 		cat: "Technology",
 		des: "Engadget is a Technology blog Network with Daily Coverage of Gadgets and Consumer Electronics.",
@@ -2515,6 +2537,17 @@ var menu = [{
 		ext: "https://leak-lookup.com",
 		img: "Leak-Lookup",
 		hash: "lL"
+	}
+
+	,
+	{
+		id: "LifeHacker",
+		cat: "Technology",
+		des: "Lifehacker is a weblog about life hacks and software that launched on January 31, 2005.",
+		uri: "https://www.lifehacker.com.au/feed/",
+		ext: "https://www.lifehacker.com.au",
+		img: "LifeHacker",
+		hash: "hL"
 	}
 
 	,
