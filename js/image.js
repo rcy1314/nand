@@ -8,7 +8,7 @@ var image = function(emoji, n, src) {
 
   if (src.match(/\.gif|\.jpg|\.jpeg|\.png/g)) {
   $('#' + n).on('error', function() {
-    if (!$(this).hasClass('guide'))
+    if (emoji == true && !$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
         parseInt($('#main .stats .info .queue').text()) - 1
       )
@@ -20,7 +20,7 @@ var image = function(emoji, n, src) {
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
-    $('#main .stats .info .queue').html(
+    if (emoji == true)$('#main .stats .info .queue').html(
       parseInt($('#main .stats .info .queue').text()) - 1
     )
     if ($('#home').css('display') == 'none'){
@@ -37,13 +37,13 @@ var image = function(emoji, n, src) {
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
        if ($(this).get(0).naturalHeight > uhd)
-         $(this).width('100%').parents('.sticky').width('30%')
+         $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight > large)
-         $(this).width('100%').parents('.sticky').width('40%')
-       else if ($(this).get(0).naturalHeight > mobile)
          $(this).width('100%').parents('.sticky').width('60%')
-       else if ($(this).get(0).naturalWidth > maximum)
+       else if ($(this).get(0).naturalHeight > mobile)
          $(this).width('100%').parents('.sticky').width('70%')
+       else if ($(this).get(0).naturalHeight > maximum)
+         $(this).width('100%').parents('.sticky').width('90%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
        $(this).addClass('expand min').width('100%')
@@ -58,11 +58,11 @@ var image = function(emoji, n, src) {
            'margin': '0 auto',
            'width': '50%'
          })
-      } else if ($(this).get(0).naturalWidth > mobile) {
+      } else if ($(this).get(0).naturalHeight > maximum) {
         $(this).addClass('expand min').width('100%')
           .parents('.item').find('.image').css({
             'margin': '0 auto',
-            'width': '100%'
+            'width': '90%'
         })
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).addClass('expand min').width('100%')
@@ -89,7 +89,7 @@ var image = function(emoji, n, src) {
   } else {
     $(document)
       .ready(function() {
-        $('#main .stats .info .queue').html(
+        if (emoji == true)$('#main .stats .info .queue').html(
           parseInt($('#main .stats .info .queue').text()) - 1
         )
       })
