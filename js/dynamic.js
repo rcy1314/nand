@@ -70,9 +70,16 @@ $(document)
   $('#main .center .quick .right')
     .show()
 })
-.on('touch click', '#blur, #guide, ' +
-'#wrapper #container #guide .sticky .item .image .img', function (e) {
+.on('touch click', '#guide', function (e) {
   $('#guide').hide()
+})
+.on('touch click', '#wrapper #container #guide .sticky .item .image .img', function (e) {
+  $(this)
+    .parents('.item, .sticky')
+    .find('.fa-heart-o, .fa-gratipay')
+    .toggleClass('fa-heart-o fab fa-gratipay')
+  e.stopPropagation()
+  visual()
 })
 .on('touch click',
   '#main .center .channel .item .image .img', function(e) {
