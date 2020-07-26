@@ -24,6 +24,37 @@ var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
           "    </rect>" +
           "</svg>"
 
+var guide = function(n, ref, element, courtesy, title, dst, share, src) {
+
+  $('#guide').css('display','flex').append(
+    "<div class='blur'></div>" +
+    "<div class='sticky'>" +
+    "  <div class='fill'></div>" +
+    "  <div class='item " + n + "' item='" + n + "' ext='" + ref + "'>" +
+    "    <div class='image'>" +
+    "      <img class='img guide' style='display:none' id='" + element + "'>" +
+    "    </div>" +
+    "  </div>" +
+    "  <div class='wrap' style='display:none'>" +
+    "  <div class='header' style='display:none'>" + courtesy +
+    "    <div class='copy fa-ellipsis-h' title='Copy URL'>" +
+    "  </div>" +
+    "  </div>" +
+    "  <div class='pub' style='display:none'>" + title + "</div>" +
+    "  <div class='ago ts' style='display:none'>" + dst + "</div>" +
+    "  <input class='url' value='" + ref + "'>" +
+    "  <input class='share' value='" + share + "'>" +
+    "  <input class='source' value='" + src + "'>" +
+    "  <div class='tag' style='display:none'>" +
+    "    <div class='ago fa-heart-o'></div>" +
+    "    <div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
+    "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
+    "  </div>" +
+    "</div>"
+  )
+
+}
+
 var expand = function(n) {
 
   if ($('#' + n).hasClass('expand min')) {

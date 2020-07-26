@@ -197,7 +197,7 @@ var xml = function(e, s, n, post) {
           "    </div>" +
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
-          "      <img id='" + i + "' class='img'>" +
+          "      <img id='" + i + "' class='img' src='" + src + "'>" +
           "      <div class='tag'>" +
           "        <div class='ago fa-heart-o'></div>" +
           "        <div class='ago fa-comment-o'></div>" +
@@ -259,37 +259,18 @@ var xml = function(e, s, n, post) {
       "</div>"
     )
     if ($.isNumeric(local)) {
-      $('#guide').css('display','flex').append(
-        "<div class='fa fa-times-circle'></div>" +
-        "<div class='blur'></div>" +
-        "<div class='sticky'>" +
-        "  <div class='item " + local + "' item='" + local + "' ext='" + pub[local].ref + "'>" +
-        "    <div class='fill'></div>" +
-        "    <div class='image'>" +
-        "      <img class='img guide' style='display:none' id='" + pub[local].element + "'>" +
-        "    </div>" +
-        "  </div>" +
-        "  <div class='wrap' style='display:none'>" +
-        "  <div class='header' style='display:none'>" + pub[local].courtesy +
-        "    <div class='copy fa-ellipsis-h' title='Copy URL'>" +
-        "  </div>" +
-        "  </div>" +
-        "  <div class='pub' style='display:none' text='" + pub[local].title + "'>" +
-             pub[local].title.truncate(125, true) + pub[local].more +
-        "  </div>" +
-        "  <div class='ago ts' style='display:none'>" + pub[local].dst + "</div>" +
-        "  <input class='url' value='" + pub[local].ref + "'>" +
-        "  <input class='share' value='" + pub[local].share + "'>" +
-        "  <input class='source' value='" + pub[local].src + "'>" +
-        "  <div class='tag' style='display:none'>" +
-        "    <div class='ago fa-heart-o'></div>" +
-        "    <div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
-        "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
-        "  </div>" +
-        "</div>"
+      guide(
+        i,
+        pub[local].ref,
+        pub[local].element,
+        pub[local].courtesy,
+        pub[local].title,
+        pub[local].dst,
+        pub[local].share,
+        pub[local].src
       )
       image(pub[local].element, pub[local].src)
-    } else $('#guide').remove()
+    } else $('#guide').hide()
       progress(false, Math.floor(Math.random() * (75 - 55 + 1) + 55))
       $.each(pub, function(i, k) {
         if (i == quit) return false

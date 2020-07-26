@@ -6,9 +6,6 @@ $(document).ready()
 .on('touch click', '#option .fa-git', function(e) {
   window.location.href = 'https://github.com/acktic/acktic.github.io'
 })
-.on('touch click', '.fa-times-circle', function(e) {
-  $('#guide').remove()
-})
 .on('touch click', '.fa-globe', function(e) {
   window.location.href = 'maintenance/rip.txt'
 })

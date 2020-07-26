@@ -70,9 +70,12 @@ $(document)
   $('#main .center .quick .right')
     .show()
 })
+.on('touch click', '#blur, #guide, ' +
+'#wrapper #container #guide .sticky .item .image .img', function (e) {
+  $('#guide').hide()
+})
 .on('touch click',
-  '#main .center .channel .item .image .img, ' +
-  '#wrapper #container #guide .sticky .item .image .img', function(e) {
+  '#main .center .channel .item .image .img', function(e) {
   if (tap == 0) {
       // set first click
       tap = new Date().getTime();
@@ -92,6 +95,24 @@ $(document)
           visual()
           tap = 0;
       } else if (img == $(this).attr('id')){
+        $('#guide').empty()
+        guide(
+          $(this).parents('.item').attr('item'),
+          $(this).parents('.item').attr('ext'),
+          $(this).parents('.item').attr('item'),
+          $(this).parents('.item').find('.header').html(),
+          $(this).parents('.item').find('.pub').attr('text'),
+          $(this).parents('.item').find('.ago').text(),
+          $(this).parents('.item').find('.share').val(),
+          $(this).parents('.item').find('.source').val()
+        )
+        $('#guide').find('.copy:first').remove()
+        image(
+          $(this).parents('.item').attr('item'),
+          $(this).parents('.item').find('.img').attr('src')
+        )
+        $('#guide').show()
+        /*
         if ($(this)
           .hasClass('expand min') || $(this)
           .hasClass('expand full')) expand($(this)
@@ -103,6 +124,7 @@ $(document)
                 .attr('ext'),
                   '_blank',
                   'noreferrer')
+        */
           // not a double click so set as a new first click
           tap = 0;
           img = $(this).attr('id')

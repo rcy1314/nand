@@ -91,7 +91,6 @@ body,
 }
 
 .blur {
-  background-color: rgba(0, 0, 0, .3);
   backdrop-filter: blur(10px);
   -webkit-filter: blur(10px);
   filter: blur(10px);
@@ -355,7 +354,7 @@ input[type=text] {
   overflow-y: auto;
   margin: 0 auto;
   height: 28em;
-  width: 16em;
+  width: 18em;
   z-index: 2;
 }
 
