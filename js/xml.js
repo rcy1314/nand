@@ -269,14 +269,14 @@ var xml = function(e, s, n, post) {
         pub[local].share,
         pub[local].src
       )
-      image(pub[local].element, pub[local].src)
+      image(true, pub[local].element, pub[local].src)
     } else $('#guide').hide()
       progress(false, Math.floor(Math.random() * (75 - 55 + 1) + 55))
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
-            image(pub[i].element, pub[i].src)
+            image(true, pub[i].element, pub[i].src)
       })
 
     if (!id) id = menu.indexOf(menu[n])

@@ -1,4 +1,4 @@
-var image = function(n, src) {
+var image = function(emoji, n, src) {
 
   var uhd = 3840
   var large  = 2400
@@ -52,7 +52,7 @@ var image = function(n, src) {
            'width': '35%'
          })
        $(this).width('100%').addClass('expand')
-      } else if ($(this).get(0).naturalHeight > large) {
+     } else if ($(this).get(0).naturalHeight > mobile) {
        $(this).addClass('expand min').width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
@@ -62,7 +62,7 @@ var image = function(n, src) {
         $(this).addClass('expand min').width('100%')
           .parents('.item').find('.image').css({
             'margin': '0 auto',
-            'width': '50%'
+            'width': '100%'
         })
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).addClass('expand min').width('100%')
@@ -81,7 +81,9 @@ var image = function(n, src) {
     $('#' + n).parents('.item, #guide').find('.header, .wrap, .ago')
       .css('display', 'inline-block')
     $('#' + n).parents('.item, #guide').find('.fill').remove()
-    if (category == 'Social' && $(this).get(0).naturalWidth > minimum) comment(n)
+    if (category == 'Social' &&
+        emoji == true &&
+        $(this).get(0).naturalWidth > minimum) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {

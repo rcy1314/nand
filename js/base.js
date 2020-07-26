@@ -52,7 +52,6 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
     "  </div>" +
     "</div>"
   )
-
 }
 
 var expand = function(n) {

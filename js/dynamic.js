@@ -75,6 +75,7 @@ $(document)
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {
+  var id = $(this).attr('id')
   if (tap == 0) {
       // set first click
       tap = new Date().getTime();
@@ -88,6 +89,11 @@ $(document)
           $(this)
             .parents('.item, .sticky')
             .find('.fa-heart-o, .fa-gratipay')
+            .toggleClass('fa-heart-o fab fa-gratipay')
+          $(this)
+            .parents('#container')
+            .find('#main .' + id + ' .fa-heart-o, ' +
+              '#main .' + id + ' .fab, #main .' + id + ' .fa-gratipay')
             .toggleClass('fa-heart-o fab fa-gratipay')
           e.stopPropagation()
           visual()
@@ -130,11 +136,14 @@ $(document)
           $(this).parents('.item').find('.source').val()
         )
         $('#guide').find('.copy:first').remove()
-        image(
+        image(false, 
           $(this).parents('.item').attr('item'),
           $(this).parents('.item').find('.img').attr('src')
         )
         $('#guide').show()
+        if ($('.' + $(this).parents('.item').attr('item')).find('.fab').length)
+          $('.sticky')
+            .find('.fa-heart-o').toggleClass('fa-heart-o fab fa-gratipay')
         /*
         if ($(this)
           .hasClass('expand min') || $(this)
