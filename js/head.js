@@ -1584,6 +1584,17 @@ var menu = [{
 
 	,
 	{
+		id: "Reddit/WallpaperDump",
+		cat: "Social",
+		des: "A new subreddit designed specifically for people to share their wallpaper collections.",
+		uri: "https://www.reddit.com/r/wallpaperdump/.rss",
+		ext: "https://www.reddit.com/r/Wallpaperdump",
+		img: "Black",
+		hash: "Wd"
+	}
+
+	,
+	{
 		id: "Reddit/Windows",
 		cat: "Social",
 		des: "Windows subreddit a personal computer operating system released by Microsoft.",
