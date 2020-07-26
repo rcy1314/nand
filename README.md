@@ -25,7 +25,6 @@
 * Opera (68.0.3618.104)
 * SeaMonkey (2.53.2)
 * Brave (1.9.76)
-* LG Web OS
 * Min (1.14)
 
 
