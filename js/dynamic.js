@@ -94,7 +94,7 @@ $(document)
           e.stopPropagation()
           visual()
           tap = 0;
-      } else if (img == $(this).attr('id')){
+      } else if (img == $(this).attr('id') && $(this).width > 120){
         $('#guide').empty()
         guide(
           $(this).parents('.item').attr('item'),
