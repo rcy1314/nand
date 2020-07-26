@@ -39,6 +39,11 @@
 <p align='center'><img src='http://acktic.github.io/screenshots/visual.png'></p>
 
 
+### Guide Sticky Post
+
+<p align='center'><img src='http://acktic.github.io/screenshots/guide.png'></p>
+
+
 License
 ----
 
