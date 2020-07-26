@@ -233,6 +233,7 @@ function(e) {
 })
 .on('touch click', '#main .center #bottom .previous', function(e) {
 
+  $('#top, #main .center, #main .content').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
