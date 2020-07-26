@@ -43,10 +43,6 @@ var xml = function(e, s, n, post) {
       "    <div class='right fa-angle-double-right'></div>" +
       "  </div>" +
       "  <div class='channel'></div>" +
-      "</div>" +
-      "<div class='suggestions' style='visibility:hidden'>" +
-      " <b>suggested</b>" +
-      " <br>" +
       "</div>"
     )
     $('#main .channel').html("This site could not be reached.")

@@ -70,9 +70,10 @@ var feed  = function(n) {
       "<img src='" + img + "' class='id " + menu.indexOf(menu[i]) + "'" +
       "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
       "  search='" + menu[i].cat.toLowerCase() + "'> " +
-      "<a style='left:0;width:100%' ext='" + menu[i].ext + "'>" +
-        String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) +
-        '...' +
+      "<a style='left:0;width:100%' ext='" + menu[i].ext + "' " +
+      "  title='" + menu[i].id + "'>" +
+         String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) +
+         '...' +
       "</a>" +
       "</div>"
     )

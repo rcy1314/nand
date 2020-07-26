@@ -241,14 +241,15 @@ function(e) {
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
 
+  $('#top, #main .center, #main .content').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit('?q=&' + uri)
 
 })
-.on('touch click', '#main .center #bottom', function(e) {
-  $('#main .center, #main .content')
+.on('touch click', '#main .center #bottom .bottom', function(e) {
+  $('#top, #main .center, #main .content')
     .remove()
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)

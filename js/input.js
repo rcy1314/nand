@@ -305,7 +305,7 @@ $(document).ready()
         $('#top').css('visibility','visible')
         progress(true, 100)
       } else {
-        var uri = '?q=&' + $('#main #visit #page #front #first .listing .hover')
+        var uri = '?q=' + $('#main #visit #page #front #first .listing .hover')
           .attr('response')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
@@ -313,7 +313,7 @@ $(document).ready()
       }
     } else {
       if ($('#main #visit #page #front input[type=text]').val().length)
-      var uri = '?q=&' + $('#main #visit #page #front input[type=text]').val()
+      var uri = '?q=' + $('#main #visit #page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
