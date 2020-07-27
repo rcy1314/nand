@@ -38,11 +38,13 @@ var image = function(emoji, n, src) {
       $(this).parents('#guide').css('display','flex')
        if ($(this).get(0).naturalHeight > uhd)
          $(this).width('100%').parents('.sticky').width('50%')
-       else if ($(this).get(0).naturalHeight > large)
+       else if ($(this).get(0).naturalHeight >= large)
          $(this).width('100%').parents('.sticky').width('60%')
-       else if ($(this).get(0).naturalHeight > mobile)
+       else if ($(this).get(0).naturalHeight >= mobile)
          $(this).width('100%').parents('.sticky').width('70%')
-       else if ($(this).get(0).naturalHeight > maximum)
+       else if ($(this).get(0).naturalHeight >= maximum)
+         $(this).width('100%').parents('.sticky').width('80%')
+       else if ($(this).get(0).naturalHeight >= minimum)
          $(this).width('100%').parents('.sticky').width('90%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
@@ -64,16 +66,16 @@ var image = function(emoji, n, src) {
             'margin': '0 auto',
             'width': '90%'
         })
-      } else if ($(this).get(0).naturalWidth > minimum) {
-        $(this).addClass('expand min').width('100%')
-          .parents('.item').find('.image').width('100%')
-      } else if ($(this).get(0).naturalWidth < maximum) {
+      } else if ($(this).get(0).naturalHeight < maximum) {
         $(this).width(120).addClass('expand default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
             'align-items': 'center'
           }).find('.header, .tag, .addComment').remove()
+      } else if ($(this).get(0).naturalWidth > minimum) {
+        $(this).addClass('expand min').width('100%')
+          .parents('.item').find('.image').width('100%')
       }
     }
     $('#' + n).parents('.item, #guide').find('.image, .img, .pub, .tag')
@@ -83,7 +85,7 @@ var image = function(emoji, n, src) {
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     if (category == 'Social' &&
         emoji == true &&
-        $(this).get(0).naturalWidth > minimum) comment(n)
+        $(this).get(0).clientWidth > minimum) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {
