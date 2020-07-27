@@ -16,6 +16,10 @@
     top: 60px !important;
   }
 
+  #main .center {
+    top: -20px !important;
+  }
+
   #main .center,
   #main .channel {
     width: 100% !important;

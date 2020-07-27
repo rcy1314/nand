@@ -191,6 +191,7 @@ body,
   height: 28em;
   width: 30em;
   top: -150px;
+  z-index: 0;
 }
 
 #page input[type=text] {
@@ -356,7 +357,6 @@ input[type=text] {
   margin: 0 auto;
   height: 28em;
   width: 18em;
-  z-index: 2;
 }
 
 .index:last-child {

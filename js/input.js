@@ -1,10 +1,8 @@
 $(document).ready()
-.on('touch click', '#main #visit #page input[type=text]', function(e) {
-  e.stopPropagation()
-})
 .on('keyup',
    '#main #visit #page input[type=text]', function(e) {
      $('#main #visit #page #front #first').css('visibility','visible')
+     $('#main #visit #page #front #first .listing').css('z-index', '3')
      if ($(this).val() != '') var keyup = $(this).val()
      if (e.type == 'keyup' && e.keyCode == 13)
        return false
@@ -39,6 +37,7 @@ $(document).ready()
        $('#main #visit #page #front #first .listing .hover')
          .next().attr('class', 'index')
      } else if (e.keyCode == 27) {
+       $('#main #visit #page #front #first .listing').css('z-index', '0')
        $('#main #visit #page #front #first').hide()
        $(this)
          .css({
@@ -79,7 +78,8 @@ $(document).ready()
       return false
     }
     if (e.type == 'touch' || e.type == 'click') {
-        $('#main #visit #page #front #first').css('visibility','visible')
+        $('#main #visit #page #front #first .listing').css('z-index', '3')
+        $('#main #visit #page #front #first').css('visibility', 'visible')
         $('#main #visit #page #front #first .listing').empty()
         $.each(translations, function(i) {
           $('#main #visit #page #front #first .listing')
@@ -112,6 +112,7 @@ $(document).ready()
       }
     }
     if (e.type == 'focusout' || e.type == 'blur')
+    $('#main #visit #page #front #first .listing').css('z-index', '0')
     $(this)
       .css({
         'caret-color': 'transparent',

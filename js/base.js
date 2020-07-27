@@ -82,7 +82,7 @@ var feed  = function(n) {
   for (var i = 0; i <= 9; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
-    if (menu[e] && e != 0){
+    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
     if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
     $('#main .center .feed').append(
       "<div class='asset'>" +
@@ -167,7 +167,7 @@ var home  = function(id) {
   for (var i = 0; i <= 9; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
-    if (menu[e] && e != 0)
+    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
     if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
       $('#main #page .feed').append(
       "<div class='asset'>" +
@@ -194,6 +194,7 @@ var home  = function(id) {
       "</a>" +
       "</div>"
     )
+  }
   }
   visual()
 }

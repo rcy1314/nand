@@ -28,7 +28,8 @@
 #main #page .quick {
     width: 166%;
     right: 33%;
-    top: 40px
+    z-index: 3;
+    top: 40px;
 }
 
 .feed {
@@ -36,8 +37,8 @@
   scrollbar-width: none;
   position: relative;
   border-radius: 2px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-x: auto;
   font-size: 10px;
   display: flex;
   height: 100%;
