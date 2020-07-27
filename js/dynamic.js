@@ -1,6 +1,7 @@
 $(document)
   .ready()
-.on('touch click', '#main .center .quick .feed .asset .id', function(e) {
+.on('touch click', '#main .center .quick .feed .asset .id, ' +
+  '#main #page .quick .feed .asset .id', function(e) {
   var $this = $(this)
   $(this)
     .parent()
@@ -15,6 +16,11 @@ $(document)
       if (contrast == true && !location.href.match('\\+1')) uri[0] = uri[0] + '+1'
       else if (contrast == true) uri[0] = uri[0] + '+1'
       var uri = '?q=' + uri[0] + '&' + $this.attr('response')
+      exit(uri)
+    } else {
+      var uri = '?q=&' + $this.attr('response')
+      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+      else if (contrast == true) uri = uri + '+1'
       exit(uri)
     }
   }, 750)
@@ -43,6 +49,33 @@ $(document)
     }, 250)
     e.stopPropagation()
   })
+.on('touch click', '#main #page .feed .right', function(e) {
+    var leftPos = $('#main #page .quick .feed')
+      .scrollLeft()
+    $('#main #page .quick .feed')
+      .animate({
+        scrollLeft: leftPos + 720
+      }, 'fast')
+      if (leftPos >= $('#main #page .quick .feed')[0]
+          .scrollWidth - $('#main #page .quick .feed').width() - 720) $(this)
+          .hide()
+    if ($('#main #page .quick .feed')
+      .scrollLeft() >= 0) $('#main #page .quick .left')
+      .show()
+})
+.on('touch click', '#main #page .quick .left', function(e) {
+    var leftPos = $('#main #page .quick .feed')
+      .scrollLeft()
+    $('#main #page .quick .feed')
+      .animate({
+        scrollLeft: leftPos - 360
+      }, 'slow')
+    if ($('#main #page .quick .feed')
+      .scrollLeft() <= 360) $(this)
+      .hide()
+    $('#main #page .quick .right')
+      .show()
+})
 .on('touch click', '#main .center .quick .right', function(e) {
   var leftPos = $('#main .center .quick .feed')
     .scrollLeft()

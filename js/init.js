@@ -17,7 +17,7 @@ if (location.href.split('?')[1] &&
       if (!i) {
         $(document)
           .ready(function() {
-            $('#top').css('visibility','hidden')
+            $('#top, .fa-cog').css('visibility','hidden')
             $('#main #visit #page #front #option, ' +
             '#main #visit #page #front input[type=text], ' +
             '#main #visit #page #front .icon').css('visibility','visible')
@@ -37,24 +37,26 @@ if (location.href.split('?')[1] &&
       $('#main #visit #page #front #option, ' +
       '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
+      home()
 })
 
 } else if (location.href.match('\\+1')) {
   op = op != true
   contrast = contrast != true
-
+  home()
 } else {
     $(document)
     .ready(function() {
       $('#main #visit #page #front #option, '+
       '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
+      home()
     })
 }
   if (location.search.split('?q=')[1]) {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front').css('visibility','hidden')
+      $('#main #visit #page #front, .fa-cog').css('visibility','hidden')
     })
 
     if (location.href.match('\\+1')){

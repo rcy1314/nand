@@ -43,6 +43,15 @@
   content: "\f015";
 }
 
+.fa-cog:before {
+  font-family: "Font Awesome 5 Pro";
+  position: fixed;
+  content: "\f013";
+  padding: 1em;
+  right: 10px;
+  top: 10px;
+}
+
 .fa-angle-double-left:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f100";

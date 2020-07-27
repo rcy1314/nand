@@ -19,6 +19,23 @@ $(document).ready()
   else if (contrast == true) uri = uri + '+1'
   exit(uri)
 })
+.on('touch click', '#visit .fa-cog', function(e) {
+  if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
+    var uri = window.location.href + '?+1'
+    contrast = contrast != true
+    op = op != true
+  } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
+    var uri = window.location.href + '?+1'
+    contrast = contrast != true
+    op = op != true
+  } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
+    var uri = window.location.href.replace(/\?\+1|\+1/g, '')
+    contrast = false
+    op = op != true
+  }
+  state(uri)
+  visual()
+})
 .on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(e) {
   $(this)
     .toggleClass('fa-circle-notch fa-circle')

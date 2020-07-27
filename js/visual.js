@@ -5,14 +5,14 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
-      '.result, .air, .fa-times-circle, .wrap, .fas'
+      '.result, .air, .wrap'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
       'border': 'none',
       'color': '#fff'
     })
-    $('.fa-bookmark, .fa-comments, .fa-sticky-note, ' +
+    $('.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, .fa-cog' +
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
@@ -35,7 +35,7 @@ var visual = function(n) {
       'color': '#ddd'
     })
     $(
-      '#home a, .description, ' +
+      '#home a, .description, .fa-times-circle, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
@@ -63,7 +63,7 @@ var visual = function(n) {
   } else if (op == 0) {
     $(
       '#top, #arm, #container, .wrap, .fa-times-circle, ' +
-      '.comment, .channel, .feed, .title, .header, .tag, ' +
+      '.comment, .channel, #main .center .feed, .title, .header, .tag, ' +
       '.item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
@@ -81,14 +81,15 @@ var visual = function(n) {
     })
     $(
       '#front #option, #main, #visit, .air, .result, #bottom, .hover, ' +
-      '.channel, .stats, .suggestions, .combine, #bottom'
+      '.channel, .stats, .suggestions, .combine, #bottom, ' +
+      '#main #page .feed, #main #page .feed a'
     ).css({
       'background-color': '#fafafa',
       'border': 'none',
       'color': '#666'
     })
     $(
-      '#home a, .description, ' +
+      '#home a, .description,' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
@@ -101,14 +102,14 @@ var visual = function(n) {
       'background-color': "#efefef",
       'border': 'none'
     })
-    $('.filter, .populate, .item, .feed, #page input[type=text]').css('box-shadow', '1px 1px 6px #ddd')
-    if ($('#main').width() > 425) $('#container').css('background-color','#fafafa')
+    $('.filter, .populate, .item, #page input[type=text]').css('box-shadow', '1px 1px 6px #ddd')
+    $('#container').css('background-color','#fafafa')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
-    $('.fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
+    $('.fa-cog, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
     $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
-    $('.filter, .populate, .title').css('border', '1px solid #ddd')
+    $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('.blur').css('background-color','rgba(255, 255, 255, .3)')

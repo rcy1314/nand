@@ -25,6 +25,12 @@
   width: 99%;
 }
 
+#main #page .quick {
+    width: 166%;
+    right: 33%;
+    top: 40px
+}
+
 .feed {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -180,7 +186,8 @@ svg .border {
 
 .item .pub {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .more {
@@ -275,7 +282,7 @@ svg .border {
 .ago {
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   position: relative;
   width: fit-content;
   margin-left: 12px;

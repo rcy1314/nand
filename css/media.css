@@ -1,5 +1,9 @@
 @media screen and (max-width: 425px) {
 
+  #top {
+    width: 100% !important;
+  }
+
   #home,
   .left,
   .right,
@@ -9,6 +13,7 @@
 
   #main {
     height: calc(100% - 100px);
+    top: 60px !important;
   }
 
   #main .center,
@@ -60,6 +65,10 @@
     display: none !important;
   }
 
+  #main #page .quick {
+    width: 20em !important;
+    right: 0 !important;
+  }
 }
 
 @media screen and (min-width: 768px) {

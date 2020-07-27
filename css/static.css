@@ -175,7 +175,7 @@ body,
   position: relative;
   margin: 0 auto;
   display: block;
-  top: 15px;
+  top: 150px;
 }
 
 #front {
@@ -190,6 +190,7 @@ body,
   border-radius: 4px;
   height: 28em;
   width: 30em;
+  top: -150px;
 }
 
 #page input[type=text] {
