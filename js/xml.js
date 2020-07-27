@@ -4,6 +4,7 @@ var xml = function(e, s, n, post) {
   var local
   var pub = []
   var src = ''
+  console.log(post)
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
@@ -177,10 +178,11 @@ var xml = function(e, s, n, post) {
           "  <input class='url' value='" + ref.trim() + "'>" +
           "  <input class='share' value='" + share + "'>" +
           "  <input class='source' value='" + src + "'>" +
-          "  <form class='addComment' action'#'>" +
+/*          "  <form class='addComment' action'#'>" +
           "    <input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
           "    <div class='post'><b>Post</b></div>" +
           "  </form>" +
+*/
           "</div>"
       } else {
         if (e == 'search') {
@@ -215,10 +217,11 @@ var xml = function(e, s, n, post) {
           "    <input class='url' value='" + ref.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
           "    <input class='source' value='" + src + "'>" + cat +
-          "    <form class='addComment' action'#'>" +
+/*          "    <form class='addComment' action'#'>" +
           "      <input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
           "      <div class='post'><b>Post</b></div>" +
           "    </form>" +
+*/
           "  </div>" +
           "</div>"
       }

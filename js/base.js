@@ -26,7 +26,7 @@ var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
 
 var guide = function(n, ref, element, courtesy, title, dst, share, src) {
 
-  $('#guide').css('display','flex').append(
+  $('#guide').empty().css('display','flex').append(
     "<div class='blur'></div>" +
     "<div class='sticky'>" +
     "  <div class='fill'></div>" +

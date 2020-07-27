@@ -1,5 +1,5 @@
 var image = function(emoji, n, src) {
-
+  var k = 5420
   var uhd = 3840
   var large  = 2400
   var mobile = 1281
@@ -36,16 +36,18 @@ var image = function(emoji, n, src) {
        }
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
-       if ($(this).get(0).naturalHeight > uhd)
+       if ($(this).get(0).naturalHeight > k)
          $(this).width('100%').parents('.sticky').width('50%')
-       else if ($(this).get(0).naturalHeight >= large)
+       else if ($(this).get(0).naturalHeight > uhd)
          $(this).width('100%').parents('.sticky').width('60%')
-       else if ($(this).get(0).naturalHeight >= mobile)
+       else if ($(this).get(0).naturalHeight >= large)
          $(this).width('100%').parents('.sticky').width('70%')
-       else if ($(this).get(0).naturalHeight >= maximum)
+       else if ($(this).get(0).naturalHeight >= mobile)
          $(this).width('100%').parents('.sticky').width('80%')
-       else if ($(this).get(0).naturalHeight >= minimum)
+       else if ($(this).get(0).naturalHeight >= maximum)
          $(this).width('100%').parents('.sticky').width('90%')
+       else if ($(this).get(0).naturalHeight >= minimum)
+         $(this).width('100%').parents('.sticky').width('100%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
        $(this).addClass('expand min').width('100%')

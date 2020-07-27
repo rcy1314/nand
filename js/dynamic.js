@@ -136,11 +136,12 @@ $(document)
           $(this).parents('.item').find('.source').val()
         )
         $('#guide').find('.copy:first').remove()
-        image(false, 
+        image(false,
           $(this).parents('.item').attr('item'),
           $(this).parents('.item').find('.img').attr('src')
         )
         $('#guide').show()
+        $('.sticky').hide().fadeIn(1000)
         if ($('.' + $(this).parents('.item').attr('item')).find('.fab').length)
           $('.sticky')
             .find('.fa-heart-o').toggleClass('fa-heart-o fab fa-gratipay')
