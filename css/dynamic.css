@@ -126,6 +126,8 @@ svg .border {
 }
 
 .sticky {
+  max-height: 90% !important;
+  max-width: 90% !important;
   align-items: center;
   position: relative;
   min-width: 30%;
