@@ -292,7 +292,7 @@ var xml = function(e, s, n, post) {
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
           menu[back].id.match(/[^\/]+$/g) +
-      "  <div class='fas fa-at bottom'></div>" +
+      "  <div class='bottom'>acktic</div>" +
           menu[plus].id.match(/[^\/]+$/g) +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")

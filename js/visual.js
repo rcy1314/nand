@@ -51,7 +51,6 @@ var visual = function(n) {
     $('.listing').addClass('opposite').removeClass('invert')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.blur').css('background-color','rgba(0, 0, 0, .3)')
-    $('#favicon').attr('href', 'images/icon/opposite.png')
     $('.second').css('cssText','fill: #e557c6 !important')
     $('.first').css('cssText','fill: #ef4063 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
@@ -117,7 +116,6 @@ var visual = function(n) {
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.first').css('cssText','fill: #1fa2ff !important')
     $('svg circle').css('stroke', 'url(#gradientInvert)')
-    $('#favicon').attr('href', 'images/icon/invert.png')
     $('#container').css('background-color','#f7f7f7')
     $('.hover').addClass('visual.hover')
   }

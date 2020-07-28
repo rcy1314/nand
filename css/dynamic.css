@@ -317,8 +317,9 @@ svg .border {
 .bottom {
   position: relative !important;
   margin: 0 auto !important;
+  font-family: Billabong;
   display: inline-block;
-  border-radius: 12px;
+  font-size: 28px;
 }
 
 .next {
