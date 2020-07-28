@@ -171,7 +171,7 @@ var home  = function(id) {
     if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
       $('#main #page .feed').append(
       "<div class='asset'>" +
-/*      "<svg>" +
+      "<svg>" +
       "  <defs>" +
       "    <linearGradient id='gradientOpposite'>" +
       "      <stop offset='0%' stop-color='#ef4063' />" +
@@ -183,7 +183,7 @@ var home  = function(id) {
       "    </linearGradient>" +
       "  </defs>" +
       "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-*/      "</svg>" +
+      "</svg>" +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
       "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
       "  search='" + menu[e].cat.toLowerCase() + "'> " +
