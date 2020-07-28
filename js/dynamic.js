@@ -49,7 +49,7 @@ $(document)
     }, 250)
     e.stopPropagation()
   })
-.on('touch click', '#main #page .feed .right', function(e) {
+.on('touch click', '#main #page .quick .right', function(e) {
     var leftPos = $('#main #page .quick .feed')
       .scrollLeft()
     $('#main #page .quick .feed')

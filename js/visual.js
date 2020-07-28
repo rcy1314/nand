@@ -18,7 +18,7 @@ var visual = function(n) {
     $(
       '#top, #arm, #home a, #arm #option, .filter, .populate, .wrap, ' +
       '.header, .title, .category, .type, .item, .ago, ' +
-      '.pub, .tag, .stats, .suggestions, .combine'
+      '.pub, .tag, .stats, .suggestions, .combine, .right, .left'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -43,13 +43,11 @@ var visual = function(n) {
       'color': '#fff'
     })
 
-    $('#top, .description, .comment').css('border-bottom', '1px solid #333')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.filter, .populate, .category, .title').css('border','1px solid #0e0e0e')
-    $('.bottom').attr('src', 'images/icon/opposite.png').css('filter', 'none')
+    $('#top, .description, .comment').css('border-bottom', '1px solid #333')
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     $('.index, .hover').addClass('contrast').removeClass('visual')
-    $('.right, .left').css('background-color', 'rgba(0,0,0,.4)')
     $('.listing').addClass('opposite').removeClass('invert')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.blur').css('background-color','rgba(0, 0, 0, .3)')
@@ -82,7 +80,7 @@ var visual = function(n) {
     $(
       '#front #option, #main, #visit, .air, .result, #bottom, .hover, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, ' +
-      '#main #page .feed, #main #page .feed a'
+      '#main #page .feed, #main #page, .right, .left, #main #page .feed a'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
@@ -106,13 +104,12 @@ var visual = function(n) {
       'background-color': '#fff',
       'border': 'none'
     })
-    $('.filter, .populate, .item, #page input[type=text], #page .id').css('box-shadow', '1px 1px 1px #ddd')
+    $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
-    $('.right, .left').css('background-color', 'rgba(255,255,255,.5)')
     $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('.blur').css('background-color','rgba(255, 255, 255, .3)')

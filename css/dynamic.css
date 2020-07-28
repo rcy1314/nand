@@ -69,11 +69,13 @@ svg .border {
   align-items: center;
   position: absolute;
   display: flex;
-  width: 1.5em;
-  height: 100%;
-  right: -1px;
+  border-radius: 16px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
   z-index: 1;
-  top: 1px;
+  right: 0;
+  top: 40px;
 }
 
 .left {
@@ -81,11 +83,13 @@ svg .border {
   align-items: center;
   position: absolute;
   display: flex;
-  width: 1.5em;
-  height: 100%;
+  border-radius: 16px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
   z-index: 1;
   left: -1px;
-  top: 1px;
+  top: 40px;
 }
 
 .asset {
@@ -324,7 +328,6 @@ svg .border {
 .center {
   display: inline-block;
   position: relative;
-  margin-right: 5px;
   text-align: left;
   top: 60px;
 }
