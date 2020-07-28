@@ -20,6 +20,8 @@ $(document).ready()
   exit(uri)
 })
 .on('touch click', '#visit .fa-sun', function(e) {
+  $('#option .fa-circle-notch, #option .fa-circle')
+    .toggleClass('fa-circle-notch fa-circle')
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '?+1'
     contrast = contrast != true

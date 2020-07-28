@@ -77,8 +77,8 @@
   color: #aaa;
 }
 
-.fa-circle-thin:before {
-  font-family: "Font Awesome 5 Pro";
+.fa-circle-notch:before {
+  font-family: FontAwesome;
   content: "\f1ce";
 }
 
