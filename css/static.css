@@ -182,7 +182,7 @@ body,
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 30em;
+  width: 40em;
 }
 
 #front #first .listing {
@@ -197,8 +197,8 @@ body,
 #page input[type=text] {
   border-radius: 4px;
   visibility: hidden;
-  font-size: 18px;
   margin-top: 25px;
+  font-size: 18px;
 }
 
 #page .icon {
