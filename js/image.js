@@ -69,7 +69,7 @@ var image = function(emoji, n, src) {
             'width': '90%'
         })
       } else if ($(this).get(0).naturalHeight < maximum) {
-        $(this).width(120).css('margin','10px')
+        $(this).width(120).addClass('default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
