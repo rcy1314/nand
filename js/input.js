@@ -112,14 +112,13 @@ $(document).ready()
       }
     }
     if (e.type == 'focusout' || e.type == 'blur')
-    $('#main #visit #page #front #first .listing').css('z-index', '0')
     $(this)
       .css({
         'caret-color': 'transparent',
         'padding': '0',
         'text-align': 'center'
       })
-      .val('Search')
+      .val('')
     visual()
 })
 .on('keyup touch click focusin focusout blur',

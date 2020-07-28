@@ -164,7 +164,7 @@ var list = function(n) {
 
 var home  = function(id) {
   var dupe = []
-  for (var i = 0; i <= 9; i++) {
+  for (var i = 0; i <= 12; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
