@@ -216,11 +216,10 @@ var xml = function(e, s, n, post) {
           "    <input class='url' value='" + ref.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
           "    <input class='source' value='" + src + "'>" + cat +
-/*          "    <form class='addComment' action'#'>" +
+          "    <form class='addComment' action'#'>" +
           "      <input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
           "      <div class='post'><b>Post</b></div>" +
           "    </form>" +
-*/
           "  </div>" +
           "</div>"
       }

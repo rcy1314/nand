@@ -87,7 +87,7 @@ var image = function(emoji, n, src) {
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     if (category == 'Social' &&
         emoji == true &&
-        $(this).get(0).clientWidth > minimum) comment(n)
+        $(this).get(0).naturalWidth > minimum) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {
