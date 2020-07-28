@@ -45,6 +45,10 @@
   width: 100%;
 }
 
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
 svg {
   position: absolute;
   height: 72px;
