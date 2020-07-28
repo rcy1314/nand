@@ -71,7 +71,7 @@ var visual = function(n) {
       'border': 'none'
     })
     $('input[type=text], .category').css({
-      'background-color': '#fafafa',
+      'background-color': '#f7f7f7',
       'border': '1px solid #ddd',
       'color': '#aaa'
     })
@@ -84,7 +84,7 @@ var visual = function(n) {
       '.channel, .stats, .suggestions, .combine, #bottom, ' +
       '#main #page .feed, #main #page .feed a'
     ).css({
-      'background-color': '#fafafa',
+      'background-color': '#f7f7f7',
       'border': 'none',
       'color': '#666'
     })
@@ -100,6 +100,10 @@ var visual = function(n) {
       .attr('src', 'images/icon/transparent.png')
     $('.filter .pub, .populate .pub').css({
       'background-color': "#efefef",
+      'border': 'none'
+    })
+    $('#page input[type=text]').css({
+      'background-color': '#fff',
       'border': 'none'
     })
     $('.filter, .populate, .item, #page input[type=text], #page .id').css('box-shadow', '1px 1px 1px #ddd')
@@ -119,8 +123,7 @@ var visual = function(n) {
     $('.first').css('cssText','fill: #1fa2ff !important')
     $('svg circle').css('stroke', 'url(#gradientInvert)')
     $('#favicon').attr('href', 'images/icon/invert.png')
-    $('#container').css('background-color','#fafafa')
-    $('#page input[type=text]').css('border','none')
+    $('#container').css('background-color','#f7f7f7')
     $('.hover').addClass('visual.hover')
   }
   $('.fa-gratipay').css('color', 'lightcoral')
