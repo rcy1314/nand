@@ -5,7 +5,7 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
-      '.result, .air, .wrap'
+      '.result, .air, .wrap, #page .id'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
