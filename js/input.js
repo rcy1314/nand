@@ -3,7 +3,7 @@ $(document).ready()
    '#main #visit #page input[type=text]', function(e) {
      $('#main #visit #page #front #first').css('visibility','visible')
      $('#main #visit #page #front #first .listing').css('z-index', '3')
-     if ($(this).val() != '') var keyup = $(this).val()
+     var keyup = $(this).val()
      if (e.type == 'keyup' && e.keyCode == 13)
        return false
      else if (e.type == 'keyup' && $(this).val()
@@ -56,7 +56,6 @@ $(document).ready()
   function(e) {
     $this = $(this)
     if (e.type == 'focusin') {
-      $(this).val('')
       if ($('#main #visit #page #front .icon').hasClass('search'))
         $(this)
           .css({
@@ -126,7 +125,6 @@ $(document).ready()
   function(e) {
     $this = $(this)
     if (e.type == 'focusin') {
-      $(this).val('')
       if ($('#arm #search #input .icon').hasClass('slide'))
         $(this)
           .css({
