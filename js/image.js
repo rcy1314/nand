@@ -1,6 +1,6 @@
 var image = function(emoji, n, src) {
   var k = 5420
-  var uhd = 3840
+  var uhd = 3640
   var large  = 2400
   var mobile = 1281
   var maximum = 799
@@ -87,7 +87,7 @@ var image = function(emoji, n, src) {
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     if (category == 'Social' &&
         emoji == true &&
-        $(this).get(0).naturalWidth > minimum) comment(n)
+        $(this).width() > minimum) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {
