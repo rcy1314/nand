@@ -37,6 +37,7 @@
     top: calc(100% - 40px) !important;
     position: fixed !important;
     height: 35px !important;
+    right: 10px;
     z-index: 2;
   }
 

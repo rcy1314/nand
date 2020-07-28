@@ -61,7 +61,7 @@ var visual = function(n) {
     $('.more').css('color', '#333')
   } else if (op == 0) {
     $(
-      '#top, #arm, #container, .wrap, .fa-times-circle, ' +
+      '#top, #arm, #container, .wrap, ' +
       '.comment, .channel, #main .center .feed, .title, .header, .tag, ' +
       '.item, .item .pub, .type, .ago, a'
     ).css({
@@ -105,6 +105,7 @@ var visual = function(n) {
     })
     $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id, .fa-at').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
+    if ($('#container').width() <= 425) $('#option').css('background-color','#f7f7f7') 
     $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')

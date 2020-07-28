@@ -4,7 +4,6 @@ var xml = function(e, s, n, post) {
   var local
   var pub = []
   var src = ''
-  console.log(post)
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
