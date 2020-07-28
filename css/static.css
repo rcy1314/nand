@@ -169,6 +169,10 @@ body,
 
 #placeholder {
   width: 100px !important;
+  position: relative;
+  margin: 0 auto;
+  font-size: 64;
+  font-family: Billabong;
 }
 
 #page {
@@ -189,7 +193,7 @@ body,
   position: relative;
   border-radius: 4px;
   height: 28em;
-  width: 30em;
+  width: 40em;
   top: -150px;
   z-index: 0;
 }

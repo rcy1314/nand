@@ -26,8 +26,9 @@
 }
 
 #main #page .quick {
-    width: 100%;
+    width: 147%;
     z-index: 3;
+    right: 25%;
     top: 40px;
 }
 
@@ -168,7 +169,7 @@ svg .border {
 .sticky .ts {
   position: absolute;
   width: 300px;
-  bottom: 32px;
+  bottom: 40px;
   margin: 5px;
 }
 
