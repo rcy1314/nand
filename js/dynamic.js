@@ -140,6 +140,13 @@ $(document)
   '#main .center .channel .item .image .img', function(e) {
   if (tap == 0) {
       // set first click
+      if ($(this)
+            .hasClass('default')) window
+            .open($(this)
+              .parents('.item')
+              .attr('ext'),
+                '_blank',
+                'noreferrer')
       tap = new Date().getTime();
       img = $(this).attr('id')
       setTimeout(function () {
@@ -183,14 +190,7 @@ $(document)
           .hasClass('expand min') || $(this)
           .hasClass('expand full')) expand($(this)
           .attr('id'))
-        else if ($(this)
-              .hasClass('expand')) window
-              .open($(this)
-                .parents('.item')
-                .attr('ext'),
-                  '_blank',
-                  'noreferrer')
-        */
+          */
           // not a double click so set as a new first click
           tap = 0;
           img = $(this).attr('id')
