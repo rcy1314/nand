@@ -25,7 +25,7 @@ var image = function(emoji, n, src) {
     )
     if ($('#home').css('display') == 'none'){
       if ($(this).get(0).naturalWidth > minimum) {
-        $(this).width('100%').addClass('expand')
+        $(this).width('100%')
       } else if ($(this).get(0).naturalWidth < maximum) {
           $(this).width(120).addClass('expand').css('margin','10px')
           .parents('.item')
@@ -37,9 +37,9 @@ var image = function(emoji, n, src) {
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
        if ($(this).get(0).naturalHeight > k)
-         $(this).width('100%').parents('.sticky').width('40%')
+         $(this).width('100%').parents('.sticky').width('70%')
        else if ($(this).get(0).naturalHeight > uhd)
-         $(this).width('100%').parents('.sticky').width('50%')
+         $(this).width('100%').parents('.sticky').width('65%')
        else if ($(this).get(0).naturalHeight >= large)
          $(this).width('100%').parents('.sticky').width('60%')
        else if ($(this).get(0).naturalHeight >= mobile)
@@ -50,33 +50,33 @@ var image = function(emoji, n, src) {
          $(this).width('100%').parents('.sticky').width('100%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
-       $(this).addClass('expand min').width('100%')
+       $(this).width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
            'width': '35%'
          })
        $(this).width('100%').addClass('expand')
      } else if ($(this).get(0).naturalHeight > mobile) {
-       $(this).addClass('expand min').width('100%')
+       $(this).width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
            'width': '50%'
          })
       } else if ($(this).get(0).naturalHeight > maximum) {
-        $(this).addClass('expand min').width('100%')
+        $(this).width('100%')
           .parents('.item').find('.image').css({
             'margin': '0 auto',
             'width': '90%'
         })
       } else if ($(this).get(0).naturalHeight < maximum) {
-        $(this).width(120).addClass('expand default').css('margin','10px')
+        $(this).width(120).css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
             'align-items': 'center'
           }).find('.header, .tag, .addComment').remove()
       } else if ($(this).get(0).naturalWidth > minimum) {
-        $(this).addClass('expand min').width('100%')
+        $(this).width('100%')
           .parents('.item').find('.image').width('100%')
       }
     }
