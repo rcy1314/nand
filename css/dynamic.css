@@ -26,8 +26,7 @@
 }
 
 #main #page .quick {
-    width: 166%;
-    right: 33%;
+    width: 100%;
     z-index: 3;
     top: 40px;
 }
