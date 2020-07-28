@@ -32,7 +32,7 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/invert.png'></p>
 
-<p align='center'><img src='http://acktic.github.io/screenshots/result.png'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/air.png'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/wall.png'></p>
 
@@ -41,7 +41,7 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/opposite.png'></p>
 
-<p align='center'><img src='http://acktic.github.io/screenshots/air.png'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/result.png'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/visual.png'></p>
 

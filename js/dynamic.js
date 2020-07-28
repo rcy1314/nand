@@ -340,6 +340,7 @@ function(e) {
 .on('touch click', '#main .center #bottom .bottom', function(e) {
   $('#main .center, #main .content')
     .remove()
+  $('#top').css('visibility','hidden')
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
     if (location.href.match('\\+1'))

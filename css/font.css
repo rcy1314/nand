@@ -43,9 +43,15 @@
   content: "\f015";
 }
 
+.fa-at:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1fa";
+  font-weight: 50;
+}
+
 .fa-sun:before {
   font-family: FontAwesome;
-  content: "\f185`";
+  content: "\f185";
   font-weight: 50;
   position: fixed;
   padding: 1em;

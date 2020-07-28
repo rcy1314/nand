@@ -94,8 +94,6 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('.bottom')
-      .attr('src', 'images/icon/transparent.png')
     $('.filter .pub, .populate .pub').css({
       'background-color': "#efefef",
       'border': 'none'
@@ -104,7 +102,7 @@ var visual = function(n) {
       'background-color': '#fff',
       'border': 'none'
     })
-    $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
+    $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id, .fa-at').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
