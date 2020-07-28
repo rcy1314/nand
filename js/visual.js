@@ -102,7 +102,7 @@ var visual = function(n) {
       'background-color': "#efefef",
       'border': 'none'
     })
-    $('.filter, .populate, .item, #page input[type=text], #page .id').css('box-shadow', '1px 1px 6px #ddd')
+    $('.filter, .populate, .item, #page input[type=text], #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     $('.fa-cog, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
