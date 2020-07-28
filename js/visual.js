@@ -49,6 +49,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.listing').addClass('opposite').removeClass('invert')
+    $('#placeholder img').attr('src', 'images/opposite.png')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.blur').css('background-color','rgba(0, 0, 0, .3)')
     $('.second').css('cssText','fill: #e557c6 !important')
@@ -56,6 +57,7 @@ var visual = function(n) {
     $('.third').css('cssText','fill: #ff6289 !important')
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
+    $('#placeholder').css('color','#fff')
     $('.more').css('color', '#333')
   } else if (op == 0) {
     $(
@@ -117,6 +119,8 @@ var visual = function(n) {
     $('.first').css('cssText','fill: #1fa2ff !important')
     $('svg circle').css('stroke', 'url(#gradientInvert)')
     $('#container').css('background-color','#f7f7f7')
+    $('#placeholder img').attr('src', 'favicon.ico')
+    $('#placeholder').css('color','#000')
     $('.hover').addClass('visual.hover')
   }
   $('.fa-gratipay').css('color', 'lightcoral')

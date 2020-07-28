@@ -168,11 +168,20 @@ body,
 }
 
 #placeholder {
-  width: 100px !important;
+  width: 200px !important;
   font-family: Billabong;
+  display: inline-block;
   position: relative;
   margin: 0 auto;
   font-size: 64;
+}
+
+#placeholder img {
+  display: inline-block;
+  position: relative;
+  height: 48px;
+  width: 48px;
+  top: 10px;
 }
 
 #page {
