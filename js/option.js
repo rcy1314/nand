@@ -19,7 +19,7 @@ $(document).ready()
   else if (contrast == true) uri = uri + '+1'
   exit(uri)
 })
-.on('touch click', '#visit .fa-cog', function(e) {
+.on('touch click', '#visit .fa-sun', function(e) {
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '?+1'
     contrast = contrast != true

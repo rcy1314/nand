@@ -43,10 +43,11 @@
   content: "\f015";
 }
 
-.fa-cog:before {
-  font-family: "Font Awesome 5 Pro";
+.fa-sun:before {
+  font-family: FontAwesome;
+  content: "\f185`";
+  font-weight: 50;
   position: fixed;
-  content: "\f013";
   padding: 1em;
   right: 10px;
   top: 10px;

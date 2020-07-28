@@ -12,7 +12,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, .fa-cog' +
+    $('.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, .fa-sun' +
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
@@ -108,7 +108,7 @@ var visual = function(n) {
     })
     $('.filter, .populate, .item, #page input[type=text], #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
-    $('.fa-cog, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
+    $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
