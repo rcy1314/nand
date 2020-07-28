@@ -23,7 +23,7 @@ $(document)
       else if (contrast == true) uri = uri + '+1'
       exit(uri)
     }
-  }, 750)
+  }, 550)
 })
 
 .on('touch click', '#main .center .channel .item', function(e) {

@@ -30,10 +30,14 @@
 
 ### Invert
 
+<p align='center'><img src='http://acktic.github.io/screenshots/invert.png'></p>
+
 <p align='center'><img src='http://acktic.github.io/screenshots/wall.png'></p>
 
 
 ### Opposite
+
+<p align='center'><img src='http://acktic.github.io/screenshots/opposite.png'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/visual.png'></p>
 
