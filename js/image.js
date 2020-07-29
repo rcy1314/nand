@@ -41,7 +41,7 @@ var image = function(emoji, n, src) {
        else if ($(this).get(0).naturalHeight > uhd)
          $(this).width('100%').parents('.sticky').width('65%')
        else if ($(this).get(0).naturalHeight >= large)
-         $(this).width('100%').parents('.sticky').width('60%')
+         $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight >= mobile)
          $(this).width('100%').parents('.sticky').width('65%')
        else if ($(this).get(0).naturalHeight >= maximum)
