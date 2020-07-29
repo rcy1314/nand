@@ -123,8 +123,7 @@ var xml = function(e, s, n, post) {
       } else if ($(this).find('enclosure').attr('url')) {
         src = String($(this).find('enclosure').attr('url'))
       } else if ($(this).find('media\\:content, content').attr('url')) {
-        src = String($(this).find('media\\:content, content').attr('url')
-          .match(/https:\/\/.+/))
+        src = String($(this).find('media\\:content, content').attr('url'))
       } else if ($(this).find('content\\:encoded').text()
       .match(/img.+src=['"](.*?)['"]/)) {
         src = String($(this).find('content\\:encoded').text()
