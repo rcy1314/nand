@@ -37,13 +37,13 @@ var image = function(emoji, n, src) {
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
        if ($(this).get(0).naturalHeight > k)
-         $(this).width('100%').parents('.sticky').width('70%')
+         $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight > uhd)
-         $(this).width('100%').parents('.sticky').width('65%')
+         $(this).width('100%').parents('.sticky').width('60%')
        else if ($(this).get(0).naturalHeight >= large)
          $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight >= mobile)
-         $(this).width('100%').parents('.sticky').width('65%')
+         $(this).width('100%').parents('.sticky').width('60%')
        else if ($(this).get(0).naturalHeight >= maximum)
          $(this).width('100%').parents('.sticky').width('70%')
        else if ($(this).get(0).naturalHeight >= minimum)
@@ -55,7 +55,7 @@ var image = function(emoji, n, src) {
            'margin': '0 auto',
            'width': '35%'
          })
-       $(this).width('100%').addClass('expand')
+       $(this).width('100%')
      } else if ($(this).get(0).naturalHeight > mobile) {
        $(this).width('100%')
          .parents('.item').find('.image').css({
