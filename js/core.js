@@ -26,7 +26,7 @@ var blank = function (n) {
 
 var escape = function (n) {
 
-    return n
+    return n.replace(/\&.+\;/g, '')
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")

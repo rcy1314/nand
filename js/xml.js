@@ -123,7 +123,8 @@ var xml = function(e, s, n, post) {
       } else if ($(this).find('enclosure').attr('url')) {
         src = String($(this).find('enclosure').attr('url'))
       } else if ($(this).find('media\\:content, content').attr('url')) {
-        src = String($(this).find('media\\:content, content').attr('url'))
+        src = String($(this).find('media\\:content, content').attr('url')
+          .match(/https:\/\/.+/))
       } else if ($(this).find('content\\:encoded').text()
       .match(/img.+src=['"](.*?)['"]/)) {
         src = String($(this).find('content\\:encoded').text()
@@ -136,6 +137,7 @@ var xml = function(e, s, n, post) {
         src = String($(this).find('image').text())
       } else if (src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/))
         src = ''
+        console.log(src)
       if (src == '') courtesy = ''
       else courtesy =
         "<div class='courtesy' style='float:left'>" +

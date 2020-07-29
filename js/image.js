@@ -6,7 +6,7 @@ var image = function(emoji, n, src) {
   var maximum = 799
   var minimum = 299
 
-  if (src.match(/\.gif|\.jpg|\.jpeg|\.png/g)) {
+  if (src) {
   $('#' + n).on('error', function() {
     if (emoji == true && !$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
