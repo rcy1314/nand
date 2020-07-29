@@ -36,28 +36,11 @@ var image = function(emoji, n, src) {
        }
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
-       if ($(this).get(0).naturalHeight >= k &&
-        $(this).get(0).naturalWidth <= k)
-         $(this).width('100%').parents('.sticky').width('55%')
-       else if ($(this).get(0).naturalHeight >= k)
-         $(this).width('100%').parents('.sticky').width('85%')
-       else if ($(this).get(0).naturalHeight >= uhd &&
-        $(this).get(0).naturalWidth <= uhd)
-         $(this).width('100%').parents('.sticky').width('55%')
-       else if ($(this).get(0).naturalHeight > uhd)
-         $(this).width('100%').parents('.sticky').width('85%')
-       else if ($(this).get(0).naturalHeight >= large &&
-        $(this).get(0).naturalWidth <= large)
-         $(this).width('100%').parents('.sticky').width('55%')
-       else if ($(this).get(0).naturalHeight >= large)
-         $(this).width('100%').parents('.sticky').width('85%')
-       else if ($(this).get(0).naturalHeight >= mobile &&
-        $(this).get(0).naturalWidth <= mobile)
-         $(this).width('100%').parents('.sticky').width('55%')
-       else if ($(this).get(0).naturalHeight >= mobile)
-         $(this).width('100%').parents('.sticky').width('85%')
+       if ($(this).get(0).naturalHeight >= mobile &&
+        $(this).get(0).naturalWidth <= $(this).get(0).naturalHeight)
+         $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight >= maximum)
-         $(this).width('100%').parents('.sticky').width('70%')
+         $(this).width('100%').parents('.sticky').width('75%')
        else if ($(this).get(0).naturalHeight >= minimum)
          $(this).width('100%').parents('.sticky').width('100%')
     } else {

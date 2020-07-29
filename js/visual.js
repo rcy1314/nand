@@ -4,7 +4,7 @@ var visual = function(n) {
   if (op == 1) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
-      '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
+      '.feed, .channel, .suggestions, .combine, .index, a, ' +
       '.result, .air, .wrap, #main #page, #main #page .id, .sticky'
     ).css({
       'background-color': '#000',
@@ -17,7 +17,7 @@ var visual = function(n) {
     ).css('color', '#fff')
     $(
       '#top, #arm, #home a, #arm #option, .filter, .populate, .wrap, ' +
-      '.header, .title, .category, .type, .item, .ago, ' +
+      '.header, .title, .category, .type, .item, .comment, .ago, ' +
       '.pub, .tag, .stats, .suggestions, .combine, .right, .left'
     ).css({
       'background-color': '#0e0e0e',
