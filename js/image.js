@@ -36,13 +36,12 @@ var image = function(emoji, n, src) {
        }
     } else if ($(this).hasClass('guide')) {
       $(this).parents('#guide').css('display','flex')
+      $('#main').addClass('guide')
        if ($(this).get(0).naturalHeight >= mobile &&
         $(this).get(0).naturalWidth <= $(this).get(0).naturalHeight)
          $(this).width('100%').parents('.sticky').width('50%')
        else if ($(this).get(0).naturalHeight >= maximum)
-         $(this).width('100%').parents('.sticky').width('75%')
-       else if ($(this).get(0).naturalHeight >= minimum)
-         $(this).width('100%').parents('.sticky').width('100%')
+         $(this).width('100%').parents('.sticky').width('60%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
        $(this).width('100%')

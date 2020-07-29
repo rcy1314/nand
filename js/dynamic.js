@@ -105,6 +105,7 @@ $(document)
 })
 .on('touch click', '#guide', function (e) {
   $('#guide').hide()
+  $('#main').removeClass('guide')
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {
@@ -131,7 +132,10 @@ $(document)
           e.stopPropagation()
           visual()
           tap = 0;
-      } else $('#guide').hide()
+      } else {
+        $('#guide').hide()
+        $('#main').removeClass('guide')
+      }
   }
   e.stopPropagation()
   visual()

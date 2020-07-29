@@ -4,6 +4,11 @@
   font-display: block;
 }
 
+.guide::-webkit-scrollbar {
+  scrollbar-width: none;
+  display: none;
+}
+
 #progressBar {
   position: fixed;
   height: 4px;
