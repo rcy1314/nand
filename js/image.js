@@ -35,13 +35,11 @@ var image = function(emoji, n, src) {
            }).find('.header, .tag, .addComment').remove()
        }
     } else if ($(this).hasClass('guide')) {
-      $(this).parents('#guide').css('display','flex')
       $('#main').addClass('guide')
-       if ($(this).get(0).naturalHeight >= mobile &&
-        $(this).get(0).naturalWidth <= $(this).get(0).naturalHeight)
-         $(this).width('100%').parents('.sticky').width('50%')
-       else if ($(this).get(0).naturalHeight >= maximum)
-         $(this).width('100%').parents('.sticky').width('60%')
+       if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
+         $(this).width('100%').parents('.sticky').width('90%')
+       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
+         $(this).width('100%').parents('.sticky').width('55%')
     } else {
       if ($(this).get(0).naturalHeight > uhd) {
        $(this).width('100%')
