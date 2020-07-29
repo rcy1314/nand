@@ -145,7 +145,6 @@ svg .border {
   max-width: 90% !important;
   align-items: center;
   position: relative;
-  min-width: 30%;
   display: table;
 }
 

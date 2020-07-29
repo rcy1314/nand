@@ -5,7 +5,7 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .comment, .channel, .suggestions, .combine, .index, a, ' +
-      '.result, .air, .wrap, #main #page, #main #page .id'
+      '.result, .air, .wrap, #main #page, #main #page .id, .sticky'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -103,7 +103,10 @@ var visual = function(n) {
       'background-color': '#fff',
       'border': 'none'
     })
-    $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id, .fa-at').css('box-shadow', '1px 1px 1px #ddd')
+    $(
+      '.filter, .populate, .item, #page input[type=text], ' +
+      '.right, .left, #page .id, .sticky'
+    ).css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     if ($('#container').width() <= 425) $('#option').css('background-color','#f7f7f7')
     $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
