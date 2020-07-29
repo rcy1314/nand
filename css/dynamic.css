@@ -220,6 +220,16 @@ svg .border {
   position: relative;
 }
 
+.img {
+  max-height: 90vh;
+  max-width: 60vh;
+}
+
+.image {
+  left: 0;
+  right: 0;
+}
+
 .item .tag {
   min-width: 38% !important;
   position: relative;
