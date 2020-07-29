@@ -80,7 +80,7 @@ var visual = function(n) {
     })
     $(
       '#front #option, #main, #visit, .air, .result, #bottom, .hover, ' +
-      '.channel, .stats, .suggestions, .combine, #bottom, ' +
+      '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a'
     ).css({
       'background-color': '#f7f7f7',
@@ -105,7 +105,7 @@ var visual = function(n) {
     })
     $('.filter, .populate, .item, #page input[type=text], .right, .left, #page .id, .fa-at').css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
-    if ($('#container').width() <= 425) $('#option').css('background-color','#f7f7f7') 
+    if ($('#container').width() <= 425) $('#option').css('background-color','#f7f7f7')
     $('.fa-sun, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
