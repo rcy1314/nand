@@ -36,6 +36,8 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/wall.png'></p>
 
+<p align='center'><img src='http://acktic.github.io/screenshots/guide.png'></p>
+
 
 ### Opposite
 
@@ -45,10 +47,7 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/visual.png'></p>
 
-
-### Guide Sticky Post
-
-<p align='center'><img src='http://acktic.github.io/screenshots/guide.png'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/sticky.png'></p>
 
 
 License
