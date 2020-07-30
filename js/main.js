@@ -8,7 +8,7 @@ $(document)
     if ($(this).attr('id') != 'home' &&
         $(this).parent().attr('id') != 'placeholder')
     window.open($(this)
-      .attr('ext'), '_blank', 'noreferrer')
+      .attr('ext'), '_blank', 'noreferrer noopener')
     e.stopPropagation()
   })
   .on('touch click', '#arm, #option, #main, #visit, #container', function(e) {
