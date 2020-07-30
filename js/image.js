@@ -41,7 +41,14 @@ var image = function(emoji, n, src) {
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%')
     } else {
-      if ($(this).get(0).naturalHeight > uhd) {
+     if ($(this).get(0).naturalHeight > k) {
+         $(this).parents('.item').find('.ago')
+             .css('display', 'inline-block')
+             .parents('.item').find('.pub').css('display','block')
+             .parents('.item')
+             .find('.url, .share, .source, .header, .image, .img, .fill').remove()
+         $(this).remove()
+     } else if ($(this).get(0).naturalHeight > uhd) {
        $(this).width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
@@ -60,7 +67,8 @@ var image = function(emoji, n, src) {
             'margin': '0 auto',
             'width': '90%'
         })
-      } else if ($(this).get(0).naturalHeight < maximum) {
+      } else if ($(this).get(0).naturalHeight < maximum ||
+        $(this).get(0).naturalHeight > k) {
         $(this).width(120).addClass('default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
