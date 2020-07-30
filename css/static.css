@@ -192,8 +192,9 @@ body,
 
 #placeholder a {
   width: fit-content !important;
-  display: inline-block;
   font-family: Billabong;
+  text-decoration: none;
+  display: inline-block;
   font-size: 64;
 }
 

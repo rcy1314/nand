@@ -88,7 +88,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#home a, .description,' +
+      '#home a, .description, #placeholder a, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
