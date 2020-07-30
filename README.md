@@ -12,23 +12,23 @@
 
 ### Invert
 
-<p align='center'><img src='https://acktic.github.io/screenshots/invert.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/invert.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/air.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/air.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/wall.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/wall.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/guide.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/guide.jpg'></p>
 
 ### Opposite
 
-<p align='center'><img src='https://acktic.github.io/screenshots/opposite.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/opposite.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/result.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/result.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/visual.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/visual.jpg'></p>
 
-<p align='center'><img src='https://acktic.github.io/screenshots/sticky.png'></p>
+<p align='center'><img src='https://acktic.github.io/screenshots/sticky.jpg'></p>
 
 License
 ----
