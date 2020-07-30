@@ -2,10 +2,11 @@ $(document)
   .ready(function() {
     $('#input')
       .css('display', 'block')
-    $('#home, #placeholder').html('<a>' + handle + '</a>')
+    $('#home, #placeholder').html('<a>' + username + '</a>')
   })
   .on('touch click', 'a', function(e) {
-    if ($(this).attr('id') != 'home' && $(this).parent().attr('id') != 'placeholder')
+    if ($(this).attr('id') != 'home' &&
+        $(this).parent().attr('id') != 'placeholder')
     window.open($(this)
       .attr('ext'), '_blank', 'noreferrer')
     e.stopPropagation()
