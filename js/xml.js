@@ -290,9 +290,9 @@ var xml = function(e, s, n, post) {
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
-          menu[back].id.match(/[^\/]+$/g) +
+      "  <div class='back'>" + menu[back].id.match(/[^\/]+$/g) + "</div>" +
       "  <div class='bottom'>acktic</div>" +
-          menu[plus].id.match(/[^\/]+$/g) +
+      "  <div class='back'>" + menu[plus].id.match(/[^\/]+$/g) + "</div>" +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
     content(n, recent, oldest, images, posts)
