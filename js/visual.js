@@ -79,7 +79,7 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#front #option, #main, #visit, .air, .result, #bottom, .hover, ' +
+      '#front #option, #main, #visit, .air, .result, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a'
     ).css({

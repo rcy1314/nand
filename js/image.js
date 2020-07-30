@@ -37,9 +37,7 @@ var image = function(emoji, n, src) {
     } else if ($(this).hasClass('guide')) {
       $('#main').addClass('guide')
        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
-         $(this).css({
-           'max-width': '100%'
-         }).parents('.sticky').width('90%')
+         $(this).css('max-width', '100%').parents('.sticky').width('90%')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%')
     } else {
