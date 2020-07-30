@@ -52,20 +52,20 @@ var image = function(emoji, n, src) {
        $(this).width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
-           'width': '35%'
+           'width': '20vh'
          })
        $(this).width('100%')
      } else if ($(this).get(0).naturalHeight > mobile) {
        $(this).width('100%')
          .parents('.item').find('.image').css({
            'margin': '0 auto',
-           'width': '50%'
+           'width': '40vh'
          })
       } else if ($(this).get(0).naturalHeight > maximum) {
         $(this).width('100%')
           .parents('.item').find('.image').css({
             'margin': '0 auto',
-            'width': '90%'
+            'width': '35vh'
         })
       } else if ($(this).get(0).naturalHeight < maximum ||
         $(this).get(0).naturalHeight > k) {
@@ -87,7 +87,7 @@ var image = function(emoji, n, src) {
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     if (category == 'Social' &&
         emoji == true &&
-        $(this).width() > minimum) comment(n)
+        !$(this).hasClass('default')) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
   } else {

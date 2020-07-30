@@ -221,13 +221,15 @@ svg .border {
 }
 
 .img {
-  max-height: 90vh;
+  position: relative;
   max-width: 46.25vh;
+  max-height: 90vh;
+  margin: 0 auto;
 }
 
 .image {
-  left: 0;
   right: 0;
+  left: 0;
 }
 
 .item .tag {
