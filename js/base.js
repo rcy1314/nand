@@ -5,6 +5,7 @@ var tap = 0
 var object = []
 var filter = []
 var contrast = false
+var handle = 'acktic'
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']

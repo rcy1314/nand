@@ -2,6 +2,7 @@ $(document)
   .ready(function() {
     $('#input')
       .css('display', 'block')
+    $('#home, #placeholder').html('<a>' + handle + '</a>')
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('id') != 'home')

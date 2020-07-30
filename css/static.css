@@ -172,21 +172,29 @@ body,
   height: 100%;
 }
 
-#placeholder {
-  width: 200px !important;
-  font-family: Billabong;
-  display: inline-block;
+#handle {
   position: relative;
   margin: 0 auto;
-  font-size: 64;
+  width: 500px;
 }
 
-#placeholder img {
-  display: inline-block;
+#handle img {
   position: relative;
   height: 48px;
   width: 48px;
   top: 10px;
+}
+
+#handle img,
+#placeholder {
+  display: inline-block;
+}
+
+#placeholder a {
+  width: fit-content !important;
+  display: inline-block;
+  font-family: Billabong;
+  font-size: 64;
 }
 
 #page {
