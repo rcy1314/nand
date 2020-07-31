@@ -353,9 +353,9 @@ var suggest = function(n) {
   for (var i = 0; i <= 9; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
-    if (menu[e] && e != 0)
+    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
     var img = 'images/png/' + menu[e].img + '.png'
-      if ($.inArray(dupe, e) === -1 && menu[e]) $('#main .suggestions').append(
+      $('#main .suggestions').append(
         "<div class='combine'>" +
         "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
         "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
@@ -366,6 +366,7 @@ var suggest = function(n) {
         "  </div>" +
         "</div>"
       )
+    }
     if (i == 9) return false
   }
 
