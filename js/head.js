@@ -1001,6 +1001,17 @@ var menu = [{
 
 	,
 	{
+		id: "Reddit/Celebs",
+		cat: "Social",
+		des: "Celebs For beautiful female celebrities.",
+		uri: "https://www.reddit.com/r/celebs/.rss",
+		ext: "https://www.reddit.com/r/Celebs",
+		img: "Celebs",
+		hash: "Bh"
+	}
+
+	,
+	{
 		id: "Reddit/Celebhub",
 		cat: "Social",
 		des: "Celebhub famous actresses, singers, models, athletes and others.",
