@@ -257,13 +257,11 @@ $(document).ready()
           .attr('response')
         progress(true, 100)
       } else {
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
+        var uri = '?q=&' + $('#arm #search #match .listing .hover')
         .attr('response')
         .toLowerCase()
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
-        state('?q=&' + $('#arm #search #match .listing .hover')
-          .attr('response'))
         exit(uri)
         document.title = $('#arm #search #match .listing .hover')
           .attr('response')
@@ -304,7 +302,7 @@ $(document).ready()
         $('#top').css('visibility','visible')
         progress(true, 100)
       } else {
-        var uri = '?q=' + $('#main #visit #page #front #first .listing .hover')
+        var uri = '?q=&' + $('#main #visit #page #front #first .listing .hover')
           .attr('response')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
