@@ -1,8 +1,5 @@
 var image = function(emoji, n, src) {
   var k = 5420
-  var uhd = 3640
-  var large  = 2400
-  var mobile = 1281
   var maximum = 799
   var minimum = 299
 
@@ -48,27 +45,7 @@ var image = function(emoji, n, src) {
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
          $(this).remove()
-     } else if ($(this).get(0).naturalHeight > uhd) {
-       $(this).width('100%')
-         .parents('.item').find('.image').css({
-           'margin': '0 auto',
-           'width': '20vh'
-         })
-       $(this).width('100%')
-     } else if ($(this).get(0).naturalHeight > mobile) {
-       $(this).width('100%')
-         .parents('.item').find('.image').css({
-           'margin': '0 auto',
-           'width': '40vh'
-         })
-      } else if ($(this).get(0).naturalHeight > maximum) {
-        $(this).width('100%')
-          .parents('.item').find('.image').css({
-            'margin': '0 auto',
-            'width': '35vh'
-        })
-      } else if ($(this).get(0).naturalHeight < maximum ||
-        $(this).get(0).naturalHeight > k) {
+      } else if ($(this).get(0).naturalHeight < minimum) {
         $(this).width(120).addClass('default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({

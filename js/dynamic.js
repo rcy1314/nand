@@ -3,10 +3,7 @@ $(document)
 .on('touch click', '#main .center .quick .feed .asset .id, ' +
   '#main #page .quick .feed .asset .id', function(e) {
   var $this = $(this)
-  $(this)
-    .parent()
-    .find('svg circle')
-    .addClass('mask')
+  $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
@@ -27,21 +24,16 @@ $(document)
 })
 
 .on('touch click', '#main .center .channel .item', function(e) {
-  window.open($(this)
-    .attr('ext'), '_blank', 'noreferrer')
+  window.open($(this).attr('ext'), '_blank', 'noreferrer noopener')
   e.stopPropagation()
 })
 .on('touch click',
   '#main .center .channel .item .header .fa-ellipsis-h, ' +
   '#container .sticky .header .fa-ellipsis-h',
   function(e) {
-    $(this).parents('.item, .wrap')
-      .find('.url')
-      .select()
+    $(this).parents('.item, .wrap').find('.url').select()
     document.execCommand('copy')
-    $(this)
-      .removeClass('fa-ellipsis-h')
-      .addClass('fa-ellipsis-v')
+    $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
     setTimeout(function() {
       $('#main .center .channel .item .copy, #guide .sticky .header .copy')
         .removeClass('fa-ellipsis-v')
@@ -50,66 +42,55 @@ $(document)
     e.stopPropagation()
   })
 .on('touch click', '#main #page .quick .right', function(e) {
-    var leftPos = $('#main #page .quick .feed')
-      .scrollLeft()
-    $('#main #page .quick .feed')
-      .animate({
+    var leftPos = $('#main #page .quick .feed').scrollLeft()
+    $('#main #page .quick .feed').animate({
         scrollLeft: leftPos + 720
       }, 'fast')
       if (leftPos >= $('#main #page .quick .feed')[0]
-          .scrollWidth - $('#main #page .quick .feed').width() - 720) $(this)
-          .hide()
+          .scrollWidth - $('#main #page .quick .feed').width() - 720)
+          $(this).hide()
     if ($('#main #page .quick .feed')
       .scrollLeft() >= 0) $('#main #page .quick .left')
       .show()
 })
 .on('touch click', '#main #page .quick .left', function(e) {
-    var leftPos = $('#main #page .quick .feed')
-      .scrollLeft()
-    $('#main #page .quick .feed')
-      .animate({
+    var leftPos = $('#main #page .quick .feed').scrollLeft()
+    $('#main #page .quick .feed').animate({
         scrollLeft: leftPos - 360
       }, 'slow')
     if ($('#main #page .quick .feed')
       .scrollLeft() <= 360) $(this)
       .hide()
-    $('#main #page .quick .right')
-      .show()
+    $('#main #page .quick .right').show()
 })
 .on('touch click', '#main .center .quick .right', function(e) {
-  var leftPos = $('#main .center .quick .feed')
-    .scrollLeft()
-  $('#main .center .quick .feed')
-    .animate({
+  var leftPos = $('#main .center .quick .feed').scrollLeft()
+  $('#main .center .quick .feed').animate({
       scrollLeft: leftPos + 720
     }, 'fast')
     if (leftPos >= $('#main .center .quick .feed')[0]
-        .scrollWidth - $('#main .center .quick .feed').width() - 720) $(this)
-        .hide()
+        .scrollWidth - $('#main .center .quick .feed').width() - 720)
+        $(this).hide()
   if ($('#main .center .quick .feed')
     .scrollLeft() >= 0) $('#main .center .quick .left')
     .show()
 })
 .on('touch click', '#main .center .quick .left', function(e) {
-  var leftPos = $('#main .center .quick .feed')
-    .scrollLeft()
-  $('#main .center .quick .feed')
-    .animate({
+  var leftPos = $('#main .center .quick .feed').scrollLeft()
+  $('#main .center .quick .feed').animate({
       scrollLeft: leftPos - 360
     }, 'slow')
-  if ($('#main .center .quick .feed')
-    .scrollLeft() <= 360) $(this)
-    .hide()
+  if ($('#main .center .quick .feed').scrollLeft() <= 360)
+    $(this).hide()
   $('#main .center .quick .right')
     .show()
 })
 .on('touch click', '#guide', function (e) {
-  $('#guide').hide()
   $('#main').removeClass('guide')
+  $('#guide').hide()
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {
-  var id = $(this).attr('id')
   if (tap == 0) {
       // set first click
       tap = new Date().getTime();
@@ -129,19 +110,17 @@ $(document)
             .find('#main .' + id + ' .fa-heart-o, ' +
               '#main .' + id + ' .fab, #main .' + id + ' .fa-gratipay')
             .toggleClass('fa-heart-o fab fa-gratipay')
-          e.stopPropagation()
           visual()
-          tap = 0;
+          tap = 0
       } else {
-        $('#guide').hide()
         $('#main').removeClass('guide')
+        $('#guide').hide()
       }
   }
   e.stopPropagation()
   visual()
 })
-.on('touch click',
-  '#main .center .channel .item .image .img', function(e) {
+.on('touch click', '#main .center .channel .item .image .img', function(e) {
   if (tap == 0) {
       // set first click
       if ($(this)
@@ -189,12 +168,6 @@ $(document)
         if ($('.' + $(this).parents('.item').attr('item')).find('.fab').length)
           $('.sticky')
             .find('.fa-heart-o').toggleClass('fa-heart-o fab fa-gratipay')
-        /*
-        if ($(this)
-          .hasClass('expand min') || $(this)
-          .hasClass('expand full')) expand($(this)
-          .attr('id'))
-          */
           // not a double click so set as a new first click
           tap = 0;
           img = $(this).attr('id')
@@ -209,8 +182,7 @@ $(document)
   '#container .sticky .wrap .tag .fa-heart-o, ' +
   '#container .sticky .wrap .tag .fa-gratipay',
   function(e) {
-    $(this)
-      .toggleClass('fa-heart-o fab fa-gratipay')
+    $(this).toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
     visual()
   })
@@ -222,10 +194,7 @@ $(document)
   '#container .sticky .wrap .tag .fa-bookmark, ' +
   '#container .sticky .wrap .tag .fa-bookmark-o',
   function(e) {
-    $(this)
-      .parents('.item, .wrap')
-      .find('.source')
-      .select()
+    $(this).parents('.item, .wrap').find('.source').select()
     document.execCommand('copy')
     if (!$(this).hasClass('fa-bookmark'))
       $(this).toggleClass('fa-bookmark-o fa-bookmark')
@@ -237,14 +206,14 @@ $(document)
   '#main .center .channel .item .image .tag .fa-sticky-note',
   function(e) {
     if (contrast == true)
-      if (!$(this).parents('.item').find('.share').val()
-        .match(/\+1/g))
+      if (!$(this).parents('.item').find('.share').val().match(/\+1/g))
         $(this).parents('.item').find('.share')
         .val($(this).parents('.item').find('.share').val() + '+1')
     if (contrast == false && $(this).parents('.item').find('.share').val()
       .match(/\+1/g))
       $(this).parents('.item').find('.share').val(
-        $(this).parents('.item').find('.share').val().replace(/\+1/g, ''))
+        $(this).parents('.item').find('.share').val().replace(/\+1/g, '')
+      )
     $(this).parents('.item').find('.share').select()
     document.execCommand('copy')
     if (!$(this).hasClass('fa-sticky-note'))
@@ -257,14 +226,14 @@ $(document)
 '#container .sticky .wrap .tag .fa-sticky-note',
 function(e) {
   if (contrast == true)
-    if (!$(this).parents('.wrap').find('.share').val()
-      .match(/\+1/g))
+    if (!$(this).parents('.wrap').find('.share').val().match(/\+1/g))
       $(this).parents('.wrap').find('.share')
       .val($(this).parents('.wrap').find('.share').val() + '+1')
   if (contrast == false && $(this).parents('.wrap').find('.share').val()
     .match(/\+1/g))
     $(this).parents('.wrap').find('.share').val(
-      $(this).parents('.wrap').find('.share').val().replace(/\+1/g, ''))
+      $(this).parents('.wrap').find('.share').val().replace(/\+1/g, '')
+    )
   $(this).parents('.wrap').find('.share').select()
   document.execCommand('copy')
   if (!$(this).hasClass('fa-sticky-note'))
@@ -273,77 +242,49 @@ function(e) {
   visual()
 })
 .on('touch click', '#main .center .channel .item .pub .more', function(e) {
-  $(this)
-    .parent()
-    .html($(this)
-      .parent()
-      .attr('text'))
-  $(this)
-    .parent()
-    .animate({
+  $(this).parent().html($(this).parent().attr('text'))
+  $(this).parent().animate({
       width: '85%',
     }, 'slow', function() {
-      $(this)
-        .parent()
-        .height('auto')
+      $(this).parent().height('auto')
     })
   e.stopPropagation()
-  $(this)
-    .hide()
+  $(this).hide()
 })
 .on('submit', '#main .center .channel .item .classic .addComment', function(e) {
-  if ($(this)
-    .children('.comment')
-    .val() != '') item = $(this)
-    .parents('.item')
-    .attr('item')
-  if ($('.' + item + ' .add')
-    .length >= 3) {
-    $('.' + item + ' .add:last')
-      .remove()
-  }
-    $('.' + item + ' .pub:last')
-      .after("<div class='add'><b>" + $('.' + item +
+  if ($(this).children('.comment').val() != '')
+    item = $(this).parents('.item').attr('item')
+  if ($('.' + item + ' .add').length >= 3)
+    $('.' + item + ' .add:last').remove()
+    $('.' + item + ' .pub:last').after("<div class='add'><b>" + $('.' + item +
           ' .addComment .comment')
         .val() + "</div>")
-  $(this)
-    .parents('.item')
-    .find('.fa-comment-o')
-    .removeClass('fa-comment-o')
+  $(this).parents('.item').find('.fa-comment-o').removeClass('fa-comment-o')
     .addClass('fas fa-comments')
-  $('.' + item + ' .addComment .comment')
-    .val('')
+  $('.' + item + ' .addComment .comment').val('')
   e.preventDefault()
   visual()
 })
 .on('touch click', '#main .center .channel .item .post', function(e) {
-  $(this)
-    .siblings('.comment')
-    .focus()
-    .submit()
+  $(this).siblings('.comment').focus().submit()
   e.stopPropagation()
 })
 .on('touch click', '#main .center #bottom .previous', function(e) {
-
   $('#top, #main .center, #main .content').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit('?q=&' + uri)
-
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
-
   $('#top, #main .center, #main .content').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit('?q=&' + uri)
-
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
-  $('#main .center, #main .content')
-    .remove()
+  $('#main .center, #main .content').remove()
   $('#top').css('visibility','hidden')
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
@@ -366,8 +307,7 @@ function(e) {
   }
 })
 .on('touch click', '#main .suggestions .combine div', function(e) {
-  var uri = '?q=' + '&' + $(this)
-    .attr('response')
+  var uri = '?q=' + '&' + $(this).attr('response')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit(uri)

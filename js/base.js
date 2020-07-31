@@ -55,29 +55,6 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
   )
 }
 
-var expand = function(n) {
-
-  if ($('#' + n).hasClass('expand min')) {
-    object.push({
-      item: $('#' + n).parents('.item').width(),
-      parent: $('#' + n).parent().width(),
-      less: $('#' + n).width(),
-      element: n
-    })
-    $('#' + n).removeClass('min').addClass('full').width('100%').parent()
-      .css({
-        'width': '100%',
-        'left': '0'
-      })
-  } else if ($('#' + n).hasClass('expand full')) {
-    object.forEach(function(e) {
-      if (n == e.element && e.less)
-        $('#' + n).removeClass('full').addClass('min').width(e.less).parent().width(e.less)
-    })
-  }
-
-}
-
 var feed  = function(n) {
   var dupe = []
   for (var i = 0; i <= 9; i++) {

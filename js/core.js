@@ -20,7 +20,7 @@ String.prototype.truncate = function(n, useWordBoundary) {
 
 var blank = function (n) {
 
-  window.open(n, '_blank', 'noreferrer')
+  window.open(n, '_blank', 'noreferrer noopener')
 
 }
 

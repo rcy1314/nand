@@ -49,7 +49,7 @@ var visual = function(n) {
     $('#option .fa-circle-notch').toggleClass('fa-circle-notch fa-circle')
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.listing').addClass('opposite').removeClass('invert')
-    $('#handle img').attr('src', 'images/opposite.png')
+    $('#handle img').attr('src', 'images/Opposite.png')
     $('svg circle').css('stroke', 'url(#gradientOpposite)')
     $('.blur').css('background-color','rgba(0, 0, 0, .3)')
     $('.second').css('cssText','fill: #e557c6 !important')
