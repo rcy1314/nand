@@ -71,6 +71,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  #top,
+  #arm {
+    width: 100% !important;
+  }
+
   #main .center {
     left: -95px !important;
     width: 50% !important;
