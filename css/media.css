@@ -1,10 +1,5 @@
 @media screen and (max-width: 425px) {
 
-  #top,
-  #arm {
-    width: 100% !important;
-  }
-
   #home,
   .left,
   .next,
@@ -70,11 +65,16 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+
   #top,
   #arm {
     width: 100% !important;
   }
+
+}
+
+@media screen and (min-width: 768px) {
 
   #main .center {
     left: -95px !important;
