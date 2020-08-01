@@ -88,18 +88,20 @@
   .content {
     margin-left: -75px !important;
   }
-}
-
-@media screen and (max-width: 1024px) {
-  #guide .sticky .wrap {
-    display: none !important;
-  }
 
   #main #page .quick {
-      width: 147%;
+      width: 140%;
       z-index: 3;
-      right: 25%;
+      right: 20%;
       top: 40px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  #guide .sticky .wrap {
+    display: none !important;
   }
 
 }
