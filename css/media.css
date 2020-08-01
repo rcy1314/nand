@@ -72,6 +72,10 @@
     width: 100% !important;
   }
 
+  #guide .sticky .wrap {
+    display: none !important;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -94,14 +98,6 @@
       z-index: 3;
       right: 20%;
       top: 40px;
-  }
-
-}
-
-@media screen and (min-width: 1024px) {
-
-  #guide .sticky .wrap {
-    display: none !important;
   }
 
 }
