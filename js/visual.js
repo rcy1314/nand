@@ -105,7 +105,7 @@ var visual = function(n) {
     })
     $(
       '.filter, .populate, .item, #page input[type=text], ' +
-      '.right, .left, #page .id, .sticky'
+      '.right, .left, #page .id'
     ).css('box-shadow', '1px 1px 1px #ddd')
     $('.filter, .populate, #main .center .feed, .title').css('border', '1px solid #ddd')
     if ($('#container').width() <= 425) $('#option').css('background-color','#f7f7f7')
