@@ -127,6 +127,10 @@ svg .border {
   height: 7em;
 }
 
+.classic .wrap {
+  margin-left: 10px;
+}
+
 .sticky {
   align-items: center;
   position: relative;

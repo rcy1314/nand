@@ -88,14 +88,14 @@ var visual = function(n) {
       'color': '#666'
     })
     $(
-      '#home a, .description, #placeholder a, ' +
+      '#home a, .description, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-notch, .fa-circle'
     ).css({
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('.filter .pub, .populate .pub').css({
+    $('#placeholder a, .filter .pub, .populate .pub').css({
       'background-color': "transparent",
       'border': 'none'
     })
@@ -124,7 +124,7 @@ var visual = function(n) {
     $('svg circle').css('stroke', 'url(#gradientInvert)')
     $('#container').css('background-color','#f7f7f7')
     $('#handle img').attr('src', 'favicon.ico')
-    $('#placeholder').css('color','#000')
+    $('#placeholder').css('color','#666')
     $('.hover').addClass('visual.hover')
   }
   $('.fa-gratipay').css('color', 'lightcoral')
