@@ -12,9 +12,11 @@ input {
 .index,
 .hover,
 #home,
+.item,
 .more,
 .post,
 .img,
+.id,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
