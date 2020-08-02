@@ -1617,6 +1617,17 @@ var menu = [{
 
 	,
 	{
+		id: "Reddit/Windows10",
+		cat: "Social",
+		des: "Windows10 subreddit dedicated to Windows 10 which is a personal computer operating system released by Microsoft.",
+		uri: "https://www.reddit.com/r/windows10/.rss",
+		ext: "https://www.reddit.com/r/Windows10",
+		img: "Windows",
+		hash: "Ww"
+	}
+
+	,
+	{
 		id: "Reddit/World News",
 		cat: "Social",
 		des: "World News subreddit with latest headlines from around the world.",

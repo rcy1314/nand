@@ -67,11 +67,6 @@
 
 @media screen and (max-width: 768px) {
 
-  #top,
-  #arm {
-    width: 100% !important;
-  }
-
   #guide .sticky .wrap {
     display: none !important;
   }
@@ -98,6 +93,15 @@
       z-index: 3;
       right: 20%;
       top: 40px;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  #top,
+  #arm {
+    width: 100% !important;
   }
 
 }

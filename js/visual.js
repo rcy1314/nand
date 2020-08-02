@@ -96,7 +96,7 @@ var visual = function(n) {
       'color': '#000'
     })
     $('.filter .pub, .populate .pub').css({
-      'background-color': "#efefef",
+      'background-color': "transparent",
       'border': 'none'
     })
     $('#page input[type=text]').css({

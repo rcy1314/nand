@@ -91,6 +91,7 @@ $(document)
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {
+  id = $(this).attr('id')
   if (tap == 0) {
       // set first click
       tap = new Date().getTime();
