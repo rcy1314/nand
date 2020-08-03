@@ -17,9 +17,14 @@ var image = function(emoji, n, src) {
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
-    if (emoji == true)$('#main .stats .info .queue').html(
-      parseInt($('#main .stats .info .queue').text()) - 1
-    )
+    if (emoji == true && !$(this).hasClass('guide')) {
+      $('#main .stats .info .queue').html(
+        parseInt($('#main .stats .info .queue').text()) - 1
+      )
+      $('#main .stats .info .images').html(
+        parseInt($('#main .stats .info .images').text()) + 1
+      )
+    }
     if ($('#home').css('display') == 'none'){
       if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
@@ -70,9 +75,10 @@ var image = function(emoji, n, src) {
   } else {
     $(document)
       .ready(function() {
-        if (emoji == true)$('#main .stats .info .queue').html(
-          parseInt($('#main .stats .info .queue').text()) - 1
-        )
+        if (emoji == true && !$(this).hasClass('guide'))
+          $('#main .stats .info .queue').html(
+            parseInt($('#main .stats .info .queue').text()) - 1
+          )
       })
     $('#' + n).parents('.item').find('.ago')
         .css('display', 'inline-block')

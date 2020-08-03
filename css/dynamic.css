@@ -360,7 +360,8 @@ svg .border {
   padding: 4px;
 }
 
-.queue {
+.queue,
+.images {
   display: inline-block;
 }
 

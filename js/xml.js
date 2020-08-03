@@ -287,7 +287,6 @@ var xml = function(e, s, n, post) {
     else var posts = pub.length - 1
     var recent = pub[0].dst
     var oldest = pub[pub.length - 2].dst
-    var images = $('#main .center .channel .item .image img.img[src!=""]').length
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
@@ -296,11 +295,11 @@ var xml = function(e, s, n, post) {
       "  <div class='back'>" + menu[plus].id.match(/[^\/]+$/g) + "</div>" +
       "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
       "</div>")
-    content(n, recent, oldest, images, posts)
+    content(n, recent, oldest, posts)
     clearInterval(complete)
     progress(true, 100)
     suggest(id)
     feed()
   })
-  
+
 }
