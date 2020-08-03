@@ -203,6 +203,22 @@ body,
   z-index: 0;
 }
 
+.type {
+  display: inline-block;
+  border-radius: 28px;
+  position: relative;
+  font-size: 10px;
+  height: 28px;
+  width: 28px;
+  left: 5px;
+}
+
+.text {
+  display: inline-block;
+  position: relative;
+  bottom: 3px;
+}
+
 #page input[type=text] {
   border-radius: 4px;
   visibility: hidden;
