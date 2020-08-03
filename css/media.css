@@ -103,6 +103,7 @@
 }
 
 @media screen and (min-width: 1440px) {
+
   #container {
     width: 100% !important;
     position: relative;
@@ -136,6 +137,7 @@
 }
 
 @media screen and (min-width: 2560px) {
+
   #container {
     width: 100% !important;
     position: relative;
@@ -158,4 +160,5 @@
     display: block;
     margin: 0 auto;
   }
+  
 }

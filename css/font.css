@@ -89,11 +89,6 @@
   color: #aaa;
 }
 
-.fa-circle-notch:before {
-  font-family: FontAwesome;
-  content: "\f1ce";
-}
-
 .fa-circle:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f111";
@@ -138,6 +133,11 @@
   z-index: 3;
   right: 0;
   top: 0;
+}
+
+.fa-circle-notch:before {
+  font-family: FontAwesome;
+  content: "\f1ce";
 }
 
 .fa-sticky-note:before {

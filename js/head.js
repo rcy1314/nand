@@ -1597,7 +1597,7 @@ var menu = [{
 	{
 		id: "Reddit/WallpaperDump",
 		cat: "Social",
-		des: "A new subreddit designed specifically for people to share their wallpaper collections.",
+		des: "A new subreddit specifically for people to share their wallpaper collections.",
 		uri: "https://www.reddit.com/r/wallpaperdump/.rss",
 		ext: "https://www.reddit.com/r/Wallpaperdump",
 		img: "Black",

@@ -42,7 +42,7 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
     "  </div>" +
     "  </div>" +
     "  <div class='pub' style='display:none'>" + title + "</div>" +
-    "  <div class='ago ts' style='display:none'>" + dst + "</div>" +
+    "  <div class='ago' style='display:none'>" + dst + "</div>" +
     "  <input class='url' value='" + ref + "'>" +
     "  <input class='share' value='" + share + "'>" +
     "  <input class='source' value='" + src + "'>" +
@@ -56,6 +56,7 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
 }
 
 var feed  = function(n) {
+
   var dupe = []
   for (var i = 0; i <= 9; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
@@ -141,38 +142,39 @@ var list = function(n) {
 }
 
 var home  = function(id) {
+
   var dupe = []
   for (var i = 1; i <= menu.length - 1; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
-    if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
-      $('#main #page .feed').append(
-      "<div class='asset'>" +
-      "<svg>" +
-      "  <defs>" +
-      "    <linearGradient id='gradientOpposite'>" +
-      "      <stop offset='0%' stop-color='#ef4063' />" +
-      "      <stop offset='99%' stop-color='#e557c6' />" +
-      "    </linearGradient>" +
-      "    <linearGradient id='gradientInvert'>" +
-      "      <stop offset='0%' stop-color='#F7797d' />" +
-      "      <stop offset='99%' stop-color='#fbd786' />" +
-      "    </linearGradient>" +
-      "  </defs>" +
-      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-      "</svg>" +
-      "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
-      "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
-      "  search='" + menu[e].cat.toLowerCase() + "'> " +
-      "<a style='left:0;width:100%' ext='" + menu[i].ext + "' " +
-      "  title='" + menu[e].id + "'>" +
-         String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) +
-         '...' +
-      "</a>" +
-      "</div>"
-    )
-  }
+      if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
+        $('#main #page .feed').append(
+          "<div class='asset'>" +
+          "<svg>" +
+          "  <defs>" +
+          "    <linearGradient id='gradientOpposite'>" +
+          "      <stop offset='0%' stop-color='#ef4063' />" +
+          "      <stop offset='99%' stop-color='#e557c6' />" +
+          "    </linearGradient>" +
+          "    <linearGradient id='gradientInvert'>" +
+          "      <stop offset='0%' stop-color='#F7797d' />" +
+          "      <stop offset='99%' stop-color='#fbd786' />" +
+          "    </linearGradient>" +
+          "  </defs>" +
+          "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+          "</svg>" +
+          "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
+          "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
+          "  search='" + menu[e].cat.toLowerCase() + "'> " +
+          "<a style='left:0;width:100%' ext='" + menu[i].ext + "' " +
+          "  title='" + menu[e].id + "'>" +
+            String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) +
+          '...' +
+          "</a>" +
+          "</div>"
+       )
+     }
   }
   visual()
 }
