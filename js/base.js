@@ -47,9 +47,9 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
     "  <input class='share' value='" + share + "'>" +
     "  <input class='source' value='" + src + "'>" +
     "  <div class='tag' style='display:none'>" +
-    "    <div class='ago fa-heart-o'></div>" +
-    "    <div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
-    "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
+    "    <div class='images fa-heart-o'></div>" +
+    "    <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
+    "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
     "  </div>" +
     "</div>"
   )
