@@ -10,10 +10,12 @@ $(document).ready()
   window.location.href = 'maintenance/rip.txt'
 })
 .on('touch click', '#option .fa-home', function(e) {
+  $('#main .result, #main .air, #main .center, #main .content').remove()
   var uri = '?q=' + category.toLowerCase()
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
-  exit(uri)
+  populate(category)
+  air(category)
 })
 .on('touch click', '#visit .fa-sun', function(e) {
   $('#option .fa-circle-notch, #option .fa-circle')
@@ -63,11 +65,9 @@ $(document).ready()
   return false
 })
 .on('touch click', '#option .fa-terminal', function(e) {
-if (!id) id = category
-else id = menu[id].cat
   var array = []
   for (i = 1; i <= menu.length - 1; i++) {
-    if (menu[i].cat == id) array.push(menu.indexOf(menu[i]))
+    if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
   }
   var n = array[Math.floor(Math.random() * array.length)]
   var uri = '?q=&' + menu[n].id.toLowerCase()

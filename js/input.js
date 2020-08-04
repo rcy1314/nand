@@ -346,29 +346,18 @@ $(document).ready()
             '#main #visit #page #front #first .listing .hover')
             .attr('response')) > -1) {
           $('#main .result, #main .air').remove()
-          category = $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
-          populate($('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response'))
-          var uri = '?q=' + $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
+          category = $(this).attr('response')
+          populate($(this).attr('response'))
+          var uri = '?q=' + $(this).attr('response')
             .toLowerCase()
+          air($(this).attr('response'))
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
-          air($('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response'))
           state(uri)
-          document.title = $('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
-            .attr('response')
+          document.title = $(this).attr('response')
           progress(true, 100)
         } else {
-          var uri = '?q=' + $(this).attr('search') + '&' + $(this)
-            .attr('response')
+          var uri = '?q=' + $(this).attr('search') + '&' + $(this).attr('response')
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           exit(uri)
