@@ -271,7 +271,7 @@ var populate = function(n) {
       )
     }
   }
-  air(id)
+  air(cat)
 
 }
 

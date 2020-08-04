@@ -350,7 +350,6 @@ $(document).ready()
           populate($(this).attr('response'))
           var uri = '?q=' + $(this).attr('response')
             .toLowerCase()
-          air($(this).attr('response'))
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           state(uri)

@@ -15,7 +15,6 @@ $(document).ready()
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   populate(category)
-  air(category)
   state(uri)
   progress(true, 100)
 })

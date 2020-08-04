@@ -268,7 +268,7 @@ body,
 .filter a,
 .populate a {
   position: relative;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 .filter .display,
