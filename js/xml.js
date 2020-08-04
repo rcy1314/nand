@@ -79,35 +79,19 @@ var xml = function(e, s, n, post) {
         } else if ($(this).find('dc\\:date, date').text()) {
           var dst = zulu($(this).find('dc\\:date, date').text());
           var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
-        } else {
+        } else if ($(this).find('datetime').text()){
           var ts = parseInt($(this).find('datetime').text());
-
-          // convert unix timestamp to milliseconds
           var ts_ms = ts * 1000;
-
-          // initialize new Date object
           var date_ob = new Date(ts_ms);
-
-          // year as 4 digits (YYYY)
           var year = date_ob.getFullYear();
-
-          // month as 2 digits (MM)
           var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-
-          // date as 2 digits (DD)
           var date = ("0" + date_ob.getDate()).slice(-2);
-
-          // hours as 2 digits (hh)
           var hours = ("0" + date_ob.getHours()).slice(-2);
-
-          // minutes as 2 digits (mm)
           var minutes = ("0" + date_ob.getMinutes()).slice(-2);
-
-          // seconds as 2 digits (ss)
           var seconds = ("0" + date_ob.getSeconds()).slice(-2);
           var dst = zulu(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
           var since = new Date(parseInt($(this).find('datetime').text()))
-          var gen = $(this).find('datetime').text()
+          var gen = parseInt($(this).find('datetime').text()).toString(36)
         }
       }
       if ($('#search input[type=text]').val() != 'Search')
