@@ -55,7 +55,7 @@ var xml = function(e, s, n, post) {
     if ($(xhr).find('entry').length > 0) var channel = "entry"
     else var channel = 'item'
     var quit = $(xhr).find(channel).length - 2
-    if (quit > 50) quit = 50
+    if (quit > 100) quit = 100
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
         var ref = $(this).find('link').attr('href')
