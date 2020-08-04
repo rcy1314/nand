@@ -294,8 +294,7 @@ var xml = function(e, s, n, post) {
       })
 
     if (!id) id = menu.indexOf(menu[n])
-    if (!$.isNumeric(local)) var posts = pub.length - 2
-    else var posts = pub.length - 1
+    var posts = 0
     var recent = pub[0].dst
     var oldest = pub[pub.length - 1].dst
     if (e != 'search') $('#main .center').append(

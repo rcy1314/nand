@@ -53,6 +53,12 @@ body,
   top: 0;
 }
 
+#toggle {
+  position: fixed;
+  padding: 1em;
+  right: 10px;
+  top: 10px;
+}
 #guide {
   position: absolute;
   display: none;
@@ -284,7 +290,7 @@ body,
   margin: 0 auto;
   display: none;
   width: 18em;
-  top: .3em;
+  top: .4em;
 }
 
 input[type=text] {

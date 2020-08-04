@@ -1221,17 +1221,6 @@ var menu = [{
 
 	,
 	{
-		id: "Imgur/Gifs",
-		cat: "Social",
-		des: "Gifs subreddit from Imgur.",
-		uri: "https://api.imgur.com/3/gallery/r/gifs/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
-		ext: "https://imgur.com/r/gifs",
-		img: "Imgur",
-		hash: "iS"
-	}
-
-	,
-	{
 		id: "Reddit/Gifs",
 		cat: "Social",
 		des: "Gifs subreddit Funny, animated GIFs: Your favorite computer file type.",
@@ -1463,17 +1452,6 @@ var menu = [{
 
 	,
 	{
-		id: "Imgur/Pics",
-		cat: "Social",
-		des: "Pics subreddit from Imgur.",
-		uri: "https://api.imgur.com/3/gallery/r/pics/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
-		ext: "https://imgur.com/r/pics",
-		img: "Imgur",
-		hash: "iP"
-	}
-
-	,
-	{
 		id: "Reddit/Pics",
 		cat: "Social",
 		des: "Pics subreddit A place for pictures and photographs.",
@@ -1602,17 +1580,6 @@ var menu = [{
 		ext: "http://boards.4channel.org/tv",
 		img: "4chan",
 		hash: "tV"
-	}
-
-	,
-	{
-		id: "Imgur/Unixporn",
-		cat: "Social",
-		des: "Unixporn subreddit from Imgur.",
-		uri: "https://api.imgur.com/3/gallery/r/unixporn/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
-		ext: "https://imgur.com/r/unixporn",
-		img: "Imgur",
-		hash: "iX"
 	}
 
 	,

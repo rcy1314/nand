@@ -42,6 +42,7 @@
   }
 
   #option {
+    background-color: #f7f7f7 !important;
     width: calc(100% - 20px) !important;
     top: calc(100% - 40px) !important;
     position: fixed !important;

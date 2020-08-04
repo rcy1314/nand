@@ -21,13 +21,12 @@
   display: inline-block;
 }
 
-.fa-git,
+.fa-sun,
 .fa-home,
 .fa-code,
 .fa-globe,
 .fa-circle,
-.fa-terminal,
-.fa-circle-notch {
+.fa-terminal {
   font-size: 20px;
   padding: 8px;
 }
@@ -46,18 +45,14 @@
 }
 
 .fa-globe:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: FontAwesome;
   content: "\f0ac";
+  font-weight: 50;
 }
 
 .fa-home:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: FontAwesome;
   content: "\f015";
-}
-
-.fa-at:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f1fa";
   font-weight: 50;
 }
 
@@ -65,10 +60,6 @@
   font-family: FontAwesome;
   content: "\f185";
   font-weight: 50;
-  position: fixed;
-  padding: 1em;
-  right: 10px;
-  top: 10px;
 }
 
 .fa-angle-double-left:before {
@@ -95,13 +86,15 @@
 }
 
 .fa-terminal:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: FontAwesome;
   content: "\f120";
+  font-weight: 50;
 }
 
 .fa-code:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: FontAwesome;
   content: "\f121";
+  font-weight: 50;
 }
 
 .fa-ellipsis-h:before {
@@ -124,20 +117,10 @@
   content: "\f075";
 }
 
-.fa-times-circle:before {
-  font-family: "Font Awesome 5 Pro";
-  position: absolute;
-  content: "\f057";
-  font-size: 24px;
-  padding: 10px;
-  z-index: 3;
-  right: 0;
-  top: 0;
-}
-
-.fa-circle-notch:before {
+.fa-circle-o:before {
   font-family: FontAwesome;
-  content: "\f1ce";
+  content: "\f10c";
+  font-weight: 50;
 }
 
 .fa-sticky-note:before {
