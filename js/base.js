@@ -1,6 +1,6 @@
 var id
 var img
-var op = 1
+var op = 0
 var tap = 0
 var object = []
 var filter = []
@@ -247,14 +247,26 @@ var populate = function(n) {
       $('#main .result').append(
         "<div class='populate' index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
-        "  <div class='pub'>" +
-        "    <div class='category'>" + menu[i].cat + "</div>" +
-        "    <a class='title' ext='" + menu[i].ext + "'>" +
+        "  <div class='display'>" +
+        "<svg>" +
+        "  <defs>" +
+        "    <linearGradient id='gradientOpposite'>" +
+        "      <stop offset='0%' stop-color='#ef4063' />" +
+        "      <stop offset='99%' stop-color='#e557c6' />" +
+        "    </linearGradient>" +
+        "    <linearGradient id='gradientInvert'>" +
+        "      <stop offset='0%' stop-color='#F7797d' />" +
+        "      <stop offset='99%' stop-color='#fbd786' />" +
+        "    </linearGradient>" +
+        "  </defs>" +
+        "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+        "</svg>" +
+        "    <img class='id' src='" + img + "' " +
+        "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+        "  </div>" +
+        "    <a class='title' ext='" + menu[i].ext + "' title='" + menu[i].id + "'>" +
                menu[i].id.match(/[^\/]+$/g) +
         "    </a>" +
-        "  </div>" +
-        "  <div class='description'>&emsp;" + hilight + "</div>" +
-        "  <img class='id' style='top:10px' src='" + img + "'>" +
         "</div>"
       )
     }
@@ -281,15 +293,27 @@ var air = function(n) {
         "<div class='populate' + index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" +
              menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-        "  <div class='pub'>" +
-        "    <div class='category'>" + menu[i].cat + "</div>" +
-        "    <a class='title' ext='" + menu[i].ext + "'>" +
-               menu[i].id.match(/[^\/]+$/g) +
-        "    </a>" +
-        "  </div>" +
-        "  <div class='description'>&emsp;" + hilight + "</div>" +
-        "  <img class='id' style='top:10px' src='" + img + "'>" +
-        "</div>"
+             "  <div class='display'>" +
+             "<svg>" +
+             "  <defs>" +
+             "    <linearGradient id='gradientOpposite'>" +
+             "      <stop offset='0%' stop-color='#ef4063' />" +
+             "      <stop offset='99%' stop-color='#e557c6' />" +
+             "    </linearGradient>" +
+             "    <linearGradient id='gradientInvert'>" +
+             "      <stop offset='0%' stop-color='#F7797d' />" +
+             "      <stop offset='99%' stop-color='#fbd786' />" +
+             "    </linearGradient>" +
+             "  </defs>" +
+             "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+             "</svg>" +
+             "    <img class='id' src='" + img + "' " +
+             "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+             "  </div>" +
+             "    <a class='title' ext='" + menu[i].ext + "' title='" + menu[i].id + "'>" +
+                    menu[i].id.match(/[^\/]+$/g) +
+             "    </a>" +
+             "</div>"
       )
     }
   }
@@ -359,6 +383,7 @@ var write = function(n) {
       "<div class='result' style='display:none'></div>"
     )
   var tag = menu[n].id.match(/[^\/]+$/g)
+  var img = 'images/png/' + menu[n].img + '.png'
   var hilight = menu[n].des.replace(tag, "<b>" + tag + '</b>')
   if (n != id || n != filter[filter.length - 1] || filter.length >= 1)
     $('#main .result').append(
@@ -367,14 +392,26 @@ var write = function(n) {
       "  response='" + menu[n].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'" +
       "  search='" + menu[n].cat.toLowerCase() +
       "'> " +
-      "  <div class='pub'>" +
-      "    <div class='category'>" + menu[n].cat + "</div>" +
-      "    <a class='title' ext='" + menu[n].ext + "'>" +
+      "  <div class='display'>" +
+      "<svg>" +
+      "  <defs>" +
+      "    <linearGradient id='gradientOpposite'>" +
+      "      <stop offset='0%' stop-color='#ef4063' />" +
+      "      <stop offset='99%' stop-color='#e557c6' />" +
+      "    </linearGradient>" +
+      "    <linearGradient id='gradientInvert'>" +
+      "      <stop offset='0%' stop-color='#F7797d' />" +
+      "      <stop offset='99%' stop-color='#fbd786' />" +
+      "    </linearGradient>" +
+      "  </defs>" +
+      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+      "</svg>" +
+      "    <img class='id' src='" + img + "' " +
+      "      response='" + menu[n].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+      "  </div>" +
+      "    <a class='title' ext='" + menu[n].ext + "' title='" + menu[n].id + "'>" +
              menu[n].id.match(/[^\/]+$/g) +
       "    </a>" +
-      "  </div>" +
-      "  <div class='description'>&emsp;" + hilight + "</div>" +
-      "<img class='id' style='top:10px' src='" + "images/png/" + menu[n].img + ".png'>" +
       "</div>"
     )
 

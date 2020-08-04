@@ -260,17 +260,26 @@ body,
   border-radius: 8px;
   flex-wrap: wrap;
   font-size: 9px;
-  padding: 15px;
+  padding: 12px;
   margin: 3em;
   width: 16em;
+}
+
+.filter a,
+.populate a {
+  position: relative;
+  margin: 10px auto;
+}
+
+.filter .display,
+.populate .display {
+  width: 100%;
 }
 
 .title,
 .category {
   border-radius: 10px;
-  margin: auto 0;
-  padding: 7px;
-  float: left;
+  padding: 10px;
 }
 
 .description {
