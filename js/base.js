@@ -58,7 +58,7 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
 var feed  = function(n) {
 
   var dupe = []
-  for (var i = 0; i <= 9; i++) {
+  for (var i = 0; i <= 20; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
