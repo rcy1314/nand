@@ -95,10 +95,21 @@
 
 @media screen and (max-width: 1024px) {
 
-  #top,
-  #arm {
+  #top {
     width: 100% !important;
   }
+
+  #arm {
+    width: 80% !important;
+  }
+
+  #main .air .populate,
+  #main .result .filter,
+  #main .result .populate {
+    margin: 1em;
+    width: 16%;
+  }
+
 
   #guide .sticky .wrap {
     display: none !important;
@@ -116,17 +127,18 @@
   }
 
   #arm {
-    width: 65% !important;
+    width: 56% !important;
   }
 
   #main .center {
     width: 40% !important;
+    margin-left: 60px !important;
   }
 
   #main .air .populate,
   #main .result .filter,
   #main .result .populate {
-    margin: 2em;
+    margin: 2.6em;
     width: 16%;
   }
 
@@ -150,16 +162,23 @@
   }
 
   #arm {
-    width: 45% !important;
+    width: 41% !important;
   }
 
   #main .center {
     width: 32% !important;
   }
 
+  #main .air .populate,
+  #main .result .filter,
+  #main .result .populate {
+    margin: 3em;
+    width: 16%;
+  }
+
   #main .result,
   #main .air {
-    width: 60% !important;
+    width: 50% !important;
     position: relative;
     display: block;
     margin: 0 auto;
