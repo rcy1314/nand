@@ -168,7 +168,7 @@ var home  = function(id) {
           "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
           "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
-          "<a style='left:0;width:100%' ext='" + menu[i].ext + "' " +
+          "<a style='left:0;width:100%' ext='" + menu[e].ext + "' " +
           "  title='" + menu[e].id + "'>" +
             String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) +
           '...' +
