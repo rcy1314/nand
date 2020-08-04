@@ -160,7 +160,7 @@ $(document)
           $(this).parents('.item').find('.source').val()
         )
         $('#guide').find('.copy:first').remove()
-        image(false,
+        image(false, false, 
           $(this).parents('.item').attr('item'),
           $(this).parents('.item').find('.img').attr('src')
         )

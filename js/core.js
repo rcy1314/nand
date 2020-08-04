@@ -95,8 +95,8 @@ var zulu = function (n) {
         hour12: true
     }
     var dmz = []
-    dmz.push(moment(n))
     var utc = new Date(n)
+    dmz.push(moment(n))
     var gmt = utc.toLocaleString('en-US', opt)
     dmz.push(gmt)
 

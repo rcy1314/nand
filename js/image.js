@@ -1,9 +1,10 @@
-var image = function(emoji, n, src) {
+var image = function(emoji, empty, n, src) {
+
   var k = 5420
   var maximum = 799
   var minimum = 299
 
-  if (src) {
+  if (src.match(/https?\:\/\//g)) {
   $('#' + n).on('error', function() {
     if (emoji == true && !$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
@@ -72,6 +73,9 @@ var image = function(emoji, n, src) {
         !$(this).hasClass('default')) comment(n)
     visual()
   }).attr('src', src).parent().siblings('.fill').html(fill)
+  }
+  else if (empty == true ){
+    $('#' + n).parents('.item').remove()
   } else {
     $(document)
       .ready(function() {
