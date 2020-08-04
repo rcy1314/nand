@@ -1617,17 +1617,6 @@ var menu = [{
 
 	,
 	{
-		id: "Imgur/Wallpapers",
-		cat: "Social",
-		des: "Wallpapers subreddit from Imgur.",
-		uri: "https://api.imgur.com/3/gallery/r/wallpapers/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
-		ext: "https://imgur.com/r/wallpapers",
-		img: "Imgur",
-		hash: "Mp"
-	}
-
-	,
-	{
 		id: "Reddit/Wallpaper",
 		cat: "Social",
 		des: "Wallpaper subreddit with Computer Desktops and Background Images.",
@@ -1635,6 +1624,17 @@ var menu = [{
 		ext: "https://www.reddit.com/r/Wallpaper",
 		img: "Wallpaper",
 		hash: "wP"
+	}
+
+	,
+	{
+		id: "Imgur/Wallpapers",
+		cat: "Social",
+		des: "Wallpapers subreddit from Imgur.",
+		uri: "https://api.imgur.com/3/gallery/r/wallpapers/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
+		ext: "https://imgur.com/r/wallpapers",
+		img: "Imgur",
+		hash: "Mp"
 	}
 
 	,
