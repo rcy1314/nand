@@ -12,7 +12,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, #toggle, ' +
+    $('.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, ' +
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
@@ -35,7 +35,7 @@ var visual = function(n) {
       'color': '#ddd'
     })
     $(
-      '#home a, .description, .fa-times-circle, ' +
+      '#home a, .description, .fa-times-circle, #toggle, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-o, .fa-circle'
     ).css({
