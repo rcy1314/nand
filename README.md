@@ -8,7 +8,7 @@
 * Nearly half XML responses have no images attached.
 * Heroku cors-anywhere first response ~7s.
 * Comments aren't stored.
-* File size ~10MB.
+* File size ~10MB compressed.
 
 ### Invert
 
