@@ -305,7 +305,8 @@ var xml = function(e, s, n, post) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element) $('#main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local)) $('#main .center .channel').append(pub[i].post)
-            image(true, true, pub[i].element, pub[i].src)
+          if (menu[n].id.match(/Imgur/g)) image(true, true, pub[i].element, pub[i].src)
+          else image(true, false, pub[i].element, pub[i].src)
       })
 
     if (!id) id = menu.indexOf(menu[n])
