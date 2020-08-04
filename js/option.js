@@ -16,6 +16,7 @@ $(document).ready()
   else if (contrast == true) uri = uri + '+1'
   populate(category)
   air(category)
+  progress(true, 100)
 })
 .on('touch click', '#visit .fa-sun', function(e) {
   $('#option .fa-circle-notch, #option .fa-circle')
