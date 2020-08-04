@@ -1,6 +1,6 @@
 var id
 var img
-var op = 0
+var op = 1
 var tap = 0
 var object = []
 var filter = []

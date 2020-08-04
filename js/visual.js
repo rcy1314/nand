@@ -124,6 +124,7 @@ var visual = function(n) {
     $('svg circle').css('stroke', 'url(#gradientInvert)')
     $('#container').css('background-color','#f7f7f7')
     $('#handle img').attr('src', 'favicon.ico')
+    $('#favicon').attr('href', 'favicon.ico')
     $('#placeholder').css('color','#666')
     $('.hover').addClass('visual.hover')
   }
