@@ -2825,17 +2825,6 @@ var menu = [{
 
 	,
 	{
-		id: "Privacy Ninja",
-		cat: "Technology",
-		des: "Privacy.com.sg Where Privacy Matters Matter!",
-		uri: "https://www.privacy.com.sg/feed",
-		ext: "https://www.privacy.com.sg",
-		img: "PrivacyNinja",
-		hash: "nP"
-	}
-
-	,
-	{
 		id: "Reclaim the Net",
 		cat: "Technology",
 		des: "Reclaim the Net Restoring Individual Liberty Online. Free Speech. Privacy",
