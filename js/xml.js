@@ -79,7 +79,7 @@ var xml = function(e, s, n, post) {
         } else if ($(this).find('dc\\:date, date').text()) {
           var dst = zulu($(this).find('dc\\:date, date').text());
           var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
-        } else if ($(this).find('datetime').text()){
+        } else {
           var ts = parseInt($(this).find('datetime').text());
           var ts_ms = ts * 1000;
           var date_ob = new Date(ts_ms);
