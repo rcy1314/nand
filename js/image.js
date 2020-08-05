@@ -5,12 +5,6 @@ var image = function(emoji, empty, n, src) {
   var minimum = 299
 
   if (src.match(/https?\:\/\//g)) {
-    $(document)
-      .ready(function() {
-        $('#main .stats .info .queue').html(
-          parseInt($('#main .stats .info .queue').text()) + 1
-        )
-  })
   $('#' + n).on('error', function() {
     if (emoji == true && !$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
