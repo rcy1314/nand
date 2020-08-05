@@ -54,7 +54,7 @@ body,
 }
 
 #toggle {
-  position: fixed;
+  position: absolute;
   padding: 1em;
   right: 10px;
   top: 10px;
