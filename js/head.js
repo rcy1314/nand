@@ -4053,7 +4053,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ignentertainment",
 		ext: "https://www.youtube.com/user/IGNEntertainment",
 		img: "IGN",
-		hash: "iG"
+		hash: "nG"
 	}
 
 	,

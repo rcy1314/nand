@@ -56,8 +56,8 @@ var response = function(passthrough, uri, n, bloat, post) {
       }
     }
     if (bloat == true) {
-      populate(id)
-      air(id)
+      populate(category)
+      air(category)
     }
     progress(true, 100)
   })

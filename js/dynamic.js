@@ -1,7 +1,8 @@
 $(document)
   .ready()
 .on('touch click', '#main .center .quick .feed .asset .id, ' +
-  '#main #page .quick .feed .asset .id', function(e) {
+  '#main #page .quick .feed .asset .id, ' +
+  '#main .filter .display .id, #main .populate .display .id', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
@@ -20,7 +21,8 @@ $(document)
       else if (contrast == true) uri = uri + '+1'
       exit(uri)
     }
-  }, 550)
+  }, 750)
+  e.stopPropagation()
 })
 
 .on('touch click', '#main .center .channel .item', function(e) {
@@ -160,7 +162,7 @@ $(document)
           $(this).parents('.item').find('.source').val()
         )
         $('#guide').find('.copy:first').remove()
-        image(false, false, 
+        image(false, false,
           $(this).parents('.item').attr('item'),
           $(this).parents('.item').find('.img').attr('src')
         )

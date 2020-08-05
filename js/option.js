@@ -15,12 +15,10 @@ $(document).ready()
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   populate(category)
-  air(category)
+  state(uri)
   progress(true, 100)
 })
 .on('touch click', '#visit .fa-sun', function(e) {
-  $('#option .fa-circle-notch, #option .fa-circle')
-    .toggleClass('fa-circle-notch fa-circle')
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '?+1'
     contrast = contrast != true
@@ -37,9 +35,7 @@ $(document).ready()
   state(uri)
   visual()
 })
-.on('touch click', '#option .fa-circle-notch, #option .fa-circle', function(e) {
-  $(this)
-    .toggleClass('fa-circle-notch fa-circle')
+.on('touch click', '#option .fa-sun, #option .fa-circle', function(e) {
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '?+1'
     contrast = contrast != true
