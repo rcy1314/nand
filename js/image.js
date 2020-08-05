@@ -50,6 +50,9 @@ var image = function(emoji, empty, n, src) {
              .parents('.item').find('.pub').css('display','block')
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
+         $('#main .stats .info .queue').html(
+           parseInt($('#main .stats .info .queue').text()) - 1
+         )
          $(this).remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
         $(this).width(120).addClass('default').css('margin','10px')
