@@ -51,7 +51,7 @@ var image = function(emoji, empty, n, src) {
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
          $('#main .stats .info .queue').html(
-           parseInt($('#main .stats .info .queue').text()) - 1
+           parseInt($('#main .stats .info .images').text()) - 1
          )
          $(this).remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
