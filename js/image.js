@@ -5,12 +5,6 @@ var image = function(emoji, empty, n, src) {
   var minimum = 299
 
   if (src.match(/https?\:\/\//g)) {
-    $(document)
-      .ready(function() {
-        $('#main .stats .info .queue').html(
-          parseInt($('#main .stats .info .queue').text()) + 1
-        )
-  })
   $('#' + n).on('error', function() {
     if (emoji == true && !$(this).hasClass('guide'))
       $('#main .stats .info .queue').html(
@@ -56,6 +50,9 @@ var image = function(emoji, empty, n, src) {
              .parents('.item').find('.pub').css('display','block')
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
+         $('#main .stats .info .queue').html(
+           parseInt($('#main .stats .info .images').text()) - 1
+         )
          $(this).remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
         $(this).width(120).addClass('default').css('margin','10px')

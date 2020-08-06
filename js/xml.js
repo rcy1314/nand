@@ -294,9 +294,10 @@ var xml = function(e, s, n, post) {
       })
 
     if (!id) id = menu.indexOf(menu[n])
-    var posts = 0
+    var posts = $('#main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = pub[pub.length - 1].dst
+    $('#main .center .content .queue').html($('#main .center .channel .item .image img[src!=""]').length)
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
