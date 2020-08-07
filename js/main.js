@@ -38,8 +38,15 @@ $(document)
       $('#main #visit #page #front #first').css('visibility','hidden')
       $('#main #visit #page #front .icon').removeClass('search')
   })
-  .on('touch click', '#arm #search #input .icon', function(e) {
-    $('#arm #search #input input[type=text]').focus()
+  .on('touch click', '#arm #search #input .icon, ' +
+      '#arm #search #input .icon .fa-search', function(e) {
+        $(this).addClass('slide')
+    $('#arm #search #input input[type=text]').val('')
+    .css({
+      'caret-color': '#e4e4e4',
+      'padding-left': '30px',
+      'text-align': 'left',
+    }).focus()
   })
   .on('touch click', '#main #visit #page #front .icon', function(e) {
     $('#main #visit #page #front input[type=text]').focus()
