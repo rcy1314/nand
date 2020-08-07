@@ -16,7 +16,7 @@ var visual = function(n) {
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
-      '#top, #arm, #home a, #arm #option, .filter, .populate, .wrap, ' +
+      '#top, #arm, #arm #option, .filter, .populate, .wrap, ' +
       '.header, .type, .item, .comment, .ago, .filter a, .populate a, ' +
       '.pub, .tag, .stats, .suggestions, .combine, .right, .left'
     ).css({

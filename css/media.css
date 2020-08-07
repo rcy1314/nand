@@ -49,9 +49,9 @@
 
   #option {
     width: calc(100% - 20px) !important;
-    top: calc(100% - 40px) !important;
+    top: calc(100% - 50px) !important;
     position: fixed !important;
-    height: 35px !important;
+    height: 50px !important;
     right: 10px;
     z-index: 2;
   }
