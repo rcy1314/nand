@@ -42,7 +42,7 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#fff'
     })
-
+    $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('#top, .description, .comment').css('border-bottom', '1px solid #333')
@@ -109,6 +109,7 @@ var visual = function(n) {
       '.item, #page input[type=text], ' +
       '.right, .left, #page .id'
     ).css('box-shadow', '1px 1px 1px #ddd')
+    $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('#toggle, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')

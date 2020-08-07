@@ -250,19 +250,14 @@ body,
 }
 
 #page .button {
-  background-color: #0078D4;
   display: inline-block;
   visibility: hidden;
   position: relative;
   border-radius: 3px;
-  height: 40px;
+  height: 39px;
   width: 4em;
   left: 10px;
-  top: 15px;
-}
-
-#page .button:hover {
-  background-color: #1683D8 !important;
+  top: 14px;
 }
 
 #page .buttonSearch {
@@ -272,6 +267,22 @@ body,
   position: absolute;
   right: 22px;
   top: 10px;
+}
+
+.buttonOpposite {
+  background-color: #f7426C;
+}
+
+.buttonOpposite:hover {
+  background-color: #f54e75;
+}
+
+.buttonInvert {
+  background-color: #0078D4;
+}
+
+.buttonInvert:hover {
+  background-color: #1683D8;
 }
 
 #front #option {

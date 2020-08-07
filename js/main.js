@@ -46,9 +46,9 @@ $(document)
     $('#main #visit #page #front input[type=text]').focus()
   })
   .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
-    if ($('#main #visit #page #front input[type=text]').val().length > 0){
+    if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
+        $('#main #visit #page #front input[type=text]').val() != 'Search')
       $('#main #visit #page #front').submit()
-    }
     e.preventDefault()
   })
   .on('touch click mouseenter mouseleave',
