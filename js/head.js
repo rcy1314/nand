@@ -9,6 +9,589 @@ var menu = [{
 
 	}
 
+  ,
+	{
+		id: "CBS/Baltimore",
+		cat: "News",
+		des: "CBS WJZ Maryland Baltimore serving the greater area of Maryland.",
+		uri: "https://baltimore.cbslocal.com/feed",
+		ext: "https://baltimore.cbslocal.com",
+		img: "WJZ",
+		hash: "jZ"
+	}
+
+	,
+	{
+		id: "NBC/Baltimore",
+		cat: "News",
+		des: "NBC WBAL Maryland Baltimore Get all the latest Baltimore news, weather and sports.",
+		uri: "https://www.wbaltv.com/topstories-rss",
+		ext: "https://www.wbaltv.com",
+		img: "WBAL",
+		hash: "bL"
+	}
+
+  ,
+	{
+		id: "ABC/Montgomery",
+		cat: "News",
+		des: "ABC WNCF Alabama Montgomery Local late Breaking News.",
+		uri: "https://www.alabamanews.net/feed",
+		ext: "https://www.alabamanews.net",
+		img: "WNCF",
+		hash: "Ma"
+	}
+
+	,
+	{
+		id: "NBC/Phoenix",
+		cat: "News",
+		des: "NBC KPNX Arizona Phoenix Updates and Stories, News, and Weather.",
+		uri: "http://rssfeeds.12news.com/kpnx/local&x=1",
+		ext: "http://www.12news.com",
+		img: "KPNX",
+		hash: "kX"
+	}
+
+	,
+	{
+		id: "NBC/Tucson",
+		cat: "News",
+		des: "NBC KVOA Arizona Tucson’s NBC affiliate, KVOA serves more than a million people.",
+		uri: "https://kvoa.com/feed",
+		ext: "https://kvoa.com",
+		img: "KVOA",
+		hash: "kA"
+	}
+
+	,
+	{
+		id: "ABC7/Chicago",
+		cat: "News",
+		des: "ABC Chicago Breaking News covering Weather, Traffic and Sports.",
+		uri: "https://abc7chicago.com/feed",
+		ext: "https://abc7chicago.com",
+		img: "ABC7",
+		hash: "Ha"
+	}
+
+	,
+	{
+		id: "CBS/Chicago",
+		cat: "News",
+		des: "CBS WBBM Chicago All the Local News and information you need.",
+		uri: "https://chicago.cbslocal.com/feed",
+		ext: "https://chicago.cbslocal.com",
+		img: "WBBM",
+		hash: "wM"
+	}
+
+	,
+	{
+		id: "ABC/Denver",
+		cat: "News",
+		des: "ABC KMGB Colorado Denver for Weather, Local, Headlines, and Sports.",
+		uri: "https://www.thedenverchannel.com/news.rss",
+		ext: "https://www.thedenverchannel.com",
+		img: "KMGB",
+		hash: "Kb"
+	}
+
+	,
+	{
+		id: "CBS/Denver",
+		cat: "News",
+		des: "CBS KCNC Colorado Denver Denver news, Colorado news, Colorado weather forecasts and sports reports.",
+		uri: "https://denver.cbslocal.com/feed",
+		ext: "https://denver.cbslocal.com",
+		img: "KCNC",
+		hash: "cN"
+	}
+
+	,
+	{
+		id: "CBS/Florida",
+		cat: "News",
+		des: "CBS WKMG Florida Orlando Local news, headlines, national news, videos, and more.",
+		uri: "https://www.clickorlando.com/arcio/rss/category/news/?size=10",
+		ext: "https://www.clickorlando.com",
+		img: "WKMG",
+		hash: "mG"
+	}
+
+	,
+	{
+		id: "NBC/Indianapolis",
+		cat: "News",
+		des: "NBC WTHR Indiana Indianapolis your source for Weather, radar, traffic, and sports.",
+		uri: "https://www.wthr.com/feed/public/breaking-news.xml",
+		ext: "https://www.wthr.com",
+		img: "WTHR",
+		hash: "Wr"
+	}
+
+	,
+	{
+		id: "CBS/Indianapolis",
+		cat: "News",
+		des: "CBS WTTV Indiana Indianapolis news, weather, sports, contests, and community events.",
+		uri: "https://cbs4indy.com/feed",
+		ext: "https://cbs4indy.com",
+		img: "CBS4",
+		hash: "Ii"
+	}
+
+	,
+	{
+		id: "CBS/Des Moines",
+		cat: "News",
+		des: "CBS KCCI Iowa Des Moines KCCI news team brings you the best in local coverage and all the top stories from across the state.",
+		uri: "https://www.kcci.com/topstories-rss",
+		ext: "https://www.kcci.com",
+		img: "KCCI",
+		hash: "kI"
+	}
+
+	,
+	{
+		id: "NBC/Des Moines",
+		cat: "News",
+		des: "NBC WHO Iowa branded on-air as WHO-HD, is an NBC - affiliated television station licensed to Des Moines, Iowa.",
+		uri: "https://whotv.com/feed",
+		ext: "https://whotv.com",
+		img: "WHO",
+		hash: "dM"
+	}
+
+	,
+	{
+		id: "ABC/Louisville",
+		cat: "News",
+		des: "ABC WHAS Kentucky Louisville is built on journalistic excellence and a commitment to improve the communities.",
+		uri: "http://rssfeeds.whas11.com/whas/local&x=1",
+		ext: "http://www.whas11.com",
+		img: "WHAS",
+		hash: "wH"
+	}
+
+	,
+	{
+		id: "CBS/Louisville",
+		cat: "News",
+		des: "CBS WLKY Kentucky Louisville Get Louisville news and weather from WLKY.",
+		uri: "https://www.wlky.com/topstories-rss",
+		ext: "https://www.wlky.com",
+		img: "WLKY",
+		hash: "lK"
+	}
+
+	,
+	{
+		id: "ABC/New Orleans",
+		cat: "News",
+		des: "ABC WGNO Louisiana New Orleans for Local and National News and Headlines.",
+		uri: "https://wgno.com/feed",
+		ext: "https://wgno.com",
+		img: "WGNO",
+		hash: "gN"
+	}
+
+  ,
+	{
+		id: "CBS/New Orleans",
+		cat: "News",
+		des: "CBS WWL Louisiana New Orleans dedicated to serving the community through in-depth local news coverage.",
+		uri: "http://rssfeeds.wwltv.com/wwl/local&x=1",
+		ext: "https://www.wwltv.com",
+		img: "WWL",
+		hash: "wL"
+	}
+
+	,
+	{
+		id: "NBC/New Orleans",
+		cat: "News",
+		des: "NBC WDSU Louisiana New Orleans Get New Orleans News and Weather from WDSU News.",
+		uri: "https://www.wdsu.com/topstories-rss",
+		ext: "https://www.wdsu.com",
+		img: "WDSU",
+		hash: "nS"
+	}
+
+	,
+	{
+		id: "NBC/Detroit",
+		cat: "News",
+		des: "NBC WDIV Michigan Detroit Local 4 News, headlines, weather, and sports.",
+		uri: "https://www.clickondetroit.com/arcio/rss/category/news/?size=10",
+		ext: "https://www.clickondetroit.com",
+		img: "WDIV",
+		hash: "iV"
+	}
+
+	,
+	{
+		id: "CBS/Minneapolis",
+		cat: "News",
+		des: "CBS WCCO Minnesota Minneapolis All the local news and information you need – plus other fun stuff – from the team at WCCO.",
+		uri: "https://minnesota.cbslocal.com/feed",
+		ext: "https://minnesota.cbslocal.com",
+		img: "WCCO",
+		hash: "wO"
+	}
+
+	,
+	{
+		id: "NBC/Minneapolis",
+		cat: "News",
+		des: "NBC KARE Minnesota Minneapolis erves up a fresh take for a new day with the latest news and weather.",
+		uri: "http://rssfeeds.kare11.com/kare11/topstories&x=1",
+		ext: "http://www.kare11.com",
+		img: "KARE",
+		hash: "kR"
+	}
+
+	,
+	{
+		id: "NBC/Lincoln",
+		cat: "News",
+		des: "NBC KSNB Nebraska Lincoln affiliated television station licensed to Superior, Nebraska.",
+		uri: "https://www.ksnblocal4.com/rss",
+		ext: "https://www.ksnblocal4.com",
+		img: "KSNB",
+		hash: "kB"
+	}
+
+	,
+	{
+		id: "ABC/Omaha",
+		cat: "News",
+		des: "ABC KETV Nebraska Omaha the latest Omaha News, Sports and Weather.",
+		uri: "https://www.ketv.com/topstories-rss",
+		ext: "https://www.ketv.com",
+		img: "KETV",
+		hash: "kV"
+	}
+
+	,
+	{
+		id: "ABC/Albuquerque",
+		cat: "News",
+		des: "ABC KOAT New Mexico Albuquerque get all the latest Local and National News.",
+		uri: "https://www.koat.com/topstories-rss",
+		ext: "https://www.koat.com",
+		img: "KOAT",
+		hash: "aO"
+	}
+
+	,
+	{
+		id: "CBS/Albuquerque",
+		cat: "News",
+		des: "CBS KRQE New Mexico Albuquerque We are local reporting you can trust, providing the latest news and accurate weather forecasts.",
+		uri: "https://www.krqe.com/feed",
+		ext: "https://www.krqe.com",
+		img: "KRQE",
+		hash: "qE"
+	}
+
+	,
+	{
+		id: "NBC/North Carolina",
+		cat: "News",
+		des: "NBC WCNC North Carolina Charlotte Looking Out For You. It's more than just our slogan; it's a candid commitment to our viewers.",
+		uri: "http://rssfeeds.wcnc.com/wcnc/home&x=1",
+		ext: "https://www.wcnc.com",
+		img: "WCNC",
+		hash: "bW"
+	}
+
+	,
+	{
+		id: "ABC/Oklahoma City",
+		cat: "News",
+		des: "ABC KOCO Oklahoma City reliable Local and National News.",
+		uri: "https://www.koco.com/topstories-rss",
+		ext: "https://www.koco.com",
+		img: "KOCO",
+		hash: "oC"
+	}
+
+	,
+	{
+		id: "NBC/Oklahoma City",
+		cat: "News",
+		des: "NBC KFOR Oklahoma City is an entertainment company based out of New Orleans, Louisiana.",
+		uri: "https://kfor.com/feed",
+		ext: "https://kfor.com",
+		img: "KFOR",
+		hash: "kF"
+	}
+
+	,
+	{
+		id: "NBC/Cincinnati",
+		cat: "News",
+		des: "NBC WLWT Ohio Cincinnati most reliable source for breaking news.",
+		uri: "https://www.wlwt.com/topstories-rss",
+		ext: "https://www.wlwt.com",
+		img: "WLWT",
+		hash: "rW"
+	}
+
+	,
+	{
+		id: "NBC/Cleveland",
+		cat: "News",
+		des: "NBC WKYC Ohio Cleveland NBC affiliate providing the local news, weather, and sports.",
+		uri: "http://rssfeeds.wkyc.com/wkyc/news&x=1",
+		ext: "https://www.wkyc.com",
+		img: "WKYC",
+		hash: "wY"
+	}
+
+	,
+	{
+		id: "NBC/Columbus",
+		cat: "News",
+		des: "NBC WCMH Ohio Columbus Ohio's top rated source for breaking news and live streaming video online.",
+		uri: "https://www.nbc4i.com/feed",
+		ext: "https://www.nbc4i.com",
+		img: "NBC4",
+		hash: "mH"
+	}
+
+	,
+	{
+		id: "NBC/Dayton",
+		cat: "News",
+		des: "NBC WDTN Ohio Dayton television station for the Miami Valley in Ohio.",
+		uri: "https://www.wdtn.com/feed",
+		ext: "https://www.wdtn.com",
+		img: "WDTN",
+		hash: "dT"
+	}
+
+	,
+	{
+		id: "CBS/Portland",
+		cat: "News",
+		des: "CBS KOIN Oregon Portland Portland and Vancouver area news and weather stories to make Oregon and Southwest Washington a better place to live.",
+		uri: "https://www.koin.com/feed",
+		ext: "https://www.koin.com",
+		img: "KOIN",
+		hash: "oI"
+	}
+
+	,
+	{
+		id: "NBC/Portland",
+		cat: "News",
+		des: "NBC KGW Oregon Portland provide breaking news, traffic and sports.",
+		uri: "http://rssfeeds.kgw.com/kgw/local&x=1",
+		ext: "https://www.kgw.com",
+		img: "KGW",
+		hash: "pK"
+	}
+
+	,
+	{
+		id: "CBS/Philadelphia",
+		cat: "News",
+		des: "CBS KYW Pennsylvania Philadelphia Eyewitness News, Sports, Weather, and Traffic.",
+		uri: "https://philadelphia.cbslocal.com/feed",
+		ext: "https://philadelphia.cbslocal.com",
+		img: "KYW",
+		hash: "yW"
+	}
+
+	,
+	{
+		id: "ABC/Philadelphia",
+		cat: "News",
+		des: "ABC WPVI Pennsylvania Philadelphia source for breaking news and live streaming video online.",
+		uri: "https://6abc.com/feed",
+		ext: "https://6abc.com",
+		img: "ABC6",
+		hash: "pV"
+	}
+
+	,
+	{
+		id: "ABC/Pittsburgh",
+		cat: "News",
+		des: "ABC WTAE Pennsylvania Pittsburgh Stay in the know with the latest Pittsburgh news, weather and sports.",
+		uri: "https://www.wtae.com/topstories-rss",
+		ext: "https://www.wtae.com",
+		img: "WTAE",
+		hash: "aE"
+	}
+
+	,
+	{
+		id: "CBS/Pittsburgh",
+		cat: "News",
+		des: "CBS KDKA Pennsylvania Pittsburgh KDKA in Pittsburgh, most often cited as the first radio outlet in the United States.",
+		uri: "https://pittsburgh.cbslocal.com/feed",
+		ext: "https://pittsburgh.cbslocal.com",
+		img: "KDKA",
+		hash: "kD"
+	}
+
+	,
+	{
+		id: "CBS/Myrtle Beach",
+		cat: "News",
+		des: "CBS WBTW South Carolina Myrtle Beach The Latest News and Updates in brought to you by the team at WBTW.",
+		uri: "https://www.wbtw.com/feed",
+		ext: "https://www.wbtw.com",
+		img: "WBTW",
+		hash: "tW"
+	}
+
+	,
+	{
+		id: "ABC/Memphis",
+		cat: "News",
+		des: "ABC WATN Tennessee Memphis We tell Local Memphis News and Weather Stories.",
+		uri: "https://www.localmemphis.com/feed",
+		ext: "https://www.localmemphis.com",
+		img: "WATN",
+		hash: "aN"
+	}
+
+	,
+	{
+		id: "CBS/Memphis",
+		cat: "News",
+		des: "CBS WREG Tennessee Memphis The channel is certified to Memphis, United States.",
+		uri: "https://wreg.com/feed",
+		ext: "https://wreg.com",
+		img: "WREG",
+		hash: "rE"
+	}
+
+	,
+	{
+		id: "ABC/Nashville",
+		cat: "News",
+		des: "ABC WKRN Tennessee Nashville we do what we do to make Nashville & Tennessee a better place to live.",
+		uri: "https://www.wkrn.com/feed",
+		ext: "https://www.wkrn.com",
+		img: "WKRN",
+		hash: "kN"
+	}
+
+	,
+	{
+		id: "CBS/Dallas",
+		cat: "News",
+		des: "CBS KTVT Texas Dallas Breaking News, Weather, Traffic, and Sports.",
+		uri: "https://dfw.cbslocal.com/feed",
+		ext: "https://dfw.cbslocal.com",
+		img: "KTVT",
+		hash: "dB"
+	}
+
+	,
+	{
+		id: "ABC/Houston",
+		cat: "News",
+		des: "ABC KTRK Texas Houston Breaking News from Houston and the surrounding neighborhoods.",
+		uri: "https://abc13.com/feed",
+		ext: "https://abc13.com",
+		img: "KTRK",
+		hash: "kK"
+	}
+
+	,
+	{
+		id: "CBS/Houston",
+		cat: "News",
+		des: "CBS KHOU Texas Houston has been on of the top rated affliates in Texas over two Decades.",
+		uri: "http://rssfeeds.khou.com/khou/local&x=1",
+		ext: "https://www.khou.com/rss",
+		img: "KHOU",
+		hash: "oU"
+	}
+
+	,
+	{
+		id: "NBC/Houston",
+		cat: "News",
+		des: "NBC KPRC Texas Houston breaking news, headlines, weather, and sports.",
+		uri: "https://www.click2houston.com/arcio/rss/tags/local/?size=10",
+		ext: "https://www.click2houston.com",
+		img: "KPRC",
+		hash: "kC"
+	}
+
+	,
+	{
+		id: "ABC/San Antonio",
+		cat: "News",
+		des: "ABC KSAT Texas San Antonio Latest News, Weather and Sports.",
+		uri: "https://www.ksat.com/arcio/rss/category/news/national/?size=10",
+		ext: "https://www.ksat.com",
+		img: "KSAT",
+		hash: "sA"
+	}
+
+	,
+	{
+		id: "ABC/Richmond",
+		cat: "News",
+		des: "ABC WRIC Virginia Richmond Petersburg the go-to source for breaking news, local headlines and weather.",
+		uri: "https://www.wric.com/feed",
+		ext: "https://www.wric.com",
+		img: "ABC8",
+		hash: "rI"
+	}
+
+	,
+	{
+		id: "CBS/Richmond",
+		cat: "News",
+		des: "CBS WTVR Virginia Richmond News, Weather, and Sports from WTVR Richmond.",
+		uri: "https://wtvr.com/feed",
+		ext: "https://wtvr.com",
+		img: "WTVR",
+		hash: "vR"
+	}
+
+	,
+	{
+		id: "NBC/Seattle",
+		cat: "News",
+		des: "NBC KING Washington Seattle licensed to Seattle, Washington, United States and also serving Tacoma.",
+		uri: "http://rssfeeds.king5.com/king5/home&x=1",
+		ext: "https://www.king5.com",
+		img: "KING",
+		hash: "kG"
+	}
+
+	,
+	{
+		id: "CBS/Green Bay",
+		cat: "News",
+		des: "CBS WFRV Wisconsin Green Bay The Latest News and Updates in News brought to you by the team at WFRV.",
+		uri: "https://www.wearegreenbay.com/feed",
+		ext: "https://www.wearegreenbay.com",
+		img: "WFRV",
+		hash: "wV"
+	}
+
+	,
+	{
+		id: "CBS/Milwaukee",
+		cat: "News",
+		des: "CBS WDJT Wisconsin Milwaukee your local source for the Milwaukee news, Milwaukee weather, and Milwaukee sports.",
+		uri: "https://www.cbs58.com/rss",
+		ext: "https://www.cbs58.com",
+		img: "WDJT",
+		hash: "jT"
+	}
+
 	,
 	{
 		id: "ABC/Fresno",
@@ -314,7 +897,7 @@ var menu = [{
 		uri: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
 		ext: "https://bbc.com/news/entertainment_and_arts",
 		img: "BBC",
-		hash: "bC"
+		hash: "iB"
 	}
 
 	,
@@ -457,7 +1040,7 @@ var menu = [{
 		uri: "https://decider.com/feed",
 		ext: "https://decider.com",
 		img: "Decider",
-		hash: "cD"
+		hash: "Dc"
 	}
 
 	,
@@ -644,7 +1227,7 @@ var menu = [{
 		uri: "https://www.indiewire.com/feed",
 		ext: "https://www.indiewire.com",
 		img: "IndieWire",
-		hash: "wI"
+		hash: "Ti"
 	}
 
 	,
@@ -1546,7 +2129,7 @@ var menu = [{
 		uri: "https://www.reddit.com/r/technology/.rss",
 		ext: "https://www.reddit.com/r/Technology",
 		img: "Technology",
-		hash: "tH"
+		hash: "Rt"
 	}
 
 	,
@@ -1799,7 +2382,7 @@ var menu = [{
 		uri: "https://nypost.com/sports/feed",
 		ext: "https://nypost.com/sports",
 		img: "NewYorkPost",
-		hash: "wE"
+		hash: "Nt"
 	}
 
 	,
@@ -2723,7 +3306,7 @@ var menu = [{
 		uri: "https://www.pcworld.com/index.rss",
 		ext: "https://pcworld.com",
 		img: "PCWorld",
-		hash: "wC"
+		hash: "cO"
 	}
 
 	,
@@ -2810,10 +3393,11 @@ var menu = [{
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com",
 		img: "YCombinator",
-		hash: "yC"
+		hash: "yR"
 	}
 
-	, {
+	,
+	{
 		id: "Smashing Magazine",
 		cat: "Technology",
 		des: "Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web design and web development.",
@@ -3249,7 +3833,7 @@ var menu = [{
 		uri: "https://www.boston.com/tag/world-news/feed",
 		ext: "https://www.boston.com/tag/world-news",
 		img: "Boston",
-		hash: "oO"
+		hash: "wB"
 	}
 
 	,
@@ -3448,7 +4032,7 @@ var menu = [{
 		uri: "https://www.ibtimes.sg/rss/world",
 		ext: "https://www.ibtimes.com/world",
 		img: "IBT",
-		hash: "wU"
+		hash: "tD"
 	}
 
 	,
@@ -4152,7 +4736,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nbc",
 		ext: "https://www.youtube.com/user/NBC",
 		img: "NBC",
-		hash: "nB"
+		hash: "nX"
 	}
 
 	,
@@ -4174,7 +4758,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",
 		ext: "https://www.youtube.com/user/2012NBCOlympics",
 		img: "NBC",
-		hash: "tT"
+		hash: "nY"
 	}
 
 	,
@@ -4284,7 +4868,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=surfer",
 		ext: "https://www.youtube.com/user/Surfer",
 		img: "Surfer",
-		hash: "sU"
+		hash: "fr"
 	}
 
 	,
