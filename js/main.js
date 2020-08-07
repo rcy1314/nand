@@ -5,7 +5,7 @@ $(document)
     $('#home, #placeholder').html('<a>' + username + '</a>')
   })
   .on('touch click', 'a', function(e) {
-    if ($(this).attr('id') != 'home' && $(this).parent().attr('id') != 'placeholder')
+    if ($(this).attr('ext'))
     window.open($(this).attr('ext'), '_blank', 'noreferrer noopener')
     e.stopPropagation()
   })
