@@ -22,7 +22,7 @@ $(document)
     }
    })
   .on('touch click', '#main #visit #placeholder a', function(e) {
-      $('#front .icon, #front #option, #main .quick').css('visibility','hidden')
+      $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]').css('visibility','hidden')
       if ($('#main #page #visit #front #first .listing').is(':visible'))
         $('#main #page #visit #front #first').hide()
