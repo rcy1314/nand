@@ -165,7 +165,7 @@ body,
   position: relative;
   margin: 0 auto;
   width: 500px;
-  left: -20px;
+  left: 0;
 }
 
 #handle img {

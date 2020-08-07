@@ -66,6 +66,7 @@
 
   #main #visit #page #front input[type=text],
   #main #visit #page #front #first .listing {
+    padding-left: 0 !important;
     width: 16em !important;
     left: 0 !important;
   }

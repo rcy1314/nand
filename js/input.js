@@ -115,7 +115,7 @@ $(document).ready()
     $(this)
       .css({
         'caret-color': 'transparent',
-        'padding': '0',
+        'padding-left': '40px',
         'text-align': 'center'
       })
       .val('Search')
