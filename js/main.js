@@ -32,7 +32,6 @@ $(document)
         else if (contrast == true) uri = uri + '+1'
         document.title = category
         populate(category)
-        air(category)
         state(uri)
         progress(true, 100)
         e.preventDefault()
