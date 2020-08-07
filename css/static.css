@@ -116,6 +116,7 @@ body,
 }
 
 #home a {
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
   font-family: Billabong;
   text-decoration: none;
   font-display: block;
