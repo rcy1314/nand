@@ -75,12 +75,12 @@ var visual = function(n) {
       'border': '1px solid #ddd',
       'color': '#aaa'
     })
-    $('#main, #arm, #arm #option, .air, .result, .index').css({
+    $('#arm, #arm #option, .air, .result, .index').css({
       'background-color': '#fff',
       'color': '#666'
     })
     $(
-      '#container, #front #option, #visit, #bottom, .hover, .info a, ' +
+      '#main, #container, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
       '.filter, .populate'
