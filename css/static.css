@@ -116,6 +116,7 @@ body,
 }
 
 #home a {
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
   font-family: Billabong;
   text-decoration: none;
   font-display: block;
@@ -164,6 +165,8 @@ body,
   position: relative;
   margin: 0 auto;
   width: 500px;
+  bottom: 50px;
+  left: 0;
 }
 
 #handle img {
@@ -204,10 +207,11 @@ body,
 #front #first .listing {
   position: relative;
   border-radius: 4px;
+  width: 37.5em;
   height: 28em;
-  width: 40em;
-  top: -170px;
+  top: -168px;
   z-index: 0;
+  left: 15px;
 }
 
 .type {
@@ -227,15 +231,58 @@ body,
 }
 
 #page input[type=text] {
+  position: relative;
+  display: inline-block;
   border-radius: 4px;
   visibility: hidden;
   margin-top: 25px;
   font-size: 18px;
+  width: 30em;
+  left: 20px;
 }
 
 #page .icon {
+  font-size: 14px !important;
+  color: #aaa !important;
   visibility: hidden;
+  z-index: 2;
   top: 38px;
+}
+
+#page .button {
+  display: inline-block;
+  visibility: hidden;
+  position: relative;
+  border-radius: 3px;
+  height: 39px;
+  width: 4em;
+  left: 10px;
+  top: 14px;
+}
+
+#page .buttonSearch {
+  font-size: 20px !important;
+  transform: rotate(90deg);
+  color: #fff !important;
+  position: absolute;
+  right: 22px;
+  top: 10px;
+}
+
+.buttonOpposite {
+  background-color: #f7426C;
+}
+
+.buttonOpposite:hover {
+  background-color: #f54e75;
+}
+
+.buttonInvert {
+  background-color: #0078D4;
+}
+
+.buttonInvert:hover {
+  background-color: #1683D8;
 }
 
 #front #option {

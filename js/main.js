@@ -16,11 +16,13 @@ $(document)
     }
     if (!$('#main #visit #page #front input[type=text]').is(':focus')) {
       $('#main #visit #page #front #first').css('visibility','hidden')
+      if ($('#main #visit #page #front input[type=text]').val().length == 0 ||
+          $('#main #visit #page #front input[type=text]').val() == 'Search')
       $('#main #visit #page #front .icon').removeClass('search')
     }
    })
   .on('touch click', '#main #visit #placeholder a', function(e) {
-      $('#front .icon, #front #option, #main .quick').css('visibility','hidden')
+      $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]').css('visibility','hidden')
       if ($('#main #page #visit #front #first .listing').is(':visible'))
         $('#main #page #visit #front #first').hide()
@@ -30,7 +32,6 @@ $(document)
         else if (contrast == true) uri = uri + '+1'
         document.title = category
         populate(category)
-        air(category)
         state(uri)
         progress(true, 100)
         e.preventDefault()
@@ -42,6 +43,12 @@ $(document)
   })
   .on('touch click', '#main #visit #page #front .icon', function(e) {
     $('#main #visit #page #front input[type=text]').focus()
+  })
+  .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
+    if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
+        $('#main #visit #page #front input[type=text]').val() != 'Search')
+      $('#main #visit #page #front').submit()
+    e.preventDefault()
   })
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',
