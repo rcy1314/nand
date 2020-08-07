@@ -310,7 +310,7 @@ $(document).ready()
         exit(uri)
       }
     } else {
-      if ($('#main #visit #page #front input[type=text]').val().length)
+      if ($('#main #visit #page #front input[type=text]').val().length > 0)
       var uri = '?q=' + $('#main #visit #page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
