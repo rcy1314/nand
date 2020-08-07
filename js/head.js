@@ -704,9 +704,9 @@ var menu = [{
 
 	,
 	{
-		id: "OANN Entertainment",
+		id: "OAN Entertainment",
 		cat: "Media",
-		des: "OANN Entertainment One America News Network Entertainment.",
+		des: "OAN Entertainment One America News Network Entertainment.",
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment",
 		img: "OANN",
@@ -2706,9 +2706,9 @@ var menu = [{
 
 	,
 	{
-		id: "OANN Technology",
+		id: "OAN Technology",
 		cat: "Technology",
-		des: "OANN Technology One America News Network Technology.",
+		des: "OAN Technology One America News Network Technology.",
 		uri: "https://www.oann.com/category/tech/feed",
 		ext: "https://www.oann.com/category/tech",
 		img: "OANN",
@@ -3563,9 +3563,9 @@ var menu = [{
 
 	,
 	{
-		id: "OANN World",
+		id: "OAN World",
 		cat: "World",
-		des: "OANN World One America News Network.",
+		des: "OAN World One America News Network.",
 		uri: "https://www.oann.com/feed",
 		ext: "https://www.oann.com",
 		img: "OANN",

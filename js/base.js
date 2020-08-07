@@ -231,16 +231,16 @@ var populate = function(n) {
 
   if (!$.isNumeric(n)) {
     filter = []
-    var cat = n
+    var cat = n.capitalize()
   }
-  else cat = menu[id].cat
+  else var cat = menu[id].cat
   $('#main .air, #main .center, #main .content').remove()
   if ($('#main .result').length < 1)
     $('#main').append(
       "<div class='result' style='display:none'></div>"
     )
   for (var i = 1; i <= menu.length - 1; i++) {
-    if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && cat == menu[i].cat) {
+    if ($.inArray(menu.indexOf(menu[i]), filter) === -1 && cat == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'

@@ -37,7 +37,7 @@ var visual = function(n) {
     $(
       '#home a, .description, .fa-times-circle, #toggle, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
-      '.fa-terminal, .fa-circle-o, .fa-circle'
+      '.fa-terminal, .fa-circle-o, .fa-circle, .buttonSearch'
     ).css({
       'background-color': 'transparent',
       'color': '#fff'
@@ -75,12 +75,12 @@ var visual = function(n) {
       'border': '1px solid #ddd',
       'color': '#aaa'
     })
-    $('#arm, #arm #option, .index').css({
+    $('#main, #arm, #arm #option, .air, .result, .index').css({
       'background-color': '#fff',
       'color': '#666'
     })
     $(
-      '#front #option, #main, #visit, .air, .result, #bottom, .hover, .info a, ' +
+      '#container, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
       '.filter, .populate'
@@ -97,7 +97,7 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('#placeholder a, .filter .pub, .populate .pub').css({
+    $('#placeholder a').css({
       'background-color': "transparent",
       'border': 'none'
     })
@@ -122,7 +122,6 @@ var visual = function(n) {
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.first').css('cssText','fill: #1fa2ff !important')
     $('svg circle').css('stroke', 'url(#gradientInvert)')
-    $('#container').css('background-color','#f7f7f7')
     $('#handle img').attr('src', 'favicon.ico')
     $('#favicon').attr('href', 'favicon.ico')
     $('#placeholder').css('color','#666')

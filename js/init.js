@@ -18,13 +18,13 @@ if (location.href.split('?')[1] &&
         $(document)
           .ready(function() {
             $('#top, .fa-cog').css('visibility','hidden')
-            $('#main #visit #page #front #option, ' +
+            $('#main #visit #page #front #option, #main #visit #page .button, ' +
             '#main #visit #page #front input[type=text], ' +
             '#main #visit #page #front .icon').css('visibility','visible')
         })
       }
       else {
-        response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), false, ts)
+        response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), true, ts)
       }
     visual()
 
@@ -34,7 +34,7 @@ if (location.href.split('?')[1] &&
     contrast = contrast != true
       $(document)
     .ready(function() {
-      $('#main #visit #page #front #option, ' +
+      $('#main #visit #page #front #option, #main #visit #page .button, ' +
       '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
       home()
@@ -47,7 +47,7 @@ if (location.href.split('?')[1] &&
 } else {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front #option, '+
+      $('#main #visit #page #front #option, #main #visit #page .button, ' +
       '#main #visit #page #front input[type=text], ' +
       '#main #visit #page #front .icon').css('visibility','visible')
       home()

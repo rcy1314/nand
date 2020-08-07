@@ -1,9 +1,17 @@
 var response = function(passthrough, uri, n, bloat, post) {
   filter = []
   $('#main .result, #main .air, #main .center, #main .content').remove()
-  $('#main #visit').show()
   if ($('#main .result').length < 1)
     $('#main').append("<div class='result' style='display:none'></div>")
+    if ($.inArray(n.capitalize(), translations) > -1){
+      category = n.capitalize()
+      $(document).ready(function() {
+        populate(n.capitalize())
+      })
+      progress(true, 100)
+      return false
+    }
+  $('#main #visit').show()
   if (n) var n = n.replace(/%20|\-|\_|\s|\+/g, ' ')
   if (uri) uri = uri.replace(/%20|\-|\_|\s|\+/g, ' ')
   else uri = n

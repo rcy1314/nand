@@ -16,6 +16,8 @@ $(document)
     }
     if (!$('#main #visit #page #front input[type=text]').is(':focus')) {
       $('#main #visit #page #front #first').css('visibility','hidden')
+      if ($('#main #visit #page #front input[type=text]').val().length == 0 ||
+          $('#main #visit #page #front input[type=text]').val() == 'Search')
       $('#main #visit #page #front .icon').removeClass('search')
     }
    })
@@ -42,6 +44,12 @@ $(document)
   })
   .on('touch click', '#main #visit #page #front .icon', function(e) {
     $('#main #visit #page #front input[type=text]').focus()
+  })
+  .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
+    if ($('#main #visit #page #front input[type=text]').val().length > 0){
+      $('#main #visit #page #front').submit()
+    }
+    e.preventDefault()
   })
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',

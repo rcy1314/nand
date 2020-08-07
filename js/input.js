@@ -70,7 +70,7 @@ $(document).ready()
             'padding-left': '40px',
             'text-align': 'left',
           }).val('')
-        }, 500)
+        }, 200)
         $('#main #visit #page #front .icon')
           .addClass('search')
       }
@@ -105,12 +105,13 @@ $(document).ready()
             'padding-left': '40px',
             'text-align': 'left',
           })
-        }, 500)
+        }, 200)
         $('#main #visit #page #front .icon')
           .addClass('search')
       }
     }
     if (e.type == 'focusout' || e.type == 'blur')
+    if ($(this).val().length == 0)
     $(this)
       .css({
         'caret-color': 'transparent',
@@ -273,7 +274,7 @@ $(document).ready()
           .replace(/\s/g, '+')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
-        exit(uri)
+        response(true, false, $('#arm #search input[type=text]').val(), true, post)
         state(uri)
       }
     }
@@ -282,7 +283,7 @@ $(document).ready()
     visual()
   })
   .on('submit', '#main #visit #page #front', function(e) {
-    $('#main #visit #page #front .icon').css('visibility','hidden')
+    $('#main #visit #page #front .icon, #main #page #visit .button').css('visibility','hidden')
     if ($('#main #visit #page #front #first .listing .hover').length) {
       if (translations.indexOf($('#main #visit #page #front #first .listing .hover')
           .attr('response')) > -1) {
@@ -315,7 +316,8 @@ $(document).ready()
         .replace(/\s/g, '+')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
-      exit(uri)
+      state(uri)
+       response(true, false, $('#main #visit #page #front input[type=text]').val(), true, post)
     }
     e.preventDefault()
   })
