@@ -2,7 +2,8 @@ $(document)
   .ready(function() {
     $('#input').css('display', 'block')
     $('#main input[type=text]').attr('tabindex', -1).focus()
-    $('#home, #placeholder').html('<a>' + username + '</a>')
+    $('#placeholder').html('<a>' + username + '</a>')
+    $('#home').html(username)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))

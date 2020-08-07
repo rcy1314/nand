@@ -73,7 +73,7 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 
   #main .center {
     left: -95px !important;
@@ -84,112 +84,57 @@
     margin-left: 70px;
   }
 
-  .content {
+  #main .content {
     margin-left: -75px !important;
+  }
+
+  #main #page .quick {
+      width: 100% !important;
+      z-index: 3;
+      left: 0;
   }
 
 }
 
 @media screen and (min-width: 1024px) {
 
+  #container {
+    width: 100% !important;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #arm {
+    width: 912px !important;
+  }
+
+  #main .center {
+    width: 632px !important;
+  }
+
+  #main .air .populate,
+  #main .result .filter,
+  #main .result .populate {
+    width: 156px;
+    margin: 2em;
+  }
+
+  #main .result,
+  #main .air {
+    width: 924px !important;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
   #main #page .quick {
       width: 140%;
       z-index: 3;
       right: 20%;
       top: 40px;
-  }
-
-}
-
-@media screen and (max-width: 1024px) {
-
-  #top {
-    width: 100% !important;
-  }
-
-  #arm {
-    width: 80%;
-  }
-
-  #main .air .populate,
-  #main .result .filter,
-  #main .result .populate {
-    margin: 1em;
-    width: 16%;
-  }
-
-
-  #guide .sticky .wrap {
-    display: none !important;
-  }
-
-}
-
-@media screen and (min-width: 1440px) {
-
-  #container {
-    width: 100% !important;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #arm {
-    width: 56% !important;
-  }
-
-  #main .center {
-    width: 40% !important;
-    margin-left: 60px !important;
-  }
-
-  #main .air .populate,
-  #main .result .filter,
-  #main .result .populate {
-    margin: 2.6em;
-    width: 16%;
-  }
-
-  #main .result,
-  #main .air {
-    width: 60% !important;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-
-}
-
-@media screen and (min-width: 2560px) {
-
-  #container {
-    width: 100% !important;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #arm {
-    width: 41% !important;
-  }
-
-  #main .center {
-    width: 32% !important;
-  }
-
-  #main .air .populate,
-  #main .result .filter,
-  #main .result .populate {
-    margin: 3em;
-    width: 16%;
-  }
-
-  #main .result,
-  #main .air {
-    width: 50% !important;
-    position: relative;
-    display: block;
-    margin: 0 auto;
   }
 
 }

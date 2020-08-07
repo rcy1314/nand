@@ -115,7 +115,7 @@ body,
   top: 4px;
 }
 
-#home a {
+#home {
   font-family: Billabong;
   text-decoration: none;
   font-display: block;
@@ -123,11 +123,11 @@ body,
   font-size: 36px;
   cursor: pointer;
   height: 40px;
-  left: 15px;
+  left: 50px;
   top: 5px;
 }
 
-#home a:active {
+#home:active {
   color: #666 !important;
 }
 
@@ -136,7 +136,7 @@ body,
   background-color: transparent;
   position: absolute;
   display: flex;
-  right: -5px;
+  right: 0px;
   top: 5px;
 }
 
@@ -181,6 +181,7 @@ body,
 }
 
 #placeholder a {
+  background-color: transparent !important;
   width: fit-content !important;
   font-family: Billabong;
   text-decoration: none;

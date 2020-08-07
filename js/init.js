@@ -23,11 +23,8 @@ if (location.href.split('?')[1] &&
             '#main #visit #page #front .icon').css('visibility','visible')
         })
       }
-      else {
+      else
         response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), true, ts)
-      }
-    visual()
-
   }
 } else if (location.href.match('\\?\\+1')){
     op = op != true
@@ -73,5 +70,3 @@ if (location.href.split('?')[1] &&
     else if (uri[1]) response(true, uri[0], uri[1], false, post)
 
 }
-
-visual()

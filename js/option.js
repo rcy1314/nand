@@ -1,5 +1,5 @@
 $(document).ready()
-.on('touch click', '#arm #home a', function(e) {
+.on('touch click', '#arm #home', function(e) {
   window.location.href = window.location.origin
   e.preventDefault()
 })
