@@ -9,6 +9,183 @@ var menu = [{
 
 	}
 
+	,
+	{
+		id: "ABC/Fresno",
+		cat: "News",
+		des: "ABC KFSN Local Fresno and National News.",
+		uri: "https://abc30.com/feed",
+		ext: "https://abc30.com",
+		img: "KFSNTV30",
+		hash: "fA"
+	}
+
+	,
+	{
+		id: "NBC/Fresno",
+		cat: "News",
+		des: "NBC KSEE YourCentralValley in Fresno, California.",
+		uri: "https://yourcentralvalley.com/feed",
+		ext: "https://www.yourcentralvalley.com",
+		img: "KSEE24",
+		hash: "oF"
+	}
+
+	,
+	{
+		id: "CBS/San Antonio",
+		cat: "News",
+		des: "CBS KENS Texas San Antonio television station which works San Antonio, Texas Valley cities.",
+		uri: "http://rssfeeds.kens5.com/kens5/local-news&x=1",
+		ext: "https://www.kens5.com",
+		img: "KENS",
+		hash: "eS"
+	}
+
+	,
+	{
+		id: "NBC/Little Rock",
+		cat: "News",
+		des: "NBC KARK Arkansas Little Rock your source for local weather, news and sports.",
+		uri: "https://www.kark.com/feed",
+		ext: "https://www.kark.com",
+		img: "KARK",
+		hash: "aR"
+	}
+
+	,
+	{
+		id: "CBS/Little Rock",
+		cat: "News",
+		des: "CBS KTHV Arkansas Little Rock the day's news, providing important weather information, or telling a story.",
+		uri: "http://rssfeeds.thv11.com/kthv/local&x=1",
+		ext: "https://www.thv11.com",
+		img: "THV",
+		hash: "hV"
+	}
+
+	,
+	{
+		id: "ABC/West Palm Beach",
+		cat: "News",
+		des: "ABC WPBF Florida West Palm Beach is your source for the latest local headlines and live alerts.",
+		uri: "https://www.wpbf.com/topstories-rss",
+		ext: "https://www.wpbf.com",
+		img: "WPBF",
+		hash: "bF"
+	}
+
+	,
+	{
+		id: "ABC/Des Moines",
+		cat: "News",
+		des: "ABC WOI Iowa Des Moines local Des Moines news & weather stories.",
+		uri: "https://www.weareiowa.com/feed",
+		ext: "https://www.weareiowa.com",
+		img: "WOI",
+		hash: "oW"
+	}
+
+	,
+	{
+		id: "CBS/Detroit",
+		cat: "News",
+		des: "CBS WWJ Michigan Detroit BS owned-and-operated television station licensed to Detroit, Michigan.",
+		uri: "https://detroit.cbslocal.com/feed",
+		ext: "https://detroit.cbslocal.com",
+		img: "WWJ",
+		hash: "wJ"
+	}
+
+	,
+	{
+		id: "ABC/Kansas City",
+		cat: "News",
+		des: "ABC KMBC Missouri Kansas City your source for the latest local headlines and live alerts.",
+		uri: "https://www.kmbc.com/topstories-rss",
+		ext: "https://www.kmbc.com",
+		img: "KMBC",
+		hash: "mK"
+	}
+
+	,
+	{
+		id: "NBC/St Louis",
+		cat: "News",
+		des: "NBC KSDK Missouri St Louis On Your Side has a rich broadcast heritage.",
+		uri: "http://rssfeeds.ksdk.com/ksdk-usworldnews&x=1",
+		ext: "http://www.ksdk.com",
+		img: "KSDK",
+		hash: "sD"
+	}
+
+	,
+	{
+		id: "NBC/Charleston",
+		cat: "News",
+		des: "NBC WCBD South Carolina Charleston Local News and Weather.",
+		uri: "https://www.counton2.com/feed",
+		ext: "https://www.counton2.com",
+		img: "WCBD",
+		hash: "lW"
+	}
+
+	,
+	{
+		id: "CBS/Providence",
+		cat: "News",
+		des: "CBS WPRI Rhode Island Providence Watch the latest CBS News coverage LIVE right here.",
+		uri: "https://www.wpri.com/feed",
+		ext: "https://www.wpri.com",
+		img: "WPRI",
+		hash: "iP"
+	}
+
+	,
+	{
+		id: "ABC/Knoxville",
+		cat: "News",
+		des: "ABC WATE Tennessee Knoxville On Your Side provides the best latest news, weather and sports coverage.",
+		uri: "https://www.wate.com/feed",
+		ext: "https://www.wate.com",
+		img: "WATE",
+		hash: "aW"
+	}
+
+	,
+	{
+		id: "NBC/El Paso",
+		cat: "News",
+		des: "NBC KTSM Texas El Paso known as NewsChannel 9, is an NBC affiliated television station based in El Paso, Texas.",
+		uri: "https://www.ktsm.com/feed",
+		ext: "https://www.ktsm.com",
+		img: "KTSM",
+		hash: "kP"
+	}
+
+	,
+	{
+		id: "NBC/Roanoke",
+		cat: "News",
+		des: "NBC WSLS Virginia Roanoke local TV news, Lynchburg, Va., headlines, national news, videos and more.",
+		uri: "https://www.wsls.com/arcio/rss/category/news/?size=10",
+		ext: "https://www.wsls.com",
+		img: "WSLS",
+		hash: "rL"
+	}
+
+	,
+	{
+		id: "CBS/Spokane",
+		cat: "News",
+		des: "CBS KREM Washington Spokane serving the Inland Northwest.",
+		uri: "http://rssfeeds.krem.com/krem/headlines/local&x=1",
+		ext: "https://www.krem.com",
+		img: "KREM",
+		hash: "mR"
+	}
+
+
   ,
 	{
 		id: "CBS/Baltimore",
@@ -594,28 +771,6 @@ var menu = [{
 
 	,
 	{
-		id: "ABC/Fresno",
-		cat: "News",
-		des: "ABC KFSN Local Fresno and National News.",
-		uri: "https://abc30.com/feed",
-		ext: "https://abc30.com",
-		img: "KFSNTV30",
-		hash: "fA"
-	}
-
-	,
-	{
-		id: "NBC/Fresno",
-		cat: "News",
-		des: "NBC KSEE YourCentralValley in Fresno, California.",
-		uri: "https://yourcentralvalley.com/feed",
-		ext: "https://www.yourcentralvalley.com",
-		img: "KSEE24",
-		hash: "oN"
-	}
-
-	,
-	{
 		id: "CBS/Boston",
 		cat: "News",
 		des: "CBS WBZ Boston Local Breaking News From Boston, Massachusetts.",
@@ -699,7 +854,7 @@ var menu = [{
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com",
 		img: "KPIX5",
-		hash: "cB"
+		hash: "xI"
 	}
 
 	,
@@ -1381,7 +1536,7 @@ var menu = [{
 		uri: "https://www.thesun.co.uk/tvandshowbiz/feed",
 		ext: "https://www.thesun.co.uk/tvandshowbiz",
 		img: "TheSun",
-		hash: "kS"
+		hash: "uK"
 	}
 
 	,
@@ -2283,7 +2438,7 @@ var menu = [{
 		uri: "https://abcnews.go.com/abcnews/sportsheadlines",
 		ext: "https://abcnews.go.com/Sports",
 		img: "ABC",
-		hash: "sS"
+		hash: "cS"
 	}
 
 	,
@@ -3108,7 +3263,7 @@ var menu = [{
 		uri: "https://www.geekwire.com/feed",
 		ext: "https://geekwire.com",
 		img: "GeekWire",
-		hash: "wI"
+		hash: "gI"
 	}
 
 	,
