@@ -165,6 +165,7 @@ body,
   position: relative;
   margin: 0 auto;
   width: 500px;
+  bottom: 50px;
   left: 0;
 }
 
