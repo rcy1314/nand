@@ -105,8 +105,8 @@ var visual = function(n) {
       '.item, #page input[type=text], ' +
       '.right, .left, #page .id'
     ).css('box-shadow', '1px 1px 1px #ddd')
+    $('#toggle, #handle a, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('.filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
-    $('#toggle, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
