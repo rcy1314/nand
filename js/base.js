@@ -228,7 +228,6 @@ var comment = function (n) {
 }
 
 var populate = function(n) {
-
   if (!$.isNumeric(n)) {
     filter = []
     var cat = n.capitalize()
@@ -240,7 +239,7 @@ var populate = function(n) {
       "<div class='result' style='display:none'></div>"
     )
   for (var i = 1; i <= menu.length - 1; i++) {
-    if ($.inArray(menu.indexOf(menu[i]), filter) === -1 && cat == menu[i].cat) {
+    if (id != menu.indexOf(menu[i]) && cat == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
@@ -285,7 +284,7 @@ var air = function(n) {
       "<div class='air' style='display:none'></div>"
     )
   for (var i = 1; i < menu.length - 1; i++) {
-    if ($.inArray(menu.indexOf(menu[i]), filter) == -1 && cat == menu[i].cat) {
+    if (id != menu.indexOf(menu[i]) && cat == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
