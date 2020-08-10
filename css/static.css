@@ -121,9 +121,7 @@ body,
 
 .blur {
   backdrop-filter: blur(10px);
-  -webkit-filter: blur(10px);
   position: absolute;
-  filter: blur(10px);
   z-index: -1;
 }
 
