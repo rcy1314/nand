@@ -3,7 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $(
-      '#container, #arm, #main, #main #option, #visit, #bottom, ' +
+      '#container, #arm, #home, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .suggestions, .combine, .index, a, ' +
       '.result, .air, .wrap, #main #page, #main #page .id, .sticky'
     ).css({
