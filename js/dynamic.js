@@ -87,7 +87,7 @@ $(document)
   $('#main .center .quick .right')
     .show()
 })
-.on('touch click', '#container .checkmark', function (e) {
+.on('touch click', '#guide, #container .checkmark', function (e) {
   $('#main').removeClass('guide')
   $('#guide, #container .checkmark').hide()
 })
