@@ -1,8 +1,8 @@
 $(document).ready()
 .on('touch click', '#arm #home', function(e) {
   var uri = window.location.origin
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
+  if (contrast == true && !location.href.match('\\+1')) uri = uri + '/?+1'
+  else if (contrast == true) uri = uri + '/?+1'
   exit(uri)
   e.preventDefault()
 })
