@@ -44,7 +44,7 @@ var visual = function(n) {
     })
     $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    $('#top, .description, .comment').css('border-bottom', '1px solid #333')
+    $('#top, .description').css('border-bottom', '1px solid #333')
     $('#option .fa-circle-o').toggleClass('fa-circle-o fa-circle')
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
