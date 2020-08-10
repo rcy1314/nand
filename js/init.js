@@ -17,7 +17,7 @@ if (location.href.split('?')[1] &&
       if (!i) {
         $(document)
           .ready(function() {
-            $('#top, .fa-cog').css('visibility','hidden')
+            $('#top, .fa-cog').css('visibility', 'hidden')
             $('#main #visit #page #front #option, #main #visit #page .button, ' +
             '#main #visit #page #front input[type=text], ' +
             '#main #visit #page #front .icon').css('visibility','visible')

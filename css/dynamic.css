@@ -506,9 +506,9 @@ iframe {
 .index  {
   background-color: #fff;
   border-bottom: none !important;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   position: relative;
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 12px;
   height: 2.5em;
   width: 100%;
@@ -540,8 +540,8 @@ iframe {
 
 .hover {
   border-bottom: none !important;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   font-size: 12px;
   height: 2.5em;
   width: 100%;
