@@ -3,6 +3,7 @@ var image = function(emoji, empty, n, src) {
   var k = 5420
   var maximum = 799
   var minimum = 299
+  var small = 120
 
   if (src.match(/https?\:\/\//g)) {
   $('#' + n).on('error', function() {
@@ -30,7 +31,7 @@ var image = function(emoji, empty, n, src) {
       if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
       } else if ($(this).get(0).naturalWidth < maximum) {
-          $(this).width(120).addClass('expand').css('margin','10px')
+          $(this).width(99).addClass('expand').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
@@ -54,13 +55,20 @@ var image = function(emoji, empty, n, src) {
            parseInt($('#main .stats .info .images').text()) - 1
          )
          $(this).remove()
-      } else if ($(this).get(0).naturalHeight < minimum) {
-        $(this).width(120).addClass('default').css('margin','10px')
-          .parents('.item')
-          .find('.classic').css({
-            'display': 'flex',
-            'align-items': 'center'
-          }).find('.header, .tag, .addComment').remove()
+       } else if ($(this).get(0).naturalWidth < small) {
+         $(this).width('100%').addClass('default').css('margin','10px')
+           .parents('.item')
+           .find('.classic').css({
+             'display': 'flex',
+             'align-items': 'center'
+           }).find('.header, .tag, .addComment').remove()
+       } else if ($(this).get(0).naturalHeight < minimum) {
+         $(this).width(120).addClass('default').css('margin','10px')
+           .parents('.item')
+           .find('.classic').css({
+             'display': 'flex',
+             'align-items': 'center'
+           }).find('.header, .tag, .addComment').remove()
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
           .parents('.item').find('.image').width('100%')

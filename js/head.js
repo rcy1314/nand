@@ -9,6 +9,17 @@ var menu = [{
 
 	}
 
+  ,
+	{
+		id: "CBS/Washington D.C.",
+		cat: "News",
+		des: "CBS WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",
+		uri: "http://rssfeeds.wusa9.com/wusa-news&x=1",
+		ext: "https://wusa9.com",
+		img: "WUSA9",
+		hash: "wa"
+	}
+
 	,
 	{
 		id: "ABC/Fresno",
@@ -40,6 +51,28 @@ var menu = [{
 		ext: "https://www.kens5.com",
 		img: "KENS",
 		hash: "eS"
+	}
+
+	,
+	{
+		id: "ABC/Albany",
+		cat: "News",
+		des: "ABC WTEN New York Albany serving New York Capital District as well as Berkshire County, Massachusetts.",
+		uri: "https://www.news10.com/feed",
+		ext: "https://www.news10.com",
+		img: "WTEN",
+		hash: "wt"
+	}
+
+	,
+	{
+		id: "CBS/Raleigh",
+		cat: "News",
+		des: "CBS WNCN North Carolina Raleigh serving the Triangle region, Durham, Chapel Hill, Fayetteville.",
+		uri: "https://www.cbs17.com/feed",
+		ext: "https://www.cbs17.com",
+		img: "WNCN",
+		hash: "ra"
 	}
 
 	,
