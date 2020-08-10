@@ -23,7 +23,10 @@
   display: none;
 }
 
-svg {
+.asset svg,
+.filter svg,
+.display svg,
+.populate svg {
   position: absolute;
   height: 72px;
   width: 72px;

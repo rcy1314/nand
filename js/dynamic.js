@@ -87,9 +87,9 @@ $(document)
   $('#main .center .quick .right')
     .show()
 })
-.on('touch click', '#guide', function (e) {
+.on('touch click', '#container .checkmark', function (e) {
   $('#main').removeClass('guide')
-  $('#guide').hide()
+  $('#guide, #container .checkmark').hide()
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {
@@ -166,7 +166,7 @@ $(document)
           $(this).parents('.item').attr('item'),
           $(this).parents('.item').find('.img').attr('src')
         )
-        $('#guide').show()
+        $('#guide, .checkmark').show()
         $('.sticky').hide().fadeIn(1000)
         if ($('.' + $(this).parents('.item').attr('item')).find('.fab').length)
           $('.sticky')
