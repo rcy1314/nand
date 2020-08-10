@@ -256,6 +256,7 @@ var xml = function(e, s, n, post) {
       })
     })
     $('#main').append(
+      "<div class='translation'></div>" +
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
       "    <div class='feed'></div>" +
@@ -271,6 +272,7 @@ var xml = function(e, s, n, post) {
       "  </div>" +
       "</div>"
     )
+    select()
     if ($.isNumeric(local)) {
       guide(
         i,

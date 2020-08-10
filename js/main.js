@@ -22,6 +22,16 @@ $(document)
       $('#main #visit #page #front .icon').removeClass('search')
     }
    })
+   .on('touch click', '#main .translation .select', function(e) {
+     filter = []
+     category = $(this).attr('response')
+     populate($(this).attr('response'))
+     var uri = '?q=' + $(this).attr('response').toLowerCase()
+     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+     else if (contrast == true) uri = uri + '+1'
+     progress(true, 100)
+     state(uri)
+   })
   .on('touch click', '#main #visit #placeholder a', function(e) {
       $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]').css('visibility','hidden')

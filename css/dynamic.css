@@ -23,13 +23,17 @@
   display: none;
 }
 
-svg {
+.asset svg,
+.filter svg,
+.display svg,
+.populate svg {
   position: absolute;
   height: 72px;
   width: 72px;
 }
 
-svg .border {
+.asset svg .border,
+.display svg .border {
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
   stroke-linecap: round;
@@ -329,9 +333,33 @@ svg .border {
   display: inline-block;
   position: relative;
   text-align: left;
+  left: 10px;
   top: 60px;
 }
 
+
+.translation {
+  display: inline-block;
+  height: fit-content;
+  vertical-align: top;
+  margin-left: -10px;
+  text-align: left;
+  position: sticky;
+  font-size: 10px;
+  padding: 5px;
+  width: 110px;
+  left: -110px;
+  top: 230px;
+}
+
+.select {
+  padding-bottom: 15px;
+  position: relative;
+  padding-top: 15px;
+  font-size: 12px;
+  height: 2.5em;
+  width: 100%;
+}
 
 .content {
   display: inline-block;
@@ -339,6 +367,7 @@ svg .border {
   vertical-align: top;
   text-align: left;
   position: sticky;
+  margin-left: 5px;
   font-size: 10px;
   padding: 15px;
   width: 150px;
@@ -475,7 +504,7 @@ iframe {
   border-bottom: 1px solid #ddd !important;
 }
 
-.index {
+.index  {
   background-color: #fff;
   border-bottom: none !important;
   padding-bottom: 15px;

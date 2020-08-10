@@ -25,9 +25,29 @@ var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
           "    </rect>" +
           "</svg>"
 
+var select = function(n) {
+
+  $.each(translations, function(i) {
+  $('#main .translation')
+    .append(
+      "<div class='select' response='" + translations[i] + "'>" +
+      "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
+      "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+      "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
+      "  </div>" +
+      "</div>"
+    )
+  })
+
+}
+
 var guide = function(n, ref, element, courtesy, title, dst, share, src) {
 
   $('#guide').empty().css('display','flex').append(
+    "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
+    "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
+    "  <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />" +
+    "</svg>" +
     "<div class='blur'></div>" +
     "<div class='sticky'>" +
     "  <div class='fill'></div>" +
@@ -233,7 +253,7 @@ var populate = function(n) {
     var cat = n.capitalize()
   }
   else var cat = menu[id].cat
-  $('#main .air, #main .center, #main .content').remove()
+  $('#main .air, #main .translation, #main .center, #main .content').remove()
   if ($('#main .result').length < 1)
     $('#main').append(
       "<div class='result' style='display:none'></div>"
