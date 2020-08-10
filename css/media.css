@@ -84,6 +84,10 @@
     margin-left: 70px;
   }
 
+  #main .translation {
+    display: none !important;
+  }
+
   #main .content {
     margin-left: -75px !important;
   }
@@ -103,6 +107,10 @@
     position: relative;
     display: block;
     margin: 0 auto;
+  }
+
+  #top {
+    width: 100%;
   }
 
   #arm {

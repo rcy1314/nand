@@ -16,7 +16,7 @@ var visual = function(n) {
       '.fa-angle-double-left, .fa-angle-double-right'
     ).css('color', '#fff')
     $(
-      '#top, #arm, #arm #option, .filter, .populate, .wrap, ' +
+      '#top, #arm, #arm #option, .filter, .populate, .wrap, .translation, ' +
       '.header, .type, .item, .comment, .ago, .filter a, .populate a, ' +
       '.pub, .tag, .stats, .suggestions, .combine, .right, .left'
     ).css({
@@ -35,7 +35,7 @@ var visual = function(n) {
       'color': '#ddd'
     })
     $(
-      '#home a, .description, .fa-times-circle, #toggle, ' +
+      '#home a, .description, .fa-times-circle, #toggle, .type, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-o, .fa-circle, .buttonSearch'
     ).css({
@@ -83,14 +83,14 @@ var visual = function(n) {
       '#main, #container, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
-      '.filter, .populate'
+      '.filter, .populate, .translation'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
       'color': '#666'
     })
     $(
-      '#home, .description, .fa-sun, .title, ' +
+      '#home, .description, .fa-sun, .title, .type, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-circle-o, .fa-circle'
     ).css({
