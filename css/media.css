@@ -75,13 +75,17 @@
 
 @media screen and (max-width: 768px) {
 
-  #main .center {
-    left: -95px !important;
-    width: 50% !important;
+  #top {
+    width: 100% !important;
   }
 
   #option {
     margin-left: 70px;
+  }
+
+  #main .center {
+    left: -95px !important;
+    width: 50% !important;
   }
 
   #main .translation {
@@ -114,7 +118,7 @@
   }
 
   #arm {
-    width: 912px !important;
+    width: 1010px !important;
   }
 
   #main .center {
