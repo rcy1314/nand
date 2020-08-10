@@ -32,7 +32,8 @@
   width: 72px;
 }
 
-svg .border {
+.asset svg .border,
+.display svg .border {
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
   stroke-linecap: round;
