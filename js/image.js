@@ -7,10 +7,6 @@ var image = function(emoji, empty, n, src) {
 
   if (src.match(/https?\:\/\//g)) {
   $('#' + n).on('error', function() {
-    if (emoji == true && !$(this).hasClass('guide'))
-      $('#main .stats .info .queue').html(
-        parseInt($('#main .stats .info .queue').text()) - 1
-      )
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
     $('#' + n).parents('.item').find('.ago')
         .css('display', 'inline-block')
@@ -19,14 +15,9 @@ var image = function(emoji, empty, n, src) {
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
-    if (emoji == true && !$(this).hasClass('guide')) {
-      $('#main .stats .info .queue').html(
-        parseInt($('#main .stats .info .queue').text()) - 1
-      )
       $('#main .stats .info .images').html(
         parseInt($('#main .stats .info .images').text()) + 1
       )
-    }
     if ($('#home').css('display') == 'none'){
       if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
@@ -51,9 +42,6 @@ var image = function(emoji, empty, n, src) {
              .parents('.item').find('.pub').css('display','block')
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
-         $('#main .stats .info .queue').html(
-           parseInt($('#main .stats .info .images').text()) - 1
-         )
          $(this).remove()
        } else if ($(this).get(0).naturalWidth < small) {
          $(this).width('100%').addClass('default').css('margin','10px')
@@ -88,13 +76,6 @@ var image = function(emoji, empty, n, src) {
   else if (empty == true ){
     $('#' + n).parents('.item').remove()
   } else {
-    $(document)
-      .ready(function() {
-        if (emoji == true && !$(this).hasClass('guide'))
-          $('#main .stats .info .queue').html(
-            parseInt($('#main .stats .info .queue').text()) - 1
-          )
-      })
     $('#' + n).parents('.item').find('.ago')
         .css('display', 'inline-block')
         .parents('.item').find('.pub').css('display','block')

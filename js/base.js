@@ -126,8 +126,7 @@ var content  = function(n, recent, oldest, posts) {
       "  <b>Most recent</b> " + recent +"<br>" +
       "  <b>Oldest post </b> " + oldest + "<br>" +
       "  <b>Images</b> <div class='images'>" + images + "</div><br>" +
-      "  <b>Posts</b> " + posts + "<br>" +
-      "  <b>Queue</b> <div class='queue'>" + posts + "</div>" +
+      "  <b>Posts</b> " + posts +
       "</div>"
     )
 
