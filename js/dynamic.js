@@ -273,21 +273,21 @@ function(e) {
   e.stopPropagation()
 })
 .on('touch click', '#main .center #bottom .previous', function(e) {
-  $('#top, #main .center, #main .content').remove()
+  $('#top, #main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit('?q=&' + uri)
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
-  $('#top, #main .center, #main .content').remove()
+  $('#top, #main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, '-')
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   exit('?q=&' + uri)
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
-  $('#main .center, #main .content').remove()
+  $('#main .center, #main .content, #main .translation').remove()
   $('#top').css('visibility','hidden')
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
