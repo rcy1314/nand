@@ -5,7 +5,6 @@ var tap = 0
 var object = []
 var filter = []
 var contrast = false
-var username = 'acktic'
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
@@ -349,8 +348,8 @@ var progress = function(complete, n) {
         function(e) {
           $(this).removeClass('response').width(0)
           $('#main #visit, #arm #search #match').hide()
-          if ($('#main .content').length == 1) $(
-            '#main .stats').css('visibility', 'visible')
+          if ($('#main .translation').length == 1) $(
+            '#main .translation').css('visibility', 'visible')
           if ($('#main .content').length == 1) $(
             '#main .stats').css('visibility', 'visible')
           if ($('#main .suggestions').length == 1) $(

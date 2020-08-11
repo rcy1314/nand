@@ -2,7 +2,7 @@ if (location.href.split('?')[1] &&
   location.href.split('?')[1] != '+1') {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front').css('visibility','hidden')
+      $('#container .toggle, #main #visit #page #front').css('visibility','hidden')
     })
 
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&
@@ -17,10 +17,11 @@ if (location.href.split('?')[1] &&
       if (!i) {
         $(document)
           .ready(function() {
-            $('#top, .fa-cog').css('visibility', 'hidden')
-            $('#main #visit #page #front #option, #main #visit #page .button, ' +
+            $('#top, #container #toggle').css('visibility', 'hidden')
+            $('#main #visit #page .button, ' +
             '#main #visit #page #front input[type=text], ' +
-            '#main #visit #page #front .icon').css('visibility','visible')
+            '#main #visit #page #front .icon')
+            .css('visibility','visible')
         })
       }
       else
@@ -29,11 +30,12 @@ if (location.href.split('?')[1] &&
 } else if (location.href.match('\\?\\+1')){
     op = op != true
     contrast = contrast != true
-      $(document)
+    $(document)
     .ready(function() {
-      $('#main #visit #page #front #option, #main #visit #page .button, ' +
+      $('#main #visit #page .button, ' +
       '#main #visit #page #front input[type=text], ' +
-      '#main #visit #page #front .icon').css('visibility','visible')
+      '#main #visit #page #front .icon')
+      .css('visibility','visible')
       home()
 })
 
@@ -44,16 +46,18 @@ if (location.href.split('?')[1] &&
 } else {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front #option, #main #visit #page .button, ' +
+      $('#main #visit #page .button, ' +
       '#main #visit #page #front input[type=text], ' +
-      '#main #visit #page #front .icon').css('visibility','visible')
+      '#main #visit #page #front .icon')
+      .css('visibility','visible')
       home()
     })
 }
   if (location.search.split('?q=')[1]) {
     $(document)
     .ready(function() {
-      $('#main #visit #page #front, .fa-cog').css('visibility','hidden')
+      $('#main svg').css('visibility','visible')
+      $('#main #visit #page #front, #toggle').css('visibility','hidden')
     })
 
     if (location.href.match('\\+1')){

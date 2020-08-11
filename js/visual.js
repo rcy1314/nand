@@ -64,7 +64,7 @@ var visual = function(n) {
     $(
       '#top, #arm, #container, .wrap, ' +
       '.comment, .channel, #main .center .feed, .header, .tag, ' +
-      '.item, .item .pub, .type, .ago'
+      '.item, .item .pub, .type, .ago, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',

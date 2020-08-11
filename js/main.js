@@ -2,8 +2,6 @@ $(document)
   .ready(function() {
     $('#input').css('display', 'block')
     $('#main input[type=text]').attr('tabindex', -1).focus()
-    $('#placeholder').html('<a>' + username + '</a>')
-    $('#home').html(username)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))
@@ -32,7 +30,7 @@ $(document)
      progress(true, 100)
      state(uri)
    })
-  .on('touch click', '#main #visit #placeholder a', function(e) {
+  .on('touch click', '#main #visit #placeholder', function(e) {
       $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]').css('visibility','hidden')
       if ($('#main #page #visit #front #first .listing').is(':visible'))

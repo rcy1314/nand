@@ -140,6 +140,10 @@
     margin: 0 auto;
   }
 
+  #toggle {
+    right: 2em;
+  }
+
   #top {
     width: 100%;
   }
