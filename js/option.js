@@ -14,6 +14,7 @@ $(document).ready()
 })
 .on('touch click', '#option .fa-home', function(e) {
   $('#main .result, #main .air, #main .center, #main .content').remove()
+  filter = []
   var uri = '?q=' + category.toLowerCase()
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'

@@ -4,7 +4,7 @@ var visual = function(n) {
   if (op == 1) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
-      '.feed, .channel, .suggestions, .combine, .index, a, ' +
+      '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
       '.result, .air, .wrap, #main #page, #main #page .id, .sticky'
     ).css({
       'background-color': '#000',
@@ -18,7 +18,7 @@ var visual = function(n) {
     $(
       '#top, #arm, #arm #option, .filter, .populate, .wrap, .translation, ' +
       '.header, .type, .item, .comment, .ago, .filter a, .populate a, ' +
-      '.pub, .tag, .stats, .suggestions, .combine, .right, .left'
+      '.pub, .tag, .suggestions, .combine, .right, .left'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -42,7 +42,8 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#fff'
     })
-    $('.asset circle, .filter circle, .display circle, .populate circle').css('stroke', 'url(#gradientInvert)')
+    $('.stats svg, .asset circle, .filter circle, .display circle, .populate circle')
+      .css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('#top, .description').css('border-bottom', '1px solid #333')
@@ -105,7 +106,8 @@ var visual = function(n) {
       '.item, #page input[type=text], ' +
       '.right, .left, #page .id'
     ).css('box-shadow', '1px 1px 1px #ddd')
-    $('.asset circle, .filter circle, .display circle, .populate circle').css('stroke', 'url(#gradientInvert)')
+    $('.stats svg, .asset circle, .filter circle, .display circle, .populate circle')
+      .css('stroke', 'url(#gradientInvert)')
     $('#toggle, #handle a, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('.filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
