@@ -42,9 +42,8 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#fff'
     })
-    $('.stats svg, .asset circle, .filter circle, .display circle, .populate circle')
-      .css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
+    $('.asset circle, .display circle').css('stroke', 'url(#gradientOpposite)')
     $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('#top, .description').css('border-bottom', '1px solid #333')
     $('#option .fa-circle-o').toggleClass('fa-circle-o fa-circle')
@@ -106,12 +105,11 @@ var visual = function(n) {
       '.item, #page input[type=text], ' +
       '.right, .left, #page .id'
     ).css('box-shadow', '1px 1px 1px #ddd')
-    $('.stats svg, .asset circle, .filter circle, .display circle, .populate circle')
-      .css('stroke', 'url(#gradientInvert)')
     $('#toggle, #handle a, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('.filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')
+    $('.asset circle, .display circle').css('stroke', 'url(#gradientInvert)')
     $('#top, .description, .index').css('border-bottom', '1px solid #ccc')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
     $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')

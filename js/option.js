@@ -41,11 +41,11 @@ $(document).ready()
 })
 .on('touch click', '#option .fa-sun', function(e) {
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
-    var uri = window.location.href + '?+1'
+    var uri = window.location.href + '+1'
     contrast = contrast != true
     op = op != true
   } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
-    var uri = window.location.href + '?+1'
+    var uri = window.location.href + '+1'
     contrast = contrast != true
     op = op != true
   } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
