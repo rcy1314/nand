@@ -44,12 +44,6 @@
   padding: 5px !important;
 }
 
-.fa-globe:before {
-  font-family: FontAwesome;
-  content: "\f0ac";
-  font-weight: 50;
-}
-
 .fa-home:before {
   font-family: FontAwesome;
   content: "\f015";
@@ -144,11 +138,6 @@
 .fa-bookmark-o:before {
   font-family: FontAwesome;
   content: "\f097";
-}
-
-.fa-git:before {
-  font-family: FontAwesome;
-  content: "\f1d3";
 }
 
 .fa-bookmark:before {

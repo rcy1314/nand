@@ -21,7 +21,7 @@ $(document).ready()
   state(uri)
   progress(true, 100)
 })
-.on('touch click', '#visit .fa-sun', function(e) {
+.on('touch click', '#container .fa-sun', function(e) {
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '?+1'
     contrast = contrast != true
