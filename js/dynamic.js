@@ -273,6 +273,7 @@ function(e) {
   e.stopPropagation()
 })
 .on('touch click', '#main .center #bottom .previous', function(e) {
+  $('#main svg, #main #front').hide()
   $('#main .center, #main .content, #main .translation').remove()
   $('#main #handle svg').css('visibility','hidden')
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
@@ -282,6 +283,7 @@ function(e) {
   state('?q=&' + uri.replace(/\s/g, '-'))
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
+  $('#main svg, #main #front').hide()
   $('#main .center, #main .content, #main .translation').remove()
   $('#main #handle svg').css('visibility','hidden')
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
@@ -292,7 +294,7 @@ function(e) {
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
-  $('#top, #main #handle svg').css('visibility','hidden')
+  $('#main svg, #main #front').hide()
   if (location.href.match('\\?q=')) {
     var uri = location.search.split('?q=')[1].match(/[^&]+/g)
     if (location.href.match('\\+1'))
