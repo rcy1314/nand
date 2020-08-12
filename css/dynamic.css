@@ -23,6 +23,7 @@
   display: none;
 }
 
+.stats svg,
 .asset svg,
 .filter svg,
 .display svg,
@@ -375,20 +376,26 @@
 
 .stats {
   align-items: center;
-  margin-bottom: 2em;
+  margin-bottom: 17px;
+  position: relative;
   text-align: left;
   font-size: 10px;
   height: 120px;
+  padding: 5px;
   display: flex;
-  width: 230px;
+  width: 220px;
 }
 
-.stats .id {
-  border: 1px solid #ccc;
-  padding: 4px;
+.stats svg {
+  fill: transparent;
 }
 
-.queue,
+.stats .asset,
+.stats .info {
+  position: relative;
+  bottom: 19px;
+}
+
 .images {
   display: inline-block;
 }

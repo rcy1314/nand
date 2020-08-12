@@ -30,6 +30,7 @@ var response = function(passthrough, uri, n, bloat, post) {
             write(menu.indexOf(menu[i]))
             var exact = i
             id = i
+            break
       } else if (
           menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(n.toLowerCase()) ||
           menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ').match(uri.toLowerCase())

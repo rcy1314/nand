@@ -2,8 +2,6 @@ $(document)
   .ready(function() {
     $('#input').css('display', 'block')
     $('#main input[type=text]').attr('tabindex', -1).focus()
-    $('#placeholder').html('<a>' + username + '</a>')
-    $('#home').html(username)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))
@@ -32,7 +30,7 @@ $(document)
      progress(true, 100)
      state(uri)
    })
-  .on('touch click', '#main #visit #placeholder a', function(e) {
+  .on('touch click', '#main #visit #placeholder', function(e) {
       $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
       $('#main #visit #page #front input[type=text]').css('visibility','hidden')
       if ($('#main #page #visit #front #first .listing').is(':visible'))
@@ -91,4 +89,16 @@ $(document)
         else if (contrast == true) uri = uri + '+1'
         exit(uri)
       }
+    })
+    .on('touch click', '#main .stats img', function(e) {
+      $(this).parent().find('svg circle').addClass('mask')
+      setTimeout(function() {
+      $('#main .translation, #main .center, #main .stats, #main .suggestions')
+      .remove()
+      var uri = location.search.split('?q=')[1]
+      uri = uri.replace(/\?\+1|\+1/, '')
+      uri = (uri.match(/[^&]+/g))
+      if (!uri[1]) response(true, false, uri[0], true, post)
+      else if (uri[1]) response(true, uri[0], uri[1], false, post)
+    }, 750)
     })

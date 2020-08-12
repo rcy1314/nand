@@ -5,7 +5,6 @@ var tap = 0
 var object = []
 var filter = []
 var contrast = false
-var username = 'acktic'
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
@@ -118,17 +117,31 @@ var content  = function(n, recent, oldest, posts) {
     var images = 0
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
+      "<div class='asset'>" +
+      "<svg>" +
+      "  <defs>" +
+      "    <linearGradient id='gradientOpposite'>" +
+      "      <stop offset='0%' stop-color='#ef4063' />" +
+      "      <stop offset='99%' stop-color='#e557c6' />" +
+      "    </linearGradient>" +
+      "    <linearGradient id='gradientInvert'>" +
+      "      <stop offset='0%' stop-color='#F7797d' />" +
+      "      <stop offset='99%' stop-color='#fbd786' />" +
+      "    </linearGradient>" +
+      "  </defs>" +
+      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
+      "</svg>" +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
+      "</div>" +
       "<div class='info'>" +
       "  <a ext='" + menu[n].ext + "'>" +
         menu[n].id.match(/[^\/]+$/g) +
       "  </a>" +
-      "  <br><br>" +
+      "  <br>" +
       "  <b>Most recent</b> " + recent +"<br>" +
       "  <b>Oldest post </b> " + oldest + "<br>" +
       "  <b>Images</b> <div class='images'>" + images + "</div><br>" +
-      "  <b>Posts</b> " + posts + "<br>" +
-      "  <b>Queue</b> <div class='queue'>" + posts + "</div>" +
+      "  <b>Posts</b> " + posts +
       "</div>"
     )
 
@@ -349,8 +362,8 @@ var progress = function(complete, n) {
         function(e) {
           $(this).removeClass('response').width(0)
           $('#main #visit, #arm #search #match').hide()
-          if ($('#main .content').length == 1) $(
-            '#main .stats').css('visibility', 'visible')
+          if ($('#main .translation').length == 1) $(
+            '#main .translation').css('visibility', 'visible')
           if ($('#main .content').length == 1) $(
             '#main .stats').css('visibility', 'visible')
           if ($('#main .suggestions').length == 1) $(

@@ -8,11 +8,14 @@ input {
 .combine div,
 #placeholder,
 .checkmark,
+#toggle,
 #bottom,
 #option,
 .select,
 .index,
 .hover,
+.right,
+.left,
 #home,
 .item,
 .more,
@@ -189,6 +192,10 @@ body,
   outline: none;
 }
 
+#main #handle svg {
+  visibility: hidden;
+}
+
 #visit {
   justify-content: center;
   align-items: center;
@@ -200,28 +207,18 @@ body,
   position: relative;
   margin: 0 auto;
   width: 500px;
-  bottom: 50px;
+  height: 100px;
   left: 0;
 }
 
-#handle img {
-  position: relative;
-  height: 48px;
-  width: 48px;
-  top: 10px;
-}
-
-#handle img,
 #placeholder {
-  display: inline-block;
-}
-
-#placeholder a {
   background-color: transparent !important;
   width: fit-content !important;
   font-family: Billabong;
   text-decoration: none;
-  display: inline-block;
+  position: relative;
+  display: block;
+  margin: 0 auto;
   font-size: 64;
 }
 

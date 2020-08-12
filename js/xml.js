@@ -79,7 +79,7 @@ var xml = function(e, s, n, post) {
         } else if ($(this).find('dc\\:date, date').text()) {
           var dst = zulu($(this).find('dc\\:date, date').text());
           var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
-        } else {
+        } else if (menu[n].id.match(/Imgur/g)) {
           var ts = parseInt($(this).find('datetime').text());
           var ts_ms = ts * 1000;
           var date_ob = new Date(ts_ms);
@@ -92,6 +92,9 @@ var xml = function(e, s, n, post) {
           var dst = zulu(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
           var since = new Date(parseInt($(this).find('datetime').text()))
           var gen = parseInt($(this).find('datetime').text()).toString(36)
+        } else {
+          var dst = []
+          dst.push('')
         }
       }
       if ($('#search input[type=text]').val() != 'Search')
@@ -256,7 +259,7 @@ var xml = function(e, s, n, post) {
       })
     })
     $('#main').append(
-      "<div class='translation'></div>" +
+      "<div class='translation' style='visibility:hidden'></div>" +
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
       "    <div class='feed'></div>" +
