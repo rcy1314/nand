@@ -3,6 +3,7 @@ if (location.href.split('?')[1] &&
     $(document)
     .ready(function() {
       $('#container .toggle, #main #visit #page #front').css('visibility','hidden')
+      $('#main svg').css('visibility','visible')
     })
 
   if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i) &&

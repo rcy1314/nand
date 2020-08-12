@@ -126,7 +126,7 @@
 .sticky {
   align-items: center;
   position: relative;
-  display: table;
+  display: none;
 }
 
 .sticky .item {
@@ -159,7 +159,7 @@
 
 .sticky .tag {
   position: absolute;
-  width: 300px;
+  width: 320px;
   bottom: 0;
 }
 

@@ -5,7 +5,7 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
-      '.result, .air, .wrap, #main #page, #main #page .id, .sticky'
+      '.result, .air, #main #page, #main #page .id, .blur'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -18,7 +18,7 @@ var visual = function(n) {
     $(
       '#top, #arm, #arm #option, .filter, .populate, .wrap, .translation, ' +
       '.header, .type, .item, .comment, .ago, .filter a, .populate a, ' +
-      '.pub, .tag, .suggestions, .combine, .right, .left'
+      '.pub, .tag, .suggestions, .combine, .right, .left, #guide'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -50,7 +50,6 @@ var visual = function(n) {
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('.listing').addClass('opposite').removeClass('invert')
-    $('.blur').css('background-color','rgba(0, 0, 0, 1)')
     $('.second').css('cssText','fill: #e557c6 !important')
     $('.first').css('cssText','fill: #ef4063 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
@@ -83,7 +82,7 @@ var visual = function(n) {
       '#main, #container, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
-      '.filter, .populate, .translation'
+      '.filter, .populate, .translation, .blur'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
@@ -114,7 +113,6 @@ var visual = function(n) {
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
     $('#option .fa-circle').toggleClass('fa-circle-thin fa-circle')
     $('.index, .hover').addClass('visual').removeClass('contrast')
-    $('.blur').css('background-color','rgba(255, 255, 255, 1)')
     $('.listing').addClass('invert').removeClass('opposite')
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
