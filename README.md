@@ -14,6 +14,8 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/invert.jpg'></p>
 
+<p align='center'><img src='http://acktic.github.io/screenshots/loading.jpg'></p>
+
 <p align='center'><img src='http://acktic.github.io/screenshots/air.jpg'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/wall.jpg'></p>
@@ -23,6 +25,8 @@
 ### Opposite
 
 <p align='center'><img src='http://acktic.github.io/screenshots/opposite.jpg'></p>
+
+<p align='center'><img src='http://acktic.github.io/screenshots/fill.jpg'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
 
