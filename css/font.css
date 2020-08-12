@@ -26,7 +26,8 @@
 .fa-code,
 .fa-globe,
 .fa-circle,
-.fa-terminal {
+.fa-terminal,
+.fa-circle-o {
   font-size: 20px;
   padding: 15px;
 }
@@ -72,11 +73,6 @@
   font-weight: 50;
 }
 
-.fa-circle:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f111";
-}
-
 .fa-terminal:before {
   font-family: FontAwesome;
   content: "\f120";
@@ -107,6 +103,12 @@
 .fa-comment:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f075";
+}
+
+.fa-circle:before {
+  font-family: FontAwesome;
+  content: "\f111";
+  font-weight: 50;
 }
 
 .fa-circle-o:before {
@@ -149,4 +151,8 @@
 .fa-bookmark-o {
   float: right !important;
   margin-right: 5px;
+}
+
+.fa-gratipay {
+  color: lightcoral !important;
 }

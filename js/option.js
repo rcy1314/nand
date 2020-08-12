@@ -39,7 +39,7 @@ $(document).ready()
   state(uri)
   visual()
 })
-.on('touch click', '#option .fa-sun', function(e) {
+.on('touch click', '#option .fa-sun, #option .fa-circle-o, #option .fa-circle', function(e) {
   if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
     var uri = window.location.href + '+1'
     contrast = contrast != true
