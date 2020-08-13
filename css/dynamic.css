@@ -465,7 +465,7 @@ iframe {
 }
 
 .contrast:first-child:not(:hover):before {
-  border-color: transparent transparent #ccc transparent;
+  border-color: transparent transparent #222 transparent;
 }
 
 .index:first-child:before {
@@ -506,10 +506,6 @@ iframe {
   z-index: 0
 }
 
-.index:last-child {
-  border-bottom: 1px solid #ddd !important;
-}
-
 .index  {
   background-color: #fff;
   border-bottom: none !important;
@@ -519,10 +515,6 @@ iframe {
   font-size: 12px;
   height: 2.5em;
   width: 100%;
-}
-
-.hover:last-child {
-  border-bottom: 1px solid #eee !important;
 }
 
 .contrast.hover {
