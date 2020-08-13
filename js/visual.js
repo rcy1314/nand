@@ -51,7 +51,7 @@ var visual = function(n) {
   } else if (op == 0) {
     $('#top, #arm, #container, .wrap, #arm, #arm #option, .air, .result, .index, .item, ' +
       '.comment, .channel, #main .center .feed, .header, .tag, #page input[type=text], ' +
-      '.item, .item .pub, .type, .ago, a'
+      '.item, .item .pub, .type, .ago, .more, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
@@ -60,7 +60,7 @@ var visual = function(n) {
     $('#main, #container, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
-      '.filter, .populate, .translation, .blur, .more, #search input[type=text]'
+      '.filter, .populate, .translation, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
