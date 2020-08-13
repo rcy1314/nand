@@ -171,7 +171,7 @@ var xml = function(e, s, n, post) {
             "</div>"
         else var views = ''
         html =
-          "<div id='yt' class='item' ext='" + ref.trim() + "'>" +
+          "<div id='yt' class='item' item='" + i + "' ext='" + ref.trim() + "'>" +
           "  <div class='header'>" + courtesy +
           "    <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
           "  </div>" +
@@ -301,7 +301,7 @@ var xml = function(e, s, n, post) {
     if (!id) id = menu.indexOf(menu[n])
     var posts = $('#main .center .channel .item').length
     var recent = pub[0].dst
-    var oldest = $('.item:last .ago:last').text()
+    var oldest = pub[$('.item:last').attr('item')].dst
     $('#main .center .content .queue').html($('#main .center .channel .item .image img[src!=""]').length)
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
