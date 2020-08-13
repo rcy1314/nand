@@ -89,7 +89,7 @@ $(document)
 })
 .on('touch click', '#guide, #container .checkmark', function (e) {
   $('#main').removeClass('guide')
-  $('#guide, #container .checkmark').hide()
+  $('#guide, #container .checkmark').fadeOut(250)
 })
 .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
   function (e) {

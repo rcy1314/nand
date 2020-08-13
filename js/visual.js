@@ -5,7 +5,7 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
-      '.result, .air, #main #page, #main #page .id, .blur, #toggle'
+      '.result, .air, #main #page, #main #page .id, .blur'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -21,7 +21,7 @@ var visual = function(n) {
       '.fa-angle-double-left, .fa-angle-double-right, ' +
       '#home a, .description, .fa-times-circle, .type, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, #home, ' +
-      '.fa-terminal, .fa-circle-o, .fa-circle, input[type=text]'
+      '.fa-terminal, input[type=text]'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -68,12 +68,12 @@ var visual = function(n) {
     })
     $('#home, .description, .fa-sun, .title, .type, .fa-search, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
-      '.fa-terminal, .fa-circle-o, .fa-circle'
+      '.fa-terminal, #toggle'
     ).css({
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('#toggle, #handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
+    $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('.item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
