@@ -1,4 +1,7 @@
-var menu = [{
+var menu = [
+
+	{
+
 		id: "Bing",
 		cat: "Search Results",
 		des: "Bing Search Results.",
@@ -9,7 +12,7 @@ var menu = [{
 
 	}
 
-  ,
+	,
 	{
 		id: "CBS/Washington D.C.",
 		cat: "News",
@@ -40,6 +43,370 @@ var menu = [{
 		ext: "https://www.yourcentralvalley.com",
 		img: "KSEE24",
 		hash: "oF"
+	}
+
+	,
+	{
+
+		id: "ABC/Palm Springs",
+		cat: "News",
+		des: "ABC KESQ California Palm Springs The Desert's News Leader.",
+		uri: "https://kesq.com/feed",
+		ext: "https://kesq.com",
+		img: "KESQ",
+		hash: "sQ"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Palm Springs",
+		cat: "News",
+		des: "NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",
+		uri: "https://nbcpalmsprings.com/feed",
+		ext: "https://nbcpalmsprings.com",
+		img: "KMIR",
+		hash: "rK"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Salinas",
+		cat: "News",
+		des: "ABC KSBW California Salinas Action News 8 is your source for the Latest Local Headlines.",
+		uri: "https://www.ksbw.com/topstories-rss",
+		ext: "https://www.ksbw.com",
+		img: "KSBW",
+		hash: "aK"
+
+	}
+
+	,
+	{
+
+		id: "CBS/Fort Myers",
+		cat: "News",
+		des: "CBS WINK Florida Fort Myers one of a handful of TV stations today to have locally-based ownership.",
+		uri: "https://www.winknews.com/feed",
+		ext: "https://www.winknews.com",
+		img: "WINK",
+		hash: "nI"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Jacksonville",
+		cat: "News",
+		des: "ABC WTLV Florida Jacksonville up to the minute Local Late Breaking News.",
+		uri: "http://rssfeeds.firstcoastnews.com/wtlv/firstcoastnews-topstories&x=1",
+		ext: "http://www.firstcoastnews.com",
+		img: "WTLV",
+		hash: "fJ"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Panama City",
+		cat: "News",
+		des: "ABC WMBB Florida Panama City We tell local Panama City news & weather stories.",
+		uri: "https://www.mypanhandle.com/feed",
+		ext: "https://www.mypanhandle.com",
+		img: "WMBB",
+		hash: "fP"
+
+	}
+
+	,
+	{
+
+		id: "CBS/St. Petersburg",
+		cat: "News",
+		des: "CBS WTSP Florida St. Petersburg Tampa Bay and Sarasota area's best news, weather, and traffic.",
+		uri: "http://rssfeeds.wtsp.com/wtsp/home&x=1",
+		ext: "https://www.wtsp.com",
+		img: "WTSP",
+		hash: "tS"
+
+	}
+
+	,
+	{
+
+		id: "CBS/Macon",
+		cat: "News",
+		des: "CBS WMAZ Georgia Macon has been affiliated with the CBS Television Network since the station signed on 60 years ago.",
+		uri: "http://rssfeeds.13wmaz.com/wmaz/headlines/local&x=1",
+		ext: "https://www.13wmaz.com",
+		img: "WMAZ",
+		hash: "wZ"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Savannah",
+		cat: "News",
+		des: "ABC WJCL Georgia Savannah is your source for the Latest Local Headlines.",
+		uri: "https://www.wjcl.com/topstories-rss",
+		ext: "https://www.wjcl.com",
+		img: "WJCL",
+		hash: "jC"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Peoria",
+		cat: "News",
+		des: "ABC WEEK Illinois Peoria All the News for your needs.",
+		uri: "https://week.com/feed",
+		ext: "https://week.com",
+		img: "WEEK",
+		hash: "eK"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Fort Wayne",
+		cat: "News",
+		des: "ABC WPTA Fort Wanye Indiana your source for breaking news and severe weather coverage, plus news, weather and sports.",
+		uri: "https://wpta21.com/feed",
+		ext: "https://wpta21.com/",
+		img: "WPTA",
+		hash: "fY"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Fort Wayne",
+		cat: "News",
+		des: "NBC FWNBC Fort Wayne Indiana Latest News, Sports, Local, and Weather.",
+		uri: "https://fortwaynesnbc.com/feed",
+		ext: "https://fortwaynesnbc.com",
+		img: "FWNBC",
+		hash: "sL",
+
+	}
+
+	,
+	{
+
+		id: "ABC/South Bend",
+		cat: "News",
+		des: "ABC WBND South Bend Indiana the most up to minute Local and National News.",
+		uri: "https://www.abc57.com/rss",
+		ext: "https://www.abc57.com",
+		img: "WBND",
+		hash: "Bn"
+
+	}
+
+	,
+	{
+
+		id: "ABC/South Bend",
+		cat: "News",
+		des: "ABC WSBT South Bend Indiana serving Northern Indiana and the southern portion of Western Michigan.",
+		uri: "https://wsbt.com/news/local.rss",
+		ext: "https://wsbt.com",
+		img: "WSBT",
+		hash: "bN"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Terra Haute",
+		cat: "News",
+		des: "ABC WAWV Indiana Terra Haute a full service television station.",
+		uri: "https://www.mywabashvalley.com/feed",
+		ext: "https://www.mywabashvalley.com",
+		img: "WAWV",
+		hash: "Wf"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Davenport",
+		cat: "News",
+		des: "NBC KWQC Iowa Davenport serving the Quad Cities area of Southeastern Iowa and Northwestern Illinois.",
+		uri: "https://www.kwqc.com/templates/2015_XML_FEED?placement=/content/news",
+		ext: "https://www.kwqc.com",
+		img: "KWQC",
+		hash: "qC"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Wichita",
+		cat: "News",
+		des: "NBC KSNW Kansas Wichita We tell local Kansas news & weather stories. We are Here for You.",
+		uri: "https://www.ksn.com/feed",
+		ext: "https://www.ksn.com",
+		img: "KSNW",
+		hash: "fK"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Flint",
+		cat: "News",
+		des: "ABC WJRT Michigan Flint Weather, News, Sports, and more.",
+		uri: "https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",
+		ext: "https://www.abc12.com",
+		img: "WJRT",
+		hash: "jR"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Grand Rapids",
+		cat: "News",
+		des: "NBC WOOD Michigan Grand Rapids we do what we do to make Grand Rapids & the rest of Michigan a better place to live.",
+		uri: "https://www.woodtv.com/feed",
+		ext: "https://www.woodtv.com",
+		img: "WOOD",
+		hash: "oD"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Grand Rapids",
+		cat: "News",
+		des: "ABC WZZM Michigan Grand Rapids Late Breaking News and Headlines.",
+		uri: "http://rssfeeds.wzzm13.com/wzzm13-news&x=1",
+		ext: "http://www.wzzm13.com",
+		img: "WZZM",
+		hash: "zM"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Lansing",
+		cat: "News",
+		des: "ABC WLNS Michigan Lansing driving force behind Mid-Michigan's businesses, lifestyle and culture.",
+		uri: "https://www.wlns.com/feed",
+		ext: "https://www.wlns.com",
+		img: "WLNS",
+		hash: "fU"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Albany",
+		cat: "News",
+		des: "ABC WTEN New York Albany serving New York Capital District as well as Berkshire County, Massachusetts.",
+		uri: "https://www.news10.com/feed",
+		ext: "https://www.news10.com",
+		img: "WTEN",
+		hash: "An"
+
+	}
+
+	,
+	{
+
+		id: "CBS/Buffalo",
+		cat: "News",
+		des: "CBS WIVB New York Buffalo The station is owned by Nexstar Media Group, as part of a duopoly with CW affiliate WNLO.",
+		uri: "https://www.wivb.com/feed",
+		ext: "https://www.wivb.com",
+		img: "WIVB",
+		hash: "bU"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Buffalo",
+		cat: "News",
+		des: "NBC WGRZ New York Buffalo for breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
+		uri: "http://rssfeeds.wgrz.com/wgrz/headlines/top-stories&x=1",
+		ext: "http://www.wgrz.com",
+		img: "WGRZ",
+		hash: "gr"
+
+	}
+
+	,
+	{
+
+		id: "CBS/Rochester",
+		cat: "News",
+		des: "CBS WROC New York Rochester CBS - affiliated television station licensed to Rochester, New York.",
+		uri: "https://www.rochesterfirst.com/feed",
+		ext: "https://www.rochesterfirst.com",
+		img: "WROC",
+		hash: "rC"
+
+	}
+
+	,
+	{
+
+		id: "NBC/Rapid City",
+		cat: "News",
+		des: "NBC KNBN South Dakota Rapid City Local news from NewsCenter1.",
+		uri: "https://www.newscenter1.tv/feed",
+		ext: "https://www.newscenter1.tv",
+		img: "KNBN",
+		hash: "dR"
+
+	}
+
+	,
+	{
+
+		id: "CBS/Sioux Falls",
+		cat: "News",
+		des: "CBS KELO South Dakota Sioux Falls News, Weather, Sports for Sioux Falls, South Dakota, northwest Iowa and southwest Minnesota.",
+		uri: "https://www.keloland.com/feed",
+		ext: "https://www.keloland.com",
+		img: "KELO",
+		hash: "lO"
+
+	}
+
+	,
+	{
+
+		id: "ABC/Madison",
+		cat: "News",
+		des: "ABC WKOW Wisconsin Madison the first TV station in Madison, Wisconsin, established June 30, 1953.",
+		uri: "https://wkow.com/feed",
+		ext: "https://wkow.com",
+		img: "WKOW",
+		hash: "kO"
+
 	}
 
 	,
@@ -1844,7 +2211,7 @@ var menu = [{
 		uri: "https://www.reddit.com/r/commandline/.rss",
 		ext: "https://www.reddit.com/r/Commandline",
 		img: "CommandLine",
-		hash: "mL"
+		hash: "Ml"
 	}
 
 	,
@@ -2262,7 +2629,7 @@ var menu = [{
 		uri: "https://www.reddit.com/r/software/.rss",
 		ext: "https://www.reddit.com/r/Software",
 		img: "Software",
-		hash: "wA"
+		hash: "Wa"
 	}
 
 	,
@@ -2416,7 +2783,7 @@ var menu = [{
 		uri: "https://www.reddit.com/r/wallpapers/.rss",
 		ext: "https://www.reddit.com/r/Wallpapers",
 		img: "Orange",
-		hash: "sW"
+		hash: "Ws"
 	}
 
 	,
@@ -2680,7 +3047,7 @@ var menu = [{
 		uri: "http://rss.cnn.com/rss/edition_sport.rss",
 		ext: "https://cnn.com/sport",
 		img: "CNN",
-		hash: "nN"
+		hash: "Nn"
 	}
 
 	,
@@ -2735,7 +3102,7 @@ var menu = [{
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl",
 		ext: "https://www.foxsports.com/nfl",
 		img: "FoxSports",
-		hash: "fN"
+		hash: "Fn"
 	}
 
 	,
@@ -3571,7 +3938,7 @@ var menu = [{
 		uri: "https://slate.com/feeds/technology.rss",
 		ext: "https://slate.com",
 		img: "Slate",
-		hash: "eL"
+		hash: "Le"
 	}
 
 	, {
@@ -3603,7 +3970,7 @@ var menu = [{
 		uri: "https://www.ibtimes.sg/rss/technology",
 		ext: "https://www.ibtimes.com/technology",
 		img: "IBT",
-		hash: "bB"
+		hash: "In"
 	}
 
 	,
@@ -4198,7 +4565,7 @@ var menu = [{
 		uri: "http://feeds.feedburner.com/breitbart",
 		ext: "https://www.breitbart.com",
 		img: "Breitbart",
-		hash: "bB"
+		hash: "Bb"
 	}
 
 	,
@@ -4385,7 +4752,7 @@ var menu = [{
 		uri: "https://www.rt.com/rss",
 		ext: "https://rt.com",
 		img: "RT",
-		hash: "tL"
+		hash: "wo"
 	}
 
 	,
@@ -4682,7 +5049,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bloomberg",
 		ext: "https://www.youtube.com/user/Bloomberg",
 		img: "Bloomberg",
-		hash: "bB"
+		hash: "bg"
 	}
 
 	,
@@ -4770,7 +5137,7 @@ var menu = [{
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DigitalTrends",
 		ext: "https://www.youtube.com/user/DigitalTrends",
 		img: "DigitalTrends",
-		hash: "bT"
+		hash: "Dt"
 	}
 
 	,
