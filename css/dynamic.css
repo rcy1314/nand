@@ -83,6 +83,21 @@
   display: block;
 }
 
+.detail {
+  position: relative;
+  padding: 0 !important;
+  z-index: 3;
+}
+
+.detail svg {
+  stroke-linecap: round;
+  position: absolute;
+  stroke-width: 1;
+  height: 60px;
+  width: 60px;
+  fill: none;
+}
+
 .id {
   border-radius: 36px;
   position: relative;
@@ -507,14 +522,15 @@ iframe {
 }
 
 .index  {
-  background-color: #fff;
   border-bottom: none !important;
+  width: calc(100% - 10px);
+  background-color: #fff;
   padding-bottom: 10px;
   position: relative;
-  padding-top: 10px;
+  padding-left: 7px;
+  padding-top: 12px;
   font-size: 12px;
   height: 2.5em;
-  width: 100%;
 }
 
 .contrast.hover {
@@ -539,9 +555,9 @@ iframe {
 
 .hover {
   border-bottom: none !important;
+  width: calc(100% - 10px);
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 12px;
   font-size: 12px;
   height: 2.5em;
-  width: 100%;
 }

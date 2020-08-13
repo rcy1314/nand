@@ -83,7 +83,22 @@ $(document).ready()
         $.each(translations, function(i) {
           $('#main #visit #page #front #first .listing')
             .append(
-              "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
+              "<div class='detail'>" +
+              "<svg response='" + translations[i].toLowerCase() + "'>" +
+              "  <defs>" +
+              "    <linearGradient id='gradientOpposite'>" +
+              "      <stop offset='0%' stop-color='#ef4063' />" +
+              "      <stop offset='99%' stop-color='#e557c6' />" +
+              "    </linearGradient>" +
+              "    <linearGradient id='gradientInvert'>" +
+              "      <stop offset='0%' stop-color='#F7797d' />" +
+              "      <stop offset='99%' stop-color='#fbd786' />" +
+              "    </linearGradient>" +
+              "  </defs>" +
+              "  <circle cx='26' cy='26' r='18'></circle>" +
+              "</svg>" +
+              "  </div>" +
+              "<div class='index' tabIndex='-1'>" +
               "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
               "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
@@ -152,6 +167,21 @@ $(document).ready()
       $.each(translations, function(i) {
         $('#arm #search #match .listing')
           .append(
+            "<div class='detail'>" +
+            "<svg response='" + translations[i].toLowerCase() + "'>" +
+            "  <defs>" +
+            "    <linearGradient id='gradientOpposite'>" +
+            "      <stop offset='0%' stop-color='#ef4063' />" +
+            "      <stop offset='99%' stop-color='#e557c6' />" +
+            "    </linearGradient>" +
+            "    <linearGradient id='gradientInvert'>" +
+            "      <stop offset='0%' stop-color='#F7797d' />" +
+            "      <stop offset='99%' stop-color='#fbd786' />" +
+            "    </linearGradient>" +
+            "  </defs>" +
+            "  <circle cx='26' cy='26' r='18'></circle>" +
+            "</svg>" +
+            "  </div>" +
             "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
             "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +

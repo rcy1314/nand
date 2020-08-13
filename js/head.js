@@ -2221,7 +2221,7 @@ var menu = [
 		des: "Computers subreddit covers computers, questions, tips, and suggestions.",
 		uri: "https://www.reddit.com/r/computers/.rss",
 		ext: "https://www.reddit.com/r/Computers",
-		img: "Black",
+		img: "Reddit",
 		hash: "pC"
 	}
 
@@ -2265,7 +2265,7 @@ var menu = [
 		des: "Design subreddit with the art in all mediums.",
 		uri: "https://www.reddit.com/r/Design/.rss",
 		ext: "https://www.reddit.com/r/Design",
-		img: "Black",
+		img: "Reddit",
 		hash: "iD"
 	}
 
@@ -2397,7 +2397,7 @@ var menu = [
 		des: "Goddesses subreddit Images of Actresses, Models and all manner of female eye-candy.",
 		uri: "https://www.reddit.com/r/goddesses/.rss",
 		ext: "https://www.reddit.com/r/Goddesses",
-		img: "Black",
+		img: "Reddit",
 		hash: "gO"
 	}
 
@@ -2507,7 +2507,7 @@ var menu = [
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
 		uri: "https://www.reddit.com/r/LosAngeles/.rss",
 		ext: "https://www.reddit.com/r/LosAngeles",
-		img: "Black",
+		img: "Reddit",
 		hash: "ge"
 	}
 
@@ -2595,7 +2595,7 @@ var menu = [
 		des: "Pics subreddit A place for pictures and photographs.",
 		uri: "https://www.reddit.com/r/pics/.rss",
 		ext: "https://www.reddit.com/r/Pics",
-		img: "Black",
+		img: "Reddit",
 		hash: "cL"
 	}
 
@@ -2672,7 +2672,7 @@ var menu = [
 		des: "Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",
 		uri: "https://www.reddit.com/r/tech/.rss",
 		ext: "https://www.reddit.com/r/Tech",
-		img: "Black",
+		img: "Reddit",
 		hash: "hT"
 	}
 
@@ -2793,7 +2793,7 @@ var menu = [
 		des: "A new subreddit specifically for people to share their wallpaper collections.",
 		uri: "https://www.reddit.com/r/wallpaperdump/.rss",
 		ext: "https://www.reddit.com/r/Wallpaperdump",
-		img: "Black",
+		img: "Reddit",
 		hash: "Wd"
 	}
 
@@ -2826,7 +2826,7 @@ var menu = [
 		des: "World News subreddit with latest headlines from around the world.",
 		uri: "https://www.reddit.com/r/worldnews/.rss",
 		ext: "https://www.reddit.com/r/WorldNews",
-		img: "Black",
+		img: "Reddit",
 		hash: "rN"
 	}
 

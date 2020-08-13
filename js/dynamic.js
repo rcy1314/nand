@@ -1,11 +1,21 @@
 $(document)
   .ready()
-.on('touch click', '#main .center .quick .feed .asset .id, ' +
+.on('touch click', '.detail svg, #main .center .quick .feed .asset .id, ' +
   '#main #page .quick .feed .asset .id, ' +
   '#main .filter .display .id, #main .populate .display .id', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
+    $.each(translations, function(i) {
+      if (translations[i].toLowerCase() == $this.attr('response')){
+      var uri = '?q=&' + $this.attr('response')
+      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+      else if (contrast == true) uri = uri + '+1'
+      exit(uri)
+      return false
+      }
+    })
+    return false
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
       if (location.href.match('\\+1'))

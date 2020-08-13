@@ -32,8 +32,8 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#fff'
     })
+    $('.detail svg, .asset circle, .display circle').css('stroke', 'url(#gradientOpposite)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    $('.asset circle, .display circle').css('stroke', 'url(#gradientOpposite)')
     $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
@@ -76,11 +76,10 @@ var visual = function(n) {
     $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('.item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
+    $('.detail circle, .asset circle, .display circle').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')
-    $('.asset circle, .display circle').css('stroke', 'url(#gradientInvert)')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
-    //$('#option .fa-circle').toggleClass('fa-circle-o fa-circle')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')
@@ -91,5 +90,6 @@ var visual = function(n) {
     $('#handle img').attr('src', 'favicon.ico')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
+    //$('.detail svg').hide()
   }
 }
