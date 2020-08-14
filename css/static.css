@@ -266,14 +266,24 @@ body,
 }
 
 #page input[type=text] {
-  position: relative;
   display: inline-block;
+  position: relative;
   border-radius: 4px;
   visibility: hidden;
   margin-top: 25px;
   font-size: 18px;
   width: 30em;
   left: 20px;
+}
+
+.pageInput:hover {
+  box-shadow: 2px 2px 8px #ddd !important;
+  transition: .25s all;
+}
+
+.pageInput:not(:hover) {
+  box-shadow: 1px 1px 1px #ddd !important;
+  transition: .5s all;
 }
 
 #page .icon {

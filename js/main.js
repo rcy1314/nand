@@ -31,10 +31,6 @@ $(document)
      state(uri)
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
-      $('#front .icon, #front .button, #front #option, #main .quick').css('visibility','hidden')
-      $('#main #visit #page #front input[type=text]').css('visibility','hidden')
-      if ($('#main #page #visit #front #first .listing').is(':visible'))
-        $('#main #page #visit #front #first').hide()
         filter = []
         var uri = '?q=' + category.toLowerCase()
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
@@ -44,7 +40,6 @@ $(document)
         state(uri)
         progress(true, 100)
         e.preventDefault()
-      $('#main #visit #page #front #first').css('visibility','hidden')
       $('#main #visit #page #front .icon').removeClass('search')
   })
   .on('touch click', '#arm #search #input .icon, ' +
