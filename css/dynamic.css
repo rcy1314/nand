@@ -554,7 +554,8 @@ iframe {
   color: #666 !important;
 }
 
-.hover {
+.hover,
+.hoverTranslation {
   border-bottom: none !important;
   width: calc(100% - 10px);
   padding-bottom: 10px;
