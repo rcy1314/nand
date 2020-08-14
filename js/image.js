@@ -35,14 +35,18 @@ var image = function(emoji, empty, n, src) {
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%').css('cssText', 'max-width: 60vh')
-      $('.sticky').show()
-      $('#' + n).parents('#guide').find('.image, .img')
-        .css('display', 'block')
-        $('#' + n).parents('#guide')
-            .find('.url, .share, .source, .header, .wrap, .fill').remove()
+         $('.sticky').show()
+         $('#' + n).parents('#guide').find('.image, .img')
+          .css('display', 'block')
+         $('#' + n).parents('#guide')
+          .find('.url, .share, .source, .header, .wrap, .fill').remove()
       }
     } else {
-     if ($(this).get(0).naturalHeight > k) {
+     if ($(this).hasClass('guide')) {
+      $('#main').addClass('guide')
+       if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
+         $(this).css('max-width', '80vh')
+     } else if ($(this).get(0).naturalHeight > k) {
          $(this).parents('.item').find('.ago')
              .css('display', 'inline-block')
              .parents('.item').find('.pub').css('display','block')
@@ -63,6 +67,9 @@ var image = function(emoji, empty, n, src) {
              'display': 'flex',
              'align-items': 'center'
            }).find('.header, .tag, .addComment').remove()
+      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) {
+        $(this).width('80%')
+          .parents('.item').find('.image').width('100%')
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
           .parents('.item').find('.image').width('100%')
