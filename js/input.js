@@ -99,7 +99,7 @@ $(document).ready()
               "</svg>" +
               "  </div>" +
               "<div class='index' tabIndex='-1'>" +
-              "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
+              "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
               "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
               "  </div>" +
@@ -183,7 +183,7 @@ $(document).ready()
             "</svg>" +
             "  </div>" +
             "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
-            "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
+            "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
             "  </div>" +

@@ -247,7 +247,8 @@ body,
   left: 15px;
 }
 
-.type {
+.type,
+.typeTranslation {
   display: inline-block;
   border-radius: 28px;
   position: relative;

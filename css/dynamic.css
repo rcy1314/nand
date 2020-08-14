@@ -521,7 +521,8 @@ iframe {
   z-index: 0
 }
 
-.index  {
+.index,
+.indexTranslation  {
   border-bottom: none !important;
   width: calc(100% - 10px);
   background-color: #fff;
