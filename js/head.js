@@ -1127,17 +1127,6 @@ var menu = [
 
 	,
 	{
-		id: "CBS/Richmond",
-		cat: "News",
-		des: "CBS WTVR Virginia Richmond News, Weather, and Sports from WTVR Richmond.",
-		uri: "https://wtvr.com/feed",
-		ext: "https://wtvr.com",
-		img: "WTVR",
-		hash: "vR"
-	}
-
-	,
-	{
 		id: "NBC/Seattle",
 		cat: "News",
 		des: "NBC KING Washington Seattle licensed to Seattle, Washington, United States and also serving Tacoma.",

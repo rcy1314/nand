@@ -95,7 +95,6 @@
 [2020-08-14 04:00:08] Feed is live: https://dfw.cbslocal.com/feed
 [2020-08-14 04:00:09] Feed is live: https://www.wric.com/feed
 [2020-08-14 04:00:09] Feed is live: http://rssfeeds.king5.com/king5/home&x=1
-[2020-08-14 04:00:09] Feed is dead: https://wtvr.com/feed
 [2020-08-14 04:00:09] Feed is live: https://boston.cbslocal.com/feed
 [2020-08-14 04:00:09] Feed is live: https://www.local10.com/arcio/rss/category/news/?size=10
 [2020-08-14 04:00:09] Feed is live: https://www.wearegreenbay.com/feed
