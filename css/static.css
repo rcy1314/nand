@@ -337,7 +337,14 @@ body,
   display: block;
 }
 
-.air,
+.air {
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  top: 60px;
+}
+
 .result {
   justify-content: center;
   flex-wrap: wrap;

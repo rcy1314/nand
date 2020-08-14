@@ -270,7 +270,7 @@ $(document).ready()
     visual()
   })
   .on('submit', '#arm #search', function(e) {
-    $('#main .air, #main .result, #main .center, #main .content').remove()
+    $('#main .air, #main .result, #main .center, #main .content, #main .translation').remove()
     $('#arm #search #match').hide()
     if ($('#arm #search .listing .hover').length) {
       if (translations.indexOf($('#arm #search #match .listing .hover')
@@ -373,35 +373,16 @@ $(document).ready()
           .attr('class','index visual')
       }
       if (e.type == 'touch' || e.type == 'click') {
-        if (translations.indexOf($('#arm #search #match .listing .hover, ' +
-            '#arm #search #match .listing .index, ' +
-            '#main #visit #page #front #first .listing .hover, ' +
-            '#main #visit #page #front #first .listing .index')
-            .attr('response')) > -1) {
           $('#main .result, #main .air, #main .translation, #main .center, #main .content')
             .remove()
-          $('#page svg:first').css('visibility','hidden')
           category = $(this).attr('response')
-          populate($(this).attr('response'))
-          var uri = '?q=' + $(this).attr('response').toLowerCase()
-          if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-          else if (contrast == true) uri = uri + '+1'
-          state(uri)
-          document.title = $(this).attr('response')
-          progress(true, 100)
-        } else {
-          $('#main .result, #main .air, #main .translation, #main .center, #main .content')
-            .remove()
-          $('#page svg:first').css('visibility','hidden')
-          category = $(this).attr('response')
-          populate($(this).attr('response'))
           var uri = '?q=&' + $(this).attr('response')
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           state(uri)
           document.title = $(this).attr('response')
+          exit(uri)
           progress(true, 100)
-        }
         visual()
       e.preventDefault()
     }

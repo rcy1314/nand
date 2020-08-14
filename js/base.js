@@ -294,8 +294,7 @@ var populate = function(n) {
   if (!$.isNumeric(n)) {
     filter = []
     var cat = n.capitalize()
-  }
-  else var cat = menu[id].cat
+  } else var cat = menu[id].cat
   $('#main .air, #main .translation, #main .center, #main .content').remove()
   if ($('#main .result').length < 1)
     $('#main').append(
@@ -334,16 +333,16 @@ var populate = function(n) {
     }
   }
   air(cat)
-
 }
 
 var air = function(n) {
 
-  if (!$.isNumeric(n)) var cat = n
-  else if (!n) cat = menu[id].cat
-  else cat = menu[n].cat
+  if (!$.isNumeric(n)) {
+    filter = []
+    var cat = n.capitalize()
+  } else var cat = menu[id].cat
   if ($('#main .air').length < 1)
-    $('#main').prepend(
+    $('#main .result').before(
       "<div class='air' style='display:none'></div>"
     )
   for (var i = 1; i < menu.length - 1; i++) {

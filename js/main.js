@@ -31,16 +31,11 @@ $(document)
      state(uri)
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
-        filter = []
-        var uri = '?q=' + category.toLowerCase()
-        if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-        else if (contrast == true) uri = uri + '+1'
-        document.title = category
-        populate(category)
-        state(uri)
-        progress(true, 100)
-        e.preventDefault()
-      $('#main #visit #page #front .icon').removeClass('search')
+    filter = []
+    var uri = '?q=' + category.toLowerCase()
+    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+    else if (contrast == true) uri = uri + '+1'
+    exit(uri)
   })
   .on('touch click', '#arm #search #input .icon, ' +
       '#arm #search #input .icon .fa-search', function(e) {

@@ -31,7 +31,7 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#fff'
     })
-    $('.detail svg, .asset circle, .display circle').css('stroke', 'url(#gradientOpposite)')
+    $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('#page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.index, .hover').addClass('contrast').removeClass('visual')
@@ -39,8 +39,8 @@ var visual = function(n) {
     $('.listing').addClass('opposite').removeClass('invert')
     $('.typeTranslation').css('filter','hue-rotate(90deg)')
     $('.second').css('cssText','fill: #e557c6 !important')
-    $('.first').css('cssText','fill: #ef4063 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
+    $('.one').css('cssText','fill: #ef4063 !important')
     $('#page input[type=text]').removeClass('pageInput')
     $('#handle img').attr('src', 'images/Opposite.ico')
     $('#favicon').attr('href', 'images/Opposite.ico')
@@ -76,7 +76,7 @@ var visual = function(n) {
     $('#guide .wrap, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
-    $('.detail circle, .asset circle, .display circle').css('stroke', 'url(#gradientInvert)')
+    $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
@@ -86,11 +86,10 @@ var visual = function(n) {
     $('.typeTranslation').css('filter','hue-rotate(0deg)')
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
-    $('.first').css('cssText','fill: #1fa2ff !important')
+    $('.one').css('cssText','fill: #1fa2ff !important')
     $('#page input[type=text]').addClass('pageInput')
     $('#handle img').attr('src', 'favicon.ico')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
-    //$('.detail svg').hide()
   }
 }
