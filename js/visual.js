@@ -73,7 +73,7 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('.wrap, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
+    $('#guide .wrap, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
     $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('.detail circle, .asset circle, .display circle').css('stroke', 'url(#gradientInvert)')
