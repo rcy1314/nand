@@ -172,7 +172,7 @@ var list = function(n) {
         "  <circle cx='20' cy='20' r='19'></circle>" +
         "</svg>" +
         "  </div>" +
-        "<img class='typeTranslation' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
         menu[i].id.match(/[^\/]+$/g) + "</div>" +
@@ -253,7 +253,7 @@ var base = function(n) {
         "  <circle cx='20' cy='20' r='19'></circle>" +
         "</svg>" +
         "  </div>" +
-        "<img class='typeTranslation' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
         menu[i].id.match(/[^\/]+$/g) + "</div>" +
