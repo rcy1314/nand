@@ -35,7 +35,6 @@ var image = function(emoji, empty, n, src) {
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%').css('cssText', 'max-width: 60vh')
-         $('.sticky').show()
          $('#' + n).parents('#guide').find('.image, .img')
           .css('display', 'block')
          $('#' + n).parents('#guide')
@@ -43,6 +42,7 @@ var image = function(emoji, empty, n, src) {
       }
     } else {
      if ($(this).hasClass('guide')) {
+      $('.sticky, .checkmark').show()
       $('#main').addClass('guide')
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).css('max-width', '80vh')
