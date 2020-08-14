@@ -83,7 +83,7 @@ $(document).ready()
         $.each(translations, function(i) {
           $('#main #visit #page #front #first .listing')
             .append(
-              "<div class='index' tabIndex='-1'>" +
+              "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
               "<div class='detail'>" +
               "<svg response='" + translations[i].toLowerCase() + "'>" +
               "  <defs>" +
@@ -167,7 +167,7 @@ $(document).ready()
       $.each(translations, function(i) {
         $('#arm #search #match .listing')
           .append(
-            "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
+            "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
             "<div class='detail'>" +
             "<svg response='" + translations[i].toLowerCase() + "'>" +
             "  <defs>" +
@@ -374,7 +374,9 @@ $(document).ready()
       }
       if (e.type == 'touch' || e.type == 'click') {
         if (translations.indexOf($('#arm #search #match .listing .hover, ' +
-            '#main #visit #page #front #first .listing .hover')
+            '#arm #search #match .listing .index, ' +
+            '#main #visit #page #front #first .listing .hover, ' +
+            '#main #visit #page #front #first .listing .index')
             .attr('response')) > -1) {
           $('#main .result, #main .air').remove()
           category = $(this).attr('response')
@@ -387,7 +389,7 @@ $(document).ready()
           document.title = $(this).attr('response')
           progress(true, 100)
         } else {
-          var uri = '?q=' + $(this).attr('search') + '&' + $(this).attr('response')
+          var uri = '?q=&' + $(this).attr('response')
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           exit(uri)
