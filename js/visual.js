@@ -5,15 +5,16 @@ var visual = function(n) {
     $(
       '#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
-      '.result, .air, #main #page, #main #page .id, .blur'
+      '.result, .air, #main #page, #main #page .id, .blur, ' +
+      '.filter, .populate, .filter a, .populate a'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
       'border': 'none',
       'color': '#fff'
     })
-    $('#top, #arm, #arm #option, .filter, .populate, .wrap, .translation, ' +
-      '.header, .type, .item, .comment, .ago, .filter a, .populate a, ' +
+    $('#top, #arm, #arm #option, .wrap, .translation, ' +
+      '.header, .type, .item, .comment, .ago, ' +
       '.pub, .tag, .suggestions, .combine, .right, .left, #guide, ' +
       '.fas, .item .pub, .more, ' +
       '.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, ' +
@@ -49,7 +50,7 @@ var visual = function(n) {
     $('.hover').addClass('contrast.hover')
     $('#placeholder').css('color','#fff')
   } else if (op == 0) {
-    $('#top, #arm, #container, .wrap, #arm, #arm #option, .air, .result, .index, .item, ' +
+    $('#top, #arm, #container, .wrap, #arm, #arm #option, .index, .item, ' +
       '.comment, .channel, #main .center .feed, .header, .tag, #page input[type=text], ' +
       '.item, .item .pub, .type, .ago, .more, a'
     ).css({
@@ -57,7 +58,7 @@ var visual = function(n) {
       'color': '#666',
       'border': 'none'
     })
-    $('#main, #container, #front #option, #visit, #bottom, .hover, .info a, ' +
+    $('#main, #container,.air, .result, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .suggestions, .combine, #bottom, #main #page .id, ' +
       '#main #page .feed, #main #page, .right, .left, #main #page .feed a, ' +
       '.filter, .populate, .translation, .blur, #search input[type=text]'
@@ -74,7 +75,7 @@ var visual = function(n) {
       'color': '#000'
     })
     $('#guide .wrap, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
-    $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #ddd')
+    $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #eaeaea')
     $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
