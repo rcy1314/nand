@@ -83,6 +83,7 @@ $(document).ready()
         $.each(translations, function(i) {
           $('#main #visit #page #front #first .listing')
             .append(
+              "<div class='index' tabIndex='-1'>" +
               "<div class='detail'>" +
               "<svg response='" + translations[i].toLowerCase() + "'>" +
               "  <defs>" +
@@ -95,10 +96,9 @@ $(document).ready()
               "      <stop offset='99%' stop-color='#fbd786' />" +
               "    </linearGradient>" +
               "  </defs>" +
-              "  <circle cx='26' cy='26' r='18'></circle>" +
+              "  <circle cx='21' cy='21' r='20'></circle>" +
               "</svg>" +
               "  </div>" +
-              "<div class='index' tabIndex='-1'>" +
               "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
               "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
@@ -167,6 +167,7 @@ $(document).ready()
       $.each(translations, function(i) {
         $('#arm #search #match .listing')
           .append(
+            "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
             "<div class='detail'>" +
             "<svg response='" + translations[i].toLowerCase() + "'>" +
             "  <defs>" +
@@ -179,10 +180,9 @@ $(document).ready()
             "      <stop offset='99%' stop-color='#fbd786' />" +
             "    </linearGradient>" +
             "  </defs>" +
-            "  <circle cx='26' cy='26' r='18'></circle>" +
+            "  <circle cx='21' cy='21' r='20'></circle>" +
             "</svg>" +
             "  </div>" +
-            "<div class='index' tabIndex='-1' response='" + translations[i] + "'>" +
             "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +

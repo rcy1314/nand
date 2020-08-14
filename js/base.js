@@ -157,7 +157,22 @@ var list = function(n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<div class='detail'>" +
+        "<svg>" +
+        "  <defs>" +
+        "    <linearGradient id='gradientOpposite'>" +
+        "      <stop offset='0%' stop-color='#ef4063' />" +
+        "      <stop offset='99%' stop-color='#e557c6' />" +
+        "    </linearGradient>" +
+        "    <linearGradient id='gradientInvert'>" +
+        "      <stop offset='0%' stop-color='#F7797d' />" +
+        "      <stop offset='99%' stop-color='#fbd786' />" +
+        "    </linearGradient>" +
+        "  </defs>" +
+        "  <circle cx='20' cy='20' r='19'></circle>" +
+        "</svg>" +
+        "  </div>" +
+        "<img class='typeTranslation' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
         menu[i].id.match(/[^\/]+$/g) + "</div>" +
@@ -219,6 +234,10 @@ var base = function(n) {
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
       $('#main #visit #page #front #first .listing').prepend(
+        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
+        "  tabIndex='-1'" +
+        "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
+        "  search='" + menu[i].cat.toLowerCase() + "'>" +
         "<div class='detail'>" +
         "<svg>" +
         "  <defs>" +
@@ -231,14 +250,10 @@ var base = function(n) {
         "      <stop offset='99%' stop-color='#fbd786' />" +
         "    </linearGradient>" +
         "  </defs>" +
-        "  <circle cx='26' cy='26' r='18'></circle>" +
+        "  <circle cx='20' cy='20' r='19'></circle>" +
         "</svg>" +
         "  </div>" +
-        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
-        "  tabIndex='-1'" +
-        "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
-        "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<img class='typeTranslation' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
         menu[i].id.match(/[^\/]+$/g) + "</div>" +
