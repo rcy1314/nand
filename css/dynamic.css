@@ -1,7 +1,7 @@
 .quick {
   border-radius: 2px;
   position: relative;
-  margin: 25px auto;
+  margin: 20px auto;
   height: 7.5em;
   width: 100%;
 }
@@ -484,7 +484,7 @@ iframe {
 }
 
 .contrast:first-child:not(:hover):before {
-  border-color: transparent transparent #222 transparent;
+  border-color: transparent transparent #000 transparent;
 }
 
 .index:first-child:before {
