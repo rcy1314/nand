@@ -15,7 +15,6 @@ $(document)
       return false
       }
     })
-    return false
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
       if (location.href.match('\\+1'))
