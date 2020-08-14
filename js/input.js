@@ -304,8 +304,7 @@ $(document).ready()
           .replace(/\s/g, '+')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
-        response(true, false, $('#arm #search input[type=text]').val(), true, post)
-        state(uri)
+        exit(uri)
       }
     }
     $('#arm #search input[type=text]').val('Search').blur()
@@ -345,8 +344,7 @@ $(document).ready()
         .replace(/\s/g, '+')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
-      state(uri)
-       response(true, false, $('#main #visit #page #front input[type=text]').val(), true, post)
+      exit(uri)
     }
     e.preventDefault()
   })
