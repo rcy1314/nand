@@ -278,12 +278,12 @@ body,
 
 .pageInput:hover {
   box-shadow: 2px 2px 8px #ddd !important;
-  transition: .25s all;
+  transition: box-shadow .25s;
 }
 
 .pageInput:not(:hover) {
   box-shadow: 1px 1px 1px #ddd !important;
-  transition: .5s all;
+  transition: box-shadow .5s;
 }
 
 #page .icon {
