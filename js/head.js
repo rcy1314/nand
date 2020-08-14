@@ -1125,6 +1125,19 @@ var menu = [
 		hash: "rI"
 	}
 
+  ,
+	{
+
+		id: "NBC",
+		cat: "News",
+		des: "NBC WXXV Mississippi Biloxi television station licensed to Gulfport and serving the Gulf Coast.",
+		uri: "https://www.wxxv25.com/feed",
+		ext: "https://www.wxxv25.com",
+		img: "WXXV",
+		hash: "vX"
+
+	}
+
 	,
 	{
 		id: "NBC/Seattle",

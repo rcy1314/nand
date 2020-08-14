@@ -63,7 +63,6 @@
 {id:"NBC",cat:"News",des:"NBC KTTC Minnesota Rochester The area's most watched news team provides the latest news, weather and sports on-air and online.",uri:"https://kttc.com/feed",ext:"https://kttc.com"},
 {id:"CBS",cat:"News",des:"CBS WCBI Mississippi Columbus Tupelo serving northeastern Mississippi and northwestern Alabama.",uri:"https://www.wcbi.com/feed",ext:"https://www.wcbi.com"},
 {id:"ABC",cat:"News",des:"ABC KMIZ Missouri Columbia Jefferson City News, Weather, and Sports.",uri:"https://abc17news.com/feed",ext:"https://abc17news.com"},
-{id:"NBC",cat:"News",des:"NBC WXXV Mississippi Biloxi television station licensed to Gulfport and serving the Gulf Coast.",uri:"https://www.wxxv25.com/feed",ext:"https://www.wxxv25.com"},
 {id:"ABC",cat:"News",des:"ABC KODE Missouri Joplin an ABC-affiliated television station licensed to Joplin, Missouri.",uri:"https://www.fourstateshomepage.com/feed",ext:"https://www.fourstateshomepage.com"},
 {id:"CBS",cat:"News",des:"CBS KOLR Missouri Springfield offering Local News, Weather, Sports, and Traffic.",uri:"https://www.ozarksfirst.com/feed",ext:"https://www.ozarksfirst.com"},
 {id:"NBC",cat:"News",des:"NBC KNEP Nebraska Scottsbluff News, Weather, and Stories.",uri:"https://www.ksnblocal4.com/rss",ext:"https://www.ksnblocal4.com"},
