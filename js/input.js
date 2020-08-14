@@ -378,21 +378,29 @@ $(document).ready()
             '#main #visit #page #front #first .listing .hover, ' +
             '#main #visit #page #front #first .listing .index')
             .attr('response')) > -1) {
-          $('#main .result, #main .air').remove()
+          $('#main .result, #main .air, #main .translation, #main .center, #main .content')
+            .remove()
+          $('#handle svg').css('visibility','hidden')
           category = $(this).attr('response')
           populate($(this).attr('response'))
-          var uri = '?q=' + $(this).attr('response')
-            .toLowerCase()
+          var uri = '?q=' + $(this).attr('response').toLowerCase()
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
           state(uri)
           document.title = $(this).attr('response')
           progress(true, 100)
         } else {
+          $('#main .result, #main .air, #main .translation, #main .center, #main .content')
+            .remove()
+          $('#page svg').css('visibility','hidden')
+          category = $(this).attr('response')
+          populate($(this).attr('response'))
           var uri = '?q=&' + $(this).attr('response')
           if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
           else if (contrast == true) uri = uri + '+1'
-          exit(uri)
+          state(uri)
+          document.title = $(this).attr('response')
+          progress(true, 100)
         }
         visual()
       e.preventDefault()
