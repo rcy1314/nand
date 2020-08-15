@@ -10,7 +10,7 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
 var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
-          "    <rect class='first' y='0' width='2' height='50'>" +
+          "    <rect class='one' y='0' width='2' height='50'>" +
           "        <animate attributeName='height' values='20;5;20' begin='0s' dur='1s' repeatCount='indefinite' />" +
           "        <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
           "    </rect> " +
