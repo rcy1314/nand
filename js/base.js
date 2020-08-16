@@ -2,8 +2,8 @@ var id
 var img
 var op = 0
 var tap = 0
-var object = []
 var filter = []
+var object = []
 var contrast = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -169,7 +169,7 @@ var list = function(n) {
         "      <stop offset='99%' stop-color='#fbd786' />" +
         "    </linearGradient>" +
         "  </defs>" +
-        "  <circle cx='20' cy='20' r='19'></circle>" +
+        "  <circle cx='20' cy='20' r='18.5'></circle>" +
         "</svg>" +
         "  </div>" +
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
