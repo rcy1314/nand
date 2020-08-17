@@ -25,17 +25,13 @@ $(document)
      category = $(this).attr('response')
      populate($(this).attr('response'))
      var uri = '?q=' + $(this).attr('response').toLowerCase()
-     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-     else if (contrast == true) uri = uri + '+1'
      progress(true, 100)
-     uri.state()
+     uri.define().state()
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
     filter = []
     var uri = '?q=' + category.toLowerCase()
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    else if (contrast == true) uri = uri + '+1'
-    uri.exit()
+    uri.define().exit()
   })
   .on('touch click', '#arm #search #input .icon, ' +
       '#arm #search #input .icon .fa-search', function(e) {
@@ -75,9 +71,7 @@ $(document)
         if ($(this).attr('response').match(uri)) {
           uri = '?q=' + uri.replace(/\s/g, '+') + '&' + $(this).attr('response')
         } else uri = '?q=&' + $(this).attr('response')
-        if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-        else if (contrast == true) uri = uri + '+1'
-        uri.exit()
+        uri.define().exit()
       }
     })
     .on('touch click', '#main .stats img', function(e) {

@@ -290,6 +290,62 @@ var comment = function (n) {
 
 }
 
+var progress = function(complete, n) {
+
+  $(document).ready(function() {
+    $('#progressBar').addClass('response').width(n + '%')
+    if (complete == true) {
+      $('#progressBar').on(
+        'transitionend webkitTransitionEnd oTransitionEnd',
+        function(e) {
+          $(this).removeClass('response').width(0)
+          $('#main #visit, #arm #search #match').hide()
+          if ($('#main .translation').length == 1) $(
+            '#main .translation').css('visibility', 'visible')
+          if ($('#main .content').length == 1) $(
+            '#main .stats').css('visibility', 'visible')
+          if ($('#main .suggestions').length == 1) $(
+            '#main .suggestions').css('visibility', 'visible')
+          if ($('#main .result').length == 1) $('#main .result').show()
+          if ($('#main .center').length == 1) $('#main .center').show()
+          if ($('#main .air').length == 1) {
+            $('#main .air').show()
+            $('#main').scrollTop($('.air').outerHeight())
+          }
+          $('#main').attr('tabindex', -1).focus()
+          $('#top').css('visibility','visible')
+        })
+      visual()
+    }
+  })
+
+}
+
+var suggest = function(n) {
+
+  var dupe = []
+  for (var i = 0; i <= 9; i++) {
+    var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+    dupe.push(e)
+    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
+    var img = 'images/png/' + menu[e].img + '.png'
+      $('#main .suggestions').append(
+        "<div class='combine'>" +
+        "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
+        "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
+        "    response='" + menu[e].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + "'" +
+        "    search='" + menu[e].cat.toLowerCase() + "'>" +
+             menu[e].id.match(/[^\/]+$/g) +
+             "<br>" + "<b>" + menu[e].cat + "</b>" +
+        "  </div>" +
+        "</div>"
+      )
+    }
+    if (i == 9) return false
+  }
+
+}
+
 var populate = function(n) {
   if (!$.isNumeric(n)) {
     filter = []
@@ -351,62 +407,6 @@ var air = function(n) {
         "</div>"
       )
     }
-  }
-
-}
-
-var progress = function(complete, n) {
-
-  $(document).ready(function() {
-    $('#progressBar').addClass('response').width(n + '%')
-    if (complete == true) {
-      $('#progressBar').on(
-        'transitionend webkitTransitionEnd oTransitionEnd',
-        function(e) {
-          $(this).removeClass('response').width(0)
-          $('#main #visit, #arm #search #match').hide()
-          if ($('#main .translation').length == 1) $(
-            '#main .translation').css('visibility', 'visible')
-          if ($('#main .content').length == 1) $(
-            '#main .stats').css('visibility', 'visible')
-          if ($('#main .suggestions').length == 1) $(
-            '#main .suggestions').css('visibility', 'visible')
-          if ($('#main .result').length == 1) $('#main .result').show()
-          if ($('#main .center').length == 1) $('#main .center').show()
-          if ($('#main .air').length == 1) {
-            $('#main .air').show()
-            $('#main').scrollTop($('.air').outerHeight())
-          }
-          $('#main').attr('tabindex', -1).focus()
-          $('#top').css('visibility','visible')
-        })
-      visual()
-    }
-  })
-
-}
-
-var suggest = function(n) {
-
-  var dupe = []
-  for (var i = 0; i <= 9; i++) {
-    var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
-    var img = 'images/png/' + menu[e].img + '.png'
-      $('#main .suggestions').append(
-        "<div class='combine'>" +
-        "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
-        "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
-        "    response='" + menu[e].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + "'" +
-        "    search='" + menu[e].cat.toLowerCase() + "'>" +
-             menu[e].id.match(/[^\/]+$/g) +
-             "<br>" + "<b>" + menu[e].cat + "</b>" +
-        "  </div>" +
-        "</div>"
-      )
-    }
-    if (i == 9) return false
   }
 
 }

@@ -1,3 +1,12 @@
+String.prototype.define = function() {
+
+  var n = this
+  if (contrast == true && !location.href.match('\\+1')) n = n + '+1'
+  else if (contrast == true) n = n + '+1'
+  return n
+
+}
+
 String.prototype.zulu = function() {
 
     var opt = {
@@ -98,7 +107,7 @@ String.prototype.blank = function() {
 
 }
 
-String.prototype.blank = function() {
+String.prototype.exit = function() {
 
     window.location.assign(this)
 

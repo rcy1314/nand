@@ -16,10 +16,8 @@ $(document).ready()
   $('#main .result, #main .air, #main .center, #main .content').remove()
   filter = []
   var uri = '?q=' + category.toLowerCase()
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
   populate(category)
-  state(uri)
+  uri.define().state()
   progress(true, 100)
 })
 .on('touch click', '#container #toggle', function(e) {
@@ -36,7 +34,7 @@ $(document).ready()
     contrast = false
     op = op != true
   }
-  state(uri)
+  uri.define().state()
   visual()
 })
 .on('touch click', '#option .fa-sun, #option .fa-circle-o, #option .fa-circle', function(e) {
@@ -53,16 +51,14 @@ $(document).ready()
     contrast = false
     op = op != true
   }
-  state(uri)
+  uri.define().state()
   visual()
 })
 .on('touch click', '#option .fa-code', function(e) {
   var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
   var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
     .replace(/\s|\.|\//g, '-')
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
-  exit(uri)
+  uri.define().state()
   return false
 })
 .on('touch click', '#option .fa-terminal', function(e) {

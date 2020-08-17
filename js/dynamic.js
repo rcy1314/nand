@@ -9,9 +9,7 @@ $(document)
     $.each(translations, function(i) {
       if (translations[i].toLowerCase() == $this.attr('response')){
       var uri = '?q=&' + $this.attr('response')
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
-      uri.exit()
+      uri.define().exit()
       }
     })
     if (location.href.match('\\?q=')) {
@@ -20,14 +18,10 @@ $(document)
         var res = uri[0].replace(/\+1/g, '')
       else var res = uri[0]
       uri = '?q=' + res + '&' + $this.attr('response')
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
-      uri.exit()
+      uri.define().exit()
     } else {
       var uri = '?q=&' + $this.attr('response')
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
-      uri.exit()
+      uri.define().exit()
     }
   }, 750)
   e.stopPropagation()
@@ -281,18 +275,15 @@ function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
   response(true, false, uri, false, false)
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
   uri = '?q=&' + uri.replace(/\s/g, '-')
-  uri.state()
+  uri.define().state()
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
   response(true, false, uri, false, false)
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
   uri = '?q=&' + uri.replace(/\s/g, '-')
+  uri.define().state()
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
@@ -303,9 +294,8 @@ function(e) {
     else var res = uri[0]
     res = res.replace(/\-|\+/g, ' ')
     response(false, false, res, true, null)
-    if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
     uri = '?q=' + uri[0].replace(/\-/g, '+')
-    uri.state()
+    uri.define().state()
   }
   else {
     if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i))
@@ -320,8 +310,6 @@ function(e) {
 .on('touch click', '#main .suggestions .combine div', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = '?q=' + '&' + $(this).attr('response')
-  if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-  else if (contrast == true) uri = uri + '+1'
   response(true, false, $(this).attr('response').replace(/\-/g, ' '), false, false)
-  uri.state()
+  uri.define().state()
 })
