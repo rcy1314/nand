@@ -60,17 +60,17 @@ if (location.href.split('?')[1] &&
       contrast = contrast != true
       visual()
     }
-    $(document)
-    .ready(function() {
-      $('#main svg').css('visibility','visible')
-      $('#main #visit .page #front, #toggle').css('visibility','hidden')
-    })
     var uri = location.search.split('?q=')[1]
     uri = uri.replace(/\?\+1|\+1/, '')
     uri = (uri.match(/[^&]+/g))
     if (location.hash.substr(1).match(/\+1/g))
       post = location.hash.substr(1).replace(/\+1/g, '')
     else post = location.hash.substr(1)
+    $(document)
+    .ready(function() {
+      if ($.inArray(translations, uri[0].capitalize()))
+        $('#handle svg').css('visibility','hidden')
+    })
     if (!uri[1]) response(true, false, uri[0], true)
     else if (uri[1]) response(true, uri[0], uri[1], false)
 
