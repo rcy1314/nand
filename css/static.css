@@ -255,9 +255,9 @@ body,
   position: relative;
   font-size: 10px;
   height: 36.5px;
-  width: 37.5px;
+  width: 38px;
   bottom: 4px;
-  left: -.5px;
+  left: -1px;
 }
 
 #arm .type,
