@@ -55,6 +55,11 @@ if (location.href.split('?')[1] &&
     })
 }
   if (location.search.split('?q=')[1]) {
+    if (location.href.match('\\+1')) {
+      op = op != true
+      contrast = contrast != true
+      visual()
+    }
     $(document)
     .ready(function() {
       $('#main svg').css('visibility','visible')

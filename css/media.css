@@ -150,11 +150,11 @@
   }
 
   #arm {
-    width: 1028px !important;
+    width: 999px !important;
   }
 
   #main .center {
-    width: 632px !important;
+    width: 642px !important;
   }
 
   #main .air .populate,
@@ -177,7 +177,7 @@
   #main #page .quick {
       width: 858px;
       z-index: 3;
-      right: 17%;
+      right: 20%;
       top: 40px;
   }
 
