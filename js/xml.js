@@ -300,7 +300,7 @@ var xml = function(e, s, n) {
     clearInterval(complete)
     progress(true, 100)
     suggest(id)
-    feed()
+    feed('center', 12)
   })
 
 }
