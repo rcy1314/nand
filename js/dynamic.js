@@ -1,6 +1,6 @@
 $(document)
   .ready()
-.on('touch click', '.detail svg, .assets svg', function(e) {
+.on('touch click', '.detail svg, .asset svg', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
@@ -45,7 +45,10 @@ $(document)
         scrollLeft: leftPos - 360
       }, 'slow')
     if ($(this).parents('.quick').find('.feed')
-      .scrollLeft() <= 360) $(this).parents('.quick').find('.left').hide()
+      .scrollLeft() <= 360) {
+        $(this).parents('.quick').find('.left').hide()
+        $(this).parents('.quick').find('.right, .fa-angle-double-right').show()
+    }
     else $(this).parents('.quick').find('.left').show()
 })
 .on('touch click', '#guide, #container .checkmark', function (e) {

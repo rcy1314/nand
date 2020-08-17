@@ -69,7 +69,7 @@ if (location.href.split('?')[1] &&
     $(document)
     .ready(function() {
       if ($.inArray(translations, uri[0].capitalize()))
-        $('#handle svg').css('visibility','hidden')
+        $('#toggle, #handle svg').css('visibility','hidden')
     })
     if (!uri[1]) response(true, false, uri[0], true)
     else if (uri[1]) response(true, uri[0], uri[1], false)
