@@ -28,11 +28,10 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#fff'
     })
-    $('.air .radial, .result .radial, .stats .radial').removeClass('radialInvert').addClass('radialOpposite')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
-    $('.combine .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.select .radial').removeClass('selectInvert').addClass('selectOpposite')
+    $('.stats .radial').removeClass('radialInvert').addClass('radialOpposite')
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(90deg)')
     $('.index, .hover').addClass('contrast').removeClass('visual')
@@ -71,13 +70,12 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('.air .radial, .result .radial, .stats .radial').removeClass('radialOpposite').addClass('radialInvert')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('#guide .wrap, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
-    $('.combine .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.select .radial').removeClass('selectInvert').addClass('selectOpposite')
+    $('.stats .radial').removeClass('radialOpposite').addClass('radialInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
     $('.index, .hover').addClass('visual').removeClass('contrast')

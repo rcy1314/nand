@@ -231,7 +231,6 @@ var suggest = function(n) {
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
         "<div class='combine'>" +
-        "  <div class='radial'></div>" +
         "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
         "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
         "    response='" + menu[e].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + "'" +
@@ -262,7 +261,6 @@ var populate = function(n) {
         "<div class='populate' index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  <div class='display'>" +
-        "    <div class='radial'></div>" +
         "    <img class='id' src='" + img + "' " +
         "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  </div>" +
@@ -292,7 +290,6 @@ var air = function(n) {
         "  response='" +
              menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         "  <div class='display'>" +
-        "    <div class='radial'></div>" +
         "    <img class='id' src='" + img + "' " +
         "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  </div>" +
