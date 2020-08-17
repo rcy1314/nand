@@ -1,5 +1,5 @@
 .quick {
-  border-radius: 2px;
+  border-radius: 4px;
   position: relative;
   margin: 25px auto;
   height: 7.5em;
@@ -10,7 +10,7 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   position: relative;
-  border-radius: 2px;
+  border-radius: 60px;
   overflow: hidden;
   overflow-x: auto;
   font-size: 10px;
@@ -70,10 +70,10 @@ svg {
   display: flex;
   border-radius: 16px;
   padding: 4px;
+  right: -24px;
   height: 24px;
   width: 24px;
   z-index: 2;
-  right: 0;
   top: 40px;
 }
 
@@ -86,8 +86,8 @@ svg {
   padding: 4px;
   height: 24px;
   width: 24px;
+  left: -24px;
   z-index: 2;
-  left: -1px;
   top: 40px;
 }
 
