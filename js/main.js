@@ -27,9 +27,7 @@ $(document)
   })
   .on('touch click', '#arm #home', function(e) {
     var uri = window.location.origin
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '/?+1'
-    else if (contrast == true) uri = uri + '/?+1'
-    exit(uri)
+    uri.define().exit()
     e.preventDefault()
   })
   .on('touch click', '#container #toggle', function(e) {
@@ -81,9 +79,7 @@ $(document)
     var n = array[Math.floor(Math.random() * array.length)]
     var uri = '?q=&' + menu[n].id.toLowerCase()
       .replace(/(\s|\.|\/)/g, '-')
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-    else if (contrast == true) uri = uri + '+1'
-    exit(uri)
+    uri.define().exit()
     return false
   })
   .on('touch click', '#main .translation .select', function(e) {
