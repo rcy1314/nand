@@ -1,15 +1,21 @@
 $(document)
   .ready()
+.on('mouseenter mouseleave', '#front input[type=text], .button', function(e) {
+    if (op == 0)
+      if (e.type == 'mouseenter')
+        $('.focus').addClass('pageInput')
+      else $('.focus').removeClass('pageInput')
+})
 .on('touch click', '#main #visit #page #front .icon', function(e) {
     $('#main #visit #page #front input[type=text]').focus()
-  })
-  .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
+})
+.on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
     if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
         $('#main #visit #page #front input[type=text]').val() != 'Search')
       $('#main #visit #page #front').submit()
     e.preventDefault()
-  })
-  .on('touch click', '#arm #search #input .icon', function(e) {
+})
+.on('touch click', '#arm #search #input .icon', function(e) {
         $(this).addClass('slide')
     $('#arm #search #input input[type=text]').val('')
     .css({

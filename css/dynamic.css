@@ -23,7 +23,7 @@
 }
 
 #front .feed {
-  border-radius: 60px;
+  border-radius: 58px;
 }
 
 svg {
@@ -81,7 +81,7 @@ svg {
 }
 
 #front .right {
-  right: -24px;
+  right: -35px;
 }
 
 .left {
@@ -99,7 +99,7 @@ svg {
 }
 
 #front .left {
-  left: -24px;
+  left: -35px;
 }
 
 .asset {
