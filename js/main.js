@@ -74,15 +74,3 @@ $(document)
         uri.define().exit()
       }
     })
-    .on('touch click', '#main .stats img', function(e) {
-      $(this).parent().find('svg circle').addClass('mask')
-      setTimeout(function() {
-      $('#main .translation, #main .center, #main .stats, #main .suggestions')
-      .remove()
-      var uri = location.search.split('?q=')[1]
-      uri = uri.replace(/\?\+1|\+1/, '')
-      uri = (uri.match(/[^&]+/g))
-      if (!uri[1]) response(true, false, uri[0], true, post)
-      else if (uri[1]) response(true, uri[0], uri[1], false, post)
-    }, 750)
-    })
