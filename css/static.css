@@ -275,13 +275,19 @@ body,
 }
 
 .page input[type=text] {
-  width: calc(100% - 60px)
+  -webkit-appearance: none;
+  caret-color: transparent;
+  width: calc(100%);
   display: inline-block;
   position: relative;
   visibility: hidden;
+  border-radius: 2px;
+  text-align: center;
   font-size: 18px;
-  margin: 0;
+  height: 2.2em;
+  outline: none;
   top: -15px;
+  margin: 0;
 }
 
 .pageInput {
@@ -336,20 +342,14 @@ body,
   background-color: #1683D8;
 }
 
-.air {
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  width: 100%;
-  top: 60px;
-}
-
+.air,
 .result {
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
   display: flex;
   width: 100%;
-  top: 60px;
+  top: 60px ;
 }
 
 .filter,
@@ -400,7 +400,7 @@ body,
   top: .4em;
 }
 
-input[type=text] {
+#input input[type=text] {
   -webkit-appearance: none;
   caret-color: transparent;
   text-align: center;

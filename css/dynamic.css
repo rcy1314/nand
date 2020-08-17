@@ -229,17 +229,17 @@ svg {
   margin-top: 10px;
 }
 
-.item .tag {
-  min-width: 38% !important;
-  position: relative;
-  width: 100%;
-}
-
 .item .add {
   margin-left: 15px !important;
   margin-bottom: 10px;
   font-size: 12px;
   width: 85%;
+}
+
+.item .tag {
+  min-width: 38% !important;
+  position: relative;
+  width: 100%;
 }
 
 .img,
@@ -343,7 +343,6 @@ svg {
   width: fit-content;
   margin-left: 12px;
   font-size: 9px;
-  color: #e4e4e4;
 }
 
 #bottom {
@@ -380,7 +379,6 @@ svg {
   left: 10px;
   top: 60px;
 }
-
 
 .translation {
   display: inline-block;

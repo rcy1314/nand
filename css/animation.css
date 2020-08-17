@@ -14,15 +14,15 @@
 }
 
 .responseInvert {
-  width: 0;
-  height: 4px;
-  background: #C6FFDD;
-  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
   background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+  height: 4px;
+  width: 0;
 }
 
 .responseOpposite {
-  background-image: linear-gradient(to left, #ef4063 0%, #e557c6 100%);
+  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
+  background: linear-gradient(to left, #ef4063, #e557c6);
   height: 4px;
   width: 0;
 }
