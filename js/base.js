@@ -32,7 +32,7 @@ var select = function(n) {
       "<div class='select' response='" + translations[i] + "'>" +
       "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
       "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-      "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
+      "    <br>&emsp;" + translations[i].grep() + " feeds" +
       "  </div>" +
       "</div>"
     )

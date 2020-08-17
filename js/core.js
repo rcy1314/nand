@@ -1,3 +1,34 @@
+String.prototype.zulu = function() {
+
+    var opt = {
+        weekday: 'long',
+        day: '2-digit',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+    }
+    var dmz = []
+    var utc = new Date(this)
+    dmz.push(this.moment())
+    var gmt = utc.toLocaleString('en-US', opt)
+    dmz.push(gmt)
+
+    return dmz
+
+}
+
+String.prototype.escape = function() {
+
+    return this.replace(/\&.+\;/g, '')
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+
+}
+
 String.prototype.capitalize = function() {
 
     return this.replace(/(\b[a-z](?!\s))/g, function(n) {
@@ -18,42 +49,19 @@ String.prototype.truncate = function(n, useWordBoundary) {
 
 }
 
-var blank = function (n) {
+String.prototype.grep = function(n) {
 
-  window.open(n, '_blank', 'noreferrer noopener')
-
-}
-
-var escape = function (n) {
-
-    return n.replace(/\&.+\;/g, '')
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;")
+  var n = this
+	return $.grep(menu, function (elem) {
+	    return elem.cat == n;
+	}).length
 
 }
 
-var exit = function (n) {
-
-    window.location.assign(n)
-
-}
-
-var grep = function (array, n) {
-
-	var numOccurences = $.grep(array, function (elem) {
-	    return elem.cat === n;
-	}).length;
-	return numOccurences
-
-}
-
-var moment = function(n) {
+String.prototype.moment = function() {
 
     var age = new Date()
-    var utc = new Date(n)
+    var utc = new Date(this)
     var dis = age.getTime() - utc.getTime()
     if (dis < 0) dis = -dis
     var sec = dis / 1000;
@@ -78,28 +86,20 @@ var moment = function(n) {
 
 }
 
-var state = function (n) {
+String.prototype.state = function() {
 
-    history.replaceState(null, null, n)
+    history.replaceState(null, null, this)
 
 }
 
-var zulu = function (n) {
+String.prototype.blank = function() {
 
-    var opt = {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'short',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-    }
-    var dmz = []
-    var utc = new Date(n)
-    dmz.push(moment(n))
-    var gmt = utc.toLocaleString('en-US', opt)
-    dmz.push(gmt)
+  window.open(this, '_blank', 'noreferrer noopener')
 
-    return dmz
+}
+
+String.prototype.blank = function() {
+
+    window.location.assign(this)
 
 }

@@ -11,8 +11,7 @@ $(document)
       var uri = '?q=&' + $this.attr('response')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
-      exit(uri)
-      return false
+      uri.exit()
       }
     })
     if (location.href.match('\\?q=')) {
@@ -23,19 +22,19 @@ $(document)
       uri = '?q=' + res + '&' + $this.attr('response')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
-      exit(uri)
+      uri.exit()
     } else {
       var uri = '?q=&' + $this.attr('response')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
       else if (contrast == true) uri = uri + '+1'
-      exit(uri)
+      uri.exit()
     }
   }, 750)
   e.stopPropagation()
 })
 
 .on('touch click', '#main .center .channel .item', function(e) {
-  window.open($(this).attr('ext'), '_blank', 'noreferrer noopener')
+  $(this).attr('ext').blank()
   e.stopPropagation()
 })
 .on('touch click',
@@ -136,12 +135,8 @@ $(document)
   if (tap == 0) {
       // set first click
       if ($(this)
-            .hasClass('default')) window
-            .open($(this)
-              .parents('.item')
-              .attr('ext'),
-                '_blank',
-                'noreferrer')
+            .hasClass('default'))
+            $(this).parents('.item').attr('ext').blank()
       tap = new Date().getTime();
       img = $(this).attr('id')
       setTimeout(function () {
@@ -288,7 +283,8 @@ function(e) {
   response(true, false, uri, false, false)
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
-  state('?q=&' + uri.replace(/\s/g, '-'))
+  uri = '?q=&' + uri.replace(/\s/g, '-')
+  uri.state()
 })
 .on('touch click', '#main .center #bottom .next', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
@@ -296,7 +292,7 @@ function(e) {
   response(true, false, uri, false, false)
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
-  state('?q=&' + uri.replace(/\s/g, '-'))
+  uri = '?q=&' + uri.replace(/\s/g, '-')
 })
 .on('touch click', '#main .center #bottom .bottom', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
@@ -308,7 +304,8 @@ function(e) {
     res = res.replace(/\-|\+/g, ' ')
     response(false, false, res, true, null)
     if (contrast == true && !location.href.match('\\+1')) uri = uri[0] + '+1'
-    state('?q=' + uri[0].replace(/\-/g, '+'))
+    uri = '?q=' + uri[0].replace(/\-/g, '+')
+    uri.state()
   }
   else {
     if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i))
@@ -326,5 +323,5 @@ function(e) {
   if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
   else if (contrast == true) uri = uri + '+1'
   response(true, false, $(this).attr('response').replace(/\-/g, ' '), false, false)
-  state(uri)
+  uri.state()
 })

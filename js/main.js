@@ -5,7 +5,7 @@ $(document)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))
-    window.open($(this).attr('ext'), '_blank', 'noreferrer noopener')
+    $(this).attr('ext').blank()
     e.stopPropagation()
   })
   .on('touch click', '#arm, #option, #main, #visit, #container', function(e) {
@@ -28,14 +28,14 @@ $(document)
      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
      else if (contrast == true) uri = uri + '+1'
      progress(true, 100)
-     state(uri)
+     uri.state()
    })
   .on('touch click', '#main #visit #placeholder', function(e) {
     filter = []
     var uri = '?q=' + category.toLowerCase()
     if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
     else if (contrast == true) uri = uri + '+1'
-    exit(uri)
+    uri.exit()
   })
   .on('touch click', '#arm #search #input .icon, ' +
       '#arm #search #input .icon .fa-search', function(e) {
@@ -77,7 +77,7 @@ $(document)
         } else uri = '?q=&' + $(this).attr('response')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
-        exit(uri)
+        uri.exit()
       }
     })
     .on('touch click', '#main .stats img', function(e) {

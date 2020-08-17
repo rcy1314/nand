@@ -101,7 +101,7 @@ $(document).ready()
               "  </div>" +
               "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-              "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
+              "    <br>&emsp;" + translations[i].grep() + " feeds" +
               "  </div>" +
               "</div>")
         })
@@ -185,7 +185,7 @@ $(document).ready()
             "  </div>" +
             "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-            "    <br>&emsp;" + grep(menu, translations[i]) + " feeds" +
+            "    <br>&emsp;" + translations[i].grep() + " feeds" +
             "  </div>" +
             "</div>")
       })

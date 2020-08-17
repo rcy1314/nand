@@ -59,7 +59,7 @@ var xml = function(e, s, n, post) {
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
         var ref = $(this).find('link').attr('href')
-        var dst = zulu($(this).find('updated').text());
+        var dst = $(this).find('updated').text().zulu();
         var since = new Date($(this).find('updated').text()).getTime()
         var gen = $(this).find('updated').text().toLocaleString()
         gen = parseInt(
@@ -69,7 +69,7 @@ var xml = function(e, s, n, post) {
       } else if (channel = 'item') {
         var ref = $(this).find('link').text()
         if ($(this).find('pubDate').text().length > 0) {
-          var dst = zulu($(this).find('pubDate').text());
+          var dst = $(this).find('pubDate').text().zulu();
           var since = new Date($(this).find('pubDate').text())
           var gen = new Date($(this).find('pubDate').text()).toLocaleString()
           gen = parseInt(
@@ -77,7 +77,7 @@ var xml = function(e, s, n, post) {
               .replace(/\:/g, '')
             ).toString(36)
         } else if ($(this).find('dc\\:date, date').text()) {
-          var dst = zulu($(this).find('dc\\:date, date').text());
+          var dst = $(this).find('dc\\:date, date').text().zulu();
           var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
         } else if (menu[n].id.match(/Imgur/g)) {
           var ts = parseInt($(this).find('datetime').text());
@@ -89,7 +89,8 @@ var xml = function(e, s, n, post) {
           var hours = ("0" + date_ob.getHours()).slice(-2);
           var minutes = ("0" + date_ob.getMinutes()).slice(-2);
           var seconds = ("0" + date_ob.getSeconds()).slice(-2);
-          var dst = zulu(year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds);
+          var define = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+          var dst = define.zulu()
           var since = new Date(parseInt($(this).find('datetime').text()))
           var gen = parseInt($(this).find('datetime').text()).toString(36)
         } else {
@@ -184,8 +185,8 @@ var xml = function(e, s, n, post) {
           "    <div class='ago fa-comment-o'></div>" +
           "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>" +
-          "  <div class='pub' " + "text='" + escape($(this).find('title:first').text()) + "'>" +
-               escape($(this).find('title:first').text().truncate(125, true)) +
+          "  <div class='pub' " + "text='" + $(this).find('title:first').text().escape() + "'>" +
+               $(this).find('title:first').text().truncate(125, true).escape() +
                more +
           "  </div>" +
           "  <div class='ago'>" + dst[0] + "</div>" +
@@ -222,8 +223,8 @@ var xml = function(e, s, n, post) {
           "      </div>" +
           "    </div>" +
           "    <div class='wrap'>" +
-          "      <div class='pub' style='display:none' text='" + escape($(this).find('title:first').text()) + "'>" +
-                   escape($(this).find('title:first').text().truncate(125, true)) +
+          "      <div class='pub' style='display:none' text='" + $(this).find('title:first').text().escape() + "'>" +
+                   $(this).find('title:first').text().truncate(125, true).escape() +
                    more +
           "      </div>" +
           "      <div class='ago' style='display:none'>" + dst[0] + "</div>" +
@@ -239,7 +240,7 @@ var xml = function(e, s, n, post) {
           "</div>"
       }
       pub.push({
-        title: escape($(this).find('title:first').text()),
+        title: $(this).find('title:first').text().escape(),
         courtesy: courtesy,
         ref: ref.trim(),
         since: since,
