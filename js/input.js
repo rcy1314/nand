@@ -156,7 +156,7 @@ $(document).ready()
         $('#arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-            "<div class='detail' response='" + translation[i].toLowerCase() + "'>" +
+            "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "<svg response='" + translations[i].toLowerCase() + "'>" +
             "  <defs>" +
             "    <linearGradient id='gradientOpposite'>" +

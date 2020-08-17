@@ -6,12 +6,11 @@ $(document)
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
-    $.each(translations, function(i) {
-      if ($this.parent().attr('id') == 'detail'){
-      var uri = '?q=&' + $this.parent().attr('response')
+      if ($this.parents('.index').find('.detail')){
+      var uri = '?q=&' + $this.parents('.index').find('.detail').attr('response')
       uri.define().exit()
+      return false
       }
-    })
     if (location.href.match('\\?q=')) {
       var uri = location.search.split('?q=')[1].match(/[^&]+/g)
       if (location.href.match(/\+1/g))
