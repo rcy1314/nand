@@ -2,8 +2,7 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $(
-      '#container, #arm, #main, #main #option, #visit, #bottom, ' +
+    $('#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
       '.result, .air, #main .page, #main .page .id, .blur, ' +
       '.filter, .populate, .filter a, .populate a'
@@ -16,11 +15,8 @@ var visual = function(n) {
     $('#top, #arm, #arm #option, .wrap, .translation, ' +
       '.header, .type, .item, .comment, .ago, ' +
       '.pub, .tag, .suggestions, .combine, .right, .left, #guide, ' +
-      '.fas, .item .pub, .more, .fa-search, ' +
-      '.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, ' +
-      '#home a, .description, .fa-times-circle, .type, ' +
-      '.fa-home, .fa-code, .fa-globe, .fa-git, #home, ' +
-      '.fa-terminal, input[type=text]'
+      '.item .pub, .more, .fas, .tag, #home a, .description, .type, ' +
+      '#home, input[type=text]'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -29,6 +25,7 @@ var visual = function(n) {
     })
     $('.buttonSearch, .focus').css({
       'background-color': 'transparent',
+      'box-shadow': 'none',
       'color': '#fff'
     })
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
@@ -49,7 +46,7 @@ var visual = function(n) {
     $('#placeholder').css('color','#fff')
   } else if (op == 0) {
     $('#top, #arm, #container, .wrap, #arm, #arm #option, .index, .item, ' +
-      '.comment, .channel, #main .center .feed, .header, .tag, .page input[type=text], ' +
+      '.comment, .channel, #main .center .feed, .header, .page input[type=text], ' +
       '.item, .item .pub, .type, .ago, .more, a'
     ).css({
       'background-color': '#fff',
@@ -65,20 +62,17 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('#home, .description, .fa-sun, .title, .type, .focus, ' +
-      '.fa-search, .fa-home, .fa-code, .fa-globe, .fa-git, ' +
-      '.fa-terminal, .fa-double-angle-right, .fa-double-angle-left, #toggle'
+    $('#home, .description, .tag, #option, .fas, .title, .type, .focus, ' +
+      '.tag, #option, .fa-double-angle-right, .fa-double-angle-left, #toggle'
     ).css({
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #eaeaea')
-    $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
+    $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('#guide .wrap, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
-    $('.fa-bookmark, .fa-comments, .fa-sticky-note').css('color', '#000')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')
@@ -86,6 +80,7 @@ var visual = function(n) {
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.one').css('cssText','fill: #1fa2ff !important')
+    $('#handle a, #placeholder').css('color', '#666')
     $('#handle img').attr('src', 'favicon.ico')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')

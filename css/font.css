@@ -109,18 +109,6 @@
   content: "\f075";
 }
 
-.fa-circle:before {
-  font-family: FontAwesome;
-  content: "\f111";
-  font-weight: 50;
-}
-
-.fa-circle-o:before {
-  font-family: FontAwesome;
-  content: "\f10c";
-  font-weight: 50;
-}
-
 .fa-sticky-note:before {
   font-family: FontAwesome;
   content: "\f249";
