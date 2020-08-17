@@ -73,9 +73,9 @@ var visual = function(n) {
       'background-color': 'transparent',
       'color': '#000'
     })
-    $('#guide .wrap, .item, #page input[type=text], .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('#search input[type=text], .filter, .populate, #main .center .feed').css('border', '1px solid #eaeaea')
     $('#handle a, #placeholder, .fa-angle-double-left, .fa-angle-double-right').css('color', '#666')
+    $('#guide .wrap, .item, .right, .left, #page .id').css('box-shadow', '1px 1px 1px #ddd')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('#page .button').removeClass('buttonOpposite').addClass('buttonInvert')

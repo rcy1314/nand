@@ -3,8 +3,9 @@ $(document)
 .on('mouseenter mouseleave', '#front input[type=text], .button', function(e) {
     if (op == 0)
       if (e.type == 'mouseenter')
-        $('.focus').addClass('pageInput')
-      else $('.focus').removeClass('pageInput')
+        $('.focus').removeClass('pageInputOut').addClass('pageInput')
+      else if (e.type == 'mouseleave')
+        $('.focus').removeClass('pageInput').addClass('pageInputOut')
 })
 .on('touch click', '#main #visit #page #front .icon', function(e) {
     $('#main #visit #page #front input[type=text]').focus()

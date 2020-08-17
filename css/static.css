@@ -209,7 +209,7 @@ body,
   margin: 0 auto;
   width: 500px;
   height: 100px;
-  left: 0;
+  right: 10px;
 }
 
 #placeholder {
@@ -290,7 +290,6 @@ body,
   width: calc(100% - 60px)
   display: inline-block;
   position: relative;
-  border-radius: 4px;
   visibility: hidden;
   font-size: 18px;
   margin: 0;
@@ -298,7 +297,12 @@ body,
 }
 
 .pageInput {
-  box-shadow: 2px 2px 8px #ddd !important;
+  box-shadow: 2px 2px 12px #ddd !important;
+  transition: box-shadow .25s;
+}
+
+.pageInputOut {
+  box-shadow: 1px 1px 1px #ddd !important;
   transition: box-shadow .25s;
 }
 
@@ -314,9 +318,8 @@ body,
   visibility: hidden;
   position: relative;
   border-radius: 3px;
-  height: 39px;
+  height: 39.6px;
   width: 60px;
-  bottom: 1px;
   right: 4px;
 }
 
