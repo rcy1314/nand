@@ -14,7 +14,7 @@ if (location.href.split('?')[1] &&
       }
       var id = location.href.split('?')[1].slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
-      var ts = parseInt(location.href.split('?')[1].slice(2), 36)
+      var post = parseInt(location.href.split('?')[1].slice(2), 36)
       if (!i) {
         $(document)
           .ready(function() {
@@ -26,7 +26,7 @@ if (location.href.split('?')[1] &&
         })
       }
       else
-        response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), true, ts)
+        response(true, false, menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '), true)
   }
 } else if (location.href.match('\\?\\+1')){
     op = op != true
@@ -60,18 +60,13 @@ if (location.href.split('?')[1] &&
       $('#main svg').css('visibility','visible')
       $('#main #visit #page #front, #toggle').css('visibility','hidden')
     })
-
-    if (location.href.match('\\+1')){
-      op = op != true
-      contrast = contrast != true
-    }
     var uri = location.search.split('?q=')[1]
     uri = uri.replace(/\?\+1|\+1/, '')
     uri = (uri.match(/[^&]+/g))
     if (location.hash.substr(1).match(/\+1/g))
-      var post = location.hash.substr(1).replace(/\+1/g, '')
-    else var post = location.hash.substr(1)
-    if (!uri[1]) response(true, false, uri[0], true, post)
-    else if (uri[1]) response(true, uri[0], uri[1], false, post)
+      post = location.hash.substr(1).replace(/\+1/g, '')
+    else post = location.hash.substr(1)
+    if (!uri[1]) response(true, false, uri[0], true)
+    else if (uri[1]) response(true, uri[0], uri[1], false)
 
 }

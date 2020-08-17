@@ -20,37 +20,79 @@ $(document)
       $('#main #visit #page #front .icon').removeClass('search')
     }
    })
-   .on('touch click', '#main .translation .select', function(e) {
-     filter = []
-     category = $(this).attr('response')
-     populate($(this).attr('response'))
-     var uri = '?q=' + $(this).attr('response').toLowerCase()
-     progress(true, 100)
-     uri.define().state()
-   })
   .on('touch click', '#main #visit #placeholder', function(e) {
     filter = []
     var uri = '?q=' + category.toLowerCase()
     uri.define().exit()
   })
-  .on('touch click', '#arm #search #input .icon, ' +
-      '#arm #search #input .icon .fa-search', function(e) {
-        $(this).addClass('slide')
-    $('#arm #search #input input[type=text]').val('')
-    .css({
-      'caret-color': '#e4e4e4',
-      'padding-left': '30px',
-      'text-align': 'left',
-    }).focus()
-  })
-  .on('touch click', '#main #visit #page #front .icon', function(e) {
-    $('#main #visit #page #front input[type=text]').focus()
-  })
-  .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
-    if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
-        $('#main #visit #page #front input[type=text]').val() != 'Search')
-      $('#main #visit #page #front').submit()
+  .on('touch click', '#arm #home', function(e) {
+    var uri = window.location.origin
+    if (contrast == true && !location.href.match('\\+1')) uri = uri + '/?+1'
+    else if (contrast == true) uri = uri + '/?+1'
+    exit(uri)
     e.preventDefault()
+  })
+  .on('touch click', '#container #toggle', function(e) {
+    if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
+      var uri = window.location.href + '?+1'
+      contrast = contrast != true
+      op = op != true
+    } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
+      var uri = window.location.href + '?+1'
+      contrast = contrast != true
+      op = op != true
+    } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
+      var uri = window.location.href.replace(/\?\+1|\+1/g, '')
+      contrast = false
+      op = op != true
+    }
+    uri.state()
+    visual()
+  })
+  .on('touch click', '#option .fa-sun', function(e) {
+    if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
+      var uri = window.location.href + '+1'
+      contrast = contrast != true
+      op = op != true
+    } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
+      var uri = window.location.href + '+1'
+      contrast = contrast != true
+      op = op != true
+    } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
+      var uri = window.location.href.replace(/\?\+1|\+1/g, '')
+      contrast = false
+      op = op != true
+    }
+    uri.state()
+    visual()
+  })
+  .on('touch click', '#option .fa-code', function(e) {
+    var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
+    var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
+      .replace(/\s|\.|\//g, '-')
+    uri.define().state()
+    return false
+  })
+  .on('touch click', '#option .fa-terminal', function(e) {
+    var array = []
+    for (i = 1; i <= menu.length - 1; i++) {
+      if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
+    }
+    var n = array[Math.floor(Math.random() * array.length)]
+    var uri = '?q=&' + menu[n].id.toLowerCase()
+      .replace(/(\s|\.|\/)/g, '-')
+    if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
+    else if (contrast == true) uri = uri + '+1'
+    exit(uri)
+    return false
+  })
+  .on('touch click', '#main .translation .select', function(e) {
+    filter = []
+    category = $(this).attr('response')
+    populate($(this).attr('response'))
+    var uri = '?q=' + $(this).attr('response').toLowerCase()
+    progress(true, 100)
+    uri.define().state()
   })
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',

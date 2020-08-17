@@ -1,4 +1,4 @@
-var response = function(passthrough, uri, n, bloat, post) {
+var response = function(passthrough, uri, n, bloat) {
   filter = []
   $('#main .result, #main .air, #main .center, #main .content').remove()
   if ($('#main .result').length < 1)
@@ -54,10 +54,10 @@ var response = function(passthrough, uri, n, bloat, post) {
     if (!id) id = filter[filter.length - 1]
     if (passthrough == true) {
       if ($.isNumeric(exact)) {
-        xml(null, null, exact, post)
+        xml(null, null, exact)
         return false
       } else if ($.isNumeric(id) && filter.length == 1) {
-        xml(null, null, id, post)
+        xml(null, null, id)
         return false
       } else if (!$.isNumeric(exact) && filter.length == 0) {
         xml('search', n, 0, null)

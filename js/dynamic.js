@@ -217,7 +217,7 @@ function(e) {
 .on('touch click', '#main #bottom .previous, #main #bottom .next', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
-  response(true, false, uri, false, false)
+  response(true, false, uri, false)
   uri = '?q=&' + uri.replace(/\s/g, '-')
   uri.define().state()
 })
@@ -229,7 +229,7 @@ function(e) {
       var res = uri[0].replace(/\+1/g, '')
     else var res = uri[0]
     res = res.replace(/\-|\+/g, ' ')
-    response(false, false, res, true, null)
+    response(false, false, res, true)
     uri = '?q=' + uri[0].replace(/\-/g, '+')
     uri.define().state()
   }
@@ -239,13 +239,13 @@ function(e) {
         var i = menu.findIndex((item) => item.hash === id)
         response(false, false,
           menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '),
-          true, false
+          true
         )
   }
 })
 .on('touch click', '#main .suggestions .combine div', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = '?q=' + '&' + $(this).attr('response')
-  response(true, false, $(this).attr('response').replace(/\-/g, ' '), false, false)
+  response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
   uri.define().state()
 })

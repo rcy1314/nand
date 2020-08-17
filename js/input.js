@@ -1,4 +1,23 @@
-$(document).ready()
+$(document)
+  .ready()
+.on('touch click', '#main #visit #page #front .icon', function(e) {
+    $('#main #visit #page #front input[type=text]').focus()
+  })
+  .on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
+    if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
+        $('#main #visit #page #front input[type=text]').val() != 'Search')
+      $('#main #visit #page #front').submit()
+    e.preventDefault()
+  })
+  .on('touch click', '#arm #search #input .icon', function(e) {
+        $(this).addClass('slide')
+    $('#arm #search #input input[type=text]').val('')
+    .css({
+      'caret-color': '#e4e4e4',
+      'padding-left': '30px',
+      'text-align': 'left',
+    }).focus()
+})
 .on('keyup',
    '#main #visit #page input[type=text]', function(e) {
      $('#main #visit #page #front #first').css('visibility','visible')

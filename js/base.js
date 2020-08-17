@@ -1,5 +1,6 @@
 var id
 var img
+var post
 var op = 0
 var tap = 0
 var filter = []

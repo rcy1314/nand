@@ -1,4 +1,4 @@
-var xml = function(e, s, n, post) {
+var xml = function(e, s, n) {
 
   id = n
   obj = []
