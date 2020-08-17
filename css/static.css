@@ -424,7 +424,6 @@ input[type=text] {
   height: 28.5em;
   display: none;
   z-index: 4;
-  top: 1em;
 }
 
 input[type=submit] {
