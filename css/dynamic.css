@@ -10,7 +10,6 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   position: relative;
-  border-radius: 60px;
   overflow: hidden;
   overflow-x: auto;
   font-size: 10px;
@@ -21,6 +20,10 @@
 
 .feed::-webkit-scrollbar {
   display: none;
+}
+
+#front .feed {
+  border-radius: 60px;
 }
 
 svg {
@@ -70,11 +73,15 @@ svg {
   display: flex;
   border-radius: 16px;
   padding: 4px;
-  right: -24px;
   height: 24px;
   width: 24px;
   z-index: 2;
   top: 40px;
+  right : 0
+}
+
+#front .right {
+  right: -24px;
 }
 
 .left {
@@ -86,9 +93,13 @@ svg {
   padding: 4px;
   height: 24px;
   width: 24px;
-  left: -24px;
   z-index: 2;
   top: 40px;
+  left: 0;
+}
+
+#front .left {
+  left: -24px;
 }
 
 .asset {

@@ -28,7 +28,7 @@ $(document)
     }, 250)
     e.stopPropagation()
   })
-.on('touch click', '#main .quick .right', function(e) {
+.on('touch click', '#main .quick .right, .fa-angle-double-right', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
     $(this).parents('.quick').find('.feed').animate({
         scrollLeft: leftPos + 720
@@ -40,7 +40,7 @@ $(document)
       .scrollLeft() >= 0) $(this).parents('.quick').find('.left')
       .show()
 })
-.on('touch click', '#main #page .quick .left', function(e) {
+.on('touch click', '#main #page .quick .left, .fa-angle-double-left', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
     $(this).parents('.quick').find('.feed').animate({
         scrollLeft: leftPos - 360
