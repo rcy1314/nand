@@ -308,8 +308,10 @@ var populate = function(n) {
       $('#main .result').append(
         "<div class='populate' index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+        "  <div class='display'>" +
         "    <img class='id' src='" + img + "' " +
         "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+        "  </div>" +
         "    <a class='title' ext='" + menu[i].ext + "' title='" + menu[i].id + "'>" +
                menu[i].id.match(/[^\/]+$/g) +
         "    </a>" +
@@ -339,12 +341,14 @@ var air = function(n) {
         "<div class='populate' + index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" +
              menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
-             "    <img class='id' src='" + img + "' " +
-             "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
-             "    <a class='title' ext='" + menu[i].ext + "' title='" + menu[i].id + "'>" +
+        "  <div class='display'>" +
+        "    <img class='id' src='" + img + "' " +
+        "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
+        "  </div>" +
+        "    <a class='title' ext='" + menu[i].ext + "' title='" + menu[i].id + "'>" +
                     menu[i].id.match(/[^\/]+$/g) +
-             "    </a>" +
-             "</div>"
+        "    </a>" +
+        "</div>"
       )
     }
   }
