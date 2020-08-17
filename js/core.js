@@ -1,3 +1,9 @@
+String.prototype.domain = function() {
+
+  return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g)
+
+}
+
 String.prototype.define = function() {
 
   var n = this

@@ -180,11 +180,7 @@ var xml = function(e, s, n, post) {
           "    <iframe src='" + src + "'></iframe>" +
                views +
           "  </div>" +
-          "  <div class='tag'>" +
-          "    <div class='ago fa-heart-o'></div>" +
-          "    <div class='ago fa-comment-o'></div>" +
-          "    <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
-          "  </div>" +
+              tag +
           "  <div class='pub' " + "text='" + $(this).find('title:first').text().escape() + "'>" +
                $(this).find('title:first').text().truncate(125, true).escape() +
                more +
@@ -193,7 +189,8 @@ var xml = function(e, s, n, post) {
           "  <input class='url' value='" + ref.trim() + "'>" +
           "  <input class='share' value='" + share + "'>" +
           "  <input class='source' value='" + src + "'>" +
-/*          "  <form class='addComment' action'#'>" +
+/*
+          "  <form class='addComment' action'#'>" +
           "    <input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
           "    <div class='post'><b>Post</b></div>" +
           "  </form>" +
@@ -203,7 +200,7 @@ var xml = function(e, s, n, post) {
         if (e == 'search') {
           var cat =
             "<div class='external'>" +
-              ref.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g) +
+              ref.domain() +
             "</div>"
         } else var cat = ''
         html =
@@ -215,12 +212,7 @@ var xml = function(e, s, n, post) {
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
           "      <img id='" + i + "' class='img' src='" + src + "'>" +
-          "      <div class='tag'>" +
-          "        <div class='ago fa-heart-o'></div>" +
-          "        <div class='ago fa-comment-o'></div>" +
-          "        <div class='ago fa-sticky-note-o' title='Copy Post'></div>" +
-          "        <div class='ago fa-bookmark-o' title='Copy Source'></div>" +
-          "      </div>" +
+                  tag + 
           "    </div>" +
           "    <div class='wrap'>" +
           "      <div class='pub' style='display:none' text='" + $(this).find('title:first').text().escape() + "'>" +
@@ -232,10 +224,12 @@ var xml = function(e, s, n, post) {
           "    <input class='url' value='" + ref.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
           "    <input class='source' value='" + src + "'>" + cat +
+/*
           "    <form class='addComment' action'#'>" +
           "      <input class='comment' onclick='event.stopPropagation()' maxlength='88' placeholder='Add a Comment'>" +
           "      <div class='post'><b>Post</b></div>" +
           "    </form>" +
+*/
           "  </div>" +
           "</div>"
       }

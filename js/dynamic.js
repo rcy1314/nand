@@ -7,8 +7,8 @@ $(document)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
     $.each(translations, function(i) {
-      if (translations[i].toLowerCase() == $this.attr('response')){
-      var uri = '?q=&' + $this.attr('response')
+      if ($this.parent().attr('id') == 'detail'){
+      var uri = '?q=&' + $this.parent().attr('response')
       uri.define().exit()
       }
     })
@@ -45,49 +45,27 @@ $(document)
     }, 250)
     e.stopPropagation()
   })
-.on('touch click', '#main #page .quick .right', function(e) {
-    var leftPos = $('#main #page .quick .feed').scrollLeft()
-    $('#main #page .quick .feed').animate({
+.on('touch click', '#main .quick .right', function(e) {
+    var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
+    $(this).parents('.quick').find('.feed').animate({
         scrollLeft: leftPos + 720
       }, 'fast')
-      if (leftPos >= $('#main #page .quick .feed')[0]
-          .scrollWidth - $('#main #page .quick .feed').width() - 720)
+      if (leftPos >= $(this).parents('.quick').find('.feed')[0]
+          .scrollWidth - $(this).parents('.quick').find('.feed').width() - 720)
           $(this).hide()
-    if ($('#main #page .quick .feed')
-      .scrollLeft() >= 0) $('#main #page .quick .left')
+    if ($(this).parents('.quick').find('.feed')
+      .scrollLeft() >= 0) $(this).parents('.quick').find('.left')
       .show()
 })
 .on('touch click', '#main #page .quick .left', function(e) {
-    var leftPos = $('#main #page .quick .feed').scrollLeft()
-    $('#main #page .quick .feed').animate({
+    var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
+    $(this).parents('.quick').find('.feed').animate({
         scrollLeft: leftPos - 360
       }, 'slow')
-    if ($('#main #page .quick .feed')
+    if ($(this).parents('.quick').find('.feed')
       .scrollLeft() <= 360) $(this)
       .hide()
-    $('#main #page .quick .right').show()
-})
-.on('touch click', '#main .center .quick .right', function(e) {
-  var leftPos = $('#main .center .quick .feed').scrollLeft()
-  $('#main .center .quick .feed').animate({
-      scrollLeft: leftPos + 720
-    }, 'fast')
-    if (leftPos >= $('#main .center .quick .feed')[0]
-        .scrollWidth - $('#main .center .quick .feed').width() - 720)
-        $(this).hide()
-  if ($('#main .center .quick .feed')
-    .scrollLeft() >= 0) $('#main .center .quick .left')
-    .show()
-})
-.on('touch click', '#main .center .quick .left', function(e) {
-  var leftPos = $('#main .center .quick .feed').scrollLeft()
-  $('#main .center .quick .feed').animate({
-      scrollLeft: leftPos - 360
-    }, 'slow')
-  if ($('#main .center .quick .feed').scrollLeft() <= 360)
-    $(this).hide()
-  $('#main .center .quick .right')
-    .show()
+    $(this).parents('.quick').find('.feed').show()
 })
 .on('touch click', '#guide, #container .checkmark', function (e) {
   $('#main').removeClass('guide')
@@ -178,24 +156,13 @@ $(document)
   e.stopPropagation()
   visual()
 })
-.on('touch click',
-  '#main .center .channel .item .image .tag .fa-heart-o, ' +
-  '#main .center .channel .item .image .tag .fa-gratipay, ' +
-  '#container .sticky .wrap .tag .fa-heart-o, ' +
-  '#container .sticky .wrap .tag .fa-gratipay',
+.on('touch click', '.tag .fa-heart-o, .tag .fa-gratipay',
   function(e) {
     $(this).toggleClass('fa-heart-o fab fa-gratipay')
     e.stopPropagation()
     visual()
   })
-.on('touch click',
-  '#main .center .channel .item .image .tag .fa-bookmark-o, ' +
-  '#main .center .channel .item .image .tag .fa-bookmark, ' +
-  '#main .center .channel #yt .tag .fa-bookmark, ' +
-  '#main .center .channel #yt .tag .fa-bookmark-o, ' +
-  '#container .sticky .wrap .tag .fa-bookmark, ' +
-  '#container .sticky .wrap .tag .fa-bookmark-o',
-  function(e) {
+.on('touch click', '.tag .fa-bookmark-o, .tag .fa-bookmark', function(e) {
     $(this).parents('.item, .wrap').find('.source').select()
     document.execCommand('copy')
     if (!$(this).hasClass('fa-bookmark'))
@@ -203,9 +170,7 @@ $(document)
     e.stopPropagation()
     visual()
   })
-.on('touch click',
-  '#main .center .channel .item .image .tag .fa-sticky-note-o, ' +
-  '#main .center .channel .item .image .tag .fa-sticky-note',
+.on('touch click', '.tag .fa-sticky-note-o, .tag .fa-sticky-note',
   function(e) {
     if (contrast == true)
       if (!$(this).parents('.item').find('.share').val().match(/\+1/g))
@@ -223,9 +188,7 @@ $(document)
     e.stopPropagation()
     visual()
   })
-.on('touch click',
-'#container .sticky .wrap .tag .fa-sticky-note-o, ' +
-'#container .sticky .wrap .tag .fa-sticky-note',
+.on('touch click', '.tag .fa-sticky-note-o, .tag .fa-sticky-note',
 function(e) {
   if (contrast == true)
     if (!$(this).parents('.wrap').find('.share').val().match(/\+1/g))
@@ -271,14 +234,7 @@ function(e) {
   $(this).siblings('.comment').focus().submit()
   e.stopPropagation()
 })
-.on('touch click', '#main .center #bottom .previous', function(e) {
-  $('#main .center, #main .content, #main .translation').remove()
-  var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
-  response(true, false, uri, false, false)
-  uri = '?q=&' + uri.replace(/\s/g, '-')
-  uri.define().state()
-})
-.on('touch click', '#main .center #bottom .next', function(e) {
+.on('touch click', '#main #bottom .previous, #main #bottom .next', function(e) {
   $('#main .center, #main .content, #main .translation').remove()
   var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
   response(true, false, uri, false, false)

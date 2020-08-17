@@ -9,6 +9,28 @@ var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
+var tag = "  <div class='tag' style='display:none'>" +
+          "    <div class='images fa-heart-o'></div>" +
+          "    <div class='ago fa-comment-o'></div>" +
+          "    <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
+          "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
+          "  </div>"
+
+var svg = "<svg>" +
+          "  <defs>" +
+          "    <linearGradient id='gradientOpposite'>" +
+          "      <stop offset='0%' stop-color='#ef4063' />" +
+          "      <stop offset='99%' stop-color='#e557c6' />" +
+          "    </linearGradient>" +
+          "    <linearGradient id='gradientInvert'>" +
+          "      <stop offset='0%' stop-color='#F7797d' />" +
+          "      <stop offset='99%' stop-color='#fbd786' />" +
+          "    </linearGradient>" +
+          "  </defs>" +
+          "  <circle class='border'></circle>" +
+          "</svg>"
+
+
 var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
           "    <rect class='one' y='0' width='2' height='50'>" +
           "        <animate attributeName='height' values='20;5;20' begin='0s' dur='1s' repeatCount='indefinite' />" +
@@ -65,11 +87,7 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
     "  <input class='url' value='" + ref + "'>" +
     "  <input class='share' value='" + share + "'>" +
     "  <input class='source' value='" + src + "'>" +
-    "  <div class='tag' style='display:none'>" +
-    "    <div class='images fa-heart-o'></div>" +
-    "    <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
-    "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
-    "  </div>" +
+        tag +
     "</div>"
   )
 }
@@ -84,19 +102,7 @@ var feed  = function(n) {
     if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
     $('#main .center .feed').append(
       "<div class='asset'>" +
-      "<svg>" +
-      "  <defs>" +
-      "    <linearGradient id='gradientOpposite'>" +
-      "      <stop offset='0%' stop-color='#ef4063' />" +
-      "      <stop offset='99%' stop-color='#e557c6' />" +
-      "    </linearGradient>" +
-      "    <linearGradient id='gradientInvert'>" +
-      "      <stop offset='0%' stop-color='#F7797d' />" +
-      "      <stop offset='99%' stop-color='#fbd786' />" +
-      "    </linearGradient>" +
-      "  </defs>" +
-      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-      "</svg>" +
+        svg +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
       "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
       "  search='" + menu[e].cat.toLowerCase() + "'> " +
@@ -118,19 +124,7 @@ var content  = function(n, recent, oldest, posts) {
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
       "<div class='asset'>" +
-      "<svg>" +
-      "  <defs>" +
-      "    <linearGradient id='gradientOpposite'>" +
-      "      <stop offset='0%' stop-color='#ef4063' />" +
-      "      <stop offset='99%' stop-color='#e557c6' />" +
-      "    </linearGradient>" +
-      "    <linearGradient id='gradientInvert'>" +
-      "      <stop offset='0%' stop-color='#F7797d' />" +
-      "      <stop offset='99%' stop-color='#fbd786' />" +
-      "    </linearGradient>" +
-      "  </defs>" +
-      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-      "</svg>" +
+        svg +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +
       "<div class='info'>" +
@@ -157,21 +151,7 @@ var list = function(n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<div class='detail'>" +
-        "<svg>" +
-        "  <defs>" +
-        "    <linearGradient id='gradientOpposite'>" +
-        "      <stop offset='0%' stop-color='#ef4063' />" +
-        "      <stop offset='99%' stop-color='#e557c6' />" +
-        "    </linearGradient>" +
-        "    <linearGradient id='gradientInvert'>" +
-        "      <stop offset='0%' stop-color='#F7797d' />" +
-        "      <stop offset='99%' stop-color='#fbd786' />" +
-        "    </linearGradient>" +
-        "  </defs>" +
-        "  <circle cx='20' cy='20' r='18.5'></circle>" +
-        "</svg>" +
-        "  </div>" +
+        "<div class='detail'>" + svg + "</div>" +
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
@@ -200,19 +180,7 @@ var home  = function(id) {
       if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
         $('#main #page .feed').append(
           "<div class='asset'>" +
-          "<svg>" +
-          "  <defs>" +
-          "    <linearGradient id='gradientOpposite'>" +
-          "      <stop offset='0%' stop-color='#ef4063' />" +
-          "      <stop offset='99%' stop-color='#e557c6' />" +
-          "    </linearGradient>" +
-          "    <linearGradient id='gradientInvert'>" +
-          "      <stop offset='0%' stop-color='#F7797d' />" +
-          "      <stop offset='99%' stop-color='#fbd786' />" +
-          "    </linearGradient>" +
-          "  </defs>" +
-          "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-          "</svg>" +
+            svg +
           "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
           "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
@@ -238,21 +206,7 @@ var base = function(n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<div class='detail'>" +
-        "<svg>" +
-        "  <defs>" +
-        "    <linearGradient id='gradientOpposite'>" +
-        "      <stop offset='0%' stop-color='#ef4063' />" +
-        "      <stop offset='99%' stop-color='#e557c6' />" +
-        "    </linearGradient>" +
-        "    <linearGradient id='gradientInvert'>" +
-        "      <stop offset='0%' stop-color='#F7797d' />" +
-        "      <stop offset='99%' stop-color='#fbd786' />" +
-        "    </linearGradient>" +
-        "  </defs>" +
-        "  <circle cx='20' cy='20' r='19'></circle>" +
-        "</svg>" +
-        "  </div>" +
+        "<div class='detail'>" + svg + "</div>" +
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +

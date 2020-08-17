@@ -84,20 +84,8 @@ $(document).ready()
           $('#main #visit #page #front #first .listing')
             .append(
               "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-              "<div class='detail'>" +
-              "<svg response='" + translations[i].toLowerCase() + "'>" +
-              "  <defs>" +
-              "    <linearGradient id='gradientOpposite'>" +
-              "      <stop offset='0%' stop-color='#ef4063' />" +
-              "      <stop offset='99%' stop-color='#e557c6' />" +
-              "    </linearGradient>" +
-              "    <linearGradient id='gradientInvert'>" +
-              "      <stop offset='0%' stop-color='#F7797d' />" +
-              "      <stop offset='99%' stop-color='#fbd786' />" +
-              "    </linearGradient>" +
-              "  </defs>" +
-              "  <circle cx='21' cy='21' r='20'></circle>" +
-              "</svg>" +
+              "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
+                  svg +
               "  </div>" +
               "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
@@ -168,7 +156,7 @@ $(document).ready()
         $('#arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-            "<div class='detail'>" +
+            "<div class='detail' response='" + translation[i].toLowerCase() + "'>" +
             "<svg response='" + translations[i].toLowerCase() + "'>" +
             "  <defs>" +
             "    <linearGradient id='gradientOpposite'>" +

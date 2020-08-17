@@ -25,12 +25,18 @@
 
 .stats svg,
 .asset svg,
-.filter svg,
-.display svg,
-.populate svg {
+.display svg {
   position: absolute;
   height: 72px;
   width: 72px;
+}
+
+.stats circle,
+.asset circle,
+.display circle {
+  r: 28;
+  cx: 36;
+  cy: 36;
 }
 
 .asset svg .border,
@@ -100,6 +106,12 @@
   height: 42px;
   width: 42px;
   z-index: 6;
+}
+
+.detail circle {
+  r: 20;
+  cx: 21;
+  cy: 21;
 }
 
 .id {
@@ -249,6 +261,12 @@
   padding-top: 5px;
   font-size: 13px;
   color: #aaa;
+}
+
+
+.external {
+  position: relative;
+  left: 12px;
 }
 
 .post {
