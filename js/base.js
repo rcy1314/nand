@@ -11,7 +11,7 @@ var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 
 
 var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-heart-o'></div>" +
-          "    <div class='ago fa-comment-o'></div>" +
+          "    <div class='images fa-comment-o'></div>" +
           "    <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
           "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>"
@@ -279,7 +279,7 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
   var dupe = []
-  for (var i = 0; i <= 9; i++) {
+  for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){

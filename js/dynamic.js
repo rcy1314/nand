@@ -1,6 +1,6 @@
 $(document)
   .ready()
-.on('touch click', 'svg', function(e) {
+.on('touch click', '.detail svg, .assets svg', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
@@ -15,8 +15,7 @@ $(document)
   $(this).attr('ext').blank()
   e.stopPropagation()
 })
-.on('touch click',
-  '#main .center .channel .item .header .fa-ellipsis-h, ' +
+.on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, ' +
   '#container .sticky .header .fa-ellipsis-h',
   function(e) {
     $(this).parents('.item, .wrap').find('.url').select()

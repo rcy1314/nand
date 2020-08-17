@@ -1,7 +1,7 @@
 .quick {
   border-radius: 2px;
   position: relative;
-  margin: 20px auto;
+  margin: 25px auto;
   height: 7.5em;
   width: 100%;
 }
@@ -45,17 +45,13 @@ svg {
   cy: 21;
 }
 
-.stats svg,
-.asset svg,
-.display svg {
+.asset svg {
   position: absolute;
   height: 72px;
   width: 72px;
 }
 
-.stats circle,
-.asset circle,
-.display circle {
+.asset circle {
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
   stroke-linecap: round;
@@ -98,7 +94,6 @@ svg {
 .asset {
   position: relative;
   text-align: center;
-  padding-left: 9px;
   padding-top: 15px;
   flex-shrink: 0;
 }
@@ -409,20 +404,19 @@ svg {
   font-size: 10px;
   padding: 15px;
   width: 150px;
-  top: 68px;
+  top: 65px;
 }
 
 .stats {
   align-items: center;
-  margin-bottom: 17px;
+  margin-bottom: 30px;
   position: relative;
   text-align: left;
   font-size: 10px;
   height: 120px;
-  padding: 5px;
   display: flex;
   width: 220px;
-  right: 15px;
+  top: 15px;
 }
 
 .stats .asset,
@@ -436,12 +430,10 @@ svg {
 }
 
 .suggestions {
-  height: fit-content;
   text-align: left;
   font-size: 10px;
   padding: 15px;
-  width: 200px;
-  top: 215px;
+  width: 180px;
 }
 
 .suggestions .id {
