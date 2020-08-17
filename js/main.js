@@ -47,6 +47,10 @@ $(document)
     uri.state()
     visual()
   })
+  .on('touch click', '#option .fa-home', function(e) {
+    var uri = '?q=' + category.toLowerCase()
+    uri.define().exit()
+  })
   .on('touch click', '#option .fa-sun', function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '+1'
