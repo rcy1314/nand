@@ -428,19 +428,6 @@ var write = function(n) {
       "  search='" + menu[n].cat.toLowerCase() +
       "'> " +
       "  <div class='display'>" +
-      "<svg>" +
-      "  <defs>" +
-      "    <linearGradient id='gradientOpposite'>" +
-      "      <stop offset='0%' stop-color='#ef4063' />" +
-      "      <stop offset='99%' stop-color='#e557c6' />" +
-      "    </linearGradient>" +
-      "    <linearGradient id='gradientInvert'>" +
-      "      <stop offset='0%' stop-color='#F7797d' />" +
-      "      <stop offset='99%' stop-color='#fbd786' />" +
-      "    </linearGradient>" +
-      "  </defs>" +
-      "  <circle cx='36' cy='36' r='28' class='border'></circle>" +
-      "</svg>" +
       "    <img class='id' src='" + img + "' " +
       "      response='" + menu[n].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
       "  </div>" +
