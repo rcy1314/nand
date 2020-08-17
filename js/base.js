@@ -53,6 +53,7 @@ var select = function(n) {
   $('#main .translation')
     .append(
       "<div class='select' response='" + translations[i] + "'>" +
+      "  <div class='radial'></div>" +
       "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
       "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
       "    <br>&emsp;" + translations[i].grep() + " feeds" +
@@ -230,6 +231,7 @@ var suggest = function(n) {
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
         "<div class='combine'>" +
+        "  <div class='radial'></div>" +
         "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
         "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
         "    response='" + menu[e].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + "'" +

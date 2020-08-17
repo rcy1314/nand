@@ -35,6 +35,28 @@
   margin-right: auto;
 }
 
+.selectInvert {
+  background: -webkit-linear-gradient(to left, #f7797d, #FBD786);
+  background: linear-gradient(to left, #f7797d, #FBD786);
+  -webkit-mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
+  mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
+  border-radius: 36px;
+  position: relative;
+  height: 42px;
+  width: 42px;
+}
+
+.suggestInvert {
+  background: -webkit-linear-gradient(to left, #f7797d, #FBD786);
+  background: linear-gradient(to left, #f7797d, #FBD786);
+  -webkit-mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
+  mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
+  border-radius: 36px;
+  position: relative;
+  height: 28px;
+  width: 28px;
+}
+
 .responseOpposite {
   background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
   background: linear-gradient(to left, #ef4063, #e557c6);
@@ -55,6 +77,28 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.selectOpposite {
+  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
+  background: linear-gradient(to left, #ef4063, #e557c6);
+  -webkit-mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
+  mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
+  border-radius: 36px;
+  position: relative;
+  height: 42px;
+  width: 42px;
+}
+
+.suggestOpposite {
+  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
+  background: linear-gradient(to left, #ef4063, #e557c6);
+  -webkit-mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
+  mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
+  border-radius: 36px;
+  position: relative;
+  height: 28px;
+  width: 28px;
 }
 
 .response {

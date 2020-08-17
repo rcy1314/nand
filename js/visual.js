@@ -3,7 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $('#container, #arm, #main, #main #option, #visit, #bottom, ' +
-      '.feed, .channel, .suggestions, .combine, .index, a, .stats, ' +
+      '.feed, .channel, .combine, .index, a, .stats, ' +
       '.result, .air, #main .page, #main .page .id, .blur, ' +
       '.filter, .populate, .filter a, .populate a'
     ).css({
@@ -12,9 +12,9 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('#top, #arm, #arm #option, .wrap, .translation, ' +
-      '.header, .type, .item, .comment, .ago, ' +
-      '.pub, .tag, .suggestions, .combine, .right, .left, #guide, ' +
+    $('#top, #arm, #arm #option, .wrap, ' +
+      '.header, .item, .comment, .ago, ' +
+      '.pub, .tag, .suggestions, .right, .left, #guide, ' +
       '.item .pub, .more, .fas, .tag, #home a, .description, .type, ' +
       '#home, input[type=text]'
     ).css({
@@ -23,16 +23,18 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('.buttonSearch, .focus').css({
+    $('.buttonSearch, .focus, .type, .translation, .suggestions, .combine').css({
       'background-color': 'transparent',
       'box-shadow': 'none',
       'color': '#fff'
     })
+    $('.air .radial, .result .radial, .stats .radial').removeClass('radialInvert').addClass('radialOpposite')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
+    $('.combine .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
+    $('.select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(90deg)')
-    $('.radial').removeClass('radialInvert').addClass('radialOpposite')
     $('.index, .hover').addClass('contrast').removeClass('visual')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('.listing').addClass('opposite').removeClass('invert')
@@ -55,27 +57,29 @@ var visual = function(n) {
       'border': 'none'
     })
     $('#main, #container,.air, .result, #front #option, #visit, #bottom, .hover, .info a, ' +
-      '.channel, .stats, .suggestions, .combine, #bottom, #main .page .id, ' +
+      '.channel, .stats, .combine, #bottom, #main .page .id, ' +
       '#main .page .feed, #main .page, .right, .left, #main .page .feed a, ' +
-      '.filter, .populate, .translation, .blur, #search input[type=text]'
+      '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
       'color': '#666'
     })
-    $('#home, .description, .tag, #option, .fas, .title, .type, .focus, ' +
-      '.tag, #option, .fa-double-angle-right, .fa-double-angle-left, #toggle'
+    $('#home, .description, .tag, #option, .fas, .title, .type, .focus, .translation, ' +
+      '.tag, #option, .fa-double-angle-right, .fa-double-angle-left, #toggle, .suggestions'
     ).css({
       'background-color': 'transparent',
       'color': '#000'
     })
+    $('.air .radial, .result .radial, .stats .radial').removeClass('radialOpposite').addClass('radialInvert')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
-    $('#guide .wrap, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #ddd')
+    $('#guide .wrap, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
+    $('.combine .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
+    $('.select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
-    $('.radial').removeClass('radialOpposite').addClass('radialInvert')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')

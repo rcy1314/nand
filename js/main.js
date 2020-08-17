@@ -87,7 +87,7 @@ $(document)
     return false
   })
   .on('touch click', '#main .translation .select', function(e) {
-    filter = []
+    id = 1
     category = $(this).attr('response')
     populate($(this).attr('response'))
     var uri = '?q=' + $(this).attr('response').toLowerCase()

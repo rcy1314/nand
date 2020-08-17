@@ -54,6 +54,13 @@ svg {
 
 .asset .radial {
   position: absolute;
+  border-radius: 36px;
+  height: 56px;
+  width: 56px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   top: 10px;
 }
 
@@ -419,6 +426,15 @@ svg {
   width: 100%;
 }
 
+.select .radial {
+  position: absolute;
+  border-radius: 36px;
+  bottom: 9.5px;
+  height: 42px;
+  width: 42px;
+  left: -2px;
+}
+
 .content {
   display: inline-block;
   height: fit-content;
@@ -476,6 +492,13 @@ svg {
 .combine .id {
   position: relative;
   right: 10px;
+}
+
+.combine .radial {
+  position: absolute;
+  left: 31.5px;
+  height: 28px;
+  width: 28px;
 }
 
 .views {
