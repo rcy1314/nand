@@ -13,11 +13,11 @@ $(document)
       $('#arm #search #input .icon').removeClass('slide')
       $('#arm #search #match').hide()
     }
-    if (!$('#main #visit #page #front input[type=text]').is(':focus')) {
-      $('#main #visit #page #front #first').css('visibility','hidden')
-      if ($('#main #visit #page #front input[type=text]').val().length == 0 ||
-          $('#main #visit #page #front input[type=text]').val() == 'Search')
-      $('#main #visit #page #front .icon').removeClass('search')
+    if (!$('#main #visit .page #front input[type=text]').is(':focus')) {
+      $('#main #visit .page #front #first').css('visibility','hidden')
+      if ($('#main #visit .page #front input[type=text]').val().length == 0 ||
+          $('#main #visit .page #front input[type=text]').val() == 'Search')
+      $('#main #visit .page #front .icon').removeClass('search')
     }
    })
   .on('touch click', '#main #visit #placeholder', function(e) {

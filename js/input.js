@@ -7,13 +7,13 @@ $(document)
       else if (e.type == 'mouseleave')
         $('.focus').removeClass('pageInput').addClass('pageInputOut')
 })
-.on('touch click', '#main #visit #page #front .icon', function(e) {
-    $('#main #visit #page #front input[type=text]').focus()
+.on('touch click', '#main #visit .page #front .icon', function(e) {
+    $('#main #visit .page #front input[type=text]').focus()
 })
-.on('touch click', '#main #visit #page #front .buttonSearch', function(e) {
-    if ($('#main #visit #page #front input[type=text]').val().length > 0 &&
-        $('#main #visit #page #front input[type=text]').val() != 'Search')
-      $('#main #visit #page #front').submit()
+.on('touch click', '#main #visit .page #front .buttonSearch', function(e) {
+    if ($('#main #visit .page #front input[type=text]').val().length > 0 &&
+        $('#main #visit .page #front input[type=text]').val() != 'Search')
+      $('#main #visit .page #front').submit()
     e.preventDefault()
 })
 .on('touch click', '#arm #search #input .icon', function(e) {
@@ -26,45 +26,45 @@ $(document)
     }).focus()
 })
 .on('keyup',
-   '#main #visit #page input[type=text]', function(e) {
-     $('#main #visit #page #front #first').css('visibility','visible')
-     $('#main #visit #page #front #first .listing').css('z-index', '3')
+   '#main #visit .page input[type=text]', function(e) {
+     $('#main #visit .page #front #first').css('visibility','visible')
+     $('#main #visit .page #front #first .listing').css('z-index', '3')
      var keyup = $(this).val()
      if (e.type == 'keyup' && e.keyCode == 13)
        return false
      else if (e.type == 'keyup' && $(this).val()
        .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
-       base($(this).val())
+       list('visit', $(this).val())
      else if ($(this).val().length >= 2 && e.keyCode == 8)
-       base($(this).val())
+       list('visit', $(this).val())
      else if ($(this).val().length <= 2 && e.keyCode == 8) {
-       $('#main #visit #page #front #first').css('visibility','hidden')
+       $('#main #visit .page #front #first').css('visibility','hidden')
        $('#main .result, #main .air, #main .center, #main .suggestions').show()
      } else if (e.keyCode == 40 || e.keyCode == 34) {
-       if (!$('#main #visit #page #front #first .listing .hover').length)
-         $('#main #visit #page #front #first .listing .index:first')
+       if (!$('#main #visit .page #front #first .listing .hover').length)
+         $('#main #visit .page #front #first .listing .index:first')
            .addClass('hover')
            .removeClass('index')
        else {
-         $('#main #visit #page #front #first .listing .hover')
+         $('#main #visit .page #front #first .listing .hover')
            .next().focus()
            .attr('class', 'hover')
          $(this).val(keyup)
          $(this).attr('tabIndex', -1).focus()
-         $('#main #visit #page #front #first .listing .hover')
+         $('#main #visit .page #front #first .listing .hover')
            .prev().attr('class', 'index')
        }
      } else if (e.keyCode == 38 || e.keyCode == 33) {
-       $('#main #visit #page #front #first .listing .hover')
+       $('#main #visit .page #front #first .listing .hover')
          .prev().focus()
          .attr('class', 'hover')
        $(this).val(keyup)
        $(this).focus()
-       $('#main #visit #page #front #first .listing .hover')
+       $('#main #visit .page #front #first .listing .hover')
          .next().attr('class', 'index')
      } else if (e.keyCode == 27) {
-       $('#main #visit #page #front #first .listing').css('z-index', '0')
-       $('#main #visit #page #front #first').hide()
+       $('#main #visit .page #front #first .listing').css('z-index', '0')
+       $('#main #visit .page #front #first').hide()
        $(this)
          .css({
            'caret-color': 'transparent',
@@ -78,18 +78,18 @@ $(document)
      visual()
 })
 .on('touch click focusin focusout blur',
-  '#main #visit #page #front input[type=text]',
+  '#main #visit .page #front input[type=text]',
   function(e) {
     $this = $(this)
     if (e.type == 'focusin') {
-      if ($('#main #visit #page #front .icon').hasClass('search'))
+      if ($('#main #visit .page #front .icon').hasClass('search'))
         $(this)
           .css({
             'caret-color': '#e4e4e4',
             'padding-left': '40px',
             'text-align': 'left'
           }).val('')
-      else if (!$('#main #visit #page #front .icon').hasClass('search')) {
+      else if (!$('#main #visit .page #front .icon').hasClass('search')) {
         setTimeout(function() {
           $this.css({
             'caret-color': '#e4e4e4',
@@ -97,17 +97,17 @@ $(document)
             'text-align': 'left',
           }).val('')
         }, 200)
-        $('#main #visit #page #front .icon')
+        $('#main #visit .page #front .icon')
           .addClass('search')
       }
       return false
     }
     if (e.type == 'touch' || e.type == 'click') {
-        $('#main #visit #page #front #first .listing').css('z-index', '3')
-        $('#main #visit #page #front #first').css('visibility', 'visible')
-        $('#main #visit #page #front #first .listing').empty()
+        $('#main #visit .page #front #first .listing').css('z-index', '3')
+        $('#main #visit .page #front #first').css('visibility', 'visible')
+        $('#main #visit .page #front #first .listing').empty()
         $.each(translations, function(i) {
-          $('#main #visit #page #front #first .listing')
+          $('#main #visit .page #front #first .listing')
             .append(
               "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
               "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
@@ -120,14 +120,14 @@ $(document)
               "</div>")
         })
       $(this).val('')
-      if ($('#main #visit #page #front .icon').hasClass('search'))
+      if ($('#main #visit .page #front .icon').hasClass('search'))
         $(this)
           .css({
             'caret-color': '#e4e4e4',
             'padding-left': '40px',
             'text-align': 'left'
           })
-      else if (!$('#main #visit #page #front .icon').hasClass('search')) {
+      else if (!$('#main #visit .page #front .icon').hasClass('search')) {
         setTimeout(function() {
           $this.css({
             'caret-color': '#e4e4e4',
@@ -135,7 +135,7 @@ $(document)
             'text-align': 'left',
           })
         }, 200)
-        $('#main #visit #page #front .icon')
+        $('#main #visit .page #front .icon')
           .addClass('search')
       }
     }
@@ -238,10 +238,10 @@ $(document)
       return false
     } else if (e.type == 'keyup' && $(this).val()
       .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
-      list($(this).val())
+        list('match', $(this).val())
     else if ($(this)
       .length >= 2 && e.keyCode == 8) {
-      list($(this).val())
+        list('match', $(this).val())
     } else if ($(this).val().length <= 2 && e.keyCode == 8) {
       $('#arm #search #match').hide()
       $('#main .result, #main .air, #main .center, #main .suggestions').show()
@@ -325,35 +325,35 @@ $(document)
     e.preventDefault()
     visual()
   })
-  .on('submit', '#main #visit #page #front', function(e) {
-    $('#main #visit #page #front .icon, #main #page #visit .button').css('visibility','hidden')
-    if ($('#main #visit #page #front #first .listing .hover').length) {
-      if (translations.indexOf($('#main #visit #page #front #first .listing .hover')
+  .on('submit', '#main #visit .page #front', function(e) {
+    $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
+    if ($('#main #visit .page #front #first .listing .hover').length) {
+      if (translations.indexOf($('#main #visit .page #front #first .listing .hover')
           .attr('response')) > -1) {
-        category = $('#main #visit #page #front #first .hover')
+        category = $('#main #visit .page #front #first .hover')
           .attr('response')
-        populate($('#main #visit #page #front #first .hover')
+        populate($('#main #visit .page #front #first .hover')
           .attr('response'))
-        var uri = '?q=' + $('#main #visit #page #front #first .hover')
+        var uri = '?q=' + $('#main #visit .page #front #first .hover')
           .attr('response')
           .toLowerCase()
         air(id)
-        state('?q=' + $('#main #visit #page #front #first .hover')
+        state('?q=' + $('#main #visit .page #front #first .hover')
           .attr('response')
           .toLowerCase())
-        document.title = $('#main #visit #page #front #first .hover')
+        document.title = $('#main #visit .page #front #first .hover')
           .attr('response')
         $('#top').css('visibility','visible')
         progress(true, 100)
       } else {
-        var uri = '?q=&' + $('#main #visit #page #front #first .listing .hover')
+        var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
           .attr('response')
         if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
         else if (contrast == true) uri = uri + '+1'
         exit(uri)
       }
     } else {
-      var uri = '?q=' + $('#main #visit #page #front input[type=text]').val()
+      var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
       if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
@@ -366,7 +366,7 @@ $(document)
     function(e) {
       if (e.type == 'mouseenter') {
         $('#arm #search #match .listing .hover, ' +
-          '#main #visit #page #front #first .listing .hover')
+          '#main #visit .page #front #first .listing .hover')
           .attr('class', 'index')
         if (op == 0) $(this)
           .addClass('hover contrast.hover')
@@ -375,10 +375,10 @@ $(document)
       }
       if (e.type == 'mouseleave') {
         if (op == 1) $('#arm #search #match .listing .hover, ' +
-          '#main #visit #page #front #first .listing .hover')
+          '#main #visit .page #front #first .listing .hover')
           .attr('class', 'index contrast')
         else $('#arm #search #match .listing .hover, ' +
-          '#main #visit #page #front #first .listing .hover')
+          '#main #visit .page #front #first .listing .hover')
           .attr('class','index visual')
       }
       if (e.type == 'touch' || e.type == 'click') {

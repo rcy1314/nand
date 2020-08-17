@@ -93,33 +93,6 @@ var guide = function(n, ref, element, courtesy, title, dst, share, src) {
   )
 }
 
-var feed  = function(n) {
-
-  var dupe = []
-  for (var i = 0; i <= 20; i++) {
-    var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
-    if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
-    $('#main .center .feed').append(
-      "<div class='asset' " +
-          "response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'>" +
-        svg +
-      "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
-      "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
-      "  search='" + menu[e].cat.toLowerCase() + "'> " +
-      "<a style='left:0;width:100%' ext='" + menu[i].ext + "' " +
-      "  title='" + menu[e].id + "'>" +
-         String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) +
-         '...' +
-      "</a>" +
-      "</div>"
-    )
-  }
-  }
-  visual()
-}
-
 var content  = function(n, recent, oldest, posts) {
 
     var images = 0
@@ -143,12 +116,13 @@ var content  = function(n, recent, oldest, posts) {
 
 }
 
-var list = function(n) {
+var list = function(e, n) {
 
   $('#arm #search #match .listing').empty()
+  $('#main #visit .page #front #first .listing').empty()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
-      $('#arm #search #match .listing').prepend(
+      $('#' + e + ' .listing').prepend(
         "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
@@ -160,7 +134,7 @@ var list = function(n) {
         menu[i].id.match(/[^\/]+$/g) + "</div>" +
         "</div>"
       )
-      if ($('#search .listing .' + i).length > 1) $('#search .listing .' + i + ':last')
+      if ($('#' + e + ' .listing .' + i).length > 1) $('#search .listing .' + i + ':last')
         .remove()
     }
   }
@@ -172,15 +146,15 @@ var list = function(n) {
 
 }
 
-var home  = function(id) {
+var feed  = function(l, n) {
 
   var dupe = []
-  for (var i = 1; i <= menu.length - 1; i++) {
+  for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
       if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
-        $('#main #page .feed').append(
+        $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
               "response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'>" +
             svg +
@@ -197,37 +171,6 @@ var home  = function(id) {
   }
   visual()
 }
-
-var base = function(n) {
-
-  $('#main #visit #page #front #first .listing').empty()
-  for (var i = menu.length - 1; i >= 1; i--) {
-    if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
-      $('#main #visit #page #front #first .listing').prepend(
-        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
-        "  tabIndex='-1'" +
-        "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
-        "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<div class='detail'>" + svg + "</div>" +
-        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
-        "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
-        "<br>&emsp;" +
-        menu[i].id.match(/[^\/]+$/g) + "</div>" +
-        "</div>"
-      )
-      if ($('#main #visit #page #front #first .listing .' + i).length > 1)
-        $('#main #visit #page #front #first .listing .' + i + ':last')
-        .remove()
-    }
-  }
-  if (!$('#main #visit #page #front #first').is(':visible')) {
-    setTimeout(function() {
-      $('#main #visit #page #front #first').show()
-    }, 50)
-  }
-
-}
-
 
 var comment = function (n) {
 

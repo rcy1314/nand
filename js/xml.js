@@ -41,7 +41,7 @@ var xml = function(e, s, n) {
     $('#main .channel').html("This site could not be reached.")
     clearInterval(complete)
     progress(true, 100)
-    feed()
+    feed('center', 12)
     visual()
   }).done(function(xhr) {
     if ($(xhr).find('entry').length > 0) var channel = "entry"

@@ -2,7 +2,7 @@ if (location.href.split('?')[1] &&
   location.href.split('?')[1] != '+1') {
     $(document)
     .ready(function() {
-      $('#container .toggle, #main #visit #page #front').css('visibility','hidden')
+      $('#container .toggle, #main #visit .page #front').css('visibility','hidden')
       $('#main svg').css('visibility','visible')
     })
 
@@ -19,9 +19,9 @@ if (location.href.split('?')[1] &&
         $(document)
           .ready(function() {
             $('#top, #container #toggle').css('visibility', 'hidden')
-            $('#main #visit #page .button, ' +
-            '#main #visit #page #front input[type=text], ' +
-            '#main #visit #page #front .icon')
+            $('#main #visit .page .button, ' +
+            '#main #visit .page #front input[type=text], ' +
+            '#main #visit .page #front .icon')
             .css('visibility','visible')
         })
       }
@@ -33,25 +33,25 @@ if (location.href.split('?')[1] &&
     contrast = contrast != true
     $(document)
     .ready(function() {
-      $('#main #visit #page .button, ' +
-      '#main #visit #page #front input[type=text], ' +
-      '#main #visit #page #front .icon')
+      $('#main #visit .page .button, ' +
+      '#main #visit .page #front input[type=text], ' +
+      '#main #visit .page #front .icon')
       .css('visibility','visible')
-      home()
+      feed('page', menu.length - 1)
 })
 
 } else if (location.href.match('\\+1')) {
   op = op != true
   contrast = contrast != true
-  home()
+  feed('page', menu.length - 1)
 } else {
     $(document)
     .ready(function() {
-      $('#main #visit #page .button, ' +
-      '#main #visit #page #front input[type=text], ' +
-      '#main #visit #page #front .icon')
+      $('#main #visit .page .button, ' +
+      '#main #visit .page #front input[type=text], ' +
+      '#main #visit .page #front .icon')
       .css('visibility','visible')
-      home()
+      feed('page', menu.length - 1)
     })
 }
   if (location.search.split('?q=')[1]) {
@@ -63,7 +63,7 @@ if (location.href.split('?')[1] &&
     $(document)
     .ready(function() {
       $('#main svg').css('visibility','visible')
-      $('#main #visit #page #front, #toggle').css('visibility','hidden')
+      $('#main #visit .page #front, #toggle').css('visibility','hidden')
     })
     var uri = location.search.split('?q=')[1]
     uri = uri.replace(/\?\+1|\+1/, '')

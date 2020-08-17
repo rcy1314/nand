@@ -223,7 +223,7 @@ body,
   font-size: 64;
 }
 
-#page {
+.page {
   position: relative;
   margin: 0 auto;
   display: block;
@@ -253,22 +253,10 @@ body,
   border-radius: 28px;
   position: relative;
   font-size: 10px;
-  height: 36.5px;
-  width: 38px;
-  bottom: 4px;
+  height: 40px;
+  width: 40px;
+  bottom: 5px;
   left: -1px;
-}
-
-#arm .type,
-#arm .typeTranslation {
-  display: inline-block;
-  border-radius: 28px;
-  position: relative;
-  font-size: 10px;
-  height: 36.5px;
-  width: 37px;
-  bottom: 4px;
-  left: -.5px;
 }
 
 .text {
@@ -286,7 +274,7 @@ body,
 
 }
 
-#page input[type=text] {
+.page input[type=text] {
   width: calc(100% - 60px)
   display: inline-block;
   position: relative;
@@ -306,14 +294,14 @@ body,
   transition: box-shadow .25s;
 }
 
-#page .icon {
+.page .icon {
   font-size: 14px !important;
   color: #aaa !important;
   visibility: hidden;
   z-index: 2;
 }
 
-#page .button {
+.page .button {
   display: inline-block;
   visibility: hidden;
   position: relative;
@@ -323,7 +311,7 @@ body,
   right: 4px;
 }
 
-#page .buttonSearch {
+.page .buttonSearch {
   font-size: 20px !important;
   transform: rotate(90deg);
   color: #fff !important;
