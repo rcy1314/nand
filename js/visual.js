@@ -18,7 +18,6 @@ var visual = function(n) {
       '.pub, .tag, .suggestions, .combine, .right, .left, #guide, ' +
       '.fas, .item .pub, .more, ' +
       '.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, ' +
-      '.fa-angle-double-left, .fa-angle-double-right, ' +
       '#home a, .description, .fa-times-circle, .type, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, #home, ' +
       '.fa-terminal, input[type=text]'
@@ -68,7 +67,7 @@ var visual = function(n) {
     })
     $('#home, .description, .fa-sun, .title, .type, .fa-search, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
-      '.fa-terminal, #toggle'
+      '.fa-terminal, .fa-double-angle-right, .fa-double-angle-left, #toggle'
     ).css({
       'background-color': 'transparent',
       'color': '#000'

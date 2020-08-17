@@ -99,7 +99,6 @@ var content  = function(n, recent, oldest, posts) {
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
       "<div class='asset' response='" + menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'>" +
-        svg +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +
       "<div class='info'>" +
