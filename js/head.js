@@ -2278,7 +2278,7 @@ var menu = [
 		des: "Do it yourself subreddit where people can come to learn and share their experiences of doing, building and fixing things on their own.",
 		uri: "https://www.reddit.com/r/DIY/.rss",
 		ext: "https://www.reddit.com/r/DIY/",
-		img: "Orange",
+		img: "DIY",
 		hash: "Di"
 	}
 
@@ -2509,7 +2509,7 @@ var menu = [
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
 		uri: "https://www.reddit.com/r/LosAngeles/.rss",
 		ext: "https://www.reddit.com/r/LosAngeles",
-		img: "Orange",
+		img: "LosAngeles",
 		hash: "ge"
 	}
 
@@ -2531,7 +2531,7 @@ var menu = [
 		des: "Movies subreddit News and Discussion about Major Motion Pictures.",
 		uri: "https://www.reddit.com/r/movies/.rss",
 		ext: "https://www.reddit.com/r/Movies",
-		img: "Orange",
+		img: "Movies",
 		hash: "mo"
 	}
 
@@ -2597,7 +2597,7 @@ var menu = [
 		des: "Pics subreddit A place for pictures and photographs.",
 		uri: "https://www.reddit.com/r/pics/.rss",
 		ext: "https://www.reddit.com/r/Pics",
-		img: "Orange",
+		img: "Pics",
 		hash: "cL"
 	}
 
@@ -2619,7 +2619,7 @@ var menu = [
 		des: "San Francisco subreddit for the gorgeous City by the Bay! San Francisco, California, USA.",
 		uri: "https://www.reddit.com/r/sanfrancisco/.rss",
 		ext: "https://www.reddit.com/r/SanFrancisco",
-		img: "Orange",
+		img: "SanFrancisco",
 		hash: "rS"
 	}
 

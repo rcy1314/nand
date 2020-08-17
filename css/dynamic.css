@@ -48,10 +48,19 @@ svg {
   cy: 21;
 }
 
+.content .asset {
+  position: relative;
+}
+
+.asset .radial {
+  position: absolute;
+  top: 10px;
+}
+
 .asset svg {
   position: absolute;
-  height: 72px;
-  width: 72px;
+  height: 74px;
+  width: 74px;
 }
 
 .asset circle {
@@ -59,7 +68,7 @@ svg {
   transform: rotate(-90deg);
   stroke-linecap: round;
   position: absolute;
-  stroke-width: 2;
+  stroke-width: 1;
   fill: none;
   cx: 36;
   cy: 36;
@@ -102,11 +111,17 @@ svg {
   left: -35px;
 }
 
-.asset {
+.feed .asset {
   position: relative;
   text-align: center;
   padding-top: 15px;
   flex-shrink: 0;
+}
+
+.feed img {
+  height: 55px;
+  width: 55px;
+  right: 2px;
 }
 
 .asset a {
@@ -126,8 +141,8 @@ svg {
   position: relative;
   padding: 1px;
   margin: 10px;
-  height: 50px;
-  width: 50px;
+  height: 53px;
+  width: 53px;
 }
 
 .header {
@@ -171,6 +186,7 @@ svg {
   display: table-cell !important;
   box-shadow: none !important;
   border: none !important;
+  border-radius: 10px;
   margin: 0;
 }
 

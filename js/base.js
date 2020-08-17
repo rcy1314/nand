@@ -99,6 +99,7 @@ var content  = function(n, recent, oldest, posts) {
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
       "<div class='asset' response='" + menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'>" +
+      "<div class='radial'></div>" +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +
       "<div class='info'>" +
@@ -259,6 +260,7 @@ var populate = function(n) {
         "<div class='populate' index='" + menu.indexOf(menu[i]) + "'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  <div class='display'>" +
+        "    <div class='radial'></div>" +
         "    <img class='id' src='" + img + "' " +
         "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  </div>" +
@@ -288,6 +290,7 @@ var air = function(n) {
         "  response='" +
              menu[i].id.toLowerCase().replace(/[\/|\.|\s|\-]/g, '-') + "'> " +
         "  <div class='display'>" +
+        "    <div class='radial'></div>" +
         "    <img class='id' src='" + img + "' " +
         "       response='" + menu[i].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'> " +
         "  </div>" +

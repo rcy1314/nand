@@ -371,7 +371,18 @@ body,
 
 .filter .display,
 .populate .display {
+  position: relative;
   width: 100%;
+}
+
+.filter .id,
+.populate .id {
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .title,

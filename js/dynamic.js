@@ -1,6 +1,6 @@
 $(document)
   .ready()
-.on('touch click', '.detail svg, .asset svg', function(e) {
+.on('touch click', '.asset img, .detail svg, .asset svg', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
