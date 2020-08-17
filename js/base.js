@@ -27,7 +27,7 @@ var svg = "<svg>" +
           "      <stop offset='99%' stop-color='#fbd786' />" +
           "    </linearGradient>" +
           "  </defs>" +
-          "  <circle class='border'></circle>" +
+          "  <circle></circle>" +
           "</svg>"
 
 
@@ -101,7 +101,8 @@ var feed  = function(n) {
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
     if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
     $('#main .center .feed').append(
-      "<div class='asset'>" +
+      "<div class='asset' " +
+          "response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'>" +
         svg +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
       "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
@@ -123,7 +124,7 @@ var content  = function(n, recent, oldest, posts) {
     var images = 0
     var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
-      "<div class='asset'>" +
+      "<div class='asset' response='" + menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'>" +
         svg +
       "<img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +
@@ -179,10 +180,10 @@ var home  = function(id) {
     if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
       if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
         $('#main #page .feed').append(
-          "<div class='asset'>" +
+          "<div class='asset' " +
+              "response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'>" +
             svg +
           "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
-          "  response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
           "<a style='left:0;width:100%' ext='" + menu[e].ext + "' " +
           "  title='" + menu[e].id + "'>" +
@@ -301,17 +302,13 @@ var suggest = function(n) {
 }
 
 var populate = function(n) {
-  if (!$.isNumeric(n)) {
-    filter = []
-    var cat = n.capitalize()
-  } else var cat = menu[id].cat
   $('#main .air, #main .translation, #main .center, #main .content').remove()
   if ($('#main .result').length < 1)
     $('#main').append(
       "<div class='result' style='display:none'></div>"
     )
   for (var i = 1; i <= menu.length - 1; i++) {
-    if (id != menu.indexOf(menu[i]) && cat == menu[i].cat) {
+    if (id != menu.indexOf(menu[i]) && category == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'
@@ -329,21 +326,17 @@ var populate = function(n) {
       )
     }
   }
-  air(cat)
+  air(category)
 }
 
 var air = function(n) {
 
-  if (!$.isNumeric(n)) {
-    filter = []
-    var cat = n.capitalize()
-  } else var cat = menu[id].cat
   if ($('#main .air').length < 1)
     $('#main .result').before(
       "<div class='air' style='display:none'></div>"
     )
   for (var i = 1; i < menu.length - 1; i++) {
-    if (id != menu.indexOf(menu[i]) && cat == menu[i].cat) {
+    if (id != menu.indexOf(menu[i]) && category == menu[i].cat) {
       var tag = menu[i].id.match(/[^\/]+$/g)
       var hilight = menu[i].des.replace(tag, "<b>" + tag + '</b>')
       var img = 'images/png/' + menu[i].img + '.png'

@@ -10,14 +10,6 @@ var xml = function(e, s, n, post) {
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
-  if (filter.length > 1) var next = filter.indexOf(menu.indexOf(menu[n]))
-  else var next = n
-  if (filter[next + +1]) var plus = filter[next + +1]
-  else if (n == menu.length - 1) var plus = 1 + +1
-  else var plus = n + +1
-  if (filter[next - +1]) var back = filter[next - +1]
-  else if (n == 0) var back = menu.length - 1
-  else var back = n - +1
   document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
@@ -212,7 +204,7 @@ var xml = function(e, s, n, post) {
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
           "      <img id='" + i + "' class='img' src='" + src + "'>" +
-                  tag + 
+                  tag +
           "    </div>" +
           "    <div class='wrap'>" +
           "      <div class='pub' style='display:none' text='" + $(this).find('title:first').text().escape() + "'>" +
@@ -293,18 +285,16 @@ var xml = function(e, s, n, post) {
           else image(true, false, pub[i].element, pub[i].src)
       })
 
-    if (!id) id = menu.indexOf(menu[n])
     var posts = $('#main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = pub[$('.item:last').attr('item')].dst
-    $('#main .center .content .queue').html($('#main .center .channel .item .image img[src!=""]').length)
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
-      "  <button class='previous' index='" + menu.indexOf(menu[back]) + "'>Previous</button>&ensp;" +
-      "  <div class='back'>" + menu[back].id.match(/[^\/]+$/g) + "</div>" +
+      "  <button class='back' index='" + menu.indexOf(menu[n.toString().back()]) + "'>Previous</button>&ensp;" +
+      "  <div class='back'>" + menu[n.toString().back()].id.match(/[^\/]+$/g) + "</div>" +
       "  <div class='bottom'>acktic</div>" +
-      "  <div class='back'>" + menu[plus].id.match(/[^\/]+$/g) + "</div>" +
-      "  &ensp;<button class='next' index='" + menu.indexOf(menu[plus]) + "'>Next</button>" +
+      "  <div class='next'>" + menu[n.toString().next()].id.match(/[^\/]+$/g) + "</div>" +
+      "  &ensp;<button class='next' index='" + menu.indexOf(menu[n.toString().next()]) + "'>Next</button>" +
       "</div>")
     content(n, recent, oldest, posts)
     clearInterval(complete)

@@ -1,3 +1,26 @@
+String.prototype.next = function() {
+
+  if (filter.length > 1) var plus = filter.indexOf(menu.indexOf(menu[parseInt(this)]))
+  else var plus = parseInt(this)
+  if (filter[plus + +1]) var next = filter[plus + +1]
+  else if (this == menu.length - 1) var next = 1 + +1
+  else var next = parseInt(this) + +1
+
+  return next
+
+}
+
+String.prototype.back = function() {
+
+  if (filter.length > 1) var plus = filter.indexOf(menu.indexOf(menu[parseInt(this)]))
+  if (filter[plus - +1]) var back = filter[plus - +1]
+  else if (this == 0) var back = menu.length - 1
+  else var back = parseInt(this) - +1
+
+  return back
+
+}
+
 String.prototype.domain = function() {
 
   return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g)

@@ -1,27 +1,12 @@
 $(document)
   .ready()
-.on('touch click', '.detail svg, #main .center .quick .feed .asset .id, ' +
-  '#main #page .quick .feed .asset .id, ' +
-  '#main .filter .display .id, #main .populate .display .id', function(e) {
+.on('touch click', 'svg', function(e) {
   var $this = $(this)
   $(this).parent().find('svg circle').addClass('mask')
   setTimeout(function() {
-      if ($this.parents('.index').find('.detail')){
-      var uri = '?q=&' + $this.parents('.index').find('.detail').attr('response')
+      var uri = '?q=&' + $this.parents('.asset, .detail').attr('response')
       uri.define().exit()
       return false
-      }
-    if (location.href.match('\\?q=')) {
-      var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-      if (location.href.match(/\+1/g))
-        var res = uri[0].replace(/\+1/g, '')
-      else var res = uri[0]
-      uri = '?q=' + res + '&' + $this.attr('response')
-      uri.define().exit()
-    } else {
-      var uri = '?q=&' + $this.attr('response')
-      uri.define().exit()
-    }
   }, 750)
   e.stopPropagation()
 })
@@ -83,12 +68,9 @@ $(document)
       // compare first click to this click and see if they occurred within double click threshold
       if (((new Date().getTime()) - tap) < 300) {
           // double click occurred
-          $(this)
-            .parents('.item, .sticky')
-            .find('.fa-heart-o, .fa-gratipay')
+          $(this).parents('.item, .sticky').find('.fa-heart-o, .fa-gratipay')
             .toggleClass('fa-heart-o fab fa-gratipay')
-          $(this)
-            .parents('#container')
+          $(this).parents('#container')
             .find('#main .' + id + ' .fa-heart-o, ' +
               '#main .' + id + ' .fab, #main .' + id + ' .fa-gratipay')
             .toggleClass('fa-heart-o fab fa-gratipay')
