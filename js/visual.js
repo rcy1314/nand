@@ -16,7 +16,7 @@ var visual = function(n) {
     $('#top, #arm, #arm #option, .wrap, .translation, ' +
       '.header, .type, .item, .comment, .ago, ' +
       '.pub, .tag, .suggestions, .combine, .right, .left, #guide, ' +
-      '.fas, .item .pub, .more, ' +
+      '.fas, .item .pub, .more, .fa-search, ' +
       '.fas, .fa-bookmark, .fa-comments, .fa-sticky-note, ' +
       '#home a, .description, .fa-times-circle, .type, ' +
       '.fa-home, .fa-code, .fa-globe, .fa-git, #home, ' +
@@ -27,7 +27,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('.buttonSearch').css({
+    $('.buttonSearch, .focus').css({
       'background-color': 'transparent',
       'color': '#fff'
     })
@@ -65,8 +65,8 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('#home, .description, .fa-sun, .title, .type, .fa-search, ' +
-      '.fa-home, .fa-code, .fa-globe, .fa-git, ' +
+    $('#home, .description, .fa-sun, .title, .type, .focus, ' +
+      '.fa-search, .fa-home, .fa-code, .fa-globe, .fa-git, ' +
       '.fa-terminal, .fa-double-angle-right, .fa-double-angle-left, #toggle'
     ).css({
       'background-color': 'transparent',
