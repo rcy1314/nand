@@ -119,7 +119,7 @@ var content  = function(n, recent, oldest, posts) {
 var list = function(e, n) {
 
   $('#arm #search #match .listing').empty()
-  $('#main #visit .page #front #first .listing').empty()
+  $('#main #visit #front #first .listing').empty()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) || menu[i].cat.toLowerCase().match(n)) {
       $('#' + e + ' .listing').prepend(
@@ -131,7 +131,7 @@ var list = function(e, n) {
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
-        menu[i].id.match(/[^\/]+$/g) + "</div>" +
+          menu[i].id.match(/[^\/]+$/g) + "</div>" +
         "</div>"
       )
       if ($('#' + e + ' .listing .' + i).length > 1) $('#search .listing .' + i + ':last')

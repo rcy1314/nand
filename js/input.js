@@ -305,9 +305,7 @@ $(document)
         var uri = '?q=&' + $('#arm #search #match .listing .hover')
         .attr('response')
         .toLowerCase()
-        if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-        else if (contrast == true) uri = uri + '+1'
-        exit(uri)
+        uri.define().exit()
         document.title = $('#arm #search #match .listing .hover')
           .attr('response')
       }
@@ -316,16 +314,14 @@ $(document)
         var uri = '?q=' + $('#arm #search input[type=text]').val()
           .toLowerCase()
           .replace(/\s/g, '+')
-        if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-        else if (contrast == true) uri = uri + '+1'
-        exit(uri)
+        uri.define().exit()
       }
     }
     $('#arm #search input[type=text]').val('Search').blur()
     e.preventDefault()
     visual()
   })
-  .on('submit', '#main #visit .page #front', function(e) {
+  .on('submit', '#main #visit #front', function(e) {
     $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
     if ($('#main #visit .page #front #first .listing .hover').length) {
       if (translations.indexOf($('#main #visit .page #front #first .listing .hover')
@@ -337,7 +333,6 @@ $(document)
         var uri = '?q=' + $('#main #visit .page #front #first .hover')
           .attr('response')
           .toLowerCase()
-        air(id)
         state('?q=' + $('#main #visit .page #front #first .hover')
           .attr('response')
           .toLowerCase())
@@ -348,17 +343,13 @@ $(document)
       } else {
         var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
           .attr('response')
-        if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-        else if (contrast == true) uri = uri + '+1'
-        exit(uri)
+        uri.define().exit()
       }
     } else {
       var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '+1'
-      else if (contrast == true) uri = uri + '+1'
-      exit(uri)
+      uri.define().exit()
     }
     e.preventDefault()
   })
