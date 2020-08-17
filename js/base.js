@@ -151,7 +151,7 @@ var feed  = function(l, n) {
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
+    if (menu[e] && e != 0 && $.inArray(dupe, e) === -1){
       if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
@@ -225,7 +225,7 @@ var suggest = function(n) {
   for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) == -1){
+    if (menu[e] && e != 0 && $.inArray(dupe, e) === -1){
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
         "<div class='combine'>" +
