@@ -117,10 +117,6 @@ svg {
   right : 0
 }
 
-#front .right {
-  right: -35px;
-}
-
 .left {
   justify-content: center;
   align-items: center;
@@ -133,10 +129,6 @@ svg {
   z-index: 2;
   top: 40px;
   left: 0;
-}
-
-#front .left {
-  left: -35px;
 }
 
 .id {

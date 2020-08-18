@@ -106,12 +106,14 @@
   }
 
   #main .page .quick {
-      width: 97% !important;
+      width: 770px !important;
       z-index: 3;
-      left: 0;
+      left: -64px;
   }
 
-  #main .translation {
+  #main .translation,
+  #main .right,
+  #main .left {
     display: none !important;
   }
 

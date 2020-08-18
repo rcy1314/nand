@@ -152,8 +152,8 @@ var feed  = function(l, n) {
   var dupe = []
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) === -1){
+    if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
+      dupe.push(e)
       if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +

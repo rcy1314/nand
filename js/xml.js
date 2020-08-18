@@ -298,7 +298,7 @@ var xml = function(e, s, n) {
     clearInterval(complete)
     progress(true, 100)
     suggest(id)
-    feed('center', 12)
+    feed('center', menu.length - 1)
   })
 
 }

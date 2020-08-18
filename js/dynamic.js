@@ -28,18 +28,22 @@ $(document)
     }, 250)
     e.stopPropagation()
   })
-.on('touch click', '#main .quick .right, .fa-angle-double-right', function(e) {
+.on('touch click', '#main .quick .right, #main .center .right, .fa-angle-double-right', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-    $(this).parents('.quick').find('.feed')[0].scrollLeft = leftPos + 770
+    $(this).parents('.quick').find('.feed').animate({
+        scrollLeft: leftPos + 616
+      }, 'fast')
       if (leftPos >= $(this).parents('.quick').find('.feed')[0]
-          .scrollWidth - $(this).parents('.quick').find('.feed').width() - 770)
+          .scrollWidth - $(this).parents('.quick').find('.feed').width() - 616)
           $(this).hide()
     if ($(this).parents('.quick').find('.feed')
       .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
 })
-.on('touch click', '#main .page .quick .left, .fa-angle-double-left', function(e) {
+.on('touch click', '#main .page .quick .left, #main .center .left, .fa-angle-double-left', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-    $(this).parents('.quick').find('.feed')[0].scrollLeft = leftPos - 385
+    $(this).parents('.quick').find('.feed').animate({
+        scrollLeft: leftPos - 385
+      }, 'slow')
     if ($(this).parents('.quick').find('.feed')
       .scrollLeft() <= 385) {
         $(this).parents('.quick').find('.left').hide()
