@@ -89,10 +89,10 @@ $(document)
   .on('touch click', '#main .translation .select', function(e) {
     id = 1
     category = $(this).attr('response')
-    populate($(this).attr('response'))
     var uri = '?q=' + $(this).attr('response').toLowerCase()
+    $('#handle image').css('visibility','visible')
     progress(true, 100)
-    uri.define().state()
+    uri.define().exit()
   })
   .on('touch click mouseenter mouseleave',
     '.air .filter, .result .filter, .air .populate, .result .populate',
