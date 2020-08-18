@@ -27,6 +27,14 @@ svg {
   z-index: 1;
 }
 
+.detail {
+  padding: 0 !important;
+  position: relative;
+  bottom: 6px;
+  z-index: 5;
+  left: -2px;
+}
+
 .detail svg {
   background-color: transparent !important;
   fill: transparent !important;
