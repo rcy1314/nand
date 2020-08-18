@@ -2113,7 +2113,7 @@ var menu = [
 		des: "Bash subreddit dedicated to bash scripting.",
 		uri: "https://www.reddit.com/r/bash/.rss",
 		ext: "https://www.reddit.com/r/Bash",
-		img: "Orange",
+		img: "Reddit",
 		hash: "As"
 	}
 
@@ -2201,7 +2201,7 @@ var menu = [
 		des: "Coding subreddit Tutorials, Reviews, Videos, and Analysis.",
 		uri: "https://www.reddit.com/r/coding/.rss",
 		ext: "https://www.reddit.com/r/Coding",
-		img: "Orange",
+		img: "Reddit",
 		hash: "cG"
 	}
 
@@ -2223,7 +2223,7 @@ var menu = [
 		des: "Computers subreddit covers computers, questions, tips, and suggestions.",
 		uri: "https://www.reddit.com/r/computers/.rss",
 		ext: "https://www.reddit.com/r/Computers",
-		img: "Orange",
+		img: "Reddit",
 		hash: "pC"
 	}
 
@@ -2234,7 +2234,7 @@ var menu = [
 		des: "CSS subreddit For discussing Cascading Style Sheets, design principles, and technological innovations related to web development.",
 		uri: "https://www.reddit.com/r/css/.rss",
 		ext: "https://www.reddit.com/r/CSS",
-		img: "Orange",
+		img: "Reddit",
 		hash: "Cs"
 	}
 
@@ -2267,7 +2267,7 @@ var menu = [
 		des: "Design subreddit with the art in all mediums.",
 		uri: "https://www.reddit.com/r/Design/.rss",
 		ext: "https://www.reddit.com/r/Design",
-		img: "Orange",
+		img: "Reddit",
 		hash: "iD"
 	}
 
@@ -2311,7 +2311,7 @@ var menu = [
 		des: "Entertainment subreddit has News and Discussion of the Entertainment Industry.",
 		uri: "https://www.reddit.com/r/entertainment/.rss",
 		ext: "https://www.reddit.com/r/Entertainment",
-		img: "Orange",
+		img: "Reddit",
 		hash: "Ne"
 	}
 
@@ -2399,7 +2399,7 @@ var menu = [
 		des: "Goddesses subreddit Images of Actresses, Models and all manner of female eye-candy.",
 		uri: "https://www.reddit.com/r/goddesses/.rss",
 		ext: "https://www.reddit.com/r/Goddesses",
-		img: "Orange",
+		img: "Reddit",
 		hash: "gO"
 	}
 
@@ -2443,7 +2443,7 @@ var menu = [
 		des: "Hacker News subreddit A mirror of Hacker News' best submissions.",
 		uri: "https://www.reddit.com/r/hackernews/.rss",
 		ext: "https://www.reddit.com/r/HackerNews",
-		img: "Orange",
+		img: "Reddit",
 		hash: "nH"
 	}
 
@@ -2586,7 +2586,7 @@ var menu = [
 		des: "Open Source subreddit for everything open source.",
 		uri: "https://www.reddit.com/r/opensource/.rss",
 		ext: "https://www.reddit.com/r/opensource",
-		img: "Orange",
+		img: "Reddit",
 		hash: "sE"
 	}
 
@@ -2674,7 +2674,7 @@ var menu = [
 		des: "Tech subreddit the Intelligent Discussion of Innovations and changes to Technology.",
 		uri: "https://www.reddit.com/r/tech/.rss",
 		ext: "https://www.reddit.com/r/Tech",
-		img: "Orange",
+		img: "Reddit",
 		hash: "hT"
 	}
 
@@ -2784,7 +2784,7 @@ var menu = [
 		des: "Wallpapers subreddit for Work-safe wallpapers from all over!",
 		uri: "https://www.reddit.com/r/wallpapers/.rss",
 		ext: "https://www.reddit.com/r/Wallpapers",
-		img: "Orange",
+		img: "Reddit",
 		hash: "Ws"
 	}
 
@@ -2795,7 +2795,7 @@ var menu = [
 		des: "A new subreddit specifically for people to share their wallpaper collections.",
 		uri: "https://www.reddit.com/r/wallpaperdump/.rss",
 		ext: "https://www.reddit.com/r/Wallpaperdump",
-		img: "Orange",
+		img: "Reddit",
 		hash: "Wd"
 	}
 
@@ -2828,7 +2828,7 @@ var menu = [
 		des: "World News subreddit with latest headlines from around the world.",
 		uri: "https://www.reddit.com/r/worldnews/.rss",
 		ext: "https://www.reddit.com/r/WorldNews",
-		img: "Orange",
+		img: "Reddit",
 		hash: "rN"
 	}
 
