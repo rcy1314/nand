@@ -372,6 +372,7 @@ body,
 .filter .display,
 .populate .display {
   position: relative;
+  padding: 5px;
   width: 100%;
 }
 
