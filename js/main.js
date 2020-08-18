@@ -87,7 +87,7 @@ $(document)
     return false
   })
   .on('touch click', '#main .translation .select', function(e) {
-    id = 1
+    id = 0
     category = $(this).attr('response')
     var uri = '?q=' + $(this).attr('response').toLowerCase()
     $('#handle image').css('visibility','visible')
