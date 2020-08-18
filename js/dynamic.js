@@ -30,9 +30,7 @@ $(document)
   })
 .on('touch click', '#main .quick .right, .fa-angle-double-right', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-    $(this).parents('.quick').find('.feed').animate({
-        scrollLeft: leftPos + 770
-      }, 'fast')
+    $(this).parents('.quick').find('.feed')[0].scrollLeft = leftPos + 770
       if (leftPos >= $(this).parents('.quick').find('.feed')[0]
           .scrollWidth - $(this).parents('.quick').find('.feed').width() - 770)
           $(this).hide()
@@ -41,9 +39,7 @@ $(document)
 })
 .on('touch click', '#main .page .quick .left, .fa-angle-double-left', function(e) {
     var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-    $(this).parents('.quick').find('.feed').animate({
-        scrollLeft: leftPos - 385
-      }, 'slow')
+    $(this).parents('.quick').find('.feed')[0].scrollLeft = leftPos - 385
     if ($(this).parents('.quick').find('.feed')
       .scrollLeft() <= 385) {
         $(this).parents('.quick').find('.left').hide()
