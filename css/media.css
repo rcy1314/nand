@@ -106,7 +106,7 @@
   }
 
   #main .page .quick {
-      width: 100% !important;
+      width: 97% !important;
       z-index: 3;
       left: 0;
   }
@@ -175,9 +175,9 @@
 }
 
   #main .page .quick {
-      width: 858px;
+      width: 854px;
       z-index: 3;
-      right: 20%;
+      right: 15.5%;
       top: 40px;
   }
 

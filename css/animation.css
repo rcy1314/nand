@@ -20,7 +20,7 @@
   width: 0;
 }
 
-.radialInvert {
+.contentInvert {
   background: -webkit-linear-gradient(to right, #f7797d, #FBD786);
   background: linear-gradient(to right, #f7797d, #FBD786);
   -webkit-mask-image: radial-gradient(transparent 0 26px, #000 26.5px);
@@ -53,7 +53,7 @@
   width: 0;
 }
 
-.radialOpposite {
+.contentOpposite {
   background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
   background: linear-gradient(to left, #ef4063, #e557c6);
   -webkit-mask-image: radial-gradient(transparent 0 26px, #000 26.5px);

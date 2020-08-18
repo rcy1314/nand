@@ -48,25 +48,42 @@ svg {
   position: relative;
 }
 
-.asset .radial {
-  position: absolute;
+.stats .asset .radial {
   border-radius: 36px;
+  margin-right: auto;
+  position: absolute;
+  margin-left: auto;
   height: 56px;
   width: 56px;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
   top: 10px;
 }
 
-.asset svg {
+.feed .asset {
+  position: relative;
+  text-align: center;
+  padding-top: 15px;
+  flex-shrink: 0;
+}
+
+.feed .asset img {
+  height: 55px;
+  width: 55px;
+  right: 2px;
+}
+
+.feed .asset a {
+  display: block;
+}
+
+.feed .asset svg {
   position: absolute;
   height: 74px;
   width: 74px;
 }
 
-.asset circle {
+.feed .asset circle {
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
   stroke-linecap: round;
@@ -81,9 +98,9 @@ svg {
 .right {
   justify-content: center;
   align-items: center;
+  border-radius: 16px;
   position: absolute;
   display: flex;
-  border-radius: 16px;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -112,31 +129,6 @@ svg {
 
 #front .left {
   left: -35px;
-}
-
-.feed .asset {
-  position: relative;
-  text-align: center;
-  padding-top: 15px;
-  flex-shrink: 0;
-}
-
-.feed img {
-  height: 55px;
-  width: 55px;
-  right: 2px;
-}
-
-.asset a {
-  display: block;
-}
-
-.detail {
-  padding: 0 !important;
-  position: relative;
-  bottom: 6px;
-  z-index: 5;
-  left: -2px;
 }
 
 .id {
@@ -474,8 +466,10 @@ svg {
 }
 
 .suggestions .id {
+  position: relative;
   height: 24px;
   width: 24px;
+  right: 10px;
 }
 
 .combine {
@@ -483,18 +477,6 @@ svg {
   display: flex;
   width: 100%;
   margin: 3px;
-}
-
-.combine .id {
-  position: relative;
-  right: 10px;
-}
-
-.combine .radial {
-  position: absolute;
-  left: 31.5px;
-  height: 28px;
-  width: 28px;
 }
 
 .views {
