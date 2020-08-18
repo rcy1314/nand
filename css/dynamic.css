@@ -454,6 +454,12 @@ svg {
   bottom: 19px;
 }
 
+.stats img {
+  position: relative;
+  width: 52.5px;
+  height: 53px;
+}
+
 .images {
   display: inline-block;
 }
