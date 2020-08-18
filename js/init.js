@@ -68,7 +68,7 @@ if (location.href.split('?')[1] &&
     else post = location.hash.substr(1)
     $(document)
     .ready(function() {
-      if ($.inArray(translations, uri[0].capitalize()))
+      if ($.inArray(uri[0].capitalize(), translations) != -1)
         $('#toggle, #handle svg').css('visibility','hidden')
     })
     if (!uri[1]) response(true, false, uri[0], true)
