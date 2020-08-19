@@ -5,7 +5,7 @@ var visual = function(n) {
     $('#container, #arm, #main, #main #option, #visit, #bottom, ' +
       '.feed, .channel, .combine, .index, a, .stats, ' +
       '.result, .air, #main .page, #main .page .id, .blur, ' +
-      '.filter, .populate, .filter a, .populate a'
+      '.filter, .populate, .filter a, .populate a, .focus'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -58,7 +58,7 @@ var visual = function(n) {
     $('#main, #container,.air, .result, #front #option, #visit, #bottom, .hover, .info a, ' +
       '.channel, .stats, .combine, #bottom, #main .page .id, ' +
       '#main .page .feed, #main .page, .right, .left, #main .page .feed a, ' +
-      '.filter, .populate, .blur, #search input[type=text]'
+      '.filter, .populate, .blur, #search input[type=text], .focus'
     ).css({
       'background-color': '#f7f7f7',
       'border': 'none',
