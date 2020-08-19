@@ -1,3 +1,443 @@
+div,
+input {
+  font-family: Proxima Nova;
+}
+
+.filter,
+.populate,
+.combine div,
+#placeholder,
+.checkmark,
+#toggle,
+#bottom,
+#option,
+.select,
+.index,
+.hover,
+.right,
+.left,
+#home,
+.item,
+.more,
+.post,
+.img,
+.id,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+.combine div:hover {
+  text-decoration: underline;
+}
+
+html,
+body,
+#main,
+#visit,
+#wrapper,
+#container,
+.background {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+#progressBar {
+  position: fixed;
+  height: 4px;
+  z-index: 3;
+  width: 0;
+  top: 0;
+}
+
+#toggle {
+  background-color: transparent !important;
+  position: absolute;
+  padding: 1em;
+  right: 10px;
+  z-index: 1;
+}
+
+.checkmark {
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: none;
+  stroke-width: 2;
+  stroke: #fff;
+  margin: 10px;
+  stroke-miterlimit: 10;
+  z-index: 3;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 29;
+  stroke-dashoffset: 29;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+#guide {
+  position: absolute;
+  display: none;
+}
+
+.guide::-webkit-scrollbar {
+  scrollbar-width: none;
+  display: none;
+}
+
+#guide,
+.blur {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 3;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.blur {
+  backdrop-filter: blur(10px);
+  position: absolute;
+  z-index: -1;
+}
+
+#top {
+  width: calc(100% - 17px);
+  visibility: hidden;
+  position: fixed;
+  height: 57px;
+  z-index: 2;
+  top: 0;
+}
+
+#arm {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 51px;
+  width: 100%;
+}
+
+#search {
+  position: absolute;
+  height: 51px;
+  width: 100%;
+  margin: 0;
+  top: 4px;
+}
+
+#home {
+  font-family: Billabong;
+  text-decoration: none;
+  font-display: block;
+  position: absolute;
+  font-size: 36px;
+  cursor: pointer;
+  height: 40px;
+  left: 50px;
+  top: 5px;
+}
+
+#home:active {
+  color: #666 !important;
+}
+
+#option {
+  justify-content: space-between;
+  background-color: transparent;
+  position: absolute;
+  display: flex;
+  right: 0px;
+  top: 5px;
+}
+
+#main {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  position: absolute;
+  text-align: center;
+  overflow-y: scroll;
+  user-select: none;
+  outline: none;
+}
+
+#main #handle svg {
+  visibility: hidden;
+}
+
+#visit {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+#handle {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 100px;
+  right: 10px;
+}
+
+#placeholder {
+  background-color: transparent !important;
+  width: fit-content !important;
+  font-family: Billabong;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-size: 64;
+}
+
+.page {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  top: 225px;
+}
+
+#front {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 40em;
+  top: -20px;
+}
+
+#front #first .listing {
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+  height: 28em;
+  top: -155px;
+  z-index: 0;
+}
+
+.type,
+.typeTranslation {
+  display: inline-block;
+  border-radius: 28px;
+  position: relative;
+  font-size: 10px;
+  width: 39.5px;
+  height: 40px;
+  bottom: 5px;
+  left: -1px;
+}
+
+.text {
+  display: inline-block;
+  position: relative;
+  bottom: 10px;
+}
+
+.focus {
+  white-space: nowrap;
+  padding-right: 60px;
+  position: relative;
+  height: 39.6px;
+  top: 25px;
+
+}
+
+.page input[type=text] {
+  -webkit-appearance: none;
+  caret-color: transparent;
+  width: calc(100%);
+  display: inline-block;
+  position: relative;
+  visibility: hidden;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 18px;
+  height: 2.2em;
+  outline: none;
+  top: -15px;
+  margin: 0;
+}
+
+.pageInput {
+  box-shadow: 2px 2px 12px #ddd !important;
+  transition: box-shadow .25s;
+}
+
+.pageInputOut {
+  box-shadow: 1px 1px 1px #ddd !important;
+  transition: box-shadow .25s;
+}
+
+.page .icon {
+  font-size: 14px !important;
+  color: #aaa !important;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.page .button {
+  display: inline-block;
+  visibility: hidden;
+  position: relative;
+  border-radius: 3px;
+  height: 39.6px;
+  width: 60px;
+  right: 4px;
+}
+
+.page .buttonSearch {
+  font-size: 20px !important;
+  transform: rotate(90deg);
+  color: #fff !important;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.buttonOpposite {
+  background-color: #f7426C;
+}
+
+.buttonOpposite:hover {
+  background-color: #f54e75;
+}
+
+.buttonInvert {
+  background-color: #0078D4;
+}
+
+.buttonInvert:hover {
+  background-color: #1683D8;
+}
+
+.air,
+.result {
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  width: 100%;
+  top: 60px ;
+}
+
+.filter,
+.populate {
+  display: inline-flex;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  font-size: 9px;
+  padding: 12px;
+  margin: 3em;
+  width: 16em;
+}
+
+.filter a,
+.populate a {
+  position: relative;
+  margin: 0 auto;
+}
+
+.filter .display,
+.populate .display {
+  position: relative;
+  padding: 5px;
+  width: 100%;
+}
+
+.filter .id,
+.populate .id {
+  position: relative;
+  margin: 0 auto;
+}
+
+.title,
+.category {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.description {
+  background-color: transparent !important;
+  padding-bottom: 5px;
+  text-align: justify;
+  display: table-cell;
+  position: relative;
+  width: fit-content;
+  margin-top: 5px;
+  clear: left;
+  float: left;
+}
+
+#input {
+  position: relative;
+  margin: 0 auto;
+  display: none;
+  width: 18em;
+  top: .4em;
+}
+
+#input input[type=text] {
+  -webkit-appearance: none;
+  caret-color: transparent;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 16px;
+  outline: none;
+  height: 2.2em;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 100px;
+  top: 11px;
+}
+
+#match {
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+  height: 28.5em;
+  display: none;
+  z-index: 4;
+}
+
+input[type=submit] {
+  display: none;
+}
+
 .quick {
   border-radius: 4px;
   position: relative;
