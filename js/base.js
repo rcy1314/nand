@@ -691,7 +691,7 @@ var xml = function(e, s, n) {
 
     var posts = $('#main .center .channel .item').length
     var recent = pub[0].dst
-    var oldest = pub[$('.item:last').attr('item')].dst
+    var oldest = pub[pub.length - 1].dst
     if (e != 'search') $('#main .center').append(
       "<div id='bottom'>" +
       "  <button class='back' index='" + menu.indexOf(menu[n.toString().back()]) + "'>Previous</button>&ensp;" +
