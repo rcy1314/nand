@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~/acktic.github.io
 git pull --no-edit
-./maintenance/rip.sh > ~/acktic.github.io/rip.txt
-git add ~/acktic.github.io/maintenance/rip.txt
+./maintenance/rip.sh > ~/acktic.github.io/maintenance/rip.txt
+git add maintenance/rip.txt
 git commit -m "maintenance"
 git push
