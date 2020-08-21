@@ -1,11 +1,12 @@
 $(document)
   .ready()
 .on('mouseenter mouseleave', '#front input[type=text], .button', function(e) {
-    if (op == 0)
+    if (op == 0){
       if (e.type == 'mouseenter')
         $('.focus').removeClass('pageInputOut').addClass('pageInput')
       else if (e.type == 'mouseleave')
         $('.focus').removeClass('pageInput').addClass('pageInputOut')
+    }
 })
 .on('touch click', '#main #visit .page #front .icon', function(e) {
     $('#main #visit .page #front input[type=text]').focus()
