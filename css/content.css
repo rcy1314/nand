@@ -432,7 +432,6 @@ body,
   margin: 0 auto;
   height: 28.5em;
   display: none;
-  z-index: 4;
 }
 
 input[type=submit] {
@@ -500,9 +499,10 @@ svg {
 .feed .radial {
   border-radius: 36px;
   position: absolute;
-  margin: 10px;
   height: 58.5px;
   width: 58.5px;
+  margin: 10px;
+  z-index: 1;
 }
 
 .stats .asset .radial {
@@ -525,10 +525,10 @@ svg {
 }
 
 .feed .asset img {
-  top: .5px;
-  left: .5px;
-  width: 55.5px;
   height: 55.5px;
+  width: 55.5px;
+  left: .5px;
+  top: .5px;
 }
 
 .feed .asset a {
@@ -1017,7 +1017,6 @@ iframe {
   margin: 0 auto;
   height: 28em;
   width: 18em;
-  z-index: 0
 }
 
 .index {
