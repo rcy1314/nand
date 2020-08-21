@@ -116,10 +116,6 @@ $(document)
         uri.define().exit()
       }
     })
-    .on('touch click', '.asset img, .detail svg, .asset svg', function(e) {
-
-    })
-
     .on('touch click', '#main .center .channel .item', function(e) {
       $(this).attr('ext').blank()
       e.stopPropagation()
