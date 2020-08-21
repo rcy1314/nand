@@ -167,13 +167,8 @@ $(document)
             enableDrag = false;
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false;
-              $(this).find('svg circle').addClass('mask')
-              setTimeout(function() {
                   var uri = '?q=&' + mouseasset
                   uri.define().exit()
-                  return false
-              }, 500)
-              e.stopPropagation()
           }
           e.preventDefault();
     })
