@@ -144,7 +144,22 @@ $(document)
         }, 250)
         e.stopPropagation()
       })
+    .on('touchmove', '#main .page .quick .feed', function(e) {
+      if ($('#main .page .quick .feed .asset').length < menu.length - 2)
+        feed('page', 64)
+      if ($(this).scrollLeft() >= 3300)
+        for (i = 0; i < 32; i++)
+          $('#main .page .quick .feed .asset:first').remove()
+    })
+    .on('touchmove', '#main .center .quick .feed', function(e) {
+      if ($('#main .center .quick .feed .asset').length < menu.length - 2)
+        feed('page', 64)
+      if ($(this).scrollLeft() >= 3300)
+        for (i = 0; i < 32; i++)
+          $('#main .center .quick .feed .asset:first').remove()
+    })
     .on('touch click', '#main .quick .right, #main .center .right, .fa-angle-double-right', function(e) {
+      feed('page', 9)
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
             scrollLeft: leftPos + 616

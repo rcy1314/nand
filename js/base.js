@@ -3,6 +3,7 @@ var img
 var post
 var op = 0
 var tap = 0
+var dupe = []
 var filter = []
 var object = []
 var contrast = false
@@ -149,7 +150,7 @@ var list = function(e, n) {
 
 var feed  = function(l, n) {
 
-  var dupe = []
+  if (dupe.length >= menu.length / 2) dupe = []
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
@@ -223,11 +224,11 @@ var progress = function(complete, n) {
 
 var suggest = function(n) {
 
-  var dupe = []
+  var duplicate = []
   for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    dupe.push(e)
-    if (menu[e] && e != 0 && $.inArray(dupe, e) === -1){
+    dupiclate.push(e)
+    if (menu[e] && e != 0 && $.inArray(duplicate, e) === -1){
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
         "<div class='combine'>" +
@@ -411,6 +412,7 @@ var xml = function(e, s, n) {
   var local
   var pub = []
   var src = ''
+  var dupe = []
   category = menu[n].cat
   var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
