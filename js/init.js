@@ -37,13 +37,13 @@ if (location.href.split('?')[1] &&
       '#main #visit .page #front input[type=text], ' +
       '#main #visit .page #front .icon')
       .css('visibility','visible')
-      feed('page', 64)
+      feed('page', 40)
 })
 
 } else if (location.href.match('\\+1')) {
   op = op != true
   contrast = contrast != true
-  feed('page', 64)
+  feed('page', 40)
 } else {
     $(document)
     .ready(function() {
@@ -51,7 +51,7 @@ if (location.href.split('?')[1] &&
       '#main #visit .page #front input[type=text], ' +
       '#main #visit .page #front .icon')
       .css('visibility','visible')
-      feed('page', 64)
+      feed('page', 40)
     })
 }
   if (location.search.split('?q=')[1]) {
