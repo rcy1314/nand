@@ -4,9 +4,11 @@ var post
 var op = 0
 var tap = 0
 var dupe = []
+var mouseasset
 var filter = []
 var object = []
 var contrast = false
+var enableDrag = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
@@ -151,6 +153,7 @@ var list = function(e, n) {
 var feed  = function(l, n) {
 
   dupe = []
+  if (l == 'center') svg = "<div class='radial'></div>"
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
@@ -159,7 +162,7 @@ var feed  = function(l, n) {
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
               "response='" + menu[e].id.toLowerCase().replace(/\/|\.|\s|\-/g, '-') + "'>" +
-            svg +
+            "<div class='radial'></div>" +
           "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
           "<a style='left:0;width:100%' ext='" + menu[e].ext + "' " +
@@ -171,7 +174,6 @@ var feed  = function(l, n) {
        )
      }
   }
-  console.log(dupe.length)
   visual()
 }
 
@@ -228,7 +230,7 @@ var suggest = function(n) {
   var duplicate = []
   for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    dupiclate.push(e)
+    duplicate.push(e)
     if (menu[e] && e != 0 && $.inArray(duplicate, e) === -1){
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
@@ -656,9 +658,9 @@ var xml = function(e, s, n) {
       "<div class='translation' style='visibility:hidden'></div>" +
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
-      "    <div class='feed'></div>" +
       "    <div class='left' style='display:none'><div class='fa-angle-double-left'></div></div>" +
       "    <div class='right'><div class='fa-angle-double-right'></div></div>" +
+      "    <div class='feed'></div>" +
       "  </div>" +
       "  <div class='channel'></div>" +
       "</div>" +

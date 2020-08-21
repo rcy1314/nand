@@ -117,14 +117,7 @@ $(document)
       }
     })
     .on('touch click', '.asset img, .detail svg, .asset svg', function(e) {
-      var $this = $(this)
-      $(this).parent().find('svg circle').addClass('mask')
-      setTimeout(function() {
-          var uri = '?q=&' + $this.parents('.asset, .detail').attr('response')
-          uri.define().exit()
-          return false
-      }, 750)
-      e.stopPropagation()
+
     })
 
     .on('touch click', '#main .center .channel .item', function(e) {
@@ -144,6 +137,46 @@ $(document)
         }, 250)
         e.stopPropagation()
       })
+    .on('mousedown', '#main .feed .asset', function(e) {
+      if (e.which == 1){
+      feed('page', 40)
+      feed('center', 40)
+      if ($(this).parents('.feed').scrollLeft() >= 3300)
+        for (i = 0; i < 40; i++)
+          $(this).parents('.feed').find('.asset:first').empty()
+          dragStartX = 0;
+          enableDrag = true;
+          dragStartX = e.pageX;
+          tap = new Date().getTime();
+          mouseasset = $(this).attr('response')
+          marginLeftStart = parseInt($(this).parents('.feed').scrollLeft());
+          e.preventDefault();
+          $(this).unbind("mousemove")
+      }
+    })
+    .on('mousemove', '#main .feed .asset', function(e) {
+          if (enableDrag) {
+              var delta = e.pageX - dragStartX;
+              $(this).parents('.feed').scrollLeft(marginLeftStart - delta);
+          }
+          $(this).unbind("mouseup");
+          e.preventDefault();
+    })
+    .on('mouseup', document, function(e) {
+        if (enableDrag)
+            enableDrag = false;
+        if (((new Date().getTime()) - tap) < 150) {
+              enableDrag = false;
+              $(this).find('svg circle').addClass('mask')
+              setTimeout(function() {
+                  var uri = '?q=&' + mouseasset
+                  uri.define().exit()
+                  return false
+              }, 500)
+              e.stopPropagation()
+          }
+          e.preventDefault();
+    })
     .on('touchmove', '#main .page .quick .feed', function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)

@@ -46,6 +46,13 @@ var image = function(emoji, empty, n, src) {
       $('#main').addClass('guide')
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).css('max-width', '80vh')
+     } else if ($(this).get(0).naturalWidth < small) {
+         $(this).width('100%').addClass('default').css('margin','10px')
+           .parents('.item')
+           .find('.classic').css({
+             'display': 'flex',
+             'align-items': 'center'
+           }).find('.header, .tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) {
         $(this).width('70%')
           .parents('.item').find('.image').width('100%')
@@ -56,13 +63,6 @@ var image = function(emoji, empty, n, src) {
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill').remove()
          $(this).remove()
-       } else if ($(this).get(0).naturalWidth < small) {
-         $(this).width('100%').addClass('default').css('margin','10px')
-           .parents('.item')
-           .find('.classic').css({
-             'display': 'flex',
-             'align-items': 'center'
-           }).find('.header, .tag, .addComment').remove()
        } else if ($(this).get(0).naturalHeight < minimum) {
          $(this).width(120).addClass('default').css('margin','10px')
            .parents('.item')

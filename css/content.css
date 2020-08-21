@@ -15,6 +15,7 @@ input {
 .index,
 .hover,
 .right,
+.feed,
 .left,
 #home,
 .item,
@@ -496,6 +497,14 @@ svg {
   position: relative;
 }
 
+.feed .radial {
+  border-radius: 36px;
+  position: absolute;
+  margin: 10px;
+  height: 58.5px;
+  width: 58.5px;
+}
+
 .stats .asset .radial {
   border-radius: 36px;
   margin-right: auto;
@@ -516,9 +525,10 @@ svg {
 }
 
 .feed .asset img {
-  height: 55px;
-  width: 55px;
-  right: 2px;
+  top: .5px;
+  left: .5px;
+  width: 55.5px;
+  height: 55.5px;
 }
 
 .feed .asset a {
@@ -552,7 +562,7 @@ svg {
   padding: 4px;
   height: 24px;
   width: 24px;
-  z-index: 2;
+  z-index: 7;
   top: 40px;
   right : 0
 }
@@ -566,7 +576,7 @@ svg {
   padding: 4px;
   height: 24px;
   width: 24px;
-  z-index: 2;
+  z-index: 7;
   top: 40px;
   left: 0;
 }
