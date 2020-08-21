@@ -384,7 +384,7 @@ $(document)
         else var res = uri[0]
         res = res.replace(/\-|\+/g, ' ')
         response(false, false, res, true)
-        uri = '?q=' + uri[0].replace(/\-/g, '+')
+        uri = '?q=' + res.replace(/\-/g, '+')
         uri.define().state()
       }
       else {
