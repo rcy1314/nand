@@ -30,6 +30,7 @@ var visual = function(n) {
     })
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
+    $('.stats .radial').removeClass('contentInvert').addClass('contentOpposite')
     $('.select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.focus').removeClass('pageinput pageInputOut').css('box-shadow','none')
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
