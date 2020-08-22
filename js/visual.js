@@ -42,7 +42,7 @@ var visual = function(n) {
     $('.second').css('cssText','fill: #e557c6 !important')
     $('.third').css('cssText','fill: #ff6289 !important')
     $('.one').css('cssText','fill: #ef4063 !important')
-    $('#handle img').attr('src', 'images/Opposite.ico')
+    $('#handle img').css('filter','hue-rotate(120deg)')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('#top').css('border-bottom', '1px solid #333')
     $('.category').css('border','1px solid #000')
@@ -73,8 +73,8 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#000'
     })
+    $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
-    $('#guide .wrap, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.stats .radial').removeClass('contentOpposite').addClass('contentInvert')
@@ -88,8 +88,8 @@ var visual = function(n) {
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.one').css('cssText','fill: #1fa2ff !important')
+    $('#handle img').css('filter','hue-rotate(0deg)')
     $('#handle a, #placeholder').css('color', '#666')
-    $('#handle img').attr('src', 'favicon.ico')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
   }
