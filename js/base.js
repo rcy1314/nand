@@ -20,21 +20,6 @@ var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>"
 
-var svg = "<svg>" +
-          "  <defs>" +
-          "    <linearGradient id='gradientOpposite'>" +
-          "      <stop offset='0%' stop-color='#ef4063' />" +
-          "      <stop offset='99%' stop-color='#e557c6' />" +
-          "    </linearGradient>" +
-          "    <linearGradient id='gradientInvert'>" +
-          "      <stop offset='0%' stop-color='#F7797d' />" +
-          "      <stop offset='99%' stop-color='#fbd786' />" +
-          "    </linearGradient>" +
-          "  </defs>" +
-          "  <circle></circle>" +
-          "</svg>"
-
-
 var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
           "    <rect class='one' y='0' width='2' height='50'>" +
           "        <animate attributeName='height' values='20;5;20' begin='0s' dur='1s' repeatCount='indefinite' />" +
@@ -711,9 +696,9 @@ var xml = function(e, s, n) {
       "</div>")
     content(n, recent, oldest, posts)
     clearInterval(complete)
-    progress(true, 100)
-    suggest(id)
     feed('center', 40)
+    suggest(id)
+    progress(true, 100)
   })
 
 }
