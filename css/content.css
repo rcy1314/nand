@@ -505,13 +505,10 @@ input[type=submit] {
 
 .stats .asset .radial {
   border-radius: 36px;
-  margin-right: auto;
   position: absolute;
-  margin-left: auto;
   height: 55px;
   width: 56px;
-  left: 0;
-  right: 0;
+  left: 9.5px;
   top: 10px;
 }
 
@@ -895,8 +892,8 @@ input[type=submit] {
 
 .stats img {
   position: relative;
-  width: 52.5px;
   height: 53px;
+  width: 53px;
 }
 
 .images {
