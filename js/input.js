@@ -49,28 +49,28 @@ $(document)
        else {
          $('#main #visit .page #front #first .listing .hover')
            .next().focus()
-           .attr('class', 'hover')
+           .removeClass('index').addClass('hover')
          $(this).val(keyup)
          $(this).attr('tabIndex', -1).focus()
          $('#main #visit .page #front #first .listing .hover')
-           .prev().attr('class', 'index')
+           .prev().removeClass('hover').addClass('index')
        }
      } else if (e.keyCode == 38 || e.keyCode == 33) {
        $('#main #visit .page #front #first .listing .hover')
          .prev().focus()
-         .attr('class', 'hover')
+         .removeClass('index').addClass('hover')
        $(this).val(keyup)
        $(this).focus()
        $('#main #visit .page #front #first .listing .hover')
-         .next().attr('class', 'index')
+         .next().removeClass('hover').addClass('index')
      } else if (e.keyCode == 27) {
        $('#main #visit .page #front #first .listing').css('z-index', '0')
        $('#main #visit .page #front #first').hide()
        $(this)
          .css({
            'caret-color': 'transparent',
-           'padding': '0',
-           'text-align': 'center'
+           'text-align': 'center',
+           'padding': '0'
          })
          .val('Search')
          .siblings('.icon')
@@ -112,11 +112,11 @@ $(document)
             .append(
               "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
               "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-              "  </div>" +
               "  <div class='radial'></div>" +
               "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
               "    <br>&emsp;" + translations[i].grep() + " feeds" +
+              "  </div>" +
               "  </div>" +
               "</div>")
         })
@@ -217,8 +217,8 @@ $(document)
     $(this)
       .css({
         'caret-color': 'transparent',
-        'padding': '0',
-        'text-align': 'center'
+        'text-align': 'center',
+        'padding': '0'
       })
       .val('Search')
     if ($(this).val() != 'Search') var keyup = $(this).val()
@@ -313,27 +313,9 @@ $(document)
   .on('submit', '#main #visit #front', function(e) {
     $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
     if ($('#main #visit .page #front #first .listing .hover').length) {
-      if (translations.indexOf($('#main #visit .page #front #first .listing .hover')
-          .attr('response')) > -1) {
-        category = $('#main #visit .page #front #first .hover')
-          .attr('response')
-        populate($('#main #visit .page #front #first .hover')
-          .attr('response'))
-        var uri = '?q=' + $('#main #visit .page #front #first .hover')
-          .attr('response')
-          .toLowerCase()
-        state('?q=' + $('#main #visit .page #front #first .hover')
-          .attr('response')
-          .toLowerCase())
-        document.title = $('#main #visit .page #front #first .hover')
-          .attr('response')
-        $('#top').css('visibility','visible')
-        progress(true, 100)
-      } else {
         var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
           .attr('response')
         uri.define().exit()
-      }
     } else {
       var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
         .toLowerCase()

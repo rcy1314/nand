@@ -131,12 +131,13 @@ var list = function(e, n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
+        "<div class='detail'>" +
         "<div class='radial'></div>" +
-        "<div class='detail'></div>" +
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
           menu[i].id.match(/[^\/]+$/g) + "</div>" +
+          "</div>" +
         "</div>"
       )
       if ($('#' + e + ' .listing .' + i).length > 1) $('#search .listing .' + i + ':last')

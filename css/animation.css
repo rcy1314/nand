@@ -80,7 +80,7 @@
   -webkit-mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
   mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
   border-radius: 36px;
-  position: relative;
+  position: absolute;
   height: 42px;
   width: 42px;
 }

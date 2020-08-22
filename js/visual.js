@@ -28,10 +28,9 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#fff'
     })
-    $('.index .radial, .hover .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
+    $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
-    $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.focus').removeClass('pageinput pageInputOut').css('box-shadow','none')
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
@@ -73,11 +72,10 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#000'
     })
-    $('.index .radial, .hover .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
+    $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
-    $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')

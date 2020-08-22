@@ -263,8 +263,8 @@ body,
 
 .index .radial,
 .hover .radial {
-  bottom: 7.25px;
-  left: 5px;
+  bottom: 7.5px;
+  left: -2.5px;
 }
 
 .type,
@@ -485,7 +485,7 @@ input[type=submit] {
 .detail {
   padding: 0 !important;
   position: relative;
-  bottom: 6px;
+  bottom: 0px;
   z-index: 5;
   left: -2px;
 }
