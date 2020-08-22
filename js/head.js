@@ -2278,7 +2278,7 @@ var menu = [
 		des: "Do it yourself subreddit where people can come to learn and share their experiences of doing, building and fixing things on their own.",
 		uri: "https://www.reddit.com/r/DIY/.rss",
 		ext: "https://www.reddit.com/r/DIY/",
-		img: "DIY",
+		img: "Reddit",
 		hash: "Di"
 	}
 

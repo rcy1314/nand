@@ -112,8 +112,8 @@ $(document)
             .append(
               "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
               "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-                  svg +
               "  </div>" +
+              "  <div class='radial'></div>" +
               "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
               "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
               "    <br>&emsp;" + translations[i].grep() + " feeds" +
@@ -184,8 +184,8 @@ $(document)
           .append(
             "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-              svg +
             "  </div>" +
+            "  <div class='radial'></div>" +
             "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "    <br>&emsp;" + translations[i].grep() + " feeds" +

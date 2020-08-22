@@ -55,7 +55,7 @@
   }
 
   #main .page .quick {
-    width: 50% !important;
+    width: 40% !important;
     right: 0 !important;
     left: 0 !important;
   }
@@ -76,11 +76,15 @@
     width: 32% !important;
   }
 
+  #main #visit .page #front input[type=text] {
+    padding-left: 0 !important;
+    width: 300px !important;
+    left: 30px !important;
+  }
 
-  #main #visit .page #front input[type=text],
   #main #visit .page #front #first .listing {
     padding-left: 0 !important;
-    width: 16em !important;
+    width: 310px !important;
     left: 0 !important;
   }
 
@@ -106,9 +110,7 @@
   }
 
   #main .page .quick {
-      width: 770px !important;
       z-index: 3;
-      left: -64px;
   }
 
   #main .translation,
@@ -117,6 +119,9 @@
     display: none !important;
   }
 
+  #main .page {
+    width: 90%;
+  }
 
 }
 
@@ -178,8 +183,8 @@
 
   #main .page .quick {
       width: 854px;
+      left: -42px;
       z-index: 3;
-      right: 17%;
       top: 40px;
   }
 
