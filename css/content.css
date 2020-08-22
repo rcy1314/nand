@@ -210,7 +210,9 @@ body,
 }
 
 #main #handle svg {
+  position: relative;
   visibility: hidden;
+  left: 25px;
 }
 
 #placeholder {
