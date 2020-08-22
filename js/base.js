@@ -131,7 +131,8 @@ var list = function(e, n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<div class='detail'>" + svg + "</div>" +
+        "<div class='radial'></div>" +
+        "<div class='detail'></div>" +
         "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" +
@@ -235,6 +236,7 @@ var suggest = function(n) {
     var img = 'images/png/' + menu[e].img + '.png'
       $('#main .suggestions').append(
         "<div class='combine'>" +
+        "  <div class='radial'></div>" +
         "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
         "  <div title='" + menu[e].id.replace(/\//g, ' ') + "'" +
         "    response='" + menu[e].id.toLowerCase().replace(/(\/|\.|\s)/g, '-') + "'" +
@@ -558,6 +560,7 @@ var xml = function(e, s, n) {
       if (src == '') courtesy = ''
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
+        "  <div class='radial'></div>" +
         "  <img class='id' src='" + img + "'>" +
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +

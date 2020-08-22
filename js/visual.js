@@ -28,6 +28,7 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#fff'
     })
+    $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientOpposite)')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.stats .radial').removeClass('contentInvert').addClass('contentOpposite')
@@ -73,8 +74,10 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#000'
     })
+    $('.index .radial, .hover .radial').removeClass('listOpposite').addClass('listInvert')
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
+    $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('.detail svg, .asset svg, .display svg').css('stroke', 'url(#gradientInvert)')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.stats .radial').removeClass('contentOpposite').addClass('contentInvert')

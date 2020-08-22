@@ -135,20 +135,20 @@ $(document)
       })
     .on('mousedown', '#main .feed .asset', function(e) {
       if (e.which == 1){
-      feed('page', 40)
-      feed('center', 40)
-      if ($(this).parents('.feed').scrollLeft() >= 3300)
+        dragStartX = 0;
+        enableDrag = true;
+        dragStartX = e.pageX;
+        feed('page', 40)
+        feed('center', 40)
+        tap = new Date().getTime();
+        mouseasset = $(this).attr('response')
+        marginLeftStart = parseInt($(this).parents('.feed').scrollLeft());
+    if ($(this).parents('.feed').scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $(this).parents('.feed').find('.asset:first').empty()
-          dragStartX = 0;
-          enableDrag = true;
-          dragStartX = e.pageX;
-          tap = new Date().getTime();
-          mouseasset = $(this).attr('response')
-          marginLeftStart = parseInt($(this).parents('.feed').scrollLeft());
-          e.preventDefault();
-          $(this).unbind("mousemove")
       }
+      $(this).unbind("mousemove")
+      e.preventDefault();
     })
     .on('mousemove', '#main .feed .asset', function(e) {
           if (enableDrag) {
@@ -400,6 +400,12 @@ $(document)
     .on('touch click', '#main .suggestions .combine div', function(e) {
       $('#main .center, #main .content, #main .translation').remove()
       var uri = '?q=' + '&' + $(this).attr('response')
+      response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
+      uri.define().state()
+    })
+    .on('touch click', '#main .content .stats .asset', function(e) {
+      $('#main .center, #main .content, #main .translation').remove()
+      var uri = '?q=' + '&' + $(this).parents('.asset').attr('response')
       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
       uri.define().state()
     })
