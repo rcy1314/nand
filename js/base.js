@@ -55,9 +55,9 @@ var select = function(n) {
 var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
   $('#guide').empty().css('display','flex').append(
-    "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
-    "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
-    "  <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />" +
+    "<svg class='checkmark' viewBox='0 0 52 52'>" +
+    "  <circle cx='26' cy='26' r='25' fill='none'>" +
+    "  <path fill='none' d='M16 16 36 36 M36 16 16 36'>" +
     "</svg>" +
     "<div class='blur'></div>" +
     "<div class='sticky'>" +
@@ -115,11 +115,11 @@ var list = function(e, n) {
       $('#' + e + ' .listing').prepend(
         "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
         "  tabIndex='-1'" +
-        "  response='" + menu[i].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'" +
+        "  response='" + menu[i].id.toLowerCase().response() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
         "<div class='detail'>" +
         "<div class='radial'></div>" +
-        "<img class='type' src='" + "images/png/" + menu[i].img + '.png' + "'>" +
+        "<img class='type' src='" + menu[i].img.image() + "'>" +
         "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
           "</div>" +
@@ -143,18 +143,17 @@ var feed  = function(l, n) {
   if (l == 'center') svg = "<div class='radial'></div>"
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
+    if (e != 0 && $.inArray(e, dupe) === -1){
       dupe.push(e)
-      if (menu[e]) var img = 'images/png/' + menu[e].img + '.png'
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
           "response='" + menu[e].id.response() + "'>" +
           "  <div class='radial'></div>" +
-          "<img src='" + img + "' class='id " + menu.indexOf(menu[e]) + "'" +
+          "<img src='" + menu[e].img.image() + "' " +
+          "  class='id " + menu.indexOf(menu[e]) + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
-          "<a style='left:0;width:100%' ext='" + menu[e].ext + "' " +
-          "  title='" + menu[e].id + "'>" +
-             menu[e].id.this.match(/[^\/]+$/g).substring(0,9) + '...' +
+          "<a style='left:0;width:100%' ext='" + menu[e].ext + "'>" +
+             String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
           "</a>" +
           "</div>"
        )
@@ -471,7 +470,7 @@ var xml = function(e, s, n) {
     $('#progressBar').width($('#progressBar').width() +
       Math.floor(Math.random() * (5 - 0 + 1) + 0))
   }, 350)
-  n.cleanup()
+  n.toString().cleanup()
   $.get({
     url: uri,
     method: 'GET',
@@ -651,7 +650,10 @@ var xml = function(e, s, n) {
           "  <input class='source' value='" + src + "'>" +
 /*
           "  <form class='addComment' action'#'>" +
-          "    <input class='comment' onclick='event.stopPropagation()' maxlength='60' placeholder='Add a Comment'>" +
+          "    <input class='comment' " +
+          "      onclick='event.stopPropagation()'" +
+          "      placeholder='Add a Comment'" +
+          "      maxlength='60'>" +
           "    <div class='post'><b>Post</b></div>" +
           "  </form>" +
 */
