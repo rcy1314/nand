@@ -21,7 +21,7 @@ if (location.href.split('?')[1]) {
       else
         response(true,
                  false,
-                 menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '),
+                 menu[i].id.response(),
                  true)
 
 }

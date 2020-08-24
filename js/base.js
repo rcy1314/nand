@@ -171,17 +171,14 @@ var progress = function(complete, n) {
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
           $(this).removeClass('response').width(0)
-          $('#main #visit, #arm #search #match').hide()
-          if ($('#main .result').length == 1) $('#main .result').show()
-          if ($('#main .center').length == 1) $('#main .center').show()
-          if ($('#main .translation').length == 1) $(
-            '.translation').css('visibility', 'visible')
-          if ($('#main .content').length == 1) $(
-            '.content').css('visibility', 'visible')
-          if ($('#main .air').length == 1) {
-            $('#main .air').show()
-            $('#main').scrollTop($('.air').outerHeight())
-          }
+          $('.translation').css('visibility', 'visible')
+          $('.content').css('visibility', 'visible')
+          $('#top').css('visibility', 'visible')
+          $('#main .result').show()
+          $('#main .center').show()
+          $('#main #visit').hide()
+          $('#main .air').show()
+          $('#main').scrollTop($('.air').outerHeight())
           $('#main').attr('tabindex', -1).focus()
         })
       visual()
@@ -216,7 +213,8 @@ var suggest = function(n) {
 }
 
 var populate = function(n) {
-  n.cleanup()
+
+  $(document).ready(function() {
   $('#main').append("<div class='result' style='display:none'></div>")
   for (var i = 1; i <= menu.length - 1; i++) {
     if (id != menu.indexOf(menu[i]) && category == menu[i].cat) {
@@ -234,6 +232,7 @@ var populate = function(n) {
     }
   }
   air(category)
+})
 }
 
 var air = function(n) {
@@ -260,9 +259,9 @@ var air = function(n) {
 
 var response = function(passthrough, uri, n, bloat) {
   filter = []
-  n.cleanup()
-  if ($('#main .result').length < 1)
+  $(document).ready(function() {
     $('#main').append("<div class='result' style='display:none'></div>")
+  })
     if ($.inArray(n.capitalize(), translations) > -1){
       category = n.capitalize()
       $(document).ready(function() {populate(n.capitalize())})
@@ -280,10 +279,8 @@ var response = function(passthrough, uri, n, bloat) {
         exact = i
         id = i
       } else if (
-          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') ==
-            n.toLowerCase() ||
-          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ') ==
-            uri.toLowerCase()
+          menu[i].id.space() == n.toLowerCase() ||
+          menu[i].id.space() == uri.toLowerCase()
         ) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
@@ -291,24 +288,21 @@ var response = function(passthrough, uri, n, bloat) {
             id = i
             break
       } else if (
-          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ')
-            .match(n.toLowerCase()) ||
-          menu[i].id.toLowerCase().replace(/(\/|\.)/g, ' ')
-            .match(uri.toLowerCase())
+          menu[i].id.space().match(n.toLowerCase()) ||
+          menu[i].id.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
             id = i
       } else if (
-          menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ')
-            .match(n.toLowerCase()) ||
-          menu[i].des.toLowerCase().replace(/(\/|\.)/g, ' ')
-            .match(uri.toLowerCase())
+          menu[i].des.space().match(n.toLowerCase()) ||
+          menu[i].des.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
-      } else if (menu[i].cat.toLowerCase().match(n) || menu[i].cat.toLowerCase()
-          .match(uri)
+      } else if (
+          menu[i].cat.toLowerCase().match(n) ||
+          menu[i].cat.toLowerCase().match(uri)
         ) {
             filter.push(menu.indexOf(menu[i]))
             write(menu.indexOf(menu[i]))
@@ -335,9 +329,8 @@ var response = function(passthrough, uri, n, bloat) {
 
 var write = function(n) {
 
-  if ($('#main .result').length < 1)
-    $('#main').append("<div class='result' style='display:none'></div>")
   if (n != id)
+  $(document).ready(function() {
     $('#main .result').append(
       "<div class='filter' " +
       "response='" + menu[n].id.response() + "'>" +
@@ -349,7 +342,7 @@ var write = function(n) {
       "    </a>" +
       "</div>"
     )
-
+  })
 }
 
 var image = function(empty, n, src) {
@@ -470,7 +463,6 @@ var xml = function(e, s, n) {
     $('#progressBar').width($('#progressBar').width() +
       Math.floor(Math.random() * (5 - 0 + 1) + 0))
   }, 350)
-  n.toString().cleanup()
   $.get({
     url: uri,
     method: 'GET',
