@@ -161,11 +161,13 @@ $(document)
     .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false;
-        else return false
+        else mouseasset = false
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false;
+              if (mouseasset){
                   var uri = '?q=&' + mouseasset
                   uri.define().exit()
+              }
           }
           e.preventDefault();
     })

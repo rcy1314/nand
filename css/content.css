@@ -162,6 +162,7 @@ input {
 #toggle,
 #bottom,
 #option,
+.radial,
 .select,
 .index,
 .hover,
@@ -796,6 +797,7 @@ courtesy a {
 }
 
 .invertOver:hover {
+  background-color: #f6f8fa !important;
   border: .3px solid #ddd !important;
 }
 
@@ -809,6 +811,7 @@ courtesy a {
 }
 
 .oppositeOver:hover {
+  background-color: #0e0e0e !important;
   border: .3px solid #000000 !important;
 }
 
