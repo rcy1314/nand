@@ -10,8 +10,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('#top, #arm, #home a, #arm #option, .page input[type=text], ' +
-      '.right, .left, #guide'
+    $('#top, #arm, #home a, #arm #option, .page input[type=text], .right, .left, #guide'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
@@ -33,7 +32,6 @@ var visual = function(n) {
     $('.third').css('cssText','fill: #ff6289 !important')
     $('.one').css('cssText','fill: #ef4063 !important')
     $('#handle img').css('filter','hue-rotate(120deg)')
-    $('.item, .feed').css('border','.3px solid #000')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('#top').css('border-bottom', '1px solid #333')
     $('.category').css('border','1px solid #000')
@@ -51,25 +49,26 @@ var visual = function(n) {
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
+      'border': 'none',
       'color': '#666'
     })
     $('#home, .fas, a').css('color','#000')
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
-    $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
     $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
+    $('#search input[type=text], .filter, .populate').css('border', '1px solid #eaeaea')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('.item').addClass('invertOver').removeClass('oppositeOver')
+    $('.item, .center .feed').css('border','.3px solid #ddd')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.one').css('cssText','fill: #1fa2ff !important')
-    $('.item, .feed').css('border','.3px solid #fff')
     $('#handle img').css('filter','hue-rotate(0deg)')
     $('#handle a, #placeholder').css('color', '#666')
     $('#favicon').attr('href', 'favicon.ico')

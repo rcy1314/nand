@@ -161,6 +161,7 @@ $(document)
     .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false;
+        else return false
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false;
                   var uri = '?q=&' + mouseasset

@@ -791,7 +791,7 @@ courtesy a {
 .item {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
-  margin-bottom: 1px;
+  margin-bottom: .3px;
   width: 100%;
 }
 
