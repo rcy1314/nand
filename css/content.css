@@ -386,6 +386,7 @@ body,
 
 .filter a,
 .populate a {
+  background-color: transparent;
   position: relative;
   margin: 0 auto;
 }
@@ -405,20 +406,9 @@ body,
 
 .title,
 .category {
+  background-color: transparent;
   border-radius: 10px;
   padding: 10px;
-}
-
-.description {
-  background-color: transparent !important;
-  padding-bottom: 5px;
-  text-align: justify;
-  display: table-cell;
-  position: relative;
-  width: fit-content;
-  margin-top: 5px;
-  clear: left;
-  float: left;
 }
 
 #input {
@@ -568,7 +558,7 @@ input[type=submit] {
 }
 
 .header {
-  background-color: tranparent;
+  background-color: transparent;
   height: 70px;
   width: 100%;
 }
@@ -583,6 +573,10 @@ input[type=submit] {
   display: flex;
   height: 50px;
   left: 0;
+}
+
+courtesy a {
+  background-color: transparent;
 }
 
 .fill {
@@ -601,7 +595,7 @@ input[type=submit] {
 }
 
 .classic .wrap {
-  background-color: tranparent;
+  background-color: transparent;
   margin-left: 10px;
 }
 
@@ -627,6 +621,7 @@ input[type=submit] {
 }
 
 .sticky .pub {
+  background-color: transparent;
   height: calc(100% - 100px);
   font-size: 13px;
   padding: 10px;
@@ -668,7 +663,7 @@ input[type=submit] {
 
 .item .pub,
 .item .add {
-  background-color: tranparent;
+  background-color: transparent;
   justify-content: left;
   width: 95% !important;
   margin-left: 10px;
@@ -691,7 +686,7 @@ input[type=submit] {
 }
 
 .item .tag {
-  background-color: inherit;
+  background-color: transparent;
   min-width: 38% !important;
   position: relative;
   width: 100%;
@@ -747,7 +742,7 @@ input[type=submit] {
 }
 
 .comment {
-  background-color: tranparent;
+  background-color: transparent;
   font-family: Proxima Nova;
   padding: 1em;
   border: none;
@@ -778,6 +773,7 @@ input[type=submit] {
 
 .wrap {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   -webkit-user-select: none;
   width: calc(100% - 10px);
   flex-wrap: wrap;
@@ -793,7 +789,7 @@ input[type=submit] {
 }
 
 .ago {
-  background-color: tranparent;
+  background-color: transparent;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 10px;
@@ -804,6 +800,7 @@ input[type=submit] {
 }
 
 #bottom {
+  background-color: transparent;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -912,6 +909,7 @@ input[type=submit] {
 }
 
 .suggestions {
+  background-color: transparent;
   text-align: left;
   font-size: 10px;
   padding: 15px;
@@ -938,6 +936,10 @@ input[type=submit] {
   display: flex;
   width: 100%;
   margin: 3px;
+}
+
+.combine div {
+  background-color: transparent;
 }
 
 .views {
@@ -1014,7 +1016,7 @@ iframe {
 }
 
 .listing {
-  background-color: #tranparent;
+  background-color: #transparent;
   position: relative;
   padding-top: 12px;
   text-align: left;

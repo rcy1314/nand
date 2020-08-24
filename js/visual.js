@@ -2,10 +2,9 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #arm, #main, #main #option, #visit, #bottom, .header, .classic, .wrap, .item, ' +
-      '.feed, .channel, .combine, .index, a, .stats, .comment, .ago, .pub, .tag' +
-      '.result, .air, #main .page, #main .page .id, .blur, input[type=text], ' +
-      '.filter, .populate, .filter a, .populate a, .focus'
+    $('#container, #arm, #main, #main #option, #visit, #bottom, .classic, .item, ' +
+      '.feed, .channel, .index, a, .stats, .filter, .populate, .focus, ' +
+      '.result, .air, #main .page, #main .page .id, .blur, input[type=text]'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -14,7 +13,7 @@ var visual = function(n) {
     })
     $('#top, #arm, #arm #option, ' +
       '.suggestions, .right, .left, #guide, ' +
-      '.fas, #home a, .description, .type, ' +
+      '.fas, #home a, ' +
       '#home'
     ).css({
       'background-color': '#0e0e0e',
@@ -22,7 +21,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('.buttonSearch, .type, .translation, .suggestions, .combine, .combine div').css({
+    $('.buttonSearch, .type, .translation, .suggestions').css({
       'background-color': 'transparent',
       'box-shadow': 'none',
       'color': '#fff'
@@ -54,16 +53,15 @@ var visual = function(n) {
       $(this).parents('.item').css('border', '.3px solid #000')
     })
   } else if (op == 0) {
-    $('#top, #arm, #container, #arm, #arm #option, #main, .channel, .index, .item, .classic, .wrap, ' +
-      '.comment, .channel, #main .center .feed, .page input[type=text], .tag, .pub, .ago, .comment, ' +
-      '.type, .stats, .combine, #bottom, .air, .result, a'
+    $('#top, #arm, #container, #arm, #arm #option, #main, .channel, .index, .classic,  ' +
+      '.channel, #main .center .feed, .page input[type=text], ' +
+      '.type, .stats, .air, .result, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
       'border': 'none'
     })
-    $('#container, #front #option, #visit, .hover, .info a, ' +
-      '#main .page .id, ' +
+    $('#container, #main .page .id, #front #option, #visit, .hover, .info a, ' +
       '#main .page .feed, #main .page, .right, .left, #main .page .feed a, ' +
       '.filter, .populate, .blur, #search input[type=text], .focus'
     ).css({
@@ -71,9 +69,8 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('#home, .description, .tag, #option, .fas, .title, .type, .translation, .wrap, .header, ' +
-      '.tag, #option, .fa-double-angle-right, .fa-double-angle-left, #toggle, .suggestions, .combine div, ' +
-      '.comment, .item .pub, .more, .ago'
+    $('#home, #option, .fas, .translation, ' +
+      '.fa-double-angle-right, .fa-double-angle-left, .suggestions'
     ).css({
       'background-color': 'transparent',
       'box-shadow': 'none',
