@@ -2,31 +2,22 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #arm, #main, #main #option, #visit, #bottom, .classic, .item, ' +
-      '.feed, .channel, .index, a, .stats, .filter, .populate, .focus, ' +
-      '.result, .air, #main .page, #main .page .id, .blur, input[type=text]'
+    $('#container, #arm, #main, #option, .page, .classic, .item, .feed, ' +
+      '.index, .filter, .populate, .result, .air, .blur, input[type=text]'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
       'border': 'none',
       'color': '#fff'
     })
-    $('#top, #arm, #arm #option, ' +
-      '.suggestions, .right, .left, #guide, ' +
-      '.fas, #home a, ' +
-      '#home'
+    $('#top, #arm, #home a, #arm #option, .page input[type=text], ' +
+      '.right, .left, #guide'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
-      'border': 'none',
       'color': '#fff'
     })
-    $('.buttonSearch, .type, .translation, .suggestions').css({
-      'background-color': 'transparent',
-      'box-shadow': 'none',
-      'color': '#fff'
-    })
-    $('.item, .feed').css('border','.3px solid #000')
+    $('a').css('color','#fff')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
@@ -41,6 +32,7 @@ var visual = function(n) {
     $('.third').css('cssText','fill: #ff6289 !important')
     $('.one').css('cssText','fill: #ef4063 !important')
     $('#handle img').css('filter','hue-rotate(120deg)')
+    $('.item, .feed').css('border','.3px solid #000')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('#top').css('border-bottom', '1px solid #333')
     $('.category').css('border','1px solid #000')
@@ -48,39 +40,31 @@ var visual = function(n) {
     $('#placeholder').css('color','#fff')
     $('.item, .classic').on('mouseenter', function(e){
       $(this).parents('.item').css('border', '.3px solid #0e0e0e')
+        .find('.classic').css('background-color','#0e0e0e')
     })
     $('.item, .classic').on('mouseleave', function(e){
       $(this).parents('.item').css('border', '.3px solid #000')
+        .find('.classic').css('background-color','#000000')
     })
   } else if (op == 0) {
-    $('#top, #arm, #container, #arm, #arm #option, #main, .channel, .index, .classic,  ' +
-      '.channel, #main .center .feed, .page input[type=text], ' +
-      '.type, .stats, .air, .result, a'
+    $('#container, #top, #arm, #option, .index, .item, .classic, .center .feed, ' +
+      '.center .feed, .page input[type=text], .air, .result'
     ).css({
       'background-color': '#fff',
-      'color': '#666',
-      'border': 'none'
-    })
-    $('#container, #main .page .id, #front #option, #visit, .hover, .info a, ' +
-      '#main .page .feed, #main .page, .right, .left, #main .page .feed a, ' +
-      '.filter, .populate, .blur, #search input[type=text], .focus'
-    ).css({
-      'background-color': '#f7f7f7',
       'border': 'none',
       'color': '#666'
     })
-    $('#home, #option, .fas, .translation, ' +
-      '.fa-double-angle-right, .fa-double-angle-left, .suggestions'
+    $('.hover, #main, .page, .page .feed, .right, .left, ' +
+      '.filter, .populate, .blur, #search input[type=text]'
     ).css({
-      'background-color': 'transparent',
-      'box-shadow': 'none',
-      'color': '#000'
+      'background-color': '#f7f7f7',
+      'color': '#666'
     })
-    $('.item, .feed').css('border','.3px solid #fff')
-    $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
+    $('#option, #home').css('color','#000')
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
+    $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
     $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
@@ -91,15 +75,18 @@ var visual = function(n) {
     $('.second').css('cssText','fill: #12d8fa !important')
     $('.third').css('cssText','fill: #06ffcb !important')
     $('.one').css('cssText','fill: #1fa2ff !important')
+    $('.item, .feed').css('border','.3px solid #fff')
     $('#handle img').css('filter','hue-rotate(0deg)')
     $('#handle a, #placeholder').css('color', '#666')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
     $('.item, .classic').on('mouseenter', function(e){
-      $(this).parents('.item, .classic').css('border', '.3px solid #ddd')
+      $(this).parents('.item').css('border', '.3px solid #dddddd')
+        .find('.classic').css('background-color','#ffffff')
     })
     $('.item, .classic').on('mouseleave', function(e){
-      $(this).parents('.item').css('border', '.3px solid #fff')
+      $(this).parents('.item').css('border', '.3px solid #ffffff')
+        .find('.classic').css('background-color','#ffffff')
     })
   }
 }

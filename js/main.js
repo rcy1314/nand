@@ -210,44 +210,22 @@ $(document)
     })
     .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
       function (e) {
-      id = $(this).attr('id')
-      if (tap == 0) {
-          // set first click
-          tap = new Date().getTime();
-          setTimeout(function () {
-            tap = 0
-          }, 800)
-      } else {
-          // compare first click to this click and see if they occurred within double click threshold
-          if (((new Date().getTime()) - tap) < 300) {
-              // double click occurred
-              $(this).parents('.item, .sticky').find('.fa-heart-o, .fa-gratipay')
-                .toggleClass('fa-heart-o fab fa-gratipay')
-              $(this).parents('#container')
-                .find('#main .' + id + ' .fa-heart-o, ' +
-                  '#main .' + id + ' .fab, #main .' + id + ' .fa-gratipay')
-                .toggleClass('fa-heart-o fab fa-gratipay')
-              visual()
-              tap = 0
-          } else {
             $('#main').removeClass('guide')
             $('#guide').hide()
-          }
-      }
       e.stopPropagation()
       visual()
     })
     .on('touch click', '#main .center .channel .item .image .img', function(e) {
       if (tap == 0) {
+          $this = $(this)
           // set first click
-          if ($(this)
-                .hasClass('default'))
-                $(this).parents('.item').attr('ext').blank()
           tap = new Date().getTime();
           img = $(this).attr('id')
           setTimeout(function () {
+            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
+              $this.parents('.item').attr('ext').blank()
             tap = 0
-          }, 800)
+          }, 325)
       } else {
           // compare first click to this click and see if they occurred within double click threshold
           if (((new Date().getTime()) - tap) < 300) {
@@ -259,32 +237,6 @@ $(document)
               e.stopPropagation()
               visual()
               tap = 0;
-          } else if (img == $(this).attr('id') && !$(this).hasClass('default')){
-            $(this).addClass('guide')
-            $('#guide').empty()
-            guide(
-              $(this).parents('.item').attr('item'),
-              $(this).parents('.item').attr('ext'),
-              $(this).parents('.item').attr('item'),
-              $(this).parents('.item').find('.header').html(),
-              $(this).parents('.item').find('.pub').attr('text'),
-              $(this).parents('.item').find('.ago').text(),
-              $(this).parents('.item').find('.share').val(),
-              $(this).parents('.item').find('.source').val()
-            )
-            $('#guide').find('.copy:first').remove()
-            image(false, false,
-              $(this).parents('.item').attr('item'),
-              $(this).parents('.item').find('.img').attr('src')
-            )
-            $('#guide, .checkmark').show()
-            $('.sticky').hide().fadeIn(1000)
-            if ($('.' + $(this).parents('.item').attr('item')).find('.fab').length)
-              $('.sticky')
-                .find('.fa-heart-o').toggleClass('fa-heart-o fab fa-gratipay')
-              // not a double click so set as a new first click
-              tap = 0;
-              img = $(this).attr('id')
           }
       }
       e.stopPropagation()
