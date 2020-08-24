@@ -51,7 +51,7 @@ var visual = function(n) {
       $(this)
         .parents('.item').css({
           'background-color': '#f6f8fa',
-          'border': '.3px solid #ddd'
+          'border': '.3px solid #000'
         })
         .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#0e0e0e')
     })
@@ -59,7 +59,7 @@ var visual = function(n) {
       $(this)
         .parents('.item').css({
           'background-color': '#ffffff',
-          'border': '.3px solid #fff'
+          'border': '.3px solid #000'
         })
         .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#000000')
     })
