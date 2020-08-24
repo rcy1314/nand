@@ -220,8 +220,6 @@ var suggest = function(n) {
 
 var populate = function(n) {
 
-  $(document).ready(function() {
-    $('#main').append("<div class='result' style='display:none'></div>")
     for (var i = 1; i <= menu.length - 1; i++) {
       if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
         $('#main .result').append(
@@ -237,7 +235,6 @@ var populate = function(n) {
         )
     }
     air(category)
-  })
 }
 
 var air = function(n) {
