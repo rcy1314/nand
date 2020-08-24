@@ -1,3 +1,9 @@
+String.prototype.cleanup = function() {
+
+  $('#main .air, #main .result, #main .content, #main .center').remove()
+
+}
+
 String.prototype.space = function() {
 
   return this.toLowerCase().replace(/(\/|\.)/g, ' ')

@@ -11,7 +11,8 @@ var contrast = false
 var enableDrag = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
-var translations = ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
+var translations =
+  ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
 var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-heart-o'></div>" +
@@ -22,16 +23,22 @@ var tag = "  <div class='tag' style='display:none'>" +
 
 var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
           "  <rect class='one' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20' begin='0s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0' begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='height' values='20;5;20'" +
+          "      begin='0s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='y' values='0;20;0'" +
+          "      begin='0s' dur='1s' repeatCount='indefinite' />" +
           "  </rect> " +
           "  <rect class='second' x='19' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0' begin='0.2s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='height' values='20;5;20'" +
+          "      begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='y' values='0;20;0'" +
+          "      begin='0.2s' dur='1s' repeatCount='indefinite' />" +
           "  </rect>" +
           "  <rect class='third' x='38' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20' begin='0.6s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0' begin='0.4s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='height' values='20;5;20'" +
+          "      begin='0.6s' dur='1s' repeatCount='indefinite' />" +
+          "    <animate attributeName='y' values='0;20;0'" +
+          "      begin='0.4s' dur='1s' repeatCount='indefinite' />" +
           "  </rect>" +
           "</svg>"
 
@@ -85,12 +92,11 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
 var content  = function(n, recent, oldest, posts) {
 
     var images = 0
-    var img = 'images/png/' + menu[n].img + '.png'
     $('#main .stats').append(
-      "<div class='asset' response='" +
-        menu[n].id.toLowerCase().replace(/\s|\/|\./g, '-') + "'>" +
+      "<div class='asset' response='" + menu[n].id.response() + "'>" +
       "  <div class='radial'></div>" +
-      "  <img src='" + img + "' class='id " + menu.indexOf(menu[n]) + "'>" +
+      "  <img src='" + menu[n].img.image() + "'" +
+      "  class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +
       "<div class='info'>" +
       "  <a ext='" + menu[n].ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
@@ -143,7 +149,7 @@ var feed  = function(l, n) {
   if (l == 'center') svg = "<div class='radial'></div>"
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (e != 0 && $.inArray(e, dupe) === -1){
+    if (e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
@@ -193,7 +199,7 @@ var suggest = function(n) {
   for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
-    if (menu[e] && e != 0 && $.inArray(duplicate, e) === -1){
+    if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
       $('#main .suggestions').append(
         "<div class='combine'>" +
         "  <div class='radial'></div>" +
@@ -215,32 +221,30 @@ var suggest = function(n) {
 var populate = function(n) {
 
   $(document).ready(function() {
-  $('#main').append("<div class='result' style='display:none'></div>")
-  for (var i = 1; i <= menu.length - 1; i++) {
-    if (id != menu.indexOf(menu[i]) && category == menu[i].cat) {
-      $('#main .result').append(
-        "<div class='populate'" +
-        "  response='" + menu[i].id.response() + "'>" +
-        "  <div class='display'>" +
-        "    <img class='id' src='" + menu[i].img.image() + "'> " +
-        "  </div>" +
-        "    <a class='title' ext='" + menu[i].ext + "'>" +
-                    menu[i].id.match(/[^\/]+$/g) +
-        "    </a>" +
-        "</div>"
-      )
+    $('#main').append("<div class='result' style='display:none'></div>")
+    for (var i = 1; i <= menu.length - 1; i++) {
+      if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
+        $('#main .result').append(
+          "<div class='populate'" +
+          "  response='" + menu[i].id.response() + "'>" +
+          "  <div class='display'>" +
+          "    <img class='id' src='" + menu[i].img.image() + "'> " +
+          "  </div>" +
+          "    <a class='title' ext='" + menu[i].ext + "'>" +
+                 menu[i].id.match(/[^\/]+$/g) +
+          "    </a>" +
+          "</div>"
+        )
     }
-  }
-  air(category)
-})
+    air(category)
+  })
 }
 
 var air = function(n) {
 
-  if ($('#main .air').length < 1)
-    $('#main .result').before("<div class='air' style='display:none'></div>")
+  $('#main .result').before("<div class='air' style='display:none'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
-    if (id != menu.indexOf(menu[i]) && category == menu[i].cat) {
+    if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
       $('#main .air').append(
         "<div class='populate'" +
         "response='" + menu[i].id.response() + "'>" +
@@ -252,9 +256,8 @@ var air = function(n) {
         "    </a>" +
         "</div>"
       )
-    }
   }
-
+  visual()
 }
 
 var response = function(passthrough, uri, n, bloat) {
@@ -275,7 +278,6 @@ var response = function(passthrough, uri, n, bloat) {
     for (var i = 1; i <= menu.length - 1; i++) {
       if (menu[i].hash == n) {
         filter.push(menu.indexOf(menu[i]))
-        write(menu.indexOf(menu[i]))
         exact = i
         id = i
       } else if (
@@ -283,7 +285,6 @@ var response = function(passthrough, uri, n, bloat) {
           menu[i].id.space() == uri.toLowerCase()
         ) {
             filter.push(menu.indexOf(menu[i]))
-            write(menu.indexOf(menu[i]))
             var exact = i
             id = i
             break
@@ -292,23 +293,25 @@ var response = function(passthrough, uri, n, bloat) {
           menu[i].id.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-            write(menu.indexOf(menu[i]))
             id = i
       } else if (
           menu[i].des.space().match(n.toLowerCase()) ||
           menu[i].des.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-            write(menu.indexOf(menu[i]))
       } else if (
           menu[i].cat.toLowerCase().match(n) ||
           menu[i].cat.toLowerCase().match(uri)
         ) {
             filter.push(menu.indexOf(menu[i]))
-            write(menu.indexOf(menu[i]))
       }
     }
     if (!id) id = filter[filter.length - 1]
+    if (passthrough == false){
+      $.each(filter, function(i) {
+        write(menu.indexOf(menu[i]))
+      })
+    }
     if (passthrough == true) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
@@ -453,7 +456,6 @@ var xml = function(e, s, n) {
   var src = ''
   var dupe = []
   category = menu[n].cat
-  var img = 'images/png/' + menu[n].img + '.png'
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
@@ -605,7 +607,7 @@ var xml = function(e, s, n) {
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
         "  <div class='radial'></div>" +
-        "  <img class='id' src='" + img + "'>" +
+        "  <img class='id' src='" + menu[n].img.image() + "'>" +
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
@@ -723,8 +725,8 @@ var xml = function(e, s, n) {
       "  <div class='channel'></div>" +
       "</div>" +
       "<div class='content' style='visibility:hidden'>" +
-      "  <div class='stats' style='visibility:hidden'></div>" +
-      "  <div class='suggestions' style='visibility:hidden'>" +
+      "  <div class='stats'></div>" +
+      "  <div class='suggestions'>" +
       "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
       "  </div>" +
       "</div>"
