@@ -594,6 +594,10 @@ input[type=submit] {
   height: 7em;
 }
 
+.classic {
+  width: 100%;
+}
+
 .classic .wrap {
   margin-left: 10px;
 }
@@ -642,7 +646,6 @@ input[type=submit] {
 .item {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
-  margin-bottom: 2em;
   width: 100%;
 }
 
@@ -769,7 +772,7 @@ input[type=submit] {
 .wrap {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
-  width: 95% !important;
+  width: calc(100% - 10px);
   flex-wrap: wrap;
   display: flex;
 }
@@ -797,10 +800,10 @@ input[type=submit] {
   align-items: center;
   position: relative;
   font-size: 12px;
-  bottom: 1.95em;
   display: flex;
   height: 5em;
   width: 100%;
+  bottom: 0;
 }
 
 .bottom {
