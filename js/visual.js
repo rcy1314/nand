@@ -66,13 +66,13 @@ var visual = function(n) {
   } else if (op == 0) {
     $('#top, #arm, #container, #arm, #arm #option, #main, .channel, .index, .item, .classic, .wrap, ' +
       '.comment, .channel, #main .center .feed, .page input[type=text], .tag, .pub, .ago, .comment, ' +
-      '.type, .stats, .combine, #bottom, a'
+      '.type, .stats, .combine, #bottom, .air, .result, a'
     ).css({
       'background-color': '#fff',
       'color': '#666',
       'border': 'none'
     })
-    $('#container, .air, .result, #front #option, #visit, .hover, .info a, ' +
+    $('#container, #front #option, #visit, .hover, .info a, ' +
       '#main .page .id, ' +
       '#main .page .feed, #main .page, .right, .left, #main .page .feed a, ' +
       '.filter, .populate, .blur, #search input[type=text], .focus'
