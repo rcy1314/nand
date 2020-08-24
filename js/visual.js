@@ -17,7 +17,7 @@ var visual = function(n) {
       'box-shadow': 'none',
       'color': '#fff'
     })
-    $('a').css('color','#fff')
+    $('#home, .fas, a').css('color','#fff')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
@@ -47,20 +47,20 @@ var visual = function(n) {
         .find('.classic').css('background-color','#000000')
     })
   } else if (op == 0) {
-    $('#container, #top, #arm, #option, .index, .item, .classic, .center .feed, ' +
+    $('#container, #top, #arm, #option, #maub .index, .item, .classic, ' +
       '.center .feed, .page input[type=text], .air, .result'
     ).css({
       'background-color': '#fff',
       'border': 'none',
       'color': '#666'
     })
-    $('.hover, #main, .page, .page .feed, .right, .left, ' +
+    $('.hover, #visit, .page, .page .feed, .right, .left, ' +
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
       'color': '#666'
     })
-    $('#option, #home').css('color','#000')
+    $('#home, .fas, a').css('color','#000')
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('#search input[type=text], .filter, .populate, .center .feed').css('border', '1px solid #eaeaea')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
