@@ -149,7 +149,7 @@ var feed  = function(l, n) {
   if (l == 'center') svg = "<div class='radial'></div>"
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (e != 0 && $.inArray(e, dupe) == -1){
+    if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('#main .' + l + ' .feed').append(
           "<div class='asset' " +
