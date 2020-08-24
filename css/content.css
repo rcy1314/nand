@@ -568,6 +568,7 @@ input[type=submit] {
 }
 
 .header {
+  background-color: tranparent;
   height: 70px;
   width: 100%;
 }
@@ -595,10 +596,12 @@ input[type=submit] {
 }
 
 .classic {
+  background-color: transparent;
   width: 100%;
 }
 
 .classic .wrap {
+  background-color: tranparent;
   margin-left: 10px;
 }
 
@@ -665,6 +668,7 @@ input[type=submit] {
 
 .item .pub,
 .item .add {
+  background-color: tranparent;
   justify-content: left;
   width: 95% !important;
   margin-left: 10px;
@@ -687,6 +691,7 @@ input[type=submit] {
 }
 
 .item .tag {
+  background-color: inherit;
   min-width: 38% !important;
   position: relative;
   width: 100%;
@@ -694,6 +699,7 @@ input[type=submit] {
 
 .img,
 .image {
+  background-color: transparent;
   position: relative;
 }
 
@@ -741,6 +747,7 @@ input[type=submit] {
 }
 
 .comment {
+  background-color: tranparent;
   font-family: Proxima Nova;
   padding: 1em;
   border: none;
@@ -786,6 +793,7 @@ input[type=submit] {
 }
 
 .ago {
+  background-color: tranparent;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 10px;

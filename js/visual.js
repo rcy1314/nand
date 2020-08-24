@@ -48,20 +48,10 @@ var visual = function(n) {
     $('.hover').addClass('contrast.hover')
     $('#placeholder').css('color','#fff')
     $('.item, .classic').on('mouseenter', function(e){
-      $(this)
-        .parents('.item').css({
-          'background-color': '#f6f8fa',
-          'border': '.3px solid #000'
-        })
-        .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#0e0e0e')
+      $(this).parents('.item').css('border', '.3px solid #0e0e0e')
     })
     $('.item, .classic').on('mouseleave', function(e){
-      $(this)
-        .parents('.item').css({
-          'background-color': '#ffffff',
-          'border': '.3px solid #000'
-        })
-        .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#000000')
+      $(this).parents('.item').css('border', '.3px solid #000')
     })
   } else if (op == 0) {
     $('#top, #arm, #container, #arm, #arm #option, #main, .channel, .index, .item, .classic, .wrap, ' +
@@ -109,20 +99,10 @@ var visual = function(n) {
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
     $('.item, .classic').on('mouseenter', function(e){
-      $(this)
-        .parents('.item').css({
-          'background-color': '#f6f8fa',
-          'border': '.3px solid #ddd'
-        })
-        .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#f6f8fa')
+      $(this).parents('.item, .classic').css('border', '.3px solid #ddd')
     })
     $('.item, .classic').on('mouseleave', function(e){
-      $(this)
-        .parents('.item').css({
-          'background-color': '#ffffff',
-          'border': '.3px solid #fff'
-        })
-        .find('.classic, .img, .header, .wrap, .pub, .ago, .comment').css('background-color','#ffffff')
+      $(this).parents('.item').css('border', '.3px solid #fff')
     })
   }
 }
