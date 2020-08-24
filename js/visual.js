@@ -2,7 +2,7 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #arm, #main, #option, .page, .classic, .item, .feed, ' +
+    $('#container, #top, #arm, #main, #option, .page, .classic, .item, .feed, ' +
       '.index, .filter, .populate, .result, .air, .blur, input[type=text]'
     ).css({
       'background-color': '#000',
@@ -26,6 +26,7 @@ var visual = function(n) {
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(90deg)')
     $('.index, .hover').removeClass('visual').addClass('contrast')
+    $('.item').addClass('oppositeOver').removeClass('invertOver')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('.listing').addClass('opposite').removeClass('invert')
     $('.second').css('cssText','fill: #e557c6 !important')
@@ -38,23 +39,15 @@ var visual = function(n) {
     $('.category').css('border','1px solid #000')
     $('.hover').addClass('contrast.hover')
     $('#placeholder').css('color','#fff')
-    $('.item, .classic').on('mouseenter', function(e){
-      $(this).parents('.item').css('border', '.3px solid #0e0e0e')
-        .find('.classic').css('background-color','#0e0e0e')
-    })
-    $('.item, .classic').on('mouseleave', function(e){
-      $(this).parents('.item').css('border', '.3px solid #000')
-        .find('.classic').css('background-color','#000000')
-    })
   } else if (op == 0) {
-    $('#container, #top, #arm, #option, #maub .index, .item, .classic, ' +
+    $('#container, #top, #arm, #option, .index, .item, .classic, ' +
       '.center .feed, .page input[type=text], .air, .result'
     ).css({
       'background-color': '#fff',
       'border': 'none',
       'color': '#666'
     })
-    $('.hover, #visit, .page, .page .feed, .right, .left, ' +
+    $('.hover, #visit, #main, .page, .page .feed, .right, .left, ' +
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
@@ -70,6 +63,7 @@ var visual = function(n) {
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
     $('.index, .hover').addClass('visual').removeClass('contrast')
+    $('.item').addClass('invertOver').removeClass('oppositeOver')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')
     $('.second').css('cssText','fill: #12d8fa !important')
@@ -80,13 +74,5 @@ var visual = function(n) {
     $('#handle a, #placeholder').css('color', '#666')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
-    $('.item, .classic').on('mouseenter', function(e){
-      $(this).parents('.item').css('border', '.3px solid #dddddd')
-        .find('.classic').css('background-color','#ffffff')
-    })
-    $('.item, .classic').on('mouseleave', function(e){
-      $(this).parents('.item').css('border', '.3px solid #ffffff')
-        .find('.classic').css('background-color','#ffffff')
-    })
   }
 }

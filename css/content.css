@@ -795,6 +795,33 @@ courtesy a {
   width: 100%;
 }
 
+.invertOver:hover {
+  border: .3px solid #ddd !important;
+}
+
+.invertOver:hover .classic {
+  background-color: #f6f8fa !important;
+}
+
+.invertOver:not(:hover) {
+  border: .3px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.oppositeOver:hover {
+  border: .3px solid #000000 !important;
+}
+
+.oppositeOver:hover .classic {
+  background-color: #0e0e0e !important;
+}
+
+
+.oppositeOver:not(:hover) {
+  border: .3px solid #000000;
+  background-color: #000000;
+}
+
 .item .radial {
   margin-left: 10.25px;
   border-radius: 36px;
