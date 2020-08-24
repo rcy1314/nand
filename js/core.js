@@ -1,3 +1,19 @@
+String.prototype.cleanup = function() {
+
+  $('#main .air, #main .result, #main .content, #main .center').remove()
+
+}
+
+String.prototype.image = function() {
+
+ return 'images/png/' + this + '.png'
+
+}
+
+String.prototype.response = function() {
+  return this.toLowerCase().replace(/\/|\.|\s/g, '-')
+}
+
 String.prototype.next = function() {
 
   if (filter.length > 1)
