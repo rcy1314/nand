@@ -22,11 +22,25 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
               feed('page', 40)
         })
 
-      else
+      else {
+
+        $(document)
+          .ready(function() {
+          $('#toggle, #handle img, #main .quick').css('visibility','hidden')
+          $('#main #visit .page #front input[type=text], ' +
+            '#main #visit .page #front .icon, ' +
+            '#main #visit .page .button')
+              .css('visibility','hidden')
+          $('#handle svg').css('visibility','visible')
+
+        })
+
         response(true,
                  false,
                  menu[i].id.response(),
                  true)
+
+      }
 
 }
 if (location.href.match('\\+1')) {
@@ -34,20 +48,8 @@ if (location.href.match('\\+1')) {
   contrast = contrast != true
   op = op != true
 
-  $(document)
-    .ready(function() {
-
-      $('#top').css('visibility', 'hidden')
-      $('#main #visit .page #front input[type=text], ' +
-        '#main #visit .page #front .icon, ' +
-        '#main #visit .page .button')
-        .css('visibility','visible')
-
-      feed('page', 40)
-
-  })
-
 }
+
 if (location.search.split('?q=')[1]) {
 
   var uri = location.search.split('?q=')[1]
@@ -74,20 +76,5 @@ if (location.search.split('?q=')[1]) {
   if (!uri[1]) response(true, false, uri[0], false)
 
   else if (uri[1]) response(true, uri[0], uri[1], false)
-
-} else {
-
-  $(document)
-    .ready(function() {
-
-      $('#top').css('visibility', 'hidden')
-      $('#main #visit .page #front input[type=text], ' +
-        '#main #visit .page #front .icon, ' +
-        '#main #visit .page .button')
-        .css('visibility','visible')
-
-      feed('page', 40)
-
-  })
 
 }

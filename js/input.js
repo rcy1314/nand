@@ -180,24 +180,12 @@ $(document)
       })
       $(this).val('')
       $this = $(this)
-      if ($('#arm #search #input .icon').hasClass('slide'))
-        $(this)
-          .css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '30px',
-            'text-align': 'left'
-          })
-      else if (!$('#arm #search #input .icon').hasClass('slide')) {
-        setTimeout(function() {
           $this.css({
             'caret-color': '#e4e4e4',
             'padding-left': '30px',
             'text-align': 'left',
           })
-        }, 500)
-        $('#arm #search #input .icon')
-          .addClass('slide')
-      }
+        $('#arm #search #input .icon').addClass('slide')
     visual()
 })
 .on('focusout blur', '#arm #search input[type=text]', function(e) {
