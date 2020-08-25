@@ -25,6 +25,10 @@ var visual = function(n) {
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(90deg)')
     $('.index, .hover').removeClass('visual').addClass('contrast')
+    $(':root').css({
+      '--loader-color-primary': '#f7426C',
+      '--loader-color-secondary': '#f54e75'
+    })
     $('.item, .filter, .populate').addClass('oppositeOver').removeClass('invertOver')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('.listing').addClass('opposite').removeClass('invert')
@@ -53,6 +57,10 @@ var visual = function(n) {
       'color': '#666'
     })
     $('#home, .fas, a').css('color','#000')
+    $(':root').css({
+      '--loader-color-primary': '#0078D4',
+      '--loader-color-secondary': '#1683D8'
+    })
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')

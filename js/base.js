@@ -21,26 +21,7 @@ var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>"
 
-var fill ="<svg width='51px' height='50px' viewBox='0 0 51 50'>" +
-          "  <rect class='one' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20'" +
-          "      begin='0s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0'" +
-          "      begin='0s' dur='1s' repeatCount='indefinite' />" +
-          "  </rect> " +
-          "  <rect class='second' x='19' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20'" +
-          "      begin='0.4s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0'" +
-          "      begin='0.2s' dur='1s' repeatCount='indefinite' />" +
-          "  </rect>" +
-          "  <rect class='third' x='38' y='0' width='2' height='50'>" +
-          "    <animate attributeName='height' values='20;5;20'" +
-          "      begin='0.6s' dur='1s' repeatCount='indefinite' />" +
-          "    <animate attributeName='y' values='0;20;0'" +
-          "      begin='0.4s' dur='1s' repeatCount='indefinite' />" +
-          "  </rect>" +
-          "</svg>"
+var fill ="<div class='loader quantum-spinner'></div>"
 
 var select = function(n) {
 

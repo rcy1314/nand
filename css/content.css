@@ -397,6 +397,10 @@ body,
   top: 225px;
 }
 
+.page .loader {
+  left: 25px
+}
+
 #front {
   position: relative;
   display: block;
