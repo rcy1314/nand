@@ -175,18 +175,20 @@
   }
 }
 
-
 /*
 The loaders use CSS custom properties (variables) to control the attributes of the loaders
 */
 :root{
 	--loader-width: 70px;
 	--loader-height: 70px;
+	--loader-color-primary: #27ae60;
+	--loader-color-secondary: #eee;
 	--line-width: 3px;
-	--animation-duration: 3s;
+	--animation-duration: 5s;
 	--loader-initial-scale: 0.1;
 }
 .loader,.loader:before,.loader:after{
+  margin: 0 auto;
 	box-sizing: border-box;
 	flex-grow: 0;
 	flex-shrink: 0;
@@ -196,60 +198,63 @@ In order to get optimal results, please only change the
 variables above and don't change anything in the actual loader code
 */
 
-
-
-
-@keyframes momentum {
-    0%   {
-        transform: rotate(0deg);
+@keyframes circle-inner {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(360deg);
     }
     100% {
-        transform: rotate(-360deg);
+      transform: rotate(720deg);
     }
 }
 
-.loader.quantum-spinner {
-    --primary-circle-offset: calc(((var(--loader-width,100px) * 0.2) / 2) - var(--line-width,4px));
-    --secondary-circle-offset: calc(((var(--loader-width,100px) * 0.4) / 2) - var(--line-width,4px)); /*- (var(--line-width,4px) * 2)*/
+@keyframes circle-outer {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.loader.double-circle {
     position: relative;
-    margin: 0 auto;
     width: var(--loader-width, 100px);
     height: var(--loader-height, 100px);
-    transform-origin: center center;
-    border-radius: 50%;
-    border: var(--line-width, 4px) solid rgba(0,0,0,0);
-    border-top-color: var(--loader-color-primary, #33f);
-    animation: momentum var(--animation-duration, 1s) linear infinite;
 }
 
-.quantum-spinner:before {
-    content: "";
+.double-circle::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: var(--line-width, 4px) solid transparent;
+  border-bottom-color: var(--loader-color-primary, #33f);
+  animation: circle-inner var(--animation-duration, 4s) infinite linear ;
+}
+.double-circle::after{
+    content: '';
+    display: block;
     position: absolute;
-    transform-origin: center center;
-    top: var(--primary-circle-offset,10px);
-    left: var(--primary-circle-offset,10px);
-    width: calc(var(--loader-width,100px) * 0.8);
-    height: calc(var(--loader-height,100px) * 0.8);
     border-radius: 50%;
-    border: var(--line-width,4px) solid rgba(0,0,0,0);
-    border-top-color: var(--loader-color-primary, #33f);
-    opacity: 0.7;
-    filter: hue-rotate(3eg);
-    animation: momentum calc(var(--animation-duration, 1s) * 2) linear infinite;
+    border: var(--line-width, 4px) solid transparent;
+    border-bottom-color: var(--loader-color-primary, #33f);
+    animation: circle-outer var(--animation-duration, 8s) infinite linear ;
 }
 
-.quantum-spinner:after {
-    content: "";
-    position: absolute;
-    top: var(--secondary-circle-offset,20px);
-    left: var(--secondary-circle-offset,20px);
-    width: calc(var(--loader-width,100px) * 0.6);
-    height: calc(var(--loader-height,100px) * 0.6);
-    border-radius: 50%;
-    transform-origin: center center;
-    border: var(--line-width,4px) solid rgba(0,0,0,0);
-    border-top-color: var(--loader-color-primary, #33f);
-    opacity: 0.3;
-    filter: hue-rotate(6eg);
-    animation: momentum var(--animation-duration, 1s) linear infinite;
+.double-circle::before{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.double-circle::after{
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    top: 6px;
+    left: 6px;
+    animation-direction: reverse;
 }
