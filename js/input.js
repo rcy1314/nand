@@ -95,21 +95,11 @@ $(document)
       )
     })
     $(this).val('')
-    if ($('#main #visit .page #front .icon').hasClass('search'))
       $(this).css({
             'caret-color': '#e4e4e4',
             'padding-left': '40px',
             'text-align': 'left'
       })
-      else if (!$('#main #visit .page #front .icon').hasClass('search')) {
-        setTimeout(function() {
-          $this.css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '40px',
-            'text-align': 'left',
-          })
-        }, 200)
-      }
       $('#main #visit .page #front .icon').addClass('search')
     visual()
 })
