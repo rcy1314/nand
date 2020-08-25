@@ -242,7 +242,6 @@ var air = function(n) {
 
 var response = function(passthrough, uri, n, bloat) {
   filter = []
-  alert(n)
   $(document).ready(function() {
     $('#main').append("<div class='result' style='display:none'></div>")
   })
