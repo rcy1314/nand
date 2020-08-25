@@ -2,8 +2,8 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #top, #arm, #main, #option, .page, .classic, .item, .feed, ' +
-      '.index, .filter, .populate, .result, .air, .blur, input[type=text]'
+    $('#container, #top, #arm, #visit, #option, .page, .classic, .item, .feed, ' +
+      '.index, .filter, .populate, .result, .air, .blur, input[type=text], #main'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
