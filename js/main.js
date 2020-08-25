@@ -1,7 +1,6 @@
 $(document)
   .ready(function() {
     $('#input').css('display', 'block')
-    $('#main input[type=text]').attr('tabindex', -1).focus()
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))

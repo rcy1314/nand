@@ -1,12 +1,12 @@
 $(document)
   .ready()
-.on('mouseenter mouseleave', '#front input[type=text], .button', function(e) {
-    if (op == 0){
+.on('mouseenter mouseleave',
+    '#main #visit .page #front input[type=text], .button', function(e) {
+    if (op == 0)
       if (e.type == 'mouseenter')
         $('.focus').removeClass('pageInputOut').addClass('pageInput')
       else if (e.type == 'mouseleave')
         $('.focus').removeClass('pageInput').addClass('pageInputOut')
-    }
 })
 .on('touch click', '#main #visit .page #front .icon', function(e) {
     $('#main #visit .page #front input[type=text]').focus()
@@ -18,7 +18,7 @@ $(document)
     e.preventDefault()
 })
 .on('touch click', '#arm #search #input .icon', function(e) {
-        $(this).addClass('slide')
+    $(this).addClass('slide')
     $('#arm #search #input input[type=text]').val('')
     .css({
       'caret-color': '#e4e4e4',
@@ -26,8 +26,7 @@ $(document)
       'text-align': 'left',
     }).focus()
 })
-.on('keyup',
-   '#main #visit .page input[type=text]', function(e) {
+.on('keyup', '#main #visit .page input[type=text]', function(e) {
      $('#main #visit .page #front #first').css('visibility','visible')
      $('#main #visit .page #front #first .listing').css('z-index', '3')
      var keyup = $(this).val()
@@ -78,56 +77,30 @@ $(document)
      }
      visual()
 })
-.on('touch click focusin focusout blur',
-  '#main #visit .page #front input[type=text]',
-  function(e) {
-    $this = $(this)
-    if (e.type == 'focusin') {
-      if ($('#main #visit .page #front .icon').hasClass('search'))
-        $(this)
-          .css({
+.on('touch click', '#main #visit .page #front input[type=text]', function(e) {
+    $('#main #visit .page #front #first .listing').css('z-index', '3')
+    $('#main #visit .page #front #first').css('visibility', 'visible')
+    $('#main #visit .page #front #first .listing').empty()
+    $.each(translations, function(i) {
+      $('#main #visit .page #front #first .listing').append(
+        "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+        "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
+        "  <div class='radial'></div>" +
+        "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
+        "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+        "    <br>&emsp;" + translations[i].grep() + " feeds" +
+        "  </div>" +
+        "  </div>" +
+        "</div>"
+      )
+    })
+    $(this).val('')
+    if ($('#main #visit .page #front .icon').hasClass('search'))
+      $(this).css({
             'caret-color': '#e4e4e4',
             'padding-left': '40px',
             'text-align': 'left'
-          }).val('')
-      else if (!$('#main #visit .page #front .icon').hasClass('search')) {
-        setTimeout(function() {
-          $this.css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '40px',
-            'text-align': 'left',
-          }).val('')
-        }, 200)
-        $('#main #visit .page #front .icon')
-          .addClass('search')
-      }
-      return false
-    }
-    if (e.type == 'touch' || e.type == 'click') {
-        $('#main #visit .page #front #first .listing').css('z-index', '3')
-        $('#main #visit .page #front #first').css('visibility', 'visible')
-        $('#main #visit .page #front #first .listing').empty()
-        $.each(translations, function(i) {
-          $('#main #visit .page #front #first .listing')
-            .append(
-              "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-              "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-              "  <div class='radial'></div>" +
-              "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
-              "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-              "    <br>&emsp;" + translations[i].grep() + " feeds" +
-              "  </div>" +
-              "  </div>" +
-              "</div>")
-        })
-      $(this).val('')
-      if ($('#main #visit .page #front .icon').hasClass('search'))
-        $(this)
-          .css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '40px',
-            'text-align': 'left'
-          })
+      })
       else if (!$('#main #visit .page #front .icon').hasClass('search')) {
         setTimeout(function() {
           $this.css({
@@ -136,102 +109,29 @@ $(document)
             'text-align': 'left',
           })
         }, 200)
-        $('#main #visit .page #front .icon')
-          .addClass('search')
       }
-    }
-    if (e.type == 'focusout' || e.type == 'blur')
+      $('#main #visit .page #front .icon').addClass('search')
+    visual()
+})
+.on('focusout blur', '#main #visit .page #front input[type=text]', function(e) {
     if ($(this).val().length == 0)
-    $(this)
-      .css({
+    $(this).css({
         'caret-color': 'transparent',
         'padding-left': '40px',
         'text-align': 'center'
       })
       .val('Search')
-    visual()
 })
-.on('keyup touch click focusin focusout blur',
-  '#arm #search input[type=text]',
-  function(e) {
-    $this = $(this)
-    if (e.type == 'focusin') {
-      if ($('#arm #search #input .icon').hasClass('slide'))
-        $(this)
-          .css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '30px',
-            'text-align': 'left'
-          })
-      else if (!$('#arm #search #input .icon').hasClass('slide')) {
-        setTimeout(function() {
-          $this.css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '30px',
-            'text-align': 'left',
-          })
-        }, 500)
-        $('#arm #search #input .icon')
-          .addClass('slide')
-      }
-      return false
-    }
-    if (e.type == 'touch' || e.type == 'click') {
-      $('#arm #search #match').show()
-      $('#arm #search #match .listing').empty()
-      $.each(translations, function(i) {
-        $('#arm #search #match .listing')
-          .append(
-            "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-            "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-            "  <div class='radial'></div>" +
-            "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
-            "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-            "    <br>&emsp;" + translations[i].grep() + " feeds" +
-            "  </div>" +
-            "  </div>" +
-            "</div>")
-      })
-      $(this).val('')
-      if ($('#arm #search #input .icon').hasClass('slide'))
-        $(this)
-          .css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '30px',
-            'text-align': 'left'
-          })
-      else if (!$('#arm #search #input .icon')
-        .hasClass('slide')) {
-        setTimeout(function() {
-          $this.css({
-            'caret-color': '#e4e4e4',
-            'padding-left': '30px',
-            'text-align': 'left',
-          })
-        }, 500)
-        $('#arm #search #input .icon')
-          .addClass('slide')
-      }
-    }
-    if (e.type == 'focusout' || e.type == 'blur')
-    $(this)
-      .css({
-        'caret-color': 'transparent',
-        'text-align': 'center',
-        'padding': '0'
-      })
-      .val('Search')
+.on('keyup', '#arm #search input[type=text]', function(e) {
     if ($(this).val() != 'Search') var keyup = $(this).val()
-    if (e.type == 'keyup' && e.keyCode == 13) {
+    if (e.keyCode == 13) {
       $('#arm #search #match').hide()
       return false
-    } else if (e.type == 'keyup' && $(this).val()
-      .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
+    } else if ($(this).val().length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
         list('match', $(this).val())
-    else if ($(this)
-      .length >= 2 && e.keyCode == 8) {
+    else if ($(this).length >= 2 && e.keyCode == 8)
         list('match', $(this).val())
-    } else if ($(this).val().length <= 2 && e.keyCode == 8) {
+    else if ($(this).val().length <= 2 && e.keyCode == 8) {
       $('#arm #search #match').hide()
       $('#main .result, #main .air, #main .center, #main .suggestions').show()
     } else if (e.keyCode == 40 || e.keyCode == 34) {
@@ -271,87 +171,147 @@ $(document)
         .removeClass('slide')
     }
     visual()
-  })
-  .on('submit', '#arm #search', function(e) {
-    $('#main .air, #main .result, #main .center, #main .content, #main .translation').remove()
-    $('#arm #search #match').hide()
-    if ($('#arm #search .listing .hover').length) {
-      if (translations.indexOf($('#arm #search #match .listing .hover')
-          .attr('response')) > -1) {
-        category = $('#arm #search #match .listing .hover')
-          .attr('response')
-        populate($('#arm #search #match .listing .hover')
-          .attr('response'))
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
-          .attr('response').toLowerCase()
-        air(id)
-        state('?q=' + $('#arm #search #match .listing .hover')
-          .attr('response').toLowerCase())
-        document.title = $('#arm #search #match .listing .hover')
-          .attr('response')
-        progress(true, 100)
-      } else {
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
-        .attr('response')
-        .toLowerCase()
-        uri.define().exit()
-        document.title = $('#arm #search #match .listing .hover')
-          .attr('response')
+})
+.on('touch click', '#arm #search input[type=text]', function(e) {
+      $('#arm #search #match').show()
+      $('#arm #search #match .listing').empty()
+      $.each(translations, function(i) {
+        $('#arm #search #match .listing')
+          .append(
+            "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+            "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
+            "  <div class='radial'></div>" +
+            "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
+            "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+            "    <br>&emsp;" + translations[i].grep() + " feeds" +
+            "  </div>" +
+            "  </div>" +
+            "</div>")
+      })
+      $(this).val('')
+      $this = $(this)
+      if ($('#arm #search #input .icon').hasClass('slide'))
+        $(this)
+          .css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '30px',
+            'text-align': 'left'
+          })
+      else if (!$('#arm #search #input .icon').hasClass('slide')) {
+        setTimeout(function() {
+          $this.css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '30px',
+            'text-align': 'left',
+          })
+        }, 500)
+        $('#arm #search #input .icon')
+          .addClass('slide')
       }
-    } else {
-      if ($('#arm #search input[type=text]').val().length) {
-        var uri = '?q=' + $('#arm #search input[type=text]').val()
-          .toLowerCase()
-          .replace(/\s/g, '+')
-        uri.define().exit()
-      }
-    }
-    $('#arm #search input[type=text]').val('Search').blur()
-    e.preventDefault()
     visual()
-  })
-  .on('submit', '#main #visit #front', function(e) {
-    $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
-    if ($('#main #visit .page #front #first .listing .hover').length) {
-        var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
-          .attr('response')
-        uri.define().exit()
+})
+.on('focusout blur', '#arm #search input[type=text]', function(e) {
+      if ($('#arm #search #input .icon').hasClass('slide'))
+        $(this)
+          .css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '30px',
+            'text-align': 'left'
+          })
+      else if (!$('#arm #search #input .icon').hasClass('slide')) {
+        setTimeout(function() {
+          $this.css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '30px',
+            'text-align': 'left',
+          })
+        }, 500)
+        $('#arm #search #input .icon')
+          .addClass('slide')
+      }
+      return false
+})
+.on('focusout blur', '#arm #search input[type=text]', function(e) {
+  $(this).css({
+    'caret-color': 'transparent',
+    'text-align': 'center',
+    'padding': '0'
+  }).val('Search')
+})
+.on('submit', '#arm #search', function(e) {
+  $('#main .air, #main .result, #main .center, #main .content, #main .translation').remove()
+  $('#arm #search #match').hide()
+  if ($('#arm #search .listing .hover').length) {
+    if (translations.indexOf($('#arm #search #match .listing .hover')
+        .attr('response')) > -1) {
+      category = $('#arm #search #match .listing .hover')
+        .attr('response')
+      populate($('#arm #search #match .listing .hover')
+        .attr('response'))
+      var uri = '?q=' + $('#arm #search #match .listing .hover')
+        .attr('response').toLowerCase()
+      air(id)
+      state('?q=' + $('#arm #search #match .listing .hover')
+        .attr('response').toLowerCase())
+      document.title = $('#arm #search #match .listing .hover')
+        .attr('response')
+      progress(true, 100)
     } else {
-      var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
+      var uri = '?q=' + $('#arm #search #match .listing .hover')
+      .attr('response')
+      .toLowerCase()
+      uri.define().exit()
+      document.title = $('#arm #search #match .listing .hover')
+        .attr('response')
+    }
+  } else {
+    if ($('#arm #search input[type=text]').val().length) {
+      var uri = '?q=' + $('#arm #search input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
       uri.define().exit()
     }
-    e.preventDefault()
-  })
-  .on('touch click mouseenter mouseleave', '.index, .hover',
-    function(e) {
-      if (e.type == 'mouseenter') {
-        $('#arm #search #match .listing .hover, ' +
-          '#main #visit .page #front #first .listing .hover')
-          .attr('class', 'index')
-        if (op == 0) $(this)
-          .addClass('hover contrast.hover')
-        else $(this)
-          .addClass('hover visual.hover')
-      }
-      if (e.type == 'mouseleave') {
-        if (op == 1) $('#arm #search #match .listing .hover, ' +
-          '#main #visit .page #front #first .listing .hover')
-          .attr('class', 'index contrast')
-        else $('#arm #search #match .listing .hover, ' +
-          '#main #visit .page #front #first .listing .hover')
-          .attr('class','index visual')
-      }
-      if (e.type == 'touch' || e.type == 'click') {
-          $('#main .result, #main .air, #main .translation, #main .center, #main .content')
-            .remove()
-          category = $(this).attr('response')
-          uri = '?q=' + $(this).attr('response')
-          document.title = category.capitalize()
-          uri.define().exit()
-          progress(true, 100)
-        visual()
-      e.preventDefault()
-    }
-    })
+  }
+  $('#arm #search input[type=text]').val('Search').blur()
+  e.preventDefault()
+  visual()
+})
+.on('submit', '#main #visit #front', function(e) {
+  $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
+  if ($('#main #visit .page #front #first .listing .hover').length) {
+      var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
+        .attr('response')
+      uri.define().exit()
+  } else {
+    var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
+      .toLowerCase()
+      .replace(/\s/g, '+')
+    uri.define().exit()
+  }
+  e.preventDefault()
+})
+.on('mouseenter', '.index, .hover', function(e) {
+  $('#arm #search #match .listing .hover, ' +
+    '#main #visit .page #front #first .listing .hover')
+      .attr('class', 'index')
+  if (op == 0) $(this).addClass('hover contrast.hover')
+  else $(this).addClass('hover visual.hover')
+})
+.on('mouseleave', '.index, .hover', function(e) {
+  if (op == 1) $('#arm #search #match .listing .hover, ' +
+    '#main #visit .page #front #first .listing .hover')
+      .attr('class', 'index contrast')
+  else $('#arm #search #match .listing .hover, ' +
+    '#main #visit .page #front #first .listing .hover')
+      .attr('class','index visual')
+})
+.on('touch click', '.index, .hover', function(e) {
+  $('#main .result, #main .air, #main .translation, #main .center, #main .content').remove()
+  category = $(this).attr('response')
+  uri = '?q=' + $(this).attr('response')
+  document.title = category.capitalize()
+  uri.define().exit()
+  progress(true, 100)
+  visual()
+  e.preventDefault()
+})
