@@ -21,7 +21,7 @@ var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>"
 
-var fill ="<div class='loader quantum-spinner'></div>"
+var fill ="<div class='loader double-circle'></div>"
 
 var select = function(n) {
 
