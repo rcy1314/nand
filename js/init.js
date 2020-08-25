@@ -112,7 +112,7 @@ if (location.search.split('?q=')[1]) {
 
     })
 
-  if (!uri[1]) response(false, false, uri[0], true)
+  if (!uri[1]) response(true, false, uri[0], true)
 
   else if (uri[1]) response(true, uri[0], uri[1], false)
 
