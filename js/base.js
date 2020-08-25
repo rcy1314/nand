@@ -201,8 +201,9 @@ var suggest = function(n) {
 
 var populate = function(n) {
 
+  $(document).ready(function() {
     for (var i = 1; i <= menu.length - 1; i++) {
-      if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
+      if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
         $('#main .result').append(
           "<div class='populate'" +
           "  response='" + menu[i].id.response() + "'>" +
@@ -216,6 +217,7 @@ var populate = function(n) {
         )
     }
     air(category)
+  })
 }
 
 var air = function(n) {
@@ -307,14 +309,13 @@ var response = function(passthrough, uri, n, bloat) {
       }
     }
     if (bloat == true) {
-      populate(category)
+      populate(menu[id].cat)
     }
     progress(true, 100)
 }
 
 var write = function(n) {
 
-  if (n != id)
   $(document).ready(function() {
     $('#main .result').append(
       "<div class='filter' " +
