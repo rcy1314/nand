@@ -1,4 +1,4 @@
-if (location.href.split('?')[1]) {
+if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
   var uri = location.href.split('?')[1]
   if (uri.match('\\+1')) uri = uri.replace(/\?\+1|\+1/, '')
