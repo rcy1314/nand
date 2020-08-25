@@ -812,7 +812,6 @@ courtesy a {
 
 .oppositeOver:hover {
   background-color: #0e0e0e !important;
-  border: .3px solid #000000 !important;
 }
 
 .oppositeOver:hover .classic {
@@ -822,7 +821,6 @@ courtesy a {
 
 .oppositeOver:not(:hover) {
   border: .3px solid #000000;
-  background-color: #000000;
 }
 
 .item .radial {
