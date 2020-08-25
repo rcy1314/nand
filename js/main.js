@@ -336,10 +336,10 @@ $(document)
         if (location.href.match('\\+1'))
           var res = uri[0].replace(/\+1/g, '')
         else var res = uri[0]
-        res = res.replace(/\-|\+/g, ' ')
-        response(false, false, res, true)
         uri = '?q=' + res.replace(/\-/g, '+')
         uri.define().state()
+        response(false, false, category, false)
+        progress(true, 100)
       }
       else {
         if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i))

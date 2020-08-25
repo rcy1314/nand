@@ -256,40 +256,44 @@ var response = function(passthrough, uri, n, bloat) {
     for (var i = 1; i <= menu.length - 1; i++) {
       if (menu[i].hash == n) {
         filter.push(menu.indexOf(menu[i]))
+        if (passthrough == false) write(menu.indexOf(menu[i]))
         exact = i
         id = i
-      } else if (
+      }
+      if (
           menu[i].id.space() == n.toLowerCase() ||
           menu[i].id.space() == uri.toLowerCase()
         ) {
             filter.push(menu.indexOf(menu[i]))
             var exact = i
+            if (passthrough == false) write(menu.indexOf(menu[i]))
             id = i
             break
-      } else if (
+      }
+      if (
           menu[i].id.space().match(n.toLowerCase()) ||
           menu[i].id.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
+            if (passthrough == false) write(menu.indexOf(menu[i]))
             id = i
-      } else if (
-          menu[i].des.space().match(n.toLowerCase()) ||
-          menu[i].des.space().match(uri.toLowerCase())
+      }
+      if (
+          menu[i].des.match(n.toLowerCase()) ||
+          menu[i].des.match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-      } else if (
+            if (passthrough == false) write(menu.indexOf(menu[i]))
+      }
+      if (
           menu[i].cat.toLowerCase().match(n) ||
           menu[i].cat.toLowerCase().match(uri)
         ) {
             filter.push(menu.indexOf(menu[i]))
+            if (passthrough == false) write(menu.indexOf(menu[i]))
       }
     }
     if (!id) id = filter[filter.length - 1]
-    if (passthrough == false){
-      $.each(filter, function(i) {
-        write(menu.indexOf(menu[i]))
-      })
-    }
     if (passthrough == true) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
