@@ -26,7 +26,9 @@ $(document)
   })
   .on('touch click', '#arm #home', function(e) {
     var uri = window.location.origin
-    uri.define().exit()
+    if (contrast == true && !location.href.match('\\+1')) n = n + '?+1'
+    else if (contrast == true) n = n + '?+1'
+    uri.exit()
     e.preventDefault()
   })
   .on('touch click', '#container #toggle', function(e) {
