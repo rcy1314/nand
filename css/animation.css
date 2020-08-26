@@ -175,6 +175,43 @@
   }
 }
 
+.page .fill {
+   display:inline-block;
+   font-size:0px;
+   padding:0px;
+}
+.page .fill span {
+   vertical-align:middle;
+   border-radius:100%;
+   background:#000000;
+   display:inline-block;
+   width:10px;
+   height:10px;
+   margin:3px 2px;
+   -webkit-animation:preloader 0.8s linear infinite alternate;
+   animation:preloader 0.8s linear infinite alternate;
+}
+.fill span:nth-child(1) {
+   -webkit-animation-delay:-0.8;
+   animation-delay:-0.8s;
+}
+.fill span:nth-child(2) {
+   -webkit-animation-delay:-0.53333s;
+   animation-delay:-0.53333s;
+}
+.fill span:nth-child(3) {
+   -webkit-animation-delay:-0.26666s;
+   animation-delay:-0.26666s;
+}
+@keyframes preloader {
+   from {transform: scale(0, 0);}
+   to {transform: scale(1, 1);}
+}
+@-webkit-keyframes preloader {
+   from {-webkit-transform: scale(0, 0);}
+   to {-webkit-transform: scale(1, 1);}
+}
+
 /*
 The loaders use CSS custom properties (variables) to control the attributes of the loaders
 */
