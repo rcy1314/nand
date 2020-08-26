@@ -3957,7 +3957,7 @@ var menu = [
 	{
 		id: "Smashing Magazine",
 		cat: "Technology",
-		des: "Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web design and web development.",
+		des: "Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web development.",
 		uri: "https://www.smashingmagazine.com/feed",
 		ext: "https://www.smashingmagazine.com",
 		img: "SmashingMagazine",
@@ -4717,7 +4717,7 @@ var menu = [
 	{
 		id: "Quartz",
 		cat: "World",
-		des: "Quartz covers business, economics, markets, finance, technology, science, design, and fashion.",
+		des: "Quartz covers business, economics, markets, finance, technology, science, and more.",
 		uri: "https://cms.qz.com/feed",
 		ext: "https://qz.com",
 		img: "Quartz",
