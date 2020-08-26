@@ -307,7 +307,7 @@ var response = function(passthrough, uri, n, bloat) {
       $.each(filter, function(k, i){
         write(menu.indexOf(menu[i]))
       })
-    if (passthrough == true || id) {
+    if (passthrough == true) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
         return false
