@@ -371,8 +371,8 @@ body,
 #handle {
   position: relative;
   margin: 0 auto;
-  width: 500px;
   height: 100px;
+  width: 100%;
   right: 10px;
 }
 
@@ -409,10 +409,6 @@ body,
   display: block;
   width: 770px;
   top: 225px;
-}
-
-.page .loader {
-  left: 20px
 }
 
 #front {
