@@ -188,6 +188,7 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 	--loader-initial-scale: 0.1;
 }
 .loader,.loader:before,.loader:after{
+  visibility: hidden;
   margin: 0 auto;
 	box-sizing: border-box;
 	flex-grow: 0;
