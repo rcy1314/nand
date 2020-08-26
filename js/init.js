@@ -77,7 +77,7 @@ if (location.href.match('\\+1') && !i) {
   $(document)
     .ready(function() {
 
-      $('#toggle, #handle img, #main .quick').css('visibility','visible')
+      $('#toggle, #main .quick').css('visibility','visible')
       $('#main #visit .page #front input[type=text], ' +
         '#main #visit .page #front .icon, ' +
         '#main #visit .page .button')
@@ -121,7 +121,7 @@ if (location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
 
-            $('#toggle, #handle img, #main .quick').css('visibility','visible')
+            $('#toggle, #main .quick').css('visibility','visible')
             $('#main #visit .page #front input[type=text], ' +
               '#main #visit .page #front .icon, ' +
               '#main #visit .page .button')

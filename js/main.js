@@ -154,6 +154,10 @@ $(document)
       e.preventDefault();
     })
     .on('mousemove', '#main .feed .asset', function(e) {
+      if ($(this).parents('.feed').scrollLeft() > 0)
+        $(this).parents('.quick').find('.left').show()
+      else if ($(this).parents('.feed').scrollLeft() == 0)
+        $(this).parents('.quick').find('.left').hide()
           if (enableDrag) {
               var delta = e.pageX - dragStartX;
               $(this).parents('.feed').scrollLeft(marginLeftStart - delta);

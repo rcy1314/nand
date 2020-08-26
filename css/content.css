@@ -376,31 +376,15 @@ body,
   right: 10px;
 }
 
-#main #handle svg {
-  position: relative;
-  visibility: hidden;
-  left: 25px;
-}
-
 #placeholder {
   background-color: transparent !important;
   width: fit-content !important;
-  font-family: Billabong;
   text-decoration: none;
   position: relative;
   display: block;
   margin: 0 auto;
-  font-size: 64;
+  height: 50px;
   right: 10px;
-}
-
-#placeholder img {
-  border-radius: 26px;
-  padding-right: 10px;
-  position: relative;
-  height: 52px;
-  width: 52px;
-  top: 10px;
 }
 
 .page {
