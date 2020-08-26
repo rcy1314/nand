@@ -335,7 +335,7 @@ $(document)
       uri.define().state()
     })
     .on('touch click', '#main .center #bottom .bottom', function(e) {
-      $('#main .center, #main .content, #main .translation').remove()
+      $('#top, #main .center, #main .content, #main .translation').remove()
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
         if (location.href.match('\\+1'))
