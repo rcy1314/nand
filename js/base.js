@@ -303,9 +303,6 @@ var response = function(passthrough, uri, n, bloat) {
       }
     }
     if (!id) id = filter[filter.length - 1]
-    console.log(exact)
-    console.log(id)
-    console.log(filter)
     if (passthrough == false && !exact)
       $.each(filter, function(k, i){
         write(menu.indexOf(menu[i]))
