@@ -280,7 +280,6 @@ var response = function(passthrough, uri, n, bloat) {
         ) {
             filter.push(menu.indexOf(menu[i]))
             var exact = i
-            if (passthrough == false) write(menu.indexOf(menu[i]))
             id = i
             break
       }
@@ -289,26 +288,29 @@ var response = function(passthrough, uri, n, bloat) {
           menu[i].id.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-            if (passthrough == false) write(menu.indexOf(menu[i]))
-            id = i
       }
       if (
           menu[i].des.match(n.toLowerCase()) ||
           menu[i].des.match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-            if (passthrough == false) write(menu.indexOf(menu[i]))
       }
       if (
           menu[i].cat.toLowerCase().match(n) ||
           menu[i].cat.toLowerCase().match(uri)
         ) {
             filter.push(menu.indexOf(menu[i]))
-            if (passthrough == false) write(menu.indexOf(menu[i]))
       }
     }
     if (!id) id = filter[filter.length - 1]
-    if (passthrough == true) {
+    console.log(exact)
+    console.log(id)
+    console.log(filter)
+    if (passthrough == false && !exact)
+      $.each(filter, function(k, i){
+        write(menu.indexOf(menu[i]))
+      })
+    if (passthrough == true || id) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
         return false

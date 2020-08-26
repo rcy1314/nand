@@ -341,7 +341,7 @@ $(document)
         else var res = uri[0]
         uri = '?q=' + res.replace(/\-/g, '+')
         uri.define().state()
-        populate(category)
+        response(false, false, category, true)
         progress(true, 100)
       }
       else {
