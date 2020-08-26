@@ -103,6 +103,15 @@ $(document)
       $('#main #visit .page #front .icon').addClass('search')
     visual()
 })
+.on('focusin', '#main #visit .page #front input[type=text]', function(e) {
+    $(this).val('')
+      $(this).css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '40px',
+            'text-align': 'left'
+      })
+      $('#main #visit .page #front .icon').addClass('search')
+})
 .on('focusout blur', '#main #visit .page #front input[type=text]', function(e) {
     if ($(this).val().length == 0)
     $(this).css({

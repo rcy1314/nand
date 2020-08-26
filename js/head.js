@@ -4649,6 +4649,17 @@ var menu = [
 
 	,
 	{
+		id: "Newsone",
+		cat: "World",
+		des: "Newsone Breaking News for Black America.",
+		uri: "https://newsone.com/feed",
+		ext: "https://newsone.com",
+		img: "Newsone",
+		hash: "nW"
+	}
+
+	,
+	{
 		id: "New York Daily News",
 		cat: "World",
 		des: "New York Daily News news coverage, sports, entertainment news, gossip, autos, videos and photos.",
