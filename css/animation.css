@@ -187,9 +187,6 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 	--animation-duration: 5s;
 	--loader-initial-scale: 0.1;
 }
-.loader {
-  visibility: hidden;
-}
 .loader,.loader:before,.loader:after{
   margin: 0 auto;
 	box-sizing: border-box;

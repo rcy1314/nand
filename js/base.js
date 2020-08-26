@@ -21,7 +21,7 @@ var tag = "  <div class='tag' style='display:none'>" +
           "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "  </div>"
 
-var fill ="<div class='loader double-circle'></div>"
+var fill ="<div class='fill loader double-circle'></div>"
 
 var notify = function(n) {
   $('#notification').show().html(n)
@@ -430,7 +430,8 @@ var image = function(empty, n, src) {
       .css('display', 'inline-block')
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     visual()
-  }).attr('src', src).parent().siblings('.fill').html(fill)
+  }).attr('src', src)
+    .parent().siblings('.fill').css('visibility','visible').html(fill)
   }
   else if (empty == true ){
     $('#' + n).parents('.item').remove()
