@@ -16,6 +16,10 @@
     display: none !important;
   }
 
+  .loader,.loader:before,.loader:after{
+    margin: 60px auto;
+  }
+
   .page,
   #visit {
    height: 100% !important;
