@@ -23,6 +23,18 @@ var tag = "  <div class='tag' style='display:none'>" +
 
 var fill ="<div class='loader double-circle'></div>"
 
+var notify = function(n) {
+  $('#notification').show().html(n)
+    $('#notification').animate({
+      bottom: '0px'
+      }, 1000)
+  setTimeout(function () {
+    $('#notification').animate({
+      bottom: '-200px'
+    }, 1000)
+  }, 2000)
+}
+
 var select = function(n) {
 
   $.each(translations, function(i) {

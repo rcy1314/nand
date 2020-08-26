@@ -50,7 +50,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-          $('#toggle, #handle img, #main .quick').css('visibility','hidden')
+          $('#toggle, #main .quick').css('visibility','hidden')
           $('#main #visit .page #front input[type=text], ' +
             '#main #visit .page #front .icon, ' +
             '#main #visit .page .button')
@@ -103,7 +103,7 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-        $('#toggle, #handle img, #main .quick').css('visibility','hidden')
+        $('#toggle, #main .quick').css('visibility','hidden')
         $('#main #visit .page #front input[type=text], ' +
           '#main #visit .page #front .icon, ' +
           '#main #visit .page .button')

@@ -10,13 +10,16 @@ var visual = function(n) {
       'border': 'none',
       'color': '#fff'
     })
-    $('#top, #arm, #home a, #arm #option, .page input[type=text], .right, .left, #guide'
+    $('#notification, #top, #arm, #home a, #arm #option, .page input[type=text], .right, .left, #guide'
     ).css({
       'background-color': '#0e0e0e',
       'box-shadow': 'none',
       'color': '#fff'
     })
-    $('#home, .fas, a').css('color','#fff')
+    $(':root').css({
+      '--loader-color-primary': '#f7426C',
+      '--loader-color-secondary': '#f54e75'
+    })
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
@@ -25,10 +28,7 @@ var visual = function(n) {
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(90deg)')
     $('.index, .hover').removeClass('visual').addClass('contrast')
-    $(':root').css({
-      '--loader-color-primary': '#f7426C',
-      '--loader-color-secondary': '#f54e75'
-    })
+    $('#home, .fas, .images, a').css('color','#fff')
     $('.item, .filter, .populate').addClass('oppositeOver').removeClass('invertOver')
     $('.filter, .populate').css('border','1px solid #0e0e0e')
     $('.listing').addClass('opposite').removeClass('invert')
@@ -42,7 +42,7 @@ var visual = function(n) {
     $('.hover').addClass('contrast.hover')
     $('#placeholder').css('color','#fff')
   } else if (op == 0) {
-    $('#container, #top, #arm, #option, .index, .item, .classic, ' +
+    $('#container, #notification, #top, #arm, #option, .index, .item, .classic, ' +
       '.center .feed, .page input[type=text], .air, .result'
     ).css({
       'background-color': '#fff',
@@ -56,7 +56,6 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('#home, .fas, a').css('color','#000')
     $(':root').css({
       '--loader-color-primary': '#0078D4',
       '--loader-color-secondary': '#1683D8'
@@ -80,6 +79,7 @@ var visual = function(n) {
     $('.filter, .populate').removeClass('oppositeOver')
     $('#handle img').css('filter','hue-rotate(0deg)')
     $('#handle a, #placeholder').css('color', '#666')
+    $('#home, .fas, .images, a').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
     $('.hover').addClass('visual.hover')
   }
