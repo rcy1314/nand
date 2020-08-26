@@ -314,10 +314,11 @@ var response = function(passthrough, uri, n, bloat) {
       } else if ($.isNumeric(id) && filter.length == 1) {
         xml(null, null, id)
         return false
-      } else if (!$.isNumeric(exact) && filter.length == 0) {
-        xml('search', n, 0, null)
-        return false
       }
+    }
+    if (filter.length == 0) {
+      xml('search', n, 0, null)
+      return false
     }
     if (bloat == true) {
       populate(menu[id].cat)
