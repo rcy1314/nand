@@ -14,6 +14,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
             '#main #visit .page #front .icon, ' +
             '#main #visit .page .button')
             .css('visibility','visible')
+          $('.fill').css('visibility','hidden')
             feed('page', 40)
       })
       visual()
@@ -42,6 +43,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
               '#main #visit .page #front .icon, ' +
               '#main #visit .page .button')
               .css('visibility','visible')
+              $('.fill').css('visibility','hidden')
               feed('page', 40)
         })
 
@@ -54,7 +56,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
             '#main #visit .page #front .icon, ' +
             '#main #visit .page .button')
               .css('visibility','hidden')
-          $('.loader').css('visibility','visible')
+          $('.fill').css('visibility','visible')
 
         })
 
@@ -80,7 +82,7 @@ if (location.href.match('\\+1') && !i) {
         '#main #visit .page #front .icon, ' +
         '#main #visit .page .button')
           .css('visibility','visible')
-
+      $('.fill').css('visibility','hidden')
       feed('page', 40)
 
   })
@@ -106,7 +108,7 @@ if (location.search.split('?q=')[1]) {
           '#main #visit .page #front .icon, ' +
           '#main #visit .page .button')
           .css('visibility','hidden')
-        $('.loader').css('visibility','visible')
+        $('.fill').css('visibility','visible')
 
     })
 
@@ -124,7 +126,7 @@ if (location.search.split('?q=')[1]) {
               '#main #visit .page #front .icon, ' +
               '#main #visit .page .button')
                 .css('visibility','visible')
-
+            $('.fill').css('visibility','hidden')
             feed('page', 40)
 
         })
