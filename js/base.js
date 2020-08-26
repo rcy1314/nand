@@ -253,18 +253,20 @@ var air = function(n) {
 }
 
 var response = function(passthrough, uri, n, bloat) {
+  id = false
   filter = []
+  exact = false
   $(document).ready(function() {
     $('#main').append("<div class='result' style='display:none'></div>")
   })
-    if ($.inArray(n.capitalize(), translations) > -1){
+    if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
       $(document).ready(function() {populate(n.capitalize())})
       progress(true, 100)
       return false
     }
   $('#main #visit').show()
-  if (n) var n = n.replace(/%20|\-|\_|\s|\+/g, ' ')
+  if (n) var n = n.toString().replace(/%20|\-|\_|\s|\+/g, ' ')
   if (uri) uri = uri.replace(/%20|\-|\_|\s|\+/g, ' ')
   else uri = n
     for (var i = 1; i <= menu.length - 1; i++) {
