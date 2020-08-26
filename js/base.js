@@ -305,7 +305,7 @@ var response = function(passthrough, uri, n, bloat) {
       }
     }
     if (!id) id = filter[filter.length - 1]
-    if (passthrough == false && !exact)
+    if (passthrough == false)
       $.each(filter, function(k, i){
         write(menu.indexOf(menu[i]))
       })
