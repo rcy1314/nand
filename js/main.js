@@ -189,7 +189,7 @@ $(document)
       feed('page', 9)
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
-            scrollLeft: leftPos + 616
+            scrollLeft: leftPos + 620
           }, 'fast')
           if (leftPos >= $(this).parents('.quick').find('.feed')[0]
               .scrollWidth - $(this).parents('.quick').find('.feed').width() - 616)
