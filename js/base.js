@@ -368,6 +368,7 @@ var image = function(empty, n, src) {
         parseInt($('#main .stats .info .images').text()) + 1
       )
     if ($('#home').css('display') == 'none'){
+      $('.sticky').show()
       if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
       } else if ($(this).get(0).naturalWidth < maximum) {
