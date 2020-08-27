@@ -269,19 +269,6 @@ var menu = [
 	,
 	{
 
-		id: "ABC/Flint",
-		cat: "News",
-		des: "ABC WJRT Michigan Flint Weather, News, Sports, and more.",
-		uri: "https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",
-		ext: "https://www.abc12.com",
-		img: "WJRT",
-		hash: "jR"
-
-	}
-
-	,
-	{
-
 		id: "NBC/Grand Rapids",
 		cat: "News",
 		des: "NBC WOOD Michigan Grand Rapids we do what we do to make Grand Rapids & the rest of Michigan a better place to live.",
