@@ -661,7 +661,7 @@ var xml = function(e, s, n) {
             "</div>"
         } else var cat = ''
         html =
-          "<div class='item' item='" + i + "' ext='" + re.trim() + "'>" +
+          "<div class='item " + i + "' item='" + i + "' ext='" + re.trim() + "'>" +
           "  <div class='classic'>" +
           "    <div class='header'>" +
                  courtesy +
