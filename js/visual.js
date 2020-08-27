@@ -18,7 +18,7 @@ var visual = function(n) {
     })
     $(':root').css({
       '--loader-color-primary': '#f7426C',
-      '--loader-color-secondary': '#f54e75'
+      '--loader-color-secondary': '#e86d8a'
     })
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
@@ -58,7 +58,7 @@ var visual = function(n) {
     })
     $(':root').css({
       '--loader-color-primary': '#0078D4',
-      '--loader-color-secondary': '#1683D8'
+      '--loader-color-secondary': '#5baff0',
     })
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')

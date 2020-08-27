@@ -210,8 +210,6 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 :root{
 	--loader-width: 70px;
 	--loader-height: 70px;
-	--loader-color-primary: #27ae60;
-	--loader-color-secondary: #eee;
 	--line-width: 3px;
 	--animation-duration: 5s;
 	--loader-initial-scale: 0.1;
@@ -228,24 +226,24 @@ variables above and don't change anything in the actual loader code
 */
 
 @keyframes circle-inner {
-    0% {
-      transform: rotate(0);
-    }
-    50% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(720deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes circle-outer {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
 }
 
 .loader.double-circle {
@@ -260,7 +258,7 @@ variables above and don't change anything in the actual loader code
   position: absolute;
   border-radius: 50%;
   border: var(--line-width, 4px) solid transparent;
-  border-bottom-color: var(--loader-color-primary, #33f);
+  border-bottom-color: var(--loader-color-primary);
   animation: circle-inner var(--animation-duration, 4s) infinite linear ;
 }
 .double-circle::after{
@@ -269,7 +267,7 @@ variables above and don't change anything in the actual loader code
     position: absolute;
     border-radius: 50%;
     border: var(--line-width, 4px) solid transparent;
-    border-bottom-color: var(--loader-color-primary, #33f);
+    border-bottom-color: var(--loader-color-secondary);
     animation: circle-outer var(--animation-duration, 8s) infinite linear ;
 }
 
@@ -285,5 +283,5 @@ variables above and don't change anything in the actual loader code
     height: calc(100% - 12px);
     top: 6px;
     left: 6px;
-    animation-direction: reverse;
+    animation-direction: circle-outer;
 }
