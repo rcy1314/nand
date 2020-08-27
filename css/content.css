@@ -409,11 +409,6 @@ body,
   opacity: 0;
 }
 
-.page .feed {
-  position: relative;
-  bottom: 10px;
-}
-
 #front {
   position: relative;
   display: block;
