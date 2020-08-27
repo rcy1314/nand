@@ -835,6 +835,10 @@ courtesy a {
   border: .3px solid #ddd !important;
 }
 
+.invertOver:hover .classic {
+  background-color: #f6f8fa !important;
+}
+
 .invertOverBorderless:hover {
   background-color: #f0f0f0 !important;
 }
