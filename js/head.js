@@ -266,6 +266,20 @@ var menu = [
 
 	}
 
+/*
+	,
+	{
+
+		id: "ABC/Flint",
+		cat: "News",
+		des: "ABC WJRT Michigan Flint Weather, News, Sports, and more.",
+		uri: "https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",
+		ext: "https://www.abc12.com",
+		img: "WJRT",
+		hash: "jR"
+
+	}
+*/
 	,
 	{
 
