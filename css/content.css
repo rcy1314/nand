@@ -228,6 +228,7 @@ body,
 
 #toggle {
   background-color: transparent !important;
+  visibility: hidden;
   position: absolute;
   padding: 1em;
   right: 10px;
@@ -371,9 +372,8 @@ body,
 #handle {
   position: relative;
   margin: 0 auto;
-  height: 100px;
+  height: 25px;
   width: 100%;
-  right: 10px;
 }
 
 #placeholder {
@@ -383,7 +383,6 @@ body,
   position: relative;
   display: block;
   margin: 0 auto;
-  height: 50px;
   right: 10px;
 }
 
@@ -410,6 +409,11 @@ body,
   height: 28em;
   top: -155px;
   z-index: 0;
+}
+
+#main .fill,
+#main .quick {
+  visibility: hidden;
 }
 
 .index .radial,
@@ -442,6 +446,7 @@ body,
   background-color: transparent;
   white-space: nowrap;
   padding-right: 60px;
+  visibility: hidden;
   position: relative;
   height: 39.6px;
   top: 25px;
@@ -451,12 +456,11 @@ body,
 .page input[type=text] {
   -webkit-appearance: none;
   caret-color: transparent;
-  width: calc(100%);
   display: inline-block;
   position: relative;
-  visibility: hidden;
   border-radius: 2px;
   text-align: center;
+  width: calc(100%);
   font-size: 18px;
   height: 2.2em;
   outline: none;
@@ -477,14 +481,12 @@ body,
 .page .icon {
   font-size: 14px !important;
   color: #aaa !important;
-  visibility: hidden;
   margin-top: 2px;
   z-index: 2;
 }
 
 .page .button {
   display: inline-block;
-  visibility: hidden;
   position: relative;
   border-radius: 3px;
   height: 39.6px;

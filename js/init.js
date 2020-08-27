@@ -9,12 +9,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
       i = -1
       $(document)
         .ready(function() {
-          $('#top').css('visibility', 'hidden')
-          $('#main #visit .page #front input[type=text], ' +
-            '#main #visit .page #front .icon, ' +
-            '#main #visit .page .button')
-            .css('visibility','visible')
-          $('.fill').css('visibility','hidden')
+          $('#main .quick, #toggle, .focus').css('visibility','visible')
             feed('page', 40)
       })
       visual()
@@ -38,24 +33,15 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-            $('#top').css('visibility', 'hidden')
-            $('#main #visit .page #front input[type=text], ' +
-              '#main #visit .page #front .icon, ' +
-              '#main #visit .page .button')
-              .css('visibility','visible')
-              $('.fill').css('visibility','hidden')
-              feed('page', 40)
+            $('#main .quick, #toggle .focus').css('visibility','visible')
+            $('.fill').css('visibility','hidden')
+            feed('page', 40)
         })
 
       else {
 
         $(document)
           .ready(function() {
-          $('#toggle, #main .quick').css('visibility','hidden')
-          $('#main #visit .page #front input[type=text], ' +
-            '#main #visit .page #front .icon, ' +
-            '#main #visit .page .button')
-              .css('visibility','hidden')
           $('.fill').css('visibility','visible')
 
         })
@@ -77,12 +63,7 @@ if (location.href.match('\\+1') && !i) {
   $(document)
     .ready(function() {
 
-      $('#toggle, #main .quick').css('visibility','visible')
-      $('#main #visit .page #front input[type=text], ' +
-        '#main #visit .page #front .icon, ' +
-        '#main #visit .page .button')
-          .css('visibility','visible')
-      $('.fill').css('visibility','hidden')
+      $('#main .quick, #toggle, .focus').css('visibility','visible')
       feed('page', 40)
 
   })
@@ -103,11 +84,6 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-        $('#toggle, #main .quick').css('visibility','hidden')
-        $('#main #visit .page #front input[type=text], ' +
-          '#main #visit .page #front .icon, ' +
-          '#main #visit .page .button')
-          .css('visibility','hidden')
         $('.fill').css('visibility','visible')
 
     })
@@ -121,12 +97,7 @@ if (location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
 
-            $('#toggle, #main .quick').css('visibility','visible')
-            $('#main #visit .page #front input[type=text], ' +
-              '#main #visit .page #front .icon, ' +
-              '#main #visit .page .button')
-                .css('visibility','visible')
-            $('.fill').css('visibility','hidden')
+            $('#main .quick, #toggle, .focus').css('visibility','visible')
             feed('page', 40)
 
         })
