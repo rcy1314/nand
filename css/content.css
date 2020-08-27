@@ -394,6 +394,11 @@ body,
   top: 225px;
 }
 
+.page .fill,
+.page .quick {
+  visibility: hidden;
+}
+
 #front {
   position: relative;
   display: block;
@@ -409,11 +414,6 @@ body,
   height: 28em;
   top: -155px;
   z-index: 0;
-}
-
-#main .fill,
-.page .quick {
-  visibility: hidden;
 }
 
 .index .radial,
