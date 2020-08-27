@@ -61,6 +61,13 @@
   font-weight: 50;
 }
 
+.fa-angle-up:before {
+  font-family: FontAwesome;
+  position: relative;
+  content: "\f106";
+  font-weight: 50;
+}
+
 .fa-angle-double-left:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f100";
@@ -394,9 +401,17 @@ body,
   top: 225px;
 }
 
-.page .fill,
-.page .quick {
+.page .fill {
   visibility: hidden;
+}
+
+.page .quick {
+  opacity: 0;
+}
+
+.page .feed {
+  position: relative;
+  bottom: 10px;
 }
 
 #front {
@@ -457,6 +472,7 @@ body,
   -webkit-appearance: none;
   caret-color: transparent;
   display: inline-block;
+  padding-left: 40px;
   position: relative;
   border-radius: 2px;
   text-align: center;
@@ -517,6 +533,30 @@ body,
 
 .buttonInvert:hover {
   background-color: #1683D8;
+}
+
+.show {
+  display: inline-block;
+  visibility: hidden;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 35px;
+  right: 160px;
+  z-index: 2;
+  left: 0;
+}
+
+.link {
+  display: inline-flex;
+  border-radius: 10px;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+  padding: 10px;
+  height: 5px;
+  width: 10px;
+  z-index: 2;
 }
 
 .air,
@@ -800,8 +840,12 @@ courtesy a {
   border: .3px solid #ddd !important;
 }
 
-.invertOver:hover .classic {
-  background-color: #f6f8fa !important;
+.invertOverBorderless:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.invertOverBorderless:not(:hover) {
+  background-color: #f7f7f7 !important;
 }
 
 .invertOver:not(:hover) {

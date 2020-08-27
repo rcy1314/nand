@@ -7,6 +7,7 @@ var dupe = []
 var mouseasset
 var filter = []
 var object = []
+var nextAngle = 0
 var contrast = false
 var enableDrag = false
 var category = 'Social'
@@ -151,7 +152,7 @@ var feed  = function(l, n) {
           "<img src='" + menu[e].img.image() + "' " +
           "  class='id " + menu.indexOf(menu[e]) + "'" +
           "  search='" + menu[e].cat.toLowerCase() + "'> " +
-          "<a style='left:0;width:100%' ext='" + menu[e].ext + "'" + 
+          "<a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
              "title='" + menu[e].id + "'>" +
              String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
           "</a>" +

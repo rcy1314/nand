@@ -1,7 +1,6 @@
 $(document)
   .ready(function() {
     $('#input').css('display', 'block')
-    $('input[type=text]').attr('tabindex', -1).focus()
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext'))
@@ -24,6 +23,16 @@ $(document)
     filter = []
     var uri = '?q=' + category.toLowerCase()
     uri.define().exit()
+  })
+  .on('touch click', '.page .link', function(e) {
+    nextAngle += 180
+    if (nextAngle >= 360) nextAngle = 0
+   if ($(this).hasClass('invisible'))
+      $(this).addClass('visible').removeClass('invisible').find('.fa-angle-up')
+        .animateRotate(nextAngle, 250, 'swing', $('.page .quick').fadeTo(150, 100))
+    else
+      $(this).addClass('invisible').removeClass('visible').find('.fa-angle-up')
+        .animateRotate(nextAngle, 250, 'swing', $('.page .quick').fadeTo(150, 0))
   })
   .on('touch click', '#arm #home', function(e) {
     var uri = window.location.origin

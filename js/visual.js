@@ -70,6 +70,7 @@ var visual = function(n) {
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
     $('.index, .hover').addClass('visual').removeClass('contrast')
     $('.item').addClass('invertOver').removeClass('oppositeOver')
+    $('.link').addClass('invertOverBorderless').removeClass('oppositeOverBorderless')
     $('.item, .center .feed').css('border','.3px solid #ddd')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')

@@ -1,3 +1,19 @@
+$.fn.animateRotate = function(angle, duration, easing, complete) {
+  return this.each(function() {
+    var $elem = $(this);
+
+    $(this).animate({deg: angle}, {
+      duration: duration,
+      easing: easing,
+      step: function(now) {
+        $elem.css({
+           transform: 'rotate(' + now + 'deg)'
+         });
+      },
+      complete: complete || $.noop
+    });
+  });
+};
 String.prototype.cleanup = function() {
 
   $('#main .air, #main .result, #main .content, #main .center').remove()
