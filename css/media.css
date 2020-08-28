@@ -193,6 +193,7 @@
 }
 
   #main .page .quick {
+      position: relative;
       width: 892px;
       left: -72px;
       z-index: 3;
