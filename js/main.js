@@ -56,6 +56,9 @@ $(document)
       contrast = false
       op = op != true
     }
+    setTimeout(function() {
+      $('input[type=text]').attr('tabindex', -1).focus()
+    }, 1000)
     uri.state()
     visual()
   })

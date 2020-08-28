@@ -2,7 +2,7 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #top, #arm, #visit, #option, .page, .classic, .item, .feed, ' +
+    $('#container, #top, #arm, #visit, #option, .page, .classic, .item, .feed, .asset, .asset a, ' +
       '.index, .filter, .populate, .result, .air, .blur, input[type=text], #main'
     ).css({
       'background-color': '#000',
@@ -20,11 +20,11 @@ var visual = function(n) {
       '--loader-color-primary': '#f7426C',
       '--loader-color-secondary': '#e86d8a'
     })
+    $('.link, .page .asset, .right, .left').addClass('oppositeOverBorderless').removeClass('invertOverBorderless')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
     $('.item, .filter, .populate').addClass('oppositeOver').removeClass('invertOver')
-    $('.link').addClass('oppositeOverBorderless').removeClass('invertOverBorderless')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.focus').removeClass('pageinput pageInputOut').css('box-shadow','none')
     $('.page .button').removeClass('buttonInvert').addClass('buttonOpposite')
@@ -50,7 +50,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('.hover, #visit, #main, .page, .page .feed, .right, .left, ' +
+    $('.hover, #visit, #main, .page, .page .feed, .right, .left, .asset a, ' +
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
@@ -63,15 +63,15 @@ var visual = function(n) {
     })
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
+    $('.link, .page .asset').addClass('invertOverBorderless').removeClass('oppositeOverBorderless')
     $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
     $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
     $('#search input[type=text], .filter, .populate').css('border', '1px solid #eaeaea')
-    $('.link, .page .asset').addClass('invertOverBorderless').removeClass('oppositeOverBorderless')
+    $('.item, .right, .left').addClass('invertOver').removeClass('oppositeOver')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
     $('.index, .hover').addClass('visual').removeClass('contrast')
-    $('.item, .right, .left').addClass('invertOver').removeClass('oppositeOver')
     $('.item, .center .feed').css('border','.3px solid #ddd')
     $('#top, .index').css('border-bottom', '1px solid #ccc')
     $('.listing').addClass('invert').removeClass('opposite')
