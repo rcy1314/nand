@@ -131,7 +131,7 @@ var list = function(e, n) {
         $('#search .listing .' + i + ':last').remove()
     }
   }
-  $('#main #visit #front #first .listing')
+  $('#' + e + ' .listing')
     .append("<div class='background'></div>")
   if (!$('#arm #search #match').is(':visible')) {
     setTimeout(function() {
@@ -219,7 +219,14 @@ var suggest = function(n) {
 
 var populate = function(n) {
 
-  $(document).ready(function() {
+  if ($('#main .group').length < 1)
+    $(document).ready(function() {
+      $('#main').append(
+        "<div class='group'>" +
+        "  <div class='result' style='display:none'>" +
+        "  </div>" +
+        "</div>"
+      )
     for (var i = 1; i <= menu.length - 1; i++) {
       if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
         $('#main .result').append(
@@ -228,7 +235,8 @@ var populate = function(n) {
           "  <div class='display'>" +
           "    <img class='id' src='" + menu[i].img.image() + "'> " +
           "  </div>" +
-          "    <a class='title' ext='" + menu[i].ext + "'>" +
+          "    <a class='title' ext='" + menu[i].ext + "'" +
+          "      title='" + menu[i].id + "'>" +
                  menu[i].id.match(/[^\/]+$/g) +
           "    </a>" +
           "</div>"
@@ -249,7 +257,8 @@ var air = function(n) {
         "  <div class='display'>" +
         "  <img class='id' src='" + menu[i].img.image() + "'> " +
         "  </div>" +
-        "    <a class='title' ext='" + menu[i].ext + "'>" +
+        "    <a class='title' ext='" + menu[i].ext + "'" +
+        "      title='" + menu[i].id + "'>" +
                menu[i].id.match(/[^\/]+$/g) +
         "    </a>" +
         "</div>"
@@ -262,12 +271,9 @@ var response = function(passthrough, uri, n, bloat) {
   id = false
   filter = []
   exact = false
-  $(document).ready(function() {
-    $('#main').append("<div class='result' style='display:none'></div>")
-  })
     if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
-      $(document).ready(function() {populate(n.capitalize())})
+      $(document).ready(function() { populate(n.capitalize()) })
       progress(true, 100)
       return false
     }
@@ -307,11 +313,19 @@ var response = function(passthrough, uri, n, bloat) {
       }
     }
     if (!id) id = filter[filter.length - 1]
-    if (passthrough == false)
+    if (passthrough == false) {
+      $(document).ready(function() {
+        $('#main').append(
+          "<div class='group'>" +
+          "  <div class='result' style='display:none'>" +
+          "  </div>" +
+          "</div>"
+        )
+      })
       $.each(filter, function(k, i){
         write(menu.indexOf(menu[i]))
       })
-    if (passthrough == true) {
+    } else if (passthrough == true) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
         return false
@@ -339,7 +353,8 @@ var write = function(n) {
       "  <div class='display'>" +
       "  <img class='id' src='" + menu[n].img.image() + "'> " +
       "  </div>" +
-      "    <a class='title' ext='" + menu[n].ext + "'>" +
+      "    <a class='title' ext='" + menu[n].ext + "'" +
+      "      title='" + menu[n].id + "'>" +
              menu[n].id.match(/[^\/]+$/g) +
       "    </a>" +
       "</div>"
@@ -460,6 +475,7 @@ var xml = function(e, s, n) {
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
+  $('#main .group').remove()
   document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
