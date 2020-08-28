@@ -409,6 +409,11 @@ body,
   opacity: 0;
 }
 
+.page .feed {
+  position: relative;
+  top: 15px;
+}
+
 #front {
   position: relative;
   display: block;
@@ -686,6 +691,9 @@ input[type=submit] {
 }
 
 .feed .asset {
+  border-radius: 12px;
+  padding-right: 25px;
+  padding-left: 25px;
   position: relative;
   text-align: center;
   padding-top: 15px;
@@ -709,12 +717,12 @@ input[type=submit] {
   border-radius: 16px;
   position: absolute;
   display: flex;
+  right : -24px;
   padding: 4px;
   height: 24px;
   width: 24px;
   z-index: 7;
-  top: 40px;
-  right : 0
+  top: 55px;
 }
 
 .left {
@@ -726,9 +734,9 @@ input[type=submit] {
   padding: 4px;
   height: 24px;
   width: 24px;
+  left: -24px;
   z-index: 7;
-  top: 40px;
-  left: 0;
+  top: 55px;
 }
 
 .id {
