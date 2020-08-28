@@ -277,8 +277,7 @@ var response = function(passthrough, uri, n, bloat) {
         if (passthrough == false) write(menu.indexOf(menu[i]))
         exact = i
         id = i
-      }
-      if (
+      } else if (
           menu[i].id.space() == n.toLowerCase() ||
           menu[i].id.space() == uri.toLowerCase()
         ) {
@@ -286,20 +285,17 @@ var response = function(passthrough, uri, n, bloat) {
             var exact = i
             id = i
             break
-      }
-      if (
+      } else if (
           menu[i].id.space().match(n.toLowerCase()) ||
           menu[i].id.space().match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-      }
-      if (
+      } else if (
           menu[i].des.match(n.toLowerCase()) ||
           menu[i].des.match(uri.toLowerCase())
         ) {
             filter.push(menu.indexOf(menu[i]))
-      }
-      if (
+      } else if (
           menu[i].cat.toLowerCase().match(n) ||
           menu[i].cat.toLowerCase().match(uri)
         ) {
