@@ -30,10 +30,12 @@ $(document)
     if (nextAngle >= 360) nextAngle = 0
    if ($(this).hasClass('invisible'))
       $(this).addClass('visible').removeClass('invisible').find('.fa-angle-up')
-        .animateRotate(nextAngle, 250, 'swing', $('.page .quick').fadeTo(150, 100))
+        .animateRotate(nextAngle, 250, 'swing', $('.page .quick')
+        .css('visibility','visible').fadeTo(150, 100))
     else
       $(this).addClass('invisible').removeClass('visible').find('.fa-angle-up')
-        .animateRotate(nextAngle, 250, 'swing', $('.page .quick').fadeTo(150, 0))
+      .animateRotate(nextAngle, 250, 'swing', $('.page .quick')
+      .css('visibility','hidden').fadeTo(150, 0))
   })
   .on('touch click', '#arm #home', function(e) {
     var uri = window.location.origin
