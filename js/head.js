@@ -2505,6 +2505,17 @@ var menu = [
 
 	,
 	{
+		id: "Leafly",
+		cat: "Social",
+		des: "Leafly is the world's online destination to learn about cannabis, find cannabis strains and products, and buy them from legal, licensed retailers.",
+		uri: "https://www.leafly.com/feed",
+		ext: "https://www.leafly.com",
+		img: "Leafly",
+		hash: "lY"
+	}
+
+	,
+	{
 		id: "Reddit/Los Angeles",
 		cat: "Social",
 		des: "Los Angeles subreddit The international epicenter of entertainment.",
