@@ -636,8 +636,9 @@ body,
   width: fit-content;
   position: relative;
   margin: 0 auto;
-  height: 28.5em;
   display: none;
+  height: 28em;
+  top: -6px
 }
 
 input[type=submit] {
@@ -1260,6 +1261,14 @@ iframe {
   z-index: 4;
 }
 
+.background {
+  height: calc(28em - 24px);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 12px;
+}
+
 .listing {
   background-color: #transparent;
   position: relative;
@@ -1273,14 +1282,14 @@ iframe {
 
 .index {
   border-bottom: none !important;
-  background-color: #fff;
-  padding-bottom: 10px;
+  width: calc(100% - 14px);
+  padding-bottom: 12px;
   position: relative;
-  padding-left: 7px;
+  padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
-  height: 2.8em;
-  width: 100%;
+  margin: 1px;
+  height: 3em;
 }
 
 .contrast.hover {
@@ -1305,10 +1314,11 @@ iframe {
 
 .hover {
   border-bottom: none !important;
-  padding-bottom: 10px;
-  padding-left: 7px;
+  width: calc(100% - 14px);
+  padding-bottom: 12px;
+  padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
-  height: 2.8em;
-  width: 100%;
+  margin: 1px;
+  height: 3em;
 }

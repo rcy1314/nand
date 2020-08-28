@@ -109,6 +109,8 @@ var list = function(e, n) {
 
   $('#arm #search #match .listing').empty()
   $('#main #visit #front #first .listing').empty()
+  $('#main #visit #front #first .listing')
+    .append("<div class='background'></div>")
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
@@ -129,6 +131,8 @@ var list = function(e, n) {
         $('#search .listing .' + i + ':last').remove()
     }
   }
+  $('#main #visit #front #first .listing')
+    .append("<div class='background'></div>")
   if (!$('#arm #search #match').is(':visible')) {
     setTimeout(function() {
       $('#arm #search #match').show()

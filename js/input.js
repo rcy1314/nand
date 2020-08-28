@@ -94,6 +94,8 @@ $(document)
         "</div>"
       )
     })
+    $('#main #visit .page #front #first .listing')
+      .append("<div class='background'></div>")
     $(this).val('')
       $(this).css({
             'caret-color': '#e4e4e4',
@@ -187,6 +189,8 @@ $(document)
             "  </div>" +
             "</div>")
       })
+      $('#arm #search #match .listing')
+        .append("<div class='background'></div>")
       $(this).val('')
       $this = $(this)
           $this.css({

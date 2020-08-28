@@ -44,7 +44,7 @@ var visual = function(n) {
     $('#placeholder').css('color','#fff')
   } else if (op == 0) {
     $('#container, #notification, #top, #arm, #option, .index, .item, .classic, ' +
-      '.center .feed, .page input[type=text], .air, .result'
+      '.center .feed, .page input[type=text], .air, .result, .background'
     ).css({
       'background-color': '#fff',
       'border': 'none',
