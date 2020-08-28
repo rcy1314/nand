@@ -701,13 +701,14 @@ input[type=submit] {
 }
 
 .feed .asset img {
-  height: 55.5px;
-  width: 55.5px;
+  height: 55.25px;
+  width: 55.25px;
   left: .25px;
   top: .5px;
 }
 
 .feed .asset a {
+  background-color: transparent !important;
   display: block;
 }
 

@@ -50,7 +50,7 @@ var visual = function(n) {
       'border': 'none',
       'color': '#666'
     })
-    $('.hover, #visit, #main, .page, .page .feed, .right, .left, .asset a, ' +
+    $('.hover, #visit, #main, .page, .page .feed, .right, .left, ' +
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
@@ -63,7 +63,7 @@ var visual = function(n) {
     })
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
-    $('.link, .page .asset').addClass('invertOverBorderless').removeClass('oppositeOverBorderless')
+    $('.link, .page .asset, .asset a').addClass('invertOverBorderless').removeClass('oppositeOverBorderless')
     $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
     $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
     $('#search input[type=text], .filter, .populate').css('border', '1px solid #eaeaea')
