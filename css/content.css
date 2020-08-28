@@ -439,10 +439,10 @@ body,
   border-radius: 28px;
   position: relative;
   font-size: 10px;
-  width: 40px;
-  height: 40.5px;
-  bottom: 5px;
-  left: -1px;
+  width: 41px;
+  height: 41px;
+  bottom: 4.5px;
+  left: -2px;
 }
 
 .text {

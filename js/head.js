@@ -4099,6 +4099,17 @@ var menu = [
 
 	,
 	{
+		id: "TechDator",
+		cat: "Technology",
+		des: "Techdator is a leading and trusted news source in the field of technology, hacking, and gadgets.",
+		uri: "https://techdator.net/feed",
+		ext: "https://techdator.net",
+		img: "TechDator",
+		hash: "cR"
+	}
+
+	,
+	{
 		id: "TechMeme",
 		cat: "Technology",
 		des: "TechMeme is an automated News curation service focused on the leading edge of Technology.",
