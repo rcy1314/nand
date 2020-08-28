@@ -63,8 +63,7 @@ if (location.href.match('\\+1') && !i) {
   $(document)
     .ready(function() {
 
-      $('#toggle, .show, .focus').css('visibility','visible')
-      feed('page', 40)
+      $('.fill').css('visibility','visible')
 
   })
 
@@ -86,11 +85,13 @@ if (location.search.split('?q=')[1]) {
 
         $('.fill').css('visibility','visible')
 
-    })
+  })
 
-  if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
-  else if (!uri[1]) response(false, false, uri[0], true)
-  else if (uri[1]) response(true, uri[0], uri[1], false)
+  setTimeout(function() {
+    if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
+    else if (!uri[1]) response(false, false, uri[0], true)
+    else if (uri[1]) response(true, uri[0], uri[1], false)
+  }, 550)
 
 } else if (!location.search.split('?')[1]) {
 

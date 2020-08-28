@@ -723,6 +723,11 @@ input[type=submit] {
   display: block;
 }
 
+.page .left,
+.page .right {
+  top: 55px;
+}
+
 .right {
   justify-content: center;
   align-items: center;
@@ -734,7 +739,7 @@ input[type=submit] {
   height: 24px;
   width: 24px;
   z-index: 7;
-  top: 55px;
+  top: 40px;
 }
 
 .left {
@@ -748,7 +753,7 @@ input[type=submit] {
   width: 24px;
   left: -24px;
   z-index: 7;
-  top: 55px;
+  top: 40px;
 }
 
 .id {
