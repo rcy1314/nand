@@ -198,7 +198,6 @@ a:hover,
 html,
 body,
 #main,
-.group,
 #visit,
 #wrapper,
 #container {
@@ -357,8 +356,7 @@ body,
   top: 5px;
 }
 
-#main,
-.group {
+#main {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
@@ -373,6 +371,9 @@ body,
 
 .group {
   scrollbar-width: none;
+  height: fit-content;
+  padding-bottom: 50px;
+  width: 100%;
 }
 
 .group::-webkit-scrollbar {
@@ -573,10 +574,9 @@ body,
 .result {
   justify-content: center;
   flex-wrap: wrap;
-  position: relative;
   display: flex;
   width: 100%;
-  top: 60px ;
+  top: 60px;
 }
 
 .filter,

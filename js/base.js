@@ -219,8 +219,8 @@ var suggest = function(n) {
 
 var populate = function(n) {
 
-  if ($('#main .group').length < 1)
     $(document).ready(function() {
+      if ($('#main .group').length < 1)
       $('#main').append(
         "<div class='group'>" +
         "  <div class='result' style='display:none'>" +
