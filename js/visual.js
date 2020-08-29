@@ -3,7 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $('#container, #top, #arm, #visit, #option, .page, .classic, .item, .feed, .asset, .asset a, ' +
-      '.index, .filter, .populate, .result, .air, .blur, input[type=text], .group'
+      '.index, .filter, .populate, .result, .air, .blur, input[type=text], #main, .group'
     ).css({
       'background-color': '#000',
       'box-shadow': 'none',
@@ -43,14 +43,14 @@ var visual = function(n) {
     $('.hover').addClass('contrast.hover')
     $('#placeholder').css('color','#fff')
   } else if (op == 0) {
-    $('#container, #notification, #top, #arm, #option, .index, .item, .classic, ' +
+    $('#container, #notification, #top, #arm, #option, .index, .item, .classic, .feed .asset, ' +
       '.center .feed, .page input[type=text], .air, .result, .background, .group'
     ).css({
       'background-color': '#fff',
       'border': 'none',
       'color': '#666'
     })
-    $('#main, .hover, #visit, .page, .page .feed, .right, .left, ' +
+    $('#main, .hover, #visit, .page, .page .feed, .right, .left, .stats .asset, ' +
       '.filter, .populate, .blur, #search input[type=text]'
     ).css({
       'background-color': '#f7f7f7',
