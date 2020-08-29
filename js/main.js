@@ -104,11 +104,7 @@ $(document)
     return false
   })
   .on('touch click', '#main .translation .select', function(e) {
-    id = 0
-    category = $(this).attr('response')
     var uri = '?q=' + $(this).attr('response').toLowerCase()
-    $('#handle image').css('visibility','visible')
-    progress(true, 100)
     uri.define().exit()
   })
   .on('touch click mouseenter mouseleave',
@@ -248,7 +244,8 @@ $(document)
           img = $(this).attr('id')
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
-              $this.parents('.item').attr('ext').blank()
+              if ($this.hasClass('image')) $this.attr('src').blank()
+              else $this.parents('.item').attr('ext').blank()
             tap = 0
           }, 325)
       } else {
