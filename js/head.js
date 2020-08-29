@@ -2142,17 +2142,6 @@ var menu = [
 
 	,
 	{
-		id: "Reddit/California",
-		cat: "Social",
-		des: "California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",
-		uri: "https://www.reddit.com/r/California/.rss",
-		ext: "https://www.reddit.com/r/California",
-		img: "California",
-		hash: "cA"
-	}
-
-	,
-	{
 		id: "Imgur/Celebs",
 		cat: "Social",
 		des: "Celebs subreddit from Imgur.",
