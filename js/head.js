@@ -2120,13 +2120,24 @@ var menu = [
 
 	,
 	{
-		id: "Reddit/Boston",
+		id: "Reddit/Buildapc",
 		cat: "Social",
-		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
-		uri: "https://www.reddit.com/r/boston/.rss",
-		ext: "https://www.reddit.com/r/Boston",
-		img: "BostonMA",
-		hash: "tA"
+		des: "BuildAPC is a community-driven subreddit dedicated to custom PC assembly.",
+		uri: "https://www.reddit.com/r/buildapc/.rss",
+		ext: "https://www.reddit.com/r/buildapc",
+		img: "Build",
+		hash: "bB"
+	}
+
+	,
+	{
+		id: "Reddit/California",
+		cat: "Social",
+		des: "California subreddit for the Golden State of California -- for news and info on what's happening all across the state.",
+		uri: "https://www.reddit.com/r/California/.rss",
+		ext: "https://www.reddit.com/r/California",
+		img: "California",
+		hash: "cA"
 	}
 
 	,
