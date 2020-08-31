@@ -38,7 +38,7 @@
     right: 0 !important;
   }
 
-.page {
+ .page {
     top: 100px !important;
   }
 
@@ -149,8 +149,26 @@
 
 }
 
+@media screen and (max-width: 1024px) {
 
-@media screen and (min-width: 1024px) {
+  #main #front {
+	position relative;
+	top: -128px;
+  }
+
+  .air,
+  .result {
+	position: relative !important;
+	top: 60px !important;
+  }
+
+  #main .translation {
+	display: none !important;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
 
   #container {
     width: 100% !important;

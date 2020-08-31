@@ -461,7 +461,7 @@ body,
   width: 41px;
   height: 41px;
   bottom: 4.5px;
-  left: -2px;
+  left: -1px;
 }
 
 .text {
@@ -735,16 +735,24 @@ input[type=submit] {
   top: 55px;
 }
 
+.page .left {
+  left: -24px;
+}
+
+.page .right {
+  right: -24px;
+}
+
 .right {
   justify-content: center;
   align-items: center;
   border-radius: 16px;
   position: absolute;
   display: flex;
-  right : -24px;
   padding: 4px;
   height: 24px;
   width: 24px;
+  right : 0px;
   z-index: 7;
   top: 40px;
 }
@@ -758,9 +766,9 @@ input[type=submit] {
   padding: 4px;
   height: 24px;
   width: 24px;
-  left: -24px;
   z-index: 7;
   top: 40px;
+  left: 0px;
 }
 
 .id {
@@ -1313,10 +1321,10 @@ iframe {
   padding-bottom: 12px;
   position: relative;
   padding-left: 12px;
-  padding-top: 12px;
+  padding-top: 5px;
   font-size: 12px;
+  height: 2.2em;
   margin: 1px;
-  height: 3em;
 }
 
 .contrast.hover {
@@ -1344,8 +1352,8 @@ iframe {
   width: calc(100% - 14px);
   padding-bottom: 12px;
   padding-left: 12px;
-  padding-top: 12px;
+  padding-top: 5px;
   font-size: 12px;
+  height: 2.2em;
   margin: 1px;
-  height: 3em;
 }

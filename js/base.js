@@ -427,8 +427,7 @@ var image = function(empty, n, src) {
        }).find('.header, .tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >=
       $(this).get(0).naturalWidth * 2) {
-        $(this).addClass('image').width('70%')
-          .parents('.item').find('.image').width('70%')
+        $(this).addClass('image').width('40vh')
      } else if ($(this).get(0).naturalHeight > k) {
          $(this).parents('.item').find('.ago')
              .css('display', 'inline-block')
@@ -439,7 +438,6 @@ var image = function(empty, n, src) {
          $(this).remove()
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).addClass('image').width('100%')
-          .parents('.item').find('.image').width('100%')
       }
     }
     $('#' + n).parents('.item, #guide').find('.image, .img, .pub, .tag')
