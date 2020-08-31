@@ -2502,7 +2502,7 @@ var menu = [
 		img: "Linux",
 		hash: "lX"
 	}
-
+/*
 	,
 	{
 		id: "Leafly",
@@ -2513,7 +2513,7 @@ var menu = [
 		img: "Leafly",
 		hash: "lY"
 	}
-
+*/
 	,
 	{
 		id: "Reddit/Los Angeles",
