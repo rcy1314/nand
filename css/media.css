@@ -124,8 +124,7 @@
   #main .page .quick {
       z-index: 3;
   }
-
-  .fa-home, 
+ 
   #main .left,
   #main .right,
   #main .translation {
@@ -161,6 +160,11 @@
   .result {
 	position: relative !important;
 	top: 60px !important;
+  }
+
+  #main .center {
+    margin-left: 130px;
+	width: 60%;
   }
 
   #main .translation {
