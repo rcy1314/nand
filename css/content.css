@@ -460,10 +460,10 @@ body,
   border-radius: 28px;
   position: relative;
   font-size: 10px;
-  width: 41px;
-  height: 41px;
   bottom: 3.5px;
-  left: -1px;
+  height: 41px;
+  left: -1.5px;
+  width: 41px;
 }
 
 .text {
