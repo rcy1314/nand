@@ -60,6 +60,7 @@
   }
 
   #main .page .quick {
+    visibility: visible !important;
     opacity: 100 !important;
     width: 100% !important;
     right: 0 !important;
