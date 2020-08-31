@@ -958,6 +958,7 @@ courtesy a {
 .image {
   background-color: transparent;
   position: relative;
+  margin: 0 auto;
 }
 
 .img {
