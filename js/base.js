@@ -418,6 +418,13 @@ var image = function(empty, n, src) {
              'display': 'flex',
              'align-items': 'center'
            }).find('.header, .tag, .addComment').remove()
+      } else if ($(this).get(0).naturalHeight < minimum) {
+        $(this).width(120).addClass('default').css('margin','10px')
+          .parents('.item')
+          .find('.classic').css({
+            'display': 'flex',
+            'align-items': 'center'
+       }).find('.header, .tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >=
       $(this).get(0).naturalWidth * 2) {
         $(this).addClass('image').width('70%')
@@ -430,13 +437,6 @@ var image = function(empty, n, src) {
              .find('.url, .share, .source, .header, .image, .img, .fill')
              .remove()
          $(this).remove()
-       } else if ($(this).get(0).naturalHeight < minimum) {
-         $(this).width(120).addClass('default').css('margin','10px')
-           .parents('.item')
-           .find('.classic').css({
-             'display': 'flex',
-             'align-items': 'center'
-           }).find('.header, .tag, .addComment').remove()
       } else if ($(this).get(0).naturalWidth > minimum) {
         $(this).addClass('image').width('100%')
           .parents('.item').find('.image').width('100%')
