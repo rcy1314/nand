@@ -2120,6 +2120,17 @@ var menu = [
 
 	,
 	{
+		id: "Reddit/Boston",
+		cat: "Social",
+		des: "Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.",
+		uri: "https://www.reddit.com/r/boston/.rss",
+		ext: "https://www.reddit.com/r/Boston",
+		img: "BostonMA",
+		hash: "tA"
+	}
+
+	,
+	{
 		id: "Reddit/Buildapc",
 		cat: "Social",
 		des: "BuildAPC is a community-driven subreddit dedicated to custom PC assembly.",
