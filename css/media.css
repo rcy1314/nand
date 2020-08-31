@@ -125,9 +125,10 @@
       z-index: 3;
   }
 
-  #main .translation,
+  .fa-home, 
+  #main .left,
   #main .right,
-  #main .left {
+  #main .translation {
     display: none !important;
   }
 

@@ -441,14 +441,14 @@ body,
 #front #first .listing {
   position: relative;
   border-radius: 4px;
+  height: calc(27em - 3px);
   width: 100%;
-  height: 28em;
 }
 
 .index .radial,
 .hover .radial {
-  bottom: 7.5px;
-  left: -2.5px;
+  bottom: -2px;
+  left: -2px;
 }
 
 .type,
@@ -469,6 +469,7 @@ body,
   display: inline-block;
   position: relative;
   bottom: 10px;
+  height: 30px;
 }
 
 .focus {
@@ -1297,9 +1298,9 @@ iframe {
 }
 
 .background {
-  height: calc(28em - 24px);
   position: absolute;
-  width: 100%;
+  height: calc(27em - 5px);
+  width: calc(100% - 2px);
   z-index: -1;
   top: 12px;
 }
@@ -1311,8 +1312,13 @@ iframe {
   text-align: left;
   overflow-y: auto;
   margin: 0 auto;
-  height: 28em;
+  height: calc(27em -  3px);
   width: 18em;
+}
+
+.listing .detail {
+  width: 100%;
+  height: 100%;
 }
 
 .index {
@@ -1321,9 +1327,9 @@ iframe {
   padding-bottom: 12px;
   position: relative;
   padding-left: 12px;
-  padding-top: 5px;
+  padding-top: 12px;
   font-size: 12px;
-  height: 2.2em;
+  height: 3em;
   margin: 1px;
 }
 
@@ -1352,8 +1358,8 @@ iframe {
   width: calc(100% - 14px);
   padding-bottom: 12px;
   padding-left: 12px;
-  padding-top: 5px;
+  padding-top: 12px;
   font-size: 12px;
-  height: 2.2em;
+  height: 3em;
   margin: 1px;
 }
