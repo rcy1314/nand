@@ -73,7 +73,6 @@
     position: fixed !important;
     height: 50px !important;
     right: 10px;
-    z-index: 2;
   }
 
   #main .air .populate,
@@ -124,7 +123,7 @@
   #main .page .quick {
       z-index: 3;
   }
- 
+
   #main .left,
   #main .right,
   #main .translation {

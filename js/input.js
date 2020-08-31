@@ -202,6 +202,7 @@ $(document)
     visual()
 })
 .on('focusout blur', '#arm #search input[type=text]', function(e) {
+  $this = $(this)
       if ($('#arm #search #input .icon').hasClass('slide'))
         $(this)
           .css({
