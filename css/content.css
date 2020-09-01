@@ -16,6 +16,12 @@
   font-display: block;
 }
 
+.loader, .loader:before, .loader:after {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .fa,
 .far,
 .images {
