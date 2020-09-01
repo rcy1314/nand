@@ -1,6 +1,6 @@
 @media screen and (max-width: 425px) {
 
-  #home,
+  #wrapper #container #main #top #search #home,
   .left,
   .next,
   .back,
@@ -13,53 +13,45 @@
   ::-webkit-scrollbar,
   .center .quick .left,
   .center .quick .right,
-  #main #visit .page #front .icon {
+  #wrapper #container #main #visit .page #front .focus .icon {
     display: none !important;
   }
 
-  .loader,.loader:before,.loader:after{
-    margin: 60px auto;
-  }
-
-  .page,
-  #visit {
+  #wrapper #container #main .page,
+  #wrapper #container #main #visit {
    height: 100% !important;
    width: 100% !important;
    top: 0 !important;
   }
 
-  #top,
-  #arm {
+  #wrapper #container #main #top,
+  #wrapper #container #main #arm {
     width: 100% !important;
   }
 
-  #handle {
+  #wrapper #container #main #visit .page #handle {
     width: 100% !important;
     right: 0 !important;
   }
 
- .page {
-    top: 100px !important;
-  }
-
-  #main .center {
+  #wrapper #container #main .center {
     top: -20px !important;
 	  left: 0 !important;
   }
 
-  #main .center,
-  #main .channel {
+  #wrapper #container #main .center,
+  #wrapper #container #main .channel {
     width: 100% !important;
     margin: 0;
   }
 
-  #main .item,
-  #main .feed {
+  #wrapper #container #main .center .item,
+  #wrapper #container #main .center .feed {
     box-shadow: none !important;
     border: none !important;
   }
 
-  #main .page .quick {
+  #wrapper #container #main .page .quick {
     visibility: visible !important;
     opacity: 100 !important;
     width: 100% !important;
@@ -75,26 +67,27 @@
     right: 10px;
   }
 
-  #main .air .populate,
-  #main .result .filter,
-  #main .result .populate {
+  #wrapper #container #main .air,
+  #wrapper #container #main .populate,
+  #wrapper #container #main .result .filter,
+  #wrapper #container #main .result .populate {
     margin: 1em !important;
     width: 32% !important;
   }
 
-  .focus {
+  #wrapper #container #visit .page #front .focus {
     margin: 0 auto !important;
     width: 300px !important;
     padding: 0 !important;
   }
 
-  #main #visit .page #front input[type=text] {
+  #wrapper #container #main #visit .page #front input[type=text] {
     padding-left: 0 !important;
     width: 300px !important;
     top: 0px;
   }
 
-  #main #visit .page #front #first .listing {
+  #wrapper #container #main #visit .page #front #first .listing {
     padding-left: 0 !important;
     width: 300px !important;
   }
@@ -103,7 +96,13 @@
 
 @media screen and (max-width: 768px) {
 
-  #top {
+  #wrapper #container #main .left,
+  #wrapper #container #main .right,
+  #wrapper #container #main .translation {
+    display: none !important;
+  }
+
+  #wrapper #container #main #top {
     width: 100% !important;
   }
 
@@ -111,26 +110,20 @@
     margin-left: 70px;
   }
 
-  #main .center {
+  #wrapper #container #main .center {
     left: -95px;
     width: 50%;
   }
 
-  #main .content {
+  #wrapper #container #main .content {
     margin-left: -75px !important;
   }
 
-  #main .page .quick {
+  #wrapper #container #main #visit .page #front .quick {
       z-index: 3;
   }
 
-  #main .left,
-  #main .right,
-  #main .translation {
-    display: none !important;
-  }
-
-  #main .page {
+  #wrapper #container #main #visit .page {
     width: 90%;
   }
 
@@ -138,11 +131,11 @@
 
 @media screen and (min-width: 769px) {
 
-  #top {
+  #wrapper #container #main #top {
     width: calc(100% - 16px) !important;
   }
 
-  #main .center {
+  #wrapper #container #main .center {
     width: 632px !important;
   }
 
@@ -150,23 +143,23 @@
 
 @media screen and (max-width: 1024px) {
 
-  #main #front {
-	position relative;
-	top: -128px;
+  #wrapper #container #main #visit .page #front {
+	  position relative;
+	  top: -128px;
   }
 
-  .air,
-  .result {
-	position: relative !important;
-	top: 60px !important;
+  #wrapper #container #main .group .air,
+  #wrapper #container #main .group .result {
+	  position: relative !important;
+	  top: 60px !important;
   }
 
-  #main .center {
+  #wrapper #container #main .center {
     margin-left: 130px;
-	width: 60%;
+	  width: 60%;
   }
 
-  #main .translation {
+  #wrapper #container #main .translation {
 	display: none !important;
   }
 
@@ -174,39 +167,40 @@
 
 @media screen and (min-width: 1025px) {
 
-  #container {
+  #wrapper #container {
     width: 100% !important;
     position: relative;
     display: block;
     margin: 0 auto;
   }
 
-  #toggle {
+  #wrapper #container #toggle {
     right: 2em;
     top: 1em;
   }
 
-  #top {
+  #wrapper #container #main #top {
     width: 100%;
   }
 
-  #arm {
+  #wrapper #container #main #top #arm {
     width: 999px !important;
   }
 
-  #main .center {
+  #wrapper #container #main .center {
     width: 648px !important;
   }
 
-  #main .air .populate,
-  #main .result .filter,
-  #main .result .populate {
+  #wrapper #container #main .group .air,
+  #wrapper #container #main .group .air .populate,
+  #wrapper #container #main .group .result .filter,
+  #wrapper #container #main .group .result .populate {
     width: 156px;
     margin: 2em;
   }
 
-  #main .result,
-  #main .air {
+  #wrapper #container #main .group .air,
+  #wrapper #container #main .group .result {
     width: 924px !important;
     position: relative;
     display: block;
@@ -215,10 +209,10 @@
 
 }
 
-  #main .page .quick {
+  #wrapper #container #main #visit .page #front .quick {
       position: relative;
       width: 892px;
-      left: -72px;
+      left: -62px;
       z-index: 3;
       top: 40px;
   }
