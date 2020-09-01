@@ -1,11 +1,13 @@
 $(document)
   .ready()
-.on('mouseenter mouseleave',
+.on('mouseenter',
     '#main #visit .page #front input[type=text], .button', function(e) {
     if (op == 0)
-      if (e.type == 'mouseenter')
         $('.focus').removeClass('pageInputOut').addClass('pageInput')
-      else if (e.type == 'mouseleave')
+})
+.on('mouseleave',
+    '#main #visit .page #front input[type=text], .button', function(e) {
+    if (op == 0)
         $('.focus').removeClass('pageInput').addClass('pageInputOut')
 })
 .on('touch click', '#main #visit .page #front .icon', function(e) {

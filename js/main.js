@@ -129,13 +129,13 @@ $(document)
         uri.define().exit()
       }
     })
-    .on('touch click', '#main .center .channel .item', function(e) {
-      $(this).attr('ext').blank()
-      e.stopPropagation()
-    })
-    .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, ' +
+  .on('touch click', '#main .center .channel .item', function(e) {
+    $(this).attr('ext').blank()
+    e.stopPropagation()
+  })
+  .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, ' +
       '#container .sticky .header .fa-ellipsis-h',
-      function(e) {
+     function(e) {
         $(this).parents('.item, .wrap').find('.url').select()
         document.execCommand('copy')
         $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
@@ -146,8 +146,8 @@ $(document)
         }, 250)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
-      })
-    .on('mousedown', '#main .feed .asset', function(e) {
+  })
+  .on('mousedown', '#main .feed .asset', function(e) {
       if (e.which == 1){
         dragStartX = 0;
         enableDrag = true;
@@ -163,8 +163,8 @@ $(document)
       }
       $(this).unbind("mousemove")
       e.preventDefault();
-    })
-    .on('mousemove', '#main .feed .asset', function(e) {
+  })
+  .on('mousemove', '#main .feed .asset', function(e) {
       if ($(this).parents('.feed').scrollLeft() > 0)
         $(this).parents('.quick').find('.left').show()
       else if ($(this).parents('.feed').scrollLeft() == 0)
@@ -175,8 +175,8 @@ $(document)
           }
           $(this).unbind("mouseup");
           e.preventDefault();
-    })
-    .on('mouseup', document, function(e) {
+  })
+  .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false;
         else mouseasset = false
@@ -188,20 +188,20 @@ $(document)
               }
           }
           e.preventDefault();
-    })
-    .on('touchmove', '#main .page .quick .feed', function(e) {
+  })
+  .on('touchmove', '#main .page .quick .feed', function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('#main .page .quick .feed .asset:first').remove()
-    })
-    .on('touchmove', '#main .center .quick .feed', function(e) {
+  })
+  .on('touchmove', '#main .center .quick .feed', function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('#main .center .quick .feed .asset:first').remove()
-    })
-    .on('touch click', '#main .quick .right, #main .center .right, .fa-angle-double-right', function(e) {
+  })
+  .on('touch click', '#main .quick .right, #main .center .right, .fa-angle-double-right', function(e) {
       feed('page', 9)
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
@@ -212,8 +212,8 @@ $(document)
               $(this).hide()
         if ($(this).parents('.quick').find('.feed')
           .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
-    })
-    .on('touch click', '#main .page .quick .left, #main .center .left, .fa-angle-double-left', function(e) {
+  })
+  .on('touch click', '#main .page .quick .left, #main .center .left, .fa-angle-double-left', function(e) {
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
             scrollLeft: leftPos - 892
@@ -224,19 +224,19 @@ $(document)
             $(this).parents('.quick').find('.right, .fa-angle-double-right').show()
         }
         else $(this).parents('.quick').find('.left').show()
-    })
-    .on('touch click', '#guide, #container .checkmark', function (e) {
+  })
+  .on('touch click', '#guide, #container .checkmark', function (e) {
       $('#main').removeClass('guide')
       $('#guide, #container .checkmark').fadeOut(250)
-    })
-    .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
+  })
+  .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
       function (e) {
             $('#main').removeClass('guide')
             $('#guide').hide()
       e.stopPropagation()
       visual()
     })
-    .on('touch click', '#main .center .channel .item .image .img', function(e) {
+  .on('touch click', '#main .center .channel .item .image .img', function(e) {
       if (tap == 0) {
           $this = $(this)
           // set first click
@@ -263,14 +263,14 @@ $(document)
       }
       e.stopPropagation()
       visual()
-    })
-    .on('touch click', '.tag .fa-heart-o, .tag .fa-gratipay',
+  })
+  .on('touch click', '.tag .fa-heart-o, .tag .fa-gratipay',
       function(e) {
         $(this).toggleClass('fa-heart-o fab fa-gratipay')
         e.stopPropagation()
         visual()
-      })
-    .on('touch click', '.tag .fa-bookmark-o, .tag .fa-bookmark', function(e) {
+  })
+  .on('touch click', '.tag .fa-bookmark-o, .tag .fa-bookmark', function(e) {
         $(this).parents('.item, .wrap').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark'))
@@ -279,7 +279,7 @@ $(document)
         e.stopPropagation()
         visual()
       })
-    .on('touch click', '.tag .fa-sticky-note-o, .tag .fa-sticky-note',
+  .on('touch click', '.tag .fa-sticky-note-o, .tag .fa-sticky-note',
     function(e) {
       if (contrast == true)
         if (!$(this).parents('.item, .wrap').find('.share').val().match(/\+1/g))
@@ -297,8 +297,8 @@ $(document)
       notify('Post Copied to Clipboard')
       e.stopPropagation()
       visual()
-    })
-    .on('touch click', '#main .center .channel .item .pub .more', function(e) {
+  })
+  .on('touch click', '#main .center .channel .item .pub .more', function(e) {
       $(this).parent().html($(this).parent().attr('text'))
       $(this).parent().animate({
           width: '85%',
@@ -307,8 +307,8 @@ $(document)
         })
       e.stopPropagation()
       $(this).hide()
-    })
-    .on('submit', '#main .center .channel .item .classic .addComment', function(e) {
+  })
+  .on('submit', '#main .center .channel .item .classic .addComment', function(e) {
       if ($(this).children('.comment').val() != '')
         item = $(this).parents('.item').attr('item')
       if ($('.' + item + ' .add').length >= 3)
@@ -332,8 +332,8 @@ $(document)
       response(true, false, uri, false)
       uri = '?q=&' + uri.replace(/\s/g, '-')
       uri.define().state()
-    })
-    .on('touch click', '#main .center #bottom .bottom', function(e) {
+  })
+  .on('touch click', '#main .center #bottom .bottom', function(e) {
       $('#top, #main .center, #main .content, #main .translation').remove()
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
@@ -354,15 +354,15 @@ $(document)
             )
       }
     })
-    .on('touch click', '#main .suggestions .combine div', function(e) {
+  .on('touch click', '#main .suggestions .combine div', function(e) {
       $('#main .center, #main .content, #main .translation').remove()
       var uri = '?q=' + '&' + $(this).attr('response')
       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
       uri.define().state()
-    })
-    .on('touch click', '#main .content .stats .asset', function(e) {
+  })
+  .on('touch click', '#main .content .stats .asset', function(e) {
       $('#main .center, #main .content, #main .translation').remove()
       var uri = '?q=' + '&' + $(this).parents('.asset').attr('response')
       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
       uri.define().state()
-    })
+  })

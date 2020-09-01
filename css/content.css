@@ -28,10 +28,7 @@
 
 .fa-home,
 .fa-code,
-.fa-globe,
-.fa-circle,
-.fa-terminal,
-.fa-circle-o {
+.fa-terminal {
   font-size: 20px;
   padding: 15px;
 }
@@ -40,11 +37,11 @@
 .fa-heart-o,
 .fa-comments,
 .fa-gratipay,
-.fa-comment-o,
-.fa-sticky-note,
-.fa-sticky-note-o,
 .fa-bookmark,
-.fa-bookmark-o {
+.fa-comment-o,
+.fa-bookmark-o,
+.fa-sticky-note,
+.fa-sticky-note-o {
   font-size: 24px !important;
   padding: 5px !important;
 }
@@ -190,8 +187,7 @@ a {
   cursor: pointer;
 }
 
-a:hover,
-.combine div:hover {
+a:hover {
   text-decoration: underline;
 }
 
@@ -210,7 +206,7 @@ body,
   top: 0;
 }
 
-#notification {
+#wrapper #container #main #notification {
   border-radius: 6px;
   width: fit-content;
   font-weight: bold;
@@ -225,7 +221,7 @@ body,
   z-index: 9;
 }
 
-#progressBar {
+#wrapper #container #main #progressBar {
   position: fixed;
   height: 4px;
   z-index: 3;
@@ -233,7 +229,7 @@ body,
   top: 0;
 }
 
-#toggle {
+#wrapper #container #toggle {
   background-color: transparent !important;
   visibility: hidden;
   position: absolute;
@@ -243,7 +239,7 @@ body,
   top: 7px;
 }
 
-.checkmark {
+#wrapper #container #guide .checkmark {
   position: absolute;
   padding: 10px;
   top: 0;
@@ -261,14 +257,14 @@ body,
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
 
-.checkmark__check {
+#wrapper #container #guide .checkmark__check {
   transform-origin: 50% 50%;
   stroke-dasharray: 29;
   stroke-dashoffset: 29;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
 
-.checkmark__circle {
+#wrapper #container #guide .checkmark__circle {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
   stroke-width: 2;
@@ -278,7 +274,7 @@ body,
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
-#guide {
+#wrapper #container #guide {
   position: absolute;
   display: none;
 }
@@ -288,8 +284,8 @@ body,
   display: none;
 }
 
-#guide,
-.blur {
+#wrapper #container #guide,
+#wrapper #container #guide .blur {
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -301,13 +297,13 @@ body,
   top: 0;
 }
 
-.blur {
+#wrapper #container #guide .blur {
   backdrop-filter: blur(10px);
   position: absolute;
   z-index: -1;
 }
 
-#top {
+#wrapper #container #main #top {
   width: calc(100% - 17px);
   visibility: hidden;
   position: fixed;
@@ -316,7 +312,7 @@ body,
   top: 0;
 }
 
-#arm {
+#wrapper #container #main #top #arm {
   position: relative;
   display: block;
   margin: 0 auto;
@@ -324,7 +320,7 @@ body,
   width: 100%;
 }
 
-#search {
+#wrapper #container #main #top #arm #search {
   position: absolute;
   height: 51px;
   width: 100%;
@@ -332,7 +328,7 @@ body,
   top: 4px;
 }
 
-#home {
+#wrapper #container #main #top #arm #search #home {
   font-family: Billabong;
   text-decoration: none;
   font-display: block;
@@ -344,11 +340,11 @@ body,
   top: 5px;
 }
 
-#home:active {
+#wrapper #container #main #top #arm #search #home:active {
   color: #666 !important;
 }
 
-#option {
+#wrapper #container #main #top #arm #option {
   justify-content: space-between;
   background-color: transparent;
   position: absolute;
@@ -358,7 +354,7 @@ body,
   top: 5px;
 }
 
-#main {
+#wrapper #container #main {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
@@ -371,32 +367,32 @@ body,
   outline: none;
 }
 
-.group {
+#wrapper #container #main .group {
   scrollbar-width: none;
   padding-bottom: 57px;
   height: fit-content;
   width: 100%;
 }
 
-.group::-webkit-scrollbar {
+#wrapper #container #main .group::-webkit-scrollbar {
   display: none;
 }
 
-#visit {
+#wrapper #container #main #visit {
   justify-content: center;
   align-items: center;
   display: flex;
   height: 100%;
 }
 
-#handle {
+#wrapper #container #main #visit .page #handle {
   position: relative;
   margin: 0 auto;
   height: 25px;
   width: 100%;
 }
 
-#placeholder {
+#wrapper #container #main #visit .page #handle #placeholder {
   background-color: transparent !important;
   width: fit-content !important;
   text-decoration: none;
@@ -406,7 +402,7 @@ body,
   right: 10px;
 }
 
-.page {
+#wrapper #container #main #visit .page {
   position: relative;
   margin: 0 auto;
   display: block;
@@ -414,20 +410,21 @@ body,
   top: 225px;
 }
 
-.page .fill {
+#wrapper #container #main #visit .page .fill {
   visibility: hidden;
 }
 
-.page .quick {
+#wrapper #container #main #visit .page .quick {
+  visibility: hidden;
   opacity: 0;
 }
 
-.page .feed {
+#wrapper #container #main #visit .page .feed {
   position: relative;
   top: 15px;
 }
 
-#front {
+#wrapper #container #main #visit .page #front {
   position: relative;
   display: block;
   margin: 0 auto;
@@ -435,12 +432,12 @@ body,
   top: -20px;
 }
 
-#front #first {
+#wrapper #container #main #visit .page #front #first {
   position: relative;
   top: -145px;
 }
 
-#front #first .listing {
+#wrapper #container #main #visit .page #front #first .listing {
   position: relative;
   border-radius: 4px;
   height: calc(27em - 3px);
@@ -485,7 +482,7 @@ body,
 
 }
 
-.page input[type=text] {
+#wrapper #container #main #visit .page input[type=text] {
   -webkit-appearance: none;
   caret-color: transparent;
   display: inline-block;
@@ -511,14 +508,14 @@ body,
   transition: box-shadow .25s;
 }
 
-.page .icon {
+.icon {
   font-size: 14px !important;
   color: #aaa !important;
   margin-top: 2px;
   z-index: 2;
 }
 
-.page .button {
+#wrapper #container #main #visit .page .button {
   display: inline-block;
   position: relative;
   border-radius: 3px;
@@ -527,17 +524,26 @@ body,
   right: 4px;
 }
 
-.page .quick {
-  visibility: hidden;
-}
-
-.page .buttonSearch {
+#wrapper #container #main #visit .page .buttonSearch {
   font-size: 20px !important;
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
   right: 20px;
   top: 10px;
+}
+
+#wrapper #container #main #visit .page .left,
+#wrapper #container #main #visit .page .right {
+  top: 55px;
+}
+
+#wrapper #container #main #visit .page .left {
+  left: -24px;
+}
+
+#wrapper #container #main #visit .page .right {
+  right: -24px;
 }
 
 .buttonOpposite {
@@ -556,7 +562,7 @@ body,
   background-color: #1683D8;
 }
 
-.show {
+#wrapper #container #main #visit .page #front .show {
   display: inline-block;
   visibility: hidden;
   position: absolute;
@@ -568,7 +574,7 @@ body,
   left: 0;
 }
 
-.link {
+#wrapper #container #main #visit .page #front .show .link {
   display: inline-flex;
   border-radius: 20px;
   align-items: center;
@@ -627,12 +633,12 @@ body,
   padding: 10px;
 }
 
-#input,
-#match {
+#wrapper #container #main #top #arm #search #input,
+#wrapper #container #main #top #arm #search #match {
   z-index: 2;
 }
 
-#input {
+#wrapper #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: none;
@@ -640,7 +646,7 @@ body,
   top: .4em;
 }
 
-#input input[type=text] {
+#wrapper #container #main #top #arm #search #input input[type=text] {
   -webkit-appearance: none;
   caret-color: transparent;
   text-align: center;
@@ -657,7 +663,7 @@ body,
   top: 11px;
 }
 
-#match {
+#wrapper #container #main #top #arm #search #match {
   width: fit-content;
   position: relative;
   margin: 0 auto;
@@ -738,19 +744,6 @@ input[type=submit] {
   display: block;
 }
 
-.page .left,
-.page .right {
-  top: 55px;
-}
-
-.page .left {
-  left: -24px;
-}
-
-.page .right {
-  right: -24px;
-}
-
 .right {
   justify-content: center;
   align-items: center;
@@ -807,7 +800,7 @@ input[type=submit] {
   left: 0;
 }
 
-courtesy a {
+.courtesy a {
   background-color: transparent;
 }
 
@@ -829,13 +822,13 @@ courtesy a {
   margin-left: 10px;
 }
 
-.sticky {
+#wrapper #container #guide .sticky {
   align-items: center;
   position: relative;
   display: none;
 }
 
-.sticky .item {
+#wrapper #container #guide .sticky .item {
   display: table-cell !important;
   box-shadow: none !important;
   border: none !important;
@@ -843,14 +836,14 @@ courtesy a {
   margin: 0;
 }
 
-.sticky .wrap {
+#wrapper #container #guide .sticky .wrap {
   display: table-cell !important;
   vertical-align: top;
   width: 300px;
   height: 100%;
 }
 
-.sticky .pub {
+#wrapper #container #guide .sticky .pub {
   background-color: transparent;
   height: calc(100% - 100px);
   font-size: 13px;
@@ -858,14 +851,14 @@ courtesy a {
   width: 300px;
 }
 
-.sticky .ago {
+#wrapper #container #guide .sticky .ago {
   position: absolute;
   width: 300px;
   bottom: 40px;
   margin: 5px;
 }
 
-.sticky .tag {
+#wrapper #container #guide .sticky .tag {
   position: absolute;
   width: 320px;
   bottom: 0;
@@ -970,25 +963,25 @@ courtesy a {
   width: 100%;
 }
 
-.img,
-.image {
+.item .img,
+.item .image {
   background-color: transparent;
   position: relative;
   margin: 0 auto;
 }
 
-.img {
+.item .img {
   max-width: 100%;
   max-height: 90vh;
   margin: 0 auto;
 }
 
-.image {
+.item .image {
   right: 0;
   left: 0;
 }
 
-.more {
+.item .pub .more {
   background-color: transparent;
   display: inline-block;
   padding-bottom: 10px;
@@ -998,12 +991,6 @@ courtesy a {
   padding-top: 5px;
   font-size: 13px;
   color: #aaa;
-}
-
-
-.external {
-  position: relative;
-  left: 12px;
 }
 
 .post {
@@ -1061,9 +1048,11 @@ courtesy a {
 .external {
   text-transform: lowercase;
   padding-bottom: 10px;
+  position: relative;
   margin-left: 10px;
   font-size: 10;
   width: 98%;
+  left: 12px;
 }
 
 .ago {
