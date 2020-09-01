@@ -437,7 +437,7 @@ body,
 
 #wrapper #container #main #visit .page #front #first .listing {
   background-color: transparent;
-  height: calc(27em - 3px);
+  height: calc(27.2em);
   border-radius: 4px;
   position: relative;
   padding-top: 12px;
@@ -1317,7 +1317,7 @@ input[type=submit] {
 
 #wrapper #container #main #top #arm #search #match .listing .background,
 #wrapper #container #main #visit .page #front #first .listing .background {
-  height: calc(27em - 5px);
+  height: calc(27.2em - 2px);
   width: calc(100% - 1px);
   position: absolute;
   z-index: -1;
@@ -1326,7 +1326,7 @@ input[type=submit] {
 
 #wrapper #container #main #top #arm #search #match .listing {
   background-color: transparent;
-  height: calc(27em -  3px);
+  height: calc(27.2em);
   position: relative;
   padding-top: 12px;
   text-align: left;
