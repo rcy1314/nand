@@ -1344,14 +1344,14 @@ input[type=submit] {
 #wrapper #container #main #top #arm #search #match .listing .index,
 #wrapper #container #main #visit .page #front #first .listing .index {
   border-bottom: none !important;
-  width: calc(100% - 14px);
+  width: calc(100% - 16px);
   padding-bottom: 12px;
   position: relative;
   padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
   height: 3em;
-  margin: 1px;
+  margin: 2px;
 }
 
 .contrast.hover {
@@ -1377,11 +1377,11 @@ input[type=submit] {
 #wrapper #container #main #top #arm #search #match .listing .hover,
 #wrapper #container #main #visit .page #front #first .listing .hover {
   border-bottom: none !important;
-  width: calc(100% - 14px);
+  width: calc(100% - 16px);
   padding-bottom: 12px;
   padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
   height: 3em;
-  margin: 1px;
+  margin: 2px;
 }
