@@ -21,8 +21,8 @@ var visual = function(n) {
       '--loader-color-secondary': '#e86d8a'
     })
     $('.link, .page .asset, .right, .left').addClass('oppositeOverBorderless').removeClass('invertOverBorderless')
+    $('.filter, .populate, .background').removeClass('invertOverBorderless').css('border','.3px solid #0e0e0e')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
-    $('.filter, .populate').removeClass('invertOverBorderless').css('border','.3px solid #0e0e0e')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
     $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
     $('.item, .filter, .populate').addClass('oppositeOver').removeClass('invertOver')

@@ -28,14 +28,13 @@ $(document)
   .on('touch click', '.page .link', function(e) {
     nextAngle += 180
     if (nextAngle >= 360) nextAngle = 0
-   if ($(this).hasClass('invisible'))
-      $(this).addClass('visible').removeClass('invisible').find('.fa-angle-up')
-        .animateRotate(nextAngle, 250, 'swing', $('.page .quick')
-        .css('visibility','visible').fadeTo(150, 100))
-    else
-      $(this).addClass('invisible').removeClass('visible').find('.fa-angle-up')
-      .animateRotate(nextAngle, 250, 'swing', $('.page .quick')
-      .css('visibility','hidden').fadeTo(150, 0))
+    if ($('.page .quick').hasClass('invisible')) {
+      $('.page .quick').addClass('visible').removeClass('invisible')
+      $('.fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+    } else {
+      $('.page .quick').addClass('invisible').removeClass('visible')
+      $('.fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+    }
   })
   .on('touch click', '#arm #home', function(e) {
     var uri = window.location.origin

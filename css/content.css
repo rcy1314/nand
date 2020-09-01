@@ -417,11 +417,6 @@ body,
   visibility: hidden;
 }
 
-#wrapper #container #main #visit .page #front .quick {
-  visibility: hidden;
-  opacity: 0;
-}
-
 #wrapper #container #main #visit .page #front .quick .feed {
   position: relative;
   top: 15px;
@@ -1322,7 +1317,7 @@ input[type=submit] {
 #wrapper #container #main #top #arm #search #match .listing .background,
 #wrapper #container #main #visit .page #front #first .listing .background {
   height: calc(27em - 5px);
-  width: calc(100% - 2px);
+  width: calc(100% - 1px);
   position: absolute;
   z-index: -1;
   top: 12px;
