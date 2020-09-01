@@ -220,10 +220,10 @@
 The loaders use CSS custom properties (variables) to control the attributes of the loaders
 */
 :root{
-	--loader-width: 70px;
-	--loader-height: 70px;
-	--line-width: 3px;
-	--animation-duration: 5s;
+	--loader-width: 30px;
+	--loader-height: 30px;
+	--line-width: 2px;
+	--animation-duration: 7s;
 	--loader-initial-scale: 0.1;
 }
 .loader,.loader:before,.loader:after{
@@ -291,9 +291,9 @@ variables above and don't change anything in the actual loader code
 }
 
 .double-circle::after{
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-    top: 6px;
-    left: 6px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    top: 2px;
+    left: 2px;
     animation-direction: circle-outer;
 }
