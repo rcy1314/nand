@@ -243,8 +243,10 @@ $(document)
           img = $(this).attr('id')
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
-              if ($this.hasClass('image')) $this.attr('src').blank()
-              else $this.parents('.item').attr('ext').blank()
+              if (category == 'Social' &&
+                !$this.hasClass('default')) $this.attr('src').blank()
+              else if ($this.hasClass('default') ||
+                category != 'Social')$this.parents('.item').attr('ext').blank()
             tap = 0
           }, 325)
       } else {
