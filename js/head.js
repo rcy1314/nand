@@ -4738,6 +4738,17 @@ var menu = [
 
 	,
 	{
+		id: "PolishNews.co.uk",
+		cat: "World",
+		des: "Polish News Breaking News From Poland UK World.",
+		uri: "https://www.polishnews.co.uk/feed",
+		ext: "https://www.polishnews.co.uk",
+		img: "Polish",
+		hash: "pS"
+	}
+
+	,
+	{
 		id: "The Onion",
 		cat: "World",
 		des: "The Onion America's Finest News Source..",
