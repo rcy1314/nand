@@ -1257,19 +1257,19 @@ input[type=submit] {
 }
 
 .contrast:first-child:hover:before {
-  border-color: transparent transparent #222 transparent;
+  border-color: transparent transparent #222 transparent !important;
 }
 
 .contrast:first-child:hover:after {
-  border-color: transparent transparent #222 transparent;
+  border-color: transparent transparent #222 transparent !important;
 }
 
 .contrast:first-child:not(:hover):after {
-  border-color: transparent transparent #000 transparent;
+  border-color: transparent transparent #0e0e0e transparent !important;
 }
 
 .contrast:first-child:not(:hover):before {
-  border-color: transparent transparent #000 transparent;
+  border-color: transparent transparent #0e0e0e transparent !important;
 }
 
 #wrapper #container #main #top #arm #search #match .listing .index:first-child:before,
