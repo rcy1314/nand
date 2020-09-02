@@ -7,7 +7,7 @@ var dupe = []
 var mouseasset
 var filter = []
 var object = []
-var nextAngle = 0
+var nextAngle = 180
 var contrast = false
 var enableDrag = false
 var category = 'Social'
@@ -692,9 +692,7 @@ var xml = function(e, s, n) {
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
       } else if (
-          src.match(
-            /comments|default|feeds|fsdn|undefined|[^https?:\/\/]/
-          )
+          src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/)
         )
         src = ''
       if (src == '') courtesy = ''

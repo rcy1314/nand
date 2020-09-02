@@ -30,10 +30,10 @@ $(document)
     if (nextAngle >= 360) nextAngle = 0
     if ($('.page .quick').hasClass('invisible')) {
       $('.page .quick').addClass('visible').removeClass('invisible')
-      $('.fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('.page .link').animateRotate(nextAngle, 500, 'swing')
     } else {
       $('.page .quick').addClass('invisible').removeClass('visible')
-      $('.fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('.page .link').animateRotate(nextAngle, 500, 'swing')
     }
   })
   .on('touch click', '#arm #home', function(e) {
