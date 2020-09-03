@@ -9,7 +9,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
       i = -1
       $(document)
         .ready(function() {
-          $('#toggle, .show, .focus').css('visibility','visible')
+          $('#toggle, #label, .focus').css('visibility','visible')
             feed('page', 40)
       })
       visual()
@@ -33,7 +33,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-            $('#toggle .show, .focus').css('visibility','visible')
+            $('#toggle, .focus').css('visibility','visible')
             $('.fill').css('visibility','hidden')
             feed('page', 40)
         })
@@ -83,7 +83,8 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-        $('.fill').css('visibility','visible')
+      $('#label').remove()
+      $('.fill').css('visibility','visible')
 
   })
 
@@ -98,7 +99,7 @@ if (location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
 
-            $('#toggle, .show, .focus').css('visibility','visible')
+            $('#toggle, #label, .focus').css('visibility','visible')
             feed('page', 40)
 
         })

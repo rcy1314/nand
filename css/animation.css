@@ -1,13 +1,13 @@
 .invisible {
   visibility: hidden;
   opacity: 0;
-  transition: .5s;
+  transition: .25s;
 }
 
 .visible {
   visibility: visible;
   opacity: 100;
-  transition: .5s;
+  transition: .25s;
 }
 
 .mask {

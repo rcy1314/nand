@@ -557,25 +557,25 @@ body,
   top: 10px;
 }
 
-#wrapper #container #main #visit .page #front .show {
+#wrapper #container #main #visit .page #front #label .show {
   display: inline-block;
-  visibility: hidden;
   position: absolute;
   margin-right: auto;
   margin-left: auto;
   margin-top: 35px;
+  right: 80px;
   z-index: 2;
-  right: 0;
   left: 0;
 }
 
-#wrapper #container #main #visit .page #front .show .link {
+#wrapper #container #main #visit .page #front #label .link {
   transform: rotate(180deg);
   display: inline-flex;
   border-radius: 20px;
   align-items: center;
-  position: relative;
+  position: absolute;
   margin-left: 10px;
+  margin-top: 30px;
   padding: 10px;
   height: 10px;
   width: 10px;

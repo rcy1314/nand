@@ -4,46 +4,54 @@ $(document)
     $('input[type=text]').attr('tabindex', -1).focus()
   })
   .on('touch click', 'a', function(e) {
-    if ($(this).attr('ext'))
-    $(this).attr('ext').blank()
+    if ($(this).attr('ext')) $(this).attr('ext').blank()
     e.stopPropagation()
   })
-  .on('touch click', '#arm, #option, #main, #visit, #container', function(e) {
-    if (!$('#arm #search input[type=text]').is(':focus')) {
-      $('#arm #search #input .icon').removeClass('slide')
-      $('#arm #search #match').hide()
-    }
-    if (!$('#main #visit .page #front input[type=text]').is(':focus')) {
-      $('#main #visit .page #front #first').css('visibility','hidden')
-      if ($('#main #visit .page #front input[type=text]').val().length == 0 ||
+  .on('touch click',
+    '#wrapper #container, ' +
+    '#wrapper #container #main, ' +
+    '#wrapper #container #main #visit, ' +
+    '#wrapper #container #main #top #arm, ' +
+    '#wrapper #container #main #top #option',
+    function(e) {
+      if (!$('#arm #search input[type=text]').is(':focus')) {
+        $('#arm #search #input .icon').removeClass('slide')
+        $('#arm #search #match').hide()
+      }
+      if (!$('#main #visit .page #front input[type=text]').is(':focus')) {
+        $('#main #visit .page #front #first').css('visibility','hidden')
+        if ($('#main #visit .page #front input[type=text]').val().length == 0 ||
           $('#main #visit .page #front input[type=text]').val() == 'Search')
-      $('#main #visit .page #front .icon').removeClass('search')
-    }
+        $('#main #visit .page #front .icon').removeClass('search')
+      }
    })
-  .on('touch click', '#main #visit #placeholder', function(e) {
-    filter = []
-    var uri = '?q=' + category.toLowerCase()
-    uri.define().exit()
+  .on('touch click', '#wrapper #container #main #visit .page #front .link',
+    function(e) {
+      nextAngle += 180
+      if (nextAngle >= 360) nextAngle = 0
+      if ($('#main #visit .page #front .quick').hasClass('invisible')) {
+        $('#main #visit .page #front .quick')
+          .addClass('visible').removeClass('invisible')
+        $('#main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('#main #visit .page #front .show')
+          .removeClass('visible').addClass('invisible')
+      } else {
+        $('#main #visit .page #front .quick')
+          .addClass('invisible').removeClass('visible')
+        $('#main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('#main #visit .page #front .show')
+          .removeClass('invisible').addClass('visible')
+      }
   })
-  .on('touch click', '.page .link', function(e) {
-    nextAngle += 180
-    if (nextAngle >= 360) nextAngle = 0
-    if ($('.page .quick').hasClass('invisible')) {
-      $('.page .quick').addClass('visible').removeClass('invisible')
-      $('.page .link').animateRotate(nextAngle, 500, 'swing')
-    } else {
-      $('.page .quick').addClass('invisible').removeClass('visible')
-      $('.page .link').animateRotate(nextAngle, 500, 'swing')
-    }
+  .on('touch click', '#wrapper #container #main #top #arm #search #home',
+    function(e) {
+      var uri = window.location.origin
+      if (contrast == true && !location.href.match('\\+1')) uri = uri + '?+1'
+      else if (contrast == true) uri = uri + '?+1'
+      uri.exit()
+      e.preventDefault()
   })
-  .on('touch click', '#arm #home', function(e) {
-    var uri = window.location.origin
-    if (contrast == true && !location.href.match('\\+1')) uri = uri + '?+1'
-    else if (contrast == true) uri = uri + '?+1'
-    uri.exit()
-    e.preventDefault()
-  })
-  .on('touch click', '#container #toggle', function(e) {
+  .on('touch click', '#wrapper #container #toggle', function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '?+1'
       contrast = contrast != true
@@ -63,11 +71,13 @@ $(document)
     uri.state()
     visual()
   })
-  .on('touch click', '#option .fa-home', function(e) {
+  .on('touch click', '#wrapper #container #main #top #arm #option .fa-home',
+  function(e) {
     var uri = '?q=' + category.toLowerCase()
     uri.define().exit()
   })
-  .on('touch click', '#option .fa-sun', function(e) {
+  .on('touch click', '#wrapper #container main #top #arm #option .fa-sun',
+  function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '+1'
       contrast = contrast != true
@@ -84,14 +94,16 @@ $(document)
     uri.state()
     visual()
   })
-  .on('touch click', '#option .fa-code', function(e) {
+  .on('touch click', '#wrapper #container #main #top #arm #option .fa-code',
+  function(e) {
     var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
       .replace(/\s|\.|\//g, '-')
     uri.define().state()
     return false
   })
-  .on('touch click', '#option .fa-terminal', function(e) {
+  .on('touch click', '#wrapper #container #main #top #arm #option .fa-terminal',
+  function(e) {
     var array = []
     for (i = 1; i <= menu.length - 1; i++) {
       if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
@@ -102,12 +114,15 @@ $(document)
     uri.define().exit()
     return false
   })
-  .on('touch click', '#main .translation .select', function(e) {
+  .on('touch click', '#wrapper #container #main .translation .select',
+  function(e) {
     var uri = '?q=' + $(this).attr('response').toLowerCase()
     uri.define().exit()
   })
   .on('touch click mouseenter mouseleave',
-    '.air .filter, .result .filter, .air .populate, .result .populate',
+    '#wrapper #container #main .group .air .populate, ' +
+    '#wrapper #container #main .group .result .filter, ' +
+    '#wrapper #container #main .group .result .populate',
     function(e) {
       if (op == 0 && e.type == 'mouseenter')
         $(this).toggleClass('overlay')
@@ -128,13 +143,15 @@ $(document)
         uri.define().exit()
       }
     })
-  .on('touch click', '#main .center .channel .item', function(e) {
+  .on('touch click', '#wrapper #container #main .center .channel .item',
+  function(e) {
     $(this).attr('ext').blank()
     e.stopPropagation()
   })
-  .on('touch click', '#main .center .channel .item .header .fa-ellipsis-h, ' +
-      '#container .sticky .header .fa-ellipsis-h',
-     function(e) {
+  .on('touch click',
+    '#wrapper #container #main .center .channel .item .header .fa-ellipsis-h, ' +
+    '#wrapper #container .sticky .header .fa-ellipsis-h',
+    function(e) {
         $(this).parents('.item, .wrap').find('.url').select()
         document.execCommand('copy')
         $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
@@ -146,16 +163,18 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
-  .on('mousedown', '#main .feed .asset', function(e) {
+  .on('mousedown', '#wrapper #container #main .center .quick .feed .asset, ' +
+  '#wrapper #container #main #visit .page #front .quick .feed .asset',
+  function(e) {
       if (e.which == 1){
-        dragStartX = 0;
-        enableDrag = true;
-        dragStartX = e.pageX;
+        dragStartX = 0
+        enableDrag = true
+        dragStartX = e.pageX
         feed('page', 40)
         feed('center', 40)
-        tap = new Date().getTime();
+        tap = new Date().getTime()
         mouseasset = $(this).attr('response')
-        marginLeftStart = parseInt($(this).parents('.feed').scrollLeft());
+        marginLeftStart = parseInt($(this).parents('.feed').scrollLeft())
     if ($(this).parents('.feed').scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $(this).parents('.feed').find('.asset:first').empty()
@@ -163,44 +182,52 @@ $(document)
       $(this).unbind("mousemove")
       e.preventDefault();
   })
-  .on('mousemove', '#main .feed .asset', function(e) {
+  .on('mousemove', '#wrapper #container #main .center .quick .feed .asset, ' +
+  '#wrapper #container #main #visit .page #front .quick .feed .asset',
+  function(e) {
       if ($(this).parents('.feed').scrollLeft() > 0)
         $(this).parents('.quick').find('.left').show()
       else if ($(this).parents('.feed').scrollLeft() == 0)
         $(this).parents('.quick').find('.left').hide()
           if (enableDrag) {
-              var delta = e.pageX - dragStartX;
-              $(this).parents('.feed').scrollLeft(marginLeftStart - delta);
+              var delta = e.pageX - dragStartX
+              $(this).parents('.feed').scrollLeft(marginLeftStart - delta)
           }
-          $(this).unbind("mouseup");
-          e.preventDefault();
+          $(this).unbind("mouseup")
+          e.preventDefault()
   })
   .on('mouseup', document, function(e) {
         if (enableDrag)
-            enableDrag = false;
+            enableDrag = false
         else mouseasset = false
         if (((new Date().getTime()) - tap) < 150) {
-              enableDrag = false;
+              enableDrag = false
               if (mouseasset){
                   var uri = '?q=&' + mouseasset
                   uri.define().exit()
               }
           }
-          e.preventDefault();
+          e.preventDefault()
   })
-  .on('touchmove', '#main .page .quick .feed', function(e) {
+  .on('touchmove', '#wrapper #container #visit #main .page #front .quick .feed',
+  function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('#main .page .quick .feed .asset:first').remove()
   })
-  .on('touchmove', '#main .center .quick .feed', function(e) {
+  .on('touchmove', '#wrapper #container #main .center .quick .feed', function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('#main .center .quick .feed .asset:first').remove()
   })
-  .on('touch click', '#main .quick .right, #main .center .right, .fa-angle-double-right', function(e) {
+  .on('touch click',
+    '#wrapper #container #main .center .right, ' +
+    '#wrapper #container #main #visit .page #front .quick .right, ' +
+    '#wrapper #container #main .center .quick .fa-angle-double-right, ' +
+    '#wrapper #container #main #visit .page #front .quick .fa-angle-double-right',
+    function(e) {
       feed('page', 9)
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
@@ -212,7 +239,12 @@ $(document)
         if ($(this).parents('.quick').find('.feed')
           .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', '#main .page .quick .left, #main .center .left, .fa-angle-double-left', function(e) {
+  .on('touch click',
+  '#wrapper #container #main .center .quick .left, ' +
+    '#wrapper #container #main #visit .page #front .quick .left, ' +
+    '#wrapper #container #main .center .quick .fa-angle-double-left, ' +
+    '#wrapper #container #main #visit .page #front .quick .fa-angle-double-left',
+    function(e) {
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
             scrollLeft: leftPos - 892
@@ -224,18 +256,18 @@ $(document)
         }
         else $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', '#guide, #container .checkmark', function (e) {
+  .on('touch click', '#wrapper #container #guide, ' +
+    '#wrapper #container #guide .checkmark', function (e) {
       $('#main').removeClass('guide')
       $('#guide, #container .checkmark').fadeOut(250)
   })
   .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
-      function (e) {
-            $('#main').removeClass('guide')
-            $('#guide').hide()
+    function (e) {
+      $(this).attr('src').blank()
       e.stopPropagation()
-      visual()
     })
-  .on('touch click', '#main .center .channel .item .image .img', function(e) {
+  .on('touch click',
+    '#wrapper #container #main .center .channel .item .image .img', function(e) {
       if (tap == 0) {
           $this = $(this)
           // set first click
@@ -265,13 +297,18 @@ $(document)
       e.stopPropagation()
       visual()
   })
-  .on('touch click', '.tag .fa-heart-o, .tag .fa-gratipay',
-      function(e) {
+  .on('touch click',
+    '#wrapper #container #guide .sticky .tag .fa-gratipay',
+    '#wrapper #container #main .center .channel .item .tag .fa-heart-o',
+    function(e) {
         $(this).toggleClass('fa-heart-o fab fa-gratipay')
         e.stopPropagation()
         visual()
   })
-  .on('touch click', '.tag .fa-bookmark-o, .tag .fa-bookmark', function(e) {
+  .on('touch click',
+    '#wrapper #container #guide .sticky .tag .fa-bookmark-o, ' +
+    '#wrapper #container #main .center .channel .item .tag .fa-bookmark',
+    function(e) {
         $(this).parents('.item, .wrap').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark'))
@@ -280,7 +317,9 @@ $(document)
         e.stopPropagation()
         visual()
       })
-  .on('touch click', '.tag .fa-sticky-note-o, .tag .fa-sticky-note',
+  .on('touch click',
+    '#wrapper #container #guide .sticky .tag .fa-sticky-note-o, ' +
+    '#wrapper #container #guide .center .channel .item .tag .fa-sticky-note',
     function(e) {
       if (contrast == true)
         if (!$(this).parents('.item, .wrap').find('.share').val().match(/\+1/g))
@@ -299,7 +338,8 @@ $(document)
       e.stopPropagation()
       visual()
   })
-  .on('touch click', '#main .center .channel .item .pub .more', function(e) {
+  .on('touch click',
+    '#wrapper #container #main .center .channel .item .pub .more', function(e) {
       $(this).parent().html($(this).parent().attr('text'))
       $(this).parent().animate({
           width: '85%',
@@ -309,7 +349,9 @@ $(document)
       e.stopPropagation()
       $(this).hide()
   })
-  .on('submit', '#main .center .channel .item .classic .addComment', function(e) {
+  .on('submit',
+    '#wrapper #container #main .center .channel .item .classic .addComment',
+    function(e) {
       if ($(this).children('.comment').val() != '')
         item = $(this).parents('.item').attr('item')
       if ($('.' + item + ' .add').length >= 3)
@@ -322,19 +364,24 @@ $(document)
       $('.' + item + ' .addComment .comment').val('')
       e.preventDefault()
       visual()
-    })
-    .on('touch click', '#main .center .channel .item .post', function(e) {
+  })
+  .on('touch click', '#wrapper #container #main .center .channel .item .post',
+    function(e) {
       $(this).siblings('.comment').focus().submit()
       e.stopPropagation()
-    })
-    .on('touch click', '#main #bottom .previous, #main #bottom .next', function(e) {
+  })
+  .on('touch click',
+    '#wrapper #container #main .center #bottom .next, ' +
+    '#wrapper #container #main .center #bottom .previous',
+    function(e) {
       $('#main .center, #main .content, #main .translation').remove()
       var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
       response(true, false, uri, false)
       uri = '?q=&' + uri.replace(/\s/g, '-')
       uri.define().state()
   })
-  .on('touch click', '#main .center #bottom .bottom', function(e) {
+  .on('touch click', '#wrapper #container #main .center #bottom .bottom',
+    function(e) {
       $('#top, #main .center, #main .content, #main .translation').remove()
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
@@ -355,38 +402,50 @@ $(document)
             )
       }
     })
-  .on('touch click', '#main .suggestions .combine div', function(e) {
-      $('#main .center, #main .content, #main .translation').remove()
-      var uri = '?q=' + '&' + $(this).attr('response')
-      response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
-      uri.define().state()
+  .on('touch click',
+    '#wrapper #container #main .content .suggestions .combine div', function(e) {
+       $('#main .center, #main .content, #main .translation').remove()
+       var uri = '?q=' + '&' + $(this).attr('response')
+       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
+       uri.define().state()
   })
-  .on('touch click', '#main .content .stats .asset', function(e) {
-      $('#main .center, #main .content, #main .translation').remove()
-      var uri = '?q=' + '&' + $(this).parents('.asset').attr('response')
-      response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
-      uri.define().state()
+  .on('touch click',
+    '#wrapper #container #main .content .stats .asset', function(e) {
+       $('#main .center, #main .content, #main .translation').remove()
+       var uri = '?q=' + '&' + $(this).parents('.asset').attr('response')
+       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
+       uri.define().state()
   })
   .on('mouseenter',
-      '#main #visit .page #front input[type=text], .button', function(e) {
+    '#wrapper #container #main #visit .page #front .focus .button, ' +
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
       if (op == 0)
           $('.focus').removeClass('pageInputOut').addClass('pageInput')
   })
   .on('mouseleave',
-      '#main #visit .page #front input[type=text], .button', function(e) {
+    '#wrapper #container #main #visit .page #front .focus .button, ' +
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
       if (op == 0)
           $('.focus').removeClass('pageInput').addClass('pageInputOut')
   })
-  .on('touch click', '#main #visit .page #front .icon', function(e) {
+  .on('touch click',
+    '#wrapper #container #main #visit .page #front .focus .icon', function(e) {
       $('#main #visit .page #front input[type=text]').focus()
   })
-  .on('touch click', '#main #visit .page #front .buttonSearch', function(e) {
+  .on('touch click',
+    '#wrapper #container #main #visit .page #front .focus .button .buttonSearch',
+    function(e) {
       if ($('#main #visit .page #front input[type=text]').val().length > 0 &&
           $('#main #visit .page #front input[type=text]').val() != 'Search')
         $('#main #visit .page #front').submit()
       e.preventDefault()
   })
-  .on('touch click', '#arm #search #input .icon', function(e) {
+  .on('touch click',
+    '#wrapper #container #top #arm #search #input .icon, ' +
+    '#wrapper #container #top #arm #search #input .icon .fa-search',
+    function(e) {
       $(this).addClass('slide')
       $('#arm #search #input input[type=text]').val('')
       .css({
@@ -395,58 +454,62 @@ $(document)
         'text-align': 'left',
       }).focus()
   })
-  .on('keyup', '#main #visit .page input[type=text]', function(e) {
-       $('#main #visit .page #front #first').css('visibility','visible')
-       $('#main #visit .page #front #first .listing').css('z-index', '3')
-       var keyup = $(this).val()
-       if (e.type == 'keyup' && e.keyCode == 13)
-         return false
-       else if (e.type == 'keyup' && $(this).val()
-         .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
-         list('visit', $(this).val())
-       else if ($(this).val().length >= 2 && e.keyCode == 8)
-         list('visit', $(this).val())
-       else if ($(this).val().length <= 2 && e.keyCode == 8) {
-         $('#main #visit .page #front #first').css('visibility','hidden')
-         $('#main .result, #main .air, #main .center, #main .suggestions').show()
-       } else if (e.keyCode == 40 || e.keyCode == 34) {
-         if (!$('#main #visit .page #front #first .listing .hover').length)
-           $('#main #visit .page #front #first .listing .index:first')
-             .addClass('hover')
-             .removeClass('index')
-         else {
-           $('#main #visit .page #front #first .listing .hover')
-             .next().focus()
-             .removeClass('index').addClass('hover')
-           $(this).val(keyup)
-           $(this).attr('tabIndex', -1).focus()
-           $('#main #visit .page #front #first .listing .hover')
-             .prev().removeClass('hover').addClass('index')
-         }
-       } else if (e.keyCode == 38 || e.keyCode == 33) {
-         $('#main #visit .page #front #first .listing .hover')
-           .prev().focus()
-           .removeClass('index').addClass('hover')
-         $(this).val(keyup)
-         $(this).focus()
-         $('#main #visit .page #front #first .listing .hover')
-           .next().removeClass('hover').addClass('index')
-       } else if (e.keyCode == 27) {
-         $('#main #visit .page #front #first .listing').css('z-index', '0')
-         $('#main #visit .page #front #first').hide()
-         $(this)
-           .css({
-             'caret-color': 'transparent',
-             'text-align': 'center',
-             'padding': '0'
-           })
+  .on('keyup',
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
+      $('#main #visit .page #front #first').css('visibility','visible')
+      $('#main #visit .page #front #first .listing').css('z-index', '3')
+      var keyup = $(this).val()
+      if (e.type == 'keyup' && e.keyCode == 13)
+       return false
+      else if (e.type == 'keyup' && $(this).val()
+       .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
+       list('visit', $(this).val())
+      else if ($(this).val().length >= 2 && e.keyCode == 8)
+       list('visit', $(this).val())
+      else if ($(this).val().length <= 2 && e.keyCode == 8) {
+       $('#main #visit .page #front #first').css('visibility','hidden')
+       $('#main .result, #main .air, #main .center, #main .suggestions').show()
+      } else if (e.keyCode == 40 || e.keyCode == 34) {
+        if (!$('#main #visit .page #front #first .listing .hover').length)
+          $('#main #visit .page #front #first .listing .index:first')
+            .addClass('hover')
+            .removeClass('index')
+        else {
+          $('#main #visit .page #front #first .listing .hover')
+            .next().focus()
+            .removeClass('index').addClass('hover')
+          $(this).val(keyup)
+          $(this).attr('tabIndex', -1).focus()
+          $('#main #visit .page #front #first .listing .hover')
+            .prev().removeClass('hover').addClass('index')
+        }
+      } else if (e.keyCode == 38 || e.keyCode == 33) {
+        $('#main #visit .page #front #first .listing .hover')
+          .prev().focus()
+          .removeClass('index').addClass('hover')
+        $(this).val(keyup)
+        $(this).focus()
+        $('#main #visit .page #front #first .listing .hover')
+          .next().removeClass('hover').addClass('index')
+      } else if (e.keyCode == 27) {
+        $('#main #visit .page #front #first .listing').css('z-index', '0')
+        $('#main #visit .page #front #first').hide()
+        $(this)
+          .css({
+            'caret-color': 'transparent',
+            'text-align': 'center',
+            'padding': '0'
+          })
            .val('Search')
            .siblings('.icon')
            .removeClass('slide')
-       }
-       visual()
+      }
+    visual()
   })
-  .on('touch click', '#main #visit .page #front input[type=text]', function(e) {
+  .on('touch click',
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
       $('#main #visit .page #front #first .listing').css('z-index', '3')
       $('#main #visit .page #front #first').css('visibility', 'visible')
       $('#main #visit .page #front #first .listing').empty()
@@ -474,7 +537,9 @@ $(document)
         $('#main #visit .page #front .icon').addClass('search')
       visual()
   })
-  .on('focusin', '#main #visit .page #front input[type=text]', function(e) {
+  .on('focusin',
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
@@ -483,7 +548,9 @@ $(document)
         })
         $('#main #visit .page #front .icon').addClass('search')
   })
-  .on('focusout blur', '#main #visit .page #front input[type=text]', function(e) {
+  .on('focusout blur',
+    '#wrapper #container #main #visit .page #front .focus input[type=text]',
+    function(e) {
       if ($(this).val().length == 0)
       $(this).css({
           'caret-color': 'transparent',
@@ -492,7 +559,8 @@ $(document)
         })
         .val('Search')
   })
-  .on('keyup', '#arm #search input[type=text]', function(e) {
+  .on('keyup', '#wrapper #container #top #arm #search #input input[type=text]',
+    function(e) {
       if ($(this).val() != 'Search') var keyup = $(this).val()
       if (e.keyCode == 13) {
         $('#arm #search #match').hide()
@@ -542,36 +610,40 @@ $(document)
       }
       visual()
   })
-  .on('touch click', '#arm #search input[type=text]', function(e) {
-        $('#arm #search #match').show()
-        $('#arm #search #match .listing').empty()
-        $.each(translations, function(i) {
-          $('#arm #search #match .listing')
-            .append(
-              "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
-              "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-              "  <div class='radial'></div>" +
-              "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
-              "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-              "    <br>&emsp;" + translations[i].grep() + " feeds" +
-              "  </div>" +
-              "  </div>" +
-              "</div>")
-        })
+  .on('touch click',
+    '#wrapper #container #top #arm #search #input input[type=text]',
+    function(e) {
+      $('#arm #search #match').show()
+      $('#arm #search #match .listing').empty()
+      $.each(translations, function(i) {
         $('#arm #search #match .listing')
-          .append("<div class='background'></div>")
-        $(this).val('')
-        $this = $(this)
-            $this.css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left',
-            })
-          $('#arm #search #input .icon').addClass('slide')
+          .append(
+            "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+            "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
+            "  <div class='radial'></div>" +
+            "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
+            "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+            "    <br>&emsp;" + translations[i].grep() + " feeds" +
+            "  </div>" +
+            "  </div>" +
+            "</div>")
+      })
+      $('#arm #search #match .listing')
+        .append("<div class='background'></div>")
+      $(this).val('')
+      $this = $(this)
+          $this.css({
+            'caret-color': '#e4e4e4',
+            'padding-left': '30px',
+            'text-align': 'left',
+          })
+        $('#arm #search #input .icon').addClass('slide')
       visual()
   })
-  .on('focusout blur', '#arm #search input[type=text]', function(e) {
-    $this = $(this)
+  .on('focusout blur',
+    '#wrapper #container #top #arm #search #input input[type=text]',
+    function(e) {
+      $this = $(this)
         if ($('#arm #search #input .icon').hasClass('slide'))
           $(this)
             .css({
@@ -592,14 +664,16 @@ $(document)
         }
         return false
   })
-  .on('focusout blur', '#arm #search input[type=text]', function(e) {
-    $(this).css({
-      'caret-color': 'transparent',
-      'text-align': 'center',
-      'padding': '0'
-    }).val('Search')
+  .on('focusout blur',
+    '#wrapper #container #top #arm #search #input input[type=text]',
+    function(e) {
+      $(this).css({
+        'caret-color': 'transparent',
+        'text-align': 'center',
+        'padding': '0'
+      }).val('Search')
   })
-  .on('submit', '#arm #search', function(e) {
+  .on('submit', '#wrapper #container #top #arm #search', function(e) {
     $('#main .air, #main .result, #main .center, #main .content, #main .translation').remove()
     $('#arm #search #match').hide()
     if ($('#arm #search .listing .hover').length) {
@@ -622,8 +696,6 @@ $(document)
         .attr('response')
         .toLowerCase()
         uri.define().exit()
-        document.title = $('#arm #search #match .listing .hover')
-          .attr('response')
       }
     } else {
       if ($('#arm #search input[type=text]').val().length) {
@@ -637,8 +709,9 @@ $(document)
     e.preventDefault()
     visual()
   })
-  .on('submit', '#main #visit #front', function(e) {
-    $('#main #visit .page #front .icon, #main .page #visit .button').css('visibility','hidden')
+  .on('submit', '#wrapper #container #main #visit .page #front', function(e) {
+    $('#main #visit .page #front .icon, #main #visit .page .button')
+      .css('visibility','hidden')
     if ($('#main #visit .page #front #first .listing .hover').length) {
         var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
           .attr('response')
@@ -651,28 +724,40 @@ $(document)
     }
     e.preventDefault()
   })
-  .on('mouseenter', '.index, .hover', function(e) {
-    $('#arm #search #match .listing .hover, ' +
-      '#main #visit .page #front #first .listing .hover')
-        .attr('class', 'index')
-    if (op == 0) $(this).addClass('hover contrast.hover')
-    else $(this).addClass('hover visual.hover')
+  .on('mouseenter',
+    '#wrapper #container #main #visit .page #front #first .index, ' +
+    '#wrapper #container #main #visit .page #front #first .hover, ' +
+    '#wrapper #container #main #top #arm #search #match .listing .index, ' +
+    '#wrapper #container #main #top #arm #search #match .listing .hover',
+    function(e) {
+      $('#arm #search #match .listing .hover, ' +
+        '#main #visit .page #front #first .listing .hover')
+          .attr('class', 'index')
+      if (op == 0) $(this).addClass('hover contrast.hover')
+      else $(this).addClass('hover visual.hover')
   })
-  .on('mouseleave', '.index, .hover', function(e) {
-    if (op == 1) $('#arm #search #match .listing .hover, ' +
-      '#main #visit .page #front #first .listing .hover')
-        .attr('class', 'index contrast')
-    else $('#arm #search #match .listing .hover, ' +
-      '#main #visit .page #front #first .listing .hover')
-        .attr('class','index visual')
+  .on('mouseleave',
+  '#wrapper #container #main #visit .page #front #first .index, ' +
+  '#wrapper #container #main #visit .page #front #first .hover, ' +
+  '#wrapper #container #main #top #arm #search #match .listing .index, ' +
+  '#wrapper #container #main #top #arm #search #match .listing .hover',
+    function(e) {
+      if (op == 1) $('#arm #search #match .listing .hover, ' +
+        '#main #visit .page #front #first .listing .hover')
+          .attr('class', 'index contrast')
+      else $('#arm #search #match .listing .hover, ' +
+        '#main #visit .page #front #first .listing .hover')
+          .attr('class','index visual')
   })
-  .on('touch click', '.index, .hover', function(e) {
-    $('#main .result, #main .air, #main .translation, #main .center, #main .content').remove()
-    category = $(this).attr('response')
-    uri = '?q=' + $(this).attr('response')
-    document.title = category.capitalize()
-    uri.define().exit()
-    progress(true, 100)
-    visual()
-    e.preventDefault()
+  .on('touch click',
+  '#wrapper #container #main #visit .page #front #first .index, ' +
+  '#wrapper #container #main #visit .page #front #first .hover, ' +
+  '#wrapper #container #main #top #arm #search #match .listing .index, ' +
+  '#wrapper #container #main #top #arm #search #match .listing .hover',
+    function(e) {
+      $('#main .result, #main .air, #main .translation, #main .center, #main .content').remove()
+      category = $(this).attr('response')
+      uri = '?q=' + $(this).attr('response')
+      document.title = category.capitalize()
+      uri.define().exit()
   })
