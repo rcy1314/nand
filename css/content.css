@@ -1156,7 +1156,7 @@ input[type=submit] {
   top: 65px;
 }
 
-#wrapper #container #main .content .stats {
+#wrapper #container #main .content .status {
   align-items: center;
   margin-bottom: 25px;
   position: relative;
@@ -1168,13 +1168,13 @@ input[type=submit] {
   top: 4px;
 }
 
-#wrapper #container #main .content .stats .info,
-#wrapper #container #main .content .stats .asset {
+#wrapper #container #main .content .status .info,
+#wrapper #container #main .content .status .asset {
   position: relative;
   top: -5px;
 }
 
-#wrapper #container #main .content .stats .asset .radial {
+#wrapper #container #main .content .status .asset .radial {
   border-radius: 36px;
   position: absolute;
   height: 55px;
@@ -1183,7 +1183,7 @@ input[type=submit] {
   top: 10px;
 }
 
-#wrapper #container #main .content .stats img {
+#wrapper #container #main .content .status img {
   position: relative;
   width: 53.5px;
   height: 53px;

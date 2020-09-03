@@ -76,7 +76,7 @@ $(document)
     var uri = '?q=' + category.toLowerCase()
     uri.define().exit()
   })
-  .on('touch click', '#wrapper #container main #top #arm #option .fa-sun',
+  .on('touch click', '#wrapper #container #main #top #arm #option .fa-sun',
   function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '+1'
@@ -143,11 +143,6 @@ $(document)
         uri.define().exit()
       }
     })
-  .on('touch click', '#wrapper #container #main .center .channel .item',
-  function(e) {
-    $(this).attr('ext').blank()
-    e.stopPropagation()
-  })
   .on('touch click',
     '#wrapper #container #main .center .channel .item .header .fa-ellipsis-h, ' +
     '#wrapper #container .sticky .header .fa-ellipsis-h',
@@ -264,6 +259,11 @@ $(document)
       $(this).attr('src').blank()
       e.stopPropagation()
     })
+  .on('touch click', '#wrapper #container #main .center .channel .item',
+    function(e) {
+      $(this).attr('ext').blank()
+      e.stopPropagation()
+  })
   .on('touch click',
     '#wrapper #container #main .center .channel .item .image .img', function(e) {
       if (tap == 0) {
@@ -297,7 +297,8 @@ $(document)
   })
   .on('touch click',
     '#wrapper #container #guide .sticky .tag .fa-gratipay',
-    '#wrapper #container #main .center .channel .item .tag .fa-heart-o',
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o, ' +
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-gratipay',
     function(e) {
         $(this).toggleClass('fa-heart-o fab fa-gratipay')
         e.stopPropagation()
@@ -305,7 +306,8 @@ $(document)
   })
   .on('touch click',
     '#wrapper #container #guide .sticky .tag .fa-bookmark-o, ' +
-    '#wrapper #container #main .center .channel .item .tag .fa-bookmark',
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark, ' +
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o',
     function(e) {
         $(this).parents('.item, .wrap').find('.source').select()
         document.execCommand('copy')
@@ -317,7 +319,8 @@ $(document)
       })
   .on('touch click',
     '#wrapper #container #guide .sticky .tag .fa-sticky-note-o, ' +
-    '#wrapper #container #guide .center .channel .item .tag .fa-sticky-note',
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note, ' +
+    '#wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note-o',
     function(e) {
       if (contrast == true)
         if (!$(this).parents('.item, .wrap').find('.share').val().match(/\+1/g))

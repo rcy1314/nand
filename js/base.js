@@ -15,12 +15,12 @@ var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations =
   ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
 
-var tag = "  <div class='tag' style='display:none'>" +
-          "    <div class='images fa-heart-o'></div>" +
-          "    <div class='images fa-comment-o'></div>" +
-          "    <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
-          "    <div class='images fa-bookmark-o' title='Copy Source'></div>" +
-          "  </div>"
+var tag = "<div class='tag' style='display:none'>" +
+          "  <div class='images fa-heart-o'></div>" +
+          "  <div class='images fa-comment-o'></div>" +
+          "  <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
+          "  <div class='images fa-bookmark-o' title='Copy Source'></div>" +
+          "</div>"
 
 var fill ="<div class='loader double-circle'></div>"
 
@@ -28,19 +28,49 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('#container, #top, #arm, #visit, .page, .classic, .item, .feed, .asset, .asset a, ' +
-      '.index, .filter, .populate, .result, .air, .blur, input[type=text], #main, .group, .background'
-    ).css({
-      'background-color': '#000',
-      'box-shadow': 'none',
-      'border': 'none',
-      'color': '#fff'
+    $('#wrapper #container, ' + '#wrapper #container #guide .blur, ' +
+      '#wrapper #container #main, ' + '#wrapper #container #main #top, ' +
+      '#wrapper #container #main #top #arm, ' + '#wrapper #container #main #visit, ' +
+      '#wrapper #container #main #visit .page, ' +
+      '#wrapper #container #main #visit .page #front .quick .feed, ' +
+      '#wrapper #container #main .center .channel .item .classic, ' +
+      '#wrapper #container #main .center .channel .item, ' +
+      '#wrapper #container #main #visit .page #front #first .listing .index, ' +
+      '#wrapper #container #main #top #arm #search #match .listing .index, ' +
+      '#wrapper #container #main .group, ' + '#wrapper #container #main .group .air, ' +
+      '#wrapper #container #main .group .air .populate, ' +
+      '#wrapper #container #main .group .result .filter, ' +
+      '#wrapper #container #main .group .result .populate, ' +
+      '#wrapper #container #main .group .result, ' +
+      '#wrapper #container #main #top #arm #search input[type=text], ' +
+      '#wrapper #container #main #visit .page #front .focus input[type=text], ' +
+      '#wrapper #container #main #top #arm #search #match .listing .background, ' +
+      '#wrapper #container #main #visit .page #front #first .listing .background, ' +
+      '#wrapper #container #main .status .asset, ' +
+      '#wrapper #container #main #visit .page #front .quick .feed .asset, ' +
+      '#wrapper #container #main .center .quick .feed, ' +
+      '#wrapper #container #main .center .quick .feed .asset a, ' +
+      '#wrapper #container #main .status .asset a, ' +
+      '#wrapper #container #main #visit .page #front .quick .feed .asset a').css({
+        'background-color': '#000',
+        'box-shadow': 'none',
+        'border': 'none',
+        'color': '#fff'
     })
-    $('#notification, #top, #arm, #home a, #arm #option, .page input[type=text], .right, .left, #guide'
-    ).css({
-      'background-color': '#0e0e0e',
-      'box-shadow': 'none',
-      'color': '#fff'
+    $(
+      '#wrapper #container #guide, ' + '#wrapper #container #main #top, ' +
+      '#wrapper #container #main #notification, ' +
+      '#wrapper #container #main #top #arm, ' +
+      '#wrapper #container #main #top #arm #search #home a, ' +
+      '#wrapper #container #main #top #arm #option, ' +
+      '#wrapper #container #main #visit .page #front .focus input[type=text], ' +
+      '#wrapper #container #main #visit .page #front .quick .right, ' +
+      '#wrapper #container #main #visit .page #front .quick .left, ' +
+      '#wrapper #container #main .center .quick .right, ' +
+      '#wrapper #container #main .center .quick .left').css({
+        'background-color': '#0e0e0e',
+        'box-shadow': 'none',
+        'color': '#fff'
     })
     $(':root').css({
       '--loader-color-primary': '#f7426C',
@@ -50,7 +80,7 @@ var visual = function(n) {
     $('.filter, .populate, .background').removeClass('invertOverBorderless').css('border','.3px solid #0e0e0e')
     $('.header .radial, .suggestions .radial').removeClass('suggestInvert').addClass('suggestOpposite')
     $('.detail .radial, .select .radial').removeClass('selectInvert').addClass('selectOpposite')
-    $('.feed .radial, .stats .radial').removeClass('feedInvert').addClass('feedOpposite')
+    $('.feed .radial, .status .radial').removeClass('feedInvert').addClass('feedOpposite')
     $('.item, .filter, .populate').addClass('oppositeOver').removeClass('invertOver')
     $('#progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('.focus').removeClass('pageinput pageInputOut').css('box-shadow','none')
@@ -64,19 +94,40 @@ var visual = function(n) {
     $('#home, .fas, .images, a').css('color','#fff')
     $('.hover').addClass('contrast.hover')
   } else if (op == 0) {
-    $('#container, #notification, #top, #arm, #option, .index, .item, .classic, .feed .asset, ' +
-      '.center .feed, .page input[type=text], .air, .result, .background, .group'
-    ).css({
-      'background-color': '#fff',
-      'border': 'none',
-      'color': '#666'
+    $('#wrapper #container, ' + '#wrapper #container #main #top, ' +
+      '#wrapper #container #main .group, ' + '#wrapper #container #main #top #arm, ' +
+      '#wrapper #container #main #notification, ' +
+      '#wrapper #container #main #top #arm #option, ' +
+      '#wrapper #container #main #visit .page #front #first .listing .index, ' +
+      '#wrapper #container #main #top #arm #search #match .listing .index, ' +
+      '#wrapper #container #main .center .channel .item .classic, ' +
+      '#wrapper #container #main .center .channel .item, ' +
+      '#wrapper #container #main .center .quick .feed, ' +
+      '#wrapper #container #main #visit .page #front .focus input[type=text], ' +
+      '#wrapper #container #main .group .air, ' +
+      '#wrapper #container #main .group .result, ' +
+      '#wrapper #container #main #visit .page #front #first .listing .background, ' +
+      '#wrapper #container #main #top #arm #search #match .listing .background').css({
+        'background-color': '#fff',
+        'border': 'none',
+        'color': '#666'
     })
-    $('#main, .hover, #visit, .page, .page .feed, .right, .left, .stats .asset, ' +
-      '.filter, .populate, .blur, #search input[type=text]'
-    ).css({
-      'background-color': '#f7f7f7',
-      'border': 'none',
-      'color': '#666'
+    $('#wrapper #container #main, ' + '#wrapper #container #main #visit, ' +
+      '#wrapper #container #guide .blur, ' +
+      '#wrapper #container #main #visit .page, ' +
+      '#wrapper #container #main #visit .page .quick .feed, ' +
+      '#wrapper #container #main #visit .page .quick .right, ' +
+      '#wrapper #container #main #visit .page .quick .left, ' +
+      '#wrapper #container #main .center .quick .right, ' +
+      '#wrapper #container #main .center .quick .left, ' +
+      '#wrapper #container #main .status .asset, ' +
+      '#wrapper #container #main .group .air .populate, ' +
+      '#wrapper #container #main .group .result .filter, ' +
+      '#wrapper #container #main .group .result .populate, ' +
+      '#wrapper #container #main #top #arm #search input[type=text]').css({
+        'background-color': '#f7f7f7',
+        'border': 'none',
+        'color': '#666'
     })
     $(':root').css({
       '--loader-color-primary': '#0078D4',
@@ -87,7 +138,7 @@ var visual = function(n) {
     $('#guide .wrap, .page input, .item, .right, .left, .page .id').css('box-shadow', '1px 1px 1px #eee')
     $('.header .radial, .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('.detail .radial, .select .radial').removeClass('selectOpposite').addClass('selectInvert')
-    $('.feed .radial, .stats .radial').removeClass('feedOpposite').addClass('feedInvert')
+    $('.feed .radial, .status .radial').removeClass('feedOpposite').addClass('feedInvert')
     $('#progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('.page .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('.select .type, .typeTranslation').css('filter','hue-rotate(0deg)')
@@ -105,12 +156,12 @@ var visual = function(n) {
 }
 
 var notify = function(n) {
-  $('#notification').show().html(n)
-    $('#notification').animate({
+  $('#wrapper #container #main #notification').show().html(n)
+    $('#wrapper #container #main #notification').animate({
       bottom: '0px'
       }, 1000)
   setTimeout(function () {
-    $('#notification').animate({
+    $('#wrapper #container #main #notification').animate({
       bottom: '-200px'
     }, 1000)
   }, 2000)
@@ -119,7 +170,7 @@ var notify = function(n) {
 var select = function(n) {
 
   $.each(translations, function(i) {
-  $('#main .translation')
+  $('#wrapper #container #main .translation')
     .append(
       "<div class='select' response='" + translations[i] + "'>" +
       "  <div class='radial'></div>" +
@@ -135,7 +186,7 @@ var select = function(n) {
 
 var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
-  $('#guide').empty().css('display','flex').append(
+  $('#wrapper #container #guide').empty().css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
     "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
     "  <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />" +
@@ -166,8 +217,8 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
 var content  = function(n, recent, oldest, posts) {
 
     var images = 0
-    $('#main .stats').append(
-      "<div class='asset' response='" + menu[n].id.response() + "'>" +
+    $('#wrapper #container #main .status').append(
+      "<div class='asset' response='" + menu[n].id.hyphen() + "'>" +
       "  <div class='radial'></div>" +
       "  <img src='" + menu[n].img.image() + "'" +
       "  class='id " + menu.indexOf(menu[n]) + "'>" +
@@ -188,8 +239,8 @@ var content  = function(n, recent, oldest, posts) {
 var list = function(e, n) {
 
   $('#arm #search #match .listing').empty()
-  $('#main #visit #front #first .listing').empty()
-  $('#main #visit #front #first .listing')
+  $('#wrapper #container #main #visit #front #first .listing').empty()
+  $('#wrapper #container #main #visit #front #first .listing')
     .append("<div class='background'></div>")
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
@@ -197,7 +248,7 @@ var list = function(e, n) {
       $('#' + e + ' .listing').prepend(
         "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
         "  tabIndex='-1'" +
-        "  response='" + menu[i].id.toLowerCase().response() + "'" +
+        "  response='" + menu[i].id.toLowerCase().hyphen() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
         "<div class='detail'>" +
         "<div class='radial'></div>" +
@@ -228,9 +279,9 @@ var feed  = function(l, n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
-        $('#main .' + l + ' .feed').append(
+        $('#wrapper #container #main .' + l + ' .feed').append(
           "<div class='asset' " +
-          "response='" + menu[e].id.response() + "'>" +
+          "response='" + menu[e].id.hyphen() + "'>" +
           "  <div class='radial'></div>" +
           "<img src='" + menu[e].img.image() + "' " +
           "  class='id " + menu.indexOf(menu[e]) + "'" +
@@ -258,12 +309,12 @@ var progress = function(complete, n) {
           $('.translation').css('visibility', 'visible')
           $('.content').css('visibility', 'visible')
           $('#top').css('visibility', 'visible')
-          $('#main .result').show()
-          $('#main .center').show()
-          $('#main #visit').hide()
-          $('#main .air').show()
-          $('#main').scrollTop($('.air').outerHeight())
-          $('#main').attr('tabindex', -1).focus()
+          $('#wrapper #container #main .result').show()
+          $('#wrapper #container #main .center').show()
+          $('#wrapper #container #main #visit').hide()
+          $('#wrapper #container #main .air').show()
+          $('#wrapper #container #main').scrollTop($('.air').outerHeight())
+          $('#wrapper #container #main').attr('tabindex', -1).focus()
         })
       visual()
     }
@@ -278,12 +329,12 @@ var suggest = function(n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
     if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
-      $('#main .suggestions').append(
+      $('#wrapper #container #main .suggestions').append(
         "<div class='combine'>" +
         "  <div class='radial'></div>" +
         "  <img src='" + menu[e].img.image() + "' " +
         "    class='id " + menu.indexOf(menu[n]) + "'>" +
-        "  <div response='" + menu[e].id.response() + "'" +
+        "  <div response='" + menu[e].id.hyphen() + "'" +
         "    search='" + menu[e].cat.toLowerCase() + "'>" +
              menu[e].id.match(/[^\/]+$/g) +
         "    <br>" + "<b>" + menu[e].cat + "</b>" +
@@ -299,8 +350,8 @@ var suggest = function(n) {
 var populate = function(n) {
 
     $(document).ready(function() {
-      if ($('#main .group').length < 1)
-      $('#main').append(
+      if ($('#wrapper #container #main .group').length < 1)
+      $('#wrapper #container #main').append(
         "<div class='group'>" +
         "  <div class='result' style='display:none'>" +
         "  </div>" +
@@ -308,9 +359,9 @@ var populate = function(n) {
       )
     for (var i = 1; i <= menu.length - 1; i++) {
       if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
-        $('#main .result').append(
+        $('#wrapper #container #main .result').append(
           "<div class='populate'" +
-          "  response='" + menu[i].id.response() + "'>" +
+          "  response='" + menu[i].id.hyphen() + "'>" +
           "  <div class='display'>" +
           "    <img class='id' src='" + menu[i].img.image() + "'> " +
           "  </div>" +
@@ -327,12 +378,12 @@ var populate = function(n) {
 
 var air = function(n) {
 
-  $('#main .result').before("<div class='air' style='display:none'></div>")
+  $('#wrapper #container #main .result').before("<div class='air' style='display:none'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
-      $('#main .air').append(
+      $('#wrapper #container #main .air').append(
         "<div class='populate'" +
-        "response='" + menu[i].id.response() + "'>" +
+        "response='" + menu[i].id.hyphen() + "'>" +
         "  <div class='display'>" +
         "  <img class='id' src='" + menu[i].img.image() + "'> " +
         "  </div>" +
@@ -356,9 +407,9 @@ var response = function(passthrough, uri, n, bloat) {
       progress(true, 100)
       return false
     }
-  $('#main #visit').show()
-  if (n) var n = n.toString().replace(/%20|\-|\_|\s|\+/g, ' ')
-  if (uri) uri = uri.replace(/%20|\-|\_|\s|\+/g, ' ')
+  $('#wrapper #container #main #visit').show()
+  if (n) var n = n.toString().space()
+  if (uri) uri = uri.toString().space()
   else uri = n
     for (var i = 1; i <= menu.length - 1; i++) {
       if (menu[i].hash == n) {
@@ -394,7 +445,7 @@ var response = function(passthrough, uri, n, bloat) {
     if (!id) id = filter[filter.length - 1]
     if (passthrough == false) {
       $(document).ready(function() {
-        $('#main').append(
+        $('#wrapper #container #main').append(
           "<div class='group'>" +
           "  <div class='result' style='display:none'>" +
           "  </div>" +
@@ -426,9 +477,9 @@ var response = function(passthrough, uri, n, bloat) {
 var write = function(n) {
 
   $(document).ready(function() {
-    $('#main .result').append(
+    $('#wrapper #container #main .group .result').append(
       "<div class='filter' " +
-      "response='" + menu[n].id.response() + "'>" +
+      "response='" + menu[n].id.hyphen() + "'>" +
       "  <div class='display'>" +
       "  <img class='id' src='" + menu[n].img.image() + "'> " +
       "  </div>" +
@@ -458,10 +509,10 @@ var image = function(empty, n, src) {
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
-      $('#main .stats .info .images').html(
-        parseInt($('#main .stats .info .images').text()) + 1
+      $('#wrapper #container #main .status .info .images').html(
+        parseInt($('#wrapper #container #main .status .info .images').text()) + 1
       )
-    if ($('#home').css('display') == 'none'){
+    if ($('#wrapper #container #main #top #arm #search #home').css('display') == 'none'){
       $('.sticky').show()
       if ($(this).get(0).naturalWidth > minimum) {
         $(this).width('100%')
@@ -474,7 +525,7 @@ var image = function(empty, n, src) {
            }).find('.header, .tag, .addComment').remove()
        }
       if ($(this).hasClass('guide')) {
-      $('#main').addClass('guide')
+      $('#wrapper #container #main').addClass('guide')
        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
@@ -487,7 +538,7 @@ var image = function(empty, n, src) {
     } else {
      if ($(this).hasClass('guide')) {
       $('.sticky, .checkmark').show()
-      $('#main').addClass('guide')
+      $('#wrapper #container #main').addClass('guide')
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).css('max-width', '80vh')
      } else if ($(this).get(0).naturalWidth < small) {
@@ -552,8 +603,8 @@ var xml = function(e, s, n) {
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
-  $('#main .group').remove()
-  document.title = menu[n].id.replace(/(\/|\.)/g, ' ').capitalize()
+  $('#wrapper #container #main .group').remove()
+  document.title = menu[n].id.space().capitalize()
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
     $('#progressBar').width($('#progressBar').width() +
@@ -570,7 +621,7 @@ var xml = function(e, s, n) {
       'X-Requested-With': '*'
     }
   }).fail(function() {
-    $('#main').append(
+    $('#wrapper #container #main').append(
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
       "    <div class='feed'></div>" +
@@ -580,7 +631,7 @@ var xml = function(e, s, n) {
       "  <div class='channel'></div>" +
       "</div>"
     )
-    $('#main .channel').html("This site could not be reached.")
+    $('#wrapper #container #main .channel').html("This site could not be reached.")
     clearInterval(complete)
     feed('center', 12)
     progress(true, 100)
@@ -804,7 +855,7 @@ var xml = function(e, s, n) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })
     })
-    $('#main').append(
+    $('#wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
@@ -817,7 +868,7 @@ var xml = function(e, s, n) {
       "  <div class='channel'></div>" +
       "</div>" +
       "<div class='content' style='visibility:hidden'>" +
-      "  <div class='stats'></div>" +
+      "  <div class='status'></div>" +
       "  <div class='suggestions'>" +
       "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
       "  </div>" +
@@ -841,17 +892,17 @@ var xml = function(e, s, n) {
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
-          $('#main .center .channel').append(pub[i].post)
+          $('#wrapper #container #main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
-          $('#main .center .channel').append(pub[i].post)
+          $('#wrapper #container #main .center .channel').append(pub[i].post)
         if (menu[n].id.match(/Imgur/g)) image(true, pub[i].element, pub[i].src)
         else image(false, pub[i].element, pub[i].src)
       })
 
-    var posts = $('#main .center .channel .item').length
+    var posts = $('#wrapper #container #main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = $('.item .ago:last').text()
-    if (e != 'search') $('#main .center').append(
+    if (e != 'search') $('#wrapper #container #main .center').append(
       "<div id='bottom'>" +
       "  <button class='back' index='" +
             menu.indexOf(menu[n.toString().back()]) + "  '>" +

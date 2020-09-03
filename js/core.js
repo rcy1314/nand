@@ -17,7 +17,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
 String.prototype.space = function() {
 
-  return this.toLowerCase().replace(/(\/|\.)/g, ' ')
+  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\./g, ' ')
 
 }
 
@@ -27,7 +27,7 @@ String.prototype.image = function() {
 
 }
 
-String.prototype.response = function() {
+String.prototype.hyphen = function() {
 
   return this.toLowerCase().replace(/\/|\.|\s/g, '-')
 
