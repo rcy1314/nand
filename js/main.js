@@ -14,32 +14,32 @@ $(document)
     '#wrapper #container #main #top #arm, ' +
     '#wrapper #container #main #top #option',
     function(e) {
-      if (!$('#arm #search input[type=text]').is(':focus')) {
-        $('#arm #search #input .icon').removeClass('slide')
-        $('#arm #search #match').hide()
+      if (!$('#wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
+        $('#wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
+        $('#wrapper #container #main #top #arm #search #match').hide()
       }
-      if (!$('#main #visit .page #front input[type=text]').is(':focus')) {
-        $('#main #visit .page #front #first').css('visibility','hidden')
-        if ($('#main #visit .page #front input[type=text]').val().length == 0 ||
-          $('#main #visit .page #front input[type=text]').val() == 'Search')
-        $('#main #visit .page #front .icon').removeClass('search')
+      if (!$('#wrapper #container #main #visit .page #front .focus input[type=text]').is(':focus')) {
+        $('#wrapper #container #main #visit .page #front #first').css('visibility','hidden')
+        if ($('#wrapper #container #main #visit .page #front .focus input[type=text]').val().length == 0 ||
+          $('#wrapper #container #main #visit .page #front .focus input[type=text]').val() == 'Search')
+        $('#wrapper #container #main #visit .page #front .focus .icon').removeClass('search')
       }
    })
   .on('touch click', '#wrapper #container #main #visit .page #front .link',
     function(e) {
       nextAngle += 180
       if (nextAngle >= 360) nextAngle = 0
-      if ($('#main #visit .page #front .quick').hasClass('invisible')) {
-        $('#main #visit .page #front .quick')
+      if ($('#wrapper #container #main #visit .page #front .quick').hasClass('invisible')) {
+        $('#wrapper #container #main #visit .page #front .quick')
           .addClass('visible').removeClass('invisible')
-        $('#main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
-        $('#main #visit .page #front .show')
+        $('#wrapper #container #main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('#wrapper #container #main #visit .page #front .show')
           .removeClass('visible').addClass('invisible')
       } else {
-        $('#main #visit .page #front .quick')
+        $('#wrapper #container #main #visit .page #front .quick')
           .addClass('invisible').removeClass('visible')
-        $('#main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
-        $('#main #visit .page #front .show')
+        $('#wrapper #container #main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('#wrapper #container #main #visit .page #front .show')
           .removeClass('invisible').addClass('visible')
       }
   })
@@ -66,7 +66,7 @@ $(document)
       op = op != true
     }
     setTimeout(function() {
-      $('input[type=text]').attr('tabindex', -1).focus()
+      $('#wrapper #container #main #visit .page .focus input[type=text]').attr('tabindex', -1).focus()
     }, 1000)
     uri.state()
     visual()
@@ -116,7 +116,7 @@ $(document)
   })
   .on('touch click', '#wrapper #container #main .translation .select',
   function(e) {
-    var uri = '?q=' + $(this).attr('response').toLowerCase()
+    var uri = '?q=&' + $(this).attr('response').toLowerCase()
     uri.define().exit()
   })
   .on('touch click mouseenter mouseleave',
@@ -156,9 +156,7 @@ $(document)
         document.execCommand('copy')
         $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
         setTimeout(function() {
-          $('#main .center .channel .item .copy, #guide .sticky .header .copy')
-            .removeClass('fa-ellipsis-v')
-            .addClass('fa-ellipsis-h')
+          $(this).removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
         }, 250)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
@@ -214,13 +212,13 @@ $(document)
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
-          $('#main .page .quick .feed .asset:first').remove()
+          $('#wrapper #container #main #visit .page #front .quick .feed .asset:first').remove()
   })
   .on('touchmove', '#wrapper #container #main .center .quick .feed', function(e) {
       feed('page', 40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
-          $('#main .center .quick .feed .asset:first').remove()
+          $('#wrapper #container #main .center .quick .feed .asset:first').remove()
   })
   .on('touch click',
     '#wrapper #container #main .center .right, ' +
@@ -258,7 +256,7 @@ $(document)
   })
   .on('touch click', '#wrapper #container #guide, ' +
     '#wrapper #container #guide .checkmark', function (e) {
-      $('#main').removeClass('guide')
+      $('#wrapper #container #main').removeClass('guide')
       $('#guide, #container .checkmark').fadeOut(250)
   })
   .on('touch click', '#wrapper #container #guide .sticky .item .image .img',
@@ -356,9 +354,8 @@ $(document)
         item = $(this).parents('.item').attr('item')
       if ($('.' + item + ' .add').length >= 3)
         $('.' + item + ' .add:last').remove()
-        $('.' + item + ' .pub:last').after("<div class='add'><b>" + $('.' + item +
-              ' .addComment .comment')
-            .val() + "</div>")
+        $('.' + item + ' .pub:last').after("<div class='add'><b>" +
+          $('.' + item + ' .addComment .comment').val() + "</div>")
       $(this).parents('.item').find('.fa-comment-o').removeClass('fa-comment-o')
         .addClass('fas fa-comments')
       $('.' + item + ' .addComment .comment').val('')
@@ -371,18 +368,15 @@ $(document)
       e.stopPropagation()
   })
   .on('touch click',
-    '#wrapper #container #main .center #bottom .next, ' +
-    '#wrapper #container #main .center #bottom .previous',
+    '#wrapper #container #main .center #bottom .back, ' +
+    '#wrapper #container #main .center #bottom .next',
     function(e) {
-      $('#main .center, #main .content, #main .translation').remove()
-      var uri = menu[$(this).attr('index')].id.toLowerCase().replace(/\s|\.|\//g, ' ')
-      response(true, false, uri, false)
-      uri = '?q=&' + uri.replace(/\s/g, '-')
-      uri.define().state()
+      var uri = menu[$(this).attr('index').trim()].id.toLowerCase().replace(/\s|\.|\//g, '-')
+      uri = '?q=&' + uri
+      uri.define().exit()
   })
   .on('touch click', '#wrapper #container #main .center #bottom .bottom',
     function(e) {
-      $('#top, #main .center, #main .content, #main .translation').remove()
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
         if (location.href.match('\\+1'))
@@ -404,42 +398,36 @@ $(document)
     })
   .on('touch click',
     '#wrapper #container #main .content .suggestions .combine div', function(e) {
-       $('#main .center, #main .content, #main .translation').remove()
-       var uri = '?q=' + '&' + $(this).attr('response')
-       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
-       uri.define().state()
+       var uri = '?q=&' + $(this).attr('response')
+       uri.define().exit()
   })
   .on('touch click',
     '#wrapper #container #main .content .stats .asset', function(e) {
-       $('#main .center, #main .content, #main .translation').remove()
-       var uri = '?q=' + '&' + $(this).parents('.asset').attr('response')
-       response(true, false, $(this).attr('response').replace(/\-/g, ' '), false)
-       uri.define().state()
+       var uri = '?q=&' + $(this).parents('.asset').attr('response')
+       uri.define().exit()
   })
   .on('mouseenter',
     '#wrapper #container #main #visit .page #front .focus .button, ' +
     '#wrapper #container #main #visit .page #front .focus input[type=text]',
     function(e) {
       if (op == 0)
-          $('.focus').removeClass('pageInputOut').addClass('pageInput')
+        $('#wrapper #container #main #visit .page #front .focus')
+          .removeClass('pageInputOut').addClass('pageInput')
   })
   .on('mouseleave',
     '#wrapper #container #main #visit .page #front .focus .button, ' +
     '#wrapper #container #main #visit .page #front .focus input[type=text]',
     function(e) {
       if (op == 0)
-          $('.focus').removeClass('pageInput').addClass('pageInputOut')
-  })
-  .on('touch click',
-    '#wrapper #container #main #visit .page #front .focus .icon', function(e) {
-      $('#main #visit .page #front input[type=text]').focus()
+        $('#wrapper #container #main #visit .page #front .focus')
+          .removeClass('pageInput').addClass('pageInputOut')
   })
   .on('touch click',
     '#wrapper #container #main #visit .page #front .focus .button .buttonSearch',
     function(e) {
-      if ($('#main #visit .page #front input[type=text]').val().length > 0 &&
-          $('#main #visit .page #front input[type=text]').val() != 'Search')
-        $('#main #visit .page #front').submit()
+      if ($('#wrapper #container #main #visit .page #front input[type=text]').val().length > 0 &&
+          $('#wrapper #container #main #visit .page #front input[type=text]').val() != 'Search')
+        $('#wrapper #container #main #visit .page #front').submit()
       e.preventDefault()
   })
   .on('touch click',
@@ -447,7 +435,7 @@ $(document)
     '#wrapper #container #top #arm #search #input .icon .fa-search',
     function(e) {
       $(this).addClass('slide')
-      $('#arm #search #input input[type=text]').val('')
+      $('#wrapper #container #top #arm #search #input input[type=text]').val('')
       .css({
         'caret-color': '#e4e4e4',
         'padding-left': '30px',
@@ -457,8 +445,8 @@ $(document)
   .on('keyup',
     '#wrapper #container #main #visit .page #front .focus input[type=text]',
     function(e) {
-      $('#main #visit .page #front #first').css('visibility','visible')
-      $('#main #visit .page #front #first .listing').css('z-index', '3')
+      $('#wrapper #container #main #visit .page #front #first').css('visibility','visible')
+      $('#wrapper #container #main #visit .page #front #first .listing').css('z-index', '3')
       var keyup = $(this).val()
       if (e.type == 'keyup' && e.keyCode == 13)
        return false
@@ -468,33 +456,36 @@ $(document)
       else if ($(this).val().length >= 2 && e.keyCode == 8)
        list('visit', $(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
-       $('#main #visit .page #front #first').css('visibility','hidden')
-       $('#main .result, #main .air, #main .center, #main .suggestions').show()
+       $('#wrapper #container #main #visit .page #front #first').css('visibility','hidden')
+       $('#wrapper #container #main .group .air, ' +
+         '#wrapper #container #main .suggestions, ' +
+         '#wrapper #container #main .group .result, ' +
+         '#wrapper #container #main .center').show()
       } else if (e.keyCode == 40 || e.keyCode == 34) {
-        if (!$('#main #visit .page #front #first .listing .hover').length)
-          $('#main #visit .page #front #first .listing .index:first')
+        if (!$('#wrapper #container #main #visit .page #front #first .listing .hover').length)
+          $('#wrapper #container #main #visit .page #front #first .listing .index:first')
             .addClass('hover')
             .removeClass('index')
         else {
-          $('#main #visit .page #front #first .listing .hover')
+          $('#wrapper #container #main #visit .page #front #first .listing .hover')
             .next().focus()
             .removeClass('index').addClass('hover')
           $(this).val(keyup)
           $(this).attr('tabIndex', -1).focus()
-          $('#main #visit .page #front #first .listing .hover')
+          $('#wrapper #container #main #visit .page #front #first .listing .hover')
             .prev().removeClass('hover').addClass('index')
         }
       } else if (e.keyCode == 38 || e.keyCode == 33) {
-        $('#main #visit .page #front #first .listing .hover')
+        $('#wrapper #container #main #visit .page #front #first .listing .hover')
           .prev().focus()
           .removeClass('index').addClass('hover')
         $(this).val(keyup)
         $(this).focus()
-        $('#main #visit .page #front #first .listing .hover')
+        $('#wrapper #container #main #visit .page #front #first .listing .hover')
           .next().removeClass('hover').addClass('index')
       } else if (e.keyCode == 27) {
-        $('#main #visit .page #front #first .listing').css('z-index', '0')
-        $('#main #visit .page #front #first').hide()
+        $('#wrapper #container #main #visit .page #front #first .listing').css('z-index', '0')
+        $('#wrapper #container #main #visit .page #front #first').hide()
         $(this)
           .css({
             'caret-color': 'transparent',
@@ -510,11 +501,11 @@ $(document)
   .on('touch click',
     '#wrapper #container #main #visit .page #front .focus input[type=text]',
     function(e) {
-      $('#main #visit .page #front #first .listing').css('z-index', '3')
-      $('#main #visit .page #front #first').css('visibility', 'visible')
-      $('#main #visit .page #front #first .listing').empty()
+      $('#wrapper #container #main #visit .page #front #first .listing').css('z-index', '3')
+      $('#wrapper #container #main #visit .page #front #first').css('visibility', 'visible')
+      $('#wrapper #container #main #visit .page #front #first .listing').empty()
       $.each(translations, function(i) {
-        $('#main #visit .page #front #first .listing').append(
+        $('#wrapper #container #main #visit .page #front #first .listing').append(
           "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "  <div class='radial'></div>" +
@@ -526,7 +517,7 @@ $(document)
           "</div>"
         )
       })
-      $('#main #visit .page #front #first .listing')
+      $('#wrapper #container #main #visit .page #front #first .listing')
         .append("<div class='background'></div>")
       $(this).val('')
         $(this).css({
@@ -534,7 +525,7 @@ $(document)
               'padding-left': '40px',
               'text-align': 'left'
         })
-        $('#main #visit .page #front .icon').addClass('search')
+        $('#wrapper #container #main #visit .page #front .icon').addClass('search')
       visual()
   })
   .on('focusin',
@@ -546,7 +537,7 @@ $(document)
               'padding-left': '40px',
               'text-align': 'left'
         })
-        $('#main #visit .page #front .icon').addClass('search')
+        $('#wrapper #container #main #visit .page #front .icon').addClass('search')
   })
   .on('focusout blur',
     '#wrapper #container #main #visit .page #front .focus input[type=text]',
@@ -563,41 +554,45 @@ $(document)
     function(e) {
       if ($(this).val() != 'Search') var keyup = $(this).val()
       if (e.keyCode == 13) {
-        $('#arm #search #match').hide()
+        $('#wrapper #container #main #top #arm #search #match').hide()
         return false
       } else if ($(this).val().length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
           list('match', $(this).val())
       else if ($(this).length >= 2 && e.keyCode == 8)
           list('match', $(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
-        $('#arm #search #match').hide()
-        $('#main .result, #main .air, #main .center, #main .suggestions').show()
+        $('#wrapper #container #main #top #arm #search #match').hide()
+        $(
+          '#wrapper #container #main .center, ' +
+          '#wrapper #container #main .group .air, ' +
+          '#wrapper #container #main .suggestions, ' +
+          '#wrapper #container #main .group .result').show()
       } else if (e.keyCode == 40 || e.keyCode == 34) {
-        if (!$('#arm #search #match .listing .hover').length)
+        if (!$('#wrapper #container #main #top #arm #search #match .listing .hover').length)
           $('#search .listing .index:first')
             .addClass('hover')
             .removeClass('index')
         else {
-          $('#arm #search #match .listing .hover')
+          $('#wrapper #container #main #top #arm #search #match .listing .hover')
             .next().focus()
             .attr('class', 'hover')
           $(this).val(keyup)
           $(this).attr('tabIndex', -1)
             .focus()
-          $('#arm #search #match .listing .hover')
+          $('#wrapper #container #arm #search #match .listing .hover')
             .prev().attr('class', 'index')
         }
       } else if (e.keyCode == 38 || e.keyCode == 33) {
-        $('#arm #search #match .listing .hover')
+        $('#wrapper #container #main #top #arm #search #match .listing .hover')
           .prev().focus()
           .attr('class', 'hover')
         $(this).val(keyup)
         $(this).focus()
-        $('#arm #search #match .listing .hover')
+        $('#wrapper #container #main #top #arm #search #match .listing .hover')
           .next()
           .attr('class', 'index')
       } else if (e.keyCode == 27) {
-        $('#arm #search #match').hide()
+        $('#wrapper #container #main #top #arm #search #match').hide()
         $(this)
           .css({
             'caret-color': 'transparent',
@@ -613,10 +608,10 @@ $(document)
   .on('touch click',
     '#wrapper #container #top #arm #search #input input[type=text]',
     function(e) {
-      $('#arm #search #match').show()
-      $('#arm #search #match .listing').empty()
+      $('#wrapper #container #arm #search #match').show()
+      $('#wrapper #container #arm #search #match .listing').empty()
       $.each(translations, function(i) {
-        $('#arm #search #match .listing')
+        $('#wrapper #container #arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
@@ -628,7 +623,7 @@ $(document)
             "  </div>" +
             "</div>")
       })
-      $('#arm #search #match .listing')
+      $('#wrapper #container #arm #search #match .listing')
         .append("<div class='background'></div>")
       $(this).val('')
       $this = $(this)
@@ -637,21 +632,21 @@ $(document)
             'padding-left': '30px',
             'text-align': 'left',
           })
-        $('#arm #search #input .icon').addClass('slide')
+        $('#wrapper #container #arm #search #input .icon').addClass('slide')
       visual()
   })
   .on('focusout blur',
     '#wrapper #container #top #arm #search #input input[type=text]',
     function(e) {
       $this = $(this)
-        if ($('#arm #search #input .icon').hasClass('slide'))
+        if ($('#wrapper #container #arm #search #input .icon').hasClass('slide'))
           $(this)
             .css({
               'caret-color': '#e4e4e4',
               'padding-left': '30px',
               'text-align': 'left'
             })
-        else if (!$('#arm #search #input .icon').hasClass('slide')) {
+        else if (!$('#wrapper #container #arm #search #input .icon').hasClass('slide')) {
           setTimeout(function() {
             $this.css({
               'caret-color': '#e4e4e4',
@@ -659,7 +654,7 @@ $(document)
               'text-align': 'left',
             })
           }, 500)
-          $('#arm #search #input .icon')
+          $('#wrapper #container #arm #search #input .icon')
             .addClass('slide')
         }
         return false
@@ -674,50 +669,50 @@ $(document)
       }).val('Search')
   })
   .on('submit', '#wrapper #container #top #arm #search', function(e) {
-    $('#main .air, #main .result, #main .center, #main .content, #main .translation').remove()
-    $('#arm #search #match').hide()
-    if ($('#arm #search .listing .hover').length) {
-      if (translations.indexOf($('#arm #search #match .listing .hover')
+    $('#wrapper #container #main .air, #main .result, #main .center, #main .content, #main .translation').remove()
+    $('#wrapper #container #arm #search #match').hide()
+    if ($('#wrapper #container #arm #search .listing .hover').length) {
+      if (translations.indexOf($('#wrapper #container #arm #search #match .listing .hover')
           .attr('response')) > -1) {
-        category = $('#arm #search #match .listing .hover')
+        category = $('#wrapper #container #arm #search #match .listing .hover')
           .attr('response')
-        populate($('#arm #search #match .listing .hover')
+        populate($('#wrapper #container #arm #search #match .listing .hover')
           .attr('response'))
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
+        var uri = '?q=' + $('#wrapper #container #arm #search #match .listing .hover')
           .attr('response').toLowerCase()
         air(id)
-        state('?q=' + $('#arm #search #match .listing .hover')
+        state('?q=' + $('#wrapper #container #arm #search #match .listing .hover')
           .attr('response').toLowerCase())
-        document.title = $('#arm #search #match .listing .hover')
+        document.title = $('#wrapper #container #arm #search #match .listing .hover')
           .attr('response')
         progress(true, 100)
       } else {
-        var uri = '?q=' + $('#arm #search #match .listing .hover')
+        var uri = '?q=' + $('#wrapper #container #arm #search #match .listing .hover')
         .attr('response')
         .toLowerCase()
         uri.define().exit()
       }
     } else {
-      if ($('#arm #search input[type=text]').val().length) {
-        var uri = '?q=' + $('#arm #search input[type=text]').val()
+      if ($('#wrapper #container #arm #search input[type=text]').val().length) {
+        var uri = '?q=' + $('#wrapper #container #arm #search input[type=text]').val()
           .toLowerCase()
           .replace(/\s/g, '+')
         uri.define().exit()
       }
     }
-    $('#arm #search input[type=text]').val('Search').blur()
+    $('#wrapper #container #arm #search input[type=text]').val('Search').blur()
     e.preventDefault()
     visual()
   })
   .on('submit', '#wrapper #container #main #visit .page #front', function(e) {
-    $('#main #visit .page #front .icon, #main #visit .page .button')
+    $('#wrapper #container #main #visit .page #front .icon, #main #visit .page .button')
       .css('visibility','hidden')
-    if ($('#main #visit .page #front #first .listing .hover').length) {
-        var uri = '?q=&' + $('#main #visit .page #front #first .listing .hover')
+    if ($('#wrapper #container #main #visit .page #front #first .listing .hover').length) {
+        var uri = '?q=&' + $('#wrapper #container #main #visit .page #front #first .listing .hover')
           .attr('response')
         uri.define().exit()
     } else {
-      var uri = '?q=' + $('#main #visit .page #front input[type=text]').val()
+      var uri = '?q=' + $('#wrapper #container #main #visit .page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
       uri.define().exit()
@@ -730,7 +725,7 @@ $(document)
     '#wrapper #container #main #top #arm #search #match .listing .index, ' +
     '#wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
-      $('#arm #search #match .listing .hover, ' +
+      $('#wrapper #container #arm #search #match .listing .hover, ' +
         '#main #visit .page #front #first .listing .hover')
           .attr('class', 'index')
       if (op == 0) $(this).addClass('hover contrast.hover')
@@ -742,10 +737,10 @@ $(document)
   '#wrapper #container #main #top #arm #search #match .listing .index, ' +
   '#wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
-      if (op == 1) $('#arm #search #match .listing .hover, ' +
+      if (op == 1) $('#wrapper #container #arm #search #match .listing .hover, ' +
         '#main #visit .page #front #first .listing .hover')
           .attr('class', 'index contrast')
-      else $('#arm #search #match .listing .hover, ' +
+      else $('#wrapper #container #arm #search #match .listing .hover, ' +
         '#main #visit .page #front #first .listing .hover')
           .attr('class','index visual')
   })
@@ -755,7 +750,7 @@ $(document)
   '#wrapper #container #main #top #arm #search #match .listing .index, ' +
   '#wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
-      $('#main .result, #main .air, #main .translation, #main .center, #main .content').remove()
+      $('#wrapper #container #main .result, #main .air, #main .translation, #main .center, #main .content').remove()
       category = $(this).attr('response')
       uri = '?q=' + $(this).attr('response')
       document.title = category.capitalize()
