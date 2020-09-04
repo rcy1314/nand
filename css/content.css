@@ -1,5 +1,5 @@
 @font-face {
-  src: url(../fonts/ProximaNova-Light.woff);
+  src: url(../fonts/ProximaNova-Regular.woff);
   font-family: Proxima Nova;
   font-display: block;
 }
@@ -16,7 +16,9 @@
   font-display: block;
 }
 
-.loader, .loader:before, .loader:after {
+.loader,
+.loader:after,
+.loader:before {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -120,10 +122,6 @@
   margin-right: 5px;
 }
 
-.fa-gratipay {
-  color: lightcoral !important;
-}
-
 .fa-angle-double-left:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f100";
@@ -153,6 +151,10 @@
 .fa-heart:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f004";
+}
+
+.fa-gratipay {
+  color: lightcoral !important;
 }
 
 .fa-comment:before {
@@ -742,7 +744,19 @@ input[type=submit] {
   display: block;
 }
 
-#wrapper #container #main .center .quick .right,
+#wrapper #container #main .center .quick .right {
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  position: absolute;
+  display: flex;
+  right : -18px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  z-index: 7;
+  top: 40px;
+}
 #wrapper #container #main #visit .page #front .quick .right {
   justify-content: center;
   align-items: center;
@@ -757,7 +771,19 @@ input[type=submit] {
   top: 55px;
 }
 
-#wrapper #container #main .center .quick .left,
+#wrapper #container #main .center .quick .left {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  border-radius: 16px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  left: -18px;
+  z-index: 7;
+  top: 40px;
+}
 #wrapper #container #main #visit .page #front .quick .left {
   justify-content: center;
   align-items: center;
