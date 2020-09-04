@@ -23,7 +23,7 @@ String.prototype.space = function() {
 
 String.prototype.image = function() {
 
-  return 'images/png/' + this + '.png'
+  return 'images/webp/' + this + '.webp'
 
 }
 
