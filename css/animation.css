@@ -8,16 +8,22 @@
   transition: .4s;
 }
 
+.rotate {
+  transform: rotate(180deg);
+  display: inline-block;
+  transition: .5s;
+}
+
 .invisible {
   visibility: hidden;
-  opacity: 0;
   transition: .25s;
+  opacity: 0;
 }
 
 .visible {
   visibility: visible;
-  opacity: 100;
   transition: .25s;
+  opacity: 100;
 }
 
 .mask {
