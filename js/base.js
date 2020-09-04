@@ -43,7 +43,7 @@ var select = function(n) {
     .append(
       "<div class='select' response='" + translations[i] + "'>" +
       "  <div class='radial'></div>" +
-      "  <img class='type' src='images/" + translations[i] + '.png' + "'>" +
+      "  <img class='type' src='images/" + translations[i] + '.webp' + "'>" +
       "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
       "    <br>&emsp;" + translations[i].grep() + " feeds" +
       "  </div>" +
