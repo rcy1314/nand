@@ -668,8 +668,6 @@ $(document)
             "  </div>" +
             "</div>")
       })
-      $('html body #wrapper #container #arm #search #match .listing')
-        .append("<div class='background'></div>")
       $(this).val('')
       $this = $(this)
           $this.css({

@@ -476,7 +476,7 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   padding-top: 12px;
   overflow-y: auto;
   text-align: left;
-  height: 447px;
+  height: 440px;
   bottom: 22px;
 }
 
@@ -493,6 +493,8 @@ html body #wrapper #container #main #top #arm #search #match .listing .index .ty
 html body #wrapper #container #main #top #arm #search #match .listing .hover .type,
 html body #wrapper #container #main #visit #page #front #first .listing .index .type,
 html body #wrapper #container #main #visit #page #front #first .listing .hover .type,
+html body #wrapper #container #main #top #arm #search #match .listing .index .typeTranslation,
+html body #wrapper #container #main #top #arm #search #match .listing .hover .typeTranslation,
 html body #wrapper #container #main #visit #page #front #first .listing .index .typeTranslation,
 html body #wrapper #container #main #visit #page #front #first .listing .hover .typeTranslation {
   background-color: transparent;
@@ -1365,12 +1367,12 @@ html body #wrapper #container #main #visit #page #front #first .listing .index:f
 
 html body #wrapper #container #main #top #arm #search #match .listing .background,
 html body #wrapper #container #main #visit #page #front #first .listing .background {
-  height: calc(100% + 2px) !important;
-  width: calc(100% - 2px) !important;
+  height: calc(100% + 4px) !important;
+  width: calc(100% + 2px) !important;
   position: absolute;
+  margin-top: -12px;
   z-index: -1;
-  left: 0 !important;
-  top: 0;
+  left: -1px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing {
@@ -1380,7 +1382,7 @@ html body #wrapper #container #main #top #arm #search #match .listing {
   text-align: left;
   overflow-y: auto;
   margin: 0 auto;
-  height: 447px;
+  height: 440px;
   width: 18em;
 }
 
