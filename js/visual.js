@@ -97,7 +97,9 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .removeClass('visual').addClass('contrast')
-    $('html body #wrapper #container #main .translation .select .radial .type, ' +
+    $('html body #wrapper #container #main .translation .select .type, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
       .css('filter','hue-rotate(90deg)')
@@ -183,7 +185,9 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .feed .radial, ' +
       'html body #wrapper #container #main .content .status .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
-    $('html body #wrapper #container #main .translation .select .radial .type, ' +
+    $('html body #wrapper #container #main .translation .select .type, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
       .css('filter','hue-rotate(0deg)')
