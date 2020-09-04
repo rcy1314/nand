@@ -1,6 +1,7 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 
   html body #wrapper #container #main #top #search #home,
+  html body #wrapper #container #main #visit #page #front #label,
   html body #wrapper #container #main #visit #page #front .quick .right,
   html body #wrapper #container #main .center .quick .fa-angle-double-right,
   html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right,
@@ -14,6 +15,10 @@
     display: none !important;
   }
 
+  html body #wrapper #container #main #visit #page #front {
+    top: 200px !important;
+  }
+
   html body #wrapper #container #main #page,
   html body #wrapper #container #main #visit {
    height: 100% !important;
@@ -24,11 +29,6 @@
   html body #wrapper #container #main #top,
   html body #wrapper #container #main #arm {
     width: 100% !important;
-  }
-
-  html body #wrapper #container #main #visit #page #handle {
-    width: 100% !important;
-    right: 0 !important;
   }
 
   html body #wrapper #container #main .center {
@@ -48,14 +48,6 @@
     border: none !important;
   }
 
-  html body #wrapper #container #main #page .quick {
-    visibility: visible !important;
-    opacity: 100 !important;
-    width: 100% !important;
-    right: 0 !important;
-    left: 0 !important;
-  }
-
   html body #wrapper #container #main #top #arm #option {
     width: calc(100% - 20px) !important;
     top: calc(100% - 50px) !important;
@@ -72,14 +64,20 @@
     width: 32% !important;
   }
 
-  html body #wrapper #container #visit #page #front .focus {
+  html body #wrapper #container #main #visit #page #front #first .listing,
+  html body #wrapper #container #top #arm #search #match .listing {
+    margin: 0 auto !important;
+    top: 0 !important;
+  }
+  html body #wrapper #container #main #visit #page #front .focus {
     margin: 0 auto !important;
     width: 300px !important;
     padding: 0 !important;
+    top: 12px !important;
   }
 
   html body #wrapper #container #main #visit #page #front input[type=text] {
-    padding-left: 0 !important;
+    padding-left: 10px !important;
     width: 300px !important;
     top: 0px;
   }
@@ -95,7 +93,8 @@
 
   html body #wrapper #container #main .left,
   html body #wrapper #container #main .right,
-  html body #wrapper #container #main .translation {
+  html body #wrapper #container #main .translation,
+  html body #wrapper #container #main #visit #page #front #label {
     display: none !important;
   }
 
@@ -103,7 +102,7 @@
     width: 100% !important;
   }
 
-  #option {
+  html body #wrapper #container #main #top #arm #option {
     margin-left: 70px;
   }
 
@@ -116,8 +115,16 @@
     margin-left: -75px !important;
   }
 
-  html body #wrapper #container #main #visit #page #front .quick {
-      z-index: 3;
+  html body #wrapper #container #main #page #front {
+    top: 0 !important;
+  }
+
+  html body #wrapper #container #main #page .quick {
+    visibility: visible !important;
+    opacity: 100 !important;
+    width: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
   }
 
   html body #wrapper #container #main #visit #page {
@@ -141,8 +148,7 @@
 @media screen and (max-width: 1024px) {
 
   html body #wrapper #container #main #visit #page #front {
-	  position relative;
-	  top: -128px;
+	  top: 0;
   }
 
   html body #wrapper #container #main .group .air,
@@ -209,7 +215,7 @@
   html body #wrapper #container #main #visit #page #front .quick {
       position: relative;
       width: 892px !important;
-      left: -62px !important;
+      left: -62px;
       z-index: 3;
       top: 40px;
   }

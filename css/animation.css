@@ -1,3 +1,13 @@
+.toggle {
+  top: 0 !important;
+  transition: .4s;
+}
+
+.toggleHidden {
+  top: -30px !important;
+  transition: .4s;
+}
+
 .invisible {
   visibility: hidden;
   opacity: 0;

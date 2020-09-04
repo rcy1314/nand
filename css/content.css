@@ -460,7 +460,7 @@ html body #wrapper #container #main #visit #page #front {
   display: block;
   margin: 0 auto;
   width: 100%;
-  top: -20px;
+  top: 0;
 }
 
 html body #wrapper #container #main #visit #page #front #first {
@@ -470,13 +470,14 @@ html body #wrapper #container #main #visit #page #front #first {
 
 html body #wrapper #container #main #visit #page #front #first .listing {
   background-color: transparent;
-  height: calc(27.2em);
+  width: calc(100% + 10px);
   border-radius: 4px;
   position: relative;
   padding-top: 12px;
   overflow-y: auto;
   text-align: left;
-  width: 100%;
+  height: 447px;
+  bottom: 22px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .radial,
@@ -487,15 +488,20 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover .
   left: -2px;
 }
 
-.type,
-.typeTranslation {
+html body #wrapper #container #main .translation .select .type,
+html body #wrapper #container #main #top #arm #search #match .listing .index .type,
+html body #wrapper #container #main #top #arm #search #match .listing .hover .type,
+html body #wrapper #container #main #visit #page #front #first .listing .index .type,
+html body #wrapper #container #main #visit #page #front #first .listing .hover .type,
+html body #wrapper #container #main #visit #page #front #first .listing .index .typeTranslation,
+html body #wrapper #container #main #visit #page #front #first .listing .hover .typeTranslation {
   background-color: transparent;
   display: inline-block;
   border-radius: 28px;
   position: relative;
   font-size: 10px;
   bottom: 3.5px;
-  height: 41px;
+  height: 40.5px;
   left: -1.5px;
   width: 41px;
 }
@@ -510,16 +516,15 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover .
 
 html body #wrapper #container #main #visit #page #front .focus {
   background-color: transparent;
+  height: 39.6px !important;
   white-space: nowrap;
   padding-right: 60px;
   visibility: hidden;
   position: relative;
-  height: 39.6px;
-  top: 25px;
-
 }
 
 html body #wrapper #container #main #visit #page #front .focus input[type=text] {
+  height: 39.6px !important;
   -webkit-appearance: none;
   caret-color: transparent;
   display: inline-block;
@@ -529,9 +534,8 @@ html body #wrapper #container #main #visit #page #front .focus input[type=text] 
   text-align: center;
   width: calc(100%);
   font-size: 18px;
-  height: 2.2em;
   outline: none;
-  top: -15px;
+  bottom: 15px;
   margin: 0;
 }
 
@@ -553,7 +557,7 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   margin-top: 2px;
   left: 100px;
   z-index: 2;
-  top: 11px;
+  top: 10px;
 }
 
 .buttonOpposite {
@@ -689,6 +693,7 @@ html body #wrapper #container #main #top #arm #search #input input[type=text] {
   outline: none;
   height: 2.2em;
   width: 100%;
+  top: 25px;
 }
 
 html body #wrapper #container #main #top #arm #search #match {
@@ -1360,21 +1365,22 @@ html body #wrapper #container #main #visit #page #front #first .listing .index:f
 
 html body #wrapper #container #main #top #arm #search #match .listing .background,
 html body #wrapper #container #main #visit #page #front #first .listing .background {
-  height: calc(27.2em - 2px);
-  width: calc(100% - 1px);
+  height: calc(100% + 2px) !important;
+  width: calc(100% - 2px) !important;
   position: absolute;
   z-index: -1;
-  top: 12px;
+  left: 0 !important;
+  top: 0;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing {
   background-color: transparent;
-  height: calc(27.2em);
   position: relative;
   padding-top: 12px;
   text-align: left;
   overflow-y: auto;
   margin: 0 auto;
+  height: 447px;
   width: 18em;
 }
 

@@ -32,12 +32,14 @@ $(document)
       if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')
+        $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
         $('html body #wrapper #container #main #visit #page #front .link').animateRotate(nextAngle, 500, 'swing')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('visible').addClass('invisible')
       } else {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('invisible').removeClass('visible')
+        $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
         $('html body #wrapper #container #main #visit #page #front .link').animateRotate(nextAngle, 500, 'swing')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('invisible').addClass('visible')
@@ -147,7 +149,10 @@ $(document)
     'html body #wrapper #container .sticky .header .fa-ellipsis-h, ' +
     'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
     function(e) {
-        $(this).parents('.item, .wrap').find('.url').select()
+        $(this)
+        .parents('html body #wrapper #container #guide .sticky .item, ' +
+          'html body #wrapper #container #main .center .item .classic .wrap')
+            .find('.url').select()
         document.execCommand('copy')
         $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
         setTimeout(function() {
@@ -167,10 +172,14 @@ $(document)
         feed(40)
         tap = new Date().getTime()
         mouseAsset = $(this).attr('response')
-        marginLeftStart = parseInt($(this).parents('.feed').scrollLeft())
-    if ($(this).parents('.feed').scrollLeft() >= 3300)
+        marginLeftStart = parseInt($(this)
+          .parents('html body #wrapper #container #main .center .quick .feed')
+            .scrollLeft())
+    if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+          .scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
-          $(this).parents('.feed').find('.asset:first').empty()
+          $(this).parents('html body #wrapper #container #main .center .quick .feed')
+            .find('.asset:first').empty()
       }
       $(this).unbind("mousemove")
       e.preventDefault();
@@ -178,13 +187,18 @@ $(document)
   .on('mousemove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
   'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
   function(e) {
-      if ($(this).parents('.feed').scrollLeft() > 0)
-        $(this).parents('.quick').find('.left').show()
-      else if ($(this).parents('.feed').scrollLeft() == 0)
-        $(this).parents('.quick').find('.left').hide()
+      if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+            .scrollLeft() > 0)
+        $(this).parents('html body #wrapper #container #main .center .quick')
+          .find('.left').show()
+      else if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+                 .scrollLeft() == 0)
+        $(this).parents('html body #wrapper #container #main .center .quick')
+          .find('.left').hide()
           if (enableDrag) {
               var delta = e.pageX - dragStartX
-              $(this).parents('.feed').scrollLeft(marginLeftStart - delta)
+              $(this).parents('html body #wrapper #container #main .center .quick .feed')
+                .scrollLeft(marginLeftStart - delta)
           }
           $(this).unbind("mouseup")
           e.preventDefault()
@@ -221,15 +235,21 @@ $(document)
     'html body #wrapper #container #main .center .quick .fa-angle-double-right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right',
     function(e) {
-        var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-        $(this).parents('.quick').find('.feed').animate({
+        var leftPos = $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+                        .find('.feed').scrollLeft()
+        $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+          .find('.feed').animate({
             scrollLeft: leftPos + 639
           }, 'fast')
-          if (leftPos >= $(this).parents('.quick').find('.feed')[0]
-              .scrollWidth - $(this).parents('.quick').find('.feed').width() - 639)
+          if (leftPos >= $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+                           .find('.feed')[0]
+                .scrollWidth - $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+                               .find('.feed').width() - 639)
               $(this).hide()
-        if ($(this).parents('.quick').find('.feed')
-          .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
+        if ($(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+              .find('.feed')
+          .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+                                .find('.left').show()
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .left, ' +
@@ -237,16 +257,22 @@ $(document)
     'html body #wrapper #container #main .center .quick .fa-angle-double-left, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left',
     function(e) {
-        var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
-        $(this).parents('.quick').find('.feed').animate({
+        var leftPos = $(this).parents('html body #wrapper #container #main .center .quick')
+                        .find('.feed').scrollLeft()
+        $(this).parents('html body #wrapper #container #main .center .quick')
+          .find('.feed').animate({
             scrollLeft: leftPos - 639
           }, 'slow')
-        if ($(this).parents('.quick').find('.feed')
+        if ($(this).parents('html body #wrapper #container #main .center .quick')
+              .find('.feed')
           .scrollLeft() <= 639) {
-            $(this).parents('.quick').find('.left').hide()
-            $(this).parents('.quick').find('.right, .fa-angle-double-right').show()
+            $(this).parents('html body #wrapper #container #main .center .quick')
+              .find('.left').hide()
+            $(this).parents('html body #wrapper #container #main .center .quick')
+              .find('.right, .fa-angle-double-right').show()
         }
-        else $(this).parents('.quick').find('.left').show()
+        else $(this).parents('html body #wrapper #container #main .center .quick')
+               .find('.left').show()
   })
   .on('touch click', 'html body #wrapper #container #guide, ' +
     'html body #wrapper #container #guide .checkmark', function (e) {
@@ -275,7 +301,9 @@ $(document)
               if (category == 'Social' &&
                 !$this.hasClass('default')) $this.attr('src').blank()
               else if ($this.hasClass('default') ||
-                category != 'Social')$this.parents('.item').attr('ext').blank()
+                category != 'Social')
+                  $this.parents('html body #wrapper #container #main .center .channel .item')
+                    .attr('ext').blank()
             tap = 0
           }, 325)
       } else {
@@ -283,8 +311,9 @@ $(document)
           if (((new Date().getTime()) - tap) < 300) {
               // double click occurred
               $(this)
-                .parents('.item, .sticky')
-                .find('.fa-heart-o, .fa-gratipay')
+                .parents('html body #wrapper #container #main .center .channel .item, ' +
+                  'html body #wrapper #container #guide .sticky')
+                .find('.fa-gratipay, .fa-heart-o')
                 .toggleClass('fa-heart-o fab fa-gratipay')
               e.stopPropagation()
               visual()
@@ -308,7 +337,8 @@ $(document)
     'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark, ' +
     'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o',
     function(e) {
-        $(this).parents('.item, .wrap').find('.source').select()
+        $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+          'html body #wrapper #container #main .center .item .classic .wrap').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark'))
           $(this).toggleClass('fa-bookmark-o fa-bookmark')
@@ -322,15 +352,22 @@ $(document)
     'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note-o',
     function(e) {
       if (contrast == true)
-        if (!$(this).parents('.item, .wrap').find('.share').val().match(/\+1/g))
-          $(this).parents('.item, .wrap').find('.share')
-          .val($(this).parents('.item, .wrap').find('.share').val() + '+1')
-      if (contrast == false && $(this).parents('.item, .wrap').find('.share').val()
+        if (!$(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+          'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().match(/\+1/g))
+          $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+            'html body #wrapper #container #main .center .item .classic .wrap').find('.share')
+          .val($(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+            'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val() + '+1')
+      if (contrast == false && $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+        'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val()
         .match(/\+1/g))
-        $(this).parents('.item, .wrap').find('.share').val(
-          $(this).parents('.item, .wrap').find('.share').val().replace(/\+1/g, '')
+        $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+          'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val(
+          $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+            'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().replace(/\+1/g, '')
         )
-      $(this).parents('.item, .wrap').find('.share').select()
+      $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+        'html body #wrapper #container #main .center .item .classic .wrap').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note'))
         $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
@@ -353,12 +390,14 @@ $(document)
     'html body #wrapper #container #main .center .channel .item .classic .addComment',
     function(e) {
       if ($(this).children('.comment').val() != '')
-        item = $(this).parents('.item').attr('item')
+        item = $(this).parents('html body #wrapper #container #main .center .channel .item')
+                 .attr('item')
       if ($('.' + item + ' .add').length >= 3)
         $('.' + item + ' .add:last').remove()
         $('.' + item + ' .pub:last').after("<div class='add'><b>" +
           $('.' + item + ' .addComment .comment').val() + "</div>")
-      $(this).parents('.item').find('.fa-comment-o').removeClass('fa-comment-o')
+      $(this).parents('html body #wrapper #container #main .center .channel .item')
+        .find('.fa-comment-o').removeClass('fa-comment-o')
         .addClass('fas fa-comments')
       $('.' + item + ' .addComment .comment').val('')
       e.preventDefault()
@@ -404,8 +443,9 @@ $(document)
        uri.define().exit()
   })
   .on('touch click',
-    'html body #wrapper #container #main .content .stats .asset', function(e) {
-       var uri = '?q=&' + $(this).parents('.asset').attr('response')
+    'html body #wrapper #container #main .content .status .asset .radial', function(e) {
+       var uri = '?q=&' + $(this).parents('html body #wrapper #container #main .content .status .asset')
+                            .attr('response')
        uri.define().exit()
   })
   .on('mouseenter',
@@ -510,6 +550,7 @@ $(document)
       $.each(translations, function(i) {
         $('html body #wrapper #container #main #visit #page #front #first .listing').append(
           "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+          "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <div class='radial'></div>" +
           "    <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +
@@ -521,7 +562,7 @@ $(document)
         )
       })
       $('html body #wrapper #container #main #visit #page #front #first .listing')
-        .append("<div class='background'></div>")
+        .append()
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
@@ -617,6 +658,7 @@ $(document)
         $('html body #wrapper #container #arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+            "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "  <div class='radial'></div>" +
             "  <img class='typeTranslation' src='images/" + translations[i] + '.png' + "'>" +

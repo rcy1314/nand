@@ -116,20 +116,19 @@ var base = function(n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().hyphen() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
-        "<div class='detail'>" +
-        "<div class='radial'></div>" +
-        "<img class='type' src='" + menu[i].img.image() + "'>" +
-        "<div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
-        "<br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
-          "</div>" +
+        "  <div class='background'></div>" +
+        "  <div class='detail'>" +
+        "    <div class='radial'></div>" +
+        "    <img class='type' src='" + menu[i].img.image() + "'>" +
+        "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
+        "    <br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
+        "  </div>" +
         "</div>"
       )
       if ($('html body #wrapper #container #main #visit #page #front #first .listing .' + i).length > 1)
         $('html body #wrapper #container #main #visit #page #front #first .listing .' + i + ':last').remove()
     }
   }
-  $('html body #wrapper #container #main #visit #page #front #first .listing')
-    .append("<div class='background'></div>")
   if (!$('html body #wrapper #container #main #visit #page #front #first').is(':visible')) {
     setTimeout(function() {
       $('html body #wrapper #container #main #visit #page #front #first').show()
@@ -149,6 +148,7 @@ var list = function(n) {
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().hyphen() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
+        "<div class='background'></div>" +
         "<div class='detail'>" +
         "<div class='radial'></div>" +
         "<img class='type' src='" + menu[i].img.image() + "'>" +
@@ -161,8 +161,6 @@ var list = function(n) {
         $('html body #wrapper #container #main #top #arm #search #match .listing .' + i + ':last').remove()
     }
   }
-  $('html body #wrapper #container #main #top #arm #search #match .listing')
-    .append("<div class='background'></div>")
   if (!$('html body #wrapper #container #main #top #arm #search #match').is(':visible')) {
     setTimeout(function() {
       $('html body #wrapper #container #main #top #arm #search #match').show()
