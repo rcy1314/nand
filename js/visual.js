@@ -56,7 +56,7 @@ var visual = function(n) {
       '--loader-color-secondary': '#e86d8a'
     })
     $('html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #visit #page #front #label .link .fa-angle-up, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
@@ -135,6 +135,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #visit #page, ' +
+      'html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #visit #page #front #label .link .fa-angle-up, ' +
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +

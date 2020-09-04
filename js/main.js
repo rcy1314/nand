@@ -223,10 +223,10 @@ $(document)
     function(e) {
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
-            scrollLeft: leftPos + 892
+            scrollLeft: leftPos + 639
           }, 'fast')
           if (leftPos >= $(this).parents('.quick').find('.feed')[0]
-              .scrollWidth - $(this).parents('.quick').find('.feed').width() - 892)
+              .scrollWidth - $(this).parents('.quick').find('.feed').width() - 639)
               $(this).hide()
         if ($(this).parents('.quick').find('.feed')
           .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
@@ -239,10 +239,10 @@ $(document)
     function(e) {
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
-            scrollLeft: leftPos - 892
+            scrollLeft: leftPos - 639
           }, 'slow')
         if ($(this).parents('.quick').find('.feed')
-          .scrollLeft() <= 892) {
+          .scrollLeft() <= 639) {
             $(this).parents('.quick').find('.left').hide()
             $(this).parents('.quick').find('.right, .fa-angle-double-right').show()
         }
