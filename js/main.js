@@ -230,25 +230,25 @@ $(document)
           $('html body #wrapper #container #main .center .quick .feed .asset:first').remove()
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .right, ' +
+    'html body #wrapper #container #main .center .quick .right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .right, ' +
     'html body #wrapper #container #main .center .quick .fa-angle-double-right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right',
     function(e) {
-        var leftPos = $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+        var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
-        $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+        $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
             scrollLeft: leftPos + 639
           }, 'fast')
-          if (leftPos >= $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+          if (leftPos >= $(this).parents('html body #wrapper #container #main .quick')
                            .find('.feed')[0]
-                .scrollWidth - $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+                .scrollWidth - $(this).parents('html body #wrapper #container #main .quick')
                                .find('.feed').width() - 639)
               $(this).hide()
-        if ($(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+        if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
-          .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main #visit #page #front .quick')
+          .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
                                 .find('.left').show()
   })
   .on('touch click',
@@ -257,21 +257,21 @@ $(document)
     'html body #wrapper #container #main .center .quick .fa-angle-double-left, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left',
     function(e) {
-        var leftPos = $(this).parents('html body #wrapper #container #main .center .quick')
+        var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
-        $(this).parents('html body #wrapper #container #main .center .quick')
+        $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
             scrollLeft: leftPos - 639
           }, 'slow')
-        if ($(this).parents('html body #wrapper #container #main .center .quick')
+        if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
           .scrollLeft() <= 639) {
-            $(this).parents('html body #wrapper #container #main .center .quick')
+            $(this).parents('html body #wrapper #container #main .quick')
               .find('.left').hide()
-            $(this).parents('html body #wrapper #container #main .center .quick')
+            $(this).parents('html body #wrapper #container #main .quick')
               .find('.right, .fa-angle-double-right').show()
         }
-        else $(this).parents('html body #wrapper #container #main .center .quick')
+        else $(this).parents('html body #wrapper #container #main .quick')
                .find('.left').show()
   })
   .on('touch click', 'html body #wrapper #container #guide, ' +
