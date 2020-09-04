@@ -526,19 +526,6 @@ $(document)
         $(this).focus()
         $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .next().removeClass('hover').addClass('index')
-      } else if (e.keyCode == 27) {
-        $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '0')
-        $('html body #wrapper #container #main #visit #page #front #first').hide()
-        $(this)
-          .css({
-            'caret-color': 'transparent',
-            'text-align': 'center',
-            'padding': '0'
-          })
-           .val('Search')
-           .siblings('.icon')
-           .removeClass('slide')
-      }
     visual()
   })
   .on('touch click',
@@ -635,18 +622,6 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
           .next()
           .attr('class', 'index')
-      } else if (e.keyCode == 27) {
-        $('html body #wrapper #container #main #top #arm #search #match').hide()
-        $(this)
-          .css({
-            'caret-color': 'transparent',
-            'padding': '0',
-            'text-align': 'center'
-          })
-          .val('Search')
-          .siblings('.icon')
-          .removeClass('slide')
-      }
       visual()
   })
   .on('touch click',
