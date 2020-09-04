@@ -421,9 +421,8 @@ var image = function(empty, n, src) {
   if (src.match(/https?\:\/\//g)) {
   $('#' + n).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
-    $('#' + n).parents('.item').find('.ago')
-        .css('display', 'inline-block')
-        .parents('.item').find('.pub').css('display','block')
+    $('#' + n).parents('.item')
+        .parents('.item').find('.pub, .ago').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
@@ -478,9 +477,8 @@ var image = function(empty, n, src) {
       $(this).get(0).naturalWidth * 2) {
         $(this).width('40vh')
      } else if ($(this).get(0).naturalHeight > k) {
-         $(this).parents('.item').find('.ago')
-             .css('display', 'inline-block')
-             .parents('.item').find('.pub').css('display','block')
+         $(this).parents('.item')
+             .parents('.item').find('.pub, .ago').css('display','block')
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill')
              .remove()
@@ -489,9 +487,9 @@ var image = function(empty, n, src) {
         $(this).width('100%')
       }
     }
-    $('#' + n).parents('.item, #guide').find('.image, .img, .pub, .tag')
+    $('#' + n).parents('.item, #guide').find('.image, .img, .pub, .tag, .ago')
       .css('display', 'block')
-    $('#' + n).parents('.item, #guide').find('.header, .wrap, .ago')
+    $('#' + n).parents('.item, #guide').find('.header, .wrap')
       .css('display', 'inline-block')
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     visual()
@@ -677,44 +675,13 @@ var xml = function(e, s, n) {
       if ($(this).find('title:first').text().length > 125)
         var more = "<div class='more'>more</div>"
       else var more = ""
-      if (src.match(/youtube\.com/g)) {
         if ($(this).find('media\\:statistics, statistics').attr('views'))
             var views =
             "<div class='ago views'>" +
-            "  views " + $(this).find('media\\:statistics, statistics')
+            "  VIEWS " + $(this).find('media\\:statistics, statistics')
               .attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
             "</div>"
         else var views = ''
-        html =
-          "<div id='yt' class='item' ext='" + re.trim() + "'>" +
-          "  <div class='header'>" + courtesy +
-          "    <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-          "  </div>" +
-          "  <div class='yt'>" +
-          "    <iframe src='" + src + "'></iframe>" +
-               views +
-          "  </div>" +
-              tag +
-          "  <div class='pub' " + "text='" +
-               $(this).find('title:first').text().escape() + "'>" +
-               $(this).find('title:first').text().truncate(125, true).escape() +
-               more +
-          "  </div>" +
-          "  <div class='ago'>" + dst[0] + "</div>" +
-          "  <input class='url' value='" + re.trim() + "'>" +
-          "  <input class='share' value='" + share + "'>" +
-          "  <input class='source' value='" + src + "'>" +
-/*
-          "  <form class='addComment' action'#'>" +
-          "    <input class='comment' " +
-          "      onclick='event.stopPropagation()'" +
-          "      placeholder='Add a Comment'" +
-          "      maxlength='60'>" +
-          "    <div class='post'><b>Post</b></div>" +
-          "  </form>" +
-*/
-          "</div>"
-      } else {
         if (e == 'search') {
           var cat =
             "<div class='external'>" +
@@ -738,7 +705,7 @@ var xml = function(e, s, n) {
                    $(this).find('title:first').text().truncate(125, true)
                      .escape() +
                    more +
-          "      </div>" +
+          "      </div>" + views +
           "      <div class='ago' style='display:none'>" + dst[0] + "</div>" +
           "    </div>" +
           "    <input class='url' value='" + re.trim() + "'>" +
@@ -752,7 +719,6 @@ var xml = function(e, s, n) {
           "    </form>" +
           "  </div>" +
           "</div>"
-      }
       pub.push({
         title: $(this).find('title:first').text().escape(),
         courtesy: courtesy,

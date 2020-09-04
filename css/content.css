@@ -1125,7 +1125,6 @@ html body #wrapper #container #main .center .item .external {
 html body #wrapper #container #main .center .item .ago {
   background-color: transparent;
   text-transform: uppercase;
-  display: inline-block;
   margin-bottom: 10px;
   position: relative;
   width: fit-content;
@@ -1285,9 +1284,7 @@ html body #wrapper #container #main .content .suggestions .combine div {
 }
 
 html body #wrapper #container #main .center .item .views {
-  position: absolute;
-  bottom: -30px;
-  right: 30px;
+  position: relative;
 }
 
 html body #wrapper #container #main .center .item #yt .yt {
