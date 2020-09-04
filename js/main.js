@@ -18,28 +18,28 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
-      if (!$('html body #wrapper #container #main #visit .page #front .focus input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #visit .page #front #first').css('visibility','hidden')
-        if ($('html body #wrapper #container #main #visit .page #front .focus input[type=text]').val().length == 0 ||
-          $('html body #wrapper #container #main #visit .page #front .focus input[type=text]').val() == 'Search')
-        $('html body #wrapper #container #main #visit .page #front .focus .icon').removeClass('search')
+      if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
+        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+        if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length == 0 ||
+          $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val() == 'Search')
+        $('html body #wrapper #container #main #visit #page #front .focus .icon').removeClass('search')
       }
    })
-  .on('touch click', 'html body #wrapper #container #main #visit .page #front .link',
+  .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link',
     function(e) {
       nextAngle += 180
       if (nextAngle >= 360) nextAngle = 0
-      if ($('html body #wrapper #container #main #visit .page #front .quick').hasClass('invisible')) {
-        $('html body #wrapper #container #main #visit .page #front .quick')
+      if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
+        $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')
-        $('html body #wrapper #container #main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit .page #front .show')
+        $('html body #wrapper #container #main #visit #page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('visible').addClass('invisible')
       } else {
-        $('html body #wrapper #container #main #visit .page #front .quick')
+        $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('invisible').removeClass('visible')
-        $('html body #wrapper #container #main #visit .page #front .link').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit .page #front .show')
+        $('html body #wrapper #container #main #visit #page #front .link').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('invisible').addClass('visible')
       }
   })
@@ -66,7 +66,7 @@ $(document)
       op = op != true
     }
     setTimeout(function() {
-      $('html body #wrapper #container #main #visit .page .focus input[type=text]').attr('tabindex', -1).focus()
+      $('html body #wrapper #container #main #visit #page .focus input[type=text]').attr('tabindex', -1).focus()
     }, 1000)
     uri.state()
     visual()
@@ -144,8 +144,8 @@ $(document)
       }
     })
   .on('touch click',
-    'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h, ' +
-    'html body #wrapper #container .sticky .header .fa-ellipsis-h',
+    'html body #wrapper #container .sticky .header .fa-ellipsis-h, ' +
+    'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
     function(e) {
         $(this).parents('.item, .wrap').find('.url').select()
         document.execCommand('copy')
@@ -157,14 +157,14 @@ $(document)
         e.stopPropagation()
   })
   .on('mousedown', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-  'html body #wrapper #container #main #visit .page #front .quick .feed .asset',
+  'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
   function(e) {
       if (e.which == 1){
         dragStartX = 0
         enableDrag = true
         dragStartX = e.pageX
-        feed('page', 40)
-        feed('center', 40)
+        feed(40)
+        feed(40)
         tap = new Date().getTime()
         mouseAsset = $(this).attr('response')
         marginLeftStart = parseInt($(this).parents('.feed').scrollLeft())
@@ -176,7 +176,7 @@ $(document)
       e.preventDefault();
   })
   .on('mousemove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-  'html body #wrapper #container #main #visit .page #front .quick .feed .asset',
+  'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
   function(e) {
       if ($(this).parents('.feed').scrollLeft() > 0)
         $(this).parents('.quick').find('.left').show()
@@ -202,26 +202,25 @@ $(document)
           }
           e.preventDefault()
   })
-  .on('touchmove', 'html body #wrapper #container #visit #main .page #front .quick .feed',
+  .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
   function(e) {
-      feed('page', 40)
+      quick(40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
-          $('html body #wrapper #container #main #visit .page #front .quick .feed .asset:first').remove()
+          $('html body #wrapper #container #main #visit #page #front .quick .feed .asset:first').remove()
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed', function(e) {
-      feed('page', 40)
+      feed(40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('html body #wrapper #container #main .center .quick .feed .asset:first').remove()
   })
   .on('touch click',
     'html body #wrapper #container #main .center .right, ' +
-    'html body #wrapper #container #main #visit .page #front .quick .right, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .right, ' +
     'html body #wrapper #container #main .center .quick .fa-angle-double-right, ' +
-    'html body #wrapper #container #main #visit .page #front .quick .fa-angle-double-right',
+    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right',
     function(e) {
-      feed('page', 9)
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
             scrollLeft: leftPos + 892
@@ -233,10 +232,10 @@ $(document)
           .scrollLeft() >= 0) $(this).parents('.quick').find('.left').show()
   })
   .on('touch click',
-  'html body #wrapper #container #main .center .quick .left, ' +
-    'html body #wrapper #container #main #visit .page #front .quick .left, ' +
+    'html body #wrapper #container #main .center .quick .left, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .left, ' +
     'html body #wrapper #container #main .center .quick .fa-angle-double-left, ' +
-    'html body #wrapper #container #main #visit .page #front .quick .fa-angle-double-left',
+    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left',
     function(e) {
         var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
         $(this).parents('.quick').find('.feed').animate({
@@ -410,27 +409,27 @@ $(document)
        uri.define().exit()
   })
   .on('mouseenter',
-    'html body #wrapper #container #main #visit .page #front .focus .button, ' +
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus .button, ' +
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
       if (op == 0)
-        $('html body #wrapper #container #main #visit .page #front .focus')
+        $('html body #wrapper #container #main #visit #page #front .focus')
           .removeClass('pageInputOut').addClass('pageInput')
   })
   .on('mouseleave',
-    'html body #wrapper #container #main #visit .page #front .focus .button, ' +
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus .button, ' +
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
       if (op == 0)
-        $('html body #wrapper #container #main #visit .page #front .focus')
+        $('html body #wrapper #container #main #visit #page #front .focus')
           .removeClass('pageInput').addClass('pageInputOut')
   })
   .on('touch click',
-    'html body #wrapper #container #main #visit .page #front .focus .button .buttonSearch',
+    'html body #wrapper #container #main #visit #page #front .focus .button .buttonSearch',
     function(e) {
-      if ($('html body #wrapper #container #main #visit .page #front input[type=text]').val().length > 0 &&
-          $('html body #wrapper #container #main #visit .page #front input[type=text]').val() != 'Search')
-        $('html body #wrapper #container #main #visit .page #front').submit()
+      if ($('html body #wrapper #container #main #visit #page #front input[type=text]').val().length > 0 &&
+          $('html body #wrapper #container #main #visit #page #front input[type=text]').val() != 'Search')
+        $('html body #wrapper #container #main #visit #page #front').submit()
       e.preventDefault()
   })
   .on('touch click',
@@ -446,49 +445,50 @@ $(document)
       }).focus()
   })
   .on('keyup',
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
-      $('html body #wrapper #container #main #visit .page #front #first').css('visibility','visible')
-      $('html body #wrapper #container #main #visit .page #front #first .listing').css('z-index', '3')
+      $('html body #wrapper #container #main #visit #page #front #first').css('visibility','visible')
+      $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
       var keyup = $(this).val()
       if (e.type == 'keyup' && e.keyCode == 13)
        return false
       else if (e.type == 'keyup' && $(this).val()
        .length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
-       list('visit', $(this).val())
+       base($(this).val())
       else if ($(this).val().length >= 2 && e.keyCode == 8)
-       list('visit', $(this).val())
+       base($(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
-       $('html body #wrapper #container #main #visit .page #front #first').css('visibility','hidden')
-       $('html body #wrapper #container #main .group .air, ' +
+       $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+       $('html body #wrapper #container #main .center, ' +
+         'html body #wrapper #container #main .content, ' +
+         'html body #wrapper #container #main .group .air, ' +
          'html body #wrapper #container #main .suggestions, ' +
-         'html body #wrapper #container #main .group .result, ' +
-         'html body #wrapper #container #main .center').show()
+         'html body #wrapper #container #main .group .result').show()
       } else if (e.keyCode == 40 || e.keyCode == 34) {
-        if (!$('html body #wrapper #container #main #visit .page #front #first .listing .hover').length)
-          $('html body #wrapper #container #main #visit .page #front #first .listing .index:first')
+        if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
+          $('html body #wrapper #container #main #visit #page #front #first .listing .index:first')
             .addClass('hover')
             .removeClass('index')
         else {
-          $('html body #wrapper #container #main #visit .page #front #first .listing .hover')
+          $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
             .next().focus()
             .removeClass('index').addClass('hover')
           $(this).val(keyup)
           $(this).attr('tabIndex', -1).focus()
-          $('html body #wrapper #container #main #visit .page #front #first .listing .hover')
+          $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
             .prev().removeClass('hover').addClass('index')
         }
       } else if (e.keyCode == 38 || e.keyCode == 33) {
-        $('html body #wrapper #container #main #visit .page #front #first .listing .hover')
+        $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .prev().focus()
           .removeClass('index').addClass('hover')
         $(this).val(keyup)
         $(this).focus()
-        $('html body #wrapper #container #main #visit .page #front #first .listing .hover')
+        $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .next().removeClass('hover').addClass('index')
       } else if (e.keyCode == 27) {
-        $('html body #wrapper #container #main #visit .page #front #first .listing').css('z-index', '0')
-        $('html body #wrapper #container #main #visit .page #front #first').hide()
+        $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '0')
+        $('html body #wrapper #container #main #visit #page #front #first').hide()
         $(this)
           .css({
             'caret-color': 'transparent',
@@ -502,13 +502,13 @@ $(document)
     visual()
   })
   .on('touch click',
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
-      $('html body #wrapper #container #main #visit .page #front #first .listing').css('z-index', '3')
-      $('html body #wrapper #container #main #visit .page #front #first').css('visibility', 'visible')
-      $('html body #wrapper #container #main #visit .page #front #first .listing').empty()
+      $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
+      $('html body #wrapper #container #main #visit #page #front #first').css('visibility', 'visible')
+      $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
       $.each(translations, function(i) {
-        $('html body #wrapper #container #main #visit .page #front #first .listing').append(
+        $('html body #wrapper #container #main #visit #page #front #first .listing').append(
           "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <div class='radial'></div>" +
@@ -520,7 +520,7 @@ $(document)
           "</div>"
         )
       })
-      $('html body #wrapper #container #main #visit .page #front #first .listing')
+      $('html body #wrapper #container #main #visit #page #front #first .listing')
         .append("<div class='background'></div>")
       $(this).val('')
         $(this).css({
@@ -528,11 +528,11 @@ $(document)
               'padding-left': '40px',
               'text-align': 'left'
         })
-        $('html body #wrapper #container #main #visit .page #front .icon').addClass('search')
+        $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
       visual()
   })
   .on('focusin',
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
       $(this).val('')
         $(this).css({
@@ -540,10 +540,10 @@ $(document)
               'padding-left': '40px',
               'text-align': 'left'
         })
-        $('html body #wrapper #container #main #visit .page #front .icon').addClass('search')
+        $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
   })
   .on('focusout blur',
-    'html body #wrapper #container #main #visit .page #front .focus input[type=text]',
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
       if ($(this).val().length == 0)
       $(this).css({
@@ -560,13 +560,13 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #match').hide()
         return false
       } else if ($(this).val().length >= 3 && e.keyCode >= 65 && e.keyCode <= 90)
-          list('match', $(this).val())
+          list($(this).val())
       else if ($(this).length >= 2 && e.keyCode == 8)
-          list('match', $(this).val())
+          list($(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
         $('html body #wrapper #container #main #top #arm #search #match').hide()
-        $(
-          'html body #wrapper #container #main .center, ' +
+        $('html body #wrapper #container #main .center, ' +
+          'html body #wrapper #container #main .content, ' +
           'html body #wrapper #container #main .group .air, ' +
           'html body #wrapper #container #main .suggestions, ' +
           'html body #wrapper #container #main .group .result').show()
@@ -707,15 +707,15 @@ $(document)
     e.preventDefault()
     visual()
   })
-  .on('submit', 'html body #wrapper #container #main #visit .page #front', function(e) {
-    $('html body #wrapper #container #main #visit .page #front .icon, #main #visit .page .button')
+  .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
+    $('html body #wrapper #container #main #visit #page #front .icon, #main #visit #page .button')
       .css('visibility','hidden')
-    if ($('html body #wrapper #container #main #visit .page #front #first .listing .hover').length) {
-        var uri = '?q=&' + $('html body #wrapper #container #main #visit .page #front #first .listing .hover')
+    if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').length) {
+        var uri = '?q=&' + $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .attr('response')
         uri.define().exit()
     } else {
-      var uri = '?q=' + $('html body #wrapper #container #main #visit .page #front input[type=text]').val()
+      var uri = '?q=' + $('html body #wrapper #container #main #visit #page #front input[type=text]').val()
         .toLowerCase()
         .replace(/\s/g, '+')
       uri.define().exit()
@@ -723,33 +723,33 @@ $(document)
     e.preventDefault()
   })
   .on('mouseenter',
-    'html body #wrapper #container #main #visit .page #front #first .index, ' +
-    'html body #wrapper #container #main #visit .page #front #first .hover, ' +
+    'html body #wrapper #container #main #visit #page #front #first .index, ' +
+    'html body #wrapper #container #main #visit #page #front #first .hover, ' +
     'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
     'html body #wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
       $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit .page #front #first .listing .hover')
+        '#main #visit #page #front #first .listing .hover')
           .attr('class', 'index')
       if (op == 0) $(this).addClass('hover contrast.hover')
       else $(this).addClass('hover visual.hover')
   })
   .on('mouseleave',
-  'html body #wrapper #container #main #visit .page #front #first .index, ' +
-  'html body #wrapper #container #main #visit .page #front #first .hover, ' +
+  'html body #wrapper #container #main #visit #page #front #first .index, ' +
+  'html body #wrapper #container #main #visit #page #front #first .hover, ' +
   'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
   'html body #wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
       if (op == 1) $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit .page #front #first .listing .hover')
+        '#main #visit #page #front #first .listing .hover')
           .attr('class', 'index contrast')
       else $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit .page #front #first .listing .hover')
+        '#main #visit #page #front #first .listing .hover')
           .attr('class','index visual')
   })
   .on('touch click',
-  'html body #wrapper #container #main #visit .page #front #first .index, ' +
-  'html body #wrapper #container #main #visit .page #front #first .hover, ' +
+  'html body #wrapper #container #main #visit #page #front #first .index, ' +
+  'html body #wrapper #container #main #visit #page #front #first .hover, ' +
   'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
   'html body #wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {

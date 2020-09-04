@@ -1,57 +1,54 @@
 @media screen and (max-width: 425px) {
 
-  #wrapper #container #main #top #search #home,
-  .left,
-  .next,
-  .back,
-  .icon,
-  .show,
-  .right,
-  .button,
-  .content,
-  .previous,
-  ::-webkit-scrollbar,
-  .center .quick .left,
-  .center .quick .right,
-  #wrapper #container #main #visit .page #front .focus .icon {
+  html body #wrapper #container #main #top #search #home,
+  html body #wrapper #container #main #visit #page #front .quick .right,
+  html body #wrapper #container #main .center .quick .fa-angle-double-right,
+  html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right,
+  html body #wrapper #container #main .center .quick .left,
+  html body #wrapper #container #main #visit #page #front .quick .left,
+  html body #wrapper #container #main .center #bottom .previous,
+  html body #wrapper #container #main .center #bottom .next,
+  html body #wrapper #container #main #visit #page #front .focus .button,
+  html body #wrapper #container #main #visit #page #front .focus .icon,
+  ::-webkit-scrollbar {
     display: none !important;
   }
 
-  #wrapper #container #main .page,
-  #wrapper #container #main #visit {
+  html body #wrapper #container #main #page,
+  html body #wrapper #container #main #visit {
    height: 100% !important;
    width: 100% !important;
    top: 0 !important;
   }
 
-  #wrapper #container #main #top,
-  #wrapper #container #main #arm {
+  html body #wrapper #container #main #top,
+  html body #wrapper #container #main #arm {
     width: 100% !important;
   }
 
-  #wrapper #container #main #visit .page #handle {
+  html body #wrapper #container #main #visit #page #handle {
     width: 100% !important;
     right: 0 !important;
   }
 
-  #wrapper #container #main .center {
+  html body #wrapper #container #main .center {
     top: -20px !important;
 	  left: 0 !important;
   }
 
-  #wrapper #container #main .center,
-  #wrapper #container #main .channel {
+  html body #wrapper #container #main .center,
+  html body #wrapper #container #main .channel {
     width: 100% !important;
     margin: 0;
   }
 
-  #wrapper #container #main .center .item,
-  #wrapper #container #main .center .feed {
+  html body #wrapper #container #main .center .item,
+  html body #wrapper #container #main .center .feed {
     box-shadow: none !important;
     border: none !important;
   }
 
-  #wrapper #container #main .page .quick {
+  html body #wrapper #container #main #page .quick {
     visibility: visible !important;
     opacity: 100 !important;
     width: 100% !important;
@@ -59,7 +56,7 @@
     left: 0 !important;
   }
 
-  #option {
+  html body #wrapper #container #main #top #arm #option {
     width: calc(100% - 20px) !important;
     top: calc(100% - 50px) !important;
     position: fixed !important;
@@ -67,27 +64,27 @@
     right: 10px;
   }
 
-  #wrapper #container #main .air,
-  #wrapper #container #main .populate,
-  #wrapper #container #main .result .filter,
-  #wrapper #container #main .result .populate {
+  html body #wrapper #container #main .air,
+  html body #wrapper #container #main .populate,
+  html body #wrapper #container #main .result .filter,
+  html body #wrapper #container #main .result .populate {
     margin: 1em !important;
     width: 32% !important;
   }
 
-  #wrapper #container #visit .page #front .focus {
+  html body #wrapper #container #visit #page #front .focus {
     margin: 0 auto !important;
     width: 300px !important;
     padding: 0 !important;
   }
 
-  #wrapper #container #main #visit .page #front input[type=text] {
+  html body #wrapper #container #main #visit #page #front input[type=text] {
     padding-left: 0 !important;
     width: 300px !important;
     top: 0px;
   }
 
-  #wrapper #container #main #visit .page #front #first .listing {
+  html body #wrapper #container #main #visit #page #front #first .listing {
     padding-left: 0 !important;
     width: 300px !important;
   }
@@ -96,13 +93,13 @@
 
 @media screen and (max-width: 768px) {
 
-  #wrapper #container #main .left,
-  #wrapper #container #main .right,
-  #wrapper #container #main .translation {
+  html body #wrapper #container #main .left,
+  html body #wrapper #container #main .right,
+  html body #wrapper #container #main .translation {
     display: none !important;
   }
 
-  #wrapper #container #main #top {
+  html body #wrapper #container #main #top {
     width: 100% !important;
   }
 
@@ -110,20 +107,20 @@
     margin-left: 70px;
   }
 
-  #wrapper #container #main .center {
+  html body #wrapper #container #main .center {
     left: -95px;
     width: 50%;
   }
 
-  #wrapper #container #main .content {
+  html body #wrapper #container #main .content {
     margin-left: -75px !important;
   }
 
-  #wrapper #container #main #visit .page #front .quick {
+  html body #wrapper #container #main #visit #page #front .quick {
       z-index: 3;
   }
 
-  #wrapper #container #main #visit .page {
+  html body #wrapper #container #main #visit #page {
     width: 90%;
   }
 
@@ -131,11 +128,11 @@
 
 @media screen and (min-width: 769px) {
 
-  #wrapper #container #main #top {
+  html body #wrapper #container #main #top {
     width: calc(100% - 16px) !important;
   }
 
-  #wrapper #container #main .center {
+  html body #wrapper #container #main .center {
     width: 632px !important;
   }
 
@@ -143,23 +140,23 @@
 
 @media screen and (max-width: 1024px) {
 
-  #wrapper #container #main #visit .page #front {
+  html body #wrapper #container #main #visit #page #front {
 	  position relative;
 	  top: -128px;
   }
 
-  #wrapper #container #main .group .air,
-  #wrapper #container #main .group .result {
+  html body #wrapper #container #main .group .air,
+  html body #wrapper #container #main .group .result {
 	  position: relative !important;
 	  top: 60px !important;
   }
 
-  #wrapper #container #main .center {
+  html body #wrapper #container #main .center {
     margin-left: 130px;
 	  width: 60%;
   }
 
-  #wrapper #container #main .translation {
+  html body #wrapper #container #main .translation {
 	display: none !important;
   }
 
@@ -167,40 +164,40 @@
 
 @media screen and (min-width: 1025px) {
 
-  #wrapper #container {
+  html body #wrapper #container {
     width: 100% !important;
     position: relative;
     display: block;
     margin: 0 auto;
   }
 
-  #wrapper #container #toggle {
+  html body #wrapper #container #toggle {
     right: 2em;
     top: 1em;
   }
 
-  #wrapper #container #main #top {
+  html body #wrapper #container #main #top {
     width: 100%;
   }
 
-  #wrapper #container #main #top #arm {
+  html body #wrapper #container #main #top #arm {
     width: 999px !important;
   }
 
-  #wrapper #container #main .center {
-    width: 648px !important;
+  html body #wrapper #container #main .center {
+    width: 638px !important;
   }
 
-  #wrapper #container #main .group .air,
-  #wrapper #container #main .group .air .populate,
-  #wrapper #container #main .group .result .filter,
-  #wrapper #container #main .group .result .populate {
+  html body #wrapper #container #main .group .air,
+  html body #wrapper #container #main .group .air .populate,
+  html body #wrapper #container #main .group .result .filter,
+  html body #wrapper #container #main .group .result .populate {
     width: 156px;
     margin: 2em;
   }
 
-  #wrapper #container #main .group .air,
-  #wrapper #container #main .group .result {
+  html body #wrapper #container #main .group .air,
+  html body #wrapper #container #main .group .result {
     width: 924px !important;
     position: relative;
     display: block;
@@ -209,10 +206,10 @@
 
 }
 
-  #wrapper #container #main #visit .page #front .quick {
+  html body #wrapper #container #main #visit #page #front .quick {
       position: relative;
-      width: 892px;
-      left: -62px;
+      width: 892px !important;
+      left: -62px !important;
       z-index: 3;
       top: 40px;
   }
