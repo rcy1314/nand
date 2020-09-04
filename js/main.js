@@ -526,6 +526,7 @@ $(document)
         $(this).focus()
         $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .next().removeClass('hover').addClass('index')
+      }
     visual()
   })
   .on('touch click',
@@ -622,6 +623,7 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
           .next()
           .attr('class', 'index')
+      }
       visual()
   })
   .on('touch click',
