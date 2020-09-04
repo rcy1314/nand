@@ -14,7 +14,6 @@ var tap = 0
 var mouseAsset
 var filter = []
 var object = []
-var nextAngle = 180
 var enableDrag = false
 
 var tag = "<div class='tag' style='display:none'>" +

@@ -27,8 +27,6 @@ $(document)
    })
   .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link',
     function(e) {
-      nextAngle += 180
-      if (nextAngle >= 360) nextAngle = 0
       if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')
@@ -173,12 +171,12 @@ $(document)
         tap = new Date().getTime()
         mouseAsset = $(this).attr('response')
         marginLeftStart = parseInt($(this)
-          .parents('html body #wrapper #container #main .center .quick .feed')
+          .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
-    if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+    if ($(this).parents('html body #wrapper #container #main .quick .feed')
           .scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
-          $(this).parents('html body #wrapper #container #main .center .quick .feed')
+          $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
       }
       $(this).unbind("mousemove")
@@ -189,15 +187,15 @@ $(document)
   function(e) {
       if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
             .scrollLeft() > 0)
-        $(this).parents('html body #wrapper #container #main .center .quick')
+        $(this).parents('html body #wrapper #container #main .quick')
           .find('.left').show()
-      else if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+      else if ($(this).parents('html body #wrapper #container #main .quick .feed')
                  .scrollLeft() == 0)
-        $(this).parents('html body #wrapper #container #main .center .quick')
+        $(this).parents('html body #wrapper #container #main .quick')
           .find('.left').hide()
           if (enableDrag) {
               var delta = e.pageX - dragStartX
-              $(this).parents('html body #wrapper #container #main .center .quick .feed')
+              $(this).parents('html body #wrapper #container #main .quick .feed')
                 .scrollLeft(marginLeftStart - delta)
           }
           $(this).unbind("mouseup")
