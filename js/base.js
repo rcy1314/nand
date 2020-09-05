@@ -195,6 +195,20 @@ var feed  = function(n) {
 var quick  = function(n) {
 
   var dupe = []
+  if (n == 7)
+  for (var i = 0; i <= translations.length - 1; i++){
+    $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
+      "<div class='asset' response='" + translations[i].toLowerCase() + "'>" +
+      "  <img src='images/" + translations[i] + ".webp' " +
+      "    class='idTranslation'" +
+      "    search='" + translations[i].toLowerCase() + "'> " +
+      "  <a style='left:0;width:100%' ext='" + translations[i] + "'" +
+           "title='" + translations[i] + "'>" +
+           translations[i].substring(0,9) + '...' +
+      "  </a>" +
+      "</div>"
+   )
+  }
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){

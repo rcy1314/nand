@@ -10,7 +10,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
       $(document)
         .ready(function() {
           $('#toggle, #label, .focus').css('visibility','visible')
-            quick(40)
+            quick(7)
       })
       visual()
     } else {
@@ -35,7 +35,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
           .ready(function() {
             $('#toggle, .focus').css('visibility','visible')
             $('.fill').css('visibility','hidden')
-            quick(40)
+            quick(7)
         })
 
       else {
@@ -100,7 +100,7 @@ if (location.search.split('?q=')[1]) {
           .ready(function() {
 
             $('#toggle, #label, .focus').css('visibility','visible')
-            quick(40)
+            quick(7)
 
         })
 

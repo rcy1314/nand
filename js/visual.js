@@ -56,7 +56,6 @@ var visual = function(n) {
       '--loader-color-secondary': '#e86d8a'
     })
     $('html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #visit #page #front #label .link .fa-angle-up, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
@@ -98,11 +97,12 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .removeClass('visual').addClass('contrast')
     $('html body #wrapper #container #main .translation .select .type, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
-      .css('filter','hue-rotate(90deg)')
+      .css('filter','hue-rotate(110deg)')
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('opposite').removeClass('invert')
@@ -150,7 +150,8 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .air .populate .display .title, ' +
       'html body #wrapper #container #main .group .result .filter .display .title, ' +
       'html body #wrapper #container #main .group .result .populate .display .title, ' +
-      'html body #wrapper #container #main #top #arm #search input[type=text]').css({
+      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
+      'a').css({
         'background-color': '#f7f7f7',
         'border': 'none',
         'color': '#888888'
@@ -184,6 +185,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .content .status .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
     $('html body #wrapper #container #main .translation .select .type, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +

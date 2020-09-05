@@ -166,18 +166,18 @@ $(document)
         dragStartX = 0
         enableDrag = true
         dragStartX = e.pageX
-        feed(40)
-        feed(40)
         tap = new Date().getTime()
         mouseAsset = $(this).attr('response')
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
     if ($(this).parents('html body #wrapper #container #main .quick .feed')
-          .scrollLeft() >= 3300)
+          .scrollLeft() >= 3000)
         for (i = 0; i < 40; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
+        quick(40)
+        feed(40)
       }
       $(this).unbind("mousemove")
       e.preventDefault();
@@ -185,7 +185,7 @@ $(document)
   .on('mousemove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
   'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
   function(e) {
-      if ($(this).parents('html body #wrapper #container #main .center .quick .feed')
+      if ($(this).parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft() > 0)
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.left').show()
@@ -216,16 +216,16 @@ $(document)
   })
   .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
   function(e) {
-      quick(40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('html body #wrapper #container #main #visit #page #front .quick .feed .asset:first').remove()
+      quick(40)
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed', function(e) {
-      feed(40)
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 40; i++)
           $('html body #wrapper #container #main .center .quick .feed .asset:first').remove()
+        feed(40)
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .right, ' +
@@ -233,6 +233,7 @@ $(document)
     'html body #wrapper #container #main .center .quick .fa-angle-double-right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right',
     function(e) {
+        console.log($('html body #wrapper #container #main .quick .feed').scrollLeft())
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
@@ -248,6 +249,13 @@ $(document)
               .find('.feed')
           .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
                                 .find('.left').show()
+        if ($(this).parents('html body #wrapper #container #main .quick .feed')
+              .scrollLeft() >= 3000)
+           for (i = 0; i < 40; i++)
+             $(this).parents('html body #wrapper #container #main .quick .feed')
+               .find('.asset:first').empty()
+           quick(40)
+           feed(40)
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .left, ' +
