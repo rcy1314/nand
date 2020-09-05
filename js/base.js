@@ -422,7 +422,7 @@ var image = function(empty, n, src) {
   $('#' + n).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
     $('#' + n).parents('.item')
-        .parents('.item').find('.pub, .ago').css('display','block')
+        .parents('.item').find('.pub, .ago, .addComment').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
@@ -487,10 +487,10 @@ var image = function(empty, n, src) {
         $(this).width('100%')
       }
     }
-    $('#' + n).parents('.item, #guide').find('.image, .img, .pub, .tag, .ago')
-      .css('display', 'block')
-    $('#' + n).parents('.item, #guide').find('.header, .wrap')
-      .css('display', 'inline-block')
+    $('#' + n).parents('.item, #guide')
+      .find('.image, .img, .pub, .tag, .ago, .addComment').css('display', 'block')
+    $('#' + n).parents('.item, #guide')
+      .find('.header, .wrap').css('display', 'inline-block')
     $('#' + n).parents('.item, #guide').find('.fill').remove()
     visual()
   }).attr('src', src)
@@ -500,9 +500,8 @@ var image = function(empty, n, src) {
   else if (empty == true ){
     $('#' + n).parents('.item').remove()
   } else {
-    $('#' + n).parents('.item').find('.ago')
-        .css('display', 'inline-block')
-        .parents('.item').find('.pub').css('display','block')
+    $('#' + n).parents('.item')
+        .find('.pub, .ago, .addComment').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
     }

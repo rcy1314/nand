@@ -1059,6 +1059,7 @@ html body #wrapper #container #main .center .item .pub .more {
 }
 
 html body #wrapper #container #main .center .item .addComment {
+  display: none;
   margin: 0;
 }
 
