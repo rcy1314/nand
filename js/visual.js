@@ -150,8 +150,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .air .populate .display .title, ' +
       'html body #wrapper #container #main .group .result .filter .display .title, ' +
       'html body #wrapper #container #main .group .result .populate .display .title, ' +
-      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
-      'a').css({
+      'html body #wrapper #container #main #top #arm #search input[type=text]').css({
         'background-color': '#f7f7f7',
         'border': 'none',
         'color': '#888888'
