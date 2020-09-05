@@ -421,18 +421,8 @@ $(document)
         if (location.href.match('\\+1'))
           var res = uri[0].replace(/\+1/g, '')
         else var res = uri[0]
-        response(false, false, uri, true)
         uri = '?q=' + res.replace(/\-/g, '+')
         uri.define().exit()
-      }
-      else {
-        if (location.href.split('?')[1].match(/^[a-z0-9\+1]+$/i))
-            var id = location.href.split('?')[1].slice(0, 2)
-            var i = menu.findIndex((item) => item.hash === id)
-            response(false, false,
-              menu[i].id.toLowerCase().replace(/\s|\/|\./g, ' '),
-              true
-            )
       }
     })
   .on('touch click',
