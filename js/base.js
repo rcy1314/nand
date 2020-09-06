@@ -795,22 +795,21 @@ var xml = function(e, s, n) {
         if (menu[n].id.match(/Imgur/g)) image(true, pub[i].element, pub[i].src)
         else image(false, pub[i].element, pub[i].src)
       })
-
     var posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = $('.item .ago:last').text()
     if (e != 'search') $('html body #wrapper #container #main .center').append(
       "<div id='bottom'>" +
-      "  <div class='back btn' index=" + menu.indexOf(menu[n.toString().back()]) + ">" +
+      "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
       "      <span class='front'>Text</span>" +
       "      <span class='flip-front'>Previous</span>" +
-      "      <span class='flip-back'>" + String(menu[n.toString().back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+      "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
       "  </div>" +
       "  <div class='bottom'>acktic</div>" +
-      "  <div class='next btn' index=" + menu.indexOf(menu[n.toString().next()]) + ">" +
+      "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
       "      <span class='front'>Text</span>" +
       "      <span class='flip-front'>Next</span>" +
-      "      <span class='flip-back'>" + String(menu[n.toString().next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+      "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
       "  </div>" +
       "</div>"
     )

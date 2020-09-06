@@ -105,15 +105,9 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-terminal',
   function(e) {
-    var array = []
-    for (i = 1; i <= menu.length - 1; i++) {
-      if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
-    }
-    var n = array[Math.floor(Math.random() * array.length)]
-    var uri = '?q=&' + menu[n].id.toLowerCase()
-      .replace(/(\s|\.|\/)/g, '-')
+    var n = $.random()
+    var uri = '?q=&' + menu[n].id.toLowerCase().hyphen()
     uri.define().exit()
-    return false
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {

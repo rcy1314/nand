@@ -1,6 +1,6 @@
 $.fn.animateRotate = function(angle, duration, easing, complete) {
   return this.each(function() {
-    var $elem = $(this);
+    var $elem = $(this)
 
     $(this).animate({deg: angle}, {
       duration: duration,
@@ -8,12 +8,12 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       step: function(now) {
         $elem.css({
            transform: 'rotate(' + now + 'deg)'
-         });
+         })
       },
       complete: complete || $.noop
-    });
-  });
-};
+    })
+  })
+}
 
 String.prototype.space = function() {
 
@@ -33,28 +33,39 @@ String.prototype.hyphen = function() {
 
 }
 
-String.prototype.next = function() {
+$.random = function() {
 
-  if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(this)]))
-  else var plus = parseInt(this)
-  if (filter[plus + +1]) var next = filter[plus + +1]
-  else if (this == menu.length - 1) var next = 1 + +1
-  else var next = parseInt(this) + +1
-
-  return next
+  var array = []
+  for (i = 1; i <= menu.length - 1; i++) {
+    if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
+  }
+  var n = array[Math.floor(Math.random() * array.length)]
+  return n
 
 }
 
-String.prototype.back = function() {
+$.next = function() {
 
   if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(this)]))
-  if (filter[plus - +1]) var back = filter[plus - +1]
-  else if (this == 0) var back = menu.length - 1
-  else var back = parseInt(this) - +1
+    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]))
+  else var plus = parseInt(id)
+  if (filter[plus + +1]) var next = filter[plus + +1]
+  else if (id == menu.length - 1) var next = 1 + +1
+  else var next = parseInt(id) + +1
 
-  return back
+  return parseInt(next)
+
+}
+
+$.back = function() {
+
+  if (filter.length > 1)
+    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]))
+  if (filter[plus - +1]) var back = filter[plus - +1]
+  else if (id == 0) var back = menu.length - 1
+  else var back = parseInt(id) - +1
+
+  return parseInt(back)
 
 }
 
