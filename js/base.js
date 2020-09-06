@@ -491,8 +491,8 @@ var image = function(empty, n, src) {
       $(this).get(0).naturalWidth * 2) {
         $(this).width('40vh')
      } else if ($(this).get(0).naturalHeight > k) {
-         $(this).parents('.item')
-             .parents('.item').find('.pub, .ago').css('display','block')
+         $(this)
+             .parents('.item').find('.pub, .ago, .addComment').css('display','block')
              .parents('.item')
              .find('.url, .share, .source, .header, .image, .img, .fill')
              .remove()
