@@ -207,7 +207,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite')
-    $('html body #wrapper #container #main #visit #page .fill').css('background-color','#383838')
+    $('html body #wrapper #container #main #visit #page .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')
     $('html body #wrapper #container #guide .wrap, ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +

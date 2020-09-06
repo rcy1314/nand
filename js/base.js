@@ -801,21 +801,17 @@ var xml = function(e, s, n) {
     var oldest = $('.item .ago:last').text()
     if (e != 'search') $('html body #wrapper #container #main .center').append(
       "<div id='bottom'>" +
-      "  <button class='back' index='" +
-            menu.indexOf(menu[n.toString().back()]) + "  '>" +
-      "     Previous</button>" +
-      "     &ensp;" +
-      "  <div class='back'>" +
-           menu[n.toString().back()].id.match(/[^\/]+$/g) +
+      "  <div class='back btn' index=" + menu.indexOf(menu[n.toString().back()]) + ">" +
+      "      <span class='front'>Text</span>" +
+      "      <span class='flip-front'>Previous</span>" +
+      "      <span class='flip-back'>" + String(menu[n.toString().back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
       "  </div>" +
       "  <div class='bottom'>acktic</div>" +
-      "  <div class='next'>" +
-           menu[n.toString().next()].id.match(/[^\/]+$/g) +
-      "   </div>" +
-      "   &ensp;" +
-      "   <button class='next' index='" +
-            menu.indexOf(menu[n.toString().next()]) + "'>" +
-      "     Next</button>" +
+      "  <div class='next btn' index=" + menu.indexOf(menu[n.toString().next()]) + ">" +
+      "      <span class='front'>Text</span>" +
+      "      <span class='flip-front'>Next</span>" +
+      "      <span class='flip-back'>" + String(menu[n.toString().next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+      "  </div>" +
       "</div>"
     )
     content(n, recent, oldest, posts)
