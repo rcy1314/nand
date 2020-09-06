@@ -133,7 +133,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm #search #match .listing .background').css({
         'background-color': '#fff',
         'border': 'none',
-        'color': '#888888'
+        'color': '#666666'
     })
     $('html body #wrapper #container #main #visit, ' +
       'html body #wrapper #container #guide .blur, ' +
@@ -150,10 +150,11 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .air .populate .display .title, ' +
       'html body #wrapper #container #main .group .result .filter .display .title, ' +
       'html body #wrapper #container #main .group .result .populate .display .title, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset a, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text]').css({
         'background-color': '#f7f7f7',
         'border': 'none',
-        'color': '#888888'
+        'color': '#666666'
     })
     $(':root').css({
       '--loader-color-primary': '#0078D4',
