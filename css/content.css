@@ -192,6 +192,7 @@ input {
 }
 
 html body #wrapper #container #toggle,
+html body #wrapper #container #main .translation .select,
 html body #wrapper #container #main .group .air .populate,
 html body #wrapper #container #main .group .result .filter,
 html body #wrapper #container #main .group .result .populate,

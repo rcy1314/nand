@@ -113,7 +113,9 @@ var visual = function(n) {
     .addClass('contrast.hover').removeClass('visual.hover')
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
-    $('html body #wrapper #container, ' +
+    $('html body #wrapper #container #main, ' +
+      'html body #wrapper #container #main .status .asset, ' +
+      'html body #wrapper #container, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main .group, ' +
       'html body #wrapper #container #main #top #arm, ' +
@@ -133,8 +135,7 @@ var visual = function(n) {
         'border': 'none',
         'color': '#888888'
     })
-    $('html body #wrapper #container #main, ' +
-      'html body #wrapper #container #main #visit, ' +
+    $('html body #wrapper #container #main #visit, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #visit #page, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
@@ -143,7 +144,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right, ' +
       'html body #wrapper #container #main .center .quick .left, ' +
-      'html body #wrapper #container #main .status .asset, ' +
       'html body #wrapper #container #main .group .air .populate, ' +
       'html body #wrapper #container #main .group .result .filter, ' +
       'html body #wrapper #container #main .group .result .populate, ' +
