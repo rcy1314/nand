@@ -7,7 +7,18 @@ $(document)
           reader == true && stop == true){
         stop = false
         first = false
-        xml(null, null, $.random())
+        var n = $.random()
+        if ($.inArray(n, readDupe) == -1) xml(null, null, n)
+        else {
+          var array = []
+          for (i = 1; i <= menu.length - 1; i++) {
+            if (menu[i].cat == category &&
+                $.inArray(menu.indexOf(menu[i]), readDupe) == -1) array.push(menu.indexOf(menu[i]))
+          }
+          var n = array[Math.floor(Math.random() * array.length)]
+          readDupe.push(n)
+          xml(null, null, n)
+        }
       }
     })
   })
@@ -90,7 +101,9 @@ $(document)
           uri.exit()
         }
         reader = true
-        xml(null, null, $.random())
+        var n = $.random()
+        readDupe.push(n)
+        xml(null, null, n)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {

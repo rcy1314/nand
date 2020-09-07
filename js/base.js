@@ -17,6 +17,7 @@ var mouseAsset
 var filter = []
 var object = []
 var stop = false
+var readDupe = []
 var enableDrag = false
 
 var tag = "<div class='tag' style='display:none'>" +
@@ -516,7 +517,7 @@ var image = function(empty, n, item, src) {
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
     visual()
   }).attr('src', src)
-    .parent().find('.fill').css('visibility','visible')
+    .parents('.' + n).find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
   else if (empty == true ){
