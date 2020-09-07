@@ -2,6 +2,7 @@ var op = 0
 var first = true
 var reader = false
 var contrast = false
+var imageDupe = true
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations =
@@ -13,6 +14,7 @@ var id
 var img
 var post
 var tap = 0
+var array = []
 var mouseAsset
 var filter = []
 var object = []
@@ -252,11 +254,22 @@ var progress = function(complete, n) {
           $('html body #wrapper #container #main .air').show()
           $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
           $('html body #wrapper #container #main').attr('tabindex', -1).focus()
-          setTimeout(function() {
-            if (reader == true){
-             stop = true
+            if (reader == true && stop == true && first == true){
+                if ($('html body #wrapper #container #main').innerHeight() >=
+                    $('html body #wrapper #container #main .channel').innerHeight()){
+                      if ($.active <= 1){
+                        reader = true
+                        first = false
+                        stop = true
+                        xml(null, null, $.random())
+                        return true
+                      } else {
+                        first = false
+                        stop = true
+                        xml(null, null, $.random())
+                      }
+                } else first = false
             }
-          }, 1000)
         })
       visual()
     }
@@ -444,7 +457,7 @@ var image = function(empty, n, item, src) {
   if (src.match(/https?\:\/\//g)) {
   $('.' + n).find(' .' + item).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
-    $('.' + n).find(' .' + item).parents('.item')
+    $(this)
         .parents('.item').find('.pub, .ago, .addComment').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
@@ -550,6 +563,12 @@ var xml = function(e, s, n) {
     $('#progressBar').width($('#progressBar').width() +
       Math.floor(Math.random() * (10 - 5 + 1) + 5))
   }, 350)
+  if (reader == true && first == true){
+    $('html body #wrapper #container #main .center, ' +
+      'html body #wrapper #container #main .translation, ' +
+      'html body #wrapper #container #main .content, ' +
+      'html body #wrapper #container #main .group').remove()
+  }
   $.get({
     url: uri,
     method: 'GET',
@@ -582,7 +601,7 @@ var xml = function(e, s, n) {
     var quit = $(xhr).find(channel).length - 2
     if (reader == true) {
       if (menu[n].id.match(/Imgur/g)) quit = 25
-      else quit = 12
+      else quit = 5
     } else if (menu[n].id.match(/Imgur/g)) quit = 40
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
@@ -766,7 +785,27 @@ var xml = function(e, s, n) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })
     })
-    if (first == true && !$('html body #wrapper #container #main .center').length) {
+    if (reader == true && first == true) {
+      $('html body #wrapper #container #main').append(
+      "<div class='translation' style='visibility:hidden'></div>" +
+        "<div class='center' style='display:none'>" +
+        "  <div class='quick'>" +
+        "    <div class='left' style='display:none'>" +
+        "      <div class='fa-angle-double-left'></div></div>" +
+        "    <div class='right'>" +
+        "      <div class='fa-angle-double-right'></div></div>" +
+        "    <div class='feed'></div>" +
+        "  </div>" +
+        "  <div class='channel'></div>" +
+        "</div>" +
+        "<div class='content' style='visibility:hidden'>" +
+        "  <div class='status'></div>" +
+        "  <div class='suggestions'>" +
+        "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
+        "  </div>" +
+        "</div>"
+      )
+    } else if (reader == false && first == true) {
       $('html body #wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +
@@ -829,18 +868,36 @@ var xml = function(e, s, n) {
         "</div>"
       )
     }
-    if (first == true || reader == true) {
-      $('html body #wrapper #container #main .content .suggestions').empty()
-      $('html body #wrapper #container #main .content .status').empty()
-      $('html body #wrapper #container #main .translation').empty()
-      $('html body #wrapper #container #main .quick .feed').empty()
+    if (reader == true && first == true){
       content(n, recent, oldest, posts)
       feed(40)
       suggest(id)
       select()
+      clearInterval(complete)
+      progress(true, 100)
+      if ($.active <= 1){
+        first = true
+        stop = true
+      }
+    } else if (reader == false && first == true) {
+      content(n, recent, oldest, posts)
+      feed(40)
+      suggest(id)
+      select()
+      clearInterval(complete)
+      progress(true, 100)
+      if ($.active <= 1){
+        first = true
+        stop = true
+      }
+    } else {
+      clearInterval(complete)
+      progress(true, 100)
+      if ($.active <= 1){
+        first = true
+        stop = true
+      }
     }
-    clearInterval(complete)
-    progress(true, 100)
   })
 
 }

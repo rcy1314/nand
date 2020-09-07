@@ -3,41 +3,10 @@ $(document)
     $('#input').css('display', 'block')
     $('input[type=text]').attr('tabindex', -1).focus()
     $('html body #wrapper #container #main').on('scroll touchmove', function (){
-      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 750 &&
-          reader == true && stop == true){
-        stop = false
-        first = false
-        var n = $.random()
-        if ($.inArray(n, readDupe) == -1) xml(null, null, n)
-        else {
-          var array = []
-          for (i = 1; i <= menu.length - 1; i++) {
-            if (menu[i].cat == category && menu[i].media == true &&
-                $.inArray(menu.indexOf(menu[i]), readDupe) == -1) array.push(menu.indexOf(menu[i]))
-          }
-          if (array.length == -1) {
-            notify('Reading ' + category + ' completed.')
-            $('html body #wrapper #container #main .center').append(
-              "<div id='bottom'>" +
-              "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
-              "      <span class='front'></span>" +
-              "      <span class='flip-front'>Previous</span>" +
-              "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-              "  </div>" +
-              "  <div class='bottom'>acktic</div>" +
-              "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
-              "      <span class='front'></span>" +
-              "      <span class='flip-front'>Next</span>" +
-              "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-              "  </div>" +
-              "</div>"
-            )
-            return false
-          }
-          var n = array[Math.floor(Math.random() * array.length)]
-          readDupe.push(n)
-          xml(null, null, n)
-        }
+      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 450 &&
+          reader == true && first == false && stop == true){
+            stop = false
+            xml(null, null, $.random())
       }
     })
   })
@@ -128,26 +97,14 @@ $(document)
             "</div>"
           )
           reader = false
-          first = false
-        } else if (first == true) {
-          $('html body #wrapper #container #main .center .channel').empty()
-          $('html body #wrapper #container #main #bottom, ' +
-            'html body #wrapper #container #main .group').remove()
+          first = true
+          stop = false
+        } else if (reader == false) {
           notify('Reading ' + category + ' enabled.')
           reader = true
-          var n = $.random()
-          readDupe.push(n)
-          xml(null, null, n)
-      } else if (first == false){
-        $('html body #wrapper #container #main .center .channel').empty()
-        $('html body #wrapper #container #main #bottom, ' +
-          'html body #wrapper #container #main .group').remove()
-        notify('Reading ' + category + ' enabled.')
-        reader = true
-        first = false
-        var n = $.random()
-        readDupe.push(n)
-        xml(null, null, n)
+          first = true
+          stop = true
+          xml(null, null, $.random())
       }
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
@@ -190,6 +147,8 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {
+    array = []
+    readDupe = []
     if (reader == true) {
       $('html body #wrapper #container #main .channel').empty()
       category = $(this).attr('response')
@@ -200,7 +159,7 @@ $(document)
       xml(null, null, n)
       notify('Switched to now reading ' + category)
     } else {
-      var uri = '?q=&' + $(this).attr('response').toLowerCase()
+      var uri = '?q=' + $(this).attr('response').toLowerCase()
       uri.define().exit()
     }
   })
@@ -223,7 +182,7 @@ $(document)
         var uri = location.search.split('?q=')[1].replace(/\+|\?\+1|\+1/g, ' ')
           .match(/[^&]+/g)[0]
         if ($(this).attr('response').match(uri)) {
-          uri = '?q=' + uri.replace(/\s/g, '+') + '&' + $(this).attr('response')
+          uri = '?q=&' + uri.replace(/\s/g, '+') + '&' + $(this).attr('response')
         } else uri = '?q=&' + $(this).attr('response')
         uri.define().exit()
       }
@@ -294,7 +253,7 @@ $(document)
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
-                  var uri = '?q=&' + mouseAsset
+                  var uri = '?q=' + mouseAsset
                   uri.define().exit()
               }
           }
@@ -506,7 +465,7 @@ $(document)
     'html body #wrapper #container #main .center #bottom .back, ' +
     'html body #wrapper #container #main .center #bottom .next',
     function(e) {
-      var uri = menu[$(this).attr('index').trim()].id.toLowerCase().replace(/\s|\.|\//g, '-')
+      var uri = menu[$(this).attr('index').trim()].id.hyphen().toLowerCase()
       uri = '?q=&' + uri
       uri.define().exit()
   })
@@ -523,13 +482,13 @@ $(document)
     })
   .on('touch click',
     'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
-       var uri = '?q=&' + $(this).attr('response')
+       var uri = '?q=&' + $(this).attr('response').hyphen().toLowerCase()
        uri.define().exit()
   })
   .on('touch click',
     'html body #wrapper #container #main .content .status .asset .radial', function(e) {
-       var uri = '?q=&' + $(this).parents('html body #wrapper #container #main .content .status .asset')
-                            .attr('response')
+       var uri = '?q=' + $(this).parents('html body #wrapper #container #main .content .status .asset')
+                          .attr('response')
        uri.define().exit()
   })
   .on('mouseenter',

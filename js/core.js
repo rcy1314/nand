@@ -35,12 +35,22 @@ String.prototype.hyphen = function() {
 
 $.random = function() {
 
-  var array = []
   for (i = 1; i <= menu.length - 1; i++) {
-    if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
+    if (imageDupe == true)
+      if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
+    else if (imageDupe == false)
+      if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
   }
-  var n = array[Math.floor(Math.random() * array.length)]
-  return n
+  var n = array[Math.floor(Math.random() * array.length - 1)]
+  if (menu[n]){
+    readDupe.push(n)
+    return n
+  }
+  else {
+   var e = array[Math.floor(Math.random() * array.length - 1)]
+   readDupe.push(e)
+   return e
+  }
 
 }
 

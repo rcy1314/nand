@@ -1820,7 +1820,7 @@ var menu = [
 		ext: "https://imgur.com/r/celebs",
 		img: "Imgur",
 		hash: "Ic",
-    media: true
+    media: false
   },
 	{
 		id: "Reddit/Celebs",
@@ -1830,7 +1830,7 @@ var menu = [
 		ext: "https://www.reddit.com/r/Celebs",
 		img: "Celebs",
 		hash: "Bh",
-    media: true
+    media: false
   },
 	{
 		id: "Imgur/Celebhub",
@@ -1840,7 +1840,7 @@ var menu = [
 		ext: "https://imgur.com/r/celebhub",
 		img: "Imgur",
 		hash: "ic",
-    media: true
+    media: false
   },
 	{
 		id: "Reddit/Celebhub",
@@ -1850,7 +1850,7 @@ var menu = [
 		ext: "https://www.reddit.com/r/CelebHub",
 		img: "CelebHub",
 		hash: "hC",
-    media: true
+    media: false
   },
 	{
 		id: "Reddit/Chrome",
@@ -2040,7 +2040,7 @@ var menu = [
 		ext: "https://imgur.com/r/goddesses",
 		img: "Imgur",
 		hash: "ig",
-    media: true
+    media: false
   },
 	{
 		id: "Reddit/Goddesses",
@@ -2050,7 +2050,7 @@ var menu = [
 		ext: "https://www.reddit.com/r/Goddesses",
 		img: "Reddit",
 		hash: "gO",
-    media: true
+    media: false
   },
 	{
 		id: "Reddit/Google",
