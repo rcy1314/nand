@@ -15,6 +15,7 @@ $(document)
             if (menu[i].cat == category &&
                 $.inArray(menu.indexOf(menu[i]), readDupe) == -1) array.push(menu.indexOf(menu[i]))
           }
+          if (array.length == -1) return false
           var n = array[Math.floor(Math.random() * array.length)]
           readDupe.push(n)
           xml(null, null, n)
@@ -95,15 +96,44 @@ $(document)
       'html body #wrapper #container #main #top #arm #option .fa-heart-o', function(e) {
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
-          var uri = window.location.origin
-          if (contrast == true && !location.href.match('\\+1')) uri = uri + '?+1'
-          else if (contrast == true) uri = uri + '?+1'
-          uri.exit()
-        }
+          notify('Reading ' + category + ' disabled.')
+          $('html body #wrapper #container #main .center').append(
+            "<div id='bottom'>" +
+            "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+            "      <span class='front'></span>" +
+            "      <span class='flip-front'>Previous</span>" +
+            "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+            "  </div>" +
+            "  <div class='bottom'>acktic</div>" +
+            "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+            "      <span class='front'></span>" +
+            "      <span class='flip-front'>Next</span>" +
+            "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+            "  </div>" +
+            "</div>"
+          )
+          reader = false
+          first = false
+        } else if (first == true) {
+          $('html body #wrapper #container #main .center .channel').empty()
+          $('html body #wrapper #container #main #bottom').remove()
+          $('html body #wrapper #container #main .group').remove()
+          notify('Reading ' + category + ' enabled.')
+          reader = true
+          var n = $.random()
+          readDupe.push(n)
+          xml(null, null, n)
+      } else if (first == false){
+        $('html body #wrapper #container #main .center .channel').empty()
+        $('html body #wrapper #container #main #bottom').remove()
+        $('html body #wrapper #container #main .group').remove()
+        notify('Reading ' + category + ' enabled.')
         reader = true
+        first = false
         var n = $.random()
         readDupe.push(n)
         xml(null, null, n)
+      }
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {
@@ -145,8 +175,19 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {
-    var uri = '?q=&' + $(this).attr('response').toLowerCase()
-    uri.define().exit()
+    if (reader == true) {
+      $('html body #wrapper #container #main .channel').empty()
+      category = $(this).attr('response')
+      readDupe = []
+      first = false
+      var n = $.random()
+      readDupe.push(n)
+      xml(null, null, n)
+      notify('Switched to now reading ' + category)
+    } else {
+      var uri = '?q=&' + $(this).attr('response').toLowerCase()
+      uri.define().exit()
+    }
   })
   .on('touch click mouseenter mouseleave',
     'html body #wrapper #container #main .group .air .populate, ' +
@@ -173,17 +214,18 @@ $(document)
       }
     })
   .on('touch click',
-    'html body #wrapper #container .sticky .header .fa-ellipsis-h, ' +
+    'html body #wrapper #container #guide .sticky .header .fa-ellipsis-h, ' +
     'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
     function(e) {
         $(this)
         .parents('html body #wrapper #container #guide .sticky .item, ' +
-          'html body #wrapper #container #main .center .item .classic .wrap')
+          'html body #wrapper #container #main .center .item .classic')
             .find('.url').select()
         document.execCommand('copy')
+        var $this = $(this)
         $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
         setTimeout(function() {
-          $(this).removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+          $this.removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
         }, 250)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
@@ -359,32 +401,34 @@ $(document)
       visual()
   })
   .on('touch click',
-    'html body #wrapper #container #guide .sticky .tag .fa-gratipay',
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-gratipay',
+    'html body #wrapper #container #guide .sticky .tag .fa-heart, ' +
+    'html body #wrapper #container #guide .sticky .tag .fa-heart-o, ' +
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o, ' +
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart',
     function(e) {
         $(this).toggleClass('fa-heart-o fa-heart')
         e.stopPropagation()
         visual()
   })
   .on('touch click',
+  'html body #wrapper #container #guide .sticky .tag .fa-bookmark, ' +
     'html body #wrapper #container #guide .sticky .tag .fa-bookmark-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o',
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark, ' +
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o',
     function(e) {
-        $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
-          'html body #wrapper #container #main .center .item .classic .wrap').find('.source').select()
+        $(this).parents('html body #wrapper #container #guide .sticky, ' +
+          'html body #wrapper #container #main .center .item .classic').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark'))
           $(this).toggleClass('fa-bookmark-o fa-bookmark')
-          notify('Source Copied to Clipboard')
+        notify('Source Copied to Clipboard')
         e.stopPropagation()
         visual()
       })
   .on('touch click',
     'html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note-o',
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
+    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
       if (contrast == true)
         if (!$(this).parents('html body #wrapper #container #main .center .channel .item , ' +

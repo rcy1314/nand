@@ -46,21 +46,21 @@ html body #wrapper #container #main #top #arm #option .fa-terminal {
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart,
 html body #wrapper #container #guide .sticky .tag .fa-heart-o,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o,
 html body #wrapper #container #guide .sticky .tag .fa-comments,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-comments,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comments,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .tag .fa-comment-o,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-comment-o,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comment-o,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o,
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note,
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note-o {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
   font-size: 24px !important;
   padding: 5px !important;
 }
@@ -97,52 +97,52 @@ html body #wrapper #container #main #visit #page #front #label .link .fa-angle-u
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note:before {
   font-family: FontAwesome;
   content: "\f249";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart-o:before,
 html body #wrapper #container #main #top #arm #option .fa-heart-o:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o:before {
   font-family: FontAwesome;
   content: "\f08a";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-comments:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-comments:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comments:before {
   font-family: FontAwesome;
   content: "\f086";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-comment-o:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-comment-o:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comment-o:before {
   font-family: FontAwesome;
   content: "\f0e5";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-sticky-note-o:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o:before {
   font-family: FontAwesome;
   content: "\f24a";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o:before {
   font-family: FontAwesome;
   content: "\f097";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark:before {
   font-family: FontAwesome;
   content: "\f02e";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark-o {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark,
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o {
   float: right !important;
   margin-right: 5px;
 }
@@ -181,14 +181,14 @@ html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-
 
 html body #wrapper #container .sticky .heart:before,
 html body #wrapper #container #main #top #arm #option .heart:before,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart:before {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart:before {
   font-family: FontAwesome;
   content: "\f004";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
 html body #wrapper #container #main #top #arm #option .fa-heart,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart {
+html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart {
   color: lightcoral !important;
 }
 
@@ -356,7 +356,7 @@ html body #wrapper #container #main #top {
   visibility: hidden;
   position: fixed;
   height: 57px;
-  z-index: 2;
+  z-index: 9;
   top: 0;
 }
 
@@ -417,9 +417,10 @@ html body #wrapper #container #main {
 
 html body #wrapper #container #main .group {
   scrollbar-width: none;
-  padding-bottom: 57px;
   height: fit-content;
+  position: relative;
   width: 100%;
+  top: 57px;
 }
 
 html body #wrapper #container #main #visit {
@@ -635,7 +636,6 @@ html body #wrapper #container #main .group .result {
   flex-wrap: wrap;
   display: flex;
   width: 100%;
-  top: 60px;
 }
 
 html body #wrapper #container #main .group .air .populate,
@@ -1297,21 +1297,19 @@ html body #wrapper #container #main .center .item .views {
   position: relative;
 }
 
-html body #wrapper #container #main .center .item #yt .yt {
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 54.25%;
-  margin-bottom: 5px;
-  position: relative;
-  width: 100%;
+html body #wrapper #container #main .center .yt .image {
+  width: 100% !important;
+  padding-bottom: 56.25% !important; /* 16:9 */
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-html body #wrapper #container #main .center .item #yt .yt iframe {
-  position: absolute;
-  border: none;
-  height: 100%;
-  width: 100%;
-  top: 5px;
-  left: 0;
+html body #wrapper #container #main .center .yt .image img {
+  position: absolute !important;
+  top: -16.75% !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index:first-child:hover:after,

@@ -543,7 +543,10 @@ var xml = function(e, s, n) {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
   $('html body #wrapper #container #main .group').remove()
-  document.title = menu[n].id.space().capitalize()
+  var doc = menu[n].id.space().capitalize()
+  document.title = doc
+  doc = '?q=&' + doc.hyphen().toLowerCase()
+  doc.state()
   progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
     $('#progressBar').width($('#progressBar').width() +
@@ -681,10 +684,10 @@ var xml = function(e, s, n) {
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
-      } else if (
-          src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/)
-        )
+      } else if (src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/))
         src = ''
+      if (src.match(/ytimg/g)) var yt = 'yt'
+      else var yt = ''
       if (src == '') courtesy = ''
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
@@ -711,7 +714,7 @@ var xml = function(e, s, n) {
             "</div>"
         } else var cat = ''
         html =
-          "<div class='item " + n + "' item='" + i + "' ext='" + re.trim() + "'>" +
+          "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + re.trim() + "'>" +
           "  <div class='classic'>" +
           "    <div class='header'>" +
                  courtesy +
@@ -719,9 +722,9 @@ var xml = function(e, s, n) {
           "    </div>" +
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
-          "      <img id='" + i + "' class='" + i + " img' src='" + src + "'>" + tag +
+          "      <img id='" + i + "' class='" + i + " img' src='" + src + "'>" +
           "    </div>" +
-          "    <div class='wrap'>" +
+          "    <div class='wrap'>" + tag +
           "      <div class='pub' style='display:none' text='" +
                    $(this).find('title:first').text().escape() + "'>" +
                    $(this).find('title:first').text().truncate(125, true)
@@ -782,20 +785,7 @@ var xml = function(e, s, n) {
         "  </div>" +
         "</div>"
       )
-      content(n, recent, oldest, posts)
-      feed(40)
-      suggest(id)
-      select()
-      } else {
-        $('html body #wrapper #container #main .content .suggestions').empty()
-        $('html body #wrapper #container #main .content .status').empty()
-        $('html body #wrapper #container #main .translation').empty()
-        $('html body #wrapper #container #main .quick .feed').empty()
-        content(n, recent, oldest, posts)
-        feed(40)
-        suggest(id)
-        select()
-      }
+    }
     if ($.isNumeric(local)) {
       guide(
         i,
@@ -827,18 +817,33 @@ var xml = function(e, s, n) {
       if (e != 'search') $('html body #wrapper #container #main .center').append(
         "<div id='bottom'>" +
         "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
-        "      <span class='front'>Text</span>" +
+        "      <span class='front'></span>" +
         "      <span class='flip-front'>Previous</span>" +
         "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
         "  </div>" +
         "  <div class='bottom'>acktic</div>" +
         "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
-        "      <span class='front'>Text</span>" +
+        "      <span class='front'></span>" +
         "      <span class='flip-front'>Next</span>" +
         "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
         "  </div>" +
         "</div>"
       )
+    }
+    if (first == true) {
+      content(n, recent, oldest, posts)
+      feed(40)
+      suggest(id)
+      select()
+    } else if (reader == true){
+      $('html body #wrapper #container #main .content .suggestions').empty()
+      $('html body #wrapper #container #main .content .status').empty()
+      $('html body #wrapper #container #main .translation').empty()
+      $('html body #wrapper #container #main .quick .feed').empty()
+      content(n, recent, oldest, posts)
+      feed(40)
+      suggest(id)
+      select()
     }
     progress(true, 100)
   })
