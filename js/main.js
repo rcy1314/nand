@@ -12,7 +12,7 @@ $(document)
         else {
           var array = []
           for (i = 1; i <= menu.length - 1; i++) {
-            if (menu[i].cat == category &&
+            if (menu[i].cat == category && menu[i].media == true &&
                 $.inArray(menu.indexOf(menu[i]), readDupe) == -1) array.push(menu.indexOf(menu[i]))
           }
           if (array.length == -1) {
