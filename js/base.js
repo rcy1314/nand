@@ -533,7 +533,7 @@ var image = function(empty, n, item, src) {
     .parents('.' + n).find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
-  else if (empty == true ){
+  else if (empty == true || imageDupe == true){
     $('.' + n).find(' .' + item).parents('.item').remove()
   } else {
     $('.' + n).find(' .' + item).parents('.item')
@@ -601,8 +601,8 @@ var xml = function(e, s, n) {
     var quit = $(xhr).find(channel).length - 2
     if (reader == true) {
       if (menu[n].id.match(/Imgur/g)) quit = 25
-      else quit = 5
-    } else if (menu[n].id.match(/Imgur/g)) quit = 40
+      else quit = 15
+    } else if (menu[n].id.match(/Imgur/g)) quit = 50
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
         var re = $(this).find('link').attr('href')
@@ -869,35 +869,30 @@ var xml = function(e, s, n) {
       )
     }
     if (reader == true && first == true){
-      content(n, recent, oldest, posts)
-      feed(40)
-      suggest(id)
-      select()
-      clearInterval(complete)
-      progress(true, 100)
       if ($.active <= 1){
         first = true
         stop = true
       }
     } else if (reader == false && first == true) {
-      content(n, recent, oldest, posts)
-      feed(40)
-      suggest(id)
-      select()
-      clearInterval(complete)
-      progress(true, 100)
       if ($.active <= 1){
         first = true
         stop = true
       }
     } else {
-      clearInterval(complete)
-      progress(true, 100)
+      $('html body #wrapper #container #main .status, ' +
+        'html body #wrapper #container #main .translation, ' +
+        'html body #wrapper #container #main .suggestions').empty()
       if ($.active <= 1){
         first = true
         stop = true
       }
     }
+    content(n, recent, oldest, posts)
+    feed(40)
+    suggest(id)
+    select()
+    clearInterval(complete)
+    progress(true, 100)
   })
 
 }

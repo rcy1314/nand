@@ -3,7 +3,7 @@ $(document)
     $('#input').css('display', 'block')
     $('input[type=text]').attr('tabindex', -1).focus()
     $('html body #wrapper #container #main').on('scroll touchmove', function (){
-      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 450 &&
+      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 750 &&
           reader == true && first == false && stop == true){
             stop = false
             xml(null, null, $.random())
@@ -96,9 +96,8 @@ $(document)
             "  </div>" +
             "</div>"
           )
-          reader = false
-          first = true
-          stop = false
+          var uri = '?q=' + category.toLowerCase()
+          uri.define().exit()
         } else if (reader == false) {
           notify('Reading ' + category + ' enabled.')
           reader = true
