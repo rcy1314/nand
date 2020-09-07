@@ -2,6 +2,14 @@ $(document)
   .ready(function() {
     $('#input').css('display', 'block')
     $('input[type=text]').attr('tabindex', -1).focus()
+    $('html body #wrapper #container #main').on('scroll touchmove', function (){
+      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 750 &&
+          reader == true && stop == true){
+        stop = false
+        first = false
+        xml(null, null, $.random())
+      }
+    })
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
@@ -72,6 +80,18 @@ $(document)
     uri.state()
     visual()
   })
+  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-heart, ' +
+      'html body #wrapper #container #main #top #arm #option .fa-heart-o', function(e) {
+        $(this).toggleClass('fa-heart-o fa-heart')
+        if (reader == true) {
+          var uri = window.location.origin
+          if (contrast == true && !location.href.match('\\+1')) uri = uri + '?+1'
+          else if (contrast == true) uri = uri + '?+1'
+          uri.exit()
+        }
+        reader = true
+        xml(null, null, $.random())
+  })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {
     var uri = '?q=' + category.toLowerCase()
@@ -79,6 +99,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-sun',
   function(e) {
+    reader = false
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '+1'
       contrast = contrast != true
@@ -314,8 +335,8 @@ $(document)
               $(this)
                 .parents('html body #wrapper #container #main .center .channel .item, ' +
                   'html body #wrapper #container #guide .sticky')
-                .find('.fa-gratipay, .fa-heart-o')
-                .toggleClass('fa-heart-o fab fa-gratipay')
+                .find('.fa-heart, .fa-heart-o')
+                .toggleClass('fa-heart-o fab fa-heart')
               e.stopPropagation()
               visual()
               tap = 0;
@@ -329,7 +350,7 @@ $(document)
     'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o, ' +
     'html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-gratipay',
     function(e) {
-        $(this).toggleClass('fa-heart-o fab fa-gratipay')
+        $(this).toggleClass('fa-heart-o fa-heart')
         e.stopPropagation()
         visual()
   })

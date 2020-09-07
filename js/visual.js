@@ -108,7 +108,7 @@ var visual = function(n) {
       .addClass('opposite').removeClass('invert')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('html body #wrapper #container #main #visit #page .fill').css('background-color','#ffffff')
-    $('html body #wrapper #container #main #top #arm #search #home, .fas, .images').css('color','#fff')
+    $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#fff')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
     .addClass('contrast.hover').removeClass('visual.hover')
     $('#favicon').attr('href', 'images/Opposite.ico')
@@ -218,7 +218,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .feed .right, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset .id').
       css('box-shadow', '1px 1px 1px #eee')
-    $('html body #wrapper #container #main #top #arm #search #home, .fas, .images').css('color','#000')
+    $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
   }
 }

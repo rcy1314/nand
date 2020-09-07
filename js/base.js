@@ -1,4 +1,6 @@
 var op = 0
+var first = true
+var reader = false
 var contrast = false
 var category = 'Social'
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -14,6 +16,7 @@ var tap = 0
 var mouseAsset
 var filter = []
 var object = []
+var stop = false
 var enableDrag = false
 
 var tag = "<div class='tag' style='display:none'>" +
@@ -248,6 +251,11 @@ var progress = function(complete, n) {
           $('html body #wrapper #container #main .air').show()
           $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
           $('html body #wrapper #container #main').attr('tabindex', -1).focus()
+          setTimeout(function() {
+            if (reader == true){
+             stop = true
+            }
+          }, 1000)
         })
       visual()
     }
@@ -425,7 +433,7 @@ var write = function(n) {
   })
 }
 
-var image = function(empty, n, src) {
+var image = function(empty, n, item, src) {
 
   var maximum = 799
   var minimum = 299
@@ -433,9 +441,9 @@ var image = function(empty, n, src) {
   var k = 5420
 
   if (src.match(/https?\:\/\//g)) {
-  $('#' + n).on('error', function() {
+  $('.' + n).find(' .' + item).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
-    $('#' + n).parents('.item')
+    $('.' + n).find(' .' + item).parents('.item')
         .parents('.item').find('.pub, .ago, .addComment').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
@@ -462,9 +470,9 @@ var image = function(empty, n, src) {
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%').css('cssText', 'max-width: 60vh')
-         $('#' + n).parents('#guide').find('.image, .img')
+         $('.' + n).find(' .' + item).parents('#guide').find('.image, .img')
           .css('display', 'block')
-         $('#' + n).parents('#guide')
+         $('.' + n).find(' .' + item).parents('#guide')
           .find('.url, .share, .source, .header, .wrap, .fill').remove()
       }
     } else {
@@ -501,20 +509,20 @@ var image = function(empty, n, src) {
         $(this).width('100%')
       }
     }
-    $('#' + n).parents('.item, #guide')
+    $('.' + n).find(' .' + item).parents('.item, #guide')
       .find('.image, .img, .pub, .tag, .ago, .addComment').css('display', 'block')
-    $('#' + n).parents('.item, #guide')
+    $('.' + n).find(' .' + item).parents('.item, #guide')
       .find('.header, .wrap').css('display', 'inline-block')
-    $('#' + n).parents('.item, #guide').find('.fill').remove()
+    $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
     visual()
   }).attr('src', src)
-    .parent().siblings('.fill').css('visibility','visible')
+    .parent().find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
   else if (empty == true ){
-    $('#' + n).parents('.item').remove()
+    $('.' + n).find(' .' + item).parents('.item').remove()
   } else {
-    $('#' + n).parents('.item')
+    $('.' + n).find(' .' + item).parents('.item')
         .find('.pub, .ago, .addComment').css('display','block')
         .parents('.item')
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
@@ -702,7 +710,7 @@ var xml = function(e, s, n) {
             "</div>"
         } else var cat = ''
         html =
-          "<div class='item " + i + "' item='" + i + "' ext='" + re.trim() + "'>" +
+          "<div class='item " + n + "' item='" + i + "' ext='" + re.trim() + "'>" +
           "  <div class='classic'>" +
           "    <div class='header'>" +
                  courtesy +
@@ -710,7 +718,7 @@ var xml = function(e, s, n) {
           "    </div>" +
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
-          "      <img id='" + i + "' class='img' src='" + src + "'>" + tag +
+          "      <img id='" + i + "' class='" + i + " img' src='" + src + "'>" + tag +
           "    </div>" +
           "    <div class='wrap'>" +
           "      <div class='pub' style='display:none' text='" +
@@ -739,6 +747,7 @@ var xml = function(e, s, n) {
         since: since,
         share: share,
         dst: dst[0],
+        feed: n,
         more: more,
         element: i,
         post: html,
@@ -752,26 +761,40 @@ var xml = function(e, s, n) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })
     })
-    $('html body #wrapper #container #main').append(
+    if (first == true) {
+      $('html body #wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
-      "<div class='center' style='display:none'>" +
-      "  <div class='quick'>" +
-      "    <div class='left' style='display:none'>" +
-      "      <div class='fa-angle-double-left'></div></div>" +
-      "    <div class='right'>" +
-      "      <div class='fa-angle-double-right'></div></div>" +
-      "    <div class='feed'></div>" +
-      "  </div>" +
-      "  <div class='channel'></div>" +
-      "</div>" +
-      "<div class='content' style='visibility:hidden'>" +
-      "  <div class='status'></div>" +
-      "  <div class='suggestions'>" +
-      "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
-      "  </div>" +
-      "</div>"
-    )
-    select()
+        "<div class='center' style='display:none'>" +
+        "  <div class='quick'>" +
+        "    <div class='left' style='display:none'>" +
+        "      <div class='fa-angle-double-left'></div></div>" +
+        "    <div class='right'>" +
+        "      <div class='fa-angle-double-right'></div></div>" +
+        "    <div class='feed'></div>" +
+        "  </div>" +
+        "  <div class='channel'></div>" +
+        "</div>" +
+        "<div class='content' style='visibility:hidden'>" +
+        "  <div class='status'></div>" +
+        "  <div class='suggestions'>" +
+        "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
+        "  </div>" +
+        "</div>"
+      )
+      content(n, recent, oldest, posts)
+      feed(40)
+      suggest(id)
+      select()
+      } else {
+        $('html body #wrapper #container #main .content .suggestions').empty()
+        $('html body #wrapper #container #main .content .status').empty()
+        $('html body #wrapper #container #main .translation').empty()
+        $('html body #wrapper #container #main .quick .feed').empty()
+        content(n, recent, oldest, posts)
+        feed(40)
+        suggest(id)
+        select()
+      }
     if ($.isNumeric(local)) {
       guide(
         i,
@@ -783,7 +806,7 @@ var xml = function(e, s, n) {
         pub[local].share,
         pub[local].src
       )
-      image(true, pub[local].element, pub[local].src)
+      image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
       progress(false, Math.floor(Math.random() * (75 - 55 + 1) + 55))
       $.each(pub, function(i, k) {
@@ -792,31 +815,30 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
-        if (menu[n].id.match(/Imgur/g)) image(true, pub[i].element, pub[i].src)
-        else image(false, pub[i].element, pub[i].src)
+        if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
+        else image(false, pub[i].feed, pub[i].element, pub[i].src)
       })
     var posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = $('.item .ago:last').text()
-    if (e != 'search') $('html body #wrapper #container #main .center').append(
-      "<div id='bottom'>" +
-      "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
-      "      <span class='front'>Text</span>" +
-      "      <span class='flip-front'>Previous</span>" +
-      "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "  <div class='bottom'>acktic</div>" +
-      "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
-      "      <span class='front'>Text</span>" +
-      "      <span class='flip-front'>Next</span>" +
-      "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "</div>"
-    )
-    content(n, recent, oldest, posts)
     clearInterval(complete)
-    feed(40)
-    suggest(id)
+    if (reader == false) {
+      if (e != 'search') $('html body #wrapper #container #main .center').append(
+        "<div id='bottom'>" +
+        "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+        "      <span class='front'>Text</span>" +
+        "      <span class='flip-front'>Previous</span>" +
+        "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+        "  </div>" +
+        "  <div class='bottom'>acktic</div>" +
+        "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+        "      <span class='front'>Text</span>" +
+        "      <span class='flip-front'>Next</span>" +
+        "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+        "  </div>" +
+        "</div>"
+      )
+    }
     progress(true, 100)
   })
 

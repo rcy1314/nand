@@ -31,6 +31,8 @@ html body #wrapper #container #main .center .channel .item .classic .fill .loade
   display: flex;
 }
 
+html body #wrapper #container #main #top #arm #option .fa-heart,
+html body #wrapper #container #main #top #arm #option .fa-heart-o,
 html body #wrapper #container #main #top #arm #option .fa-sun {
   font-size: 17px;
   padding: 17px;
@@ -43,12 +45,12 @@ html body #wrapper #container #main #top #arm #option .fa-terminal {
   padding: 15px;
 }
 
+html body #wrapper #container #guide .sticky .tag .fa-heart,
+html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart,
 html body #wrapper #container #guide .sticky .tag .fa-heart-o,
 html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o,
 html body #wrapper #container #guide .sticky .tag .fa-comments,
 html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-comments,
-html body #wrapper #container #guide .sticky .tag .fa-gratipay,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-gratipay,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark,
 html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .tag .fa-comment-o,
@@ -101,6 +103,7 @@ html body #wrapper #container #main .center .channel .item .classic .image .tag 
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart-o:before,
+html body #wrapper #container #main #top #arm #option .fa-heart-o:before,
 html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart-o:before {
   font-family: FontAwesome;
   content: "\f08a";
@@ -176,13 +179,16 @@ html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-
   content: "\f142";
 }
 
+html body #wrapper #container .sticky .heart:before,
+html body #wrapper #container #main #top #arm #option .heart:before,
 html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: FontAwesome;
   content: "\f004";
 }
 
-html body #wrapper #container #guide .sticky .tag .fa-gratipay,
-html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-gratipay {
+html body #wrapper #container #guide .sticky .tag .fa-heart,
+html body #wrapper #container #main #top #arm #option .fa-heart,
+html body #wrapper #container #main .center .channel .item .classic .image .tag .fa-heart {
   color: lightcoral !important;
 }
 
