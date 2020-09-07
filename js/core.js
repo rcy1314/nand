@@ -37,7 +37,7 @@ $.random = function() {
 
   var array = []
   for (i = 1; i <= menu.length - 1; i++) {
-    if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
+    if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
   }
   var n = array[Math.floor(Math.random() * array.length)]
   return n

@@ -580,7 +580,10 @@ var xml = function(e, s, n) {
     if ($(xhr).find('entry').length > 0) var channel = "entry"
     else var channel = 'item'
     var quit = $(xhr).find(channel).length - 2
-    if (quit > 80) quit = 80
+    if (reader == true) {
+      if (menu[n].id.match(/Imgur/g)) quit = 25
+      else quit = 12
+    } else if (menu[n].id.match(/Imgur/g)) quit = 40
     $(xhr).find(channel).each(function(i) {
       if (channel == 'entry') {
         var re = $(this).find('link').attr('href')
@@ -682,7 +685,7 @@ var xml = function(e, s, n) {
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
-      } else if (src.match(/comments|default|feeds|fsdn|undefined|[^https?:\/\/]/))
+      } else if (src.match(/assets|comments|default|feeds|fsdn|undefined|[^https?:\/\/]/g))
         src = ''
       if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''

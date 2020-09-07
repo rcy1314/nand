@@ -1,16 +1,15 @@
 var menu = [
 
 	{
-
 		id: "Bing",
 		cat: "Search Results",
 		des: "Bing Search Results.",
 		uri: "https://www.bing.com/search?q=",
 		ext: "https://www.bing.com",
 		img: "Bing",
-		hash: "mB"
-
-	}	,
+		hash: "mB",
+    media: false
+  },
 	{
 		id: "CBS/Washington D.C.",
 		cat: "News",
@@ -18,8 +17,9 @@ var menu = [
 		uri: "http://rssfeeds.wusa9.com/wusa-news&x=1",
 		ext: "https://wusa9.com",
 		img: "WUSA9",
-		hash: "wa"
-	}	,
+		hash: "wa",
+		media: true
+  },
 	{
 		id: "ABC/Fresno",
 		cat: "News",
@@ -27,8 +27,9 @@ var menu = [
 		uri: "https://abc30.com/feed",
 		ext: "https://abc30.com",
 		img: "KFSNTV30",
-		hash: "fA"
-	}	,
+		hash: "fA",
+    media: true
+  },
 	{
 		id: "NBC/Fresno",
 		cat: "News",
@@ -36,131 +37,121 @@ var menu = [
 		uri: "https://yourcentralvalley.com/feed",
 		ext: "https://www.yourcentralvalley.com",
 		img: "KSEE24",
-		hash: "oF"
-	}	,
+		hash: "oF",
+		media: true
+  },
 	{
-
 		id: "ABC/Palm Springs",
 		cat: "News",
 		des: "ABC KESQ California Palm Springs The Desert's News Leader.",
 		uri: "https://kesq.com/feed",
 		ext: "https://kesq.com",
 		img: "KESQ",
-		hash: "sQ"
-
-	}	,
+		hash: "sQ",
+		media: false
+	},
 	{
-
 		id: "NBC/Palm Springs",
 		cat: "News",
 		des: "NBC KMIR California Palm Springs News, Weather, Traffic, Breaking News where Breaking News comes first.",
 		uri: "https://nbcpalmsprings.com/feed",
 		ext: "https://nbcpalmsprings.com",
 		img: "KMIR",
-		hash: "rK"
-
-	}	,
+		hash: "rK",
+		media: false
+	},
 	{
-
 		id: "ABC/Salinas",
 		cat: "News",
 		des: "ABC KSBW California Salinas Action News 8 is your source for the Latest Local Headlines.",
 		uri: "https://www.ksbw.com/topstories-rss",
 		ext: "https://www.ksbw.com",
 		img: "KSBW",
-		hash: "aK"
+		hash: "aK",
+		media: true
 
-	}	,
+	},
 	{
-
 		id: "CBS/Fort Myers",
 		cat: "News",
 		des: "CBS WINK Florida Fort Myers one of a handful of TV stations today to have locally-based ownership.",
 		uri: "https://www.winknews.com/feed",
 		ext: "https://www.winknews.com",
 		img: "WINK",
-		hash: "nI"
-
-	}	,
+		hash: "nI",
+		media: true
+	},
 	{
-
 		id: "ABC/Jacksonville",
 		cat: "News",
 		des: "ABC WTLV Florida Jacksonville up to the minute Local Late Breaking News.",
 		uri: "http://rssfeeds.firstcoastnews.com/wtlv/firstcoastnews-topstories&x=1",
 		ext: "http://www.firstcoastnews.com",
 		img: "WTLV",
-		hash: "fJ"
-
-	}	,
+		hash: "fJ",
+		media: true
+	},
 	{
-
 		id: "ABC/Panama City",
 		cat: "News",
 		des: "ABC WMBB Florida Panama City We tell local Panama City news & weather stories.",
 		uri: "https://www.mypanhandle.com/feed",
 		ext: "https://www.mypanhandle.com",
 		img: "WMBB",
-		hash: "fP"
-
-	}	,
+		hash: "fP",
+		media: true
+	},
 	{
-
 		id: "CBS/St. Petersburg",
 		cat: "News",
 		des: "CBS WTSP Florida St. Petersburg Tampa Bay and Sarasota area's best news, weather, and traffic.",
 		uri: "http://rssfeeds.wtsp.com/wtsp/home&x=1",
 		ext: "https://www.wtsp.com",
 		img: "WTSP",
-		hash: "tS"
-
-	}	,
+		hash: "tS",
+		media: true
+	},
 	{
-
 		id: "CBS/Macon",
 		cat: "News",
 		des: "CBS WMAZ Georgia Macon has been affiliated with the CBS Television Network since the station signed on 60 years ago.",
 		uri: "http://rssfeeds.13wmaz.com/wmaz/headlines/local&x=1",
 		ext: "https://www.13wmaz.com",
 		img: "WMAZ",
-		hash: "wZ"
-
-	}	,
+		hash: "wZ",
+		media: true
+	},
 	{
-
 		id: "ABC/Savannah",
 		cat: "News",
 		des: "ABC WJCL Georgia Savannah is your source for the Latest Local Headlines.",
 		uri: "https://www.wjcl.com/topstories-rss",
 		ext: "https://www.wjcl.com",
 		img: "WJCL",
-		hash: "jC"
-
-	}	,
+		hash: "jC",
+		media: true
+	},
 	{
-
 		id: "ABC/Peoria",
 		cat: "News",
 		des: "ABC WEEK Illinois Peoria All the News for your needs.",
 		uri: "https://week.com/feed",
 		ext: "https://week.com",
 		img: "WEEK",
-		hash: "eK"
-
-	}	,
+		hash: "eK",
+		media: false
+	},
 	{
-
 		id: "ABC/Fort Wayne",
 		cat: "News",
 		des: "ABC WPTA Fort Wanye Indiana your source for breaking news and severe weather coverage, plus news, weather and sports.",
 		uri: "https://wpta21.com/feed",
 		ext: "https://wpta21.com/",
 		img: "WPTA",
-		hash: "fY"
-
-	}	,
+		hash: "fY",
+		media: false
+	},
 	{
-
 		id: "NBC/Fort Wayne",
 		cat: "News",
 		des: "NBC FWNBC Fort Wayne Indiana Latest News, Sports, Local, and Weather.",
@@ -168,187 +159,138 @@ var menu = [
 		ext: "https://fortwaynesnbc.com",
 		img: "FWNBC",
 		hash: "sL",
-
-	}	,
+		media: false
+	},
 	{
-
 		id: "ABC/South Bend",
 		cat: "News",
 		des: "ABC WBND South Bend Indiana the most up to minute Local and National News.",
 		uri: "https://www.abc57.com/rss",
 		ext: "https://www.abc57.com",
 		img: "WBND",
-		hash: "Bn"
-
-	}	,
+		hash: "Bn",
+		media: true
+	},
 	{
-
-		id: "ABC/South Bend",
-		cat: "News",
-		des: "ABC WSBT South Bend Indiana serving Northern Indiana and the southern portion of Western Michigan.",
-		uri: "https://wsbt.com/news/local.rss",
-		ext: "https://wsbt.com",
-		img: "WSBT",
-		hash: "bN"
-
-	}	,
-	{
-
 		id: "ABC/Terra Haute",
 		cat: "News",
 		des: "ABC WAWV Indiana Terra Haute a full service television station.",
 		uri: "https://www.mywabashvalley.com/feed",
 		ext: "https://www.mywabashvalley.com",
 		img: "WAWV",
-		hash: "Wf"
-
-	}	,
+		hash: "Wf",
+		media: true
+	},
 	{
-
-		id: "NBC/Davenport",
-		cat: "News",
-		des: "NBC KWQC Iowa Davenport serving the Quad Cities area of Southeastern Iowa and Northwestern Illinois.",
-		uri: "https://www.kwqc.com/templates/2015_XML_FEED?placement=/content/news",
-		ext: "https://www.kwqc.com",
-		img: "KWQC",
-		hash: "qC"
-
-	}	,
-	{
-
 		id: "NBC/Wichita",
 		cat: "News",
 		des: "NBC KSNW Kansas Wichita We tell local Kansas news & weather stories. We are Here for You.",
 		uri: "https://www.ksn.com/feed",
 		ext: "https://www.ksn.com",
 		img: "KSNW",
-		hash: "fK"
-
-	}/*
-	,
+		hash: "fK",
+		media: true
+	},
 	{
-
-		id: "ABC/Flint",
-		cat: "News",
-		des: "ABC WJRT Michigan Flint Weather, News, Sports, and more.",
-		uri: "https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",
-		ext: "https://www.abc12.com",
-		img: "WJRT",
-		hash: "jR"
-
-	}
-*/
-	,
-	{
-
 		id: "NBC/Grand Rapids",
 		cat: "News",
 		des: "NBC WOOD Michigan Grand Rapids we do what we do to make Grand Rapids & the rest of Michigan a better place to live.",
 		uri: "https://www.woodtv.com/feed",
 		ext: "https://www.woodtv.com",
 		img: "WOOD",
-		hash: "oD"
-
-	}	,
+		hash: "oD",
+		media: true
+	},
 	{
-
 		id: "ABC/Grand Rapids",
 		cat: "News",
 		des: "ABC WZZM Michigan Grand Rapids Late Breaking News and Headlines.",
 		uri: "http://rssfeeds.wzzm13.com/wzzm13-news&x=1",
 		ext: "http://www.wzzm13.com",
 		img: "WZZM",
-		hash: "zM"
-
-	}	,
+		hash: "zM",
+		media: true
+	},
 	{
-
 		id: "ABC/Lansing",
 		cat: "News",
 		des: "ABC WLNS Michigan Lansing driving force behind Mid-Michigan's businesses, lifestyle and culture.",
 		uri: "https://www.wlns.com/feed",
 		ext: "https://www.wlns.com",
 		img: "WLNS",
-		hash: "fU"
-
-	}	,
+		hash: "fU",
+		media: true
+	},
 	{
-
 		id: "ABC/Albany",
 		cat: "News",
 		des: "ABC WTEN New York Albany serving New York Capital District as well as Berkshire County, Massachusetts.",
 		uri: "https://www.news10.com/feed",
 		ext: "https://www.news10.com",
 		img: "WTEN",
-		hash: "An"
-
-	}	,
+		hash: "An",
+		media: true
+	},
 	{
-
 		id: "CBS/Buffalo",
 		cat: "News",
 		des: "CBS WIVB New York Buffalo The station is owned by Nexstar Media Group, as part of a duopoly with CW affiliate WNLO.",
 		uri: "https://www.wivb.com/feed",
 		ext: "https://www.wivb.com",
 		img: "WIVB",
-		hash: "bU"
-
-	}	,
+		hash: "bU",
+		media: true
+	},
 	{
-
 		id: "NBC/Buffalo",
 		cat: "News",
 		des: "NBC WGRZ New York Buffalo for breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
 		uri: "http://rssfeeds.wgrz.com/wgrz/headlines/top-stories&x=1",
 		ext: "http://www.wgrz.com",
 		img: "WGRZ",
-		hash: "gr"
-
-	}	,
+		hash: "gr",
+		media: true
+	},
 	{
-
 		id: "CBS/Rochester",
 		cat: "News",
 		des: "CBS WROC New York Rochester CBS - affiliated television station licensed to Rochester, New York.",
 		uri: "https://www.rochesterfirst.com/feed",
 		ext: "https://www.rochesterfirst.com",
 		img: "WROC",
-		hash: "rC"
-
-	}	,
+		hash: "rC",
+		media: true
+	},
 	{
-
 		id: "NBC/Rapid City",
 		cat: "News",
 		des: "NBC KNBN South Dakota Rapid City Local news from NewsCenter1.",
 		uri: "https://www.newscenter1.tv/feed",
 		ext: "https://www.newscenter1.tv",
 		img: "KNBN",
-		hash: "dR"
-
-	}	,
+		hash: "dR",
+		media: false
+	},
 	{
-
 		id: "CBS/Sioux Falls",
 		cat: "News",
 		des: "CBS KELO South Dakota Sioux Falls News, Weather, Sports for Sioux Falls, South Dakota, northwest Iowa and southwest Minnesota.",
 		uri: "https://www.keloland.com/feed",
 		ext: "https://www.keloland.com",
 		img: "KELO",
-		hash: "lO"
-
-	}	,
+		hash: "lO",
+		media: true
+	},
 	{
-
 		id: "ABC/Madison",
 		cat: "News",
 		des: "ABC WKOW Wisconsin Madison the first TV station in Madison, Wisconsin, established June 30, 1953.",
 		uri: "https://wkow.com/feed",
 		ext: "https://wkow.com",
 		img: "WKOW",
-		hash: "kO"
-
-	}	,
+		hash: "kO",
+		media: false
+	},
 	{
 		id: "CBS/San Antonio",
 		cat: "News",
@@ -356,8 +298,9 @@ var menu = [
 		uri: "http://rssfeeds.kens5.com/kens5/local-news&x=1",
 		ext: "https://www.kens5.com",
 		img: "KENS",
-		hash: "eS"
-	}	,
+		hash: "eS",
+		media: true
+  },
 	{
 		id: "ABC/Albany",
 		cat: "News",
@@ -365,8 +308,9 @@ var menu = [
 		uri: "https://www.news10.com/feed",
 		ext: "https://www.news10.com",
 		img: "WTEN",
-		hash: "wt"
-	}	,
+		hash: "wt",
+		media: true
+  },
 	{
 		id: "CBS/Raleigh",
 		cat: "News",
@@ -374,8 +318,9 @@ var menu = [
 		uri: "https://www.cbs17.com/feed",
 		ext: "https://www.cbs17.com",
 		img: "WNCN",
-		hash: "ra"
-	}	,
+		hash: "ra",
+		media: true
+  },
 	{
 		id: "NBC/Little Rock",
 		cat: "News",
@@ -383,8 +328,9 @@ var menu = [
 		uri: "https://www.kark.com/feed",
 		ext: "https://www.kark.com",
 		img: "KARK",
-		hash: "aR"
-	}	,
+		hash: "aR",
+		media: true
+  },
 	{
 		id: "CBS/Little Rock",
 		cat: "News",
@@ -392,8 +338,9 @@ var menu = [
 		uri: "http://rssfeeds.thv11.com/kthv/local&x=1",
 		ext: "https://www.thv11.com",
 		img: "THV",
-		hash: "hV"
-	}	,
+		hash: "hV",
+		media: true
+  },
 	{
 		id: "ABC/West Palm Beach",
 		cat: "News",
@@ -401,17 +348,9 @@ var menu = [
 		uri: "https://www.wpbf.com/topstories-rss",
 		ext: "https://www.wpbf.com",
 		img: "WPBF",
-		hash: "bF"
-	}	,
-	{
-		id: "ABC/Des Moines",
-		cat: "News",
-		des: "ABC WOI Iowa Des Moines local Des Moines news & weather stories.",
-		uri: "https://www.weareiowa.com/feed",
-		ext: "https://www.weareiowa.com",
-		img: "WOI",
-		hash: "oW"
-	}	,
+		hash: "bF",
+		media: true
+  },
 	{
 		id: "CBS/Detroit",
 		cat: "News",
@@ -419,8 +358,9 @@ var menu = [
 		uri: "https://detroit.cbslocal.com/feed",
 		ext: "https://detroit.cbslocal.com",
 		img: "WWJ",
-		hash: "wJ"
-	}	,
+		hash: "wJ",
+		media: true
+  },
 	{
 		id: "ABC/Kansas City",
 		cat: "News",
@@ -428,8 +368,9 @@ var menu = [
 		uri: "https://www.kmbc.com/topstories-rss",
 		ext: "https://www.kmbc.com",
 		img: "KMBC",
-		hash: "mK"
-	}	,
+		hash: "mK",
+		media: true
+  },
 	{
 		id: "NBC/St Louis",
 		cat: "News",
@@ -437,8 +378,9 @@ var menu = [
 		uri: "http://rssfeeds.ksdk.com/ksdk-usworldnews&x=1",
 		ext: "http://www.ksdk.com",
 		img: "KSDK",
-		hash: "sD"
-	}	,
+		hash: "sD",
+		media: true
+  },
 	{
 		id: "NBC/Charleston",
 		cat: "News",
@@ -446,8 +388,9 @@ var menu = [
 		uri: "https://www.counton2.com/feed",
 		ext: "https://www.counton2.com",
 		img: "WCBD",
-		hash: "lW"
-	}	,
+		hash: "lW",
+		media: true
+  },
 	{
 		id: "CBS/Providence",
 		cat: "News",
@@ -455,8 +398,9 @@ var menu = [
 		uri: "https://www.wpri.com/feed",
 		ext: "https://www.wpri.com",
 		img: "WPRI",
-		hash: "iP"
-	}	,
+		hash: "iP",
+		media: true
+  },
 	{
 		id: "ABC/Knoxville",
 		cat: "News",
@@ -464,8 +408,9 @@ var menu = [
 		uri: "https://www.wate.com/feed",
 		ext: "https://www.wate.com",
 		img: "WATE",
-		hash: "aW"
-	}	,
+		hash: "aW",
+		media: true
+  },
 	{
 		id: "NBC/El Paso",
 		cat: "News",
@@ -473,8 +418,9 @@ var menu = [
 		uri: "https://www.ktsm.com/feed",
 		ext: "https://www.ktsm.com",
 		img: "KTSM",
-		hash: "kP"
-	}	,
+		hash: "kP",
+		media: true
+  },
 	{
 		id: "NBC/Roanoke",
 		cat: "News",
@@ -482,8 +428,9 @@ var menu = [
 		uri: "https://www.wsls.com/arcio/rss/category/news/?size=10",
 		ext: "https://www.wsls.com",
 		img: "WSLS",
-		hash: "rL"
-	}	,
+		hash: "rL",
+		media: true
+  },
 	{
 		id: "CBS/Spokane",
 		cat: "News",
@@ -491,7 +438,8 @@ var menu = [
 		uri: "http://rssfeeds.krem.com/krem/headlines/local&x=1",
 		ext: "https://www.krem.com",
 		img: "KREM",
-		hash: "mR"
+		hash: "mR",
+		media: true
 	}
   ,
 	{
@@ -501,8 +449,9 @@ var menu = [
 		uri: "https://baltimore.cbslocal.com/feed",
 		ext: "https://baltimore.cbslocal.com",
 		img: "WJZ",
-		hash: "jZ"
-	}	,
+		hash: "jZ",
+		media: true
+  },
 	{
 		id: "NBC/Baltimore",
 		cat: "News",
@@ -510,8 +459,9 @@ var menu = [
 		uri: "https://www.wbaltv.com/topstories-rss",
 		ext: "https://www.wbaltv.com",
 		img: "WBAL",
-		hash: "bL"
-	}  ,
+		hash: "bL",
+		media: true
+	},
 	{
 		id: "ABC/Montgomery",
 		cat: "News",
@@ -519,8 +469,9 @@ var menu = [
 		uri: "https://www.alabamanews.net/feed",
 		ext: "https://www.alabamanews.net",
 		img: "WNCF",
-		hash: "Ma"
-	}	,
+		hash: "Ma",
+		media: false
+  },
 	{
 		id: "NBC/Phoenix",
 		cat: "News",
@@ -528,8 +479,9 @@ var menu = [
 		uri: "http://rssfeeds.12news.com/kpnx/local&x=1",
 		ext: "http://www.12news.com",
 		img: "KPNX",
-		hash: "kX"
-	}	,
+		hash: "kX",
+		media: true
+  },
 	{
 		id: "NBC/Tucson",
 		cat: "News",
@@ -537,8 +489,9 @@ var menu = [
 		uri: "https://kvoa.com/feed",
 		ext: "https://kvoa.com",
 		img: "KVOA",
-		hash: "kA"
-	}	,
+		hash: "kA",
+		media: false
+  },
 	{
 		id: "ABC7/Chicago",
 		cat: "News",
@@ -546,8 +499,9 @@ var menu = [
 		uri: "https://abc7chicago.com/feed",
 		ext: "https://abc7chicago.com",
 		img: "ABC7",
-		hash: "Ha"
-	}	,
+		hash: "Ha",
+		media: true
+  },
 	{
 		id: "CBS/Chicago",
 		cat: "News",
@@ -555,8 +509,9 @@ var menu = [
 		uri: "https://chicago.cbslocal.com/feed",
 		ext: "https://chicago.cbslocal.com",
 		img: "WBBM",
-		hash: "wM"
-	}	,
+		hash: "wM",
+		media: true
+  },
 	{
 		id: "ABC/Denver",
 		cat: "News",
@@ -564,8 +519,9 @@ var menu = [
 		uri: "https://www.thedenverchannel.com/news.rss",
 		ext: "https://www.thedenverchannel.com",
 		img: "KMGB",
-		hash: "Kb"
-	}	,
+		hash: "Kb",
+		media: false
+  },
 	{
 		id: "CBS/Denver",
 		cat: "News",
@@ -573,8 +529,9 @@ var menu = [
 		uri: "https://denver.cbslocal.com/feed",
 		ext: "https://denver.cbslocal.com",
 		img: "KCNC",
-		hash: "cN"
-	}	,
+		hash: "cN",
+		media: true
+  },
 	{
 		id: "CBS/Florida",
 		cat: "News",
@@ -582,17 +539,9 @@ var menu = [
 		uri: "https://www.clickorlando.com/arcio/rss/category/news/?size=10",
 		ext: "https://www.clickorlando.com",
 		img: "WKMG",
-		hash: "mG"
-	}	,
-	{
-		id: "NBC/Indianapolis",
-		cat: "News",
-		des: "NBC WTHR Indiana Indianapolis your source for Weather, radar, traffic, and sports.",
-		uri: "https://www.wthr.com/feed/public/breaking-news.xml",
-		ext: "https://www.wthr.com",
-		img: "WTHR",
-		hash: "Wr"
-	}	,
+		hash: "mG",
+		media: true
+  },
 	{
 		id: "CBS/Indianapolis",
 		cat: "News",
@@ -600,8 +549,9 @@ var menu = [
 		uri: "https://cbs4indy.com/feed",
 		ext: "https://cbs4indy.com",
 		img: "CBS4",
-		hash: "Ii"
-	}	,
+		hash: "Ii",
+		media: true
+  },
 	{
 		id: "CBS/Des Moines",
 		cat: "News",
@@ -609,8 +559,9 @@ var menu = [
 		uri: "https://www.kcci.com/topstories-rss",
 		ext: "https://www.kcci.com",
 		img: "KCCI",
-		hash: "kI"
-	}	,
+		hash: "kI",
+		media: true
+  },
 	{
 		id: "NBC/Des Moines",
 		cat: "News",
@@ -618,8 +569,9 @@ var menu = [
 		uri: "https://whotv.com/feed",
 		ext: "https://whotv.com",
 		img: "WHO",
-		hash: "dM"
-	}	,
+		hash: "dM",
+		media: true
+  },
 	{
 		id: "ABC/Louisville",
 		cat: "News",
@@ -627,8 +579,9 @@ var menu = [
 		uri: "http://rssfeeds.whas11.com/whas/local&x=1",
 		ext: "http://www.whas11.com",
 		img: "WHAS",
-		hash: "wH"
-	}	,
+		hash: "wH",
+		media: true
+  },
 	{
 		id: "CBS/Louisville",
 		cat: "News",
@@ -636,8 +589,9 @@ var menu = [
 		uri: "https://www.wlky.com/topstories-rss",
 		ext: "https://www.wlky.com",
 		img: "WLKY",
-		hash: "lK"
-	}	,
+		hash: "lK",
+		media: true
+  },
 	{
 		id: "ABC/New Orleans",
 		cat: "News",
@@ -645,8 +599,9 @@ var menu = [
 		uri: "https://wgno.com/feed",
 		ext: "https://wgno.com",
 		img: "WGNO",
-		hash: "gN"
-	}  ,
+		hash: "gN",
+		media: true
+	},
 	{
 		id: "CBS/New Orleans",
 		cat: "News",
@@ -654,8 +609,9 @@ var menu = [
 		uri: "http://rssfeeds.wwltv.com/wwl/local&x=1",
 		ext: "https://www.wwltv.com",
 		img: "WWL",
-		hash: "wL"
-	}	,
+		hash: "wL",
+		media: true
+  },
 	{
 		id: "NBC/New Orleans",
 		cat: "News",
@@ -663,8 +619,9 @@ var menu = [
 		uri: "https://www.wdsu.com/topstories-rss",
 		ext: "https://www.wdsu.com",
 		img: "WDSU",
-		hash: "nS"
-	}	,
+		hash: "nS",
+		media: true
+  },
 	{
 		id: "NBC/Detroit",
 		cat: "News",
@@ -672,8 +629,9 @@ var menu = [
 		uri: "https://www.clickondetroit.com/arcio/rss/category/news/?size=10",
 		ext: "https://www.clickondetroit.com",
 		img: "WDIV",
-		hash: "iV"
-	}	,
+		hash: "iV",
+		media: true
+  },
 	{
 		id: "CBS/Minneapolis",
 		cat: "News",
@@ -681,8 +639,9 @@ var menu = [
 		uri: "https://minnesota.cbslocal.com/feed",
 		ext: "https://minnesota.cbslocal.com",
 		img: "WCCO",
-		hash: "wO"
-	}	,
+		hash: "wO",
+		media: true
+  },
 	{
 		id: "NBC/Minneapolis",
 		cat: "News",
@@ -690,17 +649,9 @@ var menu = [
 		uri: "http://rssfeeds.kare11.com/kare11/topstories&x=1",
 		ext: "http://www.kare11.com",
 		img: "KARE",
-		hash: "kR"
-	}	,
-	{
-		id: "NBC/Lincoln",
-		cat: "News",
-		des: "NBC KSNB Nebraska Lincoln affiliated television station licensed to Superior, Nebraska.",
-		uri: "https://www.ksnblocal4.com/rss",
-		ext: "https://www.ksnblocal4.com",
-		img: "KSNB",
-		hash: "kB"
-	}	,
+		hash: "kR",
+		media: true
+  },
 	{
 		id: "ABC/Omaha",
 		cat: "News",
@@ -708,8 +659,9 @@ var menu = [
 		uri: "https://www.ketv.com/topstories-rss",
 		ext: "https://www.ketv.com",
 		img: "KETV",
-		hash: "kV"
-	}	,
+		hash: "kV",
+		media: true
+  },
 	{
 		id: "ABC/Albuquerque",
 		cat: "News",
@@ -717,8 +669,9 @@ var menu = [
 		uri: "https://www.koat.com/topstories-rss",
 		ext: "https://www.koat.com",
 		img: "KOAT",
-		hash: "aO"
-	}	,
+		hash: "aO",
+		media: true
+  },
 	{
 		id: "CBS/Albuquerque",
 		cat: "News",
@@ -726,8 +679,9 @@ var menu = [
 		uri: "https://www.krqe.com/feed",
 		ext: "https://www.krqe.com",
 		img: "KRQE",
-		hash: "qE"
-	}	,
+		hash: "qE",
+		media: true
+  },
 	{
 		id: "NBC/North Carolina",
 		cat: "News",
@@ -735,8 +689,9 @@ var menu = [
 		uri: "http://rssfeeds.wcnc.com/wcnc/home&x=1",
 		ext: "https://www.wcnc.com",
 		img: "WCNC",
-		hash: "bW"
-	}	,
+		hash: "bW",
+		media: true
+  },
 	{
 		id: "ABC/Oklahoma City",
 		cat: "News",
@@ -744,8 +699,9 @@ var menu = [
 		uri: "https://www.koco.com/topstories-rss",
 		ext: "https://www.koco.com",
 		img: "KOCO",
-		hash: "oC"
-	}	,
+		hash: "oC",
+		media: true
+  },
 	{
 		id: "NBC/Oklahoma City",
 		cat: "News",
@@ -753,8 +709,9 @@ var menu = [
 		uri: "https://kfor.com/feed",
 		ext: "https://kfor.com",
 		img: "KFOR",
-		hash: "kF"
-	}	,
+		hash: "kF",
+		media: true
+  },
 	{
 		id: "NBC/Cincinnati",
 		cat: "News",
@@ -762,8 +719,9 @@ var menu = [
 		uri: "https://www.wlwt.com/topstories-rss",
 		ext: "https://www.wlwt.com",
 		img: "WLWT",
-		hash: "rW"
-	}	,
+		hash: "rW",
+		media: true
+  },
 	{
 		id: "NBC/Cleveland",
 		cat: "News",
@@ -771,8 +729,9 @@ var menu = [
 		uri: "http://rssfeeds.wkyc.com/wkyc/news&x=1",
 		ext: "https://www.wkyc.com",
 		img: "WKYC",
-		hash: "wY"
-	}	,
+		hash: "wY",
+		media: true
+  },
 	{
 		id: "NBC/Columbus",
 		cat: "News",
@@ -780,8 +739,9 @@ var menu = [
 		uri: "https://www.nbc4i.com/feed",
 		ext: "https://www.nbc4i.com",
 		img: "NBC4",
-		hash: "mH"
-	}	,
+		hash: "mH",
+		media: true
+  },
 	{
 		id: "NBC/Dayton",
 		cat: "News",
@@ -789,8 +749,9 @@ var menu = [
 		uri: "https://www.wdtn.com/feed",
 		ext: "https://www.wdtn.com",
 		img: "WDTN",
-		hash: "dT"
-	}	,
+		hash: "dT",
+		media: true
+  },
 	{
 		id: "CBS/Portland",
 		cat: "News",
@@ -798,8 +759,9 @@ var menu = [
 		uri: "https://www.koin.com/feed",
 		ext: "https://www.koin.com",
 		img: "KOIN",
-		hash: "oI"
-	}	,
+		hash: "oI",
+		media: true
+  },
 	{
 		id: "NBC/Portland",
 		cat: "News",
@@ -807,8 +769,9 @@ var menu = [
 		uri: "http://rssfeeds.kgw.com/kgw/local&x=1",
 		ext: "https://www.kgw.com",
 		img: "KGW",
-		hash: "pK"
-	}	,
+		hash: "pK",
+		media: true
+  },
 	{
 		id: "CBS/Philadelphia",
 		cat: "News",
@@ -816,8 +779,9 @@ var menu = [
 		uri: "https://philadelphia.cbslocal.com/feed",
 		ext: "https://philadelphia.cbslocal.com",
 		img: "KYW",
-		hash: "yW"
-	}	,
+		hash: "yW",
+		media: true
+  },
 	{
 		id: "ABC/Philadelphia",
 		cat: "News",
@@ -825,8 +789,9 @@ var menu = [
 		uri: "https://6abc.com/feed",
 		ext: "https://6abc.com",
 		img: "ABC6",
-		hash: "pV"
-	}	,
+		hash: "pV",
+		media: true
+  },
 	{
 		id: "ABC/Pittsburgh",
 		cat: "News",
@@ -834,8 +799,9 @@ var menu = [
 		uri: "https://www.wtae.com/topstories-rss",
 		ext: "https://www.wtae.com",
 		img: "WTAE",
-		hash: "aE"
-	}	,
+		hash: "aE",
+		media: true
+  },
 	{
 		id: "CBS/Pittsburgh",
 		cat: "News",
@@ -843,8 +809,9 @@ var menu = [
 		uri: "https://pittsburgh.cbslocal.com/feed",
 		ext: "https://pittsburgh.cbslocal.com",
 		img: "KDKA",
-		hash: "kD"
-	}	,
+		hash: "kD",
+		media: true
+  },
 	{
 		id: "CBS/Myrtle Beach",
 		cat: "News",
@@ -852,17 +819,9 @@ var menu = [
 		uri: "https://www.wbtw.com/feed",
 		ext: "https://www.wbtw.com",
 		img: "WBTW",
-		hash: "tW"
-	}	,
-	{
-		id: "ABC/Memphis",
-		cat: "News",
-		des: "ABC WATN Tennessee Memphis We tell Local Memphis News and Weather Stories.",
-		uri: "https://www.localmemphis.com/feed",
-		ext: "https://www.localmemphis.com",
-		img: "WATN",
-		hash: "aN"
-	}	,
+		hash: "tW",
+		media: true
+  },
 	{
 		id: "CBS/Memphis",
 		cat: "News",
@@ -870,8 +829,9 @@ var menu = [
 		uri: "https://wreg.com/feed",
 		ext: "https://wreg.com",
 		img: "WREG",
-		hash: "rE"
-	}	,
+		hash: "rE",
+		media: true
+  },
 	{
 		id: "ABC/Nashville",
 		cat: "News",
@@ -879,8 +839,9 @@ var menu = [
 		uri: "https://www.wkrn.com/feed",
 		ext: "https://www.wkrn.com",
 		img: "WKRN",
-		hash: "kN"
-	}	,
+		hash: "kN",
+		media: true
+  },
 	{
 		id: "CBS/Dallas",
 		cat: "News",
@@ -888,8 +849,9 @@ var menu = [
 		uri: "https://dfw.cbslocal.com/feed",
 		ext: "https://dfw.cbslocal.com",
 		img: "KTVT",
-		hash: "dB"
-	}	,
+		hash: "dB",
+		media: true
+  },
 	{
 		id: "ABC/Houston",
 		cat: "News",
@@ -897,8 +859,9 @@ var menu = [
 		uri: "https://abc13.com/feed",
 		ext: "https://abc13.com",
 		img: "KTRK",
-		hash: "kK"
-	}	,
+		hash: "kK",
+		media: true
+  },
 	{
 		id: "CBS/Houston",
 		cat: "News",
@@ -906,8 +869,9 @@ var menu = [
 		uri: "http://rssfeeds.khou.com/khou/local&x=1",
 		ext: "https://www.khou.com/rss",
 		img: "KHOU",
-		hash: "oU"
-	}	,
+		hash: "oU",
+		media: true
+  },
 	{
 		id: "NBC/Houston",
 		cat: "News",
@@ -915,8 +879,9 @@ var menu = [
 		uri: "https://www.click2houston.com/arcio/rss/tags/local/?size=10",
 		ext: "https://www.click2houston.com",
 		img: "KPRC",
-		hash: "kC"
-	}	,
+		hash: "kC",
+		media: true
+  },
 	{
 		id: "ABC/San Antonio",
 		cat: "News",
@@ -924,8 +889,9 @@ var menu = [
 		uri: "https://www.ksat.com/arcio/rss/category/news/national/?size=10",
 		ext: "https://www.ksat.com",
 		img: "KSAT",
-		hash: "sA"
-	}	,
+		hash: "sA",
+		media: true
+  },
 	{
 		id: "ABC/Richmond",
 		cat: "News",
@@ -933,19 +899,19 @@ var menu = [
 		uri: "https://www.wric.com/feed",
 		ext: "https://www.wric.com",
 		img: "ABC8",
-		hash: "rI"
-	}  ,
+		hash: "rI",
+		media: true
+	},
 	{
-
-		id: "NBC",
+		id: "NBC/Biloxi",
 		cat: "News",
 		des: "NBC WXXV Mississippi Biloxi television station licensed to Gulfport and serving the Gulf Coast.",
 		uri: "https://www.wxxv25.com/feed",
 		ext: "https://www.wxxv25.com",
 		img: "WXXV",
-		hash: "vX"
-
-	}	,
+		hash: "vX",
+		media: true
+	},
 	{
 		id: "NBC/Seattle",
 		cat: "News",
@@ -953,8 +919,9 @@ var menu = [
 		uri: "http://rssfeeds.king5.com/king5/home&x=1",
 		ext: "https://www.king5.com",
 		img: "KING",
-		hash: "kG"
-	}	,
+		hash: "kG",
+		media: true
+  },
 	{
 		id: "CBS/Green Bay",
 		cat: "News",
@@ -962,8 +929,9 @@ var menu = [
 		uri: "https://www.wearegreenbay.com/feed",
 		ext: "https://www.wearegreenbay.com",
 		img: "WFRV",
-		hash: "wV"
-	}	,
+		hash: "wV",
+		media: true
+  },
 	{
 		id: "CBS/Milwaukee",
 		cat: "News",
@@ -971,8 +939,9 @@ var menu = [
 		uri: "https://www.cbs58.com/rss",
 		ext: "https://www.cbs58.com",
 		img: "WDJT",
-		hash: "jT"
-	}	,
+		hash: "jT",
+		media: true
+  },
 	{
 		id: "CBS/Boston",
 		cat: "News",
@@ -980,8 +949,9 @@ var menu = [
 		uri: "https://boston.cbslocal.com/feed",
 		ext: "https://boston.cbslocal.com/feed",
 		img: "WBZTV4",
-		hash: "bC"
-	}	,
+		hash: "bC",
+		media: true
+  },
 	{
 		id: "ABC/Boston",
 		cat: "News",
@@ -989,8 +959,9 @@ var menu = [
 		uri: "https://www.wcvb.com/topstories-rss",
 		ext: "https://wcvb.com",
 		img: "WCVB5",
-		hash: "tA"
-	}	,
+		hash: "tA",
+		media: true
+  },
 	{
 		id: "ABC/Miami",
 		cat: "News",
@@ -998,8 +969,9 @@ var menu = [
 		uri: "https://www.local10.com/arcio/rss/category/news/?size=10",
 		ext: "https://local10.com",
 		img: "WPLG10",
-		hash: "Mb"
-	}	,
+		hash: "Mb",
+		media: true
+  },
 	{
 		id: "CBS/Miami",
 		cat: "News",
@@ -1007,8 +979,9 @@ var menu = [
 		uri: "https://miami.cbslocal.com/feed",
 		ext: "https://miami.cbslocal.com",
 		img: "WFOR4",
-		hash: "sI"
-	}	,
+		hash: "sI",
+		media: true
+  },
 	{
 		id: "ABC/Los Angeles",
 		cat: "News",
@@ -1016,8 +989,9 @@ var menu = [
 		uri: "https://abc7.com/feed",
 		ext: "https://abc7.com",
 		img: "KABC7",
-		hash: "Ac"
-	}	,
+		hash: "Ac",
+		media: true
+  },
 	{
 		id: "CBS/Los Angeles",
 		cat: "News",
@@ -1025,8 +999,9 @@ var menu = [
 		uri: "https://losangeles.cbslocal.com/feed",
 		ext: "https://losangeles.cbslocal.com",
 		img: "KCAL9",
-		hash: "Sl"
-	}	,
+		hash: "Sl",
+		media: true
+  },
 	{
 		id: "ABC/San Francisco",
 		cat: "News",
@@ -1034,8 +1009,9 @@ var menu = [
 		uri: "https://abc7news.com/feed",
 		ext: "https://abc7news.com",
 		img: "KGO7",
-		hash: "Fb"
-	}	,
+		hash: "Fb",
+		media: true
+  },
 	{
 		id: "CBS/San Francisco",
 		cat: "News",
@@ -1043,8 +1019,9 @@ var menu = [
 		uri: "https://sanfrancisco.cbslocal.com/feed",
 		ext: "https://sanfrancisco.cbslocal.com",
 		img: "KPIX5",
-		hash: "xI"
-	}	,
+		hash: "xI",
+		media: true
+  },
 	{
 		id: "CBS/Monterey",
 		cat: "News",
@@ -1052,8 +1029,9 @@ var menu = [
 		uri: "https://kion546.com/feed",
 		ext: "https://kion546.com",
 		img: "KION546",
-		hash: "Mc"
-	}	,
+		hash: "Mc",
+		media: false
+  },
 	{
 		id: "NBC/Bakersfield",
 		cat: "News",
@@ -1061,8 +1039,9 @@ var menu = [
 		uri: "https://www.kget.com/feed",
 		ext: "https://www.kget.com",
 		img: "KGET17",
-		hash: "Nb"
-	}	,
+		hash: "Nb",
+		media: true
+  },
 	{
 		id: "CBS/Sacramento",
 		cat: "News",
@@ -1070,8 +1049,9 @@ var menu = [
 		uri: "https://sacramento.cbslocal.com/feed",
 		ext: "https://sacramento.cbslocal.com",
 		img: "CBS13",
-		hash: "bO"
-	}	,
+		hash: "bO",
+		media: true
+  },
 	{
 		id: "NBC/Sacramento",
 		cat: "News",
@@ -1079,8 +1059,9 @@ var menu = [
 		uri: "https://www.kcra.com/topstories-rss",
 		ext: "https://www.kcra.com",
 		img: "KCRA3",
-		hash: "cM"
-	}	,
+		hash: "cM",
+		media: true
+  },
 	{
 		id: "ABC/Sacramento",
 		cat: "News",
@@ -1088,8 +1069,9 @@ var menu = [
 		uri: "https://feeds.feedblitz.com/kxtv/news&x=1",
 		ext: "https://www.abc10.com",
 		img: "KXTV10",
-		hash: "mC"
-	}	,
+		hash: "mC",
+		media: true
+  },
 	{
 		id: "ABC/Santa Barbara",
 		cat: "News",
@@ -1097,8 +1079,9 @@ var menu = [
 		uri: "https://keyt.com/feed",
 		ext: "https://keyt.com",
 		img: "KEYT3",
-		hash: "Sa"
-	}	,
+		hash: "Sa",
+		media: false
+  },
 	{
 		id: "Spectrum/New York",
 		cat: "News",
@@ -1106,8 +1089,9 @@ var menu = [
 		uri: "https://www.ny1.com/services/contentfeed.nyc%7call-boroughs%7cnews.landing.rss",
 		ext: "https://www.ny1.com",
 		img: "NY1",
-		hash: "Sn"
-	}	,
+		hash: "Sn",
+		media: true
+  },
 	{
 		id: "ABC/New York",
 		cat: "News",
@@ -1115,8 +1099,9 @@ var menu = [
 		uri: "https://abc7ny.com/feed",
 		ext: "https://abc7ny.com",
 		img: "WABC7",
-		hash: "yN"
-	}	,
+		hash: "yN",
+		media: true
+  },
 	{
 		id: "CBS/New York",
 		cat: "News",
@@ -1124,8 +1109,9 @@ var menu = [
 		uri: "https://newyork.cbslocal.com/feed",
 		ext: "https://newyork.cbslocal.com",
 		img: "WLNY1055",
-		hash: "Ny"
-	}	,
+		hash: "Ny",
+		media: true
+  },
 	{
 		id: "CBS/Las Vegas",
 		cat: "News",
@@ -1133,8 +1119,9 @@ var menu = [
 		uri: "https://www.8newsnow.com/feed",
 		ext: "https://www.8newsnow.com",
 		img: "KLAS8",
-		hash: "vL"
-	}	,
+		hash: "vL",
+		media: true
+  },
 	{
 		id: "ABC/Austin",
 		cat: "News",
@@ -1142,8 +1129,9 @@ var menu = [
 		uri: "http://rssfeeds.kvue.com/kvue/home&x=1",
 		ext: "http://www.kvue.com",
 		img: "KVUE9",
-		hash: "aU"
-	}	,
+		hash: "aU",
+		media: true
+  },
 	{
 		id: "NBC/Austin",
 		cat: "News",
@@ -1151,8 +1139,9 @@ var menu = [
 		uri: "https://www.kxan.com/feed",
 		ext: "https://www.kxan.com",
 		img: "KXAN",
-		hash: "Nc"
-	}	,
+		hash: "Nc",
+		media: true
+  },
 	{
 		id: "NBC/Salt Lake City",
 		cat: "News",
@@ -1160,8 +1149,9 @@ var menu = [
 		uri: "https://ksltv.com/feed",
 		ext: "https://ksltv.com",
 		img: "KSLTV5",
-		hash: "tC"
-	}	,
+		hash: "tC",
+		media: true
+  },
 	{
 		id: "ABC/Salt Lake City",
 		cat: "News",
@@ -1169,8 +1159,9 @@ var menu = [
 		uri: "https://www.abc4.com/feed",
 		ext: "https://www.abc4.com",
 		img: "KTVXTV4",
-		hash: "aT"
-	}	,
+		hash: "aT",
+		media: true
+  },
 	{
 		id: "ABC Entertainment",
 		cat: "Media",
@@ -1178,8 +1169,9 @@ var menu = [
 		uri: "https://abcnews.go.com/abcnews/entertainmentheadlines",
 		ext: "https://abcnews.go.com/entertainment",
 		img: "ABC",
-		hash: "Na"
-	}	,
+		hash: "Na",
+		media: true
+  },
 	{
 		id: "AOL",
 		cat: "Media",
@@ -1187,8 +1179,9 @@ var menu = [
 		uri: "https://www.aol.com/rss",
 		ext: "https://aol.com",
 		img: "AOL",
-		hash: "mA"
-	}	,
+		hash: "mA",
+		media: true
+  },
 	{
 		id: "AV Club",
 		cat: "Media",
@@ -1196,8 +1189,9 @@ var menu = [
 		uri: "https://www.avclub.com/rss",
 		ext: "https://www.avclub.com",
 		img: "AVClub",
-		hash: "vA"
-	}	,
+		hash: "vA",
+		media: true
+  },
 	{
 		id: "BBC Entertainment",
 		cat: "Media",
@@ -1205,8 +1199,9 @@ var menu = [
 		uri: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
 		ext: "https://bbc.com/news/entertainment_and_arts",
 		img: "BBC",
-		hash: "iB"
-	}	,
+		hash: "iB",
+		media: false
+  },
 	{
 		id: "Best Life",
 		cat: "Media",
@@ -1214,8 +1209,9 @@ var menu = [
 		uri: "https://bestlifeonline.com/feed",
 		ext: "https://bestlifeonline.com",
 		img: "BestLife",
-		hash: "lB"
-	}	,
+		hash: "lB",
+		media: false
+  },
 	{
 		id: "Bustle",
 		cat: "Media",
@@ -1223,8 +1219,9 @@ var menu = [
 		uri: "https://www.bustle.com/rss",
 		ext: "https://www.bustle.com",
 		img: "Bustle",
-		hash: "sT"
-	}	,
+		hash: "sT",
+		media: true
+  },
 	{
 		id: "Buzzfeed Celebrity",
 		cat: "Media",
@@ -1232,8 +1229,9 @@ var menu = [
 		uri: "https://www.buzzfeed.com/celebrity.xml",
 		ext: "https://www.buzzfeed.com/celebrity",
 		img: "BuzzFeed",
-		hash: "zC"
-	}	,
+		hash: "zC",
+		media: true
+  },
 	{
 		id: "Cheatsheet",
 		cat: "Media",
@@ -1241,8 +1239,9 @@ var menu = [
 		uri: "https://www.cheatsheet.com/feed",
 		ext: "https://www.cheatsheet.com",
 		img: "CheatSheet",
-		hash: "Ae"
-	}	,
+		hash: "Ae",
+		media: true
+  },
 	{
 		id: "Closer Weekly",
 		cat: "Media",
@@ -1250,8 +1249,9 @@ var menu = [
 		uri: "https://www.closerweekly.com/feed",
 		ext: "https://www.closerweekly.com",
 		img: "CloserWeekly",
-		hash: "wC"
-	}	,
+		hash: "wC",
+		media: true
+  },
 	{
 		id: "CBS Entertainment",
 		cat: "Media",
@@ -1259,8 +1259,9 @@ var menu = [
 		uri: "https://www.cbsnews.com/latest/rss/entertainment",
 		ext: "https://cbsnews.com/latest/rss/entertainment",
 		img: "CBS",
-		hash: "iA"
-	}	,
+		hash: "iA",
+		media: false
+  },
 	{
 		id: "Celebrity Insider",
 		cat: "Media",
@@ -1268,8 +1269,9 @@ var menu = [
 		uri: "https://celebrityinsider.org/feed",
 		ext: "https://celebrityinsider.org",
 		img: "CelebrityInsider",
-		hash: "cI"
-	}	,
+		hash: "cI",
+		media: true
+  },
 	{
 		id: "CNN",
 		cat: "Media",
@@ -1277,8 +1279,9 @@ var menu = [
 		uri: "http://rss.cnn.com/rss/cnn_showbiz.rss",
 		ext: "https://cnn.com/entertainment",
 		img: "CNN",
-		hash: "mN"
-	}	,
+		hash: "mN",
+		media: true
+  },
 	{
 		id: "ComingSoon",
 		cat: "Media",
@@ -1286,8 +1289,9 @@ var menu = [
 		uri: "https://www.comingsoon.net/feed",
 		ext: "https://comingsoon.net",
 		img: "ComingSoon",
-		hash: "oS"
-	}	,
+		hash: "oS",
+		media: true
+  },
 	{
 		id: "Cosmopolitan",
 		cat: "Media",
@@ -1295,8 +1299,9 @@ var menu = [
 		uri: "https://www.cosmopolitan.com/rss/all.xml",
 		ext: "https://www.cosmopolitan.com",
 		img: "Cosmopolitan",
-		hash: "Om"
-	}	,
+		hash: "Om",
+		media: true
+  },
 	{
 		id: "Daily Beast",
 		cat: "Media",
@@ -1304,8 +1309,9 @@ var menu = [
 		uri: "https://feeds.thedailybeast.com/summary/rss/articles",
 		ext: "https://www.thedailybeast.com",
 		img: "DailyBeast",
-		hash: "bD"
-	}	,
+		hash: "bD",
+		media: true
+  },
 	{
 		id: "Deadline Hollywood",
 		cat: "Media",
@@ -1313,8 +1319,9 @@ var menu = [
 		uri: "https://deadline.com/feed",
 		ext: "https://deadline.com",
 		img: "DeadlineHollywood",
-		hash: "dH"
-	}	,
+		hash: "dH",
+		media: true
+  },
 	{
 		id: "Decider",
 		cat: "Media",
@@ -1322,8 +1329,9 @@ var menu = [
 		uri: "https://decider.com/feed",
 		ext: "https://decider.com",
 		img: "Decider",
-		hash: "Dc"
-	}	,
+		hash: "Dc",
+		media: true
+  },
 	{
 		id: "Demotix",
 		cat: "Media",
@@ -1331,8 +1339,9 @@ var menu = [
 		uri: "https://demotix.com/category/celebrities/feed",
 		ext: "https://demotix.com/category/celebrities",
 		img: "Demotix",
-		hash: "dX"
-	}	,
+		hash: "dX",
+		media: true
+  },
 	{
 		id: "Digital Trends Media",
 		cat: "Media",
@@ -1340,17 +1349,9 @@ var menu = [
 		uri: "https://www.digitaltrends.com/movies/feed/",
 		ext: "https://digitaltrends.com/movies",
 		img: "DigitalTrends",
-		hash: "mT"
-	}	,
-	{
-		id: "E! Online",
-		cat: "Media",
-		des: "E! is an American basic cable channel owned by the NBCUniversal.",
-		uri: "http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",
-		ext: "https://www.eonline.com",
-		img: "ENews",
-		hash: "eO"
-	}	,
+		hash: "mT",
+		media: true
+  },
 	{
 		id: "Elle",
 		cat: "Media",
@@ -1358,8 +1359,9 @@ var menu = [
 		uri: "https://www.elle.com/rss/culture.xml",
 		ext: "https://www.elle.com",
 		img: "ELLE",
-		hash: "lE"
-	}	,
+		hash: "lE",
+		media: true
+  },
 	{
 		id: "Esquire",
 		cat: "Media",
@@ -1367,8 +1369,9 @@ var menu = [
 		uri: "https://www.esquire.com/rss/entertainment.xml",
 		ext: "https://esquire.com",
 		img: "Esquire",
-		hash: "qI"
-	}	,
+		hash: "qI",
+		media: true
+  },
 	{
 		id: "ET Canada",
 		cat: "Media",
@@ -1376,8 +1379,9 @@ var menu = [
 		uri: "https://etcanada.com/feed",
 		ext: "https://etcanada.com",
 		img: "ET",
-		hash: "tE"
-	}	,
+		hash: "tE",
+		media: true
+  },
 	{
 		id: "Glamour",
 		cat: "Media",
@@ -1385,8 +1389,9 @@ var menu = [
 		uri: "https://www.glamourmagazine.co.uk/rss/article",
 		ext: "https://www.glamourmagazine.co.uk",
 		img: "Glamour",
-		hash: "Rg"
-	}	,
+		hash: "Rg",
+		media: true
+  },
 	{
 		id: "Global News TV",
 		cat: "Media",
@@ -1394,8 +1399,9 @@ var menu = [
 		uri: "https://globalnews.ca/entertainment/feed",
 		ext: "https://globalnews.ca/entertainment",
 		img: "CBC",
-		hash: "gV"
-	}	,
+		hash: "gV",
+		media: true
+  },
 	{
 		id: "GQ",
 		cat: "Media",
@@ -1403,8 +1409,9 @@ var menu = [
 		uri: "https://www.gq.com/feed/rss",
 		ext: "https://www.gq.com",
 		img: "GQ",
-		hash: "qG"
-	}	,
+		hash: "qG",
+		media: true
+  },
 	{
 		id: "Heavy Entertainment",
 		cat: "Media",
@@ -1412,8 +1419,9 @@ var menu = [
 		uri: "https://heavy.com/entertainment/feed",
 		ext: "https://heavy.com/entertainment",
 		img: "Heavy",
-		hash: "Eh"
-	}	,
+		hash: "Eh",
+		media: true
+  },
 	{
 		id: "Hot Celebrity News",
 		cat: "Media",
@@ -1421,8 +1429,9 @@ var menu = [
 		uri: "https://hotcelebrityreviews.com/feed",
 		ext: "https://hotcelebrityreviews.com",
 		img: "HotCelebrityNews",
-		hash: "sH"
-	}	,
+		hash: "sH",
+		media: true
+  },
 	{
 		id: "Extra",
 		cat: "Media",
@@ -1430,8 +1439,9 @@ var menu = [
 		uri: "https://feeds.extratv.com/atom",
 		ext: "https://extratv.com",
 		img: "Extra",
-		hash: "xA"
-	}	,
+		hash: "xA",
+		media: true
+  },
 	{
 		id: "Hollywood Life",
 		cat: "Media",
@@ -1439,8 +1449,9 @@ var menu = [
 		uri: "https://hollywoodlife.com/feed",
 		ext: "https://hollywoodlife.com",
 		img: "HollywoodLife",
-		hash: "fH"
-	}	,
+		hash: "fH",
+		media: true
+  },
 	{
 		id: "Hollywood Unlocked",
 		cat: "Media",
@@ -1448,8 +1459,9 @@ var menu = [
 		uri: "http://thehollywoodunlocked.com/feed",
 		ext: "http://thehollywoodunlocked.com",
 		img: "HollywoodUnlocked",
-		hash: "uD"
-	}	,
+		hash: "uD",
+		media: false
+  },
 	{
 		id: "Inquisitr",
 		cat: "Media",
@@ -1457,17 +1469,19 @@ var menu = [
 		uri: "https://www.inquisitr.com/feed",
 		ext: "https://www.inquisitr.com",
 		img: "Inquisitr",
-		hash: "qI"
-	}	,
+		hash: "qI",
+		media: true
+  },
 	{
-		id: "Int Business Times",
+		id: "Int Business Times Media",
 		cat: "Media",
 		des: "Nnternational Business Times entertainment news, celebrity gossips, tv shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
 		ext: "https://www.ibtimes.com/media-culture/entertainment",
 		img: "IBT",
-		hash: "tI"
-	}	,
+		hash: "tI",
+		media: false
+  },
 	{
 		id: "IndieWire",
 		cat: "Media",
@@ -1475,8 +1489,9 @@ var menu = [
 		uri: "https://www.indiewire.com/feed",
 		ext: "https://www.indiewire.com",
 		img: "IndieWire",
-		hash: "Ti"
-	}	,
+		hash: "Ti",
+		media: true
+  },
 	{
 		id: "Just Jared",
 		cat: "Media",
@@ -1484,8 +1499,9 @@ var menu = [
 		uri: "http://www.justjared.com/feed",
 		ext: "http://justjared.com",
 		img: "JustJared",
-		hash: "jA"
-	}	,
+		hash: "jA",
+		media: true
+  },
 	{
 		id: "Mens Health",
 		cat: "Media",
@@ -1493,8 +1509,9 @@ var menu = [
 		uri: "https://www.menshealth.com/rss/all.xml",
 		ext: "https://www.menshealth.com",
 		img: "MensHealth",
-		hash: "hM"
-	}	,
+		hash: "hM",
+		media: true
+  },
 	{
 		id: "MovieWeb",
 		cat: "Media",
@@ -1502,8 +1519,9 @@ var menu = [
 		uri: "https://movieweb.com/rss/all-news",
 		ext: "https://movieweb.com",
 		img: "MovieWeb",
-		hash: "eW"
-	}	,
+		hash: "eW",
+		media: true
+  },
 	{
 		id: "MTV",
 		cat: "Media",
@@ -1511,17 +1529,19 @@ var menu = [
 		uri: "http://www.mtv.com/news/feed",
 		ext: "http://www.mtv.com/news",
 		img: "MTV",
-		hash: "mT"
-	}	,
+		hash: "mT",
+		media: true
+  },
 	{
-		id: "New York Post",
+		id: "New York Post Entertainment",
 		cat: "Media",
 		des: "New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",
 		uri: "https://nypost.com/entertainment/feed",
 		ext: "https://nypost.com/entertainment/feed",
 		img: "NYPost",
-		hash: "yP"
-	}	,
+		hash: "yP",
+		media: true
+  },
 	{
 		id: "OAN Entertainment",
 		cat: "Media",
@@ -1529,8 +1549,9 @@ var menu = [
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment",
 		img: "OANN",
-		hash: "nO"
-	}	,
+		hash: "nO",
+		media: true
+  },
 	{
 		id: "Ozy",
 		cat: "Media",
@@ -1538,8 +1559,9 @@ var menu = [
 		uri: "https://www.ozy.com/feed",
 		ext: "https://www.ozy.com",
 		img: "Ozy",
-		hash: "zY"
-	}	,
+		hash: "zY",
+		media: false
+  },
 	{
 		id: "People",
 		cat: "Media",
@@ -1547,8 +1569,9 @@ var menu = [
 		uri: "https://people.com/tag/news/feed",
 		ext: "https://people.com",
 		img: "People",
-		hash: "lP"
-	}	,
+		hash: "lP",
+		media: true
+  },
 	{
 		id: "Perez Hilton",
 		cat: "Media",
@@ -1556,17 +1579,9 @@ var menu = [
 		uri: "https://perezhilton.com/feed",
 		ext: "https://perezhilton.com",
 		img: "PerezHilton",
-		hash: "nZ"
-	}	,
-	{
-		id: "Pop Sugar",
-		cat: "Media",
-		des: "Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",
-		uri: "https://www.popsugar.com/feed",
-		ext: "https://www.popsugar.com",
-		img: "PopSugar",
-		hash: "sP"
-	}	,
+		hash: "nZ",
+		media: false
+  },
 	{
 		id: "Rolling Stone",
 		cat: "Media",
@@ -1574,8 +1589,9 @@ var menu = [
 		uri: "https://www.rollingstone.com/feed",
 		ext: "https://rollingstone.com",
 		img: "RollingStone",
-		hash: "Re"
-	}	,
+		hash: "Re",
+		media: false
+  },
 	{
 		id: "Slash Film",
 		cat: "Media",
@@ -1583,8 +1599,9 @@ var menu = [
 		uri: "https://www.slashfilm.com/feed",
 		ext: "https://www.slashfilm.com",
 		img: "SlashFilm",
-		hash: "fS"
-	}	,
+		hash: "fS",
+		media: true
+  },
 	{
 		id: "The Root",
 		cat: "Media",
@@ -1592,17 +1609,19 @@ var menu = [
 		uri: "https://www.theroot.com/rss",
 		ext: "https://www.theroot.com",
 		img: "TheRoot",
-		hash: "Rr"
-	}	,
+		hash: "Rr",
+		media: true
+  },
 	{
-		id: "TheSun.co.uk",
+		id: "TheSun.co.uk Celebrity",
 		cat: "Media",
 		des: "TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",
 		uri: "https://www.thesun.co.uk/tvandshowbiz/feed",
 		ext: "https://www.thesun.co.uk/tvandshowbiz",
 		img: "TheSun",
-		hash: "uK"
-	}	,
+		hash: "uK",
+		media: true
+  },
 	{
 		id: "The Wrap",
 		cat: "Media",
@@ -1610,8 +1629,9 @@ var menu = [
 		uri: "https://www.thewrap.com/feed",
 		ext: "https://www.thewrap.com",
 		img: "TheWrap",
-		hash: "wT"
-	}	,
+		hash: "wT",
+		media: true
+  },
 	{
 		id: "TMZ News",
 		cat: "Media",
@@ -1619,8 +1639,9 @@ var menu = [
 		uri: "https://www.tmz.com/rss.xml",
 		ext: "https://tmz.com",
 		img: "TMZ",
-		hash: "zT"
-	}	,
+		hash: "zT",
+		media: false
+  },
 	{
 		id: "Trend Hunter Fashion",
 		cat: "Media",
@@ -1628,8 +1649,9 @@ var menu = [
 		uri: "https://www.trendhunter.com/rss/category/Celebrity-Fashion",
 		ext: "https://www.trendhunter.com/celebs",
 		img: "TrendHunter",
-		hash: "rR"
-	}	,
+		hash: "rR",
+		media: true
+  },
 	{
 		id: "USA Today",
 		cat: "Media",
@@ -1637,8 +1659,9 @@ var menu = [
 		uri: "http://rssfeeds.usatoday.com/toppeople&x=1",
 		ext: "https://www.usatoday.com/entertainment/celebrities",
 		img: "USAToday",
-		hash: "sY"
-	}	,
+		hash: "sY",
+		media: true
+  },
 	{
 		id: "US Weekly",
 		cat: "Media",
@@ -1646,8 +1669,9 @@ var menu = [
 		uri: "https://www.usmagazine.com/feed",
 		ext: "https://www.usmagazine.com",
 		img: "UsWeekly",
-		hash: "wU"
-	}	,
+		hash: "wU",
+		media: true
+  },
 	{
 		id: "Vanity Fair",
 		cat: "Media",
@@ -1655,8 +1679,9 @@ var menu = [
 		uri: "https://www.vanityfair.com/feed/rss",
 		ext: "https://vanityfair.com",
 		img: "VanityFair",
-		hash: "fV"
-	}	,
+		hash: "fV",
+		media: true
+  },
 	{
 		id: "Yahoo Entertainment",
 		cat: "Media",
@@ -1664,17 +1689,19 @@ var menu = [
 		uri: "https://www.yahoo.com/entertainment/rss",
 		ext: "https://yahoo.com/entertainment",
 		img: "Yahoo",
-		hash: "oY"
-	}	,
+		hash: "oY",
+		media: true
+  },
 	{
-		id: "The Washington Times",
+		id: "The Washington Times Entertainment",
 		cat: "Media",
 		des: "The Washington Times Show Business News and Entertainment News.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/entertainment",
 		ext: "https://washingtontimes.com/culture/entertainment",
 		img: "TheWashingtonTimes",
-		hash: "gW"
-	}	,
+		hash: "gW",
+		media: true
+  },
 	{
 		id: "Wopular",
 		cat: "Media",
@@ -1682,8 +1709,9 @@ var menu = [
 		uri: "http://www.wopular.com/rss/sections/all",
 		ext: "http://www.wopular.com",
 		img: "Wopular",
-		hash: "uP"
-	}	,
+		hash: "uP",
+		media: false
+  },
 	{
 		id: "Reddit/AMD",
 		cat: "Social",
@@ -1691,8 +1719,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/Amd/.rss",
 		ext: "https://www.reddit.com/r/AMD",
 		img: "AMD",
-		hash: "aD"
-	}	,
+		hash: "aD",
+		media: true
+  },
 	{
 		id: "Reddit/Android",
 		cat: "Social",
@@ -1700,8 +1729,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/android/.rss",
 		ext: "https://www.reddit.com/r/Android",
 		img: "Android",
-		hash: "nD"
-	}	,
+		hash: "nD",
+		media: true
+  },
 	{
 		id: "Reddit/Apple",
 		cat: "Social",
@@ -1709,8 +1739,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/apple/.rss",
 		ext: "https://www.reddit.com/r/apple",
 		img: "Apple",
-		hash: "pA"
-	}	,
+		hash: "pA",
+    media: true
+  },
 	{
 		id: "Arch Linux",
 		cat: "Social",
@@ -1718,8 +1749,9 @@ var menu = [
 		uri: "https://bbs.archlinux.org/extern.php?action=active&type=RSS",
 		ext: "https://www.archlinux.org",
 		img: "ArchLinux",
-		hash: "aL"
-	}	,
+		hash: "aL",
+    media: false
+  },
 	{
 		id: "Reddit/Arch Linux",
 		cat: "Social",
@@ -1727,8 +1759,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/ArchLinux/.rss",
 		ext: "http://www.reddit.com/r/ArchLinux",
 		img: "Arch",
-		hash: "Al"
-	}	,
+		hash: "Al",
+    media: false
+  },
 	{
 		id: "Reddit/AskComputerScience",
 		cat: "Social",
@@ -1736,8 +1769,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/askcomputerscience/.rss",
 		ext: "https://www.reddit.com/r/AskComputerScience",
 		img: "AskComputerScience",
-		hash: "sC"
-	}	,
+		hash: "sC",
+    media: false
+  },
 	{
 		id: "Reddit/Bash",
 		cat: "Social",
@@ -1745,8 +1779,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/bash/.rss",
 		ext: "https://www.reddit.com/r/Bash",
 		img: "Reddit",
-		hash: "As"
-	}	,
+		hash: "As",
+    media: false
+  },
 	{
 		id: "Reddit/Boston",
 		cat: "Social",
@@ -1754,8 +1789,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/boston/.rss",
 		ext: "https://www.reddit.com/r/Boston",
 		img: "BostonMA",
-		hash: "tA"
-	}	,
+		hash: "tA",
+    media: true
+  },
 	{
 		id: "Reddit/Buildapc",
 		cat: "Social",
@@ -1763,8 +1799,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/buildapc/.rss",
 		ext: "https://www.reddit.com/r/buildapc",
 		img: "Build",
-		hash: "bB"
-	}	,
+		hash: "bB",
+    media: false
+  },
 	{
 		id: "Reddit/California",
 		cat: "Social",
@@ -1772,8 +1809,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/California/.rss",
 		ext: "https://www.reddit.com/r/California",
 		img: "California",
-		hash: "cA"
-	}	,
+		hash: "cA",
+    media: true
+  },
 	{
 		id: "Imgur/Celebs",
 		cat: "Social",
@@ -1781,8 +1819,9 @@ var menu = [
 		uri: "https://api.imgur.com/3/gallery/r/celebs/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
 		ext: "https://imgur.com/r/celebs",
 		img: "Imgur",
-		hash: "Ic"
-	}	,
+		hash: "Ic",
+    media: true
+  },
 	{
 		id: "Reddit/Celebs",
 		cat: "Social",
@@ -1790,8 +1829,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/celebs/.rss",
 		ext: "https://www.reddit.com/r/Celebs",
 		img: "Celebs",
-		hash: "Bh"
-	}	,
+		hash: "Bh",
+    media: true
+  },
 	{
 		id: "Imgur/Celebhub",
 		cat: "Social",
@@ -1799,8 +1839,9 @@ var menu = [
 		uri: "https://api.imgur.com/3/gallery/r/celebhub/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
 		ext: "https://imgur.com/r/celebhub",
 		img: "Imgur",
-		hash: "ic"
-	}	,
+		hash: "ic",
+    media: true
+  },
 	{
 		id: "Reddit/Celebhub",
 		cat: "Social",
@@ -1808,8 +1849,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/celebhub/.rss",
 		ext: "https://www.reddit.com/r/CelebHub",
 		img: "CelebHub",
-		hash: "hC"
-	}	,
+		hash: "hC",
+    media: true
+  },
 	{
 		id: "Reddit/Chrome",
 		cat: "Social",
@@ -1817,8 +1859,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/chrome/.rss",
 		ext: "https://www.reddit.com/r/Chrome",
 		img: "Chrome",
-		hash: "eC"
-	}	,
+		hash: "eC",
+    media: false
+  },
 	{
 		id: "Reddit/Coding",
 		cat: "Social",
@@ -1826,8 +1869,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/coding/.rss",
 		ext: "https://www.reddit.com/r/Coding",
 		img: "Reddit",
-		hash: "cG"
-	}	,
+		hash: "cG",
+    media: false
+  },
 	{
 		id: "Reddit/Command Line",
 		cat: "Social",
@@ -1835,8 +1879,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/commandline/.rss",
 		ext: "https://www.reddit.com/r/Commandline",
 		img: "CommandLine",
-		hash: "Ml"
-	}	,
+		hash: "Ml",
+    media: false
+  },
 	{
 		id: "Reddit/Computers",
 		cat: "Social",
@@ -1844,8 +1889,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/computers/.rss",
 		ext: "https://www.reddit.com/r/Computers",
 		img: "Reddit",
-		hash: "pC"
-	}	,
+		hash: "pC",
+    media: false
+  },
 	{
 		id: "Reddit/CSS",
 		cat: "Social",
@@ -1853,8 +1899,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/css/.rss",
 		ext: "https://www.reddit.com/r/CSS",
 		img: "Reddit",
-		hash: "Cs"
-	}	,
+		hash: "Cs",
+    media: false
+  },
 	{
 		id: "Reddit/Data Is Beautiful",
 		cat: "Social",
@@ -1862,8 +1909,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/dataisbeautiful/.rss",
 		ext: "https://www.reddit.com/r/DataisBeautiful",
 		img: "DataIsBeautiful",
-		hash: "pD"
-	}	,
+		hash: "pD",
+    media: true
+  },
 	{
 		id: "Reddit/Debian",
 		cat: "Social",
@@ -1871,8 +1919,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/debian/.rss",
 		ext: "https://www.reddit.com/r/Debian",
 		img: "Debian",
-		hash: "dN"
-	}	,
+		hash: "dN",
+    media: false
+  },
 	{
 		id: "Reddit/Design",
 		cat: "Social",
@@ -1880,8 +1929,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/Design/.rss",
 		ext: "https://www.reddit.com/r/Design",
 		img: "Reddit",
-		hash: "iD"
-	}	,
+		hash: "iD",
+    media: true
+  },
 	{
 		id: "Reddit/DIY",
 		cat: "Social",
@@ -1889,8 +1939,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/DIY/.rss",
 		ext: "https://www.reddit.com/r/DIY/",
 		img: "Reddit",
-		hash: "Di"
-	}	,
+		hash: "Di",
+    media: false
+  },
 	{
 		id: "4Chan/Do It Yourself",
 		cat: "Social",
@@ -1898,8 +1949,9 @@ var menu = [
 		uri: "http://boards.4channel.org/diy/index.rss",
 		ext: "http://boards.4channel.org/diy",
 		img: "4chan",
-		hash: "Yo"
-	}	,
+		hash: "Yo",
+    media: true
+  },
 	{
 		id: "Reddit/DuckDuckGo",
 		cat: "Social",
@@ -1907,8 +1959,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/duckduckgo/.rss",
 		ext: "https://www.reddit.com/r/duckduckgo/",
 		img: "DuckDuckGo",
-		hash: "dD"
-	}	,
+		hash: "dD",
+    media: false
+  },
 	{
 		id: "Reddit/Entertainment",
 		cat: "Social",
@@ -1916,8 +1969,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/entertainment/.rss",
 		ext: "https://www.reddit.com/r/Entertainment",
 		img: "Reddit",
-		hash: "Ne"
-	}	,
+		hash: "Ne",
+    media: false
+  },
 	{
 		id: "Reddit/Firefox",
 		cat: "Social",
@@ -1925,8 +1979,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/firefox/.rss",
 		ext: "https://www.reddit.com/r/Firefox",
 		img: "Firefox",
-		hash: "fI"
-	}	,
+		hash: "fI",
+    media: false
+  },
 	{
 		id: "Reddit/Gadgets",
 		cat: "Social",
@@ -1934,8 +1989,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/gadgets/.rss",
 		ext: "https://www.reddit.com/r/Gadgets",
 		img: "Gadgets",
-		hash: "Ag"
-	}	,
+		hash: "Ag",
+    media: true
+  },
 	{
 		id: "Reddit/Games",
 		cat: "Social",
@@ -1943,8 +1999,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/games/.rss",
 		ext: "https://www.reddit.com/r/games",
 		img: "Games",
-		hash: "sG"
-	}	,
+		hash: "sG",
+    media: false
+  },
 	{
 		id: "Reddit/Gaming",
 		cat: "Social",
@@ -1952,8 +2009,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/gaming/.rss",
 		ext: "https://www.reddit.com/r/gaming",
 		img: "Gaming",
-		hash: "Gi"
-	}	,
+		hash: "Gi",
+    media: false
+  },
 	{
 		id: "Reddit/Gifs",
 		cat: "Social",
@@ -1961,8 +2019,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/gifs/.rss",
 		ext: "https://www.reddit.com/r/gifs",
 		img: "Gifs",
-		hash: "fG"
-	}	,
+		hash: "fG",
+    media: true
+  },
 	{
 		id: "Reddit/Github",
 		cat: "Social",
@@ -1970,8 +2029,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/github/.rss",
 		ext: "https://www.reddit.com/r/github",
 		img: "Octocat",
-		hash: "bG"
-	}	,
+		hash: "bG",
+    media: false
+  },
 	{
 		id: "Imgur/Goddesses",
 		cat: "Social",
@@ -1979,8 +2039,9 @@ var menu = [
 		uri: "https://api.imgur.com/3/gallery/r/goddesses/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
 		ext: "https://imgur.com/r/goddesses",
 		img: "Imgur",
-		hash: "ig"
-	}	,
+		hash: "ig",
+    media: true
+  },
 	{
 		id: "Reddit/Goddesses",
 		cat: "Social",
@@ -1988,8 +2049,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/goddesses/.rss",
 		ext: "https://www.reddit.com/r/Goddesses",
 		img: "Reddit",
-		hash: "gO"
-	}	,
+		hash: "gO",
+    media: true
+  },
 	{
 		id: "Reddit/Google",
 		cat: "Social",
@@ -1997,8 +2059,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/google/.rss",
 		ext: "https://www.reddit.com/r/Google",
 		img: "Google",
-		hash: "oO"
-	}	,
+		hash: "oO",
+    media: false
+  },
 	{
 		id: "4Chan/G Technology",
 		cat: "Social",
@@ -2006,8 +2069,9 @@ var menu = [
 		uri: "http://boards.4chan.org/g/index.rss",
 		ext: "http://boards.4channel.org/g/",
 		img: "4chan",
-		hash: "gK"
-	}	,
+		hash: "gK",
+    media: true
+  },
 	{
 		id: "4Chan/GD Graphic Design",
 		cat: "Social",
@@ -2015,8 +2079,9 @@ var menu = [
 		uri: "http://boards.4channel.org/gd/index.rss",
 		ext: "http://boards.4channel.org/gd",
 		img: "4chan",
-		hash: "dP"
-	}	,
+		hash: "dP",
+    media: true
+  },
 	{
 		id: "Reddit/Hacker News",
 		cat: "Social",
@@ -2024,8 +2089,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/hackernews/.rss",
 		ext: "https://www.reddit.com/r/HackerNews",
 		img: "Reddit",
-		hash: "nH"
-	}	,
+		hash: "nH",
+    media: false
+  },
 	{
 		id: "Reddit/Hardware",
 		cat: "Social",
@@ -2033,8 +2099,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/hardware/.rss",
 		ext: "https://www.reddit.com/r/Hardware",
 		img: "Hardware",
-		hash: "wR"
-	}	,
+		hash: "wR",
+    media: false
+  },
 	{
 		id: "4Chan/HR High Resolution",
 		cat: "Social",
@@ -2042,8 +2109,9 @@ var menu = [
 		uri: "http://boards.4channel.org/hr/index.rss",
 		ext: "http://boards.4channel.org/hr",
 		img: "4chan",
-		hash: "Hr"
-	}	,
+		hash: "Hr",
+    media: true
+  },
 	{
 		id: "Reddit/Intel",
 		cat: "Social",
@@ -2051,8 +2119,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/intel/.rss",
 		ext: "https://www.reddit.com/r/intel",
 		img: "Intel",
-		hash: "tN"
-	}	,
+		hash: "tN",
+    media: false
+  },
 	{
 		id: "Reddit/iOS",
 		cat: "Social",
@@ -2060,8 +2129,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/ios/.rss",
 		ext: "https://www.reddit.com/r/iOS",
 		img: "iOS",
-		hash: "Si"
-	}	,
+		hash: "Si",
+    media: false
+  },
 	{
 		id: "Reddit/Linux",
 		cat: "Social",
@@ -2069,21 +2139,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/linux/.rss",
 		ext: "https://www.reddit.com/r/Linux",
 		img: "Linux",
-		hash: "lX"
-	}
-/*
-	,
-	{
-		id: "Leafly",
-		cat: "Social",
-		des: "Leafly is the world's online destination to learn about cannabis, find cannabis strains and products, and buy them from legal, licensed retailers.",
-		uri: "https://www.leafly.com/feed",
-		ext: "https://www.leafly.com",
-		img: "Leafly",
-		hash: "lY"
-	}
-*/
-	,
+		hash: "lX",
+		media: false
+	},
 	{
 		id: "Reddit/Los Angeles",
 		cat: "Social",
@@ -2091,8 +2149,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/LosAngeles/.rss",
 		ext: "https://www.reddit.com/r/LosAngeles",
 		img: "LosAngeles",
-		hash: "ge"
-	}	,
+		hash: "ge",
+    media: true
+  },
 	{
 		id: "Reddit/Microsoft",
 		cat: "Social",
@@ -2100,8 +2159,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/microsoft/.rss",
 		ext: "https://www.reddit.com/r/Microsoft",
 		img: "Microsoft",
-		hash: "mi"
-	}	,
+		hash: "mi",
+    media: false
+  },
 	{
 		id: "Reddit/Movies",
 		cat: "Social",
@@ -2109,8 +2169,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/movies/.rss",
 		ext: "https://www.reddit.com/r/Movies",
 		img: "Movies",
-		hash: "mo"
-	}	,
+		hash: "mo",
+		media: true
+  },
 	{
 		id: "4Chan/MU Music",
 		cat: "Social",
@@ -2118,8 +2179,9 @@ var menu = [
 		uri: "http://boards.4channel.org/mu/index.rss",
 		ext: "http://boards.4channel.org/mu",
 		img: "4chan",
-		hash: "mu"
-	}	,
+		hash: "mu",
+    media: true
+  },
 	{
 		id: "4chan News",
 		cat: "Social",
@@ -2127,8 +2189,9 @@ var menu = [
 		uri: "http://boards.4channel.org/news/index.rss",
 		ext: "http://boards.4channel.org/news",
 		img: "4chan",
-		hash: "nw"
-	}	,
+		hash: "nw",
+    media: true
+  },
 	{
 		id: "Reddit/News",
 		cat: "Social",
@@ -2136,8 +2199,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/news/.rss",
 		ext: "https://www.reddit.com/r/News",
 		img: "RNews",
-		hash: "ns"
-	}	,
+		hash: "ns",
+    media: false
+  },
 	{
 		id: "Reddit/NVIDIA",
 		cat: "Social",
@@ -2145,8 +2209,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/nvidia/.rss",
 		ext: "https://www.reddit.com/r/nvidia",
 		img: "Nvidia",
-		hash: "nV"
-	}	,
+		hash: "nV",
+    media: true
+  },
 	{
 		id: "Reddit/Open Source",
 		cat: "Social",
@@ -2154,8 +2219,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/opensource/.rss",
 		ext: "https://www.reddit.com/r/opensource",
 		img: "Reddit",
-		hash: "sE"
-	}	,
+		hash: "sE",
+    media: false
+  },
 	{
 		id: "Reddit/Pics",
 		cat: "Social",
@@ -2163,8 +2229,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/pics/.rss",
 		ext: "https://www.reddit.com/r/Pics",
 		img: "Pics",
-		hash: "cL"
-	}	,
+		hash: "cL",
+    media: true
+  },
 	{
 		id: "Reddit/Programming",
 		cat: "Social",
@@ -2172,8 +2239,9 @@ var menu = [
 		uri: "https://reddit.com/r/programming/.rss",
 		ext: "https://reddit.com/r/Programming",
 		img: "Programming",
-		hash: "rO"
-	}	,
+		hash: "rO",
+    media: false
+  },
 	{
 		id: "Reddit/San Francisco",
 		cat: "Social",
@@ -2181,8 +2249,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/sanfrancisco/.rss",
 		ext: "https://www.reddit.com/r/SanFrancisco",
 		img: "SanFrancisco",
-		hash: "rS"
-	}	,
+		hash: "rS",
+    media: true
+  },
 	{
 		id: "Reddit/Software",
 		cat: "Social",
@@ -2190,8 +2259,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/software/.rss",
 		ext: "https://www.reddit.com/r/Software",
 		img: "Software",
-		hash: "Wa"
-	}	,
+		hash: "Wa",
+    media: false
+  },
 	{
 		id: "Reddit/Software Gore",
 		cat: "Social",
@@ -2199,8 +2269,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/softwaregore/.rss",
 		ext: "https://www.reddit.com/r/softwaregore",
 		img: "SoftwareGore",
-		hash: "gS"
-	}	,
+		hash: "gS",
+    media: true
+  },
 	{
 		id: "4Chan/SP Sports",
 		cat: "Social",
@@ -2208,8 +2279,9 @@ var menu = [
 		uri: "http://boards.4chan.org/sp/index.rss",
 		ext: "http://boards.4channel.org/sp/",
 		img: "4chan",
-		hash: "sP"
-	}	,
+		hash: "sP",
+    media: true
+  },
 	{
 		id: "Reddit/Sports",
 		cat: "Social",
@@ -2217,8 +2289,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/sports/.rss",
 		ext: "https://www.reddit.com/r/Sports",
 		img: "Sports",
-		hash: "St"
-	}	,
+		hash: "St",
+		media: true
+  },
 	{
 		id: "Reddit/Tech",
 		cat: "Social",
@@ -2226,8 +2299,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/tech/.rss",
 		ext: "https://www.reddit.com/r/Tech",
 		img: "Reddit",
-		hash: "hT"
-	}	,
+		hash: "hT",
+    media: false
+  },
 	{
 		id: "Reddit/Technology",
 		cat: "Social",
@@ -2235,8 +2309,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/technology/.rss",
 		ext: "https://www.reddit.com/r/Technology",
 		img: "Technology",
-		hash: "Rt"
-	}	,
+		hash: "Rt",
+    media: false
+  },
 	{
 		id: "Reddit/Television",
 		cat: "Social",
@@ -2244,8 +2319,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/television/.rss",
 		ext: "https://www.reddit.com/r/Television",
 		img: "Television",
-		hash: "vT"
-	}	,
+		hash: "vT",
+		media: true
+  },
 	{
 		id: "Reddit/Thinkpad",
 		cat: "Social",
@@ -2253,8 +2329,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/thinkpad/.rss",
 		ext: "https://www.reddit.com/r/Thinkpad",
 		img: "Thinkpad",
-		hash: "tP"
-	}	,
+		hash: "tP",
+    media: true
+  },
 	{
 		id: "4Chan/TV",
 		cat: "Social",
@@ -2262,8 +2339,9 @@ var menu = [
 		uri: "http://boards.4channel.org/tv/index.rss",
 		ext: "http://boards.4channel.org/tv",
 		img: "4chan",
-		hash: "tV"
-	}	,
+		hash: "tV",
+    media: true
+  },
 	{
 		id: "Reddit/Unix Porn",
 		cat: "Social",
@@ -2271,8 +2349,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/unixporn/.rss",
 		ext: "https://www.reddit.com/r/Unixporn",
 		img: "UnixPorn",
-		hash: "uX"
-	}	,
+		hash: "uX",
+    media: true
+  },
 	{
 		id: "4Chan/Wallpapers General",
 		cat: "Social",
@@ -2280,8 +2359,9 @@ var menu = [
 		uri: "http://boards.4chan.org/wg/index.rss",
 		ext: "http://boards.4channel.org/wg",
 		img: "4chan",
-		hash: "wG"
-	}	,
+		hash: "wG",
+    media: true
+  },
 	{
 		id: "Imgur/Wallpaper",
 		cat: "Social",
@@ -2289,8 +2369,9 @@ var menu = [
 		uri: "https://api.imgur.com/3/gallery/r/wallpaper/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
 		ext: "https://imgur.com/r/wallpaper",
 		img: "Imgur",
-		hash: "Iw"
-	}	,
+		hash: "Iw",
+    media: true
+  },
 	{
 		id: "Reddit/Wallpaper",
 		cat: "Social",
@@ -2298,8 +2379,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/wallpaper/.rss",
 		ext: "https://www.reddit.com/r/Wallpaper",
 		img: "Wallpaper",
-		hash: "wP"
-	}	,
+		hash: "wP",
+    media: true
+  },
 	{
 		id: "Imgur/Wallpapers",
 		cat: "Social",
@@ -2307,8 +2389,9 @@ var menu = [
 		uri: "https://api.imgur.com/3/gallery/r/wallpapers/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96",
 		ext: "https://imgur.com/r/wallpapers",
 		img: "Imgur",
-		hash: "Mp"
-	}	,
+		hash: "Mp",
+    media: true
+  },
 	{
 		id: "Reddit/Wallpapers",
 		cat: "Social",
@@ -2316,8 +2399,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/wallpapers/.rss",
 		ext: "https://www.reddit.com/r/Wallpapers",
 		img: "Reddit",
-		hash: "Ws"
-	}	,
+		hash: "Ws",
+    media: true
+  },
 	{
 		id: "Reddit/WallpaperDump",
 		cat: "Social",
@@ -2325,8 +2409,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/wallpaperdump/.rss",
 		ext: "https://www.reddit.com/r/Wallpaperdump",
 		img: "Reddit",
-		hash: "Wd"
-	}	,
+		hash: "Wd",
+    media: false
+  },
 	{
 		id: "Reddit/Windows",
 		cat: "Social",
@@ -2334,8 +2419,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/windows/.rss",
 		ext: "https://www.reddit.com/r/Windows",
 		img: "Windows",
-		hash: "wW"
-	}	,
+		hash: "wW",
+    media: false
+  },
 	{
 		id: "Reddit/Windows10",
 		cat: "Social",
@@ -2343,8 +2429,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/windows10/.rss",
 		ext: "https://www.reddit.com/r/Windows10",
 		img: "Windows",
-		hash: "Ww"
-	}	,
+		hash: "Ww",
+    media: false
+  },
 	{
 		id: "Reddit/World News",
 		cat: "Social",
@@ -2352,8 +2439,9 @@ var menu = [
 		uri: "https://www.reddit.com/r/worldnews/.rss",
 		ext: "https://www.reddit.com/r/WorldNews",
 		img: "Reddit",
-		hash: "rN"
-	}	,
+		hash: "rN",
+    media: false
+  },
 	{
 		id: "ABC Sports",
 		cat: "Sports",
@@ -2361,8 +2449,9 @@ var menu = [
 		uri: "https://abcnews.go.com/abcnews/sportsheadlines",
 		ext: "https://abcnews.go.com/Sports",
 		img: "ABC",
-		hash: "cS"
-	}	,
+		hash: "cS",
+		media: true
+  },
 	{
 		id: "Action Network",
 		cat: "Sports",
@@ -2370,8 +2459,9 @@ var menu = [
 		uri: "https://www.actionnetwork.com/feed",
 		ext: "https://www.actionnetwork.com",
 		img: "ActionNetwork",
-		hash: "nA"
-	}	,
+		hash: "nA",
+		media: true
+  },
 	{
 		id: "Clutch Points",
 		cat: "Sports",
@@ -2379,8 +2469,9 @@ var menu = [
 		uri: "https://clutchpoints.com/feed",
 		ext: "https://clutchpoints.com",
 		img: "ClutchPoints",
-		hash: "pC"
-	}	,
+		hash: "pC",
+		media: true
+  },
 	{
 		id: "Digital Trends Sports",
 		cat: "Sports",
@@ -2388,8 +2479,9 @@ var menu = [
 		uri: "https://www.digitaltrends.com/cars/feed",
 		ext: "https://digitaltrends.com/cars",
 		img: "DigitalTrends",
-		hash: "pD"
-	}	,
+		hash: "pD",
+		media: true
+  },
 	{
 		id: "ESPN Sports",
 		cat: "Sports",
@@ -2397,8 +2489,9 @@ var menu = [
 		uri: "https://www.espn.com/espn/rss/news",
 		ext: "https://espn.com",
 		img: "ESPN",
-		hash: "sE"
-	}	,
+		hash: "sE",
+		media: true
+  },
 	{
 		id: "FOX Sports",
 		cat: "Sports",
@@ -2406,8 +2499,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU",
 		ext: "https://foxsports.com",
 		img: "FoxSports",
-		hash: "xF"
-	}	,
+		hash: "xF",
+		media: true
+  },
 	{
 		id: "Heavy Sports",
 		cat: "Sports",
@@ -2415,8 +2509,9 @@ var menu = [
 		uri: "https://heavy.com/sports/feed",
 		ext: "https://heavy.com/sports",
 		img: "Heavy",
-		hash: "tY"
-	}	,
+		hash: "tY",
+		media: true
+  },
 	{
 		id: "Jalopnik",
 		cat: "Sports",
@@ -2424,8 +2519,9 @@ var menu = [
 		uri: "https://jalopnik.com/rss",
 		ext: "https://jalopnik.com",
 		img: "Jalopnik",
-		hash: "jK"
-	}	,
+		hash: "jK",
+		media: true
+  },
 	{
 		id: "NBC Sports",
 		cat: "Sports",
@@ -2433,8 +2529,9 @@ var menu = [
 		uri: "https://sports.nbcsports.com/feed",
 		ext: "https://nbcsports.com",
 		img: "NBC",
-		hash: "oP"
-	}	,
+		hash: "oP",
+		media: true
+  },
 	{
 		id: "New York Post Sports",
 		cat: "Sports",
@@ -2442,8 +2539,9 @@ var menu = [
 		uri: "https://nypost.com/sports/feed",
 		ext: "https://nypost.com/sports",
 		img: "NewYorkPost",
-		hash: "Nt"
-	}	,
+		hash: "Nt",
+		media: true
+  },
 	{
 		id: "RT Sports",
 		cat: "Sports",
@@ -2451,8 +2549,9 @@ var menu = [
 		uri: "https://www.rt.com/rss/sport",
 		ext: "https://rt.com/sport",
 		img: "RT",
-		hash: "rT"
-	}	,
+		hash: "rT",
+		media: true
+  },
 	{
 		id: "Sporting News",
 		cat: "Sports",
@@ -2460,8 +2559,9 @@ var menu = [
 		uri: "http://www.sportingnews.com/us/rss",
 		ext: "http://sportingnews.com",
 		img: "SportingNews",
-		hash: "wS"
-	}	,
+		hash: "wS",
+		media: true
+  },
 	{
 		id: "Sportsnaut",
 		cat: "Sports",
@@ -2469,8 +2569,9 @@ var menu = [
 		uri: "https://sportsnaut.com/feed",
 		ext: "https://sportsnaut.com",
 		img: "Sportsnaut",
-		hash: "Uo"
-	}	,
+		hash: "Uo",
+		media: true
+  },
 	{
 		id: "USA Today Sports",
 		cat: "Sports",
@@ -2478,8 +2579,9 @@ var menu = [
 		uri: "http://rssfeeds.usatoday.com/usatodaycomsports-topstories&x=1",
 		ext: "https://www.usatoday.com/sports",
 		img: "USAToday",
-		hash: "sU"
-	}	,
+		hash: "sU",
+		media: true
+  },
 	{
 		id: "Yahoo Sports",
 		cat: "Sports",
@@ -2487,8 +2589,9 @@ var menu = [
 		uri: "https://sports.yahoo.com/rss",
 		ext: "https://sports.yahoo.com",
 		img: "Yahoo",
-		hash: "oY"
-	}	,
+		hash: "oY",
+		media: false
+  },
 	{
 		id: "BBC Sports",
 		cat: "Sports",
@@ -2496,8 +2599,9 @@ var menu = [
 		uri: "http://feeds.bbci.co.uk/sport/rss.xml",
 		ext: "https://bbc.com/sport",
 		img: "BBC",
-		hash: "cB"
-	}	,
+		hash: "cB",
+		media: false
+  },
 	{
 		id: "BJPenn",
 		cat: "Sports",
@@ -2505,8 +2609,9 @@ var menu = [
 		uri: "https://www.bjpenn.com/feed",
 		ext: "https://bjpenn.com",
 		img: "BJPenn",
-		hash: "jP"
-	}	,
+		hash: "jP",
+		media: false
+  },
 	{
 		id: "CBS Sports",
 		cat: "Sports",
@@ -2514,17 +2619,9 @@ var menu = [
 		uri: "https://rss.cbssports.com/rss/headlines",
 		ext: "https://cbssports.com",
 		img: "CBS",
-		hash: "bS"
-	}	,
-	{
-		id: "Bleacher Report",
-		cat: "Sports",
-		des: "Bleacher Report is a website that focuses on sport and sports culture.",
-		uri: "https://bleacherreport.com/articles/feed",
-		ext: "https://bleacherreport.com",
-		img: "BleacherReport",
-		hash: "bR"
-	}	,
+		hash: "bS",
+		media: false
+  },
 	{
 		id: "CNN Sports",
 		cat: "Sports",
@@ -2532,8 +2629,9 @@ var menu = [
 		uri: "http://rss.cnn.com/rss/edition_sport.rss",
 		ext: "https://cnn.com/sport",
 		img: "CNN",
-		hash: "Nn"
-	}	,
+		hash: "Nn",
+		media: true
+  },
 	{
 		id: "ESPN MLB",
 		cat: "Sports",
@@ -2541,8 +2639,9 @@ var menu = [
 		uri: "http://www.espn.com/espn/rss/mlb/news",
 		ext: "https://espn.com/mlb",
 		img: "ESPN",
-		hash: "mL"
-	}	,
+		hash: "mL",
+		media: true
+  },
 	{
 		id: "FOX Sports MLB",
 		cat: "Sports",
@@ -2550,8 +2649,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb",
 		ext: "https://www.foxsports.com/mlb",
 		img: "FoxSports",
-		hash: "xB"
-	}	,
+		hash: "xB",
+		media: true
+  },
 	{
 		id: "The Score MLB",
 		cat: "Sports",
@@ -2559,8 +2659,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/mlb.rss",
 		ext: "https://thescore.com/mlb/news",
 		img: "TheScore",
-		hash: "tB"
-	}	,
+		hash: "tB",
+		media: true
+  },
 	{
 		id: "ESPN NFL",
 		cat: "Sports",
@@ -2568,8 +2669,9 @@ var menu = [
 		uri: "http://www.espn.com/espn/rss/nfl/news",
 		ext: "https://espn.com/nfl",
 		img: "ESPN",
-		hash: "eF"
-	}	,
+		hash: "eF",
+		media: true
+  },
 	{
 		id: "FOX Sports NFL",
 		cat: "Sports",
@@ -2577,8 +2679,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nfl",
 		ext: "https://www.foxsports.com/nfl",
 		img: "FoxSports",
-		hash: "Fn"
-	}	,
+		hash: "Fn",
+		media: true
+  },
 	{
 		id: "The Score NFL",
 		cat: "Sports",
@@ -2586,8 +2689,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/nfl.rss",
 		ext: "https://thescore.com/nfl/news",
 		img: "TheScore",
-		hash: "sN"
-	}	,
+		hash: "sN",
+		media: true
+  },
 	{
 		id: "FOX Sports NCAAFB",
 		cat: "Sports",
@@ -2595,8 +2699,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=cfb",
 		ext: "https://www.foxsports.com/college-football",
 		img: "FoxSports",
-		hash: "fC"
-	}	,
+		hash: "fC",
+		media: true
+  },
 	{
 		id: "The Score NCAAF",
 		cat: "Sports",
@@ -2604,8 +2709,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/ncaaf.rss",
 		ext: "https://www.thescore.com/ncaaf/news",
 		img: "TheScore",
-		hash: "cF"
-	}	,
+		hash: "cF",
+		media: true
+  },
 	{
 		id: "ESPN NBA",
 		cat: "Sports",
@@ -2613,8 +2719,9 @@ var menu = [
 		uri: "http://www.espn.com/espn/rss/nba/news",
 		ext: "https://espn.com/nba",
 		img: "ESPN",
-		hash: "eN"
-	}	,
+		hash: "eN",
+		media: true
+  },
 	{
 		id: "FOX Sports NBA",
 		cat: "Sports",
@@ -2622,8 +2729,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nba",
 		ext: "https://www.foxsports.com/nba",
 		img: "FoxSports",
-		hash: "fN"
-	}	,
+		hash: "fN",
+		media: true
+  },
 	{
 		id: "The Score NBA",
 		cat: "Sports",
@@ -2631,8 +2739,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/nba.rss",
 		ext: "https://www.thescore.com/nba/news",
 		img: "TheScore",
-		hash: "nT"
-	}	,
+		hash: "nT",
+		media: true
+  },
 	{
 		id: "ESPN NHL",
 		cat: "Sports",
@@ -2640,8 +2749,9 @@ var menu = [
 		uri: "http://www.espn.com/espn/rss/nhl/news",
 		ext: "https://espn.com/nhl",
 		img: "ESPN",
-		hash: "hE"
-	}	,
+		hash: "hE",
+		media: true
+  },
 	{
 		id: "FOX Sports NHL",
 		cat: "Sports",
@@ -2649,8 +2759,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=nhl",
 		ext: "https://www.foxsports.com/nhl",
 		img: "FoxSports",
-		hash: "fH"
-	}	,
+		hash: "fH",
+		media: true
+  },
 	{
 		id: "FOX Sports Golf",
 		cat: "Sports",
@@ -2658,8 +2769,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf",
 		ext: "https://www.foxsports.com/golf/usga",
 		img: "FoxSports",
-		hash: "sF"
-	}	,
+		hash: "sF",
+		media: true
+  },
 	{
 		id: "FOX Sports Racing",
 		cat: "Sports",
@@ -2667,8 +2779,9 @@ var menu = [
 		uri: "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=motor",
 		ext: "https://www.foxsports.com/motor",
 		img: "FoxSports",
-		hash: "rX"
-	}	,
+		hash: "rX",
+		media: true
+  },
 	{
 		id: "Goal",
 		cat: "Sports",
@@ -2676,8 +2789,9 @@ var menu = [
 		uri: "https://www.goal.com/feeds/en/news",
 		ext: "https://goal.com",
 		img: "Goal",
-		hash: "gA"
-	}	,
+		hash: "gA",
+		media: true
+  },
 	{
 		id: "Int Business Times Sports",
 		cat: "Sports",
@@ -2685,8 +2799,9 @@ var menu = [
 		uri: "https://www.ibtimes.sg/rss/sports",
 		ext: "https://www.ibtimes.com/sports",
 		img: "IBT",
-		hash: "sS"
-	}	,
+		hash: "sS",
+		media: false
+  },
 	{
 		id: "MLB",
 		cat: "Sports",
@@ -2694,8 +2809,9 @@ var menu = [
 		uri: "https://www.mlb.com/feeds/news/rss.xml",
 		ext: "https://mlb.com",
 		img: "MLB",
-		hash: "Ml"
-	}	,
+		hash: "Ml",
+		media: false
+  },
 	{
 		id: "MMAJunkie",
 		cat: "Sports",
@@ -2703,8 +2819,9 @@ var menu = [
 		uri: "https://mmajunkie.com/news/feed",
 		ext: "https://mmajunkie.com",
 		img: "MMAJunkie",
-		hash: "jM"
-	}	,
+		hash: "jM",
+		media: true
+  },
 	{
 		id: "MMAtion",
 		cat: "Sports",
@@ -2712,8 +2829,9 @@ var menu = [
 		uri: "http://en.mmation.com/feed",
 		ext: "http://en.mmation.com",
 		img: "MMAtion",
-		hash: "tA"
-	}	,
+		hash: "tA",
+		media: false
+  },
 	{
 		id: "MMA News",
 		cat: "Sports",
@@ -2721,8 +2839,9 @@ var menu = [
 		uri: "https://www.mmanews.com/feed",
 		ext: "https://mmanews.com",
 		img: "MMANews",
-		hash: "sM"
-	}	,
+		hash: "sM",
+		media: false
+  },
 	{
 		id: "The Score MMA",
 		cat: "Sports",
@@ -2730,8 +2849,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/mma.rss",
 		ext: "https://thescore.com/mma/news",
 		img: "TheScore",
-		hash: "Am"
-	}	,
+		hash: "Am",
+		media: true
+  },
 	{
 		id: "Sportzet",
 		cat: "Sports",
@@ -2739,8 +2859,9 @@ var menu = [
 		uri: "https://www.sportzet.com/feed",
 		ext: "https://www.sportzet.com",
 		img: "Sportzet",
-		hash: "zP"
-	}	,
+		hash: "zP",
+		media: false
+  },
 	{
 		id: "Telegraph.co.uk Sports",
 		cat: "Sports",
@@ -2748,8 +2869,9 @@ var menu = [
 		uri: "https://www.telegraph.co.uk/sport/rss.xml",
 		ext: "https://www.telegraph.co.uk/sport",
 		img: "Telegraph",
-		hash: "tK"
-	}	,
+		hash: "tK",
+		media: true
+  },
 	{
 		id: "TheSun.co.uk Sports",
 		cat: "Sports",
@@ -2757,8 +2879,9 @@ var menu = [
 		uri: "https://www.thesun.co.uk/sport/feed",
 		ext: "https://www.thesun.co.uk/sport/feed",
 		img: "TheSun",
-		hash: "sO"
-	}	,
+		hash: "sO",
+		media: true
+  },
 	{
 		id: "The Score Sports",
 		cat: "Sports",
@@ -2766,8 +2889,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/trending.rss",
 		ext: "https://thescore.com",
 		img: "TheScore",
-		hash: "tR"
-	}	,
+		hash: "tR",
+		media: true
+  },
 	{
 		id: "The Score PGA",
 		cat: "Sports",
@@ -2775,17 +2899,9 @@ var menu = [
 		uri: "https://feeds.thescore.com/pga.rss",
 		ext: "https://www.thescore.com/pga/news",
 		img: "TheScore",
-		hash: "pG"
-	}	,
-	{
-		id: "TieBreaker",
-		cat: "Sports",
-		des: "Tiebreaker Sports News Headlines from around the world.",
-		uri: "https://www.tiebreaker.com/feed",
-		ext: "https://www.tiebreaker.com",
-		img: "TieBreaker",
-		hash: "bT"
-	}	,
+		hash: "pG",
+		media: true
+  },
 	{
 		id: "UFC",
 		cat: "Sports",
@@ -2793,8 +2909,9 @@ var menu = [
 		uri: "https://www.ufc.com/rss/news",
 		ext: "https://ufc.com",
 		img: "UFC",
-		hash: "uC"
-	}	,
+		hash: "uC",
+		media: false
+  },
 	{
 		id: "Washington Examiner Sports",
 		cat: "Sports",
@@ -2802,8 +2919,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/dcexaminer/Sports",
 		ext: "https://www.washingtonexaminer.com/tag/sports",
 		img: "WashingtonExaminer",
-		hash: "wE"
-	}	,
+		hash: "wE",
+		media: false
+  },
 	{
 		id: "9to5Linux",
 		cat: "Technology",
@@ -2811,8 +2929,9 @@ var menu = [
 		uri: "https://9to5linux.com/feed",
 		ext: "https://9to5linux.com",
 		img: "9to5Linux",
-		hash: "tO"
-	}	,
+		hash: "tO",
+		media: false
+  },
 	{
 		id: "ABC Technology",
 		cat: "Technology",
@@ -2820,8 +2939,9 @@ var menu = [
 		uri: "https://abcnews.go.com/abcnews/technologyheadlines",
 		ext: "https://abcnews.go.com/technology",
 		img: "ABC",
-		hash: "Tc"
-	}	,
+		hash: "Tc",
+		media: true
+  },
 	{
 		id: "AnandTech",
 		cat: "Technology",
@@ -2829,8 +2949,9 @@ var menu = [
 		uri: "https://www.anandtech.com/rss",
 		ext: "https://www.anandtech.com",
 		img: "AnandTech",
-		hash: "Aa"
-	}	,
+		hash: "Aa",
+		media: true
+  },
 	{
 		id: "Ars Technica",
 		cat: "Technology",
@@ -2838,8 +2959,9 @@ var menu = [
 		uri: "http://feeds.arstechnica.com/arstechnica/index?format=xml",
 		ext: "https://arstechnica.com",
 		img: "ArsTechnica",
-		hash: "rN"
-	}	,
+		hash: "rN",
+		media: true
+  },
 	{
 		id: "BBC Technology",
 		cat: "Technology",
@@ -2847,8 +2969,9 @@ var menu = [
 		uri: "http://feeds.bbci.co.uk/news/technology/rss.xml",
 		ext: "https://bbc.co.uk/news/technology",
 		img: "BBC",
-		hash: "Bt"
-	}	,
+		hash: "Bt",
+		media: false
+  },
 	{
 		id: "BetaNews",
 		cat: "Technology",
@@ -2856,8 +2979,9 @@ var menu = [
 		uri: "http://feeds.betanews.com/bn",
 		ext: "https://betanews.com",
 		img: "BetaNews",
-		hash: "Wb"
-	}	,
+		hash: "Wb",
+		media: false
+  },
 	{
 		id: "Bleeping Computer",
 		cat: "Technology",
@@ -2865,8 +2989,8 @@ var menu = [
 		uri: "https://www.bleepingcomputer.com/feed/",
 		ext: "https://www.bleepingcomputer.com",
 		img: "BleepingComputer",
-		hash: "Cb"
-	}	,
+		hash: "Cb",
+  },
 	{
 		id: "Computer Weekly",
 		cat: "Technology",
@@ -2874,8 +2998,9 @@ var menu = [
 		uri: "https://www.computerweekly.com/rss/RSS-Feed.xml",
 		ext: "https://computerweekly.com",
 		img: "ComputerWeekly",
-		hash: "Wc"
-	}	,
+		hash: "Wc",
+		media: false
+  },
 	{
 		id: "Boy Genius Report",
 		cat: "Technology",
@@ -2883,8 +3008,9 @@ var menu = [
 		uri: "https://bgr.com/tech/feed",
 		ext: "https://bgr.com/tech",
 		img: "BGR",
-		hash: "gB"
-	}	,
+		hash: "gB",
+		media: true
+  },
 	{
 		id: "Business Insider",
 		cat: "Technology",
@@ -2892,8 +3018,9 @@ var menu = [
 		uri: "https://www.businessinsider.com/rss",
 		ext: "https://businessinsider.com",
 		img: "BusinessInsider",
-		hash: "Ie"
-	}	,
+		hash: "Ie",
+		media: true
+  },
 	{
 		id: "CBS Technology",
 		cat: "Technology",
@@ -2901,17 +3028,19 @@ var menu = [
 		uri: "https://www.cbsnews.com/latest/rss/technology",
 		ext: "https://cbsnews.com/technology",
 		img: "CBS",
-		hash: "gC"
-	}	,
+		hash: "gC",
+		media: false
+  },
 	{
-		id: "CNBC",
+		id: "CNBC Tech",
 		cat: "Technology",
 		des: "CNBC is an American elevision News channel that is owned by NBC Universal.",
 		uri: "https://www.cnbc.com/id/19854910/device/rss/rss.html",
 		ext: "https://cnbc.com/technology",
 		img: "CNBC",
-		hash: "Cc"
-	}	,
+		hash: "Cc",
+		media: false
+  },
 	{
 		id: "CNET",
 		cat: "Technology",
@@ -2919,17 +3048,9 @@ var menu = [
 		uri: "https://www.cnet.com/rss/news",
 		ext: "https://cnet.com",
 		img: "CNET",
-		hash: "ne"
-	}	,
-	{
-		id: "Digg",
-		cat: "Technology",
-		des: "Digg the best articles, videos, and original content that the web is talking about right now.",
-		uri: "https://www.digg.com/rss/index.xml",
-		ext: "https://www.digg.com",
-		img: "Digg",
-		hash: "iG"
-	}	,
+		hash: "ne",
+		media: true
+  },
 	{
 		id: "Digital Trends Tech",
 		cat: "Technology",
@@ -2937,8 +3058,9 @@ var menu = [
 		uri: "https://www.digitaltrends.com/feed",
 		ext: "https://digitaltrends.com",
 		img: "DigitalTrends",
-		hash: "Ch"
-	}	,
+		hash: "Ch",
+		media: true
+  },
 	{
 		id: "DZone",
 		cat: "Technology",
@@ -2946,8 +3068,9 @@ var menu = [
 		uri: "http://feeds.dzone.com/home",
 		ext: "http://www.dzone.com",
 		img: "DZone",
-		hash: "zD"
-	}	,
+		hash: "zD",
+		media: true
+  },
 	{
 		id: "Electronics Weekly",
 		cat: "Technology",
@@ -2955,8 +3078,9 @@ var menu = [
 		uri: "https://www.electronicsweekly.com/news/feed/",
 		ext: "https://www.electronicsweekly.com",
 		img: "ElectronicsWeekly",
-		hash: "We"
-	}	,
+		hash: "We",
+		media: false
+  },
 	{
 		id: "Engadget",
 		cat: "Technology",
@@ -2964,17 +3088,19 @@ var menu = [
 		uri: "https://www.engadget.com/rss.xml",
 		ext: "https://engadget.com",
 		img: "Engadget",
-		hash: "nT"
-	}	,
+		hash: "nT",
+		media: true
+  },
 	{
 		id: "ESET Security",
 		cat: "Technology",
 		des: "ESET Security It's trusted by over 110 million users worldwide to detect and neutralize all types of digital threats, including viruses, rootkits, worms and spyware.",
 		uri: "https://www.welivesecurity.com/feed/",
 		ext: "https://www.welivesecurity.com",
-        img: "ESET",
-		hash: "eE"
-	}	,
+    img: "ESET",
+		hash: "eE",
+		media: true
+  },
 	{
 		id: "EuroGamer",
 		cat: "Technology",
@@ -2982,8 +3108,9 @@ var menu = [
 		uri: "https://www.eurogamer.net/?format=rss&type=article",
 		ext: "https://www.eurogamer.net",
 		img: "EuroGamer",
-		hash: "gE"
-	}	,
+		hash: "gE",
+		media: true
+  },
 	{
 		id: "Exploit Database",
 		cat: "Technology",
@@ -2991,17 +3118,9 @@ var menu = [
 		uri: "https://www.exploit-db.com/rss.xml",
 		ext: "https://www.exploit-db.com",
 		img: "ExploitDatabase",
-		hash: "dA"
-	}	,
-	{
-		id: "Forbes",
-		cat: "Technology",
-		des: "Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",
-		uri: "https://www.forbes.com/most-popular/feed",
-		ext: "https://forbes.com",
-		img: "Forbes",
-		hash: "fO"
-	}	,
+		hash: "dA",
+		media: false
+  },
 	{
 		id: "Futurism",
 		cat: "Technology",
@@ -3009,8 +3128,9 @@ var menu = [
 		uri: "https://futurism.com/feed",
 		ext: "https://futurism.com",
 		img: "Futurism",
-		hash: "rF"
-	}	,
+		hash: "rF",
+		media: true
+  },
 	{
 		id: "Gadgets 360",
 		cat: "Technology",
@@ -3018,8 +3138,9 @@ var menu = [
 		uri: "https://gadgets.ndtv.com/rss/feeds",
 		ext: "https://gadgets.ndtv.com",
 		img: "Gadgets360",
-		hash: "eD"
-	}	,
+		hash: "eD",
+		media: false
+  },
 	{
 		id: "Gamespot",
 		cat: "Technology",
@@ -3027,8 +3148,9 @@ var menu = [
 		uri: "https://www.gamespot.com/feeds/mashup/",
 		ext: "https://www.gamespot.com",
 		img: "GameSpot",
-		hash: "mS"
-	}	,
+		hash: "mS",
+		media: true
+  },
 	{
 		id: "GeekWire",
 		cat: "Technology",
@@ -3036,8 +3158,9 @@ var menu = [
 		uri: "https://www.geekwire.com/feed",
 		ext: "https://geekwire.com",
 		img: "GeekWire",
-		hash: "gI"
-	}	,
+		hash: "gI",
+		media: true
+  },
 	{
 		id: "Gizmodo",
 		cat: "Technology",
@@ -3045,8 +3168,9 @@ var menu = [
 		uri: "https://gizmodo.com/rss",
 		ext: "https://gizmodo.com",
 		img: "Gizmodo",
-		hash: "zO"
-	}	,
+		hash: "zO",
+		media: true
+  },
 	{
 		id: "The Gadget Flow",
 		cat: "Technology",
@@ -3054,8 +3178,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/thegadgetflow",
 		ext: "https://thegadgetflow.com",
 		img: "TheGadgetFlow",
-		hash: "aH"
-	}	,
+		hash: "aH",
+		media: true
+  },
 	{
 		id: "gHacks",
 		cat: "Technology",
@@ -3063,8 +3188,9 @@ var menu = [
 		uri: "https://www.ghacks.net/feed",
 		ext: "https://ghacks.net",
 		img: "gHacks",
-		hash: "Ga"
-	}	,
+		hash: "Ga",
+		media: true
+  },
 	{
 		id: "HackADay",
 		cat: "Technology",
@@ -3072,8 +3198,9 @@ var menu = [
 		uri: "https://hackaday.com/feed",
 		ext: "https://hackaday.com",
 		img: "HackADay",
-		hash: "yH"
-	}	,
+		hash: "yH",
+		media: true
+  },
 	{
 		id: "Heavy Technology",
 		cat: "Technology",
@@ -3081,8 +3208,9 @@ var menu = [
 		uri: "https://heavy.com/tech/feed",
 		ext: "https://heavy.com/tech",
 		img: "Heavy",
-		hash: "hY"
-	}	,
+		hash: "hY",
+		media: true
+  },
 	{
 		id: "Independent.co.uk Technology",
 		cat: "Technology",
@@ -3090,8 +3218,9 @@ var menu = [
 		uri: "http://www.independent.co.uk/life-style/gadgets-and-tech/rss",
 		ext: "https://independent.co.uk/life-style/gadgets-and-tech",
 		img: "TheIndependent",
-		hash: "iT"
-	}	,
+		hash: "iT",
+		media: true
+  },
 	{
 		id: "InfoWorld",
 		cat: "Technology",
@@ -3099,8 +3228,9 @@ var menu = [
 		uri: "https://www.infoworld.com/index.rss",
 		ext: "https://infoworld.com",
 		img: "InfoWorld",
-		hash: "fW"
-	}	,
+		hash: "fW",
+		media: true
+  },
 	{
 		id: "Inverse",
 		cat: "Media",
@@ -3108,8 +3238,9 @@ var menu = [
 		uri: "https://www.inverse.com/feed/articles/1.rss",
 		ext: "https://www.inverse.com",
 		img: "Inverse",
-		hash: "vS"
-	}	,
+		hash: "vS",
+		media: true
+  },
 	{
 		id: "Leak Lookup",
 		cat: "Technology",
@@ -3117,8 +3248,9 @@ var menu = [
 		uri: "https://leak-lookup.com/rss",
 		ext: "https://leak-lookup.com",
 		img: "Leak-Lookup",
-		hash: "lL"
-	}	,
+		hash: "lL",
+		media: false
+  },
 	{
 		id: "LifeHacker",
 		cat: "Technology",
@@ -3126,8 +3258,9 @@ var menu = [
 		uri: "https://www.lifehacker.com.au/feed/",
 		ext: "https://www.lifehacker.com.au",
 		img: "LifeHacker",
-		hash: "hL"
-	}	,
+		hash: "hL",
+		media: true
+  },
 	{
 		id: "Mirror.co.uk Technology",
 		cat: "Technology",
@@ -3135,8 +3268,9 @@ var menu = [
 		uri: "https://www.mirror.co.uk/tech/?service=rss",
 		ext: "https://mirror.co.uk/tech",
 		img: "Mirror",
-		hash: "kM"
-	}	,
+		hash: "kM",
+		media: true
+  },
 	{
 		id: "MIT University",
 		cat: "Technology",
@@ -3144,8 +3278,9 @@ var menu = [
 		uri: "http://news.mit.edu/rss/feed",
 		ext: "http://news.mit.edu",
 		img: "MIT",
-		hash: "mT"
-	}	,
+		hash: "mT",
+		media: true
+  },
 	{
 		id: "NASA",
 		cat: "Technology",
@@ -3153,8 +3288,9 @@ var menu = [
 		uri: "https://www.nasa.gov/rss/dyn/breaking_news.rss",
 		ext: "https://nasa.gov",
 		img: "NASA",
-		hash: "aS"
-	}	,
+		hash: "aS",
+		media: true
+  },
 	{
 		id: "NBC Technology",
 		cat: "Technology",
@@ -3162,8 +3298,9 @@ var menu = [
 		uri: "http://feeds.nbcnews.com/nbcnews/public/tech",
 		ext: "https://nbcnews.com/tech-media",
 		img: "NBC",
-		hash: "tY"
-	}	,
+		hash: "tY",
+		media: true
+  },
 	{
 		id: "New York Post Technology",
 		cat: "Technology",
@@ -3171,8 +3308,9 @@ var menu = [
 		uri: "https://nypost.com/tech/feed",
 		ext: "https://nypost.com/tech",
 		img: "NewYorkPost",
-		hash: "pL"
-	}	,
+		hash: "pL",
+		media: true
+  },
 	{
 		id: "New York Times Tech",
 		cat: "Technology",
@@ -3180,8 +3318,9 @@ var menu = [
 		uri: "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
 		ext: "https://nytimes.com/categorytion/technology",
 		img: "NewYorkTimes",
-		hash: "yM"
-	}	,
+		hash: "yM",
+		media: true
+  },
 	{
 		id: "OAN Technology",
 		cat: "Technology",
@@ -3189,8 +3328,9 @@ var menu = [
 		uri: "https://www.oann.com/category/tech/feed",
 		ext: "https://www.oann.com/category/tech",
 		img: "OANN",
-		hash: "nL"
-	}	,
+		hash: "nL",
+		media: true
+  },
 	{
 		id: "PC World",
 		cat: "Technology",
@@ -3198,8 +3338,9 @@ var menu = [
 		uri: "https://www.pcworld.com/index.rss",
 		ext: "https://pcworld.com",
 		img: "PCWorld",
-		hash: "cO"
-	}	,
+		hash: "cO",
+		media: true
+  },
 	{
 		id: "Popular Mechanics",
 		cat: "Technology",
@@ -3207,8 +3348,9 @@ var menu = [
 		uri: "https://www.popularmechanics.com/rss/all.xml",
 		ext: "https://popularmechanics.com",
 		img: "PopularMechanics",
-		hash: "mP"
-	}	,
+		hash: "mP",
+		media: true
+  },
 	{
 		id: "Phoronix",
 		cat: "Technology",
@@ -3216,8 +3358,9 @@ var menu = [
 		uri: "https://www.phoronix.com/rss.php",
 		ext: "https://phoronix.com",
 		img: "Phoronix",
-		hash: "xP"
-	}	,
+		hash: "xP",
+		media: false
+  },
 	{
 		id: "ReadWrite",
 		cat: "Technology",
@@ -3225,8 +3368,9 @@ var menu = [
 		uri: "https://readwrite.com/feed",
 		ext: "https://readwrite.com",
 		img: "ReadWrite",
-		hash: "rR"
-	}	,
+		hash: "rR",
+		media: true
+  },
 	{
 		id: "Security Affairs",
 		cat: "Technology",
@@ -3234,8 +3378,9 @@ var menu = [
 		uri: "http://securityaffairs.co/wordpress/feed",
 		ext: "http://securityaffairs.co",
 		img: "SecurityAffairs",
-		hash: "iF"
-	}	,
+		hash: "iF",
+		media: false
+  },
 	{
 		id: "Sky News",
 		cat: "Technology",
@@ -3243,8 +3388,9 @@ var menu = [
 		uri: "http://feeds.skynews.com/feeds/rss/technology.xml",
 		ext: "https://sky.com/technology",
 		img: "SkyNews",
-		hash: "kS"
-	}	,
+		hash: "kS",
+		media: true
+  },
 	{
 		id: "Slashdot",
 		cat: "Technology",
@@ -3252,8 +3398,9 @@ var menu = [
 		uri: "http://rss.slashdot.org/Slashdot/slashdot",
 		ext: "https://slashdot.org",
 		img: "Slashdot",
-		hash: "lT"
-	}	,
+		hash: "lT",
+		media: false
+  },
 	{
 		id: "Slate Technology",
 		cat: "Technology",
@@ -3261,16 +3408,18 @@ var menu = [
 		uri: "https://slate.com/feeds/technology.rss",
 		ext: "https://slate.com",
 		img: "Slate",
-		hash: "Le"
-	}	, {
+		hash: "Le",
+		media: true
+  }, {
 		id: "YCombinator",
 		cat: "Technology",
 		des: "Hacker News is a reader ran headline submission news purveyor.",
 		uri: "https://news.ycombinator.com/rss",
 		ext: "https://news.ycombinator.com",
 		img: "YCombinator",
-		hash: "yR"
-	}	,
+		hash: "yR",
+		media: false
+  },
 	{
 		id: "Smashing Magazine",
 		cat: "Technology",
@@ -3278,8 +3427,9 @@ var menu = [
 		uri: "https://www.smashingmagazine.com/feed",
 		ext: "https://www.smashingmagazine.com",
 		img: "SmashingMagazine",
-		hash: "zS"
-	}	,
+		hash: "zS",
+		media: true
+  },
 	{
 		id: "Int Business Times Tech",
 		cat: "Technology",
@@ -3287,17 +3437,19 @@ var menu = [
 		uri: "https://www.ibtimes.sg/rss/technology",
 		ext: "https://www.ibtimes.com/technology",
 		img: "IBT",
-		hash: "In"
-	}	,
+		hash: "In",
+		media: false
+  },
 	{
-		id: "The Los Angeles Times",
+		id: "The Los Angeles Times Tech",
 		cat: "Technology",
 		des: "Los Angeles Times is a daily newspaper that is published in Los Angeles, California.",
 		uri: "https://www.latimes.com/business/technology/rss2.0.xml",
 		ext: "https://latimes.com/business/technology",
 		img: "LosAngelesTimes",
-		hash: "Me"
-	}	,
+		hash: "Me",
+		media: true
+  },
 	{
 		id: "Linux.com",
 		cat: "Technology",
@@ -3305,8 +3457,9 @@ var menu = [
 		uri: "https://www.linux.com/feed",
 		ext: "https://linux.com",
 		img: "Linux",
-		hash: "lN"
-	}	,
+		hash: "lN",
+		media: true
+  },
 	{
 		id: "Linux Weekly News",
 		cat: "Technology",
@@ -3314,8 +3467,9 @@ var menu = [
 		uri: "https://lwn.net/headlines/rss",
 		ext: "https://lwn.net",
 		img: "LWN",
-		hash: "wN"
-	}	,
+		hash: "wN",
+		media: false
+  },
 	{
 		id: "Phys.org",
 		cat: "Technology",
@@ -3323,8 +3477,9 @@ var menu = [
 		uri: "https://phys.org/rss-feed",
 		ext: "https://phys.org",
 		img: "Phys",
-		hash: "pR"
-	}	,
+		hash: "pR",
+		media: true
+  },
 	{
 		id: "Reclaim the Net",
 		cat: "Technology",
@@ -3332,17 +3487,9 @@ var menu = [
 		uri: "https://reclaimthenet.org/feed",
 		ext: "https://reclaimthenet.org",
 		img: "ReclaimTheNet",
-		hash: "iR"
-	}	,
-	{
-		id: "San Francisco Gate",
-		cat: "Technology",
-		des: "San Francisco Gate is the Hearst-owned website sister-site of the San Francisco Chronicle.",
-		uri: "https://www.sfgate.com/rss/feed/Business-and-Technology-News-448.php",
-		ext: "https://sfgate.com/technology",
-		img: "SanFranciscoGate",
-		hash: "gF"
-	}	,
+		hash: "iR",
+		media: true
+  },
 	{
 		id: "Science Daily",
 		cat: "Technology",
@@ -3350,8 +3497,9 @@ var menu = [
 		uri: "https://www.sciencedaily.com/rss/top/technology.xml",
 		ext: "https://sciencedaily.com/news/top/technology",
 		img: "ScienceDaily",
-		hash: "dS"
-	}	,
+		hash: "dS",
+		media: false
+  },
 	{
 		id: "Space.com",
 		cat: "Technology",
@@ -3359,8 +3507,9 @@ var menu = [
 		uri: "https://www.space.com/feeds/all",
 		ext: "https://www.space.com",
 		img: "Space",
-		hash: "oM"
-	}	,
+		hash: "oM",
+		media: true
+  },
 	{
 		id: "Telegraph.co.uk Technology",
 		cat: "Technology",
@@ -3368,17 +3517,19 @@ var menu = [
 		uri: "https://www.telegraph.co.uk/technology/rss.xml",
 		ext: "https://www.telegraph.co.uk/technology",
 		img: "Telegraph",
-		hash: "kT"
-	}	,
+		hash: "kT",
+		media: true
+  },
 	{
-		id: "TheRegister.co.uk",
+		id: "TheRegister.co.uk Technology",
 		cat: "Technology",
 		des: "TheRegister.co.uk is a British Technology News and opinion website co-founded in 1994.",
 		uri: "https://www.theregister.co.uk/headlines.atom",
 		ext: "https://theregister.co.uk",
 		img: "TheRegister",
-		hash: "Rh"
-	}	,
+		hash: "Rh",
+		media: false
+  },
 	{
 		id: "TechCrunch",
 		cat: "Technology",
@@ -3386,8 +3537,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/TechCrunch",
 		ext: "https://techcrunch.com",
 		img: "TechCrunch",
-		hash: "cT"
-	}	,
+		hash: "cT",
+		media: false
+  },
 	{
 		id: "TechDator",
 		cat: "Technology",
@@ -3395,8 +3547,9 @@ var menu = [
 		uri: "https://techdator.net/feed",
 		ext: "https://techdator.net",
 		img: "TechDator",
-		hash: "cR"
-	}	,
+		hash: "cR",
+		media: false
+  },
 	{
 		id: "TechMeme",
 		cat: "Technology",
@@ -3404,8 +3557,9 @@ var menu = [
 		uri: "https://www.techmeme.com/feed.xml",
 		ext: "https://techmeme.com",
 		img: "TechMeme",
-		hash: "eE"
-	}	,
+		hash: "eE",
+		media: true
+  },
 	{
 		id: "TechRepublic",
 		cat: "Technology",
@@ -3413,8 +3567,9 @@ var menu = [
 		uri: "https://www.techrepublic.com/rssfeeds/articles",
 		ext: "https://techrepublic.com",
 		img: "TechRepublic",
-		hash: "pT"
-	}	,
+		hash: "pT",
+		media: false
+  },
 	{
 		id: "Tech News World",
 		cat: "Technology",
@@ -3422,8 +3577,9 @@ var menu = [
 		uri: "https://www.technewsworld.com/perl/syndication/rssfull.pl",
 		ext: "https://www.technewsworld.com",
 		img: "TechNewsWorld",
-		hash: "cH"
-	}	,
+		hash: "cH",
+		media: true
+  },
 	{
 		id: "TechRadar",
 		cat: "Technology",
@@ -3431,8 +3587,9 @@ var menu = [
 		uri: "https://www.techradar.com/rss",
 		ext: "https://techradar.com",
 		img: "TechRadar",
-		hash: "rD"
-	}	,
+		hash: "rD",
+		media: true
+  },
 	{
 		id: "TechPowerUp",
 		cat: "Technology",
@@ -3440,8 +3597,9 @@ var menu = [
 		uri: "https://www.techpowerup.com/rss/news",
 		ext: "https://techpowerup.com",
 		img: "TechPowerUp",
-		hash: "tU"
-	}	,
+		hash: "tU",
+		media: true
+  },
 	{
 		id: "TechSpot",
 		cat: "Technology",
@@ -3449,8 +3607,9 @@ var menu = [
 		uri: "https://www.techspot.com/backend.xml",
 		ext: "https://techspot.com",
 		img: "TechSpot",
-		hash: "Po"
-	}	,
+		hash: "Po",
+		media: true
+  },
 	{
 		id: "TheOlognion",
 		cat: "Technology",
@@ -3458,8 +3617,9 @@ var menu = [
 		uri: "https://www.theolognion.com/rss",
 		ext: "https://www.theolognion.com",
 		img: "TheOlognion",
-		hash: "oG"
-	}	,
+		hash: "oG",
+		media: true
+  },
 	{
 		id: "The Next Web",
 		cat: "Technology",
@@ -3467,8 +3627,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/thenextweb",
 		ext: "https://thenextweb.com",
 		img: "TheNextWeb",
-		hash: "xW"
-	}	,
+		hash: "xW",
+		media: true
+  },
 	{
 		id: "TheSun.co.uk Technology",
 		cat: "Technology",
@@ -3476,8 +3637,9 @@ var menu = [
 		uri: "https://www.thesun.co.uk/tech/feed",
 		ext: "https://www.thesun.co.uk/tech",
 		img: "TheSun",
-		hash: "Ns"
-	}	,
+		hash: "Ns",
+		media: true
+  },
 	{
 		id: "The Verge",
 		cat: "Technology",
@@ -3485,17 +3647,19 @@ var menu = [
 		uri: "https://www.theverge.com/rss/index.xml",
 		ext: "https://www.theverge.com",
 		img: "TheVerge",
-		hash: "vG"
-	}	,
+		hash: "vG",
+		media: true
+  },
 	{
 		id: "Tor Project",
 		cat: "Technology",
 		des: "The Tor Project, Inc, became a 501(c)3 nonprofit in 2006, but the idea of \"onion routing\" began in the mid 1990s.",
 		uri: "https://blog.torproject.org/rss.xml",
 		ext: "https://blog.torproject.org",
-        img: "TOR",
-		hash: "tO"
-	}	,
+    img: "TOR",
+		hash: "tO",
+		media: true
+  },
 	{
 		id: "Trend Hunter PC",
 		cat: "Technology",
@@ -3503,8 +3667,9 @@ var menu = [
 		uri: "https://www.trendhunter.com/rss/category/Computers-and-Laptops",
 		ext: "https://www.trendhunter.com/computers",
 		img: "TrendHunter",
-		hash: "eR"
-	}	,
+		hash: "eR",
+		media: true
+  },
 	{
 		id: "USA Today Technology",
 		cat: "Technology",
@@ -3512,8 +3677,9 @@ var menu = [
 		uri: "http://rssfeeds.usatoday.com/usatoday-techtopstories&x=1",
 		ext: "https://usatoday.com/tech/",
 		img: "USAToday",
-		hash: "sY"
-	}	,
+		hash: "sY",
+		media: true
+  },
 	{
 		id: "Wall Street Journal Tech",
 		cat: "Technology",
@@ -3521,35 +3687,39 @@ var menu = [
 		uri: "https://feeds.a.dj.com/rss/RSSWSJD.xml",
 		ext: "https://wsj.com/news/technology",
 		img: "WSJ",
-		hash: "WJ"
-	}	,
+		hash: "WJ",
+		media: false
+  },
 	{
-		id: "Washington Examiner",
+		id: "Washington Examiner Technology",
 		cat: "Technology",
 		des: "Washington Examiner Science and Technology.",
 		uri: "http://feeds.feedburner.com/dcexaminer/tech",
 		ext: "https://www.washingtonexaminer.com/tag/science",
 		img: "WashingtonExaminer",
-		hash: "xW"
-	}	,
+		hash: "xW",
+		media: false
+  },
 	{
-		id: "Washington Post",
+		id: "Washington Post Technology",
 		cat: "Technology",
 		des: "Washington Post is a major American daily newspaper published in Washington, D.C.",
 		uri: "http://feeds.washingtonpost.com/rss/business/technology",
 		ext: "https://washingtonpost.com/business/technology",
 		img: "WashingtonPost",
-		hash: "pW"
-	}	,
+		hash: "pW",
+		media: true
+  },
 	{
-		id: "Washington Times",
+		id: "Washington Times Technology",
 		cat: "Technology",
 		des: "Washington Times is an American daily newspaper published in Washington, D.C.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/technology",
 		ext: "https://washingtontimes.com/culture/technology",
 		img: "TheWashingtonTimes",
-		hash: "Mw"
-	}	,
+		hash: "Mw",
+		media: true
+  },
 	{
 		id: "Wccftech",
 		cat: "Technology",
@@ -3557,8 +3727,9 @@ var menu = [
 		uri: "https://wccftech.com/feed",
 		ext: "https://wccftech.com",
 		img: "Wccftech",
-		hash: "cC"
-	}	,
+		hash: "cC",
+		media: true
+  },
 	{
 		id: "Windows Central",
 		cat: "Technology",
@@ -3566,8 +3737,9 @@ var menu = [
 		uri: "https://www.windowscentral.com/rss",
 		ext: "https://www.windowscentral.com",
 		img: "WindowsCentral",
-		hash: "cW"
-	}	,
+		hash: "cW",
+		media: true
+  },
 	{
 		id: "WIRED Technology",
 		cat: "Technology",
@@ -3575,8 +3747,9 @@ var menu = [
 		uri: "https://www.wired.com/feed/rss",
 		ext: "https://wired.com",
 		img: "WIRED",
-		hash: "wD"
-	}	,
+		hash: "wD",
+		media: true
+  },
 	{
 		id: "ZDNet",
 		cat: "Technology",
@@ -3584,8 +3757,9 @@ var menu = [
 		uri: "https://www.zdnet.com/news/rss.xml",
 		ext: "https://zdnet.com",
 		img: "ZDNet",
-		hash: "zD"
-	}	,
+		hash: "zD",
+		media: false
+  },
 	{
 		id: "Yahoo Technology",
 		cat: "Technology",
@@ -3593,8 +3767,9 @@ var menu = [
 		uri: "https://www.yahoo.com/tech/rss",
 		ext: "https://finance.yahoo.com/tech",
 		img: "Yahoo",
-		hash: "tA"
-	}	,
+		hash: "tA",
+		media: true
+  },
 	{
 		id: "ABC World",
 		cat: "World",
@@ -3602,8 +3777,9 @@ var menu = [
 		uri: "https://abcnews.go.com/abcnews/internationalheadlines",
 		ext: "https://abc.com",
 		img: "ABC",
-		hash: "wA"
-	}	,
+		hash: "wA",
+		media: true
+  },
 	{
 		id: "Al Jazeera",
 		cat: "World",
@@ -3611,8 +3787,9 @@ var menu = [
 		uri: "https://www.aljazeera.com/xml/rss/all.xml",
 		ext: "https://www.aljazeera.com",
 		img: "AlJazeera",
-		hash: "aJ"
-	}	,
+		hash: "aJ",
+		media: false
+  },
 	{
 		id: "Axios",
 		cat: "World",
@@ -3620,8 +3797,9 @@ var menu = [
 		uri: "https://api.axios.com/feed",
 		ext: "https://www.axios.com",
 		img: "Axios",
-		hash: "xS"
-	}	,
+		hash: "xS",
+		media: true
+  },
 	{
 		id: "BBC World",
 		cat: "World",
@@ -3629,8 +3807,9 @@ var menu = [
 		uri: "http://feeds.bbci.co.uk/news/rss.xml",
 		ext: "https://bbc.com",
 		img: "BBC",
-		hash: "cD"
-	}	,
+		hash: "cD",
+		media: false
+  },
 	{
 		id: "Boston",
 		cat: "World",
@@ -3638,8 +3817,9 @@ var menu = [
 		uri: "https://www.boston.com/tag/world-news/feed",
 		ext: "https://www.boston.com/tag/world-news",
 		img: "Boston",
-		hash: "wB"
-	}	,
+		hash: "wB",
+		media: true
+  },
 	{
 		id: "Boston Herald",
 		cat: "World",
@@ -3647,8 +3827,9 @@ var menu = [
 		uri: "https://www.bostonherald.com/feed",
 		ext: "https://www.bostonherald.com",
 		img: "BostonHerald",
-		hash: "hB"
-	}	,
+		hash: "hB",
+		media: true
+  },
 	{
 		id: "CBS World",
 		cat: "World",
@@ -3656,9 +3837,10 @@ var menu = [
 		uri: "https://www.cbsnews.com/latest/rss/world",
 		ext: "https://cbsnews.com",
 		img: "CBS",
-		hash: "Lw"
+		hash: "Lw",
+		media: false
 
-	}	,
+	},
 	{
 		id: "CNBC World",
 		cat: "World",
@@ -3666,8 +3848,9 @@ var menu = [
 		uri: "https://www.cnbc.com/id/100727362/device/rss/rss.html",
 		ext: "https://cnbc.com/world",
 		img: "CNBC",
-		hash: "nB"
-	}	,
+		hash: "nB",
+		media: false
+  },
 	{
 		id: "CNN World",
 		cat: "World",
@@ -3675,8 +3858,9 @@ var menu = [
 		uri: "http://rss.cnn.com/rss/cnn_topstories.rss",
 		ext: "https://cnn.com",
 		img: "CNN",
-		hash: "oN"
-	}	,
+		hash: "oN",
+		media: true
+  },
 	{
 		id: "Common Dreams",
 		cat: "World",
@@ -3684,17 +3868,9 @@ var menu = [
 		uri: "https://www.commondreams.org/rss.xml",
 		ext: "https://www.commondreams.org",
 		img: "CommonDreams",
-		hash: "dC"
-	}	,
-	{
-		id: "CSPAN",
-		cat: "World",
-		des: "CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",
-		uri: "http://podcast.c-span.org/xml/radio_feed.xml",
-		ext: "https://www.c-span.org/",
-		img: "CSpan",
-		hash: "aC"
-	}	,
+		hash: "dC",
+		media: true
+  },
 	{
 		id: "Daily Mail World",
 		cat: "World",
@@ -3702,8 +3878,9 @@ var menu = [
 		uri: "https://www.dailymail.co.uk/articles.rss",
 		ext: "https://dailymail.co.uk",
 		img: "DailyMail",
-		hash: "mD"
-	}	,
+		hash: "mD",
+		media: true
+  },
 	{
 		id: "Digital Trends World",
 		cat: "World",
@@ -3711,8 +3888,9 @@ var menu = [
 		uri: "https://www.digitaltrends.com/news/feed",
 		ext: "https://digitaltrends.com/news",
 		img: "DigitalTrends",
-		hash: "wI"
-	}	,
+		hash: "wI",
+		media: true
+  },
 	{
 		id: "Drudge Report",
 		cat: "World",
@@ -3720,8 +3898,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/DrudgeReportFeed",
 		ext: "https://drudgereport.com",
 		img: "DrudgeReport",
-		hash: "rG"
-	}	,
+		hash: "rG",
+		media: false
+  },
 	{
 		id: "DW",
 		cat: "World",
@@ -3729,8 +3908,9 @@ var menu = [
 		uri: "http://rss.dw.com/rdf/rss-en-all",
 		ext: "https://www.dw.com/en/top-stories",
 		img: "DW",
-		hash: "dW"
-	}	,
+		hash: "dW",
+		media: false
+  },
 	{
 		id: "Euro News",
 		cat: "World",
@@ -3738,8 +3918,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/euronews/en/home",
 		ext: "https://www.euronews.com",
 		img: "EuroNews",
-		hash: "nU"
-	}	,
+		hash: "nU",
+		media: false
+  },
 	{
 		id: "Fortune",
 		cat: "World",
@@ -3747,8 +3928,9 @@ var menu = [
 		uri: "https://fortune.com/feed",
 		ext: "https://fortune.com",
 		img: "Fortune",
-		hash: "uO"
-	}	,
+		hash: "uO",
+		media: true
+  },
 	{
 		id: "Google",
 		cat: "World",
@@ -3756,8 +3938,9 @@ var menu = [
 		uri: "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en",
 		ext: "https://news.google.com",
 		img: "Google",
-		hash: "gG"
-	}	,
+		hash: "gG",
+		media: false
+  },
 	{
 		id: "Global News",
 		cat: "World",
@@ -3765,17 +3948,19 @@ var menu = [
 		uri: "https://globalnews.ca/world/feed",
 		ext: "https://globalnews.ca/world",
 		img: "CBC",
-		hash: "bA"
-	}	,
+		hash: "bA",
+		media: true
+  },
 	{
-		id: "Heavy News",
+		id: "Heavy News World",
 		cat: "World",
 		des: "Heavy News from around the world.",
 		uri: "https://heavy.com/news/feed",
 		ext: "https://heavy.com/news",
 		img: "Heavy",
-		hash: "vY"
-	}	,
+		hash: "vY",
+		media: true
+  },
 	{
 		id: "Int Business Times World",
 		cat: "World",
@@ -3783,8 +3968,9 @@ var menu = [
 		uri: "https://www.ibtimes.sg/rss/world",
 		ext: "https://www.ibtimes.com/world",
 		img: "IBT",
-		hash: "tD"
-	}	,
+		hash: "tD",
+		media: false
+  },
 	{
 		id: "Market Watch",
 		cat: "World",
@@ -3792,8 +3978,9 @@ var menu = [
 		uri: "http://feeds.marketwatch.com/marketwatch/topstories",
 		ext: "http://marketwatch.com",
 		img: "MarketWatch",
-		hash: "kW"
-	}	,
+		hash: "kW",
+		media: false
+  },
 	{
 		id: "Mirror.co.uk World News",
 		cat: "World",
@@ -3801,8 +3988,9 @@ var menu = [
 		uri: "https://www.mirror.co.uk/news/us-news/?service=rss",
 		ext: "https://mirror.co.uk/news/us-news",
 		img: "Mirror",
-		hash: "iW"
-	}	,
+		hash: "iW",
+		media: true
+  },
 	{
 		id: "Mercury News",
 		cat: "World",
@@ -3810,8 +3998,9 @@ var menu = [
 		uri: "https://www.mercurynews.com/feed",
 		ext: "https://mercurynews.com",
 		img: "Mercury",
-		hash: "cU"
-	}	,
+		hash: "cU",
+		media: true
+  },
 	{
 		id: "MSNBC World",
 		cat: "World",
@@ -3819,8 +4008,9 @@ var menu = [
 		uri: "http://www.msnbc.com/feeds/latest",
 		ext: "http://www.msnbc.com",
 		img: "MSNBC",
-		hash: "sM"
-	}	,
+		hash: "sM",
+		media: true
+  },
 	{
 		id: "NBC World News",
 		cat: "World",
@@ -3828,8 +4018,9 @@ var menu = [
 		uri: "http://feeds.nbcnews.com/nbcnews/public/news",
 		ext: "https://nbcnews.com",
 		img: "NBC",
-		hash: "ON"
-	}	,
+		hash: "ON",
+		media: true
+  },
 	{
 		id: "Newsweek",
 		cat: "World",
@@ -3837,8 +4028,9 @@ var menu = [
 		uri: "https://www.newsweek.com/rss",
 		ext: "https://newsweek.com",
 		img: "Newsweek",
-		hash: "wK"
-	}	,
+		hash: "wK",
+		media: false
+  },
 	{
 		id: "Newser",
 		cat: "World",
@@ -3846,8 +4038,9 @@ var menu = [
 		uri: "http://rss.newser.com/rss/section/1.rss",
 		ext: "https://www.newser.com",
 		img: "Newser",
-		hash: "nR"
-	}	,
+		hash: "nR",
+		media: true
+  },
 	{
 		id: "Newsone",
 		cat: "World",
@@ -3855,8 +4048,9 @@ var menu = [
 		uri: "https://newsone.com/feed",
 		ext: "https://newsone.com",
 		img: "Newsone",
-		hash: "nW"
-	}	,
+		hash: "nW",
+		media: true
+  },
 	{
 		id: "New York Daily News",
 		cat: "World",
@@ -3864,8 +4058,9 @@ var menu = [
 		uri: "https://www.nydailynews.com/cmlink/NYDN.News.World.rss",
 		ext: "https://www.nydailynews.com/news/world",
 		img: "NewYorkDailyNews",
-		hash: "yY"
-	}	,
+		hash: "yY",
+		media: true
+  },
 	{
 		id: "New York Post World",
 		cat: "World",
@@ -3873,8 +4068,9 @@ var menu = [
 		uri: "https://nypost.com/feed",
 		ext: "https://nypost.com",
 		img: "NewYorkPost",
-		hash: "yP"
-	}	,
+		hash: "yP",
+		media: true
+  },
 	{
 		id: "NPR",
 		cat: "World",
@@ -3882,8 +4078,9 @@ var menu = [
 		uri: "https://www.npr.org/rss/rss.php?id=1019",
 		ext: "https://npr.org",
 		img: "NPR",
-		hash: "nP"
-	}	,
+		hash: "nP",
+		media: false
+  },
 	{
 		id: "OAN World",
 		cat: "World",
@@ -3891,8 +4088,9 @@ var menu = [
 		uri: "https://www.oann.com/feed",
 		ext: "https://www.oann.com",
 		img: "OANN",
-		hash: "oA"
-	}	,
+		hash: "oA",
+		media: true
+  },
 	{
 		id: "PolishNews.co.uk",
 		cat: "World",
@@ -3900,8 +4098,9 @@ var menu = [
 		uri: "https://www.polishnews.co.uk/feed",
 		ext: "https://www.polishnews.co.uk",
 		img: "Polish",
-		hash: "pS"
-	}	,
+		hash: "pS",
+		media: true
+  },
 	{
 		id: "The Onion",
 		cat: "World",
@@ -3909,8 +4108,9 @@ var menu = [
 		uri: "https://www.theonion.com/rss",
 		ext: "https://www.theonion.com",
 		img: "TheOnion",
-		hash: "oT"
-	}	,
+		hash: "oT",
+		media: true
+  },
 	{
 		id: "PBS",
 		cat: "World",
@@ -3918,17 +4118,9 @@ var menu = [
 		uri: "https://www.pbs.org/newshour/feeds/rss/headlines",
 		ext: "https://pbs.org",
 		img: "PBS",
-		hash: "oB"
-	}	,
-	{
-		id: "Quartz",
-		cat: "World",
-		des: "Quartz covers business, economics, markets, finance, technology, science, and more.",
-		uri: "https://cms.qz.com/feed",
-		ext: "https://qz.com",
-		img: "Quartz",
-		hash: "qZ"
-	}	,
+		hash: "oB",
+		media: true
+  },
 	{
 		id: "RT World",
 		cat: "World",
@@ -3936,8 +4128,9 @@ var menu = [
 		uri: "https://www.rt.com/rss",
 		ext: "https://rt.com",
 		img: "RT",
-		hash: "wo"
-	}	,
+		hash: "wo",
+		media: true
+  },
 	{
 		id: "Salon",
 		cat: "World",
@@ -3945,8 +4138,9 @@ var menu = [
 		uri: "https://www.salon.com/feed",
 		ext: "https://www.salon.com",
 		img: "Salon",
-		hash: "Ao"
-	}	,
+		hash: "Ao",
+		media: true
+  },
 	{
 		id: "Slate",
 		cat: "World",
@@ -3954,8 +4148,9 @@ var menu = [
 		uri: "https://slate.com/feeds/all.rss",
 		ext: "https://slate.com",
 		img: "Slate",
-		hash: "Ae"
-	}	,
+		hash: "Ae",
+		media: true
+  },
 	{
 		id: "Snopes",
 		cat: "World",
@@ -3963,8 +4158,9 @@ var menu = [
 		uri: "https://www.snopes.com/feed",
 		ext: "https://www.snopes.com",
 		img: "Snopes",
-		hash: "pN"
-	}	,
+		hash: "pN",
+		media: false
+  },
 	{
 		id: "Sputnik",
 		cat: "World",
@@ -3972,8 +4168,9 @@ var menu = [
 		uri: "https://sputniknews.com/export/rss2/archive/index.xml",
 		ext: "https://sputniknews.com",
 		img: "Sputnik",
-		hash: "sK"
-	}	,
+		hash: "sK",
+		media: true
+  },
 	{
 		id: "Telegraph.co.uk World",
 		cat: "World",
@@ -3981,8 +4178,9 @@ var menu = [
 		uri: "https://www.telegraph.co.uk/rss.xml",
 		ext: "https://www.telegraph.co.uk",
 		img: "Telegraph",
-		hash: "kE"
-	}	,
+		hash: "kE",
+		media: true
+  },
 	{
 		id: "The Age",
 		cat: "World",
@@ -3990,17 +4188,19 @@ var menu = [
 		uri: "https://www.theage.com.au/rss/feed.xml",
 		ext: "https://www.theage.com.au",
 		img: "TheAge",
-		hash: "aG"
-	}	,
+		hash: "aG",
+		media: false
+  },
 	{
-		id: "The Guardian",
+		id: "The Guardian World",
 		cat: "World",
 		des: "The Guardian an influential daily newspaper published in London, generally considered one of the United Kingdom’s leading newspapers.",
 		uri: "https://www.theguardian.com/world/rss",
 		ext: "https://www.theguardian.com/world",
 		img: "TheGuardian",
-		hash: "gT"
-	}	,
+		hash: "gT",
+		media: true
+  },
 	{
 		id: "TIME Magazine",
 		cat: "World",
@@ -4008,8 +4208,9 @@ var menu = [
 		uri: "http://feeds.feedburner.com/time/topstories?format=xml",
 		ext: "https://time.com",
 		img: "TIME",
-		hash: "mI"
-	}	,
+		hash: "mI",
+		media: false
+  },
 	{
 		id: "Unilad.co.uk",
 		cat: "World",
@@ -4017,8 +4218,9 @@ var menu = [
 		uri: "https://unilad.co.uk/feed",
 		ext: "https://www.unilad.co.uk",
 		img: "Unilad",
-		hash: "uL"
-	}	,
+		hash: "uL",
+		media: true
+  },
 	{
 		id: "United Nations",
 		cat: "World",
@@ -4026,8 +4228,9 @@ var menu = [
 		uri: "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
 		ext: "https://www.un.org",
 		img: "UN",
-		hash: "uN"
-	}	,
+		hash: "uN",
+		media: true
+  },
 	{
 		id: "United Press Int",
 		cat: "World",
@@ -4035,44 +4238,48 @@ var menu = [
 		uri: "https://rss.upi.com/news/news.rss",
 		ext: "https://upi.com",
 		img: "UPI",
-		hash: "pI"
-	}	,
+		hash: "pI",
+		media: true
+  },
 	{
-		id: "USA Today News",
+		id: "USA Today World News",
 		cat: "World",
 		des: "USA Today delivers local and national news, sports, entertainment, finance, technology, and more.",
 		uri: "http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1",
 		ext: "https://www.usatoday.com",
 		img: "USAToday",
-		hash: "aY"
-	}	,
+		hash: "aY",
+		media: true
+  },
 	{
-		id: "VICE",
+		id: "VICE US",
 		cat: "World",
 		des: "Vice Original reporting and documentaries on everything that matters in the world.",
 		uri: "https://www.vice.com/en_us/rss",
 		ext: "https://vice.com",
 		img: "VICE",
-		hash: "vC"
-	}	,
+		hash: "vC",
+		media: true
+  },
 	{
-		id: "Vox",
+		id: "Vox US",
 		cat: "World",
 		des: "Vox is an American news and opinion website owned by Vox Media.",
 		uri: "https://www.vox.com/rss/index.xml",
 		ext: "https://www.vox.com",
 		img: "Vox",
-		hash: "xV"
-	}	,
+		hash: "xV",
+  },
 	{
-		id: "Washington Examiner",
+		id: "Washington Examiner World",
 		cat: "World",
 		des: "Washington Examiner World News.",
 		uri: "http://feeds.feedburner.com/dcexaminer/WorldNews",
 		ext: "https://www.washingtonexaminer.com/tag/world",
 		img: "WashingtonExaminer",
-		hash: "hX"
-	}	,
+		hash: "hX",
+		media: false
+  },
 	{
 		id: "Washington Times",
 		cat: "World",
@@ -4080,8 +4287,9 @@ var menu = [
 		uri: "https://www.washingtontimes.com/rss/headlines/news/world",
 		ext: "https://washingtontimes.com/news/world",
 		img: "TheWashingtonTimes",
-		hash: "hS"
-	}	,
+		hash: "hS",
+		media: true
+  },
 	{
 		id: "Youtube/Android Authority",
 		cat: "Youtube",
@@ -4089,8 +4297,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",
 		ext: "https://www.youtube.com/user/AndroidAuthrotiy",
 		img: "AndroidAuthority",
-		hash: "yA"
-	}	,
+		hash: "yA",
+		media: true
+  },
 	{
 		id: "Youtube/Bein Sports",
 		cat: "Youtube",
@@ -4098,8 +4307,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BeInSportUSA",
 		ext: "https://www.youtube.com/user/BeINsportUSA",
 		img: "BeIn",
-		hash: "bI"
-	}	,
+		hash: "bI",
+    media: true
+  },
 	{
 		id: "Youtube/CBC Canada",
 		cat: "Youtube",
@@ -4107,8 +4317,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbcnews",
 		ext: "https://www.youtube.com/user/CBCNews",
 		img: "CBC",
-		hash: "cb"
-	}	,
+		hash: "cb",
+    media: true
+  },
 	{
 		id: "Youtube/Buzzfeed",
 		cat: "Youtube",
@@ -4116,8 +4327,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BuzzFeedVideo",
 		ext: "https://www.youtube.com/user/BuzzFeedVideo",
 		img: "BuzzFeed",
-		hash: "zz"
-	}	,
+		hash: "zz",
+    media: true
+  },
 	{
 		id: "Youtube/Discovery Networks",
 		cat: "Youtube",
@@ -4125,8 +4337,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DiscoveryNetworks",
 		ext: "https://www.youtube.com/user/DiscoveryNetworks",
 		img: "Discovery",
-		hash: "dN"
-	}	,
+		hash: "dN",
+    media: true
+  },
 	{
 		id: "Youtube/Global News",
 		cat: "Youtube",
@@ -4134,8 +4347,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=globaltoronto",
 		ext: "https://www.youtube.com/user/GlobalToronto",
 		img: "CBC",
-		hash: "Gn"
-	}	,
+		hash: "Gn",
+    media: true
+  },
 	{
 		id: "Youtube/MIT News",
 		cat: "Youtube",
@@ -4143,8 +4357,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MITNewsOffice",
 		ext: "https://www.youtube.com/user/MITNewsOffice",
 		img: "MIT",
-		hash: "yM"
-	}	,
+		hash: "yM",
+    media: true
+  },
 	{
 		id: "Youtube/Netflix",
 		cat: "Youtube",
@@ -4152,8 +4367,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newonnetflix",
 		ext: "https://www.youtube.com/user/NewOnNetflix",
 		img: "Netflix",
-		hash: "nF"
-	}	,
+		hash: "nF",
+    media: true
+  },
 	{
 		id: "Youtube/National Geographic",
 		cat: "Youtube",
@@ -4161,8 +4377,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nationalgeographic",
 		ext: "https://www.youtube.com/user/NationalGeographic",
 		img: "NationalGeographic",
-		hash: "Na"
-	}	,
+		hash: "Na",
+    media: true
+  },
 	{
 		id: "Youtube/ScreenRant",
 		cat: "Youtube",
@@ -4170,8 +4387,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=screenrant",
 		ext: "https://www.youtube.com/user/ScreenRant",
 		img: "ScreenRant",
-		hash: "sR"
-	}	,
+		hash: "sR",
+    media: true
+  },
 	{
 		id: "Youtube/Bloomberg",
 		cat: "Youtube",
@@ -4179,8 +4397,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bloomberg",
 		ext: "https://www.youtube.com/user/Bloomberg",
 		img: "Bloomberg",
-		hash: "bg"
-	}	,
+		hash: "bg",
+    media: true
+  },
 	{
 		id: "Youtube/CBS News",
 		cat: "Youtube",
@@ -4188,8 +4407,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cbsnewsonline",
 		ext: "https://www.youtube.com/user/CBSNewsOnline",
 		img: "CBSNewsOnline",
-		hash: "nC"
-	}	,
+		hash: "nC",
+    media: true
+  },
 	{
 		id: "Youtube/Comedy Central",
 		cat: "Youtube",
@@ -4197,8 +4417,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=comedycentral",
 		ext: "https://www.youtube.com/user/ComedyCentral",
 		img: "ComedyCentral",
-		hash: "CC"
-	}	,
+		hash: "CC",
+    media: true
+  },
 	{
 		id: "Youtube/CNBC",
 		cat: "Youtube",
@@ -4206,8 +4427,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=cnbc",
 		ext: "https://www.youtube.com/user/CNBC",
 		img: "CNBC",
-		hash: "yC"
-	}	,
+		hash: "yC",
+    media: true
+  },
 	{
 		id: "Youtube/CNN",
 		cat: "Youtube",
@@ -4215,8 +4437,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNN",
 		ext: "https://www.youtube.com/user/CNN",
 		img: "CNN",
-		hash: "yN"
-	}	,
+		hash: "yN",
+    media: true
+  },
 	{
 		id: "Youtube/BBC",
 		cat: "Youtube",
@@ -4224,8 +4447,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=bbc",
 		ext: "https://www.youtube.com/user/BBC",
 		img: "BBC",
-		hash: "yy"
-	}	,
+		hash: "yy",
+    media: true
+  },
 	{
 		id: "Youtube/Bleacher Report",
 		cat: "Youtube",
@@ -4233,8 +4457,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=BleacherReport",
 		ext: "https://www.youtube.com/user/BleacherReport",
 		img: "BleacherReport",
-		hash: "yH"
-	}	,
+		hash: "yH",
+    media: true
+  },
 	{
 		id: "Youtube/CNET TV",
 		cat: "Youtube",
@@ -4242,8 +4467,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=CNETTV",
 		ext: "https://www.youtube.com/user/CNETTV",
 		img: "CNET",
-		hash: "nE"
-	}	,
+		hash: "nE",
+    media: true
+  },
 	{
 		id: "Youtube/Digital Trends",
 		cat: "Youtube",
@@ -4251,8 +4477,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=DigitalTrends",
 		ext: "https://www.youtube.com/user/DigitalTrends",
 		img: "DigitalTrends",
-		hash: "Dt"
-	}	,
+		hash: "Dt",
+    media: true
+  },
 	{
 		id: "Youtube/E News",
 		cat: "Youtube",
@@ -4260,8 +4487,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=enews",
 		ext: "https://www.youtube.com/user/ENews",
 		img: "ENews",
-		hash: "yE"
-	}	,
+		hash: "yE",
+    media: true
+  },
 	{
 		id: "Youtube/Engadget",
 		cat: "Youtube",
@@ -4269,8 +4497,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=engadget",
 		ext: "https://www.youtube.com/user/Engadget",
 		img: "Engadget",
-		hash: "ga"
-	}	,
+		hash: "ga",
+    media: true
+  },
 	{
 		id: "Youtube/ET",
 		cat: "Youtube",
@@ -4278,8 +4507,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=entertainmenttonight",
 		ext: "https://www.youtube.com/user/EntertainmentTonight",
 		img: "ET",
-		hash: "eT"
-	}	,
+		hash: "eT",
+    media: true
+  },
 	{
 		id: "Youtube/ESPN",
 		cat: "Youtube",
@@ -4287,8 +4517,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ESPN",
 		ext: "https://www.youtube.com/user/ESPN",
 		img: "ESPN",
-		hash: "sY"
-	}	,
+		hash: "sY",
+    media: true
+  },
 	{
 		id: "Youtube/IGN Entertainment",
 		cat: "Youtube",
@@ -4296,8 +4527,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ignentertainment",
 		ext: "https://www.youtube.com/user/IGNEntertainment",
 		img: "IGN",
-		hash: "nG"
-	}	,
+		hash: "nG",
+    media: true
+  },
 	{
 		id: "Youtube/Forbes",
 		cat: "Youtube",
@@ -4305,8 +4537,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=forbes",
 		ext: "https://www.youtube.com/user/Forbes",
 		img: "Forbes",
-		hash: "oR"
-	}	,
+		hash: "oR",
+    media: true
+  },
 	{
 		id: "Youtube/Fox News",
 		cat: "Youtube",
@@ -4314,8 +4547,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxnewschannel",
 		ext: "https://www.youtube.com/user/FoxNewsChannel",
 		img: "FoxNews",
-		hash: "oX"
-	}	,
+		hash: "oX",
+    media: true
+  },
 	{
 		id: "Youtube/Fox Sports",
 		cat: "Youtube",
@@ -4323,8 +4557,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=foxsports",
 		ext: "https://www.youtube.com/user/Foxsports",
 		img: "FoxSports",
-		hash: "Xs"
-	}	,
+		hash: "Xs",
+    media: true
+  },
 	{
 		id: "Youtube/Game Trailers",
 		cat: "Youtube",
@@ -4332,8 +4567,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=gametrailers",
 		ext: "https://www.youtube.com/user/GameTrailers",
 		img: "GameTrailers",
-		hash: "gT"
-	}	,
+		hash: "gT",
+    media: true
+  },
 	{
 		id: "Youtube/Google",
 		cat: "Youtube",
@@ -4341,8 +4577,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=google",
 		ext: "https://www.youtube.com/user/Google",
 		img: "Google",
-		hash: "eL"
-	}	,
+		hash: "eL",
+    media: true
+  },
 	{
 		id: "Youtube/MLB",
 		cat: "Youtube",
@@ -4350,8 +4587,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=MLB",
 		ext: "https://www.youtube.com/user/MLB",
 		img: "MLB",
-		hash: "yB"
-	}	,
+		hash: "yB",
+    media: true
+  },
 	{
 		id: "Youtube/MSNBC",
 		cat: "Youtube",
@@ -4359,8 +4597,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCaXkIU1QidjPwiAYu6GcHjg",
 		ext: "https://www.youtube.com/channel/UCaXkIU1QidjPwiAYu6GcHjg",
 		img: "MSNBC",
-		hash: "yN"
-	}	,
+		hash: "yN",
+    media: true
+  },
 	{
 		id: "Youtube/MotorTrend",
 		cat: "Youtube",
@@ -4368,8 +4607,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=motortrend",
 		ext: "https://www.youtube.com/user/Motortrend",
 		img: "MotorTrend",
-		hash: "tM"
-	}	,
+		hash: "tM",
+    media: true
+  },
 	{
 		id: "Youtube/NBC",
 		cat: "Youtube",
@@ -4377,8 +4617,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nbc",
 		ext: "https://www.youtube.com/user/NBC",
 		img: "NBC",
-		hash: "nX"
-	}	,
+		hash: "nX",
+    media: true
+  },
 	{
 		id: "Youtube/NBC News",
 		cat: "Youtube",
@@ -4386,8 +4627,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBCNews",
 		ext: "https://www.youtube.com/user/NBCNews",
 		img: "NBCNews",
-		hash: "nN"
-	}	,
+		hash: "nN",
+    media: true
+  },
 	{
 		id: "Youtube/NBC Sports",
 		cat: "Youtube",
@@ -4395,8 +4637,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=2012nbcolympics",
 		ext: "https://www.youtube.com/user/2012NBCOlympics",
 		img: "NBC",
-		hash: "nY"
-	}	,
+		hash: "nY",
+    media: true
+  },
 	{
 		id: "Youtube/NBA",
 		cat: "Youtube",
@@ -4404,8 +4647,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=NBA",
 		ext: "https://www.youtube.com/user/NBA",
 		img: "NBC",
-		hash: "uB"
-	}	,
+		hash: "uB",
+    media: true
+  },
 	{
 		id: "Youtube/NewEgg",
 		cat: "Youtube",
@@ -4413,8 +4657,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=newegg",
 		ext: "https://www.youtube.com/user/Newegg",
 		img: "Newegg",
-		hash: "eG"
-	}	,
+		hash: "eG",
+    media: true
+  },
 	{
 		id: "Youtube/The New York Times",
 		cat: "Youtube",
@@ -4422,8 +4667,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=thenewyorktimes",
 		ext: "https://www.youtube.com/user/TheNewYorkTimes",
 		img: "TheNewYorkTimes",
-		hash: "yI"
-	}	,
+		hash: "yI",
+    media: true
+  },
 	{
 		id: "Youtube/NFL",
 		cat: "Youtube",
@@ -4431,8 +4677,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=nfl",
 		ext: "https://www.youtube.com/user/NFL",
 		img: "NFL",
-		hash: "lF"
-	}	,
+		hash: "lF",
+    media: true
+  },
 	{
 		id: "Youtube/PBS News Hour",
 		cat: "Youtube",
@@ -4440,8 +4687,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pbsnewshour",
 		ext: "https://www.youtube.com/user/PBSNewsHour",
 		img: "PBSNewsHour",
-		hash: "yH"
-	}	,
+		hash: "yH",
+    media: true
+  },
 	{
 		id: "Youtube/PCMag",
 		cat: "Youtube",
@@ -4449,8 +4697,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=pcmagazinereviews",
 		ext: "https://www.youtube.com/user/PCMagazineReviews",
 		img: "PCMag",
-		hash: "cP"
-	}	,
+		hash: "cP",
+    media: true
+  },
 	{
 		id: "Youtube/People TV",
 		cat: "Youtube",
@@ -4458,8 +4707,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=people",
 		ext: "https://www.youtube.com/user/People",
 		img: "PeopleTV",
-		hash: "eV"
-	}	,
+		hash: "eV",
+    media: true
+  },
 	{
 		id: "Youtube/Rolling Stone",
 		cat: "Youtube",
@@ -4467,8 +4717,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=rollingstone",
 		ext: "https://www.youtube.com/user/RollingStone",
 		img: "RollingStone",
-		hash: "Ll"
-	}	,
+		hash: "Ll",
+    media: true
+  },
 	{
 		id: "Youtube/Sports Illustrated Swimsuit",
 		cat: "Youtube",
@@ -4476,8 +4727,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=siswimsuit",
 		ext: "https://www.youtube.com/user/SISwimsuit",
 		img: "SportsIllustratedSwimsuit",
-		hash: "sW"
-	}	,
+		hash: "sW",
+    media: true
+  },
 	{
 		id: "Youtube/Surfer Magazine",
 		cat: "Youtube",
@@ -4485,8 +4737,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=surfer",
 		ext: "https://www.youtube.com/user/Surfer",
 		img: "Surfer",
-		hash: "fr"
-	}	,
+		hash: "fr",
+    media: true
+  },
 	{
 		id: "Youtube/TechCrunch",
 		cat: "Youtube",
@@ -4494,8 +4747,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=techcrunch",
 		ext: "https://www.youtube.com/user/TechCrunch",
 		img: "TechCrunch",
-		hash: "tH"
-	}	,
+		hash: "tH",
+    media: true
+  },
 	{
 		id: "Youtube/Ted Talks",
 		cat: "Youtube",
@@ -4503,8 +4757,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UCAuUUnT6oDeKwE6v1NGQxug",
 		ext: "https://www.youtube.com/user/TEDtalksDirector",
 		img: "TED",
-		hash: "tT"
-	}	,
+		hash: "tT",
+    media: true
+  },
 	{
 		id: "Youtube/The Telegraph",
 		cat: "Youtube",
@@ -4512,8 +4767,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=telegraphtv",
 		ext: "https://www.youtube.com/user/TelegraphTV",
 		img: "Telegraph",
-		hash: "tL"
-	}	,
+		hash: "tL",
+    media: true
+  },
 	{
 		id: "Youtube/The Verge",
 		cat: "Youtube",
@@ -4521,8 +4777,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=theverge",
 		ext: "https://www.youtube.com/user/TheVerge",
 		img: "TheVerge",
-		hash: "vH"
-	}	,
+		hash: "vH",
+    media: true
+  },
 	{
 		id: "Youtube/TIME Magazine",
 		cat: "Youtube",
@@ -4530,8 +4787,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?channel_id=UC8Su5vZCXWRag13H53zWVwA",
 		ext: "https://www.youtube.com/channel/UC8Su5vZCXWRag13H53zWVwA",
 		img: "TIME",
-		hash: "zT"
-	}	,
+		hash: "zT",
+    media: true
+  },
 	{
 		id: "Youtube/TMZ",
 		cat: "Youtube",
@@ -4539,8 +4797,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZ",
 		ext: "https://www.youtube.com/user/TMZ",
 		img: "TMZ",
-		hash: "zM"
-	}	,
+		hash: "zM",
+    media: true
+  },
 	{
 		id: "Youtube/TMZ Sports",
 		cat: "Youtube",
@@ -4548,8 +4807,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=TMZSports",
 		ext: "https://www.youtube.com/user/TMZSports",
 		img: "TMZSports",
-		hash: "sZ"
-	}	,
+		hash: "sZ",
+    media: true
+  },
 	{
 		id: "Youtube/UFC",
 		cat: "Youtube",
@@ -4557,8 +4817,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=ufc",
 		ext: "https://www.youtube.com/user/UFC",
 		img: "UFC",
-		hash: "UF"
-	}	,
+		hash: "UF",
+    media: true
+  },
 	{
 		id: "Youtube/USA Today",
 		cat: "Youtube",
@@ -4566,8 +4827,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=usatoday",
 		ext: "https://www.youtube.com/user/USAToday",
 		img: "USAToday",
-		hash: "sY"
-	}	,
+		hash: "sY",
+    media: true
+  },
 	{
 		id: "Youtube/Vice News",
 		cat: "Youtube",
@@ -4575,8 +4837,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=vicenews",
 		ext: "https://www.youtube.com/user/ViceNews",
 		img: "ViceNews",
-		hash: "nV"
-	}	,
+		hash: "nV",
+    media: true
+  },
 	{
 		id: "Youtube/Wall Street Journal",
 		cat: "Youtube",
@@ -4584,8 +4847,9 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",
 		ext: "https://www.youtube.com/user/WSJDigitalNetwork",
 		img: "WSJ",
-		hash: "jO"
-	}	,
+		hash: "jO",
+    media: true
+  },
 	{
 		id: "Youtube/WIRED",
 		cat: "Youtube",
@@ -4593,7 +4857,8 @@ var menu = [
 		uri: "https://www.youtube.com/feeds/videos.xml?user=wired",
 		ext: "https://www.youtube.com/user/Wired",
 		img: "WIRED",
-		hash: "dI"
+		hash: "dI",
+		media: true
 	}]
 
 /* rip
