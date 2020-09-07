@@ -272,7 +272,7 @@ html body #wrapper #container #main #notification {
 html body #wrapper #container #main #progressBar {
   position: fixed;
   height: 4px;
-  z-index: 3;
+  z-index: 10;
   width: 0;
   top: 0;
 }

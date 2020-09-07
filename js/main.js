@@ -15,7 +15,25 @@ $(document)
             if (menu[i].cat == category &&
                 $.inArray(menu.indexOf(menu[i]), readDupe) == -1) array.push(menu.indexOf(menu[i]))
           }
-          if (array.length == -1) return false
+          if (array.length == -1) {
+            notify('Reading ' + category + ' completed.')
+            $('html body #wrapper #container #main .center').append(
+              "<div id='bottom'>" +
+              "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+              "      <span class='front'></span>" +
+              "      <span class='flip-front'>Previous</span>" +
+              "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+              "  </div>" +
+              "  <div class='bottom'>acktic</div>" +
+              "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+              "      <span class='front'></span>" +
+              "      <span class='flip-front'>Next</span>" +
+              "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+              "  </div>" +
+              "</div>"
+            )
+            return false
+          }
           var n = array[Math.floor(Math.random() * array.length)]
           readDupe.push(n)
           xml(null, null, n)
@@ -73,18 +91,15 @@ $(document)
       e.preventDefault()
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
-    if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
-      var uri = window.location.href + '?+1'
-      contrast = contrast != true
-      op = op != true
-    } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
-      var uri = window.location.href + '?+1'
-      contrast = contrast != true
-      op = op != true
-    } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
+    if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
       var uri = window.location.href.replace(/\?\+1|\+1/g, '')
       contrast = false
       op = op != true
+    } else {
+      var uri = window.location.href + '?+1'
+      contrast = contrast != true
+      op = op != true
+      uri.state()
     }
     setTimeout(function() {
       $('html body #wrapper #container #main #visit #page .focus input[type=text]').attr('tabindex', -1).focus()
@@ -116,8 +131,8 @@ $(document)
           first = false
         } else if (first == true) {
           $('html body #wrapper #container #main .center .channel').empty()
-          $('html body #wrapper #container #main #bottom').remove()
-          $('html body #wrapper #container #main .group').remove()
+          $('html body #wrapper #container #main #bottom, ' +
+            'html body #wrapper #container #main .group').remove()
           notify('Reading ' + category + ' enabled.')
           reader = true
           var n = $.random()
@@ -125,8 +140,8 @@ $(document)
           xml(null, null, n)
       } else if (first == false){
         $('html body #wrapper #container #main .center .channel').empty()
-        $('html body #wrapper #container #main #bottom').remove()
-        $('html body #wrapper #container #main .group').remove()
+        $('html body #wrapper #container #main #bottom, ' +
+          'html body #wrapper #container #main .group').remove()
         notify('Reading ' + category + ' enabled.')
         reader = true
         first = false

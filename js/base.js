@@ -542,15 +542,13 @@ var xml = function(e, s, n) {
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
   } else uri = cors + menu[n].uri
-  $('html body #wrapper #container #main .group').remove()
   var doc = menu[n].id.space().capitalize()
   document.title = doc
   doc = '?q=&' + doc.hyphen().toLowerCase()
   doc.state()
-  progress(false, Math.floor(Math.random() * (55 - 25 + 1) + 25))
   var complete = setInterval(function() {
     $('#progressBar').width($('#progressBar').width() +
-      Math.floor(Math.random() * (5 - 0 + 1) + 0))
+      Math.floor(Math.random() * (10 - 5 + 1) + 5))
   }, 350)
   $.get({
     url: uri,
@@ -765,7 +763,7 @@ var xml = function(e, s, n) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })
     })
-    if (first == true) {
+    if (first == true && !$('html body #wrapper #container #main .center').length) {
       $('html body #wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +
@@ -799,7 +797,6 @@ var xml = function(e, s, n) {
       )
       image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
-      progress(false, Math.floor(Math.random() * (75 - 55 + 1) + 55))
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
@@ -812,7 +809,6 @@ var xml = function(e, s, n) {
     var posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = pub[0].dst
     var oldest = $('.item .ago:last').text()
-    clearInterval(complete)
     if (reader == false) {
       if (e != 'search') $('html body #wrapper #container #main .center').append(
         "<div id='bottom'>" +
@@ -830,12 +826,7 @@ var xml = function(e, s, n) {
         "</div>"
       )
     }
-    if (first == true) {
-      content(n, recent, oldest, posts)
-      feed(40)
-      suggest(id)
-      select()
-    } else if (reader == true){
+    if (first == true || reader == true) {
       $('html body #wrapper #container #main .content .suggestions').empty()
       $('html body #wrapper #container #main .content .status').empty()
       $('html body #wrapper #container #main .translation').empty()
@@ -845,6 +836,7 @@ var xml = function(e, s, n) {
       suggest(id)
       select()
     }
+    clearInterval(complete)
     progress(true, 100)
   })
 
