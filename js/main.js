@@ -611,7 +611,7 @@ $(document)
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
-              'padding-left': '20px',
+              'padding-left': '40px',
               'text-align': 'left'
         })
         $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
@@ -623,7 +623,7 @@ $(document)
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
-              'padding-left': '20px',
+              'padding-left': '40px',
               'text-align': 'left'
         })
         $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
