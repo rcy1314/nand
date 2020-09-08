@@ -149,16 +149,12 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {
-    array = []
-    readDupe = []
     if (reader == true) {
+      readDupe = []
       $('html body #wrapper #container #main .channel').empty()
       category = $(this).attr('response')
-      readDupe = []
       first = false
-      var n = $.random()
-      readDupe.push(n)
-      xml(null, null, n)
+      xml(null, null, $.random())
       notify('Switched to now reading ' + category)
     } else {
       var uri = '?q=' + $(this).attr('response').toLowerCase()
@@ -755,18 +751,18 @@ $(document)
     if ($('html body #wrapper #container #arm #search .listing .hover').length) {
       if (translations.indexOf($('html body #wrapper #container #arm #search #match .listing .hover')
           .attr('response')) > -1) {
-        category = $('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response')
-        populate($('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response'))
-        var uri = '?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response').toLowerCase()
-        air(id)
-        state('?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response').toLowerCase())
-        document.title = $('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response')
-        progress(true, 100)
+            if (reader == true) {
+              readDupe = []
+              $('html body #wrapper #container #main .channel').empty()
+              category = $(this).attr('response')
+              first = false
+              xml(null, null, $.random())
+              notify('Switched to now reading ' + category)
+            } else {
+              var uri = '?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
+                                  .attr('response').toLowerCase()
+              uri.define().exit()
+            }
       } else {
         var uri = '?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
         .attr('response')
@@ -831,9 +827,18 @@ $(document)
   'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
   'html body #wrapper #container #main #top #arm #search #match .listing .hover',
     function(e) {
-      $('html body #wrapper #container #main .result, #main .air, #main .translation, #main .center, #main .content').remove()
-      category = $(this).attr('response')
-      uri = '?q=' + $(this).attr('response')
-      document.title = category.capitalize()
-      uri.define().exit()
+      if (reader == true) {
+        readDupe = []
+        $('html body #wrapper #container #main .channel').empty()
+        category = $(this).attr('response')
+        first = false
+        xml(null, null, $.random())
+        notify('Switched to now reading ' + category)
+      } else {
+        $('html body #wrapper #container #main .result, #main .air, #main .translation, #main .center, #main .content').remove()
+        category = $(this).attr('response')
+        uri = '?q=' + $(this).attr('response')
+        document.title = category.capitalize()
+        uri.define().exit()
+      }
   })
