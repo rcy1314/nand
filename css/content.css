@@ -443,7 +443,7 @@ html body #wrapper #container #main #visit #page #handle #placeholder {
   position: relative;
   display: block;
   margin: 0 auto;
-  right: 10px;
+  height: 100px;
 }
 
 html body #wrapper #container #main #visit #page {
@@ -451,7 +451,7 @@ html body #wrapper #container #main #visit #page {
   margin: 0 auto;
   display: block;
   width: 770px;
-  top: 225px;
+  top: 125px;
 }
 
 html body #wrapper #container #main #visit #page #handle .fill {
@@ -476,10 +476,11 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   width: calc(100% + 10px);
   border-radius: 4px;
   position: relative;
-  padding-top: 12px;
+  padding-top: 11px;
   overflow-y: auto;
   text-align: left;
   height: 440px;
+  bottom: 5px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .radial,
