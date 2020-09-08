@@ -166,8 +166,8 @@ $(document)
     'html body #wrapper #container #main .group .result .filter, ' +
     'html body #wrapper #container #main .group .result .populate',
     function(e) {
-        uri = '?q=&' + $(this).attr('response')
-        uri.define().exit()
+      $('html body #wrapper #container #main .group').remove()
+      xml(null, null, $(this).attr('aria-item'))
   })
   .on('touch click mouseenter mouseleave',
       'html body #wrapper #container #main .group .air .populate, ' +

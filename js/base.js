@@ -322,7 +322,7 @@ var populate = function(n) {
       if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
         $('html body #wrapper #container #main .result').append(
           "<div class='populate'" +
-          "  response='" + menu[i].id.hyphen() + "'>" +
+          "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
           "  <div class='display'>" +
           "    <img class='id' src='" + menu[i].img.image() + "'> " +
           "  </div>" +
@@ -344,7 +344,7 @@ var air = function(n) {
     if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
       $('html body #wrapper #container #main .air').append(
         "<div class='populate'" +
-        "response='" + menu[i].id.hyphen() + "'>" +
+        "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
         "  <img class='id' src='" + menu[i].img.image() + "'> " +
         "  </div>" +
