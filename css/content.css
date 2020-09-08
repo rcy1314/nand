@@ -433,7 +433,6 @@ html body #wrapper #container #main #visit {
 html body #wrapper #container #main #visit #page #handle {
   position: relative;
   margin: 0 auto;
-  height: 25px;
   width: 100%;
 }
 
@@ -457,11 +456,6 @@ html body #wrapper #container #main #visit #page {
 
 html body #wrapper #container #main #visit #page #handle .fill {
   visibility: hidden;
-}
-
-html body #wrapper #container #main #visit #page #front .quick .feed {
-  position: relative;
-  top: 15px;
 }
 
 html body #wrapper #container #main #visit #page #front {
@@ -610,7 +604,7 @@ html body #wrapper #container #main #visit #page #front #label .show {
   position: absolute;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 35px;
+  margin-top: 25px;
   right: 80px;
   z-index: 2;
   left: 0;
@@ -623,7 +617,7 @@ html body #wrapper #container #main #visit #page #front #label .link {
   align-items: center;
   position: absolute;
   margin-left: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 10px;
   height: 10px;
   width: 10px;
@@ -723,7 +717,7 @@ html body #wrapper #container #main .center .quick,
 html body #wrapper #container #main #visit #page #front .quick {
   border-radius: 4px;
   position: relative;
-  margin: 25px auto;
+  margin: 15px auto;
   height: 7.5em;
   width: 100%;
 }

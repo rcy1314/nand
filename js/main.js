@@ -165,26 +165,36 @@ $(document)
       uri.define().exit()
     }
   })
-  .on('touch click mouseenter mouseleave',
+  .on('touch click',
     'html body #wrapper #container #main .group .air .populate, ' +
     'html body #wrapper #container #main .group .result .filter, ' +
     'html body #wrapper #container #main .group .result .populate',
     function(e) {
-      if (op == 0 && e.type == 'mouseenter')
-        $(this).toggleClass('overlay')
-        $(this)
-          .on('webkitAnimationEnd oanimationend msAnimationEnd animationend',
-            function(e) {
-              $(this).removeClass('overlay')
-              void this.clientWidth
-              $(this).addClass('overlay')
-          })
-      if (e.type == 'mouseleave') $(this).removeClass('overlay')
-      if (e.type == 'touch' || e.type == 'click') {
         uri = '?q=&' + $(this).attr('response')
         uri.define().exit()
-      }
-    })
+  })
+  .on('touch click mouseenter mouseleave',
+      'html body #wrapper #container #main .group .air .populate, ' +
+      'html body #wrapper #container #main .group .result .filter, ' +
+      'html body #wrapper #container #main .group .result .populate',
+      function(e) {
+        if (op == 0)
+          $(this).toggleClass('overlay')
+          $(this)
+            .on('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+              function(e) {
+                $(this).removeClass('overlay')
+                void this.clientWidth
+                $(this).addClass('overlay')
+            })
+  })
+  .on('mouseleave',
+    'html body #wrapper #container #main .group .air .populate, ' +
+    'html body #wrapper #container #main .group .result .filter, ' +
+    'html body #wrapper #container #main .group .result .populate',
+    function(e) {
+      if (op == 0) $(this).removeClass('overlay')
+  })
   .on('touch click',
     'html body #wrapper #container #guide .sticky .header .fa-ellipsis-h, ' +
     'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
@@ -203,8 +213,8 @@ $(document)
         e.stopPropagation()
   })
   .on('mousedown', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-  'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
-  function(e) {
+    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
+    function(e) {
       if (e.which == 1){
         dragStartX = 0
         enableDrag = true
@@ -216,18 +226,29 @@ $(document)
             .scrollLeft())
     if ($(this).parents('html body #wrapper #container #main .quick .feed')
           .scrollLeft() >= 3000)
-        for (i = 0; i < 40; i++)
+        for (i = 0; i < 10; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
-        quick(40)
-        feed(40)
+        quick(10)
+        if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
       }
       $(this).unbind("mousemove")
       e.preventDefault();
   })
+  .on('touchmove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
+    function(e) {
+    if ($(this).parents('html body #wrapper #container #main .quick .feed')
+          .scrollLeft() >= 3000)
+        for (i = 0; i < 10; i++)
+          $(this).parents('html body #wrapper #container #main .quick .feed')
+            .find('.asset:first').empty()
+        quick(10)
+        if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
+  })
   .on('mousemove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-  'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
-  function(e) {
+    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
+    function(e) {
       if ($(this).parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft() > 0)
         $(this).parents('html body #wrapper #container #main .quick')
@@ -242,7 +263,6 @@ $(document)
                 .scrollLeft(marginLeftStart - delta)
           }
           $(this).unbind("mouseup")
-          e.preventDefault()
   })
   .on('mouseup', document, function(e) {
         if (enableDrag)
@@ -260,15 +280,15 @@ $(document)
   .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
   function(e) {
       if ($(this).scrollLeft() >= 3300)
-        for (i = 0; i < 40; i++)
+        for (i = 0; i < 10; i++)
           $('html body #wrapper #container #main #visit #page #front .quick .feed .asset:first').remove()
-      quick(40)
+      quick(10)
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed', function(e) {
       if ($(this).scrollLeft() >= 3300)
-        for (i = 0; i < 40; i++)
+        for (i = 0; i < 10; i++)
           $('html body #wrapper #container #main .center .quick .feed .asset:first').remove()
-        feed(40)
+        feed(10)
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .right, ' +
@@ -294,11 +314,11 @@ $(document)
                                 .find('.left').show()
         if ($(this).parents('html body #wrapper #container #main .quick .feed')
               .scrollLeft() >= 3000)
-           for (i = 0; i < 40; i++)
+           for (i = 0; i < 10; i++)
              $(this).parents('html body #wrapper #container #main .quick .feed')
                .find('.asset:first').empty()
-           quick(40)
-           feed(40)
+           quick(10)
+           if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .left, ' +
@@ -545,7 +565,7 @@ $(document)
          'html body #wrapper #container #main .group .air, ' +
          'html body #wrapper #container #main .suggestions, ' +
          'html body #wrapper #container #main .group .result').show()
-      } else if (e.keyCode == 40 || e.keyCode == 34) {
+      } else if (e.keyCode == 20 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
           $('html body #wrapper #container #main #visit #page #front #first .listing .index:first')
             .addClass('hover')
@@ -595,7 +615,7 @@ $(document)
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
-              'padding-left': '40px',
+              'padding-left': '20px',
               'text-align': 'left'
         })
         $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
@@ -607,7 +627,7 @@ $(document)
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
-              'padding-left': '40px',
+              'padding-left': '20px',
               'text-align': 'left'
         })
         $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
@@ -618,7 +638,7 @@ $(document)
       if ($(this).val().length == 0)
       $(this).css({
           'caret-color': 'transparent',
-          'padding-left': '40px',
+          'padding-left': '20px',
           'text-align': 'center'
         })
         .val('Search')
@@ -640,7 +660,7 @@ $(document)
           'html body #wrapper #container #main .group .air, ' +
           'html body #wrapper #container #main .suggestions, ' +
           'html body #wrapper #container #main .group .result').show()
-      } else if (e.keyCode == 40 || e.keyCode == 34) {
+      } else if (e.keyCode == 20 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #top #arm #search #match .listing .hover').length)
           $('#search .listing .index:first')
             .addClass('hover')
