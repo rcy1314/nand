@@ -4862,6 +4862,22 @@ var menu = [
 	}]
 
 /* rip
+{id:"ABC/South Bend",cat:"News",des:"ABC WSBT South Bend Indiana serving Northern Indiana and the southern portion of Western Michigan.",uri:"https://wsbt.com/news/local.rss",ext:"https://wsbt.com",img:"WSBT",hash:"bN"},
+{id:"NBC/Davenport",cat:"News",des:"NBC KWQC Iowa Davenport serving the Quad Cities area of Southeastern Iowa and Northwestern Illinois.",uri:"https://www.kwqc.com/templates/2015_XML_FEED?placement=/content/news",ext:"https://www.kwqc.com",img:"KWQC",hash:"qC"},
+{id:"ABC/Flint",cat:"News",des:"ABC WJRT Michigan Flint Weather, News, Sports, and more.",uri:"https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",ext:"https://www.abc12.com",img:"WJRT",hash:"jR"},
+{id:"ABC/Des Moines",cat:"News",des:"ABC WOI Iowa Des Moines local Des Moines news & weather stories.",uri:"https://www.weareiowa.com/feed",ext:"https://www.weareiowa.com",img:"WOI",hash:"oW"},
+{id:"NBC/Indianapolis",cat:"News",des:"NBC WTHR Indiana Indianapolis your source for Weather, radar, traffic, and sports.",uri:"https://www.wthr.com/feed/public/breaking-news.xml",ext:"https://www.wthr.com",img:"WTHR",hash:"Wr"},
+{id:"NBC/Lincoln",cat:"News",des:"NBC KSNB Nebraska Lincoln affiliated television station licensed to Superior, Nebraska.",uri:"https://www.ksnblocal4.com/rss",ext:"https://www.ksnblocal4.com",img:"KSNB",hash:"kB"},
+{id:"ABC/Memphis",cat:"News",des:"ABC WATN Tennessee Memphis We tell Local Memphis News and Weather Stories.",uri:"https://www.localmemphis.com/feed",ext:"https://www.localmemphis.com",img:"WATN",hash:"aN"},
+{id:"E! Online",cat:"Media",des:"E! is an American basic cable channel owned by the NBCUniversal.",uri:"http://syndication.eonline.com/syndication/feeds/rssfeeds/topstories.xml",ext:"https://www.eonline.com",img:"ENews",hash:"eO"},
+{id:"Pop Sugar",cat:"Media",des:"Pop Sugar celebrity and style to food and advice – everything you love, all in one place.",uri:"https://www.popsugar.com/feed",ext:"https://www.popsugar.com",img:"PopSugar",hash:"sP"},
+{id:"Leafly",cat:"Social",des:"Leafly is the world's online destination to learn about cannabis, find cannabis strains and products, and buy them from legal, licensed retailers.",uri:"https://www.leafly.com/feed",ext:"https://www.leafly.com",img:"Leafly",hash:"lY"},
+{id:"Bleacher Report",cat:"Sports",des:"Bleacher Report is a website that focuses on sport and sports culture.",uri:"https://bleacherreport.com/articles/feed",ext:"https://bleacherreport.com",img:"BleacherReport",hash:"bR"},
+{id:"TieBreaker",cat:"Sports",des:"Tiebreaker Sports News Headlines from around the world.",uri:"https://www.tiebreaker.com/feed",ext:"https://www.tiebreaker.com",img:"TieBreaker",hash:"bT"},
+{id:"Digg",cat:"Technology",des:"Digg the best articles, videos, and original content that the web is talking about right now.",uri:"https://www.digg.com/rss/index.xml",ext:"https://www.digg.com",img:"Digg",hash:"iG"},
+{id:"Forbes",cat:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",uri:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com",img:"Forbes",hash:"fO"},
+{id:"CSPAN",cat:"World",des:"CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",uri:"http://podcast.c-span.org/xml/radio_feed.xml",ext:"https://www.c-span.org/",img:"CSpan",hash:"aC"},
+{id:"Quartz",cat:"World",des:"Quartz covers business, economics, markets, finance, technology, science, and more.",uri:"https://cms.qz.com/feed",ext:"https://qz.com",img:"Quartz",hash:"qZ"},
 {id:"Central News",cat:"News",des:"Central News Now latest, breaking Central news on ITV News. Videos, stories and updates",uri:"https://centralnewsnow.com/feed",ext:"https://centralnewsnow.com"},
 {id:"Chicago Tribune",cat:"News",des:"Chicago Tribune Your source for Chicago breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.chicagotribune.com/arcio/rss/category/news/breaking/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.chicagotribune.com"},
 {id:"Portland Press Herald",cat:"News",des:"Portland Press Herald Serves southern Maine from Portland, Cape Elizabeth, Gorham, Falmouth to Lewiston-Auburn.",uri:"https://www.pressherald.com/feed",ext:"https://www.pressherald.com"},
