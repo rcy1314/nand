@@ -81,6 +81,7 @@ $(document)
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
           notify('Reading ' + category + ' disabled.')
+          $('html body #wrapper #container #main .center #bottom').remove()
           $('html body #wrapper #container #main .center').append(
             "<div id='bottom'>" +
             "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
@@ -96,12 +97,14 @@ $(document)
             "  </div>" +
             "</div>"
           )
-          var uri = '?q=' + category.toLowerCase()
-          uri.define().exit()
+          reader = false
+          first = true
+          stop = false
         } else if (reader == false) {
           notify('Reading ' + category + ' enabled.')
           reader = true
-          first = true
+          if ($('html body #wrapper #container #main .center').length) first = false
+          else first = true
           stop = true
           xml(null, null, $.random())
       }
@@ -178,11 +181,7 @@ $(document)
           })
       if (e.type == 'mouseleave') $(this).removeClass('overlay')
       if (e.type == 'touch' || e.type == 'click') {
-        var uri = location.search.split('?q=')[1].replace(/\+|\?\+1|\+1/g, ' ')
-          .match(/[^&]+/g)[0]
-        if ($(this).attr('response').match(uri)) {
-          uri = '?q=&' + uri.replace(/\s/g, '+') + '&' + $(this).attr('response')
-        } else uri = '?q=&' + $(this).attr('response')
+        uri = '?q=&' + $(this).attr('response')
         uri.define().exit()
       }
     })

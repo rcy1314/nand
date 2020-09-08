@@ -13,6 +13,8 @@ var translations =
 var id
 var img
 var post
+var posts
+var images
 var tap = 0
 var array = []
 var mouseAsset
@@ -90,7 +92,12 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
 var content  = function(n, recent, oldest, posts) {
 
-    var images = 0
+    var count = 0
+    $('.img').each(function () {
+      if (this.src.length > 0) {
+        count = count + 1
+      }
+    });
     $('html body #wrapper #container #main .status').append(
       "<div class='asset' response='" + menu[n].id.hyphen() + "'>" +
       "  <div class='radial'></div>" +
@@ -103,7 +110,7 @@ var content  = function(n, recent, oldest, posts) {
       "  <br>" +
       "  <b>Most recent</b> " + recent +"<br>" +
       "  <b>Oldest post </b> " + oldest + "<br>" +
-      "  <b>Images</b> <div class='images'>" + images + "</div><br>" +
+      "  <b>Images</b> <div class='images'>" + count + "</div><br>" +
       "  <b>Posts</b> " + posts +
       "</div>"
     )
@@ -257,12 +264,11 @@ var progress = function(complete, n) {
             if (reader == true && stop == true && first == true){
                 if ($('html body #wrapper #container #main').innerHeight() >=
                     $('html body #wrapper #container #main .channel').innerHeight()){
-                      if ($.active <= 1){
+                      if ($.active <= 0){
                         reader = true
                         first = false
                         stop = true
                         xml(null, null, $.random())
-                        return true
                       } else {
                         first = false
                         stop = true
@@ -463,9 +469,6 @@ var image = function(empty, n, item, src) {
         .find('.url, .share, .source, .header, .image, .img, .fill').remove()
 
   }).on('load', function() {
-      $('html body #wrapper #container #main .status .info .images').html(
-        parseInt($('html body #wrapper #container #main .status .info .images').text()) + 1
-      )
     if ($('html body #wrapper #container #main #top #arm #search #home').css('display') == 'none'){
       $('.sticky').show()
       if ($(this).get(0).naturalWidth > minimum) {
@@ -751,7 +754,7 @@ var xml = function(e, s, n) {
                      .escape() +
                    more +
           "      </div>" + views +
-          "      <div class='ago' style='display:none'>" + dst[0] + "</div>" +
+          "      <div class='ago zulu' style='display:none'>" + dst[0] + "</div>" +
           "    </div>" +
           "    <input class='url' value='" + re.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
@@ -848,8 +851,8 @@ var xml = function(e, s, n) {
         if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
         else image(false, pub[i].feed, pub[i].element, pub[i].src)
       })
-    var posts = $('html body #wrapper #container #main .center .channel .item').length
-    var recent = pub[0].dst
+    posts = $('html body #wrapper #container #main .center .channel .item').length
+    var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
     if (reader == false) {
       if (e != 'search') $('html body #wrapper #container #main .center').append(
