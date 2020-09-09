@@ -797,6 +797,8 @@ $(document)
                 notify('Switched to now reading ' + category)
         } else {
           $.loading()
+          $('html body #wrapper #container #main #visit').hide()
+          $('html body #wrapper #container #main #top').show()
           xml(null, null, $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item'))
         }
       } else {

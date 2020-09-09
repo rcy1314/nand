@@ -262,7 +262,6 @@ var progress = function(complete, n) {
           $('html body #wrapper #container #main .center').show()
           $('html body #wrapper #container #main .air').show()
           $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
-          $('html body #wrapper #container #main').attr('tabindex', -1).focus()
             if (reader == true && stop == true && first == true){
                 if ($('html body #wrapper #container #main').innerHeight() >=
                     $('html body #wrapper #container #main .channel').innerHeight()){
@@ -897,6 +896,7 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
+    $('html body #wrapper #container #main').attr('tabindex', -1).focus()
     content(n, recent, oldest, posts)
     feed(40)
     suggest(id)
