@@ -216,7 +216,7 @@ $(document)
         enableDrag = true
         dragStartX = e.pageX
         tap = new Date().getTime()
-        mouseAsset = $(this).attr('response')
+        mouseAsset = $(this).attr('aria-item')
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
@@ -267,8 +267,15 @@ $(document)
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
-                  var uri = '?q=' + mouseAsset
-                  uri.define().exit()
+                  $('html body #wrapper #container #main #visit #page #handle .fill').css('visibility','visible')
+                  $('#toggle, #label, #front, .focus').css('visibility','hidden')
+                  $('html body #wrapper #container #main #visit #page #handle .fill, ' +
+                    'html body #wrapper #container #main #visit #page, ' +
+                    'html body #wrapper #container #main #visit').show()
+                  $('html body #wrapper #container #main .center, ' +
+                    'html body #wrapper #container #main .content, ' +
+                    'html body #wrapper #container #main .translation').remove()
+                    xml(null, null, mouseAsset)
               }
           }
           e.preventDefault()

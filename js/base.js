@@ -99,7 +99,7 @@ var content  = function(n, recent, oldest, posts) {
       }
     });
     $('html body #wrapper #container #main .status').append(
-      "<div class='asset' response='" + menu[n].id.hyphen() + "'>" +
+      "<div class='asset' aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='radial'></div>" +
       "  <img src='" + menu[n].img.image() + "'" +
       "  class='id " + menu.indexOf(menu[n]) + "'>" +
@@ -189,7 +189,7 @@ var feed  = function(n) {
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('html body #wrapper #container #main .center .quick .feed').append(
-          "<div class='asset' response='" + menu[e].id.hyphen() + "'>" +
+          "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <div class='radial'></div>" +
           "  <img src='" + menu[e].img.image() + "' " +
           "    class='id " + menu.indexOf(menu[e]) + "'" +
@@ -211,7 +211,7 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
-      "<div class='asset' response='" + translations[i].toLowerCase() + "'>" +
+      "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
       "  <img src='images/" + translations[i] + ".webp' " +
       "    class='idTranslation'" +
       "    search='" + translations[i].toLowerCase() + "'> " +
@@ -227,7 +227,7 @@ var quick  = function(n) {
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
-          "<div class='asset' response='" + menu[e].id.hyphen() + "'>" +
+          "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <div class='radial'></div>" +
           "  <img src='" + menu[e].img.image() + "' " +
           "    class='id " + menu.indexOf(menu[e]) + "'" +
@@ -440,7 +440,7 @@ var write = function(n) {
   $(document).ready(function() {
     $('html body #wrapper #container #main .group .result').append(
       "<div class='filter' " +
-      "response='" + menu[n].id.hyphen() + "'>" +
+      "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
       "  <div class='display'>" +
       "  <img class='id' src='" + menu[n].img.image() + "'> " +
       "  </div>" +
