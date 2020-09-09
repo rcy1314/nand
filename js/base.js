@@ -340,6 +340,7 @@ var populate = function(n) {
 
 var air = function(n) {
 
+  $(document).ready(function () {  
   $('html body #wrapper #container #main .result').before("<div class='air' style='display:none'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
@@ -358,6 +359,7 @@ var air = function(n) {
   }
   $.unloading()
   visual()
+})
 }
 
 var response = function(passthrough, uri, n, bloat) {
@@ -756,12 +758,14 @@ var xml = function(e, s, n) {
           "    <input class='url' value='" + re.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
           "    <input class='source' value='" + src + "'>" + cat +
+/*
           "    <form class='addComment' action'#'>" +
           "      <input class='comment' " +
           "        maxlength='88' placeholder='Add a Comment'" +
           "         onclick='event.stopPropagation()'>" +
           "      <div class='post'><b>Post</b></div>" +
           "    </form>" +
+*/
           "  </div>" +
           "</div>"
       pub.push({

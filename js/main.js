@@ -175,10 +175,11 @@ $(document)
     'html body #wrapper #container #main .group .result .populate',
     function(e) {
       $('html body #wrapper #container #main .group').remove()
+      $('html body #wrapper #containter #visit').hide()
       xml(null, null, $(this).attr('aria-item'))
       $.loading()
   })
-  .on('touch click mouseenter mouseleave',
+  .on('mouseenter',
       'html body #wrapper #container #main .group .air .populate, ' +
       'html body #wrapper #container #main .group .result .filter, ' +
       'html body #wrapper #container #main .group .result .populate',
@@ -852,8 +853,8 @@ $(document)
         notify('Switched to now reading ' + category)
       } else {
         if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
-          var uri = '?q=' + $(this).attr('aria-class').toLowerCase()
-          uri.define().exit()
+          $.loading()
+          populate($(this).attr('aria-class').capitalize())
         } else {
           $.loading()
           category = menu[$(this).attr('aria-item')].cat
