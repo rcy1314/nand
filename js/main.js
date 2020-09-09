@@ -61,8 +61,6 @@ $(document)
       $('#toggle, #label, .focus').css('visibility','visible')
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit, #front').show()
-      var uri = ''
-      uri.define().state()
       quick(7)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
@@ -174,8 +172,6 @@ $(document)
         'html body #wrapper #container #main .translation').remove()
       $.loading()
       populate($(this).attr('aria-class'))
-      var uri = '?q=' + $(this).attr('aria-class').toLowerCase()
-      uri.define().state()
     }
   })
   .on('touch click',
@@ -684,28 +680,28 @@ $(document)
       }
       if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #top #arm #search #match .listing .hover').length)
-          $('#search .listing .index:first')
+          $('html body #wrapper #container #main #top #arm #search .listing .index:first')
             .addClass('hover')
             .removeClass('index')
         else {
           $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
             .next().focus()
-            .attr('class', 'hover')
+            .addClass('hover').removeClass('index')
           $(this).val(keyup)
           $(this).attr('tabIndex', -1)
             .focus()
           $('html body #wrapper #container #arm #search #match .listing .hover')
-            .prev().attr('class', 'index')
+            .prev().addClass('index').removeClass('hover')
         }
       } else if (e.keyCode == 38 || e.keyCode == 33) {
         $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
           .prev().focus()
-          .attr('class', 'hover')
+          .addClass('hover').removeClass('index')
         $(this).val(keyup)
         $(this).focus()
         $('html body #wrapper #container #main #top #arm #search #match .listing .hover')
           .next()
-          .attr('class', 'index')
+          .addClass('index').removeClass('hover')
       }
       visual()
   })
@@ -751,25 +747,23 @@ $(document)
     $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content, #main .translation').remove()
     $('html body #wrapper #container #arm #search #match').hide()
     if ($('html body #wrapper #container #arm #search .listing .hover').length) {
-      if (translations.indexOf($('html body #wrapper #container #arm #search #match .listing .hover')
-          .attr('response')) > -1) {
-            if (reader == true) {
+      if ($('html body #wrapper #container #arm #search .listing .hover').is('[aria-class]') &&
+            $.inArray($('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize(), translations) > -1){
+        $.loading()
+        $('html body #wrapper #container #main #visit').hide()
+        $('html body #wrapper #container #main #top').show()
+        category = $('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize()
+        populate($('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize())
+      } else if (reader == true) {
               readDupe = []
               $('html body #wrapper #container #main .channel').empty()
               category = $(this).attr('response')
               first = false
               xml(null, null, $.random())
               notify('Switched to now reading ' + category)
-            } else {
-              var uri = '?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
-                                  .attr('response').toLowerCase()
-              uri.define().exit()
-            }
       } else {
-        var uri = '?q=' + $('html body #wrapper #container #arm #search #match .listing .hover')
-        .attr('response')
-        .toLowerCase()
-        uri.define().exit()
+        $.loading()
+        xml(null, null, $('html body #wrapper #container #arm #search .listing .hover').attr('aria-item'))
       }
     } else {
       if ($('html body #wrapper #container #arm #search input[type=text]').val().length) {
@@ -786,17 +780,36 @@ $(document)
   .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
     $('html body #wrapper #container #main #visit #page #front .icon, #main #visit #page .button')
       .css('visibility','hidden')
-    if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').length) {
-        var uri = '?q=&' + $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
-          .attr('response')
-        uri.define().exit()
-    } else {
-      var uri = '?q=' + $('html body #wrapper #container #main #visit #page #front input[type=text]').val()
-        .toLowerCase()
-        .replace(/\s/g, '+')
-      uri.define().exit()
-    }
-    e.preventDefault()
+      if ($('html body #wrapper #container #main #visit #page #front .listing .hover').length) {
+        if ($('html body #wrapper #container #main #visit #page #front .listing .hover').is('[aria-class]') &&
+              $.inArray($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize(), translations) > -1){
+          $.loading()
+          $('html body #wrapper #container #main #visit').hide()
+          $('html body #wrapper #container #main #top').show()
+          category = $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize()
+          populate($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize())
+        } else if (reader == true) {
+                readDupe = []
+                $('html body #wrapper #container #main .channel').empty()
+                category = $(this).attr('response')
+                first = false
+                xml(null, null, $.random())
+                notify('Switched to now reading ' + category)
+        } else {
+          $.loading()
+          xml(null, null, $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item'))
+        }
+      } else {
+        if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length) {
+          var uri = '?q=' + $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val()
+            .toLowerCase()
+            .replace(/\s/g, '+')
+          uri.define().exit()
+        }
+      }
+      $('html body #wrapper #container #arm #search input[type=text]').val('Search').blur()
+      e.preventDefault()
+      visual()
   })
   .on('mouseenter',
     'html body #wrapper #container #main #visit #page #front #first .index, ' +

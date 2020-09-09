@@ -414,16 +414,18 @@ var response = function(passthrough, uri, n, bloat) {
     if (!id) id = filter[0]
     if (passthrough == false) {
       $(document).ready(function() {
+        $('html body #wrapper #container #main #visit').hide()
         $('html body #wrapper #container #main').append(
           "<div class='group'>" +
           "  <div class='result' style='display:none'>" +
           "  </div>" +
           "</div>"
         )
-      })
-      $.each(filter, function(k, i){
-        write(menu.indexOf(menu[i]))
-      })
+      for (i = filter.length - 1; i >= 0; i--){
+        write(filter[i])
+      }
+      $.unloading()
+    })
     } else if (passthrough == true) {
       if ($.isNumeric(exact)) {
         xml(null, null, exact)
@@ -446,7 +448,7 @@ var response = function(passthrough, uri, n, bloat) {
 var write = function(n) {
 
   $(document).ready(function() {
-    $('html body #wrapper #container #main .group .result').append(
+    $('html body #wrapper #container #main .group .result').prepend(
       "<div class='filter' " +
       "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='display'>" +
