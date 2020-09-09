@@ -21,19 +21,19 @@ $.loading = function () {
     'html body #wrapper #container #main .center, ' +
     'html body #wrapper #container #main .content').remove()
   if (loading == 'dots'){
-  $('html body #wrapper #container #main .fill').css(
+  $('html body #wrapper #container #main #dots .fill').css(
     'animation', 'move 3s infinite cubic-bezier(.25,.64,.81,.23)'
     )
-  $('html body #wrapper #container #main .fill:nth-of-type(2)').css(
+  $('html body #wrapper #container #main #dots .fill:nth-of-type(2)').css(
     'animation', 'move 3s 150ms infinite cubic-bezier(.25,.64,.81,.23)'
     )
-  $('html body #wrapper #container #main .fill:nth-of-type(3)').css(
+  $('html body #wrapper #container #main #dots .fill:nth-of-type(3)').css(
     'animation', 'move 3s 300ms infinite cubic-bezier(.25,.64,.81,.23)'
     )
-  $('html body #wrapper #container #main .fill:nth-of-type(4)').css(
+  $('html body #wrapper #container #main #dots .fill:nth-of-type(4)').css(
     'animation', 'move 3s 450ms infinite cubic-bezier(.25,.64,.81,.23)'
     )
-  $('html body #wrapper #container #main .fill:nth-of-type(5)').css(
+  $('html body #wrapper #container #main #dots .fill:nth-of-type(5)').css(
     'animation', 'move 3s 600ms infinite cubic-bezier(.25,.64,.81,.23)'
     )
   } else if (loading == 'percent'){

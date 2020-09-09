@@ -200,7 +200,7 @@ $(document)
     'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
     function(e) {
         $(this)
-        .parents('html body #wrapper #container #guide .sticky .item, ' +
+        .parents('html body #wrapper #container #guide .sticky .wrap, ' +
           'html body #wrapper #container #main .center .item .classic')
             .find('.url').select()
         document.execCommand('copy')
@@ -363,6 +363,7 @@ $(document)
     'html body #wrapper #container #guide .checkmark', function (e) {
       $('html body #wrapper #container #main').removeClass('guide')
       $('#guide, #container .checkmark').fadeOut(250)
+      $('html body #wrapper #container #main #top').show()
   })
   .on('touch click', 'html body #wrapper #container #guide .sticky .item .image .img',
     function (e) {
@@ -434,18 +435,19 @@ $(document)
         visual()
       })
   .on('touch click',
+    'html body #wrapper #container #guide .sticky .tag .fa-sticky-note, ' +
     'html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o, ' +
     'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
     'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
       if (contrast == true)
-        if (!$(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+        if (!$(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
           'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().match(/\+1/g))
-          $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+          $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
             'html body #wrapper #container #main .center .item .classic .wrap').find('.share')
-          .val($(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+          .val($(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
             'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val() + '+1')
-      if (contrast == false && $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+      if (contrast == false && $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
         'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val()
         .match(/\+1/g))
         $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
@@ -453,7 +455,8 @@ $(document)
           $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
             'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().replace(/\+1/g, '')
         )
-      $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
+      $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+        'html body #wrapper #container #main .center .channel .item , ' +
         'html body #wrapper #container #main .center .item .classic .wrap').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note'))

@@ -273,26 +273,26 @@
   100% {left:100%;}
 }
 
-html body #wrapper #container #main .fill {
+html body #wrapper #container #main #dots .fill {
   width: 4px;
   height: 4px;
   position: absolute;
   border-radius: 50%;
 }
 
-html body #wrapper #container #main .fill {
+html body #wrapper #container #main #dots .fill {
   animation: move 3s infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main .fill:nth-of-type(2) {
+html body #wrapper #container #main #dots .fill:nth-of-type(2) {
   animation: move 3s 150ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main .fill:nth-of-type(3) {
+html body #wrapper #container #main #dots .fill:nth-of-type(3) {
   animation: move 3s 300ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main .fill:nth-of-type(4) {
+html body #wrapper #container #main #dots .fill:nth-of-type(4) {
   animation: move 3s 450ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main .fill:nth-of-type(5) {
+html body #wrapper #container #main #dots .fill:nth-of-type(5) {
   animation: move 3s 600ms infinite cubic-bezier(.25,.64,.81,.23);
 }
 

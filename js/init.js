@@ -25,7 +25,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
       var id = uri.slice(0, 2)
       var i = menu.findIndex((item) => item.hash === id)
-      var post = parseInt(uri.slice(2), 36)
+      post = parseInt(uri.slice(2), 36)
 
     }
 
@@ -33,8 +33,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-            $('#toggle, .focus').css('visibility','visible')
-            $('.fill').css('visibility','hidden')
+            $('#toggle, #label, .focus').css('visibility','visible')
             quick(7)
         })
 
@@ -42,13 +41,13 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-          $('.fill').css('visibility','visible')
+          $.loading()
 
         })
 
         response(true,
                  false,
-                 menu[i].id.response(),
+                 menu[i].id.space(),
                  true)
 
       }
@@ -59,13 +58,6 @@ if (location.href.match('\\+1') && !i) {
 
   contrast = contrast != true
   op = op != true
-
-  $(document)
-    .ready(function() {
-
-      $('.fill').css('visibility','visible')
-
-  })
 
 }
 
@@ -83,7 +75,6 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-      $('#label').remove()
       $.loading()
 
   })

@@ -73,22 +73,23 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
     "  <div class='fill'></div>" +
     "  <div class='item " + n + "' item='" + n + "' ext='" + re + "'>" +
     "    <div class='image'>" +
-    "      <img class='img guide' style='display:none' id='" + element + "'>" +
+    "      <img class='img guide " + element + "' style='display:none' id='" + element + "'>" +
     "    </div>" +
     "  </div>" +
     "  <div class='wrap' style='display:none'>" +
     "    <div class='header' style='display:none'>" + courtesy +
     "      <div class='copy fa-ellipsis-h' title='Copy URL'>" +
     "    </div>" +
-    "  </div>" +
-    "  <div class='pub' style='display:none'>" + title + "</div>" +
-    "  <div class='ago' style='display:none'>" + dst + "</div>" +
     "  <input class='url' value='" + re + "'>" +
     "  <input class='share' value='" + share + "'>" +
     "  <input class='source' value='" + src + "'>" +
+    "  </div>" +
+    "  <div class='pub' style='display:none'>" + title + "</div>" +
+    "  <div class='ago' style='display:none'>" + dst + "</div>" +
         tag +
     "</div>"
   )
+  $('html body #wrapper #container #main #top').hide()
 }
 
 var content  = function(n, recent, oldest, posts) {
@@ -486,12 +487,12 @@ var image = function(empty, n, item, src) {
       if ($(this).hasClass('guide')) {
       $('html body #wrapper #container #main').addClass('guide')
        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
-         $(this).css('max-width', '100%').parents('.sticky').width('90%')
+         $(this).css('max-width', '85vh').parents('.sticky').width('90vh')
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%').css('cssText', 'max-width: 60vh')
-         $('.' + n).find(' .' + item).parents('#guide').find('.image, .img')
+         $(this).parents('#guide').find('.image, .img')
           .css('display', 'block')
-         $('.' + n).find(' .' + item).parents('#guide')
+         $(this).parents('#guide')
           .find('.url, .share, .source, .header, .wrap, .fill').remove()
       }
     } else {
@@ -500,6 +501,8 @@ var image = function(empty, n, item, src) {
       $('html body #wrapper #container #main').addClass('guide')
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).css('max-width', '80vh')
+       else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
+         $(this).css('max-width', '100%').parents('.sticky').width('90%')
      } else if ($(this).get(0).naturalWidth < small) {
          $(this).width('100%').addClass('default').css('margin','10px')
            .parents('.item')
@@ -562,8 +565,6 @@ var xml = function(e, s, n) {
   } else uri = cors + menu[n].uri
   var doc = menu[n].id.space().capitalize()
   document.title = doc
-  doc = '?q=&' + doc.hyphen().toLowerCase()
-  doc.state()
   if (reader == true && first == true){
     $('html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .translation, ' +
@@ -805,7 +806,7 @@ var xml = function(e, s, n) {
         "  </div>" +
         "</div>"
       )
-    } else if (reader == false) {
+    } else if (reader == false && first == true) {
       $('html body #wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +

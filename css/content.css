@@ -454,7 +454,7 @@ html body #wrapper #container #main #visit #page {
   top: 125px;
 }
 
-html body #wrapper #container #main .fill {
+html body #wrapper #container #main #dots .fill {
   z-index: 99;
   left: -4px;
   top: 4px;
@@ -598,6 +598,10 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
   position: absolute;
   right: 25px;
   top: 10px;
+}
+
+html body #wrapper #container #main #visit #page #label {
+  visibility: hidden;
 }
 
 html body #wrapper #container #main #visit #page #front #label .show {
@@ -751,7 +755,8 @@ html body #wrapper #container #main #visit #page #front .quick .feed::-webkit-sc
 }
 
 html body #wrapper #container #main .center .quick .feed .radial,
-html body #wrapper #container #main #visit #page #front .quick .feed .radial {
+html body #wrapper #container #main #visit #page #front .quick .feed .radial,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial {
   border-radius: 36px;
   position: absolute;
   height: 58.5px;
@@ -911,6 +916,10 @@ html body #wrapper #container #guide .sticky .item {
   margin: 0;
 }
 
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .id {
+  left: 1.5px;
+}
+
 html body #wrapper #container #guide .sticky .wrap {
   display: table-cell !important;
   vertical-align: top;
@@ -928,6 +937,7 @@ html body #wrapper #container #guide .sticky .pub {
 
 html body #wrapper #container #guide .sticky .ago {
   position: absolute;
+  font-size: 10px;
   width: 300px;
   bottom: 40px;
   margin: 5px;
@@ -1094,8 +1104,11 @@ html body #wrapper #container #main .center .item .addComment .post {
 }
 
 html body #wrapper #container #main .center .item .url,
+html body #wrapper #container #guide .sticky .wrap .url,
 html body #wrapper #container #main .center .item .share,
-html body #wrapper #container #main .center .item .source {
+html body #wrapper #container #guide .sticky .wrap .share,
+html body #wrapper #container #main .center .item .source,
+html body #wrapper #container #guide .sticky .wrap .source {
   display: inline-block;
   position: relative;
   z-index: -2;
@@ -1104,7 +1117,7 @@ html body #wrapper #container #main .center .item .source {
 }
 
 html body #wrapper #container #main .center .item .header .copy,
-html body #wrapper #container #guide .sticky .item .header .copy {
+html body #wrapper #container #guide .sticky .wrap .header .copy {
   font-size: 12px;
   padding: 23px;
   float: right;
