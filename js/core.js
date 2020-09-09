@@ -16,6 +16,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 }
 
 $.loading = function () {
+
   $('html body #wrapper #container #main .group, '+
     'html body #wrapper #container #main .translation, ' +
     'html body #wrapper #container #main .center, ' +
@@ -37,7 +38,7 @@ $.loading = function () {
     'animation', 'move 3s 600ms infinite cubic-bezier(.25,.64,.81,.23)'
     )
   } else if (loading == 'percent'){
-    var complete = setInterval(function() {
+    complete = setInterval(function() {
       $('#progressBar').width($('#progressBar').width() +
         Math.floor(Math.random() * (15 - 10 + 1) + 10))
     }, 450)
