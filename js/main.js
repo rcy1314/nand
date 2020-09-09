@@ -128,6 +128,7 @@ $(document)
       contrast = contrast != true
       op = op != true
     }
+    uri.state()
     visual()
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-code',
@@ -146,6 +147,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {
+    id = 0
     if (reader == true) {
       readDupe = []
       $('html body #wrapper #container #main .channel').empty()
@@ -159,6 +161,8 @@ $(document)
         'html body #wrapper #container #main .translation').remove()
       $.loading()
       populate($(this).attr('aria-class'))
+      var uri = '?q=' + $(this).attr('aria-class').toLowerCase()
+      uri.define().state()
     }
   })
   .on('touch click',
@@ -490,38 +494,20 @@ $(document)
       $(this).siblings('.comment').focus().submit()
       e.stopPropagation()
   })
-  .on('touch click',
-    'html body #wrapper #container #main .center #bottom .back, ' +
-    'html body #wrapper #container #main .center #bottom .next',
-    function(e) {
-      var uri = menu[$(this).attr('index').trim()].id.hyphen().toLowerCase()
-      uri = '?q=&' + uri
-      uri.define().exit()
-  })
   .on('touch click', 'html body #wrapper #container #main .center #bottom .bottom',
     function(e) {
-      if (location.href.match('\\?q=')) {
-        var uri = location.search.split('?q=')[1]
-        $.loading()
+      $.loading()
         response(false,
                  false,
-                 uri.space(),
+                 category,
                  false)
-      } else {
-        $.loading()
-        populate(category)
-      }
     })
-  .on('touch click',
-    'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
-       var uri = '?q=&' + $(this).attr('response').hyphen().toLowerCase()
-       uri.define().exit()
-  })
-  .on('touch click',
-    'html body #wrapper #container #main .content .status .asset .radial', function(e) {
-       var uri = '?q=' + $(this).parents('html body #wrapper #container #main .content .status .asset')
-                          .attr('response')
-       uri.define().exit()
+  .on('touch click', 'html body #wrapper #container #main .center #bottom .back, ' +
+      'html body #wrapper #container #main .center #bottom .next, ' +
+      'html body #wrapper #container #main .content .status .asset, ' +
+      'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
+        $.loading()
+        xml(null, null, $(this).attr('aria-item'))
   })
   .on('mouseenter',
     'html body #wrapper #container #main #visit #page #front .focus .button, ' +

@@ -58,7 +58,7 @@ $.unloading = function() {
 
 String.prototype.space = function() {
 
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\./g, ' ')
+  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ' ')
 
 }
 

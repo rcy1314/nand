@@ -124,6 +124,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
       'html body #wrapper #container #main .center .quick .feed, ' +
+      'html body #wrapper #container #main .center .quick .feed .asset a, ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main .group .air, ' +
       'html body #wrapper #container #main .group .result, ' +

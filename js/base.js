@@ -297,7 +297,7 @@ var suggest = function(n) {
         "  <div class='radial'></div>" +
         "  <img src='" + menu[e].img.image() + "' " +
         "    class='id " + menu.indexOf(menu[n]) + "'>" +
-        "  <div response='" + menu[e].id.hyphen() + "'" +
+        "  <div aria-item='" + menu.indexOf(menu[e]) + "'" +
         "    search='" + menu[e].cat.toLowerCase() + "'>" +
              menu[e].id.match(/[^\/]+$/g) +
         "    <br>" + "<b>" + menu[e].cat + "</b>" +
@@ -855,13 +855,13 @@ var xml = function(e, s, n) {
     if (reader == false) {
       if (e != 'search') $('html body #wrapper #container #main .center').append(
         "<div id='bottom'>" +
-        "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+        "  <div class='back btn' aria-item=" + menu.indexOf(menu[$.back()]) + ">" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Previous</span>" +
         "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
         "  </div>" +
         "  <div class='bottom'>acktic</div>" +
-        "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+        "  <div class='next btn' aria-item=" + menu.indexOf(menu[$.next()]) + ">" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Next</span>" +
         "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
