@@ -53,11 +53,15 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
-      var uri = window.location.origin
-      if (contrast == true && !location.href.match('\\+1')) uri = uri + '?+1'
-      else if (contrast == true) uri = uri + '?+1'
-      uri.exit()
-      e.preventDefault()
+      $.loading()
+      $('html body #wrapper #container #main .group, ' +
+        'html body #wrapper #container #main .center, ' +
+        'html body #wrapper #container #main .content, ' +
+        'html body #wrapper #container #main .translation').remove()
+      $('#toggle, #label, .focus').css('visibility','visible')
+      $('html body #wrapper #container #main #top').hide()
+      $('html body #wrapper #container #visit, #front').show()
+      quick(7)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
     if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
@@ -216,8 +220,14 @@ $(document)
   .on('mousedown',
       'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation',
     function(e) {
+      $('html body #wrapper #container #main #visit #page #front .quick')
+        .addClass('invisible').removeClass('visible')
+      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
+      $('html body #wrapper #container #main #visit #page #front .show')
+        .removeClass('invisible').addClass('visible')
       $('html body #wrapper #container #main #visit').hide()
-      $('html body #wrapper #container #main #top').css('visibility','visible')
+      $('html body #wrapper #container #main #top').show()
       $.loading()
       populate($(this).attr('aria-class'))
   })
@@ -281,12 +291,12 @@ $(document)
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
-                  $('html body #wrapper #container #main #visit #page #handle .fill').css('visibility','visible')
-                  $('#toggle, #label, #front, .focus').css('visibility','hidden')
-                  $('html body #wrapper #container #main #visit #page #handle .fill, ' +
-                    'html body #wrapper #container #main #visit #page, ' +
-                    'html body #wrapper #container #main #visit').show()
-                  $('html body #wrapper #container #main .center, ' +
+                  $.loading()
+                  $('html body #wrapper #container #main #top').show()
+                  $('html body #wrapper #container #visit').hide()
+                  $('html body #wrapper #container #main #top').show()
+                  $('html body #wrapper #container #main .group, ' +
+                    'html body #wrapper #container #main .center, ' +
                     'html body #wrapper #container #main .content, ' +
                     'html body #wrapper #container #main .translation').remove()
                     xml(null, null, mouseAsset)

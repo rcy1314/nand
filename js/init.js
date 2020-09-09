@@ -45,7 +45,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
           $.loading()
 
         })
-
+        $('html body #wrapper #container #main #top').show()
         response(true,
                  false,
                  menu[i].id.space(),
@@ -75,7 +75,7 @@ if (location.search.split('?q=')[1]) {
 
   $(document)
     .ready(function() {
-
+      $('html body #wrapper #container #main #top').show()
       $.loading()
 
   })
@@ -84,7 +84,7 @@ if (location.search.split('?q=')[1]) {
     if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
     else if (!uri[1]) response(false, false, uri[0], true)
     else if (uri[1]) response(true, uri[0], uri[1], false)
-  }, 550)
+  }, 250)
 
 } else if (!location.search.split('?')[1]) {
 

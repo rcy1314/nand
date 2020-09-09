@@ -223,6 +223,7 @@ var quick  = function(n) {
       "  </a>" +
       "</div>"
    )
+   $.unloading()
   }
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
@@ -256,10 +257,8 @@ var progress = function(complete, n) {
           $(this).removeClass('response').width(0)
           $('.translation').css('visibility', 'visible')
           $('.content').css('visibility', 'visible')
-          $('#top').css('visibility', 'visible')
           $('html body #wrapper #container #main .result').show()
           $('html body #wrapper #container #main .center').show()
-          $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main .air').show()
           $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
           $('html body #wrapper #container #main').attr('tabindex', -1).focus()

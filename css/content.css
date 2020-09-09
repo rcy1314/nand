@@ -353,8 +353,8 @@ html body #wrapper #container #guide .blur {
 
 html body #wrapper #container #main #top {
   width: calc(100% - 17px);
-  visibility: hidden;
   position: fixed;
+  display: none;
   height: 57px;
   z-index: 9;
   top: 0;
