@@ -1,7 +1,7 @@
 var op = 0 //1 invert, 2 opposite
 var contrast = false //opposite of op
 var imageDupe = false //remove items without pictures (reader)
-var loading = 'percent' //or 'percent'
+var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations =
