@@ -77,10 +77,11 @@ String.prototype.hyphen = function() {
 $.random = function() {
 
   for (i = 1; i <= menu.length - 1; i++) {
-    if (imageDupe == true)
+    if (imageDupe == true){
       if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
-    else if (imageDupe == false)
+    } else {
       if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
+    }
   }
   var n = array[Math.floor(Math.random() * array.length - 1)]
   if (menu[n]){

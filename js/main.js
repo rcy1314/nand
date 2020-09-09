@@ -61,6 +61,8 @@ $(document)
       $('#toggle, #label, .focus').css('visibility','visible')
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit, #front').show()
+      var uri = ''
+      uri.define().state()
       quick(7)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
@@ -139,16 +141,21 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-code',
   function(e) {
     var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
-    var uri = '?q=' + menu[re].cat.toLowerCase() + '&' + menu[re].id.toLowerCase()
-      .replace(/\s|\.|\//g, '-')
-    uri.define().state()
-    return false
+    $.loading()
+    $('html body #wrapper #container #main .group, ' +
+      'html body #wrapper #container #main .center, ' +
+      'html body #wrapper #container #main .content, ' +
+      'html body #wrapper #container #main .translation').remove()
+    xml(null, null, re)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-terminal',
   function(e) {
-    var n = $.random()
-    var uri = '?q=&' + menu[n].id.toLowerCase().hyphen()
-    uri.define().exit()
+    $.loading()
+    $('html body #wrapper #container #main .group, ' +
+      'html body #wrapper #container #main .center, ' +
+      'html body #wrapper #container #main .content, ' +
+      'html body #wrapper #container #main .translation').remove()
+      xml(null, null, $.random())
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
   function(e) {
@@ -734,30 +741,6 @@ $(document)
   .on('focusout blur',
     'html body #wrapper #container #top #arm #search #input input[type=text]',
     function(e) {
-      $this = $(this)
-        if ($('html body #wrapper #container #arm #search #input .icon').hasClass('slide'))
-          $(this)
-            .css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left'
-            })
-        else if (!$('html body #wrapper #container #arm #search #input .icon').hasClass('slide')) {
-          setTimeout(function() {
-            $this.css({
-              'caret-color': '#e4e4e4',
-              'padding-left': '30px',
-              'text-align': 'left',
-            })
-          }, 500)
-          $('html body #wrapper #container #arm #search #input .icon')
-            .addClass('slide')
-        }
-        return false
-  })
-  .on('focusout blur',
-    'html body #wrapper #container #top #arm #search #input input[type=text]',
-    function(e) {
       $(this).css({
         'caret-color': 'transparent',
         'text-align': 'center',
@@ -857,6 +840,8 @@ $(document)
         if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
+          $('html body #wrapper #container #main #top').show()
+          category = $(this).attr('aria-class').capitalize()
           populate($(this).attr('aria-class').capitalize())
         } else {
           $.loading()

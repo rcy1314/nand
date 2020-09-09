@@ -163,16 +163,13 @@ var visual = function(n) {
       '--loader-color-primary': '#0078D4',
       '--loader-color-secondary': '#5baff0',
     })
-    $('html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate, ' +
-      'html body #wrapper #container #main #visit #page #front #label .link, ' +
+    $('html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
-      .addClass('invertOver').removeClass('oppositeOver oppositeOverBorderless')
+      .addClass('invertOverBorderless').removeClass('oppositeOver oppositeOverBorderless')
     $('html body #wrapper #container #main .center .channel .item .classic .header .radial, ' +
       'html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestOpposite').addClass('suggestInvert')
@@ -203,7 +200,10 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #guide .sticky .item, #wrapper #container #main .center .channel .item')
+    $('html body #wrapper #container #main .group .air .populate, ' +
+      'html body #wrapper #container #main .group .result .filter, ' +
+      'html body #wrapper #container #main .group .result .populate, ' +
+      'html body #wrapper #container #guide .sticky .item, #wrapper #container #main .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
     $('html body #wrapper #container #main .group .air .populate, ' +
       'html body #wrapper #container #main .group .result .filter, ' +
