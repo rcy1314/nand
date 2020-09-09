@@ -340,7 +340,7 @@ var populate = function(n) {
 
 var air = function(n) {
 
-  $(document).ready(function () {  
+  $(document).ready(function () {
   $('html body #wrapper #container #main .result').before("<div class='air' style='display:none'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
@@ -368,8 +368,11 @@ var response = function(passthrough, uri, n, bloat) {
   exact = false
     if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
-      $(document).ready(function() { populate(n.capitalize()) })
-      $.unloading()
+      $(document).ready(function() {
+        $('html body #wrapper #container #main #visit').hide()
+        populate(n.capitalize())
+        $.unloading()
+      })
       return false
     }
   $('html body #wrapper #container #main #visit').show()

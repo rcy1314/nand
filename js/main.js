@@ -114,8 +114,9 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {
-    var uri = '?q=' + category.toLowerCase()
-    uri.define().exit()
+    $('html body #wrapper #container #main #visit').hide()
+    $.loading()
+    populate(category)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-sun',
   function(e) {
@@ -160,6 +161,7 @@ $(document)
       xml(null, null, $.random())
       notify('Switched to now reading ' + category)
     } else {
+      $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main .center, ' +
         'html body #wrapper #container #main .content, ' +
         'html body #wrapper #container #main .translation').remove()
@@ -854,6 +856,7 @@ $(document)
       } else {
         if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
           $.loading()
+          $('html body #wrapper #container #main #visit').hide()
           populate($(this).attr('aria-class').capitalize())
         } else {
           $.loading()
