@@ -274,7 +274,8 @@ $(document)
                     'html body #wrapper #container #main #visit').show()
                   $('html body #wrapper #container #main .center, ' +
                     'html body #wrapper #container #main .content, ' +
-                    'html body #wrapper #container #main .translation').remove()
+                    'html body #wrapper #container #main .translation, ' +
+                    'html body #wrapper #container #main #visit #page .quick').remove()
                     xml(null, null, mouseAsset)
               }
           }

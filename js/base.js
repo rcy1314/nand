@@ -440,7 +440,7 @@ var write = function(n) {
   $(document).ready(function() {
     $('html body #wrapper #container #main .group .result').append(
       "<div class='filter' " +
-      "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
+      "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='display'>" +
       "  <img class='id' src='" + menu[n].img.image() + "'> " +
       "  </div>" +
