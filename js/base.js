@@ -406,7 +406,7 @@ var response = function(passthrough, uri, n, bloat) {
             filter.push(menu.indexOf(menu[i]))
       }
     }
-    if (!id) id = filter[filter.length - 1]
+    if (!id) id = filter[0]
     if (passthrough == false) {
       $(document).ready(function() {
         $('html body #wrapper #container #main').append(

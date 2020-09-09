@@ -33,6 +33,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
+            $('html body #wrapper #container #main .fill').css('animation','none')
             $('#toggle, #label, .focus').css('visibility','visible')
             quick(7)
         })

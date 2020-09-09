@@ -68,7 +68,6 @@ $(document)
       var uri = window.location.href + '?+1'
       contrast = contrast != true
       op = op != true
-      uri.state()
     }
     setTimeout(function() {
       $('html body #wrapper #container #main #visit #page .focus input[type=text]').attr('tabindex', -1).focus()
@@ -116,7 +115,6 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-sun',
   function(e) {
-    reader = false
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '+1'
       contrast = contrast != true
@@ -127,10 +125,9 @@ $(document)
       op = op != true
     } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
       var uri = window.location.href.replace(/\?\+1|\+1/g, '')
-      contrast = false
+      contrast = contrast != true
       op = op != true
     }
-    uri.state()
     visual()
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-code',
@@ -435,29 +432,24 @@ $(document)
         visual()
       })
   .on('touch click',
-    'html body #wrapper #container #guide .sticky .tag .fa-sticky-note, ' +
-    'html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o, ' +
+    'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note, ' +
+    'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note-o, ' +
     'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
     'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
-      if (contrast == true)
-        if (!$(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-          'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().match(/\+1/g))
+      if (location.href.match('\\+1'))
           $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-            'html body #wrapper #container #main .center .item .classic .wrap').find('.share')
+            'html body #wrapper #container #main .center .item .classic').find('.share')
           .val($(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-            'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val() + '+1')
-      if (contrast == false && $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-        'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val()
-        .match(/\+1/g))
-        $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
-          'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val(
-          $(this).parents('html body #wrapper #container #main .center .channel .item , ' +
-            'html body #wrapper #container #main .center .item .classic .wrap').find('.share').val().replace(/\+1/g, '')
+            'html body #wrapper #container #main .center .item .classic').find('.share').val() + '+1')
+      else if (!location.href.match('\\+1'))
+        $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+          'html body #wrapper #container #main .center .item .classic').find('.share').val(
+          $(this).parents('html body #wrapper #container #main .center .channel .item, ' +
+            'html body #wrapper #container #main .center .item .classic').find('.share').val().replace(/\+1/g, '')
         )
       $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-        'html body #wrapper #container #main .center .channel .item , ' +
-        'html body #wrapper #container #main .center .item .classic .wrap').find('.share').select()
+        'html body #wrapper #container #main .center .item .classic').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note'))
         $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
@@ -509,12 +501,15 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main .center #bottom .bottom',
     function(e) {
       if (location.href.match('\\?q=')) {
-        var uri = location.search.split('?q=')[1].match(/[^&]+/g)
-        if (location.href.match('\\+1'))
-          var res = uri[0].replace(/\+1/g, '')
-        else var res = uri[0]
-        uri = '?q=' + res.replace(/\-/g, '+')
-        uri.define().exit()
+        var uri = location.search.split('?q=')[1]
+        $.loading()
+        response(false,
+                 false,
+                 uri.space(),
+                 false)
+      } else {
+        $.loading()
+        populate(category)
       }
     })
   .on('touch click',
@@ -860,11 +855,9 @@ $(document)
         xml(null, null, $.random())
         notify('Switched to now reading ' + category)
       } else {
-
         if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
-          category = $(this).attr('aria-class').capitalize()
-          populate($(this).attr('aria-class').capitalize())
-          $.loading()
+          var uri = '?q=' + $(this).attr('aria-class').toLowerCase()
+          uri.define().exit()
         } else {
           $.loading()
           category = menu[$(this).attr('aria-item')].cat
