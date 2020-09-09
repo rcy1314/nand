@@ -15,6 +15,47 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
   })
 }
 
+$.loading = function () {
+  $('html body #wrapper #container #main .group, '+
+    'html body #wrapper #container #main .translation, ' +
+    'html body #wrapper #container #main .center, ' +
+    'html body #wrapper #container #main .content').remove()
+  if (loading == 'dots'){
+  $('html body #wrapper #container #main .fill').css(
+    'animation', 'move 3s infinite cubic-bezier(.25,.64,.81,.23)'
+    )
+  $('html body #wrapper #container #main .fill:nth-of-type(2)').css(
+    'animation', 'move 3s 150ms infinite cubic-bezier(.25,.64,.81,.23)'
+    )
+  $('html body #wrapper #container #main .fill:nth-of-type(3)').css(
+    'animation', 'move 3s 300ms infinite cubic-bezier(.25,.64,.81,.23)'
+    )
+  $('html body #wrapper #container #main .fill:nth-of-type(4)').css(
+    'animation', 'move 3s 450ms infinite cubic-bezier(.25,.64,.81,.23)'
+    )
+  $('html body #wrapper #container #main .fill:nth-of-type(5)').css(
+    'animation', 'move 3s 600ms infinite cubic-bezier(.25,.64,.81,.23)'
+    )
+  } else if (loading == 'percent'){
+    var complete = setInterval(function() {
+      $('#progressBar').width($('#progressBar').width() +
+        Math.floor(Math.random() * (15 - 10 + 1) + 10))
+    }, 450)
+  }
+}
+
+$.unloading = function() {
+  setTimeout(function() {
+    if (loading == 'dots'){
+      $('html body #wrapper #container #main .fill').css('animation','none')
+      progress(true, 0)
+    } else if (loading == 'percent') {
+      clearInterval(complete)
+      progress(true, 100)
+    }
+  }, 550)
+}
+
 String.prototype.space = function() {
 
   return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\./g, ' ')

@@ -157,8 +157,11 @@ $(document)
       xml(null, null, $.random())
       notify('Switched to now reading ' + category)
     } else {
-      var uri = '?q=' + $(this).attr('response').toLowerCase()
-      uri.define().exit()
+      $('html body #wrapper #container #main .center, ' +
+        'html body #wrapper #container #main .content, ' +
+        'html body #wrapper #container #main .translation').remove()
+      $.loading()
+      populate($(this).attr('aria-class'))
     }
   })
   .on('touch click',
@@ -168,6 +171,7 @@ $(document)
     function(e) {
       $('html body #wrapper #container #main .group').remove()
       xml(null, null, $(this).attr('aria-item'))
+      $.loading()
   })
   .on('touch click mouseenter mouseleave',
       'html body #wrapper #container #main .group .air .populate, ' +
@@ -208,6 +212,14 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
+  .on('mousedown',
+      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation',
+    function(e) {
+      $('html body #wrapper #container #main #visit').hide()
+      $('html body #wrapper #container #main #top').css('visibility','visible')
+      $.loading()
+      populate($(this).attr('aria-class'))
+  })
   .on('mousedown', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
     function(e) {
@@ -226,7 +238,8 @@ $(document)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
         quick(10)
-        if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
+        if ($('html body #wrapper #container #main .center .quick .feed').length)
+          feed(10)
       }
       $(this).unbind("mousemove")
       e.preventDefault();
@@ -274,8 +287,7 @@ $(document)
                     'html body #wrapper #container #main #visit').show()
                   $('html body #wrapper #container #main .center, ' +
                     'html body #wrapper #container #main .content, ' +
-                    'html body #wrapper #container #main .translation, ' +
-                    'html body #wrapper #container #main #visit #page .quick').remove()
+                    'html body #wrapper #container #main .translation').remove()
                     xml(null, null, mouseAsset)
               }
           }
@@ -569,7 +581,8 @@ $(document)
          'html body #wrapper #container #main .group .air, ' +
          'html body #wrapper #container #main .suggestions, ' +
          'html body #wrapper #container #main .group .result').show()
-      } else if (e.keyCode == 20 || e.keyCode == 34) {
+      }
+      if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
           $('html body #wrapper #container #main #visit #page #front #first .listing .index:first')
             .addClass('hover')
@@ -602,7 +615,7 @@ $(document)
       $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
       $.each(translations, function(i) {
         $('html body #wrapper #container #main #visit #page #front #first .listing').append(
-          "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+          "<div class='index' tabIndex='-1' aria-class='" + translations[i].toLowerCase() + "'>" +
           "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <div class='radial'></div>" +
@@ -664,7 +677,8 @@ $(document)
           'html body #wrapper #container #main .group .air, ' +
           'html body #wrapper #container #main .suggestions, ' +
           'html body #wrapper #container #main .group .result').show()
-      } else if (e.keyCode == 20 || e.keyCode == 34) {
+      }
+      if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #top #arm #search #match .listing .hover').length)
           $('#search .listing .index:first')
             .addClass('hover')
@@ -699,7 +713,7 @@ $(document)
       $.each(translations, function(i) {
         $('html body #wrapper #container #arm #search #match .listing')
           .append(
-            "<div class='index' tabIndex='-1' response='" + translations[i].toLowerCase() + "'>" +
+            "<div class='index' tabIndex='-1' aria-class='" + translations[i].toLowerCase() + "'>" +
             "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "  <div class='radial'></div>" +
@@ -843,10 +857,15 @@ $(document)
         xml(null, null, $.random())
         notify('Switched to now reading ' + category)
       } else {
-        $('html body #wrapper #container #main .result, #main .air, #main .translation, #main .center, #main .content').remove()
-        category = $(this).attr('response')
-        uri = '?q=' + $(this).attr('response')
-        document.title = category.capitalize()
-        uri.define().exit()
+
+        if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
+          category = $(this).attr('aria-class').capitalize()
+          populate($(this).attr('aria-class').capitalize())
+          $.loading()
+        } else {
+          $.loading()
+          category = menu[$(this).attr('aria-item')].cat
+          xml(null, null, $(this).attr('aria-item'))
+        }
       }
   })

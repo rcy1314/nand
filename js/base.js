@@ -1,9 +1,8 @@
-var op = 0
-var first = true
-var reader = false
-var contrast = false
-var imageDupe = true
-var category = 'Social'
+var op = 0 //1 invert, 2 opposite
+var contrast = false //opposite of op
+var imageDupe = false //remove items without pictures (reader)
+var loading = 'dots' //or 'percent'
+var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/'
 var translations =
   ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
@@ -21,7 +20,9 @@ var mouseAsset
 var filter = []
 var object = []
 var stop = false
+var first = true
 var readDupe = []
+var reader = false
 var enableDrag = false
 
 var tag = "<div class='tag' style='display:none'>" +
@@ -48,7 +49,7 @@ var select = function(n) {
   $.each(translations, function(i) {
   $('html body #wrapper #container #main .translation')
     .append(
-      "<div class='select' response='" + translations[i] + "'>" +
+      "<div class='select' aria-class='" + translations[i] + "'>" +
       "  <div class='radial'></div>" +
       "  <img class='type' src='images/" + translations[i] + '.webp' + "'>" +
       "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
@@ -124,7 +125,7 @@ var base = function(n) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #visit #page #front #first .listing').prepend(
-        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
+        "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" +
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().hyphen() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
@@ -156,7 +157,7 @@ var list = function(n) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #top #arm #search #match .listing').prepend(
-        "<div class='index' index='" + menu.indexOf(menu[i]) + "'" +
+        "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" +
         "  tabIndex='-1'" +
         "  response='" + menu[i].id.toLowerCase().hyphen() + "'" +
         "  search='" + menu[i].cat.toLowerCase() + "'>" +
@@ -211,7 +212,7 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
-      "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
+      "<div class='assetTranslation' aria-class='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' " +
       "    class='idTranslation'" +
       "    search='" + translations[i].toLowerCase() + "'> " +
@@ -355,6 +356,7 @@ var air = function(n) {
         "</div>"
       )
   }
+  $.unloading()
   visual()
 }
 
@@ -365,7 +367,7 @@ var response = function(passthrough, uri, n, bloat) {
     if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
       $(document).ready(function() { populate(n.capitalize()) })
-      progress(true, 100)
+      $.unloading()
       return false
     }
   $('html body #wrapper #container #main #visit').show()
@@ -432,7 +434,7 @@ var response = function(passthrough, uri, n, bloat) {
     if (bloat == true) {
       populate(menu[id].cat)
     }
-    progress(true, 100)
+    $.unloading()
 }
 
 var write = function(n) {
@@ -562,10 +564,6 @@ var xml = function(e, s, n) {
   document.title = doc
   doc = '?q=&' + doc.hyphen().toLowerCase()
   doc.state()
-  var complete = setInterval(function() {
-    $('#progressBar').width($('#progressBar').width() +
-      Math.floor(Math.random() * (10 - 5 + 1) + 5))
-  }, 350)
   if (reader == true && first == true){
     $('html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .translation, ' +
@@ -594,9 +592,8 @@ var xml = function(e, s, n) {
       "</div>"
     )
     $('html body #wrapper #container #main .channel').html("This site could not be reached.")
-    clearInterval(complete)
+    $.unloading()
     feed(12)
-    progress(true, 100)
     visual()
   }).done(function(xhr) {
     if ($(xhr).find('entry').length > 0) var channel = "entry"
@@ -808,7 +805,7 @@ var xml = function(e, s, n) {
         "  </div>" +
         "</div>"
       )
-    } else if (reader == false && first == true) {
+    } else if (reader == false) {
       $('html body #wrapper #container #main').append(
       "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +
@@ -894,8 +891,7 @@ var xml = function(e, s, n) {
     feed(40)
     suggest(id)
     select()
-    clearInterval(complete)
-    progress(true, 100)
+    $.unloading()
   })
 
 }

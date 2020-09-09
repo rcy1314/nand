@@ -273,27 +273,27 @@
   100% {left:100%;}
 }
 
-html body #wrapper #container #main #visit #page #handle .fill {
+html body #wrapper #container #main .fill {
   width: 4px;
   height: 4px;
   position: absolute;
   border-radius: 50%;
 }
 
-html body #wrapper #container #main #visit #page #handle .fill {
-  animation: move 2s infinite cubic-bezier(.25,.64,.81,.23);
+html body #wrapper #container #main .fill {
+  animation: move 3s infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main #visit #page #handle .fill:nth-of-type(2) {
-  animation: move 2s 150ms infinite cubic-bezier(.25,.64,.81,.23);
+html body #wrapper #container #main .fill:nth-of-type(2) {
+  animation: move 3s 150ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main #visit #page #handle .fill:nth-of-type(3) {
-  animation: move 2s 300ms infinite cubic-bezier(.25,.64,.81,.23);
+html body #wrapper #container #main .fill:nth-of-type(3) {
+  animation: move 3s 300ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main #visit #page #handle .fill:nth-of-type(4) {
-  animation: move 2s 450ms infinite cubic-bezier(.25,.64,.81,.23);
+html body #wrapper #container #main .fill:nth-of-type(4) {
+  animation: move 3s 450ms infinite cubic-bezier(.25,.64,.81,.23);
 }
-html body #wrapper #container #main #visit #page #handle .fill:nth-of-type(5) {
-  animation: move 2s 600ms infinite cubic-bezier(.25,.64,.81,.23);
+html body #wrapper #container #main .fill:nth-of-type(5) {
+  animation: move 3s 600ms infinite cubic-bezier(.25,.64,.81,.23);
 }
 
 /*

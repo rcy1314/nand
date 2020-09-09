@@ -84,7 +84,7 @@ if (location.search.split('?q=')[1]) {
     .ready(function() {
 
       $('#label').remove()
-      $('.fill').css('visibility','visible')
+      $.loading()
 
   })
 
@@ -98,8 +98,8 @@ if (location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-
             $('#toggle, #label, .focus').css('visibility','visible')
+            $('html body #wrapper #container #main .fill').css('animation','none')
             quick(7)
 
         })
