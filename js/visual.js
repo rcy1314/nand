@@ -27,15 +27,12 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .background, ' +
       'html body #wrapper #container #main .status .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
+      'html body #wrapper #container #main .center .quick, ' +
       'html body #wrapper #container #main .center .quick .feed, ' +
       'html body #wrapper #container #main .center .quick .feed .asset a, ' +
       'html body #wrapper #container #main .status .asset a, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed .asset a').css({
-        'background-color': '#000',
-        'box-shadow': 'none',
-        'border': 'none',
-        'color': '#fff'
-    })
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset a')
+      .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
     $(
       'html body #wrapper #container #guide, ' +
       'html body #wrapper #container #main #top, ' +
@@ -47,11 +44,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .left').css({
-        'background-color': '#0e0e0e',
-        'box-shadow': 'none',
-        'color': '#fff'
-    })
+      'html body #wrapper #container #main .center .quick .left')
+      .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeAlt')
     $(':root').css({
       '--loader-color-primary': '#f7426C',
       '--loader-color-secondary': '#e86d8a'
@@ -90,7 +84,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .populate')
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    $('html body #wrapper #container #main #visit #page #front .focus')
+    $('html body #wrapper #container #main #visit #page #front .focus input[type=text]')
       .removeClass('pageinput pageInputOut').css('box-shadow','none')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
@@ -104,9 +98,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
       .css('filter','hue-rotate(110deg)')
-    $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
-      .addClass('opposite').removeClass('invert')
+
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#fff')
@@ -114,24 +106,38 @@ var visual = function(n) {
     .addClass('contrast.hover').removeClass('visual.hover')
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
-    $('html body #wrapper #container #main #top, ' +
+    $('html body #wrapper #container, ' +
+      'html body #wrapper #container #guide .blur, ' +
+      'html body #wrapper #container #main, ' +
+      'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #top #arm, ' +
-      'html body #wrapper #container #main #notification, ' +
-      'html body #wrapper #container #main #top #arm #option, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+      'html body #wrapper #container #main #visit, ' +
+      'html body #wrapper #container #main #visit #page, ' +
+      'html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
       'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+      'html body #wrapper #container #main .group, ' +
+      'html body #wrapper #container #main .group .air, ' +
+      'html body #wrapper #container #main .group .air .populate, ' +
+      'html body #wrapper #container #main .group .result .filter, ' +
+      'html body #wrapper #container #main .group .result .populate, ' +
+      'html body #wrapper #container #main .group .result, ' +
+      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
+      'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .background, ' +
+      'html body #wrapper #container #main .status .asset, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
+      'html body #wrapper #container #main .center .quick, ' +
       'html body #wrapper #container #main .center .quick .feed, ' +
       'html body #wrapper #container #main .center .quick .feed .asset a, ' +
-      'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .background, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
-      'html body #wrapper #container #guide .sticky .wrap').css({
-        'background-color': '#fff',
-        'border': 'none',
-        'color': '#666666'
-    })
+      'html body #wrapper #container #main .status .asset a, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .asset a')
+      .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
+
     $('html body #wrapper #container #main, ' +
       'html body #wrapper #container #main .status .asset, ' +
       'html body #wrapper #container, ' +
@@ -142,7 +148,6 @@ var visual = function(n) {
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #visit #page, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right, ' +
@@ -154,11 +159,8 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .filter .display .title, ' +
       'html body #wrapper #container #main .group .result .populate .display .title, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset a, ' +
-      'html body #wrapper #container #main #top #arm #search input[type=text]').css({
-        'background-color': '#f7f7f7',
-        'border': 'none',
-        'color': '#666666'
-    })
+      'html body #wrapper #container #main #top #arm #search input[type=text]')
+      .addClass('invertAlt').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
     $(':root').css({
       '--loader-color-primary': '#0078D4',
       '--loader-color-secondary': '#5baff0',
@@ -167,6 +169,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
+      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver oppositeOverBorderless')
@@ -196,7 +199,6 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover')
       .addClass('visual.hover').removeClass('contrast.hover')
-    $('#search input[type=text], .background').css('border', '.3px solid #eaeaea')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
@@ -210,9 +212,6 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .populate, ' +
       'html body #wrapper #container #main .center .feed, ' +
       'html body #wrapper #container #main .center .channel .item').css('border','.3px solid #ddd')
-    $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
-      .addClass('invert').removeClass('opposite')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')
     $('html body #wrapper #container #guide .wrap, ' +

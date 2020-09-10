@@ -207,7 +207,7 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
-  .on('mousedown',
+  .on('touch click',
       'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation',
     function(e) {
       $('html body #wrapper #container #main #visit #page #front .quick')
@@ -242,8 +242,8 @@ $(document)
         if ($('html body #wrapper #container #main .center .quick .feed').length)
           feed(10)
       }
-      $(this).unbind("mousemove")
       e.preventDefault();
+      $(this).unbind("mousemove")
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
@@ -273,6 +273,7 @@ $(document)
                 .scrollLeft(marginLeftStart - delta)
           }
           $(this).unbind("mouseup")
+          e.preventDefault()
   })
   .on('mouseup', document, function(e) {
         if (enableDrag)

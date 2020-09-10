@@ -586,6 +586,7 @@ html body #wrapper #container #main #visit #page #front .focus .button {
   border-radius: 3px;
   height: 39.6px;
   width: 70px;
+  bottom: 2px;
   right: 4px;
 }
 
@@ -951,6 +952,18 @@ html body #wrapper #container #guide .sticky .item {
   width: 100%;
 }
 
+.invert {
+  background-color: #ffffff;
+  color: #666666;
+  border: none;
+}
+
+.invertAlt {
+  background-color: #f7f7f7;
+  color: #666666;
+  border: none;
+}
+
 .invertOver:hover {
   background-color: #f6f8fa !important;
   border: .3px solid #ddd !important;
@@ -971,6 +984,20 @@ html body #wrapper #container #guide .sticky .item {
 .invertOver:not(:hover) {
   border: .3px solid #ffffff;
   background-color: #ffffff;
+}
+
+.opposite {
+  background-color: #000000;
+  box-shadow: none;
+  color: #ffffff;
+  border: none;
+}
+
+.oppositeAlt {
+  background-color: #0e0e0e;
+  box-shadow: none;
+  color: #ffffff;
+  border: none;
 }
 
 .oppositeOver:hover {
