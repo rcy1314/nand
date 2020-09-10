@@ -380,7 +380,6 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #main .center .channel .item .classic .image .img', function(e) {
       if (tap == 0) {
-        alert('ok')
           $this = $(this)
           // set first click
           tap = new Date().getTime();
