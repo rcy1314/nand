@@ -57,6 +57,7 @@ $(document)
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit').show()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
+      document.title = ''
       quick(7)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {

@@ -521,9 +521,9 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover .
 
 html body #wrapper #container #main #visit #page #front .focus {
   background-color: transparent;
-  height: 39.6px !important;
+  height: 39.5px !important;
   white-space: nowrap;
-  padding-right: 60px;
+  padding-right: 75px;
   position: relative;
 }
 
@@ -531,12 +531,12 @@ html body #wrapper #container #main #visit #page #front .focus input[type=text] 
   height: 39.6px !important;
   -webkit-appearance: none;
   caret-color: transparent;
+  width: calc(100%);
   display: inline-block;
   padding-left: 40px;
   position: relative;
   border-radius: 2px;
   text-align: center;
-  width: calc(100%);
   font-size: 18px;
   outline: none;
   bottom: 15px;
@@ -584,10 +584,10 @@ html body #wrapper #container #main #visit #page #front .focus .button {
   display: inline-block;
   position: relative;
   border-radius: 3px;
-  height: 39.6px;
-  width: 70px;
-  bottom: 2px;
+  height: 39.3px;
+  width: 75px;
   right: 4px;
+  bottom: 0;
 }
 
 html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
@@ -595,7 +595,7 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
-  right: 25px;
+  right: 28px;
   top: 10px;
 }
 
@@ -605,6 +605,7 @@ html body #wrapper #container #main #visit #page #front #label .show {
   margin-right: auto;
   margin-left: auto;
   margin-top: 25px;
+  font-size: 14px;
   right: 80px;
   z-index: 2;
   left: 0;
