@@ -84,7 +84,7 @@ var visual = function(n) {
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text]')
-      .removeClass('pageinput pageInputOut')
+      .removeClass('pageInput pageInputOut')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
