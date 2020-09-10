@@ -30,7 +30,6 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick, ' +
       'html body #wrapper #container #main .center .quick .feed, ' +
       'html body #wrapper #container #main .center .quick .feed .asset a, ' +
-      'html body #wrapper #container #main .center .channel .item .classic .header .copy, ' +
       'html body #wrapper #container #main .status .asset a, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset a')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
@@ -117,6 +116,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
+      'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main .group, ' +
@@ -134,7 +134,6 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick, ' +
       'html body #wrapper #container #main .center .quick .feed, ' +
       'html body #wrapper #container #main .center .quick .feed .asset a, ' +
-      'html body #wrapper #container #main .center .channel .item .classic .header .copy, ' +
       'html body #wrapper #container #main .status .asset a, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset a')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
