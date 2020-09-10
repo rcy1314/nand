@@ -85,7 +85,7 @@ var visual = function(n) {
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text]')
-      .removeClass('pageinput pageInputOut').css('box-shadow','none')
+      .removeClass('pageinput pageInputOut')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
@@ -115,7 +115,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
-      'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
@@ -211,15 +210,6 @@ var visual = function(n) {
       .addClass('invertOver').removeClass('oppositeOver')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')
-    $('html body #wrapper #container #guide .wrap, ' +
-      'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #main .center .channel .item, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .left, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .feed .left, ' +
-      'html body #wrapper #container #main .center .quick .feed .right, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed .asset .id').
-      css('box-shadow', '1px 1px 1px #eee')
     $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
   }
