@@ -279,7 +279,6 @@ html body #wrapper #container #main #progressBar {
 
 html body #wrapper #container #toggle {
   background-color: transparent !important;
-  visibility: hidden;
   position: absolute;
   padding: 15px;
   right: 2px;
@@ -525,7 +524,6 @@ html body #wrapper #container #main #visit #page #front .focus {
   height: 39.6px !important;
   white-space: nowrap;
   padding-right: 60px;
-  visibility: hidden;
   position: relative;
 }
 
@@ -598,10 +596,6 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
   position: absolute;
   right: 25px;
   top: 10px;
-}
-
-html body #wrapper #container #main #visit #page #label {
-  visibility: hidden;
 }
 
 html body #wrapper #container #main #visit #page #front #label .show {

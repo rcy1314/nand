@@ -9,10 +9,9 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
       i = -1
       $(document)
         .ready(function() {
-          $('#toggle, #label, .focus').css('visibility','visible')
             quick(7)
+            visual()
       })
-      visual()
     } else {
       contrast = contrast != true
       op = op != true
@@ -34,7 +33,6 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
             $('html body #wrapper #container #main .fill').css('animation','none')
-            $('#toggle, #label, .focus').css('visibility','visible')
             quick(7)
         })
 
@@ -42,15 +40,15 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
-          $.loading()
-
-        $('html body #wrapper #container #main #top').show()
-        response(true,
-                 false,
-                 menu[i].id.space(),
-                 true)
+            $.loading()
+            $('html body #wrapper #container #main #top').show()
+            response(true,
+                     false,
+                     menu[i].id.space(),
+                     true)
 
         })
+
       }
 
 }
@@ -75,22 +73,21 @@ if (location.search.split('?q=')[1]) {
 
   $(document)
     .ready(function() {
-      $('html body #wrapper #container #main #top').show()
+
       $.loading()
-
-
-  setTimeout(function() {
-    if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
-    else if (!uri[1]) response(false, false, uri[0], true)
-    else if (uri[1]) response(true, uri[0], uri[1], false)
-  }, 250)
-})
+      $('html body #wrapper #container #main #top').show()
+      setTimeout(function() {
+        if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
+        else if (!uri[1]) response(false, false, uri[0], true)
+        else if (uri[1]) response(true, uri[0], uri[1], false)
+      }, 250)
+    })
 
 } else if (!location.search.split('?')[1]) {
 
         $(document)
           .ready(function() {
-            $('#toggle, #label, .focus').css('visibility','visible')
+
             $('html body #wrapper #container #main .fill').css('animation','none')
             quick(7)
 

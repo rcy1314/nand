@@ -54,11 +54,6 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
       $.loading()
-      $('html body #wrapper #container #main .group, ' +
-        'html body #wrapper #container #main .center, ' +
-        'html body #wrapper #container #main .content, ' +
-        'html body #wrapper #container #main .translation').remove()
-      $('#toggle, #label, .focus').css('visibility','visible')
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit').show()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
@@ -141,19 +136,11 @@ $(document)
   function(e) {
     var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     $.loading()
-    $('html body #wrapper #container #main .group, ' +
-      'html body #wrapper #container #main .center, ' +
-      'html body #wrapper #container #main .content, ' +
-      'html body #wrapper #container #main .translation').remove()
     xml(null, null, re)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-terminal',
   function(e) {
     $.loading()
-    $('html body #wrapper #container #main .group, ' +
-      'html body #wrapper #container #main .center, ' +
-      'html body #wrapper #container #main .content, ' +
-      'html body #wrapper #container #main .translation').remove()
       xml(null, null, $.random())
   })
   .on('touch click', 'html body #wrapper #container #main .translation .select',
@@ -168,9 +155,6 @@ $(document)
       notify('Switched to now reading ' + category)
     } else {
       $('html body #wrapper #container #main #visit').hide()
-      $('html body #wrapper #container #main .center, ' +
-        'html body #wrapper #container #main .content, ' +
-        'html body #wrapper #container #main .translation').remove()
       $.loading()
       populate($(this).attr('aria-class'))
     }
@@ -180,10 +164,9 @@ $(document)
     'html body #wrapper #container #main .group .result .filter, ' +
     'html body #wrapper #container #main .group .result .populate',
     function(e) {
-      $('html body #wrapper #container #main .group').remove()
+      $.loading()
       $('html body #wrapper #containter #visit').hide()
       xml(null, null, $(this).attr('aria-item'))
-      $.loading()
   })
   .on('mouseenter',
       'html body #wrapper #container #main .group .air .populate, ' +
@@ -301,11 +284,6 @@ $(document)
                   $.loading()
                   $('html body #wrapper #container #main #top').show()
                   $('html body #wrapper #container #visit').hide()
-                  $('html body #wrapper #container #main #top').show()
-                  $('html body #wrapper #container #main .group, ' +
-                    'html body #wrapper #container #main .center, ' +
-                    'html body #wrapper #container #main .content, ' +
-                    'html body #wrapper #container #main .translation').remove()
                     xml(null, null, mouseAsset)
               }
           }
