@@ -33,8 +33,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .status .asset a, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset a')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
-    $(
-      'html body #wrapper #container #guide, ' +
+    $('html body #wrapper #container #guide, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main #top #arm, ' +
@@ -141,6 +140,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main, ' +
       'html body #wrapper #container #main .status .asset, ' +
       'html body #wrapper #container, ' +
+      'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main .group, ' +
       'html body #wrapper #container #main .group .air, ' +
       'html body #wrapper #container #main .group .result, ' +

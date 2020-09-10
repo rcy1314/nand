@@ -307,7 +307,7 @@ var populate = function(n) {
         "</div>"
       )
     for (var i = 1; i <= menu.length - 1; i++) {
-      if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
+      if (n == menu[i].cat)
         $('html body #wrapper #container #main .result').append(
           "<div class='populate'" +
           "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
@@ -487,25 +487,24 @@ var image = function(empty, n, item, src) {
        else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
      } else if ($(this).get(0).naturalWidth < small) {
-         $(this).width('100%').addClass('default').css('margin','10px')
+         $(this).width('100%').css('margin','10px')
            .parents('.item')
            .find('.classic').css({
              'display': 'flex',
              'align-items': 'center'
            }).find('.header, .tag, .addComment').remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
-        $(this).width(140).addClass('default').css('margin','10px')
+        $(this).width(140).css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
             'align-items': 'center'
           }).find('.header, .tag, .addComment').remove()
-     } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).width('40vh')
+     } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
+         $(this).addClass('default').width('40vh')
        else if ($(this).get(0).naturalHeight > k) {
-         $(this).parents('.item').find('.url, .share, .source, .header, .image, .img, .fill')
-                .remove()
-         $(this).remove()
-      } else if ($(this).get(0).naturalWidth > minimum) $(this).width('100%')
+         $(this).parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
+      } else if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
     }
     $('.' + n).find(' .' + item).parents('.item, #guide')
       .find('.image, .img, .pub, .tag, .ago, .addComment').css('display', 'block')

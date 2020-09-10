@@ -246,6 +246,7 @@ $(document)
       }
       e.preventDefault();
       $(this).unbind("mousemove")
+      tap = 0
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
@@ -290,6 +291,7 @@ $(document)
                   $('html body #wrapper #container #visit').hide()
                     xml(null, null, mouseAsset)
               }
+              tap = 0
           }
           e.preventDefault()
   })
@@ -376,20 +378,20 @@ $(document)
       e.stopPropagation()
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .channel .item .image .img', function(e) {
+    'html body #wrapper #container #main .center .channel .item .classic .image .img', function(e) {
       if (tap == 0) {
+        alert('ok')
           $this = $(this)
           // set first click
           tap = new Date().getTime();
-          img = $(this).attr('id')
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
-              if (category == 'Social' &&
-                !$this.hasClass('default')) $this.attr('src').blank()
-              else if ($this.hasClass('default') ||
-                category != 'Social')
+              if (category == 'Social' && $this.hasClass('default')) {
+                $this.attr('src').blank()
+              } else if (!$this.hasClass('default') || category != 'Social') {
                   $this.parents('html body #wrapper #container #main .center .channel .item')
                     .attr('ext').blank()
+              }
             tap = 0
           }, 325)
       } else {
@@ -397,13 +399,12 @@ $(document)
           if (((new Date().getTime()) - tap) < 300) {
               // double click occurred
               $(this)
-                .parents('html body #wrapper #container #main .center .channel .item, ' +
-                  'html body #wrapper #container #guide .sticky')
+                .parents('html body #wrapper #container #main .center .channel .item')
                 .find('.fa-heart, .fa-heart-o')
                 .toggleClass('fa-heart-o fab fa-heart')
               e.stopPropagation()
               visual()
-              tap = 0;
+              tap = 0
           }
       }
       e.stopPropagation()
