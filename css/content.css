@@ -725,7 +725,6 @@ html body #wrapper #container #main #visit #page #front .quick {
 html body #wrapper #container #main .center .quick .feed,
 html body #wrapper #container #main #visit #page #front .quick .feed {
   -webkit-overflow-scrolling: touch;
-  border: .3px solid #ddd;
   scrollbar-width: none;
   position: relative;
   overflow: hidden;
