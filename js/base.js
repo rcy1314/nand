@@ -314,7 +314,9 @@ var populate = function(n) {
           "  <div class='display'>" +
           "    <img class='id' src='" + menu[i].img.image() + "'> " +
           "  </div>" +
-          "    <a class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+          "    <a class='title' ext='" + menu[i].ext +  "'>" +
+                 menu[i].id.match(/[^\/]+$/g) +
+          "    </a>" +
           "</div>"
         )
     }
@@ -334,7 +336,9 @@ var air = function(n) {
         "  <div class='display'>" +
         "  <img class='id' src='" + menu[i].img.image() + "'> " +
         "  </div>" +
-        "    <a class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</a>" +
+        "    <a class='title' ext='" + menu[i].ext +  "'>" +
+               menu[i].id.match(/[^\/]+$/g) +
+        "    </a>" +
         "</div>"
       )
   }
@@ -432,7 +436,9 @@ var write = function(n) {
       "  <div class='display'>" +
       "  <img class='id' src='" + menu[n].img.image() + "'> " +
       "  </div>" +
-      "    <a title='" + menu[n].id + "'>" + menu[n].id.match(/[^\/]+$/g) + "</a>" +
+      "    <a class='title' ext='" + menu[n].ext +  "'>" +
+             menu[n].id.match(/[^\/]+$/g) +
+      "    </a>" +
       "</div>"
     )
   })
