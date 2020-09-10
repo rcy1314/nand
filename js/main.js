@@ -500,11 +500,11 @@ $(document)
         if (location.href.match('\\+1'))
           var query = uri[0].replace(/\+1/g, '').space()
         else var query = uri[0].space()
-      }
         response(false,
                  false,
                  query,
                  true)
+      } else populate(category)
     })
   .on('touch click', 'html body #wrapper #container #main .center #bottom .back, ' +
       'html body #wrapper #container #main .center #bottom .next, ' +
