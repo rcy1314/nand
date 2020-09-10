@@ -36,6 +36,7 @@ var visual = function(n) {
     $('html body #wrapper #container #guide, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #notification, ' +
+      'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #top #arm, ' +
       'html body #wrapper #container #main #top #arm #search #home a, ' +
       'html body #wrapper #container #main #top #arm #option, ' +
@@ -106,7 +107,7 @@ var visual = function(n) {
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
     $('html body #wrapper #container, ' +
-      'html body #wrapper #container #guide .blur, ' +
+      'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #top #arm, ' +

@@ -483,7 +483,7 @@ var image = function(empty, n, item, src) {
       $('.sticky, .checkmark').show()
       $('html body #wrapper #container #main').addClass('guide')
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
-         $(this).css('max-width', '80vh')
+         $(this).css('max-height', '90vh')
        else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
          $(this).css('max-width', '100%').parents('.sticky').width('90%')
      } else if ($(this).get(0).naturalWidth < small) {

@@ -44,11 +44,11 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
           .ready(function() {
             $.loading()
             $('html body #wrapper #container #main #visit').hide()
-            $('html body #wrapper #container #main #top').show()
+            $('html body #wrapper #container #main #top').hide()
             response(true,
                      false,
                      menu[i].id.space(),
-                     true)
+                     false)
 
         })
 
