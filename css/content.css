@@ -473,10 +473,10 @@ html body #wrapper #container #main #visit #page #front #first {
 
 html body #wrapper #container #main #visit #page #front #first .listing {
   background-color: transparent;
-  width: calc(100% + 10px);
   border-radius: 4px;
   position: relative;
   padding-top: 11px;
+  width: calc(100%);
   overflow-y: auto;
   text-align: left;
   height: 440px;
