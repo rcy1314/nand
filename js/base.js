@@ -329,7 +329,7 @@ var air = function(n) {
   $(document).ready(function () {
   $('html body #wrapper #container #main .result').before("<div class='air' style='display:none'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
-    if (id != menu.indexOf(menu[i]) && category == menu[i].cat)
+    if (category == menu[i].cat)
       $('html body #wrapper #container #main .air').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
