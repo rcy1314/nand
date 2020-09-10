@@ -973,6 +973,10 @@ html body #wrapper #container #guide .sticky .item {
   background-color: #f6f8fa !important;
 }
 
+.invertOver:hover .img {
+  filter: brightness(0.97);
+}
+
 .invertOverBorderless:hover {
   background-color: #f2f2f2 !important;
 }
@@ -1007,6 +1011,10 @@ html body #wrapper #container #guide .sticky .item {
 
 .oppositeOver:hover .classic {
   background-color: #0e0e0e !important;
+}
+
+.oppositeOver:hover .img {
+  filter: brightness(.75);
 }
 
 .oppositeOverBorderless:hover {
