@@ -1,6 +1,6 @@
 var op = 0 //1 invert, 2 opposite
 var contrast = false //opposite of op
-var imageDupe = false //remove items without pictures (reader)
+var imageDupe = true //remove items without pictures ($.random())
 var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -517,7 +517,7 @@ var image = function(empty, n, item, src) {
     .parents('.' + n).find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
-  else if (empty == true || imageDupe == true){
+  else if (empty == true){
     $('.' + n).find(' .' + item).parents('.item').remove()
   } else {
     $('.' + n).find(' .' + item).parents('.item')
