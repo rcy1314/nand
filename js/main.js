@@ -207,6 +207,20 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
+  .on('touch click',
+      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation',
+    function(e) {
+      $('html body #wrapper #container #main #visit #page #front .quick')
+        .addClass('invisible').removeClass('visible')
+      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
+      $('html body #wrapper #container #main #visit #page #front .show')
+        .removeClass('invisible').addClass('visible')
+      $('html body #wrapper #container #main #visit').hide()
+      $('html body #wrapper #container #main #top').show()
+      $.loading()
+      populate($(this).attr('aria-class'))
+  })
   .on('mousedown', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
