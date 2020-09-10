@@ -307,7 +307,7 @@ var populate = function(n) {
         "</div>"
       )
     for (var i = 1; i <= menu.length - 1; i++) {
-      if (n == menu[i].cat)
+      if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
         $('html body #wrapper #container #main .result').append(
           "<div class='populate'" +
           "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
@@ -539,6 +539,7 @@ var xml = function(e, s, n) {
   } else uri = cors + menu[n].uri
   var doc = menu[n].id.space().capitalize()
   document.title = doc
+  $('html body #wrapper #container #main #visit').hide()
   if (reader == true && first == true){
     $('html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .translation, ' +

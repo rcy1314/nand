@@ -53,6 +53,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
+      id = 0
       $.loading()
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit').show()

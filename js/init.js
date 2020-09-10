@@ -32,7 +32,9 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
         $(document)
           .ready(function() {
+            $('html body #wrapper #container #main #front').css('visibility','visible')
             $('html body #wrapper #container #main .fill').css('animation','none')
+            $('html body #wrapper #container #main #visit').hide()
             quick(7)
         })
 
@@ -41,6 +43,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
             $.loading()
+            $('html body #wrapper #container #main #visit').hide()
             $('html body #wrapper #container #main #top').show()
             response(true,
                      false,
@@ -75,8 +78,8 @@ if (location.search.split('?q=')[1]) {
     .ready(function() {
 
       $.loading()
-      $('html body #wrapper #container #main #top').show()
       setTimeout(function() {
+        $('html body #wrapper #container #main #top').show()
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(false, false, uri[0], true)
         else if (uri[1]) response(true, uri[0], uri[1], false)
@@ -88,6 +91,7 @@ if (location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
 
+            $('html body #wrapper #container #main #front').css('visibility','visible')
             $('html body #wrapper #container #main .fill').css('animation','none')
             quick(7)
 
