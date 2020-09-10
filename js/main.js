@@ -60,7 +60,8 @@ $(document)
         'html body #wrapper #container #main .translation').remove()
       $('#toggle, #label, .focus').css('visibility','visible')
       $('html body #wrapper #container #main #top').hide()
-      $('html body #wrapper #container #visit, #front').show()
+      $('html body #wrapper #container #visit').show()
+      $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
       quick(7)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
@@ -513,10 +514,16 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main .center #bottom .bottom',
     function(e) {
       $.loading()
+      if (location.href.match('\\?q=')) {
+        var uri = location.search.split('?q=')[1].match(/[^&]+/g)
+        if (location.href.match('\\+1'))
+          var query = uri[0].replace(/\+1/g, '').space()
+        else var query = uri[0].space()
+      }
         response(false,
                  false,
-                 category,
-                 false)
+                 query,
+                 true)
     })
   .on('touch click', 'html body #wrapper #container #main .center #bottom .back, ' +
       'html body #wrapper #container #main .center #bottom .next, ' +
@@ -778,8 +785,6 @@ $(document)
     visual()
   })
   .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
-    $('html body #wrapper #container #main #visit #page #front .icon, #main #visit #page .button')
-      .css('visibility','hidden')
       if ($('html body #wrapper #container #main #visit #page #front .listing .hover').length) {
         if ($('html body #wrapper #container #main #visit #page #front .listing .hover').is('[aria-class]') &&
               $.inArray($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize(), translations) > -1){

@@ -54,7 +54,7 @@ $.unloading = function() {
       clearInterval(complete)
       progress(true, 100)
     }
-  }, 550)
+  }, 400)
 }
 
 String.prototype.space = function() {
