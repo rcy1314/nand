@@ -304,9 +304,7 @@ $(document)
         feed(10)
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .quick .right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .right, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-right',
     function(e) {
         console.log($('html body #wrapper #container #main .quick .feed').scrollLeft())
@@ -314,13 +312,46 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 639
+            scrollLeft: leftPos + 892
           }, 'fast')
-          if (leftPos >= $(this).parents('html body #wrapper #container #main .quick')
-                           .find('.feed')[0]
-                .scrollWidth - $(this).parents('html body #wrapper #container #main .quick')
-                               .find('.feed').width() - 639)
-              $(this).hide()
+        if ($(this).parents('html body #wrapper #container #main .quick')
+              .find('.feed')
+          .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
+                                .find('.left').show()
+        quick(10)
+  })
+  .on('touch click',
+    'html body #wrapper #container #main #visit #page #front .quick .left, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-left',
+    function(e) {
+        var leftPos = $(this).parents('html body #wrapper #container #main .quick')
+                        .find('.feed').scrollLeft()
+        $(this).parents('html body #wrapper #container #main .quick')
+          .find('.feed').animate({
+            scrollLeft: leftPos - 892
+          }, 'slow')
+        if ($(this).parents('html body #wrapper #container #main .quick')
+              .find('.feed')
+          .scrollLeft() <= 892) {
+            $(this).parents('html body #wrapper #container #main .quick')
+              .find('.left').hide()
+            $(this).parents('html body #wrapper #container #main .quick')
+              .find('.right, .fa-angle-right').show()
+        }
+        else $(this).parents('html body #wrapper #container #main .quick')
+               .find('.left').show()
+  })
+  .on('touch click',
+    'html body #wrapper #container #main .center .quick .right, ' +
+    'html body #wrapper #container #main .center .quick .fa-angle-right',
+    function(e) {
+        console.log($('html body #wrapper #container #main .quick .feed').scrollLeft())
+        var leftPos = $(this).parents('html body #wrapper #container #main .quick')
+                        .find('.feed').scrollLeft()
+        $(this).parents('html body #wrapper #container #main .quick')
+          .find('.feed').animate({
+            scrollLeft: leftPos + 655
+          }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
           .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
@@ -330,24 +361,22 @@ $(document)
            for (i = 0; i < 10; i++)
              $(this).parents('html body #wrapper #container #main .quick .feed')
                .find('.asset:first').empty()
-           quick(10)
+           feed(10)
            if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
   })
   .on('touch click',
     'html body #wrapper #container #main .center .quick .left, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .left, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-left, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-left',
+    'html body #wrapper #container #main .center .quick .fa-angle-left',
     function(e) {
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 639
+            scrollLeft: leftPos - 655
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
-          .scrollLeft() <= 639) {
+          .scrollLeft() <= 655) {
             $(this).parents('html body #wrapper #container #main .quick')
               .find('.left').hide()
             $(this).parents('html body #wrapper #container #main .quick')
