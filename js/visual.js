@@ -84,6 +84,8 @@ var visual = function(n) {
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus')
       .removeClass('pageInput pageInputOut')
+    $('html body #wrapper #container #main .content .suggestions .combine .suggest a, ' +
+      'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
@@ -185,7 +187,9 @@ var visual = function(n) {
       'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
       'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
-      $('html body #wrapper #container #main #visit #page #front .focus')
+    $('html body #wrapper #container #main .content .suggestions .combine .suggest a').css('color','steelblue')
+    $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
+    $('html body #wrapper #container #main #visit #page #front .focus')
         .addClass('pageInput pageInputOut')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +

@@ -384,7 +384,6 @@ html body #wrapper #container #main #top #arm #search #home {
   font-size: 36px;
   cursor: pointer;
   height: 40px;
-  left: 50px;
   top: 5px;
 }
 
@@ -566,7 +565,7 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   color: #aaa !important;
   position: absolute;
   margin-top: 2px;
-  left: 100px;
+  left: 80px;
   z-index: 2;
   top: 10px;
 }
@@ -689,7 +688,7 @@ html body #wrapper #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: none;
-  width: 18em;
+  width: 15.5em;
   top: .4em;
 }
 
@@ -709,8 +708,8 @@ html body #wrapper #container #main #top #arm #search #match {
   width: fit-content;
   position: relative;
   margin: 0 auto;
+  height: 25.5em;
   display: none;
-  height: 28em;
   top: 7px;
 }
 
@@ -1132,7 +1131,6 @@ html body #wrapper #container #main .center .item .addComment .comment::placehol
 html body #wrapper #container #main .center .item .addComment .post {
   margin-right: 10px;
   position: relative;
-  color: dodgerblue;
   font-size: 12px;
   float: right;
   top: -27px;
@@ -1228,11 +1226,12 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
+  margin-left: 45px;
   text-align: left;
   position: sticky;
   font-size: 10px;
   padding: 15px;
-  width: 260px;
+  width: 320px;
   top: 60px;
 }
 
@@ -1243,7 +1242,7 @@ html body #wrapper #container #main .content .status {
   font-size: 10px;
   height: 120px;
   display: flex;
-  width: 280px;
+  width: 300px;
 }
 
 html body #wrapper #container #main .content .status .info {
@@ -1272,7 +1271,7 @@ html body #wrapper #container #main .content .suggestions {
   font-size: 10px;
   padding: 15px;
   width: 260px;
-  top: 35px;
+  top: 75px;
 }
 
 html body #wrapper #container #main .content .suggestions .radial {
@@ -1307,7 +1306,6 @@ html body #wrapper #container #main .content .suggestions .combine .suggest {
 
 html body #wrapper #container #main .content .suggestions .combine .suggest a {
   font-weight: bold;
-  color: steelblue;
 }
 
 html body #wrapper #container #main .content .suggestions .combine div {
