@@ -55,6 +55,7 @@ $(document)
     function(e) {
       id = 0
       $.loading()
+      location.pathname.state()
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #visit').show()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
@@ -112,8 +113,9 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {
-    $('html body #wrapper #container #main #visit').hide()
     $.loading()
+    location.pathname.state()
+    $('html body #wrapper #container #main #visit').hide()
     populate(category)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-sun',
