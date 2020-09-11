@@ -433,7 +433,13 @@ html body #wrapper #container #main #visit {
 html body #wrapper #container #main #visit #page #handle {
   position: relative;
   margin: 0 auto;
+  height: 250px;
   width: 100%;
+}
+
+html body #wrapper #container #main #visit #page #handle #placeholder {
+  position: relative;
+  height: 250px;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
@@ -1126,7 +1132,7 @@ html body #wrapper #container #main .center .item .addComment .comment::placehol
 html body #wrapper #container #main .center .item .addComment .post {
   margin-right: 10px;
   position: relative;
-  color: lightcyan;
+  color: dodgerblue;
   font-size: 12px;
   float: right;
   top: -27px;
@@ -1226,7 +1232,7 @@ html body #wrapper #container #main .content {
   position: sticky;
   font-size: 10px;
   padding: 15px;
-  width: 190px;
+  width: 260px;
   top: 60px;
 }
 
@@ -1237,7 +1243,11 @@ html body #wrapper #container #main .content .status {
   font-size: 10px;
   height: 120px;
   display: flex;
-  width: 190px;
+  width: 280px;
+}
+
+html body #wrapper #container #main .content .status .info {
+  width: 100%;
 }
 
 html body #wrapper #container #main .content .status .info,
@@ -1261,7 +1271,7 @@ html body #wrapper #container #main .content .suggestions {
   text-align: left;
   font-size: 10px;
   padding: 15px;
-  width: 180px;
+  width: 260px;
   top: 35px;
 }
 
@@ -1282,9 +1292,22 @@ html body #wrapper #container #main .content .suggestions .id {
 
 html body #wrapper #container #main .content .suggestions .combine {
   align-items: center;
+  padding-left: 15px;
   display: flex;
   width: 100%;
   margin: 3px;
+}
+
+html body #wrapper #container #main .content .suggestions .combine .suggest {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
+html body #wrapper #container #main .content .suggestions .combine .suggest a {
+  font-weight: bold;
+  color: steelblue;
 }
 
 html body #wrapper #container #main .content .suggestions .combine div {

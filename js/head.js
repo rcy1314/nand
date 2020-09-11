@@ -4295,7 +4295,7 @@ var menu = [
 		cat: "Youtube",
 		des: "Andoid Authority Youtube Your source for all things Android.",
 		uri: "https://www.youtube.com/feeds/videos.xml?user=AndroidAuthority",
-		ext: "https://www.youtube.com/user/AndroidAuthrotiy",
+		ext: "https://www.youtube.com/user/AndroidAuthority",
 		img: "AndroidAuthority",
 		hash: "yA",
 		media: true

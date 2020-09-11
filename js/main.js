@@ -542,6 +542,10 @@ $(document)
         $.loading()
         xml(null, null, $(this).attr('aria-item'))
   })
+  .on('touch click', 'html body #wrapper #container #main .content .suggestions .combine a', function(e) {
+        $.loading()
+        populate($(this).attr('aria-item'))
+ })
   .on('mouseenter',
     'html body #wrapper #container #main #visit #page #front .focus .button, ' +
     'html body #wrapper #container #main #visit #page #front .focus input[type=text]',

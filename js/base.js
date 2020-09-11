@@ -94,10 +94,10 @@ var content  = function(n, recent, oldest, posts) {
       "  <a ext='" + menu[n].ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
       "  </a>" +
       "  <br>" +
-      "  <b>Most recent</b> " + recent +"<br>" +
-      "  <b>Oldest post </b> " + oldest + "<br>" +
-      "  <b>Images</b> <div class='images'>" + count + "</div><br>" +
-      "  <b>Posts</b> " + posts +
+      "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
+      "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
+      "  <b>Images</b>&ensp;<div class='images'>" + count + "</div><br>" +
+      "  <b>Posts</b>&ensp;" + posts +
       "</div>"
     )
 
@@ -264,10 +264,13 @@ var suggest = function(n) {
         "<div class='combine'>" +
         "  <div class='radial'></div>" +
         "  <img src='" + menu[e].img.image() + "' " +
-        "    class='id " + menu.indexOf(menu[n]) + "'>" +
-        "  <div aria-item='" + menu.indexOf(menu[e]) + "'>" +
-             menu[e].id.match(/[^\/]+$/g) +
-        "    <br>" + "<b>" + menu[e].cat + "</b>" +
+        "    class='id'>" +
+        "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
+        "    title='" + menu[e].id + "'><b>" +
+             String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
+        "    <div style='float:right'><a aria-item='" + menu[e].cat + "'>" +
+               menu[e].cat + "</a>" +
+        "    </div>" +
         "  </div>" +
         "</div>"
       )
@@ -758,7 +761,7 @@ var xml = function(e, s, n) {
         "<div class='content' style='visibility:hidden'>" +
         "  <div class='status'></div>" +
         "  <div class='suggestions'>" +
-        "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
+        "    <b>suggested</b>&ensp;...<br>" +
         "  </div>" +
         "</div>"
       )
@@ -777,7 +780,7 @@ var xml = function(e, s, n) {
         "<div class='content' style='visibility:hidden'>" +
         "  <div class='status'></div>" +
         "  <div class='suggestions'>" +
-        "    <b>suggested</b>&ensp;for you&ensp;...<br>" +
+        "    <b>suggested</b>&ensp;...<br>" +
         "  </div>" +
         "</div>"
       )
