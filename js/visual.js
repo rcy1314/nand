@@ -69,8 +69,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial, ' +
-      'html body #wrapper #container #main .translation .select .radial')
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
       .removeClass('selectInvert').addClass('selectOpposite')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
       'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
@@ -90,8 +89,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .removeClass('visual').addClass('contrast')
-    $('html body #wrapper #container #main .translation .select .type, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
+    $('html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
@@ -179,8 +177,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial, ' +
-      'html body #wrapper #container #main .translation .select .radial')
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
       .removeClass('selectOpposite').addClass('selectInvert')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
       'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
@@ -188,8 +185,7 @@ var visual = function(n) {
       .removeClass('feedOpposite').addClass('feedInvert')
       $('html body #wrapper #container #main #visit #page #front .focus')
         .addClass('pageInput pageInputOut')
-    $('html body #wrapper #container #main .translation .select .type, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
+    $('html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +

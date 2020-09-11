@@ -35,18 +35,22 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link, ' +
     'html body #wrapper #container #main #visit #page #front #label .show',
     function(e) {
+      nextAngle += 180
+      if (nextAngle >= 360) nextAngle = 0
       if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')
         $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
+        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('visible').addClass('invisible')
       } else {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('invisible').removeClass('visible')
         $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
+        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('invisible').addClass('visible')
       }
@@ -153,23 +157,6 @@ $(document)
   function(e) {
     $.loading()
       xml(null, null, $.random())
-  })
-  .on('touch click', 'html body #wrapper #container #main .translation .select',
-  function(e) {
-    id = 0
-    if (reader == true) {
-      readDupe = []
-      $('html body #wrapper #container #main .channel').empty()
-      category = $(this).attr('response')
-      first = false
-      xml(null, null, $.random())
-      notify('Switched to now reading ' + category)
-    } else {
-      $.loading()
-      location.pathname.state()
-      $('html body #wrapper #container #main #visit').hide()
-      populate($(this).attr('aria-item'))
-    }
   })
   .on('touch click',
     'html body #wrapper #container #main .group .air .populate, ' +
@@ -319,8 +306,8 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #main .center .quick .right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .right, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-double-right, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right',
+    'html body #wrapper #container #main .center .quick .fa-angle-right, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-right',
     function(e) {
         console.log($('html body #wrapper #container #main .quick .feed').scrollLeft())
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
@@ -349,8 +336,8 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #main .center .quick .left, ' +
     'html body #wrapper #container #main #visit #page #front .quick .left, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-double-left, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left',
+    'html body #wrapper #container #main .center .quick .fa-angle-left, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-left',
     function(e) {
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
@@ -364,7 +351,7 @@ $(document)
             $(this).parents('html body #wrapper #container #main .quick')
               .find('.left').hide()
             $(this).parents('html body #wrapper #container #main .quick')
-              .find('.right, .fa-angle-double-right').show()
+              .find('.right, .fa-angle-right').show()
         }
         else $(this).parents('html body #wrapper #container #main .quick')
                .find('.left').show()
@@ -741,7 +728,7 @@ $(document)
       }).val('Search')
   })
   .on('submit', 'html body #wrapper #container #top #arm #search', function(e) {
-    $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content, #main .translation').remove()
+    $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content').remove()
     $('html body #wrapper #container #arm #search #match').hide()
     if ($('html body #wrapper #container #arm #search .listing .hover').length) {
       if ($('html body #wrapper #container #arm #search .listing .hover').is('[aria-item]') &&

@@ -147,16 +147,16 @@ html body #wrapper #container #main .center .channel .item .classic .wrap .tag .
   margin-right: 5px;
 }
 
-html body #wrapper #container #main .center .quick .fa-angle-double-left:before,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left:before {
+html body #wrapper #container #main .center .quick .fa-angle-left:before,
+html body #wrapper #container #main #visit #page #front .quick .fa-angle-left:before {
   font-family: "Font Awesome 5 Pro";
-  content: "\f100";
+  content: "\f104";
 }
 
-html body #wrapper #container #main .center .quick .fa-angle-double-right:before,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right:before {
+html body #wrapper #container #main .center .quick .fa-angle-right:before,
+html body #wrapper #container #main #visit #page #front .quick .fa-angle-right:before {
   font-family: "Font Awesome 5 Pro";
-  content: "\f101";
+  content: "\f105";
 }
 
 html body #wrapper #container #top #arm #search #input .icon .fa-search:before,
@@ -198,7 +198,6 @@ input {
 }
 
 html body #wrapper #container #toggle,
-html body #wrapper #container #main .translation .select,
 html body #wrapper #container #main .group .air .populate,
 html body #wrapper #container #main .group .result .filter,
 html body #wrapper #container #main .group .result .populate,
@@ -213,12 +212,12 @@ html body #wrapper #container #main #top #arm #search #match .listing .index,
 html body #wrapper #container #main #top #arm #search #match .listing .hover,
 html body #wrapper #container #main .center .right,
 html body #wrapper #container #main #visit #page #front .quick .right,
-html body #wrapper #container #main .center .quick .fa-angle-double-right,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-right,
+html body #wrapper #container #main .center .quick .fa-angle-right,
+html body #wrapper #container #main #visit #page #front .quick .fa-angle-right,
 html body #wrapper #container #main .center .quick .left,
 html body #wrapper #container #main #visit #page #front .quick .left,
-html body #wrapper #container #main .center .quick .fa-angle-double-left,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-double-left,
+html body #wrapper #container #main .center .quick .fa-angle-left,
+html body #wrapper #container #main #visit #page #front .quick .fa-angle-left,
 html body #wrapper #container #main .center .quick .feed,
 html body #wrapper #container #main #visit #page #front .quick .feed,
 html body #wrapper #container #main #top #arm #search #home,
@@ -481,7 +480,7 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   overflow-y: auto;
   text-align: left;
   height: 440px;
-  bottom: 5px;
+  bottom: 46px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .radial,
@@ -492,7 +491,6 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover .
   left: -2px;
 }
 
-html body #wrapper #container #main .translation .select .type,
 html body #wrapper #container #main #top #arm #search #match .listing .index .type,
 html body #wrapper #container #main #top #arm #search #match .listing .hover .type,
 html body #wrapper #container #main #visit #page #front #first .listing .index .type,
@@ -602,14 +600,11 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
 
 html body #wrapper #container #main #visit #page #front #label .show {
   display: inline-block;
-  position: absolute;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
+  margin: 0 auto;
   margin-top: 25px;
   font-size: 14px;
-  right: 80px;
   z-index: 2;
-  left: 0;
 }
 
 html body #wrapper #container #main #visit #page #front #label .link {
@@ -773,6 +768,7 @@ html body #wrapper #container #main #visit #page #front .quick .feed .assetTrans
   flex-shrink: 0;
 }
 
+html body #wrapper #container #main .content .status img,
 html body #wrapper #container #main .center .quick .feed .asset img,
 html body #wrapper #container #main #visit #page #front .quick .feed img,
 html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation img {
@@ -813,7 +809,7 @@ html body #wrapper #container #main #visit #page #front .quick .right {
   height: 24px;
   width: 24px;
   z-index: 7;
-  top: 55px;
+  top: 40px;
 }
 
 html body #wrapper #container #main .center .quick .left {
@@ -840,7 +836,7 @@ html body #wrapper #container #main #visit #page #front .quick .left {
   width: 24px;
   left: -24px;
   z-index: 7;
-  top: 55px;
+  top: 40px;
 }
 
 .id,
@@ -1217,50 +1213,16 @@ html body #wrapper #container #main .center {
   display: inline-block;
   position: relative;
   text-align: left;
-  left: 10px;
   top: 60px;
-}
-
-html body #wrapper #container #main .translation {
-  background-color: transparent;
-  display: inline-block;
-  height: fit-content;
-  vertical-align: top;
-  margin-left: -10px;
-  text-align: left;
-  position: sticky;
-  font-size: 10px;
-  padding: 5px;
-  width: 120px;
-  left: -120px;
-  top: 230px;
-}
-
-html body #wrapper #container #main .translation .select {
-  padding-bottom: 15px;
-  position: relative;
-  padding-top: 15px;
-  font-size: 12px;
-  height: 2.5em;
-  width: 100%;
-}
-
-html body #wrapper #container #main .translation .select .radial {
-  position: absolute;
-  border-radius: 36px;
-  height: 42px;
-  bottom: 8px;
-  width: 42px;
-  left: -2px;
 }
 
 html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
+  margin-left: 10px;
   text-align: left;
   position: sticky;
-  margin-left: 5px;
   font-size: 10px;
   padding: 15px;
   width: 190px;
@@ -1290,13 +1252,6 @@ html body #wrapper #container #main .content .status .asset .radial {
   width: 56px;
   left: 9.5px;
   top: 10px;
-}
-
-html body #wrapper #container #main .content .status img {
-  position: relative;
-  width: 54px;
-  height: 53px;
-  left: -.25px;
 }
 
 html body #wrapper #container #main .content .suggestions {

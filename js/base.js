@@ -16,6 +16,7 @@ var posts
 var images
 var tap = 0
 var complete
+nextAngle = 0
 var array = []
 var mouseAsset
 var filter = []
@@ -43,23 +44,6 @@ var notify = function(n) {
       bottom: '-200px'
     }, 1000)
   }, 2500)
-}
-
-var select = function(n) {
-
-  $.each(translations, function(i) {
-  $('html body #wrapper #container #main .translation')
-    .append(
-      "<div class='select' aria-item='" + translations[i] + "'>" +
-      "  <div class='radial'></div>" +
-      "  <img class='type' src='images/" + translations[i] + '.webp' + "'>" +
-      "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-      "    <br>&emsp;" + translations[i].grep() + " feeds" +
-      "  </div>" +
-      "</div>"
-    )
-  })
-
 }
 
 var guide = function(n, re, element, courtesy, title, dst, share, src) {
@@ -212,7 +196,6 @@ var quick  = function(n) {
       "  </a>" +
       "</div>"
    )
-   $.unloading()
   }
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
@@ -243,7 +226,6 @@ var progress = function(complete, n) {
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
           $(this).removeClass('response').width(0)
-          $('html body #wrapper #container #main .translation').css('visibility', 'visible')
           $('html body #wrapper #container #main .content').css('visibility', 'visible')
           $('html body #wrapper #container #main .result').show()
           $('html body #wrapper #container #main .center').show()
@@ -541,7 +523,6 @@ var xml = function(e, s, n) {
   $('html body #wrapper #container #main #visit').hide()
   if (reader == true && first == true){
     $('html body #wrapper #container #main .center, ' +
-      'html body #wrapper #container #main .translation, ' +
       'html body #wrapper #container #main .content, ' +
       'html body #wrapper #container #main .group').remove()
   }
@@ -560,8 +541,8 @@ var xml = function(e, s, n) {
       "<div class='center' style='display:none'>" +
       "  <div class='quick'>" +
       "    <div class='feed'></div>" +
-      "    <div class='left fa-angle-double-left' style='display:none'></div>" +
-      "    <div class='right fa-angle-double-right'></div>" +
+      "    <div class='left fa-angle-left' style='display:none'></div>" +
+      "    <div class='right fa-angle-right'></div>" +
       "  </div>" +
       "  <div class='channel'></div>" +
       "</div>"
@@ -630,7 +611,7 @@ var xml = function(e, s, n) {
       else var search = menu[n].cat.toLowerCase()
       var share = menu[n].hash
       if (gen) var ts = (gen).toString(36)
-      if (ts) var share = window.location.origin + '/?' + share + ts
+      if (ts) var share = location.pathname + '/?' + share + ts
       if ($(this).find('content').text()
       .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) {
         src = String($(this).find('content').text()
@@ -764,13 +745,12 @@ var xml = function(e, s, n) {
     })
     if (reader == true && first == true) {
       $('html body #wrapper #container #main').append(
-      "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +
         "  <div class='quick'>" +
         "    <div class='left' style='display:none'>" +
-        "      <div class='fa-angle-double-left'></div></div>" +
+        "      <div class='fa-angle-left'></div></div>" +
         "    <div class='right'>" +
-        "      <div class='fa-angle-double-right'></div></div>" +
+        "      <div class='fa-angle-right'></div></div>" +
         "    <div class='feed'></div>" +
         "  </div>" +
         "  <div class='channel'></div>" +
@@ -784,13 +764,12 @@ var xml = function(e, s, n) {
       )
     } else if (reader == false && first == true) {
       $('html body #wrapper #container #main').append(
-      "<div class='translation' style='visibility:hidden'></div>" +
         "<div class='center' style='display:none'>" +
         "  <div class='quick'>" +
         "    <div class='left' style='display:none'>" +
-        "      <div class='fa-angle-double-left'></div></div>" +
+        "      <div class='fa-angle-left'></div></div>" +
         "    <div class='right'>" +
-        "      <div class='fa-angle-double-right'></div></div>" +
+        "      <div class='fa-angle-right'></div></div>" +
         "    <div class='feed'></div>" +
         "  </div>" +
         "  <div class='channel'></div>" +
@@ -857,7 +836,6 @@ var xml = function(e, s, n) {
       }
     } else {
       $('html body #wrapper #container #main .status, ' +
-        'html body #wrapper #container #main .translation, ' +
         'html body #wrapper #container #main .suggestions').empty()
       if ($.active <= 1){
         first = true
@@ -868,7 +846,6 @@ var xml = function(e, s, n) {
     content(n, recent, oldest, posts)
     feed(40)
     suggest(id)
-    select()
     $.unloading()
   })
 
