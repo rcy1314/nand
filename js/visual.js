@@ -167,7 +167,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
-      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
+      'html body #wrapper #container #main .center .quick .right, ' +
+      'html body #wrapper #container #main .center .quick .left, ' +
+    'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver, oppositeOverBorderless')

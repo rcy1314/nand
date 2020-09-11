@@ -182,11 +182,11 @@
   }
 
   html body #wrapper #container #main #top #arm {
-    width: 999px !important;
+    width: 978px !important;
   }
 
   html body #wrapper #container #main .center {
-    width: 655px !important;
+    width: 639px !important;
   }
 
   html body #wrapper #container #main .group .air,
@@ -210,7 +210,7 @@
       width: 892px !important;
       left: -86px;
       z-index: 3;
-      top: 40px;
+      top: 0;
   }
 
 }
