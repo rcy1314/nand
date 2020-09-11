@@ -103,7 +103,6 @@ var content  = function(n, recent, oldest, posts) {
     });
     $('html body #wrapper #container #main .status').append(
       "<div class='asset' aria-item='" + menu.indexOf(menu[n]) + "'>" +
-      "  <div class='radial'></div>" +
       "  <img src='" + menu[n].img.image() + "'" +
       "  class='id " + menu.indexOf(menu[n]) + "'>" +
       "</div>" +

@@ -74,8 +74,7 @@ var visual = function(n) {
       .removeClass('selectInvert').addClass('selectOpposite')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
       'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
-      'html body #wrapper #container #main .center .quick .feed .radial, ' +
-      'html body #wrapper #container #main .content .status .radial')
+      'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedInvert').addClass('feedOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
@@ -84,7 +83,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .populate')
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
-    $('html body #wrapper #container #main #visit #page #front .focus input[type=text]')
+    $('html body #wrapper #container #main #visit #page #front .focus')
       .removeClass('pageInput pageInputOut')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
@@ -185,9 +184,10 @@ var visual = function(n) {
       .removeClass('selectOpposite').addClass('selectInvert')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
       'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
-      'html body #wrapper #container #main .center .quick .feed .radial, ' +
-      'html body #wrapper #container #main .content .status .radial')
+      'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
+      $('html body #wrapper #container #main #visit #page #front .focus')
+        .addClass('pageInput pageInputOut')
     $('html body #wrapper #container #main .translation .select .type, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +

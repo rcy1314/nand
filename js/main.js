@@ -158,8 +158,9 @@ $(document)
       xml(null, null, $.random())
       notify('Switched to now reading ' + category)
     } else {
-      $('html body #wrapper #container #main #visit').hide()
       $.loading()
+      location.pathname.state()
+      $('html body #wrapper #container #main #visit').hide()
       populate($(this).attr('aria-class'))
     }
   })
