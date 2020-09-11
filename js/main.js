@@ -129,6 +129,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
   function(e) {
+    id = 0
     $.loading()
     location.pathname.state()
     $('html body #wrapper #container #main #visit').hide()
