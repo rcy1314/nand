@@ -614,7 +614,7 @@ var xml = function(e, s, n) {
       else var search = menu[n].cat.toLowerCase()
       var share = menu[n].hash
       if (gen) var ts = (gen).toString(36)
-      if (ts) var share = location.pathname + '/?' + share + ts
+      if (ts) var share = window.location.origin + '/?' + share + ts
       if ($(this).find('content').text()
       .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) {
         src = String($(this).find('content').text()
