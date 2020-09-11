@@ -151,12 +151,14 @@ html body #wrapper #container #main .center .quick .fa-angle-left:before,
 html body #wrapper #container #main #visit #page #front .quick .fa-angle-left:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f104";
+  font-weight: 50;
 }
 
 html body #wrapper #container #main .center .quick .fa-angle-right:before,
 html body #wrapper #container #main #visit #page #front .quick .fa-angle-right:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f105";
+  font-weight: 50;
 }
 
 html body #wrapper #container #top #arm #search #input .icon .fa-search:before,
