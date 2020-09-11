@@ -93,6 +93,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-heart, ' +
       'html body #wrapper #container #main #top #arm #option .fa-heart-o', function(e) {
+        $.loading()
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
           notify('Reading ' + category + ' disabled.')
@@ -115,6 +116,8 @@ $(document)
           reader = false
           first = true
           stop = false
+          $.unloading()
+          populate(category)
         } else if (reader == false) {
           notify('Reading ' + category + ' enabled.')
           reader = true
