@@ -221,7 +221,7 @@ $(document)
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
-    if ($(this).parents('html body #wrapper #container #main .quick .feed')
+      if ($(this).parents('html body #wrapper #container #main .quick .feed')
           .scrollLeft() >= 3000)
         for (i = 0; i < 7; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
@@ -241,7 +241,7 @@ $(document)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
         quick(10)
-        if ($('html body #wrapper #container #main .center .quick .feed').length) feed(10)
+        tap = 0
   })
   .on('mousemove', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
@@ -262,12 +262,13 @@ $(document)
           }
           $(this).unbind("mouseup")
           e.preventDefault()
+          tap = 0
   })
   .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false
         else mouseAsset = false
-        if (((new Date().getTime()) - tap) < 350) {
+        if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
                 console.log(mouseAsset)
@@ -408,7 +409,7 @@ $(document)
           // set first click
           tap = new Date().getTime();
           setTimeout(function () {
-            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
+            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 300)
               if (category == 'Social' && $this.hasClass('default')) {
                 $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
