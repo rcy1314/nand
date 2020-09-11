@@ -35,8 +35,8 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link, ' +
     'html body #wrapper #container #main #visit #page #front #label .show',
     function(e) {
-      nextAngle += 180
-      if (nextAngle >= 360) nextAngle = 0
+      nextAngle -= 180
+      if (nextAngle <= -360) nextAngle = 0
       if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')

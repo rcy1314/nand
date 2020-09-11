@@ -804,7 +804,7 @@ html body #wrapper #container #main #visit #page #front .quick .right {
   border-radius: 16px;
   position: absolute;
   display: flex;
-  right : -24px;
+  right : -28px;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -834,7 +834,7 @@ html body #wrapper #container #main #visit #page #front .quick .left {
   padding: 4px;
   height: 24px;
   width: 24px;
-  left: -24px;
+  left: -32px;
   z-index: 7;
   top: 40px;
 }
