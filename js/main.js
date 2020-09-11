@@ -279,12 +279,14 @@ $(document)
                   if ($.inArray(mouseAsset, translations) > -1){
                     category = mouseAsset.capitalize()
                     $(document).ready(function() {
+                      $.loading()
                       $('html body #wrapper #container #main #visit').hide()
                       $('html body #wrapper #container #main #top').show()
                       populate(mouseAsset)
                       $.unloading()
                     })
                   } else {
+                    $.loading()
                     $('html body #wrapper #container #main #visit').hide()
                     $('html body #wrapper #container #main #top').show()
                     xml(null, null, mouseAsset)
