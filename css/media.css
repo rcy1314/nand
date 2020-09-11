@@ -154,12 +154,6 @@
 	  top: 0;
   }
 
-  html body #wrapper #container #main .group .air,
-  html body #wrapper #container #main .group .result {
-	  position: relative !important;
-	  top: 60px !important;
-  }
-
   html body #wrapper #container #main .center {
     margin-left: -10px !important;
 	  width: 70% !important;
