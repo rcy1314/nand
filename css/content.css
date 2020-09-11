@@ -384,6 +384,7 @@ html body #wrapper #container #main #top #arm #search #home {
   font-size: 36px;
   cursor: pointer;
   height: 40px;
+  left: 40px;
   top: 5px;
 }
 
@@ -1226,7 +1227,7 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 45px;
+  margin-left: 60px;
   text-align: left;
   position: sticky;
   font-size: 10px;

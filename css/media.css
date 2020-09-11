@@ -97,6 +97,10 @@
     display: none !important;
   }
 
+  html body #wrapper #container #main #visit #page #front .listing {
+    top: 0;
+  }
+
   html body #wrapper #container #main #top {
     width: 100% !important;
   }
@@ -106,8 +110,8 @@
   }
 
   html body #wrapper #container #main .center {
-    left: -95px;
-    width: 50%;
+    left: -95px !important;
+    width: 90% !important;
   }
 
   html body #wrapper #container #main .content {
@@ -157,8 +161,8 @@
   }
 
   html body #wrapper #container #main .center {
-    margin-left: 130px;
-	  width: 60%;
+    margin-left: -10px !important;
+	  width: 70% !important;
   }
 
 }
@@ -183,6 +187,10 @@
 
   html body #wrapper #container #main #top #arm {
     width: 1012px !important;
+  }
+
+  html body #wrapper #container #main #top #arm #search #option {
+    right: 15px;
   }
 
   html body #wrapper #container #main .center {
