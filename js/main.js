@@ -161,7 +161,7 @@ $(document)
       $.loading()
       location.pathname.state()
       $('html body #wrapper #container #main #visit').hide()
-      populate($(this).attr('aria-class'))
+      populate($(this).attr('aria-item'))
     }
   })
   .on('touch click',
@@ -212,20 +212,6 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
-  .on('touch click',
-      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation',
-    function(e) {
-      $('html body #wrapper #container #main #visit #page #front .quick')
-        .addClass('invisible').removeClass('visible')
-      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
-      $('html body #wrapper #container #main #visit #page #front .show')
-        .removeClass('invisible').addClass('visible')
-      $('html body #wrapper #container #main #visit').hide()
-      $('html body #wrapper #container #main #top').show()
-      $.loading()
-      populate($(this).attr('aria-class'))
-  })
   .on('mousedown', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
@@ -241,23 +227,21 @@ $(document)
             .scrollLeft())
     if ($(this).parents('html body #wrapper #container #main .quick .feed')
           .scrollLeft() >= 3000)
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < 7; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
         quick(10)
-        if ($('html body #wrapper #container #main .center .quick .feed').length)
-          feed(10)
+        feed(10)
       }
-      e.preventDefault();
       $(this).unbind("mousemove")
-      tap = 0
+      e.preventDefault()
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
     function(e) {
     if ($(this).parents('html body #wrapper #container #main .quick .feed')
           .scrollLeft() >= 3000)
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < 7; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
         quick(10)
@@ -287,13 +271,24 @@ $(document)
         if (enableDrag)
             enableDrag = false
         else mouseAsset = false
-        if (((new Date().getTime()) - tap) < 150) {
+        if (((new Date().getTime()) - tap) < 350) {
               enableDrag = false
               if (mouseAsset){
+                console.log(mouseAsset)
                   $.loading()
-                  $('html body #wrapper #container #main #top').show()
-                  $('html body #wrapper #container #visit').hide()
+                  if ($.inArray(mouseAsset, translations) > -1){
+                    category = mouseAsset.capitalize()
+                    $(document).ready(function() {
+                      $('html body #wrapper #container #main #visit').hide()
+                      $('html body #wrapper #container #main #top').show()
+                      populate(mouseAsset)
+                      $.unloading()
+                    })
+                  } else {
+                    $('html body #wrapper #container #main #visit').hide()
+                    $('html body #wrapper #container #main #top').show()
                     xml(null, null, mouseAsset)
+                  }
               }
               tap = 0
           }
@@ -608,7 +603,7 @@ $(document)
       $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
       $.each(translations, function(i) {
         $('html body #wrapper #container #main #visit #page #front #first .listing').append(
-          "<div class='index' tabIndex='-1' aria-class='" + translations[i].toLowerCase() + "'>" +
+          "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
           "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <div class='radial'></div>" +
@@ -706,7 +701,7 @@ $(document)
       $.each(translations, function(i) {
         $('html body #wrapper #container #arm #search #match .listing')
           .append(
-            "<div class='index' tabIndex='-1' aria-class='" + translations[i].toLowerCase() + "'>" +
+            "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
             "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "  <div class='radial'></div>" +
@@ -740,13 +735,13 @@ $(document)
     $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content, #main .translation').remove()
     $('html body #wrapper #container #arm #search #match').hide()
     if ($('html body #wrapper #container #arm #search .listing .hover').length) {
-      if ($('html body #wrapper #container #arm #search .listing .hover').is('[aria-class]') &&
-            $.inArray($('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize(), translations) > -1){
+      if ($('html body #wrapper #container #arm #search .listing .hover').is('[aria-item]') &&
+            $.inArray($('html body #wrapper #container #arm #search .listing .hover').attr('aria-item').capitalize(), translations) > -1){
         $.loading()
         $('html body #wrapper #container #main #visit').hide()
         $('html body #wrapper #container #main #top').show()
-        category = $('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize()
-        populate($('html body #wrapper #container #arm #search .listing .hover').attr('aria-class').capitalize())
+        category = $('html body #wrapper #container #arm #search .listing .hover').attr('aria-item').capitalize()
+        populate($('html body #wrapper #container #arm #search .listing .hover').attr('aria-item').capitalize())
       } else if (reader == true) {
               readDupe = []
               $('html body #wrapper #container #main .channel').empty()
@@ -772,13 +767,13 @@ $(document)
   })
   .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
       if ($('html body #wrapper #container #main #visit #page #front .listing .hover').length) {
-        if ($('html body #wrapper #container #main #visit #page #front .listing .hover').is('[aria-class]') &&
-              $.inArray($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize(), translations) > -1){
+        if ($('html body #wrapper #container #main #visit #page #front .listing .hover').is('[aria-item]') &&
+              $.inArray($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize(), translations) > -1){
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main #top').show()
-          category = $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize()
-          populate($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-class').capitalize())
+          category = $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize()
+          populate($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize())
         } else if (reader == true) {
                 readDupe = []
                 $('html body #wrapper #container #main .channel').empty()
@@ -843,12 +838,12 @@ $(document)
         xml(null, null, $.random())
         notify('Switched to now reading ' + category)
       } else {
-        if ($(this).is('[aria-class]') && $.inArray($(this).attr('aria-class').capitalize(), translations) > -1){
+        if ($(this).is('[aria-item]') && $.inArray($(this).attr('aria-item').capitalize(), translations) > -1){
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main #top').show()
-          category = $(this).attr('aria-class').capitalize()
-          populate($(this).attr('aria-class').capitalize())
+          category = $(this).attr('aria-item').capitalize()
+          populate($(this).attr('aria-item').capitalize())
         } else {
           $.loading()
           category = menu[$(this).attr('aria-item')].cat

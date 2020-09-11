@@ -50,7 +50,7 @@ var select = function(n) {
   $.each(translations, function(i) {
   $('html body #wrapper #container #main .translation')
     .append(
-      "<div class='select' aria-class='" + translations[i] + "'>" +
+      "<div class='select' aria-item='" + translations[i] + "'>" +
       "  <div class='radial'></div>" +
       "  <img class='type' src='images/" + translations[i] + '.webp' + "'>" +
       "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
@@ -205,7 +205,7 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
-      "<div class='assetTranslation' aria-class='" + translations[i] + "'>" +
+      "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' class='idTranslation'> " +
       "  <a title='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
