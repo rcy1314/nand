@@ -82,7 +82,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus')
       .removeClass('pageInput pageInputOut')
-    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '2px solid #f7426c')
+    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid #f7426c')
     $('html body #wrapper #container #main .content .suggestions .combine .suggest a, ' +
       'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
@@ -185,7 +185,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
     $('html body #wrapper #container #main .content .suggestions .combine .suggest a').css('color','steelblue')
-    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '2px solid dodgerblue')
+    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid dodgerblue')
     $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus')
         .addClass('pageInput pageInputOut')
