@@ -503,7 +503,10 @@ var image = function(empty, n, item, src) {
   else if (empty == true){
     $('.' + n).find(' .' + item).parents('.item').remove()
   } else {
-    $('.' + n).find(' .' + item).parents('.item')
+    $('.' + n).find(' .' + item).parents('.item').css({
+          'padding-bottom': '30px',
+          'padding-top': '30px'
+        })
         .find('.pub, .ago, .addComment').css('display','block')
         .parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
     }
