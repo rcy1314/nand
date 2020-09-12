@@ -63,8 +63,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .background')
       .removeClass('invertOverBorderless').addClass('oppositeOver')
-    $('html body #wrapper #container #main .center .channel .item .classic .header .radial, ' +
-      'html body #wrapper #container #main .content .suggestions .radial')
+    $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestInvert').addClass('suggestOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
@@ -72,7 +71,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
       .removeClass('selectInvert').addClass('selectOpposite')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
-      'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
       'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedInvert').addClass('feedOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
@@ -84,6 +82,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus')
       .removeClass('pageInput pageInputOut')
+    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '2px solid #f7426c')
     $('html body #wrapper #container #main .content .suggestions .combine .suggest a, ' +
       'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
@@ -175,8 +174,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver, oppositeOverBorderless')
-    $('html body #wrapper #container #main .center .channel .item .classic .header .radial, ' +
-      'html body #wrapper #container #main .content .suggestions .radial')
+    $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestOpposite').addClass('suggestInvert')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
@@ -184,10 +182,10 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
       .removeClass('selectOpposite').addClass('selectInvert')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
-      'html body #wrapper #container #guide .sticky .wrap .header .courtesy .radial, ' +
       'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
     $('html body #wrapper #container #main .content .suggestions .combine .suggest a').css('color','steelblue')
+    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '2px solid dodgerblue')
     $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus')
         .addClass('pageInput pageInputOut')

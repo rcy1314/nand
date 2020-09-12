@@ -888,9 +888,8 @@ html body #wrapper #container #main .center .item .fill {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 0 auto;
-  display: block;
-  height: 7em;
+  display: flex;
+  height: 14em;
 }
 
 html body #wrapper #container #main .center .item .classic  {
@@ -1035,17 +1034,8 @@ html body #wrapper #container #guide .sticky .item {
   border: .3px solid #0e0e0e;
 }
 
-html body #wrapper #container #main .center .item .radial {
-  margin-left: 10.25px;
-  border-radius: 36px;
-  position: absolute;
-  height: 25px;
-  width: 26px;
-  z-index: 1;
-}
-
 html body #wrapper #container #main .center .item .header .id {
-  width: 24.5px;
+  width: 24px;
   height: 24px;
 }
 
@@ -1219,6 +1209,7 @@ html body #wrapper #container #main .center #bottom .next {
 html body #wrapper #container #main .center {
   display: inline-block;
   position: relative;
+  margin-left: 15px;
   text-align: left;
   top: 60px;
 }

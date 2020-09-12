@@ -673,7 +673,6 @@ var xml = function(e, s, n) {
       if (src == '') courtesy = ''
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
-        "  <div class='radial'></div>" +
         "  <img class='id' src='" + menu[n].img.image() + "'>" +
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
