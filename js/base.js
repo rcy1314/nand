@@ -1,6 +1,7 @@
 var op = 0 //1 invert, 2 opposite
 var contrast = false //opposite of op
 var imageDupe = true //remove items without pictures ($.random())
+var onlyImages = false //grep and populate only return media true
 var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/'
@@ -291,20 +292,36 @@ var populate = function(n) {
         "</div>"
       )
     for (var i = 1; i <= menu.length - 1; i++) {
-      if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
-        $('html body #wrapper #container #main .result').append(
-          "<div class='populate'" +
-          "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
-          "  <div class='display'>" +
-          "    <img class='id' src='" + menu[i].img.image() + "'> " +
-          "  </div>" +
-          "    <a class='title' ext='" + menu[i].ext +  "'>" +
-                 menu[i].id.match(/[^\/]+$/g) +
-          "    </a>" +
-          "</div>"
-        )
+      if (onlyImages == true){
+        if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
+          $('html body #wrapper #container #main .result').append(
+            "<div class='populate'" +
+            "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
+            "  <div class='display'>" +
+            "    <img class='id' src='" + menu[i].img.image() + "'> " +
+            "  </div>" +
+            "    <a class='title' ext='" + menu[i].ext +  "'>" +
+                   menu[i].id.match(/[^\/]+$/g) +
+            "    </a>" +
+            "</div>"
+          )
+      } else if (onlyImages == false){
+          if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
+            $('html body #wrapper #container #main .result').append(
+              "<div class='populate'" +
+              "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
+              "  <div class='display'>" +
+              "    <img class='id' src='" + menu[i].img.image() + "'> " +
+              "  </div>" +
+              "    <a class='title' ext='" + menu[i].ext +  "'>" +
+                     menu[i].id.match(/[^\/]+$/g) +
+              "    </a>" +
+              "</div>"
+            )
+        }
     }
-    air(category)
+    if (onlyImages == false) air(category)
+    else if (onlyImages == true) $.unloading()
   })
 }
 

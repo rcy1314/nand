@@ -191,10 +191,15 @@ String.prototype.truncate = function(n, useWordBoundary) {
 String.prototype.grep = function(n) {
 
   var n = this
-	return $.grep(menu, function (elem) {
-	    return elem.cat == n;
-	}).length
-
+    if (onlyImages == true){
+    	return $.grep(menu, function (elem) {
+    	    return elem.cat == n && elem.media == true;
+    	}).length
+    } else if (onlyImages == false){
+      return $.grep(menu, function (elem) {
+    	    return elem.cat == n;
+    	}).length
+    }
 }
 
 String.prototype.moment = function() {
