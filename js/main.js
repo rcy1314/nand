@@ -220,7 +220,6 @@ $(document)
         dragStartX = 0
         enableDrag = true
         dragStartX = e.pageX
-        tap = new Date().getTime()
         mouseAsset = $(this).attr('aria-item')
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
@@ -396,11 +395,6 @@ $(document)
       $('#guide, #container .checkmark').fadeOut(250)
       $('html body #wrapper #container #main #top').show()
   })
-  .on('touch click', 'html body #wrapper #container #guide .sticky .item .image .img',
-    function (e) {
-      $(this).attr('src').blank()
-      e.stopPropagation()
-    })
   .on('touch click', 'html body #wrapper #container #main .center .channel .item',
     function(e) {
       $(this).attr('ext').blank()
@@ -413,7 +407,7 @@ $(document)
           // set first click
           tap = new Date().getTime();
           setTimeout(function () {
-            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 300)
+            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
               if (category == 'Social' && $this.hasClass('default')) {
                 $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
