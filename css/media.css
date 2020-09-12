@@ -158,6 +158,14 @@
 	  top: 0;
   }
 
+  html body #wrapper #container #main #top #arm #search #home {
+    left: 80px !important;
+  }
+
+  html body #wrapper #container #main #top #arm #option {
+    right: 10px !important;
+  }
+
   html body #wrapper #container #main .center {
     margin-left: -10px !important;
 	  width: 70% !important;
@@ -192,7 +200,7 @@
   }
 
   html body #wrapper #container #main .center {
-    width: 644px !important;
+    width: 710px !important;
   }
 
   html body #wrapper #container #main .group .air,

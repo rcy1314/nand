@@ -384,7 +384,7 @@ html body #wrapper #container #main #top #arm #search #home {
   font-size: 36px;
   cursor: pointer;
   height: 40px;
-  left: -15px;
+  left: -35px;
   top: 5px;
 }
 
@@ -397,7 +397,7 @@ html body #wrapper #container #main #top #arm #option {
   background-color: transparent;
   position: absolute;
   display: flex;
-  right: 0px;
+  right: -35px;
   z-index: 1;
   top: 5px;
 }
@@ -1297,6 +1297,7 @@ html body #wrapper #container #main .content .suggestions .combine .suggest {
 
 html body #wrapper #container #main .content .suggestions .combine .suggest a {
   font-weight: bold;
+  font-size: 11px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine div {
