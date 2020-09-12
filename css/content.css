@@ -384,7 +384,7 @@ html body #wrapper #container #main #top #arm #search #home {
   font-size: 36px;
   cursor: pointer;
   height: 40px;
-  left: 40px;
+  left: -15px;
   top: 5px;
 }
 
@@ -1209,7 +1209,6 @@ html body #wrapper #container #main .center #bottom .next {
 html body #wrapper #container #main .center {
   display: inline-block;
   position: relative;
-  margin-left: 15px;
   text-align: left;
   top: 60px;
 }
@@ -1218,7 +1217,7 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 60px;
+  margin-left: 45px;
   text-align: left;
   position: sticky;
   font-size: 10px;
@@ -1263,7 +1262,7 @@ html body #wrapper #container #main .content .suggestions {
   font-size: 10px;
   padding: 15px;
   width: 260px;
-  top: 75px;
+  top: 25px;
 }
 
 html body #wrapper #container #main .content .suggestions .radial {

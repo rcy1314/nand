@@ -517,7 +517,7 @@ var image = function(empty, n, item, src) {
     .parents('.' + n).find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
-  else if (empty == true){
+  else if (empty == true || onlyImages == true){
     $('.' + n).find(' .' + item).parents('.item').remove()
   } else {
     $('.' + n).find(' .' + item).parents('.item').css({
