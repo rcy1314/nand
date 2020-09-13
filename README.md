@@ -10,6 +10,16 @@
 * Comments aren't stored.
 * File size 3655kb.
 
+### Config in base
+
+* op boolean
+* contrast boolean
+* imageDupe boolean
+* onlyImages boolean
+* category Legacy
+* cors string
+* translations array
+
 ### Invert
 
 <p align='center'><img src='http://acktic.github.io/screenshots/invert.jpg'></p>
