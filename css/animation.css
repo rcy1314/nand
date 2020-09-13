@@ -156,8 +156,8 @@
 .feedOpposite {
   background: -webkit-linear-gradient(to right, #ef4063, #e557c6);
   background: linear-gradient(to right, #ef4063, #e557c6);
-  -webkit-mask-image: radial-gradient(transparent 0 27px, #000 27.5px);
-  mask-image: radial-gradient(transparent 0 27px, #000 27.5px);
+  -webkit-mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
+  mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
   border-radius: 36px;
   position: relative;
   height: 56px;

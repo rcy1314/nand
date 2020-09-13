@@ -10,6 +10,7 @@ $(document)
             xml(null, null, $.random())
       }
     })
+    quick(7)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
