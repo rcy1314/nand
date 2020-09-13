@@ -779,10 +779,10 @@ html body #wrapper #container #main .content .status img,
 html body #wrapper #container #main .center .quick .feed .asset img,
 html body #wrapper #container #main #visit #page #front .quick .feed img,
 html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation img {
-  height: 55px;
-  width: 55px;
-  left: .75px;
-  top: .75px;
+  width: 51.5px;
+  height: 52px;
+  left: 2.5px;
+  top: 2.5px;
 }
 
 html body #wrapper #container #main .center .quick .feed .asset a,
