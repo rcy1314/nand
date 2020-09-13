@@ -78,9 +78,9 @@ String.prototype.hyphen = function() {
 $.random = function() {
 
   for (i = 1; i <= menu.length - 1; i++) {
-    if (imageDupe == true){
+    if (onlyImages == true){
       if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
-    } else {
+    } else if (onlyImages == false){
       if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
     }
   }

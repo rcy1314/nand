@@ -1,12 +1,11 @@
 var op = 0 //1 invert, 2 opposite
-var contrast = false //opposite of op
-var imageDupe = true //remove items without pictures ($.random())
-var onlyImages = false //grep and populate only return media true
 var loading = 'dots' //or 'percent'
+var contrast = false //opposite of op
+var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
-var cors = 'https://acktic-github-io.herokuapp.com/'
+var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
-  ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube']
+  ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
 /* Feel free to edit the above. */
 

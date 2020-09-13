@@ -156,9 +156,17 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-code',
   function(e) {
-    var re = menu.indexOf(menu[Math.floor(Math.random() * menu.length)])
     $.loading()
-    xml(null, null, re)
+    var code = []
+    for (i = 1; i <= menu.length - 1; i++) {
+      if (onlyImages == true){
+        if (menu[i].cat == category && menu[i].media == true) code.push(menu.indexOf(menu[i]))
+      } else if (onlyImages == false){
+        if (menu[i].cat == category) code.push(menu.indexOf(menu[i]))
+      }
+    }
+    var n = code[Math.floor(Math.random() * code.length - 1)]
+    xml(null, null, n)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-terminal',
   function(e) {
@@ -276,7 +284,6 @@ $(document)
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
-                console.log(mouseAsset)
                   $.loading()
                   if ($.inArray(mouseAsset, translations) > -1){
                     category = mouseAsset.capitalize()

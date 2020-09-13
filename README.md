@@ -13,11 +13,9 @@
 ### Config in base
 
 * op boolean
-* contrast boolean
-* imageDupe boolean
-* onlyImages boolean
 * category Legacy
-* cors string
+* contrast boolean
+* onlyImages boolean
 * translations array
 
 ### Invert
