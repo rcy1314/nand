@@ -220,6 +220,7 @@ $(document)
         dragStartX = 0
         enableDrag = true
         dragStartX = e.pageX
+        tap = new Date().getTime();
         mouseAsset = $(this).attr('aria-item')
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')

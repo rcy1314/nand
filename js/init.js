@@ -42,7 +42,8 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
             $.loading()
-            $('html body #wrapper #container #main #visit').hide()
+            $('html body #wrapper #container #main #visit, ' +
+              'html body #wrapper #container #toggle').hide()
             $('html body #wrapper #container #main #top').hide()
             response(true,
                      false,
