@@ -155,7 +155,7 @@
 @media screen and (max-width: 1024px) {
 
   html body #wrapper #container #main #visit #page #front {
-	  top: 0;
+	  top: -15px !important;
   }
 
   html body #wrapper #container #main #top #arm #search #home {

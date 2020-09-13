@@ -440,13 +440,7 @@ html body #wrapper #container #main #visit {
 html body #wrapper #container #main #visit #page #handle {
   position: relative;
   margin: 0 auto;
-  height: 250px;
   width: 100%;
-}
-
-html body #wrapper #container #main #visit #page #handle #placeholder {
-  position: relative;
-  height: 250px;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
