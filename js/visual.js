@@ -21,7 +21,8 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .filter, ' +
       'html body #wrapper #container #main .group .result .populate, ' +
       'html body #wrapper #container #main .group .result, ' +
-      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
+      'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
+      'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .background, ' +
@@ -62,7 +63,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .group .result .populate, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .background')
-      .removeClass('invertOverBorderless').addClass('oppositeOver')
+      .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
     $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestInvert').addClass('suggestOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
@@ -170,7 +171,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
       'html body #wrapper #container #main .center .quick .right, ' +
       'html body #wrapper #container #main .center .quick .left, ' +
-    'html body #wrapper #container #main #top #arm #search input[type=text], ' +
+      'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver, oppositeOverBorderless')
@@ -204,7 +205,8 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #main .group .air .populate, ' +
+    $('html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
+      'html body #wrapper #container #main .group .air .populate, ' +
       'html body #wrapper #container #main .group .result .filter, ' +
       'html body #wrapper #container #main .group .result .populate, ' +
       'html body #wrapper #container #guide .sticky .item, ' +
