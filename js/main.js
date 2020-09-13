@@ -76,6 +76,12 @@ $(document)
       $.unloading()
       quick(7)
   })
+  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-map', function(e) {
+    $.loading()
+    onlyImages = onlyImages != true
+    notify ('Only Images now ' + onlyImages)
+    populate(category)
+  })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
     if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
       var uri = window.location.href.replace(/\?\+1|\+1/g, '')

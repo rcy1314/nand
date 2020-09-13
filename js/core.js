@@ -85,15 +85,8 @@ $.random = function() {
     }
   }
   var n = array[Math.floor(Math.random() * array.length - 1)]
-  if (menu[n]){
-    readDupe.push(n)
-    return n
-  }
-  else {
-   var e = array[Math.floor(Math.random() * array.length - 1)]
-   readDupe.push(e)
-   return e
-  }
+  readDupe.push(n)
+  return n
 
 }
 

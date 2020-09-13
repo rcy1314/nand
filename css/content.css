@@ -31,6 +31,7 @@ html body #wrapper #container #main .center .channel .item .classic .fill .loade
   display: flex;
 }
 
+html body #wrapper #container #main #top #arm #option .fa-map,
 html body #wrapper #container #main #top #arm #option .fa-heart,
 html body #wrapper #container #main #top #arm #option .fa-heart-o,
 html body #wrapper #container #main #top #arm #option .fa-sun {
@@ -68,6 +69,12 @@ html body #wrapper #container #main .center .channel .item .classic .wrap .tag .
 html body #wrapper #container #main #top #arm #option .fa-home:before {
   font-family: FontAwesome;
   content: "\f015";
+  font-weight: 50;
+}
+
+html body #wrapper #container #main #top #arm #option .fa-map:before {
+  font-family: FontAwesome;
+  content: "\f279";
   font-weight: 50;
 }
 
@@ -1216,7 +1223,7 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 45px;
+  margin-left: 55px;
   text-align: left;
   position: sticky;
   font-size: 10px;
