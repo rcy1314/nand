@@ -245,8 +245,6 @@ $(document)
         for (i = 0; i < 7; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
-        quick(10)
-        feed(10)
       }
       $(this).unbind("mousemove")
       e.preventDefault()
@@ -286,7 +284,6 @@ $(document)
   .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false
-        else mouseAsset = false
         if (((new Date().getTime()) - tap) < 150) {
               enableDrag = false
               if (mouseAsset){
