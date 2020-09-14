@@ -1164,7 +1164,7 @@ var menu = [
   },
 	{
 		id: "ABC Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "ABC Entertainment Latest News, Videos and Photos.",
 		uri: "https://abcnews.go.com/abcnews/entertainmentheadlines",
 		ext: "https://abcnews.go.com/entertainment",
@@ -1174,7 +1174,7 @@ var menu = [
   },
 	{
 		id: "AOL",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "AOL Latest Headlines in Business, Entertainment, Politics, and Video.",
 		uri: "https://www.aol.com/rss",
 		ext: "https://aol.com",
@@ -1184,7 +1184,7 @@ var menu = [
   },
 	{
 		id: "AV Club",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "AV Club is an Entertainment Website that examines Films, Music, Television, Books, and Games.",
 		uri: "https://www.avclub.com/rss",
 		ext: "https://www.avclub.com",
@@ -1194,7 +1194,7 @@ var menu = [
   },
 	{
 		id: "BBC Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "BBC News Entertainment, Lifestyle, and Arts.",
 		uri: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
 		ext: "https://bbc.com/news/entertainment_and_arts",
@@ -1204,7 +1204,7 @@ var menu = [
   },
 	{
 		id: "Best Life",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Best Life Online destination for sophisticated men & women.",
 		uri: "https://bestlifeonline.com/feed",
 		ext: "https://bestlifeonline.com",
@@ -1214,7 +1214,7 @@ var menu = [
   },
 	{
 		id: "Bustle",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Bustle is the premier digital destination for millenial women, launched in 2013.",
 		uri: "https://www.bustle.com/rss",
 		ext: "https://www.bustle.com",
@@ -1224,7 +1224,7 @@ var menu = [
   },
 	{
 		id: "Buzzfeed Celebrity",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Buzzfeed Celebrity the latest celebrity headlines to our favorite hilariously mundane happenings.",
 		uri: "https://www.buzzfeed.com/celebrity.xml",
 		ext: "https://www.buzzfeed.com/celebrity",
@@ -1234,7 +1234,7 @@ var menu = [
   },
 	{
 		id: "Cheatsheet",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.",
 		uri: "https://www.cheatsheet.com/feed",
 		ext: "https://www.cheatsheet.com",
@@ -1244,7 +1244,7 @@ var menu = [
   },
 	{
 		id: "Closer Weekly",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Closer Weekly Your ultimate source for breaking celebrity news — get closer to the stars you love.",
 		uri: "https://www.closerweekly.com/feed",
 		ext: "https://www.closerweekly.com",
@@ -1254,7 +1254,7 @@ var menu = [
   },
 	{
 		id: "CBS Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "CBS Entertainment Latest Celebrity News, Movies, TV shows, and more.",
 		uri: "https://www.cbsnews.com/latest/rss/entertainment",
 		ext: "https://cbsnews.com/latest/rss/entertainment",
@@ -1264,7 +1264,7 @@ var menu = [
   },
 	{
 		id: "Celebrity Insider",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, and entertainment.",
 		uri: "https://celebrityinsider.org/feed",
 		ext: "https://celebrityinsider.org",
@@ -1274,7 +1274,7 @@ var menu = [
   },
 	{
 		id: "CNN",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "CNN Entertainment News Celebrities, Movies, TV, and Music.",
 		uri: "http://rss.cnn.com/rss/cnn_showbiz.rss",
 		ext: "https://cnn.com/entertainment",
@@ -1284,7 +1284,7 @@ var menu = [
   },
 	{
 		id: "ComingSoon",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game News!",
 		uri: "https://www.comingsoon.net/feed",
 		ext: "https://comingsoon.net",
@@ -1294,7 +1294,7 @@ var menu = [
   },
 	{
 		id: "Cosmopolitan",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Cosmopolitan the Woman's Magazine for Fashion.",
 		uri: "https://www.cosmopolitan.com/rss/all.xml",
 		ext: "https://www.cosmopolitan.com",
@@ -1304,7 +1304,7 @@ var menu = [
   },
 	{
 		id: "Daily Beast",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Daily Beast is a News and Opinion Website focusing on Politics and Entertainment Culture.",
 		uri: "https://feeds.thedailybeast.com/summary/rss/articles",
 		ext: "https://www.thedailybeast.com",
@@ -1314,7 +1314,7 @@ var menu = [
   },
 	{
 		id: "Deadline Hollywood",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Deadline Hollywood is the first to break Up-to-the-Minute Entertainment, Hollywood and Media News.",
 		uri: "https://deadline.com/feed",
 		ext: "https://deadline.com",
@@ -1324,7 +1324,7 @@ var menu = [
   },
 	{
 		id: "Decider",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.",
 		uri: "https://decider.com/feed",
 		ext: "https://decider.com",
@@ -1334,7 +1334,7 @@ var menu = [
   },
 	{
 		id: "Demotix",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Demotix Celebrity articles with all the gossip in celebrity news.",
 		uri: "https://demotix.com/category/celebrities/feed",
 		ext: "https://demotix.com/category/celebrities",
@@ -1344,7 +1344,7 @@ var menu = [
   },
 	{
 		id: "Digital Trends Media",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Digital Trends Movie reviews, TV Show recaps, Previews, and News.",
 		uri: "https://www.digitaltrends.com/movies/feed/",
 		ext: "https://digitaltrends.com/movies",
@@ -1354,7 +1354,7 @@ var menu = [
   },
 	{
 		id: "Elle",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.",
 		uri: "https://www.elle.com/rss/culture.xml",
 		ext: "https://www.elle.com",
@@ -1364,7 +1364,7 @@ var menu = [
   },
 	{
 		id: "Esquire",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Esquire is your destination for the Latest Entertainment News Headlines.",
 		uri: "https://www.esquire.com/rss/entertainment.xml",
 		ext: "https://esquire.com",
@@ -1374,7 +1374,7 @@ var menu = [
   },
 	{
 		id: "ET Canada",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Entertainment Tonight Canada a Canadian entertainment news television series.",
 		uri: "https://etcanada.com/feed",
 		ext: "https://etcanada.com",
@@ -1384,7 +1384,7 @@ var menu = [
   },
 	{
 		id: "Glamour",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Glamour UK an online women's magazine founded in 1939.",
 		uri: "https://www.glamourmagazine.co.uk/rss/article",
 		ext: "https://www.glamourmagazine.co.uk",
@@ -1394,7 +1394,7 @@ var menu = [
   },
 	{
 		id: "Global News TV",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Global News Entertainment breaking celebrity news, Hollywood gossip, headlines, and TV listings.",
 		uri: "https://globalnews.ca/entertainment/feed",
 		ext: "https://globalnews.ca/entertainment",
@@ -1404,7 +1404,7 @@ var menu = [
   },
 	{
 		id: "GQ",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "GQ is an international monthly magazine based in New York City.",
 		uri: "https://www.gq.com/feed/rss",
 		ext: "https://www.gq.com",
@@ -1414,7 +1414,7 @@ var menu = [
   },
 	{
 		id: "Heavy Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Heavy Entertainment news including tv, streaming, events, and more.",
 		uri: "https://heavy.com/entertainment/feed",
 		ext: "https://heavy.com/entertainment",
@@ -1424,7 +1424,7 @@ var menu = [
   },
 	{
 		id: "Hot Celebrity News",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Hot Celebrity Reviews shares Lifestyle, Beauty, Fashion, Sport, TV and Movie, and National News.",
 		uri: "https://hotcelebrityreviews.com/feed",
 		ext: "https://hotcelebrityreviews.com",
@@ -1434,7 +1434,7 @@ var menu = [
   },
 	{
 		id: "Extra",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Extra TV current events in the mass-entertainment business such as movies, TV, music, etc.",
 		uri: "https://feeds.extratv.com/atom",
 		ext: "https://extratv.com",
@@ -1444,7 +1444,7 @@ var menu = [
   },
 	{
 		id: "Hollywood Life",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Hollywood Life Top Stories in the Entertainment Industry.",
 		uri: "https://hollywoodlife.com/feed",
 		ext: "https://hollywoodlife.com",
@@ -1454,7 +1454,7 @@ var menu = [
   },
 	{
 		id: "Hollywood Unlocked",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Hollywood Unlocked is an exclusive entertainment news platform that provides celebrity news in a truthful and positive light.",
 		uri: "http://thehollywoodunlocked.com/feed",
 		ext: "http://thehollywoodunlocked.com",
@@ -1464,7 +1464,7 @@ var menu = [
   },
 	{
 		id: "Inquisitr",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Inquisitr offers a constantly updated mix of the latest stories to hit the web.",
 		uri: "https://www.inquisitr.com/feed",
 		ext: "https://www.inquisitr.com",
@@ -1474,7 +1474,7 @@ var menu = [
   },
 	{
 		id: "Int Business Times Media",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Nnternational Business Times entertainment news, celebrity gossips, tv shows, trailers release, and movies.",
 		uri: "https://www.ibtimes.sg/rss/entertainment",
 		ext: "https://www.ibtimes.com/media-culture/entertainment",
@@ -1484,7 +1484,7 @@ var menu = [
   },
 	{
 		id: "IndieWire",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "IndieWire has Grown Over Decades as a Preeminent Source for Film and Television News.",
 		uri: "https://www.indiewire.com/feed",
 		ext: "https://www.indiewire.com",
@@ -1494,7 +1494,7 @@ var menu = [
   },
 	{
 		id: "Just Jared",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Just Jared is the Definitive Site for Celebrity News.",
 		uri: "http://www.justjared.com/feed",
 		ext: "http://justjared.com",
@@ -1504,7 +1504,7 @@ var menu = [
   },
 	{
 		id: "Mens Health",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Mens Health the best-selling men's magazine on U.S. newsstands.",
 		uri: "https://www.menshealth.com/rss/all.xml",
 		ext: "https://www.menshealth.com",
@@ -1514,7 +1514,7 @@ var menu = [
   },
 	{
 		id: "MovieWeb",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.",
 		uri: "https://movieweb.com/rss/all-news",
 		ext: "https://movieweb.com",
@@ -1524,7 +1524,7 @@ var menu = [
   },
 	{
 		id: "MTV",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "MTV The ultimate news source for music, celebrity, entertainment, movies, and current events.",
 		uri: "http://www.mtv.com/news/feed",
 		ext: "http://www.mtv.com/news",
@@ -1534,7 +1534,7 @@ var menu = [
   },
 	{
 		id: "New York Post Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "New York Post Entertainment Latest and Breaking News on Celebrities, Movies, and TV shows.",
 		uri: "https://nypost.com/entertainment/feed",
 		ext: "https://nypost.com/entertainment/feed",
@@ -1544,7 +1544,7 @@ var menu = [
   },
 	{
 		id: "OAN Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "OAN Entertainment One America News Network Entertainment.",
 		uri: "https://www.oann.com/category/entertainment/feed",
 		ext: "https://www.oann.com/category/entertainment",
@@ -1554,7 +1554,7 @@ var menu = [
   },
 	{
 		id: "Ozy",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Ozy committed to producing premium, original storytelling across television, festivals, podcasts and news.",
 		uri: "https://www.ozy.com/feed",
 		ext: "https://www.ozy.com",
@@ -1564,7 +1564,7 @@ var menu = [
   },
 	{
 		id: "People",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "People is an American Weekly Magazine of Celebrity and Human-Interest Stories.",
 		uri: "https://people.com/tag/news/feed",
 		ext: "https://people.com",
@@ -1574,7 +1574,7 @@ var menu = [
   },
 	{
 		id: "Perez Hilton",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "PerezHilton is known for posts covering Gossip Items about Celebrities.",
 		uri: "https://perezhilton.com/feed",
 		ext: "https://perezhilton.com",
@@ -1584,7 +1584,7 @@ var menu = [
   },
 	{
 		id: "Rolling Stone",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Rolling Stone Magazine the authority on Music, Entertainment, Politics and Entertainment Culture.",
 		uri: "https://www.rollingstone.com/feed",
 		ext: "https://rollingstone.com",
@@ -1594,7 +1594,7 @@ var menu = [
   },
 	{
 		id: "Slash Film",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Slash Film covers movie news, reviews, interviews, and trailers.",
 		uri: "https://www.slashfilm.com/feed",
 		ext: "https://www.slashfilm.com",
@@ -1604,7 +1604,7 @@ var menu = [
   },
 	{
 		id: "The Root",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "The Root The Blacker the Content the Sweeter the Truth",
 		uri: "https://www.theroot.com/rss",
 		ext: "https://www.theroot.com",
@@ -1614,7 +1614,7 @@ var menu = [
   },
 	{
 		id: "TheSun.co.uk Celebrity",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "TheSun.co.uk TV and Showbiz Celebrity and Entertainment News.",
 		uri: "https://www.thesun.co.uk/tvandshowbiz/feed",
 		ext: "https://www.thesun.co.uk/tvandshowbiz",
@@ -1624,7 +1624,7 @@ var menu = [
   },
 	{
 		id: "The Wrap",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "The Wrap is the leading digital-first news organization covering the business of entertainment and media via digital, print and live events.",
 		uri: "https://www.thewrap.com/feed",
 		ext: "https://www.thewrap.com",
@@ -1634,7 +1634,7 @@ var menu = [
   },
 	{
 		id: "TMZ News",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "TMZ is a tabloid News website that was a Collaboration between AOL and Telepictures Productions.",
 		uri: "https://www.tmz.com/rss.xml",
 		ext: "https://tmz.com",
@@ -1644,7 +1644,7 @@ var menu = [
   },
 	{
 		id: "Trend Hunter Fashion",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Trend Hunter Celebrity Fashion will help you stay on top of all the latest celebrity happenings.",
 		uri: "https://www.trendhunter.com/rss/category/Celebrity-Fashion",
 		ext: "https://www.trendhunter.com/celebs",
@@ -1654,7 +1654,7 @@ var menu = [
   },
 	{
 		id: "USA Today",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "USA Today People celebrity news, gossip and interviews.",
 		uri: "http://rssfeeds.usatoday.com/toppeople&x=1",
 		ext: "https://www.usatoday.com/entertainment/celebrities",
@@ -1664,7 +1664,7 @@ var menu = [
   },
 	{
 		id: "US Weekly",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "US Weekly a weekly celebrity and entertainment magazine based in New York City.",
 		uri: "https://www.usmagazine.com/feed",
 		ext: "https://www.usmagazine.com",
@@ -1674,7 +1674,7 @@ var menu = [
   },
 	{
 		id: "Vanity Fair",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Vanity Fair is a magazine of Entertainment Culture, Fashion, and Current Affairs.",
 		uri: "https://www.vanityfair.com/feed/rss",
 		ext: "https://vanityfair.com",
@@ -1684,7 +1684,7 @@ var menu = [
   },
 	{
 		id: "Yahoo Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",
 		uri: "https://www.yahoo.com/entertainment/rss",
 		ext: "https://yahoo.com/entertainment",
@@ -1694,7 +1694,7 @@ var menu = [
   },
 	{
 		id: "The Washington Times Entertainment",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "The Washington Times Show Business News and Entertainment News.",
 		uri: "https://www.washingtontimes.com/rss/headlines/culture/entertainment",
 		ext: "https://washingtontimes.com/culture/entertainment",
@@ -1704,7 +1704,7 @@ var menu = [
   },
 	{
 		id: "Wopular",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Wopular is a news aggregation site, giving a summary view of the top headlines from the top news sites.",
 		uri: "http://www.wopular.com/rss/sections/all",
 		ext: "http://www.wopular.com",
@@ -3233,7 +3233,7 @@ var menu = [
   },
 	{
 		id: "Inverse",
-		cat: "Media",
+		cat: "Entertainment",
 		des: "Inverse Covers the Latest News on Science, Innovation, Entertainment, Technology and Culture.",
 		uri: "https://www.inverse.com/feed/articles/1.rss",
 		ext: "https://www.inverse.com",

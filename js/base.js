@@ -5,7 +5,7 @@ var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
-  ['Social', 'News', 'Media', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
+  ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
 /* Feel free to edit the above. */
 
