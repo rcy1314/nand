@@ -170,7 +170,7 @@ var feed  = function(n) {
         $('html body #wrapper #container #main .center .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <div class='radial'></div>" +
-          "  <img src='" + menu[e].img.image() + "' class='id'> " +
+          "  <img src='" + menu[e].img.image() + "'> " +
           "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
                "title='" + menu[e].id + "'>" +
                String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
@@ -189,7 +189,7 @@ var quick  = function(n) {
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
       "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
-      "  <img src='images/" + translations[i] + ".webp' class='idTranslation'> " +
+      "  <img src='images/" + translations[i] + ".webp'> " +
       "  <a title='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
       "  </a>" +
@@ -203,9 +203,7 @@ var quick  = function(n) {
         $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <div class='radial'></div>" +
-          "  <img src='" + menu[e].img.image() + "' " +
-          "    class='id " + menu.indexOf(menu[e]) + "'" +
-          "    search='" + menu[e].cat.toLowerCase() + "'> " +
+          "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
                String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
           "  </a>" +
@@ -262,8 +260,7 @@ var suggest = function(n) {
       $('html body #wrapper #container #main .suggestions').append(
         "<div class='combine'>" +
         "  <div class='radial'></div>" +
-        "  <img src='" + menu[e].img.image() + "' " +
-        "    class='id'>" +
+        "  <img src='" + menu[e].img.image() + "'>" +
         "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
         "    title='" + menu[e].id + "'><b>" +
              String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
@@ -296,7 +293,7 @@ var populate = function(n) {
             "<div class='populate'" +
             "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
             "  <div class='display'>" +
-            "    <img class='id' src='" + menu[i].img.image() + "'> " +
+            "    <img src='" + menu[i].img.image() + "'> " +
             "  </div>" +
             "    <a class='title' ext='" + menu[i].ext +  "'>" +
                    menu[i].id.match(/[^\/]+$/g) +
