@@ -370,7 +370,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 639
+            scrollLeft: leftPos + 640
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
