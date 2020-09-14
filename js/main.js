@@ -19,7 +19,7 @@ $(document)
   .on('touch click',
     'html body #wrapper #container, ' +
     'html body #wrapper #container #main, ' +
-    'html body #wrapper #container #main #visit, ' +
+    'html body #wrapper  #container #main #visit, ' +
     'html body #wrapper #container #main #top #arm, ' +
     'html body #wrapper #container #main #top #option',
     function(e) {
@@ -333,7 +333,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 892
+            scrollLeft: leftPos + 866
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
