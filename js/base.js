@@ -113,7 +113,7 @@ var base = function(n) {
         "  <div class='background'></div>" +
         "  <div class='detail'>" +
         "    <div class='radial'></div>" +
-        "    <img class='type' src='" + menu[i].img.image() + "'>" +
+        "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "    <br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
         "  </div>" +
@@ -142,7 +142,7 @@ var list = function(n) {
         "  <div class='background'></div>" +
         "  <div class='detail'>" +
         "    <div class='radial'></div>" +
-        "    <img class='type' src='" + menu[i].img.image() + "'>" +
+        "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "    <br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
         "  </div>" +
@@ -309,7 +309,7 @@ var populate = function(n) {
               "<div class='populate'" +
               "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
               "  <div class='display'>" +
-              "    <img class='id' src='" + menu[i].img.image() + "'> " +
+              "    <img src='" + menu[i].img.image() + "'> " +
               "  </div>" +
               "    <a class='title' ext='" + menu[i].ext +  "'>" +
                      menu[i].id.match(/[^\/]+$/g) +
@@ -333,7 +333,7 @@ var air = function(n) {
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
-        "  <img class='id' src='" + menu[i].img.image() + "'> " +
+        "  <img src='" + menu[i].img.image() + "'> " +
         "  </div>" +
         "    <a class='title' ext='" + menu[i].ext +  "'>" +
                menu[i].id.match(/[^\/]+$/g) +
@@ -433,7 +433,7 @@ var write = function(n) {
       "<div class='filter' " +
       "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='display'>" +
-      "  <img class='id' src='" + menu[n].img.image() + "'> " +
+      "  <img src='" + menu[n].img.image() + "'> " +
       "  </div>" +
       "    <a class='title' ext='" + menu[n].ext +  "'>" +
              menu[n].id.match(/[^\/]+$/g) +
@@ -688,7 +688,7 @@ var xml = function(e, s, n) {
       if (src == '') courtesy = ''
       else courtesy =
         "<div class='courtesy' style='float:left'>" +
-        "  <img class='id' src='" + menu[n].img.image() + "'>" +
+        "  <img src='" + menu[n].img.image() + "'>" +
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
