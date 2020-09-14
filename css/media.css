@@ -98,19 +98,35 @@
   }
 
   html body #wrapper #container #main #top {
-    width: 100%;
+    width: calc(100% - 16px);
   }
 
-  html body #wrapper #container #main #top #arm #option {
-    margin-left: 70px;
-  }
-
-  html body #wrapper #container #main .center {
+  html body #wrapper #container #main #top #arm {
     width: 90%;
   }
 
+  html body #wrapper #container #main #top #arm #option {
+    margin-left: 85px;
+  }
+
+  html body #wrapper #container #main #top #arm #search #home {
+	left: 0;
+  }
+
+  html body #wrapper #container #main .center {
+	margin-left: -20px;
+    width: 55%;
+  }
+
+  html body #wrapper #container #main .status,
+  html body #wrapper #container #main .content,
+  html body #wrapper #container #main .suggestions {
+	margin-left: 0;
+	width: 280px;
+  }
+
   html body #wrapper #container #main #page #front {
-    top: 0;
+    top: -25px;
   }
 
   html body #wrapper #container #main #visit #page {
