@@ -284,7 +284,7 @@ $(document)
   .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false
-        if (((new Date().getTime()) - tap) < 150) {
+        if (((new Date().getTime()) - tap) < 300) {
               enableDrag = false
               if (mouseAsset){
                   $.loading()
