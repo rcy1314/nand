@@ -881,6 +881,7 @@ html body #wrapper #container #main .center .item .classic .header .courtesy {
 
 html body #wrapper #container #guide .sticky .wrap .header .courtesy img,
 html body #wrapper #container #main .center .channel .item .classic .header .courtesy img {
+  border-radius: 20px;
   padding: 10px;
   left: 1.75px;
   height: 24px;
