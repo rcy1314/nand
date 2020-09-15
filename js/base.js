@@ -37,11 +37,11 @@ var tag = "<div class='tag' style='display:none'>" +
 var notify = function(n) {
   $('html body #wrapper #container #main #notification').show().html(n)
     $('html body #wrapper #container #main #notification').animate({
-      bottom: '0px'
+      right: '1.5em'
       }, 1000)
   setTimeout(function () {
     $('html body #wrapper #container #main #notification').animate({
-      bottom: '-200px'
+      right: '-16em'
     }, 1000)
   }, 2500)
 }

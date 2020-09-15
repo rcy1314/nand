@@ -83,7 +83,7 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-map', function(e) {
     $.loading()
     onlyImages = onlyImages != true
-    notify ('Only Images now ' + onlyImages)
+    notify ('Only Images Now ' + onlyImages.toString().capitalize())
     if (reader == false) populate(category)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
@@ -152,15 +152,13 @@ $(document)
       var uri = window.location.href + '?+1'
       contrast = contrast != true
       op = op != true
-    } else if (location.href.match('\\?q=') && !location.href.match('\\+1')) {
-      var uri = window.location.href + '?+1'
-      contrast = contrast != true
-      op = op != true
     } else if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
       var uri = window.location.href.replace(/\?\+1|\+1/g, '')
       contrast = contrast != true
       op = op != true
     }
+    if (op == 0) notify('Invert Visual Applied')
+    else if (op == 1) notify('Opposite Visual Applied')
     uri.state()
     visual()
   })
