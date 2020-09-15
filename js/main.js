@@ -4,8 +4,9 @@ $(document)
     $('input[type=text]').attr('tabindex', -1).focus()
     if (location.hostname === "localhost") alert('local')
     $('html body #wrapper #container #main').on('scroll touchmove', function (){
-      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 750 &&
+      if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 350 &&
           reader == true && first == false && stop == true){
+            $.loading()
             stop = false
             xml(null, null, $.random())
       }

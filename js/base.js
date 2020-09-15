@@ -508,7 +508,7 @@ var image = function(empty, n, item, src) {
       .find('.header, .wrap').css('display', 'inline-block')
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
     visual()
-  }).attr('src', src)
+  })
     .parents('.' + n).find('.fill').css('visibility','visible')
     .html("<div class='loader double-circle'></div>")
   }
@@ -574,7 +574,7 @@ var xml = function(e, s, n) {
     else var channel = 'item'
     var quit = $(xhr).find(channel).length - 2
     if (reader == true) {
-      if (menu[n].id.match(/Imgur/g)) quit = 25
+      if (menu[n].id.match(/Imgur/g)) quit = 30
       else quit = 15
     } else if (menu[n].id.match(/Imgur/g)) quit = 50
     $(xhr).find(channel).each(function(i) {

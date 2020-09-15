@@ -17,10 +17,12 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
 $.loading = function () {
 
-  $('html body #wrapper #container #main .group, '+
-    'html body #wrapper #container #main .translation, ' +
-    'html body #wrapper #container #main .center, ' +
-    'html body #wrapper #container #main .content').remove()
+  if (reader == false) {
+    $('html body #wrapper #container #main .group, '+
+      'html body #wrapper #container #main .translation, ' +
+      'html body #wrapper #container #main .center, ' +
+      'html body #wrapper #container #main .content').remove()
+  }
   if (loading == 'dots'){
   $('html body #wrapper #container #main #dots .fill').css(
     'animation', 'move 3s infinite cubic-bezier(.25,.85,.85,.1)'
