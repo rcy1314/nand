@@ -448,7 +448,7 @@ var image = function(empty, n, item, src) {
   var k = 5420
 
   if (src.match(/https?\:\/\//g)) {
-  $('.' + n).find(' .' + item).on('error', function() {
+  $('.' + n).find(' .' + item).attr('src', src).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill, .header').remove()
     $(this).parents('.item').find('.pub, .ago, .addComment').css('display','block')
            .parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
@@ -503,7 +503,7 @@ var image = function(empty, n, item, src) {
       } else if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
     }
     $('.' + n).find(' .' + item).parents('.item, #guide')
-      .find('.image, .img, .pub, .tag, .ago, .addComment').css('display', 'block')
+      .find('.image, .img, .pub, .tag, .ago, .addComment').fadeIn(1000)
     $('.' + n).find(' .' + item).parents('.item, #guide')
       .find('.header, .wrap').css('display', 'inline-block')
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
@@ -715,7 +715,7 @@ var xml = function(e, s, n) {
           "    </div>" +
           "    <div class='fill'></div>" +
           "    <div class='image' style='display:none'>" +
-          "      <img id='" + i + "' class='" + i + " img' src='" + src + "'>" +
+          "      <img id='" + i + "' class='" + i + " img'>" +
           "    </div>" +
           "    <div class='wrap'>" + tag +
           "      <div class='pub' style='display:none' text='" +
