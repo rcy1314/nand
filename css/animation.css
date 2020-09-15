@@ -2,7 +2,7 @@
   text-decoration: none;
   display: inline-block;
   height: 35px;
-  width: 75px;
+  width: 95px;
   line-height: 35px;
   text-align: center;
   position: relative;
@@ -179,8 +179,8 @@
 .suggestOpposite {
   background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
   background: linear-gradient(to left, #ef4063, #e557c6);
-  -webkit-mask-image: radial-gradient(transparent 0 12px, #000 12.5px);
-  mask-image: radial-gradient(transparent 0 12px, #000 12.5px);
+  -webkit-mask-image: radial-gradient(transparent 0 14px, #000 14.5px);
+  mask-image: radial-gradient(transparent 0 14px, #000 14.5px);
   border-radius: 13px;
   position: relative;
 }

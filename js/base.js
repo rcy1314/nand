@@ -830,13 +830,13 @@ var xml = function(e, s, n) {
         "  <div class='back btn' aria-item=" + menu.indexOf(menu[$.back()]) + ">" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Previous</span>" +
-        "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+        "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +
         "  </div>" +
         "  <div class='bottom'>acktic</div>" +
         "  <div class='next btn' aria-item=" + menu.indexOf(menu[$.next()]) + ">" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Next</span>" +
-        "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+        "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +
         "  </div>" +
         "</div>"
       )

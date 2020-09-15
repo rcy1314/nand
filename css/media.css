@@ -163,8 +163,8 @@
     width: 940px;
   }
 
-  html body #wrapper #container #main #top #arm #search #option {
-    right: 15px;
+  html body #wrapper #container #main #top #arm #option {
+    right: 5px;
   }
 
   html body #wrapper #container #main .center {
