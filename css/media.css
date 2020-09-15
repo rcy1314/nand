@@ -134,6 +134,11 @@
     width: 90%;
   }
 
+  html body #wrapper #container #main #visit #page #front .quick {
+	width: 720px;
+	right: 30px;
+  }
+
 }
 
 @media screen and (min-width: 1025px) {
