@@ -649,7 +649,7 @@ $(document)
           "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <div class='radial'></div>" +
-          "    <img src='images/" + translations[i] + '.webp' + "'>" +
+          "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
           "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
           "      <br>&emsp;" + translations[i].grep() + " feeds" +
           "    </div>" +
@@ -747,7 +747,7 @@ $(document)
             "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "  <div class='radial'></div>" +
-            "  <img src='images/" + translations[i] + '.webp' + "'>" +
+            "  <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "    <br>&emsp;" + translations[i].grep() + " feeds" +
             "  </div>" +

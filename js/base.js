@@ -189,7 +189,7 @@ var quick  = function(n) {
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
       "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
-      "  <img src='images/" + translations[i] + ".webp'> " +
+      "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
       "  <a title='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
       "  </a>" +

@@ -91,11 +91,11 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .removeClass('visual').addClass('contrast')
-    $('html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
+    $('html body #wrapper #container #main #visit #page #front .quick .feed .translation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
       .css('filter','hue-rotate(110deg)')
 
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
@@ -190,12 +190,11 @@ var visual = function(n) {
     $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus')
         .addClass('pageInput pageInputOut')
-    $('html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed .asset .idTranslation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .typeTranslation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .typeTranslation')
+    $('html body #wrapper #container #main #visit #page #front .quick .feed .asset .translation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
       .css('filter','hue-rotate(0deg)')
     $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('html body #wrapper #container #main #progressBar').removeClass('responseOpposite').addClass('responseInvert')
