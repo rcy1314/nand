@@ -11,7 +11,6 @@ $(document)
             xml(null, null, $.random())
       }
     })
-    quick(7)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
@@ -48,6 +47,7 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('visible').addClass('invisible')
+        quick(7)
       } else {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('invisible').removeClass('visible')
@@ -56,6 +56,7 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('invisible').addClass('visible')
+        $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
       }
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
@@ -278,6 +279,8 @@ $(document)
               var delta = e.pageX - dragStartX
               $(this).parents('html body #wrapper #container #main .quick .feed')
                 .scrollLeft(marginLeftStart - delta)
+                if ($(this).parents('#page')) quick(3)
+                else if ($(this).parents('.center')) feed(3)
           }
           $(this).unbind("mouseup")
           e.preventDefault()
@@ -685,7 +688,7 @@ $(document)
       if ($(this).val().length == 0)
       $(this).css({
           'caret-color': 'transparent',
-          'padding-left': '20px',
+          'padding-left': '80px',
           'text-align': 'center'
         })
         .val('Search')

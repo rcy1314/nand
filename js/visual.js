@@ -36,6 +36,7 @@ var visual = function(n) {
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
     $('html body #wrapper #container #guide, ' +
       'html body #wrapper #container #main #top, ' +
+      'html body #wrapper #container #main #placeholder, ' +
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #top #arm, ' +
@@ -140,6 +141,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main, ' +
       'html body #wrapper #container #main .status .asset, ' +
       'html body #wrapper #container, ' +
+      'html body #wrapper #container #main #placeholder, ' +
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main .group, ' +
       'html body #wrapper #container #main .group .air, ' +
