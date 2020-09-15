@@ -114,15 +114,16 @@
   }
 
   html body #wrapper #container #main .center {
-	margin-left: -20px;
-    width: 55%;
+    width: 430px;
   }
 
-  html body #wrapper #container #main .status,
   html body #wrapper #container #main .content,
-  html body #wrapper #container #main .suggestions {
-	margin-left: 0;
-	width: 280px;
+  html body #wrapper #container #main .content .suggestions {
+	width: 220px;
+  }
+
+  html body #wrapper #container #main .content .status {
+	width: 240px;
   }
 
   html body #wrapper #container #main #page #front {

@@ -346,7 +346,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 892
+            scrollLeft: leftPos - 866
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -367,7 +367,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 640
+            scrollLeft: leftPos + 418
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -388,7 +388,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 639
+            scrollLeft: leftPos - 418
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')

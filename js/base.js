@@ -253,7 +253,7 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
   var duplicate = []
-  for (var i = 0; i <= 7; i++) {
+  for (var i = 0; i <= 6; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
     if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){

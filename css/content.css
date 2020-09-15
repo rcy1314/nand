@@ -1221,7 +1221,7 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 55px;
+  margin-left: 10px;
   text-align: left;
   position: sticky;
   font-size: 10px;
@@ -1276,8 +1276,8 @@ html body #wrapper #container #main .content .suggestions {
 html body #wrapper #container #main .content .suggestions .radial {
   border-radius: 36px;
   position: absolute;
-  height: 25px;
-  width: 26px;
+  height: 29px;
+  width: 29px;
   z-index: 1;
 }
 
@@ -1286,7 +1286,7 @@ html body #wrapper #container #main .content .suggestions img {
   position: relative;
   height: 25px;
   width: 25px;
-  left: .5px;
+  left: 2.5px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine {
@@ -1294,12 +1294,12 @@ html body #wrapper #container #main .content .suggestions .combine {
   padding: 15px;
   display: flex;
   width: 100%;
-  margin: 3px;
+  margin: 5px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine .suggest {
   padding-bottom: 5px;
-  padding-left: 5px;
+  padding-left: 10px;
   padding-top: 5px;
   font-size: 12px;
   width: 100%;
