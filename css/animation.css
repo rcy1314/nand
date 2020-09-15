@@ -140,8 +140,8 @@
 .suggestInvert {
   background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
   background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  -webkit-mask-image: radial-gradient(transparent 0 12px, #000 12.5px);
-  mask-image: radial-gradient(transparent 0 12px, #000 12.5px);
+  -webkit-mask-image: radial-gradient(transparent 0 14px, #000 14.5px);
+  mask-image: radial-gradient(transparent 0 14px, #000 14.5px);
   border-radius: 13px;
   position: relative;
 }

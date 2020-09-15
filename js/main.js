@@ -65,7 +65,8 @@ $(document)
       location.pathname.state()
       $('html body #wrapper #container #main #visit #page #front .quick')
         .addClass('invisible').removeClass('visible')
-      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+      $('html body #wrapper #container #main #visit #page #front')
+		.css('visibility','visible').addClass('toggle').removeClass('toggleHidden')
       $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
       $('html body #wrapper #container #main #visit #page #front .show')
         .removeClass('invisible').addClass('visible')
@@ -246,8 +247,6 @@ $(document)
         for (i = 0; i < 7; i++)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
-        quick(10)
-        feed(10)
       }
       $(this).unbind("mousemove")
       e.preventDefault()
@@ -287,8 +286,7 @@ $(document)
   .on('mouseup', document, function(e) {
         if (enableDrag)
             enableDrag = false
-        else mouseAsset = false
-        if (((new Date().getTime()) - tap) < 150) {
+        if (((new Date().getTime()) - tap) < 300) {
               enableDrag = false
               if (mouseAsset){
                   $.loading()
@@ -350,7 +348,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 892
+            scrollLeft: leftPos - 866
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -371,7 +369,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 640
+            scrollLeft: leftPos + 418
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -392,7 +390,7 @@ $(document)
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 639
+            scrollLeft: leftPos - 418
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')

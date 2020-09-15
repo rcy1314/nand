@@ -35,15 +35,19 @@ html body #wrapper #container #main #top #arm #option .fa-map,
 html body #wrapper #container #main #top #arm #option .fa-heart,
 html body #wrapper #container #main #top #arm #option .fa-heart-o,
 html body #wrapper #container #main #top #arm #option .fa-sun {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 17px;
   font-size: 17px;
-  padding: 17px;
 }
 
 html body #wrapper #container #main #top #arm #option .fa-home,
 html body #wrapper #container #main #top #arm #option .fa-code,
 html body #wrapper #container #main #top #arm #option .fa-terminal {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
   font-size: 20px;
-  padding: 15px;
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
@@ -511,8 +515,8 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover i
   font-size: 10px;
   height: 40.5px;
   bottom: 3.5px;
+  width: 40.5px;
   left: -1.5px;
-  width: 41px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .text,
@@ -566,7 +570,7 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   color: #aaa !important;
   position: absolute;
   margin-top: 2px;
-  left: 80px;
+  left: 60px;
   z-index: 2;
   top: 10px;
 }
@@ -695,7 +699,7 @@ html body #wrapper #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: none;
-  width: 15.5em;
+  width: 13em;
   top: .4em;
 }
 
@@ -1217,7 +1221,7 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 55px;
+  margin-left: 10px;
   text-align: left;
   position: sticky;
   font-size: 10px;
@@ -1272,8 +1276,8 @@ html body #wrapper #container #main .content .suggestions {
 html body #wrapper #container #main .content .suggestions .radial {
   border-radius: 36px;
   position: absolute;
-  height: 25px;
-  width: 26px;
+  height: 29px;
+  width: 29px;
   z-index: 1;
 }
 
@@ -1282,7 +1286,7 @@ html body #wrapper #container #main .content .suggestions img {
   position: relative;
   height: 25px;
   width: 25px;
-  left: .5px;
+  left: 2.5px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine {
@@ -1290,12 +1294,12 @@ html body #wrapper #container #main .content .suggestions .combine {
   padding: 15px;
   display: flex;
   width: 100%;
-  margin: 3px;
+  margin: 5px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine .suggest {
   padding-bottom: 5px;
-  padding-left: 5px;
+  padding-left: 10px;
   padding-top: 5px;
   font-size: 12px;
   width: 100%;

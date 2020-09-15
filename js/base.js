@@ -253,10 +253,10 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
   var duplicate = []
-  for (var i = 0; i <= 7; i++) {
+  for (var i = 0; i <= 6; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
-    if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
+    if (menu[e] && e != 0 && menu[e].media == true && $.inArray(duplicate, e) == -1){
       $('html body #wrapper #container #main .suggestions').append(
         "<div class='combine'>" +
         "  <div class='radial'></div>" +
@@ -775,7 +775,7 @@ var xml = function(e, s, n) {
         "<div class='content' style='visibility:hidden'>" +
         "  <div class='status'></div>" +
         "  <div class='suggestions'>" +
-        "    <b>suggested</b>&ensp;...<br>" +
+        "    <b>srandom</b>&ensp;...<br>" +
         "  </div>" +
         "</div>"
       )
