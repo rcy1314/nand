@@ -82,7 +82,7 @@ $(document)
     $.loading()
     onlyImages = onlyImages != true
     notify ('Only Images now ' + onlyImages)
-    populate(category)
+    if (reader == false) populate(category)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
     if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
