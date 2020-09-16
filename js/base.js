@@ -253,7 +253,7 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
   var duplicate = []
-  for (var i = 0; i <= 6; i++) {
+  for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
     if (menu[e] && e != 0 && menu[e].media == true && $.inArray(duplicate, e) == -1){
@@ -264,10 +264,12 @@ var suggest = function(n) {
         "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
         "    title='" + menu[e].id + "'><b>" +
              String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
-        "    <div style='float:right'><a aria-item='" + menu[e].cat + "'>" +
-               menu[e].cat + "</a>" +
-        "    </div>" +
+		"  <br><div style='float:left'>Images " + menu[e].media.toString().capitalize() + "</div>" + 
         "  </div>" +
+        "  <a style='float:right' aria-item='" + menu[e].cat + "'" +
+		"	   title='" + menu[e].cat + "'>" +
+               menu[e].cat + 
+		"  </a>" +
         "</div>"
       )
     }

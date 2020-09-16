@@ -84,7 +84,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #visit #page #front .focus')
       .removeClass('pageInput pageInputOut')
     $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid #f7426c')
-    $('html body #wrapper #container #main .content .suggestions .combine .suggest a, ' +
+    $('html body #wrapper #container #main .content .suggestions .combine a, ' +
       'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
@@ -118,12 +118,6 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-      'html body #wrapper #container #main .group, ' +
-      'html body #wrapper #container #main .group .air, ' +
-      'html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate, ' +
-      'html body #wrapper #container #main .group .result, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
@@ -152,6 +146,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right, ' +
       'html body #wrapper #container #main .center .quick .left, ' +
+      'html body #wrapper #container #main .group, ' +
+      'html body #wrapper #container #main .group .air, ' +
       'html body #wrapper #container #main .group .air .populate, ' +
       'html body #wrapper #container #main .group .result .filter, ' +
       'html body #wrapper #container #main .group .result .populate, ' +
@@ -185,7 +181,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
       'html body #wrapper #container #main .center .quick .feed .radial')
       .removeClass('feedOpposite').addClass('feedInvert')
-    $('html body #wrapper #container #main .content .suggestions .combine .suggest a').css('color','steelblue')
+    $('html body #wrapper #container #main .content .suggestions .combine a').css('color','steelblue')
     $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid dodgerblue')
     $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus')

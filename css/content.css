@@ -218,6 +218,7 @@ html body #wrapper #container #main #top #arm #option {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -478,7 +479,7 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   cursor: pointer;
   height: 440px;
   width: 100%;
-  top: -22px;
+  top: -62px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .radial,
@@ -991,8 +992,7 @@ html body #wrapper #container #guide .sticky .item {
 }
 
 .invertOver:not(:hover) {
-  border: .3px solid #ffffff;
-  background-color: #ffffff;
+  border: .3px solid #f6f8fa;
 }
 
 .opposite {
@@ -1286,8 +1286,8 @@ html body #wrapper #container #main .content .suggestions img {
 
 html body #wrapper #container #main .content .suggestions .combine {
   align-items: center;
-  padding: 15px;
   display: flex;
+  padding: 5px;
   width: 100%;
   margin: 5px;
 }
