@@ -318,7 +318,9 @@ $(document)
           e.preventDefault()
           tap = 0
   })
-  .on('mouseup', document, function(e) {
+  .on('mouseup', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
+    'html body #wrapper #container #main .center .quick .feed .asset, ' +
+    'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
         if (enableDrag)
             enableDrag = false
         if (((new Date().getTime()) - tap) < 300) {

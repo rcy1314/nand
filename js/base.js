@@ -1,7 +1,7 @@
 var op = 0 //1 invert, 2 opposite
 var loading = 'dots' //or 'percent'
 var contrast = false //opposite of op
-var quickFeeds = true //show or hide 
+var quickFeeds = true //show or hide
 var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
@@ -254,6 +254,7 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
   var duplicate = []
+  var contains = 'feed contains images'
   for (var i = 0; i <= 7; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
@@ -265,12 +266,12 @@ var suggest = function(n) {
         "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
         "    title='" + menu[e].id + "'><b>" +
              String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
-		"  <br><div style='float:left'>Images " + menu[e].media.toString().capitalize() + "</div>" +
+		    "    <br><div style='float:left'>" + contains + "</div>" +
         "  </div>" +
         "  <a style='float:right' aria-item='" + menu[e].cat + "'" +
-		"	   title='" + menu[e].cat + "'>" +
+		    "	   title='" + menu[e].cat + "'>" +
                menu[e].cat +
-		"  </a>" +
+		    "  </a>" +
         "</div>"
       )
     }

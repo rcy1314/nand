@@ -383,6 +383,7 @@ html body #wrapper #container #main #top #arm #option {
   justify-content: space-between;
   background-color: transparent;
   position: absolute;
+  cursor: pointer;
   display: flex;
   right: -35px;
   z-index: 1;
@@ -1074,8 +1075,10 @@ html body #wrapper #container #main .center .item .image {
 }
 
 html body #wrapper #container #main .center .item .img {
-  max-width: 100%;
+  position: relative;
   max-height: 90vh;
+  max-width: 100%;
+  display: block;
   margin: 0 auto;
 }
 
@@ -1216,13 +1219,11 @@ html body #wrapper #container #main .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
-  margin-left: 10px;
   text-align: left;
   position: sticky;
   font-size: 10px;
-  padding: 15px;
   width: 320px;
-  top: 60px;
+  top: 80px;
 }
 
 html body #wrapper #container #main .content .status {
@@ -1298,6 +1299,13 @@ html body #wrapper #container #main .content .suggestions .combine .suggest {
   padding-top: 5px;
   font-size: 12px;
   width: 100%;
+}
+
+html body #wrapper #container #main .content .suggestions .combine .suggest div {
+  font-style: italic !important;
+  text-transform: capitalize;
+  font-size: 9px;
+  float: left;
 }
 
 html body #wrapper #container #main .content .suggestions .combine .suggest a {
