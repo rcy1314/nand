@@ -11,6 +11,25 @@ $(document)
             xml(null, null, $.random())
       }
     })
+	  if (quickFeeds == true) {
+        $('html body #wrapper #container #main #visit #page #front .quick')
+          .addClass('visible').removeClass('invisible')
+        $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
+        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
+        $('html body #wrapper #container #main #visit #page #front .show')
+          .removeClass('visible').addClass('invisible')
+        quick(7)
+      } else if (quickFeeds == false){
+        $('html body #wrapper #container #main #visit #page #front .quick')
+          .addClass('invisible').removeClass('visible')
+        $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+        $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
+        $('html body #wrapper #container #main #visit #page #front .show')
+          .removeClass('invisible').addClass('visible')
+        $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+      }
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
@@ -48,7 +67,7 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front .show')
           .removeClass('visible').addClass('invisible')
         quick(7)
-      } else {
+      } else if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('visible')){
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('invisible').removeClass('visible')
         $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
@@ -329,12 +348,12 @@ $(document)
     'html body #wrapper #container #main #visit #page #front .quick .right, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-right',
     function(e) {
-        console.log($('html body #wrapper #container #main .quick .feed').scrollLeft())
+		var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 866
+            scrollLeft: leftPos + $this.parents('.quick').width()
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -346,11 +365,12 @@ $(document)
     'html body #wrapper #container #main #visit #page #front .quick .left, ' +
     'html body #wrapper #container #main #visit #page #front .quick .fa-angle-left',
     function(e) {
+		var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 866
+            scrollLeft: leftPos - $this.parents('.quick').width()
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
