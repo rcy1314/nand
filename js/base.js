@@ -255,7 +255,7 @@ var suggest = function(n) {
 
   var duplicate = []
   var contains = 'feed contains images'
-  for (var i = 0; i <= 7; i++) {
+  for (var i = 0; i <= 8; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     duplicate.push(e)
     if (menu[e] && e != 0 && menu[e].media == true && $.inArray(duplicate, e) == -1){
@@ -275,7 +275,6 @@ var suggest = function(n) {
         "</div>"
       )
     }
-    if (i == 9) return false
   }
 
 }
