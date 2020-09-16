@@ -815,15 +815,48 @@ var xml = function(e, s, n) {
       )
       image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
+      var images = []
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
-        if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
-        else image(false, pub[i].feed, pub[i].element, pub[i].src)
+        images.push(pub[i].src)
       })
+      cacheimages(
+     {
+        imgs    : images,
+        load    : function () {
+          $.each(pub, function(i, k) {
+             if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
+             else image(false, pub[i].feed, pub[i].element, pub[i].src)
+         })
+       },
+ //            # triggered when single image is sucessfuly cached
+ //            # @param1, ( string ), loaded image source path
+ //            # @param2, ( event object ), native event object generated
+ //            # context ( this ), Image object, target obj related with event
+ //
+ //          error : function () { console.log( arguments, this ); },
+ //            # triggered when error occured when tring to download image
+ //            # @param1, ( string ), path to the image failed to load
+ //            # @param2, ( event object ), native event object describing the circumstance
+ //            # context ( this ), Image object, target obj related with event
+ //
+ //          abort : function () { console.log( arguments, this ); },
+ //            # triggered when download is haulted by user action ( browsers 'stop' button )
+ //            # @param1, ( string ), path to the image failed to load
+ //            # @param2, ( event object ), native event object generated
+ //            # context ( this ), Image object, target obj related with event
+ //
+          done   : function () {
+         },
+ //            # triggered after download proccess completes
+ //            # @params, ( string(s) ), images in question
+ //            # context ( this ), document
+      }
+ );
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
