@@ -114,7 +114,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit, ' +
       'html body #wrapper #container #main #visit #page, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
       'html body #wrapper #container #main .center .channel .item .classic, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
@@ -148,6 +147,7 @@ var visual = function(n) {
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #visit #page, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right, ' +

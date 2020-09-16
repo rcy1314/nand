@@ -210,41 +210,14 @@ input {
   font-family: Proxima Nova;
 }
 
-html body #wrapper #container #toggle,
-html body #wrapper #container #main .group .air .populate,
-html body #wrapper #container #main .group .result .filter,
-html body #wrapper #container #main .group .result .populate,
-html body #wrapper #container #main #visit #page #front #label .show,
-html body #wrapper #container #main .content .suggestions .combine div,
-html body #wrapper #container #guide .checkmark,
-html body #wrapper #container #main #top #arm #option,
-html body #wrapper #container #main .center #bottom .bottom,
-html body #wrapper #container #main #visit #page #front #first .index,
-html body #wrapper #container #main #visit #page #front #first .hover,
-html body #wrapper #container #main #top #arm #search #match .listing .index,
-html body #wrapper #container #main #top #arm #search #match .listing .hover,
-html body #wrapper #container #main .center .right,
-html body #wrapper #container #main #visit #page #front .quick .right,
-html body #wrapper #container #main .center .quick .fa-angle-right,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-right,
-html body #wrapper #container #main .center .quick .left,
-html body #wrapper #container #main #visit #page #front .quick .left,
-html body #wrapper #container #main .center .quick .fa-angle-left,
-html body #wrapper #container #main #visit #page #front .quick .fa-angle-left,
-html body #wrapper #container #main .center .quick .feed,
-html body #wrapper #container #main #visit #page #front .quick .feed,
-html body #wrapper #container #main #top #arm #search #home,
-html body #wrapper #container #main .center .item .pub .more,
-html body #wrapper #container #main .center .item .addComment .post,
-html body #wrapper #container #main .center .item .img,
-.radial,
-.id,
-a {
+html body #wrapper #container #main #handle,
+html body #wrapper #container #main #top #arm #option {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: transparent;
   -webkit-user-select: none;
+}
+
+a {
   text-decoration: none;
-  cursor: pointer;
 }
 
 a:hover {
@@ -291,6 +264,7 @@ html body #wrapper #container #main #progressBar {
 html body #wrapper #container #toggle {
   background-color: transparent !important;
   position: absolute;
+  cursor: pointer;
   padding: 15px;
   right: 2px;
   z-index: 1;
@@ -299,6 +273,7 @@ html body #wrapper #container #toggle {
 
 html body #wrapper #container #guide .checkmark {
   position: absolute;
+  cursor: pointer;
   padding: 10px;
   top: 0;
   right: 0;
@@ -391,6 +366,7 @@ html body #wrapper #container #main #top #arm #search #home {
   text-decoration: none;
   font-display: block;
   position: absolute;
+  cursor: pointer;
   font-size: 36px;
   cursor: pointer;
   height: 40px;
@@ -497,11 +473,12 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   border-radius: 4px;
   position: relative;
   padding-top: 11px;
-  width: calc(100%);
   overflow-y: auto;
   text-align: left;
+  cursor: pointer;
   height: 440px;
-  bottom: 46px;
+  width: 100%;
+  top: -22px;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .index .radial,
@@ -621,10 +598,11 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
 html body #wrapper #container #main #visit #page #front #label .show {
   display: inline-block;
   position: relative;
-  margin: 0 auto;
-  margin-top: 25px;
+  cursor: pointer;
   font-size: 14px;
+  margin: 0 auto;
   z-index: 2;
+  top: 25px;
 }
 
 html body #wrapper #container #main #visit #page #front #label .link {
@@ -655,6 +633,7 @@ html body #wrapper #container #main .group .result .populate {
   display: inline-flex;
   border-radius: 8px;
   flex-wrap: wrap;
+  cursor: pointer;
   font-size: 9px;
   padding: 12px;
   margin: 3em;
@@ -740,7 +719,7 @@ html body #wrapper #container #main .center .quick,
 html body #wrapper #container #main #visit #page #front .quick {
   border-radius: 4px;
   position: relative;
-  margin: 15px auto;
+  margin: 35px auto;
   height: 7.5em;
   width: 100%;
 }
@@ -752,6 +731,7 @@ html body #wrapper #container #main #visit #page #front .quick .feed {
   position: relative;
   overflow: hidden;
   overflow-x: auto;
+  cursor: pointer;
   font-size: 10px;
   display: flex;
   height: 100%;
@@ -821,6 +801,7 @@ html body #wrapper #container #main .center .quick .right {
   align-items: center;
   border-radius: 16px;
   position: absolute;
+  cursor: pointer;
   display: flex;
   right : -18px;
   padding: 4px;
@@ -834,6 +815,7 @@ html body #wrapper #container #main #visit #page #front .quick .right {
   align-items: center;
   border-radius: 16px;
   position: absolute;
+  cursor: pointer;
   display: flex;
   right : -28px;
   padding: 4px;
@@ -846,9 +828,10 @@ html body #wrapper #container #main #visit #page #front .quick .right {
 html body #wrapper #container #main .center .quick .left {
   justify-content: center;
   align-items: center;
-  position: absolute;
-  display: flex;
   border-radius: 16px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -859,9 +842,10 @@ html body #wrapper #container #main .center .quick .left {
 html body #wrapper #container #main #visit #page #front .quick .left {
   justify-content: center;
   align-items: center;
-  position: absolute;
-  display: flex;
   border-radius: 16px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -1109,6 +1093,7 @@ html body #wrapper #container #main .center .item .pub .more {
   position: relative;
   padding-top: 5px;
   font-size: 13px;
+  cursor: pointer;
   color: #aaa;
 }
 
@@ -1135,6 +1120,7 @@ html body #wrapper #container #main .center .item .addComment .post {
   margin-right: 10px;
   position: relative;
   font-size: 12px;
+  cursor: pointer;
   float: right;
   top: -27px;
 }
@@ -1208,6 +1194,7 @@ html body #wrapper #container #main .center #bottom .bottom {
   font-family: Billabong;
   display: inline-block;
   font-size: 28px;
+  cursor: pointer;
 }
 
 html body #wrapper #container #main .center #bottom .previous {
@@ -1320,6 +1307,7 @@ html body #wrapper #container #main .content .suggestions .combine .suggest a {
 
 html body #wrapper #container #main .content .suggestions .combine div {
   background-color: transparent;
+  cursor: pointer;
 }
 
 html body #wrapper #container #main .center .item .views {
@@ -1411,6 +1399,7 @@ html body #wrapper #container #main #top #arm #search #match .listing {
   padding-top: 12px;
   text-align: left;
   overflow-y: auto;
+  cursor: pointer;
   margin: 0 auto;
   height: 440px;
   width: 18em;
