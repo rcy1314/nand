@@ -15,6 +15,7 @@
 * category Legacy
 * contrast boolean
 * onlyImages boolean
+* quickFeeds boolean
 * translations array
 
 ### Invert

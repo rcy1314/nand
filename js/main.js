@@ -11,6 +11,8 @@ $(document)
             xml(null, null, $.random())
       }
     })
+    nextAngle -= 180
+    if (nextAngle <= -360) nextAngle = 0
 	  if (quickFeeds == true) {
         $('html body #wrapper #container #main #visit #page #front .quick')
           .addClass('visible').removeClass('invisible')
@@ -82,18 +84,30 @@ $(document)
     function(e) {
       id = 0
       $.loading()
+      nextAngle -= 180
       location.pathname.state()
-      $('html body #wrapper #container #main #visit #page #front .quick')
-        .addClass('invisible').removeClass('visible')
-      $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
-      $('html body #wrapper #container #main #visit #page #front')
-		    .css('visibility','visible').addClass('toggle').removeClass('toggleHidden')
-      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').toggleClass('rotate')
-      $('html body #wrapper #container #main #visit #page #front .show')
-        .removeClass('invisible').addClass('visible')
+      if (nextAngle <= -360) nextAngle = 0
+      if (quickFeeds == true) {
+          $('html body #wrapper #container #main #visit #page #front .quick')
+            .addClass('visible').removeClass('invisible')
+          $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
+          $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+          $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
+          $('html body #wrapper #container #main #visit #page #front .show')
+            .removeClass('visible').addClass('invisible')
+        } else if (quickFeeds == false){
+          $('html body #wrapper #container #main #visit #page #front .quick')
+            .addClass('invisible').removeClass('visible')
+          $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+          $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+          $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
+          $('html body #wrapper #container #main #visit #page #front .show')
+            .removeClass('invisible').addClass('visible')
+          $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+        }
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #main #visit').show()
-      $('html body #wrapper #container #main #visit .quick .feed').scrollLeft(0)
+      $('html body #wrapper #container #main #visit .quick .feed').empty()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
       document.title = ''
       $.unloading()
@@ -310,6 +324,7 @@ $(document)
         if (((new Date().getTime()) - tap) < 300) {
               enableDrag = false
               if (mouseAsset){
+                $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
                   $.loading()
                   if ($.inArray(mouseAsset, translations) > -1){
                     category = mouseAsset.capitalize()
