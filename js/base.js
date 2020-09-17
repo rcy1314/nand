@@ -78,14 +78,8 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
   $('html body #wrapper #container #main #top').hide()
 }
 
-var content  = function(n, recent, oldest, posts) {
+var content  = function(n, recent, oldest, images, posts) {
 
-    var count = 0
-    $('.img').each(function () {
-      if (this.src.length > 0) {
-        count = count + 1
-      }
-    });
     $('html body #wrapper #container #main .status').append(
       "<div class='asset' aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <img src='" + menu[n].img.image() + "'" + "'>" +
@@ -96,7 +90,7 @@ var content  = function(n, recent, oldest, posts) {
       "  <br>" +
       "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
       "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
-      "  <b>Images</b>&ensp;<div class='images'>" + count + "</div><br>" +
+      "  <b>Images</b>&ensp;<div class='images'>" + images + "</div><br>" +
       "  <b>Posts</b>&ensp;" + posts +
       "</div>"
     )
@@ -500,7 +494,7 @@ var image = function(empty, n, item, src) {
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).css('max-height', '90vh')
        else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
-         $(this).css('max-width', '100%').parents('.sticky').width('90%')
+         $(this).css('max-width', '95vw')
      } else if ($(this).get(0).naturalWidth < small) {
          $(this).width('100%').css('margin','10px')
            .parents('.item')
@@ -837,7 +831,7 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
-        images.push(pub[i].src)
+        if (pub[i].src) images.push(pub[i].src)
       })
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
@@ -877,10 +871,6 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
-    $('html body #wrapper #container #main').attr('tabindex', -1).focus()
-    content(n, recent, oldest, posts)
-    feed(40)
-    suggest(id)
     cacheimages(
    {
       imgs    : images,
@@ -917,6 +907,10 @@ var xml = function(e, s, n) {
 //            # context ( this ), document
     }
   );
+    $('html body #wrapper #container #main').attr('tabindex', -1).focus()
+    content(n, recent, oldest, images.length, posts)
+    feed(40)
+    suggest(id)
   $.unloading()
   })
 
