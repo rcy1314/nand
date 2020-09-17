@@ -35,7 +35,9 @@ var visual = function(n) {
       '--loader-color-primary': '#f7426C',
       '--loader-color-secondary': '#e86d8a'
     })
-    $('html body #wrapper #container #main #visit #page #front #label .link, ' +
+    $('html body #wrapper #container #main #visit #page #front .quick .feed .asset, ' +
+      'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
+      'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page #front .quick .left, ' +
       'html body #wrapper #container #main #visit #page #front .quick .right, ' +
       'html body #wrapper #container #main .center .quick .left, ' +
