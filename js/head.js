@@ -1741,6 +1741,16 @@ var menu = [
 		img: "Apple",
 		hash: "pA",
     media: true
+	},
+	{
+		id: "Reddit/Art",
+		cat: "Social",
+		des: "The subreddit about art, drawings, paintings, and computer generated.",
+		uri: "https://www.reddit.com/r/art/.rss",
+		ext: "https://www.reddit.com/r/art",
+		img: "Art",
+		hash: "at",
+    media: true
   },
 	{
 		id: "Arch Linux",
@@ -2303,6 +2313,16 @@ var menu = [
     media: false
   },
 	{
+		id: "Reddit/TechNews",
+		cat: "Social",
+		des: "TechNews subreddit with Interesting technology news.",
+		uri: "https://www.reddit.com/r/technews/.rss",
+		ext: "https://www.reddit.com/r/TechNews",
+		img: "TechNews",
+		hash: "eH",
+    media: true
+  },
+	{
 		id: "Reddit/Technology",
 		cat: "Social",
 		des: "Technology subreddit shares submitted articles about Technology.",
@@ -2739,7 +2759,7 @@ var menu = [
 		uri: "https://feeds.thescore.com/nba.rss",
 		ext: "https://www.thescore.com/nba/news",
 		img: "TheScore",
-		hash: "nT",
+		hash: "nb",
 		media: true
   },
 	{

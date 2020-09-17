@@ -746,7 +746,7 @@ $(document)
         'caret-color': 'transparent',
         'text-align': 'center',
         'padding': '0'
-      }).val('')
+      }).val('Search')
   })
   .on('submit', 'html body #wrapper #container #top #arm #search', function(e) {
     $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content').remove()
