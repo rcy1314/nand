@@ -554,12 +554,12 @@ html body #wrapper #container #main #visit #page #front .focus input[type=text] 
   margin: 0;
 }
 
-.pageInput {
+.pageInput:hover {
   box-shadow: 2px 2px 12px #ddd !important;
   transition: box-shadow .25s;
 }
 
-.pageInputOut {
+.pageInput:not(:hover) {
   box-shadow: 1px 1px 1px #ddd !important;
   transition: box-shadow .25s;
 }

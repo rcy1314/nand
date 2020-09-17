@@ -530,22 +530,6 @@ $(document)
         $.loading()
         populate($(this).attr('aria-item'))
  })
-  .on('mouseenter',
-    'html body #wrapper #container #main #visit #page #front .focus .button, ' +
-    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
-    function(e) {
-      if (op == 0)
-        $('html body #wrapper #container #main #visit #page #front .focus')
-          .removeClass('pageInputOut').addClass('pageInput')
-  })
-  .on('mouseleave',
-    'html body #wrapper #container #main #visit #page #front .focus .button, ' +
-    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
-    function(e) {
-      if (op == 0)
-        $('html body #wrapper #container #main #visit #page #front .focus')
-          .removeClass('pageInput').addClass('pageInputOut')
-  })
   .on('touch click',
     'html body #wrapper #container #main #visit #page #front .focus .button .buttonSearch',
     function(e) {
