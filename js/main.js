@@ -271,8 +271,7 @@ $(document)
         dragStartX = 0
         enableDrag = true
         dragStartX = e.pageX
-        tap = new Date().getTime();
-        mouseAsset = $(this).attr('aria-item')
+        if ($(this).attr('aria-item')) mouseAsset = $(this).attr('aria-item')
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
@@ -294,7 +293,6 @@ $(document)
           $(this).parents('html body #wrapper #container #main .quick .feed')
             .find('.asset:first').empty()
         quick(10)
-        tap = 0
   })
   .on('mousemove', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
@@ -324,8 +322,6 @@ $(document)
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
         if (enableDrag)
             enableDrag = false
-        if (((new Date().getTime()) - tap) < 300) {
-              enableDrag = false
               if (mouseAsset){
                 $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
                   $.loading()
@@ -345,8 +341,6 @@ $(document)
                     xml(null, null, mouseAsset)
                   }
               }
-              tap = 0
-          }
           e.preventDefault()
   })
   .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
