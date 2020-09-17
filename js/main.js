@@ -52,7 +52,7 @@ $(document)
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
         $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
         if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length == 0 ||
-          $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val() == 'Search')
+          $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val() == '')
         $('html body #wrapper #container #main #visit #page #front .focus .icon').removeClass('search')
       }
    })
@@ -216,18 +216,18 @@ $(document)
       xml(null, null, $.random())
   })
   .on('touch click',
-    'html body #wrapper #container #main .group .air .populate, ' +
-    'html body #wrapper #container #main .group .result .filter, ' +
-    'html body #wrapper #container #main .group .result .populate',
+    'html body #wrapper #container #main #group .air .populate, ' +
+    'html body #wrapper #container #main #group .result .filter, ' +
+    'html body #wrapper #container #main #group .result .populate',
     function(e) {
       $.loading()
       $('html body #wrapper #containter #visit').hide()
       xml(null, null, $(this).attr('aria-item'))
   })
   .on('mouseenter',
-      'html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate',
+      'html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate',
       function(e) {
         if (op == 0)
           $(this).toggleClass('overlay')
@@ -240,9 +240,9 @@ $(document)
             })
   })
   .on('mouseleave',
-    'html body #wrapper #container #main .group .air .populate, ' +
-    'html body #wrapper #container #main .group .result .filter, ' +
-    'html body #wrapper #container #main .group .result .populate',
+    'html body #wrapper #container #main #group .air .populate, ' +
+    'html body #wrapper #container #main #group .result .filter, ' +
+    'html body #wrapper #container #main #group .result .populate',
     function(e) {
       if (op == 0) $(this).removeClass('overlay')
   })
@@ -275,24 +275,9 @@ $(document)
         marginLeftStart = parseInt($(this)
           .parents('html body #wrapper #container #main .quick .feed')
             .scrollLeft())
-      if ($(this).parents('html body #wrapper #container #main .quick .feed')
-          .scrollLeft() >= 3000)
-        for (i = 0; i < 7; i++)
-          $(this).parents('html body #wrapper #container #main .quick .feed')
-            .find('.asset:first').empty()
       }
       $(this).unbind("mousemove")
       e.preventDefault()
-  })
-  .on('touchmove', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
-    function(e) {
-    if ($(this).parents('html body #wrapper #container #main .quick .feed')
-          .scrollLeft() >= 3000)
-        for (i = 0; i < 7; i++)
-          $(this).parents('html body #wrapper #container #main .quick .feed')
-            .find('.asset:first').empty()
-        quick(10)
   })
   .on('mousemove', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
@@ -310,14 +295,19 @@ $(document)
               var delta = e.pageX - dragStartX
               $(this).parents('html body #wrapper #container #main .quick .feed')
                 .scrollLeft(marginLeftStart - delta)
-                if ($(this).parents('#page')) quick(3)
-                else if ($(this).parents('.center')) feed(3)
           }
           $(this).unbind("mouseup")
+          mouseAsset = false
           e.preventDefault()
-          tap = 0
   })
-  .on('mouseup', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
+  .on('touch click', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation', function(e) {
+      $.loading()
+      $('html body #wrapper #container #main #visit').hide()
+      $('html body #wrapper #container #main #top').show()
+      populate($(this).attr('aria-item'))
+  })
+  .on('mouseup', 'html body #wrapper #container #main #visit, ' +
+    'html body #wrapper #container #main #feed, ' +
     'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
         if (enableDrag)
@@ -338,7 +328,7 @@ $(document)
                     $.loading()
                     $('html body #wrapper #container #main #visit').hide()
                     $('html body #wrapper #container #main #top').show()
-                    xml(null, null, mouseAsset)
+                    if ($.active == 0) xml(null, null, mouseAsset)
                   }
               }
           e.preventDefault()
@@ -371,6 +361,11 @@ $(document)
               .find('.feed')
           .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
                                 .find('.left').show()
+        if ($(this).parents('html body #wrapper #container #main .quick .feed')
+              .scrollLeft() >= 3000)
+          for (i = 0; i < 10; i++)
+            $(this).parents('html body #wrapper #container #main .quick .feed')
+              .find('.asset:first').empty()
         quick(10)
   })
   .on('touch click',
@@ -430,7 +425,7 @@ $(document)
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
-          .scrollLeft() <= 639) {
+          .scrollLeft() <= $this.parents('.quick').width()) {
             $(this).parents('html body #wrapper #container #main .quick')
               .find('.left').hide()
             $(this).parents('html body #wrapper #container #main .quick')
@@ -611,7 +606,7 @@ $(document)
     'html body #wrapper #container #main #visit #page #front .focus .button .buttonSearch',
     function(e) {
       if ($('html body #wrapper #container #main #visit #page #front input[type=text]').val().length > 0 &&
-          $('html body #wrapper #container #main #visit #page #front input[type=text]').val() != 'Search')
+          $('html body #wrapper #container #main #visit #page #front input[type=text]').val() != '')
         $('html body #wrapper #container #main #visit #page #front').submit()
       e.preventDefault()
   })
@@ -644,9 +639,9 @@ $(document)
        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
        $('html body #wrapper #container #main .center, ' +
          'html body #wrapper #container #main .content, ' +
-         'html body #wrapper #container #main .group .air, ' +
+         'html body #wrapper #container #main #group .air, ' +
          'html body #wrapper #container #main .suggestions, ' +
-         'html body #wrapper #container #main .group .result').show()
+         'html body #wrapper #container #main #group .result').show()
       }
       if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
@@ -724,11 +719,11 @@ $(document)
           'padding-left': '80px',
           'text-align': 'center'
         })
-        .val('Search')
+        .val('')
   })
   .on('keyup', 'html body #wrapper #container #top #arm #search #input input[type=text]',
     function(e) {
-      if ($(this).val() != 'Search') var keyup = $(this).val()
+      if ($(this).val() != '') var keyup = $(this).val()
       if (e.keyCode == 13) {
         $('html body #wrapper #container #main #top #arm #search #match').hide()
         return false
@@ -740,9 +735,9 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #match').hide()
         $('html body #wrapper #container #main .center, ' +
           'html body #wrapper #container #main .content, ' +
-          'html body #wrapper #container #main .group .air, ' +
+          'html body #wrapper #container #main #group .air, ' +
           'html body #wrapper #container #main .suggestions, ' +
-          'html body #wrapper #container #main .group .result').show()
+          'html body #wrapper #container #main #group .result').show()
       }
       if (e.keyCode == 40 || e.keyCode == 34) {
         if (!$('html body #wrapper #container #main #top #arm #search #match .listing .hover').length)
@@ -807,7 +802,7 @@ $(document)
         'caret-color': 'transparent',
         'text-align': 'center',
         'padding': '0'
-      }).val('Search')
+      }).val('')
   })
   .on('submit', 'html body #wrapper #container #top #arm #search', function(e) {
     $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content').remove()
@@ -839,7 +834,7 @@ $(document)
         uri.define().exit()
       }
     }
-    $('html body #wrapper #container #arm #search input[type=text]').val('Search').blur()
+    $('html body #wrapper #container #arm #search input[type=text]').val('').blur()
     e.preventDefault()
     visual()
   })
@@ -873,7 +868,7 @@ $(document)
           uri.define().exit()
         }
       }
-      $('html body #wrapper #container #arm #search input[type=text]').val('Search').blur()
+      $('html body #wrapper #container #arm #search input[type=text]').val('').blur()
       e.preventDefault()
       visual()
   })

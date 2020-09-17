@@ -124,7 +124,8 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 $.loading = function () {
 
   if (reader == false) {
-    $('html body #wrapper #container #main .group, '+
+    $('html body #wrapper #container #main #feed, ' +
+      'html body #wrapper #container #main #group, '+
       'html body #wrapper #container #main .translation, ' +
       'html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .content').remove()
@@ -162,7 +163,7 @@ $.unloading = function() {
       clearInterval(complete)
       progress(true, 100)
     }
-  }, 400)
+  }, 250)
 }
 
 String.prototype.space = function() {

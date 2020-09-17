@@ -230,6 +230,7 @@ html body,
 html body #wrapper,
 html body #wrapper #container,
 html body #wrapper #container #main,
+html body #wrapper #container #main #feed,
 html body #wrapper #container #main #visit {
   overflow: hidden;
   height: 100%;
@@ -403,7 +404,15 @@ html body #wrapper #container #main {
   outline: none;
 }
 
-html body #wrapper #container #main .group {
+html body #wrapper #container #main #feed {
+  background-color: transparent;
+  scrollbar-width: none;
+  height: fit-content;
+  position: relative;
+  width: 100%;
+}
+
+html body #wrapper #container #main #group {
   background-color: transparent;
   scrollbar-width: none;
   height: fit-content;
@@ -624,8 +633,8 @@ html body #wrapper #container #main #visit #page #front #label .link {
   z-index: 2;
 }
 
-html body #wrapper #container #main .group .air,
-html body #wrapper #container #main .group .result {
+html body #wrapper #container #main #group .air,
+html body #wrapper #container #main #group .result {
   background-color: transparent;
   justify-content: center;
   flex-wrap: wrap;
@@ -633,9 +642,9 @@ html body #wrapper #container #main .group .result {
   width: 100%;
 }
 
-html body #wrapper #container #main .group .air .populate,
-html body #wrapper #container #main .group .result .filter,
-html body #wrapper #container #main .group .result .populate {
+html body #wrapper #container #main #group .air .populate,
+html body #wrapper #container #main #group .result .filter,
+html body #wrapper #container #main #group .result .populate {
   display: inline-flex;
   border-radius: 8px;
   flex-wrap: wrap;
@@ -646,25 +655,25 @@ html body #wrapper #container #main .group .result .populate {
   width: 16em;
 }
 
-html body #wrapper #container #main .group .air .populate a,
-html body #wrapper #container #main .group .result .filter a,
-html body #wrapper #container #main .group .result .populate a {
+html body #wrapper #container #main #group .air .populate a,
+html body #wrapper #container #main #group .result .filter a,
+html body #wrapper #container #main #group .result .populate a {
   background-color: transparent;
   position: relative;
   margin: 0 auto;
 }
 
-html body #wrapper #container #main .group .air .populate .display,
-html body #wrapper #container #main .group .result .filter .display,
-html body #wrapper #container #main .group .result .populate .display {
+html body #wrapper #container #main #group .air .populate .display,
+html body #wrapper #container #main #group .result .filter .display,
+html body #wrapper #container #main #group .result .populate .display {
   position: relative;
   padding: 5px;
   width: 100%;
 }
 
-html body #wrapper #container #main .group .air .populate .display img,
-html body #wrapper #container #main .group .result .filter .display img,
-html body #wrapper #container #main .group .result .populate .display img {
+html body #wrapper #container #main #group .air .populate .display img,
+html body #wrapper #container #main #group .result .filter .display img,
+html body #wrapper #container #main #group .result .populate .display img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;
@@ -675,9 +684,9 @@ html body #wrapper #container #main .group .result .populate .display img {
   width: 53px;
 }
 
-html body #wrapper #container #main .group .air .populate .title,
-html body #wrapper #container #main .group .result .filter .title,
-html body #wrapper #container #main .group .result .populate .title {
+html body #wrapper #container #main #group .air .populate .title,
+html body #wrapper #container #main #group .result .filter .title,
+html body #wrapper #container #main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
   padding: 10px;

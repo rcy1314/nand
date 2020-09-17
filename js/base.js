@@ -292,9 +292,9 @@ var suggest = function(n) {
 var populate = function(n) {
 
     $(document).ready(function() {
-      if ($('html body #wrapper #container #main .group').length < 1)
+      if ($('html body #wrapper #container #main #group').length < 1)
       $('html body #wrapper #container #main').append(
-        "<div class='group'>" +
+        "<div id='group'>" +
         "  <div class='result' style='display:none'>" +
         "  </div>" +
         "</div>"
@@ -410,7 +410,7 @@ var response = function(passthrough, uri, n, bloat) {
       $(document).ready(function() {
         $('html body #wrapper #container #main #visit').hide()
         $('html body #wrapper #container #main').append(
-          "<div class='group'>" +
+          "<div id='group'>" +
           "  <div class='result' style='display:none'>" +
           "  </div>" +
           "</div>"
@@ -439,7 +439,7 @@ var response = function(passthrough, uri, n, bloat) {
 var write = function(n) {
 
   $(document).ready(function() {
-    $('html body #wrapper #container #main .group .result').prepend(
+    $('html body #wrapper #container #main #group .result').prepend(
       "<div class='filter' " +
       "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='display'>" +
@@ -556,7 +556,7 @@ var xml = function(e, s, n) {
   if (reader == true && first == true){
     $('html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .content, ' +
-      'html body #wrapper #container #main .group').remove()
+      'html body #wrapper #container #main #group').remove()
   }
   $.get({
     url: uri,
@@ -776,39 +776,43 @@ var xml = function(e, s, n) {
     })
     if (reader == true && first == true) {
       $('html body #wrapper #container #main').append(
-        "<div class='center' style='display:none'>" +
-        "  <div class='quick'>" +
-        "    <div class='left' style='display:none'>" +
-        "      <div class='fa-angle-left'></div></div>" +
-        "    <div class='right'>" +
-        "      <div class='fa-angle-right'></div></div>" +
-        "    <div class='feed'></div>" +
+        "<div id='feed'>" +
+        "  <div class='center' style='display:none'>" +
+        "    <div class='quick'>" +
+        "      <div class='left' style='display:none'>" +
+        "        <div class='fa-angle-left'></div></div>" +
+        "      <div class='right'>" +
+        "        <div class='fa-angle-right'></div></div>" +
+        "      <div class='feed'></div>" +
+        "    </div>" +
+        "    <div class='channel'></div>" +
         "  </div>" +
-        "  <div class='channel'></div>" +
-        "</div>" +
-        "<div class='content' style='visibility:hidden'>" +
-        "  <div class='status'></div>" +
-        "  <div class='suggestions'>" +
-        "    <b>srandom</b>&ensp;...<br>" +
+        "  <div class='content' style='visibility:hidden'>" +
+        "    <div class='status'></div>" +
+        "    <div class='suggestions'>" +
+        "      <b>srandom</b>&ensp;...<br>" +
+        "    </div>" +
         "  </div>" +
         "</div>"
       )
     } else if (reader == false && first == true) {
       $('html body #wrapper #container #main').append(
-        "<div class='center' style='display:none'>" +
-        "  <div class='quick'>" +
-        "    <div class='left' style='display:none'>" +
-        "      <div class='fa-angle-left'></div></div>" +
-        "    <div class='right'>" +
-        "      <div class='fa-angle-right'></div></div>" +
-        "    <div class='feed'></div>" +
+        "<div id='feed'>" +
+        "  <div class='center' style='display:none'>" +
+        "    <div class='quick'>" +
+        "      <div class='left' style='display:none'>" +
+        "        <div class='fa-angle-left'></div></div>" +
+        "      <div class='right'>" +
+        "        <div class='fa-angle-right'></div></div>" +
+        "      <div class='feed'></div>" +
+        "    </div>" +
+        "    <div class='channel'></div>" +
         "  </div>" +
-        "  <div class='channel'></div>" +
-        "</div>" +
-        "<div class='content' style='visibility:hidden'>" +
-        "  <div class='status'></div>" +
-        "  <div class='suggestions'>" +
-        "    <b>suggested</b>&ensp;...<br>" +
+        "  <div class='content' style='visibility:hidden'>" +
+        "    <div class='status'></div>" +
+        "    <div class='suggestions'>" +
+        "      <b>srandom</b>&ensp;...<br>" +
+        "    </div>" +
         "  </div>" +
         "</div>"
       )

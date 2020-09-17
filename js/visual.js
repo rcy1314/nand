@@ -14,9 +14,9 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .channel .item, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-      'html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate, ' +
+      'html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .background')
@@ -43,9 +43,9 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeOverBorderless')
-    $('html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate')
+    $('html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate')
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
     $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestInvert').addClass('suggestOpposite')
@@ -59,9 +59,9 @@ var visual = function(n) {
       .removeClass('feedInvert').addClass('feedOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
-      'html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate')
+      'html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate')
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus')
@@ -148,9 +148,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
     $('html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
-      'html body #wrapper #container #main .group .air .populate, ' +
-      'html body #wrapper #container #main .group .result .filter, ' +
-      'html body #wrapper #container #main .group .result .populate, ' +
+      'html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #guide .sticky .item, ' +
       '#wrapper #container #main .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
