@@ -166,7 +166,8 @@ var feed  = function(n) {
   var dupe = []
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
+    if (onlyImages == true) {
+    if (menu[e] && e != 0 && menu[e].media == true && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('html body #wrapper #container #main .center .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
@@ -179,6 +180,21 @@ var feed  = function(n) {
           "</div>"
        )
      }
+   } else if (onlyImages == false){
+     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
+       dupe.push(e)
+         $('html body #wrapper #container #main .center .quick .feed').append(
+           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
+           "  <div class='radial'></div>" +
+           "  <img src='" + menu[e].img.image() + "'> " +
+           "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
+                "title='" + menu[e].id + "'>" +
+                String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
+           "  </a>" +
+           "</div>"
+        )
+      }
+   }
   }
   visual()
 }
@@ -500,7 +516,7 @@ var image = function(empty, n, item, src) {
             'align-items': 'center'
           }).find('.header, .tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
-         $(this).addClass('default').width('40vh')
+         $(this).addClass('default').width('30vh')
        else if ($(this).get(0).naturalHeight > k) {
          $(this).parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
       } else if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
@@ -823,41 +839,6 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main .center .channel').append(pub[i].post)
         images.push(pub[i].src)
       })
-      cacheimages(
-     {
-        imgs    : images,
-        load    : function () {
-          $.each(pub, function(i, k) {
-            if ($(this).attr('src') == pub[i].src){
-              if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, $(this).attr('src'))
-              else image(false, pub[i].feed, pub[i].element, $(this).attr('src'))
-            }
-          })
-       },
- //            # triggered when single image is sucessfuly cached
- //            # @param1, ( string ), loaded image source path
- //            # @param2, ( event object ), native event object generated
- //            # context ( this ), Image object, target obj related with event
- //
- //          error : function () { console.log( arguments, this ); },
- //            # triggered when error occured when tring to download image
- //            # @param1, ( string ), path to the image failed to load
- //            # @param2, ( event object ), native event object describing the circumstance
- //            # context ( this ), Image object, target obj related with event
- //
- //          abort : function () { console.log( arguments, this ); },
- //            # triggered when download is haulted by user action ( browsers 'stop' button )
- //            # @param1, ( string ), path to the image failed to load
- //            # @param2, ( event object ), native event object generated
- //            # context ( this ), Image object, target obj related with event
- //
-          done   : function () {
-         },
- //            # triggered after download proccess completes
- //            # @params, ( string(s) ), images in question
- //            # context ( this ), document
-      }
- );
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
@@ -900,7 +881,43 @@ var xml = function(e, s, n) {
     content(n, recent, oldest, posts)
     feed(40)
     suggest(id)
-    $.unloading()
+    cacheimages(
+   {
+      imgs    : images,
+      load    : function () {
+        $.each(pub, function(i, k) {
+          if ($(this).attr('src') == pub[i].src){
+            if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, $(this).attr('src'))
+            else image(false, pub[i].feed, pub[i].element, $(this).attr('src'))
+          }
+        })
+        $('html body #wrapper #container #main .fill').css('animation','none')
+     },
+//            # triggered when single image is sucessfuly cached
+//            # @param1, ( string ), loaded image source path
+//            # @param2, ( event object ), native event object generated
+//            # context ( this ), Image object, target obj related with event
+//
+//          error : function () { console.log( arguments, this ); },
+//            # triggered when error occured when tring to download image
+//            # @param1, ( string ), path to the image failed to load
+//            # @param2, ( event object ), native event object describing the circumstance
+//            # context ( this ), Image object, target obj related with event
+//
+//          abort : function () { console.log( arguments, this ); },
+//            # triggered when download is haulted by user action ( browsers 'stop' button )
+//            # @param1, ( string ), path to the image failed to load
+//            # @param2, ( event object ), native event object generated
+//            # context ( this ), Image object, target obj related with event
+//
+        done   : function () {
+       },
+//            # triggered after download proccess completes
+//            # @params, ( string(s) ), images in question
+//            # context ( this ), document
+    }
+  );
+  $.unloading()
   })
 
 }

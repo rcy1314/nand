@@ -394,12 +394,9 @@ html body #wrapper #container #main {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
-  -webkit-user-select: none;
-  -ms-user-select: none;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
-  user-select: none;
   outline: none;
 }
 
@@ -1223,7 +1220,7 @@ html body #wrapper #container #main .content {
   position: sticky;
   font-size: 10px;
   width: 320px;
-  top: 80px;
+  top: 95px;
 }
 
 html body #wrapper #container #main .content .status {
@@ -1280,9 +1277,9 @@ html body #wrapper #container #main .content .suggestions .radial {
 html body #wrapper #container #main .content .suggestions img {
   border-radius: 20px;
   position: relative;
-  height: 25px;
+  height: 25.25px;
   width: 25px;
-  left: 2.5px;
+  left: 2px;
 }
 
 html body #wrapper #container #main .content .suggestions .combine {
