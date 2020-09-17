@@ -512,8 +512,7 @@ var image = function(empty, n, item, src) {
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
     visual()
   })
-    .parents('.' + n).find('.fill').css('visibility','visible')
-    .html("<div class='loader double-circle'></div>")
+    .parents('.' + n)
   }
   else if (empty == true || onlyImages == true){
     $('.' + n).find(' .' + item).parents('.item').remove()
@@ -716,7 +715,7 @@ var xml = function(e, s, n) {
                  courtesy +
                  "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
           "    </div>" +
-          "    <div class='fill'></div>" +
+          "    <div class='fill'><div class='loader double-circle'></div></div>" +
           "    <div class='image' style='display:none'>" +
           "      <img id='" + i + "' class='" + i + " img'>" +
           "    </div>" +
@@ -829,9 +828,11 @@ var xml = function(e, s, n) {
         imgs    : images,
         load    : function () {
           $.each(pub, function(i, k) {
-             if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
-             else image(false, pub[i].feed, pub[i].element, pub[i].src)
-         })
+            if ($(this).attr('src') == pub[i].src){
+              if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, $(this).attr('src'))
+              else image(false, pub[i].feed, pub[i].element, $(this).attr('src'))
+            }
+          })
        },
  //            # triggered when single image is sucessfuly cached
  //            # @param1, ( string ), loaded image source path
