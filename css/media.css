@@ -163,6 +163,10 @@
     width: 940px;
   }
 
+  html body #wrapper #container #main #top #arm #search #home {
+    left: 25px;
+  }
+
   html body #wrapper #container #main #top #arm #option {
     right: -5px;
   }
