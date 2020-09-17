@@ -230,7 +230,6 @@ html body,
 html body #wrapper,
 html body #wrapper #container,
 html body #wrapper #container #main,
-html body #wrapper #container #main #feed,
 html body #wrapper #container #main #visit {
   user-select: none;
   overflow: hidden;

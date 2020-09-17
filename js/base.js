@@ -832,9 +832,9 @@ var xml = function(e, s, n) {
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
-          $('html body #wrapper #container #main .center .channel').append(pub[i].post)
+          $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
-          $('html body #wrapper #container #main .center .channel').append(pub[i].post)
+          $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         if (pub[i].src) images.push(pub[i].src)
       })
     posts = $('html body #wrapper #container #main .center .channel .item').length
