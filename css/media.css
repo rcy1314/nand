@@ -164,7 +164,7 @@
   }
 
   html body #wrapper #container #main #top #arm #option {
-    right: 0;
+    right: -5px;
   }
 
   html body #wrapper #container #main .center {
