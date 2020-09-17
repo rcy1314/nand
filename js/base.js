@@ -499,15 +499,17 @@ var image = function(empty, n, item, src) {
          $(this).width('100%').css('margin','10px')
            .parents('.item')
            .find('.classic').css({
-             'display': 'flex',
-             'align-items': 'center'
+             'align-items': 'center',
+             'display': 'flex'
            }).find('.header, .tag, .addComment').remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
         $(this).width(140).css('margin','10px')
           .parents('.item')
           .find('.classic').css({
-            'display': 'flex',
-            'align-items': 'center'
+            'padding-bottom': '30px',
+            'align-items': 'center',
+            'padding-top': '30px',
+            'display': 'flex'
           }).find('.header, .tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).addClass('default').width('30vh')

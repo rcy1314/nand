@@ -399,11 +399,12 @@ $(document)
     'html body #wrapper #container #main .center .quick .right, ' +
     'html body #wrapper #container #main .center .quick .fa-angle-right',
     function(e) {
+      var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos + 418
+            scrollLeft: leftPos + $this.parents('.quick').width()
           }, 'fast')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
@@ -420,11 +421,12 @@ $(document)
     'html body #wrapper #container #main .center .quick .left, ' +
     'html body #wrapper #container #main .center .quick .fa-angle-left',
     function(e) {
+      var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
                         .find('.feed').scrollLeft()
         $(this).parents('html body #wrapper #container #main .quick')
           .find('.feed').animate({
-            scrollLeft: leftPos - 418
+            scrollLeft: leftPos - $this.parents('.quick').width()
           }, 'slow')
         if ($(this).parents('html body #wrapper #container #main .quick')
               .find('.feed')
