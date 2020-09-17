@@ -263,75 +263,19 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
-  .on('mousedown', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
-    'html body #wrapper #container #main .center .quick .feed .asset, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
-    function(e) {
-      if (e.which == 1){
-        dragStartX = 0
-        enableDrag = true
-        dragStartX = e.pageX
-        if ($(this).attr('aria-item')) mouseAsset = $(this).attr('aria-item')
-        marginLeftStart = parseInt($(this)
-          .parents('html body #wrapper #container #main .quick .feed')
-            .scrollLeft())
-      }
-      $(this).unbind("mousemove")
-      e.preventDefault()
-  })
-  .on('mousemove', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation, ' +
-    'html body #wrapper #container #main .center .quick .feed .asset, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .feed .asset',
-    function(e) {
-      if ($(this).parents('html body #wrapper #container #main .quick .feed')
-            .scrollLeft() > 0)
-        $(this).parents('html body #wrapper #container #main .quick')
-          .find('.left').show()
-      else if ($(this).parents('html body #wrapper #container #main .quick .feed')
-                 .scrollLeft() == 0)
-        $(this).parents('html body #wrapper #container #main .quick')
-          .find('.left').hide()
-          if (enableDrag) {
-              var delta = e.pageX - dragStartX
-              $(this).parents('html body #wrapper #container #main .quick .feed')
-                .scrollLeft(marginLeftStart - delta)
-          }
-          $(this).unbind("mouseup")
-          mouseAsset = false
-          e.preventDefault()
-  })
   .on('touch click', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation', function(e) {
       $.loading()
       $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main #top').show()
       populate($(this).attr('aria-item'))
   })
-  .on('mouseup', 'html body #wrapper #container #main #visit, ' +
-    'html body #wrapper #container #main #feed, ' +
-    'html body #wrapper #container #main .center .quick .feed .asset, ' +
+  .on('mouseup', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
-        if (enableDrag)
-            enableDrag = false
-              if (mouseAsset){
-                $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
-                  $.loading()
-                  if ($.inArray(mouseAsset, translations) > -1){
-                    category = mouseAsset.capitalize()
-                    $(document).ready(function() {
-                      $.loading()
-                      $('html body #wrapper #container #main #visit').hide()
-                      $('html body #wrapper #container #main #top').show()
-                      populate(mouseAsset)
-                      $.unloading()
-                    })
-                  } else {
-                    $.loading()
-                    $('html body #wrapper #container #main #visit').hide()
-                    $('html body #wrapper #container #main #top').show()
-                    if ($.active == 0) xml(null, null, mouseAsset)
-                  }
-              }
-          e.preventDefault()
+      $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+      $.loading()
+      $('html body #wrapper #container #main #visit').hide()
+      $('html body #wrapper #container #main #top').show()
+      if ($.active == 0) xml(null, null, $(this).attr('aria-item'))
   })
   .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
   function(e) {

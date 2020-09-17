@@ -232,6 +232,7 @@ html body #wrapper #container,
 html body #wrapper #container #main,
 html body #wrapper #container #main #feed,
 html body #wrapper #container #main #visit {
+  user-select: none;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -1297,7 +1298,7 @@ html body #wrapper #container #main .content .suggestions .radial {
 html body #wrapper #container #main .content .suggestions img {
   border-radius: 20px;
   position: relative;
-  height: 25.25px;
+  height: 24.5px;
   width: 25px;
   left: 2px;
 }

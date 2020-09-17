@@ -19,14 +19,12 @@ var tap = 0
 var complete
 nextAngle = 0
 var array = []
-var mouseAsset
 var filter = []
 var object = []
 var stop = false
 var first = true
 var readDupe = []
 var reader = false
-var enableDrag = false
 
 var tag = "<div class='tag' style='display:none'>" +
           "  <div class='images fa-heart-o'></div>" +
