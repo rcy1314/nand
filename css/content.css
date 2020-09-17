@@ -769,6 +769,10 @@ html body #wrapper #container #main #visit #page #front .quick .feed .radial {
   z-index: 1;
 }
 
+html body #wrapper #container #main .center .quick .feed .asset:first {
+  padding-left: 10px;
+}
+
 html body #wrapper #container #main .center .quick .feed .asset {
   background-color: transparent;
   padding-right: 5px;
@@ -1361,22 +1365,6 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover:f
   border-color: transparent transparent #eee transparent;
 }
 
-.contrast:first-child:hover:before {
-  border-color: transparent transparent #222 transparent !important;
-}
-
-.contrast:first-child:hover:after {
-  border-color: transparent transparent #222 transparent !important;
-}
-
-.contrast:first-child:not(:hover):after {
-  border-color: transparent transparent #0e0e0e transparent !important;
-}
-
-.contrast:first-child:not(:hover):before {
-  border-color: transparent transparent #0e0e0e transparent !important;
-}
-
 html body #wrapper #container #main #top #arm #search #match .listing .index:first-child:before,
 html body #wrapper #container #main #visit #page #front #first .listing .index:first-child:before {
   content: "";
@@ -1387,7 +1375,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index:f
   height: 0;
   border-style: solid;
   border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #eee transparent;
+  border-color: transparent transparent transparent transparent;
   z-index: 3;
 }
 
@@ -1401,7 +1389,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index:f
   height: 0;
   border-style: solid;
   border-width: 0 9px 9px 9px;
-  border-color: transparent transparent #fff transparent;
+  border-color: transparent transparent transparent transparent;
   z-index: 4;
 }
 
@@ -1451,24 +1439,37 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
   margin: 2px;
 }
 
-.contrast.hover {
-  background-color: #222 !important;
-  color: #fff !important;
+.contrast:first-child:hover:before {
+  border-color: transparent transparent #0e0e0e transparent !important;
 }
 
-.contrast {
-  background-color: #000 !important;
-  color: #fff !important;
+.contrast:first-child:hover:after {
+  border-color: transparent transparent #0e0e0e transparent !important;
 }
 
-.visual.hover {
-  background-color: #eee !important;
-  color: #666 !important;
+
+.contrast:hover {
+  border-color: transparent transparent #0e0e0e transparent;
+  background-color: #0e0e0e;
+  color: #ffffff;
 }
 
-.visual {
-  background-color: #fff !important;
-  color: #666 !important;
+.contrast:not(:hover) {
+  border-color: transparent transparent #000000 transparent;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.visual:hover {
+  border-color: transparent transparent #eeeeee transparent;
+  background-color: #eeeeee;
+  color: #666666;
+}
+
+.visual:not(:hover) {
+  border-color: transparent transparent #ffffff transparent;
+  background-color: #ffffff;
+  color: #666666;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .hover,

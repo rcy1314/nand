@@ -269,7 +269,7 @@ $(document)
       $('html body #wrapper #container #main #top').show()
       populate($(this).attr('aria-item'))
   })
-  .on('mouseup', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
+  .on('touch click', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
       $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
       $.loading()
@@ -616,8 +616,6 @@ $(document)
           "</div>"
         )
       })
-      $('html body #wrapper #container #main #visit #page #front #first .listing')
-        .append()
       $(this).val('')
         $(this).css({
               'caret-color': '#e4e4e4',
@@ -799,31 +797,6 @@ $(document)
       $('html body #wrapper #container #arm #search input[type=text]').val('').blur()
       e.preventDefault()
       visual()
-  })
-  .on('mouseenter',
-    'html body #wrapper #container #main #visit #page #front #first .index, ' +
-    'html body #wrapper #container #main #visit #page #front #first .hover, ' +
-    'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-    'html body #wrapper #container #main #top #arm #search #match .listing .hover',
-    function(e) {
-      $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit #page #front #first .listing .hover')
-          .attr('class', 'index')
-      if (op == 0) $(this).addClass('hover contrast.hover')
-      else $(this).addClass('hover visual.hover')
-  })
-  .on('mouseleave',
-  'html body #wrapper #container #main #visit #page #front #first .index, ' +
-  'html body #wrapper #container #main #visit #page #front #first .hover, ' +
-  'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-  'html body #wrapper #container #main #top #arm #search #match .listing .hover',
-    function(e) {
-      if (op == 1) $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit #page #front #first .listing .hover')
-          .attr('class', 'index contrast')
-      else $('html body #wrapper #container #arm #search #match .listing .hover, ' +
-        '#main #visit #page #front #first .listing .hover')
-          .attr('class','index visual')
   })
   .on('touch click',
   'html body #wrapper #container #main #visit #page #front #first .index, ' +
