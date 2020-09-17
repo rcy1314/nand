@@ -176,7 +176,7 @@
   }
 
   html body #wrapper #container #main .center {
-    width: 640px;
+    width: 630px;
   }
 
   html body #wrapper #container #main #group .air,
@@ -189,10 +189,10 @@
 
   html body #wrapper #container #main #group .air,
   html body #wrapper #container #main #group .result {
-    width: 1200px;
     position: relative;
     display: block;
     margin: 0 auto;
+    width: 1200px;
   }
 
   html body #wrapper #container #main #visit #page #front {

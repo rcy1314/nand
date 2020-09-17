@@ -769,10 +769,6 @@ html body #wrapper #container #main #visit #page #front .quick .feed .radial {
   z-index: 1;
 }
 
-html body #wrapper #container #main .center .quick .feed .asset:first {
-  padding-left: 5px;
-}
-
 html body #wrapper #container #main .center .quick .feed .asset {
   background-color: transparent;
   padding-right: 5px;
