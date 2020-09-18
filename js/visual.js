@@ -85,7 +85,7 @@ var visual = function(n) {
       .css('filter','hue-rotate(110deg)')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
-    $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#fff')
+    $('.fa, .fas, .images').css('color','#fff')
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
     $('html body #wrapper #container, ' +
@@ -105,6 +105,9 @@ var visual = function(n) {
 
     $('html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +
+      'html body #wrapper #container #main #group .air .populate, ' +
+      'html body #wrapper #container #main #group .result .filter, ' +
+      'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page #front .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
@@ -163,7 +166,7 @@ var visual = function(n) {
       $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')
-    $('html body #wrapper #container #main #top #arm #search #home, .fa, .fas, .images').css('color','#000')
+    $('.fa, .fas, .images').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
   }
 }

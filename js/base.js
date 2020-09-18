@@ -45,6 +45,30 @@ var notify = function(n) {
   }, 2500)
 }
 
+var toggle = function() {
+  nextAngle -= -180
+  if (nextAngle <= -180) nextAngle = 0
+  if (quickFeeds == true) {
+      $('html body #wrapper #container #main #visit #page #front .quick')
+        .addClass('visible').removeClass('invisible')
+      $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
+      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
+      $('html body #wrapper #container #main #visit #page #front .show')
+        .removeClass('visible').addClass('invisible')
+      quick(7)
+    } else if (quickFeeds == false){
+      $('html body #wrapper #container #main #visit #page #front .quick')
+        .addClass('invisible').removeClass('visible')
+      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
+      $('html body #wrapper #container #main #visit #page #front .show')
+        .removeClass('invisible').addClass('visible')
+      $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+    }
+}
+
 var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
   $('html body #wrapper #container #guide').empty().css('display','flex').append(
@@ -523,7 +547,6 @@ var image = function(empty, n, item, src) {
           .find('.classic').css({
             'padding-bottom': '30px',
             'align-items': 'center',
-            'padding-top': '30px',
             'display': 'flex'
           }).find('.tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)

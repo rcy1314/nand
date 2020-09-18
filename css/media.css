@@ -84,7 +84,7 @@
   html body #wrapper #container #main #visit #page #front .quick {
       position: relative;
       width: 330px;
-      left: -30px;
+      left: -10px;
       z-index: 3;
       top: 0;
   }

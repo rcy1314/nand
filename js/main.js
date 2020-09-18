@@ -11,27 +11,7 @@ $(document)
             xml(null, null, $.random())
       }
     })
-    nextAngle -= -180
-    if (nextAngle <= -180) nextAngle = 0
-	  if (quickFeeds == true) {
-        $('html body #wrapper #container #main #visit #page #front .quick')
-          .addClass('visible').removeClass('invisible')
-        $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
-        $('html body #wrapper #container #main #visit #page #front .show')
-          .removeClass('visible').addClass('invisible')
-        quick(7)
-      } else if (quickFeeds == false){
-        $('html body #wrapper #container #main #visit #page #front .quick')
-          .addClass('invisible').removeClass('visible')
-        $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
-        $('html body #wrapper #container #main #visit #page #front .show')
-          .removeClass('invisible').addClass('visible')
-        $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
-      }
+    toggle()
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
@@ -58,27 +38,7 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link, ' +
     'html body #wrapper #container #main #visit #page #front #label .show',
     function(e) {
-      nextAngle -= 180
-      if (nextAngle <= -360) nextAngle = 0
-      if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('invisible')) {
-        $('html body #wrapper #container #main #visit #page #front .quick')
-          .addClass('visible').removeClass('invisible')
-        $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
-        $('html body #wrapper #container #main #visit #page #front .show')
-          .removeClass('visible').addClass('invisible')
-        quick(7)
-      } else if ($('html body #wrapper #container #main #visit #page #front .quick').hasClass('visible')){
-        $('html body #wrapper #container #main #visit #page #front .quick')
-          .addClass('invisible').removeClass('visible')
-        $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-        $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-        $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
-        $('html body #wrapper #container #main #visit #page #front .show')
-          .removeClass('invisible').addClass('visible')
-        $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
-      }
+      toggle()
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
@@ -86,25 +46,7 @@ $(document)
       $.loading()
       nextAngle -= 180
       location.pathname.state()
-      if (nextAngle <= -360) nextAngle = 0
-      if (quickFeeds == true) {
-          $('html body #wrapper #container #main #visit #page #front .quick')
-            .addClass('visible').removeClass('invisible')
-          $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
-          $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-          $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
-          $('html body #wrapper #container #main #visit #page #front .show')
-            .removeClass('visible').addClass('invisible')
-        } else if (quickFeeds == false){
-          $('html body #wrapper #container #main #visit #page #front .quick')
-            .addClass('invisible').removeClass('visible')
-          $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-          $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-          $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
-          $('html body #wrapper #container #main #visit #page #front .show')
-            .removeClass('invisible').addClass('visible')
-          $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
-        }
+      toggle()
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #main #visit').show()
       $('html body #wrapper #container #main #visit .quick .feed').empty()
@@ -214,7 +156,7 @@ $(document)
     $.loading()
       xml(null, null, $.random())
   })
-  .on('touch click',
+  .on('touch click', 'html body #wrapper #container #main .content .status .filter, ' +
     'html body #wrapper #container #main #group .air .populate, ' +
     'html body #wrapper #container #main #group .result .filter, ' +
     'html body #wrapper #container #main #group .result .populate',
@@ -223,7 +165,7 @@ $(document)
       $('html body #wrapper #containter #visit').hide()
       xml(null, null, $(this).attr('aria-item'))
   })
-  .on('mouseenter',
+  .on('mouseenter', 'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate',
@@ -238,7 +180,7 @@ $(document)
                 $(this).addClass('overlay')
             })
   })
-  .on('mouseleave',
+  .on('mouseleave', 'html body #wrapper #container #main .content .status .filter, ' +
     'html body #wrapper #container #main #group .air .populate, ' +
     'html body #wrapper #container #main #group .result .filter, ' +
     'html body #wrapper #container #main #group .result .populate',
