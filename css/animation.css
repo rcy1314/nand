@@ -113,76 +113,11 @@
   width: 0;
 }
 
-.feedInvert {
-  background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  -webkit-mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
-  mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
-  border-radius: 36px;
-  position: relative;
-  height: 56px;
-  width: 56px;
-  z-index: 6;
-
-}
-
-.selectInvert {
-  background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  -webkit-mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
-  mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
-  border-radius: 36px;
-  position: absolute;
-  height: 42px;
-  width: 42px;
-}
-
-.suggestInvert {
-  background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  -webkit-mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
-  mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
-  border-radius: 13px;
-  position: relative;
-}
-
 .responseOpposite {
   background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
   background: linear-gradient(to left, #ef4063, #e557c6);
   height: 4px;
   width: 0;
-}
-
-.feedOpposite {
-  background: -webkit-linear-gradient(to right, #ef4063, #e557c6);
-  background: linear-gradient(to right, #ef4063, #e557c6);
-  -webkit-mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
-  mask-image: radial-gradient(transparent 0 28px, #000 28.5px);
-  border-radius: 36px;
-  position: relative;
-  height: 56px;
-  width: 56px;
-  z-index: 6;
-}
-
-.selectOpposite {
-  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
-  background: linear-gradient(to left, #ef4063, #e557c6);
-  -webkit-mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
-  mask-image: radial-gradient(transparent 0 20px, #000 20.5px);
-  border-radius: 36px;
-  position: absolute;
-  height: 42px;
-  width: 42px;
-}
-
-.suggestOpposite {
-  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
-  background: linear-gradient(to left, #ef4063, #e557c6);
-  -webkit-mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
-  mask-image: radial-gradient(transparent 0 13px, #000 13.5px);
-  border-radius: 13px;
-  position: relative;
 }
 
 .response {

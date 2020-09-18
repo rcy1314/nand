@@ -549,7 +549,6 @@ $(document)
           "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
           "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-          "    <div class='radial'></div>" +
           "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
           "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
           "      <br>&emsp;" + translations[i].grep() + " feeds" +
@@ -645,7 +644,6 @@ $(document)
             "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
             "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-            "  <div class='radial'></div>" +
             "  <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "    <br>&emsp;" + translations[i].grep() + " feeds" +

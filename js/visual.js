@@ -67,7 +67,6 @@ var visual = function(n) {
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus').removeClass('pageInput')
-    $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid #f7426c')
     $('html body #wrapper #container #main .content .suggestions .combine a, ' +
       'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
@@ -162,7 +161,6 @@ var visual = function(n) {
       .addClass('invertOver').removeClass('oppositeOver')
       $('html body #wrapper #container #main .content .suggestions .combine a').css('color','steelblue')
       $('html body #wrapper #container #main .content .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
-      $('html body #wrapper #container #main .center .channel .item .classic .fill').css('border', '.3px solid dodgerblue')
       $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
       $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
       $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')

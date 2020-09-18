@@ -131,7 +131,6 @@ var base = function(n) {
         "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='background'></div>" +
         "  <div class='detail'>" +
-        "    <div class='radial'></div>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "    <br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
@@ -160,7 +159,6 @@ var list = function(n) {
         "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='background'></div>" +
         "  <div class='detail'>" +
-        "    <div class='radial'></div>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
         "    <br>&emsp;" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
@@ -296,7 +294,6 @@ var suggest = function(n) {
           else if (menu[e].media == false) var contains = 'feed does not contain images'
           $('html body #wrapper #container #main .suggestions').append(
             "<div class='combine'>" +
-            "  <div class='radial'></div>" +
             "  <img src='" + menu[e].img.image() + "'>" +
             "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
             "    title='" + menu[e].id + "'><b>" +
@@ -814,6 +811,7 @@ var xml = function(e, s, n) {
       $('html body #wrapper #container #main').append(
         "<div id='feed'>" +
         "  <div class='center' style='display:none'>" +
+/*
         "    <div class='quick'>" +
         "      <div class='left' style='display:none'>" +
         "        <div class='fa-angle-left'></div></div>" +
@@ -821,6 +819,7 @@ var xml = function(e, s, n) {
         "        <div class='fa-angle-right'></div></div>" +
         "      <div class='feed'></div>" +
         "    </div>" +
+*/
         "    <div class='channel'></div>" +
         "  </div>" +
         "  <div class='content' style='visibility:hidden'>" +
@@ -834,6 +833,15 @@ var xml = function(e, s, n) {
       $('html body #wrapper #container #main').append(
         "<div id='feed'>" +
         "  <div class='center' style='display:none'>" +
+/*
+        "    <div class='quick'>" +
+        "      <div class='left' style='display:none'>" +
+        "        <div class='fa-angle-left'></div></div>" +
+        "      <div class='right'>" +
+        "        <div class='fa-angle-right'></div></div>" +
+        "      <div class='feed'></div>" +
+        "    </div>" +
+*/
         "    <div class='channel'></div>" +
         "  </div>" +
         "  <div class='content' style='visibility:hidden'>" +
