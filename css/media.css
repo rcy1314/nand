@@ -67,6 +67,7 @@
     margin: 0 auto;
     top: 0
   }
+
   html body #wrapper #container #main #visit #page #front .focus {
     margin: 0 auto;
     width: 300px;
@@ -91,6 +92,48 @@
   html body #wrapper #container #main #visit #page #front #first .listing {
     padding-left: 0;
     width: 300px;
+  }
+
+}
+
+@media screen and (min-width: 425px) and (max-width: 426px) {
+
+  html body #wrapper #container #main #visit #page #front .focus .button,
+  html body #wrapper #container #main #visit #page #front .focus .icon {
+    display: inline-block;
+  }
+
+  html body #wrapper #container #main #visit #page #front .focus .button{
+    top: 1px;
+  }
+
+  html body #wrapper #container #main #visit #page #front .focus .icon {
+    top: 13px;
+  }
+
+  html body #wrapper #container #main #visit #page #front .focus {
+    margin: 0 auto;
+    width: 400px;
+    padding: 0;
+  }
+
+  html body #wrapper #container #main #visit #page #front .focus input[type=text] {
+    width: 330px;
+    padding: 0;
+    top: -12px;
+  }
+
+  html body #wrapper #container #main #visit #page #front #first .listing {
+    padding-left: 0;
+    width: 400px;
+  }
+
+  html body #wrapper #container #main #visit #page #front .quick {
+      position: relative;
+      width: 410px;
+      z-index: 3;
+      left: 20px;
+      top: 0;
   }
 
 }
@@ -145,7 +188,7 @@
 
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
 
   html body #wrapper #container {
     width: 100%;
@@ -196,14 +239,14 @@
   }
 
   html body #wrapper #container #main #visit #page #front {
-    width: 866px;
+    width: 940px;
   }
 
   html body #wrapper #container #main #visit #page #front .quick {
     position: relative;
-    width: 866px;
+    width: 1000px;
+    left: -30px;
     z-index: 3;
-    left: 0;
     top: 0;
   }
 

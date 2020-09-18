@@ -652,6 +652,7 @@ html body #wrapper #container #main #group .result .filter a,
 html body #wrapper #container #main #group .result .populate a {
   background-color: transparent;
   position: relative;
+  font-size: 12px;
   margin: 0 auto;
 }
 
@@ -672,8 +673,8 @@ html body #wrapper #container #main #group .result .populate .display img {
   margin: 0 auto;
   padding: 1px;
   margin: 10px;
-  height: 52px;
-  width: 53px;
+  height: 70px;
+  width: 70px;
 }
 
 html body #wrapper #container #main #group .air .populate .title,
