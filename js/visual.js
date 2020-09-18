@@ -73,8 +73,9 @@ var visual = function(n) {
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover')
+      .addClass('contrast.hover').removeClass('visual.hover')
+    $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('contrast').removeClass('visual')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .translation, ' +
@@ -146,8 +147,9 @@ var visual = function(n) {
       .css('filter','hue-rotate(0deg)')
     $('html body #wrapper #container #main #progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover')
+      .removeClass('contrast.hover').addClass('visual.hover')
+    $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
     $('html body #wrapper #container #main .content .status .filter, ' +
