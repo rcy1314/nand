@@ -809,12 +809,10 @@ html body #wrapper #container #main #visit #page #front .quick .feed .assetTrans
   background-color: transparent;
   border-radius: 36px;
   position: relative;
-  width: 51.5px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   padding: 1px;
   margin: 10px;
-  left: 2.5px;
-  top: 2px;
 }
 
 html body #wrapper #container #main .center .quick .feed .asset a,

@@ -187,7 +187,6 @@ var feed  = function(n) {
       dupe.push(e)
         $('html body #wrapper #container #main .center .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
-          "  <div class='radial'></div>" +
           "  <img src='" + menu[e].img.image() + "'> " +
           "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
                "title='" + menu[e].id + "'>" +
@@ -201,7 +200,6 @@ var feed  = function(n) {
        dupe.push(e)
          $('html body #wrapper #container #main .center .quick .feed').append(
            "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
-           "  <div class='radial'></div>" +
            "  <img src='" + menu[e].img.image() + "'> " +
            "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
                 "title='" + menu[e].id + "'>" +
@@ -235,7 +233,6 @@ var quick  = function(n) {
       dupe.push(e)
         $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
-          "  <div class='radial'></div>" +
           "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
                String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
