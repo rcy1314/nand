@@ -45,10 +45,10 @@ var notify = function(n) {
   }, 2500)
 }
 
-var toggle = function() {
+var toggle = function(n) {
   nextAngle -= -180
   if (nextAngle <= -180) nextAngle = 0
-  if (quickFeeds == true) {
+  if (n == true) {
       $('html body #wrapper #container #main #visit #page #front .quick')
         .addClass('visible').removeClass('invisible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
@@ -57,7 +57,7 @@ var toggle = function() {
       $('html body #wrapper #container #main #visit #page #front .show')
         .removeClass('visible').addClass('invisible')
       quick(7)
-    } else if (quickFeeds == false){
+    } else if (n == false){
       $('html body #wrapper #container #main #visit #page #front .quick')
         .addClass('invisible').removeClass('visible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')

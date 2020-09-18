@@ -11,7 +11,7 @@ $(document)
             xml(null, null, $.random())
       }
     })
-    toggle()
+    toggle(quickFeeds)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
@@ -38,7 +38,8 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page #front #label .link, ' +
     'html body #wrapper #container #main #visit #page #front #label .show',
     function(e) {
-      toggle()
+      quickFeeds = quickFeeds != true
+      toggle(quickFeeds)
   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
@@ -46,7 +47,7 @@ $(document)
       $.loading()
       nextAngle -= 180
       location.pathname.state()
-      toggle()
+      toggle(quickFeeds)
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #main #visit').show()
       $('html body #wrapper #container #main #visit .quick .feed').empty()
