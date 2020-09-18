@@ -391,7 +391,7 @@ var air = function(n) {
       )
   }
   $.unloading()
-  $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
+  $('html body #wrapper #container #main #group').attr('tabindex', -1)
   visual()
 })
 }
@@ -906,7 +906,7 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
-    $('html body #wrapper #container #main #feed').attr('tabindex', -1).focus()
+    $('html body #wrapper #container #main #feed').attr('tabindex', -1)
     content(n, recent, oldest, images.length, posts)
     suggest()
   $.unloading()
