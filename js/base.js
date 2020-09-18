@@ -297,6 +297,20 @@ var populate = function(n) {
         "  </div>" +
         "</div>"
       )
+    if (id && !location.href.match('\\?q=') && id != 0){
+      $('html body #wrapper #container #main .result').append(
+        "<div class='populate'" +
+        "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
+        "  <div class='display'>" +
+        "    <img src='" + menu[id].img.image() + "'> " +
+        "  </div>" +
+        "    <a class='title' ext='" + menu[id].ext +  "'>" +
+               menu[id].id.match(/[^\/]+$/g) +
+        "    </a>" +
+        "</div>"
+      )
+    }
+
     for (var i = 1; i <= menu.length - 1; i++) {
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
