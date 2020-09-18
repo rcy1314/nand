@@ -210,12 +210,6 @@ input {
   font-family: Proxima Nova;
 }
 
-html body #wrapper #container #main #handle,
-html body #wrapper #container #main #top #arm #option {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-select: none;
-}
-
 a {
   text-decoration: none;
   cursor: pointer;
@@ -231,7 +225,6 @@ html body #wrapper,
 html body #wrapper #container,
 html body #wrapper #container #main,
 html body #wrapper #container #main #visit {
-  user-select: none;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -387,6 +380,7 @@ html body #wrapper #container #main #top #arm #option {
   justify-content: space-between;
   background-color: transparent;
   position: absolute;
+  user-select: none;
   cursor: pointer;
   display: flex;
   right: -35px;
@@ -395,20 +389,18 @@ html body #wrapper #container #main #top #arm #option {
 }
 
 html body #wrapper #container #main {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-overflow-scrolling: touch;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
+  user-select: none;
   outline: none;
 }
 
 html body #wrapper #container #main #feed {
   background-color: transparent;
-  scrollbar-width: none;
   height: fit-content;
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 
@@ -432,6 +424,7 @@ html body #wrapper #container #main #visit {
 html body #wrapper #container #main #visit #page #handle {
   display: inline-block;
   position: relative;
+  user-select: none;
   margin: 0 auto;
   width: 100%;
 }
@@ -539,7 +532,6 @@ html body #wrapper #container #main #visit #page #front .focus {
 
 html body #wrapper #container #main #visit #page #front .focus input[type=text] {
   height: 39.6px !important;
-  -webkit-appearance: none;
   caret-color: transparent;
   width: calc(100%);
   display: inline-block;
@@ -753,7 +745,7 @@ html body #wrapper #container #main #visit #page #front .quick .feed {
   width: 100%;
 }
 
-html body #wrapper #container #main .center .quick .feed.feed::-webkit-scrollbar,
+html body #wrapper #container #main .center .quick .feed::-webkit-scrollbar,
 html body #wrapper #container #main #visit #page #front .quick .feed::-webkit-scrollbar {
   display: none;
 }
@@ -1298,7 +1290,7 @@ html body #wrapper #container #main .content .suggestions img {
   border-radius: 20px;
   position: relative;
   height: 24.5px;
-  width: 25px;
+  width: 24.5px;
   left: 2px;
 }
 

@@ -492,7 +492,7 @@ var image = function(empty, n, item, src) {
        if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).css('max-height', '90vh')
        else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight)
-         $(this).css('max-width', '95vw')
+         $(this).css('max-width', '75vw')
      } else if ($(this).get(0).naturalWidth < small) {
          $(this).width('100%').css('margin','10px')
            .parents('.item')
