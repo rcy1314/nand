@@ -843,7 +843,7 @@ html body #wrapper #container #main #visit #page #front .quick .right {
   padding: 4px;
   height: 24px;
   width: 24px;
-  z-index: 7;
+  z-index: 2;
   top: 40px;
 }
 
@@ -1281,7 +1281,7 @@ html body #wrapper #container #main .content .suggestions {
   padding-top: 30px;
   text-align: left;
   font-size: 10px;
-  width: 300px;
+  width: 280px;
 }
 
 html body #wrapper #container #main .content .suggestions .radial {
