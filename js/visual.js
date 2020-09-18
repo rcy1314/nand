@@ -51,14 +51,6 @@ var visual = function(n) {
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
     $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestInvert').addClass('suggestOpposite')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
-      .removeClass('selectInvert').addClass('selectOpposite')
-    $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
-      'html body #wrapper #container #main .center .quick .feed .radial')
-      .removeClass('feedInvert').addClass('feedOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main .center .channel .item, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -130,14 +122,6 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .feed .left, ' +
       'html body #wrapper #container #main .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver oppositeOverBorderless')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .radial, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .radial, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .radial')
-      .removeClass('selectOpposite').addClass('selectInvert')
-    $('html body #wrapper #container #main #visit #page #front .quick .feed .radial, ' +
-      'html body #wrapper #container #main .center .quick .feed .radial')
-      .removeClass('feedOpposite').addClass('feedInvert')
     $('html body #wrapper #container #main #visit #page #front .quick .feed .translation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
