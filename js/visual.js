@@ -17,6 +17,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
+      'html body #wrapper #container #main .content .status .populate, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .background, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .background')
@@ -43,7 +44,8 @@ var visual = function(n) {
       'html body #wrapper #container #main .center .quick .left, ' +
       'html body #wrapper #container #main .center .quick .right')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeOverBorderless')
-    $('html body #wrapper #container #main #group .air .populate, ' +
+    $('html body #wrapper #container #main .content .status .filter, ' +
+      'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
@@ -145,7 +147,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
+    $('html body #wrapper #container #main .content .status .filter, ' +
+      'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +

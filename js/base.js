@@ -78,20 +78,23 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
 var content  = function(n, recent, oldest, images, posts) {
 
-    $('html body #wrapper #container #main .status').append(
-      "<div class='asset' aria-item='" + menu.indexOf(menu[n]) + "'>" +
-      "  <img src='" + menu[n].img.image() + "'" + "'>" +
-      "</div>" +
-      "<div class='info'>" +
-      "  <a ext='" + menu[n].ext + "'>" + menu[n].id.match(/[^\/]+$/g) +
-      "  </a>" +
-      "  <br>" +
-      "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
-      "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
-      "  <b>Images</b>&ensp;<div class='images'>" + images + "</div><br>" +
-      "  <b>Posts</b>&ensp;" + posts +
-      "</div>"
-    )
+  $('html body #wrapper #container #main #feed .status').append(
+    "<div class='filter' " +
+    "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
+    "  <div class='display'>" +
+    "  <img src='" + menu[n].img.image() + "'> " +
+    "  </div>" +
+    "    <a class='title' ext='" + menu[n].ext +  "'>" +
+           menu[n].id.match(/[^\/]+$/g) +
+    "    </a>" +
+    "</div>" +
+    "<div class='info'>" +
+    "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
+    "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
+    "  <b>Images</b>&ensp;<div class='images'>" + images + "</div><br>" +
+    "  <b>Posts</b>&ensp;" + posts +
+    "</div>"
+  )
 
 }
 
@@ -261,29 +264,29 @@ var progress = function(complete, n) {
 
 var suggest = function(n) {
 
-  var duplicate = []
-  var contains = 'feed contains images'
-  for (var i = 0; i <= 8; i++) {
-    var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    duplicate.push(e)
-    if (menu[e] && e != 0 && menu[e].media == true && $.inArray(duplicate, e) == -1){
-      $('html body #wrapper #container #main .suggestions').append(
-        "<div class='combine'>" +
-        "  <div class='radial'></div>" +
-        "  <img src='" + menu[e].img.image() + "'>" +
-        "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
-        "    title='" + menu[e].id + "'><b>" +
-             String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
-		    "    <br><div style='float:left'>" + contains + "</div>" +
-        "  </div>" +
-        "  <a style='float:right' aria-item='" + menu[e].cat + "'" +
-		    "	   title='" + menu[e].cat + "'>" +
-               menu[e].cat +
-		    "  </a>" +
-        "</div>"
-      )
-    }
-  }
+      var duplicate = []
+      for (var i = 0; i <= 8; i++) {
+        var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+        duplicate.push(e)
+        if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
+          if (menu[e].media == true) var contains = 'feed contains images'
+          else if (menu[e].media == false) var contains = 'feed does not contain images'
+          $('html body #wrapper #container #main .suggestions').append(
+            "<div class='combine'>" +
+            "  <div class='radial'></div>" +
+            "  <img src='" + menu[e].img.image() + "'>" +
+            "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
+            "    title='" + menu[e].id + "'><b>" +
+                 String(menu[e].id.match(/[^\/]+$/g)).substring(0,18) + "</b>..." +
+    		    "    <br><div style='float:left'>" + contains + "</div>" +
+            "  </div>" +
+            "  <a style='float:right' aria-item='" + menu[e].cat + "'" +
+    		    "	   title='" + menu[e].cat + "'>" +
+                   menu[e].cat +
+    		    "  </a>"
+          )
+        }
+      }
 
 }
 
@@ -474,9 +477,9 @@ var image = function(empty, n, item, src) {
 
   if (src.match(/https?\:\/\//g)) {
   $('.' + n).find(' .' + item).attr('src', src).on('error', function() {
-    $(this).parents('.classic').find('.tag, .fill, .header').remove()
+    $(this).parents('.classic').find('.tag, .fill').remove()
     $(this).parents('.item').find('.pub, .ago, .addComment').css('display','block')
-           .parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
+           .parents('.item').find('.url, .share, .source, .image, .img, .fill').remove()
 
   }).on('load', function() {
     if ($('html body #wrapper #container #main #top #arm #search #home').css('display') == 'none'){
@@ -488,7 +491,7 @@ var image = function(empty, n, item, src) {
           .find('.classic').css({
             'display': 'flex',
             'align-items': 'center'
-           }).find('.header, .tag, .addComment').remove()
+           }).find('.tag, .addComment').remove()
        }
       if ($(this).hasClass('guide')) {
       $('html body #wrapper #container #main').addClass('guide')
@@ -497,7 +500,7 @@ var image = function(empty, n, item, src) {
        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth)
          $(this).width('100%').css('cssText', 'max-width: 60vh')
          $(this).parents('#guide').find('.image, .img').css('display', 'block')
-         $(this).parents('#guide').find('.url, .share, .source, .header, .wrap, .fill').remove()
+         $(this).parents('#guide').find('.url, .share, .source, .wrap, .fill').remove()
       }
     } else {
      if ($(this).hasClass('guide')) {
@@ -513,7 +516,7 @@ var image = function(empty, n, item, src) {
            .find('.classic').css({
              'align-items': 'center',
              'display': 'flex'
-           }).find('.header, .tag, .addComment').remove()
+           }).find('.tag, .addComment').remove()
       } else if ($(this).get(0).naturalHeight < minimum) {
         $(this).width(140).css('margin','10px')
           .parents('.item')
@@ -522,7 +525,7 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'padding-top': '30px',
             'display': 'flex'
-          }).find('.header, .tag, .addComment').remove()
+          }).find('.tag, .addComment').remove()
      } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2)
          $(this).addClass('default').width('30vh')
        else if ($(this).get(0).naturalHeight > k) {
@@ -543,10 +546,9 @@ var image = function(empty, n, item, src) {
   } else {
     $('.' + n).find(' .' + item).parents('.item').css({
           'padding-bottom': '30px',
-          'padding-top': '30px'
         })
         .find('.pub, .ago, .addComment').css('display','block')
-        .parents('.item').find('.url, .share, .source, .header, .image, .img, .fill').remove()
+        .parents('.item').find('.url, .share, .source, .image, .img, .fill').remove()
     }
 
 }
@@ -708,8 +710,7 @@ var xml = function(e, s, n) {
         src = ''
       if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
-      if (src == '') courtesy = ''
-      else courtesy =
+      courtesy =
         "<div class='courtesy' style='float:left'>" +
         "  <img src='" + menu[n].img.image() + "'>" +
         "  <a ext='" + menu[n].ext + "'>" +
@@ -734,11 +735,11 @@ var xml = function(e, s, n) {
         } else var cat = ''
         html =
           "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + re.trim() + "'>" +
-          "  <div class='classic'>" +
           "    <div class='header'>" +
                  courtesy +
                  "<div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
           "    </div>" +
+          "  <div class='classic'>" +
           "    <div class='fill'><div class='loader double-circle'></div></div>" +
           "    <div class='image' style='display:none'>" +
           "      <img id='" + i + "' class='" + i + " img'>" +
@@ -802,7 +803,6 @@ var xml = function(e, s, n) {
         "  <div class='content' style='visibility:hidden'>" +
         "    <div class='status'></div>" +
         "    <div class='suggestions'>" +
-        "      <b>srandom</b>&ensp;...<br>" +
         "    </div>" +
         "  </div>" +
         "</div>"
@@ -811,19 +811,11 @@ var xml = function(e, s, n) {
       $('html body #wrapper #container #main').append(
         "<div id='feed'>" +
         "  <div class='center' style='display:none'>" +
-        "    <div class='quick'>" +
-        "      <div class='left' style='display:none'>" +
-        "        <div class='fa-angle-left'></div></div>" +
-        "      <div class='right'>" +
-        "        <div class='fa-angle-right'></div></div>" +
-        "      <div class='feed'></div>" +
-        "    </div>" +
         "    <div class='channel'></div>" +
         "  </div>" +
         "  <div class='content' style='visibility:hidden'>" +
         "    <div class='status'></div>" +
         "    <div class='suggestions'>" +
-        "      <b>srandom</b>&ensp;...<br>" +
         "    </div>" +
         "  </div>" +
         "</div>"
@@ -849,7 +841,8 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local))
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
-        if (pub[i].src) images.push(pub[i].src)
+        if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, $(this).attr('src'))
+        else image(false, pub[i].feed, pub[i].element, $(this).attr('src'))
       })
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
@@ -889,46 +882,9 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
-    cacheimages(
-   {
-      imgs    : images,
-      load    : function () {
-        $.each(pub, function(i, k) {
-          if ($(this).attr('src') == pub[i].src){
-            if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, $(this).attr('src'))
-            else image(false, pub[i].feed, pub[i].element, $(this).attr('src'))
-          }
-        })
-        $('html body #wrapper #container #main .fill').css('animation','none')
-     },
-//            # triggered when single image is sucessfuly cached
-//            # @param1, ( string ), loaded image source path
-//            # @param2, ( event object ), native event object generated
-//            # context ( this ), Image object, target obj related with event
-//
-//          error : function () { console.log( arguments, this ); },
-//            # triggered when error occured when tring to download image
-//            # @param1, ( string ), path to the image failed to load
-//            # @param2, ( event object ), native event object describing the circumstance
-//            # context ( this ), Image object, target obj related with event
-//
-//          abort : function () { console.log( arguments, this ); },
-//            # triggered when download is haulted by user action ( browsers 'stop' button )
-//            # @param1, ( string ), path to the image failed to load
-//            # @param2, ( event object ), native event object generated
-//            # context ( this ), Image object, target obj related with event
-//
-        done   : function () {
-       },
-//            # triggered after download proccess completes
-//            # @params, ( string(s) ), images in question
-//            # context ( this ), document
-    }
-  );
     $('html body #wrapper #container #main').attr('tabindex', -1).focus()
     content(n, recent, oldest, images.length, posts)
-    feed(40)
-    suggest(id)
+    suggest()
   $.unloading()
   })
 

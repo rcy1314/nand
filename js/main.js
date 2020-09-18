@@ -11,8 +11,7 @@ $(document)
             xml(null, null, $.random())
       }
     })
-    var nextAngle = 0
-    nextAngle -= 180
+    nextAngle -= -180
     if (nextAngle <= -180) nextAngle = 0
 	  if (quickFeeds == true) {
         $('html body #wrapper #container #main #visit #page #front .quick')

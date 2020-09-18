@@ -166,11 +166,11 @@
 
   html body #wrapper #container #main .content,
   html body #wrapper #container #main .content .suggestions {
-	width: 220px;
+	width: 255px;
   }
 
   html body #wrapper #container #main .content .status {
-	width: 240px;
+	width: 280px;
   }
 
   html body #wrapper #container #main #page #front {
@@ -251,6 +251,6 @@
   }
 
   html body #wrapper #container #main .content {
-    margin-left: 30px;
+    margin-left: 55px;
   }
 }
