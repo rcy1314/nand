@@ -161,18 +161,16 @@
   }
 
   html body #wrapper #container #main .center {
-	margin-right: 80px;
     width: 430px;
   }
 
   html body #wrapper #container #main .content {
-	position: absolute;
-	width: 245px;
-	right: 25px;
+    margin-left: 15px;
+  	width: 255px;
   }
 
   html body #wrapper #container #main .content .status {
-	width: 290px;
+    width: 280px;
   }
 
   html body #wrapper #container #main #page #front {

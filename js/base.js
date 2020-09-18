@@ -100,7 +100,7 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
   $('html body #wrapper #container #main #top').hide()
 }
 
-var content  = function(n, recent, oldest, images, posts) {
+var content  = function(n, recent, oldest, posts) {
 
   $('html body #wrapper #container #main #feed .status').append(
     "<div class='filter' " +
@@ -115,8 +115,7 @@ var content  = function(n, recent, oldest, images, posts) {
     "<div class='info'>" +
     "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
     "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
-    "  <b>Images</b>&ensp;<div class='images'>" + images + "</div><br>" +
-    "  <b>Posts</b>&ensp;" + posts +
+    "  <b>Posts...</b>&ensp;<div style='float:right'>" + posts + "</div>" +
     "</div>"
   )
 
@@ -858,7 +857,6 @@ var xml = function(e, s, n) {
       )
       image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
-      var images = []
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
@@ -907,7 +905,7 @@ var xml = function(e, s, n) {
       }
     }
     $('html body #wrapper #container #main #feed').attr('tabindex', -1)
-    content(n, recent, oldest, images.length, posts)
+    content(n, recent, oldest, posts)
     suggest()
   $.unloading()
   })
