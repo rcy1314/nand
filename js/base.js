@@ -28,7 +28,7 @@ var reader = false
 
 var tag = "<div class='tag' style='display:none'>" +
           "  <div class='images fa-heart-o'></div>" +
-          "  <div class='images fa-comment-o'></div>" +
+/*        "  <div class='images fa-comment-o'></div>" +                     */
           "  <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
           "  <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "</div>"
@@ -326,13 +326,12 @@ var populate = function(n) {
         "    <img src='" + menu[id].img.image() + "'> " +
         "  </div>" +
         "    <a class='title' ext='" + menu[id].ext + "'" +
-        "      title='" + menu[id].id + +  "'>" +
+        "      title='" + menu[id].id +  "'>" +
                menu[id].id.match(/[^\/]+$/g) +
         "    </a>" +
         "</div>"
       )
     }
-
     for (var i = 1; i <= menu.length - 1; i++) {
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
