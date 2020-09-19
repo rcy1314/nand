@@ -156,7 +156,6 @@ $.loading = function () {
 }
 
 $.unloading = function() {
-  setTimeout(function() {
     if (loading == 'dots'){
       $('html body #wrapper #container #main .fill').css('animation','none')
       progress(true, 0)
@@ -164,7 +163,6 @@ $.unloading = function() {
       clearInterval(complete)
       progress(true, 100)
     }
-  }, 250)
 }
 
 String.prototype.space = function() {
