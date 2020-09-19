@@ -1,3 +1,109 @@
+;(( function ( methodName, dfn ) {
+
+  // add "cacheimages" function identifier to target context ( window )
+  this[methodName] = dfn();
+
+} ).call(
+self,
+"cacheimages",
+function () {
+
+    var emptyfn    = function () {};
+    var isfn       = function ( o ) {
+        return typeof o === "function";
+    };
+    var isplainobj = function ( o ) {
+        return Object.prototype.toString.call( o ) === "[object Object]";
+    };
+    var isarray    = function ( o ) {
+        return Object.prototype.toString.call( o ) === "[object Array]";
+    };
+    var defaults   = {
+      load  : emptyfn,
+      error : emptyfn,
+      abort : emptyfn,
+      done  : emptyfn
+    };
+    var imgreg     = /\.(?:jpe?g|jpe|png|gif|bmp|tiff?|tga|iff)$/i;
+    var events     = ["onload", ,"onerror" ,"onabort"];
+
+    var _F = function ( settup ) {
+
+        if (
+            isplainobj( settup )
+            && (
+                isarray( settup.imgs )
+                && ( settup.imgs.length > 0 )
+            )
+        ) {
+
+            var pics    = [];
+            var n       = 0;
+            var opts = {
+                load  : isfn( settup.load )   ? settup.load  : defaults.load,
+                error : isfn( settup.error )  ? settup.error : defaults.error,
+                abort : isfn( settup.abort )  ? settup.abort : defaults.abort,
+                done  : isfn( settup.done )   ? settup.done  : defaults.done,
+                imgs  : settup.imgs.filter(
+                          function ( imgstr ) {
+                            return imgreg.test( String( imgstr ) );
+                          }
+                        )
+            };
+            var loadhandler;
+
+            if (
+                opts.imgs.length == 0
+            ) {
+                opts.done.call( document );
+                return [];
+            }
+
+            loadhandler = function ( e ) {
+                e || ( e = window.event );
+                n += 1;
+                if ( n < opts.imgs.length ) {
+                    opts[ e.type ].call( this, this.src, e );
+                    // console && console.log( e.type, ' --> [ ', this.src, ' ].' );
+                } else {
+                    opts.done.apply( document, opts.imgs );
+                    pics.forEach(
+                      function ( imgobj ) {
+                        events.forEach(
+                          function ( vnt ) {
+                            imgobj[vnt] = null;
+                          }
+                        );
+                      }
+                    );
+                }
+            };
+
+            opts.imgs.forEach(
+                function ( imgstr, i ) {
+                    pics[i] = new Image;
+                    events.forEach(
+                        function ( vnt ) {
+                            pics[i][vnt] = loadhandler;
+                        }
+                    );
+                    pics[i].src = imgstr;
+                }
+            );
+
+            return opts.imgs.concat();
+
+        } else {
+            return false;
+        }
+
+    };
+
+    return _F;
+
+}
+));
+
 $.fn.animateRotate = function(angle, duration, easing, complete) {
   return this.each(function() {
     var $elem = $(this)
