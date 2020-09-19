@@ -116,7 +116,7 @@ var content = function(n, recent, oldest, posts) {
     "<div class='info'>" +
     "  <b>Most recent</b><div style='float:right'>" + recent +"</div><br>" +
     "  <b>Oldest post</b><div style='float:right'>" + oldest + "</div><br>" +
-    "  <b>Posts...</b>&ensp;<div style='float:right'>" + posts + "</div>" +
+    "  <b>Posts</b>&ensp;<div style='float:right'>" + posts + "</div>" +
     "</div>"
   )
 
@@ -810,29 +810,7 @@ var xml = function(e, s, n) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })
     })
-    if (reader == true && first == true) {
-      $('html body #wrapper #container #main').append(
-        "<div id='feed'>" +
-        "  <div class='center' style='display:none'>" +
-/*
-        "    <div class='quick'>" +
-        "      <div class='left' style='display:none'>" +
-        "        <div class='fa-angle-left'></div></div>" +
-        "      <div class='right'>" +
-        "        <div class='fa-angle-right'></div></div>" +
-        "      <div class='feed'></div>" +
-        "    </div>" +
-*/
-        "    <div class='channel'></div>" +
-        "  </div>" +
-        "  <div class='content' style='visibility:hidden'>" +
-        "    <div class='status'></div>" +
-        "    <div class='suggestions'>" +
-        "    </div>" +
-        "  </div>" +
-        "</div>"
-      )
-    } else if (reader == false && first == true) {
+    if (first == true) {
       $('html body #wrapper #container #main').append(
         "<div id='feed'>" +
         "  <div class='center' style='display:none'>" +
@@ -914,29 +892,7 @@ var xml = function(e, s, n) {
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
-    if (reader == false) {
-      if (e != 'search') $('html body #wrapper #container #main .center').append(
-        "<div id='bottom'>" +
-        "  <div class='back btn' aria-item=" + menu[$.back()] + "' title='" + menu[$.back()].id + "'>" +
-        "      <span class='front'></span>" +
-        "      <span class='flip-front'>Previous</span>" +
-        "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +
-        "  </div>" +
-        "  <div class='bottom'>acktic</div>" +
-        "  <div class='next btn' aria-item=" + menu[$.next()] + "' title='" + menu[$.next()].id + "'>" +
-        "      <span class='front'></span>" +
-        "      <span class='flip-front'>Next</span>" +
-        "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +
-        "  </div>" +
-        "</div>"
-      )
-    }
-    if (reader == true && first == true){
-      if ($.active <= 1){
-        first = true
-        stop = true
-      }
-    } else if (reader == false && first == true) {
+    if (first == true){
       if ($.active <= 1){
         first = true
         stop = true
