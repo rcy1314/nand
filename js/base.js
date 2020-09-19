@@ -505,7 +505,7 @@ var image = function(empty, n, item, src) {
     $(this).parents('.item').css({
           'padding-bottom': '30px',
         })
-        .find('.pub, .ago, .addComment').css('display','block')
+        .parents('.item').find('.pub, .ago, .addComment').css('display','block')
         .parents('.item').find('.url, .share, .source, .image, .img, .fill').remove()
 
   }).on('load', function() {
@@ -733,8 +733,8 @@ var xml = function(e, s, n) {
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
       }
-      if (src.match(/assets|comments|default|feeds|fsdn|undefined|[^https?:\/\/]/g)) src = 'https://'
-      if (src.match(/ytimg/g)) var yt = 'yt'
+      if (src.match(/assets|comments|default|feeds|fsdn|undefined/g)) src = 'https://'
+      else if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
       courtesy =
         "<div class='courtesy' style='float:left'>" +
@@ -882,9 +882,10 @@ var xml = function(e, s, n) {
       })
       cacheimages(
      {
-       load    : function () {
         imgs    : images,
-        $.each(pub, function(i, k) {
+        load    : function () {
+          $.each(pub, function(i, k) {
+            if ($(this).attr('src') == pub[i].src)
              if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
              else image(false, pub[i].feed, pub[i].element, pub[i].src)
          })
