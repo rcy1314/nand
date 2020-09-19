@@ -1683,6 +1683,16 @@ var menu = [
 		media: true
   },
 	{
+		id: "Vulture",
+		cat: "Entertainment",
+		des: "Vulture, the culture and entertainment site from New York magazine, offers smart, comprehensive coverage of movies, TV, music and much more.",
+		uri: "http://feeds.feedburner.com/nymag/vulture?fmt=xml",
+		ext: "https://vulture.com",
+		img: "Vulture",
+		hash: "vF",
+		media: true
+  },
+	{
 		id: "Yahoo Entertainment",
 		cat: "Entertainment",
 		des: "Yahoo Entertainment News, Celebrity, Movie, TV Headlines.",

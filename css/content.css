@@ -418,6 +418,7 @@ html body #wrapper #container #main #visit {
   background-color: transparent;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
   display: flex;
   height: 100%;
 }
@@ -465,7 +466,6 @@ html body #wrapper #container #main #dots .fill {
 }
 
 html body #wrapper #container #main #visit #page #front {
-  visibility: hidden;
   position: relative;
   margin: 40px auto;
   display: block;

@@ -502,8 +502,11 @@ var image = function(empty, n, item, src) {
   if (src.match(/https?\:\/\//g)) {
   $('.' + n).find(' .' + item).attr('src', src).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill').remove()
-    $(this).parents('.item').find('.pub, .ago, .addComment').css('display','block')
-           .parents('.item').find('.url, .share, .source, .image, .img, .fill').remove()
+    $(this).parents('.item').css({
+          'padding-bottom': '30px',
+        })
+        .find('.pub, .ago, .addComment').css('display','block')
+        .parents('.item').find('.url, .share, .source, .image, .img, .fill').remove()
 
   }).on('load', function() {
     if ($('html body #wrapper #container #main #top #arm #search #home').css('display') == 'none'){
@@ -729,8 +732,8 @@ var xml = function(e, s, n) {
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
-      } else if (src.match(/assets|comments|default|feeds|fsdn|undefined|[^https?:\/\/]/g))
-        src = ''
+      }
+      if (src.match(/assets|comments|default|feeds|fsdn|undefined|[^https?:\/\/]/g)) src = 'https://'
       if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
       courtesy =
@@ -877,11 +880,16 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         images.push(pub[i].src)
       })
-      cacheimages(
+      if (menu[n].uri.match(/feedburner/g)) {
+        $.each(pub, function(i, k) {
+           image(true, pub[i].feed, pub[i].element, pub[i].src)
+       })
+      }
+      else cacheimages(
      {
+       load    : function () {
         imgs    : images,
-        load    : function () {
-          $.each(pub, function(i, k) {
+        $.each(pub, function(i, k) {
              if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
              else image(false, pub[i].feed, pub[i].element, pub[i].src)
          })
@@ -910,7 +918,7 @@ var xml = function(e, s, n) {
  //            # context ( this ), document
       }
  );
-     posts = $('html body #wrapper #container #main .center .channel .item').length
+    posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
     if (reader == false) {
