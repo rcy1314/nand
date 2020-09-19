@@ -880,12 +880,7 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         images.push(pub[i].src)
       })
-      if (menu[n].uri.match(/feedburner/g)) {
-        $.each(pub, function(i, k) {
-           image(true, pub[i].feed, pub[i].element, pub[i].src)
-       })
-      }
-      else cacheimages(
+      cacheimages(
      {
        load    : function () {
         imgs    : images,
