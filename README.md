@@ -12,21 +12,21 @@
 ### Config in base
 
 * op
-  -invert = 1
-  -opposite = 0
+  invert = 1,
+  opposite = 0
 
 * category Legacy
 * contrast
-  -Sets as Opposite of op
+  Sets as Opposite of op
 
 * onlyImages boolean
-  -filter Only feeds with Images
+  filter Only feeds with Images
 
 * quickFeeds boolean
-  -Display feeds on first visit
+  Display feeds on first visit
 
 * translations array
-  -Choice to reorder
+  Choice to reorder
 
 
 ### Init Unique URI Identifier
