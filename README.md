@@ -12,8 +12,8 @@
 ### Config in base
 
 * op
-  invert = 1,
-  opposite = 0
+  invert = 0,
+  opposite = 1
 
 * category Legacy
 * contrast
@@ -32,6 +32,9 @@
 ### Init Unique URI Identifier
 
   Init.js does some handling of location.
+
+  * Contrast Example
+  > /?+1
 
   * Category Example
   > /?q=category
