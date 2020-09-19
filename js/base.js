@@ -499,7 +499,7 @@ var image = function(empty, n, item, src) {
   var small = 120
   var k = 5420
 
-  if (src.match(/https?\:\/\//g)) {
+  if (src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
   $('.' + n).find(' .' + item).attr('src', src).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill').remove()
     $(this).parents('.item').css({
@@ -586,6 +586,7 @@ var xml = function(e, s, n) {
   var local
   var pub = []
   var src = ''
+  var images = []
   category = menu[n].cat
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
@@ -733,8 +734,7 @@ var xml = function(e, s, n) {
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
       }
-      if (src.match(/assets|comments|default|feeds|fsdn|undefined/g)) src = 'https://'
-      else if (src.match(/ytimg/g)) var yt = 'yt'
+      if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
       courtesy =
         "<div class='courtesy' style='float:left'>" +
@@ -871,7 +871,6 @@ var xml = function(e, s, n) {
       )
       image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
-    var images = []
       $.each(pub, function(i, k) {
         if (i == quit) return false
         if ($.isNumeric(local) && pub[local].element != pub[i].element)
