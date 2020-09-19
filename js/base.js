@@ -1,5 +1,5 @@
 var op = 0 //1 invert, 2 opposite
-var loading = 'dots' //or 'percent'
+var loading = 'percent' //or 'percent'
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
 var onlyImages = false //grep, random, populate only return media true
@@ -471,7 +471,7 @@ var response = function(passthrough, uri, n, bloat) {
     if (bloat == true) {
       populate(menu[id].cat)
     }
-    $.unloading()
+
 }
 
 var write = function(n) {
