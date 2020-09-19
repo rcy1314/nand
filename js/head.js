@@ -1690,7 +1690,7 @@ var menu = [
 		ext: "https://vulture.com",
 		img: "Vulture",
 		hash: "vF",
-		media: true
+		media: false
   },
 	{
 		id: "Yahoo Entertainment",
