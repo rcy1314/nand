@@ -32,7 +32,6 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
             $('html body #wrapper #container #main #front').css('visibility','visible')
-            $('html body #wrapper #container #main .fill').css('animation','none')
         })
 
       else {
@@ -90,7 +89,6 @@ if (location.search.split('?q=')[1]) {
           .ready(function() {
 
             $('html body #wrapper #container #main #front').css('visibility','visible')
-            $('html body #wrapper #container #main .fill').css('animation','none')
 
         })
 

@@ -100,7 +100,7 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
   $('html body #wrapper #container #main #top').hide()
 }
 
-var content  = function(n, recent, oldest, posts) {
+var content = function(n, recent, oldest, posts) {
 
   $('html body #wrapper #container #main #feed .status').append(
     "<div class='filter' " +
@@ -108,13 +108,14 @@ var content  = function(n, recent, oldest, posts) {
     "  <div class='display'>" +
     "  <img src='" + menu[n].img.image() + "'> " +
     "  </div>" +
-    "    <a class='title' ext='" + menu[n].ext +  "'>" +
+    "    <a class='title' ext='" + menu[n].ext + "'" +
+    "      title='" + menu[n].id + "'>" +
            menu[n].id.match(/[^\/]+$/g) +
     "    </a>" +
     "</div>" +
     "<div class='info'>" +
-    "  <b>Most recent...</b><div style='float:right'>" + recent +"</div><br>" +
-    "  <b>Oldest post...</b><div style='float:right'>" + oldest + "</div><br>" +
+    "  <b>Most recent</b><div style='float:right'>" + recent +"</div><br>" +
+    "  <b>Oldest post</b><div style='float:right'>" + oldest + "</div><br>" +
     "  <b>Posts...</b>&ensp;<div style='float:right'>" + posts + "</div>" +
     "</div>"
   )
@@ -324,7 +325,8 @@ var populate = function(n) {
         "  <div class='display'>" +
         "    <img src='" + menu[id].img.image() + "'> " +
         "  </div>" +
-        "    <a class='title' ext='" + menu[id].ext +  "'>" +
+        "    <a class='title' ext='" + menu[id].ext + "'" +
+        "      title='" + menu[id].id + +  "'>" +
                menu[id].id.match(/[^\/]+$/g) +
         "    </a>" +
         "</div>"
@@ -340,7 +342,8 @@ var populate = function(n) {
             "  <div class='display'>" +
             "    <img src='" + menu[i].img.image() + "'> " +
             "  </div>" +
-            "    <a class='title' ext='" + menu[i].ext +  "'>" +
+            "    <a class='title' ext='" + menu[i].ext + "'" +
+            "      title='" + menu[i].id + "'>" +
                    menu[i].id.match(/[^\/]+$/g) +
             "    </a>" +
             "</div>"
@@ -353,7 +356,8 @@ var populate = function(n) {
               "  <div class='display'>" +
               "    <img src='" + menu[i].img.image() + "'> " +
               "  </div>" +
-              "    <a class='title' ext='" + menu[i].ext +  "'>" +
+              "    <a class='title' ext='" + menu[i].ext + "'" +
+              "      title='" + menu[i].id + "'>" +
                      menu[i].id.match(/[^\/]+$/g) +
               "    </a>" +
               "</div>"
@@ -377,7 +381,8 @@ var air = function(n) {
         "  <div class='display'>" +
         "  <img src='" + menu[i].img.image() + "'> " +
         "  </div>" +
-        "    <a class='title' ext='" + menu[i].ext +  "'>" +
+        "    <a class='title' ext='" + menu[i].ext + "'" +
+        "      title='" + menu[i].id + "'>" +
                menu[i].id.match(/[^\/]+$/g) +
         "    </a>" +
         "</div>"
@@ -478,7 +483,8 @@ var write = function(n) {
       "  <div class='display'>" +
       "  <img src='" + menu[n].img.image() + "'> " +
       "  </div>" +
-      "    <a class='title' ext='" + menu[n].ext +  "'>" +
+      "    <a class='title' ext='" + menu[n].ext + "'" +
+      "      title='" + menu[n].id + "'>" +
              menu[n].id.match(/[^\/]+$/g) +
       "    </a>" +
       "</div>"
@@ -910,13 +916,13 @@ var xml = function(e, s, n) {
     if (reader == false) {
       if (e != 'search') $('html body #wrapper #container #main .center').append(
         "<div id='bottom'>" +
-        "  <div class='back btn' aria-item=" + menu.indexOf(menu[$.back()]) + ">" +
+        "  <div class='back btn' aria-item=" + menu[$.back()] + "' title='" + menu[$.back()].id + "'>" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Previous</span>" +
         "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +
         "  </div>" +
         "  <div class='bottom'>acktic</div>" +
-        "  <div class='next btn' aria-item=" + menu.indexOf(menu[$.next()]) + ">" +
+        "  <div class='next btn' aria-item=" + menu[$.next()] + "' title='" + menu[$.next()].id + "'>" +
         "      <span class='front'></span>" +
         "      <span class='flip-front'>Next</span>" +
         "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,15) + "...</span>" +

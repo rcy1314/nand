@@ -244,8 +244,8 @@
 
   html body #wrapper #container #main #visit #page #front .quick {
     position: relative;
-    width: 1020px;
-    left: -50px;
+    width: 980px;
+    left: -20px;
     z-index: 3;
     top: 0;
   }
