@@ -11,12 +11,41 @@
 
 ### Config in base
 
-* op boolean
+* op
+  -invert = 1
+  -opposite = 0
+
 * category Legacy
-* contrast boolean
+* contrast
+  -Sets as Opposite of op
+
 * onlyImages boolean
+  -filter Only feeds with Images
+
 * quickFeeds boolean
+  -Display feeds on first visit
+
 * translations array
+  -Choice to reorder
+
+
+### Init Unique URI Identifier
+
+  Init.js does some handling of location.
+
+  * Category Example
+  > /?q=category
+
+  * Query Example
+  > /?q=example+query
+
+  * Hash Example
+  > /?hash
+
+  * Feed Example
+  > /?q=&unique-identifier
+
+
 
 ### Invert
 
@@ -24,7 +53,7 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/air.jpg'></p>
 
-<p align='center'><img src='http://acktic.github.io/screenshots/wall.jpg'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/visual.jpg'></p>
 
 ### Opposite
 
@@ -32,7 +61,7 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
 
-<p align='center'><img src='http://acktic.github.io/screenshots/visual.jpg'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/contrast.jpg'></p>
 
 License
 ----
