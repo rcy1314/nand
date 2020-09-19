@@ -434,6 +434,9 @@ html body #wrapper #container #main #visit #page #handle {
 
 html body #wrapper #container #main #visit #page #handle .fa-map {
   color: #fff !important;
+  position: relative;
+  font-size: 72px;
+  left: 10px;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
@@ -486,9 +489,9 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   overflow-y: auto;
   text-align: left;
   cursor: pointer;
-  height: 440px;
+  height: 432px;
   width: 100%;
-  top: -62px;
+  top: -61px;
 }
 
 html body #wrapper #container #main #visit #page #front #first .listing::-webkit-scrollbar {
@@ -1397,12 +1400,11 @@ html body #wrapper #container #main #visit #page #front #first .listing .index:f
 
 html body #wrapper #container #main #top #arm #search #match .listing .background,
 html body #wrapper #container #main #visit #page #front #first .listing .background {
-  height: calc(100% + 4px) !important;
-  width: calc(100% + 2px) !important;
+  height: calc(100%) !important;
+  width: calc(100%) !important;
   position: absolute;
-  margin-top: -12px;
   z-index: -1;
-  left: -1px;
+  left: 0;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing {
@@ -1414,7 +1416,7 @@ html body #wrapper #container #main #top #arm #search #match .listing {
   overflow-y: auto;
   cursor: pointer;
   margin: 0 auto;
-  height: 440px;
+  height: 432px;
   width: 18em;
 }
 
@@ -1436,7 +1438,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .detail 
 html body #wrapper #container #main #top #arm #search #match .listing .index,
 html body #wrapper #container #main #visit #page #front #first .listing .index {
   border-bottom: none !important;
-  width: calc(100% - 16px);
+  width: calc(100% - 4px);
   padding-bottom: 12px;
   position: relative;
   padding-left: 12px;
@@ -1494,7 +1496,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 html body #wrapper #container #main #top #arm #search #match .listing .hover,
 html body #wrapper #container #main #visit #page #front #first .listing .hover {
   border-bottom: none !important;
-  width: calc(100% - 16px);
+  width: calc(100% - 4px);
   padding-bottom: 12px;
   padding-left: 12px;
   padding-top: 12px;
