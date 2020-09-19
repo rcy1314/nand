@@ -205,25 +205,25 @@ $(document)
         notify('URL Copied to Clipboard')
         e.stopPropagation()
   })
-  .on('touch click', 'html body #wrapper #container #main #visit #page #front .quick .feed .assetTranslation', function(e) {
+  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation', function(e) {
       $.loading()
       $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main #top').show()
       populate($(this).attr('aria-item'))
   })
   .on('touch click', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .feed .asset', function(e) {
-      $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+    'html body #wrapper #container #main #visit #page .quick .feed .asset', function(e) {
+      $('html body #wrapper #container #main #visit #page .quick .feed').empty()
       $.loading()
       $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main #top').show()
       if ($.active == 0) xml(null, null, $(this).attr('aria-item'))
   })
-  .on('touchmove', 'html body #wrapper #container #visit #main #page #front .quick .feed',
+  .on('touchmove', 'html body #wrapper #container #visit #main #page .quick .feed',
   function(e) {
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 10; i++)
-          $('html body #wrapper #container #main #visit #page #front .quick .feed .asset:first').remove()
+          $('html body #wrapper #container #main #visit #page .quick .feed .asset:first').remove()
       quick(10)
   })
   .on('touchmove', 'html body #wrapper #container #main .center .quick .feed', function(e) {
@@ -233,8 +233,8 @@ $(document)
         feed(10)
   })
   .on('touch click',
-    'html body #wrapper #container #main #visit #page #front .quick .right, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-right',
+    'html body #wrapper #container #main #visit #page .quick .right, ' +
+    'html body #wrapper #container #main #visit #page .quick .fa-angle-right',
     function(e) {
 		var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
@@ -255,8 +255,8 @@ $(document)
         quick(10)
   })
   .on('touch click',
-    'html body #wrapper #container #main #visit #page #front .quick .left, ' +
-    'html body #wrapper #container #main #visit #page #front .quick .fa-angle-left',
+    'html body #wrapper #container #main #visit #page .quick .left, ' +
+    'html body #wrapper #container #main #visit #page .quick .fa-angle-left',
     function(e) {
 		var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
@@ -547,7 +547,6 @@ $(document)
       $.each(translations, function(i) {
         $('html body #wrapper #container #main #visit #page #front #first .listing').append(
           "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
-          "<div class='background'></div>" +
           "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
           "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
           "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
@@ -642,7 +641,6 @@ $(document)
         $('html body #wrapper #container #arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
-            "<div class='background'></div>" +
             "<div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "  <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
             "  <div class='text'>&emsp;<b>" + translations[i] + "</b>" +

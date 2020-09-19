@@ -49,7 +49,7 @@ var toggle = function(n) {
   nextAngle -= -180
   if (nextAngle <= -180) nextAngle = 0
   if (n == true) {
-      $('html body #wrapper #container #main #visit #page #front .quick')
+      $('html body #wrapper #container #main #visit #page .quick')
         .addClass('visible').removeClass('invisible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
       $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
@@ -58,14 +58,14 @@ var toggle = function(n) {
         .removeClass('visible').addClass('invisible')
       quick(7)
     } else if (n == false){
-      $('html body #wrapper #container #main #visit #page #front .quick')
+      $('html body #wrapper #container #main #visit #page .quick')
         .addClass('invisible').removeClass('visible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
       $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
       $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
       $('html body #wrapper #container #main #visit #page #front .show')
         .removeClass('invisible').addClass('visible')
-      $('html body #wrapper #container #main #visit #page #front .quick .feed').empty()
+      $('html body #wrapper #container #main #visit #page .quick .feed').empty()
     }
 }
 
@@ -130,7 +130,6 @@ var base = function(n) {
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #visit #page #front #first .listing').prepend(
         "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
-        "  <div class='background'></div>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
@@ -158,7 +157,6 @@ var list = function(n) {
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #top #arm #search #match .listing').prepend(
         "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
-        "  <div class='background'></div>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
@@ -219,7 +217,7 @@ var quick  = function(n) {
   var dupe = []
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
-    $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
+    $('html body #wrapper #container #main #visit #page .quick .feed').append(
       "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
       "  <a title='" + translations[i] + "'>" +
@@ -232,7 +230,7 @@ var quick  = function(n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
-        $('html body #wrapper #container #main #visit #page #front .quick .feed').append(
+        $('html body #wrapper #container #main #visit #page .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
