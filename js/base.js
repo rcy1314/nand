@@ -894,21 +894,25 @@ var xml = function(e, s, n) {
     } else $('#guide').hide()
       $.each(pub, function(i, k) {
         if (i == quit) return false
-        if ($.isNumeric(local) && pub[local].element != pub[i].element)
+        if ($.isNumeric(local) && pub[local].element != pub[i].element && pub[i].title != '')
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
-        else if (!$.isNumeric(local))
+        else if (!$.isNumeric(local) && pub[i].title != '')
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
-        images.push(pub[i].src)
+        if (pub[i].src != '') images.push(pub[i].src)
       })
-      if (quit == images.length)
+      if (menu[n].id.match(/Imgur/g)){
+        let uniqIds = {}
+        let filtered = images.filter(obj => !uniqIds[obj] && (uniqIds[obj] = true));
+        images = filtered
+      }
+      if (images > 0)
       cacheimages(
      {
         imgs    : images,
         load    : function () {
           $.each(pub, function(i, k) {
-            if ($(this).attr('src') == pub[i].src)
-             if (menu[n].id.match(/Imgur/g)) image(true, pub[i].feed, pub[i].element, pub[i].src)
-             else image(false, pub[i].feed, pub[i].element, pub[i].src)
+             if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
+             else image(false, n, pub[i].element, pub[i].src)
          })
        },
     //            # triggered when single image is sucessfuly cached
@@ -935,6 +939,12 @@ var xml = function(e, s, n) {
     //            # context ( this ), document
       }
     );
+    else {
+      $.each(pub, function(i, k) {
+         if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
+         else image(false, n, pub[i].element, pub[i].src)
+     })
+    }
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
@@ -951,6 +961,21 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
+    $('html body #wrapper #container #main .center').append(
+      "<div id='bottom'>" +
+      "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+      "      <span class='front'></span>" +
+      "      <span class='flip-front'>Previous</span>" +
+      "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+      "  </div>" +
+      "  <div class='bottom'>acktic</div>" +
+      "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+      "      <span class='front'></span>" +
+      "      <span class='flip-front'>Next</span>" +
+      "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+      "  </div>" +
+      "</div>"
+    )
     $('html body #wrapper #container #main #feed').attr('tabindex', -1)
     content(n, recent, oldest, posts)
     suggest()
