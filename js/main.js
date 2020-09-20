@@ -559,8 +559,6 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
-      $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
-      $('html body #wrapper #container #main #visit #page #front #first').css('visibility', 'visible')
       $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
       $.each(translations, function(i) {
         $('html body #wrapper #container #main #visit #page #front #first .listing').append(
