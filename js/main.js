@@ -38,6 +38,21 @@ $(document)
       $.unloading()
       quick(7)
   })
+  .on('touch click',
+    'html body #wrapper #container, ' +
+    'html body #wrapper #container #main, ' +
+    'html body #wrapper  #container #main #visit, ' +
+    'html body #wrapper #container #main #top #arm, ' +
+    'html body #wrapper #container #main #top #option',
+    function(e) {
+      if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
+        $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
+        $('html body #wrapper #container #main #top #arm #search #match').hide()
+      }
+      if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
+        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+      }
+   })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-map', function(e) {
     $.loading()
     onlyImages = onlyImages != true
