@@ -1,5 +1,5 @@
 @font-face {
-  src: url(../fonts/ProximaNova-Regular.woff);
+  src: url(../fonts/ProximaNova-Semibold.woff);
   font-family: Proxima Nova;
   font-display: block;
 }
@@ -208,6 +208,7 @@ html body #wrapper #container #main .center .channel .item .classic .wrap .tag .
 div,
 input {
   font-family: Proxima Nova;
+  color: #444444;
 }
 
 a {

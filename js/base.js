@@ -221,7 +221,7 @@ var quick  = function(n) {
       "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
       "  <a title='" + translations[i] + "'>" +
-           translations[i].substring(0,9) + '...' +
+           translations[i].substring(0,13) + '...' +
       "  </a>" +
       "</div>"
    )
@@ -234,7 +234,7 @@ var quick  = function(n) {
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
-               String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
+               String(menu[e].id.match(/[^\/]+$/g)).substring(0,13) + '...' +
           "  </a>" +
           "</div>"
        )
