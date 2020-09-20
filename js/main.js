@@ -48,6 +48,11 @@ $(document)
     'html body #wrapper #container #main #top #option',
     function(e) {
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
+        $('html body #wrapper #container #main #top #arm #search #input input[type=text]')
+          .css({
+            'text-align': 'center',
+            'padding-left': '0'
+          }).val('Search')
         $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
