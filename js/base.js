@@ -741,17 +741,17 @@ var xml = function(e, s, n) {
       .match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
         src = String($(this).find('content').text()
           .match(/src=['"](.*?)['"]/)[1])
-      } else if ($(this).find('link').attr('hre')) {
-        if ($(this).find('link').attr('hre').match(/youtube\.com/))
+      } else if ($(this).find('link').attr('href')) {
+        if ($(this).find('link').attr('href').match(/youtube\.com/))
           src = 'https://www.youtube.com/embed/' +
-            String($(this).find('link').attr('hre').split('=')[1])
-        else src = String($(this).find('link').attr('hre'))
+            String($(this).find('link').attr('href').split('=')[1])
+        else src = String($(this).find('link').attr('href'))
       } else if ($(this).find('content').text()
       .match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
         src = String($(this).find('content').text()
           .match(/src=['"](.+)['"]/)[1])
-      } else if ($(this).find('link').attr('hre')) {
-        src = String($(this).find('link').attr('hre'))
+      } else if ($(this).find('link').attr('href')) {
+        src = String($(this).find('link').attr('href'))
       } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
         src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
       } else if ($(this).find('link').text()
@@ -789,19 +789,45 @@ var xml = function(e, s, n) {
       if ($(this).find('title:first').text().length > 125)
         var more = "<div class='more'>more</div>"
       else var more = ""
+      if (src.match(/youtube\.com/g)) {
         if ($(this).find('media\\:statistics, statistics').attr('views'))
-            var views =
-            "<div class='ago views'>" +
-            "  VIEWS " + $(this).find('media\\:statistics, statistics')
+            var views = "<div class='ago views'>" +
+            "  views " + $(this).find('media\\:statistics, statistics')
               .attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
             "</div>"
         else var views = ''
-        if (e == 'search') {
-          var cat =
-            "<div class='external'>" +
-              re.domain() +
-            "</div>"
-        } else var cat = ''
+        html =
+          "<div id='yt' class='item' ext='" + re.trim() + "'>" +
+          "  <div class='header'>" + courtesy +
+          "    <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
+          "  </div>" +
+          "  <div class='yt'>" +
+          "    <iframe src='" + src + "'></iframe>" +
+               views +
+          "  </div>" +
+          "  <div class='pub' " + "text='" +
+               $(this).find('title:first').text().escape() + "'>" +
+               $(this).find('title:first').text().truncate(125, true).escape() +
+               more +
+          "  </div>" +
+          "  <div class='ago'>" + dst[0] + "</div>" +
+/*
+          "  <form class='addComment' action'#'>" +
+          "    <input class='comment' " +
+          "      onclick='event.stopPropagation()'" +
+          "      placeholder='Add a Comment'" +
+          "      maxlength='60'>" +
+          "    <div class='post'><b>Post</b></div>" +
+          "  </form>" +
+*/
+          "</div>"
+      } else if (e == 'search') {
+                var cat =
+                  "<div class='external'>" +
+                    re.domain() +
+                  "</div>"
+      } else {
+        if (!cat) cat = ''
         html =
           "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + re.trim() + "'>" +
           "    <div class='header'>" +
@@ -819,7 +845,7 @@ var xml = function(e, s, n) {
                    $(this).find('title:first').text().truncate(125, true)
                      .escape() +
                    more +
-          "      </div>" + views +
+          "      </div>" +
           "      <div class='ago zulu' style='display:none'>" + dst[0] + "</div>" +
           "    </div>" +
           "    <input class='url' value='" + re.trim() + "'>" +
@@ -835,6 +861,7 @@ var xml = function(e, s, n) {
 */
           "  </div>" +
           "</div>"
+        }
       pub.push({
         title: $(this).find('title:first').text().escape(),
         courtesy: courtesy,
@@ -848,9 +875,6 @@ var xml = function(e, s, n) {
         post: html,
         src: src,
         gen: gen
-      })
-      pub.sort(function(a, b) {
-        return b.since - a.since
       })
       $.each(pub, function(i) {
         if (parseInt(pub[i].gen, 36) == post) local = i
@@ -905,15 +929,16 @@ var xml = function(e, s, n) {
         let filtered = images.filter(obj => !uniqIds[obj] && (uniqIds[obj] = true));
         images = filtered
       }
-      if (images > 0)
+      if (images.length > 0)
       cacheimages(
      {
         imgs    : images,
         load    : function () {
           $.each(pub, function(i, k) {
+            console.log('cache')
             if (pub[i].src == $(this).attr('src'))
-             if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
-             else image(false, n, pub[i].element, pub[i].src)
+             if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, $(this).attr('src'))
+             else image(false, n, pub[i].element, $(this).attr('src'))
          })
        },
     //            # triggered when single image is sucessfuly cached
@@ -941,6 +966,7 @@ var xml = function(e, s, n) {
       }
     );
     else {
+      console.log('else')
       $.each(pub, function(i, k) {
          image(false, n, pub[i].element, pub[i].src)
      })
