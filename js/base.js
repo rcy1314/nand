@@ -911,6 +911,7 @@ var xml = function(e, s, n) {
         imgs    : images,
         load    : function () {
           $.each(pub, function(i, k) {
+            if (pub[i].src == $(this).attr('src'))
              if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
              else image(false, n, pub[i].element, pub[i].src)
          })
@@ -941,8 +942,7 @@ var xml = function(e, s, n) {
     );
     else {
       $.each(pub, function(i, k) {
-         if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
-         else image(false, n, pub[i].element, pub[i].src)
+         image(false, n, pub[i].element, pub[i].src)
      })
     }
     posts = $('html body #wrapper #container #main .center .channel .item').length
