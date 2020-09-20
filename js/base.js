@@ -1,4 +1,5 @@
 var op = 0 //1 invert, 2 opposite
+var buffer = 7 //input index length (adds suggested)
 var loading = 'percent' //or 'percent'
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
@@ -124,12 +125,13 @@ var content = function(n, recent, oldest, posts) {
 
 var base = function(n) {
 
+  var suggest = []
   $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #visit #page #front #first .listing').prepend(
-        "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
+        "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
@@ -137,11 +139,32 @@ var base = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #visit #page #front #first .listing .' + i).length > 1)
-        $('html body #wrapper #container #main #visit #page #front #first .listing .' + i + ':last').remove()
-    }
+      suggest.push(i)
+    } else suggest.push(0)
   }
-  if (!$('html body #wrapper #container #main #visit #page #front #first').is(':visible')) {
+  if((menu.length - 2) == (suggest.length - 1)) {
+    var suggest = []
+    suggest.push(menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]))
+  }
+    for (i = 1; i <= menu.length - 1; i++) {
+      var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+      if ($.inArray(e, suggest) == -1 && menu[e])
+      $('html body #wrapper #container #main #visit #page #front #first .listing').append(
+        "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
+        "  <div class='detail'>" +
+        "    <img src='" + menu[e].img.image() + "'>" +
+        "    <div class='text'>&emsp;<b>" + menu[e].cat + "</b>" +
+        "      <br>&emsp;" + menu[e].id.match(/[^\/]+$/g) +
+        "    </div>" +
+        "      <div class='buffer'>suggested..</div>" +
+        "  </div>" +
+        "</div>"
+      )
+      if ($('html body #wrapper #container #main #visit #page #front #first .listing .index').length === buffer ||
+          $('html body #wrapper #container #main #visit #page #front #first .listing .index').length >= buffer)
+        return false
+    }
+    if (!$('html body #wrapper #container #main #visit #page #front #first').is(':visible')) {
     setTimeout(function() {
       $('html body #wrapper #container #main #visit #page #front #first').show()
     }, 50)
@@ -151,12 +174,14 @@ var base = function(n) {
 
 var list = function(n) {
 
+  var suggest = []
+  $('html body #wrapper #container #main #top #arm #search #match').show()
   $('html body #wrapper #container #main #top #arm #search #match .listing').empty()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
       $('html body #wrapper #container #main #top #arm #search #match .listing').prepend(
-        "<div class='index' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
+        "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
         "    <div class='text'>&emsp;<b>" + menu[i].cat + "</b>" +
@@ -164,10 +189,32 @@ var list = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #top #arm #search #match .listing .' + i).length > 1)
-        $('html body #wrapper #container #main #top #arm #search #match .listing .' + i + ':last').remove()
-    }
+      suggest.push(i)
+    } else suggest.push(0)
   }
+  if((menu.length - 2) == (suggest.length - 1)) {
+    var suggest = []
+    suggest.push(menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]))
+  }
+  if (suggest.length < 1) suggest.push(0)
+    for (i = 1; i <= menu.length - 1; i++) {
+      var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
+      if ($.inArray(e, suggest) == -1 && menu[e])
+      $('html body #wrapper #container #main #top #arm #search #match .listing').append(
+        "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
+        "  <div class='detail'>" +
+        "    <img src='" + menu[e].img.image() + "'>" +
+        "    <div class='text'>&emsp;<b>" + menu[e].cat + "</b>" +
+        "      <br>&emsp;" + menu[e].id.match(/[^\/]+$/g) +
+        "    </div>" +
+        "      <div class='buffer'>suggested..</div>" +
+        "  </div>" +
+        "</div>"
+      )
+      if ($('html body #wrapper #container #main #top #arm #search #match .listing .index').length === buffer ||
+          $('html body #wrapper #container #main #top #arm #search #match .listing .index').length >= buffer)
+        return false
+    }
   if (!$('html body #wrapper #container #main #top #arm #search #match').is(':visible')) {
     setTimeout(function() {
       $('html body #wrapper #container #main #top #arm #search #match').show()
@@ -404,7 +451,6 @@ var response = function(passthrough, uri, n, bloat) {
       })
       return false
     }
-  $('html body #wrapper #container #main #visit').show()
   if (n) var n = n.toString().space()
   if (uri) uri = uri.toString().space()
   else uri = n

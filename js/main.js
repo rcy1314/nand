@@ -29,11 +29,13 @@ $(document)
       $.loading()
       nextAngle -= 180
       location.pathname.state()
-      toggle(quickFeeds)
+      $(document).ready(function(){
       $('html body #wrapper #container #main #top').hide()
-      $('html body #wrapper #container #main #visit').show()
       $('html body #wrapper #container #main #visit .quick .feed').empty()
+      $('html body #wrapper #container #main #visit').css('visibility','visible').show()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
+        toggle(quickFeeds)
+      })
       document.title = ''
       $.unloading()
       quick(7)
@@ -50,7 +52,7 @@ $(document)
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+        $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
    })
   .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-map', function(e) {
@@ -492,7 +494,7 @@ $(document)
   .on('keyup',
     'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
-      $('html body #wrapper #container #main #visit #page #front #first').css('visibility','visible')
+      $('html body #wrapper #container #main #visit #page #front #first').show()
       $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
       var keyup = $(this).val()
       if (e.type == 'keyup' && e.keyCode == 13)
@@ -503,12 +505,7 @@ $(document)
       else if ($(this).val().length >= 2 && e.keyCode == 8)
        base($(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
-       $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
-       $('html body #wrapper #container #main .center, ' +
-         'html body #wrapper #container #main .content, ' +
-         'html body #wrapper #container #main #group .air, ' +
-         'html body #wrapper #container #main .suggestions, ' +
-         'html body #wrapper #container #main #group .result').show()
+       $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
       if (e.keyCode == 40) {
         if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
@@ -555,9 +552,38 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front #first .listing .hover')
           .next().removeClass('hover').addClass('index')
       } else if (e.keyCode == 27) {
-        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+        $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
     visual()
+  })
+  .on('touch click',
+    'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
+    function(e) {
+      $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
+      $('html body #wrapper #container #main #visit #page #front #first').css('visibility', 'visible')
+      $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
+      $.each(translations, function(i) {
+        $('html body #wrapper #container #main #visit #page #front #first .listing').append(
+          "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
+          "<div class='background'></div>" +
+          "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
+          "    <div class='radial'></div>" +
+          "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
+          "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
+          "      <br>&emsp;" + translations[i].grep() + " feeds" +
+          "    </div>" +
+          "  </div>" +
+          "</div>"
+        )
+      })
+      $(this).val('')
+        $(this).css({
+              'caret-color': '#e4e4e4',
+              'padding-left': '40px',
+              'text-align': 'left'
+        })
+        $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
+      visual()
   })
   .on('focusin',
     'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
@@ -582,11 +608,6 @@ $(document)
           list($(this).val())
       else if ($(this).val().length <= 2 && e.keyCode == 8) {
         $('html body #wrapper #container #main #top #arm #search #match').hide()
-        $('html body #wrapper #container #main .center, ' +
-          'html body #wrapper #container #main .content, ' +
-          'html body #wrapper #container #main #group .air, ' +
-          'html body #wrapper #container #main .suggestions, ' +
-          'html body #wrapper #container #main #group .result').show()
       }
       if (e.keyCode == 40) {
         if (!$('html body #wrapper #container #main #top #arm #search #match .listing .hover').length)
@@ -637,7 +658,7 @@ $(document)
           .next().next().next().next().next().next()
           .addClass('index').removeClass('hover')
       } else if (e.keyCode == 27) {
-          $('html body #wrapper #container #main #top #arm #search #match').css('visibility','hidden')
+          $('html body #wrapper #container #main #top #arm #search #match').hide()
 
       }
       visual()
@@ -668,15 +689,6 @@ $(document)
           })
         $('html body #wrapper #container #arm #search #input .icon').addClass('slide')
       visual()
-  })
-  .on('focusout blur',
-    'html body #wrapper #container #top #arm #search #input input[type=text]',
-    function(e) {
-      $(this).css({
-        'caret-color': 'transparent',
-        'text-align': 'center',
-        'padding': '0'
-      }).val('Search')
   })
   .on('submit', 'html body #wrapper #container #top #arm #search', function(e) {
     $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content').remove()
