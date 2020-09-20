@@ -16,6 +16,9 @@
   opposite = 1
 
 * category Legacy
+
+* buffer listing length suggestions
+
 * contrast
   Sets as Opposite of op
 
