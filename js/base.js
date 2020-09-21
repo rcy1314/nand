@@ -987,6 +987,7 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
+    if (reader == false)
     $('html body #wrapper #container #main .center').append(
       "<div id='bottom'>" +
       "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +

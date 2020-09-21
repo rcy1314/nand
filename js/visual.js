@@ -9,9 +9,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
-      'html body #wrapper #container #main .center .quick .feed, ' +
-      'html body #wrapper #container #main .center .channel .item .classic, ' +
-      'html body #wrapper #container #main .center .channel .item, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed, ' +
+      'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
+      'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -29,8 +29,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main .center .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .left')
+      'html body #wrapper #container #main #feed .center .quick .right, ' +
+      'html body #wrapper #container #main #feed .center .quick .left')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeAlt')
     $(':root').css({
       '--loader-color-primary': '#f7426C',
@@ -41,8 +41,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .left, ' +
-      'html body #wrapper #container #main .center .quick .right')
+      'html body #wrapper #container #main #feed .center .quick .left, ' +
+      'html body #wrapper #container #main #feed .center .quick .right')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeOverBorderless')
     $('html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -52,7 +52,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main .content .suggestions .radial')
       .removeClass('suggestInvert').addClass('suggestOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
-      'html body #wrapper #container #main .center .channel .item, ' +
+      'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
@@ -66,7 +66,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .buffer, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .buffer ' +
       'html body #wrapper #container #main .content .suggestions .combine a, ' +
-      'html body #wrapper #container #main .center .item .addComment .post').css('color','#f7426C')
+      'html body #wrapper #container #main #feed .center .item .addComment .post').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
       .removeClass('buttonInvert').addClass('buttonOpposite')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
@@ -91,11 +91,11 @@ var visual = function(n) {
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main .center .channel .item, ' +
-      'html body #wrapper #container #main .center .channel .item .classic, ' +
+      'html body #wrapper #container #main #feed .center .channel .item, ' +
+      'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #main .center .quick .feed, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
@@ -109,8 +109,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main .center .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .left')
+      'html body #wrapper #container #main #feed .center .quick .right, ' +
+      'html body #wrapper #container #main #feed .center .quick .left')
       .addClass('invertAlt').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
     $(':root').css({
       '--loader-color-primary': '#0078D4',
@@ -121,11 +121,11 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .right, ' +
-      'html body #wrapper #container #main .center .quick .left, ' +
+      'html body #wrapper #container #main #feed .center .quick .right, ' +
+      'html body #wrapper #container #main #feed .center .quick .left, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text], ' +
-      'html body #wrapper #container #main .center .quick .feed .left, ' +
-      'html body #wrapper #container #main .center .quick .feed .right')
+      'html body #wrapper #container #main #feed .center .quick .feed .left, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed .right')
       .addClass('invertOverBorderless').removeClass('oppositeOver oppositeOverBorderless')
     $('html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
@@ -146,7 +146,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #guide .sticky .item, ' +
-      '#wrapper #container #main .center .channel .item')
+      '#wrapper #container #main #feed .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing').css('border', '.3px solid #ddd')
@@ -157,7 +157,7 @@ var visual = function(n) {
       'html body #wrapper #container #main .content .suggestions .combine a').css('color','steelblue')
     $('html body #wrapper #container #main .content .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
-    $('html body #wrapper #container #main .center .item .addComment .post').css('color','dodgerblue')
+    $('html body #wrapper #container #main #feed .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')

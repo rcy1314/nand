@@ -128,7 +128,7 @@ $.loading = function () {
     $('html body #wrapper #container #main #feed, ' +
       'html body #wrapper #container #main #group, '+
       'html body #wrapper #container #main .translation, ' +
-      'html body #wrapper #container #main .center, ' +
+      'html body #wrapper #container #main #feed .center, ' +
       'html body #wrapper #container #main .content').remove()
   }
   if (loading == 'dots'){

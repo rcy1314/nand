@@ -23,9 +23,9 @@
   cursor: pointer;
 }
 
-html body #wrapper #container #main .center .channel .item .classic .fill .loader,
-html body #wrapper #container #main .center .channel .item .classic .fill .loader:after,
-html body #wrapper #container #main .center .channel .item .classic .fill .loader:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader,
+html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:after,
+html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:before {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -51,21 +51,21 @@ html body #wrapper #container #main #top #arm #option .fa-terminal {
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart,
 html body #wrapper #container #guide .sticky .tag .fa-heart-o,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o,
 html body #wrapper #container #guide .sticky .tag .fa-comments,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comments,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-comments,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .tag .fa-comment-o,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comment-o,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-comment-o,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o,
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note,
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
   font-size: 24px !important;
   padding: 5px !important;
 }
@@ -108,64 +108,64 @@ html body #wrapper #container #main #visit #page #front #label .link .fa-angle-u
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note:before {
   font-family: FontAwesome;
   content: "\f249";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart-o:before,
 html body #wrapper #container #main #top #arm #option .fa-heart-o:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o:before {
   font-family: FontAwesome;
   content: "\f08a";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-comments:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comments:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-comments:before {
   font-family: FontAwesome;
   content: "\f086";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-comment-o:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-comment-o:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-comment-o:before {
   font-family: FontAwesome;
   content: "\f0e5";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-sticky-note-o:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o:before {
   font-family: FontAwesome;
   content: "\f24a";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o:before {
   font-family: FontAwesome;
   content: "\f097";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark:before {
   font-family: FontAwesome;
   content: "\f02e";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .tag .fa-bookmark-o,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark,
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o {
   float: right !important;
   margin-right: 5px;
 }
 
-html body #wrapper #container #main .center .quick .fa-angle-left:before,
+html body #wrapper #container #main #feed .center .quick .fa-angle-left:before,
 html body #wrapper #container #main #visit #page .quick .fa-angle-left:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f104";
   font-weight: 50;
 }
 
-html body #wrapper #container #main .center .quick .fa-angle-right:before,
+html body #wrapper #container #main #feed .center .quick .fa-angle-right:before,
 html body #wrapper #container #main #visit #page .quick .fa-angle-right:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f105";
@@ -181,27 +181,27 @@ html body #wrapper #container #main #visit #page #front .focus .button .fa-searc
 }
 
 html body #wrapper #container .sticky .header .fa-ellipsis-h:before,
-html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h:before {
+html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-h:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f141";
 }
 
 html body #wrapper #container .sticky .header .fa-ellipsis-v:before,
-html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-v:before {
+html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-v:before {
   font-family: "Font Awesome 5 Pro";
   content: "\f142";
 }
 
 html body #wrapper #container .sticky .heart:before,
 html body #wrapper #container #main #top #arm #option .heart:before,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart:before {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart:before {
   font-family: FontAwesome;
   content: "\f004";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
 html body #wrapper #container #main #top #arm #option .fa-heart,
-html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart {
+html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart {
   color: lightcoral !important;
 }
 
@@ -742,7 +742,7 @@ input[type=submit] {
   display: none;
 }
 
-html body #wrapper #container #main .center .quick,
+html body #wrapper #container #main #feed .center .quick,
 html body #wrapper #container #main #visit #page .quick {
   border-radius: 4px;
   position: relative;
@@ -751,7 +751,7 @@ html body #wrapper #container #main #visit #page .quick {
   width: 100%;
 }
 
-html body #wrapper #container #main .center .quick .feed,
+html body #wrapper #container #main #feed .center .quick .feed,
 html body #wrapper #container #main #visit #page .quick .feed {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -765,16 +765,16 @@ html body #wrapper #container #main #visit #page .quick .feed {
   width: 100%;
 }
 
-html body #wrapper #container #main .center .quick .feed::-webkit-scrollbar,
+html body #wrapper #container #main #feed .center .quick .feed::-webkit-scrollbar,
 html body #wrapper #container #main #visit #page .quick .feed::-webkit-scrollbar {
   display: none;
 }
 
-html body #wrapper #container #main .center .quick .feed .asset:first {
+html body #wrapper #container #main #feed .center .quick .feed .asset:first {
   padding-left: 10px;
 }
 
-html body #wrapper #container #main .center .quick .feed .asset {
+html body #wrapper #container #main #feed .center .quick .feed .asset {
   background-color: transparent;
   padding-right: 5px;
   position: relative;
@@ -798,7 +798,7 @@ html body #wrapper #container #main #visit #page .quick .feed .assetTranslation 
 }
 
 html body #wrapper #container #main .content .status img,
-html body #wrapper #container #main .center .quick .feed .asset img,
+html body #wrapper #container #main #feed .center .quick .feed .asset img,
 html body #wrapper #container #main #visit #page .quick .feed img,
 html body #wrapper #container #main #visit #page .quick .feed .assetTranslation img {
   background-color: transparent;
@@ -809,14 +809,14 @@ html body #wrapper #container #main #visit #page .quick .feed .assetTranslation 
   margin: 5px;
 }
 
-html body #wrapper #container #main .center .quick .feed .asset a,
+html body #wrapper #container #main #feed .center .quick .feed .asset a,
 html body #wrapper #container #main #visit #page .quick .feed .asset a,
 html body #wrapper #container #main #visit #page .quick .feed .assetTranslation a {
   background-color: transparent;
   display: block;
 }
 
-html body #wrapper #container #main .center .quick .right {
+html body #wrapper #container #main #feed .center .quick .right {
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -845,7 +845,7 @@ html body #wrapper #container #main #visit #page .quick .right {
   top: 20px;
 }
 
-html body #wrapper #container #main .center .quick .left {
+html body #wrapper #container #main #feed .center .quick .left {
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -875,15 +875,15 @@ html body #wrapper #container #main #visit #page .quick .left {
 }
 
 html body #wrapper #container #guide .sticky .header,
-html body #wrapper #container #main .center .item .header,
-html body #wrapper #container #main .center .item .header {
+html body #wrapper #container #main #feed .center .item .header,
+html body #wrapper #container #main #feed .center .item .header {
   background-color: transparent;
   height: 60px;
   width: 100%;
 }
 
 html body #wrapper #container #guide .sticky .header .courtesy,
-html body #wrapper #container #main .center .item .header .courtesy {
+html body #wrapper #container #main #feed .center .item .header .courtesy {
   text-transform: capitalize;
   align-items: center;
   position: relative;
@@ -896,7 +896,7 @@ html body #wrapper #container #main .center .item .header .courtesy {
 }
 
 html body #wrapper #container #guide .sticky .wrap .header .courtesy img,
-html body #wrapper #container #main .center .channel .item .header .courtesy img {
+html body #wrapper #container #main #feed .center .channel .item .header .courtesy img {
   border-radius: 24px;
   padding: 10px;
   left: 1.75px;
@@ -905,11 +905,11 @@ html body #wrapper #container #main .center .channel .item .header .courtesy img
 }
 
 html body #wrapper #container #guide .sticky .header .courtesy a,
-html body #wrapper #container #main .center .item .header .courtesy a {
+html body #wrapper #container #main #feed .center .item .header .courtesy a {
   background-color: transparent;
 }
 
-html body #wrapper #container #main .center .item .fill {
+html body #wrapper #container #main #feed .center .item .fill {
   justify-content: center;
   align-items: center;
   position: relative;
@@ -917,11 +917,11 @@ html body #wrapper #container #main .center .item .fill {
   height: 14em;
 }
 
-html body #wrapper #container #main .center .item .classic  {
+html body #wrapper #container #main #feed .center .item .classic  {
   background-color: transparent;
 }
 
-html body #wrapper #container #main .center .item .classic .wrap {
+html body #wrapper #container #main #feed .center .item .classic .wrap {
   background-color: transparent;
   margin-left: 10px;
 }
@@ -969,7 +969,7 @@ html body #wrapper #container #guide .sticky .tag {
   bottom: 0;
 }
 
-html body #wrapper #container #main .center .item,
+html body #wrapper #container #main #feed .center .item,
 html body #wrapper #container #guide .sticky .item {
   margin-bottom: .3px;
   width: 100%;
@@ -1052,8 +1052,8 @@ html body #wrapper #container #guide .sticky .item {
   border: .3px solid #0e0e0e;
 }
 
-html body #wrapper #container #main .center .item .pub,
-html body #wrapper #container #main .center .item .add {
+html body #wrapper #container #main #feed .center .item .pub,
+html body #wrapper #container #main #feed .center .item .add {
   background-color: transparent;
   justify-content: left;
   width: 95% !important;
@@ -1063,34 +1063,34 @@ html body #wrapper #container #main .center .item .add {
   left: 0;
 }
 
-html body #wrapper #container #main .center .item .pub {
+html body #wrapper #container #main #feed .center .item .pub {
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-html body #wrapper #container #main .center .item .add {
+html body #wrapper #container #main #feed .center .item .add {
   margin-left: 15px !important;
   margin-bottom: 10px;
   font-size: 12px;
   width: 85%;
 }
 
-html body #wrapper #container #main .center .item .tag {
+html body #wrapper #container #main #feed .center .item .tag {
   background-color: transparent;
   min-width: 38% !important;
   position: relative;
   width: 100%;
 }
 
-html body #wrapper #container #main .center .item .img,
-html body #wrapper #container #main .center .item .image {
+html body #wrapper #container #main #feed .center .item .img,
+html body #wrapper #container #main #feed .center .item .image {
   background-color: transparent;
   position: relative;
   margin: 0 auto;
 }
 
-html body #wrapper #container #main .center .item .img {
+html body #wrapper #container #main #feed .center .item .img {
   position: relative;
   max-height: 90vh;
   max-width: 100%;
@@ -1098,12 +1098,12 @@ html body #wrapper #container #main .center .item .img {
   margin: 0 auto;
 }
 
-html body #wrapper #container #main .center .item .image {
+html body #wrapper #container #main #feed .center .item .image {
   right: 0;
   left: 0;
 }
 
-html body #wrapper #container #main .center .item .pub .more {
+html body #wrapper #container #main #feed .center .item .pub .more {
   background-color: transparent;
   display: inline-block;
   padding-bottom: 10px;
@@ -1116,12 +1116,12 @@ html body #wrapper #container #main .center .item .pub .more {
   color: #aaa;
 }
 
-html body #wrapper #container #main .center .item .addComment {
+html body #wrapper #container #main #feed .center .item .addComment {
   display: none;
   margin: 0;
 }
 
-html body #wrapper #container #main .center .item .addComment .comment {
+html body #wrapper #container #main #feed .center .item .addComment .comment {
   background-color: transparent;
   font-family: Proxima Nova;
   padding: 1em;
@@ -1130,12 +1130,12 @@ html body #wrapper #container #main .center .item .addComment .comment {
   width: 100%;
 }
 
-html body #wrapper #container #main .center .item .addComment .comment::placeholder {
+html body #wrapper #container #main #feed .center .item .addComment .comment::placeholder {
   font-size: 12px;
   color: #aaa;
 }
 
-html body #wrapper #container #main .center .item .addComment .post {
+html body #wrapper #container #main #feed .center .item .addComment .post {
   margin-right: 10px;
   position: relative;
   font-size: 12px;
@@ -1144,11 +1144,11 @@ html body #wrapper #container #main .center .item .addComment .post {
   top: -27px;
 }
 
-html body #wrapper #container #main .center .item .url,
+html body #wrapper #container #main #feed .center .item .url,
 html body #wrapper #container #guide .sticky .wrap .url,
-html body #wrapper #container #main .center .item .share,
+html body #wrapper #container #main #feed .center .item .share,
 html body #wrapper #container #guide .sticky .wrap .share,
-html body #wrapper #container #main .center .item .source,
+html body #wrapper #container #main #feed .center .item .source,
 html body #wrapper #container #guide .sticky .wrap .source {
   display: inline-block;
   position: relative;
@@ -1157,14 +1157,14 @@ html body #wrapper #container #guide .sticky .wrap .source {
   height: 0;
 }
 
-html body #wrapper #container #main .center .item .header .copy,
+html body #wrapper #container #main #feed .center .item .header .copy,
 html body #wrapper #container #guide .sticky .wrap .header .copy {
   font-size: 12px;
   padding: 23px;
   float: right;
 }
 
-html body #wrapper #container #main .center .item .wrap,
+html body #wrapper #container #main #feed .center .item .wrap,
 html body #wrapper #container #guide .sticky .item .wrap {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: transparent;
@@ -1174,7 +1174,7 @@ html body #wrapper #container #guide .sticky .item .wrap {
   display: flex;
 }
 
-html body #wrapper #container #main .center .item .external {
+html body #wrapper #container #main #feed .center .item .external {
   text-transform: lowercase;
   padding-bottom: 10px;
   position: relative;
@@ -1184,7 +1184,7 @@ html body #wrapper #container #main .center .item .external {
   left: 12px;
 }
 
-html body #wrapper #container #main .center .item .ago {
+html body #wrapper #container #main #feed .center .item .ago {
   background-color: transparent;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -1194,7 +1194,7 @@ html body #wrapper #container #main .center .item .ago {
   font-size: 9px;
 }
 
-html body #wrapper #container #main .center #bottom {
+html body #wrapper #container #main #feed .center #bottom {
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -1207,7 +1207,7 @@ html body #wrapper #container #main .center #bottom {
   bottom: 0;
 }
 
-html body #wrapper #container #main .center #bottom .bottom {
+html body #wrapper #container #main #feed .center #bottom .bottom {
   position: relative !important;
   margin: 0 auto !important;
   font-family: Billabong;
@@ -1216,15 +1216,15 @@ html body #wrapper #container #main .center #bottom .bottom {
   cursor: pointer;
 }
 
-html body #wrapper #container #main .center #bottom .previous {
+html body #wrapper #container #main #feed .center #bottom .previous {
   float: left !important;
 }
 
-html body #wrapper #container #main .center #bottom .next {
+html body #wrapper #container #main #feed .center #bottom .next {
   float: right !important;
 }
 
-html body #wrapper #container #main .center {
+html body #wrapper #container #main #feed .center {
   display: inline-block;
   position: relative;
   text-align: left;
@@ -1315,18 +1315,18 @@ html body #wrapper #container #main .content .suggestions .combine div {
   cursor: pointer;
 }
 
-html body #wrapper #container #main .center .item .views {
+html body #wrapper #container #main #feed .center .item .views {
   position: relative;
 }
 
-html body #wrapper #container #main .center .yt .image {
+html body #wrapper #container #main #feed .center .yt .image {
   width: 100% !important;
   padding-bottom: 56.25% !important; /* 16:9 */
   position: relative !important;
   overflow: hidden !important;
 }
 
-html body #wrapper #container #main .center .yt .image img {
+html body #wrapper #container #main #feed .center .yt .image img {
   position: absolute !important;
   top: -16.75% !important;
   bottom: 0 !important;
@@ -1444,7 +1444,7 @@ html body #wrapper #container #main #feed .center #yt .yt iframe {
   left: 0;
 }
 
-html body #wrapper #container #main .center .item .views {
+html body #wrapper #container #main #feed .center .item .views {
   position: absolute;
   bottom: -90px;
 }

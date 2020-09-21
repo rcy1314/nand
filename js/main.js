@@ -88,8 +88,8 @@ $(document)
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
           notify('Reading ' + category + ' disabled.')
-          $('html body #wrapper #container #main .center #bottom').remove()
-          $('html body #wrapper #container #main .center').append(
+          $('html body #wrapper #container #main #feed .center #bottom').remove()
+          $('html body #wrapper #container #main #feed .center').append(
             "<div id='bottom'>" +
             "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
             "      <span class='front'></span>" +
@@ -112,7 +112,7 @@ $(document)
         } else if (reader == false) {
           notify('Reading ' + category + ' enabled.')
           reader = true
-          if ($('html body #wrapper #container #main .center').length) first = false
+          if ($('html body #wrapper #container #main #feed .center').length) first = false
           else first = true
           stop = true
           xml(null, null, $.random())
@@ -194,11 +194,11 @@ $(document)
   })
   .on('touch click',
     'html body #wrapper #container #guide .sticky .header .fa-ellipsis-h, ' +
-    'html body #wrapper #container #main .center .channel .item .header .fa-ellipsis-h',
+    'html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-h',
     function(e) {
         $(this)
         .parents('html body #wrapper #container #guide .sticky .wrap, ' +
-          'html body #wrapper #container #main .center .item .classic')
+          'html body #wrapper #container #main #feed .center .item .classic')
             .find('.url').select()
         document.execCommand('copy')
         var $this = $(this)
@@ -215,7 +215,7 @@ $(document)
       $('html body #wrapper #container #main #top').show()
       populate($(this).attr('aria-item'))
   })
-  .on('touch click', 'html body #wrapper #container #main .center .quick .feed .asset, ' +
+  .on('touch click', 'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset', function(e) {
       $('html body #wrapper #container #main #visit #page .quick .feed').empty()
       $.loading()
@@ -230,10 +230,10 @@ $(document)
           $('html body #wrapper #container #main #visit #page .quick .feed .asset:first').remove()
       quick(10)
   })
-  .on('touchmove', 'html body #wrapper #container #main .center .quick .feed', function(e) {
+  .on('touchmove', 'html body #wrapper #container #main #feed .center .quick .feed', function(e) {
       if ($(this).scrollLeft() >= 3300)
         for (i = 0; i < 10; i++)
-          $('html body #wrapper #container #main .center .quick .feed .asset:first').remove()
+          $('html body #wrapper #container #main #feed .center .quick .feed .asset:first').remove()
         feed(10)
   })
   .on('touch click',
@@ -281,8 +281,8 @@ $(document)
                .find('.left').show()
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .quick .right, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-right',
+    'html body #wrapper #container #main #feed .center .quick .right, ' +
+    'html body #wrapper #container #main #feed .center .quick .fa-angle-right',
     function(e) {
       var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
@@ -303,8 +303,8 @@ $(document)
            feed(10)
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .quick .left, ' +
-    'html body #wrapper #container #main .center .quick .fa-angle-left',
+    'html body #wrapper #container #main #feed .center .quick .left, ' +
+    'html body #wrapper #container #main #feed .center .quick .fa-angle-left',
     function(e) {
       var $this = $(this)
         var leftPos = $(this).parents('html body #wrapper #container #main .quick')
@@ -330,13 +330,13 @@ $(document)
       $('#guide, #container .checkmark').fadeOut(250)
       $('html body #wrapper #container #main #top').show()
   })
-  .on('touch click', 'html body #wrapper #container #main .center .channel .item',
+  .on('touch click', 'html body #wrapper #container #main #feed .center .channel .item',
     function(e) {
       $(this).attr('ext').blank()
       e.stopPropagation()
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .channel .item .classic .image .img', function(e) {
+    'html body #wrapper #container #main #feed .center .channel .item .classic .image .img', function(e) {
       if (tap == 0) {
           $this = $(this)
           // set first click
@@ -346,7 +346,7 @@ $(document)
               if (category == 'Social' && $this.hasClass('default')) {
                 $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
-                  $this.parents('html body #wrapper #container #main .center .channel .item')
+                  $this.parents('html body #wrapper #container #main #feed .center .channel .item')
                     .attr('ext').blank()
               }
             tap = 0
@@ -356,7 +356,7 @@ $(document)
           if (((new Date().getTime()) - tap) < 300) {
               // double click occurred
               $(this)
-                .parents('html body #wrapper #container #main .center .channel .item')
+                .parents('html body #wrapper #container #main #feed .center .channel .item')
                 .find('.fa-heart, .fa-heart-o')
                 .toggleClass('fa-heart-o fab fa-heart')
               e.stopPropagation()
@@ -370,8 +370,8 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #guide .sticky .tag .fa-heart, ' +
     'html body #wrapper #container #guide .sticky .tag .fa-heart-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-heart',
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart',
     function(e) {
         $(this).toggleClass('fa-heart-o fa-heart')
         e.stopPropagation()
@@ -380,11 +380,11 @@ $(document)
   .on('touch click',
   'html body #wrapper #container #guide .sticky .tag .fa-bookmark, ' +
     'html body #wrapper #container #guide .sticky .tag .fa-bookmark-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-bookmark-o',
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o',
     function(e) {
         $(this).parents('html body #wrapper #container #guide .sticky, ' +
-          'html body #wrapper #container #main .center .item .classic').find('.source').select()
+          'html body #wrapper #container #main #feed .center .item .classic').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark'))
           $(this).toggleClass('fa-bookmark-o fa-bookmark')
@@ -395,22 +395,22 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note, ' +
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note-o, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
-    'html body #wrapper #container #main .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
       if (location.href.match('\\+1'))
           $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-            'html body #wrapper #container #main .center .item .classic').find('.share')
+            'html body #wrapper #container #main #feed .center .item .classic').find('.share')
           .val($(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-            'html body #wrapper #container #main .center .item .classic').find('.share').val() + '+1')
+            'html body #wrapper #container #main #feed .center .item .classic').find('.share').val() + '+1')
       else if (!location.href.match('\\+1'))
         $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-          'html body #wrapper #container #main .center .item .classic').find('.share').val(
-          $(this).parents('html body #wrapper #container #main .center .channel .item, ' +
-            'html body #wrapper #container #main .center .item .classic').find('.share').val().replace(/\+1/g, '')
+          'html body #wrapper #container #main #feed .center .item .classic').find('.share').val(
+          $(this).parents('html body #wrapper #container #main #feed .center .channel .item, ' +
+            'html body #wrapper #container #main #feed .center .item .classic').find('.share').val().replace(/\+1/g, '')
         )
       $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-        'html body #wrapper #container #main .center .item .classic').find('.share').select()
+        'html body #wrapper #container #main #feed .center .item .classic').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note'))
         $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
@@ -419,7 +419,7 @@ $(document)
       visual()
   })
   .on('touch click',
-    'html body #wrapper #container #main .center .channel .item .pub .more', function(e) {
+    'html body #wrapper #container #main #feed .center .channel .item .pub .more', function(e) {
       $(this).parent().html($(this).parent().attr('text'))
       $(this).parent().animate({
           width: '85%',
@@ -430,28 +430,28 @@ $(document)
       $(this).hide()
   })
   .on('submit',
-    'html body #wrapper #container #main .center .channel .item .classic .addComment',
+    'html body #wrapper #container #main #feed .center .channel .item .classic .addComment',
     function(e) {
       if ($(this).children('.comment').val() != '')
-        item = $(this).parents('html body #wrapper #container #main .center .channel .item')
+        item = $(this).parents('html body #wrapper #container #main #feed .center .channel .item')
                  .attr('item')
       if ($('.' + item + ' .add').length >= 3)
         $('.' + item + ' .add:last').remove()
         $('.' + item + ' .pub:last').after("<div class='add'><b>" +
           $('.' + item + ' .addComment .comment').val() + "</div>")
-      $(this).parents('html body #wrapper #container #main .center .channel .item')
+      $(this).parents('html body #wrapper #container #main #feed .center .channel .item')
         .find('.fa-comment-o').removeClass('fa-comment-o')
         .addClass('fas fa-comments')
       $('.' + item + ' .addComment .comment').val('')
       e.preventDefault()
       visual()
   })
-  .on('touch click', 'html body #wrapper #container #main .center .channel .item .post',
+  .on('touch click', 'html body #wrapper #container #main #feed .center .channel .item .post',
     function(e) {
       $(this).siblings('.comment').focus().submit()
       e.stopPropagation()
   })
-  .on('touch click', 'html body #wrapper #container #main .center #bottom .bottom',
+  .on('touch click', 'html body #wrapper #container #main #feed .center #bottom .bottom',
     function(e) {
       $.loading()
       if (location.href.match('\\?q=')) {
@@ -465,8 +465,8 @@ $(document)
                  true)
       } else populate(category)
     })
-  .on('touch click', 'html body #wrapper #container #main .center #bottom .back, ' +
-      'html body #wrapper #container #main .center #bottom .next, ' +
+  .on('touch click', 'html body #wrapper #container #main #feed .center #bottom .back, ' +
+      'html body #wrapper #container #main #feed .center #bottom .next, ' +
       'html body #wrapper #container #main .content .status .asset, ' +
       'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
         $.loading()
@@ -694,7 +694,7 @@ $(document)
       visual()
   })
   .on('submit', 'html body #wrapper #container #top #arm #search', function(e) {
-    $('html body #wrapper #container #main .air, #main .result, #main .center, #main .content').remove()
+    $('html body #wrapper #container #main .air, #main .result, #main #feed .center, #main .content').remove()
     $('html body #wrapper #container #arm #search #match').hide()
     if ($('html body #wrapper #container #arm #search .listing .hover').length) {
       if ($('html body #wrapper #container #arm #search .listing .hover').is('[aria-item]') &&

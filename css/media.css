@@ -2,12 +2,12 @@
 
   html body #wrapper #container #main #top #search #home,
   html body #wrapper #container #main #visit #page .quick .right,
-  html body #wrapper #container #main .center .quick .fa-angle-double-right,
+  html body #wrapper #container #main #feed .center .quick .fa-angle-double-right,
   html body #wrapper #container #main #visit #page .quick .fa-angle-double-right,
-  html body #wrapper #container #main .center .quick .left,
+  html body #wrapper #container #main #feed .center .quick .left,
   html body #wrapper #container #main #visit #page .quick .left,
-  html body #wrapper #container #main .center #bottom .previous,
-  html body #wrapper #container #main .center #bottom .next,
+  html body #wrapper #container #main #feed .center #bottom .previous,
+  html body #wrapper #container #main #feed .center #bottom .next,
   html body #wrapper #container #main #visit #page #front .focus .button,
   html body #wrapper #container #main #visit #page #front .focus .icon,
   ::-webkit-scrollbar {
@@ -30,15 +30,15 @@
     width: 100%;
   }
 
-  html body #wrapper #container #main .center {
+  html body #wrapper #container #main #feed .center {
     margin-left: 0;
     width: 100%;
     top: 60px;
 	  left: 0;
   }
 
-  html body #wrapper #container #main .center .item,
-  html body #wrapper #container #main .center .feed {
+  html body #wrapper #container #main #feed .center .item,
+  html body #wrapper #container #main #feed .center .feed {
     box-shadow: none;
     border: none;
   }
@@ -156,7 +156,7 @@
 	left: 0;
   }
 
-  html body #wrapper #container #main .center {
+  html body #wrapper #container #main #feed .center {
     width: 430px;
   }
 
@@ -215,7 +215,7 @@
     right: -15px;
   }
 
-  html body #wrapper #container #main .center {
+  html body #wrapper #container #main #feed .center {
     width: 630px;
   }
 
