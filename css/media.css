@@ -160,12 +160,12 @@
     width: 430px;
   }
 
-  html body #wrapper #container #main .content {
+  html body #wrapper #container ##main #feed .content {
     margin-left: 15px;
   	width: 255px;
   }
 
-  html body #wrapper #container #main .content .status {
+  html body #wrapper #container ##main #feed .content .status {
     width: 280px;
   }
 

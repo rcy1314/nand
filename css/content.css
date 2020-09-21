@@ -16,7 +16,7 @@
   font-display: block;
 }
 
-::-webkit-scrollbar {
+.listing::-webkit-scrollbar {
   width: 2px;
 }
 
@@ -412,6 +412,7 @@ html body #wrapper #container #main #feed {
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
+  display: none;
   width: 100%;
 }
 
@@ -420,6 +421,7 @@ html body #wrapper #container #main #group {
   scrollbar-width: none;
   height: fit-content;
   position: absolute;
+  display: none;
   width: 100%;
   top: 57px;
 }
@@ -648,14 +650,14 @@ html body #wrapper #container #main #group .result {
   width: 100%;
 }
 
-html body #wrapper #container #main .content .status .filter {
+html body #wrapper #container #main #feed .content .status .filter {
   margin-left: 15px;
 }
 
 html body #wrapper #container #main #group .air .populate,
 html body #wrapper #container #main #group .result .filter,
 html body #wrapper #container #main #group .result .populate,
-html body #wrapper #container #main .content .status .filter {
+html body #wrapper #container #main #feed .content .status .filter {
   display: inline-flex;
   border-radius: 8px;
   flex-wrap: wrap;
@@ -669,7 +671,7 @@ html body #wrapper #container #main .content .status .filter {
 html body #wrapper #container #main #group .air .populate a,
 html body #wrapper #container #main #group .result .filter a,
 html body #wrapper #container #main #group .result .populate a,
-html body #wrapper #container #main .content .status .filter a {
+html body #wrapper #container #main #feed .content .status .filter a {
   background-color: transparent;
   position: relative;
   font-size: 12px;
@@ -679,7 +681,7 @@ html body #wrapper #container #main .content .status .filter a {
 html body #wrapper #container #main #group .air .populate .display,
 html body #wrapper #container #main #group .result .filter .display,
 html body #wrapper #container #main #group .result .populate .display,
-  html body #wrapper #container #main .content .status .filter .display {
+  html body #wrapper #container #main #feed .content .status .filter .display {
   position: relative;
   padding: 5px;
   width: 100%;
@@ -688,7 +690,7 @@ html body #wrapper #container #main #group .result .populate .display,
 html body #wrapper #container #main #group .air .populate .display img,
 html body #wrapper #container #main #group .result .filter .display img,
 html body #wrapper #container #main #group .result .populate .display img,
-html body #wrapper #container #main .content .status .filter .display img {
+html body #wrapper #container #main #feed .content .status .filter .display img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;
@@ -798,7 +800,7 @@ html body #wrapper #container #main #visit #page .quick .feed .translation {
   height: 60px;
 }
 
-html body #wrapper #container #main .content .status img,
+html body #wrapper #container #main #feed .content .status img,
 html body #wrapper #container #main #feed .center .quick .feed .asset img,
 html body #wrapper #container #main #visit #page .quick .feed img,
 html body #wrapper #container #main #visit #page .quick .feed .translation img {
@@ -1210,7 +1212,7 @@ html body #wrapper #container #main #feed .center {
   top: 85px;
 }
 
-html body #wrapper #container #main .content {
+html body #wrapper #container #main #feed .content {
   display: inline-block;
   height: fit-content;
   vertical-align: top;
@@ -1221,29 +1223,29 @@ html body #wrapper #container #main .content {
   top: 58px;
 }
 
-html body #wrapper #container #main .content .status {
+html body #wrapper #container #main #feed .content .status {
   position: relative;
   font-size: 10px;
 }
 
-html body #wrapper #container #main .content .status img {
+html body #wrapper #container #main #feed .content .status img {
   border-radius: 26px;
 }
 
-html body #wrapper #container #main .content .status .info {
+html body #wrapper #container #main #feed .content .status .info {
   margin-left: 5px;
   text-align: left;
   width: 275px;
 }
 
-html body #wrapper #container #main .content .status .info,
-html body #wrapper #container #main .content .status .asset {
+html body #wrapper #container #main #feed .content .status .info,
+html body #wrapper #container #main #feed .content .status .asset {
   background-color: transparent;
   position: relative;
   top: -5px;
 }
 
-html body #wrapper #container #main .content .suggestions {
+html body #wrapper #container #main #feed .content .suggestions {
   background-color: transparent;
   position: relative;
   padding-top: 30px;
@@ -1252,7 +1254,7 @@ html body #wrapper #container #main .content .suggestions {
   width: 280px;
 }
 
-html body #wrapper #container #main .content .suggestions img {
+html body #wrapper #container #main #feed .content .suggestions img {
   border-radius: 20px;
   position: relative;
   height: 24.5px;
@@ -1260,7 +1262,7 @@ html body #wrapper #container #main .content .suggestions img {
   left: 2.5px;
 }
 
-html body #wrapper #container #main .content .suggestions .combine {
+html body #wrapper #container #main #feed .content .suggestions .combine {
   align-items: center;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -1269,7 +1271,7 @@ html body #wrapper #container #main .content .suggestions .combine {
   width: 100%;
 }
 
-html body #wrapper #container #main .content .suggestions .combine .suggest {
+html body #wrapper #container #main #feed .content .suggestions .combine .suggest {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-top: 5px;
@@ -1277,19 +1279,19 @@ html body #wrapper #container #main .content .suggestions .combine .suggest {
   width: 100%;
 }
 
-html body #wrapper #container #main .content .suggestions .combine .suggest div {
+html body #wrapper #container #main #feed .content .suggestions .combine .suggest div {
   font-style: italic !important;
   text-transform: capitalize;
   font-size: 9px;
   float: left;
 }
 
-html body #wrapper #container #main .content .suggestions .combine .suggest a {
+html body #wrapper #container #main #feed .content .suggestions .combine .suggest a {
   font-weight: bold;
   font-size: 11px;
 }
 
-html body #wrapper #container #main .content .suggestions .combine div {
+html body #wrapper #container #main #feed .content .suggestions .combine div {
   background-color: transparent;
   cursor: pointer;
 }

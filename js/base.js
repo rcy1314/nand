@@ -142,7 +142,7 @@ var base = function(n) {
   }
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($.inArray(e, suggest) == -1 && menu[e])
+      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
       $('html body #wrapper #container #main #visit #page #front #first .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
@@ -154,8 +154,7 @@ var base = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #visit #page #front #first .listing .index').length === buffer ||
-          $('html body #wrapper #container #main #visit #page #front #first .listing .index').length >= buffer)
+      if ($('html body #wrapper #container #main #visit #page #front #first .listing .index').length >= buffer)
         return false
     }
     if (!$('html body #wrapper #container #main #visit #page #front #first').is(':visible')) {
@@ -193,7 +192,7 @@ var list = function(n) {
   if (suggest.length < 1) suggest.push(0)
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($.inArray(e, suggest) == -1 && menu[e])
+      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
       $('html body #wrapper #container #main #top #arm #search #match .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
@@ -205,8 +204,7 @@ var list = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #top #arm #search #match .listing .index').length === buffer ||
-          $('html body #wrapper #container #main #top #arm #search #match .listing .index').length >= buffer)
+      if ($('html body #wrapper #container #main #top #arm #search #match .listing .index').length >= buffer)
         return false
     }
   if (!$('html body #wrapper #container #main #top #arm #search #match').is(':visible')) {
@@ -293,22 +291,15 @@ var progress = function(complete, n) {
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
           $(this).removeClass('response').width(0)
-          $('html body #wrapper #container #main .content').css('visibility', 'visible')
-          $('html body #wrapper #container #main .result').show()
-          $('html body #wrapper #container #main .center').show()
-          $('html body #wrapper #container #main .air').show()
-          $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+          $('html body #wrapper #container #main #group').show()
+          $('html body #wrapper #container #main #feed').show()
+          if (onlyImages == false)
+            $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
             if (reader == true && stop == true && first == true){
                 if ($('html body #wrapper #container #main').innerHeight() >=
-                    $('html body #wrapper #container #main .channel').innerHeight()){
+                    $('html body #wrapper #container #main #feed .channel').innerHeight()){
                       if ($.active <= 0){
-                        reader = true
                         first = false
-                        stop = true
-                        xml(null, null, $.random())
-                      } else {
-                        first = false
-                        stop = true
                         xml(null, null, $.random())
                       }
                 } else first = false
@@ -353,7 +344,7 @@ var populate = function(n) {
       if ($('html body #wrapper #container #main #group').length < 1)
       $('html body #wrapper #container #main').append(
         "<div id='group'>" +
-        "  <div class='result' style='display:none'>" +
+        "  <div class='result'>" +
         "  </div>" +
         "</div>"
       )
@@ -410,7 +401,7 @@ var populate = function(n) {
 var air = function(n) {
 
   $(document).ready(function () {
-  $('html body #wrapper #container #main .result').before("<div class='air' style='display:none'></div>")
+  $('html body #wrapper #container #main .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (category == menu[i].cat)
       $('html body #wrapper #container #main .air').append(
@@ -620,6 +611,7 @@ var xml = function(e, s, n) {
 
   id = n
   obj = []
+  var post
   var local
   var pub = []
   var src = ''
@@ -846,7 +838,6 @@ var xml = function(e, s, n) {
         since: since,
         share: share,
         dst: dst[0],
-        feed: n,
         more: more,
         element: i,
         post: html,
@@ -860,7 +851,7 @@ var xml = function(e, s, n) {
     if (first == true) {
       $('html body #wrapper #container #main').append(
         "<div id='feed'>" +
-        "  <div class='center' style='display:none'>" +
+        "  <div class='center'>" +
 /*
         "    <div class='quick'>" +
         "      <div class='left' style='display:none'>" +
@@ -872,7 +863,7 @@ var xml = function(e, s, n) {
 */
         "    <div class='channel'></div>" +
         "  </div>" +
-        "  <div class='content' style='visibility:hidden'>" +
+        "  <div class='content'>" +
         "    <div class='status'></div>" +
         "    <div class='suggestions'>" +
         "    </div>" +
@@ -899,55 +890,9 @@ var xml = function(e, s, n) {
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
         else if (!$.isNumeric(local) && pub[i].title != '')
           $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
-        if (pub[i].src != '') images.push(pub[i].src)
+        if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
+        else image(false, n, pub[i].element, pub[i].src)
       })
-      if (menu[n].id.match(/Imgur/g)){
-        let uniqIds = {}
-        let filtered = images.filter(obj => !uniqIds[obj] && (uniqIds[obj] = true));
-        images = filtered
-      }
-      if (images.length > 0)
-      cacheimages(
-     {
-        imgs    : images,
-        load    : function () {
-          $.each(pub, function(i, k) {
-            console.log('cache')
-            if (pub[i].src == $(this).attr('src'))
-             if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, $(this).attr('src'))
-             else image(false, n, pub[i].element, $(this).attr('src'))
-         })
-       },
-    //            # triggered when single image is sucessfuly cached
-    //            # @param1, ( string ), loaded image source path
-    //            # @param2, ( event object ), native event object generated
-    //            # context ( this ), Image object, target obj related with event
-    //
-    //          error : function () { console.log( arguments, this ); },
-    //            # triggered when error occured when tring to download image
-    //            # @param1, ( string ), path to the image failed to load
-    //            # @param2, ( event object ), native event object describing the circumstance
-    //            # context ( this ), Image object, target obj related with event
-    //
-    //          abort : function () { console.log( arguments, this ); },
-    //            # triggered when download is haulted by user action ( browsers 'stop' button )
-    //            # @param1, ( string ), path to the image failed to load
-    //            # @param2, ( event object ), native event object generated
-    //            # context ( this ), Image object, target obj related with event
-    //
-          done   : function () {
-         },
-    //            # triggered after download proccess completes
-    //            # @params, ( string(s) ), images in question
-    //            # context ( this ), document
-      }
-    );
-    else {
-      console.log('else')
-      $.each(pub, function(i, k) {
-         image(false, n, pub[i].element, pub[i].src)
-     })
-    }
     posts = $('html body #wrapper #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
