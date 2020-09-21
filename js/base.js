@@ -1,8 +1,8 @@
 var op = 0 //1 invert, 2 opposite
 var buffer = 7 //input index length (adds suggested)
-var loading = 'percent' //or 'percent'
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
+var loading = 'percent' //or 'percent'
 var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
@@ -12,24 +12,18 @@ var translations =
 /* Feel free to edit the above. */
 
 var id
-var img
-var post
-var posts
-var images
 var tap = 0
 var complete
 nextAngle = 0
-var array = []
+var random = []
 var filter = []
-var object = []
 var stop = false
 var first = true
-var readDupe = []
 var reader = false
+var randomDuplicate = []
 
 var tag = "<div class='tag' style='display:none'>" +
           "  <div class='images fa-heart-o'></div>" +
-/*        "  <div class='images fa-comment-o'></div>" +                     */
           "  <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
           "  <div class='images fa-bookmark-o' title='Copy Source'></div>" +
           "</div>"
@@ -38,12 +32,12 @@ var notify = function(n) {
   $('html body #wrapper #container #main #notification').show().html(n)
     $('html body #wrapper #container #main #notification').animate({
       right: '1.5em'
-      }, 1000)
+    }, 500)
   setTimeout(function () {
     $('html body #wrapper #container #main #notification').animate({
       right: '-16em'
-    }, 1000)
-  }, 2500)
+    }, 500)
+  }, 2000)
 }
 
 var toggle = function(n) {
@@ -265,10 +259,10 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page .quick .feed').append(
-      "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
+      "<div class='translation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
       "  <a title='" + translations[i] + "'>" +
-           translations[i].substring(0,13) + '...' +
+           translations[i].substring(0,9) + '...' +
       "  </a>" +
       "</div>"
    )
@@ -281,7 +275,7 @@ var quick  = function(n) {
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
-               String(menu[e].id.match(/[^\/]+$/g)).substring(0,13) + '...' +
+               String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
           "  </a>" +
           "</div>"
        )
@@ -811,15 +805,6 @@ var xml = function(e, s, n) {
                more +
           "  </div>" +
           "  <div class='ago'>" + dst[0] + "</div>" +
-/*
-          "  <form class='addComment' action'#'>" +
-          "    <input class='comment' " +
-          "      onclick='event.stopPropagation()'" +
-          "      placeholder='Add a Comment'" +
-          "      maxlength='60'>" +
-          "    <div class='post'><b>Post</b></div>" +
-          "  </form>" +
-*/
           "</div>"
       } else if (e == 'search') {
                 var cat =
@@ -851,14 +836,6 @@ var xml = function(e, s, n) {
           "    <input class='url' value='" + re.trim() + "'>" +
           "    <input class='share' value='" + share + "'>" +
           "    <input class='source' value='" + src + "'>" + cat +
-/*
-          "    <form class='addComment' action'#'>" +
-          "      <input class='comment' " +
-          "        maxlength='88' placeholder='Add a Comment'" +
-          "         onclick='event.stopPropagation()'>" +
-          "      <div class='post'><b>Post</b></div>" +
-          "    </form>" +
-*/
           "  </div>" +
           "</div>"
         }

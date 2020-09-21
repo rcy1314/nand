@@ -127,8 +127,8 @@ $.loading = function () {
   if (reader == false) {
     $('html body #wrapper #container #main #feed, ' +
       'html body #wrapper #container #main #group, '+
-      'html body #wrapper #container #main .translation, ' +
       'html body #wrapper #container #main #feed .center, ' +
+      'html body #wrapper #container #main #feed .suggestions, ' +
       'html body #wrapper #container #main .content').remove()
   }
   if (loading == 'dots'){
@@ -187,13 +187,13 @@ $.random = function() {
 
   for (i = 1; i <= menu.length - 1; i++) {
     if (onlyImages == true){
-      if (menu[i].cat == category && menu[i].media == true) array.push(menu.indexOf(menu[i]))
+      if (menu[i].cat == category && menu[i].media == true) random.push(menu.indexOf(menu[i]))
     } else if (onlyImages == false){
-      if (menu[i].cat == category) array.push(menu.indexOf(menu[i]))
+      if (menu[i].cat == category) random.push(menu.indexOf(menu[i]))
     }
   }
-  var n = array[Math.floor(Math.random() * array.length - 1)]
-  readDupe.push(n)
+  var n = random[Math.floor(Math.random() * random.length - 1)]
+  randomDuplicate.push(n)
   return n
 
 }

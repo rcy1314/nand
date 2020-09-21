@@ -10,6 +10,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .quick .feed, ' +
+      'html body #wrapper #container #main #feed .center .channel , ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
@@ -58,7 +59,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .populate')
       .addClass('oppositeOver').removeClass('invertOver')
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing').css('border', '.3px solid #0e0e0e')
+      'html body #wrapper #container #main #visit #page #front #first .listing')
+      .removeClass('invertScrollbar').addClass('oppositeScrollbar').css('border', '.3px solid #0e0e0e')
     $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #main #visit #page #front .focus').removeClass('pageInput')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
@@ -80,7 +82,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
-      .css('filter','hue-rotate(110deg)')
+      .css('filter','hue-rotate(50deg)')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('.fa, .fas, .images').css('color','#fff')
@@ -102,6 +104,7 @@ var visual = function(n) {
 
     $('html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +
+      'html body #wrapper #container #main #feed .center .channel , ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
@@ -149,7 +152,8 @@ var visual = function(n) {
       '#wrapper #container #main #feed .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing').css('border', '.3px solid #ddd')
+      'html body #wrapper #container #main #visit #page #front #first .listing')
+      .removeClass('oppositeScrollbar').addClass('invertScrollbar').css('border', '.3px solid #ddd')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .buffer, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .buffer, ' +

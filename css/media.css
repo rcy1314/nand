@@ -241,12 +241,12 @@
 
   html body #wrapper #container #main #visit #page .quick {
     position: relative;
-    width: 692px;
+    width: 686px;
     left: 4px;
     top: 15px;
   }
 
-  html body #wrapper #container #main .content {
+  html body #wrapper #container #main #feed .content {
     margin-left: 35px;
   }
 }
