@@ -146,9 +146,14 @@ $.loading = function () {
     )
   } else if (loading == 'percent'){
     complete = setInterval(function() {
-      $('#progressBar').width($('#progressBar').width() +
-        Math.floor(Math.random() * (15 - 10 + 1) + 10))
-    }, 450)
+      $('#progressBar').css({
+        '-webkit-transition-delay': '.1s',
+        '-webkit-transition': '1.5s',
+        '-moz-transition-delay': '.1s',
+        '-moz-transition': '1.5s'
+      }).width($('#progressBar').width() +
+        Math.floor(Math.random() * (600 - 25 + 1) + 25))
+    }, 750)
   }
 }
 

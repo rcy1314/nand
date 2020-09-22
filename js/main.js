@@ -166,7 +166,8 @@ $(document)
     'html body #wrapper #container #main #group .result .filter, ' +
     'html body #wrapper #container #main #group .result .populate',
     function(e) {
-      $.loading()
+      $('html body #wrapper #container #main #feed, ' +
+        'html body #wrapper #container #main #group').remove()
       $('html body #wrapper #containter #visit').hide()
       xml(null, null, $(this).attr('aria-item'))
   })

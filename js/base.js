@@ -2,7 +2,7 @@ var op = 0 //1 invert, 2 opposite
 var buffer = 7 //input index length (adds suggested)
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
-var loading = 'dots' //or 'percent'
+var loading = 'percent' //or 'percent'
 var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
@@ -276,12 +276,22 @@ var quick  = function(n) {
 var progress = function(complete, n) {
 
   $(document).ready(function() {
-    $('#progressBar').addClass('response').width(n + '%')
+    $('#progressBar').css({
+      '-webkit-transition-delay': '.1s',
+      '-webkit-transition': '.5s',
+      '-moz-transition-delay': '.1s',
+      '-moz-transition': '.5s'
+    }).width(n + '%')
     if (complete == true) {
       $('#progressBar').on(
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
-          $(this).removeClass('response').width(0)
+          $('#progressBar').css({
+            '-webkit-transition-delay': 'none',
+            '-webkit-transition': 'none',
+            '-moz-transition-delay': 'none',
+            '-moz-transition': 'none'
+          }).width(0)
           $('html body #wrapper #container #main #group').show()
           $('html body #wrapper #container #main #feed').show()
           if (onlyImages == false)
