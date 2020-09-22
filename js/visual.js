@@ -82,7 +82,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
-      .css('filter','hue-rotate(50deg)')
+      .css('filter','hue-rotate(110deg)')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('.fa, .fas, .images').css('color','#fff')

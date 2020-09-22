@@ -2,7 +2,7 @@ var op = 0 //1 invert, 2 opposite
 var buffer = 7 //input index length (adds suggested)
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
-var loading = 'percent' //or 'percent'
+var loading = 'dots' //or 'percent'
 var onlyImages = false //grep, random, populate only return media true
 var category = 'Social' //legacy
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
@@ -121,6 +121,7 @@ var base = function(n) {
 
   var suggest = []
   $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
+  $('html body #wrapper #container #main #visit #page #front #first').show()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
@@ -142,7 +143,7 @@ var base = function(n) {
   }
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
+      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].cat == menu[suggest[suggest.length - 1]].cat && menu[e].media == true)
       $('html body #wrapper #container #main #visit #page #front #first .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
@@ -157,11 +158,6 @@ var base = function(n) {
       if ($('html body #wrapper #container #main #visit #page #front #first .listing .index').length >= buffer)
         return false
     }
-    if (!$('html body #wrapper #container #main #visit #page #front #first').is(':visible')) {
-    setTimeout(function() {
-      $('html body #wrapper #container #main #visit #page #front #first').show()
-    }, 50)
-  }
 
 }
 
@@ -192,7 +188,7 @@ var list = function(n) {
   if (suggest.length < 1) suggest.push(0)
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
+      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].cat == menu[suggest[suggest.length - 1]].cat && menu[e].media == true)
       $('html body #wrapper #container #main #top #arm #search #match .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
@@ -207,11 +203,6 @@ var list = function(n) {
       if ($('html body #wrapper #container #main #top #arm #search #match .listing .index').length >= buffer)
         return false
     }
-  if (!$('html body #wrapper #container #main #top #arm #search #match').is(':visible')) {
-    setTimeout(function() {
-      $('html body #wrapper #container #main #top #arm #search #match').show()
-    }, 50)
-  }
 
 }
 
@@ -257,8 +248,8 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page .quick .feed').append(
-      "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
-      "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
+      "<div class='translation' aria-item='" + translations[i] + "'>" +
+      "  <img src='images/" + translations[i] + ".webp'> " +
       "  <a title='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
       "  </a>" +
@@ -314,7 +305,7 @@ var progress = function(complete, n) {
 var suggest = function(n) {
 
       var duplicate = []
-      for (var i = 0; i <= 8; i++) {
+      for (var i = 0; i <= 6; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
         duplicate.push(e)
         if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){

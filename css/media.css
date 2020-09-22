@@ -141,7 +141,7 @@
 @media screen and (min-width: 768px) {
 
   html body #wrapper #container #main #top {
-    width: calc(100% - 16px);
+    width: calc(100% - 12px);
   }
 
   html body #wrapper #container #main #top #arm {
@@ -153,34 +153,25 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-	left: 0;
+	left: -15px;
   }
 
   html body #wrapper #container #main #feed .center {
-    width: 430px;
-  }
-
-  html body #wrapper #container ##main #feed .content {
-    margin-left: 15px;
-  	width: 255px;
+	margin-right: 70px;
+    width: 540px;
   }
 
   html body #wrapper #container ##main #feed .content .status {
     width: 280px;
   }
 
-  html body #wrapper #container #main #page #front {
-    top: -25px;
-  }
-
   html body #wrapper #container #main #visit #page {
-    width: 770%;
     top: -125px;
   }
 
   html body #wrapper #container #main #visit #page .quick {
-	width: 715px;
-	right: 10px;
+	width: 686px;
+	left: 4px;
   }
 
 }
@@ -208,7 +199,7 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-    left: 25px;
+    left: 20px;
   }
 
   html body #wrapper #container #main #top #arm #option {

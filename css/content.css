@@ -342,7 +342,7 @@ html body #wrapper #container #guide .blur {
 }
 
 html body #wrapper #container #main #top {
-  width: calc(100% - 17px);
+  width: calc(100% - 12px);
   position: fixed;
   display: none;
   height: 57px;
@@ -463,7 +463,6 @@ html body #wrapper #container #main #visit #page #handle #placeholder {
   padding-left: 20px;
   font-size: 64px;
   margin: 0 auto;
-  height: 100px;
 }
 
 html body #wrapper #container #main #visit #page {
@@ -489,6 +488,7 @@ html body #wrapper #container #main #visit #page #front {
 html body #wrapper #container #main #visit #page #front #first {
   position: relative;
   display: none;
+  z-index: 1;
 }
 
 html body #wrapper #container #main #visit #page #front #first .listing {
@@ -576,7 +576,7 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
-  margin-top: 2px;
+  margin-top: 1px;
   left: 60px;
   z-index: 2;
   top: 10px;
@@ -638,7 +638,6 @@ html body #wrapper #container #main #visit #page #front #label .link {
   padding: 10px;
   height: 10px;
   width: 10px;
-  z-index: 2;
 }
 
 html body #wrapper #container #main #group .air,
@@ -754,6 +753,7 @@ html body #wrapper #container #main #visit #page .quick {
   margin: 0 auto;
   height: 7.5em;
   width: 100%;
+  z-index: 0;
 }
 
 html body #wrapper #container #main #feed .center .quick .feed,
@@ -790,7 +790,7 @@ html body #wrapper #container #main #feed .center .quick .feed .asset {
 
 
 html body #wrapper #container #main #visit #page .quick .feed .asset,
-html body #wrapper #container #main #visit #page .quick .feed .assetTranslation {
+html body #wrapper #container #main #visit #page .quick .feed .translation {
   background-color: transparent;
   position: relative;
   text-align: center;
@@ -815,7 +815,7 @@ html body #wrapper #container #main #visit #page .quick .feed .translation img {
 
 html body #wrapper #container #main #feed .center .quick .feed .asset a,
 html body #wrapper #container #main #visit #page .quick .feed .asset a,
-html body #wrapper #container #main #visit #page .quick .feed .assetTranslation a {
+html body #wrapper #container #main #visit #page .quick .feed .translation a {
   background-color: transparent;
   display: block;
 }

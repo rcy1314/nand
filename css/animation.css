@@ -75,7 +75,6 @@
 
 .invisible {
   visibility: hidden;
-  transition: .25s;
   opacity: 0;
 }
 

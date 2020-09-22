@@ -5,11 +5,12 @@
 
 ### Known Issues
 
-* Nearly half XML responses have no images attached.
+* Nearly half XML responses have no images attached (use onlyImages).
 * Heroku cors-anywhere first response ~7s.
+* Copy post not returning local location..
 * File size 12mb compressed.
 
-### Config in base
+### Config in base.js
 
 * op
   invert = 0,
@@ -17,16 +18,20 @@
 
 * category Legacy
 
-* buffer listing length suggestions
+* buffer integer
+  listing suggestions
 
-* contrast
-  Sets as Opposite of op
+* contrast (/+1)
+  Opposite of op
 
 * onlyImages boolean
   filter Only feeds with Images
 
 * quickFeeds boolean
-  Display feeds on first visit
+  Display quick feeds on visit
+
+* loading string
+  percent or dots
 
 * translations array
   Choice to reorder
@@ -37,7 +42,7 @@
   Init.js does some handling of location.
 
   * Contrast Example
-  > /?+1
+  > /?+1 (root) /uri+1
 
   * Category Example
   > /?q=category
@@ -46,7 +51,7 @@
   > /?q=example+query
 
   * Hash Example
-  > /?hash
+  > /?hash (in head.js)
 
   * Feed Example
   > /?q=&unique-identifier
@@ -68,6 +73,13 @@
 <p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
 
 <p align='center'><img src='http://acktic.github.io/screenshots/contrast.jpg'></p>
+
+Want to Contribute?
+----
+
+File and issue!
+Submit a feed!
+Give a star!
 
 License
 ----

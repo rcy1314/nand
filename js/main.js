@@ -52,7 +52,7 @@ $(document)
           .css({
             'text-align': 'center',
             'padding-left': '0'
-          }).val('Search')
+          }).blur().val('Search')
         $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
@@ -209,8 +209,9 @@ $(document)
         notify('URL Copied to Clipboard.')
         e.stopPropagation()
   })
-  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation', function(e) {
+  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation', function(e) {
     id = 0
+	$.loading()
     location.pathname.state()
     $('html body #wrapper #container #main #group').remove()
     $('html body #wrapper #container #main #visit').hide()
@@ -224,19 +225,6 @@ $(document)
       $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main #top').show()
       if ($.active == 0) xml(null, null, $(this).attr('aria-item'))
-  })
-  .on('touchmove', 'html body #wrapper #container #visit #main #page .quick .feed',
-  function(e) {
-      if ($(this).scrollLeft() >= 3300)
-        for (i = 0; i < 10; i++)
-          $('html body #wrapper #container #main #visit #page .quick .feed .asset:first').remove()
-      quick(10)
-  })
-  .on('touchmove', 'html body #wrapper #container #main #feed .center .quick .feed', function(e) {
-      if ($(this).scrollLeft() >= 3300)
-        for (i = 0; i < 10; i++)
-          $('html body #wrapper #container #main #feed .center .quick .feed .asset:first').remove()
-        feed(10)
   })
   .on('touch click',
     'html body #wrapper #container #main #visit #page .quick .right, ' +
@@ -255,12 +243,7 @@ $(document)
               .find('.feed')
           .scrollLeft() >= 0) $(this).parents('html body #wrapper #container #main .quick')
                                 .find('.left').show()
-        if ($(this).parents('html body #wrapper #container #main .quick .feed')
-              .scrollLeft() >= 3000)
-          for (i = 0; i < 10; i++)
-            $(this).parents('html body #wrapper #container #main .quick .feed')
-              .find('.asset:first').empty()
-        quick(10)
+        quick(8)
   })
   .on('touch click',
   'html body #wrapper #container #main #feed .center .quick .left, ' +
@@ -427,8 +410,6 @@ $(document)
   .on('keyup',
     'html body #wrapper #container #main #visit #page #front .focus input[type=text]',
     function(e) {
-      $('html body #wrapper #container #main #visit #page #front #first').show()
-      $('html body #wrapper #container #main #visit #page #front #first .listing').css('z-index', '3')
       var keyup = $(this).val()
       if (e.type == 'keyup' && e.keyCode == 13)
        return false
@@ -642,14 +623,14 @@ $(document)
     visual()
   })
   .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
-      if ($('html body #wrapper #container #main #visit #page #front .listing .hover').length) {
-        if ($('html body #wrapper #container #main #visit #page #front .listing .hover').is('[aria-item]') &&
-              $.inArray($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize(), translations) > -1){
+      if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').length) {
+        if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').is('[aria-item]') &&
+              $.inArray($('html body #wrapper #container #main #visit #page #front #first .listing .hover').attr('aria-item').capitalize(), translations) > -1){
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main #top').show()
-          category = $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize()
-          populate($('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item').capitalize())
+          category = $('html body #wrapper #container #main #visit #page #front #first .listing .hover').attr('aria-item').capitalize()
+          populate($('html body #wrapper #container #main #visit #page #front #first .listing .hover').attr('aria-item').capitalize())
         } else if (reader == true) {
                 readDupe = []
                 $('html body #wrapper #container #main .channel').empty()
@@ -661,7 +642,7 @@ $(document)
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main #top').show()
-          xml(null, null, $('html body #wrapper #container #main #visit #page #front .listing .hover').attr('aria-item'))
+          xml(null, null, $('html body #wrapper #container #main #visit #page #front #first .listing .hover').attr('aria-item'))
         }
       } else {
         if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length) {
