@@ -412,7 +412,6 @@ var menu=[
 {id:"New York Post World",cat:"World",des:"New York Post is a daily newspaper in New York City.",uri:"https://nypost.com/feed",ext:"https://nypost.com",img:"NewYorkPost",hash:"kY",media:!0},
 {id:"NPR",cat:"World",des:"NPR is an independent, nonprofit media organization that was founded to create a more informed public.",uri:"https://www.npr.org/rss/rss.php?id=1019",ext:"https://npr.org",img:"NPR",hash:"nP",media:!1},
 {id:"OAN World",cat:"World",des:"OAN World One America News Network.",uri:"https://www.oann.com/feed",ext:"https://www.oann.com",img:"OANN",hash:"oA",media:!0},
-{id:"PolishNews.co.uk",cat:"World",des:"Polish News Breaking News From Poland UK World.",uri:"https://www.polishnews.co.uk/feed",ext:"https://www.polishnews.co.uk",img:"Polish",hash:"pS",media:!0},
 {id:"The Onion",cat:"World",des:"The Onion America's Finest News Source..",uri:"https://www.theonion.com/rss",ext:"https://www.theonion.com",img:"TheOnion",hash:"oT",media:!0},
 {id:"PBS",cat:"World",des:"Public Broadcasting Service is an American public broadcaster and television program distributor.",uri:"https://www.pbs.org/newshour/feeds/rss/headlines",ext:"https://pbs.org",img:"PBS",hash:"oB",media:!0},
 {id:"RT World",cat:"World",des:"RT delivers latest news on current events from around the world.",uri:"https://www.rt.com/rss",ext:"https://rt.com",img:"RT",hash:"wo",media:!0},
@@ -491,6 +490,8 @@ var menu=[
 {id:"Youtube/WIRED",cat:"Youtube",des:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",ext:"https://www.youtube.com/user/Wired",img:"WIRED",hash:"dI",media:!0}
 ];
 /* rip
+{id:"CSPAN",cat:"World",des:"CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",uri:"http://podcast.c-span.org/xml/radio_feed.xml",ext:"https://www.c-span.org/",img:"CSpan",hash:"aC"},
+{id:"PolishNews.co.uk",cat:"World",des:"Polish News Breaking News From Poland UK World.",uri:"https://www.polishnews.co.uk/feed",ext:"https://www.polishnews.co.uk",img:"Polish",hash:"pS",media:!0},
 {id:"ABC/South Bend",cat:"News",des:"ABC WSBT South Bend Indiana serving Northern Indiana and the southern portion of Western Michigan.",uri:"https://wsbt.com/news/local.rss",ext:"https://wsbt.com",img:"WSBT",hash:"bN"},
 {id:"NBC/Davenport",cat:"News",des:"NBC KWQC Iowa Davenport serving the Quad Cities area of Southeastern Iowa and Northwestern Illinois.",uri:"https://www.kwqc.com/templates/2015_XML_FEED?placement=/content/news",ext:"https://www.kwqc.com",img:"KWQC",hash:"qC"},
 {id:"ABC/Flint",cat:"News",des:"ABC WJRT Michigan Flint Weather, News, Sports, and more.",uri:"https://www.abc12.com/templates/2015_XML_FEED?placement=/content/news",ext:"https://www.abc12.com",img:"WJRT",hash:"jR"},
@@ -505,7 +506,6 @@ var menu=[
 {id:"TieBreaker",cat:"Sports",des:"Tiebreaker Sports News Headlines from around the world.",uri:"https://www.tiebreaker.com/feed",ext:"https://www.tiebreaker.com",img:"TieBreaker",hash:"bT"},
 {id:"Digg",cat:"Technology",des:"Digg the best articles, videos, and original content that the web is talking about right now.",uri:"https://www.digg.com/rss/index.xml",ext:"https://www.digg.com",img:"Digg",hash:"iG"},
 {id:"Forbes",cat:"Technology",des:"Forbes is a Global Media Company, focusing on Business, Investing, and Technology.",uri:"https://www.forbes.com/most-popular/feed",ext:"https://forbes.com",img:"Forbes",hash:"fO"},
-{id:"CSPAN",cat:"World",des:"CSPAN Radio daily coverage of Washington and more than 200,000 hours of extensively indexed and archived C-SPAN video.",uri:"http://podcast.c-span.org/xml/radio_feed.xml",ext:"https://www.c-span.org/",img:"CSpan",hash:"aC"},
 {id:"Quartz",cat:"World",des:"Quartz covers business, economics, markets, finance, technology, science, and more.",uri:"https://cms.qz.com/feed",ext:"https://qz.com",img:"Quartz",hash:"qZ"},
 {id:"Central News",cat:"News",des:"Central News Now latest, breaking Central news on ITV News. Videos, stories and updates",uri:"https://centralnewsnow.com/feed",ext:"https://centralnewsnow.com"},
 {id:"Chicago Tribune",cat:"News",des:"Chicago Tribune Your source for Chicago breaking news, sports, business, entertainment, weather and traffic.",uri:"https://www.chicagotribune.com/arcio/rss/category/news/breaking/?query=display_date:%5Bnow-2d+TO+now%5D+AND+revision.published:true&sort=display_date:desc#nt=instory-link",ext:"https://www.chicagotribune.com"},
