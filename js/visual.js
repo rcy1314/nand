@@ -38,7 +38,7 @@ var visual = function(n) {
       '--loader-color-secondary': '#e86d8a'
     })
     $('html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation, ' +
+      'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
@@ -121,7 +121,7 @@ var visual = function(n) {
     })
     $('html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation, ' +
+      'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #feed .center .quick .right, ' +
