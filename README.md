@@ -7,7 +7,7 @@
 
 * Nearly half XML responses have no images attached (use onlyImages).
 * Heroku cors-anywhere first response ~7s.
-* Copy post not returning local location..
+* Copy post not returning local location.
 * File size 12mb compressed.
 
 ### Config in base.js
