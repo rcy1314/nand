@@ -844,6 +844,9 @@ var xml = function(e, s, n) {
         src: src,
         gen: gen
       })
+      pub.sort(function(a, b) {
+          return b.since - a.since
+      })
       $.each(pub, function(i) {
         if (parseInt(pub[i].gen, 36) == post) local = i
       })

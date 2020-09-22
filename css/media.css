@@ -141,7 +141,7 @@
 @media screen and (min-width: 768px) {
 
   html body #wrapper #container #main #top {
-    width: calc(100% - 12px);
+    width: 100%;
   }
 
   html body #wrapper #container #main #top #arm {
@@ -149,7 +149,7 @@
   }
 
   html body #wrapper #container #main #top #arm #option {
-    margin-left: 85px;
+    right: -42px;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
@@ -157,8 +157,7 @@
   }
 
   html body #wrapper #container #main #feed .center {
-	margin-right: 70px;
-    width: 540px;
+    width: 660px;
   }
 
   html body #wrapper #container ##main #feed .content .status {
@@ -199,11 +198,11 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-    left: 20px;
+    left: -17px;
   }
 
   html body #wrapper #container #main #top #arm #option {
-    right: -25px;
+    right: 10px;
   }
 
   html body #wrapper #container #main #feed .center {
