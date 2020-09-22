@@ -43,12 +43,12 @@ $.loading = function () {
     complete = setInterval(function() {
       $('#progressBar').css({
         '-webkit-transition-delay': '.1s',
-        '-webkit-transition': '1.5s',
+        '-webkit-transition': '.25s',
         '-moz-transition-delay': '.1s',
-        '-moz-transition': '1.5s'
+        '-moz-transition': '.25s'
       }).width($('#progressBar').width() +
         Math.floor(Math.random() * (600 - 25 + 1) + 25))
-    }, 750)
+    }, 250)
   }
 }
 

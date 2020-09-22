@@ -403,7 +403,7 @@ var populate = function(n) {
 var air = function(n) {
 
   $(document).ready(function () {
-  $('html body #wrapper #container #main .result').before("<div class='air'></div>")
+  $('html body #wrapper #container #main #group .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (category == menu[i].cat)
       $('html body #wrapper #container #main #group .air').append(
@@ -419,8 +419,8 @@ var air = function(n) {
         "</div>"
       )
   }
+  $('html body #wrapper #container #main #group').focus()
   $.unloading()
-  $('html body #wrapper #container #main #group').attr('tabindex', -1)
   visual()
 })
 }
@@ -618,10 +618,13 @@ var xml = function(e, s, n) {
   var pub = []
   var src = ''
   var images = []
-  category = menu[n].cat
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
-  } else uri = cors + menu[n].uri
+    category = category
+  } else {
+    uri = cors + menu[n].uri
+    category = menu[n].cat
+  }
   var doc = menu[n].id.space().capitalize()
   document.title = doc
   $('html body #wrapper #container #main #visit').hide()
@@ -930,7 +933,7 @@ var xml = function(e, s, n) {
       "  </div>" +
       "</div>"
     )
-    $('html body #wrapper #container #main #feed').attr('tabindex', -1)
+    $('html body #wrapper #container #main #feed').focus()
     content(n, recent, oldest, posts)
     suggest()
   progress(true, 100)
