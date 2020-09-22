@@ -280,9 +280,9 @@ var progress = function(complete, n) {
   $(document).ready(function() {
     $('#progressBar').css({
       '-webkit-transition-delay': '.1s',
-      '-webkit-transition': '.5s',
+      '-webkit-transition': '1s',
       '-moz-transition-delay': '.1s',
-      '-moz-transition': '.5s'
+      '-moz-transition': '1s'
     }).width(n + '%')
     if (complete == true) {
       $('#progressBar').on(
@@ -653,7 +653,6 @@ var xml = function(e, s, n) {
     )
     $('html body #wrapper #container #main .channel').html("This site could not be reached.")
     $.unloading()
-    feed(12)
     visual()
   }).done(function(xhr) {
     if ($(xhr).find('entry').length > 0) var channel = "entry"
@@ -777,6 +776,12 @@ var xml = function(e, s, n) {
       if ($(this).find('title:first').text().length > 125)
         var more = "<div class='more'>more</div>"
       else var more = ""
+      if (e == 'search') {
+                var cat =
+                  "<div class='external'>" +
+                    re.domain() +
+                  "</div>"
+      }
       if (src.match(/youtube\.com/g)) {
         if ($(this).find('media\\:statistics, statistics').attr('views'))
             var views = "<div class='ago views'>" +
@@ -800,11 +805,6 @@ var xml = function(e, s, n) {
           "  </div>" +
           "  <div class='ago'>" + dst[0] + "</div>" +
           "</div>"
-      } else if (e == 'search') {
-                var cat =
-                  "<div class='external'>" +
-                    re.domain() +
-                  "</div>"
       } else {
         if (!cat) cat = ''
         html =
@@ -933,7 +933,7 @@ var xml = function(e, s, n) {
     $('html body #wrapper #container #main #feed').attr('tabindex', -1)
     content(n, recent, oldest, posts)
     suggest()
-  $.unloading()
+  progress(true, 100)
   })
 
 }

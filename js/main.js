@@ -652,10 +652,14 @@ $(document)
         }
       } else {
         if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length) {
-          var uri = '?q=' + $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val()
-            .toLowerCase()
-            .replace(/\s/g, '+')
-          uri.define().exit()
+          $('html body #wrapper #container #main #top').show()
+          response(
+            true,
+            false,
+            $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val(),
+            false
+          )
+
         }
       }
       $('html body #wrapper #container #arm #search input[type=text]').val('').blur()
