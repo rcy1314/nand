@@ -126,10 +126,7 @@ $.loading = function () {
   $('html body #wrapper #container #main #top').show()
   if (reader == false) {
     $('html body #wrapper #container #main #feed, ' +
-      'html body #wrapper #container #main #group, '+
-      'html body #wrapper #container #main #feed .center, ' +
-      'html body #wrapper #container #main #feed .suggestions, ' +
-      'html body #wrapper #container #main .content').remove()
+      'html body #wrapper #container #main #group').remove()
   }
   if (loading == 'dots'){
   $('html body #wrapper #container #main #dots .fill').css(

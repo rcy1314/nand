@@ -209,10 +209,13 @@ $(document)
         notify('URL Copied to Clipboard.')
         e.stopPropagation()
   })
-  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation', function(e) {
-      $('html body #wrapper #container #main #visit').hide()
-      $('html body #wrapper #container #main #top').show()
-      populate($(this).attr('aria-item'))
+  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .assetTranslation', function(e) {
+    id = 0
+    location.pathname.state()
+    $('html body #wrapper #container #main #group').remove()
+    $('html body #wrapper #container #main #visit').hide()
+    $('html body #wrapper #container #main #top').show()
+    populate($(this).attr('aria-item'))
   })
   .on('touch click', 'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset', function(e) {

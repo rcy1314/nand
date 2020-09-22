@@ -257,7 +257,7 @@ var quick  = function(n) {
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
     $('html body #wrapper #container #main #visit #page .quick .feed').append(
-      "<div class='translation' aria-item='" + translations[i] + "'>" +
+      "<div class='assetTranslation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp' class='translation'> " +
       "  <a title='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
@@ -341,7 +341,6 @@ var suggest = function(n) {
 var populate = function(n) {
 
     $(document).ready(function() {
-      if ($('html body #wrapper #container #main #group').length < 1)
       $('html body #wrapper #container #main').append(
         "<div id='group'>" +
         "  <div class='result'>" +
@@ -349,7 +348,7 @@ var populate = function(n) {
         "</div>"
       )
     if (id && !location.href.match('\\?q=') && id != 0){
-      $('html body #wrapper #container #main .result').append(
+      $('html body #wrapper #container #main #group .result').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
         "  <div class='display'>" +
@@ -365,7 +364,7 @@ var populate = function(n) {
     for (var i = 1; i <= menu.length - 1; i++) {
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
-          $('html body #wrapper #container #main .result').append(
+          $('html body #wrapper #container #main #group .result').append(
             "<div class='populate'" +
             "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
             "  <div class='display'>" +
@@ -379,7 +378,7 @@ var populate = function(n) {
           )
       } else if (onlyImages == false){
           if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
-            $('html body #wrapper #container #main .result').append(
+            $('html body #wrapper #container #main #group .result').append(
               "<div class='populate'" +
               "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
               "  <div class='display'>" +
@@ -404,7 +403,7 @@ var air = function(n) {
   $('html body #wrapper #container #main .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (category == menu[i].cat)
-      $('html body #wrapper #container #main .air').append(
+      $('html body #wrapper #container #main #group .air').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
