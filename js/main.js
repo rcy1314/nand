@@ -486,6 +486,7 @@ $(document)
               'text-align': 'left'
         })
         $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
+        base('')
       visual()
   })
   .on('focusin',

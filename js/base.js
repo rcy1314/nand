@@ -122,6 +122,7 @@ var base = function(n) {
   var suggest = []
   $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
   $('html body #wrapper #container #main #visit #page #front #first').show()
+  if (n != '')
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
@@ -137,13 +138,14 @@ var base = function(n) {
       suggest.push(i)
     } else suggest.push(0)
   }
-  if((menu.length - 2) == (suggest.length - 1)) {
+  if((menu.length - 2) == (suggest.length - 1) || n == '') {
     var suggest = []
     suggest.push(menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]))
   }
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].cat == menu[suggest[suggest.length - 1]].cat && menu[e].media == true)
+      if ($('html body #wrapper #container #main #visit #page #front #first .listing .' + e).length == 0 &&
+        $.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
       $('html body #wrapper #container #main #visit #page #front #first .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +

@@ -16,30 +16,6 @@
   font-display: block;
 }
 
-.listing::-webkit-scrollbar {
-  width: 2px;
-}
-
-.invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: dodgerblue;
-  border-radius: 4px;
-}
-
-.invertScrollbar {
-scrollbar-color: dodgerblue transparent;
-scrollbar-width: thin;
-}
-
-.oppositeScrollbar::-webkit-scrollbar-thumb {
-  background-color: #f7426C;
-  border-radius: 4px;
-}
-
-.oppositeScrollbar {
-scrollbar-color: #f7426C transparent;
-scrollbar-width: thin;
-}
-
 .fa,
 .far,
 .images {
@@ -498,7 +474,7 @@ html body #wrapper #container #main #visit #page #front #first .listing {
   overflow-y: auto;
   text-align: left;
   cursor: pointer;
-  height: 428px;
+  height: 420px;
   width: 100%;
   top: -15px;
 }
@@ -624,7 +600,7 @@ html body #wrapper #container #main #visit #page #front #label .show {
   cursor: pointer;
   font-size: 14px;
   margin: 0 auto;
-  z-index: 2;
+  z-index: 0;
   top: 25px;
 }
 
@@ -1325,7 +1301,7 @@ html body #wrapper #container #main #top #arm #search #match .listing {
   overflow-y: auto;
   cursor: pointer;
   margin: 0 auto;
-  height: 428px;
+  height: 420px;
   width: 18em;
   top: 5px;
 }
@@ -1345,14 +1321,13 @@ html body #wrapper #container #main #visit #page #front #first .listing .detail 
 html body #wrapper #container #main #top #arm #search #match .listing .index,
 html body #wrapper #container #main #visit #page #front #first .listing .index {
   border-bottom: none !important;
-  width: calc(100% - 14px);
+  width: calc(100% - 12px);
   padding-bottom: 12px;
   position: relative;
   padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
   height: 3em;
-  margin: 1px;
 }
 
 .contrast.hover {
@@ -1393,14 +1368,13 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 
 html body #wrapper #container #main #top #arm #search #match .listing .hover,
 html body #wrapper #container #main #visit #page #front #first .listing .hover {
-  border-bottom: none !important;
-  width: calc(100% - 14px);
+  width: calc(100% - 12px);
   padding-bottom: 12px;
+  border-radius: 4px;
   padding-left: 12px;
   padding-top: 12px;
   font-size: 12px;
   height: 3em;
-  margin: 1px;
 }
 
 html body #wrapper #container #main #feed .center #yt {
