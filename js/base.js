@@ -250,7 +250,7 @@ var quick  = function(n) {
     $('html body #wrapper #container #main #visit #page .quick .feed').append(
       "<div class='translation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp'> " +
-      "  <a title='" + translations[i] + "'>" +
+      "  <a title='" + translations[i] + "' aria-item='" + translations[i] + "'>" +
            translations[i].substring(0,9) + '...' +
       "  </a>" +
       "</div>"

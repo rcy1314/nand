@@ -219,6 +219,10 @@ $(document)
     $('html body #wrapper #container #main #top').show()
     populate($(this).attr('aria-item'))
   })
+  .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation a', function(e) {
+    uri = '?q=' + $(this).attr('aria-item').toLowerCase()
+    uri.define().exit()
+  })
   .on('touch click', 'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset', function(e) {
       $('html body #wrapper #container #main #visit #page .quick .feed').empty()
