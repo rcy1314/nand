@@ -532,6 +532,12 @@ var image = function(empty, n, item, src) {
   var small = 120
   var k = 5420
 
+  if (src.match(/\.mp4/g)) {
+    $('.' + n).find(' .' + item).parents('.item, #guide')
+      .find('.image, .img, .pub, .tag, .ago, .addComment').fadeIn(1000)
+      .parents('.item, #guide').find('.fill').remove()
+    return false
+  }
   if (src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
   $('.' + n).find(' .' + item).attr('src', src).on('error', function() {
     $(this).parents('.classic').find('.tag, .fill').remove()
@@ -721,16 +727,16 @@ var xml = function(e, s, n) {
       if (gen) var ts = (gen).toString(36)
       if (ts) var share = window.location.origin + '/?' + share + ts
       if ($(this).find('content').text()
-      .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g)) {
+      .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g)) {
         src = String($(this).find('content').text()
-          .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g))
+          .match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g))
       } else if ($(this).find('content').text()
-      .match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)) {
+      .match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g)) {
           src = String($(this).find('content').text()
-            .match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g)
+            .match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g)
           )
       } else if ($(this).find('content').text()
-      .match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
+      .match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/)) {
         src = String($(this).find('content').text()
           .match(/src=['"](.*?)['"]/)[1])
       } else if ($(this).find('link').attr('href')) {
@@ -739,7 +745,7 @@ var xml = function(e, s, n) {
             String($(this).find('link').attr('href').split('=')[1])
         else src = String($(this).find('link').attr('href'))
       } else if ($(this).find('content').text()
-      .match(/src=['"]https:\/\/.+?(gif|png|jpg)['"]/)) {
+      .match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/)) {
         src = String($(this).find('content').text()
           .match(/src=['"](.+)['"]/)[1])
       } else if ($(this).find('link').attr('href')) {
@@ -747,13 +753,13 @@ var xml = function(e, s, n) {
       } else if ($(this).find('media\\:thumbnail, thumbnail').attr('url')) {
         src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
       } else if ($(this).find('link').text()
-        .match(/https:\/\/.+?(gif|png|jpg)/)) {
+        .match(/https:\/\/.+?(gif|png|jpg|mp4|mp4)/)) {
           src = String($(this).find('link').text()
-            .match(/https:\/\/.+?(gif|png|jpg)/)[0])
+            .match(/https:\/\/.+?(gif|png|jpg|mp4|mp4)/)[0])
       } else if ($(this).find('image').find('link, url').text()
-      .match(/https:\/\/.+?(gif|png|jpg)/)) {
+      .match(/https:\/\/.+?(gif|png|jpg|mp4)/)) {
         src = String($(this).find('image').find('link, url').text()
-          .match(/https:\/\/.+?(gif|png|jpg)/)[0])
+          .match(/https:\/\/.+?(gif|png|jpg|mp4)/)[0])
       } else if ($(this).find('enclosure').attr('url')) {
         src = String($(this).find('enclosure').attr('url'))
       } else if ($(this).find('media\\:content, content').attr('url')) {
@@ -769,6 +775,8 @@ var xml = function(e, s, n) {
       } else if ($(this).find('image').text()) {
         src = String($(this).find('image').text())
       }
+      if (src.match(/\.mp4/g)) var video = "<video src='" + src + "' controls>"
+      else var video = ''
       if (src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
       courtesy =
@@ -821,6 +829,7 @@ var xml = function(e, s, n) {
           "  <div class='classic'>" +
           "    <div class='fill'><div class='loader double-circle'></div></div>" +
           "    <div class='image' style='display:none'>" +
+                 video +
           "      <img id='" + i + "' class='" + i + " img'>" +
           "    </div>" +
           "    <div class='wrap'>" + tag +

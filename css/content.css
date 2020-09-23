@@ -24,6 +24,11 @@
   cursor: pointer;
 }
 
+video {
+  position: relative;
+  width: 100%;
+}
+
 .invertScrollbar::-webkit-scrollbar {
   width: 2px;
 }
