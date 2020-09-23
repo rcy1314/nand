@@ -64,14 +64,14 @@
 
 ### Head has multiple indices for objects
  
-  * These need to be fufilled.
-  > id:&emsp;&emsp;unique (plain text) indexed.
-  > cat:&emsp;&emsp;translation (indexed).
-  > des:&emsp;&emsp;plain text (indexed).
-  > uri:&emsp;&emsp;endpoint
-  > ext:&emsp;&emsp;external blank exit
-  > hash:&emsp;&emsp;unique alphanumeric two charcter
-  > media:&emsp;&emsp;xml parsing for images (boolean)
+  * These need to be fufilled.<br>
+  > id:&emsp;&emsp;unique (plain text) indexed.<br>
+    cat:&emsp;&emsp;translation (indexed).<br>
+    des:&emsp;&emsp;plain text (indexed).<br>
+    uri:&emsp;&emsp;endpoint<br>
+    ext:&emsp;&emsp;external blank exit<br>
+    hash:&emsp;&emsp;unique alphanumeric two charcter<br>
+    media:&emsp;&emsp;xml parsing for images (boolean)<br>
 
 ### Invert
 
