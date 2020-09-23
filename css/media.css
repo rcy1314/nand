@@ -15,7 +15,13 @@
   }
 
   html body #wrapper #container #main #visit #page #handle {
-    height: 50px;
+    visibility: hidden;
+    height: 250px;
+  }
+
+  html body #wrapper #container #main #visit #page #mobile {
+    display: block;
+    top: 50px
   }
 
   html body #wrapper #container #main #page,
@@ -58,22 +64,24 @@
     width: 32%;
   }
 
-  html body #wrapper #container #main .listing {
+  html body #wrapper #container #main #visit #page #front #first .listing {
     position: relative;
+    padding-left: 0;
     margin: 0 auto;
-    top: 15px;
+    width: 300px;
+    top: -155px;
   }
 
   html body #wrapper #container #top #arm #search #match .listing {
     margin: 0 auto;
-    top: 0
+    top: 0;
   }
 
   html body #wrapper #container #main #visit #page #front .focus {
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: 12px;
+    top: -150px;
   }
 
   html body #wrapper #container #main #visit #page #front input[type=text] {
@@ -83,16 +91,10 @@
   }
 
   html body #wrapper #container #main #visit #page .quick {
-      position: relative;
+      position: absolute;
       width: 330px;
-      left: -10px;
-      z-index: 3;
-      top: 0;
-  }
-
-  html body #wrapper #container #main #visit #page #front #first .listing {
-    padding-left: 0;
-    width: 300px;
+      left: 20px;
+      top: 150px;
   }
 
 }
@@ -159,6 +161,13 @@
     display: block;
   }
 
+  html body #wrapper #container #main #visit #page #handle {
+    top: -50px;
+  }
+
+  html body #wrapper #container #main #visit #page #mobile {
+    display: none;
+  }
 
   html body #wrapper #container #main #top {
     width: 100%;

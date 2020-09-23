@@ -445,21 +445,21 @@ html body #wrapper #container #main #visit {
   height: 100%;
 }
 
+html body #wrapper #container #main #visit #page #mobile,
 html body #wrapper #container #main #visit #page #handle {
-  display: inline-block;
   position: relative;
   user-select: none;
+  display: block;
   margin: 0 auto;
   width: 100%;
-  top: -50px
 }
 
+html body #wrapper #container #main #visit #page #mobile .fa-map,
 html body #wrapper #container #main #visit #page #handle .fa-map {
   color: #fff !important;
   position: relative;
   font-size: 72px;
   left: 10px;
-  top: -15px;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
