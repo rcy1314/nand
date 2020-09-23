@@ -40,6 +40,7 @@ $.loading = function () {
     'animation', 'move 3s 600ms infinite cubic-bezier(.1,.85,1,.1)'
     )
   } else if (loading == 'percent'){
+    var width = $('html body #wrapper #container #main').width() / 30
     complete = setInterval(function() {
       $('#progressBar').css({
         '-webkit-transition-delay': '0s',
@@ -47,7 +48,7 @@ $.loading = function () {
         '-moz-transition-delay': '0s',
         '-moz-transition': '1s'
       }).width($('#progressBar').width() +
-        Math.floor(Math.random() * (100 - 25) + 25))
+        Math.floor(Math.random() * (100 - width) + width))
     }, 1000)
   }
 }

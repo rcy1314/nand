@@ -189,6 +189,10 @@
     top: 1em;
   }
 
+  html body #wrapper #container #main #progressBar {
+    max-width: calc(100% - 16px) !important;
+  }
+
   html body #wrapper #container #main #top {
     width: calc(100% - 16px);
   }

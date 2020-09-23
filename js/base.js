@@ -936,7 +936,8 @@ var xml = function(e, s, n) {
     $('html body #wrapper #container #main #feed').focus()
     content(n, recent, oldest, posts)
     suggest()
-    $.unloading()
+    clearInterval(complete)
+    progress(true, 100)
   })
 
 }

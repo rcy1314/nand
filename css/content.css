@@ -235,7 +235,6 @@ html body #wrapper #container #main #notification {
 }
 
 html body #wrapper #container #main #progressBar {
-  max-width: calc(100% - 16px) !important;
   position: fixed;
   height: 4px;
   z-index: 10;
