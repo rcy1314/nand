@@ -92,13 +92,13 @@ $(document)
           $('html body #wrapper #container #main #feed .center #bottom').remove()
           $('html body #wrapper #container #main #feed .center').append(
             "<div id='bottom'>" +
-            "  <div class='back btn' index=" + menu.indexOf(menu[$.back()]) + ">" +
+            "  <div class='back btn' aria-item='" + menu[$.back()] + "'>" +
             "      <span class='front'></span>" +
             "      <span class='flip-front'>Previous</span>" +
             "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
             "  </div>" +
             "  <div class='bottom'>acktic</div>" +
-            "  <div class='next btn' index=" + menu.indexOf(menu[$.next()]) + ">" +
+            "  <div class='next btn' aria-item='" + menu[$.next()] + "'>" +
             "      <span class='front'></span>" +
             "      <span class='flip-front'>Next</span>" +
             "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
