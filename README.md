@@ -61,6 +61,7 @@
   * Feed Example
   > /?q=&unique-identifier
     &emsp;?q=&abc-technology
+    &emsp:falls back to query, fails to xml search.
 
 ### Head has multiple indices for objects
  
