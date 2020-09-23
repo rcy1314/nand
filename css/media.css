@@ -15,7 +15,7 @@
   }
 
   html body #wrapper #container #main #visit #page #handle {
-    height: 350px;
+    height: 50px;
   }
 
   html body #wrapper #container #main #page,
@@ -58,9 +58,10 @@
     width: 32%;
   }
 
-  html body #wrapper #container #main #visit #page #front #first .listing {
+  html body #wrapper #container #main .listing {
     position: relative;
     margin: 0 auto;
+    top: 15px;
   }
 
   html body #wrapper #container #top #arm #search #match .listing {
