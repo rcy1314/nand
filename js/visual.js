@@ -6,8 +6,6 @@ var visual = function(n) {
       'html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
-      'html body #wrapper #container #main #top, ' +
-      'html body #wrapper #container #main #top #arm, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .quick .feed, ' +
@@ -91,7 +89,6 @@ var visual = function(n) {
   } else if (op == 0) {
     $('html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #notification, ' +
-      'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +

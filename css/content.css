@@ -672,13 +672,10 @@ html body #wrapper #container #main #group .air,
 html body #wrapper #container #main #group .result {
   background-color: transparent;
   justify-content: center;
+  padding-bottom: 50px;
   flex-wrap: wrap;
   display: flex;
   width: 100%;
-}
-
-html body #wrapper #container #main #group .result {
-  margin-bottom: 50px;
 }
 
 html body #wrapper #container #main #feed .content .status .filter {

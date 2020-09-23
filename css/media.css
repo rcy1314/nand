@@ -41,7 +41,9 @@
   }
 
   html body #wrapper #container #main #top,
-  html body #wrapper #container #main #arm {
+  html body #wrapper #container #main #top #arm,
+  html body #wrapper #container #main #top #arm #search {
+    background: transparent !important;
     width: 100%;
   }
 
