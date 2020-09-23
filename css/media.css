@@ -280,11 +280,11 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-    left: -17px;
+    left: -20px;
   }
 
   html body #wrapper #container #main #top #arm #option {
-    right: 8px;
+    right: 0;
   }
 
   html body #wrapper #container #main #feed .center {

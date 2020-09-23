@@ -16,11 +16,40 @@
   font-display: block;
 }
 
+
 .fa,
 .far,
 .images {
   display: inline-block;
   cursor: pointer;
+}
+
+.invertScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.invertScrollbar::-webkit-scrollbar-thumb {
+  background-color: #eeeeee;
+  border-radius: 2px;
+}
+
+.invertScrollbar {
+  scrollbar-color: #eeeeee transparent;
+  scrollbar-width: thin;
+}
+
+.oppositeScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.oppositeScrollbar::-webkit-scrollbar-thumb {
+  background-color: #0e0e0e;
+  border-radius: 2px;
+}
+
+.oppositeScrollbar {
+scrollbar-color: #0e0e0e transparent;
+scrollbar-width: thin;
 }
 
 html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader,
@@ -475,6 +504,7 @@ html body #wrapper #container #main #visit #page #front #first {
 html body #wrapper #container #main #visit #page #front #first .listing {
   border-radius: 4px;
   position: absolute;
+  overflow: overlay;
   overflow-y: auto;
   text-align: left;
   cursor: pointer;
@@ -504,6 +534,18 @@ html body #wrapper #container #main #visit #page #front #first .listing .index .
 html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .text {
   background-color: transparent;
   display: inline-block;
+  position: relative;
+  bottom: 10px;
+  height: 30px;
+}
+
+html body #wrapper #container #main #top #arm #search #match .listing .index .detail .textSuggest,
+html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .textSuggest,
+html body #wrapper #container #main #visit #page #front #first .listing .index .detail .textSuggest,
+html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .textSuggest {
+  background-color: transparent;
+  display: inline-block;
+  font-style: italic;
   position: relative;
   bottom: 10px;
   height: 30px;
@@ -558,7 +600,7 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   color: #aaa !important;
   position: absolute;
   margin-top: 1px;
-  left: 60px;
+  left: 75px;
   z-index: 2;
   top: 10px;
 }
@@ -1299,8 +1341,10 @@ html body #wrapper #container #main #feed .center .yt .image img {
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing {
+  background: transparent;
   scrollbar-width: none;
   position: relative;
+  overflow: overlay;
   text-align: left;
   overflow-y: auto;
   cursor: pointer;
@@ -1325,6 +1369,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .detail 
 html body #wrapper #container #main #top #arm #search #match .listing .index,
 html body #wrapper #container #main #visit #page #front #first .listing .index {
   border-bottom: none !important;
+  background-color: transparent;
   width: calc(100% - 12px);
   padding-bottom: 12px;
   position: relative;
@@ -1334,44 +1379,47 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
   height: 3em;
 }
 
+.contrast {
+  background-color: #000000;
+}
+
 .contrast.hover {
-  border-color: transparent transparent #0e0e0e transparent;
   background-color: #0e0e0e !important;
   color: #ffffff;
 }
 
 .contrast:hover {
-  border-color: transparent transparent #0e0e0e transparent;
-  background-color: #0e0e0e;
+  background-color: #0e0e0e !important;
   color: #ffffff;
 }
 
 .contrast:not(:hover) {
-  border-color: transparent transparent #000000 transparent;
   background-color: #000000;
   color: #ffffff;
 }
 
+.visual {
+  background-color: #f7f7f7;
+}
+
 .visual.hover {
-  border-color: transparent transparent #eeeeee transparent;
-  background-color: #eeeeee !important;
+  background-color: #fbfbfb !important;
   color: #666666;
 }
 
 .visual:hover {
-  border-color: transparent transparent #eeeeee transparent;
-  background-color: #eeeeee;
+  background-color: #fbfbfb !important;
   color: #666666;
 }
 
 .visual:not(:hover) {
-  border-color: transparent transparent #ffffff transparent;
   background-color: #ffffff;
   color: #666666;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .hover,
 html body #wrapper #container #main #visit #page #front #first .listing .hover {
+  background-color: transparent;
   width: calc(100% - 12px);
   padding-bottom: 12px;
   border-radius: 4px;

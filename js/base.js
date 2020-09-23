@@ -151,7 +151,7 @@ var base = function(n) {
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[e].img.image() + "'>" +
-        "    <div class='text'>&emsp;<b>" + menu[e].cat + "</b>" +
+        "    <div class='textSuggest'>&emsp;<b>" + menu[e].cat + "</b>" +
         "      <br>&emsp;" + menu[e].id.match(/[^\/]+$/g) +
         "    </div>" +
         "      <div class='buffer'>suggested..</div>" +
