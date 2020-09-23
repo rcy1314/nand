@@ -44,8 +44,8 @@
   * Contrast Example
   > /?+1 (root) /uri+1
 
-  * Category Example
-  > /?q=category
+  * Translation Example
+  > /?q=translation
 
   * Query Example
   > /?q=example+query
