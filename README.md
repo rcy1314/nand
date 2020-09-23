@@ -70,7 +70,7 @@
     des: plain text (indexed).<br>
     uri: endpoint used by xml in base.js<br>
     ext: external blank exit<br>
-    hash: unique alphanumeric two character (indexed)<br>
+    hash: unique alphanumeric two character indexed by init.js<br>
     media: xml parsing for images (boolean) used in onlyImages<br>
 
 >> indexed by response
