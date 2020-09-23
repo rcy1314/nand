@@ -15,23 +15,23 @@
 * category Legacy
 
 * op<br>
-&emsp;&emsp; invert = 0<br>
-&emsp;&emsp; opposite = 1
+&emsp; invert = 0<br>
+&emsp; opposite = 1
 
-* buffer integer
+* buffer integer<br>
 &emsp;&emsp; listing suggestions.
 
-* contrast (/+1)
-&emsp;&emsp; Opposite of op.
+* contrast (/+1)<br>
+&emsp; Opposite of op.
 
-* onlyImages boolean
-&emsp;&emsp; filter Only feeds with Images.
+* onlyImages boolean<br>
+&emsp; filter Only feeds with Images.
 
-* quickFeeds boolean
-&emsp;&emsp; Display quick feeds on visit.
+* quickFeeds boolean<br>
+&emsp; Display quick feeds on visit.
 
-* loading string
-&emsp;&emsp; percent or dots.
+* loading string<br>
+&emsp; percent or dots.
 
 * translations array
 &emsp;&emsp; Choice to reorder.
