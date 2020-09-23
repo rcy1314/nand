@@ -12,29 +12,30 @@
 
 ### Config in base.js
 
-* category Legacy
+* category
+>&emsp; translation
 
-* op color scheme<br>
-&ensp;&ensp; invert = 0 (default)<br>
-&ensp;&ensp; opposite = 1 (contrast)
+* op boolean<br>
+>&emsp; invert = 0 [default]<br>
+ &emsp;opposite = 1 [contrast]
 
 * buffer integer<br>
-&ensp;&ensp; listing (total) suggestions with response.
+>&emsp; listing (total) suggestions with response.
 
 * contrast (/?+1)<br>
-&ensp;&ensp; Opposite of op (applies contrast).
+>&emsp; Opposite of op (applies contrast).
 
 * onlyImages boolean<br>
-&ensp;&ensp; filter feeds with Images.
+>&emsp; filter feeds with Images.
 
 * quickFeeds boolean<br>
-&ensp;&ensp; Display quick feeds on visit.
+>&emsp; Display quick feeds on visit.
 
 * loading string<br>
-&ensp;&ensp; percent or dots used by init.js and core.js.
+>&emsp; percent or dots used by $.loading(), $.unloading() (core.js), progress() base.js.
 
 * translations array<br>
-&ensp;&ensp; Choice to reorder.
+>&emsp; Choice to reorder.
 
 ### Init.js Unique URI Identifying.
 
@@ -42,34 +43,34 @@
 
   * Contrast Example
   > /?+1 (root)<br>
-    &emsp;/uri+1
+    /uri+1
 
   * Translation Example
-  > /?q=translation<br>
-    &emsp;/?q=technology
+  > /?q=<b>translation</b><br>
+    /?q=technology
 
   * Query Example
   > /?q=example+query<br>
-    &emsp;filter response no passthrough from init.js (fails to bing search results).
+    filter response no passthrough from init.js (fails to bing search results).
 
   * Hash Example
-  > /?hash (in head.js)<br>
+  > /?(hash) (in head.js)<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
-    &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.<br>
-    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1</b> loads guide with contrast to op.
-    
+    &emsp;/?uX<b>aZjk1</b> &emsp; &emsp;loads guide() with progress() and image() in base.js<br>
+    &emsp;/?<b>uXaZjk1+1</b> &emsp;loads guide with contrast to op.
+
   * Feed Example
   > /?q=&unique-identifier<br>
     &emsp;falls back to query, fails to xml search.<br>
-    &emsp;/?q=&hash (not found filter response).<br>
+    &emsp;/?q=&(hash) (not found filter response).<br>
     &emsp;/?q=&tech (menu objects found filter response).<br>
     &emsp;/?q=&technology (translation found populate).<br>
     &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
     &emsp;/?q=&jquery (not found pass through xml search).<br>
 
 ### Head.js has multiple indices for objects.
- 
+
   * These need to be fufilled to added a object.<br>
   > id: unique (stripped to plain text) (indexed).<br>
     cat: translation (indexed).<br>
