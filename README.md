@@ -21,11 +21,11 @@
 * buffer integer<br>
 &ensp;&ensp; listing suggestions.
 
-* contrast (/+1)<br>
+* contrast (/?+1)<br>
 &ensp;&ensp; Opposite of op.
 
 * onlyImages boolean<br>
-&ensp;&ensp; filter Only feeds with Images.
+&ensp;&ensp; filter feeds with Images.
 
 * quickFeeds boolean<br>
 &ensp;&ensp;; Display quick feeds on visit.
