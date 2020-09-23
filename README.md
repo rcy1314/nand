@@ -52,7 +52,10 @@
 
   * Hash Example
   > /?hash (in head.js)
-
+    /?uX 
+    Used in Copy Post appends time converted to base 36.
+    example: /?uX<b>aZjk1</b>
+    
   * Feed Example
   > /?q=&unique-identifier
 
