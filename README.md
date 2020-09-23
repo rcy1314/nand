@@ -65,10 +65,10 @@
 ### Head has multiple indices for objects
  
   * These need to be fufilled.<br>
-  > id:&emsp;&emsp;unique (plain text) indexed.<br>
-    cat:&emsp;&emsp;translation (indexed).<br>
+  > id:&emsp;&emsp;  unique (plain text) indexed.<br>
+    cat:&emsp;&emsp; translation (indexed).<br>
     des:&emsp;&emsp;plain text (indexed).<br>
-    uri:&emsp;&emsp;endpoint<br>
+    uri:&emsp;&emsp; endpoint<br>
     ext:&emsp;&emsp;external blank exit<br>
     hash:&emsp;&emsp;unique alphanumeric two charcter<br>
     media:&emsp;&emsp;xml parsing for images (boolean)<br>
