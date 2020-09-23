@@ -52,9 +52,9 @@
 
   * Hash Example
   > /?hash (in head.js)<br>
-    &ensp;/?uX <br>
-    Used in Copy Post appends time converted to base 36.<br>
-    example: /?uX<b>aZjk1</b><br> loads guide
+    &emsp;/?uX <br>
+    &emsp;/Used in Copy Post appends time converted to base 36.<br>
+    &emsp;/example: /?uX<b>aZjk1</b><br> loads guide
     
   * Feed Example
   > /?q=&unique-identifier
