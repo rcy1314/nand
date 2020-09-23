@@ -2,7 +2,8 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('html body #wrapper #container, ' +
+    $('html body #wrapper #container #main #top #arm #search .fa-map, ' +
+      'html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #top, ' +
@@ -101,8 +102,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
 
-    $('html body #wrapper #container, ' +
-	  'html body #wrapper #container #main, ' +
+    $('html body #wrapper #container #main #top #arm #search .fa-map, ' +
+      'html body #wrapper #container, ' +
+	    'html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #feed .center .channel , ' +
       'html body #wrapper #container #main #group .air .populate, ' +

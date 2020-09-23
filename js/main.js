@@ -22,7 +22,8 @@ $(document)
       quickFeeds = quickFeeds != true
       toggle(quickFeeds)
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #search #home',
+  .on('touch click', 'html body #wrapper #container #main #top #arm #search .fa-map, ' +
+    'html body #wrapper #container #main #top #arm #search #home',
     function(e) {
       id = 0
       $.loading()
@@ -125,6 +126,7 @@ $(document)
     $.loading()
     location.pathname.state()
     $('html body #wrapper #container #main #visit').hide()
+    $('html body #wrapper #container #main #top').show()
     populate(category)
   })
   .on('touch click', 'html body #wrapper #container #main #option .fa-sun, ' +

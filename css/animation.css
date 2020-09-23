@@ -106,17 +106,13 @@
 }
 
 .responseInvert {
-  background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-  height: 4px;
-  width: 0;
+  background: -webkit-linear-gradient(45deg, #405de6, #fd1d1d);
+  background: linear-gradient(45deg, #405de6, #fd1d1d);
 }
 
 .responseOpposite {
   background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
   background: linear-gradient(to left, #ef4063, #e557c6);
-  height: 4px;
-  width: 0;
 }
 
 .progress {
