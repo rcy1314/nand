@@ -24,7 +24,6 @@ var visual = function(n) {
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
     $('html body #wrapper #container #guide, ' +
       'html body #wrapper #container #main #top, ' +
-      'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
@@ -88,7 +87,6 @@ var visual = function(n) {
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
     $('html body #wrapper #container #guide .sticky .wrap, ' +
-      'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
