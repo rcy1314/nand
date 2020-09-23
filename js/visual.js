@@ -23,7 +23,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
     $('html body #wrapper #container #guide, ' +
-      'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
