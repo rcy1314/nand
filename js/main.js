@@ -59,8 +59,9 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
    })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-map', function(e) {
+  .on('touch click', 'html body #wrapper #container #main #option .fa-map', function(e) {
     $.loading()
+    $('html body #wrapper #container #main #visit').hide()
     onlyImages = onlyImages != true
     notify ('Only Images Now ' + onlyImages.toString().capitalize() + '.')
     if (reader == false) populate(category)
@@ -81,9 +82,10 @@ $(document)
     uri.state()
     visual()
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-heart, ' +
-      'html body #wrapper #container #main #top #arm #option .fa-heart-o', function(e) {
+  .on('touch click', 'html body #wrapper #container #main #option .fa-heart, ' +
+      'html body #wrapper #container #main #option .fa-heart-o', function(e) {
         $.loading()
+        $('html body #wrapper #container #main #visit').hide()
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
           notify('Reading ' + category + ' disabled.')
@@ -117,7 +119,7 @@ $(document)
           xml(null, null, $.random())
       }
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-home',
+  .on('touch click', 'html body #wrapper #container #main #option .fa-home',
   function(e) {
     id = 0
     $.loading()
@@ -126,7 +128,7 @@ $(document)
     populate(category)
   })
   .on('touch click', 'html body #wrapper #container #main #option .fa-sun, ' +
-  'html body #wrapper #container #main #top #arm #option .fa-sun',
+  'html body #wrapper #container #main #option .fa-sun',
   function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '?+1'
@@ -142,10 +144,11 @@ $(document)
     uri.state()
     visual()
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-code',
+  .on('touch click', 'html body #wrapper #container #main #option .fa-code',
   function(e) {
     $.loading()
     var code = []
+    $('html body #wrapper #container #main #visit').hide()
     for (i = 1; i <= menu.length - 1; i++) {
       if (onlyImages == true){
         if (menu[i].cat == category && menu[i].media == true) code.push(menu.indexOf(menu[i]))
@@ -156,10 +159,11 @@ $(document)
     var n = code[Math.floor(Math.random() * code.length - 1)]
     xml(null, null, n)
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-terminal',
+  .on('touch click', 'html body #wrapper #container #main #option .fa-terminal',
   function(e) {
     $.loading()
-      xml(null, null, $.random())
+    $('html body #wrapper #container #main #visit').hide()
+    xml(null, null, $.random())
   })
   .on('touch click', 'html body #wrapper #container #main .content .status .filter, ' +
     'html body #wrapper #container #main #group .air .populate, ' +
