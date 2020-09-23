@@ -12,29 +12,29 @@
 
 ### Config in base.js
 
-* op<br>
-> invert = 0,<br>
+  * op<br>
+  > invert = 0,<br>
   opposite = 1<br>
 
-* category Legacy<br>
+  * category Legacy<br>
 
-* buffer integer<br>
-> listing suggestions<br>
+  * buffer integer<br>
+  > listing suggestions<br>
 
-* contrast (/+1)<br>
-> Opposite of op
+  * contrast (/+1)<br>
+  > Opposite of op
 
-* onlyImages boolean<br>
-> filter Only feeds with Images
+  * onlyImages boolean<br>
+  > filter Only feeds with Images
 
-* quickFeeds boolean<br>
-> Display quick feeds on visit<br>
+  * quickFeeds boolean<br>
+  > Display quick feeds on visit<br>
 
-* loading string<br>
-> percent or dots<br>
+  * loading string<br>
+  > percent or dots<br>
 
-* translations array<br>
-> Choice to reorder<br>
+  * translations array<br>
+  > Choice to reorder<br>
 
 ### Init Unique URI Identifier
 
