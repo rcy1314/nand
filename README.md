@@ -65,7 +65,7 @@
     &emsp;/?q=&abc-technology (found unique passthrough).<br>
     &emsp;/?q=&technology (translation found populate).<br>
     &emsp;/?q=&tech (menu objects found filter response).<br>
-    &emsp;/?q=&jquery (not found pass through xml).<br>
+    &emsp;/?q=&jquery (not found pass through xml search).<br>
 
 ### Head.js has multiple indices for objects
  
