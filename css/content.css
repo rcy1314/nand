@@ -210,6 +210,7 @@ html body #wrapper,
 html body #wrapper #container,
 html body #wrapper #container #main,
 html body #wrapper #container #main #visit {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow: hidden;
   height: 100%;
   width: 100%;
