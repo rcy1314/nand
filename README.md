@@ -41,15 +41,15 @@
   Init.js does some handling of location.
 
   * Contrast Example
-  > /?+1 (root)
+  > /?+1 (root)<br>
     &emsp;/uri+1
 
   * Translation Example
-  > /?q=translation
+  > /?q=translation<br>
     &emsp;/?q=technology
 
   * Query Example
-  > /?q=example+query
+  > /?q=example+query<br>
     &emsp;filter passthrough and bing search results
 
   * Hash Example
@@ -59,8 +59,8 @@
     &emsp;example: /?uX<b>aZjk1</b><br> loads guide with progress.
     
   * Feed Example
-  > /?q=&unique-identifier
-    &emsp;?q=&abc-technology
+  > /?q=&unique-identifier<br>
+    &emsp;?q=&abc-technology<br>
     &emsp:falls back to query, fails to xml search.
 
 ### Head has multiple indices for objects
