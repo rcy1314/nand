@@ -9,7 +9,6 @@
   html body #wrapper #container #main #feed .center #bottom .previous,
   html body #wrapper #container #main #feed .center #bottom .next,
   html body #wrapper #container #main #visit #page #front .focus .button,
-  html body #wrapper #container #main #visit #page #front .focus .icon,
   ::-webkit-scrollbar {
     display: none;
   }

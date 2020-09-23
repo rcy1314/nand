@@ -671,7 +671,6 @@ $(document)
 
         }
       }
-      $('html body #wrapper #container #arm #search input[type=text]').val('').blur()
       e.preventDefault()
       visual()
   })
