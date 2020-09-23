@@ -275,16 +275,16 @@ var quick  = function(n) {
   visual()
 }
 
-var progress = function(complete, n) {
+var progress = function(done, n) {
 
   $(document).ready(function() {
-    $('#progressBar').css({
-      '-webkit-transition-delay': '.1s',
-      '-webkit-transition': '1s',
-      '-moz-transition-delay': '.1s',
-      '-moz-transition': '1s'
-    }).width(n + '%')
-    if (complete == true) {
+    if (done == true) {
+      $('#progressBar').css({
+        '-webkit-transition-delay': '0s',
+        '-webkit-transition': '1s',
+        '-moz-transition-delay': '0s',
+        '-moz-transition': '1s'
+      }).width(n + '%')
       $('#progressBar').on(
         'transitionend webkitTransitionEnd oTransitionEnd',
         function(e) {
@@ -936,7 +936,7 @@ var xml = function(e, s, n) {
     $('html body #wrapper #container #main #feed').focus()
     content(n, recent, oldest, posts)
     suggest()
-  progress(true, 100)
+    $.unloading()
   })
 
 }

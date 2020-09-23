@@ -42,13 +42,13 @@ $.loading = function () {
   } else if (loading == 'percent'){
     complete = setInterval(function() {
       $('#progressBar').css({
-        '-webkit-transition-delay': '.1s',
-        '-webkit-transition': '.25s',
-        '-moz-transition-delay': '.1s',
-        '-moz-transition': '.25s'
+        '-webkit-transition-delay': '0s',
+        '-webkit-transition': '1s',
+        '-moz-transition-delay': '0s',
+        '-moz-transition': '1s'
       }).width($('#progressBar').width() +
-        Math.floor(Math.random() * (600 - 25 + 1) + 25))
-    }, 250)
+        Math.floor(Math.random() * (100 - 25) + 25))
+    }, 1000)
   }
 }
 
