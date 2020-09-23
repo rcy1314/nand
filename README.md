@@ -50,14 +50,14 @@
 
   * Query Example
   > /?q=example+query<br>
-    &emsp;filter passthrough and bing search results
+    &emsp;filter response passthrough and bing search results.
 
   * Hash Example
   > /?hash (in head.js)<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
     &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.<br>
-    &emsp;&emsp; /?<b>uXaZjk1+1a</b> loads guide with progress with contrast to op.
+    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1a</b> loads guide with progress with contrast to op.
     
   * Feed Example
   > /?q=&unique-identifier<br>
@@ -70,16 +70,16 @@
 
 ### Head.js has multiple indices for objects
  
-  * These need to be fufilled.<br>
+  * These need to be fufilled to added a object.<br>
   > id: unique (plain text) indexed.<br>
     cat: translation (indexed).<br>
     des: plain text (indexed).<br>
     uri: endpoint used by xml in base.js<br>
     ext: external blank exit<br>
     hash: unique alphanumeric two character indexed by init.js<br>
-    media: xml parsing for images (boolean) used in onlyImages<br>
+    media: xml parsing for images (boolean) indexed in onlyImages<br>
 
->> indexed by response
+>> (indexed) by response
 
 ### Invert
 
