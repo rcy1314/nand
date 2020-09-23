@@ -68,9 +68,9 @@
   > id: unique (plain text) indexed.<br>
     cat: translation (indexed).<br>
     des: plain text (indexed).<br>
-    uri: endpoint<br>
+    uri: endpoint used by xml in base.js<br>
     ext: external blank exit<br>
-    hash: unique alphanumeric two charcter<br>
+    hash: unique alphanumeric two character (indexed)<br>
     media: xml parsing for images (boolean) used in onlyImages<br>
 
 >> indexed by response
