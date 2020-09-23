@@ -57,7 +57,7 @@
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
     &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.<br>
-    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1</b> loads guide with progress with contrast to op.
+    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1</b> loads guide with contrast to op.
     
   * Feed Example
   > /?q=&unique-identifier<br>
