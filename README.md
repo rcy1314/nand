@@ -28,7 +28,7 @@
 &ensp;&ensp; filter feeds with Images.
 
 * quickFeeds boolean<br>
-&ensp;&ensp;; Display quick feeds on visit.
+&ensp;&ensp; Display quick feeds on visit.
 
 * loading string<br>
 &ensp;&ensp; percent or dots.
