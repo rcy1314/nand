@@ -550,9 +550,9 @@ var image = function(empty, n, item, src) {
   }).on('load', function() {
     if ($('html body #wrapper #container #main #top #arm #search #home').css('display') == 'none'){
       $('.sticky').show()
-      if ($(this).get(0).naturalWidth > minimum) $(this).width('100%')
+      if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
       else if ($(this).get(0).naturalWidth < maximum) {
-          $(this).width(99).addClass('expand').css('margin','10px')
+          $(this).width(99).addClass('default').css('margin','10px')
           .parents('.item')
           .find('.classic').css({
             'display': 'flex',
