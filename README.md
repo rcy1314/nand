@@ -14,15 +14,15 @@
 
 * category Legacy
 
-* op<br>
-&ensp;&ensp; invert = 0<br>
-&ensp;&ensp; opposite = 1
+* op color scheme<br>
+&ensp;&ensp; invert = 0 (default)<br>
+&ensp;&ensp; opposite = 1 (contrast)
 
 * buffer integer<br>
-&ensp;&ensp; listing suggestions.
+&ensp;&ensp; listing (total) suggestions with response.
 
 * contrast (/?+1)<br>
-&ensp;&ensp; Opposite of op.
+&ensp;&ensp; Opposite of op (applies contrast).
 
 * onlyImages boolean<br>
 &ensp;&ensp; filter feeds with Images.
@@ -31,7 +31,7 @@
 &ensp;&ensp; Display quick feeds on visit.
 
 * loading string<br>
-&ensp;&ensp; percent or dots.
+&ensp;&ensp; percent or dots used by init.js and core.js.
 
 * translations array<br>
 &ensp;&ensp; Choice to reorder.
@@ -50,34 +50,34 @@
 
   * Query Example
   > /?q=example+query<br>
-    &emsp;filter response passthrough and bing search results.
+    &emsp;filter response no passthrough from init.js (fails to bing search results).
 
   * Hash Example
   > /?hash (in head.js)<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
     &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.<br>
-    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1a</b> loads guide with progress with contrast to op.
+    &emsp;&emsp;&emsp;&emsp; /?<b>uXaZjk1+1</b> loads guide with progress with contrast to op.
     
   * Feed Example
   > /?q=&unique-identifier<br>
     &emsp;falls back to query, fails to xml search.<br>
     &emsp;/?q=&hash (not found filter response).<br>
-    &emsp;/?q=&abc-technology (found unique passthrough).<br>
-    &emsp;/?q=&technology (translation found populate).<br>
     &emsp;/?q=&tech (menu objects found filter response).<br>
+    &emsp;/?q=&technology (translation found populate).<br>
+    &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
     &emsp;/?q=&jquery (not found pass through xml search).<br>
 
 ### Head.js has multiple indices for objects
  
   * These need to be fufilled to added a object.<br>
-  > id: unique (plain text) indexed.<br>
+  > id: unique (stripped to plain text) (indexed).<br>
     cat: translation (indexed).<br>
     des: plain text (indexed).<br>
     uri: endpoint used by xml in base.js<br>
-    ext: external blank exit<br>
-    hash: unique alphanumeric two character indexed by init.js<br>
-    media: xml parsing for images (boolean) indexed in onlyImages<br>
+    ext: external blank exit to new tab (a href)<br>
+    hash: unique alphanumeric two characters indexed by init.js<br>
+    media: xml parsing for images (boolean) indexed by onlyImages<br>
 
 >> (indexed) by response
 
@@ -100,9 +100,9 @@
 Want to Contribute?
 ----
 
-File and issue!
-Submit a feed!
-Give a star!
+File and issue!<br>
+Submit a feed!<br>
+Give a star!<br>
 
 License
 ----
