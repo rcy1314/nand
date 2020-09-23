@@ -19,22 +19,22 @@
     opposite = 1
 
   * buffer integer
-  > listing suggestions.
+ >> listing suggestions.
 
   * contrast (/+1)
-  > Opposite of op.
+ >> Opposite of op.
 
   * onlyImages boolean
-  > filter Only feeds with Images.
+ >> filter Only feeds with Images.
 
   * quickFeeds boolean
-  > Display quick feeds on visit.
+ >> Display quick feeds on visit.
 
   * loading string
-  > percent or dots.
+ >> percent or dots.
 
   * translations array
-  > Choice to reorder.
+ >> Choice to reorder.
 
 ### Init.js Unique URI Identifier
 
