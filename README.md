@@ -36,7 +36,7 @@
 * translations array<br>
 &ensp;&ensp; Choice to reorder.
 
-### Init.js Unique URI Identifier
+### Init.js Unique URI Identifying.
 
   Init.js does some handling of location.
 
@@ -68,7 +68,7 @@
     &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
     &emsp;/?q=&jquery (not found pass through xml search).<br>
 
-### Head.js has multiple indices for objects
+### Head.js has multiple indices for objects.
  
   * These need to be fufilled to added a object.<br>
   > id: unique (stripped to plain text) (indexed).<br>
