@@ -65,13 +65,15 @@
 ### Head has multiple indices for objects
  
   * These need to be fufilled.<br>
-  > id:&emsp;&emsp;   unique (plain text) indexed.<br>
+  > id: unique (plain text) indexed.<br>
     cat: translation (indexed).<br>
     des: plain text (indexed).<br>
     uri: endpoint<br>
     ext: external blank exit<br>
     hash: unique alphanumeric two charcter<br>
-    media: xml parsing for images (boolean)<br>
+    media: xml parsing for images (boolean) used in onlyImages<br>
+
+>> indexed by response
 
 ### Invert
 
