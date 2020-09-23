@@ -2,7 +2,6 @@ $(document)
   .ready(function() {
     $('#input').css('display', 'block')
     $('input[type=text]').attr('tabindex', -1).focus()
-    if (location.hostname === "localhost") alert('local')
     $('html body #wrapper #container #main').on('scroll touchmove', function (){
       if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 350 &&
           reader == true && first == false && stop == true){
@@ -126,7 +125,8 @@ $(document)
     $('html body #wrapper #container #main #visit').hide()
     populate(category)
   })
-  .on('touch click', 'html body #wrapper #container #main #top #arm #option .fa-sun',
+  .on('touch click', 'html body #wrapper #container #main #option .fa-sun, ' +
+  'html body #wrapper #container #main #top #arm #option .fa-sun',
   function(e) {
     if (!location.href.match('\\+1') && !location.href.match('\\?\\+1')) {
       var uri = window.location.href + '?+1'

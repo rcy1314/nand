@@ -31,19 +31,19 @@ html body #wrapper #container #main #feed .center .channel .item .classic .fill 
   display: flex;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-map,
-html body #wrapper #container #main #top #arm #option .fa-heart,
-html body #wrapper #container #main #top #arm #option .fa-heart-o,
-html body #wrapper #container #main #top #arm #option .fa-sun {
+html body #wrapper #container #main #option .fa-map,
+html body #wrapper #container #main #option .fa-heart,
+html body #wrapper #container #main #option .fa-heart-o,
+html body #wrapper #container #main #option .fa-sun {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
   font-size: 17px;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-home,
-html body #wrapper #container #main #top #arm #option .fa-code,
-html body #wrapper #container #main #top #arm #option .fa-terminal {
+html body #wrapper #container #main #option .fa-home,
+html body #wrapper #container #main #option .fa-code,
+html body #wrapper #container #main #option .fa-terminal {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 15px;
@@ -66,31 +66,31 @@ html body #wrapper #container #main #feed .center .channel .item .classic .wrap 
   padding: 5px !important;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-home:before {
+html body #wrapper #container #main #option .fa-home:before {
   font-family: FontAwesome;
   content: "\f015";
   font-weight: 50;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-map:before {
+html body #wrapper #container #main #option .fa-map:before {
   font-family: FontAwesome;
   content: "\f279";
   font-weight: 50;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-sun:before {
+html body #wrapper #container #main #option .fa-sun:before {
   font-family: FontAwesome;
   content: "\f185";
   font-weight: 50;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-terminal:before {
+html body #wrapper #container #main #option .fa-terminal:before {
   font-family: FontAwesome;
   content: "\f120";
   font-weight: 50;
 }
 
-html body #wrapper #container #main #top #arm #option .fa-code:before {
+html body #wrapper #container #main #option .fa-code:before {
   font-family: FontAwesome;
   content: "\f121";
   font-weight: 50;
@@ -110,7 +110,7 @@ html body #wrapper #container #main #feed .center .channel .item .classic .wrap 
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart-o:before,
-html body #wrapper #container #main #top #arm #option .fa-heart-o:before,
+html body #wrapper #container #main #option .fa-heart-o:before,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o:before {
   font-family: FontAwesome;
   content: "\f08a";
@@ -177,14 +177,14 @@ html body #wrapper #container #main #feed .center .channel .item .header .fa-ell
 }
 
 html body #wrapper #container .sticky .heart:before,
-html body #wrapper #container #main #top #arm #option .heart:before,
+html body #wrapper #container #main #option .heart:before,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart:before {
   font-family: FontAwesome;
   content: "\f004";
 }
 
 html body #wrapper #container #guide .sticky .tag .fa-heart,
-html body #wrapper #container #main #top #arm #option .fa-heart,
+html body #wrapper #container #main #option .fa-heart,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart {
   color: lightcoral !important;
 }
@@ -362,7 +362,7 @@ html body #wrapper #container #main #top #arm #search #home:active {
   color: #666 !important;
 }
 
-html body #wrapper #container #main #top #arm #option {
+html body #wrapper #container #main #option {
   justify-content: space-between;
   background-color: transparent;
   position: absolute;

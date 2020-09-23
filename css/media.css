@@ -14,8 +14,8 @@
     display: none;
   }
 
-  html body #wrapper #container #main #visit #page #front {
-    top: 200px;
+  html body #wrapper #container #main #visit #page #handle {
+    height: 350px;
   }
 
   html body #wrapper #container #main #page,
@@ -43,7 +43,7 @@
     border: none;
   }
 
-  html body #wrapper #container #main #top #arm #option {
+  html body #wrapper #container #main #option {
     width: calc(100% - 20px);
     top: calc(100% - 50px);
     position: fixed;
@@ -140,6 +140,25 @@
 
 @media screen and (min-width: 768px) {
 
+  html body #wrapper #container #main #option .fa-map,
+  html body #wrapper #container #main #option .fa-heart,
+  html body #wrapper #container #main #option .fa-heart-o,
+  html body #wrapper #container #main #option .fa-home,
+  html body #wrapper #container #main #option .fa-code,
+  html body #wrapper #container #main #option .fa-terminal {
+    display: none;
+  }
+
+  html body #wrapper #container #main #top #arm #option .fa-map,
+  html body #wrapper #container #main #top #arm #option .fa-heart,
+  html body #wrapper #container #main #top #arm #option .fa-heart-o,
+  html body #wrapper #container #main #top #arm #option .fa-home,
+  html body #wrapper #container #main #top #arm #option .fa-code,
+  html body #wrapper #container #main #top #arm #option .fa-terminal {
+    display: block;
+  }
+
+
   html body #wrapper #container #main #top {
     width: 100%;
   }
@@ -149,6 +168,7 @@
   }
 
   html body #wrapper #container #main #top #arm #option {
+    position: absolute;
     right: -42px;
   }
 

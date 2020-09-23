@@ -281,9 +281,9 @@ var progress = function(done, n) {
     if (done == true) {
       $('#progressBar').css({
         '-webkit-transition-delay': '0s',
-        '-webkit-transition': '1s',
+        '-webkit-transition': '.75s',
         '-moz-transition-delay': '0s',
-        '-moz-transition': '1s'
+        '-moz-transition': '.75s'
       }).width(n + '%')
       $('#progressBar').on(
         'transitionend webkitTransitionEnd oTransitionEnd',
