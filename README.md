@@ -60,8 +60,12 @@
     
   * Feed Example
   > /?q=&unique-identifier<br>
-    &emsp;?q=&abc-technology<br>
-    &emsp;falls back to query, fails to xml search.
+    &emsp;falls back to query, fails to xml search.<br>
+    &emsp;/?q=&hash (not found filter response).<br>
+    &emsp;/?q=&abc-technology (found unique passthrough).<br>
+    &emsp;/?q=&technology (translation found populate).<br>
+    &emsp;/?q=&tech (menu objects found filter response).<br>
+    &emsp;/?q=&jquery (not found pass through xml).<br>
 
 ### Head.js has multiple indices for objects
  
