@@ -46,20 +46,32 @@
 
   * Translation Example
   > /?q=translation
+    &emsp;/?q=technology
 
   * Query Example
   > /?q=example+query
+    &emsp;filter passthrough and bing search results
 
   * Hash Example
   > /?hash (in head.js)<br>
-    &emsp;/?uX <br>
-    &emsp;/Used in Copy Post appends time converted to base 36.<br>
-    &emsp;/example: /?uX<b>aZjk1</b><br> loads guide
+    &emsp;?uX <br>
+    &emsp;Used in Copy Post appends time converted to base 36.<br>
+    &emsp;example: /?uX<b>aZjk1</b><br> loads guide with progress.
     
   * Feed Example
   > /?q=&unique-identifier
+    &emsp;?q=&abc-technology
 
-
+### Head has multiple indices for objects
+ 
+  * These need to be fufilled.
+  > id:&emsp;&emsp;unique (plain text) indexed.
+  > cat:&emsp;&emsp;translation (indexed).
+  > des:&emsp;&emsp;plain text (indexed).
+  > uri:&emsp;&emsp;endpoint
+  > ext:&emsp;&emsp;external blank exit
+  > hash:&emsp;&emsp;unique alphanumeric two charcter
+  > media:&emsp;&emsp;xml parsing for images (boolean)
 
 ### Invert
 
