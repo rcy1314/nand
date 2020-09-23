@@ -87,8 +87,7 @@ var visual = function(n) {
     $('.fa, .fas, .images').css('color','#fff')
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
-    $('html body #wrapper #container, ' +
-      'html body #wrapper #container #guide .sticky .wrap, ' +
+    $('html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container #main #top, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
@@ -101,7 +100,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
 
-    $('html body #wrapper #container #main, ' +
+    $('html body #wrapper #container, ' + 
+	  'html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #feed .center .channel , ' +
       'html body #wrapper #container #main #group .air .populate, ' +

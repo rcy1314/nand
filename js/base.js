@@ -12,6 +12,7 @@ var translations =
 /* Feel free to edit the above. */
 
 var id
+var post
 var tap = 0
 var complete
 nextAngle = 0
@@ -419,7 +420,7 @@ var air = function(n) {
         "</div>"
       )
   }
-  $('html body #wrapper #container #main #group').focus()
+  $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
   $.unloading()
   visual()
 })
@@ -613,7 +614,6 @@ var xml = function(e, s, n) {
 
   id = n
   obj = []
-  var post
   var local
   var pub = []
   var src = ''
@@ -933,7 +933,7 @@ var xml = function(e, s, n) {
       "  </div>" +
       "</div>"
     )
-    $('html body #wrapper #container #main #feed').focus()
+    $('html body #wrapper #container #main #feed').attr('tabindex', -1).focus()
     content(n, recent, oldest, posts)
     suggest()
     clearInterval(complete)

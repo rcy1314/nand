@@ -35,11 +35,12 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         })
 
       else {
-
         $(document)
+
           .ready(function() {
-            $.loading()
-            $('html body #wrapper #container #main #top').show()
+
+			$.loading()
+			$('html body #wrapper #container #main #option').hide()
             response(true,
                      false,
                      menu[i].id.space(),
@@ -72,7 +73,6 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-      $.loading()
         $('html body #wrapper #container #main #top').show()
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(false, false, uri[0], false)

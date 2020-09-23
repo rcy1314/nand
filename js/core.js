@@ -18,7 +18,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
 $.loading = function () {
 
-  $('html body #wrapper #container #main #top').show()
   if (reader == false) {
     $('html body #wrapper #container #main #feed, ' +
       'html body #wrapper #container #main #group').remove()

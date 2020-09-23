@@ -164,20 +164,21 @@
   }
 
   html body #wrapper #container #main #top #arm {
-    width: 90%;
+    width: 100%;
   }
 
   html body #wrapper #container #main #top #arm #option {
     position: absolute;
-    right: -42px;
+    right: 0;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-	left: -15px;
+	left: 10px;
   }
 
   html body #wrapper #container #main #feed .center {
-    width: 660px;
+	margin-right: 35px;
+    width: 590px;
   }
 
   html body #wrapper #container ##main #feed .content .status {
@@ -195,6 +196,63 @@
 
 }
 
+@media screen and (min-width: 769px) {
+
+  html body #wrapper #container #main #option .fa-map,
+  html body #wrapper #container #main #option .fa-heart,
+  html body #wrapper #container #main #option .fa-heart-o,
+  html body #wrapper #container #main #option .fa-home,
+  html body #wrapper #container #main #option .fa-code,
+  html body #wrapper #container #main #option .fa-terminal {
+    display: none;
+  }
+
+  html body #wrapper #container #main #top #arm #option .fa-map,
+  html body #wrapper #container #main #top #arm #option .fa-heart,
+  html body #wrapper #container #main #top #arm #option .fa-heart-o,
+  html body #wrapper #container #main #top #arm #option .fa-home,
+  html body #wrapper #container #main #top #arm #option .fa-code,
+  html body #wrapper #container #main #top #arm #option .fa-terminal {
+    display: block;
+  }
+
+
+  html body #wrapper #container #main #top {
+    width: 100%;
+  }
+
+  html body #wrapper #container #main #top #arm {
+    width: 90%;
+  }
+
+  html body #wrapper #container #main #top #arm #option {
+    position: absolute;
+    right: 15px;
+  }
+
+  html body #wrapper #container #main #top #arm #search #home {
+	left: -15px;
+  }
+
+  html body #wrapper #container #main #feed .center {
+	margin-right: 20px;
+    width: 590px;
+  }
+
+  html body #wrapper #container ##main #feed .content .status {
+    width: 280px;
+  }
+
+  html body #wrapper #container #main #visit #page {
+    top: -125px;
+  }
+
+  html body #wrapper #container #main #visit #page .quick {
+	width: 686px;
+	left: 4px;
+  }
+
+}
 @media screen and (min-width: 1024px) {
 
   html body #wrapper #container {
