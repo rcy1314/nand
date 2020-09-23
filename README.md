@@ -12,28 +12,28 @@
 
 ### Config in base.js
 
-  * category Legacy
+* category Legacy
 
-  * op<br>
+* op<br>
  >> invert = 0
     opposite = 1
 
-  * buffer integer
+* buffer integer
  >> listing suggestions.
 
-  * contrast (/+1)
- >> Opposite of op.
+* contrast (/+1)
+>> Opposite of op.
 
-  * onlyImages boolean
+* onlyImages boolean
  >> filter Only feeds with Images.
 
-  * quickFeeds boolean
+* quickFeeds boolean
  >> Display quick feeds on visit.
 
-  * loading string
+* loading string
  >> percent or dots.
 
-  * translations array
+* translations array
  >> Choice to reorder.
 
 ### Init.js Unique URI Identifier
@@ -61,7 +61,7 @@
   * Feed Example
   > /?q=&unique-identifier<br>
     &emsp;?q=&abc-technology<br>
-    &emsp:falls back to query, fails to xml search.
+    &emsp;falls back to query, fails to xml search.
 
 ### Head.js has multiple indices for objects
  
