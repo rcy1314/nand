@@ -15,26 +15,26 @@
 * category Legacy
 
 * op<br>
- >> invert = 0
-    opposite = 1
+&emsp;&emsp; invert = 0<br>
+&emsp;&emsp; opposite = 1
 
 * buffer integer
- >> listing suggestions.
+&emsp;&emsp; listing suggestions.
 
 * contrast (/+1)
->> Opposite of op.
+&emsp;&emsp; Opposite of op.
 
 * onlyImages boolean
- >> filter Only feeds with Images.
+&emsp;&emsp; filter Only feeds with Images.
 
 * quickFeeds boolean
- >> Display quick feeds on visit.
+&emsp;&emsp; Display quick feeds on visit.
 
 * loading string
- >> percent or dots.
+&emsp;&emsp; percent or dots.
 
 * translations array
- >> Choice to reorder.
+&emsp;&emsp; Choice to reorder.
 
 ### Init.js Unique URI Identifier
 
