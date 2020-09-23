@@ -17,7 +17,7 @@
 
 * op boolean<br>
 >&emsp; invert = 0 [default]<br>
- &emsp;opposite = 1 [contrast]
+ &emsp; opposite = 1 [contrast]
 
 * buffer integer<br>
 >&emsp; listing (total) suggestions with response.
@@ -46,12 +46,12 @@
     /uri+1
 
   * Translation Example
-  > /?q=<b>translation</b><br>
+  > /?q=(translation)</b><br>
     /?q=technology
 
   * Query Example
   > /?q=example+query<br>
-    filter response no passthrough from init.js (fails to bing search results).
+    &ensp;&ensp;filter response no passthrough from init.js (fails to bing search results).
 
   * Hash Example
   > /?(hash) (in head.js)<br>
@@ -63,7 +63,7 @@
   * Feed Example
   > /?q=&unique-identifier<br>
     &emsp;falls back to query, fails to xml search.<br>
-    &emsp;/?q=&(hash) (not found filter response).<br>
+    &emsp;/?q=&(hash) (not supported filter response).<br>
     &emsp;/?q=&tech (menu objects found filter response).<br>
     &emsp;/?q=&technology (translation found populate).<br>
     &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
@@ -77,10 +77,10 @@
     des: plain text (indexed).<br>
     uri: endpoint used by xml in base.js<br>
     ext: external blank exit to new tab (a href)<br>
-    hash: unique alphanumeric two characters indexed by init.js<br>
-    media: xml parsing for images (boolean) indexed by onlyImages<br>
+    hash: unique alphanumeric two characters indexed by init.js (indexed).<br>
+    media: xml parsing for images (boolean) indexed by onlyImages.<br>
 
->> (indexed) by response
+>> (indexed) by response in base.js
 
 ### Invert
 
