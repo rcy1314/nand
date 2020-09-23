@@ -56,8 +56,8 @@
   > /?hash (in head.js)<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
-    &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.
-    &emsp;&emsp; /?uXaZjk1+1<b>aZjk1</b> loads guide with progress with contrast to op.
+    &emsp;example: /?uX<b>aZjk1</b> loads guide with progress.<br>
+    &emsp;&emsp; /?<b>uXaZjk1+1a</b> loads guide with progress with contrast to op.
     
   * Feed Example
   > /?q=&unique-identifier<br>
