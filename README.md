@@ -22,7 +22,7 @@
 * buffer integer<br>
 >&emsp; listing (total) suggestions with response.
 
-* contrast (/?+1)<br>
+* contrast [/?+1]<br>
 >&emsp; Opposite of op (applies contrast).
 
 * onlyImages boolean<br>
@@ -42,11 +42,11 @@
   Init.js does some handling of location.
 
   * Contrast Example
-  > /?+1 (root)<br>
+  > /?+1 [root]<br>
     /uri+1
 
   * Translation Example
-  > /?q=(translation)</b><br>
+  > /?q=[translation]</b> in base.js<br>
     /?q=technology
 
   * Query Example
@@ -54,7 +54,7 @@
     &ensp;&ensp;filter response no passthrough from init.js (fails to bing search results).
 
   * Hash Example
-  > /?(hash) (in head.js)<br>
+  > /?[hash] (in head.js)<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
     &emsp;/?uX<b>aZjk1</b> &emsp; &emsp;loads guide() with progress() and image() in base.js<br>
@@ -80,7 +80,7 @@
     hash: unique alphanumeric two characters indexed by init.js (indexed).<br>
     media: xml parsing for images (boolean) indexed by onlyImages.<br>
 
->> (indexed) by response in base.js
+>> (indexed) by response() in base.js
 
 ### Invert
 
