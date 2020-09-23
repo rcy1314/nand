@@ -41,6 +41,7 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
 			$.loading()
 			$('html body #wrapper #container #main #option').hide()
+      $('html body #wrapper #container #main #top #arm #option').show()
             response(true,
                      false,
                      menu[i].id.space(),
