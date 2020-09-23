@@ -63,7 +63,7 @@
   * Feed Example
   > /?q=&unique-identifier<br>
     &emsp;falls back to query, fails to xml search.<br>
-    &emsp;/?q=&(hash) (not supported filter response).<br>
+    &emsp;/?q=&[hash] (not supported filter response).<br>
     &emsp;/?q=&tech (menu objects found filter response).<br>
     &emsp;/?q=&technology (translation found populate).<br>
     &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
@@ -71,7 +71,7 @@
 
 ### Head.js has multiple indices for objects.
 
-  * These need to be fufilled to added a object.<br>
+  * These need to be fufilled to add an object.<br>
   > id: unique (stripped to plain text) (indexed).<br>
     cat: translation (indexed).<br>
     des: plain text (indexed).<br>
