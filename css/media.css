@@ -92,8 +92,8 @@
 
   html body #wrapper #container #main #visit #page .quick {
       position: absolute;
-      width: 320px;
-      left: 20px;
+      width: 280px;
+      left: 50px;
       top: 150px;
   }
 
