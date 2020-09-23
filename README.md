@@ -15,7 +15,7 @@
   * category Legacy
 
   * op<br>
-  > invert = 0
+ >> invert = 0
     opposite = 1
 
   * buffer integer
@@ -36,7 +36,7 @@
   * translations array
   > Choice to reorder.
 
-### Init Unique URI Identifier
+### Init.js Unique URI Identifier
 
   Init.js does some handling of location.
 
@@ -63,7 +63,7 @@
     &emsp;?q=&abc-technology<br>
     &emsp:falls back to query, fails to xml search.
 
-### Head has multiple indices for objects
+### Head.js has multiple indices for objects
  
   * These need to be fufilled.<br>
   > id: unique (plain text) indexed.<br>
