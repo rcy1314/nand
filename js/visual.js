@@ -96,7 +96,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text], ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #main #feed .center .quick .feed')
+      'html body #wrapper #container #main #feed .center .quick .feed, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
 
     $('html body #wrapper #container, ' +
@@ -111,9 +113,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #feed .center .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .left, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
+      'html body #wrapper #container #main #feed .center .quick .left')
       .addClass('invertAlt').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
     $(':root').css({
       '--loader-color-primary': '#0078D4',

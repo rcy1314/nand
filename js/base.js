@@ -480,7 +480,7 @@ var response = function(passthrough, uri, n, bloat) {
         $('html body #wrapper #container #main #visit').hide()
         $('html body #wrapper #container #main').append(
           "<div id='group'>" +
-          "  <div class='result' style='display:none'>" +
+          "  <div class='result'>" +
           "  </div>" +
           "</div>"
         )

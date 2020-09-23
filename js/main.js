@@ -656,13 +656,17 @@ $(document)
         }
       } else {
         if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length) {
+          $.loading()
           $('html body #wrapper #container #main #top').show()
+          $('html body #wrapper #container #main #visit').hide()
           response(
-            true,
+            false,
             false,
             $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val(),
-            false
+            true
           )
+          var uri = '?q=' + $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().replace(/\s/g, '+')
+          uri.define().state()
 
         }
       }
