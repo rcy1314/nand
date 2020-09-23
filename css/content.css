@@ -677,6 +677,10 @@ html body #wrapper #container #main #group .result {
   width: 100%;
 }
 
+html body #wrapper #container #main #group .result {
+  margin-bottom: 50px;
+}
+
 html body #wrapper #container #main #feed .content .status .filter {
   margin-left: 15px;
 }
