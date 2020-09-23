@@ -12,37 +12,37 @@
 
 ### Config in base.js
 
-* op
-  invert = 0,
-  opposite = 1
+* op<br>
+> invert = 0,<br>
+  opposite = 1<br>
 
-* category Legacy
+* category Legacy<br>
 
-* buffer integer
-  listing suggestions
+* buffer integer<br>
+> listing suggestions<br>
 
-* contrast (/+1)
-  Opposite of op
+* contrast (/+1)<br>
+> Opposite of op
 
-* onlyImages boolean
-  filter Only feeds with Images
+* onlyImages boolean<br>
+> filter Only feeds with Images
 
-* quickFeeds boolean
-  Display quick feeds on visit
+* quickFeeds boolean<br>
+> Display quick feeds on visit<br>
 
-* loading string
-  percent or dots
+* loading string<br>
+> percent or dots<br>
 
-* translations array
-  Choice to reorder
-
+* translations array<br>
+> Choice to reorder<br>
 
 ### Init Unique URI Identifier
 
   Init.js does some handling of location.
 
   * Contrast Example
-  > /?+1 (root) /uri+1
+  > /?+1 (root)
+    &emsp;/uri+1
 
   * Translation Example
   > /?q=translation
