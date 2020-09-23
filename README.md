@@ -52,7 +52,7 @@
 
   * Hash Example
   > /?hash (in head.js)<br>
-    /?uX <br>
+    &ensp;/?uX <br>
     Used in Copy Post appends time converted to base 36.<br>
     example: /?uX<b>aZjk1</b><br> loads guide
     
