@@ -74,10 +74,9 @@ if (location.search.split('?q=')[1]) {
   $(document)
     .ready(function() {
 
-        $.loading()
         $('html body #wrapper #container #main #top').show()
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
-        else if (!uri[1]) response(true, false, uri[0], false)
+        else if (!uri[1]) response(true, false, uri[0], true)
         else if (uri[1]) response(true, uri[0], uri[1], false)
 
     })

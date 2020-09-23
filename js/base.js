@@ -430,10 +430,10 @@ var response = function(passthrough, uri, n, bloat) {
   id = false
   filter = []
   exact = false
+  $('html body #wrapper #container #main #visit').hide()
     if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
       $(document).ready(function() {
-        $('html body #wrapper #container #main #visit').hide()
         populate(n.capitalize())
         $.unloading()
       })
@@ -475,6 +475,11 @@ var response = function(passthrough, uri, n, bloat) {
       }
     }
     if (!id) id = filter[0]
+    if (filter.length == 0) {
+      xml('search', n, 0, null)
+    } else {
+      passthrough = false
+    }
     if (passthrough == false) {
       $(document).ready(function() {
         $('html body #wrapper #container #main #visit').hide()
@@ -496,10 +501,7 @@ var response = function(passthrough, uri, n, bloat) {
         xml(null, null, id)
       }
     }
-    if (filter.length == 0) {
-      xml('search', n, 0, null)
-    }
-    if (bloat == true) {
+    if (passthrough == false && bloat == true) {
       populate(menu[id].cat)
     }
 
