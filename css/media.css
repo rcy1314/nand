@@ -218,7 +218,7 @@
 
 
   html body #wrapper #container #main #top {
-    width: 100%;
+    width: calc(100% - 16px);
   }
 
   html body #wrapper #container #main #top #arm {
