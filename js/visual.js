@@ -18,7 +18,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
-      'html body #wrapper #container #main .content .status .populate, ' +
+      'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
@@ -48,8 +48,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
-    $('html body #wrapper #container #main .content .suggestions .radial')
-      .removeClass('suggestInvert').addClass('suggestOpposite')
     $('html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -157,7 +155,6 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('oppositeScrollbar').addClass('invertScrollbar').css('border', '.3px solid #ddd')
-    $('html body #wrapper #container #main .content .suggestions .radial').removeClass('suggestOpposite').addClass('suggestInvert')
     $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
     $('html body #wrapper #container #main #feed .center .item .addComment .post').css('color','dodgerblue')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')

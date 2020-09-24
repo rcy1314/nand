@@ -43,9 +43,9 @@
 
   html body #wrapper #container #main #page,
   html body #wrapper #container #main #visit {
-   height: 100%;
-   width: 100%;
-   top: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
   }
 
   html body #wrapper #container #main #top,
@@ -113,10 +113,10 @@
   }
 
   html body #wrapper #container #main #visit #page .quick {
-      position: absolute;
-      width: 280px;
-      left: 50px;
-      top: 150px;
+    position: absolute;
+    width: 280px;
+    left: 50px;
+    top: 150px;
   }
 
 }
@@ -165,14 +165,13 @@
 
 @media screen and (min-width: 768px) {
 
-  html body #wrapper #container #main .content,
   html body #wrapper #container #main #option .fa-map,
   html body #wrapper #container #main #option .fa-heart,
   html body #wrapper #container #main #option .fa-heart-o,
   html body #wrapper #container #main #option .fa-home,
   html body #wrapper #container #main #option .fa-code,
   html body #wrapper #container #main #option .fa-terminal {
-    display: none !important;
+    display: none;
   }
 
   html body #wrapper #container #main #top #arm #option .fa-map,
@@ -181,7 +180,7 @@
   html body #wrapper #container #main #top #arm #option .fa-home,
   html body #wrapper #container #main #top #arm #option .fa-code,
   html body #wrapper #container #main #top #arm #option .fa-terminal {
-    display: block !important;
+    display: block;
   }
 
   html body #wrapper #container #main #top #arm #search .fa-map {
@@ -214,12 +213,9 @@
   }
 
   html body #wrapper #container #main #feed .center {
-	margin-right: 35px;
-    width: 590px;
-  }
-
-  html body #wrapper #container ##main #feed .content .status {
-    width: 280px;
+	  margin-right: 30px;
+    width: 390px;
+    left: -10px;
   }
 
   html body #wrapper #container #main #visit #page {
@@ -227,8 +223,8 @@
   }
 
   html body #wrapper #container #main #visit #page .quick {
-	width: 686px;
-	left: 4px;
+  	width: 686px;
+	  left: 4px;
   }
 
 }
@@ -254,7 +250,6 @@
     display: block;
   }
 
-
   html body #wrapper #container #main #top {
     width: calc(100% - 16px);
   }
@@ -269,7 +264,7 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-	left: -15px;
+	  left: -15px;
   }
 
   html body #wrapper #container #main #feed .center {
@@ -277,8 +272,8 @@
     width: 590px;
   }
 
-  html body #wrapper #container ##main #feed .content .status {
-    width: 280px;
+  html body #wrapper #container ##main #feed .content {
+    display: block;
   }
 
   html body #wrapper #container #main #visit #page {
@@ -286,8 +281,8 @@
   }
 
   html body #wrapper #container #main #visit #page .quick {
-	width: 686px;
-	left: 4px;
+	  width: 686px;
+	  left: 4px;
   }
 
 }
@@ -318,7 +313,7 @@
   }
 
   html body #wrapper #container #main #top #arm #search #home {
-    left: -20px;
+    left: -35px;
   }
 
   html body #wrapper #container #main #top #arm #option {

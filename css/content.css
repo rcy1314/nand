@@ -503,7 +503,7 @@ html body #wrapper #container #main #visit #page #front #first {
   position: relative;
   margin: 0 auto;
   display: none;
-  width: 750px;
+  width: 715px;
   z-index: 1;
 }
 
@@ -575,7 +575,7 @@ html body #wrapper #container #main #visit #page #front .focus {
   padding-right: 75px;
   position: relative;
   margin: 0 auto;
-  width: 680px;
+  width: 640px;
 }
 
 html body #wrapper #container #main #visit #page #front .focus input[type=text] {
@@ -1256,6 +1256,7 @@ html body #wrapper #container #main #feed .center {
 }
 
 html body #wrapper #container #main #feed .content {
+  background: transparent;
   display: inline-block;
   height: fit-content;
   vertical-align: top;
@@ -1267,6 +1268,7 @@ html body #wrapper #container #main #feed .content {
 }
 
 html body #wrapper #container #main #feed .content .status {
+  background: transparent;
   position: relative;
   font-size: 10px;
 }
