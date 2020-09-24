@@ -2,6 +2,7 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
+    $('div').css('color','#f7f7f7')
     $('html body #wrapper #container #main #top #arm #search .fa-map, ' +
       'html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
@@ -85,6 +86,7 @@ var visual = function(n) {
     $('.fa, .fas, .images').css('color','#fff')
     $('#favicon').attr('href', 'images/Opposite.ico')
   } else if (op == 0) {
+    $('div').css('color','#444444')
     $('html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
