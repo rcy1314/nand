@@ -215,6 +215,7 @@ $(document)
     id = 0
   	$.loading()
     reader = true
+    onlyImages = true
     category = $(this).attr('aria-item')
     $('html body #wrapper #container #main #option .fa-heart-o').toggleClass('fa-heart-o fa-heart')
     $('html body #wrapper #container #main #option .fa-sun').hide()
