@@ -46,19 +46,12 @@ $(document)
     'html body #wrapper #container #main #top #option',
     function(e) {
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #top #arm #search input[type=text]')
-          .css({
-            'text-align': 'center',
-            'padding-left': '0'
-          }).blur().val('Search')
-        $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
+        $('html body #wrapper #container #main #top #arm #search input[type=text]').blur()
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
-        if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length == 0 ||
-          $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val() == 'Search')
-        $('html body #wrapper #container #main #visit #page #front .focus .icon').removeClass('search')
+        $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').blur()
+        $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
    })
   .on('touch click', 'html body #wrapper #container #main #option .fa-map', function(e) {
