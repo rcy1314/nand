@@ -43,9 +43,9 @@ $.loading = function () {
     complete = setInterval(function() {
       $('#progressBar').css({
         '-webkit-transition-delay': '0s',
-        '-webkit-transition': '.75s',
+        '-webkit-transition': '.95s',
         '-moz-transition-delay': '0s',
-        '-moz-transition': '.75s'
+        '-moz-transition': '.95s'
       }).width($('#progressBar').width() +
         Math.floor(Math.random() * (100 - width) + width))
     }, 750)

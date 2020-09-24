@@ -75,11 +75,14 @@
     width: 32%;
   }
 
+  html body #wrapper #container #main #visit #page #front #first {
+    width: 300px;
+  }
+
   html body #wrapper #container #main #visit #page #front #first .listing {
     position: relative;
     padding-left: 0;
     margin: 0 auto;
-    width: 300px;
     top: -155px;
   }
 

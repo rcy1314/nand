@@ -282,9 +282,9 @@ var progress = function(done, n) {
     if (done == true) {
       $('#progressBar').css({
         '-webkit-transition-delay': '0s',
-        '-webkit-transition': '.75s',
+        '-webkit-transition': '.95s',
         '-moz-transition-delay': '0s',
-        '-moz-transition': '.75s'
+        '-moz-transition': '.95s'
       }).width(n + '%')
       $('#progressBar').on(
         'transitionend webkitTransitionEnd oTransitionEnd',
@@ -928,7 +928,7 @@ var xml = function(e, s, n) {
         stop = true
       }
     }
-    if (reader == false)
+    if (reader == false && n != 0)
     $('html body #wrapper #container #main .center').append(
       "<div id='bottom'>" +
       "  <div class='back btn' aria-item='" + $.back() + "''>" +

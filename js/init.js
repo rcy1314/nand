@@ -38,10 +38,8 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
         $(document)
 
           .ready(function() {
-
-			$.loading()
-			$('html body #wrapper #container #main #option').hide()
-      $('html body #wrapper #container #main #top #arm #option').show()
+            $('html body #wrapper #container #main #option').hide()
+            $('html body #wrapper #container #main #top #arm #option').show()
             response(true,
                      false,
                      menu[i].id.space(),
@@ -73,9 +71,15 @@ if (location.search.split('?q=')[1]) {
 
   $(document)
     .ready(function() {
-
-        $.loading()
-        return false
+        var width = $('html body #wrapper #container #main').width() / 30
+        complete = setInterval(function() {
+          $('#progressBar').css({
+            '-webkit-transition-delay': '0s',
+            '-webkit-transition': '.95s',
+            '-moz-transition-delay': '0s',
+            '-moz-transition': '.95s'
+          }).width($('#progressBar').width() + Math.floor(Math.random() * (100 - width) + width))
+        }, 750)
         $('html body #wrapper #container #main #top').show()
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(true, false, uri[0], true)
