@@ -498,12 +498,13 @@ html body #wrapper #container #main #visit #page #front {
   position: relative;
   margin: 0 auto;
   display: block;
-  width: 100%;
 }
 
 html body #wrapper #container #main #visit #page #front #first {
   position: relative;
+  margin: 0 auto;
   display: none;
+  width: 750px;
   z-index: 1;
 }
 
@@ -570,38 +571,39 @@ html body #wrapper #container #main #visit #page #front #first .listing .hover .
 html body #wrapper #container #main #visit #page #front .focus {
   background-color: transparent;
   height: 39.5px !important;
+  border-radius: 6px;
   white-space: nowrap;
   padding-right: 75px;
   position: relative;
+  margin: 0 auto;
+  width: 680px;
 }
 
 html body #wrapper #container #main #visit #page #front .focus input[type=text] {
-  height: 39.6px !important;
-  caret-color: transparent;
-  width: calc(100%);
+  height: 39.5px !important;
   display: inline-block;
   padding-left: 40px;
   position: relative;
-  border-radius: 2px;
+  border-radius: 6px;
   text-align: center;
   font-size: 18px;
   outline: none;
   bottom: 15px;
+  width: 100%;
   margin: 0;
 }
 
 .pageInput:hover {
-  box-shadow: 2px 2px 12px #ddd !important;
+  box-shadow: 3px 3px 6px #bbbbbb !important;
   transition: box-shadow .25s;
 }
 
 .pageInput:not(:hover) {
-  box-shadow: 1px 1px 1px #ddd !important;
+  box-shadow: 2px 2px 4px #bbbbbb !important;
   transition: box-shadow .25s;
 }
 
-html body #wrapper #container #main #top #arm #search #input .icon,
-html body #wrapper #container #main #visit #page #front .focus .icon {
+html body #wrapper #container #main #top #arm #search #input .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
@@ -609,6 +611,16 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   left: 75px;
   z-index: 2;
   top: 10px;
+}
+
+html body #wrapper #container #main #visit #page #front .focus .icon {
+  font-size: 14px !important;
+  color: #aaa !important;
+  position: absolute;
+  margin-top: 1px;
+  left: 75px;
+  z-index: 2;
+  top: 11px;
 }
 
 .buttonOpposite {
@@ -631,7 +643,7 @@ html body #wrapper #container #main #visit #page #front .focus .button {
   display: inline-block;
   position: relative;
   border-radius: 3px;
-  height: 39.3px;
+  height: 40px;
   width: 75px;
   right: 4px;
   bottom: 0;

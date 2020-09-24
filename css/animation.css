@@ -81,7 +81,6 @@
 .slideRight {
   position: absolute;
   transition: .25s;
-  right: 0;
 }
 
 .visible {
