@@ -29,13 +29,11 @@ $(document)
       $.loading()
       nextAngle -= 180
       location.pathname.state()
-      $(document).ready(function(){
       $('html body #wrapper #container #main #top').hide()
       $('html body #wrapper #container #main #visit .quick .feed').empty()
       $('html body #wrapper #container #main #visit').css('visibility','visible').show()
       $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
-        toggle(quickFeeds)
-      })
+      toggle(quickFeeds)
       document.title = ''
       $.unloading()
       quick(7)
@@ -50,13 +48,18 @@ $(document)
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
         $('html body #wrapper #container #main #top #arm #search #input input[type=text]')
           .css({
-            'text-align': 'center',
+            'text-align': 'left',
             'padding-left': '0'
           }).blur().val('Search')
         $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
+        $('html body #wrapper #container #main #top #arm #search #input input[type=text]')
+          .css({
+            'text-align': 'center',
+            'padding-left': '0'
+          }).blur().val('')
         $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
    })
