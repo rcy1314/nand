@@ -106,7 +106,7 @@
     top: -150px;
   }
 
-  html body #wrapper #container #main #visit #page #front input[type=text] {
+  html body #wrapper #container #main #visit #page #front .focus input[type=text] {
     padding-left: 10px;
     width: 300px;
     top: 0px;
@@ -165,13 +165,14 @@
 
 @media screen and (min-width: 768px) {
 
+  html body #wrapper #container #main .content,
   html body #wrapper #container #main #option .fa-map,
   html body #wrapper #container #main #option .fa-heart,
   html body #wrapper #container #main #option .fa-heart-o,
   html body #wrapper #container #main #option .fa-home,
   html body #wrapper #container #main #option .fa-code,
   html body #wrapper #container #main #option .fa-terminal {
-    display: none;
+    display: none !important;
   }
 
   html body #wrapper #container #main #top #arm #option .fa-map,
@@ -180,7 +181,7 @@
   html body #wrapper #container #main #top #arm #option .fa-home,
   html body #wrapper #container #main #top #arm #option .fa-code,
   html body #wrapper #container #main #top #arm #option .fa-terminal {
-    display: block;
+    display: block !important;
   }
 
   html body #wrapper #container #main #top #arm #search .fa-map {
@@ -243,6 +244,7 @@
     display: none;
   }
 
+  html body #wrapper #container #main #top #arm #option .fa-sun,
   html body #wrapper #container #main #top #arm #option .fa-map,
   html body #wrapper #container #main #top #arm #option .fa-heart,
   html body #wrapper #container #main #top #arm #option .fa-heart-o,
@@ -271,7 +273,7 @@
   }
 
   html body #wrapper #container #main #feed .center {
-	margin-right: 20px;
+	  margin-right: 20px;
     width: 590px;
   }
 
@@ -289,7 +291,7 @@
   }
 
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 
   html body #wrapper #container {
     width: 100%;

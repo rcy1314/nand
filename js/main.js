@@ -41,26 +41,24 @@ $(document)
   .on('touch click',
     'html body #wrapper #container, ' +
     'html body #wrapper #container #main, ' +
-    'html body #wrapper  #container #main #visit, ' +
+    'html body #wrapper #container #main #visit, ' +
     'html body #wrapper #container #main #top #arm, ' +
     'html body #wrapper #container #main #top #option',
     function(e) {
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #top #arm #search #input input[type=text]')
+        $('html body #wrapper #container #main #top #arm #search input[type=text]')
           .css({
-            'text-align': 'left',
+            'text-align': 'center',
             'padding-left': '0'
           }).blur().val('Search')
         $('html body #wrapper #container #main #top #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #top #arm #search #input input[type=text]')
-          .css({
-            'text-align': 'center',
-            'padding-left': '0'
-          }).blur().val('')
-        $('html body #wrapper #container #main #visit #page #front #first').hide()
+        $('html body #wrapper #container #main #visit #page #front #first').css('visibility','hidden')
+        if ($('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val().length == 0 ||
+          $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').val() == 'Search')
+        $('html body #wrapper #container #main #visit #page #front .focus .icon').removeClass('search')
       }
    })
   .on('touch click', 'html body #wrapper #container #main #option .fa-map', function(e) {
@@ -223,6 +221,8 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation', function(e) {
     id = 0
 	$.loading()
+  $('html body #wrapper #container #main #option .fa-sun').hide()
+  $('html body #wrapper #container #main #top #arm #option .fa-sun').show()
     location.pathname.state()
     $('html body #wrapper #container #main #group').remove()
     $('html body #wrapper #container #main #visit').hide()
@@ -235,6 +235,8 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset', function(e) {
+      $('html body #wrapper #container #main #option .fa-sun').hide()
+      $('html body #wrapper #container #main #top #arm #option .fa-sun').show()
       $('html body #wrapper #container #main #visit #page .quick .feed').empty()
       $.loading()
       $('html body #wrapper #container #main #visit').hide()
