@@ -13,7 +13,7 @@
 ### Config in base.js
 
 * category
->&emsp; translation
+>&emsp; translations array
 
 * op boolean<br>
 >&emsp; invert = 0 [default]<br>
@@ -32,7 +32,7 @@
 >&emsp; Display quick feeds on visit.
 
 * loading string<br>
->&emsp; percent or dots used by $.loading(), $.unloading() (core.js), progress() base.js.
+>&emsp; percent or dots used by loading, $.unloading in core.js, and progress base.js.
 
 * translations array<br>
 >&emsp; Choice to reorder.
@@ -54,10 +54,10 @@
     &ensp;&ensp;filter response no passthrough from init.js (fails to bing search results).
 
   * Hash Example
-  > /?[hash] (in head.js)<br>
+  > /?[hash] in head.js<br>
     &emsp;/?uX <br>
     &emsp;Used in Copy Post appends time converted to base 36.<br>
-    &emsp;/?uX<b>aZjk1</b> &emsp; &emsp;loads guide() with progress() and image() in base.js<br>
+    &emsp;/?uX<b>aZjk1</b> &emsp; &emsp;loads guide with progress and image in base.js<br>
     &emsp;/?<b>uXaZjk1+1</b> &emsp;loads guide with contrast to op.
 
   * Feed Example
@@ -80,7 +80,7 @@
     hash: unique alphanumeric two characters indexed by init.js (indexed).<br>
     media: xml parsing for images (boolean) indexed by onlyImages.<br>
 
->> (indexed) by response() in base.js
+>> (indexed) by response in base.js
 
 ### Invert
 
@@ -103,7 +103,6 @@ Want to Contribute?
 
 File and issue!<br>
 Submit a feed!<br>
-Give a star!<br>
 
 License
 ----
