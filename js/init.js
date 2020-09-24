@@ -71,6 +71,8 @@ if (location.search.split('?q=')[1]) {
 
   $(document)
     .ready(function() {
+
+        $('html body #wrapper #container #main #top').show()
         var width = $('html body #wrapper #container #main').width() / 30
         complete = setInterval(function() {
           $('#progressBar').css({
@@ -80,7 +82,7 @@ if (location.search.split('?q=')[1]) {
             '-moz-transition': '.95s'
           }).width($('#progressBar').width() + Math.floor(Math.random() * (100 - width) + width))
         }, 750)
-        $('html body #wrapper #container #main #top').show()
+
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(true, false, uri[0], true)
         else if (uri[1]) response(true, uri[0], uri[1], false)

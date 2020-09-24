@@ -1,3 +1,11 @@
+@media screen and (max-width: 320px) {
+
+  html body #wrapper #container #main .quick {
+    left: 20px !important;
+  }
+
+}
+
 @media screen and (max-width: 426px) {
 
   html body #wrapper #container #main #top #search #home,
