@@ -23,6 +23,28 @@ var first = true //reader append feed center channel
 var reader = false //main scroll category reader xml
 var randomDuplicate = [] //core.js random duplicate xml
 
+var stage =
+  "<div id='feed'>" +
+  "  <div class='center'>" +
+  /*
+  "    <div class='quick'>" +
+  "      <div class='left' style='display:none'>" +
+  "        <div class='fa-angle-left'></div></div>" +
+  "      <div class='right'>" +
+  "        <div class='fa-angle-right'></div></div>" +
+  "      <div class='feed'></div>" +
+  "    </div>" +
+  */
+  "    <div class='channel'></div>" +
+  "  </div>" +
+  "  <div class='content'>" +
+  "    <div class='status'></div>" +
+  "    <div class='suggestions'>" +
+  "    </div>" +
+  "  </div>" +
+  "</div>"
+
+
 var tag = "<div class='tag'>" +
           "  <div class='images fa-heart-o'></div>" +
           "  <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
@@ -500,6 +522,108 @@ var write = function(n) {
   })
 }
 
+var source = function(xhr) {
+
+  if ($(xhr).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g))
+    src = String($(xhr).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g))
+  else if ($(xhr).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g))
+    src = String($(xhr).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g))
+  else if ($(xhr).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/))
+    src = String($(xhr).find('content').text().match(/src=['"](.*?)['"]/)[1])
+  else if ($(xhr).find('link').attr('href')) {
+    if ($(xhr).find('link').attr('href').match(/youtube\.com/))
+      src = 'https://www.youtube.com/embed/' + String($(xhr).find('link').attr('href').split('=')[1])
+    else src = String($(xhr).find('link').attr('href'))
+  } else if ($(xhr).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/))
+      src = String($(xhr).find('content').text().match(/src=['"](.+)['"]/)[1])
+    else if ($(xhr).find('link').attr('href'))
+      src = String($(xhr).find('link').attr('href'))
+    else if ($(xhr).find('media\\:thumbnail, thumbnail').attr('url'))
+      src = String($(xhr).find('media\\:thumbnail, thumbnail').attr('url'))
+    else if ($(xhr).find('link').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/))
+      src = String($(xhr).find('link').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/)[0])
+    else if ($(xhr).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/))
+      src = String($(xhr).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/)[0])
+    else if ($(xhr).find('enclosure').attr('url')) src = String($(xhr).find('enclosure').attr('url'))
+    else if ($(xhr).find('media\\:content, content').attr('url')) src = String($(xhr).find('media\\:content, content').attr('url'))
+    else if ($(xhr).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/))
+      src = String($(xhr).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
+    else if ($(xhr).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
+      src = String($(xhr).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
+    else if ($(xhr).find('image').text()) src = String($(xhr).find('image').text())
+    else src = null
+    return src
+
+}
+
+var greenwich = function(channel, datetime) {
+
+  var parse = []
+  if (channel == 'entry') {
+    var re = $(datetime).find('link').attr('href')
+    var dst = $(datetime).find('updated').text().zulu();
+    var since = new Date($(datetime).find('updated').text()).getTime()
+    var gen = $(datetime).find('updated').text().toLocaleString()
+    gen = parseInt(gen.match(/([0-9]+\:[0-9]+\:[0-9]+)/g).toString().replace(/\:/g, '')).toString(36)
+    parse.push({
+      since: since,
+      dst: dst[0],
+      gen: gen,
+      re: re.trim()
+    })
+  } else if (channel = 'item') {
+    if ($(datetime).find('pubDate').text().length > -1) {
+      var re = $(datetime).find('link').text()
+      var dst = $(datetime).find('pubDate').text().zulu();
+      var since = new Date($(datetime).find('pubDate').text())
+      var gen = new Date($(datetime).find('pubDate').text()).toLocaleString()
+      gen = parseInt(gen.match(/([0-9]+\:[0-9]+\:[0-9]+)/g).toString().replace(/\:/g, '')).toString(36)
+      parse.push({
+        since: since,
+        dst: dst[0],
+        gen: gen,
+        re: re.trim()
+      })
+    } else if ($(datetime).find('dc\\:date, date').text().length > -1) {
+      var re = $(datetime).find('link').text()
+      var dst = $(datetime).find('dc\\:date, date').text().zulu();
+      var since = new Date($(datetime).find('dc\\:date, date').text())
+      var gen = new Date($(datetime).find('dc\\:date, date').text()).getTime()
+      parse.push({
+        since: since,
+        dst: dst[0],
+        gen: gen,
+        re: re.trim()
+
+      })
+    } else if ($(datetime).find('datetime').text().length > -1) {
+      var re = $(datetime).find('link').text()
+      var ts = parseInt($(datetime).find('datetime').text());
+      var ts_ms = ts * 1000
+      var date = new Date(ts_ms)
+      var year = date.getFullYear()
+      var mon = ("0" + (date.getMonth() + 1)).slice(-2)
+      var min = ("0" + date.getMinutes()).slice(-2)
+      var sec = ("0" + date.getSeconds()).slice(-2)
+      var hour = ("0" + date.getHours()).slice(-2)
+      var date = ("0" + date.getDate()).slice(-2)
+      var def = year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec
+      var dst = def.zulu()
+      var since = new Date(parseInt($(datetime).find('datetime').text()))
+      var gen = parseInt($(datetime).find('datetime').text()).toString(36)
+      parse.push({
+        since: since,
+        dst: dst[0],
+        gen: gen,
+        re: re.trim()
+      })
+    }
+    } else parse.push('')
+
+    return parse[0]
+
+}
+
 var image = function(empty, n, item, src) {
 
   var maximum = 799
@@ -507,11 +631,11 @@ var image = function(empty, n, item, src) {
   var small = 120
   var k = 5420
 
-  if (src.match(/\.mp4/g)) {
+  if (src && src.match(/\.mp4/g)) {
     $('.' + n).find(' .' + item).parents('.item, #guide').fadeIn(1000).parents('.item, #guide').find('.fill').remove()
     return false
   }
-  if (src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
+  if (src && src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
   $('.' + n).find(' .' + item).attr('src', src)
   .on('error', function() {
     $(this).parents('.item').css('padding-bottom', '30px').parents('.item').find('.url, .share, .source, .image, .fill').remove()
@@ -585,13 +709,16 @@ var xml = function(e, s, n) {
     uri = cors + menu[n].uri
     category = menu[n].cat
   }
-  document.title = doc
+
   var doc = menu[n].id.space().capitalize()
+  document.title = doc
   $('html body #wrapper #container #main #visit').hide()
+
   if (reader == true && first == true)
     $('html body #wrapper #container #main #group, ' +
       'html body #wrapper #container #main .center, ' +
       'html body #wrapper #container #main .content').remove()
+
   $.get({
     url: uri,
     method: 'GET',
@@ -602,6 +729,7 @@ var xml = function(e, s, n) {
       Accept: 'text/html; charset=utf-8',
       'X-Requested-With': '*'
     }
+
   }).fail(function() {
     $('html body #wrapper #container #main').append(
       "<div class='center'>" +
@@ -619,83 +747,30 @@ var xml = function(e, s, n) {
     $.unloading()
     visual()
   }).done(function(xhr) {
+
     if ($(xhr).find('entry').length > 0) var channel = "entry"
     else var channel = 'item'
+
     var quit = $(xhr).find(channel).length - 2
+
     if (reader == true) {
       if (menu[n].id.match(/Imgur/g)) quit = 40
       else quit = 15
     } else if (menu[n].id.match(/Imgur/g)) quit = 50
+
     $(xhr).find(channel).each(function(i) {
-      if (channel == 'entry') {
-        var re = $(this).find('link').attr('href')
-        var dst = $(this).find('updated').text().zulu();
-        var since = new Date($(this).find('updated').text()).getTime()
-        var gen = $(this).find('updated').text().toLocaleString()
-        gen = parseInt(gen.match(/([0-9]+\:[0-9]+\:[0-9]+)/g).toString().replace(/\:/g, '')).toString(36)
-      } else if (channel = 'item') {
-        var re = $(this).find('link').text()
-        if ($(this).find('pubDate').text().length > 0) {
-          var dst = $(this).find('pubDate').text().zulu();
-          var since = new Date($(this).find('pubDate').text())
-          var gen = new Date($(this).find('pubDate').text()).toLocaleString()
-          gen = parseInt(gen.match(/([0-9]+\:[0-9]+\:[0-9]+)/g).toString().replace(/\:/g, '')).toString(36)
-        } else if ($(this).find('dc\\:date, date').text()) {
-          var dst = $(this).find('dc\\:date, date').text().zulu();
-          var gen = new Date($(this).find('dc\\:date, date').text()).getTime()
-        } else if (menu[n].id.match(/Imgur/g)) {
-          var ts = parseInt($(this).find('datetime').text());
-          var ts_ms = ts * 1000
-          var date = new Date(ts_ms)
-          var year = date.getFullYear()
-          var mon = ("0" + (date.getMonth() + 1)).slice(-2)
-          var min = ("0" + date.getMinutes()).slice(-2)
-          var sec = ("0" + date.getSeconds()).slice(-2)
-          var hour = ("0" + date.getHours()).slice(-2)
-          var date = ("0" + date.getDate()).slice(-2)
-          var def = year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec
-          var dst = def.zulu()
-          var since = new Date(parseInt($(this).find('datetime').text()))
-          var gen = parseInt($(this).find('datetime').text()).toString(36)
-        } else {
-          var dst = []
-          dst.push('')
-        }
-      }
+
+      var parse = greenwich(channel, $(this))
+
       var share = menu[n].hash
-      if (gen) var timestamp = (gen).toString(36)
+      if (parse.gen) var timestamp = (parse.gen).toString(36)
       if (timestamp) var share = window.location.origin + '/?' + share + timestamp
-      if ($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g))
-        src = String($(this).find('content').text().match(/https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g))
-      else if ($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g))
-        src = String($(this).find('content').text().match(/https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g))
-      else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/))
-        src = String($(this).find('content').text().match(/src=['"](.*?)['"]/)[1])
-      else if ($(this).find('link').attr('href')) {
-        if ($(this).find('link').attr('href').match(/youtube\.com/))
-          src = 'https://www.youtube.com/embed/' + String($(this).find('link').attr('href').split('=')[1])
-        else src = String($(this).find('link').attr('href'))
-      } else if ($(this).find('content').text().match(/src=['"]https:\/\/.+?(gif|png|jpg|mp4)['"]/))
-          src = String($(this).find('content').text().match(/src=['"](.+)['"]/)[1])
-        else if ($(this).find('link').attr('href'))
-          src = String($(this).find('link').attr('href'))
-        else if ($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-          src = String($(this).find('media\\:thumbnail, thumbnail').attr('url'))
-        else if ($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/))
-          src = String($(this).find('link').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/)[0])
-        else if ($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/))
-          src = String($(this).find('image').find('link, url').text().match(/https:\/\/.+?(gif|png|jpg|mp4)/)[0])
-        else if ($(this).find('enclosure').attr('url')) src = String($(this).find('enclosure').attr('url'))
-        else if ($(this).find('media\\:content, content').attr('url')) src = String($(this).find('media\\:content, content').attr('url'))
-        else if ($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/))
-          src = String($(this).find('content\\:encoded').text().match(/img.+src=['"](.*?)['"]/)[1])
-        else if ($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/))
-          src = String($(this).find('description').text().toLowerCase().match(/src=['"](.*?)['"]/)[1])
-        else if ($(this).find('image').text()) src = String($(this).find('image').text())
-      if (src.match(/\.mp4/g)) var video = "<video src='" + src + "' controls>"
+      var src = source($(this))
+      if (src && src.match(/\.mp4/g)) var video = "<video src='" + src + "' controls>"
       else var video = ''
-      if (src.match(/ytimg/g)) var yt = 'yt'
+      if (src && src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
+
       courtesy =
         "<div class='courtesy' style='float:left'>" +
         "  <img src='" + menu[n].img.image() + "'>" +
@@ -703,16 +778,22 @@ var xml = function(e, s, n) {
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
         "</div>"
+
       if ($(this).find('title:first').text().length > 125) var more = "<div class='more'>more</div>"
       else var more = ""
-      if (e == 'search') var cat = "<div class='external'>" + re.domain() + "</div>"
-      if (src.match(/youtube\.com/g)) {
+
+      if (e == 'search') var cat = "<div class='external'>" + parse.re + "</div>"
+
+      if (src && src.match(/youtube\.com/g)) {
+
         if ($(this).find('media\\:statistics, statistics').attr('views'))
             var views = "<div class='ago views'>" +
-                        "  views " + $(this).find('media\\:statistics, statistics').attr('views').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
+                        "  views " + $(this).find('media\\:statistics, statistics').attr('views')
+                           .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
                         "</div>"
         else var views = ''
-        html = "<div id='yt' class='item' ext='" + re.trim() + "'>" +
+
+        html = "<div id='yt' class='item' ext='" + parse.re + "'>" +
                "  <div class='header'>" + courtesy +
                "    <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                "  </div>" +
@@ -725,11 +806,13 @@ var xml = function(e, s, n) {
                     $(this).find('title:first').text().truncate(125, true).escape() +
                     more +
                "  </div>" +
-               "  <div class='ago'>" + dst[0] + "</div>" +
+               "  <div class='ago'>" + parse.dst + "</div>" +
                "</div>"
+
       } else {
+
         if (!cat) cat = ''
-        html = "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + re.trim() + "'>" +
+        html = "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + parse.re + "'>" +
                "    <div class='header'>" + courtesy +
                "      <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
                "    </div>" +
@@ -744,26 +827,28 @@ var xml = function(e, s, n) {
                         $(this).find('title:first').text().truncate(125, true).escape() +
                         more +
                "      </div>" +
-               "      <div class='ago zulu'>" + dst[0] + "</div>" +
+               "      <div class='ago zulu'>" + parse.dst + "</div>" +
                "    </div>" +
-               "    <input class='url' value='" + re.trim() + "'>" +
+               "    <input class='url' value='" + parse.re + "'>" +
                "    <input class='share' value='" + share + "'>" +
                "    <input class='source' value='" + src + "'>" + cat +
                "  </div>" +
                "</div>"
+
       }
+
       pub.push({
         title: $(this).find('title:first').text().escape(),
         courtesy: courtesy,
-        re: re.trim(),
-        since: since,
+        re: parse.re,
+        since: parse.since,
         share: share,
-        dst: dst[0],
+        dst: parse.dst,
         more: more,
         element: i,
         post: html,
         src: src,
-        gen: gen
+        gen: parse.gen
       })
       pub.sort(function(a, b) {
           return b.since - a.since
@@ -773,27 +858,7 @@ var xml = function(e, s, n) {
       })
     })
     if (first == true) {
-      $('html body #wrapper #container #main').append(
-        "<div id='feed'>" +
-        "  <div class='center'>" +
-/*
-        "    <div class='quick'>" +
-        "      <div class='left' style='display:none'>" +
-        "        <div class='fa-angle-left'></div></div>" +
-        "      <div class='right'>" +
-        "        <div class='fa-angle-right'></div></div>" +
-        "      <div class='feed'></div>" +
-        "    </div>" +
-*/
-        "    <div class='channel'></div>" +
-        "  </div>" +
-        "  <div class='content'>" +
-        "    <div class='status'></div>" +
-        "    <div class='suggestions'>" +
-        "    </div>" +
-        "  </div>" +
-        "</div>"
-      )
+      $('html body #wrapper #container #main').append(stage)
     }
     if ($.isNumeric(local)) {
       guide(
@@ -821,7 +886,6 @@ var xml = function(e, s, n) {
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
     if (first == true){
-      first = true
       stop = true
     } else {
       $('html body #wrapper #container #main .content .status, ' +
@@ -848,6 +912,5 @@ var xml = function(e, s, n) {
     clearInterval(complete)
     suggest()
     progress(true, 100)
-
   })
 }

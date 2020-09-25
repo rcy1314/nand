@@ -150,7 +150,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .buffer, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .buffer, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .buffer ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .buffer, ' +
       'html body #wrapper #container #main .content .suggestions .combine a').css('color','steelblue')
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
