@@ -470,11 +470,12 @@ $(document)
         'caret-color': '#e4e4e4',
         'padding-left': '40px',
         'text-align': 'left'
-      }).val('')
+      }).val('').attr('placeholder', 'Search feeds')
       $('html body #wrapper #container #main #visit #page #front .icon').addClass('search')
   })
   .on('keyup', 'html body #wrapper #container #top #arm #search #input input[type=text]',
     function(e) {
+      $(this).attr('placeholder','')
       if ($(this).val() != '') var keyup = $(this).val()
       if (e.keyCode == 13) return false
       else if ($(this).val().length >= 3 && e.keyCode >= 65 && e.keyCode <= 90) list($(this).val())

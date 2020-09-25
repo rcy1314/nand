@@ -561,7 +561,7 @@ var image = function(empty, n, item, src) {
             'display': 'flex'
           }).find('.tag').remove()
   }
-    $('.' + n).find(' .' + item).parents('.item, #guide').fadeIn(1000)
+    $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
     visual()
   })
@@ -736,7 +736,7 @@ var xml = function(e, s, n) {
                "  <div class='classic'>" +
                "    <div class='fill'><div class='loader double-circle'></div></div>" +
                "    <div class='image'>" + video +
-               "      <img id='" + i + "' class='" + i + " img'>" +
+               "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
                "    </div>" +
                "    <div class='wrap'>" + tag +
                "      <div class='pub' text='" +
