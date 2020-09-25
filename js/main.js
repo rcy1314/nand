@@ -214,17 +214,13 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation', function(e) {
     id = 0
   	$.loading()
-    reader = true
-    onlyImages = true
-    category = $(this).attr('aria-item')
-    $('html body #wrapper #container #main #option .fa-heart-o').toggleClass('fa-heart-o fa-heart')
     $('html body #wrapper #container #main #option .fa-sun').hide()
     $('html body #wrapper #container #main #top #arm #option .fa-sun').show()
     location.pathname.state()
     $('html body #wrapper #container #main #group').remove()
     $('html body #wrapper #container #main #visit').hide()
     $('html body #wrapper #container #main #top').show()
-    xml(null, null, $.random())
+    populate($(this).attr('aria-item'))
   })
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation a', function(e) {
     uri = '?q=' + $(this).attr('aria-item').toLowerCase()
