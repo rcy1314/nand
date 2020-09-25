@@ -87,6 +87,24 @@ var toggle = function(n) {
     }
 }
 
+var footer = function() {
+  $('html body #wrapper #container #main .center').append(
+    "<div id='bottom'>" +
+    "  <div class='back btn' aria-item='" + $.back() + "''>" +
+    "      <span class='front'></span>" +
+    "      <span class='flip-front'>Previous</span>" +
+    "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+    "  </div>" +
+    "  <div class='bottom'>acktic</div>" +
+    "  <div class='next btn' aria-item='" + $.next() + "'>" +
+    "      <span class='front'></span>" +
+    "      <span class='flip-front'>Next</span>" +
+    "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
+    "  </div>" +
+    "</div>"
+  )
+}
+
 var guide = function(n, re, element, courtesy, title, dst, share, src) {
 
   $('html body #wrapper #container #guide').css('display','flex').append(
@@ -731,18 +749,7 @@ var xml = function(e, s, n) {
     }
 
   }).fail(function() {
-    $('html body #wrapper #container #main').append(
-      "<div class='center'>" +
-/*
-      "  <div class='quick'>" +
-      "    <div class='feed'></div>" +
-      "    <div class='left fa-angle-left' style='></div>" +
-      "    <div class='right fa-angle-right'></div>" +
-      "  </div>" +
-*/
-      "  <div class='channel'></div>" +
-      "</div>"
-    )
+    $('html body #wrapper #container #main').append(stage)
     $('html body #wrapper #container #main .channel').html("This site could not be reached.")
     $.unloading()
     visual()
@@ -763,11 +770,14 @@ var xml = function(e, s, n) {
       var parse = greenwich(channel, $(this))
 
       var share = menu[n].hash
-      if (parse.gen) var timestamp = (parse.gen).toString(36)
-      if (timestamp) var share = window.location.origin + '/?' + share + timestamp
+      var timestamp = (parse.gen).toString(36)
+      var share = window.location.origin + '/?' + share + timestamp
+
       var src = source($(this))
+
       if (src && src.match(/\.mp4/g)) var video = "<video src='" + src + "' controls>"
       else var video = ''
+
       if (src && src.match(/ytimg/g)) var yt = 'yt'
       else var yt = ''
 
@@ -840,26 +850,20 @@ var xml = function(e, s, n) {
       pub.push({
         title: $(this).find('title:first').text().escape(),
         courtesy: courtesy,
-        re: parse.re,
         since: parse.since,
-        share: share,
         dst: parse.dst,
+        gen: parse.gen,
+        re: parse.re,
+        share: share,
         more: more,
         element: i,
         post: html,
-        src: src,
-        gen: parse.gen
+        src: src
       })
-      pub.sort(function(a, b) {
-          return b.since - a.since
-      })
-      $.each(pub, function(i) {
-        if (parseInt(pub[i].gen, 36) == post) local = i
-      })
+      pub.sort(function(a, b) { return b.since - a.since })
+      $.each(pub, function(i) { if (parseInt(pub[i].gen, 36) == post) local = i })
     })
-    if (first == true) {
-      $('html body #wrapper #container #main').append(stage)
-    }
+    if (first == true) $('html body #wrapper #container #main').append(stage)
     if ($.isNumeric(local)) {
       guide(
         i,
@@ -874,39 +878,25 @@ var xml = function(e, s, n) {
       image(true, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
+
       if (i == quit) return false
+
       if ($.isNumeric(local) && pub[local].element != pub[i].element && pub[i].title != '')
         $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
       else if (!$.isNumeric(local) && pub[i].title != '')
         $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
       if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
       else image(false, n, pub[i].element, pub[i].src)
+
     })
-    posts = $('html body #wrapper #container #main .center .channel .item').length
+    var posts = $('html body #wrapper #container #main .center .channel .item').length
+
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
-    if (first == true){
-      stop = true
-    } else {
-      $('html body #wrapper #container #main .content .status, ' +
-        'html body #wrapper #container #main .content .suggestions').empty()
-    }
-    if (reader == false)
-    $('html body #wrapper #container #main .center').append(
-      "<div id='bottom'>" +
-      "  <div class='back btn' aria-item='" + $.back() + "''>" +
-      "      <span class='front'></span>" +
-      "      <span class='flip-front'>Previous</span>" +
-      "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "  <div class='bottom'>acktic</div>" +
-      "  <div class='next btn' aria-item='" + $.next() + "'>" +
-      "      <span class='front'></span>" +
-      "      <span class='flip-front'>Next</span>" +
-      "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "</div>"
-    )
+    if (first == true) stop = true
+    else $('html body #wrapper #container #main .content .status, ' +
+           'html body #wrapper #container #main .content .suggestions').empty()
+    if (reader == false) footer()
     $('html body #wrapper #container #main #feed').attr('tabindex', -1).focus()
     content(n, recent, oldest, posts)
     clearInterval(complete)

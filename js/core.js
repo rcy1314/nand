@@ -92,24 +92,9 @@ $.random = function() {
   var n = random[Math.floor(Math.random() * random.length - 1)]
   if (menu[n]) randomDuplicate.push(n)
   if (random.length == randomDuplicate.length && reader == true){
-    reader = false
-    if ($('html body #wrapper #container #main #feed .center').length)
-    $('html body #wrapper #container #main #feed .center').append(
-      "<div id='bottom'>" +
-      "  <div class='back btn' aria-item='" + menu[$.back()] + "'>" +
-      "      <span class='front'></span>" +
-      "      <span class='flip-front'>Previous</span>" +
-      "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "  <div class='bottom'>acktic</div>" +
-      "  <div class='next btn' aria-item='" + menu[$.next()] + "'>" +
-      "      <span class='front'></span>" +
-      "      <span class='flip-front'>Next</span>" +
-      "      <span class='flip-back'>" + String(menu[$.next()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
-      "  </div>" +
-      "</div>"
-    )
     randomDuplicate = []
+    reader = false
+    footer()
   } else if (random.length == randomDuplicate.length) randomDuplicate = []
   else
     $.each(random, function(i) {
