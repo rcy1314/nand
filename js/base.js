@@ -590,7 +590,28 @@ var greenwich = function(channel, datetime) {
       re: re.trim()
     })
   } else if (channel = 'item') {
-    if ($(datetime).find('pubDate').text().length > -1) {
+    if ($(datetime).find('datetime').text().length > -1) {
+      var re = $(datetime).find('link').text()
+      var ts = parseInt($(datetime).find('datetime').text());
+      var ts_ms = ts * 1000
+      var date = new Date(ts_ms)
+      var year = date.getFullYear()
+      var mon = ("0" + (date.getMonth() + 1)).slice(-2)
+      var min = ("0" + date.getMinutes()).slice(-2)
+      var sec = ("0" + date.getSeconds()).slice(-2)
+      var hour = ("0" + date.getHours()).slice(-2)
+      var date = ("0" + date.getDate()).slice(-2)
+      var def = year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec
+      var dst = def.zulu()
+      var since = new Date(parseInt($(datetime).find('datetime').text()))
+      var gen = parseInt($(datetime).find('datetime').text()).toString(36)
+      parse.push({
+        since: since,
+        dst: dst[0],
+        gen: gen,
+        re: re.trim()
+      })
+    } else if ($(datetime).find('pubDate').text().length > -1) {
       var re = $(datetime).find('link').text()
       var dst = $(datetime).find('pubDate').text().zulu();
       var since = new Date($(datetime).find('pubDate').text())
@@ -612,32 +633,9 @@ var greenwich = function(channel, datetime) {
         dst: dst[0],
         gen: gen,
         re: re.trim()
-
       })
-    } else if ($(datetime).find('datetime').text().length > -1) {
-      var re = $(datetime).find('link').text()
-      var ts = parseInt($(datetime).find('datetime').text());
-      var ts_ms = ts * 1000
-      var date = new Date(ts_ms)
-      var year = date.getFullYear()
-      var mon = ("0" + (date.getMonth() + 1)).slice(-2)
-      var min = ("0" + date.getMinutes()).slice(-2)
-      var sec = ("0" + date.getSeconds()).slice(-2)
-      var hour = ("0" + date.getHours()).slice(-2)
-      var date = ("0" + date.getDate()).slice(-2)
-      var def = year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec
-      var dst = def.zulu()
-      var since = new Date(parseInt($(datetime).find('datetime').text()))
-      var gen = parseInt($(datetime).find('datetime').text()).toString(36)
-      parse.push({
-        since: since,
-        dst: dst[0],
-        gen: gen,
-        re: re.trim()
-      })
-    }
     } else parse.push('')
-
+  }
     return parse[0]
 
 }
