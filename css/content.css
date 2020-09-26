@@ -249,7 +249,7 @@ html body #wrapper #container #main #notification {
   width: fit-content;
   font-weight: 50;
   position: fixed;
-  font-size: 16px;
+  font-size: 14px;
   padding: 1.5em;
   display: none;
   right: -16em;

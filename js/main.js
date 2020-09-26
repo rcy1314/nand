@@ -611,6 +611,18 @@ $(document)
       e.preventDefault()
       visual()
   })
+  .on('mouseenter',
+  'html body #wrapper #container #main #visit #page #front #first .index, ' +
+  'html body #wrapper #container #main #visit #page #front #first .hover, ' +
+  'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+  'html body #wrapper #container #main #top #arm #search #match .listing .hover',
+  function(e) {
+    $('html body #wrapper #container #main #visit #page #front #first .index, ' +
+      'html body #wrapper #container #main #visit #page #front #first .hover, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing .hover')
+        .removeClass('hover visual.hover contrast.hover').addClass('index')
+  })
   .on('touch click',
   'html body #wrapper #container #main #visit #page #front #first .index, ' +
   'html body #wrapper #container #main #visit #page #front #first .hover, ' +
