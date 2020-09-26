@@ -105,7 +105,7 @@ var footer = function() {
   )
 }
 
-var guide = function(n, re, element, courtesy, title, dst, share, src) {
+var guide = function(n, courtesy, element, title, share, dst, src, re) {
 
   $('html body #wrapper #container #guide').css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
@@ -117,7 +117,7 @@ var guide = function(n, re, element, courtesy, title, dst, share, src) {
     "  <div class='fill'></div>" +
     "  <div class='item " + n + "' item='" + n + "' ext='" + re + "'>" +
     "    <div class='image'>" +
-    "      <img class='img guide " + element + "' id='" + element + "'>" +
+    "      <img id='" + element + "' class='img guide " + element + "' style='display:none'>" +
     "    </div>" +
     "  </div>" +
     "  <div class='wrap'>" +
@@ -501,7 +501,6 @@ var response = function(passthrough, uri, n, bloat) {
     }
     if (!id) id = filter[0]
     if (filter.length == 0) xml('search', n, 0, null)
-    else passthrough = false
     if (passthrough == false) {
       $(document).ready(function() {
         $('html body #wrapper #container #main #visit').hide()
@@ -668,27 +667,13 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'display': 'flex'
            }).find('.tag').remove()
-      if ($(this).hasClass('guide')) {
+    } else if ($(this).hasClass('guide')) {
         $('html body #wrapper #container #main').addClass('guide')
-        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '85vh').parents('.sticky').width('90vh')
-        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css('cssText', 'max-width: 60vh')
-      }
+        $('html body #wrapper #container #guide .sticky, html body #wrapper #container #guide .checkmark').show()
+        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '70vw')
+        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css('max-width', '60vh')
     } else {
-      if ($(this).hasClass('guide')) {
-      $('html body #wrapper #container #guide .blur .sticky, html body #wrapper #container #guide .checkmark').show()
-      $('html body #wrapper #container #main').addClass('guide')
-       if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).css('max-height', '90vh')
-       else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '75vw')
-       else if ($(this).get(0).naturalWidth < small)
-         $(this).width('100%').css({
-           'margin': '10px'
-         }).parents('.item')
-           .find('.classic').css({
-             'margin-bottom': '30px',
-             'align-items': 'center',
-             'display': 'flex'
-           }).find('.tag').remove()
-    } else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
+      if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
       else if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
       else if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
       else if ($(this).get(0).naturalWidth < small || $(this).get(0).naturalWidth < minimum)
@@ -873,7 +858,7 @@ var xml = function(e, s, n) {
         pub[local].src,
         pub[local].re
       )
-      image(true, n, pub[local].element, pub[local].src)
+      image(false, n, pub[local].element, pub[local].src)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
 
