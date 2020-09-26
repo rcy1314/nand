@@ -639,6 +639,7 @@ $(document)
         xml(null, null, $.random())
         notify('Switched to now reading ' + category + '.')
       } else {
+        $('html body #wrapper #container #main #top').show()
         if ($(this).is('[aria-item]') && $.inArray($(this).attr('aria-item').capitalize(), translations) > -1){
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
