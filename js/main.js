@@ -402,6 +402,7 @@ $(document)
           $('html body #wrapper #container #main #visit #page #front #first .listing .hover').prev().removeClass('hover').addClass('index')
           $(this).attr('tabIndex', -1).focus()
           $(this).val(keyup)
+          visual()
         }
       } else if (e.keyCode == 34) {
           if (!$('html body #wrapper #container #main #visit #page #front #first .listing .hover').length)
@@ -622,6 +623,7 @@ $(document)
       'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing .hover')
         .removeClass('hover visual.hover contrast.hover').addClass('index')
+    $(this).addClass('hover')
   })
   .on('touch click',
   'html body #wrapper #container #main #visit #page #front #first .index, ' +

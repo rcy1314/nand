@@ -826,8 +826,9 @@ html body #wrapper #container #main #visit #page .quick .feed .translation {
   text-align: center;
   border-radius: 6px;
   flex-shrink: 0;
-  padding: 20px;
-  height: 50px;
+  padding: 15px;
+  height: 58px;
+  width: 90px;
 }
 
 html body #wrapper #container #main #feed .content .status img,
@@ -835,12 +836,10 @@ html body #wrapper #container #main #feed .center .quick .feed .asset img,
 html body #wrapper #container #main #visit #page .quick .feed img,
 html body #wrapper #container #main #visit #page .quick .feed .translation img {
   background-color: transparent;
-  border-radius: 36px;
   position: relative;
-  bottom: 12px;
   padding: 5px;
-  height: 48px;
-  width: 48px;
+  height: 30px;
+  width: 30px;
 }
 
 html body #wrapper #container #main #feed .center .quick .feed .asset a,
@@ -848,8 +847,9 @@ html body #wrapper #container #main #visit #page .quick .feed .asset a,
 html body #wrapper #container #main #visit #page .quick .feed .translation a {
   background-color: transparent;
   position: relative;
+  font-size: 11px;
   display: block;
-  bottom: 12px;
+  top: 5px;
 }
 
 html body #wrapper #container #main #feed .center .quick .right {
@@ -1390,7 +1390,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 }
 
 .contrast {
-  background-color: #000000;
+  background-color: #000000 !important;
 }
 
 .contrast.hover {
@@ -1399,7 +1399,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 }
 
 .contrast:hover {
-  background-color: #0e0e0e !important;
+  background-color: #0e0e0e;
   color: #ffffff;
 }
 
@@ -1409,7 +1409,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 }
 
 .visual {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 }
 
 .visual.hover {
@@ -1418,7 +1418,7 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
 }
 
 .visual:hover {
-  background-color: #fbfbfb !important;
+  background-color: #fbfbfb;
   color: #666666;
 }
 
