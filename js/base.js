@@ -95,7 +95,7 @@ var footer = function() {
     "      <span class='flip-front'>Previous</span>" +
     "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
     "  </div>" +
-    "  <div class='bottom'>acktic</div>" +
+    "  <div class='bottom'></div>" +
     "  <div class='next btn' aria-item='" + $.next() + "'>" +
     "      <span class='front'></span>" +
     "      <span class='flip-front'>Next</span>" +

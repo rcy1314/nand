@@ -55,7 +55,7 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
    })
-  .on('touch click', 'html body #wrapper #container #main #option .fa-map', function(e) {
+  .on('touch click', 'html body #wrapper #container #main #option .fa-camera-retro', function(e) {
     $.loading()
     $('html body #wrapper #container #main #visit').hide()
     onlyImages = onlyImages != true

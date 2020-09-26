@@ -27,8 +27,6 @@
   }
 
   html body #wrapper #container #main #top #arm #search .fa-map {
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
     visibility: visible;
     position: fixed;
     font-size: 32px;
@@ -184,7 +182,11 @@
   }
 
   html body #wrapper #container #main #top #arm #search .fa-map {
-    display: none;
+    position: absolute;
+    font-size: 32px;
+    display: block;
+    left: 25px;
+    top: 10px;
   }
 
   html body #wrapper #container #main #visit #page #handle {

@@ -3,8 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $('div').css('color','#f7f7f7')
-    $('html body #wrapper #container #main #top #arm #search .fa-map, ' +
-      'html body #wrapper #container, ' +
+    $('html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
@@ -96,14 +95,14 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
 
-    $('html body #wrapper #container #main #top #arm #search .fa-map, ' +
-      'html body #wrapper #container, ' +
+    $('html body #wrapper #container, ' +
 	    'html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main #feed .center .channel , ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
+      'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
@@ -144,6 +143,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
+      'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #guide .sticky .item, ' +
       '#wrapper #container #main #feed .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
