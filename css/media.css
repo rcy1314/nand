@@ -164,7 +164,7 @@
 
 @media screen and (min-width: 768px) {
 
-  html body #wrapper #container #main #option .fa-map,
+  html body #wrapper #container #main #option .fa-camera-retro,
   html body #wrapper #container #main #option .fa-heart,
   html body #wrapper #container #main #option .fa-heart-o,
   html body #wrapper #container #main #option .fa-home,
@@ -173,7 +173,7 @@
     display: none;
   }
 
-  html body #wrapper #container #main #top #arm #option .fa-map,
+  html body #wrapper #container #main #top #arm #option .fa-camera-retro,
   html body #wrapper #container #main #top #arm #option .fa-heart,
   html body #wrapper #container #main #top #arm #option .fa-heart-o,
   html body #wrapper #container #main #top #arm #option .fa-home,
