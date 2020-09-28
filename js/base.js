@@ -105,7 +105,7 @@ var footer = function() {
   )
 }
 
-var guide = function(n, courtesy, element, title, share, dst, src, re) {
+var guide = function(array) {
 
   $('html body #wrapper #container #guide').css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
@@ -115,18 +115,18 @@ var guide = function(n, courtesy, element, title, share, dst, src, re) {
     "<div class='blur'></div>" +
     "<div class='sticky'>" +
     "  <div class='fill'></div>" +
-    "  <div class='item " + n + "' item='" + n + "' ext='" + re + "'>" +
+    "  <div class='item " + array[0].id + "' item='" + array[0].id + "' ext='" + array[0].re + "'>" +
     "    <div class='image'>" +
-    "      <img id='" + element + "' class='img guide " + element + "' style='display:none'>" +
+    "      <img id='" + array[0].element + "' class='img guide " + array[0].element + "' style='display:none'>" +
     "    </div>" +
     "  </div>" +
     "  <div class='wrap'>" +
-    "    <div class='header'>" + courtesy +
+    "    <div class='header'>" + array[0].courtesy +
     "      <div class='copy fa-ellipsis-h' title='Copy URL'>" +
     "    </div>" +
     "  </div>" +
-    "  <div class='pub'>" + title + "</div>" +
-    "  <div class='ago'>" + dst + "</div>" +
+    "  <div class='pub'>" + array[0].title + "</div>" +
+    "  <div class='ago'>" + array[0].dst + "</div>" +
         tag +
     "</div>"
   )
@@ -848,17 +848,19 @@ var xml = function(e, s, n) {
     })
     if (first == true) $('html body #wrapper #container #main').append(stage)
     if ($.isNumeric(local)) {
-      guide(
-        i,
-        pub[local].courtesy,
-        pub[local].element,
-        pub[local].title,
-        pub[local].share,
-        pub[local].dst,
-        pub[local].src,
-        pub[local].re
-      )
-      image(false, n, pub[local].element, pub[local].src)
+      var sticky = []
+      sticky.push({
+        courtesy: pub[local].courtesy,
+        element: pub[local].element,
+        title: pub[local].title,
+        share: pub[local].share,
+        dst: pub[local].dst,
+        src: pub[local].src,
+        re: pub[local].re,
+        id: n
+      })
+      guide(sticky)
+      image(false, n, sticky.element, sticky.src)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
 
