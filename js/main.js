@@ -254,17 +254,17 @@ $(document)
       }
       else $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', 'html body #wrapper #container #guide, ' +
-    'html body #wrapper #container #guide .checkmark', function (e) {
-      $('html body #wrapper #container #main').removeClass('guide')
-      $('#guide, #container .checkmark').fadeOut(250)
+  .on('touch click', 'html body #wrapper #container #guide .checkmark', function (e) {
+      $('#guide, #container .checkmark').fadeOut(750)
+      $('html body #wrapper #container #guide').empty()
       $('html body #wrapper #container #main #top').show()
+      $('html body #wrapper #container #main').removeClass('guide')
   })
   .on('touch click', 'html body #wrapper #container #main #feed .center .channel .item', function(e) {
       $(this).attr('ext').blank()
       e.stopPropagation()
   })
-  .on('touch click',
+  .on('touch click', 'html body #wrapper #container #guide .sticky .item .image .img, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .image .img', function(e) {
       if (tap == 0) {
           $this = $(this)
@@ -273,9 +273,24 @@ $(document)
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
               if (category == 'Social' && $this.hasClass('default')) {
-                $this.attr('src').blank()
+                if ($('html body #wrapper #container #main').width() > 425 && $this.hasClass('default')){
+                  var sticky = []
+                  sticky.push({
+                    courtesy: $this.parents('.item').find('.header').html(),
+                    element: $this.parents('.item').attr('item'),
+                    title: $this.parents('.item').find('.pub').attr('text'),
+                    share: $this.parents('.item').find('.share').val(),
+                    dst: $this.parents('.item').find('.ago:last').text(),
+                    src: $this.parents('.item').find('.source').val(),
+                    re: $this.parents('.item').attr('ext'),
+                    id: $this.attr('id')
+                  })
+                  guide(sticky)
+                }
+                else $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
-                $this.parents('html body #wrapper #container #main #feed .center .channel .item').attr('ext').blank()
+                $this.parents('html body #wrapper #container #guide .sticky .item, ' +
+                  'html body #wrapper #container #main #feed .center .channel .item').attr('ext').blank()
               }
             tap = 0
           }, 325)
@@ -283,7 +298,8 @@ $(document)
           // compare first click to this click and see if they occurred within double click threshold
           if (((new Date().getTime()) - tap) < 300) {
               // double click occurred
-              $(this).parents('html body #wrapper #container #main #feed .center .channel .item')
+              $(this).parents('html body #wrapper #container #guide, ' +
+                'html body #wrapper #container #main #feed .center .channel .item')
                 .find('.fa-heart, .fa-heart-o')
                 .toggleClass('fa-heart-o fab fa-heart')
               e.stopPropagation()
@@ -295,8 +311,8 @@ $(document)
       visual()
   })
   .on('touch click',
-    'html body #wrapper #container #guide .sticky .tag .fa-heart, ' +
-    'html body #wrapper #container #guide .sticky .tag .fa-heart-o, ' +
+    'html body #wrapper #container #guide .sticky .wrap .tag .fa-heart, ' +
+    'html body #wrapper #container #guide .sticky .wrap .tag .fa-heart-o, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart',
     function(e) {
@@ -305,8 +321,8 @@ $(document)
         visual()
   })
   .on('touch click',
-  'html body #wrapper #container #guide .sticky .tag .fa-bookmark, ' +
-    'html body #wrapper #container #guide .sticky .tag .fa-bookmark-o, ' +
+  'html body #wrapper #container #guide .sticky .wrap .fa-bookmark, ' +
+    'html body #wrapper #container #guide .sticky .wrap .fa-bookmark-o, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o',
     function(e) {
@@ -325,17 +341,17 @@ $(document)
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
       if (location.href.match('\\+1'))
-          $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+          $(this).parents('html body #wrapper #container #guide .sticky, ' +
             'html body #wrapper #container #main #feed .center .item .classic').find('.share')
-          .val($(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+          .val($(this).parents('html body #wrapper #container #guide .sticky, ' +
             'html body #wrapper #container #main #feed .center .item .classic').find('.share').val() + '+1')
       else if (!location.href.match('\\+1'))
-        $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+        $(this).parents('html body #wrapper #container #guide .sticky, ' +
           'html body #wrapper #container #main #feed .center .item .classic').find('.share').val(
-          $(this).parents('html body #wrapper #container #main #feed .center .channel .item, ' +
+          $(this).parents('html body #wrapper #container #guide .sticky, ' +
             'html body #wrapper #container #main #feed .center .item .classic').find('.share').val().replace(/\+1/g, '')
         )
-      $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
+      $(this).parents('html body #wrapper #container #guide .sticky, ' +
         'html body #wrapper #container #main #feed .center .item .classic').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note')) $(this).toggleClass('fa-sticky-note-o fa-sticky-note')

@@ -117,20 +117,23 @@ var guide = function(array) {
     "  <div class='fill'></div>" +
     "  <div class='item " + array[0].id + "' item='" + array[0].id + "' ext='" + array[0].re + "'>" +
     "    <div class='image'>" +
-    "      <img id='" + array[0].element + "' class='img guide " + array[0].element + "' style='display:none'>" +
+    "      <img id='" + array[0].element + "' class='img guide " + array[0].element + "'>" +
     "    </div>" +
     "  </div>" +
     "  <div class='wrap'>" +
-    "    <div class='header'>" + array[0].courtesy +
-    "      <div class='copy fa-ellipsis-h' title='Copy URL'>" +
-    "    </div>" +
+    "    <div class='header'>" + array[0].courtesy + "</div>" +
+    "    <div class='pub'>" + array[0].title + "</div>" +
+    "    <div class='ago'>" + array[0].dst + "</div>" +
+    "    <input class='url' value='" + array[0].re + "'>" +
+    "    <input class='share' value='" + array[0].share + "'>" +
+    "    <input class='source' value='" + array[0].src + "'>" +
+         tag +
     "  </div>" +
-    "  <div class='pub'>" + array[0].title + "</div>" +
-    "  <div class='ago'>" + array[0].dst + "</div>" +
-        tag +
     "</div>"
   )
   $('html body #wrapper #container #main #top').hide()
+  guideImage(array[0].src)
+  visual()
 }
 
 var content = function(n, recent, oldest, posts) {
@@ -639,6 +642,18 @@ var greenwich = function(channel, datetime) {
 
 }
 
+var guideImage = function(src) {
+  $('#guide').find('.img').attr('src', src)
+  .on('load', function() {
+      $('html body #wrapper #container #main').addClass('guide')
+      $('html body #wrapper #container #guide .sticky').show()
+      $('html body #wrapper #container #guide .checkmark').show()
+      if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '70vw')
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).css('max-height', '70vh')
+      $(this).show().fadeIn(750)
+  })
+}
+
 var image = function(empty, n, item, src) {
 
   var maximum = 799
@@ -667,11 +682,6 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'display': 'flex'
            }).find('.tag').remove()
-    } else if ($(this).hasClass('guide')) {
-        $('html body #wrapper #container #main').addClass('guide')
-        $('html body #wrapper #container #guide .sticky, html body #wrapper #container #guide .checkmark').show()
-        if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '70vw')
-        else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css('max-width', '60vh')
     } else {
       if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
       else if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
@@ -770,6 +780,7 @@ var xml = function(e, s, n) {
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
+        "  <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
         "</div>"
 
       if ($(this).find('title:first').text().length > 125) var more = "<div class='more'>more</div>"
@@ -787,9 +798,7 @@ var xml = function(e, s, n) {
         else var views = ''
 
         html = "<div id='yt' class='item' ext='" + parse.re + "'>" +
-               "  <div class='header'>" + courtesy +
-               "    <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-               "  </div>" +
+               "  <div class='header'>" + courtesy + "</div>" +
                "  <div class='yt'>" +
                "    <iframe src='" + src + "'></iframe>" +
                     views +
@@ -806,9 +815,7 @@ var xml = function(e, s, n) {
 
         if (!cat) cat = ''
         html = "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + parse.re + "'>" +
-               "    <div class='header'>" + courtesy +
-               "      <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
-               "    </div>" +
+               "  <div class='header'>" + courtesy + "</div>" +
                "  <div class='classic'>" +
                "    <div class='fill'><div class='loader double-circle'></div></div>" +
                "    <div class='image'>" + video +
@@ -860,7 +867,6 @@ var xml = function(e, s, n) {
         id: n
       })
       guide(sticky)
-      image(false, n, sticky.element, sticky.src)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
 
