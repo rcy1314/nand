@@ -273,7 +273,7 @@ $(document)
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
               if (category == 'Social' && $this.hasClass('default')) {
-                if ($('html body #wrapper #container #main').width() > 425 && $this.hasClass('default')){
+                if ($('html body #wrapper #container #main').width() >= 426 && $this.hasClass('default')){
                   var sticky = []
                   sticky.push({
                     courtesy: $this.parents('.item').find('.header').html(),

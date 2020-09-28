@@ -645,11 +645,14 @@ var greenwich = function(channel, datetime) {
 var guideImage = function(src) {
   $('#guide').find('.img').attr('src', src)
   .on('load', function() {
-      $('html body #wrapper #container #main').addClass('guide')
       $('html body #wrapper #container #guide .sticky').show()
+      $('html body #wrapper #container #main').addClass('guide')
       $('html body #wrapper #container #guide .checkmark').show()
       if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '70vw')
-      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).css('max-height', '70vh')
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css({
+        'max-height': '90vh',
+        'max-width': '40vw'
+      })
       $(this).show().fadeIn(750)
   })
 }
@@ -670,7 +673,7 @@ var image = function(empty, n, item, src) {
   .on('error', function() {
     $(this).parents('.item').css('padding-bottom', '30px').parents('.item').find('.url, .share, .source, .image, .fill').remove()
   }).on('load', function() {
-    if ($('html body #wrapper #container #main #top #arm #search #home').css('display') == 'none'){
+    if ($('html body #wrapper #container #main').width() <= 425) {
       $('html body #wraper #container #guide .blur .sticky').show()
       if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
       else if ($(this).get(0).naturalWidth < maximum)
