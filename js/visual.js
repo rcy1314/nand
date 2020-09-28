@@ -103,6 +103,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #visit #page .quick .feed, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #feed .center .quick .right, ' +
