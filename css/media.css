@@ -1,12 +1,26 @@
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 426px) {
 
-  html body #wrapper #container #main .quick {
-    left: 20px !important;
+  html body #wrapper #container #main #visit #page .quick {
+    position: absolute;
+    height: 520px;
+    width: 100%;
+    top: 165px;
   }
 
-}
+  html body #wrapper #container #main #visit #page .quick .feed {
+    justify-content: center;
+    display: inline-flex;
+    position: absolute;
+    margin-right: 0%;
+    flex-wrap: wrap;
+    margin-left: 0%;
+    right: 0;
+    left: 0;
+  }
 
-@media screen and (max-width: 426px) {
+  html body #wrapper #container #main #visit #page #front #label {
+    margin-top: -150px;
+  }
 
   html body #wrapper #container #main #top #arm #option,
   html body #wrapper #container #main #top #arm #search #home,
@@ -27,17 +41,11 @@
     height: 250px;
   }
 
-  html body #wrapper #container #main #top #arm #search .fa-map {
-    visibility: visible;
-    position: fixed;
-    font-size: 32px;
-    left: 25px;
-    top: 10px;
-  }
-
   html body #wrapper #container #main #visit #page #mobile {
+    position: absolute;
     display: block;
-    top: 50px
+    z-index: 0;
+    top: 350px
   }
 
   html body #wrapper #container #main #page,
@@ -90,7 +98,6 @@
     position: relative;
     padding-left: 0;
     margin: 0 auto;
-    top: -155px;
   }
 
   html body #wrapper #container #top #arm #search #match .listing {
@@ -109,55 +116,6 @@
     padding-left: 10px;
     width: 300px;
     top: 0px;
-  }
-
-  html body #wrapper #container #main #visit #page .quick {
-    position: absolute;
-    width: 280px;
-    left: 50px;
-    top: 150px;
-  }
-
-}
-
-@media screen and (min-width: 425px) and (max-width: 426px) {
-
-  html body #wrapper #container #main #visit #page #front .focus .button,
-  html body #wrapper #container #main #visit #page #front .focus .icon {
-    display: inline-block;
-  }
-
-  html body #wrapper #container #main #visit #page #front .focus .button{
-    top: 1px;
-  }
-
-  html body #wrapper #container #main #visit #page #front .focus .icon {
-    top: 13px;
-  }
-
-  html body #wrapper #container #main #visit #page #front .focus {
-    margin: 0 auto;
-    width: 400px;
-    padding: 0;
-  }
-
-  html body #wrapper #container #main #visit #page #front .focus input[type=text] {
-    width: 330px;
-    padding: 0;
-    top: -12px;
-  }
-
-  html body #wrapper #container #main #visit #page #front #first .listing {
-    padding-left: 0;
-    width: 400px;
-  }
-
-  html body #wrapper #container #main #visit #page .quick {
-    position: relative;
-    width: 410px;
-    z-index: 3;
-    left: 20px;
-    top: 0;
   }
 
 }
@@ -226,8 +184,8 @@
   }
 
   html body #wrapper #container #main #visit #page .quick {
-  	width: 686px;
-	  left: 4px;
+  	width: 720px;
+	  left: 0;
   }
 
 }
@@ -285,7 +243,7 @@
 
   html body #wrapper #container #main #visit #page .quick {
 	  width: 686px;
-	  left: 4px;
+	  left: -15px;
   }
 
 }
@@ -350,8 +308,8 @@
   html body #wrapper #container #main #visit #page .quick {
     position: relative;
     width: 840px;
-    left: 4px;
     top: 15px;
+    left: 0;
   }
 
   html body #wrapper #container #main #feed .content {

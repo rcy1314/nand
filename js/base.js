@@ -300,7 +300,7 @@ var quick  = function(n) {
       "</div>"
    )
   }
-  for (var i = 1; i <= n; i++) {
+  else for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
       dupe.push(e)
