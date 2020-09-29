@@ -47,7 +47,7 @@ $(document)
     'html body #wrapper #container #main #top #option',
     function(e) {
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #top #arm #search input[type=text]').blur()
+        $('html body #wrapper #container #main #top #arm #search input[type=text]').blur().val('Search')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
@@ -101,9 +101,9 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #option .fa-home',
   function(e) {
-    id = 0
     $.loading()
     location.pathname.state()
+    document.title = category
     $('html body #wrapper #container #main #visit').hide()
     $('html body #wrapper #container #main #top').show()
     populate(category)
