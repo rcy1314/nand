@@ -665,7 +665,7 @@ var image = function(empty, n, item, src) {
   var k = 5420
 
   if (src && src.match(/\.mp4/g)) {
-    $('.' + n).find(' .' + item).parents('.item, #guide').fadeIn(1000).parents('.item, #guide').find('.fill').remove()
+    $('.' + n).find(' .' + item).parents('.item, #guide').fadeIn(1000).find('.fill').remove()
     return false
   }
   if (src && src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
