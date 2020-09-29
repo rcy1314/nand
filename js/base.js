@@ -95,7 +95,7 @@ var footer = function() {
     "      <span class='flip-front'>Previous</span>" +
     "      <span class='flip-back'>" + String(menu[$.back()].id.match(/[^\/]+$/g)).substring(0,9) + "...</span>" +
     "  </div>" +
-    "  <div class='bottom'></div>" +
+    "  <div class='bottom'>Return</div>" +
     "  <div class='next btn' aria-item='" + $.next() + "'>" +
     "      <span class='front'></span>" +
     "      <span class='flip-front'>Next</span>" +
@@ -319,6 +319,14 @@ var quick  = function(n) {
 
 var progress = function(done, n) {
 
+  if (!location.href.match('\\?+1') &&
+      !location.href.match('\\?q=') &&
+      !location.href.match('\\+1') &&
+      !location.href.match('\\?') &&
+      contrast == true) {
+    var uri = window.location.href + '?+1'
+    uri.state()
+  }
   $(document).ready(function() {
     if (done == true) {
       $('#progressBar').css({

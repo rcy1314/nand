@@ -72,6 +72,8 @@ $(document)
       contrast = contrast != true
       op = op != true
     }
+    if (op == 0) notify('Invert Visual Applied.')
+    else if (op == 1) notify('Opposite Visual Applied.')
     setTimeout(function() {
       $('html body #wrapper #container #main #visit #page .focus input[type=text]').attr('tabindex', -1).focus()
     }, 1000)

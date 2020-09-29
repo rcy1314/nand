@@ -34,7 +34,6 @@
   html body #wrapper #container #main #visit #page .quick .fa-angle-double-right,
   html body #wrapper #container #main #feed .center .quick .left,
   html body #wrapper #container #main #visit #page .quick .left,
-  html body #wrapper #container #main #feed .center #bottom .bottom,
   html body #wrapper #container #main #feed .content,
   html body #wrapper #container #main #visit #page #front .focus .button,
   ::-webkit-scrollbar {
@@ -74,10 +73,8 @@
 	  left: 0;
   }
 
-  html body #wrapper #container #main #feed .center .item,
-  html body #wrapper #container #main #feed .center .feed {
-    box-shadow: none;
-    border: none;
+  html body #wrapper #container #main #feed .center .item {
+    margin-bottom: 1.5em;
   }
 
   html body #wrapper #container #main #option {
