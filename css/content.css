@@ -1301,6 +1301,15 @@ html body #wrapper #container #main #feed .content .status .info {
   width: 275px;
 }
 
+html body #wrapper #container #main #feed .content .status .info .description {
+  background-color: transparent;
+  text-justify: inter-word;
+  text-align: justify;
+  position: relative;
+  margin: 0 auto;
+  width: 75%;
+}
+
 html body #wrapper #container #main #feed .content .status .info,
 html body #wrapper #container #main #feed .content .status .asset {
   background-color: transparent;
@@ -1311,7 +1320,7 @@ html body #wrapper #container #main #feed .content .status .asset {
 html body #wrapper #container #main #feed .content .suggestions {
   background-color: transparent;
   position: relative;
-  padding-top: 30px;
+  padding-top: 15px;
   text-align: left;
   font-size: 10px;
   width: 280px;

@@ -157,9 +157,10 @@ var content = function(n, recent, oldest, posts) {
     "  </a>" +
     "</div>" +
     "<div class='info'>" +
-    "  <b>Most recent</b><div style='float:right'>" + recent +"</div><br>" +
-    "  <b>Oldest post</b><div style='float:right'>" + oldest + "</div><br>" +
-    "  <b>Posts</b>&ensp;<div style='float:right'>" + posts + "</div>" +
+    "  <div class='description'>&emsp;" + menu[n].des + "</div><br>" +
+    "  Most recent<div style='float:right'>" + recent +"</div><br>" +
+    "  Oldest post<div style='float:right'>" + oldest + "</div><br>" +
+    "  Posts&ensp;<div style='float:right'>" + posts + "</div>" +
     "</div>"
   )
 
@@ -374,7 +375,7 @@ var progress = function(done, n) {
 var suggest = function(n) {
 
       var duplicate = []
-      for (var i = 0; i <= 6; i++) {
+      for (var i = 0; i <= 5; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
         duplicate.push(e)
         if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
