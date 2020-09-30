@@ -72,7 +72,7 @@
     * Query Feed Example
     > /?q=example+query&unique-identifier<br>
     > /?q=wall&imgur-wallpaper<br>
-    &emsp;will load feed and return after xml wiill filter response to query.
+    will load feed and return at bottom will filter response to query.
 
 
 ### Head.js has multiple indices for objects.
