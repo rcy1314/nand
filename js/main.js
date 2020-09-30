@@ -287,7 +287,8 @@ $(document)
                     re: $this.parents('.item').attr('ext'),
                     id: $this.attr('id')
                   })
-                  guide(sticky)
+                  if ($this.parents('.item, .sticky').find('.tag .fa-heart').length) guide(true, sticky)
+                  else guide(false, sticky)
                 }
                 else $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
@@ -299,11 +300,34 @@ $(document)
       } else {
           // compare first click to this click and see if they occurred within double click threshold
           if (((new Date().getTime()) - tap) < 300) {
+              $this = $(this)
               // double click occurred
-              $(this).parents('html body #wrapper #container #guide, ' +
-                'html body #wrapper #container #main #feed .center .channel .item')
-                .find('.fa-heart, .fa-heart-o')
-                .toggleClass('fa-heart-o fab fa-heart')
+              if ($(this).parents('.item, .sticky').find('.tag .fa-heart-o').length) {
+                  $(this).parents('html body #wrapper #container #guide .sticky .item .image, ' +
+                    'html body #wrapper #container #main #feed .center .channel .item .classic .image')
+                    .find('.fa-heart')
+                    .css({
+                      'animation': 'scale .7s ease-in-out .1s both',
+                      'display': 'block'
+                    })
+                setTimeout(function() {
+                  $this.parents('html body #wrapper #container #guide .sticky .item .image, ' +
+                    'html body #wrapper #container #main #feed .center .channel .item .classic .image')
+                    .find('.fa-heart')
+                    .css({
+                      'animation': 'none',
+                      'display': 'none'
+                    })
+                }, 1500)
+              }
+              var item = $(this).parents('.item').attr('item')
+              $(this).parents('html body #wrapper #container #guide')
+                .find('.tag .fa-heart, .tag .fa-heart-o')
+                .toggleClass('fa-heart-o fa-heart')
+              $('html body #wrapper #container #main #feed .center .channel .' + item)
+                .parents('.item')
+                .find('.tag .fa-heart, .tag .fa-heart-o')
+                .toggleClass('fa-heart-o fa-heart')
               e.stopPropagation()
               visual()
               tap = 0
@@ -318,6 +342,26 @@ $(document)
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart',
     function(e) {
+      if ($(this).parents('.item, .sticky').find('.tag .fa-heart-o').length) {
+        $this = $(this)
+        console.log('found')
+          $(this).parents('html body #wrapper #container #guide, ' +
+            'html body #wrapper #container #main #feed .center .channel .item')
+            .find('.image .fa-heart')
+            .css({
+              'animation': 'scale .7s ease-in-out .1s both',
+              'display': 'block'
+            })
+        setTimeout(function() {
+          $this.parents('html body #wrapper #container #guide, ' +
+            'html body #wrapper #container #main #feed .center .channel .item')
+            .find('.image .fa-heart')
+            .css({
+              'animation': 'none',
+              'display': 'none'
+            })
+        }, 1500)
+      }
         $(this).toggleClass('fa-heart-o fa-heart')
         e.stopPropagation()
         visual()

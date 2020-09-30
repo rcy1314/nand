@@ -458,6 +458,7 @@ html body #wrapper #container #main #visit #page #handle .fa-map {
   position: relative;
   font-size: 72px;
   left: 10px;
+  animation: scale .1s ease-in-out .3s both;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
@@ -1142,9 +1143,23 @@ html body #wrapper #container #main #feed .center .item .img {
   margin: 0 auto;
 }
 
+html body #wrapper #container #guide .sticky .image,
 html body #wrapper #container #main #feed .center .item .image {
+  justify-content: center;
+  align-items: center;
+  display: flex;
   right: 0;
   left: 0;
+}
+
+html body #wrapper #container #guide .sticky .image .fa-heart,
+html body #wrapper #container #main #feed .center .item .image .fa-heart {
+  background-color: transparent;
+  color: #ffffff !important;
+  position: absolute;
+  font-size: 72px;
+  display: none;
+  z-index: 1;
 }
 
 html body #wrapper #container #main #feed .center .item .pub .more {

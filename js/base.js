@@ -105,8 +105,10 @@ var footer = function() {
   )
 }
 
-var guide = function(array) {
+var guide = function(heart, array) {
 
+  if (heart == true) var fa = 'fa-heart'
+  else var fa = 'fa-heart-o'
   $('html body #wrapper #container #guide').css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
     "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
@@ -117,6 +119,7 @@ var guide = function(array) {
     "  <div class='fill'></div>" +
     "  <div class='item " + array[0].id + "' item='" + array[0].id + "' ext='" + array[0].re + "'>" +
     "    <div class='image'>" +
+    "      <div class='fa fa-heart'></div>" +
     "      <img id='" + array[0].element + "' class='img guide " + array[0].element + "'>" +
     "    </div>" +
     "  </div>" +
@@ -127,7 +130,11 @@ var guide = function(array) {
     "    <input class='url' value='" + array[0].re + "'>" +
     "    <input class='share' value='" + array[0].share + "'>" +
     "    <input class='source' value='" + array[0].src + "'>" +
-         tag +
+    "    <div class='tag'>" +
+    "      <div class='images " + fa + "'></div>" +
+    "      <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
+    "      <div class='images fa-bookmark-o' title='Copy Source'></div>" +
+    "      </div>" +
     "  </div>" +
     "</div>"
   )
@@ -830,6 +837,7 @@ var xml = function(e, s, n) {
                "  <div class='classic'>" +
                "    <div class='fill'><div class='loader double-circle'></div></div>" +
                "    <div class='image'>" + video +
+               "      <div class='fa fa-heart'></div>" +
                "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
                "    </div>" +
                "    <div class='wrap'>" + tag +
@@ -877,7 +885,7 @@ var xml = function(e, s, n) {
         re: pub[local].re,
         id: n
       })
-      guide(sticky)
+      guide(false, sticky)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
 

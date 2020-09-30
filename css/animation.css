@@ -180,9 +180,19 @@
     transform: none;
   }
 
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
+  25% {
+    transform: rotate(15deg);
   }
+
+  50% {
+    transform: rotate(-15deg);
+    transform: scale3d(1.4, 1.4, 1);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
+
 }
 
 @keyframes fill {
