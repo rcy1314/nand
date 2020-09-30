@@ -69,6 +69,12 @@
     &emsp;/?q=&abc-technology (found one, unique passthrough).<br>
     &emsp;/?q=&jquery (not found pass through xml search).<br>
 
+    * Query Feed Example
+    > /?q=example+query&unique-identifier<br>
+    > /?q=wall&imgur-wallpaper<br>
+    &emsp;will load feed and return after xml wiill filter response to query.
+
+
 ### Head.js has multiple indices for objects.
 
   * These need to be fufilled to add an object.<br>
