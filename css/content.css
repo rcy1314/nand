@@ -452,12 +452,15 @@ html body #wrapper #container #main #visit #page #handle {
   width: 100%;
 }
 
+html body #wrapper #container #main #visit #page #handle {
+  left: 10px;
+}
+
 html body #wrapper #container #main #visit #page #mobile .fa-map,
 html body #wrapper #container #main #visit #page #handle .fa-map {
   color: #fff !important;
   position: relative;
   font-size: 72px;
-  left: 10px;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
@@ -669,7 +672,7 @@ html body #wrapper #container #main #visit #page #front #label .link {
   position: absolute;
   margin-left: 10px;
   margin-top: 20px;
-  padding: 10px;
+  padding: 9px;
   height: 10px;
   width: 10px;
 }

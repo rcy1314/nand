@@ -704,6 +704,7 @@ var image = function(empty, n, item, src) {
            }).find('.tag').remove()
     } else {
       if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
+      if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).addClass('default').width('100%')
       else if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
       else if ($(this).get(0).naturalWidth < minimum)
         $(this).width('100%')
