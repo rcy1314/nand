@@ -3,7 +3,7 @@ var visual = function(n) {
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
     $('div').css('color','#f7f7f7')
-    $('.expand .hash, .expand .media, #notification, ' +
+    $('#notification, ' +
       'html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
@@ -96,7 +96,7 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
 
-    $('.expand .hash, .expand .media, #notification, ' +
+    $('#notification, ' +
       'html body #wrapper #container, ' +
 	    'html body #wrapper #container #main, ' +
       'html body #wrapper #container #guide .blur, ' +

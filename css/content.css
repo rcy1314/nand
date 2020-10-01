@@ -755,17 +755,24 @@ html body #wrapper #container #main #group .result .populate .title {
   display: flex !important;
   flex-wrap: nowrap !important;
   font-size: 12px !important;
-  margin: 5px !important;
+  margin: .3px !important;
   width: 100% !important;
 }
 
+.expand .filter,
+.expanding .populate {
+  padding: 5px !important;
+}
+
 .expand .display {
-  width: 32px !important;
+  width: 48px !important;
+  padding-right: 15px !important;
 }
 
 .expand img {
-  height: 32px !important;
-  width: 32px !important;
+  border-radius: 0 !important;
+  height: 48px !important;
+  width: 48px !important;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -775,26 +782,24 @@ html body #wrapper #container #main #group .result .populate .title {
 }
 
 .expand .hash,
+.expand .blank,
 .expand .media {
-  border-radius: 16px !important;
   align-items: center !important;
-  padding: 10px !important;
+  padding-right: 15px !important;
 }
 
 .expand .hash {
-  border-radius: 16px !important;
-  width: 16px !important;
-  margin-right: 5px !important;
+  flex-basis: 10% !important;
 }
 
+.expand .blank,
 .expand .media {
-  margin-right: 5px !important;
-  width: 36px !important;
+  flex-basis: 10% !important;
 }
 
 .expand .description {
-  margin-left: 10px !important;
   text-align: left !important;
+  flex-basis: 80% !important;
   width: 100%;
 }
 

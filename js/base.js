@@ -2,10 +2,10 @@ var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
 var quickFeeds = true //show or hide
-var loading = 'percent' //or 'percent'
+var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
-var expand = false // filter populate list display
+var expand = true // filter populate list display
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
@@ -66,7 +66,6 @@ var notify = function(n) {
 
 var display = function(n) {
   if (n == true) {
-    var display = 'List'
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
       '#group .filter .description, ' +
@@ -76,9 +75,7 @@ var display = function(n) {
       .css('display','inline-flex')
     $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
     $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
-  }
-  else if (n == false){
-    var display = 'Block'
+  } else if (n == false){
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
       '#group .filter .description, ' +
@@ -89,7 +86,6 @@ var display = function(n) {
       $('#group .filter, #group .populate').removeClass('expand invert')
     $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   }
-  notify ('Display feeds as ' + display + '.')
 }
 
 var toggle = function(n) {
@@ -439,7 +435,7 @@ var populate = function(n) {
       )
     if (id && !location.href.match('\\?q=') && id != 0){
       if (menu[id].media == true) var media = "<div class='media' style='display:none'>Images</div>"
-      else var media = ""
+      else var media = "<div class='blank'></div>"
       $('html body #wrapper #container #main #group .result').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
@@ -458,7 +454,7 @@ var populate = function(n) {
     }
     for (var i = 1; i <= menu.length - 1; i++) {
       if (menu[i].media == true) var media = "<div class='media' style='display:none'>Images</div>"
-      else var media = ""
+      else var media = "<div class='blank'></div>"
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
           $('html body #wrapper #container #main #group .result').append(
@@ -495,7 +491,7 @@ var populate = function(n) {
             )
         }
     }
-    if (n != category) display(expand)
+    display(expand)
     if (onlyImages == false) air(category)
     else if (onlyImages == true) $.unloading()
   })
@@ -507,7 +503,7 @@ var air = function(n) {
   $('html body #wrapper #container #main #group .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (menu[i].media == true) var media = "<div class='media' style='display:none'>Images</div>"
-    else var media = ""
+    else var media = "<div class='blank'></div>"
     if (category == menu[i].cat)
       $('html body #wrapper #container #main #group .air').append(
         "<div class='populate'" +
@@ -526,7 +522,7 @@ var air = function(n) {
       )
   }
   $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
-  if (n != category) display(expand)
+  display(expand)
   $.unloading()
   visual()
 })
@@ -960,6 +956,7 @@ var xml = function(e, s, n) {
     content(n, recent, oldest, posts)
     clearInterval(complete)
     suggest()
-    progress(true, 100)
+    if (loading == 'percent') progress(true, 100)
+    else $.unloading()
   })
 }

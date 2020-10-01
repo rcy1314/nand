@@ -61,6 +61,7 @@ $(document)
     onlyImages = onlyImages != true
     notify ('Only Images Now ' + onlyImages.toString().capitalize() + '.')
     if (reader == false) populate(category)
+    display(expand)
   })
   .on('touch click', 'html body #wrapper #container #toggle', function(e) {
     if (location.href.match('\\?\\+1') || location.href.match('\\+1')) {
@@ -153,6 +154,9 @@ $(document)
   function(e) {
     expand = expand != true
     display(expand)
+    if (expand == true) var group = 'List'
+    else var group = 'Block'
+    notify ('Display feeds as ' + group + '.')
     visual()
   })
   .on('touch click', 'html body #wrapper #container #main .content .status .filter, ' +
