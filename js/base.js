@@ -740,7 +740,7 @@ var image = function(empty, n, item, src) {
       else if ($(this).get(0).naturalWidth < maximum)
           $(this).width(99)
           .parents('.image').css({
-            'margin': '10px'
+            'margin': '12px'
           }).parents('.item')
           .find('.classic').css({
             'margin-bottom': '30px',
@@ -752,15 +752,22 @@ var image = function(empty, n, item, src) {
       else if ($(this).get(0).naturalWidth < minimum)
         $(this).width('100%')
         .parents('.image').css({
-          'margin': '10px'
+          'margin': '12px'
         }).parents('.item')
           .find('.classic').css({
             'margin-bottom': '30px',
             'align-items': 'center',
             'display': 'flex'
           }).find('.tag').remove()
-      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).width('30vh')
-      else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).width('100%')
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
+        $(this).width('30vh')
+        $('.' + n).find(' .' + item).parents('.item, #guide').find('.header .attribute')
+          .css('height','110px').find('.post, .picture').show()
+      } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) {
+        $(this).width('100%')
+        $('.' + n).find(' .' + item).parents('.item, #guide').find('.header .attribute')
+          .css('height','110px').find('.post, .picture').show()
+      }
   }
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
@@ -843,7 +850,13 @@ var xml = function(e, s, n) {
         "  <a ext='" + menu[n].ext + "'>" +
         "    <b>" + menu[n].id.match(/([^\/]+)$/g) + "</b>" +
         "  </a>" +
-        "  <div class='copy fa-ellipsis-h' title='Copy URL'></div>" +
+        "  <div class='copy fa-ellipsis-h'>" +
+        "    <div class='attribute'>" +
+        "      <div class='site'><a>Copy Url</a></div>" +
+        "      <div class='post'><a>Copy Post</a></div>" +
+        "      <div class='picture'><a>Copy Source</a></div>" +
+        "    </div>" +
+        "  </div>" +
         "</div>"
 
       if ($(this).find('title:first').text().length > 125) var more = "<div class='more'>more</div>"

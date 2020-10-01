@@ -194,17 +194,30 @@ $(document)
   })
   .on('touch click',
     'html body #wrapper #container #guide .sticky .header .fa-ellipsis-h, ' +
-    'html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-h',
+    'html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-h, ' +
+    'html body #wrapper #container #guide .sticky .header .fa-ellipsis-v, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-v',
+    function(e) {
+      if (!$(this).find('.attribute').is(':visible')){
+        $(this).find('.attribute').show()
+        $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
+      } else {
+        $(this).find('.attribute').hide()
+        $(this).removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+      }
+      e.stopPropagation()
+      visual()
+  })
+  .on('touch click',
+    'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
+    'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site',
     function(e) {
       $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
           'html body #wrapper #container #main #feed .center .item .classic')
             .find('.url').select()
       document.execCommand('copy')
-      var $this = $(this)
-      $(this).removeClass('fa-ellipsis-h').addClass('fa-ellipsis-v')
-      setTimeout(function() {
-        $this.removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
-      }, 250)
+      $(this).parents('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+      $(this).parents('.attribute').hide()
       notify('URL Copied to Clipboard.')
       e.stopPropagation()
   })
@@ -378,6 +391,8 @@ $(document)
   .on('touch click',
   'html body #wrapper #container #guide .sticky .wrap .fa-bookmark, ' +
     'html body #wrapper #container #guide .sticky .wrap .fa-bookmark-o, ' +
+    'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .picture, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .courtesy .copy .attribute .picture, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o',
     function(e) {
@@ -385,6 +400,8 @@ $(document)
           'html body #wrapper #container #main #feed .center .item .classic').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark')) $(this).toggleClass('fa-bookmark-o fa-bookmark')
+        $(this).parents('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+        $(this).parents('.attribute').hide()
         notify('Source Copied to Clipboard.')
         e.stopPropagation()
         visual()
@@ -392,25 +409,29 @@ $(document)
   .on('touch click',
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note, ' +
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note-o, ' +
+    'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .courtesy .copy .attribute .post, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {
       if (location.href.match('\\+1'))
           $(this).parents('html body #wrapper #container #guide .sticky, ' +
-            'html body #wrapper #container #main #feed .center .item .classic').find('.share')
+            'html body #wrapper #container #main #feed .center .item').find('.share')
           .val($(this).parents('html body #wrapper #container #guide .sticky, ' +
-            'html body #wrapper #container #main #feed .center .item .classic').find('.share').val() + '+1')
+            'html body #wrapper #container #main #feed .center .item').find('.share').val() + '+1')
       else if (!location.href.match('\\+1'))
         $(this).parents('html body #wrapper #container #guide .sticky, ' +
-          'html body #wrapper #container #main #feed .center .item .classic').find('.share').val(
+          'html body #wrapper #container #main #feed .center .item').find('.share').val(
           $(this).parents('html body #wrapper #container #guide .sticky, ' +
-            'html body #wrapper #container #main #feed .center .item .classic').find('.share').val().replace(/\+1/g, '')
+            'html body #wrapper #container #main #feed .center .item').find('.share').val().replace(/\+1/g, '')
         )
       $(this).parents('html body #wrapper #container #guide .sticky, ' +
-        'html body #wrapper #container #main #feed .center .item .classic').find('.share').select()
+        'html body #wrapper #container #main #feed .center .item').find('.share').select()
       document.execCommand('copy')
       if (!$(this).hasClass('fa-sticky-note')) $(this).toggleClass('fa-sticky-note-o fa-sticky-note')
       notify('Post Copied to Clipboard.')
+      $(this).parents('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+      $(this).parents('.attribute').hide()
       e.stopPropagation()
       visual()
   })
