@@ -790,7 +790,7 @@ html body #wrapper #container #main #group .result .populate .title {
   width: 48px;
 }
 .expand .description {
-  position: relative;
+  align-items: center !important;
   width: 60%;
 }
 
