@@ -758,13 +758,12 @@ html body #wrapper #container #main #group .result .populate .title {
   cursor: pointer;
   font-size: 9px;
   text-align: left;
-  height: 32px !important;
   margin: .3px !important;
   width: 100% !important;
 }
 
 .expand .display {
-  width: 48px !important;
+  width: 32px !important;
 }
 
 .expand img {
@@ -777,11 +776,22 @@ html body #wrapper #container #main #group .result .populate .title {
   display: none !important;
 }
 
-.expand .description {
+.expand .hash,
+.expand .media {
   align-items: center !important;
+  margin-right: 10px;
+}
+
+.expand .hash {
+  width: 8px;
+}
+
+.expand .media {
+  width: 48px;
+}
+.expand .description {
   position: relative;
-  margin-top: 5px;
-  width: 100%;
+  width: 60%;
 }
 
 html body #wrapper #container #main #top #arm #search #input,

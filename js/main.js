@@ -154,14 +154,26 @@ $(document)
     expand = expand != true
     if (expand == true) {
       var display = 'List'
-      $('.filter .description, .populate .description').css('display','inline-flex')
-      $('.filter, .populate').addClass('expand')
+      $('#group .filter .hash, ' +
+        '#group .filter .media, ' +
+        '#group .filter .description, ' +
+        '#group .populate .hash, ' +
+        '#group .populate .media, ' +
+        '#group .populate .description')
+        .css('display','inline-flex')
+      $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
       $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
     }
     else if (expand == false){
       var display = 'Block'
-      $('.filter, .populate').removeClass('expand invert')
-      $('.filter .description, .populate .description').hide()
+      $('#group .filter .hash, ' +
+        '#group .filter .media, ' +
+        '#group .filter .description, ' +
+        '#group .populate .hash, ' +
+        '#group .populate .media, ' +
+        '#group .populate .description')
+        .hide()
+        $('#group .filter, #group .populate').removeClass('expand invert')
       $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
     }
     notify ('Display feeds as ' + display + '.')

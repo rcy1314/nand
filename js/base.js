@@ -410,6 +410,8 @@ var populate = function(n) {
         "</div>"
       )
     if (id && !location.href.match('\\?q=') && id != 0){
+      if (menu[id].media == true) var media = 'Images'
+      else var media = ''
       $('html body #wrapper #container #main #group .result').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
@@ -420,11 +422,15 @@ var populate = function(n) {
                String(menu[id].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
         "    </a>" +
         "  </div>" +
+        "  <div class='hash' style='display:none'>" + menu[id].hash + "</div>" +
+        "  <div class='media' style='display:none'>" + media + "</div>" +
         "  <div class='description' style='display:none'>" + menu[id].des + "</div>" +
         "</div>"
       )
     }
     for (var i = 1; i <= menu.length - 1; i++) {
+      if (menu[i].media == true) var media = 'Images'
+      else var media = ''
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
           $('html body #wrapper #container #main #group .result').append(
@@ -437,6 +443,8 @@ var populate = function(n) {
                  String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
             "  </a>" +
             "  </div>" +
+            "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
+            "  <div class='media' style='display:none'>" + media + "</div>" +
             "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
             "</div>"
           )
@@ -452,6 +460,8 @@ var populate = function(n) {
                    String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
               "  </a>" +
               "  </div>" +
+              "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
+              "  <div class='media' style='display:none'>" + media + "</div>" +
               "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
               "</div>"
             )
@@ -460,8 +470,14 @@ var populate = function(n) {
     if (onlyImages == false) air(category)
     else if (onlyImages == true) $.unloading()
     if (expand == true){
-      $('.filter .description, .populate .description').css('display','inline-flex')
-      $('.filter, .populate').addClass('expand')
+      $('#group .filter .hash, ' +
+        '#group .filter .media, ' +
+        '#group .filter .description, ' +
+        '#group .populate .hash, ' +
+        '#group .populate .media, ' +
+        '#group .populate .description')
+        .css('display','inline-flex')
+      $('#group .filter, #group .populate').addClass('expand')
       $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
     }
   })
@@ -472,6 +488,8 @@ var air = function(n) {
   $(document).ready(function () {
   $('html body #wrapper #container #main #group .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
+    if (menu[i].media == true) var media = 'Images'
+    else var media = ''
     if (category == menu[i].cat)
       $('html body #wrapper #container #main #group .air').append(
         "<div class='populate'" +
@@ -483,13 +501,21 @@ var air = function(n) {
                String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
         "    </a>" +
         "  </div>" +
+        "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
+        "  <div class='media' style='display:none'>" + media + "</div>" +
         "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
   }
   if (expand == true){
-    $('.filter .description, .populate .description').css('display','inline-flex')
-    $('.filter, .populate').addClass('expand')
+    $('#group .filter .hash, ' +
+      '#group .filter .media, ' +
+      '#group .filter .description, ' +
+      '#group .populate .hash, ' +
+      '#group .populate .media, ' +
+      '#group .populate .description')
+      .css('display','inline-flex')
+    $('#group .filter, #group .populate').addClass('expand')
     $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   }
   $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
@@ -706,9 +732,9 @@ var image = function(empty, n, item, src) {
   }).on('load', function() {
     if ($('html body #wrapper #container #main').width() <= 425) {
       $('html body #wraper #container #guide .blur .sticky').show()
-      if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
+      if ($(this).get(0).naturalWidth > minimum) $(this).width('100%')
       else if ($(this).get(0).naturalWidth < maximum)
-          $(this).width(99).addClass('default')
+          $(this).width(99)
           .parents('.image').css({
             'margin': '10px'
           }).parents('.item')
@@ -729,8 +755,8 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'display': 'flex'
           }).find('.tag').remove()
-      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
-      else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).addClass('default').width('100%')
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).width('30vh')
+      else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).width('100%')
   }
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
@@ -853,7 +879,7 @@ var xml = function(e, s, n) {
                "    <div class='fill'><div class='loader double-circle'></div></div>" +
                "    <div class='image'>" + video +
                "      <div class='fa fa-heart'></div>" +
-               "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
+               "      <img id='" + i + "' class='" + i + " img default' style='display:none'>" +
                "    </div>" +
                "    <div class='wrap'>" + tag +
                "      <div class='pub' text='" +

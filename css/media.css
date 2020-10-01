@@ -123,23 +123,13 @@
 
 @media screen and (min-width: 768px) {
 
-  html body #wrapper #container #main #option .fa-expand-alt,
-  html body #wrapper #container #main #option .fa-camera-retro,
-  html body #wrapper #container #main #option .fa-heart,
-  html body #wrapper #container #main #option .fa-heart-o,
-  html body #wrapper #container #main #option .fa-home,
-  html body #wrapper #container #main #option .fa-code,
-  html body #wrapper #container #main #option .fa-terminal {
+
+
+  html body #wrapper #container #main #option {
     display: none;
   }
 
-  html body #wrapper #container #main #top #arm #option .fa-expand-alt,
-  html body #wrapper #container #main #top #arm #option .fa-camera-retro,
-  html body #wrapper #container #main #top #arm #option .fa-heart,
-  html body #wrapper #container #main #top #arm #option .fa-heart-o,
-  html body #wrapper #container #main #top #arm #option .fa-home,
-  html body #wrapper #container #main #top #arm #option .fa-code,
-  html body #wrapper #container #main #top #arm #option .fa-terminal {
+  html body #wrapper #container #main #top #arm #option {
     display: block;
   }
 
@@ -195,24 +185,11 @@
 
 @media screen and (min-width: 769px) {
 
-  html body #wrapper #container #main #option .fa-expand-alt,
-  html body #wrapper #container #main #option .fa-map,
-  html body #wrapper #container #main #option .fa-heart,
-  html body #wrapper #container #main #option .fa-heart-o,
-  html body #wrapper #container #main #option .fa-home,
-  html body #wrapper #container #main #option .fa-code,
-  html body #wrapper #container #main #option .fa-terminal {
+  html body #wrapper #container #main #option {
     display: none;
   }
 
-  html body #wrapper #container #main #top #arm #option .fa-expand-alt,
-  html body #wrapper #container #main #top #arm #option .fa-sun,
-  html body #wrapper #container #main #top #arm #option .fa-map,
-  html body #wrapper #container #main #top #arm #option .fa-heart,
-  html body #wrapper #container #main #top #arm #option .fa-heart-o,
-  html body #wrapper #container #main #top #arm #option .fa-home,
-  html body #wrapper #container #main #top #arm #option .fa-code,
-  html body #wrapper #container #main #top #arm #option .fa-terminal {
+  html body #wrapper #container #main #top #arm #option {
     display: block;
   }
 
@@ -226,7 +203,7 @@
 
   html body #wrapper #container #main #top #arm #option {
     position: absolute;
-    right: 15px;
+    right: 30px;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
@@ -283,7 +260,7 @@
   }
 
   html body #wrapper #container #main #top #arm #option {
-    right: 0;
+    right: 3px;
   }
 
   html body #wrapper #container #main #feed .center {
