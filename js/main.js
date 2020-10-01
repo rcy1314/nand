@@ -584,8 +584,8 @@ $(document)
         $('html body #wrapper #container #arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
-            "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
-            "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
+            "  <div class='detail'>" +
+            "    <img src='images/" + translations[i] + '.webp' + "'>" +
             "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "      <br>&emsp;" + translations[i].grep() + " sites" +
             "    </div>" +
@@ -704,6 +704,7 @@ $(document)
       } else {
         $('html body #wrapper #container #main #top').show()
         if ($(this).is('[aria-item]') && $.inArray($(this).attr('aria-item').capitalize(), translations) > -1){
+          id = 0
           $.loading()
           $('html body #wrapper #container #main #visit').hide()
           $('html body #wrapper #container #main #top').show()
