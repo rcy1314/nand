@@ -420,7 +420,7 @@ var populate = function(n) {
                String(menu[id].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
         "    </a>" +
         "  </div>" +
-        "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
+        "  <div class='description' style='display:none'>" + menu[id].des + "</div>" +
         "</div>"
       )
     }
@@ -486,6 +486,11 @@ var air = function(n) {
         "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
+  }
+  if (expand == true){
+    $('.filter .description, .populate .description').css('display','inline-flex')
+    $('.filter, .populate').addClass('expand')
+    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   }
   $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
   $.unloading()
@@ -713,9 +718,7 @@ var image = function(empty, n, item, src) {
             'display': 'flex'
            }).find('.tag').remove()
     } else {
-      if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
-      if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).addClass('default').width('100%')
-      else if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
+      if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
       else if ($(this).get(0).naturalWidth < minimum)
         $(this).width('100%')
         .parents('.image').css({
@@ -726,6 +729,8 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'display': 'flex'
           }).find('.tag').remove()
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
+      else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).addClass('default').width('100%')
   }
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
