@@ -103,6 +103,7 @@ $(document)
   })
   .on('touch click', 'html body #wrapper #container #main #option .fa-home',
   function(e) {
+    id = 0
     $.loading()
     location.pathname.state()
     document.title = category
@@ -586,7 +587,7 @@ $(document)
             "  <div class='detail' response='" + translations[i].toLowerCase() + "'>" +
             "    <img src='images/" + translations[i] + '.webp' + "' class='translation'>" +
             "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
-            "      <br>&emsp;" + translations[i].grep() + " feeds" +
+            "      <br>&emsp;" + translations[i].grep() + " sites" +
             "    </div>" +
             "  </div>" +
             "</div>")

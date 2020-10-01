@@ -693,7 +693,8 @@ var image = function(empty, n, item, src) {
       $('html body #wraper #container #guide .blur .sticky').show()
       if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
       else if ($(this).get(0).naturalWidth < maximum)
-          $(this).width(99).addClass('default').css({
+          $(this).width(99).addClass('default')
+          .parents('.image').css({
             'margin': '10px'
           }).parents('.item')
           .find('.classic').css({
@@ -704,9 +705,9 @@ var image = function(empty, n, item, src) {
     } else {
       if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2) $(this).addClass('default').width('30vh')
       else if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
-      else if ($(this).get(0).naturalWidth > minimum) $(this).addClass('default').width('100%')
-      else if ($(this).get(0).naturalWidth < small || $(this).get(0).naturalWidth < minimum)
-        $(this).width('100%').css({
+      else if ($(this).get(0).naturalWidth < minimum)
+        $(this).width('100%')
+        .parents('.image').css({
           'margin': '10px'
         }).parents('.item')
           .find('.classic').css({
@@ -772,10 +773,7 @@ var xml = function(e, s, n) {
 
     var quit = $(xhr).find(channel).length - 2
 
-    if (reader == true) {
-      if (menu[n].id.match(/Imgur/g)) quit = 40
-      else quit = 15
-    } else if (menu[n].id.match(/Imgur/g)) quit = 50
+    if (menu[n].id.match(/Imgur/g)) quit = 50
 
     $(xhr).find(channel).each(function(i) {
 

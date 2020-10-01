@@ -458,13 +458,12 @@ html body #wrapper #container #main #visit #page #handle .fa-map {
   position: relative;
   font-size: 72px;
   left: 10px;
-  animation: scale .1s ease-in-out .3s both;
 }
 
 html body #wrapper #container #main #visit #page #handle #placeholder {
   background-color: transparent !important;
   width: fit-content !important;
-  font-family: Billabong;
+  font-family: Proxima Nova;
   color: #fff !important;
   text-decoration: none;
   display: inline-block;
@@ -968,7 +967,6 @@ html body #wrapper #container #main #feed .center .item .classic  {
 
 html body #wrapper #container #main #feed .center .item .classic .wrap {
   background-color: transparent;
-  margin-left: 10px;
 }
 
 html body #wrapper #container #guide .sticky {
