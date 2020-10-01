@@ -5,6 +5,7 @@ var quickFeeds = true //show or hide
 var loading = 'percent' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
+var expand = false // filter populate list display
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
@@ -414,11 +415,12 @@ var populate = function(n) {
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
         "  <div class='display'>" +
         "    <img src='" + menu[id].img.image() + "'> " +
+        "    <a class='title' ext='" + menu[id].ext + "'" +
+        "      title='" + menu[id].id +  "'>" +
+               String(menu[id].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
+        "    </a>" +
         "  </div>" +
-        "   <a class='title' ext='" + menu[id].ext + "'" +
-        "     title='" + menu[id].id +  "'>" +
-              menu[id].id.match(/[^\/]+$/g) +
-        "   </a>" +
+        "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
     }
@@ -430,11 +432,12 @@ var populate = function(n) {
             "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
             "  <div class='display'>" +
             "    <img src='" + menu[i].img.image() + "'> " +
+            "  <a class='title' ext='" + menu[i].ext + "'" +
+            "    title='" + menu[i].id + "'>" +
+                 String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
+            "  </a>" +
             "  </div>" +
-            "    <a class='title' ext='" + menu[i].ext + "'" +
-            "      title='" + menu[i].id + "'>" +
-                   menu[i].id.match(/[^\/]+$/g) +
-            "    </a>" +
+            "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
             "</div>"
           )
       } else if (onlyImages == false){
@@ -444,17 +447,23 @@ var populate = function(n) {
               "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
               "  <div class='display'>" +
               "    <img src='" + menu[i].img.image() + "'> " +
+              "  <a class='title' ext='" + menu[i].ext + "'" +
+              "    title='" + menu[i].id + "'>" +
+                   String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
+              "  </a>" +
               "  </div>" +
-              "    <a class='title' ext='" + menu[i].ext + "'" +
-              "      title='" + menu[i].id + "'>" +
-                     menu[i].id.match(/[^\/]+$/g) +
-              "    </a>" +
+              "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
               "</div>"
             )
         }
     }
     if (onlyImages == false) air(category)
     else if (onlyImages == true) $.unloading()
+    if (expand == true){
+      $('.filter .description, .populate .description').css('display','inline-flex')
+      $('.filter, .populate').addClass('expand')
+      $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+    }
   })
 }
 
@@ -469,11 +478,12 @@ var air = function(n) {
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
         "    <img src='" + menu[i].img.image() + "'> " +
-        "  </div>" +
         "    <a class='title' ext='" + menu[i].ext + "'" +
         "      title='" + menu[i].id + "'>" +
-               menu[i].id.match(/[^\/]+$/g) +
+               String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
         "    </a>" +
+        "  </div>" +
+        "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
   }

@@ -149,6 +149,24 @@ $(document)
     $('html body #wrapper #container #main #visit').hide()
     xml(null, null, $.random())
   })
+  .on('touch click', 'html body #wrapper #container #main #option .fa-expand-alt',
+  function(e) {
+    expand = expand != true
+    if (expand == true) {
+      var display = 'List'
+      $('.filter .description, .populate .description').css('display','inline-flex')
+      $('.filter, .populate').addClass('expand')
+      $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+    }
+    else if (expand == false){
+      var display = 'Block'
+      $('.filter, .populate').removeClass('expand invert')
+      $('.filter .description, .populate .description').hide()
+      $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+    }
+    notify ('Display feeds as ' + display + '.')
+    visual()
+  })
   .on('touch click', 'html body #wrapper #container #main .content .status .filter, ' +
     'html body #wrapper #container #main #group .air .populate, ' +
     'html body #wrapper #container #main #group .result .filter, ' +
@@ -165,7 +183,7 @@ $(document)
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate',
       function(e) {
-        if (op == 0)
+        if (op == 0 && expand == false)
           $(this).toggleClass('overlay')
           $(this)
             .on('webkitAnimationEnd oanimationend msAnimationEnd animationend',
@@ -201,8 +219,6 @@ $(document)
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation', function(e) {
     id = 0
   	$.loading()
-    $('html body #wrapper #container #main #option .fa-sun').hide()
-    $('html body #wrapper #container #main #top #arm #option .fa-sun').show()
     location.pathname.state()
     $('html body #wrapper #container #main #group').remove()
     $('html body #wrapper #container #main #visit').hide()

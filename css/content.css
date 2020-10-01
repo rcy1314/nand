@@ -58,7 +58,8 @@ html body #wrapper #container #main #feed .center .channel .item .classic .fill 
 html body #wrapper #container #main #option .fa-camera-retro,
 html body #wrapper #container #main #option .fa-heart,
 html body #wrapper #container #main #option .fa-heart-o,
-html body #wrapper #container #main #option .fa-sun {
+html body #wrapper #container #main #option .fa-sun,
+html body #wrapper #container #main #option .fa-expand-alt {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
@@ -88,6 +89,12 @@ html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note-o,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
   font-size: 24px !important;
   padding: 5px !important;
+}
+
+html body #wrapper #container #main #option .fa-expand-alt:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f424";
+  font-weight: 50;
 }
 
 html body #wrapper #container #main #option .fa-home:before {
@@ -353,7 +360,6 @@ html body #wrapper #container #main #top {
   display: none;
   height: 57px;
   z-index: 9;
-  top: 0;
 }
 
 html body #wrapper #container #main #top #arm {
@@ -361,16 +367,15 @@ html body #wrapper #container #main #top #arm {
   position: relative;
   display: block;
   margin: 0 auto;
-  height: 51px;
+  height: 60px;
   width: 100%;
 }
 
 html body #wrapper #container #main #top #arm #search {
   position: absolute;
-  height: 51px;
+  height: 57px;
   width: 100%;
   margin: 0;
-  top: 4px;
 }
 
 html body #wrapper #container #main #top #arm #search #home {
@@ -681,7 +686,7 @@ html body #wrapper #container #main #group .air,
 html body #wrapper #container #main #group .result {
   background-color: transparent;
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   flex-wrap: wrap;
   display: flex;
   width: 100%;
@@ -743,7 +748,40 @@ html body #wrapper #container #main #group .result .filter .title,
 html body #wrapper #container #main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
+  display: block;
   padding: 10px;
+}
+
+.expand {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  cursor: pointer;
+  font-size: 9px;
+  text-align: left;
+  height: 32px !important;
+  margin: .3px !important;
+  width: 100% !important;
+}
+
+.expand .display {
+  width: 48px !important;
+}
+
+.expand img {
+  height: 24px !important;
+  width: 24px !important;
+  margin: 0 !important;
+}
+
+.expand .display a {
+  display: none !important;
+}
+
+.expand .description {
+  align-items: center !important;
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
 }
 
 html body #wrapper #container #main #top #arm #search #input,
@@ -756,7 +794,7 @@ html body #wrapper #container #main #top #arm #search #input {
   margin: 0 auto;
   display: none;
   width: 15em;
-  top: .4em;
+  top: 15px;
 }
 
 html body #wrapper #container #main #top #arm #search #input input[type=text] {
@@ -769,7 +807,6 @@ html body #wrapper #container #main #top #arm #search #input input[type=text] {
   outline: none;
   height: 2.2em;
   width: 100%;
-  top: 25px;
 }
 
 html body #wrapper #container #main #top #arm #search #match {

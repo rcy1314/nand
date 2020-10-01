@@ -28,7 +28,6 @@
   }
 
   html body #wrapper #container #main #top #arm #option,
-  html body #wrapper #container #main #top #arm #search #home,
   html body #wrapper #container #main #visit #page .quick .right,
   html body #wrapper #container #main #feed .center .quick .fa-angle-double-right,
   html body #wrapper #container #main #visit #page .quick .fa-angle-double-right,
@@ -124,6 +123,7 @@
 
 @media screen and (min-width: 768px) {
 
+  html body #wrapper #container #main #option .fa-expand-alt,
   html body #wrapper #container #main #option .fa-camera-retro,
   html body #wrapper #container #main #option .fa-heart,
   html body #wrapper #container #main #option .fa-heart-o,
@@ -133,6 +133,7 @@
     display: none;
   }
 
+  html body #wrapper #container #main #top #arm #option .fa-expand-alt,
   html body #wrapper #container #main #top #arm #option .fa-camera-retro,
   html body #wrapper #container #main #top #arm #option .fa-heart,
   html body #wrapper #container #main #top #arm #option .fa-heart-o,
@@ -194,6 +195,7 @@
 
 @media screen and (min-width: 769px) {
 
+  html body #wrapper #container #main #option .fa-expand-alt,
   html body #wrapper #container #main #option .fa-map,
   html body #wrapper #container #main #option .fa-heart,
   html body #wrapper #container #main #option .fa-heart-o,
@@ -203,6 +205,7 @@
     display: none;
   }
 
+  html body #wrapper #container #main #top #arm #option .fa-expand-alt,
   html body #wrapper #container #main #top #arm #option .fa-sun,
   html body #wrapper #container #main #top #arm #option .fa-map,
   html body #wrapper #container #main #top #arm #option .fa-heart,
@@ -300,7 +303,7 @@
     position: relative;
     display: block;
     margin: 0 auto;
-    width: 1200px;
+    width: 1120px;
   }
 
   html body #wrapper #container #main #visit #page #front {
