@@ -64,6 +64,34 @@ var notify = function(n) {
   }, 2000)
 }
 
+var display = function(n) {
+  if (n == true) {
+    var display = 'List'
+    $('#group .filter .hash, ' +
+      '#group .filter .media, ' +
+      '#group .filter .description, ' +
+      '#group .populate .hash, ' +
+      '#group .populate .media, ' +
+      '#group .populate .description')
+      .css('display','inline-flex')
+    $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
+    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+  }
+  else if (n == false){
+    var display = 'Block'
+    $('#group .filter .hash, ' +
+      '#group .filter .media, ' +
+      '#group .filter .description, ' +
+      '#group .populate .hash, ' +
+      '#group .populate .media, ' +
+      '#group .populate .description')
+      .hide()
+      $('#group .filter, #group .populate').removeClass('expand invert')
+    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+  }
+  notify ('Display feeds as ' + display + '.')
+}
+
 var toggle = function(n) {
   nextAngle -= -180
   if (nextAngle <= -180) nextAngle = 0
@@ -410,8 +438,8 @@ var populate = function(n) {
         "</div>"
       )
     if (id && !location.href.match('\\?q=') && id != 0){
-      if (menu[id].media == true) var media = 'Images'
-      else var media = ''
+      if (menu[id].media == true) var media = "<div class='media' style='display:none'>Images</div>"
+      else var media = ""
       $('html body #wrapper #container #main #group .result').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
@@ -423,14 +451,14 @@ var populate = function(n) {
         "    </a>" +
         "  </div>" +
         "  <div class='hash' style='display:none'>" + menu[id].hash + "</div>" +
-        "  <div class='media' style='display:none'>" + media + "</div>" +
+           media +
         "  <div class='description' style='display:none'>" + menu[id].des + "</div>" +
         "</div>"
       )
     }
     for (var i = 1; i <= menu.length - 1; i++) {
-      if (menu[i].media == true) var media = 'Images'
-      else var media = ''
+      if (menu[i].media == true) var media = "<div class='media' style='display:none'>Images</div>"
+      else var media = ""
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
           $('html body #wrapper #container #main #group .result').append(
@@ -444,7 +472,7 @@ var populate = function(n) {
             "  </a>" +
             "  </div>" +
             "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
-            "  <div class='media' style='display:none'>" + media + "</div>" +
+               media +
             "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
             "</div>"
           )
@@ -461,25 +489,15 @@ var populate = function(n) {
               "  </a>" +
               "  </div>" +
               "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
-              "  <div class='media' style='display:none'>" + media + "</div>" +
+                 media +
               "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
               "</div>"
             )
         }
     }
+    if (n != category) display(expand)
     if (onlyImages == false) air(category)
     else if (onlyImages == true) $.unloading()
-    if (expand == true){
-      $('#group .filter .hash, ' +
-        '#group .filter .media, ' +
-        '#group .filter .description, ' +
-        '#group .populate .hash, ' +
-        '#group .populate .media, ' +
-        '#group .populate .description')
-        .css('display','inline-flex')
-      $('#group .filter, #group .populate').addClass('expand')
-      $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
-    }
   })
 }
 
@@ -488,8 +506,8 @@ var air = function(n) {
   $(document).ready(function () {
   $('html body #wrapper #container #main #group .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
-    if (menu[i].media == true) var media = 'Images'
-    else var media = ''
+    if (menu[i].media == true) var media = "<div class='media' style='display:none'>Images</div>"
+    else var media = ""
     if (category == menu[i].cat)
       $('html body #wrapper #container #main #group .air').append(
         "<div class='populate'" +
@@ -502,23 +520,13 @@ var air = function(n) {
         "    </a>" +
         "  </div>" +
         "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
-        "  <div class='media' style='display:none'>" + media + "</div>" +
+           media +
         "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
   }
-  if (expand == true){
-    $('#group .filter .hash, ' +
-      '#group .filter .media, ' +
-      '#group .filter .description, ' +
-      '#group .populate .hash, ' +
-      '#group .populate .media, ' +
-      '#group .populate .description')
-      .css('display','inline-flex')
-    $('#group .filter, #group .populate').addClass('expand')
-    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
-  }
   $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
+  if (n != category) display(expand)
   $.unloading()
   visual()
 })

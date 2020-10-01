@@ -256,7 +256,6 @@ html body #wrapper #container #main #visit {
 }
 
 html body #wrapper #container #main #notification {
-  background: transparent;
   border-radius: 4px;
   width: fit-content;
   font-weight: 50;
@@ -266,7 +265,7 @@ html body #wrapper #container #main #notification {
   display: none;
   right: -16em;
   margin: 20px;
-  bottom: 1em;
+  bottom: 1.5em;
   height: 1em;
   z-index: 9;
 }
@@ -755,10 +754,8 @@ html body #wrapper #container #main #group .result .populate .title {
 .expand {
   display: flex !important;
   flex-wrap: nowrap !important;
-  cursor: pointer;
-  font-size: 9px;
-  text-align: left;
-  margin: .3px !important;
+  font-size: 12px !important;
+  margin: 5px !important;
   width: 100% !important;
 }
 
@@ -767,8 +764,9 @@ html body #wrapper #container #main #group .result .populate .title {
 }
 
 .expand img {
-  height: 24px !important;
-  width: 24px !important;
+  height: 32px !important;
+  width: 32px !important;
+  padding: 0 !important;
   margin: 0 !important;
 }
 
@@ -778,20 +776,26 @@ html body #wrapper #container #main #group .result .populate .title {
 
 .expand .hash,
 .expand .media {
+  border-radius: 16px !important;
   align-items: center !important;
-  margin-right: 10px;
+  padding: 10px !important;
 }
 
 .expand .hash {
-  width: 8px;
+  border-radius: 16px !important;
+  width: 16px !important;
+  margin-right: 5px !important;
 }
 
 .expand .media {
-  width: 48px;
+  margin-right: 5px !important;
+  width: 36px !important;
 }
+
 .expand .description {
-  align-items: center !important;
-  width: 60%;
+  margin-left: 10px !important;
+  text-align: left !important;
+  width: 100%;
 }
 
 html body #wrapper #container #main #top #arm #search #input,

@@ -36,7 +36,7 @@
   html body #wrapper #container #main #feed .content,
   html body #wrapper #container #main #visit #page #front .focus .button,
   ::-webkit-scrollbar {
-    display: none;
+    display: none !important;
   }
 
   html body #wrapper #container #main #visit #page #handle {
