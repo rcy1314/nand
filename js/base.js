@@ -442,13 +442,10 @@ var populate = function(n) {
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
         "  <div class='display'>" +
         "    <img src='" + menu[id].img.image() + "'> " +
-        "    <a class='title' ext='" + menu[id].ext + "'" +
-        "      title='" + menu[id].id +  "'>" +
-               String(menu[id].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
-        "    </a>" +
         "  </div>" +
         "  <div class='hash' style='display:none'>" + menu[id].hash + "</div>" +
            media +
+        "  <div class='title'>" + menu[id].id.match(/[^\/]+$/g) + "</div>" +
         "  <div class='description' style='display:none'>" + menu[id].des + "</div>" +
         "</div>"
       )
@@ -464,10 +461,7 @@ var populate = function(n) {
             "  <div class='display'>" +
             "    <img src='" + menu[i].img.image() + "'> " +
             "  </div>" +
-            "  <a class='title' ext='" + menu[i].ext + "'" +
-            "    title='" + menu[i].id + "'>" +
-                 String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
-            "  </a>" +
+            "  <div class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
             "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
                media +
             "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
@@ -483,10 +477,7 @@ var populate = function(n) {
               "  </div>" +
               "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
                  media +
-              "  <a class='title' ext='" + menu[i].ext + "'" +
-              "    title='" + menu[i].id + "'>" +
-                   String(menu[i].id.match(/[^\/]+$/g)) +
-              "  </a>" +
+              "  <div class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
               "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
               "</div>"
             )
@@ -514,10 +505,7 @@ var air = function(n) {
         "  </div>" +
         "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
            media +
-        "  <a class='title' ext='" + menu[i].ext + "'" +
-        "    title='" + menu[i].id + "'>" +
-             String(menu[i].id.match(/[^\/]+$/g)) +
-        "  </a>" +
+        "  <div class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
         "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
@@ -600,10 +588,7 @@ var write = function(n) {
       "  </div>" +
       "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
          media +
-      "  <a class='title' ext='" + menu[i].ext + "'" +
-      "    title='" + menu[i].id + "'>" +
-           String(menu[i].id.match(/[^\/]+$/g)) +
-      "  </a>" +
+      "  <div class='title'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
       "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
       "</div>"
     )
@@ -919,9 +904,7 @@ var xml = function(e, s, n) {
                "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
                "    </div>" +
                "    <div class='wrap'>" +
-/*
-               tag +
-*/
+                      tag +
                "      <div class='pub' text='" +
                         $(this).find('title:first').text().escape() + "'>" +
                         $(this).find('title:first').text().truncate(125, true).escape() +

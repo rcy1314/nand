@@ -170,8 +170,8 @@ html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark,
 html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark-o,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o {
-  float: right !important;
-  margin-right: 5px;
+  position: absolute;
+  right: -10px;
 }
 
 html body #wrapper #container #main #feed .center .quick .fa-angle-left:before,

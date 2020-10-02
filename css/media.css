@@ -48,15 +48,13 @@
   }
 
   .expand .blank {
-    margin-right: 10px !important;
+    margin-right: 5px !important;
   }
 
   .expand .hash, .expand .description,
   html body #wrapper #container #main #top #arm #option,
   html body #wrapper #container #main #visit #page .quick .right,
-  html body #wrapper #container #main #feed .center .quick .fa-angle-double-right,
-  html body #wrapper #container #main #visit #page .quick .fa-angle-double-right,
-  html body #wrapper #container #main #feed .center .quick .left,
+  html body #wrapper #container #main #feed .center .quick,
   html body #wrapper #container #main #visit #page .quick .left,
   html body #wrapper #container #main #feed .content,
   html body #wrapper #container #main #visit #page #front .focus .button,
