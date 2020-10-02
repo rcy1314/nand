@@ -47,7 +47,12 @@ $(document)
     'html body #wrapper #container #main #top #option',
     function(e) {
       if (!$('html body #wrapper #container #main #top #arm #search input[type=text]').is(':focus')) {
-        $('html body #wrapper #container #main #top #arm #search input[type=text]').blur().val('Search')
+        $('html body #wrapper #container #main #top #arm #search input[type=text]').css({
+          'caret-color': '#e4e4e4',
+          'text-align': 'center',
+          'padding-left': '0'
+        }).blur().val('Search')
+        $('html body #wrapper #container #arm #search #input .icon').removeClass('slide')
         $('html body #wrapper #container #main #top #arm #search #match').hide()
       }
       if (!$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').is(':focus')) {
