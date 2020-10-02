@@ -94,7 +94,8 @@ var visual = function(n) {
     $('.fa, .fas, .images').css('color','#fff')
   } else if (op == 0) {
     $('div').css('color','#444444')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
+    $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
+      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
       'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
       'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute, ' +
       'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute, ' +
