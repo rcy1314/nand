@@ -23,21 +23,7 @@ $.loading = function () {
       'html body #wrapper #container #main #group').remove()
   }
   if (loading == 'dots'){
-  $('html body #wrapper #container #main #dots .fill').css(
-    'animation', 'move 3s infinite cubic-bezier(.1,.85,1,.1)'
-    )
-  $('html body #wrapper #container #main #dots .fill:nth-of-type(2)').css(
-    'animation', 'move 3s 150ms infinite cubic-bezier(.1,.85,1,.1)'
-    )
-  $('html body #wrapper #container #main #dots .fill:nth-of-type(3)').css(
-    'animation', 'move 3s 300ms infinite cubic-bezier(.1,.85,1,.1)'
-    )
-  $('html body #wrapper #container #main #dots .fill:nth-of-type(4)').css(
-    'animation', 'move 3s 450ms infinite cubic-bezier(.1,.85,1,.1)'
-    )
-  $('html body #wrapper #container #main #dots .fill:nth-of-type(5)').css(
-    'animation', 'move 3s 600ms infinite cubic-bezier(.1,.85,1,.1)'
-    )
+  $('html body #wrapper #container #main #dots .fill').addClass('dots')
   } else if (loading == 'percent'){
     var width = $('html body #wrapper #container #main').width() / 30
     complete = setInterval(function() {
@@ -54,7 +40,7 @@ $.loading = function () {
 
 $.unloading = function() {
     if (loading == 'dots'){
-      $('html body #wrapper #container #main .fill').css('animation','none')
+      $('html body #wrapper #container #main .fill').removeClass('dots')
       progress(true, 0)
     } else if (loading == 'percent') {
       clearInterval(complete)

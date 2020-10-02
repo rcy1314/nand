@@ -789,7 +789,8 @@ html body #wrapper #container #main #group .result .populate .title {
 }
 
 .expand .hash {
-  flex-basis: 10% !important;
+  flex-basis: 15% !important;
+  justify-content: center;
 }
 
 .expand .blank,
@@ -832,9 +833,9 @@ html body #wrapper #container #main #top #arm #search #match {
   width: fit-content;
   position: relative;
   margin: 0 auto;
-  height: 25.5em;
+  height: 420px;
   display: none;
-  top: 7px;
+  top: 15px;
 }
 
 input[type=submit] {
