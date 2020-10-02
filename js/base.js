@@ -664,7 +664,7 @@ var greenwich = function(channel, datetime) {
       re: re.trim()
     })
   } else if (channel = 'item') {
-    if ($(datetime).find('datetime').text().length > 0) {
+    if ($(datetime).find('datetime').text().length > -1) {
       var re = $(datetime).find('link').text()
       var ts = parseInt($(datetime).find('datetime').text());
       var ts_ms = ts * 1000
@@ -685,7 +685,7 @@ var greenwich = function(channel, datetime) {
         gen: gen,
         re: re.trim()
       })
-    } else if ($(datetime).find('pubDate').text().length > 0) {
+    } else if ($(datetime).find('pubDate').text().length > -1) {
       var re = $(datetime).find('link').text()
       var dst = $(datetime).find('pubDate').text().zulu();
       var since = new Date($(datetime).find('pubDate').text())
@@ -697,7 +697,7 @@ var greenwich = function(channel, datetime) {
         gen: gen,
         re: re.trim()
       })
-    } else if ($(datetime).find('dc\\:date, date').text().length > 0) {
+    } else if ($(datetime).find('dc\\:date, date').text().length > -1) {
       var re = $(datetime).find('link').text()
       var dst = $(datetime).find('dc\\:date, date').text().zulu();
       var since = new Date($(datetime).find('dc\\:date, date').text())
