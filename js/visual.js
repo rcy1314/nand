@@ -11,6 +11,7 @@ var visual = function(n) {
       'html body #wrapper #container, ' +
       'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
