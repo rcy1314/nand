@@ -291,7 +291,6 @@ var feed  = function(n) {
   var dupe = []
   for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (onlyImages == true) {
     if (menu[e] && e != 0 && menu[e].media == true && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('html body #wrapper #container #main .center .quick .feed').append(
@@ -304,25 +303,11 @@ var feed  = function(n) {
           "</div>"
        )
      }
-   } else if (onlyImages == false){
-     if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
-       dupe.push(e)
-         $('html body #wrapper #container #main .center .quick .feed').append(
-           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
-           "  <img src='" + menu[e].img.image() + "'> " +
-           "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
-                "title='" + menu[e].id + "'>" +
-                String(menu[e].id.match(/[^\/]+$/g)).substring(0,9) + '...' +
-           "  </a>" +
-           "</div>"
-        )
-      }
-   }
   }
   visual()
 }
 
-var quick  = function(n) {
+var quick = function(n) {
 
   var dupe = []
   if (n == 7)
@@ -338,7 +323,7 @@ var quick  = function(n) {
   }
   else for (var i = 1; i <= n; i++) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    if (menu[e] && e != 0 && $.inArray(e, dupe) == -1){
+    if (menu[e] && e != 0 && menu[e].media == true && $.inArray(e, dupe) == -1){
       dupe.push(e)
         $('html body #wrapper #container #main #visit #page .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
