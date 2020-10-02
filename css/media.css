@@ -301,7 +301,7 @@
   }
 
   html body #wrapper #container #main #feed .center {
-    width: 630px;
+    width: 660px;
   }
 
   html body #wrapper #container #main #group .air,
@@ -332,6 +332,6 @@
   }
 
   html body #wrapper #container #main #feed .content {
-    margin-left: 35px;
+    margin-left: 10px;
   }
 }

@@ -852,7 +852,7 @@ html body #wrapper #container #main #visit #page .quick {
   background-color: transparent;
   border-radius: 4px;
   position: relative;
-  margin: 0 auto;
+  margin: 25px auto;
   height: 7.5em;
   width: 100%;
   z-index: 1;
@@ -878,17 +878,13 @@ html body #wrapper #container #main #visit #page .quick .feed::-webkit-scrollbar
   display: none;
 }
 
-html body #wrapper #container #main #feed .center .quick .feed .asset:first {
-  padding-left: 10px;
-}
-
 html body #wrapper #container #main #feed .center .quick .feed .asset {
   background-color: transparent;
-  padding-right: 5px;
   position: relative;
   text-align: center;
-  padding-top: 15px;
   flex-shrink: 0;
+  padding: 30px;
+  width: 72px;
 }
 
 
@@ -1379,7 +1375,7 @@ html body #wrapper #container #main #feed .content {
   position: sticky;
   font-size: 10px;
   width: 300px;
-  top: 58px;
+  top: 80px;
 }
 
 html body #wrapper #container #main #feed .content .status {

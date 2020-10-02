@@ -32,7 +32,8 @@ var visual = function(n) {
       '--loader-color-primary': '#f7426C',
       '--loader-color-secondary': '#e86d8a'
     })
-    $('html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
+    $('html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
+      'html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +
@@ -90,6 +91,7 @@ var visual = function(n) {
       'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute, ' +
       'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing, ' +
@@ -115,6 +117,7 @@ var visual = function(n) {
       '--loader-color-secondary': '#5baff0',
     })
     $('html body #wrapper #container #main #visit #page #front #label .link, ' +
+      'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #visit #page .quick .left, ' +

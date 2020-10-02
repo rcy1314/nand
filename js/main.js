@@ -244,6 +244,9 @@ $(document)
     uri = '?q=' + $(this).attr('aria-item').toLowerCase()
     uri.define().exit()
   })
+  .on('touchmove', 'html body #wrapper #container #main #feed .center .quick .feed', function(e) {
+    feed(8)
+  })
   .on('touch click',
     'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset',
@@ -269,6 +272,7 @@ $(document)
       if ($(this).parents('html body #wrapper #container #main .quick').find('.feed').scrollLeft() >= 0)
           $(this).parents('html body #wrapper #container #main .quick').find('.left').show()
       quick(8)
+      feed(8)
   })
   .on('touch click',
     'html body #wrapper #container #main #feed .center .quick .left, ' +

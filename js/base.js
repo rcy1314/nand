@@ -16,7 +16,7 @@ var id //feed indexOf menu
 var post //from init.js timestamp
 var tap = 0 //used in main.js for images
 var complete //core.js interval for progress
-nextAngle = 0 //core.js animateRotate for feeds
+nextAngle = 0 //core.js animateRotate for quick
 var random = [] //core.js random feed in category
 var filter = [] //response array for menu indexes
 var stop = false //main.js scroll reader stop reload
@@ -27,7 +27,6 @@ var randomDuplicate = [] //core.js random duplicate xml
 var stage =
   "<div id='feed'>" +
   "  <div class='center'>" +
-  /*
   "    <div class='quick'>" +
   "      <div class='left' style='display:none'>" +
   "        <div class='fa-angle-left'></div></div>" +
@@ -35,7 +34,6 @@ var stage =
   "        <div class='fa-angle-right'></div></div>" +
   "      <div class='feed'></div>" +
   "    </div>" +
-  */
   "    <div class='channel'></div>" +
   "  </div>" +
   "  <div class='content'>" +
@@ -996,6 +994,7 @@ var xml = function(e, s, n) {
     content(n, recent, oldest, posts)
     clearInterval(complete)
     suggest()
+    feed(10)
     if (loading == 'percent') progress(true, 100)
     else $.unloading()
   })
