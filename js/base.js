@@ -73,9 +73,9 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .css('display','inline-flex')
+      $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
+      if (op == 0) $('#group .filter, #group .populate').addClass('invert')
     $('#group .filter .title, #group .populate .title').hide()
-    $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
-    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   } else if (n == false){
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
@@ -84,9 +84,11 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
-    $('#group .filter, #group .populate').removeClass('expand')
-    $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+    $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
+    if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
+    $('#group .filter .title, #group .populate .title').show()
   }
+  $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
 }
 
 var toggle = function(n) {

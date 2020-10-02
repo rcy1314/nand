@@ -89,7 +89,6 @@ var visual = function(n) {
   } else if (op == 0) {
     $('div').css('color','#444444')
     $('.attribute, .attribute div, ' +
-      '.expand, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
