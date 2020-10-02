@@ -748,7 +748,7 @@ var image = function(empty, n, item, src) {
     if ($('html body #wrapper #container #main').width() <= 425) {
       if ($(this).get(0).naturalWidth > minimum){
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
       }
       else if ($(this).get(0).naturalWidth < maximum)
           $(this).width(99)

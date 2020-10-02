@@ -582,6 +582,7 @@ html body #wrapper #container #main #visit #page #front .focus {
 
 html body #wrapper #container #main #visit #page #front .focus input[type=text] {
   height: 39.5px !important;
+  border: none !important;
   display: inline-block;
   caret-color: #e4e4e4;
   position: relative;
@@ -660,6 +661,7 @@ html body #wrapper #container #main #visit #page #front .focus .buttonSearch {
 }
 
 html body #wrapper #container #main #visit #page #front #label .show {
+  background-color: transparent;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -670,6 +672,7 @@ html body #wrapper #container #main #visit #page #front #label .show {
 }
 
 html body #wrapper #container #main #visit #page #front #label .link {
+  background-color: transparent;
   transform: rotate(180deg);
   display: inline-flex;
   border-radius: 20px;
@@ -1075,7 +1078,7 @@ html body #wrapper #container #guide .sticky .tag {
 
 html body #wrapper #container #main #feed .center .item,
 html body #wrapper #container #guide .sticky .item {
-  margin-bottom: .3px;
+  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -1268,6 +1271,7 @@ html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attr
   display: none;
   height: 40px;
   width: 180px;
+  padding: 1px;
   right: 0px;
   z-index: 1;
   top: 59px;
@@ -1281,8 +1285,10 @@ html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attr
   padding: 10px;
 }
 
-.post,
-.picture {
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
   display: none;
 }
 
@@ -1352,10 +1358,15 @@ html body #wrapper #container #main #feed .center #bottom .next {
 }
 
 html body #wrapper #container #main #feed .center {
+  background-color: transparent;
   display: inline-block;
   position: relative;
   text-align: left;
   top: 85px;
+}
+
+html body #wrapper #container #main #feed .center .channel {
+  background-color: transparent;
 }
 
 html body #wrapper #container #main #feed .content {
