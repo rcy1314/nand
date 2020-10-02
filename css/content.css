@@ -785,7 +785,8 @@ html body #wrapper #container #main #group .result .populate .title {
   display: flex !important;
   flex-wrap: nowrap !important;
   font-size: 12px !important;
-  margin: .3px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
   width: 100% !important;
 }
 
