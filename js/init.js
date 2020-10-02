@@ -83,6 +83,7 @@ if (location.search.split('?q=')[1]) {
 
         $.loading()
         $('html body #wrapper #container #main #top').show()
+        $('html body #wrapper #container #main #toggle').hide()
         var width = $('html body #wrapper #container #main').width() / 30
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(false, false, uri[0], true)

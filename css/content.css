@@ -1109,7 +1109,7 @@ html body #wrapper #container #guide .sticky .item {
 }
 
 .invertOverBorderless:not(:hover) {
-  background-color: #f7f7f7 !important;
+  background-color: transparent !important;
 }
 
 .invertOver:not(:hover) {
@@ -1148,7 +1148,7 @@ html body #wrapper #container #guide .sticky .item {
 }
 
 .oppositeOverBorderless:not(:hover) {
-  background-color: #000000 !important;
+  background-color: transparent !important;
 }
 
 

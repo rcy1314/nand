@@ -42,7 +42,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page .quick .left, ' +
       'html body #wrapper #container #main #visit #page .quick .right, ' +
       'html body #wrapper #container #main #feed .center .quick .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .right')
+      'html body #wrapper #container #main #feed .center .quick .right, ' +
+      'html body #wrapper #container #main #top #arm #search input[type=text]')
       .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeOverBorderless')
     $('html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
