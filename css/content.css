@@ -1062,8 +1062,8 @@ html body #wrapper #container #guide .sticky .ago {
   position: absolute;
   font-size: 10px;
   width: 300px;
-  bottom: 40px;
   margin: 5px;
+  bottom: 0;
 }
 
 html body #wrapper #container #guide .sticky .tag {
@@ -1199,6 +1199,8 @@ html body #wrapper #container #main #feed .center .item .img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+  right: 0;
+  left: 0;
 }
 
 html body #wrapper #container #guide .sticky .image,
@@ -1264,37 +1266,18 @@ html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attr
   position: absolute;
   display: none;
   height: 40px;
-  padding: 15px;
   width: 180px;
-  right: 1px;
+  right: 0px;
   z-index: 1;
-  top: 60px;
+  top: 59px;
 }
 
 html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div,
 html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute div {
-  margin-left: 15px;
+  border: none !important;
   cursor: pointer;
   font-size: 14px;
   padding: 10px;
-}
-
-.site:before {
-  content: "🧲";
-  position: absolute;
-	left: 10px;
-}
-
-.post:before {
-  content: "💌";
-  position: absolute;
-	left: 10px;
-}
-
-.picture:before {
-  content: "🔖";
-  position: absolute;
-	left: 10px;
 }
 
 .post,

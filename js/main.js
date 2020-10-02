@@ -54,12 +54,17 @@ $(document)
         $('html body #wrapper #container #main #visit #page #front .focus input[type=text]').blur()
         $('html body #wrapper #container #main #visit #page #front #first').hide()
       }
+      $('html body #wrapper #container #guide .sticky .header, ' +
+        'html body #wrapper #container #main #feed .center .item .header')
+        .find('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
+      $('html body #wrapper #container #guide .sticky .header, ' +
+        'html body #wrapper #container #main #feed .center .item .header').find('.attribute').hide()
    })
   .on('touch click', 'html body #wrapper #container #main #option .fa-camera-retro', function(e) {
     $.loading()
     $('html body #wrapper #container #main #visit').hide()
     onlyImages = onlyImages != true
-    notify ('Only Images Now ' + onlyImages.toString().capitalize() + '.')
+    if (onlyImages == true) notify ('Display only Images.')
     if (reader == false) populate(category)
     display(expand)
   })
@@ -212,8 +217,8 @@ $(document)
     'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
     'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site',
     function(e) {
-      $(this).parents('html body #wrapper #container #guide .sticky .wrap, ' +
-          'html body #wrapper #container #main #feed .center .item .classic')
+      $(this).parents('html body #wrapper #container #guide .sticky, ' +
+          'html body #wrapper #container #main #feed .center .item')
             .find('.url').select()
       document.execCommand('copy')
       $(this).parents('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
@@ -311,8 +316,7 @@ $(document)
                   })
                   if ($this.parents('.item, .sticky').find('.tag .fa-heart').length) guide(true, sticky)
                   else guide(false, sticky)
-                }
-                else $this.attr('src').blank()
+                } else if ($this.hasClass('default')) $this.attr('src').blank()
               } else if (!$this.hasClass('default') || category != 'Social') {
                 $this.parents('html body #wrapper #container #guide .sticky .item, ' +
                   'html body #wrapper #container #main #feed .center .channel .item').attr('ext').blank()
@@ -397,7 +401,7 @@ $(document)
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o',
     function(e) {
         $(this).parents('html body #wrapper #container #guide .sticky, ' +
-          'html body #wrapper #container #main #feed .center .item .classic').find('.source').select()
+          'html body #wrapper #container #main #feed .center .item').find('.source').select()
         document.execCommand('copy')
         if (!$(this).hasClass('fa-bookmark')) $(this).toggleClass('fa-bookmark-o fa-bookmark')
         $(this).parents('.fa-ellipsis-v').removeClass('fa-ellipsis-v').addClass('fa-ellipsis-h')
@@ -410,7 +414,7 @@ $(document)
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note, ' +
     'html body #wrapper #container #guide .sticky .wrap .fa-sticky-note-o, ' +
     'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
-    'html body #wrapper #container #main #feed .center .channel .item .courtesy .copy .attribute .post, ' +
+    'html body #wrapper #container #main #feed .center .channel .item .header .courtesy .copy .attribute .post, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note, ' +
     'html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o',
     function(e) {

@@ -155,11 +155,13 @@ var guide = function(heart, array) {
     "    <input class='url' value='" + array[0].re + "'>" +
     "    <input class='share' value='" + array[0].share + "'>" +
     "    <input class='source' value='" + array[0].src + "'>" +
+/*
     "    <div class='tag'>" +
     "      <div class='images " + fa + "'></div>" +
     "      <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
     "      <div class='images fa-bookmark-o' title='Copy Source'></div>" +
     "      </div>" +
+*/
     "  </div>" +
     "</div>"
   )
@@ -400,7 +402,7 @@ var progress = function(done, n) {
 var suggest = function(n) {
 
       var duplicate = []
-      for (var i = 0; i <= 5; i++) {
+      for (var i = 0; i <= 4; i++) {
         var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
         duplicate.push(e)
         if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
@@ -735,8 +737,10 @@ var image = function(empty, n, item, src) {
     $(this).parents('.item').css('padding-bottom', '30px').parents('.item').find('.url, .share, .source, .image, .fill').remove()
   }).on('load', function() {
     if ($('html body #wrapper #container #main').width() <= 425) {
-      $('html body #wraper #container #guide .blur .sticky').show()
-      if ($(this).get(0).naturalWidth > minimum) $(this).width('100%')
+      if ($(this).get(0).naturalWidth > minimum){
+        $(this).addClass('default').width('100%')
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+      }
       else if ($(this).get(0).naturalWidth < maximum)
           $(this).width(99)
           .parents('.image').css({
@@ -747,6 +751,14 @@ var image = function(empty, n, item, src) {
             'align-items': 'center',
             'display': 'flex'
            }).find('.tag').remove()
+      else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
+        $(this).width('30vh').addClass('default')
+          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+      } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
+        $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
+        $(this).width('100%').addClass('default')
+          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+      }
     } else {
       if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
       else if ($(this).get(0).naturalWidth < minimum)
@@ -761,12 +773,11 @@ var image = function(empty, n, item, src) {
           }).find('.tag').remove()
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
         $(this).addClass('default').width('30vh')
-          .parents('.item, #guide').find('.header .attribute')
-          .css('height','110px').find('.post, .picture').show()
-      } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) {
+          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+      } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
+        $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute')
-          .css('height','110px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
       }
   }
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
@@ -821,6 +832,10 @@ var xml = function(e, s, n) {
     visual()
   }).done(function(xhr) {
 
+    if (op == 0 && $('html body #wrapper #container #main').width() <= 425)
+      var style = "style='box-shadow:1px 1px 2px #f0f0f0'"
+    else var style = ''
+
     if ($(xhr).find('entry').length > 0) var channel = "entry"
     else var channel = 'item'
 
@@ -852,9 +867,9 @@ var xml = function(e, s, n) {
         "  </a>" +
         "  <div class='copy fa-ellipsis-h'>" +
         "    <div class='attribute'>" +
-        "      <div class='site'><a>Copy Url</a></div>" +
-        "      <div class='post'><a>Copy Post</a></div>" +
-        "      <div class='picture'><a>Copy Source</a></div>" +
+        "      <div class='site'>🧲 Copy Url</div>" +
+        "      <div class='post'>💌 Copy Post</div>" +
+        "      <div class='picture'>🔖 Copy Source</div>" +
         "    </div>" +
         "  </div>" +
         "</div>"
@@ -873,7 +888,7 @@ var xml = function(e, s, n) {
                         "</div>"
         else var views = ''
 
-        html = "<div id='yt' class='item' ext='" + parse.re + "'>" +
+        html = "<div id='yt' class='item' " + style + " ext='" + parse.re + "'>" +
                "  <div class='header'>" + courtesy + "</div>" +
                "  <div class='yt'>" +
                "    <iframe src='" + src + "'></iframe>" +
@@ -890,7 +905,7 @@ var xml = function(e, s, n) {
       } else {
 
         if (!cat) cat = ''
-        html = "<div class='item " + n + " " + yt + "' item='" + i + "' ext='" + parse.re + "'>" +
+        html = "<div class='item " + n + " " + yt + "' " + style + " item='" + i + "' ext='" + parse.re + "'>" +
                "  <div class='header'>" + courtesy + "</div>" +
                "  <div class='classic'>" +
                "    <div class='fill'><div class='loader double-circle'></div></div>" +
@@ -898,7 +913,10 @@ var xml = function(e, s, n) {
                "      <div class='fa fa-heart'></div>" +
                "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
                "    </div>" +
-               "    <div class='wrap'>" + tag +
+               "    <div class='wrap'>" +
+/*
+               tag +
+*/
                "      <div class='pub' text='" +
                         $(this).find('title:first').text().escape() + "'>" +
                         $(this).find('title:first').text().truncate(125, true).escape() +

@@ -49,7 +49,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
-    $('html body #wrapper #container #guide .sticky .item, ' +
+    $('.attribute div, ' +
+      'html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
@@ -142,7 +143,8 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #main .content .status .filter, ' +
+    $('.attribute div, ' +
+      'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
