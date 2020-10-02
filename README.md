@@ -96,14 +96,6 @@
 
 <p align='center'><img src='http://acktic.github.io/screenshots/visual.jpg'></p>
 
-### Opposite
-
-<p align='center'><img src='http://acktic.github.io/screenshots/opposite.jpg'></p>
-
-<p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
-
-<p align='center'><img src='http://acktic.github.io/screenshots/contrast.jpg'></p>
-
 Want to Contribute?
 ----
 
