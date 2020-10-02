@@ -752,6 +752,7 @@ html body #wrapper #container #main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
   display: block;
+  margin: 0 auto;
   padding: 10px;
 }
 
