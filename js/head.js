@@ -1,6 +1,6 @@
 var menu=[
 {id:"Bing",cat:"Search Results",des:"Bing Search Results.",uri:"https://www.bing.com/search?q=",ext:"https://www.bing.com",img:"Bing",hash:"mB",media:!1},
-{id:"CBS/Washington D.C.",cat:"News",des:"CBS WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com",img:"WUSA9",hash:"wa",media:!0},
+{id:"CBS/Washington D.C.",cat:"News",des:"CBS WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com",img:"WUSA9",hash:"wa",media:!1},
 {id:"ABC/Fresno",cat:"News",des:"ABC KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",ext:"https://abc30.com",img:"KFSNTV30",hash:"fA",media:!0},
 {id:"NBC/Fresno",cat:"News",des:"NBC KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",ext:"https://www.yourcentralvalley.com",img:"KSEE24",hash:"oF",media:!0},
 {id:"ABC/Palm Springs",cat:"News",des:"ABC KESQ California Palm Springs The Desert's News Leader.",uri:"https://kesq.com/feed",ext:"https://kesq.com",img:"KESQ",hash:"sQ",media:!1},
