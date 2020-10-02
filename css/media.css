@@ -286,6 +286,10 @@
     max-width: calc(100% - 16px) !important;
   }
 
+  html body #wrapper #container #main #visit #page {
+    top: 50px;
+  }
+
   html body #wrapper #container #main #top {
     width: calc(100% - 16px);
   }

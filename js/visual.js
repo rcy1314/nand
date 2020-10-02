@@ -48,8 +48,12 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
       .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
+    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site, ' +
+      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post, ' +
+      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .picture, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture, ' +
       'html body #wrapper #container #guide .sticky .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -81,8 +85,10 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('invertScrollbar').addClass('oppositeScrollbar')
-      $('html body #wrapper #container #main #feed .center .channel .item').css('box-shadow','none')
-      $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
+      $('html body #wrapper #container #main #feed .center .quick, ' +
+        'html body #wrapper #container #main #top #arm #search #match .listing, ' +
+        'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','none')
+    $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('.fa, .fas, .images').css('color','#fff')
@@ -143,8 +149,12 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .index')
       .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
+    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site, ' +
+      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post, ' +
+      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .picture, ' +
+      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture, ' +
       'html body #wrapper #container #main .content .status .filter, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
       'html body #wrapper #container #main #group .air .populate, ' +
@@ -163,6 +173,9 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('oppositeScrollbar').addClass('invertScrollbar')
     $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
+    $('html body #wrapper #container #main #feed .center .quick, ' +
+      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
+      'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','2px 2px 4px #dddddd')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')

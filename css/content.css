@@ -87,8 +87,8 @@ html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note,
 html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note-o,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
-  font-size: 24px !important;
-  padding: 5px !important;
+  font-size: 24px;
+  padding: 5px;
 }
 
 html body #wrapper #container #main #option .fa-expand-alt:before {
@@ -148,10 +148,35 @@ html body #wrapper #container #main #feed .center .channel .item .classic .wrap 
   content: "\f08a";
 }
 
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site .fa-barcode:before,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-barcode:before {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f02a";
+  font-weight: 50;
+  padding: 0;
+}
+
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post .fa-sticky-note-o:before,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .post .fa-sticky-note-o:before {
+  background-color: transparent !important;
+  font-family: FontAwesome;
+  content: "\f24a";
+  padding: 0;
+}
+
 html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note-o:before,
 html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o:before {
   font-family: FontAwesome;
   content: "\f24a";
+}
+
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture .fa-bookmark-o:before,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture .fa-bookmark-o:before {
+  background-color: transparent !important;
+  font-family: FontAwesome;
+  content: "\f097";
+  padding: 0
 }
 
 html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark-o:before,
@@ -601,7 +626,7 @@ html body #wrapper #container #main #visit #page #front .focus input[type=text] 
 }
 
 .pageInput:not(:hover) {
-  box-shadow: 2px 2px 4px #bbbbbb !important;
+  box-shadow: 2px 2px 4px #dddddd !important;
   transition: box-shadow .25s;
 }
 
@@ -1271,15 +1296,19 @@ html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attr
   position: absolute;
   display: none;
   height: 40px;
-  width: 180px;
+  width: 200px;
   padding: 1px;
   right: 0px;
   z-index: 1;
   top: 59px;
 }
 
-html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div,
-html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute div {
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
+html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
+html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
   border: none !important;
   cursor: pointer;
   font-size: 14px;
@@ -1493,7 +1522,7 @@ html body #wrapper #container #main #top #arm #search #match .listing {
   cursor: pointer;
   margin: 0 auto;
   height: 420px;
-  width: 18em;
+  width: 308px;
   top: 5px;
 }
 

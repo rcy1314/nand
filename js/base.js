@@ -822,8 +822,7 @@ var xml = function(e, s, n) {
     visual()
   }).done(function(xhr) {
 
-    if (op == 0 && $('html body #wrapper #container #main').width() <= 425)
-      var style = "style='box-shadow:1px 1px 2px #f0f0f0'"
+    if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'"
     else var style = ''
 
     if ($(xhr).find('entry').length > 0) var channel = "entry"
@@ -857,9 +856,9 @@ var xml = function(e, s, n) {
         "  </a>" +
         "  <div class='copy fa-ellipsis-h'>" +
         "    <div class='attribute'>" +
-        "      <div class='site'>🧲 Copy Url</div>" +
-        "      <div class='post'>💌 Copy Post</div>" +
-        "      <div class='picture'>🔖 Copy Source</div>" +
+        "      <div class='site'>Copy Url<div style='float:right' class='fas fa-barcode'></div></div>" +
+        "      <div class='post'>Copy Post<div style='float:right' class='fa fa-sticky-note-o'></div></div>" +
+        "      <div class='picture'>Copy Source<div style='float:right' class='fa fa-bookmark-o'></div></div>" +
         "    </div>" +
         "  </div>" +
         "</div>"
