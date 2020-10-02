@@ -212,12 +212,17 @@
   }
 
   html body #wrapper #container #main #visit #page {
-    top: -125px;
+    top: -45px;
   }
 
   html body #wrapper #container #main #visit #page .quick {
   	width: 720px;
 	  left: 0;
+  }
+  html body #wrapper #container #main #group .air,
+  html body #wrapper #container #main #group .result {
+	margin: 0 auto;
+	width: 85%;
   }
 
 }
@@ -242,7 +247,7 @@
 
   html body #wrapper #container #main #top #arm #option {
     position: absolute;
-    right: 30px;
+    right: 35px;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
@@ -251,15 +256,11 @@
 
   html body #wrapper #container #main #feed .center {
 	  margin-right: 20px;
-    width: 590px;
+    width: 530px;
   }
 
   html body #wrapper #container ##main #feed .content {
     display: block;
-  }
-
-  html body #wrapper #container #main #visit #page {
-    top: -125px;
   }
 
   html body #wrapper #container #main #visit #page .quick {

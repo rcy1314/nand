@@ -1076,16 +1076,16 @@ html body #wrapper #container #guide .sticky .item {
 html body #wrapper #container #guide .sticky .wrap {
   display: table-cell !important;
   vertical-align: top;
-  width: 300px;
+  width: 220px;
   height: 100%;
 }
 
 html body #wrapper #container #guide .sticky .pub {
   background-color: transparent;
   height: calc(100% - 100px);
-  font-size: 13px;
+  font-size: 12px;
   padding: 10px;
-  width: 300px;
+  width: 220px;
 }
 
 html body #wrapper #container #guide .sticky .ago {

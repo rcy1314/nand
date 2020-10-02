@@ -433,7 +433,7 @@ var populate = function(n) {
         "  <div class='result'>" +
         "  </div>" +
         "</div>"
-      )
+      ).attr('tabindex', -1).focus()
     if (id && !location.href.match('\\?q=') && id != 0){
       if (menu[id].media == true) var media = "<div class='media' style='display:none'>Images</div>"
       else var media = "<div class='blank'></div>"
@@ -510,7 +510,6 @@ var air = function(n) {
         "</div>"
       )
   }
-  $('html body #wrapper #container #main #group').attr('tabindex', -1).focus()
   display(expand)
   $.unloading()
   visual()
@@ -701,7 +700,7 @@ var guideImage = function(src) {
       $('html body #wrapper #container #guide .sticky').show()
       $('html body #wrapper #container #main').addClass('guide')
       $('html body #wrapper #container #guide .checkmark').show()
-      if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '70vw')
+      if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '65vw')
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css({
         'max-height': '90vh',
         'max-width': '40vw'
@@ -746,7 +745,7 @@ var image = function(empty, n, item, src) {
           .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
       } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
         $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
-        $(this).width('100%').addClass('default')
+        $(this).width('90%').addClass('default')
           .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
       }
     } else {
@@ -816,7 +815,7 @@ var xml = function(e, s, n) {
     }
 
   }).fail(function() {
-    $('html body #wrapper #container #main').append(stage)
+    $('html body #wrapper #container #main').append(stage).attr('tabindex', -1).focus()
     $('html body #wrapper #container #main .channel').html("This site could not be reached.")
     $.unloading()
     visual()
@@ -935,7 +934,7 @@ var xml = function(e, s, n) {
       pub.sort(function(a, b) { return b.since - a.since })
       $.each(pub, function(i) { if (parseInt(pub[i].gen, 36) == post) local = i })
     })
-    if (first == true) $('html body #wrapper #container #main').append(stage)
+    if (first == true) $('html body #wrapper #container #main').append(stage).attr('tabindex', -1).focus()
     if ($.isNumeric(local)) {
       var sticky = []
       sticky.push({
@@ -963,14 +962,12 @@ var xml = function(e, s, n) {
 
     })
     var posts = $('html body #wrapper #container #main .center .channel .item').length
-
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
     if (first == true) stop = true
     else $('html body #wrapper #container #main .content .status, ' +
            'html body #wrapper #container #main .content .suggestions').empty()
     if (reader == false) footer()
-    $('html body #wrapper #container #main #feed').attr('tabindex', -1).focus()
     content(n, recent, oldest, posts)
     clearInterval(complete)
     suggest()
