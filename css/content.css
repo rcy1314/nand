@@ -824,6 +824,7 @@ html body #wrapper #container #main #top #arm #search #input {
 html body #wrapper #container #main #top #arm #search #input input[type=text] {
   -webkit-appearance: none;
   caret-color: transparent;
+  border: none !important;
   text-align: center;
   border-radius: 2px;
   font-size: 14px;
