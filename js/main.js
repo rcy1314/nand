@@ -136,6 +136,7 @@ $(document)
     }
     if (op == 0) notify('Invert Visual Applied.')
     else if (op == 1) notify('Opposite Visual Applied.')
+    display(expand)
     uri.state()
     visual()
   })

@@ -43,7 +43,15 @@
     margin-top: -150px;
   }
 
-  .expand .hash,
+  .expand .title {
+    flex-basis: 50% !important;
+  }
+
+  .expand .blank {
+    margin-right: 10px !important;
+  }
+
+  .expand .hash, .expand .description,
   html body #wrapper #container #main #top #arm #option,
   html body #wrapper #container #main #visit #page .quick .right,
   html body #wrapper #container #main #feed .center .quick .fa-angle-double-right,
@@ -54,10 +62,6 @@
   html body #wrapper #container #main #visit #page #front .focus .button,
   ::-webkit-scrollbar {
     display: none !important;
-  }
-
-  .blank {
-    margin-right: 17px;
   }
 
   html body #wrapper #container #main #visit #page #handle {

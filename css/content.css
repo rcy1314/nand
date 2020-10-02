@@ -781,8 +781,11 @@ html body #wrapper #container #main #group .result .populate .title {
   margin: 0 !important;
 }
 
-.expand .display a {
-  display: none !important;
+.expand .title {
+  text-align: left !important;
+  flex-basis: 25% !important;
+  margin: 0 !important;
+  width: 100%;
 }
 
 .expand .hash,
@@ -799,12 +802,12 @@ html body #wrapper #container #main #group .result .populate .title {
 
 .expand .blank,
 .expand .media {
-  flex-basis: 10% !important;
+  flex-basis: 15% !important;
 }
 
 .expand .description {
   text-align: left !important;
-  flex-basis: 80% !important;
+  flex-basis: 65% !important;
   width: 100%;
 }
 

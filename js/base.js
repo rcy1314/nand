@@ -73,7 +73,6 @@ var display = function(n) {
       .css('display','inline-flex')
       $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
       if (op == 0) $('#group .filter, #group .populate').addClass('invert')
-    $('#group .filter .title, #group .populate .title').hide()
   } else if (n == false){
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
@@ -84,7 +83,6 @@ var display = function(n) {
       .hide()
     $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
     if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
-    $('#group .filter .title, #group .populate .title').show()
   }
   $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
 }
@@ -465,11 +463,11 @@ var populate = function(n) {
             "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
             "  <div class='display'>" +
             "    <img src='" + menu[i].img.image() + "'> " +
+            "  </div>" +
             "  <a class='title' ext='" + menu[i].ext + "'" +
             "    title='" + menu[i].id + "'>" +
                  String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
             "  </a>" +
-            "  </div>" +
             "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
                media +
             "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
@@ -482,13 +480,13 @@ var populate = function(n) {
               "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
               "  <div class='display'>" +
               "    <img src='" + menu[i].img.image() + "'> " +
-              "  <a class='title' ext='" + menu[i].ext + "'" +
-              "    title='" + menu[i].id + "'>" +
-                   String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
-              "  </a>" +
               "  </div>" +
               "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
                  media +
+              "  <a class='title' ext='" + menu[i].ext + "'" +
+              "    title='" + menu[i].id + "'>" +
+                   String(menu[i].id.match(/[^\/]+$/g)) +
+              "  </a>" +
               "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
               "</div>"
             )
@@ -513,13 +511,13 @@ var air = function(n) {
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
         "    <img src='" + menu[i].img.image() + "'> " +
-        "    <a class='title' ext='" + menu[i].ext + "'" +
-        "      title='" + menu[i].id + "'>" +
-               String(menu[i].id.match(/[^\/]+$/g)).substring(0,9) + "..." +
-        "    </a>" +
         "  </div>" +
         "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
            media +
+        "  <a class='title' ext='" + menu[i].ext + "'" +
+        "    title='" + menu[i].id + "'>" +
+             String(menu[i].id.match(/[^\/]+$/g)) +
+        "  </a>" +
         "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
         "</div>"
       )
@@ -600,13 +598,13 @@ var write = function(n) {
       "  <div class='display'>" +
       "    <img src='" + menu[n].img.image() + "'> " +
       "  </div>" +
-      "  <a class='title' ext='" + menu[n].ext + "'" +
-      "    title='" + menu[n].id + "'>" +
-           menu[n].id.match(/[^\/]+$/g) +
-      "  </a>" +
-      "  <div class='hash' style='display:none'>" + menu[n].hash + "</div>" +
+      "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
          media +
-      "  <div class='description' style='display:none'>" + menu[n].des + "</div>" +
+      "  <a class='title' ext='" + menu[i].ext + "'" +
+      "    title='" + menu[i].id + "'>" +
+           String(menu[i].id.match(/[^\/]+$/g)) +
+      "  </a>" +
+      "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
       "</div>"
     )
   })
