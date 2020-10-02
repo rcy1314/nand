@@ -73,6 +73,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .css('display','inline-flex')
+    $('#group .filter .title, #group .populate .title').hide()
     $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
     $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   } else if (n == false){
@@ -83,7 +84,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
-      $('#group .filter, #group .populate').removeClass('expand invert')
+    $('#group .filter, #group .populate').removeClass('expand')
     $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
   }
 }
@@ -589,6 +590,9 @@ var response = function(passthrough, uri, n, bloat) {
 
 var write = function(n) {
 
+  if (menu[n].media == true) var media = "<div class='media' style='display:none'>Images</div>"
+  else var media = "<div class='blank'></div>"
+
   $(document).ready(function() {
     $('html body #wrapper #container #main #group .result').prepend(
       "<div class='filter' " +
@@ -600,6 +604,9 @@ var write = function(n) {
       "    title='" + menu[n].id + "'>" +
            menu[n].id.match(/[^\/]+$/g) +
       "  </a>" +
+      "  <div class='hash' style='display:none'>" + menu[n].hash + "</div>" +
+         media +
+      "  <div class='description' style='display:none'>" + menu[n].des + "</div>" +
       "</div>"
     )
   })

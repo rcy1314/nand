@@ -161,7 +161,7 @@ $(document)
     display(expand)
     if (expand == true) var group = 'List'
     else var group = 'Block'
-    notify ('Display feeds as ' + group + '.')
+    notify('Display feeds as ' + group + '.')
     visual()
   })
   .on('touch click', 'html body #wrapper #container #main .content .status .filter, ' +
@@ -230,7 +230,7 @@ $(document)
     id = 0
   	$.loading()
     location.pathname.state()
-    $('html body #wrapper #container #main #group').remove()
+    $('html body #wrapper #container #main #toggle').hide()
     $('html body #wrapper #container #main #visit').hide()
     $('html body #wrapper #container #main #top').show()
     populate($(this).attr('aria-item'))
@@ -243,9 +243,8 @@ $(document)
     'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
     'html body #wrapper #container #main #visit #page .quick .feed .asset',
     function(e) {
-      $('html body #wrapper #container #main #option .fa-sun').hide()
-      $('html body #wrapper #container #main #top #arm #option .fa-sun').show()
       $('html body #wrapper #container #main #visit #page .quick .feed').empty()
+      $('html body #wrapper #container #main #toggle').hide()
       $.loading()
       $('html body #wrapper #container #main #visit').hide()
       $('html body #wrapper #container #main #top').show()
@@ -669,6 +668,7 @@ $(document)
     visual()
   })
   .on('submit', 'html body #wrapper #container #main #visit #page #front', function(e) {
+    $('html body #wrapper #container #main #toggle').hide()
       if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').length) {
         if ($('html body #wrapper #container #main #visit #page #front #first .listing .hover').is('[aria-item]') &&
               $.inArray($('html body #wrapper #container #main #visit #page #front #first .listing .hover').attr('aria-item').capitalize(), translations) > -1){

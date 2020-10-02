@@ -109,6 +109,7 @@ html body #wrapper #container #main #option .fa-camera-retro:before {
   font-weight: 50;
 }
 
+html body #wrapper #container #main #toggle:before,
 html body #wrapper #container #main #option .fa-sun:before {
   font-family: FontAwesome;
   content: "\f185";
