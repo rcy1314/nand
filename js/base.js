@@ -71,6 +71,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .css('display','inline-flex')
+	$('#group .air, #group .result').width('80%')
       $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
       if (op == 0) $('#group .filter, #group .populate').addClass('invert')
   } else if (n == false){
@@ -81,7 +82,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
-	$('#group .air, #group .result').width('100%')
+	if ($('html body #wrapper #container #main').width() <= 1024) $('#group .air, #group .result').width('100%')
     $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
     if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
   }
