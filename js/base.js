@@ -81,6 +81,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
+	$('#group .air, #group .result').width('100%')
     $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
     if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
   }
@@ -461,9 +462,9 @@ var populate = function(n) {
             "  <div class='display'>" +
             "    <img src='" + menu[i].img.image() + "'> " +
             "  </div>" +
-            "  <div class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
             "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
                media +
+            "  <div class='title'>" + menu[i].id.match(/[^\/]+$/g) + "</div>" +
             "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
             "</div>"
           )
