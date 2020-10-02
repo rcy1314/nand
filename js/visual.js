@@ -85,7 +85,8 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('invertScrollbar').addClass('oppositeScrollbar')
-    $('html body #wrapper #container #main #top, ' +
+    $('html body #wrapper #container #main #notification, ' +
+	  'html body #wrapper #container #main #top, ' +
 	  'html body #wrapper #container #main #feed .center .quick, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','none')
@@ -175,7 +176,8 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('oppositeScrollbar').addClass('invertScrollbar')
     $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
-    $('html body #wrapper #container #main #top, ' +
+    $('html body #wrapper #container #main #notification, ' +
+	  'html body #wrapper #container #main #top, ' +
 	  'html body #wrapper #container #main #feed .center .quick, ' +
       'html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','2px 2px 4px #dddddd')
