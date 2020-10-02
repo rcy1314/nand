@@ -81,8 +81,9 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top #arm #search #match .listing, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing')
       .removeClass('invertScrollbar').addClass('oppositeScrollbar')
+      $('html body #wrapper #container #main #feed .center .channel .item').css('box-shadow','none')
+      $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
-    $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('.fa, .fas, .images').css('color','#fff')
   } else if (op == 0) {

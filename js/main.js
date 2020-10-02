@@ -97,6 +97,7 @@ $(document)
         $('html body #wrapper #container #main #visit').hide()
         $(this).toggleClass('fa-heart-o fa-heart')
         if (reader == true) {
+          id = 0
           reader = false
           first = true
           stop = false
