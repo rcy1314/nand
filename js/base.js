@@ -1,39 +1,130 @@
 var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
-var quickFeeds = true //show or hide
+var quickFeeds = false //show or hide
 var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
-var expand = true // filter populate list display
+var expand = true //filter populate list display
+var onScreen = true //display sidebar on visit
+var showOption = false //show tag Options in top
+var topBar = true //display top menubar on content
+var centerFeeds = false //display quick feeds above xml
+var groupType = 'list' //or 'blocks'
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
-/* Feel free to edit the above. */
+  /* Feel free to edit the above. */
 
-var id //feed indexOf menu
-var post //from init.js timestamp
-var tap = 0 //used in main.js for images
-var complete //core.js interval for progress
-nextAngle = 0 //core.js animateRotate for quick
-var random = [] //core.js random feed in category
-var filter = [] //response array for menu indexes
-var stop = false //main.js scroll reader stop reload
-var first = true //reader append feed center channel
-var reader = false //main scroll category reader xml
-var randomDuplicate = [] //core.js random duplicate xml
+  var id //feed indexOf menu
+  var post //from init.js timestamp
+  var tap = 0 //used in main.js for images
+  var complete //core.js interval for progress
+  nextAngle = 0 //core.js animateRotate for quick
+  hideAngle = 0 //main.js animateRotate for onScreen
+  var random = [] //core.js random feed in category
+  var filter = [] //response array for menu indexes
+  var stop = false //main.js scroll reader stop reload
+  var first = true //reader append feed center channel
+  var reader = false //main scroll category reader xml
+  var randomDuplicate = [] //core.js random duplicate xml
 
-var stage =
-  "<div id='feed'>" +
+
+var selections =
+  [
+  {
+    name: "Opposite",
+    class: "Night",
+    icon: "fa-code"
+  },{
+    name: "Invert",
+    class: "Day",
+    icon: "fa-terminal"
+  },{
+    name: "Home",
+    class: "Home",
+    icon: "fa-home"
+  },{
+    name: "Random",
+    class: "Random",
+    icon: "fa-pie-chart"
+  },{
+    name: "Random Image",
+    class: "RandomImages",
+    icon: "fa-photo"
+  },{
+    name: "Random in Category",
+    class: "RandomCategory",
+    icon: "fa-sliders-h"
+  },{
+    name: "Reader",
+    class: "Reader",
+    icon: "fa-heart"
+  },{
+    name: "Contrast",
+    class: "Switch",
+    icon: "fa-flash"
+  },{
+    name: "List",
+    class: "List",
+    icon: "fa-th-large"
+  },{
+    name: "Blocks",
+    class: "Blocks",
+    icon: "fa-list-ul"
+  },{
+    name: "Dots",
+    class: "Dots",
+    icon: "fa-ellipsis-h"
+  },{
+    name: "Percent",
+    class: "Percent",
+    icon: "fa-signal"
+  },{
+    name: "Images",
+    class: "Images",
+    icon: "fa-cloud"
+  },{
+    name: "TopBar",
+    class: "TopBar",
+    icon: "fa-edit"
+  },{
+    name: "Show Option",
+    class: "ShowOption",
+    icon: "fa-puzzle-piece"
+  },{
+    name: "Center Feeds",
+    class: "CenterFeeds",
+    icon: "fa-tablet-alt"
+  },{
+    name: "Info",
+    class: "Info",
+    icon: "fa-exclamation"
+  }]
+
+var stage = function (n) {
+if (n == true)
+    return  "<div id='feed'>" +
+      "  <div class='center'>" +
+      "    <div class='quick'>" +
+      "      <div class='left' style='display:none'>" +
+      "        <div class='fa-angle-left'></div></div>" +
+      "      <div class='right'>" +
+      "        <div class='fa-angle-right'></div></div>" +
+      "      <div class='feed'></div>" +
+      "    </div>" +
+      "    <div class='channel'></div>" +
+      "  </div>" +
+      "  <div class='content'>" +
+      "    <div class='status'></div>" +
+      "    <div class='suggestions'>" +
+      "    </div>" +
+      "  </div>" +
+      "</div>"
+else
+return  "<div id='feed'>" +
   "  <div class='center'>" +
-  "    <div class='quick'>" +
-  "      <div class='left' style='display:none'>" +
-  "        <div class='fa-angle-left'></div></div>" +
-  "      <div class='right'>" +
-  "        <div class='fa-angle-right'></div></div>" +
-  "      <div class='feed'></div>" +
-  "    </div>" +
   "    <div class='channel'></div>" +
   "  </div>" +
   "  <div class='content'>" +
@@ -43,27 +134,39 @@ var stage =
   "  </div>" +
   "</div>"
 
-
-var tag = "<div class='tag'>" +
-          "  <div class='images fa-heart-o'></div>" +
-          "  <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
-          "  <div class='images fa-bookmark-o' title='Copy Source'></div>" +
-          "</div>"
+}
 
 var notify = function(n) {
-  $('html body #wrapper #container #main #notification').show().html(n)
-    $('html body #wrapper #container #main #notification').animate({
-      right: '1.5em'
-    }, 500)
+  $('html body #wrapper #container #sidebar .notify').show().html(n)
+    $('html body #wrapper #container #sidebar .notify').animate({
+      right: '-10px'
+    }, 0)
   setTimeout(function () {
-    $('html body #wrapper #container #main #notification').animate({
-      right: '-16em'
-    }, 500)
+    $('html body #wrapper #container #sidebar .notify').animate({
+      right: '240px'
+    }, 1000)
   }, 2000)
+}
+
+var centerQuick = function(n){
+  if (n == true){
+    $('html body #wrapper #container #main .center .channel').before(
+      "    <div class='quick'>" +
+      "      <div class='left' style='display:none'>" +
+      "        <div class='fa-angle-left'></div></div>" +
+      "      <div class='right'>" +
+      "        <div class='fa-angle-right'></div></div>" +
+      "      <div class='feed'></div>" +
+      "    </div>"
+    )
+    feed(10)
+  }
+  else $('.center .quick').remove()
 }
 
 var display = function(n) {
   if (n == true) {
+    groupType = 'list'
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
       '#group .filter .description, ' +
@@ -71,10 +174,11 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .css('display','inline-flex')
-	$('#group .air, #group .result').width('80%')
-      $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
-      if (op == 0) $('#group .filter, #group .populate').addClass('invert')
+	  $('#group .air, #group .result').width('70%')
+    $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
+    if (op == 0) $('#group .filter, #group .populate').addClass('invert')
   } else if (n == false){
+    groupType = 'blocks'
     $('#group .filter .hash, ' +
       '#group .filter .media, ' +
       '#group .filter .description, ' +
@@ -82,17 +186,80 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
-	if ($('html body #wrapper #container #main').width() <= 1024) $('#group .air, #group .result').width('100%')
+	  if ($('html body #wrapper #container #main').width() <= 1024) $('#group .air, #group .result').width('100%')
     $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
     if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
   }
   $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
 }
 
+var menubar = function(n) {
+  if (n == true) $('#top').show()
+  else if (n == false) $('#top').hide()
+}
+
+var sidebar = function(n) {
+  hideAngle += 180
+  if (hideAngle >= 360) hideAngle = 0
+  if (onScreen == true){
+    $('html body #wrapper #container #sidebar').animate({
+      width: '240px',
+    }, 300).show().find('html body #wrapper #container #sidebar #basic').show()
+    if ($('html body #wrapper #container #sidebar #content #category .cat').length < 1){
+      $.each(translations, function(i) {
+        $('html body #wrapper #container #sidebar #category').append(
+          "<div class='cat " + translations[i] + "' aria-item='" + translations[i] + "'>" +
+          "  <img src='images/" + translations[i] + '.webp' + "'>" +
+             translations[i] +
+          "</div>"
+        )
+      })
+      $.each(selections, function(i) {
+        if (selections[i])
+        $('html body #wrapper #container #sidebar #content #select').append(
+          "<div class='sel " + selections[i].class + "'>" + selections[i].name +
+          "  <div class='fa " + selections[i].icon + "'></div>" +
+          "</div>"
+        )
+      })
+      $('html body #wrapper #container #sidebar #content').append(
+        "<div id='basic'>" +
+        "  <form class='filter' action='#'>" +
+        "    <input type='text'>" +
+        "  </form>" +
+        "</div>"
+      )
+    }
+     if ($('html body #wrapper #container #main').width() >= 769){
+      var calc = $('html body #wrapper #container #main').width() - 223
+      $('html body #wrapper #container #main').animate({
+        width: calc,
+        marginLeft: '240px'
+      }, 150)
+      $('html body #wrapper #container #main #top').css('width','calc(100% - 256px)')
+      $('html body #wrapper #container #main #top #arm').css('margin-left','240px')
+      if (showOption == false) $('html body #wrapper #container #main #top #arm #option').hide()
+    }
+  } else if (onScreen == false){
+    $('#sidebar').animate({
+      width: .3,
+    }, 150).find('html body #wrapper #container #sidebar #basic').hide()
+    $('html body #wrapper #container #main').animate({
+      width: '100%',
+      marginLeft: 0
+    }, 150)
+    $('html body #wrapper #container #main #top').css('width','calc(100% - 16px)')
+    $('html body #wrapper #container #main #top #arm').css('margin','0 auto')
+    if (showOption == true) $('html body #wrapper #container #main #top #arm #option').show()
+}
+$('html body #wrapper #container #sidebar #hide .fa-angle-right').animateRotate(hideAngle, 750, 'swing')
+visual()
+}
+
 var toggle = function(n) {
-  nextAngle -= -180
-  if (nextAngle <= -180) nextAngle = 0
   if (n == true) {
+    nextAngle += 180
+    if (nextAngle >= 360) nextAngle = 0
       $('html body #wrapper #container #main #visit #page .quick')
         .addClass('visible').removeClass('invisible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
@@ -102,6 +269,7 @@ var toggle = function(n) {
         .removeClass('visible').addClass('invisible')
       quick(7)
     } else if (n == false){
+      nextAngle = 0
       $('html body #wrapper #container #main #visit #page .quick')
         .addClass('invisible').removeClass('visible')
       $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
@@ -156,13 +324,6 @@ var guide = function(heart, array) {
     "    <input class='url' value='" + array[0].re + "'>" +
     "    <input class='share' value='" + array[0].share + "'>" +
     "    <input class='source' value='" + array[0].src + "'>" +
-/*
-    "    <div class='tag'>" +
-    "      <div class='images " + fa + "'></div>" +
-    "      <div class='images fa-sticky-note-o' title='Copy Post'></div>" +
-    "      <div class='images fa-bookmark-o' title='Copy Source'></div>" +
-    "      </div>" +
-*/
     "  </div>" +
     "</div>"
   )
@@ -572,10 +733,10 @@ var write = function(n) {
       "  <div class='display'>" +
       "    <img src='" + menu[n].img.image() + "'> " +
       "  </div>" +
-      "  <div class='hash' style='display:none'>" + menu[i].hash + "</div>" +
+      "  <div class='hash' style='display:none'>" + menu[n].hash + "</div>" +
          media +
       "  <div class='title'>" + menu[n].id.match(/[^\/]+$/g) + "</div>" +
-      "  <div class='description' style='display:none'>" + menu[i].des + "</div>" +
+      "  <div class='description' style='display:none'>" + menu[n].des + "</div>" +
       "</div>"
     )
   })
@@ -630,8 +791,8 @@ var greenwich = function(channel, datetime) {
       gen: gen,
       re: re.trim()
     })
-  } else if (channel = 'item') {
-    if ($(datetime).find('datetime').text().length > -1) {
+  } else {
+    if ($(datetime).find('datetime').text().length > 0) {
       var re = $(datetime).find('link').text()
       var ts = parseInt($(datetime).find('datetime').text());
       var ts_ms = ts * 1000
@@ -652,7 +813,7 @@ var greenwich = function(channel, datetime) {
         gen: gen,
         re: re.trim()
       })
-    } else if ($(datetime).find('pubDate').text().length > -1) {
+    } else if ($(datetime).find('pubDate').text().length > 0) {
       var re = $(datetime).find('link').text()
       var dst = $(datetime).find('pubDate').text().zulu();
       var since = new Date($(datetime).find('pubDate').text())
@@ -664,11 +825,13 @@ var greenwich = function(channel, datetime) {
         gen: gen,
         re: re.trim()
       })
-    } else if ($(datetime).find('dc\\:date, date').text().length > -1) {
+    } else if ($(datetime).find('dc\\:date, date').text().length > 0) {
       var re = $(datetime).find('link').text()
       var dst = $(datetime).find('dc\\:date, date').text().zulu();
       var since = new Date($(datetime).find('dc\\:date, date').text())
       var gen = new Date($(datetime).find('dc\\:date, date').text()).getTime()
+      gen = gen.toString(36)
+      console.log(gen)
       parse.push({
         since: since,
         dst: dst[0],
@@ -715,7 +878,7 @@ var image = function(empty, n, item, src) {
     if ($('html body #wrapper #container #main').width() <= 425) {
       if ($(this).get(0).naturalWidth > minimum){
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
       else if ($(this).get(0).naturalWidth < maximum)
           $(this).width(99)
@@ -726,17 +889,17 @@ var image = function(empty, n, item, src) {
             'margin-bottom': '30px',
             'align-items': 'center',
             'display': 'flex'
-           }).find('.tag').remove()
+          })
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
         $(this).width('30vh').addClass('default')
-          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
         $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
         $(this).width('90%').addClass('default')
-          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
     } else {
-      if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill, .tag').remove()
+      if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill').remove()
       else if ($(this).get(0).naturalWidth < minimum)
         $(this).width('100%')
         .parents('.image').css({
@@ -746,14 +909,14 @@ var image = function(empty, n, item, src) {
             'margin-bottom': '30px',
             'align-items': 'center',
             'display': 'flex'
-          }).find('.tag').remove()
+          })
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
         $(this).addClass('default').width('30vh')
-          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
         $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute').css('height','115px').find('.post, .picture').show()
+          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
   }
     $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
@@ -761,7 +924,7 @@ var image = function(empty, n, item, src) {
     visual()
   })
   } else if (empty == true || onlyImages == true) $('.' + n).find(' .' + item).parents('.item').remove()
-    else $('.' + n).find(' .' + item).parents('.item').css('padding-bottom', '30px').find('.image, .tag, .fill').remove()
+    else $('.' + n).find(' .' + item).parents('.item').css('padding-bottom', '30px').find('.image, .fill').remove()
 
 }
 
@@ -772,6 +935,7 @@ var xml = function(e, s, n) {
   var local
   var pub = []
   var src = ''
+  var parse = []
   var images = []
   if (e == 'search') {
     uri = cors + menu[n].uri + s + '&format=RSS'
@@ -802,13 +966,14 @@ var xml = function(e, s, n) {
     }
 
   }).fail(function() {
-    $('html body #wrapper #container #main').append(stage).attr('tabindex', -1).focus()
+    $('html body #wrapper #container #main').append(stage()).attr('tabindex', -1).focus()
     $('html body #wrapper #container #main .channel').html("This site could not be reached.")
     $.unloading()
     visual()
   }).done(function(xhr) {
 
-    if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'"
+    if (op == 0 && $('html body #wrapper #container #main').width <= 425)
+      var style = "style='box-shadow:8px 8px 16px #eeeeee'"
     else var style = ''
 
     if ($(xhr).find('entry').length > 0) var channel = "entry"
@@ -820,11 +985,10 @@ var xml = function(e, s, n) {
 
     $(xhr).find(channel).each(function(i) {
 
-      var parse = greenwich(channel, $(this))
+      parse = greenwich(channel, $(this))
 
       var share = menu[n].hash
-      var timestamp = (parse.gen).toString(36)
-      var share = window.location.origin + '/?' + share + timestamp
+      var share = window.location.origin + '/?' + share + parse.gen
 
       var src = source($(this))
 
@@ -842,9 +1006,9 @@ var xml = function(e, s, n) {
         "  </a>" +
         "  <div class='copy fa-ellipsis-h'>" +
         "    <div class='attribute'>" +
-        "      <div class='site'>Copy Url<div style='float:right' class='fas fa-barcode'></div></div>" +
-        "      <div class='post'>Copy Post<div style='float:right' class='fa fa-sticky-note-o'></div></div>" +
-        "      <div class='picture'>Copy Source<div style='float:right' class='fa fa-bookmark-o'></div></div>" +
+        "      <div class='site'>Copy Url<div style='float:right' class='fas fa-at'></div></div>" +
+        "      <div class='post'>Copy Post<div style='float:right' class='fa fa-share'></div></div>" +
+        "      <div class='picture'>Copy Source<div style='float:right' class='fa fa-portrait'></div></div>" +
         "    </div>" +
         "  </div>" +
         "</div>"
@@ -889,7 +1053,6 @@ var xml = function(e, s, n) {
                "      <img id='" + i + "' class='" + i + " img' style='display:none'>" +
                "    </div>" +
                "    <div class='wrap'>" +
-                      tag +
                "      <div class='pub' text='" +
                         $(this).find('title:first').text().escape() + "'>" +
                         $(this).find('title:first').text().truncate(125, true).escape() +
@@ -957,8 +1120,9 @@ var xml = function(e, s, n) {
     if (reader == false) footer()
     content(n, recent, oldest, posts)
     clearInterval(complete)
+    menubar(topBar)
     suggest()
-    feed(10)
+    if (centerFeeds == true) feed(10)
     if (loading == 'percent') progress(true, 100)
     else $.unloading()
   })

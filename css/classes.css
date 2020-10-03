@@ -1,0 +1,247 @@
+.guide::-webkit-scrollbar {
+  scrollbar-width: none;
+  display: none;
+}
+
+.invertScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.invertScrollbar::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 2px;
+}
+
+.invertScrollbar {
+  scrollbar-color: #eeeeee transparent;
+  scrollbar-width: thin;
+}
+
+.oppositeScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.oppositeScrollbar::-webkit-scrollbar-thumb {
+  background-color: #0e0e0e;
+  border-radius: 2px;
+}
+
+.oppositeScrollbar {
+scrollbar-color: #0e0e0e transparent;
+scrollbar-width: thin;
+}
+
+.invert {
+  background-color: #ffffff !important;
+  color: #222222;
+  border: none;
+}
+
+.invertAlt {
+  background-color: #f7f7f7;
+  color: #222222;
+  border: none;
+}
+
+.invertOver:hover {
+  background-color: #f6f8fa !important;
+  border: .3px solid #ddd !important;
+}
+
+.invertOver:hover .classic {
+  background-color: #f6f8fa !important;
+}
+
+.invertOver:hover .img {
+  filter: brightness(0.97);
+}
+
+.invertOverBorderless:hover {
+  background-color: #f2f2f2 !important;
+}
+
+.invertOverBorderless:not(:hover) {
+  background-color: transparent;
+}
+
+.invertOver:not(:hover) {
+  border: .3px solid #f6f8fa;
+}
+
+.toggle {
+  top: -20px !important;
+  transition: .4s;
+}
+
+.toggleHidden {
+  top: -30px !important;
+  transition: .4s;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slideRight {
+  position: absolute;
+  transition: .25s;
+}
+
+.visible {
+  visibility: visible;
+  transition: .25s;
+  opacity: 100;
+}
+
+.opposite {
+  background-color: #000000 !important;
+  box-shadow: none;
+  color: #ffffff;
+  border: none;
+}
+
+.oppositeAlt {
+  background-color: #0e0e0e;
+  box-shadow: none;
+  color: #ffffff;
+  border: none;
+}
+
+.oppositeOver:hover {
+  background-color: #0e0e0e !important;
+  border: .3px solid #0e0e0e;
+}
+
+.oppositeOver:hover .classic {
+  background-color: #0e0e0e !important;
+}
+
+.oppositeOver:hover .img {
+  filter: brightness(.75);
+}
+
+.oppositeOverBorderless:hover {
+  background-color: #0e0e0e !important;
+}
+
+.oppositeOverBorderless:not(:hover) {
+  background-color: transparent;
+}
+
+
+.oppositeOver:not(:hover) {
+  border: .3px solid #0e0e0e;
+}
+
+.buttonOpposite {
+  background-color: #f7426C;
+}
+
+.buttonOpposite:hover {
+  background-color: #f54e75;
+}
+
+.buttonInvert {
+  background-color: #0078D4;
+}
+
+.buttonInvert:hover {
+  background-color: #1683D8;
+}
+
+.contrast {
+  background-color: #000000 !important;
+}
+
+.contrast.hover {
+  background-color: #0e0e0e !important;
+  color: #ffffff;
+}
+
+.contrast:hover {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+.contrast:not(:hover) {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.visual {
+  background-color: #ffffff !important;
+}
+
+.visual.hover {
+  background-color: #fbfbfb !important;
+  color: #666666;
+}
+
+.visual:hover {
+  background-color: #fbfbfb;
+  color: #666666;
+}
+
+.visual:not(:hover) {
+  background-color: #ffffff;
+  color: #666666;
+}
+
+
+.expand {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+}
+
+.expand .filter,
+.expanding .populate {
+  padding: 5px !important;
+}
+
+.expand .display {
+  width: 48px !important;
+  padding-right: 15px !important;
+}
+
+.expand img {
+  border-radius: 0 !important;
+  height: 48px !important;
+  width: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.expand .title {
+  text-align: left !important;
+  flex-basis: 25% !important;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.expand .hash,
+.expand .blank,
+.expand .media {
+  align-items: center !important;
+  padding-right: 15px !important;
+}
+
+.expand .hash {
+  flex-basis: 15% !important;
+  justify-content: center;
+}
+
+.expand .blank,
+.expand .media {
+  flex-basis: 15% !important;
+}
+
+.expand .description {
+  text-align: left !important;
+  flex-basis: 65% !important;
+  width: 100%;
+}

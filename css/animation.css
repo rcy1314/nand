@@ -63,32 +63,6 @@
     transform: rotateX(0deg) translateZ(25px);
 }
 
-.toggle {
-  top: -20px !important;
-  transition: .4s;
-}
-
-.toggleHidden {
-  top: -30px !important;
-  transition: .4s;
-}
-
-.invisible {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.slideRight {
-  position: absolute;
-  transition: .25s;
-}
-
-.visible {
-  visibility: visible;
-  transition: .25s;
-  opacity: 100;
-}
-
 .mask {
   animation: dash 1s linear alternate;
   fill: none;

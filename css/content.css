@@ -1,11 +1,5 @@
-@font-face {
-  font-family: Proxima Nova;
-  src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
-}
-
 .fa,
-.far,
-.images {
+.far {
   display: inline-block;
   cursor: pointer;
 }
@@ -19,231 +13,12 @@ video {
   color: #444444;
 }
 
-.invertScrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
-.invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: #eeeeee;
-  border-radius: 2px;
-}
-
-.invertScrollbar {
-  scrollbar-color: #eeeeee transparent;
-  scrollbar-width: thin;
-}
-
-.oppositeScrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
-.oppositeScrollbar::-webkit-scrollbar-thumb {
-  background-color: #0e0e0e;
-  border-radius: 2px;
-}
-
-.oppositeScrollbar {
-scrollbar-color: #0e0e0e transparent;
-scrollbar-width: thin;
-}
-
 html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader,
 html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:after,
 html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:before {
   justify-content: center;
   align-items: center;
   display: flex;
-}
-
-html body #wrapper #container #main #option .fa-camera-retro,
-html body #wrapper #container #main #option .fa-heart,
-html body #wrapper #container #main #option .fa-heart-o,
-html body #wrapper #container #main #option .fa-sun,
-html body #wrapper #container #main #option .fa-expand-alt {
-  padding-right: 13px;
-  padding-left: 13px;
-  padding-top: 17px;
-  font-size: 17px;
-}
-
-html body #wrapper #container #main #option .fa-home,
-html body #wrapper #container #main #option .fa-code,
-html body #wrapper #container #main #option .fa-terminal {
-  padding-right: 13px;
-  padding-left: 13px;
-  padding-top: 15px;
-  font-size: 20px;
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-heart,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-heart-o,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark-o,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note-o,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o {
-  font-size: 24px;
-  padding: 5px;
-}
-
-html body #wrapper #container #main #option .fa-expand-alt:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f424";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #option .fa-home:before {
-  font-family: FontAwesome;
-  content: "\f015";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #option .fa-camera-retro:before {
-  font-family: FontAwesome;
-  content: "\f083";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #toggle:before,
-html body #wrapper #container #main #option .fa-sun:before {
-  font-family: FontAwesome;
-  content: "\f185";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #option .fa-terminal:before {
-  font-family: FontAwesome;
-  content: "\f120";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #option .fa-code:before {
-  font-family: FontAwesome;
-  content: "\f121";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #visit #page #front #label .link .fa-angle-up:before {
-  font-family: FontAwesome;
-  position: relative;
-  content: "\f106";
-  font-weight: 50;
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note:before {
-  font-family: FontAwesome;
-  content: "\f249";
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-heart-o:before,
-html body #wrapper #container #main #option .fa-heart-o:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart-o:before {
-  font-family: FontAwesome;
-  content: "\f08a";
-}
-
-html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site .fa-barcode:before,
-html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-barcode:before {
-  font-family: "Font Awesome 5 Pro";
-  background-color: transparent !important;
-  content: "\f02a";
-  font-weight: 50;
-  padding: 0;
-}
-
-html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post .fa-sticky-note-o:before,
-html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .post .fa-sticky-note-o:before {
-  background-color: transparent !important;
-  font-family: FontAwesome;
-  content: "\f24a";
-  padding: 0;
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-sticky-note-o:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-sticky-note-o:before {
-  font-family: FontAwesome;
-  content: "\f24a";
-}
-
-html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture .fa-bookmark-o:before,
-html body #wrapper #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture .fa-bookmark-o:before {
-  background-color: transparent !important;
-  font-family: FontAwesome;
-  content: "\f097";
-  padding: 0
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark-o:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o:before {
-  font-family: FontAwesome;
-  content: "\f097";
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark:before {
-  font-family: FontAwesome;
-  content: "\f02e";
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark,
-html body #wrapper #container #guide .sticky .wrap .tag .fa-bookmark-o,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-bookmark-o {
-  position: absolute;
-  right: -10px;
-}
-
-html body #wrapper #container #main #feed .center .quick .fa-angle-left:before,
-html body #wrapper #container #main #visit #page .quick .fa-angle-left:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f104";
-  font-weight: 50;
-}
-
-html body #wrapper #container #main #feed .center .quick .fa-angle-right:before,
-html body #wrapper #container #main #visit #page .quick .fa-angle-right:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f105";
-  font-weight: 50;
-}
-
-html body #wrapper #container #top #arm #search #input .icon .fa-search:before,
-html body #wrapper #container #main #visit #page #front .focus .icon .fa-search:before,
-html body #wrapper #container #main #visit #page #front .focus .button .fa-search:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f002";
-  font-weight: 50;
-}
-
-html body #wrapper #container #guide .sticky .header .fa-ellipsis-h:before,
-html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-h:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f141";
-}
-
-html body #wrapper #container #guide .sticky .header .fa-ellipsis-v:before,
-html body #wrapper #container #main #feed .center .channel .item .header .fa-ellipsis-v:before {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f142";
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-heart:before,
-html body #wrapper #container #main #option .fa-heart:before,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart:before {
-  font-family: FontAwesome;
-  content: "\f004";
-}
-
-html body #wrapper #container #guide .sticky .wrap .tag .fa-heart,
-html body #wrapper #container #main #option .fa-heart,
-html body #wrapper #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart {
-  color: lightcoral !important;
 }
 
 div,
@@ -314,6 +89,122 @@ html body #wrapper #container #toggle {
   top: 7px;
 }
 
+html body #wrapper #container #sidebar {
+  position: fixed;
+  display: none;
+  height: 100%;
+  float: left;
+  width: .3px;
+  z-index: 11;
+}
+
+html body #wrapper #container #sidebar #content {
+  position: absolute;
+  overflow-x: hidden;
+  user-select: none;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+
+html body #wrapper #container #sidebar #content #category {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+}
+
+html body #wrapper #container #sidebar #content #select {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+}
+
+html body #wrapper #container #sidebar .notify {
+  background-color: transparent;
+  justify-content: center;
+  position: absolute;
+  font-size: 11px;
+  display: flex;
+  margin: 10px;
+  width: 240px;
+  bottom: 0;
+}
+
+html body #wrapper #container #sidebar #content #basic {
+  position: relative;
+  margin: 15px auto;
+  overflow: hidden;
+  width: 240px;
+}
+
+html body #wrapper #container #sidebar #content #basic input[type=text] {
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  margin: 0 auto;
+  display: block;
+  width: 220px;
+  padding: 5px;
+}
+
+html body #wrapper #container #sidebar #content #category .cat {
+  align-items: center;
+  font-weight: 900;
+  overflow: hidden;
+  font-size: 11px;
+  display: flex;
+  padding: 15px;
+  padding-left: 40px;
+  height: 27px;
+  width: 100%;
+}
+
+html body #wrapper #container #sidebar #content #category .cat img {
+  position: absolute;
+  left: 10px;
+  height: 16px;
+  width: 16px;
+}
+
+html body #wrapper #container #sidebar #content #category .Youtube {
+  border-bottom: .3px solid #aaaaaa;
+}
+
+html body #wrapper #container #sidebar #content #select .sel {
+  font-size: 12px;
+  height: 15px;
+  overflow: hidden;
+  padding: 15px;
+  width: 100%;
+}
+
+html body #wrapper #container #sidebar #content #select .sel .fa {
+  position: absolute;
+  float: right;
+  font-weight: 50;
+  right: 10px;
+}
+
+html body #wrapper #container #sidebar #hide {
+  border-radius: 0px 36px 36px 0px;
+  width: calc(100% + 26px);
+  align-items: center;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  height: 48px;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+html body #wrapper #container #sidebar #hide .fa-angle-right {
+  position: absolute;
+  right: 15px;
+}
+
 html body #wrapper #container #guide .checkmark {
   position: absolute;
   cursor: pointer;
@@ -352,11 +243,6 @@ html body #wrapper #container #guide .checkmark__circle {
 
 html body #wrapper #container #guide {
   position: absolute;
-  display: none;
-}
-
-.guide::-webkit-scrollbar {
-  scrollbar-width: none;
   display: none;
 }
 
@@ -431,7 +317,6 @@ html body #wrapper #container #main #option {
   user-select: none;
   cursor: pointer;
   display: flex;
-  right: 5px;
   z-index: 1;
   top: 5px;
 }
@@ -441,7 +326,6 @@ html body #wrapper #container #main {
   position: absolute;
   text-align: center;
   overflow-y: scroll;
-  user-select: none;
   outline: none;
 }
 
@@ -650,22 +534,6 @@ html body #wrapper #container #main #visit #page #front .focus .icon {
   top: 13px;
 }
 
-.buttonOpposite {
-  background-color: #f7426C;
-}
-
-.buttonOpposite:hover {
-  background-color: #f54e75;
-}
-
-.buttonInvert {
-  background-color: #0078D4;
-}
-
-.buttonInvert:hover {
-  background-color: #1683D8;
-}
-
 html body #wrapper #container #main #visit #page #front .focus .button {
   display: inline-block;
   position: relative;
@@ -781,63 +649,6 @@ html body #wrapper #container #main #group .result .populate .title {
   padding: 10px;
 }
 
-.expand {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  font-size: 12px !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  width: 100% !important;
-}
-
-.expand .filter,
-.expanding .populate {
-  padding: 5px !important;
-}
-
-.expand .display {
-  width: 48px !important;
-  padding-right: 15px !important;
-}
-
-.expand img {
-  border-radius: 0 !important;
-  height: 48px !important;
-  width: 48px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.expand .title {
-  text-align: left !important;
-  flex-basis: 25% !important;
-  margin: 0 !important;
-  width: 100%;
-}
-
-.expand .hash,
-.expand .blank,
-.expand .media {
-  align-items: center !important;
-  padding-right: 15px !important;
-}
-
-.expand .hash {
-  flex-basis: 15% !important;
-  justify-content: center;
-}
-
-.expand .blank,
-.expand .media {
-  flex-basis: 15% !important;
-}
-
-.expand .description {
-  text-align: left !important;
-  flex-basis: 65% !important;
-  width: 100%;
-}
-
 html body #wrapper #container #main #top #arm #search #input,
 html body #wrapper #container #main #top #arm #search #match {
   z-index: 2;
@@ -847,7 +658,7 @@ html body #wrapper #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: none;
-  width: 15em;
+  width: 240px;
   top: 15px;
 }
 
@@ -1107,83 +918,6 @@ html body #wrapper #container #main #feed .center .item,
 html body #wrapper #container #guide .sticky .item {
   margin-bottom: 15px;
   width: 100%;
-}
-
-.invert {
-  background-color: #ffffff !important;
-  color: #222222;
-  border: none;
-}
-
-.invertAlt {
-  background-color: #f7f7f7;
-  color: #222222;
-  border: none;
-}
-
-.invertOver:hover {
-  background-color: #f6f8fa !important;
-  border: .3px solid #ddd !important;
-}
-
-.invertOver:hover .classic {
-  background-color: #f6f8fa !important;
-}
-
-.invertOver:hover .img {
-  filter: brightness(0.97);
-}
-
-.invertOverBorderless:hover {
-  background-color: #f2f2f2 !important;
-}
-
-.invertOverBorderless:not(:hover) {
-  background-color: transparent !important;
-}
-
-.invertOver:not(:hover) {
-  border: .3px solid #f6f8fa;
-}
-
-.opposite {
-  background-color: #000000;
-  box-shadow: none;
-  color: #ffffff;
-  border: none;
-}
-
-.oppositeAlt {
-  background-color: #0e0e0e;
-  box-shadow: none;
-  color: #ffffff;
-  border: none;
-}
-
-.oppositeOver:hover {
-  background-color: #0e0e0e !important;
-  border: .3px solid #0e0e0e;
-}
-
-.oppositeOver:hover .classic {
-  background-color: #0e0e0e !important;
-}
-
-.oppositeOver:hover .img {
-  filter: brightness(.75);
-}
-
-.oppositeOverBorderless:hover {
-  background-color: #0e0e0e !important;
-}
-
-.oppositeOverBorderless:not(:hover) {
-  background-color: transparent !important;
-}
-
-
-.oppositeOver:not(:hover) {
-  border: .3px solid #0e0e0e;
 }
 
 html body #wrapper #container #main #feed .center .item .pub,
@@ -1550,44 +1284,6 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
   padding-top: 12px;
   font-size: 12px;
   height: 3em;
-}
-
-.contrast {
-  background-color: #000000 !important;
-}
-
-.contrast.hover {
-  background-color: #0e0e0e !important;
-  color: #ffffff;
-}
-
-.contrast:hover {
-  background-color: #0e0e0e;
-  color: #ffffff;
-}
-
-.contrast:not(:hover) {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.visual {
-  background-color: #ffffff !important;
-}
-
-.visual.hover {
-  background-color: #fbfbfb !important;
-  color: #666666;
-}
-
-.visual:hover {
-  background-color: #fbfbfb;
-  color: #666666;
-}
-
-.visual:not(:hover) {
-  background-color: #ffffff;
-  color: #666666;
 }
 
 html body #wrapper #container #main #top #arm #search #match .listing .hover,

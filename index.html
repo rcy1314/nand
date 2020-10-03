@@ -4,12 +4,13 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
 	<link id='favicon' rel="icon" type="image/png" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/animation.css">
 	<link rel="stylesheet" type="text/css" href="css/content.css">
+	<link rel="stylesheet" type="text/css" href="css/classes.css">
 	<link rel="stylesheet" type="text/css" href="css/media.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/visual.js"></script>
 	<script src="js/head.js"></script>
@@ -22,6 +23,16 @@
 <body>
 	<div id='wrapper'>
 		<div id='container'>
+			<div id='sidebar'>
+				<div id='hide'>
+					<div class='fa fa-angle-right'></div>
+				</div>
+				<div id='content'>
+				  <div id='category'></div>
+				  <div id='select'></div>
+			  </div>
+				<div class='notify'></div>
+			</div>
 			<div id='guide'></div>
 			<div id='main'>
 				<div id='toggle' class='fa fa-sun' title='Visual'></div>
@@ -38,7 +49,7 @@
 				<div id='notification'></div>
 				<div id='option'>
 					<div class='fa fa-home' title='Home'></div>
-					<div class='fa fa-heart-o' title='Read Category'></div>
+					<div class='fa fa-heart' title='Read Category'></div>
 					<div class='fa fa-sun' title='Visual'></div>
 					<div class='fa fa-camera-retro' title='Only Images'></div>
 					<div class='fa fa-expand-alt' title='Expand'></div>
@@ -60,7 +71,7 @@
 						</form>
 						<div id='option'>
 							<div class='fa fa-home' title='Home'></div>
-							<div class='fa fa-heart-o' title='Read Category'></div>
+							<div class='fa fa-heart' title='Read Category'></div>
 							<div class='fa fa-sun' title='Visual'></div>
 							<div class='fa fa-camera-retro' title='Only Images'></div>
 							<div class='fa fa-expand-alt' title='Expand'></div>
