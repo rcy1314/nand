@@ -9,7 +9,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute, ' +
       'html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container, ' +
-      'html body #wrapper #container #guide .blur, ' +
       'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
@@ -101,6 +100,7 @@ var visual = function(n) {
     $('.fa, .fas, .images').css('color','#fff')
     $('#hide, #sidebar').css('background-color', '#1a1a1a')
     $('html body #wrapper #container #sidebar #content #category .selected').removeClass('invert').addClass('opposite')
+    $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
   } else if (op == 0) {
     $('div').css('color','#444444')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
@@ -118,8 +118,7 @@ var visual = function(n) {
 
     $('html body #wrapper #container #main #notification, ' +
       'html body #wrapper #container, ' +
-	    'html body #wrapper #container #main, ' +
-      'html body #wrapper #container #guide .blur, ' +
+	  'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #group .air .populate, ' +
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
@@ -174,7 +173,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate, ' +
       'html body #wrapper #container #main .content .status .filter, ' +
-      'html body #wrapper #container #guide .sticky .item, ' +
       '#wrapper #container #main #feed .center .channel .item')
       .addClass('invertOver').removeClass('oppositeOver')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
@@ -198,5 +196,6 @@ var visual = function(n) {
     $('#favicon').attr('href', 'favicon.ico')
     $('#hide, #sidebar').css('background-color', '#dddddd')
     $('html body #wrapper #container #sidebar #content #category .selected').removeClass('opposite').addClass('invert')
+    $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
   }
 }

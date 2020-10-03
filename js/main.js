@@ -400,7 +400,8 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
       }
       else $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', 'html body #wrapper #container #guide .checkmark', function (e) {
+  .on('touch click', 'html body #wrapper #container #guide .blur, ' + 
+	'html body #wrapper #container #guide .checkmark', function (e) {
       $('#guide, #container .checkmark').fadeOut(750)
       $('html body #wrapper #container #guide').empty()
       menubar(topBar)

@@ -1,6 +1,17 @@
-.guide::-webkit-scrollbar {
+.guide {
   scrollbar-width: none;
+}
+
+.guide::-webkit-scrollbar {
   display: none;
+}
+
+.blurDay {
+  background-color: rgba(255,255,255,.2);
+}
+
+.blurNight {
+  background-color: rgba(0,0,0,.2);
 }
 
 .invertScrollbar::-webkit-scrollbar {
