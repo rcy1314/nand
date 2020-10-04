@@ -114,7 +114,7 @@
     des: plain text [<b>indexed</b>].<br>
     uri: endpoint used in xml in base.js<br>
     ext: external blank exit to new tab legacy.<br>
-    hash: unique two char alphanumeric indexed by init.js [<b>indexed<b>]<br>
+    hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]<br>
     media: xml with images boolean indexed by onlyImages.<br>
 
 >> [indexed] filtered by response in base.js
