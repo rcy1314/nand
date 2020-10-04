@@ -15,7 +15,6 @@
 
 * category
 >&emsp; translations array in base.js<br>
-    * Query Feed Example<br>
     > ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']<br>
 
 * op boolean<br>
