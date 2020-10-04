@@ -15,7 +15,7 @@
 
 * category
 >&emsp; translations array in base.js<br>
-    > ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']<br>
+ &emsp;&emsp;['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']<br>
 
 * op boolean<br>
 >&emsp; invert = 0 [day]<br>
