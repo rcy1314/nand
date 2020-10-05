@@ -1,7 +1,7 @@
 var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
-var quickFeeds = false //show or hide
+var quickFeeds = true //show or hide
 var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
@@ -74,13 +74,13 @@ var selections =
     class: "Blocks",
     icon: "fa-list-ul"
   },{
-    name: "Dots",
-    class: "Dots",
-    icon: "fa-ellipsis-h"
-  },{
     name: "Percent",
     class: "Percent",
     icon: "fa-signal"
+  },{
+    name: "Dots",
+    class: "Dots",
+    icon: "fa-ellipsis-h"
   },{
     name: "Images",
     class: "Images",

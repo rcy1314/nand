@@ -61,7 +61,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #group .result .filter, ' +
       'html body #wrapper #container #main #group .result .populate')
       .addClass('oppositeOver').removeClass('invertOver')
-    $('html body #wrapper #container #main #progressBar').removeClass('responseInvert').addClass('responseOpposite')
     $('html body #wrapper #container #sidebar #content #basic input[type=text], ' +
       'html body #wrapper #container #main #visit #page #front .focus').removeClass('pageInput')
     $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
@@ -98,11 +97,12 @@ var visual = function(n) {
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('.fa, .fas, .images').css('color','#fff')
-    $('#hide, #sidebar').css('background-color', '#1a1a1a')
-    $('html body #wrapper #container #sidebar #content #category .selected').removeClass('invert').addClass('opposite')
+    $('#hide, #sidebar, .cat').css('background-color', '#070707')
+    $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#0e0e0e')
     $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
+    $('.circle').css('background-color','#1a1a1a')
   } else if (op == 0) {
-    $('div').css('color','#444444')
+    $('div').css('color','#777777')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
       'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
@@ -154,7 +154,6 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
       .css('filter','hue-rotate(0deg)')
-    $('html body #wrapper #container #main #progressBar').removeClass('responseOpposite').addClass('responseInvert')
     $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
       'html body #wrapper #container #main #visit #page #front #first .listing .hover')
       .removeClass('contrast.hover').addClass('visual.hover')
@@ -191,11 +190,13 @@ var visual = function(n) {
       'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','2px 2px 4px #dddddd')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
-    $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #ccc')
+    $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #cccccc')
     $('.fa, .fas, .images').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
-    $('#hide, #sidebar').css('background-color', '#dddddd')
-    $('html body #wrapper #container #sidebar #content #category .selected').removeClass('opposite').addClass('invert')
+    $('#hide, #sidebar, .cat').css('background-color', '#dddddd')
+    $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#f7f7f7')
     $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
+    $('#sidebar').css('border-right','.3px solid #cccccc')
+    $('.circle').css('background-color','#eeeeee')
   }
 }

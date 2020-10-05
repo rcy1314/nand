@@ -13,6 +13,18 @@ $(document)
     if (onScreen == true) sidebar(onScreen)
     toggle(quickFeeds)
   })
+  .on('touch click', '.sel, .cat', function(e) {
+    var posX = $(this).offset().left
+    var posY = $(this).offset().top;
+    $(this).html($(this).html() + "<div class='circle' style='position:absolute'></div>")
+    $(this).find('.circle').css({
+      'top': (posY + 20) + 'px',
+      'left': (e.pageX - posX - 10) + 'px',
+    })
+    setTimeout(function () {
+      $('.circle').remove()
+    },250)
+  })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
     e.stopPropagation()
@@ -341,7 +353,10 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
     id = 0
   	$.loading()
     location.pathname.state()
-    $('html body #wrapper #container #sidebar #content #category .selected').removeClass('invert opposite selected')
+    if (op == 0) var html = '#dddddd'
+    else if (op == 1) var html = '#070707'
+    $('html body #wrapper #container #sidebar #content #category .selected')
+      .removeClass('selected').css('background-color',html)
     $('html body #wrapper #container #main #toggle').hide()
     $('html body #wrapper #container #main #visit').hide()
     category = $(this).attr('aria-item')
@@ -401,7 +416,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
       }
       else $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', 'html body #wrapper #container #guide .blur, ' + 
+  .on('touch click', 'html body #wrapper #container #guide .blur, ' +
 	'html body #wrapper #container #guide .checkmark', function (e) {
       $('#guide, #container .checkmark').fadeOut(750)
       $('html body #wrapper #container #guide').empty()

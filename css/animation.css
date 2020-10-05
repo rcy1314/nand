@@ -1,3 +1,26 @@
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    z-index: 3;
+    animation: ripple  .25s ease-in;
+}
+@-webkit-keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(10, 10);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(12, 12);
+    opacity: 0;
+  }
+}
+
 .btn {
   text-decoration: none;
   display: inline-block;
@@ -25,6 +48,7 @@
     height: 100%;
     -webkit-transform-style: flat;
     transform-style: flat;
+    cursor: pointer;
     -webkit-transition: -webkit-transform .3s ease-out;
     -o-transition: -o-transform .3s ease-out;
     transition: transform .3s ease-out;
@@ -81,11 +105,6 @@
 .responseInvert {
   background: -webkit-linear-gradient(45deg, #405de6, #fd1d1d);
   background: linear-gradient(45deg, #405de6, #fd1d1d);
-}
-
-.responseOpposite {
-  background: -webkit-linear-gradient(to left, #ef4063, #e557c6);
-  background: linear-gradient(to left, #ef4063, #e557c6);
 }
 
 .progress {
