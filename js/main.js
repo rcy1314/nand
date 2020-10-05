@@ -14,6 +14,7 @@ $(document)
     toggle(quickFeeds)
   })
   .on('touch click', '.sel, .cat', function(e) {
+    document.title = document.location.origin
     var posX = $(this).offset().left
     var posY = $(this).offset().top;
     $(this).html($(this).html() + "<div class='circle' style='position:absolute'></div>")
@@ -582,7 +583,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
   .on('touch click', 'html body #wrapper #container #main #feed .center #bottom .bottom',
     function(e) {
       $.loading()
-
+      document.title = category
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
         if (location.href.match('\\+1')) var query = uri[0].replace(/\+1/g, '').space()
