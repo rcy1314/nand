@@ -436,7 +436,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
           tap = new Date().getTime();
           setTimeout(function () {
             if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
-              if (category == 'Social' && !$this.hasClass('guide') && $('html body #wrapper #container #main').width() >= 426) {
+              if (category == 'Social' && $this.hasClass('default') && !$this.hasClass('guide') && $('html body #wrapper #container #main').width() >= 426) {
                   var sticky = []
                   sticky.push({
                     courtesy: $this.parents('.item').find('.header').html(),
@@ -450,6 +450,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
                   })
                   guide(sticky)
                 } else if ($this.hasClass('guide')) $this.attr('src').blank()
+                  else if (!$this.hasClass('default')) $this.parents('.item').attr('ext').blank()
                   else if (category != 'Social')
                     $this.parents('html body #wrapper #container #guide .sticky .item, ' +
                     'html body #wrapper #container #main #feed .center .channel .item').attr('ext').blank()
