@@ -207,6 +207,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
   .on('touch click', 'html body #wrapper #container #main #option .fa-home',
   function(e) {
     id = 0
+    filter = []
     $.loading()
     location.pathname.state()
     document.title = category
@@ -570,6 +571,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
   .on('touch click', 'html body #wrapper #container #main #feed .center #bottom .bottom',
     function(e) {
       $.loading()
+
       if (location.href.match('\\?q=')) {
         var uri = location.search.split('?q=')[1].match(/[^&]+/g)
         if (location.href.match('\\+1')) var query = uri[0].replace(/\+1/g, '').space()
@@ -579,6 +581,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
                  query,
                  true)
       } else populate(category)
+      id = 0
     })
   .on('touch click', 'html body #wrapper #container #main #feed .center #bottom .back, ' +
       'html body #wrapper #container #main #feed .center #bottom .next, ' +
@@ -586,6 +589,7 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
       'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
         $.loading()
         xml(null, null, $(this).attr('aria-item'))
+        id = 0
   })
   .on('touch click', 'html body #wrapper #container #main .content .suggestions .combine a', function(e) {
         $.loading()
