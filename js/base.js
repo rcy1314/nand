@@ -242,7 +242,7 @@ var sidebar = function(n) {
     }
   } else if (onScreen == false){
     $('#sidebar').animate({
-      width: .3,
+      width: 0,
     }, 150).find('html body #wrapper #container #sidebar #basic').hide()
     $('html body #wrapper #container #main').animate({
       width: '100%',
@@ -1085,7 +1085,7 @@ var xml = function(e, s, n) {
       pub.sort(function(a, b) { return b.since - a.since })
       $.each(pub, function(i) { if (parseInt(pub[i].gen, 36) == post) local = i })
     })
-    if (first == true) $('html body #wrapper #container #main').append(stage).attr('tabindex', -1).focus()
+    if (first == true) $('html body #wrapper #container #main').append(stage(centerFeeds)).attr('tabindex', -1).focus()
     if ($.isNumeric(local)) {
       var sticky = []
       sticky.push({

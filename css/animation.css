@@ -4,7 +4,7 @@
     width: 15px;
     height: 15px;
     z-index: 3;
-    animation: ripple  .25s ease-in;
+    animation: ripple .25s ease-in;
 }
 @-webkit-keyframes ripple {
   0% {
@@ -12,8 +12,8 @@
     opacity: 0;
   }
   75% {
-    transform: scale(10, 10);
-    opacity: 0.25;
+    transform: scale(5, 5);
+    opacity: 0.45;
   }
   100% {
     transform: scale(12, 12);

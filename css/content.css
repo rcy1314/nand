@@ -149,6 +149,7 @@ html body #wrapper #container #sidebar #content #basic input[type=text] {
 }
 
 html body #wrapper #container #sidebar #content #category .cat {
+  letter-spacing: 1px;
   align-items: center;
   font-weight: 900;
   overflow: hidden;
@@ -167,7 +168,7 @@ html body #wrapper #container #sidebar #content #category .cat img {
   width: 16px;
 }
 
-html body #wrapper #container #sidebar #content #category .Youtube {
+html body #wrapper #container #sidebar #content #category .cat:last-of-type {
   border-bottom: .3px solid #aaaaaa;
 }
 

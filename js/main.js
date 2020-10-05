@@ -111,7 +111,7 @@ $(document)
   .on('touch click', 'html body #wrapper #container #sidebar #content #select .ShowOption',
     function(e) {
       showOption = showOption != true
-      notify('TopBar set to ' + showOption.toString().capitalize())
+      notify('Option set to ' + showOption.toString().capitalize())
       if (showOption == false) $('html body #wrapper #container #main #top #arm #option').hide()
       else if (showOption == true) $('html body #wrapper #container #main #top #arm #option').show()
   })
@@ -462,7 +462,6 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
           if (((new Date().getTime()) - tap) < 300) {
               $this = $(this)
               // double click occurred
-              if ($(this).parents('.item, .sticky').find('.tag .fa-heart-o').length) {
                   $(this).parents('html body #wrapper #container #guide .sticky .item .image, ' +
                     'html body #wrapper #container #main #feed .center .channel .item .classic .image')
                     .find('.fa-heart')
@@ -479,7 +478,6 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
                       'display': 'none'
                     })
                 }, 1500)
-              }
               var item = $(this).parents('.item').attr('item')
               $(this).parents('html body #wrapper #container #guide')
                 .find('.tag .fa-heart, .tag .fa-heart-o')

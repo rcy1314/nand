@@ -96,11 +96,12 @@ var visual = function(n) {
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('#favicon').attr('href', 'images/Opposite.ico')
-    $('.fa, .fas, .images').css('color','#fff')
+    $('.fa, .fas').css('color','#fff')
     $('#hide, #sidebar, .cat').css('background-color', '#070707')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#0e0e0e')
     $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
     $('.circle').css('background-color','#1a1a1a')
+    $('#sidebar').css('border-right','none')
   } else if (op == 0) {
     $('div').css('color','#777777')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
@@ -191,12 +192,12 @@ var visual = function(n) {
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #cccccc')
-    $('.fa, .fas, .images').css('color','#000')
+    $('.fa, .fas').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
     $('#hide, #sidebar, .cat').css('background-color', '#dddddd')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#f7f7f7')
     $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
-    $('#sidebar').css('border-right','.3px solid #cccccc')
+    $('#sidebar').css('border-right','.3px solid #aaaaaa')
     $('.circle').css('background-color','#eeeeee')
   }
 }
