@@ -237,7 +237,6 @@ var sidebar = function(n) {
         marginLeft: '240px'
       }, 150)
       $('html body #wrapper #container #main #top').css('width','calc(100% - 256px)')
-      $('html body #wrapper #container #main #top #arm').css('margin-left','240px')
       if (showOption == false) $('html body #wrapper #container #main #top #arm #option').hide()
     }
   } else if (onScreen == false){
@@ -249,7 +248,6 @@ var sidebar = function(n) {
       marginLeft: 0
     }, 150)
     $('html body #wrapper #container #main #top').css('width','calc(100% - 16px)')
-    $('html body #wrapper #container #main #top #arm').css('margin','0 auto')
     if (showOption == true) $('html body #wrapper #container #main #top #arm #option').show()
 }
 $('html body #wrapper #container #sidebar #hide .fa-angle-right').animateRotate(hideAngle, 750, 'swing')
