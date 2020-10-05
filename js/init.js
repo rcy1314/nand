@@ -48,7 +48,6 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
     $(document)
       .ready(function() {
         $.loading()
-        $('html body #wrapper #container #main #top').show()
         $('html body #wrapper #container #main #toggle').hide()
         $('html body #wrapper #container #main #top #arm #option').show()
         response(true,
