@@ -600,7 +600,6 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
       'html body #wrapper #container #main .content .suggestions .combine div', function(e) {
         $.loading()
         xml(null, null, $(this).attr('aria-item'))
-        id = 0
   })
   .on('touch click', 'html body #wrapper #container #main .content .suggestions .combine a', function(e) {
         $.loading()
