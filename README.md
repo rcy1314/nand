@@ -60,13 +60,6 @@
 * reader boolean<br>
 >&emsp; responsive to onlyImages, translations, scrollTop.
 
-    * Image Handling
-    > Height > Width * 2 scaled down
-    > 5k and above height images are removed
-    > minimum images defaults to new tab url
-    > mobile width maximum to new tab image source
-    > tablet pc maximum from guideImage to new tab url
-
 
 ### Init.js Unique URI Identifying.
 

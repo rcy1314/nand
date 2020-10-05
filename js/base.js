@@ -299,10 +299,8 @@ var footer = function() {
   )
 }
 
-var guide = function(heart, array) {
+var guide = function(array) {
 
-  if (heart == true) var fa = 'fa-heart'
-  else var fa = 'fa-heart-o'
   $('html body #wrapper #container #guide').css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
     "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
@@ -856,7 +854,6 @@ var guideImage = function(src) {
         'max-width': '40vw'
       })
       $(this).show().fadeIn(750)
-  	$('html body #wrapper #container #main').addClass('guide')
   })
 }
 
@@ -868,7 +865,7 @@ var image = function(empty, n, item, src) {
   var k = 5420
 
   if (src && src.match(/\.mp4/g)) {
-    $('.' + n).find(' .' + item).parents('.item, #guide').fadeIn(1000).find('.fill').remove()
+    $('.' + n).find(' .' + item).parents('.item').fadeIn(1000).find('.fill').remove()
     return false
   }
   if (src && src.match(/https?\:\/\//g) && !src.match(/assets|comments|default|feeds|fsdn|undefined/g)) {
@@ -879,7 +876,7 @@ var image = function(empty, n, item, src) {
     if ($('html body #wrapper #container #main').width() <= 425) {
       if ($(this).get(0).naturalWidth > minimum){
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
       else if ($(this).get(0).naturalWidth < maximum)
           $(this).width(99)
@@ -893,11 +890,11 @@ var image = function(empty, n, item, src) {
           })
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
         $(this).width('30vh').addClass('default')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
         $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
         $(this).width('90%').addClass('default')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
     } else {
       if ($(this).get(0).naturalHeight > k) $(this).parents('.item').find('.image, .fill').remove()
@@ -913,15 +910,15 @@ var image = function(empty, n, item, src) {
           })
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth * 2){
         $(this).addClass('default').width('30vh')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       } else if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight ||
         $(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) {
         $(this).addClass('default').width('100%')
-          .parents('.item, #guide').find('.header .attribute').css('height','110px').find('.post, .picture').show()
+          .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
       }
   }
-    $('.' + n).find(' .' + item).parents('.item, #guide').find('.img').show().fadeIn(1000)
-    $('.' + n).find(' .' + item).parents('.item, #guide').find('.fill').remove()
+    $('.' + n).find(' .' + item).parents('.item').find('.img').show().fadeIn(1000)
+    $('.' + n).find(' .' + item).parents('.item').find('.fill').remove()
     visual()
   })
   } else if (empty == true || onlyImages == true) $('.' + n).find(' .' + item).parents('.item').remove()
@@ -1098,7 +1095,7 @@ var xml = function(e, s, n) {
         re: pub[local].re,
         id: n
       })
-      guide(false, sticky)
+      guide(sticky)
     } else $('#guide').hide()
     $.each(pub, function(i, k) {
 
