@@ -2,202 +2,131 @@ var visual = function(n) {
   if (n == 'op') op = op != true
   else if (n == 1 || n == 0) op = n
   if (op == 1) {
-    $('div').css('color','#f7f7f7')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute, ' +
-      'html body #wrapper #container #main #notification, ' +
+    $('div, input[type=text]').css('color','#f7f7f7')
+      .removeClass('pageInput buttonInvert visual visual.hover invert invertAlt invertOver invertScrollbar invertOverBorderless')
+    $('html body #wrapper #container .attribute div, ' +
+      'html body #wrapper #container .attribute, ' +
       'html body #wrapper #container, ' +
       'html body #wrapper #container #main, ' +
       'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-      'html body #wrapper #container #main #group .air .populate, ' +
-      'html body #wrapper #container #main #group .result .filter, ' +
-      'html body #wrapper #container #main #group .result .populate, ' +
-      'html body #wrapper #container #main .content .status .filter')
-      .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('opposite')
+      'html body #wrapper #container #main .listing .index, ' +
+      'html body #wrapper #container #main .filter, ' +
+      'html body #wrapper #container #main .populate')
+      .addClass('opposite')
     $('html body #wrapper #container #guide, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .left')
-      .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeAlt')
+      'html body #wrapper #container #main .quick .right, ' +
+      'html body #wrapper #container #main .quick .left')
+      .addClass('oppositeAlt')
     $(':root').css({
       '--loader-color-primary': '#f7426C',
       '--loader-color-secondary': '#e86d8a'
     })
-    $('html body #wrapper #container #sidebar #content #select .sel, ' +
-      'html body #wrapper #container #sidebar #content #category .cat, ' +
-      'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
+    $('html body #wrapper #container #main .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .right, ' +
+      'html body #wrapper #container #main .quick .left, ' +
+      'html body #wrapper #container #main .quick .right, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text]')
-      .removeClass('invert invertAlt invertOver invertOverBorderless').addClass('oppositeOverBorderless')
-    $('html body #wrapper #container #main .content .status .filter, ' +
-      'html body #wrapper #container #main #group .air .populate, ' +
-      'html body #wrapper #container #main #group .result .filter, ' +
-      'html body #wrapper #container #main #group .result .populate')
-      .removeClass('invertOver invertOverBorderless').addClass('oppositeOver')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .picture, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture, ' +
-      'html body #wrapper #container #guide .sticky .item, ' +
-      'html body #wrapper #container #main #feed .center .channel .item, ' +
-      'html body #wrapper #container #main #group .air .populate, ' +
-      'html body #wrapper #container #main #group .result .filter, ' +
-      'html body #wrapper #container #main #group .result .populate')
-      .addClass('oppositeOver').removeClass('invertOver')
+      .addClass('oppositeOverBorderless')
+    $('html body #wrapper #container .attribute div, ' +
+      'html body #wrapper #container .item, ' +
+      'html body #wrapper #container #main .filter, ' +
+      'html body #wrapper #container #main .populate')
+      .addClass('oppositeOver')
     $('html body #wrapper #container #sidebar #content #basic input[type=text], ' +
-      'html body #wrapper #container #main #visit #page #front .focus').removeClass('pageInput')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .buffer, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .buffer, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .buffer')
+      'html body #wrapper #container #main #visit #page #front .focus')
+    $('html body #wrapper #container #main .buffer')
       .css('color','#444444')
     $('html body #wrapper #container #main .content .suggestions .combine a').css('color','#f7426C')
     $('html body #wrapper #container #main #visit #page #front .focus .button')
-      .removeClass('buttonInvert').addClass('buttonOpposite')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover')
-      .addClass('contrast.hover').removeClass('visual.hover')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index')
-      .addClass('contrast').removeClass('visual')
+      .addClass('buttonOpposite')
+    $('html body #wrapper #container #main .hover')
+      .addClass('contrast.hover')
+    $('html body #wrapper #container #main .index')
+      .addClass('contrast')
     $('html body #wrapper #container #sidebar #content #category .cat img, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
+      'html body #wrapper #container #main .translation')
       .css('filter','hue-rotate(110deg)')
     $('html body #wrapper #container #sidebar #content, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
-      .removeClass('invertScrollbar').addClass('oppositeScrollbar')
+      'html body #wrapper #container #main .listing')
+      .addClass('oppositeScrollbar')
     $('html body #wrapper #container #main #feed .center .channel .item, ' +
       'html body #wrapper #container #main #notification, ' +
 	    'html body #wrapper #container #main #feed .center .quick, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','none')
+      'html body #wrapper #container #main .listing').css('box-shadow','none')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('#favicon').attr('href', 'images/Opposite.ico')
-    $('.fa, .fas').css('color','#fff')
     $('#hide, #sidebar, .cat').css('background-color', '#070707')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#0e0e0e')
     $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
     $('.circle').css('background-color','#1a1a1a')
-    $('#sidebar').css('border-right','none')
+    $('#sidebar').css('border','none')
   } else if (op == 0) {
-    $('div').css('color','#777777')
+    $('div, input[type=text]').css('color','#777777')
+      .removeClass('buttonOpposite contrast contrast.hover opposite oppositeAlt oppositeOver oppositeScrollbar oppositeOverBorderless')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute, ' +
+      'html body #wrapper #container .attribute div, ' +
+      'html body #wrapper #container .attribute, ' +
       'html body #wrapper #container #guide .sticky .wrap, ' +
       'html body #wrapper #container #main #feed .center .quick .feed, ' +
       'html body #wrapper #container #main #feed .center .channel .item, ' +
-      'html body #wrapper #container #main #feed .center .channel .item .classic, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
-      .addClass('invert').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
-
-    $('html body #wrapper #container #main #notification, ' +
-      'html body #wrapper #container, ' +
-	  'html body #wrapper #container #main, ' +
-      'html body #wrapper #container #main #group .air .populate, ' +
-      'html body #wrapper #container #main #group .result .filter, ' +
-      'html body #wrapper #container #main #group .result .populate, ' +
-      'html body #wrapper #container #main .content .status .filter, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed, ' +
-      'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .left')
-      .addClass('invertAlt').removeClass('opposite oppositeAlt oppositeOver oppositeOverBorderless')
+      'html body #wrapper #container #main .listing')
+      .addClass('invert')
+    $('html body #wrapper #container, ' +
+	    'html body #wrapper #container #main, ' +
+      'html body #wrapper #container #main .filter, ' +
+      'html body #wrapper #container #main .populate, ' +
+      'html body #wrapper #container #main .quick .feed, ' +
+      'html body #wrapper #container #main .quick .right, ' +
+      'html body #wrapper #container #main .quick .left')
+      .addClass('invertAlt')
     $(':root').css({
       '--loader-color-primary': '#0078D4',
       '--loader-color-secondary': '#5baff0',
     })
-    $('html body #wrapper #container #sidebar #content #select .sel, ' +
-      'html body #wrapper #container #sidebar #content #category .cat, ' +
+    $('html body #wrapper #container #sidebar #content #category .cat, ' +
       'html body #wrapper #container #main #visit #page #front #label .link, ' +
-      'html body #wrapper #container #main #feed .center .quick .feed .asset, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .asset, ' +
+      'html body #wrapper #container #main .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
-      'html body #wrapper #container #main #visit #page .quick .left, ' +
-      'html body #wrapper #container #main #visit #page .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .right, ' +
-      'html body #wrapper #container #main #feed .center .quick .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .feed .left, ' +
-      'html body #wrapper #container #main #feed .center .quick .feed .right, ' +
+      'html body #wrapper #container #main .left, ' +
+      'html body #wrapper #container #main .right, ' +
       'html body #wrapper #container #main #top #arm #search input[type=text]')
-      .addClass('invertOverBorderless').removeClass('oppositeOver oppositeOverBorderless')
+      .addClass('invertOverBorderless')
     $('html body #wrapper #container #sidebar #content #category .cat img, ' +
-      'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .index .detail .translation, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .translation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .translation, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .translation')
+      'html body #wrapper #container #main .translation')
       .css('filter','hue-rotate(0deg)')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .hover, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover')
-      .removeClass('contrast.hover').addClass('visual.hover')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .index, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index')
-      .addClass('visual').removeClass('contrast')
-    $('html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .site, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .site, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .post, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .post, ' +
-      'html body #wrapper #container #guide .sticky .header .courtesy .copy .attribute .picture, ' +
-      'html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute .picture, ' +
-      'html body #wrapper #container #main .content .status .filter, ' +
+    $('html body #wrapper #container #main .hover')
+      .addClass('visual.hover')
+    $('html body #wrapper #container #main .index')
+      .addClass('visual')
+    $('html body #wrapper #container #main #feed .center .item .header .courtesy .copy .attribute div, ' +
       'html body #wrapper #container #main #top #arm #search #input input[type=text], ' +
-      'html body #wrapper #container #main #group .air .populate, ' +
-      'html body #wrapper #container #main #group .result .filter, ' +
-      'html body #wrapper #container #main #group .result .populate, ' +
-      'html body #wrapper #container #main .content .status .filter, ' +
+      'html body #wrapper #container #main .populate, ' +
+      'html body #wrapper #container #main .filter, ' +
       '#wrapper #container #main #feed .center .channel .item')
-      .addClass('invertOver').removeClass('oppositeOver')
-    $('html body #wrapper #container #main #top #arm #search #match .listing .index .detail .buffer, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing .hover .detail .buffer, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .index .detail .buffer, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing .hover .detail .buffer, ' +
+      .addClass('invertOver')
+    $('html body #wrapper #container #main .buffer, ' +
       'html body #wrapper #container #main .content .suggestions .combine a').css('color','steelblue')
     $('html body #wrapper #container #sidebar #content, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing')
-      .removeClass('oppositeScrollbar').addClass('invertScrollbar')
-    $('html body #wrapper #container #main #visit #page .focus .button').removeClass('buttonOpposite').addClass('buttonInvert')
+      'html body #wrapper #container #main .listing')
+      .addClass('invertScrollbar')
+    $('html body #wrapper #container #main #visit #page .focus .button').addClass('buttonInvert')
     $('html body #wrapper #container #main #notification, ' +
 	    'html body #wrapper #container #main #feed .center .quick, ' +
-      'html body #wrapper #container #main #top #arm #search #match .listing, ' +
-      'html body #wrapper #container #main #visit #page #front #first .listing').css('box-shadow','2px 2px 4px #dddddd')
+      'html body #wrapper #container #main .listing').css('box-shadow','2px 2px 4px #dddddd')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #cccccc')
-    $('.fa, .fas').css('color','#000')
     $('#favicon').attr('href', 'favicon.ico')
     $('#hide, #sidebar, .cat').css('background-color', '#dddddd')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#f7f7f7')
     $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
     $('#sidebar').css('border-right','.3px solid #aaaaaa')
-    $('.circle').css('background-color','#eeeeee')
+    $('.circle').css('background-color','#ffffff')
   }
 }

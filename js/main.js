@@ -13,7 +13,8 @@ $(document)
     if (onScreen == true) sidebar(onScreen)
     toggle(quickFeeds)
   })
-  .on('touch click', '.sel, .cat', function(e) {
+  .on('touch click', 'html body #wrapper #container #sidebar #content #select .sel, ' +
+    'html body #wrapper #container #sidebar #content #category .cat', function(e) {
     document.title = document.location.origin
     var posX = $(this).offset().left
     var posY = $(this).offset().top;
@@ -354,17 +355,15 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
     id = 0
   	$.loading()
     location.pathname.state()
-    if (op == 0) var html = '#dddddd'
-    else if (op == 1) var html = '#070707'
     $('html body #wrapper #container #sidebar #content #category .selected')
-      .removeClass('selected').css('background-color',html)
+      .removeClass('selected')
     $('html body #wrapper #container #main #toggle').hide()
     $('html body #wrapper #container #main #visit').hide()
     category = $(this).attr('aria-item')
     populate($(this).attr('aria-item'))
-    $(this).addClass('selected')
     menubar(topBar)
     visual()
+    $(this).addClass('selected')
   })
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation a', function(e) {
     uri = '?q=' + $(this).attr('aria-item').toLowerCase()

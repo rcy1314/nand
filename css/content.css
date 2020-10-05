@@ -108,12 +108,14 @@ html body #wrapper #container #sidebar #content {
 }
 
 html body #wrapper #container #sidebar #content #category {
+  background-color: inherit;
   overflow: hidden;
   width: 100%;
   height: fit-content;
 }
 
 html body #wrapper #container #sidebar #content #select {
+  background-color: inherit;
   overflow: hidden;
   width: 100%;
   height: fit-content;
@@ -149,6 +151,7 @@ html body #wrapper #container #sidebar #content #basic input[type=text] {
 }
 
 html body #wrapper #container #sidebar #content #category .cat {
+  background-color: inherit;
   letter-spacing: .5px;
   align-items: center;
   font-weight: 900;
@@ -173,6 +176,7 @@ html body #wrapper #container #sidebar #content #category .cat:last-of-type {
 }
 
 html body #wrapper #container #sidebar #content #select .sel {
+  background-color: inherit;
   font-size: 12px;
   height: 15px;
   overflow: hidden;
