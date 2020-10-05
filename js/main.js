@@ -401,7 +401,8 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
       }
       else $(this).parents('.quick').find('.left').show()
   })
-  .on('touch click', 'html body #wrapper #container #guide .checkmark', function (e) {
+  .on('touch click', 'html body #wrapper #container #guide .blur, ' + 
+	'html body #wrapper #container #guide .checkmark', function (e) {
       $('#guide, #container .checkmark').fadeOut(750)
       $('html body #wrapper #container #guide').empty()
       menubar(topBar)
@@ -773,7 +774,10 @@ $('html body #wrapper #container #main #visit #page #front .focus input[type=tex
         xml(null, null, $.random())
         notify('Switched to now reading ' + category + '.')
       } else {
+		filter = []
         $.loading()
+        var uri = '?q=' + menu[$('html body #wrapper #container #arm #search .listing .hover').attr('aria-item')].cat.toLowerCase()
+		uri.define().state()
         xml(null, null, $('html body #wrapper #container #arm #search .listing .hover').attr('aria-item'))
       }
     } else {

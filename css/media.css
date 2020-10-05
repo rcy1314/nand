@@ -198,7 +198,7 @@
 
   html body #wrapper #container #main #top #arm #option {
     position: absolute;
-    right: 0;
+    right: 25px;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
@@ -206,9 +206,13 @@
   }
 
   html body #wrapper #container #main #feed .center {
-	  margin-right: 30px;
-    width: 390px;
+	  margin-right: 50px;
+    width: 420px;
     left: -10px;
+  }
+
+  html body #wrapper #container #main #feed .content {
+	display: none;
   }
 
   html body #wrapper #container #main #visit #page {
@@ -244,7 +248,7 @@
   html body #wrapper #container #main #top #arm #option {
     position: absolute;
     display: block;
-    right: 35px;
+    right: 70px;
   }
 
   html body #wrapper #container #main #top #arm #search #home {
@@ -252,12 +256,13 @@
   }
 
   html body #wrapper #container #main #feed .center {
-	  margin-right: 20px;
-    width: 530px;
+	margin-right: 60px;
+    width: 420px;
+	left: -20px;
   }
 
-  html body #wrapper #container ##main #feed .content {
-    display: block;
+  html body #wrapper #container #main #feed .content {
+	display: inline-block;
   }
 
   html body #wrapper #container #main #visit #page .quick {

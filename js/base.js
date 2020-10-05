@@ -11,6 +11,7 @@ var showOption = true //show tag Options in top
 var topBar = true //display top menubar on content
 var centerFeeds = false //display quick feeds above xml
 var groupType = 'list' //or 'blocks'
+var reader = false //main scroll category reader xml
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
@@ -27,7 +28,6 @@ var translations =
   var filter = [] //response array for menu indexes
   var stop = false //main.js scroll reader stop reload
   var first = true //reader append feed center channel
-  var reader = false //main scroll category reader xml
   var randomDuplicate = [] //core.js random duplicate xml
 
 
@@ -856,6 +856,7 @@ var guideImage = function(src) {
         'max-width': '40vw'
       })
       $(this).show().fadeIn(750)
+  	$('html body #wrapper #container #main').addClass('guide')
   })
 }
 
