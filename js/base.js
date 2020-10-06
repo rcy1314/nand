@@ -970,7 +970,7 @@ var xml = function(e, s, n) {
 
     if (op == 0 && $('html body #wrapper #container #main').width <= 425)
       var style = "style='box-shadow:8px 8px 16px #eeeeee'"
-    else var style = ''
+    else var style = "style='border: .3px solid #dddddd'"
 
     if ($(xhr).find('entry').length > 0) var channel = "entry"
     else var channel = 'item'
