@@ -64,7 +64,7 @@ var visual = function(n) {
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#0e0e0e')
     $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
   } else if (op == 0) {
-    $('div, input[type=text]').css('color','#777777')
+    $('div, input[type=text]').css('color','#444444')
       .removeClass('buttonOpposite contrast contrast.hover opposite oppositeAlt oppositeOver oppositeScrollbar oppositeOverBorderless')
     $('html body #wrapper #container #main #visit #page #front .focus input[type=text], ' +
       'html body #wrapper #container .attribute div, ' +
