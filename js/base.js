@@ -225,7 +225,7 @@ var sidebar = function(n) {
       $('html body #wrapper #container #sidebar #content').append(
         "<div id='basic'>" +
         "  <form class='filter' action='#'>" +
-        "    <input type='text'>" +
+        "    <input type='text' placeholder='filter feeds'>" +
         "  </form>" +
         "</div>"
       )

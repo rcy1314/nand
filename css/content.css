@@ -143,11 +143,16 @@ html body #wrapper #container #sidebar #content #basic input[type=text] {
   border: none !important;
   position: relative;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 auto;
   display: block;
+  color: #dddddd;
   width: 220px;
   padding: 5px;
+}
+
+html body #wrapper #container #sidebar #content #basic input[type=text]::placeholder {
+  color: #dddddd;
 }
 
 html body #wrapper #container #sidebar #content #category .cat {
