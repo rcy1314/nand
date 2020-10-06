@@ -13,20 +13,6 @@ $(document)
     if (onScreen == true) sidebar(onScreen)
     toggle(quickFeeds)
   })
-  .on('touch click', 'html body #wrapper #container #sidebar #content #select .sel, ' +
-    'html body #wrapper #container #sidebar #content #category .cat', function(e) {
-    document.title = document.location.origin
-    var posX = $(this).offset().left
-    var posY = $(this).offset().top;
-    $(this).html($(this).html() + "<div class='circle' style='position:absolute'></div>")
-    $(this).find('.circle').css({
-      'top': (posY + 20) + 'px',
-      'left': (e.pageX - posX - 10) + 'px',
-    })
-    setTimeout(function () {
-      $('.circle').remove()
-    },250)
-  })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
     e.stopPropagation()

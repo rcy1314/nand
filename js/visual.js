@@ -59,13 +59,10 @@ var visual = function(n) {
 	    'html body #wrapper #container #main #feed .center .quick, ' +
       'html body #wrapper #container #main .listing').css('box-shadow','none')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#ffffff')
-    $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #333')
     $('#favicon').attr('href', 'images/Opposite.ico')
     $('#hide, #sidebar, .cat').css('background-color', '#070707')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#0e0e0e')
     $('html body #wrapper #container #guide .blur').removeClass('blurDay').addClass('blurNight')
-    $('.circle').css('background-color','#1a1a1a')
-    $('#sidebar').css('border','none')
   } else if (op == 0) {
     $('div, input[type=text]').css('color','#777777')
       .removeClass('buttonOpposite contrast contrast.hover opposite oppositeAlt oppositeOver oppositeScrollbar oppositeOverBorderless')
@@ -121,12 +118,9 @@ var visual = function(n) {
       'html body #wrapper #container #main .listing').css('box-shadow','2px 2px 4px #dddddd')
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
-    $('html body #wrapper #container #main #top').css('border-bottom', '.3px solid #cccccc')
     $('#favicon').attr('href', 'favicon.ico')
     $('#hide, #sidebar, .cat').css('background-color', '#dddddd')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#f7f7f7')
     $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
-    $('#sidebar').css('border-right','.3px solid #aaaaaa')
-    $('.circle').css('background-color','#ffffff')
   }
 }
