@@ -605,8 +605,9 @@ $(document)
         xml(null, null, $(this).attr('aria-item'))
   })
   .on('touch click', 'html body #wrapper #container #main .content .suggestions .combine a', function(e) {
-        $.loading()
-        populate($(this).attr('aria-item'))
+      id = 0
+      $.loading()
+      populate($(this).attr('aria-item'))
  })
   .on('touch click',
     'html body #wrapper #container #main #visit #page #front .focus .button .buttonSearch',
