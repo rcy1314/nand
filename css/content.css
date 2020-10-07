@@ -526,7 +526,7 @@ html body #wrapper #container #main #top #arm #search #input .icon {
   color: #aaa !important;
   position: absolute;
   margin-top: 1px;
-  left: 50px;
+  left: 70px;
   z-index: 2;
   top: 8px;
 }
@@ -665,7 +665,7 @@ html body #wrapper #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: none;
-  width: 180px;
+  width: 220px;
   top: 15px;
 }
 
@@ -775,7 +775,7 @@ html body #wrapper #container #main #feed .center .quick .right {
   position: absolute;
   cursor: pointer;
   display: flex;
-  right : -18px;
+  right : -15px;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -789,7 +789,7 @@ html body #wrapper #container #main #visit #page .quick .right {
   position: absolute;
   cursor: pointer;
   display: flex;
-  right : -28px;
+  right : -20px;
   padding: 4px;
   height: 24px;
   width: 24px;
@@ -807,7 +807,7 @@ html body #wrapper #container #main #feed .center .quick .left {
   padding: 4px;
   height: 24px;
   width: 24px;
-  left: -18px;
+  left: -15px;
   z-index: 7;
   top: 40px;
 }
@@ -821,7 +821,7 @@ html body #wrapper #container #main #visit #page .quick .left {
   padding: 4px;
   height: 24px;
   width: 24px;
-  left: -32px;
+  left: -20px;
   z-index: 7;
   top: 25px;
 }

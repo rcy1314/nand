@@ -123,7 +123,6 @@ $(document)
       toggle(quickFeeds)
       document.title = ''
       $.unloading()
-$('html body #wrapper #container #main #visit #page #front .focus input[type=text]').attr('tabindex', -1).focus()
   })
   .on('touch click', 'html body #wrapper #container #main #feed .center .channel .item .header, ' +
     'html body #wrapper #container, ' +
