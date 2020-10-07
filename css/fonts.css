@@ -73,6 +73,11 @@ html body #wrapper #container #main #option .fa-terminal:before {
   font-weight: 50;
 }
 
+html body #wrapper #container #sidebar #content #select .sel .fa-terminal {
+  padding-left: 5px;
+  font-size: 10px;
+}
+
 html body #wrapper #container #sidebar #content #select .sel .fa-code:before
 html body #wrapper #container #main #option .fa-code:before {
   font-family: "Font Awesome 5 Pro";
@@ -183,9 +188,9 @@ html body #wrapper #container #main #feed .center .channel .item .classic .wrap 
   color: lightcoral !important;
 }
 
-html body #wrapper #container #sidebar #content #select .sel .fa-exclamation:before {
+html body #wrapper #container #sidebar #content #select .sel .fa-exclamation-circle:before {
   font-family: "Font Awesome 5 Pro";
-  content: "\f12a";
+  content: "\f06a";
   font-weight: 50;
 }
 

@@ -118,7 +118,7 @@ var visual = function(n) {
     $('html body #wrapper #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #wrapper #container #main #dots .fill').css('background-color','#555555')
     $('#favicon').attr('href', 'favicon.ico')
-    $('#hide, #sidebar, .cat').css('background-color', '#dddddd')
+    $('#hide, #sidebar, .cat').css('background-color', '#eeeeee')
     $('html body #wrapper #container #sidebar #content #category .selected').css('background-color','#f7f7f7')
     $('html body #wrapper #container #guide .blur').addClass('blurDay').removeClass('blurNight')
   }

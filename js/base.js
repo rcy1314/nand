@@ -84,7 +84,7 @@ var selections =
   },{
     name: "Images",
     class: "Images",
-    icon: "fa-cloud"
+    icon: "fa-camera-retro"
   },{
     name: "TopBar",
     class: "TopBar",
@@ -98,9 +98,9 @@ var selections =
     class: "CenterFeeds",
     icon: "fa-tablet-alt"
   },{
-    name: "Info",
+    name: "Repository",
     class: "Info",
-    icon: "fa-exclamation"
+    icon: "fa-exclamation-circle"
   }]
 
 var stage = function (n) {
