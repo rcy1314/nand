@@ -357,7 +357,7 @@ $(document)
     var p = (x / $(this).width() * 100)
     $(this).css({
       'border-image': 'linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,.5) '+ parseInt(p) + '%,rgba(0,0,0,0) 100%)',
-      'border-width': '.3px .3px .3px .3px',
+      'border-width': '.3px 0 .3px',
       'border-image-slice': '9',
       'border-style': 'solid',
     })
@@ -365,7 +365,7 @@ $(document)
   .on('mouseleave', 'html body #wrapper #container #sidebar #content #select .sel, ' +
 'html body #wrapper #container #sidebar #content #category .cat',
   function(e) {
-    $(this).css('border','.3px solid transparent')
+    $(this).css('cssText','border-top:.3px solid transparent !important;border-bottom: .3px solid transparent !important')
   })
   .on('touch click', 'html body #wrapper #container #main #visit #page .quick .feed .translation a', function(e) {
     uri = '?q=' + $(this).attr('aria-item').toLowerCase()

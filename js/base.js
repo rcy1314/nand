@@ -1,7 +1,7 @@
 var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
-var quickFeeds = true //show or hide
+var quickFeeds = false //show or hide
 var loading = 'dots' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
@@ -223,11 +223,6 @@ var sidebar = function(n) {
         )
       })
       $('html body #wrapper #container #sidebar #content').append(
-        "<div id='basic'>" +
-        "  <form class='filter' action='#'>" +
-        "    <input type='text' placeholder='filter feeds'>" +
-        "  </form>" +
-        "</div>"
       )
     }
      if ($('html body #wrapper #container #main').width() >= 769){

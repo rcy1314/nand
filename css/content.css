@@ -160,14 +160,15 @@ html body #wrapper #container #sidebar #content #basic input[type=text]::placeho
 }
 
 html body #wrapper #container #sidebar #content #category .cat {
-  border: .3px solid transparent;
+  border-bottom: .3px solid transparent;
+  border-top: .3px solid transparent;
   background-color: inherit;
   letter-spacing: .5px;
   align-items: center;
   overflow: hidden;
   font-size: 11px;
   display: flex;
-  padding: 15px;
+  padding: 10px;
   height: 25px;
 }
 
@@ -179,11 +180,12 @@ html body #wrapper #container #sidebar #content #category .cat img {
 }
 
 html body #wrapper #container #sidebar #content #select .sel {
-  border: .3px solid transparent;
+  border-bottom: .3px solid transparent;
+  border-top: .3px solid transparent;
   background-color: inherit;
   overflow: hidden;
   font-size: 12px;
-  padding: 15px;
+  padding: 10px;
   height: 15px;
 }
 
