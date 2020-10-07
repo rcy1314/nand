@@ -403,9 +403,9 @@ $(document)
   })
   .on('touch click',
     'html body #container #main #visit #page .quick .right, ' +
-    'html body #container #main #visit #page .quick .fa-angle-right, ' +
+    'html body #container #main #visit #page .quick .fa-plus, ' +
     'html body #container #main #feed .center .quick .right, ' +
-    'html body #container #main #feed .center .quick .fa-angle-right',
+    'html body #container #main #feed .center .quick .fa-plus',
     function(e) {
 		  var $this = $(this)
       var leftPos = $(this).parents('html body #container #main .quick').find('.feed').scrollLeft()
@@ -419,9 +419,9 @@ $(document)
   })
   .on('touch click',
     'html body #container #main #feed .center .quick .left, ' +
-    'html body #container #main #feed .center .quick .fa-angle-left, ' +
+    'html body #container #main #feed .center .quick .fa-minus, ' +
     'html body #container #main #visit #page .quick .left, ' +
-    'html body #container #main #visit #page .quick .fa-angle-left',
+    'html body #container #main #visit #page .quick .fa-minus',
     function(e) {
 		  var $this = $(this)
       var leftPos = $(this).parents('.quick').find('.feed').scrollLeft()
@@ -430,7 +430,7 @@ $(document)
       }, 'slow')
       if ($(this).parents('.quick').find('.feed').scrollLeft() <= 892) {
           $(this).parents('.quick').find('.left').hide()
-          $(this).parents('.quick').find('.right, .fa-angle-right').show()
+          $(this).parents('.quick').find('.right, .fa-plus').show()
       }
       else $(this).parents('.quick').find('.left').show()
   })

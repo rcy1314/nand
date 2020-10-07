@@ -109,9 +109,9 @@ if (n == true)
       "  <div class='center'>" +
       "    <div class='quick'>" +
       "      <div class='left' style='display:none'>" +
-      "        <div class='fa-angle-left'></div></div>" +
+      "        <div class='fa-minus'></div></div>" +
       "      <div class='right'>" +
-      "        <div class='fa-angle-right'></div></div>" +
+      "        <div class='fa-plus'></div></div>" +
       "      <div class='feed'></div>" +
       "    </div>" +
       "    <div class='channel'></div>" +

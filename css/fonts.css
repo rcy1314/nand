@@ -137,17 +137,17 @@ html body #container #main #feed .center .channel .item .classic .wrap .tag .fa-
   right: -10px;
 }
 
-html body #container #main #feed .center .quick .fa-angle-left:before,
-html body #container #main #visit #page .quick .fa-angle-left:before {
+html body #container #main #feed .center .quick .fa-minus:before,
+html body #container #main #visit #page .quick .fa-minus:before {
   font-family: "Font Awesome 5 Pro";
-  content: "\f104";
+  content: "\f068";
   font-weight: 50;
 }
 
-html body #container #main #feed .center .quick .fa-angle-right:before,
-html body #container #main #visit #page .quick .fa-angle-right:before {
+html body #container #main #feed .center .quick .fa-plus:before,
+html body #container #main #visit #page .quick .fa-plus:before {
   font-family: "Font Awesome 5 Pro";
-  content: "\f105";
+  content: "\f067";
   font-weight: 50;
 }
 
