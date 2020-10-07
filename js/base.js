@@ -231,22 +231,21 @@ var sidebar = function(n) {
       )
     }
      if ($('html body #wrapper #container #main').width() >= 769){
-      var calc = $('html body #wrapper #container #main').width() - 223
-      $('html body #wrapper #container #main').animate({
-        width: calc,
-        marginLeft: '240px'
-      }, 150)
+      $('html body #wrapper #container #main').addClass('mainSidebar').css({
+        'width': 'calc(100% - 240px)',
+        'left': '240px',
+      })
       $('html body #wrapper #container #main #top').css('width','calc(100% - 256px)')
       if (showOption == false) $('html body #wrapper #container #main #top #arm #option').hide()
     }
   } else if (onScreen == false){
-    $('#sidebar').animate({
-      width: 0,
-    }, 150).find('html body #wrapper #container #sidebar #basic').hide()
-    $('html body #wrapper #container #main').animate({
-      width: '100%',
-      marginLeft: 0
-    }, 150)
+    $('#sidebar').css({
+      'width': '0',
+    }).find('html body #wrapper #container #sidebar #basic').hide()
+    $('html body #wrapper #container #main').css({
+      'width': '100%',
+      'left': 0
+    })
     $('html body #wrapper #container #main #top').css('width','calc(100% - 16px)')
     if (showOption == true) $('html body #wrapper #container #main #top #arm #option').show()
 }

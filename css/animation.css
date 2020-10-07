@@ -1,3 +1,7 @@
+.mainSideBar {
+  transition: 300ms;
+}
+
 .btn {
   text-decoration: none;
   display: inline-block;
