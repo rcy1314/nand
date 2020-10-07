@@ -1,5 +1,5 @@
 var op = 0 //1 invert, 0 opposite
-var buffer = 7 //input suggest length
+var buffer = 9 //input suggest length
 var contrast = false //opposite of op
 var quickFeeds = false //show or hide
 var loading = 'dots' //or 'percent'

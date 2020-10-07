@@ -702,7 +702,7 @@ html body #wrapper #container #main #visit #page .quick {
   background-color: transparent;
   border-radius: 4px;
   position: relative;
-  margin: 25px auto;
+  margin: 15px auto;
   height: 7.5em;
   width: 100%;
   z-index: 1;
@@ -1287,10 +1287,10 @@ html body #wrapper #container #main #visit #page #front #first .listing .index {
   border-bottom: none !important;
   background-color: transparent;
   width: calc(100% - 12px);
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   position: relative;
   padding-left: 12px;
-  padding-top: 12px;
+  padding-top: 8px;
   font-size: 12px;
   height: 3em;
 }
@@ -1299,10 +1299,10 @@ html body #wrapper #container #main #top #arm #search #match .listing .hover,
 html body #wrapper #container #main #visit #page #front #first .listing .hover {
   background-color: transparent;
   width: calc(100% - 12px);
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   border-radius: 4px;
   padding-left: 12px;
-  padding-top: 12px;
+  padding-top: 8px;
   font-size: 12px;
   height: 3em;
 }
