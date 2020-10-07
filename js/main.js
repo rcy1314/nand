@@ -155,6 +155,7 @@ $(document)
     'html body #wrapper #container #main #option .fa-camera-retro', function(e) {
     $.loading()
     $('html body #wrapper #container #main #visit').hide()
+    $('html body #wrapper #container #main #toggle').hide()
     menubar(topBar)
     onlyImages = onlyImages != true
     if (onlyImages == true) notify ('Display only Images.')
