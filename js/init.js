@@ -39,8 +39,8 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
 
     $(document)
       .ready(function() {
-        $('html body #wrapper #container #main #visit').css('visibility','visible')
-        $('html body #wrapper #container #main #toggle').hide()
+        $('html body #container #main #visit').css('visibility','visible')
+        $('html body #container #main #toggle').hide()
       })
 
   else {
@@ -48,8 +48,8 @@ if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
     $(document)
       .ready(function() {
         $.loading()
-        $('html body #wrapper #container #main #toggle').hide()
-        $('html body #wrapper #container #main #top #arm #option').show()
+        $('html body #container #main #toggle').hide()
+        $('html body #container #main #top #arm #option').show()
         response(true,
                  false,
                  menu[i].id.space(),
@@ -81,9 +81,9 @@ if (location.search.split('?q=')[1]) {
     .ready(function() {
 
         $.loading()
-        $('html body #wrapper #container #main #top').show()
-        $('html body #wrapper #container #main #toggle').hide()
-        var width = $('html body #wrapper #container #main').width() / 30
+        $('html body #container #main #top').show()
+        $('html body #container #main #toggle').hide()
+        var width = $('html body #container #main').width() / 30
         if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
         else if (!uri[1]) response(false, false, uri[0], true)
         else if (uri[1]) response(true, uri[0], uri[1], false)
@@ -95,7 +95,7 @@ if (location.search.split('?q=')[1]) {
         $(document)
           .ready(function() {
 
-            $('html body #wrapper #container #main #visit').css('visibility','visible')
+            $('html body #container #main #visit').css('visibility','visible')
 
         })
 

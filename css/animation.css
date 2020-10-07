@@ -1,4 +1,4 @@
-.mainSideBar {
+.mainTransition {
   transition: 300ms;
 }
 
@@ -180,7 +180,7 @@
   100% {left:100%;}
 }
 
-html body #wrapper #container #main #dots .fill {
+html body #container #main #dots .fill {
   width: 4px;
   height: 4px;
   position: absolute;
@@ -199,9 +199,9 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 	--loader-initial-scale: 0.1;
 }
 
-html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader,
-html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:after,
-html body #wrapper #container #main #feed .center .channel .item .classic .fill .loader:before {
+html body #container #main #feed .center .channel .item .classic .fill .loader,
+html body #container #main #feed .center .channel .item .classic .fill .loader:after,
+html body #container #main #feed .center .channel .item .classic .fill .loader:before {
   margin: 0 auto;
 	box-sizing: border-box;
 	flex-grow: 0;

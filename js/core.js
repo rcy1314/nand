@@ -19,13 +19,13 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 $.loading = function () {
 
   if (reader == false) {
-    $('html body #wrapper #container #main #feed, ' +
-      'html body #wrapper #container #main #group').remove()
+    $('html body #container #main #feed, ' +
+      'html body #container #main #group').remove()
   }
   if (loading == 'dots'){
-  $('html body #wrapper #container #main #dots .fill').addClass('dots')
+  $('html body #container #main #dots .fill').addClass('dots')
   } else if (loading == 'percent'){
-    var width = $('html body #wrapper #container #main').width() / 30
+    var width = $('html body #container #main').width() / 30
     complete = setInterval(function() {
       $('#progressBar').css({
         '-webkit-transition-delay': '0s',
@@ -40,7 +40,7 @@ $.loading = function () {
 
 $.unloading = function() {
     if (loading == 'dots'){
-      $('html body #wrapper #container #main .fill').removeClass('dots')
+      $('html body #container #main .fill').removeClass('dots')
       progress(true, 0)
     } else if (loading == 'percent') {
       clearInterval(complete)

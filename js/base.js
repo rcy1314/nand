@@ -1,5 +1,5 @@
 var op = 0 //1 invert, 0 opposite
-var buffer = 9 //input suggest length
+var buffer = 7 //input suggest length
 var contrast = false //opposite of op
 var quickFeeds = false //show or hide
 var loading = 'dots' //or 'percent'
@@ -137,12 +137,12 @@ return  "<div id='feed'>" +
 }
 
 var notify = function(n) {
-  $('html body #wrapper #container #sidebar .notify').show().html(n)
-    $('html body #wrapper #container #sidebar .notify').animate({
+  $('html body #container #sidebar .notify').show().html(n)
+    $('html body #container #sidebar .notify').animate({
       right: '-10px'
     }, 0)
   setTimeout(function () {
-    $('html body #wrapper #container #sidebar .notify').animate({
+    $('html body #container #sidebar .notify').animate({
       right: '240px'
     }, 1000)
   }, 2000)
@@ -150,7 +150,7 @@ var notify = function(n) {
 
 var centerQuick = function(n){
   if (n == true){
-    $('html body #wrapper #container #main .center .channel').before(
+    $('html body #container #main .center .channel').before(
       "    <div class='quick'>" +
       "      <div class='left' style='display:none'>" +
       "        <div class='fa-angle-left'></div></div>" +
@@ -186,11 +186,11 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .hide()
-	  if ($('html body #wrapper #container #main').width() <= 1024) $('#group .air, #group .result').width('100%')
+	  if ($('html body #container #main').width() <= 1024) $('#group .air, #group .result').width('100%')
     $('#group .filter, #group .populate').removeClass('expand').css('display','inline-flex')
     if (op == 0) $('#group .filter, #group .populate').removeClass('invert')
   }
-  $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+  $('html body #container #main').scrollTop($('.air').outerHeight())
 }
 
 var menubar = function(n) {
@@ -202,12 +202,12 @@ var sidebar = function(n) {
   hideAngle += 180
   if (hideAngle >= 360) hideAngle = 0
   if (onScreen == true){
-    $('html body #wrapper #container #sidebar').animate({
+    $('html body #container #sidebar').animate({
       width: '240px',
-    }, 300).show().find('html body #wrapper #container #sidebar #basic').show()
-    if ($('html body #wrapper #container #sidebar #content #category .cat').length < 1){
+    }, 300).show().find('html body #container #sidebar #basic').show()
+    if ($('html body #container #sidebar #content #category .cat').length < 1){
       $.each(translations, function(i) {
-        $('html body #wrapper #container #sidebar #category').append(
+        $('html body #container #sidebar #category').append(
           "<div class='cat " + translations[i] + "' aria-item='" + translations[i] + "'>" +
           "  <img src='images/" + translations[i] + '.webp' + "'>" +
              translations[i] +
@@ -216,35 +216,35 @@ var sidebar = function(n) {
       })
       $.each(selections, function(i) {
         if (selections[i])
-        $('html body #wrapper #container #sidebar #content #select').append(
+        $('html body #container #sidebar #content #select').append(
           "<div class='sel " + selections[i].class + "'>" + selections[i].name +
           "  <div class='fa " + selections[i].icon + "'></div>" +
           "</div>"
         )
       })
-      $('html body #wrapper #container #sidebar #content').append(
+      $('html body #container #sidebar #content').append(
       )
     }
-     if ($('html body #wrapper #container #main').width() >= 769){
-      $('html body #wrapper #container #main').addClass('mainSidebar').css({
+     if ($('html body #container #main').width() >= 769){
+      $('html body #container #main').css({
         'width': 'calc(100% - 240px)',
         'left': '240px',
       })
-      $('html body #wrapper #container #main #top').css('width','calc(100% - 256px)')
-      if (showOption == false) $('html body #wrapper #container #main #top #arm #option').hide()
+      $('html body #container #main #top').css('width','calc(100% - 256px)')
+      if (showOption == false) $('html body #container #main #top #arm #option').hide()
     }
   } else if (onScreen == false){
     $('#sidebar').css({
       'width': '0',
-    }).find('html body #wrapper #container #sidebar #basic').hide()
-    $('html body #wrapper #container #main').css({
+    }).find('html body #container #sidebar #basic').hide()
+    $('html body #container #main').css({
       'width': '100%',
       'left': 0
     })
-    $('html body #wrapper #container #main #top').css('width','calc(100% - 16px)')
-    if (showOption == true) $('html body #wrapper #container #main #top #arm #option').show()
+    $('html body #container #main #top').css('width','calc(100% - 16px)')
+    if (showOption == true) $('html body #container #main #top #arm #option').show()
 }
-$('html body #wrapper #container #sidebar #hide .fa-angle-right').animateRotate(hideAngle, 750, 'swing')
+$('html body #container #sidebar #hide .fa-angle-right').animateRotate(hideAngle, 750, 'swing')
 visual()
 }
 
@@ -252,29 +252,29 @@ var toggle = function(n) {
   if (n == true) {
     nextAngle += 180
     if (nextAngle >= 360) nextAngle = 0
-      $('html body #wrapper #container #main #visit #page .quick')
+      $('html body #container #main #visit #page .quick')
         .addClass('visible').removeClass('invisible')
-      $('html body #wrapper #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
-      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-      $('html body #wrapper #container #main #visit #page #front .link').addClass('slideRight')
-      $('html body #wrapper #container #main #visit #page #front .show')
+      $('html body #container #main #visit #page #front').addClass('toggleHidden').removeClass('toggle')
+      $('html body #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('html body #container #main #visit #page #front .link').addClass('slideRight')
+      $('html body #container #main #visit #page #front .show')
         .removeClass('visible').addClass('invisible')
       quick(7)
     } else if (n == false){
       nextAngle = 0
-      $('html body #wrapper #container #main #visit #page .quick')
+      $('html body #container #main #visit #page .quick')
         .addClass('invisible').removeClass('visible')
-      $('html body #wrapper #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
-      $('html body #wrapper #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
-      $('html body #wrapper #container #main #visit #page #front .link').removeClass('slideRight')
-      $('html body #wrapper #container #main #visit #page #front .show')
+      $('html body #container #main #visit #page #front').addClass('toggle').removeClass('toggleHidden')
+      $('html body #container #main #visit #page #front .fa-angle-up').animateRotate(nextAngle, 500, 'swing')
+      $('html body #container #main #visit #page #front .link').removeClass('slideRight')
+      $('html body #container #main #visit #page #front .show')
         .removeClass('invisible').addClass('visible')
-      $('html body #wrapper #container #main #visit #page .quick .feed').empty()
+      $('html body #container #main #visit #page .quick .feed').empty()
     }
 }
 
 var footer = function() {
-  $('html body #wrapper #container #main .center').append(
+  $('html body #container #main .center').append(
     "<div id='bottom'>" +
     "  <div class='back btn' aria-item='" + $.back() + "''>" +
     "      <span class='front'></span>" +
@@ -293,7 +293,7 @@ var footer = function() {
 
 var guide = function(array) {
 
-  $('html body #wrapper #container #guide').css('display','flex').append(
+  $('html body #container #guide').css('display','flex').append(
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
     "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
     "  <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />" +
@@ -317,14 +317,14 @@ var guide = function(array) {
     "  </div>" +
     "</div>"
   )
-  $('html body #wrapper #container #main #top').hide()
+  $('html body #container #main #top').hide()
   guideImage(array[0].src)
   visual()
 }
 
 var content = function(n, recent, oldest, posts) {
 
-  $('html body #wrapper #container #main #feed .status').append(
+  $('html body #container #main #feed .status').append(
     "<div class='filter' " +
     "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
     "  <div class='display'>" +
@@ -348,13 +348,13 @@ var content = function(n, recent, oldest, posts) {
 var base = function(n) {
 
   var suggest = []
-  $('html body #wrapper #container #main #visit #page #front #first .listing').empty()
-  $('html body #wrapper #container #main #visit #page #front #first').show()
+  $('html body #container #main #visit #page #front #first .listing').empty()
+  $('html body #container #main #visit #page #front #first').show()
   if (n != '')
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
-      $('html body #wrapper #container #main #visit #page #front #first .listing').prepend(
+      $('html body #container #main #visit #page #front #first .listing').prepend(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
@@ -372,9 +372,9 @@ var base = function(n) {
   }
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-      if ($('html body #wrapper #container #main #visit #page #front #first .listing .' + e).length == 0 &&
+      if ($('html body #container #main #visit #page #front #first .listing .' + e).length == 0 &&
         $.inArray(e, suggest) == -1 && menu[e] && menu[e].media == true)
-      $('html body #wrapper #container #main #visit #page #front #first .listing').append(
+      $('html body #container #main #visit #page #front #first .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[e].img.image() + "'>" +
@@ -385,7 +385,7 @@ var base = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #visit #page #front #first .listing .index').length >= buffer)
+      if ($('html body #container #main #visit #page #front #first .listing .index').length >= buffer)
         return false
     }
 
@@ -394,12 +394,12 @@ var base = function(n) {
 var list = function(n) {
 
   var suggest = []
-  $('html body #wrapper #container #main #top #arm #search #match').show()
-  $('html body #wrapper #container #main #top #arm #search #match .listing').empty()
+  $('html body #container #main #top #arm #search #match').show()
+  $('html body #container #main #top #arm #search #match .listing').empty()
   for (var i = menu.length - 1; i >= 1; i--) {
     if (menu[i].des.toLowerCase().match(n) ||
         menu[i].cat.toLowerCase().match(n)) {
-      $('html body #wrapper #container #main #top #arm #search #match .listing').prepend(
+      $('html body #container #main #top #arm #search #match .listing').prepend(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[i]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[i].img.image() + "'>" +
@@ -420,7 +420,7 @@ var list = function(n) {
     for (i = 1; i <= menu.length - 1; i++) {
       var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
       if ($.inArray(e, suggest) == -1 && menu[e] && menu[e].cat == menu[suggest[suggest.length - 1]].cat && menu[e].media == true)
-      $('html body #wrapper #container #main #top #arm #search #match .listing').append(
+      $('html body #container #main #top #arm #search #match .listing').append(
         "<div class='index " + i + "' aria-item='" + menu.indexOf(menu[e]) + "'" + " tabIndex='-1'>" +
         "  <div class='detail'>" +
         "    <img src='" + menu[e].img.image() + "'>" +
@@ -431,7 +431,7 @@ var list = function(n) {
         "  </div>" +
         "</div>"
       )
-      if ($('html body #wrapper #container #main #top #arm #search #match .listing .index').length >= buffer)
+      if ($('html body #container #main #top #arm #search #match .listing .index').length >= buffer)
         return false
     }
 
@@ -444,7 +444,7 @@ var feed  = function(n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && menu[e].media == true && $.inArray(e, dupe) == -1){
       dupe.push(e)
-        $('html body #wrapper #container #main .center .quick .feed').append(
+        $('html body #container #main .center .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <img src='" + menu[e].img.image() + "'> " +
           "  <a style='left:0;width:100%' ext='" + menu[e].ext + "'" +
@@ -463,7 +463,7 @@ var quick = function(n) {
   var dupe = []
   if (n == 7)
   for (var i = 0; i <= translations.length - 1; i++){
-    $('html body #wrapper #container #main #visit #page .quick .feed').append(
+    $('html body #container #main #visit #page .quick .feed').append(
       "<div class='translation' aria-item='" + translations[i] + "'>" +
       "  <img src='images/" + translations[i] + ".webp'> " +
       "  <a title='" + translations[i] + "' aria-item='" + translations[i] + "'>" +
@@ -476,7 +476,7 @@ var quick = function(n) {
     var e = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
     if (menu[e] && e != 0 && menu[e].media == true && $.inArray(e, dupe) == -1){
       dupe.push(e)
-        $('html body #wrapper #container #main #visit #page .quick .feed').append(
+        $('html body #container #main #visit #page .quick .feed').append(
           "<div class='asset' aria-item='" + menu.indexOf(menu[e]) + "'>" +
           "  <img src='" + menu[e].img.image() + "' " + "'> " +
           "  <a title='" + menu[e].id + "'>" +
@@ -516,13 +516,13 @@ var progress = function(done, n) {
             '-moz-transition-delay': 'none',
             '-moz-transition': 'none'
           }).width(0)
-          $('html body #wrapper #container #main #group').show()
-          $('html body #wrapper #container #main #feed').show()
+          $('html body #container #main #group').show()
+          $('html body #container #main #feed').show()
           if (onlyImages == false)
-            $('html body #wrapper #container #main').scrollTop($('.air').outerHeight())
+            $('html body #container #main').scrollTop($('.air').outerHeight())
             if (reader == true && stop == true && first == true){
-                if ($('html body #wrapper #container #main').innerHeight() >=
-                    $('html body #wrapper #container #main #feed .channel').innerHeight()){
+                if ($('html body #container #main').innerHeight() >=
+                    $('html body #container #main #feed .channel').innerHeight()){
                       if ($.active <= 0){
                         first = false
                         xml(null, null, $.random())
@@ -545,7 +545,7 @@ var suggest = function(n) {
         if (menu[e] && e != 0 && $.inArray(duplicate, e) == -1){
           if (menu[e].media == true) var contains = 'feed contains images'
           else if (menu[e].media == false) var contains = 'feed might not contain images'
-          $('html body #wrapper #container #main .suggestions').append(
+          $('html body #container #main .suggestions').append(
             "<div class='combine'>" +
             "  <img src='" + menu[e].img.image() + "'>" +
             "  <div class='suggest' aria-item='" + menu.indexOf(menu[e]) + "'" +
@@ -566,7 +566,7 @@ var suggest = function(n) {
 var populate = function(n) {
 
     $(document).ready(function() {
-      $('html body #wrapper #container #main').append(
+      $('html body #container #main').append(
         "<div id='group'>" +
         "  <div class='result'>" +
         "  </div>" +
@@ -575,7 +575,7 @@ var populate = function(n) {
     if (id && !location.href.match('\\?q=') && id != 0){
       if (menu[id].media == true) var media = "<div class='media' style='display:none'>Images</div>"
       else var media = "<div class='blank'></div>"
-      $('html body #wrapper #container #main #group .result').append(
+      $('html body #container #main #group .result').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[id]) + "'>" +
         "  <div class='display'>" +
@@ -593,7 +593,7 @@ var populate = function(n) {
       else var media = "<div class='blank'></div>"
       if (onlyImages == true){
         if (id != menu.indexOf(menu[i]) && menu[i].media == true && n == menu[i].cat)
-          $('html body #wrapper #container #main #group .result').append(
+          $('html body #container #main #group .result').append(
             "<div class='populate'" +
             "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
             "  <div class='display'>" +
@@ -607,7 +607,7 @@ var populate = function(n) {
           )
       } else if (onlyImages == false){
           if (id != menu.indexOf(menu[i]) && n == menu[i].cat)
-            $('html body #wrapper #container #main #group .result').append(
+            $('html body #container #main #group .result').append(
               "<div class='populate'" +
               "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
               "  <div class='display'>" +
@@ -630,12 +630,12 @@ var populate = function(n) {
 var air = function(n) {
 
   $(document).ready(function () {
-  $('html body #wrapper #container #main #group .result').before("<div class='air'></div>")
+  $('html body #container #main #group .result').before("<div class='air'></div>")
   for (var i = 1; i < menu.length - 1; i++) {
     if (menu[i].media == true) var media = "<div class='media' style='display:none'>Images</div>"
     else var media = "<div class='blank'></div>"
     if (category == menu[i].cat)
-      $('html body #wrapper #container #main #group .air').append(
+      $('html body #container #main #group .air').append(
         "<div class='populate'" +
         "  aria-item='" + menu.indexOf(menu[i]) + "'>" +
         "  <div class='display'>" +
@@ -658,7 +658,7 @@ var response = function(passthrough, uri, n, bloat) {
   id = false
   filter = []
   exact = false
-  $('html body #wrapper #container #main #visit').hide()
+  $('html body #container #main #visit').hide()
     if ($.inArray(n.toString().capitalize(), translations) > -1){
       category = n.capitalize()
       $(document).ready(function() {
@@ -693,8 +693,8 @@ var response = function(passthrough, uri, n, bloat) {
     if (filter.length == 0) xml('search', n, 0, null)
     if (passthrough == false) {
       $(document).ready(function() {
-        $('html body #wrapper #container #main #visit').hide()
-        $('html body #wrapper #container #main').append(
+        $('html body #container #main #visit').hide()
+        $('html body #container #main').append(
           "<div id='group'>" +
           "  <div class='result'>" +
           "  </div>" +
@@ -717,7 +717,7 @@ var write = function(n) {
   else var media = "<div class='blank'></div>"
 
   $(document).ready(function() {
-    $('html body #wrapper #container #main #group .result').prepend(
+    $('html body #container #main #group .result').prepend(
       "<div class='filter' " +
       "  aria-item='" + menu.indexOf(menu[n]) + "'>" +
       "  <div class='display'>" +
@@ -837,9 +837,9 @@ var greenwich = function(channel, datetime) {
 var guideImage = function(src) {
   $('#guide').find('.img').attr('src', src)
   .on('load', function() {
-      $('html body #wrapper #container #guide .sticky').show()
-      $('html body #wrapper #container #main').addClass('guide')
-      $('html body #wrapper #container #guide .checkmark').show()
+      $('html body #container #guide .sticky').show()
+      $('html body #container #main').addClass('guide')
+      $('html body #container #guide .checkmark').show()
       if ($(this).get(0).naturalWidth >= $(this).get(0).naturalHeight) $(this).css('max-width', '65vw')
       else if ($(this).get(0).naturalHeight >= $(this).get(0).naturalWidth) $(this).width('100%').css({
         'max-height': '90vh',
@@ -865,7 +865,7 @@ var image = function(empty, n, item, src) {
   .on('error', function() {
     $(this).parents('.item').css('padding-bottom', '30px').parents('.item').find('.url, .share, .source, .image, .fill').remove()
   }).on('load', function() {
-    if ($('html body #wrapper #container #main').width() <= 425) {
+    if ($('html body #container #main').width() <= 425) {
       if ($(this).get(0).naturalWidth > minimum){
         $(this).addClass('default').width('100%')
           .parents('.item').find('.header .attribute').css('height','110px').find('.post, .picture').show()
@@ -937,12 +937,12 @@ var xml = function(e, s, n) {
 
   var doc = menu[n].id.space().capitalize()
   document.title = doc
-  $('html body #wrapper #container #main #visit').hide()
+  $('html body #container #main #visit').hide()
 
   if (reader == true && first == true)
-    $('html body #wrapper #container #main #group, ' +
-      'html body #wrapper #container #main .center, ' +
-      'html body #wrapper #container #main .content').remove()
+    $('html body #container #main #group, ' +
+      'html body #container #main .center, ' +
+      'html body #container #main .content').remove()
 
   $.get({
     url: uri,
@@ -956,13 +956,13 @@ var xml = function(e, s, n) {
     }
 
   }).fail(function() {
-    $('html body #wrapper #container #main').append(stage()).attr('tabindex', -1).focus()
-    $('html body #wrapper #container #main .channel').html("This site could not be reached.")
+    $('html body #container #main').append(stage()).attr('tabindex', -1).focus()
+    $('html body #container #main .channel').html("This site could not be reached.")
     $.unloading()
     visual()
   }).done(function(xhr) {
 
-    if (op == 0 && $('html body #wrapper #container #main').width <= 425)
+    if (op == 0 && $('html body #container #main').width <= 425)
       var style = "style='box-shadow:8px 8px 16px #eeeeee'"
     else var style = "style='border: .3px solid #dddddd'"
 
@@ -1074,7 +1074,7 @@ var xml = function(e, s, n) {
       pub.sort(function(a, b) { return b.since - a.since })
       $.each(pub, function(i) { if (parseInt(pub[i].gen, 36) == post) local = i })
     })
-    if (first == true) $('html body #wrapper #container #main').append(stage(centerFeeds)).attr('tabindex', -1).focus()
+    if (first == true) $('html body #container #main').append(stage(centerFeeds)).attr('tabindex', -1).focus()
     if ($.isNumeric(local)) {
       var sticky = []
       sticky.push({
@@ -1094,19 +1094,19 @@ var xml = function(e, s, n) {
       if (i == quit) return false
 
       if ($.isNumeric(local) && pub[local].element != pub[i].element && pub[i].title != '')
-        $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
+        $('html body #container #main #feed .center .channel').append(pub[i].post)
       else if (!$.isNumeric(local) && pub[i].title != '')
-        $('html body #wrapper #container #main #feed .center .channel').append(pub[i].post)
+        $('html body #container #main #feed .center .channel').append(pub[i].post)
       if (menu[n].id.match(/Imgur/g)) image(true, n, pub[i].element, pub[i].src)
       else image(false, n, pub[i].element, pub[i].src)
 
     })
-    var posts = $('html body #wrapper #container #main .center .channel .item').length
+    var posts = $('html body #container #main .center .channel .item').length
     var recent = $('.' + n + '.item .zulu:first').text()
     var oldest = $('.item .ago:last').text()
     if (first == true) stop = true
-    else $('html body #wrapper #container #main .content .status, ' +
-           'html body #wrapper #container #main .content .suggestions').empty()
+    else $('html body #container #main .content .status, ' +
+           'html body #container #main .content .suggestions').empty()
     if (reader == false) footer()
     content(n, recent, oldest, posts)
     clearInterval(complete)
