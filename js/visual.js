@@ -86,8 +86,7 @@ var visual = function(n) {
       '--loader-color-primary': '#0078D4',
       '--loader-color-secondary': '#5baff0',
     })
-    $('html body #wrapper #container #sidebar #content #category .cat, ' +
-      'html body #wrapper #container #main #visit #page #front #label .link, ' +
+    $('html body #wrapper #container #main #visit #page #front #label .link, ' +
       'html body #wrapper #container #main .asset, ' +
       'html body #wrapper #container #main #visit #page .quick .feed .translation, ' +
       'html body #wrapper #container #main .left, ' +

@@ -156,10 +156,10 @@ html body #wrapper #container #sidebar #content #basic input[type=text]::placeho
 }
 
 html body #wrapper #container #sidebar #content #category .cat {
+  border: .3px solid transparent;
   background-color: inherit;
   letter-spacing: .5px;
   align-items: center;
-  font-weight: 900;
   overflow: hidden;
   font-size: 11px;
   display: flex;
@@ -174,10 +174,6 @@ html body #wrapper #container #sidebar #content #category .cat img {
   left: 10px;
   height: 16px;
   width: 16px;
-}
-
-html body #wrapper #container #sidebar #content #category .cat:last-of-type {
-  border-bottom: .3px solid #aaaaaa;
 }
 
 html body #wrapper #container #sidebar #content #select .sel {
