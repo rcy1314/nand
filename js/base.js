@@ -175,7 +175,7 @@ var display = function(n) {
       '#group .populate .media, ' +
       '#group .populate .description')
       .css('display','inline-flex')
-	  $('#group .air, #group .result').width('70%')
+	  if ($('html body #container #main').width() >= 768) $('#group .air, #group .result').width('70%')
     $('#group .filter, #group .populate').addClass('expand').css('align-items','center')
     if (op == 0) $('#group .filter, #group .populate').addClass('invert')
   } else if (n == false){
