@@ -142,7 +142,7 @@ scrollbar-width: thin;
 
 
 .oppositeOver:not(:hover) {
-  border: .3px solid #0e0e0e;
+  border: .3px solid #0e0e0e !important;
 }
 
 .buttonOpposite {
