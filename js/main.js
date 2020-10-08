@@ -27,7 +27,7 @@ $(document)
   })
   .on('touch click',
     'html body #container #sidebar #content #select .Home, ' +
-    'html body #container #main #top #arm #search #home',
+    'html body #container #main #home',
     function(e) {
       id = 0
       $.loading()
@@ -128,7 +128,7 @@ $(document)
         xml(null, null, $.random())
       }
   })
-  .on('touch click', 'html body #container #main #option .fa-home',
+  .on('touch click', 'html body #container #main #top #arm #option .fa-home',
   function(e) {
     id = 0
     filter = []
