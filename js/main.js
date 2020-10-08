@@ -457,7 +457,7 @@ $(document)
           // set first click
           tap = new Date().getTime();
           setTimeout(function () {
-            if (((new Date().getTime()) - tap) > 300 && ((new Date().getTime()) - tap) < 350)
+            if (((new Date().getTime()) - tap) >= 350 && ((new Date().getTime()) - tap) < 400)
               if (category == 'Social' && $this.hasClass('default') && !$this.hasClass('guide') && $('html body #container #main').width() >= 426) {
                   var sticky = []
                   sticky.push({
@@ -477,7 +477,7 @@ $(document)
                     $this.parents('html body #container #guide .sticky .item, ' +
                     'html body #container #main #feed .center .channel .item').attr('ext').blank()
             tap = 0
-          }, 300)
+          }, 350)
       } else {
           // compare first click to this click and see if they occurred within double click threshold
           if (((new Date().getTime()) - tap) < 350) {
