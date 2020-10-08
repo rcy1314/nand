@@ -2,7 +2,7 @@ var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
 var quickFeeds = false //show or hide
-var loading = 'dots' //or 'percent'
+var loading = 'percent' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
 var expand = true //filter populate list display
@@ -13,6 +13,7 @@ var centerFeeds = false //display quick feeds above xml
 var groupType = 'list' //or 'blocks'
 var reader = false //main scroll category reader xml
 var cors = 'https://rss-browser.acktic.workers.dev/?' // cors-anywhere
+//         'https://acktic-github-io.herokuapp.com/'
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
