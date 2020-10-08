@@ -55,8 +55,7 @@ var visual = function(n) {
       'html body #container #main .listing')
       .addClass('oppositeScrollbar')
     $('html body #container #main #feed .center .channel .item, ' +
-      'html body #container #main #notification, ' +
-	    'html body #container #main #feed .center .quick, ' +
+      'html body #container #main #feed .center .quick, ' +
       'html body #container #main .listing').css('box-shadow','none')
     $('html body #container #main #dots .fill').css('background-color','#ffffff')
     $('#favicon').attr('href', 'images/Opposite.ico')
@@ -112,8 +111,7 @@ var visual = function(n) {
       'html body #container #main .listing')
       .addClass('invertScrollbar')
     $('html body #container #main #visit #page .focus .button').addClass('buttonInvert')
-    $('html body #container #main #notification, ' +
-	    'html body #container #main #feed .center .quick, ' +
+    $('html body #container #main #feed .center .quick, ' +
       'html body #container #main .listing').css('box-shadow','2px 2px 4px #dddddd')
     $('html body #container #main #visit #page #front .focus').addClass('pageInput')
     $('html body #container #main #dots .fill').css('background-color','#555555')

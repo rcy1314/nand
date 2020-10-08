@@ -38,6 +38,7 @@ $(document)
           'html body #container #main #group .result .populate').addClass('invert')
       if (location.href.match('\\?\\+1') && location.href.match('\\+1'))
         var uri = window.location.href.replace(/\?\+1|\+1/g, '')
+      else uri = window.location.origin
       notify('Invert Visual Applied.')
       uri.state()
       visual()
@@ -358,9 +359,9 @@ $(document)
       $('html body #container #main #visit').hide()
       category = $(this).attr('aria-item')
       populate($(this).attr('aria-item'))
+      $(this).addClass('selected')
       menubar(topBar)
       visual()
-      $(this).addClass('selected')
   })
   .on('mousemove',
     'html body #container #sidebar #content #select .sel, ' +
@@ -379,7 +380,9 @@ $(document)
     'html body #container #sidebar #content #select .sel, ' +
     'html body #container #sidebar #content #category .cat',
     function(e) {
-      $(this).css('cssText','border-top:.3px solid transparent !important;border-bottom: .3px solid transparent !important')
+      $(this).css({
+        'border-image': 'linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)',
+      })
     })
   .on('touch click',
     'html body #container #main #visit #page .quick .feed .translation a',
