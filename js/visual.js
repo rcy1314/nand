@@ -69,7 +69,6 @@ var visual = function(n) {
       'html body #container .attribute div, ' +
       'html body #container .attribute, ' +
       'html body #container #guide .sticky .wrap, ' +
-      'html body #container #main #feed .center .quick .feed, ' +
       'html body #container #main #feed .center .channel .item, ' +
       'html body #container #main .listing')
       .addClass('invert')

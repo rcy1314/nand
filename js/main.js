@@ -12,7 +12,7 @@ $(document)
     })
     if (onScreen == true && $('html body #container #main').width >= 768) sidebar(onScreen)
     if (quickFeeds == true && $('html body #container #main').width >= 426) toggle(quickFeeds)
-    else if ($('html body #container #main').width() >= 320) toggle(true)
+    else if ($('html body #container #main').width() <= 425) toggle(true)
   })
   .on('touch click', 'a', function(e) {
     if ($(this).attr('ext')) $(this).attr('ext').blank()
