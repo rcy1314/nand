@@ -13,7 +13,7 @@ var centerFeeds = false //display quick feeds above xml
 var groupType = 'list' //or 'blocks'
 var reader = false //main scroll category reader xml
 var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
-//https://rss-browser.acktic.workers.dev/?
+
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
