@@ -1,5 +1,10 @@
 @media screen and (max-width: 426px) {
 
+
+  html body #container #main {
+    width: 100% !important
+  }
+
   .dots {
     animation: move 2s infinite cubic-bezier(.1,.85,.2,.1);
   }
@@ -114,6 +119,11 @@
   html body #container #main #group .result .populate {
     margin: 1em;
     width: 32%;
+  }
+
+  html body #container #main #group .air,
+  html body #container #main #group .result {
+    width: 100% !important
   }
 
   html body #container #main #visit #page #front #first {
