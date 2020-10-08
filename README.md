@@ -142,7 +142,7 @@ Want to Contribute?
 ----
 
 Submit a feed!<br>
-File and issue!<br>
+File an issue!<br>
 
 License
 ----
