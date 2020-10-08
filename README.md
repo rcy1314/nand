@@ -10,51 +10,54 @@
 ### Config in base.js
 
 * category
->&emsp; translations array in base.js<br>
- &emsp;&emsp;['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']<br>
+> translations array in base.js
+*
+>['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']
+
 
 * op boolean<br>
->&emsp; invert = 0 [day]<br>
- &emsp; opposite = 1 [night]
+> invert = 0 [day]
 
-* buffer integer<br>
->&emsp; listing total suggestions.
+  > opposite = 1 [night]
 
-* contrast /?+1<br>
->&emsp; Opposite of op applies contrast.
+* buffer integer
+> listing total suggestions.
 
-* onlyImages boolean<br>
->&emsp; filter feeds with Images.
+* contrast /?+1
+> Opposite of op applies contrast.
 
-* quickFeeds boolean<br>
->&emsp; Display quick feeds on visit.
+* onlyImages boolean
+> filter feeds with Images.
 
-* loading string<br>
->&emsp; percent or dots used by loading, unloading in core.js, and progress base.js.
+* quickFeeds boolean
+> Display quick feeds on visit.
 
-* expand boolean<br>
->&emsp; overrides groupType to set list [<b>true</b>] and blocks [<b>false</b>].
+* loading string
+> percent or dots used by loading, unloading in core.js, and progress base.js.
 
-* groupType string<br>
->&emsp; used as a toggle with sidebar and option in main.js
+* expand boolean
+> overrides groupType to set list [<b>true</b>] and blocks [<b>false</b>].
 
-* onScreen boolean<br>
->&emsp; display sidebar on visit.
+* groupType string
+> used as a toggle with sidebar and option in main.js
 
-* showOption boolean<br>
->&emsp; displays arm option icons.
+* onScreen boolean
+> display sidebar on visit.
 
-* topBar boolean<br>
->&emsp; shows or hides topBar for group and feed.
+* showOption boolean
+> displays arm option icons.
 
-* centerFeeds<br>
->&emsp; display first quick feeds in xml feed, toggle in sidebar.
+* topBar boolean
+>shows or hides topBar for group and feed.
 
-* translations array<br>
->&emsp; Reorder option.
+* centerFeeds
+> display first quick feeds in xml feed, toggle in sidebar.
 
-* reader boolean<br>
->&emsp; responsive to onlyImages, translations, scrollTop.
+* translations array
+> Reorder option.
+
+* reader boolean
+> responsive to onlyImages, translations, scrollTop.
 
 
 ### Init.js Unique URI Identifying.
@@ -62,51 +65,69 @@
   Init.js does some handling of location.
 
   * Contrast Example
-  > /?+1 [<b>root</b>]<br>
-    /[<b>uri</b>]+1
+  > /?+1 [<b>root</b>]
+
+  >  /[<b>uri</b>]+1
 
   * Translation Example
-  > /?q=[<b>translations</b>]<br>
-    /?q=technology
+  > /?q=[<b>translations</b>]
+
+  > /?q=technology
 
   * Query Example
-  > /?q=example+query<br>
-    &ensp;&ensp;filter response without passthrough from init.js fails to bing search results.
+  > /?q=example+query
+
+  >  filter response without passthrough from init.js fails to bing search results.
 
   * Hash Example
-  > /?[<b>hash</b>] in head.js<br>
-    &emsp;/?uX <br>
-    &emsp;Used in Copy Post appends time converted to base 36.<br>
-    &emsp;/?uX<b>aZjk1</b> &emsp; &emsp;loads guide with progress and guideImage in base.js<br>
-    &emsp;/?<b>uXaZjk1+1</b> &emsp;loads guide with contrast to op.
+  > /?[<b>hash</b>] in head.js
+
+  > /?uX Used in Copy Post appends time converted to base 36.
+
+  > /?uX<b>aZjk1</b> loads guide with progress and guideImage in base.js
+
+  >  /?<b>uXaZjk1+1</b> loads guide with contrast to op.
 
   * Feed Example
-  > /?q=&unique-identifier<br>
-    &emsp;fallback to query fails to bing search.<br>
-    &emsp;/?q=&[<b>hash</b>] not supported filter response.<br>
-    &emsp;/?q=&tech menu objects found filter response.<br>
-    &emsp;/?q=&technology translation found populate.<br>
-    &emsp;/?q=&abc-technology found one, unique passthrough.<br>
-    &emsp;/?q=&jquery not found pass through xml search.<br>
+  > /?q=&unique-identifier fallback to query fails to bing search.
+
+  >/?q=&[<b>hash</b>] not supported filter response.
+
+  >/?q=&tech menu objects found filter response.
+
+  >/?q=&technology translation found populate.
+
+  > /?q=&abc-technology found one, unique passthrough.
+
+  > /?q=&jquery not found pass through xml search.<br>
 
     * Query Feed Example
-    > /?q=example+query&unique-identifier<br>
-    > /?q=california&abc-fresno<br>
-    will load feed return in bottom will filter response of query.
+    > /?q=example+query&unique-identifier
+
+      > /?q=california&abc-fresno
+
+      will load feed return in bottom will filter response of query.
 
 
 ### Head.js has multiple indices for objects.
 
-  * These need to be fufilled to add an object.<br>
-  > id: unique stripped to plain text [<b>indexed</b>]<br>
-    cat: translation [<b>indexed</b>]<br>
-    des: plain text [<b>indexed</b>].<br>
-    uri: endpoint used in xml in base.js<br>
-    ext: external blank exit to new tab legacy.<br>
-    hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]<br>
-    media: xml with images boolean indexed by onlyImages.<br>
+  * These need to be fufilled to add an object.
 
->> [indexed] filtered by response in base.js
+  > id: unique stripped to plain text [<b>indexed</b>]
+
+  > cat: translation [<b>indexed</b>]
+
+  > des: plain text [<b>indexed</b>].
+
+  > uri: endpoint used in xml in base.js
+
+  > ext: external blank exit to new tab legacy.
+
+  > hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]
+
+  > media: xml with images boolean indexed by onlyImages.
+
+ [indexed] filtered by response in base.js
 
 ### Invert
 
