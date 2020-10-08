@@ -143,7 +143,7 @@ $(document)
         $('html body #container #arm #search #match .listing')
           .append(
             "<div class='index' tabIndex='-1' aria-item='" + translations[i].toLowerCase() + "'>" +
-            "  <div class='detail'>" +
+            "  <div class='detail translation'>" +
             "    <img src='images/" + translations[i] + '.webp' + "'>" +
             "    <div class='text'>&emsp;<b>" + translations[i] + "</b>" +
             "      <br>&emsp;" + translations[i].grep() + " sites" +
