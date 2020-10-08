@@ -11,7 +11,6 @@
 
 * category
 > translations array in base.js
-*
 >['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']
 
 
