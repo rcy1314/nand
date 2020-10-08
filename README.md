@@ -102,9 +102,10 @@
   > /?q=&jquery not found pass through xml search.<br>
 
     * Query Feed Example
-    > /?q=example+query&unique-identifier
 
-      > /?q=california&abc-fresno
+     /?q=example+query&unique-identifier
+
+     /?q=california&abc-fresno
 
       will load feed return in bottom will filter response of query.
 
