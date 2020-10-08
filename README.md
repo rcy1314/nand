@@ -6,10 +6,8 @@
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages.
+* cors-anywhere first response ~10s (mitigated).
 * File size 12mb compressed 80mb uncompressed.
-* Heroku cors-anywhere first response ~10s.
-* Firefox guide blur transparency.
-
 
 ### Config in base.js
 

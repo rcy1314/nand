@@ -12,7 +12,7 @@ var topBar = true //display top menubar on content
 var centerFeeds = false //display quick feeds above xml
 var groupType = 'list' //or 'blocks'
 var reader = false //main scroll category reader xml
-var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
+var cors = 'https://rss-browser.acktic.workers.dev/?' // cors-anywhere
 var translations =
   ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
 
