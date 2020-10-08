@@ -6,8 +6,6 @@
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages.
-* cors-anywhere first response ~10s (mitigated).
-* File size 12mb compressed 80mb uncompressed.
 
 ### Config in base.js
 
