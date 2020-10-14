@@ -1,5 +1,8 @@
 # RSS-Browser` <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
+  - this repository is no longer maintained pls check <a href='https://github.com/acktic/vanilla-rss-browser'>vanilla-rss-browser</a>
+
+
   - Really Simple Syndicate.
   - Rich Site Summary.
 
