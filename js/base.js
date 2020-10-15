@@ -1,12 +1,12 @@
 var op = 0 //1 invert, 0 opposite
 var buffer = 7 //input suggest length
 var contrast = false //opposite of op
-var quickFeeds = false //show or hide
+var quickFeeds = true //show or hide
 var loading = 'percent' //or 'percent'
 var category = 'Social' //legacy set by xml
 var onlyImages = false //grep, random, populate
 var expand = true //filter populate list display
-var onScreen = false //display sidebar on visit
+var onScreen = true //display sidebar on visit
 var showOption = true //show tag Options in top
 var topBar = true //display top menubar on content
 var centerFeeds = false //display quick feeds above xml
