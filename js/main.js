@@ -10,8 +10,8 @@ $(document)
             xml(null, null, $.random())
       }
     })
-    if (onScreen == true && $('html body #container #main').width >= 768) sidebar(onScreen)
-    if (quickFeeds == true && $('html body #container #main').width >= 426) toggle(quickFeeds)
+    if (onScreen == true && $('html body #container #main').width() >= 768) sidebar(onScreen)
+    if (quickFeeds == true && $('html body #container #main').width() >= 426) toggle(quickFeeds)
     else if ($('html body #container #main').width() <= 425) toggle(true)
   })
   .on('touch click', 'a', function(e) {
