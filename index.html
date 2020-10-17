@@ -1,127 +1,127 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<meta content="utf-8" http-equiv="encoding">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
-	<link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="css/animation.css">
-	<link rel="stylesheet" type="text/css" href="css/content.css">
-	<link rel="stylesheet" type="text/css" href="css/classes.css">
-	<link rel="stylesheet" type="text/css" href="css/media.css">
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/sidebar.js"></script>
-	<script src="js/visual.js"></script>
-	<script src="js/input.js"></script>
-	<script src="js/head.js"></script>
-	<script src="js/core.js"></script>
-	<script src="js/base.js"></script>
-	<script src="js/init.js"></script>
-	<script src="js/main.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/animationRules.css">
+    <link rel="stylesheet" type="text/css" href="css/contentRules.css">
+    <link rel="stylesheet" type="text/css" href="css/classRules.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaRules.css">
+    <link rel="stylesheet" type="text/css" href="css/fontIcons.css">
+    <script src="js/baseReturnStrings.js"></script>
+    <script src="js/visualAttributes.js"></script>
+    <script src="js/sidebarEvents.js"></script>
+    <script src="js/baseFunctions.js"></script>
+    <script src="js/inputEvents.js"></script>
+    <script src="js/coreHelpers.js"></script>
+		<script src="js/mainEvents.js"></script>
+    <script src="js/head.js"></script>
+    <script src="js/init.js"></script>
 </head>
 
 <body>
-		<div id='container'>
-			<div id='sidebar'>
-				<div id='hide'></div>
-				<div id='content'>
-				  <div id='category'></div>
-				  <div id='select'></div>
-					<div id='basic'>
-	          <form class='filter' action='#'>
-	            <input type='text' placeholder='filter feeds'>
-	          </form>
-	        </div>
-			  </div>
-				<div class='notify'></div>
-			</div>
-			<div id='guide'></div>
-			<div id='main' class='mainTransition'>
-				<div id='toggle' class='fa fa-sun' title='Visual'></div>
-				<div id='dots'>
-				  <div class="fill"></div>
-				  <div class="fill"></div>
-				  <div class="fill"></div>
-				  <div class="fill"></div>
-				  <div class="fill"></div>
-			  </div>
-				<div id='progressBar' class='responseInvert'>
-					<div class='progress'></div>
-				</div>
-				<div id='notification'></div>
-				<div id='option'>
-					<div class='fa fa-home' title='Home'></div>
-					<div class='fa fa-heart' title='Read Category'></div>
-					<div class='fa fa-sun' title='Visual'></div>
-					<div class='fa fa-camera-retro' title='Only Images'></div>
-					<div class='fa fa-expand-alt' title='Expand'></div>
-				</div>
-				<div id='top'>
-					<div id='arm'>
-						<form id='search' action='#'>
-							<div id='home'></div>
-							<div id='input'>
-								<div class='icon'>
-									<div class='fa fa-search'></div>
-								</div>
-								<input type='text' value='Search'>
-							</div>
-							<input type='submit'>
-							<div id='match'>
-								<div class='listing'></div>
-							</div>
-						</form>
-						<div id='option'>
-							<div class='fa fa-home' title='Home'></div>
-							<div class='fa fa-heart' title='Read Category'></div>
-							<div class='fa fa-sun' title='Visual'></div>
-							<div class='fa fa-camera-retro' title='Only Images'></div>
-							<div class='fa fa-expand-alt' title='Expand'></div>
-						</div>
-					</div>
-				</div>
-				<div id='visit'>
-					<div id='page'>
-						<div id='handle'><div class='fas fa-map'></div>
-							<div id='placeholder'></div>
-						</div>
-						<form id='front' action='#'>
-							<div class='focus'>
-								<div class='icon'>
-									<div class='inputIcon fa fa-search'></div>
-								</div>
-								<input type='text'>
-								<div class='button'>
-									<div class='buttonSearch fas fa-search'></div>
-								</div>
-							</div>
-							<div id='label'>
-							  <div class='show'>Quick feeds</div>
-							  <div class='link'>
-									<div class='fa-angle-up'></div>
-							  </div>
-						  </div>
-							<div id='first'>
-								<div class='listing'></div>
-							</div>
-							<input type='submit'>
-						</form>
-						<div class='quick invisible'>
-							<div class='left fa-minus' style='display:none'></div>
-							<div class='right fa-plus'></div>
-							<div class='feed'></div>
-						</div>
-						<div id='mobile'><div class='fas fa-map'></div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div id='container'>
+        <div id='sidebar' class='mainTransition'>
+            <div id='hide'></div>
+            <div id='content'>
+                <div id='category'></div>
+                <div id='select'></div>
+                <div id='basic'>
+                    <form class='filter' action='#'>
+                        <input type='text' class='sideFilter' placeholder='filter feeds'>
+                    </form>
+                </div>
+            </div>
+            <div class='notify'></div>
+        </div>
+        <div id='guide'></div>
+        <div id='main' class='reader mainTransition'>
+            <div id='toggle' class='fa fa-sun' title='Visual'></div>
+            <div id='dots'>
+                <div class="fill"></div>
+                <div class="fill"></div>
+                <div class="fill"></div>
+                <div class="fill"></div>
+                <div class="fill"></div>
+            </div>
+            <div id='progressBar' class='responseInvert'>
+                <div class='progress'></div>
+            </div>
+            <div id='notification'></div>
+            <div id='option'>
+                <div id='home' class='fa fa-home' title='Home'></div>
+                <div class='fa fa-heart' title='Read Category'></div>
+                <div class='fa fa-sun' title='Visual'></div>
+                <div class='fa fa-camera-retro' title='Only Images'></div>
+                <div class='fa fa-expand-alt' title='Expand'></div>
+            </div>
+            <div id='top'>
+                <div id='arm'>
+                    <form id='search' class='hold' action='#'>
+                        <div id='home'></div>
+                        <div id='input'>
+                            <div class='icon'>
+                                <div class='fa fa-search'></div>
+                            </div>
+                            <input class='view' type='text' value='Search'>
+                        </div>
+                        <div id='match'>
+                            <div class='listing'></div>
+                        </div>
+                    </form>
+                    <div id='option'>
+                        <div id='home' class='fa fa-home' title='Home'></div>
+                        <div class='fa fa-heart' title='Read Category'></div>
+                        <div class='fa fa-sun' title='Visual'></div>
+                        <div class='fa fa-camera-retro' title='Only Images'></div>
+                        <div class='fa fa-expand-alt' title='Expand'></div>
+                    </div>
+                </div>
+            </div>
+            <div id='visit'>
+                <div id='page'>
+                    <div id='handle'>
+                        <div class='fas fa-map'></div>
+                        <div id='placeholder'></div>
+                    </div>
+                    <form id='front' class='feed' action='#'>
+                        <div class='focus'>
+                            <div class='icon'>
+                                <div class='inputIcon fa fa-search'></div>
+                            </div>
+                            <input class='guest' type='text'>
+                            <div class='button'>
+                                <div class='buttonSearch fas fa-search'></div>
+                            </div>
+                        </div>
+                        <div id='label'>
+                            <div class='show'>Quick feeds</div>
+                            <div class='link'>
+                                <div class='fa-angle-up'></div>
+                            </div>
+                        </div>
+                        <div id='first'>
+                            <div class='listing'></div>
+                        </div>
+                    </form>
+                    <div class='quick invisible'>
+                        <div class='left fa-minus' style='display:none'></div>
+                        <div class='right fa-plus'></div>
+                        <div class='feed'></div>
+                    </div>
+                    <div id='mobile'>
+                        <div class='fas fa-map'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 <script>
-visual()
+    visual()
 </script>
 
 </html>

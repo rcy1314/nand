@@ -5,36 +5,21 @@
     width: 100% !important
   }
 
-  .dots {
-    animation: move 2s infinite cubic-bezier(.1,.85,.2,.1);
-  }
-  .dots:nth-of-type(2){
-    animation: move 2s 150ms infinite cubic-bezier(.1,.85,.3,.1);
-  }
-  .dots:nth-of-type(3) {
-    animation: move 2s 300ms infinite cubic-bezier(.1,.85,.4,.1);
-  }
-  .dots:nth-of-type(4) {
-    animation: move 2s 450ms infinite cubic-bezier(.1,.85,.5,.1);
-  }
-  .dots:nth-of-type(5) {
-    animation: move 2s 600ms infinite cubic-bezier(.1,.85,.6,.1);
-  }
-
   html body #container #main #visit #page .quick .feed .asset,
   html body #container #main #visit #page .quick .feed .translation {
     background-color: transparent !important;
   }
 
   html body #container #main #visit #page .quick {
+    background-color: transparent;
     position: absolute;
-    height: 520px;
     height: 400px;
     width: 100%;
-    top: 80px;
+    top: 120px;
   }
 
   html body #container #main #visit #page .quick .feed {
+    background-color: transparent;
     justify-content: center;
     display: inline-flex;
     position: absolute;
@@ -46,8 +31,12 @@
     left: 0;
   }
 
+  html body #container #main #visit #page .quick .feed .translation {
+    background-color: transparent !important;
+  }
+
   html body #container #main #visit #page #front #label {
-    margin-top: -190px;
+    margin-top: -185px;
   }
 
   .expand .title {
@@ -78,8 +67,8 @@
     position: absolute;
     display: block;
     z-index: 0;
-    top: 250px;
     left: 10px;
+    top: 250px;
   }
 
   html body #container #main #page,
@@ -142,14 +131,14 @@
 
   html body #container #top #arm #search #match .listing {
     margin: 0 auto;
-    top: -5px;
+    top: 0;
   }
 
   html body #container #main #visit #page #front .focus {
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: -180px;
+    top: -175px;
   }
 
   html body #container #main #visit #page #front .focus input[type=text] {
@@ -161,22 +150,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
-  .dots {
-    animation: move 3s infinite cubic-bezier(.1,.85,1,.1);
-  }
-  .dots:nth-of-type(2){
-    animation: move 3s 150ms infinite cubic-bezier(.1,.85,1,.1);
-  }
-  .dots:nth-of-type(3) {
-    animation: move 3s 300ms infinite cubic-bezier(.1,.85,1,.1);
-  }
-  .dots:nth-of-type(4) {
-    animation: move 3s 450ms infinite cubic-bezier(.1,.85,1,.1);
-  }
-  .dots:nth-of-type(5) {
-    animation: move 3s 600ms infinite cubic-bezier(.1,.85,1,.1);
-  }
 
   html body #container #main #option {
     display: none;
@@ -324,11 +297,12 @@
   }
 
   html body #container #main #top #arm #option {
-    right: -15px;
+    right: -9px;
   }
 
   html body #container #main #feed .center {
-    width: 660px;
+    margin-left: 60px;
+    width: 600px;
   }
 
   html body #container #main #group .air,
@@ -353,7 +327,7 @@
 
   html body #container #main #visit #page .quick {
     position: relative;
-    width: 840px;
+    width: 850px;
     top: 15px;
     left: 0;
   }

@@ -49,9 +49,9 @@ scrollbar-width: thin;
 }
 
 .invertAlt {
-  background-color: #f7f7f7;
+  background-color: #f7f7f7 !important;
+  border: .3px solid #f7f7f7;
   color: #222222;
-  border: none;
 }
 
 .invertOver:hover {
@@ -75,8 +75,13 @@ scrollbar-width: thin;
   background-color: transparent;
 }
 
-.invertOver:not(:hover) {
+.invertAlt:not(:hover) {
+  background-color: #f7f7f7 !important;
   border: .3px solid #f6f8fa;
+}
+
+.invertOver:not(:hover) {
+  background-color: #ffffff;
 }
 
 .toggle {
@@ -100,6 +105,7 @@ scrollbar-width: thin;
 }
 
 .visible {
+  display: block !important;
   visibility: visible;
   transition: .25s;
   opacity: 100;
@@ -109,7 +115,7 @@ scrollbar-width: thin;
   background-color: #000000 !important;
   box-shadow: none;
   color: #ffffff;
-  border: none;
+  border: none !important;
 }
 
 .oppositeAlt {
@@ -121,7 +127,7 @@ scrollbar-width: thin;
 
 .oppositeOver:hover {
   background-color: #0e0e0e !important;
-  border: .3px solid #0e0e0e;
+  border: .3px solid #0e0e0e !important;
 }
 
 .oppositeOver:hover .classic {
@@ -161,48 +167,8 @@ scrollbar-width: thin;
   background-color: #1683D8;
 }
 
-.contrast {
-  background-color: #000000 !important;
-}
-
-.contrast.hover {
-  background-color: #0e0e0e !important;
-  color: #ffffff;
-}
-
-.contrast:hover {
-  background-color: #0e0e0e;
-  color: #ffffff;
-}
-
-.contrast:not(:hover) {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.visual {
-  background-color: #ffffff !important;
-}
-
-.visual.hover {
-  background-color: #fbfbfb !important;
-  color: #666666;
-}
-
-.visual:hover {
-  background-color: #fbfbfb;
-  color: #666666;
-}
-
-.visual:not(:hover) {
-  background-color: #ffffff;
-  color: #666666;
-}
-
-
 .expand {
   display: flex !important;
-  flex-wrap: nowrap !important;
   font-size: 12px !important;
   margin: 0 !important;
   border-radius: 0 !important;

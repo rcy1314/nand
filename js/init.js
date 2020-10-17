@@ -1,102 +1,68 @@
-if (location.href.split('?')[1] && !location.search.split('?q=')[1]) {
-
-  var uri = location.href.split('?')[1]
-  if (uri.match('\\+1')) {
-
-    uri = uri.replace(/\?\+1|\+1/, '')
+if (location.href.split("?")[1] && !location.search.split("?q=")[1] && !location.href.match("\\?\\#")) {
+  var uri = location.href.split("?")[1];
+  if (uri.match("\\+1")) {
+    uri = uri.replace(/\?\+1|\+1/, "");
     if (!uri.match(/^[a-zA-Z0-9]+$/i)) {
+      contrast = contrast != true;
+      op = op != true;
+      i = -1;
 
-      contrast = contrast != true
-      op = op != true
-      i = -1
-
-      $(document)
-        .ready(function() {
-
-            visual()
-
-      })
-
+      ready(() => {
+        visual();
+      });
     } else {
-
-      contrast = contrast != true
-      op = op != true
-      visual()
-
+      contrast = contrast != true;
+      op = op != true;
+      visual();
     }
-
   }
 
-  if (uri.match(/^[a-zA-Z0-9]+$/i)){
-
-    var id = uri.slice(0, 2)
-    var i = menu.findIndex((item) => item.hash === id)
-    post = parseInt(uri.slice(2), 36)
-
+  if (uri.match(/^[a-zA-Z0-9]+$/i)) {
+    var id = uri.slice(0, 2);
+    var i = menu.findIndex((item) => item.hash === id);
+    post = parseInt(uri.slice(2), 36);
   }
 
   if (i === -1)
-
-    $(document)
-      .ready(function() {
-        $('html body #container #main #visit').css('visibility','visible')
-        $('html body #container #main #toggle').hide()
-      })
-
+    ready(() => {
+      document.querySelector("#visit").style.visibility = "visible";
+      document.querySelector("#toggle").style.display = "block";
+    });
   else {
-
-    $(document)
-      .ready(function() {
-        $.loading()
-        $('html body #container #main #toggle').hide()
-        $('html body #container #main #top #arm #option').show()
-        response(true,
-                 false,
-                 menu[i].id.space(),
-                 false
-                )
-
-        })
-
+    ready(() => {
+      init();
+      document.querySelector("#top").style.display = "block";
+      document.querySelector("#toggle").style.display = "none";
+      filterInputResponse(true, false, menu[i].id.space(), false);
+    });
   }
-
 }
 
-if (location.href.match('\\+1') && !i) {
-
-  contrast = contrast != true
-  op = op != true
-
+if (location.href.match("\\+1") && !i) {
+  contrast = contrast != true;
+  op = op != true;
 }
 
-if (location.search.split('?q=')[1]) {
+if (location.search.split("?q=")[1]) {
+  var uri = location.search.split("?q=")[1];
+  uri = uri.replace(/\?\+1|\+1/, "");
+  uri = uri.match(/[^&]+/g);
+  if (location.hash.substr(1).match(/\+1/g))
+    post = location.hash.substr(1).replace(/\+1/g, "");
+  else post = location.hash.substr(1);
 
-  var uri = location.search.split('?q=')[1]
-  uri = uri.replace(/\?\+1|\+1/, '')
-  uri = uri.match(/[^&]+/g)
-  if (location.hash.substr(1).match(/\+1/g)) post = location.hash.substr(1).replace(/\+1/g, '')
-  else post = location.hash.substr(1)
-
-  $(document)
-    .ready(function() {
-
-        $.loading()
-        $('html body #container #main #top').show()
-        $('html body #container #main #toggle').hide()
-        var width = $('html body #container #main').width() / 30
-        if (!uri[1] && location.href.match('\\&')) response(true, false, uri[0], false)
-        else if (!uri[1]) response(false, false, uri[0], true)
-        else if (uri[1]) response(true, uri[0], uri[1], false)
-
-    })
-
-} else if (!location.search.split('?')[1]) {
-
-        $(document)
-          .ready(function() {
-
-            $('html body #container #main #visit').css('visibility','visible')
-
-        })
-
+  ready(() => {
+    init();
+    document.querySelector("#toggle").style.display = "none";
+    document.querySelector("#top").style.display = "block";
+    var width = document.querySelector("#main").clientWidth / 30;
+    if (!uri[1] && location.href.match("\\&"))
+      filterInputResponse(true, false, uri[0], false);
+    else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
+    else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
+  });
+} else if (!location.search.split("?")[1]) {
+  ready(() => {
+    document.querySelector("#visit").style.visibility = "visible";
+  });
 }

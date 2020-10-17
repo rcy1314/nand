@@ -1,7 +1,6 @@
-.fa,
-.far {
-  display: inline-block;
-  cursor: pointer;
+@font-face {
+  font-family: Proxima Nova;
+  src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
 }
 
 video {
@@ -37,7 +36,7 @@ a:hover {
 }
 
 *,*:focus,*:hover{
-    outline:none;
+    outline:none !important;
 }
 
 html,
@@ -47,6 +46,8 @@ html body #container #main,
 html body #container #main #visit {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow: hidden;
+  border:none !important;
+  outline: none !important;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -124,6 +125,7 @@ html body #container #sidebar .notify {
   background-color: transparent;
   justify-content: center;
   position: absolute;
+  text-align: center;
   font-size: 11px;
   display: flex;
   margin: 10px;
@@ -270,6 +272,7 @@ html body #container #guide .blur {
 }
 
 html body #container #main #top {
+  background-color: transparent;
   width: calc(100% - 12px);
   position: fixed;
   display: none;
@@ -402,6 +405,7 @@ html body #container #main #visit #page {
 }
 
 html body #container #main #dots .fill {
+  background-color: var(--fill-color-primary);
   z-index: 99;
   left: -4px;
   top: 0;
@@ -416,7 +420,7 @@ html body #container #main #visit #page #front {
 
 html body #container #main #visit #page #front #first {
   position: relative;
-  margin: 0 auto;
+  margin: 4px auto;
   display: none;
   width: 715px;
   z-index: 1;
@@ -461,9 +465,9 @@ html body #container #main #visit #page #front #first .listing .hover .detail .t
 }
 
 html body #container #main #top #arm #search #match .listing .index .detail .textSuggest,
-html body #container #main #top #arm #search #match .listing .hover .detail .textSuggest,
+html body #container #main #top #arm #search #match .listing .index .detail .textMatch,
 html body #container #main #visit #page #front #first .listing .index .detail .textSuggest,
-html body #container #main #visit #page #front #first .listing .hover .detail .textSuggest {
+html body #container #main #visit #page #front #first .listing .index .detail .textMatch {
   background-color: transparent;
   display: inline-block;
   font-style: italic;
@@ -562,10 +566,10 @@ html body #container #main #visit #page #front #label .show {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 auto;
   z-index: 0;
-  top: 23px;
+  top: 26px;
 }
 
 html body #container #main #visit #page #front #label .link {
@@ -576,7 +580,7 @@ html body #container #main #visit #page #front #label .link {
   border-radius: 20px;
   align-items: center;
   position: absolute;
-  margin-left: 8px;
+  margin-left: 15px;
   margin-top: 15px;
   padding: 10px;
   height: 15px;
@@ -589,7 +593,6 @@ html body #container #main #group .result {
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;
-  display: flex;
   width: 100%;
 }
 
@@ -601,6 +604,7 @@ html body #container #main #group .air .populate,
 html body #container #main #group .result .filter,
 html body #container #main #group .result .populate,
 html body #container #main #feed .content .status .filter {
+  border: .3px solid transparent;
   display: inline-flex;
   border-radius: 8px;
   flex-wrap: wrap;
@@ -624,7 +628,7 @@ html body #container #main #feed .content .status .filter a {
 html body #container #main #group .air .populate .display,
 html body #container #main #group .result .filter .display,
 html body #container #main #group .result .populate .display,
-  html body #container #main #feed .content .status .filter .display {
+  html body #container #main #feed .content .status .filter .ext {
   position: relative;
   padding: 5px;
   width: 100%;
@@ -633,7 +637,7 @@ html body #container #main #group .result .populate .display,
 html body #container #main #group .air .populate .display img,
 html body #container #main #group .result .filter .display img,
 html body #container #main #group .result .populate .display img,
-html body #container #main #feed .content .status .filter .display img {
+html body #container #main #feed .content .status .filter .ext img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;
@@ -645,7 +649,7 @@ html body #container #main #feed .content .status .filter .display img {
 }
 
 html body #container #main #group .air .populate .title,
-html body #container #main #group .result .filter .title,
+html body #container #main #group .status .filter .tag,
 html body #container #main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
@@ -693,7 +697,7 @@ input[type=submit] {
   display: none;
 }
 
-html body #container #main #feed .center .quick,
+
 html body #container #main #visit #page .quick {
   background-color: transparent;
   border-radius: 4px;
@@ -704,10 +708,11 @@ html body #container #main #visit #page .quick {
   z-index: 1;
 }
 
-html body #container #main #feed .center .quick .feed,
+
 html body #container #main #visit #page .quick .feed {
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   position: relative;
   overflow: hidden;
@@ -719,20 +724,9 @@ html body #container #main #visit #page .quick .feed {
   width: 100%;
 }
 
-html body #container #main #feed .center .quick .feed::-webkit-scrollbar,
 html body #container #main #visit #page .quick .feed::-webkit-scrollbar {
   display: none;
 }
-
-html body #container #main #feed .center .quick .feed .asset {
-  background-color: transparent;
-  position: relative;
-  text-align: center;
-  flex-shrink: 0;
-  padding: 30px;
-  width: 72px;
-}
-
 
 html body #container #main #visit #page .quick .feed .asset,
 html body #container #main #visit #page .quick .feed .translation {
@@ -746,7 +740,6 @@ html body #container #main #visit #page .quick .feed .translation {
 }
 
 html body #container #main #feed .content .status img,
-html body #container #main #feed .center .quick .feed .asset img,
 html body #container #main #visit #page .quick .feed img,
 html body #container #main #visit #page .quick .feed .translation img {
   background-color: transparent;
@@ -756,7 +749,6 @@ html body #container #main #visit #page .quick .feed .translation img {
   width: 30px;
 }
 
-html body #container #main #feed .center .quick .feed .asset a,
 html body #container #main #visit #page .quick .feed .asset a,
 html body #container #main #visit #page .quick .feed .translation a {
   background-color: transparent;
@@ -766,20 +758,6 @@ html body #container #main #visit #page .quick .feed .translation a {
   top: 5px;
 }
 
-html body #container #main #feed .center .quick .right {
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  position: absolute;
-  cursor: pointer;
-  display: flex;
-  right : -15px;
-  padding: 4px;
-  height: 24px;
-  width: 24px;
-  z-index: 7;
-  top: 40px;
-}
 html body #container #main #visit #page .quick .right {
   justify-content: center;
   align-items: center;
@@ -795,20 +773,6 @@ html body #container #main #visit #page .quick .right {
   top: 25px;
 }
 
-html body #container #main #feed .center .quick .left {
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  position: absolute;
-  cursor: pointer;
-  display: flex;
-  padding: 4px;
-  height: 24px;
-  width: 24px;
-  left: -15px;
-  z-index: 7;
-  top: 40px;
-}
 html body #container #main #visit #page .quick .left {
   justify-content: center;
   align-items: center;
@@ -817,7 +781,7 @@ html body #container #main #visit #page .quick .left {
   cursor: pointer;
   display: flex;
   padding: 4px;
-  height: 24px;
+  height: calc(24px - 5px);
   width: 24px;
   left: -20px;
   z-index: 7;
@@ -860,7 +824,7 @@ html body #container #main #feed .center .item .header .courtesy a {
   background-color: transparent;
 }
 
-html body #container #main #feed .center .item .fill {
+html body #container #main #feed .center .item .pending {
   justify-content: center;
   align-items: center;
   position: relative;
@@ -882,7 +846,7 @@ html body #container #guide .sticky {
   display: none;
 }
 
-html body #container #guide .sticky .item {
+html body #container #guide .sticky .src {
   display: table-cell !important;
   box-shadow: none !important;
   border: none !important;
@@ -920,7 +884,7 @@ html body #container #guide .sticky .tag {
 }
 
 html body #container #main #feed .center .item,
-html body #container #guide .sticky .item {
+html body #container #guide .sticky .src {
   margin-bottom: 15px;
   width: 100%;
 }
@@ -956,27 +920,15 @@ html body #container #main #feed .center .item .tag {
   width: 100%;
 }
 
+html body #container #guide .sticky .image,
 html body #container #main #feed .center .item .img,
 html body #container #main #feed .center .item .image {
   background-color: transparent;
-  position: relative;
-  margin: 0 auto;
-}
-
-html body #container #main #feed .center .item .img {
+  justify-content: center;
+  align-items: center;
   position: relative;
   max-height: 90vh;
   max-width: 100%;
-  display: block;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
-}
-
-html body #container #guide .sticky .image,
-html body #container #main #feed .center .item .image {
-  justify-content: center;
-  align-items: center;
   display: flex;
   right: 0;
   left: 0;
@@ -1025,6 +977,7 @@ html body #container #guide .source {
 
 html body #container #main #feed .center .item .header .courtesy .copy,
 html body #container #guide .sticky .wrap .header .courtesy .copy {
+  pointer-events: auto;
   position: absolute;
   font-size: 12px;
   padding: 23px;
@@ -1063,7 +1016,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .pi
 }
 
 html body #container #main #feed .center .item .wrap,
-html body #container #guide .sticky .item .wrap {
+html body #container #guide .sticky .src .wrap {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: transparent;
   -webkit-user-select: none;
@@ -1076,7 +1029,6 @@ html body #container #main #feed .center .item .external {
   text-transform: lowercase;
   padding-bottom: 10px;
   position: relative;
-  margin-left: 10px;
   font-size: 10;
   width: 98%;
   left: 12px;
@@ -1217,7 +1169,7 @@ html body #container #main #feed .content .suggestions .combine .suggest {
   width: 100%;
 }
 
-html body #container #main #feed .content .suggestions .combine .suggest div {
+html body #container #main #feed .content .suggestions .combine .suggest .random {
   font-style: italic !important;
   text-transform: capitalize;
   font-size: 9px;
