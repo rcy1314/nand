@@ -29,8 +29,9 @@
   html body #container #main #visit #page .quick {
     position: absolute;
     height: 520px;
+    height: 400px;
     width: 100%;
-    top: 165px;
+    top: 80px;
   }
 
   html body #container #main #visit #page .quick .feed {
@@ -40,12 +41,13 @@
     margin-right: 0%;
     flex-wrap: wrap;
     margin-left: 0%;
+    height: 400px;
     right: 0;
     left: 0;
   }
 
   html body #container #main #visit #page #front #label {
-    margin-top: -150px;
+    margin-top: -190px;
   }
 
   .expand .title {
@@ -76,7 +78,8 @@
     position: absolute;
     display: block;
     z-index: 0;
-    top: 350px
+    top: 250px;
+    left: 10px;
   }
 
   html body #container #main #page,
@@ -134,18 +137,19 @@
     position: relative;
     padding-left: 0;
     margin: 0 auto;
+    top: -5px;
   }
 
   html body #container #top #arm #search #match .listing {
     margin: 0 auto;
-    top: 0;
+    top: -5px;
   }
 
   html body #container #main #visit #page #front .focus {
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: -150px;
+    top: -180px;
   }
 
   html body #container #main #visit #page #front .focus input[type=text] {

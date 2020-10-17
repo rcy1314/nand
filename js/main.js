@@ -128,7 +128,7 @@ $(document)
         xml(null, null, $.random())
       }
   })
-  .on('touch click', 'html body #container #main #top #arm #option .fa-home',
+  .on('touch click', '.fa-home',
   function(e) {
     id = 0
     filter = []
