@@ -2,7 +2,7 @@ var op = 0 //1 invert, 0 opposite
 var topBar = true //display top menubar on content
 var expand = true //filter populate list display
 var reader = false //main scroll category reader xml
-var onScreen = true //display sidebar on visit
+var onScreen = false //display sidebar on visit
 var groupType = 'list' //or 'blocks'
 var showOption = true //show tag Options in top
 var quickFeeds = true //show or hide
@@ -397,7 +397,7 @@ var progressBackDrop = function (done, percent) {
         )
           if (httpRequest.status == 200) {
             first = false;
-            xml(null, null, random());
+            xmlRequestParsing(null, null, random());
           }
       }
     setTimeout(function () {
@@ -585,7 +585,7 @@ var filterInputResponse = function (
       filter.push(menu.indexOf(menu[i]));
   }
   if (!match) match = filter[0];
-  if (filter.length == 0) xml("search", n, 0, null);
+  if (filter.length == 0) xmlRequestParsing("search", n, 0, null);
   if (initPassthrough == false) {
     document.querySelector("#visit").style.display = "none";
     var main = document.querySelector("#main");
@@ -596,8 +596,8 @@ var filterInputResponse = function (
       "</div>";
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
-    if (isNumeric(exact)) xml(null, null, exact);
-    else if (isNumeric(match) && filter.length == 1) xml(null, null, match);
+    if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
+    else if (isNumeric(match) && filter.length == 1) xmlRequestParsing(null, null, match);
   }
   if (initPassthrough == false && categoryBloat == true && match)
     populateCategoryGroup(menu[match].cat);
@@ -1229,7 +1229,7 @@ var xmlRequestParsing = function (e, s, n) {
             re: pub[local].re,
             id: n,
           });
-          guideBuild(sticky);
+          guideDisplay(sticky);
         } else document.querySelector("#guide").style.display = "none";
         for (i = 0; i < pub.length; i++) {
           if (
