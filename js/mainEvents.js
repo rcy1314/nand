@@ -321,7 +321,7 @@ document.addEventListener(
             "scale .7s ease-in-out .1s both";
           event.target
             .closest(".image")
-            .querySelector(".fa-heart").style.display = "block";
+              .querySelector(".fa-heart").style.display = "block";
           setTimeout(function () {
             event.target
               .closest(".image")

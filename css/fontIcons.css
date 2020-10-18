@@ -68,6 +68,7 @@ html body #container #sidebar #content #select .sel .fa-code {
   font-weight: 50;
 }
 
+html body #guide .sticky .fa-heart,
 html body #container #main #option .fa-heart,
 html body #container #sidebar #content #select .sel .fa-heart {
   font-family: "Font Awesome 5 Pro";
@@ -143,16 +144,16 @@ html body #container #main #feed .center .channel .item .header .fa-ellipsis-v {
   font-weight: 50;
 }
 
+html body #guide .sticky .fa-heart,
 html body #container #main #option .fa-heart,
-html body #container #guide .sticky .wrap .tag .fa-heart,
 html body #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart {
   font-family: "Font Awesome 5 Pro";
   content: "\f004";
   font-weight: 50;
 }
 
+html body #guide .sticky .fa-heart,
 html body #container #main #option .fa-heart,
-html body #container #guide .sticky .wrap .tag .fa-heart,
 html body #container #main #feed .center .channel .item .classic .wrap .tag .fa-heart {
   color: lightcoral !important;
 }

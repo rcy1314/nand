@@ -795,7 +795,6 @@ html body #container #main #visit #page .quick .left {
 html body #container #guide .sticky .header,
 html body #container #main #feed .center .item .header,
 html body #container #main #feed .center .item .header {
-  background-color: transparent;
   height: 60px;
   width: 100%;
 }
@@ -902,7 +901,7 @@ html body #container #guide .sticky .ago {
   position: absolute;
   font-size: 10px;
   width: 300px;
-  margin: 5px;
+  margin: 15px;
   bottom: 0;
 }
 
@@ -912,8 +911,7 @@ html body #container #guide .sticky .tag {
   bottom: 0;
 }
 
-html body #container #main #feed .center .item,
-html body #container #guide .sticky .src {
+html body #container #main #feed .center .item {
   margin-bottom: 15px;
   width: 100%;
 }
@@ -963,15 +961,13 @@ html body #container #main #feed .center .item .image {
   left: 0;
 }
 
-html body #container #guide .sticky .image .fa-heart,
+html body #guide .sticky .fa-heart,
 html body #container #main #feed .center .item .image .fa-heart {
-  background-color: transparent;
-  color: #ffffff !important;
   position: absolute;
-  font-size: 72px;
+  font-size: 50px;
   display: none;
-  z-index: 1;
 }
+
 
 html body #container #main #feed .center .item .pub .more {
   background-color: transparent;

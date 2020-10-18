@@ -171,9 +171,10 @@
     width: 100%;
   }
 
-  html body #container #guide .sticky .wrap {
+  html body #container #guide .yt .wrap {
     display: none !important;
   }
+
 }
 
 @media screen and (min-width: 768px) {

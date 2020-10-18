@@ -898,20 +898,34 @@ var guideImageAttributes = function (src) {
   var newImg = new Image();
   newImg.setAttribute("src", src);
   newImg.onload = function () {
-    guide.querySelector(".img").setAttribute("src", src);
-    document.querySelector("#main").classList.add("guide");
-    guide.querySelector(".sticky").style.display = "block";
-    guide.querySelector(".checkmark").style.display = "block";
-    if (newImg.naturalWidth >= newImg.naturalHeight)
-      guide.querySelector(".img").style.maxWidth = "65vw";
-    else if (newImg.naturalHeight >= newImg.naturalWidth) {
-      guide.querySelector(".img").style.maxWidth = "40vw";
-      guide.querySelector(".img").style.maxHeight = "90vh";
-    }
-    guide.style.display = "flex";
-  };
-};
-
+      guide.querySelector(".img").setAttribute("src", src);
+      guide.querySelector(".sticky").style.display = "block";
+      guide.querySelector(".checkmark").style.display = "block";
+        if ((document.querySelector('#main').clientWidth <= 426)
+          ) {
+            document.querySelector("#main").classList.add("guide");
+            document.querySelector('#guide .wrap').style.width = '100vw'
+            document.querySelector('#guide .sticky .header').style.position = 'absolute'
+            if (newImg.naturalWidth >= newImg.naturalHeight)
+              guide.querySelector(".img").style.maxWidth = "100vw";
+            else if (newImg.naturalHeight >= newImg.naturalWidth)
+              guide.querySelector(".img").style.maxHeight = "80vh";
+            document.querySelector('#guide .sticky .header').style.top =
+              ~document.querySelector('#guide .img').style.height - '60'
+        } else {
+          document.querySelector("#main").classList.add("guide");
+          guide.querySelector(".sticky").style.display = "block";
+          guide.querySelector(".checkmark").style.display = "block";
+          if (newImg.naturalWidth >= newImg.naturalHeight)
+            guide.querySelector(".img").style.maxWidth = "65vw";
+          else if (newImg.naturalHeight >= newImg.naturalWidth) {
+            guide.querySelector(".img").style.maxWidth = "40vw";
+            guide.querySelector(".img").style.maxHeight = "90vh";
+          }
+      }
+      guide.style.display = "flex";
+    };
+}
 
 
 var xmlImageAttributes = function (empty, n, item, src) {

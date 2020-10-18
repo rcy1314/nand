@@ -74,6 +74,7 @@ var visual = function (opDefine) {
       document.querySelector("#group .air").classList.add("opposite");
     document.querySelector("#container #guide").classList.add("oppositeAlt");
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
+      document.querySelector('.sticky .header').classList.add('oppositeAlt');
       document.querySelector(".sticky .wrap").classList.add("oppositeAlt");
       document.querySelector("#guide .blur").classList.add("blurNight");
     }
@@ -293,6 +294,7 @@ var visual = function (opDefine) {
     );
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
+      document.querySelector('#guide .header').classList.add('invert');
       document.querySelector(".sticky .wrap").classList.add("invert");
       document.querySelector("#guide .blur").classList.add("blurDay");
     }
