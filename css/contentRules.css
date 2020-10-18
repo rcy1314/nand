@@ -836,14 +836,6 @@ html body #container #main #feed .center .item .pending {
   height: 14em;
 }
 
-html body #container #main #feed .center .item .classic  {
-  background-color: transparent;
-}
-
-html body #container #main #feed .center .item .classic .wrap {
-  background-color: transparent;
-}
-
 html body #container #guide .sticky {
   align-items: center;
   position: relative;
@@ -887,7 +879,7 @@ html body #container #guide .sticky .yt iframe {
 html body #container #guide .sticky #yt .views {
   text-transform: uppercase;
   position: absolute;
-  font-size: 11px;
+  font-size: 9px;
   bottom: 15px;
 }
 
@@ -1050,16 +1042,6 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .po
 html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
   display: none;
-}
-
-html body #container #main #feed .center .item .wrap,
-html body #container #guide .sticky .src .wrap {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: transparent;
-  -webkit-user-select: none;
-  width: calc(100% - 10px);
-  flex-wrap: wrap;
-  display: flex;
 }
 
 html body #container #main #feed .center .item .external {

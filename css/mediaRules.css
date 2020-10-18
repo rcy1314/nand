@@ -162,7 +162,7 @@
   }
 
   html body #container #guide .sticky #yt {
-    display: block;
+    display: block !important;
     width: 100% !important;
   }
 
