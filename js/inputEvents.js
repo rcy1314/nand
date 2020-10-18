@@ -43,9 +43,8 @@ document.addEventListener(
           translations[i] +
           ".webp" +
           "'>" +
-          "    <div class='text'>&emsp;<b>" +
+          "    <div class='text'>&emsp;" +
           translations[i] +
-          "</b>" +
           "      <br>&emsp;" +
           translations[i].grep() +
           " sites" +
@@ -81,6 +80,7 @@ document.addEventListener(
   "click",
   function (event) {
     if (
+      event.target.classList.contains("hue") ||
       event.target.classList.contains("index") ||
       event.target.classList.contains("text") ||
       event.target.classList.contains("detail") ||
@@ -99,6 +99,7 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
+        category = event.target.closest(".index").getAttribute("aria-item").capitalize()
         populateCategoryGroup(event.target.closest(".index").getAttribute("aria-item").capitalize());
         if (expand == true) var groupType = "list";
         else var groupType = "blocks";

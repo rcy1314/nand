@@ -104,20 +104,27 @@ document.addEventListener(
       }
     }
     if (
-      event.target.id === "container" ||
-      event.target.id === "search" ||
-      event.target.id === "option" ||
-      event.target.id === "visit" ||
-      event.target.id === "group" ||
-      event.target.id === "feed" ||
-      event.target.id === "main" ||
-      event.target.id === "page" ||
-      event.target.id === "top" ||
-      event.target.id === "arm"
+      event.target.id == "container" ||
+      event.target.id == "search" ||
+      event.target.id == "option" ||
+      event.target.id == "visit" ||
+      event.target.id == "group" ||
+      event.target.id == "feed" ||
+      event.target.id == "main" ||
+      event.target.id == "page" ||
+      event.target.id == "top" ||
+      event.target.id == "arm" ||
+      event.target.classList.contains("fa")
     ) {
       if (document.getElementById("match").style.display === "block"){
         document.getElementById("match").style.display = "none";
-        document.querySelector('#search .view').blur()
+        document.querySelector('#input .view').blur()
+        document.querySelector('#input .view').setAttribute('placeholder', '');
+        document.querySelector('#input .view').style.caretColor = "#e4e4e4";
+        document.querySelector('#input .view').style.textAlign = "center";
+        document.querySelector('#input .view').style.paddingLeft = "0px";
+        document.querySelector('#input .icon').classList.remove('slide')
+        document.querySelector('#input .view').value = "Search";
       } else if (document.querySelector("#main #first").style.display === "block") {
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();

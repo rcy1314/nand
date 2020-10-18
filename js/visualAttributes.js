@@ -39,7 +39,7 @@ var visual = function (opDefine) {
         .forEach((a) => a.classList.add("oppositeOver"));
         document
           .querySelectorAll("#feed .item")
-          .forEach((a) => a.style.boxShadow = 'non');
+          .forEach((a) => a.style.boxShadow = 'none');
       document
         .querySelectorAll(".combine a")
         .forEach((a) => (a.style.color = "#f7426C"));
