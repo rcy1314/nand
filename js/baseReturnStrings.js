@@ -303,7 +303,7 @@ var guideBuildYoutube = function (pubArray) {
     "<div class='blur'></div>" +
     "<div class='sticky item'" +
     " style='" +
-    " width:75vw'>" +
+    " width:65vw'>" +
     "  <div class='fill'></div>" +
     "  <div id='yt' class='item-" +
     pubArray[0].id +
@@ -312,7 +312,7 @@ var guideBuildYoutube = function (pubArray) {
     "' ext='" +
     pubArray[0].re +
     "' style='" +
-    "width:70vw" +
+    "width:60vw" +
     "'>" +
     "  <div class='yt'>" +
     "    <iframe src='" +

@@ -2,7 +2,7 @@ var op = 0 //1 invert, 0 opposite
 var topBar = true //display top menubar on content
 var expand = true //filter populate list display
 var reader = false //main scroll category reader xml
-var onScreen = false //display sidebar on visit
+var onScreen = true //display sidebar on visit
 var groupType = 'list' //or 'blocks'
 var showOption = true //show tag Options in top
 var quickFeeds = true //show or hide
@@ -1258,14 +1258,6 @@ var xmlRequestParsing = function (e, s, n) {
           guideDisplay(sticky);
         }
         for (i = 0; i < pub.length; i++) {
-          if (
-            local != i &&
-            isNumeric(local) &&
-            pub[i].title != ""
-          )
-            document.querySelector(".channel").innerHTML =
-              document.querySelector(".channel").innerHTML + pub[i].post;
-          else if (!isNumeric(local) && pub[i].title != "")
             document.querySelector(".channel").innerHTML =
               document.querySelector(".channel").innerHTML + pub[i].post;
           if (menu[n].id.match(/Imgur/g) && !menu[n].id.match(/Youtube/g))

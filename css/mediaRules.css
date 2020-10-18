@@ -147,6 +147,33 @@
     top: 0px;
   }
 
+  html body #container #guide .sticky {
+    width: 100% !important;
+  }
+
+  html body #container #guide .sticky .src {
+    width: 100% !important;
+    display: block;
+  }
+
+  html body #container #guide .sticky .src img {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  html body #container #guide .sticky #yt {
+    display: block;
+    width: 100% !important;
+  }
+
+  html body #container #guide .sticky .yt {
+    display: block !important;
+    width: 100%;
+  }
+
+  html body #container #guide .sticky .wrap {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 768px) {

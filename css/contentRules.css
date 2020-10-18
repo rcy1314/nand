@@ -847,7 +847,7 @@ html body #container #guide .sticky {
 }
 
 html body #container #guide .sticky .src {
-  display: table-cell !important;
+  display: table-cell;
   box-shadow: none !important;
   border: none !important;
   border-radius: 10px;
@@ -855,7 +855,7 @@ html body #container #guide .sticky .src {
 }
 
 html body #container #guide .sticky #yt {
-  display: table-cell !important;
+  display: table-cell;
   box-shadow: none !important;
   border: none !important;
   border-radius: 10px;
@@ -864,7 +864,7 @@ html body #container #guide .sticky #yt {
 
 html body #container #guide .sticky .yt {
   -webkit-overflow-scrolling: touch;
-  display: table-cell !important;
+  display: table-cell;
   padding-bottom: 54.25%;
   position: relative;
   bottom: 5px;
@@ -888,7 +888,7 @@ html body #container #guide .sticky #yt .views {
 }
 
 html body #container #guide .sticky .wrap {
-  display: table-cell !important;
+  display: table-cell;
   vertical-align: top;
   width: 220px;
   height: 100%;
