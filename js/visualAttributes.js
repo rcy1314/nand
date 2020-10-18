@@ -236,6 +236,14 @@ var visual = function (opDefine) {
         .querySelectorAll("#sidebar .cat")
         .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
     }
+    if (document.body.contains(document.querySelector(".listing .hover"))) {
+      document
+        .querySelectorAll(".listing .hover")
+        .forEach((a) => (a.classList.add('visual.hover')));
+      document
+        .querySelectorAll(".listing .hover")
+        .forEach((a) => (a.classList.add('visual')));
+    }
     if (document.body.contains(document.querySelector(".listing .index"))) {
       if (document.body.contains(document.querySelector(".listing .buffer")))
         document

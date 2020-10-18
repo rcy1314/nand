@@ -466,7 +466,11 @@ html body #container #main #visit #page #front #first .listing .hover .detail .t
 
 html body #container #main #top #arm #search #match .listing .index .detail .textSuggest,
 html body #container #main #top #arm #search #match .listing .index .detail .textMatch,
+html body #container #main #top #arm #search #match .listing .hover .detail .textSuggest,
+html body #container #main #top #arm #search #match .listing .hover .detail .textMatch,
 html body #container #main #visit #page #front #first .listing .index .detail .textSuggest,
+html body #container #main #visit #page #front #first .listing .hover .detail .textSuggest,
+html body #container #main #visit #page #front #first .listing .hover .detail .textMatch,
 html body #container #main #visit #page #front #first .listing .index .detail .textMatch {
   background-color: transparent;
   display: inline-block;
@@ -1265,8 +1269,6 @@ html body #container #main #visit #page #front #first .listing .detail {
 
 html body #container #main #top #arm #search #match .listing .index,
 html body #container #main #visit #page #front #first .listing .index {
-  border-bottom: none !important;
-  background-color: transparent;
   width: calc(100% - 12px);
   padding-bottom: 8px;
   position: relative;
@@ -1278,10 +1280,8 @@ html body #container #main #visit #page #front #first .listing .index {
 
 html body #container #main #top #arm #search #match .listing .hover,
 html body #container #main #visit #page #front #first .listing .hover {
-  background-color: transparent;
   width: calc(100% - 12px);
   padding-bottom: 8px;
-  border-radius: 4px;
   padding-left: 12px;
   padding-top: 8px;
   font-size: 12px;

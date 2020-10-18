@@ -223,3 +223,41 @@ scrollbar-width: thin;
   flex-basis: 65% !important;
   width: 100%;
 }
+
+.visual {
+  background-color: #ffffff !important;
+}
+
+.visual.hover {
+  background-color: #fbfbfb !important;
+  color: #666666;
+}
+
+.visual:hover {
+  background-color: #fbfbfb;
+  color: #666666;
+}
+
+.visual:not(:hover) {
+  background-color: #ffffff;
+  color: #666666;
+}
+
+.contrast {
+  background-color: #000000 !important;
+}
+
+.contrast.hover {
+  background-color: #0e0e0e !important;
+  color: #ffffff;
+}
+
+.contrast:hover {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+.contrast:not(:hover) {
+  background-color: #000000;
+  color: #ffffff;
+}

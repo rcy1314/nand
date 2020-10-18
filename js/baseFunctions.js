@@ -338,14 +338,9 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
             ) + listing.innerHTML;
         });
         suggest.push(i);
-      } else suggest.push(0);
+      };
+      setTimeout(500)
     }
-  if (menu.length - 2 == suggest.length - 1 || inputFilter == "") {
-    var suggest = [];
-    suggest.push(
-      menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)])
-    );
-  }
   for (i = 1; i <= menu.length - 1; i++) {
     var randomMenuObject = menu.indexOf(
       menu[Math.floor(Math.random() * menu.length - 1)]
@@ -367,6 +362,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
         );
       });
     if (suggest.length >= suggestionBuffer) return false;
+    setTimeout(500)
   }
 };
 

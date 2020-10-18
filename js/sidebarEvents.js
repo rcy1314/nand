@@ -81,7 +81,7 @@ document.addEventListener(
       document.querySelector("#visit").style.visibility = "visible";
       document.querySelector("#visit").style.display = "flex";
       document.querySelector(".feed").scrollLeft = 0;
-      quickFeedsDisplay(quickFeeds);
+      quickFeedDisplay(quickFeeds);
       document.title = "";
       unloading();
     }

@@ -146,52 +146,89 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains("guest")) {
       var keyup = event.target.value;
-      if (event.keyCode === 13) return false;
+      if (event.keyCode === 13) return false
       else if (
-        event.target.value.length >= 3 &&
-        event.keyCode >= 65 &&
-        event.keyCode <= 90
+        event.target.value.length > 3
       )
         inputListingIndex(event.target.value, '#first');
-      else if (event.target.value.length >= 2 && event.keyCode === 8)
+      else if (event.target.value.length > 2 && event.keyCode === 8)
         inputListingIndex(event.target.value, '#first');
-      else if (event.target.value.length <= 2 && event.keyCode === 8)
+      else if (event.target.value.length === 0)
         document.querySelector("#first").style.display = "none";
       else if (event.keyCode === 40) {
-        document.querySelector("#first .listing .index").focus();
+          if (!document.body.contains(document.querySelector("#first .listing .hover"))) {
+          document.querySelector('#first .listing .index:first-child').classList.add('hover')
+          document.querySelector('#first .listing .index:first-child').classList.remove('index')
+        } else {
+          if (document.body.contains(document.querySelector("#first .listing .hover").nextSibling)) {
+            document.querySelector('#first .listing .hover').classList.add('index')
+            document.querySelector('#first .listing .hover').nextSibling.classList.add('hover')
+            document.querySelector('#first .listing .hover').nextSibling.classList.remove('index')
+            document.querySelector('#first .listing .hover').classList.remove('hover')
+            document.querySelector('#first .listing .hover').focus()
+            document.querySelector('.focus .guest').focus()
+          }
+        }
       } else if (event.keyCode === 38) {
-        document.querySelector("#first .listing .index").focus();
+        if (!document.body.contains(document.querySelector("#first .listing .hover"))) {
+          document.querySelector('#first .listing .index:first-child').classList.add('hover')
+          document.querySelector('#first .listing .index:first-child').classList.remove('index')
+        } else {
+          if (document.body.contains(document.querySelector("#first .listing .hover").previousSibling)) {
+            document.querySelector('#first .listing .hover').previousSibling.classList.remove('index')
+            document.querySelector('#first .listing .hover').previousSibling.classList.add('hover')
+            document.querySelector('#first .listing .hover').nextSibling.classList.add('index')
+            document.querySelector('#first .listing .hover').nextSibling.classList.remove('hover')
+            document.querySelector('#first .listing .hover').focus()
+            document.querySelector('.focus .guest').focus()
+          }
+        }
       } else if (event.keyCode === 27)
         document.querySelector("#first").style.display = "none";
       event.target.setAttribute("tabIndex", -1);
       event.target.value = keyup;
       visual();
     }
-    event.preventDefault();
-  },
-  false
-); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  "keyup",
-  function (event) {
     if (event.target.classList.contains("view")) {
       event.target.setAttribute("placeholder", "");
       var keyup = event.target.value;
       if (event.keyCode === 13) return false;
       else if (
-        event.target.value.length >= 3 &&
-        event.keyCode >= 65 &&
-        event.keyCode <= 90
+        event.target.value.length > 3
       )
         inputListingIndex(event.target.value, '#match');
-      else if (event.target.value.length >= 2 && event.keyCode === 8)
+      else if (event.target.value.length > 2)
         inputListingIndex(event.target.value, '#match');
-      else if (event.target.value.length <= 2 && event.keyCode === 8)
+      else if (event.target.value.length === 0)
         document.querySelector("#match").style.display = "none";
-      if (event.keyCode === 40) {
-        document.querySelector("#match .listing .index").focus();
-      } else if (event.keyCode === 38) {
-        document.querySelector("#match .listing .index").focus();
+        else if (event.keyCode === 40) {
+            if (!document.body.contains(document.querySelector("#match .listing .hover"))) {
+            document.querySelector('#match .listing .index:first-child').classList.add('hover')
+            document.querySelector('#match .listing .index:first-child').classList.remove('index')
+          } else {
+            if (document.body.contains(document.querySelector("#match .listing .hover").nextSibling)) {
+              document.querySelector('#match .listing .hover').classList.add('index')
+              document.querySelector('#match .listing .hover').nextSibling.classList.add('hover')
+              document.querySelector('#match .listing .hover').nextSibling.classList.remove('index')
+              document.querySelector('#match .listing .hover').classList.remove('hover')
+              document.querySelector('#match .listing .hover').focus()
+              document.querySelector('#input .view').focus()
+            }
+          }
+        } else if (event.keyCode === 38) {
+          if (!document.body.contains(document.querySelector("#match .listing .hover"))) {
+            document.querySelector('#match .listing .index:first-child').classList.add('hover')
+            document.querySelector('#match .listing .index:first-child').classList.remove('index')
+          } else {
+            if (document.body.contains(document.querySelector("#match .listing .hover").previousSibling)) {
+              document.querySelector('#match .listing .hover').previousSibling.classList.remove('index')
+              document.querySelector('#match .listing .hover').previousSibling.classList.add('hover')
+              document.querySelector('#match .listing .hover').nextSibling.classList.add('index')
+              document.querySelector('#match .listing .hover').nextSibling.classList.remove('hover')
+              document.querySelector('#match .listing .hover').focus()
+              document.querySelector('#input .view').focus()
+            }
+          }
       } else if (event.keyCode === 27)
         document.querySelector("#match").style.display = "none";
       event.target.setAttribute("tabindex", -1);
@@ -212,7 +249,7 @@ document.addEventListener(
         topMenuBarDisplay(topBar);
         document.querySelector("#visit").style.display = "none";
         document.querySelector("#toggle").style.display = "none";
-        filterInputfilterInputResponse(
+        filterInputResponse(
           false,
           false,
           document.querySelector(".sideFilter").value,
@@ -224,23 +261,20 @@ document.addEventListener(
           document.querySelector(".sideFilter").value.replace(/\s/g, "+");
         uri.define();
       }
-    } else if (event.target.classList.contains("hold")) {
-      document.querySelector("#match").style.display = "none";
-      if (document.querySelector(".view").value.length) {
-        init();
-        topMenuBarDisplay(topBar);
-        filterInputfilterInputResponse(false, false, document.querySelector(".view").value, true);
-      }
+    } else if (event.target.id == "search") {
+      if (document.querySelector('#input .view').value.length)
+        var query = document.querySelector('#input .view').value.space()
+        query.replace(/\s/, '+')
+        var uri = '?q=' + query
+        uri.define().exit()
     } else if (event.target.id == "front") {
-      document.querySelector("#top").style.display = "block";
-      document.querySelector("#toggle").style.display = "none";
-      if (document.querySelector(".guest").value.length) {
-        init();
-        topMenuBarDisplay(topBar);
-        document.querySelector("#visit").style.display = "none";
-        filterInputfilterInputResponse(false, false, document.querySelector(".guest").value, true);
+      if (document.querySelector('.focus .guest').value.length)
+        var query = document.querySelector('.focus .guest').value.space()
+        query.replace(/\s/, '+')
+        var uri = '?q=' + query
+        uri.define().exit()
       }
-    }
+
     event.preventDefault();
   },
   false
