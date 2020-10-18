@@ -248,16 +248,26 @@ var xmlChannelFooter = function () {
   }
 };
 
-
 var guideDisplay = function (pubArray) {
   var guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
-  guide.innerHTML = guideBuild(pubArray)
+  guide.innerHTML = guideBuild(pubArray);
   guide.style.display = "flex";
   guideImageAttributes(pubArray[0].src);
   visual();
 };
+
+var guideDisplayYoutube = function (pubArray) {
+  var guide = document.querySelector("#guide");
+  while (guide.firstChild) guide.removeChild(guide.lastChild);
+  document.querySelector("#top").style.display = "hide";
+  guide.innerHTML = guideBuildYoutube(pubArray);
+  guide.querySelector('.checkmark').style.display = 'block';
+  guide.style.display = "flex";
+  visual();
+};
+
 
 var contentStatusDisplay = function (menuIndex, recentPost, oldestPost, postsCount) {
   if (document.body.contains(document.querySelector("#feed .status"))) {
@@ -978,7 +988,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
               itemImage.style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.closest(".classic").style.marginBottom = "30px";
+              itemImage.style.marginBottom = "30px";
             } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.style.width = "30vh";
               itemImage.classList.add("default");
@@ -1004,13 +1014,13 @@ var xmlImageAttributes = function (empty, n, item, src) {
               itemImage.closest(".image").style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.closest(".classic").style.marginBottom = "30px";
+              itemImage.style.marginBottom = "30px";
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = "240px";
               itemImage.closest(".image").style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.closest(".classic").style.marginBottom = "30px";
+              itemImage.style.marginBottom = "30px";
             } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.style.width = "100%";
               itemImage.classList.add("default");
@@ -1090,7 +1100,6 @@ var xmlRequestParsing = function (e, s, n) {
         var xhr = this.responseXML;
         if (op == 0 && document.querySelector("#main").clientWidth <= 425)
           var style = "style='box-shadow:8px 8px 16px #eeeeee'";
-        else var style = "style='border: .3px solid #dddddd'";
 
         if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
         else var channel = "item";
@@ -1153,15 +1162,18 @@ var xmlRequestParsing = function (e, s, n) {
             else var views = "";
 
             html = youtubeHTMLBuild(
+              menu[n].id.match(/([^\/]+)$/g),
+              menu[n].img.image(),
               parse.dst,
               courtesy,
               parse.re,
               style,
-              title,
+              share,
               views,
               trun,
               more,
-              src
+              src,
+              n
             );
           } else {
 
@@ -1217,7 +1229,21 @@ var xmlRequestParsing = function (e, s, n) {
             suggestions.removeChild(suggestions.lastChild);
           }
         }
-        if (isNumeric(local)) {
+        if (isNumeric(local) && menu[n].id.match(/Youtube/g)){
+          var sticky = [];
+          sticky.push({
+            title: menu[n].id.match(/([^\/]+)$/g),
+            element: pub[local].element,
+            image: menu[n].img.image(),
+            share: pub[local].share,
+            dst: pub[local].dst,
+            src: pub[local].src,
+            re: pub[local].re,
+            views: views,
+            id: n
+          });
+          guideDisplayYoutube(sticky);
+        } else if (isNumeric(local)) {
           var sticky = [];
           sticky.push({
             courtesy: pub[local].courtesy,
@@ -1230,11 +1256,11 @@ var xmlRequestParsing = function (e, s, n) {
             id: n,
           });
           guideDisplay(sticky);
-        } else document.querySelector("#guide").style.display = "none";
+        }
         for (i = 0; i < pub.length; i++) {
           if (
+            local != i &&
             isNumeric(local) &&
-            pub[local].element != pub[i].element &&
             pub[i].title != ""
           )
             document.querySelector(".channel").innerHTML =
@@ -1242,9 +1268,10 @@ var xmlRequestParsing = function (e, s, n) {
           else if (!isNumeric(local) && pub[i].title != "")
             document.querySelector(".channel").innerHTML =
               document.querySelector(".channel").innerHTML + pub[i].post;
-          if (menu[n].id.match(/Imgur/g))
+          if (menu[n].id.match(/Imgur/g) && !menu[n].id.match(/Youtube/g))
             xmlImageAttributes(true, n, pub[i].element, pub[i].src);
-          else xmlImageAttributes(false, n, pub[i].element, pub[i].src);
+          else
+            xmlImageAttributes(false, n, pub[i].element, pub[i].src);
         }
         var posts = pub.length - 1;
         var oldest = pub[pub.length - 1].dst;

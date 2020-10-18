@@ -294,16 +294,95 @@ var courtesyHeader = function (objectId, objectImage, objectExternal) {
   );
 };
 
+var guideBuildYoutube = function (pubArray) {
+  return (
+    "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
+    "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
+    "  <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />" +
+    "</svg>" +
+    "<div class='blur'></div>" +
+    "<div class='sticky item'" +
+    " style='" +
+    " width:75vw'>" +
+    "  <div class='fill'></div>" +
+    "  <div id='yt' class='item-" +
+    pubArray[0].id +
+    " src' item='" +
+    pubArray[0].id +
+    "' ext='" +
+    pubArray[0].re +
+    "' style='" +
+    "width:70vw" +
+    "'>" +
+    "  <div class='yt'>" +
+    "    <iframe src='" +
+    pubArray[0].src +
+    "'></iframe>" +
+    "  </div>" +
+    "  <div class='wrap'>" +
+    "    <div class='header'>" +
+    "<div class='courtesy' style='float:left'>" +
+    "  <img src='" +
+    pubArray[0].image +
+    "'>" +
+    "  <a ext='" +
+    pubArray[0].re +
+    "'>" +
+    "    <b>" +
+    pubArray[0].title +
+    "</b>" +
+    "  </a>" +
+    "  <div class='copy'>" +
+    "  <div class='attr fa-ellipsis-h'></div>" +
+    "    <div class='attribute' style='height:110px'>" +
+    "      <div class='site'>Copy Url" +
+    "        <div style='float:right' class='fas fa-at'></div>" +
+    "      </div>" +
+    "      <div class='post' style='display:block'>Copy Post" +
+    "        <div style='float:right' class='fa fa-share'></div>" +
+    "      </div>" +
+    "      <div class='picture' style='display:block'>Copy Source" +
+    "        <div style='float:right' class='fa fa-camera'></div>" +
+    "      </div>" +
+    "    </div>" +
+    "  </div>" +
+    "</div>" +
+    "</div>" +
+    "    <div class='pub'>" +
+    pubArray[0].title +
+    "</div>" +
+    pubArray[0].views +
+    "    <div class='ago'>" +
+    pubArray[0].dst +
+    "</div>" +
+    "    <input class='url' value='" +
+    pubArray[0].re +
+    "'>" +
+    "    <input class='share' value='" +
+    pubArray[0].share +
+    "'>" +
+    "    <input class='source' value='" +
+    pubArray[0].src +
+    "'>" +
+    "  </div>" +
+    "</div>"
+  );
+};
+
+
 var youtubeHTMLBuild = function (
+  title,
+  objectImage,
   dateTime,
   courtesyHeader,
   externalURL,
   styleHTML,
-  title,
+  share,
   views,
   titleTruncate,
   titleMore,
-  videoSource
+  videoSource,
+  menuIndex
 ) {
   return (
     "<div id='yt' class='item' " +
@@ -312,7 +391,32 @@ var youtubeHTMLBuild = function (
     externalURL +
     "'>" +
     "  <div class='header'>" +
-    courtesyHeader +
+    "<div class='courtesy' style='float:left'>" +
+    "  <img src='" +
+    objectImage +
+    "'>" +
+    "  <a ext='" +
+    externalURL +
+    "'>" +
+    "    <b>" +
+    title +
+    "</b>" +
+    "  </a>" +
+    "  <div class='copy'>" +
+    "  <div class='attr fa-ellipsis-h'></div>" +
+    "    <div class='attribute' style='height:110px'>" +
+    "      <div class='site'>Copy Url" +
+    "        <div style='float:right' class='fas fa-at'></div>" +
+    "      </div>" +
+    "      <div class='post' style='display:block'>Copy Post" +
+    "        <div style='float:right' class='fa fa-share'></div>" +
+    "      </div>" +
+    "      <div class='picture' style='display:block'>Copy Source" +
+    "        <div style='float:right' class='fa fa-camera'></div>" +
+    "      </div>" +
+    "    </div>" +
+    "  </div>" +
+    "</div>" +
     "</div>" +
     "  <div class='yt'>" +
     "    <iframe src='" +
@@ -330,8 +434,17 @@ var youtubeHTMLBuild = function (
     "  <div class='ago'>" +
     dateTime +
     "</div>" +
+    "    <input class='url' value='" +
+    externalURL +
+    "'>" +
+    "    <input class='share' value='" +
+    share +
+    "'>" +
+    "    <input class='source' value='" +
+    externalURL +
+    "'>" +
     "</div>"
-  )
+  );
 };
 
 var xmlHTMLBuild = function (
@@ -348,7 +461,7 @@ var xmlHTMLBuild = function (
   pubIndex,
   menuIndex
 ) {
-  return(
+  return (
     "<div class='item img-" +
     pubIndex +
     " item-" +

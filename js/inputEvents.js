@@ -92,33 +92,49 @@ document.addEventListener(
         document.getElementById("match").style.display = "none";
       if (document.getElementById("first").style.display === "block")
         document.getElementById("first").style.display = "none";
-      if (reader == true) {
-        var channel = document.querySelector(".channel");
-        if (document.body.contains(document.querySelector("channel")))
-          while (channel.lastChild) {
-            channel.removeChild(channel.lastChild);
-          }
-        category = event.target.closest(".index").getAttribute("response");
-        randomDuplicate = [];
-        first = false;
-        xmlRequestParsing(null, null, random());
-        notifyOption("Switched to now reading " + category + ".");
-      } else {
+      if (translations.includes(event.target.closest(".index").getAttribute("aria-item").capitalize())) {
+        id = 0;
+        document.querySelector('#top').style.display = 'block'
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        if (document.body.contains(document.querySelector("#visit")))
-          document.querySelector("#visit").style.display = "none";
-        topMenuBarDisplay(topBar);
-        init();
-        category =
-          menu[event.target.closest(".index").getAttribute("aria-item")].cat;
-        xmlRequestParsing(
-          null,
-          null,
-          event.target.closest(".index").getAttribute("aria-item")
-        );
+        populateCategoryGroup(event.target.closest(".index").getAttribute("aria-item").capitalize());
+        if (expand == true) var groupType = "list";
+        else var groupType = "blocks";
+        displayExpand(expand);
+        unloading();
+        visual();
+
+      } else {
+        if (reader == true) {
+          var channel = document.querySelector(".channel");
+          if (document.body.contains(document.querySelector("channel")))
+            while (channel.lastChild) {
+              channel.removeChild(channel.lastChild);
+            }
+          category = event.target.closest(".index").getAttribute("response");
+          randomDuplicate = [];
+          first = false;
+          xmlRequestParsing(null, null, random());
+          notifyOption("Switched to now reading " + category + ".");
+        } else {
+          if (document.body.contains(document.querySelector("#feed")))
+            document.querySelector("#feed").remove();
+          if (document.body.contains(document.querySelector("#group")))
+            document.querySelector("#group").remove();
+          if (document.body.contains(document.querySelector("#visit")))
+            document.querySelector("#visit").style.display = "none";
+          topMenuBarDisplay(topBar);
+          init();
+          category =
+            menu[event.target.closest(".index").getAttribute("aria-item")].cat;
+          xmlRequestParsing(
+            null,
+            null,
+            event.target.closest(".index").getAttribute("aria-item")
+          );
+        }
       }
     }
     event.preventDefault();

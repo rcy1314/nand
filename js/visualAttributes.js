@@ -32,12 +32,14 @@ var visual = function (opDefine) {
         .querySelectorAll(".attribute div")
         .forEach((a) => a.classList.add("oppositeOver"));
       document
-        .querySelectorAll("#feed.item .classic")
+        .querySelectorAll("#feed .item .classic")
         .forEach((a) => a.classList.add("oppositeOverBorderless"));
       document
         .querySelectorAll("#feed .item")
         .forEach((a) => a.classList.add("oppositeOver"));
-      document.querySelector("#feed .channel .item").style.boxShadow = "none";
+        document
+          .querySelectorAll("#feed .item")
+          .forEach((a) => a.style.boxShadow = 'non');
       document
         .querySelectorAll(".combine a")
         .forEach((a) => (a.style.color = "#f7426C"));
