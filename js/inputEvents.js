@@ -36,7 +36,7 @@ document.addEventListener(
         var index;
         index =
           "<div class='index' tabIndex='-1' aria-item='" +
-          translations[i].toLowerCase() +
+          translations[i] +
           "'>" +
           "  <div class='detail translation'>" +
           "    <img class='hue' src='images/" +
@@ -92,15 +92,15 @@ document.addEventListener(
         document.getElementById("match").style.display = "none";
       if (document.getElementById("first").style.display === "block")
         document.getElementById("first").style.display = "none";
-      if (translations.includes(event.target.closest(".index").getAttribute("aria-item").capitalize())) {
+      if (translations.includes(event.target.closest(".index").getAttribute("aria-item"))) {
         id = 0;
         document.querySelector('#top').style.display = 'block'
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        category = event.target.closest(".index").getAttribute("aria-item").capitalize()
-        populateCategoryGroup(event.target.closest(".index").getAttribute("aria-item").capitalize());
+        category = event.target.closest(".index").getAttribute("aria-item")
+        populateCategoryGroup(event.target.closest(".index").getAttribute("aria-item"));
         if (expand == true) var groupType = "list";
         else var groupType = "blocks";
         displayExpand(expand);
@@ -301,15 +301,15 @@ document.addEventListener(
     } else if (event.target.id == "search") {
       if (document.body.contains(document.querySelector("#match .listing .hover")) &&
       translations.includes(document.querySelector("#match .listing .hover")
-          .getAttribute('aria-item').capitalize())){
+          .getAttribute('aria-item'))){
               document.querySelector('#match').style.display = 'none'
               if (document.body.contains(document.querySelector("#feed")))
                 document.querySelector("#feed").remove();
               if (document.body.contains(document.querySelector("#group")))
                 document.querySelector("#group").remove();
               category = document.querySelector("#match .listing .hover")
-                  .getAttribute('aria-item').capitalize()
-              document.title = category.capitalize();
+                  .getAttribute('aria-item')
+              document.title = category;
               populateCategoryGroup(category);
               if (expand == true) var groupType = "list";
               else var groupType = "blocks";
@@ -347,7 +347,7 @@ document.addEventListener(
           document.querySelector('#first .hover').getAttribute('aria-item')
         )
         return false
-      } else if (document.querySelector('.focus .guest').value.length) {
+      } else if (document.querySelector('.focus .guest').value.length > 0) {
         var query = document.querySelector('.focus .guest').value.space()
         query.replace(/\s/, '+')
         var uri = '?q=' + query

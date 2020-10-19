@@ -603,7 +603,7 @@ var filterInputResponse = function (
       filter.push(menu.indexOf(menu[i]));
   }
   if (!match) match = filter[0];
-  if (filter.length == 0) xmlRequestParsing("search", n, 0, null);
+  if (filter.length == 0) xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
     document.querySelector("#visit").style.display = "none";
     var main = document.querySelector("#main");
@@ -1096,25 +1096,24 @@ var xmlImageAttributes = function (empty, n, item, src) {
 };
 
 
-var xmlRequestParsing = function (e, s, n) {
-  id = n;
+var xmlRequestParsing = function (search, string, index) {
   obj = [];
   dupe = [];
   var local;
+  id = index;
   var pub = [];
   var src = "";
   var parse = [];
   var images = [];
-  if (e == "search") {
-    uri = cors + menu[n].uri + s + "&format=RSS";
+  if (search == "search") {
+    uri = cors + menu[index].uri + string + "&format=RSS";
     category = category;
   } else {
-    uri = cors + menu[n].uri;
-    category = menu[n].cat;
+    uri = cors + menu[index].uri;
+    category = menu[index].cat;
   }
 
-  var doc = menu[n].id.space().capitalize();
-  document.title = doc;
+  document.title = menu[index].id.space();
   document.querySelector("#visit").style.display = "none";
   document.querySelector("#toggle").style.display = "none";
 
@@ -1133,7 +1132,7 @@ var xmlRequestParsing = function (e, s, n) {
 
         var quit = 20;
 
-        if (menu[n].id.match(/Imgur/g)) quit = 50;
+        if (menu[index].id.match(/Imgur/g)) quit = 50;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
@@ -1158,21 +1157,21 @@ var xmlRequestParsing = function (e, s, n) {
           var trun = truncate(title, 125, true);
           parse = xmlTimeStampParsing(channel, data);
 
-          var share = menu[n].hash;
+          var share = menu[index].hash;
           var share = window.location.origin + "/?" + share + parse.gen;
 
           var src = xmlImageSource(data);
 
           var courtesy = courtesyHeader(
-            menu[n].id.match(/([^\/]+)$/g),
-            menu[n].img.image(),
-            menu[n].ext
+            menu[index].id.match(/([^\/]+)$/g),
+            menu[index].img.image(),
+            menu[index].ext
           );
 
           if (title.length > 125) var more = "<div class='more'>more</div>";
           else var more = "";
 
-          if (e == "search")
+          if (search == "search")
             var cat = "<div class='external'>" + parse.re + "</div>";
 
           if (src && src.match(/youtube\.com/g)) {
@@ -1189,8 +1188,8 @@ var xmlRequestParsing = function (e, s, n) {
             else var views = "";
 
             html = youtubeHTMLBuild(
-              menu[n].id.match(/([^\/]+)$/g),
-              menu[n].img.image(),
+              menu[index].id.match(/([^\/]+)$/g),
+              menu[index].img.image(),
               parse.dst,
               courtesy,
               parse.re,
@@ -1200,7 +1199,7 @@ var xmlRequestParsing = function (e, s, n) {
               trun,
               more,
               src,
-              n
+              index
             );
           } else {
 
@@ -1219,7 +1218,7 @@ var xmlRequestParsing = function (e, s, n) {
               cat,
               src,
               i,
-              n
+              index
             );
           }
 
@@ -1256,18 +1255,18 @@ var xmlRequestParsing = function (e, s, n) {
             suggestions.removeChild(suggestions.lastChild);
           }
         }
-        if (isNumeric(local) && menu[n].id.match(/Youtube/g)){
+        if (isNumeric(local) && menu[index].id.match(/Youtube/g)){
           var sticky = [];
           sticky.push({
-            title: menu[n].id.match(/([^\/]+)$/g),
+            title: menu[index].id.match(/([^\/]+)$/g),
             element: pub[local].element,
-            image: menu[n].img.image(),
+            image: menu[index].img.image(),
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
             re: pub[local].re,
             views: views,
-            id: n
+            id: index
           });
           guideDisplayYoutube(sticky);
         } else if (isNumeric(local)) {
@@ -1280,26 +1279,26 @@ var xmlRequestParsing = function (e, s, n) {
             dst: pub[local].dst,
             src: pub[local].src,
             re: pub[local].re,
-            id: n,
+            id: index,
           });
           guideDisplay(sticky);
         }
         for (i = 0; i < pub.length; i++) {
             document.querySelector(".channel").innerHTML =
               document.querySelector(".channel").innerHTML + pub[i].post;
-          if (menu[n].id.match(/Imgur/g) && !menu[n].id.match(/Youtube/g))
-            xmlImageAttributes(true, n, pub[i].element, pub[i].src);
+          if (menu[index].id.match(/Imgur/g) && !menu[index].id.match(/Youtube/g))
+            xmlImageAttributes(true, index, pub[i].element, pub[i].src);
           else
-            xmlImageAttributes(false, n, pub[i].element, pub[i].src);
+            xmlImageAttributes(false, index, pub[i].element, pub[i].src);
         }
-        var posts = pub.length - 1;
         var oldest = pub[pub.length - 1].dst;
+        var posts = pub.length - 1;
         var recent = pub[0].dst;
         if (reader == false)
           document.querySelector(".channel").innerHTML =
           document.querySelector(".channel").innerHTML +
           footerBuild();
-        contentStatusDisplay(n, recent, oldest, posts);
+        contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();

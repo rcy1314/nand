@@ -212,9 +212,8 @@
   }
 
   html body #container #main #feed .center {
-	  margin-right: 50px;
+	  margin-right: 30px;
     width: 420px;
-    left: -10px;
   }
 
   html body #container #main #feed .content {
@@ -251,6 +250,10 @@
     width: 90%;
   }
 
+  html body #container #main #top #arm #search #input {
+    margin: 0 17px;
+  }
+
   html body #container #main #top #arm #option {
     position: absolute;
     display: block;
@@ -262,13 +265,12 @@
   }
 
   html body #container #main #feed .center {
-	margin-right: 60px;
     width: 420px;
-	left: -20px;
+	  left: -20px;
   }
 
   html body #container #main #feed .content {
-	display: inline-block;
+	  display: inline-block;
   }
 
   html body #container #main #visit #page .quick {
@@ -277,7 +279,8 @@
   }
 
 }
-@media screen and (min-width: 1025px) {
+
+@media screen and (min-width: 1024px) {
 
   html body #container {
     width: 100%;
@@ -308,7 +311,11 @@
   }
 
   html body #container #main #top #arm {
-    width: 940px;
+    width: 670px;
+  }
+
+  html body #container #main #top #arm #search #input {
+    margin: 0 auto;
   }
 
   html body #container #main #top #arm #search #home {
@@ -320,8 +327,8 @@
   }
 
   html body #container #main #feed .center {
-    margin-left: 60px;
-    width: 600px;
+    width: 410px;
+    left: 10px;
   }
 
   html body #container #main #group .air,
@@ -354,4 +361,17 @@
   html body #container #main #feed .content {
     margin-left: 10px;
   }
+}
+@media screen and (min-width: 1440px) {
+
+  html body #container #main #top #arm {
+    width: 940px;
+  }
+
+  html body #container #main #feed .center {
+    margin-right: 115px;
+    width: 600px;
+    left: 0;
+  }
+
 }

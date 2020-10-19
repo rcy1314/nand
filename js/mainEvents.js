@@ -107,6 +107,9 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains("feed") ||
+      event.target.classList.contains("cat") ||
+      event.target.classList.contains("sel") ||
+      event.target.id == "hide" ||
       event.target.id == "container" ||
       event.target.id == "search" ||
       event.target.id == "option" ||
