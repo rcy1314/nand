@@ -35,13 +35,13 @@ document.addEventListener(
   "click",
   function (event) {
     if (event.target.id == "hide") {
-      if (sidebarFirst == 'false'){
-        sidebarFirst = 'true'
+      if (sidebarFirst == "false") {
+        sidebarFirst = "true";
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       }
-      if (sidebarFirst == 'true'){
-        sidebarFirst = 'false'
+      if (sidebarFirst == "true") {
+        sidebarFirst = "false";
         sideBarDisplay(onScreen);
       }
     }
@@ -66,7 +66,9 @@ document.addEventListener(
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
       category = event.target.closest(".cat").getAttribute("aria-item");
-      populateCategoryGroup(event.target.closest(".cat").getAttribute("aria-item"));
+      populateCategoryGroup(
+        event.target.closest(".cat").getAttribute("aria-item")
+      );
       if (!event.target.classList.contains("webp"))
         event.target.classList.add("selected");
       topMenuBarDisplay(topBar);
@@ -76,8 +78,7 @@ document.addEventListener(
     if (
       event.target.classList.contains("sideHome") ||
       event.target.classList.contains("side") ||
-      event.target.id == "mobileHome" &&
-      event.target.id != "Home"
+      (event.target.id == "mobileHome" && event.target.id != "Home")
     ) {
       id = 0;
       if (document.body.contains(document.querySelector("#feed")))
@@ -259,7 +260,7 @@ document.addEventListener(
       event.target.classList.contains("Random") ||
       event.target.classList.contains("fa-pie-chart")
     ) {
-      init()
+      init();
       showOption = showOption != true;
       notifyOption("Option set to " + showOption.toString().capitalize());
       if (showOption == false)

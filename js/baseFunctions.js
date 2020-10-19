@@ -1,56 +1,63 @@
-var op = 0 //1 invert, 0 opposite
-var topBar = true //display top menubar on content
-var expand = true //filter populate list display
-var reader = false //main scroll category reader xml
-var onScreen = true //display sidebar on visit
-var groupType = 'list' //or 'blocks'
-var showOption = true //show tag Options in top
-var quickFeeds = true //show or hide
-var loading = 'percent' //or 'percent'
-var category = 'Social' //legacy set by xml
-var onlyImages = false //grep, random, populate
-var centerFeeds = false //display quick feeds above xml
-var suggestionBuffer = 7 //input suggest length
-var contentStatusBuffer = 8 //feed content suggestions
-var cors = 'https://acktic-github-io.herokuapp.com/' // cors-anywhere
+var op = 0; //1 invert, 0 opposite
+var topBar = true; //display top menubar on content
+var expand = true; //filter populate list display
+var reader = false; //main scroll category reader xml
+var onScreen = true; //display sidebar on visit
+var groupType = "list"; //or 'blocks'
+var showOption = true; //show tag Options in top
+var quickFeeds = true; //show or hide
+var loading = "percent"; //or 'percent'
+var category = "Social"; //legacy set by xml
+var onlyImages = false; //grep, random, populate
+var centerFeeds = false; //display quick feeds above xml
+var suggestionBuffer = 7; //input suggest length
+var contentStatusBuffer = 8; //feed content suggestions
+var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
 
-var translations =
-  ['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube'] // reorder option
+var translations = [
+  "Social",
+  "News",
+  "Entertainment",
+  "Sports",
+  "Technology",
+  "World",
+  "Youtube",
+]; // reorder option
 
-  /* Feel free to edit the above. */
+/* Feel free to edit the above. */
 
-  var id //feed indexOf menu
-  var post //from init.js timestamp
-  var tap = 0 //used in main.js for images
-  var complete //core.js interval for progress
-  var dupe = [] //image src duplicate catch
-  var local
-  var httpRequest //uri xml httpRequest
-  var random = [] //core.js random feed in category
-  var filter = [] //response array for menu indexes
-  var first = true //reader append feed center channel
-  var sidebarFirst = 'true'//first click show
-  var expand = true //filter populate list display
-  var contrast = false //opposite of op
-  var randomDuplicate = [] //core.js random duplicate xml
+var id; //feed indexOf menu
+var post; //from init.js timestamp
+var tap = 0; //used in main.js for images
+var complete; //core.js interval for progress
+var dupe = []; //image src duplicate catch
+var local;
+var httpRequest; //uri xml httpRequest
+var random = []; //core.js random feed in category
+var filter = []; //response array for menu indexes
+var first = true; //reader append feed center channel
+var sidebarFirst = "true"; //first click show
+var expand = true; //filter populate list display
+var contrast = false; //opposite of op
+var randomDuplicate = []; //core.js random duplicate xml
 
 var selections = [
-  {name:"Opposite",class:"Night",icon:"fa-code"},
-  {name:"Invert",class:"Day",icon:"fa-terminal"},
-  {name:"Home",class:"sideHome",icon:"side fa-home"},
-  {name:"Random",class:"Random",icon:"fa-chart-pie"},
-  {name:"Random Image",class:"RandomImages",icon:"fa-tablet-alt"},
-  {name:"Random in Category",class:"RandomCategory",icon:"fa-sliders-h"},
-  {name:"Reader",class:"Reader",icon:"fa-heart continuous"},
-  {name:"Contrast",class:"Switch",icon:"fa-adjust"},
-  {name:"List",class:"List",icon:"fa-th-large"},
-  {name:"Blocks",class:"Blocks",icon:"fa-list-ul"},
-  {name:"Percent",class:"Percent",icon:"fa-signal"},
-  {name:"Dots",class:"Dots",icon:"sideDots fa-ellipsis-h"},
-  {name:"Images",class:"toggleImages",icon:"fa-camera-retro"},
-  {name:"Top Bar",class:"TopBar",icon:"fa-edit"},
-  {name:"Show Option",class:"ShowOption",icon:"fa-puzzle-piece"},
-  {name:"Repository",class:"Info",icon:"fa-exclamation-circle"}
+  { name: "Opposite", class: "Night", icon: "fa-code" },
+  { name: "Invert", class: "Day", icon: "fa-terminal" },
+  { name: "Home", class: "sideHome", icon: "side fa-home" },
+  { name: "Random", class: "Random", icon: "fa-chart-pie" },
+  { name: "Random Image", class: "RandomImages", icon: "fa-tablet-alt" },
+  { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
+  { name: "Reader", class: "Reader", icon: "fa-heart continuous" },
+  { name: "Contrast", class: "Switch", icon: "fa-adjust" },
+  { name: "List", class: "List", icon: "fa-th-large" },
+  { name: "Blocks", class: "Blocks", icon: "fa-list-ul" },
+  { name: "Percent", class: "Percent", icon: "fa-signal" },
+  { name: "Dots", class: "Dots", icon: "sideDots fa-ellipsis-h" },
+  { name: "Images", class: "toggleImages", icon: "fa-camera-retro" },
+  { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
+  { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
+  { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
 ];
 
 var notifyOption = function (displayContent) {
@@ -158,7 +165,6 @@ var displayExpand = function (n) {
   unloading();
 };
 
-
 var sideBarDisplay = function (n) {
   if (onScreen == true) {
     var Elem = document.querySelector("#sidebar");
@@ -182,15 +188,16 @@ var sideBarDisplay = function (n) {
     var select = document.querySelector("#select");
     if (!document.body.contains(document.querySelector(".cat"))) {
       for (i = 0; i <= translations.length - 1; i++) {
-        category.innerHTML = category.innerHTML +
-          sidebarCategoryBuild(translations[i]);
+        category.innerHTML =
+          category.innerHTML + sidebarCategoryBuild(translations[i]);
       }
       for (i = 0; i <= selections.length - 1; i++) {
-        select.innerHTML = select.innerHTML +
+        select.innerHTML =
+          select.innerHTML +
           sidebarOptionBuild(
             selections[i].class,
             selections[i].name,
-            selections[i].icon,
+            selections[i].icon
           );
       }
     }
@@ -217,7 +224,6 @@ var topMenuBarDisplay = function (n) {
   }
 };
 
-
 var quickFeedDisplay = function (n) {
   if (n == true) {
     document.querySelector(".quick").classList.add("visible");
@@ -227,7 +233,7 @@ var quickFeedDisplay = function (n) {
     document.querySelector(".fa-angle-up").classList.add("rotate");
     document.querySelector(".fa-angle-up").classList.remove("rotateReverse");
     document.querySelector(".link").classList.add("slideRight");
-    document.querySelector(".show").style.visibility = 'hidden';
+    document.querySelector(".show").style.visibility = "hidden";
     setTimeout(function () {
       document.querySelector(".fa-angle-up").classList.add("rotate");
     }, 1000);
@@ -239,7 +245,7 @@ var quickFeedDisplay = function (n) {
     document.querySelector(".fa-angle-up").classList.remove("rotate");
     document.querySelector(".fa-angle-up").classList.add("rotateReverse");
     document.querySelector(".link").classList.remove("slideRight");
-    document.querySelector(".show").style.visibility = 'visible';
+    document.querySelector(".show").style.visibility = "visible";
   }
 };
 
@@ -265,17 +271,20 @@ var guideDisplayYoutube = function (pubArray) {
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
   guide.innerHTML = guideBuildYoutube(pubArray);
-  guide.querySelector('.checkmark').style.display = 'block';
+  guide.querySelector(".checkmark").style.display = "block";
   guide.style.display = "flex";
   visual();
 };
 
-
-var contentStatusDisplay = function (menuIndex, recentPost, oldestPost, postsCount) {
+var contentStatusDisplay = function (
+  menuIndex,
+  recentPost,
+  oldestPost,
+  postsCount
+) {
   if (document.body.contains(document.querySelector("#feed .status"))) {
     var status = document.querySelector("#feed .status");
-    status.innerHTML =
-    contentBuild(
+    status.innerHTML = contentBuild(
       oldestPost,
       recentPost,
       postsCount,
@@ -303,12 +312,13 @@ var quickFeedAsset = function (feedAssets) {
       ) {
         dupe.push(randomMenuObject);
         var asset;
-        feed.innerHTML = feed.innerHTML +
+        feed.innerHTML =
+          feed.innerHTML +
           assetBuild(
             menu.indexOf(menu[randomMenuObject]),
             menu[randomMenuObject].img.image(),
             menu[randomMenuObject].id
-          )
+          );
       }
     }
   visual();
@@ -340,8 +350,8 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
             ) + listing.innerHTML;
         });
         suggest.push(i);
-      };
-      setTimeout(500)
+      }
+      setTimeout(500);
     }
   for (i = 1; i <= menu.length - 1; i++) {
     var randomMenuObject = menu.indexOf(
@@ -364,10 +374,9 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
         );
       });
     if (suggest.length >= suggestionBuffer) return false;
-    setTimeout(500)
+    setTimeout(500);
   }
 };
-
 
 var progressBackDrop = function (done, percent) {
   if (
@@ -417,41 +426,44 @@ var progressBackDrop = function (done, percent) {
   }
 };
 
-
 var xmlStatusSuggestions = function () {
   var duplicate = [];
   if (document.body.contains(document.querySelector("#main .suggestions"))) {
     var suggestions = document.querySelector("#main .suggestions");
-  if (document.body.contains(document.querySelector("#main .suggestions .combine")))
-    while (suggestions.firstChild) suggestions.removeChild(suggestions.lastChild);
-  for (var i = 0; i <= contentStatusBuffer; i++) {
-    var randomMenuObject = menu.indexOf(
-      menu[Math.floor(Math.random() * menu.length - 1)]
-    );
     if (
-      randomMenuObject != 0 &&
-      menu[randomMenuObject] &&
-      !duplicate.includes(randomMenuObject)
-    ) {
-      if (menu[randomMenuObject].media == true)
-        var media = "feed contains images";
-      else if (menu[randomMenuObject].media == false)
-        var media = "feed might not contain images";
-      duplicate.push(randomMenuObject);
-      suggestions.innerHTML = suggestions.innerHTML +
-        suggestBuild(
-          media,
-          menu.indexOf(menu[randomMenuObject]),
-          menu[randomMenuObject].img.image(),
-          menu[randomMenuObject].id,
-          menu[randomMenuObject].cat
-        )
-
+      document.body.contains(
+        document.querySelector("#main .suggestions .combine")
+      )
+    )
+      while (suggestions.firstChild)
+        suggestions.removeChild(suggestions.lastChild);
+    for (var i = 0; i <= contentStatusBuffer; i++) {
+      var randomMenuObject = menu.indexOf(
+        menu[Math.floor(Math.random() * menu.length - 1)]
+      );
+      if (
+        randomMenuObject != 0 &&
+        menu[randomMenuObject] &&
+        !duplicate.includes(randomMenuObject)
+      ) {
+        if (menu[randomMenuObject].media == true)
+          var media = "feed contains images";
+        else if (menu[randomMenuObject].media == false)
+          var media = "feed might not contain images";
+        duplicate.push(randomMenuObject);
+        suggestions.innerHTML =
+          suggestions.innerHTML +
+          suggestBuild(
+            media,
+            menu.indexOf(menu[randomMenuObject]),
+            menu[randomMenuObject].img.image(),
+            menu[randomMenuObject].id,
+            menu[randomMenuObject].cat
+          );
       }
     }
   }
 };
-
 
 var populateCategoryGroup = function (translation) {
   var main = document.getElementById("main");
@@ -471,15 +483,16 @@ var populateCategoryGroup = function (translation) {
     if (menu[id].media == true)
       var media = "<div class='media' style='display:none'>Images</div>";
     else var media = "<div class='blank'></div>";
-    result.innerHTML = result.innerHTML +
-    categoryBuild(
-      menu[id].id.match(/[^\/]+$/g),
-      menu.indexOf(menu[id]),
-      menu[id].img.image(),
-      menu[id].hash,
-      menu[id].des,
-      media
-    );
+    result.innerHTML =
+      result.innerHTML +
+      categoryBuild(
+        menu[id].id.match(/[^\/]+$/g),
+        menu.indexOf(menu[id]),
+        menu[id].img.image(),
+        menu[id].hash,
+        menu[id].des,
+        media
+      );
   }
   for (var i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
@@ -491,27 +504,29 @@ var populateCategoryGroup = function (translation) {
         translation == menu[i].cat &&
         id != menu.indexOf(menu[i])
       ) {
-        result.innerHTML = result.innerHTML +
-        categoryBuild(
-          menu[i].id.match(/[^\/]+$/g),
-          menu.indexOf(menu[i]),
-          menu[i].img.image(),
-          menu[i].hash,
-          menu[i].des,
-          media
-        );
+        result.innerHTML =
+          result.innerHTML +
+          categoryBuild(
+            menu[i].id.match(/[^\/]+$/g),
+            menu.indexOf(menu[i]),
+            menu[i].img.image(),
+            menu[i].hash,
+            menu[i].des,
+            media
+          );
       }
     } else if (onlyImages == false) {
       if (translation == menu[i].cat && id != menu.indexOf(menu[i])) {
-        result.innerHTML = result.innerHTML +
-        categoryBuild(
-          menu[i].id.match(/[^\/]+$/g),
-          menu.indexOf(menu[i]),
-          menu[i].img.image(),
-          menu[i].hash,
-          menu[i].des,
-          media
-        );
+        result.innerHTML =
+          result.innerHTML +
+          categoryBuild(
+            menu[i].id.match(/[^\/]+$/g),
+            menu.indexOf(menu[i]),
+            menu[i].img.image(),
+            menu[i].hash,
+            menu[i].des,
+            media
+          );
       }
     }
   }
@@ -523,15 +538,10 @@ var populateCategoryGroup = function (translation) {
   }
 };
 
-
 var reverseCategoryGroup = function (translation) {
   var group = document.querySelector("#group");
   var node = document.querySelector(".result");
-  if (
-    !document.body.contains(
-      document.querySelector(".air")
-    )
-  ) {
+  if (!document.body.contains(document.querySelector(".air"))) {
     var div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
@@ -542,22 +552,20 @@ var reverseCategoryGroup = function (translation) {
       if (menu[i].media == true)
         var media = "<div class='media' style='display:none'>Images</div>";
       else var media = "<div class='blank'></div>";
-      var scroll =
-      categoryBuild(
+      var scroll = categoryBuild(
         menu[i].id.match(/[^\/]+$/g),
         menu.indexOf(menu[i]),
         menu[i].img.image(),
         menu[i].hash,
         menu[i].des,
         media
-      )
+      );
       air.innerHTML = air.innerHTML + scroll;
     }
   }
   displayExpand(expand);
   visual();
 };
-
 
 var filterInputResponse = function (
   initPassthrough,
@@ -603,7 +611,8 @@ var filterInputResponse = function (
       filter.push(menu.indexOf(menu[i]));
   }
   if (!match) match = filter[0];
-  if (filter.length == 0) xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
+  if (filter.length == 0)
+    xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
     document.querySelector("#visit").style.display = "none";
     var main = document.querySelector("#main");
@@ -615,7 +624,8 @@ var filterInputResponse = function (
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
-    else if (isNumeric(match) && filter.length == 1) xmlRequestParsing(null, null, match);
+    else if (isNumeric(match) && filter.length == 1)
+      xmlRequestParsing(null, null, match);
   }
   if (initPassthrough == false && categoryBloat == true && match)
     populateCategoryGroup(menu[match].cat);
@@ -627,8 +637,7 @@ var writeFilterResponse = function (menuObject) {
   if (menu[menuObject].media == true)
     var media = "<div class='media' style='display:none'>Images</div>";
   else var media = "<div class='blank'></div>";
-  result.innerHTML +=
-  filterBuild(
+  result.innerHTML += filterBuild(
     menu[menuObject].id.match(/[^\/]+$/g),
     menu.indexOf(menu[menuObject]),
     menu[menuObject].img.image(),
@@ -636,10 +645,8 @@ var writeFilterResponse = function (menuObject) {
     menu[menuObject].des,
     media
   );
-  main.innerHTML = result.innerHTML + main.innerHTML
+  main.innerHTML = result.innerHTML + main.innerHTML;
 };
-
-
 
 var xmlImageSource = function (xhr) {
   if (xhr.getElementsByTagName("content").length > 0) {
@@ -800,7 +807,6 @@ var xmlImageSource = function (xhr) {
   return src;
 };
 
-
 var xmlTimeStampParsing = function (channel, dateTime) {
   var parse = [];
   if (channel == "entry") {
@@ -904,46 +910,43 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   return parse[0];
 };
 
-
 var guideImageAttributes = function (src) {
   var guide = document.querySelector("#guide");
   var newImg = new Image();
   newImg.setAttribute("src", src);
   newImg.onload = function () {
-      guide.querySelector(".img").setAttribute("src", src);
+    guide.querySelector(".img").setAttribute("src", src);
+    guide.querySelector(".sticky").style.display = "block";
+    guide.querySelector(".checkmark").style.display = "block";
+    if (document.querySelector("#main").clientWidth <= 426) {
+      document.querySelector("#main").classList.add("guide");
+      document.querySelector("#guide .wrap").style.maxWidth = "75vw";
+      document.querySelector("#guide .sticky .header").style.position =
+        "absolute";
+      if (newImg.naturalWidth >= newImg.naturalHeight) {
+        guide.querySelector(".img").style.maxHeight = "50vh";
+        guide.querySelector(".image").style.maxWidth = "100vw";
+        document.querySelector("#guide .wrap").style.width = "100vw";
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
+        guide.querySelector(".img").style.maxWidth = "70vw";
+        guide.querySelector(".img").style.maxHeight = "50vh";
+      }
+      document.querySelector("#guide .sticky .header").style.top =
+        ~document.querySelector("#guide .img").style.height - "60";
+    } else {
+      document.querySelector("#main").classList.add("guide");
       guide.querySelector(".sticky").style.display = "block";
       guide.querySelector(".checkmark").style.display = "block";
-        if ((document.querySelector('#main').clientWidth <= 426)
-          ) {
-            document.querySelector("#main").classList.add("guide");
-            document.querySelector('#guide .wrap').style.maxWidth = '75vw'
-            document.querySelector('#guide .sticky .header').style.position = 'absolute'
-            if (newImg.naturalWidth >= newImg.naturalHeight){
-              guide.querySelector(".img").style.maxHeight = "50vh";
-              guide.querySelector(".image").style.maxWidth = "100vw";
-              document.querySelector('#guide .wrap').style.width = '100vw'
-            }
-            else if (newImg.naturalHeight >= newImg.naturalWidth){
-              guide.querySelector(".img").style.maxWidth = "70vw";
-              guide.querySelector(".img").style.maxHeight = "50vh";
-            }
-            document.querySelector('#guide .sticky .header').style.top =
-              ~document.querySelector('#guide .img').style.height - '60'
-        } else {
-          document.querySelector("#main").classList.add("guide");
-          guide.querySelector(".sticky").style.display = "block";
-          guide.querySelector(".checkmark").style.display = "block";
-          if (newImg.naturalWidth >= newImg.naturalHeight)
-            guide.querySelector(".img").style.maxWidth = "70vw";
-          else if (newImg.naturalHeight >= newImg.naturalWidth) {
-            guide.querySelector(".img").style.maxWidth = "40vw";
-            guide.querySelector(".img").style.maxHeight = "90vh";
-          }
+      if (newImg.naturalWidth >= newImg.naturalHeight)
+        guide.querySelector(".img").style.maxWidth = "70vw";
+      else if (newImg.naturalHeight >= newImg.naturalWidth) {
+        guide.querySelector(".img").style.maxWidth = "40vw";
+        guide.querySelector(".img").style.maxHeight = "90vh";
       }
-      guide.style.display = "flex";
-    };
-}
-
+    }
+    guide.style.display = "flex";
+  };
+};
 
 var xmlImageAttributes = function (empty, n, item, src) {
   var maximum = 799;
@@ -1071,11 +1074,11 @@ var xmlImageAttributes = function (empty, n, item, src) {
             )
           )
             document.querySelector(".img-" + item + " .pending").remove();
-            if (
-              document.body.contains(
-                document.querySelector(".item-" + n + " .src-" + item)
-              )
+          if (
+            document.body.contains(
+              document.querySelector(".item-" + n + " .src-" + item)
             )
+          )
             document.querySelector(
               ".item-" + n + " .src-" + item
             ).style.display = "block";
@@ -1083,18 +1086,17 @@ var xmlImageAttributes = function (empty, n, item, src) {
       };
     } else if (
       document.body.contains(
-        document.querySelector(
-          ".item-" + n + " .src-" + item
-        )
+        document.querySelector(".item-" + n + " .src-" + item)
       )
     )
-    document.querySelector(
-      ".item-" + n + " .src-" + item
-    ).closest(".item").querySelector(".pending").remove();
+      document
+        .querySelector(".item-" + n + " .src-" + item)
+        .closest(".item")
+        .querySelector(".pending")
+        .remove();
     visual();
   });
 };
-
 
 var xmlRequestParsing = function (search, string, index) {
   obj = [];
@@ -1175,8 +1177,7 @@ var xmlRequestParsing = function (search, string, index) {
             var cat = "<div class='external'>" + parse.re + "</div>";
 
           if (src && src.match(/youtube\.com/g)) {
-            if (
-              data.getElementsByTagName("media:statistics").length > 0)
+            if (data.getElementsByTagName("media:statistics").length > 0)
               var views =
                 "<div class='ago views'>" +
                 "  views " +
@@ -1202,11 +1203,9 @@ var xmlRequestParsing = function (search, string, index) {
               index
             );
           } else {
-
             if (!cat) cat = "";
 
-            html =
-            xmlHTMLBuild(
+            html = xmlHTMLBuild(
               parse.dst,
               parse.re,
               courtesy,
@@ -1255,7 +1254,7 @@ var xmlRequestParsing = function (search, string, index) {
             suggestions.removeChild(suggestions.lastChild);
           }
         }
-        if (isNumeric(local) && menu[index].id.match(/Youtube/g)){
+        if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),
@@ -1266,7 +1265,7 @@ var xmlRequestParsing = function (search, string, index) {
             src: pub[local].src,
             re: pub[local].re,
             views: views,
-            id: index
+            id: index,
           });
           guideDisplayYoutube(sticky);
         } else if (isNumeric(local)) {
@@ -1284,20 +1283,21 @@ var xmlRequestParsing = function (search, string, index) {
           guideDisplay(sticky);
         }
         for (i = 0; i < pub.length; i++) {
-            document.querySelector(".channel").innerHTML =
-              document.querySelector(".channel").innerHTML + pub[i].post;
-          if (menu[index].id.match(/Imgur/g) && !menu[index].id.match(/Youtube/g))
+          document.querySelector(".channel").innerHTML =
+            document.querySelector(".channel").innerHTML + pub[i].post;
+          if (
+            menu[index].id.match(/Imgur/g) &&
+            !menu[index].id.match(/Youtube/g)
+          )
             xmlImageAttributes(true, index, pub[i].element, pub[i].src);
-          else
-            xmlImageAttributes(false, index, pub[i].element, pub[i].src);
+          else xmlImageAttributes(false, index, pub[i].element, pub[i].src);
         }
         var oldest = pub[pub.length - 1].dst;
         var posts = pub.length - 1;
         var recent = pub[0].dst;
         if (reader == false)
           document.querySelector(".channel").innerHTML =
-          document.querySelector(".channel").innerHTML +
-          footerBuild();
+            document.querySelector(".channel").innerHTML + footerBuild();
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);
@@ -1309,8 +1309,7 @@ var xmlRequestParsing = function (search, string, index) {
         var center;
         center.innerHTML = stageBuild();
         document.querySelector("#main").innerHTML =
-        document.querySelector("#main").innerHTML +
-        center;
+          document.querySelector("#main").innerHTML + center;
         var channel = document.querySelector(".channel");
         channel.append("This site could not be reached.");
         unloading();

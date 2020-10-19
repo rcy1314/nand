@@ -37,9 +37,9 @@ var visual = function (opDefine) {
       document
         .querySelectorAll("#feed .item")
         .forEach((a) => a.classList.add("oppositeOver"));
-        document
-          .querySelectorAll("#feed .item")
-          .forEach((a) => a.style.boxShadow = 'none');
+      document
+        .querySelectorAll("#feed .item")
+        .forEach((a) => (a.style.boxShadow = "none"));
       document
         .querySelectorAll(".combine a")
         .forEach((a) => (a.style.color = "#f7426C"));
@@ -69,17 +69,21 @@ var visual = function (opDefine) {
     }
     if (document.body.contains(document.querySelector("#group .air")))
       document.querySelector("#group .air").classList.add("opposite");
-      document.querySelector("#container #guide").classList.add("oppositeAlt");
-    if (document.body.contains(document.querySelector("#first .listing .index"))){
-      document.querySelector("#first").style.border = '.3px solid #0e0e0e';
-      document.querySelector("#first").style.boxShadow = 'none';
+    document.querySelector("#container #guide").classList.add("oppositeAlt");
+    if (
+      document.body.contains(document.querySelector("#first .listing .index"))
+    ) {
+      document.querySelector("#first").style.border = ".3px solid #0e0e0e";
+      document.querySelector("#first").style.boxShadow = "none";
     }
-    if (document.body.contains(document.querySelector("#match .listing .index"))){
-      document.querySelector("#match").style.border = '.3px solid #0e0e0e';
-      document.querySelector("#match").style.boxShadow = 'none';
+    if (
+      document.body.contains(document.querySelector("#match .listing .index"))
+    ) {
+      document.querySelector("#match").style.border = ".3px solid #0e0e0e";
+      document.querySelector("#match").style.boxShadow = "none";
     }
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
-      document.querySelector('.sticky .header').classList.add('oppositeAlt');
+      document.querySelector(".sticky .header").classList.add("oppositeAlt");
       document.querySelector(".sticky .wrap").classList.add("oppositeAlt");
       document.querySelector("#guide .blur").classList.add("blurNight");
     }
@@ -140,9 +144,13 @@ var visual = function (opDefine) {
     document
       .querySelector("#sidebar #content")
       .classList.add("oppositeScrollbar");
-    document.querySelector("#match .listing").classList.add("oppositeScrollbar");
+    document
+      .querySelector("#match .listing")
+      .classList.add("oppositeScrollbar");
     document.querySelector("#match .listing").classList.add("opposite");
-    document.querySelector("#first .listing").classList.add("oppositeScrollbar");
+    document
+      .querySelector("#first .listing")
+      .classList.add("oppositeScrollbar");
     document.querySelector("#first .listing").classList.add("opposite");
     document
       .querySelector("#favicon")
@@ -196,13 +204,17 @@ var visual = function (opDefine) {
     document.querySelector("#container #main").classList.add("invertAlt");
     document.querySelector("#container #visit").classList.add("invertAlt");
     document.querySelector(".quick .feed").classList.add("invertAlt");
-    if (document.body.contains(document.querySelector("#first .listing .index"))){
-      document.querySelector("#first").style.border = '.3px solid #dddddd';
-      document.querySelector("#first").style.boxShadow = 'none';
+    if (
+      document.body.contains(document.querySelector("#first .listing .index"))
+    ) {
+      document.querySelector("#first").style.border = ".3px solid #dddddd";
+      document.querySelector("#first").style.boxShadow = "none";
     }
-    if (document.body.contains(document.querySelector("#match .listing .index"))){
-      document.querySelector("#match").style.border = '.3px solid #dddddd';
-      document.querySelector("#match").style.boxShadow = 'none';
+    if (
+      document.body.contains(document.querySelector("#match .listing .index"))
+    ) {
+      document.querySelector("#match").style.border = ".3px solid #dddddd";
+      document.querySelector("#match").style.boxShadow = "none";
     }
     document.documentElement.style.setProperty(
       "--loader-color-primary",
@@ -231,11 +243,7 @@ var visual = function (opDefine) {
     document
       .querySelectorAll(".feed .translation")
       .forEach((a) => a.classList.add("invertOverBorderless"));
-    if (
-      document.body.contains(
-        document.querySelector(".quick .feed .asset")
-      )
-    )
+    if (document.body.contains(document.querySelector(".quick .feed .asset")))
       document
         .querySelectorAll(".feed .asset")
         .forEach((a) => a.classList.add("invertOverBorderless"));
@@ -253,10 +261,10 @@ var visual = function (opDefine) {
     if (document.body.contains(document.querySelector(".listing .hover"))) {
       document
         .querySelectorAll(".listing .hover")
-        .forEach((a) => (a.classList.add('visual.hover')));
+        .forEach((a) => a.classList.add("visual.hover"));
       document
         .querySelectorAll(".listing .hover")
-        .forEach((a) => (a.classList.add('visual')));
+        .forEach((a) => a.classList.add("visual"));
     }
     if (document.body.contains(document.querySelector(".listing .index"))) {
       if (document.body.contains(document.querySelector(".listing .buffer")))
@@ -304,7 +312,7 @@ var visual = function (opDefine) {
     );
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
-      document.querySelector('#guide .header').classList.add('invert');
+      document.querySelector("#guide .header").classList.add("invert");
       document.querySelector(".sticky .wrap").classList.add("invert");
       document.querySelector("#guide .blur").classList.add("blurDay");
     }

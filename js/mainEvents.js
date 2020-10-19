@@ -8,12 +8,13 @@ window.onload = function () {
   guest.style.textAlign = "left";
   guest.value = "";
   document.querySelector("#front .icon").classList.add("search");
+  document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
   quickFeedAsset(7);
   visual();
   if (document.querySelector("#main").clientWidth < 768) return true;
   else {
-    sidebarFirst = 'false'
+    sidebarFirst = "false";
     sideBarDisplay(onScreen);
   }
 };
@@ -78,7 +79,7 @@ document.addEventListener(
     }
     if (event.target.id == "home") {
       id = 0;
-      document.querySelector('#top').style.display = 'block'
+      document.querySelector("#top").style.display = "block";
       if (document.body.contains(document.querySelector("#feed")))
         document.querySelector("#feed").remove();
       if (document.body.contains(document.querySelector("#group")))
@@ -122,27 +123,29 @@ document.addEventListener(
       event.target.id == "arm" ||
       event.target.classList.contains("fa")
     ) {
-      if (document.getElementById("match").style.display === "block"){
+      if (document.getElementById("match").style.display === "block") {
         document.getElementById("match").style.display = "none";
-        document.querySelector('#input .view').blur()
-        document.querySelector('#input .view').setAttribute('placeholder', '');
-        document.querySelector('#input .view').style.caretColor = "#e4e4e4";
-        document.querySelector('#input .view').style.textAlign = "center";
-        document.querySelector('#input .view').style.paddingLeft = "0px";
-        document.querySelector('#input .icon').classList.remove('slide')
-        document.querySelector('#input .view').value = "Search";
-      } else if (document.querySelector("#main #first").style.display === "block") {
+        document.querySelector("#input .view").blur();
+        document.querySelector("#input .view").setAttribute("placeholder", "");
+        document.querySelector("#input .view").style.caretColor = "#e4e4e4";
+        document.querySelector("#input .view").style.textAlign = "center";
+        document.querySelector("#input .view").style.paddingLeft = "0px";
+        document.querySelector("#input .icon").classList.remove("slide");
+        document.querySelector("#input .view").value = "Search";
+      } else if (
+        document.querySelector("#main #first").style.display === "block"
+      ) {
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }
     }
     if (event.target.classList.contains("fa-expand-alt")) {
-      document.querySelector('#visit').style.display = 'none'
+      document.querySelector("#visit").style.display = "none";
       expand = expand != true;
       displayExpand(expand);
       if (expand == true) var groupType = "list";
       else var groupType = "blocks";
-      populateCategoryGroup(category)
+      populateCategoryGroup(category);
       visual();
     }
     if (
@@ -154,14 +157,16 @@ document.addEventListener(
       event.target.classList.contains("media") ||
       event.target.classList.contains("hash")
     ) {
-      if (document.getElementById("match").style.display === "block"){
+      if (document.getElementById("match").style.display === "block") {
         document.getElementById("match").style.display = "none";
-        document.querySelector('#search .view').blur()
-        return false
-      } else if (document.querySelector("#main #first").style.display === "block") {
+        document.querySelector("#search .view").blur();
+        return false;
+      } else if (
+        document.querySelector("#main #first").style.display === "block"
+      ) {
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
-        return false
+        return false;
       }
       init();
       if (document.body.contains(document.querySelector("#feed")))
@@ -223,8 +228,8 @@ document.addEventListener(
         else var query = uri[0].space();
         filterInputResponse(false, false, query, true);
       } else populateCategoryGroup(category);
-      displayExpand(expand)
-      visual()
+      displayExpand(expand);
+      visual();
       id = 0;
     }
     if (event.target.classList.contains("more")) {
@@ -274,7 +279,11 @@ document.addEventListener(
       init();
       if (document.body.contains(document.querySelector("#feed")))
         document.querySelector("#feed").remove();
-      xmlRequestParsing(null, null, event.target.closest(".btn").getAttribute("aria-item"));
+      xmlRequestParsing(
+        null,
+        null,
+        event.target.closest(".btn").getAttribute("aria-item")
+      );
     }
     if (event.target.classList.contains("img")) {
       if (tap == 0) {
@@ -327,10 +336,10 @@ document.addEventListener(
             "scale .7s ease-in-out .1s both";
           event.target
             .closest(".image")
-              .querySelector(".fa-heart").style.display = "block";
+            .querySelector(".fa-heart").style.display = "block";
           event.target
             .closest(".image")
-              .querySelector(".fa-heart").style.zIndex = "1";
+            .querySelector(".fa-heart").style.zIndex = "1";
           setTimeout(function () {
             event.target
               .closest(".image")
@@ -340,7 +349,7 @@ document.addEventListener(
               .querySelector(".fa-heart").style.display = "none";
             event.target
               .closest(".image")
-                .querySelector(".fa-heart").style.zIndex = "0";
+              .querySelector(".fa-heart").style.zIndex = "0";
           }, 1500);
           visual();
           tap = 0;
@@ -425,10 +434,12 @@ document.addEventListener(
       event.target.classList.contains("translation") ||
       event.target.classList.contains("quickTranslation")
     ) {
-      if (document.getElementById("match").style.display === "block"){
+      if (document.getElementById("match").style.display === "block") {
         document.getElementById("match").style.display = "none";
-        document.querySelector('#search .view').blur()
-      } else if (document.querySelector("#main #first").style.display === "block") {
+        document.querySelector("#search .view").blur();
+      } else if (
+        document.querySelector("#main #first").style.display === "block"
+      ) {
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }
@@ -439,7 +450,9 @@ document.addEventListener(
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
       category = event.target.closest(".translation").getAttribute("aria-item");
-      populateCategoryGroup(event.target.closest(".translation").getAttribute("aria-item"));
+      populateCategoryGroup(
+        event.target.closest(".translation").getAttribute("aria-item")
+      );
       topMenuBarDisplay(topBar);
       visual();
     }
@@ -455,7 +468,7 @@ document.addEventListener(
         event.target.closest(".quick").querySelector(".feed").clientWidth;
       if (event.target.closest(".quick").querySelector(".feed").scrollLeft >= 0)
         document.querySelector(".left").style.display = "block";
-      visual()
+      visual();
     }
     if (
       event.target.classList.contains("left") ||

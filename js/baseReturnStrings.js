@@ -1,4 +1,4 @@
-var stageBuild = function() {
+var stageBuild = function () {
   return (
     "<div id='feed'>" +
     "  <div class='center'>" +
@@ -13,7 +13,7 @@ var stageBuild = function() {
   );
 };
 
-var footerBuild = function() {
+var footerBuild = function () {
   return (
     "<div id='bottom'>" +
     "  <div class='back btn' aria-item='" +
@@ -39,7 +39,7 @@ var footerBuild = function() {
   );
 };
 
-var guideBuild = function(pubArray) {
+var guideBuild = function (pubArray) {
   return (
     "<svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>" +
     "  <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />" +
@@ -88,7 +88,7 @@ var guideBuild = function(pubArray) {
   );
 };
 
-var contentBuild = function(oldestPost, recentPost, postsCount, menuIndex) {
+var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   return (
     "<div class='filter' " +
     "  aria-item='" +
@@ -125,7 +125,7 @@ var contentBuild = function(oldestPost, recentPost, postsCount, menuIndex) {
   );
 };
 
-var translationBuild = function(translation) {
+var translationBuild = function (translation) {
   return (
     "<div class='translation' aria-item='" +
     translation +
@@ -160,7 +160,6 @@ var assetBuild = function (assetIndex, assetImage, assetId) {
     "</div>"
   );
 };
-
 
 var suggestBuild = function (
   objectMedia,
@@ -197,7 +196,6 @@ var suggestBuild = function (
   );
 };
 
-
 var filterBuild = function (
   objectId,
   objectIndex,
@@ -229,7 +227,6 @@ var filterBuild = function (
     "</div>"
   );
 };
-
 
 var categoryBuild = function (
   objectId,
@@ -266,31 +263,31 @@ var categoryBuild = function (
 var courtesyHeader = function (objectId, objectImage, objectExternal) {
   return (
     "<div class='courtesy' style='float:left'>" +
-      "  <img src='" +
-      objectImage +
-      "'>" +
-      "  <a ext='" +
-      objectExternal +
-      "'>" +
-      "    <b>" +
-      objectId +
-      "</b>" +
-      "  </a>" +
-      "  <div class='copy'>" +
-      "  <div class='attr fa-ellipsis-h'></div>" +
-      "    <div class='attribute'>" +
-      "      <div class='site'>Copy Url" +
-      "        <div style='float:right' class='fas fa-at'></div>" +
-      "      </div>" +
-      "      <div class='post'>Copy Post" +
-      "        <div style='float:right' class='fa fa-share'></div>" +
-      "      </div>" +
-      "      <div class='picture'>Copy Source" +
-      "        <div style='float:right' class='fa fa-camera'></div>" +
-      "      </div>" +
-      "    </div>" +
-      "  </div>" +
-      "</div>"
+    "  <img src='" +
+    objectImage +
+    "'>" +
+    "  <a ext='" +
+    objectExternal +
+    "'>" +
+    "    <b>" +
+    objectId +
+    "</b>" +
+    "  </a>" +
+    "  <div class='copy'>" +
+    "  <div class='attr fa-ellipsis-h'></div>" +
+    "    <div class='attribute'>" +
+    "      <div class='site'>Copy Url" +
+    "        <div style='float:right' class='fas fa-at'></div>" +
+    "      </div>" +
+    "      <div class='post'>Copy Post" +
+    "        <div style='float:right' class='fa fa-share'></div>" +
+    "      </div>" +
+    "      <div class='picture'>Copy Source" +
+    "        <div style='float:right' class='fa fa-camera'></div>" +
+    "      </div>" +
+    "    </div>" +
+    "  </div>" +
+    "</div>"
   );
 };
 
@@ -368,7 +365,6 @@ var guideBuildYoutube = function (pubArray) {
     "</div>"
   );
 };
-
 
 var youtubeHTMLBuild = function (
   title,
@@ -518,10 +514,10 @@ var listingIndexBuild = function (
   indexImage,
   indexCategory,
   suggested,
-  index,
+  index
 ) {
-  if (suggested == true) var div = "suggested..."
-  else var div = ""
+  if (suggested == true) var div = "suggested...";
+  else var div = "";
   return (
     "<div class='index " +
     index +
@@ -538,13 +534,15 @@ var listingIndexBuild = function (
     "    <br>&emsp;" +
     indexId +
     "</div>" +
-    "    <div class='buffer'>" + div + "</div>" +
+    "    <div class='buffer'>" +
+    div +
+    "</div>" +
     "  </div>" +
     "</div>"
   );
 };
 
-var sidebarCategoryBuild = function(translation) {
+var sidebarCategoryBuild = function (translation) {
   return (
     "<div class='cat " +
     translation +
@@ -560,7 +558,7 @@ var sidebarCategoryBuild = function(translation) {
   );
 };
 
-var sidebarOptionBuild = function(classes, name, icon) {
+var sidebarOptionBuild = function (classes, name, icon) {
   return (
     "<div class='sel " +
     classes +
