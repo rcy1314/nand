@@ -10,8 +10,9 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   quickFeedDisplay(quickFeeds);
   quickFeedAsset(7);
-  sidebarDisplay(onScreen);
   visual();
+  if (document.querySelector("#main").clientWidth < 768) return true;
+  else sidebarDisplay(onScreen);
 };
 document.addEventListener(
   "scroll",

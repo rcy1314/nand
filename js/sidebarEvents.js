@@ -35,8 +35,15 @@ document.addEventListener(
   "click",
   function (event) {
     if (event.target.id == "hide") {
-      onScreen = onScreen != true;
-      sidebarDisplay(onScreen);
+      if (sidebarFirst == 'false'){
+        sidebarFirst = 'true'
+        onScreen = onScreen != true;
+        sidebarDisplay(onScreen);
+      }
+      if (sidebarFirst == 'true'){
+        sidebarFirst = 'false'
+        sidebarDisplay(onScreen);
+      }
     }
     if (
       event.target.classList.contains("Social") ||

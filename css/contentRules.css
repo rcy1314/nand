@@ -91,7 +91,7 @@ html body #container #toggle {
 
 html body #container #sidebar {
   position: fixed;
-  display: none;
+  display: block;
   height: 100%;
   float: left;
   width: 0;

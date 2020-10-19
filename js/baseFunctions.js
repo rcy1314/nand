@@ -28,6 +28,7 @@ var translations =
   var random = [] //core.js random feed in category
   var filter = [] //response array for menu indexes
   var first = true //reader append feed center channel
+  var sidebarFirst = 'true'//first click show
   var expand = true //filter populate list display
   var contrast = false //opposite of op
   var randomDuplicate = [] //core.js random duplicate xml
