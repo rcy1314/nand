@@ -119,6 +119,9 @@
   }
 
   html body #container #main #visit #page #front #first {
+    top: -130px !important;
+    padding-top: 5px;
+    height: 359px;
     width: 300px;
   }
 

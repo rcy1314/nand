@@ -522,9 +522,15 @@ var populateCategoryGroup = function (translation) {
 var reverseCategoryGroup = function (translation) {
   var group = document.querySelector("#group");
   var node = document.querySelector(".result");
-  var div = document.createElement("div");
-  div.classList.add("air");
-  group.prepend(div);
+  if (
+    !document.body.contains(
+      document.querySelector(".air")
+    )
+  ) {
+    var div = document.createElement("div");
+    div.classList.add("air");
+    group.prepend(div);
+  }
   var air = document.querySelector(".air");
   for (var i = 1; i < menu.length - 1; i++) {
     if (translation == menu[i].cat) {

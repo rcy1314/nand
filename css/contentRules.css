@@ -419,11 +419,16 @@ html body #container #main #visit #page #front {
 }
 
 html body #container #main #visit #page #front #first {
-  position: relative;
-  margin: 4px auto;
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
   display: none;
+  height: 364px;
   width: 715px;
   z-index: 1;
+  top: 41px;
+  right: 0;
+  left: 0;
 }
 
 html body #container #main #visit #page #front #first .listing {
@@ -435,7 +440,6 @@ html body #container #main #visit #page #front #first .listing {
   cursor: pointer;
   height: 364px;
   width: 100%;
-  top: -15px;
 }
 
 html body #container #main #top #arm #search #match .listing .index .detail img,
@@ -530,10 +534,9 @@ html body #container #main #top #arm #search #input .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
-  margin-top: 1px;
   left: 70px;
   z-index: 2;
-  top: 8px;
+  top: 9px;
 }
 
 html body #container #main #visit #page #front .focus .icon {
@@ -662,11 +665,6 @@ html body #container #main #group .result .populate .title {
   padding: 10px;
 }
 
-html body #container #main #top #arm #search #input,
-html body #container #main #top #arm #search #match {
-  z-index: 2;
-}
-
 html body #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
@@ -692,9 +690,9 @@ html body #container #main #top #arm #search #match {
   width: fit-content;
   position: relative;
   margin: 0 auto;
-  height: 420px;
+  height: 364px;
   display: none;
-  top: 15px;
+  top: 35px;
 }
 
 input[type=submit] {
@@ -1233,7 +1231,6 @@ html body #container #main #top #arm #search #match .listing {
   margin: 0 auto;
   height: 364px;
   width: 308px;
-  top: 5px;
 }
 
 

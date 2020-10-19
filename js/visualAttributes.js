@@ -72,7 +72,11 @@ var visual = function (opDefine) {
     }
     if (document.body.contains(document.querySelector("#group .air")))
       document.querySelector("#group .air").classList.add("opposite");
-    document.querySelector("#container #guide").classList.add("oppositeAlt");
+      document.querySelector("#container #guide").classList.add("oppositeAlt");
+    if (document.body.contains(document.querySelector("#first .listing .index")))
+      document.querySelector("#first").style.border = '.3px solid #4e4e4e';
+    if (document.body.contains(document.querySelector("#match .listing .index")))
+      document.querySelector("#match").style.border = '.3px solid #4e4e4e';
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
       document.querySelector('.sticky .header').classList.add('oppositeAlt');
       document.querySelector(".sticky .wrap").classList.add("oppositeAlt");
@@ -191,6 +195,10 @@ var visual = function (opDefine) {
     document.querySelector("#container #main").classList.add("invertAlt");
     document.querySelector("#container #visit").classList.add("invertAlt");
     document.querySelector(".quick .feed").classList.add("invertAlt");
+    if (document.body.contains(document.querySelector("#first .listing .index")))
+      document.querySelector("#first").style.border = '.3px solid #aaaaaa';
+    if (document.body.contains(document.querySelector("#match .listing .index")))
+      document.querySelector("#match").style.border = '.3px solid #aaaaaa';
     document.documentElement.style.setProperty(
       "--loader-color-primary",
       "#5BAFF0"

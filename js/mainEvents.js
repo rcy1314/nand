@@ -12,7 +12,10 @@ window.onload = function () {
   quickFeedAsset(7);
   visual();
   if (document.querySelector("#main").clientWidth < 768) return true;
-  else sidebarDisplay(onScreen);
+  else {
+    sidebarFirst = 'false'
+    sidebarDisplay(onScreen);
+  }
 };
 document.addEventListener(
   "scroll",
@@ -105,6 +108,7 @@ document.addEventListener(
       }
     }
     if (
+      event.target.classList.contains("feed") ||
       event.target.id == "container" ||
       event.target.id == "search" ||
       event.target.id == "option" ||
