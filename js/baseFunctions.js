@@ -905,12 +905,17 @@ var guideImageAttributes = function (src) {
         if ((document.querySelector('#main').clientWidth <= 426)
           ) {
             document.querySelector("#main").classList.add("guide");
-            document.querySelector('#guide .wrap').style.width = '100vw'
+            document.querySelector('#guide .wrap').style.maxWidth = '75vw'
             document.querySelector('#guide .sticky .header').style.position = 'absolute'
-            if (newImg.naturalWidth >= newImg.naturalHeight)
-              guide.querySelector(".img").style.maxWidth = "100vw";
-            else if (newImg.naturalHeight >= newImg.naturalWidth)
-              guide.querySelector(".img").style.maxHeight = "80vh";
+            if (newImg.naturalWidth >= newImg.naturalHeight){
+              guide.querySelector(".img").style.maxHeight = "50vh";
+              guide.querySelector(".image").style.maxWidth = "100vw";
+              document.querySelector('#guide .wrap').style.width = '100vw'
+            }
+            else if (newImg.naturalHeight >= newImg.naturalWidth){
+              guide.querySelector(".img").style.maxWidth = "70vw";
+              guide.querySelector(".img").style.maxHeight = "50vh";
+            }
             document.querySelector('#guide .sticky .header').style.top =
               ~document.querySelector('#guide .img').style.height - '60'
         } else {
@@ -918,7 +923,7 @@ var guideImageAttributes = function (src) {
           guide.querySelector(".sticky").style.display = "block";
           guide.querySelector(".checkmark").style.display = "block";
           if (newImg.naturalWidth >= newImg.naturalHeight)
-            guide.querySelector(".img").style.maxWidth = "65vw";
+            guide.querySelector(".img").style.maxWidth = "100vw";
           else if (newImg.naturalHeight >= newImg.naturalWidth) {
             guide.querySelector(".img").style.maxWidth = "40vw";
             guide.querySelector(".img").style.maxHeight = "90vh";
@@ -995,7 +1000,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
               copyPicture.style.display = "block";
               attribute.style.height = "110px";
             } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = "240px";
+              itemImage.style.width = "180px";
               itemImage.style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
@@ -1027,7 +1032,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
               itemImage.closest(".classic").style.alignItems = "center";
               itemImage.style.marginBottom = "30px";
             } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = "240px";
+              itemImage.style.width = "180px";
               itemImage.closest(".image").style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";

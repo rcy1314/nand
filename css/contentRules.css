@@ -947,7 +947,10 @@ html body #container #main #feed .center .item .tag {
   width: 100%;
 }
 
-html body #container #guide .sticky .image,
+html body #container #guide .sticky .image {
+  max-width: 75vw;
+}
+
 html body #container #main #feed .center .item .img,
 html body #container #main #feed .center .item .image {
   background-color: transparent;
@@ -955,7 +958,7 @@ html body #container #main #feed .center .item .image {
   align-items: center;
   position: relative;
   max-height: 90vh;
-  max-width: 100%;
+  max-width: 100vw;
   display: flex;
   right: 0;
   left: 0;
