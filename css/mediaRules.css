@@ -115,7 +115,7 @@
 
   html body #container #main #group .air,
   html body #container #main #group .result {
-    width: 100% !important
+    width: 95% !important
   }
 
   html body #container #main #visit #page #front #first {
@@ -185,14 +185,6 @@
 
   html body #container #main #top #arm #option {
     display: block;
-  }
-
-  html body #container #main #top #arm #search .fa-map {
-    position: absolute;
-    font-size: 32px;
-    display: block;
-    left: 25px;
-    top: 10px;
   }
 
   html body #container #main #visit #page #handle {

@@ -10,7 +10,7 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   quickFeedDisplay(quickFeeds);
   quickFeedAsset(7);
-  if (document.querySelector("#main").clientWidth >= 769) sidebarDisplay(onScreen);
+  sidebarDisplay(onScreen);
   visual();
 };
 document.addEventListener(
@@ -131,10 +131,12 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains("fa-expand-alt")) {
+      document.querySelector('#visit').style.display = 'none'
       expand = expand != true;
       displayExpand(expand);
       if (expand == true) var groupType = "list";
       else var groupType = "blocks";
+      populateCategoryGroup(category)
       visual();
     }
     if (

@@ -68,7 +68,9 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains("sideHome") ||
-      (event.target.classList.contains("side") && event.target.id != "Home")
+      event.target.classList.contains("side") ||
+      event.target.id == "mobileHome" &&
+      event.target.id != "Home"
     ) {
       id = 0;
       if (document.body.contains(document.querySelector("#feed")))
