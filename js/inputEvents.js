@@ -58,7 +58,7 @@ document.addEventListener(
       event.target.style.paddingLeft = "30px";
       event.target.style.textAlign = "left";
       event.target.value = "";
-      document.querySelector('#search .view').setAttribute("placeholder", "Search Feeds");
+      document.querySelector('#search .view').setAttribute("placeholder", "Search feeds");
       document.querySelector("#input .icon").classList.add("slide");
       visual();
     }

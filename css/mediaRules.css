@@ -204,7 +204,7 @@
 
   html body #container #main #top #arm #option {
     position: absolute;
-    right: 25px;
+    right: 0px;
   }
 
   html body #container #main #top #arm #search #home {
@@ -254,7 +254,7 @@
   html body #container #main #top #arm #option {
     position: absolute;
     display: block;
-    right: 70px;
+    right: 0px;
   }
 
   html body #container #main #top #arm #search #home {
