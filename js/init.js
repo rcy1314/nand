@@ -29,7 +29,8 @@ if (location.href.split("?")[1] && !location.search.split("?q=")[1] && !location
   else {
     ready(() => {
       init();
-      document.querySelector("#top").style.display = "block";
+      onScreen = false;
+      document.querySelector("#top").style.display = "none";
       document.querySelector("#toggle").style.display = "none";
       filterInputResponse(true, false, menu[i].id.space(), false);
     });

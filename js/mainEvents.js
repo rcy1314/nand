@@ -14,7 +14,7 @@ window.onload = function () {
   if (document.querySelector("#main").clientWidth < 768) return true;
   else {
     sidebarFirst = 'false'
-    sidebarDisplay(onScreen);
+    sideBarDisplay(onScreen);
   }
 };
 document.addEventListener(

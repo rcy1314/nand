@@ -38,11 +38,11 @@ document.addEventListener(
       if (sidebarFirst == 'false'){
         sidebarFirst = 'true'
         onScreen = onScreen != true;
-        sidebarDisplay(onScreen);
+        sideBarDisplay(onScreen);
       }
       if (sidebarFirst == 'true'){
         sidebarFirst = 'false'
-        sidebarDisplay(onScreen);
+        sideBarDisplay(onScreen);
       }
     }
     if (

@@ -24,6 +24,7 @@ var translations =
   var tap = 0 //used in main.js for images
   var complete //core.js interval for progress
   var dupe = [] //image src duplicate catch
+  var local
   var httpRequest //uri xml httpRequest
   var random = [] //core.js random feed in category
   var filter = [] //response array for menu indexes
@@ -158,7 +159,7 @@ var displayExpand = function (n) {
 };
 
 
-var sidebarDisplay = function (n) {
+var sideBarDisplay = function (n) {
   if (onScreen == true) {
     var Elem = document.querySelector("#sidebar");
     Elem.style.position = "fixed";
@@ -1299,6 +1300,7 @@ var xmlRequestParsing = function (e, s, n) {
           document.querySelector(".channel").innerHTML +
           footerBuild();
         contentStatusDisplay(n, recent, oldest, posts);
+        topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
         document.querySelector("#main").setAttribute("tabindex", -1);
