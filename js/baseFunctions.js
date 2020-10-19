@@ -474,7 +474,7 @@ var populateCategoryGroup = function (translation) {
     result.innerHTML = result.innerHTML +
     categoryBuild(
       menu[id].id.match(/[^\/]+$/g),
-      menu.indexOf(menu[i]),
+      menu.indexOf(menu[id]),
       menu[id].img.image(),
       menu[id].hash,
       menu[id].des,
@@ -934,7 +934,7 @@ var guideImageAttributes = function (src) {
           guide.querySelector(".sticky").style.display = "block";
           guide.querySelector(".checkmark").style.display = "block";
           if (newImg.naturalWidth >= newImg.naturalHeight)
-            guide.querySelector(".img").style.maxWidth = "100vw";
+            guide.querySelector(".img").style.maxWidth = "70vw";
           else if (newImg.naturalHeight >= newImg.naturalWidth) {
             guide.querySelector(".img").style.maxWidth = "40vw";
             guide.querySelector(".img").style.maxHeight = "90vh";
@@ -1099,10 +1099,10 @@ var xmlImageAttributes = function (empty, n, item, src) {
 var xmlRequestParsing = function (e, s, n) {
   id = n;
   obj = [];
+  dupe = [];
   var local;
   var pub = [];
   var src = "";
-  var dupe = [];
   var parse = [];
   var images = [];
   if (e == "search") {
