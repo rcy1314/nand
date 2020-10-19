@@ -54,9 +54,6 @@ var visual = function (opDefine) {
       document
         .querySelectorAll(".listing .index")
         .forEach((a) => a.classList.add("opposite"));
-      document
-        .querySelectorAll(".listing .index")
-        .forEach((a) => a.classList.add("oppositeOverBorderless"));
     }
     if (document.body.contains(document.querySelector(".listing .hue")))
       document
@@ -201,11 +198,11 @@ var visual = function (opDefine) {
     document.querySelector(".quick .feed").classList.add("invertAlt");
     if (document.body.contains(document.querySelector("#first .listing .index"))){
       document.querySelector("#first").style.border = '.3px solid #dddddd';
-      document.querySelector("#first").style.boxShadow = '2px 2px 4px #dddddd';
+      document.querySelector("#first").style.boxShadow = 'none';
     }
     if (document.body.contains(document.querySelector("#match .listing .index"))){
       document.querySelector("#match").style.border = '.3px solid #dddddd';
-      document.querySelector("#match").style.boxShadow = '4px 4px 16px #dddddd';
+      document.querySelector("#match").style.boxShadow = 'none';
     }
     document.documentElement.style.setProperty(
       "--loader-color-primary",
@@ -269,9 +266,6 @@ var visual = function (opDefine) {
       document
         .querySelectorAll(".listing .index")
         .forEach((a) => a.classList.add("invert"));
-      document
-        .querySelectorAll(".listing .index")
-        .forEach((a) => a.classList.add("invertOverBorderless"));
     }
     if (document.body.contains(document.querySelector(".listing .hue")))
       document
