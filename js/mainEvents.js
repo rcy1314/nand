@@ -325,6 +325,9 @@ document.addEventListener(
           event.target
             .closest(".image")
               .querySelector(".fa-heart").style.display = "block";
+          event.target
+            .closest(".image")
+              .querySelector(".fa-heart").style.zIndex = "1";
           setTimeout(function () {
             event.target
               .closest(".image")
@@ -332,6 +335,9 @@ document.addEventListener(
             event.target
               .closest(".image")
               .querySelector(".fa-heart").style.display = "none";
+            event.target
+              .closest(".image")
+                .querySelector(".fa-heart").style.zIndex = "0";
           }, 1500);
           visual();
           tap = 0;
