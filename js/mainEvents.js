@@ -27,12 +27,10 @@ document.addEventListener(
           document.querySelector("#main").clientHeight <=
           350 &&
         reader == true &&
-        stop == true &&
         httpRequest.status == 200
       ) {
         init();
-        stop = false;
-        xmlRequestParsing(null, null, any());
+        xmlRequestParsing(null, null, anyMenuRandomObject());
       }
     }
   },

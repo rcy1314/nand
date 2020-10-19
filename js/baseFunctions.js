@@ -419,7 +419,10 @@ var progressBackDrop = function (done, percent) {
 
 var xmlStatusSuggestions = function () {
   var duplicate = [];
-  var suggestions = document.querySelector("#main .suggestions");
+  if (document.body.contains(document.querySelector("#main .suggestions"))) {
+    var suggestions = document.querySelector("#main .suggestions");
+  if (document.body.contains(document.querySelector("#main .suggestions .combine")))
+    while (suggestions.firstChild) suggestions.removeChild(suggestions.lastChild);
   for (var i = 0; i <= contentStatusBuffer; i++) {
     var randomMenuObject = menu.indexOf(
       menu[Math.floor(Math.random() * menu.length - 1)]
@@ -443,6 +446,7 @@ var xmlStatusSuggestions = function () {
           menu[randomMenuObject].cat
         )
 
+      }
     }
   }
 };

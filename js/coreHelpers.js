@@ -119,7 +119,7 @@ var anyMenuRandomObject = function () {
   } else if (random.length == randomDuplicate.length) randomDuplicate = [];
   else
     for (i = 0; i < random.length; i++) {
-      if (menu[randomObject] || $.inArray(n, randomDuplicate) == -1) randomObject = randomObject;
+      if (menu[randomObject] || !randomDuplicate.includes(n)) randomObject = randomObject;
       else var randomObject = random[Math.floor(Math.random() * random.length - 1)];
     }
   return randomObject;
