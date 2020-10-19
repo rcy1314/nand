@@ -283,8 +283,6 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              category == "Social" &&
-              hasClass(event.target, "default") &&
               hasClass(event.target, "guide") == false &&
               document.querySelector("#main").clientWidth >= 426
             ) {
@@ -310,7 +308,7 @@ document.addEventListener(
               guideDisplay(sticky);
             } else if (hasClass(event.target, "guide"))
               event.target.getAttribute("src").blank();
-            else if (hasClass(event.target, "default") == false)
+            else if (hasClass(event.target, "default"))
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")
               event.target.closest(".item").getAttribute("ext").blank();
