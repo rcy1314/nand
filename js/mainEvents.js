@@ -298,8 +298,8 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              hasClass(event.target, "guide") == false &&
-              document.querySelector("#main").clientWidth >= 426
+              !event.target.classList.contains('guide') &&
+              event.target.classList.contains('default')
             ) {
               var sticky = [];
               sticky.push({
@@ -321,9 +321,9 @@ document.addEventListener(
                 id: event.target.getAttribute("id"),
               });
               guideDisplay(sticky);
-            } else if (hasClass(event.target, "guide"))
+            } else if (event.target.classList.contains('guide'))
               event.target.getAttribute("src").blank();
-            else if (hasClass(event.target, "default"))
+            else if (!event.target.classList.contains('default'))
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")
               event.target.closest(".item").getAttribute("ext").blank();

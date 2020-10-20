@@ -1020,13 +1020,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
           var copyPost = document.querySelector(".img-" + item + " .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
-            if (newImg.naturalWidth > minimum) {
-              itemImage.style.width = "100%";
-              itemImage.classList.add("default");
-              copyPost.style.display = "block";
-              copyPicture.style.display = "block";
-              attribute.style.height = "110px";
-            } else if (newImg.naturalWidth < maximum) {
+            if (newImg.naturalWidth < maximum) {
               itemImage.style.width = "180px";
               itemImage.style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
@@ -1052,12 +1046,6 @@ var xmlImageAttributes = function (empty, n, item, src) {
             if (newImg.naturalHeight > k) {
               itemImage.closest(".item").querySelector(".pending").remove();
               itemImage.closest(".image").remove();
-            } else if (newImg.naturalWidth < minimum) {
-              itemImage.style.width = "100%";
-              itemImage.closest(".image").style.margin = "12px";
-              itemImage.closest(".classic").style.display = "flex";
-              itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.style.marginBottom = "30px";
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = "180px";
               itemImage.closest(".image").style.margin = "12px";
