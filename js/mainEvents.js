@@ -10,7 +10,8 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
-  quickFeedAsset(7);
+  if (document.querySelector('#main').clientWidth <= 425) quickFeedAsset(7);
+  else quickFeedAsset(8)
   visual();
   if (document.querySelector("#main").clientWidth < 768) return true;
   else {
