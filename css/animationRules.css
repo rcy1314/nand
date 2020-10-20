@@ -110,34 +110,13 @@
 }
 
 .responseInvert {
-  background: -webkit-linear-gradient(45deg, #3c6bb2, #3c6bb2);
-  background: linear-gradient(45deg, #3c6bb2, #3c6bb2);
+  background: -webkit-linear-gradient(45deg, #eeeeee, #eeeeee);
+  background: linear-gradient(45deg, #eeeeee, #eeeeee);
 }
 
 .responseOpposite {
   background: -webkit-linear-gradient(45deg, 	#b23c81, 	#b23c81);
   background: linear-gradient(45deg, 	#b23c81, 	#b23c81);
-}
-
-.progress {
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255, .6) 80%, rgba(255, 255, 255, .3) 100%) repeat;
-  background: -moz-linear-gradient(left, rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255, .6) 80%, rgba(255, 255, 255, .3) 100%) repeat;
-  -webkit-animation: percent 6s linear infinite;
-  -moz-animation: percent 6s linear infinite;
-  -webkit-background-size: 50% 100%;
-  -moz-background-size: 50% 100%;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.overlay {
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, .2) 55%, rgba(255, 255, 255, 0) 100%);
-  -webkit-animation: gloss 6s linear .5;
-  -moz-animation: gloss 6s linear .5;
-  background-size: 100% 1700%;
-  position: relative;
-  width: 100%;
 }
 
 @-webkit-keyframes rotation {

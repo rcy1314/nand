@@ -182,7 +182,7 @@ var visual = function (opDefine) {
         )
       );
     document.querySelector("#progressBar").classList.add('responseInvert');
-    document.querySelector("#progressBar").classList.remove('responseOposite');
+    document.querySelector("#progressBar").classList.remove('responseOpposite');
     document.querySelector(".view").classList.remove("oppositeOverBorderless");
     document.querySelector(".view").style.color = "#444444";
     document.querySelector(".focus .guest").style.color = "#444444";
