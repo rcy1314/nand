@@ -11,7 +11,7 @@ var category = "Social"; //legacy set by xml
 var onlyImages = false; //grep, random, populate
 var centerFeeds = false; //display quick feeds above xml
 var suggestionBuffer = 7; //input suggest length
-var contentStatusBuffer = 8; //feed content suggestions
+var contentStatusBuffer = 5; //feed content suggestions
 var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
 
 var translations = [
@@ -334,8 +334,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
       if (
-        menu[i].des.toLowerCase().match(inputFilter) ||
-        menu[i].cat.toLowerCase().match(inputFilter)
+        menu[i].des.toLowerCase().match(inputFilter)
       ) {
         ready(() => {
           /* Do things after DOM has fully loaded */

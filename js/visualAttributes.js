@@ -23,6 +23,8 @@ var visual = function (opDefine) {
     document.querySelector(".view").style.color = "#f7f7f7";
     document.querySelector(".guest").style.color = "#f7f7f7";
     document.querySelector(".sideFilter").style.color = "#f7f7f7";
+    if (document.body.contains(document.querySelector(".status .filter")))
+      document.querySelector('.status .filter').classList.add('oppositeOver')
     if (document.body.contains(document.querySelector("#feed"))) {
       document
         .querySelectorAll(".attribute")
@@ -286,6 +288,10 @@ var visual = function (opDefine) {
       document
         .querySelectorAll(".listing .hue")
         .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
+    if (document.body.contains(document.querySelector(".status .filter"))) {
+      document.querySelector('.content .status .filter').classList.add('invertAlt')
+      document.querySelector('.content .status .filter').classList.add('invertOver')
+    }
     if (document.body.contains(document.querySelector("#feed .item"))) {
       document
         .querySelectorAll(".attribute")
