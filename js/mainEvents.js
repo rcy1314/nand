@@ -143,6 +143,7 @@ document.addEventListener(
       if (!document.body.contains(document.querySelector("#main #group"))){
         populateCategoryGroup(category)
       }
+      topMenuBarDisplay(topBar)
       document.querySelector("#visit").style.display = "none";
       expand = expand != true;
       displayExpand(expand);
