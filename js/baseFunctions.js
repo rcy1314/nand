@@ -301,13 +301,14 @@ var quickFeedAsset = function (feedAssets) {
       feed.innerHTML = feed.innerHTML + translationBuild(translations[i]);
     }
   else
-    for (var i = 1; i <= feedAssets; i++) {
+    for (var i = 1; i <= menu.length - 1; i++) {
       var randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
         randomMenuObject != 0 &&
         menu[randomMenuObject] &&
+        !dupe.includes(randomMenuObject) &&
         menu[randomMenuObject].media == true
       ) {
         dupe.push(randomMenuObject);
@@ -319,6 +320,7 @@ var quickFeedAsset = function (feedAssets) {
             menu[randomMenuObject].img.image(),
             menu[randomMenuObject].id
           );
+          if (dupe.length === feedAssets) return false
       }
     }
   visual();

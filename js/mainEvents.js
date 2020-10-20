@@ -11,7 +11,7 @@ window.onload = function () {
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
   if (document.querySelector('#main').clientWidth <= 425) quickFeedAsset(7);
-  else quickFeedAsset(12)
+  else quickFeedAsset(8)
   visual();
   if (document.querySelector("#main").clientWidth < 768) return true;
   else {
