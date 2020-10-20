@@ -129,7 +129,8 @@ html body #container #sidebar .notify {
   font-size: 11px;
   display: flex;
   margin: 10px;
-  width: 240px;
+  width: 250px;
+  right: -15px;
   bottom: 0;
 }
 
@@ -371,6 +372,11 @@ html body #container #main #visit #page #handle {
   display: block;
   margin: 0 auto;
   width: 100%;
+}
+
+html body #container #main #visit #page #mobile img,
+html body #container #main #visit #page #handle img {
+  width: 25px;
 }
 
 html body #container #main #visit #page #handle {
@@ -741,6 +747,10 @@ html body #container #main #visit #page .quick .feed .translation {
   width: 90px;
 }
 
+html body #container #main #visit #page .quick .feed .quickTranslation {
+  background: linear-gradient(to right,  rgba(64, 93, 230,.01) 0%,rgba(253, 29, 29,.025) 100%);
+  border-radius: 240px;
+}
 html body #container #main #feed .content .status img,
 html body #container #main #visit #page .quick .feed img,
 html body #container #main #visit #page .quick .feed .translation img {

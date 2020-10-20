@@ -419,6 +419,7 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
+        init()
         xmlRequestParsing(
           null,
           null,
@@ -438,6 +439,7 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
+        init()
         xmlRequestParsing(
           null,
           null,

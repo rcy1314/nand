@@ -69,20 +69,20 @@ var notifyOption = function (displayContent) {
     Elem.style.position = "absolute";
     Elem.animate(
       {
-        right: ["10px", "280px"],
+        right: ["0px", "280px"],
       },
       {
-        duration: 750, // number in ms [this would be equiv of your speed].
+        duration: 1500, // number in ms [this would be equiv of your speed].
         easing: "linear",
         iterations: 1, // infinity or a number.
         // fill: ''
       }
     );
-  }, 750);
+  }, 1500);
 
   setTimeout(function () {
     notification.style.display = "none";
-  }, 1500);
+  }, 4000);
 };
 
 var displayExpand = function (n) {
@@ -920,16 +920,16 @@ var guideImageAttributes = function (src) {
     guide.querySelector(".checkmark").style.display = "block";
     if (document.querySelector("#main").clientWidth <= 426) {
       document.querySelector("#main").classList.add("guide");
-      document.querySelector("#guide .wrap").style.maxWidth = "75vw";
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "50vh";
-        guide.querySelector(".image").style.maxWidth = "100vw";
-        document.querySelector("#guide .wrap").style.width = "100vw";
+        guide.querySelector(".image").style.width = "100vw";
+        document.querySelector("#guide .wrap").style.maxWidth = "100vw";
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         guide.querySelector(".img").style.maxWidth = "70vw";
         guide.querySelector(".img").style.maxHeight = "50vh";
+        document.querySelector("#guide .wrap").style.maxWidth = "75vw";
       }
       document.querySelector("#guide .sticky .header").style.top =
         ~document.querySelector("#guide .img").style.height - "60";
