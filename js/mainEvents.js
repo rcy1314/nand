@@ -140,12 +140,14 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains("fa-expand-alt")) {
+      if (!document.body.contains(document.querySelector("#main #group"))){
+        populateCategoryGroup(category)
+      }
       document.querySelector("#visit").style.display = "none";
       expand = expand != true;
       displayExpand(expand);
       if (expand == true) var groupType = "list";
       else var groupType = "blocks";
-      populateCategoryGroup(category);
       visual();
     }
     if (

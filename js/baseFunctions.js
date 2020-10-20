@@ -87,9 +87,6 @@ var notifyOption = function (displayContent) {
 };
 
 var displayExpand = function (n) {
-  if (!document.body.contains(document.querySelector("#group"))){
-    populateCategoryGroup(category)
-  }
   var group = document.getElementById("group");
   if (n == true) {
     groupType = "list";
