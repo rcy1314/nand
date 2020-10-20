@@ -230,22 +230,26 @@ var quickFeedDisplay = function (n) {
     document.querySelector(".quick").classList.remove("invisible");
     document.querySelector("#front").classList.add("toggleHidden");
     document.querySelector("#front").classList.remove("toggle");
-    document.querySelector(".fa-angle-up").classList.add("rotate");
-    document.querySelector(".fa-angle-up").classList.remove("rotateReverse");
-    document.querySelector(".link").classList.add("slideRight");
-    document.querySelector(".show").style.visibility = "hidden";
-    setTimeout(function () {
-      document.querySelector(".fa-angle-up").classList.add("rotate");
-    }, 1000);
+    if (document.body.contains(document.querySelector(".link"))) {
+      document.querySelector(".link .fa-angle-up").classList.add("rotate");
+      document.querySelector(".link .fa-angle-up").classList.remove("rotateReverse");
+      document.querySelector(".link").classList.add("slideRight");
+      document.querySelector(".show").style.visibility = "hidden";
+      setTimeout(function () {
+        document.querySelector(".fa-angle-up").classList.add("rotate");
+      }, 1000);
+    }
   } else if (n == false) {
     document.querySelector("#page .quick").classList.remove("visible");
     document.querySelector("#page .quick").classList.add("invisible");
     document.querySelector("#front").classList.remove("toggleHidden");
     document.querySelector("#front").classList.add("toggle");
-    document.querySelector(".fa-angle-up").classList.remove("rotate");
-    document.querySelector(".fa-angle-up").classList.add("rotateReverse");
-    document.querySelector(".link").classList.remove("slideRight");
-    document.querySelector(".show").style.visibility = "visible";
+    if (document.body.contains(document.querySelector(".link"))) {
+      document.querySelector(".fa-angle-up").classList.remove("rotate");
+      document.querySelector(".fa-angle-up").classList.add("rotateReverse");
+      document.querySelector(".link").classList.remove("slideRight");
+      document.querySelector(".show").style.visibility = "visible";
+    }
   }
 };
 

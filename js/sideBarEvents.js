@@ -87,7 +87,8 @@ document.addEventListener(
         document.querySelector("#group").remove();
       document.querySelector("#top").style.display = "none";
       document.querySelector("#toggle").style.display = "block";
-      document.querySelector("#front #first").style.display = "none";
+      if (document.body.contains(document.querySelector("#first")))
+        document.querySelector("#first").style.display = "none";
       document.querySelector("#visit").style.visibility = "visible";
       document.querySelector("#visit").style.display = "flex";
       document.querySelector(".feed").scrollLeft = 0;

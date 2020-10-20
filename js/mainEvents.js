@@ -133,7 +133,7 @@ document.addEventListener(
         document.querySelector("#input .view").style.paddingLeft = "0px";
         document.querySelector("#input .icon").classList.remove("slide");
         document.querySelector("#input .view").value = "Search";
-      } else if (
+      } else if ( document.body.contains(document.querySelector("#main #first")) &&
         document.querySelector("#main #first").style.display === "block"
       ) {
         document.querySelector("#main #first").style.display = "none";
@@ -200,10 +200,6 @@ document.addEventListener(
       event.target.classList.contains("asset")
     ) {
       init();
-      var feed = document.querySelector(".feed");
-      while (feed.firstChild) {
-        feed.removeChild(feed.lastChild);
-      }
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
       topMenuBarDisplay(topBar);
