@@ -207,7 +207,8 @@ document.addEventListener(
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
       topMenuBarDisplay(topBar);
-      xmlRequestParsing(null, null, event.target.getAttribute("aria-item"));
+      xmlRequestParsing(null, null, event.target.closest('.asset').
+        getAttribute("aria-item"));
     }
     if (
       event.target.classList.contains("blur") ||

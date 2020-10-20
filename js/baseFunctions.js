@@ -999,6 +999,11 @@ var xmlImageAttributes = function (empty, n, item, src) {
           )
         )
           document.querySelector(".img-" + item + " .pending").remove();
+        if (
+          document.body.contains(
+            document.querySelector(".img-" + item + " .image")
+          )
+        )
         document.querySelector(".img-" + item + " .image").remove();
         document.querySelector(".img-" + item).style.paddingBottom = "30px";
       };

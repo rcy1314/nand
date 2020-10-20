@@ -182,8 +182,15 @@ var visual = function (opDefine) {
     document.querySelector("#progressBar").classList.remove('responseOpposite');
     document.querySelector(".view").classList.remove("oppositeOverBorderless");
     document.querySelector(".view").style.color = "#444444";
-    document.querySelector(".focus .guest").style.color = "#444444";
-    document.querySelector(".focus .guest").classList.add("invert");
+    if (document.body.contains(document.querySelector(".focus .guest"))){
+      document
+        .querySelector("#label .link")
+        .classList.add("invertOverBorderless");
+      document.querySelector(".focus .guest").style.color = "#444444";
+      document.querySelector(".focus .guest").classList.add("invert");
+      document.querySelector(".focus .button").classList.add("buttonInvert");
+      document.querySelector("#front .focus").classList.add("pageInput");
+    }
     document.querySelector(".sideFilter").classList.remove("invert");
     document.querySelector(".sideFilter").style.color = "#444444";
     if (document.body.contains(document.querySelector("#group .populate"))) {
@@ -225,9 +232,6 @@ var visual = function (opDefine) {
       "--loader-color-secondary",
       "#0078D4"
     );
-    document
-      .querySelector("#label .link")
-      .classList.add("invertOverBorderless");
     document
       .querySelector(".quick .right")
       .classList.add("invertOverBorderless");
@@ -307,10 +311,10 @@ var visual = function (opDefine) {
     document
       .querySelector("#sidebar #content")
       .classList.add("invertScrollbar");
+    if (document.body.contains(document.querySelector("#match .listing")))
     document.querySelector("#match .listing").classList.add("invertScrollbar");
+    if (document.body.contains(document.querySelector("#first .listing")))
     document.querySelector("#first .listing").classList.add("invertScrollbar");
-    document.querySelector(".focus .button").classList.add("buttonInvert");
-    document.querySelector("#front .focus").classList.add("pageInput");
     document.documentElement.style.setProperty(
       "--fill-color-primary",
       "#555555"
