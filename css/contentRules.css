@@ -72,8 +72,9 @@ html body #container #main #notification {
 }
 
 html body #container #main #progressBar {
+  border-radius: 3px;
   position: fixed;
-  height: 4px;
+  height: 3px;
   z-index: 10;
   width: 0;
   top: 0;
@@ -747,10 +748,6 @@ html body #container #main #visit #page .quick .feed .translation {
   width: 90px;
 }
 
-html body #container #main #visit #page .quick .feed .quickTranslation {
-  background: linear-gradient(to right,  rgba(64, 93, 230,.01) 0%,rgba(253, 29, 29,.025) 100%);
-  border-radius: 240px;
-}
 html body #container #main #feed .content .status img,
 html body #container #main #visit #page .quick .feed img,
 html body #container #main #visit #page .quick .feed .translation img {

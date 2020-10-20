@@ -110,8 +110,13 @@
 }
 
 .responseInvert {
-  background: -webkit-linear-gradient(45deg, #405de6, #fd1d1d);
-  background: linear-gradient(45deg, #405de6, #fd1d1d);
+  background: -webkit-linear-gradient(45deg, #3c6bb2, #3c6bb2);
+  background: linear-gradient(45deg, #3c6bb2, #3c6bb2);
+}
+
+.responseOpposite {
+  background: -webkit-linear-gradient(45deg, 	#b23c81, 	#b23c81);
+  background: linear-gradient(45deg, 	#b23c81, 	#b23c81);
 }
 
 .progress {

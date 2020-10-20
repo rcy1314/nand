@@ -18,6 +18,8 @@ var visual = function (opDefine) {
           "invertOverBorderless"
         )
       );
+    document.querySelector("#progressBar").classList.add('responseOpposite');
+    document.querySelector("#progressBar").classList.remove('responseInvert');
     document.querySelector(".view").style.color = "#f7f7f7";
     document.querySelector(".guest").style.color = "#f7f7f7";
     document.querySelector(".sideFilter").style.color = "#f7f7f7";
@@ -179,6 +181,8 @@ var visual = function (opDefine) {
           "oppositeOverBorderless"
         )
       );
+    document.querySelector("#progressBar").classList.add('responseInvert');
+    document.querySelector("#progressBar").classList.remove('responseOposite');
     document.querySelector(".view").classList.remove("oppositeOverBorderless");
     document.querySelector(".view").style.color = "#444444";
     document.querySelector(".focus .guest").style.color = "#444444";
