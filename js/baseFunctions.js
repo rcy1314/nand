@@ -13,7 +13,7 @@ var centerFeeds = false; //display quick feeds above xml
 var suggestionBuffer = 7; //input suggest length
 var contentStatusBuffer = 5; //feed content suggestions
 var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
-//var cors = "https://acktic-github-io.acktic.workers.dev/?"
+//https://acktic-github-io.acktic.workers.dev cloudflare
 
 var translations = [
   "Social",
@@ -83,13 +83,14 @@ var notifyOption = function (displayContent) {
 
   setTimeout(function () {
     notification.style.display = "none";
-  }, 4000);
+  }, 3000);
 };
 
 var displayExpand = function (n) {
-  if (document.body.contains(document.getElementById("group")))
-    var group = document.getElementById("group");
-
+  if (!document.body.contains(document.querySelector("#group"))){
+    populateCategoryGroup(category)
+  }
+  var group = document.getElementById("group");
   if (n == true) {
     groupType = "list";
     if (document.body.contains(document.getElementById("group"))) {
@@ -478,6 +479,7 @@ var populateCategoryGroup = function (translation) {
       main.innerHTML;
   else {
     id = 0;
+    if (document.body.contains(document.querySelector(".result")))
     document.querySelector('.result').remove()
     main.innerHTML =
       "<div id='group'>" +

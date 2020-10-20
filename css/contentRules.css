@@ -125,8 +125,8 @@ html body #container #sidebar #content #select {
 html body #container #sidebar .notify {
   background-color: transparent;
   justify-content: center;
-  position: absolute;
   text-align: center;
+  position: fixed;
   font-size: 11px;
   display: flex;
   margin: 10px;
@@ -413,7 +413,8 @@ html body #container #main #visit #page {
 
 html body #container #main #dots .fill {
   background-color: var(--fill-color-primary);
-  z-index: 99;
+  position: absolute;
+  z-index: 12;
   left: -4px;
   top: 0;
 }

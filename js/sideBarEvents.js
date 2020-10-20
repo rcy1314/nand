@@ -195,14 +195,18 @@ document.addEventListener(
       event.target.classList.contains("sideDots")
     ) {
       loading = "dots";
-      document
-        .querySelectorAll("#dots .fill")
-        .forEach((a) => a.classList.add("dots"));
-      setTimeout(function () {
+      if (document.body.contains(document.querySelector("#main #group"))) {
+        notifyOption('Dots Progress Applied.')
+      } else {
         document
           .querySelectorAll("#dots .fill")
-          .forEach((a) => a.classList.remove("dots"));
-      }, 3000);
+          .forEach((a) => a.classList.add("dots"));
+        setTimeout(function () {
+          document
+            .querySelectorAll("#dots .fill")
+            .forEach((a) => a.classList.remove("dots"));
+        }, 3000);
+      }
     }
     if (
       event.target.classList.contains("toggleImages") ||

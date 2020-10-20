@@ -65,14 +65,9 @@ var visual = function (opDefine) {
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document
-        .querySelectorAll("#group .result")
-        .forEach((a) => a.classList.add("opposite"));
-      document
         .querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("oppositeOver"));
     }
-    if (document.body.contains(document.querySelector("#group .air")))
-      document.querySelector("#group .air").classList.add("opposite");
     document.querySelector("#container #guide").classList.add("oppositeAlt");
     if (
       document.body.contains(document.querySelector("#first .listing .index"))
@@ -203,10 +198,7 @@ var visual = function (opDefine) {
         document
           .querySelectorAll("#group .populate")
           .forEach((a) => a.classList.add("invert"));
-      document.querySelector("#group .result").classList.add("invertAlt");
     }
-    if (document.body.contains(document.querySelector("#group .air")))
-      document.querySelector("#group .air").classList.add("invertAlt");
     document.querySelector(".quick .right").classList.add("invertAlt");
     document.querySelector(".quick .left").classList.add("invertAlt");
     document.querySelector("#container").classList.add("invertAlt");
