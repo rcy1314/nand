@@ -475,7 +475,15 @@ var populateCategoryGroup = function (translation) {
       "  <div class='result'></div>" +
       "</div>" +
       main.innerHTML;
-  else id = 0;
+  else {
+    id = 0;
+    document.querySelector('.result').remove()
+    main.innerHTML =
+      "<div id='group'>" +
+      "  <div class='result'></div>" +
+      "</div>" +
+      main.innerHTML;
+  }
   var result = document.querySelector(".result");
 
   if (id && id != 0 && !location.href.match("\\?q=")) {
@@ -541,6 +549,11 @@ var reverseCategoryGroup = function (translation) {
   var group = document.querySelector("#group");
   var node = document.querySelector(".result");
   if (!document.body.contains(document.querySelector(".air"))) {
+    var div = document.createElement("div");
+    div.classList.add("air");
+    group.prepend(div);
+  } else {
+    document.querySelector('.air').remove()
     var div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
