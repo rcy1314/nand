@@ -12,7 +12,8 @@ var onlyImages = false; //grep, random, populate
 var centerFeeds = false; //display quick feeds above xml
 var suggestionBuffer = 7; //input suggest length
 var contentStatusBuffer = 5; //feed content suggestions
-var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
+//var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
+var cors = "https://acktic-github-io.acktic.workers.dev/?"
 
 var translations = [
   "Social",
