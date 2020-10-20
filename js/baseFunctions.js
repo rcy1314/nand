@@ -2,6 +2,7 @@ var op = 0; //1 invert, 0 opposite
 var topBar = true; //display top menubar on content
 var expand = true; //filter populate list display
 var reader = false; //main scroll category reader xml
+var topBar = true // display topBar in group and feed
 var onScreen = true; //display sidebar on visit
 var groupType = "list"; //or 'blocks'
 var showOption = true; //show tag Options in top
