@@ -96,7 +96,7 @@ document.addEventListener(
         document.getElementById("first").style.display = "none";
       if (
         translations.includes(
-          event.target.closest(".index").getAttribute("aria-item")
+          event.target.closest(".hover").getAttribute("aria-item")
         )
       ) {
         id = 0;
@@ -105,9 +105,9 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        category = event.target.closest(".index").getAttribute("aria-item");
+        category = event.target.closest(".hover").getAttribute("aria-item");
         populateCategoryGroup(
-          event.target.closest(".index").getAttribute("aria-item")
+          event.target.closest(".hover").getAttribute("aria-item")
         );
         if (expand == true) var groupType = "list";
         else var groupType = "blocks";
@@ -121,7 +121,7 @@ document.addEventListener(
             while (channel.lastChild) {
               channel.removeChild(channel.lastChild);
             }
-          category = event.target.closest(".index").getAttribute("response");
+          category = event.target.closest(".hover").getAttribute("response");
           randomDuplicate = [];
           first = false;
           xmlRequestParsing(null, null, random());
@@ -136,11 +136,11 @@ document.addEventListener(
           topMenuBarDisplay(topBar);
           init();
           category =
-            menu[event.target.closest(".index").getAttribute("aria-item")].cat;
+            menu[event.target.closest(".hover").getAttribute("aria-item")].cat;
           xmlRequestParsing(
             null,
             null,
-            event.target.closest(".index").getAttribute("aria-item")
+            event.target.closest(".hover").getAttribute("aria-item")
           );
         }
       }
