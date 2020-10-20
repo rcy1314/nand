@@ -154,9 +154,6 @@ var visual = function (opDefine) {
     document
       .querySelector("#favicon")
       .setAttribute("href", "images/Opposite.ico");
-    document
-      .querySelector("#favicon")
-      .setAttribute("src", "images/Opposite.ico");
     document.documentElement.style.setProperty(
       "--fill-color-primary",
       "#ffffff"
@@ -320,9 +317,6 @@ var visual = function (opDefine) {
       "#555555"
     );
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-    document
-      .querySelector("#favicon")
-      .setAttribute("src", "favicon.ico");
     if (document.body.contains(document.querySelector("#guide .sticky"))) {
       document.querySelector("#guide .header").classList.add("invert");
       document.querySelector(".sticky .wrap").classList.add("invert");

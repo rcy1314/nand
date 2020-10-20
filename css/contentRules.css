@@ -27,12 +27,8 @@ input {
 }
 
 a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:hover {
-  text-decoration: underline;
+  text-decoration: none !important;
+  cursor: default;
 }
 
 *,*:focus,*:hover{
