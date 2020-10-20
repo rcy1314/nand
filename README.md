@@ -1,7 +1,7 @@
 # RSS-Browser` <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
-  - Cloudflare no offloading https://acktic-github-io.acktic.workers.dev
-  - Heroku and localhost offloading https://acktic.github.io
+  - Cloudflare worker https://acktic-github-io.acktic.workers.dev
+  - Heroku and localhost https://acktic.github.io
   - Really Simple Syndicate.
   - Rich Site Summary.
 
