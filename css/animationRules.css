@@ -211,7 +211,7 @@
 html body #container #main #dots .fill {
   width: 4px;
   height: 4px;
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
 }
 

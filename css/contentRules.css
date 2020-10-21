@@ -92,7 +92,7 @@ html body #container #sidebar {
   height: 100%;
   float: left;
   width: 0;
-  z-index: 11;
+  z-index: 12;
 }
 
 html body #container #sidebar #content {
@@ -409,8 +409,7 @@ html body #container #main #visit #page {
 
 html body #container #main #dots .fill {
   background-color: var(--fill-color-primary);
-  position: absolute;
-  z-index: 12;
+  z-index: 11;
   left: -4px;
   top: 0;
 }

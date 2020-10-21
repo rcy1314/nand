@@ -205,7 +205,15 @@ var sideBarDisplay = function (n) {
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
     }
+    setTimeout(function() {
+      document
+        .querySelectorAll("#dots .fill")
+        .forEach((a) => a.style.marginLeft = "150px");
+    }, 300)
   } else if (onScreen == false) {
+    document
+      .querySelectorAll("#dots .fill")
+      .forEach((a) => a.style.marginLeft = "0");
     document.querySelector("#main").style.left = "0";
     document.querySelector("#sidebar").style.width = "0";
     document.querySelector("#main").style.width = "100%";

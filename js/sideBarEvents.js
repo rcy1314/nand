@@ -196,9 +196,6 @@ document.addEventListener(
       event.target.classList.contains("sideDots")
     ) {
       loading = "dots";
-      if (document.body.contains(document.querySelector("#main #group"))) {
-        notifyOption('Dots Progress Applied.')
-      } else {
         document
           .querySelectorAll("#dots .fill")
           .forEach((a) => a.classList.add("dots"));
@@ -207,7 +204,6 @@ document.addEventListener(
             .querySelectorAll("#dots .fill")
             .forEach((a) => a.classList.remove("dots"));
         }, 3000);
-      }
     }
     if (
       event.target.classList.contains("toggleImages") ||
