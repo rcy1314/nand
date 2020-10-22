@@ -479,6 +479,7 @@ var xmlStatusSuggestions = function () {
 };
 
 var populateCategoryGroup = function (translation) {
+  id = 0;
   var main = document.getElementById("main");
   if (
     !document.body.contains(document.querySelector("#group")) &&
@@ -489,16 +490,6 @@ var populateCategoryGroup = function (translation) {
       "  <div class='result'></div>" +
       "</div>" +
       main.innerHTML;
-  else {
-    id = 0;
-    if (document.body.contains(document.querySelector(".result")))
-    document.querySelector('.result').remove()
-    main.innerHTML =
-      "<div id='group'>" +
-      "  <div class='result'></div>" +
-      "</div>" +
-      main.innerHTML;
-  }
   var result = document.querySelector(".result");
 
   if (id && id != 0 && !location.href.match("\\?q=")) {
@@ -621,7 +612,6 @@ var filterInputResponse = function (
     var description = menu[i].des.space().toLowerCase();
     if (menu[i].hash == filterURI) {
       filter.push(menu.indexOf(menu[i]));
-      if (initPassthrough == false) writeFilterResponse(menu.indexOf(menu[i]));
       exact = i;
       match = i;
       break;
@@ -641,20 +631,23 @@ var filterInputResponse = function (
   if (filter.length == 0)
     xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
-    document.querySelector("#visit").style.display = "none";
-    var main = document.querySelector("#main");
-    main.innerHTML =
-      main.innerHTML +
-      "<div id='group' style='display:none'>" +
-      "  <div class='result'></div>" +
-      "</div>";
+    var main = document.getElementById("main");
+    if (
+      !document.body.contains(document.querySelector("#group")) &&
+      !document.body.contains(document.querySelector(".result"))
+    )
+      main.innerHTML =
+        "<div id='group'>" +
+        "  <div class='result'></div>" +
+        "</div>" +
+        main.innerHTML;
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
     else if (isNumeric(match) && filter.length == 1)
       xmlRequestParsing(null, null, match);
   }
-  if (initPassthrough == false && categoryBloat == true && match)
+  if (categoryBloat == true && match)
     populateCategoryGroup(menu[match].cat);
 };
 
@@ -672,7 +665,6 @@ var writeFilterResponse = function (menuObject) {
     menu[menuObject].des,
     media
   );
-  main.innerHTML = result.innerHTML + main.innerHTML;
 };
 
 var xmlImageSource = function (xhr) {
