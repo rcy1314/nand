@@ -235,7 +235,7 @@ document.addEventListener(
       event.target.classList.contains("Info") ||
       event.target.classList.contains("fa-exclamation-circle")
     ) {
-      var uri = "https://github.com/acktic/vanilla-rss-browser";
+      var uri = "https://github.com/acktic/acktic.github.io";
       uri.blank();
     }
     if (
