@@ -1173,7 +1173,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           var data = xhr.getElementsByTagName(channel)[i];
 
-          var title = xmlTitleParsing(data)
+          if (data.childNodes.length > 1) var title = xmlTitleParsing(data)
 
           if (title == postDuplicate || title == '') continue
 
