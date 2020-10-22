@@ -122,13 +122,14 @@ html body #container #sidebar .notify {
   background-color: transparent;
   justify-content: center;
   text-align: center;
-  position: fixed;
+  position: absolute;
   font-size: 11px;
   display: flex;
   margin: 10px;
-  width: 250px;
+  width: 240px;
   right: -15px;
-  bottom: 0;
+  bottom: -9px;
+  z-index: 12;
 }
 
 html body #container #sidebar #content #basic {
@@ -603,7 +604,6 @@ html body #container #main #group .result {
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 html body #container #main #feed .content .status .filter {

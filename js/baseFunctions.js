@@ -68,7 +68,6 @@ var notifyOption = function (displayContent) {
   notification.innerHTML = displayContent;
   setTimeout(function () {
     var Elem = notification;
-    Elem.style.position = "absolute";
     Elem.animate(
       {
         right: ["0px", "280px"],

@@ -5,6 +5,10 @@
     width: 100% !important
   }
 
+  html body #container #sidebar .notify {
+    position: fixed
+  }
+
   html body #container #main #visit #page .quick .feed .asset,
   html body #container #main #visit #page .quick .feed .translation {
     background-color: transparent !important;
@@ -113,9 +117,13 @@
     width: 32%;
   }
 
-  html body #container #main #group .air,
-  html body #container #main #group .result {
-    width: 95% !important
+  html body #container #main #group {
+    position: absolute !important;
+    right: 0 !important;
+    left: 0 !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 95vw !important;
   }
 
   html body #container #main #visit #page #front #first {

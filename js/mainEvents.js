@@ -149,7 +149,10 @@ document.addEventListener(
       expand = expand != true;
       displayExpand(expand);
       if (expand == true) var groupType = "list";
-      else var groupType = "blocks";
+      else {
+        var groupType = "blocks";
+        notifyOption('Displaying ' + category + " as " +groupType.capitalize())
+      }
       visual();
     }
     if (
