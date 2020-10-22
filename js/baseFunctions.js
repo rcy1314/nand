@@ -963,11 +963,12 @@ var guideImageAttributes = function (src) {
       document.querySelector("#main").classList.add("guide");
       guide.querySelector(".sticky").style.display = "block";
       guide.querySelector(".checkmark").style.display = "block";
-      if (newImg.naturalWidth >= newImg.naturalHeight)
+      if (newImg.naturalWidth >= newImg.naturalHeight) {
+        guide.querySelector(".img").style.maxHeight = "80vh";
         guide.querySelector(".img").style.maxWidth = "70vw";
-      else if (newImg.naturalHeight >= newImg.naturalWidth) {
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         guide.querySelector(".img").style.maxWidth = "40vw";
-        guide.querySelector(".img").style.maxHeight = "90vh";
+        guide.querySelector(".img").style.maxHeight = "70vh";
       }
     }
     guide.style.display = "flex";
