@@ -1180,6 +1180,9 @@ var xmlRequestParsing = function (search, string, index) {
               .nodeValue;
 
           var title = escape(title);
+          if (title == postDuplicate) continue
+          var postDuplicate = escape(title)
+
           var trun = truncate(title, 125, true);
           parse = xmlTimeStampParsing(channel, data);
 
