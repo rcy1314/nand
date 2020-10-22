@@ -8,6 +8,7 @@ var groupType = "list"; //or 'blocks'
 var showOption = true; //show tag Options in top
 var quickFeeds = true; //show or hide
 var loading = "percent"; //or 'percent'
+var titleTruncate = 125 //truncates title appends more
 var category = "Social"; //legacy set by xml
 var onlyImages = false; //grep, random, populate
 var centerFeeds = false; //display quick feeds above xml
@@ -1122,15 +1123,31 @@ var xmlImageAttributes = function (empty, n, item, src) {
   });
 };
 
+var xmlTitleParsing = function(xhr) {
+
+  if (xhr.getElementsByTagName("title")[0].childNodes[1])
+    var title = xhr.getElementsByTagName("title")[0].childNodes[1]
+      .nodeValue;
+  else
+    var title = xhr.getElementsByTagName("title")[0].childNodes[0]
+      .nodeValue;
+  if (
+    !title ||
+    (title.length == 7 &&
+      xhr.getElementsByTagName("title")[0].childNodes[0])
+  )
+    var title = xhr.getElementsByTagName("title")[0].childNodes[0]
+      .nodeValue;
+
+  return escape(title)
+
+}
+
 var xmlRequestParsing = function (search, string, index) {
-  obj = [];
-  dupe = [];
   var local;
   id = index;
   var pub = [];
-  var src = "";
-  var parse = [];
-  var images = [];
+
   if (search == "search") {
     uri = cors + menu[index].uri + string + "&format=RSS";
     category = category;
@@ -1158,32 +1175,20 @@ var xmlRequestParsing = function (search, string, index) {
 
         var quit = 20;
 
-        if (menu[index].id.match(/Imgur/g)) quit = 50;
+        if (menu[index].id.match(/Imgur/g)) quit = 60;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
           var data = xhr.getElementsByTagName(channel)[i];
 
-          if (!data.getElementsByTagName("title").length) continue;
-          if (data.getElementsByTagName("title")[0].childNodes[1])
-            var title = data.getElementsByTagName("title")[0].childNodes[1]
-              .nodeValue;
-          else
-            var title = data.getElementsByTagName("title")[0].childNodes[0]
-              .nodeValue;
-          if (
-            !title ||
-            (title.length == 7 &&
-              data.getElementsByTagName("title")[0].childNodes[0])
-          )
-            var title = data.getElementsByTagName("title")[0].childNodes[0]
-              .nodeValue;
+          var title = xmlTitleParsing(data)
 
-          var title = escape(title);
-          if (title == postDuplicate) continue
+          if (title == postDuplicate || title == '') continue
+
           var postDuplicate = escape(title)
 
-          var trun = truncate(title, 125, true);
+          var trun = truncate(title, titleTruncate, true);
+
           parse = xmlTimeStampParsing(channel, data);
 
           var share = menu[index].hash;
@@ -1197,7 +1202,7 @@ var xmlRequestParsing = function (search, string, index) {
             menu[index].ext
           );
 
-          if (title.length > 125) var more = "<div class='more'>more</div>";
+          if (title.length > titleTruncate) var more = "<div class='more'>more</div>";
           else var more = "";
 
           if (search == "search")
