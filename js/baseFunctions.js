@@ -88,6 +88,8 @@ var notifyOption = function (displayContent) {
 };
 
 var displayExpand = function (n) {
+  if (document.body.contains(document.getElementById("feed")))
+    document.getElementById("feed").remove()
   var group = document.getElementById("group");
   if (n == true) {
     groupType = "list";
