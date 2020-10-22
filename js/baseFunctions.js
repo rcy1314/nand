@@ -976,7 +976,6 @@ var guideImageAttributes = function (src) {
 
 var xmlImageAttributes = function (empty, n, item, src) {
   var maximum = 799;
-  var minimum = 299;
   var k = 5420;
   ready(() => {
     if (dupe.includes(src)) {
@@ -1038,7 +1037,11 @@ var xmlImageAttributes = function (empty, n, item, src) {
           var copyPost = document.querySelector(".img-" + item + " .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
-            if (newImg.naturalWidth < maximum) {
+            if (newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2) {
+              itemImage.closest(".item").querySelector(".pending").remove();
+              itemImage.closest(".image").remove();
+            } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = "180px";
               itemImage.style.margin = "12px";
               itemImage.closest(".classic").style.display = "flex";
@@ -1061,7 +1064,8 @@ var xmlImageAttributes = function (empty, n, item, src) {
               attribute.style.height = "110px";
             }
           } else {
-            if (newImg.naturalHeight > k) {
+            if (newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.closest(".item").querySelector(".pending").remove();
               itemImage.closest(".image").remove();
             } else if (newImg.naturalWidth < maximum) {
