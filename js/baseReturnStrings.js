@@ -420,7 +420,7 @@ var listingIndexBuild = function (
     ${indexId}
      </div>
          <div class='buffer'>
-     contextText
+    ${ contextText }
      </div>
        </div>
      </div>
