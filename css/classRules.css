@@ -224,40 +224,40 @@ scrollbar-width: thin;
   width: 100%;
 }
 
-.visual {
+.indexInvert {
   background-color: #ffffff !important;
 }
 
-.visual.hover {
+.indexInvertOver {
   background-color: #fbfbfb !important;
   color: #666666;
 }
 
-.visual:hover {
+.indexInvert:hover {
   background-color: #fbfbfb;
   color: #666666;
 }
 
-.visual:not(:hover) {
+.indexInvert:not(:hover) {
   background-color: #ffffff;
   color: #666666;
 }
 
-.contrast {
+.indexOpposite {
   background-color: #000000 !important;
 }
 
-.contrast.hover {
+.indexOppositeOver {
   background-color: #0e0e0e !important;
   color: #ffffff;
 }
 
-.contrast:hover {
+.indexOpposite:hover {
   background-color: #0e0e0e;
   color: #ffffff;
 }
 
-.contrast:not(:hover) {
+.indexOpposite:not(:hover) {
   background-color: #000000;
   color: #ffffff;
 }

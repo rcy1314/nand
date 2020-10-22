@@ -331,9 +331,7 @@
     left: 10px;
   }
 
-  html body #container #main #group .air,
   html body #container #main #group .air .populate,
-  html body #container #main #group .result .filter,
   html body #container #main #group .result .populate {
     width: 156px;
     margin: 2em;
@@ -366,6 +364,11 @@
 
   html body #container #main #top #arm {
     width: 940px;
+  }
+
+  html body #container #main #group .air,
+  html body #container #main #group .result {
+    width: 1200px;
   }
 
   html body #container #main #feed .center {

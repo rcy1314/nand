@@ -9,8 +9,9 @@ var visual = function (opDefine) {
           "blurDay",
           "pageInput",
           "buttonInvert",
-          "visual",
-          "visual.hover",
+          "indexOppositeOver",
+          "indexInvert",
+          "indexInvertOver",
           "invert",
           "invertAlt",
           "invertOver",
@@ -111,6 +112,14 @@ var visual = function (opDefine) {
         .querySelectorAll(".feed .translation")
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
     }
+    if (document.body.contains(document.querySelector(".listing .hover"))) {
+      document
+        .querySelectorAll(".listing .hover")
+        .forEach((a) => a.classList.add("indexOppositeOver"));
+      document
+        .querySelectorAll(".listing .hover")
+        .forEach((a) => a.classList.add("indexOpposite"));
+    }
     if (document.body.contains(document.querySelector(".quick .feed .asset")))
       document
         .querySelectorAll("#main .asset")
@@ -166,8 +175,9 @@ var visual = function (opDefine) {
       .forEach((a) =>
         a.classList.remove(
           "buttonOpposite",
-          "contrast",
-          "contrast.hover",
+          "indexInvertOver",
+          "indexOpposite",
+          "indexOppositeOver",
           "opposite",
           "oppositeAlt",
           "oppositeOver",
@@ -263,10 +273,10 @@ var visual = function (opDefine) {
     if (document.body.contains(document.querySelector(".listing .hover"))) {
       document
         .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("visual.hover"));
+        .forEach((a) => a.classList.add("indexInvertOver"));
       document
         .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("visual"));
+        .forEach((a) => a.classList.add("indexInvert"));
     }
     if (document.body.contains(document.querySelector(".listing .index"))) {
       if (document.body.contains(document.querySelector(".listing .buffer")))
