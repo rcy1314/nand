@@ -6,7 +6,6 @@ if (
   var uri = location.href.split("?")[1];
   if (location.href.match("\\+1")) {
     uri = uri.replace(/\?\+1|\+1/, "");
-    console.log(uri);
     if (!uri.match(/^[a-zA-Z0-9]+$/i)) {
       contrast = contrast != true;
       op = op != true;
