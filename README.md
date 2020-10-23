@@ -1,4 +1,4 @@
-# RSS-Browser` <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
+# acktic <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
   - Really Simple Syndicate.
   - Rich Site Summary.
