@@ -6,58 +6,9 @@
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages.
+* Heroku cors-anywhere offloading, first response ~7s.
 
-### Config in base.js
-
-* category
-> translations array in base.js
-
->['Social', 'News', 'Entertainment', 'Sports', 'Technology', 'World', 'Youtube']
-
-
-* op boolean<br>
-> invert = 0 [day]
-
-  > opposite = 1 [night]
-
-* buffer integer
-> listing total suggestions.
-
-* contrast /?+1
-> Opposite of op applies contrast.
-
-* onlyImages boolean
-> filter feeds with Images.
-
-* quickFeeds boolean
-> Display quick feeds on visit.
-
-* loading string
-> percent or dots used by loading, unloading in core.js, and progress base.js.
-
-* expand boolean
-> overrides groupType to set list [<b>true</b>] and blocks [<b>false</b>].
-
-* groupType string
-> used as a toggle with sidebar and option in main.js
-
-* onScreen boolean
-> display sidebar on visit.
-
-* showOption boolean
-> displays arm option icons.
-
-* topBar boolean
->shows or hides topBar for group and feed.
-
-* centerFeeds
-> display first quick feeds in xml feed, toggle in sidebar.
-
-* translations array
-> Reorder option.
-
-* reader boolean
-> responsive to onlyImages, translations, scrollTop.
+### Configurations in settings.js
 
 
 ### Init.js Unique URI Identifying.
@@ -107,7 +58,7 @@
 
      /?q=california&abc-fresno
 
-      will load feed return in bottom will filter response of query.
+      will load feed return to query.
 
 
 ### Head.js has multiple indices for objects.
@@ -129,6 +80,16 @@
   > media: xml with images boolean indexed by onlyImages.
 
  [indexed] filtered by response in base.js
+
+ ### Opposite
+
+ <p align='center'><img src='http://acktic.github.io/screenshots/visit.jpg'></p>
+
+ <p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
+
+ <p align='center'><img src='http://acktic.github.io/screenshots/wall.jpg'></p>
+
+
 
 ### Invert
 
