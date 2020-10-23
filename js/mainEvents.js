@@ -10,10 +10,12 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
-  if (document.querySelector('#main').clientWidth <= 425) quickFeedAsset(7);
-  else quickFeedAsset(8)
+  if (document.querySelector('#main').clientWidth <= 425 ||
+      quickFeedsTranslations == true) quickFeedAsset(7);
+  else if (quickFeedsTranslations == false) quickFeedAsset(8)
+  else quickFeedAsset(7)
   visual();
-  if (document.querySelector("#main").clientWidth < 768) return true;
+  if (document.querySelector("#main").clientWidth <= 768) return true;
   else {
     sidebarFirst = "false";
     sideBarDisplay(onScreen);
@@ -32,7 +34,7 @@ document.addEventListener(
         httpRequest.status == 200
       ) {
         init();
-        xmlRequestParsing(null, null, anyMenuRandomObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
   },

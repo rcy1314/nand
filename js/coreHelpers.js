@@ -107,7 +107,7 @@ var back = function () {
   return parseInt(back);
 };
 
-var anyMenuRandomObject = function () {
+var anyRandomMenuObject = function () {
   for (i = 1; i <= menu.length - 1; i++) {
     if (onlyImages == true) {
       if (menu[i].cat == category && menu[i].media == true)

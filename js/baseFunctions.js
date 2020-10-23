@@ -1,70 +1,9 @@
-var op = 0; //1 invert, 0 opposite
-var topBar = true; //display top menubar on content
-var expand = true; //filter populate list display
-var reader = false; //main scroll category reader xml
-var topBar = true // display topBar in group and feed
-var onScreen = true; //display sidebar on visit
-var groupType = "list"; //or 'blocks'
-var showOption = true; //show tag Options in top
-var quickFeeds = true; //show or hide
-var loading = "percent"; //or 'percent'
-var titleTruncate = 125 //truncates title appends more
-var category = "Social"; //legacy set by xml
-var onlyImages = false; //grep, random, populate
-var centerFeeds = false; //display quick feeds above xml
-var suggestionBuffer = 7; //input suggest length
-var contentStatusBuffer = 5; //feed content suggestions
-var cors = "https://acktic-github-io.herokuapp.com/"; // cors-anywhere
-
-var translations = [
-  "Social",
-  "News",
-  "Entertainment",
-  "Sports",
-  "Technology",
-  "World",
-  "Youtube",
-]; // reorder option
-
-/* Feel free to edit the above. */
-
-var id; //feed indexOf menu
-var post; //from init.js timestamp
-var tap = 0; //used in main.js for images
-var complete; //core.js interval for progress
-var dupe = []; //image src duplicate catch
-var local;
-var httpRequest; //uri xml httpRequest
-var random = []; //core.js random feed in category
-var filter = []; //response array for menu indexes
-var first = true; //reader append feed center channel
-var sidebarFirst = "true"; //first click show
-var expand = true; //filter populate list display
-var contrast = false; //opposite of op
-var randomDuplicate = []; //core.js random duplicate xml
-
-var selections = [
-  { name: "Opposite", class: "Night", icon: "fa-code" },
-  { name: "Invert", class: "Day", icon: "fa-terminal" },
-  { name: "Home", class: "sideHome", icon: "side fa-home" },
-  { name: "Random", class: "Random", icon: "fa-chart-pie" },
-  { name: "Random Image", class: "RandomImages", icon: "fa-tablet-alt" },
-  { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
-  { name: "Reader", class: "Reader", icon: "fa-heart continuous" },
-  { name: "Contrast", class: "Switch", icon: "fa-adjust" },
-  { name: "List", class: "List", icon: "fa-th-large" },
-  { name: "Blocks", class: "Blocks", icon: "fa-list-ul" },
-  { name: "Percent", class: "Percent", icon: "fa-signal" },
-  { name: "Dots", class: "Dots", icon: "sideDots fa-ellipsis-h" },
-  { name: "Images", class: "toggleImages", icon: "fa-camera-retro" },
-  { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
-  { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
-  { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
-];
-
 var notifyOption = function (displayContent) {
   var notification = document.querySelector("#sidebar .notify");
+  if (onScreen == true) var pos = 'absolute'
+  else var pos = 'fixed'
   notification.style.display = "block";
+  notification.style.position = pos;
   notification.innerHTML = displayContent;
   setTimeout(function () {
     var Elem = notification;
