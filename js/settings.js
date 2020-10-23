@@ -1,177 +1,266 @@
-/*  Op refers to opposite and invert visual styles.
-    1 Opposite [Night]
-    0 Invert   [Day]
-*/
-    var op = 0;
+/*
+    op [boolean/integer]
 
-
-/*  topBar decides to show or hide the transparent
-    search and option bar in groups and feeds.
-    Hidden in guide events.
-*/
-
-    var topBar = true;
-
-
-/*  Reader is a option for category reading.
-    Responsive to onlyImages and translations this will
-    respond on scroll event and executes anyRandomMenuObject.
-*/
-
-    var reader = false;
-
-
-/*  onScreen display the sideBar with a couple of conditions
-    in mainEvents.js not in viewports less than 768 and
-    sideBarDisplay in baseFunctions.js will resize main if
-    the viewport is greater than 768.
-*/
-
-    var onScreen = true;
-
-
-/*  groupType is set by expand-alt and block / list in sideBar
-    options are `list` and `blocks` referring function is
-    displayExpand in baseFunctions.js
-*/
-
-    var groupType = "list";
-
-
-/*  showOption works in conjuction with topBar and will only
-    show effect if topBar is true then hiding the arm options.
-*/
-
-    var showOption = true;
-
-
-/*  quickFeeds is another toggle for displaying page visit feeds.
-    Viewports less than 425 will call quickFeedAsset in baseFunctions.js
-    and set 7 translations [mainEvents.js] with quickFeeds set to true.
-*/
-
-    var quickFeeds = true;
-
-
-/*  quickFeedsTranslations [boolean]
-
-      Applies to
-        mainEvents.js onload
+      Applications
+        contrast, visual, sideBarDisplay
 
       Result
-        displays translations in quick feeds.
+        1 Opposite [Night]
+        0 Invert   [Day]
+
 */
 
-    var quickFeedsTranslations = true;
+          var op = 0;
 
 
-/*  loading is string that functions as either `dots` or `percent` */
+/*
+    topBar [boolean/integer]
 
-    var loading = "percent";
-
-
-/*  titleTruncate trims the xmlRequestParsing tag title in pub to
-    givin integer and appends ... more with parent Element [pub]
-    containing and attribute text with the full title that is shown
-    clicking more
-*/
-
-    var titleTruncate = 125
-
-
-/*  category can be any translation and really just populates or reads
-    from said calls. Be sure to capitalize.
-*/
-
-    var category = "Social";
-
-
-/*  onlyImages [boolean]
-
-      Applies to populateCategoryGroup, reader.
-*/
-
-    var onlyImages = false;
-
-/*  suggestiongBuffer [integer]
-
-      Applies to
-        inputFilterIndex
+      Applications
+        sideBarDisplay
 
       Result
-        input response less than [integer] will fill to [integer]
+        toggle hidden in guide
+
 */
 
-    var suggestionBuffer = 7;
+          var topBar = true;
 
 
-/*  contentStatusBuffer [integer]
+/*
+    reader [boolean/integer]
 
-      Applies to
-        xmlStatusSuggestions
+      Applications
+        sideBarDisplay, options
 
       Result
-        Random feeds suggested from feed
+        scroll call anyRandomMenuObject
+
 */
 
-    var contentStatusBuffer = 5;
+          var reader = false;
 
 
-/*  cors [string]
+/*
+    onScreen [boolean/integer]
 
-      Applies to
+      Applications
+        mainevents.js, onload, hide
+
+      Result
+        show sideBar
+
+*/
+
+          var onScreen = true;
+
+
+/*
+    groupType [string]
+
+      Applications
+        sideBarDisplay, option, displayExpand
+
+      Result
+        `blocks`
+        `list`
+
+*/
+
+          var groupType = "list";
+
+
+/*
+    showOption [boolean/integer]
+
+      Applications
+        sideBar
+
+      Result
+        toggle topBar option
+
+*/
+
+          var showOption = true;
+
+
+/*
+    quickFeeds [boolean/integer]
+
+      Applications
+        mainEvents.js, onLoad, clientWidth
+
+      Result
+        toggle quickFeedDisplay
+
+*/
+
+          var quickFeeds = true;
+
+
+/*
+    quickFeedsTranslations [boolean/integer]
+
+      Applications
+        mainEvents.js, onload
+
+      Result
+        translations in quick feeds
+
+*/
+
+          var quickFeedsTranslations = true;
+
+
+/*
+    loading [string]
+
+      Applications
+        init, progress, sideBar, unloading
+
+      Result
+        `percent`
+        `dots`
+
+*/
+
+          var loading = "percent";
+
+
+/*
+    titleTruncate [integer]
+
+      Applications
         xmlRequestParsing
 
       Result
-        menu[id].uri prepended with cors-anywhere instance
+        trim xhr title
+
 */
 
-    var cors = "https://acktic-github-io.herokuapp.com/";
+          var titleTruncate = 125
+
+
+/*
+    category [translations/legacy]
+
+      Applications
+        populateCategoryGroup, reverseCategoryGroup, sideBar, reader,
+        quickFeedAsset, topBar
+
+      Result
+        Social, News, Entertainment, Sports, Technology, World, Youtube
+        display, read, random
+
+*/
+
+          var category = "Social";
+
+
+/*
+    onlyImages [boolean/integer]
+
+      Applications
+        populateCategoryGroup, reverseCategoryGroup, sideBar, reader
+
+      Result
+        display, read, random
+
+*/
+
+          var onlyImages = false;
+
+
+/*
+    suggestiongBuffer [integer]
+
+      Applications
+        inputFilterIndex
+
+      Result
+        input response buffered to [integer]
+
+*/
+
+          var suggestionBuffer = 7;
+
+
+/*
+    contentStatusBuffer [integer]
+
+      Applications
+        xmlStatusSuggestions, xmlRequestParsing
+
+      Result
+        random generated
+
+*/
+
+          var contentStatusBuffer = 5;
+
+
+/*
+    cors [string]
+
+      Applications
+        xmlRequestParsing, httpRequest
+
+      Result
+        cors-anywhere instance
+
+      Fail
+        ABC in cloudflare worker
+
+*/
+
+          var cors = "https://acktic-github-io.herokuapp.com/";
 
 
 /*  translations [array]
 
-      Applies to
+      Applications
         populateCategoryGroup, reverseCategoryGroup, quickFeedAsset, sideBarDisplay
 
       Result
-        headXML.js menu array cat is filtered and shown
+        menu array filtered and shown
 
       Option
         Reorder.
+
 */
 
-    var translations = [
-      "Social",
-      "News",
-      "Entertainment",
-      "Sports",
-      "Technology",
-      "World",
-      "Youtube",
-    ];
+          var translations = [
+            "Social",
+            "News",
+            "Entertainment",
+            "Sports",
+            "Technology",
+            "World",
+            "Youtube",
+          ];
+
 
 
 /* Feel free to edit the above. */
 
 
 var id; //feed indexOf menu
+var tap = 0; //used in mainEvents.js for images
 var post; //from init.js timestamp
-var tap = 0; //used in main.js for images
-var complete; //core.js interval for progress
-var dupe = []; //image src duplicate catch
 var local; //used in init.js for guide posts
-var expand = true; //filter populate list display
+var complete; //coreHelpers.js interval for progress
+var dupe = []; //image src duplicate catch
 var httpRequest; //uri xml httpRequest
 var random = []; //core.js random feed in category
-var filter = []; //response array for menu indexes
+var filter = []; //response array for menu objects
 var first = true; //reader append feed center channel
-var sidebarFirst = "true"; //first click show
 var expand = true; //filter populate list display
-var contrast = false; //opposite of op
+var contrast = false; //opposite of op +1
 var randomDuplicate = []; //core.js random duplicate xml
+var sidebarFirst = "true"; //first click show
 
-var selections = [
+var selections = [ //sideBar sel options
+
   { name: "Opposite", class: "Night", icon: "fa-code" },
   { name: "Invert", class: "Day", icon: "fa-terminal" },
   { name: "Home", class: "sideHome", icon: "side fa-home" },
@@ -188,4 +277,5 @@ var selections = [
   { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
   { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
   { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
+
 ];
