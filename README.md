@@ -31,7 +31,7 @@
   >  filter response without passthrough from init.js fails to bing search results.
 
   * Hash Example
-  > /?[<b>hash</b>] in head.js
+  > /?[<b>hash</b>] in headXML.js
 
   > /?uX Used in Copy Post appends time converted to base 36.
 
@@ -61,23 +61,23 @@
       will load feed return to query.
 
 
-### Head.js has multiple indices for objects.
+### HeadXML.js has multiple indices for objects.
 
   * These need to be fufilled to add an object.
 
   > id: unique stripped to plain text [<b>indexed</b>]
 
-  > cat: translation [<b>indexed</b>]
-
   > des: plain text [<b>indexed</b>].
 
-  > uri: endpoint used in xml in base.js
+  > cat: translations
 
-  > ext: external blank exit to new tab legacy.
+  > uri: endpoint used in xmlRequestParsing in baseFunctions.js
+
+  > ext: external blank exit to new tab, legacy.
 
   > hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]
 
-  > media: xml with images boolean indexed by onlyImages.
+  > media: feed contains images boolean indexed by onlyImages.
 
  [indexed] filtered by response in base.js
 
