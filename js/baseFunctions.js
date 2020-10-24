@@ -158,7 +158,6 @@ var sideBarDisplay = function (n) {
     document.querySelector("#main").style.left = "0";
     document.querySelector("#sidebar").style.width = "0";
     document.querySelector("#main").style.width = "100%";
-    document.querySelector("#content").style.display = "none";
     document.querySelector("#top").style.width = "calc(100% - 16px)";
   }
   visual();

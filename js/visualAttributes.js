@@ -145,10 +145,14 @@ var visual = function (opDefine) {
       document
         .querySelectorAll("#sidebar .cat")
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
+      document
+        .querySelectorAll("#sidebar .sel")
+        .forEach((a) => a.style.backgroundColor = '#0e0e0e');
+      document.querySelector("#hide").style.backgroundColor = "#171717";
     }
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
-        "#0e0e0e";
+        "#0a0a0a";
     document
       .querySelector("#sidebar #content")
       .classList.add("oppositeScrollbar");
@@ -167,7 +171,6 @@ var visual = function (opDefine) {
       "--fill-color-primary",
       "#ffffff"
     );
-    document.querySelector("#hide").style.backgroundColor = "#070707";
     document.querySelector("#sidebar").style.backgroundColor = "#070707";
   } else if (op == 0) {
     document
@@ -265,10 +268,14 @@ var visual = function (opDefine) {
         .forEach((a) => a.classList.add("invertOverBorderless"));
       document
         .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.backgroundColor = "#eeeeee"));
+        .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
       document
         .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
+        .forEach((a) => (a.style.backgroundColor = "#eeeeee"));
+      document
+        .querySelectorAll("#sidebar .sel")
+        .forEach((a) => a.style.backgroundColor = '#eaeaea');
+      document.querySelector("#hide").style.backgroundColor = "#eaeaea";
     }
     if (document.body.contains(document.querySelector(".listing .hover"))) {
       document
@@ -332,10 +339,9 @@ var visual = function (opDefine) {
       document.querySelector(".sticky .wrap").classList.add("invert");
       document.querySelector("#guide .blur").classList.add("blurDay");
     }
-    document.querySelector("#hide").style.backgroundColor = "#eeeeee";
     document.querySelector("#sidebar").style.backgroundColor = "#eeeeee";
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
-        "#f7f7f7";
+        "#e7e7e7";
   }
 };

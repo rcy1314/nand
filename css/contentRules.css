@@ -96,7 +96,6 @@ html body #container #sidebar {
 }
 
 html body #container #sidebar #content {
-  position: absolute;
   overflow-x: hidden;
   user-select: none;
   overflow-y: auto;
@@ -112,7 +111,6 @@ html body #container #sidebar #content #category {
 }
 
 html body #container #sidebar #content #select {
-  background-color: inherit;
   height: fit-content;
   overflow: hidden;
   width: 100%;
@@ -177,11 +175,11 @@ html body #container #sidebar #content #category .cat img {
 html body #container #sidebar #content #select .sel {
   border-bottom: .3px solid transparent;
   border-top: .3px solid transparent;
-  background-color: inherit;
   overflow: hidden;
   font-size: 12px;
   padding: 10px;
   height: 15px;
+  z-index: 1;
 }
 
 html body #container #sidebar #content #select .sel .fa {
