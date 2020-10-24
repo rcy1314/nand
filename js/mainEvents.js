@@ -15,8 +15,9 @@ window.onload = function () {
   else if (quickFeedsTranslations == false) quickFeedAsset(8)
   else quickFeedAsset(7)
   visual();
-  if (document.querySelector("#main").clientWidth <= 768) return true;
-  else {
+  if (document.querySelector("#main").clientWidth <= 768) {
+    sideBarDisplay(false)
+  } else {
     sidebarFirst = "false";
     sideBarDisplay(onScreen);
   }

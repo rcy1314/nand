@@ -147,9 +147,9 @@ var visual = function (opDefine) {
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
       document
         .querySelectorAll("#sidebar .sel")
-        .forEach((a) => a.style.backgroundColor = '#0e0e0e');
-      document.querySelector("#hide").style.backgroundColor = "#171717";
+        .forEach((a) => a.style.backgroundColor = '#070707');
     }
+    document.querySelector("#hide").style.backgroundColor = "#171717";
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
         "#0a0a0a";
@@ -275,8 +275,8 @@ var visual = function (opDefine) {
       document
         .querySelectorAll("#sidebar .sel")
         .forEach((a) => a.style.backgroundColor = '#eeeeee');
-      document.querySelector("#hide").style.backgroundColor = "#eaeaea";
     }
+    document.querySelector("#hide").style.backgroundColor = "#eaeaea";
     if (document.body.contains(document.querySelector(".listing .hover"))) {
       document
         .querySelectorAll(".listing .hover")

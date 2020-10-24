@@ -144,7 +144,7 @@ html body #container #sidebar #content #basic input[type=text] {
   margin: 0 auto;
   display: block;
   color: #dddddd;
-  width: 220px;
+  width: 180px;
   padding: 5px;
 }
 
@@ -155,21 +155,20 @@ html body #container #sidebar #content #basic input[type=text]::placeholder {
 html body #container #sidebar #content #category .cat {
   border-bottom: .3px solid transparent;
   border-top: .3px solid transparent;
-  background-color: inherit;
   letter-spacing: .5px;
-  align-items: center;
+  padding-bottom: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 25px;
   overflow: hidden;
-  font-size: 11px;
-  display: flex;
-  padding: 10px;
-  height: 25px;
+  font-size: 12px;
+  height: 15px;
 }
 
 html body #container #sidebar #content #category .cat img {
-  position: absolute;
+  float: right;
   height: 15px;
   width: 15px;
-  right: 10px;
 }
 
 html body #container #sidebar #content #select .sel {
@@ -179,13 +178,12 @@ html body #container #sidebar #content #select .sel {
   font-size: 12px;
   padding: 10px;
   height: 15px;
-  z-index: 1;
+  z-index: 0;
 }
 
 html body #container #sidebar #content #select .sel .fa {
-  position: absolute;
   font-weight: 50;
-  right: 10px;
+  float: right;
 }
 
 html body #container #sidebar #hide {

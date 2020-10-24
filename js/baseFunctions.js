@@ -105,8 +105,8 @@ var displayExpand = function (n) {
   unloading();
 };
 
-var sideBarDisplay = function (n) {
-  if (onScreen == true) {
+var sideBarDisplay = function (toggleOption) {
+  if (toggleOption == true) {
     var Elem = document.querySelector("#sidebar");
     Elem.style.position = "fixed";
     Elem.animate(
@@ -129,12 +129,12 @@ var sideBarDisplay = function (n) {
     if (!document.body.contains(document.querySelector(".cat"))) {
       for (i = 0; i <= translations.length - 1; i++) {
         category.innerHTML =
-          category.innerHTML + sidebarCategoryBuild(translations[i]);
+          category.innerHTML + sideBarCategoryBuild(translations[i]);
       }
       for (i = 0; i <= selections.length - 1; i++) {
         select.innerHTML =
           select.innerHTML +
-          sidebarOptionBuild(
+          sideBarOptionBuild(
             selections[i].class,
             selections[i].name,
             selections[i].icon
@@ -151,7 +151,7 @@ var sideBarDisplay = function (n) {
         .querySelectorAll("#dots .fill")
         .forEach((a) => a.style.marginLeft = "150px");
     }, 300)
-  } else if (onScreen == false) {
+  } else if (toggleOption == false) {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.style.marginLeft = "0");

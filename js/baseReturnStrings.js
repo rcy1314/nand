@@ -427,17 +427,17 @@ var listingIndexBuild = function (
     `;
 };
 
-var sidebarCategoryBuild = function (translation) {
+var sideBarCategoryBuild = function (translation) {
   return `
      <div class='cat ${translation}'
        aria-item='${translation}'>
+       ${translation}
        <img class='webp' src='images/${translation}.webp'>
-    ${translation}
      </div>
     `;
 };
 
-var sidebarOptionBuild = function (classes, name, icon) {
+var sideBarOptionBuild = function (classes, name, icon) {
   return `
      <div class='sel ${classes}'>
     ${name}
