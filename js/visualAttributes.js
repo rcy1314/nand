@@ -274,7 +274,7 @@ var visual = function (opDefine) {
         .forEach((a) => (a.style.backgroundColor = "#eeeeee"));
       document
         .querySelectorAll("#sidebar .sel")
-        .forEach((a) => a.style.backgroundColor = '#eaeaea');
+        .forEach((a) => a.style.backgroundColor = '#eeeeee');
       document.querySelector("#hide").style.backgroundColor = "#eaeaea";
     }
     if (document.body.contains(document.querySelector(".listing .hover"))) {
