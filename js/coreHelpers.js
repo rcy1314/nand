@@ -38,6 +38,7 @@ function loadScripts() {
     "sideBarEvents",
     "inputEvents",
     "mainEvents",
+    "xmlFunctions"
   ];
   for (var file of files) {
     var path = directory + file + extension;
@@ -129,27 +130,6 @@ var truncate = function (i, n, useWordBoundary) {
       ? subString.substr(0, subString.lastIndexOf(" "))
       : subString) + "..."
   );
-};
-
-var next = function () {
-  if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
-  else var plus = parseInt(id);
-  if (filter[plus + +1]) var next = filter[plus + +1];
-  else if (id == menu.length - 1) var next = 1 + +1;
-  else var next = parseInt(id) + +1;
-
-  return parseInt(next);
-};
-
-var back = function () {
-  if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
-  if (filter[plus - +1]) var back = filter[plus - +1];
-  else if (id == 0) var back = menu.length - 1;
-  else var back = parseInt(id) - +1;
-
-  return parseInt(back);
 };
 
 var anyRandomMenuObject = function () {
