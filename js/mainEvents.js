@@ -1,6 +1,4 @@
 window.onload = function () {
-  document.querySelector("#input").style.display = "block";
-  document.querySelector("#input").style.display = "block";
   var guest = document.querySelector(".guest");
   guest.setAttribute("placeholder", "Search Feeds");
   guest.style.caretColor = "#e4e4e4";

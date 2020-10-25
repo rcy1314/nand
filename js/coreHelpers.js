@@ -3,6 +3,51 @@ var ready = (callback) => {
   else document.addEventListener("DOMContentLoaded", callback);
 };
 
+function loadStyles() {
+  var directory = "css/";
+  var extension = ".css";
+  var files = [
+    "animationRules",
+    "classRules",
+    "mediaRules",
+    "contentRules",
+    "mediaRules",
+    "fontIcons",
+  ];
+  for (var file of files) {
+    var path = directory + file + extension;
+    var script = document.createElement("link");
+    script.type = "text/css";
+    script.rel = "stylesheet";
+    script.href = path;
+    document.styleSheet = script;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+}
+
+function loadScripts() {
+  var directory = "js/";
+  var extension = ".js";
+  var files = [
+    "settings",
+    "init",
+    "visualAttributes",
+    "baseFunctions",
+    "headXML",
+    "baseReturnStrings",
+    "sideBarEvents",
+    "inputEvents",
+    "mainEvents",
+  ];
+  for (var file of files) {
+    var path = directory + file + extension;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = path;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+}
+
 function whichTransitionEvent() {
   var t;
   var el = document.createElement("fakeelement");
