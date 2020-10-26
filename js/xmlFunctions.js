@@ -490,7 +490,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           if (title == postDuplicate || title == '') continue
 
-          var postDuplicate = escape(title)
+          var postDuplicate = title
 
           var trun = truncate(title, titleTruncate, true);
 
