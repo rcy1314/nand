@@ -666,7 +666,7 @@ html body #container #main #group .result .populate .title {
 html body #container #main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
-  display: none;
+  display: block;
   width: 220px;
   top: 15px;
 }

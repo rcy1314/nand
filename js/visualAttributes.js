@@ -149,6 +149,7 @@ var visual = function (opDefine) {
         .querySelectorAll("#sidebar .sel")
         .forEach((a) => a.style.backgroundColor = '#070707');
     }
+    document.querySelector(".sideFilter").style.backgroundColor = "#171717";
     document.querySelector("#hide").style.backgroundColor = "#171717";
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
@@ -276,6 +277,7 @@ var visual = function (opDefine) {
         .querySelectorAll("#sidebar .sel")
         .forEach((a) => a.style.backgroundColor = '#eeeeee');
     }
+    document.querySelector(".sideFilter").style.backgroundColor = "#ffffff";
     document.querySelector("#hide").style.backgroundColor = "#eaeaea";
     if (document.body.contains(document.querySelector(".listing .hover"))) {
       document
