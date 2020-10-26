@@ -115,8 +115,7 @@ var assetBuild = function (assetIndex, assetImage, assetId) {
     <div class='asset' aria-item='${assetIndex}'>
        <img class='entity' src='${assetImage}'>
        <a class='query' title='${assetId}'>
-    ${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}
-     ...
+    ${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...
        </a>
      </div>
     `;

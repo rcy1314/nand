@@ -465,7 +465,7 @@ document.addEventListener(
       event.target.classList.contains("right") ||
       event.target.classList.contains("fa-plus")
     ) {
-      quickFeedAsset(8);
+      quickFeedAsset(7);
       var leftPos = event.target.closest(".quick").querySelector(".feed")
         .scrollLeft;
       event.target.closest(".quick").querySelector(".feed").scrollLeft =

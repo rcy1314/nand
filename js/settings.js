@@ -109,7 +109,7 @@
 
 */
 
-          var quickFeedsTranslations = true;
+          var quickFeedsTranslations = false;
 
 
 /*
