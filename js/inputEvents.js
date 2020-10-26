@@ -214,10 +214,9 @@ document.addEventListener(
           document
             .querySelector("#first .listing .index:first-child")
             .classList.remove("index");
-        } else {
-          if (
+        } else if (
             document.body.contains(
-              document.querySelector("#first .listing .hover").nextSibling
+              document.querySelector("#first .listing .hover").nextElementSibling
             )
           ) {
             document
@@ -225,17 +224,16 @@ document.addEventListener(
               .classList.add("index");
             document
               .querySelector("#first .listing .hover")
-              .nextSibling.classList.add("hover");
+              .nextElementSibling.classList.add("hover");
             document
               .querySelector("#first .listing .hover")
-              .nextSibling.classList.remove("index");
+              .nextElementSibling.classList.remove("index");
             document
               .querySelector("#first .listing .hover")
               .classList.remove("hover");
             document.querySelector("#first .listing .hover").focus();
             document.querySelector(".focus .guest").focus();
           }
-        }
       } else if (event.keyCode === 38) {
         if (
           !document.body.contains(
@@ -248,28 +246,26 @@ document.addEventListener(
           document
             .querySelector("#first .listing .index:first-child")
             .classList.remove("index");
-        } else {
-          if (
+        } else if (
             document.body.contains(
-              document.querySelector("#first .listing .hover").previousSibling
+              document.querySelector("#first .listing .hover").previousElementSibling
             )
           ) {
             document
               .querySelector("#first .listing .hover")
-              .previousSibling.classList.remove("index");
+              .previousElementSibling.classList.remove("index");
             document
               .querySelector("#first .listing .hover")
-              .previousSibling.classList.add("hover");
+              .previousElementSibling.classList.add("hover");
             document
               .querySelector("#first .listing .hover")
-              .nextSibling.classList.add("index");
+              .nextElementSibling.classList.add("index");
             document
               .querySelector("#first .listing .hover")
-              .nextSibling.classList.remove("hover");
+              .nextElementSibling.classList.remove("hover");
             document.querySelector("#first .listing .hover").focus();
             document.querySelector(".focus .guest").focus();
           }
-        }
       } else if (event.keyCode === 27)
         document.querySelector("#first").style.display = "none";
       event.target.setAttribute("tabIndex", -1);
@@ -300,7 +296,7 @@ document.addEventListener(
         } else {
           if (
             document.body.contains(
-              document.querySelector("#match .listing .hover").nextSibling
+              document.querySelector("#match .listing .hover").nextElementSibling
             )
           ) {
             document
@@ -308,10 +304,10 @@ document.addEventListener(
               .classList.add("index");
             document
               .querySelector("#match .listing .hover")
-              .nextSibling.classList.add("hover");
+              .nextElementSibling.classList.add("hover");
             document
               .querySelector("#match .listing .hover")
-              .nextSibling.classList.remove("index");
+              .nextElementSibling.classList.remove("index");
             document
               .querySelector("#match .listing .hover")
               .classList.remove("hover");
@@ -334,21 +330,21 @@ document.addEventListener(
         } else {
           if (
             document.body.contains(
-              document.querySelector("#match .listing .hover").previousSibling
+              document.querySelector("#match .listing .hover").previousElementSibling
             )
           ) {
             document
               .querySelector("#match .listing .hover")
-              .previousSibling.classList.remove("index");
+              .previousElementSibling.classList.remove("index");
             document
               .querySelector("#match .listing .hover")
-              .previousSibling.classList.add("hover");
+              .previousElementSibling.classList.add("hover");
             document
               .querySelector("#match .listing .hover")
-              .nextSibling.classList.add("index");
+              .nextElementSibling.classList.add("index");
             document
               .querySelector("#match .listing .hover")
-              .nextSibling.classList.remove("hover");
+              .nextElementSibling.classList.remove("hover");
             document.querySelector("#match .listing .hover").focus();
             document.querySelector("#input .view").focus();
           }
