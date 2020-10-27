@@ -431,8 +431,8 @@ var sideBarCategoryBuild = function (translation) {
      <div class='cat ${translation}'
        aria-item='${translation}'>
        ${translation}
-       <img class='webp' src='images/${translation}.webp'>
      </div>
+     <img class='webp' src='images/${translation}.webp'>
     `;
 };
 
@@ -440,7 +440,7 @@ var sideBarOptionBuild = function (classes, name, icon) {
   return `
      <div class='sel ${classes}'>
     ${name}
-       <div class='fa ${icon}'></div>
      </div>
+     <div class='fa ${icon}'></div>
     `;
 };

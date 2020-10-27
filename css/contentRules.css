@@ -87,6 +87,7 @@ html body #container #toggle {
 }
 
 html body #container #sidebar {
+  background-color: transparent;
   position: fixed;
   display: block;
   height: 100%;
@@ -96,6 +97,7 @@ html body #container #sidebar {
 }
 
 html body #container #sidebar #content {
+  background-color: transparent;
   overflow-x: hidden;
   user-select: none;
   overflow-y: auto;
@@ -103,8 +105,9 @@ html body #container #sidebar #content {
   width: 100%;
 }
 
-html body #container #sidebar #content #category {
-  background-color: inherit;
+html body #container #sidebar #conten  background-color: transparent;
+t #category {
+  background-color: transparent;
   height: fit-content;
   overflow: hidden;
   width: 100%;
@@ -153,6 +156,7 @@ html body #container #sidebar #content #basic input[type=text]::placeholder {
 }
 
 html body #container #sidebar #content #category .cat {
+  background-color: transparent !important;
   border-bottom: .3px solid transparent;
   border-top: .3px solid transparent;
   letter-spacing: .5px;
@@ -165,25 +169,37 @@ html body #container #sidebar #content #category .cat {
   height: 15px;
 }
 
-html body #container #sidebar #content #category .cat img {
+html body #container #sidebar #content #category .webp {
+  position: absolute;
+  margin-top: -40px;
   float: right;
   height: 15px;
   width: 15px;
+  z-index: -1;
+  right: 10px;
 }
 
 html body #container #sidebar #content #select .sel {
+  background-color: transparent !important;
   border-bottom: .3px solid transparent;
   border-top: .3px solid transparent;
   overflow: hidden;
   font-size: 12px;
   padding: 10px;
   height: 15px;
-  z-index: 0;
 }
 
-html body #container #sidebar #content #select .sel .fa {
+html body #container #sidebar #content #select .fa {
+  position: absolute;
+  margin-top: -22px;
   font-weight: 50;
+  font-size: 10px;
   float: right;
+  height: 15px;
+  float: right;
+  width: 15px;
+  z-index: -1;
+  right: 10px;
 }
 
 html body #container #sidebar #hide {

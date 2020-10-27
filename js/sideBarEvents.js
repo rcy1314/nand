@@ -8,10 +8,10 @@ document.addEventListener(
       let x = event.pageX;
       let p = (x / event.target.offsetWidth) * 100;
       event.target.style.borderImage =
-        "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,.5) " +
+        "linear-gradient(to right,  rgba(0,0,0,.05) 0%,rgba(147,147,147,.5) " +
         parseInt(p) +
-        "%,rgba(0,0,0,0) 100%)";
-      event.target.style.borderWidth = ".3px 0 .3px";
+        "%,rgba(0,0,0,.05) 100%)";
+      event.target.style.borderWidth = ".3px .3px .3px .3px";
       event.target.style.borderImageSlice = "9";
       event.target.style.borderStyle = "solid";
     }

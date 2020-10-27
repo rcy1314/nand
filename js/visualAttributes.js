@@ -136,22 +136,13 @@ var visual = function (toggleOption) {
       .classList.add("oppositeOverBorderless");
     document.querySelector(".view").classList.add("oppositeOverBorderless");
     document.querySelector(".focus .button").classList.add("buttonOpposite");
-    if (document.body.contains(document.querySelector("#sidebar .cat"))) {
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => a.classList.add("oppositeOverBorderless"));
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.backgroundColor = "#0f0f0f"));
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
-      document
-        .querySelectorAll("#sidebar .sel")
-        .forEach((a) => a.style.backgroundColor = '#0f0f0f');
-    }
+    if (document.body.contains(document.querySelector("#sidebar #category .webp")))
+    document
+      .querySelectorAll("#sidebar #category .webp")
+      .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
     document.querySelector(".sideFilter").style.backgroundColor = "#171717";
-    document.querySelector("#hide").style.backgroundColor = "#171717";
+    document.querySelector("#hide").style.background =
+      "-webkit-linear-gradient(left, #0f0f0f 90%, #1f1f1f 100%)";
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
         "#0a0a0a";
@@ -265,22 +256,13 @@ var visual = function (toggleOption) {
       document
         .querySelectorAll(".feed .asset")
         .forEach((a) => a.classList.add("invertOverBorderless"));
-    if (document.body.contains(document.querySelector("#sidebar .cat"))) {
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => a.classList.add("invertOverBorderless"));
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
-      document
-        .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.backgroundColor = "#eeeeee"));
-      document
-        .querySelectorAll("#sidebar .sel")
-        .forEach((a) => a.style.backgroundColor = '#eeeeee');
-    }
+    if (document.body.contains(document.querySelector("#sidebar #category .webp")))
+    document
+      .querySelectorAll("#sidebar #category .webp")
+      .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
     document.querySelector(".sideFilter").style.backgroundColor = "#ffffff";
-    document.querySelector("#hide").style.backgroundColor = "#eaeaea";
+    document.querySelector("#hide").style.background =
+      "-webkit-linear-gradient(left, #eeeeee 90%, #eaeaea 100%)";
     if (document.body.contains(document.querySelector(".listing .index"))) {
       if (document.body.contains(document.querySelector(".listing .buffer")))
         document
