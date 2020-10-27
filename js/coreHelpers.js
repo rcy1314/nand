@@ -92,6 +92,7 @@ var loadHTML = function () {
               </div>
           </div>
       </div>`
+      document.body.style.display = 'block'
 }
 
 var loadStyles = function() {
