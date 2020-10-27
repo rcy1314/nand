@@ -136,9 +136,12 @@
     top: -5px;
   }
 
+  html body #container #top #arm #search #match {
+    left: 7px;
+  }
+
   html body #container #top #arm #search #match .listing {
-    margin: 0 auto;
-    top: 0;
+    width: 304px !important;
   }
 
   html body #container #main #visit #page #front .focus {
