@@ -247,6 +247,7 @@ document.addEventListener(
       } else if (
         document.body.contains(document.querySelector("#match .hover"))
       ) {
+        id = document.querySelector("#match .hover").getAttribute("aria-item")
         document.querySelector("#match").style.display = "none";
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
@@ -272,6 +273,7 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
+        id = document.querySelector("#first .hover").getAttribute("aria-item")
         init()
         xmlRequestParsing(
           null,
