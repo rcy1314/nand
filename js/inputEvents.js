@@ -192,315 +192,10 @@ document.addEventListener(
 document.addEventListener(
   "keyup",
   function (event) {
-    if (event.target.classList.contains("guest")) {
-      if (event.keyCode === 13) return false;
-      else if (
-        event.target.value.length > 3 &&
-        event.keyCode !== 40 &&
-        event.keyCode !== 34 &&
-        event.keyCode !== 33 &&
-        event.keyCode !== 38
-      )
-        inputListingIndex(event.target.value, "#first");
-      else if (event.target.value.length > 2 && event.keyCode === 8)
-        inputListingIndex(event.target.value, "#first");
-      else if (event.keyCode === 40) {
-        if (
-          !document.body.contains(
-            document.querySelector("#first .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#first .listing .index:first-child")
-            .classList.add("hover");
-        } else if (
-          document.body.contains(
-            document.querySelector("#first .listing .hover").nextElementSibling
-          )
-        ) {
-          document
-            .querySelector("#first .listing .hover")
-            .nextElementSibling.classList.add("hover");
-          document
-            .querySelector("#first .listing .hover")
-            .classList.remove("hover");
-          document.querySelector("#first .listing .hover").focus();
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 33) {
-        if (
-          document.body.contains(
-            document.querySelector("#first .listing .hover")
-          ) &&
-          document.querySelector("#first .listing .hover") !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover") !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover")
-            .previousElementSibling !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling.previousElementSibling !=
-            document.querySelector("#first .listing .index:first-child") &&
-          document.querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling !=
-            document.querySelector("#first .listing .index:first-child")
-        ) {
-          document
-            .querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.focus();
-          document
-            .querySelector("#first .listing .hover")
-            .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add(
-              "hover"
-            );
-          document
-            .querySelector("#first .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
-              "hover"
-            );
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 34) {
-        if (
-          !document.body.contains(
-            document.querySelector("#first .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#first .listing .index")
-            .nextElementSibling.nextElementSibling.nextElementSibling.focus();
-          document
-            .querySelector("#first .listing .index")
-            .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
-              "hover"
-            );
-        } else if (
-          document.querySelector("#first .listing .hover") !=
-            document.querySelector("#first .listing .index:last-child") &&
-          document.querySelector("#first .listing .hover").nextElementSibling !=
-            document.querySelector("#first .listing .index:last-child") &&
-          document.querySelector("#first .listing .hover").nextElementSibling
-            .nextElementSibling !=
-            document.querySelector("#first .listing .index:last-child") &&
-          document.querySelector("#first .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling !=
-            document.querySelector("#first .listing .index:last-child") &&
-          document.querySelector("#first .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling.nextElementSibling !=
-            document.querySelector("#first .listing .index:last-child") &&
-          document.querySelector("#first .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling.nextElementSibling
-            .nextElementSibling !=
-            document.querySelector("#first .listing .index:last-child")
-        ) {
-          document
-            .querySelector("#first .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.focus();
-          document
-            .querySelector("#first .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
-              "hover"
-            );
-          document
-            .querySelector("#first .listing .hover")
-            .classList.remove("hover");
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 38) {
-        if (
-          !document.body.contains(
-            document.querySelector("#first .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#first .listing .index:first-child")
-            .classList.add("hover");
-        } else if (
-          document.body.contains(
-            document.querySelector("#first .listing .hover")
-              .previousElementSibling
-          )
-        ) {
-          document
-            .querySelector("#first .listing .hover")
-            .previousElementSibling.classList.add("hover");
-          document
-            .querySelector("#first .listing .hover")
-            .nextElementSibling.classList.remove("hover");
-          document.querySelector("#first .listing .hover").focus();
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 27)
-        document.querySelector("#first").style.display = "none";
-      event.target.setAttribute("tabIndex", -1);
-      event.target.focus();
-      visual();
-    } else if (event.target.classList.contains("view")) {
-      event.target.setAttribute("placeholder", "");
-      if (event.keyCode === 13) return false;
-      else if (
-        event.target.value.length > 3 &&
-        event.keyCode !== 40 &&
-        event.keyCode !== 33 &&
-        event.keyCode !== 34 &&
-        event.keyCode !== 38
-      )
-        inputListingIndex(event.target.value, "#match");
-      else if (event.keyCode === 40) {
-        if (
-          !document.body.contains(
-            document.querySelector("#match .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#match .listing .index:first-child")
-            .classList.add("hover");
-        } else if (
-          document.body.contains(
-            document.querySelector("#match .listing .hover").nextElementSibling
-          )
-        ) {
-          document
-            .querySelector("#match .listing .hover")
-            .nextElementSibling.classList.add("hover");
-          document
-            .querySelector("#match .listing .hover")
-            .classList.remove("hover");
-          document.querySelector("#match .listing .hover").focus();
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 33) {
-        if (
-          document.body.contains(
-            document.querySelector("#match .listing .hover")
-          ) &&
-          document.querySelector("#match .listing .hover") !=
-            document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .hover")
-            .previousElementSibling !=
-            document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling !=
-            document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling !=
-            document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling.previousElementSibling !=
-            document.querySelector("#match .listing .index:first-child") &&
-          document.querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling.previousElementSibling
-            .previousElementSibling !=
-            document.querySelector("#match .listing .index:first-child")
-        ) {
-          document
-            .querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.focus();
-          document
-            .querySelector("#match .listing .hover")
-            .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add(
-              "hover"
-            );
-          document
-            .querySelector("#match .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
-              "hover"
-            );
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 34) {
-        if (
-          !document.body.contains(
-            document.querySelector("#match .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#match .listing .index")
-            .nextElementSibling.nextElementSibling.nextElementSibling.focus();
-          document
-            .querySelector("#match .listing .index")
-            .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
-              "hover"
-            );
-        }
-        if (
-          document.querySelector("#match .listing .hover") !=
-            document.querySelector("#match .listing .index:last-child") &&
-          document.querySelector("#match .listing .hover").nextElementSibling !=
-            document.querySelector("#match .listing .index:last-child") &&
-          document.querySelector("#match .listing .hover").nextElementSibling
-            .nextElementSibling !=
-            document.querySelector("#match .listing .index:last-child") &&
-          document.querySelector("#match .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling !=
-            document.querySelector("#match .listing .index:last-child") &&
-          document.querySelector("#match .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling.nextElementSibling !=
-            document.querySelector("#match .listing .index:last-child") &&
-          document.querySelector("#match .listing .hover").nextElementSibling
-            .nextElementSibling.nextElementSibling.nextElementSibling
-            .nextElementSibling !=
-            document.querySelector("#match .listing .index:last-child")
-        ) {
-          document
-            .querySelector("#match .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.focus();
-          document
-            .querySelector("#match .listing .hover")
-            .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
-              "hover"
-            );
-          document
-            .querySelector("#match .listing .hover")
-            .classList.remove("hover");
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 38) {
-        if (
-          !document.body.contains(
-            document.querySelector("#match .listing .hover")
-          )
-        ) {
-          document
-            .querySelector("#match .listing .index:first-child")
-            .classList.add("hover");
-        } else if (
-          document.body.contains(
-            document.querySelector("#match .listing .hover")
-              .previousElementSibling
-          )
-        ) {
-          document
-            .querySelector("#match .listing .hover")
-            .previousElementSibling.classList.add("hover");
-          document
-            .querySelector("#match .listing .hover")
-            .nextElementSibling.classList.remove("hover");
-          document.querySelector("#match .listing .hover").focus();
-          document.querySelector(".focus .guest").focus();
-        }
-      } else if (event.keyCode === 27)
-        document.querySelector("#match").style.display = "none";
-      event.target.setAttribute("tabIndex", -1);
-      event.target.focus();
-      visual();
-    }
+    if (event.target.classList.contains("guest"))
+      inputListingKeyup('#first', event.keyCode)
+    else if (event.target.classList.contains("view"))
+      inputListingKeyup('#match', event.keyCode)
     event.preventDefault();
   },
   false
@@ -598,3 +293,160 @@ document.addEventListener(
   },
   false
 ); //:before pseudo-elements not loaded in DOM
+
+var inputListingKeyup = function(Elem, keycode) {
+  if (keycode === 13) return false;
+  else if (
+    event.target.value.length > 3 &&
+    keycode !== 40 &&
+    keycode !== 34 &&
+    keycode !== 33 &&
+    keycode !== 38
+  )
+    inputListingIndex(event.target.value, Elem);
+  else if (event.target.value.length > 2 && keycode === 8)
+    inputListingIndex(event.target.value, Elem);
+  else if (keycode === 40) {
+    if (
+      !document.body.contains(
+        document.querySelector(Elem + " .listing .hover")
+      )
+    ) {
+      document
+        .querySelector(Elem + " .listing .index:first-child")
+        .classList.add("hover");
+    } else if (
+      document.body.contains(
+        document.querySelector(Elem + " .listing .hover").nextElementSibling
+      )
+    ) {
+      document
+        .querySelector(Elem + " .listing .hover")
+        .nextElementSibling.classList.add("hover");
+      document
+        .querySelector(Elem + " .listing .hover")
+        .classList.remove("hover");
+      document.querySelector(Elem + " .listing .hover").focus();
+      document.querySelector(".focus .guest").focus();
+    }
+  } else if (keycode === 33) {
+    if (
+      document.body.contains(
+        document.querySelector(Elem + " .listing .hover")
+      ) &&
+      document.querySelector(Elem + " .listing .hover") !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover") !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover")
+        .previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling
+        .previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling
+        .previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child")
+    ) {
+      document
+        .querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.focus();
+      document
+        .querySelector(Elem + " .listing .hover")
+        .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add(
+          "hover"
+        );
+      document
+        .querySelector(Elem + " .listing .hover")
+        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
+          "hover"
+        );
+      document.querySelector(".focus .guest").focus();
+    }
+  } else if (keycode === 34) {
+    if (
+      !document.body.contains(
+        document.querySelector(Elem + " .listing .hover")
+      )
+    ) {
+      document
+        .querySelector(Elem + " .listing .index")
+        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
+      document
+        .querySelector(Elem + " .listing .index")
+        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+          "hover"
+        );
+    } else if (
+      document.querySelector(Elem + " .listing .hover") !=
+        document.querySelector(Elem + " .listing .index:last-child") &&
+      document.querySelector(Elem + " .listing .hover").nextElementSibling !=
+        document.querySelector(Elem + " .listing .index:last-child") &&
+      document.querySelector(Elem + " .listing .hover").nextElementSibling
+        .nextElementSibling !=
+        document.querySelector(Elem + " .listing .index:last-child") &&
+      document.querySelector(Elem + " .listing .hover").nextElementSibling
+        .nextElementSibling.nextElementSibling !=
+        document.querySelector(Elem + " .listing .index:last-child") &&
+      document.querySelector(Elem + " .listing .hover").nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling !=
+        document.querySelector(Elem + " .listing .index:last-child") &&
+      document.querySelector(Elem + " .listing .hover").nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling !=
+        document.querySelector(Elem + " .listing .index:last-child")
+    ) {
+      document
+        .querySelector(Elem + " .listing .hover")
+        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.focus();
+      document
+        .querySelector(Elem + " .listing .hover")
+        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+          "hover"
+        );
+      document
+        .querySelector(Elem + " .listing .hover")
+        .classList.remove("hover");
+      document.querySelector(".focus .guest").focus();
+    }
+  } else if (keycode === 38) {
+    if (
+      !document.body.contains(
+        document.querySelector(Elem + " .listing .hover")
+      )
+    ) {
+      document
+        .querySelector(Elem + " .listing .index:first-child")
+        .classList.add("hover");
+    } else if (
+      document.body.contains(
+        document.querySelector(Elem + " .listing .hover")
+          .previousElementSibling
+      )
+    ) {
+      document
+        .querySelector(Elem + " .listing .hover")
+        .previousElementSibling.classList.add("hover");
+      document
+        .querySelector(Elem + " .listing .hover")
+        .nextElementSibling.classList.remove("hover");
+      document.querySelector(Elem + " .listing .hover").focus();
+      document.querySelector(".focus .guest").focus();
+    }
+  } else if (keycode === 27)
+    document.querySelector(Elem + "").style.display = "none";
+  event.target.setAttribute("tabIndex", -1);
+  event.target.focus();
+  visual();
+}
