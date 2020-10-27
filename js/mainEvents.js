@@ -8,12 +8,13 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
-  if (document.querySelector('#main').clientWidth <= 425 ||
+  if (document.querySelector('#main').clientWidthclientWidth <= 425 ||
       quickFeedsTranslations == true) quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8)
   else quickFeedAsset(7)
   visual();
-  if (document.querySelector("#main").clientWidth <= 768) {
+  if (document.querySelector('#main').clientWidth <= 768) {
+    onScreen = false
     sideBarDisplay(false)
   } else {
     sideBarFirst = true;
@@ -23,8 +24,10 @@ window.onload = function () {
 window.addEventListener(
   "resize",
   function (event) {
-    if (document.querySelector("#main").clientWidth <= 768)
+    if (document.querySelector('#main').clientWidth <= 768) {
+      onScreen = false
       sideBarDisplay(false)
+    }
     else sideBarDisplay(onScreen)
   },
   true
@@ -121,7 +124,6 @@ document.addEventListener(
       event.target.classList.contains("feed") ||
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel") ||
-      event.target.id == "hide" ||
       event.target.id == "container" ||
       event.target.id == "search" ||
       event.target.id == "option" ||
@@ -129,21 +131,22 @@ document.addEventListener(
       event.target.id == "group" ||
       event.target.id == "feed" ||
       event.target.id == "main" ||
+      event.target.id == "hide" ||
       event.target.id == "page" ||
       event.target.id == "top" ||
       event.target.id == "arm" ||
       event.target.classList.contains("fa")
     ) {
-      if (document.getElementById("match").style.display === "block") {
-        document.getElementById("match").style.display = "none";
-        document.querySelector("#input .view").blur();
-        document.querySelector("#input .view").setAttribute("placeholder", "");
-        document.querySelector("#input .view").style.caretColor = "#e4e4e4";
-        document.querySelector("#input .view").style.textAlign = "center";
-        document.querySelector("#input .view").style.paddingLeft = "0px";
+      if (document.querySelector("#match").style.display === "block") {
+        document.querySelector("#match").style.display = "none";
+        var view = document.querySelector("#input .view")
+        view.setAttribute("placeholder", "");
+        view.style.textAlign = "center";
+        view.style.paddingLeft = "20px";
         document.querySelector("#input .icon").classList.remove("slide");
-        document.querySelector("#input .view").value = "Search";
-      } else if ( document.body.contains(document.querySelector("#main #first")) &&
+        view.value = "Search";
+        view.blur();
+      } else if (
         document.querySelector("#main #first").style.display === "block"
       ) {
         document.querySelector("#main #first").style.display = "none";

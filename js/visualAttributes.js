@@ -53,13 +53,21 @@ var visual = function (opDefine) {
     document.querySelector("#container #main").classList.add("opposite");
     document.querySelector(".quick .feed").classList.add("opposite");
     if (document.body.contains(document.querySelector(".listing .index"))) {
+      if (document.body.contains(document.querySelector(".listing .buffer")))
       document
         .querySelectorAll(".listing .buffer")
         .forEach((a) => (a.style.color = "#f7426C"));
       document
         .querySelectorAll(".listing .index")
-        .forEach((a) => a.classList.add("opposite"));
+        .forEach((a) => a.classList.add("indexOpposite"));
+      document
+        .querySelectorAll(".listing .index")
+        .forEach((a) => a.classList.remove("indexOppositeOverBorderless"));
     }
+    if (document.body.contains(document.querySelector(".listing .hover")))
+      document.querySelector(".listing .hover").classList.add(
+        'indexOppositeOverBorderless'
+      )
     if (document.body.contains(document.querySelector(".listing .hue")))
       document
         .querySelectorAll(".listing .hue")
@@ -73,7 +81,7 @@ var visual = function (opDefine) {
     if (
       document.body.contains(document.querySelector("#first .listing .index"))
     ) {
-      document.querySelector("#first").style.border = ".3px solid #0e0e0e";
+      document.querySelector("#first").style.border = ".3px solid #2f2f2f";
       document.querySelector("#first").style.boxShadow = "none";
     }
     if (
@@ -112,14 +120,7 @@ var visual = function (opDefine) {
         .querySelectorAll(".feed .translation")
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
     }
-    if (document.body.contains(document.querySelector(".listing .hover"))) {
-      document
-        .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("indexOppositeOver"));
-      document
-        .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("indexOpposite"));
-    }
+
     if (document.body.contains(document.querySelector(".quick .feed .asset")))
       document
         .querySelectorAll("#main .asset")
@@ -141,13 +142,13 @@ var visual = function (opDefine) {
         .forEach((a) => a.classList.add("oppositeOverBorderless"));
       document
         .querySelectorAll("#sidebar .cat")
-        .forEach((a) => (a.style.backgroundColor = "#000000"));
+        .forEach((a) => (a.style.backgroundColor = "#0f0f0f"));
       document
         .querySelectorAll("#sidebar .cat")
         .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
       document
         .querySelectorAll("#sidebar .sel")
-        .forEach((a) => a.style.backgroundColor = '#070707');
+        .forEach((a) => a.style.backgroundColor = '#0f0f0f');
     }
     document.querySelector(".sideFilter").style.backgroundColor = "#171717";
     document.querySelector("#hide").style.backgroundColor = "#171717";
@@ -172,7 +173,8 @@ var visual = function (opDefine) {
       "--fill-color-primary",
       "#ffffff"
     );
-    document.querySelector("#sidebar").style.backgroundColor = "#070707";
+    document.querySelector("#sidebar").style.backgroundColor = "#0f0f0f";
+    document.querySelector('#visit').style.backgroundImage = 'url(images/MIT.webp)'
   } else if (op == 0) {
     document
       .querySelectorAll("div")
@@ -279,14 +281,6 @@ var visual = function (opDefine) {
     }
     document.querySelector(".sideFilter").style.backgroundColor = "#ffffff";
     document.querySelector("#hide").style.backgroundColor = "#eaeaea";
-    if (document.body.contains(document.querySelector(".listing .hover"))) {
-      document
-        .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("indexInvertOver"));
-      document
-        .querySelectorAll(".listing .hover")
-        .forEach((a) => a.classList.add("indexInvert"));
-    }
     if (document.body.contains(document.querySelector(".listing .index"))) {
       if (document.body.contains(document.querySelector(".listing .buffer")))
         document
@@ -294,8 +288,13 @@ var visual = function (opDefine) {
           .forEach((a) => (a.style.color = "steelblue"));
       document
         .querySelectorAll(".listing .index")
-        .forEach((a) => a.classList.add("invert"));
+        .forEach((a) => a.classList.add("indexInvert"));
+      document
+        .querySelectorAll(".listing .index")
+        .forEach((a) => a.classList.remove("indexInvertOverBorderless"));
     }
+    if (document.body.contains(document.querySelector(".listing .hover")))
+      document.querySelector(".listing .hover").classList.add('indexInvertOverBorderless')
     if (document.body.contains(document.querySelector(".listing .hue")))
       document
         .querySelectorAll(".listing .hue")
@@ -345,5 +344,6 @@ var visual = function (opDefine) {
     if (document.body.contains(document.querySelector("#sidebar .selected")))
       document.querySelector("#category .selected").style.backgroundColor =
         "#e7e7e7";
+    document.querySelector('#visit').style.backgroundImage = 'url(MIT.webp)'
   }
 };

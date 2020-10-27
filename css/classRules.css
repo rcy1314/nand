@@ -33,19 +33,19 @@
 }
 
 .oppositeScrollbar::-webkit-scrollbar-thumb {
-  background-color: #0e0e0e;
+  background-color: #2f2f2f;
   border-radius: 2px;
 }
 
 .oppositeScrollbar {
-scrollbar-color: #0e0e0e transparent;
+scrollbar-color: #2f2f2f transparent;
 scrollbar-width: thin;
 }
 
 .invert {
   background-color: #ffffff !important;
   color: #222222;
-  border: none;
+  border: none !important;
 }
 
 .invertAlt {
@@ -81,7 +81,7 @@ scrollbar-width: thin;
 }
 
 .invertOver:not(:hover) {
-  border: .3px solid #f7f7f7;
+  border: .3px solid transparent;
   background-color: #ffffff;
 }
 
@@ -100,11 +100,6 @@ scrollbar-width: thin;
   opacity: 0;
 }
 
-.slideRight {
-  position: absolute;
-  transition: .25s;
-}
-
 .visible {
   display: block !important;
   visibility: visible;
@@ -113,26 +108,26 @@ scrollbar-width: thin;
 }
 
 .opposite {
-  background-color: #000000 !important;
+  background-color: #0f0f0f !important;
   box-shadow: none;
   color: #ffffff;
   border: none !important;
 }
 
 .oppositeAlt {
-  background-color: #0e0e0e;
+  background-color: #262626;
   box-shadow: none;
   color: #ffffff;
   border: none;
 }
 
 .oppositeOver:hover {
-  background-color: #0e0e0e !important;
-  border: .3px solid #0e0e0e !important;
+  background-color: #0a0a0a !important;
+  border: .3px solid #0a0a0a !important;
 }
 
 .oppositeOver:hover .classic {
-  background-color: #0e0e0e !important;
+  background-color: #0a0a0a !important;
 }
 
 .oppositeOver:hover .img {
@@ -140,7 +135,7 @@ scrollbar-width: thin;
 }
 
 .oppositeOverBorderless:hover {
-  background-color: #0e0e0e !important;
+  background-color: #1f1f1f !important;
 }
 
 .oppositeOverBorderless:not(:hover) {
@@ -149,7 +144,7 @@ scrollbar-width: thin;
 
 
 .oppositeOver:not(:hover) {
-  border: .3px solid #0e0e0e !important;
+  border: .3px solid #0f0f0f !important;
 }
 
 .buttonOpposite {
@@ -228,36 +223,16 @@ scrollbar-width: thin;
   background-color: #ffffff !important;
 }
 
-.indexInvertOver {
-  background-color: #fbfbfb !important;
-  color: #666666;
-}
-
-.indexInvert:hover {
-  background-color: #fbfbfb;
-  color: #666666;
-}
-
-.indexInvert:not(:hover) {
-  background-color: #ffffff;
+.indexInvertOverBorderless {
+  background-color: #f6f8fa !important;
   color: #666666;
 }
 
 .indexOpposite {
-  background-color: #000000 !important;
+  background-color: #0f0f0f !important;
 }
 
-.indexOppositeOver {
-  background-color: #0e0e0e !important;
-  color: #ffffff;
-}
-
-.indexOpposite:hover {
-  background-color: #0e0e0e;
-  color: #ffffff;
-}
-
-.indexOpposite:not(:hover) {
-  background-color: #000000;
+.indexOppositeOverBorderless {
+  background-color: #262626 !important;
   color: #ffffff;
 }

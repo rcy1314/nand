@@ -64,10 +64,6 @@ var loadHTML = function () {
           </div>
           <div id='visit'>
               <div id='page'>
-                  <div id='handle'>
-                      <div class='fas fa-map'></div>
-                      <div id='placeholder'></div>
-                  </div>
                   <form id='front' class='feed' action='#'>
                       <div class='focus'>
                           <div class='icon'>
@@ -92,9 +88,6 @@ var loadHTML = function () {
                       <div class='left fa-minus' style='display:none'></div>
                       <div class='right fa-plus'></div>
                       <div class='feed'></div>
-                  </div>
-                  <div id='mobile'>
-                      <div class='fas fa-map'></div>
                   </div>
               </div>
           </div>

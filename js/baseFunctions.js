@@ -141,7 +141,7 @@ var sideBarDisplay = function (toggleOption) {
           );
       }
     }
-    if (document.querySelector("#main").clientWidth >= 769) {
+    if (document.querySelector('#main').clientWidth >= 769) {
       document.querySelector("#main").style.left = "240px";
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
@@ -614,7 +614,7 @@ var guideImageAttributes = function (src) {
     guide.querySelector(".img").setAttribute("src", src);
     guide.querySelector(".sticky").style.display = "block";
     guide.querySelector(".checkmark").style.display = "block";
-    if (document.querySelector("#main").clientWidth <= 426) {
+    if (document.querySelector('#main').clientWidth <= 425) {
       document.querySelector("#main").classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";

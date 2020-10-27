@@ -144,7 +144,7 @@ html body #container #sidebar #content #basic input[type=text] {
   margin: 0 auto;
   display: block;
   color: #dddddd;
-  width: 180px;
+  width: 220px;
   padding: 5px;
 }
 
@@ -351,6 +351,8 @@ html body #container #main #group {
 
 html body #container #main #visit {
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 600px 300px;
   justify-content: center;
   align-items: center;
   visibility: hidden;
@@ -358,42 +360,8 @@ html body #container #main #visit {
   height: 100%;
 }
 
-html body #container #main #visit #page #mobile,
-html body #container #main #visit #page #handle {
-  position: relative;
-  user-select: none;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-
-html body #container #main #visit #page #mobile img,
-html body #container #main #visit #page #handle img {
-  width: 25px;
-}
-
-html body #container #main #visit #page #handle {
-  left: 10px;
-}
-
-html body #container #main #visit #page #mobile .fa-map,
-html body #container #main #visit #page #handle .fa-map {
-  color: #fff !important;
-  position: relative;
-  font-size: 72px;
-}
-
-html body #container #main #visit #page #handle #placeholder {
-  background-color: transparent !important;
-  width: fit-content !important;
-  font-family: Proxima Nova;
-  color: #fff !important;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  padding-left: 20px;
-  font-size: 64px;
-  margin: 0 auto;
+html body #container #main #visit {
+  background-repeat: no-repeat;
 }
 
 html body #container #main #visit #page {
@@ -431,9 +399,8 @@ html body #container #main #visit #page #front #first {
 }
 
 html body #container #main #visit #page #front #first .listing {
-  border-radius: 4px;
+  overflow-x: hidden;
   position: absolute;
-  overflow: overlay;
   overflow-y: auto;
   text-align: left;
   cursor: pointer;
@@ -533,7 +500,7 @@ html body #container #main #top #arm #search #input .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
-  left: 70px;
+  left: 80px;
   z-index: 2;
   top: 9px;
 }
@@ -575,6 +542,7 @@ html body #container #main #visit #page #front #label .show {
   font-size: 12px;
   margin: 0 auto;
   z-index: 0;
+  left: 15px;
   top: 26px;
 }
 
@@ -586,7 +554,7 @@ html body #container #main #visit #page #front #label .link {
   border-radius: 20px;
   align-items: center;
   position: absolute;
-  margin-left: 15px;
+  margin-left: 25px;
   margin-top: 15px;
   padding: 10px;
   height: 15px;
@@ -677,10 +645,11 @@ html body #container #main #top #arm #search #input input[type=text] {
   border: none !important;
   text-align: center;
   border-radius: 2px;
+  padding-left: 20px;
   font-size: 14px;
   color: #aaaaaa;
   outline: none;
-  height: 2.2em;
+  height: 30px;
   width: 100%;
 }
 
@@ -690,7 +659,7 @@ html body #container #main #top #arm #search #match {
   margin: 0 auto;
   height: 364px;
   display: none;
-  top: 35px;
+  top: 25px;
 }
 
 input[type=submit] {

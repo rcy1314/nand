@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  html body #container #main #visit {
+    background-position: 45% 50%;
+  }
+
 
   html body #container #main {
     width: 100% !important
@@ -36,7 +40,11 @@
   }
 
   html body #container #main #visit #page #front #label {
-    margin-top: -185px;
+    position: absolute;
+    margin: auto;
+    top: 125px;
+    right: 0;
+    left: 0;
   }
 
   .expand .title {
@@ -58,19 +66,6 @@
     display: none !important;
   }
 
-  html body #container #main #visit #page #handle {
-    visibility: hidden;
-    height: 250px;
-  }
-
-  html body #container #main #visit #page #mobile {
-    position: absolute;
-    display: block;
-    z-index: 0;
-    left: 10px;
-    top: 250px;
-  }
-
   html body #container #main #page,
   html body #container #main #visit {
     height: 100%;
@@ -82,7 +77,7 @@
   html body #container #main #top #arm,
   html body #container #main #top #arm #search {
     background: transparent !important;
-    width: 100%;
+    width: 100vw;
   }
 
   html body #container #main #feed .center {
@@ -123,7 +118,7 @@
   }
 
   html body #container #main #visit #page #front #first {
-    top: -130px !important;
+    top: 115px !important;
     padding-top: 5px;
     height: 359px;
     width: 300px;
@@ -136,10 +131,6 @@
     top: -5px;
   }
 
-  html body #container #top #arm #search #match {
-    left: 7px;
-  }
-
   html body #container #top #arm #search #match .listing {
     width: 304px !important;
   }
@@ -148,7 +139,7 @@
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: -175px;
+    top: 75px;
   }
 
   html body #container #main #visit #page #front .focus input[type=text] {
@@ -185,20 +176,17 @@
 
 @media screen and (min-width: 768px) {
 
+  html body #container #main #visit {
+    background-position: 52.5% 30%;
+    background-repeat: no-repeat;
+  }
+
   html body #container #main #option {
     display: none;
   }
 
   html body #container #main #top #arm #option {
     display: block;
-  }
-
-  html body #container #main #visit #page #handle {
-    top: -50px;
-  }
-
-  html body #container #main #visit #page #mobile {
-    display: none;
   }
 
   html body #container #main #top {
