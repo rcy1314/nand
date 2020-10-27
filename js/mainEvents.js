@@ -336,7 +336,7 @@ document.addEventListener(
               });
               guideDisplay(sticky);
             } else if (event.target.classList.contains('guide'))
-              event.target.getAttribute("src").blank();
+              event.target.closest(".item").getAttribute("ext").blank();
             else if (!event.target.classList.contains('default'))
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")

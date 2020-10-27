@@ -472,8 +472,7 @@ var xmlRequestParsing = function (search, string, index) {
       if (httpRequest.status == 200) {
         // 200 = OK
         var xhr = this.responseXML;
-        if (op == 0 && document.querySelector("#main").clientWidth <= 425)
-          var style = "style='box-shadow:8px 8px 16px #eeeeee'";
+        if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'";
 
         if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
         else var channel = "item";
