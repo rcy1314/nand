@@ -381,11 +381,9 @@ var inputListingKeyup = function(Elem, keycode) {
       )
     ) {
       document
-        .querySelector(Elem + " .listing .index")
-        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
+        .querySelector(Elem + " .listing .index").focus();
       document
-        .querySelector(Elem + " .listing .index")
-        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .querySelector(Elem + " .listing .index").classList.add(
           "hover"
         );
     } else if (
