@@ -10,8 +10,6 @@ var loadStyles = function() {
     "animationRules",
     "classRules",
     "mediaRules",
-    "contentRules",
-    "mediaRules",
     "fontIcons",
   ];
   for (var file of files) {
