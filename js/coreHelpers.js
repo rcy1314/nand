@@ -10,7 +10,6 @@ var loadStyles = function() {
     "animationRules",
     "classRules",
     "mediaRules",
-    "fontIcons",
   ];
   for (var file of files) {
     let path = directory + file + extension;
