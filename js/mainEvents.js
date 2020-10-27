@@ -246,6 +246,7 @@ document.addEventListener(
         filterInputResponse(false, false, query, true);
       } else populateCategoryGroup(category);
       displayExpand(expand);
+      unloading()
       visual();
       id = 0;
     }
