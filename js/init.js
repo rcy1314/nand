@@ -17,8 +17,8 @@ if (
   }
 
   if (uri.match(/^[a-zA-Z0-9]+$/i)) {
-    var id = uri.slice(0, 2);
-    var i = menu.findIndex((item) => item.hash === id);
+    let id = uri.slice(0, 2);
+    let i = menu.findIndex((item) => item.hash === id);
     post = parseInt(uri.slice(2), 36);
   }
 
@@ -45,8 +45,8 @@ if (location.href.match("\\+1") && !i) {
 
 if (location.search.split("?q=")[1]) {
   var uri = location.search.split("?q=")[1];
-  uri = uri.replace(/\?\+1|\+1/, "");
-  uri = uri.match(/[^&]+/g);
+  var uri = uri.replace(/\?\+1|\+1/, "");
+  var uri = uri.match(/[^&]+/g);
   if (location.hash.substr(1).match(/\+1/g))
     post = location.hash.substr(1).replace(/\+1/g, "");
   else post = location.hash.substr(1);
@@ -55,7 +55,7 @@ if (location.search.split("?q=")[1]) {
     init();
     document.querySelector("#toggle").style.display = "none";
     document.querySelector("#top").style.display = "block";
-    var width = document.querySelector("#main").clientWidth / 30;
+    let width = document.querySelector("#main").clientWidth / 30;
     if (!uri[1] && location.href.match("\\&"))
       filterInputResponse(true, false, uri[0], false);
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);

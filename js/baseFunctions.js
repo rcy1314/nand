@@ -1,12 +1,12 @@
 var notifyOption = function (displayContent) {
-  var notification = document.querySelector("#sidebar .notify");
+  let notification = document.querySelector("#sidebar .notify");
   if (onScreen == true) var pos = 'absolute'
   else var pos = 'fixed'
+  notification.innerHTML = displayContent;
   notification.style.display = "block";
   notification.style.position = pos;
-  notification.innerHTML = displayContent;
   setTimeout(function () {
-    var Elem = notification;
+    let Elem = notification;
     Elem.animate(
       {
         right: ["0px", "280px"],
@@ -25,11 +25,11 @@ var notifyOption = function (displayContent) {
   }, 3000);
 };
 
-var displayExpand = function (n) {
+var displayExpand = function (toggleOption) {
   if (document.body.contains(document.getElementById("feed")))
     document.getElementById("feed").remove()
-  var group = document.getElementById("group");
-  if (n == true) {
+  let group = document.getElementById("group");
+  if (toggleOption == true) {
     groupType = "list";
     if (document.body.contains(document.getElementById("group"))) {
       group.style.display = "none";
@@ -56,7 +56,7 @@ var displayExpand = function (n) {
       if (document.body.contains(document.getElementById(".result`")))
         document.querySelector(".result").style.display = "block";
     }
-  } else if (n == false) {
+  } else if (toggleOption == false) {
     groupType = "blocks";
     if (document.body.contains(document.getElementById("group"))) {
       group.style.display = "none";
@@ -107,7 +107,7 @@ var displayExpand = function (n) {
 
 var sideBarDisplay = function (toggleOption) {
   if (toggleOption == true) {
-    var Elem = document.querySelector("#sidebar");
+    let Elem = document.querySelector("#sidebar");
     Elem.style.position = "fixed";
     Elem.animate(
       {
@@ -124,8 +124,8 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#basic").style.display = "block";
-    var category = document.querySelector("#category");
-    var select = document.querySelector("#select");
+    let category = document.querySelector("#category");
+    let select = document.querySelector("#select");
     if (!document.body.contains(document.querySelector(".cat"))) {
       for (i = 0; i <= translations.length - 1; i++) {
         category.innerHTML =
@@ -165,7 +165,7 @@ var sideBarDisplay = function (toggleOption) {
 
 var topMenuBarDisplay = function (toggleOption) {
   if (document.body.contains(document.querySelector("#top"))) {
-    var top = document.getElementById("top");
+    let top = document.getElementById("top");
     if (toggleOption == true) top.style.display = "block";
     else if (toggleOption == false) top.style.display = "none";
   }
@@ -202,13 +202,13 @@ var quickFeedDisplay = function (toggleOption) {
 
 var xmlChannelFooter = function () {
   if (document.body.contains(document.querySelector(".center"))) {
-    var center = document.querySelector(".channel");
+    let center = document.querySelector(".channel");
     center.innerHTML = center.innerHTML + footerBuild();
   }
 };
 
 var guideDisplay = function (pubArray) {
-  var guide = document.querySelector("#guide");
+  let guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
   guide.innerHTML = guideBuild(pubArray);
@@ -245,15 +245,15 @@ var contentStatusDisplay = function (
 };
 
 var quickFeedAsset = function (feedAssets) {
-  var dupe = [];
-  var feed = document.querySelector(".quick .feed");
+  let dupe = [];
+  let feed = document.querySelector(".quick .feed");
   if (feedAssets == 7)
     for (var i = 0; i <= translations.length - 1; i++) {
       feed.innerHTML = feed.innerHTML + translationBuild(translations[i]);
     }
   else
     for (var i = 1; i <= menu.length - 1; i++) {
-      var randomMenuObject = menu.indexOf(
+      let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
@@ -263,7 +263,6 @@ var quickFeedAsset = function (feedAssets) {
         menu[randomMenuObject].media == true
       ) {
         dupe.push(randomMenuObject);
-        var asset;
         feed.innerHTML =
           feed.innerHTML +
           assetBuild(
@@ -306,7 +305,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       setTimeout(500);
     }
   for (i = 1; i <= menu.length - 1; i++) {
-    var randomMenuObject = menu.indexOf(
+    let randomMenuObject = menu.indexOf(
       menu[Math.floor(Math.random() * menu.length - 1)]
     );
     if (
@@ -332,22 +331,21 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 
 var progressBackDrop = function (done, percent) {
   if (
-    !location.href.match("\\?+1") &&
+    !location.href.match("\\?\\+1") &&
     !location.href.match("\\?q=") &&
     !location.href.match("\\+1") &&
     !location.href.match("\\?") &&
-    contrast == true
+    contrast == true &&
+    op != op
   ) {
     var extendedURI = window.location.href + "?+1";
     extendedURI.state();
   }
   if (done == true) {
-    var progressBar = document.getElementById("progressBar");
+    let progressBar = document.getElementById("progressBar");
     progressBar.style.transitionDelay = "none";
-    progressBar.style.transition = "width .25s ease-in-out";
+    progressBar.style.transition = "width .15s ease-in-out";
     progressBar.style.width = percent + "%";
-    if (document.body.contains(document.getElementById("group")))
-      document.querySelector("#group").style.display = "block";
     if (document.body.contains(document.getElementById("feed")))
       document.querySelector("#feed").style.display = "block";
     if (onlyImages == false) {
@@ -358,6 +356,8 @@ var progressBackDrop = function (done, percent) {
     } else if (onlyImages == true)
       if (document.body.contains(document.querySelector(".result")))
         document.querySelector("#main").scrollTop = 0;
+    if (document.body.contains(document.getElementById("group")))
+      document.querySelector("#group").style.display = "block";
     if (document.body.contains(document.querySelector("#feed .channel")))
       if (reader == true && first == true) {
         if (
@@ -379,7 +379,7 @@ var progressBackDrop = function (done, percent) {
 };
 
 var xmlStatusSuggestions = function () {
-  var duplicate = [];
+  let duplicate = [];
   if (document.body.contains(document.querySelector("#main .suggestions"))) {
     var suggestions = document.querySelector("#main .suggestions");
     if (
@@ -389,8 +389,8 @@ var xmlStatusSuggestions = function () {
     )
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
-    for (var i = 0; i <= contentStatusBuffer; i++) {
-      var randomMenuObject = menu.indexOf(
+    for (let i = 0; i <= contentStatusBuffer; i++) {
+      let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
@@ -418,7 +418,7 @@ var xmlStatusSuggestions = function () {
 };
 
 var populateCategoryGroup = function (translation) {
-  var main = document.getElementById("main");
+  let main = document.getElementById("main");
   if (
     !document.body.contains(document.querySelector("#group")) &&
     !document.body.contains(document.querySelector(".result"))
@@ -428,7 +428,7 @@ var populateCategoryGroup = function (translation) {
       "  <div class='result'></div>" +
       "</div>" +
       main.innerHTML;
-  var result = document.querySelector(".result");
+  let result = document.querySelector(".result");
 
   if (id && id != 0 && !location.href.match("\\?q=")) {
     if (menu[id].media == true)
@@ -446,7 +446,7 @@ var populateCategoryGroup = function (translation) {
       );
   }
   id = 0;
-  for (var i = 1; i <= menu.length - 1; i++) {
+  for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
       var media = "<div class='media' style='display:none'>Images</div>";
     else var media = "<div class='blank'></div>";
@@ -491,25 +491,25 @@ var populateCategoryGroup = function (translation) {
 };
 
 var reverseCategoryGroup = function (translation) {
-  var group = document.querySelector("#group");
-  var node = document.querySelector(".result");
+  let group = document.querySelector("#group");
+  let node = document.querySelector(".result");
   if (!document.body.contains(document.querySelector(".air"))) {
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
   } else {
     document.querySelector('.air').remove()
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
   }
-  var air = document.querySelector(".air");
-  for (var i = 1; i < menu.length - 1; i++) {
+  let air = document.querySelector(".air");
+  for (let i = 1; i < menu.length - 1; i++) {
     if (translation == menu[i].cat) {
       if (menu[i].media == true)
         var media = "<div class='media' style='display:none'>Images</div>";
       else var media = "<div class='blank'></div>";
-      var scroll = categoryBuild(
+      let scroll = categoryBuild(
         menu[i].id.match(/[^\/]+$/g),
         menu.indexOf(menu[i]),
         menu[i].img.image(),
@@ -530,10 +530,10 @@ var filterInputResponse = function (
   filterURI,
   categoryBloat
 ) {
-  var match;
-  id = false;
-  filter = [];
-  exact = false;
+  let id = -1;
+  let match = -1;
+  let exact = -1;
+  let filter = [];
   document.querySelector("#visit").style.display = "none";
   if (translations.includes(filterURI.toString().capitalize())) {
     category = filterURI.capitalize();
@@ -544,11 +544,11 @@ var filterInputResponse = function (
   if (filterURI) var filterURI = filterURI.toString().toLowerCase().space();
   if (extendedURI)
     var extendedURI = extendedURI.toString().toLowerCase().space();
-  else extendedURI = filterURI;
-  for (var i = 1; i <= menu.length - 1; i++) {
-    var menuObject = menu[i].id.space().toLowerCase();
-    var translation = menu[i].cat.space().toLowerCase();
-    var description = menu[i].des.space().toLowerCase();
+  else var extendedURI = filterURI;
+  for (let i = 1; i <= menu.length - 1; i++) {
+    let menuObject = menu[i].id.space().toLowerCase();
+    let translation = menu[i].cat.space().toLowerCase();
+    let description = menu[i].des.space().toLowerCase();
     if (menu[i].hash == filterURI) {
       filter.push(menu.indexOf(menu[i]));
       exact = i;
@@ -570,7 +570,7 @@ var filterInputResponse = function (
   if (filter.length == 0)
     xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
-    var main = document.getElementById("main");
+    let main = document.getElementById("main");
     if (
       !document.body.contains(document.querySelector("#group")) &&
       !document.body.contains(document.querySelector(".result"))
@@ -591,8 +591,8 @@ var filterInputResponse = function (
 };
 
 var writeFilterResponse = function (menuObject) {
-  var main = document.querySelector("#main");
-  var result = document.querySelector(".result");
+  let main = document.querySelector("#main");
+  let result = document.querySelector(".result");
   if (menu[menuObject].media == true)
     var media = "<div class='media' style='display:none'>Images</div>";
   else var media = "<div class='blank'></div>";
@@ -607,8 +607,8 @@ var writeFilterResponse = function (menuObject) {
 };
 
 var guideImageAttributes = function (src) {
-  var guide = document.querySelector("#guide");
-  var newImg = new Image();
+  let guide = document.querySelector("#guide");
+  let newImg = new Image();
   newImg.setAttribute("src", src);
   newImg.onload = function () {
     guide.querySelector(".img").setAttribute("src", src);

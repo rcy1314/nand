@@ -1,5 +1,5 @@
 window.onload = function () {
-  var guest = document.querySelector(".guest");
+  let guest = document.querySelector(".guest");
   guest.setAttribute("placeholder", "Search Feeds");
   guest.style.caretColor = "#e4e4e4";
   guest.style.paddingLeft = "40px";
@@ -8,7 +8,7 @@ window.onload = function () {
   document.querySelector("#front .icon").classList.add("search");
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
-  if (document.querySelector('#main').clientWidthclientWidth <= 425 ||
+  if (document.querySelector('#main').clientWidth <= 425 ||
       quickFeedsTranslations == true) quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8)
   else quickFeedAsset(7)
@@ -315,7 +315,7 @@ document.addEventListener(
               !event.target.classList.contains('guide') &&
               event.target.classList.contains('default')
             ) {
-              var sticky = [];
+              let sticky = [];
               sticky.push({
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
@@ -478,7 +478,7 @@ document.addEventListener(
       event.target.classList.contains("fa-plus")
     ) {
       quickFeedAsset(6);
-      var leftPos = event.target.closest(".quick").querySelector(".feed")
+      let leftPos = event.target.closest(".quick").querySelector(".feed")
         .scrollLeft;
       event.target.closest(".quick").querySelector(".feed").scrollLeft =
         leftPos +
@@ -491,7 +491,7 @@ document.addEventListener(
       event.target.classList.contains("left") ||
       event.target.classList.contains("fa-minus")
     ) {
-      var leftPos = event.target.closest(".quick").querySelector(".feed")
+      let leftPos = event.target.closest(".quick").querySelector(".feed")
         .scrollLeft;
       event.target.closest(".quick").querySelector(".feed").scrollLeft =
         leftPos -

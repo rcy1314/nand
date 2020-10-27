@@ -28,12 +28,12 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains("view")) {
       document.querySelector("#match").style.display = "block";
-      var match = document.querySelector("#match .listing");
+      let match = document.querySelector("#match .listing");
       while (match.firstChild) {
         match.removeChild(match.lastChild);
       }
       for (i = 0; i < translations.length; i++) {
-        var index;
+        let index;
         index =
           "<div class='index' tabIndex='-1' aria-item='" +
           translations[i] +
@@ -261,9 +261,9 @@ document.addEventListener(
         );
         return false;
       } else if (document.querySelector("#input .view").value.length) {
-        var query = document.querySelector("#input .view").value.space();
+        let query = document.querySelector("#input .view").value.space();
         query.replace(/\s/, "+");
-        var uri = "?q=" + query;
+        let uri = "?q=" + query;
         uri.define().exit();
       }
     } else if (event.target.id == "front") {
@@ -282,9 +282,9 @@ document.addEventListener(
         );
         return false;
       } else if (document.querySelector(".focus .guest").value.length > 0) {
-        var query = document.querySelector(".focus .guest").value.space();
+        let query = document.querySelector(".focus .guest").value.space();
         query.replace(/\s/, "+");
-        var uri = "?q=" + query;
+        let uri = "?q=" + query;
         uri.define().exit();
       }
     }

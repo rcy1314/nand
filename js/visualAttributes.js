@@ -1,6 +1,6 @@
-var visual = function (opDefine) {
-  if (opDefine == "op") op = op != true;
-  else if (opDefine == 1 || opDefine == 0) op = opDefine;
+var visual = function (toggleOption) {
+  if (toggleOption == "op") op = op != true;
+  else if (toggleOption == 1 || toggleOption == 0) op = toggleOption;
   if (op == 1) {
     document
       .querySelectorAll("div")

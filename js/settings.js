@@ -10,7 +10,7 @@
 
 */
 
-          var op = 0;
+          let op = 0;
 
 
 /*
@@ -24,7 +24,7 @@
 
 */
 
-          var topBar = true;
+          let topBar = true;
 
 
 /*
@@ -38,7 +38,7 @@
 
 */
 
-          var reader = false;
+          let reader = false;
 
 
 /*
@@ -52,7 +52,7 @@
 
 */
 
-          var onScreen = true;
+          let onScreen = true;
 
 
 /*
@@ -67,7 +67,7 @@
 
 */
 
-          var groupType = "list";
+          let groupType = "list";
 
 
 /*
@@ -81,7 +81,7 @@
 
 */
 
-          var showOption = true;
+          let showOption = true;
 
 
 /*
@@ -95,7 +95,7 @@
 
 */
 
-          var quickFeeds = true;
+          let quickFeeds = true;
 
 
 /*
@@ -109,7 +109,7 @@
 
 */
 
-          var quickFeedsTranslations = false;
+          let quickFeedsTranslations = false;
 
 
 /*
@@ -124,7 +124,7 @@
 
 */
 
-          var loading = "percent";
+          let loading = "percent";
 
 
 /*
@@ -138,7 +138,7 @@
 
 */
 
-          var titleTruncate = 125
+          let titleTruncate = 125
 
 
 /*
@@ -154,7 +154,7 @@
 
 */
 
-          var category = "Social";
+          let category = "Social";
 
 
 /*
@@ -168,7 +168,7 @@
 
 */
 
-          var onlyImages = false;
+          let onlyImages = false;
 
 
 /*
@@ -182,7 +182,7 @@
 
 */
 
-          var suggestionBuffer = 7;
+          let suggestionBuffer = 7;
 
 
 /*
@@ -196,7 +196,7 @@
 
 */
 
-          var contentStatusBuffer = 5;
+          let contentStatusBuffer = 5;
 
 
 /*
@@ -213,7 +213,7 @@
 
 */
 
-          var cors = "https://acktic-github-io.herokuapp.com/";
+          const cors = "https://acktic-github-io.herokuapp.com/";
 
 
 /*  translations [array]
@@ -229,7 +229,7 @@
 
 */
 
-          var translations = [
+          const translations = [
             "Social",
             "News",
             "Entertainment",
@@ -244,21 +244,21 @@
 /* Feel free to edit the above. */
 
 
-var id; //feed indexOf menu
-var tap = 0; //used in mainEvents.js for images
-var post; //from init.js global timestamp for guide
-var complete; //coreHelpers.js interval for progress
-var dupe = []; //image src duplicate catch
-var httpRequest; //uri xml httpRequest
-var random = []; //core.js random feed in category
-var filter = []; //response array for menu objects
-var first = true; //reader append feed center channel
-var expand = true; //filter populate list display
-var contrast = false; //opposite of op +1
-var sideBarFirst = true; //first click show
-var randomDuplicate = []; //core.js random duplicate xml
+let id = 0; //feed indexOf menu
+let tap = 0; //used in mainEvents.js for images
+let post = -1; //from init.js global timestamp for guide
+let complete; //coreHelpers.js interval for progress
+let dupe = []; //image src duplicate catch
+let httpRequest; //uri xml httpRequest
+let random = []; //core.js random feed in category
+let filter = []; //response array for menu objects
+let first = true; //reader append feed center channel
+let expand = true; //filter populate list display
+let contrast = false; //opposite of op +1
+let sideBarFirst = true; //first click show
+let randomDuplicate = []; //core.js random duplicate xml
 
-var selections = [ //sideBar sel options
+const selections = [ //sideBar sel options
 
   { name: "Opposite", class: "Night", icon: "fa-code" },
   { name: "Invert", class: "Day", icon: "fa-terminal" },

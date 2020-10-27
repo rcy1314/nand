@@ -5,8 +5,8 @@ document.addEventListener(
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel")
     ) {
-      var x = event.pageX;
-      var p = (x / event.target.offsetWidth) * 100;
+      let x = event.pageX;
+      let p = (x / event.target.offsetWidth) * 100;
       event.target.style.borderImage =
         "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(147,147,147,.5) " +
         parseInt(p) +
@@ -45,12 +45,12 @@ document.addEventListener(
     }
     if (event.target.id == "hide") {
       if (sideBarFirst == true) {
-        sideBarFirst = false;
+        let sideBarFirst = false;
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       }
       if (sideBarFirst == false) {
-        sideBarFirst = true;
+        let sideBarFirst = true;
         sideBarDisplay(onScreen);
       }
     }
@@ -111,10 +111,9 @@ document.addEventListener(
     ) {
       document.querySelector("#visit").style.display = "none";
       if (reader == true) {
-        id = 0;
-        reader = false;
-        first = true;
-        stop = false;
+        let id = 0;
+        let reader = false;
+        let first = true;
         xmlChannelxmlChannelFooter();
       } else if (reader == false) {
         init();
@@ -127,7 +126,6 @@ document.addEventListener(
         if (document.body.contains(document.querySelector("#feed .center")))
           first = false;
         else first = true;
-        stop = true;
         xmlRequestParsing(null, null, anyMenuRandomObject());
       }
     }
@@ -135,8 +133,8 @@ document.addEventListener(
       event.target.classList.contains("Day") ||
       event.target.classList.contains("fa-terminal")
     ) {
-      op = 0;
-      contrast = false;
+      let op = 0;
+      let contrast = false;
       if (location.href.match("\\?\\+1") && location.href.match("\\+1"))
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
       else var uri = window.location.href;
@@ -148,8 +146,8 @@ document.addEventListener(
       event.target.classList.contains("Night") ||
       event.target.classList.contains("fa-code")
     ) {
-      op = 1;
-      contrast = false;
+      let op = 1;
+      let contrast = false;
       if (!location.href.match("\\?\\+1") && !location.href.match("\\+1"))
         var uri = window.location.href + "?+1";
       else var uri = window.location.href;
@@ -161,8 +159,8 @@ document.addEventListener(
       event.target.classList.contains("List") ||
       event.target.classList.contains("fa-th-large")
     ) {
-      expand = true;
-      groupType = "list";
+      let expand = true;
+      let groupType = "list";
       if (document.body.contains(document.getElementById("#main #group"))) {
         var group = document.querySelector("#main #group");
         group.style.display = "none";
@@ -182,8 +180,8 @@ document.addEventListener(
       event.target.classList.contains("Blocks") ||
       event.target.classList.contains("fa-list-ul")
     ) {
-      expand = false;
-      groupType = "blocks";
+      let expand = false;
+      let groupType = "blocks";
       if (document.body.contains(document.getElementById("#main #group"))) {
         var group = document.querySelector("#main #group");
         group.style.display = "none";
@@ -203,7 +201,7 @@ document.addEventListener(
       event.target.classList.contains("Dots") ||
       event.target.classList.contains("sideDots")
     ) {
-      loading = "dots";
+      let loading = "dots";
         document
           .querySelectorAll("#dots .fill")
           .forEach((a) => a.classList.add("dots"));
@@ -236,14 +234,14 @@ document.addEventListener(
       event.target.classList.contains("Percent") ||
       event.target.classList.contains("fa-signal")
     ) {
-      loading = "percent";
+      let loading = "percent";
       unloading();
     }
     if (
       event.target.classList.contains("Info") ||
       event.target.classList.contains("fa-exclamation-circle")
     ) {
-      var uri = "https://github.com/acktic/acktic.github.io";
+      let uri = "https://github.com/acktic/acktic.github.io";
       uri.blank();
     }
     if (
@@ -283,7 +281,7 @@ document.addEventListener(
       event.target.classList.contains("fa-slider-h")
     ) {
       init();
-      var code = [];
+      let code = [];
       document.querySelector("#visit").style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (onlyImages == true) {
@@ -293,30 +291,30 @@ document.addEventListener(
           if (menu[i].cat == category) code.push(menu.indexOf(menu[i]));
         }
       }
-      var n = code[Math.floor(Math.random() * code.length - 1)];
-      xmlRequestParsing(null, null, n);
+      let randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
+      xmlRequestParsing(null, null, randomMenuObject);
     }
     if (
       event.target.classList.contains("RandomImages") ||
       event.target.classList.contains("fa-photo")
     ) {
       init();
-      var code = [];
+      let code = [];
       document.querySelector("#visit").style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (menu[i].media == true) code.push(menu.indexOf(menu[i]));
       }
-      var n = code[Math.floor(Math.random() * code.length - 1)];
-      xmlRequestParsing(null, null, n);
+      var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
+      xmlRequestParsing(null, null, randomMenuObject);
     }
     if (
       event.target.classList.contains("Switch") ||
       event.target.classList.contains("fa-adjust") ||
       event.target.classList.contains("fa-sun")
     ) {
-      if (location.href.match("\\?\\+1") || location.href.match("\\+1")) {
+      if (location.href.match("\\?+1") || location.href.match("\\+1")) {
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
-        contrast = false;
+        let contrast = false;
         op = op != true;
       } else {
         var uri = window.location.href + "?+1";

@@ -4,9 +4,9 @@ var ready = (callback) => {
 };
 
 var loadStyles = function() {
-  var directory = "css/";
-  var extension = ".css";
-  var files = [
+  let directory = "css/";
+  let extension = ".css";
+  let files = [
     "animationRules",
     "classRules",
     "mediaRules",
@@ -15,8 +15,8 @@ var loadStyles = function() {
     "fontIcons",
   ];
   for (var file of files) {
-    var path = directory + file + extension;
-    var script = document.createElement("link");
+    let path = directory + file + extension;
+    let script = document.createElement("link");
     script.type = "text/css";
     script.rel = "stylesheet";
     script.href = path;
@@ -26,9 +26,9 @@ var loadStyles = function() {
 }
 
 var loadScripts = function() {
-  var directory = "js/";
-  var extension = ".js";
-  var files = [
+  let directory = "js/";
+  let extension = ".js";
+  let files = [
     "settings",
     "init",
     "visualAttributes",
@@ -41,8 +41,8 @@ var loadScripts = function() {
     "xmlFunctions"
   ];
   for (var file of files) {
-    var path = directory + file + extension;
-    var script = document.createElement("script");
+    let path = directory + file + extension;
+    let script = document.createElement("script");
     script.type = "text/javascript";
     script.src = path;
     document.getElementsByTagName("head")[0].appendChild(script);
@@ -50,18 +50,18 @@ var loadScripts = function() {
 }
 
 function whichTransitionEvent() {
-  var t;
-  var el = document.createElement("fakeelement");
-  var transitions = {
+  let transition;
+  let Elem = document.createElement("fakeelement");
+  let transitions = {
     transition: "transitionend",
     OTransition: "oTransitionEnd",
     MozTransition: "transitionend",
     WebkitTransition: "webkitTransitionEnd",
   };
 
-  for (t in transitions) {
-    if (el.style[t] !== undefined) {
-      return transitions[t];
+  for (transition in transitions) {
+    if (Elem.style[transition] !== undefined) {
+      return transitions[transition];
     }
   }
 }
@@ -86,7 +86,7 @@ var init = function () {
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.classList.add("dots"));
   } else if (loading == "percent") {
-    var width = document.getElementById("main").clientWidth / 30;
+    let width = document.getElementById("main").clientWidth / 50;
     complete = setInterval(function () {
       document.getElementById("progressBar").style.transitionDelay = "0s";
       document.getElementById("progressBar").style.transition =
@@ -124,7 +124,7 @@ var truncate = function (i, n, useWordBoundary) {
   if (i.length <= n) {
     return i;
   }
-  var subString = i.substr(0, n - 1);
+  let subString = i.substr(0, n - 1);
   return (
     (useWordBoundary
       ? subString.substr(0, subString.lastIndexOf(" "))
@@ -141,11 +141,11 @@ var anyRandomMenuObject = function () {
       if (menu[i].cat == category) random.push(menu.indexOf(menu[i]));
     }
   }
-  var randomObject = random[Math.floor(Math.random() * random.length - 1)];
+  let randomObject = random[Math.floor(Math.random() * random.length - 1)];
   if (menu[randomObject]) randomDuplicate.push(randomObject);
   if (random.length == randomDuplicate.length && reader == true) {
-    randomDuplicate = [];
-    reader = false;
+    let randomDuplicate = [];
+    let reader = false;
     footerBuild();
   } else if (random.length == randomDuplicate.length) randomDuplicate = [];
   else
@@ -153,7 +153,7 @@ var anyRandomMenuObject = function () {
       if (menu[randomObject] || !randomDuplicate.includes(n))
         randomObject = randomObject;
       else
-        var randomObject =
+        randomObject =
           random[Math.floor(Math.random() * random.length - 1)];
     }
   return randomObject;
@@ -176,10 +176,10 @@ String.prototype.domain = function () {
 };
 
 String.prototype.define = function () {
-  var n = this;
-  if (contrast == true && !location.href.match("\\+1")) n = n + "+1";
-  else if (contrast == true) n = n + "+1";
-  return n;
+  var uri = this;
+  if (contrast == true && !location.href.match("\\+1")) var uri = uri + "+1";
+  else if (contrast == true) var uri = uri + "+1";
+  return uri;
 };
 
 String.prototype.zulu = function () {
@@ -191,8 +191,8 @@ String.prototype.zulu = function () {
     minute: "numeric",
     hour12: true,
   };
-  var dmz = [];
-  var utc = new Date(this);
+  let dmz = [];
+  let utc = new Date(this);
   dmz.push(this.moment());
   var gmt = utc.toLocaleString("en-US", opt);
   dmz.push(gmt);
@@ -201,39 +201,39 @@ String.prototype.zulu = function () {
 };
 
 String.prototype.capitalize = function () {
-  return this.replace(/(\b[a-z](?!\s))/g, function (n) {
-    return n.toUpperCase();
+  return this.replace(/(\b[a-z](?!\s))/g, function (string) {
+    return string.toUpperCase();
   });
 };
 
-String.prototype.grep = function (n) {
-  var n = this;
-  var count = [];
+String.prototype.grep = function (string) {
+  var string = this;
+  let count = [];
   if (onlyImages == true) {
-    return menu.filter((x) => x.cat == n && x.media == true).length;
+    return menu.filter((a) => a.cat == string && a.media == true).length;
   } else if (onlyImages == false) {
-    return menu.filter((x) => x.cat == n).length;
+    return menu.filter((a) => a.cat == string).length;
   }
 };
 
 String.prototype.moment = function () {
-  var age = new Date();
-  var utc = new Date(this);
-  var dis = age.getTime() - utc.getTime();
+  let age = new Date();
+  let utc = new Date(this);
+  let dis = age.getTime() - utc.getTime();
   if (dis < 0) dis = -dis;
-  var sec = dis / 1000;
+  let sec = dis / 1000;
   if (sec < 60)
     return parseInt(sec) + " second" + (parseInt(sec) > 1 ? "s" : "");
-  var min = sec / 60;
+  let min = sec / 60;
   if (min < 60)
     return parseInt(min) + " minute" + (parseInt(min) > 1 ? "s" : "");
-  var h = min / 60;
+  let h = min / 60;
   if (h < 24) return parseInt(h) + " hour" + (parseInt(h) > 1 ? "s" : "");
-  var d = h / 24;
+  let d = h / 24;
   if (d < 30) return parseInt(d) + " day" + (parseInt(d) > 1 ? "s" : "");
-  var m = d / 30;
+  let m = d / 30;
   if (m < 12) return parseInt(m) + " month" + (parseInt(m) > 1 ? "s" : "");
-  var y = m / 121;
+  let y = m / 121;
 
   return parseInt(y) + " year" + (parseInt(y) > 1 ? "s" : "");
 };

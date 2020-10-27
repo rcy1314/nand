@@ -179,16 +179,16 @@ var xmlImageSource = function (xhr) {
 };
 
 var xmlTimeStampParsing = function (channel, dateTime) {
-  var parse = [];
+  let parse = [];
   if (channel == "entry") {
-    var re = dateTime.getElementsByTagName("link")[0].getAttribute("href");
-    var dst = dateTime
+    let re = dateTime.getElementsByTagName("link")[0].getAttribute("href");
+    let dst = dateTime
       .getElementsByTagName("updated")[0]
       .childNodes[0].nodeValue.zulu();
-    var since = new Date(
+    let since = new Date(
       dateTime.getElementsByTagName("updated")[0].childNodes[0].nodeValue
     ).getTime();
-    var gen = dateTime
+    let gen = dateTime
       .getElementsByTagName("updated")[0]
       .childNodes[0].nodeValue.toLocaleString();
     gen = parseInt(
@@ -205,27 +205,27 @@ var xmlTimeStampParsing = function (channel, dateTime) {
     });
   } else {
     if (dateTime.getElementsByTagName("datetime").length > 0) {
-      var re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
-      var ts = parseInt(
+      let re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
+      let ts = parseInt(
         dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
       );
-      var ts_ms = ts * 1000;
-      var date = new Date(ts_ms);
-      var year = date.getFullYear();
-      var mon = ("0" + (date.getMonth() + 1)).slice(-2);
-      var min = ("0" + date.getMinutes()).slice(-2);
-      var sec = ("0" + date.getSeconds()).slice(-2);
-      var hour = ("0" + date.getHours()).slice(-2);
-      var date = ("0" + date.getDate()).slice(-2);
-      var def =
+      let ts_ms = ts * 1000;
+      let date = new Date(ts_ms);
+      let year = date.getFullYear();
+      let mon = ("0" + (date.getMonth() + 1)).slice(-2);
+      let min = ("0" + date.getMinutes()).slice(-2);
+      let sec = ("0" + date.getSeconds()).slice(-2);
+      let hour = ("0" + date.getHours()).slice(-2);
+      date = ("0" + date.getDate()).slice(-2);
+      let def =
         year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec;
-      var dst = def.zulu();
-      var since = new Date(
+      let dst = def.zulu();
+      let since = new Date(
         parseInt(
           dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
         )
       );
-      var gen = parseInt(
+      let gen = parseInt(
         dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
       ).toString(36);
       parse.push({
@@ -235,14 +235,14 @@ var xmlTimeStampParsing = function (channel, dateTime) {
         re: re.trim(),
       });
     } else if (dateTime.getElementsByTagName("pubDate").length > 0) {
-      var re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
-      var dst = dateTime
+      let re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
+      let dst = dateTime
         .getElementsByTagName("pubDate")[0]
         .childNodes[0].nodeValue.zulu();
-      var since = new Date(
+      let since = new Date(
         dateTime.getElementsByTagName("pubDate")[0].childNodes[0].nodeValue
       );
-      var gen = new Date(
+      let gen = new Date(
         dateTime.getElementsByTagName("pubDate")[0].childNodes[0].nodeValue
       ).toLocaleString();
       gen = parseInt(
@@ -258,15 +258,15 @@ var xmlTimeStampParsing = function (channel, dateTime) {
         re: re.trim(),
       });
     } else if (dateTime.getElementsByTagName("dc:date").length > 0) {
-      var re = dateTime.getElementsByTagName("dc:date")[0].childNodes[0]
+      let re = dateTime.getElementsByTagName("dc:date")[0].childNodes[0]
         .nodeValue;
-      var dst = dateTime
+      let dst = dateTime
         .getElementsByTagName("dc:date")[0]
         .childNodes[0].nodeValue.zulu();
-      var since = new Date(
+      let since = new Date(
         dateTime.getElementsByTagName("dc:date")[0].childNodes[0].nodeValue
       );
-      var gen = new Date(
+      let gen = new Date(
         dateTime.getElementsByTagName("dc:date")[0].childNodes[0].nodeValue
       ).getTime();
       gen = gen.toString(36);
@@ -282,8 +282,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 };
 
 var xmlImageAttributes = function (empty, n, item, src) {
-  var maximum = 799;
-  var k = 5420;
+  let maximum = 799;
+  let k = 5420;
   ready(() => {
     if (dupe.includes(src)) {
       if (
@@ -332,16 +332,16 @@ var xmlImageAttributes = function (empty, n, item, src) {
             document.querySelector(".item-" + n + " .src-" + item)
           )
         ) {
-          var itemImage = document.querySelector(
+          let itemImage = document.querySelector(
             ".item-" + n + " .src-" + item
           );
-          var attribute = document.querySelector(
+          let attribute = document.querySelector(
             ".img-" + item + " .attribute"
           );
-          var copyPicture = document.querySelector(
+          let copyPicture = document.querySelector(
             ".img-" + item + " .picture"
           );
-          var copyPost = document.querySelector(".img-" + item + " .post");
+          let copyPost = document.querySelector(".img-" + item + " .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
             if (newImg.naturalHeight > k &&
@@ -449,9 +449,9 @@ var xmlTitleParsing = function(xhr) {
 }
 
 var xmlRequestParsing = function (search, string, index) {
-  var local;
-  id = index;
-  var pub = [];
+  let local;
+  let pub = [];
+  let id = index;
 
   if (search == "search") {
     uri = cors + menu[index].uri + string + "&format=RSS";
@@ -471,7 +471,7 @@ var xmlRequestParsing = function (search, string, index) {
       // 4 = "loaded"
       if (httpRequest.status == 200) {
         // 200 = OK
-        var xhr = this.responseXML;
+        let xhr = this.responseXML;
         if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'";
 
         if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
@@ -483,7 +483,7 @@ var xmlRequestParsing = function (search, string, index) {
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
-          var data = xhr.getElementsByTagName(channel)[i];
+          let data = xhr.getElementsByTagName(channel)[i];
 
           if (data.childNodes.length > 1) var title = xmlTitleParsing(data)
 
@@ -491,16 +491,16 @@ var xmlRequestParsing = function (search, string, index) {
 
           var postDuplicate = title
 
-          var trun = truncate(title, titleTruncate, true);
+          let trun = truncate(title, titleTruncate, true);
 
           parse = xmlTimeStampParsing(channel, data);
 
-          var share = menu[index].hash;
-          var share = window.location.origin + "/?" + share + parse.gen;
+          let share = menu[index].hash;
+          share = window.location.origin + "/?" + share + parse.gen;
 
-          var src = xmlImageSource(data);
+          let src = xmlImageSource(data);
 
-          var courtesy = courtesyHeader(
+          let courtesy = courtesyHeader(
             menu[index].id.match(/([^\/]+)$/g),
             menu[index].img.image(),
             menu[index].ext
@@ -628,9 +628,9 @@ var xmlRequestParsing = function (search, string, index) {
             xmlImageAttributes(true, index, pub[i].element, pub[i].src);
           else xmlImageAttributes(false, index, pub[i].element, pub[i].src);
         }
-        var oldest = pub[pub.length - 1].dst;
-        var posts = pub.length - 1;
-        var recent = pub[0].dst;
+        let oldest = pub[pub.length - 1].dst;
+        let posts = pub.length - 1;
+        let recent = pub[0].dst;
         if (reader == false)
           document.querySelector(".channel").innerHTML =
             document.querySelector(".channel").innerHTML + footerBuild();
@@ -642,11 +642,11 @@ var xmlRequestParsing = function (search, string, index) {
         document.querySelector("#main").focus();
         unloading();
       } else {
-        var center;
+        let center;
         center.innerHTML = stageBuild();
         document.querySelector("#main").innerHTML =
           document.querySelector("#main").innerHTML + center;
-        var channel = document.querySelector(".channel");
+        let channel = document.querySelector(".channel");
         channel.append("This site could not be reached.");
         unloading();
         visual();
