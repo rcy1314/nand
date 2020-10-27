@@ -23,12 +23,8 @@ window.onload = function () {
 window.addEventListener(
   "resize",
   function (event) {
-    if (document.querySelector("#main").clientWidth <= 768) {
+    if (document.querySelector("#main").clientWidth <= 768)
       sideBarDisplay(false)
-    } else {
-      sideBarFirst = "false";
-      sideBarDisplay(onScreen);
-    }
   },
   true
 );
