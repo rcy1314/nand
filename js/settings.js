@@ -257,7 +257,7 @@ var first = true; //reader append feed center channel
 var expand = true; //filter populate list display
 var contrast = false; //opposite of op +1
 var randomDuplicate = []; //core.js random duplicate xml
-var sidebarFirst = "true"; //first click show
+var sideBarFirst = "true"; //first click show
 
 var selections = [ //sideBar sel options
 

@@ -16,10 +16,22 @@ window.onload = function () {
   if (document.querySelector("#main").clientWidth <= 768) {
     sideBarDisplay(false)
   } else {
-    sidebarFirst = "false";
+    sideBarFirst = "false";
     sideBarDisplay(onScreen);
   }
 };
+window.addEventListener(
+  "resize",
+  function (event) {
+    if (document.querySelector("#main").clientWidth <= 768) {
+      sideBarDisplay(false)
+    } else {
+      sideBarFirst = "false";
+      sideBarDisplay(onScreen);
+    }
+  },
+  true
+);
 document.addEventListener(
   "scroll",
   function (event) {

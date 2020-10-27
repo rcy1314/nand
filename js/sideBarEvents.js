@@ -35,13 +35,13 @@ document.addEventListener(
   "click",
   function (event) {
     if (event.target.id == "hide") {
-      if (sidebarFirst == "false") {
-        sidebarFirst = "true";
+      if (sideBarFirst == "false") {
+        sideBarFirst = "true";
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       }
-      if (sidebarFirst == "true") {
-        sidebarFirst = "false";
+      if (sideBarFirst == "true") {
+        sideBarFirst = "false";
         sideBarDisplay(onScreen);
       }
     }
@@ -56,6 +56,8 @@ document.addEventListener(
       event.target.classList.contains("Youtube")
     ) {
       id = 0;
+      onScreen = false;
+      sideBarDisplay(false);
       if (document.body.contains(document.querySelector("#feed")))
         document.querySelector("#feed").remove();
       if (document.body.contains(document.querySelector("#group")))
@@ -81,6 +83,8 @@ document.addEventListener(
       (event.target.id == "mobileHome" && event.target.id != "Home")
     ) {
       id = 0;
+      onScreen = false;
+      sideBarDisplay(false);
       if (document.body.contains(document.querySelector("#feed")))
         document.querySelector("#feed").remove();
       if (document.body.contains(document.querySelector("#group")))
@@ -100,8 +104,9 @@ document.addEventListener(
       event.target.classList.contains("Reader") ||
       event.target.classList.contains("continuous")
     ) {
+      onScreen = false;
+      sideBarDisplay(false);
       document.querySelector("#visit").style.display = "none";
-
       if (reader == true) {
         id = 0;
         reader = false;
@@ -129,6 +134,8 @@ document.addEventListener(
     ) {
       op = 0;
       contrast = false;
+      onScreen = false;
+      sideBarDisplay(false);
       if (location.href.match("\\?\\+1") && location.href.match("\\+1"))
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
       else var uri = window.location.href;
@@ -140,8 +147,10 @@ document.addEventListener(
       event.target.classList.contains("Night") ||
       event.target.classList.contains("fa-code")
     ) {
-      contrast = false;
       op = 1;
+      contrast = false;
+      onScreen = false;
+      sideBarDisplay(false);
       if (!location.href.match("\\?\\+1") && !location.href.match("\\+1"))
         var uri = window.location.href + "?+1";
       else var uri = window.location.href;
@@ -155,6 +164,8 @@ document.addEventListener(
     ) {
       expand = true;
       groupType = "list";
+      onScreen = false;
+      sideBarDisplay(false);
       if (document.body.contains(document.getElementById("#main #group"))) {
         var group = document.querySelector("#main #group");
         group.style.display = "none";
@@ -176,6 +187,8 @@ document.addEventListener(
     ) {
       expand = false;
       groupType = "blocks";
+      onScreen = false;
+      sideBarDisplay(false);
       if (document.body.contains(document.getElementById("#main #group"))) {
         var group = document.querySelector("#main #group");
         group.style.display = "none";
@@ -196,6 +209,8 @@ document.addEventListener(
       event.target.classList.contains("sideDots")
     ) {
       loading = "dots";
+      onScreen = false;
+      sideBarDisplay(false);
         document
           .querySelectorAll("#dots .fill")
           .forEach((a) => a.classList.add("dots"));
@@ -209,6 +224,8 @@ document.addEventListener(
       event.target.classList.contains("toggleImages") ||
       event.target.classList.contains("fa-camera-retro")
     ) {
+      onScreen = false;
+      sideBarDisplay(false);
       onlyImages = onlyImages != true;
       document.querySelector("#toggle").style.display = "none";
       if (onlyImages == true) notifyOption("Displaying only Images.");
@@ -229,12 +246,16 @@ document.addEventListener(
       event.target.classList.contains("fa-signal")
     ) {
       loading = "percent";
+      onScreen = false;
+      sideBarDisplay(false);
       unloading();
     }
     if (
       event.target.classList.contains("Info") ||
       event.target.classList.contains("fa-exclamation-circle")
     ) {
+      onScreen = false;
+      sideBarDisplay(false);
       var uri = "https://github.com/acktic/acktic.github.io";
       uri.blank();
     }
@@ -242,6 +263,8 @@ document.addEventListener(
       event.target.classList.contains("TopBar") ||
       event.target.classList.contains("fa-edit")
     ) {
+      onScreen = false;
+      sideBarDisplay(false);
       topBar = topBar != true;
       notifyOption("TopBar set to " + topBar.toString().capitalize());
       topMenuBarDisplay(topBar);
@@ -250,6 +273,8 @@ document.addEventListener(
       event.target.classList.contains("ShowOption") ||
       event.target.classList.contains("fa-puzzle-piece")
     ) {
+      onScreen = false;
+      sideBarDisplay(false);
       showOption = showOption != true;
       notifyOption("Option set to " + showOption.toString().capitalize());
       if (showOption == false)
@@ -262,6 +287,8 @@ document.addEventListener(
       event.target.classList.contains("fa-pie-chart")
     ) {
       init();
+      onScreen = false;
+      sideBarDisplay(false);
       showOption = showOption != true;
       notifyOption("Option set to " + showOption.toString().capitalize());
       if (showOption == false)
@@ -276,6 +303,8 @@ document.addEventListener(
     ) {
       init();
       var code = [];
+      onScreen = false;
+      sideBarDisplay(false);
       document.querySelector("#visit").style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (onlyImages == true) {
@@ -294,6 +323,8 @@ document.addEventListener(
     ) {
       init();
       var code = [];
+      onScreen = false;
+      sideBarDisplay(false);
       document.querySelector("#visit").style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (menu[i].media == true) code.push(menu.indexOf(menu[i]));
