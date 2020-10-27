@@ -35,7 +35,7 @@
 
   > /?uX Used in Copy Post appends time converted to base 36.
 
-  > /?uX<b>aZjk1</b> loads guide with progress and guideImage in base.js
+  > /?uX<b>aZjk1</b> loads guide with progress and guideImage in baseFunctions.js
 
   >  /?<b>uXaZjk1+1</b> loads guide with contrast to op.
 
@@ -71,7 +71,7 @@
 
   > cat: translations
 
-  > uri: endpoint used in xmlRequestParsing in baseFunctions.js
+  > uri: endpoint used in xmlRequestParsing in xmlFunctions.js
 
   > ext: external blank exit to new tab, legacy.
 
