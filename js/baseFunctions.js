@@ -163,16 +163,16 @@ var sideBarDisplay = function (toggleOption) {
   visual();
 };
 
-var topMenuBarDisplay = function (n) {
+var topMenuBarDisplay = function (toggleOption) {
   if (document.body.contains(document.querySelector("#top"))) {
     var top = document.getElementById("top");
-    if (n == true) top.style.display = "block";
-    else if (n == false) top.style.display = "none";
+    if (toggleOption == true) top.style.display = "block";
+    else if (toggleOption == false) top.style.display = "none";
   }
 };
 
-var quickFeedDisplay = function (n) {
-  if (n == true) {
+var quickFeedDisplay = function (toggleOption) {
+  if (toggleOption == true) {
     document.querySelector(".quick").classList.add("visible");
     document.querySelector(".quick").classList.remove("invisible");
     document.querySelector("#front").classList.add("toggleHidden");
@@ -186,7 +186,7 @@ var quickFeedDisplay = function (n) {
         document.querySelector(".fa-angle-up").classList.add("rotate");
       }, 1000);
     }
-  } else if (n == false) {
+  } else if (toggleOption == false) {
     document.querySelector("#page .quick").classList.remove("visible");
     document.querySelector("#page .quick").classList.add("invisible");
     document.querySelector("#front").classList.remove("toggleHidden");
@@ -315,6 +315,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       !suggest.includes(randomMenuObject)
     )
       ready(() => {
+        if (suggest.length >= suggestionBuffer) return false;
         suggest.push(randomMenuObject);
         listing.innerHTML += listingIndexBuild(
           menu[randomMenuObject].id.match(/[^\/]+$/g),
@@ -325,7 +326,6 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
           i
         );
       });
-    if (suggest.length >= suggestionBuffer) return false;
     setTimeout(500);
   }
 };

@@ -361,18 +361,24 @@ var inputListingKeyup = function(Elem, keycode) {
     ) {
       document
         .querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.focus();
+        .previousElementSibling.previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling.previousElementSibling.focus();
       document
         .querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add(
-          "hover"
-        );
+        .previousElementSibling.previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling.previousElementSibling
+        .classList.add("hover");
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
-          "hover"
-        );
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.remove("hover");
       document.querySelector(".focus .guest").focus();
+    } else {
+      document.querySelector(Elem + " .listing .index").focus()
+      document.querySelector(Elem + " .listing .hover")
+      .classList.remove("hover")
+      document.querySelector(Elem + " .listing .index").classList.add("hover")
     }
   } else if (keycode === 34) {
     if (
@@ -383,7 +389,9 @@ var inputListingKeyup = function(Elem, keycode) {
       document
         .querySelector(Elem + " .listing .index").focus();
       document
-        .querySelector(Elem + " .listing .index").classList.add(
+        .querySelector(Elem + " .listing .index")
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
           "hover"
         );
     } else if (
@@ -407,16 +415,25 @@ var inputListingKeyup = function(Elem, keycode) {
     ) {
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.focus();
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
           "hover"
         );
       document
         .querySelector(Elem + " .listing .hover")
         .classList.remove("hover");
       document.querySelector(".focus .guest").focus();
+    } else {
+      document.querySelector(Elem + " .listing .index:last-child").focus()
+      document.querySelector(Elem + " .listing .hover")
+      .classList.remove("hover")
+      document.querySelector(Elem + " .listing .index:last-child").classList.add(
+        "hover"
+      )
     }
   } else if (keycode === 38) {
     if (

@@ -35,13 +35,13 @@ document.addEventListener(
   "click",
   function (event) {
     if (event.target.id == "hide") {
-      if (sideBarFirst == "false") {
-        sideBarFirst = "true";
+      if (sideBarFirst == true) {
+        sideBarFirst = false;
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       }
-      if (sideBarFirst == "true") {
-        sideBarFirst = "false";
+      if (sideBarFirst == false) {
+        sideBarFirst = true;
         sideBarDisplay(onScreen);
       }
     }

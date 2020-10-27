@@ -246,8 +246,7 @@
 
 var id; //feed indexOf menu
 var tap = 0; //used in mainEvents.js for images
-var post; //from init.js timestamp
-var local; //used in init.js for guide posts
+var post; //from init.js global timestamp for guide
 var complete; //coreHelpers.js interval for progress
 var dupe = []; //image src duplicate catch
 var httpRequest; //uri xml httpRequest
@@ -256,8 +255,8 @@ var filter = []; //response array for menu objects
 var first = true; //reader append feed center channel
 var expand = true; //filter populate list display
 var contrast = false; //opposite of op +1
+var sideBarFirst = true; //first click show
 var randomDuplicate = []; //core.js random duplicate xml
-var sideBarFirst = "true"; //first click show
 
 var selections = [ //sideBar sel options
 
