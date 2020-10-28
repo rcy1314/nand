@@ -134,7 +134,7 @@ document.addEventListener(
       event.target.classList.contains("fa-terminal")
     ) {
       op = 0;
-      contrast = false;
+      contrast = contrast != true;
       if (location.href.match("\\?\\+1") && location.href.match("\\+1"))
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
       else var uri = window.location.href;
@@ -147,7 +147,7 @@ document.addEventListener(
       event.target.classList.contains("fa-code")
     ) {
       op = 1;
-      contrast = false;
+      contrast = contrast != true;
       if (!location.href.match("\\?\\+1") && !location.href.match("\\+1"))
         var uri = window.location.href + "?+1";
       else var uri = window.location.href;

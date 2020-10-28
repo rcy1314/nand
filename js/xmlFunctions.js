@@ -473,6 +473,7 @@ var xmlRequestParsing = function (search, string, index) {
         // 200 = OK
         let xhr = this.responseXML;
         if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'";
+        else if (op == 1) var style = "style='box-shadow: 8px 8px 16px #060606'";
 
         if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
         else var channel = "item";

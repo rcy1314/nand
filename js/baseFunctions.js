@@ -335,8 +335,7 @@ var progressBackDrop = function (done, percent) {
     !location.href.match("\\?q=") &&
     !location.href.match("\\+1") &&
     !location.href.match("\\?") &&
-    contrast == true &&
-    op != op
+    contrast == true
   ) {
     var extendedURI = window.location.href + "?+1";
     extendedURI.state();
@@ -521,6 +520,7 @@ var reverseCategoryGroup = function (translation) {
     }
   }
   displayExpand(expand);
+  unloading();
   visual();
 };
 
