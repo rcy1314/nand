@@ -636,8 +636,8 @@ html body #container #main #feed .content .status .filter .ext img {
   width: 70px;
 }
 
-html body #container #main #group .air .populate .title,
 html body #container #main #group .status .filter .tag,
+html body #container #main #group .air .populate .title,
 html body #container #main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
@@ -885,12 +885,6 @@ html body #container #guide .sticky .ago {
   bottom: 0;
 }
 
-html body #container #guide .sticky .tag {
-  position: absolute;
-  width: 320px;
-  bottom: 0;
-}
-
 html body #container #main #feed .center .item {
   margin-bottom: 15px;
   width: 100%;
@@ -918,13 +912,6 @@ html body #container #main #feed .center .item .add {
   margin-bottom: 10px;
   font-size: 12px;
   width: 85%;
-}
-
-html body #container #main #feed .center .item .tag {
-  background-color: transparent;
-  min-width: 38% !important;
-  position: relative;
-  width: 100%;
 }
 
 html body #container #guide .sticky .image {
@@ -1010,10 +997,11 @@ html body #container #main #feed .center .item .header .courtesy .copy .attribut
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
 html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
-  border: none !important;
+  background-color: transparent;
   cursor: pointer;
   font-size: 14px;
   padding: 10px;
+  border: none;
 }
 
 html body #container #main #feed .center .item .header .courtesy .copy .attribute .post,

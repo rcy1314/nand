@@ -472,8 +472,6 @@ var xmlRequestParsing = function (search, string, index) {
       if (httpRequest.status == 200) {
         // 200 = OK
         let xhr = this.responseXML;
-        if (op == 0) var style = "style='box-shadow:8px 8px 16px #eeeeee'";
-        else if (op == 1) var style = "style='box-shadow: 8px 8px 16px #060606'";
 
         if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
         else var channel = "item";
@@ -531,7 +529,6 @@ var xmlRequestParsing = function (search, string, index) {
               parse.dst,
               courtesy,
               parse.re,
-              style,
               share,
               views,
               trun,
@@ -546,7 +543,6 @@ var xmlRequestParsing = function (search, string, index) {
               parse.dst,
               parse.re,
               courtesy,
-              style,
               title,
               share,
               trun,

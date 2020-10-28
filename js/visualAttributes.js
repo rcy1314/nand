@@ -30,17 +30,14 @@ var visual = function (toggleOption) {
         .querySelectorAll(".attribute")
         .forEach((a) => a.classList.add("opposite"));
       document
-        .querySelectorAll(".attribute div")
-        .forEach((a) => a.classList.add("opposite"));
-      document
-        .querySelectorAll(".attribute div")
-        .forEach((a) => a.classList.add("oppositeOver"));
-      document
         .querySelectorAll("#feed .item .classic")
         .forEach((a) => a.classList.add("oppositeOverBorderless"));
       document
         .querySelectorAll("#feed .item")
         .forEach((a) => a.classList.add("oppositeOver"));
+      document
+        .querySelectorAll("#feed .item")
+        .forEach((a) => a.style.boxShadow = '8px 8px 16px #060606');
       document
         .querySelectorAll(".combine a")
         .forEach((a) => (a.style.color = "#f7426C"));
@@ -285,17 +282,14 @@ var visual = function (toggleOption) {
         .querySelectorAll(".attribute")
         .forEach((a) => a.classList.add("invert"));
       document
-        .querySelectorAll(".attribute div")
-        .forEach((a) => a.classList.add("invert"));
-      document
-        .querySelectorAll(".attribute div")
-        .forEach((a) => a.classList.add("invertOver"));
-      document
         .querySelectorAll("#feed .item")
         .forEach((a) => a.classList.add("invertOver"));
       document
         .querySelectorAll("#feed .item .classic")
         .forEach((a) => a.classList.add("invertOverBorderless"));
+      document
+        .querySelectorAll("#feed .item")
+        .forEach((a) => a.style.boxShadow = '8px 8px 16px #eeeeee');
       document
         .querySelectorAll(".combine a")
         .forEach((a) => (a.style.color = "steelblue"));

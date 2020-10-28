@@ -314,7 +314,6 @@ var youtubeHTMLBuild = function (
   dateTime,
   courtesyHeader,
   externalURL,
-  styleHTML,
   share,
   views,
   titleTruncate,
@@ -324,7 +323,6 @@ var youtubeHTMLBuild = function (
 ) {
   return `
      <div id='yt' class='item'
-    ${styleHTML}
       ext='${externalURL}'>
        <div class='header'>
      <div class='courtesy' style='float:left'>
@@ -373,7 +371,6 @@ var xmlHTMLBuild = function (
   dateTime,
   externalURI,
   courtesyHeader,
-  styleHTML,
   title,
   share,
   titleTruncate,
@@ -386,7 +383,6 @@ var xmlHTMLBuild = function (
   return `
      <div class='item img-${pubIndex}
       item-${menuIndex}'
-    ${styleHTML}
       item='${pubIndex}'
        ext='${externalURI}'>
        <div class='header'>
