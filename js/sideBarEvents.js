@@ -314,7 +314,7 @@ document.addEventListener(
     ) {
       if (location.href.match("\\?+1") || location.href.match("\\+1")) {
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
-        let contrast = false;
+        contrast = contrast != true;
         op = op != true;
       } else {
         var uri = window.location.href + "?+1";
