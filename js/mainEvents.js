@@ -121,6 +121,7 @@ document.addEventListener(
       }
     }
     if (
+      event.target.classList.contains("header") ||
       event.target.classList.contains("feed") ||
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel") ||
@@ -137,6 +138,12 @@ document.addEventListener(
       event.target.id == "arm" ||
       event.target.classList.contains("fa")
     ) {
+      if (document.body.contains(document.querySelector(".attribute")) &&
+        document.querySelector(".attribute").style.display === "block") {
+        document.querySelector(".attribute").style.display = "none";
+        event.target.closest('.fa-ellipsis-v').classList.add('.fa-ellipsis-h')
+        event.target.closest('.fa-ellipsis-v').classList.remove('.fa-ellipsis-v')
+      }
       if (document.querySelector("#match").style.display === "block") {
         document.querySelector("#match").style.display = "none";
         var view = document.querySelector("#input .view")
@@ -152,6 +159,7 @@ document.addEventListener(
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }
+      event.stopPropagation()
     }
     if (event.target.classList.contains("fa-expand-alt")) {
       if (!document.body.contains(document.querySelector("#main #group"))){
@@ -258,9 +266,7 @@ document.addEventListener(
       event.stopPropagation();
     }
     if (
-      event.target.classList.contains("courtesy") ||
       event.target.classList.contains("classic") ||
-      event.target.classList.contains("header") ||
       event.target.classList.contains("item") ||
       event.target.classList.contains("wrap") ||
       event.target.classList.contains("pub") ||

@@ -25,7 +25,9 @@ var visual = function (toggleOption) {
       .forEach((a) => a.style.color = '#f7f7f7');
     if (document.body.contains(document.querySelector(".status .filter")))
       document.querySelector('.status .filter').classList.add('oppositeOver')
-    if (document.body.contains(document.querySelector("#feed"))) {
+    if (document.body.contains(document.querySelector("#feed .item"))) {
+      document.querySelector("#feed").style.backgroundColor =
+        "var(--bg-color-primary)"
       document.querySelectorAll("#feed .item .classic")
         .forEach((a) => a.classList.add("oppositeOverBorderless"));
       document.querySelectorAll("#feed .item")
@@ -53,7 +55,7 @@ var visual = function (toggleOption) {
         document.querySelector('#group').style.backgroundColor =
           'var(--bg-color-primary)'
         document.querySelectorAll("#group .populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
+        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
       }
     }
     document.querySelector("#first").style.border = ".3px solid #2f2f2f";
@@ -210,6 +212,8 @@ var visual = function (toggleOption) {
       document.querySelector('.content .status .filter')
         .classList.add('invertOver')
     if (document.body.contains(document.querySelector("#feed .item"))) {
+      document.querySelector("#feed").style.backgroundColor =
+        "var(--bg-color-secondary)"
       document.querySelectorAll("#feed .item")
         .forEach((a) => a.classList.add("invertOver"));
       document.querySelectorAll("#feed .item .classic")
