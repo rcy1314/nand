@@ -48,15 +48,8 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("oppositeOver"));
-      if (groupType == "blocks")
-        document.querySelectorAll("#group .populate")
-          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      else {
-        document.querySelector('#group').style.backgroundColor =
-          'var(--bg-color-primary)'
-        document.querySelectorAll("#group .populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      }
+      document.querySelectorAll("#group .populate")
+      .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
     }
     document.querySelector("#first").style.border = ".3px solid #2f2f2f";
     if (
@@ -148,15 +141,8 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("invertOver"));
-      if (groupType == "blocks")
-        document.querySelectorAll("#group .populate")
-          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
-      else {
-        document.querySelector('#group').style.backgroundColor =
-          'var(--bg-color-primary)'
-        document.querySelectorAll("#group .populate")
+      document.querySelectorAll("#group .populate")
         .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      }
     }
     document.querySelector(".quick .right")
       .classList.add("invertOverBorderless");
