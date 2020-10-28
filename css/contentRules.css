@@ -371,7 +371,6 @@ html body #container #main #visit {
   background-size: 600px 300px;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   display: flex;
   height: 100%;
 }

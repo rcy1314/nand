@@ -63,6 +63,6 @@ if (location.search.split("?q=")[1]) {
   });
 } else if (!location.search.split("?")[1]) {
   ready(() => {
-    document.querySelector("#visit").style.visibility = "visible";
+    return true
   });
 }
