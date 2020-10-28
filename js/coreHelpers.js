@@ -26,16 +26,15 @@ var loadScripts = function() {
   let directory = "js/";
   let extension = ".js";
   let files = [
+    "xmlFunctions",
+    "baseFunctions",
     "settings",
     "init",
     "visualAttributes",
-    "baseFunctions",
-    "headXML",
     "baseReturnStrings",
     "sideBarEvents",
     "inputEvents",
     "mainEvents",
-    "xmlFunctions"
   ];
   for (var file of files) {
     let path = directory + file + extension;

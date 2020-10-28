@@ -9,7 +9,7 @@ if (
     if (!uri.match(/^[a-zA-Z0-9]+$/i)) {
       contrast = contrast != true;
       op = op != true;
-      i = -1;
+      var i = -1;
     } else {
       contrast = contrast != true;
       op = op != true;
@@ -18,7 +18,7 @@ if (
 
   if (uri.match(/^[a-zA-Z0-9]+$/i)) {
     let id = uri.slice(0, 2);
-    let i = menu.findIndex((item) => item.hash === id);
+    var i = menu.findIndex((item) => item.hash === id);
     post = parseInt(uri.slice(2), 36);
   }
 
