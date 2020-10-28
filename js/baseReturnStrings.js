@@ -383,7 +383,7 @@ var xmlHTMLBuild = function (
   return `
      <div class='item img-${pubIndex}
       item-${menuIndex}'
-      item='${pubIndex}'
+      item='${menuIndex}'
        ext='${externalURI}'>
        <div class='header'>
     ${courtesyHeader}

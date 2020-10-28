@@ -321,6 +321,8 @@ document.addEventListener(
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
                 element: event.target.closest(".item").getAttribute("item"),
+                image: menu[event.target.closest(".item").getAttribute("item")]
+                  .img.image(),
                 title: event.target
                   .closest(".item")
                   .querySelector(".pub")
@@ -333,7 +335,7 @@ document.addEventListener(
                 src: event.target.closest(".item").querySelector(".source")
                   .value,
                 re: event.target.closest(".item").getAttribute("ext"),
-                id: event.target.getAttribute("id"),
+                id: event.target.closest(".item").getAttribute("item"),
               });
               guideDisplay(sticky);
             } else if (event.target.classList.contains('guide'))
