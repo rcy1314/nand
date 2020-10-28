@@ -193,6 +193,7 @@ document.addEventListener(
     else if (event.target.classList.contains("view"))
       inputListingKeyup('#match', event.keyCode)
     event.preventDefault();
+    visual();
   },
   false
 ); //:before pseudo-elements not loaded in DOM

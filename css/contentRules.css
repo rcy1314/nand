@@ -77,7 +77,7 @@ html body #container #main #progressBar {
 }
 
 html body #container #toggle {
-  background-color: transparent !important;
+  background-color: transparent;
   position: absolute;
   cursor: pointer;
   padding: 15px;
@@ -585,6 +585,7 @@ html body #container #main #group .result {
 }
 
 html body #container #main #feed .content .status .filter {
+  background-color: transparent;
   margin-left: 15px;
 }
 
@@ -1163,6 +1164,7 @@ html body #container #main #feed .content .suggestions .combine .suggest .random
 }
 
 html body #container #main #feed .content .suggestions .combine .suggest a {
+  color: var(--loader-color-primary);
   font-weight: bold;
   font-size: 11px;
 }

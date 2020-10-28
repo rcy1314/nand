@@ -70,16 +70,12 @@ document.addEventListener(
       if (document.body.contains(document.querySelector("#group")))
         document.querySelector("#group").remove();
       location.pathname.state();
-      if (document.body.contains(document.querySelector(".selected")))
-        document.querySelector(".selected").classList.remove("selected");
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
       category = event.target.closest(".cat").getAttribute("aria-item");
       populateCategoryGroup(
         event.target.closest(".cat").getAttribute("aria-item")
       );
-      if (!event.target.classList.contains("webp"))
-        event.target.classList.add("selected");
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       visual();

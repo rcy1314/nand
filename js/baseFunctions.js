@@ -180,7 +180,6 @@ var quickFeedDisplay = function (toggleOption) {
     if (document.body.contains(document.querySelector(".link"))) {
       document.querySelector(".link .fa-angle-up").classList.add("rotate");
       document.querySelector(".link .fa-angle-up").classList.remove("rotateReverse");
-      document.querySelector(".link").classList.add("slideRight");
       document.querySelector(".show").style.visibility = "hidden";
       setTimeout(function () {
         document.querySelector(".fa-angle-up").classList.add("rotate");
@@ -194,7 +193,6 @@ var quickFeedDisplay = function (toggleOption) {
     if (document.body.contains(document.querySelector(".link"))) {
       document.querySelector(".fa-angle-up").classList.remove("rotate");
       document.querySelector(".fa-angle-up").classList.add("rotateReverse");
-      document.querySelector(".link").classList.remove("slideRight");
       document.querySelector(".show").style.visibility = "visible";
     }
   }

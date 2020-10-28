@@ -13,7 +13,6 @@ var loadStyles = function() {
   let directory = "css/";
   let extension = ".css";
   let files = [
-    "contentRules",
     "animationRules",
     "classRules",
     "mediaRules",

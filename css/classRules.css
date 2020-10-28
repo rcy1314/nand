@@ -81,7 +81,7 @@ scrollbar-width: thin;
 }
 
 .invertOver:not(:hover) {
-  border: .3px solid #ffffff !important;
+  border: .3px solid transparent !important;
   background-color: #ffffff;
 }
 
