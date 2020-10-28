@@ -243,7 +243,7 @@ var guideBuildYoutube = function (pubArray) {
        item='${pubArray[0].id}'
        ext='${pubArray[0].re}'
        style='width:60vw'>
-       <div class='yt'>" +
+       <div class='yt'>
          <iframe src='${pubArray[0].src}'>
        </iframe>
        </div>
@@ -331,7 +331,7 @@ var youtubeHTMLBuild = function (
      </div>
        <div class='yt'>
          <iframe src='${videoSource}'>
-       </iframe>" +
+       </iframe>
     ${views}
        </div>
        <div class='pub' text='${title}'>
