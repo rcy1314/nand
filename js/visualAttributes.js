@@ -153,7 +153,7 @@ var visual = function (toggleOption) {
           .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
       else {
         document.querySelector('#group').style.backgroundColor =
-          'var(--bg-color-secondary)'
+          'var(--bg-color-primary)'
         document.querySelectorAll("#group .populate")
         .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
       }
