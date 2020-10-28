@@ -9,7 +9,6 @@ var visual = function (toggleOption) {
           "blurDay",
           "pageInput",
           "buttonInvert",
-          "indexOppositeOver",
           "indexInvert",
           "indexInvertOver",
           "invert",
@@ -172,7 +171,6 @@ var visual = function (toggleOption) {
       .forEach((a) =>
         a.classList.remove(
           "buttonOpposite",
-          "indexInvertOver",
           "indexOpposite",
           "indexOppositeOver",
           "opposite",

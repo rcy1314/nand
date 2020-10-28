@@ -133,8 +133,8 @@ document.addEventListener(
       event.target.classList.contains("Day") ||
       event.target.classList.contains("fa-terminal")
     ) {
-      let op = 0;
-      let contrast = false;
+      op = 0;
+      contrast = false;
       if (location.href.match("\\?\\+1") && location.href.match("\\+1"))
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
       else var uri = window.location.href;
@@ -146,8 +146,8 @@ document.addEventListener(
       event.target.classList.contains("Night") ||
       event.target.classList.contains("fa-code")
     ) {
-      let op = 1;
-      let contrast = false;
+      op = 1;
+      contrast = false;
       if (!location.href.match("\\?\\+1") && !location.href.match("\\+1"))
         var uri = window.location.href + "?+1";
       else var uri = window.location.href;
