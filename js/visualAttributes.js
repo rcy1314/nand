@@ -208,9 +208,12 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector(".listing .hue")))
       document.querySelectorAll(".listing .hue")
         .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
-    if (document.body.contains(document.querySelector(".status .filter")))
+    if (document.body.contains(document.querySelector(".status .filter"))){
+      document.querySelector('.status .filter').style.backgroundColor =
+        "var(--bg-color-secondary)"
       document.querySelector('.content .status .filter')
         .classList.add('invertOver')
+    }
     if (document.body.contains(document.querySelector("#feed .item"))) {
       document.querySelector("#feed").style.backgroundColor =
         "var(--bg-color-secondary)"
