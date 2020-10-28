@@ -44,7 +44,7 @@ var guideBuild = function (pubArray) {
      <div class='blur'></div>
      <div class='sticky item'>
        <div class='fill'></div>
-       <div class='item-${pubArray[0].id} src' item='${pubArray[0].id}'
+       <div class='item-${pubArray[0].id} item src' item='${pubArray[0].id}'
        ext='${pubArray[0].re}'>
          <div class='image'>
            <div class='fa fa-heart'></div>
@@ -52,9 +52,30 @@ var guideBuild = function (pubArray) {
         class='img guide src-${pubArray[0].element}'>
          </div>
        </div>
-       <div class='wrap'>
+       <div class='wrap item' ext='${pubArray[0].re}'>
          <div class='header'>
-    ${pubArray[0].courtesy}
+         <div class='courtesy' style='float:left'>
+           <img src='${pubArray[0].image}'>
+           <a ext='${pubArray[0].re}'>
+             <b>
+        ${pubArray[0].title}
+         </b>
+           </a>
+           <div class='copy'>
+           <div class='attr fa-ellipsis-h'></div>
+             <div class='attribute' style='height:110px'>
+               <div class='site'>Copy Url
+                 <div style='float:right' class='fas fa-at'></div>
+               </div>
+               <div class='post' style='display:block'>Copy Post
+                 <div style='float:right;display:block' class='fa fa-share'></div>
+               </div>
+               <div class='picture' style='display:block'>Copy Source
+                 <div style='float:right;display:block' class='fa fa-camera'></div>
+               </div>
+             </div>
+           </div>
+         </div>
      </div>
          <div class='pub'>
     ${pubArray[0].title}

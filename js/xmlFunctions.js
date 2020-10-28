@@ -610,6 +610,7 @@ var xmlRequestParsing = function (search, string, index) {
           sticky.push({
             courtesy: pub[local].courtesy,
             element: pub[local].element,
+            image: menu[index].img.image(),
             title: pub[local].title,
             share: pub[local].share,
             dst: pub[local].dst,

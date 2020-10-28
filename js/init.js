@@ -22,19 +22,15 @@ if (
     post = parseInt(uri.slice(2), 36);
   }
 
-  if (i === -1)
-    ready(() => {
+  if (i === -1) {
       document.querySelector("#visit").style.visibility = "visible";
       document.querySelector("#toggle").style.display = "block";
-    });
-  else {
-    ready(() => {
+  } else {
       init();
       onScreen = false;
       document.querySelector("#top").style.display = "none";
       document.querySelector("#toggle").style.display = "none";
       filterInputResponse(true, false, menu[i].id.space(), false);
-    });
   }
 }
 
