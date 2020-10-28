@@ -364,7 +364,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
               newImg.naturalWidth >= newImg.naturalHeight ||
               newImg.naturalHeight >= newImg.naturalWidth
             ) {
-              itemImage.style.width = "90%";
+              itemImage.style.width = "100%";
               itemImage.classList.add("default");
               copyPost.style.display = "block";
               copyPicture.style.display = "block";

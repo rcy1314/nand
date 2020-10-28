@@ -229,6 +229,12 @@
 	width: 80%;
   }
 
+  html body #container #guide .sticky .header {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+
 }
 
 @media screen and (min-width: 769px) {

@@ -58,7 +58,7 @@ var guideBuild = function (pubArray) {
            <img src='${pubArray[0].image}'>
            <a ext='${pubArray[0].re}'>
              <b>
-        ${pubArray[0].title}
+        ${menu[pubArray[0].id].id.match(/([^\/]+)$/g)}
          </b>
            </a>
            <div class='copy'>
