@@ -142,6 +142,7 @@ var sideBarDisplay = function (toggleOption) {
       }
     }
     if (document.querySelector('#main').clientWidth >= 769) {
+      document.querySelector("#sidebar").style.left = "0";
       document.querySelector("#main").style.left = "240px";
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
@@ -156,7 +157,7 @@ var sideBarDisplay = function (toggleOption) {
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.style.marginLeft = "0");
     document.querySelector("#main").style.left = "0";
-    document.querySelector("#sidebar").style.width = "0";
+    document.querySelector("#sidebar").style.left = "-240px";
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#top").style.width = "calc(100% - 16px)";
   }
