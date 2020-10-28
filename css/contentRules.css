@@ -333,7 +333,7 @@ html body #container #main #option {
   position: absolute;
   user-select: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   z-index: 1;
   top: 5px;
 }

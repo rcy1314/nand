@@ -4,7 +4,6 @@
     background-position: 45% 50%;
   }
 
-
   html body #container #main {
     width: 100% !important
   }
@@ -97,6 +96,7 @@
     width: calc(100% - 20px);
     top: calc(100% - 50px);
     position: fixed;
+    display: flex;
     height: 50px;
     right: 10px;
   }
