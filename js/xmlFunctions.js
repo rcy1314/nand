@@ -19,6 +19,52 @@ var back = function () {
   return parseInt(back);
 };
 
+var xmlChannelFooter = function () {
+  if (document.body.contains(document.querySelector(".center"))) {
+    let center = document.querySelector(".channel");
+    center.innerHTML = center.innerHTML + footerBuild();
+  }
+};
+
+var xmlStatusSuggestions = function () {
+  let duplicate = [];
+  if (document.body.contains(document.querySelector("#main .suggestions"))) {
+    var suggestions = document.querySelector("#main .suggestions");
+    if (
+      document.body.contains(
+        document.querySelector("#main .suggestions .combine")
+      )
+    )
+      while (suggestions.firstChild)
+        suggestions.removeChild(suggestions.lastChild);
+    for (let i = 0; i <= contentStatusBuffer; i++) {
+      let randomMenuObject = menu.indexOf(
+        menu[Math.floor(Math.random() * menu.length - 1)]
+      );
+      if (
+        randomMenuObject != 0 &&
+        menu[randomMenuObject] &&
+        !duplicate.includes(randomMenuObject)
+      ) {
+        if (menu[randomMenuObject].media == true)
+          var media = "feed contains images";
+        else if (menu[randomMenuObject].media == false)
+          var media = "feed might not contain images";
+        duplicate.push(randomMenuObject);
+        suggestions.innerHTML =
+          suggestions.innerHTML +
+          suggestBuild(
+            media,
+            menu.indexOf(menu[randomMenuObject]),
+            menu[randomMenuObject].img.image(),
+            menu[randomMenuObject].id,
+            menu[randomMenuObject].cat
+          );
+      }
+    }
+  }
+};
+
 var xmlImageSource = function (xhr) {
   if (xhr.getElementsByTagName("content").length > 0) {
     if (

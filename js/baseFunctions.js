@@ -199,13 +199,6 @@ var quickFeedDisplay = function (toggleOption) {
   }
 };
 
-var xmlChannelFooter = function () {
-  if (document.body.contains(document.querySelector(".center"))) {
-    let center = document.querySelector(".channel");
-    center.innerHTML = center.innerHTML + footerBuild();
-  }
-};
-
 var guideDisplay = function (pubArray) {
   let guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
@@ -373,45 +366,6 @@ var progressBackDrop = function (done, percent) {
       progressBar.style.width = "0%";
     }, 250);
     visual();
-  }
-};
-
-var xmlStatusSuggestions = function () {
-  let duplicate = [];
-  if (document.body.contains(document.querySelector("#main .suggestions"))) {
-    var suggestions = document.querySelector("#main .suggestions");
-    if (
-      document.body.contains(
-        document.querySelector("#main .suggestions .combine")
-      )
-    )
-      while (suggestions.firstChild)
-        suggestions.removeChild(suggestions.lastChild);
-    for (let i = 0; i <= contentStatusBuffer; i++) {
-      let randomMenuObject = menu.indexOf(
-        menu[Math.floor(Math.random() * menu.length - 1)]
-      );
-      if (
-        randomMenuObject != 0 &&
-        menu[randomMenuObject] &&
-        !duplicate.includes(randomMenuObject)
-      ) {
-        if (menu[randomMenuObject].media == true)
-          var media = "feed contains images";
-        else if (menu[randomMenuObject].media == false)
-          var media = "feed might not contain images";
-        duplicate.push(randomMenuObject);
-        suggestions.innerHTML =
-          suggestions.innerHTML +
-          suggestBuild(
-            media,
-            menu.indexOf(menu[randomMenuObject]),
-            menu[randomMenuObject].img.image(),
-            menu[randomMenuObject].id,
-            menu[randomMenuObject].cat
-          );
-      }
-    }
   }
 };
 
@@ -617,8 +571,6 @@ var guideImageAttributes = function (src) {
       document.querySelector("#main").classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";
-      document.querySelector("#guide .sticky .header").style.backgroundColor =
-        "var(--bg-color-primary)"
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "50vh";
         guide.querySelector(".image").style.width = "100vw";
