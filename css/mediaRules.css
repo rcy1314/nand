@@ -177,7 +177,7 @@
 @media screen and (min-width: 768px) {
 
   html body #container #main #visit {
-    background-position: 51% -20%;
+    background-position: 51% -10%;
   }
 
   html body #container #main #option {
@@ -215,7 +215,7 @@
   }
 
   html body #container #main #visit #page {
-    top: -45px;
+    top: 45px;
   }
 
   html body #container #main #visit #page .quick {
