@@ -107,7 +107,7 @@ html body #container #main #visit #page .quick .fa-minus {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f068";
-  padding-top: 5px;
+  padding-top: 8px;
   font-weight: 50;
   font-size: 11px;
 }

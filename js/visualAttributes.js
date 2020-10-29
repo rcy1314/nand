@@ -22,7 +22,7 @@ var visual = function (toggleOption) {
     document.querySelector("#progressBar").classList.add('responseOpposite');
     document.querySelector("#container").classList.add("opposite");
     document.querySelectorAll("input")
-      .forEach((a) => a.style.color = '#f7f7f7');
+      .forEach((a) => a.style.color = 'var(--fill-color-primary)');
     if (document.body.contains(document.querySelector(".status .filter")))
       document.querySelector('.status .filter').classList.add('oppositeOver')
     if (document.body.contains(document.querySelector("#feed .item"))) {
@@ -135,7 +135,7 @@ var visual = function (toggleOption) {
       );
     document.querySelector("#progressBar").classList.add('responseInvert');
     document.querySelectorAll("input")
-      .forEach((a) => a.style.color = '#444444');
+      .forEach((a) => a.style.color = 'var(--fill-color-primary)');
       document.querySelector("#label .link")
         .classList.add("invertOverBorderless");
     document.querySelector(".view").classList.add("invertOverBorderless");

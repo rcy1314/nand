@@ -263,7 +263,7 @@ var loadHTML = function() {
               <div id='select'></div>
               <div id='basic'>
                   <form class='filter' action='#'>
-                      <input type='text' class='sideFilter' placeholder='filter feeds'>
+                      <input type='text' class='sideFilter' placeholder='filter'>
                   </form>
               </div>
           </div>

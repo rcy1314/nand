@@ -176,7 +176,7 @@ var filterBuild = function (
   objectMedia
 ) {
   return `
-     <div class='populate' style='display:none'
+     <div class='populate'
        aria-item='${objectIndex}'>
        <div class='display'>
          <img src='${objectImage}'>

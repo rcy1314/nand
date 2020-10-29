@@ -129,11 +129,12 @@ var sideBarDisplay = function (toggleOption) {
       }
       for (i = 0; i <= selections.length - 1; i++) {
         select.innerHTML =
+          select.innerHTML +
           sideBarOptionBuild(
             selections[i].class,
             selections[i].name,
             selections[i].icon
-          ) + select.innerHTML;
+          );
       }
     }
     if (document.querySelector('#main').clientWidth >= 769) {
@@ -478,10 +479,9 @@ var filterInputResponse = function (
   filterURI,
   categoryBloat
 ) {
-  let id = -1;
-  let match = -1;
-  let exact = -1;
-  let filter = [];
+  var match;
+  var exact;
+  var filter = [];
   document.querySelector("#visit").style.display = "none";
   if (translations.includes(filterURI.toString().capitalize())) {
     category = filterURI.capitalize();
@@ -534,7 +534,7 @@ var filterInputResponse = function (
     else if (isNumeric(match) && filter.length == 1)
       xmlRequestParsing(null, null, match);
   }
-  if (categoryBloat == true && match)
+  if (categoryBloat == true && isNumeric(match))
     populateCategoryGroup(menu[match].cat);
 };
 

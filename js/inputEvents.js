@@ -210,14 +210,15 @@ document.addEventListener(
         filterInputResponse(
           false,
           false,
-          document.querySelector(".sideFilter").value,
-          true
-        );
+          document.querySelector(".sideFilter").value.space(),
+          true);
         topMenuBarDisplay(topBar);
         var uri =
           "?q=" +
           document.querySelector(".sideFilter").value.replace(/\s/g, "+");
-        uri.define();
+        displayExpand(groupType)
+        uri.define().state();
+        unloading()
       }
     } else if (event.target.id == "search") {
       if (
