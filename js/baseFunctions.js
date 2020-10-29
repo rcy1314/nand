@@ -483,7 +483,7 @@ var filterInputResponse = function (
 ) {
   var match;
   var exact;
-  var filter = [];
+  filter = [];
   document.querySelector("#visit").style.display = "none";
   if (translations.includes(filterURI.toString().capitalize())) {
     category = filterURI.capitalize();

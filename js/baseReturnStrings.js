@@ -20,7 +20,7 @@ var footerBuild = function () {
            <span class='front'></span>
            <span class='flip-front'>Previous</span>
            <span class='flip-back'>
-    ${String(menu[back()].id.match(/[^\/]+$/g)).substring(0, 9)}
+    ${String(menu[back()].id.match(/[^\/]+$/g)).substring(0, 13)}
      ...</span>
        </div>
        <div class='bottom'>Return</div>
@@ -28,7 +28,7 @@ var footerBuild = function () {
            <span class='front'></span>
            <span class='flip-front'>Next</span>
            <span class='flip-back'>
-    ${String(menu[next()].id.match(/[^\/]+$/g)).substring(0, 9)}
+    ${String(menu[next()].id.match(/[^\/]+$/g)).substring(0, 13)}
      ...</span>
        </div>
      </div>

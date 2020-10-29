@@ -973,7 +973,7 @@ html body #container #guide .sticky .ago {
 html body #container #main #feed .center .item {
   background-color: var(--bg-color-primary);
   box-shadow: var(--box-shadow);
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   width: 100%;
 }
 
@@ -983,7 +983,7 @@ html body #container #main #feed .center .item:hover {
 }
 
 html body #container #main #feed .center .item:not(hover) {
-  border: var(--not-hover-border-color);
+  border: var(--hover-border-color);
 }
 
 html body #container #main #feed .center .item .classic:hover {

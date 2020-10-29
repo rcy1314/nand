@@ -496,8 +496,8 @@ var xmlTitleParsing = function(xhr) {
 
 var xmlRequestParsing = function (search, string, index) {
   let local;
+  id = index;
   let pub = [];
-  let id = index;
 
   if (search == "search") {
     uri = cors + menu[index].uri + string + "&format=RSS";
