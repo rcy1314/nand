@@ -1280,7 +1280,6 @@ html body #container #main #feed .content .suggestions .combine .suggest .random
 
 html body #container #main #feed .content .suggestions .combine a {
   color: var(--loader-color-primary);
-  font-weight: bold;
   font-size: 11px;
 }
 
