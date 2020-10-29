@@ -6,14 +6,6 @@
   display: none;
 }
 
-.blurDay {
-  background-color: rgba(255,255,255,.2);
-}
-
-.blurNight {
-  background-color: rgba(0,0,0,.2);
-}
-
 .invertScrollbar::-webkit-scrollbar {
   width: 2px;
 }
@@ -42,32 +34,6 @@ scrollbar-color: #2f2f2f transparent;
 scrollbar-width: thin;
 }
 
-.invertOver:hover {
-  background-color: #f6f8fa !important;
-  border: .3px solid #ddd !important;
-}
-
-.invertOver:hover .classic {
-  background-color: #f6f8fa !important;
-}
-
-.invertOver:hover .img {
-  filter: brightness(0.97);
-}
-
-.invertOver:not(:hover) {
-  border: .3px solid transparent !important;
-  background-color: #ffffff;
-}
-
-.invertOverBorderless:hover {
-  background-color: #f2f2f2 !important;
-}
-
-.invertOverBorderless:not(:hover) {
-  background-color: transparent;
-}
-
 .toggle {
   top: -20px !important;
   transition: .4s;
@@ -88,47 +54,6 @@ scrollbar-width: thin;
   visibility: visible;
   transition: .25s;
   opacity: 100;
-}
-
-.oppositeOver:hover {
-  background-color: #0a0a0a !important;
-  border: .3px solid #0a0a0a !important;
-}
-
-.oppositeOver:hover .classic {
-  background-color: #0a0a0a !important;
-}
-
-.oppositeOver:hover .img {
-  filter: brightness(.75);
-}
-
-.oppositeOver:not(:hover) {
-  border: .3px solid #0f0f0f !important;
-}
-
-.oppositeOverBorderless:hover {
-  background-color: #1f1f1f !important;
-}
-
-.oppositeOverBorderless:not(:hover) {
-  background-color: transparent;
-}
-
-.buttonOpposite {
-  background-color: #f7426C;
-}
-
-.buttonOpposite:hover {
-  background-color: #f54e75;
-}
-
-.buttonInvert {
-  background-color: #0078D4;
-}
-
-.buttonInvert:hover {
-  background-color: #1683D8;
 }
 
 .expand {
@@ -185,22 +110,4 @@ scrollbar-width: thin;
   text-align: left !important;
   flex-basis: 65% !important;
   width: 100%;
-}
-
-.indexInvert {
-  background-color: #ffffff !important;
-}
-
-.indexInvertOverBorderless {
-  background-color: #f6f8fa !important;
-  color: #666666;
-}
-
-.indexOpposite {
-  background-color: #0f0f0f !important;
-}
-
-.indexOppositeOverBorderless {
-  background-color: #262626 !important;
-  color: #ffffff;
 }

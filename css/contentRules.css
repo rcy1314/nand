@@ -74,6 +74,7 @@ html body #container #main #notification {
 }
 
 html body #container #main #progressBar {
+  background-color: var(--progress-background);
   border-radius: 16px;
   position: fixed;
   height: 4px;
@@ -173,6 +174,7 @@ html body #container #sidebar #content #category .cat {
 }
 
 html body #container #sidebar #content #category .webp {
+  filter: var(--hue-rotate);
   position: relative;
   margin-top: -40px;
   float: right;
@@ -270,6 +272,7 @@ html body #container #guide {
 
 html body #container #guide,
 html body #container #guide .blur {
+  background-color: var(--sticky-background);
   justify-content: center;
   align-items: center;
   z-index: 8;
@@ -403,11 +406,12 @@ html body #container #main #visit #page #front {
 }
 
 html body #container #main #visit #page #front #first {
+  border: var(--hover-border-color);
   position: absolute;
   margin-right: auto;
   margin-left: auto;
   display: none;
-  height: 364px;
+  height: 372px;
   width: 715px;
   z-index: 1;
   top: 42px;
@@ -422,7 +426,7 @@ html body #container #main #visit #page #front #first .listing {
   overflow-y: auto;
   text-align: left;
   cursor: pointer;
-  height: 364px;
+  height: 372px;
   width: 100%;
 }
 
@@ -473,6 +477,7 @@ html body #container #main #top #arm #search #match .listing .index .detail .buf
 html body #container #main #top #arm #search #match .listing .hover .detail .buffer,
 html body #container #main #visit #page #front #first .listing .index .detail .buffer,
 html body #container #main #visit #page #front #first .listing .hover .detail .buffer {
+  color: var(--loader-color-primary);
   font-style: italic;
   margin-right: 10px;
   margin-top: 15px;
@@ -491,6 +496,16 @@ html body #container #main #visit #page #front .focus {
   width: 640px;
 }
 
+html body #container #main #visit #page #front .focus:hover {
+  box-shadow: var(--box-shadow);
+  transition: .25s;
+}
+
+html body #container #main #visit #page #front .focus:not(:hover) {
+  box-shadow: none;
+  transition: .25s;
+}
+
 html body #container #main #visit #page #front .focus input[type=text] {
   background-color: var(--bg-color-primary);
   height: 39.5px !important;
@@ -505,16 +520,6 @@ html body #container #main #visit #page #front .focus input[type=text] {
   bottom: 15px;
   width: 100%;
   margin: 0;
-}
-
-.pageInput:hover {
-  box-shadow: 3px 3px 6px #bbbbbb !important;
-  transition: box-shadow .25s;
-}
-
-.pageInput:not(:hover) {
-  box-shadow: 2px 2px 4px #dddddd !important;
-  transition: box-shadow .25s;
 }
 
 html body #container #main #top #arm #search #input .icon {
@@ -561,6 +566,7 @@ html body #container #main #visit #page #front .focus .buttonSearch {
 }
 
 html body #container #main #visit #page #front #label .show {
+  color: var(--fill-color-primary);
   background-color: transparent;
   display: inline-block;
   position: relative;
@@ -568,12 +574,11 @@ html body #container #main #visit #page #front #label .show {
   font-size: 12px;
   margin: 0 auto;
   z-index: 0;
-  left: 15px;
   top: 26px;
 }
 
 html body #container #main #visit #page #front #label .link {
-  background-color: transparent;
+  background-color: var(--bg-color-secondary);
   transform: rotate(180deg);
   justify-content: center;
   display: inline-flex;
@@ -585,6 +590,14 @@ html body #container #main #visit #page #front #label .link {
   padding: 10px;
   height: 15px;
   width: 15px;
+}
+
+html body #container #main #visit #page #front #label .link:hover {
+  background-color: var(--borderless-hover-color);
+}
+
+html body #container #main #visit #page #front #label .link:not(:hover) {
+  background-color: var(--bg-color-secondary);
 }
 
 html body #container #main #group .air,
@@ -600,11 +613,18 @@ html body #container #main #feed .content .status .filter {
   margin-left: 15px;
 }
 
+html body #container #main #feed .content .status .filter:hover {
+  background-color: var(--hover-background-color);
+}
+
+html body #container #main #feed .content .status .filter:not(:hover) {
+  background-color: var(---not-hover-background-color);
+}
+
 html body #container #main #group .air .populate,
 html body #container #main #group .result .filter,
 html body #container #main #group .result .populate,
 html body #container #main #feed .content .status .filter {
-  border: .3px solid transparent;
   display: inline-flex;
   border-radius: 8px;
   flex-wrap: wrap;
@@ -613,6 +633,21 @@ html body #container #main #feed .content .status .filter {
   padding: 12px;
   margin: 3em;
   width: 16em;
+}
+
+html body #container #main #group .air .populate:hover,
+html body #container #main #group .result .filter:hover,
+html body #container #main #group .result .populate:hover,
+html body #container #main #feed .content .status .filter:hover {
+  background-color: var(--hover-background-color) !important;
+  border: var(--hover-border-color) !important;
+}
+
+html body #container #main #group .air .populate:not(:hover),
+html body #container #main #group .result .filter:not(:hover),
+html body #container #main #group .result .populate:not(:hover),
+html body #container #main #feed .content .status .filter:not(:hover) {
+  border: var(--not-hover-border-color) !important;
 }
 
 html body #container #main #group .air .populate a,
@@ -688,7 +723,16 @@ html body #container #main #top #arm #search #input input[type=text] {
   width: 100%;
 }
 
+html body #container #main #top #arm #search #input input[type=text]:hover {
+  background-color: var(--borderless-hover-color);
+}
+
+html body #container #main #top #arm #search #input input[type=text]:not(:hover) {
+  background-color: transparent;
+}
+
 html body #container #main #top #arm #search #match {
+  border: var(--hover-border-color);
   width: fit-content;
   position: relative;
   margin: 0 auto;
@@ -734,6 +778,7 @@ html body #container #main #visit #page .quick .feed::-webkit-scrollbar {
 
 html body #container #main #visit #page .quick .feed .asset,
 html body #container #main #visit #page .quick .feed .translation {
+  filter: var(--hue-rotate);
   position: relative;
   text-align: center;
   border-radius: 6px;
@@ -741,6 +786,17 @@ html body #container #main #visit #page .quick .feed .translation {
   padding: 15px;
   height: 58px;
   width: 90px;
+}
+
+html body #container #main #visit #page .quick .feed .asset:hover,
+html body #container #main #visit #page .quick .feed .translation:hover {
+  background-color: var(--hover-background-color) !important;
+  border: var(--hover-border-color) !important;
+}
+
+html body #container #main #visit #page .quick .feed .asset:not(:hover),
+html body #container #main #visit #page .quick .feed .translation:not(:hover) {
+  border: var(--not-hover-border-color);
 }
 
 html body #container #main #feed .content .status img,
@@ -793,6 +849,11 @@ html body #container #main #visit #page .quick .left {
   left: -20px;
   z-index: 7;
   top: 25px;
+}
+
+html body #container #main #visit #page .quick .left:hover,
+html body #container #main #visit #page .quick .right:hover {
+  background-color: var(--borderless-hover-color);
 }
 
 html body #container #guide .sticky .header,
@@ -919,8 +980,22 @@ html body #container #guide .sticky .ago {
 
 html body #container #main #feed .center .item {
   background-color: var(--bg-color-primary);
+  box-shadow: var(--box-shadow);
   margin-bottom: 15px;
   width: 100%;
+}
+
+html body #container #main #feed .center .item:hover {
+  background-color: var(--hover-background-color);
+  border: var(--hover-border-color);
+}
+
+html body #container #main #feed .center .item:not(hover) {
+  border: var(--not-hover-border-color);
+}
+
+html body #container #main #feed .center .item .classic:hover {
+  background-color: var(--hover-background-color);
 }
 
 html body #container #main #feed .center .item .pub,
@@ -1260,6 +1335,7 @@ html body #container #main #visit #page #front #first .listing .detail {
 
 html body #container #main #top #arm #search #match .listing .index,
 html body #container #main #visit #page #front #first .listing .index {
+  border: var(--not-hover-border-color) !important;
   background-color: var(--bg-color-primary);
   width: calc(100% - 12px);
   padding-bottom: 8px;
@@ -1272,7 +1348,8 @@ html body #container #main #visit #page #front #first .listing .index {
 
 html body #container #main #top #arm #search #match .listing .hover,
 html body #container #main #visit #page #front #first .listing .hover {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--hover-background-color) !important;
+  border: var(--hover-border-color) !important;
   width: calc(100% - 12px);
   padding-bottom: 8px;
   padding-left: 12px;
