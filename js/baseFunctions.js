@@ -116,7 +116,7 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    document.querySelector("#sidebar").style.width = "240px";
+    document.querySelector("#sidebar").style.left = "0px";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#basic").style.display = "block";
@@ -129,12 +129,11 @@ var sideBarDisplay = function (toggleOption) {
       }
       for (i = 0; i <= selections.length - 1; i++) {
         select.innerHTML =
-          select.innerHTML +
           sideBarOptionBuild(
             selections[i].class,
             selections[i].name,
             selections[i].icon
-          );
+          ) + select.innerHTML;
       }
     }
     if (document.querySelector('#main').clientWidth >= 769) {
@@ -153,7 +152,7 @@ var sideBarDisplay = function (toggleOption) {
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.style.marginLeft = "0");
     document.querySelector("#main").style.left = "0";
-    document.querySelector("#sidebar").style.left = "-240px";
+    document.querySelector("#sidebar").style.left = "-242px";
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#top").style.width = "calc(100% - 16px)";
   }

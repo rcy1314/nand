@@ -1,7 +1,7 @@
 @media screen and (max-width: 426px) {
 
   html body #container #main #visit {
-    background-position: 45% 50%;
+    background-position: 48% 50%;
   }
 
   html body #container #main {
@@ -177,7 +177,7 @@
 @media screen and (min-width: 768px) {
 
   html body #container #main #visit {
-    background-position: 52.5% 30%;
+    background-position: 51% 30%;
     background-repeat: no-repeat;
   }
 

@@ -103,8 +103,6 @@ var visual = function (toggleOption) {
     )
     document.querySelectorAll("#sidebar #category .webp")
       .forEach((a) => (a.style.filter = "hue-rotate(110deg)"));
-      document.querySelector("#hide").style.background =
-        "-webkit-linear-gradient(left, var(--bg-color-primary) 70%, #262626 100%)";
     document.querySelector("#sidebar #content")
       .classList.add("oppositeScrollbar");
     document.querySelector("#match .listing")
@@ -113,8 +111,6 @@ var visual = function (toggleOption) {
       .classList.add("oppositeScrollbar");
     document.querySelector("#favicon")
       .setAttribute("href", "images/Opposite.ico");
-    document.querySelector("#sidebar").style.backgroundColor =
-      "var(--bg-color-primary)";
     document.querySelector('#visit')
       .style.backgroundImage = 'url(images/MIT.webp)'
     document.querySelector('#visit')
@@ -197,8 +193,6 @@ var visual = function (toggleOption) {
     )
       document.querySelectorAll("#sidebar #category .webp")
         .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
-    document.querySelector("#hide").style.background =
-      "-webkit-linear-gradient(left, var(--bg-color-secondary) 70%, #eaeaea 100%)";
     if (document.body.contains(document.querySelector(".listing .buffer")))
     document.querySelectorAll(".listing .buffer")
       .forEach((a) => (a.style.color = "steelblue"));
@@ -233,8 +227,10 @@ var visual = function (toggleOption) {
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
     if (document.body.contains(document.querySelector("#guide .sticky")))
       document.querySelector("#guide .blur").classList.add("blurDay");
-    document.querySelector("#sidebar").style.backgroundColor =
-      "var(--bg-color-secondary)";
     document.querySelector('#visit').style.backgroundImage = 'url(MIT.webp)'
+    document.querySelector('#visit')
+      .style.backgroundColor = 'var(--bg-color-secondary)'
+    document.querySelector('#container')
+      .style.backgroundColor = 'var(--bg-color-secondary)'
   }
 };

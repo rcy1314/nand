@@ -25,10 +25,11 @@ window.addEventListener(
   "resize",
   function (event) {
     if (document.querySelector('#main').clientWidth <= 768) {
-      onScreen = false
-      sideBarDisplay(false)
+      onScreen = false;
+      sideBarFirst = true;
+      sideBarDisplay(false);
     }
-    else sideBarDisplay(onScreen)
+    else sideBarDisplay(onScreen);
   },
   true
 );
