@@ -62,6 +62,9 @@ var visual = function (toggleOption) {
       document.querySelector('#group')
         .style.backgroundColor = 'var(--bg-color-primary)'
     }
+    if (document.body.contains(document.querySelector("#feed")))
+    document.querySelector('#feed').style.backgroundColor =
+      'var(--bg-color-primary)'
     document.querySelector("#match .listing").classList.add("oppositeScrollbar");
     document.querySelector("#first .listing").classList.add("oppositeScrollbar");
     document.querySelector("#sidebar #content")
@@ -141,6 +144,9 @@ var visual = function (toggleOption) {
     document.querySelector('#group')
       .style.backgroundColor = 'var(--bg-color-secondary)'
     }
+    if (document.body.contains(document.querySelector("#feed")))
+    document.querySelector('#feed').style.backgroundColor =
+      'var(--bg-color-secondary)'
     document.querySelector("#match .listing").classList.add("invertScrollbar");
     document.querySelector("#first .listing").classList.add("invertScrollbar");
     document

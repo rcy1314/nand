@@ -224,11 +224,6 @@ html body #container #sidebar #hide {
   top: 0;
 }
 
-html body #container #sidebar #hide .fa-angle-right {
-  position: absolute;
-  right: 15px;
-}
-
 html body #container #guide .checkmark {
   position: absolute;
   cursor: pointer;
@@ -357,7 +352,6 @@ html body #container #main {
 }
 
 html body #container #main #feed {
-  background-color: var(--bg-color-primary);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -366,7 +360,6 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
-  scrollbar-width: none;
   height: fit-content;
   position: absolute;
   display: none;
@@ -578,7 +571,8 @@ html body #container #main #visit #page #front #label .show {
 }
 
 html body #container #main #visit #page #front #label .link {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--hover-background-color);
+  color: var(--fill-color-primary);
   transform: rotate(180deg);
   justify-content: center;
   display: inline-flex;
@@ -594,10 +588,6 @@ html body #container #main #visit #page #front #label .link {
 
 html body #container #main #visit #page #front #label .link:hover {
   background-color: var(--borderless-hover-color);
-}
-
-html body #container #main #visit #page #front #label .link:not(:hover) {
-  background-color: var(--bg-color-secondary);
 }
 
 html body #container #main #group .air,
@@ -820,7 +810,8 @@ html body #container #main #visit #page .quick .feed .translation a {
 }
 
 html body #container #main #visit #page .quick .right {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--hover-background-color);
+  color: var(--fill-color-primary);
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -836,7 +827,8 @@ html body #container #main #visit #page .quick .right {
 }
 
 html body #container #main #visit #page .quick .left {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--hover-background-color);
+  color: var(--fill-color-primary);
   justify-content: center;
   align-items: center;
   border-radius: 16px;
