@@ -152,7 +152,7 @@ html body #container #sidebar #content #basic input[type=text] {
   overflow: hidden;
   font-size: 12px;
   margin: 0 auto;
-  display: block;
+  display: none;
   width: 220px;
   padding: 5px;
 }

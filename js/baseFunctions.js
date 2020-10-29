@@ -117,6 +117,7 @@ var sideBarDisplay = function (toggleOption) {
       }
     );
     document.querySelector("#sidebar").style.left = "0px";
+    document.querySelector(".sideFilter").style.display = "block";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#basic").style.display = "block";
@@ -152,6 +153,7 @@ var sideBarDisplay = function (toggleOption) {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.style.marginLeft = "0");
+    document.querySelector(".sideFilter").style.display = "none";
     document.querySelector("#main").style.left = "0";
     document.querySelector("#sidebar").style.left = "-242px";
     document.querySelector("#main").style.width = "100%";
