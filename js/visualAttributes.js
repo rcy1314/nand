@@ -48,15 +48,8 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("oppositeOver"));
-      if (groupType == "blocks")
-        document.querySelectorAll("#group .populate")
-          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      else {
-        document.querySelector('#group').style.backgroundColor =
-          'var(--bg-color-primary)'
-        document.querySelectorAll("#group .populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      }
+      document.querySelectorAll("#group .populate")
+      .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
     }
     document.querySelector("#first").style.border = ".3px solid #2f2f2f";
     if (
@@ -152,15 +145,8 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("invertOver"));
-      if (groupType == "blocks")
-        document.querySelectorAll("#group .populate")
-          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
-      else {
-        document.querySelector('#group').style.backgroundColor =
-          'var(--bg-color-secondary)'
-        document.querySelectorAll("#group .populate")
+      document.querySelectorAll("#group .populate")
         .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      }
     }
     document.querySelector(".quick .right")
       .classList.add("invertOverBorderless");
@@ -212,9 +198,12 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector(".listing .hue")))
       document.querySelectorAll(".listing .hue")
         .forEach((a) => (a.style.filter = "hue-rotate(0deg)"));
-    if (document.body.contains(document.querySelector(".status .filter")))
+    if (document.body.contains(document.querySelector(".status .filter"))){
+      document.querySelector('.status .filter').style.backgroundColor =
+        "var(--bg-color-secondary)"
       document.querySelector('.content .status .filter')
         .classList.add('invertOver')
+    }
     if (document.body.contains(document.querySelector("#feed .item"))) {
       document.querySelector("#feed").style.backgroundColor =
         "var(--bg-color-secondary)"
