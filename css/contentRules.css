@@ -127,6 +127,7 @@ html body #container #sidebar #content #select {
 }
 
 html body #container #sidebar .notify {
+  color: var(--fill-color-primary);
   background-color: transparent;
   justify-content: center;
   text-align: center;
@@ -1108,6 +1109,14 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .pi
   border: none;
 }
 
+html body #container #main #feed .center .item .header .courtesy .copy .attribute .site:hover,
+html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
+html body #container #main #feed .center .item .header .courtesy .copy .attribute .post:hover,
+html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
+html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture:hover,
+html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover {
+  background-color: var(--hover-background-color);
+}
 html body #container #main #feed .center .item .header .courtesy .copy .attribute .post,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
 html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
