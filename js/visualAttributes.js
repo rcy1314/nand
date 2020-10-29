@@ -48,8 +48,10 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("oppositeOver"));
-      document.querySelectorAll("#group .populate")
-      .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
+        document.querySelectorAll("#group .populate")
+        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
+      document.querySelector('#group')
+        .style.backgroundColor = 'var(--bg-color-primary)'
     }
     document.querySelector("#first").style.border = ".3px solid #2f2f2f";
     if (
@@ -145,8 +147,16 @@ var visual = function (toggleOption) {
     if (document.body.contains(document.querySelector("#group .populate"))) {
       document.querySelectorAll("#group .populate")
         .forEach((a) => a.classList.add("invertOver"));
-      document.querySelectorAll("#group .populate")
+    if (groupType == "blocks")
+      document
+        .querySelectorAll(".populate")
+        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
+    else if (groupType == "list")
+      document
+        .querySelectorAll(".populate")
         .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
+    document.querySelector('#group')
+      .style.backgroundColor = 'var(--bg-color-secondary)'
     }
     document.querySelector(".quick .right")
       .classList.add("invertOverBorderless");

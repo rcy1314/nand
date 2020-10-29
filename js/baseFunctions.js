@@ -75,10 +75,6 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "wrap"));
-      if (op == 0 && groupType == "blocks")
-        group
-          .querySelectorAll(".populate")
-          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
       if (document.body.contains(document.getElementById(".result")))

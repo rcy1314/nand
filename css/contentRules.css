@@ -363,7 +363,7 @@ html body #container #main {
 }
 
 html body #container #main #feed {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--bg-color-primary);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -372,7 +372,6 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
-  background-color: var(--bg-color-secondary);
   scrollbar-width: none;
   height: fit-content;
   position: absolute;
@@ -606,7 +605,7 @@ html body #container #main #group .result {
 }
 
 html body #container #main #feed .content .status .filter {
-  background-color: transparent;
+  background-color: var(--bg-color-primary);
   margin-left: 15px;
 }
 
@@ -629,6 +628,7 @@ html body #container #main #group .air .populate a,
 html body #container #main #group .result .filter a,
 html body #container #main #group .result .populate a,
 html body #container #main #feed .content .status .filter a {
+  color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
   font-size: 12px;
