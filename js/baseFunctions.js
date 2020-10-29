@@ -81,23 +81,6 @@ var displayExpand = function (toggleOption) {
         document.querySelector(".result").style.display = "inline-flex";
     }
   }
-  if (document.body.contains(document.querySelector("#group .populate"))) {
-    if (groupType == "blocks" && op == 0) {
-      document
-        .querySelectorAll("#group .populate")
-        .forEach((a) => a.classList.add("invertAlt"));
-      document
-        .querySelectorAll("#group .populate")
-        .forEach((a) => a.classList.remove("invert"));
-    } else if (groupType == "list" && op == 0) {
-      document
-        .querySelectorAll("#group .populate")
-        .forEach((a) => a.classList.add("invert"));
-      document
-        .querySelectorAll("#group .populate")
-        .forEach((a) => a.classList.remove("invertAlt"));
-    }
-  }
   unloading();
 };
 
