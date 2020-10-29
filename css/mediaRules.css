@@ -177,7 +177,7 @@
 @media screen and (min-width: 768px) {
 
   html body #container #main #visit {
-    background-position: 51% 30%;
+    background-position: 51% -20%;
     background-repeat: no-repeat;
   }
 
@@ -301,10 +301,6 @@
 
   html body #container #main #progressBar {
     max-width: calc(100% - 16px);
-  }
-
-  html body #container #main #visit #page {
-    top: 15px;
   }
 
   html body #container #main #top {
