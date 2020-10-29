@@ -122,6 +122,10 @@ var visual = function (toggleOption) {
       "var(--bg-color-primary)";
     document.querySelector('#visit')
       .style.backgroundImage = 'url(images/MIT.webp)'
+    document.querySelector('#visit')
+      .style.backgroundColor = 'var(--bg-color-primary)'
+    document.querySelector('#container')
+      .style.backgroundColor = 'var(--bg-color-primary)'
   } else if (op == 0) {
     document
       .querySelectorAll("div")

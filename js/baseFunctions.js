@@ -78,7 +78,7 @@ var displayExpand = function (toggleOption) {
       if (op == 0 && groupType == "blocks")
         group
           .querySelectorAll(".populate")
-          .forEach((a) => a.classList.add("invertAlt"));
+          .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
       if (document.body.contains(document.getElementById(".result")))
@@ -617,6 +617,8 @@ var guideImageAttributes = function (src) {
       document.querySelector("#main").classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";
+      document.querySelector("#guide .sticky .header").style.backgroundColor =
+        "var(--bg-color-primary)"
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "50vh";
         guide.querySelector(".image").style.width = "100vw";

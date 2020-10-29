@@ -52,8 +52,10 @@ html body #container #main #visit {
   top: 0;
 }
 
+html,
+html body,
 html body #container {
-  background-color: var(--bg-color-primary);
+  background-color: var(--bg-color-secondary);
 }
 
 html body #container #main #notification {
@@ -361,7 +363,7 @@ html body #container #main {
 }
 
 html body #container #main #feed {
-  background-color: var(--bg-color-primary);
+  background-color: var(--bg-color-secondary);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -370,7 +372,7 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
-  background-color: var(--bg-color-primary);
+  background-color: var(--bg-color-secondary);
   scrollbar-width: none;
   height: fit-content;
   position: absolute;
@@ -380,7 +382,7 @@ html body #container #main #group {
 }
 
 html body #container #main #visit {
-  background-color: transparent;
+  background-color: var(--bg-color-secondary);
   background-repeat: no-repeat;
   background-size: 600px 300px;
   justify-content: center;
@@ -805,7 +807,6 @@ html body #container #main #visit #page .quick .left {
 html body #container #guide .sticky .header,
 html body #container #main #feed .center .item .header,
 html body #container #main #feed .center .item .header {
-  background-color: var(--bg-color-primary);
   height: 60px;
   width: 100%;
 }
@@ -921,6 +922,7 @@ html body #container #guide .sticky .ago {
 }
 
 html body #container #main #feed .center .item {
+  background-color: var(--bg-color-primary);
   margin-bottom: 15px;
   width: 100%;
 }
