@@ -2,6 +2,14 @@
   transition: 75ms;
 }
 
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 350ms linear;
+  background-color: var(--sticky-background);
+}
+
 .dots {
   animation: move 3s infinite cubic-bezier(.1,.85,1,.1);
 }
@@ -187,6 +195,13 @@
     transform: rotate(-15deg);
   }
 
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(.7);
+    opacity: 0;
+  }
 }
 
 @keyframes fill {

@@ -54,17 +54,20 @@ document.addEventListener(
         sideBarDisplay(onScreen);
       }
     }
-    if (
-      event.target.classList.contains("Social") ||
-      event.target.classList.contains("webp") ||
-      event.target.classList.contains("News") ||
-      event.target.classList.contains("Entertainment") ||
-      event.target.classList.contains("Technology") ||
-      event.target.classList.contains("World") ||
-      event.target.classList.contains("Sports") ||
-      event.target.classList.contains("Youtube")
-    ) {
+    if (event.target.classList.contains("cat")) {
       id = 0;
+      const button = event.target;
+      const circle = document.createElement("span");
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - radius}px`;
+      circle.style.top = `${event.clientY - radius}px`;
+      circle.classList.add("ripple");
+      if (circle) {
+        circle.remove();
+      }
+      button.appendChild(circle);
       if (document.body.contains(document.querySelector("#feed")))
         document.querySelector("#feed").remove();
       if (document.body.contains(document.querySelector("#group")))

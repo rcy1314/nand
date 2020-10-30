@@ -260,6 +260,7 @@ var loadHTML = function() {
         <div id='hide'></div>
           <div id='content'>
               <div id='category'></div>
+              <hr>
               <div id='select'></div>
               <div id='basic'>
                   <form class='filter' action='#'>

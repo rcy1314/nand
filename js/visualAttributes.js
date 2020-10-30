@@ -48,7 +48,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--sticky-background",
-      "rgba(0,0,0,.2)"
+      "rgba(0,0,0,.4)"
     );
     document.documentElement.style.setProperty(
       "--hue-rotate",
@@ -114,7 +114,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--borderless-hover-color",
-      "rgb(242,242,242,.5)"
+      "rgb(212,212,212,.5)"
     );
     document.documentElement.style.setProperty(
       "--progress-background",
@@ -122,7 +122,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--sticky-background",
-      "rgba(255,255,255,.2)"
+      "rgba(255,255,255,.4)"
     );
     document.documentElement.style.setProperty(
       "--hue-rotate",
