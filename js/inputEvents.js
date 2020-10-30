@@ -250,6 +250,8 @@ document.addEventListener(
         uri.define().exit();
       }
     } else if (event.target.id == "front") {
+      if (document.querySelector('.focus .guest').value == "")
+        inputListingIndex("", "#first");
       if (document.body.contains(document.querySelector("#first .hover"))) {
         document.querySelector("#first").style.display = "none";
         if (document.body.contains(document.querySelector("#feed")))
