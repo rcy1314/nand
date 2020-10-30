@@ -30,10 +30,6 @@
     left: 0;
   }
 
-  html body #container #main #visit #page .quick .feed .translation {
-    background-color: transparent !important;
-  }
-
   html body #container #main #visit #page #front #label {
     position: absolute;
     margin: auto;
@@ -180,10 +176,7 @@
     display: block;
   }
 
-  html body #container #main #top {
-    width: 100%;
-  }
-
+  html body #container #main #top,
   html body #container #main #top #arm {
     width: 100%;
   }
@@ -203,7 +196,7 @@
   }
 
   html body #container #main #feed .content {
-	display: none;
+	  display: none;
   }
 
   html body #container #main #visit #page {
@@ -216,8 +209,8 @@
   }
   html body #container #main #group .air,
   html body #container #main #group .result {
-	margin: 0 auto;
-	width: 80%;
+	  margin: 0 auto;
+	  width: 80%;
   }
 
   html body #container #guide .sticky .header {

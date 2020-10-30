@@ -111,16 +111,6 @@
   transition: .5s;
 }
 
-.responseInvert {
-  background: -webkit-linear-gradient(45deg, #eeeeee, #eeeeee);
-  background: linear-gradient(45deg, #eeeeee, #eeeeee);
-}
-
-.responseOpposite {
-  background: -webkit-linear-gradient(45deg, 	#b23c81, 	#b23c81);
-  background: linear-gradient(45deg, 	#b23c81, 	#b23c81);
-}
-
 @-webkit-keyframes rotation {
     from {
         transform: rotate(0deg);
