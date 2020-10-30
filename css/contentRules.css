@@ -373,9 +373,6 @@ html body #container #main #group {
 }
 
 html body #container #main #visit {
-  background-color: var(--bg-color-secondary);
-  background-repeat: no-repeat;
-  background-size: 600px 300px;
   justify-content: center;
   align-items: center;
   display: flex;

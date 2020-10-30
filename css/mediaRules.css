@@ -1,9 +1,5 @@
 @media screen and (max-width: 426px) {
 
-  html body #container #main #visit {
-    background-position: 48% 50%;
-  }
-
   html body #container #main {
     width: 100% !important
   }
@@ -176,10 +172,6 @@
 
 @media screen and (min-width: 768px) {
 
-  html body #container #main #visit {
-    background-position: 51% -10%;
-  }
-
   html body #container #main #option {
     display: none;
   }
@@ -287,10 +279,6 @@
     position: relative;
     display: block;
     margin: 0 auto;
-  }
-
-  html body #container #main #visit {
-    background-position: 48% 20%;
   }
 
   html body #container #toggle {

@@ -72,8 +72,6 @@ var visual = function (toggleOption) {
     document.querySelector("#favicon")
       .setAttribute("href", "images/Opposite.ico");
     document.querySelector('#visit')
-      .style.backgroundImage = 'url(images/MIT.webp)'
-    document.querySelector('#visit')
       .style.backgroundColor = 'var(--bg-color-primary)'
     document.querySelector('#container')
       .style.backgroundColor = 'var(--bg-color-primary)'
@@ -152,7 +150,6 @@ var visual = function (toggleOption) {
     document
       .querySelector("#sidebar #content").classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-    document.querySelector('#visit').style.backgroundImage = 'url(MIT.webp)'
     document.querySelector('#visit')
       .style.backgroundColor = 'var(--bg-color-secondary)'
     document.querySelector('#container')
