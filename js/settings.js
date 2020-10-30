@@ -10,8 +10,7 @@
 
 */
 
-          let op = 0;
-
+let op = 0;
 
 /*
     topBar [boolean/integer]
@@ -24,8 +23,7 @@
 
 */
 
-          let topBar = true;
-
+let topBar = true;
 
 /*
     reader [boolean/integer]
@@ -38,8 +36,7 @@
 
 */
 
-          let reader = false;
-
+let reader = false;
 
 /*
     onScreen [boolean/integer]
@@ -52,8 +49,7 @@
 
 */
 
-          let onScreen = true;
-
+let onScreen = true;
 
 /*
     groupType [string]
@@ -67,8 +63,7 @@
 
 */
 
-          let groupType = "list";
-
+let groupType = "list";
 
 /*
     showOption [boolean/integer]
@@ -81,8 +76,7 @@
 
 */
 
-          let showOption = true;
-
+let showOption = true;
 
 /*
     quickFeeds [boolean/integer]
@@ -95,8 +89,7 @@
 
 */
 
-          let quickFeeds = true;
-
+let quickFeeds = true;
 
 /*
     quickFeedsTranslations [boolean/integer]
@@ -109,8 +102,7 @@
 
 */
 
-          let quickFeedsTranslations = true;
-
+let quickFeedsTranslations = true;
 
 /*
     loading [string]
@@ -124,8 +116,7 @@
 
 */
 
-          let loading = "percent";
-
+let loading = "percent";
 
 /*
     titleTruncate [integer]
@@ -138,8 +129,7 @@
 
 */
 
-          let titleTruncate = 125
-
+let titleTruncate = 125;
 
 /*
     category [translations/legacy]
@@ -154,8 +144,7 @@
 
 */
 
-          let category = "Social";
-
+let category = "Social";
 
 /*
     onlyImages [boolean/integer]
@@ -168,8 +157,7 @@
 
 */
 
-          let onlyImages = false;
-
+let onlyImages = false;
 
 /*
     suggestiongBuffer [integer]
@@ -182,8 +170,7 @@
 
 */
 
-          let suggestionBuffer = 7;
-
+let suggestionBuffer = 7;
 
 /*
     contentStatusBuffer [integer]
@@ -196,8 +183,7 @@
 
 */
 
-          let contentStatusBuffer = 5;
-
+let contentStatusBuffer = 5;
 
 /*
     cors [string]
@@ -213,8 +199,7 @@
 
 */
 
-          const cors = "https://acktic-github-io.herokuapp.com/";
-
+const cors = "https://acktic-github-io.herokuapp.com/";
 
 /*  translations [array]
 
@@ -229,20 +214,17 @@
 
 */
 
-          const translations = [
-            "Social",
-            "News",
-            "Entertainment",
-            "Sports",
-            "Technology",
-            "World",
-            "Youtube",
-          ];
-
-
+const translations = [
+  "Social",
+  "News",
+  "Entertainment",
+  "Sports",
+  "Technology",
+  "World",
+  "Youtube",
+];
 
 /* Feel free to edit the above. */
-
 
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
@@ -257,9 +239,10 @@ let expand = true; //filter populate list display
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let randomDuplicate = []; //core.js random duplicate xml
-let guideOnScreen //temporarly store onScreen for guide
+let guideOnScreen; //temporarly store onScreen for guide
 
-const selections = [ //sideBar sel options
+const selections = [
+  //sideBar sel options
 
   { name: "Opposite", class: "Night", icon: "fa-code" },
   { name: "Invert", class: "Day", icon: "fa-terminal" },
@@ -277,5 +260,4 @@ const selections = [ //sideBar sel options
   { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
   { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
   { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
-
 ];

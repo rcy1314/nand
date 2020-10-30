@@ -1,21 +1,24 @@
 window.onload = function () {
   let guest = document.querySelector(".guest");
   guest.setAttribute("placeholder", "Search Feeds");
-  guest.style.display = 'inline-block';
+  guest.style.display = "inline-block";
   guest.style.caretColor = "#e4e4e4";
   guest.style.paddingLeft = "40px";
   guest.style.textAlign = "left";
   document.querySelector("#front .icon").classList.add("search");
   document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
-  if (document.querySelector('#main').clientWidth <= 425 ||
-      quickFeedsTranslations == true) quickFeedAsset(7);
-  else if (quickFeedsTranslations == false) quickFeedAsset(8)
-  else quickFeedAsset(7)
+  if (
+    document.querySelector("#main").clientWidth <= 425 ||
+    quickFeedsTranslations == true
+  )
+    quickFeedAsset(7);
+  else if (quickFeedsTranslations == false) quickFeedAsset(8);
+  else quickFeedAsset(7);
   visual();
-  if (document.querySelector('#main').clientWidth <= 768) {
-    onScreen = false
-    sideBarDisplay(false)
+  if (document.querySelector("#main").clientWidth <= 768) {
+    onScreen = false;
+    sideBarDisplay(false);
   } else {
     sideBarFirst = true;
     sideBarDisplay(onScreen);
@@ -24,12 +27,11 @@ window.onload = function () {
 window.addEventListener(
   "resize",
   function (event) {
-    if (document.querySelector('#main').clientWidth <= 768) {
+    if (document.querySelector("#main").clientWidth <= 768) {
       onScreen = false;
       sideBarFirst = true;
       sideBarDisplay(false);
-    }
-    else sideBarDisplay(onScreen);
+    } else sideBarDisplay(onScreen);
   },
   true
 );
@@ -129,16 +131,20 @@ document.addEventListener(
       event.target.id == "arm" ||
       event.target.classList.contains("fa")
     ) {
-      if (document.body.contains(document.querySelector(".attribute")) &&
-        document.querySelector(".attribute").style.display === "block") {
-          event.target.closest('.fa-ellipsis-v').classList.remove('.fa-ellipsis-v')
-          event.target.closest('.fa-ellipsis-v').classList.add('.fa-ellipsis-h')
+      if (
+        document.body.contains(document.querySelector(".attribute")) &&
+        document.querySelector(".attribute").style.display === "block"
+      ) {
+        event.target
+          .closest(".fa-ellipsis-v")
+          .classList.remove(".fa-ellipsis-v");
+        event.target.closest(".fa-ellipsis-v").classList.add(".fa-ellipsis-h");
         document.querySelector(".attribute").style.display = "none";
       }
       if (document.querySelector("#match").style.display === "block") {
         document.querySelector("#input .icon").classList.remove("slide");
         document.querySelector("#match").style.display = "none";
-        var view = document.querySelector("#input .view")
+        var view = document.querySelector("#input .view");
         view.setAttribute("placeholder", "");
         view.style.textAlign = "center";
         view.style.paddingLeft = "20px";
@@ -150,19 +156,21 @@ document.addEventListener(
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }
-      event.stopPropagation()
+      event.stopPropagation();
     }
     if (event.target.classList.contains("fa-expand-alt")) {
       if (!document.body.contains(document.querySelector("#main #group")))
-        populateCategoryGroup(category)
+        populateCategoryGroup(category);
       document.querySelector("#visit").style.display = "none";
-      topMenuBarDisplay(topBar)
+      topMenuBarDisplay(topBar);
       expand = expand != true;
       displayExpand(expand);
       if (expand == true) var groupType = "list";
       else {
         var groupType = "blocks";
-        notifyOption('Displaying ' + category + " as " +groupType.capitalize())
+        notifyOption(
+          "Displaying " + category + " as " + groupType.capitalize()
+        );
       }
     }
     if (
@@ -215,8 +223,11 @@ document.addEventListener(
       init();
       document.querySelector("#toggle").style.display = "none";
       document.querySelector("#visit").style.display = "none";
-      xmlRequestParsing(null, null, event.target.closest('.asset').
-        getAttribute("aria-item"));
+      xmlRequestParsing(
+        null,
+        null,
+        event.target.closest(".asset").getAttribute("aria-item")
+      );
       topMenuBarDisplay(topBar);
     }
     if (
@@ -243,12 +254,13 @@ document.addEventListener(
         filterInputResponse(false, false, query, true);
       } else populateCategoryGroup(category);
       displayExpand(expand);
-      unloading()
+      unloading();
       id = 0;
     }
     if (event.target.classList.contains("more")) {
-      event.target.parentNode.innerHTML =
-        event.target.parentNode.getAttribute("text");
+      event.target.parentNode.innerHTML = event.target.parentNode.getAttribute(
+        "text"
+      );
       event.target.style.display = "none";
       event.stopPropagation();
     }
@@ -306,16 +318,17 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              !event.target.classList.contains('guide') &&
-              event.target.classList.contains('default')
+              !event.target.classList.contains("guide") &&
+              event.target.classList.contains("default")
             ) {
               let sticky = [];
               sticky.push({
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
                 element: event.target.closest(".item").getAttribute("item"),
-                image: menu[event.target.closest(".item").getAttribute("item")]
-                  .img.image(),
+                image: menu[
+                  event.target.closest(".item").getAttribute("item")
+                ].img.image(),
                 title: event.target
                   .closest(".item")
                   .querySelector(".pub")
@@ -331,9 +344,9 @@ document.addEventListener(
                 id: event.target.closest(".item").getAttribute("item"),
               });
               guideDisplay(sticky);
-            } else if (event.target.classList.contains('guide'))
+            } else if (event.target.classList.contains("guide"))
               event.target.closest(".item").getAttribute("ext").blank();
-            else if (!event.target.classList.contains('default'))
+            else if (!event.target.classList.contains("default"))
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")
               event.target.closest(".item").getAttribute("ext").blank();

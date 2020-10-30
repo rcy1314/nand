@@ -4,20 +4,15 @@ var ready = (callback) => {
 };
 
 ready(() => {
-  loadScripts()
-  loadStyles()
-  loadHTML()
-})
+  loadScripts();
+  loadStyles();
+  loadHTML();
+});
 
-var loadStyles = function() {
+var loadStyles = function () {
   let directory = "css/";
   let extension = ".css";
-  let files = [
-    "animationRules",
-    "classRules",
-    "mediaRules",
-    "fontIcons",
-  ];
+  let files = ["animationRules", "classRules", "mediaRules", "fontIcons"];
   for (var file of files) {
     let path = directory + file + extension;
     let script = document.createElement("link");
@@ -27,9 +22,9 @@ var loadStyles = function() {
     document.styleSheet = script;
     document.getElementsByTagName("head")[0].appendChild(script);
   }
-}
+};
 
-var loadScripts = function() {
+var loadScripts = function () {
   let directory = "js/";
   let extension = ".js";
   let files = [
@@ -50,11 +45,11 @@ var loadScripts = function() {
     script.src = path;
     document.getElementsByTagName("head")[0].appendChild(script);
   }
-}
+};
 
-var isNumeric = function(n) {
+var isNumeric = function (n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};
 
 var init = function () {
   if (reader == false) {
@@ -93,13 +88,13 @@ var unloading = function () {
 };
 
 var escape = function (n) {
-  return n.replace(/<.>/g, "")
-  .replace(/&/g, "&amp;")
-  .replace(/</g, "&lt;")
-  .replace(/>/g, "&gt;")
-  .replace(/"/g, "&quot;")
-  .replace(/'/g, "&#039;")
-
+  return n
+    .replace(/<.>/g, "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 };
 
 var truncate = function (i, n, useWordBoundary) {
@@ -134,9 +129,7 @@ var anyRandomMenuObject = function () {
     for (i = 0; i < random.length; i++) {
       if (menu[randomObject] || !randomDuplicate.includes(n))
         randomObject = randomObject;
-      else
-        randomObject =
-          random[Math.floor(Math.random() * random.length - 1)];
+      else randomObject = random[Math.floor(Math.random() * random.length - 1)];
     }
   return randomObject;
 };
@@ -232,7 +225,7 @@ String.prototype.exit = function () {
   window.location.assign(this);
 };
 
-var loadHTML = function() {
+var loadHTML = function () {
   document.body.innerHTML = `
   <div id='container'>
       <div id='sidebar' class='mainTransition'>
@@ -315,5 +308,5 @@ var loadHTML = function() {
                   </div>
               </div>
           </div>
-      </div>`
-}
+      </div>`;
+};

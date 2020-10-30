@@ -1,7 +1,7 @@
 var notifyOption = function (displayContent) {
   let notification = document.querySelector("#sidebar .notify");
-  if (onScreen == true) var pos = 'absolute'
-  else var pos = 'fixed'
+  if (onScreen == true) var pos = "absolute";
+  else var pos = "fixed";
   notification.innerHTML = displayContent;
   notification.style.display = "block";
   notification.style.position = pos;
@@ -27,7 +27,7 @@ var notifyOption = function (displayContent) {
 
 var displayExpand = function (toggleOption) {
   if (document.body.contains(document.getElementById("feed")))
-    document.getElementById("feed").remove()
+    document.getElementById("feed").remove();
   let group = document.getElementById("group");
   if (toggleOption == true) {
     groupType = "list";
@@ -106,8 +106,8 @@ var sideBarDisplay = function (toggleOption) {
     let select = document.querySelector("#content");
     if (!document.body.contains(document.querySelector(".cat"))) {
       for (i = 0; i <= translations.length - 1; i++) {
-        category.innerHTML = sideBarCategoryBuild(translations[i]) +
-          category.innerHTML;
+        category.innerHTML =
+          sideBarCategoryBuild(translations[i]) + category.innerHTML;
       }
       for (i = 0; i <= selections.length - 1; i++) {
         select.innerHTML =
@@ -118,32 +118,33 @@ var sideBarDisplay = function (toggleOption) {
             selections[i].icon
           );
       }
-      content.innerHTML = content.innerHTML +
-      `<div id='basic'>
+      content.innerHTML =
+        content.innerHTML +
+        `<div id='basic'>
         <form class='filter' action='#'>
           <input type='text' class='sideFilter' placeholder='filter'>
         </form>
        </div>
-      `
+      `;
       document.querySelector(".sideFilter").style.display = "block";
       document.querySelector("#basic").style.display = "block";
     }
-    if (document.querySelector('#main').clientWidth >= 769) {
+    if (document.querySelector("#main").clientWidth >= 769) {
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
       document.querySelector("#main").style.left = "240px";
       document.querySelector("#sidebar").style.left = "0";
     }
-    setTimeout(function() {
+    setTimeout(function () {
       document
         .querySelectorAll("#dots .fill")
-        .forEach((a) => a.style.marginLeft = "150px");
-    }, 300)
+        .forEach((a) => (a.style.marginLeft = "150px"));
+    }, 300);
   } else if (toggleOption == false) {
     document
       .querySelectorAll("#dots .fill")
-      .forEach((a) => a.style.marginLeft = "0");
-      document.querySelector("#top").style.width = "calc(100% - 16px)";
+      .forEach((a) => (a.style.marginLeft = "0"));
+    document.querySelector("#top").style.width = "calc(100% - 16px)";
     document.querySelector(".sideFilter").style.display = "none";
     document.querySelector("#sidebar").style.left = "-242px";
     document.querySelector("#main").style.width = "100%";
@@ -167,7 +168,9 @@ var quickFeedDisplay = function (toggleOption) {
     document.querySelector("#front").classList.remove("toggle");
     document.querySelector(".quick").classList.add("visible");
     if (document.body.contains(document.querySelector(".link"))) {
-      document.querySelector(".link .fa-angle-up").classList.remove("rotateReverse");
+      document
+        .querySelector(".link .fa-angle-up")
+        .classList.remove("rotateReverse");
       document.querySelector(".link .fa-angle-up").classList.add("rotate");
       document.querySelector(".show").style.visibility = "hidden";
       setTimeout(function () {
@@ -248,7 +251,7 @@ var quickFeedAsset = function (feedAssets) {
             menu[randomMenuObject].img.image(),
             menu[randomMenuObject].id
           );
-          if (duplicate.length === feedAssets) return false
+        if (duplicate.length === feedAssets) return false;
       }
     }
 };
@@ -260,18 +263,16 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   document.querySelector(listingWrapper).style.display = "block";
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
-      if (
-        menu[i].des.toLowerCase().match(inputFilter)
-      ) {
-          listing.innerHTML =
-            listingIndexBuild(
-              menu[i].id.match(/[^\/]+$/g),
-              menu.indexOf(menu[i]),
-              menu[i].img.image(),
-              menu[i].cat,
-              false,
-              i
-            ) + listing.innerHTML;
+      if (menu[i].des.toLowerCase().match(inputFilter)) {
+        listing.innerHTML =
+          listingIndexBuild(
+            menu[i].id.match(/[^\/]+$/g),
+            menu.indexOf(menu[i]),
+            menu[i].img.image(),
+            menu[i].cat,
+            false,
+            i
+          ) + listing.innerHTML;
         suggest.push(i);
       }
       setTimeout(500);
@@ -285,16 +286,16 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       menu[randomMenuObject].media == true &&
       !suggest.includes(randomMenuObject)
     )
-        if (suggest.length >= suggestionBuffer) return false;
-        listing.innerHTML += listingIndexBuild(
-          menu[randomMenuObject].id.match(/[^\/]+$/g),
-          menu.indexOf(menu[randomMenuObject]),
-          menu[randomMenuObject].img.image(),
-          menu[randomMenuObject].cat,
-          true,
-          i
-        );
-        suggest.push(randomMenuObject);
+      if (suggest.length >= suggestionBuffer) return false;
+    listing.innerHTML += listingIndexBuild(
+      menu[randomMenuObject].id.match(/[^\/]+$/g),
+      menu.indexOf(menu[randomMenuObject]),
+      menu[randomMenuObject].img.image(),
+      menu[randomMenuObject].cat,
+      true,
+      i
+    );
+    suggest.push(randomMenuObject);
     setTimeout(500);
   }
 };
@@ -425,7 +426,7 @@ var reverseCategoryGroup = function (translation) {
     div.classList.add("air");
     group.prepend(div);
   } else {
-    document.querySelector('.air').remove()
+    document.querySelector(".air").remove();
     let div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
@@ -511,7 +512,7 @@ var filterInputResponse = function (
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
     else if (isNumeric(match) && filter.length == 1)
       xmlRequestParsing(null, null, match);
-    return false
+    return false;
   }
   if (categoryBloat == true && isNumeric(match))
     populateCategoryGroup(menu[match].cat);
@@ -541,7 +542,7 @@ var guideImageAttributes = function (src) {
     guide.querySelector(".img").setAttribute("src", src);
     guide.querySelector(".sticky").style.display = "block";
     guide.querySelector(".checkmark").style.display = "block";
-    if (document.querySelector('#main').clientWidth <= 425) {
+    if (document.querySelector("#main").clientWidth <= 425) {
       document.querySelector("#main").classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";

@@ -170,9 +170,9 @@ document.addEventListener(
   "keyup",
   function (event) {
     if (event.target.classList.contains("guest"))
-      inputListingKeyup('#first', event.keyCode)
+      inputListingKeyup("#first", event.keyCode);
     else if (event.target.classList.contains("view"))
-      inputListingKeyup('#match', event.keyCode)
+      inputListingKeyup("#match", event.keyCode);
     event.preventDefault();
     visual();
   },
@@ -192,14 +192,15 @@ document.addEventListener(
           false,
           false,
           document.querySelector(".sideFilter").value.space(),
-          true);
+          true
+        );
         topMenuBarDisplay(topBar);
         var uri =
           "?q=" +
           document.querySelector(".sideFilter").value.replace(/\s/g, "+");
-        displayExpand(groupType)
+        displayExpand(groupType);
         uri.define().state();
-        unloading()
+        unloading();
       }
     } else if (event.target.id == "search") {
       if (
@@ -230,13 +231,13 @@ document.addEventListener(
       } else if (
         document.body.contains(document.querySelector("#match .hover"))
       ) {
-        id = document.querySelector("#match .hover").getAttribute("aria-item")
+        id = document.querySelector("#match .hover").getAttribute("aria-item");
         document.querySelector("#match").style.display = "none";
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        init()
+        init();
         xmlRequestParsing(
           null,
           null,
@@ -250,7 +251,7 @@ document.addEventListener(
         uri.define().exit();
       }
     } else if (event.target.id == "front") {
-      if (document.querySelector('.focus .guest').value == "")
+      if (document.querySelector(".focus .guest").value == "")
         inputListingIndex("", "#first");
       if (document.body.contains(document.querySelector("#first .hover"))) {
         document.querySelector("#first").style.display = "none";
@@ -258,8 +259,8 @@ document.addEventListener(
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        id = document.querySelector("#first .hover").getAttribute("aria-item")
-        init()
+        id = document.querySelector("#first .hover").getAttribute("aria-item");
+        init();
         xmlRequestParsing(
           null,
           null,
@@ -277,7 +278,7 @@ document.addEventListener(
   false
 ); //:before pseudo-elements not loaded in DOM
 
-var inputListingKeyup = function(Elem, keycode) {
+var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
   else if (
     event.target.value.length > 3 &&
@@ -291,9 +292,7 @@ var inputListingKeyup = function(Elem, keycode) {
     inputListingIndex(event.target.value, Elem);
   else if (keycode === 40) {
     if (
-      !document.body.contains(
-        document.querySelector(Elem + " .listing .hover")
-      )
+      !document.body.contains(document.querySelector(Elem + " .listing .hover"))
     ) {
       document
         .querySelector(Elem + " .listing .index:first-child")
@@ -325,20 +324,17 @@ var inputListingKeyup = function(Elem, keycode) {
       document.querySelector(Elem + " .listing .hover")
         .previousElementSibling !=
         document.querySelector(Elem + " .listing .index:first-child") &&
-      document.querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling !=
-        document.querySelector(Elem + " .listing .index:first-child") &&
-      document.querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling
+      document.querySelector(Elem + " .listing .hover").previousElementSibling
         .previousElementSibling !=
         document.querySelector(Elem + " .listing .index:first-child") &&
-      document.querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling
+      document.querySelector(Elem + " .listing .hover").previousElementSibling
         .previousElementSibling.previousElementSibling !=
         document.querySelector(Elem + " .listing .index:first-child") &&
-      document.querySelector(Elem + " .listing .hover")
-        .previousElementSibling.previousElementSibling
-        .previousElementSibling.previousElementSibling
+      document.querySelector(Elem + " .listing .hover").previousElementSibling
+        .previousElementSibling.previousElementSibling.previousElementSibling !=
+        document.querySelector(Elem + " .listing .index:first-child") &&
+      document.querySelector(Elem + " .listing .hover").previousElementSibling
+        .previousElementSibling.previousElementSibling.previousElementSibling
         .previousElementSibling !=
         document.querySelector(Elem + " .listing .index:first-child")
     ) {
@@ -346,32 +342,34 @@ var inputListingKeyup = function(Elem, keycode) {
         .querySelector(Elem + " .listing .hover")
         .previousElementSibling.previousElementSibling.previousElementSibling
         .previousElementSibling.previousElementSibling.previousElementSibling
-          .focus();
+        .focus();
       document
         .querySelector(Elem + " .listing .hover")
         .previousElementSibling.previousElementSibling.previousElementSibling
         .previousElementSibling.previousElementSibling.previousElementSibling
-        .classList.add("hover");
+        .classList.add(
+          "hover"
+        );
       document
         .querySelector(Elem + " .listing .hover")
         .nextElementSibling.nextElementSibling.nextElementSibling
         .nextElementSibling.nextElementSibling.nextElementSibling
-        .classList.remove("hover");
+        .classList.remove(
+          "hover"
+        );
       document.querySelector(".focus .guest").focus();
     } else {
-      document.querySelector(Elem + " .listing .index").focus()
-      document.querySelector(Elem + " .listing .hover")
-      .classList.remove("hover")
-      document.querySelector(Elem + " .listing .index").classList.add("hover")
+      document.querySelector(Elem + " .listing .index").focus();
+      document
+        .querySelector(Elem + " .listing .hover")
+        .classList.remove("hover");
+      document.querySelector(Elem + " .listing .index").classList.add("hover");
     }
   } else if (keycode === 34) {
     if (
-      !document.body.contains(
-        document.querySelector(Elem + " .listing .hover")
-      )
+      !document.body.contains(document.querySelector(Elem + " .listing .hover"))
     ) {
-      document
-        .querySelector(Elem + " .listing .index").focus();
+      document.querySelector(Elem + " .listing .index").focus();
       document
         .querySelector(Elem + " .listing .index")
         .nextElementSibling.nextElementSibling.nextElementSibling
@@ -399,12 +397,12 @@ var inputListingKeyup = function(Elem, keycode) {
     ) {
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
+        .nextElementSibling.nextElementSibling.nextElementSibling.
+        nextElementSibling.nextElementSibling.nextElementSibling.focus();
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .nextElementSibling.nextElementSibling.nextElementSibling.
+        nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
           "hover"
         );
       document
@@ -412,25 +410,24 @@ var inputListingKeyup = function(Elem, keycode) {
         .classList.remove("hover");
       document.querySelector(".focus .guest").focus();
     } else {
-      document.querySelector(Elem + " .listing .index:last-child").focus()
-      document.querySelector(Elem + " .listing .hover").classList.remove("hover")
-      document.querySelector(Elem + " .listing .index:last-child").classList.add(
-        "hover"
-      )
+      document.querySelector(Elem + " .listing .index:last-child").focus();
+      document
+        .querySelector(Elem + " .listing .hover")
+        .classList.remove("hover");
+      document
+        .querySelector(Elem + " .listing .index:last-child")
+        .classList.add("hover");
     }
   } else if (keycode === 38) {
     if (
-      !document.body.contains(
-        document.querySelector(Elem + " .listing .hover")
-      )
+      !document.body.contains(document.querySelector(Elem + " .listing .hover"))
     ) {
       document
         .querySelector(Elem + " .listing .index:first-child")
         .classList.add("hover");
     } else if (
       document.body.contains(
-        document.querySelector(Elem + " .listing .hover")
-          .previousElementSibling
+        document.querySelector(Elem + " .listing .hover").previousElementSibling
       )
     ) {
       document
@@ -447,4 +444,4 @@ var inputListingKeyup = function(Elem, keycode) {
   event.target.setAttribute("tabIndex", -1);
   event.target.focus();
   visual();
-}
+};

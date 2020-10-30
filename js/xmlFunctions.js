@@ -368,7 +368,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
             document.querySelector(".img-" + item + " .image")
           )
         )
-        document.querySelector(".img-" + item + " .image").remove();
+          document.querySelector(".img-" + item + " .image").remove();
         document.querySelector(".img-" + item).style.paddingBottom = "30px";
       };
       newImg.onload = function () {
@@ -389,8 +389,10 @@ var xmlImageAttributes = function (empty, n, item, src) {
           let copyPost = document.querySelector(".img-" + item + " .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
-            if (newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2) {
+            if (
+              newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2
+            ) {
               itemImage.closest(".item").querySelector(".pending").remove();
               itemImage.closest(".image").remove();
             } else if (newImg.naturalWidth < maximum) {
@@ -416,8 +418,10 @@ var xmlImageAttributes = function (empty, n, item, src) {
               attribute.style.height = "110px";
             }
           } else {
-            if (newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2) {
+            if (
+              newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2
+            ) {
               itemImage.closest(".item").querySelector(".pending").remove();
               itemImage.closest(".image").remove();
             } else if (newImg.naturalWidth < maximum) {
@@ -473,25 +477,18 @@ var xmlImageAttributes = function (empty, n, item, src) {
   });
 };
 
-var xmlTitleParsing = function(xhr) {
-
+var xmlTitleParsing = function (xhr) {
   if (xhr.getElementsByTagName("title")[0].childNodes[1])
-    var title = xhr.getElementsByTagName("title")[0].childNodes[1]
-      .nodeValue;
-  else
-    var title = xhr.getElementsByTagName("title")[0].childNodes[0]
-      .nodeValue;
+    var title = xhr.getElementsByTagName("title")[0].childNodes[1].nodeValue;
+  else var title = xhr.getElementsByTagName("title")[0].childNodes[0].nodeValue;
   if (
     !title ||
-    (title.length == 7 &&
-      xhr.getElementsByTagName("title")[0].childNodes[0])
+    (title.length == 7 && xhr.getElementsByTagName("title")[0].childNodes[0])
   )
-    var title = xhr.getElementsByTagName("title")[0].childNodes[0]
-      .nodeValue;
+    var title = xhr.getElementsByTagName("title")[0].childNodes[0].nodeValue;
 
-  return escape(title)
-
-}
+  return escape(title);
+};
 
 var xmlRequestParsing = function (search, string, index) {
   let local;
@@ -529,11 +526,11 @@ var xmlRequestParsing = function (search, string, index) {
 
           let data = xhr.getElementsByTagName(channel)[i];
 
-          if (data.childNodes.length > 1) var title = xmlTitleParsing(data)
+          if (data.childNodes.length > 1) var title = xmlTitleParsing(data);
 
-          if (title == postDuplicate || title == '') continue
+          if (title == postDuplicate || title == "") continue;
 
-          var postDuplicate = title
+          var postDuplicate = title;
 
           let trun = truncate(title, titleTruncate, true);
 
@@ -550,7 +547,8 @@ var xmlRequestParsing = function (search, string, index) {
             menu[index].ext
           );
 
-          if (title.length > titleTruncate) var more = "<div class='more'>more</div>";
+          if (title.length > titleTruncate)
+            var more = "<div class='more'>more</div>";
           else var more = "";
 
           if (search == "search")
@@ -663,8 +661,8 @@ var xmlRequestParsing = function (search, string, index) {
         }
         for (i = 0; i < pub.length; i++) {
           if (i != local)
-          document.querySelector(".channel").innerHTML =
-            document.querySelector(".channel").innerHTML + pub[i].post;
+            document.querySelector(".channel").innerHTML =
+              document.querySelector(".channel").innerHTML + pub[i].post;
           if (
             menu[index].id.match(/Imgur/g) &&
             !menu[index].id.match(/Youtube/g)

@@ -3,8 +3,8 @@ var visual = function (toggleOption) {
   else if (toggleOption == 1 || toggleOption == 0) op = toggleOption;
   if (op == 1) {
     document.documentElement.style.setProperty(
-        "--box-shadow",
-        "8px 8px 16px #060606"
+      "--box-shadow",
+      "8px 8px 16px #060606"
     );
     document.documentElement.style.setProperty(
       "--loader-color-primary",
@@ -18,10 +18,7 @@ var visual = function (toggleOption) {
       "--fill-color-primary",
       "#ffffff"
     );
-    document.documentElement.style.setProperty(
-      "--bg-color-primary",
-      "#0f0f0f"
-    );
+    document.documentElement.style.setProperty("--bg-color-primary", "#0f0f0f");
     document.documentElement.style.setProperty(
       "--bg-color-secondary",
       "#262626"
@@ -54,31 +51,39 @@ var visual = function (toggleOption) {
       "--hue-rotate",
       "hue-rotate(110deg)"
     );
-    document.querySelectorAll("input")
-      .forEach((a) => a.style.color = 'var(--fill-color-primary)');
+    document
+      .querySelectorAll("input")
+      .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
     if (document.body.contains(document.querySelector("#group .populate"))) {
-        document.querySelectorAll("#group .populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-      document.querySelector('#group')
-        .style.backgroundColor = 'var(--bg-color-primary)'
+      document
+        .querySelectorAll("#group .populate")
+        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
+      document.querySelector("#group").style.backgroundColor =
+        "var(--bg-color-primary)";
     }
     if (document.body.contains(document.querySelector("#feed")))
-    document.querySelector('#feed').style.backgroundColor =
-      'var(--bg-color-primary)'
-    document.querySelector("#match .listing").classList.add("oppositeScrollbar");
-    document.querySelector("#first .listing").classList.add("oppositeScrollbar");
-    document.querySelector("#sidebar #content")
+      document.querySelector("#feed").style.backgroundColor =
+        "var(--bg-color-primary)";
+    document
+      .querySelector("#match .listing")
       .classList.add("oppositeScrollbar");
-    document.querySelector("#favicon")
+    document
+      .querySelector("#first .listing")
+      .classList.add("oppositeScrollbar");
+    document
+      .querySelector("#sidebar #content")
+      .classList.add("oppositeScrollbar");
+    document
+      .querySelector("#favicon")
       .setAttribute("href", "images/Opposite.ico");
-    document.querySelector('#visit')
-      .style.backgroundColor = 'var(--bg-color-primary)'
-    document.querySelector('#container')
-      .style.backgroundColor = 'var(--bg-color-primary)'
+    document.querySelector("#visit").style.backgroundColor =
+      "var(--bg-color-primary)";
+    document.querySelector("#container").style.backgroundColor =
+      "var(--bg-color-primary)";
   } else if (op == 0) {
     document.documentElement.style.setProperty(
-        "--box-shadow",
-        "8px 8px 16px #eeeeee"
+      "--box-shadow",
+      "8px 8px 16px #eeeeee"
     );
     document.documentElement.style.setProperty(
       "--loader-color-primary",
@@ -92,10 +97,7 @@ var visual = function (toggleOption) {
       "--fill-color-primary",
       "#555555"
     );
-    document.documentElement.style.setProperty(
-      "--bg-color-primary",
-      "#ffffff"
-    );
+    document.documentElement.style.setProperty("--bg-color-primary", "#ffffff");
     document.documentElement.style.setProperty(
       "--bg-color-secondary",
       "#f7f7f7"
@@ -128,31 +130,37 @@ var visual = function (toggleOption) {
       "--hue-rotate",
       "hue-rotate(0deg)"
     );
-    document.querySelectorAll("input")
-      .forEach((a) => a.style.color = 'var(--fill-color-primary)');
+    document
+      .querySelectorAll("input")
+      .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
     if (document.body.contains(document.querySelector("#group .populate"))) {
-    if (groupType == "blocks")
-      document
-        .querySelectorAll(".populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-secondary)');
-    else if (groupType == "list")
-      document
-        .querySelectorAll(".populate")
-        .forEach((a) => a.style.backgroundColor = 'var(--bg-color-primary)');
-    document.querySelector('#group')
-      .style.backgroundColor = 'var(--bg-color-secondary)'
+      if (groupType == "blocks")
+        document
+          .querySelectorAll(".populate")
+          .forEach(
+            (a) => (a.style.backgroundColor = "var(--bg-color-secondary)")
+          );
+      else if (groupType == "list")
+        document
+          .querySelectorAll(".populate")
+          .forEach(
+            (a) => (a.style.backgroundColor = "var(--bg-color-primary)")
+          );
+      document.querySelector("#group").style.backgroundColor =
+        "var(--bg-color-secondary)";
     }
     if (document.body.contains(document.querySelector("#feed")))
-    document.querySelector('#feed').style.backgroundColor =
-      'var(--bg-color-secondary)'
+      document.querySelector("#feed").style.backgroundColor =
+        "var(--bg-color-secondary)";
     document.querySelector("#match .listing").classList.add("invertScrollbar");
     document.querySelector("#first .listing").classList.add("invertScrollbar");
     document
-      .querySelector("#sidebar #content").classList.add("invertScrollbar");
+      .querySelector("#sidebar #content")
+      .classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-    document.querySelector('#visit')
-      .style.backgroundColor = 'var(--bg-color-secondary)'
-    document.querySelector('#container')
-      .style.backgroundColor = 'var(--bg-color-secondary)'
+    document.querySelector("#visit").style.backgroundColor =
+      "var(--bg-color-secondary)";
+    document.querySelector("#container").style.backgroundColor =
+      "var(--bg-color-secondary)";
   }
 };

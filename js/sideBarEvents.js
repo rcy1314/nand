@@ -14,24 +14,36 @@ document.addEventListener(
       event.target.style.borderWidth = ".3px .3px .3px .3px";
       event.target.style.borderImageSlice = "9";
       event.target.style.borderStyle = "solid";
-      if (document.body.contains(event.target.nextElementSibling.nextElementSibling)){
+      if (
+        document.body.contains(
+          event.target.nextElementSibling.nextElementSibling
+        )
+      ) {
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
           "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.25) " +
           parseInt(p) +
           "%,rgba(147,147,147,0) 100%)";
-        event.target.nextElementSibling.nextElementSibling.style.borderWidth = ".3px 0 0 .3px";
-        event.target.nextElementSibling.nextElementSibling.style.borderImageSlice = "9";
-        event.target.nextElementSibling.nextElementSibling.style.borderStyle = "solid";
+        event.target.nextElementSibling.nextElementSibling.style.borderWidth =
+          ".3px 0 0 .3px";
+        event.target.nextElementSibling.nextElementSibling.style.borderImageSlice =
+          "9";
+        event.target.nextElementSibling.nextElementSibling.style.borderStyle =
+          "solid";
       }
-      if (event.target != document.querySelector('.cat:first-child') &&
-        event.target != document.querySelector('.sel:first-child')){
+      if (
+        event.target != document.querySelector(".cat:first-child") &&
+        event.target != document.querySelector(".sel:first-child")
+      ) {
         event.target.previousElementSibling.previousElementSibling.style.borderImage =
           "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.25) " +
           parseInt(p) +
           "%,rgba(147,147,147,0) 100%)";
-        event.target.previousElementSibling.previousElementSibling.style.borderWidth = ".3px 0 0 .3px";
-        event.target.previousElementSibling.previousElementSibling.style.borderImageSlice = "9";
-        event.target.previousElementSibling.previousElementSibling.style.borderStyle = "solid";
+        event.target.previousElementSibling.previousElementSibling.style.borderWidth =
+          ".3px 0 0 .3px";
+        event.target.previousElementSibling.previousElementSibling.style.borderImageSlice =
+          "9";
+        event.target.previousElementSibling.previousElementSibling.style.borderStyle =
+          "solid";
       }
     }
   },
@@ -46,11 +58,17 @@ document.addEventListener(
     ) {
       event.target.style.borderImage =
         "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
-      if (document.body.contains(event.target.nextElementSibling.nextElementSibling))
+      if (
+        document.body.contains(
+          event.target.nextElementSibling.nextElementSibling
+        )
+      )
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
           "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
-      if (event.target != document.querySelector('.cat:first-child') &&
-        event.target != document.querySelector('.sel:first-child'))
+      if (
+        event.target != document.querySelector(".cat:first-child") &&
+        event.target != document.querySelector(".sel:first-child")
+      )
         event.target.previousElementSibling.previousElementSibling.style.borderImage =
           "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
     }
@@ -64,7 +82,7 @@ document.addEventListener(
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel")
     ) {
-      if (document.querySelector('#main').clientWidth <= 768){
+      if (document.querySelector("#main").clientWidth <= 768) {
         onScreen = false;
         sideBarDisplay(false);
       }
@@ -206,14 +224,14 @@ document.addEventListener(
     }
     if (event.target.classList.contains("Dots")) {
       let loading = "dots";
+      document
+        .querySelectorAll("#dots .fill")
+        .forEach((a) => a.classList.add("dots"));
+      setTimeout(function () {
         document
           .querySelectorAll("#dots .fill")
-          .forEach((a) => a.classList.add("dots"));
-        setTimeout(function () {
-          document
-            .querySelectorAll("#dots .fill")
-            .forEach((a) => a.classList.remove("dots"));
-        }, 3000);
+          .forEach((a) => a.classList.remove("dots"));
+      }, 3000);
     }
     if (event.target.classList.contains("toggleImages")) {
       onlyImages = onlyImages != true;
@@ -287,8 +305,9 @@ document.addEventListener(
       var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
       xmlRequestParsing(null, null, randomMenuObject);
     }
-    if (event.target.classList.contains("Switch") ||
-        event.target.classList.contains("fa-sun")
+    if (
+      event.target.classList.contains("Switch") ||
+      event.target.classList.contains("fa-sun")
     ) {
       if (location.href.match("\\?+1") || location.href.match("\\+1")) {
         var uri = window.location.href.replace(/\?\+1|\+1/g, "");
