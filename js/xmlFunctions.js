@@ -663,6 +663,7 @@ var xmlRequestParsing = function (search, string, index) {
           guideDisplay(sticky);
         }
         for (i = 0; i < pub.length; i++) {
+          if (i != local)
           document.querySelector(".channel").innerHTML =
             document.querySelector(".channel").innerHTML + pub[i].post;
           if (
