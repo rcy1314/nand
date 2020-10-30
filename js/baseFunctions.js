@@ -373,7 +373,6 @@ var populateCategoryGroup = function (translation) {
         media
       );
   }
-  id = 0;
   for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
       var media = "<div class='media' style='display:none'>Images</div>";
@@ -410,6 +409,7 @@ var populateCategoryGroup = function (translation) {
       }
     }
   }
+  id = 0;
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
     unloading();
