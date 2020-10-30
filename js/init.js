@@ -27,6 +27,7 @@ if (
       document.querySelector("#toggle").style.display = "block";
   } else {
       init();
+      guideOnScreen = onScreen
       onScreen = false;
       document.querySelector("#top").style.display = "none";
       document.querySelector("#toggle").style.display = "none";

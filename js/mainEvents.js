@@ -241,8 +241,9 @@ document.addEventListener(
       while (event.target.firstChild) {
         event.target.removeChild(event.target.lastChild);
       }
-      topMenuBarDisplay(topBar);
       document.querySelector("#main").classList.remove("guide");
+      sideBarDisplay(guideOnScreen);
+      topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains("bottom")) {
       init();

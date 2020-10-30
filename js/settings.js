@@ -257,6 +257,7 @@ let expand = true; //filter populate list display
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let randomDuplicate = []; //core.js random duplicate xml
+let guideOnScreen //temporarly store onScreen for guide
 
 const selections = [ //sideBar sel options
 
