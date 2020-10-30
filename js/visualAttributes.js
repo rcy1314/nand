@@ -40,7 +40,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--borderless-hover-color",
-      "#1f1f1f"
+      "rgb(31,31,31,.4)"
     );
     document.documentElement.style.setProperty(
       "--progress-background",
@@ -116,7 +116,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--borderless-hover-color",
-      "#f2f2f2"
+      "rgb(242,242,242,.5)"
     );
     document.documentElement.style.setProperty(
       "--progress-background",
