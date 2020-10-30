@@ -15,17 +15,6 @@ document.addEventListener(
 document.addEventListener(
   "click",
   function (event) {
-    if (event.target.classList.contains("guest")) {
-      inputListingIndex("", "#first");
-      visual();
-    }
-    event.preventDefault();
-  },
-  false
-); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  "click",
-  function (event) {
     if (event.target.classList.contains("view")) {
       document.querySelector("#match").style.display = "block";
       let match = document.querySelector("#match .listing");
@@ -67,23 +56,16 @@ document.addEventListener(
     event.preventDefault();
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   "click",
   function (event) {
-    if (event.target.classList.contains("side")) {
+    if (event.target.classList.contains("sideFilter")) {
       event.target.value = "";
     }
-    event.preventDefault();
-  },
-  false
-); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  "click",
-  function (event) {
     if (
       event.target.classList.contains("hue") ||
-      event.target.classList.contains("index") ||
+      event.target.classList.contains("hover") ||
       event.target.classList.contains("text") ||
       event.target.classList.contains("detail") ||
       event.target.classList.contains("input") ||
@@ -113,7 +95,6 @@ document.addEventListener(
         else var groupType = "blocks";
         displayExpand(expand);
         unloading();
-        visual();
       } else {
         if (reader == true) {
           var channel = document.querySelector(".channel");
@@ -362,7 +343,8 @@ var inputListingKeyup = function(Elem, keycode) {
       document
         .querySelector(Elem + " .listing .hover")
         .previousElementSibling.previousElementSibling.previousElementSibling
-        .previousElementSibling.previousElementSibling.previousElementSibling.focus();
+        .previousElementSibling.previousElementSibling.previousElementSibling
+          .focus();
       document
         .querySelector(Elem + " .listing .hover")
         .previousElementSibling.previousElementSibling.previousElementSibling
@@ -429,8 +411,7 @@ var inputListingKeyup = function(Elem, keycode) {
       document.querySelector(".focus .guest").focus();
     } else {
       document.querySelector(Elem + " .listing .index:last-child").focus()
-      document.querySelector(Elem + " .listing .hover")
-      .classList.remove("hover")
+      document.querySelector(Elem + " .listing .hover").classList.remove("hover")
       document.querySelector(Elem + " .listing .index:last-child").classList.add(
         "hover"
       )

@@ -52,28 +52,7 @@ var loadScripts = function() {
   }
 }
 
-function whichTransitionEvent() {
-  let transition;
-  let Elem = document.createElement("fakeelement");
-  let transitions = {
-    transition: "transitionend",
-    OTransition: "oTransitionEnd",
-    MozTransition: "transitionend",
-    WebkitTransition: "webkitTransitionEnd",
-  };
-
-  for (transition in transitions) {
-    if (Elem.style[transition] !== undefined) {
-      return transitions[transition];
-    }
-  }
-}
-
-function hasClass(elem, className) {
-  return elem.classList.contains(className);
-}
-
-function isNumeric(n) {
+var isNumeric = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 

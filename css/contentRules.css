@@ -96,6 +96,7 @@ html body #container #toggle {
 
 html body #container #sidebar {
   background-color: var(--bg-color-primary);
+  box-shadow: var(--box-shadow);
   position: fixed;
   display: block;
   height: 100%;

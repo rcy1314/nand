@@ -99,11 +99,11 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    document.querySelector("#sidebar").style.left = "0px";
     document.querySelector(".sideFilter").style.display = "block";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#basic").style.display = "block";
+    document.querySelector("#sidebar").style.left = "0px";
     let category = document.querySelector("#category");
     let select = document.querySelector("#select");
     if (!document.body.contains(document.querySelector(".cat"))) {
@@ -122,10 +122,10 @@ var sideBarDisplay = function (toggleOption) {
       }
     }
     if (document.querySelector('#main').clientWidth >= 769) {
-      document.querySelector("#sidebar").style.left = "0";
-      document.querySelector("#main").style.left = "240px";
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
+      document.querySelector("#main").style.left = "240px";
+      document.querySelector("#sidebar").style.left = "0";
     }
     setTimeout(function() {
       document
@@ -136,11 +136,11 @@ var sideBarDisplay = function (toggleOption) {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.style.marginLeft = "0");
+      document.querySelector("#top").style.width = "calc(100% - 16px)";
     document.querySelector(".sideFilter").style.display = "none";
-    document.querySelector("#main").style.left = "0";
     document.querySelector("#sidebar").style.left = "-242px";
     document.querySelector("#main").style.width = "100%";
-    document.querySelector("#top").style.width = "calc(100% - 16px)";
+    document.querySelector("#main").style.left = "0";
   }
   visual();
 };
@@ -155,13 +155,13 @@ var topMenuBarDisplay = function (toggleOption) {
 
 var quickFeedDisplay = function (toggleOption) {
   if (toggleOption == true) {
-    document.querySelector(".quick").classList.add("visible");
     document.querySelector(".quick").classList.remove("invisible");
     document.querySelector("#front").classList.add("toggleHidden");
     document.querySelector("#front").classList.remove("toggle");
+    document.querySelector(".quick").classList.add("visible");
     if (document.body.contains(document.querySelector(".link"))) {
-      document.querySelector(".link .fa-angle-up").classList.add("rotate");
       document.querySelector(".link .fa-angle-up").classList.remove("rotateReverse");
+      document.querySelector(".link .fa-angle-up").classList.add("rotate");
       document.querySelector(".show").style.visibility = "hidden";
       setTimeout(function () {
         document.querySelector(".fa-angle-up").classList.add("rotate");
@@ -173,8 +173,8 @@ var quickFeedDisplay = function (toggleOption) {
     document.querySelector("#front").classList.remove("toggleHidden");
     document.querySelector("#front").classList.add("toggle");
     if (document.body.contains(document.querySelector(".link"))) {
-      document.querySelector(".fa-angle-up").classList.remove("rotate");
       document.querySelector(".fa-angle-up").classList.add("rotateReverse");
+      document.querySelector(".fa-angle-up").classList.remove("rotate");
       document.querySelector(".show").style.visibility = "visible";
     }
   }
@@ -185,19 +185,17 @@ var guideDisplay = function (pubArray) {
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
   guide.innerHTML = guideBuild(pubArray);
-  guide.style.display = "flex";
   guideImageAttributes(pubArray[0].src);
-  visual();
+  guide.style.display = "flex";
 };
 
 var guideDisplayYoutube = function (pubArray) {
   var guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
-  guide.innerHTML = guideBuildYoutube(pubArray);
   guide.querySelector(".checkmark").style.display = "block";
+  guide.innerHTML = guideBuildYoutube(pubArray);
   guide.style.display = "flex";
-  visual();
 };
 
 var contentStatusDisplay = function (
@@ -218,7 +216,7 @@ var contentStatusDisplay = function (
 };
 
 var quickFeedAsset = function (feedAssets) {
-  let dupe = [];
+  let duplicate = [];
   let feed = document.querySelector(".quick .feed");
   if (feedAssets == 7)
     for (var i = 0; i <= translations.length - 1; i++) {
@@ -230,12 +228,12 @@ var quickFeedAsset = function (feedAssets) {
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
+        !duplicate.includes(randomMenuObject) &&
+        menu[randomMenuObject].media == true &&
         randomMenuObject != 0 &&
-        menu[randomMenuObject] &&
-        !dupe.includes(randomMenuObject) &&
-        menu[randomMenuObject].media == true
+        menu[randomMenuObject]
       ) {
-        dupe.push(randomMenuObject);
+        duplicate.push(randomMenuObject);
         feed.innerHTML =
           feed.innerHTML +
           assetBuild(
@@ -243,26 +241,21 @@ var quickFeedAsset = function (feedAssets) {
             menu[randomMenuObject].img.image(),
             menu[randomMenuObject].id
           );
-          if (dupe.length === feedAssets) return false
+          if (duplicate.length === feedAssets) return false
       }
     }
-  visual();
 };
 
 var inputListingIndex = function (inputFilter, listingWrapper) {
   var suggest = [];
   var listing = document.querySelector(listingWrapper + " .listing");
-  while (listing.lastChild) {
-    listing.removeChild(listing.lastChild);
-  }
+  while (listing.lastChild) listing.removeChild(listing.lastChild);
   document.querySelector(listingWrapper).style.display = "block";
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
       if (
         menu[i].des.toLowerCase().match(inputFilter)
       ) {
-        ready(() => {
-          /* Do things after DOM has fully loaded */
           listing.innerHTML =
             listingIndexBuild(
               menu[i].id.match(/[^\/]+$/g),
@@ -272,7 +265,6 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
               false,
               i
             ) + listing.innerHTML;
-        });
         suggest.push(i);
       }
       setTimeout(500);
@@ -282,13 +274,12 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       menu[Math.floor(Math.random() * menu.length - 1)]
     );
     if (
-      menu[randomMenuObject] &&
       menu[randomMenuObject].media == true &&
-      !suggest.includes(randomMenuObject)
+      !suggest.includes(randomMenuObject) &&
+      menu[randomMenuObject]
     )
       ready(() => {
         if (suggest.length >= suggestionBuffer) return false;
-        suggest.push(randomMenuObject);
         listing.innerHTML += listingIndexBuild(
           menu[randomMenuObject].id.match(/[^\/]+$/g),
           menu.indexOf(menu[randomMenuObject]),
@@ -297,6 +288,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
           true,
           i
         );
+        suggest.push(randomMenuObject);
       });
     setTimeout(500);
   }
@@ -305,9 +297,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 var progressBackDrop = function (done, percent) {
   if (
     !location.href.match("\\?\\+1") &&
-    !location.href.match("\\?q=") &&
     !location.href.match("\\+1") &&
-    !location.href.match("\\?") &&
     contrast == true
   ) {
     var extendedURI = window.location.href + "?+1";
@@ -315,8 +305,8 @@ var progressBackDrop = function (done, percent) {
   }
   if (done == true) {
     let progressBar = document.getElementById("progressBar");
-    progressBar.style.transitionDelay = "none";
     progressBar.style.transition = "width .15s ease-in-out";
+    progressBar.style.transitionDelay = "none";
     progressBar.style.width = percent + "%";
     if (document.body.contains(document.getElementById("feed")))
       document.querySelector("#feed").style.display = "block";
@@ -338,7 +328,7 @@ var progressBackDrop = function (done, percent) {
         )
           if (httpRequest.status == 200) {
             first = false;
-            xmlRequestParsing(null, null, random());
+            xmlRequestParsing(null, null, anyRandomMenuObject());
           }
       }
     setTimeout(function () {
@@ -362,7 +352,6 @@ var populateCategoryGroup = function (translation) {
       "</div>" +
       main.innerHTML;
   let result = document.querySelector(".result");
-
   if (id && id != 0 && !location.href.match("\\?q=")) {
     if (menu[id].media == true)
       var media = "<div class='media' style='display:none'>Images</div>";
@@ -385,9 +374,9 @@ var populateCategoryGroup = function (translation) {
     else var media = "<div class='blank'></div>";
     if (onlyImages == true) {
       if (
-        menu[i].media == true &&
+        id != menu.indexOf(menu[i]) &&
         translation == menu[i].cat &&
-        id != menu.indexOf(menu[i])
+        menu[i].media == true
       ) {
         result.innerHTML =
           result.innerHTML +
@@ -415,12 +404,12 @@ var populateCategoryGroup = function (translation) {
       }
     }
   }
-  main.setAttribute("tabindex", -1);
-  main.focus();
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
     unloading();
   }
+  main.setAttribute("tabindex", -1);
+  main.focus();
 };
 
 var reverseCategoryGroup = function (translation) {
@@ -438,7 +427,7 @@ var reverseCategoryGroup = function (translation) {
   }
   let air = document.querySelector(".air");
   for (let i = 1; i < menu.length - 1; i++) {
-    if (translation == menu[i].cat) {
+    if (category == menu[i].cat) {
       if (menu[i].media == true)
         var media = "<div class='media' style='display:none'>Images</div>";
       else var media = "<div class='blank'></div>";
@@ -455,7 +444,6 @@ var reverseCategoryGroup = function (translation) {
   }
   displayExpand(expand);
   unloading();
-  visual();
 };
 
 var filterInputResponse = function (
@@ -464,13 +452,13 @@ var filterInputResponse = function (
   filterURI,
   categoryBloat
 ) {
-  var match;
   var exact;
+  var match;
   filter = [];
   document.querySelector("#visit").style.display = "none";
   if (translations.includes(filterURI.toString().capitalize())) {
-    category = filterURI.capitalize();
     populateCategoryGroup(filterURI.capitalize());
+    category = filterURI.capitalize();
     unloading();
     return false;
   }
@@ -518,6 +506,7 @@ var filterInputResponse = function (
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
     else if (isNumeric(match) && filter.length == 1)
       xmlRequestParsing(null, null, match);
+    return false
   }
   if (categoryBloat == true && isNumeric(match))
     populateCategoryGroup(menu[match].cat);

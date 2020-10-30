@@ -20,10 +20,9 @@ var back = function () {
 };
 
 var xmlChannelFooter = function () {
-  if (document.body.contains(document.querySelector(".center"))) {
-    let center = document.querySelector(".channel");
-    center.innerHTML = center.innerHTML + footerBuild();
-  }
+  if (document.body.contains(document.querySelector(".center")))
+    document.querySelector(".channel").innerHTML =
+      document.querySelector(".channel").innerHTML + footerBuild();
 };
 
 var xmlStatusSuggestions = function () {
