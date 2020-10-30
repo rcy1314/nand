@@ -487,8 +487,8 @@ html body #container #main #visit #page #front .focus {
   white-space: nowrap;
   padding-right: 75px;
   position: relative;
-  height: 40px;
   margin: 0 auto;
+  height: 40px;
   width: 640px;
 }
 
@@ -506,12 +506,12 @@ html body #container #main #visit #page #front .focus input[type=text] {
   background-color: var(--bg-color-primary);
   height: 39.5px !important;
   border: none !important;
-  display: inline-block;
   caret-color: #e4e4e4;
   position: relative;
   border-radius: 6px;
   text-align: center;
   font-size: 14px;
+  display: none;
   outline: none;
   bottom: 15px;
   width: 100%;

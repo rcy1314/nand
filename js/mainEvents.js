@@ -1,6 +1,7 @@
 window.onload = function () {
   let guest = document.querySelector(".guest");
   guest.setAttribute("placeholder", "Search Feeds");
+  guest.style.display = 'inline-block';
   guest.style.caretColor = "#e4e4e4";
   guest.style.paddingLeft = "40px";
   guest.style.textAlign = "left";
