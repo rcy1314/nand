@@ -109,7 +109,7 @@
 
 */
 
-          let quickFeedsTranslations = false;
+          let quickFeedsTranslations = true;
 
 
 /*

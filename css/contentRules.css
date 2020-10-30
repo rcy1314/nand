@@ -160,10 +160,12 @@ html body #container #sidebar #content #basic input[type=text] {
   padding: 5px;
 }
 
-html body #container #sidebar #content #category .cat {
+html body #container #sidebar #content .cat {
   background-color: transparent !important;
-  border-bottom: .3px solid transparent;
-  border-top: .3px solid transparent;
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
   color: var(--fill-color-primary);
   letter-spacing: .5px;
   padding-bottom: 25px;
@@ -175,11 +177,11 @@ html body #container #sidebar #content #category .cat {
   height: 15px;
 }
 
-html body #container #sidebar #content #category .cat:hover {
+html body #container #sidebar #content .cat:hover {
   background-color: var(--borderless-hover-color) !important;
 }
 
-html body #container #sidebar #content #category .webp {
+html body #container #sidebar #content .webp {
   filter: var(--hue-rotate);
   position: relative;
   margin-top: -40px;
@@ -190,10 +192,12 @@ html body #container #sidebar #content #category .webp {
   right: 10px;
 }
 
-html body #container #sidebar #content #select .sel {
+html body #container #sidebar #content .sel {
   background-color: transparent !important;
-  border-bottom: .3px solid transparent;
-  border-top: .3px solid transparent;
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
   color: var(--fill-color-primary);
   overflow: hidden;
   font-size: 12px;
@@ -201,7 +205,7 @@ html body #container #sidebar #content #select .sel {
   height: 15px;
 }
 
-html body #container #sidebar #content #select .fa {
+html body #container #sidebar #content .fa {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -22px;

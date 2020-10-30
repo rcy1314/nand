@@ -99,17 +99,15 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    document.querySelector(".sideFilter").style.display = "block";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
-    document.querySelector("#basic").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
-    let category = document.querySelector("#category");
-    let select = document.querySelector("#select");
+    let category = document.querySelector("#content");
+    let select = document.querySelector("#content");
     if (!document.body.contains(document.querySelector(".cat"))) {
       for (i = 0; i <= translations.length - 1; i++) {
-        category.innerHTML =
-          category.innerHTML + sideBarCategoryBuild(translations[i]);
+        category.innerHTML = sideBarCategoryBuild(translations[i]) +
+          category.innerHTML;
       }
       for (i = 0; i <= selections.length - 1; i++) {
         select.innerHTML =
@@ -120,6 +118,15 @@ var sideBarDisplay = function (toggleOption) {
             selections[i].icon
           );
       }
+      content.innerHTML = content.innerHTML +
+      `<div id='basic'>
+        <form class='filter' action='#'>
+          <input type='text' class='sideFilter' placeholder='filter'>
+        </form>
+       </div>
+      `
+      document.querySelector(".sideFilter").style.display = "block";
+      document.querySelector("#basic").style.display = "block";
     }
     if (document.querySelector('#main').clientWidth >= 769) {
       document.querySelector("#top").style.width = "calc(100% - 256px)";
@@ -228,10 +235,10 @@ var quickFeedAsset = function (feedAssets) {
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
+        menu[randomMenuObject] &&
         !duplicate.includes(randomMenuObject) &&
         menu[randomMenuObject].media == true &&
-        randomMenuObject != 0 &&
-        menu[randomMenuObject]
+        randomMenuObject != 0
       ) {
         duplicate.push(randomMenuObject);
         feed.innerHTML =
@@ -274,11 +281,10 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       menu[Math.floor(Math.random() * menu.length - 1)]
     );
     if (
+      menu[randomMenuObject] &&
       menu[randomMenuObject].media == true &&
-      !suggest.includes(randomMenuObject) &&
-      menu[randomMenuObject]
+      !suggest.includes(randomMenuObject)
     )
-      ready(() => {
         if (suggest.length >= suggestionBuffer) return false;
         listing.innerHTML += listingIndexBuild(
           menu[randomMenuObject].id.match(/[^\/]+$/g),
@@ -289,7 +295,6 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
           i
         );
         suggest.push(randomMenuObject);
-      });
     setTimeout(500);
   }
 };
