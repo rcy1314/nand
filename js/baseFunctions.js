@@ -118,14 +118,6 @@ var sideBarDisplay = function (toggleOption) {
             selections[i].icon
           );
       }
-      content.innerHTML =
-        content.innerHTML +
-        `<div id='basic'>
-        <form class='filter' action='#'>
-          <input type='text' class='sideFilter' placeholder='filter'>
-        </form>
-       </div>
-      `;
       document.querySelector(".sideFilter").style.display = "block";
       document.querySelector("#basic").style.display = "block";
     }
