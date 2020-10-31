@@ -232,7 +232,9 @@ document.addEventListener(
       document.querySelector("#guide").style.display = "none";
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
-      sideBarDisplay(guideOnScreen);
+      onScreen = guideOnScreen
+      if (document.querySelector('#main').clientWidth >= 426)
+        sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains("bottom")) {

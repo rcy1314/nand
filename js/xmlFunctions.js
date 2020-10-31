@@ -374,7 +374,7 @@ var xmlImageAttributes = function (empty, n, item, src) {
       newImg.onload = function () {
         if (
           document.body.contains(
-            document.querySelector(".item-" + n + " .src-" + item)
+            document.querySelector(".img-" + item + " .post")
           )
         ) {
           let itemImage = document.querySelector(
