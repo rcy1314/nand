@@ -248,7 +248,7 @@ html body #container #guide .checkmark {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  display: none;
+  display: block;
   stroke-width: 2;
   stroke: #fff;
   margin: 10px;
