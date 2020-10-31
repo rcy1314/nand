@@ -275,8 +275,6 @@ document.addEventListener(
       event.target.classList.contains("bold")
     ) {
       init();
-      if (document.body.contains(document.getElementById("feed")));
-        document.querySelector("#feed").remove();
       xmlRequestParsing(
         null,
         null,
