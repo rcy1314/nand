@@ -12,7 +12,13 @@ ready(() => {
 var loadStyles = function () {
   let directory = "css/";
   let extension = ".css";
-  let files = ["animationRules", "classRules", "mediaRules", "fontIcons"];
+  let files = [
+    "animationRules",
+    "contentRules",
+    "classRules",
+    "mediaRules",
+    "fontIcons"
+  ];
   for (var file of files) {
     let path = directory + file + extension;
     let script = document.createElement("link");

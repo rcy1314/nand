@@ -380,7 +380,7 @@ html body #container #main #group {
 html body #container #main #visit {
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
   height: 100%;
 }
 
@@ -510,12 +510,12 @@ html body #container #main #visit #page #front .focus input[type=text] {
   background-color: var(--bg-color-primary);
   height: 39.5px !important;
   border: none !important;
+  display: inline-block;
   caret-color: #e4e4e4;
   position: relative;
   border-radius: 6px;
   text-align: center;
   font-size: 14px;
-  display: none;
   outline: none;
   bottom: 15px;
   width: 100%;
