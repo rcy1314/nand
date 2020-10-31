@@ -531,7 +531,7 @@ html body #container #main #top #arm #search #input .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
-  left: 80px;
+  left: 75px;
   z-index: 2;
   top: 9px;
 }
@@ -717,7 +717,7 @@ html body #container #main #top #arm #search #input input[type=text] {
   border: none !important;
   text-align: center;
   border-radius: 2px;
-  padding-left: 15px;
+  padding-left: 10px;
   font-size: 14px;
   color: #aaaaaa;
   outline: none;
