@@ -308,6 +308,8 @@ var progressBackDrop = function (done, percent) {
     progressBar.style.width = percent + "%";
     if (document.body.contains(document.getElementById("feed")))
       document.querySelector("#feed").style.display = "block";
+      if (document.body.contains(document.getElementById("group")))
+        document.querySelector("#group").style.display = "block";
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector("#main").scrollTop = document.querySelector(
@@ -316,8 +318,6 @@ var progressBackDrop = function (done, percent) {
     } else if (onlyImages == true)
       if (document.body.contains(document.querySelector(".result")))
         document.querySelector("#main").scrollTop = 0;
-    if (document.body.contains(document.getElementById("group")))
-      document.querySelector("#group").style.display = "block";
     if (document.body.contains(document.querySelector("#feed .channel")))
       if (reader == true && first == true) {
         if (

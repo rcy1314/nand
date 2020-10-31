@@ -100,8 +100,11 @@ document.addEventListener(
       unloading();
     }
     if (
+      event.target.classList.contains("picture") ||
       event.target.classList.contains("header") ||
       event.target.classList.contains("feed") ||
+      event.target.classList.contains("post") ||
+      event.target.classList.contains("site") ||
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel") ||
       event.target.id == "container" ||
