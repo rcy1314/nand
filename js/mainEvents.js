@@ -22,7 +22,6 @@ window.onload = function () {
     sideBarFirst = true;
     sideBarDisplay(onScreen);
   }
-  document.querySelector('#visit').style.display = 'flex';
 };
 window.addEventListener(
   "resize",

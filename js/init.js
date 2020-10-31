@@ -1,7 +1,7 @@
 if (
   !location.search.split("?q=")[1] &&
-  location.href.split("?")[1] &&
-  !location.href.match("\\?\\#")
+  !location.href.match("\\?\\#") &&
+  location.href.split("?")[1]
 ) {
   var uri = location.href.split("?")[1];
   if (location.href.match("\\+1")) {
@@ -51,4 +51,5 @@ if (
     filterInputResponse(true, false, uri[0], false);
   else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
   else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-}
+} else if (!location.href.match("\\?") || location.href.match("\\?\\#"))
+  document.querySelector('#visit').style.display = "flex"
