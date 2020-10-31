@@ -25,7 +25,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--hover-background-color",
-      "#0a0a0a"
+      "rgba(10, 10, 10, .4)"
     );
     document.documentElement.style.setProperty(
       "--not-hover-border-color",
@@ -76,10 +76,9 @@ var visual = function (toggleOption) {
     document
       .querySelector("#favicon")
       .setAttribute("href", "images/Opposite.ico");
-    document.querySelector("#visit").style.backgroundColor =
-      "var(--bg-color-primary)";
-    document.querySelector("#container").style.backgroundColor =
-      "var(--bg-color-primary)";
+    document.querySelectorAll("#visit, #container, #sidebar, #hide")
+      .forEach(
+        (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
   } else if (op == 0) {
     document.documentElement.style.setProperty(
       "--box-shadow",
@@ -104,7 +103,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--hover-background-color",
-      "#f6f8fa"
+      "rgba(246, 248, 250, .3)"
     );
     document.documentElement.style.setProperty(
       "--not-hover-border-color",
@@ -158,9 +157,11 @@ var visual = function (toggleOption) {
       .querySelector("#sidebar #content")
       .classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-    document.querySelector("#visit").style.backgroundColor =
-      "var(--bg-color-secondary)";
-    document.querySelector("#container").style.backgroundColor =
-      "var(--bg-color-secondary)";
+    document.querySelectorAll("#container, #visit")
+      .forEach(
+        (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
+    document.querySelectorAll("#sidebar, #hide")
+      .forEach(
+        (a) => (a.style.backgroundColor = "var(--progress-background)"))
   }
 };

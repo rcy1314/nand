@@ -15,12 +15,13 @@ document.addEventListener(
       event.target.style.borderImageSlice = "9";
       event.target.style.borderStyle = "solid";
       if (
+        event.target != document.querySelector(".sideFilter") &&
         document.body.contains(
           event.target.nextElementSibling.nextElementSibling
         )
       ) {
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.25) " +
+          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.15) " +
           parseInt(p) +
           "%,rgba(147,147,147,0) 100%)";
         event.target.nextElementSibling.nextElementSibling.style.borderWidth =
@@ -35,7 +36,7 @@ document.addEventListener(
         event.target != document.querySelector(".sel:first-child")
       ) {
         event.target.previousElementSibling.previousElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.25) " +
+          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.15) " +
           parseInt(p) +
           "%,rgba(147,147,147,0) 100%)";
         event.target.previousElementSibling.previousElementSibling.style.borderWidth =

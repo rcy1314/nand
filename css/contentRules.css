@@ -95,8 +95,7 @@ html body #container #toggle {
 }
 
 html body #container #sidebar {
-  background-color: var(--bg-color-primary);
-  box-shadow: var(--box-shadow);
+  border-right: var(--hover-border-color);
   position: fixed;
   display: block;
   height: 100%;
@@ -178,7 +177,8 @@ html body #container #sidebar #content .cat {
 }
 
 html body #container #sidebar #content .cat:hover {
-  background-color: var(--borderless-hover-color) !important;
+  background-color: var(--hover-background-color) !important;
+  box-shadow: var(--box-shadow) !important;
 }
 
 html body #container #sidebar #content .webp {
@@ -203,6 +203,11 @@ html body #container #sidebar #content .sel {
   font-size: 12px;
   padding: 10px;
   height: 15px;
+}
+
+html body #container #sidebar #content .sel:hover {
+  background-color: var(--hover-background-color) !important;
+  box-shadow: var(--box-shadow) !important;
 }
 
 html body #container #sidebar #content .fa {
