@@ -1,5 +1,6 @@
 if (
   !location.search.split("?q=")[1] &&
+  !location.href.match("\\?\\+1") &&
   !location.href.match("\\?\\#") &&
   location.href.split("?")[1]
 ) {
@@ -22,8 +23,8 @@ if (
     let i = menu.findIndex((item) => item.hash === id);
 
     if (!i === -1) {
-      document.querySelector("#visit").style.visibility = "visible";
       document.querySelector("#toggle").style.display = "block";
+      document.querySelector('#visit').style.display = "flex"
     } else {
       init();
       guideOnScreen = onScreen;
@@ -33,7 +34,8 @@ if (
       document.querySelector("#top").style.display = "none";
     }
   }
-} else if (location.href.match("\\+1")) {
+} else if (location.href.match("\\?\\+1")) {
+  document.querySelector('#visit').style.display = "flex"
   contrast = contrast != true;
   op = op != true;
 } else if (location.search.split("?q=")[1]) {
@@ -51,5 +53,5 @@ if (
     filterInputResponse(true, false, uri[0], false);
   else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
   else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-} else if (!location.href.match("\\?") || location.href.match("\\?\\#"))
+} else if (!location.href.match("\\?"))
   document.querySelector('#visit').style.display = "flex"

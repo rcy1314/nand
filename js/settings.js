@@ -226,9 +226,9 @@ const translations = [
 
 /* Feel free to edit the above. */
 
+let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
-let post = -1; //from init.js global timestamp for guide
 let complete; //coreHelpers.js interval for progress
 let dupe = []; //image src duplicate catch
 let httpRequest; //uri xml httpRequest
