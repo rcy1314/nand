@@ -100,20 +100,6 @@ document.addEventListener(
       unloading();
     }
     if (
-      !document
-        .querySelectorAll(".attribute")
-        .forEach((a) => (a.style.display = "none"))
-    ) {
-      document
-        .querySelectorAll(".attribute")
-        .forEach((a) => (a.style.display = "none"));
-      var attr = document.querySelectorAll(".fa-ellipsis-v");
-      for (i = 0; i < attr.length; i++) {
-        attr[i].classList.remove("fa-ellipsis-v");
-        attr[i].classList.add("fa-ellipsis-h");
-      }
-    }
-    if (
       event.target.classList.contains("header") ||
       event.target.classList.contains("feed") ||
       event.target.classList.contains("cat") ||
@@ -132,14 +118,18 @@ document.addEventListener(
       event.target.classList.contains("fa")
     ) {
       if (
-        document.body.contains(document.querySelector(".attribute")) &&
-        document.querySelector(".attribute").style.display === "block"
+        !document
+          .querySelectorAll(".attribute")
+          .forEach((a) => (a.style.display = "none"))
       ) {
-        event.target
-          .closest(".fa-ellipsis-v")
-          .classList.remove(".fa-ellipsis-v");
-        event.target.closest(".fa-ellipsis-v").classList.add(".fa-ellipsis-h");
-        document.querySelector(".attribute").style.display = "none";
+        document
+          .querySelectorAll(".attribute")
+          .forEach((a) => (a.style.display = "none"));
+        var attr = document.querySelectorAll(".fa-ellipsis-v");
+        for (i = 0; i < attr.length; i++) {
+          attr[i].classList.remove("fa-ellipsis-v");
+          attr[i].classList.add("fa-ellipsis-h");
+        }
       }
       if (document.querySelector("#match").style.display === "block") {
         document.querySelector("#input .icon").classList.remove("slide");
