@@ -102,25 +102,8 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
-    let category = document.querySelector("#content");
-    let select = document.querySelector("#content");
-    if (!document.body.contains(document.querySelector(".cat"))) {
-      for (i = 0; i <= translations.length - 1; i++) {
-        category.innerHTML =
-          sideBarCategoryBuild(translations[i]) + category.innerHTML;
-      }
-      for (i = 0; i <= selections.length - 1; i++) {
-        select.innerHTML =
-          select.innerHTML +
-          sideBarOptionBuild(
-            selections[i].class,
-            selections[i].name,
-            selections[i].icon
-          );
-      }
-      document.querySelector(".sideFilter").style.display = "block";
-      document.querySelector("#basic").style.display = "block";
-    }
+    document.querySelector(".sideFilter").style.display = "block";
+    document.querySelector("#basic").style.display = "block";
     if (document.querySelector("#main").clientWidth >= 769) {
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
@@ -142,7 +125,22 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#main").style.left = "0";
   }
-  visual();
+  let content = document.querySelector("#content");
+  if (!document.body.contains(document.querySelector(".cat"))) {
+    for (i = 0; i <= translations.length - 1; i++) {
+      content.innerHTML =
+        sideBarCategoryBuild(translations[i]) + content.innerHTML;
+    }
+    for (i = 0; i <= selections.length - 1; i++) {
+      content.innerHTML =
+        content.innerHTML +
+        sideBarOptionBuild(
+          selections[i].class,
+          selections[i].name,
+          selections[i].icon
+        );
+    };
+  };
 };
 
 var topMenuBarDisplay = function (toggleOption) {

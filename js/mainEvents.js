@@ -15,7 +15,8 @@ window.onload = function () {
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
   visual();
-  if (document.querySelector("#main").clientWidth <= 768) {
+  if (isNumeric(post)) sideBarDisplay(false)
+  else if (document.querySelector("#main").clientWidth <= 768) {
     onScreen = false;
     sideBarDisplay(false);
   } else {
