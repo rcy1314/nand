@@ -910,6 +910,7 @@ html body #container #main #feed .center .item .pending {
 }
 
 html body #container #guide .sticky {
+  box-shadow: var(--box-shadow);
   align-items: center;
   position: relative;
   display: block;
