@@ -195,7 +195,6 @@ var guideDisplayYoutube = function (pubArray) {
   var guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
   document.querySelector("#top").style.display = "hide";
-  guide.querySelector(".checkmark").style.display = "block";
   guide.innerHTML = guideBuildYoutube(pubArray);
   guide.style.display = "flex";
 };

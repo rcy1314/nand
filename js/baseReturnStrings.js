@@ -257,8 +257,7 @@ var guideBuildYoutube = function (pubArray) {
        <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
      </svg>
      <div class='blur'></div>
-     <div class='sticky item yt'
-      style='width:65vw'>
+     <div class='sticky item yt'>
        <div class='fill'></div>
        <div id='yt' class='item-${pubArray[0].id} src'
        item='${pubArray[0].id}'
