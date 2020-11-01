@@ -319,9 +319,9 @@ document.addEventListener(
               sticky.push({
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
-                element: event.target.closest(".item").getAttribute("item"),
+                  element: event.target.closest(".item").getAttribute("aria-item"),
                 image: menu[
-                  event.target.closest(".item").getAttribute("item")
+                  event.target.closest(".item").getAttribute("aria-item")
                 ].img.image(),
                 title: event.target
                   .closest(".item")
@@ -335,7 +335,7 @@ document.addEventListener(
                 src: event.target.closest(".item").querySelector(".source")
                   .value,
                 re: event.target.closest(".item").getAttribute("ext"),
-                id: event.target.closest(".item").getAttribute("item"),
+                id: event.target.closest(".item").getAttribute("aria-item"),
               });
               guideDisplay(sticky);
             } else if (event.target.classList.contains("guide"))

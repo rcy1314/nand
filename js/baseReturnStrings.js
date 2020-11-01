@@ -44,12 +44,12 @@ var guideBuild = function (pubArray) {
      <div class='blur'></div>
      <div class='sticky item'>
        <div class='fill'></div>
-       <div class='item-${pubArray[0].id} item src' item='${pubArray[0].id}'
+       <div class='item src' aria-item='${pubArray[0].id}'
        ext='${pubArray[0].re}'>
          <div class='image'>
            <div class='fa fa-heart'></div>
            <img id='${pubArray[0].element}'
-        class='img guide src-${pubArray[0].element}'>
+        class='img guide'>
          </div>
        </div>
        <div class='wrap item' ext='${pubArray[0].re}'>
@@ -259,8 +259,8 @@ var guideBuildYoutube = function (pubArray) {
      <div class='blur'></div>
      <div class='sticky item yt'>
        <div class='fill'></div>
-       <div id='yt' class='item-${pubArray[0].id} src'
-       item='${pubArray[0].id}'
+       <div id='yt' class='src'
+       aria-item='${pubArray[0].id}'
        ext='${pubArray[0].re}'
        style='width:60vw'>
        <div class='yt'>
@@ -318,10 +318,11 @@ var youtubeHTMLBuild = function (
   titleTruncate,
   titleMore,
   videoSource,
+  pubIndex,
   menuIndex
 ) {
   return `
-     <div id='yt' class='item'
+     <div id='yt' class='item' aria-item='${menuIndex}' aria-post='${pubIndex}'
       ext='${externalURL}'>
        <div class='header'>
      <div class='courtesy' style='float:left'>
@@ -380,9 +381,9 @@ var xmlHTMLBuild = function (
   menuIndex
 ) {
   return `
-     <div class='item img-${pubIndex}
-      item-${menuIndex}'
-      item='${menuIndex}'
+     <div class='item'
+      aria-item='${menuIndex}'
+      aria-post='${pubIndex}'
        ext='${externalURI}'>
        <div class='header'>
     ${courtesyHeader}
@@ -391,9 +392,7 @@ var xmlHTMLBuild = function (
        <div class='pending'><div class='loader double-circle'></div></div>
          <div class='image'>
            <div class='fa fa-heart'></div>
-           <img id='${pubIndex}'
-        class='src-${pubIndex}
-      img' style='display:none'>
+           <img id='${pubIndex}' class='img' style='display:none'>
          </div>
          <div class='wrap'>
            <div class='pub' text='${title}'>

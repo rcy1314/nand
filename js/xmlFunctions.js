@@ -333,17 +333,17 @@ var xmlImageAttributes = function (empty, n, item, src) {
     if (dupe.includes(src)) {
       if (
         document.body.contains(
-          document.querySelector(".img-" + item + " .pending")
+          document.querySelector("[aria-post='" + item + "'] .pending")
         )
       )
-        document.querySelector(".img-" + item + " .pending").remove();
+        document.querySelector("[aria-post='" + item + "'] .pending").remove();
       if (
         empty == true ||
         (onlyImages == true &&
-          document.querySelector(".item-" + n + " .src-" + item))
+          document.querySelector("[aria-post='" + item + "']"))
       )
         document
-          .querySelector(".item-" + n + " .src-" + item)
+          .querySelector("[aria-post='" + item + "']")
           .closest(".item")
           .remove();
       return false;
@@ -359,34 +359,35 @@ var xmlImageAttributes = function (empty, n, item, src) {
       newImg.onerror = function () {
         if (
           document.body.contains(
-            document.querySelector(".img-" + item + " .pending")
+            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending")
           )
         )
-          document.querySelector(".img-" + item + " .pending").remove();
+          document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending").remove();
         if (
           document.body.contains(
-            document.querySelector(".img-" + item + " .image")
+            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .image")
           )
         )
-          document.querySelector(".img-" + item + " .image").remove();
-        document.querySelector(".img-" + item).style.paddingBottom = "30px";
+          document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .image").remove();
+        document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
+        .style.paddingBottom = "30px";
       };
       newImg.onload = function () {
         if (
           document.body.contains(
-            document.querySelector(".img-" + item + " .post")
+            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .img")
           )
         ) {
           let itemImage = document.querySelector(
-            ".item-" + n + " .src-" + item
+            "[aria-item='" + n + "'][aria-post='" + item + "'] .img"
           );
           let attribute = document.querySelector(
-            ".img-" + item + " .attribute"
+            "[aria-item='" + n + "'][aria-post='" + item + "'] .attribute"
           );
           let copyPicture = document.querySelector(
-            ".img-" + item + " .picture"
+            "[aria-item='" + n + "'][aria-post='" + item + "'] .picture"
           );
-          let copyPost = document.querySelector(".img-" + item + " .post");
+          let copyPost = document.querySelector("[aria-post='" + item + "'] .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
             if (
@@ -449,27 +450,27 @@ var xmlImageAttributes = function (empty, n, item, src) {
           }
           if (
             document.body.contains(
-              document.querySelector(".img-" + item + " .pending")
+              document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending")
             )
           )
-            document.querySelector(".img-" + item + " .pending").remove();
+            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending").remove();
           if (
             document.body.contains(
-              document.querySelector(".item-" + n + " .src-" + item)
+              document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .img")
             )
           )
             document.querySelector(
-              ".item-" + n + " .src-" + item
+              "[aria-item='" + n + "'][aria-post='" + item + "'] .img"
             ).style.display = "block";
         }
       };
     } else if (
       document.body.contains(
-        document.querySelector(".item-" + n + " .src-" + item)
+        document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
       )
     )
       document
-        .querySelector(".item-" + n + " .src-" + item)
+        .querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
         .closest(".item")
         .querySelector(".pending")
         .remove();
@@ -492,9 +493,9 @@ var xmlTitleParsing = function (xhr) {
 
 var xmlRequestParsing = function (search, string, index) {
   let local;
+  dupe = []
   id = index;
   let pub = [];
-
   if (search == "search") {
     uri = cors + menu[index].uri + string + "&format=RSS";
     category = category;
@@ -577,6 +578,7 @@ var xmlRequestParsing = function (search, string, index) {
               trun,
               more,
               src,
+              i,
               index
             );
           } else {
