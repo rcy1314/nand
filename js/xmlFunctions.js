@@ -326,24 +326,26 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   return parse[0];
 };
 
-var xmlImageAttributes = function (empty, n, item, src) {
+var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 799;
   let k = 5420;
   ready(() => {
     if (dupe.includes(src)) {
       if (
         document.body.contains(
-          document.querySelector("[aria-item='" + item + "'] .pending")
+          document.querySelector("[aria-item='" + pubIndex + "'] .pending")
         )
       )
-        document.querySelector("[aria-item='" + item + "'] .pending").remove();
+        document
+          .querySelector("[aria-item='" + pubIndex + "'] .pending")
+          .remove();
       if (
         empty == true ||
         (onlyImages == true &&
-          document.querySelector("[aria-item='" + item + "']"))
+          document.querySelector("[aria-item='" + pubIndex + "']"))
       )
         document
-          .querySelector("[aria-item='" + item + "']")
+          .querySelector("[aria-item='" + pubIndex + "']")
           .closest(".item")
           .remove();
       return false;
@@ -359,35 +361,72 @@ var xmlImageAttributes = function (empty, n, item, src) {
       newImg.onerror = function () {
         if (
           document.body.contains(
-            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending")
+            document.querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .pending"
+            )
           )
         )
-          document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending").remove();
+          document
+            .querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .pending"
+            )
+            .remove();
         if (
           document.body.contains(
-            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .image")
+            document.querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .image"
+            )
           )
         )
-          document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .image").remove();
-        document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
-        .style.paddingBottom = "30px";
+          document
+            .querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .image"
+            )
+            .remove();
+        document.querySelector(
+          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
+        ).style.paddingBottom = "30px";
       };
       newImg.onload = function () {
         if (
           document.body.contains(
-            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .img")
+            document.querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .img"
+            )
           )
         ) {
           let itemImage = document.querySelector(
-            "[aria-object='" + n + "'][aria-item='" + item + "'] .img"
+            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .img"
           );
           let attribute = document.querySelector(
-            "[aria-object='" + n + "'][aria-item='" + item + "'] .attribute"
+            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .attribute"
           );
           let copyPicture = document.querySelector(
-            "[aria-object='" + n + "'][aria-item='" + item + "'] .picture"
+            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .picture"
           );
-          let copyPost = document.querySelector("[aria-item='" + item + "'] .post");
+          let copyPost = document.querySelector(
+            "[aria-item='" + pubIndex + "'] .post"
+          );
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
             if (
@@ -450,33 +489,62 @@ var xmlImageAttributes = function (empty, n, item, src) {
           }
           if (
             document.body.contains(
-              document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending")
+              document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .pending"
+              )
             )
           )
-            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending").remove();
+            document
+              .querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .pending"
+              )
+              .remove();
           if (
             document.body.contains(
-              document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .img")
+              document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .img"
+              )
             )
           )
-            document.querySelector(
-              "[aria-object='" + n + "'][aria-item='" + item + "'] .img"
-            ).style.display = "block";
+          document.querySelector(
+            "[aria-object='" +
+              menuObject +
+              "'][aria-item='" +
+              pubIndex +
+              "'] .img"
+          ).style.display = "block";
         }
       };
     } else if (
       document.body.contains(
-        document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
+        document.querySelector(
+          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
+        )
       )
     )
       document
-        .querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
+        .querySelector(
+          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
+        )
         .closest(".item")
         .querySelector(".pending")
         .remove();
     visual();
   });
 };
+
 
 var xmlTitleParsing = function (xhr) {
   if (xhr.getElementsByTagName("title")[0].childNodes[1])
