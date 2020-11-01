@@ -333,17 +333,17 @@ var xmlImageAttributes = function (empty, n, item, src) {
     if (dupe.includes(src)) {
       if (
         document.body.contains(
-          document.querySelector("[aria-post='" + item + "'] .pending")
+          document.querySelector("[aria-item='" + item + "'] .pending")
         )
       )
-        document.querySelector("[aria-post='" + item + "'] .pending").remove();
+        document.querySelector("[aria-item='" + item + "'] .pending").remove();
       if (
         empty == true ||
         (onlyImages == true &&
-          document.querySelector("[aria-post='" + item + "']"))
+          document.querySelector("[aria-item='" + item + "']"))
       )
         document
-          .querySelector("[aria-post='" + item + "']")
+          .querySelector("[aria-item='" + item + "']")
           .closest(".item")
           .remove();
       return false;
@@ -359,35 +359,35 @@ var xmlImageAttributes = function (empty, n, item, src) {
       newImg.onerror = function () {
         if (
           document.body.contains(
-            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending")
+            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending")
           )
         )
-          document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending").remove();
+          document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending").remove();
         if (
           document.body.contains(
-            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .image")
+            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .image")
           )
         )
-          document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .image").remove();
-        document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
+          document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .image").remove();
+        document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
         .style.paddingBottom = "30px";
       };
       newImg.onload = function () {
         if (
           document.body.contains(
-            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .img")
+            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .img")
           )
         ) {
           let itemImage = document.querySelector(
-            "[aria-item='" + n + "'][aria-post='" + item + "'] .img"
+            "[aria-object='" + n + "'][aria-item='" + item + "'] .img"
           );
           let attribute = document.querySelector(
-            "[aria-item='" + n + "'][aria-post='" + item + "'] .attribute"
+            "[aria-object='" + n + "'][aria-item='" + item + "'] .attribute"
           );
           let copyPicture = document.querySelector(
-            "[aria-item='" + n + "'][aria-post='" + item + "'] .picture"
+            "[aria-object='" + n + "'][aria-item='" + item + "'] .picture"
           );
-          let copyPost = document.querySelector("[aria-post='" + item + "'] .post");
+          let copyPost = document.querySelector("[aria-item='" + item + "'] .post");
           itemImage.setAttribute("src", src);
           if (document.querySelector("#main").clientWidth <= 425) {
             if (
@@ -450,27 +450,27 @@ var xmlImageAttributes = function (empty, n, item, src) {
           }
           if (
             document.body.contains(
-              document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending")
+              document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending")
             )
           )
-            document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .pending").remove();
+            document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .pending").remove();
           if (
             document.body.contains(
-              document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "'] .img")
+              document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "'] .img")
             )
           )
             document.querySelector(
-              "[aria-item='" + n + "'][aria-post='" + item + "'] .img"
+              "[aria-object='" + n + "'][aria-item='" + item + "'] .img"
             ).style.display = "block";
         }
       };
     } else if (
       document.body.contains(
-        document.querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
+        document.querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
       )
     )
       document
-        .querySelector("[aria-item='" + n + "'][aria-post='" + item + "']")
+        .querySelector("[aria-object='" + n + "'][aria-item='" + item + "']")
         .closest(".item")
         .querySelector(".pending")
         .remove();

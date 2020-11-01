@@ -322,7 +322,7 @@ var youtubeHTMLBuild = function (
   menuIndex
 ) {
   return `
-     <div id='yt' class='item' aria-item='${menuIndex}' aria-post='${pubIndex}'
+     <div id='yt' class='item' aria-object='${menuIndex}' aria-item='${pubIndex}'
       ext='${externalURL}'>
        <div class='header'>
      <div class='courtesy' style='float:left'>
@@ -382,8 +382,8 @@ var xmlHTMLBuild = function (
 ) {
   return `
      <div class='item'
-      aria-item='${menuIndex}'
-      aria-post='${pubIndex}'
+      aria-object='${menuIndex}'
+      aria-item='${pubIndex}'
        ext='${externalURI}'>
        <div class='header'>
     ${courtesyHeader}
