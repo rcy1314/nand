@@ -85,6 +85,30 @@ var displayExpand = function (toggleOption) {
 };
 
 var sideBarDisplay = function (toggleOption) {
+  let content = document.querySelector("#content");
+  if (!document.body.contains(document.querySelector(".cat"))) {
+    for (i = 0; i <= translations.length - 1; i++) {
+      content.innerHTML =
+        sideBarCategoryBuild(translations[i]) + content.innerHTML;
+    }
+    for (i = 0; i <= selections.length - 1; i++) {
+      content.innerHTML =
+        content.innerHTML +
+        sideBarOptionBuild(
+          selections[i].class,
+          selections[i].name,
+          selections[i].icon
+        );
+    };
+    content.innerHTML = content.innerHTML +
+    `
+    <div id='basic'>
+      <form class='filter' action='#'>
+        <input type='text' class='sideFilter' placeholder='filter'>
+      </form>
+    </div>
+    `
+  };
   if (toggleOption == true) {
     let Elem = document.querySelector("#sidebar");
     Elem.style.position = "fixed";
@@ -127,30 +151,6 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#main").style.left = "0";
   }
-  let content = document.querySelector("#content");
-  if (!document.body.contains(document.querySelector(".cat"))) {
-    for (i = 0; i <= translations.length - 1; i++) {
-      content.innerHTML =
-        sideBarCategoryBuild(translations[i]) + content.innerHTML;
-    }
-    for (i = 0; i <= selections.length - 1; i++) {
-      content.innerHTML =
-        content.innerHTML +
-        sideBarOptionBuild(
-          selections[i].class,
-          selections[i].name,
-          selections[i].icon
-        );
-    };
-    content.innerHTML = content.innerHTML +
-    `
-    <div id='basic'>
-      <form class='filter' action='#'>
-        <input type='text' class='sideFilter' placeholder='filter'>
-      </form>
-    </div>
-    `
-  };
 };
 
 var topMenuBarDisplay = function (toggleOption) {
@@ -196,6 +196,7 @@ var guideDisplay = function (pubArray) {
   document.querySelector("#top").style.display = "hide";
   guide.innerHTML = guideBuild(pubArray);
   guideImageAttributes(pubArray[0].src);
+  guide.querySelector('.sticky').style.display = "none"
   guide.style.display = "flex";
 };
 
@@ -568,6 +569,7 @@ var guideImageAttributes = function (src) {
         guide.querySelector(".img").style.maxHeight = "70vh";
       }
     }
+    guide.querySelector('.sticky').style.display = "block"
     guide.style.display = "flex";
   };
 };
