@@ -245,8 +245,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
     parse.push({
       since: since,
       dst: dst[0],
-      gen: gen,
-      re: re.trim(),
+      base36: gen,
+      externalURI: re.trim(),
     });
   } else {
     if (dateTime.getElementsByTagName("datetime").length > 0) {
@@ -276,8 +276,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        gen: gen,
-        re: re.trim(),
+        base36: gen,
+        externalURI: re.trim(),
       });
     } else if (dateTime.getElementsByTagName("pubDate").length > 0) {
       let re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
@@ -299,8 +299,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        gen: gen,
-        re: re.trim(),
+        base36: gen,
+        externalURI: re.trim(),
       });
     } else if (dateTime.getElementsByTagName("dc:date").length > 0) {
       let re = dateTime.getElementsByTagName("dc:date")[0].childNodes[0]
@@ -318,8 +318,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        gen: gen,
-        re: re.trim(),
+        base36: gen,
+        externalURI: re.trim(),
       });
     } else parse.push("");
   }
@@ -607,7 +607,7 @@ var xmlRequestParsing = function (search, string, index) {
           parse = xmlTimeStampParsing(channel, data);
 
           let share = menu[index].hash;
-          share = window.location.origin + "/?" + share + parse.gen;
+          share = window.location.origin + "/?" + share + parse.base36;
 
           let src = xmlImageSource(data);
 
@@ -622,7 +622,7 @@ var xmlRequestParsing = function (search, string, index) {
           else var more = "";
 
           if (search == "search")
-            var cat = "<div class='external'>" + parse.re + "</div>";
+            var cat = "<div class='external'>" + parse.externalURI + "</div>";
 
           if (src && src.match(/youtube\.com/g)) {
             if (data.getElementsByTagName("media:statistics").length > 0)
@@ -642,7 +642,7 @@ var xmlRequestParsing = function (search, string, index) {
               image: menu[index].image.image(),
               dst: parse.dst,
               courtesy: courtesy,
-              externalURI: parse.re,
+              externalURI: parse.externalURI,
               share: share,
               title: title,
               views: views,
@@ -658,7 +658,7 @@ var xmlRequestParsing = function (search, string, index) {
             var inline = []
             inline.push({
               dst: parse.dst,
-              externalURI: parse.re,
+              externalURI: parse.externalURI,
               courtesy: courtesy,
               title: title,
               share: share,
@@ -677,8 +677,8 @@ var xmlRequestParsing = function (search, string, index) {
             courtesy: courtesy,
             since: parse.since,
             dst: parse.dst,
-            gen: parse.gen,
-            re: parse.re,
+            gen: parse.base36,
+            re: parse.externalURI,
             share: share,
             more: more,
             element: i,
