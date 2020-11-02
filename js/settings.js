@@ -236,7 +236,6 @@ let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
 let first = true; //reader append feed center channel
 let expand = true; //filter populate list display
-let reader = false;
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let randomDuplicate = []; //core.js random duplicate xml
