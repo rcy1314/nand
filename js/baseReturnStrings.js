@@ -307,29 +307,18 @@ var guideBuildYoutube = function (pubArray) {
     `;
 };
 
-var youtubeHTMLBuild = function (
-  title,
-  objectImage,
-  dateTime,
-  courtesyHeader,
-  externalURL,
-  share,
-  views,
-  titleTruncate,
-  titleMore,
-  videoSource,
-  pubIndex,
-  menuIndex
-) {
+
+var youtubeHTMLBuild = function (htmlArray) {
   return `
-     <div id='yt' class='item' aria-object='${menuIndex}' aria-item='${pubIndex}'
-      ext='${externalURL}'>
+     <div id='yt' class='item' aria-object='${htmlArray.menuObject}'
+     aria-item='${htmlArray.pubIndex}'
+      ext='$htmlArray.{externalURL}'>
        <div class='header'>
      <div class='courtesy' style='float:left'>
-       <img src='${objectImage}'>
-       <a ext='${externalURL}'>
+       <img src='${htmlArray.image}'>
+       <a ext='${htmlArray.externalURI}'>
          <b>
-    ${title}
+    ${htmlArray.id}
      </b>
        </a>
        <div class='copy'>
@@ -349,64 +338,52 @@ var youtubeHTMLBuild = function (
      </div>
      </div>
        <div class='yt'>
-         <iframe src='${videoSource}'>
+         <iframe src='${htmlArray.videoSource}'>
        </iframe>
-    ${views}
+    ${htmlArray.views}
        </div>
-       <div class='pub' text='${title}'>
-    ${titleTruncate}
-    ${titleMore}
+       <div class='pub' text='${htmlArray.title}'>
+    ${htmlArray.truncate}
+    ${htmlArray.more}
        </div>
        <div class='ago'>
-    ${dateTime}
+    ${htmlArray.dst}
      </div>
-         <input class='url' value='${externalURL}'>
-         <input class='share' value='${share}'>
-        <input class='source' value='${externalURL}'>
+         <input class='url' value='${htmlArray.externalURI}'>
+         <input class='share' value='${htmlArray.share}'>
+        <input class='source' value='${htmlArray.externalURI}'>
      </div>
     `;
 };
 
-var xmlHTMLBuild = function (
-  dateTime,
-  externalURI,
-  courtesyHeader,
-  title,
-  share,
-  titleTruncate,
-  titleMore,
-  searchExternal,
-  imageSource,
-  pubIndex,
-  menuIndex
-) {
+var xmlHTMLBuild = function (htmlArray) {
   return `
      <div class='item'
-      aria-object='${menuIndex}'
-      aria-item='${pubIndex}'
-       ext='${externalURI}'>
+      aria-object='${htmlArray.menuObject}'
+      aria-item='${htmlArray.pubIndex}'
+       ext='${htmlArray.externalURI}'>
        <div class='header'>
-    ${courtesyHeader}
+    ${htmlArray.courtesy}
      </div>
        <div class='classic'>
        <div class='pending'><div class='loader double-circle'></div></div>
          <div class='image'>
            <div class='fa fa-heart'></div>
-           <img id='${pubIndex}' class='img' style='display:none'>
+           <img id='${htmlArray.pubIndex}' class='img' style='display:none'>
          </div>
          <div class='wrap'>
-           <div class='pub' text='${title}'>
-    ${titleTruncate}
-    ${titleMore}
+           <div class='pub' text='${htmlArray.title}'>
+    ${htmlArray.truncate}
+    ${htmlArray.more}
            </div>
-    ${searchExternal}
+    ${htmlArray.searchExternal}
            <div class='ago zulu'>
-    ${dateTime}
+    ${htmlArray.dst}
      </div>
          </div>
-         <input class='url' value='${externalURI}'>
-         <input class='share' value='${share}'>
-         <input class='source' value='${imageSource}'>
+         <input class='url' value='${htmlArray.externalURI}'>
+         <input class='share' value='${htmlArray.share}'>
+         <input class='source' value='${htmlArray.src}'>
        </div>
      </div>
     `;

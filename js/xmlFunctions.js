@@ -560,6 +560,7 @@ var xmlTitleParsing = function (xhr) {
 };
 
 var xmlRequestParsing = function (search, string, index) {
+  let html;
   let local;
   dupe = []
   id = index;
@@ -635,36 +636,40 @@ var xmlRequestParsing = function (search, string, index) {
                 "</div>";
             else var views = "";
 
-            html = youtubeHTMLBuild(
-              menu[index].id.match(/([^\/]+)$/g),
-              menu[index].img.image(),
-              parse.dst,
-              courtesy,
-              parse.re,
-              share,
-              views,
-              trun,
-              more,
-              src,
-              i,
-              index
-            );
+            var inline = []
+            inline.push({
+              id: menu[index].id.match(/([^\/]+)$/g),
+              image: menu[index].img.image(),
+              dst: parse.dst,
+              courtesy: courtesy,
+              externalURI: parse.re,
+              share: share,
+              title: title,
+              views: views,
+              truncate: trun,
+              more: more,
+              videoSource: src,
+              pubIndex: i,
+              menuObject: index
+            })
+              html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = "";
-
-            html = xmlHTMLBuild(
-              parse.dst,
-              parse.re,
-              courtesy,
-              title,
-              share,
-              trun,
-              more,
-              cat,
-              src,
-              i,
-              index
-            );
+            var inline = []
+            inline.push({
+              dst: parse.dst,
+              externalURI: parse.re,
+              courtesy: courtesy,
+              title: title,
+              share: share,
+              truncate: trun,
+              more: more,
+              searchExternal: cat,
+              src: src,
+              menuObject: index,
+              pubIndex: i
+            })
+            html = xmlHTMLBuild(inline[0]);
           }
 
           pub.push({
