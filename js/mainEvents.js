@@ -43,7 +43,7 @@ document.addEventListener(
         document.querySelector("#main").scrollHeight -
           document.querySelector("#main").scrollTop -
           document.querySelector("#main").clientHeight <=
-          350 &&
+          500 &&
         reader == true &&
         httpRequest.status == 200
       ) {

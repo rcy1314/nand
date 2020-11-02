@@ -530,7 +530,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     } else if (
       document.body.contains(
         document.querySelector(
-          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
+          "[aria-object='" +
+            menuObject +
+          "'][aria-item='" +
+            pubIndex +
+          "'] .pending"
         )
       )
     )
