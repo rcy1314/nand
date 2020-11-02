@@ -15,7 +15,8 @@ document.addEventListener(
       event.target.style.borderImageSlice = "9";
       event.target.style.borderStyle = "solid";
       if (
-        event.target != document.querySelector(".sideFilter") &&
+        event.target.nextElementSibling.nextElementSibling !=
+        document.querySelector("#basic") &&
         document.body.contains(
           event.target.nextElementSibling.nextElementSibling
         )

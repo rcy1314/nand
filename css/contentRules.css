@@ -27,6 +27,7 @@ input {
 }
 
 a {
+  color: var(--loader-color-primary);
   text-decoration: none !important;
   cursor: default;
 }
@@ -113,19 +114,6 @@ html body #container #sidebar #content {
   width: 100%;
 }
 
-html body #container #sidebar #content #category {
-  background-color: transparent;
-  height: fit-content;
-  overflow: hidden;
-  width: 100%;
-}
-
-html body #container #sidebar #content #select {
-  height: fit-content;
-  overflow: hidden;
-  width: 100%;
-}
-
 html body #container #sidebar .notify {
   color: var(--fill-color-primary);
   background-color: transparent;
@@ -145,6 +133,7 @@ html body #container #sidebar #content #basic {
   margin: 15px auto;
   overflow: hidden;
   width: 240px;
+  bottom: 0;
 }
 
 html body #container #sidebar #content #basic input[type=text] {
@@ -307,6 +296,7 @@ html body #container #main #top {
   display: none;
   height: 57px;
   z-index: 7;
+  top: 0;
 }
 
 html body #container #main #top #arm {
@@ -360,9 +350,12 @@ html body #container #main #option {
 
 html body #container #main {
   -webkit-overflow-scrolling: touch;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
+  display: flex;
   outline: none;
 }
 
@@ -372,6 +365,7 @@ html body #container #main #feed {
   position: absolute;
   display: none;
   width: 100%;
+  top: 0;
 }
 
 html body #container #main #group {
@@ -387,6 +381,7 @@ html body #container #main #visit {
   align-items: center;
   display: none;
   height: 100%;
+  z-index: 1;
 }
 
 html body #container #main #visit #page {
@@ -664,6 +659,7 @@ html body #container #main #feed .content .status .filter a {
 }
 
 .hash,
+.blank,
 .media,
 .title,
 .description {

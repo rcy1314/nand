@@ -79,6 +79,7 @@ var visual = function (toggleOption) {
     document.querySelectorAll("#visit, #container, #sidebar, #hide")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
+    document.querySelector('#main .check').style.filter = 'saturate(3)'
   } else if (op == 0) {
     document.documentElement.style.setProperty(
       "--box-shadow",
@@ -163,5 +164,6 @@ var visual = function (toggleOption) {
     document.querySelectorAll("#sidebar, #hide")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--progress-background)"))
+    document.querySelector('#main .check').style.filter = 'saturate(1)'
   }
 };

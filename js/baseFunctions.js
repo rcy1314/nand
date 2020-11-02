@@ -102,8 +102,6 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
-    document.querySelector(".sideFilter").style.display = "block";
-    document.querySelector("#basic").style.display = "block";
     if (document.querySelector("#main").clientWidth >= 769) {
       document.querySelector("#top").style.width = "calc(100% - 256px)";
       document.querySelector("#main").style.width = "calc(100% - 240px)";
@@ -114,6 +112,8 @@ var sideBarDisplay = function (toggleOption) {
       document
         .querySelectorAll("#dots .fill")
         .forEach((a) => (a.style.marginLeft = "150px"));
+        document.querySelector(".sideFilter").style.display = "block";
+        document.querySelector("#basic").style.display = "block";
     }, 300);
   } else if (toggleOption == false) {
     document
@@ -140,6 +140,14 @@ var sideBarDisplay = function (toggleOption) {
           selections[i].icon
         );
     };
+    content.innerHTML = content.innerHTML +
+    `
+    <div id='basic'>
+      <form class='filter' action='#'>
+        <input type='text' class='sideFilter' placeholder='filter'>
+      </form>
+    </div>
+    `
   };
 };
 
