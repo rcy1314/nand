@@ -1028,7 +1028,10 @@ html body #container #main #feed .center .item .add {
 }
 
 html body #container #guide .sticky .image {
+  justify-content: center;
+  align-items: center;
   max-width: 75vw;
+  display: flex;
 }
 
 html body #container #main #feed .center .item .img,
