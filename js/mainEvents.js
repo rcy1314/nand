@@ -322,7 +322,7 @@ document.addEventListener(
                   element: event.target.closest(".item").getAttribute("aria-item"),
                 image: menu[
                   event.target.closest(".item").getAttribute("aria-item")
-                ].img.image(),
+                ].image.image(),
                 title: event.target
                   .closest(".item")
                   .querySelector(".pub")

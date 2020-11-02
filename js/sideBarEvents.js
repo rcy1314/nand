@@ -289,10 +289,10 @@ document.addEventListener(
       document.querySelector("#visit").style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (onlyImages == true) {
-          if (menu[i].cat == category && menu[i].media == true)
+          if (menu[i].category == category && menu[i].media == true)
             code.push(menu.indexOf(menu[i]));
         } else if (onlyImages == false) {
-          if (menu[i].cat == category) code.push(menu.indexOf(menu[i]));
+          if (menu[i].category == category) code.push(menu.indexOf(menu[i]));
         }
       }
       let randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];

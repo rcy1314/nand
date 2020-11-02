@@ -117,7 +117,8 @@ document.addEventListener(
           topMenuBarDisplay(topBar);
           init();
           category =
-            menu[event.target.closest(".hover").getAttribute("aria-item")].cat;
+            menu[event.target.closest(".hover").getAttribute("aria-item")]
+            .category;
           xmlRequestParsing(
             null,
             null,

@@ -113,6 +113,7 @@ var sideBarDisplay = function (toggleOption) {
         .querySelectorAll("#dots .fill")
         .forEach((a) => (a.style.marginLeft = "150px"));
         document.querySelector(".sideFilter").style.display = "block";
+        document.querySelector('#progressBar').style.left = "240px";
         document.querySelector("#basic").style.display = "block";
     }, 300);
   } else if (toggleOption == false) {
@@ -122,6 +123,7 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#top").style.width = "calc(100% - 16px)";
     document.querySelector(".sideFilter").style.display = "none";
     document.querySelector("#sidebar").style.left = "-242px";
+    document.querySelector('#progressBar').style.left = "0";
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#main").style.left = "0";
   }
@@ -245,7 +247,7 @@ var quickFeedAsset = function (feedAssets) {
           feed.innerHTML +
           assetBuild(
             menu.indexOf(menu[randomMenuObject]),
-            menu[randomMenuObject].img.image(),
+            menu[randomMenuObject].image.image(),
             menu[randomMenuObject].id
           );
         if (duplicate.length === feedAssets) return false;
@@ -260,13 +262,13 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   document.querySelector(listingWrapper).style.display = "block";
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
-      if (menu[i].des.toLowerCase().match(inputFilter)) {
+      if (menu[i].description.toLowerCase().match(inputFilter)) {
         listing.innerHTML =
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
-            menu[i].img.image(),
-            menu[i].cat,
+            menu[i].image.image(),
+            menu[i].category,
             false,
             i
           ) + listing.innerHTML;
@@ -287,8 +289,8 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
     listing.innerHTML += listingIndexBuild(
       menu[randomMenuObject].id.match(/[^\/]+$/g),
       menu.indexOf(menu[randomMenuObject]),
-      menu[randomMenuObject].img.image(),
-      menu[randomMenuObject].cat,
+      menu[randomMenuObject].image.image(),
+      menu[randomMenuObject].category,
       true,
       i
     );
@@ -364,9 +366,9 @@ var populateCategoryGroup = function (translation) {
       categoryBuild(
         menu[id].id.match(/[^\/]+$/g),
         menu.indexOf(menu[id]),
-        menu[id].img.image(),
+        menu[id].image.image(),
         menu[id].hash,
-        menu[id].des,
+        menu[id].description,
         media
       );
   }
@@ -377,7 +379,7 @@ var populateCategoryGroup = function (translation) {
     if (onlyImages == true) {
       if (
         id != menu.indexOf(menu[i]) &&
-        translation == menu[i].cat &&
+        translation == menu[i].category &&
         menu[i].media == true
       ) {
         result.innerHTML =
@@ -385,22 +387,22 @@ var populateCategoryGroup = function (translation) {
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
-            menu[i].img.image(),
+            menu[i].image.image(),
             menu[i].hash,
-            menu[i].des,
+            menu[i].description,
             media
           );
       }
     } else if (onlyImages == false) {
-      if (translation == menu[i].cat && id != menu.indexOf(menu[i])) {
+      if (translation == menu[i].category && id != menu.indexOf(menu[i])) {
         result.innerHTML =
           result.innerHTML +
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
-            menu[i].img.image(),
+            menu[i].image.image(),
             menu[i].hash,
-            menu[i].des,
+            menu[i].description,
             media
           );
       }
@@ -430,16 +432,16 @@ var reverseCategoryGroup = function (translation) {
   }
   let air = document.querySelector(".air");
   for (let i = 1; i < menu.length - 1; i++) {
-    if (category == menu[i].cat) {
+    if (category == menu[i].category) {
       if (menu[i].media == true)
         var media = "<div class='media' style='display:none'>Images</div>";
       else var media = "<div class='blank'></div>";
       let scroll = categoryBuild(
         menu[i].id.match(/[^\/]+$/g),
         menu.indexOf(menu[i]),
-        menu[i].img.image(),
+        menu[i].image.image(),
         menu[i].hash,
-        menu[i].des,
+        menu[i].description,
         media
       );
       air.innerHTML = air.innerHTML + scroll;
@@ -471,8 +473,8 @@ var filterInputResponse = function (
   else var extendedURI = filterURI;
   for (let i = 1; i <= menu.length - 1; i++) {
     let menuObject = menu[i].id.space().toLowerCase();
-    let translation = menu[i].cat.space().toLowerCase();
-    let description = menu[i].des.space().toLowerCase();
+    let translation = menu[i].category.space().toLowerCase();
+    let description = menu[i].description.space().toLowerCase();
     if (menu[i].hash == filterURI) {
       filter.push(menu.indexOf(menu[i]));
       exact = i;
@@ -512,7 +514,7 @@ var filterInputResponse = function (
     return false;
   }
   if (categoryBloat == true && isNumeric(match))
-    populateCategoryGroup(menu[match].cat);
+    populateCategoryGroup(menu[match].category);
 };
 
 var writeFilterResponse = function (menuObject) {
@@ -524,9 +526,9 @@ var writeFilterResponse = function (menuObject) {
   result.innerHTML += filterBuild(
     menu[menuObject].id.match(/[^\/]+$/g),
     menu.indexOf(menu[menuObject]),
-    menu[menuObject].img.image(),
+    menu[menuObject].image.image(),
     menu[menuObject].hash,
-    menu[menuObject].des,
+    menu[menuObject].description,
     media
   );
 };

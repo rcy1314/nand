@@ -96,7 +96,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
      <div class='filter'
        aria-item='${menu[menuIndex].ext}'>
        <div class='ext'>
-         <img class='exit' src='${menu[menuIndex].img.image()}'>
+         <img class='exit' src='${menu[menuIndex].image.image()}'>
        </div>
        <a class='tag' ext='${menu[menuIndex].ext}'
          title='${menu[menuIndex].id}'>
@@ -105,7 +105,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
      </div>
      <div class='info'>
        <div class='description'>&emsp;
-    ${menu[menuIndex].des}
+    ${menu[menuIndex].description}
      </div><br>
        Most recent<div style='float:right'>
     ${recentPost}

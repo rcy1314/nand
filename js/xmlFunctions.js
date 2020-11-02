@@ -55,9 +55,9 @@ var xmlStatusSuggestions = function () {
           suggestBuild(
             media,
             menu.indexOf(menu[randomMenuObject]),
-            menu[randomMenuObject].img.image(),
+            menu[randomMenuObject].image.image(),
             menu[randomMenuObject].id,
-            menu[randomMenuObject].cat
+            menu[randomMenuObject].category
           );
       }
     }
@@ -570,7 +570,7 @@ var xmlRequestParsing = function (search, string, index) {
     category = category;
   } else {
     uri = cors + menu[index].uri;
-    category = menu[index].cat;
+    category = menu[index].category;
   }
 
   document.title = menu[index].id.space();
@@ -613,7 +613,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           let courtesy = courtesyHeader(
             menu[index].id.match(/([^\/]+)$/g),
-            menu[index].img.image(),
+            menu[index].image.image(),
             menu[index].ext
           );
 
@@ -639,7 +639,7 @@ var xmlRequestParsing = function (search, string, index) {
             var inline = []
             inline.push({
               id: menu[index].id.match(/([^\/]+)$/g),
-              image: menu[index].img.image(),
+              image: menu[index].image.image(),
               dst: parse.dst,
               courtesy: courtesy,
               externalURI: parse.re,
@@ -710,7 +710,7 @@ var xmlRequestParsing = function (search, string, index) {
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),
             element: pub[local].element,
-            image: menu[index].img.image(),
+            image: menu[index].image.image(),
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
@@ -724,7 +724,7 @@ var xmlRequestParsing = function (search, string, index) {
           sticky.push({
             courtesy: pub[local].courtesy,
             element: pub[local].element,
-            image: menu[index].img.image(),
+            image: menu[index].image.image(),
             title: pub[local].title,
             share: pub[local].share,
             dst: pub[local].dst,

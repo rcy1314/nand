@@ -117,10 +117,10 @@ var truncate = function (i, n, useWordBoundary) {
 var anyRandomMenuObject = function () {
   for (i = 1; i <= menu.length - 1; i++) {
     if (onlyImages == true) {
-      if (menu[i].cat == category && menu[i].media == true)
+      if (menu[i].category == category && menu[i].media == true)
         random.push(menu.indexOf(menu[i]));
     } else if (onlyImages == false) {
-      if (menu[i].cat == category) random.push(menu.indexOf(menu[i]));
+      if (menu[i].category == category) random.push(menu.indexOf(menu[i]));
     }
   }
   let randomObject = random[Math.floor(Math.random() * random.length - 1)];
@@ -190,9 +190,9 @@ String.prototype.grep = function (string) {
   var string = this;
   let count = [];
   if (onlyImages == true) {
-    return menu.filter((a) => a.cat == string && a.media == true).length;
+    return menu.filter((a) => a.category == string && a.media == true).length;
   } else if (onlyImages == false) {
-    return menu.filter((a) => a.cat == string).length;
+    return menu.filter((a) => a.category == string).length;
   }
 };
 
