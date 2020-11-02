@@ -165,7 +165,7 @@ document.addEventListener(
         if (document.body.contains(document.querySelector("#feed .center")))
           first = false;
         else first = true;
-        xmlRequestParsing(null, null, anyMenuRandomObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
     if (event.target.classList.contains("Day")) {
