@@ -374,6 +374,7 @@ html body #container #main #group {
   position: absolute;
   display: none;
   width: 100%;
+  z-index: 1;
   top: 57px;
 }
 
