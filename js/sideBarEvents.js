@@ -250,6 +250,7 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       unloading();
+      visual();
     }
     if (event.target.classList.contains("Percent")) {
       let loading = "percent";

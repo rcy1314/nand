@@ -603,6 +603,7 @@ html body #container #main #group .result {
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 html body #container #main #feed .content .status .filter {
