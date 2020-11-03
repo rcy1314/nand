@@ -436,3 +436,12 @@ var sideBarOptionBuild = function (classes, name, icon) {
      <div class='fa ${icon}'></div>
     `;
 };
+
+var sideBarThemeBuild = function (classes, name, icon) {
+  return `
+     <div class='theme ${classes}'>
+    ${name}
+     </div>
+     <div class='fa ${icon}'></div>
+    `;
+};

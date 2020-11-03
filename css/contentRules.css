@@ -201,7 +201,7 @@ html body #container #sidebar #content .sel:hover {
   box-shadow: var(--box-shadow) !important;
 }
 
-html body #container #sidebar #content .fa {
+html body #container #sidebar #content .fa:not(.fa-braille) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -22px;
@@ -215,18 +215,71 @@ html body #container #sidebar #content .fa {
   right: 10px;
 }
 
+html body #container #sidebar #content .themes {
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
+  background-color: transparent !important;
+  color: var(--fill-color-primary);
+  padding-bottom: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 10px;
+  height: 30px;
+  width: 96%;
+}
+
+html body #container #sidebar #content .themes:hover {
+  background-color: var(--hover-background-color);
+}
+
+html body #container #sidebar #content .themes .border {
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
+  background-color: transparent !important;
+  color: var(--fill-color-primary);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+  font-size: 12px;
+  height: 15px;
+  width: 100%;
+}
+
+html body #container #sidebar #content .themes .fa:not(.fa-braille) {
+  margin-top: -18px !important;
+}
+
+html body #container #sidebar #content .themes .fa-braille {
+  position: relative;
+  float: right;
+  z-index: -1;
+  right: 12px;
+}
+
+html body #container #sidebar #content .themes .theme {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+html body #container #sidebar #content .theme:hover {
+  background-color: var(--hover-background-color) !important;
+}
+
 html body #container #sidebar #hide {
   border-radius: 0px 36px 36px 0px;
   border-right: .3px solid #7777;
-  width: calc(100% + 26px);
   align-items: center;
   position: absolute;
   display: flex;
   margin: auto;
   height: 48px;
-  z-index: -1;
+  width: 26px;
   bottom: 0;
-  left: 0;
   top: 0;
 }
 

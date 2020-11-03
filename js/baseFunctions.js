@@ -91,10 +91,18 @@ var sideBarDisplay = function (toggleOption) {
       content.innerHTML =
         sideBarCategoryBuild(translations[i]) + content.innerHTML;
     }
+    content.innerHTML = content.innerHTML +
+    `<div class='themes'>
+      <div class='border'>
+        Themes
+        <div class='fa fa-braille'></div>
+      </div>
+    </div>`
+    let list = document.querySelector('.themes')
     for (i = 0; i <= themes.length - 1; i++) {
-      content.innerHTML =
-        content.innerHTML +
-        sideBarOptionBuild(
+      list.innerHTML =
+        list.innerHTML +
+        sideBarThemeBuild(
           themes[i].class,
           themes[i].name,
           themes[i].icon
@@ -132,6 +140,19 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
+    let Hide = document.querySelector("#hide");
+    Hide.animate(
+      {
+        left: ["0px", "230px"],
+      },
+      {
+        duration: 300, // number in ms [this would be equiv of your speed].
+        easing: "linear",
+        iterations: 1, // infinity or a number.
+        // fill: ''
+      }
+    );
+    document.querySelector('#hide').style.left = "240px";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
@@ -149,7 +170,8 @@ var sideBarDisplay = function (toggleOption) {
         document.querySelector('#progressBar').style.left = "240px";
         document.querySelector("#basic").style.display = "block";
     }, 300);
-  } else if (toggleOption == false) {
+  }
+  if (toggleOption == false || onScreen == false) {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => (a.style.marginLeft = "0"));

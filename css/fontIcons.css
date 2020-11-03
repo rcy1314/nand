@@ -28,7 +28,7 @@ html body #container #main #option .fa-expand-alt {
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-home,
+html body #container #sidebar #content .fa-home,
 html body #container #main #top #arm #option .fa-home,
 html body #container #main #option .fa-home {
   font-family: "Font Awesome 5 Pro";
@@ -59,14 +59,14 @@ html body #container #main #option .fa-terminal {
 }
 
 html body #container #main #option .fa-code,
-html body #container #sidebar #content #select .sel .fa-code {
+html body #container #sidebar #content .fa-code {
   font-family: "Font Awesome 5 Pro";
   content: "\f121";
   font-weight: 50;
 }
 
 html body #container #main #option .fa-heart,
-html body #container #sidebar #content #select .sel .fa-heart {
+html body #container #sidebar #content .fa-heart {
   font-family: "Font Awesome 5 Pro";
   content: "\f004";
   font-weight: 50;
@@ -142,68 +142,74 @@ html body #container #main #feed .center .channel .item .header .fa-ellipsis-v {
 
 html body #guide .sticky .fa-heart,
 html body #container #main #option .fa-heart,
-html body #container #sidebar #content #select .sel .fa-heart,
+html body #container #sidebar #content .fa-heart,
 html body #container #main #feed .center .item .classic .image .fa-heart {
   color: lightcoral !important;
 }
 
-html body #container #sidebar #content #select .sel .fa-exclamation-circle {
+html body #container #sidebar #content .fa-exclamation-circle {
   font-family: "Font Awesome 5 Pro";
   content: "\f06a";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-signal {
+html body #container #sidebar #content .fa-signal {
   font-family: "Font Awesome 5 Pro";
   content: "\f012";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-adjust {
+html body #container #sidebar #content .fa-adjust {
   font-family: "Font Awesome 5 Pro";
   content: "\f042";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-th-large {
+html body #container #sidebar #content .fa-th-large {
   font-family: "Font Awesome 5 Pro";
   content: "\f0ca";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-list-ul {
+html body #container #sidebar #content .fa-list-ul {
   font-family: "Font Awesome 5 Pro";
   content: "\f009";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-chart-pie {
+html body #container #sidebar #content .fa-chart-pie {
   font-family: "Font Awesome 5 Pro";
   content: "\f200";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-photo {
+html body #container #sidebar #content .fa-photo {
   font-family: "Font Awesome 5 Pro";
   content: "\f03e";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-star-o {
+html body #container #sidebar #content .fa-star-o {
   font-family: "Font Awesome 5 Pro";
   content: "\f006";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-edit {
+html body #container #sidebar #content .fa-edit {
   font-family: "Font Awesome 5 Pro";
   content: "\f044";
   font-weight: 50;
 }
 
-html body #container #sidebar #content #select .sel .fa-tablet-alt {
+html body #container #sidebar #content .fa-tablet-alt {
   font-family: "Font Awesome 5 Pro";
   content: "\f3fa";
+  font-weight: 50;
+}
+
+html body #container #sidebar #content .fa-braille {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f2a1";
   font-weight: 50;
 }
 

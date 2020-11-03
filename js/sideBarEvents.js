@@ -2,6 +2,7 @@ document.addEventListener(
   "mousemove",
   function (event) {
     if (
+      event.target.classList.contains("border") ||
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel")
     ) {
@@ -33,6 +34,7 @@ document.addEventListener(
           "solid";
       }
       if (
+        event.target != document.querySelector(".border") &&
         event.target != document.querySelector(".cat:first-child") &&
         event.target != document.querySelector(".sel:first-child")
       ) {
@@ -55,6 +57,7 @@ document.addEventListener(
   "mouseout",
   function (event) {
     if (
+      event.target.classList.contains("border") ||
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel")
     ) {
@@ -68,6 +71,7 @@ document.addEventListener(
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
           "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
       if (
+        event.target != document.querySelector(".border") &&
         event.target != document.querySelector(".cat:first-child") &&
         event.target != document.querySelector(".sel:first-child")
       )
@@ -167,6 +171,16 @@ document.addEventListener(
         else first = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
+    }
+    if (
+      event.target.classList.contains("border")
+    ) {
+      if (document.querySelector('.themes').clientHeight != `50`){
+        document.querySelector('.themes').style.height = `30px`
+        return false
+      }
+      let count = themes.length + 1
+    document.querySelector('.themes').style.height = count * 35 + `px`
     }
     if (event.target.classList.contains("Day")) {
       op = 0;

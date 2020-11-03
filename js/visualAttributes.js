@@ -79,9 +79,12 @@ var visual = function (toggleOption) {
     document.querySelectorAll("#visit, #container, #sidebar, #hide")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
+    document.querySelectorAll("#content")
+      .forEach(
+        (a) => (a.style.backgroundColor = "var(--hover-background-color)"))
     document.querySelector('#main .check').style.filter = 'saturate(3)'
     document.querySelector('#hide').style.background =
-    "-webkit-linear-gradient(left, rgba(0,0,0,0) 90%, var(--progress-background) 100%)"
+    "var(--hover-background-color)"
   } else if (op == 0) {
     document.documentElement.style.setProperty(
       "--box-shadow",
@@ -122,7 +125,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--progress-background",
-      "#eeeeee"
+      "rgba(238, 238, 238, .4)"
     );
     document.documentElement.style.setProperty(
       "--sticky-background",
@@ -160,10 +163,10 @@ var visual = function (toggleOption) {
       .querySelector("#sidebar #content")
       .classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-    document.querySelectorAll("#container, #visit")
+    document.querySelectorAll("#container, #sidebar, #visit")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
-    document.querySelectorAll("#sidebar")
+    document.querySelectorAll("#content")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--progress-background)"))
     document.querySelector('#main .check').style.filter = 'saturate(1)'

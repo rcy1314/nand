@@ -67,7 +67,9 @@ var init = function () {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.classList.add("dots"));
+    document.querySelector('#dots').style.zIndex = '11';
   } else if (loading == "percent") {
+    document.querySelector('#dots').style.zIndex = '-1';
     let width = document.getElementById("main").clientWidth / 50;
     complete = setInterval(function () {
       document.getElementById("progressBar").style.transitionDelay = "0s";

@@ -1,0 +1,5 @@
+html body #container #sidebar #content .fa-egg:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1ae";
+  font-weight: 50;
+}
