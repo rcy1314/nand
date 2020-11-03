@@ -4,13 +4,13 @@ var Example = function() {
     "--box-shadow",
     "8px 8px 16px rgba(45, 38, 54, .2)"
   );
-  // Input listing suggested, Visit button, Feed suggestions
+  // Input listing suggested, Visit button, Feed suggestions, Loading circle
   document.documentElement.style.setProperty(
     "--loader-color-primary",
     "linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%," +
     "rgba(253, 115, 136, 1) 100%)"
   );
-  //Visit button hover
+  //Visit button hover, Loading circle
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
     "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +

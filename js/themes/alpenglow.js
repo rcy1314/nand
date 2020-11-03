@@ -6,13 +6,11 @@ var Alpenglow = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%," +
-    "rgba(253, 115, 136, 1) 100%)"
+    "rgba(106, 66, 194, 1)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +
-    "rgba(253, 115, 136, 1) 100%)"
+    "rgba(253, 115, 136, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
