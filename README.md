@@ -3,6 +3,11 @@
   - Really Simple Syndicate.
   - Rich Site Summary.
 
+### Features
+
+* Private Proxy Requests
+* Themes (beta in /js)
+
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages.
