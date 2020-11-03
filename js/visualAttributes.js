@@ -55,9 +55,6 @@ var visual = function (toggleOption) {
       "--hue-rotate",
       "hue-rotate(110deg)"
     );
-    document
-      .querySelectorAll("input")
-      .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
     if (document.body.contains(document.querySelector("#feed")))
       document.querySelector("#feed").style.backgroundColor =
         "var(--bg-color-primary)";

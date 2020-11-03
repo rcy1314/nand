@@ -56,9 +56,6 @@ var Gruvbox = function() {
     "--hue-rotate",
     "hue-rotate(160deg)"
   );
-  document
-    .querySelectorAll("input")
-    .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
   document.querySelectorAll("#container, #sidebar, #visit")
     .forEach(
       (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))

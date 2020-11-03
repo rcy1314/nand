@@ -56,9 +56,6 @@ var Nord = function() {
     "--hue-rotate",
     "grayscale(100%)"
   );
-  document
-    .querySelectorAll("input")
-    .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
   document.querySelectorAll("#container,#visit")
     .forEach(
       (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))

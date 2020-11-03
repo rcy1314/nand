@@ -74,9 +74,6 @@ var Example = function() {
     "hue-rotate(110deg)"
   );
   //General overwrites
-  document
-    .querySelectorAll("input")
-    .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
   document.querySelectorAll("#container, #visit")
     .forEach(
       (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))

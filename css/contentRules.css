@@ -573,6 +573,7 @@ html body #container #main #visit #page #front .focus:not(:hover) {
 
 html body #container #main #visit #page #front .focus input[type=text] {
   background-color: var(--bg-color-primary);
+  color: var(--fill-color-primary);
   height: 39.5px !important;
   border: none !important;
   display: inline-block;
@@ -773,6 +774,7 @@ html body #container #main #top #arm #search #input {
 }
 
 html body #container #main #top #arm #search #input input[type=text] {
+  color: var(--fill-color-primary);
   -webkit-appearance: none;
   caret-color: transparent;
   border: none !important;
