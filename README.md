@@ -6,7 +6,7 @@
 ### Features
 
 * Private Proxy Requests
-* Beta stage themes example.js in /js/themes
+* Beta stage themes example.js in /js/themes edit a.preloader.js
 
 ### Known Issues
 
