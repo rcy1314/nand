@@ -27,7 +27,7 @@ input {
 }
 
 a {
-  color: var(--loader-color-primary);
+  color: var(--fill-color-secondary);
   text-decoration: none !important;
   cursor: default;
 }

@@ -17,6 +17,10 @@ var Eggplant = function() {
     "#aaaaaa"
   );
   document.documentElement.style.setProperty(
+    "--fill-color-secondary",
+    "rgba(75, 68, 84, 1)"
+  );
+  document.documentElement.style.setProperty(
     "--bg-color-primary",
     "rgba(75, 68, 84, .4)"
   );

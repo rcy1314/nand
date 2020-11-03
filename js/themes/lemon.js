@@ -16,6 +16,10 @@ var Lemon = function() {
     "--fill-color-primary",
     "#aaaaaa"
   );
+  document.documentElement.style.setProperty(
+    "--fill-color-secondary",
+    "rgba(169, 121, 62, 1)"
+  );
   document.documentElement.style.setProperty("--bg-color-primary", "#262626");
   document.documentElement.style.setProperty(
     "--bg-color-secondary",

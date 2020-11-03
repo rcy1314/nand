@@ -18,6 +18,10 @@ var visual = function (toggleOption) {
       "--fill-color-primary",
       "#ffffff"
     );
+    document.documentElement.style.setProperty(
+      "--fill-color-secondary",
+      "#f54e75"
+    );
     document.documentElement.style.setProperty("--bg-color-primary", "#0f0f0f");
     document.documentElement.style.setProperty(
       "--bg-color-secondary",
@@ -101,6 +105,10 @@ var visual = function (toggleOption) {
     document.documentElement.style.setProperty(
       "--fill-color-primary",
       "#555555"
+    );
+    document.documentElement.style.setProperty(
+      "--fill-color-secondary",
+      "#1683D8"
     );
     document.documentElement.style.setProperty("--bg-color-primary", "#ffffff");
     document.documentElement.style.setProperty(

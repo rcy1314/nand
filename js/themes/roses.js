@@ -17,6 +17,10 @@ var Roses = function() {
     "#eeeeee"
   );
   document.documentElement.style.setProperty(
+    "--fill-color-secondary",
+    "rgba(83, 94, 81, 1)"
+  );
+  document.documentElement.style.setProperty(
     "--bg-color-primary",
     "rgba(83, 94, 81, .3)"
   );

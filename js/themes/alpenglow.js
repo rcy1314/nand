@@ -19,6 +19,10 @@ var Alpenglow = function() {
     "#eeeeee"
   );
   document.documentElement.style.setProperty(
+    "--fill-color-secondary",
+    "rgba(253, 115, 136, 1)"
+  );
+  document.documentElement.style.setProperty(
     "--bg-color-primary",
     "linear-gradient(right, rgba(106, 66, 194, 1) 50%," +
     "rgba(253, 115, 136, 1) 100%)"

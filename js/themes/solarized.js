@@ -17,6 +17,10 @@ var Solarized = function() {
     "#eeeeee"
   );
   document.documentElement.style.setProperty(
+    "--fill-color-secondary",
+    "rgba(63, 92, 136, 1)"
+  );
+  document.documentElement.style.setProperty(
     "--bg-color-primary",
     "rgba(63, 92, 136, .3)"
   );
