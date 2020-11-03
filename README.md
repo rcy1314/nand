@@ -6,7 +6,6 @@
 ### Features
 
 * Private Proxy Requests
-* Themes (beta in /js)
 
 ### Known Issues
 
