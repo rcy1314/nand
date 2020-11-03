@@ -1,5 +1,5 @@
 // Uncomment initial theme
-//let set = "Solarized"
+let set = "Alpenglow"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
@@ -10,6 +10,7 @@ const themes = [
   { name: "Lemon", class: "Lemon", icon: "fa-lemon" },
   { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
+  { name: "Alpenglow", class: "Alpenglow", icon: "fa-digital-tachograph" },
 
 ];
 //  { name: "Example function", class: "Class Click Event", icon: "fa-example" },
@@ -25,6 +26,7 @@ const themes = [
     "roses",
     "eggplant",
     "solarized",
+    "alpenglow",
 //  "example file",
   ];
 
