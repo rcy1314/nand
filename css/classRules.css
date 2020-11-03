@@ -1,3 +1,7 @@
+.mainTransition {
+  transition: 750ms;
+}
+
 .guide {
   scrollbar-width: none;
 }

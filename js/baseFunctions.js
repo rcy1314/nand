@@ -96,7 +96,7 @@ var sideBarDisplay = function (toggleOption) {
         sideBarCategoryBuild(translations[i]) + content.innerHTML;
     }
     content.innerHTML = content.innerHTML +
-    `<div class='themes'>
+    `<div class='themes mainTransition'>
       <div class='border'>
         Themes
         <div class='fa fa-braille'></div>
