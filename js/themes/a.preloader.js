@@ -1,5 +1,5 @@
 // Uncomment initial theme
-let set = "Roses"
+//let set = "Solarized"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
