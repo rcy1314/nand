@@ -932,11 +932,6 @@ html body #container #main #feed .center .item .header {
   width: 100%;
 }
 
-
-html body #container #guide .sticky .header {
-  background-color: var(--bg-color-primary);
-}
-
 html body #container #guide .sticky .header .courtesy,
 html body #container #main #feed .center .item .header .courtesy {
   text-transform: capitalize;
