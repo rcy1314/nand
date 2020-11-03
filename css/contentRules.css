@@ -1156,7 +1156,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy {
 
 html body #container #main #feed .center .item .header .courtesy .copy .attribute,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
-  background-color: var(--bg-color-primary);
+  background-color: var(--fill-color-secondary);
   position: absolute;
   display: none;
   height: 40px;

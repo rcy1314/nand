@@ -578,7 +578,10 @@ var guideImageAttributes = function (src) {
         "absolute";
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "50vh";
-        guide.querySelector(".image").style.width = "100vw";
+        guide.querySelector(".img").style.maxWidth = "75vw";
+        guide.querySelector(".wrap").style.display = 'block';
+        guide.querySelector(".wrap").style.height = "fit-content";
+        guide.querySelector(".pub").style.height = "fit-content";
         document.querySelector("#guide .wrap").style.maxWidth = "100vw";
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         guide.querySelector(".img").style.maxWidth = "70vw";

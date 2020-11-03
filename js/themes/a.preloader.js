@@ -1,5 +1,5 @@
 // Uncomment initial theme
-let set = "Alpenglow"
+let set //= "Nord"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
@@ -57,7 +57,7 @@ for (i = 0; i <= themes.length - 1; i++){
   })(i);
 }
 var startup = setInterval(function() {
-  if (typeof eval(set) === "function") {
+  if (typeof set === "string" && typeof eval(set) === "function") {
     window[set]()
     setTimeout(function(){
       clearInterval(startup)

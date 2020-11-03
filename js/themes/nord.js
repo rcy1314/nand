@@ -18,7 +18,7 @@ var Nord = function() {
   );
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
-    "rgba(218, 222, 232, 1)"
+    "rgba(48, 52, 63, 1)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
