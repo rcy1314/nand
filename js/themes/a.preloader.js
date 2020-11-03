@@ -10,7 +10,7 @@ const themes = [
   { name: "Lemon", class: "Lemon", icon: "fa-lemon" },
   { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
-  { name: "Alpenglow", class: "Alpenglow", icon: "fa-digital-tachograph" },
+  { name: "Alpenglow", class: "Alpenglow", icon: "fa-cube" },
 
 ];
 //  { name: "Example function", class: "Class Click Event", icon: "fa-example" },
