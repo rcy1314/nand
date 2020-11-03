@@ -23,7 +23,7 @@ var Lemon = function() {
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    "rgba(169, 121, 62, 0)"
+    "rgba(169, 121, 62, .15)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",

@@ -26,7 +26,7 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    "rgba(75, 68, 84, .05)"
+    "rgba(75, 68, 84, .1)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",

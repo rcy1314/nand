@@ -833,7 +833,6 @@ html body #container #main #visit #page .quick .feed::-webkit-scrollbar {
 
 html body #container #main #visit #page .quick .feed .asset,
 html body #container #main #visit #page .quick .feed .translation {
-  filter: var(--hue-rotate);
   position: relative;
   text-align: center;
   border-radius: 6px;
@@ -862,6 +861,10 @@ html body #container #main #visit #page .quick .feed .translation img {
   padding: 5px;
   height: 30px;
   width: 30px;
+}
+
+html body #container #main #visit #page .quick .feed .translation img {
+  filter: var(--hue-rotate);
 }
 
 html body #container #main #visit #page .quick .feed .asset a,

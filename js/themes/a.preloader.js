@@ -1,5 +1,5 @@
 // Uncomment initial theme
-// let set = "Eggplant"
+let set = "Lemon"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
