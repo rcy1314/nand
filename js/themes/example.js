@@ -26,13 +26,13 @@ var Example = function() {
     "--fill-color-secondary",
     "rgba(253, 115, 136, 1)"
   );
-  //Inputs bg color, Feed items, Input listings, Guide Wrap pub, Feed Status
+  //Inputs color, List view, Feed items, Input Listings, Guide Wrap, XML Status
   document.documentElement.style.setProperty(
     "--bg-color-primary",
     "linear-gradient(right, rgba(106, 66, 194, .4) 50%," +
     "rgba(253, 115, 136, .4) 100%)"
   );
-  //HTML, Body, Container
+  //HTML, Body, Container, Blocks view bg
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
     "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +

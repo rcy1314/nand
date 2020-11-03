@@ -51,6 +51,8 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "nowrap"));
+      document.querySelectorAll('.air, .result')
+        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
       if (document.body.contains(document.getElementById(".air")))
         document.querySelector(".air").style.display = "block";
       if (document.body.contains(document.getElementById(".result`")))
@@ -75,6 +77,8 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "wrap"));
+      document.querySelectorAll('.air, .result')
+        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-secondary)"));
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
       if (document.body.contains(document.getElementById(".result")))
@@ -143,7 +147,7 @@ var sideBarDisplay = function (toggleOption) {
     let Hide = document.querySelector("#hide");
     Hide.animate(
       {
-        left: ["0px", "230px"],
+        left: ["0px", "240px"],
       },
       {
         duration: 300, // number in ms [this would be equiv of your speed].

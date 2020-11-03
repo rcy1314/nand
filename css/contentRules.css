@@ -664,7 +664,6 @@ html body #container #main #visit #page #front #label .link:hover {
 
 html body #container #main #group .air,
 html body #container #main #group .result {
-  background-color: transparent;
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;

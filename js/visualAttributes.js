@@ -58,13 +58,6 @@ var visual = function (toggleOption) {
     document
       .querySelectorAll("input")
       .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
-    if (document.body.contains(document.querySelector("#group .populate"))) {
-      document
-        .querySelectorAll("#group .populate")
-        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
-      document.querySelector("#group").style.backgroundColor =
-        "var(--bg-color-primary)";
-    }
     if (document.body.contains(document.querySelector("#feed")))
       document.querySelector("#feed").style.backgroundColor =
         "var(--bg-color-primary)";
@@ -87,8 +80,6 @@ var visual = function (toggleOption) {
       .forEach(
         (a) => (a.style.backgroundColor = "var(--hover-background-color)"))
     document.querySelector('#main .check').style.filter = 'saturate(3)'
-    document.querySelector('#hide').style.background =
-    "var(--hover-background-color)"
   } else if (op == 0) {
     document.documentElement.style.setProperty(
       "--box-shadow",
@@ -143,31 +134,6 @@ var visual = function (toggleOption) {
       "--hue-rotate",
       "hue-rotate(0deg)"
     );
-    document
-      .querySelectorAll("input")
-      .forEach((a) => (a.style.color = "var(--fill-color-primary)"));
-    if (document.body.contains(document.querySelector("#group .populate"))) {
-      if (groupType == "blocks")
-        document
-          .querySelectorAll(".populate")
-          .forEach(
-            (a) => (a.style.backgroundColor = "var(--bg-color-secondary)")
-          );
-      else if (groupType == "list")
-        document
-          .querySelectorAll(".populate")
-          .forEach(
-            (a) => (a.style.backgroundColor = "var(--bg-color-primary)")
-          );
-      document.querySelector("#group").style.backgroundColor =
-        "var(--bg-color-secondary)";
-    }
-    if (document.body.contains(document.querySelector("#feed")))
-      document.querySelector("#feed").style.backgroundColor =
-        "var(--bg-color-secondary)";
-    document.querySelector("#match .listing").classList.add("invertScrollbar");
-    document.querySelector("#first .listing").classList.add("invertScrollbar");
-    document.querySelector("#sidebar #content").classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
     document.querySelectorAll("#container, #sidebar, #visit")
       .forEach(
@@ -176,7 +142,5 @@ var visual = function (toggleOption) {
       .forEach(
         (a) => (a.style.backgroundColor = "var(--progress-background)"))
     document.querySelector('#main .check').style.filter = 'saturate(1)'
-    document.querySelector('#hide').style.background =
-    "-webkit-linear-gradient(left, rgba(0,0,0,0) 90%, var(--progress-background) 100%)"
   }
 };
