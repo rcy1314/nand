@@ -579,7 +579,7 @@ var xmlRequestParsing = function (search, string, index) {
   document.title = menu[index].id.space();
   document.querySelector("#visit").style.display = "none";
   document.querySelector("#toggle").style.display = "none";
-  document.querySelector("#main .check").style.display = "block"
+  document.querySelector("#main .check").style.visibility = "visible"
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -759,7 +759,7 @@ var xmlRequestParsing = function (search, string, index) {
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
-        document.querySelector("#main .check").style.display = "none"
+        document.querySelector("#main .check").style.visibility = "hidden"
         document.querySelector("#main").setAttribute("tabindex", -1);
         document.querySelector("#main").focus();
         unloading();

@@ -414,8 +414,16 @@ html body #container #main {
   outline: none;
 }
 
+html body #container #main .check {
+  visibility: hidden;
+  background-color:transparent;
+  position:absolute;
+  font-size:11px;
+  position: fixed;
+  color:var(--fill-color-primary);
+}
+
 html body #container #main #feed {
-  background: var(--bg-color-secondary);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -426,7 +434,6 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
-  background: var(--bg-color-secondary);
   height: fit-content;
   position: absolute;
   display: none;
