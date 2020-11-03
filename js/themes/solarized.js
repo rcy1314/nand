@@ -46,7 +46,7 @@ var Solarized = function() {
   );
   document.documentElement.style.setProperty(
     "--progress-background",
-    "rgba(63, 92, 136, .1)"
+    "rgba(63, 92, 136, .3)"
   );
   document.documentElement.style.setProperty(
     "--sticky-background",

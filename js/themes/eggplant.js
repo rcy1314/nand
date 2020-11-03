@@ -46,7 +46,7 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--progress-background",
-    "rgba(45, 38, 54, .1)"
+    "rgba(45, 38, 54, .3)"
   );
   document.documentElement.style.setProperty(
     "--sticky-background",

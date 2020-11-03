@@ -46,7 +46,7 @@ var Roses = function() {
   );
   document.documentElement.style.setProperty(
     "--progress-background",
-    "rgba(151, 41, 59, .1)"
+    "rgba(151, 41, 59, .3)"
   );
   document.documentElement.style.setProperty(
     "--sticky-background",
