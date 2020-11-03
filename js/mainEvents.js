@@ -210,8 +210,21 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains("entity") ||
-      event.target.classList.contains("query") ||
-      event.target.classList.contains("asset")
+      event.target.classList.contains("category") ||
+      event.target.classList.contains("translation")
+    ) {
+      init();
+      document.querySelector("#toggle").style.display = "none";
+      document.querySelector("#visit").style.display = "none";
+      populateCategoryGroup(
+        event.target.closest(".translation").getAttribute("aria-item")
+      );
+      topMenuBarDisplay(topBar);
+    }
+    if (
+      event.target.classList.contains("entity") ||
+      event.target.classList.contains("asset") ||
+      event.target.classList.contains("query")
     ) {
       init();
       document.querySelector("#toggle").style.display = "none";
