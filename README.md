@@ -6,6 +6,7 @@
 ### Features
 
 * Private Proxy Requests
+* Beta stage themes example.js in /js/themes
 
 ### Known Issues
 
@@ -106,6 +107,7 @@
 Want to Contribute?
 ----
 
+Submit a Theme!<br>
 Submit a feed!<br>
 File an issue!<br>
 
