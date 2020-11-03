@@ -6,11 +6,11 @@ var Solarized = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(63, 73, 99, .8)"
+    "rgba(63, 73, 99, 1)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(63, 92, 136, .4)"
+    "rgba(63, 92, 136, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",

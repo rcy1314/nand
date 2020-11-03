@@ -6,11 +6,11 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(45, 38, 54, .8)"
+    "rgba(45, 38, 54, 1)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(75, 68, 84, .4)"
+    "rgba(75, 68, 84, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",

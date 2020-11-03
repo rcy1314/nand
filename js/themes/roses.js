@@ -6,11 +6,11 @@ var Roses = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(151, 41, 59, .8)"
+    "rgba(83, 94, 81, 1)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(151, 41, 59, .4)"
+    "rgba(83, 94, 81, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",

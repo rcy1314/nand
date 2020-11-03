@@ -6,11 +6,11 @@ var Lemon = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(169, 121, 62, .4)"
+    "rgba(169, 121, 62, 1)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(169, 121, 62, .3)"
+    "rgba(169, 121, 62, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
