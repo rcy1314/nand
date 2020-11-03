@@ -22,7 +22,7 @@ var Solarized = function() {
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "rgba(63, 92, 136, .3)"
+    "rgba(63, 92, 136, .4)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
@@ -67,10 +67,5 @@ var Solarized = function() {
       (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
-  document.querySelector("#match .listing").classList.add("invertScrollbar");
-  document.querySelector("#first .listing").classList.add("invertScrollbar");
-  document
-    .querySelector("#sidebar #content")
-    .classList.add("invertScrollbar");
 
 }

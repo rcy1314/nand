@@ -22,7 +22,7 @@ var Nord = function() {
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "rgba(80, 86, 105, .3)"
+    "rgba(80, 86, 105, .4)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
@@ -67,10 +67,5 @@ var Nord = function() {
       (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
-  document.querySelector("#match .listing").classList.add("invertScrollbar");
-  document.querySelector("#first .listing").classList.add("invertScrollbar");
-  document
-    .querySelector("#sidebar #content")
-    .classList.add("invertScrollbar");
 
 }

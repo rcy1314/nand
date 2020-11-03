@@ -415,6 +415,7 @@ html body #container #main {
 }
 
 html body #container #main #feed {
+  background: var(--bg-color-secondary);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -425,7 +426,7 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
-  background: var(--loader-color-primary);
+  background: var(--bg-color-secondary);
   height: fit-content;
   position: absolute;
   display: none;

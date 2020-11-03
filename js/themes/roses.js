@@ -22,7 +22,7 @@ var Roses = function() {
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "rgba(83, 94, 81, .3)"
+    "rgba(83, 94, 81, .4)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
@@ -67,10 +67,5 @@ var Roses = function() {
       (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
-  document.querySelector("#match .listing").classList.add("oppositeScrollbar");
-  document.querySelector("#first .listing").classList.add("oppositeScrollbar");
-  document
-    .querySelector("#sidebar #content")
-    .classList.add("oppositeScrollbar");
 
 }

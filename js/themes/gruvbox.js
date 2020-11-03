@@ -20,7 +20,10 @@ var Gruvbox = function() {
     "--fill-color-secondary",
     "rgba(169, 121, 62, 1)"
   );
-  document.documentElement.style.setProperty("--bg-color-primary", "#262626");
+  document.documentElement.style.setProperty(
+    "--bg-color-primary",
+    "rgba(38, 38, 38, .4)"
+  );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
     "#262626"
@@ -64,10 +67,5 @@ var Gruvbox = function() {
       (a) => (a.style.backgroundColor = "var(--progress-background)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
-  document.querySelector("#match .listing").classList.add("invertScrollbar");
-  document.querySelector("#first .listing").classList.add("invertScrollbar");
-  document
-    .querySelector("#sidebar #content")
-    .classList.add("invertScrollbar");
 
 }
