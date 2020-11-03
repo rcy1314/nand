@@ -96,7 +96,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--fill-color-secondary",
-      "rgb(212,212,212,.5)"
+      "rgb(212,212,212,.9)"
     );
     document.documentElement.style.setProperty("--bg-color-primary", "#ffffff");
     document.documentElement.style.setProperty(
