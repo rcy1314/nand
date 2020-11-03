@@ -1,5 +1,5 @@
 // Uncomment initial theme
-let set = "Alpenglow"
+//let set = "Alpenglow"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
