@@ -204,7 +204,6 @@ document.addEventListener(
       populateCategoryGroup(category);
       displayExpand(expand);
       topMenuBarDisplay(topBar);
-      visual();
     }
     if (event.target.classList.contains("Blocks")) {
       let expand = false;
@@ -222,14 +221,15 @@ document.addEventListener(
       populateCategoryGroup(category);
       displayExpand(expand);
       topMenuBarDisplay(topBar);
-      visual();
     }
     if (event.target.classList.contains("Dots")) {
       let loading = "dots";
       document
         .querySelectorAll("#dots .fill")
         .forEach((a) => a.classList.add("dots"));
+      document.querySelector('#dots').style.zIndex = "11";
       setTimeout(function () {
+        document.querySelector('#dots').style.zIndex = "-1";
         document
           .querySelectorAll("#dots .fill")
           .forEach((a) => a.classList.remove("dots"));
@@ -250,7 +250,6 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       unloading();
-      visual();
     }
     if (event.target.classList.contains("Percent")) {
       let loading = "percent";

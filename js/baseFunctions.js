@@ -91,6 +91,15 @@ var sideBarDisplay = function (toggleOption) {
       content.innerHTML =
         sideBarCategoryBuild(translations[i]) + content.innerHTML;
     }
+    for (i = 0; i <= themes.length - 1; i++) {
+      content.innerHTML =
+        content.innerHTML +
+        sideBarOptionBuild(
+          themes[i].class,
+          themes[i].name,
+          themes[i].icon
+        );
+    };
     for (i = 0; i <= selections.length - 1; i++) {
       content.innerHTML =
         content.innerHTML +
@@ -342,7 +351,6 @@ var progressBackDrop = function (done, percent) {
       progressBar.style.transition = "none";
       progressBar.style.width = "0%";
     }, 250);
-    visual();
   }
 };
 

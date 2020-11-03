@@ -55,7 +55,8 @@ html body #container #main #visit {
 
 html,
 html body,
-html body #container {
+html body #container,
+html body #container #main #feed {
   background-color: var(--bg-color-secondary);
 }
 
@@ -395,7 +396,7 @@ html body #container #main #visit #page {
 
 html body #container #main #dots .fill {
   background-color: var(--fill-color-primary);
-  z-index: 11;
+  z-index: -1;
   left: -4px;
   top: 0;
 }
@@ -996,10 +997,6 @@ html body #container #main #feed .center .item:hover {
 
 html body #container #main #feed .center .item:not(hover) {
   border: var(--hover-border-color);
-}
-
-html body #container #main #feed .center .item .classic:hover {
-  background-color: var(--hover-background-color);
 }
 
 html body #container #main #feed .center .item .pub,

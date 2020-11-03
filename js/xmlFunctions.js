@@ -545,7 +545,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         .closest(".item")
         .querySelector(".pending")
         .remove();
-    visual();
   });
 };
 
@@ -770,7 +769,6 @@ var xmlRequestParsing = function (search, string, index) {
         let channel = document.querySelector(".channel");
         channel.append("This site could not be reached.");
         unloading();
-        visual();
       }
     }
   };
