@@ -80,6 +80,8 @@ var visual = function (toggleOption) {
       .forEach(
         (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
     document.querySelector('#main .check').style.filter = 'saturate(3)'
+    document.querySelector('#hide').style.background =
+    "-webkit-linear-gradient(left, rgba(0,0,0,0) 90%, var(--progress-background) 100%)"
   } else if (op == 0) {
     document.documentElement.style.setProperty(
       "--box-shadow",
@@ -161,9 +163,11 @@ var visual = function (toggleOption) {
     document.querySelectorAll("#container, #visit")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
-    document.querySelectorAll("#sidebar, #hide")
+    document.querySelectorAll("#sidebar")
       .forEach(
         (a) => (a.style.backgroundColor = "var(--progress-background)"))
     document.querySelector('#main .check').style.filter = 'saturate(1)'
+    document.querySelector('#hide').style.background =
+    "-webkit-linear-gradient(left, rgba(0,0,0,0) 90%, var(--progress-background) 100%)"
   }
 };

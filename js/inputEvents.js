@@ -51,7 +51,6 @@ document.addEventListener(
         .querySelector("#search .view")
         .setAttribute("placeholder", "Search feeds");
       document.querySelector("#input .icon").classList.add("slide");
-      visual();
     }
     event.preventDefault();
   },
@@ -175,7 +174,6 @@ document.addEventListener(
     else if (event.target.classList.contains("view"))
       inputListingKeyup("#match", event.keyCode);
     event.preventDefault();
-    visual();
   },
   false
 ); //:before pseudo-elements not loaded in DOM
@@ -228,7 +226,6 @@ document.addEventListener(
         else var groupType = "blocks";
         displayExpand(expand);
         unloading();
-        visual();
       } else if (
         document.body.contains(document.querySelector("#match .hover"))
       ) {
@@ -444,5 +441,4 @@ var inputListingKeyup = function (Elem, keycode) {
     document.querySelector(Elem + "").style.display = "none";
   event.target.setAttribute("tabIndex", -1);
   event.target.focus();
-  visual();
 };
