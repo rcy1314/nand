@@ -2,28 +2,31 @@ var Eggplant = function() {
 
   document.documentElement.style.setProperty(
     "--box-shadow",
-    "8px 8px 16px rgba(113, 99, 232, .2)"
+    "8px 8px 16px rgba(45, 38, 54, .2)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(113, 99, 232, .4)"
+    "rgba(45, 38, 54, .8)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(113, 99, 232, .2)"
+    "rgba(75, 68, 84, .4)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
-    "#555555"
+    "#aaaaaa"
   );
-  document.documentElement.style.setProperty("--bg-color-primary", "#e7e7e7");
+  document.documentElement.style.setProperty(
+    "--bg-color-primary",
+    "rgba(75, 68, 84, .4)"
+  );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
-    "#e7e7e7"
+    "rgba(45, 38, 54, 1)"
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    "rgba(113, 99, 232, .05)"
+    "rgba(75, 68, 84, .05)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",
@@ -35,15 +38,15 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgb(212,212,212,.5)"
+    "rgba(45, 38, 54, .5)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",
-    "rgba(113, 99, 232, .1)"
+    "rgba(45, 38, 54, .1)"
   );
   document.documentElement.style.setProperty(
     "--sticky-background",
-    "rgba(255,255,255,.4)"
+    "rgba(45, 38, 54, .4)"
   );
   document.documentElement.style.setProperty(
     "--hue-rotate",
@@ -57,7 +60,7 @@ var Eggplant = function() {
       (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
   document.querySelectorAll("#content")
     .forEach(
-      (a) => (a.style.backgroundColor = "var(--progress-background)"))
+      (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
 

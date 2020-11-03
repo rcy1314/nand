@@ -603,8 +603,8 @@ html body #container #main #visit #page #front .focus .button {
   position: relative;
   border-radius: 5px;
   height: 40px;
-  width: 79px;
-  right: 8px;
+  width: 75px;
+  right: 5px;
   bottom: 0;
 }
 
@@ -617,7 +617,7 @@ html body #container #main #visit #page #front .focus .buttonSearch {
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
-  right: 30px;
+  right: 28px;
   top: 10px;
 }
 

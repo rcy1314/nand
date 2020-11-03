@@ -1,18 +1,20 @@
+// Uncomment initial theme
+// let set = "Eggplant"
+
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
 
 const themes = [
 
   { name: "Lemon", class: "Lemon", icon: "fa-lemon" },
-  { name: "Eggplant", class: "Eggplant", icon: "fa-egg" },
+  { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
 
 ];
-//  { name: "Example Theme function", class: "Example Click Event", icon: "fa-example" },
+//  { name: "Example function", class: "Class Click Event", icon: "fa-example" },
 
 //create js theme file from existing to edit
 //example.js function = themes.name
-//add above and below
-//add icon to js/themes/css/icons.css changing content:
+//add above and below example the themes and files
 
   let directory = "js/themes/";
   let extension = ".js";
@@ -46,22 +48,11 @@ for (i = 0; i <= themes.length - 1; i++){
     )
   })(i);
 }
-
-/* <--------------------------------------------------------------
-
-  var startup = setInterval(function() {
-    if (typeof Lemon === "function"){
-
-// *** above and below Replace "Lemon" with themes.name ***
-
-      Lemon()
-      setTimeout(function(){
-        clearInterval(startup)
-      }, 10)
-    }
-  }, 5)
-
-
-//uncomment startup to set initial theme
-
------------------------------------------------------------------> */
+var startup = setInterval(function() {
+  if (typeof set === "string"){
+    window[set]()
+    setTimeout(function(){
+      clearInterval(startup)
+    }, 10)
+  }
+}, 5)
