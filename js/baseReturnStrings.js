@@ -124,7 +124,7 @@ var translationBuild = function (translation) {
   return `
     <div class='translation' aria-item='${translation}'>
        <img class='quickTranslation' src='images/${translation}.webp'>
-       <a class='query' ext='${translation}'>
+       <a class='category' ext='${translation}'>
     ${translation}
        </a>
     </div>

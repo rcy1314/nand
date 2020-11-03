@@ -10,7 +10,7 @@ var Lemon = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(169, 121, 62, .2)"
+    "rgba(169, 121, 62, .3)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
@@ -23,7 +23,7 @@ var Lemon = function() {
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    ""
+    "rgba(169, 121, 62, 0)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",
