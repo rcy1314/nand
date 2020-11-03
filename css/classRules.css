@@ -11,7 +11,7 @@
 }
 
 .invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--fill-color-primary);
+  background-color: var(--fill-color-secondary);
   border-radius: 2px;
 }
 

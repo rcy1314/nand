@@ -104,11 +104,11 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--fill-color-primary",
-      "#777777"
+      "#555555"
     );
     document.documentElement.style.setProperty(
       "--fill-color-secondary",
-      "#1683D8"
+      "rgb(212,212,212,.5)"
     );
     document.documentElement.style.setProperty("--bg-color-primary", "#ffffff");
     document.documentElement.style.setProperty(

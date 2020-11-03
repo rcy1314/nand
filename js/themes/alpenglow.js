@@ -58,7 +58,7 @@ var Alpenglow = function() {
   );
   document.documentElement.style.setProperty(
     "--hue-rotate",
-    "hue-rotate(10deg)"
+    "hue-rotate(110deg)"
   );
   document
     .querySelectorAll("input")
