@@ -1,11 +1,12 @@
 // Uncomment initial theme
-//let set = "Solarized"
+let set = "Roses"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
 
 const themes = [
 
+  { name: "Roses", class: "Roses", icon: "fa-leaf" },
   { name: "Lemon", class: "Lemon", icon: "fa-lemon" },
   { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
@@ -21,6 +22,7 @@ const themes = [
   let extension = ".js";
   let files = [
     "lemon",
+    "roses",
     "eggplant",
     "solarized",
 //  "example file",
