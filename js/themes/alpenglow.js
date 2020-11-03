@@ -6,12 +6,12 @@ var Alpenglow = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +
+    "linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%," +
     "rgba(253, 115, 136, 1) 100%)"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%," +
+    "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +
     "rgba(253, 115, 136, 1) 100%)"
   );
   document.documentElement.style.setProperty(
@@ -20,12 +20,12 @@ var Alpenglow = function() {
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "linear-gradient(right, rgba(106, 66, 194, .1) 50%," +
-    "rgba(253, 115, 136, .1) 100%)"
+    "linear-gradient(right, rgba(106, 66, 194, 1) 50%," +
+    "rgba(253, 115, 136, 1) 100%)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
-    "linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%," +
+    "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +
     "rgba(253, 115, 136, 1) 100%)"
   );
   document.documentElement.style.setProperty(
@@ -67,5 +67,10 @@ var Alpenglow = function() {
       (a) => (a.style.backgroundImage = "var(--bg-color-primary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
+  document.querySelector("#match .listing").classList.add("invertScrollbar");
+  document.querySelector("#first .listing").classList.add("invertScrollbar");
+  document
+    .querySelector("#sidebar #content")
+    .classList.add("invertScrollbar");
 
 }

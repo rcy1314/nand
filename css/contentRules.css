@@ -55,9 +55,8 @@ html body #container #main #visit {
 
 html,
 html body,
-html body #container,
-html body #container #main #feed {
-  background-color: var(--bg-color-secondary);
+html body #container {
+  background: var(--bg-color-secondary);
 }
 
 html body #container #main #notification {
@@ -426,6 +425,7 @@ html body #container #main #feed {
 }
 
 html body #container #main #group {
+  background: var(--loader-color-primary);
   height: fit-content;
   position: absolute;
   display: none;
@@ -478,7 +478,7 @@ html body #container #main #visit #page #front #first {
 }
 
 html body #container #main #visit #page #front #first .listing {
-  background: var(--loader-color-primary);
+  background: var(--loader-color-secondary);
   overflow-x: hidden;
   position: absolute;
   overflow-y: auto;
@@ -1042,7 +1042,7 @@ html body #container #guide .sticky .ago {
 }
 
 html body #container #main #feed .center .item {
-  background-color: var(--bg-color-primary);
+  background: var(--bg-color-primary);
   box-shadow: var(--box-shadow);
   margin-bottom: 25px;
   width: 100%;
@@ -1138,6 +1138,7 @@ html body #container #guide .source {
   position: relative;
   z-index: -2;
   width: 10px;
+  opacity: 0;
   height: 0;
 }
 
