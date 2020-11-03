@@ -144,7 +144,6 @@ document.addEventListener(
       document
         .querySelectorAll(".listing .index")
         .forEach((a) => a.classList.remove("hover"));
-      visual();
     }
   },
   false
@@ -161,7 +160,6 @@ document.addEventListener(
       event.target.classList.contains("textSuggest")
     ) {
       event.target.closest(".index").classList.add("hover");
-      visual();
     }
   },
   false

@@ -9,7 +9,7 @@ video {
 }
 
 ::placeholder {
-  color: #444444;
+  color: var(--fill-color-primary);
 }
 
 html body #container #main #feed .center .channel .item .classic .fill .loader,
@@ -140,6 +140,7 @@ html body #container #sidebar #content #basic {
 
 html body #container #sidebar #content #basic input[type=text] {
   background-color: var(--bg-color-primary);
+  color: var(--fill-color-primary);
   border: .3px solid #999999;
   position: relative;
   overflow: hidden;
