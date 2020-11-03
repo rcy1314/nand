@@ -384,12 +384,10 @@ document.addEventListener(
               .closest(".image")
               .querySelector(".fa-heart").style.zIndex = "0";
           }, 1500);
-          visual();
           tap = 0;
         }
       }
       event.stopPropagation();
-      visual();
     }
     if (
       event.target.classList.contains("fa-ellipsis-h") ||
