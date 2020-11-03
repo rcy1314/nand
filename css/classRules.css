@@ -11,27 +11,13 @@
 }
 
 .invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--hover-border-color);
+  background-color: var(--fill-color-primary);
   border-radius: 2px;
 }
 
 .invertScrollbar {
   scrollbar-color: #eeeeee transparent;
   scrollbar-width: thin;
-}
-
-.oppositeScrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
-.oppositeScrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--hover-border-color);
-  border-radius: 2px;
-}
-
-.oppositeScrollbar {
-scrollbar-color: #2f2f2f transparent;
-scrollbar-width: thin;
 }
 
 .toggle {

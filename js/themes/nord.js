@@ -14,7 +14,7 @@ var Nord = function() {
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
-    "#eeeeee"
+    "rgba(218, 222, 232, 1)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
@@ -54,7 +54,7 @@ var Nord = function() {
   );
   document.documentElement.style.setProperty(
     "--hue-rotate",
-    "hue-rotate(-10deg)"
+    "grayscale(100%)"
   );
   document
     .querySelectorAll("input")

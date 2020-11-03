@@ -104,7 +104,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--fill-color-primary",
-      "#555555"
+      "#777777"
     );
     document.documentElement.style.setProperty(
       "--fill-color-secondary",
@@ -167,9 +167,7 @@ var visual = function (toggleOption) {
         "var(--bg-color-secondary)";
     document.querySelector("#match .listing").classList.add("invertScrollbar");
     document.querySelector("#first .listing").classList.add("invertScrollbar");
-    document
-      .querySelector("#sidebar #content")
-      .classList.add("invertScrollbar");
+    document.querySelector("#sidebar #content").classList.add("invertScrollbar");
     document.querySelector("#favicon").setAttribute("href", "favicon.ico");
     document.querySelectorAll("#container, #sidebar, #visit")
       .forEach(
