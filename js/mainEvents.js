@@ -146,6 +146,9 @@ document.addEventListener(
       } else if (
         document.querySelector("#main #first").style.display === "block"
       ) {
+        document
+          .querySelectorAll("#label, .quick")
+          .forEach((a) => (a.style.visibility = 'visible'));
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }

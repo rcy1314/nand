@@ -478,7 +478,6 @@ html body #container #main #visit #page #front #first {
 }
 
 html body #container #main #visit #page #front #first .listing {
-  background: var(--loader-color-secondary);
   overflow-x: hidden;
   position: absolute;
   overflow-y: auto;
@@ -1379,7 +1378,6 @@ html body #container #main #feed .center .yt .image img {
 }
 
 html body #container #main #top #arm #search #match .listing {
-  background: var(--loader-color-secondary);
   scrollbar-width: none;
   position: relative;
   overflow: overlay;

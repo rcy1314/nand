@@ -1,13 +1,14 @@
 // Uncomment initial theme
-//let set = "Solarized"
+//let set = "Nord"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
 
 const themes = [
 
+  { name: "Nord", class: "Nord", icon: "fa-signature" },
   { name: "Roses", class: "Roses", icon: "fa-leaf" },
-  { name: "Lemon", class: "Lemon", icon: "fa-lemon" },
+  { name: "Gruvbox", class: "Gruvbox", icon: "fa-lemon" },
   { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
   { name: "Alpenglow", class: "Alpenglow", icon: "fa-cube" },
@@ -22,8 +23,9 @@ const themes = [
   let directory = "js/themes/";
   let extension = ".js";
   let files = [
-    "lemon",
+    "nord",
     "roses",
+    "gruvbox",
     "eggplant",
     "solarized",
     "alpenglow",

@@ -276,7 +276,12 @@ document.addEventListener(
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
-  else if (
+  if (event.target.value.length > 1){
+    document
+      .querySelectorAll("#label, .quick")
+      .forEach((a) => (a.style.visibility = 'hidden'));
+  }
+  if (
     event.target.value.length > 3 &&
     keycode !== 40 &&
     keycode !== 34 &&
@@ -286,6 +291,12 @@ var inputListingKeyup = function (Elem, keycode) {
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value, Elem);
+  else if (event.target.value.length < 2 && keycode === 8){
+    document.querySelector(Elem).style.display = "none"
+    document
+      .querySelectorAll("#label, .quick")
+      .forEach((a) => (a.style.visibility = 'visible'));
+  }
   else if (keycode === 40) {
     if (
       !document.body.contains(document.querySelector(Elem + " .listing .hover"))

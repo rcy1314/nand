@@ -1,4 +1,4 @@
-var Lemon = function() {
+var Gruvbox = function() {
 
   document.documentElement.style.setProperty(
     "--box-shadow",
