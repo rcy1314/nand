@@ -244,14 +244,8 @@ let guideOnScreen; //temporarly store onScreen for guide
 const selections = [
   //sideBar sel options
 
-  { name: "Opposite", class: "Night", icon: "fa-code" },
-  { name: "Invert", class: "Day", icon: "fa-terminal" },
   { name: "Home", class: "sideHome", icon: "side fa-home" },
-  { name: "Random", class: "Random", icon: "fa-chart-pie" },
-  { name: "Random Image", class: "RandomImages", icon: "fa-tablet-alt" },
-  { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
   { name: "Reader", class: "Reader", icon: "fa-heart" },
-  { name: "Contrast", class: "Switch", icon: "fa-adjust" },
   { name: "List", class: "List", icon: "fa-th-large" },
   { name: "Blocks", class: "Blocks", icon: "fa-list-ul" },
   { name: "Percent", class: "Percent", icon: "fa-signal" },
@@ -259,5 +253,8 @@ const selections = [
   { name: "Images", class: "toggleImages", icon: "fa-camera-retro" },
   { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
   { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
+  { name: "Random", class: "Random", icon: "fa-chart-pie" },
+  { name: "Random Image", class: "RandomImages", icon: "fa-tablet-alt" },
+  { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
   { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
 ];

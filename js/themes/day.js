@@ -1,36 +1,35 @@
-var Eggplant = function() {
-
+var Day = function() {
   document.documentElement.style.setProperty(
     "--box-shadow",
-    "8px 8px 16px rgba(45, 38, 54, .2)"
+    "8px 8px 16px #eeeeee"
   );
   document.documentElement.style.setProperty(
     "--loader-color-primary",
-    "rgba(45, 38, 54, 1)"
+    "#0078D4"
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "rgba(75, 68, 84, 1)"
+    "#1683D8"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
-    "#aaaaaa"
+    "#555555"
   );
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
-    "rgba(75, 68, 84, 1)"
+    "rgb(212,212,212,.9)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "rgba(75, 68, 84, .4)"
+    "rgb(255,255,255,.8)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
-    "rgba(45, 38, 54, 1)"
+    "#f7f7f7"
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    "rgba(75, 68, 84, .1)"
+    "rgba(246, 248, 250, .3)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",
@@ -42,27 +41,27 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(45, 38, 54, .8)"
+    "rgb(212,212,212,.5)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",
-    "rgba(45, 38, 54, .3)"
+    "rgba(238, 238, 238, .4)"
   );
   document.documentElement.style.setProperty(
     "--sticky-background",
-    "rgba(45, 38, 54, .4)"
+    "rgba(255,255,255,.4)"
   );
   document.documentElement.style.setProperty(
     "--hue-rotate",
-    "hue-rotate(45deg)"
+    "hue-rotate(0deg)"
   );
+  document.querySelector("#favicon").setAttribute("href", "favicon.ico");
   document.querySelectorAll("#container, #sidebar, #visit")
     .forEach(
       (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
   document.querySelectorAll("#content")
     .forEach(
-      (a) => (a.style.backgroundColor = "var(--bg-color-primary)"))
-  document.querySelector('#hide').style.background =
-  "var(--progress-background)"
+      (a) => (a.style.backgroundColor = "var(--progress-background)"))
+  document.querySelector('#main .check').style.filter = 'saturate(1)'
 
 }

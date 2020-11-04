@@ -1,15 +1,15 @@
 // Uncomment initial theme
-let set //= "Nord"
+let set = "Night"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
 
 const themes = [
 
+  { name: "Day", class: "Day", icon: "fa-terminal" },
+  { name: "Night", class: "Night", icon: "fa-code" },
   { name: "Nord", class: "Nord", icon: "fa-signature" },
-  { name: "Roses", class: "Roses", icon: "fa-leaf" },
   { name: "Gruvbox", class: "Gruvbox", icon: "fa-lemon" },
-  { name: "Eggplant", class: "Eggplant", icon: "fa-crown" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
   { name: "Alpenglow", class: "Alpenglow", icon: "fa-cube" },
 
@@ -23,10 +23,10 @@ const themes = [
   let directory = "js/themes/";
   let extension = ".js";
   let files = [
+    "day",
+    "night",
     "nord",
-    "roses",
     "gruvbox",
-    "eggplant",
     "solarized",
     "alpenglow",
 //  "example file",
@@ -49,6 +49,7 @@ for (i = 0; i <= themes.length - 1; i++){
         if (
           event.target.classList.contains(theme)
         ) {
+                initial = theme
                 window[theme]()
         }
       },
@@ -61,9 +62,8 @@ if (typeof set === "string")
 var startup = setInterval(function() {
   if (typeof set === "string" && typeof eval(set) === "function") {
     window[set]()
-    console.log(startup)
     setTimeout(function(){
       clearInterval(startup)
     }, 10)
-  }
+  } else clearInterval(startup)
 }, 5)

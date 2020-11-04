@@ -36,7 +36,6 @@ var loadScripts = function () {
     "xmlFunctions",
     "baseFunctions",
     "settings",
-    "visualAttributes",
     "baseReturnStrings",
     "sideBarEvents",
     "inputEvents",

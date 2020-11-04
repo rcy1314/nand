@@ -12,17 +12,17 @@ var notifyOption = function (displayContent) {
         right: ["0px", "280px"],
       },
       {
-        duration: 1500, // number in ms [this would be equiv of your speed].
+        duration: 750, // number in ms [this would be equiv of your speed].
         easing: "linear",
         iterations: 1, // infinity or a number.
         // fill: ''
       }
     );
-  }, 1500);
+  }, 750);
 
   setTimeout(function () {
     notification.style.display = "none";
-  }, 3000);
+  }, 1500);
 };
 
 var displayExpand = function (toggleOption) {
@@ -51,7 +51,7 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "nowrap"));
-      document.querySelectorAll('.air, .result')
+      document.querySelectorAll('.populate')
         .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
       if (document.body.contains(document.getElementById(".air")))
         document.querySelector(".air").style.display = "block";
@@ -77,7 +77,7 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "wrap"));
-      document.querySelectorAll('.air, .result')
+      document.querySelectorAll('.populate')
         .forEach((a) => (a.style.backgroundColor = "var(--bg-color-secondary)"));
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
@@ -98,7 +98,7 @@ var sideBarDisplay = function (toggleOption) {
     content.innerHTML = content.innerHTML +
     `<div class='themes mainTransition'>
       <div class='border'>
-        Themes
+        Visual
         <div class='fa fa-braille'></div>
       </div>
     </div>`

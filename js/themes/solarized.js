@@ -22,7 +22,7 @@ var Solarized = function() {
   );
   document.documentElement.style.setProperty(
     "--bg-color-primary",
-    "rgba(63, 92, 136, .4)"
+    "rgba(46, 57, 80, 1)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",

@@ -190,26 +190,6 @@ document.addEventListener(
       let count = themes.length + 1
     document.querySelector('.themes').style.height = count * 35 + `px`
     }
-    if (event.target.classList.contains("Day")) {
-      op = 0;
-      contrast = contrast != true;
-      if (location.href.match("\\?\\+1") && location.href.match("\\+1"))
-        var uri = window.location.href.replace(/\?\+1|\+1/g, "");
-      else var uri = window.location.href;
-      notifyOption("Invert Visual Applied.");
-      uri.state();
-      visual();
-    }
-    if (event.target.classList.contains("Night")) {
-      op = 1;
-      contrast = contrast != true;
-      if (!location.href.match("\\?\\+1") && !location.href.match("\\+1"))
-        var uri = window.location.href + "?+1";
-      else var uri = window.location.href;
-      notifyOption("Opposite Visual Applied.");
-      uri.state();
-      visual();
-    }
     if (event.target.classList.contains("List")) {
       let expand = true;
       let groupType = "list";
@@ -329,22 +309,13 @@ document.addEventListener(
       var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
       xmlRequestParsing(null, null, randomMenuObject);
     }
-    if (
-      event.target.classList.contains("Switch") ||
-      event.target.classList.contains("fa-sun")
-    ) {
-      if (location.href.match("\\?+1") || location.href.match("\\+1")) {
-        var uri = window.location.href.replace(/\?\+1|\+1/g, "");
-        contrast = contrast != true;
-        op = op != true;
-      } else {
-        var uri = window.location.href + "?+1";
-        contrast = contrast != true;
-        op = op != true;
-      }
-      notifyOption("Contrast set to " + contrast.toString().capitalize());
-      uri.state();
-      visual();
+    if (event.target.classList.contains("fa-sun")) {
+      var iteration = themes.findIndex((item) => item.name === set)
+      if (iteration == themes.length - 1) iteration = -1
+      iteration = iteration + 1
+      set = themes[iteration].name
+      window[themes[iteration].name]()
+      notifyOption("Visual set to " + themes[iteration].name.capitalize())
     }
     event.preventDefault();
   },

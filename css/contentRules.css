@@ -92,7 +92,7 @@ html body #container #toggle {
   cursor: pointer;
   padding: 15px;
   right: 2px;
-  z-index: 1;
+  z-index: 12;
   top: 7px;
 }
 
@@ -399,7 +399,7 @@ html body #container #main #option {
   user-select: none;
   cursor: pointer;
   display: none;
-  z-index: 1;
+  z-index: 12;
   top: 5px;
 }
 
