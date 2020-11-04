@@ -98,7 +98,10 @@ var visual = function (toggleOption) {
       "--fill-color-secondary",
       "rgb(212,212,212,.9)"
     );
-    document.documentElement.style.setProperty("--bg-color-primary", "#ffffff");
+    document.documentElement.style.setProperty(
+      "--bg-color-primary",
+      "rgb(255,255,255,.3)"
+    );
     document.documentElement.style.setProperty(
       "--bg-color-secondary",
       "#f7f7f7"
