@@ -42,7 +42,7 @@ var Eggplant = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(45, 38, 54, .5)"
+    "rgba(45, 38, 54, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",

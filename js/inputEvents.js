@@ -49,7 +49,7 @@ document.addEventListener(
       event.target.value = "";
       document
         .querySelector("#search .view")
-        .setAttribute("placeholder", "Search feeds");
+        .setAttribute("placeholder", "Search");
       document.querySelector("#input .icon").classList.add("slide");
     }
     event.preventDefault();
@@ -63,13 +63,7 @@ document.addEventListener(
       event.target.value = "";
     }
     if (
-      event.target.classList.contains("hue") ||
-      event.target.classList.contains("hover") ||
-      event.target.classList.contains("text") ||
-      event.target.classList.contains("detail") ||
-      event.target.classList.contains("input") ||
-      event.target.classList.contains("textMatch") ||
-      event.target.classList.contains("textSuggest")
+      event.target.classList.contains("index")
     ) {
       if (document.getElementById("match").style.display === "block")
         document.getElementById("match").style.display = "none";
@@ -104,7 +98,7 @@ document.addEventListener(
           category = event.target.closest(".hover").getAttribute("response");
           randomDuplicate = [];
           first = false;
-          xmlRequestParsing(null, null, random());
+          xmlRequestParsing(null, null, anyRandomMenuObject());
           notifyOption("Switched to now reading " + category + ".");
         } else {
           if (document.body.contains(document.querySelector("#feed")))
@@ -134,12 +128,7 @@ document.addEventListener(
   "mouseout",
   function (event) {
     if (
-      event.target.classList.contains("hue") ||
-      event.target.classList.contains("text") ||
-      event.target.classList.contains("detail") ||
-      event.target.classList.contains("input") ||
-      event.target.classList.contains("textMatch") ||
-      event.target.classList.contains("textSuggest")
+      event.target.classList.contains("index")
     ) {
       document
         .querySelectorAll(".listing .index")
@@ -152,12 +141,7 @@ document.addEventListener(
   "mouseover",
   function (event) {
     if (
-      event.target.classList.contains("hue") ||
-      event.target.classList.contains("text") ||
-      event.target.classList.contains("detail") ||
-      event.target.classList.contains("input") ||
-      event.target.classList.contains("textMatch") ||
-      event.target.classList.contains("textSuggest")
+      event.target.classList.contains("index")
     ) {
       event.target.closest(".index").classList.add("hover");
     }

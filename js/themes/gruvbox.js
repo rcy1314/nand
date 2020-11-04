@@ -14,7 +14,7 @@ var Gruvbox = function() {
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",
-    "#aaaaaa"
+    "#eeeeee"
   );
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
@@ -42,7 +42,7 @@ var Gruvbox = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(169, 121, 62, .5)"
+    "rgba(169, 121, 62, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",

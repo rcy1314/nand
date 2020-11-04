@@ -42,7 +42,7 @@ var Nord = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(218, 222, 232, .5)"
+    "rgba(48, 52, 63, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",

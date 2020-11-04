@@ -42,7 +42,7 @@ var Solarized = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(63, 92, 136, .5)"
+    "rgba(63, 92, 136, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",

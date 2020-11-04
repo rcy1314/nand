@@ -42,7 +42,7 @@ var Roses = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(151, 41, 59, .5)"
+    "rgba(151, 41, 59, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",

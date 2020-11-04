@@ -797,6 +797,7 @@ html body #container #main #top #arm #search #input input[type=text]:not(:hover)
 }
 
 html body #container #main #top #arm #search #match {
+  background: var(--bg-color-secondary);
   border: var(--hover-border-color);
   width: fit-content;
   position: relative;
@@ -1391,6 +1392,7 @@ html body #container #main #top #arm #search #match .listing {
   margin: 0 auto;
   height: 364px;
   width: 308px;
+  z-index: 1;
 }
 
 
@@ -1401,14 +1403,13 @@ html body #container #main #visit #page #front #first .listing .detail {
   height: 100%;
   width: 100%;
   bottom: 0px;
-  z-index: 5;
+  z-index: -1;
   left: -2px;
 }
 
 html body #container #main #top #arm #search #match .listing .index,
 html body #container #main #visit #page #front #first .listing .index {
-  border: var(--not-hover-border-color) !important;
-  background-color: var(--bg-color-primary);
+  color: var(--fill-color-primary);
   width: calc(100% - 12px);
   padding-bottom: 8px;
   position: relative;
@@ -1418,10 +1419,16 @@ html body #container #main #visit #page #front #first .listing .index {
   height: 3em;
 }
 
+html body #container #main #top #arm #search #match .listing .index .hue,
+html body #container #main #visit #page #front #first .listing .index .hue,
+html body #container #main #top #arm #search #match .listing .hover .hue,
+html body #container #main #visit #page #front #first .listing .hover .hue {
+  filter: var(--hue-rotate);
+}
+
 html body #container #main #top #arm #search #match .listing .hover,
 html body #container #main #visit #page #front #first .listing .hover {
   background-color: var(--hover-background-color) !important;
-  border: var(--hover-border-color) !important;
   width: calc(100% - 12px);
   padding-bottom: 8px;
   padding-left: 12px;

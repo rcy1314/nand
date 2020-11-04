@@ -44,7 +44,7 @@ var Alpenglow = function() {
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",
-    "rgba(63, 92, 136, .5)"
+    "rgba(63, 92, 136, .8)"
   );
   document.documentElement.style.setProperty(
     "--progress-background",
@@ -61,10 +61,5 @@ var Alpenglow = function() {
   document.querySelectorAll("#container, #visit")
     .forEach(
       (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
-  document.querySelectorAll("#sidebar, #content")
-    .forEach(
-      (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
-  document.querySelector('#hide').style.background =
-  "var(--progress-background)"
 
 }
