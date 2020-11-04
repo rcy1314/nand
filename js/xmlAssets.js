@@ -1,3 +1,27 @@
+/*
+
+    ### HeadXML.js has multiple indices for objects.
+
+      * These need to be fufilled to add an object.
+
+      > id: unique stripped to plain text [<b>indexed</b>]
+
+      > des: plain text [<b>indexed</b>].
+
+      > cat: translations
+
+      > uri: endpoint used in xmlRequestParsing in xmlFunctions.js
+
+      > ext: external blank exit to new tab, legacy.
+
+      > hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]
+
+      > media: feed contains images boolean indexed by onlyImages.
+
+
+       [indexed] filtered by response in base.js
+
+*/
 var menu=[
 {id:"Bing",category:"Search Results",description:"Bing Search Results.",uri:"https://www.bing.com/search?q=",ext:"https://www.bing.com",image:"Bing",hash:"mB",media:false},
 {id:"CBS/Washington D.C.",category:"News",description:"CBS WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",ext:"https://wusa9.com",image:"WUSA9",hash:"wa",media:false},

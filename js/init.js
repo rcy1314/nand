@@ -1,3 +1,56 @@
+/*
+
+### Init.js Unique URI Identifying.
+
+  Init.js does some handling of location.
+
+  * Contrast Example
+  > /?+1 [root]
+
+  >  /[uri]+1
+
+  * Translation Example
+  > /?q=[translations]
+
+  > /?q=technology
+
+  * Query Example
+  > /?q=example+query
+
+  >  filter response without passthrough from init.js fails to search results.
+
+  * Hash Example
+  > /?[hash] in headXML.js
+
+  > /?[uX] Used in Copy Post appends time converted to base 36.
+
+  > /?[uX]aZjk1 loads guide with progress and guideImage in baseFunctions.js
+
+  >  /?[uX]aZjk1+1 loads guide with contrast to op.
+
+  * Feed Example
+  > /?q=&unique-identifier fallback to query fails to bing search.
+
+  >/?q=&[hash] not supported filter response.
+
+  >/?q=&tech menu objects found filter response.
+
+  >/?q=&technology translation found populate.
+
+  > /?q=&abc-technology found one, unique passthrough.
+
+  > /?q=&jquery not found pass through xml search.<br>
+
+    * Query Feed Example
+
+     /?q=example+query&unique-identifier
+
+     /?q=california&abc-fresno
+
+      will load feed return to query.
+
+*/
+
 if (
   !location.search.split("?q=")[1] &&
   !location.href.match("\\?\\+1") &&
