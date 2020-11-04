@@ -116,19 +116,27 @@ document.addEventListener(
       circle.classList.add("ripple");
       if (circle) circle.remove();
       button.appendChild(circle);
-      if (document.body.contains(document.querySelector("#feed")))
-        document.querySelector("#feed").remove();
-      if (document.body.contains(document.querySelector("#group")))
-        document.querySelector("#group").remove();
-      location.pathname.state();
-      document.querySelector("#toggle").style.display = "none";
-      document.querySelector("#visit").style.display = "none";
       category = event.target.closest(".cat").getAttribute("aria-item");
-      populateCategoryGroup(
-        event.target.closest(".cat").getAttribute("aria-item")
-      );
-      topMenuBarDisplay(topBar);
-      displayExpand(expand);
+      if (reader == true) {
+        if (document.body.contains(document.querySelector(".channel")))
+          first = false;
+        randomDuplicate = [];
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+        notifyOption("Switched to now reading " + category + ".");
+      } else {
+        if (document.body.contains(document.querySelector("#feed")))
+          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#group")))
+          document.querySelector("#group").remove();
+        location.pathname.state();
+        document.querySelector("#toggle").style.display = "none";
+        document.querySelector("#visit").style.display = "none";
+        populateCategoryGroup(
+          event.target.closest(".cat").getAttribute("aria-item")
+        );
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+      }
     }
     if (
       (event.target.id == "mobileHome" && event.target.id != "Home") ||
