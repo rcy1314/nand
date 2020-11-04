@@ -56,9 +56,12 @@ for (i = 0; i <= themes.length - 1; i++){
     )
   })(i);
 }
+
+if (typeof set === "string")
 var startup = setInterval(function() {
   if (typeof set === "string" && typeof eval(set) === "function") {
     window[set]()
+    console.log(startup)
     setTimeout(function(){
       clearInterval(startup)
     }, 10)
