@@ -63,7 +63,7 @@ var Alpenglow = function() {
       (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
   document.querySelectorAll("#sidebar, #content")
     .forEach(
-      (a) => (a.style.backgroundImage = "var(--bg-color-primary)"))
+      (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
   document.querySelector('#hide').style.background =
   "var(--progress-background)"
 
