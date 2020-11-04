@@ -100,7 +100,7 @@ var visual = function (toggleOption) {
     );
     document.documentElement.style.setProperty(
       "--bg-color-primary",
-      "rgb(255,255,255,.3)"
+      "rgb(255,255,255,.8)"
     );
     document.documentElement.style.setProperty(
       "--bg-color-secondary",

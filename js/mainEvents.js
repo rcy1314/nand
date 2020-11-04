@@ -43,7 +43,7 @@ document.addEventListener(
         document.querySelector("#main").scrollHeight -
           document.querySelector("#main").scrollTop -
           document.querySelector("#main").clientHeight <=
-          500 &&
+          350 &&
         reader == true &&
         httpRequest.status == 200
       ) {
@@ -335,9 +335,10 @@ document.addEventListener(
               sticky.push({
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
-                  element: event.target.closest(".item").getAttribute("aria-item"),
+                  element: event.target.closest(".item")
+                  .getAttribute("aria-item"),
                 image: menu[
-                  event.target.closest(".item").getAttribute("aria-item")
+                  event.target.closest(".item").getAttribute("aria-object")
                 ].image.image(),
                 title: event.target
                   .closest(".item")
@@ -351,7 +352,7 @@ document.addEventListener(
                 src: event.target.closest(".item").querySelector(".source")
                   .value,
                 re: event.target.closest(".item").getAttribute("ext"),
-                id: event.target.closest(".item").getAttribute("aria-item"),
+                id: event.target.closest(".item").getAttribute("aria-object"),
               });
               guideDisplay(sticky);
             } else if (event.target.classList.contains("guide"))
