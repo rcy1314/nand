@@ -294,7 +294,7 @@ document.addEventListener(
         document.querySelector("#top #arm #option").style.display = "none";
       else if (showOption == true)
         document.querySelector("#top #arm #option").style.display = "block";
-      xmlRequestParsing(null, null, anyMenuRandomObject());
+      xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (event.target.classList.contains("RandomCategory")) {
       init();
