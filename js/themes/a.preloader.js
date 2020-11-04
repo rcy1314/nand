@@ -9,7 +9,7 @@ const themes = [
   { name: "Nord", class: "Nord", icon: "fa-signature" },
   { name: "Roses", class: "Roses", icon: "fa-leaf" },
   { name: "Gruvbox", class: "Gruvbox", icon: "fa-lemon" },
-  { name: "Eggplant", class: "Eggplant", icon: "fa-child" },
+  { name: "Eggplant", class: "Eggplant", icon: "fa-crown" },
   { name: "Solarized", class: "Solarized", icon: "fa-digital-tachograph" },
   { name: "Alpenglow", class: "Alpenglow", icon: "fa-cube" },
 
