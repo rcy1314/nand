@@ -157,7 +157,7 @@ document.addEventListener(
         let reader = false;
         let first = true;
         let id = 0;
-        xmlChannelxmlChannelFooter();
+        xmlChannelFooter();
       } else if (reader == false) {
         init();
         notifyOption("Reading " + category + " enabled.");

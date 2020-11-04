@@ -699,15 +699,6 @@ var xmlRequestParsing = function (search, string, index) {
         if (first == true) {
           var main = document.querySelector("#main");
           main.innerHTML = main.innerHTML + stageBuild();
-        } else {
-          var status = document.querySelector("status");
-          while (status.firstChild) {
-            status.removeChild(status.lastChild);
-          }
-          var suggestions = document.getElementById("suggestions");
-          while (suggestions.firstChild) {
-            suggestions.removeChild(suggestions.lastChild);
-          }
         }
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
@@ -742,12 +733,10 @@ var xmlRequestParsing = function (search, string, index) {
           if (i != local)
             document.querySelector(".channel").innerHTML =
               document.querySelector(".channel").innerHTML + pub[i].post;
-          if (
-            menu[index].id.match(/Imgur/g) &&
-            !menu[index].id.match(/Youtube/g)
-          )
+          if (menu[index].id.match(/Imgur/g))
             xmlImageAttributes(true, index, pub[i].element, pub[i].src);
-          else xmlImageAttributes(false, index, pub[i].element, pub[i].src);
+          else if (!menu[index].id.match(/Youtube/g))
+            xmlImageAttributes(false, index, pub[i].element, pub[i].src);
         }
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
@@ -755,6 +744,21 @@ var xmlRequestParsing = function (search, string, index) {
         if (reader == false)
           document.querySelector(".channel").innerHTML =
             document.querySelector(".channel").innerHTML + footerBuild();
+        if (first == false) {
+          var status = document.querySelector(".status");
+          while (status.firstChild) status.removeChild(status.lastChild);
+          var suggestions = document.querySelector(".suggestions");
+          while (suggestions.firstChild)
+            suggestions.removeChild(suggestions.lastChild);
+          stop = true
+          document.querySelector('#main').scrollTo(
+            {
+              top: document.querySelector("[aria-object='" + index + "']").offsetTop,
+              behavior: 'smooth'
+            }
+          );
+
+        }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);

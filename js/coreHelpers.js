@@ -119,7 +119,7 @@ var truncate = function (i, n, useWordBoundary) {
 var anyRandomMenuObject = function () {
   for (i = 1; i <= menu.length - 1; i++) {
     if (onlyImages == true) {
-      if (menu[i].category == category && menu[i].media == true)
+      if (menu[i] && menu[i].category == category && menu[i].media == true)
         random.push(menu.indexOf(menu[i]));
     } else if (onlyImages == false) {
       if (menu[i].category == category) random.push(menu.indexOf(menu[i]));
@@ -134,7 +134,7 @@ var anyRandomMenuObject = function () {
   } else if (random.length == randomDuplicate.length) randomDuplicate = [];
   else
     for (i = 0; i < random.length; i++) {
-      if (menu[randomObject] || !randomDuplicate.includes(n))
+      if (menu[randomObject] || !randomDuplicate.includes(menu[randomObject]))
         randomObject = randomObject;
       else randomObject = random[Math.floor(Math.random() * random.length - 1)];
     }

@@ -44,12 +44,15 @@ document.addEventListener(
           document.querySelector("#main").scrollTop -
           document.querySelector("#main").clientHeight <=
           350 &&
+        stop == false &&
         reader == true &&
+        httpRequest.status != 4 &&
         httpRequest.status == 200
       ) {
         init();
+        first = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
-      }
+      } else stop = false
     }
   },
   true

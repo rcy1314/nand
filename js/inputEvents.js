@@ -75,32 +75,28 @@ document.addEventListener(
         )
       ) {
         id = 0;
-        document.querySelector("#top").style.display = "block";
-        if (document.body.contains(document.querySelector("#feed")))
-          document.querySelector("#feed").remove();
-        if (document.body.contains(document.querySelector("#group")))
-          document.querySelector("#group").remove();
         category = event.target.closest(".hover").getAttribute("aria-item");
-        populateCategoryGroup(
-          event.target.closest(".hover").getAttribute("aria-item")
-        );
-        if (expand == true) var groupType = "list";
-        else var groupType = "blocks";
-        displayExpand(expand);
-        unloading();
-      } else {
         if (reader == true) {
-          var channel = document.querySelector(".channel");
-          if (document.body.contains(document.querySelector("channel")))
-            while (channel.lastChild) {
-              channel.removeChild(channel.lastChild);
-            }
-          category = event.target.closest(".hover").getAttribute("response");
+          if (document.body.contains(document.querySelector(".channel")))
+            first = false;
           randomDuplicate = [];
-          first = false;
           xmlRequestParsing(null, null, anyRandomMenuObject());
           notifyOption("Switched to now reading " + category + ".");
         } else {
+          document.querySelector("#top").style.display = "block";
+          if (document.body.contains(document.querySelector("#feed")))
+            document.querySelector("#feed").remove();
+          if (document.body.contains(document.querySelector("#group")))
+            document.querySelector("#group").remove();
+          populateCategoryGroup(
+            event.target.closest(".hover").getAttribute("aria-item")
+          );
+          if (expand == true) var groupType = "list";
+          else var groupType = "blocks";
+          displayExpand(expand);
+          unloading();
+        }
+      } else {
           if (document.body.contains(document.querySelector("#feed")))
             document.querySelector("#feed").remove();
           if (document.body.contains(document.querySelector("#group")))
@@ -119,7 +115,6 @@ document.addEventListener(
           );
         }
       }
-    }
     event.preventDefault();
   },
   false
