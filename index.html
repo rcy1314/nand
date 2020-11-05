@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/classRules.css">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
     <script src="js/themes/a.preloader.js"></script>
-    <script src="js/coreHelpers.js"></script>
     <script src="js/xmlAssets.js"></script>
 </head>
 <body>
@@ -103,4 +102,54 @@
           </div>
       </div>
 </body>
+<script>
+
+var loadStyles = function () {
+  let directory = "css/";
+  let extension = ".css";
+  let files = [
+    "animationRules",
+    "contentRules",
+    "classRules",
+    "mediaRules",
+    "fontIcons"
+  ];
+  for (var file of files) {
+    let path = directory + file + extension;
+    let script = document.createElement("link");
+    script.type = "text/css";
+    script.rel = "stylesheet";
+    script.href = path;
+    document.styleSheet = script;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+};
+
+var loadScripts = function () {
+  let directory = "js/";
+  let extension = ".js";
+  let files = [
+    "coreHelpers",
+    "xmlFunctions",
+    "baseFunctions",
+    "settings",
+    "baseReturnStrings",
+    "sideBarEvents",
+    "inputEvents",
+    "mainEvents",
+    "init",
+  ];
+  for (var file of files) {
+    let path = directory + file + extension;
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = path;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+};
+
+loadScripts();
+loadStyles();
+
+</script>
 </html>

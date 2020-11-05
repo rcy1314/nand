@@ -64,6 +64,6 @@ var startup = setInterval(function() {
     window[set]()
     setTimeout(function(){
       clearInterval(startup)
-    }, 10)
+    }, 15)
   }
 }, 5)

@@ -265,7 +265,8 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 40 &&
     keycode !== 34 &&
     keycode !== 33 &&
-    keycode !== 38
+    keycode !== 38 &&
+    keycode !== 27
   )
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length > 2 && keycode === 8)
@@ -425,8 +426,10 @@ var inputListingKeyup = function (Elem, keycode) {
       document.querySelector(Elem + " .listing .hover").focus();
       document.querySelector(".focus .guest").focus();
     }
-  } else if (keycode === 27)
-    document.querySelector(Elem + "").style.display = "none";
+  } else if (keycode === 27) {
+    document.querySelector(".quick").style.visibility = "visible"
+    document.querySelector(Elem).style.display = "none";
+  }
   event.target.setAttribute("tabIndex", -1);
   event.target.focus();
 };

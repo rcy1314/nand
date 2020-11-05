@@ -3,54 +3,6 @@ var ready = (callback) => {
   else document.addEventListener("DOMContentLoaded", callback);
 };
 
-ready(() => {
-  loadScripts();
-  loadStyles();
-});
-
-var loadStyles = function () {
-  let directory = "css/";
-  let extension = ".css";
-  let files = [
-    "animationRules",
-    "contentRules",
-    "classRules",
-    "mediaRules",
-    "fontIcons"
-  ];
-  for (var file of files) {
-    let path = directory + file + extension;
-    let script = document.createElement("link");
-    script.type = "text/css";
-    script.rel = "stylesheet";
-    script.href = path;
-    document.styleSheet = script;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  }
-};
-
-var loadScripts = function () {
-  let directory = "js/";
-  let extension = ".js";
-  let files = [
-    "xmlFunctions",
-    "baseFunctions",
-    "settings",
-    "baseReturnStrings",
-    "sideBarEvents",
-    "inputEvents",
-    "mainEvents",
-    "init",
-  ];
-  for (var file of files) {
-    let path = directory + file + extension;
-    let script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = path;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  }
-};
-
 var isNumeric = function (n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -63,19 +15,18 @@ var init = function () {
       document.querySelector("#group").remove();
   }
   if (loading == "dots") {
+    dots.style.zIndex = '11';
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.classList.add("dots"));
-    document.querySelector('#dots').style.zIndex = '11';
   } else if (loading == "percent") {
-    document.querySelector('#dots').style.zIndex = '-1';
-    let width = document.getElementById("main").clientWidth / 50;
+    dots.style.zIndex = '-1';
+    let width = main.clientWidth / 50;
     complete = setInterval(function () {
-      document.getElementById("progressBar").style.transitionDelay = "0s";
-      document.getElementById("progressBar").style.transition =
+      progressBar.style.transitionDelay = "0s";
+      progressBar.style.transition =
         "all .95s ease-in-out";
-      document.getElementById("progressBar").style.width =
-        document.getElementById("progressBar").clientWidth +
+      progressBar.style.width = progressBar.clientWidth +
         Math.floor(Math.random() * (100 - width) + width);
     }, 750);
   }
@@ -154,13 +105,6 @@ String.prototype.hyphen = function () {
 
 String.prototype.domain = function () {
   return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g);
-};
-
-String.prototype.define = function () {
-  var uri = this;
-  if (contrast == true && !location.href.match("\\+1")) var uri = uri + "+1";
-  else if (contrast == true) var uri = uri + "+1";
-  return uri;
 };
 
 String.prototype.zulu = function () {
