@@ -1,4 +1,4 @@
-var next = function () {
+var forward = function () {
   if (filter.length > 1)
     var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
   else var plus = parseInt(id);
@@ -21,8 +21,7 @@ var back = function () {
 
 var xmlChannelFooter = function () {
   if (document.body.contains(document.querySelector(".center")))
-    document.querySelector(".channel").innerHTML =
-      document.querySelector(".channel").innerHTML + footerBuild();
+    document.querySelector(".channel").append(footerBuild());
 };
 
 var xmlStatusSuggestions = function () {
@@ -50,15 +49,15 @@ var xmlStatusSuggestions = function () {
         else if (menu[randomMenuObject].media == false)
           var media = "feed might not contain images";
         duplicate.push(randomMenuObject);
-        suggestions.innerHTML =
-          suggestions.innerHTML +
+        suggestions.append(
           suggestBuild(
             media,
             menu.indexOf(menu[randomMenuObject]),
             menu[randomMenuObject].image.image(),
             menu[randomMenuObject].id,
             menu[randomMenuObject].category
-          );
+          )
+        )
       }
     }
   }
@@ -441,21 +440,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
               itemImage.style.marginBottom = "30px";
+              copyPost.style.display = "none";
+              copyPicture.style.display = "none";
+              attribute.style.height = "42px";
             } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.style.width = "30vh";
               itemImage.classList.add("default");
-              copyPost.style.display = "block";
-              copyPicture.style.display = "block";
-              attribute.style.height = "110px";
             } else if (
               newImg.naturalWidth >= newImg.naturalHeight ||
               newImg.naturalHeight >= newImg.naturalWidth
             ) {
               itemImage.style.width = "100%";
               itemImage.classList.add("default");
-              copyPost.style.display = "block";
-              copyPicture.style.display = "block";
-              attribute.style.height = "110px";
             }
           } else {
             if (
@@ -470,21 +466,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(".classic").style.display = "flex";
               itemImage.closest(".classic").style.alignItems = "center";
               itemImage.style.marginBottom = "30px";
+              copyPost.style.display = "none";
+              copyPicture.style.display = "none";
+              attribute.style.height = "42px";
             } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.style.width = "100%";
               itemImage.classList.add("default");
-              copyPost.style.display = "block";
-              copyPicture.style.display = "block";
-              attribute.style.height = "110px";
             } else if (
               newImg.naturalWidth >= newImg.naturalHeight ||
               newImg.naturalHeight >= newImg.naturalWidth
             ) {
               itemImage.style.width = "100%";
               itemImage.classList.add("default");
-              copyPost.style.display = "block";
-              copyPicture.style.display = "block";
-              attribute.style.height = "110px";
             }
           }
           if (
@@ -537,7 +530,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           "'] .pending"
         )
       )
-    )
+    ) {
       document
         .querySelector(
           "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
@@ -545,6 +538,16 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         .closest(".item")
         .querySelector(".pending")
         .remove();
+        document.querySelector(
+          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .attribute"
+        ).style.height = "40px"
+        document.querySelector(
+          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .picture"
+        ).style.display = "none"
+        document.querySelector(
+          "[aria-item='" + pubIndex + "'][aria-item='" + pubIndex + "'] .post"
+        ).style.display = "none"
+      }
   });
 };
 
@@ -699,7 +702,7 @@ var xmlRequestParsing = function (search, string, index) {
         }
         if (first == true) {
           var main = document.querySelector("#main");
-          main.innerHTML = main.innerHTML + stageBuild();
+          main.append(stageBuild());
         }
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
@@ -732,8 +735,7 @@ var xmlRequestParsing = function (search, string, index) {
         }
         for (i = 0; i < pub.length; i++) {
           if (i != local)
-            document.querySelector(".channel").innerHTML =
-              document.querySelector(".channel").innerHTML + pub[i].post;
+            document.querySelector(".channel").append(pub[i].post);
           if (menu[index].id.match(/Imgur/g))
             xmlImageAttributes(true, index, pub[i].element, pub[i].src);
           else if (!menu[index].id.match(/Youtube/g))
@@ -743,8 +745,7 @@ var xmlRequestParsing = function (search, string, index) {
         let posts = pub.length - 1;
         let recent = pub[0].dst;
         if (reader == false)
-          document.querySelector(".channel").innerHTML =
-            document.querySelector(".channel").innerHTML + footerBuild();
+          document.querySelector(".channel").append(footerBuild());
         if (first == false) {
           var status = document.querySelector(".status");
           while (status.firstChild) status.removeChild(status.lastChild);
@@ -769,12 +770,10 @@ var xmlRequestParsing = function (search, string, index) {
         document.querySelector("#main").focus();
         unloading();
       } else {
-        let center;
-        center.innerHTML = stageBuild();
-        document.querySelector("#main").innerHTML =
-          document.querySelector("#main").innerHTML + center;
-        let channel = document.querySelector(".channel");
-        channel.append("This site could not be reached.");
+        let main = document.querySelector("#main");
+        main.append(stageBuild())
+        document.querySelector(".channel")
+          .append("This site could not be reached.");
         unloading();
       }
     }
