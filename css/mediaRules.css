@@ -4,6 +4,10 @@
     width: 100% !important
   }
 
+  html body #container #toggle {
+    display: none;
+  }
+
   html body #container #main #visit #page .quick .feed .asset,
   html body #container #main #visit #page .quick .feed .translation {
     background-color: transparent !important;
