@@ -854,6 +854,11 @@ html body #container #main #visit #page .quick .feed .translation {
   width: 90px;
 }
 
+html body #container #main #visit #page .quick .feed .asset:hover,
+html body #container #main #visit #page .quick .feed .translation:hover {
+  background-color: var(--hover-background-color) !important;
+  border: var(--hover-border-color) !important;
+}
 
 html body #container #main #visit #page .quick .feed .asset:not(:hover),
 html body #container #main #visit #page .quick .feed .translation:not(:hover) {

@@ -219,39 +219,27 @@ document.addEventListener(
       event.target.classList.contains("translation")
     ) {
       id = 0;
-      const button = event.target.closest(".feed");
-      const circle = document.createElement("span");
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
-      const radius = diameter / 2;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - radius}px`;
-      circle.style.top = `${event.clientY - (radius * 1.7)}px`;
-      circle.classList.add("ripple");
-      if (circle) circle.remove();
-      button.appendChild(circle);
-      setTimeout(function() {
-        category = event.target.closest(".translation").getAttribute("aria-item");
-        if (reader == true) {
-          if (document.body.contains(document.querySelector(".channel")))
-            first = false;
-          randomDuplicate = [];
-          xmlRequestParsing(null, null, anyRandomMenuObject());
-          notifyOption("Switched to now reading " + category + ".");
-        } else {
-          if (document.body.contains(document.querySelector("#feed")))
-            document.querySelector("#feed").remove();
-          if (document.body.contains(document.querySelector("#group")))
-            document.querySelector("#group").remove();
-          location.pathname.state();
-          document.querySelector("#toggle").style.display = "none";
-          document.querySelector("#visit").style.display = "none";
-          populateCategoryGroup(
-            event.target.closest(".translation").getAttribute("aria-item")
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-        }
-      }, 300)
+      category = event.target.closest(".translation").getAttribute("aria-item");
+      if (reader == true) {
+        if (document.body.contains(document.querySelector(".channel")))
+          first = false;
+        randomDuplicate = [];
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+        notifyOption("Switched to now reading " + category + ".");
+      } else {
+        if (document.body.contains(document.querySelector("#feed")))
+          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#group")))
+          document.querySelector("#group").remove();
+        location.pathname.state();
+        document.querySelector("#toggle").style.display = "none";
+        document.querySelector("#visit").style.display = "none";
+        populateCategoryGroup(
+          event.target.closest(".translation").getAttribute("aria-item")
+        );
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+      }
     }
     if (
       event.target.classList.contains("entity") ||

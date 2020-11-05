@@ -8,6 +8,7 @@ span.ripple {
   transform: scale(0);
   animation: ripple 250ms linear;
   background: var(--bg-color-secondary);
+  z-index: 12;
 }
 
 .dots {
