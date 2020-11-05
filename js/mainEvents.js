@@ -215,7 +215,7 @@ document.addEventListener(
           null,
           event.target.closest(".populate").getAttribute("aria-item")
         );
-      }, 250)
+      }, 500)
     }
     if (
       event.target.classList.contains("filter") ||
@@ -226,11 +226,7 @@ document.addEventListener(
     ) {
       event.target.closest(".filter").getAttribute("aria-item").blank();
     }
-    if (
-      event.target.classList.contains("category") ||
-      event.target.classList.contains("quickTranslation") ||
-      event.target.classList.contains("translation")
-    ) {
+    if (event.target.classList.contains("translation")) {
       id = 0;
       category = event.target.closest(".translation").getAttribute("aria-item");
       setTimeout(function() {
@@ -254,7 +250,7 @@ document.addEventListener(
           topMenuBarDisplay(topBar);
           displayExpand(expand);
         }
-      }, 250)
+      }, 500)
     }
     if (
       event.target.classList.contains("entity") ||
@@ -383,7 +379,7 @@ document.addEventListener(
                   .querySelector(".ago:last-child").innerHTML,
                 src: event.target.closest(".item").querySelector(".source")
                   .value,
-                re: event.target.closest(".item").getAttribute("ext"),
+                externalURI: event.target.closest(".item").getAttribute("ext"),
                 id: event.target.closest(".item").getAttribute("aria-object"),
               });
               guideDisplay(sticky);

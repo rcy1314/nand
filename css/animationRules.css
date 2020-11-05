@@ -6,7 +6,8 @@ span.ripple {
   position: absolute;
   border-radius: 50%;
   transform: scale(0);
-  animation: ripple 350ms ease-in;
+  animation: ripple 750ms ease-in;
+  opacity: .4;
   background: var(--loader-color-secondary);
 }
 

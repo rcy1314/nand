@@ -619,7 +619,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           let src = xmlImageSource(data);
 
-          let courtesy = courtesyHeader(
+          let courtesy = courtesyBuild(
             menu[index].id.match(/([^\/]+)$/g),
             menu[index].image.image(),
             menu[index].ext
@@ -713,7 +713,7 @@ var xmlRequestParsing = function (search, string, index) {
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
-            re: pub[local].re,
+            externalURI: pub[local].re,
             views: views,
             id: index,
           });
@@ -728,7 +728,7 @@ var xmlRequestParsing = function (search, string, index) {
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
-            re: pub[local].re,
+            externalURI: pub[local].re,
             id: index,
           });
           guideDisplay(sticky);

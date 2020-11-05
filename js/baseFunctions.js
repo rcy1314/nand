@@ -214,18 +214,29 @@ var quickFeedDisplay = function (toggleOption) {
 var guideDisplay = function (pubArray) {
   let guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
+  guide.innerHTML =
+  `
+  <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+    <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
+    <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
+  `
   document.querySelector("#top").style.display = "hide";
-  guide.innerHTML = guideBuild(pubArray);
+  guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0].src);
-  guide.querySelector('.sticky').style.display = "none"
   guide.style.display = "flex";
 };
 
 var guideDisplayYoutube = function (pubArray) {
   var guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
+  guide.innerHTML =
+  `
+  <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+    <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
+    <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
+  `
   document.querySelector("#top").style.display = "hide";
-  guide.innerHTML = guideBuildYoutube(pubArray);
+  guide.append(guideBuildYoutube(pubArray[0]));
   guide.style.display = "flex";
 };
 
@@ -550,8 +561,8 @@ var guideImageAttributes = function (src) {
   newImg.setAttribute("src", src);
   newImg.onload = function () {
     guide.querySelector(".img").setAttribute("src", src);
-    guide.querySelector(".sticky").style.display = "block";
-    guide.querySelector(".checkmark").style.display = "block";
+    //guide.querySelector(".sticky").style.display = "block";
+    //guide.querySelector(".checkmark").style.display = "block";
     if (document.querySelector("#main").clientWidth <= 425) {
       document.querySelector("#main").classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
@@ -572,8 +583,6 @@ var guideImageAttributes = function (src) {
         ~document.querySelector("#guide .img").style.height - "60";
     } else {
       document.querySelector("#main").classList.add("guide");
-      guide.querySelector(".sticky").style.display = "block";
-      guide.querySelector(".checkmark").style.display = "block";
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "80vh";
         guide.querySelector(".img").style.maxWidth = "70vw";

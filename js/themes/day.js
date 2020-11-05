@@ -9,7 +9,7 @@ var Day = function() {
   );
   document.documentElement.style.setProperty(
     "--loader-color-secondary",
-    "#1683D8"
+    "rgb(97, 121, 201)"
   );
   document.documentElement.style.setProperty(
     "--fill-color-primary",

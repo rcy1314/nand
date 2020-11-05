@@ -66,4 +66,4 @@ var startup = setInterval(function() {
       clearInterval(startup)
     }, 25)
   }
-}, 5)
+}, 15)

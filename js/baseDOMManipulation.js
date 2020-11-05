@@ -70,116 +70,104 @@ var footerBuild = function () {
 };
 
 var guideBuild = function (pubArray) {
-  return `
-     <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-       <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-       <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-     </svg>
-     <div class='blur'></div>
-     <div class='sticky item'>
-       <div class='fill'></div>
-       <div class='item src' aria-item='${pubArray[0].id}'
-       ext='${pubArray[0].re}'>
-         <div class='image'>
-           <div class='fa fa-heart'></div>
-           <img id='${pubArray[0].element}'
-        class='img guide'>
-         </div>
-       </div>
-       <div class='wrap item' ext='${pubArray[0].re}'>
-         <div class='header'>
-         <div class='courtesy' style='float:left'>
-           <img src='${pubArray[0].image}'>
-           <a ext='${pubArray[0].re}'>
-             <b>
-        ${menu[pubArray[0].id].id.match(/([^\/]+)$/g)}
-         </b>
-           </a>
-           <div class='copy'>
-           <div class='attr fa-ellipsis-h'></div>
-             <div class='attribute' style='height:110px'>
-               <div class='site'>Copy Url
-                 <div style='float:right' class='fas fa-at'></div>
-               </div>
-               <div class='post' style='display:block'>Copy Post
-                 <div style='float:right;display:block' class='fa fa-share'></div>
-               </div>
-               <div class='picture' style='display:block'>Copy Source
-                 <div style='float:right;display:block' class='fa fa-camera'></div>
-               </div>
-             </div>
-           </div>
-         </div>
-     </div>
-         <div class='pub'>
-    ${pubArray[0].title}
-     </div>
-         <div class='ago'>
-    ${pubArray[0].dst}
-     </div>
-         <input class='url' value='${pubArray[0].re}'>
-         <input class='share' value='${pubArray[0].share}'>
-         <input class='source' value='${pubArray[0].src}'>
-       </div>
-     </div>
-    `;
+  let blur = document.createElement("div")
+  blur.classList.add("blur")
+  let sticky = document.createElement("div")
+  sticky.classList.add("item", "sticky")
+  let src = document.createElement("div")
+  src.classList.add("item", "src")
+  src.setAttribute("aria-item", pubArray.id)
+  src.setAttribute("ext", pubArray.re)
+  sticky.append(src)
+  let image = document.createElement("div")
+  image.classList.add("image")
+  image.append(sideBarThemeBuild("fa-heart"))
+  let object = document.createElement("img")
+  object.id = pubArray.element
+  object.classList.add("guide", "img")
+  image.append(object)
+  src.append(image)
+  let wrap = document.createElement("div")
+  wrap.classList.add("item", "wrap")
+  wrap.setAttribute("ext", pubArray.externalURI)
+  let head = document.createElement("div")
+  head.classList.add("header")
+  head.append(
+    courtesyBuild(
+      menu[pubArray.id].id.match(/([^\/]+)$/g),
+      pubArray.image,
+      pubArray.externalURI
+    )
+  )
+  wrap.append(head)
+  let publish = document.createElement("div")
+  publish.classList.add("pub")
+  publish.innerHTML = pubArray.title
+  wrap.append(publish)
+  let ago = document.createElement("div")
+  ago.classList.add("ago")
+  ago.innerHTML = pubArray.dst
+  wrap.append(ago)
+  src.append(
+    copyInputAttribute(
+      pubArray.src,
+      pubArray.share,
+      pubArray.externalURI
+    )
+  );
+  sticky.append(src)
+  sticky.append(wrap)
+  return sticky
 };
 
 var guideBuildYoutube = function (pubArray) {
-  return `
-     <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-       <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-       <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-     </svg>
-     <div class='blur'></div>
-     <div class='sticky item yt'>
-       <div class='fill'></div>
-       <div id='yt' class='src'
-       aria-item='${pubArray[0].id}'
-       ext='${pubArray[0].re}'
-       style='width:60vw'>
-       <div class='yt'>
-         <iframe src='${pubArray[0].src}'>
-       </iframe>
-       </div>
-       <div class='wrap'>
-         <div class='header'>
-     <div class='courtesy' style='float:left'>
-       <img src='${pubArray[0].image}'>
-       <a ext='${pubArray[0].re}'>
-         <b>
-    ${pubArray[0].title}
-     </b>
-       </a>
-       <div class='copy'>
-       <div class='attr fa-ellipsis-h'></div>
-         <div class='attribute' style='height:110px'>
-           <div class='site'>Copy Url
-             <div style='float:right' class='fas fa-at'></div>
-           </div>
-           <div class='post' style='display:block'>Copy Post
-             <div style='float:right' class='fa fa-share'></div>
-           </div>
-           <div class='picture' style='display:block'>Copy Source
-             <div style='float:right' class='fa fa-camera'></div>
-           </div>
-         </div>
-       </div>
-     </div>
-     </div>
-         <div class='pub'>
-    ${pubArray[0].title}
-     </div>
-    ${pubArray[0].views}
-         <div class='ago'>
-    ${pubArray[0].dst}
-     </div>
-         <input class='url' value='${pubArray[0].re}'>
-         <input class='share' value='${pubArray[0].share}'>
-         <input class='source' value='${pubArray[0].src}'>
-       </div>
-     </div>
-    `;
+  let blur = document.createElement("div")
+  blur.classList.add("blur")
+  let sticky = document.createElement("div")
+  sticky.classList.add("yt", "item", "sticky")
+  let youtube = document.createElement("div")
+  youtube.classList.add("src")
+  youtube.id = "yt"
+  youtube.style.width = `60vw`
+  youtube.setAttribute("aria-item", pubArray.id)
+  youtube.setAttribute("ext", pubArray.re)
+  let yt = document.createElement("div")
+  yt.classList.add("yt")
+  let object = document.createElement("iframe")
+  object.src = pubArray.src
+  yt.append(object)
+  youtube.append(yt)
+  let wrap = document.createElement("div")
+  wrap.classList.add("wrap")
+  wrap.setAttribute("ext", pubArray.externalURI)
+  let head = document.createElement("div")
+  head.classList.add("header")
+  head.append(
+    courtesyBuild(
+      menu[pubArray.id].id.match(/([^\/]+)$/g),
+      pubArray.image,
+      pubArray.externalURI
+    )
+  )
+  wrap.append(head)
+  let publish = document.createElement("div")
+  publish.classList.add("pub")
+  publish.innerHTML = pubArray.title
+  wrap.append(publish)
+  let ago = document.createElement("div")
+  ago.classList.add("ago")
+  ago.innerHTML = pubArray.dst
+  wrap.append(ago)
+  youtube.append(wrap)
+  head.append(
+    copyInputAttribute(
+      pubArray.src,
+      pubArray.share,
+      pubArray.externalURI
+    )
+  );
+  sticky.append(youtube)
+  return sticky
 };
 
 var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
@@ -335,7 +323,7 @@ let attributeBuild = function() {
   return object
 }
 
-var courtesyHeader = function (objectId, objectImage, objectExternal) {
+var courtesyBuild = function (objectId, objectImage, objectExternal) {
   let courtesy = document.createElement("div")
   courtesy.classList.add("courtesy")
   let object = document.createElement("img")
