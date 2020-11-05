@@ -60,10 +60,10 @@ for (i = 0; i <= themes.length - 1; i++){
 
 if (typeof set === "string")
 var startup = setInterval(function() {
-  if (typeof set === "string" && typeof eval(set) === "function") {
+  if (typeof eval(set) === "function") {
     window[set]()
     setTimeout(function(){
       clearInterval(startup)
-    }, 15)
+    }, 25)
   }
 }, 5)

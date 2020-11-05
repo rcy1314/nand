@@ -180,29 +180,42 @@ document.addEventListener(
       event.target.classList.contains("media") ||
       event.target.classList.contains("hash")
     ) {
-      if (document.getElementById("match").style.display === "block") {
-        document.getElementById("match").style.display = "none";
-        document.querySelector("#search .view").blur();
-        return false;
-      } else if (
-        document.querySelector("#main #first").style.display === "block"
-      ) {
-        document.querySelector("#main #first").style.display = "none";
-        document.querySelector(".focus .guest").blur();
-        return false;
-      }
-      init();
-      if (document.body.contains(document.querySelector("#feed")))
-        document.querySelector("#feed").remove();
-      if (document.body.contains(document.querySelector("#group")))
-        document.querySelector("#group").remove();
-      document.querySelector("#toggle").style.display = "none";
-      document.querySelector("#visit").style.display = "none";
-      xmlRequestParsing(
-        null,
-        null,
-        event.target.closest(".populate").getAttribute("aria-item")
-      );
+      const button = event.target.closest(".populate").getBoundingClientRect();
+      const circle = document.createElement("span");
+      const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.left - radius}px`;
+      circle.style.top = `${event.clientY - button.top - radius}px`;
+      circle.classList.add("ripple");
+      if (document.querySelector(".ripple"))
+        document.querySelector(".ripple").remove();
+      event.target.closest(".populate").appendChild(circle);
+      setTimeout(function() {
+        if (document.getElementById("match").style.display === "block") {
+          document.getElementById("match").style.display = "none";
+          document.querySelector("#search .view").blur();
+          return false;
+        } else if (
+          document.querySelector("#main #first").style.display === "block"
+        ) {
+          document.querySelector("#main #first").style.display = "none";
+          document.querySelector(".focus .guest").blur();
+          return false;
+        }
+        init();
+        if (document.body.contains(document.querySelector("#feed")))
+          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#group")))
+          document.querySelector("#group").remove();
+        document.querySelector("#toggle").style.display = "none";
+        document.querySelector("#visit").style.display = "none";
+        xmlRequestParsing(
+          null,
+          null,
+          event.target.closest(".populate").getAttribute("aria-item")
+        );
+      }, 250)
     }
     if (
       event.target.classList.contains("filter") ||
@@ -241,7 +254,7 @@ document.addEventListener(
           topMenuBarDisplay(topBar);
           displayExpand(expand);
         }
-      }, 100)
+      }, 250)
     }
     if (
       event.target.classList.contains("entity") ||

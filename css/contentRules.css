@@ -146,7 +146,7 @@ html body #container #sidebar #content #basic input[type=text] {
   overflow: hidden;
   font-size: 12px;
   margin: 0 auto;
-  display: none;
+  display: block;
   width: 220px;
   padding: 5px;
 }
@@ -692,6 +692,8 @@ html body #container #main #group .result .populate,
 html body #container #main #feed .content .status .filter {
   display: inline-flex;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
   flex-wrap: wrap;
   cursor: pointer;
   font-size: 9px;

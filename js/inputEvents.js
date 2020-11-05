@@ -175,7 +175,7 @@ document.addEventListener(
           "?q=" +
           document.querySelector(".sideFilter").value.replace(/\s/g, "+");
         displayExpand(groupType);
-        uri.define().state();
+        uri.state();
         unloading();
       }
     } else if (event.target.id == "search") {
@@ -223,7 +223,7 @@ document.addEventListener(
         let query = document.querySelector("#input .view").value.space();
         query.replace(/\s/, "+");
         let uri = "?q=" + query;
-        uri.define().exit();
+        uri.exit();
       }
     } else if (event.target.id == "front") {
       if (document.querySelector(".focus .guest").value == "")
@@ -246,7 +246,7 @@ document.addEventListener(
         let query = document.querySelector(".focus .guest").value.space();
         query.replace(/\s/, "+");
         let uri = "?q=" + query;
-        uri.define().exit();
+        uri.exit();
       }
     }
   },

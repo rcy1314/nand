@@ -92,43 +92,29 @@ var sideBarDisplay = function (toggleOption) {
   let content = document.querySelector("#content");
   if (!document.body.contains(document.querySelector(".cat"))) {
     for (i = 0; i <= translations.length - 1; i++) {
-      content.innerHTML =
-        sideBarCategoryBuild(translations[i]) + content.innerHTML;
+      let cat = document.createElement('div')
+      cat.classList.add("cat", translations[i])
+      cat.setAttribute("aria-item", translations[i])
+      cat.innerHTML = translations[i]
+      content.append(cat);
+      content.append(sideBarCategoryBuild(translations[i]))
     }
-    content.innerHTML = content.innerHTML +
-    `<div class='themes mainTransition'>
-      <div class='border'>
-        Visual
-        <div class='fa fa-braille'></div>
-      </div>
-    </div>`
+    content.append(sideBarThemeListing())
     let list = document.querySelector('.themes')
     for (i = 0; i <= themes.length - 1; i++) {
-      list.innerHTML =
-        list.innerHTML +
-        sideBarThemeBuild(
-          themes[i].class,
-          themes[i].name,
-          themes[i].icon
-        );
+      let visual = document.createElement("div")
+      visual.classList.add("theme", themes[i].class)
+      visual.innerHTML = themes[i].name
+      list.append(visual)
+      list.append(sideBarThemeBuild(themes[i].icon));
     };
     for (i = 0; i <= selections.length - 1; i++) {
-      content.innerHTML =
-        content.innerHTML +
-        sideBarOptionBuild(
-          selections[i].class,
-          selections[i].name,
-          selections[i].icon
-        );
+      content.append(sideBarOptionBuild(selections[i].name,selections[i].class))
+      let fontawesome = document.createElement("div")
+      fontawesome.classList.add("fa", selections[i].icon)
+      content.append(fontawesome)
     };
-    content.innerHTML = content.innerHTML +
-    `
-    <div id='basic'>
-      <form class='filter' action='#'>
-        <input type='text' class='sideFilter' placeholder='filter'>
-      </form>
-    </div>
-    `
+    content.append(basicFormBuild())
   };
   if (toggleOption == true) {
     let Elem = document.querySelector("#sidebar");
@@ -251,12 +237,14 @@ var contentStatusDisplay = function (
 ) {
   if (document.body.contains(document.querySelector("#feed .status"))) {
     var status = document.querySelector("#feed .status");
-    status.innerHTML = contentBuild(
-      oldestPost,
-      recentPost,
-      postsCount,
-      menuIndex
-    );
+    status.append(
+      contentBuild(
+        oldestPost,
+        recentPost,
+        postsCount,
+        menuIndex
+      )
+    )
   }
 };
 
@@ -265,7 +253,7 @@ var quickFeedAsset = function (feedAssets) {
   let feed = document.querySelector(".quick .feed");
   if (feedAssets == 7)
     for (var i = 0; i <= translations.length - 1; i++) {
-      feed.innerHTML = feed.innerHTML + translationBuild(translations[i]);
+      feed.append(translationBuild(translations[i]));
     }
   else
     for (var i = 1; i <= menu.length - 1; i++) {
@@ -279,13 +267,13 @@ var quickFeedAsset = function (feedAssets) {
         randomMenuObject != 0
       ) {
         duplicate.push(randomMenuObject);
-        feed.innerHTML =
-          feed.innerHTML +
+        feed.append(
           assetBuild(
             menu.indexOf(menu[randomMenuObject]),
             menu[randomMenuObject].image.image(),
             menu[randomMenuObject].id
-          );
+          )
+        )
         if (duplicate.length === feedAssets) return false;
       }
     }
@@ -299,7 +287,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
       if (menu[i].description.toLowerCase().match(inputFilter)) {
-        listing.innerHTML =
+        listing.append(
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
@@ -307,7 +295,8 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
             menu[i].category,
             false,
             i
-          ) + listing.innerHTML;
+          )
+        );
         suggest.push(i);
       }
       setTimeout(500);
@@ -322,14 +311,16 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       !suggest.includes(randomMenuObject)
     )
       if (suggest.length >= suggestionBuffer) return false;
-    listing.innerHTML += listingIndexBuild(
-      menu[randomMenuObject].id.match(/[^\/]+$/g),
-      menu.indexOf(menu[randomMenuObject]),
-      menu[randomMenuObject].image.image(),
-      menu[randomMenuObject].category,
-      true,
-      i
-    );
+    listing.append(
+      listingIndexBuild(
+        menu[randomMenuObject].id.match(/[^\/]+$/g),
+        menu.indexOf(menu[randomMenuObject]),
+        menu[randomMenuObject].image.image(),
+        menu[randomMenuObject].category,
+        true,
+        i
+      )
+    )
     suggest.push(randomMenuObject);
     setTimeout(500);
   }
@@ -382,22 +373,13 @@ var progressBackDrop = function (done, percent) {
 
 var populateCategoryGroup = function (translation) {
   let main = document.getElementById("main");
-  if (
-    !document.body.contains(document.querySelector("#group")) &&
-    !document.body.contains(document.querySelector(".result"))
-  )
-    main.innerHTML =
-      "<div id='group'>" +
-      "  <div class='result'></div>" +
-      "</div>" +
-      main.innerHTML;
+  if (!document.body.contains(document.querySelector("#group"))) groupBuild()
   let result = document.querySelector(".result");
   if (id && id != 0 && !location.href.match("\\?q=")) {
     if (menu[id].media == true)
       var media = "<div class='media' style='display:none'>Images</div>";
     else var media = "<div class='blank'></div>";
-    result.innerHTML =
-      result.innerHTML +
+    result.append(
       categoryBuild(
         menu[id].id.match(/[^\/]+$/g),
         menu.indexOf(menu[id]),
@@ -405,7 +387,8 @@ var populateCategoryGroup = function (translation) {
         menu[id].hash,
         menu[id].description,
         media
-      );
+      )
+    )
   }
   for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
@@ -417,8 +400,7 @@ var populateCategoryGroup = function (translation) {
         translation == menu[i].category &&
         menu[i].media == true
       ) {
-        result.innerHTML =
-          result.innerHTML +
+        result.append(
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
@@ -426,12 +408,12 @@ var populateCategoryGroup = function (translation) {
             menu[i].hash,
             menu[i].description,
             media
-          );
+          )
+        )
       }
     } else if (onlyImages == false) {
       if (translation == menu[i].category && id != menu.indexOf(menu[i])) {
-        result.innerHTML =
-          result.innerHTML +
+        result.append(
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
@@ -439,7 +421,8 @@ var populateCategoryGroup = function (translation) {
             menu[i].hash,
             menu[i].description,
             media
-          );
+          )
+        )
       }
     }
   }
@@ -454,7 +437,7 @@ var populateCategoryGroup = function (translation) {
 
 var reverseCategoryGroup = function (translation) {
   let group = document.querySelector("#group");
-  let node = document.querySelector(".result");
+  let result = document.querySelector(".result");
   if (!document.body.contains(document.querySelector(".air"))) {
     let div = document.createElement("div");
     div.classList.add("air");
@@ -471,15 +454,16 @@ var reverseCategoryGroup = function (translation) {
       if (menu[i].media == true)
         var media = "<div class='media' style='display:none'>Images</div>";
       else var media = "<div class='blank'></div>";
-      let scroll = categoryBuild(
-        menu[i].id.match(/[^\/]+$/g),
-        menu.indexOf(menu[i]),
-        menu[i].image.image(),
-        menu[i].hash,
-        menu[i].description,
-        media
-      );
-      air.innerHTML = air.innerHTML + scroll;
+      air.append(
+        categoryBuild(
+          menu[i].id.match(/[^\/]+$/g),
+          menu.indexOf(menu[id]),
+          menu[i].image.image(),
+          menu[i].hash,
+          menu[i].description,
+          media
+        )
+      )
     }
   }
   displayExpand(expand);
@@ -531,16 +515,7 @@ var filterInputResponse = function (
   if (filter.length == 0)
     xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
-    let main = document.getElementById("main");
-    if (
-      !document.body.contains(document.querySelector("#group")) &&
-      !document.body.contains(document.querySelector(".result"))
-    )
-      main.innerHTML =
-        "<div id='group'>" +
-        "  <div class='result'></div>" +
-        "</div>" +
-        main.innerHTML;
+    if (!document.body.contains(document.querySelector("#group"))) groupBuild()
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
@@ -553,19 +528,20 @@ var filterInputResponse = function (
 };
 
 var writeFilterResponse = function (menuObject) {
-  let main = document.querySelector("#main");
   let result = document.querySelector(".result");
   if (menu[menuObject].media == true)
     var media = "<div class='media' style='display:none'>Images</div>";
   else var media = "<div class='blank'></div>";
-  result.innerHTML += filterBuild(
-    menu[menuObject].id.match(/[^\/]+$/g),
-    menu.indexOf(menu[menuObject]),
-    menu[menuObject].image.image(),
-    menu[menuObject].hash,
-    menu[menuObject].description,
-    media
-  );
+  result.append(
+    categoryBuild(
+      menu[menuObject].id.match(/[^\/]+$/g),
+      menu.indexOf(menu[id]),
+      menu[menuObject].image.image(),
+      menu[menuObject].hash,
+      menu[menuObject].description,
+      media
+    )
+  )
 };
 
 var guideImageAttributes = function (src) {

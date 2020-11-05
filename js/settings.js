@@ -244,7 +244,7 @@ let guideOnScreen; //temporarly store onScreen for guide
 const selections = [
   //sideBar sel options
 
-  { name: "Home", class: "sideHome", icon: "side fa-home" },
+  { name: "Home", class: "sideHome", icon: "fa-home" },
   { name: "Reader", class: "Reader", icon: "fa-heart" },
   { name: "List", class: "List", icon: "fa-th-large" },
   { name: "Blocks", class: "Blocks", icon: "fa-list-ul" },

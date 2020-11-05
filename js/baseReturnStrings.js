@@ -1,3 +1,11 @@
+var groupBuild = function () {
+  let main = document.querySelector("#main")
+  let group = document.createElement("div")
+  group.innerHTML = `<div class='result'></div>`
+  group.id = `group`
+  main.append(group)
+}
+
 var stageBuild = function () {
   return `
      <div id='feed'>
@@ -92,54 +100,63 @@ var guideBuild = function (pubArray) {
 };
 
 var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
-  return `
-     <div class='filter'
-       aria-item='${menu[menuIndex].ext}'>
-       <div class='ext'>
-         <img class='exit' src='${menu[menuIndex].image.image()}'>
-       </div>
-       <a class='tag' ext='${menu[menuIndex].ext}'
-         title='${menu[menuIndex].id}'>
+  let object = document.createElement("div")
+  object.classList.add("filter")
+  object.setAttribute("aria-item", menu[menuIndex].ext)
+  object.innerHTML =
+  `<div class='ext'>
+    <img class='exit' src='${menu[menuIndex].image.image()}'>
+   </div>
+   <a class='tag' ext='${menu[menuIndex].ext}' title='${menu[menuIndex].id}'>
     ${menu[menuIndex].id.match(/[^\/]+$/g)}
-       </a>
-     </div>
-     <div class='info'>
-       <div class='description'>&emsp;
+   </a>
+  `
+  let info = document.createElement("div")
+  info.classList.add("info")
+  info.innerHTML =
+  `<div class='description'>&emsp;
     ${menu[menuIndex].description}
-     </div><br>
-       Most recent<div style='float:right'>
+   </div><br>
+    Most recent<div style='float:right'>
     ${recentPost}
-     </div><br>
-       Oldest post<div style='float:right'>
+   </div><br>
+    Oldest post<div style='float:right'>
     ${oldestPost}
-     </div><br>
-       Posts&ensp;<div style='float:right'>
+   </div><br>
+    Posts&ensp;<div style='float:right'>
     ${postsCount}
-     </div>
-     </div>
-    `;
+   </div>
+  `;
+  let construct = document.createElement("div")
+  construct.append(object)
+  construct.append(info)
+  return (construct)
 };
 
 var translationBuild = function (translation) {
-  return `
-    <div class='translation' aria-item='${translation}'>
-       <img class='quickTranslation' src='images/${translation}.webp'>
-       <a class='category' ext='${translation}'>
+  let object = document.createElement("div")
+  object.classList.add("translation")
+  object.setAttribute("aria-item", translation)
+  object.innerHTML =
+  `<img class='quickTranslation' src='images/${translation}.webp'>
+   <a class='category' ext='${translation}'>
     ${translation}
-       </a>
-    </div>
-    `;
+   </a>
+  `;
+  return object
 };
 
 var assetBuild = function (assetIndex, assetImage, assetId) {
-  return `
-    <div class='asset' aria-item='${assetIndex}'>
-       <img class='entity' src='${assetImage}'>
-       <a class='query' title='${assetId}'>
+  let object = document.createElement("div")
+  object.classList.add("asset")
+  object.setAttribute("aria-item", assetIndex)
+  object.innerHTML =
+  `<img class='entity' src='${assetImage}'>
+   <a class='query' title='${assetId}'>
     ${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...
-       </a>
-     </div>
-    `;
+   </a>
+  `;
+  return object
 };
 
 var suggestBuild = function (
@@ -167,34 +184,6 @@ var suggestBuild = function (
     `;
 };
 
-var filterBuild = function (
-  objectId,
-  objectIndex,
-  objectImage,
-  objectHash,
-  objectDescription,
-  objectMedia
-) {
-  return `
-     <div class='populate'
-       aria-item='${objectIndex}'>
-       <div class='display'>
-         <img src='${objectImage}'>
-       </div>
-       <div class='hash' style='display:none'>
-    ${objectHash}
-     </div>
-    ${objectMedia}
-       <div class='title'>
-    ${objectId}
-     </div>
-       <div class='description' style='display:none'>
-    ${objectDescription}
-     </div>
-     </div>
-    `;
-};
-
 var categoryBuild = function (
   objectId,
   objectIndex,
@@ -203,24 +192,25 @@ var categoryBuild = function (
   objectDescription,
   objectMedia
 ) {
-  return `
-     <div class='populate'
-       aria-item='${objectIndex}'>
-       <div class='display'>
-         <img class='display' src='${objectImage}'>
-       </div>
-       <div class='hash' style='display:none'>
+  let populate = document.createElement("div")
+  populate.classList.add("populate")
+  populate.setAttribute("aria-item", objectIndex)
+  populate.innerHTML =
+  `<div class='display'>
+    <img class='display' src='${objectImage}'>
+   </div>
+   <div class='hash' style='display:none'>
     ${objectHash}
-     </div>
-    ${objectMedia}
-       <div class='title'>
+   </div>
+   ${objectMedia}
+   <div class='title'>
     ${objectId}
-     </div>
-       <div class='description' style='display:none'>
+   </div>
+   <div class='description' style='display:none'>
     ${objectDescription}
-     </div>
-     </div>
-    `;
+   </div>
+  `;
+  return populate
 };
 
 var courtesyHeader = function (objectId, objectImage, objectExternal) {
@@ -397,51 +387,68 @@ var listingIndexBuild = function (
   suggested,
   index
 ) {
+  let key = document.createElement("div")
+  key.classList.add("index")
+  key.setAttribute("aria-item", indexObject)
   if (suggested == true) var contentText = `suggested...`;
   else var contentText = ``;
-  return `
-     <div class='index ${index}'
-     aria-item='${indexObject}'
-      tabIndex='-1'>
-       <div class='detail'>
-         <img class='input' src='${indexImage}'>
-         <div class='textMatch'>&emsp;
-    ${indexCategory}
-         <br>&emsp;
-    ${indexId}
-     </div>
-         <div class='buffer'>
-    ${contentText}
-     </div>
-       </div>
-     </div>
-    `;
+  key.innerHTML =
+  `<div class='detail'>
+    <img class='input' src='${indexImage}'>
+    <div class='textMatch'>&emsp;
+     ${indexCategory}
+     <br>&emsp;
+     ${indexId}
+    </div>
+    <div class='buffer'>
+     ${contentText}
+    </div>
+   </div>
+  `;
+  return key
 };
+
+var sideBarThemeListing = function() {
+  let list = document.createElement("div")
+  list.classList.add("themes", "mainTransition")
+  list.innerHTML =
+  `<div class='border'>
+    Visual
+    <div class='fa fa-braille'></div>
+   </div>
+  `
+  return list
+}
+
+var basicFormBuild = function() {
+  let basic = document.createElement("div")
+  basic.id = "basic"
+  basic.innerHTML =
+  `
+  <form class='filter' action='#'>
+    <input type='text' class='sideFilter' placeholder='filter'>
+  </form>
+  `
+  return basic
+}
 
 var sideBarCategoryBuild = function (translation) {
-  return `
-     <div class='cat ${translation}'
-       aria-item='${translation}'>
-       ${translation}
-     </div>
-     <img class='webp' src='images/${translation}.webp'>
-    `;
+  var webp = document.createElement("img")
+  webp.classList.add("webp")
+  webp.src = `images/${translation}.webp`
+  return webp
 };
 
-var sideBarOptionBuild = function (classes, name, icon) {
-  return `
-     <div class='sel ${classes}'>
-    ${name}
-     </div>
-     <div class='fa ${icon}'></div>
-    `;
+var sideBarOptionBuild = function (name, classes) {
+  let sel = document.createElement("div")
+  sel.classList.add("sel", classes)
+  sel.innerHTML = name
+  return sel
+
 };
 
-var sideBarThemeBuild = function (classes, name, icon) {
-  return `
-     <div class='theme ${classes}'>
-    ${name}
-     </div>
-     <div class='fa ${icon}'></div>
-    `;
+var sideBarThemeBuild = function (icon) {
+  let fontawesome = document.createElement("div")
+  fontawesome.classList.add("fa", icon)
+  return fontawesome;
 };
