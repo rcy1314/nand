@@ -1,5 +1,5 @@
 // Uncomment initial theme
-let set = "Night"
+let set = "Alpenglow"
 
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
@@ -65,5 +65,5 @@ var startup = setInterval(function() {
     setTimeout(function(){
       clearInterval(startup)
     }, 10)
-  } else clearInterval(startup)
+  }
 }, 5)

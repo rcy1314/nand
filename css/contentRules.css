@@ -102,6 +102,7 @@ html body #container #sidebar {
   display: block;
   height: 100%;
   width: 240px;
+  left: -240px;
   float: left;
   z-index: 12;
 }
@@ -272,7 +273,7 @@ html body #container #sidebar #content .theme:hover {
 
 html body #container #sidebar #hide {
   border-radius: 0px 36px 36px 0px;
-  border-right: .3px solid #7777;
+  border-right: var(--hover-border-color);
   align-items: center;
   position: absolute;
   display: flex;
@@ -399,7 +400,7 @@ html body #container #main #option {
   user-select: none;
   cursor: pointer;
   display: none;
-  z-index: 12;
+  z-index: 2;
   top: 5px;
 }
 
@@ -853,11 +854,6 @@ html body #container #main #visit #page .quick .feed .translation {
   width: 90px;
 }
 
-html body #container #main #visit #page .quick .feed .asset:hover,
-html body #container #main #visit #page .quick .feed .translation:hover {
-  background-color: var(--hover-background-color) !important;
-  border: var(--hover-border-color) !important;
-}
 
 html body #container #main #visit #page .quick .feed .asset:not(:hover),
 html body #container #main #visit #page .quick .feed .translation:not(:hover) {

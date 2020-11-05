@@ -108,7 +108,3 @@ if (
   else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
 } else if (!location.href.match("\\?"))
   document.querySelector('#visit').style.display = "flex"
-
-setTimeout(function() {
-  document.querySelector('#main .check').style.display = 'block';
-}, 350)

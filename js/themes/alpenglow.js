@@ -61,5 +61,8 @@ var Alpenglow = function() {
   document.querySelectorAll("#container, #visit")
     .forEach(
       (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
+  document.querySelectorAll("#sidebar")
+    .forEach(
+      (a) => (a.style.backgroundColor = "var(--loader-color-primary)"))
 
 }
