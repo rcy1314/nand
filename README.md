@@ -25,13 +25,29 @@
 
 
 
-### Invert
+### Day
 
-<p align='center'><img src='http://acktic.github.io/screenshots/invert.jpg'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/Day.jpg'></p>
 
-<p align='center'><img src='http://acktic.github.io/screenshots/air.jpg'></p>
+### Night
 
-<p align='center'><img src='http://acktic.github.io/screenshots/visual.jpg'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/Night.jpg'></p>
+
+### Nord
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Nord.jpg'></p>
+
+### Gruvbox
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Gruvbox.jpg'></p>
+
+### Solarized
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Solarized.jpg'></p>
+
+### Alpenglow
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Alpenglow.jpg'></p>
 
 Want to Contribute?
 ----
