@@ -22,26 +22,23 @@ document.addEventListener(
         match.removeChild(match.lastChild);
       }
       for (i = 0; i < translations.length; i++) {
-        let index;
-        index =
-          "<div class='index' tabIndex='-1' aria-item='" +
-          translations[i] +
-          "'>" +
-          "  <div class='detail translation'>" +
-          "    <img class='hue' src='images/" +
-          translations[i] +
-          ".webp" +
-          "'>" +
-          "    <div class='text'>&emsp;" +
-          translations[i] +
-          "      <br>&emsp;" +
-          translations[i].grep() +
-          " sites" +
-          "    </div>" +
-          "  </div>" +
-          "</div>";
-        document.querySelector("#match .listing").innerHTML =
-          document.querySelector("#match .listing").innerHTML + index;
+        let index = document.createElement("div");
+        index.setAttribute("aria-item", translations[i])
+        index.setAttribute("tabindex", -1)
+        index.classList.add("index")
+        let detail = document.createElement("div")
+        detail.classList.add("detail", "translation")
+        let object = document.createElement("img")
+        object.classList.add("hue")
+        object.src = `images/${translations[i]}.webp`
+        detail.append(object)
+        let text = document.createElement("div")
+        text.classList.add("text")
+        text.innerHTML =
+        `&emsp;${translations[i]}<br>&emsp;${translations[i].grep()} sites`
+        detail.append(text)
+        index.append(detail)
+        document.querySelector("#match .listing").append(index);
       }
       event.target.style.caretColor = "#e4e4e4";
       event.target.style.paddingLeft = "30px";
