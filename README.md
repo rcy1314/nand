@@ -13,17 +13,7 @@
 * Nearly half XML responses have no images attached use onlyImages.
 * Heroku cors-anywhere offloading, first response ~7s.
 
-### Configurations in settings.js
-
- ### Opposite
-
- <p align='center'><img src='http://acktic.github.io/screenshots/visit.jpg'></p>
-
- <p align='center'><img src='http://acktic.github.io/screenshots/result.jpg'></p>
-
- <p align='center'><img src='http://acktic.github.io/screenshots/wall.jpg'></p>
-
-
+### Configurations in js/settings.js
 
 ### Day
 
@@ -48,6 +38,8 @@
 ### Alpenglow
 
 <p align='center'><img src='http://acktic.github.io/screenshots/Alpenglow.jpg'></p>
+
+
 
 Want to Contribute?
 ----
