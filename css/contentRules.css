@@ -1205,6 +1205,12 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .pi
   background-color: var(--hover-background-color);
 }
 
+html body #container #main #feed .center .item .header .courtesy .copy .attribute .fa,
+html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+  float: right;
+}
+
+
 html body #container #main #feed .center .item .external {
   text-transform: lowercase;
   padding-bottom: 10px;

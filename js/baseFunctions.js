@@ -468,7 +468,7 @@ var reverseCategoryGroup = function (translation) {
       air.append(
         categoryBuild(
           menu[i].id.match(/[^\/]+$/g),
-          menu.indexOf(menu[id]),
+          menu.indexOf(menu[i]),
           menu[i].image.image(),
           menu[i].hash,
           menu[i].description,
