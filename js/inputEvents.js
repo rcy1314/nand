@@ -23,21 +23,22 @@ document.addEventListener(
       }
       for (i = 0; i < translations.length; i++) {
         let index = document.createElement("div");
-        index.setAttribute("aria-item", translations[i])
-        index.setAttribute("tabindex", -1)
-        index.classList.add("index")
-        let detail = document.createElement("div")
-        detail.classList.add("detail", "translation")
-        let object = document.createElement("img")
-        object.classList.add("hue")
-        object.src = `images/${translations[i]}.webp`
-        detail.append(object)
-        let text = document.createElement("div")
-        text.classList.add("text")
-        text.innerHTML =
-        `&emsp;${translations[i]}<br>&emsp;${translations[i].grep()} sites`
-        detail.append(text)
-        index.append(detail)
+        index.setAttribute("aria-item", translations[i]);
+        index.setAttribute("tabindex", -1);
+        index.classList.add("index");
+        let detail = document.createElement("div");
+        detail.classList.add("detail", "translation");
+        let object = document.createElement("img");
+        object.classList.add("hue");
+        object.src = `images/${translations[i]}.webp`;
+        detail.append(object);
+        let text = document.createElement("div");
+        text.classList.add("text");
+        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${translations[
+          i
+        ].grep()} sites`;
+        detail.append(text);
+        index.append(detail);
         document.querySelector("#match .listing").append(index);
       }
       event.target.style.caretColor = "#e4e4e4";
@@ -59,9 +60,7 @@ document.addEventListener(
     if (event.target.classList.contains("sideFilter")) {
       event.target.value = "";
     }
-    if (
-      event.target.classList.contains("index")
-    ) {
+    if (event.target.classList.contains("index")) {
       if (document.getElementById("match").style.display === "block")
         document.getElementById("match").style.display = "none";
       if (document.getElementById("first").style.display === "block")
@@ -94,24 +93,24 @@ document.addEventListener(
           unloading();
         }
       } else {
-          if (document.body.contains(document.querySelector("#feed")))
-            document.querySelector("#feed").remove();
-          if (document.body.contains(document.querySelector("#group")))
-            document.querySelector("#group").remove();
-          if (document.body.contains(document.querySelector("#visit")))
-            document.querySelector("#visit").style.display = "none";
-          topMenuBarDisplay(topBar);
-          init();
-          category =
-            menu[event.target.closest(".hover").getAttribute("aria-item")]
+        if (document.body.contains(document.querySelector("#feed")))
+          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#group")))
+          document.querySelector("#group").remove();
+        if (document.body.contains(document.querySelector("#visit")))
+          document.querySelector("#visit").style.display = "none";
+        topMenuBarDisplay(topBar);
+        init();
+        category =
+          menu[event.target.closest(".hover").getAttribute("aria-item")]
             .category;
-          xmlRequestParsing(
-            null,
-            null,
-            event.target.closest(".hover").getAttribute("aria-item")
-          );
-        }
+        xmlRequestParsing(
+          null,
+          null,
+          event.target.closest(".hover").getAttribute("aria-item")
+        );
       }
+    }
     event.preventDefault();
   },
   false
@@ -119,9 +118,7 @@ document.addEventListener(
 document.addEventListener(
   "mouseout",
   function (event) {
-    if (
-      event.target.classList.contains("index")
-    ) {
+    if (event.target.classList.contains("index")) {
       document
         .querySelectorAll(".listing .index")
         .forEach((a) => a.classList.remove("hover"));
@@ -132,9 +129,7 @@ document.addEventListener(
 document.addEventListener(
   "mouseover",
   function (event) {
-    if (
-      event.target.classList.contains("index")
-    ) {
+    if (event.target.classList.contains("index")) {
       event.target.closest(".index").classList.add("hover");
     }
   },
@@ -252,10 +247,10 @@ document.addEventListener(
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
-  if (event.target.value.length > 1){
+  if (event.target.value.length > 1) {
     document
       .querySelectorAll("#label, .quick")
-      .forEach((a) => (a.style.visibility = 'hidden'));
+      .forEach((a) => (a.style.visibility = "hidden"));
   }
   if (
     event.target.value.length > 3 &&
@@ -268,13 +263,12 @@ var inputListingKeyup = function (Elem, keycode) {
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value, Elem);
-  else if (event.target.value.length < 2 && keycode === 8){
-    document.querySelector(Elem).style.display = "none"
+  else if (event.target.value.length < 2 && keycode === 8) {
+    document.querySelector(Elem).style.display = "none";
     document
       .querySelectorAll("#label, .quick")
-      .forEach((a) => (a.style.visibility = 'visible'));
-  }
-  else if (keycode === 40) {
+      .forEach((a) => (a.style.visibility = "visible"));
+  } else if (keycode === 40) {
     if (
       !document.body.contains(document.querySelector(Elem + " .listing .hover"))
     ) {
@@ -381,12 +375,12 @@ var inputListingKeyup = function (Elem, keycode) {
     ) {
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling.
-        nextElementSibling.nextElementSibling.nextElementSibling.focus();
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
       document
         .querySelector(Elem + " .listing .hover")
-        .nextElementSibling.nextElementSibling.nextElementSibling.
-        nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
           "hover"
         );
       document
@@ -424,7 +418,7 @@ var inputListingKeyup = function (Elem, keycode) {
       document.querySelector(".focus .guest").focus();
     }
   } else if (keycode === 27) {
-    document.querySelector(".quick").style.visibility = "visible"
+    document.querySelector(".quick").style.visibility = "visible";
     document.querySelector(Elem).style.display = "none";
   }
   event.target.setAttribute("tabIndex", -1);

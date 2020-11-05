@@ -1,5 +1,4 @@
-var Gruvbox = function() {
-
+var Gruvbox = function () {
   document.documentElement.style.setProperty(
     "--box-shadow",
     "8px 8px 16px rgba(169, 121, 62, .2)"
@@ -12,10 +11,7 @@ var Gruvbox = function() {
     "--loader-color-secondary",
     "rgba(169, 121, 62, 1)"
   );
-  document.documentElement.style.setProperty(
-    "--fill-color-primary",
-    "#eeeeee"
-  );
+  document.documentElement.style.setProperty("--fill-color-primary", "#eeeeee");
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
     "rgba(169, 121, 62, 1)"
@@ -24,10 +20,7 @@ var Gruvbox = function() {
     "--bg-color-primary",
     "rgba(38, 38, 38, .4)"
   );
-  document.documentElement.style.setProperty(
-    "--bg-color-secondary",
-    "#262626"
-  );
+  document.documentElement.style.setProperty("--bg-color-secondary", "#262626");
   document.documentElement.style.setProperty(
     "--hover-background-color",
     "rgba(169, 121, 62, .15)"
@@ -56,13 +49,12 @@ var Gruvbox = function() {
     "--hue-rotate",
     "hue-rotate(160deg)"
   );
-  document.querySelectorAll("#container, #sidebar, #visit")
-    .forEach(
-      (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
-  document.querySelectorAll("#content")
-    .forEach(
-      (a) => (a.style.backgroundColor = "var(--progress-background)"))
-  document.querySelector('#hide').style.background =
-  "var(--progress-background)"
-
-}
+  document
+    .querySelectorAll("#container, #sidebar, #visit")
+    .forEach((a) => (a.style.backgroundColor = "var(--bg-color-secondary)"));
+  document
+    .querySelectorAll("#content")
+    .forEach((a) => (a.style.backgroundColor = "var(--progress-background)"));
+  document.querySelector("#hide").style.background =
+    "var(--progress-background)";
+};

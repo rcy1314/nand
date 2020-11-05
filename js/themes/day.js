@@ -1,4 +1,4 @@
-var Day = function() {
+var Day = function () {
   document.documentElement.style.setProperty(
     "--box-shadow",
     "8px 8px 16px #eeeeee"
@@ -11,10 +11,7 @@ var Day = function() {
     "--loader-color-secondary",
     "rgb(97, 121, 201)"
   );
-  document.documentElement.style.setProperty(
-    "--fill-color-primary",
-    "#555555"
-  );
+  document.documentElement.style.setProperty("--fill-color-primary", "#555555");
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
     "rgb(212,212,212,.9)"
@@ -23,10 +20,7 @@ var Day = function() {
     "--bg-color-primary",
     "rgb(255,255,255,.8)"
   );
-  document.documentElement.style.setProperty(
-    "--bg-color-secondary",
-    "#f7f7f7"
-  );
+  document.documentElement.style.setProperty("--bg-color-secondary", "#f7f7f7");
   document.documentElement.style.setProperty(
     "--hover-background-color",
     "rgba(246, 248, 250, .3)"
@@ -56,12 +50,11 @@ var Day = function() {
     "hue-rotate(0deg)"
   );
   document.querySelector("#favicon").setAttribute("href", "favicon.ico");
-  document.querySelectorAll("#container, #sidebar, #visit")
-    .forEach(
-      (a) => (a.style.backgroundColor = "var(--bg-color-secondary)"))
-  document.querySelectorAll("#content")
-    .forEach(
-      (a) => (a.style.backgroundColor = "var(--progress-background)"))
-  document.querySelector('#main .check').style.filter = 'saturate(1)'
-
-}
+  document
+    .querySelectorAll("#container, #sidebar, #visit")
+    .forEach((a) => (a.style.backgroundColor = "var(--bg-color-secondary)"));
+  document
+    .querySelectorAll("#content")
+    .forEach((a) => (a.style.backgroundColor = "var(--progress-background)"));
+  document.querySelector("#main .check").style.filter = "saturate(1)";
+};

@@ -1,5 +1,4 @@
-var Alpenglow = function() {
-
+var Alpenglow = function () {
   document.documentElement.style.setProperty(
     "--box-shadow",
     "8px 8px 16px rgba(45, 38, 54, .2)"
@@ -12,10 +11,7 @@ var Alpenglow = function() {
     "--loader-color-secondary",
     "rgba(253, 115, 136, 1)"
   );
-  document.documentElement.style.setProperty(
-    "--fill-color-primary",
-    "#eeeeee"
-  );
+  document.documentElement.style.setProperty("--fill-color-primary", "#eeeeee");
   document.documentElement.style.setProperty(
     "--fill-color-secondary",
     "rgba(253, 115, 136, 1)"
@@ -23,12 +19,12 @@ var Alpenglow = function() {
   document.documentElement.style.setProperty(
     "--bg-color-primary",
     "linear-gradient(right, rgba(106, 66, 194, .4) 50%," +
-    "rgba(253, 115, 136, .4) 100%)"
+      "rgba(253, 115, 136, .4) 100%)"
   );
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
     "linear-gradient(45deg, rgba(106, 66, 194, 1) 50%," +
-    "rgba(253, 115, 136, 1) 100%)"
+      "rgba(253, 115, 136, 1) 100%)"
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
@@ -58,11 +54,10 @@ var Alpenglow = function() {
     "--hue-rotate",
     "hue-rotate(110deg)"
   );
-  document.querySelectorAll("#container, #visit")
-    .forEach(
-      (a) => (a.style.backgroundImage = "var(--bg-color-secondary)"))
-  document.querySelectorAll("#sidebar")
-    .forEach(
-      (a) => (a.style.backgroundColor = "var(--loader-color-primary)"))
-
-}
+  document
+    .querySelectorAll("#container, #visit")
+    .forEach((a) => (a.style.backgroundImage = "var(--bg-color-secondary)"));
+  document
+    .querySelectorAll("#sidebar")
+    .forEach((a) => (a.style.backgroundColor = "var(--loader-color-primary)"));
+};

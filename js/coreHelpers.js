@@ -15,18 +15,18 @@ var init = function () {
       document.querySelector("#group").remove();
   }
   if (loading == "dots") {
-    dots.style.zIndex = '11';
+    dots.style.zIndex = "11";
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => a.classList.add("dots"));
   } else if (loading == "percent") {
-    dots.style.zIndex = '-1';
+    dots.style.zIndex = "-1";
     let width = main.clientWidth / 50;
     complete = setInterval(function () {
       progressBar.style.transitionDelay = "0s";
-      progressBar.style.transition =
-        "all .95s ease-in-out";
-      progressBar.style.width = progressBar.clientWidth +
+      progressBar.style.transition = "all .95s ease-in-out";
+      progressBar.style.width =
+        progressBar.clientWidth +
         Math.floor(Math.random() * (100 - width) + width);
     }, 750);
   }

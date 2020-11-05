@@ -14,7 +14,7 @@ window.onload = function () {
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
-  if (isNumeric(post)) sideBarDisplay(false)
+  if (isNumeric(post)) sideBarDisplay(false);
   else if (document.querySelector("#main").clientWidth <= 768) {
     onScreen = false;
     sideBarDisplay(true);
@@ -51,7 +51,7 @@ document.addEventListener(
         init();
         first = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
-      } else stop = false
+      } else stop = false;
     }
   },
   true
@@ -150,7 +150,7 @@ document.addEventListener(
       ) {
         document
           .querySelectorAll("#label, .quick")
-          .forEach((a) => (a.style.visibility = 'visible'));
+          .forEach((a) => (a.style.visibility = "visible"));
         document.querySelector("#main #first").style.display = "none";
         document.querySelector(".focus .guest").blur();
       }
@@ -182,7 +182,10 @@ document.addEventListener(
     ) {
       const button = event.target.closest(".populate").getBoundingClientRect();
       const circle = document.createElement("span");
-      const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
+      const diameter = Math.max(
+        event.target.clientWidth,
+        event.target.clientHeight
+      );
       const radius = diameter / 2;
       circle.style.width = circle.style.height = `${diameter}px`;
       circle.style.left = `${event.clientX - button.left - radius}px`;
@@ -191,7 +194,7 @@ document.addEventListener(
       if (document.querySelector(".ripple"))
         document.querySelector(".ripple").remove();
       event.target.closest(".populate").appendChild(circle);
-      setTimeout(function() {
+      setTimeout(function () {
         if (document.getElementById("match").style.display === "block") {
           document.getElementById("match").style.display = "none";
           document.querySelector("#search .view").blur();
@@ -215,7 +218,7 @@ document.addEventListener(
           null,
           event.target.closest(".populate").getAttribute("aria-item")
         );
-      }, 500)
+      }, 500);
     }
     if (
       event.target.classList.contains("filter") ||
@@ -229,7 +232,7 @@ document.addEventListener(
     if (event.target.classList.contains("translation")) {
       id = 0;
       category = event.target.closest(".translation").getAttribute("aria-item");
-      setTimeout(function() {
+      setTimeout(function () {
         if (reader == true) {
           if (document.body.contains(document.querySelector(".channel")))
             first = false;
@@ -250,7 +253,7 @@ document.addEventListener(
           topMenuBarDisplay(topBar);
           displayExpand(expand);
         }
-      }, 500)
+      }, 500);
     }
     if (
       event.target.classList.contains("entity") ||
@@ -277,8 +280,8 @@ document.addEventListener(
       document.querySelector("#guide").style.display = "none";
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
-      onScreen = guideOnScreen
-      if (document.querySelector('#main').clientWidth >= 426)
+      onScreen = guideOnScreen;
+      if (document.querySelector("#main").clientWidth >= 426)
         sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
     }
@@ -363,7 +366,8 @@ document.addEventListener(
               sticky.push({
                 courtesy: event.target.closest(".item").querySelector(".header")
                   .innerHTML,
-                  element: event.target.closest(".item")
+                element: event.target
+                  .closest(".item")
                   .getAttribute("aria-item"),
                 image: menu[
                   event.target.closest(".item").getAttribute("aria-object")

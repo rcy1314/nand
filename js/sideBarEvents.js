@@ -9,26 +9,25 @@ document.addEventListener(
       let x = event.pageX;
       let p = (x / event.target.offsetWidth) * 100;
       event.target.style.borderImage =
-        "linear-gradient(to right,  rgba(147,147,147,.01) 0%,rgba(147,147,147,.75) " +
-        parseInt(p) +
-        "%,rgba(147,147,147,.01) 100%)";
+        `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
+        ${parseInt(p)}%, rgba(147,147,147,.01) 100%)`;
       event.target.style.borderWidth = ".3px .3px .3px .3px";
       event.target.style.borderImageSlice = "9";
       event.target.style.borderStyle = "solid";
       if (
         event.target.nextElementSibling.nextElementSibling !=
-        document.querySelector("#basic") &&
+          document.querySelector("#basic") &&
         document.body.contains(
           event.target.nextElementSibling.nextElementSibling
         )
       ) {
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.15) " +
-          parseInt(p) +
-          "%,rgba(147,147,147,0) 100%)";
+          `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
+          ${parseInt(p)}% ,rgba(147,147,147,0) 100%)`;
         event.target.nextElementSibling.nextElementSibling.style.borderWidth =
           ".3px 0 0 .3px";
-        event.target.nextElementSibling.nextElementSibling.style.borderImageSlice =
+        event.target.nextElementSibling
+        .nextElementSibling.style.borderImageSlice =
           "9";
         event.target.nextElementSibling.nextElementSibling.style.borderStyle =
           "solid";
@@ -38,15 +37,18 @@ document.addEventListener(
         event.target != document.querySelector(".cat:first-child") &&
         event.target != document.querySelector(".sel:first-child")
       ) {
-        event.target.previousElementSibling.previousElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(147,147,147,0) 0%,rgba(147,147,147,.15) " +
-          parseInt(p) +
-          "%,rgba(147,147,147,0) 100%)";
-        event.target.previousElementSibling.previousElementSibling.style.borderWidth =
+        event.target.previousElementSibling
+        .previousElementSibling.style.borderImage =
+          `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
+          ${parseInt(p)}%,rgba(147,147,147,0) 100%)`;
+        event.target.previousElementSibling
+        .previousElementSibling.style.borderWidth =
           ".3px 0 0 .3px";
-        event.target.previousElementSibling.previousElementSibling.style.borderImageSlice =
+        event.target.previousElementSibling
+        .previousElementSibling.style.borderImageSlice =
           "9";
-        event.target.previousElementSibling.previousElementSibling.style.borderStyle =
+        event.target.previousElementSibling
+        .previousElementSibling.style.borderStyle =
           "solid";
       }
     }
@@ -62,21 +64,22 @@ document.addEventListener(
       event.target.classList.contains("sel")
     ) {
       event.target.style.borderImage =
-        "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
+        `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
       if (
         document.body.contains(
           event.target.nextElementSibling.nextElementSibling
         )
       )
         event.target.nextElementSibling.nextElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
+          `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
       if (
         event.target != document.querySelector(".border") &&
         event.target != document.querySelector(".cat:first-child") &&
         event.target != document.querySelector(".sel:first-child")
       )
-        event.target.previousElementSibling.previousElementSibling.style.borderImage =
-          "linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)";
+        event.target.previousElementSibling
+        .previousElementSibling.style.borderImage =
+          `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
     }
   },
   false
@@ -111,7 +114,10 @@ document.addEventListener(
       id = 0;
       const button = event.target.getBoundingClientRect();
       const circle = document.createElement("span");
-      const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
+      const diameter = Math.max(
+        event.target.clientWidth,
+        event.target.clientHeight
+      );
       const radius = diameter / 2;
       circle.style.width = circle.style.height = `${diameter}px`;
       circle.style.left = `${event.clientX - button.left - radius}px`;
@@ -121,9 +127,7 @@ document.addEventListener(
         document.querySelector(".ripple").remove();
       event.target.appendChild(circle);
     }
-    if (
-      event.target.classList.contains("cat")
-    ) {
+    if (event.target.classList.contains("cat")) {
       category = event.target.closest(".cat").getAttribute("aria-item");
       if (reader == true) {
         if (document.body.contains(document.querySelector(".channel")))
@@ -188,15 +192,13 @@ document.addEventListener(
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
-    if (
-      event.target.classList.contains("border")
-    ) {
-      if (document.querySelector('.themes').clientHeight != `50`){
-        document.querySelector('.themes').style.height = `30px`
-        return false
+    if (event.target.classList.contains("border")) {
+      if (document.querySelector(".themes").clientHeight != `50`) {
+        document.querySelector(".themes").style.height = `30px`;
+        return false;
       }
-      let count = themes.length + 1
-    document.querySelector('.themes').style.height = count * 35 + `px`
+      let count = themes.length + 1;
+      document.querySelector(".themes").style.height = count * 35 + `px`;
     }
     if (event.target.classList.contains("List")) {
       let expand = true;
@@ -237,9 +239,9 @@ document.addEventListener(
       document
         .querySelectorAll("#dots .fill")
         .forEach((a) => a.classList.add("dots"));
-      document.querySelector('#dots').style.zIndex = "11";
+      document.querySelector("#dots").style.zIndex = "11";
       setTimeout(function () {
-        document.querySelector('#dots').style.zIndex = "-1";
+        document.querySelector("#dots").style.zIndex = "-1";
         document
           .querySelectorAll("#dots .fill")
           .forEach((a) => a.classList.remove("dots"));
@@ -318,13 +320,13 @@ document.addEventListener(
       xmlRequestParsing(null, null, randomMenuObject);
     }
     if (event.target.classList.contains("fa-sun")) {
-      var iteration = themes.findIndex((item) => item.name === set)
-      if (iteration == themes.length - 1) iteration = -1
-      iteration = iteration + 1
-      set = themes[iteration].name
-      window[themes[iteration].name]()
-      displayExpand(expand)
-      notifyOption("Visual set to " + themes[iteration].name.capitalize())
+      var iteration = themes.findIndex((item) => item.name === set);
+      if (iteration == themes.length - 1) iteration = -1;
+      iteration = iteration + 1;
+      set = themes[iteration].name;
+      window[themes[iteration].name]();
+      displayExpand(expand);
+      notifyOption("Visual set to " + themes[iteration].name.capitalize());
     }
     event.preventDefault();
   },

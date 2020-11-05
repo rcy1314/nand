@@ -57,7 +57,7 @@ var xmlStatusSuggestions = function () {
             menu[randomMenuObject].id,
             menu[randomMenuObject].category
           )
-        )
+        );
       }
     }
   }
@@ -415,13 +415,25 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           )
         ) {
           let itemImage = document.querySelector(
-            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .img"
+            "[aria-object='" +
+              menuObject +
+              "'][aria-item='" +
+              pubIndex +
+              "'] .img"
           );
           let attribute = document.querySelector(
-            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .attribute"
+            "[aria-object='" +
+              menuObject +
+              "'][aria-item='" +
+              pubIndex +
+              "'] .attribute"
           );
           let copyPicture = document.querySelector(
-            "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .picture"
+            "[aria-object='" +
+              menuObject +
+              "'][aria-item='" +
+              pubIndex +
+              "'] .picture"
           );
           let copyPost = document.querySelector(
             "[aria-item='" + pubIndex + "'] .post"
@@ -511,13 +523,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
             )
           )
-          document.querySelector(
-            "[aria-object='" +
-              menuObject +
-              "'][aria-item='" +
-              pubIndex +
-              "'] .img"
-          ).style.display = "block";
+            document.querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .img"
+            ).style.display = "block";
         }
       };
     } else if (
@@ -525,9 +537,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         document.querySelector(
           "[aria-object='" +
             menuObject +
-          "'][aria-item='" +
+            "'][aria-item='" +
             pubIndex +
-          "'] .pending"
+            "'] .pending"
         )
       )
     ) {
@@ -538,19 +550,26 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         .closest(".item")
         .querySelector(".pending")
         .remove();
-        document.querySelector(
-          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .attribute"
-        ).style.height = "40px"
-        document.querySelector(
-          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "'] .picture"
-        ).style.display = "none"
-        document.querySelector(
-          "[aria-item='" + pubIndex + "'][aria-item='" + pubIndex + "'] .post"
-        ).style.display = "none"
-      }
+      document.querySelector(
+        "[aria-object='" +
+          menuObject +
+          "'][aria-item='" +
+          pubIndex +
+          "'] .attribute"
+      ).style.height = "40px";
+      document.querySelector(
+        "[aria-object='" +
+          menuObject +
+          "'][aria-item='" +
+          pubIndex +
+          "'] .picture"
+      ).style.display = "none";
+      document.querySelector(
+        "[aria-item='" + pubIndex + "'][aria-item='" + pubIndex + "'] .post"
+      ).style.display = "none";
+    }
   });
 };
-
 
 var xmlTitleParsing = function (xhr) {
   if (xhr.getElementsByTagName("title")[0].childNodes[1])
@@ -568,7 +587,7 @@ var xmlTitleParsing = function (xhr) {
 var xmlRequestParsing = function (search, string, index) {
   let html;
   let local;
-  dupe = []
+  dupe = [];
   id = index;
   let pub = [];
   if (search == "search") {
@@ -583,7 +602,7 @@ var xmlRequestParsing = function (search, string, index) {
   document.querySelector("#visit").style.display = "none";
   document.querySelector("#toggle").style.display = "none";
   if (first == true)
-    document.querySelector("#main .check").style.visibility = "visible"
+    document.querySelector("#main .check").style.visibility = "visible";
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -644,7 +663,7 @@ var xmlRequestParsing = function (search, string, index) {
                 "</div>";
             else var views = "";
 
-            var inline = []
+            var inline = [];
             inline.push({
               id: menu[index].id.match(/([^\/]+)$/g),
               image: menu[index].image.image(),
@@ -658,12 +677,12 @@ var xmlRequestParsing = function (search, string, index) {
               more: more,
               videoSource: src,
               pubIndex: i,
-              menuObject: index
-            })
-              html = youtubeHTMLBuild(inline[0]);
+              menuObject: index,
+            });
+            html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = "";
-            var inline = []
+            var inline = [];
             inline.push({
               dst: parse.dst,
               externalURI: parse.externalURI,
@@ -675,8 +694,8 @@ var xmlRequestParsing = function (search, string, index) {
               searchExternal: cat,
               src: src,
               menuObject: index,
-              pubIndex: i
-            })
+              pubIndex: i,
+            });
             html = xmlHTMLBuild(inline[0]);
           }
 
@@ -752,27 +771,26 @@ var xmlRequestParsing = function (search, string, index) {
           var suggestions = document.querySelector(".suggestions");
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
-          stop = true
-          document.querySelector('#main').scrollTo(
-            {
-              top: document.querySelector("[aria-object='" + index + "']").offsetTop,
-              behavior: 'smooth'
-            }
-          );
-
+          stop = true;
+          document.querySelector("#main").scrollTo({
+            top: document.querySelector("[aria-object='" + index + "']")
+              .offsetTop,
+            behavior: "smooth",
+          });
         }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
-        document.querySelector("#main .check").style.visibility = "hidden"
+        document.querySelector("#main .check").style.visibility = "hidden";
         document.querySelector("#main").setAttribute("tabindex", -1);
         document.querySelector("#main").focus();
         unloading();
       } else {
         let main = document.querySelector("#main");
-        main.append(stageBuild())
-        document.querySelector(".channel")
+        main.append(stageBuild());
+        document
+          .querySelector(".channel")
           .append("This site could not be reached.");
         unloading();
       }

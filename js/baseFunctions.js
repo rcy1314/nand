@@ -51,7 +51,8 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "nowrap"));
-      document.querySelectorAll('.populate')
+      document
+        .querySelectorAll(".populate")
         .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
       if (document.body.contains(document.getElementById(".air")))
         document.querySelector(".air").style.display = "block";
@@ -77,8 +78,11 @@ var displayExpand = function (toggleOption) {
       group
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "wrap"));
-      document.querySelectorAll('.populate')
-        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-secondary)"));
+      document
+        .querySelectorAll(".populate")
+        .forEach(
+          (a) => (a.style.backgroundColor = "var(--bg-color-secondary)")
+        );
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
       if (document.body.contains(document.getElementById(".result")))
@@ -92,30 +96,32 @@ var sideBarDisplay = function (toggleOption) {
   let content = document.querySelector("#content");
   if (!document.body.contains(document.querySelector(".cat"))) {
     for (i = 0; i <= translations.length - 1; i++) {
-      let cat = document.createElement('div')
-      cat.classList.add("cat", translations[i])
-      cat.setAttribute("aria-item", translations[i])
-      cat.innerHTML = translations[i]
+      let cat = document.createElement("div");
+      cat.classList.add("cat", translations[i]);
+      cat.setAttribute("aria-item", translations[i]);
+      cat.innerHTML = translations[i];
       content.append(cat);
-      content.append(sideBarCategoryBuild(translations[i]))
+      content.append(sideBarCategoryBuild(translations[i]));
     }
-    content.append(sideBarThemeListing())
-    let list = document.querySelector('.themes')
+    content.append(sideBarThemeListing());
+    let list = document.querySelector(".themes");
     for (i = 0; i <= themes.length - 1; i++) {
-      let visual = document.createElement("div")
-      visual.classList.add("theme", themes[i].class)
-      visual.innerHTML = themes[i].name
-      list.append(visual)
+      let visual = document.createElement("div");
+      visual.classList.add("theme", themes[i].class);
+      visual.innerHTML = themes[i].name;
+      list.append(visual);
       list.append(sideBarThemeBuild(themes[i].icon));
-    };
+    }
     for (i = 0; i <= selections.length - 1; i++) {
-      content.append(sideBarOptionBuild(selections[i].name,selections[i].class))
-      let fontawesome = document.createElement("div")
-      fontawesome.classList.add("fa", selections[i].icon)
-      content.append(fontawesome)
-    };
-    content.append(basicFormBuild())
-  };
+      content.append(
+        sideBarOptionBuild(selections[i].name, selections[i].class)
+      );
+      let fontawesome = document.createElement("div");
+      fontawesome.classList.add("fa", selections[i].icon);
+      content.append(fontawesome);
+    }
+    content.append(basicFormBuild());
+  }
   if (toggleOption == true) {
     let Elem = document.querySelector("#sidebar");
     Elem.style.position = "fixed";
@@ -142,7 +148,7 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    document.querySelector('#hide').style.left = "240px";
+    document.querySelector("#hide").style.left = "240px";
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
@@ -156,9 +162,9 @@ var sideBarDisplay = function (toggleOption) {
       document
         .querySelectorAll("#dots .fill")
         .forEach((a) => (a.style.marginLeft = "150px"));
-        document.querySelector(".sideFilter").style.display = "block";
-        document.querySelector('#progressBar').style.left = "240px";
-        document.querySelector("#basic").style.display = "block";
+      document.querySelector(".sideFilter").style.display = "block";
+      document.querySelector("#progressBar").style.left = "240px";
+      document.querySelector("#basic").style.display = "block";
     }, 300);
   }
   if (toggleOption == false || onScreen == false) {
@@ -168,7 +174,7 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#top").style.width = "calc(100% - 16px)";
     document.querySelector(".sideFilter").style.display = "none";
     document.querySelector("#sidebar").style.left = "-242px";
-    document.querySelector('#progressBar').style.left = "0";
+    document.querySelector("#progressBar").style.left = "0";
     document.querySelector("#main").style.width = "100%";
     document.querySelector("#main").style.left = "0";
   }
@@ -214,12 +220,11 @@ var quickFeedDisplay = function (toggleOption) {
 var guideDisplay = function (pubArray) {
   let guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
-  guide.innerHTML =
-  `
+  guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-  `
+  `;
   document.querySelector("#top").style.display = "hide";
   guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0].src);
@@ -229,12 +234,11 @@ var guideDisplay = function (pubArray) {
 var guideDisplayYoutube = function (pubArray) {
   var guide = document.querySelector("#guide");
   while (guide.firstChild) guide.removeChild(guide.lastChild);
-  guide.innerHTML =
-  `
+  guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-  `
+  `;
   document.querySelector("#top").style.display = "hide";
   guide.append(guideBuildYoutube(pubArray[0]));
   guide.style.display = "flex";
@@ -248,14 +252,7 @@ var contentStatusDisplay = function (
 ) {
   if (document.body.contains(document.querySelector("#feed .status"))) {
     var status = document.querySelector("#feed .status");
-    status.append(
-      contentBuild(
-        oldestPost,
-        recentPost,
-        postsCount,
-        menuIndex
-      )
-    )
+    status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
   }
 };
 
@@ -284,7 +281,7 @@ var quickFeedAsset = function (feedAssets) {
             menu[randomMenuObject].image.image(),
             menu[randomMenuObject].id
           )
-        )
+        );
         if (duplicate.length === feedAssets) return false;
       }
     }
@@ -331,7 +328,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
         true,
         i
       )
-    )
+    );
     suggest.push(randomMenuObject);
     setTimeout(500);
   }
@@ -353,8 +350,8 @@ var progressBackDrop = function (done, percent) {
     progressBar.style.width = percent + "%";
     if (document.body.contains(document.getElementById("feed")))
       document.querySelector("#feed").style.display = "block";
-      if (document.body.contains(document.getElementById("group")))
-        document.querySelector("#group").style.display = "block";
+    if (document.body.contains(document.getElementById("group")))
+      document.querySelector("#group").style.display = "block";
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector("#main").scrollTop = document.querySelector(
@@ -384,7 +381,7 @@ var progressBackDrop = function (done, percent) {
 
 var populateCategoryGroup = function (translation) {
   let main = document.getElementById("main");
-  if (!document.body.contains(document.querySelector("#group"))) groupBuild()
+  if (!document.body.contains(document.querySelector("#group"))) groupBuild();
   let result = document.querySelector(".result");
   if (id && id != 0 && !location.href.match("\\?q=")) {
     if (menu[id].media == true)
@@ -399,7 +396,7 @@ var populateCategoryGroup = function (translation) {
         menu[id].description,
         media
       )
-    )
+    );
   }
   for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
@@ -420,7 +417,7 @@ var populateCategoryGroup = function (translation) {
             menu[i].description,
             media
           )
-        )
+        );
       }
     } else if (onlyImages == false) {
       if (translation == menu[i].category && id != menu.indexOf(menu[i])) {
@@ -433,7 +430,7 @@ var populateCategoryGroup = function (translation) {
             menu[i].description,
             media
           )
-        )
+        );
       }
     }
   }
@@ -474,7 +471,7 @@ var reverseCategoryGroup = function (translation) {
           menu[i].description,
           media
         )
-      )
+      );
     }
   }
   displayExpand(expand);
@@ -526,7 +523,7 @@ var filterInputResponse = function (
   if (filter.length == 0)
     xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
-    if (!document.body.contains(document.querySelector("#group"))) groupBuild()
+    if (!document.body.contains(document.querySelector("#group"))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
@@ -552,7 +549,7 @@ var writeFilterResponse = function (menuObject) {
       menu[menuObject].description,
       media
     )
-  )
+  );
 };
 
 var guideImageAttributes = function (src) {
@@ -570,7 +567,7 @@ var guideImageAttributes = function (src) {
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         guide.querySelector(".img").style.maxHeight = "50vh";
         guide.querySelector(".img").style.maxWidth = "75vw";
-        guide.querySelector(".wrap").style.display = 'block';
+        guide.querySelector(".wrap").style.display = "block";
         guide.querySelector(".wrap").style.height = "fit-content";
         guide.querySelector(".pub").style.height = "fit-content";
         document.querySelector("#guide .wrap").style.maxWidth = "100vw";
@@ -591,7 +588,7 @@ var guideImageAttributes = function (src) {
         guide.querySelector(".img").style.maxHeight = "70vh";
       }
     }
-    guide.querySelector('.sticky').style.display = "block"
+    guide.querySelector(".sticky").style.display = "block";
     guide.style.display = "flex";
   };
 };

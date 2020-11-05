@@ -77,7 +77,7 @@ if (
 
     if (!i === -1) {
       document.querySelector("#toggle").style.display = "block";
-      document.querySelector('#visit').style.display = "flex"
+      document.querySelector("#visit").style.display = "flex";
     } else {
       init();
       guideOnScreen = onScreen;
@@ -88,7 +88,7 @@ if (
     }
   }
 } else if (location.href.match("\\?\\+1")) {
-  document.querySelector('#visit').style.display = "flex"
+  document.querySelector("#visit").style.display = "flex";
   contrast = contrast != true;
   op = op != true;
 } else if (location.search.split("?q=")[1]) {
@@ -107,4 +107,4 @@ if (
   else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
   else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
 } else if (!location.href.match("\\?"))
-  document.querySelector('#visit').style.display = "flex"
+  document.querySelector("#visit").style.display = "flex";
