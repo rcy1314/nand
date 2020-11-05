@@ -105,42 +105,46 @@ document.addEventListener(
       }
     }
     if (
+      event.target.classList.contains("translation") ||
       event.target.classList.contains("cat")
     ) {
       id = 0;
-      const button = event.target;
+      const button = event.target.getBoundingClientRect();
       const circle = document.createElement("span");
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
       const radius = diameter / 2;
       circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - radius}px`;
-      circle.style.top = `${event.clientY - radius}px`;
+      circle.style.left = `${event.clientX - button.left - radius}px`;
+      circle.style.top = `${event.clientY - button.top - radius}px`;
       circle.classList.add("ripple");
-      if (circle) circle.remove();
-      button.appendChild(circle);
-      setTimeout(function() {
-        category = event.target.closest(".cat").getAttribute("aria-item");
-        if (reader == true) {
-          if (document.body.contains(document.querySelector(".channel")))
-            first = false;
-          randomDuplicate = [];
-          xmlRequestParsing(null, null, anyRandomMenuObject());
-          notifyOption("Switched to now reading " + category + ".");
-        } else {
-          if (document.body.contains(document.querySelector("#feed")))
-            document.querySelector("#feed").remove();
-          if (document.body.contains(document.querySelector("#group")))
-            document.querySelector("#group").remove();
-          location.pathname.state();
-          document.querySelector("#toggle").style.display = "none";
-          document.querySelector("#visit").style.display = "none";
-          populateCategoryGroup(
-            event.target.closest(".cat").getAttribute("aria-item")
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-        }
-      }, 300)
+      if (document.querySelector(".ripple"))
+        document.querySelector(".ripple").remove();
+      event.target.appendChild(circle);
+    }
+    if (
+      event.target.classList.contains("cat")
+    ) {
+      category = event.target.closest(".cat").getAttribute("aria-item");
+      if (reader == true) {
+        if (document.body.contains(document.querySelector(".channel")))
+          first = false;
+        randomDuplicate = [];
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+        notifyOption("Switched to now reading " + category + ".");
+      } else {
+        if (document.body.contains(document.querySelector("#feed")))
+          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#group")))
+          document.querySelector("#group").remove();
+        location.pathname.state();
+        document.querySelector("#toggle").style.display = "none";
+        document.querySelector("#visit").style.display = "none";
+        populateCategoryGroup(
+          event.target.closest(".cat").getAttribute("aria-item")
+        );
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+      }
     }
     if (
       (event.target.id == "mobileHome" && event.target.id != "Home") ||
@@ -319,6 +323,7 @@ document.addEventListener(
       iteration = iteration + 1
       set = themes[iteration].name
       window[themes[iteration].name]()
+      displayExpand(expand)
       notifyOption("Visual set to " + themes[iteration].name.capitalize())
     }
     event.preventDefault();

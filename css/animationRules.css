@@ -6,9 +6,8 @@ span.ripple {
   position: absolute;
   border-radius: 50%;
   transform: scale(0);
-  animation: ripple 250ms linear;
-  background: var(--bg-color-secondary);
-  z-index: 12;
+  animation: ripple 350ms ease-in;
+  background: var(--fill-color-secondary);
 }
 
 .dots {
@@ -200,7 +199,7 @@ span.ripple {
 
 @keyframes ripple {
   to {
-    transform: scale(.3);
+    transform: scale(4);
     opacity: 0;
   }
 }

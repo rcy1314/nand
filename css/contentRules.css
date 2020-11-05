@@ -152,11 +152,12 @@ html body #container #sidebar #content #basic input[type=text] {
 }
 
 html body #container #sidebar #content .cat {
-  background-color: transparent !important;
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
   border-top: .3px solid transparent !important;
+  background-color: transparent !important;
+  position: relative;
   color: var(--fill-color-primary);
   letter-spacing: .5px;
   padding-bottom: 25px;
@@ -818,7 +819,7 @@ html body #container #main #visit #page .quick {
   border-radius: 4px;
   position: relative;
   margin: 15px auto;
-  height: 7.5em;
+  height: 89px;
   width: 100%;
   z-index: 1;
 }
@@ -848,10 +849,18 @@ html body #container #main #visit #page .quick .feed .translation {
   position: relative;
   text-align: center;
   border-radius: 6px;
+  overflow: hidden;
   flex-shrink: 0;
   padding: 15px;
   height: 58px;
   width: 90px;
+}
+
+html body #container #main #visit #page .quick .feed .asset .query,
+html body #container #main #visit #page .quick .feed .asset .entity,
+html body #container #main #visit #page .quick .feed .translation .category,
+html body #container #main #visit #page .quick .feed .translation .quickTranslation{
+  z-index: -1;
 }
 
 html body #container #main #visit #page .quick .feed .asset:hover,

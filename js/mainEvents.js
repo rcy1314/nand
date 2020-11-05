@@ -220,26 +220,28 @@ document.addEventListener(
     ) {
       id = 0;
       category = event.target.closest(".translation").getAttribute("aria-item");
-      if (reader == true) {
-        if (document.body.contains(document.querySelector(".channel")))
-          first = false;
-        randomDuplicate = [];
-        xmlRequestParsing(null, null, anyRandomMenuObject());
-        notifyOption("Switched to now reading " + category + ".");
-      } else {
-        if (document.body.contains(document.querySelector("#feed")))
-          document.querySelector("#feed").remove();
-        if (document.body.contains(document.querySelector("#group")))
-          document.querySelector("#group").remove();
-        location.pathname.state();
-        document.querySelector("#toggle").style.display = "none";
-        document.querySelector("#visit").style.display = "none";
-        populateCategoryGroup(
-          event.target.closest(".translation").getAttribute("aria-item")
-        );
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
-      }
+      setTimeout(function() {
+        if (reader == true) {
+          if (document.body.contains(document.querySelector(".channel")))
+            first = false;
+          randomDuplicate = [];
+          xmlRequestParsing(null, null, anyRandomMenuObject());
+          notifyOption("Switched to now reading " + category + ".");
+        } else {
+          if (document.body.contains(document.querySelector("#feed")))
+            document.querySelector("#feed").remove();
+          if (document.body.contains(document.querySelector("#group")))
+            document.querySelector("#group").remove();
+          location.pathname.state();
+          document.querySelector("#toggle").style.display = "none";
+          document.querySelector("#visit").style.display = "none";
+          populateCategoryGroup(
+            event.target.closest(".translation").getAttribute("aria-item")
+          );
+          topMenuBarDisplay(topBar);
+          displayExpand(expand);
+        }
+      }, 100)
     }
     if (
       event.target.classList.contains("entity") ||

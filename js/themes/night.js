@@ -22,7 +22,7 @@ var Night = function() {
   document.documentElement.style.setProperty("--bg-color-primary", "#0f0f0f");
   document.documentElement.style.setProperty(
     "--bg-color-secondary",
-    "#262626"
+    "#0f0f0f"
   );
   document.documentElement.style.setProperty(
     "--hover-background-color",
