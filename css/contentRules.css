@@ -562,8 +562,8 @@ html body #container #main #visit #page #front .focus {
   white-space: nowrap;
   padding-right: 75px;
   position: relative;
+  height: 40.25px;
   margin: 0 auto;
-  height: 40px;
   width: 640px;
 }
 
