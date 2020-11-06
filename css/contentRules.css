@@ -547,11 +547,12 @@ html body #container #main #top #arm #search #match .listing .hover .detail .buf
 html body #container #main #visit #page #front #first .listing .index .detail .buffer,
 html body #container #main #visit #page #front #first .listing .hover .detail .buffer {
   color: var(--loader-color-primary);
+  position: absolute;
   font-style: italic;
   margin-right: 10px;
-  margin-top: 15px;
-  float: right;
+  margin-top: 25px;
   z-index: -1;
+  right: 0;
 }
 
 html body #container #main #visit #page #front .focus {
