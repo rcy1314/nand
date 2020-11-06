@@ -136,8 +136,8 @@ document.addEventListener(
         xmlRequestParsing(null, null, anyRandomMenuObject());
         notifyOption("Switched to now reading " + category + ".");
       } else {
-        if (document.body.contains(document.querySelector("#feed")))
-          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#xml")))
+          document.querySelector("#xml").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
         location.pathname.state();
@@ -156,8 +156,8 @@ document.addEventListener(
       event.target.classList.contains("side")
     ) {
       id = 0;
-      if (document.body.contains(document.querySelector("#feed")))
-        document.querySelector("#feed").remove();
+      if (document.body.contains(document.querySelector("#xml")))
+        document.querySelector("#xml").remove();
       if (document.body.contains(document.querySelector("#group")))
         document.querySelector("#group").remove();
       document.querySelector("#top").style.display = "none";
@@ -166,7 +166,7 @@ document.addEventListener(
         document.querySelector("#first").style.display = "none";
       document.querySelector("#visit").style.visibility = "visible";
       document.querySelector("#visit").style.display = "flex";
-      document.querySelector(".feed").scrollLeft = 0;
+      document.querySelector("#feed").scrollLeft = 0;
       quickFeedDisplay(quickFeeds);
       document.title = "";
       unloading();
@@ -181,12 +181,12 @@ document.addEventListener(
       } else if (reader == false) {
         init();
         notifyOption("Reading " + category + " enabled.");
-        if (document.body.contains(document.querySelector("#feed")))
-          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#xml")))
+          document.querySelector("#xml").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
         reader = true;
-        if (document.body.contains(document.querySelector("#feed .center")))
+        if (document.body.contains(document.querySelector("#xml .center")))
           first = false;
         else first = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
@@ -209,8 +209,8 @@ document.addEventListener(
       }
       document.querySelector("#visit").style.visibility = "none";
       document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.getElementById("#main #feed")))
-        document.querySelector("#main #feed").remove();
+      if (document.body.contains(document.getElementById("#main #xml")))
+        document.querySelector("#main #xml").remove();
       if (document.body.contains(document.getElementById("#main #group")))
         document.querySelector("#main #group").remove();
       populateCategoryGroup(category);
@@ -226,8 +226,8 @@ document.addEventListener(
       }
       document.querySelector("#visit").style.visibility = "none";
       document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.getElementById("#main #feed")))
-        document.querySelector("#main #feed").remove();
+      if (document.body.contains(document.getElementById("#main #xml")))
+        document.querySelector("#main #xml").remove();
       if (document.body.contains(document.getElementById("#main #group")))
         document.querySelector("#main #group").remove();
       populateCategoryGroup(category);
@@ -254,8 +254,8 @@ document.addEventListener(
       else notifyOption("Displaying all Feeds.");
       document.querySelector("#visit").style.visibility = "none";
       document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.querySelector("#main #feed")))
-        document.querySelector("#main #feed").remove();
+      if (document.body.contains(document.querySelector("#main #xml")))
+        document.querySelector("#main #xml").remove();
       if (document.body.contains(document.querySelector("#main #group")))
         document.querySelector("#main #group").remove();
       if (reader == false) populateCategoryGroup(category);

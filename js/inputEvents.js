@@ -208,7 +208,6 @@ document.addEventListener(
           null,
           document.querySelector("#match .hover").getAttribute("aria-item")
         );
-        return false;
       } else if (_view.value.length) {
         setTimeout(function() {
           let query = _view.value.space();

@@ -813,7 +813,7 @@ html body #container #main #top #arm #search #match {
   width: fit-content;
   position: relative;
   margin: 0 auto;
-  height: 364px;
+  height: 371px;
   display: none;
   top: 25px;
 }
@@ -1409,7 +1409,7 @@ html body #container #main #top #arm #search #match .listing {
   overflow-y: auto;
   cursor: pointer;
   margin: 0 auto;
-  height: 364px;
+  height: 371px;
   width: 308px;
   z-index: 1;
 }

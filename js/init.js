@@ -99,5 +99,5 @@ if (
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
   }, 250)
-} else if (!location.href.match("\\?"))
+} else if (!location.href.match("\\?") || location.href.match("\\?#"))
   _visit.style.display = "flex";
