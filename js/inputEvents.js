@@ -59,7 +59,7 @@ document.addEventListener(
     if (event.target.classList.contains("sideFilter")) {
       event.target.value = "";
     }
-    if (event.target.classList.contains("index")) {
+    if (event.target.classList.contains("detail")) {
       if (document.getElementById("match").style.display === "block")
         document.getElementById("match").style.display = "none";
       if (document.getElementById("first").style.display === "block")
@@ -117,7 +117,7 @@ document.addEventListener(
 document.addEventListener(
   "mouseout",
   function (event) {
-    if (event.target.classList.contains("index")) {
+    if (event.target.classList.contains("detail")) {
       document
         .querySelectorAll(".listing .index, .listing .index")
         .forEach((a) => a.classList.remove("hover"));
@@ -128,7 +128,7 @@ document.addEventListener(
 document.addEventListener(
   "mouseover",
   function (event) {
-    if (event.target.classList.contains("index")) {
+    if (event.target.classList.contains("detail")) {
       event.target.closest(".index").classList.add("hover");
     }
   },
@@ -137,9 +137,9 @@ document.addEventListener(
 document.addEventListener(
   "keyup",
   function (event) {
-    if (event.target.id = "guest")
+    if (event.target.id == "guest")
       inputListingKeyup("#first", event.keyCode);
-    if (event.target.id = "view")
+    else if (event.target.id == "view")
       inputListingKeyup("#match", event.keyCode);
     event.preventDefault();
   },
@@ -233,7 +233,6 @@ document.addEventListener(
           null,
           document.querySelector("#first .hover").getAttribute("aria-item")
         );
-        return false;
       } else if (_guest.value.length > 0) {
         setTimeout(function(){
           let query = _guest.value.space();
