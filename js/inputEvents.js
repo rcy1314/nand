@@ -60,10 +60,10 @@ document.addEventListener(
       event.target.value = "";
     }
     if (event.target.classList.contains("detail")) {
-      if (document.getElementById("match").style.display === "block")
-        document.getElementById("match").style.display = "none";
-      if (document.getElementById("first").style.display === "block")
-        document.getElementById("first").style.display = "none";
+      if (_match.style.display === "block")
+        _match.style.display = "none";
+      if (_first.style.display === "block")
+        _first.style.display = "none";
       if (
         translations.includes(
           event.target.closest(".hover").getAttribute("aria-item")

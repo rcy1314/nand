@@ -199,8 +199,8 @@ document.addEventListener(
         document.querySelector(".ripple").remove();
       event.target.closest(".populate").appendChild(circle);
       setTimeout(function () {
-        if (document.getElementById("match").style.display === "block") {
-          document.getElementById("match").style.display = "none";
+        if (_match.style.display === "block") {
+          _match.style.display = "none";
           _view.blur();
           return false;
         } else if (

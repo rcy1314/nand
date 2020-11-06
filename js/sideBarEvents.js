@@ -202,16 +202,16 @@ document.addEventListener(
     if (event.target.classList.contains("List")) {
       let expand = true;
       let groupType = "list";
-      if (document.body.contains(document.getElementById("#group"))) {
-        var group = document.querySelector("#group");
+      if (document.body.contains(document.getElementById("group"))) {
+        var group = document.getElementById("#group");
         group.style.display = "none";
       }
       _visit.style.visibility = "none";
       _visit.style.display = "none";
-      if (document.body.contains(document.getElementById("#xml")))
-        document.querySelector("#xml").remove();
-      if (document.body.contains(document.getElementById("#group")))
-        document.querySelector("#group").remove();
+      if (document.body.contains(document.getElementById("xml")))
+        document.getElementById("xml").remove();
+      if (document.body.contains(document.getElementById("group")))
+        document.getElementById("group").remove();
       populateCategoryGroup(category);
       displayExpand(expand);
       topMenuBarDisplay(topBar);
@@ -219,15 +219,15 @@ document.addEventListener(
     if (event.target.classList.contains("Blocks")) {
       let expand = false;
       let groupType = "blocks";
-      if (document.body.contains(document.getElementById("#group"))) {
-        document.querySelector("#group").style.display = "none";
+      if (document.body.contains(document.getElementById("group"))) {
+        document.getElementById("group").style.display = "none";
       }
       _visit.style.visibility = "none";
       _visit.style.display = "none";
-      if (document.body.contains(document.getElementById("#xml")))
-        document.querySelector("#xml").remove();
-      if (document.body.contains(document.getElementById("#group")))
-        document.querySelector("#group").remove();
+      if (document.body.contains(document.getElementById("xml")))
+        document.getElementById("xml").remove();
+      if (document.body.contains(document.getElementById("group")))
+        document.getElementById("group").remove();
       populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);

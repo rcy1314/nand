@@ -28,64 +28,61 @@ var notifyOption = function (displayContent) {
 var displayExpand = function (toggleOption) {
   if (document.body.contains(document.getElementById("feed")))
     document.getElementById("feed").remove();
-  let group = document.getElementById("group");
   if (toggleOption == true) {
     groupType = "list";
     if (document.body.contains(document.getElementById("group"))) {
-      group.style.display = "none";
-      group
+      _main
         .querySelectorAll(".hash")
         .forEach((a) => (a.style.display = "block"));
-      group
+      _main
         .querySelectorAll(".media")
         .forEach((a) => (a.style.display = "block"));
-      group
+      _main
         .querySelectorAll(".description")
         .forEach((a) => (a.style.display = "block"));
-      group
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => a.classList.add("expand"));
-      group
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.alignItems = "center"));
-      group
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "nowrap"));
-      document
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
-      if (document.body.contains(document.getElementById(".air")))
+      if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "block";
-      if (document.body.contains(document.getElementById(".result`")))
+      if (document.body.contains(document.querySelector(".result")))
         document.querySelector(".result").style.display = "block";
     }
   } else if (toggleOption == false) {
     groupType = "blocks";
     if (document.body.contains(document.getElementById("group"))) {
-      group.style.display = "none";
-      group
+      _main
         .querySelectorAll(".hash")
         .forEach((a) => (a.style.display = "none"));
-      group
+      _main
         .querySelectorAll(".media")
         .forEach((a) => (a.style.display = "none"));
-      group
+      _main
         .querySelectorAll(".description")
         .forEach((a) => (a.style.display = "none"));
-      group
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => a.classList.remove("expand"));
-      group
+      _main
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.flexWrap = "wrap"));
-      document
+      _main
         .querySelectorAll(".populate")
         .forEach(
           (a) => (a.style.backgroundColor = "var(--bg-color-secondary)")
         );
       if (document.body.contains(document.querySelector(".air")))
         document.querySelector(".air").style.display = "inline-flex";
-      if (document.body.contains(document.getElementById(".result")))
+      if (document.body.contains(document.querySelector(".result")))
         document.querySelector(".result").style.display = "inline-flex";
     }
   }
@@ -179,11 +176,8 @@ var sideBarDisplay = function (toggleOption) {
 };
 
 var topMenuBarDisplay = function (toggleOption) {
-  if (document.body.contains(_top)) {
-    let top = document.getElementById("top");
-    if (toggleOption == true) top.style.display = "block";
-    else if (toggleOption == false) top.style.display = "none";
-  }
+    if (toggleOption == true) _top.style.display = "block";
+    else if (toggleOption == false) _top.style.display = "none";
 };
 
 var quickFeedDisplay = function (toggleOption) {
