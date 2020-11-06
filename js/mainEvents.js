@@ -287,6 +287,8 @@ document.addEventListener(
     if (event.target.classList.contains("bottom")) {
       init();
       document.title = category;
+      if (document.body.contains(document.querySelector("#xml")))
+        document.querySelector("#xml").remove();
       if (location.href.match("\\?q=")) {
         var uri = location.search.split("?q=")[1].match(/[^&]+/g);
         if (location.href.match("\\+1"))
