@@ -501,26 +501,26 @@ document.addEventListener(
       event.target.classList.contains("right")
     ) {
       quickFeedAsset(6);
-      let leftPos = event.target.closest(_quick).querySelector(_feed)
+      let leftPos = _feed
         .scrollLeft;
-      event.target.closest(_quick).querySelector(_feed).scrollLeft =
+      _feed.scrollLeft =
         leftPos +
-        event.target.closest(_quick).querySelector(_feed).clientWidth;
-      if (event.target.closest(_quick).querySelector(_feed).scrollLeft >= 0)
+        _feed.clientWidth;
+      if (_feed.scrollLeft >= 0)
         document.querySelector(".left").style.display = "block";
     }
     if (
       event.target.classList.contains("fa-minus") ||
       event.target.classList.contains("left")
     ) {
-      let leftPos = event.target.closest(_quick).querySelector(_feed)
+      let leftPos = _feed
         .scrollLeft;
-      event.target.closest(_quick).querySelector(_feed).scrollLeft =
+      _feed.scrollLeft =
         leftPos -
-        event.target.closest(_quick).querySelector(_feed).clientWidth;
+        _feed.clientWidth;
       if (
-        event.target.closest(_quick).querySelector(_feed).scrollLeft -
-          event.target.closest(_quick).querySelector(_feed).clientWidth <=
+        _feed.scrollLeft -
+          _feed.clientWidth <=
         0
       )
         document.querySelector(".left").style.display = "none";
