@@ -79,7 +79,7 @@ document.addEventListener(
   "click",
   function (event) {
     if (
-      event.target.id = "check"
+      event.target.id == "check"
     ) {
       repository.blank()
     }
