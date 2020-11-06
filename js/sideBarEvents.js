@@ -141,8 +141,8 @@ document.addEventListener(
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
         location.pathname.state();
-        document.querySelector("#toggle").style.display = "none";
-        document.querySelector("#visit").style.display = "none";
+        _toggle.style.display = "none";
+        _visit.style.display = "none";
         populateCategoryGroup(
           event.target.closest(".cat").getAttribute("aria-item")
         );
@@ -160,19 +160,18 @@ document.addEventListener(
         document.querySelector("#xml").remove();
       if (document.body.contains(document.querySelector("#group")))
         document.querySelector("#group").remove();
-      document.querySelector("#top").style.display = "none";
-      document.querySelector("#toggle").style.display = "block";
-      if (document.body.contains(document.querySelector("#first")))
-        document.querySelector("#first").style.display = "none";
-      document.querySelector("#visit").style.visibility = "visible";
-      document.querySelector("#visit").style.display = "flex";
-      document.querySelector("#feed").scrollLeft = 0;
+      _top.style.display = "none";
+      _toggle.style.display = "block";
+      _first.style.display = "none";
+      _visit.style.visibility = "visible";
+      _visit.style.display = "flex";
+      _feed.scrollLeft = 0;
       quickFeedDisplay(quickFeeds);
       document.title = "";
       unloading();
     }
     if (event.target.classList.contains("Reader")) {
-      document.querySelector("#visit").style.display = "none";
+      _visit.style.display = "none";
       if (reader == true) {
         let reader = false;
         let first = true;
@@ -203,16 +202,16 @@ document.addEventListener(
     if (event.target.classList.contains("List")) {
       let expand = true;
       let groupType = "list";
-      if (document.body.contains(document.getElementById("#main #group"))) {
-        var group = document.querySelector("#main #group");
+      if (document.body.contains(document.getElementById("#group"))) {
+        var group = document.querySelector("#group");
         group.style.display = "none";
       }
-      document.querySelector("#visit").style.visibility = "none";
-      document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.getElementById("#main #xml")))
-        document.querySelector("#main #xml").remove();
-      if (document.body.contains(document.getElementById("#main #group")))
-        document.querySelector("#main #group").remove();
+      _visit.style.visibility = "none";
+      _visit.style.display = "none";
+      if (document.body.contains(document.getElementById("#xml")))
+        document.querySelector("#xml").remove();
+      if (document.body.contains(document.getElementById("#group")))
+        document.querySelector("#group").remove();
       populateCategoryGroup(category);
       displayExpand(expand);
       topMenuBarDisplay(topBar);
@@ -220,19 +219,18 @@ document.addEventListener(
     if (event.target.classList.contains("Blocks")) {
       let expand = false;
       let groupType = "blocks";
-      if (document.body.contains(document.getElementById("#main #group"))) {
-        var group = document.querySelector("#main #group");
-        group.style.display = "none";
+      if (document.body.contains(document.getElementById("#group"))) {
+        document.querySelector("#group").style.display = "none";
       }
-      document.querySelector("#visit").style.visibility = "none";
-      document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.getElementById("#main #xml")))
-        document.querySelector("#main #xml").remove();
-      if (document.body.contains(document.getElementById("#main #group")))
-        document.querySelector("#main #group").remove();
+      _visit.style.visibility = "none";
+      _visit.style.display = "none";
+      if (document.body.contains(document.getElementById("#xml")))
+        document.querySelector("#xml").remove();
+      if (document.body.contains(document.getElementById("#group")))
+        document.querySelector("#group").remove();
       populateCategoryGroup(category);
-      displayExpand(expand);
       topMenuBarDisplay(topBar);
+      displayExpand(expand);
     }
     if (event.target.classList.contains("Dots")) {
       let loading = "dots";
@@ -249,15 +247,15 @@ document.addEventListener(
     }
     if (event.target.classList.contains("toggleImages")) {
       onlyImages = onlyImages != true;
-      document.querySelector("#toggle").style.display = "none";
+      _toggle.style.display = "none";
       if (onlyImages == true) notifyOption("Displaying only Images.");
       else notifyOption("Displaying all Feeds.");
-      document.querySelector("#visit").style.visibility = "none";
-      document.querySelector("#visit").style.display = "none";
-      if (document.body.contains(document.querySelector("#main #xml")))
-        document.querySelector("#main #xml").remove();
-      if (document.body.contains(document.querySelector("#main #group")))
-        document.querySelector("#main #group").remove();
+      _visit.style.visibility = "none";
+      _visit.style.display = "none";
+      if (document.body.contains(document.querySelector("#xml")))
+        document.querySelector("#xml").remove();
+      if (document.body.contains(document.querySelector("#group")))
+        document.querySelector("#group").remove();
       if (reader == false) populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);
@@ -268,7 +266,7 @@ document.addEventListener(
       unloading();
     }
     if (event.target.classList.contains("Info")) {
-      let uri = "https://github.com/acktic/acktic.github.io";
+      let uri = repository;
       uri.blank();
     }
     if (event.target.classList.contains("TopBar")) {
@@ -297,7 +295,7 @@ document.addEventListener(
     if (event.target.classList.contains("RandomCategory")) {
       init();
       let code = [];
-      document.querySelector("#visit").style.display = "none";
+      _visit.style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (onlyImages == true) {
           if (menu[i].category == category && menu[i].media == true)
@@ -312,7 +310,7 @@ document.addEventListener(
     if (event.target.classList.contains("RandomImages")) {
       init();
       let code = [];
-      document.querySelector("#visit").style.display = "none";
+      _visit.style.display = "none";
       for (i = 1; i <= menu.length - 1; i++) {
         if (menu[i].media == true) code.push(menu.indexOf(menu[i]));
       }

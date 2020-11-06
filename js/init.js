@@ -90,7 +90,6 @@ if (
     post = location.hash.substr(1).replace(/\+1/g, "");
   else post = location.hash.substr(1);
   init();
-  let width = _main.clientWidth / 30;
   _toggle.style.display = "none";
   _top.style.display = "block";
   setTimeout(function() {

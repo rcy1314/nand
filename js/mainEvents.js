@@ -79,6 +79,11 @@ document.addEventListener(
   "click",
   function (event) {
     if (
+      event.target.id = "check"
+    ) {
+      repository.blank()
+    }
+    if (
       event.target.classList.contains("fa-angle-up") ||
       event.target.classList.contains("link") ||
       event.target.classList.contains("show")
@@ -156,7 +161,7 @@ document.addEventListener(
       event.stopPropagation();
     }
     if (event.target.classList.contains("fa-expand-alt")) {
-      if (!document.body.contains(document.querySelector("#main #group")))
+      if (!document.body.contains(document.querySelector("#group")))
         populateCategoryGroup(category);
       _visit.style.display = "none";
       topMenuBarDisplay(topBar);
@@ -196,7 +201,7 @@ document.addEventListener(
       setTimeout(function () {
         if (document.getElementById("match").style.display === "block") {
           document.getElementById("match").style.display = "none";
-          document.querySelector("#search .view").blur();
+          _view.blur();
           return false;
         } else if (
           _first.style.display === "block"
@@ -276,7 +281,7 @@ document.addEventListener(
       event.target.classList.contains("blur")
     ) {
       _main.classList.remove("guide");
-      document.querySelector("#guide").style.display = "none";
+      _guide.style.display = "none";
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
       onScreen = guideOnScreen;

@@ -9,8 +9,8 @@ var isNumeric = function (n) {
 
 var init = function () {
   if (reader == false) {
-    if (document.body.contains(document.getElementById("feed")))
-      document.querySelector("#feed").remove();
+    if (document.body.contains(document.getElementById("xml")))
+      document.querySelector("#xml").remove();
     if (document.body.contains(document.getElementById("group")))
       document.querySelector("#group").remove();
   }

@@ -26,11 +26,11 @@ var xmlChannelFooter = function () {
 
 var xmlStatusSuggestions = function () {
   let duplicate = [];
-  if (document.body.contains(document.querySelector("#main .suggestions"))) {
-    var suggestions = document.querySelector("#main .suggestions");
+  if (document.body.contains(_main.querySelector(".suggestions"))) {
+    var suggestions = _main.querySelector(".suggestions");
     if (
       document.body.contains(
-        document.querySelector("#main .suggestions .combine")
+        _main.querySelector(".combine")
       )
     )
       while (suggestions.firstChild)

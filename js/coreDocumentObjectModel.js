@@ -1,5 +1,11 @@
 const _top = document.getElementById("top")
 
+const _hide = document.getElementById("hide")
+
+const _link = document.getElementById("link")
+
+const _show = document.getElementById("show")
+
 const _main = document.getElementById("main")
 
 const _view = document.getElementById("view")
@@ -25,5 +31,9 @@ const _front = document.getElementById("front")
 const _quick = document.getElementById("quick")
 
 const _toggle = document.getElementById("toggle")
+
+const _content = document.getElementById("content")
+
+const _sidebar = document.getElementById("sidebar")
 
 const _progress = document.getElementById("progressBar")

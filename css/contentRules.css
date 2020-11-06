@@ -640,7 +640,7 @@ html body #container #main #visit #page #front .focus .buttonSearch {
   top: 10px;
 }
 
-html body #container #main #visit #page #front #label .show {
+html body #container #main #visit #page #front #label #show {
   color: var(--fill-color-primary);
   background-color: transparent;
   display: inline-block;
@@ -652,7 +652,7 @@ html body #container #main #visit #page #front #label .show {
   top: 26px;
 }
 
-html body #container #main #visit #page #front #label .link {
+html body #container #main #visit #page #front #label #link {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   transform: rotate(180deg);
@@ -668,7 +668,7 @@ html body #container #main #visit #page #front #label .link {
   width: 15px;
 }
 
-html body #container #main #visit #page #front #label .link:hover {
+html body #container #main #visit #page #front #label #link:hover {
   background-color: var(--borderless-hover-color);
 }
 

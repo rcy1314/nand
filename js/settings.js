@@ -258,3 +258,5 @@ const selections = [
   { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
   { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
 ];
+
+const repository = "https://github.com/acktic/acktic.github.io"
