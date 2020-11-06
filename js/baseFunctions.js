@@ -294,6 +294,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   if (inputFilter != "")
     for (var i = menu.length - 1; i >= 1; i--) {
       if (menu[i].description.toLowerCase().match(inputFilter)) {
+        if (suggest.length >= suggestionBuffer) return false;
         listing.append(
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
@@ -313,7 +314,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       menu[Math.floor(Math.random() * menu.length - 1)]
     );
     if (
-      menu[randomMenuObject] &&
+      menu.indexOf(menu[randomMenuObject]) &&
       menu[randomMenuObject].media == true &&
       !suggest.includes(randomMenuObject)
     )

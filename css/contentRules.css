@@ -506,10 +506,13 @@ html body #container #main #visit #page #front #first .listing .hover .detail im
   display: inline-block;
   border-radius: 28px;
   position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
   font-size: 10px;
   height: 38px;
   width: 38px;
   bottom: 2px;
+  z-index: -1;
   left: 0;
 }
 
@@ -550,7 +553,7 @@ html body #container #main #visit #page #front #first .listing .hover .detail .b
   position: absolute;
   font-style: italic;
   margin-right: 10px;
-  margin-top: 25px;
+  margin-top: -25px;
   z-index: -1;
   right: 0;
 }
@@ -1424,22 +1427,13 @@ html body #container #main #visit #page #front #first .listing .detail {
   left: -2px;
 }
 
-html body #container #main #top #arm #search #match .listing .detail .input,
-html body #container #main #visit #page #front #first .listing .detail .input {
-  z-index: -1;
-}
-
 html body #container #main #top #arm #search #match .listing .index,
 html body #container #main #visit #page #front #first .listing .index {
   background-color: transparent;
   color: var(--fill-color-primary);
-  width: calc(100% - 12px);
-  padding-bottom: 8px;
   position: relative;
-  padding-left: 12px;
-  padding-top: 8px;
   font-size: 12px;
-  height: 3em;
+  height: 53px;
 }
 
 html body #container #main #top #arm #search #match .listing .index .hue,
@@ -1452,12 +1446,8 @@ html body #container #main #visit #page #front #first .listing .hover .hue {
 html body #container #main #top #arm #search #match .listing .hover,
 html body #container #main #visit #page #front #first .listing .hover {
   background-color: var(--progress-background) !important;
-  width: calc(100% - 12px);
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-top: 8px;
   font-size: 12px;
-  height: 3em;
+  height: 53px;
 }
 
 html body #container #main #xml .center #yt {
