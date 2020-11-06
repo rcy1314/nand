@@ -35,12 +35,11 @@ var xmlStatusSuggestions = function () {
     )
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
-    for (let i = 0; i <= contentStatusBuffer; i++) {
+    for (let i = 1; i <= contentStatusBuffer; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
       if (
-        randomMenuObject != 0 &&
         menu[randomMenuObject] &&
         !duplicate.includes(randomMenuObject)
       ) {
@@ -439,7 +438,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             "[aria-item='" + pubIndex + "'] .post"
           );
           itemImage.setAttribute("src", src);
-          if (document.querySelector("#main").clientWidth <= 425) {
+          if (_main.clientWidth <= 425) {
             if (
               newImg.naturalHeight > k &&
               newImg.naturalHeight >= newImg.naturalWidth * 2
@@ -599,10 +598,9 @@ var xmlRequestParsing = function (search, string, index) {
   }
 
   document.title = menu[index].id.space();
-  document.querySelector("#visit").style.display = "none";
-  document.querySelector("#toggle").style.display = "none";
+  _visit.style.display = "none";
   if (first == true)
-    document.querySelector("#main .check").style.visibility = "visible";
+    _check.style.visibility = "visible";
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -720,7 +718,7 @@ var xmlRequestParsing = function (search, string, index) {
           }
         }
         if (first == true) {
-          var main = document.querySelector("#main");
+          var main = _main;
           main.append(stageBuild());
         }
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
@@ -772,7 +770,7 @@ var xmlRequestParsing = function (search, string, index) {
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
           stop = true;
-          document.querySelector("#main").scrollTo({
+          _main.scrollTo({
             top: document.querySelector("[aria-object='" + index + "']")
               .offsetTop,
             behavior: "smooth",
@@ -782,13 +780,13 @@ var xmlRequestParsing = function (search, string, index) {
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
-        document.querySelector("#main .check").style.visibility = "hidden";
-        document.querySelector("#main").setAttribute("tabindex", -1);
-        document.querySelector("#main").focus();
+        _check.style.visibility = "hidden";
+        _main.setAttribute("tabindex", -1);
+        _main.focus();
         unloading();
       } else {
-        let main = document.querySelector("#main");
-        main.append(stageBuild());
+        let main = _main;
+        _main.append(stageBuild());
         document
           .querySelector(".channel")
           .append("This site could not be reached.");

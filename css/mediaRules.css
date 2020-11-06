@@ -8,12 +8,12 @@
     display: none;
   }
 
-  html body #container #main #visit #page .quick .feed .asset,
-  html body #container #main #visit #page .quick .feed .translation {
+  html body #container #main #visit #page #quick #feed .asset,
+  html body #container #main #visit #page #quick #feed .translation {
     background-color: transparent !important;
   }
 
-  html body #container #main #visit #page .quick {
+  html body #container #main #visit #page #quick {
     background-color: transparent;
     position: absolute;
     height: 400px;
@@ -21,7 +21,7 @@
     top: 120px;
   }
 
-  html body #container #main #visit #page .quick .feed {
+  html body #container #main #visit #page #quick #feed {
     background-color: transparent;
     justify-content: center;
     display: inline-flex;
@@ -52,10 +52,10 @@
 
   .expand .hash, .expand .description,
   html body #container #main #top #arm #option,
-  html body #container #main #visit #page .quick .right,
-  html body #container #main #feed .center .quick,
-  html body #container #main #visit #page .quick .left,
-  html body #container #main #feed .content,
+  html body #container #main #visit #page #quick .right,
+  html body #container #main #xml .center #quick,
+  html body #container #main #visit #page #quick .left,
+  html body #container #main #xml .content,
   html body #container #main #visit #page #front .focus .button,
   ::-webkit-scrollbar {
     display: none !important;
@@ -75,14 +75,14 @@
     width: 100vw;
   }
 
-  html body #container #main #feed .center {
+  html body #container #main #xml .center {
     margin-left: 0;
     width: 100%;
     top: 60px;
 	  left: 0;
   }
 
-  html body #container #main #feed .center .item {
+  html body #container #main #xml .center .item {
     width: calc(100% - 8px);
     margin-left: 4px;
     margin-bottom: 1.5em;
@@ -113,7 +113,7 @@
     width: 95vw !important;
   }
 
-  html body #container #main #visit #page #front #first {
+  html body #container #main #visit #page #front #first .listing {
     top: 115px !important;
     padding-top: 5px;
     height: 359px;
@@ -127,7 +127,7 @@
     top: -5px;
   }
 
-  html body #container #top #arm #search #match .listing {
+  html body #container #top #arm #search #match #listing {
     width: 304px !important;
   }
 
@@ -194,12 +194,12 @@
 	  left: 10px;
   }
 
-  html body #container #main #feed .center {
+  html body #container #main #xml .center {
 	  margin-right: 30px;
     width: 420px;
   }
 
-  html body #container #main #feed .content {
+  html body #container #main #xml .content {
 	  display: none;
   }
 
@@ -207,7 +207,7 @@
     top: 45px;
   }
 
-  html body #container #main #visit #page .quick {
+  html body #container #main #visit #page #quick {
   	width: 720px;
 	  left: 0;
   }
@@ -253,16 +253,16 @@
 	  left: -15px;
   }
 
-  html body #container #main #feed .center {
+  html body #container #main #xml .center {
     width: 420px;
 	  left: -20px;
   }
 
-  html body #container #main #feed .content {
+  html body #container #main #xml .content {
 	  display: inline-block;
   }
 
-  html body #container #main #visit #page .quick {
+  html body #container #main #visit #page #quick {
 	  width: 686px;
 	  left: -15px;
   }
@@ -311,7 +311,7 @@
     right: -9px;
   }
 
-  html body #container #main #feed .center {
+  html body #container #main #xml .center {
     width: 410px;
     left: 10px;
   }
@@ -334,14 +334,14 @@
     width: 940px;
   }
 
-  html body #container #main #visit #page .quick {
+  html body #container #main #visit #page #quick {
     position: relative;
     width: 848px;
     top: 15px;
     left: 0;
   }
 
-  html body #container #main #feed .content {
+  html body #container #main #xml .content {
     margin-left: 10px;
   }
 }
@@ -356,7 +356,7 @@
     width: 1200px;
   }
 
-  html body #container #main #feed .center {
+  html body #container #main #xml .center {
     margin-right: 115px;
     width: 600px;
     left: 0;

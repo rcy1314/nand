@@ -10,7 +10,7 @@ var stageBuild = function () {
   let object = document.createElement("div");
   let center = document.createElement("div");
   let channel = document.createElement("div");
-  object.id = "feed";
+  object.id = "xml";
   center.classList.add("center");
   channel.classList.add("channel");
   center.append(channel);

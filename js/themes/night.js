@@ -65,5 +65,5 @@ var Night = function () {
     .forEach(
       (a) => (a.style.backgroundColor = "var(--hover-background-color)")
     );
-  document.querySelector("#main .check").style.filter = "saturate(3)";
+  _check.style.filter = "saturate(1)"
 };

@@ -91,7 +91,7 @@ document.addEventListener(
       event.target.classList.contains("cat") ||
       event.target.classList.contains("sel")
     ) {
-      if (document.querySelector("#main").clientWidth <= 768) {
+      if (_main.clientWidth <= 768) {
         onScreen = false;
         sideBarDisplay(false);
       }

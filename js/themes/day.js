@@ -56,5 +56,4 @@ var Day = function () {
   document
     .querySelectorAll("#content")
     .forEach((a) => (a.style.backgroundColor = "var(--progress-background)"));
-  document.querySelector("#main .check").style.filter = "saturate(1)";
 };

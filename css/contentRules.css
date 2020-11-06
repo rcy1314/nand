@@ -12,9 +12,9 @@ video {
   color: var(--fill-color-primary);
 }
 
-html body #container #main #feed .center .channel .item .classic .fill .loader,
-html body #container #main #feed .center .channel .item .classic .fill .loader:after,
-html body #container #main #feed .center .channel .item .classic .fill .loader:before {
+html body #container #main #xml .center .channel .item .classic .fill .loader,
+html body #container #main #xml .center .channel .item .classic .fill .loader:after,
+html body #container #main #xml .center .channel .item .classic .fill .loader:before {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -416,7 +416,7 @@ html body #container #main {
   outline: none;
 }
 
-html body #container #main .check {
+html body #container #main #check {
   visibility: hidden;
   background-color:transparent;
   position:absolute;
@@ -425,7 +425,7 @@ html body #container #main .check {
   color:var(--fill-color-primary);
 }
 
-html body #container #main #feed {
+html body #container #main #xml {
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -673,23 +673,23 @@ html body #container #main #group .result {
   z-index: 1;
 }
 
-html body #container #main #feed .content .status .filter {
+html body #container #main #xml .content .status .filter {
   background-color: var(--bg-color-primary);
   margin-left: 15px;
 }
 
-html body #container #main #feed .content .status .filter:hover {
+html body #container #main #xml .content .status .filter:hover {
   background-color: var(--hover-background-color);
 }
 
-html body #container #main #feed .content .status .filter:not(:hover) {
+html body #container #main #xml .content .status .filter:not(:hover) {
   background-color: var(---not-hover-background-color);
 }
 
 html body #container #main #group .air .populate,
 html body #container #main #group .result .filter,
 html body #container #main #group .result .populate,
-html body #container #main #feed .content .status .filter {
+html body #container #main #xml .content .status .filter {
   display: inline-flex;
   border-radius: 8px;
   position: relative;
@@ -705,7 +705,7 @@ html body #container #main #feed .content .status .filter {
 html body #container #main #group .air .populate:hover,
 html body #container #main #group .result .filter:hover,
 html body #container #main #group .result .populate:hover,
-html body #container #main #feed .content .status .filter:hover {
+html body #container #main #xml .content .status .filter:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--hover-border-color) !important;
 }
@@ -713,14 +713,14 @@ html body #container #main #feed .content .status .filter:hover {
 html body #container #main #group .air .populate:not(:hover),
 html body #container #main #group .result .filter:not(:hover),
 html body #container #main #group .result .populate:not(:hover),
-html body #container #main #feed .content .status .filter:not(:hover) {
+html body #container #main #xml .content .status .filter:not(:hover) {
   border: var(--not-hover-border-color) !important;
 }
 
 html body #container #main #group .air .populate a,
 html body #container #main #group .result .filter a,
 html body #container #main #group .result .populate a,
-html body #container #main #feed .content .status .filter a {
+html body #container #main #xml .content .status .filter a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
@@ -739,7 +739,7 @@ html body #container #main #feed .content .status .filter a {
 html body #container #main #group .air .populate .display,
 html body #container #main #group .result .filter .display,
 html body #container #main #group .result .populate .display,
-html body #container #main #feed .content .status .filter .ext {
+html body #container #main #xml .content .status .filter .ext {
   position: relative;
   padding: 5px;
   width: 100%;
@@ -748,7 +748,7 @@ html body #container #main #feed .content .status .filter .ext {
 html body #container #main #group .air .populate .display img,
 html body #container #main #group .result .filter .display img,
 html body #container #main #group .result .populate .display img,
-html body #container #main #feed .content .status .filter .ext img {
+html body #container #main #xml .content .status .filter .ext img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;
@@ -816,18 +816,18 @@ input[type=submit] {
 }
 
 
-html body #container #main #visit #page .quick {
+html body #container #main #visit #page #quick {
   background-color: transparent;
   border-radius: 4px;
   position: relative;
   margin: 15px auto;
-  height: 89px;
+  height: 90px;
   width: 100%;
   z-index: 1;
 }
 
 
-html body #container #main #visit #page .quick .feed {
+html body #container #main #visit #page #quick #feed {
   -webkit-overflow-scrolling: touch;
   background-color: transparent;
   scroll-behavior: smooth;
@@ -842,12 +842,12 @@ html body #container #main #visit #page .quick .feed {
   width: 100%;
 }
 
-html body #container #main #visit #page .quick .feed::-webkit-scrollbar {
+html body #container #main #visit #page #quick #feed::-webkit-scrollbar {
   display: none;
 }
 
-html body #container #main #visit #page .quick .feed .asset,
-html body #container #main #visit #page .quick .feed .translation {
+html body #container #main #visit #page #quick #feed .asset,
+html body #container #main #visit #page #quick #feed .translation {
   position: relative;
   text-align: center;
   border-radius: 6px;
@@ -858,27 +858,27 @@ html body #container #main #visit #page .quick .feed .translation {
   width: 90px;
 }
 
-html body #container #main #visit #page .quick .feed .asset .query,
-html body #container #main #visit #page .quick .feed .asset .entity,
-html body #container #main #visit #page .quick .feed .translation .category,
-html body #container #main #visit #page .quick .feed .translation .quickTranslation{
+html body #container #main #visit #page #quick #feed .asset .query,
+html body #container #main #visit #page #quick #feed .asset .entity,
+html body #container #main #visit #page #quick #feed .translation .category,
+html body #container #main #visit #page #quick #feed .translation .quickTranslation {
   z-index: -1;
 }
 
-html body #container #main #visit #page .quick .feed .asset:hover,
-html body #container #main #visit #page .quick .feed .translation:hover {
+html body #container #main #visit #page #quick #feed .asset:hover,
+html body #container #main #visit #page #quick #feed .translation:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--hover-border-color) !important;
 }
 
-html body #container #main #visit #page .quick .feed .asset:not(:hover),
-html body #container #main #visit #page .quick .feed .translation:not(:hover) {
+html body #container #main #visit #page #quick #feed .asset:not(:hover),
+html body #container #main #visit #page #quick #feed .translation:not(:hover) {
   border: var(--not-hover-border-color);
 }
 
-html body #container #main #feed .content .status img,
-html body #container #main #visit #page .quick .feed img,
-html body #container #main #visit #page .quick .feed .translation img {
+html body #container #main #xml .content .status img,
+html body #container #main #visit #page #quick #feed img,
+html body #container #main #visit #page #quick #feed .translation img {
   background-color: transparent;
   position: relative;
   padding: 5px;
@@ -886,12 +886,12 @@ html body #container #main #visit #page .quick .feed .translation img {
   width: 30px;
 }
 
-html body #container #main #visit #page .quick .feed .translation img {
+html body #container #main #visit #page #quick #feed .translation img {
   filter: var(--hue-rotate);
 }
 
-html body #container #main #visit #page .quick .feed .asset a,
-html body #container #main #visit #page .quick .feed .translation a {
+html body #container #main #visit #page #quick #feed .asset a,
+html body #container #main #visit #page #quick #feed .translation a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
@@ -900,7 +900,7 @@ html body #container #main #visit #page .quick .feed .translation a {
   top: 5px;
 }
 
-html body #container #main #visit #page .quick .right {
+html body #container #main #visit #page #quick .right {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   justify-content: center;
@@ -917,7 +917,7 @@ html body #container #main #visit #page .quick .right {
   top: 25px;
 }
 
-html body #container #main #visit #page .quick .left {
+html body #container #main #visit #page #quick .left {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   justify-content: center;
@@ -934,20 +934,20 @@ html body #container #main #visit #page .quick .left {
   top: 25px;
 }
 
-html body #container #main #visit #page .quick .left:hover,
-html body #container #main #visit #page .quick .right:hover {
+html body #container #main #visit #page #quick .left:hover,
+html body #container #main #visit #page #quick .right:hover {
   background-color: var(--borderless-hover-color);
 }
 
 html body #container #guide .sticky .header,
-html body #container #main #feed .center .item .header {
+html body #container #main #xml .center .item .header {
   background-color: transparent;
   height: 60px;
   width: 100%;
 }
 
 html body #container #guide .sticky .header .courtesy,
-html body #container #main #feed .center .item .header .courtesy {
+html body #container #main #xml .center .item .header .courtesy {
   text-transform: capitalize;
   align-items: center;
   position: relative;
@@ -962,7 +962,7 @@ html body #container #main #feed .center .item .header .courtesy {
 }
 
 html body #container #guide .sticky .wrap .header .courtesy img,
-html body #container #main #feed .center .channel .item .header .courtesy img {
+html body #container #main #xml .center .channel .item .header .courtesy img {
   border-radius: 24px;
   padding: 10px;
   left: 1.75px;
@@ -971,12 +971,12 @@ html body #container #main #feed .center .channel .item .header .courtesy img {
 }
 
 html body #container #guide .sticky .header .courtesy a,
-html body #container #main #feed .center .item .header .courtesy a {
+html body #container #main #xml .center .item .header .courtesy a {
   color: var(--fill-color-primary);
   background-color: transparent;
 }
 
-html body #container #main #feed .center .item .pending {
+html body #container #main #xml .center .item .pending {
   justify-content: center;
   align-items: center;
   position: relative;
@@ -1058,24 +1058,24 @@ html body #container #guide .sticky .ago {
   bottom: 0;
 }
 
-html body #container #main #feed .center .item {
+html body #container #main #xml .center .item {
   background: var(--bg-color-primary);
   box-shadow: var(--box-shadow);
   margin-bottom: 25px;
   width: 100%;
 }
 
-html body #container #main #feed .center .item:hover {
+html body #container #main #xml .center .item:hover {
   background-color: var(--hover-background-color);
   border: var(--hover-border-color);
 }
 
-html body #container #main #feed .center .item:not(hover) {
+html body #container #main #xml .center .item:not(hover) {
   border: var(--hover-border-color);
 }
 
-html body #container #main #feed .center .item .pub,
-html body #container #main #feed .center .item .add {
+html body #container #main #xml .center .item .pub,
+html body #container #main #xml .center .item .add {
   background-color: transparent;
   justify-content: left;
   width: 95% !important;
@@ -1085,14 +1085,14 @@ html body #container #main #feed .center .item .add {
   left: 0;
 }
 
-html body #container #main #feed .center .item .pub {
+html body #container #main #xml .center .item .pub {
   color: var(--fill-color-primary);
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 20px;
 }
 
-html body #container #main #feed .center .item .add {
+html body #container #main #xml .center .item .add {
   margin-left: 15px !important;
   margin-bottom: 10px;
   font-size: 12px;
@@ -1106,8 +1106,8 @@ html body #container #guide .sticky .image {
   display: flex;
 }
 
-html body #container #main #feed .center .item .img,
-html body #container #main #feed .center .item .image {
+html body #container #main #xml .center .item .img,
+html body #container #main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -1120,14 +1120,14 @@ html body #container #main #feed .center .item .image {
 }
 
 html body #guide .sticky .fa-heart,
-html body #container #main #feed .center .item .image .fa-heart {
+html body #container #main #xml .center .item .image .fa-heart {
   position: absolute;
   font-size: 50px;
   display: none;
 }
 
 
-html body #container #main #feed .center .item .pub .more {
+html body #container #main #xml .center .item .pub .more {
   background-color: transparent;
   display: inline-block;
   padding-bottom: 10px;
@@ -1140,16 +1140,16 @@ html body #container #main #feed .center .item .pub .more {
   color: #aaa;
 }
 
-html body #container #main #feed .center .item .addComment {
+html body #container #main #xml .center .item .addComment {
   display: none;
   margin: 0;
 }
 
-html body #container #main #feed .center .item .url,
+html body #container #main #xml .center .item .url,
 html body #container #guide .url,
-html body #container #main #feed .center .item .share,
+html body #container #main #xml .center .item .share,
 html body #container #guide .share,
-html body #container #main #feed .center .item .source,
+html body #container #main #xml .center .item .source,
 html body #container #guide .source {
   display: inline-block;
   position: relative;
@@ -1159,7 +1159,7 @@ html body #container #guide .source {
   height: 0;
 }
 
-html body #container #main #feed .center .item .header .courtesy .copy,
+html body #container #main #xml .center .item .header .courtesy .copy,
 html body #container #guide .sticky .wrap .header .courtesy .copy {
   color: var(--fill-color-primary);
   pointer-events: auto;
@@ -1169,7 +1169,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy {
   right: 0;
 }
 
-html body #container #main #feed .center .item .header .courtesy .copy .attribute,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
   background-color: var(--fill-color-secondary);
   position: absolute;
@@ -1182,11 +1182,11 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
   top: 59px;
 }
 
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .site,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .site,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .post,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .post,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .picture,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
   color: var(--fill-color-primary);
   background-color: transparent;
@@ -1196,22 +1196,22 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .pi
   border: none;
 }
 
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .site:hover,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .site:hover,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .post:hover,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .post:hover,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .picture:hover,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .picture:hover,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover {
   background-color: var(--hover-background-color);
 }
 
-html body #container #main #feed .center .item .header .courtesy .copy .attribute .fa,
+html body #container #main #xml .center .item .header .courtesy .copy .attribute .fa,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
   float: right;
 }
 
 
-html body #container #main #feed .center .item .external {
+html body #container #main #xml .center .item .external {
   text-transform: lowercase;
   padding-bottom: 10px;
   position: relative;
@@ -1220,7 +1220,7 @@ html body #container #main #feed .center .item .external {
   left: 12px;
 }
 
-html body #container #main #feed .center .item .ago {
+html body #container #main #xml .center .item .ago {
   color: var(--fill-color-primary);
   background-color: transparent;
   text-transform: uppercase;
@@ -1231,7 +1231,7 @@ html body #container #main #feed .center .item .ago {
   font-size: 9px;
 }
 
-html body #container #main #feed .center #bottom {
+html body #container #main #xml .center #bottom {
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -1244,7 +1244,7 @@ html body #container #main #feed .center #bottom {
   bottom: 0;
 }
 
-html body #container #main #feed .center #bottom .bottom {
+html body #container #main #xml .center #bottom .bottom {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative !important;
@@ -1259,15 +1259,15 @@ html body #container #main #feed .center #bottom .bottom {
   cursor: pointer;
 }
 
-html body #container #main #feed .center #bottom .previous {
+html body #container #main #xml .center #bottom .previous {
   float: left !important;
 }
 
-html body #container #main #feed .center #bottom .next {
+html body #container #main #xml .center #bottom .next {
   float: right !important;
 }
 
-html body #container #main #feed .center {
+html body #container #main #xml .center {
   background-color: transparent;
   display: inline-block;
   position: relative;
@@ -1275,11 +1275,11 @@ html body #container #main #feed .center {
   top: 85px;
 }
 
-html body #container #main #feed .center .channel {
+html body #container #main #xml .center .channel {
   background-color: transparent;
 }
 
-html body #container #main #feed .content {
+html body #container #main #xml .content {
   background: transparent;
   display: inline-block;
   height: fit-content;
@@ -1291,23 +1291,23 @@ html body #container #main #feed .content {
   top: 80px;
 }
 
-html body #container #main #feed .content .status {
+html body #container #main #xml .content .status {
   background: transparent;
   position: relative;
   font-size: 10px;
 }
 
-html body #container #main #feed .content .status img {
+html body #container #main #xml .content .status img {
   border-radius: 26px;
 }
 
-html body #container #main #feed .content .status .info {
+html body #container #main #xml .content .status .info {
   color: var(--fill-color-primary);
   margin-left: 5px;
   text-align: left;
 }
 
-html body #container #main #feed .content .status .info .description {
+html body #container #main #xml .content .status .info .description {
   background-color: transparent;
   text-justify: inter-word;
   text-align: justify;
@@ -1316,14 +1316,14 @@ html body #container #main #feed .content .status .info .description {
   width: 260px;
 }
 
-html body #container #main #feed .content .status .info,
-html body #container #main #feed .content .status .asset {
+html body #container #main #xml .content .status .info,
+html body #container #main #xml .content .status .asset {
   background-color: transparent;
   position: relative;
   top: -5px;
 }
 
-html body #container #main #feed .content .suggestions {
+html body #container #main #xml .content .suggestions {
   background-color: transparent;
   position: relative;
   padding-top: 15px;
@@ -1332,7 +1332,7 @@ html body #container #main #feed .content .suggestions {
   width: 280px;
 }
 
-html body #container #main #feed .content .suggestions img {
+html body #container #main #xml .content .suggestions img {
   border-radius: 20px;
   position: relative;
   height: 24.5px;
@@ -1340,7 +1340,7 @@ html body #container #main #feed .content .suggestions img {
   left: 2.5px;
 }
 
-html body #container #main #feed .content .suggestions .combine {
+html body #container #main #xml .content .suggestions .combine {
   align-items: center;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -1349,7 +1349,7 @@ html body #container #main #feed .content .suggestions .combine {
   width: 100%;
 }
 
-html body #container #main #feed .content .suggestions .combine .suggest {
+html body #container #main #xml .content .suggestions .combine .suggest {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-top: 5px;
@@ -1357,36 +1357,36 @@ html body #container #main #feed .content .suggestions .combine .suggest {
   width: 100%;
 }
 
-html body #container #main #feed .content .suggestions .combine .suggest .random {
+html body #container #main #xml .content .suggestions .combine .suggest .random {
   font-style: italic !important;
   text-transform: capitalize;
   font-size: 9px;
   float: left;
 }
 
-html body #container #main #feed .content .suggestions .combine a {
+html body #container #main #xml .content .suggestions .combine a {
   color: var(--loader-color-primary);
   font-size: 11px;
 }
 
-html body #container #main #feed .content .suggestions .combine div {
+html body #container #main #xml .content .suggestions .combine div {
   color: var(--fill-color-primary);
   background-color: transparent;
   cursor: pointer;
 }
 
-html body #container #main #feed .center .item .views {
+html body #container #main #xml .center .item .views {
   position: relative;
 }
 
-html body #container #main #feed .center .yt .image {
+html body #container #main #xml .center .yt .image {
   width: 100% !important;
   padding-bottom: 56.25% !important; /* 16:9 */
   position: relative !important;
   overflow: hidden !important;
 }
 
-html body #container #main #feed .center .yt .image img {
+html body #container #main #xml .center .yt .image img {
   position: absolute !important;
   top: -16.75% !important;
   bottom: 0 !important;
@@ -1449,11 +1449,11 @@ html body #container #main #visit #page #front #first .listing .hover {
   height: 3em;
 }
 
-html body #container #main #feed .center #yt {
+html body #container #main #xml .center #yt {
     padding-bottom: 30px;
 }
 
-html body #container #main #feed .center #yt .yt {
+html body #container #main #xml .center #yt .yt {
   -webkit-overflow-scrolling: touch;
   padding-bottom: 54.25%;
   margin-bottom: 5px;
@@ -1461,7 +1461,7 @@ html body #container #main #feed .center #yt .yt {
   width: 100%;
 }
 
-html body #container #main #feed .center #yt .yt iframe {
+html body #container #main #xml .center #yt .yt iframe {
   position: absolute;
   border: none !important;
   height: 100%;
@@ -1470,7 +1470,7 @@ html body #container #main #feed .center #yt .yt iframe {
   left: 0;
 }
 
-html body #container #main #feed .center .item .views {
+html body #container #main #xml .center .item .views {
   position: absolute;
   bottom: -90px;
 }

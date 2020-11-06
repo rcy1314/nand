@@ -152,10 +152,10 @@ var sideBarDisplay = function (toggleOption) {
     document.querySelector("#sidebar").style.display = "block";
     document.querySelector("#content").style.display = "block";
     document.querySelector("#sidebar").style.left = "0px";
-    if (document.querySelector("#main").clientWidth >= 769) {
-      document.querySelector("#top").style.width = "calc(100% - 256px)";
-      document.querySelector("#main").style.width = "calc(100% - 240px)";
-      document.querySelector("#main").style.left = "240px";
+    if (_main.clientWidth >= 769) {
+      _top.style.width = "calc(100% - 256px)";
+      _main.style.width = "calc(100% - 240px)";
+      _main.style.left = "240px";
       document.querySelector("#sidebar").style.left = "0";
     }
     setTimeout(function () {
@@ -171,17 +171,17 @@ var sideBarDisplay = function (toggleOption) {
     document
       .querySelectorAll("#dots .fill")
       .forEach((a) => (a.style.marginLeft = "0"));
-    document.querySelector("#top").style.width = "calc(100% - 16px)";
+    _top.style.width = "calc(100% - 16px)";
     document.querySelector(".sideFilter").style.display = "none";
     document.querySelector("#sidebar").style.left = "-242px";
     document.querySelector("#progressBar").style.left = "0";
-    document.querySelector("#main").style.width = "100%";
-    document.querySelector("#main").style.left = "0";
+    _main.style.width = "100%";
+    _main.style.left = "0";
   }
 };
 
 var topMenuBarDisplay = function (toggleOption) {
-  if (document.body.contains(document.querySelector("#top"))) {
+  if (document.body.contains(_top)) {
     let top = document.getElementById("top");
     if (toggleOption == true) top.style.display = "block";
     else if (toggleOption == false) top.style.display = "none";
@@ -190,10 +190,10 @@ var topMenuBarDisplay = function (toggleOption) {
 
 var quickFeedDisplay = function (toggleOption) {
   if (toggleOption == true) {
-    document.querySelector(".quick").classList.remove("invisible");
-    document.querySelector("#front").classList.add("toggleHidden");
-    document.querySelector("#front").classList.remove("toggle");
-    document.querySelector(".quick").classList.add("visible");
+    _quick.classList.remove("invisible");
+    _front.classList.add("toggleHidden");
+    _front.classList.remove("toggle");
+    _quick.classList.add("visible");
     if (document.body.contains(document.querySelector(".link"))) {
       document
         .querySelector(".link .fa-angle-up")
@@ -205,10 +205,10 @@ var quickFeedDisplay = function (toggleOption) {
       }, 1000);
     }
   } else if (toggleOption == false) {
-    document.querySelector("#page .quick").classList.remove("visible");
-    document.querySelector("#page .quick").classList.add("invisible");
-    document.querySelector("#front").classList.remove("toggleHidden");
-    document.querySelector("#front").classList.add("toggle");
+    _quick.classList.remove("visible");
+    _quick.classList.add("invisible");
+    _front.classList.remove("toggleHidden");
+    _front.classList.add("toggle");
     if (document.body.contains(document.querySelector(".link"))) {
       document.querySelector(".fa-angle-up").classList.add("rotateReverse");
       document.querySelector(".fa-angle-up").classList.remove("rotate");
@@ -218,30 +218,30 @@ var quickFeedDisplay = function (toggleOption) {
 };
 
 var guideDisplay = function (pubArray) {
-  let guide = document.querySelector("#guide");
-  while (guide.firstChild) guide.removeChild(guide.lastChild);
-  guide.innerHTML = `
+  let guide = _guide;
+  while (_guide.firstChild) _guide.removeChild(_guide.lastChild);
+  _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  document.querySelector("#top").style.display = "hide";
-  guide.append(guideBuild(pubArray[0]));
+  _top.style.display = "hide";
+  _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0].src);
-  guide.style.display = "flex";
+  _guide.style.display = "flex";
 };
 
 var guideDisplayYoutube = function (pubArray) {
-  var guide = document.querySelector("#guide");
-  while (guide.firstChild) guide.removeChild(guide.lastChild);
-  guide.innerHTML = `
+  var guide = _guide;
+  while (_guide.firstChild) _guide.removeChild(_guide.lastChild);
+  _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  document.querySelector("#top").style.display = "hide";
-  guide.append(guideBuildYoutube(pubArray[0]));
-  guide.style.display = "flex";
+  _top.style.display = "hide";
+  _guide.append(guideBuildYoutube(pubArray[0]));
+  _guide.style.display = "flex";
 };
 
 var contentStatusDisplay = function (
@@ -250,18 +250,17 @@ var contentStatusDisplay = function (
   oldestPost,
   postsCount
 ) {
-  if (document.body.contains(document.querySelector("#feed .status"))) {
-    var status = document.querySelector("#feed .status");
+  if (document.body.contains(document.querySelector("#xml .status"))) {
+    var status = document.querySelector("#xml .status");
     status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
   }
 };
 
 var quickFeedAsset = function (feedAssets) {
   let duplicate = [];
-  let feed = document.querySelector(".quick .feed");
   if (feedAssets == 7)
     for (var i = 0; i <= translations.length - 1; i++) {
-      feed.append(translationBuild(translations[i]));
+      _feed.append(translationBuild(translations[i]));
     }
   else
     for (var i = 1; i <= menu.length - 1; i++) {
@@ -275,7 +274,7 @@ var quickFeedAsset = function (feedAssets) {
         randomMenuObject != 0
       ) {
         duplicate.push(randomMenuObject);
-        feed.append(
+        _feed.append(
           assetBuild(
             menu.indexOf(menu[randomMenuObject]),
             menu[randomMenuObject].image.image(),
@@ -335,36 +334,27 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 };
 
 var progressBackDrop = function (done, percent) {
-  if (
-    !location.href.match("\\?\\+1") &&
-    !location.href.match("\\+1") &&
-    contrast == true
-  ) {
-    var extendedURI = window.location.href + "?+1";
-    extendedURI.state();
-  }
   if (done == true) {
-    let progressBar = document.getElementById("progressBar");
-    progressBar.style.transition = "width .15s ease-in-out";
-    progressBar.style.transitionDelay = "none";
-    progressBar.style.width = percent + "%";
-    if (document.body.contains(document.getElementById("feed")))
-      document.querySelector("#feed").style.display = "block";
+    _progress.style.transition = "width .15s ease-in-out";
+    _progress.style.transitionDelay = "none";
+    _progress.style.width = percent + "%";
+    if (document.body.contains(document.getElementById("xml")))
+      document.querySelector("#xml").style.display = "block";
     if (document.body.contains(document.getElementById("group")))
       document.querySelector("#group").style.display = "block";
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
-        document.querySelector("#main").scrollTop = document.querySelector(
+        _main.scrollTop = document.querySelector(
           ".air"
         ).clientHeight;
     } else if (onlyImages == true)
       if (document.body.contains(document.querySelector(".result")))
-        document.querySelector("#main").scrollTop = 0;
-    if (document.body.contains(document.querySelector("#feed .channel")))
+        _main.scrollTop = 0;
+    if (document.body.contains(document.querySelector("#xml .channel")))
       if (reader == true && first == true) {
         if (
-          document.querySelector("#main").innerHeight >=
-          document.querySelector("#feed .channel").innerHeight
+          _main.innerHeight >=
+          document.querySelector("#xml .channel").innerHeight
         )
           if (httpRequest.status == 200) {
             first = false;
@@ -372,15 +362,14 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
-      progressBar.style.transitionDelay = "none";
-      progressBar.style.transition = "none";
-      progressBar.style.width = "0%";
+      _progress.style.transitionDelay = "none";
+      _progress.style.transition = "none";
+      _progress.style.width = "0%";
     }, 250);
   }
 };
 
 var populateCategoryGroup = function (translation) {
-  let main = document.getElementById("main");
   if (!document.body.contains(document.querySelector("#group"))) groupBuild();
   let result = document.querySelector(".result");
   if (id && id != 0 && !location.href.match("\\?q=")) {
@@ -487,7 +476,7 @@ var filterInputResponse = function (
   var exact;
   var match;
   filter = [];
-  document.querySelector("#visit").style.display = "none";
+  _visit.style.display = "none";
   if (translations.includes(filterURI.toString().capitalize())) {
     populateCategoryGroup(filterURI.capitalize());
     category = filterURI.capitalize();
@@ -543,7 +532,7 @@ var writeFilterResponse = function (menuObject) {
   result.append(
     categoryBuild(
       menu[menuObject].id.match(/[^\/]+$/g),
-      menu.indexOf(menu[id]),
+      menu.indexOf(menu[menuObject]),
       menu[menuObject].image.image(),
       menu[menuObject].hash,
       menu[menuObject].description,
@@ -553,42 +542,41 @@ var writeFilterResponse = function (menuObject) {
 };
 
 var guideImageAttributes = function (src) {
-  let guide = document.querySelector("#guide");
   let newImg = new Image();
   newImg.setAttribute("src", src);
   newImg.onload = function () {
-    guide.querySelector(".img").setAttribute("src", src);
-    //guide.querySelector(".sticky").style.display = "block";
-    //guide.querySelector(".checkmark").style.display = "block";
-    if (document.querySelector("#main").clientWidth <= 425) {
-      document.querySelector("#main").classList.add("guide");
+    _guide.querySelector(".img").setAttribute("src", src);
+    //_guide.querySelector(".sticky").style.display = "block";
+    //_guide.querySelector(".checkmark").style.display = "block";
+    if (_main.clientWidth <= 425) {
+      _main.classList.add("guide");
       document.querySelector("#guide .sticky .header").style.position =
         "absolute";
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        guide.querySelector(".img").style.maxHeight = "50vh";
-        guide.querySelector(".img").style.maxWidth = "75vw";
-        guide.querySelector(".wrap").style.display = "block";
-        guide.querySelector(".wrap").style.height = "fit-content";
-        guide.querySelector(".pub").style.height = "fit-content";
+        _guide.querySelector(".img").style.maxHeight = "50vh";
+        _guide.querySelector(".img").style.maxWidth = "75vw";
+        _guide.querySelector(".wrap").style.display = "block";
+        _guide.querySelector(".wrap").style.height = "fit-content";
+        _guide.querySelector(".pub").style.height = "fit-content";
         document.querySelector("#guide .wrap").style.maxWidth = "100vw";
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        guide.querySelector(".img").style.maxWidth = "70vw";
-        guide.querySelector(".img").style.maxHeight = "50vh";
+        _guide.querySelector(".img").style.maxWidth = "70vw";
+        _guide.querySelector(".img").style.maxHeight = "50vh";
         document.querySelector("#guide .wrap").style.maxWidth = "75vw";
       }
       document.querySelector("#guide .sticky .header").style.top =
         ~document.querySelector("#guide .img").style.height - "60";
     } else {
-      document.querySelector("#main").classList.add("guide");
+      _main.classList.add("guide");
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        guide.querySelector(".img").style.maxHeight = "80vh";
-        guide.querySelector(".img").style.maxWidth = "70vw";
+        _guide.querySelector(".img").style.maxHeight = "80vh";
+        _guide.querySelector(".img").style.maxWidth = "70vw";
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        guide.querySelector(".img").style.maxWidth = "40vw";
-        guide.querySelector(".img").style.maxHeight = "70vh";
+        _guide.querySelector(".img").style.maxWidth = "40vw";
+        _guide.querySelector(".img").style.maxHeight = "70vh";
       }
     }
-    guide.querySelector(".sticky").style.display = "block";
-    guide.style.display = "flex";
+    _guide.querySelector(".sticky").style.display = "block";
+    _guide.style.display = "flex";
   };
 };

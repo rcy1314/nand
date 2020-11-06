@@ -15,11 +15,12 @@ document.addEventListener(
 document.addEventListener(
   "click",
   function (event) {
-    if (event.target.classList.contains("view")) {
-      document.querySelector("#match").style.display = "block";
-      let match = document.querySelector("#match .listing");
-      while (match.firstChild) {
-        match.removeChild(match.lastChild);
+    if (event.target.id == "view") {
+      _match.style.display = "block";
+      while (_match.querySelector('.listing').firstChild) {
+        _match.querySelector('.listing').removeChild(
+          _match.querySelector('.listing').lastChild
+        );
       }
       for (i = 0; i < translations.length; i++) {
         let index = document.createElement("div");
@@ -45,9 +46,7 @@ document.addEventListener(
       event.target.style.paddingLeft = "30px";
       event.target.style.textAlign = "left";
       event.target.value = "";
-      document
-        .querySelector("#search .view")
-        .setAttribute("placeholder", "Search");
+      _view.setAttribute("placeholder", "Search");
       document.querySelector("#input .icon").classList.add("slide");
     }
     event.preventDefault();
@@ -120,7 +119,7 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains("index")) {
       document
-        .querySelectorAll(".listing .index")
+        .querySelectorAll(".listing .index, .listing .index")
         .forEach((a) => a.classList.remove("hover"));
     }
   },
@@ -138,9 +137,9 @@ document.addEventListener(
 document.addEventListener(
   "keyup",
   function (event) {
-    if (event.target.classList.contains("guest"))
+    if (event.target.id = "guest")
       inputListingKeyup("#first", event.keyCode);
-    else if (event.target.classList.contains("view"))
+    if (event.target.id = "view")
       inputListingKeyup("#match", event.keyCode);
     event.preventDefault();
   },
@@ -149,7 +148,6 @@ document.addEventListener(
 document.addEventListener(
   "submit",
   function (event) {
-    event.preventDefault();
     if (event.target.classList.contains("filter")) {
       if (document.querySelector(".sideFilter").value.length) {
         init();
@@ -181,7 +179,7 @@ document.addEventListener(
             .getAttribute("aria-item")
         )
       ) {
-        document.querySelector("#match").style.display = "none";
+        _match.style.display = "none";
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
@@ -199,7 +197,7 @@ document.addEventListener(
         document.body.contains(document.querySelector("#match .hover"))
       ) {
         id = document.querySelector("#match .hover").getAttribute("aria-item");
-        document.querySelector("#match").style.display = "none";
+        _match.style.display = "none";
         if (document.body.contains(document.querySelector("#feed")))
           document.querySelector("#feed").remove();
         if (document.body.contains(document.querySelector("#group")))
@@ -211,14 +209,16 @@ document.addEventListener(
           document.querySelector("#match .hover").getAttribute("aria-item")
         );
         return false;
-      } else if (document.querySelector("#input .view").value.length) {
-        let query = document.querySelector("#input .view").value.space();
-        query.replace(/\s/, "+");
-        let uri = "?q=" + query;
-        uri.exit();
+      } else if (_view.value.length) {
+        setTimeout(function() {
+          let query = _view.value.space();
+          query.replace(/\s/, "+");
+          let uri = "?q=" + query;
+          uri.exit();
+        }, 250)
       }
     } else if (event.target.id == "front") {
-      if (document.querySelector(".focus .guest").value == "")
+      if (_guest.value == "")
         inputListingIndex("", "#first");
       if (document.body.contains(document.querySelector("#first .hover"))) {
         document.querySelector("#first").style.display = "none";
@@ -234,13 +234,16 @@ document.addEventListener(
           document.querySelector("#first .hover").getAttribute("aria-item")
         );
         return false;
-      } else if (document.querySelector(".focus .guest").value.length > 0) {
-        let query = document.querySelector(".focus .guest").value.space();
-        query.replace(/\s/, "+");
-        let uri = "?q=" + query;
-        uri.exit();
+      } else if (_guest.value.length > 0) {
+        setTimeout(function(){
+          let query = _guest.value.space();
+          query.replace(/\s/, "+");
+          let uri = "?q=" + query;
+          uri.exit();
+        }, 250)
       }
     }
+    event.preventDefault();
   },
   false
 ); //:before pseudo-elements not loaded in DOM
@@ -248,9 +251,8 @@ document.addEventListener(
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
   if (event.target.value.length > 1) {
-    document
-      .querySelectorAll("#label, .quick")
-      .forEach((a) => (a.style.visibility = "hidden"));
+    _label.style.visibility = "hidden";
+    _quick.style.visibility = "hidden";
   }
   if (
     event.target.value.length > 3 &&
@@ -260,13 +262,14 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 38 &&
     keycode !== 27
   )
+
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = "none";
     document
-      .querySelectorAll("#label, .quick")
+      .querySelectorAll("#label", _quick)
       .forEach((a) => (a.style.visibility = "visible"));
   } else if (keycode === 40) {
     if (
@@ -287,7 +290,7 @@ var inputListingKeyup = function (Elem, keycode) {
         .querySelector(Elem + " .listing .hover")
         .classList.remove("hover");
       document.querySelector(Elem + " .listing .hover").focus();
-      document.querySelector(".focus .guest").focus();
+      _guest.focus();
     }
   } else if (keycode === 33) {
     if (
@@ -335,7 +338,7 @@ var inputListingKeyup = function (Elem, keycode) {
         .classList.remove(
           "hover"
         );
-      document.querySelector(".focus .guest").focus();
+      _guest.focus();
     } else {
       document.querySelector(Elem + " .listing .index").focus();
       document
@@ -386,7 +389,7 @@ var inputListingKeyup = function (Elem, keycode) {
       document
         .querySelector(Elem + " .listing .hover")
         .classList.remove("hover");
-      document.querySelector(".focus .guest").focus();
+      _guest.focus();
     } else {
       document.querySelector(Elem + " .listing .index:last-child").focus();
       document
@@ -415,10 +418,10 @@ var inputListingKeyup = function (Elem, keycode) {
         .querySelector(Elem + " .listing .hover")
         .nextElementSibling.classList.remove("hover");
       document.querySelector(Elem + " .listing .hover").focus();
-      document.querySelector(".focus .guest").focus();
+      _guest.focus();
     }
   } else if (keycode === 27) {
-    document.querySelector(".quick").style.visibility = "visible";
+    _quick.style.visibility = "visible";
     document.querySelector(Elem).style.display = "none";
   }
   event.target.setAttribute("tabIndex", -1);

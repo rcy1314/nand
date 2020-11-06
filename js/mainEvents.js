@@ -1,21 +1,20 @@
 window.onload = function () {
-  let guest = document.querySelector(".guest");
-  guest.setAttribute("placeholder", "Search Feeds");
-  guest.style.caretColor = "#e4e4e4";
-  guest.style.paddingLeft = "40px";
-  guest.style.textAlign = "left";
+  _guest.setAttribute("placeholder", "Search Feeds");
+  _guest.style.caretColor = "#e4e4e4";
+  _guest.style.paddingLeft = "40px";
+  _guest.style.textAlign = "left";
+  _guest.focus();
   document.querySelector("#front .icon").classList.add("search");
-  document.querySelector(".focus .guest").focus();
   quickFeedDisplay(quickFeeds);
   if (
-    document.querySelector("#main").clientWidth <= 425 ||
+    _main.clientWidth <= 425 ||
     quickFeedsTranslations == true
   )
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
   if (isNumeric(post)) sideBarDisplay(false);
-  else if (document.querySelector("#main").clientWidth <= 768) {
+  else if (_main.clientWidth <= 768) {
     onScreen = false;
     sideBarDisplay(true);
   } else {
@@ -26,7 +25,7 @@ window.onload = function () {
 window.addEventListener(
   "resize",
   function (event) {
-    if (document.querySelector("#main").clientWidth <= 768) {
+    if (_main.clientWidth <= 768) {
       onScreen = false;
       sideBarFirst = true;
       sideBarDisplay(false);
@@ -39,9 +38,9 @@ document.addEventListener(
   function (event) {
     if (event.target.id == "main") {
       if (
-        document.querySelector("#main").scrollHeight -
-          document.querySelector("#main").scrollTop -
-          document.querySelector("#main").clientHeight <=
+        _main.scrollHeight -
+          _main.scrollTop -
+          _main.clientHeight <=
           350 &&
         stop == false &&
         reader == true &&
@@ -61,9 +60,9 @@ document.addEventListener(
   function (event) {
     if (event.target.id == "main") {
       if (
-        document.querySelector("#main").scrollHeight -
-          document.querySelector("#main").scrollTop -
-          document.querySelector("#main").clientHeight <=
+        _main.scrollHeight -
+          _main.scrollTop -
+          _main.clientHeight <=
           450 &&
         reader == true &&
         httpRequest.status == 200
@@ -89,9 +88,9 @@ document.addEventListener(
     }
     if (event.target.id == "home") {
       id = 0;
-      document.querySelector("#top").style.display = "block";
-      if (document.body.contains(document.querySelector("#feed")))
-        document.querySelector("#feed").remove();
+      _top.style.display = "block";
+      if (document.body.contains(document.querySelector("#xml")))
+        document.querySelector("#xml").remove();
       if (document.body.contains(document.querySelector("#group")))
         document.querySelector("#group").remove();
       document.title = category.capitalize();
@@ -136,30 +135,28 @@ document.addEventListener(
           attr[i].classList.add("fa-ellipsis-h");
         }
       }
-      if (document.querySelector("#match").style.display === "block") {
+      if (_match.style.display === "block") {
         document.querySelector("#input .icon").classList.remove("slide");
-        document.querySelector("#match").style.display = "none";
-        var view = document.querySelector("#input .view");
-        view.setAttribute("placeholder", "");
-        view.style.textAlign = "center";
-        view.style.paddingLeft = "20px";
-        view.value = "Search";
-        view.blur();
+        _match.style.display = "none";
+        _view.setAttribute("placeholder", "");
+        _view.style.textAlign = "center";
+        _view.style.paddingLeft = "20px";
+        _view.value = "Search";
+        _view.blur();
       } else if (
-        document.querySelector("#main #first").style.display === "block"
+        _first.style.display === "block"
       ) {
-        document
-          .querySelectorAll("#label, .quick")
-          .forEach((a) => (a.style.visibility = "visible"));
-        document.querySelector("#main #first").style.display = "none";
-        document.querySelector(".focus .guest").blur();
+        _label.style.visibility = "visible"
+        _quick.style.visibility = "visible"
+        _first.style.display = "none";
+        _guest.blur();
       }
       event.stopPropagation();
     }
     if (event.target.classList.contains("fa-expand-alt")) {
       if (!document.body.contains(document.querySelector("#main #group")))
         populateCategoryGroup(category);
-      document.querySelector("#visit").style.display = "none";
+      _visit.style.display = "none";
       topMenuBarDisplay(topBar);
       expand = expand != true;
       displayExpand(expand);
@@ -200,19 +197,19 @@ document.addEventListener(
           document.querySelector("#search .view").blur();
           return false;
         } else if (
-          document.querySelector("#main #first").style.display === "block"
+          _first.style.display === "block"
         ) {
-          document.querySelector("#main #first").style.display = "none";
-          document.querySelector(".focus .guest").blur();
+          _first.style.display = "none";
+          _guest.blur();
           return false;
         }
         init();
-        if (document.body.contains(document.querySelector("#feed")))
-          document.querySelector("#feed").remove();
+        if (document.body.contains(document.querySelector("#xml")))
+          document.querySelector("#xml").remove();
         if (document.body.contains(document.querySelector("#group")))
           document.querySelector("#group").remove();
-        document.querySelector("#toggle").style.display = "none";
-        document.querySelector("#visit").style.display = "none";
+        _toggle.style.display = "none";
+        _visit.style.display = "none";
         xmlRequestParsing(
           null,
           null,
@@ -240,13 +237,13 @@ document.addEventListener(
           xmlRequestParsing(null, null, anyRandomMenuObject());
           notifyOption("Switched to now reading " + category + ".");
         } else {
-          if (document.body.contains(document.querySelector("#feed")))
-            document.querySelector("#feed").remove();
+          if (document.body.contains(document.querySelector("#xml")))
+            document.querySelector("#xml").remove();
           if (document.body.contains(document.querySelector("#group")))
             document.querySelector("#group").remove();
           location.pathname.state();
-          document.querySelector("#toggle").style.display = "none";
-          document.querySelector("#visit").style.display = "none";
+          _toggle.style.display = "none";
+          _visit.style.display = "none";
           populateCategoryGroup(
             event.target.closest(".translation").getAttribute("aria-item")
           );
@@ -261,8 +258,8 @@ document.addEventListener(
       event.target.classList.contains("query")
     ) {
       init();
-      document.querySelector("#toggle").style.display = "none";
-      document.querySelector("#visit").style.display = "none";
+      _toggle.style.display = "none";
+      _visit.style.display = "none";
       xmlRequestParsing(
         null,
         null,
@@ -276,12 +273,12 @@ document.addEventListener(
       event.target.classList.contains("checkmark") ||
       event.target.classList.contains("blur")
     ) {
-      document.querySelector("#main").classList.remove("guide");
+      _main.classList.remove("guide");
       document.querySelector("#guide").style.display = "none";
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
       onScreen = guideOnScreen;
-      if (document.querySelector("#main").clientWidth >= 426)
+      if (_main.clientWidth >= 426)
         sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
     }
@@ -341,8 +338,8 @@ document.addEventListener(
       event.target.classList.contains("back")
     ) {
       init();
-      if (document.body.contains(document.querySelector("#feed")))
-        document.querySelector("#feed").remove();
+      if (document.body.contains(document.querySelector("#xml")))
+        document.querySelector("#xml").remove();
       xmlRequestParsing(
         null,
         null,
@@ -500,26 +497,26 @@ document.addEventListener(
       event.target.classList.contains("right")
     ) {
       quickFeedAsset(6);
-      let leftPos = event.target.closest(".quick").querySelector(".feed")
+      let leftPos = event.target.closest(_quick).querySelector(_feed)
         .scrollLeft;
-      event.target.closest(".quick").querySelector(".feed").scrollLeft =
+      event.target.closest(_quick).querySelector(_feed).scrollLeft =
         leftPos +
-        event.target.closest(".quick").querySelector(".feed").clientWidth;
-      if (event.target.closest(".quick").querySelector(".feed").scrollLeft >= 0)
+        event.target.closest(_quick).querySelector(_feed).clientWidth;
+      if (event.target.closest(_quick).querySelector(_feed).scrollLeft >= 0)
         document.querySelector(".left").style.display = "block";
     }
     if (
       event.target.classList.contains("fa-minus") ||
       event.target.classList.contains("left")
     ) {
-      let leftPos = event.target.closest(".quick").querySelector(".feed")
+      let leftPos = event.target.closest(_quick).querySelector(_feed)
         .scrollLeft;
-      event.target.closest(".quick").querySelector(".feed").scrollLeft =
+      event.target.closest(_quick).querySelector(_feed).scrollLeft =
         leftPos -
-        event.target.closest(".quick").querySelector(".feed").clientWidth;
+        event.target.closest(_quick).querySelector(_feed).clientWidth;
       if (
-        event.target.closest(".quick").querySelector(".feed").scrollLeft -
-          event.target.closest(".quick").querySelector(".feed").clientWidth <=
+        event.target.closest(_quick).querySelector(_feed).scrollLeft -
+          event.target.closest(_quick).querySelector(_feed).clientWidth <=
         0
       )
         document.querySelector(".left").style.display = "none";
