@@ -7,6 +7,7 @@
 
 * Private Proxy Requests.
 * Beta (stage) themes.
+* no installation.
 
 ### Known Issues
 
