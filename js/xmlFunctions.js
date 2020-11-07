@@ -521,7 +521,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   "'] .img"
               )
             )
-          )
+          ) {
             document.querySelector(
               "[aria-object='" +
                 menuObject +
@@ -529,6 +529,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 pubIndex +
                 "'] .img"
             ).style.display = "block";
+            document.querySelector(
+              "[aria-object='" +
+                menuObject +
+                "'][aria-item='" +
+                pubIndex +
+                "'] .img"
+            ).classList.add("hidden");
+          }
         }
       };
     } else if (

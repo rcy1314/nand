@@ -112,6 +112,7 @@ document.addEventListener(
       event.target.classList.contains("cat")
     ) {
       id = 0;
+      _check.style.visibility = "visible";
       const button = event.target.getBoundingClientRect();
       const circle = document.createElement("span");
       const diameter = Math.max(

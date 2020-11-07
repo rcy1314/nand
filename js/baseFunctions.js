@@ -325,10 +325,87 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transition = "width .15s ease-in-out";
     _progress.style.transitionDelay = "none";
     _progress.style.width = percent + "%";
-    if (document.body.contains(document.getElementById("xml")))
+    if (document.body.contains(document.getElementById("xml"))){
       document.querySelector("#xml").style.display = "block";
-    if (document.body.contains(document.getElementById("group")))
+      document.querySelector("#xml").style.paddingTop =
+      document.querySelector("#xml").clientHeight;
+      (function() {
+        var elements;
+        var windowHeight;
+
+        function init() {
+          elements = document.querySelectorAll('.img');
+          windowHeight = _main.clientHeight;
+        }
+
+        function checkPosition() {
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = elements[i].getBoundingClientRect().top;
+
+            if (positionFromTop <= windowHeight / 2) {
+              element.classList.add('fade-in-element');
+              element.classList.remove('hidden');
+            }
+          }
+        }
+
+        _main
+          .addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', init);
+
+        init();
+        checkPosition();
+      })();
+      setTimeout(function() {
+        let Elem = document.querySelector("#xml");
+        Elem.animate(
+          {
+            paddingTop: [
+              document.querySelector("#xml").clientHeight + "px",
+              "0"
+            ],
+          },
+          {
+            duration: 500, // number in ms [this would be equiv of your speed].
+            easing: "ease-in-out",
+            iterations: 1, // infinity or a number.
+            // fill: ''
+          }
+        );
+        _check.style.visibility = "hidden"
+      }, 500)
+      setTimeout(function () {
+        document.querySelector("#xml").style.paddingTop = "0";
+        _main.scrollTop = '1'
+      }, 1000);
+    }
+    if (document.body.contains(document.getElementById("group"))){
       document.querySelector("#group").style.display = "block";
+      document.querySelector("#group").style.paddingTop =
+      document.querySelector("#group").clientHeight;
+      setTimeout(function() {
+        let Elem = document.querySelector("#group");
+        Elem.animate(
+          {
+            paddingTop: [
+              document.querySelector("#group").clientHeight + "px",
+              "0"
+            ],
+          },
+          {
+            duration: 750, // number in ms [this would be equiv of your speed].
+            easing: "ease-in-out",
+            iterations: 1, // infinity or a number.
+            // fill: ''
+          }
+        );
+        _check.style.visibility = "hidden"
+      }, 750)
+      setTimeout(function () {
+        document.querySelector("#group").style.paddingTop = "0";
+      }, 1500);
+    }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
         _main.scrollTop = document.querySelector(
