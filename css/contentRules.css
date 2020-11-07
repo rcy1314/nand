@@ -329,19 +329,19 @@ html body #container #guide {
 html body #container #guide,
 html body #container #guide .blur {
   background-color: var(--sticky-background);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
-  z-index: 8;
-  margin: 0;
   height: 100%;
   width: 100%;
+  z-index: 8;
+  margin: 0;
   left: 0;
   top: 0;
 }
 
 html body #container #guide .blur {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   position: absolute;
   z-index: 0;
 }
@@ -1109,6 +1109,7 @@ html body #container #main #xml .center .item .add {
 html body #container #guide .sticky .image {
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   max-width: 75vw;
   display: flex;
 }
