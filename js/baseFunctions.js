@@ -371,12 +371,12 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-          _check.style.visibility = "hidden"
         }, 500)
         setTimeout(function () {
           document.querySelector("#xml").style.paddingTop = "0";
         }, 1000);
       }
+      _check.style.visibility = "hidden"
       _main.scrollTop = '1'
     }
     if (document.body.contains(document.getElementById("group"))){
@@ -400,12 +400,12 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-          _check.style.visibility = "hidden"
         }, 750)
         setTimeout(function () {
           document.querySelector("#group").style.paddingTop = "0";
         }, 1500);
       }
+      _check.style.visibility = "hidden"
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
