@@ -15,7 +15,9 @@ window.onload = function () {
   else quickFeedAsset(7);
   if (isNumeric(post)) sideBarDisplay(false);
   else if (_main.clientWidth <= 768) {
+    expand = false
     onScreen = false;
+    groupType = "blocks"
     sideBarDisplay(true);
   } else {
     sideBarFirst = true;
