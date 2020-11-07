@@ -404,6 +404,9 @@ var xmlHTMLBuild = function (htmlArray) {
   let image = document.createElement("div");
   image.classList.add("image");
   image.append(sideBarThemeBuild("fa-heart"));
+  let filterBlur = document.createElement("div")
+  filterBlur.classList.add("filterBlur")
+  image.append(filterBlur)
   let object = document.createElement("img");
   object.id = htmlArray.pubIndex;
   object.classList.add("img");

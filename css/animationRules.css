@@ -31,7 +31,7 @@ span.ripple {
 }
 
 .fade-in-element {
-  animation: fade-in 2s forwards;
+  animation: fade-in 1s forwards;
 }
 
 .rotate {

@@ -348,7 +348,7 @@ document.addEventListener(
         event.target.closest(".btn").getAttribute("aria-item")
       );
     }
-    if (event.target.classList.contains("img")) {
+    if (event.target.classList.contains("filterBlur")) {
       if (tap == 0) {
         // set first click
         tap = new Date().getTime();
@@ -358,8 +358,14 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              !event.target.classList.contains("guide") &&
-              event.target.classList.contains("default")
+              !event.target
+                .closest(".item")
+                .querySelector(".img")
+                .classList.contains("guide") &&
+              event.target
+                .closest(".item")
+                .querySelector(".img")
+                .classList.contains("default")
             ) {
               let sticky = [];
               sticky.push({
@@ -386,9 +392,19 @@ document.addEventListener(
                 id: event.target.closest(".item").getAttribute("aria-object"),
               });
               guideDisplay(sticky);
-            } else if (event.target.classList.contains("guide"))
+            } else if (
+              event.target
+              .closest(".item")
+              .querySelector(".img")
+              .classList.contains("guide")
+            )
               event.target.closest(".item").getAttribute("ext").blank();
-            else if (!event.target.classList.contains("default"))
+            else if (
+              !event.target
+              .closest(".item")
+              .querySelector(".img")
+              .classList.contains("default")
+            )
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")
               event.target.closest(".item").getAttribute("ext").blank();
@@ -398,6 +414,10 @@ document.addEventListener(
         // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
           // double click occurred
+          if (event.target.classList.contains("leave")){
+            event.target.closest(".item").getAttribute("ext").blank();
+            return false
+          }
           event.target
             .closest(".image")
             .querySelector(".fa-heart").style.animation =
@@ -407,7 +427,7 @@ document.addEventListener(
             .querySelector(".fa-heart").style.display = "block";
           event.target
             .closest(".image")
-            .querySelector(".fa-heart").style.zIndex = "1";
+            .querySelector(".fa-heart").style.zIndex = "12";
           setTimeout(function () {
             event.target
               .closest(".image")

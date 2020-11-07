@@ -214,6 +214,19 @@ let contentStatusBuffer = 5;
 
 const cors = "https://acktic-github-io.herokuapp.com/";
 
+/*
+    api [string]
+
+      Applications
+        xmlImageAttributes
+
+      Result
+        filter nsfw feeds
+
+*/
+
+const api = "https://acktic-github-io-api.herokuapp.com/?url=";
+
 /*  translations [array]
 
       Applications

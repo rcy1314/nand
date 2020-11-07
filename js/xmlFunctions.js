@@ -325,8 +325,8 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 };
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
-  let maximum = 799;
   let k = 5420;
+  let maximum = 799;
   ready(() => {
     if (imageDuplicate.includes(src)) {
       if (
@@ -402,143 +402,166 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = "30px";
       };
       newImg.onload = function () {
-        if (
-          document.body.contains(
-            document.querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .img"
-            )
-          )
-        ) {
-          let itemImage = document.querySelector(
-            "[aria-object='" +
-              menuObject +
-              "'][aria-item='" +
-              pubIndex +
-              "'] .img"
-          );
-          let attribute = document.querySelector(
-            "[aria-object='" +
-              menuObject +
-              "'][aria-item='" +
-              pubIndex +
-              "'] .attribute"
-          );
-          let copyPicture = document.querySelector(
-            "[aria-object='" +
-              menuObject +
-              "'][aria-item='" +
-              pubIndex +
-              "'] .picture"
-          );
-          let copyPost = document.querySelector(
-            "[aria-item='" + pubIndex + "'] .post"
-          );
-          itemImage.setAttribute("src", src);
-          if (_main.clientWidth <= 425) {
+        fetch(`${cors}${api}${src}`, {
+          method: 'GET'
+        }).then((response) => {
+          response.json().then((jsonResponse) => {
+            console.log(jsonResponse.score)
             if (
-              newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2
-            ) {
-              itemImage.closest(".item").querySelector(".pending").remove();
-              itemImage.closest(".image").remove();
-            } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = "180px";
-              itemImage.style.margin = "12px";
-              itemImage.closest(".classic").style.display = "flex";
-              itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.style.marginBottom = "30px";
-              copyPost.style.display = "none";
-              copyPicture.style.display = "none";
-              attribute.style.height = "42px";
-            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-              itemImage.style.width = "30vh";
-              itemImage.classList.add("default");
-            } else if (
-              newImg.naturalWidth >= newImg.naturalHeight ||
-              newImg.naturalHeight >= newImg.naturalWidth
-            ) {
-              itemImage.style.width = "100%";
-              itemImage.classList.add("default");
-            }
-          } else {
-            if (
-              newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2
-            ) {
-              itemImage.closest(".item").querySelector(".pending").remove();
-              itemImage.closest(".image").remove();
-            } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = "180px";
-              itemImage.closest(".image").style.margin = "12px";
-              itemImage.closest(".classic").style.display = "flex";
-              itemImage.closest(".classic").style.alignItems = "center";
-              itemImage.style.marginBottom = "30px";
-              copyPost.style.display = "none";
-              copyPicture.style.display = "none";
-              attribute.style.height = "42px";
-            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-              itemImage.style.width = "100%";
-              itemImage.classList.add("default");
-            } else if (
-              newImg.naturalWidth >= newImg.naturalHeight ||
-              newImg.naturalHeight >= newImg.naturalWidth
-            ) {
-              itemImage.style.width = "100%";
-              itemImage.classList.add("default");
-            }
-          }
-          if (
-            document.body.contains(
-              document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .pending"
+              document.body.contains(
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .img"
+                )
               )
-            )
-          )
-            document
-              .querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .pending"
-              )
-              .remove();
-          if (
-            document.body.contains(
-              document.querySelector(
+            ) {
+              let itemImage = document.querySelector(
                 "[aria-object='" +
                   menuObject +
                   "'][aria-item='" +
                   pubIndex +
                   "'] .img"
+              );
+              let attribute = document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .attribute"
+              );
+              let copyPicture = document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .picture"
+              );
+              let copyPost = document.querySelector(
+                "[aria-item='" + pubIndex + "'] .post"
+              );
+              itemImage.setAttribute("src", src);
+              if (_main.clientWidth <= 425) {
+                if (
+                  newImg.naturalHeight > k &&
+                  newImg.naturalHeight >= newImg.naturalWidth * 2
+                ) {
+                  itemImage.closest(".item").querySelector(".pending").remove();
+                  itemImage.closest(".image").remove();
+                } else if (newImg.naturalWidth < maximum) {
+                  itemImage.style.width = "180px";
+                  itemImage.style.margin = "12px";
+                  itemImage.closest(".classic").style.display = "flex";
+                  itemImage.closest(".classic").style.alignItems = "center";
+                  itemImage.style.marginBottom = "30px";
+                  copyPost.style.display = "none";
+                  copyPicture.style.display = "none";
+                  attribute.style.height = "42px";
+                } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                  itemImage.style.width = "30vh";
+                  itemImage.classList.add("default");
+                } else if (
+                  newImg.naturalWidth >= newImg.naturalHeight ||
+                  newImg.naturalHeight >= newImg.naturalWidth
+                ) {
+                  itemImage.style.width = "100%";
+                  itemImage.classList.add("default");
+                }
+              } else {
+                if (
+                  newImg.naturalHeight > k &&
+                  newImg.naturalHeight >= newImg.naturalWidth * 2
+                ) {
+                  itemImage.closest(".item").querySelector(".pending").remove();
+                  itemImage.closest(".image").remove();
+                } else if (newImg.naturalWidth < maximum) {
+                  itemImage.style.width = "180px";
+                  itemImage.closest(".image").style.margin = "12px";
+                  itemImage.closest(".classic").style.display = "flex";
+                  itemImage.closest(".classic").style.alignItems = "center";
+                  itemImage.style.marginBottom = "30px";
+                  copyPost.style.display = "none";
+                  copyPicture.style.display = "none";
+                  attribute.style.height = "42px";
+                } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                  itemImage.style.width = "100%";
+                  itemImage.classList.add("default");
+                } else if (
+                  newImg.naturalWidth >= newImg.naturalHeight ||
+                  newImg.naturalHeight >= newImg.naturalWidth
+                ) {
+                  itemImage.style.width = "100%";
+                  itemImage.classList.add("default");
+                }
+              }
+              if (
+                document.body.contains(
+                  document.querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .pending"
+                  )
+                )
               )
-            )
-          ) {
-            document.querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .img"
-            ).style.display = "block";
-            document.querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .img"
-            ).classList.add("hidden");
-          }
-        }
-      };
+                document
+                  .querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .pending"
+                  )
+                  .remove();
+              if (
+                document.body.contains(
+                  document.querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .img"
+                  )
+                )
+              ) {
+                if (jsonResponse.score <= "0.203471377491951")
+                  document.querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .img"
+                  ).classList.add("filterBlur");
+                else
+                  document.querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .filterBlur"
+                  ).classList.add("leave");
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .img"
+                ).style.display = "block";
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .img"
+                ).classList.add("hidden");
+              }
+            }
+        })
+      });
+    };
     } else if (
       document.body.contains(
         document.querySelector(
