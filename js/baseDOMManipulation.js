@@ -186,7 +186,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   let info = document.createElement("div");
   info.classList.add("info");
   let des = document.createElement("div");
-  des.classList.add("description");
+  des.classList.add("about");
   des.innerHTML = `&emsp;${menu[menuIndex].description}<br>`;
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;

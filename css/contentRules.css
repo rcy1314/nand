@@ -1315,13 +1315,12 @@ html body #container #main #xml .content .status .info {
   text-align: left;
 }
 
-html body #container #main #xml .content .status .info .description {
+html body #container #main #xml .content .status .info .about {
   background-color: transparent;
   text-justify: inter-word;
   text-align: justify;
   position: relative;
-  margin: 0 auto;
-  width: 260px;
+  width: 275px;
 }
 
 html body #container #main #xml .content .status .info,
