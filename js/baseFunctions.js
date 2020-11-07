@@ -26,8 +26,8 @@ var notifyOption = function (displayContent) {
 };
 
 var displayExpand = function (toggleOption) {
-  if (document.body.contains(document.getElementById("feed")))
-    document.getElementById("feed").remove();
+  if (document.body.contains(document.querySelector("xml")))
+    document.querySelector("xml").remove();
   if (toggleOption == true) {
     groupType = "list";
     if (document.body.contains(document.getElementById("group"))) {
