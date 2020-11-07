@@ -31,16 +31,16 @@ span.ripple {
 }
 
 .fade-in-element {
-  animation: fade-in 500ms;
+  animation: fade-in 1.5s forwards;
 }
 
 .rotate {
-  animation: rotation .75s ease-in-out 1;
+  animation: rotation .75s ease-in-out 1 forwards;
   transform: rotate(180deg);
 }
 
 .rotateReverse {
-  animation: rotationReverse .75s ease-in-out 1;
+  animation: rotationReverse .75s ease-in-out 1 forwards;
   transform: rotate(0deg);
 }
 
@@ -129,9 +129,11 @@ span.ripple {
 
 @keyframes fade-in {
     from {
+      transform: scale(1);
       opacity: 0;
     }
     to {
+      transform: scale(1.3);
       opacity: 1;
     }
 }

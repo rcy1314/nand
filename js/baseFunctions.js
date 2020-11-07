@@ -189,9 +189,6 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(".fa-angle-up").classList.remove("rotateReverse");
     _link.querySelector(".fa-angle-up").classList.add("rotate");
     _show.style.visibility = "hidden";
-      setTimeout(function () {
-        _link.querySelector(".fa-angle-up").classList.add("rotate");
-      }, 1000);
   } else if (toggleOption == false) {
     _quick.classList.remove("visible");
     _quick.classList.add("invisible");
@@ -343,7 +340,7 @@ var progressBackDrop = function (done, percent) {
             var element = elements[i];
             var positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if (positionFromTop <= windowHeight / 2) {
+            if (positionFromTop <= windowHeight / 1.25) {
               element.classList.add('fade-in-element');
               element.classList.remove('hidden');
             }
