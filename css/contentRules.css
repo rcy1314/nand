@@ -836,7 +836,7 @@ html body #container #main #visit #page #quick {
 
 html body #container #main #visit #page #quick #feed {
   -webkit-overflow-scrolling: touch;
-  background-color: transparent;
+  background-color: transparent !important;
   scroll-behavior: smooth;
   scrollbar-width: none;
   position: relative;
