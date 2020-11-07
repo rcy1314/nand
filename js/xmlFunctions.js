@@ -528,7 +528,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               ) {
                 if (
-                  category == "Social" &&
                   jsonResponse.score <= "0.203471377491951"
                   )
                   document.querySelector(
