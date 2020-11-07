@@ -116,6 +116,19 @@ let quickFeedsTranslations = true;
 
 */
 
+let scrollIntoView = false;
+
+/*
+    loading [boolean/integer]
+
+      Applications
+        progressBackdrop
+
+      Result
+        group, xml paddingTop scrolls intoView
+
+*/
+
 let loading = "percent";
 
 /*

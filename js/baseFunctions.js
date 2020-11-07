@@ -324,8 +324,6 @@ var progressBackDrop = function (done, percent) {
     _progress.style.width = percent + "%";
     if (document.body.contains(document.getElementById("xml"))){
       document.querySelector("#xml").style.display = "block";
-      document.querySelector("#xml").style.paddingTop =
-      document.querySelector("#xml").clientHeight;
       (function() {
         var elements;
         var windowHeight;
@@ -354,54 +352,60 @@ var progressBackDrop = function (done, percent) {
         init();
         checkPosition();
       })();
-      setTimeout(function() {
-        let Elem = document.querySelector("#xml");
-        Elem.animate(
-          {
-            paddingTop: [
-              document.querySelector("#xml").clientHeight + "px",
-              "0"
-            ],
-          },
-          {
-            duration: 500, // number in ms [this would be equiv of your speed].
-            easing: "ease-in-out",
-            iterations: 1, // infinity or a number.
-            // fill: ''
-          }
-        );
-        _check.style.visibility = "hidden"
-      }, 500)
-      setTimeout(function () {
-        document.querySelector("#xml").style.paddingTop = "0";
-        _main.scrollTop = '1'
-      }, 1000);
+      if (scrollIntoView == true){
+        document.querySelector("#xml").style.paddingTop =
+        document.querySelector("#xml").clientHeight;
+        setTimeout(function() {
+          let Elem = document.querySelector("#xml");
+          Elem.animate(
+            {
+              paddingTop: [
+                document.querySelector("#xml").clientHeight + "px",
+                "0"
+              ],
+            },
+            {
+              duration: 500, // number in ms [this would be equiv of your speed].
+              easing: "ease-in-out",
+              iterations: 1, // infinity or a number.
+              // fill: ''
+            }
+          );
+          _check.style.visibility = "hidden"
+        }, 500)
+        setTimeout(function () {
+          document.querySelector("#xml").style.paddingTop = "0";
+        }, 1000);
+      }
+      _main.scrollTop = '1'
     }
     if (document.body.contains(document.getElementById("group"))){
       document.querySelector("#group").style.display = "block";
-      document.querySelector("#group").style.paddingTop =
-      document.querySelector("#group").clientHeight;
-      setTimeout(function() {
-        let Elem = document.querySelector("#group");
-        Elem.animate(
-          {
-            paddingTop: [
-              document.querySelector("#group").clientHeight + "px",
-              "0"
-            ],
-          },
-          {
-            duration: 750, // number in ms [this would be equiv of your speed].
-            easing: "ease-in-out",
-            iterations: 1, // infinity or a number.
-            // fill: ''
-          }
-        );
-        _check.style.visibility = "hidden"
-      }, 750)
-      setTimeout(function () {
-        document.querySelector("#group").style.paddingTop = "0";
-      }, 1500);
+      if (scrollIntoView == true){
+        document.querySelector("#group").style.paddingTop =
+        document.querySelector("#group").clientHeight;
+        setTimeout(function() {
+          let Elem = document.querySelector("#group");
+          Elem.animate(
+            {
+              paddingTop: [
+                document.querySelector("#group").clientHeight + "px",
+                "0"
+              ],
+            },
+            {
+              duration: 750, // number in ms [this would be equiv of your speed].
+              easing: "ease-in-out",
+              iterations: 1, // infinity or a number.
+              // fill: ''
+            }
+          );
+          _check.style.visibility = "hidden"
+        }, 750)
+        setTimeout(function () {
+          document.querySelector("#group").style.paddingTop = "0";
+        }, 1500);
+      }
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
