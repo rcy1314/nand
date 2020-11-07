@@ -504,11 +504,6 @@ var reverseCategoryGroup = function (translation) {
     let div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
-  } else {
-    document.querySelector(".air").remove();
-    let div = document.createElement("div");
-    div.classList.add("air");
-    group.prepend(div);
   }
   let air = document.querySelector(".air");
   for (let i = 1; i < menu.length - 1; i++) {

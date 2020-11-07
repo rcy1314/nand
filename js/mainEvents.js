@@ -96,10 +96,6 @@ document.addEventListener(
     if (event.target.id == "home") {
       id = 0;
       _top.style.display = "block";
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
-      if (document.body.contains(document.querySelector("#group")))
-        document.querySelector("#group").remove();
       document.title = category.capitalize();
       populateCategoryGroup(category);
       if (expand == true) var groupType = "list";
@@ -213,10 +209,7 @@ document.addEventListener(
           return false;
         }
         init();
-        if (document.body.contains(document.querySelector("#xml")))
-          document.querySelector("#xml").remove();
-        if (document.body.contains(document.querySelector("#group")))
-          document.querySelector("#group").remove();
+        event.target.closest("#group").remove();
         _toggle.style.display = "none";
         _visit.style.display = "none";
         xmlRequestParsing(
@@ -294,8 +287,7 @@ document.addEventListener(
     if (event.target.classList.contains("bottom")) {
       init();
       document.title = category;
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
+      event.target.closest("#xml").remove();
       if (location.href.match("\\?q=")) {
         var uri = location.search.split("?q=")[1].match(/[^&]+/g);
         if (location.href.match("\\+1"))
@@ -349,8 +341,7 @@ document.addEventListener(
       event.target.classList.contains("back")
     ) {
       init();
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
+      event.target.closest("#xml").remove();
       xmlRequestParsing(
         null,
         null,
