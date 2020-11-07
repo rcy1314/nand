@@ -243,7 +243,6 @@ let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
 let complete; //coreHelpers.js interval for progress
-let dupe = []; //image src duplicate catch
 let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
@@ -251,6 +250,7 @@ let first = true; //reader append feed center channel
 let expand = true; //filter populate list display
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
+let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 

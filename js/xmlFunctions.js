@@ -328,7 +328,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 799;
   let k = 5420;
   ready(() => {
-    if (dupe.includes(src)) {
+    if (imageDuplicate.includes(src)) {
       if (
         document.body.contains(
           document.querySelector("[aria-item='" + pubIndex + "'] .pending")
@@ -348,7 +348,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .remove();
       return false;
     }
-    dupe.push(src);
+    imageDuplicate.push(src);
     if (
       src &&
       src.match(/https?:\/\//g) &&
@@ -594,9 +594,9 @@ var xmlTitleParsing = function (xhr) {
 var xmlRequestParsing = function (search, string, index) {
   let html;
   let local;
-  dupe = [];
   id = index;
   let pub = [];
+  imageDuplicate = [];
   if (search == "search") {
     uri = cors + menu[index].uri + string + "&format=RSS";
     category = category;
