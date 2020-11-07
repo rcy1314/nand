@@ -491,16 +491,6 @@ document.addEventListener(
       event.target.classList.contains("fa-share") ||
       event.target.classList.contains("post")
     ) {
-      if (location.href.match("\\+1"))
-        event.target.closest(".item").querySelector(".share").value =
-          event.target.closest(".item").querySelector(".share").value + "+1";
-      else if (!location.href.match("\\+1"))
-        event.target
-          .closest(".item")
-          .querySelector(".share").value = event.target
-          .closest(".item")
-          .querySelector(".share")
-          .value.replace(/\+1/g, "");
       event.target.closest(".item").querySelector(".share").select();
       document.execCommand("copy");
       notifyOption("Post Copied to Clipboard.");

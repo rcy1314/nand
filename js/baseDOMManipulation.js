@@ -82,7 +82,6 @@ var guideBuild = function (pubArray) {
   src.classList.add("item", "src");
   src.setAttribute("aria-item", pubArray.id);
   src.setAttribute("ext", pubArray.re);
-  sticky.append(src);
   let image = document.createElement("div");
   image.classList.add("image");
   image.append(sideBarThemeBuild("fa-heart"));
@@ -92,7 +91,7 @@ var guideBuild = function (pubArray) {
   image.append(object);
   src.append(image);
   let wrap = document.createElement("div");
-  wrap.classList.add("item", "wrap");
+  wrap.classList.add("wrap");
   wrap.setAttribute("ext", pubArray.externalURI);
   let head = document.createElement("div");
   head.classList.add("header");
