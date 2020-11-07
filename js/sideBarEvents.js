@@ -124,9 +124,10 @@ document.addEventListener(
       circle.style.left = `${event.clientX - button.left - radius}px`;
       circle.style.top = `${event.clientY - button.top - radius}px`;
       circle.classList.add("ripple");
-      if (document.querySelector(".ripple"))
-        document.querySelector(".ripple").remove();
       event.target.appendChild(circle);
+      setTimeout(function() {
+        document.querySelector(".ripple").remove();
+      }, 750)
     }
     if (event.target.classList.contains("cat")) {
       category = event.target.closest(".cat").getAttribute("aria-item");
