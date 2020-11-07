@@ -338,7 +338,7 @@ var progressBackDrop = function (done, percent) {
             var element = elements[i];
             var positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if (positionFromTop <= windowHeight / 1.15) {
+            if (positionFromTop <= windowHeight / .75) {
               element.classList.add('fade-in-element');
               element.classList.remove('hidden');
             }
