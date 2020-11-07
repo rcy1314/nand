@@ -622,6 +622,7 @@ var guideImageAttributes = function (src) {
         _guide.querySelector(".img").style.maxHeight = "50vh";
         _guide.querySelector(".wrap").style.maxWidth = "75vw";
       }
+      _guide.querySelector(".ago").style.position = "relative";
       _guide.querySelector(".sticky .header").style.top =
         ~_guide.querySelector(".img").style.height - "60";
     } else {

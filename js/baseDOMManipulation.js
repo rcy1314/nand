@@ -111,11 +111,11 @@ var guideBuild = function (pubArray) {
   ago.classList.add("ago");
   ago.innerHTML = pubArray.dst;
   wrap.append(ago);
-  src.append(
-    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
-  );
   sticky.append(src);
   sticky.append(wrap);
+  wrap.append(
+    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
+  );
   return sticky;
 };
 
