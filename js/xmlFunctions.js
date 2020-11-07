@@ -527,7 +527,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   )
                 )
               ) {
-                if (jsonResponse.score <= "0.203471377491951")
+                if (
+                  category == "Social" &&
+                  jsonResponse.score <= "0.203471377491951"
+                  )
                   document.querySelector(
                     "[aria-object='" +
                       menuObject +
