@@ -193,6 +193,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   info.append(des);
   let construct = document.createElement("div");
+  construct.classList.add("construct")
   construct.append(object);
   construct.append(info);
   return construct;

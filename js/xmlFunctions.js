@@ -458,7 +458,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.marginBottom = "30px";
                   copyPost.style.display = "none";
                   copyPicture.style.display = "none";
-                  attribute.style.height = "42px";
+                  attribute.style.height = "37px";
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
                   itemImage.style.width = "30vh";
                   itemImage.classList.add("default");
@@ -484,7 +484,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.marginBottom = "30px";
                   copyPost.style.display = "none";
                   copyPicture.style.display = "none";
-                  attribute.style.height = "42px";
+                  attribute.style.height = "37px";
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
                   itemImage.style.width = "100%";
                   itemImage.classList.add("default");

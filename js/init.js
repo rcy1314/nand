@@ -71,9 +71,9 @@ if (
       _visit.style.display = "flex";
     } else {
       init();
+      if (post) sideBarDisplay(onScreen)
+      else sideBarDisplay(false)
       guideOnScreen = onScreen;
-      onScreen = false;
-      sideBarDisplay(false)
       filterInputResponse(true, false, menu[i].id.space(), false);
       _toggle.style.display = "none";
       _top.style.display = "none";

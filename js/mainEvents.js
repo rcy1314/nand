@@ -104,10 +104,10 @@ document.addEventListener(
       unloading();
     }
     if (
+      event.target.classList.contains("construct") ||
       event.target.classList.contains("picture") ||
       event.target.classList.contains("header") ||
       event.target.classList.contains("result") ||
-      event.target.classList.contains("feed") ||
       event.target.classList.contains("post") ||
       event.target.classList.contains("site") ||
       event.target.classList.contains("cat") ||
@@ -118,10 +118,10 @@ document.addEventListener(
       event.target.id == "option" ||
       event.target.id == "visit" ||
       event.target.id == "group" ||
-      event.target.id == "feed" ||
       event.target.id == "main" ||
       event.target.id == "hide" ||
       event.target.id == "page" ||
+      event.target.id == "xml" ||
       event.target.id == "top" ||
       event.target.id == "arm" ||
       event.target.classList.contains("fa")

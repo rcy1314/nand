@@ -1187,7 +1187,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
   width: 200px;
   padding: 1px;
   right: 0px;
-  z-index: 1;
+  z-index: 12;
   top: 59px;
 }
 
