@@ -4,20 +4,18 @@
 
   Init.js does some handling of location.
 
-  * Contrast Example
-  > /?+1 [root]
-
-  >  /[uri]+1
 
   * Translation Example
   > /?q=[translations]
 
   > /?q=technology
 
+
   * Query Example
   > /?q=example+query
 
   >  filter response without passthrough from init.js fails to search results.
+
 
   * Hash Example
   > /?[hash] in headXML.js
@@ -26,7 +24,6 @@
 
   > /?[uX]aZjk1 loads guide with progress and guideImage in baseFunctions.js
 
-  >  /?[uX]aZjk1+1 loads guide with contrast to op.
 
   * Feed Example
   > /?q=&unique-identifier fallback to query fails to bing search.

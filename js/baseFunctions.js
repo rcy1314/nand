@@ -352,7 +352,7 @@ var progressBackDrop = function (done, percent) {
         init();
         checkPosition();
       })();
-      if (scrollIntoView == true){
+      if (scrollIntoView == true && reader == false){
         document.querySelector("#xml").style.paddingTop =
         document.querySelector("#xml").clientHeight;
         setTimeout(function() {
