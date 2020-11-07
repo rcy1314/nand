@@ -74,7 +74,9 @@ if (
       if (post) sideBarDisplay(onScreen)
       else sideBarDisplay(false)
       guideOnScreen = onScreen;
-      filterInputResponse(true, false, menu[i].id.space(), false);
+      setTimeout(function() {
+        filterInputResponse(true, false, menu[i].id.space(), false);
+      }, 250)
       _toggle.style.display = "none";
       _top.style.display = "none";
     }
