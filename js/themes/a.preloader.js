@@ -60,6 +60,6 @@ if (typeof set === "string")
       window[set]();
       setTimeout(function () {
         clearInterval(startup);
-      }, 50);
+      }, 500);
     }
-  }, 25);
+  }, 250);
