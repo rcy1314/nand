@@ -47,11 +47,6 @@ var unloading = function () {
 var escape = function (n) {
   return n
     .replace(/<.>/g, "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
 };
 
 var truncate = function (i, n, useWordBoundary) {
