@@ -82,7 +82,6 @@ var guideBuild = function (pubArray) {
   src.classList.add("item", "src");
   src.setAttribute("aria-item", pubArray.id);
   src.setAttribute("ext", pubArray.re);
-  sticky.append(src);
   let image = document.createElement("div");
   image.classList.add("image");
   image.append(sideBarThemeBuild("fa-heart"));
@@ -92,7 +91,7 @@ var guideBuild = function (pubArray) {
   image.append(object);
   src.append(image);
   let wrap = document.createElement("div");
-  wrap.classList.add("item", "wrap");
+  wrap.classList.add("wrap");
   wrap.setAttribute("ext", pubArray.externalURI);
   let head = document.createElement("div");
   head.classList.add("header");
@@ -112,11 +111,11 @@ var guideBuild = function (pubArray) {
   ago.classList.add("ago");
   ago.innerHTML = pubArray.dst;
   wrap.append(ago);
-  src.append(
-    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
-  );
   sticky.append(src);
   sticky.append(wrap);
+  wrap.append(
+    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
+  );
   return sticky;
 };
 
@@ -186,13 +185,14 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   let info = document.createElement("div");
   info.classList.add("info");
   let des = document.createElement("div");
-  des.classList.add("description");
+  des.classList.add("about");
   des.innerHTML = `&emsp;${menu[menuIndex].description}<br>`;
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   info.append(des);
   let construct = document.createElement("div");
+  construct.classList.add("construct")
   construct.append(object);
   construct.append(info);
   return construct;
@@ -404,6 +404,9 @@ var xmlHTMLBuild = function (htmlArray) {
   let image = document.createElement("div");
   image.classList.add("image");
   image.append(sideBarThemeBuild("fa-heart"));
+  let filterBlur = document.createElement("div")
+  filterBlur.classList.add("filterBlur")
+  image.append(filterBlur)
   let object = document.createElement("img");
   object.id = htmlArray.pubIndex;
   object.classList.add("img");

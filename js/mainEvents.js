@@ -15,7 +15,9 @@ window.onload = function () {
   else quickFeedAsset(7);
   if (isNumeric(post)) sideBarDisplay(false);
   else if (_main.clientWidth <= 768) {
+    expand = false
     onScreen = false;
+    groupType = "blocks"
     sideBarDisplay(true);
   } else {
     sideBarFirst = true;
@@ -85,8 +87,8 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains("fa-angle-up") ||
-      event.target.classList.contains("link") ||
-      event.target.classList.contains("show")
+      event.target.id == "link" ||
+      event.target.id == "show"
     ) {
       quickFeeds = quickFeeds != true;
       quickFeedDisplay(quickFeeds);
@@ -94,10 +96,6 @@ document.addEventListener(
     if (event.target.id == "home") {
       id = 0;
       _top.style.display = "block";
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
-      if (document.body.contains(document.querySelector("#group")))
-        document.querySelector("#group").remove();
       document.title = category.capitalize();
       populateCategoryGroup(category);
       if (expand == true) var groupType = "list";
@@ -106,10 +104,10 @@ document.addEventListener(
       unloading();
     }
     if (
+      event.target.classList.contains("construct") ||
       event.target.classList.contains("picture") ||
       event.target.classList.contains("header") ||
       event.target.classList.contains("result") ||
-      event.target.classList.contains("feed") ||
       event.target.classList.contains("post") ||
       event.target.classList.contains("site") ||
       event.target.classList.contains("cat") ||
@@ -120,10 +118,10 @@ document.addEventListener(
       event.target.id == "option" ||
       event.target.id == "visit" ||
       event.target.id == "group" ||
-      event.target.id == "feed" ||
       event.target.id == "main" ||
       event.target.id == "hide" ||
       event.target.id == "page" ||
+      event.target.id == "xml" ||
       event.target.id == "top" ||
       event.target.id == "arm" ||
       event.target.classList.contains("fa")
@@ -211,10 +209,7 @@ document.addEventListener(
           return false;
         }
         init();
-        if (document.body.contains(document.querySelector("#xml")))
-          document.querySelector("#xml").remove();
-        if (document.body.contains(document.querySelector("#group")))
-          document.querySelector("#group").remove();
+        event.target.closest("#group").remove();
         _toggle.style.display = "none";
         _visit.style.display = "none";
         xmlRequestParsing(
@@ -292,8 +287,7 @@ document.addEventListener(
     if (event.target.classList.contains("bottom")) {
       init();
       document.title = category;
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
+      event.target.closest("#xml").remove();
       if (location.href.match("\\?q=")) {
         var uri = location.search.split("?q=")[1].match(/[^&]+/g);
         if (location.href.match("\\+1"))
@@ -347,15 +341,14 @@ document.addEventListener(
       event.target.classList.contains("back")
     ) {
       init();
-      if (document.body.contains(document.querySelector("#xml")))
-        document.querySelector("#xml").remove();
+      event.target.closest("#xml").remove();
       xmlRequestParsing(
         null,
         null,
         event.target.closest(".btn").getAttribute("aria-item")
       );
     }
-    if (event.target.classList.contains("img")) {
+    if (event.target.classList.contains("filterBlur")) {
       if (tap == 0) {
         // set first click
         tap = new Date().getTime();
@@ -365,8 +358,14 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              !event.target.classList.contains("guide") &&
-              event.target.classList.contains("default")
+              !event.target
+                .closest(".item")
+                .querySelector(".img")
+                .classList.contains("guide") &&
+              event.target
+                .closest(".item")
+                .querySelector(".img")
+                .classList.contains("default")
             ) {
               let sticky = [];
               sticky.push({
@@ -393,9 +392,19 @@ document.addEventListener(
                 id: event.target.closest(".item").getAttribute("aria-object"),
               });
               guideDisplay(sticky);
-            } else if (event.target.classList.contains("guide"))
+            } else if (
+              event.target
+              .closest(".item")
+              .querySelector(".img")
+              .classList.contains("guide")
+            )
               event.target.closest(".item").getAttribute("ext").blank();
-            else if (!event.target.classList.contains("default"))
+            else if (
+              !event.target
+              .closest(".item")
+              .querySelector(".img")
+              .classList.contains("default")
+            )
               event.target.closest(".item").getAttribute("ext").blank();
             else if (category != "Social")
               event.target.closest(".item").getAttribute("ext").blank();
@@ -405,6 +414,10 @@ document.addEventListener(
         // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
           // double click occurred
+          if (event.target.classList.contains("leave")){
+            event.target.closest(".item").getAttribute("ext").blank();
+            return false
+          }
           event.target
             .closest(".image")
             .querySelector(".fa-heart").style.animation =
@@ -414,7 +427,7 @@ document.addEventListener(
             .querySelector(".fa-heart").style.display = "block";
           event.target
             .closest(".image")
-            .querySelector(".fa-heart").style.zIndex = "1";
+            .querySelector(".fa-heart").style.zIndex = "12";
           setTimeout(function () {
             event.target
               .closest(".image")
@@ -478,16 +491,6 @@ document.addEventListener(
       event.target.classList.contains("fa-share") ||
       event.target.classList.contains("post")
     ) {
-      if (location.href.match("\\+1"))
-        event.target.closest(".item").querySelector(".share").value =
-          event.target.closest(".item").querySelector(".share").value + "+1";
-      else if (!location.href.match("\\+1"))
-        event.target
-          .closest(".item")
-          .querySelector(".share").value = event.target
-          .closest(".item")
-          .querySelector(".share")
-          .value.replace(/\+1/g, "");
       event.target.closest(".item").querySelector(".share").select();
       document.execCommand("copy");
       notifyOption("Post Copied to Clipboard.");

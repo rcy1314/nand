@@ -24,6 +24,15 @@
   scrollbar-width: thin;
 }
 
+.filterBlur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(75px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+}
+
 .toggle {
   top: -20px !important;
   transition: .4s;

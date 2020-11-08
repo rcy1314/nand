@@ -329,19 +329,19 @@ html body #container #guide {
 html body #container #guide,
 html body #container #guide .blur {
   background-color: var(--sticky-background);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
-  z-index: 8;
-  margin: 0;
   height: 100%;
   width: 100%;
+  z-index: 8;
+  margin: 0;
   left: 0;
   top: 0;
 }
 
 html body #container #guide .blur {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   position: absolute;
   z-index: 0;
 }
@@ -836,7 +836,7 @@ html body #container #main #visit #page #quick {
 
 html body #container #main #visit #page #quick #feed {
   -webkit-overflow-scrolling: touch;
-  background-color: transparent;
+  background-color: transparent !important;
   scroll-behavior: smooth;
   scrollbar-width: none;
   position: relative;
@@ -1109,6 +1109,7 @@ html body #container #main #xml .center .item .add {
 html body #container #guide .sticky .image {
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   max-width: 75vw;
   display: flex;
 }
@@ -1121,6 +1122,7 @@ html body #container #main #xml .center .item .image {
   position: relative;
   max-height: 90vh;
   max-width: 100vw;
+  overflow: hidden;
   display: flex;
   right: 0;
   left: 0;
@@ -1185,7 +1187,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
   width: 200px;
   padding: 1px;
   right: 0px;
-  z-index: 1;
+  z-index: 12;
   top: 59px;
 }
 
@@ -1314,13 +1316,12 @@ html body #container #main #xml .content .status .info {
   text-align: left;
 }
 
-html body #container #main #xml .content .status .info .description {
+html body #container #main #xml .content .status .info .about {
   background-color: transparent;
   text-justify: inter-word;
   text-align: justify;
   position: relative;
-  margin: 0 auto;
-  width: 260px;
+  width: 275px;
 }
 
 html body #container #main #xml .content .status .info,

@@ -26,8 +26,8 @@ var notifyOption = function (displayContent) {
 };
 
 var displayExpand = function (toggleOption) {
-  if (document.body.contains(document.getElementById("feed")))
-    document.getElementById("feed").remove();
+  if (document.body.contains(document.querySelector("#xml")))
+    document.querySelector("#xml").remove();
   if (toggleOption == true) {
     groupType = "list";
     if (document.body.contains(document.getElementById("group"))) {
@@ -189,9 +189,6 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(".fa-angle-up").classList.remove("rotateReverse");
     _link.querySelector(".fa-angle-up").classList.add("rotate");
     _show.style.visibility = "hidden";
-      setTimeout(function () {
-        _link.querySelector(".fa-angle-up").classList.add("rotate");
-      }, 1000);
   } else if (toggleOption == false) {
     _quick.classList.remove("visible");
     _quick.classList.add("invisible");
@@ -327,8 +324,6 @@ var progressBackDrop = function (done, percent) {
     _progress.style.width = percent + "%";
     if (document.body.contains(document.getElementById("xml"))){
       document.querySelector("#xml").style.display = "block";
-      document.querySelector("#xml").style.paddingTop =
-      document.querySelector("#xml").clientHeight;
       (function() {
         var elements;
         var windowHeight;
@@ -343,7 +338,7 @@ var progressBackDrop = function (done, percent) {
             var element = elements[i];
             var positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if (positionFromTop <= windowHeight / 2) {
+            if (positionFromTop <= windowHeight / .75) {
               element.classList.add('fade-in-element');
               element.classList.remove('hidden');
             }
@@ -357,54 +352,60 @@ var progressBackDrop = function (done, percent) {
         init();
         checkPosition();
       })();
-      setTimeout(function() {
-        let Elem = document.querySelector("#xml");
-        Elem.animate(
-          {
-            paddingTop: [
-              document.querySelector("#xml").clientHeight + "px",
-              "0"
-            ],
-          },
-          {
-            duration: 500, // number in ms [this would be equiv of your speed].
-            easing: "ease-in-out",
-            iterations: 1, // infinity or a number.
-            // fill: ''
-          }
-        );
-        _check.style.visibility = "hidden"
-      }, 500)
-      setTimeout(function () {
-        document.querySelector("#xml").style.paddingTop = "0";
-        _main.scrollTop = '1'
-      }, 1000);
+      if (scrollIntoView == true && reader == false){
+        document.querySelector("#xml").style.paddingTop =
+        document.querySelector("#xml").clientHeight;
+        setTimeout(function() {
+          let Elem = document.querySelector("#xml");
+          Elem.animate(
+            {
+              paddingTop: [
+                document.querySelector("#xml").clientHeight + "px",
+                "0"
+              ],
+            },
+            {
+              duration: 500, // number in ms [this would be equiv of your speed].
+              easing: "ease-in-out",
+              iterations: 1, // infinity or a number.
+              // fill: ''
+            }
+          );
+        }, 500)
+        setTimeout(function () {
+          document.querySelector("#xml").style.paddingTop = "0";
+        }, 1000);
+      }
+      _check.style.visibility = "hidden"
+      _main.scrollTop = '1'
     }
     if (document.body.contains(document.getElementById("group"))){
       document.querySelector("#group").style.display = "block";
-      document.querySelector("#group").style.paddingTop =
-      document.querySelector("#group").clientHeight;
-      setTimeout(function() {
-        let Elem = document.querySelector("#group");
-        Elem.animate(
-          {
-            paddingTop: [
-              document.querySelector("#group").clientHeight + "px",
-              "0"
-            ],
-          },
-          {
-            duration: 750, // number in ms [this would be equiv of your speed].
-            easing: "ease-in-out",
-            iterations: 1, // infinity or a number.
-            // fill: ''
-          }
-        );
-        _check.style.visibility = "hidden"
-      }, 750)
-      setTimeout(function () {
-        document.querySelector("#group").style.paddingTop = "0";
-      }, 1500);
+      if (scrollIntoView == true){
+        document.querySelector("#group").style.paddingTop =
+        document.querySelector("#group").clientHeight;
+        setTimeout(function() {
+          let Elem = document.querySelector("#group");
+          Elem.animate(
+            {
+              paddingTop: [
+                document.querySelector("#group").clientHeight + "px",
+                "0"
+              ],
+            },
+            {
+              duration: 750, // number in ms [this would be equiv of your speed].
+              easing: "ease-in-out",
+              iterations: 1, // infinity or a number.
+              // fill: ''
+            }
+          );
+        }, 750)
+        setTimeout(function () {
+          document.querySelector("#group").style.paddingTop = "0";
+        }, 1500);
+      }
+      _check.style.visibility = "hidden"
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
@@ -500,11 +501,6 @@ var reverseCategoryGroup = function (translation) {
   let group = document.querySelector("#group");
   let result = document.querySelector(".result");
   if (!document.body.contains(document.querySelector(".air"))) {
-    let div = document.createElement("div");
-    div.classList.add("air");
-    group.prepend(div);
-  } else {
-    document.querySelector(".air").remove();
     let div = document.createElement("div");
     div.classList.add("air");
     group.prepend(div);
@@ -626,6 +622,7 @@ var guideImageAttributes = function (src) {
         _guide.querySelector(".img").style.maxHeight = "50vh";
         _guide.querySelector(".wrap").style.maxWidth = "75vw";
       }
+      _guide.querySelector(".ago").style.position = "relative";
       _guide.querySelector(".sticky .header").style.top =
         ~_guide.querySelector(".img").style.height - "60";
     } else {

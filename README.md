@@ -7,6 +7,7 @@
 
 * Private Proxy Requests.
 * Beta (stage) themes.
+* no installation.
 
 ### Known Issues
 
@@ -45,8 +46,8 @@ Want to Contribute?
 ----
 
 Submit a Theme!<br>
-Submit a feed!<br>
-File an issue!<br>
+Submit a Feed!<br>
+File an Issue!<br>
 
 License
 ----
