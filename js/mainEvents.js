@@ -87,8 +87,8 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains("fa-angle-up") ||
-      event.target.classList.contains("link") ||
-      event.target.classList.contains("show")
+      event.target.id == "link" ||
+      event.target.id == "show"
     ) {
       quickFeeds = quickFeeds != true;
       quickFeedDisplay(quickFeeds);
