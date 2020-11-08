@@ -52,18 +52,18 @@ let reader = false;
 let onScreen = true;
 
 /*
-    groupType [string]
+    expand [boolean/integer]
 
       Applications
         sideBarDisplay, option, displayExpand
 
       Result
-        `blocks`
-        `list`
+        false `blocks`
+        true `list`
 
 */
 
-let groupType = "list";
+let expand = true;
 
 /*
     showOption [boolean/integer]
@@ -260,7 +260,6 @@ let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
 let first = true; //reader append feed center channel
-let expand = true; //filter populate list display
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let imageDuplicate = []; //image src duplicate catch
