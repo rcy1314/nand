@@ -47,8 +47,11 @@ var displayExpand = function (toggleOption) {
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.alignItems = "center"));
       _main
-        .querySelectorAll(".populate")
+        .querySelectorAll(".select")
         .forEach((a) => (a.style.flexWrap = "nowrap"));
+      _main
+        .querySelectorAll(".select")
+        .forEach((a) => (a.style.display = "flex"));
       _main
         .querySelectorAll(".populate")
         .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
@@ -73,8 +76,11 @@ var displayExpand = function (toggleOption) {
         .querySelectorAll(".populate")
         .forEach((a) => a.classList.remove("expand"));
       _main
-        .querySelectorAll(".populate")
+        .querySelectorAll(".select")
         .forEach((a) => (a.style.flexWrap = "wrap"));
+      _main
+        .querySelectorAll(".select")
+        .forEach((a) => (a.style.display = "flex"));
       _main
         .querySelectorAll(".populate")
         .forEach(

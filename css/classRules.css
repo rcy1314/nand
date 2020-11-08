@@ -29,7 +29,7 @@
   backdrop-filter: blur(75px);
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: calc(100% + 1px);
   z-index: 11;
 }
 
@@ -60,7 +60,8 @@
   font-size: 12px !important;
   margin: 0 !important;
   border-radius: 0 !important;
-  width: 92% !important;
+  width: 100% !important;
+  height: 80px !important;
 }
 
 .expand .filter,

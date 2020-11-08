@@ -174,13 +174,7 @@ document.addEventListener(
       }
     }
     if (
-      event.target.classList.contains("description") ||
-      event.target.classList.contains("populate") ||
-      event.target.classList.contains("reload") ||
-      event.target.classList.contains("display") ||
-      event.target.classList.contains("title") ||
-      event.target.classList.contains("media") ||
-      event.target.classList.contains("hash")
+      event.target.classList.contains("select")
     ) {
       const button = event.target.closest(".populate").getBoundingClientRect();
       const circle = document.createElement("span");

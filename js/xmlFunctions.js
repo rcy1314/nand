@@ -402,32 +402,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = "30px";
       };
       newImg.onload = function () {
-        fetch(`${cors}${api}${src}`, {
-          method: 'GET'
-        }).then((response) => {
-          if (category == "Social")
-          response.json().then((jsonResponse) => {
-            console.log(jsonResponse.score)
-            if (
-              jsonResponse.score <= "0.203471377491951"
-              )
-              document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .img"
-              ).classList.add("filterBlur");
-            else
-              document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .filterBlur"
-              ).classList.add("leave");
-          })
-        });
             if (
               document.body.contains(
                 document.querySelector(
@@ -439,6 +413,37 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               )
             ) {
+              fetch(`${cors}${api}${src}`, {
+                method: 'GET',
+                headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'Access-Control-Allow-Origin': '*'
+                }
+              }).then((response) => {
+                if (category == "Social")
+                response.json().then((jsonResponse) => {
+                  console.log(jsonResponse.score)
+                  if (
+                    jsonResponse.score <= "0.4279794991016388"
+                    )
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .img"
+                    ).classList.add("filterBlur");
+                  else
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .filterBlur"
+                    ).classList.add("leave");
+                })
+              });
               let itemImage = document.querySelector(
                 "[aria-object='" +
                   menuObject +

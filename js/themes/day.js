@@ -27,7 +27,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",
-    ".3px solid transparent"
+    ".3px solid rgba(246, 248, 250, .9)"
   );
   document.documentElement.style.setProperty(
     "--hover-border-color",

@@ -704,9 +704,22 @@ html body #container #main #xml .content .status .filter {
   flex-wrap: wrap;
   cursor: pointer;
   font-size: 9px;
-  padding: 12px;
+  height: 160px;
   margin: 3em;
   width: 16em;
+  z-index: 0;
+}
+
+html body #container #main #group .air .populate .select,
+html body #container #main #group .result .filter .select,
+html body #container #main #group .result .populate .select {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-right: 12px;
+  padding-left: 12px;
 }
 
 html body #container #main #group .air .populate:hover,
@@ -741,6 +754,7 @@ html body #container #main #xml .content .status .filter a {
 .title,
 .description {
   color: var(--fill-color-primary);
+  z-index: -1;
 }
 
 html body #container #main #group .air .populate .display,

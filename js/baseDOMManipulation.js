@@ -267,10 +267,12 @@ var categoryBuild = function (
   let populate = document.createElement("div");
   populate.classList.add("populate");
   populate.setAttribute("aria-item", objectIndex);
+  let select = document.createElement("div")
+  select.classList.add("select")
   let display = document.createElement("div");
   display.classList.add("display");
   let object = document.createElement("img");
-  object.classList.add("display");
+  object.classList.add("webp");
   object.src = objectImage;
   display.append(object);
   let hash = document.createElement("div");
@@ -283,10 +285,11 @@ var categoryBuild = function (
   des.classList.add("description");
   des.innerHTML = objectDescription;
   display.append(object);
-  populate.append(display);
-  populate.append(hash);
-  populate.append(info);
-  populate.append(des);
+  select.append(display);
+  select.append(hash);
+  select.append(info);
+  select.append(des);
+  populate.append(select)
   return populate;
 };
 
