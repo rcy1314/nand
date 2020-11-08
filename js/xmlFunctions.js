@@ -405,8 +405,29 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         fetch(`${cors}${api}${src}`, {
           method: 'GET'
         }).then((response) => {
+          if (category == "Social")
           response.json().then((jsonResponse) => {
             console.log(jsonResponse.score)
+            if (
+              jsonResponse.score <= "0.203471377491951"
+              )
+              document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .img"
+              ).classList.add("filterBlur");
+            else
+              document.querySelector(
+                "[aria-object='" +
+                  menuObject +
+                  "'][aria-item='" +
+                  pubIndex +
+                  "'] .filterBlur"
+              ).classList.add("leave");
+          })
+        });
             if (
               document.body.contains(
                 document.querySelector(
@@ -528,7 +549,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               ) {
                 if (
-                  jsonResponse.score <= "0.203471377491951"
+                  category != "Social"
                   )
                   document.querySelector(
                     "[aria-object='" +
@@ -537,14 +558,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       pubIndex +
                       "'] .img"
                   ).classList.add("filterBlur");
-                else
-                  document.querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
-                      "'] .filterBlur"
-                  ).classList.add("leave");
                 document.querySelector(
                   "[aria-object='" +
                     menuObject +
@@ -561,9 +574,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 ).classList.add("hidden");
               }
             }
-        })
-      });
-    };
+          };
     } else if (
       document.body.contains(
         document.querySelector(
