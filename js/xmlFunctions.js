@@ -327,6 +327,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 799;
+  let jsonResponseScore
   ready(() => {
     if (imageDuplicate.includes(src)) {
       if (
@@ -426,6 +427,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 }
               }).then((response) => {
                 response.json().then((jsonResponse) => {
+                  jsonResponseScore = jsonResponse.score
                   console.log(jsonResponse.score)
                   if (
                     jsonResponse.score >= safeSearchScore
@@ -590,7 +592,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       "'] .img"
                   )
                 )
-                && safeSearch == false
+                && safeSearch == false ||
+                !safeSearchCategory.includes(category)
               ) {
                 if (
                   document.body.contains(
