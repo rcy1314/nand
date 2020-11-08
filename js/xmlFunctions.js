@@ -428,16 +428,35 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 response.json().then((jsonResponse) => {
                   console.log(jsonResponse.score)
                   if (
-                    jsonResponse.score <= safeSearchScore
+                    jsonResponse.score >= safeSearchScore
+                  ){
+                    if (
+                      document.body.contains(
+                        document.querySelector(
+                          "[aria-object='" +
+                            menuObject +
+                            "'][aria-item='" +
+                            pubIndex +
+                            "'] .pending"
+                        )
+                      )
                     )
+                      document
+                        .querySelector(
+                          "[aria-object='" +
+                            menuObject +
+                            "'][aria-item='" +
+                            pubIndex +
+                            "'] .pending"
+                        )
+                        .remove();
                     document.querySelector(
                       "[aria-object='" +
                         menuObject +
                         "'][aria-item='" +
                         pubIndex +
-                        "'] .img"
-                    ).classList.add("filterBlur");
-                  else
+                        "'] .filterBlur"
+                    ).style.cssText = "backdrop-filter: blur(75px)";
                     document.querySelector(
                       "[aria-object='" +
                         menuObject +
@@ -451,7 +470,36 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         "'][aria-item='" +
                         pubIndex +
                         "'] .img"
-                    ).style.display = "block";
+                    ).style.display = "flex";
+                  } else {
+                    if (
+                      document.body.contains(
+                        document.querySelector(
+                          "[aria-object='" +
+                            menuObject +
+                            "'][aria-item='" +
+                            pubIndex +
+                            "'] .pending"
+                        )
+                      )
+                    )
+                      document
+                        .querySelector(
+                          "[aria-object='" +
+                            menuObject +
+                            "'][aria-item='" +
+                            pubIndex +
+                            "'] .pending"
+                        )
+                        .remove();
+                        document.querySelector(
+                          "[aria-object='" +
+                            menuObject +
+                            "'][aria-item='" +
+                            pubIndex +
+                            "'] .img"
+                        ).style.display = "flex";
+                  }
                 })
               });
               let itemImage = document.querySelector(
@@ -539,41 +587,31 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       menuObject +
                       "'][aria-item='" +
                       pubIndex +
-                      "'] .pending"
-                  )
-                )
-              )
-                document
-                  .querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
-                      "'] .pending"
-                  )
-                  .remove();
-              if (
-                document.body.contains(
-                  document.querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
                       "'] .img"
                   )
                 )
+                && safeSearch == false
               ) {
                 if (
-                  safeSearch == true &&
-                  !safeSearchCategory.includes(category)
-                ) {
-                  document.querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
-                      "'] .img"
-                  ).classList.add("filterBlur");
+                  document.body.contains(
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                  )
+                )
+                  document
+                    .querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                    .remove();
                   document.querySelector(
                     "[aria-object='" +
                       menuObject +
@@ -581,7 +619,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       pubIndex +
                       "'] .img"
                   ).style.display = "block";
-                }
                 document.querySelector(
                   "[aria-object='" +
                     menuObject +
