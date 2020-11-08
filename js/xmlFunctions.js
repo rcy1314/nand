@@ -413,6 +413,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               )
             ) {
+              if (
+                safeSearch == true &&
+                safeSearchCategory.includes(category)
+              )
               fetch(`${cors}${api}${src}`, {
                 method: 'GET',
                 headers: {
@@ -421,11 +425,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       'Access-Control-Allow-Origin': '*'
                 }
               }).then((response) => {
-                if (category == "Social")
                 response.json().then((jsonResponse) => {
                   console.log(jsonResponse.score)
                   if (
-                    jsonResponse.score <= "0.4279794991016388"
+                    jsonResponse.score <= safeSearchScore
                     )
                     document.querySelector(
                       "[aria-object='" +
@@ -442,6 +445,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         pubIndex +
                         "'] .filterBlur"
                     ).classList.add("leave");
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .img"
+                    ).style.display = "block";
                 })
               });
               let itemImage = document.querySelector(
@@ -554,8 +564,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               ) {
                 if (
-                  category != "Social"
-                  )
+                  safeSearch == true &&
+                  !safeSearchCategory.includes(category)
+                ) {
                   document.querySelector(
                     "[aria-object='" +
                       menuObject +
@@ -563,13 +574,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       pubIndex +
                       "'] .img"
                   ).classList.add("filterBlur");
-                document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .img"
-                ).style.display = "block";
+                  document.querySelector(
+                    "[aria-object='" +
+                      menuObject +
+                      "'][aria-item='" +
+                      pubIndex +
+                      "'] .img"
+                  ).style.display = "block";
+                }
                 document.querySelector(
                   "[aria-object='" +
                     menuObject +

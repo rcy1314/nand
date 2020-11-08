@@ -199,6 +199,50 @@ let suggestionBuffer = 7;
 let contentStatusBuffer = 5;
 
 /*
+    safeSearch [integer]
+
+      Applications
+        xmlImageAttributes
+
+      Result
+        blur filter
+
+*/
+
+let safeSearch = true;
+
+/*
+    safeSearchScore [string]
+
+      Applications
+        xmlImageAttributes
+
+      Result
+        less than string filtered
+
+*/
+
+let safeSearchScore = "0.4279794991016388"
+
+
+/*
+    safeSearchCategory [array]
+
+      Applications
+        xmlImageAttributes
+
+      Result
+        category applied searchSearch (faster)
+
+*/
+
+let safeSearchCategory =
+  [
+    "Social"
+  ]
+
+
+/*
     cors [string]
 
       Applications
