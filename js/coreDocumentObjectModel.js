@@ -36,4 +36,6 @@ const _content = document.getElementById(`content`)
 
 const _sidebar = document.getElementById(`sidebar`)
 
+const _container = document.getElementById(`container`)
+
 const _progress = document.getElementById(`progressBar`)

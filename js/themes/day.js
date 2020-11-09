@@ -1,7 +1,7 @@
 var Day = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px #eeeeee`
+    `8px 8px 16px rgb(212,212,212,.2)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -27,7 +27,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,
-    `.3px solid rgba(246, 248, 250, .9)`
+    `.3px solid transparent`
   );
   document.documentElement.style.setProperty(
     `--hover-border-color`,
@@ -35,7 +35,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(212,212,212,.3)`
+    `rgb(212,212,212,.2)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,
@@ -50,10 +50,4 @@ var Day = function () {
     `hue-rotate(0deg)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  document
-    .querySelectorAll(`#container, #sidebar, #visit`)
-    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-secondary)`));
-  document
-    .querySelectorAll(`#content`)
-    .forEach((a) => (a.style.backgroundColor = `var(--progress-background)`));
 };

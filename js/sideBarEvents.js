@@ -88,6 +88,56 @@ document.addEventListener(
   `click`,
   function (event) {
     if (
+      event.target.classList.contains(`setBackground`)
+    ) {
+      var input = document.createElement('input');
+      input.type = 'file';
+
+      input.onchange = e => {
+
+         // getting a hold of the file reference
+         var file = e.target.files[0];
+
+         // setting up the reader
+         var reader = new FileReader();
+         reader.readAsDataURL(file); // this is reading as data url
+
+         // here we tell the reader what to do when it's done reading...
+         reader.onload = readerEvent => {
+            var content = readerEvent.target.result; // this is the content!
+            document.querySelector('#container').style.backgroundImage = 'url('+ content +')';
+            backgroundImage = content
+         }
+
+      }
+      input.click()
+    }
+    if (
+      event.target.classList.contains(`mainBackground`)
+    ) {
+      if (typeof backgroundImage === "string")
+      _main.style.backgroundImage = `url(${backgroundImage})`
+      _container.style.backgroundImage = `url()`
+    }
+    if (
+      event.target.classList.contains(`containerBackground`)
+    ) {
+      if (typeof backgroundImage === "string")
+      _container.style.backgroundImage = `url(${backgroundImage})`
+      _main.style.backgroundImage = `url()`
+    }
+    if (
+      event.target.classList.contains(`centerBackground`)
+    ) {
+        _main.style.backgroundPosition = `center`
+    }
+    if (
+      event.target.classList.contains(`removeBackground`)
+    ) {
+        _main.style.backgroundImage = `none`
+        _container.style.backgroundImage = `none`
+    }
+    if (
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
@@ -200,6 +250,14 @@ document.addEventListener(
       }
       let count = themes.length + 1;
       document.querySelector(`.themes`).style.height = `${count * 35}px`;
+    }
+    if (event.target.classList.contains(`adjust`)) {
+      if (document.querySelector(`.bg`).clientHeight != `50`) {
+        document.querySelector(`.bg`).style.height = `30px`;
+        return false;
+      }
+      let count = background.length + 1;
+      document.querySelector(`.bg`).style.height = `${count * 35}px`;
     }
     if (event.target.classList.contains(`List`)) {
       let expand = true;

@@ -1,6 +1,14 @@
 // initial theme
 let set = `Day`;
 
+let backgroundImage //= "ffe869c642be33cbb2c3e609e27beb29.jpg"
+
+_container.style.backgroundPosition = `center`
+_container.style.backgroundSize = `cover`
+_main.style.backgroundPosition = `center`
+_main.style.backgroundSize = `cover`
+
+
 /*
     topBar [boolean/integer]
 
@@ -65,19 +73,31 @@ let expand = true;
 
 */
 
-let expandVisual = true;
+let expandVisual = false;
 
 /*
-    showOption [boolean/integer]
+    expandVisual [boolean/integer]
 
       Applications
         sideBar
 
       Result
-        toggle topBar option
+        toggle visual extended
 
 */
 
+let expandBackground = true;
+
+/*
+    expandBackground [boolean/integer]
+
+      Applications
+        sideBar
+
+      Result
+        toggle background extended
+
+*/
 let showOption = true;
 
 /*
@@ -329,5 +349,14 @@ const selections = [
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
+
+const background = [
+  { name: `Set`, class: `setBackground`, icon: `fa-user` },
+  { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
+  { name: `Center`, class: `centerBackground`, icon: `fa-crop-alt` },
+  { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
+  { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },
+  { name: `Choose Container`, class: `containerBackground`, icon: `fa-barcode` },
+]
 
 const repository = `https://github.com/acktic/acktic.github.io`

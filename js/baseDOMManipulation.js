@@ -478,6 +478,17 @@ var sideBarThemeListing = function () {
   return list;
 };
 
+var sideBarBackgroundListing = function () {
+  let bg = document.createElement(`div`);
+  bg.classList.add(`bg`, `mainTransition`);
+  bg.innerHTML = `<div class='adjust'>
+    Background Image
+    <div class='fa fa-adjust'></div>
+   </div>
+  `;
+  return bg;
+};
+
 var basicFormBuild = function () {
   let basic = document.createElement(`div`);
   basic.id = `basic`;

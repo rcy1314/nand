@@ -1,7 +1,7 @@
 var Nord = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(45, 38, 54, .2)`
+    `8px 8px 16px rgba(80, 86, 105, .4)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -52,12 +52,4 @@ var Nord = function () {
     `rgba(218, 222, 232, .4)`
   );
   document.documentElement.style.setProperty(`--hue-rotate`, `grayscale(100%)`);
-  document
-    .querySelectorAll(`#container,#visit`)
-    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-secondary)`));
-  document
-    .querySelectorAll(`#sidebar, #content`)
-    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-primary)`));
-  document.querySelector(`#hide`).style.background =
-    `var(--progress-background)`;
 };

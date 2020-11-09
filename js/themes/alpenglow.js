@@ -1,7 +1,7 @@
 var Alpenglow = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(45, 38, 54, .2)`
+    `8px 8px 16px rgba(63, 92, 136, .4)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -54,10 +54,4 @@ var Alpenglow = function () {
     `--hue-rotate`,
     `hue-rotate(110deg)`
   );
-  document
-    .querySelectorAll(`#container, #visit`)
-    .forEach((a) => (a.style.backgroundImage = `var(--bg-color-secondary)`));
-  document
-    .querySelectorAll(`#sidebar`)
-    .forEach((a) => (a.style.backgroundColor = `var(--loader-color-primary)`));
 };

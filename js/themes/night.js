@@ -1,7 +1,7 @@
 var Night = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px #060606`
+    `8px 8px 16px rgba(10, 10, 10, 1)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -24,7 +24,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,
-    `.3px solid #0f0f0f`
+    `.3px solid transparent`
   );
   document.documentElement.style.setProperty(
     `--hover-border-color`,
@@ -32,7 +32,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(31,31,31,.4)`
+    `rgb(31,31,31,.8)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,
@@ -46,24 +46,8 @@ var Night = function () {
     `--hue-rotate`,
     `hue-rotate(110deg)`
   );
-  if (document.body.contains(document.querySelector(`#feed`)))
-    document.querySelector(`#feed`).style.backgroundColor =
-      `var(--bg-color-primary)`;
-  document.querySelector(`#match .listing`).classList.add(`oppositeScrollbar`);
-  document.querySelector(`#first .listing`).classList.add(`oppositeScrollbar`);
-  document
-    .querySelector(`#sidebar #content`)
-    .classList.add(`oppositeScrollbar`);
   document
     .querySelector(`#favicon`)
     .setAttribute(`href`, `images/Opposite.ico`);
-  document
-    .querySelectorAll(`#visit, #container, #sidebar, #hide`)
-    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-primary)`));
-  document
-    .querySelectorAll(`#content`)
-    .forEach(
-      (a) => (a.style.backgroundColor = `var(--hover-background-color)`)
-    );
   _check.style.filter = `saturate(1)`
 };

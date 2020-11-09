@@ -97,7 +97,7 @@ html body #container #toggle {
 }
 
 html body #container #sidebar {
-  border-right: var(--hover-border-color);
+  background-color: var(--borderless-hover-color);
   position: fixed;
   display: block;
   height: 100%;
@@ -203,7 +203,7 @@ html body #container #sidebar #content .sel:hover {
   box-shadow: var(--box-shadow) !important;
 }
 
-html body #container #sidebar #content .fa:not(.fa-braille) {
+html body #container #sidebar #content .fa:not(.fa-braille):not(.fa-adjust) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -22px;
@@ -211,13 +211,26 @@ html body #container #sidebar #content .fa:not(.fa-braille) {
   font-size: 10px;
   float: right;
   height: 15px;
-  float: right;
   width: 15px;
   z-index: -1;
-  right: 10px;
+  right: 8px;
 }
 
-html body #container #sidebar #content .themes {
+html body #container #sidebar #content .bg .fa:not(.fa-braille):not(.fa-adjust) {
+  color: var(--fill-color-primary);
+  position: relative;
+  margin-top: -17px;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  height: 15px;
+  width: 15px;
+  z-index: -1;
+  right: 8px;
+}
+
+html body #container #sidebar #content .themes,
+html body #container #sidebar #content .bg {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -232,11 +245,13 @@ html body #container #sidebar #content .themes {
   width: 96%;
 }
 
-html body #container #sidebar #content .themes:hover {
+html body #container #sidebar #content .themes:hover,
+html body #container #sidebar #content .bg {
   background-color: var(--hover-background-color);
 }
 
-html body #container #sidebar #content .themes .border {
+html body #container #sidebar #content .themes .border,
+html body #container #sidebar #content .bg .adjust {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -251,30 +266,34 @@ html body #container #sidebar #content .themes .border {
   width: 100%;
 }
 
-html body #container #sidebar #content .themes .fa:not(.fa-braille) {
+html body #container #sidebar #content .themes .fa:not(.fa-braille):not(.fa-adjust) {
   margin-top: -18px !important;
 }
 
-html body #container #sidebar #content .themes .fa-braille {
+html body #container #sidebar #content .themes .fa-braille,
+html body #container #sidebar #content .bg .fa-adjust {
   position: relative;
   float: right;
   z-index: -1;
   right: 12px;
 }
 
-html body #container #sidebar #content .themes .theme {
+html body #container #sidebar #content .themes .theme,
+html body #container #sidebar #content .bg .background {
   margin-left: 10px;
   margin-top: 10px;
   padding: 5px;
 }
 
-html body #container #sidebar #content .theme:hover {
+html body #container #sidebar #content .theme:hover,
+html body #container #sidebar #content .bg .background:hover {
   background-color: var(--hover-background-color) !important;
 }
 
 html body #container #sidebar #hide {
-  border-radius: 0px 36px 36px 0px;
+  background-color: var(--progress-background);
   border-right: var(--hover-border-color);
+  border-radius: 0px 36px 36px 0px;
   align-items: center;
   position: absolute;
   display: flex;
@@ -426,6 +445,7 @@ html body #container #main #check {
 }
 
 html body #container #main #xml {
+  background-color: var(--borderless-hover-color);
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
@@ -436,6 +456,7 @@ html body #container #main #xml {
 }
 
 html body #container #main #group {
+  background-color: var(--borderless-hover-color);
   height: fit-content;
   position: absolute;
   display: none;

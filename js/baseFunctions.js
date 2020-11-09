@@ -52,9 +52,6 @@ var displayExpand = function (toggleOption) {
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.display = `flex`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => (a.style.backgroundColor = `var(--bg-color-primary)`));
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `block`;
       if (document.body.contains(document.querySelector(`.result`)))
@@ -81,11 +78,6 @@ var displayExpand = function (toggleOption) {
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.display = `flex`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach(
-          (a) => (a.style.backgroundColor = `var(--bg-color-secondary)`)
-        );
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `inline-flex`;
       if (document.body.contains(document.querySelector(`.result`)))
@@ -114,6 +106,15 @@ var sideBarDisplay = function (toggleOption) {
       visual.innerHTML = themes[i].name;
       list.append(visual);
       list.append(sideBarThemeBuild(themes[i].icon));
+    }
+    content.append(sideBarBackgroundListing());
+    let bg = document.querySelector(`.bg`);
+    for (i = 0; i <= background.length - 1; i++) {
+      let option = document.createElement(`div`);
+      option.classList.add(`background`, background[i].class);
+      option.innerHTML = background[i].name;
+      bg.append(option);
+      bg.append(sideBarThemeBuild(background[i].icon));
     }
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(

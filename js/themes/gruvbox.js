@@ -1,7 +1,7 @@
 var Gruvbox = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(169, 121, 62, .2)`
+    `8px 8px 16px rgba(169, 121, 62, .15)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -49,12 +49,4 @@ var Gruvbox = function () {
     `--hue-rotate`,
     `hue-rotate(160deg)`
   );
-  document
-    .querySelectorAll(`#container, #sidebar, #visit`)
-    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-secondary)`));
-  document
-    .querySelectorAll(`#content`)
-    .forEach((a) => (a.style.backgroundColor = `var(--progress-background)`));
-  document.querySelector(`#hide`).style.background =
-    `var(--progress-background)`;
 };
