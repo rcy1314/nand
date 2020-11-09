@@ -23,7 +23,7 @@ var Day = function () {
   document.documentElement.style.setProperty("--bg-color-secondary", "#f7f7f7");
   document.documentElement.style.setProperty(
     "--hover-background-color",
-    "rgba(246, 248, 250, .3)"
+    "rgb(212,212,212,.2)"
   );
   document.documentElement.style.setProperty(
     "--not-hover-border-color",

@@ -30,6 +30,10 @@ span.ripple {
   opacity: 0;
 }
 
+.blink {
+  animation: pulse 1s infinite alternate;
+}
+
 .fade-in-element {
   animation: fade-in 4s forwards;
 }
@@ -125,6 +129,15 @@ span.ripple {
 .search {
   left: 15px !important;
   transition: .5s;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
 
 @keyframes fade-in {

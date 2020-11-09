@@ -417,12 +417,12 @@ html body #container #main {
 }
 
 html body #container #main #check {
+  color: var(--fill-color-primary);
+  background-color: transparent;
   visibility: hidden;
-  background-color:transparent;
-  position:absolute;
-  font-size:11px;
+  position: absolute;
+  font-size: 11px;
   position: fixed;
-  color:var(--fill-color-primary);
 }
 
 html body #container #main #xml {
@@ -849,8 +849,8 @@ html body #container #main #visit #page #quick {
 
 
 html body #container #main #visit #page #quick #feed {
-  -webkit-overflow-scrolling: touch;
   background-color: transparent !important;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
   position: relative;
@@ -998,12 +998,13 @@ html body #container #main #xml .center .item .header .courtesy a {
 }
 
 html body #container #main #xml .center .item .pending {
+  background-color: var(--hover-background-color);
   justify-content: center;
   align-items: center;
   position: relative;
   display: flex;
-  padding: 30px;
-  height: 14em;
+  padding: 40px;
+  margin: 10px;
 }
 
 html body #container #guide .sticky {

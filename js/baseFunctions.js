@@ -409,9 +409,9 @@ var progressBackDrop = function (done, percent) {
         }, 750)
         setTimeout(function () {
           document.querySelector("#group").style.paddingTop = "0";
+          _check.style.visibility = "hidden"
         }, 1500);
       }
-      _check.style.visibility = "hidden"
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(".air")))
@@ -441,6 +441,7 @@ var progressBackDrop = function (done, percent) {
 };
 
 var populateCategoryGroup = function (translation) {
+  if (scrollIntoView == true) _check.style.visibility = "visible"
   if (!document.body.contains(document.querySelector("#group"))) groupBuild();
   let result = document.querySelector(".result");
   if (id && id != 0 && !location.href.match("\\?q=")) {

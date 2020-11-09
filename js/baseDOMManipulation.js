@@ -399,10 +399,10 @@ var xmlHTMLBuild = function (htmlArray) {
   let classic = document.createElement("div");
   classic.classList.add("classic");
   let pending = document.createElement("div");
-  pending.classList.add("pending");
-  let loader = document.createElement("div");
-  loader.classList.add("loader", "double-circle");
-  pending.append(loader);
+  pending.classList.add("blink", "pending");
+  //let loader = document.createElement("div");
+  //loader.classList.add("loader", "double-circle");
+  //pending.append(loader);
   classic.append(pending);
   let image = document.createElement("div");
   image.classList.add("image");
