@@ -752,6 +752,7 @@ html body #container #main #xml .content .status .filter a {
 .blank,
 .media,
 .title,
+.display,
 .description {
   color: var(--fill-color-primary);
   z-index: -1;

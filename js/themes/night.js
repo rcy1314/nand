@@ -28,7 +28,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     "--hover-border-color",
-    ".3px solid #0a0a0a"
+    ".3px solid #262626"
   );
   document.documentElement.style.setProperty(
     "--borderless-hover-color",

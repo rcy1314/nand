@@ -325,7 +325,6 @@ document.addEventListener(
       iteration = iteration + 1;
       set = themes[iteration].name;
       window[themes[iteration].name]();
-      displayExpand(expand);
       notifyOption("Visual set to " + themes[iteration].name.capitalize());
     }
     event.preventDefault();
