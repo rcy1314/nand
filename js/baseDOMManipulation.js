@@ -484,7 +484,7 @@ var sideBarBackgroundListing = function () {
   let bg = document.createElement(`div`);
   bg.classList.add(`bg`, `mainTransition`);
   bg.innerHTML = `<div class='adjust'>
-    Background Image
+    Background
     <div class='fa fa-adjust'></div>
    </div>
   `;
