@@ -53,7 +53,7 @@ var Example = function() {
     `--hover-border-color`,
     `.3px solid #eeeeee`
   );
-  //Inputs, Home toggles, button ripple
+  //Inputs, Home toggles, button ripple, sidebar, group, xml, visit
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
     `rgba(63, 92, 136, .5)`
