@@ -1,69 +1,69 @@
 var Night = function () {
   document.documentElement.style.setProperty(
-    "--box-shadow",
-    "8px 8px 16px #060606"
+    `--box-shadow`,
+    `8px 8px 16px #060606`
   );
   document.documentElement.style.setProperty(
-    "--loader-color-primary",
-    "#f7426C"
+    `--loader-color-primary`,
+    `#f7426C`
   );
   document.documentElement.style.setProperty(
-    "--loader-color-secondary",
-    "#f54e75"
+    `--loader-color-secondary`,
+    `#f54e75`
   );
-  document.documentElement.style.setProperty("--fill-color-primary", "#ffffff");
+  document.documentElement.style.setProperty(`--fill-color-primary`, `#ffffff`);
   document.documentElement.style.setProperty(
-    "--fill-color-secondary",
-    "#f54e75"
+    `--fill-color-secondary`,
+    `#f54e75`
   );
-  document.documentElement.style.setProperty("--bg-color-primary", "#0f0f0f");
-  document.documentElement.style.setProperty("--bg-color-secondary", "#0f0f0f");
+  document.documentElement.style.setProperty(`--bg-color-primary`, `#0f0f0f`);
+  document.documentElement.style.setProperty(`--bg-color-secondary`, `#0f0f0f`);
   document.documentElement.style.setProperty(
-    "--hover-background-color",
-    "rgba(10, 10, 10, 1)"
-  );
-  document.documentElement.style.setProperty(
-    "--not-hover-border-color",
-    ".3px solid #0f0f0f"
+    `--hover-background-color`,
+    `rgba(10, 10, 10, 1)`
   );
   document.documentElement.style.setProperty(
-    "--hover-border-color",
-    ".3px solid #262626"
+    `--not-hover-border-color`,
+    `.3px solid #0f0f0f`
   );
   document.documentElement.style.setProperty(
-    "--borderless-hover-color",
-    "rgb(31,31,31,.4)"
+    `--hover-border-color`,
+    `.3px solid #262626`
   );
   document.documentElement.style.setProperty(
-    "--progress-background",
-    "#f7426C"
+    `--borderless-hover-color`,
+    `rgb(31,31,31,.4)`
   );
   document.documentElement.style.setProperty(
-    "--sticky-background",
-    "rgba(0,0,0,.4)"
+    `--progress-background`,
+    `#f7426C`
   );
   document.documentElement.style.setProperty(
-    "--hue-rotate",
-    "hue-rotate(110deg)"
+    `--sticky-background`,
+    `rgba(0,0,0,.4)`
   );
-  if (document.body.contains(document.querySelector("#feed")))
-    document.querySelector("#feed").style.backgroundColor =
-      "var(--bg-color-primary)";
-  document.querySelector("#match .listing").classList.add("oppositeScrollbar");
-  document.querySelector("#first .listing").classList.add("oppositeScrollbar");
+  document.documentElement.style.setProperty(
+    `--hue-rotate`,
+    `hue-rotate(110deg)`
+  );
+  if (document.body.contains(document.querySelector(`#feed`)))
+    document.querySelector(`#feed`).style.backgroundColor =
+      `var(--bg-color-primary)`;
+  document.querySelector(`#match .listing`).classList.add(`oppositeScrollbar`);
+  document.querySelector(`#first .listing`).classList.add(`oppositeScrollbar`);
   document
-    .querySelector("#sidebar #content")
-    .classList.add("oppositeScrollbar");
+    .querySelector(`#sidebar #content`)
+    .classList.add(`oppositeScrollbar`);
   document
-    .querySelector("#favicon")
-    .setAttribute("href", "images/Opposite.ico");
+    .querySelector(`#favicon`)
+    .setAttribute(`href`, `images/Opposite.ico`);
   document
-    .querySelectorAll("#visit, #container, #sidebar, #hide")
-    .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
+    .querySelectorAll(`#visit, #container, #sidebar, #hide`)
+    .forEach((a) => (a.style.backgroundColor = `var(--bg-color-primary)`));
   document
-    .querySelectorAll("#content")
+    .querySelectorAll(`#content`)
     .forEach(
-      (a) => (a.style.backgroundColor = "var(--hover-background-color)")
+      (a) => (a.style.backgroundColor = `var(--hover-background-color)`)
     );
-  _check.style.filter = "saturate(1)"
+  _check.style.filter = `saturate(1)`
 };
