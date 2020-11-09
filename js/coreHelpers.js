@@ -1,6 +1,6 @@
 var ready = (callback) => {
-  if (document.readyState != "loading") callback();
-  else document.addEventListener("DOMContentLoaded", callback);
+  if (document.readyState != `loading`) callback();
+  else document.addEventListener(`DOMContentLoaded`, callback);
 };
 
 var isNumeric = function (n) {
@@ -9,22 +9,22 @@ var isNumeric = function (n) {
 
 var init = function () {
   if (reader == false) {
-    if (document.body.contains(document.getElementById("xml")))
-      document.querySelector("#xml").remove();
-    if (document.body.contains(document.getElementById("group")))
-      document.querySelector("#group").remove();
+    if (document.body.contains(document.getElementById(`xml`)))
+      document.querySelector(`#xml`).remove();
+    if (document.body.contains(document.getElementById(`group`)))
+      document.querySelector(`#group`).remove();
   }
-  if (loading == "dots") {
-    dots.style.zIndex = "11";
+  if (loading == `dots`) {
+    dots.style.zIndex = `11`;
     document
-      .querySelectorAll("#dots .fill")
-      .forEach((a) => a.classList.add("dots"));
-  } else if (loading == "percent") {
-    dots.style.zIndex = "-1";
+      .querySelectorAll(`#dots .fill`)
+      .forEach((a) => a.classList.add(`dots`));
+  } else if (loading == `percent`) {
+    dots.style.zIndex = `-1`;
     let width = main.clientWidth / 50;
     complete = setInterval(function () {
-      progressBar.style.transitionDelay = "0s";
-      progressBar.style.transition = "all .95s ease-in-out";
+      progressBar.style.transitionDelay = `0s`;
+      progressBar.style.transition = `all .95s ease-in-out`;
       progressBar.style.width =
         progressBar.clientWidth +
         Math.floor(Math.random() * (100 - width) + width);
@@ -33,12 +33,12 @@ var init = function () {
 };
 
 var unloading = function () {
-  if (loading == "dots") {
+  if (loading == `dots`) {
     document
-      .querySelectorAll("#dots .fill")
-      .forEach((a) => a.classList.remove("dots"));
+      .querySelectorAll(`#dots .fill`)
+      .forEach((a) => a.classList.remove(`dots`));
     progressBackDrop(true, 0);
-  } else if (loading == "percent") {
+  } else if (loading == `percent`) {
     clearInterval(complete);
     progressBackDrop(true, 100);
   }
@@ -46,7 +46,7 @@ var unloading = function () {
 
 var escape = function (n) {
   return n
-    .replace(/<.>/g, "")
+    .replace(/<.>/g, ``)
 };
 
 var truncate = function (i, n, useWordBoundary) {
@@ -56,8 +56,8 @@ var truncate = function (i, n, useWordBoundary) {
   let subString = i.substr(0, n - 1);
   return (
     (useWordBoundary
-      ? subString.substr(0, subString.lastIndexOf(" "))
-      : subString) + "..."
+      ? subString.substr(0, subString.lastIndexOf(` `))
+      : subString) + `...`
   );
 };
 
@@ -87,15 +87,15 @@ var anyRandomMenuObject = function () {
 };
 
 String.prototype.space = function () {
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, " ");
+  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };
 
 String.prototype.image = function () {
-  return "images/webp/" + this + ".webp";
+  return `images/webp/${this}.webp`;
 };
 
 String.prototype.hyphen = function () {
-  return this.toLowerCase().replace(/\/|\.|\s/g, "-");
+  return this.toLowerCase().replace(/\/|\.|\s/g, `-`);
 };
 
 String.prototype.domain = function () {
@@ -104,17 +104,17 @@ String.prototype.domain = function () {
 
 String.prototype.zulu = function () {
   var opt = {
-    weekday: "long",
-    day: "2-digit",
-    month: "short",
-    hour: "numeric",
-    minute: "numeric",
+    weekday: `long`,
+    day: `2-digit`,
+    month: `short`,
+    hour: `numeric`,
+    minute: `numeric`,
     hour12: true,
   };
   let dmz = [];
   let utc = new Date(this);
   dmz.push(this.moment());
-  var gmt = utc.toLocaleString("en-US", opt);
+  var gmt = utc.toLocaleString(`en-US`, opt);
   dmz.push(gmt);
 
   return dmz;
@@ -143,19 +143,19 @@ String.prototype.moment = function () {
   if (dis < 0) dis = -dis;
   let sec = dis / 1000;
   if (sec < 60)
-    return parseInt(sec) + " second" + (parseInt(sec) > 1 ? "s" : "");
+    return `${parseInt(sec)} second${(parseInt(sec) > 1 ? `s` : ``)}`;
   let min = sec / 60;
   if (min < 60)
-    return parseInt(min) + " minute" + (parseInt(min) > 1 ? "s" : "");
+    return `${parseInt(min)} minute${(parseInt(min) > 1 ? `s` : ``)}`;
   let h = min / 60;
-  if (h < 24) return parseInt(h) + " hour" + (parseInt(h) > 1 ? "s" : "");
+  if (h < 24) return `${parseInt(h)} hour${(parseInt(h) > 1 ? `s` : ``)}`;
   let d = h / 24;
-  if (d < 30) return parseInt(d) + " day" + (parseInt(d) > 1 ? "s" : "");
+  if (d < 30) return `${parseInt(d)} day${(parseInt(d) > 1 ? `s` : ``)}`;
   let m = d / 30;
-  if (m < 12) return parseInt(m) + " month" + (parseInt(m) > 1 ? "s" : "");
+  if (m < 12) return `${parseInt(m)} month${(parseInt(m) > 1 ? `s` : ``)}`;
   let y = m / 121;
 
-  return parseInt(y) + " year" + (parseInt(y) > 1 ? "s" : "");
+  return `${parseInt(y)} year ${(parseInt(y) > 1 ? `s` : ``)}`;
 };
 
 String.prototype.state = function () {
@@ -163,7 +163,7 @@ String.prototype.state = function () {
 };
 
 String.prototype.blank = function () {
-  window.open(this, "_blank", "noreferrer noopener");
+  window.open(this, `_blank`, `noreferrer noopener`);
 };
 
 String.prototype.exit = function () {

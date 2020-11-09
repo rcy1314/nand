@@ -10,7 +10,7 @@ var Example = function() {
     `linear-gradient(-45deg, rgba(106, 66, 194, 1) 50%,
      rgba(253, 115, 136, 1) 100%)`
   );
-  //Visit button hover, Loading circle, button ripple
+  //Visit button hover, Loading circle
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
     `linear-gradient(45deg, rgba(106, 66, 194, 1) 50%,
@@ -53,7 +53,7 @@ var Example = function() {
     `--hover-border-color`,
     `.3px solid #eeeeee`
   );
-  //Inputs, Home toggles
+  //Inputs, Home toggles, button ripple
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
     `rgba(63, 92, 136, .5)`

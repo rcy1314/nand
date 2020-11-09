@@ -49,14 +49,14 @@
 */
 
 if (
-  !location.search.split("?q=")[1] &&
-  !location.href.match("\\?\\+1") &&
-  !location.href.match("\\?\\#") &&
-  location.href.split("?")[1]
+  !location.search.split(`?q=`)[1] &&
+  !location.href.match(`\\?\\+1`) &&
+  !location.href.match(`\\?\\#`) &&
+  location.href.split(`?`)[1]
 ) {
-  var uri = location.href.split("?")[1];
-  if (location.href.match("\\+1")) {
-    uri = uri.replace(/\?\+1|\+1/, "");
+  var uri = location.href.split(`?`)[1];
+  if (location.href.match(`\\+1`)) {
+    uri = uri.replace(/\?\+1|\+1/, ``);
     if (!uri.match(/^[a-zA-Z0-9]+$/i)) {
       let i = -1;
     }
@@ -67,8 +67,8 @@ if (
     let i = menu.findIndex((item) => item.hash === id);
 
     if (!i === -1) {
-      _toggle.style.display = "block";
-      _visit.style.display = "flex";
+      _toggle.style.display = `block`;
+      _visit.style.display = `flex`;
     } else {
       init();
       if (post) sideBarDisplay(onScreen)
@@ -77,26 +77,26 @@ if (
       setTimeout(function() {
         filterInputResponse(true, false, menu[i].id.space(), false);
       }, 250)
-      _toggle.style.display = "none";
-      _top.style.display = "none";
+      _toggle.style.display = `none`;
+      _top.style.display = `none`;
     }
   }
-} else if (location.href.match("\\?\\+1")) _visit.style.display = "flex";
-  else if (location.search.split("?q=")[1]) {
-  var uri = location.search.split("?q=")[1];
-  var uri = uri.replace(/\?\+1|\+1/, "");
+} else if (location.href.match(`\\?\\+1`)) _visit.style.display = `flex`;
+  else if (location.search.split(`?q=`)[1]) {
+  var uri = location.search.split(`?q=`)[1];
+  var uri = uri.replace(/\?\+1|\+1/, ``);
   var uri = uri.match(/[^&]+/g);
   if (location.hash.substr(1).match(/\+1/g))
-    post = location.hash.substr(1).replace(/\+1/g, "");
+    post = location.hash.substr(1).replace(/\+1/g, ``);
   else post = location.hash.substr(1);
   init();
-  _toggle.style.display = "none";
-  _top.style.display = "block";
+  _toggle.style.display = `none`;
+  _top.style.display = `block`;
   setTimeout(function() {
-    if (!uri[1] && location.href.match("\\&"))
+    if (!uri[1] && location.href.match(`\\&`))
       filterInputResponse(true, false, uri[0], false);
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
   }, 250)
-} else if (!location.href.match("\\?") || location.href.match("\\?#"))
-  _visit.style.display = "flex";
+} else if (!location.href.match(`\\?`) || location.href.match(`\\?#`))
+  _visit.style.display = `flex`;

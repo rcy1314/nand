@@ -1,10 +1,10 @@
 window.onload = function () {
-  _guest.setAttribute("placeholder", "Search Feeds");
-  _guest.style.caretColor = "#e4e4e4";
-  _guest.style.paddingLeft = "40px";
-  _guest.style.textAlign = "left";
+  _guest.setAttribute(`placeholder`, `Search Feeds`);
+  _guest.style.caretColor = `#e4e4e4`;
+  _guest.style.paddingLeft = `40px`;
+  _guest.style.textAlign = `left`;
   _guest.focus();
-  document.querySelector("#front .icon").classList.add("search");
+  document.querySelector(`#front .icon`).classList.add(`search`);
   quickFeedDisplay(quickFeeds);
   if (
     _main.clientWidth <= 425 ||
@@ -17,7 +17,7 @@ window.onload = function () {
   else if (_main.clientWidth <= 768) {
     expand = false
     onScreen = false;
-    groupType = "blocks"
+    groupType = `blocks`
     sideBarDisplay(true);
   } else {
     sideBarFirst = true;
@@ -25,7 +25,7 @@ window.onload = function () {
   }
 };
 window.addEventListener(
-  "resize",
+  `resize`,
   function (event) {
     if (_main.clientWidth <= 768) {
       onScreen = false;
@@ -36,9 +36,9 @@ window.addEventListener(
   true
 );
 document.addEventListener(
-  "scroll",
+  `scroll`,
   function (event) {
-    if (event.target.id == "main") {
+    if (event.target.id == `main`) {
       if (
         _main.scrollHeight -
           _main.scrollTop -
@@ -58,9 +58,9 @@ document.addEventListener(
   true
 ); //:before pseudo-elements not loaded in DOM
 document.addEventListener(
-  "ontouchmove",
+  `ontouchmove`,
   function (event) {
-    if (event.target.id == "main") {
+    if (event.target.id == `main`) {
       if (
         _main.scrollHeight -
           _main.scrollTop -
@@ -78,106 +78,106 @@ document.addEventListener(
   false
 ); //:before pseudo-elements not loaded in DOM
 document.addEventListener(
-  "click",
+  `click`,
   function (event) {
     if (
-      event.target.id == "check"
+      event.target.id == `check`
     ) {
       repository.blank()
     }
     if (
-      event.target.classList.contains("fa-angle-up") ||
-      event.target.id == "link" ||
-      event.target.id == "show"
+      event.target.classList.contains(`fa-angle-up`) ||
+      event.target.id == `link` ||
+      event.target.id == `show`
     ) {
       quickFeeds = quickFeeds != true;
       quickFeedDisplay(quickFeeds);
     }
-    if (event.target.id == "home") {
+    if (event.target.id == `home`) {
       id = 0;
-      _top.style.display = "block";
+      _top.style.display = `block`;
       document.title = category.capitalize();
       populateCategoryGroup(category);
-      if (expand == true) var groupType = "list";
-      else var groupType = "blocks";
+      if (expand == true) var groupType = `list`;
+      else var groupType = `blocks`;
       displayExpand(expand);
       unloading();
     }
     if (
-      event.target.classList.contains("construct") ||
-      event.target.classList.contains("picture") ||
-      event.target.classList.contains("header") ||
-      event.target.classList.contains("result") ||
-      event.target.classList.contains("post") ||
-      event.target.classList.contains("site") ||
-      event.target.classList.contains("cat") ||
-      event.target.classList.contains("air") ||
-      event.target.classList.contains("sel") ||
-      event.target.id == "container" ||
-      event.target.id == "search" ||
-      event.target.id == "option" ||
-      event.target.id == "visit" ||
-      event.target.id == "group" ||
-      event.target.id == "main" ||
-      event.target.id == "hide" ||
-      event.target.id == "page" ||
-      event.target.id == "xml" ||
-      event.target.id == "top" ||
-      event.target.id == "arm" ||
-      event.target.classList.contains("fa")
+      event.target.classList.contains(`construct`) ||
+      event.target.classList.contains(`picture`) ||
+      event.target.classList.contains(`header`) ||
+      event.target.classList.contains(`result`) ||
+      event.target.classList.contains(`post`) ||
+      event.target.classList.contains(`site`) ||
+      event.target.classList.contains(`cat`) ||
+      event.target.classList.contains(`air`) ||
+      event.target.classList.contains(`sel`) ||
+      event.target.id == `container` ||
+      event.target.id == `search` ||
+      event.target.id == `option` ||
+      event.target.id == `visit` ||
+      event.target.id == `group` ||
+      event.target.id == `main` ||
+      event.target.id == `hide` ||
+      event.target.id == `page` ||
+      event.target.id == `xml` ||
+      event.target.id == `top` ||
+      event.target.id == `arm` ||
+      event.target.classList.contains(`fa`)
     ) {
       if (
         !document
-          .querySelectorAll(".attribute")
-          .forEach((a) => (a.style.display = "none"))
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`))
       ) {
         document
-          .querySelectorAll(".attribute")
-          .forEach((a) => (a.style.display = "none"));
-        var attr = document.querySelectorAll(".fa-ellipsis-v");
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`));
+        var attr = document.querySelectorAll(`.fa-ellipsis-v`);
         for (i = 0; i < attr.length; i++) {
-          attr[i].classList.remove("fa-ellipsis-v");
-          attr[i].classList.add("fa-ellipsis-h");
+          attr[i].classList.remove(`fa-ellipsis-v`);
+          attr[i].classList.add(`fa-ellipsis-h`);
         }
       }
-      if (_match.style.display === "block") {
-        document.querySelector("#input .icon").classList.remove("slide");
-        _match.style.display = "none";
-        _view.setAttribute("placeholder", "");
-        _view.style.textAlign = "center";
-        _view.style.paddingLeft = "20px";
-        _view.value = "Search";
+      if (_match.style.display === `block`) {
+        document.querySelector(`#input .icon`).classList.remove(`slide`);
+        _match.style.display = `none`;
+        _view.setAttribute(`placeholder`, ``);
+        _view.style.textAlign = `center`;
+        _view.style.paddingLeft = `20px`;
+        _view.value = `Search`;
         _view.blur();
       } else if (
-        _first.style.display === "block"
+        _first.style.display === `block`
       ) {
-        _label.style.visibility = "visible"
-        _quick.style.visibility = "visible"
-        _first.style.display = "none";
+        _label.style.visibility = `visible`
+        _quick.style.visibility = `visible`
+        _first.style.display = `none`;
         _guest.blur();
       }
       event.stopPropagation();
     }
-    if (event.target.classList.contains("fa-expand-alt")) {
-      if (!document.body.contains(document.querySelector("#group")))
+    if (event.target.classList.contains(`fa-expand-alt`)) {
+      if (!document.body.contains(document.querySelector(`#group`)))
         populateCategoryGroup(category);
-      _visit.style.display = "none";
+      _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
       expand = expand != true;
       displayExpand(expand);
-      if (expand == true) var groupType = "list";
+      if (expand == true) var groupType = `list`;
       else {
-        var groupType = "blocks";
+        var groupType = `blocks`;
         notifyOption(
-          "Displaying " + category + " as " + groupType.capitalize()
+          `Displaying ${category} as ${groupType.capitalize()}`
         );
       }
     }
     if (
-      event.target.classList.contains("select")
+      event.target.classList.contains(`select`)
     ) {
-      const button = event.target.closest(".populate").getBoundingClientRect();
-      const circle = document.createElement("span");
+      const button = event.target.closest(`.populate`).getBoundingClientRect();
+      const circle = document.createElement(`span`);
       const diameter = Math.max(
         event.target.clientWidth,
         event.target.clientHeight
@@ -186,62 +186,62 @@ document.addEventListener(
       circle.style.width = circle.style.height = `${diameter}px`;
       circle.style.left = `${event.clientX - button.left - radius}px`;
       circle.style.top = `${event.clientY - button.top - radius}px`;
-      circle.classList.add("ripple");
-      if (document.querySelector(".ripple"))
-        document.querySelector(".ripple").remove();
-      event.target.closest(".populate").appendChild(circle);
+      circle.classList.add(`ripple`);
+      if (document.querySelector(`.ripple`))
+        document.querySelector(`.ripple`).remove();
+      event.target.closest(`.populate`).appendChild(circle);
       setTimeout(function () {
-        if (_match.style.display === "block") {
-          _match.style.display = "none";
+        if (_match.style.display === `block`) {
+          _match.style.display = `none`;
           _view.blur();
           return false;
         } else if (
-          _first.style.display === "block"
+          _first.style.display === `block`
         ) {
-          _first.style.display = "none";
+          _first.style.display = `none`;
           _guest.blur();
           return false;
         }
         init();
-        event.target.closest("#group").remove();
-        _toggle.style.display = "none";
-        _visit.style.display = "none";
+        event.target.closest(`#group`).remove();
+        _toggle.style.display = `none`;
+        _visit.style.display = `none`;
         xmlRequestParsing(
           null,
           null,
-          event.target.closest(".populate").getAttribute("aria-item")
+          event.target.closest(`.populate`).getAttribute(`aria-item`)
         );
       }, 500);
     }
     if (
-      event.target.classList.contains("filter") ||
-      event.target.classList.contains("status") ||
-      event.target.classList.contains("exit") ||
-      event.target.classList.contains("ext") ||
-      event.target.classList.contains("tag")
+      event.target.classList.contains(`filter`) ||
+      event.target.classList.contains(`status`) ||
+      event.target.classList.contains(`exit`) ||
+      event.target.classList.contains(`ext`) ||
+      event.target.classList.contains(`tag`)
     ) {
-      event.target.closest(".filter").getAttribute("aria-item").blank();
+      event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
     }
-    if (event.target.classList.contains("translation")) {
+    if (event.target.classList.contains(`translation`)) {
       id = 0;
-      category = event.target.closest(".translation").getAttribute("aria-item");
+      category = event.target.closest(`.translation`).getAttribute(`aria-item`);
       setTimeout(function () {
         if (reader == true) {
-          if (document.body.contains(document.querySelector(".channel")))
+          if (document.body.contains(document.querySelector(`.channel`)))
             first = false;
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
-          notifyOption("Switched to now reading " + category + ".");
+          notifyOption(`Switched to now reading ${category}.`);
         } else {
-          if (document.body.contains(document.querySelector("#xml")))
-            document.querySelector("#xml").remove();
-          if (document.body.contains(document.querySelector("#group")))
-            document.querySelector("#group").remove();
+          if (document.body.contains(document.querySelector(`#xml`)))
+            document.querySelector(`#xml`).remove();
+          if (document.body.contains(document.querySelector(`#group`)))
+            document.querySelector(`#group`).remove();
           location.pathname.state();
-          _toggle.style.display = "none";
-          _visit.style.display = "none";
+          _toggle.style.display = `none`;
+          _visit.style.display = `none`;
           populateCategoryGroup(
-            event.target.closest(".translation").getAttribute("aria-item")
+            event.target.closest(`.translation`).getAttribute(`aria-item`)
           );
           topMenuBarDisplay(topBar);
           displayExpand(expand);
@@ -249,28 +249,28 @@ document.addEventListener(
       }, 500);
     }
     if (
-      event.target.classList.contains("entity") ||
-      event.target.classList.contains("asset") ||
-      event.target.classList.contains("query")
+      event.target.classList.contains(`entity`) ||
+      event.target.classList.contains(`asset`) ||
+      event.target.classList.contains(`query`)
     ) {
       init();
-      _toggle.style.display = "none";
-      _visit.style.display = "none";
+      _toggle.style.display = `none`;
+      _visit.style.display = `none`;
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(".asset").getAttribute("aria-item")
+        event.target.closest(`.asset`).getAttribute(`aria-item`)
       );
       topMenuBarDisplay(topBar);
     }
     if (
-      event.target.classList.contains("checkmark__circle") ||
-      event.target.classList.contains("checkmark__check") ||
-      event.target.classList.contains("checkmark") ||
-      event.target.classList.contains("blur")
+      event.target.classList.contains(`checkmark__circle`) ||
+      event.target.classList.contains(`checkmark__check`) ||
+      event.target.classList.contains(`checkmark`) ||
+      event.target.classList.contains(`blur`)
     ) {
-      _main.classList.remove("guide");
-      _guide.style.display = "none";
+      _main.classList.remove(`guide`);
+      _guide.style.display = `none`;
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
       onScreen = guideOnScreen;
@@ -278,14 +278,14 @@ document.addEventListener(
         sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
     }
-    if (event.target.classList.contains("bottom")) {
+    if (event.target.classList.contains(`bottom`)) {
       init();
       document.title = category;
-      event.target.closest("#xml").remove();
-      if (location.href.match("\\?q=")) {
-        var uri = location.search.split("?q=")[1].match(/[^&]+/g);
-        if (location.href.match("\\+1"))
-          var query = uri[0].replace(/\+1/g, "").space();
+      event.target.closest(`#xml`).remove();
+      if (location.href.match(`\\?q=`)) {
+        var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
+        if (location.href.match(`\\+1`))
+          var query = uri[0].replace(/\+1/g, ``).space();
         else var query = uri[0].space();
         filterInputResponse(false, false, query, true);
       } else populateCategoryGroup(category);
@@ -293,56 +293,56 @@ document.addEventListener(
       unloading();
       id = 0;
     }
-    if (event.target.classList.contains("more")) {
+    if (event.target.classList.contains(`more`)) {
       event.target.parentNode.innerHTML = event.target.parentNode.getAttribute(
-        "text"
+        `text`
       );
-      event.target.style.display = "none";
+      event.target.style.display = `none`;
       event.stopPropagation();
     }
     if (
-      event.target.classList.contains("classic") ||
-      event.target.classList.contains("item") ||
-      event.target.classList.contains("wrap") ||
-      event.target.classList.contains("pub") ||
-      event.target.classList.contains("ago")
+      event.target.classList.contains(`classic`) ||
+      event.target.classList.contains(`item`) ||
+      event.target.classList.contains(`wrap`) ||
+      event.target.classList.contains(`pub`) ||
+      event.target.classList.contains(`ago`)
     ) {
-      event.target.closest(".item").getAttribute("ext").blank();
+      event.target.closest(`.item`).getAttribute(`ext`).blank();
     }
     if (
-      event.target.classList.contains("combine") ||
-      event.target.classList.contains("suggest") ||
-      event.target.classList.contains("circle") ||
-      event.target.classList.contains("random") ||
-      event.target.classList.contains("bold")
+      event.target.classList.contains(`combine`) ||
+      event.target.classList.contains(`suggest`) ||
+      event.target.classList.contains(`circle`) ||
+      event.target.classList.contains(`random`) ||
+      event.target.classList.contains(`bold`)
     ) {
       init();
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(".suggest").getAttribute("aria-item")
+        event.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains("asset")) {
+    if (event.target.classList.contains(`asset`)) {
       init();
-      xmlRequestParsing(null, null, event.target.getAttribute("aria-item"));
+      xmlRequestParsing(null, null, event.target.getAttribute(`aria-item`));
     }
     if (
-      event.target.classList.contains("flip-front") ||
-      event.target.classList.contains("flip-back") ||
-      event.target.classList.contains("front") ||
-      event.target.classList.contains("next") ||
-      event.target.classList.contains("back")
+      event.target.classList.contains(`flip-front`) ||
+      event.target.classList.contains(`flip-back`) ||
+      event.target.classList.contains(`front`) ||
+      event.target.classList.contains(`next`) ||
+      event.target.classList.contains(`back`)
     ) {
       init();
-      event.target.closest("#xml").remove();
+      event.target.closest(`#xml`).remove();
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(".btn").getAttribute("aria-item")
+        event.target.closest(`.btn`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains("filterBlur")) {
+    if (event.target.classList.contains(`filterBlur`)) {
       if (tap == 0) {
         // set first click
         tap = new Date().getTime();
@@ -353,85 +353,85 @@ document.addEventListener(
           )
             if (
               !event.target
-                .closest(".item")
-                .querySelector(".img")
-                .classList.contains("guide") &&
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList.contains(`guide`) &&
               event.target
-                .closest(".item")
-                .querySelector(".img")
-                .classList.contains("default")
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList.contains(`default`)
             ) {
               let sticky = [];
               sticky.push({
-                courtesy: event.target.closest(".item").querySelector(".header")
+                courtesy: event.target.closest(`.item`).querySelector(`.header`)
                   .innerHTML,
                 element: event.target
-                  .closest(".item")
-                  .getAttribute("aria-item"),
+                  .closest(`.item`)
+                  .getAttribute(`aria-item`),
                 image: menu[
-                  event.target.closest(".item").getAttribute("aria-object")
+                  event.target.closest(`.item`).getAttribute(`aria-object`)
                 ].image.image(),
                 title: event.target
-                  .closest(".item")
-                  .querySelector(".pub")
-                  .getAttribute("text"),
-                share: event.target.closest(".item").querySelector(".share")
+                  .closest(`.item`)
+                  .querySelector(`.pub`)
+                  .getAttribute(`text`),
+                share: event.target.closest(`.item`).querySelector(`.share`)
                   .value,
                 dst: event.target
-                  .closest(".item")
-                  .querySelector(".ago:last-child").innerHTML,
-                src: event.target.closest(".item").querySelector(".source")
+                  .closest(`.item`)
+                  .querySelector(`.ago:last-child`).innerHTML,
+                src: event.target.closest(`.item`).querySelector(`.source`)
                   .value,
-                externalURI: event.target.closest(".item").getAttribute("ext"),
-                id: event.target.closest(".item").getAttribute("aria-object"),
+                externalURI: event.target.closest(`.item`).getAttribute(`ext`),
+                id: event.target.closest(`.item`).getAttribute(`aria-object`),
               });
               guideDisplay(sticky);
             } else if (
               event.target
-              .closest(".item")
-              .querySelector(".img")
-              .classList.contains("guide")
+              .closest(`.item`)
+              .querySelector(`.img`)
+              .classList.contains(`guide`)
             )
-              event.target.closest(".item").getAttribute("ext").blank();
+              event.target.closest(`.item`).getAttribute(`ext`).blank();
             else if (
               !event.target
-              .closest(".item")
-              .querySelector(".img")
-              .classList.contains("default")
+              .closest(`.item`)
+              .querySelector(`.img`)
+              .classList.contains(`default`)
             )
-              event.target.closest(".item").getAttribute("ext").blank();
-            else if (category != "Social")
-              event.target.closest(".item").getAttribute("ext").blank();
+              event.target.closest(`.item`).getAttribute(`ext`).blank();
+            else if (category != `Social`)
+              event.target.closest(`.item`).getAttribute(`ext`).blank();
           tap = 0;
         }, 350);
       } else {
         // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
           // double click occurred
-          if (event.target.classList.contains("leave")){
-            event.target.closest(".item").getAttribute("ext").blank();
+          if (event.target.classList.contains(`leave`)){
+            event.target.closest(`.item`).getAttribute(`ext`).blank();
             return false
           }
           event.target
-            .closest(".image")
-            .querySelector(".fa-heart").style.animation =
-            "scale .7s ease-in-out .1s both";
+            .closest(`.image`)
+            .querySelector(`.fa-heart`).style.animation =
+            `scale .7s ease-in-out .1s both`;
           event.target
-            .closest(".image")
-            .querySelector(".fa-heart").style.display = "block";
+            .closest(`.image`)
+            .querySelector(`.fa-heart`).style.display = `block`;
           event.target
-            .closest(".image")
-            .querySelector(".fa-heart").style.zIndex = "12";
+            .closest(`.image`)
+            .querySelector(`.fa-heart`).style.zIndex = `12`;
           setTimeout(function () {
             event.target
-              .closest(".image")
-              .querySelector(".fa-heart").style.animation = "none";
+              .closest(`.image`)
+              .querySelector(`.fa-heart`).style.animation = `none`;
             event.target
-              .closest(".image")
-              .querySelector(".fa-heart").style.display = "none";
+              .closest(`.image`)
+              .querySelector(`.fa-heart`).style.display = `none`;
             event.target
-              .closest(".image")
-              .querySelector(".fa-heart").style.zIndex = "0";
+              .closest(`.image`)
+              .querySelector(`.fa-heart`).style.zIndex = `0`;
           }, 1500);
           tap = 0;
         }
@@ -439,68 +439,68 @@ document.addEventListener(
       event.stopPropagation();
     }
     if (
-      event.target.classList.contains("fa-ellipsis-h") ||
-      event.target.classList.contains("fa-ellipsis-v") ||
-      event.target.classList.contains("copy")
+      event.target.classList.contains(`fa-ellipsis-h`) ||
+      event.target.classList.contains(`fa-ellipsis-v`) ||
+      event.target.classList.contains(`copy`)
     ) {
-      if (event.target.closest(".copy").querySelector(".fa-ellipsis-v")) {
+      if (event.target.closest(`.copy`).querySelector(`.fa-ellipsis-v`)) {
         event.target
-          .closest(".copy")
-          .querySelector(".fa-ellipsis-v")
-          .classList.add("fa-ellipsis-h");
+          .closest(`.copy`)
+          .querySelector(`.fa-ellipsis-v`)
+          .classList.add(`fa-ellipsis-h`);
         event.target
-          .closest(".copy")
-          .querySelector(".fa-ellipsis-h")
-          .classList.remove("fa-ellipsis-v");
+          .closest(`.copy`)
+          .querySelector(`.fa-ellipsis-h`)
+          .classList.remove(`fa-ellipsis-v`);
         event.target
-          .closest(".copy")
-          .querySelector(".attribute").style.display = "none";
+          .closest(`.copy`)
+          .querySelector(`.attribute`).style.display = `none`;
       } else if (
-        event.target.closest(".copy").querySelector(".fa-ellipsis-h")
+        event.target.closest(`.copy`).querySelector(`.fa-ellipsis-h`)
       ) {
         event.target
-          .closest(".copy")
-          .querySelector(".fa-ellipsis-h")
-          .classList.add("fa-ellipsis-v");
+          .closest(`.copy`)
+          .querySelector(`.fa-ellipsis-h`)
+          .classList.add(`fa-ellipsis-v`);
         event.target
-          .closest(".copy")
-          .querySelector(".fa-ellipsis-v")
-          .classList.remove("fa-ellipsis-h");
+          .closest(`.copy`)
+          .querySelector(`.fa-ellipsis-v`)
+          .classList.remove(`fa-ellipsis-h`);
         event.target
-          .closest(".copy")
-          .querySelector(".attribute").style.display = "block";
+          .closest(`.copy`)
+          .querySelector(`.attribute`).style.display = `block`;
       }
       event.stopPropagation();
     }
     if (
-      event.target.classList.contains("fa-at") ||
-      event.target.classList.contains("site")
+      event.target.classList.contains(`fa-at`) ||
+      event.target.classList.contains(`site`)
     ) {
-      event.target.closest(".item").querySelector(".url").select();
-      document.execCommand("copy");
+      event.target.closest(`.item`).querySelector(`.url`).select();
+      document.execCommand(`copy`);
       event.stopPropagation();
-      notifyOption("URL Copied to Clipboard.");
+      notifyOption(`URL Copied to Clipboard.`);
     }
     if (
-      event.target.classList.contains("fa-share") ||
-      event.target.classList.contains("post")
+      event.target.classList.contains(`fa-share`) ||
+      event.target.classList.contains(`post`)
     ) {
-      event.target.closest(".item").querySelector(".share").select();
-      document.execCommand("copy");
-      notifyOption("Post Copied to Clipboard.");
+      event.target.closest(`.item`).querySelector(`.share`).select();
+      document.execCommand(`copy`);
+      notifyOption(`Post Copied to Clipboard.`);
       event.stopPropagation();
     }
     if (
-      event.target.classList.contains("fa-camera") ||
-      event.target.classList.contains("picture")
+      event.target.classList.contains(`fa-camera`) ||
+      event.target.classList.contains(`picture`)
     ) {
-      event.target.closest(".item").querySelector(".source").select();
-      document.execCommand("copy");
-      notifyOption("Source Copied to Clipboard.");
+      event.target.closest(`.item`).querySelector(`.source`).select();
+      document.execCommand(`copy`);
+      notifyOption(`Source Copied to Clipboard.`);
     }
     if (
-      event.target.classList.contains("fa-plus") ||
-      event.target.classList.contains("right")
+      event.target.classList.contains(`fa-plus`) ||
+      event.target.classList.contains(`right`)
     ) {
       quickFeedAsset(6);
       let leftPos = _feed
@@ -509,11 +509,11 @@ document.addEventListener(
         leftPos +
         _feed.clientWidth;
       if (_feed.scrollLeft >= 0)
-        document.querySelector(".left").style.display = "block";
+        document.querySelector(`.left`).style.display = `block`;
     }
     if (
-      event.target.classList.contains("fa-minus") ||
-      event.target.classList.contains("left")
+      event.target.classList.contains(`fa-minus`) ||
+      event.target.classList.contains(`left`)
     ) {
       let leftPos = _feed
         .scrollLeft;
@@ -525,7 +525,7 @@ document.addEventListener(
           _feed.clientWidth <=
         0
       )
-        document.querySelector(".left").style.display = "none";
+        document.querySelector(`.left`).style.display = `none`;
     }
     event.preventDefault();
   },

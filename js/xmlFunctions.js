@@ -20,17 +20,17 @@ var back = function () {
 };
 
 var xmlChannelFooter = function () {
-  if (document.body.contains(document.querySelector(".center")))
-    document.querySelector(".channel").append(footerBuild());
+  if (document.body.contains(document.querySelector(`.center`)))
+    document.querySelector(`.channel`).append(footerBuild());
 };
 
 var xmlStatusSuggestions = function () {
   let duplicate = [];
-  if (document.body.contains(_main.querySelector(".suggestions"))) {
-    var suggestions = _main.querySelector(".suggestions");
+  if (document.body.contains(_main.querySelector(`.suggestions`))) {
+    var suggestions = _main.querySelector(`.suggestions`);
     if (
       document.body.contains(
-        _main.querySelector(".combine")
+        _main.querySelector(`.combine`)
       )
     )
       while (suggestions.firstChild)
@@ -44,9 +44,9 @@ var xmlStatusSuggestions = function () {
         !duplicate.includes(randomMenuObject)
       ) {
         if (menu[randomMenuObject].media == true)
-          var media = "feed contains images";
+          var media = `feed contains images`;
         else if (menu[randomMenuObject].media == false)
-          var media = "feed might not contain images";
+          var media = `feed might not contain images`;
         duplicate.push(randomMenuObject);
         suggestions.append(
           suggestBuild(
@@ -63,157 +63,157 @@ var xmlStatusSuggestions = function () {
 };
 
 var xmlImageSource = function (xhr) {
-  if (xhr.getElementsByTagName("content").length > 0) {
+  if (xhr.getElementsByTagName(`content`).length > 0) {
     if (
       xhr
-        .getElementsByTagName("content")[0]
+        .getElementsByTagName(`content`)[0]
         .childNodes[0].nodeValue.match(
           /https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g
         )
     )
       src = String(
         xhr
-          .getElementsByTagName("content")[0]
+          .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g
           )
       );
     else if (
       xhr
-        .getElementsByTagName("content")[0]
+        .getElementsByTagName(`content`)[0]
         .childNodes[0].nodeValue.match(
           /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g
         )
     )
       src = String(
         xhr
-          .getElementsByTagName("content")[0]
+          .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g
           )
       );
-    else if (Array.isArray(xhr.getElementsByTagName("content")))
+    else if (Array.isArray(xhr.getElementsByTagName(`content`)))
       src = String(
         xhr
-          .getElementsByTagName("content")[0]
+          .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
           )[0]
       );
     else src = null;
   } else if (
-    xhr.getElementsByTagName("media:content").length > 0 &&
-    xhr.getElementsByTagName("media:content")[0].attributes["url"]
+    xhr.getElementsByTagName(`media:content`).length > 0 &&
+    xhr.getElementsByTagName(`media:content`)[0].attributes[`url`]
   ) {
     if (
       xhr
-        .getElementsByTagName("media:content")[0]
-        .getAttribute("url")
+        .getElementsByTagName(`media:content`)[0]
+        .getAttribute(`url`)
         .match(/youtube\.com/)
     )
       src =
-        "https://www.youtube.com/embed/" +
+        `https://www.youtube.com/embed/` +
         xhr
-          .getElementsByTagName("media:content")[0]
-          .getAttribute("url")
+          .getElementsByTagName(`media:content`)[0]
+          .getAttribute(`url`)
           .match(/[a-zA-Z0-9\_\-]{11}/g);
     else
       src = String(
         xhr
-          .getElementsByTagName("media:content")[0]
-          .getAttribute("url")
+          .getElementsByTagName(`media:content`)[0]
+          .getAttribute(`url`)
           .match(/\b(https?:\/\/\S*?\..+)/g)
       );
-  } else if (xhr.getElementsByTagName("media:thumbnail").length > 0)
+  } else if (xhr.getElementsByTagName(`media:thumbnail`).length > 0)
     src = String(
-      xhr.getElementsByTagName("media:thumbnail")[0].getAttribute("url")
+      xhr.getElementsByTagName(`media:thumbnail`)[0].getAttribute(`url`)
     );
   else if (
-    xhr.getElementsByTagName("enclosure").length > 0 &&
-    xhr.getElementsByTagName("media:thumbnail").length <= 0
+    xhr.getElementsByTagName(`enclosure`).length > 0 &&
+    xhr.getElementsByTagName(`media:thumbnail`).length <= 0
   )
-    src = String(xhr.getElementsByTagName("enclosure")[0].getAttribute("url"));
-  else if (xhr.getElementsByTagName("content:encoded").length > 0) {
+    src = String(xhr.getElementsByTagName(`enclosure`)[0].getAttribute(`url`));
+  else if (xhr.getElementsByTagName(`content:encoded`).length > 0) {
     if (
       xhr
-        .getElementsByTagName("content:encoded")[0]
+        .getElementsByTagName(`content:encoded`)[0]
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
     )
       src = xhr
-        .getElementsByTagName("content:encoded")[0]
+        .getElementsByTagName(`content:encoded`)[0]
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0];
     else
       src = String(
         xhr
-          .getElementsByTagName("content:encoded")[0]
+          .getElementsByTagName(`content:encoded`)[0]
           .childNodes[0].nodeValue.match(
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
           )
       );
-  } else if (xhr.getElementsByTagName("image").length > 0)
+  } else if (xhr.getElementsByTagName(`image`).length > 0)
     src = String(
       xhr
-        .getElementsByTagName("image")[0]
+        .getElementsByTagName(`image`)[0]
         .childNodes[0].nodeValue.match(
           /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
         )
     );
-  else if (xhr.getElementsByTagName("link")[0].attributes["href"])
-    src = String(xhr.getElementsByTagName("link")[0].getAttribute("href"));
+  else if (xhr.getElementsByTagName(`link`)[0].attributes[`href`])
+    src = String(xhr.getElementsByTagName(`link`)[0].getAttribute(`href`));
   else if (
     (xhr
-      .getElementsByTagName("description")[0]
+      .getElementsByTagName(`description`)[0]
       .innerHTML.match(/a.href|src/g) &&
-      xhr.getElementsByTagName("author").length <= 0) ||
-    (xhr.getElementsByTagName("description")[0].length > 0 &&
-      Array.isArray(xhr.getElementsByTagName("description")))
+      xhr.getElementsByTagName(`author`).length <= 0) ||
+    (xhr.getElementsByTagName(`description`)[0].length > 0 &&
+      Array.isArray(xhr.getElementsByTagName(`description`)))
   ) {
     if (
       xhr
-        .getElementsByTagName("description")[0]
+        .getElementsByTagName(`description`)[0]
         .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
     )
       src = xhr
-        .getElementsByTagName("description")[0]
+        .getElementsByTagName(`description`)[0]
         .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
-    else if (xhr.getElementsByTagName("description")[0].childNodes[1])
+    else if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
       src = String(
         xhr
-          .getElementsByTagName("description")[0]
+          .getElementsByTagName(`description`)[0]
           .childNodes[1].nodeValue.match(
             /(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
           )
       );
-    else if (xhr.getElementsByTagName("description")[0].childNodes[0])
+    else if (xhr.getElementsByTagName(`description`)[0].childNodes[0])
       src = String(
         xhr
-          .getElementsByTagName("description")[0]
+          .getElementsByTagName(`description`)[0]
           .childNodes[0].nodeValue.match(
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
           )
       );
-  } else if (xhr.getElementsByTagName("link").length > 0)
+  } else if (xhr.getElementsByTagName(`link`).length > 0)
     src = String(
       xhr
-        .getElementsByTagName("link")[0]
+        .getElementsByTagName(`link`)[0]
         .childNodes[0].nodeValue.match(/https:\/\/.+?(gif|png|jpg|mp4)/g)
     );
-  else if (xhr.getElementsByTagName("media:content").length > 0)
+  else if (xhr.getElementsByTagName(`media:content`).length > 0)
     src = String(
-      xhr.getElementsByTagName("media:content")[0].getAttribute("url")
+      xhr.getElementsByTagName(`media:content`)[0].getAttribute(`url`)
     );
-  else if (xhr.getElementsByTagName("figure").length > 0)
+  else if (xhr.getElementsByTagName(`figure`).length > 0)
     src = String(
       xhr
-        .getElementsByTagName("figure")
+        .getElementsByTagName(`figure`)
         .childNodes[0].nodeValue.match(
           /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
         )
     );
-  else if (xhr.getElementsByTagName("url").length > 0)
+  else if (xhr.getElementsByTagName(`url`).length > 0)
     src = String(
       xhr
-        .getElementsByTagName("url")
+        .getElementsByTagName(`url`)
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0]
     );
   else src = null;
@@ -223,22 +223,22 @@ var xmlImageSource = function (xhr) {
 
 var xmlTimeStampParsing = function (channel, dateTime) {
   let parse = [];
-  if (channel == "entry") {
-    let re = dateTime.getElementsByTagName("link")[0].getAttribute("href");
+  if (channel == `entry`) {
+    let re = dateTime.getElementsByTagName(`link`)[0].getAttribute(`href`);
     let dst = dateTime
-      .getElementsByTagName("updated")[0]
+      .getElementsByTagName(`updated`)[0]
       .childNodes[0].nodeValue.zulu();
     let since = new Date(
-      dateTime.getElementsByTagName("updated")[0].childNodes[0].nodeValue
+      dateTime.getElementsByTagName(`updated`)[0].childNodes[0].nodeValue
     ).getTime();
     let gen = dateTime
-      .getElementsByTagName("updated")[0]
+      .getElementsByTagName(`updated`)[0]
       .childNodes[0].nodeValue.toLocaleString();
     gen = parseInt(
       gen
         .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
         .toString()
-        .replace(/\:/g, "")
+        .replace(/\:/g, ``)
     ).toString(36);
     parse.push({
       since: since,
@@ -247,29 +247,29 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       externalURI: re.trim(),
     });
   } else {
-    if (dateTime.getElementsByTagName("datetime").length > 0) {
-      let re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
+    if (dateTime.getElementsByTagName(`datetime`).length > 0) {
+      let re = dateTime.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
       let ts = parseInt(
-        dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
       );
       let ts_ms = ts * 1000;
       let date = new Date(ts_ms);
       let year = date.getFullYear();
-      let mon = ("0" + (date.getMonth() + 1)).slice(-2);
-      let min = ("0" + date.getMinutes()).slice(-2);
-      let sec = ("0" + date.getSeconds()).slice(-2);
-      let hour = ("0" + date.getHours()).slice(-2);
-      date = ("0" + date.getDate()).slice(-2);
+      let mon = (`0` + (date.getMonth() + 1)).slice(-2);
+      let min = (`0` + date.getMinutes()).slice(-2);
+      let sec = (`0` + date.getSeconds()).slice(-2);
+      let hour = (`0` + date.getHours()).slice(-2);
+      date = (`0` + date.getDate()).slice(-2);
       let def =
-        year + "-" + mon + "-" + date + " " + hour + ":" + min + ":" + sec;
+         `${year}-${mon}-${date} ${hour}:${min}:${sec}`;
       let dst = def.zulu();
       let since = new Date(
         parseInt(
-          dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
+          dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
         )
       );
       let gen = parseInt(
-        dateTime.getElementsByTagName("datetime")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
       ).toString(36);
       parse.push({
         since: since,
@@ -277,22 +277,22 @@ var xmlTimeStampParsing = function (channel, dateTime) {
         base36: gen,
         externalURI: re.trim(),
       });
-    } else if (dateTime.getElementsByTagName("pubDate").length > 0) {
-      let re = dateTime.getElementsByTagName("link")[0].childNodes[0].nodeValue;
+    } else if (dateTime.getElementsByTagName(`pubDate`).length > 0) {
+      let re = dateTime.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
       let dst = dateTime
-        .getElementsByTagName("pubDate")[0]
+        .getElementsByTagName(`pubDate`)[0]
         .childNodes[0].nodeValue.zulu();
       let since = new Date(
-        dateTime.getElementsByTagName("pubDate")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
       );
       let gen = new Date(
-        dateTime.getElementsByTagName("pubDate")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
       ).toLocaleString();
       gen = parseInt(
         gen
           .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
           .toString()
-          .replace(/\:/g, "")
+          .replace(/\:/g, ``)
       ).toString(36);
       parse.push({
         since: since,
@@ -300,17 +300,17 @@ var xmlTimeStampParsing = function (channel, dateTime) {
         base36: gen,
         externalURI: re.trim(),
       });
-    } else if (dateTime.getElementsByTagName("dc:date").length > 0) {
-      let re = dateTime.getElementsByTagName("dc:date")[0].childNodes[0]
+    } else if (dateTime.getElementsByTagName(`dc:date`).length > 0) {
+      let re = dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0]
         .nodeValue;
       let dst = dateTime
-        .getElementsByTagName("dc:date")[0]
+        .getElementsByTagName(`dc:date`)[0]
         .childNodes[0].nodeValue.zulu();
       let since = new Date(
-        dateTime.getElementsByTagName("dc:date")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
       );
       let gen = new Date(
-        dateTime.getElementsByTagName("dc:date")[0].childNodes[0].nodeValue
+        dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
       ).getTime();
       gen = gen.toString(36);
       parse.push({
@@ -319,7 +319,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
         base36: gen,
         externalURI: re.trim(),
       });
-    } else parse.push("");
+    } else parse.push(``);
   }
   return parse[0];
 };
@@ -332,20 +332,20 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     if (imageDuplicate.includes(src)) {
       if (
         document.body.contains(
-          document.querySelector("[aria-item='" + pubIndex + "'] .pending")
+          document.querySelector(`[aria-item='${pubIndex}'] .pending`)
         )
       )
         document
-          .querySelector("[aria-item='" + pubIndex + "'] .pending")
+          .querySelector(`[aria-item='${pubIndex}'] .pending`)
           .remove();
       if (
         empty == true ||
         (onlyImages == true &&
-          document.querySelector("[aria-item='" + pubIndex + "']"))
+          document.querySelector(`[aria-item='${pubIndex}']`))
       )
         document
-          .querySelector("[aria-item='" + pubIndex + "']")
-          .closest(".item")
+          .querySelector(`[aria-item='${pubIndex}']`)
+          .closest(`.item`)
           .remove();
       return false;
     }
@@ -356,163 +356,123 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       !src.match(/comments|feeds|fsdn|undefined/g)
     ) {
       var newImg = new Image();
-      newImg.setAttribute("src", src);
+      newImg.setAttribute(`src`, src);
       newImg.onerror = function () {
         if (
           document.body.contains(
             document.querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .pending"
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
             )
           )
         )
           document
             .querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .pending"
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
             )
             .remove();
         if (
           document.body.contains(
             document.querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .image"
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
             )
           )
         )
           document
             .querySelector(
-              "[aria-object='" +
-                menuObject +
-                "'][aria-item='" +
-                pubIndex +
-                "'] .image"
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
             )
             .remove();
         document.querySelector(
-          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
-        ).style.paddingBottom = "30px";
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
             if (
               document.body.contains(
                 document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .img"
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                 )
               )
             ) {
               let itemImage = document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .img"
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
               );
               let itemPending = document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .pending"
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
               );
               let attribute = document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .attribute"
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
               );
               let copyPicture = document.querySelector(
-                "[aria-object='" +
-                  menuObject +
-                  "'][aria-item='" +
-                  pubIndex +
-                  "'] .picture"
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
               );
               let copyPost = document.querySelector(
-                "[aria-item='" + pubIndex + "'] .post"
+                `[aria-item='${pubIndex}'] .post`
               );
-              itemImage.setAttribute("src", src);
+              itemImage.setAttribute(`src`, src);
               if (_main.clientWidth <= 425) {
                 if (
                   newImg.naturalHeight > k &&
                   newImg.naturalHeight >= newImg.naturalWidth * 2
                 ) {
-                  itemImage.closest(".item").querySelector(".pending").remove();
-                  itemImage.closest(".image").remove();
+                  itemImage.closest(`.item`).querySelector(`.pending`).remove();
+                  itemImage.closest(`.image`).remove();
                 } else if (newImg.naturalWidth < maximum) {
-                  itemImage.style.width = "180px";
-                  itemImage.style.margin = "12px";
-                  itemImage.closest(".classic").style.display = "flex";
-                  itemImage.closest(".classic").style.alignItems = "center";
-                  itemPending.style.width = "135px";
-                  itemImage.style.marginBottom = "30px";
-                  copyPost.style.display = "none";
-                  copyPicture.style.display = "none";
-                  attribute.style.width = "37px";
+                  itemImage.style.width = `180px`;
+                  itemImage.style.margin = `12px`;
+                  itemImage.closest(`.classic`).style.display = `flex`;
+                  itemImage.closest(`.classic`).style.alignItems = `center`;
+                  itemPending.style.width = `135px`;
+                  itemImage.style.marginBottom = `30px`;
+                  copyPost.style.display = `none`;
+                  copyPicture.style.display = `none`;
+                  attribute.style.width = `37px`;
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                  itemImage.style.width = "30vh";
-                  itemImage.classList.add("default");
-                  itemPending.style.height = "14em";
+                  itemImage.style.width = `30vh`;
+                  itemImage.classList.add(`default`);
+                  itemPending.style.height = `14em`;
                 } else if (
                   newImg.naturalWidth >= newImg.naturalHeight ||
                   newImg.naturalHeight >= newImg.naturalWidth
                 ) {
-                  itemPending.style.height = "14em";
-                  itemImage.classList.add("default");
-                  itemImage.style.width = "100%";
+                  itemPending.style.height = `14em`;
+                  itemImage.classList.add(`default`);
+                  itemImage.style.width = `100%`;
                 }
               } else {
                 if (
                   newImg.naturalHeight > k &&
                   newImg.naturalHeight >= newImg.naturalWidth * 2
                 ) {
-                  itemImage.closest(".item").querySelector(".pending").remove();
-                  itemImage.closest(".image").remove();
+                  itemImage.closest(`.item`).querySelector(`.pending`).remove();
+                  itemImage.closest(`.image`).remove();
                 } else if (newImg.naturalWidth < maximum) {
-                  itemImage.style.width = "180px";
-                  itemImage.closest(".image").style.margin = "12px";
-                  itemImage.closest(".classic").style.display = "flex";
-                  itemImage.closest(".classic").style.alignItems = "center";
-                  itemImage.style.marginBottom = "30px";
-                  copyPost.style.display = "none";
-                  copyPicture.style.display = "none";
-                  attribute.style.width = "37px";
-                  itemPending.style.width = "135px";
+                  itemImage.style.width = `180px`;
+                  itemImage.closest(`.image`).style.margin = `12px`;
+                  itemImage.closest(`.classic`).style.display = `flex`;
+                  itemImage.closest(`.classic`).style.alignItems = `center`;
+                  itemImage.style.marginBottom = `30px`;
+                  copyPost.style.display = `none`;
+                  copyPicture.style.display = `none`;
+                  attribute.style.width = `37px`;
+                  itemPending.style.width = `135px`;
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                  itemImage.style.width = "100%";
-                  itemImage.classList.add("default");
-                  itemPending.style.height = "14em";
+                  itemImage.style.width = `100%`;
+                  itemImage.classList.add(`default`);
+                  itemPending.style.height = `14em`;
                 } else if (
                   newImg.naturalWidth >= newImg.naturalHeight ||
                   newImg.naturalHeight >= newImg.naturalWidth
                 ) {
-                  itemImage.style.width = "100%";
-                  itemImage.classList.add("default");
-                  itemPending.style.height = "14em";
+                  itemImage.style.width = `100%`;
+                  itemImage.classList.add(`default`);
+                  itemPending.style.height = `14em`;
                 }
               }
               if (
                 document.body.contains(
                   document.querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
-                      "'] .img"
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                   )
                 )
                 && safeSearch == false ||
@@ -521,30 +481,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 if (
                   document.body.contains(
                     document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                   )
                 )
                   document
                     .querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                     .remove();
                 document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .img"
-                ).classList.add("hidden");
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                ).classList.add(`hidden`);
               }
             }
           };
@@ -569,123 +517,79 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 if (
                   document.body.contains(
                     document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                   )
                 )
                   document
                     .querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                     .remove();
                 document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .filterBlur"
-                ).style.cssText = "backdrop-filter: blur(75px)";
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                ).style.cssText = `backdrop-filter: blur(75px)`;
                 document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .filterBlur"
-                ).classList.add("leave");
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                ).classList.add(`leave`);
                 document.querySelector(
-                  "[aria-object='" +
-                    menuObject +
-                    "'][aria-item='" +
-                    pubIndex +
-                    "'] .img"
-                ).style.display = "flex";
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                ).style.display = `flex`;
               } else {
                 if (
                   document.body.contains(
                     document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                   )
                 )
                   document
                     .querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .pending"
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                     )
                     .remove();
                     document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .img"
-                    ).style.display = "flex";
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    ).style.display = `flex`;
               }
             })
           });
     } else if (
       document.body.contains(
         document.querySelector(
-          "[aria-object='" +
-            menuObject +
-            "'][aria-item='" +
-            pubIndex +
-            "'] .pending"
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
         )
       )
     ) {
       document
         .querySelector(
-          "[aria-object='" + menuObject + "'][aria-item='" + pubIndex + "']"
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         )
-        .closest(".item")
-        .querySelector(".pending")
+        .closest(`.item`)
+        .querySelector(`.pending`)
         .remove();
       document.querySelector(
-        "[aria-object='" +
-          menuObject +
-          "'][aria-item='" +
-          pubIndex +
-          "'] .attribute"
-      ).style.height = "40px";
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+      ).style.height = `40px`;
       document.querySelector(
-        "[aria-object='" +
-          menuObject +
-          "'][aria-item='" +
-          pubIndex +
-          "'] .picture"
-      ).style.display = "none";
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+      ).style.display = `none`;
       document.querySelector(
-        "[aria-item='" + pubIndex + "'][aria-item='" + pubIndex + "'] .post"
-      ).style.display = "none";
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .post`
+      ).style.display = `none`;
     }
   });
 };
 
 var xmlTitleParsing = function (xhr) {
-  if (xhr.getElementsByTagName("title")[0].childNodes[1])
-    var title = xhr.getElementsByTagName("title")[0].childNodes[1].nodeValue;
-  else var title = xhr.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+  if (xhr.getElementsByTagName(`title`)[0].childNodes[1])
+    var title = xhr.getElementsByTagName(`title`)[0].childNodes[1].nodeValue;
+  else var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
   if (
     !title ||
-    (title.length == 7 && xhr.getElementsByTagName("title")[0].childNodes[0])
+    (title.length == 7 && xhr.getElementsByTagName(`title`)[0].childNodes[0])
   )
-    var title = xhr.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
 
   return escape(title);
 };
@@ -696,29 +600,29 @@ var xmlRequestParsing = function (search, string, index) {
   id = index;
   let pub = [];
   imageDuplicate = [];
-  if (search == "search") {
-    uri = cors + menu[index].uri + string + "&format=RSS";
+  if (search == `search`) {
+    uri = `${cors}${menu[index].uri}${string}&format=RSS`;
     category = category;
   } else {
-    uri = cors + menu[index].uri;
+    uri = `${cors}${menu[index].uri}`;
     category = menu[index].category;
   }
 
   document.title = menu[index].id.space();
-  _visit.style.display = "none";
+  _visit.style.display = `none`;
   if (first == true)
-    _check.style.visibility = "visible";
+    _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState == 4) {
-      // 4 = "loaded"
+      // 4 = `loaded`
       if (httpRequest.status == 200) {
         // 200 = OK
         let xhr = this.responseXML;
 
-        if (xhr.getElementsByTagName("entry").length > 0) var channel = "entry";
-        else var channel = "item";
+        if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
+        else var channel = `item`;
 
         var quit = 20;
 
@@ -730,7 +634,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           if (data.childNodes.length > 1) var title = xmlTitleParsing(data);
 
-          if (title == postDuplicate || title == "") continue;
+          if (title == postDuplicate || title == ``) continue;
 
           var postDuplicate = title;
 
@@ -739,7 +643,7 @@ var xmlRequestParsing = function (search, string, index) {
           parse = xmlTimeStampParsing(channel, data);
 
           let share = menu[index].hash;
-          share = window.location.origin + "/?" + share + parse.base36;
+          share = `${window.location.origin}/?${share}${parse.base36}`;
 
           let src = xmlImageSource(data);
 
@@ -750,23 +654,22 @@ var xmlRequestParsing = function (search, string, index) {
           );
 
           if (title.length > titleTruncate)
-            var more = "<div class='more'>more</div>";
-          else var more = "";
+            var more = `<div class='more'>more</div>`;
+          else var more = ``;
 
-          if (search == "search")
-            var cat = "<div class='external'>" + parse.externalURI + "</div>";
+          if (search == `search`)
+            var cat = `<div class='external'>${parse.externalURI}</div>`;
 
           if (src && src.match(/youtube\.com/g)) {
-            if (data.getElementsByTagName("media:statistics").length > 0)
+            if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
-                "<div class='ago views'>" +
-                "  views " +
+                `<div class='ago views'> views` +
                 data
-                  .getElementsByTagName("media:statistics")[0]
-                  .getAttribute("views")
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
-                "</div>";
-            else var views = "";
+                  .getElementsByTagName(`media:statistics`)[0]
+                  .getAttribute(`views`)
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, `,`) +
+                `</div>`;
+            else var views = ``;
 
             var inline = [];
             inline.push({
@@ -786,7 +689,7 @@ var xmlRequestParsing = function (search, string, index) {
             });
             html = youtubeHTMLBuild(inline[0]);
           } else {
-            if (!cat) cat = "";
+            if (!cat) cat = ``;
             var inline = [];
             inline.push({
               dst: parse.dst,
@@ -859,7 +762,7 @@ var xmlRequestParsing = function (search, string, index) {
         }
         for (i = 0; i < pub.length; i++) {
           if (i != local)
-            document.querySelector(".channel").append(pub[i].post);
+            document.querySelector(`.channel`).append(pub[i].post);
           if (menu[index].id.match(/Imgur/g))
             xmlImageAttributes(true, index, pub[i].element, pub[i].src);
           else if (!menu[index].id.match(/Youtube/g))
@@ -869,41 +772,41 @@ var xmlRequestParsing = function (search, string, index) {
         let posts = pub.length - 1;
         let recent = pub[0].dst;
         if (reader == false)
-          document.querySelector(".channel").append(footerBuild());
+          document.querySelector(`.channel`).append(footerBuild());
         if (first == false) {
-          var status = document.querySelector(".status");
+          var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
-          var suggestions = document.querySelector(".suggestions");
+          var suggestions = document.querySelector(`.suggestions`);
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
           stop = true;
           _main.scrollTo({
-            top: document.querySelector("[aria-object='" + index + "']")
+            top: document.querySelector(`[aria-object='` + index + `']`)
               .offsetTop,
-            behavior: "smooth",
+            behavior: `smooth`,
           });
         }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
-        _check.style.visibility = "hidden";
-        _main.setAttribute("tabindex", -1);
+        _check.style.visibility = `hidden`;
+        _main.setAttribute(`tabindex`, -1);
         _main.focus();
         unloading();
       } else {
         let main = _main;
         _main.append(stageBuild());
         document
-          .querySelector(".channel")
-          .append("This site could not be reached.");
+          .querySelector(`.channel`)
+          .append(`This site could not be reached.`);
         unloading();
       }
     }
   };
-  httpRequest.open("GET", uri);
-  httpRequest.setRequestHeader("Content-Type", "text/html; charset=utf-8");
-  httpRequest.setRequestHeader("Accept", "text/html; charset=utf-8");
-  httpRequest.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  httpRequest.open(`GET`, uri);
+  httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
+  httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
+  httpRequest.setRequestHeader(`X-Requested-With`, `XMLHttpRequest`);
   httpRequest.send();
 };

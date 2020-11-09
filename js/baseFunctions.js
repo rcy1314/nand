@@ -1,19 +1,19 @@
 var notifyOption = function (displayContent) {
-  let notification = _sidebar.querySelector(".notify");
-  if (onScreen == true) var pos = "absolute";
-  else var pos = "fixed";
+  let notification = _sidebar.querySelector(`.notify`);
+  if (onScreen == true) var pos = `absolute`;
+  else var pos = `fixed`;
   notification.innerHTML = displayContent;
-  notification.style.display = "block";
+  notification.style.display = `block`;
   notification.style.position = pos;
   setTimeout(function () {
     let Elem = notification;
     Elem.animate(
       {
-        right: ["0px", "280px"],
+        right: [`0px`, `280px`],
       },
       {
         duration: 750, // number in ms [this would be equiv of your speed].
-        easing: "linear",
+        easing: `linear`,
         iterations: 1, // infinity or a number.
         // fill: ''
       }
@@ -21,96 +21,96 @@ var notifyOption = function (displayContent) {
   }, 750);
 
   setTimeout(function () {
-    notification.style.display = "none";
+    notification.style.display = `none`;
   }, 1500);
 };
 
 var displayExpand = function (toggleOption) {
-  if (document.body.contains(document.querySelector("#xml")))
-    document.querySelector("#xml").remove();
+  if (document.body.contains(document.querySelector(`#xml`)))
+    document.querySelector(`#xml`).remove();
   if (toggleOption == true) {
-    groupType = "list";
-    if (document.body.contains(document.getElementById("group"))) {
+    groupType = `list`;
+    if (document.body.contains(document.getElementById(`group`))) {
       _main
-        .querySelectorAll(".hash")
-        .forEach((a) => (a.style.display = "block"));
+        .querySelectorAll(`.hash`)
+        .forEach((a) => (a.style.display = `block`));
       _main
-        .querySelectorAll(".media")
-        .forEach((a) => (a.style.display = "block"));
+        .querySelectorAll(`.media`)
+        .forEach((a) => (a.style.display = `block`));
       _main
-        .querySelectorAll(".description")
-        .forEach((a) => (a.style.display = "block"));
+        .querySelectorAll(`.description`)
+        .forEach((a) => (a.style.display = `block`));
       _main
-        .querySelectorAll(".populate")
-        .forEach((a) => a.classList.add("expand"));
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.add(`expand`));
       _main
-        .querySelectorAll(".populate")
-        .forEach((a) => (a.style.alignItems = "center"));
+        .querySelectorAll(`.populate`)
+        .forEach((a) => (a.style.alignItems = `center`));
       _main
-        .querySelectorAll(".select")
-        .forEach((a) => (a.style.flexWrap = "nowrap"));
+        .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.flexWrap = `nowrap`));
       _main
-        .querySelectorAll(".select")
-        .forEach((a) => (a.style.display = "flex"));
+        .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.display = `flex`));
       _main
-        .querySelectorAll(".populate")
-        .forEach((a) => (a.style.backgroundColor = "var(--bg-color-primary)"));
-      if (document.body.contains(document.querySelector(".air")))
-        document.querySelector(".air").style.display = "block";
-      if (document.body.contains(document.querySelector(".result")))
-        document.querySelector(".result").style.display = "block";
+        .querySelectorAll(`.populate`)
+        .forEach((a) => (a.style.backgroundColor = `var(--bg-color-primary)`));
+      if (document.body.contains(document.querySelector(`.air`)))
+        document.querySelector(`.air`).style.display = `block`;
+      if (document.body.contains(document.querySelector(`.result`)))
+        document.querySelector(`.result`).style.display = `block`;
     }
   } else if (toggleOption == false) {
-    groupType = "blocks";
-    if (document.body.contains(document.getElementById("group"))) {
+    groupType = `blocks`;
+    if (document.body.contains(document.getElementById(`group`))) {
       _main
-        .querySelectorAll(".hash")
-        .forEach((a) => (a.style.display = "none"));
+        .querySelectorAll(`.hash`)
+        .forEach((a) => (a.style.display = `none`));
       _main
-        .querySelectorAll(".media")
-        .forEach((a) => (a.style.display = "none"));
+        .querySelectorAll(`.media`)
+        .forEach((a) => (a.style.display = `none`));
       _main
-        .querySelectorAll(".description")
-        .forEach((a) => (a.style.display = "none"));
+        .querySelectorAll(`.description`)
+        .forEach((a) => (a.style.display = `none`));
       _main
-        .querySelectorAll(".populate")
-        .forEach((a) => a.classList.remove("expand"));
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.remove(`expand`));
       _main
-        .querySelectorAll(".select")
-        .forEach((a) => (a.style.flexWrap = "wrap"));
+        .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.flexWrap = `wrap`));
       _main
-        .querySelectorAll(".select")
-        .forEach((a) => (a.style.display = "flex"));
+        .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.display = `flex`));
       _main
-        .querySelectorAll(".populate")
+        .querySelectorAll(`.populate`)
         .forEach(
-          (a) => (a.style.backgroundColor = "var(--bg-color-secondary)")
+          (a) => (a.style.backgroundColor = `var(--bg-color-secondary)`)
         );
-      if (document.body.contains(document.querySelector(".air")))
-        document.querySelector(".air").style.display = "inline-flex";
-      if (document.body.contains(document.querySelector(".result")))
-        document.querySelector(".result").style.display = "inline-flex";
+      if (document.body.contains(document.querySelector(`.air`)))
+        document.querySelector(`.air`).style.display = `inline-flex`;
+      if (document.body.contains(document.querySelector(`.result`)))
+        document.querySelector(`.result`).style.display = `inline-flex`;
     }
   }
   unloading();
 };
 
 var sideBarDisplay = function (toggleOption) {
-  let content = document.querySelector("#content");
-  if (!document.body.contains(document.querySelector(".cat"))) {
+  let content = document.querySelector(`#content`);
+  if (!document.body.contains(document.querySelector(`.cat`))) {
     for (i = 0; i <= translations.length - 1; i++) {
-      let cat = document.createElement("div");
-      cat.classList.add("cat", translations[i]);
-      cat.setAttribute("aria-item", translations[i]);
+      let cat = document.createElement(`div`);
+      cat.classList.add(`cat`, translations[i]);
+      cat.setAttribute(`aria-item`, translations[i]);
       cat.innerHTML = translations[i];
       content.append(cat);
       content.append(sideBarCategoryBuild(translations[i]));
     }
     content.append(sideBarThemeListing());
-    let list = document.querySelector(".themes");
+    let list = document.querySelector(`.themes`);
     for (i = 0; i <= themes.length - 1; i++) {
-      let visual = document.createElement("div");
-      visual.classList.add("theme", themes[i].class);
+      let visual = document.createElement(`div`);
+      visual.classList.add(`theme`, themes[i].class);
       visual.innerHTML = themes[i].name;
       list.append(visual);
       list.append(sideBarThemeBuild(themes[i].icon));
@@ -119,90 +119,90 @@ var sideBarDisplay = function (toggleOption) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)
       );
-      let fontawesome = document.createElement("div");
-      fontawesome.classList.add("fa", selections[i].icon);
+      let fontawesome = document.createElement(`div`);
+      fontawesome.classList.add(`fa`, selections[i].icon);
       content.append(fontawesome);
     }
     content.append(basicFormBuild());
   }
   if (toggleOption == true) {
-    _sidebar.style.position = "fixed";
+    _sidebar.style.position = `fixed`;
     _sidebar.animate(
       {
-        width: ["0px", "240px"],
+        width: [`0px`, `240px`],
       },
       {
         duration: 300, // number in ms [this would be equiv of your speed].
-        easing: "linear",
+        easing: `linear`,
         iterations: 1, // infinity or a number.
         // fill: ''
       }
     );
     _hide.animate(
       {
-        left: ["0px", "240px"],
+        left: [`0px`, `240px`],
       },
       {
         duration: 300, // number in ms [this would be equiv of your speed].
-        easing: "linear",
+        easing: `linear`,
         iterations: 1, // infinity or a number.
         // fill: ''
       }
     );
-    _hide.style.left = "240px";
-    _sidebar.style.display = "block";
-    _content.style.display = "block";
-    _sidebar.style.left = "0px";
+    _hide.style.left = `240px`;
+    _sidebar.style.display = `block`;
+    _content.style.display = `block`;
+    _sidebar.style.left = `0px`;
     if (_main.clientWidth >= 769) {
-      _top.style.width = "calc(100% - 256px)";
-      _main.style.width = "calc(100% - 240px)";
-      _main.style.left = "240px";
-      _sidebar.style.left = "0";
+      _top.style.width = `calc(100% - 256px)`;
+      _main.style.width = `calc(100% - 240px)`;
+      _main.style.left = `240px`;
+      _sidebar.style.left = `0`;
     }
     setTimeout(function () {
       document
-        .querySelectorAll("#dots .fill")
-        .forEach((a) => (a.style.marginLeft = "150px"));
-      document.querySelector(".sideFilter").style.display = "block";
-      _progress.style.left = "240px";
-      document.querySelector("#basic").style.display = "block";
+        .querySelectorAll(`#dots .fill`)
+        .forEach((a) => (a.style.marginLeft = `150px`));
+      document.querySelector(`.sideFilter`).style.display = `block`;
+      _progress.style.left = `240px`;
+      document.querySelector(`#basic`).style.display = `block`;
     }, 300);
   }
   if (toggleOption == false || onScreen == false) {
     document
-      .querySelectorAll("#dots .fill")
-      .forEach((a) => (a.style.marginLeft = "0"));
-    _top.style.width = "calc(100% - 16px)";
-    document.querySelector(".sideFilter").style.display = "none";
-    _sidebar.style.left = "-242px";
-    _progress.style.left = "0";
-    _main.style.width = "100%";
-    _main.style.left = "0";
+      .querySelectorAll(`#dots .fill`)
+      .forEach((a) => (a.style.marginLeft = `0`));
+    _top.style.width = `calc(100% - 16px)`;
+    document.querySelector(`.sideFilter`).style.display = `none`;
+    _sidebar.style.left = `-242px`;
+    _progress.style.left = `0`;
+    _main.style.width = `100%`;
+    _main.style.left = `0`;
   }
 };
 
 var topMenuBarDisplay = function (toggleOption) {
-    if (toggleOption == true) _top.style.display = "block";
-    else if (toggleOption == false) _top.style.display = "none";
+    if (toggleOption == true) _top.style.display = `block`;
+    else if (toggleOption == false) _top.style.display = `none`;
 };
 
 var quickFeedDisplay = function (toggleOption) {
   if (toggleOption == true) {
-    _quick.classList.remove("invisible");
-    _front.classList.add("toggleHidden");
-    _front.classList.remove("toggle");
-    _quick.classList.add("visible");
-    _link.querySelector(".fa-angle-up").classList.remove("rotateReverse");
-    _link.querySelector(".fa-angle-up").classList.add("rotate");
-    _show.style.visibility = "hidden";
+    _quick.classList.remove(`invisible`);
+    _front.classList.add(`toggleHidden`);
+    _front.classList.remove(`toggle`);
+    _quick.classList.add(`visible`);
+    _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
+    _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
+    _show.style.visibility = `hidden`;
   } else if (toggleOption == false) {
-    _quick.classList.remove("visible");
-    _quick.classList.add("invisible");
-    _front.classList.remove("toggleHidden");
-    _front.classList.add("toggle");
-    _link.querySelector(".fa-angle-up").classList.add("rotateReverse");
-    _link.querySelector(".fa-angle-up").classList.remove("rotate");
-    _show.style.visibility = "visible";
+    _quick.classList.remove(`visible`);
+    _quick.classList.add(`invisible`);
+    _front.classList.remove(`toggleHidden`);
+    _front.classList.add(`toggle`);
+    _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
+    _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
+    _show.style.visibility = `visible`;
   }
 };
 
@@ -214,10 +214,10 @@ var guideDisplay = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _top.style.display = "hide";
+  _top.style.display = `hide`;
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0].src);
-  _guide.style.display = "flex";
+  _guide.style.display = `flex`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
@@ -228,9 +228,9 @@ var guideDisplayYoutube = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _top.style.display = "hide";
+  _top.style.display = `hide`;
   _guide.append(guideBuildYoutube(pubArray[0]));
-  _guide.style.display = "flex";
+  _guide.style.display = `flex`;
 };
 
 var contentStatusDisplay = function (
@@ -239,8 +239,8 @@ var contentStatusDisplay = function (
   oldestPost,
   postsCount
 ) {
-  if (document.body.contains(document.querySelector("#xml .status"))) {
-    var status = document.querySelector("#xml .status");
+  if (document.body.contains(document.querySelector(`#xml .status`))) {
+    var status = document.querySelector(`#xml .status`);
     status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
   }
 };
@@ -277,10 +277,10 @@ var quickFeedAsset = function (feedAssets) {
 
 var inputListingIndex = function (inputFilter, listingWrapper) {
   var suggest = [];
-  var listing = document.querySelector(listingWrapper + " .listing");
+  var listing = document.querySelector(listingWrapper + ` .listing`);
   while (listing.lastChild) listing.removeChild(listing.lastChild);
-  document.querySelector(listingWrapper).style.display = "block";
-  if (inputFilter != "")
+  document.querySelector(listingWrapper).style.display = `block`;
+  if (inputFilter != ``)
     for (var i = menu.length - 1; i >= 1; i--) {
       if (menu[i].description.toLowerCase().match(inputFilter)) {
         if (suggest.length >= suggestionBuffer) return false;
@@ -325,11 +325,11 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 
 var progressBackDrop = function (done, percent) {
   if (done == true) {
-    _progress.style.transition = "width .15s ease-in-out";
-    _progress.style.transitionDelay = "none";
-    _progress.style.width = percent + "%";
-    if (document.body.contains(document.getElementById("xml"))){
-      document.querySelector("#xml").style.display = "block";
+    _progress.style.transition = `width .15s ease-in-out`;
+    _progress.style.transitionDelay = `none`;
+    _progress.style.width = `${percent}%`;
+    if (document.body.contains(document.getElementById(`xml`))){
+      document.querySelector(`#xml`).style.display = `block`;
       (function() {
         var elements;
         var windowHeight;
@@ -359,73 +359,73 @@ var progressBackDrop = function (done, percent) {
         checkPosition();
       })();
       if (scrollIntoView == true && reader == false){
-        document.querySelector("#xml").style.paddingTop =
-        document.querySelector("#xml").clientHeight;
+        document.querySelector(`#xml`).style.paddingTop =
+        document.querySelector(`#xml`).clientHeight;
         setTimeout(function() {
-          let Elem = document.querySelector("#xml");
+          let Elem = document.querySelector(`#xml`);
           Elem.animate(
             {
               paddingTop: [
-                document.querySelector("#xml").clientHeight + "px",
-                "0"
+                `${document.querySelector(`#xml`).clientHeight}px`,
+                `0`
               ],
             },
             {
               duration: 500, // number in ms [this would be equiv of your speed].
-              easing: "ease-in-out",
+              easing: `ease-in-out`,
               iterations: 1, // infinity or a number.
               // fill: ''
             }
           );
         }, 500)
         setTimeout(function () {
-          document.querySelector("#xml").style.paddingTop = "0";
+          document.querySelector(`#xml`).style.paddingTop = `0`;
         }, 1000);
       }
-      _check.style.visibility = "hidden"
+      _check.style.visibility = `hidden`
       _main.scrollTop = '1'
     }
-    if (document.body.contains(document.getElementById("group"))){
-      document.querySelector("#group").style.display = "block";
+    if (document.body.contains(document.getElementById(`group`))){
+      document.querySelector(`#group`).style.display = `block`;
       if (scrollIntoView == true){
-        document.querySelector("#group").style.paddingTop =
-        document.querySelector("#group").clientHeight;
+        document.querySelector(`#group`).style.paddingTop =
+        document.querySelector(`#group`).clientHeight;
         setTimeout(function() {
-          let Elem = document.querySelector("#group");
+          let Elem = document.querySelector(`#group`);
           Elem.animate(
             {
               paddingTop: [
-                document.querySelector("#group").clientHeight + "px",
-                "0"
+                `${document.querySelector(`#group`).clientHeight}px`,
+                `0`
               ],
             },
             {
               duration: 750, // number in ms [this would be equiv of your speed].
-              easing: "ease-in-out",
+              easing: `ease-in-out`,
               iterations: 1, // infinity or a number.
               // fill: ''
             }
           );
         }, 750)
         setTimeout(function () {
-          document.querySelector("#group").style.paddingTop = "0";
-          _check.style.visibility = "hidden"
+          document.querySelector(`#group`).style.paddingTop = `0`;
+          _check.style.visibility = `hidden`
         }, 1500);
       }
     }
     if (onlyImages == false) {
-      if (document.body.contains(document.querySelector(".air")))
+      if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(
-          ".air"
+          `.air`
         ).clientHeight;
     } else if (onlyImages == true)
-      if (document.body.contains(document.querySelector(".result")))
+      if (document.body.contains(document.querySelector(`.result`)))
         _main.scrollTop = 0;
-    if (document.body.contains(document.querySelector("#xml .channel")))
+    if (document.body.contains(document.querySelector(`#xml .channel`)))
       if (reader == true && first == true) {
         if (
           _main.innerHeight >=
-          document.querySelector("#xml .channel").innerHeight
+          document.querySelector(`#xml .channel`).innerHeight
         )
           if (httpRequest.status == 200) {
             first = false;
@@ -433,22 +433,22 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
-      _progress.style.transitionDelay = "none";
-      _progress.style.transition = "none";
-      _progress.style.width = "0%";
+      _progress.style.transitionDelay = `none`;
+      _progress.style.transition = `none`;
+      _progress.style.width = `0%`;
     }, 250);
-    if (scrollIntoView == false) _check.style.visibility = "hidden"
+    if (scrollIntoView == false) _check.style.visibility = `hidden`
   }
 };
 
 var populateCategoryGroup = function (translation) {
-  if (scrollIntoView == true) _check.style.visibility = "visible"
-  if (!document.body.contains(document.querySelector("#group"))) groupBuild();
-  let result = document.querySelector(".result");
-  if (id && id != 0 && !location.href.match("\\?q=")) {
+  if (scrollIntoView == true) _check.style.visibility = `visible`
+  if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
+  let result = document.querySelector(`.result`);
+  if (id && id != 0 && !location.href.match(`\\?q=`)) {
     if (menu[id].media == true)
-      var media = "<div class='media' style='display:none'>Images</div>";
-    else var media = "<div class='blank'></div>";
+      var media = `<div class='media' style='display:none'>Images</div>`;
+    else var media = `<div class='blank'></div>`;
     result.append(
       categoryBuild(
         menu[id].id.match(/[^\/]+$/g),
@@ -462,8 +462,8 @@ var populateCategoryGroup = function (translation) {
   }
   for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
-      var media = "<div class='media' style='display:none'>Images</div>";
-    else var media = "<div class='blank'></div>";
+      var media = `<div class='media' style='display:none'>Images</div>`;
+    else var media = `<div class='blank'></div>`;
     if (onlyImages == true) {
       if (
         id != menu.indexOf(menu[i]) &&
@@ -501,24 +501,24 @@ var populateCategoryGroup = function (translation) {
   else if (onlyImages == true) {
     unloading();
   }
-  main.setAttribute("tabindex", -1);
+  main.setAttribute(`tabindex`, -1);
   main.focus();
 };
 
 var reverseCategoryGroup = function (translation) {
-  let group = document.querySelector("#group");
-  let result = document.querySelector(".result");
-  if (!document.body.contains(document.querySelector(".air"))) {
-    let div = document.createElement("div");
-    div.classList.add("air");
+  let group = document.querySelector(`#group`);
+  let result = document.querySelector(`.result`);
+  if (!document.body.contains(document.querySelector(`.air`))) {
+    let div = document.createElement(`div`);
+    div.classList.add(`air`);
     group.prepend(div);
   }
-  let air = document.querySelector(".air");
+  let air = document.querySelector(`.air`);
   for (let i = 1; i < menu.length - 1; i++) {
     if (category == menu[i].category) {
       if (menu[i].media == true)
-        var media = "<div class='media' style='display:none'>Images</div>";
-      else var media = "<div class='blank'></div>";
+        var media = `<div class='media' style='display:none'>Images</div>`;
+      else var media = `<div class='blank'></div>`;
       air.append(
         categoryBuild(
           menu[i].id.match(/[^\/]+$/g),
@@ -544,7 +544,7 @@ var filterInputResponse = function (
   var exact;
   var match;
   filter = [];
-  _visit.style.display = "none";
+  _visit.style.display = `none`;
   if (translations.includes(filterURI.toString().capitalize())) {
     populateCategoryGroup(filterURI.capitalize());
     category = filterURI.capitalize();
@@ -578,9 +578,9 @@ var filterInputResponse = function (
   }
   if (!match) match = filter[0];
   if (filter.length == 0)
-    xmlRequestParsing("search", filterURI.toLowerCase(), 0, null);
+    xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
   if (initPassthrough == false) {
-    if (!document.body.contains(document.querySelector("#group"))) groupBuild();
+    if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
@@ -593,10 +593,10 @@ var filterInputResponse = function (
 };
 
 var writeFilterResponse = function (menuObject) {
-  let result = document.querySelector(".result");
+  let result = document.querySelector(`.result`);
   if (menu[menuObject].media == true)
-    var media = "<div class='media' style='display:none'>Images</div>";
-  else var media = "<div class='blank'></div>";
+    var media = `<div class='media' style='display:none'>Images</div>`;
+  else var media = `<div class='blank'></div>`;
   result.append(
     categoryBuild(
       menu[menuObject].id.match(/[^\/]+$/g),
@@ -611,39 +611,39 @@ var writeFilterResponse = function (menuObject) {
 
 var guideImageAttributes = function (src) {
   let newImg = new Image();
-  newImg.setAttribute("src", src);
+  newImg.setAttribute(`src`, src);
   newImg.onload = function () {
-    _guide.querySelector(".img").setAttribute("src", src);
+    _guide.querySelector(`.img`).setAttribute(`src`, src);
     if (_main.clientWidth <= 425) {
-      _main.classList.add("guide");
-      _guide.querySelector(".sticky .header").style.position =
-        "absolute";
+      _main.classList.add(`guide`);
+      _guide.querySelector(`.sticky .header`).style.position =
+        `absolute`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(".img").style.maxHeight = "50vh";
-        _guide.querySelector(".img").style.maxWidth = "75vw";
-        _guide.querySelector(".wrap").style.display = "block";
-        _guide.querySelector(".wrap").style.height = "fit-content";
-        _guide.querySelector(".pub").style.height = "fit-content";
-        _guide.querySelector(".wrap").style.maxWidth = "100vw";
+        _guide.querySelector(`.img`).style.maxHeight = `50vh`;
+        _guide.querySelector(`.img`).style.maxWidth = `75vw`;
+        _guide.querySelector(`.wrap`).style.display = `block`;
+        _guide.querySelector(`.wrap`).style.height = `fit-content`;
+        _guide.querySelector(`.pub`).style.height = `fit-content`;
+        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(".img").style.maxWidth = "70vw";
-        _guide.querySelector(".img").style.maxHeight = "50vh";
-        _guide.querySelector(".wrap").style.maxWidth = "75vw";
+        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `50vh`;
+        _guide.querySelector(`.wrap`).style.maxWidth = `75vw`;
       }
-      _guide.querySelector(".ago").style.position = "relative";
-      _guide.querySelector(".sticky .header").style.top =
-        ~_guide.querySelector(".img").style.height - "60";
+      _guide.querySelector(`.ago`).style.position = `relative`;
+      _guide.querySelector(`.sticky .header`).style.top =
+        ~_guide.querySelector(`.img`).style.height - `60`;
     } else {
-      _main.classList.add("guide");
+      _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(".img").style.maxHeight = "80vh";
-        _guide.querySelector(".img").style.maxWidth = "70vw";
+        _guide.querySelector(`.img`).style.maxHeight = `80vh`;
+        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(".img").style.maxWidth = "40vw";
-        _guide.querySelector(".img").style.maxHeight = "70vh";
+        _guide.querySelector(`.img`).style.maxWidth = `40vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
       }
     }
-    _guide.querySelector(".sticky").style.display = "block";
-    _guide.style.display = "flex";
+    _guide.querySelector(`.sticky`).style.display = `block`;
+    _guide.style.display = `flex`;
   };
 };

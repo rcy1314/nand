@@ -1,18 +1,4 @@
 /*
-    op [boolean/integer]
-
-      Applications
-        contrast, visual, sideBarDisplay
-
-      Result
-        1 Opposite [Night]
-        0 Invert   [Day]
-
-*/
-
-let op = 0;
-
-/*
     topBar [boolean/integer]
 
       Applications
@@ -129,7 +115,7 @@ let scrollIntoView = false;
 
 */
 
-let loading = "percent";
+let loading = `percent`;
 
 /*
     titleTruncate [integer]
@@ -157,7 +143,7 @@ let titleTruncate = 125;
 
 */
 
-let category = "Social";
+let category = `Social`;
 
 /*
     onlyImages [boolean/integer]
@@ -222,7 +208,7 @@ let safeSearch = true;
 
 */
 
-let safeSearchScore = "0.4279794991016388"
+let safeSearchScore = `0.4279794991016388`
 
 
 /*
@@ -238,7 +224,7 @@ let safeSearchScore = "0.4279794991016388"
 
 let safeSearchCategory =
   [
-    "Social"
+    `Social`
   ]
 
 
@@ -256,7 +242,7 @@ let safeSearchCategory =
 
 */
 
-const cors = "https://acktic-github-io.herokuapp.com/";
+const cors = `https://acktic-github-io.herokuapp.com/`;
 
 /*
     api [string]
@@ -269,7 +255,7 @@ const cors = "https://acktic-github-io.herokuapp.com/";
 
 */
 
-const api = "https://acktic-github-io-api.herokuapp.com/?url=";
+const api = `https://acktic-github-io-api.herokuapp.com/?url=`;
 
 /*  translations [array]
 
@@ -285,13 +271,13 @@ const api = "https://acktic-github-io-api.herokuapp.com/?url=";
 */
 
 const translations = [
-  "Social",
-  "News",
-  "Entertainment",
-  "Sports",
-  "Technology",
-  "World",
-  "Youtube",
+  `Social`,
+  `News`,
+  `Entertainment`,
+  `Sports`,
+  `Technology`,
+  `World`,
+  `Youtube`,
 ];
 
 /* Feel free to edit the above. */
@@ -313,19 +299,19 @@ let guideOnScreen; //temporarly store onScreen for guide
 const selections = [
   //sideBar sel options
 
-  { name: "Home", class: "sideHome", icon: "fa-home" },
-  { name: "Reader", class: "Reader", icon: "fa-heart" },
-  { name: "List", class: "List", icon: "fa-th-large" },
-  { name: "Blocks", class: "Blocks", icon: "fa-list-ul" },
-  { name: "Percent", class: "Percent", icon: "fa-signal" },
-  { name: "Dots", class: "Dots", icon: "fa-ellipsis-h" },
-  { name: "Images", class: "toggleImages", icon: "fa-camera-retro" },
-  { name: "Top Bar", class: "TopBar", icon: "fa-edit" },
-  { name: "Show Option", class: "ShowOption", icon: "fa-puzzle-piece" },
-  { name: "Random", class: "Random", icon: "fa-chart-pie" },
-  { name: "Random Image", class: "RandomImages", icon: "fa-tablet-alt" },
-  { name: "Random in Category", class: "RandomCategory", icon: "fa-sliders-h" },
-  { name: "Repository", class: "Info", icon: "fa-exclamation-circle" },
+  { name: `Home`, class: `sideHome`, icon: `fa-home` },
+  { name: `Reader`, class: `Reader`, icon: `fa-heart` },
+  { name: `List`, class: `List`, icon: `fa-th-large` },
+  { name: `Blocks`, class: `Blocks`, icon: `fa-list-ul` },
+  { name: `Percent`, class: `Percent`, icon: `fa-signal` },
+  { name: `Dots`, class: `Dots`, icon: `fa-ellipsis-h` },
+  { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
+  { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
+  { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
+  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
+  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
+  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
+  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
-const repository = "https://github.com/acktic/acktic.github.io"
+const repository = `https://github.com/acktic/acktic.github.io`
