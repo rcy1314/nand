@@ -23,6 +23,10 @@ window.onload = function () {
     sideBarFirst = true;
     sideBarDisplay(onScreen);
   }
+  if (expandVisual == true)
+  document.querySelector(`.themes`).style.height =
+    `${(themes.length + 1) * 35}px`;
+
 };
 window.addEventListener(
   `resize`,

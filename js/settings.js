@@ -1,3 +1,6 @@
+// initial theme
+let set = `Day`;
+
 /*
     topBar [boolean/integer]
 
@@ -50,6 +53,19 @@ let onScreen = true;
 */
 
 let expand = true;
+
+/*
+    expandVisual [boolean/integer]
+
+      Applications
+        sidebar, onload
+
+      Result
+        Visual expanded
+
+*/
+
+let expandVisual = true;
 
 /*
     showOption [boolean/integer]
