@@ -92,6 +92,7 @@ document.addEventListener(
     ) {
       var input = document.createElement('input');
       input.type = 'file';
+      input.setAttribute("accept", "image/*")
 
       input.onchange = e => {
 
@@ -105,7 +106,7 @@ document.addEventListener(
          // here we tell the reader what to do when it's done reading...
          reader.onload = readerEvent => {
             var content = readerEvent.target.result; // this is the content!
-            document.querySelector('#container').style.backgroundImage = 'url('+ content +')';
+            document.querySelector('#main').style.backgroundImage = 'url('+ content +')';
             backgroundImage = content
          }
 
