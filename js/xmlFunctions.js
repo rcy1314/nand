@@ -414,96 +414,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 )
               )
             ) {
-              if (
-                safeSearch == true &&
-                safeSearchCategory.includes(category)
-              )
-              fetch(`${cors}${api}${src}`, {
-                method: 'GET',
-                headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                      'Access-Control-Allow-Origin': '*'
-                }
-              }).then((response) => {
-                response.json().then((jsonResponse) => {
-                  jsonResponseScore = jsonResponse.score
-                  console.log(jsonResponse.score)
-                  if (
-                    jsonResponse.score >= safeSearchScore
-                  ){
-                    if (
-                      document.body.contains(
-                        document.querySelector(
-                          "[aria-object='" +
-                            menuObject +
-                            "'][aria-item='" +
-                            pubIndex +
-                            "'] .pending"
-                        )
-                      )
-                    )
-                      document
-                        .querySelector(
-                          "[aria-object='" +
-                            menuObject +
-                            "'][aria-item='" +
-                            pubIndex +
-                            "'] .pending"
-                        )
-                        .remove();
-                    document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .filterBlur"
-                    ).style.cssText = "backdrop-filter: blur(75px)";
-                    document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .filterBlur"
-                    ).classList.add("leave");
-                    document.querySelector(
-                      "[aria-object='" +
-                        menuObject +
-                        "'][aria-item='" +
-                        pubIndex +
-                        "'] .img"
-                    ).style.display = "flex";
-                  } else {
-                    if (
-                      document.body.contains(
-                        document.querySelector(
-                          "[aria-object='" +
-                            menuObject +
-                            "'][aria-item='" +
-                            pubIndex +
-                            "'] .pending"
-                        )
-                      )
-                    )
-                      document
-                        .querySelector(
-                          "[aria-object='" +
-                            menuObject +
-                            "'][aria-item='" +
-                            pubIndex +
-                            "'] .pending"
-                        )
-                        .remove();
-                        document.querySelector(
-                          "[aria-object='" +
-                            menuObject +
-                            "'][aria-item='" +
-                            pubIndex +
-                            "'] .img"
-                        ).style.display = "flex";
-                  }
-                })
-              });
               let itemImage = document.querySelector(
                 "[aria-object='" +
                   menuObject +
@@ -548,11 +458,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.margin = "12px";
                   itemImage.closest(".classic").style.display = "flex";
                   itemImage.closest(".classic").style.alignItems = "center";
-                  itemPending.style.width = newImg.naturalWidth;
+                  itemPending.style.width = "135px";
                   itemImage.style.marginBottom = "30px";
                   copyPost.style.display = "none";
                   copyPicture.style.display = "none";
-                  attribute.style.height = "37px";
+                  attribute.style.width = "37px";
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
                   itemImage.style.width = "30vh";
                   itemImage.classList.add("default");
@@ -563,7 +473,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 ) {
                   itemPending.style.height = "14em";
                   itemImage.classList.add("default");
-                  itemPending.style.width = newImg.naturalWidth;
                   itemImage.style.width = "100%";
                 }
               } else {
@@ -581,8 +490,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.marginBottom = "30px";
                   copyPost.style.display = "none";
                   copyPicture.style.display = "none";
-                  attribute.style.height = "37px";
-                  itemPending.style.width = newImg.naturalWidth;
+                  attribute.style.width = "37px";
+                  itemPending.style.width = "135px";
                 } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
                   itemImage.style.width = "100%";
                   itemImage.classList.add("default");
@@ -629,13 +538,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         "'] .pending"
                     )
                     .remove();
-                  document.querySelector(
-                    "[aria-object='" +
-                      menuObject +
-                      "'][aria-item='" +
-                      pubIndex +
-                      "'] .img"
-                  ).style.display = "block";
                 document.querySelector(
                   "[aria-object='" +
                     menuObject +
@@ -646,6 +548,96 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               }
             }
           };
+          if (
+            safeSearch == true &&
+            safeSearchCategory.includes(category)
+          )
+          fetch(`${cors}${api}${src}`, {
+            method: 'GET',
+            headers: {
+              'Origin': '*',
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }).then((response) => {
+            response.json().then((jsonResponse) => {
+              jsonResponseScore = jsonResponse.score
+              console.log(jsonResponse.score)
+              if (
+                jsonResponse.score >= safeSearchScore
+              ){
+                if (
+                  document.body.contains(
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                  )
+                )
+                  document
+                    .querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                    .remove();
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .filterBlur"
+                ).style.cssText = "backdrop-filter: blur(75px)";
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .filterBlur"
+                ).classList.add("leave");
+                document.querySelector(
+                  "[aria-object='" +
+                    menuObject +
+                    "'][aria-item='" +
+                    pubIndex +
+                    "'] .img"
+                ).style.display = "flex";
+              } else {
+                if (
+                  document.body.contains(
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                  )
+                )
+                  document
+                    .querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .pending"
+                    )
+                    .remove();
+                    document.querySelector(
+                      "[aria-object='" +
+                        menuObject +
+                        "'][aria-item='" +
+                        pubIndex +
+                        "'] .img"
+                    ).style.display = "flex";
+              }
+            })
+          });
     } else if (
       document.body.contains(
         document.querySelector(

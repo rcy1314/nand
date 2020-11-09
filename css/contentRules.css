@@ -1003,8 +1003,8 @@ html body #container #main #xml .center .item .pending {
   align-items: center;
   position: relative;
   display: flex;
-  padding: 40px;
-  margin: 10px;
+  height: 180px;
+  margin: 5px;
 }
 
 html body #container #guide .sticky {

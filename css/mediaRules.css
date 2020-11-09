@@ -317,7 +317,8 @@
   }
 
   html body #container #main #group .air .populate,
-  html body #container #main #group .result .populate {
+  html body #container #main #group .result .populate,
+  html body #container #main #xml .content .status .filter {
     width: 180px;
     margin: 2em;
   }
