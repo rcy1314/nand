@@ -141,7 +141,7 @@ html body #container #sidebar #content #basic {
 html body #container #sidebar #content #basic input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
-  border: .3px solid #999999;
+  border: var(--hover-border-color);
   position: relative;
   overflow: hidden;
   font-size: 12px;
@@ -150,11 +150,11 @@ html body #container #sidebar #content #basic input[type=text] {
   width: 220px;
   padding: 5px;
 }
-html body #container #sidebar #content #url input[type=text] {
+html body #container #sidebar #content .url input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
+  border: var(--hover-border-color);
   margin-left: 25px;
-  border: none;
   width: 85%;
 }
 

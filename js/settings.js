@@ -86,7 +86,7 @@ let expandVisual = false;
 
 */
 
-let expandBackground = true;
+let expandBackground = false;
 
 /*
     expandBackground [boolean/integer]
