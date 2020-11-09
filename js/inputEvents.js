@@ -2,11 +2,7 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.classList.contains(`buttonSearch`)) {
-      if (
-        _guest.value.length > 0 &&
-        _guest.value != ``
-      )
-        _front.submit();
+      if (_guest.value.length > 0 && _guest.value != ``) _front.submit();
     }
     event.preventDefault();
   },
@@ -17,10 +13,10 @@ document.addEventListener(
   function (event) {
     if (event.target.id == `view`) {
       _match.style.display = `block`;
-      while (_match.querySelector('.listing').firstChild) {
-        _match.querySelector('.listing').removeChild(
-          _match.querySelector('.listing').lastChild
-        );
+      while (_match.querySelector(".listing").firstChild) {
+        _match
+          .querySelector(".listing")
+          .removeChild(_match.querySelector(".listing").lastChild);
       }
       for (i = 0; i < translations.length; i++) {
         let index = document.createElement(`div`);
@@ -60,10 +56,8 @@ document.addEventListener(
       event.target.value = ``;
     }
     if (event.target.classList.contains(`detail`)) {
-      if (_match.style.display === `block`)
-        _match.style.display = `none`;
-      if (_first.style.display === `block`)
-        _first.style.display = `none`;
+      if (_match.style.display === `block`) _match.style.display = `none`;
+      if (_first.style.display === `block`) _first.style.display = `none`;
       if (
         translations.includes(
           event.target.closest(`.hover`).getAttribute(`aria-item`)
@@ -136,8 +130,7 @@ document.addEventListener(
 document.addEventListener(
   `keyup`,
   function (event) {
-    if (event.target.id == `guest`)
-      inputListingKeyup(`#first`, event.keyCode);
+    if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
     else if (event.target.id == `view`)
       inputListingKeyup(`#match`, event.keyCode);
     event.preventDefault();
@@ -150,12 +143,14 @@ document.addEventListener(
     if (event.target.classList.contains(`url`)) {
       if (document.querySelector(`.imageURL`).value.length) {
         if (
-          document.querySelector(`.imageURL`).value
-          .match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
+          document
+            .querySelector(`.imageURL`)
+            .value.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
         ) {
-          _main.style.backgroundImage =
-          `url(${document.querySelector(`.imageURL`).value})`
-          backgroundImage = document.querySelector(`.imageURL`).value
+          _main.style.backgroundImage = `url(${
+            document.querySelector(`.imageURL`).value
+          })`;
+          backgroundImage = document.querySelector(`.imageURL`).value;
         }
       }
     } else if (event.target.classList.contains(`filter`)) {
@@ -171,20 +166,18 @@ document.addEventListener(
           true
         );
         topMenuBarDisplay(topBar);
-        var uri =
-          `?q=${document.querySelector(`.sideFilter`).value.replace(/\s/g, `+`)}`;
+        var uri = `?q=${document
+          .querySelector(`.sideFilter`)
+          .value.replace(/\s/g, `+`)}`;
         displayExpand(groupType);
         uri.state();
         unloading();
       }
     } else if (event.target.id == `search`) {
       if (
-        document.body.contains(
-          _match.querySelector(`.hover`)
-        ) &&
+        document.body.contains(_match.querySelector(`.hover`)) &&
         translations.includes(
-            _match.querySelector(`.hover`)
-            .getAttribute(`aria-item`)
+          _match.querySelector(`.hover`).getAttribute(`aria-item`)
         )
       ) {
         _match.style.display = `none`;
@@ -192,18 +185,14 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        category = _match
-          .querySelector(`.hover`)
-          .getAttribute(`aria-item`);
+        category = _match.querySelector(`.hover`).getAttribute(`aria-item`);
         document.title = category;
         populateCategoryGroup(category);
         if (expand == true) var groupType = `list`;
         else var groupType = `blocks`;
         displayExpand(expand);
         unloading();
-      } else if (
-        document.body.contains(_match.querySelector(`.hover`))
-      ) {
+      } else if (document.body.contains(_match.querySelector(`.hover`))) {
         id = _match.querySelector(`.hover`).getAttribute(`aria-item`);
         _match.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -217,16 +206,15 @@ document.addEventListener(
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_view.value.length) {
-        setTimeout(function() {
+        setTimeout(function () {
           let query = _view.value.space();
           query.replace(/\s/, `+`);
           let uri = `?q=${query}`;
           uri.exit();
-        }, 250)
+        }, 250);
       }
     } else if (event.target.id == `front`) {
-      if (_guest.value == ``)
-        inputListingIndex(``, `#first`);
+      if (_guest.value == ``) inputListingIndex(``, `#first`);
       if (document.body.contains(_first.querySelector(`.hover`))) {
         _first.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -241,12 +229,12 @@ document.addEventListener(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0) {
-        setTimeout(function(){
+        setTimeout(function () {
           let query = _guest.value.space();
           query.replace(/\s/, `+`);
           let uri = `?q=${query}`;
           uri.exit();
-        }, 250)
+        }, 250);
       }
     }
     event.preventDefault();
@@ -268,14 +256,13 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 38 &&
     keycode !== 27
   )
-
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
     document
-      .querySelectorAll(_label , _quick)
+      .querySelectorAll(_label, _quick)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (keycode === 40) {
     if (
@@ -360,7 +347,8 @@ var inputListingKeyup = function (Elem, keycode) {
       document
         .querySelector(`${Elem} .listing .index`)
         .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.add(
           `hover`
         );
     } else if (
@@ -385,11 +373,13 @@ var inputListingKeyup = function (Elem, keycode) {
       document
         .querySelector(`${Elem} .listing .hover`)
         .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling.focus();
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .focus();
       document
         .querySelector(`${Elem} .listing .hover`)
         .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.add(
           `hover`
         );
       document

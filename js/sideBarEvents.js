@@ -8,8 +8,8 @@ document.addEventListener(
     ) {
       let x = event.pageX;
       let p = (x / event.target.offsetWidth) * 100;
-      event.target.style.borderImage =
-        `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
+      event.target.style
+      .borderImage = `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
         ${parseInt(p)}%, rgba(147,147,147,.01) 100%)`;
       event.target.style.borderWidth = `.3px .3px .3px .3px`;
       event.target.style.borderImageSlice = `9`;
@@ -21,35 +21,24 @@ document.addEventListener(
           event.target.nextElementSibling.nextElementSibling
         )
       ) {
-        event.target.nextElementSibling.nextElementSibling.style.borderImage =
-          `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
+        event.target.nextElementSibling.nextElementSibling.style
+        .borderImage = `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
           ${parseInt(p)}% ,rgba(147,147,147,0) 100%)`;
-        event.target.nextElementSibling.nextElementSibling.style.borderWidth =
-          `.3px 0 0 .3px`;
-        event.target.nextElementSibling
-        .nextElementSibling.style.borderImageSlice =
-          `9`;
-        event.target.nextElementSibling.nextElementSibling.style.borderStyle =
-          `solid`;
+        event.target.nextElementSibling.nextElementSibling.style.borderWidth = `.3px 0 0 .3px`;
+        event.target.nextElementSibling.nextElementSibling.style.borderImageSlice = `9`;
+        event.target.nextElementSibling.nextElementSibling.style.borderStyle = `solid`;
       }
       if (
         event.target != document.querySelector(`.border`) &&
         event.target != document.querySelector(`.cat:first-child`) &&
         event.target != document.querySelector(`.sel:first-child`)
       ) {
-        event.target.previousElementSibling
-        .previousElementSibling.style.borderImage =
-          `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
+        event.target.previousElementSibling.previousElementSibling.style
+        .borderImage = `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
           ${parseInt(p)}%,rgba(147,147,147,0) 100%)`;
-        event.target.previousElementSibling
-        .previousElementSibling.style.borderWidth =
-          `.3px 0 0 .3px`;
-        event.target.previousElementSibling
-        .previousElementSibling.style.borderImageSlice =
-          `9`;
-        event.target.previousElementSibling
-        .previousElementSibling.style.borderStyle =
-          `solid`;
+        event.target.previousElementSibling.previousElementSibling.style.borderWidth = `.3px 0 0 .3px`;
+        event.target.previousElementSibling.previousElementSibling.style.borderImageSlice = `9`;
+        event.target.previousElementSibling.previousElementSibling.style.borderStyle = `solid`;
       }
     }
   },
@@ -63,23 +52,21 @@ document.addEventListener(
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
-      event.target.style.borderImage =
-        `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
+      event.target.style.borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
       if (
         document.body.contains(
           event.target.nextElementSibling.nextElementSibling
         )
       )
-        event.target.nextElementSibling.nextElementSibling.style.borderImage =
-          `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
+        event.target.nextElementSibling.nextElementSibling.style
+        .borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
       if (
         event.target != document.querySelector(`.border`) &&
         event.target != document.querySelector(`.cat:first-child`) &&
         event.target != document.querySelector(`.sel:first-child`)
       )
-        event.target.previousElementSibling
-        .previousElementSibling.style.borderImage =
-          `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
+        event.target.previousElementSibling.previousElementSibling.style
+        .borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
     }
   },
   false
@@ -87,79 +74,83 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
-    if (
-      event.target.classList.contains(`setBackground`)
-    ) {
+    if (event.target.classList.contains(`setBackground`)) {
       var input = document.createElement(`input`);
       input.type = `file`;
-      input.setAttribute("accept", "image/*")
+      input.setAttribute("accept", "image/*");
 
-      input.onchange = e => {
+      input.onchange = (e) => {
+        // getting a hold of the file reference
+        var file = e.target.files[0];
 
-         // getting a hold of the file reference
-         var file = e.target.files[0];
+        // setting up the reader
+        var reader = new FileReader();
+        reader.readAsDataURL(file); // this is reading as data url
 
-         // setting up the reader
-         var reader = new FileReader();
-         reader.readAsDataURL(file); // this is reading as data url
-
-         // here we tell the reader what to do when it`s done reading...
-         reader.onload = readerEvent => {
-            var content = readerEvent.target.result; // this is the content!
-            document.querySelector(`#main`).style.backgroundImage = `url(`+ content +`)`;
-            backgroundImage = content
-         }
-
-      }
-      input.click()
+        // here we tell the reader what to do when it`s done reading...
+        reader.onload = (readerEvent) => {
+          var content = readerEvent.target.result; // this is the content!
+          if (Array.isArray(backgroundImage)) backgroundImage[0].path = content;
+          if (
+            Array.isArray(backgroundImage) &&
+            typeof backgroundImage[0].path == "string" &&
+            backgroundImage[0].element == `container`
+          ) {
+            _container.style.backgroundImage = `url(${content})`;
+          } else if (
+            Array.isArray(backgroundImage) &&
+            typeof backgroundImage[0].path == "string" &&
+            backgroundImage[0].element == `main`
+          ) {
+            _main.style.backgroundImage = `url(${content})`;
+          }
+        };
+      };
+      input.click();
     }
-    if (
-      event.target.classList.contains(`mainBackground`)
-    ) {
-      if (typeof backgroundImage === "string")
-      _main.style.backgroundImage = `url(${backgroundImage})`
-      _container.style.backgroundImage = `url()`
+    if (event.target.classList.contains(`mainBackground`)) {
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path === "string"
+      )
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      _container.style.backgroundImage = `url()`;
     }
-    if (
-      event.target.classList.contains(`containerBackground`)
-    ) {
-      if (typeof backgroundImage === "string")
-      _container.style.backgroundImage = `url(${backgroundImage})`
-      _main.style.backgroundImage = `url()`
+    if (event.target.classList.contains(`containerBackground`)) {
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path === "string"
+      )
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      _main.style.backgroundImage = `url()`;
     }
-    if (
-      event.target.classList.contains(`coverBackground`)
-    ) {
+    if (event.target.classList.contains(`coverBackground`)) {
       if (
         _container.style.backgroundSize == `cover` ||
         _main.style.backgroundSize == `cover`
       ) {
-        _container.style.backgroundSize = `initial`
-        _main.style.backgroundSize = `initial`
+        _container.style.backgroundSize = `initial`;
+        _main.style.backgroundSize = `initial`;
       } else {
-        _container.style.backgroundSize = `cover`
-        _main.style.backgroundSize = `cover`
+        _container.style.backgroundSize = `cover`;
+        _main.style.backgroundSize = `cover`;
       }
     }
-    if (
-      event.target.classList.contains(`centerBackground`)
-    ) {
+    if (event.target.classList.contains(`centerBackground`)) {
       if (
         _container.style.backgroundPosition == `center center` ||
         _main.style.backgroundPosition == `center center`
       ) {
-        _container.style.backgroundPosition = `top left`
-        _main.style.backgroundPosition = `top left`
+        _container.style.backgroundPosition = `top left`;
+        _main.style.backgroundPosition = `top left`;
       } else {
-        _container.style.backgroundPosition = `center center`
-        _main.style.backgroundPosition = `center center`
+        _container.style.backgroundPosition = `center center`;
+        _main.style.backgroundPosition = `center center`;
       }
     }
-    if (
-      event.target.classList.contains(`removeBackground`)
-    ) {
-        _container.style.backgroundImage = `none`
-        _main.style.backgroundImage = `none`
+    if (event.target.classList.contains(`removeBackground`)) {
+      _container.style.backgroundImage = `none`;
+      _main.style.backgroundImage = `none`;
     }
     if (
       event.target.classList.contains(`cat`) ||
@@ -199,9 +190,9 @@ document.addEventListener(
       circle.style.top = `${event.clientY - button.top - radius}px`;
       circle.classList.add(`ripple`);
       event.target.appendChild(circle);
-      setTimeout(function() {
+      setTimeout(function () {
         document.querySelector(`.ripple`).remove();
-      }, 750)
+      }, 750);
     }
     if (event.target.classList.contains(`cat`)) {
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
@@ -321,12 +312,18 @@ document.addEventListener(
       document
         .querySelectorAll(`#dots .fill`)
         .forEach((a) => a.classList.add(`dots`));
+      document
+        .querySelectorAll(`#dots .fill`)
+        .forEach((a) => (a.style.visibility = `visible`));
       document.querySelector(`#dots`).style.zIndex = `11`;
       setTimeout(function () {
         document.querySelector(`#dots`).style.zIndex = `-1`;
         document
           .querySelectorAll(`#dots .fill`)
           .forEach((a) => a.classList.remove(`dots`));
+        document
+          .querySelectorAll(`#dots .fill`)
+          .forEach((a) => (a.style.visibility = `hidden`));
       }, 3000);
     }
     if (event.target.classList.contains(`toggleImages`)) {

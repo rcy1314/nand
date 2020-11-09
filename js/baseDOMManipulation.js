@@ -192,7 +192,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   info.append(des);
   let construct = document.createElement(`div`);
-  construct.classList.add(`construct`)
+  construct.classList.add(`construct`);
   construct.append(object);
   construct.append(info);
   return construct;
@@ -241,8 +241,10 @@ var suggestBuild = function (
   suggest.title = objectId;
   let bold = document.createElement(`b`);
   bold.classList.add(`bold`);
-  bold.innerHTML =
-    `${String(objectId.match(/[^\/]+$/g)).substring(0, 19)}...<br>`;
+  bold.innerHTML = `${String(objectId.match(/[^\/]+$/g)).substring(
+    0,
+    19
+  )}...<br>`;
   suggest.append(bold);
   object.append(suggest);
   let define = document.createElement(`div`);
@@ -268,8 +270,8 @@ var categoryBuild = function (
   let populate = document.createElement(`div`);
   populate.classList.add(`populate`);
   populate.setAttribute(`aria-item`, objectIndex);
-  let select = document.createElement(`div`)
-  select.classList.add(`select`)
+  let select = document.createElement(`div`);
+  select.classList.add(`select`);
   let display = document.createElement(`div`);
   display.classList.add(`display`);
   let object = document.createElement(`img`);
@@ -290,7 +292,7 @@ var categoryBuild = function (
   select.append(hash);
   select.append(info);
   select.append(des);
-  populate.append(select)
+  populate.append(select);
   return populate;
 };
 
@@ -408,9 +410,9 @@ var xmlHTMLBuild = function (htmlArray) {
   let image = document.createElement(`div`);
   image.classList.add(`image`);
   image.append(sideBarThemeBuild(`fa-heart`));
-  let filterBlur = document.createElement(`div`)
-  filterBlur.classList.add(`filterBlur`)
-  image.append(filterBlur)
+  let filterBlur = document.createElement(`div`);
+  filterBlur.classList.add(`filterBlur`);
+  image.append(filterBlur);
   let object = document.createElement(`img`);
   object.id = htmlArray.pubIndex;
   object.classList.add(`img`);
@@ -492,7 +494,7 @@ var sideBarBackgroundListing = function () {
 var urlFormBuild = function () {
   let url = document.createElement(`div`);
   url.id = `url`;
-  url.classList.add('background')
+  url.classList.add("background");
   let form = document.createElement(`form`);
   form.classList.add(`url`);
   form.setAttribute(`action`, `#`);

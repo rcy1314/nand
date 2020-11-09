@@ -28,21 +28,14 @@ var xmlStatusSuggestions = function () {
   let duplicate = [];
   if (document.body.contains(_main.querySelector(`.suggestions`))) {
     var suggestions = _main.querySelector(`.suggestions`);
-    if (
-      document.body.contains(
-        _main.querySelector(`.combine`)
-      )
-    )
+    if (document.body.contains(_main.querySelector(`.combine`)))
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
     for (let i = 1; i <= contentStatusBuffer; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
-      if (
-        menu[randomMenuObject] &&
-        !duplicate.includes(randomMenuObject)
-      ) {
+      if (menu[randomMenuObject] && !duplicate.includes(randomMenuObject)) {
         if (menu[randomMenuObject].media == true)
           var media = `feed contains images`;
         else if (menu[randomMenuObject].media == false)
@@ -260,8 +253,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       let sec = (`0` + date.getSeconds()).slice(-2);
       let hour = (`0` + date.getHours()).slice(-2);
       date = (`0` + date.getDate()).slice(-2);
-      let def =
-         `${year}-${mon}-${date} ${hour}:${min}:${sec}`;
+      let def = `${year}-${mon}-${date} ${hour}:${min}:${sec}`;
       let dst = def.zulu();
       let since = new Date(
         parseInt(
@@ -327,7 +319,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 799;
-  let jsonResponseScore
+  let jsonResponseScore;
   ready(() => {
     if (imageDuplicate.includes(src)) {
       if (
@@ -335,9 +327,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           document.querySelector(`[aria-item='${pubIndex}'] .pending`)
         )
       )
-        document
-          .querySelector(`[aria-item='${pubIndex}'] .pending`)
-          .remove();
+        document.querySelector(`[aria-item='${pubIndex}'] .pending`).remove();
       if (
         empty == true ||
         (onlyImages == true &&
@@ -387,174 +377,188 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
-        if (
-          safeSearch == true &&
-          safeSearchCategory.includes(category)
-        )
-        fetch(`${cors}${api}${src}`, {
-          method: 'GET',
-          headers: {
-            'Origin': '*',
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          }
-        }).then((response) => {
-          response.json().then((jsonResponse) => {
-            jsonResponseScore = jsonResponse.score
-            console.log(jsonResponse.score)
-            if (
-              jsonResponse.score >= safeSearchScore
-            ){
-              if (
-                document.body.contains(
+        if (safeSearch == true && safeSearchCategory.includes(category))
+          fetch(`${cors}${api}${src}`, {
+            method: "GET",
+            headers: {
+              Origin: "*",
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "acktic.github.io",
+            },
+          })
+            .then((response) => {
+              response.json().then((jsonResponse) => {
+                jsonResponseScore = jsonResponse.score;
+                console.log(jsonResponse.score);
+                if (jsonResponse.score >= safeSearchScore) {
+                  if (
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                    )
+                  )
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                      .remove();
                   document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                )
-              )
-                document
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                  .remove();
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-              ).style.cssText = `backdrop-filter: blur(75px)`;
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-              ).classList.add(`leave`);
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              ).style.display = `block`;
-            } else {
-              if (
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                )
-              )
-                document
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                  .remove();
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                  ).style.cssText = `backdrop-filter: blur(75px)`;
+                  document
+                    .querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                    )
+                    .classList.add(`leave`);
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                   ).style.display = `block`;
-            }
-          })
-        });
-            if (
-              document.body.contains(
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                )
-              )
-            ) {
-              let itemImage = document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              );
-              let itemPending = document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              );
-              let attribute = document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-              );
-              let copyPicture = document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-              );
-              let copyPost = document.querySelector(
-                `[aria-item='${pubIndex}'] .post`
-              );
-              itemImage.setAttribute(`src`, src);
-              if (_main.clientWidth <= 425) {
-                if (
-                  newImg.naturalHeight > k &&
-                  newImg.naturalHeight >= newImg.naturalWidth * 2
-                ) {
-                  itemImage.closest(`.item`).querySelector(`.pending`).remove();
-                  itemImage.closest(`.image`).remove();
-                } else if (newImg.naturalWidth < maximum) {
-                  itemImage.style.width = `180px`;
-                  itemImage.style.margin = `12px`;
-                  itemImage.closest(`.classic`).style.display = `flex`;
-                  itemImage.closest(`.classic`).style.alignItems = `center`;
-                  itemPending.style.width = `135px`;
-                  itemImage.style.marginBottom = `30px`;
-                  copyPost.style.display = `none`;
-                  copyPicture.style.display = `none`;
-                  attribute.style.width = `37px`;
-                } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                  itemImage.style.width = `30vh`;
-                  itemImage.classList.add(`default`);
-                  itemPending.style.height = `14em`;
-                } else if (
-                  newImg.naturalWidth >= newImg.naturalHeight ||
-                  newImg.naturalHeight >= newImg.naturalWidth
-                ) {
-                  itemPending.style.height = `14em`;
-                  itemImage.classList.add(`default`);
-                  itemImage.style.width = `100%`;
+                } else {
+                  if (
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                    )
+                  )
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                      .remove();
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                  ).style.display = `block`;
                 }
-              } else {
-                if (
-                  newImg.naturalHeight > k &&
-                  newImg.naturalHeight >= newImg.naturalWidth * 2
-                ) {
-                  itemImage.closest(`.item`).querySelector(`.pending`).remove();
-                  itemImage.closest(`.image`).remove();
-                } else if (newImg.naturalWidth < maximum) {
-                  itemImage.style.width = `180px`;
-                  itemImage.closest(`.image`).style.margin = `12px`;
-                  itemImage.closest(`.classic`).style.display = `flex`;
-                  itemImage.closest(`.classic`).style.alignItems = `center`;
-                  itemImage.style.marginBottom = `30px`;
-                  copyPost.style.display = `none`;
-                  copyPicture.style.display = `none`;
-                  attribute.style.width = `37px`;
-                  itemPending.style.width = `135px`;
-                } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                  itemImage.style.width = `100%`;
-                  itemImage.classList.add(`default`);
-                  itemPending.style.height = `14em`;
-                } else if (
-                  newImg.naturalWidth >= newImg.naturalHeight ||
-                  newImg.naturalHeight >= newImg.naturalWidth
-                ) {
-                  itemImage.style.width = `100%`;
-                  itemImage.classList.add(`default`);
-                  itemPending.style.height = `14em`;
-                }
-              }
+              });
+            })
+            .catch((response) => {
               if (
                 document.body.contains(
                   document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                   )
                 )
-                && safeSearch == false ||
-                !safeSearchCategory.includes(category)
-              ) {
-                if (
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
+              )
+                document
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                   )
-                )
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                    .remove();
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                ).classList.add(`hidden`);
-              }
+                  .remove();
+            });
+        if (
+          document.body.contains(
+            document.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+            )
+          )
+        ) {
+          let itemImage = document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          );
+          let itemPending = document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+          );
+          let attribute = document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+          );
+          let copyPicture = document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+          );
+          let copyPost = document.querySelector(
+            `[aria-item='${pubIndex}'] .post`
+          );
+          itemImage.setAttribute(`src`, src);
+          if (_main.clientWidth <= 425) {
+            if (
+              newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2
+            ) {
+              itemImage.closest(`.item`).querySelector(`.pending`).remove();
+              itemImage.closest(`.image`).remove();
+            } else if (newImg.naturalWidth < maximum) {
+              itemImage.style.width = `180px`;
+              itemImage.style.margin = `12px`;
+              itemImage.closest(`.classic`).style.display = `flex`;
+              itemImage.closest(`.classic`).style.alignItems = `center`;
+              itemPending.style.width = `135px`;
+              itemImage.style.marginBottom = `30px`;
+              copyPost.style.display = `none`;
+              copyPicture.style.display = `none`;
+              attribute.style.width = `37px`;
+            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+              itemImage.style.width = `30vh`;
+              itemImage.classList.add(`default`);
+              itemPending.style.height = `14em`;
+            } else if (
+              newImg.naturalWidth >= newImg.naturalHeight ||
+              newImg.naturalHeight >= newImg.naturalWidth
+            ) {
+              itemPending.style.height = `14em`;
+              itemImage.classList.add(`default`);
+              itemImage.style.width = `100%`;
             }
-          };
+          } else {
+            if (
+              newImg.naturalHeight > k &&
+              newImg.naturalHeight >= newImg.naturalWidth * 2
+            ) {
+              itemImage.closest(`.item`).querySelector(`.pending`).remove();
+              itemImage.closest(`.image`).remove();
+            } else if (newImg.naturalWidth < maximum) {
+              itemImage.style.width = `180px`;
+              itemImage.closest(`.image`).style.margin = `12px`;
+              itemImage.closest(`.classic`).style.display = `flex`;
+              itemImage.closest(`.classic`).style.alignItems = `center`;
+              itemImage.style.marginBottom = `30px`;
+              copyPost.style.display = `none`;
+              copyPicture.style.display = `none`;
+              attribute.style.width = `37px`;
+              itemPending.style.width = `135px`;
+            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+              itemImage.style.width = `100%`;
+              itemImage.classList.add(`default`);
+              itemPending.style.height = `14em`;
+            } else if (
+              newImg.naturalWidth >= newImg.naturalHeight ||
+              newImg.naturalHeight >= newImg.naturalWidth
+            ) {
+              itemImage.style.width = `100%`;
+              itemImage.classList.add(`default`);
+              itemPending.style.height = `14em`;
+            }
+          }
+          if (
+            (document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              )
+            ) &&
+              safeSearch == false) ||
+            !safeSearchCategory.includes(category)
+          ) {
+            if (
+              document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+              )
+            )
+              document
+                .querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+                .remove();
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              )
+              .classList.add(`hidden`);
+          }
+        }
+      };
     }
   });
 };
@@ -579,6 +583,7 @@ var xmlRequestParsing = function (search, string, index) {
   let pub = [];
   let images = [];
   imageDuplicate = [];
+  if (first == true) _main.append(stageBuild());
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
     category = category;
@@ -589,8 +594,7 @@ var xmlRequestParsing = function (search, string, index) {
 
   document.title = menu[index].id.space();
   _visit.style.display = `none`;
-  if (first == true)
-    _check.style.visibility = `visible`;
+  if (first == true) _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -706,10 +710,6 @@ var xmlRequestParsing = function (search, string, index) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
           }
         }
-        if (first == true) {
-          var main = _main;
-          main.append(stageBuild());
-        }
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
           sticky.push({
@@ -739,10 +739,10 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplay(sticky);
         }
-        for (i = pub.length - 1; i >= 0 ; i--) {
+        for (i = pub.length - 1; i >= 0; i--) {
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
-          images.push({element: pub[i].element, src: pub[i].src})
+          images.push({ element: pub[i].element, src: pub[i].src });
         }
         for (i = images.length - 1; i >= 0; i--) {
           if (menu[index].id.match(/Imgur/g))

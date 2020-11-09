@@ -6,29 +6,60 @@ window.onload = function () {
   _guest.focus();
   document.querySelector(`#front .icon`).classList.add(`search`);
   quickFeedDisplay(quickFeeds);
-  if (
-    _main.clientWidth <= 425 ||
-    quickFeedsTranslations == true
-  )
+  if (_main.clientWidth <= 425 || quickFeedsTranslations == true)
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
-  if (isNumeric(post)) sideBarDisplay(false);
-  else if (_main.clientWidth <= 768) {
-    expand = false
-    onScreen = false;
-    groupType = `blocks`
-    sideBarDisplay(true);
-  } else {
-    sideBarFirst = true;
-    sideBarDisplay(onScreen);
-  }
   if (expandBackground == true)
-  document.querySelector(`.bg`).style.height =
-    `${(background.length + 1) * 35}px`;
+    document.querySelector(`.bg`).style.height = `${
+      (background.length + 1) * 35
+    }px`;
   if (expandVisual == true)
-  document.querySelector(`.themes`).style.height =
-    `${(themes.length + 1) * 35}px`;
+    document.querySelector(`.themes`).style.height = `${
+      (themes.length + 1) * 35
+    }px`;
+  if (
+    Array.isArray(backgroundImage) &&
+    typeof backgroundImage[0].path == "string" &&
+    backgroundImage[0].element == `container`
+  ) {
+    _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+  } else if (
+    Array.isArray(backgroundImage) &&
+    typeof backgroundImage[0].path == "string" &&
+    backgroundImage[0].element == `main`
+  ) {
+    _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+  }
+  if (
+    Array.isArray(backgroundImage) &&
+    typeof backgroundImage[0].position == "string"
+  ) {
+    _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+    _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+  }
+  if (
+    Array.isArray(backgroundImage) &&
+    typeof backgroundImage[0].size == "string"
+  ) {
+    _container.style.backgroundSize = `${backgroundImage[0].size}`;
+    _main.style.backgroundSize = `${backgroundImage[0].size}`;
+  }
+  ready(() => {
+    document.querySelector(`html`).style.display = `block`;
+    document.querySelector(`body`).style.display = `block`;
+    _container.style.display = `block`;
+    if (isNumeric(post)) sideBarDisplay(false);
+    else if (_main.clientWidth <= 768) {
+      expand = false;
+      onScreen = false;
+      groupType = `blocks`;
+      sideBarDisplay(true);
+    } else {
+      sideBarFirst = true;
+      sideBarDisplay(onScreen);
+    }
+  });
 };
 window.addEventListener(
   `resize`,
@@ -46,10 +77,7 @@ document.addEventListener(
   function (event) {
     if (event.target.id == `main`) {
       if (
-        _main.scrollHeight -
-          _main.scrollTop -
-          _main.clientHeight <=
-          350 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
         stop == false &&
         reader == true &&
         httpRequest.status != 4 &&
@@ -68,10 +96,7 @@ document.addEventListener(
   function (event) {
     if (event.target.id == `main`) {
       if (
-        _main.scrollHeight -
-          _main.scrollTop -
-          _main.clientHeight <=
-          450 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         reader == true &&
         httpRequest.status == 200
       ) {
@@ -86,10 +111,8 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
-    if (
-      event.target.id == `check`
-    ) {
-      repository.blank()
+    if (event.target.id == `check`) {
+      repository.blank();
     }
     if (
       event.target.classList.contains(`fa-angle-up`) ||
@@ -154,11 +177,9 @@ document.addEventListener(
         _view.style.paddingLeft = `20px`;
         _view.value = `Search`;
         _view.blur();
-      } else if (
-        _first.style.display === `block`
-      ) {
-        _label.style.visibility = `visible`
-        _quick.style.visibility = `visible`
+      } else if (_first.style.display === `block`) {
+        _label.style.visibility = `visible`;
+        _quick.style.visibility = `visible`;
         _first.style.display = `none`;
         _guest.blur();
       }
@@ -174,14 +195,10 @@ document.addEventListener(
       if (expand == true) var groupType = `list`;
       else {
         var groupType = `blocks`;
-        notifyOption(
-          `Displaying ${category} as ${groupType.capitalize()}`
-        );
+        notifyOption(`Displaying ${category} as ${groupType.capitalize()}`);
       }
     }
-    if (
-      event.target.classList.contains(`select`)
-    ) {
+    if (event.target.classList.contains(`select`)) {
       const button = event.target.closest(`.populate`).getBoundingClientRect();
       const circle = document.createElement(`span`);
       const diameter = Math.max(
@@ -201,15 +218,12 @@ document.addEventListener(
           _match.style.display = `none`;
           _view.blur();
           return false;
-        } else if (
-          _first.style.display === `block`
-        ) {
+        } else if (_first.style.display === `block`) {
           _first.style.display = `none`;
           _guest.blur();
           return false;
         }
         init();
-        event.target.closest(`#group`).remove();
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         xmlRequestParsing(
@@ -280,8 +294,7 @@ document.addEventListener(
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
       onScreen = guideOnScreen;
-      if (_main.clientWidth >= 426)
-        sideBarDisplay(onScreen);
+      if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`bottom`)) {
@@ -394,16 +407,16 @@ document.addEventListener(
               guideDisplay(sticky);
             } else if (
               event.target
-              .closest(`.item`)
-              .querySelector(`.img`)
-              .classList.contains(`guide`)
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList.contains(`guide`)
             )
               event.target.closest(`.item`).getAttribute(`ext`).blank();
             else if (
               !event.target
-              .closest(`.item`)
-              .querySelector(`.img`)
-              .classList.contains(`default`)
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList.contains(`default`)
             )
               event.target.closest(`.item`).getAttribute(`ext`).blank();
             else if (category != `Social`)
@@ -414,14 +427,15 @@ document.addEventListener(
         // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
           // double click occurred
-          if (event.target.classList.contains(`leave`)){
+          if (event.target.classList.contains(`leave`)) {
             event.target.closest(`.item`).getAttribute(`ext`).blank();
-            return false
+            return false;
           }
           event.target
             .closest(`.image`)
-            .querySelector(`.fa-heart`).style.animation =
-            `scale .7s ease-in-out .1s both`;
+            .querySelector(
+              `.fa-heart`
+            ).style.animation = `scale .7s ease-in-out .1s both`;
           event.target
             .closest(`.image`)
             .querySelector(`.fa-heart`).style.display = `block`;
@@ -509,11 +523,8 @@ document.addEventListener(
       event.target.classList.contains(`right`)
     ) {
       quickFeedAsset(6);
-      let leftPos = _feed
-        .scrollLeft;
-      _feed.scrollLeft =
-        leftPos +
-        _feed.clientWidth;
+      let leftPos = _feed.scrollLeft;
+      _feed.scrollLeft = leftPos + _feed.clientWidth;
       if (_feed.scrollLeft >= 0)
         document.querySelector(`.left`).style.display = `block`;
     }
@@ -521,16 +532,9 @@ document.addEventListener(
       event.target.classList.contains(`fa-minus`) ||
       event.target.classList.contains(`left`)
     ) {
-      let leftPos = _feed
-        .scrollLeft;
-      _feed.scrollLeft =
-        leftPos -
-        _feed.clientWidth;
-      if (
-        _feed.scrollLeft -
-          _feed.clientWidth <=
-        0
-      )
+      let leftPos = _feed.scrollLeft;
+      _feed.scrollLeft = leftPos - _feed.clientWidth;
+      if (_feed.scrollLeft - _feed.clientWidth <= 0)
         document.querySelector(`.left`).style.display = `none`;
     }
     event.preventDefault();

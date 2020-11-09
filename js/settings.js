@@ -1,7 +1,25 @@
 // initial theme
 let set = `Day`;
 
-let backgroundImage = "ffe869c642be33cbb2c3e609e27beb29.jpg"
+/*
+    backgroundImage [array]
+
+      Applications
+        main, container
+
+      Result
+        set background
+
+*/
+
+let backgroundImage = [
+  {
+    path: "../ffe869c642be33cbb2c3e609e27beb29.jpg",
+    element: "container",
+    position: "center",
+    size: "cover",
+  },
+];
 
 /*
     topBar [boolean/integer]
@@ -238,8 +256,7 @@ let safeSearch = true;
 
 */
 
-let safeSearchScore = `0.4279794991016388`
-
+let safeSearchScore = `0.4279794991016388`;
 
 /*
     safeSearchCategory [array]
@@ -252,11 +269,7 @@ let safeSearchScore = `0.4279794991016388`
 
 */
 
-let safeSearchCategory =
-  [
-    `Social`
-  ]
-
+let safeSearchCategory = [`Social`];
 
 /*
     cors [string]
@@ -350,7 +363,11 @@ const background = [
   { name: `Center`, class: `centerBackground`, icon: `fa-crop-alt` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
   { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },
-  { name: `Choose Container`, class: `containerBackground`, icon: `fa-barcode` },
-]
+  {
+    name: `Choose Container`,
+    class: `containerBackground`,
+    icon: `fa-barcode`,
+  },
+];
 
-const repository = `https://github.com/acktic/acktic.github.io`
+const repository = `https://github.com/acktic/acktic.github.io`;

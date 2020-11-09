@@ -56,7 +56,7 @@ html body #container #main #visit {
 html,
 html body,
 html body #container {
-  background: var(--bg-color-secondary);
+  display: none;
 }
 
 html body #container #main #notification {
@@ -449,6 +449,7 @@ html body #container #main #check {
   position: absolute;
   font-size: 11px;
   position: fixed;
+  z-index: 11;
 }
 
 html body #container #main #xml {
@@ -456,7 +457,8 @@ html body #container #main #xml {
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;
-  display: none;
+  min-height: 100%;
+  display: block;
   width: 100%;
   z-index: 1;
   top: 0;
@@ -488,9 +490,14 @@ html body #container #main #visit #page {
   display: block;
 }
 
+html body #container #main #dots {
+  position: fixed;
+}
+
 html body #container #main #dots .fill {
   background-color: var(--fill-color-primary);
-  z-index: -1;
+  visibility: hidden;
+  z-index: -12;
   left: -4px;
   top: 0;
 }

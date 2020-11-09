@@ -115,7 +115,8 @@ var sideBarDisplay = function (toggleOption) {
       option.innerHTML = background[i].name;
       bg.append(option);
       bg.append(sideBarThemeBuild(background[i].icon));
-    }urlFormBuild
+    }
+    urlFormBuild;
     content.append(urlFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
@@ -156,25 +157,20 @@ var sideBarDisplay = function (toggleOption) {
     _content.style.display = `block`;
     _sidebar.style.left = `0px`;
     if (_main.clientWidth >= 769) {
-      _top.style.width = `calc(100% - 256px)`;
-      _main.style.width = `calc(100% - 240px)`;
-      _main.style.left = `240px`;
-      _sidebar.style.left = `0`;
+      setTimeout(function () {
+        _top.style.width = `calc(100% - 256px)`;
+        _main.style.width = `calc(100% - 240px)`;
+        _main.style.left = `240px`;
+        _sidebar.style.left = `0`;
+      }, 200);
     }
     setTimeout(function () {
-      document
-        .querySelectorAll(`#dots .fill`)
-        .forEach((a) => (a.style.marginLeft = `150px`));
       document.querySelector(`.sideFilter`).style.display = `block`;
       _progress.style.left = `240px`;
       document.querySelector(`#basic`).style.display = `block`;
     }, 300);
   }
   if (toggleOption == false || onScreen == false) {
-    document
-      .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.marginLeft = `0`));
-    _top.style.width = `calc(100% - 16px)`;
     document.querySelector(`.sideFilter`).style.display = `none`;
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;
@@ -184,8 +180,8 @@ var sideBarDisplay = function (toggleOption) {
 };
 
 var topMenuBarDisplay = function (toggleOption) {
-    if (toggleOption == true) _top.style.display = `block`;
-    else if (toggleOption == false) _top.style.display = `none`;
+  if (toggleOption == true) _top.style.display = `block`;
+  else if (toggleOption == false) _top.style.display = `none`;
 };
 
 var quickFeedDisplay = function (toggleOption) {
@@ -330,14 +326,14 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transition = `width .15s ease-in-out`;
     _progress.style.transitionDelay = `none`;
     _progress.style.width = `${percent}%`;
-    if (document.body.contains(document.getElementById(`xml`))){
+    if (document.body.contains(document.getElementById(`xml`))) {
       document.querySelector(`#xml`).style.display = `block`;
-      (function() {
+      (function () {
         var elements;
         var windowHeight;
 
         function init() {
-          elements = document.querySelectorAll('.img');
+          elements = document.querySelectorAll(".img");
           windowHeight = _main.clientHeight;
         }
 
@@ -346,30 +342,30 @@ var progressBackDrop = function (done, percent) {
             var element = elements[i];
             var positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if (positionFromTop <= windowHeight / .75) {
-              element.classList.add('fade-in-element');
-              element.classList.remove('hidden');
+            if (positionFromTop <= windowHeight / 0.75) {
+              element.classList.add("fade-in-element");
+              element.classList.remove("hidden");
             }
           }
         }
 
-        _main
-          .addEventListener('scroll', checkPosition);
-        window.addEventListener('resize', init);
+        _main.addEventListener("scroll", checkPosition);
+        window.addEventListener("resize", init);
 
         init();
         checkPosition();
       })();
-      if (scrollIntoView == true && reader == false){
-        document.querySelector(`#xml`).style.paddingTop =
-        document.querySelector(`#xml`).clientHeight;
-        setTimeout(function() {
+      if (scrollIntoView == true && reader == false) {
+        document.querySelector(
+          `#xml`
+        ).style.paddingTop = document.querySelector(`#xml`).clientHeight;
+        setTimeout(function () {
           let Elem = document.querySelector(`#xml`);
           Elem.animate(
             {
               paddingTop: [
                 `${document.querySelector(`#xml`).clientHeight}px`,
-                `0`
+                `0`,
               ],
             },
             {
@@ -379,26 +375,27 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-        }, 500)
+        }, 500);
         setTimeout(function () {
           document.querySelector(`#xml`).style.paddingTop = `0`;
         }, 1000);
       }
-      _check.style.visibility = `hidden`
-      _main.scrollTop = '1'
+      _check.style.visibility = `hidden`;
+      _main.scrollTop = "1";
     }
-    if (document.body.contains(document.getElementById(`group`))){
+    if (document.body.contains(document.getElementById(`group`))) {
       document.querySelector(`#group`).style.display = `block`;
-      if (scrollIntoView == true){
-        document.querySelector(`#group`).style.paddingTop =
-        document.querySelector(`#group`).clientHeight;
-        setTimeout(function() {
+      if (scrollIntoView == true) {
+        document.querySelector(
+          `#group`
+        ).style.paddingTop = document.querySelector(`#group`).clientHeight;
+        setTimeout(function () {
           let Elem = document.querySelector(`#group`);
           Elem.animate(
             {
               paddingTop: [
                 `${document.querySelector(`#group`).clientHeight}px`,
-                `0`
+                `0`,
               ],
             },
             {
@@ -408,18 +405,16 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-        }, 750)
+        }, 750);
         setTimeout(function () {
           document.querySelector(`#group`).style.paddingTop = `0`;
-          _check.style.visibility = `hidden`
+          _check.style.visibility = `hidden`;
         }, 1500);
       }
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(`.air`)))
-        _main.scrollTop = document.querySelector(
-          `.air`
-        ).clientHeight;
+        _main.scrollTop = document.querySelector(`.air`).clientHeight;
     } else if (onlyImages == true)
       if (document.body.contains(document.querySelector(`.result`)))
         _main.scrollTop = 0;
@@ -439,12 +434,12 @@ var progressBackDrop = function (done, percent) {
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
     }, 250);
-    if (scrollIntoView == false) _check.style.visibility = `hidden`
+    if (scrollIntoView == false) _check.style.visibility = `hidden`;
   }
 };
 
 var populateCategoryGroup = function (translation) {
-  if (scrollIntoView == true) _check.style.visibility = `visible`
+  if (scrollIntoView == true) _check.style.visibility = `visible`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
   if (id && id != 0 && !location.href.match(`\\?q=`)) {
@@ -618,8 +613,7 @@ var guideImageAttributes = function (src) {
     _guide.querySelector(`.img`).setAttribute(`src`, src);
     if (_main.clientWidth <= 425) {
       _main.classList.add(`guide`);
-      _guide.querySelector(`.sticky .header`).style.position =
-        `absolute`;
+      _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide.querySelector(`.img`).style.maxHeight = `50vh`;
         _guide.querySelector(`.img`).style.maxWidth = `75vw`;
