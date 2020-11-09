@@ -437,6 +437,7 @@ var progressBackDrop = function (done, percent) {
       _progress.style.transition = "none";
       _progress.style.width = "0%";
     }, 250);
+    if (scrollIntoView == false) _check.style.visibility = "hidden"
   }
 };
 
