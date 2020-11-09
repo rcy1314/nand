@@ -1,13 +1,7 @@
 // initial theme
 let set = `Day`;
 
-let backgroundImage //= "ffe869c642be33cbb2c3e609e27beb29.jpg"
-
-_container.style.backgroundPosition = `center`
-_container.style.backgroundSize = `cover`
-_main.style.backgroundPosition = `center`
-_main.style.backgroundSize = `cover`
-
+let backgroundImage = "ffe869c642be33cbb2c3e609e27beb29.jpg"
 
 /*
     topBar [boolean/integer]

@@ -90,8 +90,8 @@ document.addEventListener(
     if (
       event.target.classList.contains(`setBackground`)
     ) {
-      var input = document.createElement('input');
-      input.type = 'file';
+      var input = document.createElement(`input`);
+      input.type = `file`;
       input.setAttribute("accept", "image/*")
 
       input.onchange = e => {
@@ -103,10 +103,10 @@ document.addEventListener(
          var reader = new FileReader();
          reader.readAsDataURL(file); // this is reading as data url
 
-         // here we tell the reader what to do when it's done reading...
+         // here we tell the reader what to do when it`s done reading...
          reader.onload = readerEvent => {
             var content = readerEvent.target.result; // this is the content!
-            document.querySelector('#main').style.backgroundImage = 'url('+ content +')';
+            document.querySelector(`#main`).style.backgroundImage = `url(`+ content +`)`;
             backgroundImage = content
          }
 
@@ -128,15 +128,38 @@ document.addEventListener(
       _main.style.backgroundImage = `url()`
     }
     if (
+      event.target.classList.contains(`coverBackground`)
+    ) {
+      if (
+        _container.style.backgroundSize == `cover` ||
+        _main.style.backgroundSize == `cover`
+      ) {
+        _container.style.backgroundSize = `initial`
+        _main.style.backgroundSize = `initial`
+      } else {
+        _container.style.backgroundSize = `cover`
+        _main.style.backgroundSize = `cover`
+      }
+    }
+    if (
       event.target.classList.contains(`centerBackground`)
     ) {
-        _main.style.backgroundPosition = `center`
+      if (
+        _container.style.backgroundPosition == `center center` ||
+        _main.style.backgroundPosition == `center center`
+      ) {
+        _container.style.backgroundPosition = `top left`
+        _main.style.backgroundPosition = `top left`
+      } else {
+        _container.style.backgroundPosition = `center center`
+        _main.style.backgroundPosition = `center center`
+      }
     }
     if (
       event.target.classList.contains(`removeBackground`)
     ) {
-        _main.style.backgroundImage = `none`
         _container.style.backgroundImage = `none`
+        _main.style.backgroundImage = `none`
     }
     if (
       event.target.classList.contains(`cat`) ||
