@@ -241,7 +241,8 @@ var suggestBuild = function (
   suggest.title = objectId;
   let bold = document.createElement("b");
   bold.classList.add("bold");
-  bold.innerHTML = `${String(objectId.match(/[^\/]+$/g)).substring(0, 18)}<br>`;
+  bold.innerHTML =
+    `${String(objectId.match(/[^\/]+$/g)).substring(0, 19)}...<br>`;
   suggest.append(bold);
   object.append(suggest);
   let define = document.createElement("div");
