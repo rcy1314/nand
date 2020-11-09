@@ -150,6 +150,13 @@ html body #container #sidebar #content #basic input[type=text] {
   width: 220px;
   padding: 5px;
 }
+html body #container #sidebar #content #url input[type=text] {
+  background-color: var(--bg-color-primary);
+  color: var(--fill-color-primary);
+  margin-left: 25px;
+  border: none;
+  width: 85%;
+}
 
 html body #container #sidebar #content .cat {
   border-bottom: .3px solid transparent !important;
@@ -466,6 +473,7 @@ html body #container #main #group {
 }
 
 html body #container #main #visit {
+  background-color: var(--borderless-hover-color);
   justify-content: center;
   align-items: center;
   display: none;

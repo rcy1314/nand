@@ -387,6 +387,65 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
+        if (
+          safeSearch == true &&
+          safeSearchCategory.includes(category)
+        )
+        fetch(`${cors}${api}${src}`, {
+          method: 'GET',
+          headers: {
+            'Origin': '*',
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        }).then((response) => {
+          response.json().then((jsonResponse) => {
+            jsonResponseScore = jsonResponse.score
+            console.log(jsonResponse.score)
+            if (
+              jsonResponse.score >= safeSearchScore
+            ){
+              if (
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                )
+              )
+                document
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                  .remove();
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+              ).style.cssText = `backdrop-filter: blur(75px)`;
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+              ).classList.add(`leave`);
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              ).style.display = `block`;
+            } else {
+              if (
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                )
+              )
+                document
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                  .remove();
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                  ).style.display = `block`;
+            }
+          })
+        });
             if (
               document.body.contains(
                 document.querySelector(
@@ -496,87 +555,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               }
             }
           };
-          if (
-            safeSearch == true &&
-            safeSearchCategory.includes(category)
-          )
-          fetch(`${cors}${api}${src}`, {
-            method: 'GET',
-            headers: {
-              'Origin': '*',
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
-          }).then((response) => {
-            response.json().then((jsonResponse) => {
-              jsonResponseScore = jsonResponse.score
-              console.log(jsonResponse.score)
-              if (
-                jsonResponse.score >= safeSearchScore
-              ){
-                if (
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                  )
-                )
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                    .remove();
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                ).style.cssText = `backdrop-filter: blur(75px)`;
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                ).classList.add(`leave`);
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                ).style.display = `flex`;
-              } else {
-                if (
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                  )
-                )
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                    .remove();
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                    ).style.display = `flex`;
-              }
-            })
-          });
-    } else if (
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-        )
-      )
-    ) {
-      document
-        .querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
-        .closest(`.item`)
-        .querySelector(`.pending`)
-        .remove();
-      document.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-      ).style.height = `40px`;
-      document.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-      ).style.display = `none`;
-      document.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .post`
-      ).style.display = `none`;
     }
   });
 };
@@ -599,6 +577,7 @@ var xmlRequestParsing = function (search, string, index) {
   let local;
   id = index;
   let pub = [];
+  let images = [];
   imageDuplicate = [];
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
@@ -760,13 +739,16 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplay(sticky);
         }
-        for (i = 0; i < pub.length; i++) {
+        for (i = pub.length - 1; i >= 0 ; i--) {
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
+          images.push({element: pub[i].element, src: pub[i].src})
+        }
+        for (i = images.length - 1; i >= 0; i--) {
           if (menu[index].id.match(/Imgur/g))
-            xmlImageAttributes(true, index, pub[i].element, pub[i].src);
+            xmlImageAttributes(true, index, images[i].element, images[i].src);
           else if (!menu[index].id.match(/Youtube/g))
-            xmlImageAttributes(false, index, pub[i].element, pub[i].src);
+            xmlImageAttributes(false, index, images[i].element, images[i].src);
         }
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;

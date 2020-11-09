@@ -35,7 +35,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(212,212,212,.2)`
+    `rgb(255,255,255,.8)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,

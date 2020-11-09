@@ -38,7 +38,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgba(63, 92, 136, .8)`
+    `rgba(63, 92, 136, .4)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,

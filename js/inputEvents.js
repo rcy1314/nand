@@ -147,7 +147,18 @@ document.addEventListener(
 document.addEventListener(
   `submit`,
   function (event) {
-    if (event.target.classList.contains(`filter`)) {
+    if (event.target.classList.contains(`url`)) {
+      if (document.querySelector(`.imageURL`).value.length) {
+        if (
+          document.querySelector(`.imageURL`).value
+          .match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
+        ) {
+          _main.style.backgroundImage =
+          `url(${document.querySelector(`.imageURL`).value})`
+          backgroundImage = document.querySelector(`.imageURL`).value
+        }
+      }
+    } else if (event.target.classList.contains(`filter`)) {
       if (document.querySelector(`.sideFilter`).value.length) {
         init();
         topMenuBarDisplay(topBar);

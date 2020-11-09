@@ -115,7 +115,8 @@ var sideBarDisplay = function (toggleOption) {
       option.innerHTML = background[i].name;
       bg.append(option);
       bg.append(sideBarThemeBuild(background[i].icon));
-    }
+    }urlFormBuild
+    content.append(urlFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)

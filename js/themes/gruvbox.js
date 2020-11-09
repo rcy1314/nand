@@ -35,7 +35,7 @@ var Gruvbox = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgba(169, 121, 62, .8)`
+    `rgba(169, 121, 62, .4)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,

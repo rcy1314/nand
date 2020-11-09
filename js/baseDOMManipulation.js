@@ -489,6 +489,23 @@ var sideBarBackgroundListing = function () {
   return bg;
 };
 
+var urlFormBuild = function () {
+  let url = document.createElement(`div`);
+  url.id = `url`;
+  url.classList.add('background')
+  let form = document.createElement(`form`);
+  form.classList.add(`url`);
+  form.setAttribute(`action`, `#`);
+  let object = document.createElement(`input`);
+  object.setAttribute(`placeholder`, `url`);
+  object.setAttribute(`type`, `text`);
+  object.classList.add(`imageURL`);
+  object.classList.add(`text`);
+  form.append(object);
+  url.append(form);
+  return url;
+};
+
 var basicFormBuild = function () {
   let basic = document.createElement(`div`);
   basic.id = `basic`;
