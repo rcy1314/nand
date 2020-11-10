@@ -49,6 +49,7 @@
 */
 
 if (
+  !location.href.match(`\\?fbclid`) &&
   !location.search.split(`?q=`)[1] &&
   !location.href.match(`\\?\\+1`) &&
   !location.href.match(`\\?\\#`) &&
