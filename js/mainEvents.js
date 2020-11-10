@@ -334,6 +334,8 @@ document.addEventListener(
       if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
       document.querySelector(`#xml`).style.display = `block`
+      post = -1
+      local = -1
     }
     if (event.target.classList.contains(`bottom`)) {
       init();
