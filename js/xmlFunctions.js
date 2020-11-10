@@ -749,7 +749,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplay(sticky);
         }
-        for (i = pub.length - 1; i >= 0; i--) {
+        for (i = 0; i < pub.length - 1; i++) {
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
           images.push({ element: pub[i].element, src: pub[i].src });
