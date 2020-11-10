@@ -26,7 +26,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(63, 92, 136, .4)`
+    `rgba(63, 92, 136, .6)`
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,

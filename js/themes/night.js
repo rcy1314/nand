@@ -20,7 +20,7 @@ var Night = function () {
   document.documentElement.style.setProperty(`--bg-color-secondary`, `#0f0f0f`);
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(10, 10, 10, 1)`
+    `rgba(10, 10, 10, .9)`
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,

@@ -545,6 +545,7 @@ var filterInputResponse = function (
   if (!match) match = filter[0];
   if (filter.length == 0){
     xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
+    document.querySelector(`body`).classList.remove(`blink`);
     return false
   }
   if (initPassthrough == false) {
