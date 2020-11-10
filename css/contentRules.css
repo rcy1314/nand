@@ -627,7 +627,7 @@ html body #container #main #visit #page #front .focus input[type=text] {
   display: inline-block;
   caret-color: #e4e4e4;
   position: relative;
-  border-radius: 6px;
+  border-radius: 2px;
   text-align: center;
   font-size: 14px;
   outline: none;
@@ -661,9 +661,10 @@ html body #container #main #visit #page #front .focus .button {
   position: relative;
   border-radius: 5px;
   height: 40px;
-  width: 81px;
-  right: 10px;
+  width: 75px;
+  right: 3px;
   bottom: 0;
+  top: .3px;
 }
 
 html body #container #main #visit #page #front .focus .button:active {
@@ -675,7 +676,7 @@ html body #container #main #visit #page #front .focus .buttonSearch {
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
-  right: 31px;
+  right: 26px;
   top: 10px;
 }
 
