@@ -614,7 +614,8 @@ var xmlRequestParsing = function (search, string, index) {
 
   document.title = menu[index].id.space();
   _visit.style.display = `none`;
-  if (first == true && !post) _check.style.visibility = `visible`;
+  if (first == true && search != `search` && !post)
+    _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {

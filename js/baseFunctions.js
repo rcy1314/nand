@@ -543,8 +543,10 @@ var filterInputResponse = function (
       filter.push(menu.indexOf(menu[i]));
   }
   if (!match) match = filter[0];
-  if (filter.length == 0)
+  if (filter.length == 0){
     xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
+    return false
+  }
   if (initPassthrough == false) {
     if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
