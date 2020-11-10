@@ -2,6 +2,7 @@ document.addEventListener(
   `mousemove`,
   function (event) {
     if (
+      event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
@@ -29,6 +30,7 @@ document.addEventListener(
         event.target.nextElementSibling.nextElementSibling.style.borderStyle = `solid`;
       }
       if (
+        event.target != document.querySelector(`.adjust`) &&
         event.target != document.querySelector(`.border`) &&
         event.target != document.querySelector(`.cat:first-child`) &&
         event.target != document.querySelector(`.sel:first-child`)
@@ -48,6 +50,7 @@ document.addEventListener(
   `mouseout`,
   function (event) {
     if (
+      event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
@@ -61,6 +64,7 @@ document.addEventListener(
         event.target.nextElementSibling.nextElementSibling.style
         .borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
       if (
+        event.target != document.querySelector(`.adjust`) &&
         event.target != document.querySelector(`.border`) &&
         event.target != document.querySelector(`.cat:first-child`) &&
         event.target != document.querySelector(`.sel:first-child`)
