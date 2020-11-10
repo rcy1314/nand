@@ -20,7 +20,6 @@ window.onload = function () {
     document.querySelector(`.themes`).style.height = `${
       (themes.length + 1) * 35
     }px`;
-    setTimeout(function() {
     if (!post) {
       document.querySelector(`body`).classList.add(`blink`);
       if (
@@ -51,6 +50,7 @@ window.onload = function () {
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
       }
     }
+  setTimeout(function() {
     document.querySelector(`body`).style.display = `block`;
     document.querySelector(`html`).style.display = `block`;
   }, 250)
