@@ -327,33 +327,6 @@ var progressBackDrop = function (done, percent) {
     _progress.style.width = `${percent}%`;
     if (document.body.contains(document.getElementById(`xml`))) {
       document.querySelector(`#xml`).style.display = `block`;
-      (function () {
-        var elements;
-        var windowHeight;
-
-        function init() {
-          elements = document.querySelectorAll(".img");
-          windowHeight = _main.clientHeight;
-        }
-
-        function checkPosition() {
-          for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            var positionFromTop = elements[i].getBoundingClientRect().top;
-
-            if (positionFromTop <= windowHeight / 0.75) {
-              element.classList.add("fade-in-element");
-              element.classList.remove("hidden");
-            }
-          }
-        }
-
-        _main.addEventListener("scroll", checkPosition);
-        window.addEventListener("resize", init);
-
-        init();
-        checkPosition();
-      })();
       if (scrollIntoView == true && reader == false) {
         document.querySelector(
           `#xml`
