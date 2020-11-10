@@ -55,12 +55,6 @@ if (
   location.href.split(`?`)[1]
 ) {
   var uri = location.href.split(`?`)[1];
-  if (location.href.match(`\\+1`)) {
-    uri = uri.replace(/\?\+1|\+1/, ``);
-    if (!uri.match(/^[a-zA-Z0-9]+$/i)) {
-      let i = -1;
-    }
-  }
   if (uri.match(/^[a-zA-Z0-9]+$/i)) {
     let id = uri.slice(0, 2);
     post = parseInt(uri.slice(2), 36);
@@ -98,5 +92,4 @@ else if (location.search.split(`?q=`)[1]) {
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
   }, 250);
-} else if (location.href.match(`\\?`))
-  _visit.style.display = `flex`;
+} else _visit.style.display = `flex`;
