@@ -1,5 +1,9 @@
 const _top = document.getElementById(`top`);
 
+const _html = document.querySelector(`html`);
+
+const _body = document.querySelector(`body`);
+
 const _hide = document.getElementById(`hide`);
 
 const _link = document.getElementById(`link`);

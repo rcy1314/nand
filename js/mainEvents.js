@@ -21,7 +21,7 @@ window.onload = function () {
       (themes.length + 1) * 35
     }px`;
     if (!post) {
-      document.querySelector(`body`).classList.add(`blink`);
+      _body.classList.add(`blink`);
       if (
         Array.isArray(backgroundImage) &&
         typeof backgroundImage[0].path == "string" &&
@@ -51,12 +51,12 @@ window.onload = function () {
       }
     }
   setTimeout(function() {
-    document.querySelector(`body`).style.display = `block`;
-    document.querySelector(`html`).style.display = `block`;
+    _body.style.display = `block`;
+    _html.style.display = `block`;
   }, 250)
   ready(() => {
     setTimeout(function(){
-      document.querySelector(`body`).classList.remove(`blink`);
+      _body.classList.remove(`blink`);
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
