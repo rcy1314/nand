@@ -299,6 +299,33 @@ document.addEventListener(
       event.target.classList.contains(`checkmark`) ||
       event.target.classList.contains(`blur`)
     ) {
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `container`
+      ) {
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      } else if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `main`
+      ) {
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      }
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].position == "string"
+      ) {
+        _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+        _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+      }
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].size == "string"
+      ) {
+        _container.style.backgroundSize = `${backgroundImage[0].size}`;
+        _main.style.backgroundSize = `${backgroundImage[0].size}`;
+      }
       _main.classList.remove(`guide`);
       _guide.style.display = `none`;
       while (event.target.firstChild)
