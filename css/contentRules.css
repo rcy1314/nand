@@ -666,7 +666,7 @@ html body #container #main #visit #page #front .focus .button {
   bottom: 0;
 }
 
-html body #container #main #visit #page #front .focus .button:hover {
+html body #container #main #visit #page #front .focus .button:active {
   background-color: var(--loader-color-secondary);
 }
 

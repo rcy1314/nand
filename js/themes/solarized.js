@@ -9,7 +9,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(63, 92, 136, 1)`
+    `rgba(63, 92, 136, .7)`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#eeeeee`);
   document.documentElement.style.setProperty(

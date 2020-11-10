@@ -9,7 +9,7 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(253, 115, 136, 1)`
+    `rgba(253, 115, 136, .7)`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#eeeeee`);
   document.documentElement.style.setProperty(

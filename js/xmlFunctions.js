@@ -754,7 +754,7 @@ var xmlRequestParsing = function (search, string, index) {
             document.querySelector(`.channel`).append(pub[i].post);
           images.push({ element: pub[i].element, src: pub[i].src });
         }
-        for (i = images.length - 1; i >= 0; i--) {
+        for (i = 0; i <= images.length - 1; i++) {
           if (menu[index].id.match(/Imgur/g))
             xmlImageAttributes(true, index, images[i].element, images[i].src);
           else if (!menu[index].id.match(/Youtube/g))

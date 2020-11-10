@@ -9,7 +9,7 @@ var Gruvbox = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(169, 121, 62, 1)`
+    `rgba(169, 121, 62, .7)`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#eeeeee`);
   document.documentElement.style.setProperty(

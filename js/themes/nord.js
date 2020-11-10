@@ -9,7 +9,7 @@ var Nord = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(48, 52, 63, 1)`
+    `rgba(48, 52, 63, .7)`
   );
   document.documentElement.style.setProperty(
     `--fill-color-primary`,
