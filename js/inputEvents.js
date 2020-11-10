@@ -145,7 +145,7 @@ document.addEventListener(
         if (
           document
             .querySelector(`.imageURL`)
-            .value.match(/\b(?:png|jpe?g|gif)/g)
+            .value.match(/\b(?:png|jpe?g|gif|webp)/g)
         ) {
           if (
             Array.isArray(backgroundImage) &&
