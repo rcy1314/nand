@@ -766,7 +766,7 @@ var xmlRequestParsing = function (search, string, index) {
           images.push({ element: pub[i].element, src: pub[i].src });
         }
         for (i = 0; i <= images.length - 1; i++) {
-          if (menu[index].id.match(/Imgur/g))
+          if (menu[index].id.match(/Imgur/g) || onlyImages == true)
             xmlImageAttributes(true, index, images[i].element, images[i].src);
           else if (!menu[index].id.match(/Youtube/g))
             xmlImageAttributes(false, index, images[i].element, images[i].src);
