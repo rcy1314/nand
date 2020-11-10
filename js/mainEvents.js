@@ -12,14 +12,6 @@ window.onload = function () {
   }
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
-  if (expandBackground == true)
-    document.querySelector(`.bg`).style.height = `${
-      (background.length + 1) * 35
-    }px`;
-  if (expandVisual == true)
-    document.querySelector(`.themes`).style.height = `${
-      (themes.length + 1) * 35
-    }px`;
     if (!post) {
       _body.classList.add(`blink`);
       if (
@@ -67,6 +59,14 @@ window.onload = function () {
         sideBarFirst = true;
         sideBarDisplay(onScreen);
       }
+      if (expandBackground == true)
+        document.querySelector(`.bg`).style.height = `${
+          (background.length + 1) * 35
+        }px`;
+      if (expandVisual == true)
+        document.querySelector(`.themes`).style.height = `${
+          (themes.length + 1) * 35
+        }px`;
       _container.style.display = `block`
     }, 3500)
   });

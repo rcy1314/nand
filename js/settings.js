@@ -98,7 +98,7 @@ let expandVisual = false;
 
 */
 
-let expandBackground = false;
+let expandBackground = true;
 
 /*
     expandBackground [boolean/integer]
@@ -369,6 +369,7 @@ const selections = [
 
 const background = [
   { name: `Set`, class: `setBackground`, icon: `fa-user` },
+  { name: `Save`, class: `saveBackground`, icon: `fa-download` },
   { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
   { name: `Center`, class: `centerBackground`, icon: `fa-crop-alt` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },

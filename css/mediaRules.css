@@ -231,6 +231,10 @@
     display: none;
   }
 
+  html body #container #main #progressBar {
+    max-width: calc(100% - 16px);
+  }
+
   html body #container #main #top {
     width: calc(100% - 16px);
   }

@@ -82,7 +82,7 @@ document.addEventListener(
       event.target.select()
     }
     if (event.target.classList.contains(`setBackground`)) {
-      var input = document.createElement(`input`);
+      let input = document.createElement(`input`);
       input.type = `file`;
       input.setAttribute("accept", "image/*");
 
@@ -116,6 +116,33 @@ document.addEventListener(
         };
       };
       input.click();
+    }
+    if (event.target.classList.contains(`saveBackground`) &&
+        document.querySelector(`.urlInput`).value
+      .match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif|webp))/g)
+    ) {
+      init()
+      var xhr = new XMLHttpRequest();
+      var url = document.querySelector(`.urlInput`).value;
+
+      xhr.responseType = 'arraybuffer'; //Set the response type to arraybuffer so xhr.response returns ArrayBuffer
+      xhr.open('GET', cors + url , true);
+
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == xhr.DONE) {
+              //When request is done
+              //xhr.response will be an ArrayBuffer
+              var file = new Blob([xhr.response], {type:'image'});
+              saveAs(
+                file,
+                document.querySelector(`.urlInput`).value
+                .match(/\b(\/.+\.(?:png|jpe?g|gif|webp))/g)
+              );
+              unloading()
+          }
+      };
+
+      xhr.send();
     }
     if (event.target.classList.contains(`mainBackground`)) {
       if (
