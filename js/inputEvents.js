@@ -145,12 +145,29 @@ document.addEventListener(
         if (
           document
             .querySelector(`.imageURL`)
-            .value.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
+            .value.match(/\b(?:png|jpe?g|gif)/g)
         ) {
-          _main.style.backgroundImage = `url(${
-            document.querySelector(`.imageURL`).value
-          })`;
-          backgroundImage = document.querySelector(`.imageURL`).value;
+          if (
+            Array.isArray(backgroundImage) &&
+            typeof backgroundImage[0].path == "string" &&
+            backgroundImage[0].element == `container`
+          ) {
+            _container.style.backgroundImage = `url(${
+              document.querySelector(`.imageURL`).value
+            })`;
+            _main.style.backgroundImage = `url()`;
+          } else if (
+            Array.isArray(backgroundImage) &&
+            typeof backgroundImage[0].path == "string" &&
+            backgroundImage[0].element == `main`
+          ) {
+            _main.style.backgroundImage = `url(${
+              document.querySelector(`.imageURL`).value
+            })`;
+            _container.style.backgroundImage = `url()`;
+          }
+
+          backgroundImage[0].path = document.querySelector(`.imageURL`).value;
         }
       }
     } else if (event.target.classList.contains(`filter`)) {

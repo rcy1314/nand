@@ -14,7 +14,7 @@ let set = `Day`;
 
 let backgroundImage = [
   {
-    path: "../ffe869c642be33cbb2c3e609e27beb29.jpg",
+    path: "images/ffe869c642be33cbb2c3e609e27beb29.jpg",
     element: "container",
     position: "center",
     size: "cover",
@@ -269,7 +269,17 @@ let safeSearchScore = `0.4279794991016388`;
 
 */
 
-let safeSearchCategory = [`Social`];
+let safeSearchIDs =
+  [
+    `Imgur/Celebs`,
+    `Reddit/Celebs`,
+    `Imgur/Celebhub`,
+    `Reddit/Celebhub`,
+    `Imgur/Goddesses`,
+    `Reddit/Goddesses`,
+    `4Chan/HR High Resolution`,
+    `4Chan/Wallpapers General`
+  ];
 
 /*
     cors [string]

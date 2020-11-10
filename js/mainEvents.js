@@ -68,7 +68,7 @@ window.addEventListener(
       onScreen = false;
       sideBarFirst = true;
       sideBarDisplay(false);
-    } else sideBarDisplay(onScreen);
+    }
   },
   true
 );

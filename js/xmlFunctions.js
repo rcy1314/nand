@@ -321,13 +321,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 799;
   let jsonResponseScore;
   ready(() => {
-    if (imageDuplicate.includes(src)) {
+    if (!src || imageDuplicate.includes(src)) {
       if (
         document.body.contains(
           document.querySelector(`[aria-item='${pubIndex}'] .pending`)
+        ) &&
+        document.body.contains(
+          document.querySelector(`[aria-item='${pubIndex}'] .image`)
         )
-      )
+      ) {
         document.querySelector(`[aria-item='${pubIndex}'] .pending`).remove();
+        document.querySelector(`[aria-item='${pubIndex}'] .image`).remove();
+      }
       if (
         empty == true ||
         (onlyImages == true &&
@@ -377,14 +382,15 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
-        if (safeSearch == true && safeSearchCategory.includes(category))
+        if (safeSearch == true && safeSearchIDs.includes(menu[id].id))
           fetch(`${cors}${api}${src}`, {
             method: "GET",
             headers: {
               Origin: "*",
               Accept: "application/json",
+              "X-Requested-With": "*",
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "acktic.github.io",
+              "Access-Control-Allow-Origin": "*"
             },
           })
             .then((response) => {
@@ -480,10 +486,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
-              itemImage.style.margin = `12px`;
+              itemPending.style.margin = `12px`;
               itemImage.closest(`.classic`).style.display = `flex`;
               itemImage.closest(`.classic`).style.alignItems = `center`;
-              itemPending.style.width = `135px`;
+              itemPending.style.width = `180px`;
               itemImage.style.marginBottom = `30px`;
               copyPost.style.display = `none`;
               copyPicture.style.display = `none`;
@@ -509,14 +515,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
-              itemImage.closest(`.image`).style.margin = `12px`;
+              itemPending.style.margin = `12px`;
               itemImage.closest(`.classic`).style.display = `flex`;
               itemImage.closest(`.classic`).style.alignItems = `center`;
               itemImage.style.marginBottom = `30px`;
               copyPost.style.display = `none`;
               copyPicture.style.display = `none`;
               attribute.style.width = `37px`;
-              itemPending.style.width = `135px`;
+              itemPending.style.width = `180px`;
             } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
               itemImage.style.width = `100%`;
               itemImage.classList.add(`default`);
@@ -531,13 +537,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             }
           }
           if (
-            (document.body.contains(
+             document.body.contains(
               document.querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
               )
             ) &&
-              safeSearch == false) ||
-            !safeSearchCategory.includes(category)
+            safeSearch == false ||
+            !safeSearchIDs.includes(menu[id].id)
           ) {
             if (
               document.body.contains(
@@ -556,6 +562,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
               )
               .classList.add(`hidden`);
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              ).style.display = `block`
           }
         }
       };

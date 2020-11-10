@@ -499,6 +499,8 @@ var urlFormBuild = function () {
   form.classList.add(`url`);
   form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
+  object.classList.add("urlInput")
+  object.setAttribute("value","images/ffe869c642be33cbb2c3e609e27beb29.jpg")
   object.setAttribute(`placeholder`, `url`);
   object.setAttribute(`type`, `text`);
   object.classList.add(`imageURL`);

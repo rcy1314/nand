@@ -116,7 +116,6 @@ var sideBarDisplay = function (toggleOption) {
       bg.append(option);
       bg.append(sideBarThemeBuild(background[i].icon));
     }
-    urlFormBuild;
     content.append(urlFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
@@ -439,7 +438,7 @@ var progressBackDrop = function (done, percent) {
 };
 
 var populateCategoryGroup = function (translation) {
-  if (scrollIntoView == true) _check.style.visibility = `visible`;
+  if (scrollIntoView === true) _check.style.visibility = `visible`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
   if (id && id != 0 && !location.href.match(`\\?q=`)) {

@@ -32,7 +32,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(31,31,31,.4)`
+    `rgb(31,31,31,.8)`
   );
   document.documentElement.style.setProperty(
     `--progress-background`,

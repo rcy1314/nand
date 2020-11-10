@@ -31,7 +31,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-border-color`,
-    `.3px solid #dddddd`
+    `.3px solid #cccccc`
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,

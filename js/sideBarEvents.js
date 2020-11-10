@@ -74,6 +74,9 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (event.target.classList.contains(`urlInput`)) {
+      event.target.select()
+    }
     if (event.target.classList.contains(`setBackground`)) {
       var input = document.createElement(`input`);
       input.type = `file`;
@@ -97,12 +100,14 @@ document.addEventListener(
             backgroundImage[0].element == `container`
           ) {
             _container.style.backgroundImage = `url(${content})`;
+            _main.style.backgroundImage = `url()`;
           } else if (
             Array.isArray(backgroundImage) &&
             typeof backgroundImage[0].path == "string" &&
             backgroundImage[0].element == `main`
           ) {
             _main.style.backgroundImage = `url(${content})`;
+            _container.style.backgroundImage = `url()`;
           }
         };
       };
@@ -177,7 +182,6 @@ document.addEventListener(
       event.target.classList.contains(`cat`)
     ) {
       id = 0;
-      _check.style.visibility = `visible`;
       const button = event.target.getBoundingClientRect();
       const circle = document.createElement(`span`);
       const diameter = Math.max(
