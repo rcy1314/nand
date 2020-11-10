@@ -66,7 +66,7 @@ window.onload = function () {
         sideBarDisplay(onScreen);
       }
       _container.style.display = `block`
-    }, 2500)
+    }, 3500)
   });
 };
 window.addEventListener(
