@@ -14,7 +14,7 @@ let set = `Day`;
 
 let backgroundImage = [
   {
-    path: "images/ffe869c642be33cbb2c3e609e27beb29.jpg",
+    path: "images/ffe869c642be33cbb2c3e609e27beb29.webp",
     element: "container", //container or main
     position: "center",
     size: "cover",
