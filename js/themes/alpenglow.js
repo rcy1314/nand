@@ -43,10 +43,6 @@ var Alpenglow = function () {
     `rgba(63, 92, 136, .4)`
   );
   document.documentElement.style.setProperty(
-    `--progress-background`,
-    `rgba(63, 92, 136, .3)`
-  );
-  document.documentElement.style.setProperty(
     `--sticky-background`,
     `rgba(63, 92, 136, .4)`
   );

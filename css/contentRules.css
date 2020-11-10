@@ -76,7 +76,7 @@ html body #container #main #notification {
 }
 
 html body #container #main #progressBar {
-  background-color: var(--progress-background);
+  background-color: var(--loader-color-secondary);
   border-radius: 16px;
   position: fixed;
   height: 4px;

@@ -58,11 +58,6 @@ var Example = function() {
     `--borderless-hover-color`,
     `rgba(63, 92, 136, .5)`
   );
-  //Percent color, Input Listing Hover
-  document.documentElement.style.setProperty(
-    `--progress-background`,
-    `rgba(63, 92, 136, .3)`
-  );
   //Guide blur color
   document.documentElement.style.setProperty(
     `--sticky-background`,

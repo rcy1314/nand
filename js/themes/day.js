@@ -38,10 +38,6 @@ var Day = function () {
     `rgb(240,240,240,.6)`
   );
   document.documentElement.style.setProperty(
-    `--progress-background`,
-    `rgba(238, 238, 238, .4)`
-  );
-  document.documentElement.style.setProperty(
     `--sticky-background`,
     `rgba(255,255,255,.4)`
   );

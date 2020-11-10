@@ -66,14 +66,15 @@ if (
       _visit.style.display = `flex`;
     } else {
       init();
-      if (post) sideBarDisplay(onScreen);
+      if (!post) sideBarDisplay(onScreen);
       else sideBarDisplay(false);
       guideOnScreen = onScreen;
+      _toggle.style.display = `none`;
+      _guide.style.display = `flex`;
+      _top.style.display = `none`;
       setTimeout(function () {
         filterInputResponse(true, false, menu[i].id.space(), false);
       }, 250);
-      _toggle.style.display = `none`;
-      _top.style.display = `none`;
     }
   }
 } else if (location.href.match(`\\?\\+1`)) _visit.style.display = `flex`;

@@ -35,10 +35,6 @@ var Night = function () {
     `rgb(31,31,31,.8)`
   );
   document.documentElement.style.setProperty(
-    `--progress-background`,
-    `#f7426C`
-  );
-  document.documentElement.style.setProperty(
     `--sticky-background`,
     `rgba(0,0,0,.4)`
   );

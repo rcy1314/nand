@@ -44,10 +44,6 @@ var Nord = function () {
     `rgba(48, 52, 63, .8)`
   );
   document.documentElement.style.setProperty(
-    `--progress-background`,
-    `rgba(218, 222, 232, .4)`
-  );
-  document.documentElement.style.setProperty(
     `--sticky-background`,
     `rgba(218, 222, 232, .4)`
   );

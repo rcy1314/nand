@@ -38,10 +38,6 @@ var Gruvbox = function () {
     `rgba(169, 121, 62, .4)`
   );
   document.documentElement.style.setProperty(
-    `--progress-background`,
-    `rgba(169, 121, 62, .3)`
-  );
-  document.documentElement.style.setProperty(
     `--sticky-background`,
     `rgba(169, 121, 62, .4)`
   );

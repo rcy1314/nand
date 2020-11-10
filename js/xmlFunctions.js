@@ -614,7 +614,7 @@ var xmlRequestParsing = function (search, string, index) {
 
   document.title = menu[index].id.space();
   _visit.style.display = `none`;
-  if (first == true) _check.style.visibility = `visible`;
+  if (first == true && !post) _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -757,6 +757,7 @@ var xmlRequestParsing = function (search, string, index) {
             externalURI: pub[local].re,
             id: index,
           });
+          document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
         }
         for (i = 0; i < pub.length - 1; i++) {

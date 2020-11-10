@@ -20,35 +20,37 @@ window.onload = function () {
     document.querySelector(`.themes`).style.height = `${
       (themes.length + 1) * 35
     }px`;
-  if (
-    Array.isArray(backgroundImage) &&
-    typeof backgroundImage[0].path == "string" &&
-    backgroundImage[0].element == `container`
-  ) {
-    _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
-  } else if (
-    Array.isArray(backgroundImage) &&
-    typeof backgroundImage[0].path == "string" &&
-    backgroundImage[0].element == `main`
-  ) {
-    _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
-  }
-  if (
-    Array.isArray(backgroundImage) &&
-    typeof backgroundImage[0].position == "string"
-  ) {
-    _container.style.backgroundPosition = `${backgroundImage[0].position}`;
-    _main.style.backgroundPosition = `${backgroundImage[0].position}`;
-  }
-  if (
-    Array.isArray(backgroundImage) &&
-    typeof backgroundImage[0].size == "string"
-  ) {
-    _container.style.backgroundSize = `${backgroundImage[0].size}`;
-    _main.style.backgroundSize = `${backgroundImage[0].size}`;
-  }
-  setTimeout(function() {
-    document.querySelector(`body`).classList.add(`blink`);
+    setTimeout(function() {
+    if (!post) {
+      document.querySelector(`body`).classList.add(`blink`);
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `container`
+      ) {
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      } else if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `main`
+      ) {
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      }
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].position == "string"
+      ) {
+        _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+        _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+      }
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].size == "string"
+      ) {
+        _container.style.backgroundSize = `${backgroundImage[0].size}`;
+        _main.style.backgroundSize = `${backgroundImage[0].size}`;
+      }
+    }
     document.querySelector(`body`).style.display = `block`;
     document.querySelector(`html`).style.display = `block`;
   }, 250)
@@ -304,6 +306,7 @@ document.addEventListener(
       onScreen = guideOnScreen;
       if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       topMenuBarDisplay(topBar);
+      document.querySelector(`#xml`).style.display = `block`
     }
     if (event.target.classList.contains(`bottom`)) {
       init();

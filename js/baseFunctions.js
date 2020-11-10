@@ -211,10 +211,9 @@ var guideDisplay = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _top.style.display = `hide`;
   _guide.append(guideBuild(pubArray[0]));
+  document.querySelector(`.sticky`).style.display = `none`
   guideImageAttributes(pubArray[0].src);
-  _guide.style.display = `flex`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
@@ -225,9 +224,7 @@ var guideDisplayYoutube = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _top.style.display = `hide`;
   _guide.append(guideBuildYoutube(pubArray[0]));
-  _guide.style.display = `flex`;
 };
 
 var contentStatusDisplay = function (
@@ -325,7 +322,7 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transition = `width .15s ease-in-out`;
     _progress.style.transitionDelay = `none`;
     _progress.style.width = `${percent}%`;
-    if (document.body.contains(document.getElementById(`xml`))) {
+    if (document.body.contains(document.getElementById(`xml`)) && !post) {
       document.querySelector(`#xml`).style.display = `block`;
       if (scrollIntoView == true && reader == false) {
         document.querySelector(
@@ -611,7 +608,7 @@ var guideImageAttributes = function (src) {
         _guide.querySelector(`.img`).style.maxHeight = `70vh`;
       }
     }
-    _guide.querySelector(`.sticky`).style.display = `block`;
+    document.querySelector(`.sticky`).style.display = `block`
     _guide.style.display = `flex`;
   };
 };
