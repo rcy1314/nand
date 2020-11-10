@@ -13,6 +13,7 @@
 
 * Nearly half XML responses have no images attached use onlyImages.
 * Heroku cors-anywhere offloading, first response ~7s.
+* safeSearch throws some errors returning offloading.
 
 ### Configurations in js/settings.js
 
