@@ -658,8 +658,8 @@ html body #container #main #visit #page #front .focus .button {
   position: relative;
   border-radius: 5px;
   height: 40px;
-  width: 75px;
-  right: 5px;
+  width: 81px;
+  right: 10px;
   bottom: 0;
 }
 
