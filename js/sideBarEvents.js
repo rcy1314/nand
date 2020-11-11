@@ -172,16 +172,16 @@ document.addEventListener(
         _main.style.backgroundSize = `cover`;
       }
     }
-    if (event.target.classList.contains(`centerBackground`)) {
+    if (event.target.classList.contains(`fitBackground`)) {
       if (
-        _container.style.backgroundPosition == `center center` ||
-        _main.style.backgroundPosition == `center center`
+        _container.style.backgroundSize == `auto 100%` ||
+        _main.style.backgroundSize == `auto 100%`
       ) {
-        _container.style.backgroundPosition = `top left`;
-        _main.style.backgroundPosition = `top left`;
+        _container.style.backgroundSize = `contain`;
+        _main.style.backgroundSize = `contain`;
       } else {
-        _container.style.backgroundPosition = `center center`;
-        _main.style.backgroundPosition = `center center`;
+        _container.style.backgroundSize = `auto 100%`;
+        _main.style.backgroundSize = `auto 100%`;
       }
     }
     if (event.target.classList.contains(`removeBackground`)) {

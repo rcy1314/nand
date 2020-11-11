@@ -368,9 +368,9 @@ const selections = [
 
 const background = [
   { name: `Set`, class: `setBackground`, icon: `fa-user` },
+  { name: `Fit`, class: `fitBackground`, icon: `fa-crop-alt` },
   { name: `Save`, class: `saveBackground`, icon: `fa-download` },
   { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
-  { name: `Center`, class: `centerBackground`, icon: `fa-crop-alt` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
   { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },
   {
