@@ -8,6 +8,7 @@
 * Private Proxy Requests.
 * Beta (stage) themes.
 * no installation.
+* nsfw api.
 
 ### Known Issues
 
