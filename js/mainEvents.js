@@ -68,6 +68,15 @@ window.onload = function () {
           (themes.length + 1) * 35
         }px`;
       _container.style.display = `block`
+      if (typeof set === `string`)
+        var startup = setInterval(function () {
+          if (typeof eval(set) === `function`) {
+            window[set]();
+            setTimeout(function () {
+              clearInterval(startup);
+            }, 500);
+          }
+        }, 250);
     }, 3500)
   });
 };

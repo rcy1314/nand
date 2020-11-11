@@ -50,13 +50,3 @@ for (i = 0; i <= themes.length - 1; i++) {
     );
   })(i);
 }
-
-if (typeof set === `string`)
-  var startup = setInterval(function () {
-    if (typeof eval(set) === `function`) {
-      window[set]();
-      setTimeout(function () {
-        clearInterval(startup);
-      }, 500);
-    }
-  }, 250);
