@@ -88,26 +88,26 @@ let expand = true;
 let expandVisual = false;
 
 /*
-    expandVisual [boolean/integer]
-
-      Applications
-        sideBar
-
-      Result
-        toggle visual extended
-
-*/
-
-let expandBackground = false;
-
-/*
     expandBackground [boolean/integer]
 
       Applications
         sideBar
 
       Result
-        toggle background extended
+        Background expanded
+
+*/
+
+let expandBackground = false;
+
+/*
+    showOption [boolean/integer]
+
+      Applications
+        sideBar, topBar
+
+      Result
+        toggle icons in topBar
 
 */
 let showOption = true;
@@ -139,14 +139,13 @@ let quickFeeds = true;
 let quickFeedsTranslations = true;
 
 /*
-    loading [string]
+    scrollIntoView [string]
 
       Applications
-        init, progress, sideBar, unloading
+        xml, group
 
       Result
-        `percent`
-        `dots`
+        adds padding-top and animates out
 
 */
 
@@ -226,7 +225,7 @@ let suggestionBuffer = 7;
         xmlStatusSuggestions, xmlRequestParsing
 
       Result
-        random generated
+        random generated integer
 
 */
 
@@ -239,7 +238,7 @@ let contentStatusBuffer = 5;
         xmlImageAttributes
 
       Result
-        blur filter
+        blur filter nsfw
 
 */
 
