@@ -184,7 +184,6 @@ html body #container #sidebar #content .cat:hover {
 }
 
 html body #container #sidebar #content .webp {
-  filter: var(--hue-rotate);
   position: relative;
   margin-top: -40px;
   float: right;
@@ -627,7 +626,6 @@ html body #container #main #visit #page #front .focus input[type=text] {
   display: inline-block;
   caret-color: #e4e4e4;
   position: relative;
-  border-radius: 2px;
   text-align: center;
   font-size: 14px;
   outline: none;
@@ -735,8 +733,7 @@ html body #container #main #xml .content .status .filter:not(:hover) {
 
 html body #container #main #group .air .populate,
 html body #container #main #group .result .filter,
-html body #container #main #group .result .populate,
-html body #container #main #xml .content .status .filter {
+html body #container #main #group .result .populate {
   display: inline-flex;
   border-radius: 8px;
   position: relative;
@@ -748,6 +745,31 @@ html body #container #main #xml .content .status .filter {
   margin: 3em;
   width: 16em;
   z-index: 0;
+}
+
+html body #container #main #xml .content .status .filter {
+  margin-bottom: 10px;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  margin-left: 3px;
+  margin-top: 15px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-size: 9px;
+  padding: 10px;
+  display: flex;
+  height: 45px;
+  width: 257px;
+}
+
+html body #container #main #xml .content .status .filter a {
+  color: var(--fill-color-primary);
+  background-color: transparent;
+  position: relative;
+  font-size: 12px;
+  margin-left: 15px;
 }
 
 html body #container #main #group .air .populate .select,
@@ -779,8 +801,7 @@ html body #container #main #xml .content .status .filter:not(:hover) {
 
 html body #container #main #group .air .populate a,
 html body #container #main #group .result .filter a,
-html body #container #main #group .result .populate a,
-html body #container #main #xml .content .status .filter a {
+html body #container #main #group .result .populate a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
@@ -1246,7 +1267,7 @@ html body #container #guide .sticky .wrap .header .courtesy .copy {
 
 html body #container #main #xml .center .item .header .courtesy .copy .attribute,
 html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--bg-color-primary);
   position: absolute;
   display: none;
   height: 110px;

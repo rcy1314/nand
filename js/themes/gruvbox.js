@@ -18,7 +18,7 @@ var Gruvbox = function () {
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,
-    `rgba(38, 38, 38, .4)`
+    `rgba(171, 119, 86, .4)`
   );
   document.documentElement.style.setProperty(`--bg-color-secondary`, `#262626`);
   document.documentElement.style.setProperty(

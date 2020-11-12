@@ -13,7 +13,6 @@ window.onload = function () {
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
     if (!post) {
-      _body.classList.add(`blink`);
       if (
         Array.isArray(backgroundImage) &&
         typeof backgroundImage[0].path == "string" &&
@@ -44,7 +43,6 @@ window.onload = function () {
     }
   ready(() => {
     setTimeout(function(){
-      _body.classList.remove(`blink`);
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
@@ -72,7 +70,8 @@ window.onload = function () {
             }, 500);
           }
         }, 250);
-      if (!post) _visit.style.display = `flex`
+      if (!post && !location.search.split(`?q=`)[1])
+        _visit.style.display = `flex`
       unloading()
     }, 250)
   });
@@ -256,7 +255,23 @@ document.addEventListener(
       event.target.classList.contains(`ext`) ||
       event.target.classList.contains(`tag`)
     ) {
-      event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
+      const button = event.target.closest(`.filter`).getBoundingClientRect();
+      const circle = document.createElement(`span`);
+      const diameter = Math.max(
+        event.target.clientWidth,
+        event.target.clientHeight
+      );
+      const radius = diameter / 2;
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.left - radius}px`;
+      circle.style.top = `${event.clientY - button.top - radius}px`;
+      circle.classList.add(`ripple`);
+      if (document.querySelector(`.ripple`))
+        document.querySelector(`.ripple`).remove();
+      event.target.closest(`.filter`).appendChild(circle);
+      setTimeout(function() {
+        event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
+      }, 750)
     }
     if (event.target.classList.contains(`translation`)) {
       id = 0;

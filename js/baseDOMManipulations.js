@@ -166,22 +166,22 @@ var guideBuildYoutube = function (pubArray) {
 };
 
 var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
-  let object = document.createElement(`div`);
-  object.classList.add(`filter`);
-  object.setAttribute(`aria-item`, menu[menuIndex].ext);
-  let external = document.createElement(`div`);
-  external.classList.add(`ext`);
-  let exit = document.createElement(`img`);
-  exit.classList.add(`exit`);
-  exit.src = menu[menuIndex].image.image();
-  external.append(exit);
+  let filter = document.createElement(`div`);
+  filter.classList.add(`filter`);
+  filter.setAttribute(`aria-item`, menu[menuIndex].ext);
+  let select = document.createElement(`div`);
+  select.classList.add(`select`);
+  let display = document.createElement(`div`);
+  display.classList.add(`display`);
+  let object = document.createElement(`img`);
+  object.classList.add(`webp`);
+  object.src = menu[menuIndex].image.image();
+  filter.append(object);
   let ahref = document.createElement(`a`);
   ahref.classList.add(`tag`);
-  ahref.setAttribute(`ext`, menu[menuIndex].ext);
   ahref.setAttribute(`title`, menu[menuIndex].id);
   ahref.innerHTML = menu[menuIndex].id.match(/[^\/]+$/g);
-  object.append(external);
-  object.append(ahref);
+  filter.append(ahref);
   let info = document.createElement(`div`);
   info.classList.add(`info`);
   let des = document.createElement(`div`);
@@ -193,7 +193,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   info.append(des);
   let construct = document.createElement(`div`);
   construct.classList.add(`construct`);
-  construct.append(object);
+  construct.append(filter);
   construct.append(info);
   return construct;
 };

@@ -611,9 +611,8 @@ var xmlRequestParsing = function (search, string, index) {
     uri = `${cors}${menu[index].uri}`;
     category = menu[index].category;
   }
-
-  document.title = menu[index].id.space();
   _visit.style.display = `none`;
+  document.title = menu[index].id.space();
   if (first == true && search != `search` && !post)
     _check.style.visibility = `visible`;
 

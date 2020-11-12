@@ -321,8 +321,7 @@
   }
 
   html body #container #main #group .air .populate,
-  html body #container #main #group .result .populate,
-  html body #container #main #xml .content .status .filter {
+  html body #container #main #group .result .populate {
     width: 180px;
     margin: 2em;
   }

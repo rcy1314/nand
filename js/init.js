@@ -77,7 +77,7 @@ if (
       }, 250);
     }
   }
-} else if (location.href.match(`\\?\\+1`)) _visit.style.display = `flex`;
+}
 else if (location.search.split(`?q=`)[1]) {
   var uri = location.search.split(`?q=`)[1];
   var uri = uri.replace(/\?\+1|\+1/, ``);
@@ -85,8 +85,8 @@ else if (location.search.split(`?q=`)[1]) {
   if (location.hash.substr(1).match(/\+1/g))
     post = location.hash.substr(1).replace(/\+1/g, ``);
   else post = location.hash.substr(1);
-  init();
   _toggle.style.display = `none`;
+  _visit.style.display = `none`;
   _top.style.display = `block`;
   setTimeout(function () {
     if (!uri[1] && location.href.match(`\\&`))

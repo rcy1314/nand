@@ -349,7 +349,6 @@ var progressBackDrop = function (done, percent) {
           document.querySelector(`#xml`).style.paddingTop = `0`;
         }, 1000);
       }
-      _check.style.visibility = `hidden`;
       _main.scrollTop = "1";
     }
     if (document.body.contains(document.getElementById(`group`))) {
@@ -377,7 +376,6 @@ var progressBackDrop = function (done, percent) {
         }, 750);
         setTimeout(function () {
           document.querySelector(`#group`).style.paddingTop = `0`;
-          _check.style.visibility = `hidden`;
         }, 1500);
       }
     }
@@ -405,7 +403,6 @@ var progressBackDrop = function (done, percent) {
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
     }, 250);
-    if (scrollIntoView == false) _check.style.visibility = `hidden`;
   }
 };
 
@@ -546,6 +543,7 @@ var filterInputResponse = function (
   }
   if (!match) match = filter[0];
   if (filter.length == 0){
+    init()
     xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
     document.querySelector(`body`).classList.remove(`blink`);
     return false
@@ -554,9 +552,14 @@ var filterInputResponse = function (
     if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
-    if (isNumeric(exact)) xmlRequestParsing(null, null, exact);
-    else if (isNumeric(match) && filter.length == 1)
+    if (isNumeric(exact)){
+      init()
+      xmlRequestParsing(null, null, exact);
+    }
+    else if (isNumeric(match) && filter.length == 1){
+      init()
       xmlRequestParsing(null, null, match);
+    }
     return false;
   }
   if (categoryBloat == true && isNumeric(match))
