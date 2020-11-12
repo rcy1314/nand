@@ -13,7 +13,6 @@ window.onload = function () {
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
     if (!post) {
-      _body.classList.add(`blink`);
       if (
         Array.isArray(backgroundImage) &&
         typeof backgroundImage[0].path == "string" &&
@@ -41,10 +40,6 @@ window.onload = function () {
         _container.style.backgroundSize = `${backgroundImage[0].size}`;
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
       }
-    }
-  ready(() => {
-    setTimeout(function(){
-      _body.classList.remove(`blink`);
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
@@ -63,18 +58,25 @@ window.onload = function () {
         document.querySelector(`.themes`).style.height = `${
           (themes.length + 1) * 35
         }px`;
-      if (typeof set === `string`)
-        var startup = setInterval(function () {
-          if (typeof eval(set) === `function`) {
-            window[set]();
-            setTimeout(function () {
-              clearInterval(startup);
-            }, 500);
-          }
-        }, 250);
-      if (!post) _visit.style.display = `flex`
-    }, 3000)
-  });
+    }
+  else if (!location.search.split(`?q=`)[1]){
+  _body.classList.add(`blink`);
+    ready(() => {
+      setTimeout(function(){
+        _body.classList.remove(`blink`);
+        if (!post) _visit.style.display = `flex`
+      }, 3000)
+    });
+  }
+  if (typeof set === `string`)
+    var startup = setInterval(function () {
+      if (typeof eval(set) === `function`) {
+        window[set]();
+        setTimeout(function () {
+          clearInterval(startup);
+        }, 500);
+      }
+    }, 250);
 };
 window.addEventListener(
   `resize`,
