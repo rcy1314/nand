@@ -56,10 +56,8 @@ html body #container #main #visit {
 html,
 html body,
 html body #container {
-  background-color: var(--borderless-hover-color);
   background-position: center center;
   background-repeat: no-repeat;
-  display: none;
 }
 
 html body #container #main #notification {
