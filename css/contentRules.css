@@ -81,7 +81,7 @@ html body #container #main #progressBar {
   border-radius: 16px;
   position: fixed;
   height: 4px;
-  z-index: 10;
+  z-index: 12;
   width: 0;
   left: 0;
   top: 0;
