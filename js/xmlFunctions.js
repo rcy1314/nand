@@ -760,7 +760,11 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        } else _guide.style.display = `none`;
+        } else {
+          _guide.style.display = `none`;
+          topMenuBarDisplay(topBar);
+          sideBarDisplay(onScreen);
+        }
         for (i = 0; i < pub.length - 1; i++) {
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
