@@ -42,10 +42,6 @@ window.onload = function () {
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
       }
     }
-  setTimeout(function() {
-    _body.style.display = `block`;
-    _html.style.display = `block`;
-  }, 250)
   ready(() => {
     setTimeout(function(){
       _body.classList.remove(`blink`);
@@ -67,7 +63,6 @@ window.onload = function () {
         document.querySelector(`.themes`).style.height = `${
           (themes.length + 1) * 35
         }px`;
-      _container.style.display = `block`
       if (typeof set === `string`)
         var startup = setInterval(function () {
           if (typeof eval(set) === `function`) {
@@ -77,7 +72,8 @@ window.onload = function () {
             }, 500);
           }
         }, 250);
-    }, 3500)
+      if (!post) _visit.style.display = `flex`
+    }, 3000)
   });
 };
 window.addEventListener(

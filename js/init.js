@@ -94,4 +94,4 @@ else if (location.search.split(`?q=`)[1]) {
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
   }, 250);
-} else _visit.style.display = `flex`;
+}
