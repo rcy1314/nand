@@ -182,13 +182,12 @@ document.addEventListener(
           document.querySelector(`.sideFilter`).value.space(),
           true
         );
-        topMenuBarDisplay(topBar);
-        var uri = `?q=${document
-          .querySelector(`.sideFilter`)
-          .value.replace(/\s/g, `+`)}`;
-        displayExpand(groupType);
-        uri.state();
-        unloading();
+        filterInputResponse(
+          false,
+          false,
+          document.querySelector(`.sideFilter`).value,
+          true
+        );
       }
     } else if (event.target.id == `search`) {
       if (
@@ -223,12 +222,12 @@ document.addEventListener(
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_view.value.length) {
-        setTimeout(function () {
-          let query = _view.value.space();
-          query.replace(/\s/, `+`);
-          let uri = `?q=${query}`;
-          uri.exit();
-        }, 250);
+        filterInputResponse(
+          false,
+          false,
+          _view.value,
+          true
+        );
       }
     } else if (event.target.id == `front`) {
       if (_guest.value == ``) inputListingIndex(``, `#first`);
@@ -246,12 +245,13 @@ document.addEventListener(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0) {
-        setTimeout(function () {
-          let query = _guest.value.space();
-          query.replace(/\s/, `+`);
-          let uri = `?q=${query}`;
-          uri.exit();
-        }, 250);
+        topMenuBarDisplay(topBar)
+        filterInputResponse(
+          false,
+          false,
+          _guest,
+          true
+        );
       }
     }
     event.preventDefault();
