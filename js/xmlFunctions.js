@@ -597,6 +597,7 @@ var xmlTitleParsing = function (xhr) {
 };
 
 var xmlRequestParsing = function (search, string, index) {
+  init();
   let html;
   let local;
   id = index;
@@ -759,7 +760,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        }
+        } else _guide.style.display = `none`;
         for (i = 0; i < pub.length - 1; i++) {
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
@@ -791,14 +792,13 @@ var xmlRequestParsing = function (search, string, index) {
         }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
-        clearInterval(complete);
         xmlStatusSuggestions();
         _check.style.visibility = `hidden`;
         _main.setAttribute(`tabindex`, -1);
         _main.focus();
+        clearInterval(complete);
         unloading();
       } else {
-        let main = _main;
         _main.append(stageBuild());
         document
           .querySelector(`.channel`)

@@ -1,5 +1,7 @@
 const _top = document.getElementById(`top`);
 
+const _dots = document.querySelector(`#dots .fill`)
+
 const _html = document.querySelector(`html`);
 
 const _body = document.querySelector(`body`);

@@ -543,7 +543,6 @@ var filterInputResponse = function (
   }
   if (!match) match = filter[0];
   if (filter.length == 0){
-    init()
     xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
     document.querySelector(`body`).classList.remove(`blink`);
     return false
@@ -553,11 +552,9 @@ var filterInputResponse = function (
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)){
-      init()
       xmlRequestParsing(null, null, exact);
     }
     else if (isNumeric(match) && filter.length == 1){
-      init()
       xmlRequestParsing(null, null, match);
     }
     return false;

@@ -15,7 +15,7 @@ var init = function () {
       document.querySelector(`#group`).remove();
   }
   if (loading == `dots`) {
-    dots.style.zIndex = `11`;
+    _dots.style.zIndex = `11`;
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.classList.add(`dots`));
@@ -23,15 +23,17 @@ var init = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (loading == `percent`) {
-    dots.style.zIndex = `-1`;
-    let width = main.clientWidth / 50;
-    complete = setInterval(function () {
-      progressBar.style.transitionDelay = `0s`;
-      progressBar.style.transition = `all .95s ease-in-out`;
-      progressBar.style.width =
-        progressBar.clientWidth +
-        Math.floor(Math.random() * (100 - width) + width);
-    }, 750);
+    _dots.style.zIndex = `-1`;
+    let width = _main.clientWidth / 50;
+    setTimeout(function() { //thanks init.js
+      complete = setInterval(function () {
+        _progress.style.transitionDelay = `0s`;
+        _progress.style.transition = `all .95s ease-in-out`;
+        _progress.style.width =
+          _progress.clientWidth +
+          Math.floor(Math.random() * (100 - width) + width);
+      }, 750);
+    }, 250)
   }
 };
 
