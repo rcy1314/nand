@@ -84,9 +84,7 @@ else if (location.search.split(`?q=`)[1]) {
   if (location.hash.substr(1).match(/\+1/g))
     post = location.hash.substr(1).replace(/\+1/g, ``);
   else post = location.hash.substr(1);
-  _toggle.style.display = `none`;
-  _visit.style.display = `none`;
-  _top.style.display = `block`;
+  topMenuBarDisplay(topBar)
   setTimeout(function () {
     if (!uri[1] && location.href.match(`\\&`))
       filterInputResponse(true, false, uri[0], false);
