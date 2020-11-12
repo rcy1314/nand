@@ -47,7 +47,6 @@ var unloading = function () {
       .forEach((a) => (a.style.visibility = `hidden`));
     progressBackDrop(true, 0);
   } else if (loading == `percent`) {
-    clearInterval(complete);
     progressBackDrop(true, 100);
   }
 };

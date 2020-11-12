@@ -98,7 +98,6 @@ document.addEventListener(
         httpRequest.status != 4 &&
         httpRequest.status == 200
       ) {
-        init();
         first = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else stop = false;
@@ -115,7 +114,6 @@ document.addEventListener(
         reader == true &&
         httpRequest.status == 200
       ) {
-        init();
         xmlRequestParsing(null, null, any());
       }
     }
@@ -238,7 +236,6 @@ document.addEventListener(
           _guest.blur();
           return false;
         }
-        init();
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         xmlRequestParsing(
@@ -304,7 +301,6 @@ document.addEventListener(
       event.target.classList.contains(`asset`) ||
       event.target.classList.contains(`query`)
     ) {
-      init();
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
       xmlRequestParsing(
@@ -359,7 +355,6 @@ document.addEventListener(
       local = -1
     }
     if (event.target.classList.contains(`bottom`)) {
-      init();
       document.title = category;
       event.target.closest(`#xml`).remove();
       if (location.href.match(`\\?q=`)) {
@@ -396,7 +391,6 @@ document.addEventListener(
       event.target.classList.contains(`random`) ||
       event.target.classList.contains(`bold`)
     ) {
-      init();
       xmlRequestParsing(
         null,
         null,
@@ -404,7 +398,6 @@ document.addEventListener(
       );
     }
     if (event.target.classList.contains(`asset`)) {
-      init();
       xmlRequestParsing(null, null, event.target.getAttribute(`aria-item`));
     }
     if (
@@ -414,7 +407,6 @@ document.addEventListener(
       event.target.classList.contains(`next`) ||
       event.target.classList.contains(`back`)
     ) {
-      init();
       event.target.closest(`#xml`).remove();
       xmlRequestParsing(
         null,

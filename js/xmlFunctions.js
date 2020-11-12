@@ -792,11 +792,11 @@ var xmlRequestParsing = function (search, string, index) {
         }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
+        clearInterval(complete);
         xmlStatusSuggestions();
         _check.style.visibility = `hidden`;
         _main.setAttribute(`tabindex`, -1);
         _main.focus();
-        clearInterval(complete);
         unloading();
       } else {
         _main.append(stageBuild());

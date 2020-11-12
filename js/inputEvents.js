@@ -92,7 +92,6 @@ document.addEventListener(
           document.querySelector(`#group`).remove();
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
-        init();
         category =
           menu[event.target.closest(`.hover`).getAttribute(`aria-item`)]
             .category;
@@ -172,7 +171,6 @@ document.addEventListener(
       }
     } else if (event.target.classList.contains(`filter`)) {
       if (document.querySelector(`.sideFilter`).value.length) {
-        init();
         topMenuBarDisplay(topBar);
         _visit.style.display = `none`;
         _toggle.style.display = `none`;
@@ -215,7 +213,6 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        init();
         xmlRequestParsing(
           null,
           null,
@@ -238,7 +235,6 @@ document.addEventListener(
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         id = _first.querySelector(`.hover`).getAttribute(`aria-item`);
-        init();
         xmlRequestParsing(
           null,
           null,

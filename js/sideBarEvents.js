@@ -121,7 +121,6 @@ document.addEventListener(
         document.querySelector(`.urlInput`).value
       .match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif|webp))/g)
     ) {
-      init()
       var xhr = new XMLHttpRequest();
       var url = document.querySelector(`.urlInput`).value;
 
@@ -280,7 +279,6 @@ document.addEventListener(
         let id = 0;
         xmlChannelFooter();
       } else if (reader == false) {
-        init();
         notifyOption(`Reading ${category} enabled.`);
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -399,7 +397,6 @@ document.addEventListener(
         document.querySelector(`#top #arm #option`).style.display = `block`;
     }
     if (event.target.classList.contains(`Random`)) {
-      init();
       showOption = showOption != true;
       notifyOption(`Option set to ${showOption.toString().capitalize()}`);
       if (showOption == false)
@@ -409,7 +406,6 @@ document.addEventListener(
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (event.target.classList.contains(`RandomCategory`)) {
-      init();
       let code = [];
       _visit.style.display = `none`;
       for (i = 1; i <= menu.length - 1; i++) {
@@ -424,7 +420,6 @@ document.addEventListener(
       xmlRequestParsing(null, null, randomMenuObject);
     }
     if (event.target.classList.contains(`RandomImages`)) {
-      init();
       let code = [];
       _visit.style.display = `none`;
       for (i = 1; i <= menu.length - 1; i++) {
