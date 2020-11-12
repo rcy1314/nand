@@ -73,7 +73,8 @@ window.onload = function () {
           }
         }, 250);
       if (!post) _visit.style.display = `flex`
-    }, 3000)
+      unloading()
+    }, 250)
   });
 };
 window.addEventListener(
