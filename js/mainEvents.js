@@ -224,10 +224,10 @@ document.addEventListener(
         circle.style.left = `${event.clientX - button.left - radius}px`;
         circle.style.top = `${event.clientY - button.top - radius}px`;
         circle.classList.add(`ripple`);
+        if (document.querySelector(`.ripple`))
+          document.querySelector(`.ripple`).remove();
+        event.target.closest(`.populate`).appendChild(circle);
       }
-      if (document.querySelector(`.ripple`))
-        document.querySelector(`.ripple`).remove();
-      event.target.closest(`.populate`).appendChild(circle);
       setTimeout(function () {
         if (_match.style.display === `block`) {
           _match.style.display = `none`;

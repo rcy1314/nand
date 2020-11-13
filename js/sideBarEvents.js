@@ -78,6 +78,11 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (event.target.classList.contains(`showDescription`)) {
+      showDescription = showDescription != true
+      displayDescription(showDescription)
+      notifyOption(`Showing Descriptions as ${showDescription.toString().capitalize()}`)
+    }
     if (event.target.classList.contains(`showRipple`)) {
       showRipple = showRipple != true
       if (showRipple == true){

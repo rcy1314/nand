@@ -742,12 +742,12 @@ html body #container #main #xml .content .status .filter {
   border-radius: 8px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   flex-wrap: wrap;
   cursor: pointer;
   font-size: 9px;
-  padding: 10px;
   display: flex;
-  height: 45px;
+  height: 35px;
   width: 257px;
   z-index: -1;
 }

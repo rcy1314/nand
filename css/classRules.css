@@ -63,7 +63,7 @@
 }
 
 .expand .filter,
-.expanding .populate {
+.expand .populate {
   padding: 5px !important;
 }
 
@@ -88,7 +88,6 @@
 }
 
 .expand .hash,
-.expand .blank,
 .expand .media {
   align-items: center !important;
   padding-right: 15px !important;
@@ -96,10 +95,8 @@
 
 .expand .hash {
   flex-basis: 15% !important;
-  justify-content: center;
 }
 
-.expand .blank,
 .expand .media {
   flex-basis: 15% !important;
 }
@@ -107,5 +104,52 @@
 .expand .description {
   text-align: left !important;
   flex-basis: 65% !important;
-  width: 100%;
+}
+
+.basic {
+  display: flex !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: 80px !important;
+}
+
+.basic .filter,
+.basic .populate {
+  padding: 5px !important;
+}
+
+.basic .display {
+  width: 48px !important;
+  padding-right: 15px !important;
+}
+
+.basic img {
+  border-radius: 0 !important;
+  height: 48px !important;
+  width: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.basic .hash {
+  align-items: center !important;
+  text-align: center !important;
+  flex-basis: 20% !important;
+}
+
+.basic .media {
+  text-align: center !important;
+  flex-basis: 55% !important;
+}
+
+.basic .title {
+  text-align: left !important;
+  flex-basis: 30% !important;
+}
+
+.basic .description {
+  flex-basis: 0% !important;
+  width: 0 !important;
 }

@@ -126,6 +126,18 @@ let showOption = true;
 
 let showRipple = false;
 
+/*
+    showRipple [boolean/integer]
+
+      Applications
+        sideBar, populate
+
+      Result
+        ripple coloring effect.
+
+*/
+
+let showDescription = true;
 
 /*
     quickFeeds [boolean/integer]
@@ -380,10 +392,11 @@ const selections = [
   { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
   { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
   { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
+  { name: `Ripple`, class: `showRipple`, icon: faRipple },
+  { name: `Show Description`, class: `showDescription`, icon: `fa-splotch` },
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
-  { name: `Ripple`, class: `showRipple`, icon: faRipple },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 

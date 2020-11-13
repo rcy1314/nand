@@ -25,6 +25,34 @@ var notifyOption = function (displayContent) {
   }, 1500);
 };
 
+var displayDescription = function (toggleOption) {
+    if (toggleOption == false){
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`.about`).style.display = `none`
+      _main
+        .querySelectorAll(`.populate .description`)
+        .forEach((a) => a.style.visibility = `hidden`);
+      _main
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.remove(`expand`));
+      _main
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.add(`basic`));
+    } else if (toggleOption == true){
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`.about`).style.display = `block`
+      _main
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.remove(`basic`));
+      _main
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.add(`expand`));
+      _main
+        .querySelectorAll(`.populate .description`)
+        .forEach((a) => a.style.visibility = `visible`);
+    }
+}
+
 var displayExpand = function (toggleOption) {
   if (document.body.contains(document.querySelector(`#xml`)))
     document.querySelector(`#xml`).remove();
@@ -237,6 +265,7 @@ var contentStatusDisplay = function (
     var status = document.querySelector(`#xml .status`);
     status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
   }
+  displayDescription(showDescription)
 };
 
 var quickFeedAsset = function (feedAssets) {
@@ -465,6 +494,7 @@ var populateCategoryGroup = function (translation) {
   id = 0;
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
+    displayDescription(showDescription)
     unloading();
   }
   main.setAttribute(`tabindex`, -1);
@@ -497,6 +527,7 @@ var reverseCategoryGroup = function (translation) {
       );
     }
   }
+  displayDescription(showDescription)
   displayExpand(expand);
   unloading();
 };
