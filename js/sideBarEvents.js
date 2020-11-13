@@ -329,27 +329,26 @@ document.addEventListener(
       document.querySelector(`.bg`).style.height = `${count * 35}px`;
     }
     if (event.target.classList.contains(`List`)) {
-      let expand = true;
-      let groupType = `list`;
-      if (document.body.contains(document.getElementById(`group`))) {
-        var group = document.getElementById(`#group`);
-        group.style.display = `none`;
+      expand = true;
+      groupType = `list`;
+      if (document.body.contains(document.querySelector(`#group`))) {
+        document.querySelector(`#group`).style.display = `none`;
       }
       _visit.style.visibility = `none`;
       _visit.style.display = `none`;
-      if (document.body.contains(document.getElementById(`xml`)))
-        document.getElementById(`xml`).remove();
-      if (document.body.contains(document.getElementById(`group`)))
-        document.getElementById(`group`).remove();
+      if (document.body.contains(document.querySelector(`xml`)))
+        document.querySelector(`xml`).remove();
+      if (document.body.contains(document.querySelector(`group`)))
+        document.querySelector(`group`).remove();
       populateCategoryGroup(category);
       displayExpand(expand);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Blocks`)) {
-      let expand = false;
-      let groupType = `blocks`;
-      if (document.body.contains(document.getElementById(`group`))) {
-        document.getElementById(`group`).style.display = `none`;
+      expand = false;
+      groupType = `blocks`;
+      if (document.body.contains(document.querySelector(`#group`))) {
+        document.querySelector(`#group`).style.display = `none`;
       }
       _visit.style.visibility = `none`;
       _visit.style.display = `none`;
@@ -362,7 +361,7 @@ document.addEventListener(
       displayExpand(expand);
     }
     if (event.target.classList.contains(`Dots`)) {
-      let loading = `dots`;
+      loading = `dots`;
       document
         .querySelectorAll(`#dots .fill`)
         .forEach((a) => a.classList.add(`dots`));

@@ -26,6 +26,7 @@ var notifyOption = function (displayContent) {
 };
 
 var displayDescription = function (toggleOption) {
+  if (expand == true)
     if (toggleOption == false){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `none`
