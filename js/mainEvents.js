@@ -90,9 +90,13 @@ window.addEventListener(
   `resize`,
   function (event) {
     if (_main.clientWidth <= 768) {
+      guideOnScreen = onScreen
       onScreen = false;
       sideBarFirst = true;
       sideBarDisplay(false);
+    } else {
+      sideBarFirst = true;
+      sideBarDisplay(guideOnScreen);
     }
   },
   true
