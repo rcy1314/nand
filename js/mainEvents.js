@@ -9,7 +9,6 @@ window.onload = function () {
   if (_main.clientWidth <= 425 || quickFeedsTranslations == true) {
     _container.style.display = `block`;
     quickFeedAsset(7);
-    set = `Alpenglow`
   }
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
