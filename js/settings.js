@@ -369,6 +369,8 @@ let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
 let first = true; //reader append feed center channel
+let touchendX = 0; //
+let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let imageDuplicate = []; //image src duplicate catch

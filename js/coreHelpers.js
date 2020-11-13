@@ -24,7 +24,7 @@ var init = function () {
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (loading == `percent`) {
     _dots.style.zIndex = `-1`;
-    let width = _main.clientWidth / 50;
+    let width = _main.clientWidth / 100;
     setTimeout(function() { //thanks init.js
       complete = setInterval(function () {
         _progress.style.transitionDelay = `0s`;

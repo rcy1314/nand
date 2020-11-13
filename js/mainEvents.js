@@ -9,6 +9,7 @@ window.onload = function () {
   if (_main.clientWidth <= 425 || quickFeedsTranslations == true) {
     _container.style.display = `block`;
     quickFeedAsset(7);
+    set = `Alpenglow`
   }
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
   else quickFeedAsset(7);
@@ -77,16 +78,11 @@ window.onload = function () {
   });
 };
 
-var swipe = document.querySelector('#container')
-
-var touchstartY = 0;
-var touchendY = 0;
-
-swipe.addEventListener('touchstart', function(event) {
+_container.addEventListener('touchstart', function(event) {
   touchstartX = event.changedTouches[0].screenX;
 }, false);
 
-swipe.addEventListener('touchend', function(event) {
+_container.addEventListener('touchend', function(event) {
   touchendX = event.changedTouches[0].screenX;
     handleSwipe();
 }, false);

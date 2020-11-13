@@ -204,7 +204,15 @@ document.addEventListener(
     }
     if (
       event.target.classList.contains(`translation`) ||
+      event.target.classList.contains(`filterBlur`) ||
+      event.target.classList.contains(`classic`) ||
+      event.target.classList.contains(`header`) ||
       event.target.classList.contains(`select`) ||
+      event.target.classList.contains(`copy`) ||
+      event.target.classList.contains(`item`) ||
+      event.target.classList.contains(`wrap`) ||
+      event.target.classList.contains(`ago`) ||
+      event.target.classList.contains(`pub`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
