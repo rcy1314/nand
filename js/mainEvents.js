@@ -205,9 +205,32 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       expand = expand != true;
       displayExpand(expand);
-      if (expand == true) var groupType = `list`;
+      if (expand == true){
+        var groupType = `list`;
+        if (showDescription == false) {
+          _main
+            .querySelectorAll(`.populate`)
+            .forEach((a) => a.classList.add(`basic`));
+          _main
+            .querySelectorAll(`.populate`)
+            .forEach((a) => a.classList.remove(`expand`));
+        } else if (showDescription == true) {
+          _main
+            .querySelectorAll(`.populate`)
+            .forEach((a) => a.classList.remove(`expand`));
+          _main
+            .querySelectorAll(`.populate`)
+            .forEach((a) => a.classList.add(`expand`));
+        }
+      }
       else {
         var groupType = `blocks`;
+        _main
+          .querySelectorAll(`.populate`)
+          .forEach((a) => a.classList.remove(`basic`));
+        _main
+          .querySelectorAll(`.populate`)
+          .forEach((a) => a.classList.remove(`expand`));
         notifyOption(`Displaying ${category} as ${groupType.capitalize()}`);
       }
     }

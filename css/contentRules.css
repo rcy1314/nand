@@ -100,7 +100,7 @@ html body #container #toggle {
 
 html body #container #sidebar {
   background-color: var(--borderless-hover-color);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   position: fixed;
   display: block;
   height: 100%;
@@ -120,10 +120,12 @@ html body #container #sidebar #content {
 }
 
 html body #container #sidebar .notify {
+  background: var(--bg-color-secondary);
   color: var(--fill-color-primary);
-  background-color: transparent;
   justify-content: center;
+  padding-bottom: 10px;
   text-align: center;
+  padding-top: 10px;
   font-size: 11px;
   display: flex;
   margin: 10px;

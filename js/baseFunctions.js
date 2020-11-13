@@ -412,9 +412,7 @@ var progressBackDrop = function (done, percent) {
     }
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(`.air`)))
-        setTimeout(function() {
-          _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        }, 250)
+        _main.scrollTop = document.querySelector(`.air`).clientHeight;
     } else if (onlyImages == true)
       if (document.body.contains(document.querySelector(`.result`)))
         _main.scrollTop = 0;

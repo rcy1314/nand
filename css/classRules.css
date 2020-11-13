@@ -121,7 +121,7 @@
 }
 
 .basic .display {
-  width: 48px !important;
+  width: 110px !important;
   padding-right: 15px !important;
 }
 
@@ -136,12 +136,12 @@
 .basic .hash {
   align-items: center !important;
   text-align: center !important;
-  flex-basis: 20% !important;
+  flex-basis: 40% !important;
 }
 
 .basic .media {
-  text-align: center !important;
-  flex-basis: 55% !important;
+  text-align: left !important;
+  flex-basis: 25% !important;
 }
 
 .basic .title {

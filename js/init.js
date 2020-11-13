@@ -84,11 +84,11 @@ else if (location.search.split(`?q=`)[1]) {
   if (location.hash.substr(1).match(/\+1/g))
     post = location.hash.substr(1).replace(/\+1/g, ``);
   else post = location.hash.substr(1);
-  topMenuBarDisplay(topBar)
   setTimeout(function () {
+    topMenuBarDisplay(topBar)
     if (!uri[1] && location.href.match(`\\&`))
       filterInputResponse(true, false, uri[0], false);
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-  }, 250);
+  }, 750);
 }

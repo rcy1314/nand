@@ -124,7 +124,7 @@ let showOption = true;
 
 */
 
-let showRipple = false;
+let showRipple = true;
 
 /*
     showRipple [boolean/integer]
@@ -391,8 +391,8 @@ const selections = [
   { name: `Dots`, class: `Dots`, icon: `fa-ellipsis-h` },
   { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
   { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
+  { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
   { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
-  { name: `Ripple`, class: `showRipple`, icon: faRipple },
   { name: `Show Description`, class: `showDescription`, icon: `fa-splotch` },
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },

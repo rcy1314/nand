@@ -191,6 +191,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   info.append(des);
+  if (showDescription == false) des.style.visibility = `hidden`
   let construct = document.createElement(`div`);
   construct.classList.add(`construct`);
   construct.append(filter);
