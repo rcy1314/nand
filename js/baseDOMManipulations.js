@@ -285,9 +285,9 @@ var categoryBuild = function (
   let media = document.createElement(`div`);
   media.classList.add(`media`);
   media.innerHTML = objectMedia;
-  let title = document.createElement(`div`);
-  title.classList.add(`title`);
-  title.innerHTML = objectId;
+  let id = document.createElement(`div`);
+  id.classList.add(`title`);
+  id.innerHTML = objectId;
   let des = document.createElement(`div`);
   des.classList.add(`description`);
   des.innerHTML = objectDescription;
@@ -295,7 +295,7 @@ var categoryBuild = function (
   select.append(display);
   select.append(media);
   select.append(hash);
-  select.append(title);
+  select.append(id);
   select.append(des);
   populate.append(select);
   return populate;
