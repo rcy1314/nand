@@ -76,6 +76,21 @@ window.onload = function () {
     }, 250)
   });
 };
+
+var swipe = document.querySelector('#container')
+
+var touchstartY = 0;
+var touchendY = 0;
+
+swipe.addEventListener('touchstart', function(event) {
+  touchstartX = event.changedTouches[0].screenX;
+}, false);
+
+swipe.addEventListener('touchend', function(event) {
+  touchendX = event.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
 window.addEventListener(
   `resize`,
   function (event) {

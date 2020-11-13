@@ -203,6 +203,8 @@ document.addEventListener(
       _main.style.backgroundImage = `none`;
     }
     if (
+      event.target.classList.contains(`translation`) ||
+      event.target.classList.contains(`select`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {

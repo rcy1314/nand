@@ -119,20 +119,17 @@ html body #container #sidebar #content {
   width: 100%;
 }
 
-html body #container #sidebar .notify {
-  background: var(--bg-color-secondary);
+html body #container .notify {
   color: var(--fill-color-primary);
   justify-content: center;
-  padding-bottom: 10px;
   text-align: center;
-  padding-top: 10px;
   font-size: 11px;
   display: flex;
   margin: 10px;
-  width: 240px;
-  right: -15px;
+  width: 200px;
   bottom: -9px;
   z-index: 12;
+  right: 0px;
 }
 
 html body #container #sidebar #content #basic {

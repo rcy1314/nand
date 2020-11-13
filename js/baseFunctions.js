@@ -1,6 +1,16 @@
+function handleSwipe() {
+    if (touchendX > touchstartX) {
+      onScreen = true
+      sideBarDisplay(onScreen)
+    } else if (touchendX < touchstartX) {
+      onScreen = false
+      sideBarDisplay(onScreen)
+    }
+}
+
 var notifyOption = function (displayContent) {
-  let notification = _sidebar.querySelector(`.notify`);
-  if (onScreen == true) var pos = `absolute`;
+  let notification = document.querySelector(`.notify`);
+  if (onScreen == true && _main.clientWidth >= 768) var pos = `absolute`;
   else var pos = `fixed`;
   notification.innerHTML = displayContent;
   notification.style.display = `block`;
