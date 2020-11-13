@@ -281,6 +281,9 @@ var categoryBuild = function (
   let hash = document.createElement(`div`);
   hash.classList.add(`hash`);
   hash.innerHTML = objectHash;
+  let media = document.createElement(`div`);
+  media.classList.add(`media`);
+  media.innerHTML = objectMedia;
   let info = document.createElement(`div`);
   info.classList.add(`title`);
   info.innerHTML = objectId;
@@ -290,6 +293,7 @@ var categoryBuild = function (
   display.append(object);
   select.append(display);
   select.append(hash);
+  select.append(media);
   select.append(info);
   select.append(des);
   populate.append(select);
