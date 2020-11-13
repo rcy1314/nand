@@ -630,16 +630,17 @@ var guideImageAttributes = function (src) {
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(`.img`).style.maxHeight = `50vh`;
-        _guide.querySelector(`.img`).style.maxWidth = `75vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
         _guide.querySelector(`.wrap`).style.display = `block`;
         _guide.querySelector(`.wrap`).style.height = `fit-content`;
         _guide.querySelector(`.pub`).style.height = `fit-content`;
         _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
-        _guide.querySelector(`.img`).style.maxHeight = `50vh`;
-        _guide.querySelector(`.wrap`).style.maxWidth = `75vw`;
+        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
+        _guide.querySelector(`.sticky`).style.top = `40px`
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
       _guide.querySelector(`.sticky .header`).style.top =

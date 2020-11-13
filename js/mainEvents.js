@@ -70,7 +70,7 @@ window.onload = function () {
             }, 500);
           }
         }, 250);
-      if (!post && !location.search.split(`?q=`)[1])
+      if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
       unloading()
     }, 250)
@@ -431,7 +431,10 @@ document.addEventListener(
         event.target.closest(`.btn`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains(`filterBlur`)) {
+    if (
+      event.target.classList.contains(`filterBlur`) ||
+      event.target.classList.contains(`img`)
+    ) {
       if (tap == 0) {
         // set first click
         tap = new Date().getTime();

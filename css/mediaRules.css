@@ -149,11 +149,15 @@
     display: block;
   }
 
-  html body #container #guide .sticky .src img {
-    max-width: 100% !important;
+  html body #container #guide .sticky .img
+  html body #container #guide .sticky .image {
+    max-width: 100vw !important;
     width: 100% !important;
   }
 
+  html body #container #guide .sticky .wrap {
+    width: 100%;
+  }
   html body #container #guide .sticky #yt {
     display: block !important;
     width: 100% !important;

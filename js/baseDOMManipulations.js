@@ -81,7 +81,7 @@ var guideBuild = function (pubArray) {
   let src = document.createElement(`div`);
   src.classList.add(`item`, `src`);
   src.setAttribute(`aria-item`, pubArray.id);
-  src.setAttribute(`ext`, pubArray.re);
+  src.setAttribute(`ext`, pubArray.externalURI);
   let image = document.createElement(`div`);
   image.classList.add(`image`);
   image.append(sideBarThemeBuild(`fa-heart`));
