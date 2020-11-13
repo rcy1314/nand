@@ -73,7 +73,7 @@ window.onload = function () {
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
       unloading()
-    }, 25)
+    }, 50)
   });
 };
 
