@@ -449,7 +449,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 ) &&
                 document.body.contains(
                   document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
                   )
                 )
               )
@@ -460,7 +460,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   .remove();
                   document
                     .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
                     )
                     .remove();
             });
