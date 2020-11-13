@@ -88,6 +88,10 @@
     margin-bottom: 1.5em;
   }
 
+  html body #container #main #xml .center #bottom .bottom {
+    bottom: 3px;
+  }
+
   html body #container #main #option {
     width: calc(100% - 20px);
     top: calc(100% - 50px);
