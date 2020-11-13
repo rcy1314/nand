@@ -65,9 +65,9 @@ if (
       _toggle.style.display = `block`;
       _visit.style.display = `flex`;
     } else {
-      if (!post) sideBarDisplay(onScreen);
-      else sideBarDisplay(false);
       guideOnScreen = onScreen;
+      onScreen = false;
+      sideBarDisplay(onScreen);
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
       _guide.style.display = `flex`;

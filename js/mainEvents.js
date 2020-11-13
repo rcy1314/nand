@@ -364,8 +364,14 @@ document.addEventListener(
       _guide.style.display = `none`;
       while (event.target.firstChild)
         event.target.removeChild(event.target.lastChild);
+      sideBarFirst = true;
       onScreen = guideOnScreen;
       if (post && _main.clientWidth >= 426) sideBarDisplay(onScreen);
+      else {
+        onScreen = false
+        _sidebar.querySelector(`#hide`).style.left = `240`;
+        sideBarDisplay(onScreen)
+      }
       topMenuBarDisplay(topBar);
       document.querySelector(`#xml`).style.display = `block`
       post = -1

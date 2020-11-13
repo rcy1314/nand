@@ -166,7 +166,7 @@ var sideBarDisplay = function (toggleOption) {
     }
     content.append(basicFormBuild());
   }
-  if (toggleOption == true) {
+  if (toggleOption == true || onScreen == true) {
     _sidebar.style.position = `fixed`;
     _sidebar.animate(
       {
