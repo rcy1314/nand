@@ -78,6 +78,16 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (event.target.classList.contains(`showRipple`)) {
+      showRipple = showRipple != true
+      if (showRipple == true){
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (showRipple == false){
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
+    }
     if (event.target.classList.contains(`urlInput`)) {
       event.target.select()
     }
@@ -216,21 +226,23 @@ document.addEventListener(
       event.target.classList.contains(`cat`)
     ) {
       id = 0;
-      const button = event.target.getBoundingClientRect();
-      const circle = document.createElement(`span`);
-      const diameter = Math.max(
-        event.target.clientWidth,
-        event.target.clientHeight
-      );
-      const radius = diameter / 2;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - button.left - radius}px`;
-      circle.style.top = `${event.clientY - button.top - radius}px`;
-      circle.classList.add(`ripple`);
-      event.target.appendChild(circle);
-      setTimeout(function () {
-        document.querySelector(`.ripple`).remove();
-      }, 750);
+      if (showRipple == true){
+        const button = event.target.getBoundingClientRect();
+        const circle = document.createElement(`span`);
+        const diameter = Math.max(
+          event.target.clientWidth,
+          event.target.clientHeight
+        );
+        const radius = diameter / 2;
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.left - radius}px`;
+        circle.style.top = `${event.clientY - button.top - radius}px`;
+        circle.classList.add(`ripple`);
+        event.target.appendChild(circle);
+        setTimeout(function () {
+          document.querySelector(`.ripple`).remove();
+        }, 750);
+      }
     }
     if (event.target.classList.contains(`cat`)) {
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);

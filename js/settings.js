@@ -110,7 +110,22 @@ let expandBackground = false;
         toggle icons in topBar
 
 */
+
 let showOption = true;
+
+/*
+    showRipple [boolean/integer]
+
+      Applications
+        sideBar, populate
+
+      Result
+        ripple coloring effect.
+
+*/
+
+let showRipple = false;
+
 
 /*
     quickFeeds [boolean/integer]
@@ -348,6 +363,11 @@ let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
+let faRipple
+if (showRipple == true)
+  faRipple = `fa-check`
+else faRipple = `fa-circle-notch`
+
 const selections = [
   //sideBar sel options
 
@@ -363,6 +383,7 @@ const selections = [
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
+  { name: `Ripple`, class: `showRipple`, icon: faRipple },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 

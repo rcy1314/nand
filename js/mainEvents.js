@@ -212,17 +212,19 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains(`select`)) {
-      const button = event.target.closest(`.populate`).getBoundingClientRect();
-      const circle = document.createElement(`span`);
-      const diameter = Math.max(
-        event.target.clientWidth,
-        event.target.clientHeight
-      );
-      const radius = diameter / 2;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - button.left - radius}px`;
-      circle.style.top = `${event.clientY - button.top - radius}px`;
-      circle.classList.add(`ripple`);
+      if (showRipple == true) {
+        const button = event.target.closest(`.populate`).getBoundingClientRect();
+        const circle = document.createElement(`span`);
+        const diameter = Math.max(
+          event.target.clientWidth,
+          event.target.clientHeight
+        );
+        const radius = diameter / 2;
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.left - radius}px`;
+        circle.style.top = `${event.clientY - button.top - radius}px`;
+        circle.classList.add(`ripple`);
+      }
       if (document.querySelector(`.ripple`))
         document.querySelector(`.ripple`).remove();
       event.target.closest(`.populate`).appendChild(circle);
