@@ -367,7 +367,7 @@ document.addEventListener(
       sideBarFirst = true;
       onScreen = guideOnScreen;
       if (post && _main.clientWidth >= 426) sideBarDisplay(onScreen);
-      else {
+      else if (post) {
         onScreen = false
         _sidebar.querySelector(`#hide`).style.left = `240`;
         sideBarDisplay(onScreen)

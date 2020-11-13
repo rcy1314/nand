@@ -760,7 +760,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        } else if (!isNumeric(local)){
+        } else if (post && !isNumeric(local)){
           _guide.style.display = `none`;
           topMenuBarDisplay(topBar);
           sideBarDisplay(onScreen);
