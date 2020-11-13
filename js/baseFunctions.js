@@ -363,7 +363,7 @@ var progressBackDrop = function (done, percent) {
             {
               paddingTop: [
                 `${document.querySelector(`#group`).clientHeight}px`,
-                `0`,
+                `57px`,
               ],
             },
             {
@@ -375,7 +375,8 @@ var progressBackDrop = function (done, percent) {
           );
         }, 750);
         setTimeout(function () {
-          document.querySelector(`#group`).style.paddingTop = `0`;
+          document.querySelector(`#group`).style.paddingTop = `57px`;
+          _check.style.visibility = `hidden`;
         }, 1500);
       }
     }

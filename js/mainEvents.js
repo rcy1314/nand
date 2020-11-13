@@ -246,26 +246,8 @@ document.addEventListener(
       }, 500);
     }
     if (
-      event.target.classList.contains(`filter`) ||
-      event.target.classList.contains(`status`) ||
-      event.target.classList.contains(`exit`) ||
-      event.target.classList.contains(`ext`) ||
-      event.target.classList.contains(`tag`)
+      event.target.classList.contains(`construct`)
     ) {
-      const button = event.target.closest(`.filter`).getBoundingClientRect();
-      const circle = document.createElement(`span`);
-      const diameter = Math.max(
-        event.target.clientWidth,
-        event.target.clientHeight
-      );
-      const radius = diameter / 2;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - button.left - radius}px`;
-      circle.style.top = `${event.clientY - button.top - radius}px`;
-      circle.classList.add(`ripple`);
-      if (document.querySelector(`.ripple`))
-        document.querySelector(`.ripple`).remove();
-      event.target.closest(`.filter`).appendChild(circle);
       setTimeout(function() {
         event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
       }, 750)

@@ -473,10 +473,11 @@ html body #container #main #group {
   background-color: var(--borderless-hover-color);
   height: fit-content;
   position: absolute;
+  padding-top: 57px;
   display: none;
   width: 100%;
   z-index: 1;
-  top: 57px;
+  top: 0;
 }
 
 html body #container #main #visit {
@@ -719,19 +720,6 @@ html body #container #main #group .result {
   z-index: 1;
 }
 
-html body #container #main #xml .content .status .filter {
-  background-color: var(--bg-color-primary);
-  margin-left: 15px;
-}
-
-html body #container #main #xml .content .status .filter:hover {
-  background-color: var(--hover-background-color);
-}
-
-html body #container #main #xml .content .status .filter:not(:hover) {
-  background-color: var(---not-hover-background-color);
-}
-
 html body #container #main #group .air .populate,
 html body #container #main #group .result .filter,
 html body #container #main #group .result .populate {
@@ -753,8 +741,6 @@ html body #container #main #xml .content .status .filter {
   align-items: center;
   border-radius: 8px;
   position: relative;
-  margin-left: 3px;
-  margin-top: 15px;
   overflow: hidden;
   flex-wrap: wrap;
   cursor: pointer;
@@ -763,6 +749,7 @@ html body #container #main #xml .content .status .filter {
   display: flex;
   height: 45px;
   width: 257px;
+  z-index: -1;
 }
 
 html body #container #main #xml .content .status .filter a {
@@ -787,16 +774,14 @@ html body #container #main #group .result .populate .select {
 
 html body #container #main #group .air .populate:hover,
 html body #container #main #group .result .filter:hover,
-html body #container #main #group .result .populate:hover,
-html body #container #main #xml .content .status .filter:hover {
+html body #container #main #group .result .populate:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--hover-border-color) !important;
 }
 
 html body #container #main #group .air .populate:not(:hover),
 html body #container #main #group .result .filter:not(:hover),
-html body #container #main #group .result .populate:not(:hover),
-html body #container #main #xml .content .status .filter:not(:hover) {
+html body #container #main #group .result .populate:not(:hover) {
   border: var(--not-hover-border-color) !important;
 }
 
@@ -1402,6 +1387,7 @@ html body #container #main #xml .content .status .info {
   color: var(--fill-color-primary);
   margin-left: 5px;
   text-align: left;
+  z-index: -1;
 }
 
 html body #container #main #xml .content .status .info .about {
