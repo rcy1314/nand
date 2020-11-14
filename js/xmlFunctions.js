@@ -571,11 +571,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             document
               .querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              )
-              .classList.add(`hidden`);
-            document
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
               ).style.display = `block`
           }
         }

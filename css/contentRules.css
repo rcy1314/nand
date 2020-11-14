@@ -170,10 +170,10 @@ html body #container #sidebar #content .cat {
   position: relative;
   color: var(--fill-color-primary);
   letter-spacing: .5px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
-  padding-top: 25px;
+  padding-top: 20px;
   overflow: hidden;
   font-size: 12px;
   height: 15px;
@@ -747,7 +747,7 @@ html body #container #main #xml .content .status .filter {
   cursor: pointer;
   font-size: 9px;
   display: flex;
-  height: 85px;
+  height: 75px;
   width: 257px;
   z-index: -1;
 }
@@ -823,8 +823,8 @@ html body #container #main #xml .content .status .filter img {
   margin: 0 auto;
   padding: 1px;
   margin: 10px;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
 }
 
 html body #container #main #group .status .filter .tag,

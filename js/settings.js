@@ -179,6 +179,19 @@ let quickFeedsTranslations = true;
 let scrollIntoView = false;
 
 /*
+    fadeIntoView [string]
+
+      Applications
+        xml, progressBackdrop
+
+      Result
+        fades img in with scaling
+
+*/
+
+let fadeIntoView = false;
+
+/*
     loading [boolean/integer]
 
       Applications
@@ -394,6 +407,7 @@ const selections = [
   { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
   { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
   { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
+  { name: `Fade in Images`, class: `fadeElement`, icon: `fa-paint-brush` },
   { name: `Scroll Into View`, class: `scrollView`, icon: `fa-level-up-alt` },
   { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
   { name: `Show Description`, class: `showDescription`, icon: `fa-splotch` },

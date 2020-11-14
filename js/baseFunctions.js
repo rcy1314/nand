@@ -444,6 +444,7 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
+      if (fadeIntoView == true)
       (function() {
         var elements;
         var windowHeight;

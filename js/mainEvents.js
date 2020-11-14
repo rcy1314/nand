@@ -141,6 +141,54 @@ document.addEventListener(
       repository.blank();
     }
     if (
+      event.target.classList.contains(`fadeElement`)
+    ) {
+      fadeIntoView = fadeIntoView != true;
+      if (fadeIntoView == false) {
+        console.log(`false`)
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document
+            .querySelectorAll(`.img`)
+            .forEach((a) => (a.classList.remove(`hidden`)));
+      } else if (fadeIntoView == true) {
+        console.log(`true`)
+        if (document.body.contains(document.querySelector(`#xml`)))
+        document
+          .querySelectorAll(`.img`)
+          .forEach((a) => (a.classList.add(`hidden`)));
+        (function() {
+          var elements;
+          var windowHeight;
+
+          function init() {
+            elements = document.querySelectorAll('.hidden');
+            windowHeight = _main.clientHeight;
+          }
+
+          function checkPosition() {
+            for (var i = 0; i < elements.length; i++) {
+              var element = elements[i];
+              var positionFromTop = elements[i].getBoundingClientRect().top;
+
+              if (positionFromTop - windowHeight <= 0) {
+                if (fadeIntoView == true)
+                  element.classList.add('fade-in-element');
+                if (fadeIntoView == false) element.classList.remove('hidden');
+              }
+            }
+          }
+
+          _main.addEventListener('scroll', checkPosition);
+          _main.addEventListener('resize', init);
+
+          init();
+          checkPosition();
+        })();
+
+      }
+      notifyOption(`Fade into View is ${fadeIntoView.toString().capitalize()}`)
+    }
+    if (
       event.target.classList.contains(`fa-angle-up`) ||
       event.target.id == `link` ||
       event.target.id == `show`

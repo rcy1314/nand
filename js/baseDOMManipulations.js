@@ -420,7 +420,8 @@ var xmlHTMLBuild = function (htmlArray) {
   image.append(filterBlur);
   let object = document.createElement(`img`);
   object.id = htmlArray.pubIndex;
-  object.classList.add(`img`, `hidden`);
+  object.classList.add(`img`);
+  if (fadeIntoView == true) object.classList.add(`hidden`)
   image.append(object);
   classic.append(image);
   let wrap = document.createElement(`div`);
