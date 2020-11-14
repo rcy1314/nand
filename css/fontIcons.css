@@ -174,6 +174,10 @@ html body #container #sidebar #content .fa-level-up-alt {
   left: -5px;
 }
 
+html body #container #sidebar #content .fa-ellipsis-h {
+  left: -6px;
+}
+
 html body #container #sidebar #content .fa-th-large {
   font-family: "Font Awesome 5 Pro";
   content: "\f0ca";
