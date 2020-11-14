@@ -69,6 +69,14 @@ window.onload = function () {
               clearInterval(startup);
             }, 500);
           }
+          _container.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+          }, false);
+
+          _container.addEventListener('touchend', function(event) {
+            touchendX = event.changedTouches[0].screenX;
+              handleSwipe();
+          }, false);
         }, 250);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
@@ -76,15 +84,6 @@ window.onload = function () {
     }, 50)
   });
 };
-
-_container.addEventListener('touchstart', function(event) {
-  touchstartX = event.changedTouches[0].screenX;
-}, false);
-
-_container.addEventListener('touchend', function(event) {
-  touchendX = event.changedTouches[0].screenX;
-    handleSwipe();
-}, false);
 
 window.addEventListener(
   `resize`,
@@ -249,6 +248,7 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains(`select`)) {
+      let setPause
       if (showRipple == true) {
         const button = event.target.closest(`.populate`).getBoundingClientRect();
         const circle = document.createElement(`span`);
@@ -264,7 +264,8 @@ document.addEventListener(
         if (document.querySelector(`.ripple`))
           document.querySelector(`.ripple`).remove();
         event.target.closest(`.populate`).appendChild(circle);
-      }
+        setPause = 500
+      } else setPause = 0
       setTimeout(function () {
         if (_match.style.display === `block`) {
           _match.style.display = `none`;
@@ -282,19 +283,16 @@ document.addEventListener(
           null,
           event.target.closest(`.populate`).getAttribute(`aria-item`)
         );
-      }, 500);
+      }, setPause);
     }
     if (
       event.target.classList.contains(`construct`)
     ) {
-      setTimeout(function() {
         event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
-      }, 750)
     }
     if (event.target.classList.contains(`translation`)) {
       id = 0;
       category = event.target.closest(`.translation`).getAttribute(`aria-item`);
-      setTimeout(function () {
         if (reader == true) {
           if (document.body.contains(document.querySelector(`.channel`)))
             first = false;
@@ -302,20 +300,40 @@ document.addEventListener(
           xmlRequestParsing(null, null, anyRandomMenuObject());
           notifyOption(`Switched to now reading ${category}.`);
         } else {
+          let setPause
+          if (showRipple == true){
+            const button = event.target.closest(`.translation`)
+              .getBoundingClientRect();
+            const circle = document.createElement(`span`);
+            const diameter = Math.max(
+              event.target.clientWidth,
+              event.target.clientHeight
+            );
+            const radius = diameter / 2;
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.left - radius}px`;
+            circle.style.top = `${event.clientY - button.top - radius}px`;
+            circle.classList.add(`ripple`);
+            event.target.closest(`.translation`).appendChild(circle);
+            setPause = 500
+            setTimeout(function() {
+              document.querySelector(`.ripple`).remove();
+            }, setPause)
+          } else setPause = 0
           if (document.body.contains(document.querySelector(`#xml`)))
             document.querySelector(`#xml`).remove();
           if (document.body.contains(document.querySelector(`#group`)))
             document.querySelector(`#group`).remove();
-          location.pathname.state();
-          _toggle.style.display = `none`;
-          _visit.style.display = `none`;
-          populateCategoryGroup(
-            event.target.closest(`.translation`).getAttribute(`aria-item`)
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
+          setTimeout(function () {
+            _toggle.style.display = `none`;
+            _visit.style.display = `none`;
+            populateCategoryGroup(
+              event.target.closest(`.translation`).getAttribute(`aria-item`)
+            );
+            topMenuBarDisplay(topBar);
+            displayExpand(expand);
+          }, setPause);
         }
-      }, 500);
     }
     if (
       event.target.classList.contains(`entity`) ||

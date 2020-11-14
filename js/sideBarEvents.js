@@ -81,7 +81,13 @@ document.addEventListener(
     if (event.target.classList.contains(`showDescription`)) {
       showDescription = showDescription != true
       displayDescription(showDescription)
-      notifyOption(`Showing Descriptions as ${showDescription.toString().capitalize()}`)
+      notifyOption(
+        `Showing Descriptions as ${showDescription.toString().capitalize()}`
+      )
+    }
+    if (event.target.classList.contains(`scrollView`)) {
+      scrollIntoView = scrollIntoView != true
+      notifyOption(`Scroll into View ${scrollIntoView.toString().capitalize()}`)
     }
     if (event.target.classList.contains(`showRipple`)) {
       showRipple = showRipple != true
@@ -95,6 +101,23 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`urlInput`)) {
       event.target.select()
+    }
+    if (event.target.classList.contains(`resetBackground`)) {
+      if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `container`
+      ) {
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        _main.style.backgroundImage = `url()`;
+      } else if (
+        Array.isArray(backgroundImage) &&
+        typeof backgroundImage[0].path == "string" &&
+        backgroundImage[0].element == `main`
+      ) {
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        _container.style.backgroundImage = `url()`;
+      }
     }
     if (event.target.classList.contains(`setBackground`)) {
       let input = document.createElement(`input`);
@@ -177,7 +200,9 @@ document.addEventListener(
     if (event.target.classList.contains(`coverBackground`)) {
       if (
         _container.style.backgroundSize == `cover` ||
-        _main.style.backgroundSize == `cover`
+        _main.style.backgroundSize == `cover` ||
+        _container.style.backgroundSize == `auto 100%` ||
+        _main.style.backgroundSize == `auto 100%`
       ) {
         _container.style.backgroundSize = `initial`;
         _main.style.backgroundSize = `initial`;
@@ -189,7 +214,9 @@ document.addEventListener(
     if (event.target.classList.contains(`fitBackground`)) {
       if (
         _container.style.backgroundSize == `auto 100%` ||
-        _main.style.backgroundSize == `auto 100%`
+        _main.style.backgroundSize == `auto 100%` ||
+        _container.style.backgroundSize == `cover` ||
+        _main.style.backgroundSize == `cover`
       ) {
         _container.style.backgroundSize = `contain`;
         _main.style.backgroundSize = `contain`;
@@ -236,11 +263,8 @@ document.addEventListener(
         sideBarDisplay(onScreen);
       }
     }
-    if (
-      event.target.classList.contains(`translation`) ||
-      event.target.classList.contains(`cat`)
-    ) {
-      id = 0;
+    if (event.target.classList.contains(`cat`)) {
+      id = 0
       if (showRipple == true){
         const button = event.target.getBoundingClientRect();
         const circle = document.createElement(`span`);
@@ -256,10 +280,8 @@ document.addEventListener(
         event.target.appendChild(circle);
         setTimeout(function () {
           document.querySelector(`.ripple`).remove();
-        }, 750);
+        }, 500);
       }
-    }
-    if (event.target.classList.contains(`cat`)) {
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
       if (reader == true) {
         if (document.body.contains(document.querySelector(`.channel`)))

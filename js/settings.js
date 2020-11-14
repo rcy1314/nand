@@ -394,6 +394,7 @@ const selections = [
   { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
   { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
   { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
+  { name: `Scroll Into View`, class: `scrollView`, icon: `fa-level-up-alt` },
   { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
   { name: `Show Description`, class: `showDescription`, icon: `fa-splotch` },
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
@@ -403,16 +404,17 @@ const selections = [
 ];
 
 const background = [
-  { name: `Set`, class: `setBackground`, icon: `fa-user` },
   { name: `Fit`, class: `fitBackground`, icon: `fa-crop-alt` },
-  { name: `Save`, class: `saveBackground`, icon: `fa-download` },
   { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
+  { name: `Set`, class: `setBackground`, icon: `fa-user` },
+  { name: `Save`, class: `saveBackground`, icon: `fa-download` },
+  { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
   { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },
   {
     name: `Choose Container`,
     class: `containerBackground`,
-    icon: `fa-barcode`,
+    icon: `fa-layer-group`,
   },
 ];
 

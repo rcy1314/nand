@@ -153,6 +153,10 @@ html body #container #sidebar #content .fa-exclamation-circle {
   font-weight: 50;
 }
 
+html body #container #sidebar #content .bg .fa-cloud {
+  left: -10px;
+}
+
 html body #container #sidebar #content .fa-signal {
   font-family: "Font Awesome 5 Pro";
   content: "\f012";
@@ -163,6 +167,11 @@ html body #container #sidebar #content .fa-adjust {
   font-family: "Font Awesome 5 Pro";
   content: "\f042";
   font-weight: 50;
+  left: -13px;
+}
+
+html body #container #sidebar #content .fa-level-up-alt {
+  left: -5px;
 }
 
 html body #container #sidebar #content .fa-th-large {
