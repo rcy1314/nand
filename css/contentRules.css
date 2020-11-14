@@ -747,7 +747,7 @@ html body #container #main #xml .content .status .filter {
   cursor: pointer;
   font-size: 9px;
   display: flex;
-  height: 35px;
+  height: 85px;
   width: 257px;
   z-index: -1;
 }
@@ -757,7 +757,6 @@ html body #container #main #xml .content .status .filter a {
   background-color: transparent;
   position: relative;
   font-size: 12px;
-  margin-left: 15px;
 }
 
 html body #container #main #group .air .populate .select,
@@ -817,7 +816,7 @@ html body #container #main #xml .content .status .filter .ext {
 html body #container #main #group .air .populate .display img,
 html body #container #main #group .result .filter .display img,
 html body #container #main #group .result .populate .display img,
-html body #container #main #xml .content .status .filter .ext img {
+html body #container #main #xml .content .status .filter img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;

@@ -444,6 +444,33 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
+      (function() {
+        var elements;
+        var windowHeight;
+
+        function init() {
+          elements = document.querySelectorAll('.hidden');
+          windowHeight = _main.clientHeight;
+        }
+
+        function checkPosition() {
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = elements[i].getBoundingClientRect().top;
+
+            if (positionFromTop - windowHeight <= 0) {
+              element.classList.add('fade-in-element');
+              element.classList.remove('hidden');
+            }
+          }
+        }
+
+        _main.addEventListener('scroll', checkPosition);
+        _main.addEventListener('resize', init);
+
+        init();
+        checkPosition();
+      })();
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
