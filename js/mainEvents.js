@@ -92,14 +92,18 @@ window.onload = function () {
 window.addEventListener(
   `resize`,
   function (event) {
+    console.log(guideOnScreen)
     if (_main.clientWidth <= 768) {
       guideOnScreen = onScreen
-      onScreen = false;
       sideBarFirst = true;
       sideBarDisplay(false);
-    } else {
+    } else if (
+      _sidebar.style.left == `-242px` &&
+      _main.clientWidth > 768 &&
+      onScreen == true
+    ){
       sideBarFirst = true;
-      sideBarDisplay(guideOnScreen);
+      sideBarDisplay(onScreen);
     }
   },
   true
@@ -248,7 +252,6 @@ document.addEventListener(
         _main
           .querySelectorAll(`.populate`)
           .forEach((a) => a.classList.remove(`expand`));
-        notifyOption(`Displaying ${category} as ${groupType.capitalize()}`);
       }
     }
     if (event.target.classList.contains(`select`)) {
@@ -302,7 +305,6 @@ document.addEventListener(
             first = false;
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
-          notifyOption(`Switched to now reading ${category}.`);
         } else {
           let setPause
           if (showRipple == true){
@@ -604,7 +606,6 @@ document.addEventListener(
       event.target.closest(`.item`).querySelector(`.url`).select();
       document.execCommand(`copy`);
       event.stopPropagation();
-      notifyOption(`URL Copied to Clipboard.`);
     }
     if (
       event.target.classList.contains(`fa-share`) ||
@@ -612,7 +613,6 @@ document.addEventListener(
     ) {
       event.target.closest(`.item`).querySelector(`.share`).select();
       document.execCommand(`copy`);
-      notifyOption(`Post Copied to Clipboard.`);
       event.stopPropagation();
     }
     if (
@@ -621,7 +621,6 @@ document.addEventListener(
     ) {
       event.target.closest(`.item`).querySelector(`.source`).select();
       document.execCommand(`copy`);
-      notifyOption(`Source Copied to Clipboard.`);
     }
     if (
       event.target.classList.contains(`fa-plus`) ||

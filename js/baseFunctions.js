@@ -8,39 +8,6 @@ function handleSwipe() {
     }
 }
 
-var notifyOption = function (displayContent) {
-  let notification = document.querySelector(`.notify`);
-  if (onScreen == true && _main.clientWidth >= 768) {
-    var left = `10px`;
-    var pos = `absolute`;
-  } else {
-    var left = `320px`;
-    var pos = `fixed`;
-  }
-  notification.innerHTML = displayContent;
-  notification.style.display = `block`;
-  notification.style.position = pos;
-  notification.style.left = left;
-  setTimeout(function () {
-    let Elem = notification;
-    Elem.animate(
-      {
-        right: [`0px`, `280px`],
-      },
-      {
-        duration: 750, // number in ms [this would be equiv of your speed].
-        easing: `linear`,
-        iterations: 1, // infinity or a number.
-        // fill: ''
-      }
-    );
-  }, 750);
-
-  setTimeout(function () {
-    notification.style.display = `none`;
-  }, 1500);
-};
-
 var displayDescription = function (toggleOption) {
   if (expand == true)
     if (toggleOption == false){

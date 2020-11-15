@@ -48,9 +48,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.remove(`fa-check`)
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
-      notifyOption(
-        `Showing Descriptions as ${showDescription.toString().capitalize()}`
-      )
     }
     if (event.target.classList.contains(`scrollView`)) {
       scrollIntoView = scrollIntoView != true
@@ -61,7 +58,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.remove(`fa-check`)
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
-      notifyOption(`Scroll into View ${scrollIntoView.toString().capitalize()}`)
     }
     if (event.target.classList.contains(`showRipple`)) {
       showRipple = showRipple != true
@@ -262,7 +258,6 @@ document.addEventListener(
           first = false;
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
-        notifyOption(`Switched to now reading ${category}.`);
       } else {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -306,7 +301,6 @@ document.addEventListener(
         let id = 0;
         xmlChannelFooter();
       } else if (reader == false) {
-        notifyOption(`Reading ${category} enabled.`);
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -375,8 +369,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
       _toggle.style.display = `none`;
-      if (onlyImages == true) notifyOption(`Displaying only Images.`);
-      else notifyOption(`Displaying all Feeds.`);
       _visit.style.visibility = `none`;
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
@@ -450,7 +442,6 @@ document.addEventListener(
         })();
 
       }
-      notifyOption(`Fade into View is ${fadeIntoView.toString().capitalize()}`)
     }
     if (event.target.classList.contains(`TopBar`)) {
       topBar = topBar != true;
@@ -461,7 +452,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.remove(`fa-check`)
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
-      notifyOption(`TopBar set to ${topBar.toString().capitalize()}`);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`ShowOption`)) {
@@ -473,7 +463,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.remove(`fa-check`)
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
-      notifyOption(`Option set to ${showOption.toString().capitalize()}`);
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;
       else if (showOption == true)
@@ -481,7 +470,6 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Random`)) {
       showOption = showOption != true;
-      notifyOption(`Option set to ${showOption.toString().capitalize()}`);
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;
       else if (showOption == true)
@@ -517,7 +505,6 @@ document.addEventListener(
       iteration = iteration + 1;
       set = themes[iteration].name;
       window[themes[iteration].name]();
-      notifyOption(`Visual set to ${themes[iteration].name.capitalize()}`);
     }
     event.preventDefault();
   },

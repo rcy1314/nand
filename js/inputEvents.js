@@ -70,7 +70,6 @@ document.addEventListener(
             first = false;
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
-          notifyOption(`Switched to now reading ${category}.`);
         } else {
           _top.style.display = `block`;
           if (document.body.contains(document.querySelector(`#xml`)))
