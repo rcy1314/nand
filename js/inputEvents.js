@@ -138,7 +138,19 @@ document.addEventListener(
 document.addEventListener(
   `submit`,
   function (event) {
-    if (event.target.classList.contains(`url`)) {
+    if (event.target.classList.contains(`min`)) {
+      if (document.querySelector(`.excludeInput`).value.length) {
+        exclude.push(document.querySelector(`.excludeInput`).value.toLowerCase())
+        let parse = document.querySelector(`.option`);
+          let option = document.createElement(`div`);
+          option.classList.add(`option`);
+          option.innerHTML = document.querySelector(`.excludeInput`).value;
+          document.querySelector(`.option`).parentNode.insertBefore(option, parse);
+        let count = exclude.length + 1;
+        document.querySelector(`.exclude`).style.height = `${count * 45}px`;
+        document.querySelector(`.excludeInput`).value = ``
+      }
+    } else if (event.target.classList.contains(`url`)) {
       if (document.querySelector(`.imageURL`).value.length) {
         if (
           document
@@ -168,7 +180,7 @@ document.addEventListener(
           backgroundImage[0].path = document.querySelector(`.imageURL`).value;
         }
       }
-    } else if (event.target.classList.contains(`filter`)) {
+    } else if (event.target.classList.contains(`basic`)) {
       if (document.querySelector(`.sideFilter`).value.length) {
         topMenuBarDisplay(topBar);
         _visit.style.display = `none`;

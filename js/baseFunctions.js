@@ -138,6 +138,15 @@ var sideBarDisplay = function (toggleOption) {
       bg.append(sideBarThemeBuild(background[i].icon));
     }
     content.append(urlFormBuild());
+    content.append(sideBarExcludeListing());
+    let parse = document.querySelector(`.exclude`);
+    for (i = 0; i <= exclude.length - 1; i++) {
+      let option = document.createElement(`div`);
+      option.classList.add(`option`);
+      option.innerHTML = exclude[i];
+      parse.append(option);
+    }
+    parse.append(excludeFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)

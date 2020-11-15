@@ -600,6 +600,7 @@ var xmlRequestParsing = function (search, string, index) {
   let pub = [];
   let images = [];
   imageDuplicate = [];
+  const has = exclude.map(a => a.toLowerCase());
   if (first == true) _main.append(stageBuild());
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
@@ -634,7 +635,10 @@ var xmlRequestParsing = function (search, string, index) {
 
           if (data.childNodes.length > 1) var title = xmlTitleParsing(data);
 
-          if (title == postDuplicate || title == ``) continue;
+          if (
+            title == postDuplicate ||
+            title == ``
+          ) continue;
 
           var postDuplicate = title;
 
@@ -720,6 +724,7 @@ var xmlRequestParsing = function (search, string, index) {
             post: html,
             src: src,
           });
+
           pub.sort(function (a, b) {
             return b.since - a.since;
           });
@@ -762,6 +767,9 @@ var xmlRequestParsing = function (search, string, index) {
           sideBarDisplay(onScreen);
         }
         for (i = 0; i < pub.length - 1; i++) {
+          if (has.filter(function(obj) {
+            return pub[i].title.toLowerCase().match(obj);
+          }).length > 0) continue
           if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
           images.push({ element: pub[i].element, src: pub[i].src });

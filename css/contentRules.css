@@ -153,12 +153,28 @@ html body #container #sidebar #content #basic input[type=text] {
   width: 220px;
   padding: 5px;
 }
+
+html body #container #sidebar #content .url {
+  margin: 0;
+}
+
 html body #container #sidebar #content .url input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
   border: var(--hover-border-color);
   margin-left: 10px;
   width: 90%;
+}
+
+html body #container #sidebar #content .min {
+  margin: 15px
+}
+
+html body #container #sidebar #content .min input[type=text] {
+  background-color: var(--bg-color-primary);
+  color: var(--fill-color-primary);
+  border: var(--hover-border-color);
+  width: 100%;
 }
 
 html body #container #sidebar #content .cat {
@@ -214,7 +230,8 @@ html body #container #sidebar #content .sel:hover {
 
 html body #container #sidebar #content .set,
 html body #container #sidebar #content .themes,
-html body #container #sidebar #content .bg {
+html body #container #sidebar #content .bg,
+html body #container #sidebar #content .exclude {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -231,10 +248,12 @@ html body #container #sidebar #content .bg {
 
 html body #container #sidebar #content .set:hover,
 html body #container #sidebar #content .themes:hover,
-html body #container #sidebar #content .bg:hover {
+html body #container #sidebar #content .bg:hover,
+html body #container #sidebar #content .exclude:hover {
   background-color: var(--hover-background-color);
 }
 
+html body #container #sidebar #content .exclude .parse,
 html body #container #sidebar #content .set .choose,
 html body #container #sidebar #content .themes .border,
 html body #container #sidebar #content .bg .adjust {
@@ -252,6 +271,7 @@ html body #container #sidebar #content .bg .adjust {
   width: 100%;
 }
 
+html body #container #sidebar #content .exclude .option,
 html body #container #sidebar #content .set .settings,
 html body #container #sidebar #content .themes .theme,
 html body #container #sidebar #content .bg .background {
@@ -260,6 +280,7 @@ html body #container #sidebar #content .bg .background {
   padding: 5px;
 }
 
+html body #container #sidebar #content .exclude .option:hover,
 html body #container #sidebar #content .set .settings:hover,
 html body #container #sidebar #content .theme:hover,
 html body #container #sidebar #content .bg .background:hover {

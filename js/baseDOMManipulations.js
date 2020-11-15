@@ -497,6 +497,17 @@ var sideBarBackgroundListing = function () {
   return bg;
 };
 
+var sideBarExcludeListing = function () {
+  let ex = document.createElement(`div`);
+  ex.classList.add(`exclude`, `mainTransition`);
+  ex.innerHTML = `<div class='parse'>
+    Filter
+    <div class='fa fa-tint'></div>
+   </div>
+  `;
+  return ex;
+};
+
 var settingsListing = function () {
   let set = document.createElement(`div`);
   set.classList.add(`set`, `mainTransition`);
@@ -506,6 +517,22 @@ var settingsListing = function () {
    </div>
   `;
   return set;
+};
+
+var excludeFormBuild = function () {
+  let min = document.createElement(`div`);
+  min.id = `filter`;
+  min.classList.add("filter");
+  let form = document.createElement(`form`);
+  form.classList.add(`min`);
+  form.setAttribute(`action`, `#`);
+  let object = document.createElement(`input`);
+  object.classList.add("excludeInput")
+  object.setAttribute(`placeholder`, `filter`);
+  object.setAttribute(`type`, `text`);
+  form.append(object);
+  min.append(form);
+  return min;
 };
 
 var urlFormBuild = function () {
@@ -531,10 +558,10 @@ var basicFormBuild = function () {
   let basic = document.createElement(`div`);
   basic.id = `basic`;
   let form = document.createElement(`form`);
-  form.classList.add(`filter`);
+  form.classList.add(`sideBasic`);
   form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
-  object.setAttribute(`placeholder`, `filter`);
+  object.setAttribute(`placeholder`, `search`);
   object.setAttribute(`type`, `text`);
   object.classList.add(`sideFilter`);
   object.classList.add(`text`);

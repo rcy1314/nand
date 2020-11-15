@@ -5,6 +5,7 @@ document.addEventListener(
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
+      event.target.classList.contains(`parse`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
@@ -27,6 +28,7 @@ document.addEventListener(
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
+      event.target.classList.contains(`parse`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
@@ -311,6 +313,14 @@ document.addEventListener(
         else first = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
+    }
+    if (event.target.classList.contains(`parse`)) {
+      if (document.querySelector(`.exclude`).clientHeight != `50`) {
+        document.querySelector(`.exclude`).style.height = `30px`;
+        return false;
+      }
+      let count = exclude.length + 1;
+      document.querySelector(`.exclude`).style.height = `${count * 45}px`;
     }
     if (event.target.classList.contains(`border`)) {
       if (document.querySelector(`.themes`).clientHeight != `50`) {

@@ -65,6 +65,10 @@ window.onload = function () {
         document.querySelector(`.themes`).style.height = `${
           (themes.length + 1) * 35
         }px`;
+      if (expandFilter == true)
+        document.querySelector(`.exclude`).style.height = `${
+          (exclude.length + 1) * 45
+        }px`;
       if (typeof set === `string`)
         var startup = setInterval(function () {
           if (typeof eval(set) === `function`) {
@@ -92,7 +96,6 @@ window.onload = function () {
 window.addEventListener(
   `resize`,
   function (event) {
-    console.log(guideOnScreen)
     if (_main.clientWidth <= 768) {
       guideOnScreen = onScreen
       sideBarFirst = true;
@@ -464,6 +467,27 @@ document.addEventListener(
         null,
         event.target.closest(`.btn`).getAttribute(`aria-item`)
       );
+    }
+    if (
+      event.target.classList.contains(`option`)
+    ) {
+      if (tap == 0) {
+        // set first click
+        tap = new Date().getTime();
+
+      } else {
+        // compare first click to this click and see if they occurred within double click threshold
+        if (new Date().getTime() - tap < 350) {
+          // double click occurred
+          let i = exclude.indexOf(event.target.innerHTML.toLowerCase())
+          exclude.splice(i + 1, 1)
+          event.target.remove()
+          let count = exclude.length;
+          document.querySelector(`.exclude`).style.height = `${count * 45}px`;
+          tap = 0;
+        }
+      }
+      event.stopPropagation();
     }
     if (
       event.target.classList.contains(`filterBlur`) ||

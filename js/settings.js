@@ -101,6 +101,19 @@ let expand = true;
 let expandVisual = false;
 
 /*
+    expandFilter [boolean/integer]
+
+      Applications
+        sidebar, onload
+
+      Result
+        Filter expanded
+
+*/
+
+let expandFilter = false;
+
+/*
     expandSettings [boolean/integer]
 
       Applications
@@ -330,6 +343,23 @@ let safeSearchIDs = [
   `Reddit/Goddesses`,
   `4Chan/HR High Resolution`,
   `4Chan/Wallpapers General`,
+];
+
+/*
+    exclude [array]
+
+      Applications
+        sidebar, xmlRequestParsing
+
+      Result
+        titles excluded
+
+*/
+
+let exclude = [
+  `Buy`,
+  `Sale`,
+  `Shop`,
 ];
 
 /*
