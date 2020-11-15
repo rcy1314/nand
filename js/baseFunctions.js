@@ -99,6 +99,25 @@ var displayExpand = function (toggleOption) {
   unloading();
 };
 
+var appendSideBarLists = function (Elem, Class, Arrays) {
+  let list = document.querySelector(Elem);
+  if (!Arrays.name){
+    for (i = 0; i <= Arrays.length - 1; i++) {
+      let option = document.createElement(`div`);
+      option.classList.add(Class);
+      option.innerHTML = Arrays[i];
+      list.append(option);
+    }
+  }
+  else for (i = 0; i <= Arrays.length - 1; i++) {
+    let option = document.createElement(`div`);
+    option.classList.add(Class, Arrays[i].class);
+    option.innerHTML = Arrays[i].name;
+    list.append(option);
+    list.append(sideBarThemeBuild(Arrays[i].icon));
+  }
+}
+
 var sideBarDisplay = function (toggleOption) {
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.cat`))) {
@@ -110,43 +129,16 @@ var sideBarDisplay = function (toggleOption) {
       content.append(cat);
       content.append(sideBarCategoryBuild(translations[i]));
     }
-    content.append(sideBarThemeListing());
-    let list = document.querySelector(`.themes`);
-    for (i = 0; i <= themes.length - 1; i++) {
-      let visual = document.createElement(`div`);
-      visual.classList.add(`theme`, themes[i].class);
-      visual.innerHTML = themes[i].name;
-      list.append(visual);
-      list.append(sideBarThemeBuild(themes[i].icon));
-    }
-    content.append(settingsListing());
-    let choose = document.querySelector(`.set`);
-    for (i = 0; i <= settings.length - 1; i++) {
-      let option = document.createElement(`div`);
-      option.classList.add(`settings`, settings[i].class);
-      option.innerHTML = settings[i].name;
-      choose.append(option);
-      choose.append(sideBarThemeBuild(settings[i].icon));
-    }
-    content.append(sideBarBackgroundListing());
-    let bg = document.querySelector(`.bg`);
-    for (i = 0; i <= background.length - 1; i++) {
-      let option = document.createElement(`div`);
-      option.classList.add(`background`, background[i].class);
-      option.innerHTML = background[i].name;
-      bg.append(option);
-      bg.append(sideBarThemeBuild(background[i].icon));
-    }
+    sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
+    appendSideBarLists(`.themes`, `theme`, themes)
+    sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
+    appendSideBarLists(`.set`, `settings`, settings)
+    sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
+    appendSideBarLists(`.bg`, `background`, background)
     content.append(urlFormBuild());
-    content.append(sideBarExcludeListing());
-    let parse = document.querySelector(`.exclude`);
-    for (i = 0; i <= exclude.length - 1; i++) {
-      let option = document.createElement(`div`);
-      option.classList.add(`option`);
-      option.innerHTML = exclude[i];
-      parse.append(option);
-    }
-    parse.append(excludeFormBuild());
+    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
+    appendSideBarLists(`.exclude`, `option`, exclude);
+    document.querySelector(`.exclude`).append(excludeFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)

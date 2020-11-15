@@ -475,48 +475,16 @@ var listingIndexBuild = function (
   return key;
 };
 
-var sideBarThemeListing = function () {
-  let list = document.createElement(`div`);
-  list.classList.add(`themes`, `mainTransition`);
-  list.innerHTML = `<div class='border'>
-    Visual
-    <div class='fa fa-braille'></div>
+var sideBarListBuild = function (Elem, Class, Icon, Text) {
+  let content = _sidebar.querySelector(`#content`)
+  let option = document.createElement(`div`);
+  option.classList.add(Elem, `mainTransition`);
+  option.innerHTML = `<div class='${Class}'>
+    ${Text}
+    <div class='fa ${Icon}'></div>
    </div>
   `;
-  return list;
-};
-
-var sideBarBackgroundListing = function () {
-  let bg = document.createElement(`div`);
-  bg.classList.add(`bg`, `mainTransition`);
-  bg.innerHTML = `<div class='adjust'>
-    Background
-    <div class='fa fa-adjust'></div>
-   </div>
-  `;
-  return bg;
-};
-
-var sideBarExcludeListing = function () {
-  let ex = document.createElement(`div`);
-  ex.classList.add(`exclude`, `mainTransition`);
-  ex.innerHTML = `<div class='parse'>
-    Filter
-    <div class='fa fa-tint'></div>
-   </div>
-  `;
-  return ex;
-};
-
-var settingsListing = function () {
-  let set = document.createElement(`div`);
-  set.classList.add(`set`, `mainTransition`);
-  set.innerHTML = `<div class='choose'>
-    Settings
-    <div class='fa fa-cube'></div>
-   </div>
-  `;
-  return set;
+  content.append(option);
 };
 
 var excludeFormBuild = function () {

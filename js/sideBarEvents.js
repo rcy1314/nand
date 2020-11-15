@@ -315,12 +315,16 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains(`parse`)) {
+      console.log(document.querySelector(`.exclude`).clientHeight)
       if (document.querySelector(`.exclude`).clientHeight != `50`) {
         document.querySelector(`.exclude`).style.height = `30px`;
-        return false;
+      } else {
+        if (exclude.length == 0)
+          document.querySelector(`.exclude`).style.height = `75px`
+        else
+        document.querySelector(`.exclude`).style.height =
+          `${(exclude.length * 34.25) + 65}px`;
       }
-      let count = exclude.length + 1;
-      document.querySelector(`.exclude`).style.height = `${count * 45}px`;
     }
     if (event.target.classList.contains(`border`)) {
       if (document.querySelector(`.themes`).clientHeight != `50`) {

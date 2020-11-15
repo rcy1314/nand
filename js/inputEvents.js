@@ -140,14 +140,31 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains(`min`)) {
       if (document.querySelector(`.excludeInput`).value.length) {
-        exclude.push(document.querySelector(`.excludeInput`).value.toLowerCase())
-        let parse = document.querySelector(`.option`);
+        exclude.push(document.querySelector(`.excludeInput`).value)
+        const has = exclude.map(a => a.toLowerCase());
+        if (document.body.contains(document.querySelector(`#xml`))) {
+          _main
+            .querySelectorAll(`.pub`)
+            .forEach((a) => has.filter(function(obj) {
+              if (a.innerHTML.toLowerCase().match(obj))
+                a.closest(`.item`).remove()
+            }))
+        }
+        if (!_sidebar.querySelector(`.option`)) {
+          let parse = event.target;
           let option = document.createElement(`div`);
           option.classList.add(`option`);
           option.innerHTML = document.querySelector(`.excludeInput`).value;
-          document.querySelector(`.option`).parentNode.insertBefore(option, parse);
-        let count = exclude.length + 1;
-        document.querySelector(`.exclude`).style.height = `${count * 45}px`;
+          event.target.parentNode.insertBefore(option, parse);
+        } else {
+          let parse = document.querySelector(`.option`);
+          let option = document.createElement(`div`);
+          option.classList.add(`option`);
+          option.innerHTML = document.querySelector(`.excludeInput`).value;
+          parse.parentNode.insertBefore(option, parse);
+        }
+        let count = exclude.length + 2;
+        document.querySelector(`.exclude`).style.height = `${count * 35}px`;
         document.querySelector(`.excludeInput`).value = ``
       }
     } else if (event.target.classList.contains(`url`)) {

@@ -474,16 +474,20 @@ document.addEventListener(
       if (tap == 0) {
         // set first click
         tap = new Date().getTime();
-
+        setTimeout(function () {
+          tap = 0
+        }, 350)
       } else {
         // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
           // double click occurred
-          let i = exclude.indexOf(event.target.innerHTML.toLowerCase())
-          exclude.splice(i + 1, 1)
+          let i = exclude.indexOf(event.target.innerHTML)
+          exclude.splice(i, 1)
           event.target.remove()
-          let count = exclude.length;
-          document.querySelector(`.exclude`).style.height = `${count * 45}px`;
+          if (exclude.length == 0)
+            document.querySelector(`.exclude`).style.height = `70px`
+          else
+          document.querySelector(`.exclude`).style.height = `${(exclude.length * 34.25) + 65}px`;
           tap = 0;
         }
       }
