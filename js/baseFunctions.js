@@ -152,6 +152,15 @@ var sideBarDisplay = function (toggleOption) {
       list.append(visual);
       list.append(sideBarThemeBuild(themes[i].icon));
     }
+    content.append(settingsListing());
+    let choose = document.querySelector(`.set`);
+    for (i = 0; i <= settings.length - 1; i++) {
+      let option = document.createElement(`div`);
+      option.classList.add(`settings`, settings[i].class);
+      option.innerHTML = settings[i].name;
+      choose.append(option);
+      choose.append(sideBarThemeBuild(settings[i].icon));
+    }
     content.append(sideBarBackgroundListing());
     let bg = document.querySelector(`.bg`);
     for (i = 0; i <= background.length - 1; i++) {

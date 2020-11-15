@@ -2,6 +2,7 @@ document.addEventListener(
   `mousemove`,
   function (event) {
     if (
+      event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
       event.target.classList.contains(`cat`) ||
@@ -15,33 +16,6 @@ document.addEventListener(
       event.target.style.borderWidth = `.3px .3px .3px .3px`;
       event.target.style.borderImageSlice = `9`;
       event.target.style.borderStyle = `solid`;
-      if (
-        event.target.nextElementSibling.nextElementSibling !=
-          document.querySelector(`#basic`) &&
-        document.body.contains(
-          event.target.nextElementSibling.nextElementSibling
-        )
-      ) {
-        event.target.nextElementSibling.nextElementSibling.style
-        .borderImage = `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
-          ${parseInt(p)}% ,rgba(147,147,147,0) 100%)`;
-        event.target.nextElementSibling.nextElementSibling.style.borderWidth = `.3px 0 0 .3px`;
-        event.target.nextElementSibling.nextElementSibling.style.borderImageSlice = `9`;
-        event.target.nextElementSibling.nextElementSibling.style.borderStyle = `solid`;
-      }
-      if (
-        event.target != document.querySelector(`.adjust`) &&
-        event.target != document.querySelector(`.border`) &&
-        event.target != document.querySelector(`.cat:first-child`) &&
-        event.target != document.querySelector(`.sel:first-child`)
-      ) {
-        event.target.previousElementSibling.previousElementSibling.style
-        .borderImage = `linear-gradient(to right,rgba(147,147,147,0) 0%,rgba(147,147,147,.15)
-          ${parseInt(p)}%,rgba(147,147,147,0) 100%)`;
-        event.target.previousElementSibling.previousElementSibling.style.borderWidth = `.3px 0 0 .3px`;
-        event.target.previousElementSibling.previousElementSibling.style.borderImageSlice = `9`;
-        event.target.previousElementSibling.previousElementSibling.style.borderStyle = `solid`;
-      }
     }
   },
   false
@@ -50,27 +24,13 @@ document.addEventListener(
   `mouseout`,
   function (event) {
     if (
+      event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
       event.target.style.borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
-      if (
-        document.body.contains(
-          event.target.nextElementSibling.nextElementSibling
-        )
-      )
-        event.target.nextElementSibling.nextElementSibling.style
-        .borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
-      if (
-        event.target != document.querySelector(`.adjust`) &&
-        event.target != document.querySelector(`.border`) &&
-        event.target != document.querySelector(`.cat:first-child`) &&
-        event.target != document.querySelector(`.sel:first-child`)
-      )
-        event.target.previousElementSibling.previousElementSibling.style
-        .borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
     }
   },
   false
@@ -81,12 +41,26 @@ document.addEventListener(
     if (event.target.classList.contains(`showDescription`)) {
       showDescription = showDescription != true
       displayDescription(showDescription)
+      if (showDescription == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (showDescription == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
       notifyOption(
         `Showing Descriptions as ${showDescription.toString().capitalize()}`
       )
     }
     if (event.target.classList.contains(`scrollView`)) {
       scrollIntoView = scrollIntoView != true
+      if (scrollIntoView == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (scrollIntoView == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
       notifyOption(`Scroll into View ${scrollIntoView.toString().capitalize()}`)
     }
     if (event.target.classList.contains(`showRipple`)) {
@@ -360,59 +334,46 @@ document.addEventListener(
       let count = background.length + 1;
       document.querySelector(`.bg`).style.height = `${count * 35}px`;
     }
+    if (event.target.classList.contains(`choose`)) {
+      if (document.querySelector(`.set`).clientHeight != `50`) {
+        document.querySelector(`.set`).style.height = `30px`;
+        return false;
+      }
+      let count = settings.length + 1;
+      document.querySelector(`.set`).style.height = `${count * 35}px`;
+    }
     if (event.target.classList.contains(`List`)) {
       expand = true;
       groupType = `list`;
-      if (document.body.contains(document.querySelector(`#group`))) {
-        document.querySelector(`#group`).style.display = `none`;
-      }
-      _visit.style.visibility = `none`;
-      _visit.style.display = `none`;
-      if (document.body.contains(document.querySelector(`xml`)))
-        document.querySelector(`xml`).remove();
-      if (document.body.contains(document.querySelector(`group`)))
-        document.querySelector(`group`).remove();
-      populateCategoryGroup(category);
-      displayExpand(expand);
-      topMenuBarDisplay(topBar);
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-check`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-circle-notch`)
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
       groupType = `blocks`;
-      if (document.body.contains(document.querySelector(`#group`))) {
-        document.querySelector(`#group`).style.display = `none`;
-      }
-      _visit.style.visibility = `none`;
-      _visit.style.display = `none`;
-      if (document.body.contains(document.getElementById(`xml`)))
-        document.getElementById(`xml`).remove();
-      if (document.body.contains(document.getElementById(`group`)))
-        document.getElementById(`group`).remove();
-      populateCategoryGroup(category);
-      topMenuBarDisplay(topBar);
-      displayExpand(expand);
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-check`)
+        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-circle-notch`)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
-      document
-        .querySelectorAll(`#dots .fill`)
-        .forEach((a) => a.classList.add(`dots`));
-      document
-        .querySelectorAll(`#dots .fill`)
-        .forEach((a) => (a.style.visibility = `visible`));
-      document.querySelector(`#dots`).style.zIndex = `11`;
-      setTimeout(function () {
-        document.querySelector(`#dots`).style.zIndex = `-1`;
-        document
-          .querySelectorAll(`#dots .fill`)
-          .forEach((a) => a.classList.remove(`dots`));
-        document
-          .querySelectorAll(`#dots .fill`)
-          .forEach((a) => (a.style.visibility = `hidden`));
-      }, 3000);
+      event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+      event.target.nextElementSibling.classList.add(`fa-check`)
+      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-check`)
+      document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-circle-notch`)
     }
     if (event.target.classList.contains(`toggleImages`)) {
       onlyImages = onlyImages != true;
+      if (onlyImages == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (onlyImages == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
       _toggle.style.display = `none`;
       if (onlyImages == true) notifyOption(`Displaying only Images.`);
       else notifyOption(`Displaying all Feeds.`);
@@ -428,20 +389,90 @@ document.addEventListener(
       unloading();
     }
     if (event.target.classList.contains(`Percent`)) {
-      let loading = `percent`;
-      unloading();
+      loading = `percent`;
+      event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+      event.target.nextElementSibling.classList.add(`fa-check`)
+      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-check`)
+      document.querySelector(`.Dots`).nextElementSibling.classList.add(`fa-circle-notch`)
     }
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;
       uri.blank();
     }
+    if (
+      event.target.classList.contains(`fadeElement`)
+    ) {
+      fadeIntoView = fadeIntoView != true;
+      if (fadeIntoView == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (fadeIntoView == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
+      if (fadeIntoView == false) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document
+            .querySelectorAll(`.img`)
+            .forEach((a) => (a.classList.remove(`hidden`)));
+      } else if (fadeIntoView == true) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+        document
+          .querySelectorAll(`.img`)
+          .forEach((a) => (a.classList.add(`hidden`)));
+        (function() {
+          var elements;
+          var windowHeight;
+
+          function init() {
+            elements = document.querySelectorAll('.hidden');
+            windowHeight = _main.clientHeight;
+          }
+
+          function checkPosition() {
+            for (var i = 0; i < elements.length; i++) {
+              var element = elements[i];
+              var positionFromTop = elements[i].getBoundingClientRect().top;
+
+              if (positionFromTop - windowHeight <= 0) {
+                if (fadeIntoView == true)
+                  element.classList.add('fade-in-element');
+                if (fadeIntoView == false) element.classList.remove('hidden');
+              }
+            }
+          }
+
+          _main.addEventListener('scroll', checkPosition);
+          _main.addEventListener('resize', init);
+
+          init();
+          checkPosition();
+        })();
+
+      }
+      notifyOption(`Fade into View is ${fadeIntoView.toString().capitalize()}`)
+    }
     if (event.target.classList.contains(`TopBar`)) {
       topBar = topBar != true;
+      if (topBar == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (topBar == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
       notifyOption(`TopBar set to ${topBar.toString().capitalize()}`);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`ShowOption`)) {
       showOption = showOption != true;
+      if (showOption == true) {
+        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.add(`fa-check`)
+      } else if (showOption == false) {
+        event.target.nextElementSibling.classList.remove(`fa-check`)
+        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+      }
       notifyOption(`Option set to ${showOption.toString().capitalize()}`);
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;

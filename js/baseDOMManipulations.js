@@ -497,6 +497,17 @@ var sideBarBackgroundListing = function () {
   return bg;
 };
 
+var settingsListing = function () {
+  let set = document.createElement(`div`);
+  set.classList.add(`set`, `mainTransition`);
+  set.innerHTML = `<div class='choose'>
+    Settings
+    <div class='fa fa-cube'></div>
+   </div>
+  `;
+  return set;
+};
+
 var urlFormBuild = function () {
   let url = document.createElement(`div`);
   url.id = `url`;

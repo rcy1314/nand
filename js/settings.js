@@ -35,6 +35,19 @@ let backgroundImage = [
 let topBar = true;
 
 /*
+    showOption [boolean/integer]
+
+      Applications
+        guide, group, xml
+
+      Result
+        toggle option icons in topBar
+
+*/
+
+let showOption = true;
+
+/*
     reader [boolean/integer]
 
       Applications
@@ -88,6 +101,19 @@ let expand = true;
 let expandVisual = false;
 
 /*
+    expandSettings [boolean/integer]
+
+      Applications
+        sidebar
+
+      Result
+        Settings expanded
+
+*/
+
+let expandSettings = false;
+
+/*
     expandBackground [boolean/integer]
 
       Applications
@@ -99,19 +125,6 @@ let expandVisual = false;
 */
 
 let expandBackground = false;
-
-/*
-    showOption [boolean/integer]
-
-      Applications
-        sideBar, topBar
-
-      Result
-        toggle icons in topBar
-
-*/
-
-let showOption = true;
 
 /*
     showRipple [boolean/integer]
@@ -308,17 +321,16 @@ let safeSearchScore = `0.3369845151901245`;
 
 */
 
-let safeSearchIDs =
-  [
-    `Imgur/Celebs`,
-    `Reddit/Celebs`,
-    `Imgur/Celebhub`,
-    `Reddit/Celebhub`,
-    `Imgur/Goddesses`,
-    `Reddit/Goddesses`,
-    `4Chan/HR High Resolution`,
-    `4Chan/Wallpapers General`
-  ];
+let safeSearchIDs = [
+  `Imgur/Celebs`,
+  `Reddit/Celebs`,
+  `Imgur/Celebhub`,
+  `Reddit/Celebhub`,
+  `Imgur/Goddesses`,
+  `Reddit/Goddesses`,
+  `4Chan/HR High Resolution`,
+  `4Chan/Wallpapers General`,
+];
 
 /*
     cors [string]
@@ -390,31 +402,63 @@ let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
-let faRipple
-if (showRipple == true)
-  faRipple = `fa-check`
-else faRipple = `fa-circle-notch`
+if (expand == true) {
+  faList = `fa-check`;
+  faBlocks = `fa-circle-notch`;
+} else if (expand == false) {
+  faList = `fa-circle-notch`;
+  faBlocks = `fa-check`;
+}
+if (loading == `percent`) {
+  faPercent = `fa-check`;
+  faDots = `fa-circle-notch`;
+} else if (loading == `dots`) {
+  faDots = `fa-check`;
+  faPercent = `fa-circle-notch`;
+}
+let faRipple;
+if (showRipple == true) faRipple = `fa-check`;
+else faRipple = `fa-circle-notch`;
+let faImages;
+if (onlyImages == true) faImages = `fa-check`;
+else faImages = `fa-circle-notch`;
+let faTopBar;
+if (topBar == true) faTopBar = `fa-check`;
+else faTopBar = `fa-circle-notch`;
+let faFade;
+if (fadeIntoView == true) faFade = `fa-check`;
+else faFade = `fa-circle-notch`;
+let faOption;
+if (showOption == true) faOption = `fa-check`;
+else faOption = `fa-circle-notch`;
+let faDescription;
+if (showDescription == true) faDescription = `fa-check`;
+else faDescription = `fa-circle-notch`;
+let faScroll;
+if (scrollIntoView == true) faScroll = `fa-check`;
+else faScroll = `fa-circle-notch`;
 
 const selections = [
-  //sideBar sel options
-
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
   { name: `Reader`, class: `Reader`, icon: `fa-heart` },
-  { name: `List`, class: `List`, icon: `fa-th-large` },
-  { name: `Blocks`, class: `Blocks`, icon: `fa-list-ul` },
-  { name: `Percent`, class: `Percent`, icon: `fa-signal` },
-  { name: `Dots`, class: `Dots`, icon: `fa-ellipsis-h` },
-  { name: `Images`, class: `toggleImages`, icon: `fa-camera-retro` },
-  { name: `Top Bar`, class: `TopBar`, icon: `fa-edit` },
-  { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
-  { name: `Fade in Images`, class: `fadeElement`, icon: `fa-paint-brush` },
-  { name: `Scroll Into View`, class: `scrollView`, icon: `fa-level-up-alt` },
-  { name: `Show Option`, class: `ShowOption`, icon: `fa-puzzle-piece` },
-  { name: `Show Description`, class: `showDescription`, icon: `fa-splotch` },
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
+];
+
+const settings = [
+  { name: `List`, class: `List`, icon: faList },
+  { name: `Blocks`, class: `Blocks`, icon: faBlocks },
+  { name: `Percent`, class: `Percent`, icon: faPercent },
+  { name: `Dots`, class: `Dots`, icon: faDots },
+  { name: `Images`, class: `toggleImages`, icon: faImages },
+  { name: `Top Bar`, class: `TopBar`, icon: faTopBar },
+  { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
+  { name: `Fade in Images`, class: `fadeElement`, icon: faFade },
+  { name: `Scroll Into View`, class: `scrollView`, icon: faScroll },
+  { name: `Show Option`, class: `ShowOption`, icon: faOption },
+  { name: `Show Description`, class: `showDescription`, icon: faDescription },
 ];
 
 const background = [

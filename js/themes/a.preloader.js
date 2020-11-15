@@ -7,7 +7,7 @@ const themes = [
   { name: `Nord`, class: `Nord`, icon: `fa-signature` },
   { name: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
   { name: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
-  { name: `Alpenglow`, class: `Alpenglow`, icon: `fa-cube` },
+  { name: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];
 //  { name: `Example function`, class: `Class Click Event`, icon: `fa-example` },
 
