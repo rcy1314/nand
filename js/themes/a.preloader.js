@@ -1,34 +1,11 @@
 //cheatsheet https://fontawesome.com/cheatsheet
 //not all icons work, free version...
 
-const themes = [
-  { name: `Day`, class: `Day`, icon: `fa-terminal` },
-  { name: `Night`, class: `Night`, icon: `fa-code` },
-  { name: `Nord`, class: `Nord`, icon: `fa-signature` },
-  { name: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
-  { name: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
-  { name: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
-];
-//  { name: `Example function`, class: `Class Click Event`, icon: `fa-example` },
-
-//create js theme file from existing to edit
-//example.js function = themes.name
-//add above and below example the themes and files
-
 let directory = `js/themes/`;
 let extension = `.js`;
-let files = [
-  `day`,
-  `night`,
-  `nord`,
-  `gruvbox`,
-  `solarized`,
-  `alpenglow`,
-  //  `example file`,
-];
 
-for (var file of files) {
-  let path = directory + file + extension;
+for (var visual of visuals) {
+  let path = directory + visual + extension;
   let script = document.createElement(`script`);
   script.type = `text/javascript`;
   script.src = path;

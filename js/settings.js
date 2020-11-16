@@ -1,5 +1,6 @@
 // initial theme
-let set = `Day`;
+
+let set = `Alpenglow`;
 
 /*
     backgroundImage [array]
@@ -19,6 +20,35 @@ let backgroundImage = [
     position: "center",
     size: "cover",
   },
+];
+
+//  {
+//    name: `Example function (in example file in /js/themes)`,
+//    class: `Element Class Click Event (unique)`,
+//    icon: `fa-example`
+//  }
+
+const themes = [
+  { name: `Day`, class: `Day`, icon: `fa-terminal` },
+  { name: `Night`, class: `Night`, icon: `fa-code` },
+  { name: `Nord`, class: `Nord`, icon: `fa-signature` },
+  { name: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
+  { name: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
+  { name: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
+];
+
+//create js theme file from example.js rename file and function.
+//example.js function = themes.name
+//above and below the theme and file
+
+let visuals = [
+  `day`,
+  `night`,
+  `nord`,
+  `gruvbox`,
+  `solarized`,
+  `alpenglow`,
+  //  `example file`, in /js/themes
 ];
 
 /*

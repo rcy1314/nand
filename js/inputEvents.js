@@ -163,9 +163,8 @@ document.addEventListener(
           option.innerHTML = document.querySelector(`.excludeInput`).value;
           parse.parentNode.insertBefore(option, parse);
         }
-        let count = exclude.length + 2;
-        document.querySelector(`.exclude`).style.height = `${count * 35}px`;
-        document.querySelector(`.excludeInput`).value = ``
+        document.querySelector(`.exclude`).style.height =
+          `${(exclude.length * 34.25) + 65}px`;
       }
     } else if (event.target.classList.contains(`url`)) {
       if (document.querySelector(`.imageURL`).value.length) {

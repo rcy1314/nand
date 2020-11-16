@@ -66,9 +66,8 @@ window.onload = function () {
           (themes.length + 1) * 35
         }px`;
       if (expandFilter == true)
-        document.querySelector(`.exclude`).style.height = `${
-          (exclude.length + 1) * 45
-        }px`;
+      document.querySelector(`.exclude`).style.height =
+        `${(exclude.length * 34.25) + 65}px`;
       if (typeof set === `string`)
         var startup = setInterval(function () {
           if (typeof eval(set) === `function`) {

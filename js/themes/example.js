@@ -21,12 +21,12 @@ var Example = function() {
     `--fill-color-primary`,
     `#eeeeee`
   );
-  //Scrollbar thumb, a href, copy post attribute
+  //Scrollbar thumb, a href
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
     `rgba(253, 115, 136, 1)`
   );
-  //Inputs color, List view, Feed items, Input Listings, Guide Wrap, XML Status
+  //Inputs bg, List, XML items, Input Listings, Guide,, copy post attribute
   document.documentElement.style.setProperty(
     `--bg-color-primary`,
     `linear-gradient(right, rgba(106, 66, 194, .4) 50%,
@@ -38,7 +38,7 @@ var Example = function() {
     `linear-gradient(45deg, rgba(106, 66, 194, 1) 50%,
      rgba(253, 115, 136, 1) 100%)`
   );
-  //Sidebar, Home toggles, Categories, Quick feeds, Feed item/copy, Feed Status
+  //Sidebar, Visit toggles, Categories, Quick feeds, Visit guest input
   document.documentElement.style.setProperty(
     `--hover-background-color`,
     `rgba(63, 92, 136, .4)`
