@@ -101,7 +101,7 @@ var displayExpand = function (toggleOption) {
 
 var appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-  if (!Arrays.name){
+  if (!Arrays[0].name){
     for (i = 0; i <= Arrays.length - 1; i++) {
       let option = document.createElement(`div`);
       option.classList.add(Class);
