@@ -71,10 +71,10 @@ window.onload = function () {
       if (typeof set === `string`)
         var startup = setInterval(function () {
           if (typeof eval(set) === `function`) {
-            window[set]();
             setTimeout(function () {
+              window[set]();
               clearInterval(startup);
-            }, 5);
+            }, 10);
           }
           _container.addEventListener('touchstart', function(event) {
             touchstartX = event.changedTouches[0].screenX;
@@ -84,10 +84,10 @@ window.onload = function () {
             touchendX = event.changedTouches[0].screenX;
               handleSwipe();
           }, false);
-        }, 5);
+        }, 10);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 5)
+    }, 10)
   });
 };
 
