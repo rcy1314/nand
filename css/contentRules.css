@@ -1506,7 +1506,7 @@ html body #container #main #visit #page #front #first .listing .hover .hue {
 
 html body #container #main #top #arm #search #match .listing .hover,
 html body #container #main #visit #page #front #first .listing .hover {
-  background-color: var(--progress-background) !important;
+  background-color: var(--loader-color-secondary);
   font-size: 12px;
   height: 53px;
 }
