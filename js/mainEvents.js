@@ -293,11 +293,6 @@ document.addEventListener(
         );
       }, setPause);
     }
-    if (
-      event.target.classList.contains(`construct`)
-    ) {
-        event.target.closest(`.filter`).getAttribute(`aria-item`).blank();
-    }
     if (event.target.classList.contains(`translation`)) {
       id = 0;
       category = event.target.closest(`.translation`).getAttribute(`aria-item`);
