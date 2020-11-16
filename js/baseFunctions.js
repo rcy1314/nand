@@ -372,7 +372,6 @@ var progressBackDrop = function (done, percent) {
           document.querySelector(`#xml`).style.paddingTop = `0`;
         }, 1000);
       }
-      _main.scrollTop = "1";
     }
     if (document.body.contains(document.getElementById(`group`))) {
       document.querySelector(`#group`).style.display = `block`;
@@ -421,34 +420,51 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
-      if (fadeIntoView == true)
-      (function() {
-        var elements;
-        var windowHeight;
+      if (fadeIntoView == true) {
+        (function() {
+          var elements;
+          var windowHeight;
 
-        function init() {
-          elements = document.querySelectorAll('.hidden');
-          windowHeight = _main.clientHeight;
-        }
+          function init() {
+            elements = document.querySelectorAll('.image');
+            windowHeight = _main.clientHeight;
+            for (var i = 0; i < elements.length; i++) {
+              var element = elements[i];
+              var positionFromTop = elements[i].getBoundingClientRect().top;
 
-        function checkPosition() {
-          for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            var positionFromTop = elements[i].getBoundingClientRect().top;
-
-            if (positionFromTop - windowHeight <= 0) {
-              element.classList.add('fade-in-element');
-              element.classList.remove('hidden');
+              if (positionFromTop - windowHeight <= 0) {
+                element.querySelector(`.img`).classList.add('fade-in-element');
+                element.querySelector(`.img`).classList.remove('hidden');
+              }
             }
           }
-        }
 
-        _main.addEventListener('scroll', checkPosition);
-        _main.addEventListener('resize', init);
+          function checkPosition() {
+            for (var i = 0; i < elements.length; i++) {
+              var element = elements[i];
+              var positionFromTop = elements[i].getBoundingClientRect().top;
 
-        init();
-        checkPosition();
-      })();
+              if (positionFromTop - windowHeight <= 0) {
+                if (fadeIntoView == true)
+                  element.classList.add('fade-in-element');
+                if (fadeIntoView == false) {
+                  document
+                    .querySelectorAll(`.img`)
+                    .forEach((a) => (a.classList.remove(`hidden`)));
+                  _main.removeEventListener("scroll", checkPosition);
+                  _main.removeEventListener("resize", init);
+                  element.classList.remove('hidden');
+                }
+              }
+            }
+          }
+
+          _main.addEventListener('scroll', checkPosition);
+          _main.addEventListener('resize', init);
+
+          init();
+        })();
+      }
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;

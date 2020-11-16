@@ -417,43 +417,51 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
       if (fadeIntoView == false) {
-        if (document.body.contains(document.querySelector(`#xml`)))
+      } else if (fadeIntoView == true) {
+        if (document.body.contains(document.querySelector(`#xml`))) {
+
           document
             .querySelectorAll(`.img`)
-            .forEach((a) => (a.classList.remove(`hidden`)));
-      } else if (fadeIntoView == true) {
-        if (document.body.contains(document.querySelector(`#xml`)))
-        document
-          .querySelectorAll(`.img`)
-          .forEach((a) => (a.classList.add(`hidden`)));
-        (function() {
-          var elements;
-          var windowHeight;
+            .forEach((a) => (a.classList.remove(`fade-in-element`)));
+          document
+            .querySelectorAll(`.img`)
+            .forEach((a) => (a.classList.add(`hidden`)));
+          (function() {
+            var elements;
+            var windowHeight;
 
-          function init() {
-            elements = document.querySelectorAll('.hidden');
-            windowHeight = _main.clientHeight;
-          }
+            function init() {
+              elements = document.querySelectorAll('.hidden');
+              windowHeight = _main.clientHeight;
+            }
 
-          function checkPosition() {
-            for (var i = 0; i < elements.length; i++) {
-              var element = elements[i];
-              var positionFromTop = elements[i].getBoundingClientRect().top;
+            function checkPosition() {
+              for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var positionFromTop = elements[i].getBoundingClientRect().top;
 
-              if (positionFromTop - windowHeight <= 0) {
-                if (fadeIntoView == true)
-                  element.classList.add('fade-in-element');
-                if (fadeIntoView == false) element.classList.remove('hidden');
+                if (positionFromTop - windowHeight <= 0) {
+                  if (fadeIntoView == true)
+                    element.classList.add('fade-in-element');
+                  if (fadeIntoView == false) {
+                    document
+                      .querySelectorAll(`.img`)
+                      .forEach((a) => (a.classList.remove(`hidden`)));
+                    _main.removeEventListener("scroll", checkPosition);
+                    _main.removeEventListener("resize", init);
+                    element.classList.remove('hidden');
+                  }
+                }
               }
             }
-          }
 
-          _main.addEventListener('scroll', checkPosition);
-          _main.addEventListener('resize', init);
+            _main.addEventListener('scroll', checkPosition);
+            _main.addEventListener('resize', init);
 
-          init();
-          checkPosition();
-        })();
+            init();
+            checkPosition();
+          })();
+        }
 
       }
     }

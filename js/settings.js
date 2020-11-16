@@ -371,6 +371,7 @@ let safeSearchIDs = [
   `Reddit/Celebhub`,
   `Imgur/Goddesses`,
   `Reddit/Goddesses`,
+  `4Chan/G Technology`,
   `4Chan/HR High Resolution`,
   `4Chan/Wallpapers General`,
 ];
