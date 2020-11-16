@@ -731,6 +731,7 @@ var xmlRequestParsing = function (search, string, index) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
           }
         }
+        console.log(post + ` ` + local)
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
           sticky.push({
@@ -760,7 +761,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        } else if (post && !isNumeric(local)){
+        } else if (!post && !isNumeric(local)){
           _guide.style.display = `none`;
           topMenuBarDisplay(topBar);
           sideBarDisplay(onScreen);
