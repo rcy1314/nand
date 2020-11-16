@@ -731,7 +731,6 @@ var xmlRequestParsing = function (search, string, index) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
           }
         }
-        console.log(post + ` ` + local)
         if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
           var sticky = [];
           sticky.push({
@@ -774,18 +773,21 @@ var xmlRequestParsing = function (search, string, index) {
             document.querySelector(`.channel`).append(pub[i].post);
           images.push({ element: pub[i].element, src: pub[i].src });
         }
-        if (safeSearchIDs.includes(menu[id].id))
-          for (i = images.length - 1; i >= 0; i--)
+        if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+          for (i = images.length - 1; i >= 0; i--) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
             else if (!menu[index].id.match(/Youtube/g))
               xmlImageAttributes(false, index, images[i].element, images[i].src);
-        else
-          for (i = 0; i <= images.length - 1; i++)
+          }
+        } else {
+          for (i = 0; i <= images.length - 1; i++) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
             else if (!menu[index].id.match(/Youtube/g))
               xmlImageAttributes(false, index, images[i].element, images[i].src);
+          }
+        }
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
         let recent = pub[0].dst;

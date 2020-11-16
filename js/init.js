@@ -91,5 +91,5 @@ else if (location.search.split(`?q=`)[1]) {
       filterInputResponse(true, false, uri[0], false);
     else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-  }, 750);
+  }, 250);
 }
