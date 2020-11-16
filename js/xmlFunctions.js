@@ -763,7 +763,7 @@ var xmlRequestParsing = function (search, string, index) {
         } else if (!post && !isNumeric(local)){
           _guide.style.display = `none`;
           topMenuBarDisplay(topBar);
-          sideBarDisplay(onScreen);
+          sideBarDisplay(guideOnScreen);
         }
         for (i = 0; i < pub.length - 1; i++) {
           if (has.filter(function(obj) {
