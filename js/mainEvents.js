@@ -84,10 +84,10 @@ window.onload = function () {
             touchendX = event.changedTouches[0].screenX;
               handleSwipe();
           }, false);
-        }, 10);
+        }, 5);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 10)
+    }, 5)
   });
 };
 
