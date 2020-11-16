@@ -342,7 +342,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .querySelector(`[aria-item='${pubIndex}']`)
           .closest(`.item`)
           .remove();
-      return false;
     }
     imageDuplicate.push(src);
     if (
