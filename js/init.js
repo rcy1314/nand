@@ -71,6 +71,7 @@ if (
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
       _guide.style.display = `flex`;
+      _main.classList.add(`guide`)
       _top.style.display = `none`;
       setTimeout(function () {
         filterInputResponse(true, false, menu[i].id.space(), false);

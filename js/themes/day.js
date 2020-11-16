@@ -39,7 +39,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(255,255,255,.4)`
+    `rgba(255,255,255,.8)`
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,

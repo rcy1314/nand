@@ -29,7 +29,7 @@ var Nord = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(80, 86, 105, .7)`
+    `rgba(218, 222, 232, .4)`
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,

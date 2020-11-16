@@ -44,7 +44,7 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(63, 92, 136, .4)`
+    `rgba(63, 92, 136, .8)`
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,

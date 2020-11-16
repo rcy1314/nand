@@ -302,6 +302,19 @@ let category = `Social`;
 let onlyImages = false;
 
 /*
+    omitGuide [boolean/integer]
+
+      Applications
+        xmlRequestParsing
+
+      Result
+        omit Guide sticky from xml listing
+
+*/
+
+let omitGuide = false;
+
+/*
     suggestiongBuffer [integer]
 
       Applications

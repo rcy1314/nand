@@ -395,7 +395,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             .then((response) => {
               response.json().then((jsonResponse) => {
                 jsonResponseScore = jsonResponse.score;
-                console.log(jsonResponse.score + ` ${src}`);
+                console.log(jsonResponse.score);
                 if (jsonResponse.score >= safeSearchScore) {
                   if (
                     document.body.contains(
@@ -760,7 +760,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        } else if (!post && !isNumeric(local)){
+        } else if (typeof local != `undefined` || !post && !isNumeric(local)){
           _guide.style.display = `none`;
           topMenuBarDisplay(topBar);
           sideBarDisplay(guideOnScreen);
@@ -769,7 +769,9 @@ var xmlRequestParsing = function (search, string, index) {
           if (has.filter(function(obj) {
             return pub[i].title.toLowerCase().match(obj);
           }).length > 0) continue
-          if (i != local)
+          if (omitGuide == true && i != local)
+            document.querySelector(`.channel`).append(pub[i].post);
+          else
             document.querySelector(`.channel`).append(pub[i].post);
           images.push({ element: pub[i].element, src: pub[i].src });
         }

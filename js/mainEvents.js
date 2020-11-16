@@ -74,7 +74,7 @@ window.onload = function () {
             window[set]();
             setTimeout(function () {
               clearInterval(startup);
-            }, 500);
+            }, 750);
           }
           _container.addEventListener('touchstart', function(event) {
             touchstartX = event.changedTouches[0].screenX;
@@ -84,7 +84,7 @@ window.onload = function () {
             touchendX = event.changedTouches[0].screenX;
               handleSwipe();
           }, false);
-        }, 250);
+        }, 500);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
       unloading()
