@@ -7,8 +7,9 @@
 
 * Private Proxy Requests.
 * Beta (stage) themes.
-* no installation.
-* nsfw api.
+* No Installation.
+* Filtering.
+* NSFW api.
 
 ### Known Issues
 
