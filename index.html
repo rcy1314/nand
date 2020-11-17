@@ -142,10 +142,14 @@
     document.getElementsByTagName("head")[0].appendChild(script);
     if (file === `xmlAssets`) script.onload =
     (function () {
-        setTimeout(function () {
-          if (typeof menu !== `undefined`) {
+      let startup = setInterval(function () {
+        setTimeout(function() {
+          if (typeof menu === `array`) {
+              window[set]();
+              clearInterval(startup);
           }
-        }, 10);
+        }, 5)
+      }, 10);
     })();
     if (file === `settings`) script.onload =
     (function () {
@@ -174,7 +178,7 @@
                           clearInterval(startup);
                       }
                     }, 5)
-                  }, 15);
+                  }, 10);
                 })();
               }
             }
@@ -194,7 +198,7 @@
               }
             }
           }, 5);
-        }, 15);
+        }, 10);
     })();
   }
 

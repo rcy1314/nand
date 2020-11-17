@@ -48,6 +48,8 @@
 
 */
 
+setTimeout(function() {
+
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
@@ -94,3 +96,5 @@
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 50);
   }
+
+}, 5)

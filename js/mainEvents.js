@@ -49,9 +49,6 @@ window.onload = function () {
         expand = false;
         sideBarFirst = true;
         groupType = `blocks`;
-      } else {
-        sideBarFirst = true;
-        sideBarDisplay(onScreen);
       }
       if (expandBackground == true)
         document.querySelector(`.bg`).style.height = `${
