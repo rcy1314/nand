@@ -145,17 +145,13 @@ var loadScripts = function () {
     document.getElementsByTagName("head")[0].appendChild(script);
     if (file === `xmlAssets`) script.onload =
     (function () {
-      let startup = setInterval(function () {
         setTimeout(function () {
           if (typeof menu !== `undefined`) {
-              clearInterval(startup);
           }
-        }, 5);
-      }, 15);
+        }, 10);
     })();
     if (file === `settings`) script.onload =
     (function () {
-      let startup = setInterval(function () {
         setTimeout(function () {
           if (typeof themes !== `undefined`) {
               let directory = `js/themes/`;
@@ -196,8 +192,7 @@ var loadScripts = function () {
                 })(i);
               }
             }
-          }, 5);
-        }, 15);
+          }, 10);
     })();
   }
 };
