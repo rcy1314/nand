@@ -7,7 +7,7 @@
 #sidebar #content .fa:not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
   color: var(--fill-color-primary);
   position: relative;
-  margin-top: -18px !important;
+  margin-top: -22px !important;
   font-weight: 50;
   font-size: 10px;
   float: right;
