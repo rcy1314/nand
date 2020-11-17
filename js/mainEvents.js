@@ -47,7 +47,6 @@ window.onload = function () {
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
-        sideBarFirst = true;
         groupType = `blocks`;
       } else sideBarDisplay(onScreen)
       if (expandBackground == true)

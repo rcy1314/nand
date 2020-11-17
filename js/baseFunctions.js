@@ -137,6 +137,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
 }
 
 var sideBarDisplay = function (toggleOption) {
+  sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.cat`))) {
     for (i = 0; i <= translations.length - 1; i++) {
