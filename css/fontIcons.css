@@ -4,7 +4,7 @@
   z-index: -1
 }
 
-html body #container #sidebar #content .fa:not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
+#sidebar #content .fa:not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -17,7 +17,7 @@ html body #container #sidebar #content .fa:not(.fa-braille):not(.fa-adjust):not(
   right: 8px;
 }
 
-html body #container #sidebar #content .parse .fa-tint {
+#sidebar #content .parse .fa-tint {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -26,7 +26,7 @@ html body #container #sidebar #content .parse .fa-tint {
   right: 15px;
 }
 
-html body #container #sidebar #content .set .fa-cube {
+#sidebar #content .set .fa-cube {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -35,7 +35,7 @@ html body #container #sidebar #content .set .fa-cube {
   right: 13px;
 }
 
-html body #container #sidebar #content .themes .fa-braille {
+#sidebar #content .themes .fa-braille {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -44,7 +44,7 @@ html body #container #sidebar #content .themes .fa-braille {
   right: 11px;
 }
 
-html body #container #sidebar #content .bg .fa-adjust {
+#sidebar #content .bg .fa-adjust {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -53,54 +53,54 @@ html body #container #sidebar #content .bg .fa-adjust {
   right: 12px;
 }
 
-html body #container #main #option .fa-home,
-html body #container #main #option .fa-camera-retro,
-html body #container #main #option .fa-heart,
-html body #container #main #option .fa-sun,
-html body #container #main #option .fa-terminal,
-html body #container #main #option .fa-expand-alt {
+#main #option .fa-home,
+#main #option .fa-camera-retro,
+#main #option .fa-heart,
+#main #option .fa-sun,
+#main #option .fa-terminal,
+#main #option .fa-expand-alt {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
   font-size: 17px;
 }
 
-html body #container #main #option .fa-code {
+#main #option .fa-code {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 15px;
   font-size: 20px;
 }
 
-html body #container #main #option .fa-expand-alt {
+#main #option .fa-expand-alt {
   font-family: "Font Awesome 5 Pro";
   content: "\f424";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-home,
-html body #container #main #top #arm #option .fa-home,
-html body #container #main #option .fa-home {
+#sidebar #content .fa-home,
+#main #top #arm #option .fa-home,
+#main #option .fa-home {
   font-family: "Font Awesome 5 Pro";
   content: "\f015";
   font-weight: 50;
 }
 
-html body #container #main #option .fa-camera-retro {
+#main #option .fa-camera-retro {
   font-family: "Font Awesome 5 Pro";
   content: "\f083";
   font-weight: 50;
 }
 
-html body #container #main #toggle,
-html body #container #main #option .fa-sun {
+#main #toggle,
+#main #option .fa-sun {
   font-family: "Font Awesome 5 Pro";
   content: "\f185";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-terminal,
-html body #container #main #option .fa-terminal {
+#sidebar #content .fa-terminal,
+#main #option .fa-terminal {
   font-family: "Font Awesome 5 Pro";
   padding-left: 5px;
   content: "\f120";
@@ -108,22 +108,22 @@ html body #container #main #option .fa-terminal {
   font-weight: 50;
 }
 
-html body #container #main #option .fa-code,
-html body #container #sidebar #content .fa-code {
+#main #option .fa-code,
+#sidebar #content .fa-code {
   font-family: "Font Awesome 5 Pro";
   content: "\f121";
   font-weight: 50;
 }
 
-html body #container #main #option .fa-heart,
-html body #container #sidebar #content .fa-heart {
+#main #option .fa-heart,
+#sidebar #content .fa-heart {
   font-family: "Font Awesome 5 Pro";
   content: "\f004";
   font-weight: 50;
 }
 
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
   font-family: "Font Awesome 5 Pro";
   background-color: transparent !important;
   content: "\f030";
@@ -131,8 +131,8 @@ html body #container #main #xml .center .item .header .courtesy .copy .attribute
   padding: 0;
 }
 
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
   font-family: "Font Awesome 5 Pro";
   background-color: transparent !important;
   content: "\f064";
@@ -140,8 +140,8 @@ html body #container #main #xml .center .item .header .courtesy .copy .attribute
   padding: 0;
 }
 
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
   font-family: "Font Awesome 5 Pro";
   background-color: transparent !important;
   content: "\f1fa";
@@ -149,7 +149,7 @@ html body #container #main #xml .center .item .header .courtesy .copy .attribute
   padding: 0;
 }
 
-html body #container #main #visit #page #quick .fa-minus {
+#main #visit #page #quick .fa-minus {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f068";
@@ -158,125 +158,125 @@ html body #container #main #visit #page #quick .fa-minus {
   font-size: 11px;
 }
 
-html body #container #main #visit #page #quick .fa-plus {
+#main #visit #page #quick .fa-plus {
   font-family: "Font Awesome 5 Pro";
   content: "\f067";
   font-size: 11px;
   font-weight: 50;
 }
 
-html body #container #top #arm #search #input .icon .fa-search,
-html body #container #main #visit #page #front .focus .icon .fa-search,
-html body #container #main #visit #page #front .focus .button .fa-search {
+#top #arm #search #input .icon .fa-search,
+#main #visit #page #front .focus .icon .fa-search,
+#main #visit #page #front .focus .button .fa-search {
   font-family: "Font Awesome 5 Pro";
   content: "\f002";
   font-weight: 50;
 }
 
-html body #sidebar #content #category .cat .fa-ellipsis-h,
-html body #container #guide .sticky .header .fa-ellipsis-h,
-html body #container #main #xml .center .channel .item .header .fa-ellipsis-h {
+#sidebar #content #category .cat .fa-ellipsis-h,
+#guide .sticky .header .fa-ellipsis-h,
+#main #xml .center .channel .item .header .fa-ellipsis-h {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f141";
   font-weight: 50;
 }
 
-html body #container #guide .sticky .header .fa-ellipsis-v,
-html body #container #main #xml .center .channel .item .header .fa-ellipsis-v {
+#guide .sticky .header .fa-ellipsis-v,
+#main #xml .center .channel .item .header .fa-ellipsis-v {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f142";
   font-weight: 50;
 }
 
-html body #guide .sticky .fa-heart,
-html body #container #main #option .fa-heart,
-html body #container #sidebar #content .fa-heart,
-html body #container #main #xml .center .item .classic .image .fa-heart {
+#guide .sticky .fa-heart,
+#main #option .fa-heart,
+#sidebar #content .fa-heart,
+#main #xml .center .item .classic .image .fa-heart {
   color: lightcoral !important;
 }
 
-html body #container #sidebar #content .fa-exclamation-circle {
+#sidebar #content .fa-exclamation-circle {
   font-family: "Font Awesome 5 Pro";
   content: "\f06a";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .bg .fa-cloud {
+#sidebar #content .bg .fa-cloud {
   left: -10px;
 }
 
-html body #container #sidebar #content .fa-signal {
+#sidebar #content .fa-signal {
   font-family: "Font Awesome 5 Pro";
   content: "\f012";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-adjust {
+#sidebar #content .fa-adjust {
   font-family: "Font Awesome 5 Pro";
   content: "\f042";
   font-weight: 50;
   left: -13px;
 }
 
-html body #container #sidebar #content .fa-level-up-alt {
+#sidebar #content .fa-level-up-alt {
   left: -5px;
 }
 
-html body #container #sidebar #content .fa-ellipsis-h {
+#sidebar #content .fa-ellipsis-h {
   left: -6px;
 }
 
-html body #container #sidebar #content .fa-th-large {
+#sidebar #content .fa-th-large {
   font-family: "Font Awesome 5 Pro";
   content: "\f0ca";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-list-ul {
+#sidebar #content .fa-list-ul {
   font-family: "Font Awesome 5 Pro";
   content: "\f009";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-chart-pie {
+#sidebar #content .fa-chart-pie {
   font-family: "Font Awesome 5 Pro";
   content: "\f200";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-photo {
+#sidebar #content .fa-photo {
   font-family: "Font Awesome 5 Pro";
   content: "\f03e";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-star-o {
+#sidebar #content .fa-star-o {
   font-family: "Font Awesome 5 Pro";
   content: "\f006";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-edit {
+#sidebar #content .fa-edit {
   font-family: "Font Awesome 5 Pro";
   content: "\f044";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-tablet-alt {
+#sidebar #content .fa-tablet-alt {
   font-family: "Font Awesome 5 Pro";
   content: "\f3fa";
   font-weight: 50;
 }
 
-html body #container #sidebar #content .fa-braille {
+#sidebar #content .fa-braille {
   font-family: "Font Awesome 5 Pro";
   content: "\f2a1";
   font-weight: 50;
 }
 
-html body #container #main #page .fa-angle-up {
+#main #page .fa-angle-up {
   font-family: "Font Awesome 5 Pro";
   content: "\f106";
   font-weight: 50;

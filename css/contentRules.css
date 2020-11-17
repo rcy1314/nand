@@ -12,9 +12,9 @@ video {
   color: var(--fill-color-primary);
 }
 
-html body #container #main #xml .center .channel .item .classic .fill .loader,
-html body #container #main #xml .center .channel .item .classic .fill .loader:after,
-html body #container #main #xml .center .channel .item .classic .fill .loader:before {
+#main #xml .center .channel .item .classic .fill .loader,
+#main #xml .center .channel .item .classic .fill .loader:after,
+#main #xml .center .channel .item .classic .fill .loader:before {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -38,9 +38,9 @@ a {
 
 html,
 html body,
-html body #container,
-html body #container #main,
-html body #container #main #visit {
+#container,
+#main,
+#main #visit {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow: hidden;
   border:none !important;
@@ -55,14 +55,14 @@ html body #container #main #visit {
 
 html,
 html body,
-html body #container {
+#container {
   background: var(--bg-color-secondary);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
-html body #container #main #notification {
+#main #notification {
   border-radius: 4px;
   width: fit-content;
   font-weight: 50;
@@ -77,7 +77,7 @@ html body #container #main #notification {
   z-index: 9;
 }
 
-html body #container #main #progressBar {
+#main #progressBar {
   background-color: var(--loader-color-secondary);
   border-radius: 16px;
   position: fixed;
@@ -88,7 +88,7 @@ html body #container #main #progressBar {
   top: 0;
 }
 
-html body #container #toggle {
+#container #toggle {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: absolute;
@@ -99,7 +99,7 @@ html body #container #toggle {
   top: 7px;
 }
 
-html body #container #sidebar {
+#container #sidebar {
   background-color: var(--borderless-hover-color);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -111,7 +111,7 @@ html body #container #sidebar {
   z-index: 12;
 }
 
-html body #container #sidebar #content {
+#container #sidebar #content {
   background-color: transparent;
   overflow-x: hidden;
   user-select: none;
@@ -120,7 +120,7 @@ html body #container #sidebar #content {
   width: 100%;
 }
 
-html body #container .notify {
+#container .notify {
   color: var(--fill-color-primary);
   justify-content: center;
   text-align: center;
@@ -133,7 +133,7 @@ html body #container .notify {
   right: 0px;
 }
 
-html body #container #sidebar #content #basic {
+#container #sidebar #content #basic {
   position: relative;
   margin: 15px auto;
   overflow: hidden;
@@ -141,7 +141,7 @@ html body #container #sidebar #content #basic {
   bottom: 0;
 }
 
-html body #container #sidebar #content #basic input[type=text] {
+#container #sidebar #content #basic input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
   border: var(--hover-border-color);
@@ -154,11 +154,11 @@ html body #container #sidebar #content #basic input[type=text] {
   padding: 5px;
 }
 
-html body #container #sidebar #content .url {
+#container #sidebar #content .url {
   margin: 0;
 }
 
-html body #container #sidebar #content .url input[type=text] {
+#container #sidebar #content .url input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
   border: var(--hover-border-color);
@@ -166,18 +166,18 @@ html body #container #sidebar #content .url input[type=text] {
   width: 90%;
 }
 
-html body #container #sidebar #content .min {
+#container #sidebar #content .min {
   margin: 15px
 }
 
-html body #container #sidebar #content .min input[type=text] {
+#container #sidebar #content .min input[type=text] {
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
   border: var(--hover-border-color);
   width: 100%;
 }
 
-html body #container #sidebar #content .cat {
+#container #sidebar #content .cat {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -195,12 +195,12 @@ html body #container #sidebar #content .cat {
   height: 15px;
 }
 
-html body #container #sidebar #content .cat:hover {
+#container #sidebar #content .cat:hover {
   background-color: var(--hover-background-color) !important;
   box-shadow: var(--box-shadow) !important;
 }
 
-html body #container #sidebar #content .webp {
+#container #sidebar #content .webp {
   position: relative;
   margin-top: -40px;
   float: right;
@@ -210,7 +210,7 @@ html body #container #sidebar #content .webp {
   right: 10px;
 }
 
-html body #container #sidebar #content .sel {
+#container #sidebar #content .sel {
   background-color: transparent !important;
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
@@ -223,15 +223,15 @@ html body #container #sidebar #content .sel {
   height: 15px;
 }
 
-html body #container #sidebar #content .sel:hover {
+#container #sidebar #content .sel:hover {
   background-color: var(--hover-background-color) !important;
   box-shadow: var(--box-shadow) !important;
 }
 
-html body #container #sidebar #content .set,
-html body #container #sidebar #content .themes,
-html body #container #sidebar #content .bg,
-html body #container #sidebar #content .exclude {
+#container #sidebar #content .set,
+#container #sidebar #content .themes,
+#container #sidebar #content .bg,
+#container #sidebar #content .exclude {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -246,17 +246,17 @@ html body #container #sidebar #content .exclude {
   width: 96%;
 }
 
-html body #container #sidebar #content .set:hover,
-html body #container #sidebar #content .themes:hover,
-html body #container #sidebar #content .bg:hover,
-html body #container #sidebar #content .exclude:hover {
+#container #sidebar #content .set:hover,
+#container #sidebar #content .themes:hover,
+#container #sidebar #content .bg:hover,
+#container #sidebar #content .exclude:hover {
   background-color: var(--hover-background-color);
 }
 
-html body #container #sidebar #content .exclude .parse,
-html body #container #sidebar #content .set .choose,
-html body #container #sidebar #content .themes .border,
-html body #container #sidebar #content .bg .adjust {
+#container #sidebar #content .exclude .parse,
+#container #sidebar #content .set .choose,
+#container #sidebar #content .themes .border,
+#container #sidebar #content .bg .adjust {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
   border-left: .3px solid transparent !important;
@@ -271,23 +271,23 @@ html body #container #sidebar #content .bg .adjust {
   width: 100%;
 }
 
-html body #container #sidebar #content .exclude .option,
-html body #container #sidebar #content .set .settings,
-html body #container #sidebar #content .themes .theme,
-html body #container #sidebar #content .bg .background {
+#container #sidebar #content .exclude .option,
+#container #sidebar #content .set .settings,
+#container #sidebar #content .themes .theme,
+#container #sidebar #content .bg .background {
   margin-left: 10px;
   margin-top: 10px;
   padding: 5px;
 }
 
-html body #container #sidebar #content .exclude .option:hover,
-html body #container #sidebar #content .set .settings:hover,
-html body #container #sidebar #content .theme:hover,
-html body #container #sidebar #content .bg .background:hover {
+#container #sidebar #content .exclude .option:hover,
+#container #sidebar #content .set .settings:hover,
+#container #sidebar #content .theme:hover,
+#container #sidebar #content .bg .background:hover {
   background-color: var(--hover-background-color) !important;
 }
 
-html body #container #sidebar #hide {
+#container #sidebar #hide {
   background-color: var(--progress-background);
   border-right: var(--hover-border-color);
   border-radius: 0px 36px 36px 0px;
@@ -302,7 +302,7 @@ html body #container #sidebar #hide {
   top: 0;
 }
 
-html body #container #guide .checkmark {
+#container #guide .checkmark {
   position: absolute;
   cursor: pointer;
   padding: 10px;
@@ -321,14 +321,14 @@ html body #container #guide .checkmark {
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
 
-html body #container #guide .checkmark__check {
+#container #guide .checkmark__check {
   transform-origin: 50% 50%;
   stroke-dasharray: 29;
   stroke-dashoffset: 29;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
 
-html body #container #guide .checkmark__circle {
+#container #guide .checkmark__circle {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
   stroke-width: 2;
@@ -338,13 +338,13 @@ html body #container #guide .checkmark__circle {
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
-html body #container #guide {
+#container #guide {
   position: absolute;
   display: none;
 }
 
-html body #container #guide,
-html body #container #guide .blur {
+#container #guide,
+#container #guide .blur {
   background-color: var(--sticky-background);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -358,12 +358,12 @@ html body #container #guide .blur {
   top: 0;
 }
 
-html body #container #guide .blur {
+#container #guide .blur {
   position: absolute;
   z-index: 0;
 }
 
-html body #container #main #top {
+#main #top {
   background-color: transparent;
   width: calc(100% - 12px);
   position: fixed;
@@ -373,7 +373,7 @@ html body #container #main #top {
   top: 0;
 }
 
-html body #container #main #top #arm {
+#main #top #arm {
   background-color: transparent;
   position: relative;
   display: block;
@@ -382,14 +382,14 @@ html body #container #main #top #arm {
   width: 100%;
 }
 
-html body #container #main #top #arm #search {
+#main #top #arm #search {
   position: absolute;
   height: 57px;
   width: 100%;
   margin: 0;
 }
 
-html body #container #main #top #arm #search #home {
+#main #top #arm #search #home {
   background-color: transparent;
   text-decoration: none;
   letter-spacing: -2px;
@@ -405,12 +405,12 @@ html body #container #main #top #arm #search #home {
   top: 5px;
 }
 
-html body #container #main #top #arm #search #home:active {
+#main #top #arm #search #home:active {
   background-color: transparent;
   color: #666 !important;
 }
 
-html body #container #main #option {
+#main #option {
   color: var(--fill-color-primary);
   justify-content: space-between;
   background-color: transparent;
@@ -422,7 +422,7 @@ html body #container #main #option {
   top: 5px;
 }
 
-html body #container #main {
+#main {
   background-position: center center;
   -webkit-overflow-scrolling: touch;
   background-repeat: no-repeat;
@@ -435,7 +435,7 @@ html body #container #main {
   outline: none;
 }
 
-html body #container #main #check {
+#main #check {
   color: var(--fill-color-primary);
   background-color: transparent;
   visibility: hidden;
@@ -445,7 +445,7 @@ html body #container #main #check {
   z-index: 11;
 }
 
-html body #container #main #xml {
+#main #xml {
   background-color: var(--borderless-hover-color);
   padding-bottom: 85px;
   height: fit-content;
@@ -457,7 +457,7 @@ html body #container #main #xml {
   top: 0;
 }
 
-html body #container #main #group {
+#main #group {
   background-color: var(--borderless-hover-color);
   height: fit-content;
   position: absolute;
@@ -468,7 +468,7 @@ html body #container #main #group {
   top: 0;
 }
 
-html body #container #main #visit {
+#main #visit {
   background-color: var(--borderless-hover-color);
   justify-content: center;
   align-items: center;
@@ -477,18 +477,18 @@ html body #container #main #visit {
   z-index: 1;
 }
 
-html body #container #main #visit #page {
+#main #visit #page {
   background-color: transparent;
   position: relative;
   margin: 0 auto;
   display: block;
 }
 
-html body #container #main #dots {
+#main #dots {
   position: fixed;
 }
 
-html body #container #main #dots .fill {
+#main #dots .fill {
   background-color: var(--fill-color-primary);
   visibility: hidden;
   z-index: -12;
@@ -496,14 +496,14 @@ html body #container #main #dots .fill {
   top: 0;
 }
 
-html body #container #main #visit #page #front {
+#main #visit #page #front {
   position: relative;
   margin: 0 auto;
   display: block;
   z-index: 2;
 }
 
-html body #container #main #visit #page #front #first {
+#main #visit #page #front #first {
   background-color: var(--bg-color-primary);
   border: var(--hover-border-color);
   position: absolute;
@@ -518,7 +518,7 @@ html body #container #main #visit #page #front #first {
   left: 0;
 }
 
-html body #container #main #visit #page #front #first .listing {
+#main #visit #page #front #first .listing {
   overflow-x: hidden;
   position: absolute;
   overflow-y: auto;
@@ -528,10 +528,10 @@ html body #container #main #visit #page #front #first .listing {
   width: 100%;
 }
 
-html body #container #main #top #arm #search #match .listing .index .detail img,
-html body #container #main #top #arm #search #match .listing .hover .detail img,
-html body #container #main #visit #page #front #first .listing .index .detail img,
-html body #container #main #visit #page #front #first .listing .hover .detail img {
+#main #top #arm #search #match .listing .index .detail img,
+#main #top #arm #search #match .listing .hover .detail img,
+#main #visit #page #front #first .listing .index .detail img,
+#main #visit #page #front #first .listing .hover .detail img {
   background-color: transparent;
   display: inline-block;
   border-radius: 28px;
@@ -546,10 +546,10 @@ html body #container #main #visit #page #front #first .listing .hover .detail im
   left: 0;
 }
 
-html body #container #main #top #arm #search #match .listing .index .detail .text,
-html body #container #main #top #arm #search #match .listing .hover .detail .text,
-html body #container #main #visit #page #front #first .listing .index .detail .text,
-html body #container #main #visit #page #front #first .listing .hover .detail .text {
+#main #top #arm #search #match .listing .index .detail .text,
+#main #top #arm #search #match .listing .hover .detail .text,
+#main #visit #page #front #first .listing .index .detail .text,
+#main #visit #page #front #first .listing .hover .detail .text {
   background-color: transparent;
   display: inline-block;
   position: relative;
@@ -557,14 +557,14 @@ html body #container #main #visit #page #front #first .listing .hover .detail .t
   height: 30px;
 }
 
-html body #container #main #top #arm #search #match .listing .index .detail .textSuggest,
-html body #container #main #top #arm #search #match .listing .index .detail .textMatch,
-html body #container #main #top #arm #search #match .listing .hover .detail .textSuggest,
-html body #container #main #top #arm #search #match .listing .hover .detail .textMatch,
-html body #container #main #visit #page #front #first .listing .index .detail .textSuggest,
-html body #container #main #visit #page #front #first .listing .hover .detail .textSuggest,
-html body #container #main #visit #page #front #first .listing .hover .detail .textMatch,
-html body #container #main #visit #page #front #first .listing .index .detail .textMatch {
+#main #top #arm #search #match .listing .index .detail .textSuggest,
+#main #top #arm #search #match .listing .index .detail .textMatch,
+#main #top #arm #search #match .listing .hover .detail .textSuggest,
+#main #top #arm #search #match .listing .hover .detail .textMatch,
+#main #visit #page #front #first .listing .index .detail .textSuggest,
+#main #visit #page #front #first .listing .hover .detail .textSuggest,
+#main #visit #page #front #first .listing .hover .detail .textMatch,
+#main #visit #page #front #first .listing .index .detail .textMatch {
   color: var(--fill-color-primary);
   background-color: transparent;
   display: inline-block;
@@ -575,10 +575,10 @@ html body #container #main #visit #page #front #first .listing .index .detail .t
   z-index: -1;
 }
 
-html body #container #main #top #arm #search #match .listing .index .detail .buffer,
-html body #container #main #top #arm #search #match .listing .hover .detail .buffer,
-html body #container #main #visit #page #front #first .listing .index .detail .buffer,
-html body #container #main #visit #page #front #first .listing .hover .detail .buffer {
+#main #top #arm #search #match .listing .index .detail .buffer,
+#main #top #arm #search #match .listing .hover .detail .buffer,
+#main #visit #page #front #first .listing .index .detail .buffer,
+#main #visit #page #front #first .listing .hover .detail .buffer {
   color: var(--loader-color-primary);
   position: absolute;
   font-style: italic;
@@ -588,7 +588,7 @@ html body #container #main #visit #page #front #first .listing .hover .detail .b
   right: 0;
 }
 
-html body #container #main #visit #page #front .focus {
+#main #visit #page #front .focus {
   background-color: transparent;
   white-space: nowrap;
   padding-right: 75px;
@@ -598,17 +598,17 @@ html body #container #main #visit #page #front .focus {
   width: 640px;
 }
 
-html body #container #main #visit #page #front .focus:hover {
+#main #visit #page #front .focus:hover {
   box-shadow: var(--box-shadow);
   transition: .25s;
 }
 
-html body #container #main #visit #page #front .focus:not(:hover) {
+#main #visit #page #front .focus:not(:hover) {
   box-shadow: none;
   transition: .25s;
 }
 
-html body #container #main #visit #page #front .focus input[type=text] {
+#main #visit #page #front .focus input[type=text] {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   height: 39.5px !important;
@@ -624,7 +624,7 @@ html body #container #main #visit #page #front .focus input[type=text] {
   margin: 0;
 }
 
-html body #container #main #top #arm #search #input .icon {
+#main #top #arm #search #input .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
@@ -633,7 +633,7 @@ html body #container #main #top #arm #search #input .icon {
   top: 9px;
 }
 
-html body #container #main #visit #page #front .focus .icon {
+#main #visit #page #front .focus .icon {
   font-size: 14px !important;
   color: #aaa !important;
   position: absolute;
@@ -643,7 +643,7 @@ html body #container #main #visit #page #front .focus .icon {
   top: 13px;
 }
 
-html body #container #main #visit #page #front .focus .button {
+#main #visit #page #front .focus .button {
   background-color: var(--loader-color-primary);
   display: inline-block;
   position: relative;
@@ -655,11 +655,11 @@ html body #container #main #visit #page #front .focus .button {
   top: .3px;
 }
 
-html body #container #main #visit #page #front .focus .button:active {
+#main #visit #page #front .focus .button:active {
   background-color: var(--loader-color-secondary);
 }
 
-html body #container #main #visit #page #front .focus .buttonSearch {
+#main #visit #page #front .focus .buttonSearch {
   font-size: 20px !important;
   transform: rotate(90deg);
   color: #fff !important;
@@ -668,7 +668,7 @@ html body #container #main #visit #page #front .focus .buttonSearch {
   top: 10px;
 }
 
-html body #container #main #visit #page #front #label #show {
+#main #visit #page #front #label #show {
   color: var(--fill-color-primary);
   background-color: transparent;
   display: inline-block;
@@ -680,7 +680,7 @@ html body #container #main #visit #page #front #label #show {
   top: 26px;
 }
 
-html body #container #main #visit #page #front #label #link {
+#main #visit #page #front #label #link {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   transform: rotate(180deg);
@@ -696,21 +696,21 @@ html body #container #main #visit #page #front #label #link {
   width: 15px;
 }
 
-html body #container #main #visit #page #front #label #link:hover {
+#main #visit #page #front #label #link:hover {
   background-color: var(--borderless-hover-color);
 }
 
-html body #container #main #group .air,
-html body #container #main #group .result {
+#main #group .air,
+#main #group .result {
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;
   z-index: 1;
 }
 
-html body #container #main #group .air .populate,
-html body #container #main #group .result .filter,
-html body #container #main #group .result .populate {
+#main #group .air .populate,
+#main #group .result .filter,
+#main #group .result .populate {
   display: inline-flex;
   border-radius: 8px;
   position: relative;
@@ -724,7 +724,7 @@ html body #container #main #group .result .populate {
   z-index: 0;
 }
 
-html body #container #main #xml .content .status .filter {
+#main #xml .content .status .filter {
   margin-bottom: 10px;
   align-items: center;
   border-radius: 8px;
@@ -740,16 +740,16 @@ html body #container #main #xml .content .status .filter {
   z-index: -1;
 }
 
-html body #container #main #xml .content .status .filter a {
+#main #xml .content .status .filter a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
   font-size: 12px;
 }
 
-html body #container #main #group .air .populate .select,
-html body #container #main #group .result .filter .select,
-html body #container #main #group .result .populate .select {
+#main #group .air .populate .select,
+#main #group .result .filter .select,
+#main #group .result .populate .select {
   height: 100%;
   width: 100%;
   text-align: center;
@@ -759,22 +759,22 @@ html body #container #main #group .result .populate .select {
   padding-left: 12px;
 }
 
-html body #container #main #group .air .populate:hover,
-html body #container #main #group .result .filter:hover,
-html body #container #main #group .result .populate:hover {
+#main #group .air .populate:hover,
+#main #group .result .filter:hover,
+#main #group .result .populate:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--hover-border-color) !important;
 }
 
-html body #container #main #group .air .populate:not(:hover),
-html body #container #main #group .result .filter:not(:hover),
-html body #container #main #group .result .populate:not(:hover) {
+#main #group .air .populate:not(:hover),
+#main #group .result .filter:not(:hover),
+#main #group .result .populate:not(:hover) {
   border: var(--not-hover-border-color) !important;
 }
 
-html body #container #main #group .air .populate a,
-html body #container #main #group .result .filter a,
-html body #container #main #group .result .populate a {
+#main #group .air .populate a,
+#main #group .result .filter a,
+#main #group .result .populate a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
@@ -792,19 +792,19 @@ html body #container #main #group .result .populate a {
   z-index: -1;
 }
 
-html body #container #main #group .air .populate .display,
-html body #container #main #group .result .filter .display,
-html body #container #main #group .result .populate .display,
-html body #container #main #xml .content .status .filter .ext {
+#main #group .air .populate .display,
+#main #group .result .filter .display,
+#main #group .result .populate .display,
+#main #xml .content .status .filter .ext {
   position: relative;
   padding: 5px;
   width: 100%;
 }
 
-html body #container #main #group .air .populate .display img,
-html body #container #main #group .result .filter .display img,
-html body #container #main #group .result .populate .display img,
-html body #container #main #xml .content .status .filter img {
+#main #group .air .populate .display img,
+#main #group .result .filter .display img,
+#main #group .result .populate .display img,
+#main #xml .content .status .filter img {
   background-color: transparent;
   border-radius: 36px;
   position: relative;
@@ -815,9 +815,9 @@ html body #container #main #xml .content .status .filter img {
   width: 60px;
 }
 
-html body #container #main #group .status .filter .tag,
-html body #container #main #group .air .populate .title,
-html body #container #main #group .result .populate .title {
+#main #group .status .filter .tag,
+#main #group .air .populate .title,
+#main #group .result .populate .title {
   background-color: transparent;
   border-radius: 10px;
   display: block;
@@ -825,7 +825,7 @@ html body #container #main #group .result .populate .title {
   padding: 10px;
 }
 
-html body #container #main #top #arm #search #input {
+#main #top #arm #search #input {
   position: relative;
   margin: 0 auto;
   display: block;
@@ -833,7 +833,7 @@ html body #container #main #top #arm #search #input {
   top: 15px;
 }
 
-html body #container #main #top #arm #search #input input[type=text] {
+#main #top #arm #search #input input[type=text] {
   color: var(--fill-color-primary);
   -webkit-appearance: none;
   caret-color: transparent;
@@ -848,15 +848,15 @@ html body #container #main #top #arm #search #input input[type=text] {
   width: 100%;
 }
 
-html body #container #main #top #arm #search #input input[type=text]:hover {
+#main #top #arm #search #input input[type=text]:hover {
   background-color: var(--borderless-hover-color);
 }
 
-html body #container #main #top #arm #search #input input[type=text]:not(:hover) {
+#main #top #arm #search #input input[type=text]:not(:hover) {
   background-color: transparent;
 }
 
-html body #container #main #top #arm #search #match {
+#main #top #arm #search #match {
   background: var(--bg-color-secondary);
   border: var(--hover-border-color);
   width: fit-content;
@@ -872,7 +872,7 @@ input[type=submit] {
 }
 
 
-html body #container #main #visit #page #quick {
+#main #visit #page #quick {
   background-color: transparent;
   border-radius: 4px;
   position: relative;
@@ -883,7 +883,7 @@ html body #container #main #visit #page #quick {
 }
 
 
-html body #container #main #visit #page #quick #feed {
+#main #visit #page #quick #feed {
   background-color: transparent !important;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
@@ -898,12 +898,12 @@ html body #container #main #visit #page #quick #feed {
   width: 100%;
 }
 
-html body #container #main #visit #page #quick #feed::-webkit-scrollbar {
+#main #visit #page #quick #feed::-webkit-scrollbar {
   display: none;
 }
 
-html body #container #main #visit #page #quick #feed .asset,
-html body #container #main #visit #page #quick #feed .translation {
+#main #visit #page #quick #feed .asset,
+#main #visit #page #quick #feed .translation {
   position: relative;
   text-align: center;
   border-radius: 6px;
@@ -914,27 +914,27 @@ html body #container #main #visit #page #quick #feed .translation {
   width: 90px;
 }
 
-html body #container #main #visit #page #quick #feed .asset .query,
-html body #container #main #visit #page #quick #feed .asset .entity,
-html body #container #main #visit #page #quick #feed .translation .category,
-html body #container #main #visit #page #quick #feed .translation .quickTranslation {
+#main #visit #page #quick #feed .asset .query,
+#main #visit #page #quick #feed .asset .entity,
+#main #visit #page #quick #feed .translation .category,
+#main #visit #page #quick #feed .translation .quickTranslation {
   z-index: -1;
 }
 
-html body #container #main #visit #page #quick #feed .asset:hover,
-html body #container #main #visit #page #quick #feed .translation:hover {
+#main #visit #page #quick #feed .asset:hover,
+#main #visit #page #quick #feed .translation:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--hover-border-color) !important;
 }
 
-html body #container #main #visit #page #quick #feed .asset:not(:hover),
-html body #container #main #visit #page #quick #feed .translation:not(:hover) {
+#main #visit #page #quick #feed .asset:not(:hover),
+#main #visit #page #quick #feed .translation:not(:hover) {
   border: var(--not-hover-border-color);
 }
 
-html body #container #main #xml .content .status img,
-html body #container #main #visit #page #quick #feed img,
-html body #container #main #visit #page #quick #feed .translation img {
+#main #xml .content .status img,
+#main #visit #page #quick #feed img,
+#main #visit #page #quick #feed .translation img {
   background-color: transparent;
   position: relative;
   padding: 5px;
@@ -942,12 +942,12 @@ html body #container #main #visit #page #quick #feed .translation img {
   width: 30px;
 }
 
-html body #container #main #visit #page #quick #feed .translation img {
+#main #visit #page #quick #feed .translation img {
   filter: var(--hue-rotate);
 }
 
-html body #container #main #visit #page #quick #feed .asset a,
-html body #container #main #visit #page #quick #feed .translation a {
+#main #visit #page #quick #feed .asset a,
+#main #visit #page #quick #feed .translation a {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative;
@@ -956,7 +956,7 @@ html body #container #main #visit #page #quick #feed .translation a {
   top: 5px;
 }
 
-html body #container #main #visit #page #quick .right {
+#main #visit #page #quick .right {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   justify-content: center;
@@ -973,7 +973,7 @@ html body #container #main #visit #page #quick .right {
   top: 25px;
 }
 
-html body #container #main #visit #page #quick .left {
+#main #visit #page #quick .left {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
   justify-content: center;
@@ -990,20 +990,20 @@ html body #container #main #visit #page #quick .left {
   top: 25px;
 }
 
-html body #container #main #visit #page #quick .left:hover,
-html body #container #main #visit #page #quick .right:hover {
+#main #visit #page #quick .left:hover,
+#main #visit #page #quick .right:hover {
   background-color: var(--borderless-hover-color);
 }
 
-html body #container #guide .sticky .header,
-html body #container #main #xml .center .item .header {
+#container #guide .sticky .header,
+#main #xml .center .item .header {
   background-color: transparent;
   height: 60px;
   width: 100%;
 }
 
-html body #container #guide .sticky .header .courtesy,
-html body #container #main #xml .center .item .header .courtesy {
+#container #guide .sticky .header .courtesy,
+#main #xml .center .item .header .courtesy {
   text-transform: capitalize;
   align-items: center;
   position: relative;
@@ -1017,8 +1017,8 @@ html body #container #main #xml .center .item .header .courtesy {
   left: 0;
 }
 
-html body #container #guide .sticky .wrap .header .courtesy img,
-html body #container #main #xml .center .channel .item .header .courtesy img {
+#container #guide .sticky .wrap .header .courtesy img,
+#main #xml .center .channel .item .header .courtesy img {
   border-radius: 24px;
   padding: 10px;
   left: 1.75px;
@@ -1026,13 +1026,13 @@ html body #container #main #xml .center .channel .item .header .courtesy img {
   width: 24px;
 }
 
-html body #container #guide .sticky .header .courtesy a,
-html body #container #main #xml .center .item .header .courtesy a {
+#container #guide .sticky .header .courtesy a,
+#main #xml .center .item .header .courtesy a {
   color: var(--fill-color-primary);
   background-color: transparent;
 }
 
-html body #container #main #xml .center .item .pending {
+#main #xml .center .item .pending {
   background-color: var(--hover-background-color);
   justify-content: center;
   align-items: center;
@@ -1042,14 +1042,14 @@ html body #container #main #xml .center .item .pending {
   margin: 15px;
 }
 
-html body #container #guide .sticky {
+#container #guide .sticky {
   box-shadow: var(--box-shadow);
   align-items: center;
   position: relative;
   display: block;
 }
 
-html body #container #guide .sticky .src {
+#container #guide .sticky .src {
   display: table-cell;
   box-shadow: none !important;
   border: none !important;
@@ -1057,7 +1057,7 @@ html body #container #guide .sticky .src {
   margin: 0;
 }
 
-html body #container #guide .sticky #yt {
+#container #guide .sticky #yt {
   display: table-cell;
   box-shadow: none !important;
   border: none !important;
@@ -1065,7 +1065,7 @@ html body #container #guide .sticky #yt {
   margin: 0;
 }
 
-html body #container #guide .sticky .yt {
+#container #guide .sticky .yt {
   -webkit-overflow-scrolling: touch;
   display: table-cell;
   padding-bottom: 54.25%;
@@ -1074,7 +1074,7 @@ html body #container #guide .sticky .yt {
   width: 100%;
 }
 
-html body #container #guide .sticky .yt iframe {
+#container #guide .sticky .yt iframe {
   position: absolute;
   border: none !important;
   height: 100%;
@@ -1083,14 +1083,14 @@ html body #container #guide .sticky .yt iframe {
   left: 0;
 }
 
-html body #container #guide .sticky #yt .views {
+#container #guide .sticky #yt .views {
   text-transform: uppercase;
   position: absolute;
   font-size: 9px;
   bottom: 15px;
 }
 
-html body #container #guide .sticky .wrap {
+#container #guide .sticky .wrap {
   background-color: var(--bg-color-primary);
   display: table-cell;
   vertical-align: top;
@@ -1098,7 +1098,7 @@ html body #container #guide .sticky .wrap {
   height: 100%;
 }
 
-html body #container #guide .sticky .pub {
+#container #guide .sticky .pub {
   color: var(--fill-color-primary);
   background-color: transparent;
   height: calc(100% - 100px);
@@ -1107,7 +1107,7 @@ html body #container #guide .sticky .pub {
   width: 220px;
 }
 
-html body #container #guide .sticky .ago {
+#container #guide .sticky .ago {
   color: var(--fill-color-primary);
   position: absolute;
   font-size: 10px;
@@ -1116,24 +1116,24 @@ html body #container #guide .sticky .ago {
   bottom: 0;
 }
 
-html body #container #main #xml .center .item {
+#main #xml .center .item {
   background: var(--bg-color-primary);
   box-shadow: var(--box-shadow);
   margin-bottom: 25px;
   width: 100%;
 }
 
-html body #container #main #xml .center .item:hover {
+#main #xml .center .item:hover {
   background-color: var(--hover-background-color);
   border: var(--hover-border-color);
 }
 
-html body #container #main #xml .center .item:not(hover) {
+#main #xml .center .item:not(hover) {
   border: var(--hover-border-color);
 }
 
-html body #container #main #xml .center .item .pub,
-html body #container #main #xml .center .item .add {
+#main #xml .center .item .pub,
+#main #xml .center .item .add {
   background-color: transparent;
   justify-content: left;
   width: 95% !important;
@@ -1143,29 +1143,29 @@ html body #container #main #xml .center .item .add {
   left: 0;
 }
 
-html body #container #main #xml .center .item .pub {
+#main #xml .center .item .pub {
   color: var(--fill-color-primary);
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 20px;
 }
 
-html body #container #main #xml .center .item .add {
+#main #xml .center .item .add {
   margin-left: 15px !important;
   margin-bottom: 10px;
   font-size: 12px;
   width: 85%;
 }
 
-html body #container #guide .sticky .image {
+#container #guide .sticky .image {
   justify-content: center;
   align-items: center;
   overflow: hidden;
   display: flex;
 }
 
-html body #container #main #xml .center .item .img,
-html body #container #main #xml .center .item .image {
+#main #xml .center .item .img,
+#main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -1178,24 +1178,24 @@ html body #container #main #xml .center .item .image {
   left: 0;
 }
 
-html body #container #main #xml .center .item .image {
+#main #xml .center .item .image {
   margin: 12px;
 }
 
-html body #container #main #xml .center .item .img {
+#main #xml .center .item .img {
   display: none;
 }
 
 
-html body #guide .sticky .fa-heart,
-html body #container #main #xml .center .item .image .fa-heart {
+#guide .sticky .fa-heart,
+#main #xml .center .item .image .fa-heart {
   position: absolute;
   font-size: 50px;
   display: none;
 }
 
 
-html body #container #main #xml .center .item .pub .more {
+#main #xml .center .item .pub .more {
   background-color: transparent;
   display: inline-block;
   padding-bottom: 10px;
@@ -1208,17 +1208,17 @@ html body #container #main #xml .center .item .pub .more {
   color: #aaa;
 }
 
-html body #container #main #xml .center .item .addComment {
+#main #xml .center .item .addComment {
   display: none;
   margin: 0;
 }
 
-html body #container #main #xml .center .item .url,
-html body #container #guide .url,
-html body #container #main #xml .center .item .share,
-html body #container #guide .share,
-html body #container #main #xml .center .item .source,
-html body #container #guide .source {
+#main #xml .center .item .url,
+#container #guide .url,
+#main #xml .center .item .share,
+#container #guide .share,
+#main #xml .center .item .source,
+#container #guide .source {
   display: inline-block;
   position: relative;
   z-index: -2;
@@ -1227,8 +1227,8 @@ html body #container #guide .source {
   height: 0;
 }
 
-html body #container #main #xml .center .item .header .courtesy .copy,
-html body #container #guide .sticky .wrap .header .courtesy .copy {
+#main #xml .center .item .header .courtesy .copy,
+#container #guide .sticky .wrap .header .courtesy .copy {
   color: var(--fill-color-primary);
   pointer-events: auto;
   position: absolute;
@@ -1237,8 +1237,8 @@ html body #container #guide .sticky .wrap .header .courtesy .copy {
   right: 0;
 }
 
-html body #container #main #xml .center .item .header .courtesy .copy .attribute,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
+#main #xml .center .item .header .courtesy .copy .attribute,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute {
   background: var(--sticky-background);
   border: var(--hover-border-color);
   position: absolute;
@@ -1251,12 +1251,12 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute {
   top: 59px;
 }
 
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .site,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .post,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .picture,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
+#main #xml .center .item .header .courtesy .copy .attribute .site,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
+#main #xml .center .item .header .courtesy .copy .attribute .post,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
+#main #xml .center .item .header .courtesy .copy .attribute .picture,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
   color: var(--fill-color-primary);
   background-color: transparent;
   cursor: pointer;
@@ -1265,22 +1265,22 @@ html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .pi
   border: none;
 }
 
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .site:hover,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .post:hover,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .picture:hover,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover {
+#main #xml .center .item .header .courtesy .copy .attribute .site:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .post:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .picture:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover {
   background-color: var(--hover-background-color);
 }
 
-html body #container #main #xml .center .item .header .courtesy .copy .attribute .fa,
-html body #container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+#main #xml .center .item .header .courtesy .copy .attribute .fa,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
   float: right;
 }
 
 
-html body #container #main #xml .center .item .external {
+#main #xml .center .item .external {
   text-transform: lowercase;
   padding-bottom: 10px;
   position: relative;
@@ -1289,7 +1289,7 @@ html body #container #main #xml .center .item .external {
   left: 12px;
 }
 
-html body #container #main #xml .center .item .ago {
+#main #xml .center .item .ago {
   color: var(--fill-color-primary);
   background-color: transparent;
   text-transform: uppercase;
@@ -1300,7 +1300,7 @@ html body #container #main #xml .center .item .ago {
   font-size: 9px;
 }
 
-html body #container #main #xml .center #bottom {
+#main #xml .center #bottom {
   background-color: transparent;
   justify-content: center;
   align-items: center;
@@ -1313,7 +1313,7 @@ html body #container #main #xml .center #bottom {
   bottom: 0;
 }
 
-html body #container #main #xml .center #bottom .bottom {
+#main #xml .center #bottom .bottom {
   color: var(--fill-color-primary);
   background-color: transparent;
   position: relative !important;
@@ -1328,15 +1328,15 @@ html body #container #main #xml .center #bottom .bottom {
   cursor: pointer;
 }
 
-html body #container #main #xml .center #bottom .previous {
+#main #xml .center #bottom .previous {
   float: left !important;
 }
 
-html body #container #main #xml .center #bottom .next {
+#main #xml .center #bottom .next {
   float: right !important;
 }
 
-html body #container #main #xml .center {
+#main #xml .center {
   background-color: transparent;
   display: inline-block;
   position: relative;
@@ -1344,11 +1344,11 @@ html body #container #main #xml .center {
   top: 85px;
 }
 
-html body #container #main #xml .center .channel {
+#main #xml .center .channel {
   background-color: transparent;
 }
 
-html body #container #main #xml .content {
+#main #xml .content {
   background: transparent;
   display: inline-block;
   height: fit-content;
@@ -1360,24 +1360,24 @@ html body #container #main #xml .content {
   top: 80px;
 }
 
-html body #container #main #xml .content .status {
+#main #xml .content .status {
   background: transparent;
   position: relative;
   font-size: 10px;
 }
 
-html body #container #main #xml .content .status img {
+#main #xml .content .status img {
   border-radius: 26px;
 }
 
-html body #container #main #xml .content .status .info {
+#main #xml .content .status .info {
   color: var(--fill-color-primary);
   margin-left: 5px;
   text-align: left;
   z-index: -1;
 }
 
-html body #container #main #xml .content .status .info .about {
+#main #xml .content .status .info .about {
   background-color: transparent;
   text-justify: inter-word;
   text-align: justify;
@@ -1385,14 +1385,14 @@ html body #container #main #xml .content .status .info .about {
   width: 275px;
 }
 
-html body #container #main #xml .content .status .info,
-html body #container #main #xml .content .status .asset {
+#main #xml .content .status .info,
+#main #xml .content .status .asset {
   background-color: transparent;
   position: relative;
   top: -5px;
 }
 
-html body #container #main #xml .content .suggestions {
+#main #xml .content .suggestions {
   background-color: transparent;
   position: relative;
   padding-top: 15px;
@@ -1401,7 +1401,7 @@ html body #container #main #xml .content .suggestions {
   width: 280px;
 }
 
-html body #container #main #xml .content .suggestions img {
+#main #xml .content .suggestions img {
   border-radius: 20px;
   position: relative;
   height: 24.5px;
@@ -1409,7 +1409,7 @@ html body #container #main #xml .content .suggestions img {
   left: 2.5px;
 }
 
-html body #container #main #xml .content .suggestions .combine {
+#main #xml .content .suggestions .combine {
   align-items: center;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -1418,7 +1418,7 @@ html body #container #main #xml .content .suggestions .combine {
   width: 100%;
 }
 
-html body #container #main #xml .content .suggestions .combine .suggest {
+#main #xml .content .suggestions .combine .suggest {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-top: 5px;
@@ -1426,36 +1426,36 @@ html body #container #main #xml .content .suggestions .combine .suggest {
   width: 100%;
 }
 
-html body #container #main #xml .content .suggestions .combine .suggest .random {
+#main #xml .content .suggestions .combine .suggest .random {
   font-style: italic !important;
   text-transform: capitalize;
   font-size: 9px;
   float: left;
 }
 
-html body #container #main #xml .content .suggestions .combine a {
+#main #xml .content .suggestions .combine a {
   color: var(--loader-color-primary);
   font-size: 11px;
 }
 
-html body #container #main #xml .content .suggestions .combine div {
+#main #xml .content .suggestions .combine div {
   color: var(--fill-color-primary);
   background-color: transparent;
   cursor: pointer;
 }
 
-html body #container #main #xml .center .item .views {
+#main #xml .center .item .views {
   position: relative;
 }
 
-html body #container #main #xml .center .yt .image {
+#main #xml .center .yt .image {
   width: 100% !important;
   padding-bottom: 56.25% !important; /* 16:9 */
   position: relative !important;
   overflow: hidden !important;
 }
 
-html body #container #main #xml .center .yt .image img {
+#main #xml .center .yt .image img {
   position: absolute !important;
   top: -16.75% !important;
   bottom: 0 !important;
@@ -1463,7 +1463,7 @@ html body #container #main #xml .center .yt .image img {
   right: 0 !important;
 }
 
-html body #container #main #top #arm #search #match .listing {
+#main #top #arm #search #match .listing {
   scrollbar-width: none;
   position: relative;
   overflow: overlay;
@@ -1477,8 +1477,8 @@ html body #container #main #top #arm #search #match .listing {
 }
 
 
-html body #container #main #top #arm #search #match .listing .detail,
-html body #container #main #visit #page #front #first .listing .detail {
+#main #top #arm #search #match .listing .detail,
+#main #visit #page #front #first .listing .detail {
   background-color: transparent;
   padding: 0 !important;
   position: relative;
@@ -1489,8 +1489,8 @@ html body #container #main #visit #page #front #first .listing .detail {
   left: -2px;
 }
 
-html body #container #main #top #arm #search #match .listing .index,
-html body #container #main #visit #page #front #first .listing .index {
+#main #top #arm #search #match .listing .index,
+#main #visit #page #front #first .listing .index {
   background-color: transparent;
   color: var(--fill-color-primary);
   position: relative;
@@ -1498,25 +1498,25 @@ html body #container #main #visit #page #front #first .listing .index {
   height: 53px;
 }
 
-html body #container #main #top #arm #search #match .listing .index .hue,
-html body #container #main #visit #page #front #first .listing .index .hue,
-html body #container #main #top #arm #search #match .listing .hover .hue,
-html body #container #main #visit #page #front #first .listing .hover .hue {
+#main #top #arm #search #match .listing .index .hue,
+#main #visit #page #front #first .listing .index .hue,
+#main #top #arm #search #match .listing .hover .hue,
+#main #visit #page #front #first .listing .hover .hue {
   filter: var(--hue-rotate);
 }
 
-html body #container #main #top #arm #search #match .listing .hover,
-html body #container #main #visit #page #front #first .listing .hover {
+#main #top #arm #search #match .listing .hover,
+#main #visit #page #front #first .listing .hover {
   background-color: var(--loader-color-secondary);
   font-size: 12px;
   height: 53px;
 }
 
-html body #container #main #xml .center #yt {
+#main #xml .center #yt {
     padding-bottom: 30px;
 }
 
-html body #container #main #xml .center #yt .yt {
+#main #xml .center #yt .yt {
   -webkit-overflow-scrolling: touch;
   padding-bottom: 54.25%;
   margin-bottom: 5px;
@@ -1524,7 +1524,7 @@ html body #container #main #xml .center #yt .yt {
   width: 100%;
 }
 
-html body #container #main #xml .center #yt .yt iframe {
+#main #xml .center #yt .yt iframe {
   position: absolute;
   border: none !important;
   height: 100%;
@@ -1533,7 +1533,7 @@ html body #container #main #xml .center #yt .yt iframe {
   left: 0;
 }
 
-html body #container #main #xml .center .item .views {
+#main #xml .center .item .views {
   position: absolute;
   bottom: -90px;
 }
