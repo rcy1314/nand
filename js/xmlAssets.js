@@ -12,8 +12,6 @@
 
       > uri: endpoint used in xmlRequestParsing in xmlFunctions.js
 
-      > ext: external blank exit to new tab, legacy.
-
       > hash: unique two char alphanumeric indexed by init.js [<b>indexed</b>]
 
       > media: feed contains images boolean indexed by onlyImages.

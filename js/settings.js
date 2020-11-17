@@ -23,32 +23,18 @@ let backgroundImage = [
 ];
 
 //  {
-//    name: `Example function (in example file in /js/themes)`,
-//    class: `Element Class Click Event (unique)`,
+//    obFn: `Object Function (in example file in js/themes)`,
+//    class: `Class Click Event`,
 //    icon: `fa-example`
 //  }
 
 const themes = [
-  { name: `Day`, class: `Day`, icon: `fa-terminal` },
-  { name: `Night`, class: `Night`, icon: `fa-code` },
-  { name: `Nord`, class: `Nord`, icon: `fa-signature` },
-  { name: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
-  { name: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
-  { name: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
-];
-
-//create js theme file from example.js rename file and function.
-//example.js function = themes.name
-//above and below the theme and file
-
-let visuals = [
-  `Day`,
-  `Night`,
-  `Nord`,
-  `Gruvbox`,
-  `Solarized`,
-  `Alpenglow`,
-  //  `example file`, in /js/themes
+  { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
+  { obFn: `Night`, class: `Night`, icon: `fa-code` },
+  { obFn: `Nord`, class: `Nord`, icon: `fa-signature` },
+  { obFn: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
+  { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
+  { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];
 
 /*
