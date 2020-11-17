@@ -62,10 +62,12 @@ setTimeout(function() {
       if (set === visual) script.onload =
       (function () {
         let startup = setInterval(function () {
-          if (typeof eval(visual) === `function`) {
-              window[set]();
-              clearInterval(startup);
-          }
+          setTimeout(function() {
+            if (typeof eval(visual) === `function`) {
+                window[set]();
+                clearInterval(startup);
+            }
+          }, 5)
         }, 10);
       })();
     }

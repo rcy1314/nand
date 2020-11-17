@@ -146,11 +146,11 @@ var loadScripts = function () {
     if (file === `xmlAssets`) script.onload =
     (function () {
       let startup = setInterval(function () {
-        if (typeof menu !== `undefined`) {
-          setTimeout(function () {
-            clearInterval(startup);
-          }, 10);
-        }
+        setTimeout(function () {
+          if (typeof menu !== `undefined`) {
+              clearInterval(startup);
+          }
+        }, 5);
       }, 10);
     })();
   }
