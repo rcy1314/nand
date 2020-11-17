@@ -59,11 +59,11 @@ setTimeout(function() {
       script.type = `text/javascript`;
       script.src = path;
       document.getElementsByTagName(`head`)[0].appendChild(script);
-      script.onload =
+      if (set === visual) script.onload =
       (function () {
         let startup = setInterval(function () {
           if (typeof eval(set) !== `undefined`) {
-              window[visual]();
+              window[set]();
               clearInterval(startup);
           }
         }, 5);
