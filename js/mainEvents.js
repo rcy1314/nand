@@ -1,4 +1,30 @@
 window.onload = function () {
+  let directory = `js/themes/`;
+  let extension = `.js`;
+
+  for (var visual of visuals) {
+    let path = directory + visual + extension;
+    let script = document.createElement(`script`);
+    script.type = `text/javascript`;
+    script.src = path;
+    document.getElementsByTagName(`head`)[0].appendChild(script);
+  }
+
+  for (i = 0; i <= themes.length - 1; i++) {
+    (function (i) {
+      var theme = themes[i].name;
+      document.addEventListener(
+        `click`,
+        function (event) {
+          if (event.target.classList.contains(theme)) {
+            initial = theme;
+            window[theme]();
+          }
+        },
+        false
+      );
+    })(i);
+  }
   _guest.setAttribute(`placeholder`, `Search Feeds`);
   _guest.style.caretColor = `#e4e4e4`;
   _guest.style.paddingLeft = `40px`;
@@ -68,15 +94,14 @@ window.onload = function () {
       if (expandFilter == true)
       document.querySelector(`.exclude`).style.height =
         `${(exclude.length * 34.25) + 65}px`;
-      if (typeof set === `string`)
         var startup = setInterval(function () {
-          if (typeof eval(set) === `function`) {
+          if (set && typeof eval(set) === `function`) {
             setTimeout(function () {
               window[set]();
               clearInterval(startup);
             }, 10);
           }
-        }, 5);
+        }, 10);
         _container.addEventListener('touchstart', function(event) {
           touchstartX = event.changedTouches[0].screenX;
         }, false);
@@ -87,7 +112,7 @@ window.onload = function () {
         }, false);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 5)
+    }, 25)
   });
 };
 

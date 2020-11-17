@@ -3,7 +3,6 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.9.0/css/all.css">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
 </head>
 <body>
@@ -124,17 +123,16 @@ var loadScripts = function () {
   let directory = "js/";
   let extension = ".js";
   let files = [
+    "settings",
     "coreDocumentObjectModels",
     "xmlFunctions",
-    "settings",
-    "themes/a.preloader",
     "coreHelpers",
     "baseDOMManipulations",
     "baseFunctions",
     "sideBarEvents",
     "inputEvents",
-    "mainEvents",
     "FileSaver",
+    "mainEvents",
     "xmlAssets",
     "init",
   ];
@@ -146,6 +144,13 @@ var loadScripts = function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   }
 };
+
+let script = document.createElement("link");
+script.type = "text/css";
+script.rel = "stylesheet";
+script.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
+document.styleSheet = script;
+document.getElementsByTagName("head")[0].appendChild(script);
 
 loadScripts();
 loadStyles();
