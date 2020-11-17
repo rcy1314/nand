@@ -104,12 +104,12 @@ window.onload = function () {
         }, 10);
         _container.addEventListener('touchstart', function(event) {
           touchstartX = event.changedTouches[0].screenX;
-        }, false);
+        }, true);
 
         _container.addEventListener('touchend', function(event) {
           touchendX = event.changedTouches[0].screenX;
             handleSwipe();
-        }, false);
+        }, true);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
     }, 5)
