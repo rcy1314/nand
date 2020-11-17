@@ -95,6 +95,9 @@ setTimeout(function() {
       else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 50);
-  }
+  } else if (!post) _visit.style.display = `flex`
+
+  if (!isNumeric(post)) sideBarDisplay(onScreen)
+  else _check.style.visibility = `visible`
 
 }, 5)

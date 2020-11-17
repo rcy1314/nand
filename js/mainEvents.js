@@ -1,5 +1,4 @@
 window.onload = function () {
-  _container.style.display = `block`;
   _guest.setAttribute(`placeholder`, `Search Feeds`);
   _guest.style.caretColor = `#e4e4e4`;
   _guest.style.paddingLeft = `40px`;
@@ -11,44 +10,17 @@ window.onload = function () {
     quickFeedAsset(7);
   }
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
-  else quickFeedAsset(7);
-    if (!post) {
-      if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path == "string" &&
-        backgroundImage[0].element == `container`
-      ) {
+
+      if (backgroundImage[0].element == `container`)
         _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      } else if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path == "string" &&
-        backgroundImage[0].element == `main`
-      ) {
+      else if (backgroundImage[0].element == `main`)
         _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      }
-      if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].position == "string"
-      ) {
-        _container.style.backgroundPosition = `${backgroundImage[0].position}`;
-        _main.style.backgroundPosition = `${backgroundImage[0].position}`;
-      }
-      if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].size == "string"
-      ) {
-        _container.style.backgroundSize = `${backgroundImage[0].size}`;
-        _main.style.backgroundSize = `${backgroundImage[0].size}`;
-      }
-    }
 
-  ready(() => {
+      _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+      _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+      _container.style.backgroundSize = `${backgroundImage[0].size}`;
+      _main.style.backgroundSize = `${backgroundImage[0].size}`;
 
-      if (isNumeric(post)) sideBarDisplay(false);
-      else if (_main.clientWidth <= 768) {
-        expand = false;
-        groupType = `blocks`;
-      } else sideBarDisplay(onScreen)
       if (expandBackground == true)
         document.querySelector(`.bg`).style.height = `${
           (background.length + 1) * 35
@@ -64,20 +36,17 @@ window.onload = function () {
       if (expandFilter == true)
       document.querySelector(`.exclude`).style.height =
         `${(exclude.length * 34.25) + 65}px`;
-        _container.addEventListener('touchstart', function(event) {
-          touchstartX = event.changedTouches[0].screenX;
-        }, { passive: true} );
-
-        _container.addEventListener('touchend', function(event) {
-          touchendX = event.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true} );
-      if (!post && !location.search.split(`?`)[1])
-        _visit.style.display = `flex`
-
-  });
 
 };
+
+window.addEventListener('touchstart', function(event) {
+  touchstartX = event.changedTouches[0].screenX;
+}, { passive: true} );
+
+window.addEventListener('touchend', function(event) {
+  touchendX = event.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true} );
 
 window.addEventListener(
   `resize`,
