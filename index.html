@@ -4,7 +4,6 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <script type='text/javascript' src='js/settings.js'></script>
 </head>
 <body>
   <div id='container' style='display:none'>
@@ -126,6 +125,7 @@ var loadScripts = function () {
   let files = [
     "coreDocumentObjectModels",
     "xmlFunctions",
+    "settings",
     "coreHelpers",
     "baseDOMManipulations",
     "baseFunctions",
@@ -151,48 +151,56 @@ var loadScripts = function () {
               clearInterval(startup);
           }
         }, 5);
-      }, 10);
+      }, 15);
+    })();
+    if (file === `settings`) script.onload =
+    (function () {
+      let startup = setInterval(function () {
+        setTimeout(function () {
+          if (typeof themes !== `undefined`) {
+              let directory = `js/themes/`;
+              let extension = `.js`;
+
+              for (i = 0; i <= themes.length - 1; i++) {
+                theme = themes[i].obFn
+                let path = directory + theme + extension;
+                let script = document.createElement(`script`);
+                script.type = `text/javascript`;
+                script.src = path;
+                document.getElementsByTagName(`head`)[0].appendChild(script);
+                if (set === theme) script.onload =
+                (function () {
+                  let startup = setInterval(function () {
+                    setTimeout(function() {
+                      if (typeof eval(theme) === `function`) {
+                          window[set]();
+                          clearInterval(startup);
+                      }
+                    }, 5)
+                  }, 15);
+                })();
+              }
+
+              for (i = 0; i <= themes.length - 1; i++) {
+                (function (i) {
+                  document.addEventListener(
+                    `click`,
+                    function (event) {
+                      if (event.target.classList.contains(theme)) {
+                        initial = theme;
+                        window[themes[i].name]();
+                      }
+                    },
+                    false
+                  );
+                })(i);
+              }
+            }
+          }, 5);
+        }, 15);
     })();
   }
 };
-
-    let directory = `js/themes/`;
-    let extension = `.js`;
-
-    for (i = 0; i <= themes.length - 1; i++) {
-      theme = themes[i].obFn
-      let path = directory + theme + extension;
-      let script = document.createElement(`script`);
-      script.type = `text/javascript`;
-      script.src = path;
-      document.getElementsByTagName(`head`)[0].appendChild(script);
-      if (set === theme) script.onload =
-      (function () {
-        let startup = setInterval(function () {
-          setTimeout(function() {
-            if (typeof eval(theme) === `function`) {
-                window[set]();
-                clearInterval(startup);
-            }
-          }, 5)
-        }, 15);
-      })(themes[i].name);
-    }
-
-    for (i = 0; i <= themes.length - 1; i++) {
-      (function (i) {
-        document.addEventListener(
-          `click`,
-          function (event) {
-            if (event.target.classList.contains(theme)) {
-              initial = theme;
-              window[themes[i].name]();
-            }
-          },
-          false
-        );
-      })(i);
-    }
 
 let script = document.createElement("link");
 script.type = "text/css";
