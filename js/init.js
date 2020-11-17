@@ -56,9 +56,9 @@ setTimeout(function() {
       if (typeof menu === `array`) {
         setTimeout(function () {
           clearInterval(startup);
-        }, 5);
+        }, 10);
       }
-    }, 5);
+    }, 10);
 
   if (
     !location.href.match(`\\?fbclid`) &&
@@ -107,4 +107,4 @@ setTimeout(function() {
     }, 250);
   }
 
-}, 5)
+}, 10)
