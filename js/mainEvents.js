@@ -112,7 +112,7 @@ window.onload = function () {
         }, false);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 25)
+    }, 5)
   });
 };
 
