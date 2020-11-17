@@ -155,12 +155,14 @@ var loadScripts = function () {
     })();
     if (file === `settings`) script.onload =
     (function () {
-      let startup = setInterval(function () {
+      let i = 0;
+      let initialize = setInterval(function () {
         setTimeout(function () {
           if (typeof themes !== `undefined`) {
               let directory = `js/themes/`;
               let extension = `.js`;
-
+              i++
+              if (i === 1){
               for (i = 0; i <= themes.length - 1; i++) {
                 theme = themes[i].obFn
                 let path = directory + theme + extension;
@@ -180,7 +182,7 @@ var loadScripts = function () {
                   }, 15);
                 })();
               }
-
+            }
               for (i = 0; i <= themes.length - 1; i++) {
                 (function (i) {
                   document.addEventListener(
@@ -197,6 +199,7 @@ var loadScripts = function () {
               }
             }
           }, 5);
+          clearInterval(initialize);
         }, 15);
     })();
   }
