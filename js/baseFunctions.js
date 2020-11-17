@@ -14,7 +14,7 @@ var displayDescription = function (toggleOption) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `none`
       _main
-        .querySelectorAll(`.populate .description`)
+        .querySelectorAll(`.populate .des`)
         .forEach((a) => a.style.visibility = `hidden`);
       _main
         .querySelectorAll(`.populate`)
@@ -32,7 +32,7 @@ var displayDescription = function (toggleOption) {
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
       _main
-        .querySelectorAll(`.populate .description`)
+        .querySelectorAll(`.populate .des`)
         .forEach((a) => a.style.visibility = `visible`);
     }
 }
@@ -50,7 +50,7 @@ var displayExpand = function (toggleOption) {
         .querySelectorAll(`.media`)
         .forEach((a) => (a.style.display = `block`));
       _main
-        .querySelectorAll(`.description`)
+        .querySelectorAll(`.des`)
         .forEach((a) => (a.style.display = `block`));
       _main
         .querySelectorAll(`.populate`)
@@ -79,7 +79,7 @@ var displayExpand = function (toggleOption) {
         .querySelectorAll(`.media`)
         .forEach((a) => (a.style.display = `none`));
       _main
-        .querySelectorAll(`.description`)
+        .querySelectorAll(`.des`)
         .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)

@@ -202,5 +202,12 @@
     })();
   }
 
+let script = document.createElement("link");
+script.type = "text/css";
+script.rel = "stylesheet";
+script.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
+document.styleSheet = script;
+document.getElementsByTagName("head")[0].appendChild(script);
+
 </script>
 </html>
