@@ -48,46 +48,6 @@
 
 */
 
-setTimeout(function() {
-
-    let directory = `js/themes/`;
-    let extension = `.js`;
-
-    for (var visual of visuals) {
-      let path = directory + visual + extension;
-      let script = document.createElement(`script`);
-      script.type = `text/javascript`;
-      script.src = path;
-      document.getElementsByTagName(`head`)[0].appendChild(script);
-      if (set === visual) script.onload =
-      (function () {
-        let startup = setInterval(function () {
-          setTimeout(function() {
-            if (typeof eval(visual) === `function`) {
-                window[set]();
-                clearInterval(startup);
-            }
-          }, 5)
-        }, 10);
-      })();
-    }
-
-    for (i = 0; i <= themes.length - 1; i++) {
-      (function (i) {
-        var theme = themes[i].name;
-        document.addEventListener(
-          `click`,
-          function (event) {
-            if (event.target.classList.contains(theme)) {
-              initial = theme;
-              window[theme]();
-            }
-          },
-          false
-        );
-      })(i);
-    }
-
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
@@ -134,5 +94,3 @@ setTimeout(function() {
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 50);
   }
-
-}, 10)
