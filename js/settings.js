@@ -446,6 +446,26 @@ const translations = [
 
 /* Feel free to edit the above. */
 
+let Dots
+let Percent
+let Blocks
+let List
+
+if (loading == `Percent`){
+  Dots = false
+  Percent = true
+} else {
+  Dots = true
+  Percent = false
+}
+if (expand == true) {
+  Blocks = false
+  List = true
+} else {
+  Blocks = false
+  List = true
+}
+
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
@@ -462,42 +482,6 @@ let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
-if (expand == true) {
-  faList = `fa-check`;
-  faBlocks = `fa-circle-notch`;
-} else if (expand == false) {
-  faList = `fa-circle-notch`;
-  faBlocks = `fa-check`;
-}
-if (loading == `percent`) {
-  faPercent = `fa-check`;
-  faDots = `fa-circle-notch`;
-} else if (loading == `dots`) {
-  faDots = `fa-check`;
-  faPercent = `fa-circle-notch`;
-}
-let faRipple;
-if (showRipple == true) faRipple = `fa-check`;
-else faRipple = `fa-circle-notch`;
-let faImages;
-if (onlyImages == true) faImages = `fa-check`;
-else faImages = `fa-circle-notch`;
-let faTopBar;
-if (topBar == true) faTopBar = `fa-check`;
-else faTopBar = `fa-circle-notch`;
-let faFade;
-if (fadeIntoView == true) faFade = `fa-check`;
-else faFade = `fa-circle-notch`;
-let faOption;
-if (showOption == true) faOption = `fa-check`;
-else faOption = `fa-circle-notch`;
-let faDescription;
-if (showDescription == true) faDescription = `fa-check`;
-else faDescription = `fa-circle-notch`;
-let faScroll;
-if (scrollIntoView == true) faScroll = `fa-check`;
-else faScroll = `fa-circle-notch`;
-
 const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
   { name: `Reader`, class: `Reader`, icon: `fa-heart` },
@@ -508,17 +492,17 @@ const selections = [
 ];
 
 const settings = [
-  { name: `List`, class: `List`, icon: faList },
-  { name: `Blocks`, class: `Blocks`, icon: faBlocks },
-  { name: `Percent`, class: `Percent`, icon: faPercent },
-  { name: `Dots`, class: `Dots`, icon: faDots },
-  { name: `Images`, class: `toggleImages`, icon: faImages },
-  { name: `Top Bar`, class: `TopBar`, icon: faTopBar },
-  { name: `Use Ripples`, class: `showRipple`, icon: faRipple },
-  { name: `Fade in Images`, class: `fadeElement`, icon: faFade },
-  { name: `Scroll Into View`, class: `scrollView`, icon: faScroll },
-  { name: `Show Option`, class: `ShowOption`, icon: faOption },
-  { name: `Show Description`, class: `showDescription`, icon: faDescription },
+  { name: `List`, class: `List` },
+  { name: `Blocks`, class: `Blocks` },
+  { name: `Percent`, class: `Percent` },
+  { name: `Dots`, class: `Dots` },
+  { name: `Images`, class: `onlyImages` },
+  { name: `Top Bar`, class: `topBar` },
+  { name: `Use Ripples`, class: `showRipple` },
+  { name: `Fade in Images`, class: `fadeIntoView` },
+  { name: `Scroll Into View`, class: `scrollIntoView` },
+  { name: `Show Option`, class: `showOption` },
+  { name: `Show Description`, class: `showDescription` },
 ];
 
 const background = [

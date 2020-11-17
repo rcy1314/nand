@@ -41,8 +41,9 @@ window.onload = function () {
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
       }
     }
+
   ready(() => {
-    setTimeout(function(){
+
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
@@ -78,8 +79,9 @@ window.onload = function () {
         }, { passive: true} );
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 5)
+
   });
+
 };
 
 window.addEventListener(

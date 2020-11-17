@@ -54,7 +54,7 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.display = `block`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
+        .forEach((a) => a.classList.add(`description`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => (a.style.alignItems = `center`));
@@ -83,7 +83,7 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
+        .forEach((a) => a.classList.remove(`description`));
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.flexWrap = `wrap`));
@@ -101,12 +101,15 @@ var displayExpand = function (toggleOption) {
 
 var appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-  if (!Arrays[0].name){
+  if (Class !== `settings`){
     for (i = 0; i <= Arrays.length - 1; i++) {
       let option = document.createElement(`div`);
       option.classList.add(Class);
-      option.innerHTML = Arrays[i];
+      if (Class == `background`) option.innerHTML = Arrays[i].name;
+      if (Class == `option`) option.innerHTML = Arrays[i]
+      if (Class == `theme`) option.innerHTML = Arrays[i].obFn
       list.append(option);
+      list.append(sideBarThemeBuild(Arrays[i].icon));
     }
   }
   else for (i = 0; i <= Arrays.length - 1; i++) {
@@ -114,7 +117,22 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
     option.classList.add(Class, Arrays[i].class);
     option.innerHTML = Arrays[i].name;
     list.append(option);
-    list.append(sideBarThemeBuild(Arrays[i].icon));
+    if (Class == `settings`){
+      if (eval(Arrays[i].class) == true){
+        document.querySelector(`.` + Arrays[i].class)
+          .parentNode.insertBefore(
+            sideBarThemeBuild(`fa-check`),
+            document.querySelector(`.` + Arrays[i].class).nextSibling
+          );
+      } else {
+        document.querySelector(`.` + Arrays[i].class)
+          .parentNode.insertBefore(
+            sideBarThemeBuild(`fa-circle-notch`),
+            document.querySelector(`.` + Arrays[i].class).nextSibling
+          );
+      }
+    }
+    if (Class !== `settings`) list.append(sideBarThemeBuild(Arrays[i].icon));
   }
 }
 

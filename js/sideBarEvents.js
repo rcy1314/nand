@@ -51,7 +51,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-circle-notch`)
       }
     }
-    if (event.target.classList.contains(`scrollView`)) {
+    if (event.target.classList.contains(`scrollIntoView`)) {
       scrollIntoView = scrollIntoView != true
       if (scrollIntoView == true) {
         event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
@@ -315,7 +315,6 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains(`parse`)) {
-      console.log(document.querySelector(`.exclude`).clientHeight)
       if (document.querySelector(`.exclude`).clientHeight != `50`) {
         document.querySelector(`.exclude`).style.height = `30px`;
       } else {
@@ -373,7 +372,7 @@ document.addEventListener(
       document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-check`)
       document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-circle-notch`)
     }
-    if (event.target.classList.contains(`toggleImages`)) {
+    if (event.target.classList.contains(`onlyImages`)) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
         event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
@@ -406,7 +405,7 @@ document.addEventListener(
       uri.blank();
     }
     if (
-      event.target.classList.contains(`fadeElement`)
+      event.target.classList.contains(`fadeIntoView`)
     ) {
       fadeIntoView = fadeIntoView != true;
       if (fadeIntoView == true) {
@@ -465,7 +464,7 @@ document.addEventListener(
 
       }
     }
-    if (event.target.classList.contains(`TopBar`)) {
+    if (event.target.classList.contains(`topBar`)) {
       topBar = topBar != true;
       if (topBar == true) {
         event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
@@ -476,7 +475,7 @@ document.addEventListener(
       }
       topMenuBarDisplay(topBar);
     }
-    if (event.target.classList.contains(`ShowOption`)) {
+    if (event.target.classList.contains(`showOption`)) {
       showOption = showOption != true;
       if (showOption == true) {
         event.target.nextElementSibling.classList.remove(`fa-circle-notch`)

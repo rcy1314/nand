@@ -53,7 +53,7 @@
   opacity: 100;
 }
 
-.expand {
+.description {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -62,17 +62,17 @@
   height: 80px !important;
 }
 
-.expand .filter,
-.expand .populate {
+.description .filter,
+.description .populate {
   padding: 5px !important;
 }
 
-.expand .display {
+.description .display {
   width: 48px !important;
   padding-right: 15px !important;
 }
 
-.expand img {
+.description img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -80,28 +80,28 @@
   margin: 0 !important;
 }
 
-.expand .title {
+.description .title {
   text-align: left !important;
   flex-basis: 25% !important;
   margin: 0 !important;
   width: 100%;
 }
 
-.expand .hash,
-.expand .media {
+.description .hash,
+.description .media {
   align-items: center !important;
   padding-right: 15px !important;
 }
 
-.expand .hash {
+.description .hash {
   flex-basis: 15% !important;
 }
 
-.expand .media {
+.description .media {
   flex-basis: 15% !important;
 }
 
-.expand .description {
+.description .description {
   text-align: left !important;
   flex-basis: 65% !important;
 }
