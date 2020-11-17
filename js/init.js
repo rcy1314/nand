@@ -66,7 +66,7 @@ setTimeout(function() {
               window[set]();
               clearInterval(startup);
           }
-        }, 5);
+        }, 10);
       })();
     }
 
