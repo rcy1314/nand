@@ -42,12 +42,12 @@ const themes = [
 //above and below the theme and file
 
 let visuals = [
-  `day`,
-  `night`,
-  `nord`,
-  `gruvbox`,
-  `solarized`,
-  `alpenglow`,
+  `Day`,
+  `Night`,
+  `Nord`,
+  `Gruvbox`,
+  `Solarized`,
+  `Alpenglow`,
   //  `example file`, in /js/themes
 ];
 

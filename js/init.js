@@ -50,8 +50,6 @@
 
 setTimeout(function() {
 
-    _container.style.display = `block`;
-
     let directory = `js/themes/`;
     let extension = `.js`;
 
@@ -61,6 +59,15 @@ setTimeout(function() {
       script.type = `text/javascript`;
       script.src = path;
       document.getElementsByTagName(`head`)[0].appendChild(script);
+      script.onload =
+      (function () {
+        let startup = setInterval(function () {
+          if (typeof eval(set) !== `undefined`) {
+              window[visual]();
+              clearInterval(startup);
+          }
+        }, 5);
+      })();
     }
 
     for (i = 0; i <= themes.length - 1; i++) {
@@ -78,14 +85,6 @@ setTimeout(function() {
         );
       })(i);
     }
-
-    var startup = setInterval(function () {
-      if (typeof menu === `array`) {
-        setTimeout(function () {
-          clearInterval(startup);
-        }, 10);
-      }
-    }, 10);
 
   if (
     !location.href.match(`\\?fbclid`) &&
@@ -134,4 +133,4 @@ setTimeout(function() {
     }, 250);
   }
 
-}, 10)
+}, 5)

@@ -136,12 +136,23 @@ var loadScripts = function () {
     "xmlAssets",
     "init",
   ];
+
   for (var file of files) {
     let path = directory + file + extension;
     let script = document.createElement("script");
     script.type = "text/javascript";
     script.src = path;
     document.getElementsByTagName("head")[0].appendChild(script);
+    if (file === `xmlAssets`) script.onload =
+    (function () {
+      let startup = setInterval(function () {
+        if (typeof menu !== `undefined`) {
+          setTimeout(function () {
+            clearInterval(startup);
+          }, 10);
+        }
+      }, 10);
+    })();
   }
 };
 

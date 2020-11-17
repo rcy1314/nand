@@ -1,4 +1,5 @@
 window.onload = function () {
+  _container.style.display = `block`;
   _guest.setAttribute(`placeholder`, `Search Feeds`);
   _guest.style.caretColor = `#e4e4e4`;
   _guest.style.paddingLeft = `40px`;
@@ -67,14 +68,6 @@ window.onload = function () {
       if (expandFilter == true)
       document.querySelector(`.exclude`).style.height =
         `${(exclude.length * 34.25) + 65}px`;
-        var startup = setInterval(function () {
-          if (set && typeof eval(set) === `function`) {
-            setTimeout(function () {
-              window[set]();
-              clearInterval(startup);
-            }, 10);
-          }
-        }, 10);
         _container.addEventListener('touchstart', function(event) {
           touchstartX = event.changedTouches[0].screenX;
         }, { passive: true} );
@@ -85,7 +78,7 @@ window.onload = function () {
         }, { passive: true} );
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 10)
+    }, 5)
   });
 };
 
