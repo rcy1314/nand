@@ -47,6 +47,14 @@
       will load feed return to query.
 
 */
+setTimeout(function() {
+  var startup = setInterval(function () {
+    if (typeof menu === `array`) {
+      setTimeout(function () {
+        clearInterval(startup);
+      }, 10);
+    }
+  }, 5);
 
 if (
   !location.href.match(`\\?fbclid`) &&
@@ -94,3 +102,5 @@ else if (location.search.split(`?q=`)[1]) {
     else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
   }, 250);
 }
+
+}, 5)

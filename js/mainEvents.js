@@ -76,15 +76,15 @@ window.onload = function () {
               clearInterval(startup);
             }, 10);
           }
-          _container.addEventListener('touchstart', function(event) {
-            touchstartX = event.changedTouches[0].screenX;
-          }, false);
-
-          _container.addEventListener('touchend', function(event) {
-            touchendX = event.changedTouches[0].screenX;
-              handleSwipe();
-          }, false);
         }, 5);
+        _container.addEventListener('touchstart', function(event) {
+          touchstartX = event.changedTouches[0].screenX;
+        }, false);
+
+        _container.addEventListener('touchend', function(event) {
+          touchendX = event.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
     }, 5)

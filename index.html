@@ -5,8 +5,6 @@
     <meta content="utf-8" http-equiv="encoding">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/classRules.css">
-    <script src="js/xmlAssets.js"></script>
 </head>
 <body>
   <div id='container' style='display:none'>
@@ -104,6 +102,7 @@ var loadStyles = function () {
   let directory = "css/";
   let extension = ".css";
   let files = [
+    "classRules",
     "contentRules",
     "animationRules",
     "classRules",
@@ -136,6 +135,7 @@ var loadScripts = function () {
     "inputEvents",
     "mainEvents",
     "FileSaver",
+    "xmlAssets",
     "init",
   ];
   for (var file of files) {
