@@ -33,7 +33,6 @@ window.onload = function () {
   document.querySelector(`#front .icon`).classList.add(`search`);
   quickFeedDisplay(quickFeeds);
   if (_main.clientWidth <= 425 || quickFeedsTranslations == true) {
-    _container.style.display = `block`;
     quickFeedAsset(7);
   }
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
