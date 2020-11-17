@@ -31,11 +31,15 @@ var xmlStatusSuggestions = function () {
     if (document.body.contains(_main.querySelector(`.combine`)))
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
-    for (let i = 1; i <= contentStatusBuffer; i++) {
+    for (let i = 0; i <= contentStatusBuffer; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
-      if (menu[randomMenuObject] && !duplicate.includes(randomMenuObject)) {
+      if (
+        menu[randomMenuObject] &&
+        menu[randomMenuObject] !== 0 &&
+        !duplicate.includes(randomMenuObject)
+      ) {
         if (menu[randomMenuObject].media == true)
           var media = `feed contains images`;
         else if (menu[randomMenuObject].media == false)
