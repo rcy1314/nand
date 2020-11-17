@@ -135,4 +135,4 @@ setTimeout(function() {
     }, 250);
   }
 
-}, 10)
+}, 5)
