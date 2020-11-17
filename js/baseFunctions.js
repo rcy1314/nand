@@ -121,13 +121,13 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
       if (eval(Arrays[i].class) == true){
         document.querySelector(`.` + Arrays[i].class)
           .parentNode.insertBefore(
-            sideBarThemeBuild(`fa-check`),
+            sideBarThemeBuild(`fa-plus`),
             document.querySelector(`.` + Arrays[i].class).nextSibling
           );
       } else {
         document.querySelector(`.` + Arrays[i].class)
           .parentNode.insertBefore(
-            sideBarThemeBuild(`fa-circle-notch`),
+            sideBarThemeBuild(`fa-minus`),
             document.querySelector(`.` + Arrays[i].class).nextSibling
           );
       }
