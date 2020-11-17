@@ -146,7 +146,7 @@ var loadScripts = function () {
     if (file === `xmlAssets`) script.onload =
     (function () {
       let startup = setInterval(function () {
-        if (typeof menu !== `undefined`) {
+        if (menu && typeof menu !== `undefined`) {
           setTimeout(function () {
             clearInterval(startup);
           }, 10);
