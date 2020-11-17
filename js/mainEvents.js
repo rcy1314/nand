@@ -43,13 +43,12 @@ window.onload = function () {
     }
 
   ready(() => {
-    setTimeout(function() {
+
       if (isNumeric(post)) sideBarDisplay(false);
       else if (_main.clientWidth <= 768) {
         expand = false;
-        onScreen = false;
+        sideBarFirst = true;
         groupType = `blocks`;
-        sideBarDisplay(true);
       } else {
         sideBarFirst = true;
         sideBarDisplay(onScreen);
@@ -79,7 +78,7 @@ window.onload = function () {
         }, { passive: true} );
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 5)
+
   });
 
 };
