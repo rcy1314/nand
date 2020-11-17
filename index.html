@@ -4,22 +4,19 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="css/contentRules.css">
-    <link rel="stylesheet" type="text/css" href="css/classRules.css">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/classRules.css">
     <script src="js/xmlAssets.js"></script>
 </head>
 <body>
-  <div id='container'>
-      <div id='sidebar' class='mainTransition'>
+  <div id='container' style='display:none'>
+      <div id='sidebar'>
         <div id='hide'></div>
-          <div id='content' class='invertScrollbar'>
-          </div>
-          <div class='notify'></div>
+          <div id='content' class='invertScrollbar'></div>
       </div>
       <div id='guide'></div>
       <div id='main' class='reader mainTransition'>
-        <div id='check'>
+        <div id='check' style='visibility:hidden'>
           <img src='images/webp/Octocat.webp'><br>
           Have you checked out the
           <a>repo</a><br>
@@ -70,7 +67,7 @@
                   </div>
               </div>
           </div>
-          <div id='visit'>
+          <div id='visit' style='display:none'>
               <div id='page'>
                   <form id='front' action='#'>
                       <div class='focus'>
@@ -107,6 +104,7 @@ var loadStyles = function () {
   let directory = "css/";
   let extension = ".css";
   let files = [
+    "contentRules",
     "animationRules",
     "classRules",
     "mediaRules",
