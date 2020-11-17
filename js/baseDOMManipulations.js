@@ -293,9 +293,9 @@ var categoryBuild = function (
   des.innerHTML = objectDescription;
   display.append(object);
   select.append(display);
+  select.append(id);
   select.append(media);
   select.append(hash);
-  select.append(id);
   select.append(des);
   populate.append(select);
   return populate;
