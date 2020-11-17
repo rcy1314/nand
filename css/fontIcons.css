@@ -18,8 +18,8 @@
 }
 
 .fas,
-#sidebar #content .fa-check,
-#sidebar #content .fa-circle-notch {
+#sidebar #content .fa-plus,
+#sidebar #content .fa-minus {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -27,9 +27,9 @@
   font-size: 10px;
   float: right;
   height: 15px;
+  right: 6.5px;
   width: 15px;
   z-index: -1;
-  right: 8px;
 }
 
 #sidebar #content .parse .fa-tint {

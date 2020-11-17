@@ -44,31 +44,31 @@ document.addEventListener(
       showDescription = showDescription != true
       displayDescription(showDescription)
       if (showDescription == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (showDescription == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
     if (event.target.classList.contains(`scrollIntoView`)) {
       scrollIntoView = scrollIntoView != true
       if (scrollIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (scrollIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
     if (event.target.classList.contains(`showRipple`)) {
       showRipple = showRipple != true
       if (showRipple == true){
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (showRipple == false){
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
     if (event.target.classList.contains(`urlInput`)) {
@@ -352,34 +352,34 @@ document.addEventListener(
     if (event.target.classList.contains(`List`)) {
       expand = true;
       groupType = `list`;
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-check`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-plus`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
       groupType = `blocks`;
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-check`)
-        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-plus`)
+        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
-      event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-      event.target.nextElementSibling.classList.add(`fa-check`)
-      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-check`)
-      document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-circle-notch`)
+      event.target.nextElementSibling.classList.remove(`fa-minus`)
+      event.target.nextElementSibling.classList.add(`fa-plus`)
+      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-plus`)
+      document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`onlyImages`)) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (onlyImages == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       _toggle.style.display = `none`;
       _visit.style.visibility = `none`;
@@ -395,10 +395,10 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
-      event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-      event.target.nextElementSibling.classList.add(`fa-check`)
-      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-check`)
-      document.querySelector(`.Dots`).nextElementSibling.classList.add(`fa-circle-notch`)
+      event.target.nextElementSibling.classList.remove(`fa-minus`)
+      event.target.nextElementSibling.classList.add(`fa-plus`)
+      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-plus`)
+      document.querySelector(`.Dots`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;
@@ -409,11 +409,11 @@ document.addEventListener(
     ) {
       fadeIntoView = fadeIntoView != true;
       if (fadeIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (fadeIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       if (fadeIntoView == false) {
       } else if (fadeIntoView == true) {
@@ -467,22 +467,22 @@ document.addEventListener(
     if (event.target.classList.contains(`topBar`)) {
       topBar = topBar != true;
       if (topBar == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (topBar == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`showOption`)) {
       showOption = showOption != true;
       if (showOption == true) {
-        event.target.nextElementSibling.classList.remove(`fa-circle-notch`)
-        event.target.nextElementSibling.classList.add(`fa-check`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-plus`)
       } else if (showOption == false) {
-        event.target.nextElementSibling.classList.remove(`fa-check`)
-        event.target.nextElementSibling.classList.add(`fa-circle-notch`)
+        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;
