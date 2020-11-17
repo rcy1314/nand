@@ -52,7 +52,7 @@ setTimeout(function() {
     if (typeof menu === `array`) {
       setTimeout(function () {
         clearInterval(startup);
-      }, 10);
+      }, 5);
     }
   }, 5);
 

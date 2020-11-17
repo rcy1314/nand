@@ -99,17 +99,17 @@ window.onload = function () {
             setTimeout(function () {
               window[set]();
               clearInterval(startup);
-            }, 10);
+            }, 5);
           }
-        }, 10);
+        }, 5);
         _container.addEventListener('touchstart', function(event) {
           touchstartX = event.changedTouches[0].screenX;
-        }, true);
+        }, { passive: true} );
 
         _container.addEventListener('touchend', function(event) {
           touchendX = event.changedTouches[0].screenX;
             handleSwipe();
-        }, true);
+        }, { passive: true} );
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
     }, 5)
