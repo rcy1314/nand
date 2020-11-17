@@ -62,7 +62,7 @@ setTimeout(function() {
       if (set === visual) script.onload =
       (function () {
         let startup = setInterval(function () {
-          if (visual && typeof eval(visual) === `function`) {
+          if (typeof eval(visual) === `function`) {
               window[set]();
               clearInterval(startup);
           }
