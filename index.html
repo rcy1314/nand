@@ -160,6 +160,7 @@ var loadScripts = function () {
               let extension = `.js`;
               i++
               if (i === 1){
+              clearInterval(initialize);
               for (i = 0; i <= themes.length - 1; i++) {
                 theme = themes[i].obFn
                 let path = directory + theme + extension;
@@ -196,7 +197,6 @@ var loadScripts = function () {
               }
             }
           }, 5);
-          clearInterval(initialize);
         }, 15);
     })();
   }
