@@ -97,10 +97,9 @@
 </body>
 <script>
 
-var loadStyles = function () {
-  let directory = "css/";
-  let extension = ".css";
-  let files = [
+  let dir = "css/";
+  let ext = ".css";
+  let obj = [
     "classRules",
     "contentRules",
     "animationRules",
@@ -108,8 +107,8 @@ var loadStyles = function () {
     "mediaRules",
     "fontIcons"
   ];
-  for (var file of files) {
-    let path = directory + file + extension;
+  for (var file of obj) {
+    let path = dir + file + ext;
     let script = document.createElement("link");
     script.type = "text/css";
     script.rel = "stylesheet";
@@ -117,9 +116,7 @@ var loadStyles = function () {
     document.styleSheet = script;
     document.getElementsByTagName("head")[0].appendChild(script);
   }
-};
 
-var loadScripts = function () {
   let directory = "js/";
   let extension = ".js";
   let files = [
@@ -200,7 +197,6 @@ var loadScripts = function () {
         }, 15);
     })();
   }
-};
 
 let script = document.createElement("link");
 script.type = "text/css";
@@ -208,9 +204,6 @@ script.rel = "stylesheet";
 script.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
 document.styleSheet = script;
 document.getElementsByTagName("head")[0].appendChild(script);
-
-loadScripts();
-loadStyles();
 
 </script>
 </html>
