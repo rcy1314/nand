@@ -72,9 +72,9 @@ window.onload = function () {
             setTimeout(function () {
               window[set]();
               clearInterval(startup);
-            }, 5);
+            }, 10);
           }
-        }, 5);
+        }, 10);
         _container.addEventListener('touchstart', function(event) {
           touchstartX = event.changedTouches[0].screenX;
         }, { passive: true} );
@@ -85,7 +85,7 @@ window.onload = function () {
         }, { passive: true} );
       if (!post && !location.search.split(`?`)[1])
         _visit.style.display = `flex`
-    }, 5)
+    }, 10)
   });
 };
 
