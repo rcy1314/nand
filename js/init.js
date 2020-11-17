@@ -133,4 +133,4 @@ setTimeout(function() {
     }, 250);
   }
 
-}, 5)
+}, 10)
