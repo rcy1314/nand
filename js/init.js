@@ -132,7 +132,7 @@ setTimeout(function() {
         filterInputResponse(true, false, uri[0], false);
       else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 250);
+    }, 50);
   }
 
 }, 5)
