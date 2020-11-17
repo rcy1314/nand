@@ -1,13 +1,24 @@
 document.addEventListener(
   `click`,
   function (event) {
-    if (event.target.classList.contains(`buttonSearch`)) {
-      if (_guest.value.length > 0 && _guest.value != ``) _front.submit();
+    if (
+      event.target.classList.contains(`buttonSearch`) ||
+      event.target.classList.contains(`button`)
+    ) {
+      if (_guest.value.length > 0) {
+        topMenuBarDisplay(topBar)
+        filterInputResponse(
+          false,
+          false,
+          _guest,
+          true
+        );
+      }
     }
     event.preventDefault();
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   `click`,
   function (event) {

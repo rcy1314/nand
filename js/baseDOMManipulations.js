@@ -289,7 +289,7 @@ var categoryBuild = function (
   id.classList.add(`title`);
   id.innerHTML = objectId;
   let des = document.createElement(`div`);
-  des.classList.add(`description`);
+  des.classList.add(`des`);
   des.innerHTML = objectDescription;
   display.append(object);
   select.append(display);

@@ -784,12 +784,12 @@ html body,
   margin: 0 auto;
 }
 
+.des,
 .hash,
 .blank,
 .media,
 .title,
-.display,
-.description {
+.display {
   color: var(--fill-color-primary);
   z-index: -1;
 }
