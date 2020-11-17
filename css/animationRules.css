@@ -39,12 +39,12 @@ span.ripple {
 }
 
 .rotate {
-  animation: rotation .75s ease-in-out 1 forwards;
+  animation: rotation .25s ease-in-out 1 forwards;
   transform: rotate(180deg);
 }
 
 .rotateReverse {
-  animation: rotationReverse .75s ease-in-out 1 forwards;
+  animation: rotationReverse .25s ease-in-out 1 forwards;
   transform: rotate(0deg);
 }
 
