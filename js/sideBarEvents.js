@@ -197,29 +197,6 @@ document.addEventListener(
       _container.style.backgroundImage = `none`;
       _main.style.backgroundImage = `none`;
     }
-    if (
-      event.target.classList.contains(`translation`) ||
-      event.target.classList.contains(`filterBlur`) ||
-      event.target.classList.contains(`classic`) ||
-      event.target.classList.contains(`header`) ||
-      event.target.classList.contains(`select`) ||
-      event.target.classList.contains(`copy`) ||
-      event.target.classList.contains(`item`) ||
-      event.target.classList.contains(`wrap`) ||
-      event.target.classList.contains(`ago`) ||
-      event.target.classList.contains(`pub`) ||
-      event.target.classList.contains(`cat`) ||
-      event.target.classList.contains(`sel`)
-    ) {
-      _main.classList.remove(`guide`);
-      _guide.style.display = `none`;
-      while (_guide.firstChild)
-        _guide.removeChild(_guide.lastChild);
-      if (_main.clientWidth <= 768) {
-        onScreen = false;
-        sideBarDisplay(false);
-      }
-    }
     if (event.target.id == `hide`) {
       if (sideBarFirst == true) {
         let sideBarFirst = false;

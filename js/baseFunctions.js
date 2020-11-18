@@ -91,6 +91,9 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.flexWrap = `wrap`));
       _main
         .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.textAlign = `center`));
+      _main
+        .querySelectorAll(`.select`)
         .forEach((a) => (a.style.display = `flex`));
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `inline-flex`;

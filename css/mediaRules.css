@@ -8,6 +8,19 @@
     display: none;
   }
 
+  .des,
+  .hash {
+    display: none !important;
+  }
+
+  .title {
+    flex-basis: 50% !important;
+  }
+
+  .expand .select {
+    text-align: left !important;
+  }
+
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     background-color: transparent !important;
@@ -72,7 +85,7 @@
   #main #top #arm,
   #main #top #arm #search {
     background: transparent !important;
-    width: 100vw;
+    width: 100vw !important;
   }
 
   #main #xml .center {
