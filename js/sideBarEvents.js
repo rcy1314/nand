@@ -185,16 +185,17 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`fitBackground`)) {
       if (
-        _container.style.backgroundSize == `auto 100%` ||
-        _main.style.backgroundSize == `auto 100%` ||
         _container.style.backgroundSize == `cover` ||
         _main.style.backgroundSize == `cover`
       ) {
         _container.style.backgroundSize = `contain`;
         _main.style.backgroundSize = `contain`;
-      } else {
-        _container.style.backgroundSize = `auto 100%`;
-        _main.style.backgroundSize = `auto 100%`;
+      } else if (
+        _container.style.backgroundSize == `contain` ||
+        _main.style.backgroundSize == `contain`
+      ) {
+        _container.style.backgroundSize = `cover`;
+        _main.style.backgroundSize = `cover`;
       }
     }
     if (event.target.classList.contains(`removeBackground`)) {
