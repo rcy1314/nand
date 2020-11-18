@@ -617,8 +617,9 @@ html body,
   border: none !important;
   display: inline-block;
   caret-color: #e4e4e4;
+  padding-left: 40px;
   position: relative;
-  text-align: center;
+  text-align: left;
   font-size: 14px;
   outline: none;
   bottom: 15px;
@@ -662,13 +663,13 @@ html body,
 }
 
 #main #visit #page #front .focus .buttonSearch {
-  font-size: 14px !important;
+  font-size: 16px !important;
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
   right: 30px;
   z-index: 1;
-  top: 30px;
+  top: 13px;
 }
 
 #main #visit #page #front #label #show {

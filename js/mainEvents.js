@@ -1,14 +1,7 @@
 window.onload = function () {
-  _guest.setAttribute(`placeholder`, `Search Feeds`);
-  _guest.style.caretColor = `#e4e4e4`;
-  _guest.style.paddingLeft = `40px`;
-  _guest.style.textAlign = `left`;
-  _guest.focus();
   document.querySelector(`#front .icon`).classList.add(`search`);
   quickFeedDisplay(quickFeeds);
-  if (_main.clientWidth <= 425 || quickFeedsTranslations == true) {
-    quickFeedAsset(7);
-  }
+  if (_main.clientWidth <= 425 || quickFeedsTranslations == true) quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
       if (backgroundImage[0].element == `container`)
@@ -37,6 +30,7 @@ window.onload = function () {
       document.querySelector(`.exclude`).style.height =
         `${(exclude.length * 34.25) + 65}px`;
 
+    _guest.focus();
 };
 
 window.addEventListener('touchstart', function(event) {
