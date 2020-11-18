@@ -764,10 +764,8 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
-        } else if (typeof local != `undefined` || !post && !isNumeric(local)){
+        } else if (!isNumeric(post) || !isNumeric(local)){
           _guide.style.display = `none`;
-          topMenuBarDisplay(topBar);
-          sideBarDisplay(guideOnScreen);
         }
         for (i = 0; i < pub.length - 1; i++) {
           if (has.filter(function(obj) {
