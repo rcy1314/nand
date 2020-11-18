@@ -1,5 +1,5 @@
 window.onload = function () {
-  document.querySelector(`#front .icon`).classList.add(`search`);
+
   quickFeedDisplay(quickFeeds);
   if (_main.clientWidth <= 425 || quickFeedsTranslations == true) quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
@@ -30,7 +30,9 @@ window.onload = function () {
       document.querySelector(`.exclude`).style.height =
         `${(exclude.length * 34.25) + 75}px`;
 
+    _container.style.display = `block`;
     _guest.focus();
+
 };
 
 window.addEventListener('touchstart', function(event) {
