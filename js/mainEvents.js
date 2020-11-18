@@ -51,13 +51,37 @@ window.addEventListener(
       guideOnScreen = onScreen
       sideBarFirst = true;
       sideBarDisplay(false);
+      if (document.body.contains(document.querySelector(`#group`))) {
+        displayDescription(false)
+        _main
+          .querySelectorAll(`.hash`)
+          .forEach((a) => (a.style.display = `none`));
+        _main
+          .querySelectorAll(`.select`)
+          .forEach((a) => (a.style.textAlign = `left`));
+        _main
+          .querySelectorAll(`.display`)
+          .forEach((a) => (a.style.width = `fit-content`));
+        _main
+          .querySelectorAll(`.title`)
+          .forEach((a) => (a.style.cssText = `flex-basis: 50% !important`));
+      }
+      _top.style.width = `100%`;
     } else if (
-      _sidebar.style.left == `-242px` &&
       _main.clientWidth > 768 &&
       onScreen == true
     ){
       sideBarFirst = true;
       sideBarDisplay(onScreen);
+      if (document.body.contains(document.querySelector(`#group`))) {
+        displayDescription(true);
+        _main
+          .querySelectorAll(`.hash`)
+          .forEach((a) => (a.style.display = `block`));
+        _main
+          .querySelectorAll(`.title`)
+          .forEach((a) => (a.style.cssText = `flex-basis: 30% !important`));
+      }
     }
   },
   true

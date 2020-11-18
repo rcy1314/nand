@@ -283,7 +283,7 @@ document.addEventListener(
         filterInputResponse(
           false,
           false,
-          _guest,
+          _guest.value,
           true
         );
       }
@@ -313,7 +313,7 @@ var inputListingKeyup = function (Elem, keycode) {
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
     document
-      .querySelectorAll(_label, _quick)
+      .querySelectorAll(`#label, #quick`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (keycode === 40) {
     if (

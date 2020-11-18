@@ -765,8 +765,6 @@ html body,
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding-right: 12px;
-  padding-left: 12px;
 }
 
 #main #group .air .populate:hover,
@@ -807,7 +805,6 @@ html body,
 #main #group .result .populate .display,
 #main #xml .content .status .filter .ext {
   position: relative;
-  padding: 5px;
   width: 100%;
 }
 

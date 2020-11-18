@@ -345,6 +345,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       menu[Math.floor(Math.random() * menu.length - 1)]
     );
     if (
+      menu[randomMenuObject] &&
       menu.indexOf(menu[randomMenuObject]) &&
       menu[randomMenuObject].media == true &&
       !suggest.includes(randomMenuObject)
@@ -603,8 +604,8 @@ var filterInputResponse = function (
   filter = [];
   _visit.style.display = `none`;
   if (translations.includes(filterURI.toString().capitalize())) {
-    populateCategoryGroup(filterURI.capitalize());
-    category = filterURI.capitalize();
+    populateCategoryGroup(filterURI.toString().capitalize());
+    category = filterURI.toString().capitalize();
     unloading();
     return false;
   }

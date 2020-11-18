@@ -117,15 +117,15 @@
     width: 95vw !important;
   }
 
-  #main #visit #page #front #first .listing {
-    top: 115px !important;
+  #main #visit #page #front #first {
     padding-top: 5px;
     height: 359px;
     width: 300px;
+    top: 115px;
   }
 
   #main #visit #page #front #first .listing {
-    position: relative;
+    position: absolute;
     padding-left: 0;
     margin: 0 auto;
     top: -5px;

@@ -40,7 +40,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,
-    `saturate(0)`
+    `saturate(1)`
   );
   document
     .querySelector(`#favicon`)
