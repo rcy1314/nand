@@ -97,7 +97,7 @@ setTimeout(function() {
     }, 50);
   } else if (!post) _visit.style.display = `flex`
 
-  if (!isNumeric(post)) sideBarDisplay(onScreen)
-  else _check.style.visibility = `visible`
+  if (!isNumeric(post) && _main.clientWidth > 768) sideBarDisplay(onScreen)
+  else if (isNumeric(post)) _check.style.visibility = `visible`
 
 }, 5)
