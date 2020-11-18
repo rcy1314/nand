@@ -50,6 +50,7 @@
 
 setTimeout(function() {
 
+  let post
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
