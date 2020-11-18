@@ -352,6 +352,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-plus`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-plus`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
+        populateCategoryGroup(category)
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
@@ -360,6 +361,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-plus`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-plus`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+      populateCategoryGroup(category)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
