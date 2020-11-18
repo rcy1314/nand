@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Alpenglow`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
@@ -15,7 +15,7 @@ let set = `Alpenglow`;
 
 let backgroundImage = [
   {
-    path: "images/ffe869c642be33cbb2c3e609e27beb29.webp",
+    path: "",
     element: "container", //container or main
     position: "center",
     size: "cover",
@@ -205,7 +205,7 @@ let quickFeeds = true;
 
 */
 
-let quickFeedsTranslations = true;
+let quickFeedsTranslations = false;
 
 /*
     scrollIntoView [boolean/integer]

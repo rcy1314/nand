@@ -170,7 +170,7 @@ var sideBarDisplay = function (toggleOption) {
     }
     content.append(basicFormBuild());
   }
-  if (toggleOption == true || onScreen == true) {
+  if (toggleOption == true) {
     _sidebar.style.position = `fixed`;
     _sidebar.animate(
       {
@@ -198,7 +198,7 @@ var sideBarDisplay = function (toggleOption) {
     _sidebar.style.display = `block`;
     _content.style.display = `block`;
     _sidebar.style.left = `0px`;
-    if (backgroundImage.element = `container`)
+    if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100% + 240px)`
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
@@ -210,11 +210,11 @@ var sideBarDisplay = function (toggleOption) {
     }
     setTimeout(function () {
       document.querySelector(`.sideFilter`).style.display = `block`;
-      _progress.style.left = `240px`;
       document.querySelector(`#basic`).style.display = `block`;
+      _progress.style.left = `240px`;
     }, 300);
   }
-  if (toggleOption == false || onScreen == false) {
+  if (toggleOption == false) {
     document.querySelector(`.sideFilter`).style.display = `none`;
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;

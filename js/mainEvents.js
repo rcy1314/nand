@@ -1,7 +1,7 @@
 window.onload = function () {
 
   quickFeedDisplay(quickFeeds);
-  if (_main.clientWidth <= 425 || quickFeedsTranslations == true) quickFeedAsset(7);
+  if (_main.clientWidth <= 425 && quickFeedsTranslations == true) quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
       if (backgroundImage[0].element == `container`)

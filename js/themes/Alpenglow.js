@@ -50,4 +50,6 @@ var Alpenglow = function () {
     `--hue-rotate`,
     `hue-rotate(110deg)`
   );
+  document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
+    `url(images/e54430a6cf0248fa8d1d5961e02a71e4.png)`
 };

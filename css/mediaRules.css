@@ -143,7 +143,7 @@
   }
 
   #main #visit #page #front .focus input[type=text] {
-    padding-left: 10px;
+    padding-left: 40px;
     width: 300px;
     top: 0px;
   }

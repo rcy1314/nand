@@ -5,11 +5,11 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
-    `#f7426C`
+    `rgba(0, 120, 212, .4)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `#f54e75`
+    `rgba(0,0,0,0)`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#ffffff`);
   document.documentElement.style.setProperty(
@@ -32,7 +32,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(7,7,7,.8)`
+    `rgba(7,7,7,.8)`
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
@@ -40,10 +40,11 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,
-    `hue-rotate(110deg)`
+    `saturate(0)`
   );
   document
     .querySelector(`#favicon`)
     .setAttribute(`href`, `images/Opposite.ico`);
-  _check.style.filter = `saturate(1)`
+  document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
+    `url(images/e54430a6cf0248fa8d1d5961e02a71e4.png)`
 };

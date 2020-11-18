@@ -35,7 +35,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgb(240,240,240,.6)`
+    `rgb(255,255,255,.75)`
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
@@ -46,4 +46,6 @@ var Day = function () {
     `hue-rotate(0deg)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
+  document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
+    `url(images/b453ae624e3d5e58b9890a998ec441b8.png)`
 };
