@@ -152,14 +152,14 @@ var sideBarDisplay = function (toggleOption) {
     }
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
     appendSideBarLists(`.themes`, `theme`, themes)
+    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
+    appendSideBarLists(`.exclude`, `option`, exclude);
+    document.querySelector(`.exclude`).append(excludeFormBuild());
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSideBarLists(`.set`, `settings`, settings)
     sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
     appendSideBarLists(`.bg`, `background`, background)
     content.append(urlFormBuild());
-    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
-    appendSideBarLists(`.exclude`, `option`, exclude);
-    document.querySelector(`.exclude`).append(excludeFormBuild());
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)
