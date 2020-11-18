@@ -393,9 +393,53 @@ var progressBackDrop = function (done, percent) {
             }
           );
         }, 500);
-        setTimeout(function () {
-          document.querySelector(`#xml`).style.paddingTop = `0`;
-        }, 1000);
+        if (fadeIntoView == true) {
+          (function() {
+            var elements;
+            var windowHeight;
+
+            function init() {
+              elements = document.querySelectorAll('.image');
+              windowHeight = _main.clientHeight;
+              for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var positionFromTop = elements[i].getBoundingClientRect().top;
+
+                if (positionFromTop - windowHeight <= 0) {
+                  element.querySelector(`.img`).classList.add('fade-in-element');
+                  element.querySelector(`.img`).classList.remove('hidden');
+                }
+              }
+            }
+
+            function checkPosition() {
+              for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                var positionFromTop = elements[i].getBoundingClientRect().top;
+
+                if (positionFromTop - windowHeight <= 0) {
+                  if (fadeIntoView == true)
+                    element.querySelector(`.img`).classList.add('fade-in-element');
+                  if (fadeIntoView == false) {
+                    document
+                      .querySelectorAll(`.img`)
+                      .forEach((a) => (a.classList.remove(`hidden`)));
+                    _main.removeEventListener("scroll", checkPosition);
+                    _main.removeEventListener("resize", init);
+                  }
+                }
+              }
+            }
+
+            _main.addEventListener('scroll', checkPosition);
+            _main.addEventListener('resize', init);
+
+            setTimeout(function () {
+              document.querySelector(`#xml`).style.paddingTop = `0`;
+              init();
+            }, 1000);
+          })();
+        }
       }
     }
     if (document.body.contains(document.getElementById(`group`))) {
@@ -445,51 +489,6 @@ var progressBackDrop = function (done, percent) {
           }
       }
     setTimeout(function () {
-      if (fadeIntoView == true) {
-        (function() {
-          var elements;
-          var windowHeight;
-
-          function init() {
-            elements = document.querySelectorAll('.image');
-            windowHeight = _main.clientHeight;
-            for (var i = 0; i < elements.length; i++) {
-              var element = elements[i];
-              var positionFromTop = elements[i].getBoundingClientRect().top;
-
-              if (positionFromTop - windowHeight <= 0) {
-                element.querySelector(`.img`).classList.add('fade-in-element');
-                element.querySelector(`.img`).classList.remove('hidden');
-              }
-            }
-          }
-
-          function checkPosition() {
-            for (var i = 0; i < elements.length; i++) {
-              var element = elements[i];
-              var positionFromTop = elements[i].getBoundingClientRect().top;
-
-              if (positionFromTop - windowHeight <= 0) {
-                if (fadeIntoView == true)
-                  element.classList.add('fade-in-element');
-                if (fadeIntoView == false) {
-                  document
-                    .querySelectorAll(`.img`)
-                    .forEach((a) => (a.classList.remove(`hidden`)));
-                  _main.removeEventListener("scroll", checkPosition);
-                  _main.removeEventListener("resize", init);
-                  element.classList.remove('hidden');
-                }
-              }
-            }
-          }
-
-          _main.addEventListener('scroll', checkPosition);
-          _main.addEventListener('resize', init);
-
-          init();
-        })();
-      }
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
