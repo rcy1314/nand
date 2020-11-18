@@ -72,7 +72,7 @@
                           <div class='icon search'>
                               <div class='inputIcon fa fa-search'></div>
                           </div>
-                          <input id='guest' type='text'>
+                          <input id='guest' type='text' placeholder='Search'>
                           <div class='button'>
                               <div class='buttonSearch fas fa-search'></div>
                           </div>
@@ -177,9 +177,8 @@ for (i = 0; i <= themes.length - 1; i++) {
     document.addEventListener(
       `click`,
       function (event) {
-        if (event.target.classList.contains(theme)) {
-          initial = theme;
-          window[themes[i].name]();
+        if (event.target.classList.contains(themes[i].class)) {
+          window[themes[i].class]();
         }
       },
       false

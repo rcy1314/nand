@@ -106,7 +106,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
   if (Class !== `settings`){
     for (i = 0; i <= Arrays.length - 1; i++) {
       let option = document.createElement(`div`);
-      option.classList.add(Class);
+      option.classList.add(Class, Arrays[i].class);
       if (Class == `background`) option.innerHTML = Arrays[i].name;
       if (Class == `option`) option.innerHTML = Arrays[i]
       if (Class == `theme`) option.innerHTML = Arrays[i].obFn
@@ -198,6 +198,8 @@ var sideBarDisplay = function (toggleOption) {
     _sidebar.style.display = `block`;
     _content.style.display = `block`;
     _sidebar.style.left = `0px`;
+    if (backgroundImage.element = `container`)
+      _container.style.width = `calc(100% + 240px)`
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
         _top.style.width = `calc(100% - 256px)`;

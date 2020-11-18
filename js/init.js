@@ -100,4 +100,4 @@ setTimeout(function() {
     expand = false
   }
 
-}, 5)
+}, 10)
