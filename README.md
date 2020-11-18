@@ -7,6 +7,7 @@
 
 * Private Proxy Requests.
 * Beta (stage) themes.
+* Background images.
 * No Installation.
 * Filtering.
 * NSFW api.
