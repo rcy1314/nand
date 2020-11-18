@@ -399,7 +399,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             .then((response) => {
               response.json().then((jsonResponse) => {
                 jsonResponseScore = jsonResponse.score;
-                console.log(jsonResponse.score);
+                console.log(src + ` ` + jsonResponse.score);
                 if (jsonResponse.score >= safeSearchScore) {
                   if (
                     document.body.contains(

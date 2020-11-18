@@ -222,8 +222,10 @@ var sideBarDisplay = function (toggleOption) {
 };
 
 var topMenuBarDisplay = function (toggleOption) {
-  if (toggleOption == true) _top.style.display = `block`;
-  else if (toggleOption == false) _top.style.display = `none`;
+  if (toggleOption == true){
+    _view.style.display = `block`;
+    _top.style.display = `block`;
+  } else if (toggleOption == false) _top.style.display = `none`;
 };
 
 var quickFeedDisplay = function (toggleOption) {
