@@ -28,7 +28,7 @@ window.onload = function () {
         }px`;
       if (expandFilter == true)
       document.querySelector(`.exclude`).style.height =
-        `${(exclude.length * 34.25) + 65}px`;
+        `${(exclude.length * 34.25) + 75}px`;
 
     _guest.focus();
 };

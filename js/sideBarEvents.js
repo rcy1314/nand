@@ -322,7 +322,7 @@ document.addEventListener(
           document.querySelector(`.exclude`).style.height = `75px`
         else
         document.querySelector(`.exclude`).style.height =
-          `${(exclude.length * 34.25) + 65}px`;
+          `${(exclude.length * 34.25) + 75}px`;
       }
     }
     if (event.target.classList.contains(`border`)) {

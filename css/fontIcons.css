@@ -17,8 +17,10 @@
   right: 8px;
 }
 
+
 #sidebar #content .fa-plus,
-#sidebar #content .fa-minus {
+#sidebar #content .fa-minus,
+.fas:not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
