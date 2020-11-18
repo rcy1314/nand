@@ -202,9 +202,9 @@ for (var file of files) {
 }
 
 let source = document.createElement("link");
-script.type = "text/css";
-script.rel = "stylesheet";
-script.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
+source.type = "text/css";
+source.rel = "stylesheet";
+source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
 document.styleSheet = source;
 document.getElementsByTagName("head")[0].appendChild(source);
 
