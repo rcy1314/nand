@@ -97,7 +97,6 @@
       </div>
 </body>
 <script>
-
 let dir = "css/";
 let ext = ".css";
 let obj = [
@@ -151,54 +150,41 @@ for (var file of files) {
         }, 5);
       }, 10);
     })();
-  (function () {
-    let i = 0;
-    let initialize = setInterval(function () {
-      setTimeout(function () {
-        if (typeof themes !== `undefined`) {
-          let directory = `js/themes/`;
-          let extension = `.js`;
-          i++;
-          if (i === 1) {
-            clearInterval(initialize);
-            for (i = 0; i <= themes.length - 1; i++) {
-              theme = themes[i].obFn;
-              let path = directory + theme + extension;
-              let script = document.createElement(`script`);
-              script.type = `text/javascript`;
-              script.src = path;
-              document.getElementsByTagName(`head`)[0].appendChild(script);
-              if (set === theme)
-                script.onload = (function () {
-                  let startup = setInterval(function () {
-                    setTimeout(function () {
-                      if (typeof eval(theme) === `function`) {
-                        window[set]();
-                        clearInterval(startup);
-                      }
-                    }, 5);
-                  }, 10);
-                })();
-            }
+}
+let place = `js/themes/`;
+let type = `.js`;
+for (i = 0; i <= themes.length - 1; i++) {
+  theme = themes[i].obFn;
+  let path = place + theme + type;
+  let script = document.createElement(`script`);
+  script.type = `text/javascript`;
+  script.src = path;
+  document.getElementsByTagName(`head`)[0].appendChild(script);
+  if (set === theme)
+    script.onload = (function () {
+      let startup = setInterval(function () {
+        setTimeout(function () {
+          if (typeof eval(theme) === `function`) {
+            window[set]();
+            clearInterval(startup);
           }
-          for (i = 0; i <= themes.length - 1; i++) {
-            (function (i) {
-              document.addEventListener(
-                `click`,
-                function (event) {
-                  if (event.target.classList.contains(theme)) {
-                    initial = theme;
-                    window[themes[i].name]();
-                  }
-                },
-                false
-              );
-            })(i);
-          }
+        }, 5);
+      }, 10);
+    })();
+}
+for (i = 0; i <= themes.length - 1; i++) {
+  (function (i) {
+    document.addEventListener(
+      `click`,
+      function (event) {
+        if (event.target.classList.contains(theme)) {
+          initial = theme;
+          window[themes[i].name]();
         }
-      }, 5);
-    }, 10);
-  })();
+      },
+      false
+    );
+  })(i);
 }
 
 let source = document.createElement("link");
@@ -207,6 +193,5 @@ source.rel = "stylesheet";
 source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
 document.styleSheet = source;
 document.getElementsByTagName("head")[0].appendChild(source);
-
 </script>
 </html>
