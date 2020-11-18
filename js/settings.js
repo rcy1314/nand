@@ -169,13 +169,13 @@ let expandBackground = false;
 let showRipple = true;
 
 /*
-    showRipple [boolean/integer]
+    showDescription [boolean/integer]
 
       Applications
-        sideBar, populate
+        content status, list
 
       Result
-        ripple coloring effect.
+        toggle descriptions.
 
 */
 
@@ -208,7 +208,7 @@ let quickFeeds = true;
 let quickFeedsTranslations = true;
 
 /*
-    scrollIntoView [string]
+    scrollIntoView [boolean/integer]
 
       Applications
         xml, group
@@ -221,7 +221,7 @@ let quickFeedsTranslations = true;
 let scrollIntoView = false;
 
 /*
-    fadeIntoView [string]
+    fadeIntoView [boolean/integer]
 
       Applications
         xml, progressBackdrop
@@ -234,10 +234,10 @@ let scrollIntoView = false;
 let fadeIntoView = false;
 
 /*
-    loading [boolean/integer]
+    loading [string]
 
       Applications
-        progressBackdrop
+        coreHelpers.js, progressBackdrop
 
       Result
         group, xml paddingTop scrolls intoView
@@ -294,14 +294,14 @@ let onlyImages = false;
         xmlRequestParsing
 
       Result
-        omit Guide sticky from xml listing
+        omit post from xml listing
 
 */
 
 let omitGuide = false;
 
 /*
-    suggestiongBuffer [integer]
+    suggestionBuffer [integer]
 
       Applications
         inputFilterIndex
@@ -324,7 +324,7 @@ let suggestionBuffer = 7;
 
 */
 
-let contentStatusBuffer = 5;
+let contentStatusBuffer = 7;
 
 /*
     safeSearch [integer]
@@ -346,7 +346,7 @@ let safeSearch = true;
         xmlImageAttributes
 
       Result
-        less than string filtered
+        greater than string filtered
 
 */
 
@@ -382,7 +382,7 @@ let safeSearchIDs = [
         sidebar, xmlRequestParsing
 
       Result
-        titles excluded
+        filter titles excluded
 
 */
 
@@ -415,7 +415,7 @@ const cors = `https://acktic-github-io.herokuapp.com/`;
         xmlImageAttributes
 
       Result
-        filter nsfw feeds
+        filter nsfw feeds with score
 
 */
 
