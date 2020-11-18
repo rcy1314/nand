@@ -18,7 +18,7 @@ var displayDescription = function (toggleOption) {
         .forEach((a) => a.style.visibility = `hidden`);
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
+        .forEach((a) => a.classList.remove(`description`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`basic`));
@@ -30,7 +30,7 @@ var displayDescription = function (toggleOption) {
         .forEach((a) => a.classList.remove(`basic`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
+        .forEach((a) => a.classList.add(`description`));
       _main
         .querySelectorAll(`.populate .des`)
         .forEach((a) => a.style.visibility = `visible`);
@@ -49,9 +49,11 @@ var displayExpand = function (toggleOption) {
       _main
         .querySelectorAll(`.media`)
         .forEach((a) => (a.style.display = `block`));
-      _main
-        .querySelectorAll(`.des`)
-        .forEach((a) => (a.style.display = `block`));
+      if (_main.clientWidth > 768){
+        _main
+          .querySelectorAll(`.des`)
+          .forEach((a) => (a.style.display = `block`));
+      }
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`description`));

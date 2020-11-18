@@ -63,10 +63,6 @@ setTimeout(function() {
       post = parseInt(uri.slice(2), 36);
       let i = menu.findIndex((item) => item.hash === id);
 
-      if (!i === -1) {
-        _toggle.style.display = `block`;
-        _visit.style.display = `flex`;
-      } else {
         guideOnScreen = onScreen;
         onScreen = false;
         sideBarDisplay(onScreen);
@@ -78,7 +74,6 @@ setTimeout(function() {
         setTimeout(function () {
           filterInputResponse(true, false, menu[i].id.space(), false);
         }, 250);
-      }
     }
   }
   else if (location.search.split(`?q=`)[1]) {
@@ -99,5 +94,9 @@ setTimeout(function() {
 
   if (!isNumeric(post) && _main.clientWidth > 768) sideBarDisplay(onScreen)
   else if (isNumeric(post)) _check.style.visibility = `visible`
+  else if (_main.clientWidth < 768) {
+    groupType = `blocks`
+    expand = false
+  }
 
 }, 5)
