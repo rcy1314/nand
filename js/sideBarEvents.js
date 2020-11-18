@@ -76,15 +76,11 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`resetBackground`)) {
       if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path == "string" &&
         backgroundImage[0].element == `container`
       ) {
         _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
         _main.style.backgroundImage = `url()`;
       } else if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path == "string" &&
         backgroundImage[0].element == `main`
       ) {
         _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
@@ -107,7 +103,6 @@ document.addEventListener(
         // here we tell the reader what to do when it`s done reading...
         reader.onload = (readerEvent) => {
           var content = readerEvent.target.result; // this is the content!
-          if (Array.isArray(backgroundImage)) backgroundImage[0].path = content;
           if (
             Array.isArray(backgroundImage) &&
             typeof backgroundImage[0].path == "string" &&
