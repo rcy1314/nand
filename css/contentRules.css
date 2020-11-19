@@ -807,7 +807,6 @@ html body,
 #main #group .result .populate .display,
 #main #xml .content .status .filter .ext {
   position: relative;
-  width: 100%;
   margin: 10px;
 }
 
