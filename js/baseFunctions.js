@@ -197,13 +197,12 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    _hide.style.left = `240px`;
     _sidebar.style.display = `block`;
     _content.style.display = `block`;
     _sidebar.style.left = `0px`;
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100% + 240px)`
-    if (_main.clientWidth >= 769) {
+    if (_main.clientWidth > 769) {
       setTimeout(function () {
         _top.style.width = `calc(100% - 256px)`;
         _main.style.width = `calc(100% - 240px)`;
@@ -215,6 +214,7 @@ var sideBarDisplay = function (toggleOption) {
       document.querySelector(`.sideFilter`).style.display = `block`;
       document.querySelector(`#basic`).style.display = `block`;
       _progress.style.left = `240px`;
+      _hide.style.left = `240px`;
     }, 300);
   }
   if (toggleOption == false) {
