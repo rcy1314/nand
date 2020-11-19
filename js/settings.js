@@ -205,7 +205,7 @@ let quickFeeds = true;
 
 */
 
-let quickFeedsTranslations = false;
+let quickFeedsTranslations = true;
 
 /*
     scrollIntoView [boolean/integer]

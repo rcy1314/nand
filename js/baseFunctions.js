@@ -380,7 +380,6 @@ var progressBackDrop = function (done, percent) {
         document.querySelector(
           `#xml`
         ).style.paddingTop = document.querySelector(`#xml`).clientHeight;
-        setTimeout(function () {
           let Elem = document.querySelector(`#xml`);
           Elem.animate(
             {
@@ -396,7 +395,6 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-        }, 500);
         if (fadeIntoView == true) {
           (function() {
             var elements;
@@ -441,7 +439,7 @@ var progressBackDrop = function (done, percent) {
             setTimeout(function () {
               document.querySelector(`#xml`).style.paddingTop = `0`;
               init();
-            }, 1000);
+            }, 500);
           })();
         }
       }
@@ -452,7 +450,6 @@ var progressBackDrop = function (done, percent) {
         document.querySelector(
           `#group`
         ).style.paddingTop = document.querySelector(`#group`).clientHeight;
-        setTimeout(function () {
           let Elem = document.querySelector(`#group`);
           Elem.animate(
             {
@@ -468,11 +465,10 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
-        }, 750);
         setTimeout(function () {
           document.querySelector(`#group`).style.paddingTop = `57px`;
           _check.style.visibility = `hidden`;
-        }, 1500);
+        }, 750);
       }
     }
     if (onlyImages == false) {

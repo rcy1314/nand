@@ -48,6 +48,8 @@ window.addEventListener(
   `resize`,
   function (event) {
     if (_main.clientWidth <= 768) {
+      if (backgroundImage.element = `container` && _main.clientWidth < 768)
+        _container.style.width = `calc(100%)`
       guideOnScreen = onScreen
       sideBarDisplay(false);
     } else if (_main.clientWidth > 768){

@@ -32,7 +32,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-hover-color`,
-    `rgba(7,7,7,.8)`
+    `rgba(7,7,7,.6)`
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
