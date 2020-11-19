@@ -244,7 +244,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `percent`;
+let loading = `dots`;
 
 /*
     titleTruncate [integer]
@@ -451,7 +451,7 @@ let Percent
 let Blocks
 let List
 
-if (loading == `Percent`){
+if (loading == `percent`){
   Dots = false
   Percent = true
 } else {

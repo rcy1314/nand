@@ -371,6 +371,7 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transitionDelay = `none`;
     _progress.style.width = `${percent}%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
+      document.querySelector(`#xml`).style.paddingTop = `60`;
       document.querySelector(`#xml`).style.display = `block`;
       if (scrollIntoView == true && reader == false) {
         document.querySelector(
@@ -381,18 +382,18 @@ var progressBackDrop = function (done, percent) {
             {
               paddingTop: [
                 `${document.querySelector(`#xml`).clientHeight}px`,
-                `0`,
+                `60`,
               ],
             },
             {
               duration: 500, // number in ms [this would be equiv of your speed].
               easing: `ease-in-out`,
               iterations: 1, // infinity or a number.
+              complete: document.querySelector(`#xml`).style.paddingTop = `60`
               // fill: ''
             }
           );
-      }
-        if (fadeIntoView == true) {
+      } else if (fadeIntoView == true) {
           (function() {
             var elements;
             var windowHeight;
@@ -436,9 +437,6 @@ var progressBackDrop = function (done, percent) {
             checkPosition()
           })();
         }
-      setTimeout(function () {
-        document.querySelector(`#xml`).style.paddingTop = `0`;
-      }, 500);
     }
     if (document.body.contains(document.getElementById(`group`))) {
       document.querySelector(`#group`).style.display = `block`;

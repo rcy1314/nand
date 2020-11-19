@@ -14,7 +14,7 @@ var Alpenglow = function () {
   document.documentElement.style.setProperty(`--fill-color-primary`, `#eeeeee`);
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
-    `rgba(253, 115, 136, 1)`
+    `#eeeeee`
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,

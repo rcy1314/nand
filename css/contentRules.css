@@ -89,6 +89,10 @@ html body,
   top: 0;
 }
 
+#main #dots .fill {
+  background-color: var(--hover-background-color) !important;
+}
+
 #container #toggle {
   color: var(--fill-color-primary);
   background-color: transparent;

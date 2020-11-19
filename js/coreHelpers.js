@@ -15,7 +15,9 @@ var init = function () {
       document.querySelector(`#group`).remove();
   }
   if (loading == `dots`) {
-    _dots.style.zIndex = `11`;
+    document
+      .querySelectorAll(`#dots .fill`)
+      .forEach((a) => a.style.zIndex = `11`);
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.classList.add(`dots`));
@@ -23,7 +25,9 @@ var init = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (loading == `percent`) {
-    _dots.style.zIndex = `-1`;
+    document
+      .querySelectorAll(`#dots .fill`)
+      .forEach((a) => a.style.zIndex = `-1`);
     let width = _main.clientWidth / 75;
     setTimeout(function() { //thanks init.js
       complete = setInterval(function () {
