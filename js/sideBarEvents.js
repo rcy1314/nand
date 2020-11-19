@@ -32,7 +32,8 @@ document.addEventListener(
       event.target.classList.contains(`cat`) ||
       event.target.classList.contains(`sel`)
     ) {
-      event.target.style.borderImage = `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
+      event.target.style.borderImage =
+        `linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%)`;
     }
   },
   false
@@ -200,19 +201,18 @@ document.addEventListener(
       _container.style.backgroundImage = `none`;
       _main.style.backgroundImage = `none`;
     }
-    if (event.target.id == `hide`) {
-      if (sideBarFirst == true) {
-        let sideBarFirst = false;
+    if (
+      event.target.id == `hide`
+    ) {
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
-      }
-      if (sideBarFirst == false) {
-        let sideBarFirst = true;
-        sideBarDisplay(onScreen);
-      }
     }
     if (event.target.classList.contains(`cat`)) {
       id = 0
+      if (_main.clientWidth <= 425){
+        onScreen = onScreen != true
+        sideBarDisplay(onScreen);
+      }
       if (showRipple == true){
         const button = event.target.getBoundingClientRect();
         const circle = document.createElement(`span`);
@@ -333,7 +333,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-plus`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-plus`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
-        populateCategoryGroup(category)
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
@@ -342,7 +341,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-plus`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-plus`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
-      populateCategoryGroup(category)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
@@ -367,7 +365,7 @@ document.addEventListener(
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
-      if (reader == false) populateCategoryGroup(category);
+      if (reader == false && onScreen == false) populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       unloading();
@@ -501,12 +499,16 @@ document.addEventListener(
       var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
       xmlRequestParsing(null, null, randomMenuObject);
     }
-    if (event.target.classList.contains(`fa-sun`)) {
-      var iteration = themes.findIndex((item) => item.name === set);
+    if (
+      event.target.classList.contains(`fa-sun`) ||
+      event.target.id == `toggle`
+    ) {
+      var iteration = themes.findIndex((item) => item.obFn === set);
       if (iteration == themes.length - 1) iteration = -1;
       iteration = iteration + 1;
-      set = themes[iteration].name;
-      window[themes[iteration].name]();
+      set = themes[iteration].obFn;
+      console.log(set);
+      window[set]();
     }
     event.preventDefault();
   },

@@ -23,7 +23,7 @@ var Gruvbox = function () {
   document.documentElement.style.setProperty(`--bg-color-secondary`, `#262626`);
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(169, 121, 62, .3)`
+    `rgba(169, 121, 62, .2)`
   );
   document.documentElement.style.setProperty(
     `--not-hover-border-color`,

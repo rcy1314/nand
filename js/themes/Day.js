@@ -14,7 +14,7 @@ var Day = function () {
   document.documentElement.style.setProperty(`--fill-color-primary`, `#555555`);
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
-    `rgb(212,212,212,.9)`
+    `rgb(145,145,145,.9)`
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,

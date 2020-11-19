@@ -1,8 +1,8 @@
 function handleSwipe() {
-    if (touchendX > touchstartX) {
+    if (touchendX - 50 > touchstartX) {
       onScreen = true
       sideBarDisplay(onScreen)
-    } else if (touchendX < touchstartX) {
+    } else if (touchendX + 50 < touchstartX) {
       onScreen = false
       sideBarDisplay(onScreen)
     }
@@ -63,6 +63,9 @@ var displayExpand = function (toggleOption) {
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.flexWrap = `nowrap`));
+      _main
+        .querySelectorAll(`.select`)
+        .forEach((a) => (a.style.textAlign = `left`));
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.display = `flex`));
@@ -207,9 +210,6 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    _sidebar.style.display = `block`;
-    _content.style.display = `block`;
-    _sidebar.style.left = `0px`;
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100% + 240px)`
     if (_main.clientWidth > 769) {
@@ -218,13 +218,14 @@ var sideBarDisplay = function (toggleOption) {
         _main.style.width = `calc(100% - 240px)`;
         _main.style.left = `240px`;
         _sidebar.style.left = `0`;
-      }, 200);
-    }
+      }, 300);
+    } else
     setTimeout(function () {
       document.querySelector(`.sideFilter`).style.display = `block`;
       document.querySelector(`#basic`).style.display = `block`;
       _progress.style.left = `240px`;
       _hide.style.left = `240px`;
+      _sidebar.style.left = `0`;
     }, 300);
   } else if (toggleOption == false) {
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
@@ -382,7 +383,7 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transitionDelay = `none`;
     _progress.style.width = `${percent}%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
-      document.querySelector(`#xml`).style.paddingTop = `60`;
+      document.querySelector(`#xml`).style.paddingTop = `0`;
       document.querySelector(`#xml`).style.display = `block`;
       if (scrollIntoView == true && reader == false) {
         document.querySelector(
@@ -400,7 +401,7 @@ var progressBackDrop = function (done, percent) {
               duration: 500, // number in ms [this would be equiv of your speed].
               easing: `ease-in-out`,
               iterations: 1, // infinity or a number.
-              complete: document.querySelector(`#xml`).style.paddingTop = `60`
+              complete: document.querySelector(`#xml`).style.paddingTop = `0`
               // fill: ''
             }
           );
@@ -493,6 +494,8 @@ var progressBackDrop = function (done, percent) {
             xmlRequestParsing(null, null, anyRandomMenuObject());
           }
       }
+    if (!document.body.contains(document.querySelector(`.group`)))
+      _main.scrollTop = 0
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;

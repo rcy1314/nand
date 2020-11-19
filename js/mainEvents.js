@@ -44,20 +44,6 @@ window.addEventListener('touchend', function(event) {
     handleSwipe();
 }, { passive: true} );
 
-window.addEventListener(
-  `resize`,
-  function (event) {
-    if (_main.clientWidth <= 768) {
-      if (backgroundImage.element = `container` && _main.clientWidth < 768)
-        _container.style.width = `calc(100%)`
-      guideOnScreen = onScreen
-      sideBarDisplay(false);
-    } else if (_main.clientWidth > 768){
-      sideBarDisplay(guideOnScreen);
-    }
-  },
-  true
-);
 document.addEventListener(
   `scroll`,
   function (event) {
@@ -117,27 +103,9 @@ document.addEventListener(
       unloading();
     }
     if (
-      event.target.classList.contains(`construct`) ||
-      event.target.classList.contains(`picture`) ||
-      event.target.classList.contains(`header`) ||
-      event.target.classList.contains(`result`) ||
-      event.target.classList.contains(`post`) ||
-      event.target.classList.contains(`site`) ||
-      event.target.classList.contains(`cat`) ||
-      event.target.classList.contains(`air`) ||
-      event.target.classList.contains(`sel`) ||
-      event.target.id == `container` ||
-      event.target.id == `search` ||
-      event.target.id == `option` ||
-      event.target.id == `visit` ||
-      event.target.id == `group` ||
-      event.target.id == `main` ||
-      event.target.id == `hide` ||
-      event.target.id == `page` ||
-      event.target.id == `xml` ||
-      event.target.id == `top` ||
-      event.target.id == `arm` ||
-      event.target.classList.contains(`fa`)
+      event.target.classList.contains(`attribute`) ||
+      event.target.id != _match ||
+      event.target.id != _first
     ) {
       if (
         !document

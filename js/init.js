@@ -98,6 +98,8 @@ setTimeout(function() {
     groupType = `blocks`;
     onScreen = false;
     expand = false;
+    Blocks = true;
+    List = false;
   }
 
 }, 10)
