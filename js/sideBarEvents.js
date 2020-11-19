@@ -71,6 +71,9 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
+    if (event.target.classList.contains(`excludeInput`)) {
+      event.target.value = ``
+    }
     if (event.target.classList.contains(`urlInput`)) {
       event.target.select()
     }
