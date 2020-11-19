@@ -180,9 +180,16 @@ var sideBarDisplay = function (toggleOption) {
         width: [`0px`, `240px`],
       },
       {
-        duration: 150, // number in ms [this would be equiv of your speed].
+        duration: 300, // number in ms [this would be equiv of your speed].
         easing: `linear`,
         iterations: 1, // infinity or a number.
+        complete: function() {
+          if (_main.clientWidth > 769) {
+            _top.style.width = `calc(100% - 256px)`;
+            _main.style.width = `calc(100% - 240px)`;
+            _main.style.left = `240px`;
+          }
+        }
         // fill: ''
       }
     );
@@ -194,6 +201,9 @@ var sideBarDisplay = function (toggleOption) {
         duration: 300, // number in ms [this would be equiv of your speed].
         easing: `linear`,
         iterations: 1, // infinity or a number.
+        complete: function() {
+          _hide.style.left = `240px`
+        }
         // fill: ''
       }
     );
@@ -216,8 +226,9 @@ var sideBarDisplay = function (toggleOption) {
       _progress.style.left = `240px`;
       _hide.style.left = `240px`;
     }, 300);
-  }
   if (toggleOption == false) {
+    if (backgroundImage.element = `container` && _main.clientWidth > 768)
+      _container.style.width = `calc(100%)`
     document.querySelector(`.sideFilter`).style.display = `none`;
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;
