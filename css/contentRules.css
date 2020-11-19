@@ -622,7 +622,7 @@ html body,
 #main #visit #page #front .focus input[type=text] {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
-  height: 39.5px !important;
+  height: 40px !important;
   border: none !important;
   display: inline-block;
   caret-color: #e4e4e4;
@@ -632,7 +632,6 @@ html body,
   font-size: 14px;
   outline: none;
   bottom: 15px;
-  top: -13.5px;
   width: 100%;
   margin: 0;
 }
