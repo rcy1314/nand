@@ -273,6 +273,7 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Reader`)) {
       _visit.style.display = `none`;
+      reader = reader != true;
       if (reader == true) {
         let reader = false;
         let first = true;
