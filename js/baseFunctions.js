@@ -180,9 +180,16 @@ var sideBarDisplay = function (toggleOption) {
         width: [`0px`, `240px`],
       },
       {
-        duration: 150, // number in ms [this would be equiv of your speed].
+        duration: 300, // number in ms [this would be equiv of your speed].
         easing: `linear`,
         iterations: 1, // infinity or a number.
+        complete: function() {
+          if (_main.clientWidth > 769) {
+            _top.style.width = `calc(100% - 256px)`;
+            _main.style.width = `calc(100% - 240px)`;
+            _main.style.left = `240px`;
+          }
+        }
         // fill: ''
       }
     );
@@ -194,30 +201,24 @@ var sideBarDisplay = function (toggleOption) {
         duration: 300, // number in ms [this would be equiv of your speed].
         easing: `linear`,
         iterations: 1, // infinity or a number.
+        complete: function() {
+          _hide.style.left = `240px`
+        }
         // fill: ''
       }
     );
-    _hide.style.left = `240px`;
-    _sidebar.style.display = `block`;
-    _content.style.display = `block`;
-    _sidebar.style.left = `0px`;
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100% + 240px)`
-    if (_main.clientWidth >= 769) {
-      setTimeout(function () {
-        _top.style.width = `calc(100% - 256px)`;
-        _main.style.width = `calc(100% - 240px)`;
-        _main.style.left = `240px`;
-        _sidebar.style.left = `0`;
-      }, 200);
+      _sidebar.style.left = `0`;
     }
     setTimeout(function () {
       document.querySelector(`.sideFilter`).style.display = `block`;
       document.querySelector(`#basic`).style.display = `block`;
       _progress.style.left = `240px`;
     }, 300);
-  }
   if (toggleOption == false) {
+    if (backgroundImage.element = `container` && _main.clientWidth > 768)
+      _container.style.width = `calc(100%)`
     document.querySelector(`.sideFilter`).style.display = `none`;
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;
