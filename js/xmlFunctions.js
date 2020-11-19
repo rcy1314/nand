@@ -778,7 +778,7 @@ var xmlRequestParsing = function (search, string, index) {
           images.push({ element: pub[i].element, src: pub[i].src });
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-          for (i = images.length - 1; i >= 0; i--) {
+          for (i = 0; i <= images.length - 1; i++) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
             else if (!menu[index].id.match(/Youtube/g))

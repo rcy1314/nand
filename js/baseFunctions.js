@@ -391,21 +391,22 @@ var progressBackDrop = function (done, percent) {
               // fill: ''
             }
           );
+      }
         if (fadeIntoView == true) {
           (function() {
             var elements;
             var windowHeight;
 
             function init() {
-              elements = document.querySelectorAll('.image');
+              elements = document.querySelectorAll(`.img`);
               windowHeight = _main.clientHeight;
               for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
                 var positionFromTop = elements[i].getBoundingClientRect().top;
 
                 if (positionFromTop - windowHeight <= 0) {
-                  element.querySelector(`.img`).classList.add('fade-in-element');
-                  element.querySelector(`.img`).classList.remove('hidden');
+                  element.classList.add(`fade-in-element`);
+                  element.classList.remove(`hidden`);
                 }
               }
             }
@@ -416,30 +417,28 @@ var progressBackDrop = function (done, percent) {
                 var positionFromTop = elements[i].getBoundingClientRect().top;
 
                 if (positionFromTop - windowHeight <= 0) {
-                  if (fadeIntoView == true)
-                    element.querySelector(`.img`).classList.add('fade-in-element');
-                  if (fadeIntoView == false) {
-                    document
-                      .querySelectorAll(`.img`)
-                      .forEach((a) => (a.classList.remove(`hidden`)));
-                    _main.removeEventListener("scroll", checkPosition);
-                    _main.removeEventListener("resize", init);
-                  }
+                    element.classList.add(`fade-in-element`);
+                    element.classList.remove(`hidden`);
+                }
+                if (fadeIntoView == false) {
+                  document
+                    .querySelectorAll(`.img`)
+                    .forEach((a) => (a.classList.remove(`hidden`)));
+                  _main.removeEventListener(`scroll`, checkPosition);
+                  _main.removeEventListener(`resize`, init);
                 }
               }
             }
 
-            _main.addEventListener('scroll', checkPosition);
-            _main.addEventListener('resize', init);
-
-            init();
-            checkPosition();
+            _main.addEventListener(`scroll`, checkPosition);
+            _main.addEventListener(`resize`, init);
+            init()
+            checkPosition()
           })();
         }
-        setTimeout(function () {
-          document.querySelector(`#xml`).style.paddingTop = `0`;
-        }, 500);
-      }
+      setTimeout(function () {
+        document.querySelector(`#xml`).style.paddingTop = `0`;
+      }, 500);
     }
     if (document.body.contains(document.getElementById(`group`))) {
       document.querySelector(`#group`).style.display = `block`;
