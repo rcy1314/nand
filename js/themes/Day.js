@@ -43,9 +43,9 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,
-    `hue-rotate(0deg)`
+    `hue-rotate(110deg)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    `url(images/b453ae624e3d5e58b9890a998ec441b8.png)`
+    `url(images/b453ae624e3d5e58b9890a998ec441b8.webp)`
 };

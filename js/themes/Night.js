@@ -40,11 +40,11 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--hue-rotate`,
-    `saturate(1)`
+    `saturate(.5)`
   );
   document
     .querySelector(`#favicon`)
     .setAttribute(`href`, `images/Opposite.ico`);
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    `url(images/e54430a6cf0248fa8d1d5961e02a71e4.png)`
+    `url(images/e54430a6cf0248fa8d1d5961e02a71e4.webp)`
 };

@@ -20,6 +20,8 @@
 
 ### Configurations in js/settings.js
 
+* backgroundImage path is being overwritten in themes files.
+
 ### Day
 
 <p align='center'><img src='http://acktic.github.io/screenshots/Day.jpg'></p>

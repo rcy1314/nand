@@ -1,5 +1,5 @@
 // initial theme
-
+// backgroundImage path is being overwritten in themes files
 let set = `Alpenglow`;
 
 /*
