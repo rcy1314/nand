@@ -432,8 +432,9 @@ var progressBackDrop = function (done, percent) {
             _main.addEventListener('scroll', checkPosition);
             _main.addEventListener('resize', init);
 
+            init();
+            checkPosition();
           })();
-          init()
         }
         setTimeout(function () {
           document.querySelector(`#xml`).style.paddingTop = `0`;

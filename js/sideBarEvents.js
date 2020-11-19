@@ -391,9 +391,11 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       if (fadeIntoView == false) {
+        document
+          .querySelectorAll(`.img`)
+          .forEach((a) => (a.classList.add(`hidden`)));
       } else if (fadeIntoView == true) {
         if (document.body.contains(document.querySelector(`#xml`))) {
-
           document
             .querySelectorAll(`.img`)
             .forEach((a) => (a.classList.remove(`fade-in-element`)));
