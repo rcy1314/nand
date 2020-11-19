@@ -805,6 +805,7 @@ html body,
 #main #xml .content .status .filter .ext {
   position: relative;
   width: 100%;
+  margin: 10px;
 }
 
 #main #group .air .populate .display img,
