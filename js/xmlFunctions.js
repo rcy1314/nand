@@ -559,11 +559,22 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             safeSearch == false ||
             !safeSearchIDs.includes(menu[id].id)
           ) {
-              document
-                .querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                )
-                .remove();
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+              )
+              .remove();
+          if (
+            document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              )
+            )
+          )
+          document
+            .querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+            ).style.display = `block`
           }
         }
       };

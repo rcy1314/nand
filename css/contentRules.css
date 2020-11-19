@@ -1190,7 +1190,7 @@ input[type=submit] {
 }
 
 #main #xml .center .item .img {
-  display: block;
+  display: none;
 }
 
 
