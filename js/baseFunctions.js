@@ -398,15 +398,15 @@ var progressBackDrop = function (done, percent) {
             var windowHeight;
 
             function init() {
-              elements = document.querySelectorAll(`.img`);
+              elements = document.querySelectorAll(`.image`);
               windowHeight = _main.clientHeight;
               for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
                 var positionFromTop = elements[i].getBoundingClientRect().top;
 
                 if (positionFromTop - windowHeight <= 0) {
-                  element.classList.add(`fade-in-element`);
-                  element.classList.remove(`hidden`);
+                  element.querySelector(`.img`).classList.add(`fade-in-element`);
+                  element.querySelector(`.img`).classList.remove(`hidden`);
                 }
               }
             }
@@ -417,8 +417,8 @@ var progressBackDrop = function (done, percent) {
                 var positionFromTop = elements[i].getBoundingClientRect().top;
 
                 if (positionFromTop - windowHeight <= 0) {
-                    element.classList.add(`fade-in-element`);
-                    element.classList.remove(`hidden`);
+                    element.querySelector(`.img`).classList.add(`fade-in-element`);
+                    element.querySelector(`.img`).classList.remove(`hidden`);
                 }
                 if (fadeIntoView == false) {
                   document
