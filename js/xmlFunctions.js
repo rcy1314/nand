@@ -626,9 +626,9 @@ var xmlRequestParsing = function (search, string, index) {
         if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
         else var channel = `item`;
 
-        var quit = 20;
+        var quit = 30;
 
-        if (menu[index].id.match(/Imgur/g)) quit = 60;
+        if (menu[index].id.match(/Imgur/g)) quit = 80;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
@@ -782,7 +782,7 @@ var xmlRequestParsing = function (search, string, index) {
             else if (!menu[index].id.match(/Youtube/g))
               xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
-        } else {
+        } else if (!safeSearchIDs.includes(menu[id].id)){
           for (i = 0; i <= images.length - 1; i++) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
