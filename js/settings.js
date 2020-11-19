@@ -244,7 +244,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `dots`;
+let loading = `percent`;
 
 /*
     titleTruncate [integer]
@@ -507,9 +507,9 @@ const settings = [
 
 const background = [
   { name: `Fit`, class: `fitBackground`, icon: `fa-crop-alt` },
-  { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
   { name: `Set`, class: `setBackground`, icon: `fa-user` },
   { name: `Save`, class: `saveBackground`, icon: `fa-download` },
+  { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
   { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
   { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },

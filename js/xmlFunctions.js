@@ -399,7 +399,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             .then((response) => {
               response.json().then((jsonResponse) => {
                 jsonResponseScore = jsonResponse.score;
-                console.log(src + ` ` + jsonResponse.score);
+                console.log(`${pubIndex} ${jsonResponse.score}`);
                 if (jsonResponse.score >= safeSearchScore) {
                   if (
                     document.body.contains(
@@ -556,6 +556,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
               )
             ) &&
+            document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              )
+            ) &&
             safeSearch == false ||
             !safeSearchIDs.includes(menu[id].id)
           ) {
@@ -564,17 +569,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
               )
               .remove();
-          if (
-            document.body.contains(
-              document.querySelector(
+            document
+              .querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              )
-            )
-          )
-          document
-            .querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-            ).style.display = `block`
+              ).style.display = `block`
           }
         }
       };
