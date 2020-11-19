@@ -432,12 +432,12 @@ var progressBackDrop = function (done, percent) {
             _main.addEventListener('scroll', checkPosition);
             _main.addEventListener('resize', init);
 
-            setTimeout(function () {
-              document.querySelector(`#xml`).style.paddingTop = `0`;
-              init();
-            }, 500);
           })();
+          init()
         }
+        setTimeout(function () {
+          document.querySelector(`#xml`).style.paddingTop = `0`;
+        }, 500);
       }
     }
     if (document.body.contains(document.getElementById(`group`))) {
