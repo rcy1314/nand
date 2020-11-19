@@ -160,6 +160,7 @@ html body,
 }
 
 #container #sidebar #content #url {
+  margin-bottom: 5px;
   margin-left: 5px;
   margin-top: 5px;
   width: 100%;
