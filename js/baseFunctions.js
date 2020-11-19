@@ -226,7 +226,7 @@ var sideBarDisplay = function (toggleOption) {
       _progress.style.left = `240px`;
       _hide.style.left = `240px`;
     }, 300);
-  if (toggleOption == false) {
+  } else if (toggleOption == false) {
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100%)`
     document.querySelector(`.sideFilter`).style.display = `none`;

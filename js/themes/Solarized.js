@@ -1,7 +1,7 @@
 var Solarized = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(63, 92, 136, .4)`
+    `none`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
@@ -11,7 +11,10 @@ var Solarized = function () {
     `--loader-color-secondary`,
     `rgba(63, 92, 136, .7)`
   );
-  document.documentElement.style.setProperty(`--fill-color-primary`, `#eeeeee`);
+  document.documentElement.style.setProperty(
+    `--fill-color-primary`,
+    `rgba(169, 121, 62, 1)`
+  );
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
     `rgba(63, 92, 136, 1)`
