@@ -220,10 +220,6 @@
 	  display: none;
   }
 
-  #main #visit #page {
-    top: 45px;
-  }
-
   #main #visit #page #quick {
   	width: 720px;
 	  left: 0;
