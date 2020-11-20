@@ -2,7 +2,7 @@
 #curl -q -s "https://acktic.github.io/js/xmlAssets.js" | grep uri | awk '{print $2}' | tr -d ',' | tr -d '"' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Minified
-curl -q -s https://acktic.github.io/js/xmlAssets.js | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
+curl -q -s "https://acktic.github.io/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 
 #{id:`Imgur/Wallpaper`,category:`Social`,description:`Wallpaper subreddit from Imgur.`,uri:`https://api.imgur.com/3/gallery/r/wallpaper/time/day/gallery.xml?client_id=878d3d810ca28e6&client_secret=afb609f8ab83cd636aec713b6afca02c1a205c96`,ext:`https://imgur.com/r/wallpaper`,image:`Imgur`,hash:`Iw`,media:true},
