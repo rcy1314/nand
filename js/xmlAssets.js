@@ -20,7 +20,8 @@
        [indexed] filtered by response in base.js
 
 */
-var menu=[{id:"Bing",category:"Search Results",description:"Bing Search Results.",uri:"https://www.bing.com/search?q=",image:"Bing",hash:"mB",media:!1},
+var menu=[
+{id:"Bing",category:"Search Results",description:"Bing Search Results.",uri:"https://www.bing.com/search?q=",image:"Bing",hash:"mB",media:!1},
 {id:"CBS/Washington D.C.",category:"News",description:"WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.",uri:"http://rssfeeds.wusa9.com/wusa-news&x=1",image:"WUSA9",hash:"wa",media:!1},
 {id:"ABC/Fresno",category:"News",description:"KFSN Local Fresno and National News.",uri:"https://abc30.com/feed",image:"KFSNTV30",hash:"fA",media:!0},
 {id:"NBC/Fresno",category:"News",description:"KSEE YourCentralValley in Fresno, California.",uri:"https://yourcentralvalley.com/feed",image:"KSEE24",hash:"oF",media:!0},
@@ -512,4 +513,5 @@ var menu=[{id:"Bing",category:"Search Results",description:"Bing Search Results.
 {id:"Youtube/USA Today",category:"Youtube",description:"USA Today Youtube Investigative Journalism, National and Local Headlines.",uri:"https://www.youtube.com/feeds/videos.xml?user=usatoday",image:"USAToday",hash:"sY",media:!0},
 {id:"Youtube/Vice News",category:"Youtube",description:"Vice News Youtube is the breaking, break-through news you need.",uri:"https://www.youtube.com/feeds/videos.xml?user=vicenews",image:"ViceNews",hash:"nV",media:!0},
 {id:"Youtube/Wall Street Journal",category:"Youtube",description:"Wall Street Journal Youtube digs deeper into what matters to you.",uri:"https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork",image:"WSJ",hash:"jO",media:!0},
-{id:"Youtube/WIRED",category:"Youtube",description:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",image:"WIRED",hash:"dI",media:!0}];
+{id:"Youtube/WIRED",category:"Youtube",description:"WIRED Youtube explores the future of business, innovation, and culture.",uri:"https://www.youtube.com/feeds/videos.xml?user=wired",image:"WIRED",hash:"dI",media:!0}
+];
