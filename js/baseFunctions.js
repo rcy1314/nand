@@ -231,7 +231,8 @@ var sideBarDisplay = function (toggleOption) {
   } else if (toggleOption == false) {
     if (backgroundImage.element = `container` && _main.clientWidth > 768)
       _container.style.width = `calc(100%)`
-    document.querySelector(`.sideFilter`).style.display = `none`;
+    document.querySelector(`.sideFilter`).style.display = `block`;
+    document.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;
     _main.style.width = `100%`;

@@ -293,7 +293,7 @@ document.addEventListener(
       _guide.style.display = `none`;
       sideBarFirst = true;
       onScreen = guideOnScreen;
-      if (post && _main.clientWidth >= 426) sideBarDisplay(onScreen);
+      if (post && _main.clientWidth >= 426) sideBarDisplay(guideOnScreen);
       else if (post) {
         onScreen = false
         _sidebar.querySelector(`#hide`).style.left = `240`;
