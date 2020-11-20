@@ -350,7 +350,7 @@ let safeSearch = true;
 
 */
 
-let safeSearchScore = `0.9323446750640870`;
+let safeSearchScore = `0.7616447806358337`;
 
 /*
     safeSearchCategory [array]

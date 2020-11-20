@@ -98,4 +98,4 @@ setTimeout(function() {
     List = false;
   }
 
-}, 25)
+}, 15)
