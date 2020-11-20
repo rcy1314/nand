@@ -129,7 +129,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
       if (eval(Arrays[i].class) == true){
         document.querySelector(`.` + Arrays[i].class)
           .parentNode.insertBefore(
-            sideBarThemeBuild(`fa-plus`),
+            sideBarThemeBuild(`fa-star`),
             document.querySelector(`.` + Arrays[i].class).nextSibling
           );
       } else {
@@ -147,25 +147,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
 var sideBarDisplay = function (toggleOption) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
-  if (!document.body.contains(document.querySelector(`.cat`))) {
-    for (i = 0; i <= translations.length - 1; i++) {
-      let cat = document.createElement(`div`);
-      cat.classList.add(`cat`, translations[i]);
-      cat.setAttribute(`aria-item`, translations[i]);
-      cat.innerHTML = translations[i];
-      content.append(cat);
-      content.append(sideBarCategoryBuild(translations[i]));
-    }
-    sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
-    appendSideBarLists(`.themes`, `theme`, themes)
-    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
-    appendSideBarLists(`.exclude`, `option`, exclude);
-    document.querySelector(`.exclude`).append(excludeFormBuild());
-    sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-    appendSideBarLists(`.set`, `settings`, settings)
-    sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
-    appendSideBarLists(`.bg`, `background`, background)
-    content.append(urlFormBuild());
+  if (!document.body.contains(document.querySelector(`.sel`))) {
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)
@@ -174,6 +156,16 @@ var sideBarDisplay = function (toggleOption) {
       fontawesome.classList.add(`fa`, selections[i].icon);
       content.append(fontawesome);
     }
+    sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
+    appendSideBarLists(`.themes`, `theme`, themes)
+    sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
+    appendSideBarLists(`.bg`, `background`, background)
+    document.querySelector(`.bg`).append(urlFormBuild());
+    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
+    appendSideBarLists(`.exclude`, `option`, exclude);
+    document.querySelector(`.exclude`).append(excludeFormBuild());
+    sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
+    appendSideBarLists(`.set`, `settings`, settings)
     content.append(basicFormBuild());
   }
   if (toggleOption == true) {

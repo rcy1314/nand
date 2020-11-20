@@ -175,7 +175,7 @@ document.addEventListener(
           parse.parentNode.insertBefore(option, parse);
         }
         document.querySelector(`.exclude`).style.height =
-          `${(exclude.length * 34.25) + 65}px`;
+          `${(exclude.length * 35) + 70}px`;
       }
     } else if (event.target.classList.contains(`url`)) {
       if (document.querySelector(`.imageURL`).value.length) {

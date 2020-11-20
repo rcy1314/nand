@@ -46,9 +46,9 @@ document.addEventListener(
       displayDescription(showDescription)
       if (showDescription == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (showDescription == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
@@ -56,9 +56,9 @@ document.addEventListener(
       scrollIntoView = scrollIntoView != true
       if (scrollIntoView == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (scrollIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
@@ -66,9 +66,9 @@ document.addEventListener(
       showRipple = showRipple != true
       if (showRipple == true){
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (showRipple == false){
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
     }
@@ -270,17 +270,21 @@ document.addEventListener(
       document.title = ``;
       unloading();
     }
-    if (event.target.classList.contains(`Reader`)) {
+    if (event.target.classList.contains(`reader`)) {
       id = 0;
       first = true;
       _visit.style.display = `none`;
       reader = reader != true;
       if (reader == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
         let reader = false;
         let first = true;
         let id = 0;
         xmlChannelFooter();
       } else if (reader == true) {
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -290,34 +294,34 @@ document.addEventListener(
       }
     }
     if (event.target.classList.contains(`parse`)) {
-      if (document.querySelector(`.exclude`).clientHeight != `50`) {
+      if (document.querySelector(`.exclude`).clientHeight != `35`) {
         document.querySelector(`.exclude`).style.height = `30px`;
       } else {
         if (exclude.length == 0)
           document.querySelector(`.exclude`).style.height = `75px`
         else
         document.querySelector(`.exclude`).style.height =
-          `${(exclude.length * 34.25) + 75}px`;
+          `${(exclude.length * 32) + 80}px`;
       }
     }
     if (event.target.classList.contains(`border`)) {
-      if (document.querySelector(`.themes`).clientHeight != `50`) {
+      if (document.querySelector(`.themes`).clientHeight != `35`) {
         document.querySelector(`.themes`).style.height = `30px`;
         return false;
       }
       let count = themes.length + 1;
-      document.querySelector(`.themes`).style.height = `${count * 35}px`;
+      document.querySelector(`.themes`).style.height = `${count * 36}px`;
     }
     if (event.target.classList.contains(`adjust`)) {
-      if (document.querySelector(`.bg`).clientHeight != `50`) {
+      if (document.querySelector(`.bg`).clientHeight != `35`) {
         document.querySelector(`.bg`).style.height = `30px`;
         return false;
       }
       let count = background.length + 1;
-      document.querySelector(`.bg`).style.height = `${count * 35}px`;
+      document.querySelector(`.bg`).style.height = `${count * 36 + 30}px`;
     }
     if (event.target.classList.contains(`choose`)) {
-      if (document.querySelector(`.set`).clientHeight != `50`) {
+      if (document.querySelector(`.set`).clientHeight != `35`) {
         document.querySelector(`.set`).style.height = `30px`;
         return false;
       }
@@ -328,32 +332,32 @@ document.addEventListener(
       expand = true;
       groupType = `list`;
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
       groupType = `blocks`;
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
       event.target.nextElementSibling.classList.remove(`fa-minus`)
-      event.target.nextElementSibling.classList.add(`fa-plus`)
-      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-plus`)
+      event.target.nextElementSibling.classList.add(`fa-star`)
+      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`onlyImages`)) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (onlyImages == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       _toggle.style.display = `none`;
@@ -371,8 +375,8 @@ document.addEventListener(
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
       event.target.nextElementSibling.classList.remove(`fa-minus`)
-      event.target.nextElementSibling.classList.add(`fa-plus`)
-      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-plus`)
+      event.target.nextElementSibling.classList.add(`fa-star`)
+      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-star`)
       document.querySelector(`.Dots`).nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Info`)) {
@@ -385,9 +389,9 @@ document.addEventListener(
       fadeIntoView = fadeIntoView != true;
       if (fadeIntoView == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (fadeIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       if (fadeIntoView == false) {
@@ -411,7 +415,7 @@ document.addEventListener(
               windowHeight = _main.clientHeight;
             }
 
-            function checkPosition() {
+            function starPosition() {
               for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
                 var positionFromTop = elements[i].getBoundingClientRect().top;
@@ -423,7 +427,7 @@ document.addEventListener(
                     document
                       .querySelectorAll(`.img`)
                       .forEach((a) => (a.classList.remove(`hidden`)));
-                    _main.removeEventListener("scroll", checkPosition);
+                    _main.removeEventListener("scroll", starPosition);
                     _main.removeEventListener("resize", init);
                     element.classList.remove('hidden');
                   }
@@ -431,11 +435,11 @@ document.addEventListener(
               }
             }
 
-            _main.addEventListener('scroll', checkPosition);
+            _main.addEventListener('scroll', starPosition);
             _main.addEventListener('resize', init);
 
             init();
-            checkPosition();
+            starPosition();
           })();
         }
 
@@ -445,9 +449,9 @@ document.addEventListener(
       topBar = topBar != true;
       if (topBar == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (topBar == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       topMenuBarDisplay(topBar);
@@ -456,9 +460,9 @@ document.addEventListener(
       showOption = showOption != true;
       if (showOption == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-plus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
       } else if (showOption == false) {
-        event.target.nextElementSibling.classList.remove(`fa-plus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
       if (showOption == false)

@@ -118,11 +118,15 @@ html body,
 
 #container #sidebar #content {
   background-color: transparent;
+  height: fit-content;
+  position: absolute;
   overflow-x: hidden;
   user-select: none;
   overflow-y: auto;
-  height: 100%;
   width: 100%;
+  margin: auto;
+  bottom: 0;
+  top: 0;
 }
 
 #container .notify {
@@ -142,6 +146,7 @@ html body,
   position: relative;
   margin: 15px auto;
   overflow: hidden;
+  margin-top: 5px;
   width: 240px;
   bottom: 0;
 }
@@ -161,7 +166,7 @@ html body,
 
 #container #sidebar #content #url {
   margin-bottom: 5px;
-  margin-left: 5px;
+  margin-left: 0px;
   margin-top: 5px;
   width: 100%;
 }
@@ -174,12 +179,11 @@ html body,
   background-color: var(--bg-color-primary);
   color: var(--fill-color-primary);
   border: var(--hover-border-color);
-  margin-left: 10px;
   width: 90%;
 }
 
 #container #sidebar #content .min {
-  margin: 15px
+  margin: 10px
 }
 
 #container #sidebar #content .min input[type=text] {
@@ -207,11 +211,6 @@ html body,
   height: 15px;
 }
 
-#container #sidebar #content .cat:hover {
-  background-color: var(--hover-background-color) !important;
-  box-shadow: var(--box-shadow) !important;
-}
-
 #container #sidebar #content .webp {
   filter: var(--hue-rotate);
   position: relative;
@@ -236,6 +235,10 @@ html body,
   height: 15px;
 }
 
+#container #sidebar #content .set:hover,
+#container #sidebar #content .themes:hover,
+#container #sidebar #content .bg:hover,
+#container #sidebar #content .exclude:hover,
 #container #sidebar #content .sel:hover {
   background-color: var(--hover-background-color) !important;
   box-shadow: var(--box-shadow) !important;
@@ -254,9 +257,9 @@ html body,
   padding-bottom: 5px;
   overflow: hidden;
   font-size: 12px;
-  padding: 10px;
+  padding-left: 10px;
   height: 30px;
-  width: 96%;
+  width: 95%;
 }
 
 #container #sidebar #content .set:hover,
@@ -288,9 +291,9 @@ html body,
 #container #sidebar #content .set .settings,
 #container #sidebar #content .themes .theme,
 #container #sidebar #content .bg .background {
-  margin-left: 10px;
-  margin-top: 10px;
   padding: 5px;
+  padding-left: 10px;
+  margin-top: 10px;
 }
 
 #container #sidebar #content .exclude .option:hover,

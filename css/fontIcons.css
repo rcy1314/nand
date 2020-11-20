@@ -18,9 +18,8 @@
 }
 
 
-#sidebar #content .fa-plus,
-#sidebar #content .fa-minus,
-#sidebar #content .fas:not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
+#sidebar #content .fa-star,
+#sidebar #content .fas:not(.fa-minus):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -29,6 +28,19 @@
   float: right;
   height: 15px;
   right: 6.5px;
+  width: 15px;
+  z-index: -1;
+}
+
+#sidebar #content .fa-minus {
+  color: var(--fill-color-primary);
+  position: relative;
+  margin-top: -18px !important;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  height: 15px;
+  right: 5px;
   width: 15px;
   z-index: -1;
 }

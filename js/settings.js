@@ -484,11 +484,10 @@ let guideOnScreen; //temporarly store onScreen for guide
 
 const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
-  { name: `Reader`, class: `Reader`, icon: `fa-heart` },
-  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
-  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
-  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
+//  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
+//  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
+//  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
+//  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
 const settings = [
@@ -497,6 +496,7 @@ const settings = [
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
   { name: `Images`, class: `onlyImages` },
+  { name: `Reader`, class: `reader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
   { name: `Fade in Images`, class: `fadeIntoView` },
