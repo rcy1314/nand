@@ -1,7 +1,7 @@
 var Nord = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(80, 86, 105, .4)`
+    `none`
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,

@@ -148,6 +148,16 @@ var sideBarDisplay = function (toggleOption) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
+    if (sideBarTranslations == true) {
+      for (i = 0; i <= translations.length - 1; i++) {
+        let cat = document.createElement(`div`);
+        cat.classList.add(`cat`, translations[i]);
+        cat.setAttribute(`aria-item`, translations[i]);
+        cat.innerHTML = translations[i];
+        content.append(cat);
+        content.append(sideBarCategoryBuild(translations[i]));
+      }
+    }
     for (i = 0; i <= selections.length - 1; i++) {
       content.append(
         sideBarOptionBuild(selections[i].name, selections[i].class)

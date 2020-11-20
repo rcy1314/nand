@@ -107,6 +107,7 @@ html body,
 #container #sidebar {
   background-color: var(--borderless-hover-color);
   backdrop-filter: blur(10px);
+  overflow-y: auto;
   position: fixed;
   display: block;
   height: 100%;
@@ -121,6 +122,7 @@ html body,
   height: fit-content;
   position: absolute;
   overflow-x: hidden;
+  padding-top: 10px;
   user-select: none;
   overflow-y: auto;
   width: 100%;

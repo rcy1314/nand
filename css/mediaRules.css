@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  #sidebar {
+    overflow-y: auto;
+  }
+
   #main {
     width: 100% !important
   }
@@ -288,20 +292,9 @@
 
 @media screen and (min-width: 1024px) {
 
-  {
-    width: 100%;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-
   #toggle {
     right: 2em;
     top: .5em;
-  }
-
-  #sidebar {
-    display: block;
   }
 
   #main #progressBar {
@@ -363,6 +356,10 @@
   }
 }
 @media screen and (min-width: 1440px) {
+
+  #sidebar {
+    overflow-y: hidden !important;
+  }
 
   #main #top #arm {
     width: 940px;

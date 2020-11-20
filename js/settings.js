@@ -182,6 +182,19 @@ let showRipple = true;
 let showDescription = true;
 
 /*
+    sideBarTranslations [boolean/integer]
+
+      Applications
+        sideBarDisplay, sideBarEvents.js
+
+      Result
+        translations in sideBar
+
+*/
+
+let sideBarTranslations = true;
+
+/*
     quickFeeds [boolean/integer]
 
       Applications
@@ -487,7 +500,7 @@ const selections = [
 //  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
 //  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
 //  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
-//  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
+  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
 const settings = [

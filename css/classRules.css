@@ -37,7 +37,7 @@
 }
 
 .toggleHidden {
-  top: 0 !important;
+  top: -20 !important;
   transition: .4s;
 }
 
