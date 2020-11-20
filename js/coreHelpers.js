@@ -81,18 +81,10 @@ var anyRandomMenuObject = function () {
     }
   }
   let randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  if (menu[randomObject]) randomDuplicate.push(randomObject);
-  if (random.length == randomDuplicate.length && reader == true) {
-    let randomDuplicate = [];
-    let reader = false;
-    footerBuild();
-  } else if (random.length == randomDuplicate.length) randomDuplicate = [];
-  else
-    for (i = 0; i < random.length; i++) {
+  if (menu[randomObject]) randomDuplicate.push(randomObject)
       if (menu[randomObject] || !randomDuplicate.includes(menu[randomObject]))
         randomObject = randomObject;
       else randomObject = random[Math.floor(Math.random() * random.length - 1)];
-    }
   return randomObject;
 };
 

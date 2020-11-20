@@ -14,9 +14,9 @@ const _show = document.getElementById(`show`);
 
 const _main = document.getElementById(`main`);
 
-const _view = document.getElementById(`view`);
-
 const _feed = document.getElementById(`feed`);
+
+const _view = document.getElementById(`view`);
 
 const _visit = document.getElementById(`visit`);
 

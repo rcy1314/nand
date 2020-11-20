@@ -1048,7 +1048,7 @@ input[type=submit] {
   position: relative;
   display: flex;
   height: 180px;
-  margin: 15px;
+  margin: 12px;
 }
 
 #container #guide .sticky {

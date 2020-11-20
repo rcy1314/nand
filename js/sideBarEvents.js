@@ -208,7 +208,8 @@ document.addEventListener(
         sideBarDisplay(onScreen);
     }
     if (event.target.classList.contains(`cat`)) {
-      id = 0
+      id = 0;
+      first = true;
       if (_main.clientWidth <= 425){
         onScreen = onScreen != true
         sideBarDisplay(onScreen);
@@ -232,8 +233,6 @@ document.addEventListener(
       }
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
       if (reader == true) {
-        if (document.body.contains(document.querySelector(`.channel`)))
-          first = false;
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
@@ -272,22 +271,21 @@ document.addEventListener(
       unloading();
     }
     if (event.target.classList.contains(`Reader`)) {
+      id = 0;
+      first = true;
       _visit.style.display = `none`;
       reader = reader != true;
-      if (reader == true) {
+      if (reader == false) {
         let reader = false;
         let first = true;
         let id = 0;
         xmlChannelFooter();
-      } else if (reader == false) {
+      } else if (reader == true) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         reader = true;
-        if (document.body.contains(document.querySelector(`#xml .center`)))
-          first = false;
-        else first = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }

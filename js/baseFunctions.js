@@ -188,6 +188,7 @@ var sideBarDisplay = function (toggleOption) {
         iterations: 1, // infinity or a number.
         complete: function() {
           if (_main.clientWidth > 769) {
+            _progress.style.width = `calc(100% - 16px)`;
             _top.style.width = `calc(100% - 256px)`;
             _main.style.width = `calc(100% - 240px)`;
             _main.style.left = `240px`;
@@ -216,6 +217,7 @@ var sideBarDisplay = function (toggleOption) {
       setTimeout(function () {
         _top.style.width = `calc(100% - 256px)`;
         _main.style.width = `calc(100% - 240px)`;
+        _progress.style.left = `240px`;
         _main.style.left = `240px`;
         _sidebar.style.left = `0`;
       }, 300);
@@ -223,7 +225,6 @@ var sideBarDisplay = function (toggleOption) {
     setTimeout(function () {
       document.querySelector(`.sideFilter`).style.display = `block`;
       document.querySelector(`#basic`).style.display = `block`;
-      _progress.style.left = `240px`;
       _hide.style.left = `240px`;
       _sidebar.style.left = `0`;
     }, 300);
@@ -494,8 +495,6 @@ var progressBackDrop = function (done, percent) {
             xmlRequestParsing(null, null, anyRandomMenuObject());
           }
       }
-    if (!document.body.contains(document.querySelector(`.group`)))
-      _main.scrollTop = 0
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;

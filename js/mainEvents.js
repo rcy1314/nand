@@ -103,9 +103,26 @@ document.addEventListener(
       unloading();
     }
     if (
-      event.target.classList.contains(`attribute`) ||
-      event.target.id != _match ||
-      event.target.id != _first
+      event.target.classList.contains(`construct`) ||
+      event.target.classList.contains(`picture`) ||
+      event.target.classList.contains(`header`) ||
+      event.target.classList.contains(`result`) ||
+      event.target.classList.contains(`post`) ||
+      event.target.classList.contains(`site`) ||
+      event.target.classList.contains(`cat`) ||
+      event.target.classList.contains(`sel`) ||
+      event.target.id == `container` ||
+      event.target.id == `search` ||
+      event.target.id == `option` ||
+      event.target.id == `visit` ||
+      event.target.id == `group` ||
+      event.target.id == `main` ||
+      event.target.id == `hide` ||
+      event.target.id == `page` ||
+      event.target.id == `xml` ||
+      event.target.id == `air` ||
+      event.target.id == `top` ||
+      event.target.id == `arm`
     ) {
       if (
         !document
@@ -126,7 +143,7 @@ document.addEventListener(
         _match.style.display = `none`;
         _view.setAttribute(`placeholder`, ``);
         _view.style.textAlign = `center`;
-        _view.style.paddingLeft = `20px`;
+        _view.style.paddingLeft = `10px`;
         _view.value = `Search`;
         _view.blur();
       } else if (_first.style.display === `block`) {
@@ -212,10 +229,9 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`translation`)) {
       id = 0;
+      first = true;
       category = event.target.closest(`.translation`).getAttribute(`aria-item`);
         if (reader == true) {
-          if (document.body.contains(document.querySelector(`.channel`)))
-            first = false;
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
         } else {

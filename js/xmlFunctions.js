@@ -529,7 +529,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
-              itemPending.style.margin = `12px`;
               itemImage.closest(`.classic`).style.display = `flex`;
               itemImage.closest(`.classic`).style.alignItems = `center`;
               itemImage.style.marginBottom = `30px`;
@@ -547,7 +546,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             ) {
               itemImage.style.width = `100%`;
               itemImage.classList.add(`default`);
-              itemPending.style.height = `14em`;
             }
           }
           if (
@@ -602,7 +600,8 @@ var xmlRequestParsing = function (search, string, index) {
   let images = [];
   imageDuplicate = [];
   const has = exclude.map(a => a.toLowerCase());
-  if (first == true) _main.append(stageBuild());
+  if (!document.body.contains(document.querySelector(`#xml`)))
+    _main.append(stageBuild());
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
     category = category;
@@ -612,7 +611,7 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (first == true && search != `search` && !post)
+  if (reader != true && first == true)
     _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
@@ -795,6 +794,7 @@ var xmlRequestParsing = function (search, string, index) {
         let recent = pub[0].dst;
         if (reader == false)
           document.querySelector(`.channel`).append(footerBuild());
+        console.log(first)
         if (first == false) {
           var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
@@ -802,6 +802,12 @@ var xmlRequestParsing = function (search, string, index) {
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
           stop = true;
+        } else if (first == true) {
+          var status = document.querySelector(`.status`);
+          while (status.firstChild) status.removeChild(status.lastChild);
+          var suggestions = document.querySelector(`.suggestions`);
+          while (suggestions.firstChild)
+            suggestions.removeChild(suggestions.lastChild);
           _main.scrollTo({
             top: document.querySelector(`[aria-object='` + index + `']`)
               .offsetTop,
@@ -812,10 +818,6 @@ var xmlRequestParsing = function (search, string, index) {
         topMenuBarDisplay(topBar);
         clearInterval(complete);
         xmlStatusSuggestions();
-        _check.style.visibility = `hidden`;
-        _main.setAttribute(`tabindex`, -1);
-        _main.focus();
-        unloading();
       } else {
         _main.append(stageBuild());
         document
@@ -823,6 +825,10 @@ var xmlRequestParsing = function (search, string, index) {
           .append(`This site could not be reached.`);
         unloading();
       }
+      _check.style.visibility = `hidden`;
+      _main.setAttribute(`tabindex`, -1);
+      _main.focus();
+      unloading();
     }
   };
   httpRequest.open(`GET`, uri);
