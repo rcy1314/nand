@@ -9,14 +9,14 @@
 * Beta (stage) themes.
 * Background images.
 * No Installation.
-* Filtering.
 * NSFW api.
+* Filtering.
 
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages.
 * safeSearch throws a couple header errors returning offloading.
-* Heroku cors-anywhere offloading, first response ~7s.
+* Heroku offloading first response ~7s.
 
 ### Configurations in js/settings.js
 
