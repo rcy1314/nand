@@ -9,8 +9,8 @@
 * Beta (stage) themes.
 * Background images.
 * No Installation.
-* Filtering.
 * NSFW api.
+* Filtering.
 
 ### Known Issues
 
