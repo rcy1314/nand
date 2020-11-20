@@ -213,7 +213,7 @@ var sideBarDisplay = function (toggleOption) {
         // fill: ''
       }
     );
-    if (backgroundImage.element = `container` && _main.clientWidth > 768)
+    if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100% + 240px)`
     if (_main.clientWidth > 769) {
       setTimeout(function () {
@@ -231,7 +231,7 @@ var sideBarDisplay = function (toggleOption) {
       _sidebar.style.left = `0`;
     }, 300);
   } else if (toggleOption == false) {
-    if (backgroundImage.element = `container` && _main.clientWidth > 768)
+    if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100%)`
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
