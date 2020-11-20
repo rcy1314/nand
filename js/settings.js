@@ -192,7 +192,7 @@ let showDescription = true;
 
 */
 
-let sideBarTranslations = true;
+let sideBarTranslations = false;
 
 /*
     quickFeeds [boolean/integer]
