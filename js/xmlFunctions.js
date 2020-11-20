@@ -824,6 +824,7 @@ var xmlRequestParsing = function (search, string, index) {
             behavior: `smooth`,
           });
         }
+        document.querySelector(`#xml`).style.display = `block`;
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         clearInterval(complete);
@@ -835,6 +836,7 @@ var xmlRequestParsing = function (search, string, index) {
           .append(`This site could not be reached.`);
         unloading();
       }
+      document.querySelector(`#xml`).style.display = `block`;
       _check.style.visibility = `hidden`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
