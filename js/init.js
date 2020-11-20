@@ -53,8 +53,6 @@ setTimeout(function() {
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
-    !location.href.match(`\\?\\+1`) &&
-    !location.href.match(`\\?\\#`) &&
     location.href.split(`?`)[1]
   ) {
     var uri = location.href.split(`?`)[1];
@@ -63,28 +61,26 @@ setTimeout(function() {
       post = parseInt(uri.slice(2), 36);
       let i = menu.findIndex((item) => item.hash === id);
 
-        guideOnScreen = onScreen;
-        onScreen = false;
-        sideBarDisplay(onScreen);
-        _toggle.style.display = `none`;
-        _visit.style.display = `none`;
-        _guide.style.display = `flex`;
-        _main.classList.add(`guide`)
-        _top.style.display = `none`;
-        setTimeout(function () {
-          filterInputResponse(true, false, menu[i].id.space(), false);
-        }, 250);
+      guideOnScreen = onScreen;
+      onScreen = false;
+      sideBarDisplay(onScreen);
+      _toggle.style.display = `none`;
+      _visit.style.display = `none`;
+      _guide.style.display = `flex`;
+      _main.classList.add(`guide`)
+      _top.style.display = `none`;
+      setTimeout(function () {
+        filterInputResponse(true, false, menu[i].id.space(), false);
+      }, 250);
     }
   }
   else if (location.search.split(`?q=`)[1]) {
     var uri = location.search.split(`?q=`)[1];
-    var uri = uri.replace(/\?\+1|\+1/, ``);
     var uri = uri.match(/[^&]+/g);
-    if (location.hash.substr(1).match(/\+1/g))
-      post = location.hash.substr(1).replace(/\+1/g, ``);
-    else post = location.hash.substr(1);
+    post = location.hash.substr(1);
+    _toggle.style.display = `none`;
+    topMenuBarDisplay(topBar)
     setTimeout(function () {
-      topMenuBarDisplay(topBar)
       if (!uri[1] && location.href.match(`\\&`))
         filterInputResponse(true, false, uri[0], false);
       else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
