@@ -144,10 +144,9 @@ for (var file of files) {
       let startup = setInterval(function () {
         setTimeout(function () {
           if (typeof menu === `array`) {
-            window[set]();
             clearInterval(startup);
           }
-        }, 15);
+        }, 25);
       }, 25);
     })();
 }
@@ -168,7 +167,7 @@ for (i = 0; i <= themes.length - 1; i++) {
             window[set]();
             clearInterval(startup);
           }
-        }, 15);
+        }, 25);
       }, 25);
     })();
 }
