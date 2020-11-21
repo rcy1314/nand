@@ -108,7 +108,7 @@
   flex-basis: 65% !important;
 }
 
-.default {
+.mobile {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -117,16 +117,16 @@
   height: 80px !important;
 }
 
-.default .filter,
-.default .populate {
+.mobile .filter,
+.mobile .populate {
   padding: 5px !important;
 }
 
-.default .display {
+.mobile .display {
   padding-right: 15px !important;
 }
 
-.default img {
+.mobile img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -134,23 +134,23 @@
   margin: 0 !important;
 }
 
-.default .hash {
+.mobile .hash {
   align-items: center !important;
   text-align: center !important;
   flex-basis: 40% !important;
 }
 
-.default .media {
+.mobile .media {
   text-align: left !important;
   flex-basis: 25% !important;
 }
 
-.default .title {
+.mobile .title {
   text-align: left !important;
   flex-basis: 30% !important;
 }
 
-.default .des {
+.mobile .des {
   flex-basis: 0% !important;
   width: 0 !important;
 }

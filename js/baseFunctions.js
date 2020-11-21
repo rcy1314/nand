@@ -21,13 +21,13 @@ var displayDescription = function (toggleOption) {
         .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`default`));
+        .forEach((a) => a.classList.add(`mobile`));
     } else if (toggleOption == true){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `block`
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`default`));
+        .forEach((a) => a.classList.remove(`mobile`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
