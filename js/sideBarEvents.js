@@ -152,6 +152,17 @@ document.addEventListener(
 
       xhr.send();
     }
+    if (
+      event.target.classList.contains(`sideBarBackdrop`)
+    ) {
+      if (sideBarBackdrop == false) {
+        _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
+        sideBarBackdrop = true;
+      } else {
+        _sidebar.style.cssText = `backdrop-filter: none;left:0`;
+        sideBarBackdrop = false;
+      }
+    }
     if (event.target.classList.contains(`mainBackground`)) {
       if (
         Array.isArray(backgroundImage) &&

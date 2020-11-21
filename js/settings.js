@@ -169,6 +169,19 @@ let expandBackground = false;
 let showRipple = true;
 
 /*
+    sideBarBackdrop [boolean/integer]
+
+      Applications
+        sideBar, sideBarEvents
+
+      Result
+        add backdrop filter to sidebar.
+
+*/
+
+let sideBarBackdrop = true;
+
+/*
     showDescription [boolean/integer]
 
       Applications
@@ -517,6 +530,7 @@ const settings = [
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },
   { name: `Show Description`, class: `showDescription` },
+  { name: `Sidebar Backdrop`, class: `sideBarBackdrop` }
 ];
 
 const background = [
