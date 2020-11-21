@@ -46,15 +46,15 @@
     left: 0;
   }
 
-  .list .title {
+  .expand .title {
     flex-basis: 50% !important;
   }
 
-  .list .blank {
+  .expand .blank {
     margin-right: 5px !important;
   }
 
-  .list .hash, .list .des,
+  .expand .hash, .expand .des,
   #main #top #arm #option,
   #main #visit #page #quick .right,
   #main #xml .center #quick,
@@ -128,7 +128,7 @@
     top: 115px;
   }
 
-  #main #visit #page #front #first .listing {
+  #main #visit #page #front #first .expanding {
     position: absolute;
     padding-left: 0;
     margin: 0 auto;

@@ -18,19 +18,19 @@ var displayDescription = function (toggleOption) {
         .forEach((a) => a.style.visibility = `hidden`);
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`list`));
+        .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`blocks`));
+        .forEach((a) => a.classList.add(`default`));
     } else if (toggleOption == true){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `block`
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`blocks`));
+        .forEach((a) => a.classList.remove(`default`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`list`));
+        .forEach((a) => a.classList.add(`expand`));
       _main
         .querySelectorAll(`.populate .des`)
         .forEach((a) => a.style.visibility = `visible`);
@@ -56,7 +56,7 @@ var displayExpand = function (toggleOption) {
       }
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`list`));
+        .forEach((a) => a.classList.add(`expand`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => (a.style.alignItems = `center`));

@@ -53,7 +53,7 @@
   opacity: 100;
 }
 
-.list {
+.expand {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -62,18 +62,18 @@
   height: 80px !important;
 }
 
-.list .filter,
-.list .populate {
+.expand .filter,
+.expand .populate {
   padding: 5px !important;
 }
 
-.list .display {
+.expand .display {
   width: 48px !important;
   margin: 10px !important;
   padding-right: 15px !important;
 }
 
-.list img {
+.expand img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -81,34 +81,34 @@
   margin: 0 !important;
 }
 
-.list .title {
+.expand .title {
   text-align: left !important;
   flex-basis: 25% !important;
   margin: 0 !important;
   width: 100%;
 }
 
-.list .hash,
-.list .media {
+.expand .hash,
+.expand .media {
   align-items: center !important;
   padding-right: 15px !important;
 }
 
-.list .hash {
+.expand .hash {
   flex-basis: 15% !important;
 }
 
-.list .media {
+.expand .media {
   flex-basis: 15% !important;
 }
 
-.list .des {
+.expand .des {
   text-align: left !important;
   align-items: center !important;
   flex-basis: 65% !important;
 }
 
-.blocks {
+.default {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -117,16 +117,16 @@
   height: 80px !important;
 }
 
-.blocks .filter,
-.blocks .populate {
+.default .filter,
+.default .populate {
   padding: 5px !important;
 }
 
-.blocks .display {
+.default .display {
   padding-right: 15px !important;
 }
 
-.blocks img {
+.default img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -134,23 +134,23 @@
   margin: 0 !important;
 }
 
-.blocks .hash {
+.default .hash {
   align-items: center !important;
   text-align: center !important;
   flex-basis: 40% !important;
 }
 
-.blocks .media {
+.default .media {
   text-align: left !important;
   flex-basis: 25% !important;
 }
 
-.blocks .title {
+.default .title {
   text-align: left !important;
   flex-basis: 30% !important;
 }
 
-.blocks .des {
+.default .des {
   flex-basis: 0% !important;
   width: 0 !important;
 }
