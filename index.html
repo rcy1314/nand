@@ -163,12 +163,12 @@ for (i = 0; i <= themes.length - 1; i++) {
     script.onload = (function () {
       let startup = setInterval(function () {
         setTimeout(function () {
-          if (typeof eval(theme) === `function`) {
-            window[theme]();
+          if (typeof eval(set) === `function`) {
+            window[set]();
             clearInterval(startup);
           }
-        }, 25);
-      }, 25);
+        }, 50);
+      }, 50);
     })();
 }
 for (i = 0; i <= themes.length - 1; i++) {

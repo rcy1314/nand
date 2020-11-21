@@ -107,6 +107,7 @@ html body,
 #container #sidebar {
   background-color: var(--borderless-hover-color);
   backdrop-filter: blur(10px);
+  overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
   display: block;
