@@ -12,15 +12,6 @@
     display: none;
   }
 
-  .des,
-  .hash {
-    display: none !important;
-  }
-
-  .title {
-    flex-basis: 50% !important;
-  }
-
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     background-color: transparent !important;
@@ -55,15 +46,15 @@
     left: 0;
   }
 
-  .expand .title {
+  .list .title {
     flex-basis: 50% !important;
   }
 
-  .expand .blank {
+  .list .blank {
     margin-right: 5px !important;
   }
 
-  .expand .hash, .expand .description,
+  .list .hash, .list .des,
   #main #top #arm #option,
   #main #visit #page #quick .right,
   #main #xml .center #quick,
