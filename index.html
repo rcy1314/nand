@@ -164,7 +164,7 @@ for (i = 0; i <= themes.length - 1; i++) {
       let startup = setInterval(function () {
         setTimeout(function () {
           if (typeof eval(theme) === `function`) {
-            window[set]();
+            window[theme]();
             clearInterval(startup);
           }
         }, 25);
