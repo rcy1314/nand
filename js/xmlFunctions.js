@@ -411,6 +411,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                       )
+                    ) &&
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                      )
                     )
                   )
                     document

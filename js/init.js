@@ -71,7 +71,7 @@ setTimeout(function() {
       _top.style.display = `none`;
       setTimeout(function () {
         filterInputResponse(true, false, menu[i].id.space(), false);
-      }, 250);
+      }, 50);
     }
   }
   else if (location.search.split(`?q=`)[1]) {
@@ -88,7 +88,10 @@ setTimeout(function() {
     }, 50);
   } else if (!post) _visit.style.display = `flex`
 
-  if (!isNumeric(post) && _main.clientWidth > 768) sideBarDisplay(onScreen)
+  if (!isNumeric(post) && _main.clientWidth > 768)
+    setTimeout(function() {
+      sideBarDisplay(onScreen)
+    }, 50)
   else if (isNumeric(post)) _check.style.visibility = `visible`
   else if (_main.clientWidth < 768) {
     groupType = `blocks`;
