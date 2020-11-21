@@ -497,7 +497,7 @@ html body,
 #main #visit #page {
   background-color: transparent;
   position: relative;
-  margin-top: 10px;
+  top: 20px;
   margin: 0 auto;
   display: block;
 }
