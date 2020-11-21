@@ -18,19 +18,19 @@ var displayDescription = function (toggleOption) {
         .forEach((a) => a.style.visibility = `hidden`);
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`description`));
+        .forEach((a) => a.classList.remove(`list`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`basic`));
+        .forEach((a) => a.classList.add(`blocks`));
     } else if (toggleOption == true){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `block`
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`basic`));
+        .forEach((a) => a.classList.remove(`blocks`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`description`));
+        .forEach((a) => a.classList.add(`list`));
       _main
         .querySelectorAll(`.populate .des`)
         .forEach((a) => a.style.visibility = `visible`);
@@ -56,7 +56,7 @@ var displayExpand = function (toggleOption) {
       }
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`description`));
+        .forEach((a) => a.classList.add(`list`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => (a.style.alignItems = `center`));
@@ -88,7 +88,7 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`description`));
+        .forEach((a) => a.classList.remove(`list`));
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.flexWrap = `wrap`));
@@ -97,7 +97,7 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.textAlign = `center`));
       _main
         .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.display = `flex`));
+        .forEach((a) => (a.style.display = `block`));
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `inline-flex`;
       if (document.body.contains(document.querySelector(`.result`)))
@@ -109,40 +109,40 @@ var displayExpand = function (toggleOption) {
 
 var appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-  if (Class !== `settings`){
     for (i = 0; i <= Arrays.length - 1; i++) {
       let option = document.createElement(`div`);
       option.classList.add(Class, Arrays[i].class);
-      if (Class == `background`) option.innerHTML = Arrays[i].name;
+      if (Class == `background` || Class == `sel`)
+        option.innerHTML = Arrays[i].name;
       if (Class == `option`) option.innerHTML = Arrays[i]
       if (Class == `theme`) option.innerHTML = Arrays[i].obFn
       list.append(option);
       list.append(sideBarThemeBuild(Arrays[i].icon));
     }
-  }
-  else for (i = 0; i <= Arrays.length - 1; i++) {
-    let option = document.createElement(`div`);
-    option.classList.add(Class, Arrays[i].class);
-    option.innerHTML = Arrays[i].name;
-    list.append(option);
-    if (Class == `settings`){
-      if (eval(Arrays[i].class) == true){
-        document.querySelector(`.` + Arrays[i].class)
-          .parentNode.insertBefore(
-            sideBarThemeBuild(`fa-star`),
-            document.querySelector(`.` + Arrays[i].class).nextSibling
-          );
-      } else {
-        document.querySelector(`.` + Arrays[i].class)
-          .parentNode.insertBefore(
-            sideBarThemeBuild(`fa-minus`),
-            document.querySelector(`.` + Arrays[i].class).nextSibling
-          );
-      }
-    }
-    if (Class !== `settings`) list.append(sideBarThemeBuild(Arrays[i].icon));
-  }
 }
+
+  var appendSettingsSideBarLists = function (Elem, Class, Arrays) {
+    let list = document.querySelector(Elem);
+    for (i = 0; i <= Arrays.length - 1; i++) {
+      let option = document.createElement(`div`);
+      option.classList.add(Class, Arrays[i].class);
+      option.innerHTML = Arrays[i].name;
+      list.append(option);
+        if (eval(Arrays[i].class) == true){
+          document.querySelector(`.` + Arrays[i].class)
+            .parentNode.insertBefore(
+              sideBarThemeBuild(`fa-star`),
+              document.querySelector(`.` + Arrays[i].class).nextSibling
+            );
+        } else {
+          document.querySelector(`.` + Arrays[i].class)
+            .parentNode.insertBefore(
+              sideBarThemeBuild(`fa-minus`),
+              document.querySelector(`.` + Arrays[i].class).nextSibling
+            );
+        }
+    }
+  }
 
 var sideBarDisplay = function (toggleOption) {
   sideBarFirst = true;
@@ -150,22 +150,11 @@ var sideBarDisplay = function (toggleOption) {
   if (!document.body.contains(document.querySelector(`.sel`))) {
     if (sideBarTranslations == true) {
       for (i = 0; i <= translations.length - 1; i++) {
-        let cat = document.createElement(`div`);
-        cat.classList.add(`cat`, translations[i]);
-        cat.setAttribute(`aria-item`, translations[i]);
-        cat.innerHTML = translations[i];
-        content.append(cat);
+        content.append(sideBarTranslationBuild(translations[i]));
         content.append(sideBarCategoryBuild(translations[i]));
       }
     }
-    for (i = 0; i <= selections.length - 1; i++) {
-      content.append(
-        sideBarOptionBuild(selections[i].name, selections[i].class)
-      );
-      let fontawesome = document.createElement(`div`);
-      fontawesome.classList.add(`fa`, selections[i].icon);
-      content.append(fontawesome);
-    }
+    appendSideBarLists(`#content`, `sel`, selections)
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
     appendSideBarLists(`.themes`, `theme`, themes)
     sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
@@ -175,7 +164,7 @@ var sideBarDisplay = function (toggleOption) {
     appendSideBarLists(`.exclude`, `option`, exclude);
     document.querySelector(`.exclude`).append(excludeFormBuild());
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-    appendSideBarLists(`.set`, `settings`, settings)
+    appendSettingsSideBarLists(`.set`, `settings`, settings)
     content.append(basicFormBuild());
   }
   if (toggleOption == true) {
@@ -207,9 +196,6 @@ var sideBarDisplay = function (toggleOption) {
         duration: 300, // number in ms [this would be equiv of your speed].
         easing: `linear`,
         iterations: 1, // infinity or a number.
-        complete: function() {
-          _hide.style.left = `240px`
-        }
         // fill: ''
       }
     );

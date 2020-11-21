@@ -1,3 +1,11 @@
+var sideBarTranslationBuild = function (translation) {
+  let cat = document.createElement(`div`);
+  cat.classList.add(`cat`, translation);
+  cat.setAttribute(`aria-item`, translation);
+  cat.innerHTML = translation;
+  return cat;
+}
+
 var groupBuild = function () {
   let main = document.querySelector(`#main`);
   let group = document.createElement(`div`);

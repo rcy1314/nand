@@ -53,7 +53,7 @@
   opacity: 100;
 }
 
-.description {
+.list {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -62,18 +62,18 @@
   height: 80px !important;
 }
 
-.description .filter,
-.description .populate {
+.list .filter,
+.list .populate {
   padding: 5px !important;
 }
 
-.description .display {
+.list .display {
   width: 48px !important;
   margin: 10px !important;
   padding-right: 15px !important;
 }
 
-.description img {
+.list img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -81,34 +81,34 @@
   margin: 0 !important;
 }
 
-.description .title {
+.list .title {
   text-align: left !important;
   flex-basis: 25% !important;
   margin: 0 !important;
   width: 100%;
 }
 
-.description .hash,
-.description .media {
+.list .hash,
+.list .media {
   align-items: center !important;
   padding-right: 15px !important;
 }
 
-.description .hash {
+.list .hash {
   flex-basis: 15% !important;
 }
 
-.description .media {
+.list .media {
   flex-basis: 15% !important;
 }
 
-.description .des {
+.list .des {
   text-align: left !important;
   align-items: center !important;
   flex-basis: 65% !important;
 }
 
-.basic {
+.blocks {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -117,16 +117,16 @@
   height: 80px !important;
 }
 
-.basic .filter,
-.basic .populate {
+.blocks .filter,
+.blocks .populate {
   padding: 5px !important;
 }
 
-.basic .display {
+.blocks .display {
   padding-right: 15px !important;
 }
 
-.basic img {
+.blocks img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -134,23 +134,23 @@
   margin: 0 !important;
 }
 
-.basic .hash {
+.blocks .hash {
   align-items: center !important;
   text-align: center !important;
   flex-basis: 40% !important;
 }
 
-.basic .media {
+.blocks .media {
   text-align: left !important;
   flex-basis: 25% !important;
 }
 
-.basic .title {
+.blocks .title {
   text-align: left !important;
   flex-basis: 30% !important;
 }
 
-.basic .des {
+.blocks .des {
   flex-basis: 0% !important;
   width: 0 !important;
 }
