@@ -205,7 +205,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = true;
+let quickFeeds = false;
 
 /*
     quickFeedsTranslations [boolean/integer]

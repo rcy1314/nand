@@ -28,7 +28,7 @@ input {
 }
 
 a {
-  color: var(--fill-color-secondary);
+  color: var(--fill-color-primary);
   text-decoration: none !important;
   cursor: default;
 }
@@ -1449,7 +1449,6 @@ input[type=submit] {
 }
 
 #main #xml .content .suggestions .combine a {
-  color: var(--loader-color-primary);
   font-size: 11px;
 }
 
