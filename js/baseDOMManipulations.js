@@ -211,11 +211,15 @@ var translationBuild = function (translation) {
   let object = document.createElement(`div`);
   object.classList.add(`translation`);
   object.setAttribute(`aria-item`, translation);
-  object.innerHTML = `<img class='quickTranslation' src='images/${translation}.webp'>
-   <a class='category' ext='${translation}'>
-    ${translation}
-   </a>
-  `;
+  let img = document.createElement(`img`)
+  img.classList.add(`quickTranslation`)
+  img.src = `images/${translation}.webp`
+  let ahref = document.createElement(`a`)
+  ahref.classList.add(`category`)
+  ahref.setAttribute(`ext`, translation)
+  ahref.innerHTML = translation
+  object.append(img)
+  object.append(ahref)
   return object;
 };
 
@@ -223,11 +227,15 @@ var assetBuild = function (assetIndex, assetImage, assetId) {
   let object = document.createElement(`div`);
   object.classList.add(`asset`);
   object.setAttribute(`aria-item`, assetIndex);
-  object.innerHTML = `<img class='entity' src='${assetImage}'>
-   <a class='query' title='${assetId}'>
-    ${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...
-   </a>
-  `;
+  let img = document.createElement(`img`)
+  img.classList.add(`entity`)
+  img.src = assetImage
+  let ahref = document.createElement(`a`)
+  ahref.classList.add(`query`)
+  ahref.setAttribute(`title`, assetId)
+  ahref.innerHTML = `${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...`
+  object.append(img)
+  object.append(ahref)
   return object;
 };
 
