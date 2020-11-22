@@ -160,6 +160,17 @@ document.addEventListener(
       _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
       expand = expand != true;
+      if (expand == true) {
+        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-minus`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
+      } else if (expand == false) {
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-minus`)
+      }
       displayExpand(expand);
       if (expand == true){
         var groupType = `list`;
@@ -178,8 +189,7 @@ document.addEventListener(
             .querySelectorAll(`.populate`)
             .forEach((a) => a.classList.add(`expand`));
         }
-      }
-      else {
+      } else if (showDescription == true){
         var groupType = `blocks`;
         _main
           .querySelectorAll(`.populate`)

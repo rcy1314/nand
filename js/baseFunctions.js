@@ -373,6 +373,17 @@ var progressBackDrop = function (done, percent) {
     _progress.style.transitionDelay = `none`;
     _progress.style.width = `${percent}%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
+      if (document.body.contains(document.querySelector(`#xml .channel`)))
+        if (reader == true && first == true) {
+          if (
+            _main.innerHeight >=
+            document.querySelector(`#xml .channel`).innerHeight
+          )
+            if (httpRequest.status == 200) {
+              first = false;
+              xmlRequestParsing(null, null, anyRandomMenuObject());
+            }
+        }
       document.querySelector(`#xml`).style.paddingTop = `0`;
       document.querySelector(`#xml`).style.display = `block`;
       if (scrollIntoView == true && reader == false) {
@@ -441,7 +452,6 @@ var progressBackDrop = function (done, percent) {
         }
     }
     if (document.body.contains(document.getElementById(`group`))) {
-      document.querySelector(`#group`).style.display = `block`;
       if (scrollIntoView == true) {
         document.querySelector(
           `#group`
@@ -466,24 +476,16 @@ var progressBackDrop = function (done, percent) {
           _check.style.visibility = `hidden`;
         }, 750);
       }
+      if (onlyImages == false) {
+        setTimeout(function() {
+        if (document.body.contains(document.querySelector(`.air`)))
+          _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        }, 1)
+      } else if (onlyImages == true)
+        if (document.body.contains(document.querySelector(`.result`)))
+          _main.scrollTop = 0;
+      document.querySelector(`#group`).style.display = `block`;
     }
-    if (onlyImages == false) {
-      if (document.body.contains(document.querySelector(`.air`)))
-        _main.scrollTop = document.querySelector(`.air`).clientHeight;
-    } else if (onlyImages == true)
-      if (document.body.contains(document.querySelector(`.result`)))
-        _main.scrollTop = 0;
-    if (document.body.contains(document.querySelector(`#xml .channel`)))
-      if (reader == true && first == true) {
-        if (
-          _main.innerHeight >=
-          document.querySelector(`#xml .channel`).innerHeight
-        )
-          if (httpRequest.status == 200) {
-            first = false;
-            xmlRequestParsing(null, null, anyRandomMenuObject());
-          }
-      }
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;
       _progress.style.transition = `none`;
