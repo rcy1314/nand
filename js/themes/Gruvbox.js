@@ -45,6 +45,7 @@ var Gruvbox = function () {
     `--hue-rotate`,
     `hue-rotate(160deg)`
   );
+  backgroundImage[0].path = `url(images/e54430a6cf0248fa8d1d5961e02a71e4.webp)`
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    `url(images/e54430a6cf0248fa8d1d5961e02a71e4.webp)`
+    backgroundImage[0].path 
 };
