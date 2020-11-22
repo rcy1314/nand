@@ -329,7 +329,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
-  let maximum = 799;
+  let maximum = 480;
   let jsonResponseScore;
   ready(() => {
     if (!src || imageDuplicate.includes(src)) {
@@ -397,6 +397,17 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
+        if (
+          youtubeMedia == false &&
+          document.body.contains(
+            document.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+            )
+          )
+        )
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          ).classList.add(`yt`)
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id))
           fetch(`${cors}${api}${src}`, {
             method: "GET",

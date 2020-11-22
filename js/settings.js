@@ -325,7 +325,7 @@ let onlyImages = false;
 
 */
 
-let youtubeMedia = true;
+let youtubeMedia = false;
 
 /*
     omitGuide [boolean/integer]
