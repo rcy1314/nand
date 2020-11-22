@@ -483,9 +483,9 @@ var progressBackDrop = function (done, percent) {
         if (document.body.contains(document.querySelector(`.result`)))
           _main.scrollTop = 0;
       setTimeout(function() {
-        document.querySelector(`#group`).style.display = `block`;
         visit.style.display = `none`
-      }, 50)
+      }, 25)
+      document.querySelector(`#group`).style.display = `block`;
     }
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;

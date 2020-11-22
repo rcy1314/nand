@@ -320,8 +320,8 @@ let onlyImages = false;
         xmlFunctions.js, xmlImageParsing, xmlRequestParsing, xmlImageAttributes
 
       Result
-        false = use Images
-        true = use Videos
+        false = Images
+        true = Videos
 
 */
 

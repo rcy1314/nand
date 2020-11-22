@@ -1,6 +1,6 @@
 /*
 
-    ### HeadXML.js has multiple indices for objects.
+    ### xmlAssets.js has multiple indices for objects.
 
       * These need to be fufilled to add an object.
 
@@ -18,6 +18,10 @@
 
 
        [indexed] filtered by response in base.js
+
+       *** Youtube uri
+       userName: https://www.youtube.com/feeds/videos.xml?user=
+       channel: https://www.youtube.com/feeds/videos.xml?channel_id=
 
 */
 var menu=[
