@@ -88,7 +88,7 @@ var displayExpand = function (toggleOption) {
         .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`list`));
+        .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.select`)
         .forEach((a) => (a.style.flexWrap = `wrap`));
@@ -477,14 +477,15 @@ var progressBackDrop = function (done, percent) {
         }, 750);
       }
       if (onlyImages == false) {
-        setTimeout(function() {
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        }, 1)
       } else if (onlyImages == true)
         if (document.body.contains(document.querySelector(`.result`)))
           _main.scrollTop = 0;
-      document.querySelector(`#group`).style.display = `block`;
+      setTimeout(function() {
+        document.querySelector(`#group`).style.display = `block`;
+        visit.style.display = `none`
+      }, 50)
     }
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;
