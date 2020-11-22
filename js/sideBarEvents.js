@@ -41,6 +41,16 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (event.target.classList.contains(`youtubeMedia`)) {
+      youtubeMedia = youtubeMedia != true
+      if (youtubeMedia == true) {
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
+      } else if (youtubeMedia == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
+      }
+    }
     if (event.target.classList.contains(`showDescription`)) {
       showDescription = showDescription != true
       displayDescription(showDescription)

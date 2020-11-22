@@ -314,13 +314,27 @@ let category = `Social`;
 let onlyImages = false;
 
 /*
+    youtubeMedia [boolean/integer]
+
+      Applications
+        xmlFunctions.js, xmlImageParsing, xmlRequestParsing, xmlImageAttributes
+
+      Result
+        false = use Images
+        true = use Videos
+
+*/
+
+let youtubeMedia = true;
+
+/*
     omitGuide [boolean/integer]
 
       Applications
         xmlRequestParsing
 
       Result
-        omit post from xml listing
+        omit base36 post from xml listing
 
 */
 
@@ -526,6 +540,7 @@ const settings = [
   { name: `Reader`, class: `reader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
+  { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },

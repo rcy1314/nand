@@ -99,6 +99,13 @@ var xmlImageSource = function (xhr) {
       );
     else src = null;
   } else if (
+    youtubeMedia == false &&
+    xhr.getElementsByTagName(`media:thumbnail`).length > 0
+  )
+    src = String(
+      xhr.getElementsByTagName(`media:thumbnail`)[0].getAttribute(`url`)
+    );
+  else if (
     xhr.getElementsByTagName(`media:content`).length > 0 &&
     xhr.getElementsByTagName(`media:content`)[0].attributes[`url`]
   ) {
@@ -337,17 +344,22 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         document.querySelector(`[aria-item='${pubIndex}'] .pending`).remove();
         document.querySelector(`[aria-item='${pubIndex}'] .image`).remove();
       }
-      if (
-        empty == true ||
-        (onlyImages == true &&
-          document.querySelector(`[aria-item='${pubIndex}']`))
-      )
-        document
-          .querySelector(`[aria-item='${pubIndex}']`)
-          .closest(`.item`)
-          .remove();
     }
     imageDuplicate.push(src);
+    if (
+      empty == true ||
+      (onlyImages == true &&
+        document.body.contains(
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          )
+        )
+      )
+    )
+      document
+        .querySelector(`[aria-item='${pubIndex}']`)
+        .closest(`.item`)
+        .remove();
     if (
       src &&
       src.match(/https?:\/\//g) &&
@@ -679,7 +691,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (search == `search`)
             var cat = `<div class='external'>${parse.externalURI}</div>`;
 
-          if (src && src.match(/youtube\.com/g)) {
+          if (src && src.match(/youtube\.com/g) && youtubeMedia == true) {
             if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
                 `<div class='ago views'> views` +
@@ -793,14 +805,14 @@ var xmlRequestParsing = function (search, string, index) {
           for (i = 0; i <= images.length - 1; i++) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
-            else if (!menu[index].id.match(/Youtube/g))
+            else if (!menu[index].id.match(/Youtube/g) || youtubeMedia == false)
               xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
         } else if (!safeSearchIDs.includes(menu[id].id)){
           for (i = 0; i <= images.length - 1; i++) {
             if (menu[index].id.match(/Imgur/g) || onlyImages == true)
               xmlImageAttributes(true, index, images[i].element, images[i].src);
-            else if (!menu[index].id.match(/Youtube/g))
+            else if (!menu[index].id.match(/Youtube/g) || youtubeMedia == false)
               xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
         }
