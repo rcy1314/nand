@@ -4,6 +4,10 @@
     overflow-y: auto;
   }
 
+  #sidebar #content {
+    position: relative !important;
+  }
+
   #main {
     width: 100% !important
   }
