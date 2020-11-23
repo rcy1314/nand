@@ -163,6 +163,21 @@ document.addEventListener(
       xhr.send();
     }
     if (
+      event.target.classList.contains(`sideBarCenter`)
+    ) {
+      if (sideBarCenter == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
+        _content.style.position = `relative`;
+        sideBarCenter = true;
+      } else {
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
+        _content.style.position = `absolute`;
+        sideBarCenter = false;
+      }
+    }
+    if (
       event.target.classList.contains(`sideBarBackdrop`)
     ) {
       if (sideBarBackdrop == false) {

@@ -169,6 +169,19 @@ let expandBackground = false;
 let showRipple = true;
 
 /*
+    sideBarCenter [boolean/integer]
+
+      Applications
+        sideBar, sideBarEvents
+
+      Result
+        center sidebar (false mobile)
+
+*/
+
+let sideBarCenter = true;
+
+/*
     sideBarBackdrop [boolean/integer]
 
       Applications
@@ -546,6 +559,7 @@ const settings = [
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },
   { name: `Show Description`, class: `showDescription` },
+  { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` }
 ];
 
