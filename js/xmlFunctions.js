@@ -332,7 +332,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 480;
   let jsonResponseScore;
   ready(() => {
-    if (!src || imageDuplicate.includes(src)) {
+    if (imageDuplicate.includes(src) && empty == true || onlyImages == true ) {
       if (
         document.body.contains(
           document.querySelector(
@@ -345,7 +345,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .closest(`.item`)
           .remove();
       }
-    } else if (empty == true || onlyImages && !src) {
+    } else if (empty == true || onlyImages == true && !src) {
       if (
         document.body.contains(
           document.querySelector(
@@ -358,6 +358,25 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .closest(`.item`)
           .remove();
       }
+    } else if (
+      !src &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+        )
+      ) &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      )
+    ) {
+      document.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+      ).remove()
+      document.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+      ).remove()
     }
     imageDuplicate.push(src);
     if (
