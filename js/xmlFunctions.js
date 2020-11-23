@@ -335,31 +335,31 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     if (!src || imageDuplicate.includes(src)) {
       if (
         document.body.contains(
-          document.querySelector(`[aria-item='${pubIndex}'] .pending`)
-        ) &&
-        document.body.contains(
-          document.querySelector(`[aria-item='${pubIndex}'] .image`)
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          )
         )
       ) {
-        document.querySelector(`[aria-item='${pubIndex}'] .pending`).remove();
-        document.querySelector(`[aria-item='${pubIndex}'] .image`).remove();
+        document
+          .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+          .closest(`.item`)
+          .remove();
       }
-    }
-    imageDuplicate.push(src);
-    if (
-      empty == true ||
-      (onlyImages == true &&
+    } else if (empty == true && !src) {
+      if (
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
         )
-      )
-    )
-      document
-        .querySelector(`[aria-item='${pubIndex}']`)
-        .closest(`.item`)
-        .remove();
+      ) {
+        document
+          .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+          .closest(`.item`)
+          .remove();
+      }
+    }
+    imageDuplicate.push(src);
     if (
       src &&
       src.match(/https?:\/\//g) &&
@@ -666,7 +666,7 @@ var xmlRequestParsing = function (search, string, index) {
 
         var quit = 30;
 
-        if (menu[index].id.match(/Imgur/g)) quit = 80;
+        if (menu[index].id.match(/Imgur/g)) quit = 50;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
@@ -841,7 +841,7 @@ var xmlRequestParsing = function (search, string, index) {
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
           stop = true;
-        } else if (first == true) {
+        } else if (first == true && reader == true) {
           var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
           var suggestions = document.querySelector(`.suggestions`);
