@@ -306,7 +306,7 @@ html body,
   background-color: var(--hover-background-color) !important;
 }
 
-#container #sidebar #hide {
+#container #hide {
   background-color: var(--progress-background);
   border-right: var(--hover-border-color);
   border-radius: 0px 36px 36px 0px;
@@ -317,7 +317,7 @@ html body,
   margin: auto;
   height: 48px;
   width: 26px;
-  left: 242px;
+  z-index: 12;
   bottom: 0;
   top: 0;
 }

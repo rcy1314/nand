@@ -147,7 +147,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
 var sideBarDisplay = function (toggleOption) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
-  if (!document.body.contains(document.querySelector(`.sel`))) {
+  while (content.lastChild) content.removeChild(content.lastChild);
     if (sideBarTranslations == true) {
       for (i = 0; i <= translations.length - 1; i++) {
         content.append(sideBarTranslationBuild(translations[i]));
@@ -166,39 +166,7 @@ var sideBarDisplay = function (toggleOption) {
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSettingsSideBarLists(`.set`, `settings`, settings)
     content.append(basicFormBuild());
-  }
   if (toggleOption == true) {
-    _sidebar.style.position = `fixed`;
-    _sidebar.animate(
-      {
-        width: [`0px`, `240px`],
-      },
-      {
-        duration: 300, // number in ms [this would be equiv of your speed].
-        easing: `linear`,
-        iterations: 1, // infinity or a number.
-        complete: function() {
-          if (_main.clientWidth > 769) {
-            _progress.style.width = `calc(100% - 16px)`;
-            _top.style.width = `calc(100% - 256px)`;
-            _main.style.width = `calc(100% - 240px)`;
-            _main.style.left = `240px`;
-          }
-        }
-        // fill: ''
-      }
-    );
-    _hide.animate(
-      {
-        left: [`0px`, `240px`],
-      },
-      {
-        duration: 300, // number in ms [this would be equiv of your speed].
-        easing: `linear`,
-        iterations: 1, // infinity or a number.
-        // fill: ''
-      }
-    );
     if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100% + 240px)`
     if (_main.clientWidth > 769) {
@@ -208,12 +176,14 @@ var sideBarDisplay = function (toggleOption) {
         _progress.style.left = `240px`;
         _main.style.left = `240px`;
         _sidebar.style.left = `0`;
+        setTimeout(function() {
+          _hide.style.left = `240px`;
+        }, 75)
       }, 300);
     } else
     setTimeout(function () {
       document.querySelector(`.sideFilter`).style.display = `block`;
       document.querySelector(`#basic`).style.display = `block`;
-      _hide.style.left = `240px`;
       _sidebar.style.left = `0`;
     }, 300);
   } else if (toggleOption == false) {
@@ -224,6 +194,7 @@ var sideBarDisplay = function (toggleOption) {
     _sidebar.style.left = `-242px`;
     _progress.style.left = `0`;
     _main.style.width = `100%`;
+    _hide.style.left = `0`;
     _main.style.left = `0`;
   }
 };
