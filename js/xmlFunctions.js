@@ -345,7 +345,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .closest(`.item`)
           .remove();
       }
-    } else if (empty == true && !src) {
+    } else if (empty == true || onlyImages && !src) {
       if (
         document.body.contains(
           document.querySelector(
