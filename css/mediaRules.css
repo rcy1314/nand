@@ -26,7 +26,7 @@
     position: absolute;
     height: 400px;
     width: 100%;
-    top: 120px;
+    top: 130px;
   }
 
   #main #visit #page #quick #feed {
@@ -45,7 +45,7 @@
   #main #visit #page #front #label {
     position: absolute;
     margin: auto;
-    top: 125px;
+    top: 105px;
     right: 0;
     left: 0;
   }
@@ -147,7 +147,7 @@
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: 75px;
+    top: 50px;
   }
 
   #main #visit #page #front .focus input[type=text] {

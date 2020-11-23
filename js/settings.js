@@ -514,6 +514,7 @@ let complete; //coreHelpers.js interval for progress
 let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
+let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables

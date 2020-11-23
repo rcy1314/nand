@@ -244,6 +244,7 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _show.style.visibility = `hidden`;
+    _just.style.visibility = `hidden`;
   } else if (toggleOption == false) {
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
@@ -252,6 +253,7 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _show.style.visibility = `visible`;
+    _just.style.visibility = `visible`;
   }
 };
 

@@ -6,6 +6,8 @@ const _html = document.querySelector(`html`);
 
 const _body = document.querySelector(`body`);
 
+const _just = document.getElementById(`just`);
+
 const _hide = document.getElementById(`hide`);
 
 const _link = document.getElementById(`link`);

@@ -887,6 +887,11 @@ input[type=submit] {
   display: none;
 }
 
+#main #visit #page #just {
+  color: var(--fill-color-primary);
+  margin-left: 5px;
+  cursor: pointer;
+}
 
 #main #visit #page #quick {
   background-color: transparent;

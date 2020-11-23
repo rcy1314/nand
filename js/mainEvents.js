@@ -71,7 +71,7 @@ document.addEventListener(
         reader == true &&
         httpRequest.status == 200
       ) {
-        xmlRequestParsing(null, null, any());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
     event.preventDefault();
@@ -81,6 +81,12 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (event.target.id == `just`) {
+      reader = true;
+      justRead = true;
+      onlyImages = true;
+      xmlRequestParsing(null, null, anyRandomMenuObject());
+    }
     if (event.target.id == `check`) {
       repository.blank();
     }

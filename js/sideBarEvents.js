@@ -297,6 +297,7 @@ document.addEventListener(
       _visit.style.display = `none`;
       reader = reader != true;
       if (reader == false) {
+        justRead = false;
         event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
         let reader = false;
