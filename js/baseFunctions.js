@@ -111,13 +111,17 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
     for (i = 0; i <= Arrays.length - 1; i++) {
       let option = document.createElement(`div`);
-      option.classList.add(Class, Arrays[i].class);
+      if (Class == `option`)
+        option.classList.add(Class);
+      else
+        option.classList.add(Class, Arrays[i].class);
       if (Class == `background` || Class == `sel`)
         option.innerHTML = Arrays[i].name;
       if (Class == `option`) option.innerHTML = Arrays[i]
       if (Class == `theme`) option.innerHTML = Arrays[i].obFn
       list.append(option);
-      list.append(sideBarThemeBuild(Arrays[i].icon));
+      if (Class != `option`)
+        list.append(sideBarThemeBuild(Arrays[i].icon));
     }
 }
 
