@@ -398,6 +398,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       };
       newImg.onload = function () {
         if (
+          src.match(/youtube/g) &&
           youtubeMedia == false &&
           document.body.contains(
             document.querySelector(
