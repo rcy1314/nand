@@ -104,7 +104,6 @@ var displayExpand = function (toggleOption) {
         document.querySelector(`.result`).style.display = `inline-flex`;
     }
   }
-  unloading();
 };
 
 var appendSideBarLists = function (Elem, Class, Arrays) {

@@ -247,9 +247,9 @@ span.ripple {
   100% {left:100%;}
 }
 
-html body #container #main #dots .fill {
-  width: 4px;
-  height: 4px;
+html body #dots .fill {
+  width: 5px;
+  height: 5px;
   position: fixed;
   border-radius: 50%;
 }

@@ -27,7 +27,7 @@ var init = function () {
   } else if (loading == `percent`) {
     document
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => a.style.zIndex = `-1`);
+      .forEach((a) => a.style.zIndex = `-12`);
     let width = _main.clientWidth / 75;
     setTimeout(function() { //thanks init.js
       complete = setInterval(function () {
