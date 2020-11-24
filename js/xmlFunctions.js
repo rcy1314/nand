@@ -221,7 +221,6 @@ var xmlImageSource = function (xhr) {
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0]
     );
   else src = null;
-  console.log(src);
   return src;
 };
 
@@ -549,7 +548,17 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           let copyPost = document.querySelector(
             `[aria-item='${pubIndex}'] .post`
           );
-          itemImage.setAttribute(`src`, src);
+          var request = new XMLHttpRequest();
+          request.open('GET', cors + src, true);
+          request.responseType = 'blob';
+          request.onload = function() {
+              var reader = new FileReader();
+              reader.readAsDataURL(request.response);
+              reader.onload =  function(e){
+                itemImage.setAttribute(`src`, e.target.result);
+              };
+          };
+          request.send();
           if (_main.clientWidth <= 425) {
             if (
               newImg.naturalHeight > k &&
@@ -848,7 +857,6 @@ var xmlRequestParsing = function (search, string, index) {
         let recent = pub[0].dst;
         if (reader == false)
           document.querySelector(`.channel`).append(footerBuild());
-        console.log(first)
         if (first == false) {
           var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
