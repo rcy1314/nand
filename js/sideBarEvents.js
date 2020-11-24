@@ -386,6 +386,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+      displayExpand(expand)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
@@ -393,6 +394,7 @@ document.addEventListener(
       event.target.nextElementSibling.classList.add(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
+      displayExpand(expand)
     }
     if (event.target.classList.contains(`onlyImages`)) {
       onlyImages = onlyImages != true;
