@@ -60,7 +60,7 @@ setTimeout(function() {
       let id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
       let i = menu.findIndex((item) => item.hash === id);
-
+      youtubeMedia = true;
       guideOnScreen = onScreen;
       onScreen = false;
       sideBarDisplay(onScreen);
