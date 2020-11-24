@@ -18,12 +18,12 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,
-    `linear-gradient(right, rgba(106, 66, 194, .4) 50%,` +
-      `rgba(253, 115, 136, .4) 100%)`
+    `transparent`
   );
   document.documentElement.style.setProperty(
     `--bg-color-secondary`,
-    `rgba(106, 66, 194, 1)`
+    `linear-gradient(45deg, rgba(106, 66, 194, 1) 50%,` +
+      `rgba(253, 115, 136, 1) 100%)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
