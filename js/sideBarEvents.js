@@ -392,14 +392,10 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
-      init();
       event.target.nextElementSibling.classList.remove(`fa-minus`)
       event.target.nextElementSibling.classList.add(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
-      setTimeout(function() {
-        unloading();
-      }, 3200)
     }
     if (event.target.classList.contains(`onlyImages`)) {
       onlyImages = onlyImages != true;
