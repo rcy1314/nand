@@ -264,6 +264,7 @@ document.addEventListener(
           true
         );
       }
+      _match.style.display = `none`;
     } else if (event.target.id == `front`) {
       if (_guest.value == ``) inputListingIndex(``, `#first`);
       if (document.body.contains(_first.querySelector(`.hover`))) {
