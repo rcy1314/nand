@@ -39,7 +39,7 @@ var Night = function () {
     `rgba(0,0,0,.4)`
   );
   document.documentElement.style.setProperty(
-    `--hue-rotate`,
+    `--filter`,
     `saturate(.5)`
   );
   document

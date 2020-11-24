@@ -42,7 +42,7 @@ var Day = function () {
     `rgba(255,255,255,.8)`
   );
   document.documentElement.style.setProperty(
-    `--hue-rotate`,
+    `--filter`,
     `hue-rotate(0deg)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);

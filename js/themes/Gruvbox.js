@@ -42,9 +42,10 @@ var Gruvbox = function () {
     `rgba(169, 121, 62, .4)`
   );
   document.documentElement.style.setProperty(
-    `--hue-rotate`,
+    `--filter`,
     `hue-rotate(160deg)`
   );
+  document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   backgroundImage[0].path = `images/e54430a6cf0248fa8d1d5961e02a71e4.webp`
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
     `url(${backgroundImage[0].path})`
