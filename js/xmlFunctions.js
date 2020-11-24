@@ -563,6 +563,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(`.classic`).style.display = `flex`;
               itemImage.closest(`.classic`).style.alignItems = `center`;
               itemPending.style.width = `180px`;
+              itemPending.style.height = `180px`;
               itemImage.style.marginBottom = `30px`;
               copyPost.style.display = `none`;
               copyPicture.style.display = `none`;
@@ -588,6 +589,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
+              itemPending.style.height = `180px`;
               itemImage.closest(`.classic`).style.display = `flex`;
               itemImage.closest(`.classic`).style.alignItems = `center`;
               itemImage.style.marginBottom = `30px`;
