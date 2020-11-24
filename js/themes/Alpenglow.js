@@ -49,7 +49,7 @@ var Alpenglow = function () {
     `--hue-rotate`,
     `hue-rotate(110deg)`
   );
-  backgroundImage[0].path = `url(images/ffe869c642be33cbb2c3e609e27beb29.webp)`
+  backgroundImage[0].path = `images/ffe869c642be33cbb2c3e609e27beb29.webp`
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    backgroundImage[0].path
+    `url(${backgroundImage[0].path})`
 };
