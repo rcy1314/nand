@@ -85,7 +85,11 @@ document.addEventListener(
   function (event) {
     if (event.target.id == `just`) {
       reader = true;
+      document.querySelector(`reader`).nextElementSibling.classList.remove(`fa-minus`)
+      document.querySelector(`reader`).nextElementSibling.classList.add(`fa-star`)
       justRead = true;
+      document.querySelector(`onlyImages`).nextElementSibling.classList.remove(`fa-minus`)
+      document.querySelector(`onlyImages`).nextElementSibling.classList.add(`fa-star`)
       onlyImages = true;
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
