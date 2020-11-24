@@ -71,7 +71,7 @@ setTimeout(function() {
       _top.style.display = `none`;
       setTimeout(function () {
         filterInputResponse(true, false, menu[i].id.space(), false);
-      }, 250);
+      }, 100);
     }
   }
   else if (location.search.split(`?q=`)[1]) {
@@ -85,7 +85,7 @@ setTimeout(function() {
         filterInputResponse(true, false, uri[0], false);
       else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 250);
+    }, 100);
   } else if (!post) _visit.style.display = `flex`
 
   if (!isNumeric(post) && _main.clientWidth > 768)
