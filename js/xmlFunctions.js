@@ -332,7 +332,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 480;
   let jsonResponseScore;
   ready(() => {
-    if (imageDuplicate.includes(src)) {
+    if (src && imageDuplicate.includes(src)) {
       if (
         document.body.contains(
           document.querySelector(
