@@ -451,8 +451,8 @@ document.addEventListener(
                 dst: event.target
                   .closest(`.item`)
                   .querySelector(`.ago:last-child`).innerHTML,
-                src: event.target.closest(`.item`).querySelector(`.source`)
-                  .value,
+                src: event.target.closest(`.item`).querySelector(`.img`)
+                  .getAttribute(`src`),
                 externalURI: event.target.closest(`.item`).getAttribute(`ext`),
                 id: event.target.closest(`.item`).getAttribute(`aria-object`),
               });
