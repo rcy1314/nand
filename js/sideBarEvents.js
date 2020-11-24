@@ -368,6 +368,8 @@ document.addEventListener(
     if (event.target.classList.contains(`List`)) {
       expand = true;
       groupType = `list`;
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove()
       populateCategoryGroup(category)
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
@@ -377,6 +379,8 @@ document.addEventListener(
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
       groupType = `blocks`;
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove()
       populateCategoryGroup(category)
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
