@@ -151,7 +151,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
 var sideBarDisplay = function (toggleOption) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
-  while (content.lastChild) content.removeChild(content.lastChild);
+  if (!document.body.contains(document.querySelector(`.sel`))) {
     if (sideBarTranslations == true) {
       for (i = 0; i <= translations.length - 1; i++) {
         content.append(sideBarTranslationBuild(translations[i]));
@@ -170,6 +170,7 @@ var sideBarDisplay = function (toggleOption) {
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSettingsSideBarLists(`.set`, `settings`, settings)
     content.append(basicFormBuild());
+  }
   if (toggleOption == true) {
     if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100% + 240px)`
