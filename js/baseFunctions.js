@@ -455,13 +455,14 @@ var progressBackDrop = function (done, percent) {
           _check.style.visibility = `hidden`;
         }, 750);
       }
-      if (onlyImages == false) {
-        if (document.body.contains(document.querySelector(`.air`)))
-          _main.scrollTop = document.querySelector(`.air`).clientHeight;
-      } else if (onlyImages == true)
+      if (onlyImages == true)
         if (document.body.contains(document.querySelector(`.result`)))
           _main.scrollTop = 0;
       setTimeout(function() {
+        if (onlyImages == false) {
+          if (document.body.contains(document.querySelector(`.air`)))
+            _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        }
         visit.style.display = `none`
       }, 25)
       document.querySelector(`#group`).style.display = `block`;

@@ -556,6 +556,30 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               reader.readAsDataURL(request.response);
               reader.onload =  function(e){
                 itemImage.setAttribute(`src`, e.target.result);
+                if (
+                   document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                    )
+                  ) &&
+                  document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    )
+                  ) &&
+                  safeSearch == false ||
+                  !safeSearchIDs.includes(menu[id].id)
+                ) {
+                  document
+                    .querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                    )
+                    .remove();
+                  document
+                    .querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    ).style.display = `block`
+                }
               };
           };
           request.send();
@@ -617,30 +641,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.style.width = `100%`;
               itemImage.classList.add(`default`);
             }
-          }
-          if (
-             document.body.contains(
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              )
-            ) &&
-            document.body.contains(
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              )
-            ) &&
-            safeSearch == false ||
-            !safeSearchIDs.includes(menu[id].id)
-          ) {
-            document
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              )
-              .remove();
-            document
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              ).style.display = `block`
           }
         }
       };
