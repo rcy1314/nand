@@ -220,7 +220,8 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _show.style.visibility = `hidden`;
-    _just.style.visibility = `hidden`;
+    _just.classList.add(`toggleHidden`);
+    _just.classList.add(`invisible`);
   } else if (toggleOption == false) {
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
@@ -229,7 +230,8 @@ var quickFeedDisplay = function (toggleOption) {
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _show.style.visibility = `visible`;
-    _just.style.visibility = `visible`;
+    _just.classList.remove(`toggleHidden`);
+    _just.classList.remove(`invisible`);
   }
 };
 
