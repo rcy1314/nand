@@ -454,7 +454,7 @@ document.addEventListener(
               windowHeight = _main.clientHeight;
             }
 
-            function starPosition() {
+            function startPosition() {
               for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
                 var positionFromTop = elements[i].getBoundingClientRect().top;
@@ -478,7 +478,7 @@ document.addEventListener(
             _main.addEventListener('resize', init);
 
             init();
-            starPosition();
+            startPosition();
           })();
         }
 

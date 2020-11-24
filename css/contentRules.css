@@ -1059,7 +1059,7 @@ input[type=submit] {
   align-items: center;
   position: relative;
   display: flex;
-  height: 180px;
+  height: 360px;
   margin: 12px;
 }
 

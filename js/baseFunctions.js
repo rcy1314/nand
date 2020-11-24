@@ -394,7 +394,7 @@ var progressBackDrop = function (done, percent) {
               windowHeight = _main.clientHeight;
               for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
-                var positionFromTop = elements[i].getBoundingClientRect().top;
+                var positionFromTop = element.getBoundingClientRect().top;
 
                 if (positionFromTop - windowHeight <= 0) {
                   element.querySelector(`.img`).classList.add(`fade-in-element`);
