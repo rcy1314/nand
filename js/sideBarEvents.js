@@ -399,14 +399,12 @@ document.addEventListener(
         event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
       }
-      _toggle.style.display = `none`;
-      _visit.style.visibility = `none`;
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
-      if (reader == false && onScreen == false) populateCategoryGroup(category);
+      if (reader == false) populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       unloading();
