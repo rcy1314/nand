@@ -582,7 +582,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 }
               };
           };
-          request.send();
+          if (!src.match(/4cdn/g)) request.send();
+          else itemImage.setAttribute(`src`, src);
           if (_main.clientWidth <= 425) {
             if (
               newImg.naturalHeight > k &&
