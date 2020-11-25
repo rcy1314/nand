@@ -18,7 +18,7 @@
 
 
   * Hash Example
-  > /?[hash] in headXML.js
+  > /?[hash] in xmlAssets.js
 
   > /?[uX] Used in Copy Post appends time converted to base 36.
 
@@ -36,7 +36,7 @@
 
   > /?q=&abc-technology found one, unique passthrough.
 
-  > /?q=&jquery not found pass through xml search.<br>
+  > /?q=&jquery not found pass through xml search.
 
     * Query Feed Example
 
