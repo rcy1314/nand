@@ -165,16 +165,15 @@ document.addEventListener(
     if (
       event.target.classList.contains(`sideBarCenter`)
     ) {
+      sideBarCenter = sideBarCenter != true
       if (sideBarCenter == false) {
         event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
         _content.style.position = `relative`;
-        sideBarCenter = true;
-      } else {
+      } else if (sideBarCenter == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
         _content.style.position = `absolute`;
-        sideBarCenter = false;
       }
     }
     if (
