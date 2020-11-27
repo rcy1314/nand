@@ -8,6 +8,7 @@
 * Private Proxy Requests.
 * Beta (stage) themes.
 * Background images.
+* Uri Identifying.
 * No Installation.
 * NSFW api.
 * Filtering.
@@ -17,10 +18,16 @@
 * Nearly half XML responses have no images attached use onlyImages.
 * safeSearch throws a couple header errors returning offloading.
 * Heroku offloading first response ~7s.
+* Image blobs guideBuild delay.
+
 
 ### Configurations in js/settings.js
 
 * backgroundImage path is being overwritten in themes files.
+
+### Arc
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Arc.jpg'></p>
 
 ### Day
 
