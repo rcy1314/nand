@@ -210,6 +210,12 @@ document.addEventListener(
           .querySelectorAll(`.populate`)
           .forEach((a) => a.classList.remove(`expand`));
       }
+      setTimeout(function() {
+        if (onlyImages == false) {
+          if (document.body.contains(document.querySelector(`.air`)))
+            _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        }
+      }, 25)
     }
     if (event.target.classList.contains(`select`)) {
       let setPause
