@@ -1,6 +1,6 @@
 // initial theme
 // backgroundImage path is being overwritten in themes files
-let set = `Arc`;
+let set = `Alpenglow`;
 
 /*
     backgroundImage [array]
