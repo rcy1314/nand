@@ -5,10 +5,10 @@
 
 ### Features
 
+* URI Identifying init.js
 * Private Proxy Requests.
 * Beta (stage) themes.
-* Background images.
-* Uri Identifying.
+* Background Images.
 * No Installation.
 * NSFW api.
 * Filtering.
