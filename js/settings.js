@@ -1,6 +1,6 @@
 // initial theme
 // backgroundImage path is being overwritten in themes files
-let set = `Alpenglow`;
+let set = `Arc`;
 
 /*
     backgroundImage [array]
@@ -29,6 +29,7 @@ let backgroundImage = [
 //  }
 
 const themes = [
+  { obFn: `Arc`, class: `Arc`, icon: `fa-moon` },
   { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Nord`, class: `Nord`, icon: `fa-signature` },
