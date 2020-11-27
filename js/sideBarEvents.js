@@ -470,7 +470,7 @@ document.addEventListener(
                     document
                       .querySelectorAll(`.img`)
                       .forEach((a) => (a.classList.remove(`hidden`)));
-                    _main.removeEventListener("scroll", starPosition);
+                    _main.removeEventListener("scroll", startPosition);
                     _main.removeEventListener("resize", init);
                     element.classList.remove('hidden');
                   }
@@ -478,7 +478,7 @@ document.addEventListener(
               }
             }
 
-            _main.addEventListener('scroll', starPosition);
+            _main.addEventListener('scroll', startPosition);
             _main.addEventListener('resize', init);
 
             init();
