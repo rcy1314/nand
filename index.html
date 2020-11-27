@@ -178,6 +178,7 @@ for (i = 0; i <= themes.length - 1; i++) {
       function (event) {
         if (event.target.classList.contains(themes[i].class)) {
           window[themes[i].class]();
+          document.querySelector(`.border`).innerHTML = themes[i].class
         }
       },
       false
