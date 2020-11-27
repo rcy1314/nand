@@ -91,7 +91,7 @@ setTimeout(function() {
   if (!isNumeric(post) && _main.clientWidth > 768)
     setTimeout(function() {
       sideBarDisplay(onScreen)
-    }, 100)
+    }, 250)
   else if (isNumeric(post)) _check.style.visibility = `visible`
   else if (_main.clientWidth < 768) {
     groupType = `blocks`;
