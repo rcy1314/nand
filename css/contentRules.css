@@ -1345,7 +1345,7 @@ input[type=submit] {
   color: var(--fill-color-primary);
   margin-left: 20px !important;
   cursor: pointer;
-  top: 10px;
+  top: -15px;
 }
 
 #main #xml .center #bottom .previous {
