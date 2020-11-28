@@ -33,7 +33,6 @@ window.onload = function () {
         `${(exclude.length * 34.25) + 75}px`;
 
     _container.style.display = `block`;
-    _guest.focus();
 
 };
 

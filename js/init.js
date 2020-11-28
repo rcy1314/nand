@@ -77,13 +77,16 @@ setTimeout(function() {
       if (!uri[1]) filterInputResponse(true, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 250);
-  } else if (!post) _visit.style.display = `flex`
+  } else if (!post) {
+    _visit.style.display = `flex`;
+    _guest.focus();
+  }
 
   if (!isNumeric(post) && _main.clientWidth > 768)
     setTimeout(function() {
-      sideBarDisplay(onScreen)
+      sideBarDisplay(onScreen);
     }, 250)
-  else if (isNumeric(post)) _check.style.visibility = `visible`
+  else if (isNumeric(post)) _check.style.visibility = `visible`;
   else if (_main.clientWidth < 768) {
     groupType = `blocks`;
     onScreen = false;
