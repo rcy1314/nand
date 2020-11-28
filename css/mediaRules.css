@@ -16,6 +16,10 @@
     display: none;
   }
 
+  #main #visit #page #just {
+    margin-left: 0 !important;
+  }
+
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     background-color: transparent !important;
