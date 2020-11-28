@@ -546,6 +546,7 @@ var basicFormBuild = function () {
   form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
   object.setAttribute(`placeholder`, `search`);
+  object.setAttribute(`autocomplete`, `off`)
   object.setAttribute(`type`, `text`);
   object.classList.add(`sideFilter`);
   object.classList.add(`text`);

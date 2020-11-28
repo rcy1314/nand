@@ -269,7 +269,7 @@ document.addEventListener(
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
       if (reader == true) {
         randomDuplicate = [];
-        xmlRequestParsing(false, null, null, anyRandomMenuObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -326,7 +326,7 @@ document.addEventListener(
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         reader = true;
-        xmlRequestParsing(false, null, null, anyRandomMenuObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
     if (event.target.classList.contains(`parse`)) {
@@ -519,7 +519,7 @@ document.addEventListener(
         document.querySelector(`#top #arm #option`).style.display = `none`;
       else if (showOption == true)
         document.querySelector(`#top #arm #option`).style.display = `block`;
-      xmlRequestParsing(false, null, null, anyRandomMenuObject());
+      xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (event.target.classList.contains(`RandomCategory`)) {
       let code = [];
@@ -533,7 +533,7 @@ document.addEventListener(
         }
       }
       let randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
-      xmlRequestParsing(false, null, null, randomMenuObject);
+      xmlRequestParsing(null, null, randomMenuObject);
     }
     if (event.target.classList.contains(`RandomImages`)) {
       let code = [];
@@ -542,7 +542,7 @@ document.addEventListener(
         if (menu[i].media == true) code.push(menu.indexOf(menu[i]));
       }
       var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
-      xmlRequestParsing(false, null, null, randomMenuObject);
+      xmlRequestParsing(null, null, randomMenuObject);
     }
     if (
       event.target.classList.contains(`fa-sun`) ||

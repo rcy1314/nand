@@ -326,7 +326,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   return parse[0];
 };
 
-var xmlImageAttributes = function (re, empty, menuObject, pubIndex, src) {
+var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 480;
   let jsonResponseScore;
@@ -429,7 +429,7 @@ var xmlImageAttributes = function (re, empty, menuObject, pubIndex, src) {
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           ).classList.add(`yt`)
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id))
-          fetch(`${re}${api}${src}`, {
+          fetch(`${cors}${api}${src}`, {
             method: "GET",
             headers: {
               Origin: "*",
@@ -549,7 +549,7 @@ var xmlImageAttributes = function (re, empty, menuObject, pubIndex, src) {
             `[aria-item='${pubIndex}'] .post`
           );
           var request = new XMLHttpRequest();
-          request.open('GET', re + src, true);
+          request.open('GET', cors + src, true);
           request.responseType = 'blob';
           request.onload = function() {
               var reader = new FileReader();
@@ -662,11 +662,10 @@ var xmlTitleParsing = function (xhr) {
   return escape(title);
 };
 
-var xmlRequestParsing = function (re, search, string, index) {
+var xmlRequestParsing = function (search, string, index) {
   init();
   let html;
   let local;
-  let redir;
   id = index;
   let pub = [];
   let images = [];
@@ -677,17 +676,10 @@ var xmlRequestParsing = function (re, search, string, index) {
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
     category = category;
-  }
-  if (menu[id].id.match(/abc/g) || re == false) {
+  } else {
     uri = `${cors}${menu[index].uri}`;
     category = menu[index].category;
-    redir = cors;
-  } else {
-    uri = `${corsBackup}${menu[index].uri}`;
-    category = menu[index].category;
-    redir = corsBackup
   }
-  console.log(redir)
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
   if (reader != true && first == true)
@@ -852,11 +844,11 @@ var xmlRequestParsing = function (re, search, string, index) {
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {
-              xmlImageAttributes(redir, false, index, images[i].element, images[i].src);
+              xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
         } else if (!safeSearchIDs.includes(menu[id].id)){
           for (i = 0; i <= images.length - 1; i++) {
-              xmlImageAttributes(redir, false, index, images[i].element, images[i].src);
+              xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
         }
         let oldest = pub[pub.length - 1].dst;

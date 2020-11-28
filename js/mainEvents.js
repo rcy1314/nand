@@ -58,7 +58,7 @@ document.addEventListener(
         httpRequest.status == 200
       ) {
         first = false;
-        xmlRequestParsing(false, null, null, anyRandomMenuObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       } else stop = false;
     }
   },
@@ -73,7 +73,7 @@ document.addEventListener(
         reader == true &&
         httpRequest.status == 200
       ) {
-        xmlRequestParsing(false, null, null, anyRandomMenuObject());
+        xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
     event.preventDefault();
@@ -91,7 +91,7 @@ document.addEventListener(
       document.querySelector(`.onlyImages`).nextElementSibling.classList.remove(`fa-minus`)
       document.querySelector(`.onlyImages`).nextElementSibling.classList.add(`fa-star`)
       onlyImages = true;
-      xmlRequestParsing(true, null, null, anyRandomMenuObject());
+      xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (event.target.id == `check`) {
       repository.blank();
@@ -249,7 +249,6 @@ document.addEventListener(
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         xmlRequestParsing(
-          false,
           null,
           null,
           event.target.closest(`.populate`).getAttribute(`aria-item`)
@@ -262,7 +261,7 @@ document.addEventListener(
       category = event.target.closest(`.translation`).getAttribute(`aria-item`);
         if (reader == true) {
           randomDuplicate = [];
-          xmlRequestParsing(false, null, null, anyRandomMenuObject());
+          xmlRequestParsing(null, null, anyRandomMenuObject());
         } else {
           let setPause
           if (showRipple == true){
@@ -307,7 +306,6 @@ document.addEventListener(
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
       xmlRequestParsing(
-        false,
         null,
         null,
         event.target.closest(`.asset`).getAttribute(`aria-item`)
@@ -371,14 +369,13 @@ document.addEventListener(
       event.target.classList.contains(`bold`)
     ) {
       xmlRequestParsing(
-        false,
         null,
         null,
         event.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
     if (event.target.classList.contains(`asset`)) {
-      xmlRequestParsing(false, null, null, event.target.getAttribute(`aria-item`));
+      xmlRequestParsing(null, null, event.target.getAttribute(`aria-item`));
     }
     if (
       event.target.classList.contains(`flip-front`) ||
@@ -389,7 +386,6 @@ document.addEventListener(
     ) {
       event.target.closest(`#xml`).remove();
       xmlRequestParsing(
-        false,
         null,
         null,
         event.target.closest(`.btn`).getAttribute(`aria-item`)

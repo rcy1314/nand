@@ -45,6 +45,7 @@ setTimeout(function() {
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
+    !location.href.match(`\\?\\#`) &&
     location.href.split(`?`)[1]
   ) {
     var uri = location.href.split(`?`)[1];
