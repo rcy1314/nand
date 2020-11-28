@@ -82,7 +82,7 @@ setTimeout(function() {
     _guest.focus();
   }
 
-  if (!isNumeric(post) && _main.clientWidth > 768)
+  if (!isNumeric(post))
     setTimeout(function() {
       if (onScreen == true) sideBarDisplay(onScreen);
       else sideBarDisplay(false);
