@@ -1,6 +1,6 @@
 // initial theme
 // backgroundImage path is being overwritten in themes files
-let set = `Alpenglow`;
+let set = `Day`;
 
 /*
     backgroundImage [array]
@@ -232,7 +232,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = true;
+let quickFeeds = false;
 
 /*
     quickFeedsTranslations [boolean/integer]
