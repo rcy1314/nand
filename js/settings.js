@@ -232,7 +232,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = false;
+let quickFeeds = true;
 
 /*
     quickFeedsTranslations [boolean/integer]
@@ -258,7 +258,7 @@ let quickFeedsTranslations = true;
 
 */
 
-let scrollIntoView = false;
+let scrollIntoView = true;
 
 /*
     fadeIntoView [boolean/integer]

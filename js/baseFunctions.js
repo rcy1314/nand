@@ -434,6 +434,7 @@ var progressBackDrop = function (done, percent) {
         }
     }
     if (document.body.contains(document.getElementById(`group`))) {
+      document.querySelector(`#group`).style.display = `block`;
       if (scrollIntoView == true) {
         document.querySelector(
           `#group`
@@ -468,7 +469,6 @@ var progressBackDrop = function (done, percent) {
         }
         visit.style.display = `none`
       }, 25)
-      document.querySelector(`#group`).style.display = `block`;
     }
     setTimeout(function () {
       _progress.style.transitionDelay = `none`;
