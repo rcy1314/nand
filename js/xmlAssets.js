@@ -298,6 +298,7 @@ var menu=[
 {id:`BJPenn`,category:`Sports`,description:`Bjpenn has become one of the most reliable destinations for your MMA and UFC needs. `,uri:`https://www.bjpenn.com/feed`,image:`BJPenn`,hash:`jP`,media:!1},
 {id:`CBS Sports`,category:`Sports`,description:`CBS Sports is an American Sports website operated by CBS Interactive.`,uri:`https://rss.cbssports.com/rss/headlines`,image:`CBS`,hash:`bS`,media:!1},
 {id:`CNN Sports`,category:`Sports`,description:`CNN Sports catalogues the latest from around the World.`,uri:`http://rss.cnn.com/rss/edition_sport.rss`,image:`CNN`,hash:`Nn`,media:!1},
+{id:`Essentially Sports`,category:`Sports`,description:`Essentially Sports is an all-sports content and news website, with a mission to bridge the gap between a fans’ opinions and experts’ analysis.`,uri:`https://www.essentiallysports.com/feed`,image:`Essentially`,hash:`Es`,media:!0},
 {id:`ESPN MLB`,category:`Sports`,description:`ESPN MLB Baseball News, Scores, Stats, Standings, Fantasy games, and more.`,uri:`http://www.espn.com/espn/rss/mlb/news`,image:`ESPN`,hash:`mL`,media:!0},
 {id:`FOX Sports MLB`,category:`Sports`,description:`Fox Sports MLB videos, rumors, stats, standings, team schedules & fantasy games on FOX Sports.`,uri:`https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=mlb`,image:`FoxSports`,hash:`xB`,media:!0},
 {id:`The Score MLB`,category:`Sports`,description:`The Score MLB Trending Topics and Rumors for Baseball, and More.`,uri:`https://feeds.thescore.com/mlb.rss`,image:`TheScore`,hash:`tB`,media:!0},

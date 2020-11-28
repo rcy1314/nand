@@ -298,14 +298,17 @@ var quickFeedAsset = function (feedAssets) {
 };
 
 var inputListingIndex = function (inputFilter, listingWrapper) {
-  var suggest = [];
-  var listing = document.querySelector(listingWrapper + ` .listing`);
+  let matches = [];
+  let suggest = [];
+  let listing = document.querySelector(listingWrapper + ` .listing`);
   while (listing.lastChild) listing.removeChild(listing.lastChild);
   document.querySelector(listingWrapper).style.display = `block`;
   if (inputFilter != ``)
     for (var i = menu.length - 1; i >= 1; i--) {
       if (menu[i].description.toLowerCase().match(inputFilter)) {
-        if (suggest.length >= suggestionBuffer) return false;
+        if (
+          suggest.length - 1 === suggestionBuffer
+        ) return false;
         listing.append(
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
@@ -316,9 +319,8 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
             i
           )
         );
-        suggest.push(i);
+        suggest.push(menu.indexOf(menu[i]));
       }
-      setTimeout(500);
     }
   for (i = 1; i <= menu.length - 1; i++) {
     let randomMenuObject = menu.indexOf(
@@ -326,23 +328,24 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
     );
     if (
       menu[randomMenuObject] &&
-      menu.indexOf(menu[randomMenuObject]) &&
-      menu[randomMenuObject].media == true &&
-      !suggest.includes(randomMenuObject)
-    )
-      if (suggest.length >= suggestionBuffer) return false;
-    listing.append(
-      listingIndexBuild(
-        menu[randomMenuObject].id.match(/[^\/]+$/g),
-        menu.indexOf(menu[randomMenuObject]),
-        menu[randomMenuObject].image.image(),
-        menu[randomMenuObject].category,
-        true,
-        i
-      )
-    );
-    suggest.push(randomMenuObject);
-    setTimeout(500);
+      !matches.includes(randomMenuObject) &&
+      menu[randomMenuObject].media == true
+    ) {
+      matches.push(randomMenuObject)
+        if (
+          (suggest.length - 1) + (matches.length - 1) === suggestionBuffer
+        ) return false;
+      listing.append(
+        listingIndexBuild(
+          menu[randomMenuObject].id.match(/[^\/]+$/g),
+          menu.indexOf(menu[randomMenuObject]),
+          menu[randomMenuObject].image.image(),
+          menu[randomMenuObject].category,
+          true,
+          i
+        )
+      );
+    }
   }
 };
 
@@ -360,7 +363,7 @@ var progressBackDrop = function (done, percent) {
           )
             if (httpRequest.status == 200) {
               first = false;
-              xmlRequestParsing(null, null, anyRandomMenuObject());
+              xmlRequestParsing(false, null, null, anyRandomMenuObject());
             }
         }
       document.querySelector(`#xml`).style.paddingTop = `0`;
@@ -623,10 +626,10 @@ var filterInputResponse = function (
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)){
-      xmlRequestParsing(null, null, exact);
+      xmlRequestParsing(false, null, null, exact);
     }
     else if (isNumeric(match) && filter.length == 1){
-      xmlRequestParsing(null, null, match);
+      xmlRequestParsing(false, null, null, match);
     }
     return false;
   }

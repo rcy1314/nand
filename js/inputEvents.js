@@ -299,6 +299,9 @@ var inputListingKeyup = function (Elem, keycode) {
   if (event.target.value.length > 1) {
     _label.style.visibility = `hidden`;
     _quick.style.visibility = `hidden`;
+    _show.style.visibility = `hidden`;
+    _link.style.visibility = `hidden`;
+    _just.style.visibility = `hidden`;
   }
   if (
     event.target.value.length > 3 &&
@@ -314,7 +317,7 @@ var inputListingKeyup = function (Elem, keycode) {
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
     document
-      .querySelectorAll(`#label, #quick`)
+      .querySelectorAll(`#just, #show, #link, #quick`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (keycode === 40) {
     if (
@@ -334,8 +337,6 @@ var inputListingKeyup = function (Elem, keycode) {
       document
         .querySelector(`${Elem} .listing .hover`)
         .classList.remove(`hover`);
-      document.querySelector(`${Elem} .listing .hover`).focus();
-      _guest.focus();
     }
   } else if (keycode === 33) {
     if (
@@ -368,11 +369,6 @@ var inputListingKeyup = function (Elem, keycode) {
         .querySelector(`${Elem} .listing .hover`)
         .previousElementSibling.previousElementSibling.previousElementSibling
         .previousElementSibling.previousElementSibling.previousElementSibling
-        .focus();
-      document
-        .querySelector(`${Elem} .listing .hover`)
-        .previousElementSibling.previousElementSibling.previousElementSibling
-        .previousElementSibling.previousElementSibling.previousElementSibling
         .classList.add(
           `hover`
         );
@@ -383,9 +379,7 @@ var inputListingKeyup = function (Elem, keycode) {
         .classList.remove(
           `hover`
         );
-      _guest.focus();
     } else {
-      document.querySelector(`${Elem} .listing .index`).focus();
       document
         .querySelector(`${Elem} .listing .hover`)
         .classList.remove(`hover`);
@@ -395,7 +389,6 @@ var inputListingKeyup = function (Elem, keycode) {
     if (
       !document.body.contains(document.querySelector(`${Elem} .listing .hover`))
     ) {
-      document.querySelector(`${Elem} .listing .index`).focus();
       document
         .querySelector(`${Elem} .listing .index`)
         .nextElementSibling.nextElementSibling.nextElementSibling
@@ -426,18 +419,12 @@ var inputListingKeyup = function (Elem, keycode) {
         .querySelector(`${Elem} .listing .hover`)
         .nextElementSibling.nextElementSibling.nextElementSibling
         .nextElementSibling.nextElementSibling.nextElementSibling
-        .focus();
-      document
-        .querySelector(`${Elem} .listing .hover`)
-        .nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling.nextElementSibling.nextElementSibling
         .classList.add(
           `hover`
         );
       document
         .querySelector(`${Elem} .listing .hover`)
         .classList.remove(`hover`);
-      _guest.focus();
     } else {
       document.querySelector(`${Elem} .listing .index:last-child`).focus();
       document
@@ -465,13 +452,18 @@ var inputListingKeyup = function (Elem, keycode) {
       document
         .querySelector(`${Elem} .listing .hover`)
         .nextElementSibling.classList.remove(`hover`);
-      document.querySelector(`${Elem} .listing .hover`).focus();
-      _guest.focus();
     }
   } else if (keycode === 27) {
     _quick.style.visibility = `visible`;
+    _label.style.visibility = `visible`;
+    _just.style.visibility = `visible`;
     document.querySelector(Elem).style.display = `none`;
   }
-  event.target.setAttribute(`tabIndex`, -1);
-  event.target.focus();
+  if (
+    document.body.contains(document.querySelector(`${Elem} .listing .hover`))
+  ) {
+    document.querySelector(`${Elem} .listing .hover`).setAttribute(`tabindex`, -1);
+    document.querySelector(`${Elem} .listing .hover`).focus();
+    _guest.focus();
+  }
 };
