@@ -461,7 +461,8 @@ let exclude = [
 
 */
 
-const cors = `https://acktic-github-io.herokuapp.com/`;
+const cors = `https://acktic-github-io.acktic.workers.dev/?`;
+const corsBackup = `https://acktic-github-io.herokuapp.com/`;
 
 /*
     api [string]

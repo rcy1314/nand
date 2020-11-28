@@ -5,19 +5,20 @@
 
 ### Features
 
-* URI Identifying init.js
 * Private Proxy Requests.
+* URI Identifying init.js
 * Beta (stage) themes.
 * Background Images.
 * No Installation.
+* Bing Search.
 * NSFW api.
 * Filtering.
 
 ### Known Issues
 
-* Nearly half XML responses have no images attached use onlyImages.
-* safeSearch throws a couple header errors returning offloading.
-* Heroku offloading first response ~7s.
+* Nearly half XML responses have no images attached use onlyImages true.
+* safeSearch throws a couple header errors returning from offloading.
+* Cloudflare Proxy 100,000 visits to Heroku offloading response ~7s.
 
 ### Configurations in js/settings.js
 
