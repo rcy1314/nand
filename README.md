@@ -18,7 +18,7 @@
 
 * Nearly half XML responses have no images attached use onlyImages true.
 * safeSearch throws a couple header errors returning from offloading.
-* Cloudflare Proxy 100,000 visits to Heroku offloading response ~7s.
+* Heroku offloading first response ~7s.
 
 ### Configurations in js/settings.js
 
