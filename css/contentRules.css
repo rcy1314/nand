@@ -1293,6 +1293,7 @@ input[type=submit] {
 
 
 #main #xml .center .item .external {
+  color: var(--fill-color-primary);
   text-transform: lowercase;
   padding-bottom: 10px;
   position: relative;

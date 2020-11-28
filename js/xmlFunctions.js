@@ -331,7 +331,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let maximum = 480;
   let jsonResponseScore;
   ready(() => {
-    if (src && imageDuplicate.includes(src)) {
+    if (src && src != `null` && imageDuplicate.includes(src)) {
       if (
         document.body.contains(
           document.querySelector(
@@ -359,7 +359,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .closest(`.item`)
           .remove();
     } else if (
-      !src &&
+      !src || src == `null` &&
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
@@ -838,11 +838,9 @@ var xmlRequestParsing = function (search, string, index) {
           if (has.filter(function(obj) {
             return pub[i].title.toLowerCase().match(obj);
           }).length > 0) continue
-          if (omitGuide == true && i != local)
+          if (i != local)
             document.querySelector(`.channel`).append(pub[i].post);
-          else
-            document.querySelector(`.channel`).append(pub[i].post);
-          images.push({ element: pub[i].element, src: pub[i].src });
+            images.push({ element: pub[i].element, src: pub[i].src });
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {

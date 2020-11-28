@@ -14,37 +14,29 @@
   * Query Example
   > /?q=example+query
 
-  >  filter response without passthrough from init.js fails to search results.
+  >  filter response with passthrough.
 
 
   * Hash Example
-  > /?[hash] in xmlAssets.js
+  > /?[hash] in list View
 
   > /?[uX] Used in Copy Post appends time converted to base 36.
 
-  > /?[uX]aZjk1 loads guide with progress and guideImage in baseFunctions.js
+  > /?[uX][base36 timestamp] loads guide.
 
 
   * Feed Example
-  > /?q=&unique-identifier fallback to query fails to bing search.
+  > /?q=unique-identifier fallback to filter fails to bing search.
 
-  >/?q=&[hash] not supported filter response.
+  >/?q=[hash] not supported filter response.
 
-  >/?q=&tech menu objects found filter response.
+  >/?q=tech menu objects found filter response.
 
-  >/?q=&technology translation found populate.
+  >/?q=technology translation found populate.
 
-  > /?q=&abc-technology found one, unique passthrough.
+  > /?q=abc-technology found one, unique passthrough.
 
-  > /?q=&jquery not found pass through xml search.
-
-    * Query Feed Example
-
-     /?q=example+query&unique-identifier
-
-     /?q=california&abc-fresno
-
-      will load feed return to query.
+  > /?q=jquery not found pass through xml search.
 
 */
 
@@ -81,11 +73,9 @@ setTimeout(function() {
     _toggle.style.display = `none`;
     topMenuBarDisplay(topBar)
     setTimeout(function () {
-      if (!uri[1] && location.href.match(`\\&`))
-        filterInputResponse(true, false, uri[0], false);
-      else if (!uri[1]) filterInputResponse(false, false, uri[0], true);
+      if (!uri[1]) filterInputResponse(true, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 100);
+    }, 250);
   } else if (!post) _visit.style.display = `flex`
 
   if (!isNumeric(post) && _main.clientWidth > 768)

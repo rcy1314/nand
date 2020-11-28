@@ -618,7 +618,7 @@ var filterInputResponse = function (
     document.querySelector(`body`).classList.remove(`blink`);
     return false
   }
-  if (initPassthrough == false) {
+  if (initPassthrough == false || !isNumeric(match) || !isNumeric(exact)) {
     if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
@@ -630,7 +630,7 @@ var filterInputResponse = function (
     }
     return false;
   }
-  if (categoryBloat == true && isNumeric(match))
+  if (categoryBloat == true && !isNumeric(match) || !isNumeric(exact))
     populateCategoryGroup(menu[match].category);
 };
 
