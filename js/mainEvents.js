@@ -168,22 +168,17 @@ document.addEventListener(
     if (event.target.classList.contains(`fa-expand-alt`)) {
       if (!document.body.contains(document.querySelector(`#group`)))
         populateCategoryGroup(category);
+      document.querySelector(`#group`).style.display = `none`
       _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
       expand = expand != true;
       if (expand == true) {
+      displayExpand(expand);
+      if (expand == true){
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-minus`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
-      } else if (expand == false) {
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-minus`)
-      }
-      displayExpand(expand);
-      if (expand == true){
         var groupType = `list`;
         if (showDescription == false) {
           _main
@@ -200,7 +195,12 @@ document.addEventListener(
             .querySelectorAll(`.populate`)
             .forEach((a) => a.classList.add(`expand`));
         }
-      } else if (showDescription == true){
+      } else if (expand == false) {
+        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-minus`)
+      }
         var groupType = `blocks`;
         _main
           .querySelectorAll(`.populate`)
@@ -209,12 +209,7 @@ document.addEventListener(
           .querySelectorAll(`.populate`)
           .forEach((a) => a.classList.remove(`expand`));
       }
-      setTimeout(function() {
-        if (onlyImages == false) {
-          if (document.body.contains(document.querySelector(`.air`)))
-            _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        }
-      }, 25)
+      unloading();
     }
     if (event.target.classList.contains(`select`)) {
       let setPause
