@@ -5,8 +5,8 @@
 
 ### Features
 
-* URI Identifying init.js
 * Private Proxy Requests.
+* URI Identifying init.js
 * Beta (stage) themes.
 * Background Images.
 * No Installation.
