@@ -1,4 +1,4 @@
-# acktic <a href='https://gtmetrix.com/reports/acktic.github.io/8ZzsSFm3'>gtmetrix report</a><img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
+# acktic <a href='https://gtmetrix.com/reports/acktic.github.io/8ZzsSFm3'>gtmetrix report</a> <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
   - Really Simple Syndicate.
   - Rich Site Summary.
