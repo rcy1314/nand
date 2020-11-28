@@ -360,7 +360,7 @@ var progressBackDrop = function (done, percent) {
           )
             if (httpRequest.status == 200) {
               first = false;
-              xmlRequestParsing(null, null, anyRandomMenuObject());
+              xmlRequestParsing(false, null, null, anyRandomMenuObject());
             }
         }
       document.querySelector(`#xml`).style.paddingTop = `0`;
@@ -623,10 +623,10 @@ var filterInputResponse = function (
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)){
-      xmlRequestParsing(null, null, exact);
+      xmlRequestParsing(false, null, null, exact);
     }
     else if (isNumeric(match) && filter.length == 1){
-      xmlRequestParsing(null, null, match);
+      xmlRequestParsing(false, null, null, match);
     }
     return false;
   }

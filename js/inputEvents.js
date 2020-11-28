@@ -80,7 +80,7 @@ document.addEventListener(
           if (document.body.contains(document.querySelector(`.channel`)))
             first = false;
           randomDuplicate = [];
-          xmlRequestParsing(null, null, anyRandomMenuObject());
+          xmlRequestParsing(false, null, null, anyRandomMenuObject());
         } else {
           _top.style.display = `block`;
           if (document.body.contains(document.querySelector(`#xml`)))
@@ -106,6 +106,7 @@ document.addEventListener(
           menu[event.target.closest(`.hover`).getAttribute(`aria-item`)]
             .category;
         xmlRequestParsing(
+          false,
           null,
           null,
           event.target.closest(`.hover`).getAttribute(`aria-item`)
@@ -252,6 +253,7 @@ document.addEventListener(
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         xmlRequestParsing(
+          false,
           null,
           null,
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
@@ -275,6 +277,7 @@ document.addEventListener(
           document.querySelector(`#group`).remove();
         id = _first.querySelector(`.hover`).getAttribute(`aria-item`);
         xmlRequestParsing(
+          false,
           null,
           null,
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
