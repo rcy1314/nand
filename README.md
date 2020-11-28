@@ -10,6 +10,7 @@
 * Beta (stage) themes.
 * Background Images.
 * No Installation.
+* Bing Search.
 * NSFW api.
 * Filtering.
 
