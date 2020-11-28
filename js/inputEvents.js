@@ -296,7 +296,7 @@ document.addEventListener(
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
-  if (event.target.value.length > 1) {
+  if (event.target.value.length > 2) {
     _label.style.visibility = `hidden`;
     _quick.style.visibility = `hidden`;
     _show.style.visibility = `hidden`;
@@ -304,7 +304,7 @@ var inputListingKeyup = function (Elem, keycode) {
     _just.style.visibility = `hidden`;
   }
   if (
-    event.target.value.length > 3 &&
+    event.target.value.length > 2 &&
     keycode !== 40 &&
     keycode !== 34 &&
     keycode !== 33 &&
