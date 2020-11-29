@@ -361,7 +361,7 @@ var progressBackDrop = function (done, percent) {
             _progress.style.transition = `none`;
             _progress.style.width = `0`;
           }, 250);
-      } else if (httpRequest && safeSearchIDs.includes(menu[id].id)){
+      } else if (httpRequest || safeSearchIDs.includes(menu[id].id)){
             _progress.style.transitionDelay = `0s`;
             _progress.style.transition = `all .9s ease-in-out`;
             _progress.style.width =
