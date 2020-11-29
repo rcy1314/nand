@@ -328,16 +328,18 @@ document.addEventListener(
     if (event.target.classList.contains(`bottom`)) {
       document.title = category;
       event.target.closest(`#xml`).remove();
-      if (location.href.match(`\\?q=`)) {
-        var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
-        if (location.href.match(`\\+1`))
-          var query = uri[0].replace(/\+1/g, ``).space();
-        else var query = uri[0].space();
-        filterInputResponse(false, false, query, true);
-      } else populateCategoryGroup(category);
-      displayExpand(expand);
-      unloading();
-      id = 0;
+      if (id === 0) populateCategoryGroup(category);
+      else {
+        if (location.href.match(`\\?q=`)) {
+          var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
+          if (location.href.match(`\\+1`))
+            var query = uri[0].replace(/\+1/g, ``).space();
+          else var query = uri[0].space();
+          filterInputResponse(false, false, query, true);
+        } else populateCategoryGroup(category);
+        displayExpand(expand);
+        unloading();
+      }
     }
     if (event.target.classList.contains(`more`)) {
       event.target.parentNode.innerHTML = event.target.parentNode.getAttribute(
