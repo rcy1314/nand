@@ -75,7 +75,7 @@ let showOption = true;
 
 */
 
-let reader = false;
+let Reader = false;
 
 /*
     onScreen [boolean/integer]
