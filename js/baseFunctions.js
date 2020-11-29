@@ -377,7 +377,7 @@ var progressBackDrop = function (done, percent) {
             {
               paddingTop: [
                 `${document.querySelector(`#xml`).clientHeight}px`,
-                `60`,
+                `0px`,
               ],
             },
             {

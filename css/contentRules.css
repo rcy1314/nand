@@ -468,7 +468,7 @@ html body,
   display: block;
   width: 100%;
   z-index: 1;
-  top: 57px;
+  top: 0;
 }
 
 #main #group {

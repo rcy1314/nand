@@ -86,6 +86,7 @@ var anyRandomMenuObject = function () {
     var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (menu[randomObject]) randomDuplicate.push(randomObject)
       if (menu[randomObject] && !randomDuplicate.includes(menu[randomObject]))
+      randomObject = menu.indexOf(randomObject)
       else if (justRead == false){
         randomObject = random[Math.floor(Math.random() * random.length - 1)];
       }
