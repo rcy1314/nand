@@ -347,9 +347,11 @@ var courtesyBuild = function (objectId, objectImage, objectExternal) {
   let courtesy = document.createElement(`div`);
   courtesy.classList.add(`courtesy`);
   let object = document.createElement(`img`);
+  object.classList.add(`ext`)
   object.src = objectImage;
   let ahref = document.createElement(`a`);
-  ahref.setAttribute(`ext`, objectExternal);
+  courtesy.setAttribute(`ext`, objectExternal);
+  ahref.classList.add(`exit`)
   let bold = document.createElement(`b`);
   bold.innerHTML = objectId;
   ahref.append(bold);

@@ -728,7 +728,7 @@ var xmlRequestParsing = function (search, string, index) {
           let courtesy = courtesyBuild(
             menu[index].id.match(/([^\/]+)$/g),
             menu[index].image.image(),
-            menu[index].ext
+            menu[index].uri.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g)
           );
 
           if (title.length > titleTruncate)

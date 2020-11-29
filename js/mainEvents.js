@@ -92,6 +92,12 @@ document.addEventListener(
       onlyImages = true;
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
+    if (
+      event.target.classList.contains(`exit`) ||
+      event.target.classList.contains(`ext`)
+    ) {
+      event.target.closest(`.courtesy`).getAttribute(`ext`).blank();
+    }
     if (event.target.id == `check`) {
       repository.blank();
     }
