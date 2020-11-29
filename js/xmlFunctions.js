@@ -429,7 +429,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           ).classList.add(`yt`)
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-          progressBackDrop(true, 100);
+          init();
           fetch(`${cors}${api}${src}`, {
             method: "GET",
             headers: {
