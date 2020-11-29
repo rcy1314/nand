@@ -356,7 +356,7 @@ var progressBackDrop = function (done, percent) {
     _progress.style.width = `${percent}%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
       if (document.body.contains(document.querySelector(`#xml .channel`)))
-        if (reader == true && first == true) {
+        if (Reader == true && first == true) {
           if (
             _main.innerHeight >=
             document.querySelector(`#xml .channel`).innerHeight
@@ -368,7 +368,7 @@ var progressBackDrop = function (done, percent) {
         }
       document.querySelector(`#xml`).style.paddingTop = `0`;
       document.querySelector(`#xml`).style.display = `block`;
-      if (scrollIntoView == true && reader == false) {
+      if (scrollIntoView == true && Reader == false) {
         document.querySelector(
           `#xml`
         ).style.paddingTop = document.querySelector(`#xml`).clientHeight;

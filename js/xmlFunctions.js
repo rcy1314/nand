@@ -854,7 +854,7 @@ var xmlRequestParsing = function (search, string, index) {
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
         let recent = pub[0].dst;
-        if (reader == false)
+        if (Reader == false)
           document.querySelector(`.channel`).append(footerBuild());
         if (first == false) {
           var status = document.querySelector(`.status`);
@@ -863,7 +863,7 @@ var xmlRequestParsing = function (search, string, index) {
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
           stop = true;
-        } else if (first == true && reader == true) {
+        } else if (first == true && Reader == true) {
           var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
           var suggestions = document.querySelector(`.suggestions`);

@@ -267,7 +267,7 @@ document.addEventListener(
         }, 500);
       }
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
-      if (reader == true) {
+      if (Reader == true) {
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
@@ -310,7 +310,7 @@ document.addEventListener(
       first = true;
       _visit.style.display = `none`;
       reader = reader != true;
-      if (reader == false) {
+      if (Reader == false) {
         justRead = false;
         event.target.nextElementSibling.classList.remove(`fa-star`)
         event.target.nextElementSibling.classList.add(`fa-minus`)
@@ -318,7 +318,7 @@ document.addEventListener(
         let first = true;
         let id = 0;
         xmlChannelFooter();
-      } else if (reader == true) {
+      } else if (Reader == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -410,7 +410,7 @@ document.addEventListener(
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
-      if (reader == false) populateCategoryGroup(category);
+      if (Reader == false) populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);
       unloading();

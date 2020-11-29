@@ -52,7 +52,7 @@ document.addEventListener(
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
         stop == false &&
-        reader == true &&
+        Reader == true &&
         httpRequest.status != 4 &&
         httpRequest.status == 200
       ) {
@@ -69,7 +69,7 @@ document.addEventListener(
     if (event.target.id == `main`) {
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
-        reader == true &&
+        Reader == true &&
         httpRequest.status == 200
       ) {
         xmlRequestParsing(null, null, anyRandomMenuObject());
@@ -83,9 +83,9 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `just`) {
-      reader = true;
-      document.querySelector(`.reader`).nextElementSibling.classList.remove(`fa-minus`)
-      document.querySelector(`.reader`).nextElementSibling.classList.add(`fa-star`)
+      Reader = true;
+      document.querySelector(`.Reader`).nextElementSibling.classList.remove(`fa-minus`)
+      document.querySelector(`.Reader`).nextElementSibling.classList.add(`fa-star`)
       justRead = true;
       document.querySelector(`.onlyImages`).nextElementSibling.classList.remove(`fa-minus`)
       document.querySelector(`.onlyImages`).nextElementSibling.classList.add(`fa-star`)
@@ -253,7 +253,7 @@ document.addEventListener(
       id = 0;
       first = true;
       category = event.target.closest(`.translation`).getAttribute(`aria-item`);
-        if (reader == true) {
+        if (Reader == true) {
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
         } else {

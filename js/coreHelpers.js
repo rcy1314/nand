@@ -8,7 +8,7 @@ var isNumeric = function (n) {
 };
 
 var init = function () {
-  if (reader == false) {
+  if (Reader == false) {
     if (document.body.contains(document.getElementById(`xml`)))
       document.querySelector(`#xml`).remove();
     if (document.body.contains(document.getElementById(`group`)))

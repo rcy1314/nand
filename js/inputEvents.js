@@ -76,7 +76,7 @@ document.addEventListener(
       ) {
         id = 0;
         category = event.target.closest(`.hover`).getAttribute(`aria-item`);
-        if (reader == true) {
+        if (Reader == true) {
           if (document.body.contains(document.querySelector(`.channel`)))
             first = false;
           randomDuplicate = [];
