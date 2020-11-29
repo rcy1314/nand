@@ -196,6 +196,19 @@ let sideBarCenter = true;
 let sideBarBackdrop = true;
 
 /*
+    topBarBackdrop [boolean/integer]
+
+      Applications
+        sideBarEvents
+
+      Result
+        add backdrop filter to top bar.
+
+*/
+
+let topBarBackdrop = false;
+
+/*
     showDescription [boolean/integer]
 
       Applications
@@ -560,6 +573,7 @@ const settings = [
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },
   { name: `Show Description`, class: `showDescription` },
+  { name: `Top Bar Backdrop`, class: `topBarBackdrop` },
   { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` }
 ];

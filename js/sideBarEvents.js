@@ -179,12 +179,29 @@ document.addEventListener(
     if (
       event.target.classList.contains(`sideBarBackdrop`)
     ) {
+      sideBarBackdrop = sideBarBackdrop != true
       if (sideBarBackdrop == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
         _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
-        sideBarBackdrop = true;
       } else {
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
-        sideBarBackdrop = false;
+      }
+    }
+    if (
+      event.target.classList.contains(`topBarBackdrop`)
+    ) {
+      topBarBackdrop = topBarBackdrop != true
+      if (topBarBackdrop == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
+        _top.style.cssText = `backdrop-filter: blur (10px);top:0`;
+      } else {
+        event.target.nextElementSibling.classList.remove(`fa-minus`)
+        event.target.nextElementSibling.classList.add(`fa-star`)
+        _top.style.cssText = `backdrop-filter: none;top:0`;
       }
     }
     if (event.target.classList.contains(`mainBackground`)) {
