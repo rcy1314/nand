@@ -209,6 +209,8 @@ document.addEventListener(
       }
     } else if (event.target.classList.contains(`basic`)) {
       if (document.querySelector(`.sideFilter`).value.length) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
         topMenuBarDisplay(topBar);
         _visit.style.display = `none`;
         _toggle.style.display = `none`;
@@ -216,12 +218,6 @@ document.addEventListener(
           false,
           false,
           document.querySelector(`.sideFilter`).value.space(),
-          true
-        );
-        filterInputResponse(
-          false,
-          false,
-          document.querySelector(`.sideFilter`).value,
           true
         );
       }
@@ -245,6 +241,8 @@ document.addEventListener(
         displayExpand(expand);
         unloading();
       } else if (document.body.contains(_match.querySelector(`.hover`))) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
         id = _match.querySelector(`.hover`).getAttribute(`aria-item`);
         _match.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -257,6 +255,8 @@ document.addEventListener(
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_view.value.length) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
         filterInputResponse(
           false,
           false,

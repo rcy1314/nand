@@ -1526,6 +1526,7 @@ input[type=submit] {
 #main #visit #page #front #first .listing .index {
   background-color: transparent;
   color: var(--fill-color-primary);
+  transition: 250ms;
   position: relative;
   font-size: 12px;
   height: 53px;
@@ -1541,6 +1542,7 @@ input[type=submit] {
 #main #top #arm #search #match .listing .hover,
 #main #visit #page #front #first .listing .hover {
   background-color: var(--loader-color-secondary);
+  transition: 250ms;
   font-size: 12px;
   height: 53px;
 }
