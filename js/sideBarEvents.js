@@ -43,6 +43,10 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true
+      if (document.body.contains(document.querySelector(`#xml`))) {
+        init();
+        xmlRequestParsing(null, null, id);
+      }
       if (youtubeMedia == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)

@@ -493,7 +493,7 @@ html body,
 #main #visit #page {
   background-color: transparent;
   position: relative;
-  top: 20px;
+  top: 45px;
   margin: 0 auto;
   display: block;
 }
@@ -969,7 +969,7 @@ input[type=submit] {
 }
 
 #main #visit #page #quick #feed .translation .category {
-  color: var(--fill-color-primary);
+  color: var(--loader-color-primary);
   background-color: transparent;
   position: relative;
   font-weight: 900;
