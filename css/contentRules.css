@@ -526,7 +526,7 @@ html body,
   margin-left: auto;
   display: none;
   height: 372px;
-  width: 715px;
+  width: 712px;
   z-index: 1;
   top: 42px;
   right: 0;
@@ -878,6 +878,7 @@ html body,
   margin: 0 auto;
   height: 371px;
   display: none;
+  width: 308px;
   top: 25px;
 }
 
