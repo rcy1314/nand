@@ -428,7 +428,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           ).classList.add(`yt`)
-        if (safeSearch == true && safeSearchIDs.includes(menu[id].id))
+        if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+          progressBackDrop(true, 100);
           fetch(`${cors}${api}${src}`, {
             method: "GET",
             headers: {
@@ -501,6 +502,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   ).style.display = `block`;
                 }
               });
+              unloading();
             })
             .catch((response) => {
               if (
@@ -525,7 +527,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
                     )
                     .remove();
+                unloading();
             });
+        }
         if (
           document.body.contains(
             document.querySelector(
@@ -878,7 +882,6 @@ var xmlRequestParsing = function (search, string, index) {
         document.querySelector(`#xml`).style.display = `block`;
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
-        clearInterval(complete);
         xmlStatusSuggestions();
       } else {
         xmlRequestParsing(

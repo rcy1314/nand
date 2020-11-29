@@ -9,8 +9,6 @@ var isNumeric = function (n) {
 
 var init = function () {
   if (Reader == false) {
-    if (document.body.contains(document.getElementById(`xml`)))
-      document.querySelector(`#xml`).remove();
     if (document.body.contains(document.getElementById(`group`)))
       document.querySelector(`#group`).remove();
   }
@@ -30,13 +28,7 @@ var init = function () {
       .forEach((a) => a.style.zIndex = `-12`);
     let width = _main.clientWidth / 75;
     setTimeout(function() { //thanks init.js
-      complete = setInterval(function () {
-        _progress.style.transitionDelay = `0s`;
-        _progress.style.transition = `all .95s ease-in-out`;
-        _progress.style.width =
-          _progress.clientWidth +
-          Math.floor(Math.random() * (100 - width) + width);
-      }, 750);
+      progressBackDrop(false, 0)
     }, 150)
   }
 };
@@ -51,7 +43,7 @@ var unloading = function () {
       .forEach((a) => (a.style.visibility = `hidden`));
     progressBackDrop(true, 0);
   } else if (loading == `percent`) {
-    progressBackDrop(true, 100);
+    progressBackDrop(true, 0);
   }
 };
 

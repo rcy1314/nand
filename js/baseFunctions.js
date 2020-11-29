@@ -350,10 +350,30 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 };
 
 var progressBackDrop = function (done, percent) {
-  if (done == true) {
-    _progress.style.transition = `width .15s ease-in-out`;
-    _progress.style.transitionDelay = `none`;
-    _progress.style.width = `${percent}%`;
+  let complete;
+  if (done == false) {
+    let width = _main.clientWidth / 14;
+    complete = setInterval(function () {
+      if (_progress.clientWidth === _main.clientWidth){
+          clearInterval(complete);
+          setTimeout(function () {
+            _progress.style.transitionDelay = `0s`;
+            _progress.style.transition = `none`;
+            _progress.style.width = `0`;
+          }, 250);
+      } else if (httpRequest){
+            _progress.style.transitionDelay = `0s`;
+            _progress.style.transition = `all .9s ease-in-out`;
+            _progress.style.width =
+              _progress.clientWidth +
+              Math.floor(Math.random() * (100 - width) + width);
+      } else if (httpRequest.status = `200`){
+            _progress.style.transitionDelay = `0s`;
+            _progress.style.transition = `none`;
+            _progress.style.width = `100%`;
+      }
+    }, 750);
+  } else if (done == true) {
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
       if (document.body.contains(document.querySelector(`#xml .channel`)))
         if (Reader == true && first == true) {
@@ -368,7 +388,11 @@ var progressBackDrop = function (done, percent) {
         }
       document.querySelector(`#xml`).style.paddingTop = `0`;
       document.querySelector(`#xml`).style.display = `block`;
-      if (scrollIntoView == true && Reader == false) {
+      if (
+        scrollIntoView == true &&
+        Reader == false &&
+        !safeSearchIDs.includes(menu[id].id)
+      ) {
         document.querySelector(
           `#xml`
         ).style.paddingTop = document.querySelector(`#xml`).clientHeight;
@@ -470,11 +494,6 @@ var progressBackDrop = function (done, percent) {
         visit.style.display = `none`
       }, 25)
     }
-    setTimeout(function () {
-      _progress.style.transitionDelay = `none`;
-      _progress.style.transition = `none`;
-      _progress.style.width = `0%`;
-    }, 250);
   }
 };
 

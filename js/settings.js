@@ -438,6 +438,7 @@ let safeSearchIDs = [
   `Imgur/Goddesses`,
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
+  `4Chan/SP Sports`,
   `4Chan/G Technology`,
   `4Chan/HR High Resolution`,
   `4Chan/Wallpapers General`,
@@ -537,7 +538,6 @@ if (expand == true) {
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
-let complete; //coreHelpers.js interval for progress
 let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
