@@ -305,7 +305,7 @@ document.addEventListener(
       document.title = ``;
       unloading();
     }
-    if (event.target.classList.contains(`reader`)) {
+    if (event.target.classList.contains(`Reader`)) {
       id = 0;
       first = true;
       _visit.style.display = `none`;
