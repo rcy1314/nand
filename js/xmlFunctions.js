@@ -887,7 +887,6 @@ var xmlRequestParsing = function (search, string, index) {
         xmlStatusSuggestions();
       } else {
         xmlRequestParsing(
-          true,
           null,
           null,
           id,
