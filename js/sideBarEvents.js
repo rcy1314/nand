@@ -45,6 +45,7 @@ document.addEventListener(
       youtubeMedia = youtubeMedia != true
       if (document.body.contains(document.querySelector(`#xml`))) {
         init();
+        document.querySelector(`#xml`).remove();
         xmlRequestParsing(null, null, id);
       }
       if (youtubeMedia == true) {
