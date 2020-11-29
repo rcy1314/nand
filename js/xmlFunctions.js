@@ -384,6 +384,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       src.match(/https?:\/\//g) &&
       !src.match(/comments|feeds|fsdn|undefined/g)
     ) {
+      init();
       var newImg = new Image();
       newImg.setAttribute(`src`, src);
       newImg.onerror = function () {
@@ -585,6 +586,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     ).style.display = `block`
                 }
               };
+            unloading();
           };
           if (!src.match(/4cdn/g)) request.send();
           else itemImage.setAttribute(`src`, src);

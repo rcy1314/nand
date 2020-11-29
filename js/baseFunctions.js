@@ -351,27 +351,29 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 
 var progressBackDrop = function (done, percent) {
   let complete;
-  if (done == false) {
-    let width = _main.clientWidth / 8;
+    let width = _main.clientWidth / 4;
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth){
           clearInterval(complete);
           setTimeout(function () {
-            _progress.style.transition = `none`;
+            _progress.style.transition = `0s`;
             _progress.style.width = `0%`;
           }, 250);
-      } else if (httpRequest || safeSearchIDs.includes(menu[id].id)){
-            _progress.style.transition = `all .9s ease-in-out`;
+      } else if (first == true || safeSearchIDs.includes(menu[id].id)){
+            _progress.style.transition = `all .75s ease-in-out`;
             _progress.style.width = _progress.clientWidth + width;
-      } else if (httpRequest.status = `200`){
+      } else if (httpRequest.status == `200`){
         clearInterval(complete);
         setTimeout(function () {
-          _progress.style.transition = `none`;
+          _progress.style.transition = `0s`;
           _progress.style.width = `0%`;
         }, 250);
       }
     }, 750);
-  } else if (done == true) {
+  if (done == false) return false;
+  clearInterval(complete);
+  _progress.style.transition = `0s`;
+  _progress.style.width = `0%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
       if (document.body.contains(document.querySelector(`#xml .channel`)))
         if (Reader == true && first == true) {
@@ -387,10 +389,12 @@ var progressBackDrop = function (done, percent) {
       document.querySelector(`#xml`).style.paddingTop = `0`;
       document.querySelector(`#xml`).style.display = `block`;
       if (
+        !safeSearchIDs.includes(menu[id].id) &&
         scrollIntoView == true &&
         Reader == false &&
-        !safeSearchIDs.includes(menu[id].id)
+        !complete
       ) {
+        clearInterval(complete);
         document.querySelector(
           `#xml`
         ).style.paddingTop = document.querySelector(`#xml`).clientHeight;
@@ -492,7 +496,9 @@ var progressBackDrop = function (done, percent) {
         visit.style.display = `none`
       }, 25)
     }
-  }
+  clearInterval(complete);
+  _progress.style.transition = `0s`;
+  _progress.style.width = `0%`;
 };
 
 var populateCategoryGroup = function (translation) {

@@ -26,7 +26,6 @@ var init = function () {
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.style.zIndex = `-12`);
-    let width = _main.clientWidth / 75;
     setTimeout(function() { //thanks init.js
       progressBackDrop(false, 0)
     }, 150)
