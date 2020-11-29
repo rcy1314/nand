@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  #container {
+    width: calc(100% + 25px) !important;
+  }
+
   #sidebar {
     overflow-y: auto;
   }
@@ -13,7 +17,7 @@
   }
 
   #toggle {
-    display: none;
+    display: none !important;
   }
 
   #main #visit #page #just {
@@ -50,7 +54,7 @@
   #main #visit #page #front #label {
     position: absolute;
     margin: auto;
-    top: 105px;
+    top: 85px;
     right: 0;
     left: 0;
   }
@@ -80,6 +84,10 @@
     height: 100%;
     width: 100%;
     top: 0;
+  }
+
+  #main #page {
+    top: 15px !important;
   }
 
   #main #top,

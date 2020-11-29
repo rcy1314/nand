@@ -889,7 +889,7 @@ input[type=submit] {
   background-color: transparent;
   border-radius: 4px;
   position: relative;
-  margin: 80px auto;
+  margin: 75px auto;
   height: 90px;
   width: 100%;
   z-index: 1;
@@ -1355,7 +1355,7 @@ input[type=submit] {
 
 #main #visit #page #just {
   color: var(--fill-color-primary);
-  margin-left: 20px !important;
+  margin-left: 12px !important;
   cursor: pointer;
   top: -85px;
 }
