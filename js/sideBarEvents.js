@@ -420,14 +420,17 @@ document.addEventListener(
       document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-star`)
       document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
     }
-    if (event.target.classList.contains(`onlyImages`)) {
+    if (
+      event.target.classList.contains(`fa-camera-retro`) ||
+      event.target.classList.contains(`onlyImages`)
+    ) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        document.querySelector('.onlyImages').nextElementSibling.classList.remove(`fa-minus`)
+        document.querySelector('.onlyImages').nextElementSibling.classList.add(`fa-star`)
       } else if (onlyImages == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector('.onlyImages').nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector('.onlyImages').nextElementSibling.classList.add(`fa-minus`)
       }
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
