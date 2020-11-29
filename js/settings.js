@@ -552,7 +552,7 @@ const settings = [
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
   { name: `Images`, class: `onlyImages` },
-  { name: `Reader`, class: `reader` },
+  { name: `Reader`, class: `Reader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
   { name: `Youtube Media`, class: `youtubeMedia` },
