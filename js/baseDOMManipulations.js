@@ -211,14 +211,14 @@ var translationBuild = function (translation) {
   let object = document.createElement(`div`);
   object.classList.add(`translation`);
   object.setAttribute(`aria-item`, translation);
-  let img = document.createElement(`img`)
-  img.classList.add(`quickTranslation`)
-  img.src = `images/${translation}.webp`
+  //let img = document.createElement(`img`)
+  //img.classList.add(`quickTranslation`)
+  //img.src = `images/${translation}.webp`
   let ahref = document.createElement(`a`)
   ahref.classList.add(`category`)
   ahref.setAttribute(`ext`, translation)
   ahref.innerHTML = translation
-  object.append(img)
+  //object.append(img)
   object.append(ahref)
   return object;
 };

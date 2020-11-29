@@ -18,6 +18,7 @@
 
   #main #visit #page #just {
     margin-left: 0 !important;
+    top: 15px !important;
   }
 
   #main #visit #page #quick #feed .asset,
@@ -30,7 +31,7 @@
     position: absolute;
     height: 400px;
     width: 100%;
-    top: 130px;
+    top: 60px;
   }
 
   #main #visit #page #quick #feed {
@@ -230,7 +231,7 @@
 
   #main #visit #page #quick {
   	width: 720px;
-	  left: 0;
+	  left: 4px !important;
   }
   #main #group .air,
   #main #group .result {
