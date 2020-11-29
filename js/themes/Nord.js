@@ -49,7 +49,8 @@ var Nord = function () {
   );
   document.documentElement.style.setProperty(`--filter`, `grayscale(100%)`);
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  backgroundImage[0].path = `images/e54430a6cf0248fa8d1d5961e02a71e4.webp`
+  if (backgroundImage[0].path != `images/e54430a6cf0248fa8d1d5961e02a71e4.webp`)
+    backgroundImage[0].path = `images/e54430a6cf0248fa8d1d5961e02a71e4.webp`
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
     `url(${backgroundImage[0].path})`
 };

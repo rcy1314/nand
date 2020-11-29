@@ -46,7 +46,8 @@ var Day = function () {
     `hue-rotate(0deg)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  backgroundImage[0].path = `images/b453ae624e3d5e58b9890a998ec441b8.webp`
+  if (backgroundImage[0].path != `images/b453ae624e3d5e58b9890a998ec441b8.webp`)
+    backgroundImage[0].path = `images/b453ae624e3d5e58b9890a998ec441b8.webp`
   document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
     `url(${backgroundImage[0].path})`
 };
