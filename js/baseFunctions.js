@@ -352,7 +352,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 var progressBackDrop = function (done, percent) {
   let complete;
   if (done == false) {
-    let width = _main.clientWidth / 4;
+    let width = _main.clientWidth / 8;
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth){
           clearInterval(complete);
