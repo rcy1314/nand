@@ -352,25 +352,23 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 var progressBackDrop = function (done, percent) {
   let complete;
   if (done == false) {
-    let width = _main.clientWidth / 14;
+    let width = _main.clientWidth / 4;
     complete = setInterval(function () {
-      if (_progress.clientWidth === _main.clientWidth){
+      if (_progress.clientWidth >= _main.clientWidth){
           clearInterval(complete);
           setTimeout(function () {
-            _progress.style.transitionDelay = `0s`;
             _progress.style.transition = `none`;
-            _progress.style.width = `0`;
+            _progress.style.width = `0%`;
           }, 250);
       } else if (httpRequest || safeSearchIDs.includes(menu[id].id)){
-            _progress.style.transitionDelay = `0s`;
             _progress.style.transition = `all .9s ease-in-out`;
-            _progress.style.width =
-              _progress.clientWidth +
-              Math.floor(Math.random() * (100 - width) + width);
+            _progress.style.width = _progress.clientWidth + width;
       } else if (httpRequest.status = `200`){
-            _progress.style.transitionDelay = `0s`;
-            _progress.style.transition = `none`;
-            _progress.style.width = `100%`;
+        clearInterval(complete);
+        setTimeout(function () {
+          _progress.style.transition = `none`;
+          _progress.style.width = `0%`;
+        }, 250);
       }
     }, 750);
   } else if (done == true) {
