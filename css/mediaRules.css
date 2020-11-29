@@ -262,7 +262,7 @@
   }
 
   #main #progressBar {
-    max-width: calc(100% - 16px);
+    max-width: calc(100% - 16px) !important;
   }
 
   #main #top {
@@ -311,7 +311,7 @@
   }
 
   #main #progressBar {
-    max-width: calc(100% - 16px);
+    max-width: calc(100% - 16px) !important;
   }
 
   #main #top {
