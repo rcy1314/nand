@@ -61,6 +61,11 @@ Submit a Theme!<br>
 Submit a Feed!<br>
 File an Issue!<br>
 
+Copyright
+----
+
+The developer or (developers) do not own the images included, used, shown, or requested in this project.
+
 License
 ----
 
