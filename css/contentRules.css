@@ -515,6 +515,7 @@ html body,
   margin: 0 auto;
   display: block;
   z-index: 2;
+  height: 0;
 }
 
 #main #visit #page #front #first {
@@ -1346,7 +1347,6 @@ input[type=submit] {
   color: var(--fill-color-primary);
   margin-left: 20px !important;
   cursor: pointer;
-  top: -15px;
 }
 
 #main #xml .center #bottom .previous {

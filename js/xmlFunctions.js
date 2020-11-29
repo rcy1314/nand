@@ -552,9 +552,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           request.open('GET', cors + src, true);
           request.responseType = 'blob';
           request.onload = function() {
-              var reader = new FileReader();
-              reader.readAsDataURL(request.response);
-              reader.onload =  function(e){
+              var read = new FileReader();
+              read.readAsDataURL(request.response);
+              read.onload =  function(e){
                 itemImage.setAttribute(`src`, e.target.result);
                 if (
                    document.body.contains(
@@ -682,7 +682,7 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (reader != true && first == true)
+  if (Reader != true && first == true)
     _check.style.visibility = `visible`;
 
   httpRequest = new XMLHttpRequest();
