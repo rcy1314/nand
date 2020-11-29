@@ -9,7 +9,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(0,0,0,0)`
+    `rgba(26, 26, 26, .5)`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#ffffff`);
   document.documentElement.style.setProperty(
