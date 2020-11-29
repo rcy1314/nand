@@ -165,6 +165,12 @@ document.addEventListener(
       }
       event.stopPropagation();
     }
+    if (
+      event.target.classList.contains(`construct`)
+    ) {
+      let url = menu[id].uri.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g)
+      url.toString().blank()
+    }
     if (event.target.classList.contains(`fa-expand-alt`)) {
       if (!document.body.contains(document.querySelector(`#group`)))
         populateCategoryGroup(category);

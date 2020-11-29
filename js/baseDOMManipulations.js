@@ -176,7 +176,6 @@ var guideBuildYoutube = function (pubArray) {
 var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   let filter = document.createElement(`div`);
   filter.classList.add(`filter`);
-  filter.setAttribute(`aria-item`, menu[menuIndex].ext);
   let select = document.createElement(`div`);
   select.classList.add(`select`);
   let display = document.createElement(`div`);
