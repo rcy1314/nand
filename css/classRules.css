@@ -22,7 +22,7 @@
 
 .filterBlur {
   position: absolute;
-  height: 100%;
+  height: calc(100% + 1px);
   width: calc(100% + 1px);
   z-index: 11;
 }
