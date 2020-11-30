@@ -4,7 +4,6 @@
 
   Init.js does some handling of location.
 
-
   * Translation Example
   > /?q=[translations]
 
@@ -39,7 +38,6 @@
   > /?q=jquery not found pass through xml search.
 
 */
-
 setTimeout(function() {
 
   if (
@@ -81,7 +79,7 @@ setTimeout(function() {
     setTimeout(function () {
       _visit.style.display = `flex`;
       _guest.focus();
-    }, 250);
+    }, 200);
   }
 
   if (!isNumeric(post))
