@@ -1,0 +1,133 @@
+
+#main #visit #page #quick {
+  background-color: transparent;
+  border-radius: 4px;
+  position: relative;
+  margin: 75px auto;
+  height: 90px;
+  width: 100%;
+  z-index: 1;
+}
+
+
+#main #visit #page #quick #feed {
+  background-color: transparent !important;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  position: relative;
+  overflow: hidden;
+  overflow-x: auto;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#main #visit #page #quick #feed::-webkit-scrollbar {
+  display: none;
+}
+
+#main #visit #page #quick #feed .asset,
+#main #visit #page #quick #feed .translation {
+  position: relative;
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 15px;
+  height: 58px;
+  width: 90px;
+}
+
+#main #visit #page #quick #feed .asset .query,
+#main #visit #page #quick #feed .asset .entity,
+#main #visit #page #quick #feed .translation .category,
+#main #visit #page #quick #feed .translation .quickTranslation {
+  z-index: -1;
+}
+
+#main #visit #page #quick #feed .asset:hover,
+#main #visit #page #quick #feed .translation:hover {
+  background-color: var(--hover-background-color) !important;
+  border: var(--hover-border-color) !important;
+}
+
+#main #visit #page #quick #feed .asset:not(:hover),
+#main #visit #page #quick #feed .translation:not(:hover) {
+  border: var(--not-hover-border-color);
+}
+
+#main #xml .content .status img,
+#main #visit #page #quick #feed img,
+#main #visit #page #quick #feed .translation img {
+  background-color: transparent;
+  position: relative;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+#main #visit #page #quick #feed .translation img {
+  filter: var(--filter);
+}
+
+#main #visit #page #quick #feed .asset a {
+  color: var(--fill-color-primary);
+  background-color: transparent;
+  position: relative;
+  font-size: 11px;
+  display: block;
+  top: 5px;
+}
+
+#main #visit #page #quick #feed .translation .category {
+  color: var(--loader-color-primary);
+  background-color: transparent;
+  letter-spacing: .1px;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  top: 20px;
+}
+
+#main #visit #page #quick .right {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color-primary);
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  right : -20px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  z-index: 2;
+  top: 28px;
+}
+
+#main #visit #page #quick .left {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color-primary);
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+  height: calc(24px - 8px);
+  width: 20px;
+  left: -20px;
+  z-index: 7;
+  top: 28px;
+}
+
+#main #visit #page #quick .left:hover,
+#main #visit #page #quick .right:hover {
+  background-color: var(--borderless-hover-color);
+}

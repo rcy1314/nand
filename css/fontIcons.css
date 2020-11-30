@@ -4,6 +4,11 @@
   z-index: -1
 }
 
+#main #xml .center .item .header .courtesy .copy .attribute .fa,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+  float: right;
+}
+
 #sidebar #content .fa:not(.fas):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
   color: var(--fill-color-primary);
   position: relative;
@@ -128,6 +133,13 @@
   padding-left: 13px;
   padding-top: 15px;
   font-size: 20px;
+}
+
+#guide .sticky .fa-heart,
+#main #xml .center .item .image .fa-heart {
+  position: absolute;
+  font-size: 50px;
+  display: none;
 }
 
 #main #option .fa-expand-alt {
