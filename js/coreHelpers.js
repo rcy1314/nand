@@ -27,7 +27,7 @@ var init = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.style.zIndex = `-12`);
     setTimeout(function() { //thanks init.js
-      progressBackDrop(false, 0)
+      progressBackDrop(false)
     }, 150)
   }
 };
@@ -40,9 +40,9 @@ var unloading = function () {
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `hidden`));
-    progressBackDrop(true, 0);
+    progressBackDrop(true);
   } else if (loading == `percent`) {
-    progressBackDrop(true, 0);
+    progressBackDrop(true);
   }
 };
 

@@ -349,9 +349,9 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   }
 };
 
-var progressBackDrop = function (done, percent) {
+var progressBackDrop = function (done) {
   let complete;
-    let width = _main.clientWidth / 4;
+    let width = _main.clientWidth / 5;
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth){
         setTimeout(function () {
@@ -359,21 +359,12 @@ var progressBackDrop = function (done, percent) {
           _progress.style.transition = `0s`;
           _progress.style.width = `0%`;
         }, 250)
-      } else if (first == true || safeSearchIDs.includes(menu[id].id)){
+      } else if (done == false && first == true){
         _progress.style.transition = `all 500ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
-      } else if (httpRequest.status == `200` || complete >= 750){
-        setTimeout(function () {
-          clearInterval(complete);
-          _progress.style.transition = `0s`;
-          _progress.style.width = `0%`;
-        }, 250)
       }
     }, 750);
   if (done == false) return false;
-  clearInterval(complete);
-  _progress.style.transition = `0s`;
-  _progress.style.width = `0%`;
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
       if (document.body.contains(document.querySelector(`#xml .channel`)))
         if (Reader == true && first == true) {
