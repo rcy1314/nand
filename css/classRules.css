@@ -1,13 +1,3 @@
-.des,
-.hash,
-.blank,
-.media,
-.title,
-.display {
-  color: var(--fill-color-primary);
-  z-index: -1;
-}
-
 .guide {
   scrollbar-width: none;
 }
@@ -17,6 +7,7 @@
 }
 
 .invertScrollbar::-webkit-scrollbar {
+  display: none;
   width: 2px;
 }
 

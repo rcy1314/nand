@@ -16,8 +16,14 @@ var Night = function () {
     `--fill-color-secondary`,
     `#eeeeee`
   );
-  document.documentElement.style.setProperty(`--bg-color-primary`, `#0f0f0f`);
-  document.documentElement.style.setProperty(`--bg-color-secondary`, `#0f0f0f`);
+  document.documentElement.style.setProperty(
+    `--bg-color-primary`,
+    `#0f0f0f`
+  );
+  document.documentElement.style.setProperty(
+    `--bg-color-secondary`,
+    `rgba(50, 50, 50, .9)`
+  );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
     `rgba(26,26,26, .4)`

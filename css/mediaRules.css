@@ -260,10 +260,6 @@
     display: none;
   }
 
-  #main #progressBar {
-    max-width: calc(100% - 16px) !important;
-  }
-
   #main #top #arm {
     width: 90%;
   }
@@ -303,10 +299,6 @@
   #toggle {
     right: 2em;
     top: .5em;
-  }
-
-  #main #progressBar {
-    max-width: calc(100% - 16px) !important;
   }
 
   #main #top #arm {

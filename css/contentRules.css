@@ -56,7 +56,8 @@ html body,
 
 #main #progressBar {
   background-color: var(--bg-color-secondary);
-  border-radius: 16px;
+  margin-right: 4px;
+  border-radius: 3;
   position: fixed;
   height: 4px;
   z-index: 12;

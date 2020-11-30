@@ -341,19 +341,23 @@ var progressBackDrop = function (done) {
   let complete;
   if (safeSearchIDs.includes(menu[id].id))
     width = _main.clientWidth / ((count.length - 1))
-  else width = (_main.clientWidth / ((count.length - 1) / 2))
+  else width = (_main.clientWidth / ((count.length - 1) / 4))
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth || count.length === 0){
         setTimeout(function () {
           clearInterval(complete);
-          _progress.style.transition = `0s`;
-          _progress.style.width = `0%`;
+          _progress.style.transition = `all 750ms ease-in-out`;
+          _progress.style.opacity = `0`;
+          setTimeout(function() {
+            _progress.style.width = `0%`;
+          }, 750)
         }, 250)
       } else if (first == true){
-        _progress.style.transition = `all 500ms ease-in-out`;
+        _progress.style.opacity = `1`;
+        _progress.style.transition = `all 1000ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
       }
-    }, 750);
+    }, 1000);
     if (done == false) {
       count.push(`null`);
       return false;
