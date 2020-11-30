@@ -220,7 +220,6 @@ document.addEventListener(
           .querySelectorAll(`.populate`)
           .forEach((a) => a.classList.remove(`expand`));
       }
-      unloading();
     }
     if (event.target.classList.contains(`select`)) {
       let setPause
