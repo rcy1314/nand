@@ -95,5 +95,3 @@ setTimeout(function() {
     Blocks = true;
     List = false;
   }
-
-}, 50)
