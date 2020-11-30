@@ -647,10 +647,10 @@ var filterInputResponse = function (
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
     if (isNumeric(exact)){
-      xmlRequestParsing(false, null, null, exact);
+      xmlRequestParsing(null, null, exact);
     }
     else if (isNumeric(match) && filter.length == 1){
-      xmlRequestParsing(false, null, null, match);
+      xmlRequestParsing(null, null, match);
     }
     return false;
   }

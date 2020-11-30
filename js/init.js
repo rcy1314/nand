@@ -59,11 +59,15 @@ setTimeout(function() {
       _visit.style.display = `none`;
       _guide.style.display = `flex`;
       _main.classList.add(`guide`)
-      _top.style.display = `none`;
-      setTimeout(function () {
-        filterInputResponse(true, false, menu[i].id.space(), false);
-      }, 100);
+      if (!post){
+        xmlRequestParsing(null, null, i)
+      } else {
+        setTimeout(function () {
+          filterInputResponse(true, false, menu[i].id.space(), false);
+        }, 250);
+      }
     }
+    topMenuBarDisplay(topBar);
   }
   else if (location.search.split(`?q=`)[1]) {
     var uri = location.search.split(`?q=`)[1];
@@ -79,7 +83,7 @@ setTimeout(function() {
     setTimeout(function () {
       _visit.style.display = `flex`;
       _guest.focus();
-    }, 200);
+    }, 250);
   }
 
   if (!isNumeric(post))
