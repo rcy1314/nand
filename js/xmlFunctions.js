@@ -469,8 +469,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       .remove();
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                  ).style.cssText =
-                    `background-color:var(--sticky-background);backdrop-filter: blur(10px)`;
+                  ).classList.add(`blur`);
                   document
                     .querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`

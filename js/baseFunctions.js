@@ -350,9 +350,12 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 };
 
 var progressBackDrop = function (done) {
+  let width
   let length;
   let complete;
-  let width = (_main.clientWidth / ((count.length - 1) / 2))
+  if (safeSearchIDs.includes(menu[id].id))
+    width = _main.clientWidth / ((count.length - 1))
+  else width = (_main.clientWidth / ((count.length - 1) / 2))
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth || count.length === 0){
         setTimeout(function () {

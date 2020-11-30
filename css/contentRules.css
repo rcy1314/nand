@@ -359,11 +359,12 @@ html body,
   display: none;
 }
 
-#container #guide,
-#container #guide .blur {
+.blur,
+#container #guide {
   background-color: var(--sticky-background);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(15px);
+  image-rendering: optimizeSpeed;
+  backdrop-filter: blur(15px);
   justify-content: center;
   align-items: center;
   height: 100%;
