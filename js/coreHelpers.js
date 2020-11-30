@@ -1,8 +1,3 @@
-var ready = (callback) => {
-  if (document.readyState != `loading`) callback();
-  else document.addEventListener(`DOMContentLoaded`, callback);
-};
-
 var isNumeric = function (n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -26,9 +21,7 @@ var init = function () {
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.style.zIndex = `-12`);
-    setTimeout(function() { //thanks init.js
       progressBackDrop(false)
-    }, 150)
   }
 };
 
@@ -41,19 +34,14 @@ var unloading = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `hidden`));
     progressBackDrop(true);
-  } else if (loading == `percent`) {
+  } else if (loading == `percent`)
     progressBackDrop(true);
-  }
 };
 
-var escape = function (n) {
-  return n.replace(/<.>/g, ``);
-};
+var escape = function (n) { return n.replace(/<.>/g, ``); };
 
 var truncate = function (i, n, useWordBoundary) {
-  if (i.length <= n) {
-    return i;
-  }
+  if (i.length <= n) return i;
   let subString = i.substr(0, n - 1);
   return (
     (useWordBoundary
@@ -116,7 +104,7 @@ String.prototype.zulu = function () {
   let dmz = [];
   let utc = new Date(this);
   dmz.push(this.moment());
-  var gmt = utc.toLocaleString(`en-US`, opt);
+  let gmt = utc.toLocaleString(`en-US`, opt);
   dmz.push(gmt);
 
   return dmz;
@@ -129,7 +117,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.grep = function (string) {
-  var string = this;
+  let string = this;
   let count = [];
   if (onlyImages == true) {
     return menu.filter((a) => a.category == string && a.media == true).length;

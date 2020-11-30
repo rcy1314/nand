@@ -30,31 +30,31 @@ document.addEventListener(
           .removeChild(_match.querySelector(".listing").lastChild);
       }
       for (i = 0; i < translations.length; i++) {
+        let detail = document.createElement(`div`);
+        let object = document.createElement(`img`);
         let index = document.createElement(`div`);
+        let text = document.createElement(`div`);
         index.setAttribute(`aria-item`, translations[i]);
+        object.src = `images/${translations[i]}.webp`;
+        detail.classList.add(`detail`, `translation`);
         index.setAttribute(`tabindex`, -1);
         index.classList.add(`index`);
-        let detail = document.createElement(`div`);
-        detail.classList.add(`detail`, `translation`);
-        let object = document.createElement(`img`);
         object.classList.add(`hue`);
-        object.src = `images/${translations[i]}.webp`;
-        detail.append(object);
-        let text = document.createElement(`div`);
         text.classList.add(`text`);
-        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${translations[
-          i
-        ].grep()} sites`;
+        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${
+            translations[i]
+          .grep()} sites`;
+        detail.append(object);
         detail.append(text);
         index.append(detail);
         _match.querySelector(`.listing`).append(index);
       }
+      document.querySelector(`#input .icon`).classList.add(`slide`);
+      _view.setAttribute(`placeholder`, `Search`);
       event.target.style.caretColor = `#e4e4e4`;
       event.target.style.paddingLeft = `30px`;
       event.target.style.textAlign = `left`;
       event.target.value = ``;
-      _view.setAttribute(`placeholder`, `Search`);
-      document.querySelector(`#input .icon`).classList.add(`slide`);
     }
     event.preventDefault();
   },
@@ -82,7 +82,6 @@ document.addEventListener(
           randomDuplicate = [];
           xmlRequestParsing(null, null, anyRandomMenuObject());
         } else {
-          _top.style.display = `block`;
           if (document.body.contains(document.querySelector(`#xml`)))
             document.querySelector(`#xml`).remove();
           if (document.body.contains(document.querySelector(`#group`)))
@@ -92,6 +91,7 @@ document.addEventListener(
           );
           if (expand == true) var groupType = `list`;
           else var groupType = `blocks`;
+          topMenuBarDisplay(topBar);
           displayExpand(expand);
           unloading();
         }
@@ -100,8 +100,6 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        _visit.style.display = `none`;
-        topMenuBarDisplay(topBar);
         category =
           menu[event.target.closest(`.hover`).getAttribute(`aria-item`)]
             .category;
@@ -110,6 +108,8 @@ document.addEventListener(
           null,
           event.target.closest(`.hover`).getAttribute(`aria-item`)
         );
+        _visit.style.display = `none`;
+        topMenuBarDisplay(topBar);
       }
     }
     event.preventDefault();
@@ -119,20 +119,18 @@ document.addEventListener(
 document.addEventListener(
   `mouseout`,
   function (event) {
-    if (event.target.classList.contains(`detail`)) {
+    if (event.target.classList.contains(`detail`))
       document
         .querySelectorAll(`.listing .index, .listing .index`)
         .forEach((a) => a.classList.remove(`hover`));
-    }
   },
   false
 ); //:before pseudo-elements not loaded in DOM
 document.addEventListener(
   `mouseover`,
   function (event) {
-    if (event.target.classList.contains(`detail`)) {
+    if (event.target.classList.contains(`detail`))
       event.target.closest(`.index`).classList.add(`hover`);
-    }
   },
   false
 ); //:before pseudo-elements not loaded in DOM
@@ -162,16 +160,16 @@ document.addEventListener(
             }))
         }
         if (!_sidebar.querySelector(`.option`)) {
-          let parse = event.target;
           let option = document.createElement(`div`);
           option.classList.add(`option`);
+          let parse = event.target;
           option.innerHTML = document.querySelector(`.excludeInput`).value;
           event.target.parentNode.insertBefore(option, parse);
         } else {
           let parse = document.querySelector(`.option`);
           let option = document.createElement(`div`);
-          option.classList.add(`option`);
           option.innerHTML = document.querySelector(`.excludeInput`).value;
+          option.classList.add(`option`);
           parse.parentNode.insertBefore(option, parse);
         }
         document.querySelector(`.exclude`).style.height =
@@ -211,15 +209,15 @@ document.addEventListener(
       if (document.querySelector(`.sideFilter`).value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-        topMenuBarDisplay(topBar);
-        _visit.style.display = `none`;
-        _toggle.style.display = `none`;
-        filterInputResponse(
-          false,
-          false,
-          document.querySelector(`.sideFilter`).value.space(),
-          true
-        );
+      filterInputResponse(
+        false,
+        false,
+        document.querySelector(`.sideFilter`).value.space(),
+        true
+      );
+      _toggle.style.display = `none`;
+      _visit.style.display = `none`;
+      topMenuBarDisplay(topBar);
       }
     } else if (event.target.id == `search`) {
       if (
@@ -228,23 +226,20 @@ document.addEventListener(
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         )
       ) {
-        _match.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         category = _match.querySelector(`.hover`).getAttribute(`aria-item`);
-        document.title = category;
-        populateCategoryGroup(category);
         if (expand == true) var groupType = `list`;
         else var groupType = `blocks`;
+        populateCategoryGroup(category);
+        _match.style.display = `none`;
+        document.title = category;
         displayExpand(expand);
-        unloading();
       } else if (document.body.contains(_match.querySelector(`.hover`))) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-        id = _match.querySelector(`.hover`).getAttribute(`aria-item`);
-        _match.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -254,6 +249,7 @@ document.addEventListener(
           null,
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         );
+        _match.style.display = `none`;
       } else if (_view.value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -273,20 +269,19 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        id = _first.querySelector(`.hover`).getAttribute(`aria-item`);
         xmlRequestParsing(
           null,
           null,
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0) {
-        topMenuBarDisplay(topBar)
         filterInputResponse(
           false,
           false,
           _guest.value,
           true
         );
+        topMenuBarDisplay(topBar)
       }
     }
     event.preventDefault();

@@ -17,77 +17,78 @@ var rippleBuild = function(ev, Elem) {
   Elem.appendChild(circle);
 }
 var sideBarTranslationBuild = function (translation) {
-  let cat = document.createElement(`div`);
-  cat.classList.add(`cat`, translation);
-  cat.setAttribute(`aria-item`, translation);
-  cat.innerHTML = translation;
-  return cat;
+  let category = document.createElement(`div`);
+  category.setAttribute(`aria-item`, translation);
+  category.classList.add(`cat`, translation);
+  category.innerHTML = translation;
+  return category;
 }
 
 var groupBuild = function () {
-  let main = document.querySelector(`#main`);
+  let result = document.createElement(`div`);
   let group = document.createElement(`div`);
-  group.innerHTML = `<div class='result'></div>`;
+  result.classList.add(`result`);
+  group.append(result);
   group.id = `group`;
-  main.append(group);
+  _main.append(group);
 };
 
 var stageBuild = function () {
-  let object = document.createElement(`div`);
-  let center = document.createElement(`div`);
-  let channel = document.createElement(`div`);
-  object.id = `xml`;
-  center.classList.add(`center`);
-  channel.classList.add(`channel`);
-  center.append(channel);
-  object.append(center);
-  let status = document.createElement(`div`);
-  status.classList.add(`status`);
-  let content = document.createElement(`div`);
-  content.classList.add(`content`);
   let suggestions = document.createElement(`div`);
+  let channel = document.createElement(`div`);
+  let content = document.createElement(`div`);
+  let center = document.createElement(`div`);
+  let status = document.createElement(`div`);
+  let xml = document.createElement(`div`);
+  xml.id = `xml`;
+  channel.classList.add(`channel`);
+  center.classList.add(`center`);
+  center.append(channel);
+  xml.append(center);
   suggestions.classList.add(`suggestions`);
-  content.append(status);
+  content.classList.add(`content`);
+  status.classList.add(`status`);
   content.append(suggestions);
-  object.append(content);
-  return object;
+  content.append(status);
+  xml.append(content);
+  return xml;
 };
 
 var footerBuild = function () {
-  let object = document.createElement(`div`);
-  object.id = `bottom`;
-  let previous = document.createElement(`div`);
-  previous.classList.add(`btn`, `back`);
-  previous.setAttribute(`aria-item`, back());
-  let span = document.createElement(`span`);
-  span.classList.add(`front`);
-  previous.append(span);
-  let front = document.createElement(`span`);
-  front.classList.add(`flip-front`);
-  front.innerHTML = `Previous`;
-  previous.append(front);
   let backward = document.createElement(`span`);
+  let previous = document.createElement(`div`);
+  let object = document.createElement(`div`);
+  let front = document.createElement(`span`);
+  let span = document.createElement(`span`);
+  object.id = `bottom`;
+  previous.setAttribute(`aria-item`, back());
+  previous.classList.add(`btn`, `back`);
+  front.classList.add(`flip-front`);
+  span.classList.add(`front`);
+  front.innerHTML = `Previous`;
   backward.classList.add(`flip-back`);
   backward.innerHTML = `${String(menu[back()].id.match(/[^\/]+$/g)).substring(
     0,
     13
   )}...`;
+  previous.append(span);
+  previous.append(front);
   previous.append(backward);
-  let bottom = document.createElement(`div`);
-  bottom.classList.add(`bottom`);
-  bottom.innerHTML = `Return`;
-  let next = document.createElement(`div`);
-  next.classList.add(`btn`, `next`);
-  next.setAttribute(`aria-item`, forward());
   let ahead = document.createElement(`span`);
-  ahead.classList.add(`front`);
-  next.append(ahead);
+  let bottom = document.createElement(`div`);
   let flip = document.createElement(`span`);
-  flip.classList.add(`flip-front`);
-  flip.innerHTML = `Next`;
-  next.append(flip);
+  let next = document.createElement(`div`);
   let id = document.createElement(`span`);
+  next.setAttribute(`aria-item`, forward());
+  next.classList.add(`btn`, `next`);
+  flip.classList.add(`flip-front`);
+  bottom.classList.add(`bottom`);
   id.classList.add(`flip-back`);
+  ahead.classList.add(`front`);
+  bottom.innerHTML = `Return`;
+  flip.innerHTML = `Next`;
+  next.append(ahead);
+  next.append(flip);
   id.innerHTML = `${String(menu[forward()].id.match(/[^\/]+$/g)).substring(
     0,
     13
@@ -100,27 +101,31 @@ var footerBuild = function () {
 };
 
 var guideBuild = function (pubArray) {
-  let blur = document.createElement(`div`);
-  blur.classList.add(`blur`);
+  let publish = document.createElement(`div`);
   let sticky = document.createElement(`div`);
-  sticky.classList.add(`item`, `sticky`);
-  let src = document.createElement(`div`);
-  src.classList.add(`item`, `src`);
-  src.setAttribute(`aria-item`, pubArray.id);
-  src.setAttribute(`ext`, pubArray.externalURI);
-  let image = document.createElement(`div`);
-  image.classList.add(`image`);
-  image.append(sideBarThemeBuild(`fa-heart`));
   let object = document.createElement(`img`);
-  object.id = pubArray.element;
+  let image = document.createElement(`div`);
+  let blur = document.createElement(`div`);
+  let wrap = document.createElement(`div`);
+  let head = document.createElement(`div`);
+  let src = document.createElement(`div`);
+  let ago = document.createElement(`div`);
+  sticky.classList.add(`item`, `sticky`);
   object.classList.add(`guide`, `img`);
+  src.classList.add(`item`, `src`);
+  head.classList.add(`header`);
+  image.classList.add(`image`);
+  publish.classList.add(`pub`);
+  blur.classList.add(`blur`);
+  wrap.classList.add(`wrap`);
+  ago.classList.add(`ago`);
+  object.id = pubArray.element;
+  wrap.setAttribute(`ext`, pubArray.externalURI);
+  src.setAttribute(`ext`, pubArray.externalURI);
+  src.setAttribute(`aria-item`, pubArray.id);
+  image.append(sideBarThemeBuild(`fa-heart`));
   image.append(object);
   src.append(image);
-  let wrap = document.createElement(`div`);
-  wrap.classList.add(`wrap`);
-  wrap.setAttribute(`ext`, pubArray.externalURI);
-  let head = document.createElement(`div`);
-  head.classList.add(`header`);
   head.append(
     courtesyBuild(
       menu[pubArray.id].id.match(/([^\/]+)$/g),
@@ -128,14 +133,10 @@ var guideBuild = function (pubArray) {
       pubArray.externalURI
     )
   );
-  wrap.append(head);
-  let publish = document.createElement(`div`);
-  publish.classList.add(`pub`);
   publish.innerHTML = pubArray.title;
-  wrap.append(publish);
-  let ago = document.createElement(`div`);
-  ago.classList.add(`ago`);
   ago.innerHTML = pubArray.dst;
+  wrap.append(head);
+  wrap.append(publish);
   wrap.append(ago);
   sticky.append(src);
   sticky.append(wrap);
@@ -146,27 +147,31 @@ var guideBuild = function (pubArray) {
 };
 
 var guideBuildYoutube = function (pubArray) {
-  let blur = document.createElement(`div`);
-  blur.classList.add(`blur`);
-  let sticky = document.createElement(`div`);
-  sticky.classList.add(`yt`, `item`, `sticky`);
-  let youtube = document.createElement(`div`);
-  youtube.classList.add(`src`);
-  youtube.id = `yt`;
-  youtube.style.width = `60vw`;
-  youtube.setAttribute(`aria-item`, pubArray.id);
-  youtube.setAttribute(`ext`, pubArray.re);
-  let yt = document.createElement(`div`);
-  yt.classList.add(`yt`);
   let object = document.createElement(`iframe`);
-  object.src = pubArray.src;
-  yt.append(object);
-  youtube.append(yt);
+  let publish = document.createElement(`div`);
+  let youtube = document.createElement(`div`);
+  let sticky = document.createElement(`div`);
+  let blur = document.createElement(`div`);
   let wrap = document.createElement(`div`);
-  wrap.classList.add(`wrap`);
-  wrap.setAttribute(`ext`, pubArray.externalURI);
   let head = document.createElement(`div`);
+  let ago = document.createElement(`div`);
+  let yt = document.createElement(`div`);
+  youtube.setAttribute(`aria-item`, pubArray.id);
+  wrap.setAttribute(`ext`, pubArray.externalURI);
+  sticky.classList.add(`yt`, `item`, `sticky`);
+  youtube.setAttribute(`ext`, pubArray.re);
+  publish.innerHTML = pubArray.title;
+  ago.innerHTML = pubArray.dst;
+  youtube.style.width = `60vw`;
+  youtube.classList.add(`src`);
   head.classList.add(`header`);
+  publish.classList.add(`pub`);
+  blur.classList.add(`blur`);
+  wrap.classList.add(`wrap`);
+  object.src = pubArray.src;
+  ago.classList.add(`ago`);
+  yt.classList.add(`yt`);
+  youtube.id = `yt`;
   head.append(
     courtesyBuild(
       menu[pubArray.id].id.match(/([^\/]+)$/g),
@@ -174,51 +179,47 @@ var guideBuildYoutube = function (pubArray) {
       pubArray.externalURI
     )
   );
-  wrap.append(head);
-  let publish = document.createElement(`div`);
-  publish.classList.add(`pub`);
-  publish.innerHTML = pubArray.title;
-  wrap.append(publish);
-  let ago = document.createElement(`div`);
-  ago.classList.add(`ago`);
-  ago.innerHTML = pubArray.dst;
-  wrap.append(ago);
-  youtube.append(wrap);
   head.append(
     copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
   );
+  yt.append(object);
+  youtube.append(yt);
+  wrap.append(head);
+  wrap.append(publish);
+  wrap.append(ago);
+  youtube.append(wrap);
   sticky.append(youtube);
   return sticky;
 };
 
 var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
-  let filter = document.createElement(`div`);
-  filter.classList.add(`filter`);
-  let select = document.createElement(`div`);
-  select.classList.add(`select`);
   let display = document.createElement(`div`);
-  display.classList.add(`display`);
+  let filter = document.createElement(`div`);
+  let select = document.createElement(`div`);
   let object = document.createElement(`img`);
-  object.classList.add(`webp`);
   object.src = menu[menuIndex].image.image();
-  filter.append(object);
-  let ahref = document.createElement(`a`);
-  ahref.classList.add(`tag`);
-  ahref.setAttribute(`title`, menu[menuIndex].id);
-  ahref.innerHTML = menu[menuIndex].id.match(/[^\/]+$/g);
-  filter.append(ahref);
   let info = document.createElement(`div`);
-  info.classList.add(`info`);
   let des = document.createElement(`div`);
+  let ahref = document.createElement(`a`);
+  ahref.innerHTML = menu[menuIndex].id.match(/[^\/]+$/g);
+  ahref.setAttribute(`title`, menu[menuIndex].id);
+  let construct = document.createElement(`div`);
+  construct.classList.add(`construct`);
+  display.classList.add(`display`);
+  filter.classList.add(`filter`);
+  select.classList.add(`select`);
+  object.classList.add(`webp`);
+  ahref.classList.add(`tag`);
+  info.classList.add(`info`);
   des.classList.add(`about`);
   des.innerHTML = `&emsp;${menu[menuIndex].description}<br>`;
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
-  info.append(des);
   if (showDescription == false) des.style.visibility = `hidden`
-  let construct = document.createElement(`div`);
-  construct.classList.add(`construct`);
+  filter.append(object);
+  filter.append(ahref);
+  info.append(des);
   construct.append(filter);
   construct.append(info);
   return construct;
@@ -232,8 +233,8 @@ var translationBuild = function (translation) {
   //img.classList.add(`quickTranslation`)
   //img.src = `images/${translation}.webp`
   let ahref = document.createElement(`a`)
-  ahref.classList.add(`category`)
   ahref.setAttribute(`ext`, translation)
+  ahref.classList.add(`category`)
   ahref.innerHTML = translation
   //object.append(img)
   object.append(ahref)
@@ -242,14 +243,14 @@ var translationBuild = function (translation) {
 
 var assetBuild = function (assetIndex, assetImage, assetId) {
   let object = document.createElement(`div`);
-  object.classList.add(`asset`);
-  object.setAttribute(`aria-item`, assetIndex);
+  let ahref = document.createElement(`a`)
   let img = document.createElement(`img`)
+  object.setAttribute(`aria-item`, assetIndex);
+  ahref.setAttribute(`title`, assetId)
+  object.classList.add(`asset`);
+  ahref.classList.add(`query`)
   img.classList.add(`entity`)
   img.src = assetImage
-  let ahref = document.createElement(`a`)
-  ahref.classList.add(`query`)
-  ahref.setAttribute(`title`, assetId)
   ahref.innerHTML = `${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...`
   object.append(img)
   object.append(ahref)
@@ -263,33 +264,33 @@ var suggestBuild = function (
   objectId,
   objectCategory
 ) {
-  let object = document.createElement(`div`);
-  object.classList.add(`combine`);
-  let circle = document.createElement(`img`);
-  circle.classList.add(`circle`);
-  circle.src = objectImage;
-  object.append(circle);
   let suggest = document.createElement(`div`);
-  suggest.classList.add(`suggest`);
-  suggest.setAttribute(`aria-item`, objectIndex);
-  suggest.title = objectId;
+  let object = document.createElement(`div`);
+  let circle = document.createElement(`img`);
+  let define = document.createElement(`div`);
   let bold = document.createElement(`b`);
+  let category = document.createElement(`a`);
+  suggest.setAttribute(`aria-item`, objectIndex);
+  category.setAttribute(`aria-item`, objectCategory);
+  suggest.classList.add(`suggest`);
+  object.classList.add(`combine`);
+  circle.classList.add(`circle`);
+  define.classList.add(`random`);
   bold.classList.add(`bold`);
+  circle.src = objectImage;
+  suggest.title = objectId;
   bold.innerHTML = `${String(objectId.match(/[^\/]+$/g)).substring(
     0,
     19
   )}...<br>`;
+  category.innerHTML = objectCategory;
+  category.title = objectCategory;
+  define.innerHTML = objectMedia;
+  object.append(circle);
   suggest.append(bold);
   object.append(suggest);
-  let define = document.createElement(`div`);
-  define.classList.add(`random`);
-  define.innerHTML = objectMedia;
   suggest.append(define);
-  let cat = document.createElement(`a`);
-  cat.setAttribute(`aria-item`, objectCategory);
-  cat.title = objectCategory;
-  cat.innerHTML = objectCategory;
-  object.append(cat);
+  object.append(category);
   return object;
 };
 
@@ -302,28 +303,27 @@ var categoryBuild = function (
   objectMedia
 ) {
   let populate = document.createElement(`div`);
-  populate.classList.add(`populate`);
-  populate.setAttribute(`aria-item`, objectIndex);
-  let select = document.createElement(`div`);
-  select.classList.add(`select`);
   let display = document.createElement(`div`);
-  display.classList.add(`display`);
+  let select = document.createElement(`div`);
   let object = document.createElement(`img`);
-  object.classList.add(`webp`);
-  object.src = objectImage;
-  display.append(object);
-  let hash = document.createElement(`div`);
-  hash.classList.add(`hash`);
-  hash.innerHTML = objectHash;
   let media = document.createElement(`div`);
-  media.classList.add(`media`);
-  media.innerHTML = objectMedia;
-  let id = document.createElement(`div`);
-  id.classList.add(`title`);
-  id.innerHTML = objectId;
+  let hash = document.createElement(`div`);
   let des = document.createElement(`div`);
+  let id = document.createElement(`div`);
+  populate.setAttribute(`aria-item`, objectIndex);
+  populate.classList.add(`populate`);
+  display.classList.add(`display`);
+  select.classList.add(`select`);
+  object.classList.add(`webp`);
+  media.classList.add(`media`);
+  hash.classList.add(`hash`);
+  id.classList.add(`title`);
   des.classList.add(`des`);
   des.innerHTML = objectDescription;
+  media.innerHTML = objectMedia;
+  hash.innerHTML = objectHash;
+  object.src = objectImage;
+  id.innerHTML = objectId;
   display.append(object);
   select.append(display);
   select.append(id);
@@ -335,27 +335,27 @@ var categoryBuild = function (
 };
 
 let attributeBuild = function () {
-  let object = document.createElement(`div`);
-  object.classList.add(`copy`);
-  let attr = document.createElement(`div`);
-  attr.classList.add(`attr`, `fa-ellipsis-h`);
   let attribute = document.createElement(`div`);
+  let picture = document.createElement(`div`);
+  let object = document.createElement(`div`);
+  let attr = document.createElement(`div`);
+  let site = document.createElement(`div`);
+  let copy = document.createElement(`div`);
+  attr.classList.add(`attr`, `fa-ellipsis-h`);
   attribute.classList.add(`attribute`);
+  picture.classList.add(`picture`);
+  object.classList.add(`copy`);
+  site.classList.add(`site`);
+  copy.classList.add(`post`);
+  site.innerHTML = `Copy Url`;
+  copy.innerHTML = `Copy Post`;
+  picture.innerHTML = `Copy Source`;
   object.append(attr);
   attr.append(attribute);
-  let site = document.createElement(`div`);
-  site.classList.add(`site`);
-  site.innerHTML = `Copy Url`;
   site.append(sideBarThemeBuild(`fa-at`));
   attribute.append(site);
-  let copy = document.createElement(`div`);
-  copy.classList.add(`post`);
-  copy.innerHTML = `Copy Post`;
   copy.append(sideBarThemeBuild(`fa-share`));
   attribute.append(copy);
-  let picture = document.createElement(`div`);
-  picture.classList.add(`picture`);
-  picture.innerHTML = `Copy Source`;
   picture.append(sideBarThemeBuild(`fa-camera`));
   attribute.append(picture);
   return object;
@@ -363,14 +363,14 @@ let attributeBuild = function () {
 
 var courtesyBuild = function (objectId, objectImage, objectExternal) {
   let courtesy = document.createElement(`div`);
-  courtesy.classList.add(`courtesy`);
   let object = document.createElement(`img`);
-  object.classList.add(`ext`)
-  object.src = objectImage;
   let ahref = document.createElement(`a`);
-  courtesy.setAttribute(`ext`, objectExternal);
-  ahref.classList.add(`exit`)
   let bold = document.createElement(`b`);
+  courtesy.setAttribute(`ext`, objectExternal);
+  courtesy.classList.add(`courtesy`);
+  object.classList.add(`ext`)
+  ahref.classList.add(`exit`)
+  object.src = objectImage;
   bold.innerHTML = objectId;
   ahref.append(bold);
   courtesy.append(object);
@@ -380,16 +380,16 @@ var courtesyBuild = function (objectId, objectImage, objectExternal) {
 };
 
 let copyInputAttribute = function (src, share, externalURI) {
+  let construct = document.createElement(`div`);
+  let sticky = document.createElement(`input`);
+  let source = document.createElement(`input`);
   let url = document.createElement(`input`);
+  source.classList.add(`source`);
+  sticky.classList.add(`share`);
   url.classList.add(`url`);
   url.value = externalURI;
-  let sticky = document.createElement(`input`);
-  sticky.classList.add(`share`);
   sticky.value = share;
-  let source = document.createElement(`input`);
-  source.classList.add(`source`);
   source.value = src;
-  let construct = document.createElement(`div`);
   construct.append(url);
   construct.append(sticky);
   construct.append(source);
@@ -397,30 +397,30 @@ let copyInputAttribute = function (src, share, externalURI) {
 };
 
 var youtubeHTMLBuild = function (htmlArray) {
+  let object = document.createElement(`iframe`);
+  let youtube = document.createElement(`div`);
+  let publish = document.createElement(`div`);
   let item = document.createElement(`div`);
-  item.id = `yt`;
-  item.classList.add(`item`);
+  let head = document.createElement(`div`);
+  let ago = document.createElement(`div`);
+  publish.innerHTML += htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
-  let head = document.createElement(`div`);
+  publish.setAttribute(`text`, htmlArray.title);
+  youtube.innerHTML += htmlArray.views;
+  object.src = htmlArray.videoSource;
+  ago.innerHTML = htmlArray.dst;
   head.classList.add(`header`);
+  publish.classList.add(`pub`);
+  youtube.classList.add(`yt`);
+  item.classList.add(`item`);
+  ago.classList.add(`ago`);
+  item.id = `yt`;
   head.append(htmlArray.courtesy);
   item.append(head);
-  let youtube = document.createElement(`div`);
-  youtube.classList.add(`yt`);
-  let object = document.createElement(`iframe`);
-  object.src = htmlArray.videoSource;
   youtube.append(object);
-  youtube.innerHTML += htmlArray.views;
   item.append(youtube);
-  let publish = document.createElement(`div`);
-  publish.classList.add(`pub`);
-  publish.setAttribute(`text`, htmlArray.title);
-  publish.innerHTML += htmlArray.truncate + htmlArray.more;
-  let ago = document.createElement(`div`);
-  ago.classList.add(`ago`);
-  ago.innerHTML = htmlArray.dst;
   item.append(publish);
   item.append(ago);
   item.append(
@@ -430,46 +430,46 @@ var youtubeHTMLBuild = function (htmlArray) {
 };
 
 var xmlHTMLBuild = function (htmlArray) {
+  let filterBlur = document.createElement(`div`);
+  let publish = document.createElement(`div`);
+  let classic = document.createElement(`div`);
+  let pending = document.createElement(`div`);
+  let loader = document.createElement(`div`);
+  let object = document.createElement(`img`);
+  let image = document.createElement(`div`);
+  let wrap = document.createElement(`div`);
   let item = document.createElement(`div`);
-  item.classList.add(`item`);
+  let head = document.createElement(`div`);
+  let ago = document.createElement(`div`);
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
-  let head = document.createElement(`div`);
+  publish.innerHTML = htmlArray.truncate + htmlArray.more;
+  if (fadeIntoView == true) object.classList.add(`hidden`)
+  loader.classList.add(`loader`, `double-circle`);
+  publish.setAttribute(`text`, htmlArray.title);
+  wrap.innerHTML += htmlArray.searchExternal;
+  pending.classList.add(`blink`, `pending`);
+  filterBlur.classList.add(`filterBlur`);
+  classic.classList.add(`classic`);
+  ago.classList.add(`ago`, `zulu`);
+  object.id = htmlArray.pubIndex;
+  publish.classList.add(`pub`);
   head.classList.add(`header`);
+  image.classList.add(`image`);
+  object.classList.add(`img`);
+  item.classList.add(`item`);
+  wrap.classList.add(`wrap`);
+  ago.innerHTML = htmlArray.dst;
   head.append(htmlArray.courtesy);
   item.append(head);
-  let classic = document.createElement(`div`);
-  classic.classList.add(`classic`);
-  let pending = document.createElement(`div`);
-  pending.classList.add(`blink`, `pending`);
-  let loader = document.createElement(`div`);
-  loader.classList.add(`loader`, `double-circle`);
   pending.append(loader);
   classic.append(pending);
-  let image = document.createElement(`div`);
-  image.classList.add(`image`);
   image.append(sideBarThemeBuild(`fa-heart`));
-  let filterBlur = document.createElement(`div`);
-  filterBlur.classList.add(`filterBlur`);
   image.append(filterBlur);
-  let object = document.createElement(`img`);
-  object.id = htmlArray.pubIndex;
-  object.classList.add(`img`);
-  if (fadeIntoView == true) object.classList.add(`hidden`)
   image.append(object);
   classic.append(image);
-  let wrap = document.createElement(`div`);
-  wrap.classList.add(`wrap`);
-  let publish = document.createElement(`div`);
-  publish.classList.add(`pub`);
-  publish.setAttribute(`text`, htmlArray.title);
-  publish.innerHTML = htmlArray.truncate + htmlArray.more;
   wrap.append(publish);
-  wrap.innerHTML += htmlArray.searchExternal;
-  let ago = document.createElement(`div`);
-  ago.classList.add(`ago`, `zulu`);
-  ago.innerHTML = htmlArray.dst;
   wrap.append(ago);
   classic.append(wrap);
   item.append(classic);
@@ -487,88 +487,88 @@ var listingIndexBuild = function (
   suggested,
   index
 ) {
+  let buffer = document.createElement(`div`);
+  let detail = document.createElement(`div`);
+  let object = document.createElement(`img`);
+  let match = document.createElement(`div`);
   let key = document.createElement(`div`);
-  key.classList.add(`index`);
+  match.innerHTML = match.innerHTML = `&emsp;${indexCategory}<br>&emsp;${indexId}`;
   key.setAttribute(`aria-item`, indexObject);
+  match.classList.add(`textMatch`);
+  detail.classList.add(`detail`);
+  buffer.classList.add(`buffer`);
   if (suggested == true) var contentText = `suggested...`;
   else var contentText = ``;
-  let detail = document.createElement(`div`);
-  detail.classList.add(`detail`);
-  let object = document.createElement(`img`);
+  buffer.innerHTML = contentText;
   object.classList.add(`input`);
+  key.classList.add(`index`);
   object.src = indexImage;
   detail.append(object);
-  let match = document.createElement(`div`);
-  match.classList.add(`textMatch`);
-  match.innerHTML = match.innerHTML = `&emsp;${indexCategory}<br>&emsp;${indexId}`;
   detail.append(match);
-  let buffer = document.createElement(`div`);
-  buffer.classList.add(`buffer`);
-  buffer.innerHTML = contentText;
   detail.append(buffer);
   key.append(detail);
   return key;
 };
 
 var sideBarListBuild = function (Elem, Class, Icon, Text) {
-  let content = _sidebar.querySelector(`#content`)
   let option = document.createElement(`div`);
   option.classList.add(Elem, `mainTransition`);
-  option.innerHTML = `<div class='${Class}'>
+  option.innerHTML = `
+  <div class='${Class}'>
     ${Text}
     <div class='fa ${Icon}'></div>
    </div>
   `;
-  content.append(option);
+  _content.append(option);
 };
 
 var excludeFormBuild = function () {
-  let min = document.createElement(`div`);
-  min.id = `filter`;
-  min.classList.add("filter");
-  let form = document.createElement(`form`);
-  form.classList.add(`min`);
-  form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
-  object.classList.add("excludeInput")
+  let form = document.createElement(`form`);
+  let min = document.createElement(`div`);
   object.setAttribute(`placeholder`, `filter`);
+  object.classList.add("excludeInput")
   object.setAttribute(`type`, `text`);
+  form.setAttribute(`action`, `#`);
+  min.classList.add("filter");
+  form.classList.add(`min`);
+  min.id = `filter`;
   form.append(object);
   min.append(form);
   return min;
 };
 
 var urlFormBuild = function () {
-  let url = document.createElement(`div`);
-  url.id = `url`;
-  url.classList.add("background");
-  let form = document.createElement(`form`);
-  form.classList.add(`url`);
-  form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
-  object.classList.add("urlInput")
+  let form = document.createElement(`form`);
+  let url = document.createElement(`div`);
   object.setAttribute("value", backgroundImage[0].path)
   object.setAttribute(`placeholder`, `url`);
   object.setAttribute(`type`, `text`);
+  form.setAttribute(`action`, `#`);
+  object.classList.add("urlInput")
   object.classList.add(`imageURL`);
+  url.classList.add("background");
   object.classList.add(`text`);
+  form.classList.add(`url`);
+  url.id = `url`;
   form.append(object);
   url.append(form);
   return url;
 };
 
 var basicFormBuild = function () {
-  let basic = document.createElement(`div`);
-  basic.id = `basic`;
-  let form = document.createElement(`form`);
-  form.classList.add(`sideBasic`);
-  form.setAttribute(`action`, `#`);
   let object = document.createElement(`input`);
   object.setAttribute(`placeholder`, `search`);
   object.setAttribute(`autocomplete`, `off`)
+  let basic = document.createElement(`div`);
+  let form = document.createElement(`form`);
   object.setAttribute(`type`, `text`);
   object.classList.add(`sideFilter`);
+  form.setAttribute(`action`, `#`);
+  form.classList.add(`sideBasic`);
   object.classList.add(`text`);
+  basic.id = `basic`;
   form.append(object);
   basic.append(form);
   return basic;

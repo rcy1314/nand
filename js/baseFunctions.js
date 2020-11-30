@@ -8,9 +8,9 @@ function handleSwipe() {
     }
 }
 
-var displayDescription = function (toggleOption) {
+var displayDescription = function (Value) {
   if (expand == true)
-    if (toggleOption == false){
+    if (Value == false){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `none`
       _main
@@ -22,7 +22,7 @@ var displayDescription = function (toggleOption) {
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`mobile`));
-    } else if (toggleOption == true){
+    } else if (Value == true){
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `block`
       _main
@@ -37,10 +37,10 @@ var displayDescription = function (toggleOption) {
     }
 }
 
-var displayExpand = function (toggleOption) {
+var displayExpand = function (Value) {
   if (document.body.contains(document.querySelector(`#xml`)))
     document.querySelector(`#xml`).remove();
-  if (toggleOption == true) {
+  if (Value == true) {
     groupType = `list`;
     if (document.body.contains(document.getElementById(`group`))) {
       _main
@@ -74,7 +74,7 @@ var displayExpand = function (toggleOption) {
       if (document.body.contains(document.querySelector(`.result`)))
         document.querySelector(`.result`).style.display = `block`;
     }
-  } else if (toggleOption == false) {
+  } else if (Value == false) {
     groupType = `blocks`;
     if (document.body.contains(document.getElementById(`group`))) {
       _main
@@ -147,7 +147,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
     }
   }
 
-var sideBarDisplay = function (toggleOption) {
+var sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
@@ -170,12 +170,11 @@ var sideBarDisplay = function (toggleOption) {
     appendSettingsSideBarLists(`.set`, `settings`, settings)
     content.append(basicFormBuild());
   }
-  if (toggleOption == true) {
+  if (Value == true) {
     if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100% + 240px)`
-    if (_main.clientWidth > 769) {
+    if (_main.clientWidth >= 769) {
       setTimeout(function () {
-        _top.style.width = `calc(100% - 256px)`;
         _main.style.width = `calc(100% - 240px)`;
         _progress.style.left = `240px`;
         _main.style.left = `240px`;
@@ -190,7 +189,7 @@ var sideBarDisplay = function (toggleOption) {
       document.querySelector(`#basic`).style.display = `block`;
       _sidebar.style.left = `0`;
     }, 300);
-  } else if (toggleOption == false) {
+  } else if (Value == false) {
     if (backgroundImage.element = `container` && _main.clientWidth >= 769)
       _container.style.width = `calc(100%)`
     document.querySelector(`.sideFilter`).style.display = `block`;
@@ -203,15 +202,15 @@ var sideBarDisplay = function (toggleOption) {
   }
 };
 
-var topMenuBarDisplay = function (toggleOption) {
-  if (toggleOption == true){
+var topMenuBarDisplay = function (Value) {
+  if (Value == true){
     _view.style.display = `block`;
     _top.style.display = `block`;
-  } else if (toggleOption == false) _top.style.display = `none`;
+  } else if (Value == false) _top.style.display = `none`;
 };
 
-var quickFeedDisplay = function (toggleOption) {
-  if (toggleOption == true) {
+var quickFeedDisplay = function (Value) {
+  if (Value == true) {
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _front.classList.remove(`toggle`);
@@ -221,7 +220,7 @@ var quickFeedDisplay = function (toggleOption) {
     _show.style.visibility = `hidden`;
     _just.classList.add(`toggleHidden`);
     _just.classList.add(`invisible`);
-  } else if (toggleOption == false) {
+  } else if (Value == false) {
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
     _front.classList.remove(`toggleHidden`);
@@ -240,8 +239,8 @@ var guideDisplay = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _guide.append(guideBuild(pubArray[0]));
   document.querySelector(`.sticky`).style.display = `none`
+  _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0].src);
 };
 
@@ -252,19 +251,6 @@ var guideDisplayYoutube = function (pubArray) {
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
   _guide.append(guideBuildYoutube(pubArray[0]));
-};
-
-var contentStatusDisplay = function (
-  menuIndex,
-  recentPost,
-  oldestPost,
-  postsCount
-) {
-  if (document.body.contains(document.querySelector(`#xml .status`))) {
-    var status = document.querySelector(`#xml .status`);
-    status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
-  }
-  displayDescription(showDescription)
 };
 
 var quickFeedAsset = function (feedAssets) {
@@ -622,12 +608,10 @@ var filterInputResponse = function (
     if (menu[i].hash == filterURI) {
       filter.push(menu.indexOf(menu[i]));
       exact = i;
-      match = i;
       break;
     } else if (menuObject == filterURI || id == extendedURI) {
       filter.push(menu.indexOf(menu[i]));
       exact = i;
-      match = i;
       break;
     } else if (menuObject.match(filterURI) || menuObject.match(extendedURI))
       filter.push(menu.indexOf(menu[i]));
@@ -648,9 +632,6 @@ var filterInputResponse = function (
   } else if (initPassthrough == true) {
     if (isNumeric(exact)){
       xmlRequestParsing(null, null, exact);
-    }
-    else if (isNumeric(match) && filter.length == 1){
-      xmlRequestParsing(null, null, match);
     }
     return false;
   }
@@ -673,43 +654,4 @@ var writeFilterResponse = function (menuObject) {
       media
     )
   );
-};
-
-var guideImageAttributes = function (src) {
-  let newImg = new Image();
-  newImg.setAttribute(`src`, src);
-  newImg.onload = function () {
-    _guide.querySelector(`.img`).setAttribute(`src`, src);
-    if (_main.clientWidth <= 425) {
-      _main.classList.add(`guide`);
-      _guide.querySelector(`.sticky .header`).style.position = `absolute`;
-      if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
-        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.wrap`).style.display = `block`;
-        _guide.querySelector(`.wrap`).style.height = `fit-content`;
-        _guide.querySelector(`.pub`).style.height = `fit-content`;
-        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
-      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
-        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.sticky`).style.top = `40px`
-      }
-      _guide.querySelector(`.ago`).style.position = `relative`;
-      _guide.querySelector(`.sticky .header`).style.top =
-        ~_guide.querySelector(`.img`).style.height - `60`;
-    } else {
-      _main.classList.add(`guide`);
-      if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(`.img`).style.maxHeight = `80vh`;
-        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
-      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(`.img`).style.maxWidth = `40vw`;
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
-      }
-    }
-    document.querySelector(`.sticky`).style.display = `block`
-    _guide.style.display = `flex`;
-  };
 };

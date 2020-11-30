@@ -24,6 +24,19 @@ var xmlChannelFooter = function () {
     document.querySelector(`.channel`).append(footerBuild());
 };
 
+var contentStatusDisplay = function (
+  menuIndex,
+  recentPost,
+  oldestPost,
+  postsCount
+) {
+  if (document.body.contains(document.querySelector(`#xml .status`))) {
+    var status = document.querySelector(`#xml .status`);
+    status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
+  }
+  displayDescription(showDescription)
+};
+
 var xmlStatusSuggestions = function () {
   let duplicate = [];
   if (document.body.contains(_main.querySelector(`.suggestions`))) {
@@ -57,6 +70,45 @@ var xmlStatusSuggestions = function () {
       }
     }
   }
+};
+
+var guideImageAttributes = function (src) {
+  let newImg = new Image();
+  newImg.setAttribute(`src`, src);
+  newImg.onload = function () {
+    _guide.querySelector(`.img`).setAttribute(`src`, src);
+    if (_main.clientWidth <= 425) {
+      _main.classList.add(`guide`);
+      _guide.querySelector(`.sticky .header`).style.position = `absolute`;
+      if (newImg.naturalWidth >= newImg.naturalHeight) {
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
+        _guide.querySelector(`.wrap`).style.display = `block`;
+        _guide.querySelector(`.wrap`).style.height = `fit-content`;
+        _guide.querySelector(`.pub`).style.height = `fit-content`;
+        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
+        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
+        _guide.querySelector(`.sticky`).style.top = `40px`
+      }
+      _guide.querySelector(`.ago`).style.position = `relative`;
+      _guide.querySelector(`.sticky .header`).style.top =
+        ~_guide.querySelector(`.img`).style.height - `60`;
+    } else {
+      _main.classList.add(`guide`);
+      if (newImg.naturalWidth >= newImg.naturalHeight) {
+        _guide.querySelector(`.img`).style.maxHeight = `80vh`;
+        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
+        _guide.querySelector(`.img`).style.maxWidth = `40vw`;
+        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+      }
+    }
+    document.querySelector(`.sticky`).style.display = `block`
+    _guide.style.display = `flex`;
+  };
 };
 
 var xmlImageSource = function (xhr) {
@@ -330,7 +382,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 480;
   let jsonResponseScore;
-  ready(() => {
     if (src && src != `null` && imageDuplicate.includes(src)) {
       if (
         document.body.contains(
@@ -647,7 +698,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         }
       };
     }
-  });
 };
 
 var xmlTitleParsing = function (xhr) {

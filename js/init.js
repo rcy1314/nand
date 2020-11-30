@@ -1,5 +1,4 @@
 /*
-
 ### Init.js Unique URI Identifying.
 
   Init.js does some handling of location.
@@ -9,12 +8,10 @@
 
   > /?q=technology
 
-
   * Query Example
   > /?q=example+query
 
   >  filter response with passthrough.
-
 
   * Hash Example
   > /?[hash] in list View
@@ -85,7 +82,6 @@ setTimeout(function() {
       _guest.focus();
     }, 250);
   }
-
   if (!isNumeric(post))
     setTimeout(function() {
       if (onScreen == true) sideBarDisplay(onScreen);

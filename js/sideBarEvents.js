@@ -12,7 +12,8 @@ document.addEventListener(
       let x = event.pageX;
       let p = (x / event.target.offsetWidth) * 100;
       event.target.style
-      .borderImage = `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
+      .borderImage =
+        `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
         ${parseInt(p)}%, rgba(147,147,147,.01) 100%)`;
       event.target.style.borderWidth = `.3px .3px .3px .3px`;
       event.target.style.borderImageSlice = `9`;
@@ -148,13 +149,11 @@ document.addEventListener(
       var xhr = new XMLHttpRequest();
       var url = document.querySelector(`.urlInput`).value;
 
-      xhr.responseType = 'arraybuffer'; //Set the response type to arraybuffer so xhr.response returns ArrayBuffer
+      xhr.responseType = 'arraybuffer';
       xhr.open('GET', cors + url , true);
 
       xhr.onreadystatechange = function () {
           if (xhr.readyState == xhr.DONE) {
-              //When request is done
-              //xhr.response will be an ArrayBuffer
               var file = new Blob([xhr.response], {type:'image'});
               saveAs(
                 file,
@@ -381,8 +380,10 @@ document.addEventListener(
       populateCategoryGroup(category)
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.add(`fa-minus`)
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Blocks`)) {
@@ -393,16 +394,20 @@ document.addEventListener(
       populateCategoryGroup(category)
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.add(`fa-minus`)
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
       event.target.nextElementSibling.classList.remove(`fa-minus`)
       event.target.nextElementSibling.classList.add(`fa-star`)
-      document.querySelector(`.Percent`).nextElementSibling.classList.remove(`fa-star`)
-      document.querySelector(`.Percent`).nextElementSibling.classList.add(`fa-minus`)
+      document.querySelector(`.Percent`)
+        .nextElementSibling.classList.remove(`fa-star`)
+      document.querySelector(`.Percent`)
+        .nextElementSibling.classList.add(`fa-minus`)
     }
     if (
       event.target.classList.contains(`fa-camera-retro`) ||
@@ -410,11 +415,15 @@ document.addEventListener(
     ) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
-        document.querySelector('.onlyImages').nextElementSibling.classList.remove(`fa-minus`)
-        document.querySelector('.onlyImages').nextElementSibling.classList.add(`fa-star`)
+        document.querySelector('.onlyImages')
+          .nextElementSibling.classList.remove(`fa-minus`)
+        document.querySelector('.onlyImages')
+          .nextElementSibling.classList.add(`fa-star`)
       } else if (onlyImages == false) {
-        document.querySelector('.onlyImages').nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector('.onlyImages').nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector('.onlyImages')
+          .nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector('.onlyImages')
+          .nextElementSibling.classList.add(`fa-minus`)
       }
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
@@ -430,8 +439,10 @@ document.addEventListener(
       loading = `percent`;
       event.target.nextElementSibling.classList.remove(`fa-minus`)
       event.target.nextElementSibling.classList.add(`fa-star`)
-      document.querySelector(`.Dots`).nextElementSibling.classList.remove(`fa-star`)
-      document.querySelector(`.Dots`).nextElementSibling.classList.add(`fa-minus`)
+      document.querySelector(`.Dots`)
+        .nextElementSibling.classList.remove(`fa-star`)
+      document.querySelector(`.Dots`)
+        .nextElementSibling.classList.add(`fa-minus`)
     }
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;

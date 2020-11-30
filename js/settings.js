@@ -1,5 +1,5 @@
 // initial theme
-
+// mobile overwritten in mainEvents.js onload
 let set = `Night`;
 
 /*

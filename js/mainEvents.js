@@ -33,7 +33,7 @@ window.onload = function () {
         `${(exclude.length * 34.25) + 75}px`;
 
     _container.style.display = `block`;
-
+    //overwriting settings.js
     if (_main.clientWidth <= 425) {
       window[`Holidays`]();
       set = `Holidays`
@@ -57,18 +57,19 @@ document.addEventListener(
     if (event.target.id == `main`) {
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
-        stop == false &&
-        Reader == true &&
+        httpRequest.status == 200 &&
         httpRequest.status != 4 &&
-        httpRequest.status == 200
+        Reader == true &&
+        stop == false
       ) {
         first = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
-      } else stop = false;
+      };
     }
   },
   true
-); //:before pseudo-elements not loaded in DOM
+);
+
 document.addEventListener(
   `ontouchmove`,
   function (event) {
@@ -89,24 +90,24 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `just`) {
+      document.querySelector(`.Reader`)
+        .nextElementSibling.classList.remove(`fa-minus`)
+      document.querySelector(`.Reader`)
+        .nextElementSibling.classList.add(`fa-star`)
+      document.querySelector(`.onlyImages`)
+        .nextElementSibling.classList.remove(`fa-minus`)
+      document.querySelector(`.onlyImages`)
+        .nextElementSibling.classList.add(`fa-star`)
       Reader = true;
-      document.querySelector(`.Reader`).nextElementSibling.classList.remove(`fa-minus`)
-      document.querySelector(`.Reader`).nextElementSibling.classList.add(`fa-star`)
       justRead = true;
-      document.querySelector(`.onlyImages`).nextElementSibling.classList.remove(`fa-minus`)
-      document.querySelector(`.onlyImages`).nextElementSibling.classList.add(`fa-star`)
       onlyImages = true;
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (
       event.target.classList.contains(`exit`) ||
       event.target.classList.contains(`ext`)
-    ) {
-      event.target.closest(`.courtesy`).getAttribute(`ext`).blank();
-    }
-    if (event.target.id == `check`) {
-      repository.blank();
-    }
+    ) event.target.closest(`.courtesy`).getAttribute(`ext`).blank();
+    if (event.target.id == `check`) repository.blank();
     if (
       event.target.classList.contains(`fa-angle-up`) ||
       event.target.id == `link` ||
@@ -117,11 +118,11 @@ document.addEventListener(
     }
     if (event.target.id == `home`) {
       id = 0;
-      _top.style.display = `block`;
       document.title = category.capitalize();
-      populateCategoryGroup(category);
       if (expand == true) var groupType = `list`;
       else var groupType = `blocks`;
+      populateCategoryGroup(category);
+      topMenuBarDisplay(topBar);
       displayExpand(expand);
     }
     if (
@@ -154,18 +155,18 @@ document.addEventListener(
         document
           .querySelectorAll(`.attribute`)
           .forEach((a) => (a.style.display = `none`));
-        var attr = document.querySelectorAll(`.fa-ellipsis-v`);
+        var attribute = document.querySelectorAll(`.fa-ellipsis-v`);
         for (i = 0; i < attr.length; i++) {
-          attr[i].classList.remove(`fa-ellipsis-v`);
-          attr[i].classList.add(`fa-ellipsis-h`);
+          attribute[i].classList.remove(`fa-ellipsis-v`);
+          attribute[i].classList.add(`fa-ellipsis-h`);
         }
       }
       if (_match.style.display === `block`) {
         document.querySelector(`#input .icon`).classList.remove(`slide`);
-        _match.style.display = `none`;
         _view.setAttribute(`placeholder`, ``);
         _view.style.textAlign = `center`;
         _view.style.paddingLeft = `10px`;
+        _match.style.display = `none`;
         _view.value = `Search`;
         _view.blur();
       } else if (_first.style.display === `block`) {
@@ -179,7 +180,9 @@ document.addEventListener(
     if (
       event.target.classList.contains(`construct`)
     ) {
-      let url = menu[id].uri.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g)
+      let url =
+        menu[id].uri
+          .match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g)
       url.toString().blank()
     }
     if (event.target.classList.contains(`fa-expand-alt`)) {
@@ -190,25 +193,33 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       expand = expand != true;
       if (expand == false) {
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-minus`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.remove(`fa-minus`)
       }
       displayExpand(expand);
       if (expand == true){
-        document.querySelector(`.List`).nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-minus`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.add(`fa-star`)
+        document.querySelector(`.List`)
+          .nextElementSibling.classList.remove(`fa-minus`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.remove(`fa-star`)
+        document.querySelector(`.Blocks`)
+          .nextElementSibling.classList.add(`fa-minus`)
         var groupType = `list`;
         if (showDescription == false) {
           _main
             .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.add(`basic`));
+            .forEach((a) => a.classList.remove(`expand`));
           _main
             .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.remove(`expand`));
+            .forEach((a) => a.classList.add(`basic`));
         } else if (showDescription == true) {
           _main
             .querySelectorAll(`.populate`)
@@ -221,10 +232,10 @@ document.addEventListener(
         var groupType = `blocks`;
         _main
           .querySelectorAll(`.populate`)
-          .forEach((a) => a.classList.remove(`basic`));
+          .forEach((a) => a.classList.remove(`expand`));
         _main
           .querySelectorAll(`.populate`)
-          .forEach((a) => a.classList.remove(`expand`));
+          .forEach((a) => a.classList.remove(`basic`));
       }
       unloading();
     }
@@ -244,13 +255,13 @@ document.addEventListener(
           _guest.blur();
           return false;
         }
-        _toggle.style.display = `none`;
-        _visit.style.display = `none`;
         xmlRequestParsing(
           null,
           null,
           event.target.closest(`.populate`).getAttribute(`aria-item`)
         );
+        _toggle.style.display = `none`;
+        _visit.style.display = `none`;
       }, setPause);
     }
     if (event.target.classList.contains(`translation`)) {
@@ -271,13 +282,13 @@ document.addEventListener(
           if (document.body.contains(document.querySelector(`#group`)))
             document.querySelector(`#group`).remove();
           setTimeout(function () {
-            _toggle.style.display = `none`;
-            _visit.style.display = `none`;
             populateCategoryGroup(
               event.target.closest(`.translation`).getAttribute(`aria-item`)
             );
             topMenuBarDisplay(topBar);
             displayExpand(expand);
+            _toggle.style.display = `none`;
+            _visit.style.display = `none`;
           }, setPause);
         }
     }
@@ -286,14 +297,14 @@ document.addEventListener(
       event.target.classList.contains(`asset`) ||
       event.target.classList.contains(`query`)
     ) {
-      _toggle.style.display = `none`;
-      _visit.style.display = `none`;
       xmlRequestParsing(
         null,
         null,
         event.target.closest(`.asset`).getAttribute(`aria-item`)
       );
       topMenuBarDisplay(topBar);
+      _toggle.style.display = `none`;
+      _visit.style.display = `none`;
     }
     if (
       event.target.classList.contains(`checkmark__circle`) ||
@@ -311,21 +322,21 @@ document.addEventListener(
         sideBarDisplay(onScreen)
       }
       topMenuBarDisplay(topBar);
-      post = -1
       local = -1
+      post = -1
     }
     if (event.target.classList.contains(`bottom`)) {
-      document.title = category;
       event.target.closest(`#xml`).remove();
       if (id === 0) populateCategoryGroup(category);
-      else {
         if (location.href.match(`\\?q=`)) {
+          else {
           var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
           if (location.href.match(`\\+1`))
             var query = uri[0].replace(/\+1/g, ``).space();
           else var query = uri[0].space();
           filterInputResponse(false, false, query, true);
         } else populateCategoryGroup(category);
+        document.title = category;
         displayExpand(expand);
       }
     }
@@ -360,9 +371,8 @@ document.addEventListener(
         event.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains(`asset`)) {
+    if (event.target.classList.contains(`asset`))
       xmlRequestParsing(null, null, event.target.getAttribute(`aria-item`));
-    }
     if (
       event.target.classList.contains(`flip-front`) ||
       event.target.classList.contains(`flip-back`) ||
@@ -381,22 +391,20 @@ document.addEventListener(
       event.target.classList.contains(`option`)
     ) {
       if (tap == 0) {
-        // set first click
         tap = new Date().getTime();
         setTimeout(function () {
           tap = 0
         }, 350)
       } else {
-        // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
-          // double click occurred
           let i = exclude.indexOf(event.target.innerHTML)
           exclude.splice(i, 1)
           event.target.remove()
           if (exclude.length == 0)
             document.querySelector(`.exclude`).style.height = `70px`
           else
-          document.querySelector(`.exclude`).style.height = `${(exclude.length * 34.25) + 65}px`;
+          document.querySelector(`.exclude`).style.height =
+            `${(exclude.length * 34.25) + 65}px`;
           tap = 0;
         }
       }
@@ -407,7 +415,6 @@ document.addEventListener(
       event.target.classList.contains(`img`)
     ) {
       if (tap == 0) {
-        // set first click
         tap = new Date().getTime();
         setTimeout(function () {
           if (
@@ -469,9 +476,7 @@ document.addEventListener(
           tap = 0;
         }, 350);
       } else {
-        // compare first click to this click and see if they occurred within double click threshold
         if (new Date().getTime() - tap < 350) {
-          // double click occurred
           if (event.target.classList.contains(`leave`)) {
             event.target.closest(`.item`).getAttribute(`ext`).blank();
             return false;
