@@ -544,6 +544,7 @@ let filter = []; //response array for menu objects
 let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
 let count = []; //progressBackdrop init calls
+let complete; //progressBar interval
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1

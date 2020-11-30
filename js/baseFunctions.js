@@ -354,7 +354,7 @@ var progressBackDrop = function (done) {
   let complete;
   let width = (_main.clientWidth / ((count.length - 1) / 2))
     complete = setInterval(function () {
-      if (_progress.clientWidth >= _main.clientWidth){
+      if (_progress.clientWidth >= _main.clientWidth || count.length === 0){
         setTimeout(function () {
           clearInterval(complete);
           _progress.style.transition = `0s`;

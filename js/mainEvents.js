@@ -445,6 +445,7 @@ document.addEventListener(
                 .querySelector(`.img`)
                 .classList.contains(`default`)
             ) {
+              count = [];
               let sticky = [];
               sticky.push({
                 courtesy: event.target.closest(`.item`).querySelector(`.header`)
