@@ -55,7 +55,7 @@ html body,
 }
 
 #main #progressBar {
-  background-color: var(--loader-color-secondary);
+  background-color: var(--bg-color-secondary);
   border-radius: 16px;
   position: fixed;
   height: 4px;
@@ -75,6 +75,7 @@ html body,
   z-index: 12;
   top: 7px;
 }
+
 #main {
   background-position: center center;
   -webkit-overflow-scrolling: touch;
@@ -151,7 +152,7 @@ html body,
 }
 
 #main #dots .fill {
-  background-color: var(--loader-color-primary) !important;
+  background-color: var(--bg-color-primary) !important;
   visibility: hidden;
   z-index: -12;
   left: -4px;

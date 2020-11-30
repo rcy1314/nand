@@ -5,11 +5,11 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
-    `#0078D4`
+    `rgba(0, 120, 212, .4)`
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(0, 120, 212, .4)`
+    `#0078D4`
   );
   document.documentElement.style.setProperty(`--fill-color-primary`, `#555555`);
   document.documentElement.style.setProperty(

@@ -13,11 +13,11 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--fill-color-primary`,
-    `yellow`
+    `rgb(255, 215, 103)`
   );
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
-    `rgba(63, 92, 136, 1)`
+    `rgb(255, 215, 103)`
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,
@@ -45,7 +45,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(63, 92, 136, .4)`
+    `rgba(63, 92, 136, .8)`
   );
   document.documentElement.style.setProperty(
     `--filter`,

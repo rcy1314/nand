@@ -9,12 +9,12 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
-    `rgba(26, 26, 26, .5)`
+    `rgba(26, 26, 26, 1)`
   );
-  document.documentElement.style.setProperty(`--fill-color-primary`, `#ffffff`);
+  document.documentElement.style.setProperty(`--fill-color-primary`, `#aaaaaa`);
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
-    `#f54e75`
+    `#eeeeee`
   );
   document.documentElement.style.setProperty(`--bg-color-primary`, `#0f0f0f`);
   document.documentElement.style.setProperty(`--bg-color-secondary`, `#0f0f0f`);
@@ -36,7 +36,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(0,0,0,.4)`
+    `rgba(0,0,0,.8)`
   );
   document.documentElement.style.setProperty(
     `--filter`,

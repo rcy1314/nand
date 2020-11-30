@@ -83,11 +83,11 @@
 }
 
 #main #visit #page #quick #feed .translation .category {
-  color: var(--loader-color-primary);
+  color: var(--fill-color-primary);
   background-color: transparent;
-  letter-spacing: .1px;
+  letter-spacing: .2px;
   position: relative;
-  font-weight: 500;
+  font-weight: 900;
   font-size: 14px;
   display: block;
   top: 20px;

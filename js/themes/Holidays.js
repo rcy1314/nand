@@ -45,7 +45,7 @@ var Holidays = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(81, 10, 5, .8)`
+    `rgba(255, 255, 255, .8)`
   );
   document.documentElement.style.setProperty(
     `--filter`,

@@ -45,7 +45,7 @@ var Arc = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(75, 81, 98, .4)`
+    `rgba(75, 81, 98, .8)`
   );
   document.documentElement.style.setProperty(`--filter`, `grayscale(0%)`);
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);

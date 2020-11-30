@@ -90,7 +90,7 @@ let Reader = false;
 
 */
 
-let onScreen = false;
+let onScreen = true;
 
 /*
     expand [boolean/integer]
@@ -247,7 +247,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = false;
+let quickFeeds = true;
 
 /*
     quickFeedsTranslations [boolean/integer]

@@ -45,7 +45,7 @@ var Nord = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(218, 222, 232, .4)`
+    `rgba(218, 222, 232, .8)`
   );
   document.documentElement.style.setProperty(`--filter`, `grayscale(100%)`);
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);

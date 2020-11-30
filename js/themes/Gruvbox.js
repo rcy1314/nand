@@ -20,7 +20,10 @@ var Gruvbox = function () {
     `--bg-color-primary`,
     `rgba(171, 119, 86, .4)`
   );
-  document.documentElement.style.setProperty(`--bg-color-secondary`, `#262626`);
+  document.documentElement.style.setProperty(
+    `--bg-color-secondary`,
+    `rgba(169, 121, 62, .2)`
+  );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
     `rgba(169, 121, 62, .2)`
@@ -39,7 +42,7 @@ var Gruvbox = function () {
   );
   document.documentElement.style.setProperty(
     `--sticky-background`,
-    `rgba(169, 121, 62, .4)`
+    `rgba(169, 121, 62, .8)`
   );
   document.documentElement.style.setProperty(
     `--filter`,

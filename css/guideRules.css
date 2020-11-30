@@ -42,9 +42,9 @@
 .blur,
 #container #guide {
   background-color: var(--sticky-background);
-  -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(25px);
   image-rendering: optimizeSpeed;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(25px);
   justify-content: center;
   align-items: center;
   height: 100%;
