@@ -350,8 +350,9 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 };
 
 var progressBackDrop = function (done) {
+  let length;
   let complete;
-    let width = _main.clientWidth / 5;
+  let width = (_main.clientWidth / ((count.length - 1) / 2))
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth){
         setTimeout(function () {
@@ -359,12 +360,15 @@ var progressBackDrop = function (done) {
           _progress.style.transition = `0s`;
           _progress.style.width = `0%`;
         }, 250)
-      } else if (done == false && first == true){
+      } else if (first == true){
         _progress.style.transition = `all 500ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
       }
     }, 750);
-  if (done == false) return false;
+    if (done == false) {
+      count.push(`null`);
+      return false;
+    }
     if (document.body.contains(document.getElementById(`xml`)) && !post) {
       if (document.body.contains(document.querySelector(`#xml .channel`)))
         if (Reader == true && first == true) {

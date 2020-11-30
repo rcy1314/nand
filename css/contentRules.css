@@ -972,7 +972,7 @@ input[type=submit] {
 #main #visit #page #quick #feed .translation .category {
   color: var(--loader-color-primary);
   background-color: transparent;
-  letter-spacing: .5px;
+  letter-spacing: .1px;
   position: relative;
   font-weight: 500;
   font-size: 14px;

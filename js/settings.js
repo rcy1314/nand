@@ -543,6 +543,7 @@ let random = []; //core.js random feed in category
 let filter = []; //response array for menu objects
 let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
+let count = []; //progressBackdrop init calls
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1

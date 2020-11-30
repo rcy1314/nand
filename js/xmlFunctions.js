@@ -430,7 +430,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           ).classList.add(`yt`)
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-          init();
           fetch(`${cors}${api}${src}`, {
             method: "GET",
             headers: {
@@ -503,7 +502,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   ).style.display = `block`;
                 }
               });
-              unloading();
             })
             .catch((response) => {
               if (
@@ -528,7 +526,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
                     )
                     .remove();
-                unloading();
             });
         }
         if (
@@ -586,7 +583,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     ).style.display = `block`
                 }
               };
-            unloading();
           };
           if (!src.match(/4cdn/g)) request.send();
           else itemImage.setAttribute(`src`, src);
@@ -672,6 +668,7 @@ var xmlRequestParsing = function (search, string, index) {
   init();
   let html;
   let local;
+  count = [];
   id = index;
   let pub = [];
   let images = [];
@@ -852,10 +849,12 @@ var xmlRequestParsing = function (search, string, index) {
           for (i = 0; i <= images.length - 1; i++) {
               xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
+          unloading();
         } else if (!safeSearchIDs.includes(menu[id].id)){
           for (i = 0; i <= images.length - 1; i++) {
               xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
+          unloading();
         }
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
@@ -896,7 +895,6 @@ var xmlRequestParsing = function (search, string, index) {
       _check.style.visibility = `hidden`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
-      unloading();
     }
   };
   httpRequest.open(`GET`, uri);
