@@ -351,23 +351,23 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 
 var progressBackDrop = function (done, percent) {
   let complete;
-    let width = _main.clientWidth / 6;
+    let width = _main.clientWidth / 4;
     complete = setInterval(function () {
       if (_progress.clientWidth >= _main.clientWidth){
-          clearInterval(complete);
-          setTimeout(function () {
-            _progress.style.transition = `0s`;
-            _progress.style.width = `0%`;
-          }, 250);
-      } else if (first == true || safeSearchIDs.includes(menu[id].id)){
-            _progress.style.transition = `all .75s ease-in-out`;
-            _progress.style.width = _progress.clientWidth + width;
-      } else if (httpRequest.status == `200`){
-        clearInterval(complete);
         setTimeout(function () {
+          clearInterval(complete);
           _progress.style.transition = `0s`;
           _progress.style.width = `0%`;
-        }, 250);
+        }, 250)
+      } else if (first == true || safeSearchIDs.includes(menu[id].id)){
+        _progress.style.transition = `all 500ms ease-in-out`;
+        _progress.style.width = _progress.clientWidth + width;
+      } else if (httpRequest.status == `200` || complete >= 750){
+        setTimeout(function () {
+          clearInterval(complete);
+          _progress.style.transition = `0s`;
+          _progress.style.width = `0%`;
+        }, 250)
       }
     }, 750);
   if (done == false) return false;
