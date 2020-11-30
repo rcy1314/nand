@@ -383,6 +383,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-star`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.Blocks`).nextElementSibling.classList.add(`fa-minus`)
+      topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
@@ -394,6 +395,7 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
+      topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
