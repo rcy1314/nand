@@ -470,7 +470,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                   ).style.cssText =
-                    `background-color:var(--hover-background-color);backdrop-filter: blur(35px)`;
+                    `background-color:var(--sticky-background);backdrop-filter: blur(10px)`;
                   document
                     .querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
