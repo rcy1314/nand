@@ -394,9 +394,6 @@ document.addEventListener(
         event.target.nextElementSibling.classList.add(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.remove(`fa-star`)
         document.querySelector(`.List`).nextElementSibling.classList.add(`fa-minus`)
-      setTimeout(function() {
-        unloading();
-      }, 3200)
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
