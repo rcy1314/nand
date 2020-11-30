@@ -374,6 +374,8 @@ document.addEventListener(
       event.target.classList.contains(`random`) ||
       event.target.classList.contains(`bold`)
     ) {
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
       xmlRequestParsing(
         null,
         null,
