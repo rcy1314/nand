@@ -225,20 +225,7 @@ document.addEventListener(
     if (event.target.classList.contains(`select`)) {
       let setPause
       if (showRipple == true) {
-        const button = event.target.closest(`.populate`).getBoundingClientRect();
-        const circle = document.createElement(`span`);
-        const diameter = Math.max(
-          event.target.clientWidth,
-          event.target.clientHeight
-        );
-        const radius = diameter / 2;
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.left - radius}px`;
-        circle.style.top = `${event.clientY - button.top - radius}px`;
-        circle.classList.add(`ripple`);
-        if (document.querySelector(`.ripple`))
-          document.querySelector(`.ripple`).remove();
-        event.target.closest(`.populate`).appendChild(circle);
+        rippleBuild(event, event.target.closest(`.populate`))
         setPause = 500
       } else setPause = 0
       setTimeout(function () {
@@ -269,24 +256,9 @@ document.addEventListener(
           xmlRequestParsing(null, null, anyRandomMenuObject());
         } else {
           let setPause
-          if (showRipple == true){
-            const button = event.target.closest(`.translation`)
-              .getBoundingClientRect();
-            const circle = document.createElement(`span`);
-            const diameter = Math.max(
-              event.target.clientWidth,
-              event.target.clientHeight
-            );
-            const radius = diameter / 2;
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - button.left - radius}px`;
-            circle.style.top = `${event.clientY - button.top - radius}px`;
-            circle.classList.add(`ripple`);
-            event.target.closest(`.translation`).appendChild(circle);
+          if (showRipple == true) {
+            rippleBuild(event, event.target.closest(`.translation`))
             setPause = 500
-            setTimeout(function() {
-              document.querySelector(`.ripple`).remove();
-            }, setPause)
           } else setPause = 0
           if (document.body.contains(document.querySelector(`#xml`)))
             document.querySelector(`#xml`).remove();

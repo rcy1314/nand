@@ -269,26 +269,11 @@ document.addEventListener(
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;
+      if (showRipple == true)
+        rippleBuild(event, event.target)
       if (_main.clientWidth <= 425){
         onScreen = onScreen != true
         sideBarDisplay(onScreen);
-      }
-      if (showRipple == true){
-        const button = event.target.getBoundingClientRect();
-        const circle = document.createElement(`span`);
-        const diameter = Math.max(
-          event.target.clientWidth,
-          event.target.clientHeight
-        );
-        const radius = diameter / 2;
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.left - radius}px`;
-        circle.style.top = `${event.clientY - button.top - radius}px`;
-        circle.classList.add(`ripple`);
-        event.target.appendChild(circle);
-        setTimeout(function () {
-          document.querySelector(`.ripple`).remove();
-        }, 500);
       }
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
       if (Reader == true) {

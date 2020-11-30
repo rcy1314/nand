@@ -1,3 +1,21 @@
+var rippleBuild = function(ev, Elem) {
+  const button = Elem.getBoundingClientRect();
+  const circle = document.createElement(`span`);
+  const diameter = Math.max(
+    Elem.clientWidth,
+    Elem.clientHeight
+  );
+  const radius = diameter / 2;
+  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.left = `${ev.clientX - button.left - radius}px`;
+  circle.style.top = `${ev.clientY - button.top - radius}px`;
+  circle.classList.add(`ripple`);
+  setTimeout(function() {
+  if (document.querySelector(`.ripple`))
+    document.querySelector(`.ripple`).remove();
+  }, 500)
+  Elem.appendChild(circle);
+}
 var sideBarTranslationBuild = function (translation) {
   let cat = document.createElement(`div`);
   cat.classList.add(`cat`, translation);
