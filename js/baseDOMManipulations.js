@@ -48,8 +48,8 @@ var stageBuild = function () {
   suggestions.classList.add(`suggestions`);
   content.classList.add(`content`);
   status.classList.add(`status`);
-  content.append(suggestions);
   content.append(status);
+  content.append(suggestions);
   xml.append(content);
   return xml;
 };
