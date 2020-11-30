@@ -40,7 +40,7 @@
 
 */
 
-setTimeout(function() {
+
 
   if (
     !location.href.match(`\\?fbclid`) &&
@@ -81,7 +81,7 @@ setTimeout(function() {
     setTimeout(function () {
       _visit.style.display = `flex`;
       _guest.focus();
-    }, 250);
+    }, 100);
   }
 
   if (!isNumeric(post))
@@ -97,5 +97,3 @@ setTimeout(function() {
     Blocks = true;
     List = false;
   }
-
-}, 50)
