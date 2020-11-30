@@ -239,8 +239,8 @@ var guideDisplay = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  document.querySelector(`.sticky`).style.display = `none`
   _guide.append(guideBuild(pubArray[0]));
+  document.querySelector(`.sticky`).style.display = `none`
   guideImageAttributes(pubArray[0].src);
 };
 
