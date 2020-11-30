@@ -171,13 +171,13 @@
 }
 
 #main #visit #page #front .focus .buttonSearch {
-  font-size: 16px !important;
+  font-size: 18px !important;
   transform: rotate(90deg);
   color: #fff !important;
   position: absolute;
   right: 30px;
   z-index: 1;
-  top: 13px;
+  top: 11px;
 }
 
 #main #top #arm #search #input {
