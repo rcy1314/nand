@@ -1,6 +1,6 @@
 // initial theme
-// backgroundImage path is being overwritten in themes files
-let set = `Day`;
+
+let set = `Night`;
 
 /*
     backgroundImage [array]
@@ -13,6 +13,7 @@ let set = `Day`;
 
 */
 
+// backgroundImage path is being overwritten in themes files
 let backgroundImage = [
   {
     path: "",
@@ -34,6 +35,7 @@ const themes = [
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Nord`, class: `Nord`, icon: `fa-signature` },
   { obFn: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
+  { obFn: `Holidays`, class: `Holidays`, icon: `fa-gifts` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];

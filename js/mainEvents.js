@@ -34,6 +34,12 @@ window.onload = function () {
 
     _container.style.display = `block`;
 
+    if (_main.clientWidth <= 425) {
+      window[`Holidays`]();
+      set = `Holidays`
+      return false;
+    }
+
 };
 
 window.addEventListener('touchstart', function(event) {
