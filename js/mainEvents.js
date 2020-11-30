@@ -117,7 +117,6 @@ document.addEventListener(
       if (expand == true) var groupType = `list`;
       else var groupType = `blocks`;
       displayExpand(expand);
-      unloading();
     }
     if (
       event.target.classList.contains(`construct`) ||
