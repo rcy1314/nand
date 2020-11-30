@@ -1161,7 +1161,7 @@ input[type=submit] {
 #main #xml .center .item .add {
   background-color: transparent;
   justify-content: left;
-  width: 95% !important;
+  width: 90% !important;
   margin-left: 10px;
   margin-top: 5px;
   font-size: 13px;
