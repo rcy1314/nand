@@ -186,12 +186,12 @@ document.addEventListener(
     ) {
       sideBarBackdrop = sideBarBackdrop != true
       if (sideBarBackdrop == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
-        _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
-      } else {
         event.target.nextElementSibling.classList.remove(`fa-minus`)
         event.target.nextElementSibling.classList.add(`fa-star`)
+        _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
+      } else {
+        event.target.nextElementSibling.classList.remove(`fa-star`)
+        event.target.nextElementSibling.classList.add(`fa-minus`)
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
       }
     }
