@@ -117,7 +117,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.grep = function (string) {
-  let string = this;
+  var string = this;
   let count = [];
   if (onlyImages == true) {
     return menu.filter((a) => a.category == string && a.media == true).length;

@@ -328,8 +328,8 @@ document.addEventListener(
     if (event.target.classList.contains(`bottom`)) {
       event.target.closest(`#xml`).remove();
       if (id === 0) populateCategoryGroup(category);
+      else {
         if (location.href.match(`\\?q=`)) {
-          else {
           var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
           if (location.href.match(`\\+1`))
             var query = uri[0].replace(/\+1/g, ``).space();
