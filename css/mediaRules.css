@@ -214,7 +214,6 @@
     display: block;
   }
 
-  #main #top,
   #main #top #arm {
     width: 100%;
   }
@@ -265,10 +264,6 @@
     max-width: calc(100% - 16px) !important;
   }
 
-  #main #top {
-    width: calc(100% - 16px);
-  }
-
   #main #top #arm {
     width: 90%;
   }
@@ -312,10 +307,6 @@
 
   #main #progressBar {
     max-width: calc(100% - 16px) !important;
-  }
-
-  #main #top {
-    width: calc(100% - 16px);
   }
 
   #main #top #arm {

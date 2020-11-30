@@ -90,7 +90,7 @@ html body,
 
 #main #top {
   background-color: transparent;
-  width: calc(100% - 12px);
+  width: 70% !important;
   position: fixed;
   display: none;
   height: 57px;
