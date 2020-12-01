@@ -56,6 +56,7 @@ document.addEventListener(
   function (event) {
     if (event.target.id == `main`) {
       if (
+        httpRequest &&
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
         httpRequest.status == 200 &&
         httpRequest.status != 4 &&
