@@ -77,10 +77,8 @@ setTimeout(function() {
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 250);
   } else if (!post) {
-    setTimeout(function () {
-      _visit.style.display = `flex`;
-      _guest.focus();
-    }, 50);
+    _visit.style.display = `flex`;
+    _guest.focus();
   }
   if (!isNumeric(post))
     setTimeout(function() {
