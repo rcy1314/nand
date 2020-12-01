@@ -7,6 +7,7 @@
 
 * Private Proxy Requests.
 * URI Identifying init.js
+* URI Unique Postings.
 * Beta (stage) themes.
 * Background Images.
 * No Installation.
