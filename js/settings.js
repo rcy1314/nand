@@ -406,7 +406,7 @@ let safeSearch = true;
 
 */
 
-let guideSafeSearch = false;
+let guideSafeSearch = true;
 
 /*
     safeSearchScore [string]
