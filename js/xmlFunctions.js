@@ -550,6 +550,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       };
       newImg.onload = function () {
         if (
+          document.body.contains(
+            document.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+            )
+          )
+        )
+        document
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+          )
+          .remove();
+        if (
           src.match(/ytimg/g) &&
           youtubeMedia == false &&
           document.body.contains(
@@ -580,11 +592,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   if (
                     document.body.contains(
                       document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
-                    ) &&
-                    document.body.contains(
-                      document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                       )
                     ) &&
@@ -594,11 +601,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       )
                     )
                   )
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
-                      .remove();
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                   ).classList.add(`blur`);
@@ -614,20 +616,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   if (
                     document.body.contains(
                       document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
-                    ) &&
-                    document.body.contains(
-                      document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                       )
                     )
                   )
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
-                      .remove();
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                   ).style.display = `block`;
@@ -669,9 +661,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           let itemImage = document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
           );
-          let itemPending = document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-          );
           let attribute = document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
           );
@@ -690,11 +679,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               read.onload =  function(e){
                 itemImage.setAttribute(`src`, e.target.result);
                 if (
-                   document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                  ) &&
                   document.body.contains(
                     document.querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
@@ -703,11 +687,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   safeSearch == false ||
                   !safeSearchIDs.includes(menu[id].id)
                 ) {
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                    .remove();
                   document
                     .querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
@@ -722,7 +701,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               newImg.naturalHeight > k &&
               newImg.naturalHeight >= newImg.naturalWidth * 2
             ) {
-              itemImage.closest(`.item`).querySelector(`.pending`).remove();
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
