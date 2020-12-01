@@ -80,7 +80,7 @@ setTimeout(function() {
     setTimeout(function () {
       _visit.style.display = `flex`;
       _guest.focus();
-    }, 100);
+    }, 50);
   }
   if (!isNumeric(post))
     setTimeout(function() {
