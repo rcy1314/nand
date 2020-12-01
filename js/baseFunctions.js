@@ -546,7 +546,7 @@ var reverseCategoryGroup = function (translation) {
     group.prepend(div);
   }
   let air = document.querySelector(`.air`);
-  for (let i = 1; i < menu.length - 1; i++) {
+  for (let i = 1; i < menu.length; i++) {
     if (category == menu[i].category) {
       if (menu[i].media == true)
         var media = `<div class='media' style='display:none'>Images</div>`;
