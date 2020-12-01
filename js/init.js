@@ -81,10 +81,11 @@
       _guest.focus();
     }, 250);
   }
-  if (!isNumeric(post))
+  if (!isNaN(parseFloat(post)) && isFinite(post))
     if (onScreen == true) sideBarDisplay(onScreen);
     else sideBarDisplay(false);
-  else if (isNumeric(post)) _check.style.visibility = `visible`;
+  else if (isNaN(parseFloat(post)) && !isFinite(post))
+    _check.style.visibility = `visible`;
   else if (_main.clientWidth < 768) {
     groupType = `blocks`;
     onScreen = false;
