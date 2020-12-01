@@ -76,8 +76,10 @@
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
     }, 250);
   } else if (!post) {
-    _visit.style.display = `flex`;
-    _guest.focus();
+    setTimeout(function () {
+      _visit.style.display = `flex`;
+      _guest.focus();
+    }, 250);
   }
   if (!isNumeric(post))
     if (onScreen == true) sideBarDisplay(onScreen);
