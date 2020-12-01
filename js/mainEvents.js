@@ -91,6 +91,7 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `just`) {
+      _check.style.display = `block`;
       document.querySelector(`.Reader`)
         .nextElementSibling.classList.remove(`fa-minus`)
       document.querySelector(`.Reader`)
