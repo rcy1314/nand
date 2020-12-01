@@ -256,6 +256,10 @@
 
 @media screen and (min-width: 769px) {
 
+  #main #progressBar {
+    max-width: calc(100% - 17px) !important;
+  }
+
   #main #option {
     display: none;
   }
@@ -295,6 +299,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+  #main #progressBar {
+    max-width: calc(100% - 17px) !important;
+  }
 
   #toggle {
     right: 2em;
