@@ -49,7 +49,7 @@
       setTimeout(function () {
         let i = menu.findIndex((item) => item.hash === id);
         if (!post) xmlRequestParsing(null, null, i)
-      }, 50);
+      }, 250);
       guideOnScreen = onScreen;
       youtubeMedia = true;
       onScreen = false;
@@ -60,7 +60,7 @@
       if (post)
         setTimeout(function () {
           filterInputResponse(true, false, menu[i].id.space(), false);
-        }, 50);
+        }, 250);
       topMenuBarDisplay(topBar);
       sideBarDisplay(onScreen);
     }
@@ -74,7 +74,7 @@
     setTimeout(function () {
       if (!uri[1]) filterInputResponse(true, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 50);
+    }, 250);
   } else if (!post) {
     _visit.style.display = `flex`;
     _guest.focus();
