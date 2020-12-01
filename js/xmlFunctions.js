@@ -107,11 +107,6 @@ var guideImageAttributes = function (pubArray) {
           response.json().then((jsonResponse) => {
             console.log(`${pubArray.pubIndex} ${jsonResponse.score}`);
             if (jsonResponse.score >= safeSearchScore) {
-              _guide.innerHTML += `
-              <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-                <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-                <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-              `;
               if (
                 document.body.contains(
                   document.querySelector(
@@ -180,20 +175,16 @@ var guideImageAttributes = function (pubArray) {
           .forEach((a) => (a.style.maxWidth = `40vw`));
       }
     }
+    if (
+      safeSearch == false ||
+      !safeSearchIDs.includes(menu[id].id)
+    ) {
+      _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
+      document.querySelector(`.sticky`).style.display = `block`
+      _check.style.visibility = `hidden`;
+      _guide.style.display = `flex`;
+    }
   };
-  if (
-    safeSearch == false ||
-    !safeSearchIDs.includes(menu[id].id)
-  ) {
-    _guide.innerHTML += `
-    <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-      <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-      <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-    `;
-    document.querySelector(`.sticky`).style.display = `block`
-    _check.style.visibility = `hidden`;
-    _guide.style.display = `flex`;
-  }
 };
 
 var xmlImageSource = function (xhr) {

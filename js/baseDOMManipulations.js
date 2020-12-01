@@ -116,15 +116,14 @@ var guideBuild = function (pubArray) {
   filterBlur.classList.add(`filterBlur`);
   sticky.classList.add(`item`, `sticky`);
   object.classList.add(`guide`, `img`);
-  src.classList.add(`item`, `src`);
   head.classList.add(`header`);
   image.classList.add(`image`);
   publish.classList.add(`pub`);
   blur.classList.add(`blur`);
   wrap.classList.add(`wrap`);
+  src.classList.add(`src`);
   ago.classList.add(`ago`);
-  wrap.setAttribute(`ext`, pubArray.externalURI);
-  src.setAttribute(`ext`, pubArray.externalURI);
+  sticky.setAttribute(`ext`, pubArray.externalURI);
   image.append(sideBarThemeBuild(`fa-heart`));
   image.append(filterBlur);
   image.append(object);
@@ -141,11 +140,11 @@ var guideBuild = function (pubArray) {
   wrap.append(head);
   wrap.append(publish);
   wrap.append(ago);
-  sticky.append(src);
-  sticky.append(wrap);
   wrap.append(
     copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
   );
+  sticky.append(src);
+  sticky.append(wrap);
   return sticky;
 };
 

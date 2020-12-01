@@ -307,11 +307,9 @@ document.addEventListener(
       _visit.style.display = `none`;
     }
     if (
-      event.target.classList.contains(`checkmark__circle`) ||
-      event.target.classList.contains(`checkmark__check`) ||
-      event.target.classList.contains(`checkmark`) ||
-      event.target.classList.contains(`guide`)
+      event.target.id == `guide`
     ) {
+      while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       sideBarFirst = true;
       onScreen = guideOnScreen;
@@ -454,7 +452,8 @@ document.addEventListener(
                 src: event.target.closest(`.item`).querySelector(`.source`)
                   .value,
                 externalURI: event.target.closest(`.item`).getAttribute(`ext`),
-                id: event.target.closest(`.item`).getAttribute(`aria-object`),
+                menuObject: event.target.closest(`.item`).getAttribute(`aria-object`),
+                pubIndex: event.target.closest(`.item`).getAttribute(`aria-item`),
               });
               guideDisplay(sticky);
             } else if (
