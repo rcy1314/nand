@@ -49,7 +49,7 @@
       setTimeout(function () {
         let i = menu.findIndex((item) => item.hash === id);
         if (!post) xmlRequestParsing(null, null, i)
-      }, 300);
+      }, 50);
       guideOnScreen = onScreen;
       youtubeMedia = true;
       onScreen = false;
@@ -60,7 +60,7 @@
       if (post)
         setTimeout(function () {
           filterInputResponse(true, false, menu[i].id.space(), false);
-        }, 300);
+        }, 50);
       topMenuBarDisplay(topBar);
       sideBarDisplay(onScreen);
     }
@@ -74,16 +74,14 @@
     setTimeout(function () {
       if (!uri[1]) filterInputResponse(true, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 300);
+    }, 50);
   } else if (!post) {
     _visit.style.display = `flex`;
     _guest.focus();
   }
   if (!isNumeric(post))
-    setTimeout(function() {
-      if (onScreen == true) sideBarDisplay(onScreen);
-      else sideBarDisplay(false);
-    }, 250)
+    if (onScreen == true) sideBarDisplay(onScreen);
+    else sideBarDisplay(false);
   else if (isNumeric(post)) _check.style.visibility = `visible`;
   else if (_main.clientWidth < 768) {
     groupType = `blocks`;
