@@ -96,4 +96,4 @@ setTimeout(function() {
     List = false;
   }
 
-}, 50)
+}, 25)
