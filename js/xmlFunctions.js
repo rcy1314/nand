@@ -894,6 +894,7 @@ var xmlRequestParsing = function (search, string, index) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
         }
+        safeSearch = guideSafeSearch;
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {
               xmlImageAttributes(false, index, images[i].element, images[i].src);

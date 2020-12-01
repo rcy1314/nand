@@ -48,10 +48,11 @@ setTimeout(function() {
       let id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
       let i = menu.findIndex((item) => item.hash === id);
-      youtubeMedia = true;
+      guideSafeSearch = safeSearch;
       guideOnScreen = onScreen;
+      youtubeMedia = true;
+      safeSearch = false;
       onScreen = false;
-      sideBarDisplay(onScreen);
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
       _guide.style.display = `flex`;
@@ -65,6 +66,7 @@ setTimeout(function() {
       }
     }
     topMenuBarDisplay(topBar);
+    sideBarDisplay(onScreen);
   }
   else if (location.search.split(`?q=`)[1]) {
     var uri = location.search.split(`?q=`)[1];
