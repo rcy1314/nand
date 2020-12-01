@@ -27,35 +27,35 @@
 
 ### Holidays
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Holidays.gif'></p>
+<p align='center'><img src='screenshots/Holidays.gif'></p>
 
 ### Arc
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Arc.jpg'></p>
+<p align='center'><img src='screenshots/Arc.jpg'></p>
 
 ### Day
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Day.jpg'></p>
+<p align='center'><img src='screenshots/Day.jpg'></p>
 
 ### Night
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Night.jpg'></p>
+<p align='center'><img src='screenshots/Night.jpg'></p>
 
 ### Nord
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Nord.jpg'></p>
+<p align='center'><img src='screenshots/Nord.jpg'></p>
 
 ### Gruvbox
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Gruvbox.jpg'></p>
+<p align='center'><img src='screenshots/Gruvbox.jpg'></p>
 
 ### Solarized
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Solarized.jpg'></p>
+<p align='center'><img src='screenshots/Solarized.jpg'></p>
 
 ### Alpenglow
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Alpenglow.jpg'></p>
+<p align='center'><img src='screenshots/Alpenglow.jpg'></p>
 
 
 
