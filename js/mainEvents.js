@@ -321,8 +321,8 @@ document.addEventListener(
       if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
-      local = -1
-      post = -1
+      local = null
+      post = null
     }
     if (event.target.classList.contains(`bottom`)) {
       event.target.closest(`#xml`).remove();

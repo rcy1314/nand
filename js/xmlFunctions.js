@@ -580,6 +580,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                       )
+                    ) &&
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
                     )
                   )
                   document.querySelector(
@@ -591,16 +596,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     )
                     .classList.add(`leave`);
                   document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                  ).style.display = `block`;
-                } else {
-                  if (
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      )
-                    )
-                  )
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  ).remove();
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                   ).style.display = `block`;
@@ -672,7 +669,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                       )
-                  )
+                  ) &&
+                  safeSearch == false ||
+                  !safeSearchIDs.includes(menu[id].id)
                 ) {
                   document
                     .querySelector(
