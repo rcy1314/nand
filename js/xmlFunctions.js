@@ -663,20 +663,28 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               read.onload =  function(e){
                 itemImage.setAttribute(`src`, e.target.result);
                 if (
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                    )
-                  ) &&
-                  safeSearch == false ||
-                  !safeSearchIDs.includes(menu[id].id)
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      )
+                    ) &&
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                  )
                 ) {
                   document
                     .querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                     ).style.display = `block`
-                }
-              };
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      )
+                      .remove();
+              }
+            }
           };
           if (_main.clientWidth <= 425) {
             if (
@@ -735,23 +743,35 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.classList.add(`default`);
             }
           }
-          if (
-            document.body.contains(
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              )
-            )
-          )
+          if (!src.match(/4cdn/g)) request.send();
+          else if (
+              document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                )
+              ) &&
+              document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+              ) &&
+              safeSearch == false ||
+              !safeSearchIDs.includes(menu[id].id)
+            ) {
+            itemImage.setAttribute(`src`, src);
             document
               .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              )
-              .remove();
-          if (!src.match(/4cdn/g)) request.send();
-          else itemImage.setAttribute(`src`, src);
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              ).style.display = `block`
+              document
+                .querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+                .remove();
         }
       };
     }
+  }
 };
 
 var xmlTitleParsing = function (xhr) {
