@@ -730,7 +730,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               newImg.naturalHeight > k &&
               newImg.naturalHeight >= newImg.naturalWidth * 2
             ) {
-              itemImage.closest(`.item`).querySelector(`.pending`).remove();
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
