@@ -127,12 +127,12 @@ var guideImageAttributes = function (pubArray) {
           })
           _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
           document.querySelector(`.sticky`).style.display = `block`
-          _check.style.visibility = `hidden`;
+          _check.style.display = `none`;
           _guide.style.display = `flex`;
       })
       .catch((response) => {
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
-        _check.style.visibility = `hidden`;
+        _check.style.display = `none`;
         _guide.style.display = `none`;
       })
     }
@@ -171,14 +171,14 @@ var guideImageAttributes = function (pubArray) {
           .forEach((a) => (a.style.maxHeight = `80vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `70vw`));
+          .forEach((a) => (a.style.maxWidth = `calc(70vw - 220px)`));
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxHeight = `70vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `40vw`));
+          .forEach((a) => (a.style.maxWidth = `calc(40vw - 220px)`));
       }
     }
     if (
@@ -187,7 +187,7 @@ var guideImageAttributes = function (pubArray) {
     ) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
       document.querySelector(`.sticky`).style.display = `block`
-      _check.style.visibility = `hidden`;
+      _check.style.display = `none`;
       _guide.style.display = `flex`;
     }
   };
@@ -817,7 +817,7 @@ var xmlRequestParsing = function (search, string, index) {
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
   if (Reader != true && first == true)
-    _check.style.visibility = `visible`;
+    _check.style.display = `block`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -1026,7 +1026,7 @@ var xmlRequestParsing = function (search, string, index) {
         )
       }
       document.querySelector(`#xml`).style.display = `block`;
-      if (!post) _check.style.visibility = `hidden`;
+      if (!post) _check.style.display = `none`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }

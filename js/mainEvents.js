@@ -454,6 +454,7 @@ document.addEventListener(
                 menuObject: event.target.closest(`.item`).getAttribute(`aria-object`),
                 pubIndex: event.target.closest(`.item`).getAttribute(`aria-item`),
               });
+              if (safeSearchIDs.includes(menu[id].id)) _check.style.display = `block`;
               guideDisplay(sticky);
             } else if (
               event.target

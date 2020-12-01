@@ -450,7 +450,7 @@ var progressBackDrop = function (done) {
           );
         setTimeout(function () {
           document.querySelector(`#group`).style.paddingTop = `57px`;
-          _check.style.visibility = `hidden`;
+          _check.style.display = `none`;
         }, 750);
       }
       if (onlyImages == true)
@@ -470,7 +470,7 @@ var progressBackDrop = function (done) {
 };
 
 var populateCategoryGroup = function (translation) {
-  if (scrollIntoView === true) _check.style.visibility = `visible`;
+  if (scrollIntoView === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
   if (id && id != 0 && !location.href.match(`\\?q=`)) {

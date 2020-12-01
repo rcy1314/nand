@@ -124,11 +124,11 @@ html body,
 #main #check {
   color: var(--fill-color-primary);
   background-color: transparent;
-  visibility: hidden;
   position: absolute;
   margin-left: 20px;
   font-size: 11px;
   position: fixed;
+  display: none;
   z-index: 11;
 }
 
