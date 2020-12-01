@@ -307,18 +307,17 @@ document.addEventListener(
       _visit.style.display = `none`;
     }
     if (
+      event.target.classList.contains(`checkmark__circle`) ||
+      event.target.classList.contains(`checkmark__check`) ||
+      event.target.classList.contains(`checkmark`) ||
       event.target.id == `guide`
     ) {
       while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       sideBarFirst = true;
       onScreen = guideOnScreen;
-      if (post && _main.clientWidth >= 426) sideBarDisplay(guideOnScreen);
-      else if (post) {
-        onScreen = false
-        _sidebar.querySelector(`#hide`).style.left = `240`;
-        sideBarDisplay(onScreen)
-      }
+      if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
+      _check.style.display = `none`;
       topMenuBarDisplay(topBar);
       local = -1
       post = -1
