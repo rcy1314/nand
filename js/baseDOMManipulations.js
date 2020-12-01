@@ -101,6 +101,7 @@ var footerBuild = function () {
 };
 
 var guideBuild = function (pubArray) {
+  let filterBlur = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let sticky = document.createElement(`div`);
   let object = document.createElement(`img`);
@@ -110,6 +111,9 @@ var guideBuild = function (pubArray) {
   let head = document.createElement(`div`);
   let src = document.createElement(`div`);
   let ago = document.createElement(`div`);
+  sticky.setAttribute(`aria-item`, pubArray.menuObject);
+  sticky.setAttribute(`aria-object`, pubArray.pubIndex);
+  filterBlur.classList.add(`filterBlur`);
   sticky.classList.add(`item`, `sticky`);
   object.classList.add(`guide`, `img`);
   src.classList.add(`item`, `src`);
@@ -119,16 +123,15 @@ var guideBuild = function (pubArray) {
   blur.classList.add(`blur`);
   wrap.classList.add(`wrap`);
   ago.classList.add(`ago`);
-  object.id = pubArray.element;
   wrap.setAttribute(`ext`, pubArray.externalURI);
   src.setAttribute(`ext`, pubArray.externalURI);
-  src.setAttribute(`aria-item`, pubArray.id);
   image.append(sideBarThemeBuild(`fa-heart`));
+  image.append(filterBlur);
   image.append(object);
   src.append(image);
   head.append(
     courtesyBuild(
-      menu[pubArray.id].id.match(/([^\/]+)$/g),
+      menu[pubArray.menuObject].id.match(/([^\/]+)$/g),
       pubArray.image,
       pubArray.externalURI
     )
@@ -156,7 +159,7 @@ var guideBuildYoutube = function (pubArray) {
   let head = document.createElement(`div`);
   let ago = document.createElement(`div`);
   let yt = document.createElement(`div`);
-  youtube.setAttribute(`aria-item`, pubArray.id);
+  youtube.setAttribute(`aria-item`, pubArray.menuObject);
   wrap.setAttribute(`ext`, pubArray.externalURI);
   sticky.classList.add(`yt`, `item`, `sticky`);
   youtube.setAttribute(`ext`, pubArray.re);
@@ -174,7 +177,7 @@ var guideBuildYoutube = function (pubArray) {
   youtube.id = `yt`;
   head.append(
     courtesyBuild(
-      menu[pubArray.id].id.match(/([^\/]+)$/g),
+      menu[pubArray.menuObject].id.match(/([^\/]+)$/g),
       pubArray.image,
       pubArray.externalURI
     )

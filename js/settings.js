@@ -553,7 +553,6 @@ let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
-let guideSafeSearch = safeSearch; //store safeSearch for guide purposes
 let guideOnScreen = onScreen; //temporarly store onScreen for guide
 
 const selections = [

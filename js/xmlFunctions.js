@@ -72,24 +72,74 @@ var xmlStatusSuggestions = function () {
   }
 };
 
-var guideImageAttributes = function (src) {
+var guideImageAttributes = function (pubArray) {
   let newImg = new Image();
-  newImg.setAttribute(`src`, src);
+  newImg.setAttribute(`src`, pubArray.src);
   newImg.onload = function () {
-    _guide.querySelector(`.img`).setAttribute(`src`, src);
+    if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+      fetch(`${cors}${api}${pubArray.src}`, {
+        method: "GET",
+        headers: {
+          Origin: "*",
+          Accept: "application/json",
+          "X-Requested-With": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        },
+      })
+        .then((response) => {
+          response.json().then((jsonResponse) => {
+            console.log(`${pubArray.pubIndex} ${jsonResponse.score}`);
+            if (jsonResponse.score >= safeSearchScore) {
+              _guide.innerHTML += `
+              <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+                <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
+                <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
+              `;
+              if (
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
+                  )
+                )
+              )
+              document.querySelector(
+                `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
+              ).classList.add(`blur`);
+            }
+          })
+          _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
+          document.querySelector(`.sticky`).style.display = `block`
+          _check.style.visibility = `hidden`;
+          _guide.style.display = `flex`;
+      })
+      .catch((response) => {
+        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+        _check.style.visibility = `hidden`;
+        _guide.style.display = `none`;
+      })
+    }
     if (_main.clientWidth <= 425) {
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
-        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxHeight = `70vh`));
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxWidth = `100vw`));
         _guide.querySelector(`.wrap`).style.display = `block`;
         _guide.querySelector(`.wrap`).style.height = `fit-content`;
         _guide.querySelector(`.pub`).style.height = `fit-content`;
         _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(`.img`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxHeight = `70vh`));
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxWidth = `100vw`));
         _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
         _guide.querySelector(`.sticky`).style.top = `40px`
       }
@@ -99,16 +149,35 @@ var guideImageAttributes = function (src) {
     } else {
       _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {
-        _guide.querySelector(`.img`).style.maxHeight = `80vh`;
-        _guide.querySelector(`.img`).style.maxWidth = `70vw`;
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxHeight = `80vh`));
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxWidth = `70vw`));
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide.querySelector(`.img`).style.maxWidth = `40vw`;
-        _guide.querySelector(`.img`).style.maxHeight = `70vh`;
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxHeight = `70vh`));
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxWidth = `40vw`));
       }
     }
-    document.querySelector(`.sticky`).style.display = `block`
-    _guide.style.display = `flex`;
   };
+  if (
+    safeSearch == false ||
+    !safeSearchIDs.includes(menu[id].id)
+  ) {
+    _guide.innerHTML += `
+    <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
+      <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
+      <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
+    `;
+    document.querySelector(`.sticky`).style.display = `block`
+    _check.style.visibility = `hidden`;
+    _guide.style.display = `flex`;
+  }
 };
 
 var xmlImageSource = function (xhr) {
@@ -865,7 +934,8 @@ var xmlRequestParsing = function (search, string, index) {
             src: pub[local].src,
             externalURI: pub[local].re,
             views: views,
-            id: index,
+            menuObject: index,
+            pubIndex: local
           });
           guideDisplayYoutube(sticky);
         } else if (isNumeric(local)) {
@@ -879,7 +949,8 @@ var xmlRequestParsing = function (search, string, index) {
             dst: pub[local].dst,
             src: pub[local].src,
             externalURI: pub[local].re,
-            id: index,
+            menuObject: index,
+            pubIndex: local
           });
           document.querySelector(`#xml`).style.display = `none`
           guideDisplay(sticky);
@@ -890,11 +961,11 @@ var xmlRequestParsing = function (search, string, index) {
           if (has.filter(function(obj) {
             return pub[i].title.toLowerCase().match(obj);
           }).length > 0) continue
-          if (i != local)
+          if (i != local) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
+          }
         }
-        safeSearch = guideSafeSearch;
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {
               xmlImageAttributes(false, index, images[i].element, images[i].src);
@@ -942,7 +1013,7 @@ var xmlRequestParsing = function (search, string, index) {
         )
       }
       document.querySelector(`#xml`).style.display = `block`;
-      _check.style.visibility = `hidden`;
+      if (!post) _check.style.visibility = `hidden`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }

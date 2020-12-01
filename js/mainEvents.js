@@ -156,7 +156,7 @@ document.addEventListener(
           .querySelectorAll(`.attribute`)
           .forEach((a) => (a.style.display = `none`));
         var attribute = document.querySelectorAll(`.fa-ellipsis-v`);
-        for (i = 0; i < attr.length; i++) {
+        for (i = 0; i < attribute.length; i++) {
           attribute[i].classList.remove(`fa-ellipsis-v`);
           attribute[i].classList.add(`fa-ellipsis-h`);
         }
@@ -310,7 +310,7 @@ document.addEventListener(
       event.target.classList.contains(`checkmark__circle`) ||
       event.target.classList.contains(`checkmark__check`) ||
       event.target.classList.contains(`checkmark`) ||
-      event.target.classList.contains(`blur`)
+      event.target.classList.contains(`guide`)
     ) {
       _guide.style.display = `none`;
       sideBarFirst = true;
