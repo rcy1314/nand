@@ -29,35 +29,6 @@
 
 <p align='center'><img src='screenshots/Holidays.gif'></p>
 
-### Arc
-
-<p align='center'><img src='screenshots/Arc.jpg'></p>
-
-### Day
-
-<p align='center'><img src='screenshots/Day.jpg'></p>
-
-### Night
-
-<p align='center'><img src='screenshots/Night.jpg'></p>
-
-### Nord
-
-<p align='center'><img src='screenshots/Nord.jpg'></p>
-
-### Gruvbox
-
-<p align='center'><img src='screenshots/Gruvbox.jpg'></p>
-
-### Solarized
-
-<p align='center'><img src='screenshots/Solarized.jpg'></p>
-
-### Alpenglow
-
-<p align='center'><img src='screenshots/Alpenglow.jpg'></p>
-
-
 
 Want to Contribute?
 ----
