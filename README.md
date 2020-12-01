@@ -25,6 +25,10 @@
 
 * backgroundImage path is being overwritten in themes files.
 
+### Holidays
+
+<p align='center'><img src='http://acktic.github.io/screenshots/Holidays.jpg'></p>
+
 ### Arc
 
 <p align='center'><img src='http://acktic.github.io/screenshots/Arc.jpg'></p>
