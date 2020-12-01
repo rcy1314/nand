@@ -1026,7 +1026,7 @@ var xmlRequestParsing = function (search, string, index) {
         )
       }
       document.querySelector(`#xml`).style.display = `block`;
-      if (!post) _check.style.display = `none`;
+      _check.style.display = `none`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }
