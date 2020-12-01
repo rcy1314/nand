@@ -145,6 +145,7 @@ var guideImageAttributes = function (pubArray) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
+        _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
         _guide.querySelector(`.wrap`).style.display = `block`;
         _guide.querySelector(`.wrap`).style.height = `fit-content`;
         _guide.querySelector(`.pub`).style.height = `fit-content`;
@@ -160,8 +161,12 @@ var guideImageAttributes = function (pubArray) {
         _guide.querySelector(`.sticky`).style.top = `40px`
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
-      _guide.querySelector(`.sticky .header`).style.top =
-        ~_guide.querySelector(`.img`).style.height - `60`;
+      _guide.querySelector(`.filterBlur`).style.top = `0`;
+      _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
+      _guide
+        .querySelectorAll(`.img, .sticky .header`)
+        .forEach((a) => (a.style.top =
+          ~_guide.querySelector(`.img`).style.height - `60`));
     } else {
       _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {
@@ -523,18 +528,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         if (
           document.body.contains(
             document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-            )
-          )
-        )
-          document
-            .querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-            )
-            .remove();
-        if (
-          document.body.contains(
-            document.querySelector(
               `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
             )
           )
@@ -549,18 +542,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         ).style.paddingBottom = `30px`;
       };
       newImg.onload = function () {
-        if (
-          document.body.contains(
-            document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-            )
-          )
-        )
-        document
-          .querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-          )
-          .remove();
         if (
           src.match(/ytimg/g) &&
           youtubeMedia == false &&
@@ -661,6 +642,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           let itemImage = document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
           );
+          let itemPending = document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+          )
           let attribute = document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
           );
@@ -694,8 +678,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 }
               };
           };
-          if (!src.match(/4cdn/g)) request.send();
-          else itemImage.setAttribute(`src`, src);
           if (_main.clientWidth <= 425) {
             if (
               newImg.naturalHeight > k &&
@@ -753,6 +735,20 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               itemImage.classList.add(`default`);
             }
           }
+          if (
+            document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+              )
+            )
+          )
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+              )
+              .remove();
+          if (!src.match(/4cdn/g)) request.send();
+          else itemImage.setAttribute(`src`, src);
         }
       };
     }
