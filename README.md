@@ -27,7 +27,7 @@
 
 ### Holidays
 
-<p align='center'><img src='http://acktic.github.io/screenshots/Holidays.jpg'></p>
+<p align='center'><img src='http://acktic.github.io/screenshots/Holidays.gif'></p>
 
 ### Arc
 
