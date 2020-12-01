@@ -323,7 +323,10 @@ var progressBackDrop = function (done) {
     width = _main.clientWidth / ((count.length - 1))
   else width = (_main.clientWidth / ((count.length - 1) / 4))
     complete = setInterval(function () {
-      if (_progress.clientWidth >= _main.clientWidth || count.length === 0){
+      if (
+        count.length === 0 ||
+        _progress.clientWidth >= (_main.clientWidth - 17)
+     ){
         setTimeout(function () {
           clearInterval(complete);
           _progress.style.transition = `all 750ms ease-in-out`;
