@@ -125,7 +125,7 @@ var guideBuild = function (pubArray) {
   ago.classList.add(`ago`);
   sticky.setAttribute(`ext`, pubArray.externalURI);
   image.append(sideBarThemeBuild(`fa-heart`));
-  image.append(filterBlur);
+  if (guideSafeSearch == true) image.append(filterBlur);
   image.append(object);
   src.append(image);
   head.append(
