@@ -90,7 +90,7 @@ let Reader = false;
 
 */
 
-let onScreen = true;
+let onScreen = false;
 
 /*
     expand [boolean/integer]
@@ -247,7 +247,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = true;
+let quickFeeds = false;
 
 /*
     quickFeedsTranslations [boolean/integer]
@@ -357,19 +357,6 @@ let onlyImages = false;
 let youtubeMedia = false;
 
 /*
-    omitGuide [boolean/integer]
-
-      Applications
-        xmlRequestParsing
-
-      Result
-        omit base36 post from xml listing
-
-*/
-
-let omitGuide = false;
-
-/*
     suggestionBuffer [integer]
 
       Applications
@@ -407,6 +394,19 @@ let contentStatusBuffer = 7;
 */
 
 let safeSearch = true;
+
+/*
+    guideSafeSearch [boolean/integer]
+
+      Applications
+        xmlImageAttributes
+
+      Result
+        apply safeSearch to guide
+
+*/
+
+let guideSafeSearch = false;
 
 /*
     safeSearchScore [string]

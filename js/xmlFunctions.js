@@ -98,7 +98,7 @@ var guideImageAttributes = function (pubArray) {
   let newImg = new Image();
   newImg.setAttribute(`src`, pubArray.src);
   newImg.onload = function () {
-    if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+    if (guideSafeSearch == true && safeSearchIDs.includes(menu[id].id)) {
       fetch(`${cors}${api}${pubArray.src}`, {
         method: "GET",
         headers: {
@@ -182,7 +182,7 @@ var guideImageAttributes = function (pubArray) {
       }
     }
     if (
-      safeSearch == false ||
+      guideSafeSearch == false ||
       !safeSearchIDs.includes(menu[id].id)
     ) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
