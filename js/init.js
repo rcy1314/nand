@@ -35,7 +35,6 @@
   > /?q=jquery not found pass through xml search.
 
 */
-setTimeout(function() {
 
   if (
     !location.href.match(`\\?fbclid`) &&
@@ -47,7 +46,10 @@ setTimeout(function() {
     if (uri.match(/^[a-zA-Z0-9]+$/i)) {
       let id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
-      let i = menu.findIndex((item) => item.hash === id);
+      setTimeout(function () {
+        let i = menu.findIndex((item) => item.hash === id);
+        if (!post) xmlRequestParsing(null, null, i)
+      }, 300);
       guideOnScreen = onScreen;
       youtubeMedia = true;
       onScreen = false;
@@ -55,16 +57,13 @@ setTimeout(function() {
       _visit.style.display = `none`;
       _guide.style.display = `flex`;
       _main.classList.add(`guide`)
-      if (!post){
-        xmlRequestParsing(null, null, i)
-      } else {
+      if (post)
         setTimeout(function () {
           filterInputResponse(true, false, menu[i].id.space(), false);
-        }, 250);
-      }
+        }, 300);
+      topMenuBarDisplay(topBar);
+      sideBarDisplay(onScreen);
     }
-    topMenuBarDisplay(topBar);
-    sideBarDisplay(onScreen);
   }
   else if (location.search.split(`?q=`)[1]) {
     var uri = location.search.split(`?q=`)[1];
@@ -75,7 +74,7 @@ setTimeout(function() {
     setTimeout(function () {
       if (!uri[1]) filterInputResponse(true, false, uri[0], true);
       else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
-    }, 250);
+    }, 300);
   } else if (!post) {
     _visit.style.display = `flex`;
     _guest.focus();
@@ -93,5 +92,3 @@ setTimeout(function() {
     Blocks = true;
     List = false;
   }
-
-}, 25)
