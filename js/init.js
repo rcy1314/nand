@@ -49,18 +49,16 @@
       setTimeout(function () {
         let i = menu.findIndex((item) => item.hash === id);
         if (!post) xmlRequestParsing(null, null, i)
-      }, 250);
-      guideOnScreen = onScreen;
-      youtubeMedia = true;
-      onScreen = false;
-      _toggle.style.display = `none`;
-      _visit.style.display = `none`;
-      _guide.style.display = `flex`;
-      _main.classList.add(`guide`)
-      if (post)
-        setTimeout(function () {
+        guideOnScreen = onScreen;
+        youtubeMedia = true;
+        onScreen = false;
+        _toggle.style.display = `none`;
+        _visit.style.display = `none`;
+        _guide.style.display = `flex`;
+        _main.classList.add(`guide`)
+        if (post)
           filterInputResponse(true, false, menu[i].id.space(), false);
-        }, 250);
+      }, 250);
       topMenuBarDisplay(topBar);
       sideBarDisplay(onScreen);
     }
