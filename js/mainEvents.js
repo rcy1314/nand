@@ -149,6 +149,11 @@ document.addEventListener(
       event.target.id == `top` ||
       event.target.id == `arm`
     ) {
+      _quick.style.visibility = `visible`;
+      _label.style.visibility = `visible`;
+      _show.style.visibility = `visible`;
+      _link.style.visibility = `visible`;
+      _just.style.visibility = `visible`;
       if (
         !document
           .querySelectorAll(`.attribute`)

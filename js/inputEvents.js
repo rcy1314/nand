@@ -451,6 +451,8 @@ var inputListingKeyup = function (Elem, keycode) {
   } else if (keycode === 27) {
     _quick.style.visibility = `visible`;
     _label.style.visibility = `visible`;
+    _show.style.visibility = `visible`;
+    _link.style.visibility = `visible`;
     _just.style.visibility = `visible`;
     document.querySelector(Elem).style.display = `none`;
   }
