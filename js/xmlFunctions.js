@@ -133,6 +133,8 @@ var guideImageAttributes = function (pubArray) {
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
         _check.style.display = `none`;
         _guide.style.display = `none`;
+        local = null
+        post = null
       })
     }
     if (_main.clientWidth <= 425) {
