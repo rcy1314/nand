@@ -10,7 +10,7 @@ var init = function () {
   if (loading == `dots`) {
     document
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => a.style.zIndex = `11`);
+      .forEach((a) => (a.style.zIndex = `11`));
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.classList.add(`dots`));
@@ -20,8 +20,8 @@ var init = function () {
   } else if (loading == `percent`) {
     document
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => a.style.zIndex = `-12`);
-      progressBackDrop(false)
+      .forEach((a) => (a.style.zIndex = `-12`));
+    progressBackDrop(false);
   }
 };
 
@@ -34,11 +34,12 @@ var unloading = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `hidden`));
     progressBackDrop(true);
-  } else if (loading == `percent`)
-    progressBackDrop(true);
+  } else if (loading == `percent`) progressBackDrop(true);
 };
 
-var escape = function (n) { return n.replace(/<.>/g, ``); };
+var escape = function (n) {
+  return n.replace(/<.>/g, ``);
+};
 
 var truncate = function (i, n, useWordBoundary) {
   if (i.length <= n) return i;
@@ -63,16 +64,15 @@ var anyRandomMenuObject = function () {
     var randomObject = random[Math.floor(Math.random() * random.length - 1)];
   else if (justRead == true)
     var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-  if (menu[randomObject]) randomDuplicate.push(randomObject)
-      if (menu[randomObject] && !randomDuplicate.includes(menu[randomObject]))
-      randomObject = menu.indexOf(randomObject)
-      else if (justRead == false){
-        randomObject = random[Math.floor(Math.random() * random.length - 1)];
-      }
-      else if (justRead == true){
-        randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-      }
-  randomObject = menu.indexOf(randomObject)
+  if (menu[randomObject]) randomDuplicate.push(randomObject);
+  if (menu[randomObject] && !randomDuplicate.includes(menu[randomObject]))
+    randomObject = menu.indexOf(randomObject);
+  else if (justRead == false) {
+    randomObject = random[Math.floor(Math.random() * random.length - 1)];
+  } else if (justRead == true) {
+    randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
+  }
+  randomObject = menu.indexOf(randomObject);
   return randomObject;
 };
 

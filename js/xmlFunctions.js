@@ -5,7 +5,7 @@ var guideDisplay = function (pubArray) {
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
   _guide.append(guideBuild(pubArray[0]));
-  document.querySelector(`.sticky`).style.display = `none`
+  document.querySelector(`.sticky`).style.display = `none`;
   guideImageAttributes(pubArray[0]);
 };
 
@@ -17,6 +17,11 @@ var guideDisplayYoutube = function (pubArray) {
   `;
   _check.style.display = `none`;
   _guide.append(guideBuildYoutube(pubArray[0]));
+};
+
+var xmlChannelFooter = function () {
+  if (document.body.contains(document.querySelector(`.center`)))
+    document.querySelector(`.channel`).append(footerBuild());
 };
 
 var forward = function () {
@@ -40,11 +45,6 @@ var back = function () {
   return parseInt(back);
 };
 
-var xmlChannelFooter = function () {
-  if (document.body.contains(document.querySelector(`.center`)))
-    document.querySelector(`.channel`).append(footerBuild());
-};
-
 var contentStatusDisplay = function (
   menuIndex,
   recentPost,
@@ -55,7 +55,7 @@ var contentStatusDisplay = function (
     var status = document.querySelector(`#xml .status`);
     status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
   }
-  displayDescription(showDescription)
+  displayDescription(showDescription);
 };
 
 var xmlStatusSuggestions = function () {
@@ -105,7 +105,7 @@ var guideImageAttributes = function (pubArray) {
           Accept: "application/json",
           "X-Requested-With": "*",
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*"
+          "Access-Control-Allow-Origin": "*",
         },
       })
         .then((response) => {
@@ -119,23 +119,25 @@ var guideImageAttributes = function (pubArray) {
                   )
                 )
               )
-              document.querySelector(
-                `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
-              ).classList.add(`blur`);
+                document
+                  .querySelector(
+                    `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
+                  )
+                  .classList.add(`blur`);
             }
-          })
+          });
           _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
-          document.querySelector(`.sticky`).style.display = `block`
+          document.querySelector(`.sticky`).style.display = `block`;
           _check.style.display = `none`;
           _guide.style.display = `flex`;
-      })
-      .catch((response) => {
-        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
-        _check.style.display = `none`;
-        _guide.style.display = `none`;
-        local = null
-        post = null
-      })
+        })
+        .catch((response) => {
+          while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+          _check.style.display = `none`;
+          _guide.style.display = `none`;
+          local = null;
+          post = null;
+        });
     }
     if (_main.clientWidth <= 425) {
       _main.classList.add(`guide`);
@@ -160,15 +162,17 @@ var guideImageAttributes = function (pubArray) {
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
         _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.sticky`).style.top = `40px`
+        _guide.querySelector(`.sticky`).style.top = `40px`;
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
       _guide.querySelector(`.filterBlur`).style.top = `0`;
       _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
       _guide
         .querySelectorAll(`.img, .sticky .header`)
-        .forEach((a) => (a.style.top =
-          ~_guide.querySelector(`.img`).style.height - `60`));
+        .forEach(
+          (a) =>
+            (a.style.top = ~_guide.querySelector(`.img`).style.height - `60`)
+        );
     } else {
       _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {
@@ -187,12 +191,9 @@ var guideImageAttributes = function (pubArray) {
           .forEach((a) => (a.style.maxWidth = `calc(40vw - 220px)`));
       }
     }
-    if (
-      guideSafeSearch == false ||
-      !safeSearchIDs.includes(menu[id].id)
-    ) {
+    if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
-      document.querySelector(`.sticky`).style.display = `block`
+      document.querySelector(`.sticky`).style.display = `block`;
       _check.style.display = `none`;
       _guide.style.display = `flex`;
     }
@@ -470,35 +471,37 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 480;
   let jsonResponseScore;
-    if (src && src != `null` && imageDuplicate.includes(src)) {
-      if (
-        document.body.contains(
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-          )
-        )
-      ) {
-        document
-          .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-          .closest(`.item`)
-          .remove();
-      }
-    } else if (
-      empty == true ||
-      onlyImages == true &&
-      !src &&
+  if (src && src != `null` && imageDuplicate.includes(src)) {
+    if (
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         )
       )
     ) {
-        document
-          .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-          .closest(`.item`)
-          .remove();
-    } else if (
-      !src || src == `null` || src.match(/.webm/g) &&
+      document
+        .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+        .closest(`.item`)
+        .remove();
+    }
+  } else if (
+    empty == true ||
+    (onlyImages == true &&
+      !src &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        )
+      ))
+  ) {
+    document
+      .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+      .closest(`.item`)
+      .remove();
+  } else if (
+    !src ||
+    src == `null` ||
+    (src.match(/.webm|.mp4/g) &&
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
@@ -508,329 +511,350 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      )
-    ) {
-      document.querySelector(
+      ))
+  ) {
+    document
+      .querySelector(
         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-      ).remove()
-      document.querySelector(
+      )
+      .remove();
+    document
+      .querySelector(
         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-      ).remove()
-    }
-    imageDuplicate.push(src);
-    if (
-      src &&
-      src.match(/https?:\/\//g) &&
-      !src.match(/comments|feeds|fsdn|undefined/g)
-    ) {
-      init();
-      var newImg = new Image();
-      newImg.setAttribute(`src`, src);
-      newImg.onerror = function () {
-        if (
-          document.body.contains(
-            document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-            )
+      )
+      .remove();
+  }
+  imageDuplicate.push(src);
+  if (
+    src &&
+    src.match(/https?:\/\//g) &&
+    !src.match(/comments|feeds|fsdn|undefined/g)
+  ) {
+    init();
+    var newImg = new Image();
+    newImg.setAttribute(`src`, src);
+    newImg.onerror = function () {
+      if (
+        document.body.contains(
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
           )
         )
-          document
-            .querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-            )
-            .remove();
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        ).style.paddingBottom = `30px`;
-      };
-      newImg.onload = function () {
-        if (
-          src.match(/ytimg/g) &&
-          youtubeMedia == false &&
-          document.body.contains(
-            document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-            )
+      )
+        document
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
           )
-        )
+          .remove();
+      document.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      ).style.paddingBottom = `30px`;
+    };
+    newImg.onload = function () {
+      if (
+        src.match(/ytimg/g) &&
+        youtubeMedia == false &&
+        document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-          ).classList.add(`yt`)
-        if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-          fetch(`${cors}${api}${src}`, {
-            method: "GET",
-            headers: {
-              Origin: "*",
-              Accept: "application/json",
-              "X-Requested-With": "*",
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*"
-            },
-          })
-            .then((response) => {
-              response.json().then((jsonResponse) => {
-                jsonResponseScore = jsonResponse.score;
-                console.log(`${pubIndex} ${jsonResponse.score}`);
-                if (jsonResponse.score >= safeSearchScore) {
-                  if (
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      )
-                    ) &&
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                      )
-                    ) &&
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
+          )
+        )
+      )
+        document
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          )
+          .classList.add(`yt`);
+      if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+        fetch(`${cors}${api}${src}`, {
+          method: "GET",
+          headers: {
+            Origin: "*",
+            Accept: "application/json",
+            "X-Requested-With": "*",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        })
+          .then((response) => {
+            response.json().then((jsonResponse) => {
+              jsonResponseScore = jsonResponse.score;
+              console.log(`${pubIndex} ${jsonResponse.score}`);
+              if (jsonResponse.score >= safeSearchScore) {
+                if (
+                  document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                     )
-                  ) {
+                  ) &&
+                  document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                    )
+                  ) &&
+                  document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                    )
+                  )
+                ) {
                   var request = new XMLHttpRequest();
-                  request.open('GET', cors + src, true);
-                  request.responseType = 'blob';
-                  request.onload = function() {
-                      var read = new FileReader();
-                      read.readAsDataURL(request.response);
-                      read.onload =  function(e){
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        ).classList.add(`blur`);
-                        document
-                          .querySelector(
-                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                          )
-                          .classList.add(`leave`);
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                        ).remove();
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        ).setAttribute(`src`, e.target.result);
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        ).style.display = `block`;
-                      }
-                    }
-                    if (!src.match(/4cdn/g)) request.send();
-                      else {
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        ).classList.add(`blur`);
-                        document
-                          .querySelector(
-                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        ).classList.add(`leave`);
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                        ).remove();
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        ).setAttribute(`src`, src)
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        ).style.display = `block`;
-                      }
-                    }
-                  } else if (
-                      document.body.contains(
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        )
-                      ) &&
-                      document.body.contains(
-                        document.querySelector(
+                  request.open("GET", cors + src, true);
+                  request.responseType = "blob";
+                  request.onload = function () {
+                    var read = new FileReader();
+                    read.readAsDataURL(request.response);
+                    read.onload = function (e) {
+                      document
+                        .querySelector(
                           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                         )
-                      ) &&
-                      document.body.contains(
-                        document.querySelector(
+                        .classList.add(`blur`);
+                      document
+                        .querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        )
+                        .classList.add(`leave`);
+                      document
+                        .querySelector(
                           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                         )
-                      )
-                    ) {
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      ).remove();
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      ).setAttribute(`src`, src);
+                        .remove();
+                      document
+                        .querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        )
+                        .setAttribute(`src`, e.target.result);
                       document.querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                       ).style.display = `block`;
-                    }
-              });
-            })
-            .catch((response) => {
-              if (
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                ) &&
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-                  )
-                )
-              )
-                document
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                  .remove();
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-                    )
-                    .remove();
-            });
-        }
-        if (
-          document.body.contains(
-            document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-            )
-          )
-        ) {
-          let itemImage = document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-          );
-          let itemPending = document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-          )
-          let attribute = document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-          );
-          let copyPicture = document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-          );
-          let copyPost = document.querySelector(
-            `[aria-item='${pubIndex}'] .post`
-          );
-          var request = new XMLHttpRequest();
-          request.open('GET', cors + src, true);
-          request.responseType = 'blob';
-          request.onload = function() {
-              var read = new FileReader();
-              read.readAsDataURL(request.response);
-              read.onload =  function(e){
-                itemImage.setAttribute(`src`, e.target.result);
-                if (
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    };
+                  };
+                  if (!src.match(/4cdn/g)) request.send();
+                  else {
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                       )
-                    ) &&
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      .classList.add(`blur`);
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                       )
-                  ) &&
-                  safeSearch == false ||
-                  !safeSearchIDs.includes(menu[id].id)
-                ) {
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                    ).style.display = `block`
+                      .classList.add(`leave`);
                     document
                       .querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                       )
                       .remove();
-              }
-            }
-          };
-          if (_main.clientWidth <= 425) {
-            if (
-              newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2
-            ) {
-              itemPending.remove();
-              itemImage.closest(`.image`).remove();
-            } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = `180px`;
-              itemPending.style.margin = `12px`;
-              itemImage.closest(`.classic`).style.display = `flex`;
-              itemImage.closest(`.classic`).style.alignItems = `center`;
-              itemPending.style.width = `180px`;
-              itemPending.style.height = `180px`;
-              itemImage.style.marginBottom = `30px`;
-              copyPost.style.display = `none`;
-              copyPicture.style.display = `none`;
-              attribute.style.height = `37px`;
-            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-              itemImage.style.width = `30vh`;
-              itemImage.classList.add(`default`);
-              itemPending.style.height = `14em`;
-            } else if (
-              newImg.naturalWidth >= newImg.naturalHeight ||
-              newImg.naturalHeight >= newImg.naturalWidth
-            ) {
-              itemPending.style.height = `14em`;
-              itemImage.classList.add(`default`);
-              itemImage.style.width = `100%`;
-            }
-          } else {
-            if (
-              newImg.naturalHeight > k &&
-              newImg.naturalHeight >= newImg.naturalWidth * 2
-            ) {
-              itemImage.closest(`.image`).remove();
-            } else if (newImg.naturalWidth < maximum) {
-              itemImage.style.width = `180px`;
-              itemPending.style.height = `180px`;
-              itemImage.closest(`.classic`).style.display = `flex`;
-              itemImage.closest(`.classic`).style.alignItems = `center`;
-              itemImage.style.marginBottom = `30px`;
-              copyPost.style.display = `none`;
-              copyPicture.style.display = `none`;
-              attribute.style.height = `37px`;
-              itemPending.style.width = `180px`;
-            } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-              itemImage.style.width = `100%`;
-              itemImage.classList.add(`default`);
-              itemPending.style.height = `14em`;
-            } else if (
-              newImg.naturalWidth >= newImg.naturalHeight ||
-              newImg.naturalHeight >= newImg.naturalWidth
-            ) {
-              itemImage.style.width = `100%`;
-              itemImage.classList.add(`default`);
-            }
-          }
-          if (!src.match(/4cdn/g)) request.send();
-          else if (
-              document.body.contains(
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      )
+                      .setAttribute(`src`, src);
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                    ).style.display = `block`;
+                  }
+                }
+              } else if (
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                  )
+                ) &&
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                  )
+                ) &&
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                )
+              ) {
+                document
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                  .remove();
+                document
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                  )
+                  .setAttribute(`src`, src);
                 document.querySelector(
                   `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                )
-              ) &&
+                ).style.display = `block`;
+              }
+            });
+          })
+          .catch((response) => {
+            if (
               document.body.contains(
                 document.querySelector(
                   `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                 )
               ) &&
-              safeSearch == false ||
-              !safeSearchIDs.includes(menu[id].id)
-            ) {
-            itemImage.setAttribute(`src`, src);
-            document
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              ).style.display = `block`
+              document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+                )
+              )
+            )
               document
                 .querySelector(
                   `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                 )
                 .remove();
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+              )
+              .remove();
+          });
+      }
+      if (
+        document.body.contains(
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          )
+        )
+      ) {
+        let itemImage = document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+        );
+        let itemPending = document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+        );
+        let attribute = document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+        );
+        let copyPicture = document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+        );
+        let copyPost = document.querySelector(
+          `[aria-item='${pubIndex}'] .post`
+        );
+        var request = new XMLHttpRequest();
+        request.open("GET", cors + src, true);
+        request.responseType = "blob";
+        request.onload = function () {
+          var read = new FileReader();
+          read.readAsDataURL(request.response);
+          read.onload = function (e) {
+            itemImage.setAttribute(`src`, e.target.result);
+            if (
+              (document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                )
+              ) &&
+                document.body.contains(
+                  document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  )
+                ) &&
+                safeSearch == false) ||
+              !safeSearchIDs.includes(menu[id].id)
+            ) {
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+              ).style.display = `block`;
+              document
+                .querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+                .remove();
+            }
+          };
+        };
+        if (_main.clientWidth <= 425) {
+          if (
+            newImg.naturalHeight > k &&
+            newImg.naturalHeight >= newImg.naturalWidth * 2
+          ) {
+            itemPending.remove();
+            itemImage.closest(`.image`).remove();
+          } else if (newImg.naturalWidth < maximum) {
+            itemImage.style.width = `180px`;
+            itemPending.style.margin = `12px`;
+            itemImage.closest(`.classic`).style.display = `flex`;
+            itemImage.closest(`.classic`).style.alignItems = `center`;
+            itemPending.style.width = `180px`;
+            itemPending.style.height = `180px`;
+            itemImage.style.marginBottom = `30px`;
+            copyPost.style.display = `none`;
+            copyPicture.style.display = `none`;
+            attribute.style.height = `37px`;
+          } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+            itemImage.style.width = `30vh`;
+            itemImage.classList.add(`default`);
+            itemPending.style.height = `14em`;
+          } else if (
+            newImg.naturalWidth >= newImg.naturalHeight ||
+            newImg.naturalHeight >= newImg.naturalWidth
+          ) {
+            itemPending.style.height = `14em`;
+            itemImage.classList.add(`default`);
+            itemImage.style.width = `100%`;
+          }
+        } else {
+          if (
+            newImg.naturalHeight > k &&
+            newImg.naturalHeight >= newImg.naturalWidth * 2
+          ) {
+            itemImage.closest(`.image`).remove();
+          } else if (newImg.naturalWidth < maximum) {
+            itemImage.style.width = `180px`;
+            itemPending.style.height = `180px`;
+            itemImage.closest(`.classic`).style.display = `flex`;
+            itemImage.closest(`.classic`).style.alignItems = `center`;
+            itemImage.style.marginBottom = `30px`;
+            copyPost.style.display = `none`;
+            copyPicture.style.display = `none`;
+            attribute.style.height = `37px`;
+            itemPending.style.width = `180px`;
+          } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+            itemImage.style.width = `100%`;
+            itemImage.classList.add(`default`);
+            itemPending.style.height = `14em`;
+          } else if (
+            newImg.naturalWidth >= newImg.naturalHeight ||
+            newImg.naturalHeight >= newImg.naturalWidth
+          ) {
+            itemImage.style.width = `100%`;
+            itemImage.classList.add(`default`);
+          }
         }
-      };
-    }
+        if (!src.match(/4cdn/g)) request.send();
+        else if (
+          (document.body.contains(
+            document.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+            )
+          ) &&
+            document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+              )
+            ) &&
+            safeSearch == false) ||
+          !safeSearchIDs.includes(menu[id].id)
+        ) {
+          itemImage.setAttribute(`src`, src);
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          ).style.display = `block`;
+          document
+            .querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+            )
+            .remove();
+        }
+      }
+    };
   }
 };
 
@@ -856,7 +880,7 @@ var xmlRequestParsing = function (search, string, index) {
   let pub = [];
   let images = [];
   imageDuplicate = [];
-  const has = exclude.map(a => a.toLowerCase());
+  const has = exclude.map((a) => a.toLowerCase());
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
   if (search == `search`) {
@@ -868,8 +892,7 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (Reader != true && first == true)
-    _check.style.display = `block`;
+  if (Reader != true && first == true) _check.style.display = `block`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -891,10 +914,7 @@ var xmlRequestParsing = function (search, string, index) {
 
           if (data.childNodes.length > 1) var title = xmlTitleParsing(data);
 
-          if (
-            title == postDuplicate ||
-            title == ``
-          ) continue;
+          if (title == postDuplicate || title == ``) continue;
 
           var postDuplicate = title;
 
@@ -910,7 +930,9 @@ var xmlRequestParsing = function (search, string, index) {
           let courtesy = courtesyBuild(
             menu[index].id.match(/([^\/]+)$/g),
             menu[index].image.image(),
-            menu[index].uri.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g)
+            menu[index].uri.match(
+              /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+            )
           );
 
           if (title.length > titleTruncate)
@@ -1000,7 +1022,7 @@ var xmlRequestParsing = function (search, string, index) {
             externalURI: pub[local].re,
             views: views,
             menuObject: index,
-            pubIndex: local
+            pubIndex: local,
           });
           guideDisplayYoutube(sticky);
         } else if (isNumeric(local)) {
@@ -1015,17 +1037,20 @@ var xmlRequestParsing = function (search, string, index) {
             src: pub[local].src,
             externalURI: pub[local].re,
             menuObject: index,
-            pubIndex: local
+            pubIndex: local,
           });
-          document.querySelector(`#xml`).style.display = `none`
+          document.querySelector(`#xml`).style.display = `none`;
           guideDisplay(sticky);
-        } else if (!isNumeric(post) || !isNumeric(local)){
+        } else if (!isNumeric(post) || !isNumeric(local)) {
           _guide.style.display = `none`;
         }
         for (i = 0; i < pub.length - 1; i++) {
-          if (has.filter(function(obj) {
-            return pub[i].title.toLowerCase().match(obj);
-          }).length > 0) continue
+          if (
+            has.filter(function (obj) {
+              return pub[i].title.toLowerCase().match(obj);
+            }).length > 0
+          )
+            continue;
           if (i != local) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
@@ -1033,12 +1058,12 @@ var xmlRequestParsing = function (search, string, index) {
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {
-              xmlImageAttributes(false, index, images[i].element, images[i].src);
+            xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
           unloading();
-        } else if (!safeSearchIDs.includes(menu[id].id)){
+        } else if (!safeSearchIDs.includes(menu[id].id)) {
           for (i = 0; i <= images.length - 1; i++) {
-              xmlImageAttributes(false, index, images[i].element, images[i].src);
+            xmlImageAttributes(false, index, images[i].element, images[i].src);
           }
           unloading();
         }
@@ -1071,11 +1096,7 @@ var xmlRequestParsing = function (search, string, index) {
         topMenuBarDisplay(topBar);
         xmlStatusSuggestions();
       } else {
-        xmlRequestParsing(
-          null,
-          null,
-          id,
-        )
+        xmlRequestParsing(null, null, id);
       }
       document.querySelector(`#xml`).style.display = `block`;
       if (!post) _check.style.display = `none`;

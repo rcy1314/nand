@@ -1,28 +1,25 @@
-var rippleBuild = function(ev, Elem) {
+var rippleBuild = function (ev, Elem) {
   const button = Elem.getBoundingClientRect();
   const circle = document.createElement(`span`);
-  const diameter = Math.max(
-    Elem.clientWidth,
-    Elem.clientHeight
-  );
+  const diameter = Math.max(Elem.clientWidth, Elem.clientHeight);
   const radius = diameter / 2;
   circle.style.width = circle.style.height = `${diameter}px`;
   circle.style.left = `${ev.clientX - button.left - radius}px`;
   circle.style.top = `${ev.clientY - button.top - radius}px`;
   circle.classList.add(`ripple`);
-  setTimeout(function() {
-  if (document.querySelector(`.ripple`))
-    document.querySelector(`.ripple`).remove();
-  }, 500)
+  setTimeout(function () {
+    if (document.querySelector(`.ripple`))
+      document.querySelector(`.ripple`).remove();
+  }, 500);
   Elem.appendChild(circle);
-}
+};
 var sideBarTranslationBuild = function (translation) {
   let category = document.createElement(`div`);
   category.setAttribute(`aria-item`, translation);
   category.classList.add(`cat`, translation);
   category.innerHTML = translation;
   return category;
-}
+};
 
 var groupBuild = function () {
   let result = document.createElement(`div`);
@@ -125,8 +122,7 @@ var guideBuild = function (pubArray) {
   ago.classList.add(`ago`);
   sticky.setAttribute(`ext`, pubArray.externalURI);
   image.append(sideBarThemeBuild(`fa-heart`));
-  if (safeSearchIDs.includes(menu[id].id))
-    image.append(filterBlur);
+  if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
   image.append(object);
   src.append(image);
   head.append(
@@ -219,7 +215,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
-  if (showDescription == false) des.style.visibility = `hidden`
+  if (showDescription == false) des.style.visibility = `hidden`;
   filter.append(object);
   filter.append(ahref);
   info.append(des);
@@ -235,28 +231,28 @@ var translationBuild = function (translation) {
   //let img = document.createElement(`img`)
   //img.classList.add(`quickTranslation`)
   //img.src = `images/${translation}.webp`
-  let ahref = document.createElement(`a`)
-  ahref.setAttribute(`ext`, translation)
-  ahref.classList.add(`category`)
-  ahref.innerHTML = translation
+  let ahref = document.createElement(`a`);
+  ahref.setAttribute(`ext`, translation);
+  ahref.classList.add(`category`);
+  ahref.innerHTML = translation;
   //object.append(img)
-  object.append(ahref)
+  object.append(ahref);
   return object;
 };
 
 var assetBuild = function (assetIndex, assetImage, assetId) {
   let object = document.createElement(`div`);
-  let ahref = document.createElement(`a`)
-  let img = document.createElement(`img`)
+  let ahref = document.createElement(`a`);
+  let img = document.createElement(`img`);
   object.setAttribute(`aria-item`, assetIndex);
-  ahref.setAttribute(`title`, assetId)
+  ahref.setAttribute(`title`, assetId);
   object.classList.add(`asset`);
-  ahref.classList.add(`query`)
-  img.classList.add(`entity`)
-  img.src = assetImage
-  ahref.innerHTML = `${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...`
-  object.append(img)
-  object.append(ahref)
+  ahref.classList.add(`query`);
+  img.classList.add(`entity`);
+  img.src = assetImage;
+  ahref.innerHTML = `${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...`;
+  object.append(img);
+  object.append(ahref);
   return object;
 };
 
@@ -371,8 +367,8 @@ var courtesyBuild = function (objectId, objectImage, objectExternal) {
   let bold = document.createElement(`b`);
   courtesy.setAttribute(`ext`, objectExternal);
   courtesy.classList.add(`courtesy`);
-  object.classList.add(`ext`)
-  ahref.classList.add(`exit`)
+  object.classList.add(`ext`);
+  ahref.classList.add(`exit`);
   object.src = objectImage;
   bold.innerHTML = objectId;
   ahref.append(bold);
@@ -448,7 +444,7 @@ var xmlHTMLBuild = function (htmlArray) {
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;
-  if (fadeIntoView == true) object.classList.add(`hidden`)
+  if (fadeIntoView == true) object.classList.add(`hidden`);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
   wrap.innerHTML += htmlArray.searchExternal;
@@ -530,7 +526,7 @@ var excludeFormBuild = function () {
   let form = document.createElement(`form`);
   let min = document.createElement(`div`);
   object.setAttribute(`placeholder`, `filter`);
-  object.classList.add("excludeInput")
+  object.classList.add("excludeInput");
   object.setAttribute(`type`, `text`);
   form.setAttribute(`action`, `#`);
   min.classList.add("filter");
@@ -545,11 +541,11 @@ var urlFormBuild = function () {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let url = document.createElement(`div`);
-  object.setAttribute("value", backgroundImage[0].path)
+  object.setAttribute("value", backgroundImage[0].path);
   object.setAttribute(`placeholder`, `url`);
   object.setAttribute(`type`, `text`);
   form.setAttribute(`action`, `#`);
-  object.classList.add("urlInput")
+  object.classList.add("urlInput");
   object.classList.add(`imageURL`);
   url.classList.add("background");
   object.classList.add(`text`);
@@ -563,7 +559,7 @@ var urlFormBuild = function () {
 var basicFormBuild = function () {
   let object = document.createElement(`input`);
   object.setAttribute(`placeholder`, `search`);
-  object.setAttribute(`autocomplete`, `off`)
+  object.setAttribute(`autocomplete`, `off`);
   let basic = document.createElement(`div`);
   let form = document.createElement(`form`);
   object.setAttribute(`type`, `text`);

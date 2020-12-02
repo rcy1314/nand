@@ -1,30 +1,30 @@
 function handleSwipe() {
-    if (touchendX - 50 > touchstartX) {
-      onScreen = true
-      sideBarDisplay(onScreen)
-    } else if (touchendX + 50 < touchstartX) {
-      onScreen = false
-      sideBarDisplay(onScreen)
-    }
+  if (touchendX - 50 > touchstartX) {
+    onScreen = true;
+    sideBarDisplay(onScreen);
+  } else if (touchendX + 50 < touchstartX) {
+    onScreen = false;
+    sideBarDisplay(onScreen);
+  }
 }
 
 var displayDescription = function (Value) {
   if (expand == true)
-    if (Value == false){
+    if (Value == false) {
       if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`.about`).style.display = `none`
+        document.querySelector(`.about`).style.display = `none`;
       _main
         .querySelectorAll(`.populate .des`)
-        .forEach((a) => a.style.visibility = `hidden`);
+        .forEach((a) => (a.style.visibility = `hidden`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`mobile`));
-    } else if (Value == true){
+    } else if (Value == true) {
       if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`.about`).style.display = `block`
+        document.querySelector(`.about`).style.display = `block`;
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`mobile`));
@@ -33,9 +33,9 @@ var displayDescription = function (Value) {
         .forEach((a) => a.classList.add(`expand`));
       _main
         .querySelectorAll(`.populate .des`)
-        .forEach((a) => a.style.visibility = `visible`);
+        .forEach((a) => (a.style.visibility = `visible`));
     }
-}
+};
 
 var displayExpand = function (Value) {
   if (document.body.contains(document.querySelector(`#xml`)))
@@ -49,7 +49,7 @@ var displayExpand = function (Value) {
       _main
         .querySelectorAll(`.media`)
         .forEach((a) => (a.style.display = `block`));
-      if (_main.clientWidth > 768){
+      if (_main.clientWidth > 768) {
         _main
           .querySelectorAll(`.des`)
           .forEach((a) => (a.style.display = `block`));
@@ -83,9 +83,7 @@ var displayExpand = function (Value) {
       _main
         .querySelectorAll(`.media`)
         .forEach((a) => (a.style.display = `none`));
-      _main
-        .querySelectorAll(`.des`)
-        .forEach((a) => (a.style.display = `none`));
+      _main.querySelectorAll(`.des`).forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`expand`));
@@ -108,44 +106,43 @@ var displayExpand = function (Value) {
 
 var appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-    for (i = 0; i <= Arrays.length - 1; i++) {
-      let option = document.createElement(`div`);
-      if (Class == `option`)
-        option.classList.add(Class);
-      else
-        option.classList.add(Class, Arrays[i].class);
-      if (Class == `background` || Class == `sel`)
-        option.innerHTML = Arrays[i].name;
-      if (Class == `option`) option.innerHTML = Arrays[i]
-      if (Class == `theme`) option.innerHTML = Arrays[i].obFn
-      list.append(option);
-      if (Class != `option`)
-        list.append(sideBarThemeBuild(Arrays[i].icon));
-    }
-}
-
-  var appendSettingsSideBarLists = function (Elem, Class, Arrays) {
-    let list = document.querySelector(Elem);
-    for (i = 0; i <= Arrays.length - 1; i++) {
-      let option = document.createElement(`div`);
-      option.classList.add(Class, Arrays[i].class);
+  for (i = 0; i <= Arrays.length - 1; i++) {
+    let option = document.createElement(`div`);
+    if (Class == `option`) option.classList.add(Class);
+    else option.classList.add(Class, Arrays[i].class);
+    if (Class == `background` || Class == `sel`)
       option.innerHTML = Arrays[i].name;
-      list.append(option);
-        if (eval(Arrays[i].class) == true){
-          document.querySelector(`.` + Arrays[i].class)
-            .parentNode.insertBefore(
-              sideBarThemeBuild(`fa-star`),
-              document.querySelector(`.` + Arrays[i].class).nextSibling
-            );
-        } else {
-          document.querySelector(`.` + Arrays[i].class)
-            .parentNode.insertBefore(
-              sideBarThemeBuild(`fa-minus`),
-              document.querySelector(`.` + Arrays[i].class).nextSibling
-            );
-        }
+    if (Class == `option`) option.innerHTML = Arrays[i];
+    if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
+    list.append(option);
+    if (Class != `option`) list.append(sideBarThemeBuild(Arrays[i].icon));
+  }
+};
+
+var appendSettingsSideBarLists = function (Elem, Class, Arrays) {
+  let list = document.querySelector(Elem);
+  for (i = 0; i <= Arrays.length - 1; i++) {
+    let option = document.createElement(`div`);
+    option.classList.add(Class, Arrays[i].class);
+    option.innerHTML = Arrays[i].name;
+    list.append(option);
+    if (eval(Arrays[i].class) == true) {
+      document
+        .querySelector(`.` + Arrays[i].class)
+        .parentNode.insertBefore(
+          sideBarThemeBuild(`fa-star`),
+          document.querySelector(`.` + Arrays[i].class).nextSibling
+        );
+    } else {
+      document
+        .querySelector(`.` + Arrays[i].class)
+        .parentNode.insertBefore(
+          sideBarThemeBuild(`fa-minus`),
+          document.querySelector(`.` + Arrays[i].class).nextSibling
+        );
     }
   }
+};
 
 var sideBarDisplay = function (Value) {
   sideBarFirst = true;
@@ -157,41 +154,41 @@ var sideBarDisplay = function (Value) {
         content.append(sideBarCategoryBuild(translations[i]));
       }
     }
-    appendSideBarLists(`#content`, `sel`, selections)
+    appendSideBarLists(`#content`, `sel`, selections);
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
-    appendSideBarLists(`.themes`, `theme`, themes)
+    appendSideBarLists(`.themes`, `theme`, themes);
     sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
-    appendSideBarLists(`.bg`, `background`, background)
+    appendSideBarLists(`.bg`, `background`, background);
     document.querySelector(`.bg`).append(urlFormBuild());
     sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
     appendSideBarLists(`.exclude`, `option`, exclude);
     document.querySelector(`.exclude`).append(excludeFormBuild());
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-    appendSettingsSideBarLists(`.set`, `settings`, settings)
+    appendSettingsSideBarLists(`.set`, `settings`, settings);
     content.append(basicFormBuild());
   }
   if (Value == true) {
-    if (backgroundImage.element = `container` && _main.clientWidth >= 769)
-      _container.style.width = `calc(100% + 240px)`
+    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
+      _container.style.width = `calc(100% + 240px)`;
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
         _main.style.width = `calc(100% - 240px)`;
         _progress.style.left = `240px`;
         _main.style.left = `240px`;
         _sidebar.style.left = `0`;
-        setTimeout(function() {
+        setTimeout(function () {
           _hide.style.left = `240px`;
-        }, 75)
+        }, 75);
       }, 300);
     } else
-    setTimeout(function () {
-      document.querySelector(`.sideFilter`).style.display = `block`;
-      document.querySelector(`#basic`).style.display = `block`;
-      _sidebar.style.left = `0`;
-    }, 300);
+      setTimeout(function () {
+        document.querySelector(`.sideFilter`).style.display = `block`;
+        document.querySelector(`#basic`).style.display = `block`;
+        _sidebar.style.left = `0`;
+      }, 300);
   } else if (Value == false) {
-    if (backgroundImage.element = `container` && _main.clientWidth >= 769)
-      _container.style.width = `calc(100%)`
+    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
+      _container.style.width = `calc(100%)`;
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-242px`;
@@ -203,7 +200,7 @@ var sideBarDisplay = function (Value) {
 };
 
 var topMenuBarDisplay = function (Value) {
-  if (Value == true){
+  if (Value == true) {
     _view.style.display = `block`;
     _top.style.display = `block`;
   } else if (Value == false) _top.style.display = `none`;
@@ -272,9 +269,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   if (inputFilter != ``)
     for (var i = menu.length - 1; i >= 1; i--) {
       if (menu[i].description.toLowerCase().match(inputFilter)) {
-        if (
-          suggest.length - 1 === suggestionBuffer
-        ) return false;
+        if (suggest.length - 1 === suggestionBuffer) return false;
         listing.append(
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
@@ -297,10 +292,9 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
       !matches.includes(randomMenuObject) &&
       menu[randomMenuObject].media == true
     ) {
-      matches.push(randomMenuObject)
-        if (
-          (suggest.length - 1) + (matches.length - 1) === suggestionBuffer
-        ) return false;
+      matches.push(randomMenuObject);
+      if (suggest.length - 1 + (matches.length - 1) === suggestionBuffer)
+        return false;
       listing.append(
         listingIndexBuild(
           menu[randomMenuObject].id.match(/[^\/]+$/g),
@@ -316,157 +310,154 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
 };
 
 var progressBackDrop = function (done) {
-  let width
+  let width;
   let length;
   let complete;
   if (safeSearchIDs.includes(menu[id].id))
-    width = _main.clientWidth / ((count.length - 1))
-  else width = (_main.clientWidth / ((count.length - 1) / 4))
-    complete = setInterval(function () {
-      if (
-        count.length === 0 ||
-        _progress.clientWidth >= (_main.clientWidth - 17)
-     ){
-        setTimeout(function () {
-          clearInterval(complete);
-          _progress.style.transition = `all 750ms ease-in-out`;
-          _progress.style.opacity = `0`;
-          setTimeout(function() {
-            _progress.style.width = `0%`;
-          }, 750)
-        }, 250)
-      } else if (first == true){
-        _progress.style.opacity = `1`;
-        _progress.style.transition = `all 1000ms ease-in-out`;
-        _progress.style.width = _progress.clientWidth + width;
-      }
-    }, 1000);
-    if (done == false) {
-      count.push(`null`);
-      return false;
-    }
-    if (document.body.contains(document.getElementById(`xml`)) && !post) {
-      if (document.body.contains(document.querySelector(`#xml .channel`)))
-        if (Reader == true && first == true) {
-          if (
-            _main.innerHeight >=
-            document.querySelector(`#xml .channel`).innerHeight
-          )
-            if (httpRequest.status == 200) {
-              first = false;
-              xmlRequestParsing(false, null, null, anyRandomMenuObject());
-            }
-        }
-      document.querySelector(`#xml`).style.paddingTop = `0`;
-      document.querySelector(`#xml`).style.display = `block`;
-      if (
-        !safeSearchIDs.includes(menu[id].id) &&
-        scrollIntoView == true &&
-        Reader == false &&
-        !complete
-      ) {
+    width = _main.clientWidth / (count.length - 1);
+  else width = _main.clientWidth / ((count.length - 1) / 4);
+  complete = setInterval(function () {
+    if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
+      setTimeout(function () {
         clearInterval(complete);
-        document.querySelector(
-          `#xml`
-        ).style.paddingTop = document.querySelector(`#xml`).clientHeight;
-          let Elem = document.querySelector(`#xml`);
-          Elem.animate(
-            {
-              paddingTop: [
-                `${document.querySelector(`#xml`).clientHeight}px`,
-                `0px`,
-              ],
-            },
-            {
-              duration: 500, // number in ms [this would be equiv of your speed].
-              easing: `ease-in-out`,
-              iterations: 1, // infinity or a number.
-              complete: document.querySelector(`#xml`).style.paddingTop = `0`
-              // fill: ''
-            }
-          );
-      } else if (fadeIntoView == true) {
-          (function() {
-            var elements;
-            var windowHeight;
-
-            function init() {
-              elements = document.querySelectorAll(`.image`);
-              windowHeight = _main.clientHeight;
-              for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                var positionFromTop = element.getBoundingClientRect().top;
-
-                if (positionFromTop - windowHeight <= 0) {
-                  element.querySelector(`.img`).classList.add(`fade-in-element`);
-                  element.querySelector(`.img`).classList.remove(`hidden`);
-                }
-              }
-            }
-
-            function checkPosition() {
-              for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                var positionFromTop = elements[i].getBoundingClientRect().top;
-
-                if (positionFromTop - windowHeight <= 0) {
-                    element.querySelector(`.img`).classList.add(`fade-in-element`);
-                    element.querySelector(`.img`).classList.remove(`hidden`);
-                }
-                if (fadeIntoView == false) {
-                  document
-                    .querySelectorAll(`.img`)
-                    .forEach((a) => (a.classList.remove(`hidden`)));
-                  _main.removeEventListener(`scroll`, checkPosition);
-                  _main.removeEventListener(`resize`, init);
-                }
-              }
-            }
-
-            _main.addEventListener(`scroll`, checkPosition);
-            _main.addEventListener(`resize`, init);
-            init()
-            checkPosition()
-          })();
-        }
-    }
-    if (document.body.contains(document.getElementById(`group`))) {
-      document.querySelector(`#group`).style.display = `block`;
-      if (scrollIntoView == true) {
-        document.querySelector(
-          `#group`
-        ).style.paddingTop = document.querySelector(`#group`).clientHeight;
-          let Elem = document.querySelector(`#group`);
-          Elem.animate(
-            {
-              paddingTop: [
-                `${document.querySelector(`#group`).clientHeight}px`,
-                `57px`,
-              ],
-            },
-            {
-              duration: 750, // number in ms [this would be equiv of your speed].
-              easing: `ease-in-out`,
-              iterations: 1, // infinity or a number.
-              // fill: ''
-            }
-          );
+        _progress.style.transition = `all 750ms ease-in-out`;
+        _progress.style.opacity = `0`;
         setTimeout(function () {
-          document.querySelector(`#group`).style.paddingTop = `57px`;
-          _check.style.display = `none`;
+          _progress.style.width = `0%`;
         }, 750);
-      }
-      if (onlyImages == true)
-        if (document.body.contains(document.querySelector(`.result`)))
-          _main.scrollTop = 0;
-      setTimeout(function() {
-        if (onlyImages == false) {
-          if (document.body.contains(document.querySelector(`.air`)))
-            _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        }
-        visit.style.display = `none`
-      }, 25)
+      }, 250);
+    } else if (first == true) {
+      _progress.style.opacity = `1`;
+      _progress.style.transition = `all 1000ms ease-in-out`;
+      _progress.style.width = _progress.clientWidth + width;
     }
+  }, 1000);
+  if (done == false) {
+    count.push(`null`);
+    return false;
+  }
+  if (document.body.contains(document.getElementById(`xml`)) && !post) {
+    if (document.body.contains(document.querySelector(`#xml .channel`)))
+      if (Reader == true && first == true) {
+        if (
+          _main.innerHeight >=
+          document.querySelector(`#xml .channel`).innerHeight
+        )
+          if (httpRequest.status == 200) {
+            first = false;
+            xmlRequestParsing(false, null, null, anyRandomMenuObject());
+          }
+      }
+    document.querySelector(`#xml`).style.paddingTop = `0`;
+    document.querySelector(`#xml`).style.display = `block`;
+    if (
+      !safeSearchIDs.includes(menu[id].id) &&
+      scrollIntoView == true &&
+      Reader == false &&
+      !complete
+    ) {
+      clearInterval(complete);
+      document.querySelector(`#xml`).style.paddingTop = document.querySelector(
+        `#xml`
+      ).clientHeight;
+      let Elem = document.querySelector(`#xml`);
+      Elem.animate(
+        {
+          paddingTop: [
+            `${document.querySelector(`#xml`).clientHeight}px`,
+            `0px`,
+          ],
+        },
+        {
+          duration: 500, // number in ms [this would be equiv of your speed].
+          easing: `ease-in-out`,
+          iterations: 1, // infinity or a number.
+          complete: (document.querySelector(`#xml`).style.paddingTop = `0`),
+          // fill: ''
+        }
+      );
+    } else if (fadeIntoView == true) {
+      (function () {
+        var elements;
+        var windowHeight;
+
+        function init() {
+          elements = document.querySelectorAll(`.image`);
+          windowHeight = _main.clientHeight;
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = element.getBoundingClientRect().top;
+
+            if (positionFromTop - windowHeight <= 0) {
+              element.querySelector(`.img`).classList.add(`fade-in-element`);
+              element.querySelector(`.img`).classList.remove(`hidden`);
+            }
+          }
+        }
+
+        function checkPosition() {
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = elements[i].getBoundingClientRect().top;
+
+            if (positionFromTop - windowHeight <= 0) {
+              element.querySelector(`.img`).classList.add(`fade-in-element`);
+              element.querySelector(`.img`).classList.remove(`hidden`);
+            }
+            if (fadeIntoView == false) {
+              document
+                .querySelectorAll(`.img`)
+                .forEach((a) => a.classList.remove(`hidden`));
+              _main.removeEventListener(`scroll`, checkPosition);
+              _main.removeEventListener(`resize`, init);
+            }
+          }
+        }
+
+        _main.addEventListener(`scroll`, checkPosition);
+        _main.addEventListener(`resize`, init);
+        init();
+        checkPosition();
+      })();
+    }
+  }
+  if (document.body.contains(document.getElementById(`group`))) {
+    document.querySelector(`#group`).style.display = `block`;
+    if (scrollIntoView == true) {
+      document.querySelector(
+        `#group`
+      ).style.paddingTop = document.querySelector(`#group`).clientHeight;
+      let Elem = document.querySelector(`#group`);
+      Elem.animate(
+        {
+          paddingTop: [
+            `${document.querySelector(`#group`).clientHeight}px`,
+            `57px`,
+          ],
+        },
+        {
+          duration: 750, // number in ms [this would be equiv of your speed].
+          easing: `ease-in-out`,
+          iterations: 1, // infinity or a number.
+          // fill: ''
+        }
+      );
+      setTimeout(function () {
+        document.querySelector(`#group`).style.paddingTop = `57px`;
+        _check.style.display = `none`;
+      }, 750);
+    }
+    if (onlyImages == true)
+      if (document.body.contains(document.querySelector(`.result`)))
+        _main.scrollTop = 0;
+    setTimeout(function () {
+      if (onlyImages == false) {
+        if (document.body.contains(document.querySelector(`.air`)))
+          _main.scrollTop = document.querySelector(`.air`).clientHeight;
+      }
+      visit.style.display = `none`;
+    }, 25);
+  }
   clearInterval(complete);
   _progress.style.transition = `0s`;
   _progress.style.width = `0%`;
@@ -530,7 +521,7 @@ var populateCategoryGroup = function (translation) {
   id = 0;
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
-    displayDescription(showDescription)
+    displayDescription(showDescription);
     unloading();
   }
   main.setAttribute(`tabindex`, -1);
@@ -563,7 +554,7 @@ var reverseCategoryGroup = function (translation) {
       );
     }
   }
-  displayDescription(showDescription)
+  displayDescription(showDescription);
   displayExpand(expand);
   unloading();
 };
@@ -608,21 +599,21 @@ var filterInputResponse = function (
       filter.push(menu.indexOf(menu[i]));
   }
   if (!match) match = filter[0];
-  if (filter.length == 0){
+  if (filter.length == 0) {
     xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
     document.querySelector(`body`).classList.remove(`blink`);
-    return false
+    return false;
   }
   if (initPassthrough == false || !isNumeric(match) || !isNumeric(exact)) {
     if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
     for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
   } else if (initPassthrough == true) {
-    if (isNumeric(exact)){
+    if (isNumeric(exact)) {
       xmlRequestParsing(null, null, exact);
     }
     return false;
   }
-  if (categoryBloat == true && !isNumeric(match) || !isNumeric(exact))
+  if ((categoryBloat == true && !isNumeric(match)) || !isNumeric(exact))
     populateCategoryGroup(menu[match].category);
 };
 

@@ -11,9 +11,8 @@ document.addEventListener(
     ) {
       let x = event.pageX;
       let p = (x / event.target.offsetWidth) * 100;
-      event.target.style
-      .borderImage =
-        `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
+      event.target.style.borderImage =
+      `linear-gradient(to right,rgba(147,147,147,.01) 0%,rgba(147,147,147,.75)
         ${parseInt(p)}%, rgba(147,147,147,.01) 100%)`;
       event.target.style.borderWidth = `.3px .3px .3px .3px`;
       event.target.style.borderImageSlice = `9`;
@@ -43,66 +42,62 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.classList.contains(`youtubeMedia`)) {
-      youtubeMedia = youtubeMedia != true
+      youtubeMedia = youtubeMedia != true;
       if (document.body.contains(document.querySelector(`#xml`))) {
         init();
         document.querySelector(`#xml`).remove();
         xmlRequestParsing(null, null, id);
       }
       if (youtubeMedia == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (youtubeMedia == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
     }
     if (event.target.classList.contains(`showDescription`)) {
-      showDescription = showDescription != true
-      displayDescription(showDescription)
+      showDescription = showDescription != true;
+      displayDescription(showDescription);
       if (showDescription == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (showDescription == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
     }
     if (event.target.classList.contains(`scrollIntoView`)) {
-      scrollIntoView = scrollIntoView != true
+      scrollIntoView = scrollIntoView != true;
       if (scrollIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (scrollIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
     }
     if (event.target.classList.contains(`showRipple`)) {
-      showRipple = showRipple != true
-      if (showRipple == true){
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
-      } else if (showRipple == false){
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+      showRipple = showRipple != true;
+      if (showRipple == true) {
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
+      } else if (showRipple == false) {
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
     }
     if (event.target.classList.contains(`excludeInput`)) {
-      event.target.value = ``
+      event.target.value = ``;
     }
     if (event.target.classList.contains(`urlInput`)) {
-      event.target.select()
+      event.target.select();
     }
     if (event.target.classList.contains(`resetBackground`)) {
-      if (
-        backgroundImage[0].element == `container`
-      ) {
+      if (backgroundImage[0].element == `container`) {
         _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
         _main.style.backgroundImage = `url()`;
-      } else if (
-        backgroundImage[0].element == `main`
-      ) {
+      } else if (backgroundImage[0].element == `main`) {
         _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
         _container.style.backgroundImage = `url()`;
       }
@@ -142,72 +137,69 @@ document.addEventListener(
       };
       input.click();
     }
-    if (event.target.classList.contains(`saveBackground`) &&
-        document.querySelector(`.urlInput`).value
-      .match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif|webp))/g)
+    if (
+      event.target.classList.contains(`saveBackground`) &&
+      document
+        .querySelector(`.urlInput`)
+        .value.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif|webp))/g)
     ) {
       var xhr = new XMLHttpRequest();
       var url = document.querySelector(`.urlInput`).value;
 
-      xhr.responseType = 'arraybuffer';
-      xhr.open('GET', cors + url , true);
+      xhr.responseType = "arraybuffer";
+      xhr.open("GET", cors + url, true);
 
       xhr.onreadystatechange = function () {
-          if (xhr.readyState == xhr.DONE) {
-              var file = new Blob([xhr.response], {type:'image'});
-              saveAs(
-                file,
-                document.querySelector(`.urlInput`).value
-                .match(/\b(\/.+\.(?:png|jpe?g|gif|webp))/g)
-              );
-              unloading()
-          }
+        if (xhr.readyState == xhr.DONE) {
+          var file = new Blob([xhr.response], { type: "image" });
+          saveAs(
+            file,
+            document
+              .querySelector(`.urlInput`)
+              .value.match(/\b(\/.+\.(?:png|jpe?g|gif|webp))/g)
+          );
+          unloading();
+        }
       };
 
       xhr.send();
     }
-    if (
-      event.target.classList.contains(`sideBarCenter`)
-    ) {
-      sideBarCenter = sideBarCenter != true
+    if (event.target.classList.contains(`sideBarCenter`)) {
+      sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
         _content.style.position = `relative`;
       } else if (sideBarCenter == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
         _content.style.position = `absolute`;
       }
     }
-    if (
-      event.target.classList.contains(`sideBarBackdrop`)
-    ) {
-      sideBarBackdrop = sideBarBackdrop != true
+    if (event.target.classList.contains(`sideBarBackdrop`)) {
+      sideBarBackdrop = sideBarBackdrop != true;
       if (sideBarBackdrop == false) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
         _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
       } else {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
       }
     }
-    if (
-      event.target.classList.contains(`topBarBackdrop`)
-    ) {
-      topBarBackdrop = topBarBackdrop != true
+    if (event.target.classList.contains(`topBarBackdrop`)) {
+      topBarBackdrop = topBarBackdrop != true;
       if (topBarBackdrop == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
         _top.style.cssText = `backdrop-filter: none`;
-        topMenuBarDisplay(topBar)
+        topMenuBarDisplay(topBar);
       } else {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
         _top.style.cssText = `backdrop-filter: blur(10px)`;
-        topMenuBarDisplay(topBar)
+        topMenuBarDisplay(topBar);
       }
     }
     if (event.target.classList.contains(`mainBackground`)) {
@@ -259,19 +251,16 @@ document.addEventListener(
       _container.style.backgroundImage = `none`;
       _main.style.backgroundImage = `none`;
     }
-    if (
-      event.target.id == `hide`
-    ) {
-        onScreen = onScreen != true;
-        sideBarDisplay(onScreen);
+    if (event.target.id == `hide`) {
+      onScreen = onScreen != true;
+      sideBarDisplay(onScreen);
     }
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;
-      if (showRipple == true)
-        rippleBuild(event, event.target)
-      if (_main.clientWidth <= 425){
-        onScreen = onScreen != true
+      if (showRipple == true) rippleBuild(event, event.target);
+      if (_main.clientWidth <= 425) {
+        onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       }
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
@@ -320,15 +309,15 @@ document.addEventListener(
       reader = reader != true;
       if (Reader == false) {
         justRead = false;
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
         let reader = false;
         let first = true;
         let id = 0;
         xmlChannelFooter();
       } else if (Reader == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -342,10 +331,11 @@ document.addEventListener(
         document.querySelector(`.exclude`).style.height = `31px`;
       } else {
         if (exclude.length == 0)
-          document.querySelector(`.exclude`).style.height = `75px`
+          document.querySelector(`.exclude`).style.height = `75px`;
         else
-        document.querySelector(`.exclude`).style.height =
-          `${(exclude.length * 32) + 80}px`;
+          document.querySelector(`.exclude`).style.height = `${
+            exclude.length * 32 + 80
+          }px`;
       }
     }
     if (event.target.classList.contains(`border`)) {
@@ -376,38 +366,44 @@ document.addEventListener(
       expand = true;
       groupType = `list`;
       if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove()
-      populateCategoryGroup(category)
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.Blocks`)
-          .nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.Blocks`)
-          .nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`#group`).remove();
+      populateCategoryGroup(category);
+      event.target.nextElementSibling.classList.remove(`fa-minus`);
+      event.target.nextElementSibling.classList.add(`fa-star`);
+      document
+        .querySelector(`.Blocks`)
+        .nextElementSibling.classList.remove(`fa-star`);
+      document
+        .querySelector(`.Blocks`)
+        .nextElementSibling.classList.add(`fa-minus`);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Blocks`)) {
       expand = false;
       groupType = `blocks`;
       if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove()
-      populateCategoryGroup(category)
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
-        document.querySelector(`.List`)
-          .nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector(`.List`)
-          .nextElementSibling.classList.add(`fa-minus`)
+        document.querySelector(`#group`).remove();
+      populateCategoryGroup(category);
+      event.target.nextElementSibling.classList.remove(`fa-minus`);
+      event.target.nextElementSibling.classList.add(`fa-star`);
+      document
+        .querySelector(`.List`)
+        .nextElementSibling.classList.remove(`fa-star`);
+      document
+        .querySelector(`.List`)
+        .nextElementSibling.classList.add(`fa-minus`);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
-      event.target.nextElementSibling.classList.remove(`fa-minus`)
-      event.target.nextElementSibling.classList.add(`fa-star`)
-      document.querySelector(`.Percent`)
-        .nextElementSibling.classList.remove(`fa-star`)
-      document.querySelector(`.Percent`)
-        .nextElementSibling.classList.add(`fa-minus`)
+      event.target.nextElementSibling.classList.remove(`fa-minus`);
+      event.target.nextElementSibling.classList.add(`fa-star`);
+      document
+        .querySelector(`.Percent`)
+        .nextElementSibling.classList.remove(`fa-star`);
+      document
+        .querySelector(`.Percent`)
+        .nextElementSibling.classList.add(`fa-minus`);
     }
     if (
       event.target.classList.contains(`fa-camera-retro`) ||
@@ -415,15 +411,19 @@ document.addEventListener(
     ) {
       onlyImages = onlyImages != true;
       if (onlyImages == true) {
-        document.querySelector('.onlyImages')
-          .nextElementSibling.classList.remove(`fa-minus`)
-        document.querySelector('.onlyImages')
-          .nextElementSibling.classList.add(`fa-star`)
+        document
+          .querySelector(".onlyImages")
+          .nextElementSibling.classList.remove(`fa-minus`);
+        document
+          .querySelector(".onlyImages")
+          .nextElementSibling.classList.add(`fa-star`);
       } else if (onlyImages == false) {
-        document.querySelector('.onlyImages')
-          .nextElementSibling.classList.remove(`fa-star`)
-        document.querySelector('.onlyImages')
-          .nextElementSibling.classList.add(`fa-minus`)
+        document
+          .querySelector(".onlyImages")
+          .nextElementSibling.classList.remove(`fa-star`);
+        document
+          .querySelector(".onlyImages")
+          .nextElementSibling.classList.add(`fa-minus`);
       }
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
@@ -437,46 +437,46 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
-      event.target.nextElementSibling.classList.remove(`fa-minus`)
-      event.target.nextElementSibling.classList.add(`fa-star`)
-      document.querySelector(`.Dots`)
-        .nextElementSibling.classList.remove(`fa-star`)
-      document.querySelector(`.Dots`)
-        .nextElementSibling.classList.add(`fa-minus`)
+      event.target.nextElementSibling.classList.remove(`fa-minus`);
+      event.target.nextElementSibling.classList.add(`fa-star`);
+      document
+        .querySelector(`.Dots`)
+        .nextElementSibling.classList.remove(`fa-star`);
+      document
+        .querySelector(`.Dots`)
+        .nextElementSibling.classList.add(`fa-minus`);
     }
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;
       uri.blank();
     }
-    if (
-      event.target.classList.contains(`fadeIntoView`)
-    ) {
+    if (event.target.classList.contains(`fadeIntoView`)) {
       fadeIntoView = fadeIntoView != true;
       if (fadeIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (fadeIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
       if (fadeIntoView == false) {
         document
           .querySelectorAll(`.img`)
-          .forEach((a) => (a.classList.add(`hidden`)));
+          .forEach((a) => a.classList.add(`hidden`));
       } else if (fadeIntoView == true) {
         if (document.body.contains(document.querySelector(`#xml`))) {
           document
             .querySelectorAll(`.img`)
-            .forEach((a) => (a.classList.remove(`fade-in-element`)));
+            .forEach((a) => a.classList.remove(`fade-in-element`));
           document
             .querySelectorAll(`.img`)
-            .forEach((a) => (a.classList.add(`hidden`)));
-          (function() {
+            .forEach((a) => a.classList.add(`hidden`));
+          (function () {
             var elements;
             var windowHeight;
 
             function init() {
-              elements = document.querySelectorAll('.hidden');
+              elements = document.querySelectorAll(".hidden");
               windowHeight = _main.clientHeight;
             }
 
@@ -487,48 +487,47 @@ document.addEventListener(
 
                 if (positionFromTop - windowHeight <= 0) {
                   if (fadeIntoView == true)
-                    element.classList.add('fade-in-element');
+                    element.classList.add("fade-in-element");
                   if (fadeIntoView == false) {
                     document
                       .querySelectorAll(`.img`)
-                      .forEach((a) => (a.classList.remove(`hidden`)));
+                      .forEach((a) => a.classList.remove(`hidden`));
                     _main.removeEventListener("scroll", startPosition);
                     _main.removeEventListener("resize", init);
-                    element.classList.remove('hidden');
+                    element.classList.remove("hidden");
                   }
                 }
               }
             }
 
-            _main.addEventListener('scroll', startPosition);
-            _main.addEventListener('resize', init);
+            _main.addEventListener("scroll", startPosition);
+            _main.addEventListener("resize", init);
 
             init();
             startPosition();
           })();
         }
-
       }
     }
     if (event.target.classList.contains(`topBar`)) {
       topBar = topBar != true;
       if (topBar == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (topBar == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`showOption`)) {
       showOption = showOption != true;
       if (showOption == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`)
-        event.target.nextElementSibling.classList.add(`fa-star`)
+        event.target.nextElementSibling.classList.remove(`fa-minus`);
+        event.target.nextElementSibling.classList.add(`fa-star`);
       } else if (showOption == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`)
-        event.target.nextElementSibling.classList.add(`fa-minus`)
+        event.target.nextElementSibling.classList.remove(`fa-star`);
+        event.target.nextElementSibling.classList.add(`fa-minus`);
       }
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;

@@ -6,13 +6,8 @@ document.addEventListener(
       event.target.classList.contains(`button`)
     ) {
       if (_guest.value.length > 0) {
-        topMenuBarDisplay(topBar)
-        filterInputResponse(
-          false,
-          false,
-          _guest,
-          true
-        );
+        topMenuBarDisplay(topBar);
+        filterInputResponse(false, false, _guest, true);
       }
     }
     event.preventDefault();
@@ -41,9 +36,9 @@ document.addEventListener(
         index.classList.add(`index`);
         object.classList.add(`hue`);
         text.classList.add(`text`);
-        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${
-            translations[i]
-          .grep()} sites`;
+        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${translations[
+          i
+        ].grep()} sites`;
         detail.append(object);
         detail.append(text);
         index.append(detail);
@@ -149,15 +144,15 @@ document.addEventListener(
   function (event) {
     if (event.target.classList.contains(`min`)) {
       if (document.querySelector(`.excludeInput`).value.length) {
-        exclude.push(document.querySelector(`.excludeInput`).value)
-        const has = exclude.map(a => a.toLowerCase());
+        exclude.push(document.querySelector(`.excludeInput`).value);
+        const has = exclude.map((a) => a.toLowerCase());
         if (document.body.contains(document.querySelector(`#xml`))) {
-          _main
-            .querySelectorAll(`.pub`)
-            .forEach((a) => has.filter(function(obj) {
+          _main.querySelectorAll(`.pub`).forEach((a) =>
+            has.filter(function (obj) {
               if (a.innerHTML.toLowerCase().match(obj))
-                a.closest(`.item`).remove()
-            }))
+                a.closest(`.item`).remove();
+            })
+          );
         }
         if (!_sidebar.querySelector(`.option`)) {
           let option = document.createElement(`div`);
@@ -172,8 +167,9 @@ document.addEventListener(
           option.classList.add(`option`);
           parse.parentNode.insertBefore(option, parse);
         }
-        document.querySelector(`.exclude`).style.height =
-          `${(exclude.length * 35) + 70}px`;
+        document.querySelector(`.exclude`).style.height = `${
+          exclude.length * 35 + 70
+        }px`;
       }
     } else if (event.target.classList.contains(`url`)) {
       if (document.querySelector(`.imageURL`).value.length) {
@@ -209,15 +205,15 @@ document.addEventListener(
       if (document.querySelector(`.sideFilter`).value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-      filterInputResponse(
-        false,
-        false,
-        document.querySelector(`.sideFilter`).value.space(),
-        true
-      );
-      _toggle.style.display = `none`;
-      _visit.style.display = `none`;
-      topMenuBarDisplay(topBar);
+        filterInputResponse(
+          false,
+          false,
+          document.querySelector(`.sideFilter`).value.space(),
+          true
+        );
+        _toggle.style.display = `none`;
+        _visit.style.display = `none`;
+        topMenuBarDisplay(topBar);
       }
     } else if (event.target.id == `search`) {
       if (
@@ -253,12 +249,7 @@ document.addEventListener(
       } else if (_view.value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-        filterInputResponse(
-          false,
-          false,
-          _view.value,
-          true
-        );
+        filterInputResponse(false, false, _view.value, true);
       }
       _match.style.display = `none`;
     } else if (event.target.id == `front`) {
@@ -275,13 +266,8 @@ document.addEventListener(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0) {
-        filterInputResponse(
-          false,
-          false,
-          _guest.value,
-          true
-        );
-        topMenuBarDisplay(topBar)
+        filterInputResponse(false, false, _guest.value, true);
+        topMenuBarDisplay(topBar);
       }
     }
     event.preventDefault();
@@ -459,7 +445,9 @@ var inputListingKeyup = function (Elem, keycode) {
   if (
     document.body.contains(document.querySelector(`${Elem} .listing .hover`))
   ) {
-    document.querySelector(`${Elem} .listing .hover`).setAttribute(`tabindex`, -1);
+    document
+      .querySelector(`${Elem} .listing .hover`)
+      .setAttribute(`tabindex`, -1);
     document.querySelector(`${Elem} .listing .hover`).focus();
     _guest.focus();
   }

@@ -457,11 +457,7 @@ let safeSearchIDs = [
 
 */
 
-let exclude = [
-  `Buy`,
-  `Sale`,
-  `Shop`,
-];
+let exclude = [`Buy`, `Sale`, `Shop`];
 
 /*
     cors [string]
@@ -517,24 +513,24 @@ const translations = [
 
 /* Feel free to edit the above. */
 
-let Dots
-let Percent
-let Blocks
-let List
+let Dots;
+let Percent;
+let Blocks;
+let List;
 
-if (loading == `percent`){
-  Dots = false
-  Percent = true
+if (loading == `percent`) {
+  Dots = false;
+  Percent = true;
 } else {
-  Dots = true
-  Percent = false
+  Dots = true;
+  Percent = false;
 }
 if (expand == true) {
-  Blocks = false
-  List = true
+  Blocks = false;
+  List = true;
 } else {
-  Blocks = false
-  List = true
+  Blocks = false;
+  List = true;
 }
 
 let post; //from init.js global timestamp for guide
@@ -557,9 +553,9 @@ let guideOnScreen = onScreen; //temporarly store onScreen for guide
 
 const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
-//  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
-//  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-//  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
+  //  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
+  //  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
+  //  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
@@ -579,7 +575,7 @@ const settings = [
   { name: `Show Description`, class: `showDescription` },
   { name: `Top Bar Backdrop`, class: `topBarBackdrop` },
   { name: `Sidebar Center`, class: `sideBarCenter` },
-  { name: `Sidebar Backdrop`, class: `sideBarBackdrop` }
+  { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
 ];
 
 const background = [
