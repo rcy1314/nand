@@ -8,17 +8,17 @@
   * Query Example
   > /?q=example+query
 
-  >  filter response with passthrough.
+  >  filter response with passthrough fails to xml search.
 
   * Hash Example
   > /?[hash] in list View
 
-  > /?[uX] Used in Copy Post appends time converted to base 36.
+  > /?[uX] fails to bing search.
 
   > /?[uX][base36 timestamp] loads guide.
 
   * Feed Example
-  > /?q=unique-identifier fallback to filter fails to bing search.
+  > /?q=unique-identifier fallback to filter fails to xml search.
 
   >/?q=[hash] not supported filter response.
 
