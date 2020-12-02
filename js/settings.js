@@ -172,6 +172,19 @@ let expandBackground = false;
 let showRipple = true;
 
 /*
+    showSplash [boolean/integer]
+
+      Applications
+        init.js, xmlRequestParsing
+
+      Result
+        Show Loading Splash.
+
+*/
+
+let showSplash = true;
+
+/*
     sideBarCenter [boolean/integer]
 
       Applications

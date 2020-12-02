@@ -1,37 +1,19 @@
 /* Init.js does some handling of location.
 
   * Translation Example
-  > /?q=[translations]
-
-  > /?q=technology
-
-  * Query Example
-  > /?q=example+query
-
-  >  filter response with passthrough fails to xml search.
+  > /?q=[translation]
 
   * Hash Example
-  > /?[hash] in list View
-
-  > /?[uX] fails to bing search.
-
-  > /?[uX][base36 timestamp] loads guide.
+  > /?[hash] fails to bing search.
 
   * Feed Example
-  > /?q=unique-identifier fallback to filter fails to xml search.
-
-  >/?q=[hash] not supported filter response.
-
-  >/?q=tech menu objects found filter response.
-
-  >/?q=technology translation found populate.
-
-  > /?q=abc-technology found one, unique passthrough.
-
-  > /?q=jquery not found pass through xml search.
+  > /?q=[id] multple filter fail search.
+  > /?q=[tranlsation] translation found populate.
 
 */
+
 setTimeout(function() {
+
   if (
     !location.href.match(`\\?fbclid`) &&
     !location.search.split(`?q=`)[1] &&
@@ -40,28 +22,25 @@ setTimeout(function() {
   ) {
     let i;
     let id;
-    let post;
     var uri = location.href.split(`?`)[1];
     if (uri.match(/^[a-zA-Z0-9]+$/i)) {
       id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
-      _visit.style.display = `none`;
-      _guide.style.display = `flex`;
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
-        if (i !== -1 && !post) xmlRequestParsing(null, null, i);
-        else if (i !== -1 && post) {
+        console.log(i + ` ` + isNaN(parseFloat(post)) + ` ` + !isFinite(post))
+        if (i !== -1 && isNaN(parseFloat(post)) && !isFinite(post))
+          xmlRequestParsing(null, null, i);
+        else if (i !== -1 && !isNaN(parseFloat(post)) && isFinite(post))
           filterInputResponse(true, false, menu[i].id.space(), false);
-          _guide.style.display = `flex`;
-        } else if (i === -1) {
+        else if (i === -1)
           filterInputResponse(true, false, location.href.split(`?`)[1], false);
-        }
-        guideOnScreen = onScreen;
-        youtubeMedia = true;
-        onScreen = false;
         _toggle.style.display = `none`;
-        _main.classList.add(`guide`);
+        _visit.style.display = `none`;
+        _guide.style.display = `flex`;
+        guideOnScreen = onScreen;
+        onScreen = false;
         topMenuBarDisplay(topBar);
         sideBarDisplay(onScreen);
       }, 250);
@@ -83,13 +62,14 @@ setTimeout(function() {
     }, 250);
   }
   if (isNaN(parseFloat(post)) && !isFinite(post)) sideBarDisplay(onScreen);
-  else if (!isNaN(parseFloat(post)) && isFinite(post))
+  else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
     _check.style.visibility = `visible`;
-  else if (_main.clientWidth < 768) {
+  else if (_main.clientWidth <= 768) {
     groupType = `blocks`;
     onScreen = false;
     expand = false;
     Blocks = true;
     List = false;
   }
+
 }, 50)

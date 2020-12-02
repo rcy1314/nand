@@ -5,8 +5,8 @@ var guideDisplay = function (pubArray) {
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
   _guide.append(guideBuild(pubArray[0]));
-  document.querySelector(`.sticky`).style.display = `none`;
   guideImageAttributes(pubArray[0]);
+  _main.classList.add(`guide`);
 };
 
 var guideDisplayYoutube = function (pubArray) {
@@ -15,8 +15,9 @@ var guideDisplayYoutube = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _check.style.display = `none`;
   _guide.append(guideBuildYoutube(pubArray[0]));
+  _check.style.display = `none`;
+  _main.classList.add(`guide`);
 };
 
 var xmlChannelFooter = function () {
@@ -149,7 +150,8 @@ var guideImageAttributes = function (pubArray) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
-        _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
+        if (guideSafeSearch == true)
+          _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
         _guide.querySelector(`.wrap`).style.display = `block`;
         _guide.querySelector(`.wrap`).style.height = `fit-content`;
         _guide.querySelector(`.pub`).style.height = `fit-content`;
@@ -165,8 +167,10 @@ var guideImageAttributes = function (pubArray) {
         _guide.querySelector(`.sticky`).style.top = `40px`;
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
-      _guide.querySelector(`.filterBlur`).style.top = `0`;
-      _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
+      if (guideSafeSearch == true) {
+        _guide.querySelector(`.filterBlur`).style.top = `0`;
+        _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
+      }
       _guide
         .querySelectorAll(`.img, .sticky .header`)
         .forEach(
@@ -844,14 +848,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           !safeSearchIDs.includes(menu[id].id)
         ) {
           itemImage.setAttribute(`src`, src);
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-          ).style.display = `block`;
           document
             .querySelector(
               `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
             )
             .remove();
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          ).style.display = `block`;
         }
       }
     };
@@ -892,7 +896,8 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (Reader != true && first == true) _check.style.display = `block`;
+  if (Reader != true && first == true && showSplash == false)
+    _check.style.display = `block`;
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
@@ -1008,9 +1013,10 @@ var xmlRequestParsing = function (search, string, index) {
           });
           for (i = 0; i < pub.length; i++) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
+            console.log(post)
           }
         }
-        if (isNumeric(local) && menu[index].id.match(/Youtube/g)) {
+        if (isNumeric(local) && youtubeMedia == true) {
           var sticky = [];
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),

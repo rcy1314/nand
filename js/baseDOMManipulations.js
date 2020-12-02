@@ -113,6 +113,7 @@ var guideBuild = function (pubArray) {
   filterBlur.classList.add(`filterBlur`);
   sticky.classList.add(`item`, `sticky`);
   object.classList.add(`guide`, `img`);
+  sticky.style.display = `none`;
   head.classList.add(`header`);
   image.classList.add(`image`);
   publish.classList.add(`pub`);
@@ -160,6 +161,7 @@ var guideBuildYoutube = function (pubArray) {
   sticky.classList.add(`yt`, `item`, `sticky`);
   youtube.setAttribute(`ext`, pubArray.re);
   publish.innerHTML = pubArray.title;
+  sticky.style.display = `none`;
   ago.innerHTML = pubArray.dst;
   youtube.style.width = `60vw`;
   youtube.classList.add(`src`);

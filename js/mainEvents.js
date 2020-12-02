@@ -99,7 +99,7 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `just`) {
-      _check.style.display = `block`;
+      if (showSplash == true) _check.style.display = `block`;
       document
         .querySelector(`.Reader`)
         .nextElementSibling.classList.remove(`fa-minus`);
@@ -484,7 +484,7 @@ document.addEventListener(
                   .getAttribute(`aria-item`),
               });
               if (safeSearchIDs.includes(menu[id].id))
-                _check.style.display = `block`;
+                if (showSplash == true) _check.style.display = `block`;
               guideDisplay(sticky);
             } else if (
               event.target
