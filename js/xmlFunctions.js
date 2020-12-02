@@ -496,7 +496,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .closest(`.item`)
           .remove();
     } else if (
-      !src || src == `null` &&
+      !src || src == `null` || src.match(/.webm/g) &&
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
@@ -586,22 +586,80 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                       )
                     )
-                  )
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                  ).classList.add(`blur`);
-                  document
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                    )
-                    .classList.add(`leave`);
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  ).remove();
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                  ).style.display = `block`;
-                }
+                  ) {
+                  var request = new XMLHttpRequest();
+                  request.open('GET', cors + src, true);
+                  request.responseType = 'blob';
+                  request.onload = function() {
+                      var read = new FileReader();
+                      read.readAsDataURL(request.response);
+                      read.onload =  function(e){
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        ).classList.add(`blur`);
+                        document
+                          .querySelector(
+                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                          )
+                          .classList.add(`leave`);
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                        ).remove();
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        ).setAttribute(`src`, e.target.result);
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        ).style.display = `block`;
+                      }
+                    }
+                    if (!src.match(/4cdn/g)) request.send();
+                      else {
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        ).classList.add(`blur`);
+                        document
+                          .querySelector(
+                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        ).classList.add(`leave`);
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                        ).remove();
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        ).setAttribute(`src`, src)
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        ).style.display = `block`;
+                      }
+                    }
+                  } else if (
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        )
+                      ) &&
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        )
+                      ) &&
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                        )
+                      )
+                    ) {
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      ).remove();
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      ).setAttribute(`src`, src);
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      ).style.display = `block`;
+                    }
               });
             })
             .catch((response) => {
@@ -690,6 +748,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               newImg.naturalHeight > k &&
               newImg.naturalHeight >= newImg.naturalWidth * 2
             ) {
+              itemPending.remove();
               itemImage.closest(`.image`).remove();
             } else if (newImg.naturalWidth < maximum) {
               itemImage.style.width = `180px`;
