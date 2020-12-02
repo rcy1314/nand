@@ -351,10 +351,8 @@ var progressBackDrop = function (done) {
     document.querySelector(`#xml`).style.paddingTop = `0`;
     document.querySelector(`#xml`).style.display = `block`;
     if (
-      !safeSearchIDs.includes(menu[id].id) &&
       scrollIntoView == true &&
-      Reader == false &&
-      !complete
+      Reader == false
     ) {
       clearInterval(complete);
       document.querySelector(`#xml`).style.paddingTop = document.querySelector(
