@@ -95,109 +95,109 @@
               </div>
           </div>
       </div>
+      <script>
+      let dir = "css/";
+      let ext = ".css";
+      let obj = [
+        "groupRules",
+        "guideRules",
+        "inputRules",
+        "quickFeedRules",
+        "sideBarRules",
+        "xmlRules",
+        "classRules",
+        "contentRules",
+        "animationRules",
+        "sideBarRules",
+        "classRules",
+        "mediaRules",
+        "fontIcons",
+      ];
+      for (var file of obj) {
+        let path = dir + file + ext;
+        let script = document.createElement("link");
+        script.type = "text/css";
+        script.rel = "stylesheet";
+        script.href = path;
+        document.styleSheet = script;
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+
+      let directory = "js/";
+      let extension = ".js";
+      let files = [
+        "coreDocumentObjectModels",
+        "xmlFunctions",
+        "coreHelpers",
+        "baseDOMManipulations",
+        "baseFunctions",
+        "sideBarEvents",
+        "inputEvents",
+        "FileSaver",
+        "mainEvents",
+        "xmlAssets",
+        "init",
+      ];
+
+      for (var file of files) {
+        let path = directory + file + extension;
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = path;
+        document.getElementsByTagName("head")[0].appendChild(script);
+        if (file === `xmlAssets`)
+          script.onload = (function () {
+            let startup = setInterval(function () {
+              setTimeout(function () {
+                if (typeof menu === `array`) {
+                  clearInterval(startup);
+                }
+              }, 25);
+            }, 25);
+          })();
+      }
+      let place = `js/themes/`;
+      let type = `.js`;
+      for (i = 0; i <= themes.length - 1; i++) {
+        theme = themes[i].obFn;
+        let path = place + theme + type;
+        let script = document.createElement(`script`);
+        script.type = `text/javascript`;
+        script.src = path;
+        document.getElementsByTagName(`head`)[0].appendChild(script);
+        if (set === theme)
+          script.onload = (function () {
+            let startup = setInterval(function () {
+              setTimeout(function () {
+                if (typeof eval(set) === `function`) {
+                  window[set]();
+                  clearInterval(startup);
+                }
+              }, 250);
+            }, 250);
+          })();
+      }
+      for (i = 0; i <= themes.length - 1; i++) {
+        (function (i) {
+          document.addEventListener(
+            `click`,
+            function (event) {
+              if (event.target.classList.contains(themes[i].class)) {
+                window[themes[i].class]();
+                document.querySelector(`.border`).innerHTML = themes[i].class
+              }
+            },
+            false
+          );
+        })(i);
+      }
+
+      let source = document.createElement("link");
+      source.type = "text/css";
+      source.rel = "stylesheet";
+      source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
+      document.styleSheet = source;
+      document.getElementsByTagName("head")[0].appendChild(source);
+      </script>
 </body>
-<script>
-let dir = "css/";
-let ext = ".css";
-let obj = [
-  "groupRules",
-  "guideRules",
-  "inputRules",
-  "quickFeedRules",
-  "sideBarRules",
-  "xmlRules",
-  "classRules",
-  "contentRules",
-  "animationRules",
-  "sideBarRules",
-  "classRules",
-  "mediaRules",
-  "fontIcons",
-];
-for (var file of obj) {
-  let path = dir + file + ext;
-  let script = document.createElement("link");
-  script.type = "text/css";
-  script.rel = "stylesheet";
-  script.href = path;
-  document.styleSheet = script;
-  document.getElementsByTagName("head")[0].appendChild(script);
-}
-
-let directory = "js/";
-let extension = ".js";
-let files = [
-  "coreDocumentObjectModels",
-  "xmlFunctions",
-  "coreHelpers",
-  "baseDOMManipulations",
-  "baseFunctions",
-  "sideBarEvents",
-  "inputEvents",
-  "FileSaver",
-  "mainEvents",
-  "xmlAssets",
-  "init",
-];
-
-for (var file of files) {
-  let path = directory + file + extension;
-  let script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = path;
-  document.getElementsByTagName("head")[0].appendChild(script);
-  if (file === `xmlAssets`)
-    script.onload = (function () {
-      let startup = setInterval(function () {
-        setTimeout(function () {
-          if (typeof menu === `array`) {
-            clearInterval(startup);
-          }
-        }, 25);
-      }, 25);
-    })();
-}
-let place = `js/themes/`;
-let type = `.js`;
-for (i = 0; i <= themes.length - 1; i++) {
-  theme = themes[i].obFn;
-  let path = place + theme + type;
-  let script = document.createElement(`script`);
-  script.type = `text/javascript`;
-  script.src = path;
-  document.getElementsByTagName(`head`)[0].appendChild(script);
-  if (set === theme)
-    script.onload = (function () {
-      let startup = setInterval(function () {
-        setTimeout(function () {
-          if (typeof eval(set) === `function`) {
-            window[set]();
-            clearInterval(startup);
-          }
-        }, 250);
-      }, 250);
-    })();
-}
-for (i = 0; i <= themes.length - 1; i++) {
-  (function (i) {
-    document.addEventListener(
-      `click`,
-      function (event) {
-        if (event.target.classList.contains(themes[i].class)) {
-          window[themes[i].class]();
-          document.querySelector(`.border`).innerHTML = themes[i].class
-        }
-      },
-      false
-    );
-  })(i);
-}
-
-let source = document.createElement("link");
-source.type = "text/css";
-source.rel = "stylesheet";
-source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
-document.styleSheet = source;
-document.getElementsByTagName("head")[0].appendChild(source);
-</script>
 </html>
