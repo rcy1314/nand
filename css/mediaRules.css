@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  .btn .flip-back {
+    transform: rotateX(0deg) translateZ(25px) !important;
+  }
+
   #container {
     width: calc(100% + 25px) !important;
   }
@@ -68,6 +72,7 @@
   }
 
   #hide,
+  .btn .flip-front,
   .expand .hash, .expand .des,
   #main #top #arm #option,
   #main #visit #page #quick .right,
