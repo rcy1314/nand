@@ -19,7 +19,8 @@
 
 * Nearly half XML responses have no images attached use onlyImages true.
 * safeSearch throws a couple header errors returning from offloading.
-* Heroku offloading first response ~7s.
+* Dynamic Loading inline files timeouts with Remote Hosting delays.
+* Heroku offloading first response ~7s safeSearch double.
 
 ### Configurations in js/settings.js
 
