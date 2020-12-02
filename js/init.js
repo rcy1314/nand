@@ -29,7 +29,6 @@ setTimeout(function() {
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
-        console.log(i + ` ` + isNaN(parseFloat(post)) + ` ` + !isFinite(post))
         if (i !== -1 && isNaN(parseFloat(post)) && !isFinite(post))
           xmlRequestParsing(null, null, i);
         else if (i !== -1 && !isNaN(parseFloat(post)) && isFinite(post))
