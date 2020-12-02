@@ -38,24 +38,30 @@ setTimeout(function() {
     !location.href.match(`\\?\\#`) &&
     location.href.split(`?`)[1]
   ) {
+    let i;
+    let id;
+    let post;
     var uri = location.href.split(`?`)[1];
     if (uri.match(/^[a-zA-Z0-9]+$/i)) {
-      let id = uri.slice(0, 2);
+      id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
       _visit.style.display = `none`;
       _guide.style.display = `flex`;
       setTimeout(function () {
-        let i = menu.findIndex((item) => item.hash === id);
-        if (!post) xmlRequestParsing(null, null, i);
+        if (menu.findIndex((item) => item.hash === id))
+          i = menu.findIndex((item) => item.hash === id);
+        if (i !== -1 && !post) xmlRequestParsing(null, null, i);
+        else if (i !== -1 && post) {
+          filterInputResponse(true, false, menu[i].id.space(), false);
+          _guide.style.display = `flex`;
+        } else if (i === -1) {
+          filterInputResponse(true, false, location.href.split(`?`)[1], false);
+        }
         guideOnScreen = onScreen;
         youtubeMedia = true;
         onScreen = false;
         _toggle.style.display = `none`;
         _main.classList.add(`guide`);
-        if (post) {
-          filterInputResponse(true, false, menu[i].id.space(), false);
-          _guide.style.display = `flex`;
-        }
         topMenuBarDisplay(topBar);
         sideBarDisplay(onScreen);
       }, 250);
