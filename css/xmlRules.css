@@ -101,7 +101,7 @@
   background-color: var(--hover-background-color);
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   display: flex;
   height: 270px;
   margin: 12px;

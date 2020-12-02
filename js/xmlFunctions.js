@@ -848,14 +848,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           !safeSearchIDs.includes(menu[id].id)
         ) {
           itemImage.setAttribute(`src`, src);
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-          ).style.display = `block`;
           document
             .querySelector(
               `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
             )
             .remove();
+          document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          ).style.display = `block`;
         }
       }
     };
