@@ -25,7 +25,7 @@
 
 * backgroundImage path is being overwritten in themes files.
 
-### Holidays
+### Happy Holidays
 
 <p align='center'><img src='screenshots/Holidays.gif'></p>
 
