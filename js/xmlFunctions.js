@@ -66,7 +66,7 @@ var xmlStatusSuggestions = function () {
     if (document.body.contains(_main.querySelector(`.combine`)))
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
-    for (let i = 0; i <= contentStatusBuffer; i++) {
+    for (let i = 1; i <= contentStatusBuffer; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
