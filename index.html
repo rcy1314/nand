@@ -199,7 +199,7 @@
       document.styleSheet = source;
       document.getElementsByTagName("head")[0].appendChild(source);
 
-      if (document.querySelector(`#main`).clientWidth <= 768) {
+      if (window.clientWidth <= 768) {
         groupType = `blocks`;
         onScreen = false;
         expand = false;
