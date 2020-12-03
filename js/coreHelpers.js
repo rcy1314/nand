@@ -51,6 +51,7 @@ var unloading = function () {
       .forEach((a) => (a.style.visibility = `hidden`));
     progressBackDrop(true);
   } else if (loading == `percent`) {
+    _progress.style.transition = `0`;
     _progress.style.width = `0%`;
     progressBackDrop(true);
   }
