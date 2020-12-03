@@ -35,7 +35,6 @@ const themes = [
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Nord`, class: `Nord`, icon: `fa-signature` },
   { obFn: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
-  { obFn: `Holidays`, class: `Holidays`, icon: `fa-gifts` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];

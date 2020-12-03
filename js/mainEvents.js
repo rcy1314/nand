@@ -36,8 +36,8 @@ window.onload = function () {
   _container.style.display = `block`;
   //overwriting settings.js
   if (_main.clientWidth <= 425) {
-    window[`Holidays`]();
-    set = `Holidays`;
+    window[`Night`]();
+    set = `Night`;
     return false;
   }
 };
