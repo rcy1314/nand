@@ -4,7 +4,7 @@
   > /?q=[translation]
 
   * Hash Example
-  > /?[hash] fails to bing search.
+  > /?[hash/translation] fails to bing search.
 
   * Feed Example
   > /?q=[id] multple filter fail search.
@@ -37,7 +37,6 @@ setTimeout(function() {
           filterInputResponse(true, false, location.href.split(`?`)[1], false);
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
-        _guide.style.display = `flex`;
         guideOnScreen = onScreen;
         onScreen = false;
         topMenuBarDisplay(topBar);

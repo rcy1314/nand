@@ -431,7 +431,7 @@ var progressBackDrop = function (done) {
         {
           paddingTop: [
             `${document.querySelector(`#group`).clientHeight}px`,
-            `57px`,
+            `60px`,
           ],
         },
         {
@@ -442,7 +442,9 @@ var progressBackDrop = function (done) {
         }
       );
       setTimeout(function () {
-        document.querySelector(`#group`).style.paddingTop = `57px`;
+        if (document.body.contains(document.querySelector(`.air`)))
+          _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        document.querySelector(`#group`).style.paddingTop = `60`;
         _check.style.display = `none`;
       }, 750);
     }
@@ -450,7 +452,7 @@ var progressBackDrop = function (done) {
       if (document.body.contains(document.querySelector(`.result`)))
         _main.scrollTop = 0;
     setTimeout(function () {
-      if (onlyImages == false) {
+      if (onlyImages == false && scrollIntoView == false) {
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
       }
