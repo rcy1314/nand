@@ -555,6 +555,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       ).style.paddingBottom = `30px`;
     };
     newImg.onload = function () {
+      count.shift()
       if (
         src.match(/ytimg/g) &&
         youtubeMedia == false &&
@@ -1013,7 +1014,6 @@ var xmlRequestParsing = function (search, string, index) {
           });
           for (i = 0; i < pub.length; i++) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
-            console.log(post)
           }
         }
         if (isNumeric(local) && youtubeMedia == true) {

@@ -313,10 +313,11 @@ var progressBackDrop = function (done) {
   let width;
   let length;
   let complete;
-  if (safeSearchIDs.includes(menu[id].id))
-    width = _main.clientWidth / (count.length - 1);
-  else width = _main.clientWidth / ((count.length - 1) / 4);
+  if (done == true) _progress.style.width = `100%`
   complete = setInterval(function () {
+    if (safeSearchIDs.includes(menu[id].id))
+      width = _main.clientWidth / (count.length - 1);
+    else width = _main.clientWidth / ((count.length - 1) / 4);
     if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
       setTimeout(function () {
         clearInterval(complete);
