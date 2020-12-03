@@ -897,7 +897,7 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (Reader != true && first == true && showSplash == false)
+  if (Reader == false && first == true && showSplash == true)
     _check.style.display = `block`;
 
   httpRequest = new XMLHttpRequest();
