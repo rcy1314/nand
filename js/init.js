@@ -4,7 +4,7 @@
   > /?q=[translation]
 
   * Hash Example
-  > /?[hash/translation] fails to bing search.
+  > /?[hash] fails to bing search.
 
   * Feed Example
   > /?q=[id] multple filter fail search.
