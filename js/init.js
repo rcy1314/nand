@@ -62,12 +62,5 @@ setTimeout(function() {
   if (isNaN(parseFloat(post)) && !isFinite(post)) sideBarDisplay(onScreen);
   else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
     _check.style.visibility = `visible`;
-  if (_main.clientWidth <= 768) {
-    groupType = `blocks`;
-    onScreen = false;
-    expand = false;
-    Blocks = true;
-    List = false;
-  }
 
 }, 50)

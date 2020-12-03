@@ -198,6 +198,15 @@
       source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
       document.styleSheet = source;
       document.getElementsByTagName("head")[0].appendChild(source);
+
+      if (document.querySelector(`#main`).clientWidth <= 768) {
+        groupType = `blocks`;
+        onScreen = false;
+        expand = false;
+        Blocks = true;
+        List = false;
+      }
+
       </script>
 </body>
 </html>
