@@ -338,7 +338,8 @@ document.addEventListener(
       event.target.classList.contains(`checkmark`) ||
       event.target.id == `guide`
     ) {
-      while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+      _main.classList.remove(`guide`);
+        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       sideBarFirst = true;
       onScreen = guideOnScreen;
