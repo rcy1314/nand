@@ -1,7 +1,3 @@
-var isNumeric = function (n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-};
-
 var init = function () {
   if (Reader == false) {
     if (document.body.contains(document.getElementById(`group`)))
@@ -57,10 +53,6 @@ var unloading = function () {
   }
 };
 
-var escape = function (n) {
-  return n.replace(/<.>/g, ``);
-};
-
 var truncate = function (i, n, useWordBoundary) {
   if (i.length <= n) return i;
   let subString = i.substr(0, n - 1);
@@ -102,10 +94,6 @@ String.prototype.space = function () {
 
 String.prototype.image = function () {
   return `images/webp/${this}.webp`;
-};
-
-String.prototype.hyphen = function () {
-  return this.toLowerCase().replace(/\/|\.|\s/g, `-`);
 };
 
 String.prototype.domain = function () {

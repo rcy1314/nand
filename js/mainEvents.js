@@ -358,7 +358,7 @@ document.addEventListener(
           if (location.href.match(`\\+1`))
             var query = uri[0].replace(/\+1/g, ``).space();
           else var query = uri[0].space();
-          filterInputResponse(query, true);
+          filterInputResponse(query);
         } else populateCategoryGroup(category);
         document.title = category;
         displayExpand(expand);

@@ -1,4 +1,4 @@
-function handleSwipe() {
+let handleSwipe = function () {
   if (touchendX - 50 > touchstartX) {
     onScreen = true;
     sideBarDisplay(onScreen);
@@ -8,7 +8,7 @@ function handleSwipe() {
   }
 }
 
-var displayDescription = function (Value) {
+let displayDescription = function (Value) {
   if (expand == true)
     if (Value == false) {
       if (document.body.contains(document.querySelector(`#xml`)))
@@ -37,7 +37,7 @@ var displayDescription = function (Value) {
     }
 };
 
-var displayExpand = function (Value) {
+let displayExpand = function (Value) {
   if (document.body.contains(document.querySelector(`#xml`)))
     document.querySelector(`#xml`).remove();
   if (Value == true) {
@@ -104,7 +104,7 @@ var displayExpand = function (Value) {
   }
 };
 
-var appendSideBarLists = function (Elem, Class, Arrays) {
+let appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
   for (i = 0; i <= Arrays.length - 1; i++) {
     let option = document.createElement(`div`);
@@ -119,7 +119,7 @@ var appendSideBarLists = function (Elem, Class, Arrays) {
   }
 };
 
-var appendSettingsSideBarLists = function (Elem, Class, Arrays) {
+let appendSettingsSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
   for (i = 0; i <= Arrays.length - 1; i++) {
     let option = document.createElement(`div`);
@@ -144,7 +144,7 @@ var appendSettingsSideBarLists = function (Elem, Class, Arrays) {
   }
 };
 
-var sideBarDisplay = function (Value) {
+let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
@@ -199,14 +199,14 @@ var sideBarDisplay = function (Value) {
   }
 };
 
-var topMenuBarDisplay = function (Value) {
+let topMenuBarDisplay = function (Value) {
   if (Value == true) {
     _view.style.display = `block`;
     _top.style.display = `block`;
   } else if (Value == false) _top.style.display = `none`;
 };
 
-var quickFeedDisplay = function (Value) {
+let quickFeedDisplay = function (Value) {
   if (Value == true) {
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
@@ -230,7 +230,7 @@ var quickFeedDisplay = function (Value) {
   }
 };
 
-var quickFeedAsset = function (feedAssets) {
+let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
   if (feedAssets == 7)
     for (var i = 0; i <= translations.length - 1; i++) {
@@ -260,7 +260,7 @@ var quickFeedAsset = function (feedAssets) {
     }
 };
 
-var inputListingIndex = function (inputFilter, listingWrapper) {
+let inputListingIndex = function (inputFilter, listingWrapper) {
   let matches = [];
   let suggest = [];
   let listing = document.querySelector(listingWrapper + ` .listing`);
@@ -309,7 +309,7 @@ var inputListingIndex = function (inputFilter, listingWrapper) {
   }
 };
 
-var progressBackDrop = function (done) {
+let progressBackDrop = function (done) {
   let width;
   let length;
   let complete;
@@ -465,7 +465,7 @@ var progressBackDrop = function (done) {
   }
 };
 
-var populateCategoryGroup = function (translation) {
+let populateCategoryGroup = function (translation) {
   if (scrollIntoView === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
@@ -530,7 +530,7 @@ var populateCategoryGroup = function (translation) {
   main.focus();
 };
 
-var reverseCategoryGroup = function (translation) {
+let reverseCategoryGroup = function (translation) {
   let group = document.querySelector(`#group`);
   let result = document.querySelector(`.result`);
   if (!document.body.contains(document.querySelector(`.air`))) {
@@ -561,10 +561,7 @@ var reverseCategoryGroup = function (translation) {
   unloading();
 };
 
-var filterInputResponse = function (
-  filterURI,
-  categoryBloat
-) {
+let filterInputResponse = function (filterURI) {
   if (translations.includes(filterURI.toString().capitalize())) {
     populateCategoryGroup(filterURI.toString().capitalize());
     category = filterURI.toString().capitalize();
@@ -587,13 +584,13 @@ var filterInputResponse = function (
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
-  } else if (isNumeric(match)) {
+  } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
       xmlRequestParsing(null, null, match);
-  } else if (categoryBloat == true && !isNumeric(match))
+  } else if (match === -1)
     populateCategoryGroup(menu[match].category);
 };
 
-var writeFilterResponse = function (menuObject) {
+let writeFilterResponse = function (menuObject) {
   let result = document.querySelector(`.result`);
   if (menu[menuObject].media == true)
     var media = `<div class='media' style='display:none'>Images</div>`;

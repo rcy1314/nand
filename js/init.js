@@ -32,9 +32,9 @@ setTimeout(function() {
         if (i !== -1 && isNaN(parseFloat(post)) && !isFinite(post))
           xmlRequestParsing(null, null, i);
         else if (i !== -1 && !isNaN(parseFloat(post)) && isFinite(post))
-          filterInputResponse(menu[i].id.space(), false);
+          filterInputResponse(menu[i].id.space());
         else if (i === -1)
-          filterInputResponse(location.href.split(`?`)[1], false);
+          filterInputResponse(location.href.split(`?`)[1]);
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
@@ -48,7 +48,7 @@ setTimeout(function() {
     var uri = uri.toLowerCase().space();
     _toggle.style.display = `none`;
     setTimeout(function () {
-      filterInputResponse(uri, true);
+      filterInputResponse(uri);
       topMenuBarDisplay(topBar);
     }, 250);
   } else if (!post) {

@@ -846,7 +846,7 @@ var xmlTitleParsing = function (xhr) {
   )
     var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
 
-  return escape(title);
+  return title.replace(/<.>/g, ``);
 };
 
 var xmlRequestParsing = function (search, string, index) {
@@ -996,7 +996,11 @@ var xmlRequestParsing = function (search, string, index) {
             if (parseInt(pub[i].gen, 36) == post) local = i;
           }
         }
-        if (isNumeric(local) && youtubeMedia == true) {
+        if (
+          !isNaN(parseFloat(local)) &&
+          youtubeMedia == true &&
+          isFinite(local)
+        ) {
           var sticky = [];
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),
@@ -1011,7 +1015,7 @@ var xmlRequestParsing = function (search, string, index) {
             pubIndex: local,
           });
           guideDisplayYoutube(sticky);
-        } else if (isNumeric(local)) {
+        } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
           var sticky = [];
           sticky.push({
             courtesy: pub[local].courtesy,
