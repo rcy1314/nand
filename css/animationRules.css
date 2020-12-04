@@ -266,19 +266,6 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 	--loader-initial-scale: 0.1;
 }
 
-html body #container #main #feed .center .channel .item .classic .fill .loader,
-html body #container #main #feed .center .channel .item .classic .fill .loader:after,
-html body #container #main #feed .center .channel .item .classic .fill .loader:before {
-  margin: 0 auto;
-	box-sizing: border-box;
-	flex-grow: 0;
-	flex-shrink: 0;
-}
-/*
-In order to get optimal results, please only change the
-variables above and don't change anything in the actual loader code
-*/
-
 @keyframes circle-inner {
   0% {
     transform: rotate(0);

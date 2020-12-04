@@ -23,8 +23,7 @@
 }
 
 
-#sidebar #content .fa-star,
-#sidebar #content .fas:not(.fa-home):not(.fa-exclamation-circle):not(.fa-minus):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
+#sidebar #content .fa-star {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -236,33 +235,23 @@
 }
 
 #top #arm #search #input .icon .fa-search,
-#main #visit #page #front .focus .icon .fa-search,
 #main #visit #page #front .focus .button .fa-search {
   font-family: "Font Awesome 5 Pro";
   content: "\f002";
   font-weight: 50;
 }
 
-#sidebar #content #category .cat .fa-ellipsis-h,
-#guide .sticky .header .fa-ellipsis-h,
+#container #guide .sticky .header .fa-ellipsis-h,
 #main #xml .center .channel .item .header .fa-ellipsis-h {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f141";
   font-weight: 50;
+  left: -6px;
 }
 
-#guide .sticky .header .fa-ellipsis-v,
-#main #xml .center .channel .item .header .fa-ellipsis-v {
-  font-family: "Font Awesome 5 Pro";
-  pointer-events: auto;
-  content: "\f142";
-  font-weight: 50;
-}
-
-#guide .sticky .fa-heart,
+#guide .sticky .image .fa-heart,
 #main #option .fa-heart,
-#sidebar #content .fa-heart,
 #main #xml .center .item .classic .image .fa-heart {
   color: lightcoral !important;
 }
@@ -273,7 +262,7 @@
   font-weight: 50;
 }
 
-#sidebar #content .bg .fa-cloud {
+#sidebar #content .fa-cloud {
   left: -8px;
 }
 
@@ -288,14 +277,6 @@
   content: "\f042";
   font-weight: 50;
   left: -13px;
-}
-
-#sidebar #content .fa-level-up-alt {
-  left: -5px;
-}
-
-#sidebar #content .fa-ellipsis-h {
-  left: -6px;
 }
 
 #sidebar #content .fa-th-large {
