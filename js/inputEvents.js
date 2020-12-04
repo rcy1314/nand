@@ -110,7 +110,7 @@ document.addEventListener(
     event.preventDefault();
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   `mouseout`,
   function (event) {
@@ -120,7 +120,7 @@ document.addEventListener(
         .forEach((a) => a.classList.remove(`hover`));
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   `mouseover`,
   function (event) {
@@ -128,7 +128,7 @@ document.addEventListener(
       event.target.closest(`.index`).classList.add(`hover`);
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   `keyup`,
   function (event) {
@@ -138,7 +138,7 @@ document.addEventListener(
     event.preventDefault();
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 document.addEventListener(
   `submit`,
   function (event) {
@@ -273,7 +273,7 @@ document.addEventListener(
     event.preventDefault();
   },
   false
-); //:before pseudo-elements not loaded in DOM
+);
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;

@@ -371,10 +371,19 @@ var progressBackDrop = function (done) {
           duration: 500, // number in ms [this would be equiv of your speed].
           easing: `ease-in-out`,
           iterations: 1, // infinity or a number.
-          complete: (document.querySelector(`#xml`).style.paddingTop = `0`),
           // fill: ''
         }
       );
+      if (scrollIntoView == false)
+        document.querySelector(`#xml`).style.paddingTop = `0`
+      else if (scrollIntoView == true) {
+        setTimeout(function() {
+          document.querySelector(`#xml`).style.paddingTop = `0`
+          if (reverseFeed == true)
+            document.querySelector(`#main`).scrollTop =
+            (document.querySelector(`#xml`).clientHeight / 2) + 240
+        }, 500)
+      }
     } else if (fadeIntoView == true) {
       (function () {
         var elements;
@@ -459,9 +468,6 @@ var progressBackDrop = function (done) {
       visit.style.display = `none`;
     }, 25);
   }
-  clearInterval(complete);
-  _progress.style.transition = `0s`;
-  _progress.style.width = `0%`;
 };
 
 var populateCategoryGroup = function (translation) {

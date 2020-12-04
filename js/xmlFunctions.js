@@ -475,34 +475,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let k = 5420;
   let maximum = 480;
   let jsonResponseScore;
-  if (src && src != `null` && imageDuplicate.includes(src)) {
-    if (
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
-      )
-    ) {
-      document
-        .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-        .closest(`.item`)
-        .remove();
-    }
-  } else if (
-    empty == true ||
-    (onlyImages == true &&
-      !src &&
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
-      ))
-  ) {
-    document
-      .querySelector(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-      .closest(`.item`)
-      .remove();
-  } else if (
+  if (
     !src ||
     src == `null` ||
     (src.match(/.webm|.mp4/g) &&
@@ -883,6 +856,8 @@ var xmlRequestParsing = function (search, string, index) {
   count = [];
   id = index;
   let pub = [];
+  let rev = [];
+  let image = [];
   let images = [];
   imageDuplicate = [];
   const has = exclude.map((a) => a.toLowerCase());
@@ -941,6 +916,14 @@ var xmlRequestParsing = function (search, string, index) {
             )
           );
 
+          let rcourtesy = courtesyBuild(
+            menu[index].id.match(/([^\/]+)$/g),
+            menu[index].image.image(),
+            menu[index].uri.match(
+              /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+            )
+          );
+
           if (title.length > titleTruncate)
             var more = `<div class='more'>more</div>`;
           else var more = ``;
@@ -978,6 +961,21 @@ var xmlRequestParsing = function (search, string, index) {
             html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = ``;
+            var rinline = [];
+            rinline.push({
+              dst: parse.dst,
+              externalURI: parse.externalURI,
+              courtesy: rcourtesy,
+              title: title,
+              share: share,
+              truncate: trun,
+              more: more,
+              searchExternal: cat,
+              src: src,
+              menuObject: `r${index}`,
+              pubIndex: `r${i}`,
+            });
+            rhtml = xmlHTMLBuild(rinline[0])
             var inline = [];
             inline.push({
               dst: parse.dst,
@@ -995,6 +993,20 @@ var xmlRequestParsing = function (search, string, index) {
             html = xmlHTMLBuild(inline[0]);
           }
 
+          rev.push({
+            title: title,
+            courtesy: courtesy,
+            since: parse.since,
+            dst: parse.dst,
+            gen: parse.base36,
+            re: parse.externalURI,
+            share: share,
+            more: more,
+            element: `r${i}`,
+            post: rhtml,
+            src: src,
+          });
+
           pub.push({
             title: title,
             courtesy: courtesy,
@@ -1008,7 +1020,9 @@ var xmlRequestParsing = function (search, string, index) {
             post: html,
             src: src,
           });
-
+          rev.sort(function (a, b) {
+            return b.since - a.since;
+          });
           pub.sort(function (a, b) {
             return b.since - a.since;
           });
@@ -1050,6 +1064,32 @@ var xmlRequestParsing = function (search, string, index) {
         } else if (!isNumeric(post) || !isNumeric(local)) {
           _guide.style.display = `none`;
         }
+        if (reverseFeed == true) {
+          document.querySelector(`.channel`).append(footerBuild());
+          for (i = rev.length - 1; i >= 0; i--) {
+            if (
+              has.filter(function (obj) {
+                return rev[i].title.toLowerCase().match(obj);
+              }).length > 0
+            )
+              continue;
+            if (i != local) {
+              document.querySelector(`.channel`).append(rev[i].post);
+              image.push({ element: rev[i].element, src: rev[i].src });
+              console.log(`prepend`)
+            }
+          }
+          if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+            for (i = 0; i <= image.length - 1; i++) {
+              xmlImageAttributes(false, `r${index}`, image[i].element, image[i].src);
+            }
+            unloading();
+          } else if (!safeSearchIDs.includes(menu[id].id)) {
+            for (i = 0; i <= image.length - 1; i++) {
+              xmlImageAttributes(false, `r${index}`, image[i].element, image[i].src);
+            }
+          }
+        }
         for (i = 0; i < pub.length - 1; i++) {
           if (
             has.filter(function (obj) {
@@ -1060,6 +1100,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (i != local) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
+            console.log(`append`)
           }
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
@@ -1076,8 +1117,6 @@ var xmlRequestParsing = function (search, string, index) {
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
         let recent = pub[0].dst;
-        if (Reader == false)
-          document.querySelector(`.channel`).append(footerBuild());
         if (first == false) {
           var status = document.querySelector(`.status`);
           while (status.firstChild) status.removeChild(status.lastChild);
@@ -1098,6 +1137,9 @@ var xmlRequestParsing = function (search, string, index) {
           });
         }
         document.querySelector(`#xml`).style.display = `block`;
+        if (Reader == false){
+          document.querySelector(`.channel`).append(footerBuild());
+        }
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         xmlStatusSuggestions();

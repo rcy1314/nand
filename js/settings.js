@@ -275,6 +275,19 @@ let quickFeeds = false;
 let quickFeedsTranslations = true;
 
 /*
+    reverseFeed [boolean/integer]
+
+      Applications
+        xmlRequestParsing
+
+      Result
+        feed backwards scrolling up
+
+*/
+
+let reverseFeed = true;
+
+/*
     scrollIntoView [boolean/integer]
 
       Applications
