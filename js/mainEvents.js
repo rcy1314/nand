@@ -99,6 +99,41 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
+    if (
+      event.target.classList.contains(`joi`)
+    ) {
+      id = 0;
+      first = true;
+      randomDuplicate = [];
+      _visit.style.display = `none`;
+      Reader = Reader != true;
+      if (Reader == false) {
+        sideBarStar(document.querySelector(`.Reader`), Reader);
+        justRead = false;
+        first = true;
+        id = 0;
+        xmlChannelFooter();
+      } else if (Reader == true) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
+        if (showSplash == true) _check.style.display = `block`;
+        sideBarStar(document.querySelector(`.Reader`), Reader);
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+      }
+    }
+    if (
+      event.target.classList.contains(`fa-sun`) ||
+      event.target.id == `toggle`
+    ) {
+      var iteration = themes.findIndex((item) => item.obFn === set);
+      if (iteration == themes.length - 1) iteration = -1;
+      iteration = iteration + 1;
+      set = themes[iteration].obFn;
+      console.log(set);
+      window[set]();
+    }
     if (event.target.id == `just`) {
       Reader = true;
       justRead = true;
@@ -213,33 +248,13 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       expand = expand != true;
       if (expand == false) {
-        document
-          .querySelector(`.List`)
-          .nextElementSibling.classList.remove(`fa-star`);
-        document
-          .querySelector(`.List`)
-          .nextElementSibling.classList.add(`fa-minus`);
-        document
-          .querySelector(`.Blocks`)
-          .nextElementSibling.classList.add(`fa-star`);
-        document
-          .querySelector(`.Blocks`)
-          .nextElementSibling.classList.remove(`fa-minus`);
+        sideBarStar(document.querySelector(`.Blocks`), true);
+        sideBarStar(document.querySelector(`.List`), false);
       }
       displayExpand(expand);
       if (expand == true) {
-        document
-          .querySelector(`.List`)
-          .nextElementSibling.classList.add(`fa-star`);
-        document
-          .querySelector(`.List`)
-          .nextElementSibling.classList.remove(`fa-minus`);
-        document
-          .querySelector(`.Blocks`)
-          .nextElementSibling.classList.remove(`fa-star`);
-        document
-          .querySelector(`.Blocks`)
-          .nextElementSibling.classList.add(`fa-minus`);
+        sideBarStar(document.querySelector(`.Blocks`), false);
+        sideBarStar(document.querySelector(`.List`), true);
         var groupType = `list`;
         if (showDescription == false) {
           _main

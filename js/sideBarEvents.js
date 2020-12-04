@@ -48,44 +48,20 @@ document.addEventListener(
         document.querySelector(`#xml`).remove();
         xmlRequestParsing(null, null, id);
       }
-      if (youtubeMedia == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (youtubeMedia == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
+      sideBarStar(event.target, youtubeMedia);
     }
     if (event.target.classList.contains(`showDescription`)) {
+      sideBarStar(event.target, showDescription);
       showDescription = showDescription != true;
       displayDescription(showDescription);
-      if (showDescription == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (showDescription == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
     }
     if (event.target.classList.contains(`scrollIntoView`)) {
+      sideBarStar(event.target, scrollIntoView);
       scrollIntoView = scrollIntoView != true;
-      if (scrollIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (scrollIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
     }
     if (event.target.classList.contains(`showRipple`)) {
+      sideBarStar(event.target, showRipple);
       showRipple = showRipple != true;
-      if (showRipple == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (showRipple == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
     }
     if (event.target.classList.contains(`excludeInput`)) {
       event.target.value = ``;
@@ -167,38 +143,32 @@ document.addEventListener(
     if (event.target.classList.contains(`sideBarCenter`)) {
       sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
+        sideBarStar(event.target, sideBarCenter);
         _content.style.position = `relative`;
       } else if (sideBarCenter == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
+        sideBarStar(event.target, sideBarCenter);
         _content.style.position = `absolute`;
       }
     }
     if (event.target.classList.contains(`sideBarBackdrop`)) {
       sideBarBackdrop = sideBarBackdrop != true;
       if (sideBarBackdrop == false) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
         _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
+        sideBarStar(event.target, sideBarBackdrop);
       } else {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
+        sideBarStar(event.target, sideBarBackdrop);
       }
     }
     if (event.target.classList.contains(`topBarBackdrop`)) {
       topBarBackdrop = topBarBackdrop != true;
       if (topBarBackdrop == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
         _top.style.cssText = `backdrop-filter: none`;
+        sideBarStar(event.target, topBarBackdrop);
         topMenuBarDisplay(topBar);
       } else {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
         _top.style.cssText = `backdrop-filter: blur(10px)`;
+        sideBarStar(event.target, topBarBackdrop);
         topMenuBarDisplay(topBar);
       }
     }
@@ -301,27 +271,28 @@ document.addEventListener(
       quickFeedDisplay(quickFeeds);
       document.title = ``;
     }
-    if (event.target.classList.contains(`Reader`)) {
+    if (
+      !event.target.classList.contains(`fa-heart`) &&
+      event.target.classList.contains(`Reader`)
+    ) {
       id = 0;
       first = true;
       randomDuplicate = [];
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {
+        sideBarStar(event.target, Reader);
         justRead = false;
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
         first = true;
         id = 0;
         xmlChannelFooter();
       } else if (Reader == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         xmlRequestParsing(null, null, anyRandomMenuObject());
+        sideBarStar(event.target, Reader);
       }
     }
     if (event.target.classList.contains(`parse`)) {
@@ -366,14 +337,8 @@ document.addEventListener(
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
       populateCategoryGroup(category);
-      event.target.nextElementSibling.classList.remove(`fa-minus`);
-      event.target.nextElementSibling.classList.add(`fa-star`);
-      document
-        .querySelector(`.Blocks`)
-        .nextElementSibling.classList.remove(`fa-star`);
-      document
-        .querySelector(`.Blocks`)
-        .nextElementSibling.classList.add(`fa-minus`);
+      sideBarStar(document.querySelector(`.Blocks`), false);
+      sideBarStar(event.target, List);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Blocks`)) {
@@ -381,48 +346,22 @@ document.addEventListener(
       groupType = `blocks`;
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
+      sideBarStar(document.querySelector(`.List`), false);
+      sideBarStar(event.target, true);
       populateCategoryGroup(category);
-      event.target.nextElementSibling.classList.remove(`fa-minus`);
-      event.target.nextElementSibling.classList.add(`fa-star`);
-      document
-        .querySelector(`.List`)
-        .nextElementSibling.classList.remove(`fa-star`);
-      document
-        .querySelector(`.List`)
-        .nextElementSibling.classList.add(`fa-minus`);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`Dots`)) {
       loading = `dots`;
-      event.target.nextElementSibling.classList.remove(`fa-minus`);
-      event.target.nextElementSibling.classList.add(`fa-star`);
-      document
-        .querySelector(`.Percent`)
-        .nextElementSibling.classList.remove(`fa-star`);
-      document
-        .querySelector(`.Percent`)
-        .nextElementSibling.classList.add(`fa-minus`);
+      sideBarStar(event.target, true);
+      sideBarStar(document.querySelector(`.Percent`), false);
     }
     if (
       event.target.classList.contains(`fa-camera-retro`) ||
       event.target.classList.contains(`onlyImages`)
     ) {
       onlyImages = onlyImages != true;
-      if (onlyImages == true) {
-        document
-          .querySelector(".onlyImages")
-          .nextElementSibling.classList.remove(`fa-minus`);
-        document
-          .querySelector(".onlyImages")
-          .nextElementSibling.classList.add(`fa-star`);
-      } else if (onlyImages == false) {
-        document
-          .querySelector(".onlyImages")
-          .nextElementSibling.classList.remove(`fa-star`);
-        document
-          .querySelector(".onlyImages")
-          .nextElementSibling.classList.add(`fa-minus`);
-      }
+      sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
@@ -435,14 +374,8 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
-      event.target.nextElementSibling.classList.remove(`fa-minus`);
-      event.target.nextElementSibling.classList.add(`fa-star`);
-      document
-        .querySelector(`.Dots`)
-        .nextElementSibling.classList.remove(`fa-star`);
-      document
-        .querySelector(`.Dots`)
-        .nextElementSibling.classList.add(`fa-minus`);
+      sideBarStar(event.target, Percent);
+      sideBarStar(document.querySelector(`.Dots`), false);
     }
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;
@@ -450,13 +383,7 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`fadeIntoView`)) {
       fadeIntoView = fadeIntoView != true;
-      if (fadeIntoView == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (fadeIntoView == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
+      sideBarStar(event.target, fadeIntoView);
       if (fadeIntoView == false) {
         document
           .querySelectorAll(`.img`)
@@ -502,24 +429,12 @@ document.addEventListener(
     }
     if (event.target.classList.contains(`topBar`)) {
       topBar = topBar != true;
-      if (topBar == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (topBar == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
+      sideBarStar(event.target, topBar);
       topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`showOption`)) {
       showOption = showOption != true;
-      if (showOption == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (showOption == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
+      sideBarStar(event.target, showOption);
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;
       else if (showOption == true)
@@ -555,17 +470,6 @@ document.addEventListener(
       }
       var randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
       xmlRequestParsing(null, null, randomMenuObject);
-    }
-    if (
-      event.target.classList.contains(`fa-sun`) ||
-      event.target.id == `toggle`
-    ) {
-      var iteration = themes.findIndex((item) => item.obFn === set);
-      if (iteration == themes.length - 1) iteration = -1;
-      iteration = iteration + 1;
-      set = themes[iteration].obFn;
-      console.log(set);
-      window[set]();
     }
     event.preventDefault();
   },

@@ -1,3 +1,13 @@
+let sideBarStar = function (Elem, Value) {
+  if (Value) {
+    Elem.nextElementSibling.classList.remove(`fa-minus`)
+    Elem.nextElementSibling.classList.add(`fa-star`)
+  } else if (Value == false) {
+    Elem.nextElementSibling.classList.remove(`fa-star`)
+    Elem.nextElementSibling.classList.add(`fa-minus`)
+  }
+}
+
 let displayDescription = function (Value) {
   if (expand == true)
     if (Value == false) {
