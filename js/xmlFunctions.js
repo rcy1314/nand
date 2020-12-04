@@ -1027,7 +1027,6 @@ var xmlRequestParsing = function (search, string, index) {
             menuObject: index,
             pubIndex: local,
           });
-          document.querySelector(`#xml`).style.display = `none`;
           guideDisplay(sticky);
         } else if (
           isNaN(parseFloat(local)) && isFinite(local) &&
@@ -1080,7 +1079,6 @@ var xmlRequestParsing = function (search, string, index) {
             behavior: `smooth`,
           });
         }
-        document.querySelector(`#xml`).style.display = `block`;
         if (Reader == false){
           document.querySelector(`.channel`).append(footerBuild());
         }

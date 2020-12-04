@@ -154,7 +154,7 @@ html body,
 }
 
 #main #dots .fill {
-  background-color: var(--bg-color-primary) !important;
+  background-color: var(--fill-color-primary) !important;
   visibility: hidden;
   z-index: -12;
   left: -4px;

@@ -15,23 +15,24 @@ window.onload = function () {
   _main.style.backgroundPosition = `${backgroundImage[0].position}`;
   _container.style.backgroundSize = `${backgroundImage[0].size}`;
   _main.style.backgroundSize = `${backgroundImage[0].size}`;
-
-  if (expandBackground == true)
-    document.querySelector(`.bg`).style.height = `${
-      (background.length + 1) * 35
-    }px`;
-  if (expandSettings == true)
-    document.querySelector(`.set`).style.height = `${
-      (settings.length + 1) * 35
-    }px`;
-  if (expandVisual == true)
-    document.querySelector(`.themes`).style.height = `${
-      (themes.length + 1) * 35
-    }px`;
-  if (expandFilter == true)
-    document.querySelector(`.exclude`).style.height = `${
-      exclude.length * 34.25 + 75
-    }px`;
+  setTimeout(function () {
+    if (expandBackground == true)
+      document.querySelector(`.bg`).style.height = `${
+        (background.length + 1) * 35
+      }px`;
+    if (expandSettings == true)
+      document.querySelector(`.set`).style.height = `${
+        (settings.length + 1) * 35
+      }px`;
+    if (expandVisual == true)
+      document.querySelector(`.themes`).style.height = `${
+        (themes.length + 1) * 35
+      }px`;
+    if (expandFilter == true)
+      document.querySelector(`.exclude`).style.height = `${
+        exclude.length * 34.25 + 75
+      }px`;
+  }, 250)
 
   _container.style.display = `block`;
   //overwriting settings.js

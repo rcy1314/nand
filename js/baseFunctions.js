@@ -92,29 +92,31 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (done == true) _progress.style.width = `100%`
-  complete = setInterval(function () {
-    if (safeSearchIDs.includes(menu[id].id))
-      width = _main.clientWidth / (count.length - 1);
-    else width = _main.clientWidth / ((count.length - 1) / 4);
-    if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
-      setTimeout(function () {
-        clearInterval(complete);
-        _progress.style.transition = `0`;
-        _progress.style.width = `100%`;
-        _progress.style.transition = `all 750ms ease-in-out`;
-        _progress.style.opacity = `0`;
+  if (done == true && loading == `percent`) _progress.style.width = `100%`
+  if (loading == `percent`) {
+    complete = setInterval(function () {
+      if (safeSearchIDs.includes(menu[id].id))
+        width = _main.clientWidth / (count.length - 1);
+      else width = _main.clientWidth / ((count.length - 1) / 4);
+      if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
         setTimeout(function () {
+          clearInterval(complete);
           _progress.style.transition = `0`;
-          _progress.style.width = `0%`;
-        }, 750);
-      }, 250);
-    } else if (first == true) {
-      _progress.style.opacity = `1`;
-      _progress.style.transition = `all 1000ms ease-in-out`;
-      _progress.style.width = _progress.clientWidth + width;
-    }
-  }, 1000);
+          _progress.style.width = `100%`;
+          _progress.style.transition = `all 750ms ease-in-out`;
+          _progress.style.opacity = `0`;
+          setTimeout(function () {
+            _progress.style.transition = `0`;
+            _progress.style.width = `0%`;
+          }, 750);
+        }, 250);
+      } else if (first == true) {
+        _progress.style.opacity = `1`;
+        _progress.style.transition = `all 1000ms ease-in-out`;
+        _progress.style.width = _progress.clientWidth + width;
+      }
+    }, 1000);
+  }
   if (done == false) {
     count.push(`null`);
     return false;
@@ -155,6 +157,8 @@ let progressBackDrop = function (done) {
           // fill: ''
         }
       );
+      if (loading == `dots`)
+        document.querySelector(`.center`).style.paddingTop = `90px`
     } else if (fadeIntoView == true) {
       (function () {
         let elements;

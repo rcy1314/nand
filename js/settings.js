@@ -89,7 +89,7 @@ let Reader = false;
 
 */
 
-let onScreen = false;
+let onScreen = true;
 
 /*
     expand [boolean/integer]
@@ -142,7 +142,7 @@ let expandFilter = false;
 
 */
 
-let expandSettings = false;
+let expandSettings = true;
 
 /*
     expandBackground [boolean/integer]

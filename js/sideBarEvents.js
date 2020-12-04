@@ -300,7 +300,6 @@ document.addEventListener(
       _feed.scrollLeft = 0;
       quickFeedDisplay(quickFeeds);
       document.title = ``;
-      unloading();
     }
     if (event.target.classList.contains(`Reader`)) {
       id = 0;
