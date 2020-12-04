@@ -183,7 +183,11 @@ let progressBackDrop = function (done) {
           }
         }
         _main.addEventListener(`scroll`, checkPosition);
-        checkPosition();
+        if (scrollIntoView)
+          setTimeout(function() {
+            checkPosition();
+          }, 550)
+        else checkPosition();
       })();
     }
   }
