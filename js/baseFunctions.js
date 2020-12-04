@@ -159,24 +159,16 @@ let progressBackDrop = function (done) {
       );
       if (loading == `dots`)
         document.querySelector(`.center`).style.paddingTop = `90px`
-    } else if (fadeIntoView == true) {
+    }
+    if (fadeIntoView == true) {
       (function () {
-        let elements;
-        function init() {
-          elements = document.querySelectorAll(`.image`);
-          for (let i = 0; i < elements.length; i++) {
-            if (
-              elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
-            ) {
-              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
-              elements[i].querySelector(`.img`).classList.remove(`hidden`);
-            }
-          }
-        }
         function checkPosition() {
+          let elements = document.querySelectorAll(`.image`);
           for (let i = 0; i < elements.length; i++) {
             if (
-              elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
+              elements[i].getBoundingClientRect().top -
+              _main.clientHeight <=
+              0
             ) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
@@ -191,8 +183,6 @@ let progressBackDrop = function (done) {
           }
         }
         _main.addEventListener(`scroll`, checkPosition);
-        _main.addEventListener(`resize`, init);
-        init();
         checkPosition();
       })();
     }

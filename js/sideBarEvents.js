@@ -387,7 +387,7 @@ document.addEventListener(
       if (fadeIntoView == false) {
         document
           .querySelectorAll(`.img`)
-          .forEach((a) => a.classList.add(`hidden`));
+          .forEach((a) => a.classList.remove(`hidden`));
       } else if (fadeIntoView == true) {
         if (document.body.contains(document.querySelector(`#xml`))) {
           document
@@ -397,31 +397,26 @@ document.addEventListener(
             .querySelectorAll(`.img`)
             .forEach((a) => a.classList.add(`hidden`));
           (function () {
-            let elements;
-            function init() {
-              elements = document.querySelectorAll(".hidden");
-            }
             function startPosition() {
+              let elements = document.querySelectorAll(".img");
               for (var i = 0; i < elements.length - 1; i++) {
                 if (
                   elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
                 ) {
-                  if (fadeIntoView == true)
+                  if (fadeIntoView == true) {
                     elements[i].classList.add("fade-in-element");
+                    elements[i].classList.remove("hidden");
+                  }
                   if (fadeIntoView == false) {
                     document
                       .querySelectorAll(`.img`)
                       .forEach((a) => a.classList.remove(`hidden`));
                     _main.removeEventListener("scroll", startPosition);
-                    _main.removeEventListener("resize", init);
-                    elements[i].classList.remove("hidden");
                   }
                 }
               }
             }
             _main.addEventListener("scroll", startPosition);
-            _main.addEventListener("resize", init);
-            init();
             startPosition();
           })();
         }

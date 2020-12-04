@@ -89,7 +89,7 @@ let Reader = false;
 
 */
 
-let onScreen = false;
+let onScreen = true;
 
 /*
     expand [boolean/integer]
@@ -311,7 +311,7 @@ let scrollIntoView = true;
 
 */
 
-let fadeIntoView = false;
+let fadeIntoView = true;
 
 /*
     loading [string]
