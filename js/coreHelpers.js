@@ -1,8 +1,6 @@
 var init = function () {
-  if (Reader == false) {
-    if (document.body.contains(document.getElementById(`group`)))
-      document.querySelector(`#group`).remove();
-  }
+  if (document.body.contains(document.getElementById(`group`)))
+    document.querySelector(`#group`).remove();
   if (loading == `dots`) {
     document
       .querySelectorAll(`#dots .fill`)
@@ -79,25 +77,12 @@ var anyRandomMenuObject = function () {
   if (menu[randomObject]) randomDuplicate.push(randomObject);
   if (menu[randomObject] && !randomDuplicate.includes(menu[randomObject]))
     randomObject = menu.indexOf(randomObject);
-  else if (justRead == false) {
+  else if (justRead == false)
     randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  } else if (justRead == true) {
+  else if (justRead == true)
     randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-  }
   randomObject = menu.indexOf(randomObject);
   return randomObject;
-};
-
-String.prototype.space = function () {
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
-};
-
-String.prototype.image = function () {
-  return `images/webp/${this}.webp`;
-};
-
-String.prototype.domain = function () {
-  return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g);
 };
 
 String.prototype.zulu = function () {
@@ -118,22 +103,6 @@ String.prototype.zulu = function () {
   return dmz;
 };
 
-String.prototype.capitalize = function () {
-  return this.replace(/(\b[a-z](?!\s))/g, function (string) {
-    return string.toUpperCase();
-  });
-};
-
-String.prototype.grep = function (string) {
-  var string = this;
-  let count = [];
-  if (onlyImages == true) {
-    return menu.filter((a) => a.category == string && a.media == true).length;
-  } else if (onlyImages == false) {
-    return menu.filter((a) => a.category == string).length;
-  }
-};
-
 String.prototype.moment = function () {
   let age = new Date();
   let utc = new Date(this);
@@ -152,6 +121,34 @@ String.prototype.moment = function () {
   let y = m / 121;
 
   return `${parseInt(y)} year ${parseInt(y) > 1 ? `s` : ``}`;
+};
+
+String.prototype.grep = function (string) {
+  var string = this;
+  let count = [];
+  if (onlyImages == true) {
+    return menu.filter((a) => a.category == string && a.media == true).length;
+  } else if (onlyImages == false) {
+    return menu.filter((a) => a.category == string).length;
+  }
+};
+
+String.prototype.space = function () {
+  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
+};
+
+String.prototype.image = function () {
+  return `images/webp/${this}.webp`;
+};
+
+String.prototype.domain = function () {
+  return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g);
+};
+
+String.prototype.capitalize = function () {
+  return this.replace(/(\b[a-z](?!\s))/g, function (string) {
+    return string.toUpperCase();
+  });
 };
 
 String.prototype.state = function () {

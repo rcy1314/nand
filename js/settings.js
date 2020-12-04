@@ -259,7 +259,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = false;
+let quickFeeds = true;
 
 /*
     quickFeedsTranslations [boolean/integer]
