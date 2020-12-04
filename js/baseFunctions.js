@@ -321,7 +321,7 @@ var progressBackDrop = function (done) {
     if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
       setTimeout(function () {
         clearInterval(complete);
-        _progress.style.transition = `all 750ms ease-in-out`;
+        _progress.style.transition = `0`;
         _progress.style.opacity = `0`;
         setTimeout(function () {
           _progress.style.width = `0%`;
@@ -381,7 +381,7 @@ var progressBackDrop = function (done) {
           document.querySelector(`#xml`).style.paddingTop = `0`
           if (reverseFeed == true)
             document.querySelector(`#main`).scrollTop =
-            (document.querySelector(`#xml`).clientHeight / 2) + 240
+            (document.querySelector(`#xml`).clientHeight / 2) + 380
         }, 500)
       }
     } else if (fadeIntoView == true) {

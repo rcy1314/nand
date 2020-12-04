@@ -263,8 +263,8 @@
 #main #xml .center #bottom {
   background-color: transparent;
   justify-content: center;
+  padding-bottom: 40px;
   align-items: center;
-  padding-bottom: 9em;
   position: relative;
   font-size: 12px;
   display: flex;
