@@ -89,7 +89,7 @@ let Reader = false;
 
 */
 
-let onScreen = true;
+let onScreen = false;
 
 /*
     expand [boolean/integer]

@@ -1,9 +1,5 @@
-#main #visit #page #front {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  z-index: 2;
-  height: 0;
+input[type=submit] {
+  display: none;
 }
 
 #main #top #arm #search {
@@ -11,6 +7,14 @@
   height: 57px;
   width: 100%;
   margin: 0;
+}
+
+#main #visit #page #front {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  z-index: 2;
+  height: 0;
 }
 
 #main #visit #page #front #first {
@@ -224,10 +228,6 @@
   top: 25px;
 }
 
-input[type=submit] {
-  display: none;
-}
-
 #main #top #arm #search #match .listing {
   scrollbar-width: none;
   position: relative;
@@ -253,6 +253,13 @@ input[type=submit] {
   left: -2px;
 }
 
+#main #top #arm #search #match .listing .index .hue,
+#main #visit #page #front #first .listing .index .hue,
+#main #top #arm #search #match .listing .hover .hue,
+#main #visit #page #front #first .listing .hover .hue {
+  filter: var(--filter);
+}
+
 #main #top #arm #search #match .listing .index,
 #main #visit #page #front #first .listing .index {
   background-color: transparent;
@@ -261,13 +268,6 @@ input[type=submit] {
   position: relative;
   font-size: 12px;
   height: 53px;
-}
-
-#main #top #arm #search #match .listing .index .hue,
-#main #visit #page #front #first .listing .index .hue,
-#main #top #arm #search #match .listing .hover .hue,
-#main #visit #page #front #first .listing .hover .hue {
-  filter: var(--filter);
 }
 
 #main #top #arm #search #match .listing .hover,

@@ -1,5 +1,6 @@
 #main #xml {
   background-color: var(--borderless-hover-color);
+  image-rendering: optimizeSpeed;
   padding-bottom: 85px;
   height: fit-content;
   position: absolute;

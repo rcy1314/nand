@@ -3,12 +3,9 @@
   display: none;
 }
 
-.blur,
-#container #guide {
+#container #guide.
+#container #guide .blur {
   background-color: var(--sticky-background);
-  -webkit-backdrop-filter: blur(25px);
-  image-rendering: optimizeSpeed;
-  backdrop-filter: blur(25px);
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -20,6 +17,7 @@
 }
 
 #container #guide .blur {
+  backdrop-filter: blur(25px);
   position: absolute;
   z-index: 0;
 }
