@@ -41,16 +41,6 @@ document.addEventListener(
 document.addEventListener(
   `click`,
   function (event) {
-    if (event.target.classList.contains(`reverseFeed`)) {
-      reverseFeed = reverseFeed != true;
-      if (reverseFeed == true) {
-        event.target.nextElementSibling.classList.remove(`fa-minus`);
-        event.target.nextElementSibling.classList.add(`fa-star`);
-      } else if (reverseFeed == false) {
-        event.target.nextElementSibling.classList.remove(`fa-star`);
-        event.target.nextElementSibling.classList.add(`fa-minus`);
-      }
-    }
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true;
       if (document.body.contains(document.querySelector(`#xml`))) {

@@ -856,7 +856,6 @@ var xmlRequestParsing = function (search, string, index) {
   count = [];
   id = index;
   let pub = [];
-  let rev = [];
   let image = [];
   let images = [];
   imageDuplicate = [];
@@ -961,21 +960,6 @@ var xmlRequestParsing = function (search, string, index) {
             html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = ``;
-            var rinline = [];
-            rinline.push({
-              dst: parse.dst,
-              externalURI: parse.externalURI,
-              courtesy: rcourtesy,
-              title: title,
-              share: share,
-              truncate: trun,
-              more: more,
-              searchExternal: cat,
-              src: src,
-              menuObject: `r${index}`,
-              pubIndex: `r${i}`,
-            });
-            rhtml = xmlHTMLBuild(rinline[0])
             var inline = [];
             inline.push({
               dst: parse.dst,
@@ -992,21 +976,6 @@ var xmlRequestParsing = function (search, string, index) {
             });
             html = xmlHTMLBuild(inline[0]);
           }
-
-          rev.push({
-            title: title,
-            courtesy: courtesy,
-            since: parse.since,
-            dst: parse.dst,
-            gen: parse.base36,
-            re: parse.externalURI,
-            share: share,
-            more: more,
-            element: `r${i}`,
-            post: rhtml,
-            src: src,
-          });
-
           pub.push({
             title: title,
             courtesy: courtesy,
@@ -1019,9 +988,6 @@ var xmlRequestParsing = function (search, string, index) {
             element: i,
             post: html,
             src: src,
-          });
-          rev.sort(function (a, b) {
-            return b.since - a.since;
           });
           pub.sort(function (a, b) {
             return b.since - a.since;
@@ -1063,32 +1029,6 @@ var xmlRequestParsing = function (search, string, index) {
           guideDisplay(sticky);
         } else if (!isNumeric(post) || !isNumeric(local)) {
           _guide.style.display = `none`;
-        }
-        if (reverseFeed == true) {
-          document.querySelector(`.channel`).append(footerBuild());
-          for (i = rev.length - 1; i >= 0; i--) {
-            if (
-              has.filter(function (obj) {
-                return rev[i].title.toLowerCase().match(obj);
-              }).length > 0
-            )
-              continue;
-            if (i != local) {
-              document.querySelector(`.channel`).append(rev[i].post);
-              image.push({ element: rev[i].element, src: rev[i].src });
-              console.log(`prepend`)
-            }
-          }
-          if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-            for (i = 0; i <= image.length - 1; i++) {
-              xmlImageAttributes(false, `r${index}`, image[i].element, image[i].src);
-            }
-            unloading();
-          } else if (!safeSearchIDs.includes(menu[id].id)) {
-            for (i = 0; i <= image.length - 1; i++) {
-              xmlImageAttributes(false, `r${index}`, image[i].element, image[i].src);
-            }
-          }
         }
         for (i = 0; i < pub.length - 1; i++) {
           if (
@@ -1146,7 +1086,6 @@ var xmlRequestParsing = function (search, string, index) {
       } else {
         xmlRequestParsing(null, null, id);
       }
-      document.querySelector(`#xml`).style.display = `block`;
       if (!post) _check.style.display = `none`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();

@@ -594,7 +594,6 @@ const settings = [
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
   { name: `Youtube Media`, class: `youtubeMedia` },
-  { name: `Reverse Feed`, class: `reverseFeed` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },
