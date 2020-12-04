@@ -470,37 +470,30 @@ document.addEventListener(
             .querySelectorAll(`.img`)
             .forEach((a) => a.classList.add(`hidden`));
           (function () {
-            var elements;
-            var windowHeight;
-
+            let elements;
             function init() {
               elements = document.querySelectorAll(".hidden");
-              windowHeight = _main.clientHeight;
             }
-
             function startPosition() {
-              for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                var positionFromTop = elements[i].getBoundingClientRect().top;
-
-                if (positionFromTop - windowHeight <= 0) {
+              for (var i = 0; i < elements.length - 1; i++) {
+                if (
+                  elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
+                ) {
                   if (fadeIntoView == true)
-                    element.classList.add("fade-in-element");
+                    elements[i].classList.add("fade-in-element");
                   if (fadeIntoView == false) {
                     document
                       .querySelectorAll(`.img`)
                       .forEach((a) => a.classList.remove(`hidden`));
                     _main.removeEventListener("scroll", startPosition);
                     _main.removeEventListener("resize", init);
-                    element.classList.remove("hidden");
+                    elements[i].classList.remove("hidden");
                   }
                 }
               }
             }
-
             _main.addEventListener("scroll", startPosition);
             _main.addEventListener("resize", init);
-
             init();
             startPosition();
           })();

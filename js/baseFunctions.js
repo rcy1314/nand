@@ -162,7 +162,6 @@ let progressBackDrop = function (done) {
     } else if (fadeIntoView == true) {
       (function () {
         let elements;
-
         function init() {
           elements = document.querySelectorAll(`.image`);
           for (let i = 0; i < elements.length; i++) {
@@ -174,7 +173,6 @@ let progressBackDrop = function (done) {
             }
           }
         }
-
         function checkPosition() {
           for (let i = 0; i < elements.length; i++) {
             if (
@@ -192,7 +190,6 @@ let progressBackDrop = function (done) {
             }
           }
         }
-
         _main.addEventListener(`scroll`, checkPosition);
         _main.addEventListener(`resize`, init);
         init();
