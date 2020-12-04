@@ -182,17 +182,17 @@ var guideImageAttributes = function (pubArray) {
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `80vh`));
-        _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `calc(70vw - 220px)`));
-      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `70vh`));
+          .forEach((a) => (a.style.maxHeight = `90vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `calc(40vw - 220px)`));
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxHeight = `90vh`));
+        _guide
+          .querySelectorAll(`.img, .filterBlur`)
+          .forEach((a) => (a.style.maxWidth = `calc(55vw - 220px)`));
       }
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
