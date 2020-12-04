@@ -1,4 +1,4 @@
-var rippleBuild = function (ev, Elem) {
+let rippleBuild = function (ev, Elem) {
   const button = Elem.getBoundingClientRect();
   const circle = document.createElement(`span`);
   const diameter = Math.max(Elem.clientWidth, Elem.clientHeight);
@@ -13,7 +13,7 @@ var rippleBuild = function (ev, Elem) {
   }, 500);
   Elem.appendChild(circle);
 };
-var sideBarTranslationBuild = function (translation) {
+let sideBarTranslationBuild = function (translation) {
   let category = document.createElement(`div`);
   category.setAttribute(`aria-item`, translation);
   category.classList.add(`cat`, translation);
@@ -21,7 +21,7 @@ var sideBarTranslationBuild = function (translation) {
   return category;
 };
 
-var groupBuild = function () {
+let groupBuild = function () {
   let result = document.createElement(`div`);
   let group = document.createElement(`div`);
   result.classList.add(`result`);
@@ -30,7 +30,7 @@ var groupBuild = function () {
   _main.append(group);
 };
 
-var stageBuild = function () {
+let stageBuild = function () {
   let suggestions = document.createElement(`div`);
   let channel = document.createElement(`div`);
   let content = document.createElement(`div`);
@@ -51,7 +51,7 @@ var stageBuild = function () {
   return xml;
 };
 
-var footerBuild = function () {
+let footerBuild = function () {
   let backward = document.createElement(`span`);
   let previous = document.createElement(`div`);
   let object = document.createElement(`div`);
@@ -97,7 +97,7 @@ var footerBuild = function () {
   return object;
 };
 
-var guideBuild = function (pubArray) {
+let guideBuild = function (pubArray) {
   let filterBlur = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let sticky = document.createElement(`div`);
@@ -146,7 +146,7 @@ var guideBuild = function (pubArray) {
   return sticky;
 };
 
-var guideBuildYoutube = function (pubArray) {
+let guideBuildYoutube = function (pubArray) {
   let object = document.createElement(`iframe`);
   let publish = document.createElement(`div`);
   let youtube = document.createElement(`div`);
@@ -193,7 +193,7 @@ var guideBuildYoutube = function (pubArray) {
   return sticky;
 };
 
-var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
+let contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   let display = document.createElement(`div`);
   let filter = document.createElement(`div`);
   let select = document.createElement(`div`);
@@ -226,7 +226,7 @@ var contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   return construct;
 };
 
-var translationBuild = function (translation) {
+let translationBuild = function (translation) {
   let object = document.createElement(`div`);
   object.classList.add(`translation`);
   object.setAttribute(`aria-item`, translation);
@@ -242,7 +242,7 @@ var translationBuild = function (translation) {
   return object;
 };
 
-var assetBuild = function (assetIndex, assetImage, assetId) {
+let assetBuild = function (assetIndex, assetImage, assetId) {
   let object = document.createElement(`div`);
   let ahref = document.createElement(`a`);
   let img = document.createElement(`img`);
@@ -258,7 +258,7 @@ var assetBuild = function (assetIndex, assetImage, assetId) {
   return object;
 };
 
-var suggestBuild = function (
+let suggestBuild = function (
   objectMedia,
   objectIndex,
   objectImage,
@@ -295,7 +295,7 @@ var suggestBuild = function (
   return object;
 };
 
-var categoryBuild = function (
+let categoryBuild = function (
   objectId,
   objectIndex,
   objectImage,
@@ -362,7 +362,7 @@ let attributeBuild = function () {
   return object;
 };
 
-var courtesyBuild = function (objectId, objectImage, objectExternal) {
+let courtesyBuild = function (objectId, objectImage, objectExternal) {
   let courtesy = document.createElement(`div`);
   let object = document.createElement(`img`);
   let ahref = document.createElement(`a`);
@@ -397,7 +397,7 @@ let copyInputAttribute = function (src, share, externalURI) {
   return construct;
 };
 
-var youtubeHTMLBuild = function (htmlArray) {
+let youtubeHTMLBuild = function (htmlArray) {
   let object = document.createElement(`iframe`);
   let youtube = document.createElement(`div`);
   let publish = document.createElement(`div`);
@@ -430,7 +430,7 @@ var youtubeHTMLBuild = function (htmlArray) {
   return item;
 };
 
-var xmlHTMLBuild = function (htmlArray) {
+let xmlHTMLBuild = function (htmlArray) {
   let filterBlur = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let classic = document.createElement(`div`);
@@ -480,7 +480,7 @@ var xmlHTMLBuild = function (htmlArray) {
   return item;
 };
 
-var listingIndexBuild = function (
+let listingIndexBuild = function (
   indexId,
   indexObject,
   indexImage,
@@ -488,6 +488,7 @@ var listingIndexBuild = function (
   suggested,
   index
 ) {
+  let contentText;
   let buffer = document.createElement(`div`);
   let detail = document.createElement(`div`);
   let object = document.createElement(`img`);
@@ -498,8 +499,8 @@ var listingIndexBuild = function (
   match.classList.add(`textMatch`);
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);
-  if (suggested == true) var contentText = `suggested...`;
-  else var contentText = ``;
+  if (suggested == true) contentText = `suggested...`;
+  else contentText = ``;
   buffer.innerHTML = contentText;
   object.classList.add(`input`);
   key.classList.add(`index`);
@@ -511,7 +512,7 @@ var listingIndexBuild = function (
   return key;
 };
 
-var sideBarListBuild = function (Elem, Class, Icon, Text) {
+let sideBarListBuild = function (Elem, Class, Icon, Text) {
   let option = document.createElement(`div`);
   option.classList.add(Elem, `mainTransition`);
   option.innerHTML = `
@@ -523,7 +524,7 @@ var sideBarListBuild = function (Elem, Class, Icon, Text) {
   _content.append(option);
 };
 
-var excludeFormBuild = function () {
+let excludeFormBuild = function () {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let min = document.createElement(`div`);
@@ -539,7 +540,7 @@ var excludeFormBuild = function () {
   return min;
 };
 
-var urlFormBuild = function () {
+let urlFormBuild = function () {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let url = document.createElement(`div`);
@@ -558,7 +559,7 @@ var urlFormBuild = function () {
   return url;
 };
 
-var basicFormBuild = function () {
+let basicFormBuild = function () {
   let object = document.createElement(`input`);
   object.setAttribute(`placeholder`, `search`);
   object.setAttribute(`autocomplete`, `off`);
@@ -575,21 +576,21 @@ var basicFormBuild = function () {
   return basic;
 };
 
-var sideBarCategoryBuild = function (translation) {
-  var webp = document.createElement(`img`);
+let sideBarCategoryBuild = function (translation) {
+  let webp = document.createElement(`img`);
   webp.classList.add(`webp`);
   webp.src = `images/${translation}.webp`;
   return webp;
 };
 
-var sideBarOptionBuild = function (name, classes) {
+let sideBarOptionBuild = function (name, classes) {
   let sel = document.createElement(`div`);
   sel.classList.add(`sel`, classes);
   sel.innerHTML = name;
   return sel;
 };
 
-var sideBarThemeBuild = function (icon) {
+let sideBarThemeBuild = function (icon) {
   let fontawesome = document.createElement(`div`);
   fontawesome.classList.add(`fa`, `fas`, icon);
   return fontawesome;
