@@ -444,7 +444,7 @@ let guideSafeSearch = false;
 
 */
 
-let safeSearchScore = `0.7453598475456238`;
+let safeSearchScore = `0.8570709323883057`;
 
 /*
     safeSearchCategory [array]
