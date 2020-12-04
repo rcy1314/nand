@@ -32,9 +32,9 @@ setTimeout(function() {
         if (i !== -1 && isNaN(parseFloat(post)) && !isFinite(post))
           xmlRequestParsing(null, null, i);
         else if (i !== -1 && !isNaN(parseFloat(post)) && isFinite(post))
-          filterInputResponse(true, false, menu[i].id.space(), false);
+          filterInputResponse(menu[i].id.space(), false);
         else if (i === -1)
-          filterInputResponse(true, false, location.href.split(`?`)[1], false);
+          filterInputResponse(location.href.split(`?`)[1], false);
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
@@ -45,13 +45,11 @@ setTimeout(function() {
     }
   } else if (location.search.split(`?q=`)[1]) {
     var uri = location.search.split(`?q=`)[1];
-    var uri = uri.match(/[^&]+/g);
-    post = location.hash.substr(1);
+    var uri = uri.toLowerCase().space();
     _toggle.style.display = `none`;
-    topMenuBarDisplay(topBar);
     setTimeout(function () {
-      if (!uri[1]) filterInputResponse(true, false, uri[0], true);
-      else if (uri[1]) filterInputResponse(true, uri[0], uri[1], false);
+      filterInputResponse(uri, true);
+      topMenuBarDisplay(topBar);
     }, 250);
   } else if (!post) {
     setTimeout(function () {

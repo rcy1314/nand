@@ -313,6 +313,7 @@ var progressBackDrop = function (done) {
   let width;
   let length;
   let complete;
+  _visit.style.display = `none`;
   if (done == true) _progress.style.width = `100%`
   complete = setInterval(function () {
     if (safeSearchIDs.includes(menu[id].id))
@@ -321,8 +322,10 @@ var progressBackDrop = function (done) {
     if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
       setTimeout(function () {
         clearInterval(complete);
+        _progress.style.transition = `0`;
+        _progress.style.width = `100%`;
         _progress.style.transition = `all 750ms ease-in-out`;
-      _progress.style.opacity = `0`;
+        _progress.style.opacity = `0`;
         setTimeout(function () {
           _progress.style.transition = `0`;
           _progress.style.width = `0%`;
@@ -559,60 +562,34 @@ var reverseCategoryGroup = function (translation) {
 };
 
 var filterInputResponse = function (
-  initPassthrough,
-  extendedextendedURI,
   filterURI,
   categoryBloat
 ) {
-  var exact;
-  var match;
-  filter = [];
-  _visit.style.display = `none`;
   if (translations.includes(filterURI.toString().capitalize())) {
     populateCategoryGroup(filterURI.toString().capitalize());
     category = filterURI.toString().capitalize();
     unloading();
     return false;
   }
-  if (filterURI) var filterURI = filterURI.toString().toLowerCase().space();
-  if (extendedURI)
-    var extendedURI = extendedURI.toString().toLowerCase().space();
-  else var extendedURI = filterURI;
-  for (let i = 1; i <= menu.length - 1; i++) {
-    let menuObject = menu[i].id.space().toLowerCase();
-    let translation = menu[i].category.space().toLowerCase();
-    let description = menu[i].description.space().toLowerCase();
-    if (menu[i].hash == filterURI) {
-      filter.push(menu.indexOf(menu[i]));
-      exact = i;
-      break;
-    } else if (menuObject == filterURI || id == extendedURI) {
-      filter.push(menu.indexOf(menu[i]));
-      exact = i;
-      break;
-    } else if (menuObject.match(filterURI) || menuObject.match(extendedURI))
-      filter.push(menu.indexOf(menu[i]));
-    else if (description.match(filterURI) || description.match(extendedURI))
-      filter.push(menu.indexOf(menu[i]));
-    else if (translation.match(filterURI) || translation.match(extendedURI))
-      filter.push(menu.indexOf(menu[i]));
-  }
-  if (!match) match = filter[0];
-  if (filter.length == 0) {
-    xmlRequestParsing(`search`, filterURI.toLowerCase(), 0, null);
-    document.querySelector(`body`).classList.remove(`blink`);
-    return false;
-  }
-  if (initPassthrough == false || !isNumeric(match) || !isNumeric(exact)) {
-    if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
-    for (i = 0; i <= filter.length - 1; i++) writeFilterResponse(filter[i]);
-  } else if (initPassthrough == true) {
-    if (isNumeric(exact)) {
-      xmlRequestParsing(null, null, exact);
-    }
-    return false;
-  }
-  if ((categoryBloat == true && !isNumeric(match)) || !isNumeric(exact))
+  let match = menu.findIndex(
+    (item) => item.id.space() === filterURI.toString().toLowerCase().space()
+  );
+  let description = menu.filter(function (item) {
+    return item.description.space().toLowerCase()
+      .match(filterURI.toString().toLowerCase().space());
+  })
+  if (match === -1 && description.length === 0) {
+    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
+  } else if (match === -1 && description.length > 0) {
+    groupBuild();
+    for (i = 0; i <= description.length - 1; i++)
+      writeFilterResponse(menu.indexOf(description[i]));
+    displayDescription(showDescription);
+    displayExpand(expand);
+    unloading();
+  } else if (isNumeric(match)) {
+      xmlRequestParsing(null, null, match);
+  } else if (categoryBloat == true && !isNumeric(match))
     populateCategoryGroup(menu[match].category);
 };
 
