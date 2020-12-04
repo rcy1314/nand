@@ -8,228 +8,6 @@ let handleSwipe = function () {
   }
 }
 
-let displayDescription = function (Value) {
-  if (expand == true)
-    if (Value == false) {
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`.about`).style.display = `none`;
-      _main
-        .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.visibility = `hidden`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`mobile`));
-    } else if (Value == true) {
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`.about`).style.display = `block`;
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`mobile`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
-      _main
-        .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.visibility = `visible`));
-    }
-};
-
-let displayExpand = function (Value) {
-  if (document.body.contains(document.querySelector(`#xml`)))
-    document.querySelector(`#xml`).remove();
-  if (Value == true) {
-    groupType = `list`;
-    if (document.body.contains(document.getElementById(`group`))) {
-      _main
-        .querySelectorAll(`.hash`)
-        .forEach((a) => (a.style.display = `block`));
-      _main
-        .querySelectorAll(`.media`)
-        .forEach((a) => (a.style.display = `block`));
-      if (_main.clientWidth > 768) {
-        _main
-          .querySelectorAll(`.des`)
-          .forEach((a) => (a.style.display = `block`));
-      }
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => (a.style.alignItems = `center`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.flexWrap = `nowrap`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.textAlign = `left`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.display = `flex`));
-      if (document.body.contains(document.querySelector(`.air`)))
-        document.querySelector(`.air`).style.display = `block`;
-      if (document.body.contains(document.querySelector(`.result`)))
-        document.querySelector(`.result`).style.display = `block`;
-    }
-  } else if (Value == false) {
-    groupType = `blocks`;
-    if (document.body.contains(document.getElementById(`group`))) {
-      _main
-        .querySelectorAll(`.hash`)
-        .forEach((a) => (a.style.display = `none`));
-      _main
-        .querySelectorAll(`.media`)
-        .forEach((a) => (a.style.display = `none`));
-      _main.querySelectorAll(`.des`).forEach((a) => (a.style.display = `none`));
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.flexWrap = `wrap`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.textAlign = `center`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.display = `block`));
-      if (document.body.contains(document.querySelector(`.air`)))
-        document.querySelector(`.air`).style.display = `inline-flex`;
-      if (document.body.contains(document.querySelector(`.result`)))
-        document.querySelector(`.result`).style.display = `inline-flex`;
-    }
-  }
-};
-
-let appendSideBarLists = function (Elem, Class, Arrays) {
-  let list = document.querySelector(Elem);
-  for (i = 0; i <= Arrays.length - 1; i++) {
-    let option = document.createElement(`div`);
-    if (Class == `option`) option.classList.add(Class);
-    else option.classList.add(Class, Arrays[i].class);
-    if (Class == `background` || Class == `sel`)
-      option.innerHTML = Arrays[i].name;
-    if (Class == `option`) option.innerHTML = Arrays[i];
-    if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
-    list.append(option);
-    if (Class != `option`) list.append(sideBarThemeBuild(Arrays[i].icon));
-  }
-};
-
-let appendSettingsSideBarLists = function (Elem, Class, Arrays) {
-  let list = document.querySelector(Elem);
-  for (i = 0; i <= Arrays.length - 1; i++) {
-    let option = document.createElement(`div`);
-    option.classList.add(Class, Arrays[i].class);
-    option.innerHTML = Arrays[i].name;
-    list.append(option);
-    if (eval(Arrays[i].class) == true) {
-      document
-        .querySelector(`.` + Arrays[i].class)
-        .parentNode.insertBefore(
-          sideBarThemeBuild(`fa-star`),
-          document.querySelector(`.` + Arrays[i].class).nextSibling
-        );
-    } else {
-      document
-        .querySelector(`.` + Arrays[i].class)
-        .parentNode.insertBefore(
-          sideBarThemeBuild(`fa-minus`),
-          document.querySelector(`.` + Arrays[i].class).nextSibling
-        );
-    }
-  }
-};
-
-let sideBarDisplay = function (Value) {
-  sideBarFirst = true;
-  let content = document.querySelector(`#content`);
-  if (!document.body.contains(document.querySelector(`.sel`))) {
-    if (sideBarTranslations == true) {
-      for (i = 0; i <= translations.length - 1; i++) {
-        content.append(sideBarTranslationBuild(translations[i]));
-        content.append(sideBarCategoryBuild(translations[i]));
-      }
-    }
-    appendSideBarLists(`#content`, `sel`, selections);
-    sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
-    appendSideBarLists(`.themes`, `theme`, themes);
-    sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
-    appendSideBarLists(`.bg`, `background`, background);
-    document.querySelector(`.bg`).append(urlFormBuild());
-    sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
-    appendSideBarLists(`.exclude`, `option`, exclude);
-    document.querySelector(`.exclude`).append(excludeFormBuild());
-    sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-    appendSettingsSideBarLists(`.set`, `settings`, settings);
-    content.append(basicFormBuild());
-  }
-  if (Value == true) {
-    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
-      _container.style.width = `calc(100% + 240px)`;
-    if (_main.clientWidth >= 769) {
-      setTimeout(function () {
-        _main.style.width = `calc(100% - 240px)`;
-        _progress.style.left = `240px`;
-        _main.style.left = `240px`;
-        _sidebar.style.left = `0`;
-        setTimeout(function () {
-          _hide.style.left = `240px`;
-        }, 75);
-      }, 300);
-    } else
-      setTimeout(function () {
-        document.querySelector(`.sideFilter`).style.display = `block`;
-        document.querySelector(`#basic`).style.display = `block`;
-        _sidebar.style.left = `0`;
-      }, 300);
-  } else if (Value == false) {
-    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
-      _container.style.width = `calc(100%)`;
-    document.querySelector(`.sideFilter`).style.display = `block`;
-    document.querySelector(`#basic`).style.display = `block`;
-    _sidebar.style.left = `-242px`;
-    _progress.style.left = `0`;
-    _main.style.width = `100%`;
-    _hide.style.left = `0`;
-    _main.style.left = `0`;
-  }
-};
-
-let topMenuBarDisplay = function (Value) {
-  if (Value == true) {
-    _view.style.display = `block`;
-    _top.style.display = `block`;
-  } else if (Value == false) _top.style.display = `none`;
-};
-
-let quickFeedDisplay = function (Value) {
-  if (Value == true) {
-    _quick.classList.remove(`invisible`);
-    _front.classList.add(`toggleHidden`);
-    _front.classList.remove(`toggle`);
-    _quick.classList.add(`visible`);
-    _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
-    _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
-    _show.style.visibility = `hidden`;
-    _just.classList.add(`toggleHidden`);
-    _just.classList.add(`invisible`);
-  } else if (Value == false) {
-    _quick.classList.remove(`visible`);
-    _quick.classList.add(`invisible`);
-    _front.classList.remove(`toggleHidden`);
-    _front.classList.add(`toggle`);
-    _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
-    _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
-    _show.style.visibility = `visible`;
-    _just.classList.remove(`toggleHidden`);
-    _just.classList.remove(`invisible`);
-  }
-};
-
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
   if (feedAssets == 7)
@@ -342,7 +120,7 @@ let progressBackDrop = function (done) {
     return false;
   }
   if (document.body.contains(document.getElementById(`xml`)) && !post) {
-    if (document.body.contains(document.querySelector(`#xml .channel`)))
+    document.querySelector(`#xml`).style.display = `block`;
       if (Reader == true && first == true) {
         if (
           _main.innerHeight >=
@@ -353,8 +131,6 @@ let progressBackDrop = function (done) {
             xmlRequestParsing(false, null, null, anyRandomMenuObject());
           }
       }
-    document.querySelector(`#xml`).style.paddingTop = `0`;
-    document.querySelector(`#xml`).style.display = `block`;
     if (
       scrollIntoView == true &&
       Reader == false
@@ -381,31 +157,27 @@ let progressBackDrop = function (done) {
       );
     } else if (fadeIntoView == true) {
       (function () {
-        var elements;
-        var windowHeight;
+        let elements;
 
         function init() {
           elements = document.querySelectorAll(`.image`);
-          windowHeight = _main.clientHeight;
-          for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            var positionFromTop = element.getBoundingClientRect().top;
-
-            if (positionFromTop - windowHeight <= 0) {
-              element.querySelector(`.img`).classList.add(`fade-in-element`);
-              element.querySelector(`.img`).classList.remove(`hidden`);
+          for (let i = 0; i < elements.length; i++) {
+            if (
+              elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
+            ) {
+              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
+              elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
           }
         }
 
         function checkPosition() {
-          for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            var positionFromTop = elements[i].getBoundingClientRect().top;
-
-            if (positionFromTop - windowHeight <= 0) {
-              element.querySelector(`.img`).classList.add(`fade-in-element`);
-              element.querySelector(`.img`).classList.remove(`hidden`);
+          for (let i = 0; i < elements.length; i++) {
+            if (
+              elements[i].getBoundingClientRect().top - _main.clientHeight <= 0
+            ) {
+              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
+              elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
             if (fadeIntoView == false) {
               document
@@ -466,13 +238,14 @@ let progressBackDrop = function (done) {
 };
 
 let populateCategoryGroup = function (translation) {
+  let media;
   if (scrollIntoView === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
   if (id && id != 0 && !location.href.match(`\\?q=`)) {
     if (menu[id].media == true)
-      var media = `<div class='media' style='display:none'>Images</div>`;
-    else var media = `<div class='blank'></div>`;
+      media = `<div class='media' style='display:none'>Images</div>`;
+    else media = `<div class='blank'></div>`;
     result.append(
       categoryBuild(
         menu[id].id.match(/[^\/]+$/g),
@@ -486,8 +259,8 @@ let populateCategoryGroup = function (translation) {
   }
   for (let i = 1; i <= menu.length - 1; i++) {
     if (menu[i].media == true)
-      var media = `<div class='media' style='display:none'>Images</div>`;
-    else var media = `<div class='blank'></div>`;
+      media = `<div class='media' style='display:none'>Images</div>`;
+    else media = `<div class='blank'></div>`;
     if (onlyImages == true) {
       if (
         id != menu.indexOf(menu[i]) &&
@@ -531,6 +304,7 @@ let populateCategoryGroup = function (translation) {
 };
 
 let reverseCategoryGroup = function (translation) {
+  let media;
   let group = document.querySelector(`#group`);
   let result = document.querySelector(`.result`);
   if (!document.body.contains(document.querySelector(`.air`))) {
@@ -542,8 +316,8 @@ let reverseCategoryGroup = function (translation) {
   for (let i = 1; i < menu.length; i++) {
     if (category == menu[i].category) {
       if (menu[i].media == true)
-        var media = `<div class='media' style='display:none'>Images</div>`;
-      else var media = `<div class='blank'></div>`;
+        media = `<div class='media' style='display:none'>Images</div>`;
+      else media = `<div class='blank'></div>`;
       air.append(
         categoryBuild(
           menu[i].id.match(/[^\/]+$/g),
@@ -591,10 +365,11 @@ let filterInputResponse = function (filterURI) {
 };
 
 let writeFilterResponse = function (menuObject) {
+  let media;
   let result = document.querySelector(`.result`);
   if (menu[menuObject].media == true)
-    var media = `<div class='media' style='display:none'>Images</div>`;
-  else var media = `<div class='blank'></div>`;
+    media = `<div class='media' style='display:none'>Images</div>`;
+  else media = `<div class='blank'></div>`;
   result.append(
     categoryBuild(
       menu[menuObject].id.match(/[^\/]+$/g),
