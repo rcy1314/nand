@@ -311,9 +311,8 @@ document.addEventListener(
         justRead = false;
         event.target.nextElementSibling.classList.remove(`fa-star`);
         event.target.nextElementSibling.classList.add(`fa-minus`);
-        let Reader = false;
-        let first = true;
-        let id = 0;
+        first = true;
+        id = 0;
         xmlChannelFooter();
       } else if (Reader == true) {
         event.target.nextElementSibling.classList.remove(`fa-minus`);
@@ -322,7 +321,6 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        Reader = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
