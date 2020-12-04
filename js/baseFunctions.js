@@ -343,7 +343,7 @@ let filterInputResponse = function (filterURI) {
     return false;
   }
   let match = menu.findIndex(
-    (item) => item.id.space() === filterURI.toString().toLowerCase().space()
+    (item) => item.id.toLowerCase().space().match(filterURI.toString().toLowerCase().space())
   );
   let description = menu.filter(function (item) {
     return item.description.space().toLowerCase()

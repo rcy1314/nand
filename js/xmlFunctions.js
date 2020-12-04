@@ -1031,7 +1031,10 @@ var xmlRequestParsing = function (search, string, index) {
           });
           document.querySelector(`#xml`).style.display = `none`;
           guideDisplay(sticky);
-        } else if (!isNumeric(post) || !isNumeric(local)) {
+        } else if (
+          isNaN(parseFloat(local)) && isFinite(local) &&
+          isNaN(parseFloat(post)) && isFinite(post)
+        ) {
           _guide.style.display = `none`;
         }
         for (i = 0; i < pub.length - 1; i++) {
