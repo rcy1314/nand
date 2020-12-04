@@ -305,6 +305,7 @@ document.addEventListener(
     if (event.target.classList.contains(`Reader`)) {
       id = 0;
       first = true;
+      randomDuplicate = [];
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {

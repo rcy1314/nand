@@ -99,6 +99,10 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `just`) {
+      Reader = true;
+      justRead = true;
+      onlyImages = true;
+      randomDuplicate = [];
       if (showSplash == true) _check.style.display = `block`;
       document
         .querySelector(`.Reader`)
@@ -112,9 +116,6 @@ document.addEventListener(
       document
         .querySelector(`.onlyImages`)
         .nextElementSibling.classList.add(`fa-star`);
-      Reader = true;
-      justRead = true;
-      onlyImages = true;
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (

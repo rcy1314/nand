@@ -111,7 +111,6 @@ var guideImageAttributes = function (pubArray) {
       })
         .then((response) => {
           response.json().then((jsonResponse) => {
-            console.log(`${pubArray.pubIndex} ${jsonResponse.score}`);
             if (jsonResponse.score >= safeSearchScore) {
               if (
                 document.body.contains(
@@ -557,7 +556,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .then((response) => {
             response.json().then((jsonResponse) => {
               jsonResponseScore = jsonResponse.score;
-              console.log(`${pubIndex} ${jsonResponse.score}`);
               if (jsonResponse.score >= safeSearchScore) {
                 if (
                   document.body.contains(
@@ -1047,7 +1045,6 @@ var xmlRequestParsing = function (search, string, index) {
           if (i != local) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
-            console.log(`append`)
           }
         }
         if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
