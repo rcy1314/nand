@@ -355,10 +355,17 @@ document.addEventListener(
       else {
         if (location.href.match(`\\?q=`)) {
           var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
-          if (location.href.match(`\\+1`))
-            var query = uri[0].replace(/\+1/g, ``).space();
-          else var query = uri[0].space();
-          filterInputResponse(query);
+          let description = menu.filter(function (item) {
+            return item.description.space().toLowerCase()
+              .match(uri.toString().toLowerCase().space());
+          })
+          groupBuild();
+          for (i = 0; i <= description.length - 1; i++)
+            writeFilterResponse(menu.indexOf(description[i]));
+          displayDescription(showDescription);
+          displayExpand(expand);
+          populateCategoryGroup(category)
+          unloading();
         } else populateCategoryGroup(category);
         document.title = category;
         displayExpand(expand);
