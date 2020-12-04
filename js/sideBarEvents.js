@@ -306,12 +306,12 @@ document.addEventListener(
       id = 0;
       first = true;
       _visit.style.display = `none`;
-      reader = reader != true;
+      Reader = Reader != true;
       if (Reader == false) {
         justRead = false;
         event.target.nextElementSibling.classList.remove(`fa-star`);
         event.target.nextElementSibling.classList.add(`fa-minus`);
-        let reader = false;
+        let Reader = false;
         let first = true;
         let id = 0;
         xmlChannelFooter();
@@ -322,7 +322,7 @@ document.addEventListener(
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        reader = true;
+        Reader = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
