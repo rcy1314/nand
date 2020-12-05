@@ -92,7 +92,6 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (done == true && loading == `percent`) _progress.style.width = `100%`
   if (loading == `percent`) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
@@ -100,19 +99,17 @@ let progressBackDrop = function (done) {
       else width = _main.clientWidth / ((count.length - 1) / 4);
       if (count.length === 0 || _progress.clientWidth >= _main.clientWidth - 17) {
         setTimeout(function () {
-          clearInterval(complete);
-          _progress.style.transition = `0`;
-          _progress.style.width = `100%`;
           _progress.style.transition = `all 750ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
-            _progress.style.transition = `0`;
+            _progress.style.transition = `none`;
             _progress.style.width = `0%`;
           }, 750);
         }, 250);
+        clearInterval(complete);
       } else if (first == true) {
         _progress.style.opacity = `1`;
-        _progress.style.transition = `all 1000ms ease-in-out`;
+        _progress.style.transition = `all 500ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
       }
     }, 1000);
@@ -137,7 +134,6 @@ let progressBackDrop = function (done) {
       scrollIntoView == true &&
       Reader == false
     ) {
-      clearInterval(complete);
       document.querySelector(`#xml`).style.paddingTop = document.querySelector(
         `#xml`
       ).clientHeight;
@@ -146,19 +142,17 @@ let progressBackDrop = function (done) {
         {
           paddingTop: [
             `${document.querySelector(`#xml`).clientHeight}px`,
-            `0px`,
+            `90px`,
           ],
         },
         {
-          duration: 500, // number in ms [this would be equiv of your speed].
+          duration: 2500, // number in ms [this would be equiv of your speed].
           easing: `ease-in-out`,
           iterations: 1, // infinity or a number.
-          complete: document.querySelector(`#xml`).style.paddingTop = `0`
+          complete: document.querySelector(`#xml`).style.paddingTop = `90px`
           // fill: ''
         }
       );
-      if (loading == `dots`)
-        document.querySelector(`.center`).style.paddingTop = `90px`
     }
     if (fadeIntoView == true) {
       (function () {
@@ -186,7 +180,7 @@ let progressBackDrop = function (done) {
         if (scrollIntoView)
           setTimeout(function() {
             checkPosition();
-          }, 550)
+          }, 2550)
         else checkPosition();
       })();
     }

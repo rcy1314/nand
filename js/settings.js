@@ -1,6 +1,6 @@
 // initial theme
 // mobile overwritten in mainEvents.js onload
-let set = `Night`;
+let set = `Alpenglow`;
 
 /*
     backgroundImage [array]
@@ -30,11 +30,8 @@ let backgroundImage = [
 //  }
 
 const themes = [
-  { obFn: `Arc`, class: `Arc`, icon: `fa-moon` },
   { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
-  { obFn: `Nord`, class: `Nord`, icon: `fa-signature` },
-  { obFn: `Gruvbox`, class: `Gruvbox`, icon: `fa-lemon` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];

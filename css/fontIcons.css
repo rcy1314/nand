@@ -251,6 +251,15 @@
   left: -6px;
 }
 
+#container #guide .sticky .header .fa-ellipsis-v,
+#main #xml .center .channel .item .header .fa-ellipsis-v {
+  font-family: "Font Awesome 5 Pro";
+  pointer-events: auto;
+  content: "\f142";
+  font-weight: 50;
+  left: -6px;
+}
+
 #guide .sticky .image .fa-heart,
 #main #option .fa-heart,
 #main #xml .center .item .classic .image .fa-heart {

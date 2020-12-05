@@ -15,24 +15,6 @@ var init = function () {
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.zIndex = `-12`));
-    width = _main.clientWidth / 7;
-    complete = setInterval(function () {
-      if (_progress.clientWidth >= _main.clientWidth - 17) {
-        setTimeout(function () {
-          clearInterval(complete);
-          _progress.style.transition = `all 750ms ease-in-out`;
-          _progress.style.opacity = `0`;
-          setTimeout(function () {
-            _progress.style.transition = `0`;
-            _progress.style.width = `0%`;
-          }, 750);
-        }, 250);
-      } else {
-        _progress.style.opacity = `1`;
-        _progress.style.transition = `all 1000ms ease-in-out`;
-        _progress.style.width = _progress.clientWidth + width;
-      }
-    }, 1000);
     progressBackDrop(false);
   }
 };

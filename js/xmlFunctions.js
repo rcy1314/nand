@@ -7,6 +7,7 @@ var guideDisplay = function (pubArray) {
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
   _main.classList.add(`guide`);
+  _guide.style.zIndex = `12`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
@@ -18,6 +19,7 @@ var guideDisplayYoutube = function (pubArray) {
   _guide.append(guideBuildYoutube(pubArray[0]));
   _check.style.display = `none`;
   _main.classList.add(`guide`);
+  _guide.style.zIndex = `12`;
 };
 
 var xmlChannelFooter = function () {

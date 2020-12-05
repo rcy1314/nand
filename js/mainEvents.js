@@ -35,12 +35,7 @@ window.onload = function () {
   }, 250)
 
   _container.style.display = `block`;
-  //overwriting settings.js
-  if (_main.clientWidth <= 425) {
-    window[`Night`]();
-    set = `Night`;
-    return false;
-  }
+
 };
 
 window.addEventListener(
