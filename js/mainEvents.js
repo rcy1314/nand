@@ -194,11 +194,6 @@ document.addEventListener(
       event.target.id == `top` ||
       event.target.id == `arm`
     ) {
-      _quick.style.visibility = `visible`;
-      _label.style.visibility = `visible`;
-      _show.style.visibility = `visible`;
-      _link.style.visibility = `visible`;
-      _just.style.visibility = `visible`;
       if (
         !document
           .querySelectorAll(`.attribute`)
@@ -222,8 +217,11 @@ document.addEventListener(
         _view.value = `Search`;
         _view.blur();
       } else if (_first.style.display === `block`) {
+        if (quickFeeds == false) _show.style.visibility = `visible`;
         _label.style.visibility = `visible`;
         _quick.style.visibility = `visible`;
+        _link.style.visibility = `visible`;
+        _just.style.visibility = `visible`;
         _first.style.display = `none`;
         _guest.blur();
       }

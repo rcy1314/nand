@@ -218,7 +218,6 @@ input[type=submit] {
 
 #main #top #arm #search #match {
   background: var(--bg-color-secondary);
-  border: var(--hover-border-color);
   width: fit-content;
   position: relative;
   margin: 0 auto;

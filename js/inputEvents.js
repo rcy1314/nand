@@ -18,31 +18,11 @@ document.addEventListener(
   `click`,
   function (event) {
     if (event.target.id == `view`) {
-      _match.style.display = `block`;
+      _match.style.display = `none`;
       while (_match.querySelector(".listing").firstChild) {
         _match
           .querySelector(".listing")
           .removeChild(_match.querySelector(".listing").lastChild);
-      }
-      for (i = 0; i < translations.length; i++) {
-        let detail = document.createElement(`div`);
-        let object = document.createElement(`img`);
-        let index = document.createElement(`div`);
-        let text = document.createElement(`div`);
-        index.setAttribute(`aria-item`, translations[i]);
-        object.src = `images/${translations[i]}.webp`;
-        detail.classList.add(`detail`, `translation`);
-        index.setAttribute(`tabindex`, -1);
-        index.classList.add(`index`);
-        object.classList.add(`hue`);
-        text.classList.add(`text`);
-        text.innerHTML = `&emsp;${translations[i]}<br>&emsp;${translations[
-          i
-        ].grep()} sites`;
-        detail.append(object);
-        detail.append(text);
-        index.append(detail);
-        _match.querySelector(`.listing`).append(index);
       }
       document.querySelector(`#input .icon`).classList.add(`slide`);
       _view.setAttribute(`placeholder`, `Search`);
@@ -82,10 +62,8 @@ document.addEventListener(
           if (document.body.contains(document.querySelector(`#group`)))
             document.querySelector(`#group`).remove();
           populateCategoryGroup(
-            event.target.closest(`.hover`).getAttribute(`aria-item`)
+            event.target.closest(`.index`).getAttribute(`aria-item`).toLowerCase()
           );
-          if (expand == true) var groupType = `list`;
-          else var groupType = `blocks`;
           topMenuBarDisplay(topBar);
           displayExpand(expand);
           unloading();
@@ -133,8 +111,7 @@ document.addEventListener(
   `keyup`,
   function (event) {
     if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
-    else if (event.target.id == `view`)
-      inputListingKeyup(`#match`, event.keyCode);
+    if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
     event.preventDefault();
   },
   false
@@ -294,9 +271,11 @@ var inputListingKeyup = function (Elem, keycode) {
     inputListingIndex(event.target.value, Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
-    document
-      .querySelectorAll(`#just, #show, #link, #quick`)
-      .forEach((a) => (a.style.visibility = `visible`));
+    _label.style.visibility = `visible`;
+    _quick.style.visibility = `visible`;
+    _show.style.visibility = `visible`;
+    _link.style.visibility = `visible`;
+    _just.style.visibility = `visible`;
   } else if (keycode === 40) {
     if (
       !document.body.contains(document.querySelector(`${Elem} .listing .hover`))
@@ -321,8 +300,6 @@ var inputListingKeyup = function (Elem, keycode) {
       document.body.contains(
         document.querySelector(`${Elem} .listing .hover`)
       ) &&
-      document.querySelector(`${Elem} .listing .hover`) !=
-        document.querySelector(`${Elem} .listing .index:first-child`) &&
       document.querySelector(`${Elem} .listing .hover`) !=
         document.querySelector(`${Elem} .listing .index:first-child`) &&
       document.querySelector(`${Elem} .listing .index:first-child`) &&
@@ -432,12 +409,12 @@ var inputListingKeyup = function (Elem, keycode) {
         .nextElementSibling.classList.remove(`hover`);
     }
   } else if (keycode === 27) {
-    _quick.style.visibility = `visible`;
+    document.querySelector(Elem).style.display = `none`;
     _label.style.visibility = `visible`;
+    _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;
     _link.style.visibility = `visible`;
     _just.style.visibility = `visible`;
-    document.querySelector(Elem).style.display = `none`;
   }
   if (
     document.body.contains(document.querySelector(`${Elem} .listing .hover`))
@@ -446,6 +423,7 @@ var inputListingKeyup = function (Elem, keycode) {
       .querySelector(`${Elem} .listing .hover`)
       .setAttribute(`tabindex`, -1);
     document.querySelector(`${Elem} .listing .hover`).focus();
-    _guest.focus();
+    if (Elem == `#first`) _guest.focus();
+    else if (Elem == `#match`) _view.focus();
   }
 };

@@ -270,6 +270,11 @@ document.addEventListener(
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
+      if (quickFeeds == false) _show.style.visibility = `visible`;
+      _label.style.visibility = `visible`;
+      _quick.style.visibility = `visible`;
+      _link.style.visibility = `visible`;
+      if (quickFeeds == false) _just.style.visibility = `visible`;
       _top.style.display = `none`;
       _toggle.style.display = `block`;
       _first.style.display = `none`;

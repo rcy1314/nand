@@ -144,22 +144,22 @@
     width: 95vw !important;
   }
 
+  #main #top #arm #search #match {
+    height: 368px;
+    width: 304px;
+    top: 45px;
+  }
+
   #main #visit #page #front #first {
-    padding-top: 5px;
-    height: 359px;
-    width: 300px;
+    height: 368px;
+    width: 304px;
     top: 115px;
   }
 
-  #main #visit #page #front #first .expanding {
-    position: absolute;
-    padding-left: 0;
-    margin: 0 auto;
-    top: -5px;
-  }
-
-  #top #arm #search #match #listing {
+  #main #visit #page #front #first .listing,
+  #main #top #arm #search #match .listing {
     width: 304px !important;
+    top: 0 !important;
   }
 
   #main #visit #page #front .focus {

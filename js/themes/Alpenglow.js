@@ -22,8 +22,7 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--bg-color-secondary`,
-    `linear-gradient(45deg, rgba(106, 66, 194, 1) 50%,` +
-      `rgba(253, 115, 136, 1) 100%)`
+    `rgba(106, 66, 194, .9)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,

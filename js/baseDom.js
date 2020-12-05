@@ -208,6 +208,7 @@ let topMenuBarDisplay = function (Value) {
 
 let quickFeedDisplay = function (Value) {
   if (Value == true) {
+    quickFeeds = true;
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _front.classList.remove(`toggle`);
@@ -218,6 +219,7 @@ let quickFeedDisplay = function (Value) {
     _just.classList.add(`toggleHidden`);
     _just.classList.add(`invisible`);
   } else if (Value == false) {
+    quickFeeds = false;
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
     _front.classList.remove(`toggleHidden`);
@@ -227,6 +229,7 @@ let quickFeedDisplay = function (Value) {
     _show.style.visibility = `visible`;
     _just.classList.remove(`toggleHidden`);
     _just.classList.remove(`invisible`);
+    _just.style.visibility = `visible`
   }
 };
 
