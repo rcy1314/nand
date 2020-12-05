@@ -225,7 +225,11 @@ let progressBackDrop = function (done) {
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
     }
-    if (scrollIntoView == false) _check.style.display = `none`;
+    if (
+      scrollIntoView == false &&
+      showSplash == true
+    )
+    _check.style.display = `none`;
     _visit.style.display = `none`;
   }, 25);
 };
