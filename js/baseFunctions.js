@@ -153,6 +153,9 @@ let progressBackDrop = function (done) {
           // fill: ''
         }
       );
+      setTimeout(function () {
+        _check.style.display = `none`;
+      }, 2500);
     }
     if (fadeIntoView == true) {
       (function () {
@@ -203,27 +206,28 @@ let progressBackDrop = function (done) {
           duration: 750, // number in ms [this would be equiv of your speed].
           easing: `ease-in-out`,
           iterations: 1, // infinity or a number.
+          complete: document.querySelector(`#group`).style.paddingTop = `60px`
           // fill: ''
         }
       );
       setTimeout(function () {
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        document.querySelector(`#group`).style.paddingTop = `60`;
-        _check.style.display = `none`;
+          _check.style.display = `none`;
       }, 750);
     }
-    if (onlyImages == true)
-      if (document.body.contains(document.querySelector(`.result`)))
-        _main.scrollTop = 0;
-    setTimeout(function () {
-      if (onlyImages == false && scrollIntoView == false) {
-        if (document.body.contains(document.querySelector(`.air`)))
-          _main.scrollTop = document.querySelector(`.air`).clientHeight;
-      }
-      visit.style.display = `none`;
-    }, 25);
   }
+  if (onlyImages == true)
+    if (document.body.contains(document.querySelector(`.result`)))
+      _main.scrollTop = 0;
+  setTimeout(function () {
+    if (onlyImages == false && scrollIntoView == false) {
+      if (document.body.contains(document.querySelector(`.air`)))
+        _main.scrollTop = document.querySelector(`.air`).clientHeight;
+    }
+    if (scrollIntoView == false) _check.style.display = `none`;
+    _visit.style.display = `none`;
+  }, 25);
 };
 
 let populateCategoryGroup = function (translation) {

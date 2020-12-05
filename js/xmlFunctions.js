@@ -1090,7 +1090,6 @@ var xmlRequestParsing = function (search, string, index) {
       } else {
         //todo
       }
-      if (!post) _check.style.display = `none`;
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }
