@@ -3,14 +3,15 @@
   display: none;
 }
 
-#container #guide.
+#container #guide,
 #container #guide .blur {
   background-color: var(--sticky-background);
   justify-content: center;
   align-items: center;
+  display: flex;
   height: 100%;
   width: 100%;
-  z-index: 8;
+  z-index: 12;
   margin: 0;
   left: 0;
   top: 0;
@@ -19,7 +20,7 @@
 #container #guide .blur {
   backdrop-filter: blur(25px);
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 
 #container #guide .sticky {
