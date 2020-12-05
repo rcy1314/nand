@@ -107,10 +107,8 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  `keyup`,
-  function (event) {
-    if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
+document.addEventListener('input', (evt) => {
+      if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
     if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
     event.preventDefault();
   },

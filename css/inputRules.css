@@ -123,8 +123,8 @@ input[type=submit] {
 }
 
 #main #visit #page #front .focus input[type=text] {
-  background-color: var(--hover-background-color);
-  color: var(--fill-color-primary);
+  background-color: var(--hover-background-color) !important;
+  color: var(--fill-color-primary) !important;
   height: 40px !important;
   border: none !important;
   display: inline-block;
@@ -209,11 +209,11 @@ input[type=submit] {
 }
 
 #main #top #arm #search #input input[type=text]:hover {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--borderless-hover-color) !important;
 }
 
 #main #top #arm #search #input input[type=text]:not(:hover) {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 #main #top #arm #search #match {
