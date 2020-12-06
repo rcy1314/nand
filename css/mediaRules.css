@@ -300,10 +300,6 @@
 
 @media screen and (min-width: 1024px) {
 
-  #main #progressBar {
-    max-width: calc(100% - 18px) !important;
-  }
-
   #toggle {
     right: 2em;
     top: .5em;
