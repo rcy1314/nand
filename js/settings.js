@@ -139,7 +139,7 @@ let expandFilter = false;
 
 */
 
-let expandSettings = false;
+let expandSettings = true;
 
 /*
     expandBackground [boolean/integer]

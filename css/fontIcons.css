@@ -9,7 +9,7 @@
   float: right;
 }
 
-#sidebar #content .fa:not(.fas):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint) {
+#sidebar #content .fa:not(.fas):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint):not(.fa-star):not(.fa-minus) {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -22px !important;
