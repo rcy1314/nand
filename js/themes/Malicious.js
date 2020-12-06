@@ -22,7 +22,7 @@ var Malicious = function () {
   );
   document.documentElement.style.setProperty(
     `--bg-color-secondary`,
-    `rgba(50, 50, 50, .9)`
+    `rgba(113, 163, 85, .9)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
