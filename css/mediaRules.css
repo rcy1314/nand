@@ -207,7 +207,7 @@
 @media screen and (min-width: 768px) {
 
   #sidebar #content {
-    position: relative !important;
+    position: relative;
   }
 
   #main #option {
