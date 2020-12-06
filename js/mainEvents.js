@@ -79,7 +79,7 @@ document.addEventListener('ontouchmove', (evt) => {
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
-    evt.prevtDefault();
+    evt.preventDefault();
   },
   false
 ); //:before pseudo-elements not loaded in DOM
@@ -624,7 +624,7 @@ document.addEventListener('click', (evt) => {
       if (_feed.scrollLeft - _feed.clientWidth <= 0)
         document.querySelector(`.left`).style.display = `none`;
     }
-    evt.prevtDefault();
+    evt.preventDefault();
   },
   false
 );
