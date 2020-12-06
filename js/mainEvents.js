@@ -95,6 +95,64 @@ document.addEventListener(
   `click`,
   function (event) {
     if (
+      event.target.classList.contains(`construct`) ||
+      event.target.classList.contains(`picture`) ||
+      event.target.classList.contains(`header`) ||
+      event.target.classList.contains(`result`) ||
+      event.target.classList.contains(`post`) ||
+      event.target.classList.contains(`site`) ||
+      event.target.classList.contains(`cat`) ||
+      event.target.classList.contains(`sel`) ||
+      event.target.id == `container` ||
+      event.target.id == `toggle` ||
+      event.target.id == `search` ||
+      event.target.id == `option` ||
+      event.target.id == `visit` ||
+      event.target.id == `group` ||
+      event.target.id == `main` ||
+      event.target.id == `hide` ||
+      event.target.id == `page` ||
+      event.target.id == `xml` ||
+      event.target.id == `air` ||
+      event.target.id == `top` ||
+      event.target.id == `arm`
+    ) {
+      if (_match.style.display === `block`) {
+        document.querySelector(`#input .icon`).classList.remove(`slide`);
+        _view.setAttribute(`placeholder`, ``);
+        _view.style.textAlign = `center`;
+        _view.style.paddingLeft = `10px`;
+        _match.style.display = `none`;
+        _view.value = `Search`;
+        _view.blur();
+        return false;
+      } else if (_first.style.display === `block`) {
+        if (quickFeeds == false) _show.style.visibility = `visible`;
+        _label.style.visibility = `visible`;
+        _quick.style.visibility = `visible`;
+        _link.style.visibility = `visible`;
+        _just.style.visibility = `visible`;
+        _first.style.display = `none`;
+        _guest.blur();
+        return false;
+      } else if (
+        !document
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`))
+      ) {
+        document
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`));
+        var attribute = document.querySelectorAll(`.fa-ellipsis-v`);
+        for (i = 0; i < attribute.length; i++) {
+          attribute[i].classList.remove(`fa-ellipsis-v`);
+          attribute[i].classList.add(`fa-ellipsis-h`);
+        }
+        return false;
+      }
+      event.stopPropagation();
+    }
+    if (
       event.target.classList.contains(`joi`)
     ) {
       id = 0;
@@ -171,61 +229,6 @@ document.addEventListener(
       populateCategoryGroup(category);
       topMenuBarDisplay(topBar);
       displayExpand(expand);
-    }
-    if (
-      event.target.classList.contains(`construct`) ||
-      event.target.classList.contains(`picture`) ||
-      event.target.classList.contains(`header`) ||
-      event.target.classList.contains(`result`) ||
-      event.target.classList.contains(`post`) ||
-      event.target.classList.contains(`site`) ||
-      event.target.classList.contains(`cat`) ||
-      event.target.classList.contains(`sel`) ||
-      event.target.id == `container` ||
-      event.target.id == `search` ||
-      event.target.id == `option` ||
-      event.target.id == `visit` ||
-      event.target.id == `group` ||
-      event.target.id == `main` ||
-      event.target.id == `hide` ||
-      event.target.id == `page` ||
-      event.target.id == `xml` ||
-      event.target.id == `air` ||
-      event.target.id == `top` ||
-      event.target.id == `arm`
-    ) {
-      if (
-        !document
-          .querySelectorAll(`.attribute`)
-          .forEach((a) => (a.style.display = `none`))
-      ) {
-        document
-          .querySelectorAll(`.attribute`)
-          .forEach((a) => (a.style.display = `none`));
-        var attribute = document.querySelectorAll(`.fa-ellipsis-v`);
-        for (i = 0; i < attribute.length; i++) {
-          attribute[i].classList.remove(`fa-ellipsis-v`);
-          attribute[i].classList.add(`fa-ellipsis-h`);
-        }
-      }
-      if (_match.style.display === `block`) {
-        document.querySelector(`#input .icon`).classList.remove(`slide`);
-        _view.setAttribute(`placeholder`, ``);
-        _view.style.textAlign = `center`;
-        _view.style.paddingLeft = `10px`;
-        _match.style.display = `none`;
-        _view.value = `Search`;
-        _view.blur();
-      } else if (_first.style.display === `block`) {
-        if (quickFeeds == false) _show.style.visibility = `visible`;
-        _label.style.visibility = `visible`;
-        _quick.style.visibility = `visible`;
-        _link.style.visibility = `visible`;
-        _just.style.visibility = `visible`;
-        _first.style.display = `none`;
-        _guest.blur();
-      }
-      event.stopPropagation();
     }
     if (event.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(

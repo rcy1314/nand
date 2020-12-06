@@ -6,8 +6,8 @@ document.addEventListener(
       event.target.classList.contains(`button`)
     ) {
       if (_guest.value.length > 0) {
+        filterInputResponse(_guest.value);
         topMenuBarDisplay(topBar);
-        filterInputResponse(_guest);
       }
     }
     event.preventDefault();
