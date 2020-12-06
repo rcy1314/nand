@@ -34,6 +34,10 @@ span.ripple {
   animation: pulse 1s infinite alternate;
 }
 
+.scroll-into-view {
+  animation: scroll 2s forwards;
+}
+
 .fade-in-element {
   animation: fade-in 4s forwards;
 }
@@ -137,6 +141,15 @@ span.ripple {
     }
     100% {
       opacity: 1;
+    }
+}
+
+@keyframes scroll {
+    from {
+      padding-top: 100%
+    }
+    to {
+      padding-top: 60px;
     }
 }
 

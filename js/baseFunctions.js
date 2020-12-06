@@ -134,28 +134,11 @@ let progressBackDrop = function (done) {
       scrollIntoView == true &&
       Reader == false
     ) {
-      document.querySelector(`#xml`).style.paddingTop = document.querySelector(
-        `#xml`
-      ).clientHeight;
-      let Elem = document.querySelector(`#xml`);
-      Elem.animate(
-        {
-          paddingTop: [
-            `${document.querySelector(`#xml`).clientHeight}px`,
-            `90px`,
-          ],
-        },
-        {
-          duration: 2500, // number in ms [this would be equiv of your speed].
-          easing: `ease-in-out`,
-          iterations: 1, // infinity or a number.
-          complete: document.querySelector(`#xml`).style.paddingTop = `90px`
-          // fill: ''
-        }
-      );
+      document.querySelector(`#xml`).classList.add(`scroll-into-view`)
       setTimeout(function () {
+        document.querySelector(`#xml`).classList.remove(`scroll-into-view`)
         _check.style.display = `none`;
-      }, 2500);
+      }, 2000);
     }
     if (fadeIntoView == true) {
       (function () {
@@ -191,30 +174,13 @@ let progressBackDrop = function (done) {
   if (document.body.contains(document.getElementById(`group`))) {
     document.querySelector(`#group`).style.display = `block`;
     if (scrollIntoView == true) {
-      document.querySelector(
-        `#group`
-      ).style.paddingTop = document.querySelector(`#group`).clientHeight;
-      let Elem = document.querySelector(`#group`);
-      Elem.animate(
-        {
-          paddingTop: [
-            `${document.querySelector(`#group`).clientHeight}px`,
-            `60px`,
-          ],
-        },
-        {
-          duration: 750, // number in ms [this would be equiv of your speed].
-          easing: `ease-in-out`,
-          iterations: 1, // infinity or a number.
-          complete: document.querySelector(`#group`).style.paddingTop = `60px`
-          // fill: ''
-        }
-      );
+      document.querySelector(`#group`).classList.add(`scroll-into-view`)
       setTimeout(function () {
+        document.querySelector(`#group`).classList.remove(`scroll-into-view`)
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
-          _check.style.display = `none`;
-      }, 750);
+        _check.style.display = `none`;
+      }, 2000);
     }
   }
   if (onlyImages == true)
