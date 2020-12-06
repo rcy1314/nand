@@ -136,9 +136,8 @@ let progressBackDrop = function (done) {
     ) {
       document.querySelector(`#xml`).classList.add(`scroll-into-view`)
       setTimeout(function () {
-        document.querySelector(`#xml`).classList.remove(`scroll-into-view`)
         _check.style.display = `none`;
-      }, 2000);
+      }, 750);
     }
     if (fadeIntoView == true) {
       (function () {
@@ -166,7 +165,7 @@ let progressBackDrop = function (done) {
         if (scrollIntoView)
           setTimeout(function() {
             checkPosition();
-          }, 2550)
+          }, 1000)
         else checkPosition();
       })();
     }
@@ -180,7 +179,7 @@ let progressBackDrop = function (done) {
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
         _check.style.display = `none`;
-      }, 2000);
+      }, 750);
     }
   }
   if (onlyImages == true)

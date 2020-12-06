@@ -286,8 +286,8 @@
   background-color: transparent;
   display: inline-block;
   position: relative;
+  padding-top: 180px;
   text-align: left;
-  top: 85px;
 }
 
 #main #xml .center .channel {
