@@ -46,7 +46,7 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--filter`,
-    `hue-rotate(110deg)`
+    `invert(100%)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   if (backgroundImage[0].path != `images/ffe869c642be33cbb2c3e609e27beb29.webp`)

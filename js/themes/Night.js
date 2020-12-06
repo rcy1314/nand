@@ -46,7 +46,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--filter`,
-    `saturate(.5)`
+    `invert(100%)`
   );
   document
     .querySelector(`#favicon`)

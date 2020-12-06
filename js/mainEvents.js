@@ -94,7 +94,6 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`cat`) ||
       evt.target.classList.contains(`sel`) ||
       evt.target.id == `container` ||
-      evt.target.id == `toggle` ||
       evt.target.id == `search` ||
       evt.target.id == `option` ||
       evt.target.id == `visit` ||

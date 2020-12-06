@@ -43,7 +43,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--filter`,
-    `hue-rotate(0deg)`
+    ``
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   if (backgroundImage[0].path != `images/b453ae624e3d5e58b9890a998ec441b8.webp`)
