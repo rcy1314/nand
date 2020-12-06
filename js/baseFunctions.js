@@ -141,7 +141,7 @@ let progressBackDrop = function (done) {
       scrollIntoView == true &&
       Reader == false
     ) {
-      document.querySelector(`#xml`).classList.add(`scroll-into-view`)
+      document.querySelector(`.center`).classList.add(`scroll-into-view`)
       setTimeout(function () {
         _check.style.display = `none`;
       }, 250);
