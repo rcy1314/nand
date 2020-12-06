@@ -148,7 +148,7 @@ let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
-    if (sideBarTranslations == true && window.clientWidth >= 426) {
+    if (sideBarTranslations == true && _main.clientWidth >= 426) {
       for (i = 0; i <= translations.length - 1; i++) {
         content.append(sideBarTranslationBuild(translations[i]));
         content.append(sideBarCategoryBuild(translations[i]));
