@@ -57,8 +57,16 @@ setTimeout(function() {
       _guest.focus();
     }, 250);
   }
-  if (isNaN(parseFloat(post)) && !isFinite(post)) sideBarDisplay(onScreen);
-  else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
+  if (
+    isNaN(parseFloat(post)) && !isFinite(post) &&
+    window.clientWidth <= 425
+  ) {
+    sideBarDisplay(onScreen);
+  } else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true) {
     _check.style.visibility = `visible`;
-
+  } else if (window.clientWidth <= 425) {
+    sideBarDisplay(false);
+    Blocks = true;
+    List = false;
+  }
 }, 50)

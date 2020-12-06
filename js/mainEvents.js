@@ -38,27 +38,21 @@ window.onload = function () {
 
 };
 
-window.addEventListener(
-  "touchstart",
-  function (event) {
-    touchstartX = event.changedTouches[0].screenX;
+document.addEventListener('touchstart', (evt) => {
+    touchstartX = evt.changedTouches[0].screenX;
   },
   { passive: true }
 );
 
-window.addEventListener(
-  "touchend",
-  function (event) {
-    touchendX = event.changedTouches[0].screenX;
+document.addEventListener('touchend', (evt) => {
+    touchendX = evt.changedTouches[0].screenX;
     handleSwipe();
   },
   { passive: true }
 );
 
-document.addEventListener(
-  `scroll`,
-  function (event) {
-    if (event.target.id == `main`) {
+document.addEventListener('scroll', (evt) => {
+    if (evt.target.id == `main`) {
       if (
         httpRequest &&
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
@@ -75,10 +69,8 @@ document.addEventListener(
   true
 );
 
-document.addEventListener(
-  `ontouchmove`,
-  function (event) {
-    if (event.target.id == `main`) {
+document.addEventListener('ontouchmove', (evt) => {
+    if (evt.target.id == `main`) {
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         Reader == true &&
@@ -87,35 +79,33 @@ document.addEventListener(
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
-    event.preventDefault();
+    evt.prevtDefault();
   },
   false
 ); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  `click`,
-  function (event) {
+document.addEventListener('click', (evt) => {
     if (
-      event.target.classList.contains(`construct`) ||
-      event.target.classList.contains(`picture`) ||
-      event.target.classList.contains(`header`) ||
-      event.target.classList.contains(`result`) ||
-      event.target.classList.contains(`post`) ||
-      event.target.classList.contains(`site`) ||
-      event.target.classList.contains(`cat`) ||
-      event.target.classList.contains(`sel`) ||
-      event.target.id == `container` ||
-      event.target.id == `toggle` ||
-      event.target.id == `search` ||
-      event.target.id == `option` ||
-      event.target.id == `visit` ||
-      event.target.id == `group` ||
-      event.target.id == `main` ||
-      event.target.id == `hide` ||
-      event.target.id == `page` ||
-      event.target.id == `xml` ||
-      event.target.id == `air` ||
-      event.target.id == `top` ||
-      event.target.id == `arm`
+      evt.target.classList.contains(`construct`) ||
+      evt.target.classList.contains(`picture`) ||
+      evt.target.classList.contains(`header`) ||
+      evt.target.classList.contains(`result`) ||
+      evt.target.classList.contains(`post`) ||
+      evt.target.classList.contains(`site`) ||
+      evt.target.classList.contains(`cat`) ||
+      evt.target.classList.contains(`sel`) ||
+      evt.target.id == `container` ||
+      evt.target.id == `toggle` ||
+      evt.target.id == `search` ||
+      evt.target.id == `option` ||
+      evt.target.id == `visit` ||
+      evt.target.id == `group` ||
+      evt.target.id == `main` ||
+      evt.target.id == `hide` ||
+      evt.target.id == `page` ||
+      evt.target.id == `xml` ||
+      evt.target.id == `air` ||
+      evt.target.id == `top` ||
+      evt.target.id == `arm`
     ) {
       if (_match.style.display === `block`) {
         document.querySelector(`#input .icon`).classList.remove(`slide`);
@@ -150,10 +140,10 @@ document.addEventListener(
         }
         return false;
       }
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`joi`)
+      evt.target.classList.contains(`joi`)
     ) {
       id = 0;
       first = true;
@@ -177,8 +167,8 @@ document.addEventListener(
       }
     }
     if (
-      event.target.classList.contains(`fa-sun`) ||
-      event.target.id == `toggle`
+      evt.target.classList.contains(`fa-sun`) ||
+      evt.target.id == `toggle`
     ) {
       var iteration = themes.findIndex((item) => item.obFn === set);
       if (iteration == themes.length - 1) iteration = -1;
@@ -187,7 +177,7 @@ document.addEventListener(
       console.log(set);
       window[set]();
     }
-    if (event.target.id == `just`) {
+    if (evt.target.id == `just`) {
       Reader = true;
       justRead = true;
       onlyImages = true;
@@ -208,20 +198,20 @@ document.addEventListener(
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (
-      event.target.classList.contains(`exit`) ||
-      event.target.classList.contains(`ext`)
+      evt.target.classList.contains(`exit`) ||
+      evt.target.classList.contains(`ext`)
     )
-      event.target.closest(`.courtesy`).getAttribute(`ext`).blank();
-    if (event.target.id == `check`) repository.blank();
+      evt.target.closest(`.courtesy`).getAttribute(`ext`).blank();
+    if (evt.target.id == `check`) repository.blank();
     if (
-      event.target.classList.contains(`fa-angle-up`) ||
-      event.target.id == `link` ||
-      event.target.id == `show`
+      evt.target.classList.contains(`fa-angle-up`) ||
+      evt.target.id == `link` ||
+      evt.target.id == `show`
     ) {
       quickFeeds = quickFeeds != true;
       quickFeedDisplay(quickFeeds);
     }
-    if (event.target.id == `home`) {
+    if (evt.target.id == `home`) {
       id = 0;
       document.title = category.capitalize();
       if (expand == true) var groupType = `list`;
@@ -230,13 +220,13 @@ document.addEventListener(
       topMenuBarDisplay(topBar);
       displayExpand(expand);
     }
-    if (event.target.classList.contains(`construct`)) {
+    if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
       );
       url.toString().blank();
     }
-    if (event.target.classList.contains(`fa-expand-alt`)) {
+    if (evt.target.classList.contains(`fa-expand-alt`)) {
       if (!document.body.contains(document.querySelector(`#group`)))
         populateCategoryGroup(category);
       document.querySelector(`#group`).style.display = `none`;
@@ -278,10 +268,10 @@ document.addEventListener(
       }
       unloading();
     }
-    if (event.target.classList.contains(`select`)) {
+    if (evt.target.classList.contains(`select`)) {
       let setPause;
       if (showRipple == true) {
-        rippleBuild(event, event.target.closest(`.populate`));
+        rippleBuild(evt, evt.target.closest(`.populate`));
         setPause = 500;
       } else setPause = 0;
       setTimeout(function () {
@@ -297,23 +287,23 @@ document.addEventListener(
         xmlRequestParsing(
           null,
           null,
-          event.target.closest(`.populate`).getAttribute(`aria-item`)
+          evt.target.closest(`.populate`).getAttribute(`aria-item`)
         );
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
       }, setPause);
     }
-    if (event.target.classList.contains(`translation`)) {
+    if (evt.target.classList.contains(`translation`)) {
       id = 0;
       first = true;
-      category = event.target.closest(`.translation`).getAttribute(`aria-item`);
+      category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
       if (Reader == true) {
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
         let setPause;
         if (showRipple == true) {
-          rippleBuild(event, event.target.closest(`.translation`));
+          rippleBuild(evt, evt.target.closest(`.translation`));
           setPause = 500;
         } else setPause = 0;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -322,7 +312,7 @@ document.addEventListener(
           document.querySelector(`#group`).remove();
         setTimeout(function () {
           populateCategoryGroup(
-            event.target.closest(`.translation`).getAttribute(`aria-item`)
+            evt.target.closest(`.translation`).getAttribute(`aria-item`)
           );
           topMenuBarDisplay(topBar);
           displayExpand(expand);
@@ -332,24 +322,24 @@ document.addEventListener(
       }
     }
     if (
-      event.target.classList.contains(`entity`) ||
-      event.target.classList.contains(`asset`) ||
-      event.target.classList.contains(`query`)
+      evt.target.classList.contains(`entity`) ||
+      evt.target.classList.contains(`asset`) ||
+      evt.target.classList.contains(`query`)
     ) {
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(`.asset`).getAttribute(`aria-item`)
+        evt.target.closest(`.asset`).getAttribute(`aria-item`)
       );
       topMenuBarDisplay(topBar);
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
     }
     if (
-      event.target.classList.contains(`checkmark__circle`) ||
-      event.target.classList.contains(`checkmark__check`) ||
-      event.target.classList.contains(`checkmark`) ||
-      event.target.id == `guide`
+      evt.target.classList.contains(`checkmark__circle`) ||
+      evt.target.classList.contains(`checkmark__check`) ||
+      evt.target.classList.contains(`checkmark`) ||
+      evt.target.id == `guide`
     ) {
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
@@ -362,8 +352,8 @@ document.addEventListener(
       local = null;
       post = null;
     }
-    if (event.target.classList.contains(`bottom`)) {
-      event.target.closest(`#xml`).remove();
+    if (evt.target.classList.contains(`bottom`)) {
+      evt.target.closest(`#xml`).remove();
       if (id === 0) populateCategoryGroup(category);
       else {
         if (location.href.match(`\\?q=`)) {
@@ -384,54 +374,54 @@ document.addEventListener(
         displayExpand(expand);
       }
     }
-    if (event.target.classList.contains(`more`)) {
-      event.target.parentNode.innerHTML = event.target.parentNode.getAttribute(
+    if (evt.target.classList.contains(`more`)) {
+      evt.target.parentNode.innerHTML = evt.target.parentNode.getAttribute(
         `text`
       );
-      event.target.style.display = `none`;
-      event.stopPropagation();
+      evt.target.style.display = `none`;
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`classic`) ||
-      event.target.classList.contains(`item`) ||
-      event.target.classList.contains(`wrap`) ||
-      event.target.classList.contains(`pub`) ||
-      event.target.classList.contains(`ago`)
+      evt.target.classList.contains(`classic`) ||
+      evt.target.classList.contains(`item`) ||
+      evt.target.classList.contains(`wrap`) ||
+      evt.target.classList.contains(`pub`) ||
+      evt.target.classList.contains(`ago`)
     ) {
-      event.target.closest(`.item`).getAttribute(`ext`).blank();
+      evt.target.closest(`.item`).getAttribute(`ext`).blank();
     }
     if (
-      event.target.classList.contains(`combine`) ||
-      event.target.classList.contains(`suggest`) ||
-      event.target.classList.contains(`circle`) ||
-      event.target.classList.contains(`random`) ||
-      event.target.classList.contains(`bold`)
+      evt.target.classList.contains(`combine`) ||
+      evt.target.classList.contains(`suggest`) ||
+      evt.target.classList.contains(`circle`) ||
+      evt.target.classList.contains(`random`) ||
+      evt.target.classList.contains(`bold`)
     ) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(`.suggest`).getAttribute(`aria-item`)
+        evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains(`asset`))
-      xmlRequestParsing(null, null, event.target.getAttribute(`aria-item`));
+    if (evt.target.classList.contains(`asset`))
+      xmlRequestParsing(null, null, evt.target.getAttribute(`aria-item`));
     if (
-      event.target.classList.contains(`flip-front`) ||
-      event.target.classList.contains(`flip-back`) ||
-      event.target.classList.contains(`front`) ||
-      event.target.classList.contains(`next`) ||
-      event.target.classList.contains(`back`)
+      evt.target.classList.contains(`flip-front`) ||
+      evt.target.classList.contains(`flip-back`) ||
+      evt.target.classList.contains(`front`) ||
+      evt.target.classList.contains(`next`) ||
+      evt.target.classList.contains(`back`)
     ) {
-      event.target.closest(`#xml`).remove();
+      evt.target.closest(`#xml`).remove();
       xmlRequestParsing(
         null,
         null,
-        event.target.closest(`.btn`).getAttribute(`aria-item`)
+        evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
     }
-    if (event.target.classList.contains(`option`)) {
+    if (evt.target.classList.contains(`option`)) {
       if (tap == 0) {
         tap = new Date().getTime();
         setTimeout(function () {
@@ -439,9 +429,9 @@ document.addEventListener(
         }, 350);
       } else {
         if (new Date().getTime() - tap < 350) {
-          let i = exclude.indexOf(event.target.innerHTML);
+          let i = exclude.indexOf(evt.target.innerHTML);
           exclude.splice(i, 1);
-          event.target.remove();
+          evt.target.remove();
           if (exclude.length == 0)
             document.querySelector(`.exclude`).style.height = `70px`;
           else
@@ -451,11 +441,11 @@ document.addEventListener(
           tap = 0;
         }
       }
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`filterBlur`) ||
-      event.target.classList.contains(`img`)
+      evt.target.classList.contains(`filterBlur`) ||
+      evt.target.classList.contains(`img`)
     ) {
       if (tap == 0) {
         tap = new Date().getTime();
@@ -465,11 +455,11 @@ document.addEventListener(
             new Date().getTime() - tap < 400
           )
             if (
-              !event.target
+              !evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
                 .classList.contains(`guide`) &&
-              event.target
+              evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
                 .classList.contains(`default`)
@@ -477,30 +467,30 @@ document.addEventListener(
               count = [];
               let sticky = [];
               sticky.push({
-                courtesy: event.target.closest(`.item`).querySelector(`.header`)
+                courtesy: evt.target.closest(`.item`).querySelector(`.header`)
                   .innerHTML,
-                element: event.target
+                element: evt.target
                   .closest(`.item`)
                   .getAttribute(`aria-item`),
                 image: menu[
-                  event.target.closest(`.item`).getAttribute(`aria-object`)
+                  evt.target.closest(`.item`).getAttribute(`aria-object`)
                 ].image.image(),
-                title: event.target
+                title: evt.target
                   .closest(`.item`)
                   .querySelector(`.pub`)
                   .getAttribute(`text`),
-                share: event.target.closest(`.item`).querySelector(`.share`)
+                share: evt.target.closest(`.item`).querySelector(`.share`)
                   .value,
-                dst: event.target
+                dst: evt.target
                   .closest(`.item`)
                   .querySelector(`.ago:last-child`).innerHTML,
-                src: event.target.closest(`.item`).querySelector(`.source`)
+                src: evt.target.closest(`.item`).querySelector(`.source`)
                   .value,
-                externalURI: event.target.closest(`.item`).getAttribute(`ext`),
-                menuObject: event.target
+                externalURI: evt.target.closest(`.item`).getAttribute(`ext`),
+                menuObject: evt.target
                   .closest(`.item`)
                   .getAttribute(`aria-object`),
-                pubIndex: event.target
+                pubIndex: evt.target
                   .closest(`.item`)
                   .getAttribute(`aria-item`),
               });
@@ -508,116 +498,116 @@ document.addEventListener(
                 if (showSplash == true) _check.style.display = `block`;
               guideDisplay(sticky);
             } else if (
-              event.target
+              evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
                 .classList.contains(`guide`)
             )
-              event.target.closest(`.item`).getAttribute(`ext`).blank();
+              evt.target.closest(`.item`).getAttribute(`ext`).blank();
             else if (
-              !event.target
+              !evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
                 .classList.contains(`default`)
             )
-              event.target.closest(`.item`).getAttribute(`ext`).blank();
+              evt.target.closest(`.item`).getAttribute(`ext`).blank();
             else if (category != `Social`)
-              event.target.closest(`.item`).getAttribute(`ext`).blank();
+              evt.target.closest(`.item`).getAttribute(`ext`).blank();
           tap = 0;
         }, 350);
       } else {
         if (new Date().getTime() - tap < 350) {
-          if (event.target.classList.contains(`leave`)) {
-            event.target.closest(`.item`).getAttribute(`ext`).blank();
+          if (evt.target.classList.contains(`leave`)) {
+            evt.target.closest(`.item`).getAttribute(`ext`).blank();
             return false;
           }
-          event.target
+          evt.target
             .closest(`.image`)
             .querySelector(
               `.fa-heart`
             ).style.animation = `scale .7s ease-in-out .1s both`;
-          event.target
+          evt.target
             .closest(`.image`)
             .querySelector(`.fa-heart`).style.display = `block`;
-          event.target
+          evt.target
             .closest(`.image`)
             .querySelector(`.fa-heart`).style.zIndex = `12`;
           setTimeout(function () {
-            event.target
+            evt.target
               .closest(`.image`)
               .querySelector(`.fa-heart`).style.animation = `none`;
-            event.target
+            evt.target
               .closest(`.image`)
               .querySelector(`.fa-heart`).style.display = `none`;
-            event.target
+            evt.target
               .closest(`.image`)
               .querySelector(`.fa-heart`).style.zIndex = `0`;
           }, 1500);
           tap = 0;
         }
       }
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`fa-ellipsis-h`) ||
-      event.target.classList.contains(`fa-ellipsis-v`) ||
-      event.target.classList.contains(`copy`)
+      evt.target.classList.contains(`fa-ellipsis-h`) ||
+      evt.target.classList.contains(`fa-ellipsis-v`) ||
+      evt.target.classList.contains(`copy`)
     ) {
-      if (event.target.closest(`.copy`).querySelector(`.fa-ellipsis-v`)) {
-        event.target
+      if (evt.target.closest(`.copy`).querySelector(`.fa-ellipsis-v`)) {
+        evt.target
           .closest(`.copy`)
           .querySelector(`.fa-ellipsis-v`)
           .classList.add(`fa-ellipsis-h`);
-        event.target
+        evt.target
           .closest(`.copy`)
           .querySelector(`.fa-ellipsis-h`)
           .classList.remove(`fa-ellipsis-v`);
-        event.target
+        evt.target
           .closest(`.copy`)
           .querySelector(`.attribute`).style.display = `none`;
       } else if (
-        event.target.closest(`.copy`).querySelector(`.fa-ellipsis-h`)
+        evt.target.closest(`.copy`).querySelector(`.fa-ellipsis-h`)
       ) {
-        event.target
+        evt.target
           .closest(`.copy`)
           .querySelector(`.fa-ellipsis-h`)
           .classList.add(`fa-ellipsis-v`);
-        event.target
+        evt.target
           .closest(`.copy`)
           .querySelector(`.fa-ellipsis-v`)
           .classList.remove(`fa-ellipsis-h`);
-        event.target
+        evt.target
           .closest(`.copy`)
           .querySelector(`.attribute`).style.display = `block`;
       }
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`fa-at`) ||
-      event.target.classList.contains(`site`)
+      evt.target.classList.contains(`fa-at`) ||
+      evt.target.classList.contains(`site`)
     ) {
-      event.target.closest(`.item`).querySelector(`.url`).select();
+      evt.target.closest(`.item`).querySelector(`.url`).select();
       document.execCommand(`copy`);
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`fa-share`) ||
-      event.target.classList.contains(`post`)
+      evt.target.classList.contains(`fa-share`) ||
+      evt.target.classList.contains(`post`)
     ) {
-      event.target.closest(`.item`).querySelector(`.share`).select();
+      evt.target.closest(`.item`).querySelector(`.share`).select();
       document.execCommand(`copy`);
-      event.stopPropagation();
+      evt.stopPropagation();
     }
     if (
-      event.target.classList.contains(`fa-camera`) ||
-      event.target.classList.contains(`picture`)
+      evt.target.classList.contains(`fa-camera`) ||
+      evt.target.classList.contains(`picture`)
     ) {
-      event.target.closest(`.item`).querySelector(`.source`).select();
+      evt.target.closest(`.item`).querySelector(`.source`).select();
       document.execCommand(`copy`);
     }
     if (
-      event.target.classList.contains(`fa-plus`) ||
-      event.target.classList.contains(`right`)
+      evt.target.classList.contains(`fa-plus`) ||
+      evt.target.classList.contains(`right`)
     ) {
       quickFeedAsset(6);
       let leftPos = _feed.scrollLeft;
@@ -626,15 +616,15 @@ document.addEventListener(
         document.querySelector(`.left`).style.display = `block`;
     }
     if (
-      event.target.classList.contains(`fa-minus`) ||
-      event.target.classList.contains(`left`)
+      evt.target.classList.contains(`fa-minus`) ||
+      evt.target.classList.contains(`left`)
     ) {
       let leftPos = _feed.scrollLeft;
       _feed.scrollLeft = leftPos - _feed.clientWidth;
       if (_feed.scrollLeft - _feed.clientWidth <= 0)
         document.querySelector(`.left`).style.display = `none`;
     }
-    event.preventDefault();
+    evt.prevtDefault();
   },
   false
 );

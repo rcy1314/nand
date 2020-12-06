@@ -1,6 +1,4 @@
-document.addEventListener(
-  `mousemove`,
-  function (event) {
+document.addEventListener('mousemove', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
@@ -24,10 +22,8 @@ document.addEventListener(
     }
   },
   false
-); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  `mouseout`,
-  function (event) {
+);
+document.addEventListener('mouseout', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
@@ -45,10 +41,8 @@ document.addEventListener(
     }
   },
   false
-); //:before pseudo-elements not loaded in DOM
-document.addEventListener(
-  `click`,
-  function (event) {
+);
+document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true;
       if (document.body.contains(document.querySelector(`#xml`))) {

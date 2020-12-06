@@ -86,7 +86,7 @@ let Reader = false;
 
 */
 
-let onScreen = false;
+let onScreen = true;
 
 /*
     expand [boolean/integer]
@@ -243,7 +243,7 @@ let showDescription = true;
 
 */
 
-let sideBarTranslations = false;
+let sideBarTranslations = true;
 
 /*
     quickFeeds [boolean/integer]
@@ -256,7 +256,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = true;
+let quickFeeds = false;
 
 /*
     quickFeedsTranslations [boolean/integer]

@@ -1,6 +1,4 @@
-document.addEventListener(
-  `click`,
-  function (event) {
+document.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`buttonSearch`) ||
       event.target.classList.contains(`button`)
@@ -14,9 +12,7 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  `click`,
-  function (event) {
+document.addEventListener('click', (evt) => {
     if (event.target.id == `view`) {
       _match.style.display = `none`;
       while (_match.querySelector(".listing").firstChild) {
@@ -35,9 +31,7 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  `click`,
-  function (event) {
+document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`sideFilter`)) {
       event.target.value = ``;
     }
@@ -89,9 +83,7 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  `mouseout`,
-  function (event) {
+document.addEventListener('mouseout', (evt) => {
     if (event.target.classList.contains(`detail`))
       document
         .querySelectorAll(`.listing .index, .listing .index`)
@@ -99,9 +91,7 @@ document.addEventListener(
   },
   false
 );
-document.addEventListener(
-  `mouseover`,
-  function (event) {
+document.addEventListener('mouseover', (evt) => {
     if (event.target.classList.contains(`detail`))
       event.target.closest(`.index`).classList.add(`hover`);
   },
@@ -114,9 +104,7 @@ document.addEventListener('input', (evt) => {
   },
   false
 );
-document.addEventListener(
-  `submit`,
-  function (event) {
+document.addEventListener('submit', (evt) => {
     if (event.target.classList.contains(`min`)) {
       if (document.querySelector(`.excludeInput`).value.length) {
         exclude.push(document.querySelector(`.excludeInput`).value);
