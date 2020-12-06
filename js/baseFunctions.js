@@ -93,7 +93,7 @@ let progressBackDrop = function (done) {
   let complete;
   _visit.style.display = `none`;
   if (done == true && loading == `percent`) {
-    _progress.style.width = `100%`;
+    _progress.style.width = `calc(100% - 18px)`;
     _progress.style.transition = `all 750ms ease-in-out`;
     _progress.style.opacity = `0`;
     setTimeout(function () {
@@ -106,7 +106,7 @@ let progressBackDrop = function (done) {
         width = _main.clientWidth / (count.length - 1);
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 4);
       if (!width) width = _main.clientWidth / 15;
-      if (_progress.clientWidth >= _main.clientWidth - 18) {
+      if (_progress.clientWidth >= _main.clientWidth) {
         setTimeout(function () {
           _progress.style.transition = `all 750ms ease-in-out`;
           _progress.style.opacity = `0`;
