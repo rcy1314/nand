@@ -102,7 +102,6 @@
   #main #xml .center {
     margin-left: 0;
     width: 100%;
-    top: 60px;
 	  left: 0;
   }
 
@@ -207,6 +206,10 @@
 
 @media screen and (min-width: 768px) {
 
+  #sidebar #content {
+    position: relative !important;
+  }
+
   #main #option {
     display: none;
   }
@@ -231,6 +234,7 @@
   #main #xml .center {
 	  margin-right: 30px;
     width: 420px;
+    top: 60px;
   }
 
   #main #xml .content {
