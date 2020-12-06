@@ -1,6 +1,6 @@
 // initial theme
 // mobile overwritten in mainEvents.js onload
-let set = `Alpenglow`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
