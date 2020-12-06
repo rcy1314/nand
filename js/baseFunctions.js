@@ -101,7 +101,8 @@ let progressBackDrop = function (done) {
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
     }, 750)
-  } else if (done == false && loading == `percent`) {
+  }
+  if (done == false || done == true && loading == `percent`) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
         width = _main.clientWidth / (count.length - 1);
@@ -124,7 +125,6 @@ let progressBackDrop = function (done) {
       }
     }, 1000);
     count.push(`null`);
-    return false;
   }
   if (document.body.contains(document.getElementById(`xml`)) && !post) {
     document.querySelector(`#xml`).style.display = `block`;
