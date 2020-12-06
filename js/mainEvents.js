@@ -283,7 +283,6 @@ document.addEventListener('click', (evt) => {
           _guest.blur();
           return false;
         }
-        init();
         xmlRequestParsing(
           null,
           null,
