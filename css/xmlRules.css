@@ -126,8 +126,9 @@
 #main #xml .center .item .pub,
 #main #xml .center .item .add {
   background-color: transparent;
+  max-width: 60% !important;
+  word-break: break-all;
   justify-content: left;
-  width: 90% !important;
   margin-left: 10px;
   margin-top: 5px;
   font-size: 13px;
@@ -136,7 +137,6 @@
 
 #main #xml .center .item .pub {
   color: var(--fill-color-primary);
-  display: inline-block;
   margin-bottom: 10px;
   margin-right: 30px;
   margin-top: 20px;
