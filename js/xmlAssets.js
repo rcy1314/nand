@@ -415,7 +415,7 @@ var menu=[
 {id:`WIRED`,category:`Technology`,description:`WIRED is where tomorrow is realized. It is the essential source of information.`,uri:`https://www.wired.com/feed/rss`,image:`WIRED`,hash:`wD`,media:!0},
 {id:`ZDNet`,category:`Technology`,description:`ZDNet is a business technology website published by CBS Interactive.`,uri:`https://www.zdnet.com/news/rss.xml`,image:`ZDNet`,hash:`zD`,media:!1},
 {id:`Yahoo Technology`,category:`Technology`,description:`Yahoo is a web services provider headquartered in California, and owned by Verizon Media.`,uri:`https://www.yahoo.com/tech/rss`,image:`Yahoo`,hash:`tA`,media:!0},
-{id:`World`,category:`World`,description:`is an American broadcast television network that is property of Walt Disney.`,uri:`https://abcnews.go.com/abcnews/internationalheadlines`,image:`ABC`,hash:`wA`,media:!0},
+{id:`World`,category:`World`,description:`ABC is an American broadcast television network that is property of Walt Disney.`,uri:`https://abcnews.go.com/abcnews/internationalheadlines`,image:`ABC`,hash:`wA`,media:!0},
 {id:`Al Jazeera`,category:`World`,description:`Al Jazeera is an Arabic-language television channel from Doha, Qatar.`,uri:`https://www.aljazeera.com/xml/rss/all.xml`,image:`AlJazeera`,hash:`aJ`,media:!1},
 {id:`Axios`,category:`World`,description:`Axios known for delivering coverage and insight with a distinctive brand of smart brevity.`,uri:`https://api.axios.com/feed`,image:`Axios`,hash:`xS`,media:!0},
 {id:`BBC World`,category:`World`,description:`BBC is the world’s leading public service broadcaster.`,uri:`http://feeds.bbci.co.uk/news/rss.xml`,image:`BBC`,hash:`cD`,media:!1},
