@@ -1,3 +1,7 @@
+.blur {
+  backdrop-filter: blur(10px);
+}
+
 .guide {
   scrollbar-width: none;
 }
