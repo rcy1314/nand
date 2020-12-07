@@ -53,13 +53,13 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, youtubeMedia);
     }
     if (event.target.classList.contains(`showDescription`)) {
-      sideBarStar(event.target, showDescription);
       showDescription = showDescription != true;
+      sideBarStar(event.target, showDescription);
       displayDescription(showDescription);
     }
     if (event.target.classList.contains(`scrollIntoView`)) {
-      sideBarStar(event.target, scrollIntoView);
       scrollIntoView = scrollIntoView != true;
+      sideBarStar(event.target, scrollIntoView);
     }
     if (event.target.classList.contains(`showRipple`)) {
       showRipple = showRipple != true;
@@ -145,34 +145,31 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`sideBarCenter`)) {
       sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {
-        sideBarStar(event.target, sideBarCenter);
         _content.style.position = `relative`;
       } else if (sideBarCenter == true) {
-        sideBarStar(event.target, sideBarCenter);
         _content.style.position = `absolute`;
       }
+      sideBarStar(event.target, sideBarCenter);
     }
     if (event.target.classList.contains(`sideBarBackdrop`)) {
       sideBarBackdrop = sideBarBackdrop != true;
       if (sideBarBackdrop == false) {
         _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
-        sideBarStar(event.target, sideBarBackdrop);
       } else {
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
-        sideBarStar(event.target, sideBarBackdrop);
       }
+      sideBarStar(event.target, sideBarBackdrop);
     }
     if (event.target.classList.contains(`topBarBackdrop`)) {
       topBarBackdrop = topBarBackdrop != true;
       if (topBarBackdrop == false) {
         _top.style.cssText = `backdrop-filter: none`;
-        sideBarStar(event.target, topBarBackdrop);
         topMenuBarDisplay(topBar);
       } else {
         _top.style.cssText = `backdrop-filter: blur(10px)`;
-        sideBarStar(event.target, topBarBackdrop);
         topMenuBarDisplay(topBar);
       }
+      sideBarStar(event.target, topBarBackdrop);
     }
     if (event.target.classList.contains(`mainBackground`)) {
       if (
@@ -288,7 +285,6 @@ document.addEventListener('click', (evt) => {
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {
-        sideBarStar(event.target, Reader);
         justRead = false;
         first = true;
         id = 0;
@@ -299,8 +295,8 @@ document.addEventListener('click', (evt) => {
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         xmlRequestParsing(null, null, anyRandomMenuObject());
-        sideBarStar(event.target, Reader);
       }
+      sideBarStar(event.target, Reader);
     }
     if (event.target.classList.contains(`parse`)) {
       if (document.querySelector(`.exclude`).clientHeight != `36`) {
