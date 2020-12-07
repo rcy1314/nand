@@ -168,12 +168,8 @@ let sideBarDisplay = function (Value) {
     content.append(basicFormBuild());
   }
   if (Value == true) {
-    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
-      _container.style.width = `calc(100% + 240px)`;
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
-        _main.style.width = `calc(100% - 240px)`;
-        _main.style.left = `240px`;
         _sidebar.style.left = `0`;
         setTimeout(function () {
           _hide.style.left = `240px`;
@@ -186,14 +182,10 @@ let sideBarDisplay = function (Value) {
         _sidebar.style.left = `0`;
       }, 300);
   } else if (Value == false) {
-    if ((backgroundImage.element = `container` && _main.clientWidth >= 769))
-      _container.style.width = `calc(100%)`;
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-240px`;
-    _main.style.width = `100%`;
     _hide.style.left = `0`;
-    _main.style.left = `0`;
   }
 };
 
