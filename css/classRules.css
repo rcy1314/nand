@@ -1,5 +1,6 @@
 .blur {
-  backdrop-filter: blur(10px);
+  background-color: var(--sticky-background);
+  backdrop-filter: blur(25px);
 }
 
 .guide {
