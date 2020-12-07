@@ -186,7 +186,7 @@ var guideImageAttributes = function (pubArray) {
           .forEach((a) => (a.style.maxHeight = `90vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `calc(40vw - 220px)`));
+          .forEach((a) => (a.style.maxWidth = `calc(80vw - 220px)`));
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)

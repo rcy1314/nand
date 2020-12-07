@@ -110,7 +110,7 @@ let progressBackDrop = function (done) {
       if (!width) width = _main.clientWidth / 15;
       if (_progress.clientWidth >= _main.clientWidth) {
         setTimeout(function () {
-          _progress.style.transition = `all 750ms ease-in-out`;
+          _progress.style.transition = `all 1000ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
             _progress.style.transition = `none`;
