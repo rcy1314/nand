@@ -116,7 +116,7 @@ let progressBackDrop = function (done) {
     }, 1000);
     count.push(`null`);
   }
-  if (document.body.contains(document.getElementById(`xml`)) && !post) {
+  if (document.body.contains(document.getElementById(`xml`))) {
     document.querySelector(`#xml`).style.display = `block`;
       if (Reader == true && first == true) {
         if (
@@ -173,7 +173,6 @@ let progressBackDrop = function (done) {
     if (scrollIntoView == true) {
       document.querySelector(`#group`).classList.add(`scroll-into-view`)
       setTimeout(function () {
-        document.querySelector(`#group`).classList.remove(`scroll-into-view`)
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
         _check.style.display = `none`;
