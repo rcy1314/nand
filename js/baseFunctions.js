@@ -98,7 +98,6 @@ let progressBackDrop = function (done) {
         width = _main.clientWidth / (count.length - 1);
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 4);
       if (!width || width == `Infinity`) width = _main.clientWidth / 15;
-      console.log(width);
       if (_progress.clientWidth >= _main.clientWidth) {
         setTimeout(function () {
           _progress.style.transition = `all 1250ms ease-in-out`;
