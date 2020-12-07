@@ -39,9 +39,11 @@ window.onload = function () {
 };
 
 window.addEventListener("wheel", function(e) {
+  if (sideBarMousewheel == true) {
     if (Math.sign(e.deltaY) == 1) onScreen = false;
     if (Math.sign(e.deltaY) == -1) onScreen = true;
     sideBarDisplay(onScreen)
+  }
 });
 
 document.addEventListener('touchstart', (evt) => {

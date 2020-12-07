@@ -208,6 +208,19 @@ let sideBarCenter = true;
 let sideBarBackdrop = true;
 
 /*
+    sideBarMousewheel [boolean/integer]
+
+      Applications
+        sideBar, sideBarEvents
+
+      Result
+        display sideBar with Mousewheel.
+
+*/
+
+let sideBarMousewheel = true;
+
+/*
     topBarBackdrop [boolean/integer]
 
       Applications
@@ -599,6 +612,7 @@ const settings = [
   { name: `Top Bar Backdrop`, class: `topBarBackdrop` },
   { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
+  { name: `Sidebar Mousewheel`, class: `sideBarMousewheel` },
 ];
 
 const background = [

@@ -52,6 +52,10 @@ document.addEventListener('click', (evt) => {
       }
       sideBarStar(event.target, youtubeMedia);
     }
+    if (event.target.classList.contains(`sideBarMousewheel`)) {
+      sideBarMousewheel = sideBarMousewheel != true;
+      sideBarStar(event.target, sideBarMousewheel);
+    }
     if (event.target.classList.contains(`showDescription`)) {
       showDescription = showDescription != true;
       sideBarStar(event.target, showDescription);
