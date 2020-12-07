@@ -1085,11 +1085,6 @@ var xmlRequestParsing = function (search, string, index) {
           var suggestions = document.querySelector(`.suggestions`);
           while (suggestions.firstChild)
             suggestions.removeChild(suggestions.lastChild);
-          _main.scrollTo({
-            top: document.querySelector(`[aria-object='` + index + `']`)
-              .offsetTop,
-            behavior: `smooth`,
-          });
         }
         if (Reader == false){
           document.querySelector(`.channel`).append(footerBuild());

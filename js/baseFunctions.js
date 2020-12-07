@@ -130,7 +130,7 @@ let progressBackDrop = function (done) {
       }
     if (
       scrollIntoView == true &&
-      Reader == false
+      first == true
     ) {
       document.querySelector(`.center`).classList.add(`scroll-into-view`)
       setTimeout(function () {
