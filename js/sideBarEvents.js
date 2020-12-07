@@ -62,8 +62,8 @@ document.addEventListener('click', (evt) => {
       scrollIntoView = scrollIntoView != true;
     }
     if (event.target.classList.contains(`showRipple`)) {
-      sideBarStar(event.target, showRipple);
       showRipple = showRipple != true;
+      sideBarStar(event.target, showRipple);
     }
     if (event.target.classList.contains(`excludeInput`)) {
       event.target.value = ``;
