@@ -233,46 +233,23 @@ document.addEventListener('click', (evt) => {
       url.toString().blank();
     }
     if (evt.target.classList.contains(`fa-expand-alt`)) {
-      if (!document.body.contains(document.querySelector(`#group`)))
-        populateCategoryGroup(category);
-      document.querySelector(`#group`).style.display = `none`;
-      _visit.style.display = `none`;
-      topMenuBarDisplay(topBar);
       expand = expand != true;
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove()
       if (expand == false) {
         sideBarStar(document.querySelector(`.Blocks`), true);
         sideBarStar(document.querySelector(`.List`), false);
-      }
-      displayExpand(expand);
-      if (expand == true) {
+      } else if (expand == true) {
         sideBarStar(document.querySelector(`.Blocks`), false);
         sideBarStar(document.querySelector(`.List`), true);
-        var groupType = `list`;
-        if (showDescription == false) {
-          _main
-            .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.remove(`expand`));
-          _main
-            .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.add(`basic`));
-        } else if (showDescription == true) {
-          _main
-            .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.remove(`expand`));
-          _main
-            .querySelectorAll(`.populate`)
-            .forEach((a) => a.classList.add(`expand`));
-        }
-      } else if (showDescription == true) {
-        var groupType = `blocks`;
-        _main
-          .querySelectorAll(`.populate`)
-          .forEach((a) => a.classList.remove(`expand`));
-        _main
-          .querySelectorAll(`.populate`)
-          .forEach((a) => a.classList.remove(`basic`));
       }
-      unloading();
+      setTimeout(function () {
+        populateCategoryGroup(category);
+        displayDescription(showDescription);
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        unloading();
+      }, 25)
     }
     if (evt.target.classList.contains(`select`)) {
       let setPause;
