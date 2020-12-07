@@ -137,7 +137,6 @@ document.addEventListener('click', (evt) => {
           attribute[i].classList.remove(`fa-ellipsis-v`);
           attribute[i].classList.add(`fa-ellipsis-h`);
         }
-        return false;
       }
       evt.stopPropagation();
     }
