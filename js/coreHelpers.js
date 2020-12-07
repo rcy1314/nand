@@ -30,7 +30,13 @@ var unloading = function () {
     progressBackDrop(true);
   } else if (loading == `percent`) {
     _progress.style.transition = `0`;
-    _progress.style.width = `0%`;
+    _progress.style.width = `100%`;
+    _progress.style.transition = `all 1250ms ease-in-out`;
+    _progress.style.opacity = `0`;
+    setTimeout(function () {
+      _progress.style.transition = `none`;
+      _progress.style.width = `0%`;
+    }, 1250);
     progressBackDrop(true);
   }
 };
