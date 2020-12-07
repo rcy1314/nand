@@ -59,7 +59,7 @@ html body,
   background: var(--bg-color-secondary);
   margin-right: 4px;
   border-radius: 3;
-  position: fixed;
+  position: absolute;
   height: 4px;
   z-index: 12;
   width: 0;

@@ -515,10 +515,20 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       if (
         document.body.contains(
           document.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+          )
+        ) &&
+        document.body.contains(
+          document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
           )
         )
       )
+      document
+        .querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+        )
+        .remove();
         document
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`

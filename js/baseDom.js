@@ -173,7 +173,6 @@ let sideBarDisplay = function (Value) {
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
         _main.style.width = `calc(100% - 240px)`;
-        _progress.style.left = `240px`;
         _main.style.left = `240px`;
         _sidebar.style.left = `0`;
         setTimeout(function () {
@@ -192,7 +191,6 @@ let sideBarDisplay = function (Value) {
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-240px`;
-    _progress.style.left = `0`;
     _main.style.width = `100%`;
     _hide.style.left = `0`;
     _main.style.left = `0`;

@@ -93,14 +93,13 @@ let progressBackDrop = function (done) {
   let complete;
   _visit.style.display = `none`;
   if (done == true && loading == `percent`) {
-    if (_main.clientWidth >= 769) _progress.style.width = `calc(100% - 18px)`;
-    else _progress.style.width = `100%`;
-    _progress.style.transition = `all 750ms ease-in-out`;
+    _progress.style.width = `100%`;
+    _progress.style.transition = `all 1250ms ease-in-out`;
     _progress.style.opacity = `0`;
     setTimeout(function () {
       _progress.style.transition = `none`;
       _progress.style.width = `0%`;
-    }, 750)
+    }, 1250)
   }
   if (done == false || done == true && loading == `percent`) {
     complete = setInterval(function () {
@@ -110,12 +109,12 @@ let progressBackDrop = function (done) {
       if (!width) width = _main.clientWidth / 15;
       if (_progress.clientWidth >= _main.clientWidth) {
         setTimeout(function () {
-          _progress.style.transition = `all 1000ms ease-in-out`;
+          _progress.style.transition = `all 1250ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
             _progress.style.transition = `none`;
             _progress.style.width = `0%`;
-          }, 750);
+          }, 1250);
         }, 250);
         clearInterval(complete);
       } else {
