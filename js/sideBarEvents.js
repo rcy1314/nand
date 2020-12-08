@@ -305,7 +305,9 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`parse`)) {
       if (document.querySelector(`.exclude`).clientHeight != `36`) {
         document.querySelector(`.exclude`).style.height = `31px`;
+        expandFilter = false;
       } else {
+        expandFilter = true;
         if (exclude.length == 0)
           document.querySelector(`.exclude`).style.height = `75px`;
         else
@@ -317,26 +319,32 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`border`)) {
       if (document.querySelector(`.themes`).clientHeight != `36`) {
         document.querySelector(`.themes`).style.height = `31px`;
-        return false;
+        expandVisual = false;
+      } else {
+        expandVisual = true;
+        let count = themes.length + 1;
+        document.querySelector(`.themes`).style.height = `${count * 36}px`;
       }
-      let count = themes.length + 1;
-      document.querySelector(`.themes`).style.height = `${count * 36}px`;
     }
     if (event.target.classList.contains(`adjust`)) {
       if (document.querySelector(`.bg`).clientHeight != `36`) {
         document.querySelector(`.bg`).style.height = `31px`;
-        return false;
+        expandBackground = false;
+      } else {
+        expandBackground = true;
+        let count = background.length + 1;
+        document.querySelector(`.bg`).style.height = `${count * 36 + 30}px`;
       }
-      let count = background.length + 1;
-      document.querySelector(`.bg`).style.height = `${count * 36 + 30}px`;
     }
     if (event.target.classList.contains(`choose`)) {
       if (document.querySelector(`.set`).clientHeight != `36`) {
         document.querySelector(`.set`).style.height = `31px`;
-        return false;
+        expandSettings = false;
+      } else {
+        expandSettings = true;
+        let count = settings.length + 1;
+        document.querySelector(`.set`).style.height = `${count * 35}px`;
       }
-      let count = settings.length + 1;
-      document.querySelector(`.set`).style.height = `${count * 35}px`;
     }
     if (event.target.classList.contains(`List`)) {
       expand = true;

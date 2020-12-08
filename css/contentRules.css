@@ -81,6 +81,7 @@ html body,
 #main {
   background-position: center center;
   -webkit-overflow-scrolling: touch;
+  image-rendering: optimizeSpeed;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;

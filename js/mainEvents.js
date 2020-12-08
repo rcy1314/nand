@@ -38,17 +38,19 @@ window.onload = function () {
 
 };
 
-window.addEventListener("wheel", function(e) {
+_main.addEventListener("wheel", function(evt) {
   if (
     sideBarMousewheel == true &&
-    document.querySelector(`.exclude`).clientHeight == `36` &&
-    document.querySelector(`.themes`).clientHeight == `36` &&
-    document.querySelector(`.set`).clientHeight == `36` &&
-    document.querySelector(`.bg`).clientHeight == `36` 
+    expandBackground == false &&
+    expandSettings == false &&
+    expandVisual == false &&
+    expandFilter == false
   ) {
-    if (Math.sign(e.deltaY) == 1) onScreen = false;
-    if (Math.sign(e.deltaY) == -1) onScreen = true;
-    sideBarDisplay(onScreen)
+    if (Math.sign(evt.deltaY) == 1)
+      if (onScreen == true) sideBarDisplay(false);
+    else
+      if (onScreen == false) sideBarDisplay(true);
+
   }
 });
 
