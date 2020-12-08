@@ -69,6 +69,10 @@ document.addEventListener('click', (evt) => {
       showRipple = showRipple != true;
       sideBarStar(event.target, showRipple);
     }
+    if (event.target.classList.contains(`showFireworks`)) {
+      showFireworks = showFireworks != true;
+      sideBarStar(event.target, showFireworks);
+    }
     if (event.target.classList.contains(`excludeInput`)) {
       event.target.value = ``;
     }
