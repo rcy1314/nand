@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  .expand {
+    margin-left: 0 !important;
+  }
+
   .btn .flip-back {
     transform: rotateX(0deg) translateZ(25px) !important;
   }
