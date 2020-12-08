@@ -366,10 +366,6 @@
     width: 90% !important;
   }
 
-  #sidebar {
-    overflow-y: hidden !important;
-  }
-
   #main #top #arm {
     width: 940px;
   }
