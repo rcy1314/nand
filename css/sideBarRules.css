@@ -13,7 +13,6 @@
 #container #sidebar #content {
   background-color: transparent;
   height: fit-content;
-  position: absolute;
   overflow-x: hidden;
   padding-top: 10px;
   overflow-y: auto;

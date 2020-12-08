@@ -6,6 +6,9 @@ window.onload = function () {
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
+  if (sideBarCenter == true)
+    _sidebar.querySelector(`#content`).style.position = `absolute`;
+
   if (sideBarBackdrop == true)
     _sidebar.style.cssText = `backdrop-filter: blur(10px)`
 
