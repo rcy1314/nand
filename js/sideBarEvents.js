@@ -1,4 +1,4 @@
-document.addEventListener('mousemove', (evt) => {
+_sidebar.addEventListener('mousemove', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
@@ -23,7 +23,7 @@ document.addEventListener('mousemove', (evt) => {
   },
   false
 );
-document.addEventListener('mouseout', (evt) => {
+_sidebar.addEventListener('mouseout', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
@@ -303,48 +303,40 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, Reader);
     }
     if (event.target.classList.contains(`parse`)) {
-      if (document.querySelector(`.exclude`).clientHeight != `36`) {
+      expandFilter = expandFilter != true
+      if (expandFilter == false)
         document.querySelector(`.exclude`).style.height = `31px`;
-        expandFilter = false;
-      } else {
-        expandFilter = true;
+      else if (expandFilter == true)
         if (exclude.length == 0)
           document.querySelector(`.exclude`).style.height = `75px`;
         else
           document.querySelector(`.exclude`).style.height = `${
             exclude.length * 32 + 80
           }px`;
-      }
     }
     if (event.target.classList.contains(`border`)) {
-      if (document.querySelector(`.themes`).clientHeight != `36`) {
+      expandVisual = expandVisual != true
+      if (expandVisual == false)
         document.querySelector(`.themes`).style.height = `31px`;
-        expandVisual = false;
-      } else {
-        expandVisual = true;
-        let count = themes.length + 1;
-        document.querySelector(`.themes`).style.height = `${count * 36}px`;
-      }
+      else if (expandVisual == true)
+        document.querySelector(`.themes`).style.height =
+          `${(themes.length + 1) * 36}px`;
     }
     if (event.target.classList.contains(`adjust`)) {
-      if (document.querySelector(`.bg`).clientHeight != `36`) {
+      expandBackground = expandBackground != true
+      if (expandBackground == false)
         document.querySelector(`.bg`).style.height = `31px`;
-        expandBackground = false;
-      } else {
-        expandBackground = true;
-        let count = background.length + 1;
-        document.querySelector(`.bg`).style.height = `${count * 36 + 30}px`;
-      }
+      else if (expandBackground == true)
+        document.querySelector(`.bg`).style.height =
+          `${(background.length + 1) * 36 + 30}px`;
     }
     if (event.target.classList.contains(`choose`)) {
-      if (document.querySelector(`.set`).clientHeight != `36`) {
+      expandSettings = expandSettings != true
+      if (expandSettings == false)
         document.querySelector(`.set`).style.height = `31px`;
-        expandSettings = false;
-      } else {
-        expandSettings = true;
-        let count = settings.length + 1;
-        document.querySelector(`.set`).style.height = `${count * 35}px`;
-      }
+      else if (expandSettings == true)
+        document.querySelector(`.set`).style.height =
+          `${(settings.length + 1) * 35}px`;
     }
     if (event.target.classList.contains(`List`)) {
       expand = true;
