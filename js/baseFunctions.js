@@ -170,12 +170,9 @@ let progressBackDrop = function (done) {
   if (document.body.contains(document.getElementById(`group`))) {
     document.querySelector(`#group`).style.display = `block`;
     if (scrollIntoView == true) {
-      document.querySelector(`#group`).classList.add(`scroll-into-view`)
-      setTimeout(function () {
+      document.querySelector(`.result`).classList.add(`scroll-into-view`)
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        _check.style.display = `none`;
-      }, 750);
     }
   }
   if (onlyImages == true)
@@ -186,13 +183,8 @@ let progressBackDrop = function (done) {
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
     }
-    if (
-      scrollIntoView == false &&
-      showSplash == true
-    )
-    _check.style.display = `none`;
-    _visit.style.display = `none`;
   }, 25);
+  if (showSplash == true) _check.style.display = `none`;
 };
 
 let populateCategoryGroup = function (translation) {
