@@ -27,7 +27,7 @@ function explode(e) {
 			//color: 'rgb(' + [r(0,255), r(0,255), r(0,255)].join(',') + ')',
       color: color,
 			rotation: r(0,360, true),
-			speed: r(4,10),
+			speed: r(25,.25),
 			friction: 1,
 			opacity: r(0,1, true),
 			yVel: 0,
