@@ -144,10 +144,12 @@ var guideImageAttributes = function (pubArray) {
     if (_main.clientWidth <= 425) {
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
+      _guide.querySelector(`.sticky .src`).style.display = `block`;
+      _guide.querySelector(`.sticky .image`).style.margin = `0`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `70vh`));
+          .forEach((a) => (a.style.maxHeight = `65vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
@@ -160,7 +162,7 @@ var guideImageAttributes = function (pubArray) {
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `70vh`));
+          .forEach((a) => (a.style.maxHeight = `65vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
@@ -567,7 +569,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         })
           .then((response) => {
             response.json().then((jsonResponse) => {
-              jsonResponseScore = jsonResponse.score;
+              console.log(`${pubIndex} ${jsonResponse.score}`)
               if (jsonResponse.score >= safeSearchScore) {
                 if (
                   document.body.contains(
@@ -702,8 +704,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
               .remove();
           });
-      }
-      if (
+      } else if (safeSearch == false && !safeSearchIDs.includes(menu[id].id) &&
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
