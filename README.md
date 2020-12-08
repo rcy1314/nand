@@ -11,6 +11,7 @@
 * Beta (stage) themes.
 * Background Images.
 * No Installation.
+* Youtube Media.
 * Bing Search.
 * NSFW api.
 * Filtering.
