@@ -361,6 +361,11 @@
 }
 @media screen and (min-width: 1440px) {
 
+  .expand {
+    margin-left: 140px !important;
+    width: 90% !important;
+  }
+
   #sidebar {
     overflow-y: hidden !important;
   }

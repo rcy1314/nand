@@ -114,7 +114,6 @@ let progressBackDrop = function (done) {
         _progress.style.width = _progress.clientWidth + width;
       }
     }, 1000);
-    count.push(`null`);
   }
   if (document.body.contains(document.getElementById(`xml`))) {
     document.querySelector(`#xml`).style.display = `block`;
