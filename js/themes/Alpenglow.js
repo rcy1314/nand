@@ -1,5 +1,5 @@
 var Alpenglow = function () {
-  color = `rgba(106, 66, 194, 1)`;
+  color = `rgba(255, 255, 255, 1)`;
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgba(63, 92, 136, .4)`
