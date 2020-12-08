@@ -26,7 +26,7 @@
   position: relative;
   margin: 15px auto;
   overflow: hidden;
-  margin-top: 5px;
+  margin-top: 15px;
   width: 240px;
   bottom: 0;
 }
@@ -138,7 +138,7 @@
   padding-left: 10px;
   overflow: hidden;
   font-size: 12px;
-  height: 31px;
+  height: 35px;
   width: 95%;
 }
 
