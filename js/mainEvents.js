@@ -303,9 +303,12 @@ document.addEventListener('click', (evt) => {
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
         let setPause;
+        let target = event;
         if (showFireworks == true) {
-          explode(event);
-          setPause = 450;
+          setTimeout(function() {
+            explode(target);
+          }, 100)
+          setPause = 500;
         }
         if (showRipple == true) {
           rippleBuild(evt, evt.target.closest(`.translation`));
