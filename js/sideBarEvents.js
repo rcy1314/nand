@@ -231,6 +231,7 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;
+      if (showFireworks == true) explode(event);
       if (showRipple == true) rippleBuild(event, event.target);
       if (_main.clientWidth <= 425) {
         onScreen = onScreen != true;

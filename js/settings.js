@@ -168,6 +168,19 @@ let expandBackground = false;
 let showRipple = true;
 
 /*
+    showRipple [boolean/integer]
+
+      Applications
+        sideBar, populate
+
+      Result
+        ripple coloring effect.
+
+*/
+
+let showFireworks = true;
+
+/*
     showSplash [boolean/integer]
 
       Applications
@@ -578,6 +591,7 @@ let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
 let count = []; //progressBackdrop init calls
 let complete; //progressBar interval
+let color;
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1
@@ -603,6 +617,7 @@ const settings = [
   { name: `Reader`, class: `Reader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
+  { name: `Use FireWorks`, class: `showFireworks` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },

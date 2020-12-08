@@ -267,6 +267,10 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.classList.contains(`select`)) {
       let setPause;
+      if (showFireworks == true) {
+        explode(event);
+        setPause = 450;
+      }
       if (showRipple == true) {
         rippleBuild(evt, evt.target.closest(`.populate`));
         setPause = 500;
@@ -299,6 +303,10 @@ document.addEventListener('click', (evt) => {
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
         let setPause;
+        if (showFireworks == true) {
+          explode(event);
+          setPause = 450;
+        }
         if (showRipple == true) {
           rippleBuild(evt, evt.target.closest(`.translation`));
           setPause = 500;
