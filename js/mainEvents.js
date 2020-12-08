@@ -234,11 +234,15 @@ document.addEventListener('click', (evt) => {
     if (evt.target.id == `home`) {
       id = 0;
       document.title = category.capitalize();
-      if (expand == true) var groupType = `list`;
-      else var groupType = `blocks`;
-      populateCategoryGroup(category);
-      topMenuBarDisplay(topBar);
-      displayExpand(expand);
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove()
+      setTimeout(function () {
+        populateCategoryGroup(category);
+        displayDescription(showDescription);
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        unloading();
+      }, 25)
     }
     if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
