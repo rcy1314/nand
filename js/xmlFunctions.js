@@ -734,18 +734,16 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.onload = function (e) {
             itemImage.setAttribute(`src`, e.target.result);
             if (
-              (document.body.contains(
+              document.body.contains(
                 document.querySelector(
                   `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
                 )
               ) &&
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                ) &&
-                safeSearch == false) ||
-              !safeSearchIDs.includes(menu[id].id)
+              document.body.contains(
+                document.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                )
+              )
             ) {
               document.querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
@@ -794,6 +792,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             newImg.naturalHeight >= newImg.naturalWidth * 2
           ) {
             itemImage.closest(`.image`).remove();
+            itemPending.remove();
           } else if (newImg.naturalWidth < maximum) {
             itemImage.style.width = `180px`;
             itemPending.style.height = `180px`;
