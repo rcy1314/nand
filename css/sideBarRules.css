@@ -1,5 +1,5 @@
 #container #sidebar {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--bg-color-secondary);
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
