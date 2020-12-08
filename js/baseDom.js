@@ -16,26 +16,26 @@ function explode(e) {
 	c.style.width = 200 + 'px'
 	c.style.height = 200 + 'px'
   c.style.zIndex = `12`;
-	c.width = 200 * ratio
-	c.height = 200 * ratio
+	c.width = 250 * ratio
+	c.height = 250 * ratio
 
 	function Particle() {
 		return {
 			x: c.width / 2,
 			y: c.height / 2,
-			radius: r(20,30),
+			radius: r(2,4),
 			//color: 'rgb(' + [r(0,255), r(0,255), r(0,255)].join(',') + ')',
       color: color,
 			rotation: r(0,360, true),
-			speed: r(8,12),
-			friction: 0.9,
-			opacity: r(0,0.5, true),
+			speed: r(4,10),
+			friction: 1,
+			opacity: r(0,1, true),
 			yVel: 0,
-			gravity: 0.1
+			gravity: 0.0
 		}
 	}
 
-	for(var i=0; ++i<25;) {
+	for(var i=0; ++i<15;) {
 		particles.push(Particle())
 	}
 

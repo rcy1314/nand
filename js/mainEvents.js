@@ -307,13 +307,14 @@ document.addEventListener('click', (evt) => {
         if (showFireworks == true) {
           setTimeout(function() {
             explode(target);
-          }, 100)
-          setPause = 500;
+          }, 25)
+          setPause = 25;
         }
         if (showRipple == true) {
           rippleBuild(evt, evt.target.closest(`.translation`));
-          setPause = 500;
-        } else setPause = 0;
+          setPause = 250;
+        }
+        if (!setPause) setPause = 0;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
