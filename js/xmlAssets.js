@@ -437,7 +437,7 @@ var menu=[
 {id:`Global News`,category:`World`,description:`Global News World breaking international news current world news headlines, international news and business.`,uri:`https://globalnews.ca/world/feed`,image:`CBC`,hash:`bA`,media:!0},
 {id:`Heavy News World`,category:`World`,description:`Heavy News from around the world.`,uri:`https://heavy.com/news/feed`,image:`Heavy`,hash:`vY`,media:!0},
 {id:`Int Business Times World`,category:`World`,description:`International Business Times Breaking world comments and analysis from Africa, Asia Pacific, the Middle East, the Americas and Europe.`,uri:`https://www.ibtimes.sg/rss/world`,image:`IBT`,hash:`tD`,media:!1},
-  {id:`JPost World`,category:`World`,description:`JPost International World News and Stories.`,uri:`https://www.jpost.com/rss/rssfeedsinternational`,image:`Jpost`,hash:`jW`,media:!0},
+  {id:`JPost World`,category:`World`,description:`JPost International World News and Stories.`,uri:`https://www.jpost.com/rss/rssfeedsinternational`,image:`JPost`,hash:`jW`,media:!0},
 {id:`Market Watch`,category:`World`,description:`Market Watch published by Dow Jones & Co., tracks the pulse of markets for engaged investors.`,uri:`http://feeds.marketwatch.com/marketwatch/topstories`,image:`MarketWatch`,hash:`kW`,media:!1},
 {id:`Mediaite`,category:`World`,description:`Mediaite is a news website focusing on politics and the media it is part of the Abrams Media Network.`,uri:`https://www.mediaite.com/feed/`,image:`Mediaite`,hash:`Mi`,media:!0},
 {id:`Mirror.co.uk World News`,category:`World`,description:`Mirror.co.uk World headlines, pictures, analysis, opinion and video.`,uri:`https://www.mirror.co.uk/news/us-news/?service=rss`,image:`Mirror`,hash:`iW`,media:!0},
