@@ -1,4 +1,4 @@
-_sidebar.addEventListener('mousemove', (evt) => {
+document.addEventListener('mousemove', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
@@ -23,7 +23,7 @@ _sidebar.addEventListener('mousemove', (evt) => {
   },
   false
 );
-_sidebar.addEventListener('mouseout', (evt) => {
+document.addEventListener('mouseout', (evt) => {
     if (
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
