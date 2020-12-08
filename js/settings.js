@@ -481,11 +481,8 @@ let safeSearchScore = `0.8570709323883057`;
 */
 
 let safeSearchIDs = [
-  `Imgur/Celebs`,
   `Reddit/Celebs`,
-  `Imgur/Celebhub`,
   `Reddit/Celebhub`,
-  `Imgur/Goddesses`,
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
   `4Chan/SP Sports`,
