@@ -50,9 +50,9 @@ _main.addEventListener("wheel", function(evt) {
     expandFilter == false
   ) {
     if (Math.sign(evt.deltaY) == 1)
-      if (onScreen == true) sideBarDisplay(false);
+      sideBarDisplay(false);
     else
-      if (onScreen == false) sideBarDisplay(true);
+      sideBarDisplay(true);
 
   }
 });
