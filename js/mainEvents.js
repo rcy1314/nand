@@ -39,7 +39,13 @@ window.onload = function () {
 };
 
 window.addEventListener("wheel", function(e) {
-  if (sideBarMousewheel == true) {
+  if (
+    sideBarMousewheel == true &&
+    document.querySelector(`.exclude`).clientHeight == `36` &&
+    document.querySelector(`.themes`).clientHeight == `36` &&
+    document.querySelector(`.set`).clientHeight == `36` &&
+    document.querySelector(`.bg`).clientHeight == `36` 
+  ) {
     if (Math.sign(e.deltaY) == 1) onScreen = false;
     if (Math.sign(e.deltaY) == -1) onScreen = true;
     sideBarDisplay(onScreen)
