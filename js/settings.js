@@ -204,7 +204,7 @@ let sideBarCenter = true;
 
 */
 
-let sideBarBackdrop = true;
+let sideBarBackdrop = false;
 
 /*
     sideBarMousewheel [boolean/integer]

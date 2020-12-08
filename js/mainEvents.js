@@ -6,6 +6,9 @@ window.onload = function () {
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
+  if (sideBarBackdrop == true)
+    _sidebar.style.cssText = `backdrop-filter: blur(10px)`
+
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
   else if (backgroundImage[0].element == `main`)
