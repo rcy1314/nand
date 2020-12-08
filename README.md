@@ -10,8 +10,8 @@
 * URI Unique Postings.
 * Beta (stage) themes.
 * Background Images.
-* No Installation.
 * Youtube Media.
+* No Installation.
 * Bing Search.
 * NSFW api.
 * Filtering.
