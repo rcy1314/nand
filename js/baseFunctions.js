@@ -316,6 +316,7 @@ let filterInputResponse = function (filterURI) {
       xmlRequestParsing(null, null, match);
   } else if (match === -1)
     populateCategoryGroup(menu[match].category);
+  document.title = filterURI.toString().space();
 };
 
 let writeFilterResponse = function (menuObject) {
