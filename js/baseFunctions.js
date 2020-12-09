@@ -173,17 +173,16 @@ let progressBackDrop = function (done) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
+      document.querySelector(`.result`).style.top = `-60px`;
     }
   }
   if (onlyImages == true)
     if (document.body.contains(document.querySelector(`.result`)))
       _main.scrollTop = 0;
-  setTimeout(function () {
     if (onlyImages == false && scrollIntoView == false) {
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
     }
-  }, 25);
   if (showSplash == true) _check.style.display = `none`;
 };
 
