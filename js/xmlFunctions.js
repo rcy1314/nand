@@ -630,6 +630,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.classList.add(`leave`);
                       itemImage.setAttribute(`src`, src);
                       itemImage.style.display = `block`;
+                      itemPending.remove();
                     }
               } else if (jsonResponse.score <= safeSearchScore) {
               var request = new XMLHttpRequest();
@@ -649,6 +650,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               else {
                   itemImage.setAttribute(`src`, src);
                   itemImage.style.display = `block`;
+                  itemPending.remove();
                 }
               }
             });
@@ -670,13 +672,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.readAsDataURL(request.response);
           read.onload = function (e) {
             xmlImageDimensions(menuObject, pubIndex, newImg);
-            itemImage.setAttribute(`src`, e.target.result);
             if (
               document.body.contains(itemPending) &&
               document.body.contains(itemImage)
             )
-            itemPending.remove();
+            itemImage.setAttribute(`src`, e.target.result);
             itemImage.style.display = `block`;
+            itemPending.remove();
             }
           };
           if (!src.match(/4cdn/g)) request.send();
@@ -685,8 +687,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               document.body.contains(itemPending) &&
               document.body.contains(itemImage)
             )
-            itemPending.remove();
             itemImage.setAttribute(`src`, src);
+            itemPending.remove();
         }
       };
     };
