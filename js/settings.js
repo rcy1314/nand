@@ -1,5 +1,5 @@
 // initial theme
-// mobile overwritten in mainEvents.js onload
+
 let set = `Day`;
 
 /*
@@ -86,7 +86,7 @@ let Reader = false;
 
 */
 
-let onScreen = true;
+let onScreen = false;
 
 /*
     expand [boolean/integer]
