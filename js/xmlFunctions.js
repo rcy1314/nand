@@ -595,6 +595,88 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     var read = new FileReader();
                     read.readAsDataURL(request.response);
                     read.onload = function (e) {
+                      if (
+                        document.body.contains(
+                          document.querySelector(
+                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                          )
+                        )
+                      ) {
+                      let itemImage = document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      );
+                      let itemPending = document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                      );
+                      let attribute = document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+                      );
+                      let copyPicture = document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+                      );
+                      let copyPost = document.querySelector(
+                        `[aria-item='${pubIndex}'] .post`
+                      );
+                      if (_main.clientWidth <= 425) {
+                        if (
+                          newImg.naturalHeight > k &&
+                          newImg.naturalHeight >= newImg.naturalWidth * 2
+                        ) {
+                          itemPending.remove();
+                          itemImage.closest(`.image`).remove();
+                        } else if (newImg.naturalWidth < maximum) {
+                          itemImage.style.width = `180px`;
+                          itemImage.style.margin = `12px`;
+                          itemImage.closest(`.classic`).style.display = `flex`;
+                          itemImage.closest(`.classic`).style.alignItems = `center`;
+                          itemPending.style.width = `180px`;
+                          itemPending.style.height = `180px`;
+                          itemImage.style.marginBottom = `30px`;
+                          copyPost.style.display = `none`;
+                          copyPicture.style.display = `none`;
+                          attribute.style.height = `37px`;
+                        } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                          itemImage.style.width = `30vh`;
+                          itemImage.classList.add(`default`);
+                          itemPending.style.height = `14em`;
+                        } else if (
+                          newImg.naturalWidth >= newImg.naturalHeight ||
+                          newImg.naturalHeight >= newImg.naturalWidth
+                        ) {
+                          itemPending.style.height = `14em`;
+                          itemImage.classList.add(`default`);
+                          itemImage.style.width = `100%`;
+                        }
+                      } else {
+                        if (
+                          newImg.naturalHeight > k &&
+                          newImg.naturalHeight >= newImg.naturalWidth * 2
+                        ) {
+                          itemImage.closest(`.image`).remove();
+                          itemPending.remove();
+                        } else if (newImg.naturalWidth < maximum) {
+                          itemImage.style.width = `180px`;
+                          itemPending.style.height = `180px`;
+                          itemImage.closest(`.classic`).style.display = `flex`;
+                          itemImage.closest(`.classic`).style.alignItems = `center`;
+                          itemImage.style.marginBottom = `30px`;
+                          copyPost.style.display = `none`;
+                          copyPicture.style.display = `none`;
+                          attribute.style.height = `37px`;
+                          itemPending.style.width = `180px`;
+                        } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                          itemImage.style.width = `100%`;
+                          itemImage.classList.add(`default`);
+                          itemPending.style.height = `14em`;
+                        } else if (
+                          newImg.naturalWidth >= newImg.naturalHeight ||
+                          newImg.naturalHeight >= newImg.naturalWidth
+                        ) {
+                          itemImage.style.width = `100%`;
+                          itemImage.classList.add(`default`);
+                        }
+                      }
+                    }
                       document
                         .querySelector(
                           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
@@ -672,15 +754,80 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 ) &&
                 document.body.contains(
                   document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                  )
-                ) &&
-                document.body.contains(
-                  document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
                   )
                 )
               ) {
+                  if (
+                    document.body.contains(
+                      document.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                      )
+                    )
+                  ) {
+                  let itemImage = document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                  );
+                  let itemPending = document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                  );
+                  let attribute = document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+                  );
+                  let copyPicture = document.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+                  );
+                  let copyPost = document.querySelector(
+                    `[aria-item='${pubIndex}'] .post`
+                  );
+                  if (_main.clientWidth <= 425) {
+                    if (newImg.naturalWidth < maximum) {
+                      itemImage.style.width = `180px`;
+                      itemImage.style.margin = `12px`;
+                      itemImage.closest(`.classic`).style.display = `flex`;
+                      itemImage.closest(`.classic`).style.alignItems = `center`;
+                      itemPending.style.width = `180px`;
+                      itemPending.style.height = `180px`;
+                      itemImage.style.marginBottom = `30px`;
+                      copyPost.style.display = `none`;
+                      copyPicture.style.display = `none`;
+                      attribute.style.height = `37px`;
+                    } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                      itemImage.style.width = `30vh`;
+                      itemImage.classList.add(`default`);
+                      itemPending.style.height = `14em`;
+                    } else if (
+                      newImg.naturalWidth >= newImg.naturalHeight ||
+                      newImg.naturalHeight >= newImg.naturalWidth
+                    ) {
+                      itemPending.style.height = `14em`;
+                      itemImage.classList.add(`default`);
+                      itemImage.style.width = `100%`;
+                    }
+                  } else {
+                    if (newImg.naturalWidth < maximum) {
+                      itemImage.style.width = `180px`;
+                      itemPending.style.height = `180px`;
+                      itemImage.closest(`.classic`).style.display = `flex`;
+                      itemImage.closest(`.classic`).style.alignItems = `center`;
+                      itemImage.style.marginBottom = `30px`;
+                      copyPost.style.display = `none`;
+                      copyPicture.style.display = `none`;
+                      attribute.style.height = `37px`;
+                      itemPending.style.width = `180px`;
+                    } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+                      itemImage.style.width = `100%`;
+                      itemImage.classList.add(`default`);
+                      itemPending.style.height = `14em`;
+                    } else if (
+                      newImg.naturalWidth >= newImg.naturalHeight ||
+                      newImg.naturalHeight >= newImg.naturalWidth
+                    ) {
+                      itemImage.style.width = `100%`;
+                      itemImage.classList.add(`default`);
+                    }
+                  }
+                }
                 document
                   .querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
@@ -721,8 +868,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
               .remove();
           });
-      }
-      if (
+      } else if (
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
@@ -784,7 +930,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             itemImage.closest(`.image`).remove();
           } else if (newImg.naturalWidth < maximum) {
             itemImage.style.width = `180px`;
-            itemPending.style.margin = `12px`;
+            itemImage.style.margin = `12px`;
             itemImage.closest(`.classic`).style.display = `flex`;
             itemImage.closest(`.classic`).style.alignItems = `center`;
             itemPending.style.width = `180px`;
