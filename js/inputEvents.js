@@ -97,7 +97,7 @@ document.addEventListener('mouseover', (evt) => {
   },
   false
 );
-document.addEventListener('input', (evt) => {
+document.addEventListener('keyup', (evt) => {
       if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
     if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
     event.preventDefault();
