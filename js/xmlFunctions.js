@@ -477,35 +477,31 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
   let k = 5420;
   let maximum = 480;
-  if (
-    document.body.contains(
-      document.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-      )
-    )
-  ) {
-    let itemImage = document.querySelector(
-      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-    );
-    let attribute = document.querySelector(
-      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-    );
-    let copyPicture = document.querySelector(
-      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-    );
-    let copyPost = document.querySelector(
-      `[aria-item='${pubIndex}'] .post`
-    );
-    if (newImg.naturalWidth < maximum) {
-      itemImage.style.width = `180px`;
-      itemImage.style.margin = `12px`;
-      itemImage.closest(`.classic`).style.display = `flex`;
-      itemImage.closest(`.classic`).style.alignItems = `center`;
-      copyPost.style.display = `none`;
-      copyPicture.style.display = `none`;
-      attribute.style.height = `37px`;
-    }
-  }
+  let itemImage = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+  );
+  let itemFilter = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+  );
+  let attribute = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+  );
+  let copyPicture = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+  );
+  let copyPost = document.querySelector(
+    `[aria-item='${pubIndex}'] .post`
+  );
+  if (newImg.naturalWidth < maximum) {
+    itemFilter.classList.add(`leave`);
+    itemImage.style.width = `180px`;
+    itemImage.style.margin = `12px`;
+    itemImage.closest(`.classic`).style.display = `flex`;
+    itemImage.closest(`.classic`).style.alignItems = `center`;
+    copyPost.style.display = `none`;
+    copyPicture.style.display = `none`;
+    attribute.style.height = `37px`;
+  } else itemImage.classList.add(`default`);
 }
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
