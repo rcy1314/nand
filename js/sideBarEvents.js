@@ -448,16 +448,32 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`#top #arm #option`).style.display = `block`;
     }
     if (event.target.classList.contains(`Random`)) {
+      let code = [];
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove();
       showOption = showOption != true;
       if (showOption == false)
         document.querySelector(`#top #arm #option`).style.display = `none`;
       else if (showOption == true)
-        document.querySelector(`#top #arm #option`).style.display = `block`;
-      xmlRequestParsing(null, null, anyRandomMenuObject());
+      document.querySelector(`#top #arm #option`).style.display = `block`;
+      for (i = 1; i <= menu.length - 1; i++) {
+        if (onlyImages == true && menu[i].media == true)
+          code.push(menu.indexOf(menu[i]));
+        else if (onlyImages == false)
+          code.push(menu.indexOf(menu[i]));
+      }
+      let randomMenuObject = code[Math.floor(Math.random() * code.length - 1)];
+      xmlRequestParsing(null, null, randomMenuObject);
     }
     if (event.target.classList.contains(`RandomCategory`)) {
       let code = [];
       _visit.style.display = `none`;
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove();
       for (i = 1; i <= menu.length - 1; i++) {
         if (onlyImages == true) {
           if (menu[i].category == category && menu[i].media == true)
@@ -472,6 +488,10 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`RandomImages`)) {
       let code = [];
       _visit.style.display = `none`;
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove();
       for (i = 1; i <= menu.length - 1; i++) {
         if (menu[i].media == true) code.push(menu.indexOf(menu[i]));
       }

@@ -501,7 +501,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     copyPost.style.display = `none`;
     copyPicture.style.display = `none`;
     attribute.style.height = `37px`;
-  } else itemImage.classList.add(`default`);
+  } else if (itemImage) itemImage.classList.add(`default`);
 }
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
