@@ -9,6 +9,7 @@
   float: right;
 }
 
+#sidebar #content .fa-star,
 #sidebar #content .fa-user,
 #sidebar #content .fa-code,
 #sidebar #content .fa-cloud,
@@ -33,13 +34,14 @@
   right: 8px;
 }
 
-#sidebar #content .fa-star,
 #sidebar #content .fa-home,
+#sidebar #content .fa-sliders-h,
 #sidebar #content .fa-chart-pie,
+#sidebar #content .fa-tablet-alt,
 #sidebar #content .fa-exclamation-circle {
   color: var(--fill-color-primary);
   position: relative;
-  margin-top: -18px !important;
+  margin-top: -22px !important;
   font-weight: 50;
   font-size: 10px;
   float: right;
@@ -49,9 +51,7 @@
   z-index: -1;
 }
 
-#sidebar #content .fa-minus,
-#sidebar #content .fa-sliders-h,
-#sidebar #content .fa-tablet-alt {
+#sidebar #content .fa-minus {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
