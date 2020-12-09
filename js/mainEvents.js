@@ -38,27 +38,25 @@ window.onload = function () {
       document.querySelector(`.exclude`).style.height = `${
         exclude.length * 34.25 + 75
       }px`;
+      _main.addEventListener("wheel", function(evt) {
+        if (
+          sideBarMousewheel == true
+        ) {
+          if (Math.sign(evt.deltaY) == 1 && onScreen == true) {
+            onScreen = false;
+            sideBarDisplay(onScreen);
+          } else if (Math.sign(evt.deltaY) == -1 && onScreen == false) {
+            onScreen = true;
+            sideBarDisplay(onScreen);
+          }
+        }
+      });
+
   }, 250)
 
   _container.style.display = `block`;
 
 };
-
-_main.addEventListener("wheel", function(evt) {
-  if (
-    sideBarMousewheel == true &&
-    expandBackground == false &&
-    expandSettings == false &&
-    expandVisual == false &&
-    expandFilter == false
-  ) {
-    if (Math.sign(evt.deltaY) == 1)
-      sideBarDisplay(false);
-    else
-      sideBarDisplay(true);
-
-  }
-});
 
 document.addEventListener('touchstart', (evt) => {
     touchstartX = evt.changedTouches[0].screenX;
