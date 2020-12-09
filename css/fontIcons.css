@@ -9,7 +9,18 @@
   float: right;
 }
 
-#sidebar #content .fa:not(.fas):not(.fa-home):not(.fa-exclamation-circle):not(.fa-braille):not(.fa-adjust):not(.fa-cube):not(.fa-tint):not(.fa-star):not(.fa-minus) {
+#sidebar #content .fa-user,
+#sidebar #content .fa-code,
+#sidebar #content .fa-cloud,
+#sidebar #content .fa-expand,
+#sidebar #content .fa-terminal,
+#sidebar #content .fa-crop-alt,
+#sidebar #content .fa-download,
+#sidebar #content .fa-book-open,
+#sidebar #content .fa-layer-group,
+#sidebar #content .fa-certificate,
+#sidebar #content .fa-paint-brush,
+#sidebar #content .fa-digital-tachograph {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -22,8 +33,10 @@
   right: 8px;
 }
 
-
-#sidebar #content .fa-star {
+#sidebar #content .fa-star,
+#sidebar #content .fa-home,
+#sidebar #content .fa-chart-pie,
+#sidebar #content .fa-exclamation-circle {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -36,7 +49,9 @@
   z-index: -1;
 }
 
-#sidebar #content .fa-minus {
+#sidebar #content .fa-minus,
+#sidebar #content .fa-sliders-h,
+#sidebar #content .fa-tablet-alt {
   color: var(--fill-color-primary);
   position: relative;
   margin-top: -18px !important;
@@ -45,71 +60,6 @@
   float: right;
   height: 15px;
   right: 5px;
-  width: 15px;
-  z-index: -1;
-}
-
-#sidebar #content .fa-home {
-  color: var(--fill-color-primary);
-  position: relative;
-  margin-top: -21px !important;
-  font-weight: 50;
-  font-size: 10px;
-  float: right;
-  height: 15px;
-  right: 6.5px;
-  width: 15px;
-  z-index: -1;
-}
-
-#sidebar #content .fa-exclamation-circle {
-  color: var(--fill-color-primary);
-  position: relative;
-  margin-top: -21px !important;
-  font-weight: 50;
-  font-size: 10px;
-  float: right;
-  height: 15px;
-  right: 6.5px;
-  width: 15px;
-  z-index: -1;
-}
-
-#sidebar #content .fa-chart-pie {
-  color: var(--fill-color-primary);
-  position: relative;
-  margin-top: -21px !important;
-  font-weight: 50;
-  font-size: 10px;
-  float: right;
-  height: 15px;
-  right: 6.5px !important;
-  width: 15px;
-  z-index: -1;
-}
-
-#sidebar #content .fa-tablet-alt {
-  color: var(--fill-color-primary);
-  position: relative;
-  margin-top: -21px !important;
-  font-weight: 50;
-  font-size: 10px;
-  float: right;
-  height: 15px;
-  right: 5px !important;
-  width: 15px;
-  z-index: -1;
-}
-
-#sidebar #content .fa-sliders-h {
-  color: var(--fill-color-primary);
-  position: relative;
-  margin-top: -21px !important;
-  font-weight: 50;
-  font-size: 10px;
-  float: right;
-  height: 15px;
-  right: 5px !important;
   width: 15px;
   z-index: -1;
 }
@@ -164,13 +114,6 @@
   padding-left: 13px;
   padding-top: 17px;
   font-size: 17px;
-}
-
-#main #option .fa-code {
-  padding-right: 13px;
-  padding-left: 13px;
-  padding-top: 15px;
-  font-size: 20px;
 }
 
 #guide .sticky .fa-heart,
@@ -311,10 +254,6 @@
   font-weight: 50;
 }
 
-#sidebar #content .fa-cloud {
-  left: -8px;
-}
-
 #sidebar #content .fa-signal {
   font-family: "Font Awesome 5 Pro";
   content: "\f012";
@@ -327,39 +266,9 @@
   font-weight: 50;
 }
 
-#sidebar #content .fa-th-large {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f0ca";
-  font-weight: 50;
-}
-
-#sidebar #content .fa-list-ul {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f009";
-  font-weight: 50;
-}
-
 #sidebar #content .fa-chart-pie {
   font-family: "Font Awesome 5 Pro";
   content: "\f200";
-  font-weight: 50;
-}
-
-#sidebar #content .fa-photo {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f03e";
-  font-weight: 50;
-}
-
-#sidebar #content .fa-star-o {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f006";
-  font-weight: 50;
-}
-
-#sidebar #content .fa-edit {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f044";
   font-weight: 50;
 }
 
