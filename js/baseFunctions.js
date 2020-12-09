@@ -142,8 +142,8 @@ let progressBackDrop = function (done) {
           let elements = document.querySelectorAll(`.image`);
           for (let i = 0; i < elements.length; i++) {
             if (
-              !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].querySelector(`.img`) &&
+              !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
               _main.clientHeight <=
               0

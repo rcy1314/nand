@@ -160,7 +160,7 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
-      evt.target.classList.contains(`fa-at`)
+      evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
