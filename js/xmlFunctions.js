@@ -527,6 +527,34 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         itemImage.classList.add(`default`);
         itemImage.style.width = `100%`;
       }
+    } else {
+      if (
+        newImg.naturalHeight > k &&
+        newImg.naturalHeight >= newImg.naturalWidth * 2
+      ) {
+        itemImage.closest(`.image`).remove();
+      } else if (newImg.naturalWidth < maximum) {
+        itemImage.style.width = `180px`;
+        itemImage.style.margin = `12px`;
+        itemImage.closest(`.classic`).style.display = `flex`;
+        itemImage.closest(`.classic`).style.alignItems = `center`;
+        itemPending.style.width = `180px`;
+        itemPending.style.height = `180px`;
+        itemImage.style.marginBottom = `30px`;
+        copyPost.style.display = `none`;
+        copyPicture.style.display = `none`;
+        attribute.style.height = `37px`;
+      } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+        itemImage.style.width = `30vh`;
+        itemImage.classList.add(`default`);
+        itemPending.style.height = `14em`;
+      } else if (
+        newImg.naturalWidth >= newImg.naturalHeight ||
+        newImg.naturalHeight >= newImg.naturalWidth
+      ) {
+        itemImage.classList.add(`default`);
+        itemImage.style.width = `100%`;
+      }
     }
   }
 }
@@ -534,7 +562,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let jsonResponseScore;
   let itemContainer = document.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
   let itemImage = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
