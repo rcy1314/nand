@@ -303,15 +303,15 @@ let filterInputResponse = function (filterURI) {
     return item.description.space().toLowerCase()
       .match(filterURI.toString().toLowerCase().space());
   })
-  if (match === -1 && description.length === 0) {
-    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
-  } else if (match === -1 && description.length > 0) {
+  if (description.length > 0) {
     groupBuild();
     for (i = 0; i <= description.length - 1; i++)
       writeFilterResponse(menu.indexOf(description[i]));
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
+  } else if (match === -1 && description.length === 0) {
+    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
       xmlRequestParsing(null, null, match);
   } else if (match === -1)
