@@ -474,35 +474,87 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   return parse[0];
 };
 
-var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
+var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
   let k = 5420;
   let maximum = 480;
+  if (
+    document.body.contains(
+      document.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+      )
+    )
+  ) {
+    let itemImage = document.querySelector(
+      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+    );
+    let itemPending = document.querySelector(
+      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+    );
+    let attribute = document.querySelector(
+      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+    );
+    let copyPicture = document.querySelector(
+      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+    );
+    let copyPost = document.querySelector(
+      `[aria-item='${pubIndex}'] .post`
+    );
+    if (_main.clientWidth <= 425) {
+      if (
+        newImg.naturalHeight > k &&
+        newImg.naturalHeight >= newImg.naturalWidth * 2
+      ) {
+        itemImage.closest(`.image`).remove();
+      } else if (newImg.naturalWidth < maximum) {
+        itemImage.style.width = `180px`;
+        itemImage.style.margin = `12px`;
+        itemImage.closest(`.classic`).style.display = `flex`;
+        itemImage.closest(`.classic`).style.alignItems = `center`;
+        itemPending.style.width = `180px`;
+        itemPending.style.height = `180px`;
+        itemImage.style.marginBottom = `30px`;
+        copyPost.style.display = `none`;
+        copyPicture.style.display = `none`;
+        attribute.style.height = `37px`;
+      } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
+        itemImage.style.width = `30vh`;
+        itemImage.classList.add(`default`);
+        itemPending.style.height = `14em`;
+      } else if (
+        newImg.naturalWidth >= newImg.naturalHeight ||
+        newImg.naturalHeight >= newImg.naturalWidth
+      ) {
+        itemImage.classList.add(`default`);
+        itemImage.style.width = `100%`;
+      }
+    }
+  }
+}
+
+var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let jsonResponseScore;
+  let itemContainer = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+  );
+  let itemImage = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+  );
+  let itemPending = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+  );
+  let itemFilter = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+  );
   if (
     !src ||
     src == `null` ||
     (src.match(/.webm|.mp4/g) &&
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-        )
-      ) &&
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
-      ))
+      document.body.contains(itemPending) &&
+      document.body.contains(itemImage)
+    )
   ) {
-    document
-      .querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-      )
-      .remove();
-    document
-      .querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-      )
-      .remove();
+    itemPending.remove();
+    itemImage.remove();
   }
   imageDuplicate.push(src);
   if (
@@ -515,30 +567,12 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
       if (
-        document.body.contains(
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-          )
-        ) &&
-        document.body.contains(
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-          )
-        )
+        document.body.contains(itemPending) &&
+        document.body.contains(itemImage)
       )
-      document
-        .querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-        )
-        .remove();
-        document
-          .querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-          )
-          .remove();
-      document.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      ).style.paddingBottom = `30px`;
+      itemPending.remove();
+      itemImage.remove();
+      itemImage.style.paddingBottom = `30px`;
     };
     newImg.onload = function () {
       count.shift()
@@ -570,23 +604,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .then((response) => {
             response.json().then((jsonResponse) => {
               console.log(`${pubIndex} ${jsonResponse.score}`)
-              if (jsonResponse.score >= safeSearchScore) {
-                if (
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                    )
-                  ) &&
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                    )
-                  ) &&
-                  document.body.contains(
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                    )
-                  )
+              if (
+                jsonResponse.score >= safeSearchScore
                 ) {
                   var request = new XMLHttpRequest();
                   request.open("GET", cors + src, true);
@@ -595,309 +614,54 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     var read = new FileReader();
                     read.readAsDataURL(request.response);
                     read.onload = function (e) {
-                      if (
-                        document.body.contains(
-                          document.querySelector(
-                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                          )
-                        )
-                      ) {
-                      let itemImage = document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      );
-                      let itemPending = document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      );
-                      let attribute = document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-                      );
-                      let copyPicture = document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-                      );
-                      let copyPost = document.querySelector(
-                        `[aria-item='${pubIndex}'] .post`
-                      );
-                      if (_main.clientWidth <= 425) {
-                        if (
-                          newImg.naturalHeight > k &&
-                          newImg.naturalHeight >= newImg.naturalWidth * 2
-                        ) {
-                          itemPending.remove();
-                          itemImage.closest(`.image`).remove();
-                        } else if (newImg.naturalWidth < maximum) {
-                          itemImage.style.width = `180px`;
-                          itemImage.style.margin = `12px`;
-                          itemImage.closest(`.classic`).style.display = `flex`;
-                          itemImage.closest(`.classic`).style.alignItems = `center`;
-                          itemPending.style.width = `180px`;
-                          itemPending.style.height = `180px`;
-                          itemImage.style.marginBottom = `30px`;
-                          copyPost.style.display = `none`;
-                          copyPicture.style.display = `none`;
-                          attribute.style.height = `37px`;
-                        } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                          itemImage.style.width = `30vh`;
-                          itemImage.classList.add(`default`);
-                          itemPending.style.height = `14em`;
-                        } else if (
-                          newImg.naturalWidth >= newImg.naturalHeight ||
-                          newImg.naturalHeight >= newImg.naturalWidth
-                        ) {
-                          itemPending.style.height = `14em`;
-                          itemImage.classList.add(`default`);
-                          itemImage.style.width = `100%`;
-                        }
-                      } else {
-                        if (
-                          newImg.naturalHeight > k &&
-                          newImg.naturalHeight >= newImg.naturalWidth * 2
-                        ) {
-                          itemImage.closest(`.image`).remove();
-                          itemPending.remove();
-                        } else if (newImg.naturalWidth < maximum) {
-                          itemImage.style.width = `180px`;
-                          itemPending.style.height = `180px`;
-                          itemImage.closest(`.classic`).style.display = `flex`;
-                          itemImage.closest(`.classic`).style.alignItems = `center`;
-                          itemImage.style.marginBottom = `30px`;
-                          copyPost.style.display = `none`;
-                          copyPicture.style.display = `none`;
-                          attribute.style.height = `37px`;
-                          itemPending.style.width = `180px`;
-                        } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                          itemImage.style.width = `100%`;
-                          itemImage.classList.add(`default`);
-                          itemPending.style.height = `14em`;
-                        } else if (
-                          newImg.naturalWidth >= newImg.naturalHeight ||
-                          newImg.naturalHeight >= newImg.naturalWidth
-                        ) {
-                          itemImage.style.width = `100%`;
-                          itemImage.classList.add(`default`);
-                        }
-                      }
-                    }
-                      document
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        )
-                        .classList.add(`blur`);
-                      document
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        ).style.transform = `scale(4)`
-                      document
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        )
-                        .classList.add(`leave`);
-                      document
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                        )
-                        .remove();
-                      document
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        )
-                        .setAttribute(`src`, e.target.result);
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      ).style.display = `block`;
+                      xmlImageDimensions(menuObject, pubIndex, newImg)
+                      itemFilter.classList.add(`blur`);
+                      itemFilter.style.transform = `scale(4)`
+                      itemFilter.classList.add(`leave`);
+                      itemImage.setAttribute(`src`, e.target.result);
+                      itemImage.style.display = `block`;
+                      itemPending.remove();
                     };
-                  };
+                  }
                   if (!src.match(/4cdn/g)) request.send();
-                  else if (
-                      document.body.contains(
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                        )
-                      ) &&
-                      document.body.contains(
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                        )
-                      ) &&
-                      document.body.contains(
-                        document.querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                        )
-                      )
-                    )
-                  {
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                      )
-                      .classList.add(`blur`);
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                      ).style.transform = `scale(4)`
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-                      )
-                      .classList.add(`leave`);
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                      )
-                      .remove();
-                    document
-                      .querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      )
-                      .setAttribute(`src`, src);
-                    document.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                    ).style.display = `block`;
-                  }
-                }
-              } else if ( //safeSearch passes
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                  )
-                ) &&
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                )
-              ) {
-                  if (
-                    document.body.contains(
-                      document.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                      )
-                    )
-                  ) {
-                  let itemImage = document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                  );
-                  let itemPending = document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  );
-                  let attribute = document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-                  );
-                  let copyPicture = document.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-                  );
-                  let copyPost = document.querySelector(
-                    `[aria-item='${pubIndex}'] .post`
-                  );
-                  if (_main.clientWidth <= 425) {
-                    if (newImg.naturalWidth < maximum) {
-                      itemImage.style.width = `180px`;
-                      itemImage.style.margin = `12px`;
-                      itemImage.closest(`.classic`).style.display = `flex`;
-                      itemImage.closest(`.classic`).style.alignItems = `center`;
-                      itemPending.style.width = `180px`;
-                      itemPending.style.height = `180px`;
-                      itemImage.style.marginBottom = `30px`;
-                      copyPost.style.display = `none`;
-                      copyPicture.style.display = `none`;
-                      attribute.style.height = `37px`;
-                    } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                      itemImage.style.width = `30vh`;
-                      itemImage.classList.add(`default`);
-                      itemPending.style.height = `14em`;
-                    } else if (
-                      newImg.naturalWidth >= newImg.naturalHeight ||
-                      newImg.naturalHeight >= newImg.naturalWidth
-                    ) {
-                      itemPending.style.height = `14em`;
-                      itemImage.classList.add(`default`);
-                      itemImage.style.width = `100%`;
+                  else {
+                      itemFilter.classList.add(`blur`);
+                      itemFilter.style.transform = `scale(4)`
+                      itemFilter.classList.add(`leave`);
+                      itemImage.setAttribute(`src`, src);
+                      itemImage.style.display = `block`;
                     }
-                  } else {
-                    if (newImg.naturalWidth < maximum) {
-                      itemImage.style.width = `180px`;
-                      itemPending.style.height = `180px`;
-                      itemImage.closest(`.classic`).style.display = `flex`;
-                      itemImage.closest(`.classic`).style.alignItems = `center`;
-                      itemImage.style.marginBottom = `30px`;
-                      copyPost.style.display = `none`;
-                      copyPicture.style.display = `none`;
-                      attribute.style.height = `37px`;
-                      itemPending.style.width = `180px`;
-                    } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-                      itemImage.style.width = `100%`;
-                      itemImage.classList.add(`default`);
-                      itemPending.style.height = `14em`;
-                    } else if (
-                      newImg.naturalWidth >= newImg.naturalHeight ||
-                      newImg.naturalHeight >= newImg.naturalWidth
-                    ) {
-                      itemImage.style.width = `100%`;
-                      itemImage.classList.add(`default`);
-                    }
-                  }
+              } else if (jsonResponse.score <= safeSearchScore) {
+              var request = new XMLHttpRequest();
+              request.open("GET", cors + src, true);
+              request.responseType = "blob";
+              request.onload = function () {
+                var read = new FileReader();
+                read.readAsDataURL(request.response);
+                read.onload = function (e) {
+                  xmlImageDimensions(menuObject, pubIndex, newImg)
+                  itemImage.setAttribute(`src`, e.target.result);
+                  itemImage.style.display = `block`;
+                  itemPending.remove();
+                };
+              }
+              if (!src.match(/4cdn/g)) request.send();
+              else {
+                  itemImage.setAttribute(`src`, src);
+                  itemImage.style.display = `block`;
                 }
-                document
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                  )
-                  .remove();
-                document
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                  )
-                  .setAttribute(`src`, src);
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                ).style.display = `block`;
               }
             });
           })
           .catch((response) => {
             if (
-              document.body.contains(
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                )
-              ) &&
-              document.body.contains(
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-                )
-              )
+              document.body.contains(itemPending) &&
+              document.body.contains(itemContainer)
             )
-              document
-                .querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                )
-                .remove();
-            document
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-              )
-              .remove();
+              itemPending.remove();
+              itemContainer.remove();
           });
-      } else if ( // safeSearch false
-        document.body.contains(
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-          )
-        )
-      ) {
-        let itemImage = document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-        );
-        let itemPending = document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-        );
-        let attribute = document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-        );
-        let copyPicture = document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-        );
-        let copyPost = document.querySelector(
-          `[aria-item='${pubIndex}'] .post`
-        );
+      } else {
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
         request.responseType = "blob";
@@ -905,115 +669,26 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           var read = new FileReader();
           read.readAsDataURL(request.response);
           read.onload = function (e) {
+            xmlImageDimensions(menuObject, pubIndex, newImg);
             itemImage.setAttribute(`src`, e.target.result);
             if (
-              document.body.contains(
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-                )
-              ) &&
-              document.body.contains(
-                document.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                )
-              )
-            ) {
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-              ).style.display = `block`;
-              document
-                .querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-                )
-                .remove();
+              document.body.contains(itemPending) &&
+              document.body.contains(itemImage)
+            )
+            itemPending.remove();
+            itemImage.style.display = `block`;
             }
           };
-        };
-        if (_main.clientWidth <= 425) {
-          if (
-            newImg.naturalHeight > k &&
-            newImg.naturalHeight >= newImg.naturalWidth * 2
-          ) {
-            itemPending.remove();
-            itemImage.closest(`.image`).remove();
-          } else if (newImg.naturalWidth < maximum) {
-            itemImage.style.width = `180px`;
-            itemImage.style.margin = `12px`;
-            itemImage.closest(`.classic`).style.display = `flex`;
-            itemImage.closest(`.classic`).style.alignItems = `center`;
-            itemPending.style.width = `180px`;
-            itemPending.style.height = `180px`;
-            itemImage.style.marginBottom = `30px`;
-            copyPost.style.display = `none`;
-            copyPicture.style.display = `none`;
-            attribute.style.height = `37px`;
-          } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-            itemImage.style.width = `30vh`;
-            itemImage.classList.add(`default`);
-            itemPending.style.height = `14em`;
-          } else if (
-            newImg.naturalWidth >= newImg.naturalHeight ||
-            newImg.naturalHeight >= newImg.naturalWidth
-          ) {
-            itemPending.style.height = `14em`;
-            itemImage.classList.add(`default`);
-            itemImage.style.width = `100%`;
-          }
-        } else {
-          if (
-            newImg.naturalHeight > k &&
-            newImg.naturalHeight >= newImg.naturalWidth * 2
-          ) {
-            itemImage.closest(`.image`).remove();
-            itemPending.remove();
-          } else if (newImg.naturalWidth < maximum) {
-            itemImage.style.width = `180px`;
-            itemPending.style.height = `180px`;
-            itemImage.closest(`.classic`).style.display = `flex`;
-            itemImage.closest(`.classic`).style.alignItems = `center`;
-            itemImage.style.marginBottom = `30px`;
-            copyPost.style.display = `none`;
-            copyPicture.style.display = `none`;
-            attribute.style.height = `37px`;
-            itemPending.style.width = `180px`;
-          } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-            itemImage.style.width = `100%`;
-            itemImage.classList.add(`default`);
-            itemPending.style.height = `14em`;
-          } else if (
-            newImg.naturalWidth >= newImg.naturalHeight ||
-            newImg.naturalHeight >= newImg.naturalWidth
-          ) {
-            itemImage.style.width = `100%`;
-            itemImage.classList.add(`default`);
-          }
-        }
-        if (!src.match(/4cdn/g)) request.send();
-        else if (
-          (document.body.contains(
-            document.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+          if (!src.match(/4cdn/g)) request.send();
+          else {
+            if (
+              document.body.contains(itemPending) &&
+              document.body.contains(itemImage)
             )
-          ) &&
-            document.body.contains(
-              document.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-              )
-            ) &&
-            safeSearch == false) ||
-          !safeSearchIDs.includes(menu[id].id)
-        ) {
-          itemImage.setAttribute(`src`, src);
-          document
-            .querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-            )
-            .remove();
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-          ).style.display = `block`;
+            itemPending.remove();
+            itemImage.setAttribute(`src`, src);
         }
-      }
+      };
     };
   }
 };
