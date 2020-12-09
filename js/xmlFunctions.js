@@ -621,7 +621,24 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     };
                   };
                   if (!src.match(/4cdn/g)) request.send();
-                  else {
+                  else if (
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+                        )
+                      ) &&
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        )
+                      ) &&
+                      document.body.contains(
+                        document.querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+                        )
+                      )
+                    )
+                  {
                     document
                       .querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
@@ -704,7 +721,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
               .remove();
           });
-      } else if (
+      }
+      if (
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
