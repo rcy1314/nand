@@ -754,7 +754,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     ).style.display = `block`;
                   }
                 }
-              } else if (
+              } else if ( //safeSearch passes
                 document.body.contains(
                   document.querySelector(
                     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
@@ -876,7 +876,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
               .remove();
           });
-      } else if (
+      } else if ( // safeSearch false
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`

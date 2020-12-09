@@ -168,9 +168,9 @@ let progressBackDrop = function (done) {
     }
   }
   if (document.body.contains(document.getElementById(`group`))) {
-    document.querySelector(`#group`).style.display = `block`;
     if (scrollIntoView == true) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
+      document.querySelector(`#group`).style.display = `block`;
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
       document.querySelector(`#group`).style.top = `-60px`;
@@ -180,6 +180,7 @@ let progressBackDrop = function (done) {
     if (document.body.contains(document.querySelector(`.result`)))
       _main.scrollTop = 0;
     if (onlyImages == false && scrollIntoView == false) {
+      document.querySelector(`#group`).style.display = `block`;
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
     }
