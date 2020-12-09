@@ -168,6 +168,7 @@
 
 #main #xml .center .item .img {
   display: none;
+  width: 100%;
 }
 
 #main #xml .center .item .pub .more {
