@@ -487,9 +487,6 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     let itemImage = document.querySelector(
       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
     );
-    let itemPending = document.querySelector(
-      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
-    );
     let attribute = document.querySelector(
       `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
     );
@@ -499,62 +496,14 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     let copyPost = document.querySelector(
       `[aria-item='${pubIndex}'] .post`
     );
-    if (_main.clientWidth <= 425) {
-      if (
-        newImg.naturalHeight > k &&
-        newImg.naturalHeight >= newImg.naturalWidth * 2
-      ) {
-        itemImage.closest(`.image`).remove();
-      } else if (newImg.naturalWidth < maximum) {
-        itemImage.style.width = `180px`;
-        itemImage.style.margin = `12px`;
-        itemImage.closest(`.classic`).style.display = `flex`;
-        itemImage.closest(`.classic`).style.alignItems = `center`;
-        itemPending.style.width = `180px`;
-        itemPending.style.height = `180px`;
-        itemImage.style.marginBottom = `30px`;
-        copyPost.style.display = `none`;
-        copyPicture.style.display = `none`;
-        attribute.style.height = `37px`;
-      } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-        itemImage.style.width = `30vh`;
-        itemImage.classList.add(`default`);
-        itemPending.style.height = `14em`;
-      } else if (
-        newImg.naturalWidth >= newImg.naturalHeight ||
-        newImg.naturalHeight >= newImg.naturalWidth
-      ) {
-        itemImage.classList.add(`default`);
-        itemImage.style.width = `100%`;
-      }
-    } else {
-      if (
-        newImg.naturalHeight > k &&
-        newImg.naturalHeight >= newImg.naturalWidth * 2
-      ) {
-        itemImage.closest(`.image`).remove();
-      } else if (newImg.naturalWidth < maximum) {
-        itemImage.style.width = `180px`;
-        itemImage.style.margin = `12px`;
-        itemImage.closest(`.classic`).style.display = `flex`;
-        itemImage.closest(`.classic`).style.alignItems = `center`;
-        itemPending.style.width = `180px`;
-        itemPending.style.height = `180px`;
-        itemImage.style.marginBottom = `30px`;
-        copyPost.style.display = `none`;
-        copyPicture.style.display = `none`;
-        attribute.style.height = `37px`;
-      } else if (newImg.naturalHeight >= newImg.naturalWidth * 2) {
-        itemImage.style.width = `30vh`;
-        itemImage.classList.add(`default`);
-        itemPending.style.height = `14em`;
-      } else if (
-        newImg.naturalWidth >= newImg.naturalHeight ||
-        newImg.naturalHeight >= newImg.naturalWidth
-      ) {
-        itemImage.classList.add(`default`);
-        itemImage.style.width = `100%`;
-      }
+    if (newImg.naturalWidth < maximum) {
+      itemImage.style.width = `180px`;
+      itemImage.style.margin = `12px`;
+      itemImage.closest(`.classic`).style.display = `flex`;
+      itemImage.closest(`.classic`).style.alignItems = `center`;
+      copyPost.style.display = `none`;
+      copyPicture.style.display = `none`;
+      attribute.style.height = `37px`;
     }
   }
 }
@@ -576,10 +525,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   if (
     !src ||
     src == `null` ||
-    (src.match(/.webm|.mp4/g) &&
-      document.body.contains(itemPending) &&
-      document.body.contains(itemImage)
-    )
+    src.match(/.webm|.mp4/g)
   ) {
     itemPending.remove();
     itemImage.remove();
@@ -594,25 +540,15 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     var newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
-      if (
-        document.body.contains(itemPending) &&
-        document.body.contains(itemImage)
-      )
       itemPending.remove();
       itemImage.remove();
-      itemImage.style.paddingBottom = `30px`;
     };
     newImg.onload = function () {
       count.shift()
       if (
-        src.match(/ytimg/g) &&
-        youtubeMedia == false &&
-        document.body.contains(
-          document.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-          )
+          src.match(/ytimg/g) &&
+          youtubeMedia == false
         )
-      )
         document
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
@@ -643,8 +579,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     read.readAsDataURL(request.response);
                     read.onload = function (e) {
                       xmlImageDimensions(menuObject, pubIndex, newImg)
-                      itemFilter.classList.add(`blur`);
                       itemFilter.style.transform = `scale(4)`
+                      itemFilter.classList.add(`blur`);
                       itemFilter.classList.add(`leave`);
                       itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
@@ -653,8 +589,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   }
                   if (!src.match(/4cdn/g)) request.send();
                   else {
+                    itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
-                      itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`leave`);
                       itemImage.setAttribute(`src`, src);
                       itemImage.style.display = `block`;
@@ -676,22 +612,19 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               }
               if (!src.match(/4cdn/g)) request.send();
               else {
-                  itemImage.setAttribute(`src`, src);
-                  itemImage.style.display = `block`;
-                  itemPending.remove();
+                xmlImageDimensions(menuObject, pubIndex, newImg)
+                itemImage.setAttribute(`src`, src);
+                itemImage.style.display = `block`;
+                itemPending.remove();
                 }
               }
             });
           })
           .catch((response) => {
-            if (
-              document.body.contains(itemPending) &&
-              document.body.contains(itemContainer)
-            )
-              itemPending.remove();
-              itemContainer.remove();
+            itemContainer.remove();
+            itemPending.remove();
           });
-      } else {
+      } else { //safeSearch false
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
         request.responseType = "blob";
@@ -700,10 +633,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.readAsDataURL(request.response);
           read.onload = function (e) {
             xmlImageDimensions(menuObject, pubIndex, newImg);
-            if (
-              document.body.contains(itemPending) &&
-              document.body.contains(itemImage)
-            )
             itemImage.setAttribute(`src`, e.target.result);
             itemImage.style.display = `block`;
             itemPending.remove();
@@ -711,10 +640,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           };
           if (!src.match(/4cdn/g)) request.send();
           else {
-            if (
-              document.body.contains(itemPending) &&
-              document.body.contains(itemImage)
-            )
+            xmlImageDimensions(menuObject, pubIndex, newImg)
             itemImage.setAttribute(`src`, src);
             itemPending.remove();
         }
