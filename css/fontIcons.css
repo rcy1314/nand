@@ -4,6 +4,15 @@
   z-index: -1
 }
 
+#main #top .fa-at {
+  color: var(--fill-color-primary);
+  position: relative;
+  font-size: 14px;
+  padding: 10px;
+  float: left;
+  top: 15px;
+}
+
 #main #xml .center .item .header .courtesy .copy .attribute .fa,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
   float: right;

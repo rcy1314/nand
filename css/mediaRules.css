@@ -20,10 +20,6 @@
     width: 100% !important
   }
 
-  #toggle {
-    display: none !important;
-  }
-
   #main #visit #page #just {
     margin-left: 0 !important;
     top: 15px !important;
@@ -72,6 +68,8 @@
   }
 
   #hide,
+  .fa-at,
+  #toggle,
   .btn .flip-front,
   .expand .hash, .expand .des,
   #main #top #arm #option,

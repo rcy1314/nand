@@ -160,6 +160,16 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
+      evt.target.classList.contains(`fa-at`)
+    ) {
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove();
+      _visit.style.display = `flex`;
+      _top.style.display = `none`;
+    }
+    if (
       evt.target.classList.contains(`joi`)
     ) {
       id = 0;
