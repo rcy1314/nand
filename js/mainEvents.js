@@ -76,10 +76,7 @@ document.addEventListener('touchend', (evt) => {
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        httpRequest &&
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
-        httpRequest.status == 200 &&
-        httpRequest.status != 4 &&
         Reader == true &&
         stop == false
       ) {
@@ -94,17 +91,17 @@ document.addEventListener('scroll', (evt) => {
 document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
         Reader == true &&
-        httpRequest.status == 200
+        stop == false
       ) {
+        first = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
-    evt.preventDefault();
   },
-  false
-); //:before pseudo-elements not loaded in DOM
+  true
+);
 document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`construct`) ||

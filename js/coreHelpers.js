@@ -62,13 +62,13 @@ var anyRandomMenuObject = function () {
   }
   let randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (menu[randomObject] && !randomDuplicate.includes(randomObject))
-  if (menu[randomObject]) randomDuplicate.push(randomObject);
-    randomObject = randomObject;
+    if (menu[randomObject]) randomDuplicate.push(randomObject);
+      randomObject = randomObject;
   if (justRead == false)
     randomObject = random[Math.floor(Math.random() * random.length - 1)];
   if (justRead == true)
     randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-  return randomObject;
+  return menu.indexOf(randomObject);
 };
 
 String.prototype.zulu = function () {

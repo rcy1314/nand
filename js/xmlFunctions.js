@@ -664,6 +664,7 @@ var xmlRequestParsing = function (search, string, index) {
   let local;
   count = [];
   id = index;
+  stop = true;
   let pub = [];
   let image = [];
   let images = [];
@@ -891,6 +892,7 @@ var xmlRequestParsing = function (search, string, index) {
         contentStatusDisplay(index, recent, oldest, posts);
         topMenuBarDisplay(topBar);
         xmlStatusSuggestions();
+        stop = false;
       } else {
         //todo
       }
