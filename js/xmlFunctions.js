@@ -685,6 +685,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       document
                         .querySelector(
                           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                        ).style.transform = `scale(4)`
+                      document
+                        .querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                         )
                         .classList.add(`leave`);
                       document
@@ -726,6 +730,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
                       )
                       .classList.add(`blur`);
+                    document
+                      .querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+                      ).style.transform = `scale(4)`
                     document
                       .querySelector(
                         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
