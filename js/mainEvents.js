@@ -164,6 +164,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
+      document.title = `index.html`;
       _visit.style.display = `flex`;
       _top.style.display = `none`;
     }
@@ -338,6 +339,7 @@ document.addEventListener('click', (evt) => {
           _visit.style.display = `none`;
         }, setPause);
       }
+      document.title = category;
     }
     if (
       evt.target.classList.contains(`entity`) ||

@@ -259,6 +259,7 @@ document.addEventListener('click', (evt) => {
         topMenuBarDisplay(topBar);
         displayExpand(expand);
       }
+      document.title = category
     }
     if (
       (event.target.id == `mobileHome` && event.target.id != `Home`) ||
