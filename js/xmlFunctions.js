@@ -704,7 +704,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               )
               .remove();
           });
-      } else if (safeSearch == false && !safeSearchIDs.includes(menu[id].id) &&
+      } else if (
         document.body.contains(
           document.querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
