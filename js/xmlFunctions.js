@@ -811,6 +811,7 @@ var xmlRequestParsing = function (search, string, index) {
           youtubeMedia == true &&
           isFinite(local)
         ) {
+          _guide.style.display = `flex`;
           var sticky = [];
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),
