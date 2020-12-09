@@ -173,7 +173,7 @@ let progressBackDrop = function (done) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
         if (document.body.contains(document.querySelector(`.air`)))
           _main.scrollTop = document.querySelector(`.air`).clientHeight;
-      document.querySelector(`.result`).style.top = `-60px`;
+      document.querySelector(`#group`).style.top = `-60px`;
     }
   }
   if (onlyImages == true)
@@ -286,7 +286,9 @@ let reverseCategoryGroup = function (translation) {
 
 let filterInputResponse = function (filterURI) {
   if (translations.includes(filterURI.toString().capitalize())) {
-    populateCategoryGroup(filterURI.toString().capitalize());
+    setTimeout(function() {
+      populateCategoryGroup(filterURI.toString().capitalize());
+    }, 200)
     category = filterURI.toString().capitalize();
     unloading();
     return false;
