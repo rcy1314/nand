@@ -4,10 +4,10 @@
   > /?q=[translation]
 
   * Hash Example
-  > /?[hash] fails to bing search.
+  > /?[hash] fails to search.
 
   * Feed Example
-  > /?q=[id] multple filter fail search.
+  > /?q=[unique+id] fails to search.
   > /?q=[tranlsation] translation found populate.
 
 */
