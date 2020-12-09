@@ -58,7 +58,7 @@ var menu=[
 {id:`ABC/Albany`,category:`News`,description:`WTEN New York Albany serving New York Capital District as well as Berkshire County, Massachusetts.`,uri:`https://www.news10.com/feed`,image:`WTEN`,hash:`wt`,media:!0},
 {id:`CBS/Raleigh`,category:`News`,description:`WNCN North Carolina Raleigh serving the Triangle region, Durham, Chapel Hill, Fayetteville.`,uri:`https://www.cbs17.com/feed`,image:`WNCN`,hash:`ra`,media:!0},
 {id:`NBC/Little Rock`,category:`News`,description:`KARK Arkansas Little Rock your source for local weather, stories and sports.`,uri:`https://www.kark.com/feed`,image:`KARK`,hash:`aR`,media:!0},
-{id:`CBS/Little Rock`,category:`News`,description:`KTHV Arkansas Little Rock the day's headlines, providing important weather information, or telling a story.`,uri:`http://rssfeeds.thv11.com/kthv/local&x=1`,image:`THV`,hash:`hV`,media:!0},
+{id:`CBS/Little Rock`,category:`News`,description:`KTHV Arkansas Little Rock the day's headlines, providing important weather information, or telling a story.`,uri:`http://rssfeeds.thv11.com/kthv/local&x=1`,image:`THV`,hash:`hV`,media:!1},
 {id:`ABC/West Palm Beach`,category:`News`,description:`WPBF Florida West Palm Beach is your source for the local headlines and live alerts.`,uri:`https://www.wpbf.com/topstories-rss`,image:`WPBF`,hash:`bF`,media:!0},
 {id:`CBS/Detroit`,category:`News`,description:`WWJ Michigan Detroit BS owned-and-operated television station licensed to Detroit, Michigan.`,uri:`https://detroit.cbslocal.com/feed`,image:`WWJ`,hash:`wJ`,media:!0},
 {id:`ABC/Kansas City`,category:`News`,description:`KMBC Missouri Kansas City your source for the latest local headlines and live alerts.`,uri:`https://www.kmbc.com/topstories-rss`,image:`KMBC`,hash:`mK`,media:!0},
