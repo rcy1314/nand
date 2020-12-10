@@ -230,7 +230,6 @@ let sideBarDisplay = function (Value) {
     if (sideBarTranslations == true && _main.clientWidth >= 426) {
       for (i = 0; i <= translations.length - 1; i++) {
         content.append(sideBarTranslationBuild(translations[i]));
-        content.append(sideBarCategoryBuild(translations[i]));
       }
     }
     appendSideBarLists(`#content`, `sel`, selections);
@@ -534,9 +533,6 @@ let translationBuild = function (translation) {
   let object = document.createElement(`div`);
   object.classList.add(`translation`);
   object.setAttribute(`aria-item`, translation);
-  //let img = document.createElement(`img`)
-  //img.classList.add(`quickTranslation`)
-  //img.src = `images/${translation}.webp`
   let ahref = document.createElement(`a`);
   ahref.setAttribute(`ext`, translation);
   ahref.classList.add(`category`);
@@ -878,13 +874,6 @@ let basicFormBuild = function () {
   form.append(object);
   basic.append(form);
   return basic;
-};
-
-let sideBarCategoryBuild = function (translation) {
-  let webp = document.createElement(`img`);
-  webp.classList.add(`webp`);
-  webp.src = `images/${translation}.webp`;
-  return webp;
 };
 
 let sideBarOptionBuild = function (name, classes) {
