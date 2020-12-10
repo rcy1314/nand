@@ -165,8 +165,11 @@ document.addEventListener('click', (evt) => {
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
       document.title = `index.html`;
+      quickFeeds = quickFeeds != true;
+      _toggle.style.display = `block`;
       _visit.style.display = `flex`;
       _top.style.display = `none`;
+      quickFeedDisplay(quickFeeds);
     }
     if (
       evt.target.classList.contains(`joi`)
