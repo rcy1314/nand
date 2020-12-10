@@ -334,7 +334,7 @@ let scrollIntoView = true;
 
 */
 
-let fadeIntoView = true;
+let fadeIntoView = false;
 
 /*
     loading [string]
