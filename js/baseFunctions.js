@@ -315,7 +315,6 @@ let filterInputResponse = function (filterURI) {
     unloading();
   } else if (!isNaN(parseFloat(exact)) && isFinite(exact)) {
       xmlRequestParsing(null, null, match);
-      return false
   } else if (match === -1 && description.length === 0) {
     xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
