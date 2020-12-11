@@ -5,16 +5,9 @@
 
 ### Features
 
-* Private Proxy Requests.
-* URI Identifying init.js
-* URI Unique Postings.
 * Beta (stage) themes.
-* Background Images.
-* Youtube Media.
 * No Installation.
 * Bing Search.
-* NSFW api.
-* Filtering.
 
 ### Known Issues
 
