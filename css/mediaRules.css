@@ -320,7 +320,11 @@
   }
 
   #main #top #arm #option {
-    right: -9px;
+    right: -30px;
+  }
+
+  #main #xml {
+    padding-left: 120px;
   }
 
   #main #xml .center {
