@@ -86,7 +86,7 @@ document.addEventListener('mousemove', (evt) => {
         }, 750)
       }
       else if (
-        event.pageX >= (_main.clientWidth / 6) &&
+        event.pageX >= 280 &&
         onScreen == true
       ){
         onScreen = false;
