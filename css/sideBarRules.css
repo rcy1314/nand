@@ -104,17 +104,6 @@
   height: 15px;
 }
 
-
-#container #sidebar #content .set:hover,
-#container #sidebar #content .themes:hover,
-#container #sidebar #content .bg:hover,
-#container #sidebar #content .exclude:hover,
-#container #sidebar #content .fav:hover,
-#container #sidebar #content .sel:hover {
-  background-color: var(--hover-background-color) !important;
-  box-shadow: var(--box-shadow) !important;
-}
-
 #container #sidebar #content .fav,
 #container #sidebar #content .set,
 #container #sidebar #content .themes,
