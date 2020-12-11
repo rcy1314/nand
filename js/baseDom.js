@@ -254,7 +254,6 @@ let sideBarDisplay = function (Value) {
       setTimeout(function () {
         _sidebar.style.left = `0`;
         setTimeout(function () {
-          _hide.style.left = `280px`;
         }, 75);
       }, 300);
     } else
@@ -267,7 +266,6 @@ let sideBarDisplay = function (Value) {
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-280px`;
-    _hide.style.left = `0`;
   }
 };
 
