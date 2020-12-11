@@ -636,6 +636,7 @@ const settings = [
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
+  { name: `Reader`, class: `Reader` },
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },

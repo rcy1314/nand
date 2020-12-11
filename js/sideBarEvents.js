@@ -294,7 +294,36 @@ document.addEventListener('click', (evt) => {
       quickFeedDisplay(quickFeeds);
       document.title = ``;
     }
-    if (event.target.classList.contains(`parse`)) {
+    if (
+      !event.target.classList.contains(`fa-heart`) &&
+      event.target.classList.contains(`Reader`)
+    ) {
+      id = 0;
+      first = true;
+      randomDuplicate = [];
+      _visit.style.display = `none`;
+      if (showSplash == true) _check.style.display = `block`;
+      Reader = Reader != true;
+      if (Reader == false) {
+        justRead = false;
+        first = true;
+        id = 0;
+        xmlChannelFooter();
+        document
+          .querySelectorAll(`.joi`)
+          .forEach((a) => (a.classList.remove(`luv`)));
+      } else if (Reader == true) {
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+        document
+          .querySelectorAll(`.joi`)
+          .forEach((a) => (a.classList.add(`luv`)));
+      }
+      sideBarStar(event.target, Reader);
+    }    if (event.target.classList.contains(`parse`)) {
       expandFilter = expandFilter != true
       if (expandFilter == false)
         document.querySelector(`.exclude`).style.height = `31px`;

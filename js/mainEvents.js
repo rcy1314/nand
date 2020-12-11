@@ -221,19 +221,12 @@ document.addEventListener('click', (evt) => {
       justRead = true;
       onlyImages = true;
       randomDuplicate = [];
+      document
+        .querySelectorAll(`.joi`)
+        .forEach((a) => (a.classList.add(`luv`)));
       if (showSplash == true) _check.style.display = `block`;
-      document
-        .querySelector(`.Reader`)
-        .nextElementSibling.classList.remove(`fa-minus`);
-      document
-        .querySelector(`.Reader`)
-        .nextElementSibling.classList.add(`fa-star`);
-      document
-        .querySelector(`.onlyImages`)
-        .nextElementSibling.classList.remove(`fa-minus`);
-      document
-        .querySelector(`.onlyImages`)
-        .nextElementSibling.classList.add(`fa-star`);
+      sideBarStar(document.querySelector(`.Reader`), Reader);
+      sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
     if (
