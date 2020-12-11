@@ -577,7 +577,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       xmlImageDimensions(menuObject, pubIndex, newImg)
                       itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
-                      itemFilter.classList.add(`leave`);
                       itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
                       itemPending.remove();
@@ -587,7 +586,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   else {
                     itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
-                      itemFilter.classList.add(`leave`);
                       itemImage.setAttribute(`src`, src);
                       itemImage.style.display = `block`;
                       itemPending.remove();
