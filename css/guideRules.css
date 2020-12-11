@@ -87,7 +87,7 @@
 }
 
 #container #guide .sticky .header {
-  background-color: transparent;
+  background-color: var(--bg-color-primary);
   height: 60px;
   width: 100%;
 }
@@ -175,6 +175,7 @@
 }
 
 #container #guide .sticky .image {
+  background-color: var(--bg-color-primary);
   justify-content: center;
   align-items: center;
   overflow: hidden;
