@@ -1,5 +1,6 @@
 document.addEventListener('mousemove', (evt) => {
     if (
+      event.target.classList.contains(`favorite`) ||
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
@@ -25,6 +26,7 @@ document.addEventListener('mousemove', (evt) => {
 );
 document.addEventListener('mouseout', (evt) => {
     if (
+      event.target.classList.contains(`favorite`) ||
       event.target.classList.contains(`choose`) ||
       event.target.classList.contains(`adjust`) ||
       event.target.classList.contains(`border`) ||
