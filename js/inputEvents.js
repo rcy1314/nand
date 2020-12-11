@@ -22,8 +22,7 @@ document.addEventListener('click', (evt) => {
       }
       document.querySelector(`#input .icon`).classList.add(`slide`);
       _view.setAttribute(`placeholder`, `Search`);
-      event.target.style.caretColor = `#e4e4e4`;
-      event.target.style.paddingLeft = `30px`;
+      event.target.style.paddingLeft = `20px`;
       event.target.style.textAlign = `left`;
       event.target.value = ``;
     }

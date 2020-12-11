@@ -1,7 +1,18 @@
-.fa {
+.fa,
+.fas {
   display: inline-block;
   cursor: pointer;
   z-index: -1
+}
+
+.luv {
+  font-weight: 600 !important;
+}
+
+#main #top .fa,
+#main #option .fa,
+#main #option .fas {
+  font-variant: all-small-caps !important;
 }
 
 #main #top #arm .fa-long-arrow-alt-left {
@@ -129,7 +140,6 @@
 #main #option .fa-camera-retro,
 #main #option .fa-heart,
 #main #option .fa-sun,
-#main #option .fa-terminal,
 #main #option .fa-expand-alt {
   padding-right: 13px;
   padding-left: 13px;

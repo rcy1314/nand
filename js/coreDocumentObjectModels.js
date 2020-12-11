@@ -1,5 +1,7 @@
 const _top = document.getElementById(`top`);
 
+const _joi = document.querySelector(`.joi`);
+
 const _html = document.querySelector(`html`);
 
 const _body = document.querySelector(`body`);

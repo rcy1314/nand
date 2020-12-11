@@ -127,7 +127,10 @@ document.addEventListener('click', (evt) => {
       evt.target.id == `top` ||
       evt.target.id == `arm`
     ) {
-      if (_match.style.display === `block`) {
+      if (
+        _match.style.display === `block` ||
+        _view.getAttribute(`placeholder`) == `Search`
+      ) {
         document.querySelector(`#input .icon`).classList.remove(`slide`);
         _view.setAttribute(`placeholder`, ``);
         _view.style.textAlign = `center`;
@@ -182,6 +185,7 @@ document.addEventListener('click', (evt) => {
       first = true;
       randomDuplicate = [];
       _visit.style.display = `none`;
+      if (showSplash == true) _check.style.display = `Block`;
       Reader = Reader != true;
       if (Reader == false) {
         sideBarStar(document.querySelector(`.Reader`), Reader);
@@ -189,6 +193,7 @@ document.addEventListener('click', (evt) => {
         first = true;
         id = 0;
         xmlChannelFooter();
+        event.target.classList.remove(`luv`);
       } else if (Reader == true) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -197,6 +202,7 @@ document.addEventListener('click', (evt) => {
         if (showSplash == true) _check.style.display = `block`;
         sideBarStar(document.querySelector(`.Reader`), Reader);
         xmlRequestParsing(null, null, anyRandomMenuObject());
+        event.target.classList.add(`luv`);
       }
     }
     if (

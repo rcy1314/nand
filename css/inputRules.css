@@ -143,9 +143,9 @@ input[type=submit] {
   color: var(--fill-color-primary) !important;
   font-size: 14px !important;
   position: absolute;
-  left: 75px;
+  left: 80px;
   z-index: 2;
-  top: 9px;
+  top: 7px;
 }
 
 #main #visit #page #front .focus .icon {
