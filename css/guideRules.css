@@ -13,6 +13,7 @@
 }
 
 #container #guide .sticky {
+  background-color: var(--bg-color-primary);
   box-shadow: var(--box-shadow);
   align-items: center;
   position: relative;
