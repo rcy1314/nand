@@ -29,7 +29,7 @@
 
 ### Happy Holidays
 
-<p align='center'><img src='screenshots/Preview.gif'></p>
+<p align='center'><img src='screenshots/InDepth.gif'></p>
 
 
 Want to Contribute?
