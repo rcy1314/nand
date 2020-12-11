@@ -512,9 +512,9 @@ let safeSearchIDs = [
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
   `4Chan/SP Sports`,
-  `4Chan/G Technology`,
-  `4Chan/HR High Resolution`,
-  `4Chan/Wallpapers General`,
+  `4Chan/Technology`,
+  `4Chan/High Resolution`,
+  `4Chan/Wallpapers`,
 ];
 
 /*

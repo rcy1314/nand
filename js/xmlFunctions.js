@@ -638,6 +638,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           else {
             xmlImageDimensions(menuObject, pubIndex, newImg)
             itemImage.setAttribute(`src`, src);
+            itemImage.style.display = `block`;
             itemPending.remove();
         }
       };
