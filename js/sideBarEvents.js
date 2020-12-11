@@ -43,6 +43,13 @@ document.addEventListener('mouseout', (evt) => {
   false
 );
 document.addEventListener('click', (evt) => {
+    if (event.target.classList.contains(`feed`)) {
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).remove();
+      filterInputResponse(event.target.innerHTML)
+    }
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true;
       if (document.body.contains(document.querySelector(`#xml`))) {
@@ -319,6 +326,14 @@ document.addEventListener('click', (evt) => {
           document.querySelector(`.exclude`).style.height = `${
             exclude.length * 32 + 80
           }px`;
+    }
+    if (event.target.classList.contains(`favorite`)) {
+      expandFavorites = expandFavorites != true
+      if (expandFavorites == false)
+        document.querySelector(`.fav`).style.height = `31px`;
+      else if (expandFavorites == true)
+        document.querySelector(`.fav`).style.height =
+          `${(favorites.length + 1) * 36}px`;
     }
     if (event.target.classList.contains(`border`)) {
       expandVisual = expandVisual != true

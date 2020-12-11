@@ -30,6 +30,10 @@ window.onload = function () {
       document.querySelector(`.set`).style.height = `${
         (settings.length + 1) * 35
       }px`;
+    if (expandFavorites == true)
+      document.querySelector(`.fav`).style.height = `${
+        (favorites.length + 1) * 35
+      }px`;
     if (expandVisual == true)
       document.querySelector(`.themes`).style.height = `${
         (themes.length + 1) * 35

@@ -36,6 +36,17 @@ const themes = [
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];
 
+const favorites = [
+  `Reddit/Art`,
+  `Reddit/Wallpaper`,
+  `Reddit/Wallpapers`,
+  `Reddit/Los Angeles`,
+  `Reddit/San Francisco`,
+  `4Chan/G Technology`,
+  `4Chan/HR High Resolution`,
+  `4Chan/Wallpapers General`,
+]
+
 /*
     topBar [boolean/integer]
 
@@ -114,6 +125,19 @@ let expand = true;
 */
 
 let expandVisual = false;
+
+/*
+    expandFavorites [boolean/integer]
+
+      Applications
+        sidebar, onload
+
+      Result
+        Favorites expanded
+
+*/
+
+let expandFavorites = false;
 
 /*
     expandFilter [boolean/integer]
@@ -269,7 +293,7 @@ let showDescription = true;
 
 */
 
-let sideBarTranslations = true;
+let sideBarTranslations = false;
 
 /*
     quickFeeds [boolean/integer]

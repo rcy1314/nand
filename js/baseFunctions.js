@@ -296,6 +296,9 @@ let filterInputResponse = function (filterURI) {
     unloading();
     return false;
   }
+  let exact = menu.findIndex(
+    (item) => item.id.toLowerCase().space() === filterURI.toString().toLowerCase().space()
+  );
   let match = menu.findIndex(
     (item) => item.id.toLowerCase().space().match(filterURI.toString().toLowerCase().space())
   );
@@ -303,13 +306,16 @@ let filterInputResponse = function (filterURI) {
     return item.description.space().toLowerCase()
       .match(filterURI.toString().toLowerCase().space());
   })
-  if (description.length > 0) {
+  if (description.length > 0 && exact === -1) {
     groupBuild();
     for (i = 0; i <= description.length - 1; i++)
       writeFilterResponse(menu.indexOf(description[i]));
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
+  } else if (!isNaN(parseFloat(exact)) && isFinite(exact)) {
+      xmlRequestParsing(null, null, match);
+      return false
   } else if (match === -1 && description.length === 0) {
     xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {

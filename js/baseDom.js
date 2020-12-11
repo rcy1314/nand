@@ -187,14 +187,16 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
   for (i = 0; i <= Arrays.length - 1; i++) {
     let option = document.createElement(`div`);
-    if (Class == `option`) option.classList.add(Class);
+    if (Class == `option` || Class == `feed`) option.classList.add(Class);
     else option.classList.add(Class, Arrays[i].class);
     if (Class == `background` || Class == `sel`)
       option.innerHTML = Arrays[i].name;
-    if (Class == `option`) option.innerHTML = Arrays[i];
+    if (Class == `option` || Class == `feed`)
+			option.innerHTML = Arrays[i].space().capitalize();
     if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
     list.append(option);
-    if (Class != `option`) list.append(sideBarThemeBuild(Arrays[i].icon));
+    if (Class != `option` && Class != `feed`)
+			list.append(sideBarThemeBuild(Arrays[i].icon));
   }
 };
 
@@ -235,6 +237,8 @@ let sideBarDisplay = function (Value) {
     appendSideBarLists(`#content`, `sel`, selections);
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
     appendSideBarLists(`.themes`, `theme`, themes);
+		sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
+    appendSideBarLists(`.fav`, `feed`, favorites);
     sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
     appendSideBarLists(`.bg`, `background`, background);
     document.querySelector(`.bg`).append(urlFormBuild());
@@ -250,7 +254,7 @@ let sideBarDisplay = function (Value) {
       setTimeout(function () {
         _sidebar.style.left = `0`;
         setTimeout(function () {
-          _hide.style.left = `240px`;
+          _hide.style.left = `280px`;
         }, 75);
       }, 300);
     } else
@@ -262,7 +266,7 @@ let sideBarDisplay = function (Value) {
   } else if (Value == false) {
     document.querySelector(`.sideFilter`).style.display = `block`;
     document.querySelector(`#basic`).style.display = `block`;
-    _sidebar.style.left = `-240px`;
+    _sidebar.style.left = `-280px`;
     _hide.style.left = `0`;
   }
 };
