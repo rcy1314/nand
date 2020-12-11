@@ -57,7 +57,7 @@ var anyRandomMenuObject = function () {
       if (menu[i] && menu[i].category == category && menu[i].media == true)
         random.push(menu.indexOf(menu[i]));
     } else if (onlyImages == false) {
-      if (menu[i].category == category) random.push(menu.indexOf(menu[i]));
+      if (menu[i].category == category) random.push(menu[i]);
     }
   }
   let randomObject = menu[Math.floor(Math.random() * menu.length - 1)];

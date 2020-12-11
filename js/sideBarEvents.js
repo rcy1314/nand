@@ -302,6 +302,7 @@ document.addEventListener('click', (evt) => {
       first = true;
       randomDuplicate = [];
       _visit.style.display = `none`;
+      if (showSplash == true) _check.style.display = `block`;
       Reader = Reader != true;
       if (Reader == false) {
         justRead = false;
