@@ -159,19 +159,3 @@
 #container #sidebar #content .bg .background:hover {
   background-color: var(--hover-background-color) !important;
 }
-
-#container #hide {
-  background-color: var(--bg-color-secondary);
-  border-right: var(--hover-border-color);
-  border-radius: 0px 36px 36px 0px;
-  backdrop-filter: blur(4px);
-  align-items: center;
-  position: absolute;
-  display: flex;
-  margin: auto;
-  height: 48px;
-  width: 26px;
-  z-index: 12;
-  bottom: 0;
-  top: 0;
-}

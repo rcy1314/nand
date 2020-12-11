@@ -237,10 +237,6 @@ document.addEventListener('click', (evt) => {
       _container.style.backgroundImage = `none`;
       _main.style.backgroundImage = `none`;
     }
-    if (event.target.id == `hide`) {
-      onScreen = onScreen != true;
-      sideBarDisplay(onScreen);
-    }
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;

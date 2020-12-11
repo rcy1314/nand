@@ -75,6 +75,29 @@ document.addEventListener('touchend', (evt) => {
   { passive: true }
 );
 
+document.addEventListener('mousemove', (evt) => {
+      if (
+        event.pageX <= (_main.clientWidth / 8) &&
+        onScreen == false
+      ) {
+        onScreen = true;
+        setTimeout(function () {
+          sideBarDisplay(onScreen);
+        }, 750)
+      }
+      else if (
+        event.pageX >= (_main.clientWidth / 6) &&
+        onScreen == true
+      ){
+        onScreen = false;
+        setTimeout(function() {
+          sideBarDisplay(onScreen);
+        }, 750)
+      }
+  },
+  true
+);
+
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
