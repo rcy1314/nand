@@ -164,7 +164,7 @@ document.addEventListener('submit', (evt) => {
           backgroundImage[0].path = document.querySelector(`.imageURL`).value;
         }
       }
-    } else if (event.target.classList.contains(`basic`)) {
+    } else if (event.target.classList.contains(`sideBasic`)) {
       if (document.querySelector(`.sideFilter`).value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
