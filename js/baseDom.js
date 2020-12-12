@@ -94,7 +94,7 @@ let displayDescription = function (Value) {
         document.querySelector(`.about`).style.display = `none`;
       _main
         .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.visibility = `hidden`));
+        .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`expand`));
@@ -112,7 +112,7 @@ let displayDescription = function (Value) {
         .forEach((a) => a.classList.add(`expand`));
       _main
         .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.visibility = `visible`));
+        .forEach((a) => (a.style.display = `block`));
     }
 };
 

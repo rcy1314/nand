@@ -208,6 +208,7 @@
 
 @media screen and (min-width: 768px) {
 
+  .mobile,
   .expand {
     margin-left: 0 !important;
   }
@@ -246,10 +247,14 @@
   	width: 700px;
   }
 
-  #main #group .air,
-  #main #group .result {
-	  margin: 0 auto;
-	  width: 80%;
+  .expand {
+    margin-left: 225px !important;
+    width: 720px !important;
+  }
+
+  .mobile {
+    margin-left: 225px !important;
+    width: 760px !important;
   }
 
   #guide .sticky .header {
@@ -267,7 +272,7 @@
   }
 
   #main #top #arm {
-    width: 90%;
+    width: 100%;
   }
 
   #main #top #arm #search #input {
@@ -301,6 +306,16 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+  .expand {
+    margin-left: 225px !important;
+    width: 1040px !important;
+  }
+
+  .mobile {
+    margin-left: 225px !important;
+    width: 1140px !important;
+  }
 
   #toggle {
     right: 2em;
@@ -365,7 +380,10 @@
 
   .expand {
     margin-left: 140px !important;
-    width: 90% !important;
+  }
+
+  .mobile {
+    margin-left: 150px !important;
   }
 
   #main #top #arm {
