@@ -51,6 +51,7 @@ document.addEventListener('click', (evt) => {
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
       filterInputResponse(event.target.innerHTML)
+      _toggle.style.display = `none`;
     }
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true;
