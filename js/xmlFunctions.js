@@ -853,7 +853,10 @@ var xmlRequestParsing = function (search, string, index) {
             }).length > 0
           )
             continue;
-          if (i != local) {
+          if (omitGuide == true && i != local) {
+            document.querySelector(`.channel`).append(pub[i].post);
+            images.push({ element: pub[i].element, src: pub[i].src });
+          } else if (omitGuide == false) {
             document.querySelector(`.channel`).append(pub[i].post);
             images.push({ element: pub[i].element, src: pub[i].src });
           }

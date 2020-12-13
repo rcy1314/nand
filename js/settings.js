@@ -457,6 +457,19 @@ let suggestionBuffer = 6;
 let contentStatusBuffer = 7;
 
 /*
+    omitGuide [boolean/integer]
+
+      Applications
+        xmlRequestParsing
+
+      Result
+        Guide Posts not in feed
+
+*/
+
+let omitGuide = true;
+
+/*
     safeSearch [integer]
 
       Applications
