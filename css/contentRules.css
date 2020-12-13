@@ -79,6 +79,7 @@ html body,
 }
 
 #main {
+  background-color: var(--borderless-hover-color);
   background-position: center center;
   -webkit-overflow-scrolling: touch;
   image-rendering: optimizeSpeed;
@@ -135,7 +136,6 @@ html body,
 }
 
 #main #visit {
-  background-color: var(--borderless-hover-color);
   justify-content: center;
   align-items: center;
   display: none;

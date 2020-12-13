@@ -9,7 +9,6 @@
 }
 
 #main #group {
-  background-color: var(--borderless-hover-color);
   height: fit-content;
   position: absolute;
   padding-top: 57px;

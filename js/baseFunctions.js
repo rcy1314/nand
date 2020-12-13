@@ -172,10 +172,12 @@ let progressBackDrop = function (done) {
   if (document.body.contains(document.getElementById(`group`))) {
     if (scrollIntoView == true) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
-      document.querySelector(`#group`).style.display = `block`;
-        if (document.body.contains(document.querySelector(`.air`)))
-          _main.scrollTop = document.querySelector(`.air`).clientHeight;
-      document.querySelector(`#group`).style.top = `-60px`;
+      setTimeout(function() {
+        document.querySelector(`#group`).style.display = `block`;
+          if (document.body.contains(document.querySelector(`.air`)))
+            _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        document.querySelector(`#group`).style.top = `-60px`;
+      }, 25)
     }
   }
   if (onlyImages == true)

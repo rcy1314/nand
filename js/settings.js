@@ -493,7 +493,7 @@ let guideSafeSearch = false;
 
 */
 
-let safeSearchScore = `0.8076019883155823`;
+let safeSearchScore = `0.6188415288925171`;
 
 /*
     safeSearchCategory [array]
