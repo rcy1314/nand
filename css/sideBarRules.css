@@ -129,7 +129,7 @@
 #container #sidebar #content .bg .adjust {
   background-color: transparent !important;
   color: var(--fill-color-primary);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
   padding-top: 8px;
   overflow: hidden;
   font-size: 12px;
