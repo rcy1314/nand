@@ -1,15 +1,19 @@
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 425px) {
 
   .expand {
     margin-left: 0 !important;
   }
 
-  .btn .flip-back {
-    transform: rotateX(0deg) translateZ(25px) !important;
+  .expand .title {
+    flex-basis: 50% !important;
   }
 
-  #sidebar {
-    overflow-y: auto;
+  .expand .blank {
+    margin-right: 5px !important;
+  }
+
+  .btn .flip-back {
+    transform: rotateX(0deg) translateZ(25px) !important;
   }
 
   #sidebar #content {
@@ -59,39 +63,25 @@
     left: 0;
   }
 
-  .expand .title {
-    flex-basis: 50% !important;
-  }
-
-  .expand .blank {
-    margin-right: 5px !important;
-  }
-
-  #hide,
-  .fa-at,
   #toggle,
+  .expand .des,
+  .expand .hash,
   .btn .flip-front,
-  .expand .hash, .expand .des,
+  #main #xml .content,
   #main #top #arm #option,
-  #main #visit #page #quick .right,
   #main #xml .center #quick,
   #main #visit #page #quick .left,
-  #main #xml .content,
+  #main #visit #page #quick .right,
   #main #visit #page #front .focus .button,
   ::-webkit-scrollbar {
     display: none !important;
   }
 
+  #main #page,
   #main #visit {
     height: 100%;
     width: 100%;
     top: 0;
-  }
-
-  #main #page {
-    top: 15px !important;
-    height: 100%;
-    width: 100%;
   }
 
   #main #top,
@@ -101,24 +91,13 @@
     width: 100vw !important;
   }
 
-  #main #xml .center {
-    margin-left: 0;
-    width: 100%;
-	  left: 0;
-  }
-
   #main #xml .center .item {
     width: calc(100% - 9px);
-    margin-left: 4px;
-    margin-bottom: 1.5em;
+    margin-left: 4.5px;
   }
 
   #main #xml .center .item .image {
     margin: 0 !important;
-  }
-
-  #main #xml .center #bottom .bottom {
-    bottom: 3px;
   }
 
   #main #option {
@@ -130,19 +109,13 @@
     right: 10px;
   }
 
-  #main #group .air .populate,
-  #main #group .result .populate {
-    width: 130px;
-    margin: 10px;
-  }
-
   #main #group {
     position: absolute !important;
-    right: 0 !important;
-    left: 0 !important;
     margin-right: auto !important;
     margin-left: auto !important;
     width: 95vw !important;
+    right: 0 !important;
+    left: 0 !important;
   }
 
   #main #top #arm #search #match {
@@ -208,9 +181,20 @@
 
 @media screen and (min-width: 768px) {
 
-  .mobile,
   .expand {
-    margin-left: 0 !important;
+    margin: 0 auto !important;
+    width: 720px !important;
+  }
+
+  .mobile {
+    margin: 0 auto !important;
+    width: 760px !important;
+  }
+
+  #main #visit #page #quick #feed .asset,
+  #main #visit #page #quick #feed .translation {
+    padding: 10px;
+    width: 82px;
   }
 
   #main #option {
@@ -244,17 +228,9 @@
   }
 
   #main #visit #page #quick {
-  	width: 700px;
-  }
-
-  .expand {
-    margin: 0 auto !important;
-    width: 720px !important;
-  }
-
-  .mobile {
-    margin: 0 auto !important;
-    width: 760px !important;
+  	width: 720px;
+    top: 15px;
+    right: 0;
   }
 
   #guide .sticky .header {
