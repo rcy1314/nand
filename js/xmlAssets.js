@@ -385,7 +385,7 @@ var menu=[
 {id:`Int Business Times Tech`,category:`Technology`,description:`International Business Times Technology stories and insight about tech gadgets, games and social media.`,uri:`https://www.ibtimes.sg/rss/technology`,image:`IBT`,hash:`In`,media:!1},
 {id:`JPost Tech`,category:`Technology`,description:`JPost Innovation and Technology.`,uri:`https://www.jpost.com/rss/rssfeedsjposttech`,image:`JPost`,hash:`jH`,media:!0},
 {id:`The L.A. Times Tech`,category:`Technology`,description:`Los Angeles Times is a daily newspaper that is published in Los Angeles, California.`,uri:`https://www.latimes.com/business/technology/rss2.0.xml`,image:`LosAngelesTimes`,hash:`Me`,media:!0},
-{id:`Linux.com`,category:`Technology`,description:`Linux.com News For Open Source Professionals.`,uri:`https://www.linux.com/feed`,image:`Linux`,hash:`lN`,media:!0},
+{id:`Linux.com`,category:`Technology`,description:`Linux.com News For Open Source Professionals.`,uri:`https://www.linux.com/feed`,image:`LinuxCom`,hash:`lN`,media:!0},
 {id:`Linux Weekly News`,category:`Technology`,description:`Linux Weekly News Headlines.`,uri:`https://lwn.net/headlines/rss`,image:`LWN`,hash:`wN`,media:!1},
 {id:`Phys.org`,category:`Technology`,description:`Phys.org has Latest News on Science in Physics, Space Science, Earth Science, Health and Medicine.`,uri:`https://phys.org/rss-feed`,image:`Phys`,hash:`pR`,media:!0},
 {id:`Reclaim the Net`,category:`Technology`,description:`Reclaim the Net Restoring Individual Liberty Online. Free Speech. Privacy`,uri:`https://reclaimthenet.org/feed`,image:`ReclaimTheNet`,hash:`iR`,media:!0},

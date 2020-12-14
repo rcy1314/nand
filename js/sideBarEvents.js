@@ -282,13 +282,13 @@ document.addEventListener('click', (evt) => {
       _quick.style.visibility = `visible`;
       _link.style.visibility = `visible`;
       if (quickFeeds == false) _just.style.visibility = `visible`;
-      _top.style.display = `none`;
+      _visit.style.visibility = `visible`;
       _toggle.style.display = `block`;
       _first.style.display = `none`;
-      _visit.style.visibility = `visible`;
       _visit.style.display = `flex`;
-      _feed.scrollLeft = 0;
       quickFeedDisplay(quickFeeds);
+      _top.style.display = `none`;
+      _feed.scrollLeft = 0;
       document.title = ``;
     }
     if (
