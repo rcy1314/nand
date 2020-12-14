@@ -72,6 +72,30 @@ window.onload = function () {
         true
       );
 
+      _main.addEventListener('mousemove', (evt) => {
+            if (
+              event.pageX <= (_main.clientWidth / 8) &&
+              onScreen == false
+            ) {
+              onScreen = true;
+              setTimeout(function () {
+                sideBarDisplay(onScreen);
+              }, 350)
+            }
+            else if (
+              event.pageX >= 280 &&
+              sideBarLock == false &&
+              onScreen == true
+            ){
+              onScreen = false;
+              setTimeout(function() {
+                sideBarDisplay(onScreen);
+              }, 1250)
+            }
+        },
+        true
+      );
+
   }, 250)
 
   _container.style.display = `block`;
@@ -89,30 +113,6 @@ document.addEventListener('touchend', (evt) => {
     handleSwipe();
   },
   { passive: true }
-);
-
-_main.addEventListener('mousemove', (evt) => {
-      if (
-        event.pageX <= (_main.clientWidth / 8) &&
-        onScreen == false
-      ) {
-        onScreen = true;
-        setTimeout(function () {
-          sideBarDisplay(onScreen);
-        }, 350)
-      }
-      else if (
-        event.pageX >= 280 &&
-        sideBarLock == false &&
-        onScreen == true
-      ){
-        onScreen = false;
-        setTimeout(function() {
-          sideBarDisplay(onScreen);
-        }, 1250)
-      }
-  },
-  true
 );
 
 document.addEventListener('scroll', (evt) => {

@@ -187,20 +187,6 @@ span.ripple {
   }
 }
 
-@-webkit-keyframes gloss {
-  0% {
-    background-position: 90% 100%
-  }
-
-  50% {
-    background-position: 0% 10%
-  }
-
-  100% {
-    background-position: 90% 100%
-  }
-}
-
 @keyframes scale {
   0%, 100% {
     transform: none;
