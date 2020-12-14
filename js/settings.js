@@ -38,6 +38,8 @@ const themes = [
 
 const favorites = [
   `Reddit/Art`,
+  `Reddit/Pics`,
+  `Reddit/PS Battles`,
   `Reddit/Wallpaper`,
   `Reddit/Wallpapers`,
   `Reddit/Unix Porn`,
@@ -113,7 +115,7 @@ let onScreen = true;
 
 */
 
-let sideBarLock = true;
+let sideBarLock = false;
 
 /*
     expand [boolean/integer]
