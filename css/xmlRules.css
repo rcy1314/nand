@@ -439,6 +439,7 @@
   position: relative !important;
   margin: 0 auto !important;
   display: inline-block;
+  padding-bottom: 1px;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;

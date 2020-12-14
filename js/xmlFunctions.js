@@ -1,4 +1,5 @@
 var guideDisplay = function (pubArray) {
+  _guide.style.display = `flex`;
   _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
@@ -11,6 +12,7 @@ var guideDisplay = function (pubArray) {
 };
 
 var guideDisplayYoutube = function (pubArray) {
+  _guide.style.display = `flex`;
   _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
