@@ -1,4 +1,5 @@
 window.onload = function () {
+  if (location.href.split(`?`)[1]) guideOnScreen = false;
   quickFeedDisplay(quickFeeds);
   if (sideBarCenter == false) _content.style.position = `relative`;
   else _content.style.position = `absolute`;
@@ -75,6 +76,7 @@ window.onload = function () {
       _main.addEventListener('mousemove', (evt) => {
             if (
               event.pageX <= (_main.clientWidth / 8) &&
+              guideOnScreen == true &&
               onScreen == false
             ) {
               onScreen = true;
@@ -402,16 +404,14 @@ document.addEventListener('click', (evt) => {
       _visit.style.display = `none`;
     }
     if (
-      evt.target.classList.contains(`checkmark__circle`) ||
-      evt.target.classList.contains(`checkmark__check`) ||
-      evt.target.classList.contains(`checkmark`) ||
       evt.target.id == `guide`
     ) {
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
-      sideBarFirst = true;
       onScreen = guideOnScreen;
+      guideOnScreen = true;
+      sideBarFirst = true;
       if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);

@@ -1,5 +1,5 @@
 var guideDisplay = function (pubArray) {
-  _guide.style.display = `flex`;
+  if (showSplash == true) _guide.style.display = `flex`;
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
   _main.classList.add(`guide`);
@@ -7,9 +7,9 @@ var guideDisplay = function (pubArray) {
 };
 
 var guideDisplayYoutube = function (pubArray) {
-  _guide.style.display = `flex`;
+  if (showSplash == true) _check.style.display = `none`;
   _guide.append(guideBuildYoutube(pubArray[0]));
-  _check.style.display = `none`;
+  _guide.style.display = `flex`;
   _main.classList.add(`guide`);
   _guide.style.zIndex = `12`;
 };

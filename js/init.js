@@ -39,8 +39,8 @@ setTimeout(function() {
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
         onScreen = false;
-        topMenuBarDisplay(topBar);
         sideBarDisplay(onScreen);
+        topMenuBarDisplay(topBar);
       }, 250);
     }
   } else if (location.search.split(`?q=`)[1]) {
