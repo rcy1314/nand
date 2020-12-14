@@ -352,7 +352,7 @@ document.addEventListener('click', (evt) => {
         let setPause;
         let target = event;
         if (showParticles == true) {
-          showParticles(function() {
+          setTimeout(function() {
             explode(target);
           }, 25)
           setPause = 25;
