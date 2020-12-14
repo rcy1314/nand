@@ -258,10 +258,6 @@
     right: 0px;
   }
 
-  #main #top #arm #search #home {
-	  left: -15px;
-  }
-
   #main #xml .center {
     width: 420px;
 	  left: -20px;
@@ -301,10 +297,6 @@
 
   #main #top #arm #search #input {
     margin: 0 auto;
-  }
-
-  #main #top #arm #search #home {
-    left: -35px;
   }
 
   #main #top #arm #option {
@@ -348,7 +340,9 @@
   #main #xml .content {
     margin-left: 10px;
   }
+
 }
+
 @media screen and (min-width: 1440px) {
 
   .expand {

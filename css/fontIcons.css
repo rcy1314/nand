@@ -15,6 +15,17 @@
   font-variant: all-small-caps !important;
 }
 
+#main #option .fa-home,
+#main #option .fa-camera-retro,
+#main #option .fa-heart,
+#main #option .fa-sun,
+#main #option .fa-expand-alt {
+  padding-right: 13px;
+  padding-left: 13px;
+  padding-top: 17px;
+  font-size: 17px;
+}
+
 #main #top #arm .fa-long-arrow-alt-left {
   color: var(--fill-color-primary);
   position: relative;
@@ -29,6 +40,33 @@
 #main #xml .center .item .header .courtesy .copy .attribute .fa,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
   float: right;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f030";
+  font-weight: 50;
+  padding: 0;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f064";
+  font-weight: 50;
+  padding: 0;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f1fa";
+  font-weight: 50;
+  padding: 0;
 }
 
 #sidebar #content .fa-star,
@@ -75,14 +113,14 @@
 
 #sidebar #content .fa-minus {
   color: var(--fill-color-primary);
+  font-size: 11px;
   position: relative;
   margin-top: -18px !important;
   font-weight: 50;
-  font-size: 10px;
   float: right;
   height: 15px;
-  right: 5px;
   width: 15px;
+  right: 5px;
   z-index: -1;
 }
 
@@ -134,17 +172,6 @@
   z-index: -1;
   right: 9px;
   top: 3px;
-}
-
-#main #option .fa-home,
-#main #option .fa-camera-retro,
-#main #option .fa-heart,
-#main #option .fa-sun,
-#main #option .fa-expand-alt {
-  padding-right: 13px;
-  padding-left: 13px;
-  padding-top: 17px;
-  font-size: 17px;
 }
 
 #guide .sticky .fa-heart,
@@ -204,40 +231,10 @@
   font-weight: 50;
 }
 
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
-  font-family: "Font Awesome 5 Pro";
-  background-color: transparent !important;
-  content: "\f030";
-  font-weight: 50;
-  padding: 0;
-}
-
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
-  font-family: "Font Awesome 5 Pro";
-  background-color: transparent !important;
-  content: "\f064";
-  font-weight: 50;
-  padding: 0;
-}
-
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
-  font-family: "Font Awesome 5 Pro";
-  background-color: transparent !important;
-  content: "\f1fa";
-  font-weight: 50;
-  padding: 0;
-}
-
 #main #visit #page #quick .fa-minus {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f068";
-  padding-top: 8px;
-  font-weight: 50;
-  font-size: 11px;
 }
 
 #main #visit #page #quick .fa-plus {

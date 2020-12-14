@@ -1,5 +1,5 @@
 .mainTransition {
-  transition: 250ms;
+  transition: 75ms;
 }
 
 span.ripple {
@@ -120,11 +120,6 @@ span.ripple {
     transform: rotateX(0deg) translateZ(25px);
 }
 
-.mask {
-  animation: dash 1s linear alternate;
-  fill: none;
-}
-
 .slide {
   left: 10px !important;
   transition: .5s;
@@ -206,22 +201,6 @@ span.ripple {
   }
 }
 
-@keyframes dash {
-  0% {
-    stroke-dasharray: 1;
-  }
-
-  100% {
-    stroke-dasharray: 4;
-  }
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes scale {
   0%, 100% {
     transform: none;
@@ -246,12 +225,6 @@ span.ripple {
   to {
     transform: scale(9);
     opacity: 0;
-  }
-}
-
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
 
