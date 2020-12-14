@@ -102,7 +102,10 @@ let displayDescription = function (Value) {
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`mobile`));
     } else if (Value == true) {
-      if (document.body.contains(document.querySelector(`#xml`)))
+      if (
+				document.body.contains(document.querySelector(`#xml`)) &&
+				document.body.contains(document.querySelector(`.about`))
+		)
         document.querySelector(`.about`).style.display = `block`;
       _main
         .querySelectorAll(`.populate`)

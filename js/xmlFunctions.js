@@ -889,7 +889,18 @@ var xmlRequestParsing = function (search, string, index) {
         xmlStatusSuggestions();
         stop = false;
       } else {
-        //todo
+        if (showSplash == true) _check.style.display = `none`;
+        id = 0;
+        document.title = category.capitalize();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove()
+        setTimeout(function () {
+          populateCategoryGroup(category);
+          displayDescription(showDescription);
+          topMenuBarDisplay(topBar);
+          displayExpand(expand);
+          unloading();
+        }, 25)
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
