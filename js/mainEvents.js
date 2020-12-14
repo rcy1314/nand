@@ -314,7 +314,7 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.classList.contains(`select`)) {
       let setPause;
-      if (showFireworks == true) {
+      if (showParticles == true) {
         explode(event);
         setPause = 450;
       }
@@ -351,8 +351,8 @@ document.addEventListener('click', (evt) => {
       } else {
         let setPause;
         let target = event;
-        if (showFireworks == true) {
-          setTimeout(function() {
+        if (showParticles == true) {
+          showParticles(function() {
             explode(target);
           }, 25)
           setPause = 25;

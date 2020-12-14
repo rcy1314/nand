@@ -204,7 +204,7 @@ let showRipple = true;
 
 */
 
-let showFireworks = true;
+let showParticles = true;
 
 /*
     showSplash [boolean/integer]
@@ -653,7 +653,7 @@ const settings = [
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Use Ripples`, class: `showRipple` },
-  { name: `Use FireWorks`, class: `showFireworks` },
+  { name: `Use Particles`, class: `showParticles` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },

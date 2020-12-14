@@ -79,9 +79,9 @@ document.addEventListener('click', (evt) => {
       showRipple = showRipple != true;
       sideBarStar(event.target, showRipple);
     }
-    if (event.target.classList.contains(`showFireworks`)) {
-      showFireworks = showFireworks != true;
-      sideBarStar(event.target, showFireworks);
+    if (event.target.classList.contains(`showParticles`)) {
+      showParticles = showParticles != true;
+      sideBarStar(event.target, showParticles);
     }
     if (event.target.classList.contains(`excludeInput`)) {
       event.target.value = ``;
@@ -241,7 +241,7 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;
-      if (showFireworks == true) explode(event);
+      if (showParticles == true) explode(event);
       if (showRipple == true) rippleBuild(event, event.target);
       if (_main.clientWidth <= 425) {
         onScreen = onScreen != true;
