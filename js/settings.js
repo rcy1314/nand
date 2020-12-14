@@ -39,7 +39,7 @@ const themes = [
 const favorites = [
   `Reddit/Art`,
   `Reddit/Pics`,
-  `Reddit/PS Battles`,
+  `Youtube/Surfer`,
   `Reddit/Wallpaper`,
   `Reddit/Wallpapers`,
   `Reddit/Unix Porn`,
@@ -657,7 +657,7 @@ const selections = [
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
-  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
+  //{ name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
 const settings = [
