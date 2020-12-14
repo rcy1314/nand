@@ -248,12 +248,12 @@
   }
 
   .expand {
-    margin-left: 225px !important;
+    margin: 0 auto !important;
     width: 720px !important;
   }
 
   .mobile {
-    margin-left: 225px !important;
+    margin: 0 auto !important;
     width: 760px !important;
   }
 
@@ -304,13 +304,13 @@
 @media screen and (min-width: 1024px) {
 
   .expand {
-    margin-left: 225px !important;
-    width: 1040px !important;
+    margin: 0 auto !important;
+    width: 990px !important;
   }
 
   .mobile {
-    margin-left: 225px !important;
-    width: 1140px !important;
+    margin: 0 auto !important;
+    width: 990px !important;
   }
 
   #toggle {
