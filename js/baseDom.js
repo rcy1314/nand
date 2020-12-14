@@ -164,7 +164,7 @@ let displayExpand = function (Value) {
         .forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.media`)
-        .forEach((a) => (a.style.display = `none`));
+        .forEach((a) => (a.style.display = `block`));
       _main.querySelectorAll(`.des`).forEach((a) => (a.style.display = `none`));
       _main
         .querySelectorAll(`.populate`)

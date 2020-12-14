@@ -307,6 +307,7 @@
 
   #main #group .air .populate,
   #main #group .result .populate {
+    height: 140px;
     width: 180px;
     margin: 2em;
   }
