@@ -84,7 +84,13 @@ document.addEventListener('touchend', (evt) => {
   { passive: true }
 );
 
-document.addEventListener('mousemove', (evt) => {
+_sidebar.addEventListener('mousemove', (evt) => {
+    onScreen = true;
+  },
+  true
+);
+
+_main.addEventListener('mousemove', (evt) => {
       if (
         event.pageX <= (_main.clientWidth / 8) &&
         onScreen == false
