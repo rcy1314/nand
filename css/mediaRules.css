@@ -275,10 +275,6 @@
     width: 100%;
   }
 
-  #main #top #arm #search #input {
-    margin: 0 17px;
-  }
-
   #main #top #arm #option {
     position: absolute;
     display: block;
