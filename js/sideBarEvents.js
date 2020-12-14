@@ -13,9 +13,9 @@ document.addEventListener('mousemove', (evt) => {
       event.target.style.borderImage =
       `linear-gradient(
         to right,
-        rgba(147,147,147,.01) 0%,
-        rgba(147,147,147,.75) ${parseInt(p)}%,
-        rgba(147,147,147,.01) 100%
+        rgba(147,147,147,.00) 0%,
+        rgba(147,147,147,.25) ${parseInt(p)}%,
+        rgba(147,147,147,.00) 100%
       )`;
       event.target.style.borderWidth = `.3px .3px .3px .3px`;
       event.target.style.borderImageSlice = `9`;
