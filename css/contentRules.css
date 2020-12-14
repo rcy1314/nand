@@ -114,7 +114,7 @@ html body,
   color: var(--fill-color-primary);
   background-color: transparent;
   position: absolute;
-  margin-left: 20px;
+  margin-left: 15px;
   font-size: 11px;
   position: fixed;
   display: none;
@@ -170,7 +170,7 @@ html body,
   border-radius: 20px;
   align-items: center;
   position: absolute;
-  margin-left: 25px;
+  margin-left: 45px;
   margin-top: 15px;
   padding: 10px;
   height: 15px;
@@ -188,7 +188,7 @@ html body,
   position: relative !important;
   margin: 0 auto !important;
   display: inline-block;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
