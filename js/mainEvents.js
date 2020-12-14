@@ -66,6 +66,12 @@ window.onload = function () {
         { passive: true }
       });
 
+      _sidebar.addEventListener('mousemove', (evt) => {
+          onScreen = true;
+        },
+        true
+      );
+
   }, 250)
 
   _container.style.display = `block`;
@@ -85,12 +91,6 @@ document.addEventListener('touchend', (evt) => {
   { passive: true }
 );
 
-_sidebar.addEventListener('mousemove', (evt) => {
-    onScreen = true;
-  },
-  true
-);
-
 _main.addEventListener('mousemove', (evt) => {
       if (
         event.pageX <= (_main.clientWidth / 8) &&
@@ -99,7 +99,7 @@ _main.addEventListener('mousemove', (evt) => {
         onScreen = true;
         setTimeout(function () {
           sideBarDisplay(onScreen);
-        }, 750)
+        }, 350)
       }
       else if (
         event.pageX >= 280 &&
@@ -109,7 +109,7 @@ _main.addEventListener('mousemove', (evt) => {
         onScreen = false;
         setTimeout(function() {
           sideBarDisplay(onScreen);
-        }, 750)
+        }, 1250)
       }
   },
   true
