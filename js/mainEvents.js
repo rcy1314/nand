@@ -63,6 +63,7 @@ window.onload = function () {
             sideBarDisplay(onScreen);
           }
         }
+        { passive: true }
       });
 
   }, 250)
