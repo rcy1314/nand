@@ -99,7 +99,21 @@ let Reader = false;
 
 */
 
-let onScreen = false;
+let onScreen = true;
+
+
+/*
+    onScreen [boolean/integer]
+
+      Applications
+        mainevents.js, onload, hide
+
+      Result
+        show sideBar
+
+*/
+
+let sideBarLock = true;
 
 /*
     expand [boolean/integer]

@@ -292,6 +292,19 @@ document.addEventListener('click', (evt) => {
       document.title = ``;
     }
     if (
+      event.target.classList.contains(`fa-lock`) ||
+      event.target.classList.contains(`fa-unlock`)
+    ) {
+      sideBarLock = sideBarLock != true
+      if (sideBarLock == true) {
+        event.target.classList.remove(`fa-unlock`);
+        event.target.classList.add(`fa-lock`);
+      } else if (sideBarLock == false) {
+        event.target.classList.remove(`fa-lock`);
+        event.target.classList.add(`fa-unlock`);
+      }
+    }
+    if (
       !event.target.classList.contains(`fa-heart`) &&
       event.target.classList.contains(`Reader`)
     ) {

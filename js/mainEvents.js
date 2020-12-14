@@ -49,7 +49,8 @@ window.onload = function () {
           if (
             onScreen == true &&
             _main.clientWidth >= 769 &&
-            Math.sign(evt.deltaY) == 1
+            Math.sign(evt.deltaY) == 1 &&
+            sideBarLock == false
           ) {
             onScreen = false;
             sideBarDisplay(onScreen);
@@ -95,6 +96,7 @@ document.addEventListener('mousemove', (evt) => {
       }
       else if (
         event.pageX >= 280 &&
+        sideBarLock == false &&
         onScreen == true
       ){
         onScreen = false;

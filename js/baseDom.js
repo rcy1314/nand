@@ -248,6 +248,8 @@ let sideBarDisplay = function (Value) {
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSettings(`.set`, `settings`, settings);
     content.append(basicFormBuild());
+		if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
+		else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
   }
   if (Value == true) {
     if (_main.clientWidth >= 769) {
