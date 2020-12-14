@@ -101,17 +101,17 @@ let Reader = false;
 
 */
 
-let onScreen = true;
+let onScreen = false;
 
 
 /*
-    onScreen [boolean/integer]
+    sideBarLock [boolean/integer]
 
       Applications
-        mainevents.js, onload, hide
+        mainEvents.js mousemove, wheel
 
       Result
-        show sideBar
+        lock sideBar onScreen
 
 */
 
