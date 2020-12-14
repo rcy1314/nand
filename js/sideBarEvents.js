@@ -329,7 +329,7 @@ document.addEventListener('click', (evt) => {
           document.querySelector(`.exclude`).style.height = `75px`;
         else
           document.querySelector(`.exclude`).style.height = `${
-            exclude.length * 32 + 80
+            exclude.length * 34 + 80
           }px`;
     }
     if (event.target.classList.contains(`favorite`)) {
@@ -338,7 +338,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.fav`).style.height = `31px`;
       else if (expandFavorites == true)
         document.querySelector(`.fav`).style.height =
-          `${(favorites.length + 1) * 36}px`;
+          `${(favorites.length + 1) * 38}px`;
     }
     if (event.target.classList.contains(`border`)) {
       expandVisual = expandVisual != true
@@ -346,7 +346,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.themes`).style.height = `31px`;
       else if (expandVisual == true)
         document.querySelector(`.themes`).style.height =
-          `${(themes.length + 1) * 36}px`;
+          `${(themes.length + 1) * 38}px`;
     }
     if (event.target.classList.contains(`adjust`)) {
       expandBackground = expandBackground != true
@@ -354,7 +354,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.bg`).style.height = `31px`;
       else if (expandBackground == true)
         document.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 36 + 30}px`;
+          `${(background.length + 1) * 38 + 30}px`;
     }
     if (event.target.classList.contains(`choose`)) {
       expandSettings = expandSettings != true
@@ -362,7 +362,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.set`).style.height = `31px`;
       else if (expandSettings == true)
         document.querySelector(`.set`).style.height =
-          `${(settings.length + 1) * 35}px`;
+          `${(settings.length + 1) * 37}px`;
     }
     if (event.target.classList.contains(`List`)) {
       expand = true;
