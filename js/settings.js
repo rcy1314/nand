@@ -39,7 +39,6 @@ const themes = [
 const favorites = [
   `Reddit/Art`,
   `Reddit/Pics`,
-  `Youtube/Surfer`,
   `Reddit/Wallpaper`,
   `Reddit/Wallpapers`,
   `Reddit/Unix Porn`,
