@@ -46,10 +46,18 @@ window.onload = function () {
         if (
           sideBarMousewheel == true
         ) {
-          if (Math.sign(evt.deltaY) == 1 && onScreen == true) {
+          if (
+            onScreen == true &&
+            _main.clientWidth >= 769 &&
+            Math.sign(evt.deltaY) == 1
+          ) {
             onScreen = false;
             sideBarDisplay(onScreen);
-          } else if (Math.sign(evt.deltaY) == -1 && onScreen == false) {
+          } else if (
+            onScreen == false &&
+            _main.clientWidth >= 769 &&
+            Math.sign(evt.deltaY) == -1
+          ) {
             onScreen = true;
             sideBarDisplay(onScreen);
           }
