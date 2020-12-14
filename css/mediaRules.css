@@ -29,11 +29,6 @@
     top: 15px !important;
   }
 
-  #main #visit #page #quick #feed .asset,
-  #main #visit #page #quick #feed .translation {
-    background-color: transparent !important;
-  }
-
   #main #visit #page #quick {
     background-color: transparent;
     position: absolute;
@@ -242,6 +237,12 @@
 }
 
 @media screen and (min-width: 769px) {
+
+  #main #visit #page #quick #feed .asset,
+  #main #visit #page #quick #feed .translation {
+    padding: 10px;
+    width: 98px;
+  }
 
   #main #option {
     display: none;
