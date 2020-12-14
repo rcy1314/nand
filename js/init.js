@@ -51,9 +51,10 @@ setTimeout(function() {
       filterInputResponse(uri);
       topMenuBarDisplay(topBar);
     }, 250);
-  } else if (!post) {
+  } else if (isNaN(parseFloat(post)) && !isFinite(post)) {
     setTimeout(function () {
       _visit.style.display = `flex`;
+      guideOnScreen = true;
       _guest.focus();
     }, 250);
   }
