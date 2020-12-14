@@ -13,7 +13,7 @@
 
 * Nearly half XML responses have no images attached use onlyImages (fixed)
 * safeSearch throws a couple header errors returning from offloading.
-* Dynamic Loading files can timeout with Remote Hosting (fixed)
+* Dynamic Loading files can timeout with Remote Hosting.
 * Heroku offloading first response ~7s safeSearch double.
 
 ### Configurations in js/settings.js
