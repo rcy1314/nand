@@ -157,7 +157,8 @@ html body,
   font-size: 12px;
   margin: 0 auto;
   z-index: 0;
-  top: 26px;
+  left: 4px;
+  top: 25px;
 }
 
 #main #visit #page #front #label #link {

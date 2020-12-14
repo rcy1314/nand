@@ -93,7 +93,7 @@ input[type=submit] {
 #main #top #arm #search #match .listing .hover .detail .buffer,
 #main #visit #page #front #first .listing .index .detail .buffer,
 #main #visit #page #front #first .listing .hover .detail .buffer {
-  color: var(--bg-color-primary);
+  color: var(--fill-color-secondary);
   position: absolute;
   font-style: italic;
   margin-right: 10px;
