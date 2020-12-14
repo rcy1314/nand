@@ -5,14 +5,12 @@
   position: relative;
   margin: 75px auto;
   height: 90px;
-  width: 100%;
   z-index: 1;
 }
 
 
 #main #visit #page #quick #feed {
   background-color: transparent !important;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
   position: relative;
@@ -113,15 +111,16 @@
 #main #visit #page #quick .left {
   background-color: var(--hover-background-color);
   color: var(--fill-color-primary);
+  height: calc(24px - 8px);
   justify-content: center;
   align-items: center;
   border-radius: 16px;
   position: absolute;
+  font-size: 11px;
   cursor: pointer;
   display: flex;
-  padding: 4px;
-  height: calc(24px - 8px);
-  width: 20px;
+  padding: 6px;
+  width: 15px;
   left: -20px;
   z-index: 7;
   top: 28px;

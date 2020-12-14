@@ -1,10 +1,3 @@
-.fa,
-.fas {
-  display: inline-block;
-  cursor: pointer;
-  z-index: -1
-}
-
 .luv {
   font-weight: 600 !important;
 }
@@ -113,9 +106,9 @@
 
 #sidebar #content .fa-minus {
   color: var(--fill-color-primary);
-  font-size: 11px;
-  position: relative;
   margin-top: -18px !important;
+  position: relative;
+  font-size: 11px;
   font-weight: 50;
   float: right;
   height: 15px;
