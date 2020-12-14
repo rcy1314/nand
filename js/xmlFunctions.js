@@ -570,8 +570,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
                       itemImage.setAttribute(`src`, e.target.result);
-                      itemImage.style.display = `block`;
                       itemPending.remove();
+                      itemImage.style.display = `block`;
                     };
                   }
                   if (!src.match(/4cdn/g)) request.send();
@@ -579,8 +579,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
                       itemImage.setAttribute(`src`, src);
-                      itemImage.style.display = `block`;
                       itemPending.remove();
+                      itemImage.style.display = `block`;
                     }
               } else if (jsonResponse.score <= safeSearchScore) {
               var request = new XMLHttpRequest();
@@ -592,16 +592,16 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 read.onload = function (e) {
                   xmlImageDimensions(menuObject, pubIndex, newImg)
                   itemImage.setAttribute(`src`, e.target.result);
-                  itemImage.style.display = `block`;
                   itemPending.remove();
+                  itemImage.style.display = `block`;
                 };
               }
               if (!src.match(/4cdn/g)) request.send();
               else {
                 xmlImageDimensions(menuObject, pubIndex, newImg)
                 itemImage.setAttribute(`src`, src);
-                itemImage.style.display = `block`;
                 itemPending.remove();
+                itemImage.style.display = `block`;
                 }
               }
             });
@@ -620,16 +620,16 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.onload = function (e) {
             xmlImageDimensions(menuObject, pubIndex, newImg);
             itemImage.setAttribute(`src`, e.target.result);
-            itemImage.style.display = `block`;
             itemPending.remove();
+            itemImage.style.display = `block`;
             }
           };
           if (!src.match(/4cdn/g)) request.send();
           else {
             xmlImageDimensions(menuObject, pubIndex, newImg)
             itemImage.setAttribute(`src`, src);
-            itemImage.style.display = `block`;
             itemPending.remove();
+            itemImage.style.display = `block`;
         }
       };
     };
