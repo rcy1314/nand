@@ -237,6 +237,7 @@ document.addEventListener('click', (evt) => {
       first = true;
       if (showParticles == true) explode(event);
       if (showRipple == true) rippleBuild(event, event.target);
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (_main.clientWidth <= 425) {
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
@@ -267,6 +268,7 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`side`)
     ) {
       id = 0;
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))

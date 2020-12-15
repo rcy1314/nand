@@ -206,6 +206,7 @@ document.addEventListener('submit', (evt) => {
         );
         _match.style.display = `none`;
       } else if (_view.value.length) {
+        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         filterInputResponse(_view.value);

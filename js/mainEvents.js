@@ -151,12 +151,14 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`construct`) ||
       evt.target.classList.contains(`picture`) ||
+      evt.target.classList.contains(`bottom`) ||
       evt.target.classList.contains(`header`) ||
       evt.target.classList.contains(`result`) ||
       evt.target.classList.contains(`post`) ||
       evt.target.classList.contains(`site`) ||
       evt.target.classList.contains(`cat`) ||
       evt.target.classList.contains(`sel`) ||
+      evt.target.classList.contains(`btn`) ||
       evt.target.id == `container` ||
       evt.target.id == `search` ||
       evt.target.id == `option` ||
@@ -423,6 +425,7 @@ document.addEventListener('click', (evt) => {
       post = null;
     }
     if (evt.target.classList.contains(`bottom`)) {
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       evt.target.closest(`#xml`).remove();
       if (id === 0) populateCategoryGroup(category);
       else {
@@ -467,6 +470,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`random`) ||
       evt.target.classList.contains(`bold`)
     ) {
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       xmlRequestParsing(
