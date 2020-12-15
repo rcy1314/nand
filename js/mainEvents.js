@@ -293,15 +293,11 @@ document.addEventListener('click', (evt) => {
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
       if (showSplash == true) _check.style.display = `none`;
-      if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove()
-      setTimeout(function () {
-        populateCategoryGroup(category);
-        displayDescription(showDescription);
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
-        unloading();
-      }, 25)
+      populateCategoryGroup(category);
+      displayDescription(showDescription);
+      topMenuBarDisplay(topBar);
+      displayExpand(expand);
+      unloading();
     }
     if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
