@@ -4,6 +4,11 @@
     margin-left: 0 !important;
   }
 
+  .block .media,
+  .expand .des {
+    display: none !important;
+  }
+
   .expand .title {
     flex-basis: 50% !important;
   }

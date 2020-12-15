@@ -53,6 +53,20 @@
   opacity: 100;
 }
 
+.block .media {
+  display: block !important;
+}
+
+.block .hash,
+.block .des {
+  display: none !important;
+}
+
+.block .select {
+  text-align: center !important;
+  flex-wrap: wrap !important;
+}
+
 .expand {
   display: flex !important;
   font-size: 12px !important;
@@ -63,9 +77,15 @@
   height: 80px !important;
 }
 
-.expand .filter,
 .expand .populate {
+  align-items: center !important;
   padding: 5px !important;
+}
+
+.expand .select {
+  flex-wrap: nowrap !important;
+  text-align: left !important;
+  display: flex !important;
 }
 
 .expand .display {
@@ -93,23 +113,22 @@
 .expand .media {
   align-items: center !important;
   padding-right: 15px !important;
+  display: block !important;
 }
 
-.expand .hash {
-  flex-basis: 15% !important;
-}
-
+.expand .hash,
 .expand .media {
   flex-basis: 15% !important;
 }
 
 .expand .des {
-  text-align: left !important;
   align-items: center !important;
+  text-align: left !important;
   flex-basis: 65% !important;
+  display: block;
 }
 
-.mobile {
+.min {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -118,16 +137,16 @@
   height: 80px !important;
 }
 
-.mobile .filter,
-.mobile .populate {
+.min .filter,
+.min .populate {
   padding: 5px !important;
 }
 
-.mobile .display {
+.min .display {
   padding-right: 15px !important;
 }
 
-.mobile img {
+.min img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -135,23 +154,23 @@
   margin: 0 !important;
 }
 
-.mobile .hash {
+.min .hash {
   align-items: center !important;
   text-align: center !important;
   flex-basis: 40% !important;
 }
 
-.mobile .media {
+.min .media {
   text-align: left !important;
   flex-basis: 25% !important;
 }
 
-.mobile .title {
+.min .title {
   text-align: left !important;
-  flex-basis: 30% !important;
+  flex-basis: 42% !important;
 }
 
-.mobile .des {
+.min .des {
   flex-basis: 0% !important;
   display: none !important;
   width: 0 !important;

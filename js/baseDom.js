@@ -93,14 +93,11 @@ let displayDescription = function (Value) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `none`;
       _main
-        .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.display = `none`));
-      _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`mobile`));
+        .forEach((a) => a.classList.add(`min`));
     } else if (Value == true) {
       if (
 				document.body.contains(document.querySelector(`#xml`)) &&
@@ -109,14 +106,12 @@ let displayDescription = function (Value) {
         document.querySelector(`.about`).style.display = `block`;
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`mobile`));
+        .forEach((a) => a.classList.remove(`min`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
-      _main
-        .querySelectorAll(`.populate .des`)
-        .forEach((a) => (a.style.display = `block`));
     }
+		displayExpand(expand);
 };
 
 let displayExpand = function (Value) {
@@ -126,31 +121,11 @@ let displayExpand = function (Value) {
     groupType = `list`;
     if (document.body.contains(document.getElementById(`group`))) {
       _main
-        .querySelectorAll(`.hash`)
-        .forEach((a) => (a.style.display = `block`));
-      _main
-        .querySelectorAll(`.media`)
-        .forEach((a) => (a.style.display = `block`));
-      if (_main.clientWidth > 768) {
-        _main
-          .querySelectorAll(`.des`)
-          .forEach((a) => (a.style.display = `block`));
-      }
-      _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
-      _main
+			_main
         .querySelectorAll(`.populate`)
-        .forEach((a) => (a.style.alignItems = `center`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.flexWrap = `nowrap`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.textAlign = `left`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.display = `flex`));
+        .forEach((a) => a.classList.remove(`block`));
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `block`;
       if (document.body.contains(document.querySelector(`.result`)))
@@ -159,25 +134,12 @@ let displayExpand = function (Value) {
   } else if (Value == false) {
     groupType = `blocks`;
     if (document.body.contains(document.getElementById(`group`))) {
-      _main
-        .querySelectorAll(`.hash`)
-        .forEach((a) => (a.style.display = `none`));
-      _main
-        .querySelectorAll(`.media`)
-        .forEach((a) => (a.style.display = `block`));
-      _main.querySelectorAll(`.des`).forEach((a) => (a.style.display = `none`));
+			_main
+        .querySelectorAll(`.populate`)
+        .forEach((a) => a.classList.add(`block`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.remove(`expand`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.flexWrap = `wrap`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.textAlign = `center`));
-      _main
-        .querySelectorAll(`.select`)
-        .forEach((a) => (a.style.display = `block`));
       if (document.body.contains(document.querySelector(`.air`)))
         document.querySelector(`.air`).style.display = `inline-flex`;
       if (document.body.contains(document.querySelector(`.result`)))
