@@ -330,33 +330,22 @@ document.addEventListener('click', (evt) => {
       }, 25)
     }
     if (evt.target.classList.contains(`select`)) {
-      let setPause;
-      if (showParticles == true) {
-        explode(event);
-        setPause = 450;
+      if (_match.style.display === `block`) {
+        _match.style.display = `none`;
+        _view.blur();
+        return false;
+      } else if (_first.style.display === `block`) {
+        _first.style.display = `none`;
+        _guest.blur();
+        return false;
       }
-      if (showRipple == true) {
-        rippleBuild(evt, evt.target.closest(`.populate`));
-        setPause = 500;
-      } else setPause = 0;
-      setTimeout(function () {
-        if (_match.style.display === `block`) {
-          _match.style.display = `none`;
-          _view.blur();
-          return false;
-        } else if (_first.style.display === `block`) {
-          _first.style.display = `none`;
-          _guest.blur();
-          return false;
-        }
-        xmlRequestParsing(
-          null,
-          null,
-          evt.target.closest(`.populate`).getAttribute(`aria-item`)
-        );
-        _toggle.style.display = `none`;
-        _visit.style.display = `none`;
-      }, setPause);
+      xmlRequestParsing(
+        null,
+        null,
+        evt.target.closest(`.populate`).getAttribute(`aria-item`)
+      );
+      _toggle.style.display = `none`;
+      _visit.style.display = `none`;
     }
     if (evt.target.classList.contains(`translation`)) {
       id = 0;
@@ -366,32 +355,18 @@ document.addEventListener('click', (evt) => {
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
-        let setPause;
         let target = event;
-        if (showParticles == true) {
-          setTimeout(function() {
-            explode(target);
-          }, 25)
-          setPause = 25;
-        }
-        if (showRipple == true) {
-          rippleBuild(evt, evt.target.closest(`.translation`));
-          setPause = 250;
-        }
-        if (!setPause) setPause = 0;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        setTimeout(function () {
-          populateCategoryGroup(
-            evt.target.closest(`.translation`).getAttribute(`aria-item`)
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-          _toggle.style.display = `none`;
-          _visit.style.display = `none`;
-        }, setPause);
+        populateCategoryGroup(
+          evt.target.closest(`.translation`).getAttribute(`aria-item`)
+        );
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        _toggle.style.display = `none`;
+        _visit.style.display = `none`;
       }
       document.title = category;
     }

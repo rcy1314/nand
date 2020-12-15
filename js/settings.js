@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Night`;
+let set = `Day`;
 
 /*
     backgroundImage [array]
@@ -194,32 +194,6 @@ let expandSettings = false;
 */
 
 let expandBackground = false;
-
-/*
-    showRipple [boolean/integer]
-
-      Applications
-        sideBar, populate
-
-      Result
-        ripple coloring effect.
-
-*/
-
-let showRipple = true;
-
-/*
-    showRipple [boolean/integer]
-
-      Applications
-        sideBar, populate
-
-      Result
-        particle effect.
-
-*/
-
-let showParticles = true;
 
 /*
     showSplash [boolean/integer]
@@ -630,14 +604,13 @@ let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
 let count = []; //progressBackdrop init calls
 let complete; //progressBar interval
-let color;
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
-let guideOnScreen = onScreen; //temporarly store onScreen for guide
+let guideOnScreen; //temporarly store onScreen for guide
 
 const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
@@ -655,8 +628,6 @@ const settings = [
   { name: `Reader`, class: `Reader` },
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
-  { name: `Use Ripples`, class: `showRipple` },
-  { name: `Use Particles`, class: `showParticles` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },

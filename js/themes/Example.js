@@ -1,5 +1,4 @@
 var Example = function () {
-  color = `rgba(255, 255, 255, 1)`; //Particles (unused [baseDom.js])
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgba(63, 92, 136, .4)`

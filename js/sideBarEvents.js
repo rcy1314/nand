@@ -75,14 +75,6 @@ document.addEventListener('click', (evt) => {
       scrollIntoView = scrollIntoView != true;
       sideBarStar(event.target, scrollIntoView);
     }
-    if (event.target.classList.contains(`showRipple`)) {
-      showRipple = showRipple != true;
-      sideBarStar(event.target, showRipple);
-    }
-    if (event.target.classList.contains(`showParticles`)) {
-      showParticles = showParticles != true;
-      sideBarStar(event.target, showParticles);
-    }
     if (event.target.classList.contains(`excludeInput`)) {
       event.target.value = ``;
     }

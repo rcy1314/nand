@@ -1,5 +1,4 @@
 var Solarized = function () {
-  color = `rgb(255, 215, 103)`;
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `none`

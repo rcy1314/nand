@@ -1,5 +1,4 @@
 var Day = function () {
-  color = `rgba(0, 120, 212, .4)`;
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgb(212,212,212,.2)`
