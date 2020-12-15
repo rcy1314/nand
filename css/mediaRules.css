@@ -25,6 +25,10 @@
     position: relative !important;
   }
 
+  #main #top #arm .fa-long-arrow-alt-left {
+    left: 15px;
+  }
+
   #main
   #main #xml,
   #main #xml .center,
@@ -345,20 +349,24 @@
 @media screen and (min-width: 1440px) {
 
   .expand {
-    margin-left: 140px !important;
+    width: 100% !important;
   }
 
   .min {
-    margin-left: 150px !important;
+    width: 100% !important;
   }
 
   #main #top #arm {
     width: 940px;
   }
 
+  #main #top #arm .fa-long-arrow-alt-left {
+    right: 15px;
+  }
+
   #main #group .air,
   #main #group .result {
-    width: 1200px;
+    width: 1080px;
   }
 
   #main #xml .center {

@@ -60,12 +60,12 @@
 #main #group .air .populate:hover,
 #main #group .result .populate:hover {
   background-color: var(--hover-background-color) !important;
-  border: var(--hover-border-color) !important;
+  border: var(--borderless-hover-color) !important;
 }
 
 #main #group .air .populate:not(:hover),
 #main #group .result .populate:not(:hover) {
-  border: var(--not-hover-border-color) !important;
+  border: var(--borderless-hover-color) !important;
 }
 
 #main #group .air .populate a,

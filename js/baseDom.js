@@ -39,6 +39,11 @@ let displayExpand = function (Value) {
   if (Value == true) {
     groupType = `list`;
     if (document.body.contains(document.getElementById(`group`))) {
+      document.getElementById(`group`).style.backgroundColor =
+        `var(--bg-color-secondary)`
+      _main
+        .querySelectorAll(`.air, .result`)
+        .forEach((a) => a.style.backgroundColor = `var(--bg-color-primary)`);
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
