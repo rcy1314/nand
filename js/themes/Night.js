@@ -19,7 +19,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--bg-color-primary`,
-    `#0f0f0f`
+    `rgba(0, 120, 212, .1)`
   );
   document.documentElement.style.setProperty(
     `--bg-color-secondary`,
@@ -54,6 +54,6 @@ var Night = function () {
     .setAttribute(`href`, `images/Opposite.ico`);
   if (backgroundImage[0].path != `images/a54430a6cf0248fa8d1d5961e02a71e4.webp`)
     backgroundImage[0].path = `images/a54430a6cf0248fa8d1d5961e02a71e4.webp`
-  document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    `url(${backgroundImage[0].path})`
+  document.querySelector(`#${backgroundImage[0].element}`)
+    .style.backgroundImage = `url(${backgroundImage[0].path})`
 };

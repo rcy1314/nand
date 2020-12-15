@@ -55,6 +55,6 @@ var Solarized = function () {
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   if (backgroundImage[0].path != `images/a54430a6cf0248fa8d1d5961e02a71e4.webp`)
     backgroundImage[0].path = `images/a54430a6cf0248fa8d1d5961e02a71e4.webp`
-  document.querySelector(`#${backgroundImage[0].element}`).style.backgroundImage =
-    `url(${backgroundImage[0].path})`
+  document.querySelector(`#${backgroundImage[0].element}`)
+    .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
