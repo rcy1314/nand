@@ -31,11 +31,11 @@
 #main #visit #page #quick #feed .translation {
   position: relative;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 0;
   overflow: hidden;
   flex-shrink: 0;
   padding: 15px;
-  height: 65px;
+  height: 60px;
   width: 90px;
 }
 
@@ -49,12 +49,12 @@
 #main #visit #page #quick #feed .asset:hover,
 #main #visit #page #quick #feed .translation:hover {
   background-color: var(--hover-background-color) !important;
-  border: var(--hover-border-color) !important;
+  border: var(--borderless-color) !important;
 }
 
 #main #visit #page #quick #feed .asset:not(:hover),
 #main #visit #page #quick #feed .translation:not(:hover) {
-  border: var(--not-hover-border-color);
+  border: var(--borderless-color);
 }
 
 #main #xml .content .status img,
@@ -67,12 +67,8 @@
   width: 30px;
 }
 
-#main #visit #page #quick #feed .translation img {
-  filter: var(--filter);
-}
-
 #main #visit #page #quick #feed .asset a {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   position: relative;
   font-size: 11px;
@@ -81,7 +77,7 @@
 }
 
 #main #visit #page #quick #feed .translation .category {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   letter-spacing: .2px;
   position: relative;
@@ -93,7 +89,7 @@
 
 #main #visit #page #quick .right {
   background-color: var(--hover-background-color);
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   justify-content: center;
   align-items: center;
   border-radius: 16px;
@@ -110,7 +106,7 @@
 
 #main #visit #page #quick .left {
   background-color: var(--hover-background-color);
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   height: calc(24px - 8px);
   justify-content: center;
   align-items: center;
@@ -128,5 +124,5 @@
 
 #main #visit #page #quick .left:hover,
 #main #visit #page #quick .right:hover {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--borderless-color);
 }

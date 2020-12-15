@@ -1,5 +1,5 @@
 #container #sidebar {
-  background-color: var(--bg-color-secondary);
+  background-color: var(--color-secondary);
   overflow-x: hidden;
   overflow-y: auto;
   position: fixed;
@@ -32,9 +32,9 @@
 }
 
 #container #sidebar #content #basic input[type=text] {
-  background-color: var(--bg-color-primary);
-  color: var(--fill-color-primary);
-  border: var(--hover-border-color);
+  background-color: var(--color-primary);
+  color: var(--fill-color);
+  border: var(--border-color);
   position: relative;
   overflow: hidden;
   font-size: 12px;
@@ -56,9 +56,9 @@
 }
 
 #container #sidebar #content .url input[type=text] {
-  background-color: var(--bg-color-primary);
-  color: var(--fill-color-primary);
-  border: var(--hover-border-color);
+  background-color: var(--color-primary);
+  color: var(--fill-color);
+  border: var(--border-color);
   width: 90%;
 }
 
@@ -67,9 +67,9 @@
 }
 
 #container #sidebar #content .min input[type=text] {
-  background-color: var(--bg-color-primary);
-  color: var(--fill-color-primary);
-  border: var(--hover-border-color);
+  background-color: var(--color-primary);
+  color: var(--fill-color);
+  border: var(--border-color);
   width: 100%;
 }
 
@@ -79,7 +79,7 @@
   border-left: .3px solid transparent !important;
   border-top: .3px solid transparent !important;
   background-color: transparent !important;
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   letter-spacing: .5px;
   padding-bottom: 20px;
   padding-right: 10px;
@@ -98,7 +98,7 @@
   border-left: .3px solid transparent !important;
   border-top: .3px solid transparent !important;
   background-color: transparent !important;
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   overflow: hidden;
   cursor: default;
   font-size: 12px;
@@ -112,7 +112,7 @@
 #container #sidebar #content .bg,
 #container #sidebar #content .exclude {
   background-color: transparent !important;
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   padding-bottom: 5px;
   padding-left: 10px;
   overflow: hidden;
@@ -128,7 +128,7 @@
 #container #sidebar #content .themes .border,
 #container #sidebar #content .bg .adjust {
   background-color: transparent !important;
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   padding-bottom: 10px;
   padding-top: 8px;
   overflow: hidden;

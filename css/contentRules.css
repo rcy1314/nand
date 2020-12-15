@@ -4,7 +4,7 @@ video {
 }
 
 ::placeholder {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
 }
 
 div,
@@ -13,7 +13,7 @@ input {
 }
 
 a {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   text-decoration: none !important;
 }
 
@@ -40,15 +40,15 @@ html body,
 html,
 html body,
 #container {
-  background: var(--bg-color-secondary);
+  background: var(--color-secondary);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
 #main #progressBar {
-  background-color: var(--bg-color-secondary);
-  background: var(--bg-color-secondary);
+  background-color: var(--color-secondary);
+  background: var(--color-secondary);
   position: absolute;
   margin-right: 4px;
   height: 4px;
@@ -59,7 +59,7 @@ html body,
 }
 
 #container #toggle {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   position: absolute;
   cursor: pointer;
@@ -70,7 +70,7 @@ html body,
 }
 
 #main {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--borderless-color);
   background-position: center center;
   background-repeat: no-repeat;
   justify-content: center;
@@ -99,7 +99,7 @@ html body,
 }
 
 #main #option {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   justify-content: space-between;
   background-color: transparent;
   position: absolute;
@@ -111,7 +111,7 @@ html body,
 }
 
 #main #check {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   position: absolute;
   margin-left: 15px;
@@ -141,7 +141,7 @@ html body,
 }
 
 #main #dots .fill {
-  background-color: var(--fill-color-primary) !important;
+  background-color: var(--fill-color) !important;
   visibility: hidden;
   z-index: -12;
   left: -4px;
@@ -149,7 +149,7 @@ html body,
 }
 
 #main #visit #page #front #label #show {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   display: inline-block;
   position: relative;
@@ -163,8 +163,8 @@ html body,
 
 #main #visit #page #front #label #link {
   background-color: var(--hover-background-color);
-  color: var(--fill-color-primary);
-  border: var(--not-hover-border-color);
+  color: var(--fill-color);
+  border: var(--borderless-color);
   transform: rotate(180deg);
   justify-content: center;
   display: inline-flex;
@@ -179,12 +179,12 @@ html body,
 }
 
 #main #visit #page #front #label #link:hover {
-  background-color: var(--borderless-hover-color);
+  background-color: var(--borderless-color);
 }
 
 #main #visit #page #just {
-  color: var(--fill-color-primary);
-  border: var(--hover-border-color);
+  color: var(--fill-color);
+  border: var(--border-color);
   background-color: transparent;
   position: relative !important;
   margin: 0 auto !important;
@@ -199,7 +199,7 @@ html body,
 }
 
 #main #visit #page #just {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   margin-left: 12px !important;
   cursor: pointer;
   top: -85px;

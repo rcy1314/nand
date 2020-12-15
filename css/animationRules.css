@@ -256,7 +256,8 @@ The loaders use CSS custom properties (variables) to control the attributes of t
   position: absolute;
   border-radius: 50%;
   border: var(--line-width, 4px) solid transparent;
-  border-bottom-color: var(--loader-color-primary);
+  border-bottom-color: var(--loader-color);
+  backdrop-filter: contrast(1);
   animation: circle-inner var(--animation-duration, 4s) infinite linear ;
 }
 .double-circle::after {
@@ -265,7 +266,7 @@ The loaders use CSS custom properties (variables) to control the attributes of t
     position: absolute;
     border-radius: 50%;
     border: var(--line-width, 4px) solid transparent;
-    border-bottom-color: var(--loader-color-secondary);
+    border-bottom-color: var(--loader-color);
     animation: circle-outer var(--animation-duration, 8s) infinite linear ;
 }
 

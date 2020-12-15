@@ -4,7 +4,7 @@
 .media,
 .title,
 .display {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   z-index: -1;
 }
 
@@ -60,17 +60,17 @@
 #main #group .air .populate:hover,
 #main #group .result .populate:hover {
   background-color: var(--hover-background-color) !important;
-  border: var(--borderless-hover-color) !important;
+  border: var(--borderless-color) !important;
 }
 
 #main #group .air .populate:not(:hover),
 #main #group .result .populate:not(:hover) {
-  border: var(--borderless-hover-color) !important;
+  border: var(--borderless-color) !important;
 }
 
 #main #group .air .populate a,
 #main #group .result .populate a {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   background-color: transparent;
   position: relative;
   font-size: 12px;
