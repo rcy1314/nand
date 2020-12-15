@@ -108,15 +108,12 @@
 #main #xml .center .item {
   background: var(--color-primary);
   box-shadow: var(--box-shadow);
+  border: var(--border-color);
   margin-bottom: 70px;
 }
 
 #main #xml .center .item:hover {
   background-color: var(--hover-background-color);
-  border: var(--border-color);
-}
-
-#main #xml .center .item:not(hover) {
   border: var(--border-color);
 }
 
