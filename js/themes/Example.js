@@ -7,11 +7,11 @@ var Example = function () {
   document.documentElement.style.setProperty(
     `--loader-color-primary`,
     `rgba(106, 66, 194, 1)`
-  ); // Pending circle
+  ); // Pending Outer Circle
   document.documentElement.style.setProperty(
     `--loader-color-secondary`,
     `rgba(253, 115, 136, .7)`
-  ); // Pending circle
+  ); // Pending Inner Circle
   document.documentElement.style.setProperty(`--fill-color-primary`, `#ffffff`);
   document.documentElement.style.setProperty(
     `--fill-color-secondary`,
