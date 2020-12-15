@@ -77,7 +77,7 @@ let topBar = true;
 let showOption = true;
 
 /*
-    reader [boolean/integer]
+    Reader [boolean/integer]
 
       Applications
         sideBarDisplay, options
@@ -215,7 +215,7 @@ let showRipple = true;
         sideBar, populate
 
       Result
-        ripple coloring effect.
+        particle effect.
 
 */
 
@@ -254,7 +254,7 @@ let sideBarCenter = true;
         sideBar, sideBarEvents
 
       Result
-        add backdrop filter to sidebar.
+        add backdrop sidebar.
 
 */
 
@@ -339,19 +339,6 @@ let quickFeeds = false;
 let quickFeedsTranslations = true;
 
 /*
-    reverseFeed [boolean/integer]
-
-      Applications
-        xmlRequestParsing
-
-      Result
-        feed backwards scrolling up
-
-*/
-
-let reverseFeed = true;
-
-/*
     scrollIntoView [boolean/integer]
 
       Applications
@@ -385,6 +372,10 @@ let fadeIntoView = false;
 
       Result
         group, xml paddingTop scrolls intoView
+
+      Option
+        `dots`
+        `percent`
 
 */
 
@@ -425,7 +416,7 @@ let category = `Social`;
         populateCategoryGroup, reverseCategoryGroup, sideBar, reader
 
       Result
-        display, read, random
+        toggle feeds with images
 
 */
 
@@ -524,13 +515,13 @@ let guideSafeSearch = false;
 let safeSearchScore = `0.6188415288925171`;
 
 /*
-    safeSearchCategory [array]
+    safeSearchIDs [array]
 
       Applications
         xmlImageAttributes
 
       Result
-        category applied searchSearch (faster)
+        ids applied searchSearch
 
 */
 
@@ -565,10 +556,7 @@ let exclude = [`Buy`, `Sale`, `Shop`];
         xmlRequestParsing, httpRequest
 
       Result
-        cors-anywhere instance
-
-      Fail
-        ABC in cloudflare worker
+        ty heroku (cors-anywhere instance)
 
 */
 
@@ -581,7 +569,7 @@ const cors = `https://acktic-github-io.herokuapp.com/`;
         xmlImageAttributes
 
       Result
-        filter nsfw feeds with score
+        ty heroku (filter nsfw feeds with score)
 
 */
 
