@@ -16,6 +16,11 @@
     transform: rotateX(0deg) translateZ(25px) !important;
   }
 
+  .populate {
+    width: 130px;
+    margin: 1em;
+  }
+
   #sidebar #content {
     position: relative !important;
   }
