@@ -47,6 +47,7 @@ setTimeout(function() {
     var uri = location.search.split(`?q=`)[1];
     var uri = uri.toLowerCase().space();
     _toggle.style.display = `none`;
+    guideOnScreen = true;
     setTimeout(function () {
       if (showSplash == true) _check.style.visibility = `visible`;
       topMenuBarDisplay(topBar);
