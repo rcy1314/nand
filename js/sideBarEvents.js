@@ -171,22 +171,16 @@ document.addEventListener('click', (evt) => {
     }
     if (event.target.classList.contains(`sideBarBackdrop`)) {
       sideBarBackdrop = sideBarBackdrop != true;
-      if (sideBarBackdrop == false) {
+      if (sideBarBackdrop == false)
         _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
-      } else {
+      else
         _sidebar.style.cssText = `backdrop-filter: none;left:0`;
-      }
       sideBarStar(event.target, sideBarBackdrop);
     }
     if (event.target.classList.contains(`topBarBackdrop`)) {
       topBarBackdrop = topBarBackdrop != true;
-      if (topBarBackdrop == false) {
-        _top.style.cssText = `backdrop-filter: none`;
-        topMenuBarDisplay(topBar);
-      } else {
-        _top.style.cssText = `backdrop-filter: blur(10px)`;
-        topMenuBarDisplay(topBar);
-      }
+      if (topBarBackdrop == false) _top.style.cssText = `backdrop-filter: none`;
+      else _top.style.cssText = `backdrop-filter: blur(10px)`;
       sideBarStar(event.target, topBarBackdrop);
     }
     if (event.target.classList.contains(`mainBackground`)) {
