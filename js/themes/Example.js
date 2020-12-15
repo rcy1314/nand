@@ -6,7 +6,7 @@ var Example = function () {
   document.documentElement.style.setProperty(
     `--loader-color`,
     `rgba(106, 66, 194, 1)`
-  ); // Pending Outer Circle
+  ); // Pending Circle
   document.documentElement.style.setProperty(`--fill-color`, `#ffffff`);
   document.documentElement.style.setProperty(
     `--color-primary`,
