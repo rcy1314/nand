@@ -678,7 +678,10 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   document.title = menu[index].id.space();
-  if (Reader == false && first == true && showSplash == true)
+  if (
+    justRead == true && first == true && showSplash == true ||
+    Reader == false && first == true && showSplash == true
+  )
     _check.style.display = `block`;
 
   httpRequest = new XMLHttpRequest();
