@@ -17,7 +17,7 @@ let set = `Day`;
 let backgroundImage = [
   {
     path: "",
-    element: "container", //container or main
+    element: "container",
     position: "center",
     size: "cover",
   },
@@ -25,8 +25,8 @@ let backgroundImage = [
 
 //  {
 //    obFn: `Object Function (in example file in js/themes)`,
-//    class: `Class Click Event`,
-//    icon: `fa-example`
+//    class: `class click Event (generated from this array)`,
+//    icon: https://fontawesome.com/cheatsheet
 //  }
 
 const themes = [
