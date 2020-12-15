@@ -736,7 +736,7 @@ let urlFormBuild = function () {
   let form = document.createElement(`form`);
   let url = document.createElement(`div`);
   object.setAttribute("value", backgroundImage[0].path);
-  object.setAttribute(`placeholder`, `url`);
+  object.setAttribute(`placeholder`, `path`);
   object.setAttribute(`type`, `text`);
   form.setAttribute(`action`, `#`);
   object.classList.add("urlInput");
