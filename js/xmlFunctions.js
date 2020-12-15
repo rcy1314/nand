@@ -485,8 +485,10 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     `[aria-item='${pubIndex}'] .post`
   );
   if (newImg.naturalWidth < maximum) {
-    if (itemFilter) itemFilter.classList.add(`leave`);
-    else itemImage.classList.add(`default`);
+    if (itemImage || itemFilter) {
+      itemFilter.classList.add(`leave`);
+      itemImage.classList.add(`leave`);
+    }
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
     itemImage.closest(`.classic`).style.display = `flex`;
@@ -494,7 +496,10 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     copyPost.style.display = `none`;
     copyPicture.style.display = `none`;
     attribute.style.height = `37px`;
-  } else if (itemImage) itemImage.classList.add(`default`);
+  } else if (itemImage || itemFilter) {
+    itemFilter.classList.add(`default`);
+    itemImage.classList.add(`default`);
+  }
 }
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
