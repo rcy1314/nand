@@ -1,12 +1,10 @@
 #container #guide {
   background-color: var(--color-secondary);
-  backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
   position: absolute;
   display: none;
   height: 100%;
-  opacity: .9;
   width: 100%;
   margin: 0;
   left: 0;
