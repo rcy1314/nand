@@ -485,7 +485,8 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     `[aria-item='${pubIndex}'] .post`
   );
   if (newImg.naturalWidth < maximum) {
-    itemFilter.classList.add(`leave`);
+    if (itemFilter) itemFilter.classList.add(`leave`);
+    else itemImage.classList.add(`default`);
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
     itemImage.closest(`.classic`).style.display = `flex`;
@@ -867,20 +868,11 @@ var xmlRequestParsing = function (search, string, index) {
         let oldest = pub[pub.length - 1].dst;
         let posts = pub.length - 1;
         let recent = pub[0].dst;
-        if (first == false) {
-          var status = document.querySelector(`.status`);
-          while (status.firstChild) status.removeChild(status.lastChild);
-          var suggestions = document.querySelector(`.suggestions`);
-          while (suggestions.firstChild)
-            suggestions.removeChild(suggestions.lastChild);
-          stop = true;
-        } else if (first == true && Reader == true) {
-          var status = document.querySelector(`.status`);
-          while (status.firstChild) status.removeChild(status.lastChild);
-          var suggestions = document.querySelector(`.suggestions`);
-          while (suggestions.firstChild)
-            suggestions.removeChild(suggestions.lastChild);
-        }
+        var status = document.querySelector(`.status`);
+        while (status.firstChild) status.removeChild(status.lastChild);
+        var suggestions = document.querySelector(`.suggestions`);
+        while (suggestions.firstChild)
+          suggestions.removeChild(suggestions.lastChild);
         if (Reader == false){
           document.querySelector(`.channel`).append(footerBuild());
         }
@@ -889,9 +881,9 @@ var xmlRequestParsing = function (search, string, index) {
         xmlStatusSuggestions();
         stop = false;
       } else {
-        if (showSplash == true) _check.style.display = `none`;
         id = 0;
         document.title = category.capitalize();
+        if (showSplash == true) _check.style.display = `none`;
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove()
         setTimeout(function () {

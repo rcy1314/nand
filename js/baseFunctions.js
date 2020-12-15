@@ -132,9 +132,7 @@ let progressBackDrop = function (done) {
       first == true
     ) {
       document.querySelector(`.center`).classList.add(`scroll-into-view`)
-      setTimeout(function () {
-        _check.style.display = `none`;
-      }, 250);
+      if (showSplash == true) _check.style.display = `none`;
     }
     if (fadeIntoView == true) {
       (function () {

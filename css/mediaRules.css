@@ -4,11 +4,6 @@
     margin-left: 0 !important;
   }
 
-  .block .media,
-  .expand .des {
-    display: none !important;
-  }
-
   .expand .title {
     flex-basis: 50% !important;
   }
@@ -30,7 +25,10 @@
     position: relative !important;
   }
 
-  #main {
+  #main
+  #main #xml,
+  #main #xml .center,
+  #main #xml .channel {
     width: 100% !important
   }
 
@@ -70,14 +68,14 @@
   #toggle,
   .expand .des,
   .expand .hash,
+  .block .media,
   .btn .flip-front,
   #main #xml .content,
   #main #top #arm #option,
   #main #xml .center #quick,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
-  #main #visit #page #front .focus .button,
-  ::-webkit-scrollbar {
+  #main #visit #page #front .focus .button {
     display: none !important;
   }
 
@@ -94,12 +92,9 @@
     width: 100vw !important;
   }
 
-  #main #xml .center .item {
-    width: calc(100% - 9px);
-    margin-left: 4.5px;
-  }
-
-  #main #xml .center .item .image {
+  #main #xml .center .item .image,
+  #main #xml .center .item .pending {
+    width: 100% !important;
     margin: 0 !important;
   }
 
@@ -189,7 +184,7 @@
     width: 720px !important;
   }
 
-  .mobile {
+  .min {
     margin: 0 auto !important;
     width: 760px !important;
   }
@@ -289,7 +284,7 @@
     width: 990px !important;
   }
 
-  .mobile {
+  .min {
     margin: 0 auto !important;
     width: 990px !important;
   }
@@ -353,7 +348,7 @@
     margin-left: 140px !important;
   }
 
-  .mobile {
+  .min {
     margin-left: 150px !important;
   }
 

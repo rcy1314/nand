@@ -115,8 +115,6 @@ let displayDescription = function (Value) {
 };
 
 let displayExpand = function (Value) {
-  if (document.body.contains(document.querySelector(`#xml`)))
-    document.querySelector(`#xml`).remove();
   if (Value == true) {
     groupType = `list`;
     if (document.body.contains(document.getElementById(`group`))) {

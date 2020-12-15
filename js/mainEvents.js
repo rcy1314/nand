@@ -288,6 +288,7 @@ document.addEventListener('click', (evt) => {
     if (evt.target.id == `home`) {
       id = 0;
       document.title = category.capitalize();
+      if (showSplash == true) _check.style.display = `none`;
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove()
       setTimeout(function () {
