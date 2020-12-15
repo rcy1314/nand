@@ -118,6 +118,7 @@
 
 .expand .des {
   align-items: center !important;
+  padding-right: 15px !important;
   text-align: left !important;
   flex-basis: 65% !important;
   display: block;
