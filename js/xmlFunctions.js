@@ -722,14 +722,6 @@ var xmlRequestParsing = function (search, string, index) {
             )
           );
 
-          let rcourtesy = courtesyBuild(
-            menu[index].id.match(/([^\/]+)$/g),
-            menu[index].image.image(),
-            menu[index].uri.match(
-              /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
-            )
-          );
-
           if (title.length > titleTruncate)
             var more = `<div class='more'>more</div>`;
           else var more = ``;
@@ -891,13 +883,11 @@ var xmlRequestParsing = function (search, string, index) {
         if (showSplash == true) _check.style.display = `none`;
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove()
-        setTimeout(function () {
-          populateCategoryGroup(category);
-          displayDescription(showDescription);
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-          unloading();
-        }, 25)
+        populateCategoryGroup(category);
+        displayDescription(showDescription);
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        unloading();
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
