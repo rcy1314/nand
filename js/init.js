@@ -48,8 +48,9 @@ setTimeout(function() {
     var uri = uri.toLowerCase().space();
     _toggle.style.display = `none`;
     setTimeout(function () {
-      filterInputResponse(uri);
+      if (showSplash == true) _check.style.visibility = `visible`;
       topMenuBarDisplay(topBar);
+      filterInputResponse(uri);
     }, 250);
   } else if (isNaN(parseFloat(post)) && !isFinite(post)) {
     setTimeout(function () {

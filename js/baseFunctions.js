@@ -315,10 +315,10 @@ let filterInputResponse = function (filterURI) {
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
+  } else if (match === -1 && description.length <= 0) {
+    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(exact)) && isFinite(exact)) {
       xmlRequestParsing(null, null, match);
-  } else if (match === -1 && description.length === 0) {
-    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
       xmlRequestParsing(null, null, match);
   } else if (match === -1)
