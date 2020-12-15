@@ -340,7 +340,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.fav`).style.height = `31px`;
       else if (expandFavorites == true)
         document.querySelector(`.fav`).style.height =
-          `${(favorites.length + 1) * 38}px`;
+          `${(favorites.length + 1) * 34}px`;
     }
     if (event.target.classList.contains(`border`)) {
       expandVisual = expandVisual != true
@@ -348,7 +348,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.themes`).style.height = `31px`;
       else if (expandVisual == true)
         document.querySelector(`.themes`).style.height =
-          `${(themes.length + 1) * 38}px`;
+          `${(themes.length + 1) * 36}px`;
     }
     if (event.target.classList.contains(`adjust`)) {
       expandBackground = expandBackground != true
@@ -356,7 +356,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.bg`).style.height = `31px`;
       else if (expandBackground == true)
         document.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 36 + 30}px`;
+          `${(background.length + 1) * 34 + 30}px`;
     }
     if (event.target.classList.contains(`choose`)) {
       expandSettings = expandSettings != true

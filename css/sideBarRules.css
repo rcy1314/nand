@@ -51,11 +51,11 @@
   width: 100%;
 }
 
-#container #sidebar #content .path {
+#container #sidebar #content .url {
   margin: 0;
 }
 
-#container #sidebar #content .path input[type=text] {
+#container #sidebar #content .url input[type=text] {
   background-color: var(--color-primary);
   color: var(--fill-color);
   border: var(--border-color);
