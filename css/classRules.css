@@ -123,7 +123,7 @@
   display: block;
 }
 
-.min {
+.minimum {
   display: flex !important;
   font-size: 12px !important;
   margin: 0 !important;
@@ -132,15 +132,15 @@
   height: 80px !important;
 }
 
-.min .populate {
+.minimum .populate {
   padding: 5px !important;
 }
 
-.min .display {
+.minimum .display {
   padding-right: 15px !important;
 }
 
-.min img {
+.minimum img {
   border-radius: 0 !important;
   height: 48px !important;
   width: 48px !important;
@@ -148,23 +148,23 @@
   margin: 0 !important;
 }
 
-.min .hash {
+.minimum .hash {
   align-items: center !important;
   text-align: center !important;
   flex-basis: 40% !important;
 }
 
-.min .media {
+.minimum .media {
   text-align: left !important;
   flex-basis: 25% !important;
 }
 
-.min .title {
+.minimum .title {
   text-align: left !important;
   flex-basis: 42% !important;
 }
 
-.min .des {
+.minimum .des {
   flex-basis: 0% !important;
   display: none !important;
   width: 0 !important;

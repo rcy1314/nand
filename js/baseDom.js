@@ -18,7 +18,7 @@ let displayDescription = function (Value) {
         .forEach((a) => a.classList.remove(`expand`));
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`min`));
+        .forEach((a) => a.classList.add(`minimum`));
     } else if (Value == true) {
       if (
 				document.body.contains(document.querySelector(`#xml`)) &&
@@ -27,7 +27,7 @@ let displayDescription = function (Value) {
         document.querySelector(`.about`).style.display = `block`;
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`min`));
+        .forEach((a) => a.classList.remove(`minimum`));
       _main
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));

@@ -12,9 +12,6 @@ var init = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (loading == `percent`) {
-    document
-      .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.zIndex = `-12`));
     progressBackDrop(false);
   }
 };

@@ -364,7 +364,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.set`).style.height = `31px`;
       else if (expandSettings == true)
         document.querySelector(`.set`).style.height =
-          `${(settings.length + 1) * 37}px`;
+          `${(settings.length + 1) * 34}px`;
     }
     if (event.target.classList.contains(`List`)) {
       expand = true;
