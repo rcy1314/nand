@@ -570,29 +570,30 @@ document.addEventListener('click', (evt) => {
           if (evt.target.classList.contains(`leave`)) {
             evt.target.closest(`.item`).getAttribute(`ext`).blank();
             return false;
+          } else if (!evt.target.classList.contains(`blur`)) {
+            evt.target
+              .closest(`.image`)
+              .querySelector(
+                `.fa-heart`
+              ).style.animation = `scale .7s ease-in-out .1s both`;
+            evt.target
+              .closest(`.image`)
+              .querySelector(`.fa-heart`).style.display = `block`;
+            evt.target
+              .closest(`.image`)
+              .querySelector(`.fa-heart`).style.zIndex = `12`;
+            setTimeout(function () {
+              evt.target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`).style.animation = `none`;
+              evt.target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`).style.display = `none`;
+              evt.target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`).style.zIndex = `0`;
+            }, 1500);
           }
-          evt.target
-            .closest(`.image`)
-            .querySelector(
-              `.fa-heart`
-            ).style.animation = `scale .7s ease-in-out .1s both`;
-          evt.target
-            .closest(`.image`)
-            .querySelector(`.fa-heart`).style.display = `block`;
-          evt.target
-            .closest(`.image`)
-            .querySelector(`.fa-heart`).style.zIndex = `12`;
-          setTimeout(function () {
-            evt.target
-              .closest(`.image`)
-              .querySelector(`.fa-heart`).style.animation = `none`;
-            evt.target
-              .closest(`.image`)
-              .querySelector(`.fa-heart`).style.display = `none`;
-            evt.target
-              .closest(`.image`)
-              .querySelector(`.fa-heart`).style.zIndex = `0`;
-          }, 1500);
           tap = 0;
         }
       }

@@ -411,6 +411,8 @@ let contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
+  des.innerHTML +=
+    `<br>Hash<div style='float:right'>${menu[menuIndex].hash}</div>`;
   if (showDescription == false) des.style.visibility = `hidden`;
   filter.append(object);
   filter.append(ahref);
