@@ -310,7 +310,7 @@ let filterInputResponse = function (filterURI) {
     groupBuild();
     for (i = 0; i <= description.length - 1; i++)
       writeFilterResponse(menu.indexOf(description[i]));
-    populateCategoryGroup(menu[match].category);
+    populateCategoryGroup(description[0].category);
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
