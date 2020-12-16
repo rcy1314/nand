@@ -140,27 +140,17 @@ document.addEventListener('submit', (evt) => {
             .querySelector(`.imageURL`)
             .value.match(/\b(?:png|jpe?g|gif|webp)/g)
         ) {
-          if (
-            Array.isArray(backgroundImage) &&
-            typeof backgroundImage[0].path == "string" &&
-            backgroundImage[0].element == `container`
-          ) {
+          if (backgroundImage[0].element == `container`) {
             _container.style.backgroundImage = `url(${
               document.querySelector(`.imageURL`).value
             })`;
             _main.style.backgroundImage = `url()`;
-          } else if (
-            Array.isArray(backgroundImage) &&
-            typeof backgroundImage[0].path == "string" &&
-            backgroundImage[0].element == `main`
-          ) {
+          } else if (backgroundImage[0].element == `main`) {
             _main.style.backgroundImage = `url(${
               document.querySelector(`.imageURL`).value
             })`;
             _container.style.backgroundImage = `url()`;
           }
-
-          backgroundImage[0].path = document.querySelector(`.imageURL`).value;
         }
       }
     } else if (event.target.classList.contains(`sideBasic`)) {
