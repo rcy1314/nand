@@ -35,12 +35,12 @@ setTimeout(function() {
           filterInputResponse(menu[i].id.space());
         else if (i === -1)
           filterInputResponse(location.href.split(`?`)[1]);
+        _guide.style.display = `flex`;
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
         onScreen = false;
         sideBarDisplay(onScreen);
-        topMenuBarDisplay(topBar);
       }, 250);
     }
   } else if (location.search.split(`?q=`)[1]) {

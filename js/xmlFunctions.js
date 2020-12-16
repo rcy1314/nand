@@ -2,14 +2,13 @@ var guideDisplay = function (pubArray) {
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
   _main.classList.add(`guide`);
-  _guide.style.zIndex = `12`;
+  _guide.style.zIndex = `11`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
   _guide.append(guideBuildYoutube(pubArray[0]));
-  _guide.style.display = `flex`;
   _main.classList.add(`guide`);
-  _guide.style.zIndex = `12`;
+  _guide.style.zIndex = `11`;
 };
 
 var xmlChannelFooter = function () {
@@ -817,6 +816,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplayYoutube(sticky);
         } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
+          _guide.style.display = `flex`;
           var sticky = [];
           sticky.push({
             courtesy: pub[local].courtesy,
