@@ -35,7 +35,6 @@ setTimeout(function() {
           filterInputResponse(menu[i].id.space());
         else if (i === -1)
           filterInputResponse(location.href.split(`?`)[1]);
-        _guide.style.display = `flex`;
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
@@ -69,11 +68,13 @@ setTimeout(function() {
     _check.style.visibility = `visible`;
 
   if (_main.clientWidth <= 425) {
-    guideOnScreen = onScreen;
-    onScreen = false;
-    sideBarDisplay(onScreen);
-    expand = false;
-    Blocks = true;
-    List = false;
+    setTimeout(function () {
+      guideOnScreen = onScreen;
+      onScreen = false;
+      sideBarDisplay(onScreen);
+      expand = false;
+      Blocks = true;
+      List = false;
+    }, 250)
   }
 }, 100)

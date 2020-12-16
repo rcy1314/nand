@@ -603,7 +603,10 @@ let filter = []; //response array for menu objects
 let justRead = false; //anyRandomMenuObject
 let first = true; //reader append feed center channel
 let count = []; //progressBackdrop init calls
+let pub = []; //raw html of publication
+let local; //copy of post in base36
 let complete; //progressBar interval
+let images = []; //array of images in request
 let touchendX = 0; //
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1

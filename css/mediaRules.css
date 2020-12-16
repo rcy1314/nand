@@ -1,9 +1,5 @@
 @media screen and (max-width: 426px) {
 
-  #container {
-    background-position: 49% 50% !important;
-  }
-
   .expand {
     margin-left: 0 !important;
   }
@@ -197,10 +193,6 @@
     width: 760px !important;
   }
 
-  #container {
-    background-position: 50% -150px !important;
-  }
-
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     padding: 10px;
@@ -364,10 +356,6 @@
     width: 100% !important;
   }
 
-  #container {
-    background-position: 50% -250px !important;
-  }
-
   #main #top #arm {
     width: 940px;
   }
@@ -385,14 +373,6 @@
     margin-right: 115px;
     width: 600px;
     left: 0;
-  }
-
-}
-
-@media screen and (min-width: 2560px) {
-
-  #container {
-    background-position: 50% -600px !important;
   }
 
 }

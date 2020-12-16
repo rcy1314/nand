@@ -387,6 +387,7 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.id == `guide`
     ) {
+      xmlAppendPublication();
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;

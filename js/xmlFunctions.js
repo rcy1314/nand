@@ -652,18 +652,61 @@ var xmlTitleParsing = function (xhr) {
   return title.replace(/<.>/g, ``);
 };
 
+var xmlAppendPublication = function () {
+  const has = exclude.map((a) => a.toLowerCase());
+  for (i = 0; i < pub.length - 1; i++) {
+    if (
+      has.filter(function (obj) {
+        return pub[i].title.toLowerCase().match(obj);
+      }).length > 0
+    )
+      continue;
+    if (omitGuide == true && i != local) {
+      document.querySelector(`.channel`).append(pub[i].post);
+      images.push({ element: pub[i].element, src: pub[i].src });
+    } else if (omitGuide == false) {
+      document.querySelector(`.channel`).append(pub[i].post);
+      images.push({ element: pub[i].element, src: pub[i].src });
+    }
+  }
+  setTimeout(function (){
+    if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+      for (i = 0; i <= images.length - 1; i++) {
+        xmlImageAttributes(false, id, images[i].element, images[i].src);
+      }
+      unloading();
+    } else if (!safeSearchIDs.includes(menu[id].id)) {
+      for (i = 0; i <= images.length - 1; i++) {
+        xmlImageAttributes(false, id, images[i].element, images[i].src);
+      }
+    }
+  }, 250)
+  unloading();
+  let oldest = pub[pub.length - 1].dst;
+  let posts = pub.length - 1;
+  let recent = pub[0].dst;
+  var status = document.querySelector(`.status`);
+  while (status.firstChild) status.removeChild(status.lastChild);
+  var suggestions = document.querySelector(`.suggestions`);
+  while (suggestions.firstChild)
+    suggestions.removeChild(suggestions.lastChild);
+  if (Reader == false){
+    document.querySelector(`.channel`).append(footerBuild());
+  }
+  contentStatusDisplay(id, recent, oldest, posts);
+  topMenuBarDisplay(topBar);
+  xmlStatusSuggestions();
+  stop = false;
+}
+
 var xmlRequestParsing = function (search, string, index) {
   init();
+  pub = [];
   let html;
   let local;
   count = [];
-  id = index;
   stop = true;
-  let pub = [];
-  let image = [];
-  let images = [];
   imageDuplicate = [];
-  const has = exclude.map((a) => a.toLowerCase());
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
   if (search == `search`) {
@@ -832,52 +875,13 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplay(sticky);
         } else if (
-          isNaN(parseFloat(local)) && isFinite(local) &&
-          isNaN(parseFloat(post)) && isFinite(post)
+          isNaN(parseFloat(local)) && !isFinite(local) &&
+          isNaN(parseFloat(post)) && !isFinite(post)
         ) {
+          console.log(`append`)
           _guide.style.display = `none`;
+          xmlAppendPublication();
         }
-        for (i = 0; i < pub.length - 1; i++) {
-          if (
-            has.filter(function (obj) {
-              return pub[i].title.toLowerCase().match(obj);
-            }).length > 0
-          )
-            continue;
-          if (omitGuide == true && i != local) {
-            document.querySelector(`.channel`).append(pub[i].post);
-            images.push({ element: pub[i].element, src: pub[i].src });
-          } else if (omitGuide == false) {
-            document.querySelector(`.channel`).append(pub[i].post);
-            images.push({ element: pub[i].element, src: pub[i].src });
-          }
-        }
-        if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-          for (i = 0; i <= images.length - 1; i++) {
-            xmlImageAttributes(false, index, images[i].element, images[i].src);
-          }
-          unloading();
-        } else if (!safeSearchIDs.includes(menu[id].id)) {
-          for (i = 0; i <= images.length - 1; i++) {
-            xmlImageAttributes(false, index, images[i].element, images[i].src);
-          }
-          unloading();
-        }
-        let oldest = pub[pub.length - 1].dst;
-        let posts = pub.length - 1;
-        let recent = pub[0].dst;
-        var status = document.querySelector(`.status`);
-        while (status.firstChild) status.removeChild(status.lastChild);
-        var suggestions = document.querySelector(`.suggestions`);
-        while (suggestions.firstChild)
-          suggestions.removeChild(suggestions.lastChild);
-        if (Reader == false){
-          document.querySelector(`.channel`).append(footerBuild());
-        }
-        contentStatusDisplay(index, recent, oldest, posts);
-        topMenuBarDisplay(topBar);
-        xmlStatusSuggestions();
-        stop = false;
       } else {
         id = 0;
         document.title = category.capitalize();
