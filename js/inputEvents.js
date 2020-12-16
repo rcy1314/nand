@@ -217,6 +217,11 @@ document.addEventListener('submit', (evt) => {
     } else if (event.target.id == `front`) {
       if (_guest.value == ``) inputListingIndex(``, `#first`);
       if (document.body.contains(_first.querySelector(`.hover`))) {
+        _label.style.visibility = `visible`;
+        _quick.style.visibility = `visible`;
+        _show.style.visibility = `visible`;
+        _link.style.visibility = `visible`;
+        _just.style.visibility = `visible`;
         _first.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
