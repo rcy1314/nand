@@ -188,14 +188,13 @@ html body,
 }
 
 #main #visit #page #just {
-  color: var(--fill-color);
-  border: var(--border-color);
   background-color: transparent;
   position: relative !important;
-  margin: 0 auto !important;
   margin-left: 12px !important;
+  border: var(--border-color);
+  margin: 0 auto !important;
+  color: var(--fill-color);
   display: inline-block;
-  padding-bottom: 1px;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
