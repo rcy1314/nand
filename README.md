@@ -3,12 +3,6 @@
   - Really Simple Syndicate.
   - Rich Site Summary.
 
-### Features
-
-* Beta (stage) themes.
-* No Installation.
-* Bing Search.
-
 ### Known Issues
 
 * Nearly half XML responses have no images attached use onlyImages (fixed)
@@ -18,12 +12,9 @@
 
 ### Configurations in js/settings.js
 
-* backgroundImage path is being overwritten in themes files.
-
-### Happy Holidays
+* backgroundImage path is currently overwritten in themes files.
 
 <p align='center'><img src='screenshots/Preview.gif'></p>
-
 
 Want to Contribute?
 ----
