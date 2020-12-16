@@ -310,6 +310,7 @@ let filterInputResponse = function (filterURI) {
     groupBuild();
     for (i = 0; i <= description.length - 1; i++)
       writeFilterResponse(menu.indexOf(description[i]));
+    populateCategoryGroup(menu[match].category);
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
@@ -319,8 +320,7 @@ let filterInputResponse = function (filterURI) {
       xmlRequestParsing(null, null, match);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
       xmlRequestParsing(null, null, match);
-  } else if (match === -1)
-    populateCategoryGroup(menu[match].category);
+  }
   document.title = filterURI.toString().space();
 };
 
