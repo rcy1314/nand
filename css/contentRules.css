@@ -111,14 +111,19 @@ html body,
 }
 
 #main #check {
-  color: var(--fill-color);
   background-color: transparent;
+  color: var(--fill-color);
+  margin-left: 10px;
   position: absolute;
-  margin-left: 15px;
   font-size: 11px;
   position: fixed;
   display: none;
   z-index: 12;
+}
+
+#main #check .loader {
+  position: relative;
+  margin: 0 auto;
 }
 
 #main #visit {

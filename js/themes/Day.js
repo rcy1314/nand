@@ -5,7 +5,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `#f7f7f7`
+    `rgba(123, 192, 236, 1)`
   );
   document.documentElement.style.setProperty(`--fill-color`, `#555555`);
   document.documentElement.style.setProperty(
