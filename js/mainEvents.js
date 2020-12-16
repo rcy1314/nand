@@ -1,5 +1,4 @@
 window.onload = function () {
-  if (location.href.split(`?`)[1]) guideOnScreen = false;
   quickFeedDisplay(quickFeeds);
   if (sideBarCenter == false) _content.style.position = `relative`;
   else _content.style.position = `absolute`;
@@ -212,6 +211,7 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
