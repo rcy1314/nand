@@ -605,6 +605,7 @@ let first = true; //reader append feed center channel
 let count = []; //progressBackdrop init calls
 let pub = []; //raw html of publication
 let local; //copy of post in base36
+let index; //copy of id used in guide
 let complete; //progressBar interval
 let images = []; //array of images in request
 let touchendX = 0; //

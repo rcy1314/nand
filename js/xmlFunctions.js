@@ -652,7 +652,7 @@ var xmlTitleParsing = function (xhr) {
   return title.replace(/<.>/g, ``);
 };
 
-var xmlAppendPublication = function () {
+var xmlAppendPublication = function (id) {
   const has = exclude.map((a) => a.toLowerCase());
   for (i = 0; i < pub.length - 1; i++) {
     if (
@@ -705,7 +705,9 @@ var xmlRequestParsing = function (search, string, index) {
   let html;
   let local;
   count = [];
+  id = index;
   stop = true;
+  images = [];
   imageDuplicate = [];
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
@@ -880,7 +882,7 @@ var xmlRequestParsing = function (search, string, index) {
         ) {
           console.log(`append`)
           _guide.style.display = `none`;
-          xmlAppendPublication();
+          xmlAppendPublication(index);
         }
       } else {
         id = 0;
