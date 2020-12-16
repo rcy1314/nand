@@ -1,3 +1,5 @@
+<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
+
 ### acktic <a href='https://gtmetrix.com/reports/acktic.github.io/ZKQjuDMS/' target='_blank'>report</a>
 ### sticky <a href='https://gtmetrix.com/reports/acktic.github.io/gRSyzCn9/' target='_blank'>report</a>
 
