@@ -190,9 +190,9 @@ html body,
 #main #visit #page #just {
   background-color: transparent;
   position: relative !important;
-  margin-left: 12px !important;
   border: var(--border-color);
   margin: 0 auto !important;
+  margin-left: 5px !important;
   color: var(--fill-color);
   display: inline-block;
   border-radius: 12px;
