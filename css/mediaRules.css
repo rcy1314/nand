@@ -375,4 +375,8 @@
     left: 0;
   }
 
+  #main #visit #page #just {
+    margin-left: 15px !important;
+  }
+
 }
