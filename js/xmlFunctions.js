@@ -592,7 +592,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.remove();
                       itemImage.style.display = `block`;
                     }
-              } else if (jsonResponse.score <= safeSearchScore) {
+              } else if (
+                jsonResponse.score <= safeSearchScore &&
+                document.body.contains(
+                    document.querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                    )
+                )
+              ) {
               var request = new XMLHttpRequest();
               request.open("GET", cors + src, true);
               request.responseType = "blob";
@@ -790,7 +797,7 @@ var xmlRequestParsing = function (search, string, index) {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, `,`) +
                 `</div>`;
             else var views = ``;
-
+            inline = [];
             inline.push({
               id: menu[index].id.match(/([^\/]+)$/g),
               image: menu[index].image.image(),
@@ -809,6 +816,7 @@ var xmlRequestParsing = function (search, string, index) {
             html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = ``;
+            inline = [];
             inline.push({
               dst: parse.dst,
               externalURI: parse.externalURI,
