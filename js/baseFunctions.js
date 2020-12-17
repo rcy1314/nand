@@ -92,7 +92,7 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (done == false && loading == `percent`) {
+  if (done == false && loading == `percent` && count.length >= 0) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
         width = _main.clientWidth / (count.length - 1);
