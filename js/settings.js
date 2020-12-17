@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Solarized`;
+let set = `Day`;
 
 /*
     backgroundImage [array]
