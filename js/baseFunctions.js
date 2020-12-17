@@ -92,6 +92,7 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
+  if (!count.length || done == true) clearInterval(complete);
   if (done == false && loading == `percent` && count.length >= 0) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
@@ -99,21 +100,19 @@ let progressBackDrop = function (done) {
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 4);
       if (!width || width == `Infinity`) width = _main.clientWidth / 15;
       if (_progress.clientWidth >= _main.clientWidth) {
-        setTimeout(function () {
-          _progress.style.transition = `all 1250ms ease-in-out`;
+          _progress.style.transition = `all 1500ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
             _progress.style.transition = `none`;
             _progress.style.width = `0%`;
-          }, 1250);
-        }, 250);
+          }, 1500);
         clearInterval(complete);
       } else {
         _progress.style.opacity = `1`;
-        _progress.style.transition = `all 750ms ease-in-out`;
+        _progress.style.transition = `all 500ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
       }
-    }, 1000);
+    }, 500);
   }
   if (document.body.contains(document.getElementById(`xml`))) {
     document.querySelector(`#xml`).style.display = `block`;
