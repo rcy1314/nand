@@ -481,7 +481,14 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
   let copyPost = document.querySelector(
     `[aria-item='${pubIndex}'] .post`
   );
-  if (newImg.naturalWidth < maximum) {
+  if (
+    newImg.naturalWidth < maximum &&
+    document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        )
+    )
+  ) {
     if (itemImage || itemFilter) {
       itemFilter.classList.add(`leave`);
       itemImage.classList.add(`leave`);
