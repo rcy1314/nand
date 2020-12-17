@@ -753,7 +753,7 @@ var xmlRequestParsing = function (search, string, index) {
           parse = xmlTimeStampParsing(channel, data);
 
           let share = menu[index].hash;
-          share = `${window.location.origin}/?${share}${parse.base36}`;
+          share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
 
           let src = xmlImageSource(data);
 

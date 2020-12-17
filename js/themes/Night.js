@@ -10,7 +10,7 @@ var Night = function () {
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgba(0, 120, 212, .1)`
+    `rgba(0, 20, 12, .1)`
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
