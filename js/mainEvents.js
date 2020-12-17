@@ -395,12 +395,10 @@ document.addEventListener('click', (evt) => {
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
-      onScreen = guideOnScreen;
-      guideOnScreen = true;
-      sideBarFirst = true;
-      if (_main.clientWidth >= 426) sideBarDisplay(onScreen);
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
+      onScreen = guideOnScreen;
+      guideOnScreen = true;
       local = null;
       post = null;
     }

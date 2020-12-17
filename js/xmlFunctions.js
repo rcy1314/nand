@@ -706,6 +706,7 @@ var xmlRequestParsing = function (search, string, index) {
   id = index;
   stop = true;
   images = [];
+  inline = [];
   imageDuplicate = [];
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
@@ -878,7 +879,6 @@ var xmlRequestParsing = function (search, string, index) {
           isNaN(parseFloat(local)) && !isFinite(local) &&
           isNaN(parseFloat(post)) && !isFinite(post)
         ) {
-          console.log(`append`)
           _guide.style.display = `none`;
           xmlAppendPublication(index);
         }
