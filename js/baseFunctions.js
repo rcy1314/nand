@@ -92,22 +92,16 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (!count.length || done == true) {
-    clearInterval(complete);
-    _progress.style.transition = `all 1500ms ease-in-out`;
-    _progress.style.opacity = `0`;
-    setTimeout(function () {
-      _progress.style.transition = `none`;
-      _progress.style.width = `0%`;
-    }, 1500);
-  }
   if (done == false && loading == `percent` && count.length >= 0) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
         width = _main.clientWidth / (count.length - 1);
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 4);
       if (!width || width == `Infinity`) width = _main.clientWidth / 15;
-      if (_progress.clientWidth >= _main.clientWidth) {
+      if (
+        _progress.clientWidth >= _main.clientWidth ||
+        _progress.clientWidth == 0
+      ) {
           _progress.style.transition = `all 1500ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
