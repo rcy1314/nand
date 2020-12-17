@@ -226,6 +226,12 @@ document.addEventListener('submit', (evt) => {
         filterInputResponse(_guest.value);
         topMenuBarDisplay(topBar);
       }
+      _label.style.visibility = `visible`;
+      _quick.style.visibility = `visible`;
+      _show.style.visibility = `visible`;
+      _link.style.visibility = `visible`;
+      _just.style.visibility = `visible`;
+      _first.style.display = `none`;
     }
     event.preventDefault();
   },
