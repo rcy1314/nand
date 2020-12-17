@@ -121,6 +121,7 @@ document.addEventListener('click', (evt) => {
             _main.style.backgroundImage = `url(${content})`;
             _container.style.backgroundImage = `url()`;
           }
+          console.log(readerEvent.target.result)
         };
       };
       input.click();
@@ -176,21 +177,18 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, topBarBackdrop);
       topMenuBarDisplay(topBar);
     }
-    if (event.target.classList.contains(`mainBackground`)) {
-      if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path === "string"
-      )
-        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      _container.style.backgroundImage = `url()`;
-    }
     if (event.target.classList.contains(`containerBackground`)) {
       if (
-        Array.isArray(backgroundImage) &&
-        typeof backgroundImage[0].path === "string"
-      )
+        _container.style.backgroundImage
+      ) {
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        _container.style.backgroundImage = ``;
+      } else if (
+        _main.style.backgroundImage
+      ) {
         _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      _main.style.backgroundImage = `url()`;
+        _main.style.backgroundImage = ``;
+      }
     }
     if (event.target.classList.contains(`coverBackground`)) {
       if (

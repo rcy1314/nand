@@ -650,9 +650,8 @@ const background = [
   { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
   { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
-  { name: `Choose Main`, class: `mainBackground`, icon: `fa-book-open` },
   {
-    name: `Choose Container`,
+    name: `Layer Backdrop`,
     class: `containerBackground`,
     icon: `fa-layer-group`,
   },
