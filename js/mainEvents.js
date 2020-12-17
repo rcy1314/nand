@@ -399,8 +399,6 @@ document.addEventListener('click', (evt) => {
       topMenuBarDisplay(topBar);
       onScreen = guideOnScreen;
       guideOnScreen = true;
-      local = null;
-      post = null;
     }
     if (evt.target.classList.contains(`bottom`)) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();

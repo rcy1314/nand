@@ -713,7 +713,7 @@ var xmlRequestParsing = function (search, string, index) {
   id = index;
   stop = true;
   images = [];
-  inline = [];
+  let inline = [];
   imageDuplicate = [];
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
@@ -791,7 +791,6 @@ var xmlRequestParsing = function (search, string, index) {
                 `</div>`;
             else var views = ``;
 
-            var inline = [];
             inline.push({
               id: menu[index].id.match(/([^\/]+)$/g),
               image: menu[index].image.image(),
@@ -810,7 +809,6 @@ var xmlRequestParsing = function (search, string, index) {
             html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = ``;
-            var inline = [];
             inline.push({
               dst: parse.dst,
               externalURI: parse.externalURI,
