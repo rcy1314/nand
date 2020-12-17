@@ -92,7 +92,15 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (!count.length || done == true) clearInterval(complete);
+  if (!count.length || done == true) {
+    clearInterval(complete);
+    _progress.style.transition = `all 1500ms ease-in-out`;
+    _progress.style.opacity = `0`;
+    setTimeout(function () {
+      _progress.style.transition = `none`;
+      _progress.style.width = `0%`;
+    }, 1500);
+  }
   if (done == false && loading == `percent` && count.length >= 0) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))

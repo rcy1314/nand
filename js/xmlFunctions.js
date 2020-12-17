@@ -485,14 +485,12 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     newImg.naturalWidth < maximum &&
     document.body.contains(
         document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
         )
     )
   ) {
-    if (itemImage || itemFilter) {
-      itemFilter.classList.add(`leave`);
-      itemImage.classList.add(`leave`);
-    }
+    itemFilter.classList.add(`leave`);
+    itemImage.classList.add(`leave`);
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
     itemImage.closest(`.classic`).style.display = `flex`;
@@ -500,7 +498,13 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     copyPost.style.display = `none`;
     copyPicture.style.display = `none`;
     attribute.style.height = `37px`;
-  } else if (itemImage || itemFilter) {
+  } else if (
+    document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+        )
+    )
+  ) {
     itemFilter.classList.add(`default`);
     itemImage.classList.add(`default`);
   }
@@ -520,6 +524,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let itemFilter = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
+  if (
+    src &&
+    imageDuplicate.includes(src)
+  )
+  document
+    .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+    .forEach((a) => a.remove());
   if (
     !src ||
     src == `null` ||
@@ -566,6 +577,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           .then((response) => {
             response.json().then((jsonResponse) => {
               console.log(`${pubIndex} ${jsonResponse.score}`)
+              console.log(src)
               if (
                 jsonResponse.score >= safeSearchScore
                 ) {
