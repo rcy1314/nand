@@ -504,7 +504,7 @@ let safeSearchIDs = [
   `Reddit/Celebhub`,
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
-  `4Chan/SP Sports`,
+  `4Chan/Sports`,
   `4Chan/Technology`,
   `4Chan/High Resolution`,
   `4Chan/Wallpapers`,
