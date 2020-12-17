@@ -175,7 +175,7 @@ document.addEventListener('click', (evt) => {
       if (topBarBackdrop == false) _top.style.cssText = `backdrop-filter: none`;
       else _top.style.cssText = `backdrop-filter: blur(10px)`;
       sideBarStar(event.target, topBarBackdrop);
-      topMenuBarDisplay(topBar);
+      if (_visit.style.display != `flex`) topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`containerBackground`)) {
       if (

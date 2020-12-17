@@ -2,9 +2,10 @@ var init = function () {
   if (document.body.contains(document.getElementById(`group`)))
     document.querySelector(`#group`).remove();
   if (loading == `dots`) {
+    document.querySelector(`#dots`).style.zIndex = `12`;
     document
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.zIndex = `11`));
+      .forEach((a) => (a.style.zIndex = `12`));
     document
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => a.classList.add(`dots`));

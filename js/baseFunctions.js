@@ -183,7 +183,8 @@ let progressBackDrop = function (done) {
     if (document.body.contains(document.querySelector(`.result`)))
       _main.scrollTop = 0;
     if (onlyImages == false && scrollIntoView == false) {
-      document.querySelector(`#group`).style.display = `block`;
+      if (document.body.contains(document.querySelector(`#group`)))
+        document.querySelector(`#group`).style.display = `block`;
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
     }
