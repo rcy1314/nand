@@ -47,7 +47,7 @@ html body,
 }
 
 #main #progressBar {
-  background-color: var(--color-secondary);
+  background-color: var(--loader-color);
   background: var(--color-secondary);
   position: absolute;
   margin-right: 4px;

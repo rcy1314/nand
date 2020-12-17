@@ -648,10 +648,10 @@ const background = [
   { name: `Set`, class: `setBackground`, icon: `fa-user` },
   { name: `Save`, class: `saveBackground`, icon: `fa-download` },
   { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
-  { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
+  { name: `Reset`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
   {
-    name: `Layer Backdrop`,
+    name: `Layer`,
     class: `containerBackground`,
     icon: `fa-layer-group`,
   },

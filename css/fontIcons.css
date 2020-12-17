@@ -20,7 +20,7 @@
 }
 
 #main #top #arm .fa-long-arrow-alt-left {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   position: relative;
   cursor: pointer;
   font-size: 14px;
@@ -75,7 +75,7 @@
 #sidebar #content .fa-certificate,
 #sidebar #content .fa-paint-brush,
 #sidebar #content .fa-digital-tachograph {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   position: relative;
   margin-top: -18px !important;
   font-weight: 50;
@@ -92,7 +92,7 @@
 #sidebar #content .fa-chart-pie,
 #sidebar #content .fa-tablet-alt,
 #sidebar #content .fa-exclamation-circle {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   position: relative;
   margin-top: -22px !important;
   font-weight: 50;
@@ -106,7 +106,7 @@
 
 #sidebar #content .fa-lock,
 #sidebar #content .fa-unlock {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   margin-top: -18px !important;
   padding-bottom: 15px;
   padding-left: 15px;
@@ -121,7 +121,7 @@
 }
 
 #sidebar #content .fa-minus {
-  color: var(--fill-color-primary);
+  color: var(--fill-color);
   margin-top: -18px !important;
   position: relative;
   font-size: 11px;
