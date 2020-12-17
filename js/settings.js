@@ -644,17 +644,13 @@ const settings = [
 ];
 
 const background = [
-  { name: `Fit`, class: `fitBackground`, icon: `fa-crop-alt` },
-  { name: `Set`, class: `setBackground`, icon: `fa-user` },
-  { name: `Save`, class: `saveBackground`, icon: `fa-download` },
-  { name: `Cover`, class: `coverBackground`, icon: `fa-expand` },
-  { name: `Reset`, class: `resetBackground`, icon: `fa-cloud` },
+  { name: `Fit Container`, class: `fitBackground`, icon: `fa-crop-alt` },
+  { name: `Set Background`, class: `setBackground`, icon: `fa-user` },
+  { name: `Save Path`, class: `saveBackground`, icon: `fa-download` },
+  { name: `Layer Group`, class: `containerBackground`, icon: `fa-layer-group` },
+  { name: `Cover Background`, class: `coverBackground`, icon: `fa-expand` },
+  { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
-  {
-    name: `Layer`,
-    class: `containerBackground`,
-    icon: `fa-layer-group`,
-  },
 ];
 
 const repository = `https://github.com/acktic/acktic.github.io`;
