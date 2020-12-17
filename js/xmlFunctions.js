@@ -669,18 +669,16 @@ var xmlAppendPublication = function (id) {
       images.push({ element: pub[i].element, src: pub[i].src });
     }
   }
-  setTimeout(function (){
-    if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-      for (i = 0; i <= images.length - 1; i++) {
-        xmlImageAttributes(false, id, images[i].element, images[i].src);
-      }
-      unloading();
-    } else if (!safeSearchIDs.includes(menu[id].id)) {
-      for (i = 0; i <= images.length - 1; i++) {
-        xmlImageAttributes(false, id, images[i].element, images[i].src);
-      }
+  if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+    for (i = 0; i <= images.length - 1; i++) {
+      xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
-  }, 250)
+    unloading();
+  } else if (!safeSearchIDs.includes(menu[id].id)) {
+    for (i = 0; i <= images.length - 1; i++) {
+      xmlImageAttributes(false, id, images[i].element, images[i].src);
+    }
+  }
   unloading();
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
