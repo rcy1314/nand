@@ -13,6 +13,7 @@
 * safeSearch throws a couple header errors returning from offloading.
 * Dynamic Loading files can timeout with Remote Hosting (wip)
 * Heroku offloading first response ~7s safeSearch double.
+* File Size ~20MB (Previews and Images).
 
 ### Configurations in js/settings.js
 
