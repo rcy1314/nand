@@ -16,7 +16,6 @@
 
 ### Configurations in js/settings.js
 
-* backgroundImage position is overwritten in mediaRules.css
 * backgroundImage path is overwritten in themes files.
 
 <p align='center'><img src='screenshots/Preview.gif'></p>
