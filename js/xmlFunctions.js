@@ -524,12 +524,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   );
   if (
     src &&
+    src != `null` &&
     imageDuplicate.includes(src)
   )
   document
     .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
     .forEach((a) => a.remove());
-  if (
+  else if (
     !src ||
     src == `null` ||
     src.match(/.webm|.mp4/g)
@@ -713,8 +714,8 @@ var xmlAppendPublication = function (id) {
     for (i = 0; i <= images.length - 1; i++) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
+    unloading();
   }
-  unloading();
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
   let recent = pub[0].dst;
@@ -917,16 +918,23 @@ var xmlRequestParsing = function (search, string, index) {
           xmlAppendPublication(index);
         }
       } else {
-        id = 0;
-        document.title = category.capitalize();
-        if (showSplash == true) _check.style.display = `none`;
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove()
-        populateCategoryGroup(category);
-        displayDescription(showDescription);
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
-        unloading();
+        if (Reader = true) {
+          stop = true;
+          xmlRequestParsing(null, null, anyRandomMenuObject())
+        } else {
+          id = 0;
+          document.title = category.capitalize();
+          if (showSplash == true) _check.style.display = `none`;
+          if (document.body.contains(document.querySelector(`#xml`)))
+            document.querySelector(`#xml`).remove()
+          if (document.body.contains(document.querySelector(`#group`)))
+            document.querySelector(`#group`).remove()
+          populateCategoryGroup(category);
+          displayDescription(showDescription);
+          topMenuBarDisplay(topBar);
+          displayExpand(expand);
+          unloading();
+        }
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();

@@ -65,38 +65,39 @@ window.onload = function () {
         }
         { passive: true }
       });
+      setTimeout(function() {
+        _sidebar.addEventListener('mousemove', (evt) => {
+            onScreen = true;
+          },
+          true
+        );
 
-      _sidebar.addEventListener('mousemove', (evt) => {
-          onScreen = true;
-        },
-        true
-      );
-
-      _main.addEventListener('mousemove', (evt) => {
-            if (
-              event.pageX <= (_main.clientWidth / 8) &&
-              _main.clientWidth >= 769 &&
-              guideOnScreen == true &&
-              onScreen == false
-            ) {
-              onScreen = true;
-              setTimeout(function () {
-                sideBarDisplay(onScreen);
-              }, 350)
-            }
-            else if (
-              event.pageX >= 280 &&
-              sideBarLock == false &&
-              onScreen == true
-            ){
-              onScreen = false;
-              setTimeout(function() {
-                sideBarDisplay(onScreen);
-              }, 1250)
-            }
-        },
-        true
-      );
+        _main.addEventListener('mousemove', (evt) => {
+              if (
+                event.pageX <= (_main.clientWidth / 8) &&
+                _main.clientWidth >= 769 &&
+                guideOnScreen == true &&
+                onScreen == false
+              ) {
+                onScreen = true;
+                setTimeout(function () {
+                  sideBarDisplay(onScreen);
+                }, 350)
+              }
+              else if (
+                event.pageX >= 280 &&
+                sideBarLock == false &&
+                onScreen == true
+              ){
+                onScreen = false;
+                setTimeout(function() {
+                  sideBarDisplay(onScreen);
+                }, 1250)
+              }
+          },
+          true
+        );
+      }, 250)
 
   }, 250)
 
@@ -120,11 +121,12 @@ document.addEventListener('touchend', (evt) => {
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 1 &&
         Reader == true &&
         stop == false
       ) {
         first = false;
+        if (showSplash == true) _check.style.display = `block`;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
@@ -135,11 +137,12 @@ document.addEventListener('scroll', (evt) => {
 document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 350 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 1 &&
         Reader == true &&
         stop == false
       ) {
         first = false;
+        if (showSplash == true) _check.style.display = `block`;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
@@ -230,7 +233,6 @@ document.addEventListener('click', (evt) => {
       first = true;
       randomDuplicate = [];
       _visit.style.display = `none`;
-      if (showSplash == true) _check.style.display = `Block`;
       Reader = Reader != true;
       if (Reader == false) {
         sideBarStar(document.querySelector(`.Reader`), Reader);
@@ -240,6 +242,7 @@ document.addEventListener('click', (evt) => {
         xmlChannelFooter();
         event.target.classList.remove(`luv`);
       } else if (Reader == true) {
+        if (showSplash == true) _check.style.display = `Block`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -266,6 +269,7 @@ document.addEventListener('click', (evt) => {
       justRead = true;
       onlyImages = true;
       randomDuplicate = [];
+      if (showSplash == true) _check.style.display = `block`;
       document
         .querySelectorAll(`.joi`)
         .forEach((a) => (a.classList.add(`luv`)));
@@ -449,6 +453,7 @@ document.addEventListener('click', (evt) => {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
+      first = true;
       xmlRequestParsing(
         null,
         null,
