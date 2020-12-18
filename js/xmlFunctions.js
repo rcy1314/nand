@@ -555,12 +555,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       if (
           src.match(/ytimg/g) &&
           youtubeMedia == false
-        )
+        ) {
         document
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
           .classList.add(`yt`);
+        itemPending.remove();
+      }
       if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
         fetch(`${cors}${api}${src}`, {
           method: "GET",
