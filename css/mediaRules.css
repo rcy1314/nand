@@ -245,6 +245,10 @@
 
 @media screen and (min-width: 769px) {
 
+  #main #visit #page #just {
+    margin-left: 15px !important;
+  }
+
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     padding: 10px;
@@ -373,10 +377,6 @@
     margin-right: 115px;
     width: 600px;
     left: 0;
-  }
-
-  #main #visit #page #just {
-    margin-left: 15px !important;
   }
 
 }

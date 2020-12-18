@@ -132,6 +132,7 @@ document.addEventListener('click', (evt) => {
         .querySelector(`.urlInput`)
         .value.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif|webp))/g)
     ) {
+      if (showSplash == true) _check.style.display = `block`;
       var xhr = new XMLHttpRequest();
       var url = document.querySelector(`.urlInput`).value;
 
@@ -147,7 +148,7 @@ document.addEventListener('click', (evt) => {
               .querySelector(`.urlInput`)
               .value.match(/\b(\/.+\.(?:png|jpe?g|gif|webp))/g)
           );
-          unloading();
+          _check.style.display = `none`;
         }
       };
 
