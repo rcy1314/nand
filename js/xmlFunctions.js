@@ -1,13 +1,11 @@
 var guideDisplay = function (pubArray) {
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
-  _main.classList.add(`guide`);
   _guide.style.zIndex = `11`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
   _guide.append(guideBuildYoutube(pubArray[0]));
-  _main.classList.add(`guide`);
   _guide.style.zIndex = `11`;
 };
 
@@ -190,9 +188,9 @@ var guideImageAttributes = function (pubArray) {
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
       document.querySelector(`.sticky`).style.display = `block`;
-      _check.style.display = `none`;
       _guide.style.display = `flex`;
     }
+    _check.style.display = `none`;
   };
 };
 

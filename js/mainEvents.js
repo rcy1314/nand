@@ -517,6 +517,7 @@ document.addEventListener('click', (evt) => {
             ) {
               count = [];
               let sticky = [];
+              if (showSplash == true) _check.style.display = `block`;
               sticky.push({
                 courtesy: evt.target.closest(`.item`).querySelector(`.header`)
                   .innerHTML,
