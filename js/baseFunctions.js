@@ -177,12 +177,13 @@ let progressBackDrop = function (done) {
             _main.scrollTop = document.querySelector(`.air`).clientHeight;
         document.querySelector(`#group`).style.top = `-60px`;
       }, 25)
-    }
+    } else if (scrollIntoView == false)
+      document.querySelector(`#group`).style.display = `block`;
   }
   if (onlyImages == true)
     if (document.body.contains(document.querySelector(`.result`)))
       _main.scrollTop = 0;
-    if (onlyImages == false && scrollIntoView == false) {
+    if (onlyImages == false) {
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).style.display = `block`;
       if (document.body.contains(document.querySelector(`.air`)))
