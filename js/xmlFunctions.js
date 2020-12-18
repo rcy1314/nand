@@ -595,6 +595,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.remove();
                       itemImage.style.display = `block`;
                     };
+                    read.onerror = function (e) {
+                      itemPending.remove();
+                    }
                   }
                   if (!src.match(/4cdn/g)) request.send();
                   else {
@@ -624,6 +627,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   itemPending.remove();
                   itemImage.style.display = `block`;
                 };
+                read.onerror = function (e) {
+                  itemPending.remove();
+                }
               }
               if (!src.match(/4cdn/g)) request.send();
               else {
@@ -651,6 +657,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.remove();
             itemImage.style.display = `block`;
+            }
+            read.onerror = function (e) {
+              itemPending.remove();
             }
           };
           if (!src.match(/4cdn/g)) request.send();
