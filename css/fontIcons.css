@@ -185,6 +185,7 @@
 
 #guide .sticky .fa-heart,
 #main #xml .center .item .image .fa-heart {
+  color: var(--color-secondary);
   position: absolute;
   font-size: 50px;
   display: none;
@@ -279,9 +280,7 @@
   left: -6px;
 }
 
-#guide .sticky .image .fa-heart,
-#main #option .fa-heart,
-#main #xml .center .item .classic .image .fa-heart {
+#main #option .fa-heart {
   color: lightcoral !important;
 }
 
