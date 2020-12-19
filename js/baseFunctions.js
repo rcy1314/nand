@@ -100,18 +100,19 @@ let progressBackDrop = function (done) {
       if (!width || width == `Infinity`) width = _main.clientWidth / 15;
       if (
         _progress.clientWidth >= _main.clientWidth ||
-        _progress.clientWidth == 0
+        count.length <= 0
       ) {
+        clearInterval(complete);
           _progress.style.transition = `all 1500ms ease-in-out`;
           _progress.style.opacity = `0`;
           setTimeout(function () {
             _progress.style.transition = `none`;
             _progress.style.width = `0%`;
           }, 1500);
-        clearInterval(complete);
       } else {
+        clearInterval(complete);
         _progress.style.opacity = `1`;
-        _progress.style.transition = `all 500ms ease-in-out`;
+        _progress.style.transition = `all 750ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
       }
     }, 500);
