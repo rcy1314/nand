@@ -1,9 +1,8 @@
 <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
-### acktic <a href='https://gtmetrix.com/reports/acktic.github.io/ZKQjuDMS/' target='_blank'>report</a>
-### sticky <a href='https://gtmetrix.com/reports/acktic.github.io/83erNn7q/' target='_blank'>report</a>
-### group <a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>report</a>
-### hash <a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>report</a>
+# Reports
+
+<a href='https://gtmetrix.com/reports/acktic.github.io/ZKQjuDMS/' target='_blank'>acktic</a> <a href='https://gtmetrix.com/reports/acktic.github.io/83erNn7q/' target='_blank'>sticky</a> <a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>group</a> <a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>hash</a>
 
 ### About
   - Really Simple Syndicate.
@@ -15,7 +14,8 @@
 * safeSearch throws a couple header errors returning from offloading.
 * Dynamic Loading files can timeout with Remote Hosting (wip)
 * Heroku offloading first response ~7s safeSearch double.
-* File Size ~20MB (Previews and Images).
+* Mousemove event listener sidebar remote visit.
+* File Size ~20MB (Screenshots ~10mb).
 
 ### Configurations in js/settings.js
 
