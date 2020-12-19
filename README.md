@@ -14,7 +14,7 @@
 * safeSearch throws a couple header errors returning from offloading.
 * Dynamic Loading files can timeout with Remote Hosting (wip)
 * Heroku offloading first response ~7s safeSearch double.
-* Mousemove event listener sidebar remote visit.
+* Mousemove event listener sidebar remote visit (fixed).
 * File Size ~20MB (Screenshots ~10mb).
 
 ### Configurations in js/settings.js
