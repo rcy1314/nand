@@ -2,6 +2,8 @@
 
 ### acktic <a href='https://gtmetrix.com/reports/acktic.github.io/ZKQjuDMS/' target='_blank'>report</a>
 ### sticky <a href='https://gtmetrix.com/reports/acktic.github.io/83erNn7q/' target='_blank'>report</a>
+### group <a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>report</a>
+### hash <a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>report</a>
 
 ### About
   - Really Simple Syndicate.
