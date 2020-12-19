@@ -65,41 +65,37 @@ window.onload = function () {
         }
         { passive: true }
       });
-      setTimeout(function() {
-        _sidebar.addEventListener('mousemove', (evt) => {
-            onScreen = true;
-          },
-          true
-        );
-
-        _main.addEventListener('mousemove', (evt) => {
-              if (
-                event.pageX <= (_main.clientWidth / 8) &&
-                _main.clientWidth >= 769 &&
-                guideOnScreen == true &&
-                onScreen == false
-              ) {
-                onScreen = true;
-                setTimeout(function () {
-                  sideBarDisplay(onScreen);
-                }, 350)
-              }
-              else if (
-                event.pageX >= 280 &&
-                sideBarLock == false &&
-                onScreen == true
-              ){
-                onScreen = false;
-                setTimeout(function() {
-                  sideBarDisplay(onScreen);
-                }, 1250)
-              }
-          },
-          true
-        );
-      }, 250)
-
-  }, 250)
+      _sidebar.addEventListener('mousemove', (evt) => {
+          onScreen = true;
+        },
+        true
+      );
+      _main.addEventListener('mousemove', (evt) => {
+            if (
+              _main.clientWidth >= 769 &&
+              guideOnScreen == true &&
+              event.pageX <= 200 &&
+              onScreen == false
+            ) {
+              onScreen = true;
+              setTimeout(function () {
+                sideBarDisplay(onScreen);
+              }, 350)
+            }
+            else if (
+              event.pageX >= 280 &&
+              sideBarLock == false &&
+              onScreen == true
+            ){
+              onScreen = false;
+              setTimeout(function() {
+                sideBarDisplay(onScreen);
+              }, 1250)
+            }
+        },
+        true
+      );
+    }, 250)
 
   _container.style.display = `block`;
 
