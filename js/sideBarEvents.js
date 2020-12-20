@@ -334,6 +334,7 @@ document.addEventListener('click', (evt) => {
           }px`;
     }
     if (event.target.classList.contains(`favorite`)) {
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       expandFavorites = expandFavorites != true
       if (expandFavorites == false)
         document.querySelector(`.fav`).style.height = `31px`;

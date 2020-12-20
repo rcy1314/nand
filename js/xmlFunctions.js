@@ -513,6 +513,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
 }
 
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
+  count.push(`null`);
   let jsonResponseScore;
   let itemContainer = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
@@ -530,17 +531,19 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src &&
     src != `null` &&
     imageDuplicate.includes(src)
-  )
-  document
-    .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-    .forEach((a) => a.remove());
-  else if (
+  ) {
+    count.shift()
+    document
+      .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
+      .forEach((a) => a.remove());
+  } else if (
     !src ||
     src == `null` ||
     src.match(/.webm|.mp4/g)
   ) {
     itemPending.remove();
     itemImage.remove();
+    count.shift()
   }
   imageDuplicate.push(src);
   if (
@@ -548,7 +551,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src.match(/https?:\/\//g) &&
     !src.match(/comments|feeds|fsdn|undefined/g)
   ) {
-    init();
     var newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
@@ -581,8 +583,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         })
           .then((response) => {
             response.json().then((jsonResponse) => {
-              console.log(`${pubIndex} ${jsonResponse.score}`)
-              console.log(src)
               if (
                 jsonResponse.score >= safeSearchScore
                 ) {
@@ -713,13 +713,12 @@ var xmlAppendPublication = function (id) {
     for (i = 0; i <= images.length - 1; i++) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
-    unloading();
   } else if (!safeSearchIDs.includes(menu[id].id)) {
     for (i = 0; i <= images.length - 1; i++) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
-    unloading();
   }
+  unloading();
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
   let recent = pub[0].dst;
@@ -880,7 +879,6 @@ var xmlRequestParsing = function (search, string, index) {
           });
         }
         for (i = 0; i < pub.length; i++) {
-          console.log(pub[i].enc.slice(2, 64))
           if (hash == false && parseInt(pub[i].gen, 36) == post) local = i;
           else if (hash == true && pub[i].enc.slice(2, 64) == post) local = i;
         }

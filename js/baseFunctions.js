@@ -92,25 +92,28 @@ let progressBackDrop = function (done) {
   let length;
   let complete;
   _visit.style.display = `none`;
-  if (done == false && loading == `percent` && count.length >= 0) {
+  if (done == false && loading == `percent`) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
         width = _main.clientWidth / (count.length - 1);
-      else if (count.length) width = _main.clientWidth / ((count.length - 1) / 4);
+      else if (count.length) width = _main.clientWidth / ((count.length - 1) / 8);
       if (!width || width == `Infinity`) width = _main.clientWidth / 15;
       if (
         _progress.clientWidth >= _main.clientWidth ||
-        count.length <= 0
+        count.length === 1
       ) {
         clearInterval(complete);
-          _progress.style.transition = `all 1500ms ease-in-out`;
+        _progress.style.transition = `0`;
+        _progress.style.width = `100%`;
+        setTimeout(function() {
+          _progress.style.transition = `all 1600ms ease-in-out`;
           _progress.style.opacity = `0`;
-          setTimeout(function () {
-            _progress.style.transition = `none`;
-            _progress.style.width = `0%`;
-          }, 1500);
+        }, 350)
+        setTimeout(function () {
+          _progress.style.transition = `none`;
+          _progress.style.width = `0%`;
+        }, 1250);
       } else {
-        clearInterval(complete);
         _progress.style.opacity = `1`;
         _progress.style.transition = `all 750ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
