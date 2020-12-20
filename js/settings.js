@@ -450,6 +450,20 @@ let contentStatusBuffer = 7;
 let omitGuide = true;
 
 /*
+    hash [boolean/integer]
+
+      Applications
+        init.js xmlRequestParsing xmlTimestampParsing
+
+      Result
+        true = long post hashes
+        false = short post hashes
+
+*/
+
+let hash = false;
+
+/*
     safeSearch [integer]
 
       Applications

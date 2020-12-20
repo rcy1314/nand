@@ -381,6 +381,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
     parse.push({
       since: since,
       dst: dst[0],
+      cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
       base36: gen,
       externalURI: re.trim(),
     });
@@ -411,6 +412,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
+        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -434,6 +436,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
+        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -453,6 +456,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
+        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -790,7 +794,10 @@ var xmlRequestParsing = function (search, string, index) {
           parse = xmlTimeStampParsing(channel, data);
 
           let share = menu[index].hash;
-          share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
+          if (hash == true)
+            share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
+          else if (hash == false)
+              share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
 
           let src = xmlImageSource(data);
 
@@ -860,6 +867,7 @@ var xmlRequestParsing = function (search, string, index) {
             since: parse.since,
             dst: parse.dst,
             gen: parse.base36,
+            enc: parse.cyrb53,
             re: parse.externalURI,
             share: share,
             more: more,
@@ -870,9 +878,11 @@ var xmlRequestParsing = function (search, string, index) {
           pub.sort(function (a, b) {
             return b.since - a.since;
           });
-          for (i = 0; i < pub.length; i++) {
-            if (parseInt(pub[i].gen, 36) == post) local = i;
-          }
+        }
+        for (i = 0; i < pub.length; i++) {
+          console.log(pub[i].enc.slice(2, 64))
+          if (hash == false && parseInt(pub[i].gen, 36) == post) local = i;
+          else if (hash == true && pub[i].enc.slice(2, 64) == post) local = i;
         }
         if (
           !isNaN(parseFloat(local)) &&
@@ -918,23 +928,18 @@ var xmlRequestParsing = function (search, string, index) {
           xmlAppendPublication(index);
         }
       } else {
-        if (Reader = true) {
-          stop = true;
-          xmlRequestParsing(null, null, anyRandomMenuObject())
-        } else {
-          id = 0;
-          document.title = category.capitalize();
-          if (showSplash == true) _check.style.display = `none`;
-          if (document.body.contains(document.querySelector(`#xml`)))
-            document.querySelector(`#xml`).remove()
-          if (document.body.contains(document.querySelector(`#group`)))
-            document.querySelector(`#group`).remove()
-          populateCategoryGroup(category);
-          displayDescription(showDescription);
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-          unloading();
-        }
+        id = 0;
+        document.title = category.capitalize();
+        if (showSplash == true) _check.style.display = `none`;
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove()
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove()
+        populateCategoryGroup(category);
+        displayDescription(showDescription);
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        unloading();
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();

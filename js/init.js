@@ -23,9 +23,13 @@ setTimeout(function() {
     let i;
     let id;
     var uri = location.href.split(`?`)[1];
-    if (uri.match(/^[a-zA-Z0-9]+$/i)) {
+    if (uri.match(/^[a-zA-Z0-9\-]+$/g)) {
       id = uri.slice(0, 2);
-      post = parseInt(uri.slice(2), 36);
+      if (hash == true)
+        post = uri.slice(2, 64);
+      else if (hash == false)
+        post = parseInt(uri.slice(2), 36);
+      console.log(post);
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
