@@ -70,7 +70,7 @@ window.onload = function () {
         },
         true
       );
-      _main.addEventListener('mousemove', (evt) => {
+      document.addEventListener('mousemove', (evt) => {
             if (
               _main.clientWidth >= 769 &&
               guideOnScreen == true &&
