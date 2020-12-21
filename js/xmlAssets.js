@@ -371,6 +371,7 @@ var menu=[
 {id:`NBC Technology`,category:`Technology`,description:`NBC News Tech for Latest News on Technology, Businesses and Internet media.`,uri:`http://feeds.nbcnews.com/nbcnews/public/tech`,image:`NBCNews`,hash:`tY`,media:!0},
 {id:`New York Post Tech`,category:`Technology`,description:`New York Post technology, established Nov 16, 1801, describes itself as the nation's oldest daily newspaper.`,uri:`https://nypost.com/tech/feed`,image:`NewYorkPost`,hash:`pL`,media:!0},
 {id:`New York Times Tech`,category:`Technology`,description:`New York Times is a Newspaper based in New York City with Worldwide Influence.`,uri:`https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml`,image:`NewYorkTimes`,hash:`yM`,media:!0},
+{id:`Next Gov`,category:`Technology`,description:`Nextgov analysis and insights from our award-winning journalists and a nationwide community of expert voices, Nextgov provides the first word on technology and government.`,uri:`https://www.nextgov.com/rss/all/`,image:`NextGov`,hash:`tX`,media:!0},
 {id:`OAN Technology`,category:`Technology`,description:`OAN Technology One America News Network Technology.`,uri:`https://www.oann.com/category/tech/feed`,image:`OANN`,hash:`nL`,media:!0},
 {id:`PC World`,category:`Technology`,description:`PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.`,uri:`https://www.pcworld.com/index.rss`,image:`PCWorld`,hash:`cO`,media:!0},
 {id:`Popular Mechanics`,category:`Technology`,description:`Popular Mechanics is a magazine of Popular Science and Technology.`,uri:`https://www.popularmechanics.com/rss/all.xml`,image:`PopularMechanics`,hash:`mP`,media:!0},
@@ -525,7 +526,7 @@ var menu=[
 {id:`Youtube/TMZ Sports`,category:`Youtube`,description:`TMZ Sports Youtube where sport and celebrity cultures intersect.`,uri:`https://www.youtube.com/feeds/videos.xml?user=TMZSports`,image:`TMZSports`,hash:`sZ`,media:!0},
 {id:`Youtube/UFC`,category:`Youtube`,description:`UFC Youtube Weigh-ins, Analysis, Highlights, and Interviews.`,uri:`https://www.youtube.com/feeds/videos.xml?user=ufc`,image:`UFC`,hash:`UF`,media:!0},
 {id:`Youtube/USA Today`,category:`Youtube`,description:`USA Today Youtube Investigative Journalism, National and Local Headlines.`,uri:`https://www.youtube.com/feeds/videos.xml?user=usatoday`,image:`USAToday`,hash:`sY`,media:!0},
-{id:`Youtube/Vice News`,category:`Youtube`,description:`Vice News Youtube is the breaking, break-through news you need.`,uri:`https://www.youtube.com/feeds/videos.xml?user=vicenews`,image:`ViceNews`,hash:`nV`,media:!0},
+{id:`Youtube/Vice News`,category:`Youtube`,description:`Vice News Youtube is the breaking, break-through news you need.`,uri:`https://www.youtube.com/feeds/videos.xml?user=vicenews`,image:`ViceNews`,hash:`Vn`,media:!0},
 {id:`Youtube/Wall Street Journal`,category:`Youtube`,description:`Wall Street Journal Youtube digs deeper into what matters to you.`,uri:`https://www.youtube.com/feeds/videos.xml?user=wsjdigitalnetwork`,image:`WSJ`,hash:`jO`,media:!0},
 {id:`Youtube/WIRED`,category:`Youtube`,description:`WIRED Youtube explores the future of business, innovation, and culture.`,uri:`https://www.youtube.com/feeds/videos.xml?user=wired`,image:`WIRED`,hash:`dI`,media:!0}
 ];
