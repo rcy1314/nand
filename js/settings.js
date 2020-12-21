@@ -461,7 +461,7 @@ let omitGuide = true;
 
 */
 
-let hash = false;
+let hash = true;
 
 /*
     safeSearch [integer]
