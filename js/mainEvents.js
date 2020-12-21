@@ -65,12 +65,13 @@ window.onload = function () {
         }
         { passive: true }
       });
-      _sidebar.addEventListener('mousemove', (evt) => {
-          onScreen = true;
-        },
-        true
-      );
-      document.addEventListener('mousemove', (evt) => {
+      setTimeout(function() {
+        _sidebar.addEventListener('mousemove', (evt) => {
+            onScreen = true;
+          },
+          true
+        );
+        document.addEventListener('mousemove', (evt) => {
             if (
               _main.clientWidth >= 769 &&
               guideOnScreen == true &&
@@ -92,9 +93,10 @@ window.onload = function () {
                 sideBarDisplay(onScreen);
               }, 1250)
             }
-        },
-        true
-      );
+          },
+          true
+        );
+      }, 750)
     }, 250)
 
   _container.style.display = `block`;
