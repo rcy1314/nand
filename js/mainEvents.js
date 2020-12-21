@@ -392,8 +392,7 @@ document.addEventListener('click', (evt) => {
       evt.target.id == `guide`
     ) {
       if (
-        !isNaN(parseFloat(local)) && isFinite(local) &&
-        !isNaN(parseFloat(post)) && isFinite(post)
+        Array.isArray(pub)
       )
         xmlAppendPublication(id);
       _main.classList.remove(`guide`);
@@ -403,6 +402,7 @@ document.addEventListener('click', (evt) => {
       topMenuBarDisplay(topBar);
       onScreen = guideOnScreen;
       guideOnScreen = true;
+      pub = null;
     }
     if (evt.target.classList.contains(`bottom`)) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
