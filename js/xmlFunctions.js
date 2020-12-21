@@ -922,8 +922,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplay(sticky);
         } else if (
-          isNaN(parseFloat(local)) && !isFinite(local) &&
-          !post
+          Array.isArray(pub)
         ) {
           _guide.style.display = `none`;
           xmlAppendPublication(index);
