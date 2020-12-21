@@ -100,7 +100,7 @@ let progressBackDrop = function (done) {
       if (!width || width == `Infinity`) width = _main.clientWidth / 12;
       if (
         _progress.clientWidth >= _main.clientWidth ||
-        count.length === 1
+        count.length <= 0
       ) {
         clearInterval(complete);
         _progress.style.transition = `0`;
