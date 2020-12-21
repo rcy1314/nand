@@ -742,7 +742,6 @@ var xmlRequestParsing = function (search, string, index) {
   init();
   pub = [];
   let html;
-  let local;
   count = [];
   id = index;
   stop = true;
