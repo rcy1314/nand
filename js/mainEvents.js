@@ -65,13 +65,15 @@ window.onload = function () {
         }
         { passive: true }
       });
-      setTimeout(function() {
+      if (
+        _main.clientWidth >= 769
+      ) {
         _sidebar.addEventListener('mousemove', (evt) => {
             onScreen = true;
           },
           true
         );
-        document.addEventListener('mousemove', (evt) => {
+        _main.addEventListener('mousemove', (evt) => {
             if (
               _main.clientWidth >= 769 &&
               guideOnScreen == true &&
@@ -96,7 +98,7 @@ window.onload = function () {
           },
           true
         );
-      }, 750)
+      }
     }, 250)
 
   _container.style.display = `block`;
