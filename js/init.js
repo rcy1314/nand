@@ -28,7 +28,8 @@ setTimeout(function() {
       if (hash == `long`) post = uri.slice(2, 64);
       else if (hash == `short`) post = parseInt(uri.slice(2), 36);
       else if (hash == `title`)
-        post = uri.slice(3, 85).toLowerCase().match(/\w+/g).join(`-`)
+        post =
+          uri.slice(3, titleTruncate);
       console.log(post)
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))

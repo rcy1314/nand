@@ -60,7 +60,7 @@ var truncate = function (i, n, useWordBoundary) {
   return (
     (useWordBoundary
       ? subString.substr(0, subString.lastIndexOf(` `))
-      : subString) + `...`
+      : subString)
   );
 };
 

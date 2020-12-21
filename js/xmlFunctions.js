@@ -794,14 +794,17 @@ var xmlRequestParsing = function (search, string, index) {
 
           parse = xmlTimeStampParsing(channel, data);
 
+          let uri = trun.toLowerCase().match(/\w+/g).join(`-`)
+
           let share = menu[index].hash;
+
           if (hash == `long`)
             share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
           else if (hash == `short`)
             share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
           else if (hash == `title`)
             share =
-            `${location.href.split(`?`)[0]}?${share}-${title.toLowerCase().match(/\w+/g).join(`-`)}`;
+            `${location.href.split(`?`)[0]}?${share}-${uri}`;
 
           let src = xmlImageSource(data);
 
@@ -845,6 +848,7 @@ var xmlRequestParsing = function (search, string, index) {
               videoSource: src,
               pubIndex: i,
               menuObject: index,
+              uri: uri
             });
             html = youtubeHTMLBuild(inline[0]);
           } else {
@@ -862,6 +866,7 @@ var xmlRequestParsing = function (search, string, index) {
               src: src,
               menuObject: index,
               pubIndex: i,
+              uri: uri
             });
             html = xmlHTMLBuild(inline[0]);
           }
@@ -878,6 +883,7 @@ var xmlRequestParsing = function (search, string, index) {
             element: i,
             post: html,
             src: src,
+            uri: uri
           });
           pub.sort(function (a, b) {
             return b.since - a.since;
@@ -888,7 +894,7 @@ var xmlRequestParsing = function (search, string, index) {
           else if (hash == `short` && parseInt(pub[i].gen, 36) == post) local = i;
           else if (
             hash == `title` &&
-            pub[i].title.toLowerCase().slice(0, 83).match(/\w+/g).join(`-`) == post) local = i;
+            pub[i].uri == post) local = i;
         }
         if (
           !isNaN(parseFloat(local)) &&
