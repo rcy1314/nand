@@ -25,18 +25,13 @@ setTimeout(function() {
     var uri = location.href.split(`?`)[1];
     if (uri.match(/^[a-zA-Z0-9\-]+$/g)) {
       id = uri.slice(0, 2);
-      if (hash == true)
-        post = uri.slice(2, 64);
-      else if (hash == false)
-        post = parseInt(uri.slice(2), 36);
-      console.log(post);
+      if (hash == true) post = uri.slice(2, 64);
+      else if (hash == false) post = parseInt(uri.slice(2), 36);
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
-        if (i !== -1 && isNaN(parseFloat(post)) && !isFinite(post))
+        if (i !== -1)
           xmlRequestParsing(null, null, i);
-        else if (i !== -1 && !isNaN(parseFloat(post)) && isFinite(post))
-          filterInputResponse(menu[i].id.space());
         else if (i === -1)
           filterInputResponse(location.href.split(`?`)[1]);
         _toggle.style.display = `none`;

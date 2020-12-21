@@ -97,7 +97,7 @@ let progressBackDrop = function (done) {
       if (safeSearchIDs.includes(menu[id].id))
         width = _main.clientWidth / (count.length - 1);
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 8);
-      if (!width || width == `Infinity`) width = _main.clientWidth / 15;
+      if (!width || width == `Infinity`) width = _main.clientWidth / 4;
       if (
         _progress.clientWidth >= _main.clientWidth ||
         count.length === 1
@@ -112,7 +112,7 @@ let progressBackDrop = function (done) {
         setTimeout(function () {
           _progress.style.transition = `none`;
           _progress.style.width = `0%`;
-        }, 1250);
+        }, 1600);
       } else {
         _progress.style.opacity = `1`;
         _progress.style.transition = `all 750ms ease-in-out`;

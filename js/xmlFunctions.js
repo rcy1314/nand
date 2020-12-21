@@ -798,7 +798,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (hash == true)
             share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
           else if (hash == false)
-              share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
+            share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
 
           let src = xmlImageSource(data);
 
@@ -880,6 +880,7 @@ var xmlRequestParsing = function (search, string, index) {
             return b.since - a.since;
           });
         }
+        console.log(pub);
         for (i = 0; i < pub.length; i++) {
           if (hash == false && parseInt(pub[i].gen, 36) == post) local = i;
           else if (hash == true && pub[i].enc.slice(2, 64) == post) local = i;
@@ -922,7 +923,7 @@ var xmlRequestParsing = function (search, string, index) {
           guideDisplay(sticky);
         } else if (
           isNaN(parseFloat(local)) && !isFinite(local) &&
-          isNaN(parseFloat(post)) && !isFinite(post)
+          !post
         ) {
           _guide.style.display = `none`;
           xmlAppendPublication(index);
