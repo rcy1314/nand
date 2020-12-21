@@ -583,6 +583,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         })
           .then((response) => {
             response.json().then((jsonResponse) => {
+              console.log(`${pubIndex} ${jsonResponse.score}`)
               if (
                 jsonResponse.score >= safeSearchScore
                 ) {
@@ -606,12 +607,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   }
                   if (!src.match(/4cdn/g)) request.send();
                   else {
+                    xmlImageDimensions(menuObject, pubIndex, newImg)
                     itemFilter.style.transform = `scale(4)`
-                      itemFilter.classList.add(`blur`);
-                      itemImage.setAttribute(`src`, src);
-                      itemPending.remove();
-                      itemImage.style.display = `block`;
-                    }
+                    itemFilter.classList.add(`blur`);
+                    itemImage.setAttribute(`src`, src);
+                    itemPending.remove();
+                    itemImage.style.display = `block`;
+                  }
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
