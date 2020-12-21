@@ -456,12 +456,13 @@ let omitGuide = true;
         init.js xmlRequestParsing xmlTimestampParsing
 
       Result
-        true = long post hashes
-        false = short post hashes
+        `long`
+        `short`
+        `title`
 
 */
 
-let hash = true;
+let hash = `title`;
 
 /*
     safeSearch [integer]

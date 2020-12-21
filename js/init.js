@@ -25,8 +25,11 @@ setTimeout(function() {
     var uri = location.href.split(`?`)[1];
     if (uri.match(/^[a-zA-Z0-9\-]+$/g)) {
       id = uri.slice(0, 2);
-      if (hash == true) post = uri.slice(2, 64);
-      else if (hash == false) post = parseInt(uri.slice(2), 36);
+      if (hash == `long`) post = uri.slice(2, 64);
+      else if (hash == `short`) post = parseInt(uri.slice(2), 36);
+      else if (hash == `title`)
+        post = uri.slice(3, 85).toLowerCase().match(/\w+/g).join(`-`)
+      console.log(post)
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);

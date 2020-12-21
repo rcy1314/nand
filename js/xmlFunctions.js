@@ -795,10 +795,13 @@ var xmlRequestParsing = function (search, string, index) {
           parse = xmlTimeStampParsing(channel, data);
 
           let share = menu[index].hash;
-          if (hash == true)
+          if (hash == `long`)
             share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
-          else if (hash == false)
+          else if (hash == `short`)
             share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
+          else if (hash == `title`)
+            share =
+            `${location.href.split(`?`)[0]}?${share}-${title.toLowerCase().match(/\w+/g).join(`-`)}`;
 
           let src = xmlImageSource(data);
 
@@ -880,10 +883,12 @@ var xmlRequestParsing = function (search, string, index) {
             return b.since - a.since;
           });
         }
-        console.log(pub);
         for (i = 0; i < pub.length; i++) {
-          if (hash == false && parseInt(pub[i].gen, 36) == post) local = i;
-          else if (hash == true && pub[i].enc.slice(2, 64) == post) local = i;
+          if (hash == `long` && pub[i].enc.slice(2, 64) == post) local = i;
+          else if (hash == `short` && parseInt(pub[i].gen, 36) == post) local = i;
+          else if (
+            hash == `title` &&
+            pub[i].title.toLowerCase().slice(0, 83).match(/\w+/g).join(`-`) == post) local = i;
         }
         if (
           !isNaN(parseFloat(local)) &&
