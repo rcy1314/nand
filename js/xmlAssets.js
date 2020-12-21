@@ -205,7 +205,7 @@ var menu=[
 {id:`Reddit/Art`,category:`Social`,description:`The subreddit about art, drawings, paintings, and computer generated design.`,uri:`https://www.reddit.com/r/art/.rss`,image:`Art`,hash:`at`,media:!0},
 {id:`Arch Linux`,category:`Social`,description:`Arch Linux BBS Forum newest topics, questions, and answers.`,uri:`https://bbs.archlinux.org/extern.php?action=active&type=RSS`,image:`ArchLinux`,hash:`aL`,media:!1},
 {id:`Reddit/Arch Linux`,category:`Social`,description:`Arch Linux subreddit for users of the much loved Linux distro, Arch Linux..`,uri:`https://www.reddit.com/r/ArchLinux/.rss`,image:`Arch`,hash:`Al`,media:!1},
-{id:`Reddit/Computer Science`,category:`Social`,description:`AskComputerScience subreddit where questions are asked about Computer Science.`,uri:`https://www.reddit.com/r/askcomputerscience/.rss`,image:`AskComputerScience`,hash:`sC`,media:!1},
+{id:`Reddit/Computer Science`,category:`Social`,description:`Ask Computer Science subreddit where questions are asked about Computer Science.`,uri:`https://www.reddit.com/r/askcomputerscience/.rss`,image:`AskComputerScience`,hash:`sC`,media:!1},
 {id:`Reddit/Bash`,category:`Social`,description:`Bash subreddit dedicated to bash scripting.`,uri:`https://www.reddit.com/r/bash/.rss`,image:`Reddit`,hash:`As`,media:!1},
 {id:`Reddit/Berkeley`,category:`Social`,description:`Berkeley subreddit for the community of UC Berkeley as well as the surrounding City of Berkeley, California.`,uri:`https://www.reddit.com/r/berkeley/.rss`,image:`Berkeley`,hash:`Ly`,media:!1},
 {id:`Reddit/Boston`,category:`Social`,description:`Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.`,uri:`https://www.reddit.com/r/boston/.rss`,image:`BostonMA`,hash:`tA`,media:!0},
