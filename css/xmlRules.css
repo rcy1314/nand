@@ -205,7 +205,7 @@
 }
 
 #main #xml .center .item .header .courtesy .copy .attribute {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   border: var(--border-color);
   position: absolute;
   display: none;
