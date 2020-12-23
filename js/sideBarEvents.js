@@ -56,9 +56,11 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`youtubeMedia`)) {
       youtubeMedia = youtubeMedia != true;
       if (document.body.contains(document.querySelector(`#xml`))) {
-        init();
-        document.querySelector(`#xml`).remove();
-        xmlRequestParsing(null, null, id);
+        if (menu[id].id.match(/Youtube/g)) {
+          init();
+          document.querySelector(`#xml`).remove();
+          xmlRequestParsing(null, null, id);
+        }
       }
       sideBarStar(event.target, youtubeMedia);
     }
