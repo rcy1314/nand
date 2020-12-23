@@ -75,8 +75,6 @@ window.onload = function () {
         );
         _main.addEventListener('mousemove', (evt) => {
             if (
-              _main.clientWidth >= 769 &&
-              guideOnScreen == true &&
               event.pageX <= 200 &&
               onScreen == false
             ) {
