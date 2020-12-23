@@ -16,13 +16,11 @@ var xmlChannelFooter = function () {
 
 var forward = function () {
   if (favorites.includes(menu[id].id))
-  i = parseInt(favorites.findIndex((item) => item === menu[id].id)) - +1;
-  if (i !== -1) {
-    var next = parseInt(favorites.indexOf(favorites[i])) + +1
-    if (favorites[next + 1])
-    next = menu.findIndex((item) => item.id === favorites[next + 1])
-  }
+    i = parseInt(favorites.findIndex((item) => item === menu[id].id)) + 1;
+  if (i !== favorites.length)
+    next = menu.findIndex((item) => item.id === favorites[i])
   else var next = parseInt(id) + +1;
+  console.log(`${next} next`);
   if (id == menu.length - 1) var next = 1;
   return parseInt(next);
 };
@@ -30,13 +28,12 @@ var forward = function () {
 var back = function () {
   if (favorites.includes(menu[id].id))
     i = parseInt(favorites.findIndex((item) => item === menu[id].id));
-  else i = -1;
   if (i !== -1) {
-    var back = parseInt(favorites.indexOf(favorites[i]))
-    if (favorites[back - 1])
-      back = menu.findIndex((item) => item.id === favorites[back - 1])
+    var back = parseInt(i) - +1
+    if (back !== -1)
+      back = menu.findIndex((item) => item.id === favorites[back])
+    else var back = parseInt(id) - +1;
   }
-  else var back = parseInt(id) - +1;
   if (back === 1) var back = menu.length - 1;
   return parseInt(back);
 };
