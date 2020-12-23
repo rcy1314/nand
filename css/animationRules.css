@@ -74,7 +74,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    color: var(--fill-color-primary);
+    color: var(--fill-color);
     background-color: transparent;
     -webkit-transform-style: flat;
     transform-style: flat;
