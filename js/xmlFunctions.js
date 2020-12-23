@@ -15,24 +15,17 @@ var xmlChannelFooter = function () {
 };
 
 var forward = function () {
-  if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
-  else var plus = parseInt(id);
-  if (filter[plus + +1]) var next = filter[plus + +1];
-  else if (id == menu.length - 1) var next = 1 + +1;
-  else var next = parseInt(id) + +1;
-
-  return parseInt(next);
+  let next = parseInt(id) + +1
+  if (menu[next])
+    return parseInt(next);
+  else return 1
 };
 
 var back = function () {
-  if (filter.length > 1)
-    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
-  if (filter[plus - +1]) var back = filter[plus - +1];
-  else if (id == 0) var back = menu.length - 1;
-  else var back = parseInt(id) - +1;
-
-  return parseInt(back);
+  let back = parseInt(id) - +1
+  if (menu[back])
+    return parseInt(back);
+  else return menu.length - 1
 };
 
 var contentStatusDisplay = function (
