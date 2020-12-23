@@ -13,7 +13,6 @@ var init = function () {
       .querySelectorAll(`#dots .fill`)
       .forEach((a) => (a.style.visibility = `visible`));
   } else if (loading == `percent`) {
-    count.push(`null`);
     progressBackDrop(false);
   }
 };
