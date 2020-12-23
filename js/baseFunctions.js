@@ -138,6 +138,8 @@ let progressBackDrop = function (done) {
     ) {
       document.querySelector(`.center`).classList.add(`scroll-into-view`)
       if (showSplash == true) _check.style.display = `none`;
+    } else if (scrollIntoView == false) {
+      document.querySelector(`#xml`).style.top = `60px`;      
     }
     if (fadeIntoView == true) {
       (function () {
