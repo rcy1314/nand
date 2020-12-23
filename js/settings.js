@@ -501,7 +501,7 @@ let guideSafeSearch = false;
 
 */
 
-let safeSearchScore = `0.288053035736084`;
+let safeSearchScore = `0.24414215981960297`;
 
 /*
     safeSearchIDs [array]
