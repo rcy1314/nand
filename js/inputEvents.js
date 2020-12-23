@@ -129,6 +129,7 @@ document.addEventListener('submit', (evt) => {
           option.classList.add(`option`);
           parse.parentNode.insertBefore(option, parse);
         }
+        document.querySelector(`.excludeInput`).value = ``;
         document.querySelector(`.exclude`).style.height = `${
           exclude.length * 35 + 70
         }px`;
