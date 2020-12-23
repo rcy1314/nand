@@ -15,26 +15,23 @@ var xmlChannelFooter = function () {
 };
 
 var forward = function () {
-  if (favorites.includes(menu[id].id))
-    i = parseInt(favorites.findIndex((item) => item === menu[id].id)) + 1;
-  if (i !== favorites.length)
-    next = menu.findIndex((item) => item.id === favorites[i])
+  if (filter.length > 1)
+    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
+  else var plus = parseInt(id);
+  if (filter[plus + +1]) var next = filter[plus + +1];
+  else if (id == menu.length - 1) var next = 1 + +1;
   else var next = parseInt(id) + +1;
-  console.log(`${next} next`);
-  if (id == menu.length - 1) var next = 1;
+
   return parseInt(next);
 };
 
 var back = function () {
-  if (favorites.includes(menu[id].id))
-    i = parseInt(favorites.findIndex((item) => item === menu[id].id));
-  if (i !== -1) {
-    var back = parseInt(i) - +1
-    if (back !== -1)
-      back = menu.findIndex((item) => item.id === favorites[back])
-    else var back = parseInt(id) - +1;
-  }
-  if (back === 1) var back = menu.length - 1;
+  if (filter.length > 1)
+    var plus = filter.indexOf(menu.indexOf(menu[parseInt(id)]));
+  if (filter[plus - +1]) var back = filter[plus - +1];
+  else if (id == 0) var back = menu.length - 1;
+  else var back = parseInt(id) - +1;
+
   return parseInt(back);
 };
 
@@ -796,7 +793,10 @@ var xmlRequestParsing = function (search, string, index) {
 
           parse = xmlTimeStampParsing(channel, data);
 
-          let uri = trun.toLowerCase().match(/\w+/g).join(`-`)
+          if (trun.match(/\w+/g))
+            var uri = trun.toLowerCase().match(/\w+/g).join(`-`)
+
+          else var uri = trun.toLowerCase()
 
           let share = menu[index].hash;
 
