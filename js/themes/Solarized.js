@@ -25,7 +25,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--border-color`,
-    `.3px solid #eeeeee`
+    `.3px solid transparent`
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
