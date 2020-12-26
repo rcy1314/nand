@@ -55,7 +55,6 @@
   }
 
   #main #visit #page #quick #feed {
-    background-color: transparent !important;
     justify-content: center;
     display: inline-flex;
     position: absolute;
