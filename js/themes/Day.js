@@ -14,7 +14,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(247, 247, 247, .4)`
+    `rgba(247, 247, 247, 1)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
