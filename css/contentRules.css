@@ -125,7 +125,7 @@ html body,
 }
 
 #main #visit {
-  background-color: var(--borderless-color);
+  background-color: transparent !important;
   justify-content: center;
   align-items: center;
   display: none;
