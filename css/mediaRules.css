@@ -32,7 +32,7 @@
   #main #xml .center .item:hover,
   #main #group .air .populate:hover,
   #main #group .result .populate:hover {
-    background-color: none !important;
+    background-color: transparent !important;
   }
 
   #main
