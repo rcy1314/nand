@@ -76,6 +76,7 @@ html body,
   text-align: center;
   overflow-y: scroll;
   display: flex;
+  z-index: 1;
 }
 
 #main #top {
