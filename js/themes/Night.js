@@ -18,7 +18,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(26,26,26, .4)`
+    `rgba(26, 26, 26, .4)`
   );
   document.documentElement.style.setProperty(
     `--border-color`,
@@ -26,7 +26,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(7,7,7,.6)`
+    `rgba(7, 7, 7, .6)`
   );
   document
     .querySelector(`#favicon`)

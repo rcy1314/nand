@@ -9,7 +9,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--fill-color`,
-    `rgb(255, 215, 103)`
+    `rgba(255, 215, 103, 1)`
   );
   document.documentElement.style.setProperty(
     `--color-primary`,
