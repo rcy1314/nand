@@ -105,6 +105,7 @@ html body,
   cursor: pointer;
   display: none;
   z-index: 2;
+  left: 5px;
   top: 5px;
 }
 
@@ -160,7 +161,6 @@ html body,
   font-size: 12px;
   margin: 0 auto;
   z-index: 0;
-  left: 7px;
   top: 25px;
 }
 

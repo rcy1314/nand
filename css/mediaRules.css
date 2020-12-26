@@ -47,7 +47,7 @@
   }
 
   #main #visit #page #quick {
-    background-color: transparent;
+    background-color: transparent !important;
     position: absolute;
     height: 400px;
     width: 100%;
@@ -55,7 +55,7 @@
   }
 
   #main #visit #page #quick #feed {
-    background-color: transparent;
+    background-color: transparent !important;
     justify-content: center;
     display: inline-flex;
     position: absolute;
@@ -102,6 +102,10 @@
     width: 100vw !important;
   }
 
+  #main #xml {
+    background-color: transparent !important;
+  }
+
   #main #xml .center .item .image,
   #main #xml .center .item .pending {
     width: 100% !important;
@@ -114,7 +118,7 @@
     position: fixed;
     display: flex;
     height: 50px;
-    right: 15px;
+    right: 12px;
   }
 
   #main #group {
