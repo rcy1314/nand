@@ -137,9 +137,10 @@
   }
 
   #main #visit #page #front #first {
+    background-color: transparent !important;
     height: 368px;
     width: 304px;
-    top: 115px;
+    top: 28px;
   }
 
   #main #visit #page #front #first .listing,
