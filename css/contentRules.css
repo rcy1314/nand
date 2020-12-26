@@ -68,8 +68,8 @@ html body,
 }
 
 #main {
-  background-color: var(--borderless-color);
   background-position: center center;
+  background-color: transparent;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
@@ -105,7 +105,7 @@ html body,
   cursor: pointer;
   display: none;
   z-index: 2;
-  left: 5px;
+  left: 8px;
   top: 5px;
 }
 

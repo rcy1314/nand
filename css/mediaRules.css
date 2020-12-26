@@ -118,7 +118,6 @@
     position: fixed;
     display: flex;
     height: 50px;
-    right: 12px;
   }
 
   #main #group {
