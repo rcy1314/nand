@@ -1,7 +1,7 @@
 var Day = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgb(212,212,212,.2)`
+    `8px 8px 16px rgba(212,212,212,.2)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
