@@ -91,6 +91,7 @@
 
   #main #page,
   #main #visit {
+    background-color: transparent !important;
     height: 100%;
     width: 100%;
   }
@@ -150,6 +151,7 @@
   }
 
   #main #visit #page #front .focus {
+    border-radius: 8px;
     margin: 0 auto;
     width: 300px;
     padding: 0;
