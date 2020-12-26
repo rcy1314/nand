@@ -29,9 +29,9 @@
     left: 15px;
   }
 
-  #main #xml .center .item:hover,
-  #main #group .air .populate:hover,
-  #main #group .result .populate:hover {
+  #main #xml .center .item,
+  #main #group .air .populate,
+  #main #group .result .populate {
     background-color: transparent !important;
   }
 
