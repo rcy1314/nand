@@ -12,7 +12,10 @@ var Day = function () {
     `--color-primary`,
     `rgb(255,255,255,.1)`
   );
-  document.documentElement.style.setProperty(`--color-secondary`, `#f7f7f7`);
+  document.documentElement.style.setProperty(
+    `--color-secondary`,
+    `rgba(247, 247, 247, .4)`
+  );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
     `rgb(212,212,212,.2)`
