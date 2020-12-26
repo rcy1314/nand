@@ -358,7 +358,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.bg`).style.height = `31px`;
       else if (expandBackground == true)
         document.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 34 + 30}px`;
+          `${(background.length + 1) * 34 + 40}px`;
     }
     if (event.target.classList.contains(`choose`)) {
       expandSettings = expandSettings != true
