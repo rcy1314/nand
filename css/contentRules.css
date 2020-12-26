@@ -96,15 +96,15 @@ html body,
 }
 
 #main #option {
-  color: var(--fill-color);
   justify-content: space-between;
   background-color: transparent;
+  color: var(--fill-color);
   position: absolute;
   user-select: none;
   cursor: pointer;
   display: none;
   z-index: 2;
-  left: 8px;
+  right: 0;
   top: 5px;
 }
 
