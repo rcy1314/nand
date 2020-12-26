@@ -107,9 +107,9 @@ input[type=submit] {
   white-space: nowrap;
   padding-right: 75px;
   position: relative;
-  height: 40.25px;
   margin: 0 auto;
   width: 640px;
+  height: 40px;
 }
 
 #main #visit #page #front .focus:hover {
