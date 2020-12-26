@@ -43,7 +43,7 @@
   }
 
   #main #visit #page #just {
-    top: 15px !important;
+    top: -25px !important;
   }
 
   #main #visit #page #quick {
@@ -51,7 +51,7 @@
     position: absolute;
     height: 400px;
     width: 100%;
-    top: 60px;
+    top: 20px;
   }
 
   #main #visit #page #quick #feed {
@@ -70,7 +70,7 @@
   #main #visit #page #front #label {
     position: absolute;
     margin: auto;
-    top: 85px;
+    top: 40px;
     right: 0;
     left: 0;
   }
@@ -152,7 +152,7 @@
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: 50px;
+    top: -15px;
   }
 
   #main #visit #page #front .focus input[type=text] {

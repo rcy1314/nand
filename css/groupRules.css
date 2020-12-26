@@ -59,7 +59,7 @@
 
 #main #group .air .populate:hover,
 #main #group .result .populate:hover {
-  background-color: var(--hover-background-color) !important;
+  background-color: var(--hover-background-color);
   border: var(--borderless-color) !important;
 }
 
