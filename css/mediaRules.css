@@ -43,7 +43,7 @@
   }
 
   #main #visit #page #just {
-    top: -25px !important;
+    top: 35px !important;
   }
 
   #main #visit #page #quick {
@@ -155,7 +155,7 @@
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: -15px;
+    top: -50px;
   }
 
   #main #visit #page #front .focus input[type=text] {
