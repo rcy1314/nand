@@ -17,7 +17,7 @@ let set = `Day`;
 let backgroundImage = [
   {
     path: "",
-    element: "container",
+    element: "main",
     position: "center",
     size: "cover",
   },

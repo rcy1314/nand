@@ -23,7 +23,7 @@ var Day = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgb(255,255,255,.25)`
+    `rgb(255,255,255,.4)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   if (backgroundImage[0].path != `images/b453ae624e3d5e58b9890a998ec441b8.webp`)
