@@ -30,10 +30,10 @@ let backgroundImage = [
 //  }
 
 const themes = [
+  { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
-  { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
 ];
 
 const favorites = [
