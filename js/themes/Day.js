@@ -10,7 +10,7 @@ var Day = function () {
   document.documentElement.style.setProperty(`--fill-color`, `#555555`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgb(255,255,255,.8)`
+    `rgb(255,255,255,.1)`
   );
   document.documentElement.style.setProperty(`--color-secondary`, `#f7f7f7`);
   document.documentElement.style.setProperty(
