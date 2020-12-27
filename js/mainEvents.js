@@ -387,6 +387,9 @@ document.addEventListener('click', (evt) => {
       _visit.style.display = `none`;
     }
     if (
+      event.target.classList.contains(`checkmark__circle`) ||
+      event.target.classList.contains(`checkmark__check`) ||
+      event.target.classList.contains(`checkmark`) ||
       evt.target.id == `guide`
     ) {
       if (
