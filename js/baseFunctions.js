@@ -99,8 +99,7 @@ let progressBackDrop = function (done) {
       else if (count.length) width = _main.clientWidth / ((count.length - 1) / 8);
       if (!width || width == `Infinity`) width = _main.clientWidth / 12;
       if (
-        _progress.clientWidth >= _main.clientWidth ||
-        count.length <= 1
+        _progress.clientWidth >= _main.clientWidth
       ) {
         clearInterval(complete);
         _progress.style.transition = `0`;
@@ -139,7 +138,7 @@ let progressBackDrop = function (done) {
       document.querySelector(`.center`).classList.add(`scroll-into-view`)
       if (showSplash == true) _check.style.display = `none`;
     } else if (scrollIntoView == false) {
-      document.querySelector(`#xml`).style.top = `60px`;      
+      document.querySelector(`#xml`).style.top = `60px`;
     }
     if (fadeIntoView == true) {
       (function () {

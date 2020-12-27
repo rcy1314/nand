@@ -471,6 +471,9 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
   let k = 5420;
   let maximum = 480;
+  let itemContainer = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+  );
   let itemImage = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
@@ -544,6 +547,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src == `null` ||
     src.match(/.webm|.mp4/g)
   ) {
+    itemContainer.style.height = `0px`;
     itemPending.remove();
     itemImage.remove();
     count.shift()
