@@ -142,7 +142,7 @@
 }
 
 #container #guide .sticky .wrap .header .courtesy .copy .attribute {
-  background: var(--color-primary);
+  background-color: var(--color-secondary);
   border: var(--hover-border-color);
   position: absolute;
   display: none;

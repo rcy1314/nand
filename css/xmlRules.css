@@ -95,11 +95,12 @@
   background-color: transparent;
 }
 
+#main #xml .center .item .image,
 #main #xml .center .item .pending {
   background-color: var(--hover-background-color);
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   display: flex;
   height: 270px;
   margin: 12px;
