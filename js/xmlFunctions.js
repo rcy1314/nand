@@ -497,14 +497,15 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         )
     )
   ) {
+    itemImage.closest(`.classic`).style.alignItems = `center`;
+    itemImage.closest(`.classic`).style.display = `flex`;
+    itemContainer.style.height = `fit-content`;
+    copyPicture.style.display = `none`;
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
-    itemImage.closest(`.classic`).style.display = `flex`;
-    itemImage.closest(`.classic`).style.alignItems = `center`;
     copyPost.style.display = `none`;
-    copyPicture.style.display = `none`;
     attribute.style.height = `37px`;
   } else if (
     document.body.contains(
