@@ -14,7 +14,7 @@ var Alpenglow = function () {
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(106, 66, 194, .9)`
+    `rgba(106, 66, 194, 1)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,

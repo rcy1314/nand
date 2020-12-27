@@ -107,6 +107,8 @@
     background-color: transparent !important;
   }
 
+
+  #main #xml .center .item .img,
   #main #xml .center .item .image,
   #main #xml .center .item .pending {
     width: 100% !important;
@@ -174,6 +176,7 @@
   #guide .sticky .image {
     max-width: 100vw !important;
     width: 100% !important;
+    margin: 0 !important;
   }
 
   #guide .sticky .wrap {
