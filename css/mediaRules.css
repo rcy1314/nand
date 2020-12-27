@@ -167,6 +167,16 @@
     top: 0px;
   }
 
+  #guide .sticky {
+    border-top: none !important;
+  }
+
+  #guide .sticky .header {
+    border-right: var(--border-color) !important;
+    border-left: var(--border-color) !important;
+    border-top: var(--border-color) !important;
+  }
+
   #guide .sticky .src {
     width: 100% !important;
     display: block;
