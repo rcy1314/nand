@@ -108,11 +108,22 @@
   }
 
 
+  #guide .sticky .img,
   #main #xml .center .item .img,
   #main #xml .center .item .image,
   #main #xml .center .item .pending {
     width: 100% !important;
     margin: 0 !important;
+  }
+
+  #main #xml .center .item {
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #main #xml .center #bottom {
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
   }
 
   #main #option {
