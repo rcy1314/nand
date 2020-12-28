@@ -96,6 +96,10 @@
   background-color: transparent;
 }
 
+#main #xml .center .item .pending {
+  width: 100%;
+}
+
 #main #xml .center .item .image,
 #main #xml .center .item .pending {
   background-color: var(--hover-background-color);
