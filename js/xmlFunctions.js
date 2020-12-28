@@ -539,7 +539,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src != `null` &&
     imageDuplicate.includes(src)
   ) {
-    count.shift()
     document
       .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
       .forEach((a) => a.remove());
@@ -551,7 +550,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     itemContainer.style.height = `0px`;
     itemPending.remove();
     itemImage.remove();
-    count.shift()
   }
   imageDuplicate.push(src);
   if (
