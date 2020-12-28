@@ -514,6 +514,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         )
     )
   ) {
+    itemContainer.style.height = `auto`;
     itemFilter.classList.add(`default`);
     itemImage.classList.add(`default`);
   }
