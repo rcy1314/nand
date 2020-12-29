@@ -1,5 +1,9 @@
 @media screen and (max-width: 426px) {
 
+  #main #xml {
+    right: 0 !important;
+  }
+
   .expand {
     margin-left: 0 !important;
   }
