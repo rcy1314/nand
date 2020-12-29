@@ -31,7 +31,7 @@ let backgroundImage = [
 
 let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
-  { obFn: `Dark`, class: `Dark`, icon: `fa-code` },
+  { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
