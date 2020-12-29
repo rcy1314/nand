@@ -4,6 +4,7 @@
   min-height: 100%;
   display: block;
   width: 100%;
+  right: 95px;
   z-index: 1;
   top: 0;
 }
@@ -96,17 +97,23 @@
 }
 
 #main #xml .center .item .pending {
+  position: absolute;
+  width: 100%;
+}
+
+#main #xml .center .item .image,
+#main #xml .center .item .pending {
   background-color: var(--hover-background-color);
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   display: flex;
   height: 270px;
   margin: 12px;
 }
 
 #main #xml .center .item {
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   box-shadow: var(--box-shadow);
   border: var(--border-color);
   margin-bottom: 70px;
@@ -205,7 +212,7 @@
 }
 
 #main #xml .center .item .header .courtesy .copy .attribute {
-  background: var(--color-secondary);
+  background-color: var(--color-secondary);
   border: var(--border-color);
   position: absolute;
   display: none;
@@ -293,7 +300,7 @@
   height: fit-content;
   vertical-align: top;
   text-align: center;
-  position: sticky;
+  position: fixed;
   font-size: 10px;
   width: 300px;
   top: 60px;
