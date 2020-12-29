@@ -113,7 +113,7 @@
 }
 
 #main #xml .center .item {
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   box-shadow: var(--box-shadow);
   border: var(--border-color);
   margin-bottom: 70px;

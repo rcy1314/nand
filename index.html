@@ -159,7 +159,8 @@
             let startup = setInterval(function () {
               setTimeout(function () {
                 if (typeof eval(set) === `function`) {
-                  window[set]();
+                  if (window.clientWidth >= 769) window[set]();
+                  else window[`Alpenglow`]();
                   clearInterval(startup);
                 }
               }, 300);
