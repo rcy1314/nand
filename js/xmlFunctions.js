@@ -501,20 +501,32 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     itemImage.closest(`.classic`).style.display = `flex`;
     itemContainer.style.height = `fit-content`;
     copyPicture.style.display = `none`;
+    if (
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
+        )
+      )
+    )
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
     copyPost.style.display = `none`;
     attribute.style.height = `37px`;
-  } else if (
-    document.body.contains(
+  } else {
+    if (
+        cropImages == false ||
+        category == `Youtube`
+    )
+    itemContainer.style.height = `auto`;
+    if (
+      document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
+      )
     )
-  ) {
-    itemContainer.style.height = `auto`;
     itemFilter.classList.add(`default`);
     itemImage.classList.add(`default`);
   }

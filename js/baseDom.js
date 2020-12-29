@@ -660,7 +660,7 @@ let xmlHTMLBuild = function (htmlArray) {
   pending.append(loader);
   image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));
-  image.append(filterBlur);
+  if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
   image.append(object);
   classic.append(image);
   wrap.append(publish);

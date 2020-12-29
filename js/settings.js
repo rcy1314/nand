@@ -325,6 +325,19 @@ let quickFeedsTranslations = true;
 let scrollIntoView = true;
 
 /*
+    centerImages [boolean/integer]
+
+      Applications
+        xmlImageDimensions, sidebar
+
+      Result
+        crop images to center
+
+*/
+
+let cropImages = false;
+
+/*
     fadeIntoView [boolean/integer]
 
       Applications
@@ -647,6 +660,7 @@ const settings = [
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
+  { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },

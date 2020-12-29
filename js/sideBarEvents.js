@@ -156,6 +156,19 @@ document.addEventListener('click', (evt) => {
 
       xhr.send();
     }
+    if (event.target.classList.contains(`cropImages`)) {
+      cropImages = cropImages != true;
+      if (cropImages == true) {
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.closest(`.image`).style.height = `270px`);
+      } else if (cropImages == false) {
+        _main
+          .querySelectorAll(`.image`)
+          .forEach((a) => a.style.height = `auto`);
+      }
+      sideBarStar(event.target, cropImages);
+    }
     if (event.target.classList.contains(`sideBarCenter`)) {
       sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {
