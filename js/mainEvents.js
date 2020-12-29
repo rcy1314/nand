@@ -73,6 +73,14 @@ window.onload = function () {
           },
           true
         );
+        _guide.addEventListener('mousemove', (evt) => {
+            onScreen = false;
+            setTimeout(function() {
+              sideBarDisplay(onScreen);
+            }, 1250)
+          },
+          true
+        );
         _main.addEventListener('mousemove', (evt) => {
             if (
               event.pageX <= 200 &&
