@@ -32,7 +32,6 @@ let backgroundImage = [
 let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
-  { obFn: `Dark`, class: `Dark`, icon: `fa-code` },
 ];
 
 const favorites = [
