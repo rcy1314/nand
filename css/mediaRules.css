@@ -33,6 +33,12 @@
     left: 15px;
   }
 
+  #main #xml .center .item,
+  #main #group .air .populate,
+  #main #group .result .populate {
+    background-color: transparent !important;
+  }
+
   #main
   #main #xml,
   #main #xml .center,
@@ -41,19 +47,18 @@
   }
 
   #main #visit #page #just {
-    top: 15px !important;
+    top: 35px !important;
   }
 
   #main #visit #page #quick {
-    background-color: transparent;
+    background-color: transparent !important;
     position: absolute;
     height: 400px;
     width: 100%;
-    top: 60px;
+    top: 62px;
   }
 
   #main #visit #page #quick #feed {
-    background-color: transparent;
     justify-content: center;
     display: inline-flex;
     position: absolute;
@@ -68,7 +73,7 @@
   #main #visit #page #front #label {
     position: absolute;
     margin: auto;
-    top: 85px;
+    top: 40px;
     right: 0;
     left: 0;
   }
@@ -77,6 +82,7 @@
   .expand .des,
   .expand .hash,
   .block .media,
+  .detail .buffer,
   .btn .flip-front,
   #main #xml .content,
   #main #top #arm #option,
@@ -89,6 +95,7 @@
 
   #main #page,
   #main #visit {
+    background-color: transparent !important;
     height: 100%;
     width: 100%;
   }
@@ -100,10 +107,27 @@
     width: 100vw !important;
   }
 
+  #main #xml {
+    background-color: transparent !important;
+  }
+
+
+  #guide .sticky .img,
+  #main #xml .center .item .img,
   #main #xml .center .item .image,
   #main #xml .center .item .pending {
     width: 100% !important;
     margin: 0 !important;
+  }
+
+  #main #xml .center .item {
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #main #xml .center #bottom {
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
   }
 
   #main #option {
@@ -112,7 +136,7 @@
     position: fixed;
     display: flex;
     height: 50px;
-    right: 10px;
+    right: 12px;
   }
 
   #main #group {
@@ -131,9 +155,10 @@
   }
 
   #main #visit #page #front #first {
+    background-color: transparent !important;
     height: 368px;
     width: 304px;
-    top: 115px;
+    top: 2px;
   }
 
   #main #visit #page #front #first .listing,
@@ -143,16 +168,28 @@
   }
 
   #main #visit #page #front .focus {
+    border-radius: 8px;
     margin: 0 auto;
     width: 300px;
     padding: 0;
-    top: 50px;
+    top: -40px;
   }
 
   #main #visit #page #front .focus input[type=text] {
+    border-radius: 8px;
     padding-left: 40px;
     width: 300px;
     top: 0px;
+  }
+
+  #guide .sticky {
+    border-top: none !important;
+  }
+
+  #guide .sticky .header {
+    border-right: var(--border-color) !important;
+    border-left: var(--border-color) !important;
+    border-top: var(--border-color) !important;
   }
 
   #guide .sticky .src {
@@ -164,6 +201,7 @@
   #guide .sticky .image {
     max-width: 100vw !important;
     width: 100% !important;
+    margin: 0 !important;
   }
 
   #guide .sticky .wrap {
@@ -311,10 +349,6 @@
 
   #main #top #arm #option {
     right: -30px;
-  }
-
-  #main #xml {
-    padding-left: 120px;
   }
 
   #main #xml .center {
