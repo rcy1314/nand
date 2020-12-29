@@ -149,21 +149,22 @@
   }
 
   #main #top #arm #search #match {
-    height: 368px;
-    width: 304px;
+    height: 264px;
+    width: 300px;
     top: 45px;
   }
 
   #main #visit #page #front #first {
     background-color: transparent !important;
-    height: 368px;
-    width: 304px;
+    height: 264px;
+    width: 300px;
     top: 2px;
   }
 
   #main #visit #page #front #first .listing,
   #main #top #arm #search #match .listing {
-    width: 304px !important;
+    height: 264px !important;
+    width: 300px !important;
     top: 0 !important;
   }
 
