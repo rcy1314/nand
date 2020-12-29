@@ -148,7 +148,7 @@
       let place = `js/themes/`;
       let type = `.js`;
       for (i = 0; i <= themes.length - 1; i++) {
-        theme = themes[i].obFn;
+        let theme = themes[i].obFn;
         let path = place + theme + type;
         let script = document.createElement(`script`);
         script.type = `text/javascript`;
