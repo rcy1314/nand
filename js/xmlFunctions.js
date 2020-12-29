@@ -1,20 +1,10 @@
 var guideDisplay = function (pubArray) {
-  _guide.innerHTML = `
-  <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-    <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-    <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-  `;
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
   _guide.style.zIndex = `11`;
 };
 
 var guideDisplayYoutube = function (pubArray) {
-  _guide.innerHTML = `
-  <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
-    <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
-    <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
-  `;
   _guide.append(guideBuildYoutube(pubArray[0]));
   _guide.style.zIndex = `11`;
 };
@@ -471,9 +461,6 @@ var xmlTimeStampParsing = function (channel, dateTime) {
 var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
   let k = 5420;
   let maximum = 480;
-  let itemContainer = document.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-  );
   let itemImage = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
@@ -497,36 +484,22 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         )
     )
   ) {
-    itemImage.closest(`.classic`).style.alignItems = `center`;
-    itemImage.closest(`.classic`).style.display = `flex`;
-    itemContainer.style.height = `fit-content`;
-    copyPicture.style.display = `none`;
-    if (
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-        )
-      )
-    )
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
+    itemImage.closest(`.classic`).style.display = `flex`;
+    itemImage.closest(`.classic`).style.alignItems = `center`;
     copyPost.style.display = `none`;
+    copyPicture.style.display = `none`;
     attribute.style.height = `37px`;
-  } else {
-    if (
-        cropImages == false ||
-        category == `Youtube`
-    )
-    itemContainer.style.height = `auto`;
-    if (
-      document.body.contains(
+  } else if (
+    document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
-      )
     )
+  ) {
     itemFilter.classList.add(`default`);
     itemImage.classList.add(`default`);
   }
@@ -552,6 +525,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src != `null` &&
     imageDuplicate.includes(src)
   ) {
+    count.shift()
     document
       .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
       .forEach((a) => a.remove());
@@ -560,9 +534,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src == `null` ||
     src.match(/.webm|.mp4/g)
   ) {
-    itemContainer.style.height = `0px`;
     itemPending.remove();
     itemImage.remove();
+    count.shift()
   }
   imageDuplicate.push(src);
   if (
@@ -573,7 +547,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     var newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
-      itemContainer.style.height = `0px`;
       itemPending.remove();
       itemImage.remove();
     };

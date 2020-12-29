@@ -185,7 +185,7 @@
 
 #guide .sticky .fa-heart,
 #main #xml .center .item .image .fa-heart {
-  color: #ffffff !important;
+  color: var(--color-secondary);
   position: absolute;
   font-size: 50px;
   display: none;

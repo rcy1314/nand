@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Light`;
+let set = `Day`;
 
 /*
     backgroundImage [array]
@@ -29,8 +29,10 @@ let backgroundImage = [
 //    icon: https://fontawesome.com/cheatsheet
 //  }
 
-let themes = [
-  { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
+const themes = [
+  { obFn: `Day`, class: `Day`, icon: `fa-terminal` },
+  { obFn: `Night`, class: `Night`, icon: `fa-code` },
+  { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
   { obFn: `Alpenglow`, class: `Alpenglow`, icon: `fa-paint-brush` },
 ];
 
@@ -322,19 +324,6 @@ let quickFeedsTranslations = true;
 */
 
 let scrollIntoView = true;
-
-/*
-    centerImages [boolean/integer]
-
-      Applications
-        xmlImageDimensions, sidebar
-
-      Result
-        crop images to center
-
-*/
-
-let cropImages = false;
 
 /*
     fadeIntoView [boolean/integer]
@@ -659,7 +648,6 @@ const settings = [
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
-  { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Show Option`, class: `showOption` },

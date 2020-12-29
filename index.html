@@ -4,10 +4,10 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <script type="text/javascript" src="js/settings.js"></script>
-  </head>
+    <script type='text/javascript' src='js/settings.js'></script>
+</head>
 <body>
-  <div id='container' style='display:none;'>
+  <div id='container' style='display:none'>
       <div id='sidebar' class='mainTransition invertScrollbar'>
           <div id='content'></div>
       </div>
@@ -148,7 +148,7 @@
       let place = `js/themes/`;
       let type = `.js`;
       for (i = 0; i <= themes.length - 1; i++) {
-        let theme = themes[i].obFn;
+        theme = themes[i].obFn;
         let path = place + theme + type;
         let script = document.createElement(`script`);
         script.type = `text/javascript`;
@@ -159,12 +159,11 @@
             let startup = setInterval(function () {
               setTimeout(function () {
                 if (typeof eval(set) === `function`) {
-                  if (window.clientWidth >= 769) window[set]();
-                  else window[`Alpenglow`]();
+                  window[set]();
                   clearInterval(startup);
                 }
-              }, 300);
-            }, 500);
+              }, 250);
+            }, 350);
           })();
       }
       for (i = 0; i <= themes.length - 1; i++) {
@@ -181,6 +180,7 @@
           );
         })(i);
       }
+
       let source = document.createElement("link");
       source.type = "text/css";
       source.rel = "stylesheet";

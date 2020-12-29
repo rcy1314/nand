@@ -10,11 +10,11 @@ var Alpenglow = function () {
   document.documentElement.style.setProperty(`--fill-color`, `#ffffff`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgba(255, 255, 255, .4)`
+    `rgba(255,255,255, .1)`
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(106, 66, 194, 1)`
+    `rgba(106, 66, 194, .9)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,

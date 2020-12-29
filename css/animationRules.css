@@ -122,12 +122,6 @@
   transition: .5s;
 }
 
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes pulse {
     0% {
       opacity: 0;
@@ -135,12 +129,6 @@
     100% {
       opacity: 1;
     }
-}
-
-@keyframes fill {
-  100% {
-    box-shadow: inset 0px 0px 0px 30px #7ac142;
-  }
 }
 
 @keyframes scroll {

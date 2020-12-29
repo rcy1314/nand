@@ -40,6 +40,7 @@ html body,
 html,
 html body,
 #container {
+  background: var(--color-secondary);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -67,6 +68,7 @@ html body,
 }
 
 #main {
+  background-color: var(--borderless-color);
   background-position: center center;
   background-repeat: no-repeat;
   justify-content: center;
@@ -75,7 +77,6 @@ html body,
   text-align: center;
   overflow-y: scroll;
   display: flex;
-  z-index: 1;
 }
 
 #main #top {
@@ -83,7 +84,7 @@ html body,
   width: 70% !important;
   position: fixed;
   display: none;
-  height: 60px;
+  height: 57px;
   z-index: 7;
   top: 0;
 }
@@ -96,15 +97,14 @@ html body,
 }
 
 #main #option {
+  color: var(--fill-color);
   justify-content: space-between;
   background-color: transparent;
-  color: var(--fill-color);
   position: absolute;
   user-select: none;
   cursor: pointer;
   display: none;
   z-index: 2;
-  right: 0;
   top: 5px;
 }
 
@@ -125,7 +125,6 @@ html body,
 }
 
 #main #visit {
-  background-color: var(--borderless-color);
   justify-content: center;
   align-items: center;
   display: none;
@@ -161,6 +160,7 @@ html body,
   font-size: 12px;
   margin: 0 auto;
   z-index: 0;
+  left: 4px;
   top: 25px;
 }
 

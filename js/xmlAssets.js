@@ -321,6 +321,7 @@ var menu=[
 {id:`Int Business Times Sports`,category:`Sports`,description:`International Business Times Sports emphasis on soccer, basketball, football, golf, baseball, tennis and hockey.`,uri:`https://www.ibtimes.sg/rss/sports`,image:`IBT`,hash:`sS`,media:!1},
 {id:`MLB`,category:`Sports`,description:`MLB is the official site of Major League Baseball.`,uri:`https://www.mlb.com/feeds/news/rss.xml`,image:`MLB`,hash:`Ml`,media:!1},
 {id:`MMAJunkie`,category:`Sports`,description:`MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.`,uri:`https://mmajunkie.com/news/feed`,image:`MMAJunkie`,hash:`jM`,media:!0},
+{id:`MMAtion`,category:`Sports`,description:`MMAtion Global events, results, rankings and more.`,uri:`http://en.mmation.com/feed`,image:`MMAtion`,hash:`tA`,media:!1},
 {id:`MMA News`,category:`Sports`,description:`MMA News offers coverage of the MMA world with original content.`,uri:`https://www.mmanews.com/feed`,image:`MMANews`,hash:`sM`,media:!1},
 {id:`The Score MMA`,category:`Sports`,description:`The Score MMA headlines, coverage, and analysis.`,uri:`https://feeds.thescore.com/mma.rss`,image:`TheScore`,hash:`Am`,media:!0},
 {id:`Sportzet`,category:`Sports`,description:`Sportzet international Sports and World Headlines.`,uri:`https://www.sportzet.com/feed`,image:`Sportzet`,hash:`zP`,media:!1},
