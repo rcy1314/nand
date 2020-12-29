@@ -32,8 +32,8 @@ var Solarized = function () {
     `rgba(63, 92, 136, .4)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `images\a54430a6cf0248fa8d1d5961e02a71e4.jpg`)
-    backgroundImage[0].path = `images\a54430a6cf0248fa8d1d5961e02a71e4.jpg`
+  if (backgroundImage[0].path != `images/a54430a6cf0248fa8d1d5961e02a71e4.jpg`)
+    backgroundImage[0].path = `images/a54430a6cf0248fa8d1d5961e02a71e4.jpg`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
