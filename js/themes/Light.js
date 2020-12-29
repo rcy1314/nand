@@ -1,7 +1,7 @@
 var Light = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(212,212,212,.2)`
+    `8px 8px 16px rgba(212, 212, 212, .2)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
@@ -29,8 +29,8 @@ var Light = function () {
     `rgba(255, 255, 255, .4)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/acktic.github.io/master/images/b453ae624e3d5e58b9890a998ec441b8.webp`)
-    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/acktic.github.io/master/images/b453ae624e3d5e58b9890a998ec441b8.webp`
+  if (backgroundImage[0].path != `images/b453ae624e3d5e58b9890a998ec441b8.webp`)
+    backgroundImage[0].path = `images/b453ae624e3d5e58b9890a998ec441b8.webp`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
