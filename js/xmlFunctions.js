@@ -170,6 +170,14 @@ var guideImageAttributes = function (pubArray) {
           (a) =>
             (a.style.top = ~_guide.querySelector(`.img`).style.height - `60`)
         );
+        _guide.querySelector(`.sticky .header`).style.borderRight =
+          `var(--border-color)`;
+        _guide.querySelector(`.sticky .header`).style.borderLeft =
+          `var(--border-color)`;
+        _guide.querySelector(`.sticky .header`).style.borderTop =
+          `var(--border-color)`;
+        _guide.querySelector(`.sticky`).style.borderTop =
+          `none`;
     } else {
       _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {
