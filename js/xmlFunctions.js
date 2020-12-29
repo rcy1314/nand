@@ -565,6 +565,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     itemContainer.style.height = `0px`;
     itemPending.remove();
     itemImage.remove();
+    count.shift();
   }
   imageDuplicate.push(src);
   if (
