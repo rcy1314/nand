@@ -10,11 +10,11 @@ var Night = function () {
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgba(0, 20, 12, 1)`
+    `rgba(0, 20, 12, .1)`
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(26, 26, 26, 1)`
+    `rgba(26, 26, 26, .4)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
@@ -31,4 +31,9 @@ var Night = function () {
   document
     .querySelector(`#favicon`)
     .setAttribute(`href`, `images/Opposite.ico`);
+  document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
+  if (backgroundImage[0].path != `images\a54430a6cf0248fa8d1d5961e02a71e4.jpg`)
+    backgroundImage[0].path = `images\a54430a6cf0248fa8d1d5961e02a71e4.jpg`
+  document.querySelector(`#${backgroundImage[0].element}`)
+    .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
