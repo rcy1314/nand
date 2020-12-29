@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Alpenglow`;
+let set = `Light`;
 
 /*
     backgroundImage [array]
