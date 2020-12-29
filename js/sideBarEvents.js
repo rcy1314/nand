@@ -156,6 +156,19 @@ document.addEventListener('click', (evt) => {
 
       xhr.send();
     }
+    if (event.target.classList.contains(`cropImages`)) {
+      cropImages = cropImages != true;
+      if (cropImages == true) {
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.closest(`.image`).style.height = `270px`);
+      } else if (cropImages == false) {
+        _main
+          .querySelectorAll(`.image`)
+          .forEach((a) => a.style.height = `auto`);
+      }
+      sideBarStar(event.target, cropImages);
+    }
     if (event.target.classList.contains(`sideBarCenter`)) {
       sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {
@@ -358,7 +371,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.bg`).style.height = `31px`;
       else if (expandBackground == true)
         document.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 34 + 30}px`;
+          `${(background.length + 1) * 34 + 40}px`;
     }
     if (event.target.classList.contains(`choose`)) {
       expandSettings = expandSettings != true

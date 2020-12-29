@@ -658,9 +658,9 @@ let xmlHTMLBuild = function (htmlArray) {
   head.append(htmlArray.courtesy);
   item.append(head);
   pending.append(loader);
-  classic.append(pending);
+  image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));
-  image.append(filterBlur);
+  if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
   image.append(object);
   classic.append(image);
   wrap.append(publish);
