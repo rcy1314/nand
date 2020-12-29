@@ -338,48 +338,73 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, Reader);
     }    if (event.target.classList.contains(`parse`)) {
       expandFilter = expandFilter != true
-      if (expandFilter == false)
+      if (expandFilter == false) {
+        document.querySelector(`.exclude`).style.borderBottom = `none`;
+        document.querySelector(`.exclude`).style.borderTop = `none`;
         document.querySelector(`.exclude`).style.height = `31px`;
-      else if (expandFilter == true)
+      } else if (expandFilter == true) {
         if (exclude.length == 0)
           document.querySelector(`.exclude`).style.height = `75px`;
-        else
+        else {
+          document.querySelector(`.exclude`).style.borderBottom = `var(--border-color)`;
+          document.querySelector(`.exclude`).style.borderTop = `var(--border-color)`;
           document.querySelector(`.exclude`).style.height = `${
-            exclude.length * 34 + 80
-          }px`;
+            exclude.length * 34 + 80}px`;
+        }
+      }
     }
     if (event.target.classList.contains(`favorite`)) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       expandFavorites = expandFavorites != true
-      if (expandFavorites == false)
+      if (expandFavorites == false) {
+        document.querySelector(`.fav`).style.borderBottom = `none`;
+        document.querySelector(`.fav`).style.borderTop = `none`;
         document.querySelector(`.fav`).style.height = `31px`;
-      else if (expandFavorites == true)
+      } else if (expandFavorites == true) {
+        document.querySelector(`.fav`).style.borderBottom = `var(--border-color)`;
+        document.querySelector(`.fav`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.fav`).style.height =
           `${(favorites.length + 1) * 34}px`;
+      }
     }
     if (event.target.classList.contains(`border`)) {
       expandVisual = expandVisual != true
-      if (expandVisual == false)
+      if (expandVisual == false) {
+        document.querySelector(`.themes`).style.borderBottom = `none`;
+        document.querySelector(`.themes`).style.borderTop = `none`;
         document.querySelector(`.themes`).style.height = `31px`;
-      else if (expandVisual == true)
+      } else if (expandVisual == true) {
+        document.querySelector(`.themes`).style.borderBottom = `var(--border-color)`;
+        document.querySelector(`.themes`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.themes`).style.height =
           `${(themes.length + 1) * 36}px`;
+      }
     }
     if (event.target.classList.contains(`adjust`)) {
       expandBackground = expandBackground != true
-      if (expandBackground == false)
+      if (expandBackground == false) {
+        document.querySelector(`.bg`).style.borderBottom = `none`;
+        document.querySelector(`.bg`).style.borderTop = `none`;
         document.querySelector(`.bg`).style.height = `31px`;
-      else if (expandBackground == true)
+      } else if (expandBackground == true) {
+        document.querySelector(`.bg`).style.borderBottom = `var(--border-color)`;
+        document.querySelector(`.bg`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.bg`).style.height =
           `${(background.length + 1) * 34 + 40}px`;
+      }
     }
     if (event.target.classList.contains(`choose`)) {
       expandSettings = expandSettings != true
-      if (expandSettings == false)
+      if (expandSettings == false) {
+        document.querySelector(`.set`).style.borderBottom = `none`;
+        document.querySelector(`.set`).style.borderTop = `none`;
         document.querySelector(`.set`).style.height = `31px`;
-      else if (expandSettings == true)
+      } else if (expandSettings == true) {
+        document.querySelector(`.set`).style.borderBottom = `var(--border-color)`;
+        document.querySelector(`.set`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.set`).style.height =
           `${(settings.length + 1) * 34}px`;
+      }
     }
     if (event.target.classList.contains(`List`)) {
       expand = true;
