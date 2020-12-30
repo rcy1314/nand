@@ -74,6 +74,7 @@ window.onload = function () {
           true
         );
         _guide.addEventListener('mousemove', (evt) => {
+            guideOnScreen = onScreen;
             onScreen = false;
             setTimeout(function() {
               sideBarDisplay(onScreen);
@@ -404,6 +405,7 @@ document.addEventListener('click', (evt) => {
         Array.isArray(pub)
       )
         xmlAppendPublication(id);
+      onScreen = guideOnScreen;
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
