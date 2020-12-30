@@ -522,6 +522,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         category == `Youtube`
     )
     itemContainer.style.height = `auto`;
+    else itemContainer.style.height = `270px`;
     if (
       document.body.contains(
         document.querySelector(
@@ -591,7 +592,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
           .classList.add(`yt`);
-        itemPending.remove();
+        itemPending.style.display = `none`;
       }
       if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
         fetch(`${cors}${api}${src}`, {
@@ -621,11 +622,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
                       itemImage.setAttribute(`src`, e.target.result);
-                      itemPending.remove();
+                      itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                     };
                     read.onerror = function (e) {
-                      itemPending.remove();
+                      itemPending.style.display = `none`;
                     }
                   }
                   if (!src.match(/4cdn/g)) request.send();
@@ -634,7 +635,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     itemFilter.style.transform = `scale(4)`
                     itemFilter.classList.add(`blur`);
                     itemImage.setAttribute(`src`, src);
-                    itemPending.remove();
+                    itemPending.style.display = `none`;
                     itemImage.style.display = `block`;
                   }
               } else if (
@@ -654,18 +655,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 read.onload = function (e) {
                   xmlImageDimensions(menuObject, pubIndex, newImg)
                   itemImage.setAttribute(`src`, e.target.result);
-                  itemPending.remove();
+                  itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
                 };
                 read.onerror = function (e) {
-                  itemPending.remove();
+                  itemPending.style.display = `none`;
                 }
               }
               if (!src.match(/4cdn/g)) request.send();
               else {
                 xmlImageDimensions(menuObject, pubIndex, newImg)
                 itemImage.setAttribute(`src`, src);
-                itemPending.remove();
+                itemPending.style.display = `none`;
                 itemImage.style.display = `block`;
                 }
               }
@@ -673,7 +674,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           })
           .catch((response) => {
             itemContainer.remove();
-            itemPending.remove();
+            itemPending.style.display = `none`;
           });
       } else { //safeSearch false
         var request = new XMLHttpRequest();
@@ -685,18 +686,18 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.onload = function (e) {
             xmlImageDimensions(menuObject, pubIndex, newImg);
             itemImage.setAttribute(`src`, e.target.result);
-            itemPending.remove();
+            itemPending.style.display = `none`;
             itemImage.style.display = `block`;
             }
             read.onerror = function (e) {
-              itemPending.remove();
+              itemPending.style.display = `none`;
             }
           };
           if (!src.match(/4cdn/g)) request.send();
           else {
             xmlImageDimensions(menuObject, pubIndex, newImg)
             itemImage.setAttribute(`src`, src);
-            itemPending.remove();
+            itemPending.style.display = `none`;
             itemImage.style.display = `block`;
         }
       };

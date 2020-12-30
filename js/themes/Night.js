@@ -26,7 +26,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(7,7,7,.6)`
+    `rgba(7,7,7,.3)`
   );
   document
     .querySelector(`#favicon`)

@@ -336,7 +336,7 @@ let scrollIntoView = true;
 
 */
 
-let cropImages = false;
+let cropImages = true;
 
 /*
     fadeIntoView [boolean/integer]
