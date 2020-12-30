@@ -98,7 +98,7 @@ let progressBackDrop = function (done) {
       if (safeSearchIDs.includes(menu[id].id))
         width = _container.clientWidth / (count.length - 1);
       else if (count.length) width = _container.clientWidth / ((count.length - 1) / 2);
-      if (!width || width == `Infinity` && count.length != 0) width = _container.clientWidth / 12;
+      if (!width || width == `Infinity` && count.length <= 0) width = _container.clientWidth / 12;
       if (
         _progress.clientWidth >= _container.clientWidth
       ) {
