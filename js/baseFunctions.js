@@ -96,11 +96,11 @@ let progressBackDrop = function (done) {
     complete = setInterval(function () {
       console.log(count.length)
       if (safeSearchIDs.includes(menu[id].id))
-        width = _main.clientWidth / (count.length - 1);
-      else if (count.length) width = _main.clientWidth / ((count.length - 1) / 2);
-      if (!width || width == `Infinity` && count.length != 0) width = _main.clientWidth / 12;
+        width = _container.clientWidth / (count.length - 1);
+      else if (count.length) width = _container.clientWidth / ((count.length - 1) / 2);
+      if (!width || width == `Infinity` && count.length != 0) width = _container.clientWidth / 12;
       if (
-        _progress.clientWidth >= _main.clientWidth
+        _progress.clientWidth >= _container.clientWidth
       ) {
         _progress.style.transition = `0`;
         _progress.style.width = `100%`;
