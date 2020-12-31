@@ -5,7 +5,7 @@
 #Minified
 curl -q -s "https://acktic.github.io/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
-#Unused for now
+#Unused for now => missing hash and media objects if you would like to add one.
 #{id:`PolishNews.co.uk`,category:`World`,description:`Polish News Breaking News From Poland UK World.`,uri:`https://www.polishnews.co.uk/feed`,ext:`https://www.polishnews.co.uk`,image:`Polish`,hash:`pS`,media:true},
 #{id:`ABC/South Bend`,category:`News`,description:`ABC WSBT South Bend Indiana serving Northern Indiana and the southern portion of Western Michigan.`,uri:`https://wsbt.com/news/local.rss`,ext:`https://wsbt.com`,image:`WSBT`,hash:`bN`},
 #{id:`NBC/Davenport`,category:`News`,description:`NBC KWQC Iowa Davenport serving the Quad Cities area of Southeastern Iowa and Northwestern Illinois.`,uri:`https://www.kwqc.com/templates/2015_XML_FEED?placement=/content/news`,ext:`https://www.kwqc.com`,image:`KWQC`,hash:`qC`},
