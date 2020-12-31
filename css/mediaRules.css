@@ -14,11 +14,7 @@
   }
 
   .expand .title {
-    flex-basis: 50% !important;
-  }
-
-  .expand .blank {
-    margin-right: 5px !important;
+    flex-basis: 60% !important;
   }
 
   .btn .flip-back {
@@ -85,7 +81,6 @@
 
   #toggle,
   .expand .des,
-  .expand .hash,
   .block .media,
   .detail .buffer,
   .btn .flip-front,
