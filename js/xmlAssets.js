@@ -211,7 +211,7 @@ var menu=[
 {id:`Reddit/Boston`,category:`Social`,description:`Boston subreddit focused on the city of Boston, MA and the Greater Boston Area.`,uri:`https://www.reddit.com/r/boston/.rss`,image:`BostonMA`,hash:`tA`,media:!0},
 {id:`Reddit/Buildapc`,category:`Social`,description:`BuildAPC is a community-driven subreddit dedicated to custom PC assembly.`,uri:`https://www.reddit.com/r/buildapc/.rss`,image:`Build`,hash:`bB`,media:!1},
 {id:`Reddit/California`,category:`Social`,description:`California subreddit for the Golden State of California for info on what's happening all across the state.`,uri:`https://www.reddit.com/r/California/.rss`,image:`California`,hash:`cA`,media:!0},
-{id:`4Chan/Sports`,category:`Social`,description:`4chan Sports from around the World.`,uri:`http://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:``,media:!0},
+{id:`4Chan/Sports`,category:`Social`,description:`4chan Sports from around the World.`,uri:`http://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:`Ss`,media:!0},
 {id:`4Chan/Technology`,category:`Social`,description:`4chan G Technology is a board that discusses Technology.`,uri:`http://boards.4chan.org/g/index.rss`,image:`4chan`,hash:`gK`,media:!0},
 {id:`4Chan/High Resolution`,category:`Social`,description:`4chan HR High Resolution images with upscaling high resolution.`,uri:`http://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`Hr`,media:!0},
 {id:`4Chan/Wallpapers`,category:`Social`,description:`4chan Wallpapers General read the sticky.`,uri:`http://boards.4chan.org/wg/index.rss`,image:`4chan`,hash:`wG`,media:!0},
