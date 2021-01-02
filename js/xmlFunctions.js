@@ -518,11 +518,23 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     attribute.style.height = `37px`;
   } else {
     if (
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      ) &&
         cropImages == false ||
         category == `Youtube`
     )
     itemContainer.style.height = `auto`;
-    else itemContainer.style.height = `270px`;
+    else if (
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      )
+    )
+    itemContainer.style.height = `270px`;
     if (
       document.body.contains(
         document.querySelector(
