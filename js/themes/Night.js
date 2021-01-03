@@ -14,7 +14,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(26, 26, 26, .4)`
+    `rgba(26, 26, 26, 1)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
