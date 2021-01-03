@@ -543,6 +543,13 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
       )
     )
     itemFilter.classList.add(`default`);
+    if (
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+        )
+      )
+    )
     itemImage.classList.add(`default`);
   }
 }
