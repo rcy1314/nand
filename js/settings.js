@@ -141,7 +141,7 @@ let sideBarLock = false;
 
 */
 
-let expand = true;
+let expand = false;
 
 /*
     expandVisual [boolean/integer]
