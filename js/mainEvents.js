@@ -362,7 +362,6 @@ document.addEventListener('click', (evt) => {
       id = 0;
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
-      alert(category);
       if (Reader == true) {
         randomDuplicate = [];
         xmlRequestParsing(null, null, anyRandomMenuObject());
