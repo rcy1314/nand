@@ -406,6 +406,9 @@ document.addEventListener('click', (evt) => {
           `${(settings.length + 1) * 34}px`;
       }
     }
+    if (event.target.classList.contains(`readPrevious`)) {
+      sideBarStar(event.target, readPrevious);
+    }
     if (event.target.classList.contains(`List`)) {
       expand = true;
       groupType = `list`;

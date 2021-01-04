@@ -90,6 +90,19 @@ let showOption = true;
 let Reader = false;
 
 /*
+    Reader [boolean/integer]
+
+      Applications
+        xmlRequestParsing, sidebar
+
+      Result
+        random array reset menu category match
+
+*/
+
+let readPrevious = false;
+
+/*
     onScreen [boolean/integer]
 
       Applications
@@ -658,6 +671,7 @@ const settings = [
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
   { name: `Reader`, class: `Reader` },
+  { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
