@@ -20,7 +20,7 @@
 
 ### Configurations in settings.js
 
-* backgroundImage path is overwritten in theme files.
+* backgroundImage path is overwritten in theme file.
 
 <p align='center'><img src='screenshots/Preview.gif'></p>
 
