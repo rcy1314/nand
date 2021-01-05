@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash ssl ssh keygen
 cd ~/acktic.github.io
 git pull --no-edit
 ./maintenance/rip.sh > ~/acktic.github.io/maintenance/rip.txt
