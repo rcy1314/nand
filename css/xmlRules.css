@@ -186,11 +186,6 @@
   color: #aaa;
 }
 
-#main #xml .center .item .addComment {
-  display: none;
-  margin: 0;
-}
-
 #main #xml .center .item .url,
 #main #xml .center .item .share,
 #main #xml .center .item .source {

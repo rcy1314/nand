@@ -192,29 +192,6 @@ let quickFeedDisplay = function (Value) {
   }
 };
 
-let rippleBuild = function (ev, Elem) {
-  const button = Elem.getBoundingClientRect();
-  const circle = document.createElement(`span`);
-  const diameter = Math.max(Elem.clientWidth, Elem.clientHeight);
-  const radius = diameter / 2;
-  circle.style.width = circle.style.height = `${diameter}px`;
-  circle.style.left = `${ev.clientX - button.left - radius}px`;
-  circle.style.top = `${ev.clientY - button.top - radius}px`;
-  circle.classList.add(`ripple`);
-  setTimeout(function () {
-    if (document.querySelector(`.ripple`))
-      document.querySelector(`.ripple`).remove();
-  }, 500);
-  Elem.appendChild(circle);
-};
-let sideBarTranslationBuild = function (translation) {
-  let category = document.createElement(`div`);
-  category.setAttribute(`aria-item`, translation);
-  category.classList.add(`cat`, translation);
-  category.innerHTML = translation;
-  return category;
-};
-
 let groupBuild = function () {
   let result = document.createElement(`div`);
   let group = document.createElement(`div`);

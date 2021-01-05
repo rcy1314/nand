@@ -96,7 +96,7 @@ let Reader = false;
         xmlRequestParsing, sidebar
 
       Result
-        random array reset menu category match
+        random array reset category switch
 
 */
 
@@ -141,7 +141,7 @@ let sideBarLock = false;
 
 */
 
-let expand = false;
+let expand = true;
 
 /*
     expandVisual [boolean/integer]
@@ -241,7 +241,7 @@ let sideBarCenter = true;
         sideBar, sideBarEvents
 
       Result
-        add backdrop sidebar.
+        add backdrop sidebar (jumpy wheel)
 
 */
 
@@ -310,7 +310,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = false;
+let quickFeeds = true;
 
 /*
     quickFeedsTranslations [boolean/integer]
@@ -336,7 +336,7 @@ let quickFeedsTranslations = true;
 
 */
 
-let scrollIntoView = true;
+let scrollIntoView = false;
 
 /*
     centerImages [boolean/integer]
@@ -349,7 +349,7 @@ let scrollIntoView = true;
 
 */
 
-let cropImages = true;
+let cropImages = false;
 
 /*
     fadeIntoView [boolean/integer]
@@ -488,7 +488,7 @@ let omitGuide = true;
 
 */
 
-let hash = `title`;
+let hash = `long`;
 
 /*
     safeSearch [integer]
@@ -547,8 +547,8 @@ let safeSearchIDs = [
   `Reddit/Internet Stars`,
   `4Chan/Sports`,
   `4Chan/Technology`,
-  `4Chan/High Resolution`,
   `4Chan/Wallpapers`,
+  `4Chan/High Resolution`,
 ];
 
 /*

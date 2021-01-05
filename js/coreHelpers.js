@@ -121,16 +121,6 @@ String.prototype.moment = function () {
   return `${parseInt(y)} year ${parseInt(y) > 1 ? `s` : ``}`;
 };
 
-String.prototype.grep = function (string) {
-  var string = this;
-  let count = [];
-  if (onlyImages == true) {
-    return menu.filter((a) => a.category == string && a.media == true).length;
-  } else if (onlyImages == false) {
-    return menu.filter((a) => a.category == string).length;
-  }
-};
-
 String.prototype.space = function () {
   return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };

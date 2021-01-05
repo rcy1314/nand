@@ -8,7 +8,6 @@
 
   * Feed Example
   > /?q=[unique+id] fails to search.
-  > /?q=[tranlsation] translation found populate.
 
 */
 

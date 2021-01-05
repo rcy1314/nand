@@ -2,7 +2,10 @@
 
 # Reports
 
-<a href='https://gtmetrix.com/reports/acktic.github.io/yQt0KBqs/' target='_blank'>acktic</a> <a href='https://gtmetrix.com/reports/acktic.github.io/G8TwQuC2/' target='_blank'>sticky</a> <a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>group</a> <a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>hash</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/yQt0KBqs/' target='_blank'>acktic</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/G8TwQuC2/' target='_blank'>sticky</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>group</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>hash</a>
 
 ### About
   - Really Simple Syndicate.
@@ -10,16 +13,14 @@
 
 ### Known Issues
 
-* Nearly half XML responses have no images attached use onlyImages (fixed)
-* safeSearch throws a couple header errors returning from offloading.
-* Dynamic Loading files can timeout with Remote Hosting (wip)
-* Heroku offloading first response ~7s safeSearch double.
-* Mousemove event listener sidebar remote visit (fixed).
-* File Size ~20MB (Screenshots ~10mb).
+* safeSearch couple header errors from herokus offloading.
+* Dynamic Loading file might timeout due to Remote Host.
+* Heroku offloading intial response ~7s safeSearch double.
+* File Size ~20MB (Screenshots ~10mb 464 Assets Images).
 
-### Configurations in js/settings.js
+### Configurations in settings.js
 
-* backgroundImage path is overwritten in themes files.
+* backgroundImage path is overwritten in theme files.
 
 <p align='center'><img src='screenshots/Preview.gif'></p>
 
@@ -30,10 +31,10 @@ Submit a Theme!<br>
 Submit a Feed!<br>
 File an Issue!<br>
 
-Copyright
+Copyright Notice
 ----
 
-The developer or (developers) do not own the images included, used, shown, or requested in this project.
+The developer/developers don't own images included in this project.
 
 License
 ----

@@ -336,7 +336,8 @@ document.addEventListener('click', (evt) => {
           .forEach((a) => (a.classList.add(`luv`)));
       }
       sideBarStar(event.target, Reader);
-    }    if (event.target.classList.contains(`parse`)) {
+    }
+    if (event.target.classList.contains(`parse`)) {
       expandFilter = expandFilter != true
       if (expandFilter == false) {
         document.querySelector(`.exclude`).style.borderBottom = `none`;
@@ -407,6 +408,7 @@ document.addEventListener('click', (evt) => {
       }
     }
     if (event.target.classList.contains(`readPrevious`)) {
+      readPrevious = readPrevious != true;
       sideBarStar(event.target, readPrevious);
     }
     if (event.target.classList.contains(`List`)) {

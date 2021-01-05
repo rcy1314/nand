@@ -218,10 +218,6 @@
     width: 100% !important;
   }
 
-  #guide .yt .wrap {
-    display: none !important;
-  }
-
 }
 
 @media screen and (min-width: 768px) {
