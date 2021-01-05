@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Proxima Nova;
+  src: url(https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/fonts/ProximaNova-Regular.woff);
+}
+
 video {
   position: relative;
   width: 100%;
@@ -9,7 +14,7 @@ video {
 
 div,
 input {
-  font-family: Arial,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  font-family: Proxima Nova;
 }
 
 a {
