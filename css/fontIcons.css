@@ -31,7 +31,7 @@
 }
 
 #main #xml .center .item .header .courtesy .copy .attribute .fa,
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+#guide .sticky .wrap .header .courtesy .copy .attribute .fa {
   float: right;
 }
 
@@ -254,6 +254,7 @@
   font-weight: 50;
 }
 
+#main #visit #page #front .focus .icon,
 #top #arm #search #input .icon .fa-search,
 #main #visit #page #front .focus .button .fa-search {
   font-family: "Font Awesome 5 Pro";
@@ -261,7 +262,7 @@
   font-weight: 50;
 }
 
-#container #guide .sticky .header .fa-ellipsis-h,
+#guide .sticky .header .fa-ellipsis-h,
 #main #xml .center .channel .item .header .fa-ellipsis-h {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
@@ -270,7 +271,7 @@
   left: -6px;
 }
 
-#container #guide .sticky .header .fa-ellipsis-v,
+#guide .sticky .header .fa-ellipsis-v,
 #main #xml .center .channel .item .header .fa-ellipsis-v {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
