@@ -405,13 +405,13 @@ document.addEventListener('click', (evt) => {
         Array.isArray(pub)
       )
         xmlAppendPublication(id);
-      onScreen = guideOnScreen;
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
-      onScreen = guideOnScreen;
+      if (sideBarLock == true) onScreen = true;
+      sideBarDisplay(onScreen);
       guideOnScreen = true;
       pub = null;
     }
