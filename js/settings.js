@@ -488,7 +488,7 @@ let omitGuide = true;
 
 */
 
-let hash = `long`;
+let hash = `title`;
 
 /*
     safeSearch [integer]
