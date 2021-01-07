@@ -101,6 +101,7 @@
   width: 100%;
 }
 
+#main #xml .center .yt .image,
 #main #xml .center .item .image,
 #main #xml .center .item .pending {
   background-color: var(--hover-background-color);

@@ -349,7 +349,7 @@ let scrollIntoView = false;
 
 */
 
-let cropImages = false;
+let cropImages = true;
 
 /*
     fadeIntoView [boolean/integer]
