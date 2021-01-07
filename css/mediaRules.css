@@ -17,6 +17,10 @@
     flex-basis: 60% !important;
   }
 
+  .expand .display {
+    width: 100% !important;
+  }
+
   .btn .flip-back {
     transform: rotateX(0deg) translateZ(25px) !important;
   }

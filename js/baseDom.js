@@ -497,7 +497,7 @@ let categoryBuild = function (
   id.innerHTML = objectId;
   display.append(object);
   select.append(display);
-  select.append(id);
+  display.append(id);
   select.append(media);
   select.append(hash);
   select.append(des);

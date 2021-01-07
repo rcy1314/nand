@@ -345,10 +345,6 @@ document.addEventListener('click', (evt) => {
         _match.style.display = `none`;
         _view.blur();
         return false;
-      } else if (_first.style.display === `block`) {
-        _first.style.display = `none`;
-        _guest.blur();
-        return false;
       }
       xmlRequestParsing(
         null,
@@ -405,6 +401,7 @@ document.addEventListener('click', (evt) => {
         Array.isArray(pub)
       )
         xmlAppendPublication(id);
+      if (complete) _progress.style.width = `100%`;
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
