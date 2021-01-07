@@ -613,7 +613,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       itemImage.remove();
     };
     newImg.onload = function () {
-      count.shift()
       if (
           src.match(/ytimg/g) &&
           youtubeMedia == false
