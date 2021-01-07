@@ -716,6 +716,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           read.readAsDataURL(request.response);
           read.onload = function (e) {
             xmlImageDimensions(menuObject, pubIndex, newImg);
+            if (category == `Youtube` && youtubeMedia == false)
+              itemContainer.style.paddingBottom = `56.25%`;
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;

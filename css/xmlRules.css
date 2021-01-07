@@ -389,7 +389,6 @@
 
 #main #xml .center .yt .image {
   width: 100% !important;
-  padding-bottom: 56% !important; /* 16:9 */
   position: relative !important;
   overflow: hidden !important;
   margin: 0 !important;
