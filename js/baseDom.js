@@ -518,7 +518,7 @@ let attributeBuild = function () {
   object.classList.add(`copy`);
   site.classList.add(`site`);
   copy.classList.add(`post`);
-  site.innerHTML = `Copy Url`;
+  site.innerHTML = `Copy URL`;
   copy.innerHTML = `Copy Post`;
   picture.innerHTML = `Copy Source`;
   object.append(attr);

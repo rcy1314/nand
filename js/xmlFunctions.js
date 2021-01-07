@@ -569,6 +569,15 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   let itemFilter = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
+  let attribute = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
+  );
+  let copyPicture = document.querySelector(
+    `[aria-item='${pubIndex}'] .picture`
+  );
+  let copyPost = document.querySelector(
+    `[aria-item='${pubIndex}'] .post`
+  );
   if (
     src &&
     src != `null` &&
@@ -583,6 +592,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src.match(/.webm|.mp4/g)
   ) {
     itemContainer.style.height = `0px`;
+    copyPicture.style.display = `none`;
+    copyPost.style.display = `none`;
+    attribute.style.height = `37px`;
     itemPending.remove();
     itemImage.remove();
     count.shift();
