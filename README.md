@@ -8,6 +8,7 @@
 <a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>hash</a>
 
 ### About
+
   - Really Simple Syndicate.
   - Rich Site Summary.
 
@@ -28,13 +29,13 @@ Want to Contribute?
 ----
 
 Submit a Theme!<br>
-Submit a Feed!<br>
-File an Issue!<br>
+Submit Feeds!<br>
+File Issues!<br>
 
 Copyright Notice
 ----
 
-The developer/developers don't own images included in this project.
+The developers do not own images in this project.
 
 License
 ----
