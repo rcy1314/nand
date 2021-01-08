@@ -512,10 +512,10 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     )
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
+    copyPost.style.display = `block`;
     itemImage.style.width = `180px`;
     itemImage.style.margin = `12px`;
-    copyPost.style.display = `none`;
-    attribute.style.height = `37px`;
+    attribute.style.height = `74px`;
   } else {
     if (
       document.body.contains(
@@ -593,8 +593,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   ) {
     itemContainer.style.height = `0px`;
     copyPicture.style.display = `none`;
-    copyPost.style.display = `none`;
-    attribute.style.height = `37px`;
+    attribute.style.height = `74px`;
     itemPending.remove();
     itemImage.remove();
     count.shift();
@@ -976,6 +975,10 @@ var xmlRequestParsing = function (search, string, index) {
           });
           guideDisplayYoutube(sticky);
         } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
+          if (pub[local].src == null) {
+            pub[local].re.exit()
+            return false;
+          }
           _guide.style.display = `flex`;
           var sticky = [];
           sticky.push({
