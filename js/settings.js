@@ -41,13 +41,10 @@ const favorites = [
   `Reddit/Pics`,
   `Reddit/Wallpaper`,
   `Reddit/Wallpapers`,
-  `Reddit/Unix Porn`,
-  `Reddit/City Porn`,
-  `Reddit/Earth Porn`,
   `Reddit/Los Angeles`,
   `Reddit/San Francisco`,
-  `4Chan/Technology`,
   `4Chan/Wallpapers`,
+  `4Chan/Technology`,
 ]
 
 /*
