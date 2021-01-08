@@ -8,6 +8,32 @@ let handleSwipe = function () {
   }
 }
 
+let handleGuide = function () {
+  if (
+    touchendX - 50 > touchstartX ||
+    touchendX + 50 < touchstartX ||
+    touchendY - 50 > touchstartY ||
+    touchendY + 50 < touchstartY
+  ) {
+    if (
+      Array.isArray(pub)
+    )
+      xmlAppendPublication(id);
+    setTimeout(function () {
+      if (complete) _progress.style.width = `100%`;
+      _main.classList.remove(`guide`);
+        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+      _guide.style.display = `none`;
+      _check.style.display = `none`;
+      topMenuBarDisplay(topBar);
+      if (sideBarLock == true) onScreen = true;
+      sideBarDisplay(onScreen);
+      guideOnScreen = true;
+      pub = null;
+    }, 750)
+  }
+}
+
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
   if (feedAssets == 7)

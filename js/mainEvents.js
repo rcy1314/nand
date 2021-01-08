@@ -65,6 +65,20 @@ window.onload = function () {
         }
         { passive: true }
       });
+      _guide.addEventListener('touchstart', (evt) => {
+          touchstartX = evt.changedTouches[0].screenX
+          touchstartY = evt.changedTouches[0].screenY;
+        },
+        { passive: true }
+      );
+
+      _guide.addEventListener('touchend', (evt) => {
+          touchendX = evt.changedTouches[0].screenX;
+          touchendY = evt.changedTouches[0].screenY;
+          handleGuide();
+        },
+        { passive: true }
+      );
       if (
         _main.clientWidth >= 769
       ) {
@@ -119,8 +133,9 @@ document.addEventListener('touchstart', (evt) => {
 );
 
 document.addEventListener('touchend', (evt) => {
+  console.log(_guide.style.display)
     touchendX = evt.changedTouches[0].screenX;
-    handleSwipe();
+    if (_guide.style.display != `flex`) handleSwipe();
   },
   { passive: true }
 );
