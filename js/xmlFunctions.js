@@ -205,28 +205,28 @@ var xmlImageSource = function (xhr) {
       xhr
         .getElementsByTagName(`content`)[0]
         .childNodes[0].nodeValue.match(
-          /https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g
+          /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
         )
     )
       src = String(
         xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
-            /https:\/\/i\.redd\.it\/.+?(gif|png|jpg|mp4)/g
+            /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
           )
       );
     else if (
       xhr
         .getElementsByTagName(`content`)[0]
         .childNodes[0].nodeValue.match(
-          /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g
+          /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
         )
     )
       src = String(
         xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
-            /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg|mp4)/g
+            /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
           )
       );
     else if (Array.isArray(xhr.getElementsByTagName(`content`)))
@@ -340,7 +340,7 @@ var xmlImageSource = function (xhr) {
     src = String(
       xhr
         .getElementsByTagName(`link`)[0]
-        .childNodes[0].nodeValue.match(/https:\/\/.+?(gif|png|jpg|mp4)/g)
+        .childNodes[0].nodeValue.match(/https:\/\/.+?(gif|png|jpg)/g)
     );
   else if (xhr.getElementsByTagName(`media:content`).length > 0)
     src = String(
@@ -589,7 +589,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   } else if (
     !src ||
     src == `null` ||
-    src.match(/.webm|.mp4/g)
+    src.match(/\.webm|\.mp4/g)
   ) {
     itemContainer.style.height = `0px`;
     copyPicture.style.display = `none`;
