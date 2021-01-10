@@ -525,6 +525,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`filterBlur`) ||
       evt.target.classList.contains(`img`)
     ) {
+      init();
       if (tap == 0) {
         tap = new Date().getTime();
         setTimeout(function () {
@@ -627,6 +628,7 @@ document.addEventListener('click', (evt) => {
         }
       }
       evt.stopPropagation();
+      unloading();
     }
     if (
       evt.target.classList.contains(`fa-ellipsis-h`) ||
