@@ -416,7 +416,7 @@ document.addEventListener('click', (evt) => {
         Array.isArray(pub)
       )
         xmlAppendPublication(id);
-      if (complete) _progress.style.width = `100%`;
+      _progress.style.width = `100%`;
       _main.classList.remove(`guide`);
         while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
@@ -525,7 +525,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`filterBlur`) ||
       evt.target.classList.contains(`img`)
     ) {
-      init();
+      _progress.style.width = `100%`;
       if (tap == 0) {
         tap = new Date().getTime();
         setTimeout(function () {
@@ -628,7 +628,6 @@ document.addEventListener('click', (evt) => {
         }
       }
       evt.stopPropagation();
-      unloading();
     }
     if (
       evt.target.classList.contains(`fa-ellipsis-h`) ||
