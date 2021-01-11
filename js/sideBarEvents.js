@@ -123,7 +123,6 @@ document.addEventListener('click', (evt) => {
             _main.style.backgroundImage = `url(${content})`;
             _container.style.backgroundImage = `url()`;
           }
-          console.log(readerEvent.target.result)
         };
       };
       input.click();
@@ -194,7 +193,6 @@ document.addEventListener('click', (evt) => {
       if (_visit.style.display != `flex`) topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`containerBackground`)) {
-      console.log(_container.style.backgroundImage);
       if (
         _container.style.backgroundImage
       ) {
