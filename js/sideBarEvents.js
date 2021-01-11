@@ -194,15 +194,34 @@ document.addEventListener('click', (evt) => {
       if (_visit.style.display != `flex`) topMenuBarDisplay(topBar);
     }
     if (event.target.classList.contains(`containerBackground`)) {
+      console.log(_container.style.backgroundImage);
       if (
         _container.style.backgroundImage
       ) {
-        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        if (backgroundImage[0].path)
+          _main.style.backgroundImage = `url(${backgroundImage[0].path})`
+        else if (document.querySelector(`.urlInput`).value
+          .match(
+            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+          )
+        )
+          _main.style.backgroundImage =
+            `url(${document.querySelector(`.urlInput`).value})`;
+        else _main.style.backgroundImage = _container.style.backgroundImage
         _container.style.backgroundImage = ``;
       } else if (
         _main.style.backgroundImage
       ) {
-        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        if (backgroundImage[0].path)
+          _container.style.backgroundImage = `url(${backgroundImage[0].path})`
+        else if (document.querySelector(`.urlInput`).value
+          .match(
+            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+          )
+        )
+          _container.style.backgroundImage =
+            `url(${document.querySelector(`.urlInput`).value})`;
+        else _container.style.backgroundImage = _main.style.backgroundImage
         _main.style.backgroundImage = ``;
       }
     }
