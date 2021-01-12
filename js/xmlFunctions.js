@@ -775,7 +775,6 @@ var xmlAppendPublication = function (id) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
   }
-  unloading();
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
   let recent = pub[0].dst;
