@@ -77,6 +77,7 @@ setTimeout(function() {
       onScreen = false;
       sideBarDisplay(onScreen);
       sideBarCenter = false;
+      sideBarStar(document.querySelector(`.sideBarCenter`), false)
       expand = false;
       Blocks = true;
       List = false;
