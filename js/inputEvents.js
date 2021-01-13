@@ -256,9 +256,9 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 38 &&
     keycode !== 27
   )
-    inputListingIndex(event.target.value, Elem);
+    inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length > 2 && keycode === 8)
-    inputListingIndex(event.target.value, Elem);
+    inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
     _label.style.visibility = `visible`;

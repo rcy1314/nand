@@ -76,6 +76,7 @@ setTimeout(function() {
       guideOnScreen = onScreen;
       onScreen = false;
       sideBarDisplay(onScreen);
+      sideBarCenter = false;
       expand = false;
       Blocks = true;
       List = false;
