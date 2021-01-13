@@ -998,6 +998,7 @@ var xmlRequestParsing = function (search, string, index) {
         ) {
           _guide.style.display = `none`;
           xmlAppendPublication(index);
+          unloading();
           pub = null;
         }
       } else {
