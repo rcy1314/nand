@@ -132,6 +132,9 @@ var guideImageAttributes = function (pubArray) {
         });
     }
     if (_main.clientWidth <= 425) {
+      document.querySelector(
+        `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
+      ).style.height = `179px`;
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       _guide.querySelector(`.sticky .src`).style.display = `block`;
@@ -189,8 +192,15 @@ var guideImageAttributes = function (pubArray) {
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `calc(55vw - 220px)`));
       }
+      _guide
+        .querySelectorAll(
+          `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image,
+          [aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
+        )
+        .forEach((a) => (a.style.height = `269px`));
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
+      if (category == `Youtube` && youtubeMedia == false)
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;
