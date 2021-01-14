@@ -132,6 +132,7 @@ var guideImageAttributes = function (pubArray) {
         });
     }
     if (_main.clientWidth <= 425) {
+      if (category == `Youtube` && youtubeMedia == false)
       document.querySelector(
         `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
       ).style.height = `179px`;
@@ -192,6 +193,7 @@ var guideImageAttributes = function (pubArray) {
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `calc(55vw - 220px)`));
       }
+      if (category == `Youtube` && youtubeMedia == false)
       _guide
         .querySelectorAll(
           `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image,
@@ -200,7 +202,6 @@ var guideImageAttributes = function (pubArray) {
         .forEach((a) => (a.style.height = `269px`));
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
-      if (category == `Youtube` && youtubeMedia == false)
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;
