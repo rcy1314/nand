@@ -92,6 +92,7 @@
   #main #xml .center #quick,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
+  #main #top #arm #search #input .icon,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
@@ -139,7 +140,7 @@
     position: fixed;
     display: flex;
     height: 50px;
-    right: 13px;
+    right: 11px;
   }
 
   #main #group {
