@@ -35,33 +35,6 @@ document.addEventListener('click', (evt) => {
       event.target.value = ``;
     }
     if (event.target.classList.contains(`detail`)) {
-      if (_match.style.display === `block`) _match.style.display = `none`;
-      if (_first.style.display === `block`) _first.style.display = `none`;
-      if (
-        translations.includes(
-          event.target.closest(`.hover`).getAttribute(`aria-item`)
-        )
-      ) {
-        id = 0;
-        category = event.target.closest(`.hover`).getAttribute(`aria-item`);
-        if (Reader == true) {
-          if (document.body.contains(document.querySelector(`.channel`)))
-            first = false;
-          randomDuplicate = [];
-          xmlRequestParsing(null, null, anyRandomMenuObject());
-        } else {
-          if (document.body.contains(document.querySelector(`#xml`)))
-            document.querySelector(`#xml`).remove();
-          if (document.body.contains(document.querySelector(`#group`)))
-            document.querySelector(`#group`).remove();
-          populateCategoryGroup(
-            event.target.closest(`.index`).getAttribute(`aria-item`).toLowerCase()
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-          unloading();
-        }
-      } else {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -76,9 +49,9 @@ document.addEventListener('click', (evt) => {
         );
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
-      }
-    }
     event.preventDefault();
+    _match.style.display = `none`;
+    _first.style.display = `none`;
   },
   false
 );
@@ -255,11 +228,9 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 33 &&
     keycode !== 38 &&
     keycode !== 27
-  ) {
+  )
     inputListingIndex(event.target.value.toLowerCase(), Elem);
-    _guest.blur();
-    _view.blur();
-  } else if (event.target.value.length > 2 && keycode === 8)
+  else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
