@@ -255,9 +255,11 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 33 &&
     keycode !== 38 &&
     keycode !== 27
-  )
+  ) {
     inputListingIndex(event.target.value.toLowerCase(), Elem);
-  else if (event.target.value.length > 2 && keycode === 8)
+    if (event.target.id == `guest`) _first.focus();
+    else if (event.target.id == `view`) _match.focus();
+  } else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
