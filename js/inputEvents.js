@@ -257,7 +257,8 @@ var inputListingKeyup = function (Elem, keycode) {
     keycode !== 27
   ) {
     inputListingIndex(event.target.value.toLowerCase(), Elem);
-    document.querySelector(`${Elem} .index`).focus()
+    _guest.blur();
+    _view.blur();
   } else if (event.target.value.length > 2 && keycode === 8)
     inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
