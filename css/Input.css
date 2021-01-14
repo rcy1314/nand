@@ -56,7 +56,7 @@ input[type=submit] {
   height: 38px;
   width: 38px;
   bottom: 2px;
-  z-index: -2;
+  z-index: -1;
   left: 0;
 }
 
@@ -85,7 +85,7 @@ input[type=submit] {
   position: relative;
   bottom: 10px;
   height: 30px;
-  z-index: -2;
+  z-index: -1;
 }
 
 #main #top #arm #search #match .listing .index .detail .buffer,
@@ -247,7 +247,7 @@ input[type=submit] {
   height: 100%;
   width: 100%;
   bottom: 0px;
-  z-index: 0;
+  z-index: 1;
   left: -2px;
 }
 

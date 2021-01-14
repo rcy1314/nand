@@ -34,7 +34,11 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`sideFilter`)) {
       event.target.value = ``;
     }
-    if (event.target.classList.contains(`detail`)) {
+    if (
+      event.target.classList.contains(`textMatch`) ||
+      event.target.classList.contains(`buffer`) ||
+      event.target.classList.contains(`input`)
+  ) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
