@@ -40,12 +40,12 @@ document.addEventListener('click', (evt) => {
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         category =
-          menu[event.target.closest(`.hover`).getAttribute(`aria-item`)]
+          menu[event.target.closest(`.index`).getAttribute(`aria-item`)]
             .category;
         xmlRequestParsing(
           null,
           null,
-          event.target.closest(`.hover`).getAttribute(`aria-item`)
+          event.target.closest(`.index`).getAttribute(`aria-item`)
         );
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
