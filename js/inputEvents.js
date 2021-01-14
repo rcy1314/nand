@@ -49,9 +49,10 @@ document.addEventListener('click', (evt) => {
         );
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
+      _match.style.display = `none`;
+      _first.style.display = `none`;
+    }
     event.preventDefault();
-    _match.style.display = `none`;
-    _first.style.display = `none`;
   },
   false
 );
