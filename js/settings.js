@@ -376,7 +376,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `percent`;
+let loading = `dots`;
 
 /*
     titleTruncate [integer]
