@@ -2,6 +2,7 @@ var init = function () {
   if (document.body.contains(document.getElementById(`group`)))
     document.querySelector(`#group`).remove();
   if (loading == `dots`) {
+    _progress.style.width = `0%`;
     document.querySelector(`#dots`).style.zIndex = `12`;
     document
       .querySelectorAll(`#dots .fill`)

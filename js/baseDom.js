@@ -9,7 +9,7 @@ let sideBarStar = function (Elem, Value) {
 }
 
 let displayDescription = function (Value) {
-  if (expand == true)
+  if (expand == true || document.body.contains(document.querySelector(`#xml`)))
     if (Value == false) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`.about`).style.display = `none`;
