@@ -390,7 +390,7 @@ let contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   if (id !== 0) des.innerHTML +=
     `<br>Hash<div style='float:right'>${menu[menuIndex].hash}</div>`;
-  if (showDescription == false) des.style.visibility = `hidden`;
+  if (showDescription == false) des.style.display = `none`;
   filter.append(object);
   filter.append(ahref);
   info.append(des);
