@@ -236,6 +236,29 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
+      if (_container.clientWidth <= 425) {
+        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
+        evt.target.closest(`#xml`).remove();
+        if (id === 0) populateCategoryGroup(category);
+        else {
+          if (location.href.match(`\\?q=`)) {
+            var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
+            let description = menu.filter(function (item) {
+              return item.description.space().toLowerCase()
+                .match(uri.toString().toLowerCase().space());
+            })
+            groupBuild();
+            for (i = 0; i <= description.length - 1; i++)
+              writeFilterResponse(menu.indexOf(description[i]));
+            displayDescription(showDescription);
+            displayExpand(expand);
+            populateCategoryGroup(category)
+            unloading();
+          } else populateCategoryGroup(category);
+          document.title = category;
+          displayExpand(expand);
+        }
+      }
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
