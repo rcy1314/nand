@@ -441,6 +441,8 @@ document.addEventListener('click', (evt) => {
       groupType = `list`;
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
       populateCategoryGroup(category);
       sideBarStar(document.querySelector(`.Blocks`), false);
       sideBarStar(event.target, List);
@@ -451,6 +453,8 @@ document.addEventListener('click', (evt) => {
       groupType = `blocks`;
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
+      if (document.body.contains(document.querySelector(`#xml`)))
+        document.querySelector(`#xml`).remove();
       sideBarStar(document.querySelector(`.List`), false);
       sideBarStar(event.target, true);
       populateCategoryGroup(category);
