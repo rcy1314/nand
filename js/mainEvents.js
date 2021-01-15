@@ -240,6 +240,8 @@ document.addEventListener('click', (evt) => {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
         if (id === 0) populateCategoryGroup(category);
         else {
           if (location.href.match(`\\?q=`)) {
