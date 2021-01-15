@@ -4,6 +4,13 @@
     right: 0 !important;
   }
 
+  #main #xml .center {
+    position: relative !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
   #main #group .air .populate:hover,
   #main #group .result .populate:hover {
     background-color: none !important;
@@ -38,6 +45,10 @@
     left: 15px;
   }
 
+  #main #xml .center .item {
+    border: none;
+  }
+
   #main #xml .center .item,
   #main #group .air .populate,
   #main #group .result .populate {
@@ -45,9 +56,7 @@
   }
 
   #main
-  #main #xml,
-  #main #xml .center,
-  #main #xml .channel {
+  #main #xml {
     width: 100% !important
   }
 
@@ -188,6 +197,7 @@
   }
 
   #guide .sticky {
+    max-width: 300px !important;
     border-top: none !important;
   }
 
