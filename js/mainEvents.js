@@ -236,9 +236,10 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
-      if (_container.clientWidth <= 425) {
+      if (_main.clientWidth <= 425) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-        evt.target.closest(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
         if (id === 0) populateCategoryGroup(category);
         else {
           if (location.href.match(`\\?q=`)) {
@@ -258,18 +259,19 @@ document.addEventListener('click', (evt) => {
           document.title = category;
           displayExpand(expand);
         }
+      } else {
+        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
+        document.title = `index.html`;
+        quickFeeds = quickFeeds != true;
+        _toggle.style.display = `block`;
+        _visit.style.display = `flex`;
+        _top.style.display = `none`;
+        quickFeedDisplay(quickFeeds);
       }
-      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
-      if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove();
-      document.title = `index.html`;
-      quickFeeds = quickFeeds != true;
-      _toggle.style.display = `block`;
-      _visit.style.display = `flex`;
-      _top.style.display = `none`;
-      quickFeedDisplay(quickFeeds);
     }
     if (
       evt.target.classList.contains(`joi`)
