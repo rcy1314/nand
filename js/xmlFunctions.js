@@ -984,6 +984,7 @@ var xmlRequestParsing = function (search, string, index) {
             pubIndex: local,
           });
           guideDisplayYoutube(sticky);
+          unloading();
         } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
           if (pub[local].src == null) {
             pub[local].re.exit()
@@ -1004,6 +1005,7 @@ var xmlRequestParsing = function (search, string, index) {
             pubIndex: local,
           });
           guideDisplay(sticky);
+          unloading();
         } else if (
           Array.isArray(pub)
         ) {
