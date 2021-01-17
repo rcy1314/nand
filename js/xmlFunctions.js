@@ -200,6 +200,9 @@ var guideImageAttributes = function (pubArray) {
           [aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
         )
         .forEach((a) => (a.style.height = `269px`));
+      document.querySelector(
+        `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
+      ).style.overflow = `hidden`;
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
