@@ -2,10 +2,10 @@
 
 # Reports
 
-<a href='https://gtmetrix.com/reports/acktic.github.io/yQt0KBqs/' target='_blank'>acktic</a>
-<a href='https://gtmetrix.com/reports/acktic.github.io/G8TwQuC2/' target='_blank'>sticky</a>
-<a href='https://gtmetrix.com/reports/acktic.github.io/4Sw9uKJI/' target='_blank'>group</a>
-<a href='https://gtmetrix.com/reports/acktic.github.io/A8CjCoWS/' target='_blank'>hash</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/NqqK7EYE/' target='_blank'>acktic</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/X7P8uXU5/' target='_blank'>sticky</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/am0PAglF/' target='_blank'>group</a>
+<a href='https://gtmetrix.com/reports/acktic.github.io/V1MnAaW1/' target='_blank'>hash</a>
 
 ### About
 
