@@ -467,7 +467,7 @@ document.addEventListener('click', (evt) => {
     }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
-      sideBarStar(event.target, Percent);
+      sideBarStar(event.target, document.querySelector(`.Percent`));
       sideBarStar(document.querySelector(`.Dots`), false);
     }
     if (event.target.classList.contains(`Info`)) {
