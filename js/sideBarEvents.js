@@ -115,6 +115,7 @@ document.addEventListener('click', (evt) => {
           ) {
             _container.style.backgroundImage = `url(${content})`;
             _main.style.backgroundImage = `url()`;
+            backgroundImage[0].path = content
           } else if (
             Array.isArray(backgroundImage) &&
             typeof backgroundImage[0].path == "string" &&
@@ -122,6 +123,7 @@ document.addEventListener('click', (evt) => {
           ) {
             _main.style.backgroundImage = `url(${content})`;
             _container.style.backgroundImage = `url()`;
+            backgroundImage[0].path = content
           }
         };
       };
@@ -202,32 +204,14 @@ document.addEventListener('click', (evt) => {
     }
     if (event.target.classList.contains(`containerBackground`)) {
       if (
-        _container.style.backgroundImage
+        _container.style.backgroundImage != ``
       ) {
-        if (backgroundImage[0].path)
-          _main.style.backgroundImage = `url(${backgroundImage[0].path})`
-        else if (document.querySelector(`.urlInput`).value
-          .match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )
-        )
-          _main.style.backgroundImage =
-            `url(${document.querySelector(`.urlInput`).value})`;
-        else _main.style.backgroundImage = _container.style.backgroundImage
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`
         _container.style.backgroundImage = ``;
       } else if (
-        _main.style.backgroundImage
+        _main.style.backgroundImage != ``
       ) {
-        if (backgroundImage[0].path)
-          _container.style.backgroundImage = `url(${backgroundImage[0].path})`
-        else if (document.querySelector(`.urlInput`).value
-          .match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )
-        )
-          _container.style.backgroundImage =
-            `url(${document.querySelector(`.urlInput`).value})`;
-        else _container.style.backgroundImage = _main.style.backgroundImage
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`
         _main.style.backgroundImage = ``;
       }
     }
@@ -483,7 +467,7 @@ document.addEventListener('click', (evt) => {
     }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
-      sideBarStar(event.target, Percent);
+      sideBarStar(event.target, document.querySelector(`.Percent`));
       sideBarStar(document.querySelector(`.Dots`), false);
     }
     if (event.target.classList.contains(`Info`)) {
