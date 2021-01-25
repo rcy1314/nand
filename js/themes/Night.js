@@ -5,7 +5,7 @@ var Night = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(0, 120, 212, .4)`
+    `rgba(140, 140, 140, 1)`
   );
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
