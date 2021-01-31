@@ -333,7 +333,7 @@ let quickFeedsTranslations = true;
 
 */
 
-let scrollIntoView = false;
+let scrollIntoView = true;
 
 /*
     centerImages [boolean/integer]
