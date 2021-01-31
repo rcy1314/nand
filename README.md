@@ -17,7 +17,7 @@
 * safeSearch couple header errors from herokus offloading.
 * Dynamic Loading file might timeout due to Remote Host.
 * Heroku offloading intial response ~7s safeSearch double.
-* File Size ~20MB (Screenshots ~10mb 464 Assets Images).
+* File Size ~20MB (Screenshots ~15mb 464 Assets Images).
 
 ### Configurations in settings.js
 
