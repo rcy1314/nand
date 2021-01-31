@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Night`;
+let set = `Light`;
 
 /*
     backgroundImage [array]
@@ -376,7 +376,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `dots`;
+let loading = `percent`;
 
 /*
     titleTruncate [integer]
