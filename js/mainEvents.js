@@ -452,6 +452,7 @@ document.addEventListener('click', (evt) => {
       if (sideBarLock == true) onScreen = true;
       sideBarDisplay(onScreen);
       guideOnScreen = true;
+      _main.focus();
       pub = null;
     }
     if (evt.target.classList.contains(`bottom`)) {
