@@ -655,6 +655,7 @@ let listingIndexBuild = function (
   indexObject,
   indexImage,
   indexCategory,
+  indexHash,
   suggested,
   index
 ) {
@@ -664,13 +665,14 @@ let listingIndexBuild = function (
   let object = document.createElement(`img`);
   let match = document.createElement(`div`);
   let key = document.createElement(`div`);
-  match.innerHTML = match.innerHTML = `&emsp;${indexCategory}<br>&emsp;${indexId}`;
+  match.innerHTML = match.innerHTML =
+    `&emsp;${indexCategory}<br>&emsp;${indexId}`;
   key.setAttribute(`aria-item`, indexObject);
   match.classList.add(`textMatch`);
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);
   if (suggested == true) contentText = `suggested...`;
-  else contentText = ``;
+  else contentText = `?${indexHash}`;
   buffer.innerHTML = contentText;
   object.classList.add(`input`);
   key.classList.add(`index`);

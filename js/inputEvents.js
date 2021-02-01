@@ -13,7 +13,6 @@ document.addEventListener('click', (evt) => {
   false
 );
 document.addEventListener('keyup', (evt) => {
-  console.log(event.target.value.length)
     if (
       event.target.id == `view`
     ) {
