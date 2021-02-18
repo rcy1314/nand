@@ -270,6 +270,19 @@ let sideBarMousewheel = true;
 let topBarBackdrop = false;
 
 /*
+    toggleBorders [boolean/integer]
+
+      Applications
+        xml item
+
+      Result
+        toggle border.
+
+*/
+
+let toggleBorders = false;
+
+/*
     showDescription [boolean/integer]
 
       Applications
@@ -676,6 +689,7 @@ const settings = [
   { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
+  { name: `Toggle Borders`, class: `toggleBorders` },
   { name: `Show Option`, class: `showOption` },
   { name: `Show Description`, class: `showDescription` },
   { name: `Top Bar Backdrop`, class: `topBarBackdrop` },

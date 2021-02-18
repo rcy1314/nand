@@ -64,6 +64,22 @@ document.addEventListener('click', (evt) => {
       }
       sideBarStar(event.target, youtubeMedia);
     }
+    if (event.target.classList.contains(`toggleBorders`)) {
+      toggleBorders = toggleBorders != true
+      let border = getComputedStyle(document.documentElement)
+        .getPropertyValue('--border-color');
+      console.log(border);
+      if (toggleBorders == false) {
+        _main
+          .querySelectorAll(`.item`)
+          .forEach((a) => a.style.border = `${border}`);
+      } else if (toggleBorders == true) {
+        _main
+          .querySelectorAll(`.item`)
+          .forEach((a) => a.style.border = `none`);
+      }
+      sideBarStar(event.target, toggleBorders);
+    }
     if (event.target.classList.contains(`sideBarMousewheel`)) {
       sideBarMousewheel = sideBarMousewheel != true;
       sideBarStar(event.target, sideBarMousewheel);
