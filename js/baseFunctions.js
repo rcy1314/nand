@@ -219,8 +219,10 @@ let progressBackDrop = function (done) {
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).style.display = `block`;
+      setTimeout(function() {
       if (document.body.contains(document.querySelector(`.air`)))
         _main.scrollTop = document.querySelector(`.air`).clientHeight;
+      }, 25)
     }
   if (showSplash == true) _check.style.display = `none`;
 };
