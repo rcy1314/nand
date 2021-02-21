@@ -69,11 +69,11 @@ document.addEventListener('click', (evt) => {
       let border = getComputedStyle(document.documentElement)
         .getPropertyValue('--border-color');
       console.log(border);
-      if (toggleBorders == false) {
+      if (toggleBorders == true) {
         _main
           .querySelectorAll(`.item`)
           .forEach((a) => a.style.border = `${border}`);
-      } else if (toggleBorders == true) {
+      } else if (toggleBorders == false) {
         _main
           .querySelectorAll(`.item`)
           .forEach((a) => a.style.border = `none`);
