@@ -205,10 +205,12 @@ let progressBackDrop = function (done) {
     if (scrollIntoView == true) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
       setTimeout(function() {
-        document.querySelector(`#group`).style.display = `block`;
           if (document.body.contains(document.querySelector(`.air`)))
             _main.scrollTop = document.querySelector(`.air`).clientHeight;
         document.querySelector(`#group`).style.top = `-60px`;
+      }, 25)
+      setTimeout(function() {
+        document.querySelector(`#group`).style.display = `block`;
       }, 25)
     } else if (scrollIntoView == false)
       document.querySelector(`#group`).style.display = `block`;
@@ -218,10 +220,12 @@ let progressBackDrop = function (done) {
       _main.scrollTop = 0;
     if (onlyImages == false) {
       if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).style.display = `block`;
       setTimeout(function() {
-      if (document.body.contains(document.querySelector(`.air`)))
-        _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        if (document.body.contains(document.querySelector(`.air`)))
+          _main.scrollTop = document.querySelector(`.air`).clientHeight;
+      }, 25)
+      setTimeout(function() {
+        document.querySelector(`#group`).style.display = `block`;
       }, 25)
     }
   if (showSplash == true) _check.style.display = `none`;
