@@ -665,6 +665,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
                       itemImage.setAttribute(`src`, e.target.result);
+                      copyPicture.innerHTML = `Download Image`;
+                      copyPicture.append(sideBarThemeBuild(`fa-camera`));
+                      copyPicture.classList.add(`download`);
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                     };
@@ -675,6 +678,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   if (!src.match(/4cdn/g)) request.send();
                   else {
                     xmlImageDimensions(menuObject, pubIndex, newImg)
+                    copyPicture.innerHTML = `Download Image`;
+                    copyPicture.append(sideBarThemeBuild(`fa-camera`));
+                    copyPicture.classList.add(`download`);
                     itemFilter.style.transform = `scale(4)`
                     itemFilter.classList.add(`blur`);
                     itemImage.setAttribute(`src`, src);

@@ -234,6 +234,35 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
+      evt.target.classList.contains(`download`)
+    ) {
+      var menuObject = evt.target.closest(`.item`).getAttribute(`aria-object`);
+      var pubIndex = evt.target.closest(`.item`).getAttribute(`aria-item`);
+      var xhr = new XMLHttpRequest();
+      var url =
+      document
+        .querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+        ).value
+      xhr.responseType = "arraybuffer";
+      xhr.open("GET", cors + url, true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == xhr.DONE) {
+          var file = new Blob([xhr.response], { type: "image" });
+          saveAs(
+            file,
+            document
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+              ).value
+          )
+        }
+      };
+
+      xhr.send();
+    }
+    if (
       evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
       if (_main.clientWidth <= 425) {
