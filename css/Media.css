@@ -1,3 +1,41 @@
+@media screen and (max-height: 425px) {
+
+  #main #page,
+  #main #visit {
+    background-color: transparent !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  #main #visit #page #front .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 300px;
+    left: -30px;
+    padding: 0;
+    top: -10px;
+  }
+
+  #main #visit #page #quick {
+    width: 680px;
+    left: 40px;
+  }
+
+  #main #visit #page #quick #feed {
+    width: 640px;
+  }
+
+  #main #xml {
+    width: 340px;
+    left: 45px;
+  }
+
+  #main #xml .content {
+    margin-left: 15px;
+  }
+
+}
+
 @media screen and (max-width: 426px) {
 
   #main #xml {
