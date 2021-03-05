@@ -1,4 +1,12 @@
-@media screen and (max-height: 425px) {
+@media screen and (max-height: 280px) {
+
+  #main #xml .content .status .construct .info {
+    display: none;
+  }
+
+  #main #xml .content {
+    top: 0;
+  }
 
   #main #page,
   #main #visit {
