@@ -1,7 +1,7 @@
-@media screen and (max-height: 425px) {
+@media screen and (max-height: 426px) {
 
+  #main #page,
   #main #visit {
-    #main #page,
     background-color: transparent !important;
     height: 100%;
     width: 100%;
