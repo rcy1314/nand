@@ -198,22 +198,18 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`sideBarBackdrop`)) {
       sideBarBackdrop = sideBarBackdrop != true;
       if (sideBarBackdrop == false) {
-        _sidebar.style.cssText = `-webkit-backdrop-filter: blur (10px);left:0`;
-        _sidebar.style.cssText = `backdrop-filter: blur (10px);left:0`;
+        _sidebar.classList.add(`blur`);
       } else {
-        _sidebar.style.cssText = `-webkit-backdrop-filter: none;left:0`;
-        _sidebar.style.cssText = `backdrop-filter: none;left:0`;
+        _sidebar.classList.remove(`blur`);
       }
       sideBarStar(event.target, sideBarBackdrop);
     }
     if (event.target.classList.contains(`topBarBackdrop`)) {
       topBarBackdrop = topBarBackdrop != true;
       if (topBarBackdrop == false) {
-        _top.style.cssText = `-webkit-backdrop-filter: none`;
-        _top.style.cssText = `backdrop-filter: none`;
+        _top.classList.remove(`blur`);
       } else {
-        _top.style.cssText = `-webkit-backdrop-filter: blur(20px)`;
-        _top.style.cssText = `backdrop-filter: blur(10px)`;
+        _top.classList.add(`blur`);
       }
       sideBarStar(event.target, topBarBackdrop);
       if (_visit.style.display != `flex`) topMenuBarDisplay(topBar);
