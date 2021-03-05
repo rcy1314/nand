@@ -1,15 +1,7 @@
 @media screen and (max-height: 280px) {
 
-  #main #xml .content .status .construct .info {
-    display: none;
-  }
-
-  #main #xml .content {
-    top: 0;
-  }
-
-  #main #page,
   #main #visit {
+    #main #page,
     background-color: transparent !important;
     height: 100%;
     width: 100%;
@@ -40,6 +32,11 @@
 
   #main #xml .content {
     margin-left: 15px;
+    top: 0;
+  }
+
+  #main #xml .content .status .construct .info {
+    display: none;
   }
 
 }
