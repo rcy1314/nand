@@ -206,6 +206,7 @@ var guideImageAttributes = function (pubArray) {
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
+      _guide.querySelector(`.sticky .image`).style.margin = `25px`;
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;
     }
