@@ -35,7 +35,7 @@ File Issues!<br>
 Copyright Notice
 ----
 
-The developers do not own images in this project.
+Developers do not own images or any information by using.
 
 License
 ----
