@@ -265,7 +265,7 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`fa-long-arrow-alt-left`)
     ) {
-      if (_main.clientWidth <= 425) {
+      if (Reader == false) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
