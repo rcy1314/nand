@@ -23,7 +23,7 @@
 
 * backgroundImage path is overwritten in theme file.
 
-<p align='center'><img src='Preview.gif'></p>
+<p align='center'><img src='screenshots/Desktop.gif'></p>
 
 Want to Contribute?
 ----
