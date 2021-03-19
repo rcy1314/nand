@@ -43,6 +43,22 @@
 
 @media screen and (max-width: 426px) {
 
+  .dots {
+    animation: move 3s infinite cubic-bezier(.1,.7,1,.1);
+  }
+  .dots:nth-of-type(2){
+    animation: move 3s 150ms infinite cubic-bezier(.1,.7,1,.1);
+  }
+  .dots:nth-of-type(3) {
+    animation: move 3s 300ms infinite cubic-bezier(.1,.7,1,.1);
+  }
+  .dots:nth-of-type(4) {
+    animation: move 3s 450ms infinite cubic-bezier(.1,.7,1,.1);
+  }
+  .dots:nth-of-type(5) {
+    animation: move 3s 600ms infinite cubic-bezier(.1,.7,1,.1);
+  }
+
   #main #xml {
     right: 0 !important;
   }
