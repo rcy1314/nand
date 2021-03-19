@@ -386,7 +386,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.fav`).style.borderBottom = `var(--border-color)`;
         document.querySelector(`.fav`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.fav`).style.height =
-          `${(favorites.length + 1) * 34}px`;
+          `${(favorites.length + 1) * 36}px`;
       }
     }
     if (event.target.classList.contains(`border`)) {
