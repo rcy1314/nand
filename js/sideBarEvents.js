@@ -412,7 +412,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.bg`).style.borderBottom = `var(--border-color)`;
         document.querySelector(`.bg`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 34 + 40}px`;
+          `${(background.length + 1) * 34 + 48}px`;
       }
     }
     if (event.target.classList.contains(`choose`)) {
