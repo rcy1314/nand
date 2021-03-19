@@ -96,7 +96,7 @@ let Reader = false;
 
 */
 
-let readPrevious = false;
+let readPrevious = true;
 
 /*
     onScreen [boolean/integer]
