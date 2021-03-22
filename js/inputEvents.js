@@ -159,6 +159,8 @@ document.addEventListener('submit', (evt) => {
       if (document.querySelector(`.sideFilter`).value.length) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
+      if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
         filterInputResponse(
           document.querySelector(`.sideFilter`).value.space(),
         );
