@@ -19,7 +19,7 @@ let backgroundImage = [
     path: "",
     element: "container",
     position: "center",
-    size: "cover",
+    size: "contain",
   },
 ];
 

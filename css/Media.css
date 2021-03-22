@@ -411,6 +411,9 @@
 	  left: -15px;
   }
 
+  #main #visit #page #front #label #show {
+    left: 7px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
