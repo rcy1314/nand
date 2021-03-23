@@ -26,7 +26,7 @@ File Issues!<br>
 Copyright Notice
 ----
 
-Developers do not own images or any information by using.
+Developers do not own images or any information with use.
 
 License
 ----
