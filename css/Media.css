@@ -321,6 +321,10 @@
     width: 760px !important;
   }
 
+	#main #visit #page {
+		top: 0;
+	}
+
   #main #visit #page #quick #feed .asset,
   #main #visit #page #quick #feed .translation {
     padding: 10px;
