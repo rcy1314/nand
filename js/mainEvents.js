@@ -472,9 +472,9 @@ document.addEventListener('click', (evt) => {
         Array.isArray(pub)
       )
         xmlAppendPublication(id);
-      _progress.style.width = `100%`;
-      _main.classList.remove(`guide`);
-        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+        _main.classList.remove(`guide`);
+      if (loading == `percent`) _progress.style.width = `100%`;
+      while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
@@ -585,7 +585,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`filterBlur`) ||
       evt.target.classList.contains(`img`)
     ) {
-      _progress.style.width = `100%`;
+      if (loading == `percent`) _progress.style.width = `100%`;
       if (tap == 0) {
         tap = new Date().getTime();
         setTimeout(function () {
