@@ -319,7 +319,7 @@ let sideBarTranslations = false;
 
 */
 
-let quickFeeds = true;
+let quickFeeds = false;
 
 /*
     quickFeedsTranslations [boolean/integer]
@@ -613,11 +613,11 @@ const api = `https://acktic-github-io-api.herokuapp.com/?url=`;
 */
 
 const translations = [
-  `Social`,
+  `Reddit`,
   `News`,
-  `Entertainment`,
+  `Media`,
   `Sports`,
-  `Technology`,
+  `Tech`,
   `World`,
   `Youtube`,
 ];
