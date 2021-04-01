@@ -383,21 +383,43 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   let parse = [];
   if (channel == `entry`) {
     let re = dateTime.getElementsByTagName(`link`)[0].getAttribute(`href`);
-    let dst = dateTime
-      .getElementsByTagName(`updated`)[0]
-      .childNodes[0].nodeValue.zulu();
-    let since = new Date(
-      dateTime.getElementsByTagName(`updated`)[0].childNodes[0].nodeValue
-    ).getTime();
-    let gen = dateTime
-      .getElementsByTagName(`updated`)[0]
-      .childNodes[0].nodeValue.toLocaleString();
-    gen = parseInt(
-      gen
-        .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
-        .toString()
-        .replace(/\:/g, ``)
-    ).toString(36);
+    if (
+      dateTime.getElementsByTagName(`updated`).length == 1
+    ) {
+      var dst = dateTime
+        .getElementsByTagName(`updated`)[0]
+        .childNodes[0].nodeValue.zulu();
+      var since = new Date(
+        dateTime.getElementsByTagName(`updated`)[0].childNodes[0].nodeValue
+      ).getTime();
+      var gen = dateTime
+        .getElementsByTagName(`updated`)[0]
+        .childNodes[0].nodeValue.toLocaleString();
+      gen = parseInt(
+        gen
+          .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+          .toString()
+          .replace(/\:/g, ``)
+      ).toString(36);
+    } else if (
+      dateTime.getElementsByTagName(`pubDate`).length == 1
+    ) {
+      var dst = dateTime
+        .getElementsByTagName(`pubDate`)[0]
+        .childNodes[0].nodeValue.zulu();
+      var since = new Date(
+        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
+        );
+      var gen = dateTime
+        .getElementsByTagName(`pubDate`)[0]
+        .childNodes[0].nodeValue.toLocaleString();
+      gen = parseInt(
+        gen
+          .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
+          .toString()
+          .replace(/\:/g, ``)
+      ).toString(36);
+    }
     parse.push({
       since: since,
       dst: dst[0],
