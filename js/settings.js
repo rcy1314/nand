@@ -416,7 +416,7 @@ let titleTruncate = 125;
 
 */
 
-let category = `Social`;
+let category = `Reddit`;
 
 /*
     onlyImages [boolean/integer]
