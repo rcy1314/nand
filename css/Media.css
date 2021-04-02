@@ -292,8 +292,75 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 426px) and (max-width: 767px) {
 
+  #main #xml {
+    height: fit-content;
+    position: absolute;
+    min-height: 100%;
+    display: block;
+    width: 75%;
+    right: 50px;
+    z-index: 1;
+    top: 0;
+  }
+
+  #main #xml .content {
+    display: none;
+  }
+
+  #main #visit #page #front .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 340px;
+    right: 37px;
+    padding: 0;
+    top: -25px;
+  }
+
+  #main #visit #page #front .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px;
+    width: 340px;
+    top: 0px;
+  }
+
+  #main #visit #page #front .focus .button {
+    top: 16.3px;
+  }
+
+  #main #visit #page #front .focus .icon,
+  #top #arm #search #input .icon .fa-search {
+    top: 28px;
+  }
+
+  #main #visit #page #quick #feed {
+    width: 480px;
+  }
+
+  #main #top #arm #search #match {
+    height: 264px;
+    width: 415px;
+    top: 25px;
+  }
+
+  #main #visit #page #front #first {
+    background-color: transparent !important;
+    height: 264px;
+    width: 405px;
+    top: 35px;
+  }
+
+  #main #visit #page #front #first .listing,
+  #main #top #arm #search #match .listing {
+    height: 264px !important;
+    width: 405px !important;
+    top: 0 !important;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
 
     .dots {
       animation: move 3s infinite cubic-bezier(.1,.9,1,.1) !important;
@@ -359,6 +426,7 @@
 
   #main #xml .content {
 	  display: none;
+    right: 10px;
   }
 
   #main #visit #page #quick {

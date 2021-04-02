@@ -133,7 +133,6 @@ document.addEventListener('touchstart', (evt) => {
 );
 
 document.addEventListener('touchend', (evt) => {
-  console.log(_guide.style.display)
     touchendX = evt.changedTouches[0].screenX;
     if (_guide.style.display != `flex`) handleSwipe();
   },
