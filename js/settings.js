@@ -1,6 +1,6 @@
 // initial theme
 
-let set = `Light`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
@@ -36,8 +36,6 @@ let themes = [
 ];
 
 const favorites = [
-  `Reddit/Art`,
-  `Reddit/Pics`,
   `Reddit/Wallpaper`,
   `Reddit/Wallpapers`,
   `Reddit/Los Angeles`,
@@ -358,7 +356,7 @@ let scrollIntoView = true;
 
 */
 
-let cropImages = true;
+let cropImages = false;
 
 /*
     fadeIntoView [boolean/integer]
