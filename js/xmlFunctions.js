@@ -62,9 +62,10 @@ var xmlStatusSuggestions = function () {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
+      console.log(randomMenuObject)
       if (
         menu[randomMenuObject] &&
-        menu[randomMenuObject] !== 0 &&
+        randomMenuObject !== 0 &&
         !duplicate.includes(randomMenuObject)
       ) {
         if (menu[randomMenuObject].media == true)
