@@ -320,8 +320,8 @@ var xmlImageSource = function (xhr) {
   else if (xhr.getElementsByTagName(`link`)[0].attributes[`href`])
     src = String(xhr.getElementsByTagName(`link`)[0].getAttribute(`href`));
   else if (
-    (xhr
-      .getElementsByTagName(`description`)[0]
+    (xhr.getElementsByTagName(`description`)[0].length &&
+      xhr.getElementsByTagName(`description`)[0]
       .innerHTML.match(/a.href|src/g) &&
       xhr.getElementsByTagName(`author`).length <= 0) ||
     (xhr.getElementsByTagName(`description`)[0].length > 0 &&
