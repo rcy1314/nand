@@ -681,6 +681,7 @@ const settings = [
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
   { name: `Reader`, class: `Reader` },
+  { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },
   { name: `Top Bar`, class: `topBar` },

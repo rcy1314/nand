@@ -425,7 +425,7 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`.set`).style.borderBottom = `var(--border-color)`;
         document.querySelector(`.set`).style.borderTop = `var(--border-color)`;
         document.querySelector(`.set`).style.height =
-          `${(settings.length + 1) * 34}px`;
+          `${(settings.length + 1) * 35}px`;
       }
     }
     if (event.target.classList.contains(`readPrevious`)) {
@@ -485,6 +485,10 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`Info`)) {
       let uri = repository;
       uri.blank();
+    }
+    if (event.target.classList.contains(`fadeIntoView`)) {
+      safeSearch = safeSearch != true;
+      sideBarStar(event.target, safeSearch);
     }
     if (event.target.classList.contains(`fadeIntoView`)) {
       fadeIntoView = fadeIntoView != true;
