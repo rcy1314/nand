@@ -245,7 +245,7 @@ var xmlImageSource = function (xhr) {
             /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
           )
       );
-    else if (Array.isArray(xhr.getElementsByTagName(`content`)))
+    else if (xhr.getElementsByTagName(`content`))
       src = String(
         xhr
           .getElementsByTagName(`content`)[0]
