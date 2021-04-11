@@ -556,6 +556,7 @@ let safeSearchIDs = [
   `4Chan/Technology`,
   `4Chan/Wallpapers`,
   `4Chan/High Resolution`,
+  `4Chan/Gif`
 ];
 
 /*

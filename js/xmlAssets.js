@@ -216,6 +216,7 @@ var menu=[
 {id:`4Chan/Technology`,category:`Reddit`,description:`4chan G Technology is a board that discusses Technology.`,uri:`http://boards.4chan.org/g/index.rss`,image:`4chan`,hash:`gK`,media:!0},
 {id:`4Chan/High Resolution`,category:`Reddit`,description:`4chan HR High Resolution images with upscaling high resolution.`,uri:`http://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`Hr`,media:!0},
 {id:`4Chan/Wallpapers`,category:`Reddit`,description:`4chan Wallpapers General read the sticky.`,uri:`http://boards.4chan.org/wg/index.rss`,image:`4chan`,hash:`wG`,media:!0},
+{id:`4Chan/Gif`,category:`Reddit`,description:`4chan gif and webm threads.`,uri:`http://boards.4chan.org/gif/index.rss`,image:`4chan`,hash:`gM`,media:!0},
 {id:`Reddit/Celebs`,category:`Reddit`,description:`Celebs For beautiful female celebrities.`,uri:`https://www.reddit.com/r/celebs/.rss`,image:`Celebs`,hash:`Bh`,media:!0},
 {id:`Reddit/Celebhub`,category:`Reddit`,description:`Celebhub famous actresses, singers, models, athletes and others.`,uri:`https://www.reddit.com/r/celebhub/.rss`,image:`CelebHub`,hash:`hC`,media:!0},
 {id:`Reddit/Goddesses`,category:`Reddit`,description:`Goddesses subreddit Images of Actresses, Models and all manner of female eye-candy.`,uri:`https://www.reddit.com/r/goddesses/.rss`,image:`Reddit`,hash:`gO`,media:!0},
