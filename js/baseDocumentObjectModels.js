@@ -124,7 +124,7 @@ let sideBarDisplay = function (Value) {
       }
     }
     appendSideBarLists(`#content`, `sel`, selections);
-    sideBarListBuild(`themes`, `border`, `fa-braille`, `Visual`);
+    sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
     appendSideBarLists(`.themes`, `theme`, themes);
 		sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
     appendSideBarLists(`.fav`, `feed`, favorites);
