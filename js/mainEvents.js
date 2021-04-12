@@ -371,17 +371,24 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.id == `home`) {
       id = 0;
-      document.title = category.capitalize();
+      if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
         document.querySelector(`#group`).remove();
-      if (showSplash == true) _check.style.display = `none`;
-      populateCategoryGroup(category);
-      displayDescription(showDescription);
-      topMenuBarDisplay(topBar);
-      displayExpand(expand);
-      unloading();
+      if (quickFeeds == false) _show.style.visibility = `visible`;
+      _label.style.visibility = `visible`;
+      _quick.style.visibility = `visible`;
+      _link.style.visibility = `visible`;
+      if (quickFeeds == false) _just.style.visibility = `visible`;
+      _visit.style.visibility = `visible`;
+      _toggle.style.display = `block`;
+      _first.style.display = `none`;
+      _visit.style.display = `flex`;
+      quickFeedDisplay(quickFeeds);
+      _top.style.display = `none`;
+      _feed.scrollLeft = 0;
+      document.title = ``;
     }
     if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
