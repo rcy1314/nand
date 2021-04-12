@@ -436,10 +436,12 @@
   position: relative !important;
   margin: 0 auto !important;
   display: inline-block;
-  border-radius: 12px;
-  padding-right: 20px;
-  padding-left: 20px;
+  border-radius: 50px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 18px;
   letter-spacing: 0;
   font-size: 10px;
   cursor: pointer;
+  height: 30px;
 }
