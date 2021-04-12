@@ -251,7 +251,7 @@ var xmlImageSource = function (xhr) {
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )[0]
+          )
       );
     else src = null;
   } else if (
