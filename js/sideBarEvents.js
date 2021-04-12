@@ -486,9 +486,24 @@ document.addEventListener('click', (evt) => {
       let uri = repository;
       uri.blank();
     }
-    if (event.target.classList.contains(`fadeIntoView`)) {
+    if (event.target.classList.contains(`safeSearch`)) {
       safeSearch = safeSearch != true;
       sideBarStar(event.target, safeSearch);
+      if (
+        safeSearch == true &&
+        document.body.contains(document.querySelector(`#xml`))
+      ) {
+        document
+          .querySelectorAll(`.filterBlur`)
+          .forEach((a) => a.classList.add(`blur`));
+      } else if (
+        safeSearch == false &&
+        document.body.contains(document.querySelector(`#xml`))
+      ) {
+        document
+          .querySelectorAll(`.filterBlur`)
+          .forEach((a) => a.classList.remove(`blur`));
+      }
     }
     if (event.target.classList.contains(`fadeIntoView`)) {
       fadeIntoView = fadeIntoView != true;
