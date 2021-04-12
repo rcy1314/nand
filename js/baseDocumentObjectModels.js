@@ -612,6 +612,7 @@ let xmlHTMLBuild = function (htmlArray) {
   let item = document.createElement(`div`);
   let head = document.createElement(`div`);
   let ago = document.createElement(`div`);
+  if (toggleBorders == false) item.style.border = `none`
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
