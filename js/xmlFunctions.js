@@ -245,6 +245,14 @@ var xmlImageSource = function (xhr) {
             /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
           )
       );
+    else if (Array.isArray(xhr.getElementsByTagName(`content`)))
+      src = String(
+        xhr
+          .getElementsByTagName(`content`)[0]
+          .childNodes[0].nodeValue.match(
+            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+          )[0]
+      );
     else if (xhr.getElementsByTagName(`content`))
       src = String(
         xhr
