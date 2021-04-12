@@ -245,13 +245,19 @@ var xmlImageSource = function (xhr) {
             /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
           )
       );
-    else if (Array.isArray(xhr.getElementsByTagName(`content`)))
+    else if (
+      xhr
+        .getElementsByTagName(`content`)[0]
+        .childNodes[0].nodeValue.match(
+          /https:\/\/external-preview\.redd.it\/.+?(gif|png|jpg)/g
+        )
+    )
       src = String(
         xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )[0]
+            /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
+          )
       );
     else if (xhr.getElementsByTagName(`content`))
       src = String(
