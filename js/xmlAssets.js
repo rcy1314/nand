@@ -219,7 +219,7 @@ var menu=[
 {id:`4Chan/Gif`,category:`Reddit`,description:`4chan gif and webm threads.`,uri:`http://boards.4chan.org/gif/index.rss`,image:`4chan`,hash:`gM`,media:!0},
 {id:`Reddit/Celebs`,category:`Reddit`,description:`Celebs For beautiful female celebrities.`,uri:`https://www.reddit.com/r/celebs/.rss`,image:`Celebs`,hash:`Bh`,media:!0},
 {id:`Reddit/Celebhub`,category:`Reddit`,description:`Celebhub famous actresses, singers, models, athletes and others.`,uri:`https://www.reddit.com/r/celebhub/.rss`,image:`CelebHub`,hash:`hC`,media:!0},
-{id:`Reddit/IRL Girls`,category:`Reddit`,description:`In Real Life Girls a subreddit for posting pictures of girls that you know in real life.`,uri:`https://www.reddit.com/r/irlgirls/.rss`,image:`Reddit`,hash:`iG`,media:!0},
+{id:`Reddit/IRL Girls`,category:`Reddit`,description:`In Real Life Girls a subreddit for posting pictures of girls that you know in real life.`,uri:`https://www.reddit.com/r/irlgirls/.rss`,image:`IRLGirls`,hash:`iG`,media:!0},
 {id:`Reddit/Goddesses`,category:`Reddit`,description:`Goddesses subreddit Images of Actresses, Models and all manner of female eye-candy.`,uri:`https://www.reddit.com/r/goddesses/.rss`,image:`Reddit`,hash:`gO`,media:!0},
 {id:`Reddit/Chrome`,category:`Reddit`,description:`Chrome subreddit with topics related to Google's Chrome Web Browser.`,uri:`https://www.reddit.com/r/chrome/.rss`,image:`Chrome`,hash:`eC`,media:!1},
 {id:`Reddit/City Porn`,category:`Reddit`,description:`City Porn subreddit with beautiful landscapes and High quality images of cities.`,uri:`https://www.reddit.com/r/cityporn/.rss`,image:`CityPorn`,hash:`Cy`,media:!0},
