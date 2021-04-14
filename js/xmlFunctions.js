@@ -873,7 +873,7 @@ var xmlRequestParsing = function (search, string, index) {
     category = menu[index].category;
   }
   _visit.style.display = `none`;
-  document.title = menu[index].id.space();
+  document.title = menu[index].id.space().capitalize();
   if (
     justRead == true && first == true && showSplash == true ||
     Reader == false && first == true && showSplash == true
